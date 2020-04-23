@@ -1,0 +1,137 @@
+<p><img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png" alt="Microchip logo">
+<img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png" alt="Harmony logo small"></p>
+<h1 id="file-transfer-protocol-application-on-sam-e70-xplained-ultra-evaluation-kit">File Transfer Protocol Application on SAM E70 Xplained Ultra Evaluation Kit</h1>
+<hr>
+<h2 id="description-">Description:</h2>
+<blockquote>
+<p>This application demonstrates creating ethernet bootloader where an FTP client downloads a binary file
+   from the FTP server, which in turn is used to program the microcontroller. The FAT-FS File
+   System with SDCARD as storage media is used in the application and the FTP client will
+   write to and read from this FS.</p>
+</blockquote>
+<h2 id="modules-technology-used-">Modules/Technology Used:</h2>
+<ul>
+<li>Peripheral Modules<ul>
+<li>USART1</li>
+<li>Timer (TC0)</li>
+<li>HSMCI    </li>
+</ul>
+</li>
+<li>System Services<ul>
+<li>DEBUG</li>
+<li>Command</li>
+<li>File System</li>
+<li>Time</li>
+<li>Console</li>
+</ul>
+</li>
+<li>Middleware libraries    <ul>
+<li>TCP/IP Stack</li>
+</ul>
+</li>
+</ul>
+<h2 id="hardware-used-">Hardware Used:</h2>
+<ul>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/DM320113">SAM E70 Xplained Ultra Evaluation Kit</a>   </li>
+</ul>
+<h2 id="software-tools-used-">Software/Tools Used:</h2>
+<p><span style="color:blue"> <em>This project has been verified to work with the following versions of software tools:</em></span>  </p>
+<ul>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;csp&quot; repo v3.5.2</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.5.0">MPLAB Harmony v3 &quot;bsp&quot; repository v3.5.0</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;core&quot; repo v3.5.2</a> </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0">MPLAB Harmony v3 &quot;dev_packs&quot; repo v3.5.0</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/net/releases/tag/v3.5.1">MPLAB Harmony v3 &quot;net&quot; repo v3.5.1</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.3">MPLAB Harmony v3 &quot;mhc&quot; repo v3.3.3</a>    </li>
+<li>MPLAB Harmony Configurator Plugin v3.4.0</li>
+<li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB X IDE v5.30</a></li>
+<li><a href="https://www.microchip.com/mplab/compilers">MPLAB XC32 Compiler v2.30</a></li>
+<li><a href="https://www.microchip.com/mplab/mplab-integrated-programming-environment">MPLAB X IPE v5.30</a></li>
+<li>Any Serial Terminal application like Tera Term terminal application.<br><span style="color:blue"> <em>Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.</em> </span></li>
+</ul>
+<h2 id="setup-">Setup:</h2>
+<ul>
+<li>Ensure the ERASE (J400) jumper is Open on SAM E70 Xplained Ultra Evaluation Kit</li>
+<li>Open the J805 Jumper</li>
+<li>Insert the LAN8740 PHY daughter board on the ETHERNET PHY MODULE header</li>
+<li>Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E70 Xplained Ultra Evaluation Kit</li>
+<li>Establish a connection between the router/switch with the SAM E70 Xplained Ultra Evaluation Kit through the RJ45 connector</li>
+<li>Insert the microSD card into the microSD card slot on the backside of the hardware board</li>
+<li><img src = "images/hardware_setup.png" width="600" height="400" align="middle"></li>
+</ul>
+<h2 id="programming-binary-hex-file-">Programming binary/hex file:</h2>
+<ul>
+<li>If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target<h3 id="steps-to-program-the-hex-file-using-mplab-x-ipe">Steps to program the hex file using MPLAB X IPE</h3>
+<ul>
+<li>Open MPLAB X IPE</li>
+<li>Select Device has &quot;ATSAME70Q21B&quot;</li>
+<li>Power the SAM E70 Xplained Ultra Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port</li>
+<li>Once Power cable is connected, &quot;EDBG&quot; hardware tool is identified as a programmer</li>
+<li>Browse to hex file (ftp_bootloader_hex_file.hex)</li>
+<li>Click on program button. The device gets programmed in sometime</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+</li>
+</ul>
+<h2 id="programming-debugging-application-project-">Programming/Debugging Application Project:</h2>
+<ul>
+<li>Open the project (ftp_bootloader\firmware\sam_e70_xult.X) in MPLAB X IDE</li>
+<li>Ensure &quot;EDBG&quot; is selected as hardware tool to program/debug the application</li>
+<li>Build the code and program the device by clicking on the &quot;make and program&quot; button in MPLAB X IDE tool bar</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+<h2 id="running-the-demo-">Running the Demo:</h2>
+<h3 id="ftp-server-setup">FTP Server Setup</h3>
+<ul>
+<li>Before running the FTP client application, an FTP server should be setup. For this demonstration, the FileZilla Server Interface is used as the FTP server running on the user PC. Refer to <a href="https://wiki.filezilla-project.org/Documentation">https://wiki.filezilla-project.org/Documentation</a> for more information on this</li>
+<li>FileZilla Server setup:<ul>
+<li>Open the FileZilla server interface</li>
+<li>In the pop-up window, enter a hostname, port and password for admin interface. Click “Connect”</li>
+<li>Click on User icon User or go to Edit-&gt;User for adding client</li>
+<li>In the User window, click “General”. Add client by clicking “Add” option enable account and password. This will be the username and password for connecting from the FTP client</li>
+<li><img src = "images/ftp_server1.png" width="600" height="400" align="middle">    </li>
+<li>In Shared folders, add the path of folder where the binary to be downloaded is located</li>
+<li><img src = "images/ftp_server2.png" width="600" height="400" align="middle">    </li>
+</ul>
+</li>
+</ul>
+<h3 id="ftp-client-connect">FTP Client Connect</h3>
+<ul>
+<li>From a terminal window application (like Tera Term), connect to the COM port enumerated by SAM E70 Xplained Ultra board</li>
+<li>Restart the application (i.e reset the SAM E70 board)</li>
+<li>The IP address will be displayed on the terminal once it is ready. Now, user can connect to the FTP server<ul>
+<li>Type “ftpc connect <host ip address>”</li>
+</ul>
+</li>
+<li>Upon successful connection, enter the login details<ul>
+<li>Type “ftpc login <username> <password>”</li>
+</ul>
+</li>
+<li>Once logged in, use ftpc get command to download a binary from the server<ul>
+<li>Type “ftpc get -a -a <test.bin>”</li>
+</ul>
+</li>
+<li>After the binary is successfully downloaded it can be flashed to the MCU by using the ‘boot’ command.</li>
+<li>MCU is reset automatically after the programming is complete and application code starts executing. Displaying the message: <strong><strong> Executing Application code </strong></strong></li>
+</ul>
+<h4 id="output">Output</h4>
+<ul>
+<li><img src = "images/output1.png" width="600" height="800" align="middle"></li>
+<li>After MCU reset, the following message gets printed:</li>
+<li><img src = "images/output2.png" width="600" height="400" align="middle"></li>
+</ul>
+<h2 id="comments-">Comments:</h2>
+<ul>
+<li>Reference Application Note: <a href="TBD">File Transfer Protocol using MPLAB Harmony v3 TCP/IP Stack </a></li>
+<li>Getting Started Training Module: <a href="https://microchipdeveloper.com/harmony3:same70-getting-started-training-module">Getting Started with Harmony v3 Peripheral Libraries on SAM E70 MCUs</a></li>
+<li>This application demo builds and works out of box by following the instructions above in &quot;Running the Demo&quot; section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony<ul>
+<li><a href="https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821">How to Setup MPLAB Harmony v3 Software Development Framework</a> </li>
+<li><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf">How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project</a>  </li>
+</ul>
+</li>
+<li>The application is available on MPLAB Harmony v3 GitHub repository <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_e70_xult/ftp_bootloader">reference_apps</a></li>
+</ul>
+<h2 id="revision-">Revision:</h2>
+<ul>
+<li>v1.0 released demo application</li>
+</ul>

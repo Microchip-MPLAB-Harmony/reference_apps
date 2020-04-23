@@ -1,0 +1,111 @@
+<p><img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png" alt="Microchip logo">
+<img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png" alt="Harmony logo small"></p>
+<h1 id="wifi-based-rgb-led-control-application-on-curiosity-pic32mz-ef-2-0-development-board">WiFi based RGB LED Control Application on Curiosity PIC32MZ EF 2.0 Development Board</h1>
+<hr>
+<h2 id="description-">Description:</h2>
+<blockquote>
+<p> The WiFi RGB Easy Configuration demo showcases how to configure an embedded WiFi device that does not have a
+    natural keyboard and screen. By using the internal Web server that accompanies the Microchip TCP/IP stack,
+    end-users can use their browser to control the RGB(RedGreenBlue) Led.</p>
+<p>The Curiosity PIC32MZ EF 2.0 Development Board provides an XPRO connector. The XPRO connector is plugged with the
+    ATWINC1500-XPRO board to configure WiFi connectivity. Also, the demo features changing the color of the on-board
+    RGB LED using the webpage hosted by the Curiosity board.</p>
+</blockquote>
+<h2 id="modules-technology-used-">Modules/Technology Used:</h2>
+<ul>
+<li>Peripheral Modules      <ul>
+<li>Output compare</li>
+<li>Core Timer</li>
+<li>NVM</li>
+</ul>
+</li>
+<li>Driver Modules    <ul>
+<li>Memory Driver</li>
+</ul>
+</li>
+<li>Middleware Libraries<ul>
+<li>TCP/IP Stack</li>
+</ul>
+</li>
+<li>System Service Libraries    <ul>
+<li>File System    </li>
+<li>SYS Console    </li>
+<li>SYS Command</li>
+</ul>
+</li>
+<li>STDIO Library</li>
+<li>WINC1500 Driver</li>
+</ul>
+<h2 id="hardware-used-">Hardware Used:</h2>
+<ul>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/DM320209">Curiosity PIC32MZ EF 2.0 Development Board</a>   </li>
+<li><a href="https://www.microchip.com/DevelopmentTools/ProductDetails/ATWINC1500-XPRO">ATWINC1500-XPRO</a></li>
+</ul>
+<h2 id="software-tools-used-">Software/Tools Used:</h2>
+<p><span style="color:blue"> <em>This project has been verified to work with the following versions of software tools:</em></span>  </p>
+<ul>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;csp&quot; repo v3.5.2</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;core&quot; repo v3.5.2</a>          </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0">MPLAB Harmony v3 &quot;dev_packs&quot; repo v3.5.0</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.3">MPLAB Harmony v3 &quot;mhc&quot; repo v3.3.3</a>   </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.5.0">MPLAB Harmony v3 &quot;bsp&quot; repository v3.5.0</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/wireless/releases/tag/v3.0.0">MPLAB Harmony v3 &quot;wireless&quot; repo v3.0.0</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/net/releases/tag/v3.5.1">MPLAB Harmony v3 &quot;net&quot; repo v3.5.1</a></li>
+<li>MPLAB Harmony Configurator Plugin v3.4.0</li>
+<li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB X IDE v5.30</a></li>
+<li><a href="https://www.microchip.com/mplab/compilers">MPLAB XC32 Compiler v2.30</a></li>
+<li><a href="https://www.microchip.com/mplab/mplab-integrated-programming-environment">MPLAB X IPE v5.30</a><br><span style="color:blue"> <em>Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.</em> </span> </li>
+</ul>
+<h2 id="setup-">Setup:</h2>
+<ul>
+<li>Connect ATWINC1500-XPRO to Extension header (J501) on Curiosity PIC32MZ EF 2.0 Development Board</li>
+<li>Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)<br><img src = "images/wifi_rgb_easy_configuration_demo_setup.png" width="650" height="300" align="middle"></li>
+</ul>
+<h2 id="programming-binary-hex-file-">Programming binary/hex file:</h2>
+<ul>
+<li>If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target<h3 id="steps-to-program-the-hex-file-using-mplab-x-ipe">Steps to program the hex file using MPLAB X IPE</h3>
+<ul>
+<li>Open MPLAB X IPE</li>
+<li>Select Device has &quot;PIC32MZ2048EFM144&quot;</li>
+<li>Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)</li>
+<li>Once Power cable is connected, &quot;Curiosity/Starter Kits PKOB4&quot; hardware tool is identified as a programmer</li>
+<li>Browse to hex file (wifi_rgb_easy_configuration_hex_file.hex)</li>
+<li>Click on program button. The device gets programmed in sometime</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+</li>
+</ul>
+<h2 id="programming-debugging-application-project-">Programming/Debugging Application Project:</h2>
+<ul>
+<li>Open the project (wifi_rgb_easy_configuration\firmware\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE</li>
+<li>Ensure &quot;Curiosity/Starter Kits PKOB4&quot; is selected as hardware tool to program/debug the application</li>
+<li>Build the code and program the device by clicking on the &quot;make and program&quot; button in MPLAB X IDE tool bar</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+<h2 id="running-the-demo-">Running the Demo:</h2>
+<ul>
+<li>Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port, and reconnect it back.</li>
+<li>Change the baud rate to 115200</li>
+<li>Perform a reset by pressing the &quot;RESET&quot; switch</li>
+<li>The serial terminal displays the below message<br>&quot;TCP/IP Stack: Initialization Started<br>TCP/IP Stack: Initialization Ended - success<br>SYS_Initialize: The MPFS2 File System is mounted<br>Interface WINC on host MCHPBOARD_W     - NBNS enabled<br>WINC IP Address: 192.168.1.1&quot;  </li>
+<li>When the demonstration runs, the WINC1500 goes into SoftAP mode (it behaves as an access point) and displays itself as &quot;MCHPSoftAP&quot; network        </li>
+<li>From a smartphone or personal computer, connect to the &quot;MCHPSoftAP&quot; network, which is the SoftAP network started by the demonstration. Then, bring up a web page by entering the IP address(e.g., 192.168.1.1) of the SoftAP network into the smartphone browser</li>
+<li>When the web page is displayed, On the right top corner of the page, there is a widget through which you can change the color of the RGB LED on the Curiosity board</li>
+<li>Click the text box to display a pop-up for selecting the color of the RGB LED. Click the Submit button to set the color of the RGB LED on the Curiosity board</li>
+</ul>
+<h2 id="comments-">Comments:</h2>
+<ul>
+<li>While formatting the SD card, change allocation unit size to 32K. This helps in reading the contents of the SD card faster.<br>(To change allocation unit size, Right click on Drive &gt; Select Format &gt; change Allocation unit size)</li>
+<li>This application is developed by applying a patch (available in folder &quot;wifi_rgb_easy_configuration\firmware\wifi_repo_patch&quot;) to MPLAB Harmony v3 &quot;wireless&quot; repository.
+If you need to reconfigure or regenerate this demo using MHC, please refer the &quot;Notes.txt&quot; file under &quot;wifi_rgb_easy_configuration\firmware\wifi_repo_patch&quot; folder.</li>
+<li>This application demo builds and works out of box by following the instructions above in &quot;Running the Demo&quot; section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. <ul>
+<li><a href="https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821">How to Setup MPLAB Harmony v3 Software Development Framework</a> </li>
+<li><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf">How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project</a>  </li>
+</ul>
+</li>
+<li>The application is available on MPLAB Harmony v3 GitHub repository <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration">reference_apps</a></li>
+</ul>
+<h2 id="revision-">Revision:</h2>
+<ul>
+<li>v1.0 released demo application</li>
+</ul>

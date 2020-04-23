@@ -1,0 +1,117 @@
+<p><img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png" alt="Microchip logo">
+<img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png" alt="Harmony logo small"></p>
+<h1 id="low-power-application-on-sam-l21-xplained-pro-evaluation-kit">Low Power Application on SAM L21 Xplained Pro Evaluation Kit</h1>
+<hr>
+<h2 id="description">Description</h2>
+<blockquote>
+<p>The application demonstrates, on power-up, the device is set to Standby Sleep mode.
+  The device wakes up from Standby mode and enters Active mode when you cover the light sensor
+  (by placing a hand over it, for example) on the I/O1 Xplained Pro extension kit. The application
+  periodically prints room temperature on a serial terminal while the light sensor is covered.
+  The device goes back to Standby mode when you uncover the light sensor. LED0 in the SAM L21
+  evaluation kit is toggled every time the temperature is displayed on the serial console. When
+  you press the switch button SW0, the application switches Sleep mode from Standby mode to Idle mode. </p>
+</blockquote>
+<h2 id="modules-technology-used-">Modules/Technology Used:</h2>
+<ul>
+<li>Peripheral Modules</li>
+<li>I2C</li>
+<li>RTC</li>
+<li>USART</li>
+<li>DMAC</li>
+<li>ADC</li>
+<li>PM</li>
+<li>SUPC</li>
+<li>EIC</li>
+<li>EVSYS </li>
+</ul>
+<h2 id="hardware-used-">Hardware Used:</h2>
+<ul>
+<li><a href="https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b">SAM L21 Xplained Pro Evaluation Kit</a></li>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO">I/O1 Xplained Pro Extension Kit</a><br><strong>Note</strong>: The application is being developed on a SAM L21 XPRO-B board. Ensure that you use the same revision on
+the evaluation board before going further, else you could face issues with power consumption values.</li>
+</ul>
+<h2 id="software-tools-used-">Software/Tools Used:</h2>
+<p><span style="color:blue"> <em>This project has been verified to work with the following versions of software tools:</em></span>  </p>
+<ul>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;csp&quot; repo v3.5.2</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0">MPLAB Harmony v3 &quot;dev_packs&quot; repo v3.5.0)</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.4">MPLAB Harmony v3 &quot;mhc&quot; repo v3.3.4)</a>    </li>
+<li>MPLAB Harmony Configurator Plugin v3.4.0</li>
+<li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB X IDE v5.25</a></li>
+<li><a href="https://www.microchip.com/mplab/compilers">MPLAB XC32 Compiler v2.30</a></li>
+<li><a href="https://www.microchip.com/mplab/mplab-integrated-programming-environment">MPLAB X IPE v5.25</a></li>
+<li>Any Serial Terminal application like Tera Term terminal application.
+<span style="color:blue"> <em>Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.</em> </span>  </li>
+</ul>
+<h2 id="setup-">Setup:</h2>
+<ul>
+<li>Connect the I/O1 Xplained Pro extension kit to the Extension Header 2 (EXT2) of the SAML21 Xplained Pro evaluation kit</li>
+<li>Probe PA02 (SW0 pin) and PB05 (wake-up test pin) on Extension Header 1 (EXT1) as highlighted in the Hardware Setup figure to measure wake-up time</li>
+<li>Connect a USB cable to the DEBUG USB port for programming<br><strong>Note</strong> :
+Make sure common ground is connected with the board while using the logic analyzer or CRO.
+<img src = "images/low_power_demo_setup.jpg" width="800" height="600" align="middle"></li>
+</ul>
+<h2 id="programming-binary-hex-file-">Programming binary/hex file:</h2>
+<ul>
+<li>If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target.<h3 id="steps-to-program-the-hex-file-using-mplab-x-ipe-">Steps to program the hex file using MPLAB X IPE.</h3>
+<ul>
+<li>Open MPLAB X IPE.</li>
+<li>Select Device has &quot;ATSAML21J18B&quot;.</li>
+<li>Power the SAML21 Xplained Pro evaluation kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (Debug USB).</li>
+<li>Once Power cable is connected, &quot;SAML21 Xplained Pro (EDBG)&quot; hardware tool is identified as a programmer.</li>
+<li>Browse to hex file (low_power_hex_file.hex).  </li>
+<li>Click on program button. The device gets programmed in sometime.</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below.</li>
+</ul>
+</li>
+</ul>
+<h2 id="programming-debugging-application-project-">Programming/Debugging Application Project:</h2>
+<ul>
+<li>Open the project (low_power\firmware\sam_l21_xpro.X) in MPLAB X IDE.</li>
+<li>Ensure &quot;SAML21 Xplained Pro (EDBG)&quot; is selected as hardware tool to program/debug the application.</li>
+<li>Build the code and program the device by clicking on the &quot;make and program&quot; button in MPLAB X IDE tool bar.</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below.  </li>
+</ul>
+<h2 id="running-the-demo-">Running the Demo:</h2>
+<ul>
+<li>Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable
+connected to Micro-B port, and reconnect it back.</li>
+<li>Change the baud rate to 115200</li>
+<li>Perform a reset by pressing the &quot;RESET&quot; switch</li>
+<li>Verify the application title message is displayed<br><img src = "images/console_message_after_reset.png" width="658" height="170" align="middle">  </li>
+<li>Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered  </li>
+<li><img src = "images/console_message_after_covering_lightsensor.png" width="670" height="290" align="middle">  </li>
+<li>Observe Current Consumption on Data Visualizer<br><strong>Note</strong>:The Data Visualizer is a program to process and visualize data. The Data Visualizer can receive data from various sources such as the Embedded Debugger Data Gateway Interface (EDBG DGI) and COM ports. It is possible to track an application in run-time using a terminal graph or oscilloscope. It analyzes the power consumption of an application through correlation of code execution and power consumption when used together with a supported probe or board.<ul>
+<li>Open the Data Visualizer application from your PC and select the connected SAM L21 Xplained Pro B board on the DGI Control Panel, then click on Connect. The Data Visualizer will then start searching for protocols from the SAM L21 Xplained Pro board through the EDBG<br><img src = "images/data_visualizer_dgi_control_panel_selection.png" width="700" height="230" align="middle"></li>
+<li>Once the Data Visualizer is connected to the SAM L21 EDBG, different interfaces will appear. Select the Power interface and click on the Start button to start measuring the power consumption of the device<br><img src = "images/data_visualizer_power_start_buttons.png" width="700" height="240" align="middle"></li>
+<li>Ensure that the jumpers for Current Measurement on the SAM L21 Xplained Pro are set to MEASURE for the MCU and BYPASS for the I/Os<br><img src = "images/current_measurement_hw_setup.jpg" width="700" height="480" align="middle"></li>
+<li>The Power Analysis window will appear on the Data Visualizer tool interface<br><img src = "images/data_visualizer_power_analysis_window.png" width="700" height="440" align="middle">  </li>
+<li>The step image shows the device in Standby mode with its measured power consumption. You can observe small peaks that illustrate the 500 milliseconds Real-Time Clock (RTC) timer expiry<br><img src = "images/device_in_standby_mode.png" width="590" height="420" align="middle"><br><strong>Note</strong>: The average value is considered when measuring the power consumption of the device because the instant value is not stable. Then, the power consumption of the device in Standby mode is 6.99 µA.</li>
+<li>Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element) to print the temperature on the terminal and observe the power consumption of the device<br><img src = "images/device_wakes_up_and_print_temperature.png" width="700" height="220" align="middle"> </li>
+<li>Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode<br><img src = "images/standby_idle_transition.png" width="700" height="260" align="middle"> </li>
+<li>The following image shows the device in Idle mode with a measured power consumption of 530 µA<br><img src = "images/device_in_idle_mode.png" width="660" height="420" align="middle"><br><strong>Note</strong>: You can observe that the small peaks coming from RTC timer expiry disappeared because the power consumption in Idle mode is higher than the power required to start ADC conversion.    </li>
+<li>Place your hand over the light sensor. The device will wake up on the next ADC window monitor interrupt, read and print data on serial and then re-enter Standby mode. The following image shows the transition of the power consumption by switching from Idle mode to Standby mode<br><img src = "images/transition_from_idle_to_standby.png" width="700" height="270" align="middle"><br><strong>Note</strong> that the above results highlight the power consumption is lower in Standby mode than in Idle mode.</li>
+</ul>
+</li>
+<li>Wake-up Time Measurement Using Logic Analyzer/ Cathode-Ray Oscilloscope (CRO)<br>To demonstrate the CPU wake up time, switch SW0 is configured to generate an interrupt. A General Purpose Input/Output (GPIO) is toggled in the Interrupt Service Routine (ISR) of the switch press event. The MCU comes out of Sleep mode when an interrupt occurs (in this case, the switch press interrupt). The time between the switch press and the GPIO toggle in the ISR is the wake up time.<ul>
+<li>Connect your logic analyzer or your CRO to the board according to the step image<br><img src = "images/low_power_demo_setup.jpg" width="800" height="600" align="middle"></li>
+<li>Press the SW0 switch and capture the signals to measure the wake-up time in Standby and Idle mode. The following image shows the wake-up time from Standby mode<br><img src = "images/wakeup_time_from_standby.png" width="700" height="100" align="middle">  </li>
+<li>The following image shows the wake-up time from Idle mode<br><img src = "images/wakeup_time_from_idle.png" width="700" height="100" align="middle"><br>By observing the outputs, you can conclude that the wake-up time is greater in Standby mode than in Idle mode</li>
+</ul>
+</li>
+</ul>
+<h2 id="comments-">Comments:</h2>
+<ul>
+<li>Reference Training Module: <a href="https://microchipdeveloper.com/harmony3:low-power-application-on-saml21#Steps_anchor">Low Power Application on SAM L21 (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries</a></li>
+<li>This application demo builds and works out of box by following the instructions above in &quot;Running the Demo&quot; section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. <ul>
+<li><a href="https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821">How to Setup MPLAB Harmony v3 Software Development Framework</a> </li>
+<li><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf">How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project</a>  </li>
+</ul>
+</li>
+<li>The application is available on MPLAB Harmony v3 GitHub repository <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_l21_xpro/low_power">reference_apps</a>    </li>
+</ul>
+<h2 id="revision-">Revision:</h2>
+<ul>
+<li>v1.0 released new demo application.</li>
+</ul>

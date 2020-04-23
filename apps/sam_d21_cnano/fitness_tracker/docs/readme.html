@@ -1,0 +1,104 @@
+<p><img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png" alt="Microchip logo">
+<img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png" alt="Harmony logo small"></p>
+<h1 id="fitness-tracker-application-on-sam-d21-curiosity-nano-and-nano-base-for-click-boards">Fitness Tracker Application on SAM D21 Curiosity Nano and Nano Base for Click boards</h1>
+<hr>
+<h2 id="description-">Description:</h2>
+<blockquote>
+<p>The application demonstrates a solution based on Microchip products for health care industry
+  and wearable products. The application displays heart rate readings (in beats per minute - bpm)
+  on a very low power consuming display. The Mikroelektronika Heart Rate 3 click board is used
+  to read the heart pulse. Mikroelektronika eINK click bundle is used for displaying heart rate.
+  The eINK click bundle contains the eINK click adapter board and the eINK display. </p>
+<p>The Heart Rate 3 click contains two integrated LEDs, a photosensitive element and advanced low
+    noise analog front end to provide clean and accurate heart rate readings. It is enough to place
+    an index finger on a top of the sensor to get the heart rate via I2C interface. The eINK display
+    is a very low power consumption and the ability to retain the information, even after disconnecting
+    from the power source. The host MCU SAM D21 is interfaced with the Heart Rate 3 click over the I2C
+    interface and eINK click over SPI Interface. </p>
+</blockquote>
+<h2 id="modules-technology-used-">Modules/Technology Used:</h2>
+<ul>
+<li>Peripheral Modules      <ul>
+<li>Timer</li>
+<li>EIC</li>
+</ul>
+</li>
+<li>Driver Modules    <ul>
+<li>SPI Driver</li>
+<li>I2C Driver</li>
+</ul>
+</li>
+<li>STDIO Library</li>
+</ul>
+<h2 id="hardware-used-">Hardware Used:</h2>
+<ul>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/DM320119">SAM D21 Curiosity Nano Evaluation Kit</a>   </li>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/AC164162">Curiosity Nano Base for click boards</a></li>
+<li><a href="https://www.mikroe.com/heart-rate-3-click">Heart Rate 3 click</a></li>
+<li><a href="https://www.mikroe.com/eink-click">EINK CLICK BUNDLE</a></li>
+</ul>
+<h2 id="software-tools-used-">Software/Tools Used:</h2>
+<p><span style="color:blue"> <em>This project has been verified to work with the following versions of software tools:</em></span>  </p>
+<ul>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;csp&quot; repo v3.5.2</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2">MPLAB Harmony v3 &quot;core&quot; repo v3.5.2</a>          </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0">MPLAB Harmony v3 &quot;dev_packs&quot; repo v3.5.0</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.3">MPLAB Harmony v3 &quot;mhc&quot; repo v3.3.3</a>    </li>
+<li>MPLAB Harmony Configurator Plugin v3.4.0</li>
+<li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB X IDE v5.30</a></li>
+<li><a href="https://www.microchip.com/mplab/compilers">MPLAB XC32 Compiler v2.30</a></li>
+<li><a href="https://www.microchip.com/mplab/mplab-integrated-programming-environment">MPLAB X IPE v5.30</a><br><span style="color:blue"> <em>Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.</em> </span> </li>
+</ul>
+<h2 id="setup-">Setup:</h2>
+<ul>
+<li>Mount SAM D21 Curiosity Nano Evaluation Kit on &quot;CNANO56_HOST_CONN&quot;(U3) connector of Curiosity Nano Base board</li>
+<li>Mount Heart Rate 3 click board on mikro bus click 2 connector of Curiosity Nano Base board</li>
+<li>Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 3 connector of Curiosity Nano Base board</li>
+<li>Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)<br><img src = "images/fitness_tracker_demo_setup.jpg" width="600" height="500" align="middle"></li>
+</ul>
+<h2 id="programming-binary-hex-file-">Programming binary/hex file:</h2>
+<ul>
+<li>If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target<h3 id="steps-to-program-the-hex-file-using-mplab-x-ipe">Steps to program the hex file using MPLAB X IPE</h3>
+<ul>
+<li>Open MPLAB X IPE</li>
+<li>Select Device has &quot;ATSAMD21G17D&quot;</li>
+<li>Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)</li>
+<li>Once Power cable is connected, &quot;PKOB nano&quot; hardware tool is identified as a programmer</li>
+<li>Browse to hex file (fitness_tracker_hex_file.hex)</li>
+<li>Click on program button. The device gets programmed in sometime</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+</li>
+</ul>
+<h2 id="programming-debugging-application-project-">Programming/Debugging Application Project:</h2>
+<ul>
+<li>Open the project (fitness_tracker\firmware\sam_d21_cnano.X) in MPLAB X IDE</li>
+<li>Ensure &quot;PKOB nano&quot; is selected as hardware tool to program/debug the application</li>
+<li>Build the code and program the device by clicking on the &quot;make and program&quot; button in MPLAB X IDE tool bar</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+<h2 id="running-the-demo-">Running the Demo:</h2>
+<ul>
+<li>Perform a reset by unplugging and re-plugging the power cable of SAM D21 Curiosity Nano</li>
+<li>After power up, the application displays the &quot;microchip logo&quot; on the eINK display displays and initializes the heart rate sensor</li>
+<li>After successful initialization of heart rate sensor, two integrated LEDs on the heart rate 3 click lights up</li>
+<li>Then press switch &quot;SW0&quot; on SAM D21 Curiosity Nano board, LED &quot;LED0&quot; on SAM D21 Curiosity Nano board glows on</li>
+<li>Place your index finger gently on the heart rate 3 click sensor (refer the fitness_tracker_demo_setup.jpg)</li>
+<li>Wait till the LED &quot;LED0&quot; on SAM D21 Curiosity Nano board goes off and then lift your finger</li>
+<li>The heart rate value (in bpm - beats per minute) gets displayed on the eINK display<br><img src = "images/fitness_tracker_demo_run.jpg" width="600" height="500" align="middle"></li>
+</ul>
+<h2 id="comments-">Comments:</h2>
+<ul>
+<li>Place your index finger gently on the heart rate 3 click sensor, don’t push or put pressure on the sensor (the heart rate values may not be accurate)</li>
+<li>Reference Training Module: <a href="https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module">Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs</a></li>
+<li>This application demo builds and works out of box by following the instructions above in &quot;Running the Demo&quot; section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. <ul>
+<li><a href="https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821">How to Setup MPLAB Harmony v3 Software Development Framework</a> </li>
+<li><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf">How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project</a>  </li>
+</ul>
+</li>
+<li>The application is available on MPLAB Harmony v3 GitHub repository <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_d21_cnano/fitness_tracker">reference_apps</a></li>
+</ul>
+<h2 id="revision-">Revision:</h2>
+<ul>
+<li>v1.0 released demo application</li>
+</ul>

@@ -1,0 +1,119 @@
+<p><img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png" alt="Microchip logo">
+<img src="https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png" alt="Harmony logo small"></p>
+<h1 id="getting-started-application-using-harmony-v3-drivers-system-services-middleware-and-freertos-on-curiosity-pic32mz-ef-2-0-development-board">Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS on Curiosity PIC32MZ EF 2.0 Development Board</h1>
+<hr>
+<h2 id="description">Description</h2>
+<blockquote>
+<p> The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit.
+   The temperature reading is displayed on a serial console periodically every second. Further, the application writes the
+   temperature readings to EEPROM and to a file in a USB thumb drive whenever the USB thumb drive is connected. Also, an
+   LED LED1 is toggled every time the temperature is displayed on the serial console and an LED (LED2) is in ON state when
+   a USB thumb drive is connected.       </p>
+</blockquote>
+<h2 id="modules-technology-used-">Modules/Technology Used:</h2>
+<ul>
+<li>Peripheral Modules      <ul>
+<li>I2C</li>
+<li>Timer</li>
+<li>GPIO</li>
+<li>UART</li>
+<li>DMA</li>
+</ul>
+</li>
+<li>Drivers<ul>
+<li>USB High-Speed Driver</li>
+<li>USART Synchronous Drive</li>
+<li>I²C Synchronous Driver    </li>
+</ul>
+</li>
+<li>System Services<ul>
+<li>File System Services</li>
+</ul>
+</li>
+<li>Middleware<ul>
+<li>USB Host</li>
+</ul>
+</li>
+<li>Third Party Libraries<ul>
+<li>FreeRTOS</li>
+</ul>
+</li>
+</ul>
+<h2 id="hardware-used-">Hardware Used:</h2>
+<ul>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/DM320209">Curiosity PIC32MZ EF 2.0 Development Board</a>   </li>
+<li><a href="https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO">I/O1 Xplained Pro Extension Kit</a></li>
+</ul>
+<h2 id="software-tools-used-">Software/Tools Used:</h2>
+<p><span style="color:blue"> <em>This project has been verified to work with the following versions of software tools:</em></span>  </p>
+<ul>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.6.1">MPLAB Harmony v3 &quot;csp&quot; repo v3.6.1</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.6.1">MPLAB Harmony v3 &quot;dev_packs&quot; repo v3.6.1</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.6.1">MPLAB Harmony v3 &quot;core&quot; repo v3.6.1</a>  </li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.4.0">MPLAB Harmony v3 &quot;usb&quot; repo v3.4.0</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.6.1">MPLAB Harmony v3 &quot;bsp&quot; repo v3.6.1</a></li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.5">MPLAB Harmony v3 &quot;mhc&quot; repo v3.3.5</a>   </li>
+<li>MPLAB Harmony Configurator Plugin v3.4.0</li>
+<li><a href="https://github.com/Microchip-MPLAB-Harmony/CMSIS-FreeRTOS/releases/tag/v10.2.0">CMSIS-FreeRTOS v10.2.0</a></li>
+<li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB X IDE v5.35</a></li>
+<li><a href="https://www.microchip.com/mplab/compilers">MPLAB XC32 Compiler v2.40</a></li>
+<li><a href="https://www.microchip.com/mplab/mplab-integrated-programming-environment">MPLAB X IPE v5.35</a>  </li>
+<li>Any Serial Terminal application like Tera Term terminal application.
+<span style="color:blue"> <em>Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.</em> </span>  </li>
+</ul>
+<h2 id="setup-">Setup:</h2>
+<ul>
+<li>Connect the Curiosity PIC32MZ EF 2.0 Development Board to the Host PC as a USB Device
+through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port </li>
+<li>Connect the I/O1 Xplained Pro Extension Kit (Temperature Sensor) to J501 (Extension Header 1 (EXT1))
+on the Curiosity PIC32MZ EF 2.0 Development Board</li>
+<li>Connect USB OTG Thumb Drive (Pendrive having mirco USB connector) or connect any pen drive using Type-A female to micro-B USB converter cable to Target USB (J201) on the Curiosity PIC32MZ EF 2.0 Development Board<br><img src = "images/hardware_setup.png" width="800" height="320" align="middle"></li>
+</ul>
+<h2 id="programming-binary-hex-file-">Programming binary/hex file:</h2>
+<ul>
+<li>If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target<h3 id="steps-to-program-the-hex-file-using-mplab-x-ipe">Steps to program the hex file using MPLAB X IPE</h3>
+<ul>
+<li>Open MPLAB X IPE</li>
+<li>Select Device has &quot;PIC32MZ2048EFM144&quot;</li>
+<li>Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)</li>
+<li>Once Power cable is connected, &quot;Curiosity/Starter Kits PKOB4&quot; hardware tool is identified as a programmer</li>
+<li>Browse to hex file (getting_started_middleware_hex_file.hex)</li>
+<li>Click on program button. The device gets programmed in sometime</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+</li>
+</ul>
+<h2 id="programming-debugging-application-project-">Programming/Debugging Application Project:</h2>
+<ul>
+<li>Open the project (getting_started_middleware\firmware\middleware_drivers_freertos_pic32mz_ef_curiosity2.X) in MPLAB X IDE</li>
+<li>Ensure &quot;Curiosity/Starter Kits PKOB4&quot; is selected as hardware tool to program/debug the application</li>
+<li>Build the code and program the device by clicking on the &quot;make and program&quot; button in MPLAB X IDE tool bar</li>
+<li>Follow the steps in &quot;Running the Demo&quot; section below</li>
+</ul>
+<h2 id="running-the-demo-">Running the Demo:</h2>
+<ul>
+<li>Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)</li>
+<li>Change the baud rate to 115200</li>
+<li>You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below<br><img src = "images/result1.png" width="425" height="235" align="middle">  </li>
+<li>Also, notice the LED1 blinking at a one second rate</li>
+<li>Press any character on the terminal to display the last five values written to the EEPROM<br><img src = "images/eeprom_values_display.png" width="600" height="285" align="middle">  </li>
+<li>You should see the LED2 is in &quot;ON&quot; state whenever you connect a USB thumb drive and the application
+creates a text file &quot;Temperature_Sensor_Data.txt&quot; if it is not already present in the USB thumb drive.
+The latest room temperature samples are written to the text file at a one-second rate. To view the
+data in the text file, connect the USB Thumb drive to a PC USB port and open the Temperature_Sensor_Data.txt file<br><img src = "images/temperature_saved_file.png" width="600" height="285" align="middle"><br><img src = "images/temperature_saved_data.png" width="220" height="330" align="middle">      </li>
+<li>You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)<br><img src = "images/temp_sensor_placement.png" width="825" height="330" align="middle">  </li>
+</ul>
+<h2 id="comments-">Comments:</h2>
+<ul>
+<li>Reference Training Module: <a href="TBD">Getting Started with Harmony v3 Drivers and Middleware on PIC32MZ EF MCUs using FreeRTOS</a></li>
+<li>This application demo builds and works out of box by following the instructions above in &quot;Running the Demo&quot; section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. <ul>
+<li><a href="https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821">How to Setup MPLAB Harmony v3 Software Development Framework</a> </li>
+<li><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf">How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project</a>  </li>
+</ul>
+</li>
+<li>The application is available on MPLAB Harmony v3 GitHub repository <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/pic32mz_ef_curiosity_v2/getting_started_middleware">reference_apps</a></li>
+</ul>
+<h2 id="revision-">Revision:</h2>
+<ul>
+<li>v1.0 released demo application</li>
+</ul>
