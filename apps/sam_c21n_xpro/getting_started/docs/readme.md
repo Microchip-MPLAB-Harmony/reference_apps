@@ -1,6 +1,12 @@
+---
+grand_parent: Reference Application Examples
+parent: SAM C21N Xplained Pro Evaluation Kit Reference Application Examples
+title: Getting Started
+nav_order: 4
+---
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
 
-![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
-![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 # Getting Started Application on SAMC21N Xplained Pro Evaluation Kit
 -----
 ## Description:
@@ -33,7 +39,7 @@
  - [MPLAB XC32 Compiler v2.20](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.20](https://www.microchip.com/mplab/mplab-integrated-programming-environment)
  - Any Serial Terminal application like Tera Term terminal application.  
-<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.* </span> 
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
 
 ## Setup:
 - Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAMC21N Xplained Pro Evaluation Kit

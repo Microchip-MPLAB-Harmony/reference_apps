@@ -1,6 +1,12 @@
+---
+grand_parent: Reference Application Examples
+parent: Curiosity PIC32MZ EF 2.0 Development Board Reference Application Examples
+title: WiFi based RGB LED Control
+nav_order: 4
+---
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
 
-![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
-![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 # WiFi based RGB LED Control Application on Curiosity PIC32MZ EF 2.0 Development Board
 -----
 ## Description:
@@ -50,7 +56,7 @@
  - [MPLAB X IDE v5.30](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.30](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.30](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.* </span> 
+ <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
 
 ## Setup:
  - Connect ATWINC1500-XPRO to Extension header (J501) on Curiosity PIC32MZ EF 2.0 Development Board

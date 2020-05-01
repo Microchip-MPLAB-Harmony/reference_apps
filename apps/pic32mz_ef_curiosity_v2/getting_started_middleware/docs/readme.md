@@ -1,6 +1,12 @@
+---
+grand_parent: Reference Application Examples
+parent: Curiosity PIC32MZ EF 2.0 Development Board Reference Application Examples
+title: Getting Started Middleware
+nav_order: 4
+---
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
 
-![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
-![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 # Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS on Curiosity PIC32MZ EF 2.0 Development Board
 -----
 ## Description
@@ -51,8 +57,8 @@
  - [MPLAB X IDE v5.35](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.40](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.35](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
- - Any Serial Terminal application like Tera Term terminal application.
-<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.* </span>  
+ - Any Serial Terminal application like Tera Term terminal application.  
+ <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Setup:  
 - Connect the Curiosity PIC32MZ EF 2.0 Development Board to the Host PC as a USB Device 

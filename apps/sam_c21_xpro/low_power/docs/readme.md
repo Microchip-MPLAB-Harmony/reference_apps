@@ -1,6 +1,12 @@
+---
+grand_parent: Reference Application Examples
+parent: SAM C21 Xplained Pro evaluation kit Reference Application Examples
+title: Low Power
+nav_order: 4
+---
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
 
-![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
-![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 # Low Power Application on SAM C21 Xplained Pro evaluation kit
 -----
 ## Description

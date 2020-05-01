@@ -1,6 +1,13 @@
+---
+grand_parent: Reference Application Examples
+parent: SAM D21 Curiosity Nano Evaluation Kit Reference Application Examples
+title: Getting Started
+nav_order: 4
+---
 
-![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
-![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
+
 # Getting Started Application on SAM D21 Curiosity Nano
 -----
 ## Description:
@@ -31,7 +38,7 @@
  - [MPLAB XC32 Compiler v2.30](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.30](https://www.microchip.com/mplab/mplab-integrated-programming-environment)
  - Any Serial Terminal application like Tera Term terminal application.  
-<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.* </span> 
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
 
 ## Setup:
 - Connect the SAM D2 Curiosity Nano Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port

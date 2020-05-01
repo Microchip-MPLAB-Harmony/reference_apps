@@ -1,6 +1,12 @@
+---
+grand_parent: Reference Application Examples
+parent: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II Reference Application Examples
+title: SD Card Player/Reader series
+nav_order: 4
+---
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
 
-![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
-![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 # SD Card Audio Player/Reader Application on PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II
 -----
 ## Description
@@ -8,14 +14,14 @@
 >  This folder contains a series of applications which uses MPLAB Harmony v3 framework 
    for Quick Audio Prototyping, and in the process creates an SD card Audio Player/Reader.
 
-- The Application "audio_player_lab1" is the basic audio application that generates an audio tone using a lookup table
-- The Application "audio_player_lab2" is an extension of application "audio_player_lab1", it generates an audio tone using
+- The Application [audio_player_lab1](./audio_player_lab1/docs/readme.md) is the basic audio application that generates an audio tone using a lookup table
+- The Application [audio_player_lab2](./audio_player_lab2/docs/readme.md) is an extension of application **audio_player_lab1**, it generates an audio tone using
   a text file stored in an SD Card
-- The Application "audio_player_lab3" is an extension of application "audio_player_lab2", it also generates an audio tone 
+- The Application [audio_player_lab3](./audio_player_lab3/docs/readme.md) is an extension of application **audio_player_lab2**, it also generates an audio tone 
   using a text file stored in an SD Card. Additionally, it adds the SD card reader support to load audio files
-- The Application "audio_player_lab4" is an extension of application "audio_player_lab3", implements an audio player by reading 
+- The Application [audio_player_lab4](./audio_player_lab4/docs/readme.md) is an extension of application **audio_player_lab3**, implements an audio player by reading 
   ".wav" audio files from the SD card
-- The Application "audio_player_lab5" is an extension of application "audio_player_lab4", implements graphical user interface 
+- The Application [audio_player_lab5](./audio_player_lab5/docs/readme.md) is an extension of application **audio_player_lab4**, implements graphical user interface 
   to the audio reader (storing audio files in the SD card) and player (playing ".wav" audio files from the SD card)
 
   
@@ -44,7 +50,7 @@ available for purchase from Microchip Direct.
  - [MPLAB X IDE v5.35](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.40](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.35](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
-<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with.* </span>  
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Setup:  
 - Connect the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit to the Host PC as a USB Device 
