@@ -36,6 +36,7 @@ nav_order: 4
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
+
  - [MPLAB Harmony v3 "csp" repo v3.5.0](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.0)
  - [MPLAB Harmony v3 "core" repo v3.5.0](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.0) 
  - [MPLAB Harmony v3 "dev_packs" repo v3.5.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0)  
@@ -45,6 +46,7 @@ nav_order: 4
  - [MPLAB XC32 Compiler v2.20](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.20](https://www.microchip.com/mplab/mplab-integrated-programming-environment)
  - Any Serial Terminal application like Tera Term terminal application.  
+
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
 
 ## Setup:
@@ -53,7 +55,7 @@ nav_order: 4
   micro-B DEBUG USB port to power and debug the SAM E70 Xplained Ultra Evaluation Kit.  
   <img src = "images/hardware_setup.png" width="425" height="370" align="middle">
 ### Hardware Modification:
-	- IO1 Xplained Pro features Microchip’s AT30TSE758 temperature sensor chip with an 8 kbit serial EEPROM. 
+- IO1 Xplained Pro features Microchip’s AT30TSE758 temperature sensor chip with an 8 kbit serial EEPROM. 
 	  The temperature sensor has two TWI addresses: one for the temperature sensor and one for the EEPROM. 
 	  The A2 address line of TWI must be soldered to 0. This is done to modify the address of the EEPROM 
 	  on the I/O1 Xplained Pro Extension Kit so that it does not conflict with the address of EEPROM on 
@@ -62,15 +64,16 @@ nav_order: 4
 	  <img src = "images/hardware_modification.png" width="300" height="200" align="middle"> 
 
 ## Programming binary/hex file:
-- If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
-	### Steps to program the hex file using MPLAB X IPE
-	- Open MPLAB X IPE
-	- Select Device has "ATSAME70Q21B"
-	- Power the SAM E70 Xplained Ultra Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port
-	- Once Power cable is connected, "EDBG" hardware tool is identified as a programmer
-	- Browse to hex file (getting_started_drv_hex_file.hex)
-	- Click on program button. The device gets programmed in sometime
-	- Follow the steps in "Running the Demo" section below
+If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
+
+### Steps to program the hex file using MPLAB X IPE
+- Open MPLAB X IPE
+- Select Device has "ATSAME70Q21B"
+- Power the SAM E70 Xplained Ultra Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port
+- Once Power cable is connected, "EDBG" hardware tool is identified as a programmer
+- Browse to hex file (getting_started_drv_hex_file.hex)
+- Click on program button. The device gets programmed in sometime
+- Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
 - Open the project (getting_started_drv\firmware\drivers_sam_e70_xult.X) in MPLAB X IDE
@@ -95,7 +98,7 @@ nav_order: 4
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. 
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821) 
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
-- The application is available on MPLAB Harmony v3 GitHub repository [reference_apps](https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_e70_xult/getting_started_drv)
+
 
 ## Revision: 
 - v1.0 released demo application

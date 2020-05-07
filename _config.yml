@@ -80,6 +80,10 @@ exclude:
   - "*.ld"
   - "*.jar"
   - "*.prj"
+  - "*.hex"
+  - "*.wav"
+  - "*.bmp"
+  - "*.txt"
 
 # Aux links for the upper right navigation
 aux_links:

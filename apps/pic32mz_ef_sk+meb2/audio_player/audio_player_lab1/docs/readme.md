@@ -38,6 +38,7 @@ available for purchase from Microchip Direct.
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
+
  - [MPLAB Harmony v3 "csp" repo v3.6.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.6.1)
  - [MPLAB Harmony v3 "dev_packs" repo v3.6.1](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.6.1)  
  - [MPLAB Harmony v3 "bsp" repository v3.6.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.6.1)
@@ -47,6 +48,7 @@ available for purchase from Microchip Direct.
  - [MPLAB X IDE v5.35](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.40](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.35](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
+
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Setup:  
@@ -87,7 +89,6 @@ If you are not interested in installing development tools. The pre-built binary/
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. 
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821) 
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
-- The application is available on MPLAB Harmony v3 GitHub repository [reference_apps](https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/pic32mz_ef_sk+meb2/audio_player/audio_player_lab1)
 	
 ## Revision: 
 - v1.0 released demo application

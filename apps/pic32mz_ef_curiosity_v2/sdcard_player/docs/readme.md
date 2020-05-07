@@ -51,6 +51,7 @@ nav_order: 4
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
+
  - [MPLAB Harmony v3 "csp" repo v3.5.2](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2)
  - [MPLAB Harmony v3 "core" repo v3.5.2](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2)          
  - [MPLAB Harmony v3 "dev_packs" repo v3.5.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0)  
@@ -61,6 +62,7 @@ nav_order: 4
  - [MPLAB X IDE v5.30](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.30](https://www.microchip.com/mplab/compilers)
  - [MPLAB X IPE v5.30](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
+
  <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
 
 ## Setup:
@@ -72,15 +74,16 @@ nav_order: 4
 <img src = "images/hardware_setup.jpg" width="650" height="450" align="middle">
 
 ## Programming binary/hex file:
-- If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
-	### Steps to program the hex file using MPLAB X IPE
-	- Open MPLAB X IPE
-	- Select Device has "PIC32MZ2048EFM144"
-	- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
-	- Once Power cable is connected, "Curiosity/Starter Kits PKOB4" hardware tool is identified as a programmer
-	- Browse to hex file (sdcard_player_hex_file.hex)
-	- Click on program button. The device gets programmed in sometime
-	- Follow the steps in "Running the Demo" section below
+If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
+
+### Steps to program the hex file using MPLAB X IPE
+- Open MPLAB X IPE
+- Select Device has "PIC32MZ2048EFM144"
+- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
+- Once Power cable is connected, "Curiosity/Starter Kits PKOB4" hardware tool is identified as a programmer
+- Browse to hex file (sdcard_player_hex_file.hex)
+- Click on program button. The device gets programmed in sometime
+- Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
 - Open the project (sdcard_player\firmware\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
@@ -111,8 +114,7 @@ nav_order: 4
    file under "sdcard_player\firmware\core_repo_patch" folder  
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. 
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821) 
-	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
-- The application is available on MPLAB Harmony v3 GitHub repository [reference_apps](https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/pic32mz_ef_curiosity_v2/sdcard_player)              
+	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)                
 
 ## Revision: 
 - v1.0 released demo application

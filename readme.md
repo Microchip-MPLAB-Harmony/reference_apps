@@ -45,7 +45,7 @@ The above application types serve as a reference source to evaluate solutions on
 | [usb](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps)            | Applications that demonstrate the capabilities of the MPLAB Harmony USB stack |
 | [net](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps)            | Applications that demonstrate the capabilities of the MPLAB Harmony TCP/IP stack. These applications use well-known protocols like TCP, UDP, HTTP, SMTP, etc |
 | [gfx](https://github.com/Microchip-MPLAB-Harmony/gfx/tree/master/apps)			| Quick start applications that demonstrates MPLAB Harmony Aria/Legato Graphics Libraries |
-| [gfx_aps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps)	| Non quick start applications that demonstrates MPLAB Harmony Aria/Legato Graphics Libraries |
+| [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps)	| Non quick start applications that demonstrates MPLAB Harmony Aria/Legato Graphics Libraries |
 | [audio](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps)		| Applications that demonstrates capabilities of the MPLAB Harmony audio offerings, drivers for hardware codecs that can be connected to development boards, audio decoders, etc |
 
 ### Note: 
@@ -54,9 +54,9 @@ The above is not an exhaustive list of all MPLAB Harmony 3 packages and correspo
 Refer to the following links for release notes and reference application information.
 
 - [Release Notes](./release_notes.md)
-- [MPLAB® Harmony License](mplab_harmony_license.md)
-- [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/SyedThaseemuddin/reference_apps/wiki)
-- [MPLAB® Harmony 3 Reference Applications Index](./docs/index.md)
+- [MPLAB® Harmony License](./mplab_harmony_license.md)
+- [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/Microchip-MPLAB-Harmony/reference_apps/wiki)
+- [MPLAB® Harmony 3 Reference Applications Index](./apps/readme.md)
 
 # Contents Summary
 
