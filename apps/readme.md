@@ -27,5 +27,5 @@ Peripheral/Technology specific applications are available in technology reposito
 - ### [SAMC21N Xplained Pro Evaluation Kit](./sam_c21n_xpro/readme.md)
 - ### [PIC32MK General Purpose (GP) Development Board](./pic32mk_gp_db/readme.md)
 - ### [Curiosity PIC32MX470 Development Board](./pic32mx470_curiosity/readme.md)
-- ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk+meb2/readme.md)
+- ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk_meb2/readme.md)
 
