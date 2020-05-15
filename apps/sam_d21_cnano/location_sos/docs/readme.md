@@ -1,8 +1,8 @@
 ---
-grand_parent: Reference Application Examples
-parent: SAM D21 Curiosity Nano Evaluation Kit Reference Application Examples
+grand_parent: Reference Applications
+parent: SAM D21 Curiosity Nano Evaluation Kit
 title: Location Tagged SOS
-nav_order: 4
+nav_order: 3
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

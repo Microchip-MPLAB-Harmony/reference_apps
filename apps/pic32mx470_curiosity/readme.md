@@ -1,13 +1,13 @@
 ---
-title: Curiosity PIC32MX470 Development Board Reference Application Examples
-parent: Reference Application Examples
+title: Curiosity PIC32MX470 Development Board
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 11
 ---
-# Curiosity PIC32MX470 Development Board Reference Application Examples
+# Curiosity PIC32MX470 Development Board
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MX470 Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320103).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MX470 Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320103).   
 
 * [Getting Started](./pic32mx470_getting_started/docs/readme.md)
 

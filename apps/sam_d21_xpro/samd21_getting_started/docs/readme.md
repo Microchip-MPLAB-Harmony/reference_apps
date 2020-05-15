@@ -1,6 +1,6 @@
 ---
-grand_parent: Reference Application Examples
-parent: SAM D21 Xplained Pro Evaluation Kit Reference Application Examples
+grand_parent: Reference Applications
+parent: SAM D21 Xplained Pro Evaluation Kit
 title: Getting Started
 nav_order: 4
 ---

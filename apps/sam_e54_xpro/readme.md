@@ -1,14 +1,14 @@
 ---
-title: SAM E54 Xplained Pro Evaluation Kit Reference Application Examples
-parent: Reference Application Examples
+title: SAM E54 Xplained Pro Evaluation Kit
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 7
 ---
 
-# SAM E54 Xplained Pro Evaluation Kit Reference Application Examples
+# SAM E54 Xplained Pro Evaluation Kit
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO).   
 
 * [Getting Started](./same54_getting_started/docs/readme.md)
 * [SleepWalking](./sleepwalking/docs/readme.md)

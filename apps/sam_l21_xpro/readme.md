@@ -1,13 +1,13 @@
 ---
-title: SAM L21 Xplained Pro Evaluation Kit Reference Application Examples
-parent: Reference Application Examples
+title: SAM L21 Xplained Pro Evaluation Kit
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 4
 ---
-# SAM L21 Xplained Pro Evaluation Kit Reference Application Examples
+# SAM L21 Xplained Pro Evaluation Kit
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b).   
 
 * [Low Power](./saml21_low_power/docs/readme.md)
 

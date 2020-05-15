@@ -1,8 +1,8 @@
 ---
-grand_parent: Reference Application Examples
-parent: SAM C21 Xplained Pro evaluation kit Reference Application Examples
+grand_parent: Reference Applications
+parent: SAM C21 Xplained Pro evaluation kit
 title: Low Power
-nav_order: 4
+nav_order: 1
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

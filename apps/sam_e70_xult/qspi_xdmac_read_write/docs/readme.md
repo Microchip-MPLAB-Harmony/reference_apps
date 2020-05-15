@@ -1,6 +1,6 @@
 ---
-grand_parent: Reference Application Examples
-parent: SAM E70 Xplained Ultra Evaluation Kit Reference Application Examples
+grand_parent: Reference Applications
+parent: SAM E70 Xplained Ultra Evaluation Kit
 title: XDMAC with QSPI
 nav_order: 4
 ---
@@ -85,7 +85,7 @@ If you are not interested in installing development tools. The pre-built binary/
 	- <img src = "images/waveform_overview.png" width="710" height="240" align="middle">
 	
 ## Comments:
-- Reference Application Note: [Using XDMAC with QSPI on CORTEX-M7 MCUs Using MPLAB Harmony v3](TBD)
+- Reference Application Note: [Using XDMAC with QSPI on CORTEX-M7 MCUs Using MPLAB Harmony v3](http://ww1.microchip.com/downloads/en/Appnotes/Using-XDMAC-with-QSPI-on-CORTEX-M7-MCUs-Using-MPLAB-Harmonyv3-DS00003466A.pdf)
 - Getting Started Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM E70 MCUs](https://microchipdeveloper.com/harmony3:same70-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821) 

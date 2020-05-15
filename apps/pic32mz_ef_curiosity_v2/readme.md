@@ -1,13 +1,13 @@
 ---
-title: Curiosity PIC32MZ EF 2.0 Development Board Reference Application Examples
-parent: Reference Application Examples
+title: Curiosity PIC32MZ EF 2.0 Development Board
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 2
 ---
-# Curiosity PIC32MZ EF 2.0 Development Board Reference Application Examples
+# Curiosity PIC32MZ EF 2.0 Development Board
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209).
+This folder contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209).
 
 
 * [Getting Started](./pic32mzef_getting_started/docs/readme.md)

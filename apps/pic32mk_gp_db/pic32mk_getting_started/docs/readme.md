@@ -1,8 +1,8 @@
 ---
 title: Getting Started
-grand_parent: Reference Application Examples
-parent: PIC32MK General Purpose (GP) Development Board Reference Application Examples
-nav_order: 4
+grand_parent: Reference Applications
+parent: PIC32MK General Purpose (GP) Development Board
+nav_order: 1
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

@@ -1,8 +1,8 @@
 ---
-grand_parent: Reference Application Examples
-parent: Curiosity PIC32MX470 Development Board Reference Application Examples
+grand_parent: Reference Applications
+parent: Curiosity PIC32MX470 Development Board
 title: Getting Started
-nav_order: 4
+nav_order: 1
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

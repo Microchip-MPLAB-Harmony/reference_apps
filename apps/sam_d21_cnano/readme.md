@@ -1,13 +1,13 @@
 ---
-title: SAM D21 Curiosity Nano Evaluation Kit Reference Application Examples
-parent: Reference Application Examples
+title: SAM D21 Curiosity Nano Evaluation Kit
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 1
 ---
-# SAM D21 Curiosity Nano Evaluation Kit Reference Application Examples
+# SAM D21 Curiosity Nano Evaluation Kit
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119).   
 
 * [Getting Started](./samd21n_getting_started/docs/readme.md)
 * [Fitness Tracker](./fitness_tracker/docs/readme.md)

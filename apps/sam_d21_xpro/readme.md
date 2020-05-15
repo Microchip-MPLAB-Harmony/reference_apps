@@ -1,9 +1,9 @@
 ---
-title: SAM D21 Xplained Pro Evaluation Kit Reference Application Examples
-parent: Reference Application Examples
+title: SAM D21 Xplained Pro Evaluation Kit
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 8
 ---
 # SAM D21 Xplained Pro Evaluation Kit Reference Application Examples
 

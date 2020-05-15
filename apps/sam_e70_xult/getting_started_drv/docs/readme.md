@@ -1,8 +1,8 @@
 ---
-grand_parent: Reference Application Examples
-parent: SAM E70 Xplained Ultra Evaluation Kit Reference Application Examples
+grand_parent: Reference Applications
+parent: SAM E70 Xplained Ultra Evaluation Kit
 title: Getting Started with Drivers
-nav_order: 4
+nav_order: 2
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

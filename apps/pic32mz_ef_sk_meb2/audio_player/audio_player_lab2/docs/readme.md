@@ -1,8 +1,8 @@
 ---
-grand_parent: Reference Application Examples
-parent: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II Reference Application Examples
+grand_parent: Reference Applications
+parent: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II
 title: Audio-Tone Application by reading the tone from a text file stored in an SD card
-nav_order: 4
+nav_order: 3
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

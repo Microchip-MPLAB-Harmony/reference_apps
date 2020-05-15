@@ -1,13 +1,13 @@
 ---
-title: PIC32MK General Purpose (GP) Development Board Reference Application Examples
-parent: Reference Application Examples
+title: PIC32MK General Purpose (GP) Development Board
+parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 10
 ---
-# PIC32MK General Purpose (GP) Development Board Reference Application Examples
+# PIC32MK General Purpose (GP) Development Board
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [PIC32MK General Purpose (GP) Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320106).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32MK General Purpose (GP) Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320106).   
 
 * [Getting Started](./pic32mk_getting_started/docs/readme.md)
 

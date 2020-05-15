@@ -1,6 +1,6 @@
 ---
-grand_parent: Reference Application Examples
-parent: Curiosity PIC32MZ EF 2.0 Development Board Reference Application Examples
+grand_parent: Reference Applications
+parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: USB MSD with Multiple Drives
 nav_order: 4
 ---

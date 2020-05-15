@@ -1,14 +1,14 @@
 ---
-title: SAM L10 Xplained Pro Evaluation Kit Reference Application Examples
-parent: Reference Application Examples
+title: SAM L10 Xplained Pro Evaluation Kit
+parent: Reference Applications
 has_children: true
 has_toc: false
 nav_order: 3
 ---
 
-# SAM L10 Xplained Pro Evaluation Kit Reference Application Examples
+# SAM L10 Xplained Pro Evaluation Kit
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204).   
 
 * [Getting Started](./saml10_getting_started/docs/readme.md)
 

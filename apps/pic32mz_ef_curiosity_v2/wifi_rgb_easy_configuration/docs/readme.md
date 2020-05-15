@@ -1,8 +1,8 @@
 ---
-grand_parent: Reference Application Examples
-parent: Curiosity PIC32MZ EF 2.0 Development Board Reference Application Examples
+grand_parent: Reference Applications
+parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: WiFi based RGB LED Control
-nav_order: 4
+nav_order: 6
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
