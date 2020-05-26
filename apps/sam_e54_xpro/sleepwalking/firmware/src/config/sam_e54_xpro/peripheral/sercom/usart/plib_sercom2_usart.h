@@ -69,10 +69,6 @@
 
 void SERCOM2_USART_Initialize( void );
 
-void SERCOM2_USART_Enable ( void );
-
-void SERCOM2_USART_Disable ( void );
-
 bool SERCOM2_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
 
 bool SERCOM2_USART_Write( void *buffer, const size_t size );

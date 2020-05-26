@@ -78,7 +78,6 @@ void PM_StandbyModeEnter( void )
     /* Wait till the voltage regulator low power mode is ready */
     while(!PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk);
     /* Wait for interrupt instruction execution */
-    __DSB();
     __WFI();
 }
 
