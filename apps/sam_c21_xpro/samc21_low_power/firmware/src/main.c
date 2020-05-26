@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define TEMP_SENSOR_SLAVE_ADDR                         0x004B
+#define TEMP_SENSOR_SLAVE_ADDR                         0x004F
 #define TEMP_SENSOR_REG_ADDR                           0x00
 
 // *****************************************************************************
