@@ -51,7 +51,6 @@ static void SYSCTRL_Initialize(void)
     {
         /* Waiting for the OSC8M Ready state */
     }
-
     SYSCTRL_REGS->SYSCTRL_OSC32K = 0x0;
 }
 

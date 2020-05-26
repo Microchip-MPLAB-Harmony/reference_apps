@@ -1,7 +1,7 @@
 /**
  * \brief Peripheral I/O description for SAMD21G17D
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-03-25T23:06:14Z */
+/* file generated from device description version 2019-11-25T06:54:13Z */
 #ifndef _SAMD21G17D_GPIO_H_
 #define _SAMD21G17D_GPIO_H_
 
@@ -65,44 +65,44 @@
 #define PIN_PB23                    ( 55  )  /**< Pin Number for PB23 */
 
 /* ========== Peripheral I/O masks ========== */
-#define PORT_PA00                   _UL_(1 << 0)    /**< PORT mask for PA00 */
-#define PORT_PA01                   _UL_(1 << 1)    /**< PORT mask for PA01 */
-#define PORT_PA02                   _UL_(1 << 2)    /**< PORT mask for PA02 */
-#define PORT_PA03                   _UL_(1 << 3)    /**< PORT mask for PA03 */
-#define PORT_PA04                   _UL_(1 << 4)    /**< PORT mask for PA04 */
-#define PORT_PA05                   _UL_(1 << 5)    /**< PORT mask for PA05 */
-#define PORT_PA06                   _UL_(1 << 6)    /**< PORT mask for PA06 */
-#define PORT_PA07                   _UL_(1 << 7)    /**< PORT mask for PA07 */
-#define PORT_PA08                   _UL_(1 << 8)    /**< PORT mask for PA08 */
-#define PORT_PA09                   _UL_(1 << 9)    /**< PORT mask for PA09 */
-#define PORT_PA10                   _UL_(1 << 10)   /**< PORT mask for PA10 */
-#define PORT_PA11                   _UL_(1 << 11)   /**< PORT mask for PA11 */
-#define PORT_PA12                   _UL_(1 << 12)   /**< PORT mask for PA12 */
-#define PORT_PA13                   _UL_(1 << 13)   /**< PORT mask for PA13 */
-#define PORT_PA14                   _UL_(1 << 14)   /**< PORT mask for PA14 */
-#define PORT_PA15                   _UL_(1 << 15)   /**< PORT mask for PA15 */
-#define PORT_PA16                   _UL_(1 << 16)   /**< PORT mask for PA16 */
-#define PORT_PA17                   _UL_(1 << 17)   /**< PORT mask for PA17 */
-#define PORT_PA18                   _UL_(1 << 18)   /**< PORT mask for PA18 */
-#define PORT_PA19                   _UL_(1 << 19)   /**< PORT mask for PA19 */
-#define PORT_PA20                   _UL_(1 << 20)   /**< PORT mask for PA20 */
-#define PORT_PA21                   _UL_(1 << 21)   /**< PORT mask for PA21 */
-#define PORT_PA22                   _UL_(1 << 22)   /**< PORT mask for PA22 */
-#define PORT_PA23                   _UL_(1 << 23)   /**< PORT mask for PA23 */
-#define PORT_PA24                   _UL_(1 << 24)   /**< PORT mask for PA24 */
-#define PORT_PA25                   _UL_(1 << 25)   /**< PORT mask for PA25 */
-#define PORT_PA27                   _UL_(1 << 27)   /**< PORT mask for PA27 */
-#define PORT_PA28                   _UL_(1 << 28)   /**< PORT mask for PA28 */
-#define PORT_PA30                   _UL_(1 << 30)   /**< PORT mask for PA30 */
-#define PORT_PA31                   _UL_(1 << 31)   /**< PORT mask for PA31 */
-#define PORT_PB02                   _UL_(1 << 2)    /**< PORT mask for PB02 */
-#define PORT_PB03                   _UL_(1 << 3)    /**< PORT mask for PB03 */
-#define PORT_PB08                   _UL_(1 << 8)    /**< PORT mask for PB08 */
-#define PORT_PB09                   _UL_(1 << 9)    /**< PORT mask for PB09 */
-#define PORT_PB10                   _UL_(1 << 10)   /**< PORT mask for PB10 */
-#define PORT_PB11                   _UL_(1 << 11)   /**< PORT mask for PB11 */
-#define PORT_PB22                   _UL_(1 << 22)   /**< PORT mask for PB22 */
-#define PORT_PB23                   _UL_(1 << 23)   /**< PORT mask for PB23 */
+#define PORT_PA00                   (_U_(1) << 0)   /**< PORT mask for PA00 */
+#define PORT_PA01                   (_U_(1) << 1)   /**< PORT mask for PA01 */
+#define PORT_PA02                   (_U_(1) << 2)   /**< PORT mask for PA02 */
+#define PORT_PA03                   (_U_(1) << 3)   /**< PORT mask for PA03 */
+#define PORT_PA04                   (_U_(1) << 4)   /**< PORT mask for PA04 */
+#define PORT_PA05                   (_U_(1) << 5)   /**< PORT mask for PA05 */
+#define PORT_PA06                   (_U_(1) << 6)   /**< PORT mask for PA06 */
+#define PORT_PA07                   (_U_(1) << 7)   /**< PORT mask for PA07 */
+#define PORT_PA08                   (_U_(1) << 8)   /**< PORT mask for PA08 */
+#define PORT_PA09                   (_U_(1) << 9)   /**< PORT mask for PA09 */
+#define PORT_PA10                   (_U_(1) << 10)  /**< PORT mask for PA10 */
+#define PORT_PA11                   (_U_(1) << 11)  /**< PORT mask for PA11 */
+#define PORT_PA12                   (_U_(1) << 12)  /**< PORT mask for PA12 */
+#define PORT_PA13                   (_U_(1) << 13)  /**< PORT mask for PA13 */
+#define PORT_PA14                   (_U_(1) << 14)  /**< PORT mask for PA14 */
+#define PORT_PA15                   (_U_(1) << 15)  /**< PORT mask for PA15 */
+#define PORT_PA16                   (_U_(1) << 16)  /**< PORT mask for PA16 */
+#define PORT_PA17                   (_U_(1) << 17)  /**< PORT mask for PA17 */
+#define PORT_PA18                   (_U_(1) << 18)  /**< PORT mask for PA18 */
+#define PORT_PA19                   (_U_(1) << 19)  /**< PORT mask for PA19 */
+#define PORT_PA20                   (_U_(1) << 20)  /**< PORT mask for PA20 */
+#define PORT_PA21                   (_U_(1) << 21)  /**< PORT mask for PA21 */
+#define PORT_PA22                   (_U_(1) << 22)  /**< PORT mask for PA22 */
+#define PORT_PA23                   (_U_(1) << 23)  /**< PORT mask for PA23 */
+#define PORT_PA24                   (_U_(1) << 24)  /**< PORT mask for PA24 */
+#define PORT_PA25                   (_U_(1) << 25)  /**< PORT mask for PA25 */
+#define PORT_PA27                   (_U_(1) << 27)  /**< PORT mask for PA27 */
+#define PORT_PA28                   (_U_(1) << 28)  /**< PORT mask for PA28 */
+#define PORT_PA30                   (_U_(1) << 30)  /**< PORT mask for PA30 */
+#define PORT_PA31                   (_U_(1) << 31)  /**< PORT mask for PA31 */
+#define PORT_PB02                   (_U_(1) << 2)   /**< PORT mask for PB02 */
+#define PORT_PB03                   (_U_(1) << 3)   /**< PORT mask for PB03 */
+#define PORT_PB08                   (_U_(1) << 8)   /**< PORT mask for PB08 */
+#define PORT_PB09                   (_U_(1) << 9)   /**< PORT mask for PB09 */
+#define PORT_PB10                   (_U_(1) << 10)  /**< PORT mask for PB10 */
+#define PORT_PB11                   (_U_(1) << 11)  /**< PORT mask for PB11 */
+#define PORT_PB22                   (_U_(1) << 22)  /**< PORT mask for PB22 */
+#define PORT_PB23                   (_U_(1) << 23)  /**< PORT mask for PB23 */
 
 /* ========== PORT definition for AC peripheral ========== */
 #define PIN_PA04B_AC_AIN0                          (4L)         
