@@ -1,7 +1,7 @@
 /**
  * \brief Component description for DSU
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-03-25T23:06:20Z */
+/* file generated from device description version 2019-11-25T06:54:16Z */
 #ifndef _SAMD21_DSU_COMPONENT_H_
 #define _SAMD21_DSU_COMPONENT_H_
 
