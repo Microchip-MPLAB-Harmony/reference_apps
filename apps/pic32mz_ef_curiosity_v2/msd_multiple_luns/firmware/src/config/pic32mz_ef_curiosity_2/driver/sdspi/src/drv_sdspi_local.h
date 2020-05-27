@@ -154,8 +154,22 @@
     None.
 */
 
-#define _DRV_SDSPI_CSD_READ_SIZE                                            19
+#define _DRV_SDSPI_CSD_READ_SIZE                                            20
 
+// *****************************************************************************
+/* No of bytes to be read for SD card CID.
+
+  Summary:
+    Number of bytes to be read to get the SD card CID.
+
+  Description:
+    This macro holds number of bytes to be read to get the SD card CID.
+
+
+  Remarks:
+    None.
+*/
+#define _DRV_SDSPI_CID_READ_SIZE                                            20
 
 // *****************************************************************************
 /* SD card V2 device type.
@@ -441,6 +455,7 @@ typedef enum
 
 typedef enum
 {
+
     DRV_SDSPI_TASK_START_POLLING_TIMER,
 
     DRV_SDSPI_TASK_WAIT_POLLING_TIMER_EXPIRE,
@@ -728,6 +743,10 @@ typedef enum
     /* Check whether the card has been detached. */
     DRV_SDSPI_CMD_DETECT_CHECK_FOR_DETACH,
 
+    DRV_SDSPI_CMD_DETECT_CHECK_FOR_DETACH_READ_CID_DATA,
+
+    DRV_SDSPI_CMD_DETECT_CHECK_FOR_DETACH_PROCESS_CID_DATA,
+
     DRV_SDSPI_CMD_DETECT_IDLE_STATE,
 
 } DRV_SDSPI_CMD_DETECT_STATES;
@@ -824,6 +843,15 @@ typedef enum
 
     /* Process the CSD register data */
     DRV_SDSPI_INIT_PROCESS_CSD,
+
+    /* Issue command to read the card's Card Identification Data register */
+    DRV_SDSPI_INIT_READ_CID,
+
+    /* Read the CID data */
+    DRV_SDSPI_INIT_READ_CID_DATA,
+
+    /* Process the CID register data */
+    DRV_SDSPI_INIT_PROCESS_CID,
 
     /* Issue command to turn off the CRC */
     DRV_SDSPI_INIT_TURN_OFF_CRC,
@@ -1402,6 +1430,9 @@ typedef struct
     /* Pointer to the CSD data of the SD Card */
     uint8_t*                                        pCsdData;
 
+    /* Pointer to the CID data of the SD Card */
+    uint8_t*                                        pCidData;
+
     /* Speed at which SD card communication should happen */
     uint32_t                                        sdcardSpeedHz;
 
@@ -1434,6 +1465,7 @@ typedef struct
     /* Linked list of buffer objects */
     uintptr_t                                       bufferObjList;
 
+
     /* PLIB API list that will be used by the driver to access the hardware */
     const DRV_SDSPI_PLIB_INTERFACE*                 spiPlib;
 
@@ -1442,35 +1474,6 @@ typedef struct
     const uint32_t*                                 remapClockPolarity;
 
     const uint32_t*                                 remapClockPhase;
-
-    SYS_PORT_PIN                                    chipSelectPin;
-
-    SYS_PORT_PIN                                    writeProtectPin;
-
-    volatile DRV_SDSPI_SPI_TRANSFER_STATUS          spiTransferStatus;
-
-    /* This variable holds the current state of the DRV_SDSPI_Task */
-    DRV_SDSPI_TASK_STATES                           taskState;
-
-    DRV_SDSPI_BUFFER_IO_TASK_STATES                 nextTaskState;
-
-    /* This variable holds the current state of the DRV_SDSPI_Task */
-    DRV_SDSPI_BUFFER_IO_TASK_STATES                 taskBufferIOState;
-
-    /* Different stages of initialization */
-    DRV_SDSPI_CMD_DETECT_STATES                     cmdDetectState;
-
-    /* Different states in sending a command */
-    DRV_SDSPI_CMD_STATES                            cmdState;
-
-    /* Different stages in media initialization */
-    DRV_SDSPI_INIT_STATE                            mediaInitState;
-
-    /* SDCARD driver state: Command/status/idle states */
-    _DRV_SDSPI_TASK_STATE                           sdState;
-
-    /* Tracks the command response */
-    DRV_SDSPI_RESPONSE_PACKETS                      cmdResponse;
 
     /* Transmit DMA Channel */
     SYS_DMA_CHANNEL                                 txDMAChannel;
@@ -1502,6 +1505,35 @@ typedef struct
     /* Buffer for transmitting/receiving dummy data */
     uint8_t*                                        pDummyDataBuffer;
 
+
+    SYS_PORT_PIN                                    chipSelectPin;
+
+    SYS_PORT_PIN                                    writeProtectPin;
+
+    volatile DRV_SDSPI_SPI_TRANSFER_STATUS          spiTransferStatus;
+
+    /* This variable holds the current state of the DRV_SDSPI_Task */
+    DRV_SDSPI_TASK_STATES                           taskState;
+
+    DRV_SDSPI_BUFFER_IO_TASK_STATES                 nextTaskState;
+
+    /* This variable holds the current state of the DRV_SDSPI_Task */
+    DRV_SDSPI_BUFFER_IO_TASK_STATES                 taskBufferIOState;
+
+    /* Different stages of initialization */
+    DRV_SDSPI_CMD_DETECT_STATES                     cmdDetectState;
+
+    /* Different states in sending a command */
+    DRV_SDSPI_CMD_STATES                            cmdState;
+
+    /* Different stages in media initialization */
+    DRV_SDSPI_INIT_STATE                            mediaInitState;
+
+    /* SDCARD driver state: Command/status/idle states */
+    _DRV_SDSPI_TASK_STATE                           sdState;
+
+    /* Tracks the command response */
+    DRV_SDSPI_RESPONSE_PACKETS                      cmdResponse;
 
     /* Mutex to protect access to SDCard */
     OSAL_MUTEX_DECLARE(transferMutex);

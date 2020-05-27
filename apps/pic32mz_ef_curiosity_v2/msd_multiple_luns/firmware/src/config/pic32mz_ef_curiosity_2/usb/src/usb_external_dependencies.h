@@ -58,7 +58,8 @@
 	#define SYS_DEBUG_PRINT(level, format, ...) 
 	#define SYS_DEBUG_MESSAGE(a,b, ...)     
 	#define SYS_DEBUG(a,b)
-
+#else
+    #include "system/debug/sys_debug.h"
 #endif 
 #endif 
 /*******************************************************************************

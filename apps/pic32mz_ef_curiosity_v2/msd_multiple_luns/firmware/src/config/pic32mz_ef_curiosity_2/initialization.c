@@ -58,7 +58,7 @@
 /*** DEVCFG0 ***/
 #pragma config DEBUG =      OFF
 #pragma config JTAGEN =     OFF
-#pragma config ICESEL =     ICS_PGx2
+#pragma config ICESEL =     ICS_PGx1
 #pragma config TRCEN =      OFF
 #pragma config BOOTISA =    MIPS32
 #pragma config FECCCON =    OFF_UNLOCKED
@@ -151,6 +151,7 @@ const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
 const uint32_t drvSDSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000400 };
 const uint32_t drvSDSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
 const uint32_t drvSDSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
+
 /* SDSPI Driver Initialization Data */
 const DRV_SDSPI_INIT drvSDSPI0InitData =
 {
@@ -162,6 +163,7 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     .remapClockPolarity     = drvSDSPI0remapClockPolarity,
 
     .remapClockPhase        = drvSDSPI0remapClockPhase,
+
 
     /* SDSPI Number of clients */
     .numClients             = DRV_SDSPI_CLIENTS_NUMBER_IDX0,
@@ -178,7 +180,7 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     .chipSelectPin          = DRV_SDSPI_CHIP_SELECT_PIN_IDX0,
 
     .sdcardSpeedHz          = DRV_SDSPI_SPEED_HZ_IDX0,
-    
+
     .pollingIntervalMs      = DRV_SDSPI_POLLING_INTERVAL_MS_IDX0,
 
     .writeProtectPin        = SYS_PORT_PIN_NONE,
@@ -293,11 +295,12 @@ const DRV_USBHS_INIT drvUSBInit =
 
 const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)CORETIMER_CallbackSet,
-    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)CORETIMER_CounterGet,
-    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)CORETIMER_FrequencyGet,
-    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)CORETIMER_CompareSet,
     .timerStart = (SYS_TIME_PLIB_START)CORETIMER_Start,
-    .timerStop = (SYS_TIME_PLIB_STOP)CORETIMER_Stop 
+    .timerStop = (SYS_TIME_PLIB_STOP)CORETIMER_Stop ,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)CORETIMER_FrequencyGet,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)NULL,
+    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)CORETIMER_CompareSet,
+    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)CORETIMER_CounterGet,
 };
 
 const SYS_TIME_INIT sysTimeInitData =
@@ -307,6 +310,14 @@ const SYS_TIME_INIT sysTimeInitData =
 };
 
 // </editor-fold>
+
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local initialization functions
+// *****************************************************************************
+// *****************************************************************************
 
 
 
@@ -327,16 +338,21 @@ void SYS_Initialize ( void* data )
 
   
     CLK_Initialize();
-	GPIO_Initialize();
+    
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 2;
     CFGCONbits.ECCCON = 3;
 
 
+
+	GPIO_Initialize();
+
     DMAC_Initialize();
 
 	BSP_Initialize();
+    NVM_Initialize();
+
     CORETIMER_Initialize();
 	SPI2_Initialize();
 
