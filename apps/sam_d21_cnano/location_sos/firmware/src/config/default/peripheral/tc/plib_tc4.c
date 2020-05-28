@@ -190,7 +190,7 @@ void TC4_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context )
 void TC4_TimerInterruptHandler( void )
 {
     TC_TIMER_STATUS status;
-    status = TC4_REGS->COUNT16.TC_INTFLAG;
+    status = (TC_TIMER_STATUS) (TC4_REGS->COUNT16.TC_INTFLAG);
     /* Clear interrupt flags */
     TC4_REGS->COUNT16.TC_INTFLAG = TC_INTFLAG_Msk;
     if(TC4_CallbackObject.callback != NULL)

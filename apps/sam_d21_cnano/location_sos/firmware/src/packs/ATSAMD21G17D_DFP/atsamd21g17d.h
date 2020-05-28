@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAMD21G17D
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-03-25T23:06:14Z */
+/* file generated from device description version 2019-11-25T06:54:13Z */
 #ifndef _SAMD21G17D_H_
 #define _SAMD21G17D_H_
 
@@ -483,7 +483,7 @@ void TCC3_Handler                  ( void );
 /* ************************************************************************** */
 /**  DEVICE SIGNATURES FOR SAMD21G17D                                         */
 /* ************************************************************************** */
-#define DSU_DID                        _UL_(0X10012693)
+#define CHIP_DSU_DID                   _UL_(0X10012693)
 
 /* ************************************************************************** */
 /**  ELECTRICAL DEFINITIONS FOR SAMD21G17D                                    */

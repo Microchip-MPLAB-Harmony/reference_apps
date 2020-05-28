@@ -43,5 +43,6 @@
 
 #include "atsamd21g17d.h"
 #include "device_cache.h"
+#include "atsamd21g17d_compat.h"
 #include "toolchain_specifics.h"
 

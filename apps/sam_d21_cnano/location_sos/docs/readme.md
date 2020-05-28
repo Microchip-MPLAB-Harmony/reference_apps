@@ -12,30 +12,31 @@ nav_order: 3
 
 ## Description:
 
-> The application demonstrates the solution based on Microchip products in a personal emergency or 
-    in a situation to communicates a distress signal by sending out a location-tagged SOS SMS. The 
-    Mikroelektronika GSM-GPS click board, used in this application, contains a hardware module that 
-    combines the GSM/GPRS and GPS functionality used for tracking the device and sending out the 
+> The application demonstrates the solution based on Microchip products in a personal emergency or
+    in a situation to communicates a distress signal by sending out a location-tagged SOS SMS. The
+    Mikroelektronika GSM-GPS click board, used in this application, contains a hardware module that
+    combines the GSM/GPRS and GPS functionality used for tracking the device and sending out the
     emergency or distress signal. The MCU is interfaced with the GPS module over the UART interface
     to perform the acquisition and tracking of GPS coordinates. It registers the event callbacks for
     location tracking of the GPS receiver.
-    
+
 > The application arranges the GSM/GPRS module for sending SMS to a configured mobile phone number.
     Once the GPS position is available, the application sends the following location tagged SOS SMS to
     the configured mobile phone number when emergency switch is pressed.
+
     SAM D21 Curiosity Nano Location tagged SOS.  
     Please attend emergency at:  
     Latitude : xx.xxxxxx  
     Longitude : xx.xxxxxx  
     Altitude : xx.xxxxxx
-    
+
 ## Modules/Technology Used:
 
 - Peripheral Modules      
 	- Timer
 	- EIC
 	- NVM
-- Driver Modules	
+- Driver Modules
 	- USART Driver
 - STDIO Library
 
@@ -49,16 +50,15 @@ nav_order: 3
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.5.2](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2)
- - [MPLAB Harmony v3 "core" repo v3.5.2](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2)          
+ - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
+ - [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2)          
  - [MPLAB Harmony v3 "dev_packs" repo v3.5.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0)  
  - [MPLAB Harmony v3 "mhc" repo v3.3.3](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.3)    
  - MPLAB Harmony Configurator Plugin v3.4.0
  - [MPLAB X IDE v5.30](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.30](https://www.microchip.com/mplab/compilers)
- - [MPLAB X IPE v5.30](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
 
-<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup 1: Uses Separate power supplies for SAMD21 Curiosity Nano and GSM-GPS Click
 - Mount SAM D21 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board
@@ -75,16 +75,20 @@ nav_order: 3
 - Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105).  
 <img src = "images/location_sos_hardware_setup2.jpg" width="600" height="500" align="middle">
 
-## Programming binary/hex file:
-If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
+## Programming hex file:
+The pre-built hex file can be programmed by following the below steps.  
 
-### Steps to program the hex file using MPLAB X IPE
-- Open MPLAB X IPE
+### Steps to program the hex file
+- Open MPLAB X IDE
+- Close all existing projects in IDE, if any project is opened.
+- Go to File -> Import -> Hex/ELF File
+- In the "Import Image File" window, Step 1 - Create Prebuilt Project, Click the "Browse" button to select the prebuilt hex file.
 - Select Device has "ATSAMD21G17D"
-- Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
-- Once Power cable is connected, "PKOB nano" hardware tool is identified as a programmer
-- Browse to hex file (location_sos_hex_file.hex)
-- Click on program button. The device gets programmed in sometime
+- Ensure the proper tool is selected under "Hardware Tool"
+- Click on Next button
+- In the "Import Image File" window, Step 2 - Select Project Name and Folder, select appropriate project name and folder
+- Click on Finish button
+- In MPLAB X IDE, click on "Make and Program Device" Button. The device gets programmed in sometime
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
@@ -106,34 +110,33 @@ If you are not interested in installing development tools. The pre-built binary/
 ### Note:
 - The GPS on the GSM-GPS click has a one second Time-To-First-Fix (TTFF) from a hot start and 30 seconds from cold start
 - If the position is not achieved after 1 minute, then:
-	- It could be because of non-availability of GPS signals. Make sure that you have placed 
+	- It could be because of non-availability of GPS signals. Make sure that you have placed
 	  the GPS antenna such that it can receive the signals from the GPS satellites. Try placing
       it under the open sky to be able to receive signals
 	- After using the option above, if the device is still not receiving the position indication,
       try resetting the board by unplugging the power cable of SAM D21 Curiosity Nano board and
-      turn off and turn on the battery supply by sliding SW1 switch on Curiosity Nano Base or unplug 
+      turn off and turn on the battery supply by sliding SW1 switch on Curiosity Nano Base or unplug
       the power cable of GSM-GPS Click board
-	- Once the GPS position is achieved, user can press switch SW0 on SAM D21 Curiosity Nano board 
-      to send SMS to configured mobile number with GPS location.
-	- GSM module sends below message to configured mobile number
+- Once the GPS position is achieved, user can press switch SW0 on SAM D21 Curiosity Nano board to send SMS to configured mobile number with GPS location.
+- GSM module sends below message to configured mobile number
       SAM D21 Curiosity Nano Location tagged SOS  
       Please attend emergency at:  
       Latitude : xx.xxxxxx  
       Longitude : xx.xxxxxx  
       Altitude : xx.xxxxxx    
       http://maps.google.com/maps?q=loc:xx.xxxxxx(Latitude),xx.xxxxxx(Longitude)          
-- User can change the mobile number by long pressing (more than 4 seconds) switch SW0 on SAM D21 
+- User can change the mobile number by long pressing (more than 4 seconds) switch SW0 on SAM D21
    Curiosity Nano board. An option will be displayed on serial terminal to update the cell phone number
-- Updated cell phone number is stored in NVM memory, updated number will be used further to send SMS, 
+- Updated cell phone number is stored in NVM memory, updated number will be used further to send SMS,
    even after power reset
-- If GPS position is not achieved, short pressing SW0 on SAM D21 Curiosity Nano board sends a blank SMS 
+- If GPS position is not achieved, short pressing SW0 on SAM D21 Curiosity Nano board sends a blank SMS
    without GPS location.
 
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs](https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module)
-- This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. 
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821) 
+- This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
-               
-## Revision: 
+
+## Revision:
 - v1.0 released demo application
