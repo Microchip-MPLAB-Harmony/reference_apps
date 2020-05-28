@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAME54P20A
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-04-09T10:12:25Z */
+/* file generated from device description version 2020-03-12T17:27:04Z */
 #ifndef _SAME54P20A_H_
 #define _SAME54P20A_H_
 
@@ -387,6 +387,12 @@ typedef struct _DeviceVectors
   void* pfnSDHC1_Handler;                        /* 136 SD/MMC Host Controller (SDHC1) */
 } DeviceVectors;
 
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
+#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
+#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
+#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
+
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -541,6 +547,12 @@ void QSPI_Handler                  ( void );
 void SDHC0_Handler                 ( void );
 void SDHC1_Handler                 ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
+#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
+#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
+
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /*
@@ -588,12 +600,12 @@ void SDHC1_Handler                 ( void );
 #include "component/gclk.h"
 #include "component/gmac.h"
 #include "component/hmatrixb.h"
-#include "component/icm.h"
 #include "component/i2s.h"
+#include "component/icm.h"
 #include "component/mclk.h"
 #include "component/nvmctrl.h"
-#include "component/oscctrl.h"
 #include "component/osc32kctrl.h"
+#include "component/oscctrl.h"
 #include "component/pac.h"
 #include "component/pcc.h"
 #include "component/pdec.h"
@@ -893,7 +905,7 @@ void SDHC1_Handler                 ( void );
 /* ************************************************************************** */
 /**  DEVICE SIGNATURES FOR SAME54P20A                                         */
 /* ************************************************************************** */
-#define DSU_DID                        _UL_(0X61840300)
+#define CHIP_DSU_DID                   _UL_(0X61840300)
 
 /* ************************************************************************** */
 /**  ELECTRICAL DEFINITIONS FOR SAME54P20A                                    */

@@ -1,6 +1,26 @@
+/*******************************************************************************
+  Device compatibility Header File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    atsame54p20a_compat.h
+
+  Summary:
+    This file includes deprecated macro names that are retained for the purpose
+    of compatibility with Harmony 3 Middleware. Users are discouraged from using
+    macros defined in this file. Recommend to use macros defined in the device
+    header file instead.
+
+  Description:
+    None
+
+*******************************************************************************/
+
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -23,34 +43,22 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#include <stdio.h>
-#include <stdarg.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <device.h> /* for ARM CMSIS __BKPT() */
+#ifndef ATSAME54P20A_COMPAT_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#ifndef DEVICE_DESC_BANK_NUMBER
+#define DEVICE_DESC_BANK_NUMBER USB_DEVICE_DESC_BANK_NUMBER
+#endif //DEVICE_DESC_BANK_NUMBER
 
-/* Harmony specific
- * We implement only the syscalls we want over the stubs provided by libpic32c
- */
-extern void _exit(int status);
+#ifndef HOST_DESC_BANK_NUMBER
+#define HOST_DESC_BANK_NUMBER USB_HOST_DESC_BANK_NUMBER
+#endif //HOST_DESC_BANK_NUMBER
 
-extern void _exit(int status)
-{
-    /* Software breakpoint */
-#ifdef __DEBUG
-    __BKPT(0);
-#endif
+#ifndef DEVICE_ENDPOINT_NUMBER
+#define DEVICE_ENDPOINT_NUMBER USB_DEVICE_ENDPOINT_NUMBER
+#endif //DEVICE_ENDPOINT_NUMBER
 
-    /* halt CPU */
-    while (1)
-    {
-    }
-}
+#ifndef HOST_PIPE_NUMBER
+#define HOST_PIPE_NUMBER USB_HOST_PIPE_NUMBER
+#endif //HOST_PIPE_NUMBER
 
-#ifdef __cplusplus
-}
-#endif
+#endif //ATSAME54P20A_COMPAT_H

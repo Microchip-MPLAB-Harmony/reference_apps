@@ -41,10 +41,10 @@
 #include "plib_evsys.h"
 
 
+
 void EVSYS_Initialize( void )
 {
 	/*Event Channel User Configuration*/
 
 }
-
 
