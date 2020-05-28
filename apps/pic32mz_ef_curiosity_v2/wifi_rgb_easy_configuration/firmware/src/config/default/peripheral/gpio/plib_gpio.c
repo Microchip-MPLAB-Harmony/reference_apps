@@ -96,7 +96,7 @@ void GPIO_Initialize ( void )
     IEC3SET = _IEC3_CNKIE_MASK;
 
 
-    /* unlock system for PPS configuration */
+    /* Unlock system for PPS configuration */
     SYSKEY = 0x00000000;
     SYSKEY = 0xAA996655;
     SYSKEY = 0x556699AA;
