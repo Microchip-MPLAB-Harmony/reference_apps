@@ -2,7 +2,7 @@
   USB Host Initialization File
 
   File Name:
-    usb_host_intit_data.c
+    usb_host_init_data.c
 
   Summary:
     This file contains source code necessary to initialize USB Host Stack.
@@ -48,7 +48,7 @@ const USB_HOST_TPL_ENTRY USBTPList[1] =
 
 const USB_HOST_HCD hcdTable = 
 {
-	/* Index of the USB Driver used by the Host Layer */
+    /* Index of the USB Driver used by the Host Layer */
     .drvIndex = DRV_USBHS_INDEX_0,
 
     /* Pointer to the USB Driver Functions. */

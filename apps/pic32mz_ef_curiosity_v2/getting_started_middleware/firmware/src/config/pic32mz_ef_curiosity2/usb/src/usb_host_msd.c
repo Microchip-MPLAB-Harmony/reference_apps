@@ -282,18 +282,27 @@ void _USB_HOST_MSD_TransferTasks
                          * meaningful.
                          * */
 
-                        if(((msdCSW->bCSWStatus == USB_MSD_CSW_STATUS_GOOD) || (msdCSW->bCSWStatus == USB_MSD_CSW_STATUS_FAIL)) &&
-                                (msdCSW->dCSWDataResidue <= msdInstanceInfo->msdCBW->dCBWDataTransferLength))
+                        if(((msdCSW->bCSWStatus == USB_MSD_CSW_STATUS_GOOD) || (msdCSW->bCSWStatus == USB_MSD_CSW_STATUS_FAIL)))
                         {
                             /* This means the CSW is meaningful. We must let the
                              * MSD client know if the command has failed or
                              * passed. This is know in the bCSWStatus of CSW. */
-                            processedBytes = msdInstanceInfo->msdCBW->dCBWDataTransferLength - msdCSW->dCSWDataResidue;
+                            if ( (msdCSW->dCSWDataResidue <= msdInstanceInfo->msdCBW->dCBWDataTransferLength) )
+                            {   
+                                processedBytes = msdInstanceInfo->msdCBW->dCBWDataTransferLength - msdCSW->dCSWDataResidue;
+                            }
+                            else
+                            {
+                                /* The dCSWDataResidue shall not exceed the value sent in the dCBWDataTransfer length */
+                                processedBytes = msdInstanceInfo->msdCBW->dCBWDataTransferLength ;
+                            }
                             transferIsDone = true;
                             msdResult = msdCSW->bCSWStatus;
+                            SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r CSW: bCSWStatus = 0x%X ", msdCSW->bCSWStatus);
                         }
                         else if (msdCSW->bCSWStatus == USB_MSD_CSW_STATUS_PHASE_ERROR)
                         {
+                            SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r CSW is valid but a phase error has occurred ");
                             /* This means the CSW is valid but a phase error has
                              * occurred. Reset recovery should be performed.
                              * This is done in the transfer error tasks routine. */
@@ -311,6 +320,7 @@ void _USB_HOST_MSD_TransferTasks
                              * meaningful. Because this is something we cannot
                              * handle, we end the transfer and move the device
                              * to error state. */
+                            SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r CSW The specification does not define how the host must react in such a case ");
 
                             msdInstanceInfo->msdErrorCode = USB_HOST_MSD_ERROR_CODE_FAILED_BOT_TRANSFER;
                             msdInstanceInfo->msdState = USB_HOST_MSD_STATE_ERROR;
@@ -327,9 +337,9 @@ void _USB_HOST_MSD_TransferTasks
                          * the BOT specification. */
 
                         SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r Problem CSW");
-                        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r Sig = 0x53425355 = 0x%X", msdCSW->dCSWSignature);
-                        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r Tag = 0xDD1331DD = 0x%X", msdCSW->dCSWTag);
-                        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r size(13) = %d", size);
+                        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r Sig = 0x53425355 = 0x%X", (int)msdCSW->dCSWSignature);
+                        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r Tag = 0xDD1331DD = 0x%X", (int)msdCSW->dCSWTag);
+                        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r size(13) = %d", (int)size);
                         
                         msdInstanceInfo->transferState = USB_HOST_MSD_TRANSFER_STATE_ERROR;
                         msdInstanceInfo->transferErrorTaskState = USB_HOST_MSD_TRANSFER_ERROR_STATE_RESET_RECOVERY;
@@ -366,7 +376,7 @@ void _USB_HOST_MSD_TransferTasks
                     /* Figure 2 of the BOT specification states that the host
                      * should try to do an endpoint stall clear on bulk error.
                      * */
-           
+                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r CSW Figure 2 of the BOT specification");
                     msdInstanceInfo->transferState = USB_HOST_MSD_TRANSFER_STATE_ERROR;
                     msdInstanceInfo->transferErrorTaskState = USB_HOST_MSD_TRANSFER_ERROR_STATE_CSW_STALLED;
                     _USB_HOST_MSD_ERROR_CALLBACK(msdInstanceIndex, USB_HOST_MSD_ERROR_CODE_CSW_UNKNOWN_ERROR);
@@ -1714,6 +1724,7 @@ USB_HOST_MSD_RESULT USB_HOST_MSD_Transfer
                     /* This means the device is in an error state. We should not
                      * accept the transfer request*/
                     
+                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r msdInstanceInfo->msdState = 0x%X \n\r", msdInstanceInfo->msdState );
                     SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\r\nUSB Host MSD: MSD Instance %d is in error state. Cannot schedule BOT.", msdInstanceIndex);
                     OSAL_MUTEX_Unlock(&(msdInstanceInfo->mutexMSDInstanceObject));
                     _USB_HOST_MSD_ERROR_CALLBACK(msdInstanceIndex, USB_HOST_MSD_ERROR_CODE_FAILED_BOT_TRANSFER);

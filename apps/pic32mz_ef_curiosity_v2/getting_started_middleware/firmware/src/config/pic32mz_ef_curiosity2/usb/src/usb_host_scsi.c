@@ -204,7 +204,7 @@ void _USB_HOST_SCSI_Transfer
                 /* Set up the command based on direction */
                 if(direction == USB_HOST_MSD_TRANSFER_DIRECTION_DEVICE_TO_HOST)
                 {
-                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r USB_HOST_SCSI_READ10_COMMAND");
+                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r \033[32m USB_HOST_SCSI_READ10_COMMAND\033[0m");
                     commandObj->cdb[0] = USB_HOST_SCSI_READ10_COMMAND;
                     commandObj->cdb[1] = 0x00;
                 }
@@ -212,7 +212,7 @@ void _USB_HOST_SCSI_Transfer
                 {
                     commandObj->cdb[0] = USB_HOST_SCSI_WRITE10_COMMAND;
 
-                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r USB_HOST_SCSI_WRITE10_COMMAND");
+                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r \033[32m USB_HOST_SCSI_WRITE10_COMMAND \033[0m ");
                     /* Set the FUA bit in the command so that the media will
                      * the completed the command only when the data has been 
                      * written to the media. */
@@ -260,6 +260,7 @@ void _USB_HOST_SCSI_Transfer
                 }
                 else if(result == USB_HOST_MSD_RESULT_BUSY)
                 {
+                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r USB_HOST_MSD_RESULT_BUSY");
                     /* The transfer could not be scheduled because the MSD
                      * driver is busy completing another transfer. We let the
                      * SCSI transfer tasks continue to try scheduling the
@@ -864,7 +865,7 @@ void _USB_HOST_SCSI_TasksByIndex(int scsiObjIndex)
                     /* Adding the region specific geometry table */
                     scsiObj->mediaGeometry.geometryTable = scsiObj->mediaRegionGeometry;
                     SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\r\nUSB Host SCSI: SCSI Instance %d Read Capacity Successful", scsiObjIndex);
-                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\r\nUSB Host SCSI: SCSI Instance %d Capacity is %d blocks", scsiObjIndex, scsiObj->mediaRegionGeometry[1].numBlocks);
+                    SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\r\nUSB Host SCSI: SCSI Instance %d Capacity is %d blocks", (int)scsiObjIndex, (int)scsiObj->mediaRegionGeometry[1].numBlocks);
 
                     /* Now we can check if the device is write protected.
                      * */

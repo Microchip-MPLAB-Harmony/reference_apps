@@ -335,13 +335,13 @@ void UART6_RX_InterruptHandler (void)
 {
     if(uart6Obj.rxBusyStatus == true)
     {
+        /* Clear UART6 RX Interrupt flag */
+        IFS5CLR = _IFS5_U6RXIF_MASK;
+
         while((_U6STA_URXDA_MASK == (U6STA & _U6STA_URXDA_MASK)) && (uart6Obj.rxSize > uart6Obj.rxProcessedSize) )
         {
             uart6Obj.rxBuffer[uart6Obj.rxProcessedSize++] = (uint8_t )(U6RXREG);
         }
-
-        /* Clear UART6 RX Interrupt flag after reading data buffer */
-        IFS5CLR = _IFS5_U6RXIF_MASK;
 
         /* Check if the buffer is done */
         if(uart6Obj.rxProcessedSize >= uart6Obj.rxSize)
@@ -368,13 +368,13 @@ void UART6_TX_InterruptHandler (void)
 {
     if(uart6Obj.txBusyStatus == true)
     {
+        /* Clear UART6TX Interrupt flag */
+        IFS5CLR = _IFS5_U6TXIF_MASK;
+
         while((!(U6STA & _U6STA_UTXBF_MASK)) && (uart6Obj.txSize > uart6Obj.txProcessedSize) )
         {
             U6TXREG = uart6Obj.txBuffer[uart6Obj.txProcessedSize++];
         }
-
-        /* Clear UART6TX Interrupt flag after writing to buffer */
-        IFS5CLR = _IFS5_U6TXIF_MASK;
 
         /* Check if the buffer is done */
         if(uart6Obj.txProcessedSize >= uart6Obj.txSize)
