@@ -33,14 +33,13 @@ is toggled every time the temperature is displayed on the serial console.
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.x.x]()
- - [MPLAB Harmony v3 "dev_packs" repo v3.x.x]()  
- - [MPLAB Harmony v3 "mhc" repo v3.x.x]()    
- - MPLAB Harmony Configurator Plugin v3.x.x   
- - [MPLAB X IDE v5.20](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.20](https://www.microchip.com/mplab/compilers)
- - [MPLAB X IPE v5.20](https://www.microchip.com/mplab/mplab-integrated-programming-environment)
- - Any Serial Terminal application like Tera Term terminal application.  
+ - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
+ - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)
+ - MPLAB Harmony Configurator Plugin v3.5.0
+ - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
+ - Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
 
@@ -50,16 +49,20 @@ is toggled every time the temperature is displayed on the serial console.
   micro-B DEBUG USB port to power and debug the SAM E70 Xplained Ultra Evaluation Kit.  
   <img src = "images/hardware_setup.png" width="425" height="370" align="middle">
 
-## Programming binary/hex file:
-If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
+## Programming hex file:
+The pre-built hex file can be programmed by following the below steps
 
-### Steps to program the hex file using MPLAB X IPE
-- Open MPLAB X IPE
+### Steps to program the hex file
+- Open MPLAB X IDE
+- Close all existing projects in IDE, if any project is opened.
+- Go to File -> Import -> Hex/ELF File
+- In the "Import Image File" window, Step 1 - Create Prebuilt Project, click the "Browse" button to select the prebuilt hex file.
 - Select Device has "ATSAME70Q21B"
-- Power the SAM E70 Xplained Ultra Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port
-- Once Power cable is connected, "EDBG" hardware tool is identified as a programmer
-- Browse to hex file (getting_started_hex_file.hex)
-- Click on program button. The device gets programmed in sometime
+- Ensure the proper tool is selected under "Hardware Tool"
+- Click on "Next" button
+- In the "Import Image File" window, Step 2 - Select Project Name and Folder, select appropriate project name and folder
+- Click on "Finish" button
+- In MPLAB X IDE, click on "Make and Program Device" Button. The device gets programmed in sometime.
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
@@ -73,7 +76,7 @@ If you are not interested in installing development tools. The pre-built binary/
 - Change the baud rate to 115200
 - You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below  
 <img src = "images/result1.png" width="425" height="235" align="middle">  
-- Also, notice the LED0 blinking at 500 millisecond rate
+- Also, notice the LED3 blinking at 500 millisecond rate
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
 <img src = "images/temp_sensor_placement.png" width="425" height="370" align="middle">  
 - Press the switch SW0 on SAM E70 Xplained Ultra Evaluation Kit to change the default sampling rate to 1 second.  
@@ -82,7 +85,7 @@ If you are not interested in installing development tools. The pre-built binary/
 - Every subsequent pressing of switch SW0 on SAM E70 Xplained Ultra Evaluation Kit changes the default sampling 
   rate to 2 seconds, 4 seconds, and 500 ms and back to 1 second in cyclic order as shown below.  
   <img src = "images/result3.png" width="315" height="440" align="middle">  
-- While the temperature sampling rate changes on every switch SW0 press, notice the LED0 toggling at the same sampling rate
+- While the temperature sampling rate changes on every switch SW0 press, notice the LED3 toggling at the same sampling rate
 
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM E70/S70/V70/V71 MCUs](https://microchipdeveloper.com/harmony3:same70-getting-started-training-module)

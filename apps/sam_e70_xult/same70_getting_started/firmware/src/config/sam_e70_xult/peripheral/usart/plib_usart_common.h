@@ -62,18 +62,18 @@
 typedef enum
 {
     USART_ERROR_NONE = 0,
-    USART_ERROR_OVERRUN = US_CSR_OVRE_Msk,
-    USART_ERROR_PARITY = US_CSR_USART_LIN_PARE_Msk,
-    USART_ERROR_FRAMING = US_CSR_USART_LIN_FRAME_Msk
+    USART_ERROR_OVERRUN = US_CSR_USART_OVRE_Msk,
+    USART_ERROR_PARITY = US_CSR_USART_PARE_Msk,
+    USART_ERROR_FRAMING = US_CSR_USART_FRAME_Msk
 
 } USART_ERROR;
 
 typedef enum
 {
-    USART_DATA_5_BIT = US_MR_CHRL_5_BIT,
-    USART_DATA_6_BIT = US_MR_CHRL_6_BIT,
-    USART_DATA_7_BIT = US_MR_CHRL_7_BIT,
-    USART_DATA_8_BIT = US_MR_CHRL_8_BIT,
+    USART_DATA_5_BIT = US_MR_USART_CHRL_5_BIT,
+    USART_DATA_6_BIT = US_MR_USART_CHRL_6_BIT,
+    USART_DATA_7_BIT = US_MR_USART_CHRL_7_BIT,
+    USART_DATA_8_BIT = US_MR_USART_CHRL_8_BIT,
     USART_DATA_9_BIT = US_MR_USART_MODE9_Msk,
 
     /* Force the compiler to reserve 32-bit memory for each enum */
@@ -141,6 +141,62 @@ typedef struct
     bool                    rxBusyStatus;
 
 } USART_OBJECT ;
+
+typedef enum
+{
+    /* Threshold number of bytes are available in the receive ring buffer */
+    USART_EVENT_READ_THRESHOLD_REACHED = 0,
+
+    /* Receive ring buffer is full. Application must read the data out to avoid missing data on the next RX interrupt. */
+    USART_EVENT_READ_BUFFER_FULL,
+
+    /* USART error. Application must call the USARTx_ErrorGet API to get the type of error and clear the error. */
+    USART_EVENT_READ_ERROR,
+
+    /* Threshold number of free space is available in the transmit ring buffer */
+    USART_EVENT_WRITE_THRESHOLD_REACHED,
+}USART_EVENT;
+
+typedef void (* USART_RING_BUFFER_CALLBACK)(USART_EVENT event, uintptr_t context );
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local: **** Do Not Use ****
+// *****************************************************************************
+// *****************************************************************************
+
+typedef struct
+{
+    USART_RING_BUFFER_CALLBACK                          wrCallback;
+
+    uintptr_t                               			wrContext;
+
+    volatile uint32_t                       			wrInIndex;
+
+    volatile uint32_t                       			wrOutIndex;
+
+    bool                                    			isWrNotificationEnabled;
+
+    uint32_t                                			wrThreshold;
+
+    bool                                    			isWrNotifyPersistently;
+
+    USART_RING_BUFFER_CALLBACK                          rdCallback;
+
+    uintptr_t                               			rdContext;
+
+    volatile uint32_t                       			rdInIndex;
+
+    volatile uint32_t                       			rdOutIndex;
+
+    bool                                    			isRdNotificationEnabled;
+
+    uint32_t                                			rdThreshold;
+
+    bool                                    			isRdNotifyPersistently;
+
+} USART_RING_BUFFER_OBJECT;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

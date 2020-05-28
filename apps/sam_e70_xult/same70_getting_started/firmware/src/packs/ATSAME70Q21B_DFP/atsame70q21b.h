@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAME70Q21B
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-04-01T08:48:30Z */
+/* file generated from device description version 2020-03-04T11:03:42Z */
 #ifndef _SAME70Q21B_H_
 #define _SAME70Q21B_H_
 
@@ -260,6 +260,12 @@ typedef struct _DeviceVectors
   void* pfnGMAC_Q5_Handler;                      /*  73 Gigabit Ethernet MAC (GMAC) */
 } DeviceVectors;
 
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
+#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
+#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
+#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
+
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -350,6 +356,12 @@ void GMAC_Q3_Handler               ( void );
 void GMAC_Q4_Handler               ( void );
 void GMAC_Q5_Handler               ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
+#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
+#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
+
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /*

@@ -88,6 +88,14 @@
 
 
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local initialization functions
+// *****************************************************************************
+// *****************************************************************************
+
+
+
 /*******************************************************************************
   Function:
     void SYS_Initialize ( void *data )
@@ -103,8 +111,10 @@ void SYS_Initialize ( void* data )
 
     EFC_Initialize();
   
-    CLK_Initialize();
+    CLOCK_Initialize();
 	PIO_Initialize();
+
+
 
     XDMAC_Initialize();
 
@@ -113,6 +123,8 @@ void SYS_Initialize ( void* data )
 	WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk; 		// Disable WDT 
 
 	TWIHS0_Initialize();
+
+  
 
  
     TC0_CH0_TimerInitialize(); 
