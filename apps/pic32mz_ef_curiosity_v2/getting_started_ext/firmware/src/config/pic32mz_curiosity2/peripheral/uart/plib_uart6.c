@@ -86,13 +86,13 @@ void UART6_Initialize( void )
     /* STSEL  = 0 */
     /* PDSEL = 0 */
 
-    U6MODE = 0x8;
+    U6MODE = 0x0;
 
     /* Enable UART6 Receiver and Transmitter */
     U6STASET = (_U6STA_UTXEN_MASK | _U6STA_URXEN_MASK);
 
     /* BAUD Rate register Setup */
-    U6BRG = 216;
+    U6BRG = 53;
 
     /* Turn ON UART6 */
     U6MODESET = _U6MODE_ON_MASK;
