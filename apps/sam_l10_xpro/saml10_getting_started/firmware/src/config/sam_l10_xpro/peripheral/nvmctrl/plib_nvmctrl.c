@@ -50,7 +50,6 @@
 #include <string.h>
 #include "plib_nvmctrl.h"
 
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: NVMCTRL Implementation
@@ -116,7 +115,7 @@ bool NVMCTRL_RowErase( uint32_t address )
 
 NVMCTRL_ERROR NVMCTRL_ErrorGet( void )
 {
-    return ((uint32_t) (NVMCTRL_REGS->NVMCTRL_INTFLAG));
+    return ((uint32_t) ((NVMCTRL_REGS->NVMCTRL_INTFLAG &  ~(NVMCTRL_INTFLAG_DONE_Msk))));
 }
 
 bool NVMCTRL_IsBusy(void)
@@ -126,10 +125,10 @@ bool NVMCTRL_IsBusy(void)
 
 void NVMCTRL_RegionLock(NVMCTRL_MEMORY_REGION region)
 {
-    NVMCTRL_REGS->NVMCTRL_NSULCK = NVMCTRL_NSULCK_NSLKEY_KEY | region;
+    NVMCTRL_REGS->NVMCTRL_NSULCK = (NVMCTRL_REGS->NVMCTRL_NSULCK & ~(region)) | NVMCTRL_NSULCK_NSLKEY_KEY;
 }
 
 void NVMCTRL_RegionUnlock(NVMCTRL_MEMORY_REGION region)
 {
-    NVMCTRL_REGS->NVMCTRL_CTRLA = (NVMCTRL_REGS->NVMCTRL_CTRLA & ~(region)) | NVMCTRL_NSULCK_NSLKEY_KEY;
+    NVMCTRL_REGS->NVMCTRL_NSULCK |= NVMCTRL_NSULCK_NSLKEY_KEY | region;
 }
