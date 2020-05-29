@@ -97,7 +97,7 @@ void APP_SDCARD_AUDIO_Player_Initialize(void)
     AppSdCardAudioData.player.state = APP_SDCARD_AUDIO_PLAYER_STATE_SEND_AUDIO_DATA;
     AppSdCardAudioData.player.fileHandle = SYS_FS_HANDLE_INVALID;
     AppSdCardAudioData.player.fileStatus.lfname = (char *) (AppSdCardAudioCardCurrentLFN);
-    AppSdCardAudioData.player.fileStatus.lfsize = FAT_FS_MAX_LFN;
+    AppSdCardAudioData.player.fileStatus.lfsize = SYS_FS_FILE_NAME_LEN;
     AppSdCardAudioData.player.nextTrack = true;
     AppSdCardAudioData.player.readBytes = 0;
     AppSdCardAudioData.player.currentFilesize = 0;
