@@ -51,7 +51,6 @@ extern "C" {
 #endif
 
 #include "definitions.h"
-#include "driver\usb\drv_usb_external_dependencies.h"
 
 // *****************************************************************************
 /* Application states
@@ -87,7 +86,7 @@ typedef enum
 typedef struct
 {
     APP_BUTTON_PRESS_TASK_STATE   state;
-    SYS_TMR_HANDLE debounceTmrHamdle;
+    SYS_TIME_HANDLE debounceTmrHamdle;
     bool ignoreButtonPress;
     volatile bool tmrEventHasOccurred;
 

@@ -58,7 +58,7 @@ void APP_BUTTON_PRESS_Initialize(void)
 	appButtonData.state = APP_BUTTON_PRESS_TASK_STATE_INIT;
     appButtonData.ignoreButtonPress = false;
     appButtonData.tmrEventHasOccurred = false;
-    appButtonData.debounceTmrHamdle = SYS_TMR_HANDLE_INVALID;
+    appButtonData.debounceTmrHamdle = SYS_TIME_HANDLE_INVALID;
     
     APP_SetMode(APP_MODE_SD_CARD_PLAYBACK);
     /* Indicate application is in SD Card playback mode*/
@@ -76,7 +76,7 @@ void APP_BUTTON_PRESS_Tasks(void)
     {
         case APP_BUTTON_PRESS_TASK_STATE_INIT:
             appButtonData.debounceTmrHamdle = SYS_TIME_CallbackRegisterMS( _APP_BUTTON_PRESS_DebounceTimerHandler, (uintptr_t)0, 250, SYS_TIME_PERIODIC );
-            if(SYS_TMR_HANDLE_INVALID == appButtonData.debounceTmrHamdle)
+            if(SYS_TIME_HANDLE_INVALID == appButtonData.debounceTmrHamdle)
             {
                 appButtonData.state = APP_BUTTON_PRESS_TASK_STATE_ERROR;
             }
