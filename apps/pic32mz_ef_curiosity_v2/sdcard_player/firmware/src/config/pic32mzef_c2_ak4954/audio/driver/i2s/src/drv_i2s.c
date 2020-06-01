@@ -290,19 +290,6 @@ static void _DRV_I2S_BufferQueueTask(DRV_I2S_OBJ *object, DRV_I2S_DIRECTION dire
                 if( (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
                 {
                     uint32_t bufferSizeDmaWords = newObj->size;
-
-                    // if this is half word transfer, need to divide size by 2
-                    // NOTE:  dmaDataLength of 8 not supported. 
-                    if (dObj->dmaDataLength == 16)
-                    {
-                        bufferSizeDmaWords /= 2;
-                    }
-                    // if this is full word transfer, need to divide size by 4
-                    else if (dObj->dmaDataLength == 32)
-                    {
-                        bufferSizeDmaWords /= 4;
-                    }
-
                     /************ code specific to PIC32MX and PIC32MZ ********************/
                     int dataWidthType = SYS_DMA_WIDTH_8_BIT;
                     if (dObj->dmaDataLength == 16)
@@ -351,16 +338,6 @@ static void _DRV_I2S_BufferQueueTask(DRV_I2S_OBJ *object, DRV_I2S_DIRECTION dire
                 if( (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel))
                 {
                     uint32_t bufferSizeDmaWords = newObj->size;
-                    // if this is half word transfer, need to divide size by 2
-                    if (dObj->dmaDataLength == 16)
-                    {
-                        bufferSizeDmaWords /= 2;
-                    }
-                    // if this is full word transfer, need to divide size by 4
-                    else if (dObj->dmaDataLength == 32)
-                    {
-                        bufferSizeDmaWords /= 4;
-                    }
                     /************ code specific to SAM E70 ********************/
 #if defined (__DCACHE_PRESENT) && (__DCACHE_PRESENT == 1U)
                     // Check if the data cache is enabled
@@ -697,20 +674,9 @@ void DRV_I2S_WriteBufferAdd( DRV_HANDLE handle, void * buffer, const size_t size
          * buffer to the DMA to start processing. */
         bufferObj->currentState = DRV_I2S_BUFFER_IS_PROCESSING;
 
-        uint32_t bufferSizeDmaWords = bufferObj->size;
-        // NOTE:  dmaDataLength of 8 not supported. 
         if( (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel))
         {
-            // if this is half word transfer, need to divide size by 2
-            if (dObj->dmaDataLength == 16)
-            {
-                bufferSizeDmaWords /= 2;  //words
-            }
-            // if this is full word transfer, need to divide size by 4
-            else if (dObj->dmaDataLength == 32)
-            {
-                bufferSizeDmaWords /= 4;  //words
-            }
+            uint32_t bufferSizeDmaWords = bufferObj->size;
 
 #if defined (__DCACHE_PRESENT) && (__DCACHE_PRESENT == 1U)
             /************ code specific to SAM E70 ********************/
@@ -874,17 +840,6 @@ void DRV_I2S_WriteReadBufferAdd(const DRV_HANDLE handle,
         if( (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel) && (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel))
         {
             uint32_t bufferSizeDmaWords = bufferObj->size;
-            // if this is half word transfer, need to divide size by 2
-            if (dObj->dmaDataLength == 16)
-            {
-                bufferSizeDmaWords /= 2;
-            }
-            // if this is full word transfer, need to divide size by 4
-            else if (dObj->dmaDataLength == 32)
-            {
-                bufferSizeDmaWords /= 4;
-            }
-
             /************ code specific to PIC32MX and PIC32MZ ********************/
             int dataWidthType = SYS_DMA_WIDTH_8_BIT;
             if (dObj->dmaDataLength == 16)
@@ -1019,17 +974,6 @@ void DRV_I2S_ReadBufferAdd( DRV_HANDLE handle, void * buffer, const size_t size,
         if( (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
         {
             uint32_t bufferSizeDmaWords = bufferObj->size;
-            // if this is half word transfer, need to divide size by 2
-            if (dObj->dmaDataLength == 16)
-            {
-                bufferSizeDmaWords /= 2;
-            }
-            // if this is full word transfer, need to divide size by 4
-            else if (dObj->dmaDataLength == 32)
-            {
-                bufferSizeDmaWords /= 4;
-            }
-
             /************ code specific to PIC32MX and PIC32MZ ********************/
             int dataWidthType = SYS_DMA_WIDTH_8_BIT;
             if (dObj->dmaDataLength == 16)
@@ -1235,3 +1179,36 @@ bool DRV_I2S_LRCLK_Sync (const DRV_HANDLE handle, const uint32_t sample_rate)
     return true;
 } //End DRV_I2S_LRCLK_Sync()
 
+uint32_t DRV_I2S_RefClockSet(DRV_HANDLE handle,uint32_t sysclk, uint32_t samplingRate, uint32_t mclk_sampleRate_multiplier)
+{
+    DRV_I2S_OBJ * dObj = NULL;
+    DRV_I2S_PLIB_INTERFACE * i2s;
+
+    /* Validate the Request */
+    if( false == _DRV_I2S_ValidateClientHandle(dObj, handle))
+    {
+        return false;
+    }
+
+    dObj = &gDrvI2SObj[handle];
+    i2s  = dObj->i2sPlib;
+
+    return (i2s->I2S_RefClockSet)(sysclk, samplingRate, mclk_sampleRate_multiplier);
+}
+
+uint32_t DRV_I2S_BaudRateSet(DRV_HANDLE handle, uint32_t bitClk, uint32_t baudRate)
+{
+    DRV_I2S_OBJ * dObj = NULL;
+    DRV_I2S_PLIB_INTERFACE * i2s;
+
+    /* Validate the Request */
+    if( false == _DRV_I2S_ValidateClientHandle(dObj, handle))
+    {
+        return false;
+    }
+
+    dObj = &gDrvI2SObj[handle];
+    i2s  = dObj->i2sPlib;
+
+    return (i2s->I2S_BaudRateSet)(bitClk, baudRate);
+}

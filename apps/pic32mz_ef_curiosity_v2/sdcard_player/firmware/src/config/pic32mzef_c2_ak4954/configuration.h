@@ -84,7 +84,7 @@ extern "C" {
 #define SYS_TIME_MAX_TIMERS                  5
 #define SYS_TIME_HW_COUNTER_WIDTH            32
 #define SYS_TIME_HW_COUNTER_PERIOD           4294967295U
-#define SYS_TIME_HW_COUNTER_HALF_PERIOD		 (SYS_TIME_HW_COUNTER_PERIOD>>1)
+#define SYS_TIME_HW_COUNTER_HALF_PERIOD	     (SYS_TIME_HW_COUNTER_PERIOD>>1)
 #define SYS_TIME_CPU_CLOCK_FREQUENCY         198000000
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES      (620)
 
@@ -92,8 +92,7 @@ extern "C" {
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
-
-#define SYS_FS_VOLUME_NUMBER              (1)
+#define SYS_FS_VOLUME_NUMBER              1
 
 #define SYS_FS_AUTOMOUNT_ENABLE           true
 #define SYS_FS_CLIENT_NUMBER              1
@@ -101,9 +100,15 @@ extern "C" {
 #define SYS_FS_MAX_FILE_SYSTEM_TYPE       1
 #define SYS_FS_MEDIA_MAX_BLOCK_SIZE       512
 #define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  2048
+#define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
 
+
+#define SYS_FS_FAT_VERSION                "v0.14"
+#define SYS_FS_FAT_READONLY               false
+#define SYS_FS_FAT_CODE_PAGE              437
+#define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
 
 
 
@@ -168,6 +173,9 @@ extern "C" {
 #define DRV_AK4954_WHICH_MIC_INPUT                          MIC1
 #define DRV_AK4954_ENABLE_MIC_BIAS                          true
 #define DRV_AK4954_MIC_GAIN	                      	        20
+#define DRV_AK4954_MCLK_SAMPLE_FREQ_MULTPLIER               256
+#define DRV_AK4954_BCLK_BIT_CLK_DIVISOR                     4
+#define DRV_AK4954_DELAY_INITIALIZATION                     false
 
 #define DRV_AK4954_I2S_DRIVER_MODULE_INDEX_IDX0             DRV_I2S_INDEX_0
 #define DRV_AK4954_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_0
@@ -213,6 +221,8 @@ extern "C" {
 #define DRV_CODEC_MicMuteOff                                DRV_AK4954_MicMuteOff
 #define DRV_CODEC_GetI2SDriver                              DRV_AK4954_GetI2SDriver
 #define DRV_CODEC_LRCLK_Sync                                DRV_AK4954_LRCLK_Sync 
+#define DRV_CODEC_EnableInitialization                      DRV_AK4954_EnableInitialization    
+#define DRV_CODEC_IsInitializationDelayed                   DRV_AK4954_IsInitializationDelayed         
 
 /* I2S Driver Common Configuration Options */
 #define DRV_I2S_INSTANCES_NUMBER              1
@@ -224,33 +234,15 @@ extern "C" {
 // Section: Middleware & Other Library Configuration
 // *****************************************************************************
 // *****************************************************************************
-
+    
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Configuration
 // *****************************************************************************
 // *****************************************************************************
-//#define APP_SDCARD_AUDIO_CODEC_WRITE_QUEUE_SIZE         QUEUE_SIZE_TX_IDX0
-#define APP_SDCARD_AUDIO_CARD_MAX_DIRS   20
-#define APP_SDCARD_AUDIO_CARD_MAX_FILES  500
-    
-#define APP_AUDIO_SRC_SWITCH                            BSP_SWITCH_1    
-
-#define APP_OFF_RGB_LED()                           RGB_LED_R_Off(); \
-    RGB_LED_G_Off(); \
-    RGB_LED_B_Off();
-       	  
-#define APP_SDCARD_AUDIO_SRC_ON()                       LED1_On()
-#define APP_SDCARD_AUDIO_SRC_OFF()                      LED1_Off()
-#define APP_TRACK_CHANGE_INDICATE()                     LED3_Toggle()
-    
-    
-#define APP_SDCARD_AUDIO_CARD_MOUNT_NAME                SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
-#define APP_SDCARD_AUDIO_CARD_DEVICE_NAME               SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0    
 
 
-    
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

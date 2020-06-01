@@ -16,7 +16,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-Copyright (c) 2012 released Microchip Technology Inc.  All rights reserved.
+Copyright (c) 2012,2019 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -51,67 +51,66 @@ static dWAVHEADER wavHeader;
 static WAV_DEC   wavDecoder;
 static SYS_FS_HANDLE currentWAVFileHandle;
 
-int WAV_HdrGetFormat (void)
+int WAV_GetFormat (void)
 {
     return wavHeader.format;
 }
 
-int WAV_HdrGetNumOfChan(void)
+uint8_t WAV_GetChannels()
 {
     return wavHeader.numOfChan;
 }
-uint8_t WAV_GetChannels()
-{
-    return WAV_HdrGetNumOfChan();
-}
 
-
-int WAV_HdrGetSamplesPerSec(void)
+int WAV_GetSamplesPerSec(void)
 {
     return wavHeader.samplesPerSec;
 }
 
-int WAV_HdrGetBlockAlign(void)
+int WAV_GetBlockAlign(void)
 {
    return wavHeader.blockAlign;
 }
 
-int WAV_HdrGetBitsPerSample(void)
+int WAV_GetBitsPerSample(void)
 {
     return wavHeader.bitsPerSample;
 }
 
-int WAV_HdrGetBytesPerSec(void)
+int WAV_GetBytesPerSec(void)
 {
     return wavHeader.bytesPerSec;
 }
 
-int WAV_HdrGetDataLen(void)
+int WAV_GetDataLen(void)
 {
     return (int) wavHeader.dataLen;
 }
 
-unsigned int WAV_HdrGetFileSize(void)
+unsigned int WAV_GetFileSize(void)
 {
     return (unsigned int) wavHeader.extralen;
 }
 
-uint32_t WAV_GetSampleRate(void){
+uint32_t WAV_GetSampleRate(void)
+{
     return wavDecoder.wavSampleRate;
 }
 
-uint32_t WAV_GetBitRate(void){
+uint32_t WAV_GetBitRate(void)
+{
     return wavDecoder.wavBitRate;
 }
 
-uint32_t WAV_GetDuration(void){
+uint32_t WAV_GetDuration(void)
+{
     return wavDecoder.wavFileBytes / wavHeader.bytesPerSec;
 }
 /*
 * This function is deprecated,
 * Use WAV_Initialize_N() instead.
 */
-void WAV_Initialize(uint8_t *input){
+void WAV_Initialize(uint8_t *input)
+{
 	memcpy(&wavHeader, input, WAV_HEADER_SIZE);
 
     wavDecoder.decodeStartPos = WAV_HEADER_SIZE;
@@ -135,9 +134,11 @@ void WAV_Initialize_N(uint8_t *input, SYS_FS_HANDLE wavFilehandle)
     currentWAVFileHandle = wavFilehandle;
 }
 
-uint32_t WAV_UpdatePlaytime(){
+uint32_t WAV_UpdatePlaytime()
+{
     uint32_t playtime;
-	if(currentWAVFileHandle == SYS_FS_HANDLE_INVALID){
+	if(currentWAVFileHandle == SYS_FS_HANDLE_INVALID)
+    {
 		return 0;
 	}
     playtime = (SYS_FS_FileTell(currentWAVFileHandle) - WAV_HEADER_SIZE);
@@ -149,7 +150,8 @@ uint32_t WAV_UpdatePlaytime(){
     return 0;
 }
 
-uint32_t WAV_GetAudioSize(){
+uint32_t WAV_GetAudioSize()
+{
     return wavDecoder.wavFileBytes;
 }
 
@@ -162,6 +164,7 @@ bool WAV_Decoder(uint8_t *input, uint16_t inSize, uint16_t *read, int16_t *outpu
     return true;
 }
 
-bool isWAVdecoder_enabled(){
+bool isWAVdecoder_enabled()
+{
     return true;
 }

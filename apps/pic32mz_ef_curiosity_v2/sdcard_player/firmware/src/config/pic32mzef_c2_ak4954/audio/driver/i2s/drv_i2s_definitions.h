@@ -106,6 +106,9 @@ typedef    void (* DRV_BAUDSET)(const uint32_t);
 //PLIB Interface Member Functions 
 typedef    uint32_t (* DRV_I2S_LRCLK_GET)();
 
+typedef    uint32_t (* DRV_I2S_REFCLOCKSET)(uint32_t, uint32_t, uint32_t);
+typedef    uint32_t (* DRV_I2S_BAUDRATESET)(uint32_t, uint32_t);
+
 // *****************************************************************************
 /* I2S Driver Audio Data 16
 
@@ -199,8 +202,9 @@ typedef struct
 typedef struct
 {
 	/* I2S PLIB baud rate set function */
-	DRV_BAUDSET	setBaud;  //TODO: Someday
     DRV_I2S_LRCLK_GET   I2S_LRCLK_Get;
+    DRV_I2S_REFCLOCKSET I2S_RefClockSet;
+    DRV_I2S_BAUDRATESET I2S_BaudRateSet;
 } DRV_I2S_PLIB_INTERFACE;
 
 // *****************************************************************************

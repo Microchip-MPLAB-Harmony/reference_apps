@@ -1361,6 +1361,8 @@ bool DRV_I2S_ReadBuffer( const DRV_HANDLE handle, void * buffer, const size_t si
 bool DRV_I2S_LRCLK_Sync (const DRV_HANDLE handle, 
                          const uint32_t sample_rate);
 
+uint32_t DRV_I2S_RefClockSet(DRV_HANDLE handle, uint32_t sysclk, uint32_t samplingRate, uint32_t mclk_sampleRate_multiplier);
+uint32_t DRV_I2S_BaudRateSet(DRV_HANDLE handle, uint32_t bitClk, uint32_t baudRate);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

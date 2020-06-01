@@ -125,7 +125,7 @@ void APP_SDCARD_AUDIO_Player_Initialize(void)
     AppSdCardAudioData.player.state = APP_SDCARD_AUDIO_PLAYER_STATE_SEND_AUDIO_DATA;
     AppSdCardAudioData.player.fileHandle = SYS_FS_HANDLE_INVALID;
     AppSdCardAudioData.player.fileStatus.lfname = (char*)AppSdCardAudioCardCurrentLFN;
-    AppSdCardAudioData.player.fileStatus.lfsize = FAT_FS_MAX_LFN;
+    AppSdCardAudioData.player.fileStatus.lfsize = 255;
     AppSdCardAudioData.player.nextTrack = true;
     AppSdCardAudioData.player.readBytes = 0;
     AppSdCardAudioData.player.currentFilesize = 0;
@@ -408,7 +408,7 @@ bool APP_SDCARD_AUDIO_FillOutputBuffer(void)
             DRV_CODEC_BufferAddWrite(AppSdCardAudioData.codec.handle, 
                     &AppSdCardAudioData.codec.writeBufHandle,
                     AppSdCardAudioData.player.buffer[readIdx].buffer,
-                    AppSdCardAudioData.player.buffer[readIdx].bufferSize*2);                                                    
+                    AppSdCardAudioData.player.buffer[readIdx].bufferSize);                                                    
             if(AppSdCardAudioData.codec.writeBufHandle != DRV_CODEC_BUFFER_HANDLE_INVALID)
             {
                 AppSdCardAudioData.player.buffer[readIdx].writeHandler = 
@@ -726,7 +726,7 @@ void APP_SDCARD_AUDIO_BufferEventHandler(DRV_CODEC_BUFFER_EVENT event,
                     DRV_CODEC_BufferAddWrite(AppSdCardAudioData.codec.handle, 
                         &AppSdCardAudioData.codec.writeBufHandle,
                         AppDataAudioPlayerPtr->buffer[readIdx].buffer,
-                        AppDataAudioPlayerPtr->buffer[readIdx].bufferSize*2);                    
+                        AppDataAudioPlayerPtr->buffer[readIdx].bufferSize);                    
                     
                     if(AppSdCardAudioData.codec.writeBufHandle != DRV_CODEC_BUFFER_HANDLE_INVALID)
                     {                        

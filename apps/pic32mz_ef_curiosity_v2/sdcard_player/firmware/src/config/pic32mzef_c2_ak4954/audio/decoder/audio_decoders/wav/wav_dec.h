@@ -17,7 +17,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-Copyright (c) 2011-2012 released Microchip Technology Inc.  All rights reserved.
+Copyright (c) 2011-2012,2019 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -49,14 +49,11 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "system/fs/sys_fs.h"
 #include "configuration.h"
 
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 extern "C" {
 #endif
 //DOM-IGNORE-END
-
-    
     
 #define WAVE_FORMAT_PCM             0x0001
 #define WAVE_FORMAT_ALAW            0x0006
@@ -66,7 +63,8 @@ extern "C" {
 #define WAV_INPUT_BUFFER_SIZE       (DECODER_MAX_OUTPUT_BUFFER_SIZE>DECODER_MAX_INPUT_BUFFER_SIZE?DECODER_MAX_INPUT_BUFFER_SIZE:DECODER_MAX_OUTPUT_BUFFER_SIZE)
 #define WAV_OUTPUT_BUFFER_SIZE      (WAV_INPUT_BUFFER_SIZE)
 
-typedef struct {
+typedef struct
+{
     int format;
     int filesize;
     int filetype;
@@ -82,7 +80,8 @@ typedef struct {
     unsigned int extralen;        
 } dWAVHEADER; 
 
-typedef struct{
+typedef struct
+{
     // Common attributes for every decoder
     uint32_t wavSampleRate;
     uint32_t wavBitRate;
@@ -96,17 +95,23 @@ void WAV_Initialize(uint8_t *input);
 void WAV_Initialize_N(uint8_t *input, SYS_FS_HANDLE wavFilehandle);
 uint32_t WAV_GetAudioSize();
 bool WAV_Decoder(uint8_t *input, uint16_t inSize, uint16_t *read, int16_t *output, uint16_t *written);
-int WAV_HdrGetSamplesPerSec(void);
-int WAV_HdrGetBytesPerSec(void);
-int WAV_HdrGetDataLen(void);
-unsigned int WAV_HdrGetFileSize(void);
+
+int WAV_GetFormat (void);
+uint8_t WAV_GetChannels(void);
+int WAV_GetSamplesPerSec(void);
+int WAV_GetBlockAlign(void);
+int WAV_GetBitsPerSample(void);
+int WAV_GetBytesPerSec(void);
+int WAV_GetDataLen(void);
+unsigned int WAV_GetFileSize(void);
+
 uint32_t WAV_GetSampleRate(void);
 uint32_t WAV_GetBitRate(void);
 uint32_t WAV_GetDuration(void);
 
-bool isWAVdecoder_enabled();
-uint32_t WAV_UpdatePlaytime();
-uint8_t WAV_GetChannels();
+bool isWAVdecoder_enabled(void);
+uint32_t WAV_UpdatePlaytime(void);
+uint8_t WAV_GetChannels(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

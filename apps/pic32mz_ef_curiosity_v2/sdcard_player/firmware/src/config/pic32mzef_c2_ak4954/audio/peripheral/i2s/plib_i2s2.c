@@ -39,6 +39,9 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>                    // Defines true
 #include "plib_i2s2.h"
 
 // *****************************************************************************
@@ -108,4 +111,130 @@ uint32_t I2S2_LRCLK_Get(void)
     // for I2S format, will sync on low to high transition
     volatile uint32_t ret = ((PORTC >> 2) & 0x1);
     return ret;
+}
+
+static uint32_t _calcRefclock(uint32_t sysclk, uint32_t rodivInt, uint32_t rotrimInt)
+{
+    return sysclk / ((uint32_t)2.0*((double)rodivInt+(double)rotrimInt/512.0));    
+}
+
+uint32_t I2S2_RefClockSet(uint32_t sysclk, uint32_t samplingRate, uint32_t mclk_sampleRate_multiplier)
+{   
+    // e.g. target sysclk = 198 MHz, samplingRate == 44100, mclk_sampleRate_multiplier = 256, so ideal refclk = 11289600
+ 
+    // refclk = sysclk / (2 * (rodiv + (rotrim / 512) )
+    // closest fit: rodiv = 8, rotrim = 394:  198000000 / (2 * (8 + 394/512) ) => 11289086,  /256 = 44097
+    
+    uint32_t refclk = samplingRate * mclk_sampleRate_multiplier;      // target ref clock
+    
+    // rodiv = sysclk / (2* refclk) - (rotrim / 512)
+    double rodiv = (double)sysclk / (2.0*(double)refclk);
+    uint16_t rodivInt = (uint16_t)rodiv;                // integer part becomes rodiv
+    
+    double rotrim = 512.0*(rodiv - (double)rodivInt);   // fractional part is rotrim/512      
+    uint16_t rotrimInt = (uint16_t)rotrim;
+     
+    uint32_t refclk_m1 = (rotrimInt > 0) ? _calcRefclock(sysclk, rodivInt, rotrimInt-1) : _calcRefclock(sysclk, rodivInt-1, 511);       
+    uint32_t refclk_0 = _calcRefclock(sysclk, rodivInt, rotrimInt);    
+    uint32_t refclk_p1 = _calcRefclock(sysclk, rodivInt, rotrimInt+1);
+    
+    uint32_t error_m1 = abs(refclk_m1 - refclk);
+    uint32_t error_0 = abs(refclk_0 - refclk);
+    uint32_t error_p1 = abs(refclk_p1 - refclk);
+    
+    uint32_t minError = min(error_m1,error_0);
+    minError = min(minError,error_p1);
+    
+    if (minError == error_m1)
+    {
+        if (rotrimInt > 0)
+        {
+            rotrimInt--;
+        }
+        else
+        {
+            rotrimInt = 511;
+            rodivInt--;
+        }
+    }
+    else if (minError == error_p1)
+    {
+        rotrimInt++;
+    }
+    // else rodivInt, rotrimInt ok as is
+ 
+    // for debug
+    //printf("%s_RefClockSet: %d %f %d %f %d %d %d %d\r\n","I2S2",
+    //        refclock,rodiv,rodivInt,rotrim,rotrimInt,refclock_m1,refclock_0,refclock_p1);
+    //printf("                  %d %d %d %d\r\n",error_m1,error_0,error_p1,minError);  
+    
+    uint32_t refclko = _calcRefclock(sysclk, rodivInt, rotrimInt); 
+    uint32_t calcSamplingrate = refclko / mclk_sampleRate_multiplier;
+    
+    printf("%s_RefClockSet: %d %d %d %d\r\n","I2S2",
+            rodivInt,rotrimInt,calcSamplingrate,refclko);
+    
+    bool int_flag = false;
+    int_flag = (bool)__builtin_disable_interrupts();
+
+    /* unlock system for clock configuration */
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;
+
+    if (int_flag)
+    {
+        __builtin_mtc0(12, 0,(__builtin_mfc0(12, 0) | 0x0001)); /* enable interrupts */
+    }
+
+    uint32_t refclkConOld = REFO1CON;
+    REFO1CON = refclkConOld & 7;       // On bit 0, but keep rosel field
+    while (REFO1CON & 1);   // wait for Active bit to be 0
+    
+    REFO1CONSET = rodivInt*0x10000 | 0x200; // replace with new value    
+    REFO1TRIM = rotrimInt*0x800000;
+    
+    REFO1CONSET = 0x9000;      // On bit, OE and Divswen = 1
+   
+    /* Lock system since done with clock configuration */
+    int_flag = (bool)__builtin_disable_interrupts();
+
+    SYSKEY = 0x33333333;
+
+    if (int_flag) /* if interrupts originally were enabled, re-enable them */
+    {
+        __builtin_mtc0(12, 0,(__builtin_mfc0(12, 0) | 0x0001));
+    }
+    
+    // for debug
+    printf("                  %08x %08x\r\n",REFO1CON,REFO1TRIM);   
+    return calcSamplingrate;
+}
+
+uint32_t I2S2_BaudRateSet(uint32_t bitClk, uint32_t baudRate)
+{
+    // bitClk is the bit clock, typically 4 * sampling rate
+    // BRG = (bitClk/(2 * baudRate)) - 1 
+    uint32_t t_brg;
+    uint32_t baudHigh;
+    uint32_t baudLow;
+    uint32_t errorHigh;
+    uint32_t errorLow;
+    
+    t_brg = (((bitClk/baudRate)/2u) - 1u);
+    
+    baudHigh = bitClk / (2u * (t_brg + 1u));
+    baudLow = bitClk / (2u * (t_brg + 2u));
+    errorHigh = baudHigh - baudRate;
+    errorLow = baudRate - baudLow;
+
+    if (errorHigh > errorLow)
+    {
+        t_brg++;
+    }
+    
+    printf("%s_BaudRateSet: %d %d\r\n","I2S2",bitClk,t_brg);    
+    SPI2BRG = t_brg;
+    
+    return t_brg;
 }

@@ -11,35 +11,35 @@ nav_order: 5
 -----
 ## Description:
 
->    The demonstration application creates an audio player that reads audio files 
+>    The demonstration application creates an audio player that reads audio files
      (.WAV format only) from an SD card mounted on the click interface. The audio
-     is played through the CODEC placed on the X32 header interface. It also provides 
+     is played through the CODEC placed on the X32 header interface. It also provides
      feature to switch to the next track on the media.    
 
->    The sdcard_player application plays .wav files from the SD Card. The SD Card 
-     driver uses the SPI driver to interact with the SD Card. The application uses 
-     the File System Service to read/write data on the SD Card. The audio data read 
-     from the SD card is decoded by passing it to the WAV decoder. The decoded output 
-     is saved in the output buffers 1 and 2 which are used in ping pong manner. The 
-     output buffers 1 and 2 are submitted to the Codec driver for playing. 
-     The Codec is configured for 16-bit data and 48 kHz sampling frequency. 
-     The Codec driver sends the audio data to the AK4954 Codec using the I2S driver, 
-     which in turn uses DMA to transfer the audio data. The Codec driver uses the 
+>    The sdcard_player application plays .wav files from the SD Card. The SD Card
+     driver uses the SPI driver to interact with the SD Card. The application uses
+     the File System Service to read/write data on the SD Card. The audio data read
+     from the SD card is decoded by passing it to the WAV decoder. The decoded output
+     is saved in the output buffers 1 and 2 which are used in ping pong manner. The
+     output buffers 1 and 2 are submitted to the Codec driver for playing.
+     The Codec is configured for 16-bit data and 48 kHz sampling frequency.
+     The Codec driver sends the audio data to the AK4954 Codec using the I2S driver,
+     which in turn uses DMA to transfer the audio data. The Codec driver uses the
      I2C driver to send commands to the AK4954 Codec.
-    
+
 
 ## Modules/Technology Used:
 
 - Peripheral Modules      
 	- Core Timer
 	- DMA
-- Driver Modules	
+- Driver Modules
     - I2S driver
     - SDSPI driver
     - AK4954 Codec driver
-- System Service Libraries	
-	- File System	
-- WAV Audio decoder	
+- System Service Libraries
+	- File System
+- WAV Audio decoder
 
 ## Hardware Used:
 
@@ -52,18 +52,17 @@ nav_order: 5
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.5.2](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.5.2)
- - [MPLAB Harmony v3 "core" repo v3.5.2](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.5.2)          
- - [MPLAB Harmony v3 "dev_packs" repo v3.5.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.5.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.3.4](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.3.4)   
- - [MPLAB Harmony v3 "bsp" repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.5.0)
- - [MPLAB Harmony v3 "audio” repository (revision v3.4.0](https://github.com/Microchip-MPLAB-Harmony/audio/tag/v3.4.0)
- - MPLAB Harmony Configurator Plugin v3.4.0
- - [MPLAB X IDE v5.30](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.30](https://www.microchip.com/mplab/compilers)
- - [MPLAB X IPE v5.30](https://www.microchip.com/mplab/mplab-integrated-programming-environment)  
+ - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
+ - [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)          
+ - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
+ - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)   
+ - [MPLAB Harmony v3 "bsp" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)
+ - [MPLAB Harmony v3 "audio” repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/audio/tag/v3.5.0)
+ - MPLAB Harmony Configurator Plugin v3.5.0
+ - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span> 
+ <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
 - Mount the microSD click board on the mikro bus 1 interface (J301, J302) on Curiosity PIC32MZ EF 2.0 Development Board
@@ -73,16 +72,20 @@ nav_order: 5
 - Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)
 <img src = "images/hardware_setup.jpg" width="650" height="450" align="middle">
 
-## Programming binary/hex file:
-If you are not interested in installing development tools. The pre-built binary/hex file can be programmed to the target
+## Programming hex file:
+The pre-built hex file can be programmed by following the below steps.  
 
-### Steps to program the hex file using MPLAB X IPE
-- Open MPLAB X IPE
+### Steps to program the hex file
+- Open MPLAB X IDE
+- Close all existing projects in IDE, if any project is opened.
+- Go to File -> Import -> Hex/ELF File
+- In the "Import Image File" window, Step 1 - Create Prebuilt Project, Click the "Browse" button to select the prebuilt hex file.
 - Select Device has "PIC32MZ2048EFM144"
-- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
-- Once Power cable is connected, "Curiosity/Starter Kits PKOB4" hardware tool is identified as a programmer
-- Browse to hex file (sdcard_player_hex_file.hex)
-- Click on program button. The device gets programmed in sometime
+- Ensure the proper tool is selected under "Hardware Tool"
+- Click on Next button
+- In the "Import Image File" window, Step 2 - Select Project Name and Folder, select appropriate project name and folder
+- Click on Finish button
+- In MPLAB X IDE, click on "Make and Program Device" Button. The device gets programmed in sometime
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
@@ -93,28 +96,18 @@ If you are not interested in installing development tools. The pre-built binary/
 
 ## Running the Demo:
 - Reset or power cycle the device.
-- After the board powers up, the first WAV audio track on the media is played, indicated by 
-  the glowing of LED1 on the Curiosity PIC32MZ EF 2.0 Development Board. (If no audio is heard, 
+- After the board powers up, the first WAV audio track on the media is played, indicated by
+  the glowing of LED1 on the Curiosity PIC32MZ EF 2.0 Development Board. (If no audio is heard,
   power cycle the board by pressing the "RESET" switch)
-- Put on the headphone. You should be able to hear the audio track being played from the SD card. 
-- Switch to the next track on the media by pressing button S1. The changing of the track is 
+- Put on the headphone. You should be able to hear the audio track being played from the SD card.
+- Switch to the next track on the media by pressing button SW1. The changing of the track is
   indicated by the toggling of LED3 on the Curiosity PIC32MZ EF 2.0 Development Board
-    
-  
+
+
 ## Comments:
-- Known Issue - For PIC32, the Harmony audio I2S driver converts byte count (from the application) to a word 
-  count for the audio DMA interface. Since, the PIC32 DMA requires the count in bytes, the application is 
-  worked around to multiply the byte count by 2 so as to nullify the driver issue. In the application file 
-  "app_sdcard_audio_task.c", the API call DRV_CODEC_BufferAddWrite multiplies the bufferSize parameter by 2
-  This issue is expected to be fixed in Harmony Audio repository release v3.5.0.
-  If you are using Harmony Audio repository release v3.5.0, please read the release notes to verify the fix
-  and undo the work around mentioned above
-- This application is developed by applying a patch (available in folder "core_repo_patch") to MPLAB Harmony v3 
-  "core" repository. If you need to reconfigure or regenerate this demo using MHC, please refer the "Notes.txt"
-   file under "sdcard_player\firmware\core_repo_patch" folder  
-- This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. 
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821) 
+- This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)                
 
-## Revision: 
+## Revision:
 - v1.0 released demo application

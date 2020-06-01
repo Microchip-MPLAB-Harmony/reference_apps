@@ -9,11 +9,12 @@
           <logicalFolder name="f1" displayName="audio" projectFiles="true">
             <logicalFolder name="f1" displayName="decoder" projectFiles="true">
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
-                <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/audio_decoders/wav/wav_dec.h</itemPath>
+                <logicalFolder name="f1" displayName="wav" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/audio_decoders/wav/wav_dec.h</itemPath>
+                </logicalFolder>
               </logicalFolder>
               <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/audio_decoders.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/audio_decoders_config.h</itemPath>
-              <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/gfx_decoders.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
               <logicalFolder name="f2" displayName="codec" projectFiles="true">
@@ -32,71 +33,78 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f4" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mzef_c2_ak4954/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="driver" projectFiles="true">
+          <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f2" displayName="i2c" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/drv_i2c.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/drv_i2c_definitions.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="sdspi" projectFiles="true">
-              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/drv_sdspi.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/drv_sdspi_definitions.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_local.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_plib_interface.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/drv_sdspi.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/pic32mzef_c2_ak4954/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mzef_c2_ak4954/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f3" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/cache/plib_cache.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/cache/plib_cache_pic32mz.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="coretimer" projectFiles="true">
+            <logicalFolder name="f6" displayName="coretimer" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/coretimer/plib_coretimer.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f5" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="evic" projectFiles="true">
+            <logicalFolder name="f4" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/evic/plib_evic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="i2c" projectFiles="true">
+            <logicalFolder name="f7" displayName="i2c" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/plib_i2c1.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/plib_i2c_master.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="spi" projectFiles="true">
+            <logicalFolder name="f8" displayName="spi" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/spi/plib_spi_common.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/spi/plib_spi1.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f5" displayName="system" projectFiles="true">
-            <logicalFolder name="f5" displayName="dma" projectFiles="true">
+            <logicalFolder name="f5" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/cache/sys_cache.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f7" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/debug/sys_debug.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="dma" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/dma/sys_dma.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/dma/sys_dma_mapping.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
                 <logicalFolder name="f1" displayName="file_system" projectFiles="true">
-                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/src/file_system/ff.h</itemPath>
-                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/src/file_system/ffconf.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system/ff.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system/ffconf.h</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="hardware_access" projectFiles="true">
-                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/src/hardware_access/diskio.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/hardware_access/diskio.h</itemPath>
                 </logicalFolder>
-              </logicalFolder>
-              <logicalFolder name="f2" displayName="mpfs" projectFiles="true">
-                <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/mpfs/mpfs.h</itemPath>
-                <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/mpfs/src/mpfs_local.h</itemPath>
               </logicalFolder>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/sys_fs.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_local.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/sys_fs_media_manager.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_media_manager_local.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/sys_fs_fat_interface.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/int/sys_int.h</itemPath>
@@ -116,6 +124,7 @@
             <itemPath>../src/config/pic32mzef_c2_ak4954/system/system_module.h</itemPath>
             <itemPath>../src/config/pic32mzef_c2_ak4954/system/system_media.h</itemPath>
           </logicalFolder>
+          <itemPath>../src/config/pic32mzef_c2_ak4954/device_cache.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/definitions.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/user.h</itemPath>
@@ -148,7 +157,9 @@
           <logicalFolder name="f1" displayName="audio" projectFiles="true">
             <logicalFolder name="f1" displayName="decoder" projectFiles="true">
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
-                <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/audio_decoders/wav/wav_dec.c</itemPath>
+                <logicalFolder name="f1" displayName="wav" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/audio/decoder/audio_decoders/wav/wav_dec.c</itemPath>
+                </logicalFolder>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
@@ -169,10 +180,10 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f5" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mzef_c2_ak4954/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="driver" projectFiles="true">
+          <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f2" displayName="i2c" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/src/drv_i2c.c</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/src/drv_i2c_local.h</itemPath>
@@ -183,46 +194,57 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_file_system.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f3" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/cache/plib_cache_local.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/cache/plib_cache.c</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/cache/plib_cache_pic32mz.S</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="coretimer" projectFiles="true">
+            <logicalFolder name="f6" displayName="coretimer" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/coretimer/plib_coretimer.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f5" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="evic" projectFiles="true">
+            <logicalFolder name="f4" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/evic/plib_evic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="i2c" projectFiles="true">
+            <logicalFolder name="f7" displayName="i2c" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/plib_i2c1.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="spi" projectFiles="true">
+            <logicalFolder name="f8" displayName="spi" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/spi/plib_spi1.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
+          <logicalFolder name="f3" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/pic32mzef_c2_ak4954/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f6" displayName="system" projectFiles="true">
-            <logicalFolder name="f4" displayName="dma" projectFiles="true">
+            <logicalFolder name="f4" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/cache/sys_cache.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f5" displayName="dma" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/dma/sys_dma.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
-                <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/src/ff.c</itemPath>
-                <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/src/diskio.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f2" displayName="mpfs" projectFiles="true">
-                <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/mpfs/src/mpfs.c</itemPath>
+                <logicalFolder name="f1" displayName="file_system" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system/ff.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f2" displayName="hardware_access" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
+                </logicalFolder>
               </logicalFolder>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs.c</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_media_manager.c</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_fat_interface.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/int/src/sys_int.c</itemPath>
@@ -246,6 +268,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/pic32mzef_c2_ak4954/harmony.prj</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -267,6 +290,8 @@
       <packs>
         <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.0.20"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -300,7 +325,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mzef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;;../src/mips"/>
+                  value="../src;../src/config/pic32mzef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/hardware_access"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
