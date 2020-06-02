@@ -154,7 +154,7 @@ SYS_MODULE_OBJ DRV_USBHS_Initialize
                 if (DRV_USBHS_OPMODE_HOST == drvObj->usbDrvCommonObj.operationMode)
                 {
                     /* For Host the ID pin needs to be pull down */
-                    //PLIB_PORTS_ChangeNoticePullDownPerPortEnable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
+                    PLIB_PORTS_ChangeNoticePullDownPerPortEnable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
                 }
 
                 returnValue = (SYS_MODULE_OBJ)drvIndex;

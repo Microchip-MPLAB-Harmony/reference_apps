@@ -51,6 +51,7 @@
 
 #include "configuration.h"
 
+
 /**********************************************
  * Macro Mapping
  **********************************************/
@@ -306,5 +307,11 @@
     #define _DRV_USBHS_HOST_ATTACH_DETACH_STATE_MACHINE(x)  
     #define _DRV_USBHS_HOST_RESET_STATE_MACINE(x)  
 #endif
+
+#define PORT_CHANNEL_F    5
+#define PORTS_BIT_POS_3   3
+#define PLIB_PORTS_ChangeNoticePullDownPerPortEnable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 )  *(&CNPDBSET + (PORT_CHANNEL_F - 1) * 0x40) = 1<<PORTS_BIT_POS_3
+#define PLIB_PORTS_ChangeNoticePullDownPerPortDisable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 )  *(&CNPDBCLR + (PORT_CHANNEL_F - 1) * 0x40) = 1<<PORTS_BIT_POS_3
+
 
 #endif

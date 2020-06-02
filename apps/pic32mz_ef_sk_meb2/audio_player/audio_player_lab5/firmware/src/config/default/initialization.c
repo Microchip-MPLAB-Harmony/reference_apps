@@ -151,6 +151,7 @@ const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
 const uint32_t drvSDSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000400 };
 const uint32_t drvSDSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
 const uint32_t drvSDSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
+
 /* SDSPI Driver Initialization Data */
 const DRV_SDSPI_INIT drvSDSPI0InitData =
 {
@@ -162,6 +163,7 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     .remapClockPolarity     = drvSDSPI0remapClockPolarity,
 
     .remapClockPhase        = drvSDSPI0remapClockPhase,
+
 
     /* SDSPI Number of clients */
     .numClients             = DRV_SDSPI_CLIENTS_NUMBER_IDX0,
@@ -178,7 +180,7 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     .chipSelectPin          = DRV_SDSPI_CHIP_SELECT_PIN_IDX0,
 
     .sdcardSpeedHz          = DRV_SDSPI_SPEED_HZ_IDX0,
-    
+
     .pollingIntervalMs      = DRV_SDSPI_POLLING_INTERVAL_MS_IDX0,
 
     .writeProtectPin        = SYS_PORT_PIN_NONE,
@@ -206,38 +208,35 @@ static DRV_I2C_TRANSFER_OBJ drvI2C0TransferObj[DRV_I2C_QUEUE_SIZE_IDX0];
 const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
+    .read = (DRV_I2C_PLIB_READ)I2C_BB_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
+    .write = (DRV_I2C_PLIB_WRITE)I2C_BB_Write,
 
     /* I2C PLib Transfer Forced Write Add function */
-    .writeForced = (DRV_I2C_PLIB_WRITE)I2C2_WriteForced,
+    .writeForced = (DRV_I2C_PLIB_WRITE)NULL,
 
     /* I2C PLib Transfer Write Read Add function */
-    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C2_WriteRead,
+    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C_BB_WriteRead,
 
     /* I2C PLib Transfer Status function */
-    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C2_ErrorGet,
+    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C_BB_ErrorGet,
 
     /* I2C PLib Transfer Setup function */
-    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C2_TransferSetup,
+    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C_BB_TransferSetup,
 
     /* I2C PLib Callback Register */
-    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C2_CallbackRegister,
+    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C_BB_CallbackRegister,
 };
 
 
 const DRV_I2C_INTERRUPT_SOURCES drvI2C0InterruptSources =
 {
-    /* Peripheral has more than one interrupt vector */
-    .isSingleIntSrc                        = false,
+    /* Peripheral has single interrupt vector */
+    .isSingleIntSrc                        = true,
 
-    /* Peripheral interrupt lines */
-    .intSources.multi.i2cInt0          = _I2C2_BUS_VECTOR,
-    .intSources.multi.i2cInt1          = _I2C2_MASTER_VECTOR,
-    .intSources.multi.i2cInt2          = -1,
-    .intSources.multi.i2cInt3          = -1,
+    /* Peripheral interrupt line */
+    .intSources.i2cInterrupt             = I2C_BB_IRQn,
 };
 
 /* I2C Driver Initialization Data */
@@ -279,35 +278,38 @@ static DRV_I2C_TRANSFER_OBJ drvI2C1TransferObj[DRV_I2C_QUEUE_SIZE_IDX1];
 const DRV_I2C_PLIB_INTERFACE drvI2C1PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C_BB_Read,
+    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C_BB_Write,
+    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
 
     /* I2C PLib Transfer Forced Write Add function */
-    .writeForced = (DRV_I2C_PLIB_WRITE)NULL,
+    .writeForced = (DRV_I2C_PLIB_WRITE)I2C2_WriteForced,
 
     /* I2C PLib Transfer Write Read Add function */
-    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C_BB_WriteRead,
+    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C2_WriteRead,
 
     /* I2C PLib Transfer Status function */
-    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C_BB_ErrorGet,
+    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C2_ErrorGet,
 
     /* I2C PLib Transfer Setup function */
-    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C_BB_TransferSetup,
+    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C2_TransferSetup,
 
     /* I2C PLib Callback Register */
-    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C_BB_CallbackRegister,
+    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C2_CallbackRegister,
 };
 
 
 const DRV_I2C_INTERRUPT_SOURCES drvI2C1InterruptSources =
 {
-    /* Peripheral has single interrupt vector */
-    .isSingleIntSrc                        = true,
+    /* Peripheral has more than one interrupt vector */
+    .isSingleIntSrc                        = false,
 
-    /* Peripheral interrupt line */
-    .intSources.i2cInterrupt             = I2C_BB_IRQn,
+    /* Peripheral interrupt lines */
+    .intSources.multi.i2cInt0          = _I2C2_BUS_VECTOR,
+    .intSources.multi.i2cInt1          = _I2C2_MASTER_VECTOR,
+    .intSources.multi.i2cInt2          = -1,
+    .intSources.multi.i2cInt3          = -1,
 };
 
 /* I2C Driver Initialization Data */
@@ -448,15 +450,51 @@ const DRV_USBHS_INIT drvUSBInit =
 };
 
 
-/*** File System Initialization Data ***/
+// <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
 
-const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] = 
+const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 {
-	{NULL}
+    {NULL}
 };
 
-
+const SYS_FS_FUNCTIONS FatFsFunctions =
+{
+    .mount             = FATFS_mount,
+    .unmount           = FATFS_unmount,
+    .open              = FATFS_open,
+    .read              = FATFS_read,
+    .close             = FATFS_close,
+    .seek              = FATFS_lseek,
+    .fstat             = FATFS_stat,
+    .getlabel          = FATFS_getlabel,
+    .currWD            = FATFS_getcwd,
+    .getstrn           = FATFS_gets,
+    .openDir           = FATFS_opendir,
+    .readDir           = FATFS_readdir,
+    .closeDir          = FATFS_closedir,
+    .chdir             = FATFS_chdir,
+    .chdrive           = FATFS_chdrive,
+    .write             = FATFS_write,
+    .tell              = FATFS_tell,
+    .eof               = FATFS_eof,
+    .size              = FATFS_size,
+    .mkdir             = FATFS_mkdir,
+    .remove            = FATFS_unlink,
+    .setlabel          = FATFS_setlabel,
+    .truncate          = FATFS_truncate,
+    .chmode            = FATFS_chmod,
+    .chtime            = FATFS_utime,
+    .rename            = FATFS_rename,
+    .sync              = FATFS_sync,
+    .putchr            = FATFS_putc,
+    .putstrn           = FATFS_puts,
+    .formattedprint    = FATFS_printf,
+    .testerror         = FATFS_error,
+    .formatDisk        = (FORMAT_DISK)FATFS_mkfs,
+    .partitionDisk     = FATFS_fdisk,
+    .getCluster        = FATFS_getclusters
+};
 
 
 const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
@@ -467,6 +505,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
     }
 };
 
+// </editor-fold>
 
 
 
@@ -494,6 +533,14 @@ const SYS_TIME_INIT sysTimeInitData =
 };
 
 // </editor-fold>
+
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local initialization functions
+// *****************************************************************************
+// *****************************************************************************
 
 
 

@@ -92,7 +92,6 @@ extern "C" {
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
-
 #define SYS_FS_VOLUME_NUMBER              1
 
 #define SYS_FS_AUTOMOUNT_ENABLE           false
@@ -100,9 +99,15 @@ extern "C" {
 #define SYS_FS_MAX_FILE_SYSTEM_TYPE       1
 #define SYS_FS_MEDIA_MAX_BLOCK_SIZE       512
 #define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  2048
+#define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
 
+
+#define SYS_FS_FAT_VERSION                "v0.14"
+#define SYS_FS_FAT_READONLY               false
+#define SYS_FS_FAT_CODE_PAGE              437
+#define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
 
 
 
@@ -157,7 +162,7 @@ extern "C" {
 
 
 /*** MXT336T Driver Configuration ***/
-#define DRV_MAXTOUCH_I2C_MODULE_INDEX   1
+#define DRV_MAXTOUCH_I2C_MODULE_INDEX   0
 
 /*** Codec Driver Configuration ***/
 
@@ -176,7 +181,7 @@ extern "C" {
 #define DRV_AK4953_DELAY_INITIALIZATION                     false
 
 #define DRV_AK4953_I2S_DRIVER_MODULE_INDEX_IDX0             DRV_I2S_INDEX_0
-#define DRV_AK4953_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_0
+#define DRV_AK4953_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_1
 /* CODEC Driver Abstraction definition */
 
 #define DRV_CODEC_INDEX_0                                   DRV_AK4953_INDEX_0
