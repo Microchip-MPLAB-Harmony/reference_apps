@@ -1,22 +1,26 @@
 /*******************************************************************************
- Debug Console Source file 
+  Device compatibility Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    debug_console.c
+    atsaml21j18b_compat.h
 
   Summary:
-    debug console Source File
+    This file includes deprecated macro names that are retained for the purpose
+    of compatibility with Harmony 3 Middleware. Users are discouraged from using
+    macros defined in this file. Recommend to use macros defined in the device
+    header file instead.
 
   Description:
     None
 
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -37,21 +41,24 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
 
-#include "definitions.h"
+#ifndef ATSAML21J18B_COMPAT_H
 
-int _mon_getc(int canblock)
-{
-   volatile int c = 0;
-   while(SERCOM3_USART_Read((void*)&c, 1) != true);
-   return c;
-}
+#ifndef DEVICE_DESC_BANK_NUMBER
+#define DEVICE_DESC_BANK_NUMBER USB_DEVICE_DESC_BANK_NUMBER
+#endif //DEVICE_DESC_BANK_NUMBER
 
-void _mon_putc(char c)
-{
-   uint8_t size = 0;
-   do
-   {
-       size = SERCOM3_USART_Write((void*)&c, 1);
-   }while (size != 1);
-}
+#ifndef HOST_DESC_BANK_NUMBER
+#define HOST_DESC_BANK_NUMBER USB_HOST_DESC_BANK_NUMBER
+#endif //HOST_DESC_BANK_NUMBER
+
+#ifndef DEVICE_ENDPOINT_NUMBER
+#define DEVICE_ENDPOINT_NUMBER USB_DEVICE_ENDPOINT_NUMBER
+#endif //DEVICE_ENDPOINT_NUMBER
+
+#ifndef HOST_PIPE_NUMBER
+#define HOST_PIPE_NUMBER USB_HOST_PIPE_NUMBER
+#endif //HOST_PIPE_NUMBER
+
+#endif //ATSAML21J18B_COMPAT_H
