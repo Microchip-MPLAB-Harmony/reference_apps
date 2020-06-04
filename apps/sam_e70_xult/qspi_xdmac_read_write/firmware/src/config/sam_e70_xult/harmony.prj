@@ -104,7 +104,7 @@
           <LogicalPath dnOrder="3">config/sam_e70_xult/peripheral/qspi/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/qspi/</PhysicalPath>
           <GeneratedChecksum dnOrder="5">D8915FC92C81BE85F22DC9C02E7EE8AF</GeneratedChecksum>
-          <UserChecksum dnOrder="6">D61D9E69E4B4575EBAD10A9BBBA79F65</UserChecksum>
+          <UserChecksum dnOrder="6">D8915FC92C81BE85F22DC9C02E7EE8AF</UserChecksum>
         </File>
         <File dnOrder="11">
           <Type dnOrder="0">SOURCE</Type>
@@ -455,7 +455,7 @@
           <LogicalPath dnOrder="3">config/sam_e70_xult/peripheral/qspi/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/qspi/</PhysicalPath>
           <GeneratedChecksum dnOrder="5">46627FB58B9BC666547AADFCC5FCFBEE</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4B93B6C00599CDD297517B538416D7DE</UserChecksum>
+          <UserChecksum dnOrder="6">46627FB58B9BC666547AADFCC5FCFBEE</UserChecksum>
         </File>
         <File dnOrder="50">
           <Type dnOrder="0">HEADER</Type>
@@ -717,7 +717,7 @@
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="bootloader;bsp;core;csp;gfx;gfx_apps;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bsp;core;crypto;csp;gfx;gfx_apps;net;touch;usb;"/>
     </Settings>
   </Configurator>
 </Configuration>

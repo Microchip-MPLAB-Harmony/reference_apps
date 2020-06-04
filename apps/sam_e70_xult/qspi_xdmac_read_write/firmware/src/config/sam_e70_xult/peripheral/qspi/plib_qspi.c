@@ -436,19 +436,6 @@ bool QSPI_MemoryWrite( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *tx_data, 
     return true;
 }
 
-bool QSPI_TransferSetup( qspi_memory_xfer_t *    qspi_memory_xfer, uint32_t qspi_tfr_type, uint32_t address )
-{
-    if( false == qspi_setup_transfer( qspi_memory_xfer, 
-                            (QSPI_TRANSFER_TYPE) qspi_tfr_type,
-                            address 
-                        ) ) 
-    {
-        return false;
-    }
-
-    return true;
-}
-
 /*******************************************************************************
  End of File
 */

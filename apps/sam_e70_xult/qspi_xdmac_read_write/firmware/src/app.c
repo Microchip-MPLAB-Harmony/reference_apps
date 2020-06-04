@@ -124,6 +124,59 @@ void APP_XDMAC_TX_Callback(XDMAC_TRANSFER_EVENT status, uintptr_t context)
     }
 }
 
+static bool _APP_QSPI_TransferSetup( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_TRANSFER_TYPE tfr_type, uint32_t address )
+{
+    uint32_t mask = 0;
+    volatile uint32_t dummy = 0;
+
+    /* Set instruction address register */
+    QSPI_REGS->QSPI_IAR = QSPI_IAR_ADDR(address);
+
+    /* Set Instruction code register */
+    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_memory_xfer->instruction)) | (QSPI_ICR_OPT(qspi_memory_xfer->option));
+
+    /* Set Instruction Frame register*/
+
+    mask |= qspi_memory_xfer->width;
+    mask |= qspi_memory_xfer->addr_len;
+
+    if (qspi_memory_xfer->option_en) {
+        mask |= qspi_memory_xfer->option_len;
+        mask |= QSPI_IFR_OPTEN_Msk;
+    }
+
+    if (qspi_memory_xfer->continuous_read_en) {
+        mask |= QSPI_IFR_CRM_Msk;
+    }
+
+    mask |= QSPI_IFR_NBDUM(qspi_memory_xfer->dummy_cycles);
+
+    mask |= QSPI_IFR_INSTEN_Msk | QSPI_IFR_ADDREN_Msk | QSPI_IFR_DATAEN_Msk;
+
+    switch (tfr_type){
+        case QSPI_REG_READ:
+            mask |= QSPI_IFR_TFRTYP(QSPI_IFR_TFRTYP_TRSFR_READ_Val);
+            break;
+        case QSPI_REG_WRITE:
+            mask |= QSPI_IFR_TFRTYP(QSPI_IFR_TFRTYP_TRSFR_WRITE_Val);
+            break;
+        case QSPI_MEM_READ:
+            mask |= QSPI_IFR_TFRTYP(QSPI_IFR_TFRTYP_TRSFR_READ_MEMORY_Val);
+            break;
+        case QSPI_MEM_WRITE:
+            mask |= QSPI_IFR_TFRTYP(QSPI_IFR_TFRTYP_TRSFR_WRITE_MEMORY_Val);
+            break;
+    };
+
+    QSPI_REGS->QSPI_IFR = mask;
+
+    /* To synchronize APB and AHB accesses */
+    dummy = QSPI_REGS->QSPI_IFR;
+    (void)dummy;
+
+    return true; 
+}
+
 /* This function resets the flash by sending down the reset enable command
  * followed by the reset command. */
 
@@ -287,7 +340,7 @@ static APP_TRANSFER_STATUS APP_XDMAC_MemoryRead( uint32_t *rx_data, uint32_t rx_
     qspi_memory_xfer.width = QUAD_CMD;
     qspi_memory_xfer.dummy_cycles = 6;
 
-    if (QSPI_TransferSetup(&qspi_memory_xfer, QSPI_MEM_READ, address) == false)
+    if (_APP_QSPI_TransferSetup(&qspi_memory_xfer, QSPI_MEM_READ, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -324,7 +377,7 @@ static APP_TRANSFER_STATUS APP_XDMAC_MemoryWrite( uint32_t *tx_data, uint32_t tx
     qspi_memory_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
     qspi_memory_xfer.width = QUAD_CMD;
 
-    if (QSPI_TransferSetup(&qspi_memory_xfer, QSPI_MEM_WRITE, address) == false)
+    if (_APP_QSPI_TransferSetup(&qspi_memory_xfer, QSPI_MEM_WRITE, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }

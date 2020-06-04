@@ -86,8 +86,6 @@ bool QSPI_MemoryRead( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *rx_data, u
 
 bool QSPI_MemoryWrite( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *tx_data, uint32_t tx_data_length, uint32_t address );
 
-bool QSPI_TransferSetup( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t qspi_tfr_type, uint32_t address );
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
 }
