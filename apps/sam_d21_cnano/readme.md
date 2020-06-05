@@ -12,7 +12,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 * [Getting Started](./samd21n_getting_started/docs/readme.md)
 * [Fitness Tracker](./fitness_tracker/docs/readme.md)
 * [Location Tagged SOS](./location_sos/docs/readme.md)
-* [BLE based Weather Station and Motion Sensor Application](./ble_weather_station/docs/readme.md)
+* [BLE  Weather Station and Motion Sensor](./ble_weather_station/docs/readme.md)
 
 ### **Note:** 
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 

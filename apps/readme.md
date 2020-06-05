@@ -28,4 +28,4 @@ Peripheral/Technology specific applications are available in technology reposito
 10. ### [PIC32MK General Purpose (GP) Development Board](./pic32mk_gp_db/readme.md)
 11. ### [Curiosity PIC32MX470 Development Board](./pic32mx470_curiosity/readme.md)
 12. ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk_meb2/readme.md)
-
+13. ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md)

@@ -5,7 +5,7 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Reference Applications Release v3.1.0 (May 2020)
+## Reference Applications Release v3.1.0 (June 2020)
 ### New Applications
 
 The following table provides the list of new applications:
@@ -15,6 +15,7 @@ The following table provides the list of new applications:
 | [samd21n_getting_started](./apps/sam_d21_cnano/samd21n_getting_started/docs/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
 | [fitness_tracker](./apps/sam_d21_cnano/fitness_tracker/docs/readme.md) | Fitness Tracker using Curiosity Nano Base for click boards, Heart Rate 3 click and EINK CLICK BUNDLE | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
 | [location_sos](./apps/sam_d21_cnano/location_sos/docs/readme.md) | Location Tagged SOS using Curiosity Nano Base for click boards and GSM-GPS click |[SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [ble_weather_station](./apps/sam_d21_cnano/ble_weather_station/docs/readme.md) | BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
 | [pic32mzef_getting_started](./apps/pic32mz_ef_curiosity_v2/pic32mzef_getting_started/docs/readme.md) | Getting Started using Harmony v3 Peripheral Libraries | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [getting_started_ext](./apps/pic32mz_ef_curiosity_v2/getting_started_ext/docs/readme.md) | Getting Started Extended using Harmony v3 Peripheral Libraries | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [getting_started_middleware](./apps/pic32mz_ef_curiosity_v2/getting_started_middleware/docs/readme.md) | Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
@@ -22,6 +23,7 @@ The following table provides the list of new applications:
 | [sdcard_player](./apps/pic32mz_ef_curiosity_v2/sdcard_player/docs/readme.md) | SD Card Audio Player | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [wifi_rgb_easy_configuration](./apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/docs/readme.md) | WiFi based RGB LED Control  | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [saml10_getting_started](./apps/sam_l10_xpro/saml10_getting_started/docs/readme.md) | Getting Started using Harmony v3 Peripheral Libraries | [SAM L10](https://www.microchip.com/wwwproducts/en/ATSAML10E16A) | [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204)|
+| [saml10_low_power](./apps/sam_l10_xpro/saml10_low_power/docs/readme.md) 		       | Low Power 					| [SAM L10](https://www.microchip.com/wwwproducts/en/ATSAML10E16A) 	   | [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320204)|
 | [saml21_low_power](./apps/sam_l21_xpro/saml21_low_power/docs/readme.md) | Low Power | [SAM L21](https://www.microchip.com/wwwproducts/en/ATSAML21J18B) | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b)|
 | [samc21_low_power](./apps/sam_c21_xpro/samc21_low_power/docs/readme.md) | Low Power | [SAM C21](https://www.microchip.com/wwwproducts/en/ATSAMC21J18A) | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21-xpro)|
 | [same70_getting_started](./apps/sam_e70_xult/same70_getting_started/docs/readme.md) | Getting Started using Harmony v3 Peripheral Libraries | [SAM E70](https://www.microchip.com/wwwproducts/en/ATSAME70Q21B) | [SAM E70 Xplained Ultra Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320113)|
@@ -40,11 +42,12 @@ The following table provides the list of new applications:
 | [audio_player_lab3](./apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab3/docs/readme.md) | SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [PIC32MZ Embedded Connectivity with FPU Starter Kit](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320007) + [Multimedia Expansion Board II](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320005-5)|
 | [audio_player_lab4](./apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab4/docs/readme.md) | SD Card Reader ".wav" Audio player | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [PIC32MZ Embedded Connectivity with FPU Starter Kit](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320007) + [Multimedia Expansion Board II](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320005-5)|
 | [audio_player_lab5](./apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/docs/readme.md) | SD Card Audio Player/Reader with Aria Graphics | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [PIC32MZ Embedded Connectivity with FPU Starter Kit](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320007) + [Multimedia Expansion Board II](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320005-5)|
+| [pic32mz_uart_live_update](./apps/pic32mz_ef_sk/pic32mz_uart_live_update/docs/readme.md)     | Live update on PIC32MZ  			| [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [PIC32MZ Embedded Connectivity with FPU Starter Kit](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320007)|
 
 ### Updated Applications
 	- NA - 
 
 ### Development Tools
  
-* Refer demo specfic documentation in folder "docs" to know the tools and Harmony 3 packages used
+* Refer demo specfic documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
