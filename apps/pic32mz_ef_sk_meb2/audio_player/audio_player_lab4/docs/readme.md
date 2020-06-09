@@ -1,7 +1,7 @@
 ---
 grand_parent: Reference Applications
 parent: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II
-title: SD Card Reader ".wav" Audio player
+title: SD Card Reader .wav Audio player
 nav_order: 5
 ---
 <img src = "images/microchip_logo.png">
