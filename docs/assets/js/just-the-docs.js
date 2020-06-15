@@ -358,13 +358,14 @@ function initSearch() {
 		var location = document.location.pathname;
 		var path = location.substring(0, location.lastIndexOf("/"));
 		var directoryName = path.substring(path.lastIndexOf("/")+1);
-		var ParentDirectoryName = path.substring(path.lastIndexOf("/")-14);
+		var fileName = location.substring(location.lastIndexOf("/")+1);		
+		var ParentDirectoryName = path.substring(path.lastIndexOf("/")-14);		
+		
 		var s_before = "http://localhost:4000/reference_apps/";
 		var s_after = "";
 
         for (var i in data_for_search) {
-
-			if(ParentDirectoryName == 'reference_apps/docs') {
+			if(fileName == "index.html" || fileName == "mplab_harmony_license.html"  || fileName == "release_notes.html" ) {	
 				s_after = "./";
 			} else if (directoryName == "apps") {
 				s_after = "../";
@@ -378,14 +379,13 @@ function initSearch() {
 				s_after = "../../../../../";
 			} else {
 				s_after = "../../../../";
-			}
+			}			
+			
 			data_for_search[i].url = data_for_search[i].url.replace(s_before, s_after);
-
 			if (data_for_search[i].title == "Harmony 3 Reference Applications Package")
 			{
 				data_for_search[i].url = data_for_search[i].url + "index.html"
-			}
-
+			}			
           this.add({
             id: i,
             title: data_for_search[i].title,
