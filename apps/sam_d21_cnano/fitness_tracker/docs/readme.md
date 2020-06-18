@@ -89,7 +89,7 @@ The pre-built hex file can be programmed by following the below steps.
 - After power up, the application displays the "microchip logo" on the eINK display displays and initializes the heart rate sensor
 - After successful initialization of heart rate sensor, two integrated LEDs on the heart rate 3 click lights up
 - Then press switch "SW0" on SAM D21 Curiosity Nano board, LED "LED0" on SAM D21 Curiosity Nano board glows on
-- Place your index finger gently on the heart rate 3 click sensor as shown in the figure below
+- Place your index finger gently on the heart rate 3 click sensor as shown in the figure below  
 <img src = "images/fitness_tracker_demo_run.jpg" width="600" height="500" align="middle">
 - Wait till the LED "LED0" on SAM D21 Curiosity Nano board goes off and then lift your finger
 - The heart rate value (in bpm - beats per minute) gets displayed on the eINK display  

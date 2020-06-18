@@ -5,7 +5,7 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Reference Applications Release v3.1.0 (June 2020)
+## Reference Applications Release v1.0.0 (June 2020)
 ### New Applications
 
 The following table provides the list of new applications:
@@ -46,6 +46,16 @@ The following table provides the list of new applications:
 
 ### Updated Applications
 	- NA - 
+
+### Known Issues
+1. The demo “pic32mz_ef_sk_meb2\audio_player\audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5\firmware\gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5\firmware\gfx_repo_patch” folder.  
+The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0.  
+2. The application “pic32mz_ef_curiosity_v2\msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns\firmware\usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns\firmware\usb_repo_patch” folder.  
+The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application. 
+This issue is expected to be fixed in a future release of "usb” repository.  
+3. The application “pic32mz_ef_curiosity_v2\wifi_rgb_easy_configuration” is developed by applying a patch (available in folder “wifi_rgb_easy_configuration\firmware\wifi_repo_patch”) to MPLAB Harmony v3 “wireless” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “wifi_rgb_easy_configuration\firmware\wifi_repo_patch” folder.  
+The patch is applied due to a known issue with MHC v3.5.0 for Wireless Code Generation for this demo application. This issue is expected to be fixed in a future release of "wireless” repository.
+
 
 ### Development Tools
  

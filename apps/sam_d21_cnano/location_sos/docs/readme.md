@@ -24,7 +24,7 @@ nav_order: 3
     Once the GPS position is available, the application sends the following location tagged SOS SMS to
     the configured mobile phone number when emergency switch is pressed.
 
-    SAM D21 Curiosity Nano Location tagged SOS.  
+> SAM D21 Curiosity Nano Location tagged SOS.  
     Please attend emergency at:  
     Latitude : xx.xxxxxx  
     Longitude : xx.xxxxxx  

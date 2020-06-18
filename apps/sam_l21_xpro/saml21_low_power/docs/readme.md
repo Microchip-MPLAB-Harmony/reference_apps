@@ -114,7 +114,7 @@ connected to Micro-B port, and reconnect it back.
 - Wake-up Time Measurement Using Logic Analyzer/ Cathode-Ray Oscilloscope (CRO)  
 To demonstrate the CPU wake up time, switch SW0 is configured to generate an interrupt. A General Purpose Input/Output (GPIO) is toggled in the Interrupt Service Routine (ISR) of the switch press event. The MCU comes out of Sleep mode when an interrupt occurs (in this case, the switch press interrupt). The time between the switch press and the GPIO toggle in the ISR is the wake up time.
 - Connect your logic analyzer or your CRO to the board according to the step image  
-<img src = "images/low_power_demo_setup.jpg" width="800" height="600" align="middle">
+<img src = "images/low_power_demo_setup.jpg" width="800" height="600" align="middle">  
 - Press the SW0 switch and capture the signals to measure the wake-up time in Standby and Idle mode. The following image shows the wake-up time from Standby mode  
 <img src = "images/wakeup_time_from_standby.png" width="700" height="100" align="middle">  
 - The following image shows the wake-up time from Idle mode  

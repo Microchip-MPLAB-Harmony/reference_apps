@@ -62,7 +62,7 @@ nav_order: 1
 
 **Note** :
 - Make sure common ground is connected with the board while using logic analyzer/CRO.
-- SAMC21 supports both 3.3 V and 5 V. The SAMC21 Xplained Pro kit operates at 3.3 V since the VCC-SEL jumper on board is set to 3.3 V
+- SAMC21 supports both 3.3 V and 5 V. The SAMC21 Xplained Pro kit operates at 3.3 V since the VCC-SEL jumper on board is set to 3.3 V  
 <img src = "images/low_power_demo_setup.png" width="800" height="535" align="middle">
 
 ## Programming hex file:

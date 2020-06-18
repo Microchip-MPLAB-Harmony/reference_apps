@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Package name="reference_apps">
+    <Dependencies>
+        <Dependency name="mhc" version="3.4.0"/>
+        <Dependency name="dev_packs" version="3.7.0"/>		
+        <Dependency name="csp" version="3.7.1"/>
+        <Dependency name="core" version="3.7.1"/>
+        <Dependency name="bsp" version="3.7.0"/>
+        <Dependency name="usb" version="3.5.0"/>
+        <Dependency name="audio" version="3.5.0"/>		
+        <Dependency name="gfx" version="3.6.0"/>	
+		<Dependency name="touch" version="3.6.0"/>	
+		<Dependency name="net" version="3.5.1"/>			
+		<Dependency name="wireless" version="3.1.1"/>	
+        <Dependency name="CMSIS-FreeRTOS" version="v10.3.0"/>	
+    </Dependencies>
+</Package>

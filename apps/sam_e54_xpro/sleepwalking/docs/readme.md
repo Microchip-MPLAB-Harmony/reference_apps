@@ -85,20 +85,21 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Running the Demo:
 
-- Open Tera Term or any equivalent serial communication tool
-- In the Tera Term: New Connection window, select the Serial Port number allocated to the connected SAM E54
-- Configure the Tera Term Serial port interface to 115200 speed
-- Reset the board by pressing the reset button. The application will start by displaying the following message on the serial terminal.
-<img src = "images/sleepwalking_start.png" width="600" height="260" align="middle">
-- Open the standalone Data Visualizer tool
-- In the Data Visualizer window, select SAM E54 Xplained Pro, and then click Connect
-<img src = "images/data_visualizer1.png" width="600" height="200" align="middle">
-- Once the protocols are displayed, select the protocol Power and then click Start
-<img src = "images/data_visualizer2.png" width="600" height="275" align="middle">
-- The Data Visualizer will display the power consumption details in the Power Analysis window
-<img src = "images/data_visualizer3.png" width="600" height="265" align="middle">
-- When the application starts, the device will run on Standby with IRQ mode. The data analyzer shows the power consumption of the device when the CPU is woken up every 10 milliseconds by an RTC Compare ‘0’ interrupt to start an ADC conversion
-- Using the SW0 push button, it is possible to change the application mode from Standby with IRQ to SleepWalking. In this mode the CPU is woken up only when an ADC window monitoring interrupt occurs. The data analyzer shows the power consumption of the device when running in Standby with the Event System (SleepWalking)
+- Open Tera Term or any equivalent serial communication tool  
+- In the Tera Term: New Connection window, select the Serial Port number allocated to the connected SAM E54  
+- Configure the Tera Term Serial port interface to 115200 speed  
+- Reset the board by pressing the reset button. The application will start by displaying the following message on the serial terminal.  
+<img src = "images/sleepwalking_start.png" width="600" height="260" align="middle">  
+- Open the standalone Data Visualizer tool  
+- In the Data Visualizer window, select SAM E54 Xplained Pro, and then click Connect  
+<img src = "images/data_visualizer1.png" width="600" height="200" align="middle">  
+- Once the protocols are displayed, select the protocol Power and then click Start  
+<img src = "images/data_visualizer2.png" width="600" height="275" align="middle">  
+- The Data Visualizer will display the power consumption details in the Power Analysis window  
+<img src = "images/data_visualizer3.png" width="600" height="265" align="middle">  
+- When the application starts, the device will run on Standby with IRQ mode. The data analyzer shows the power consumption of the device when the CPU is woken up every 10 milliseconds by an RTC Compare ‘0’ interrupt to start an ADC conversion  
+- Using the SW0 push button, it is possible to change the application mode from Standby with IRQ to SleepWalking. In this mode the CPU is woken up only when an ADC window monitoring interrupt occurs. The data analyzer shows the power consumption of the device when running in Standby with the Event System (SleepWalking)  
+
 
 ## Comments:
 - Reference Application Note: [SleepWalking with Event System Using the SAM E54](http://ww1.microchip.com/downloads/en/Appnotes/SleepWalking_%20with_%20Event_%20System_Using%20_%20SAME54_AN_DS00003342A.pdf)

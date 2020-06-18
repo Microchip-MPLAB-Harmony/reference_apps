@@ -68,7 +68,7 @@ available for purchase from Microchip Direct.
 ## Setup:
 - Connect the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit to the Host PC as a USB Device
   through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port.
-- Connect the wired stereo headphone to the audio jack
+- Connect the wired stereo headphone to the audio jack  
 <img src = "images/hardware_setup.png" width="700" height="525" align="middle">
 
 **Note:**

@@ -32,21 +32,22 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 - [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit ](https://www.microchip.com/Developmenttools/ProductDetails/Dm320007)
 
 ## Software/Tools Used:
-<span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
- - [MPLAB Harmony v3 "bsp" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)
- - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
- - [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)
- - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)
- - [MPLAB Harmony v3 "bootloader" repo v3.2.0](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.2.0)
- - MPLAB Harmony Configurator Plugin v3.5.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
- - Windows command prompt
- - Python 2.7
- - Any Serial Terminal application like Tera Term terminal application.
+<span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
+- [MPLAB Harmony v3 "bsp" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)  
+- [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)  
+- [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)  
+- [MPLAB Harmony v3 "bootloader" repo v3.2.0](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.2.0)  
+- MPLAB Harmony Configurator Plugin v3.5.0  
+- [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- Windows command prompt  
+- Python 2.7  
+- Any Serial Terminal application like Tera Term terminal application.  
+
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Running the Bootloader application:
 
