@@ -23,7 +23,7 @@
           <LogicalPath dnOrder="3">config/samd21_cnano/bt/driver/bm71/</LogicalPath>
           <PhysicalPath dnOrder="4">/bt/driver/bm71/</PhysicalPath>
           <GeneratedChecksum dnOrder="5">2F1ABC41D2FCF0CD19526CC60A3AC604</GeneratedChecksum>
-          <UserChecksum dnOrder="6">28C04C424B88523A6C72EE2996DAF63E</UserChecksum>
+          <UserChecksum dnOrder="6">EDCF281D8C3396B83A32AA8782C6AE4C</UserChecksum>
         </File>
         <File dnOrder="2">
           <Type dnOrder="0">SOURCE</Type>
@@ -175,8 +175,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/samd21_cnano/peripheral/sercom/i2c_master/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/i2c_master/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">48E6DE45C80876D662D043480AA29F30</GeneratedChecksum>
-          <UserChecksum dnOrder="6">48E6DE45C80876D662D043480AA29F30</UserChecksum>
+          <GeneratedChecksum dnOrder="5">08960389348A2FA007D164F1266F4651</GeneratedChecksum>
+          <UserChecksum dnOrder="6">08960389348A2FA007D164F1266F4651</UserChecksum>
         </File>
         <File dnOrder="19">
           <Type dnOrder="0">SOURCE</Type>
@@ -715,8 +715,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/samd21_cnano/peripheral/sercom/usart/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">F26B38FA1088FD5D602A6772C48878C7</GeneratedChecksum>
-          <UserChecksum dnOrder="6">F26B38FA1088FD5D602A6772C48878C7</UserChecksum>
+          <GeneratedChecksum dnOrder="5">9B409E836AF212CD11C4BB20B1B7C26E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9B409E836AF212CD11C4BB20B1B7C26E</UserChecksum>
         </File>
         <File dnOrder="79">
           <Type dnOrder="0">HEADER</Type>

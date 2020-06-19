@@ -65,8 +65,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-
-
+  
 /*** Macros for STBYRST pin ***/
 #define STBYRST_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 8)
 #define STBYRST_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 8)
