@@ -58,27 +58,33 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 3. Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: `<Your Harmony Framework download folder>/bootloader/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE.
 4. Build the Live update application (path: `<Live Update application folder>/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE **but do not program**.
 5. From the command prompt, run the bootloader host script "**btl_host.py**" available at `<Your Harmony Framework download folder>/bootloader/tools_archive` to program the application binary.
-    - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin`
-    - **Note:** If you need to know more information on the bootloader host script, refer Help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm`
+ - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin`
+  - **Note:** If you need to know more information on the bootloader host script, refer Help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm`
 6. Following screenshot shows successful programming of the application binary.
 7. The messages "Swapping Bank And Rebooting and Reboot Done" in below screenshot signifies that bootloading is successful.
 - <img src = "images/BootloaderScript_Result.png" width="442" height="153" align="middle">
 
 ## Running the Live update application:
 1. Perform "Running the Bootloader application" steps mentioned above, if not done already.
-2. If the above step is successful, then LED3 on the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit should turn ON.
+2. If the above step is successful, then LED1 or LED2 on the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit should start blinking which indicates the application is running from BANK 1 or BANK 2 based on from where the program is running.
 3. Reset or Power cycle the device.
 4. Run the host script "**live_update.py**" for live update application from command prompt available at `<Live Update application folder>/scripts` to program the new version of the firmware to an inactive panel while the current version of the application is being run from the active panel.
-- <img src = "images/BootloaderScript_Help.png" width="656" height="315" align="middle">
-5. The following screenshot shows the example output of firmware programming.
-- <img src = "images/LiveUpdateScrip_Result.png" width="522" height="262" align="middle">
-6. LED1 or LED2 should start blinking which indicates the application is running from BANK 1 or BANK 2 based on from where the program is running.
-   * LED1 for BANK 1
-   * LED2 for BANK 2
-7. In case of any error during the Live update the LED3 turns OFF. Follow the below steps recover from the error,
+   - `python <Live Update application folder>/scripts/live_update.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin`
+   - The following screenshot shows the Live update script help.
+   - <img src = "images/BootloaderScript_Help.png" width="656" height="315" align="middle">
+5. The following screenshot shows the example for output of successful firmware programming.
+   - <img src = "images/LiveUpdateScrip_Result.png" width="522" height="262" align="middle">
+6. If the Live update is success then LED3 should turn ON.
+   * This indicates that the Live update is successful
+7. In case of any error during the Live update i.e. in Step 4, the LED3 turns OFF. Follow the below steps recover from the error:
    * Press and hold the Switch SW1 to reset the system then repeat the step 4 to program the Live update application.
    * or
    * Reset or Power cycle the device and repeat from the step 4 to program the Live update application.
+8. If the Live update is success then LED1 or LED2 should start blinking which indicates the application is running from BANK 1 or BANK 2 based on from where the program is running.
+   * LED1 for BANK 1
+   * LED2 for BANK 2
+9. Reset or Power Cycle the device for the newly programmed application to run.
+   * Observe the change in LED toggling compared to the LED which was toggling in the previous step. This indicates that the newly updated image is running properly.
 
 ## Comments:
 - Reference Application Note: [Live Update application on PIC32MZ MCUs using MPLAB Harmony v3]()
