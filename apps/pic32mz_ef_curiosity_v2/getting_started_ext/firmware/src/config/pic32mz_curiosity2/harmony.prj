@@ -300,7 +300,7 @@
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="audio;bsp;core;csp;gfx;gfx_apps;usb;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bsp;bt;core;csp;gfx;gfx_apps;usb;"/>
     </Settings>
   </Configurator>
 </Configuration>
