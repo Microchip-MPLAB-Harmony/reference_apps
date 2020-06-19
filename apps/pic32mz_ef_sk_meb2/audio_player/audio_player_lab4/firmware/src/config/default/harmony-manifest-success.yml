@@ -4,7 +4,7 @@
 
 
 project: audio_player_lab4
-creation_date: 2020-05-29T17:12:21.531+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-06-19T22:12:32.981+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mplabx_version: v5.40        # if MPLAB X plugin only
@@ -12,7 +12,7 @@ plugin_version: v3.5.0        # if MPLAB X plugin only
 
 modules:
     - {name: "audio", version: "v3.5.0"}
-    - {name: "bootloader", version: "v3.2.0"}
+    - {name: "bootloader", version: "unknown"}
     - {name: "bsp", version: "v3.7.0"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.0"}
     - {name: "contentmanager", version: "v1.3.1"}
@@ -23,6 +23,7 @@ modules:
     - {name: "gfx", version: "v3.6.0"}
     - {name: "gfx_apps", version: "v3.6.0"}
     - {name: "mhc", version: "v3.4.0"}
+    - {name: "mplabx_plugin", version: "unknown"}
     - {name: "net", version: "v3.5.1"}
     - {name: "touch", version: "v3.6.0"}
     - {name: "usb", version: "v3.5.0"}
