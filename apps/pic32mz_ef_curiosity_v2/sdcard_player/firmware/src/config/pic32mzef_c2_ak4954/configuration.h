@@ -133,7 +133,7 @@ extern "C" {
 #define DRV_SDSPI_CHIP_SELECT_PIN_IDX0          SYS_PORT_PIN_RD9
 #define DRV_SDSPI_SPEED_HZ_IDX0                 10000000
 #define DRV_SDSPI_POLLING_INTERVAL_MS_IDX0      1000
-    
+
 
 
 
@@ -220,7 +220,7 @@ extern "C" {
 #define DRV_CODEC_MicMuteOn                                 DRV_AK4954_MicMuteOn
 #define DRV_CODEC_MicMuteOff                                DRV_AK4954_MicMuteOff
 #define DRV_CODEC_GetI2SDriver                              DRV_AK4954_GetI2SDriver
-#define DRV_CODEC_LRCLK_Sync                                DRV_AK4954_LRCLK_Sync 
+#define DRV_CODEC_LRCLK_Sync                                DRV_AK4954_LRCLK_Sync
 #define DRV_CODEC_EnableInitialization                      DRV_AK4954_EnableInitialization    
 #define DRV_CODEC_IsInitializationDelayed                   DRV_AK4954_IsInitializationDelayed         
 
@@ -234,7 +234,7 @@ extern "C" {
 // Section: Middleware & Other Library Configuration
 // *****************************************************************************
 // *****************************************************************************
-    
+
 
 // *****************************************************************************
 // *****************************************************************************
