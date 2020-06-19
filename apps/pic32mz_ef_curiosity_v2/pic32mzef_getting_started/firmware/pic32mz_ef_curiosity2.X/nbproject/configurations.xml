@@ -161,7 +161,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_curiosity2;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/config/pic32mz_ef_curiosity2;../src/packs/PIC32MZ2048EFM144_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -488,6 +488,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MBOs_work/reference_apps/apps/pic32mz_ef_curiosity_v2/pic32mzef_getting_started/firmware/pic32mz_ef_curiosity2.X/debug/pic32mz_ef_curiosity2/pic32mz_ef_curiosity2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
