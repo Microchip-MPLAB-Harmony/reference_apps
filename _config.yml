@@ -84,6 +84,7 @@ exclude:
   - "*.wav"
   - "*.bmp"
   - "*.txt"
+  - "*.yml"
 
 # Aux links for the upper right navigation
 aux_links:
