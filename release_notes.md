@@ -21,7 +21,6 @@ The following table provides the list of new applications:
 | [getting_started_middleware](./apps/pic32mz_ef_curiosity_v2/getting_started_middleware/docs/readme.md) | Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [msd_multiple_luns](./apps/pic32mz_ef_curiosity_v2/msd_multiple_luns/docs/readme.md) | USB MSD with Multiple Drives | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [sdcard_player](./apps/pic32mz_ef_curiosity_v2/sdcard_player/docs/readme.md) | SD Card Audio Player | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
-| [wifi_rgb_easy_configuration](./apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/docs/readme.md) | WiFi based RGB LED Control  | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
 | [saml10_getting_started](./apps/sam_l10_xpro/saml10_getting_started/docs/readme.md) | Getting Started using Harmony v3 Peripheral Libraries | [SAM L10](https://www.microchip.com/wwwproducts/en/ATSAML10E16A) | [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204)|
 | [saml10_low_power](./apps/sam_l10_xpro/saml10_low_power/docs/readme.md) 		       | Low Power 					| [SAM L10](https://www.microchip.com/wwwproducts/en/ATSAML10E16A) 	   | [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320204)|
 | [saml21_low_power](./apps/sam_l21_xpro/saml21_low_power/docs/readme.md) | Low Power | [SAM L21](https://www.microchip.com/wwwproducts/en/ATSAML21J18B) | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b)|
@@ -52,9 +51,7 @@ The following table provides the list of new applications:
 The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0.  
 2. The application “pic32mz_ef_curiosity_v2\msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns\firmware\usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns\firmware\usb_repo_patch” folder.  
 The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application. 
-This issue is expected to be fixed in a future release of "usb” repository.  
-3. The application “pic32mz_ef_curiosity_v2\wifi_rgb_easy_configuration” is developed by applying a patch (available in folder “wifi_rgb_easy_configuration\firmware\wifi_repo_patch”) to MPLAB Harmony v3 “wireless” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “wifi_rgb_easy_configuration\firmware\wifi_repo_patch” folder.  
-The patch is applied due to a known issue with MHC v3.5.0 for Wireless Code Generation for this demo application. This issue is expected to be fixed in a future release of "wireless” repository.
+This issue is expected to be fixed in a future release of "usb” repository.
 
 
 ### Development Tools
