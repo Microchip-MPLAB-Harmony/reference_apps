@@ -9,7 +9,7 @@ nav_order: 4
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b).   
 
-* [Low Power](./saml21_low_power/docs/readme.md)
+* [Low Power](./saml21_low_power/readme.md)
 
 ### **Note:** 
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 

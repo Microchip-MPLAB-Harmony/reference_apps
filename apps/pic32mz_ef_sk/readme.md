@@ -10,7 +10,7 @@ nav_order: 13
 This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320007).   
 
 
-* [Live Update](./pic32mz_uart_live_update/docs/readme.md)
+* [Live Update](./pic32mz_uart_live_update/readme.md)
 
 ### **Note:** 
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 

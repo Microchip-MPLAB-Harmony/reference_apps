@@ -9,7 +9,7 @@ nav_order: 11
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MX470 Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320103).   
 
-* [Getting Started](./pic32mx470_getting_started/docs/readme.md)
+* [Getting Started](./pic32mx470_getting_started/readme.md)
 
 ### **Note:** 
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 

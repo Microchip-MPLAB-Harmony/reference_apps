@@ -10,8 +10,8 @@ nav_order: 3
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204).   
 
-* [Getting Started](./saml10_getting_started/docs/readme.md)
-* [Low Power](./saml10_low_power/docs/readme.md)
+* [Getting Started](./saml10_getting_started/readme.md)
+* [Low Power](./saml10_low_power/readme.md)
 
 
 ### **Note:** 

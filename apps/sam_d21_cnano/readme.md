@@ -9,10 +9,10 @@ nav_order: 1
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119).   
 
-* [Getting Started](./samd21n_getting_started/docs/readme.md)
-* [Fitness Tracker](./fitness_tracker/docs/readme.md)
-* [Location Tagged SOS](./location_sos/docs/readme.md)
-* [BLE  Weather Station and Motion Sensor](./ble_weather_station/docs/readme.md)
+* [Getting Started](./samd21n_getting_started/readme.md)
+* [Fitness Tracker](./fitness_tracker/readme.md)
+* [Location Tagged SOS](./location_sos/readme.md)
+* [BLE  Weather Station and Motion Sensor](./ble_weather_station/readme.md)
 
 ### **Note:** 
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 

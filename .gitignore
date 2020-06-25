@@ -13,3 +13,6 @@
 **/*.IAR/settings
 **/*.IAR/*.dep
 **/*.IAR/*.custom_argvars
+/docs/apps/sam_d21_cnano/ble_weather_station/hex
+/docs/apps/sam_d21_cnano/fitness_tracker/hex
+/docs/apps/sam_d21_cnano/location_sos/hex

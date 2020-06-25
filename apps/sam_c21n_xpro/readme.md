@@ -9,7 +9,7 @@ nav_order: 9
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM C21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro).   
 
-* [Getting Started](./samc21n_getting_started/docs/readme.md)
+* [Getting Started](./samc21n_getting_started/readme.md)
 
 ### **Note:** 
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 

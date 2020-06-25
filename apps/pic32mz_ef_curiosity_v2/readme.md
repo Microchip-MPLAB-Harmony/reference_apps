@@ -10,11 +10,11 @@ nav_order: 2
 This folder contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209).
 
 
-* [Getting Started](./pic32mzef_getting_started/docs/readme.md)
-* [Getting Started Extended](./getting_started_ext/docs/readme.md)
-* [Getting Started Middleware - EEPROM/Thumb drive temperature logger](./getting_started_middleware/docs/readme.md)
-* [USB MSD with Multiple Drives](./msd_multiple_luns/docs/readme.md)
-* [SD Card Audio Player](./sdcard_player/docs/readme.md)
+* [Getting Started](./pic32mzef_getting_started/readme.md)
+* [Getting Started Extended](./getting_started_ext/readme.md)
+* [Getting Started Middleware - EEPROM/Thumb drive temperature logger](./getting_started_middleware/readme.md)
+* [USB MSD with Multiple Drives](./msd_multiple_luns/readme.md)
+* [SD Card Audio Player](./sdcard_player/readme.md)
 
 
 ### **Note:** 
