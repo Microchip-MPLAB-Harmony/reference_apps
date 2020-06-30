@@ -29,3 +29,4 @@ Peripheral/Technology specific applications are available in technology reposito
 11. ### [Curiosity PIC32MX470 Development Board](./pic32mx470_curiosity/readme.md)
 12. ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk_meb2/readme.md)
 13. ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md)
+14. ### [SAM E51 Curiosity Nano Evaluation Kit](./sam_e51_cnano/readme.md)
