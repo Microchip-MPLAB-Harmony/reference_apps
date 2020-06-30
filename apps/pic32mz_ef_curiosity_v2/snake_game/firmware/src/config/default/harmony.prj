@@ -1,0 +1,2646 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration>
+  <Configurator>
+    <Name dnOrder="0" value="default"/>
+    <Processor dnOrder="1" value="PIC32MZ2048EFM144"/>
+    <Harmony dnOrder="2" path="../../HarmonyFramework"/>
+    <Folder_Name dnOrder="3" value=""/>
+    <Manifest dnOrder="4">
+      <Files dnOrder="0">
+        <File dnOrder="0">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">app.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="1">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">bsp.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/bsp/</LogicalPath>
+          <PhysicalPath dnOrder="4">/bsp/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">82184E6E6BF21D7C0E91DE0BD7609E90</GeneratedChecksum>
+          <UserChecksum dnOrder="6">82184E6E6BF21D7C0E91DE0BD7609E90</UserChecksum>
+        </File>
+        <File dnOrder="2">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_gfx_disp_intf_parallel_ebi.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/interface/parallel_ebi</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/interface/parallel_ebi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">314FB021CEC5CD476A20B03AE0E2E8D6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">314FB021CEC5CD476A20B03AE0E2E8D6</UserChecksum>
+        </File>
+        <File dnOrder="3">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_gfx_ssd1963.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/driver/ssd1963</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/driver/controller/ssd1963/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">157770EB8FE7120020E7B1F6A8DAD70E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">157770EB8FE7120020E7B1F6A8DAD70E</UserChecksum>
+        </File>
+        <File dnOrder="4">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_i2c.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/i2c/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">13F062B063A4F4AE0B19CE872943995B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">13F062B063A4F4AE0B19CE872943995B</UserChecksum>
+        </File>
+        <File dnOrder="5">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_i2c_local.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/i2c/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">37780F17759DED907A0F36E28BFB3136</GeneratedChecksum>
+          <UserChecksum dnOrder="6">37780F17759DED907A0F36E28BFB3136</UserChecksum>
+        </File>
+        <File dnOrder="6">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_maxtouch.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3535110CD50F75A5C57739119A483703</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3535110CD50F75A5C57739119A483703</UserChecksum>
+        </File>
+        <File dnOrder="7">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_spi.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/spi/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8D656DB234EC4AC97AA2EEEDE1DB8C38</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8D656DB234EC4AC97AA2EEEDE1DB8C38</UserChecksum>
+        </File>
+        <File dnOrder="8">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">drv_spi_local.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/spi/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9FADE1C7F9878091CC940DA770DEE4F1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9FADE1C7F9878091CC940DA770DEE4F1</UserChecksum>
+        </File>
+        <File dnOrder="9">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">exceptions.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">322976BB28859B437B0D6D3B8E2AFE42</GeneratedChecksum>
+          <UserChecksum dnOrder="6">322976BB28859B437B0D6D3B8E2AFE42</UserChecksum>
+        </File>
+        <File dnOrder="10">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">gfx_driver.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/driver/ssd1963</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/driver/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">36FA79243A4ABD63DAAEA023290EDE3B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">36FA79243A4ABD63DAAEA023290EDE3B</UserChecksum>
+        </File>
+        <File dnOrder="11">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">initialization.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">629A893344735F25E7741B598CF350B8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">629A893344735F25E7741B598CF350B8</UserChecksum>
+        </File>
+        <File dnOrder="12">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">interrupts.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">49EEFBCE8349E7FADE83ABD3B9EB5014</GeneratedChecksum>
+          <UserChecksum dnOrder="6">49EEFBCE8349E7FADE83ABD3B9EB5014</UserChecksum>
+        </File>
+        <File dnOrder="13">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_font_Game_Over_label.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/font/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\font\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D60038D7E515E4D72E0059BE6212DD4F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D60038D7E515E4D72E0059BE6212DD4F</UserChecksum>
+        </File>
+        <File dnOrder="14">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_font_Game_title_font.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/font/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\font\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">710252A4BF917F1380CF2E5B06DB2043</GeneratedChecksum>
+          <UserChecksum dnOrder="6">710252A4BF917F1380CF2E5B06DB2043</UserChecksum>
+        </File>
+        <File dnOrder="15">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_font_Level_label_font.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/font/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\font\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F5C06278AD86239B3E5352F648302A3F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F5C06278AD86239B3E5352F648302A3F</UserChecksum>
+        </File>
+        <File dnOrder="16">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_font_Snake_life_label.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/font/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\font\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">969CE6F936C2198638A8B12C524D0CAB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">969CE6F936C2198638A8B12C524D0CAB</UserChecksum>
+        </File>
+        <File dnOrder="17">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_font_Snake_size_text.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/font/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\font\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">DBF0FB8D4A673A4992F2D95301621E60</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DBF0FB8D4A673A4992F2D95301621E60</UserChecksum>
+        </File>
+        <File dnOrder="18">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_harmony.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C92C9F77462F29527638122CF541FCDA</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C92C9F77462F29527638122CF541FCDA</UserChecksum>
+        </File>
+        <File dnOrder="19">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_image_Bar_1.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/image/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\image\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">39C5154615CF3A9ACC33F5874355460C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">39C5154615CF3A9ACC33F5874355460C</UserChecksum>
+        </File>
+        <File dnOrder="20">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_image_Converted_135447_1586215954_M19899_medical_clear.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/image/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\image\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3F8A3E57F4AD171109025C97FDA028FD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3F8A3E57F4AD171109025C97FDA028FD</UserChecksum>
+        </File>
+        <File dnOrder="21">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_image_MicrochipLogoHorizontalWhiteRed.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/image/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\image\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">09A4CFFC27D1D8171587D2B29FD4DFD5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">09A4CFFC27D1D8171587D2B29FD4DFD5</UserChecksum>
+        </File>
+        <File dnOrder="22">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_image_PIC32Logo.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/image/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\image\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FBB09A93D462DEC4AAB6FB75AE32609F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FBB09A93D462DEC4AAB6FB75AE32609F</UserChecksum>
+        </File>
+        <File dnOrder="23">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_init.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5313E12B4787A8C07CAE6470CDADB1B1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5313E12B4787A8C07CAE6470CDADB1B1</UserChecksum>
+        </File>
+        <File dnOrder="24">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_scheme.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">695BF61A22ADC81546C58569927DAC33</GeneratedChecksum>
+          <UserChecksum dnOrder="6">695BF61A22ADC81546C58569927DAC33</UserChecksum>
+        </File>
+        <File dnOrder="25">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_screen_Game_Level1.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">346A131629595C8FD7CFF4B3177613AD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">346A131629595C8FD7CFF4B3177613AD</UserChecksum>
+        </File>
+        <File dnOrder="26">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_screen_Game_Level2.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">317428C483A9472094A0E35EF2708774</GeneratedChecksum>
+          <UserChecksum dnOrder="6">317428C483A9472094A0E35EF2708774</UserChecksum>
+        </File>
+        <File dnOrder="27">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_screen_Menu.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1E8E298FD2750A5F0B6C2F5ADEDA7E8B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1E8E298FD2750A5F0B6C2F5ADEDA7E8B</UserChecksum>
+        </File>
+        <File dnOrder="28">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_screen_Splash.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FA1390D632F777384EF695C2FDD073AE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FA1390D632F777384EF695C2FDD073AE</UserChecksum>
+        </File>
+        <File dnOrder="29">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">le_gen_stringtable.c</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5D559704B8168E76C451AFE1711DC3D2</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5D559704B8168E76C451AFE1711DC3D2</UserChecksum>
+        </File>
+        <File dnOrder="30">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_array.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/datastructure</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/datastructure/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">46249E12DA03123FA328F6D71070577A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">46249E12DA03123FA328F6D71070577A</UserChecksum>
+        </File>
+        <File dnOrder="31">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_color.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3F06B37E6D2DECBE751503AC15D008BC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3F06B37E6D2DECBE751503AC15D008BC</UserChecksum>
+        </File>
+        <File dnOrder="32">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_color_blend.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D801337F03035B928D43958A1FA736A4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D801337F03035B928D43958A1FA736A4</UserChecksum>
+        </File>
+        <File dnOrder="33">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_color_convert.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">52C224E473C92A243A2088CA26FC4D4D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">52C224E473C92A243A2088CA26FC4D4D</UserChecksum>
+        </File>
+        <File dnOrder="34">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_color_lerp.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1221BA4090C19217257E0D9F403C0ED6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1221BA4090C19217257E0D9F403C0ED6</UserChecksum>
+        </File>
+        <File dnOrder="35">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_color_value.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5E9BA6B6BE8679E6B74CD26D3C79755B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5E9BA6B6BE8679E6B74CD26D3C79755B</UserChecksum>
+        </File>
+        <File dnOrder="36">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_draw.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/renderer</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/renderer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3689F84D5E01F9A734DD232FEE74A326</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3689F84D5E01F9A734DD232FEE74A326</UserChecksum>
+        </File>
+        <File dnOrder="37">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_draw_arc.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/renderer</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/renderer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D2C8BE26CE0EC3A60D0C96FEED567B6D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D2C8BE26CE0EC3A60D0C96FEED567B6D</UserChecksum>
+        </File>
+        <File dnOrder="38">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_draw_line.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/renderer</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/renderer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">AB3E71310630CFBF45858B4B31243A7A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AB3E71310630CFBF45858B4B31243A7A</UserChecksum>
+        </File>
+        <File dnOrder="39">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_draw_rect.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/renderer</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/renderer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">44E99C069475C0939379CD2F0F4C4008</GeneratedChecksum>
+          <UserChecksum dnOrder="6">44E99C069475C0939379CD2F0F4C4008</UserChecksum>
+        </File>
+        <File dnOrder="40">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_dynamicstring.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E0D311195125C19C0C5AF40ED68E086A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E0D311195125C19C0C5AF40ED68E086A</UserChecksum>
+        </File>
+        <File dnOrder="41">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_editwidget.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4192A44FB1B5E917895F7BD0CC1D2B80</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4192A44FB1B5E917895F7BD0CC1D2B80</UserChecksum>
+        </File>
+        <File dnOrder="42">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_error.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FD8AE68052818536AAE42B797E6CDC8C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FD8AE68052818536AAE42B797E6CDC8C</UserChecksum>
+        </File>
+        <File dnOrder="43">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_event.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6BE27C8A351299B6B06C9E6989FA7CC3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6BE27C8A351299B6B06C9E6989FA7CC3</UserChecksum>
+        </File>
+        <File dnOrder="44">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_fixedheap.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/memory</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/memory/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">780984C3EEF327E24B86A402165C384E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">780984C3EEF327E24B86A402165C384E</UserChecksum>
+        </File>
+        <File dnOrder="45">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_fixedstring.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B5B39313990DA62448CB3CC3F3B691C3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B5B39313990DA62448CB3CC3F3B691C3</UserChecksum>
+        </File>
+        <File dnOrder="46">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_font.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/font</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/font/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A86BC44CF6D3E3F3F9D52066D9F6D2AC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A86BC44CF6D3E3F3F9D52066D9F6D2AC</UserChecksum>
+        </File>
+        <File dnOrder="47">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_image.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9E81C3E41042F64C4BD90F40ED10E3BD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9E81C3E41042F64C4BD90F40ED10E3BD</UserChecksum>
+        </File>
+        <File dnOrder="48">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_image_utils.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C2B938ECA5C09C0EA97F85711917B5DC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C2B938ECA5C09C0EA97F85711917B5DC</UserChecksum>
+        </File>
+        <File dnOrder="49">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">DFBD496E9D720F51DD09EBF30B6CFD5F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DFBD496E9D720F51DD09EBF30B6CFD5F</UserChecksum>
+        </File>
+        <File dnOrder="50">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_blend.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C94F9011BC35A60CF73A9C9897FF3129</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C94F9011BC35A60CF73A9C9897FF3129</UserChecksum>
+        </File>
+        <File dnOrder="51">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_convert.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">DD01120A9383E3ED13F5BCAE4EA4EDF6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DD01120A9383E3ED13F5BCAE4EA4EDF6</UserChecksum>
+        </File>
+        <File dnOrder="52">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_mask.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">669A80F779B1D2A7C56AEB70CB349948</GeneratedChecksum>
+          <UserChecksum dnOrder="6">669A80F779B1D2A7C56AEB70CB349948</UserChecksum>
+        </File>
+        <File dnOrder="53">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_palette_internal.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8AB33E51BF57A33A9AF0AB3B9861FF06</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8AB33E51BF57A33A9AF0AB3B9861FF06</UserChecksum>
+        </File>
+        <File dnOrder="54">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_palette_stream.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B81BCFD6E230712DFAB2000D248C8BC4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B81BCFD6E230712DFAB2000D248C8BC4</UserChecksum>
+        </File>
+        <File dnOrder="55">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_read_internal.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">84D4BA17A381977396910B48F3A98443</GeneratedChecksum>
+          <UserChecksum dnOrder="6">84D4BA17A381977396910B48F3A98443</UserChecksum>
+        </File>
+        <File dnOrder="56">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_read_stream_color.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1DE9D0A88AD83F1C0D115707EE5D66F8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1DE9D0A88AD83F1C0D115707EE5D66F8</UserChecksum>
+        </File>
+        <File dnOrder="57">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_read_stream_index.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D002C3873DF2F646A4408B4FECCA8BA3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D002C3873DF2F646A4408B4FECCA8BA3</UserChecksum>
+        </File>
+        <File dnOrder="58">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_read_stream_rlecolor.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6397704A8026C049DB2178A0D3699057</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6397704A8026C049DB2178A0D3699057</UserChecksum>
+        </File>
+        <File dnOrder="59">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_read_stream_rleindex.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8B254C43150F0F734CBFB0A2866288C3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8B254C43150F0F734CBFB0A2866288C3</UserChecksum>
+        </File>
+        <File dnOrder="60">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_rotate.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">073C8A3B69603FE3DD6F86D17F562635</GeneratedChecksum>
+          <UserChecksum dnOrder="6">073C8A3B69603FE3DD6F86D17F562635</UserChecksum>
+        </File>
+        <File dnOrder="61">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_scale.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">36CCC87BFF04F52D091BC4DD5FCFF366</GeneratedChecksum>
+          <UserChecksum dnOrder="6">36CCC87BFF04F52D091BC4DD5FCFF366</UserChecksum>
+        </File>
+        <File dnOrder="62">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_setup.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">AB2915622B407A5D0213358CD89E676E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AB2915622B407A5D0213358CD89E676E</UserChecksum>
+        </File>
+        <File dnOrder="63">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw_write.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">16CE1693BAED09657F084FD37DC215C2</GeneratedChecksum>
+          <UserChecksum dnOrder="6">16CE1693BAED09657F084FD37DC215C2</UserChecksum>
+        </File>
+        <File dnOrder="64">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_input.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9CB774AB1FDEF9A85C58959FFEDD2570</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9CB774AB1FDEF9A85C58959FFEDD2570</UserChecksum>
+        </File>
+        <File dnOrder="65">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_list.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/datastructure</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/datastructure/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">166EFFCA3A6ED925F2EECB58B757BC83</GeneratedChecksum>
+          <UserChecksum dnOrder="6">166EFFCA3A6ED925F2EECB58B757BC83</UserChecksum>
+        </File>
+        <File dnOrder="66">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_math.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">19D6C383C1FC33BB42F67726DB92D988</GeneratedChecksum>
+          <UserChecksum dnOrder="6">19D6C383C1FC33BB42F67726DB92D988</UserChecksum>
+        </File>
+        <File dnOrder="67">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_memory.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/memory</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/memory/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">185E12EC37D0754E5BB350490AF75132</GeneratedChecksum>
+          <UserChecksum dnOrder="6">185E12EC37D0754E5BB350490AF75132</UserChecksum>
+        </File>
+        <File dnOrder="68">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_palette.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CE69218FE966EFCC87A06C76D9D662B6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CE69218FE966EFCC87A06C76D9D662B6</UserChecksum>
+        </File>
+        <File dnOrder="69">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_pixelbuffer.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4D8CFA863792539CE275A0CD06AE4773</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4D8CFA863792539CE275A0CD06AE4773</UserChecksum>
+        </File>
+        <File dnOrder="70">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_radiobutton_group.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radiobutton</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radiobutton/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5FF49D5FB970A042947F296C77BEB2F0</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5FF49D5FB970A042947F296C77BEB2F0</UserChecksum>
+        </File>
+        <File dnOrder="71">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_rasterfont_liberationmono1.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/font</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/font/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">08401D7220E1ABC4D368F7A678916753</GeneratedChecksum>
+          <UserChecksum dnOrder="6">08401D7220E1ABC4D368F7A678916753</UserChecksum>
+        </File>
+        <File dnOrder="72">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_rasterfont_liberationmono8.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/font</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/font/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">EA7FB6E29DA7227B1B48FBD66056D7EC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EA7FB6E29DA7227B1B48FBD66056D7EC</UserChecksum>
+        </File>
+        <File dnOrder="73">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_rasterfont_stream.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/font</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/font/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3AA3A21035C923AD0F43D61979590EF8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3AA3A21035C923AD0F43D61979590EF8</UserChecksum>
+        </File>
+        <File dnOrder="74">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_rect.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B069B6FBDBC6D3FACB151438AFE7C230</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B069B6FBDBC6D3FACB151438AFE7C230</UserChecksum>
+        </File>
+        <File dnOrder="75">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_rectarray.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/datastructure</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/datastructure/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">DB5A9AD16371CDBC079A45926309A4A1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DB5A9AD16371CDBC079A45926309A4A1</UserChecksum>
+        </File>
+        <File dnOrder="76">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_renderer.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/renderer</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/renderer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0955C0BBB2806E9DA8DA063BE88C8FB3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0955C0BBB2806E9DA8DA063BE88C8FB3</UserChecksum>
+        </File>
+        <File dnOrder="77">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_scheme.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3B034698195ACEE7B953157DE816F0CE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3B034698195ACEE7B953157DE816F0CE</UserChecksum>
+        </File>
+        <File dnOrder="78">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_state.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">7F3E553101664832A9598D369F0FA578</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7F3E553101664832A9598D369F0FA578</UserChecksum>
+        </File>
+        <File dnOrder="79">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_stream.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">874FA4E4B6C26B0F712B2A712EB1FAC1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">874FA4E4B6C26B0F712B2A712EB1FAC1</UserChecksum>
+        </File>
+        <File dnOrder="80">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_string.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">839C57D3500CD251AADC83CFE9FD7F78</GeneratedChecksum>
+          <UserChecksum dnOrder="6">839C57D3500CD251AADC83CFE9FD7F78</UserChecksum>
+        </File>
+        <File dnOrder="81">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_string_renderer.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">56971255CFEC12B89CF325D1853C47AB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">56971255CFEC12B89CF325D1853C47AB</UserChecksum>
+        </File>
+        <File dnOrder="82">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_string_renderer_stream.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8DBBEA461DCA3B6A74E4FD5D4C1720F5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8DBBEA461DCA3B6A74E4FD5D4C1720F5</UserChecksum>
+        </File>
+        <File dnOrder="83">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_stringtable.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F854DEE4AB87DDFAAAC2ACDE8DDBBCEE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F854DEE4AB87DDFAAAC2ACDE8DDBBCEE</UserChecksum>
+        </File>
+        <File dnOrder="84">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_stringutils.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">060CC7A3D51063736F9A9A95A4A98ABC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">060CC7A3D51063736F9A9A95A4A98ABC</UserChecksum>
+        </File>
+        <File dnOrder="85">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_tablestring.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">AE4FD0919EB12F854BEA3E99A93F3F9F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AE4FD0919EB12F854BEA3E99A93F3F9F</UserChecksum>
+        </File>
+        <File dnOrder="86">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_utils.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">7C1A4723819F3C2BA560477EB841AF82</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7C1A4723819F3C2BA560477EB841AF82</UserChecksum>
+        </File>
+        <File dnOrder="87">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_variableheap.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/memory</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/memory/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">369A92943B3B386F712386693414CE9C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">369A92943B3B386F712386693414CE9C</UserChecksum>
+        </File>
+        <File dnOrder="88">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">920F4D1E68079F4AD15D5B202E606E63</GeneratedChecksum>
+          <UserChecksum dnOrder="6">920F4D1E68079F4AD15D5B202E606E63</UserChecksum>
+        </File>
+        <File dnOrder="89">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_arc.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/arc</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/arc/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4E34D2E3BDC617D005AB01CDE9DC260C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4E34D2E3BDC617D005AB01CDE9DC260C</UserChecksum>
+        </File>
+        <File dnOrder="90">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_arc_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/arc</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/arc/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CF6340F6DBB104F3CDCF36EB9C5BCA6E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CF6340F6DBB104F3CDCF36EB9C5BCA6E</UserChecksum>
+        </File>
+        <File dnOrder="91">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_bar_graph.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/bargraph</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/bargraph/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4123FDC55F800C627BFBA46394AF460D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4123FDC55F800C627BFBA46394AF460D</UserChecksum>
+        </File>
+        <File dnOrder="92">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_bar_graph_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/bargraph</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/bargraph/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E593E6C9EC98A63C61998B0FD026336E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E593E6C9EC98A63C61998B0FD026336E</UserChecksum>
+        </File>
+        <File dnOrder="93">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_button.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/button</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/button/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5CCB72C62BDD5A4546765877BEEC49A9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5CCB72C62BDD5A4546765877BEEC49A9</UserChecksum>
+        </File>
+        <File dnOrder="94">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_button_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/button</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/button/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8F70E9042F0C5AC51853690B14EC4663</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8F70E9042F0C5AC51853690B14EC4663</UserChecksum>
+        </File>
+        <File dnOrder="95">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_checkbox.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/checkbox</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/checkbox/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1E610C65EFC26E6864F08EBD3377B1C1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1E610C65EFC26E6864F08EBD3377B1C1</UserChecksum>
+        </File>
+        <File dnOrder="96">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_checkbox_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/checkbox</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/checkbox/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">06CC22D82D622CACACC5930D551269F1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">06CC22D82D622CACACC5930D551269F1</UserChecksum>
+        </File>
+        <File dnOrder="97">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_circle.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circle</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circle/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">77D543F8AA5C2E5F3F410C4DF25A4EA4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">77D543F8AA5C2E5F3F410C4DF25A4EA4</UserChecksum>
+        </File>
+        <File dnOrder="98">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_circle_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circle</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circle/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8CB35BB48826A3A76105B5E3DB0636B9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8CB35BB48826A3A76105B5E3DB0636B9</UserChecksum>
+        </File>
+        <File dnOrder="99">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_circular_gauge.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circulargauge</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circulargauge/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D461D676D0EB6B4A9F0C487E65E67DD8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D461D676D0EB6B4A9F0C487E65E67DD8</UserChecksum>
+        </File>
+        <File dnOrder="100">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_circular_gauge_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circulargauge</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circulargauge/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D4C0FAF32A03AD6894CC81D790132B18</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D4C0FAF32A03AD6894CC81D790132B18</UserChecksum>
+        </File>
+        <File dnOrder="101">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_circular_slider.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circularslider</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circularslider/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3B0C752F0BEF4615EA4A43F2B85A1B95</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3B0C752F0BEF4615EA4A43F2B85A1B95</UserChecksum>
+        </File>
+        <File dnOrder="102">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_circular_slider_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circularslider</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circularslider/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A7EEB04A8CCA3DB61E5E672E13CD9001</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A7EEB04A8CCA3DB61E5E672E13CD9001</UserChecksum>
+        </File>
+        <File dnOrder="103">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_drawsurface.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/drawsurface</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/drawsurface/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4315D12953E343E67EF96C5AD9FC9082</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4315D12953E343E67EF96C5AD9FC9082</UserChecksum>
+        </File>
+        <File dnOrder="104">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_drawsurface_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/drawsurface</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/drawsurface/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2C1A1B8DA542716E116C23BB29079287</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2C1A1B8DA542716E116C23BB29079287</UserChecksum>
+        </File>
+        <File dnOrder="105">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_gradient.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/gradient</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/gradient/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2F2916E98DCEE3908D2EEA90061076EA</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2F2916E98DCEE3908D2EEA90061076EA</UserChecksum>
+        </File>
+        <File dnOrder="106">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_gradient_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/gradient</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/gradient/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">551B2ECB59D6DD9A16B55C06BFB079F6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">551B2ECB59D6DD9A16B55C06BFB079F6</UserChecksum>
+        </File>
+        <File dnOrder="107">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_groupbox.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/groupbox</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/groupbox/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8DD53FA176A982AFF23A21EA420437F1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8DD53FA176A982AFF23A21EA420437F1</UserChecksum>
+        </File>
+        <File dnOrder="108">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_groupbox_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/groupbox</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/groupbox/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A7815874E7DB98797CB291FE9BAFDDCD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A7815874E7DB98797CB291FE9BAFDDCD</UserChecksum>
+        </File>
+        <File dnOrder="109">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_image.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2AD390D9C48F87A95548ADF2461138F6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2AD390D9C48F87A95548ADF2461138F6</UserChecksum>
+        </File>
+        <File dnOrder="110">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_image_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C33B1629B8DDD31940AD74835CE798F0</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C33B1629B8DDD31940AD74835CE798F0</UserChecksum>
+        </File>
+        <File dnOrder="111">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_imagerotate.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagerotate</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagerotate/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0BFDC9A69F49559337A9B2E826B88C87</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0BFDC9A69F49559337A9B2E826B88C87</UserChecksum>
+        </File>
+        <File dnOrder="112">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_imagerotate_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagerotate</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagerotate/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0F84FE8B5DE296E2FF0E41AADF15E9CB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0F84FE8B5DE296E2FF0E41AADF15E9CB</UserChecksum>
+        </File>
+        <File dnOrder="113">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_imagescale.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagescale</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagescale/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">11E7EB6ACA5E4BBA9D4ED283FB953FD4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">11E7EB6ACA5E4BBA9D4ED283FB953FD4</UserChecksum>
+        </File>
+        <File dnOrder="114">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_imagescale_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagescale</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagescale/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">003940FF1FD4D20FAA9ED985C48F8D2E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">003940FF1FD4D20FAA9ED985C48F8D2E</UserChecksum>
+        </File>
+        <File dnOrder="115">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_imagesequence.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagesequence</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagesequence/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0CE679419AE00E4BC6816D7E0D6FC5F8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0CE679419AE00E4BC6816D7E0D6FC5F8</UserChecksum>
+        </File>
+        <File dnOrder="116">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_imagesequence_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagesequence</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagesequence/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CEAAF75E3B89D7D780BCBE7870327850</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CEAAF75E3B89D7D780BCBE7870327850</UserChecksum>
+        </File>
+        <File dnOrder="117">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_keypad.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/keypad</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/keypad/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C227623199B56BEC50EAE0EAD41DDC53</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C227623199B56BEC50EAE0EAD41DDC53</UserChecksum>
+        </File>
+        <File dnOrder="118">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_keypad_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/keypad</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/keypad/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8404B884225F2756F659D17E4652D576</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8404B884225F2756F659D17E4652D576</UserChecksum>
+        </File>
+        <File dnOrder="119">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_label.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/label</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/label/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">62C8C97DB0A0F7EB53CC089D7941559C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">62C8C97DB0A0F7EB53CC089D7941559C</UserChecksum>
+        </File>
+        <File dnOrder="120">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_label_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/label</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/label/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">ACC4659DC0E86FCE28D5537D7E9F2F76</GeneratedChecksum>
+          <UserChecksum dnOrder="6">ACC4659DC0E86FCE28D5537D7E9F2F76</UserChecksum>
+        </File>
+        <File dnOrder="121">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_line.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/line</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/line/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A9E0F827B76814813764C253B6460F9D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A9E0F827B76814813764C253B6460F9D</UserChecksum>
+        </File>
+        <File dnOrder="122">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_line_graph.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/linegraph</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/linegraph/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">36C76E0DAEFBEEDFAF6B03534057F775</GeneratedChecksum>
+          <UserChecksum dnOrder="6">36C76E0DAEFBEEDFAF6B03534057F775</UserChecksum>
+        </File>
+        <File dnOrder="123">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_line_graph_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/linegraph</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/linegraph/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0BB1BA10BC5B3356C1F1C14780260995</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0BB1BA10BC5B3356C1F1C14780260995</UserChecksum>
+        </File>
+        <File dnOrder="124">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_line_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/line</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/line/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F09C2415141210107FEFDD3CFF8F8F8A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F09C2415141210107FEFDD3CFF8F8F8A</UserChecksum>
+        </File>
+        <File dnOrder="125">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_list.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/list</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/list/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">374FBE87A2F03B404554A758E5B669B1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">374FBE87A2F03B404554A758E5B669B1</UserChecksum>
+        </File>
+        <File dnOrder="126">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_list_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/list</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/list/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E7E4989C4513E0F7D5266C0024E45F44</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E7E4989C4513E0F7D5266C0024E45F44</UserChecksum>
+        </File>
+        <File dnOrder="127">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_listwheel.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/listwheel</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/listwheel/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">19A303967491C88F80DD78671002813D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">19A303967491C88F80DD78671002813D</UserChecksum>
+        </File>
+        <File dnOrder="128">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_listwheel_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/listwheel</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/listwheel/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FE2D3DF872F49BAB4DFA0BB4743CBC6A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FE2D3DF872F49BAB4DFA0BB4743CBC6A</UserChecksum>
+        </File>
+        <File dnOrder="129">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_pie_chart.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/piechart</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/piechart/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4DA960924D86F98D0CE776EDC53B6B8A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4DA960924D86F98D0CE776EDC53B6B8A</UserChecksum>
+        </File>
+        <File dnOrder="130">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_pie_chart_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/piechart</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/piechart/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">72F5C5AADEE5320D608130304B2B8431</GeneratedChecksum>
+          <UserChecksum dnOrder="6">72F5C5AADEE5320D608130304B2B8431</UserChecksum>
+        </File>
+        <File dnOrder="131">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_progressbar.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/progressbar</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/progressbar/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4F1811642905F15031E9258B88E4C14A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4F1811642905F15031E9258B88E4C14A</UserChecksum>
+        </File>
+        <File dnOrder="132">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_progressbar_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/progressbar</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/progressbar/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">EEDBE8B851D39AF2BA3895A25AB7CBD9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EEDBE8B851D39AF2BA3895A25AB7CBD9</UserChecksum>
+        </File>
+        <File dnOrder="133">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_radial_menu.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radialmenu</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radialmenu/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">20C7345896844D5F7877A1D9A15E3C3D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">20C7345896844D5F7877A1D9A15E3C3D</UserChecksum>
+        </File>
+        <File dnOrder="134">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_radial_menu_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radialmenu</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radialmenu/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">79D105A53EE5CA667D215CD4B65D343B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">79D105A53EE5CA667D215CD4B65D343B</UserChecksum>
+        </File>
+        <File dnOrder="135">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_radiobutton.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radiobutton</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radiobutton/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4228255637851DFF410ADFCC38DB4059</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4228255637851DFF410ADFCC38DB4059</UserChecksum>
+        </File>
+        <File dnOrder="136">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_radiobutton_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radiobutton</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radiobutton/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D36C5717D85B1FBF59741DAA442CD53C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D36C5717D85B1FBF59741DAA442CD53C</UserChecksum>
+        </File>
+        <File dnOrder="137">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_rectangle.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/rectangle</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/rectangle/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">15611F5FF4EC00A51639E97AA93179AE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">15611F5FF4EC00A51639E97AA93179AE</UserChecksum>
+        </File>
+        <File dnOrder="138">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_rectangle_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/rectangle</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/rectangle/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">90DA3B23815C965799B06AA51BA8C749</GeneratedChecksum>
+          <UserChecksum dnOrder="6">90DA3B23815C965799B06AA51BA8C749</UserChecksum>
+        </File>
+        <File dnOrder="139">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_scrollbar.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/scrollbar</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/scrollbar/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F8FA66FE488FEFFC1ABC7DE8ADC1A671</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F8FA66FE488FEFFC1ABC7DE8ADC1A671</UserChecksum>
+        </File>
+        <File dnOrder="140">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_scrollbar_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/scrollbar</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/scrollbar/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C28A863E7516B38A95273E5D1E73B573</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C28A863E7516B38A95273E5D1E73B573</UserChecksum>
+        </File>
+        <File dnOrder="141">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">59DFE1BCCAFB043DB9BFCAB5255AD4A4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">59DFE1BCCAFB043DB9BFCAB5255AD4A4</UserChecksum>
+        </File>
+        <File dnOrder="142">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_skin_classic_common.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">868062C38EEFAD0590DBA5664D2CCCEC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">868062C38EEFAD0590DBA5664D2CCCEC</UserChecksum>
+        </File>
+        <File dnOrder="143">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_slider.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/slider</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/slider/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2A47098239E27108F33CCF34CE468C86</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2A47098239E27108F33CCF34CE468C86</UserChecksum>
+        </File>
+        <File dnOrder="144">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_slider_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/slider</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/slider/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C20E12B7631E0CF5BEF705F9E7F9E80B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C20E12B7631E0CF5BEF705F9E7F9E80B</UserChecksum>
+        </File>
+        <File dnOrder="145">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_textfield.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/textfield</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/textfield/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">DD752A9ACB8304DC5D0951CAFB49984B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DD752A9ACB8304DC5D0951CAFB49984B</UserChecksum>
+        </File>
+        <File dnOrder="146">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_textfield_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/textfield</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/textfield/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">57DD59BFF1F25290CE11C8F5FC070F7D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">57DD59BFF1F25290CE11C8F5FC070F7D</UserChecksum>
+        </File>
+        <File dnOrder="147">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_touchtest.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/touchtest</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/touchtest/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A53A9D4D9172D8934558EE2326BA51EA</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A53A9D4D9172D8934558EE2326BA51EA</UserChecksum>
+        </File>
+        <File dnOrder="148">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_touchtest_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/touchtest</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/touchtest/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">18BB98230CB8267FF435DF12719B683F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">18BB98230CB8267FF435DF12719B683F</UserChecksum>
+        </File>
+        <File dnOrder="149">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_window.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/window</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/window/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">278CED07F73BF48932AC79636289511F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">278CED07F73BF48932AC79636289511F</UserChecksum>
+        </File>
+        <File dnOrder="150">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">legato_widget_window_skin_classic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/window</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/window/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6ABB0388FF5A94613FCD21690CEF6456</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6ABB0388FF5A94613FCD21690CEF6456</UserChecksum>
+        </File>
+        <File dnOrder="151">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">main.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="152">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_clk.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/clk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/clk/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">243C8C5522790C83A94B68B64CFB88EF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">243C8C5522790C83A94B68B64CFB88EF</UserChecksum>
+        </File>
+        <File dnOrder="153">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_coretimer.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/coretimer/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/coretimer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2FEFEA0D4E94F5A5F3D76BAEC3D602E5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2FEFEA0D4E94F5A5F3D76BAEC3D602E5</UserChecksum>
+        </File>
+        <File dnOrder="154">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_ebi.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/ebi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/ebi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9771C4191D6679BEA1BE83CA19E7F2E8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9771C4191D6679BEA1BE83CA19E7F2E8</UserChecksum>
+        </File>
+        <File dnOrder="155">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_evic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/evic/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/evic/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CA132CD6AB1CB50ECADD40ADCC83AE25</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CA132CD6AB1CB50ECADD40ADCC83AE25</UserChecksum>
+        </File>
+        <File dnOrder="156">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_gpio.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/gpio/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/gpio/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">91C0C05C59FD84BC531BBBE848329117</GeneratedChecksum>
+          <UserChecksum dnOrder="6">91C0C05C59FD84BC531BBBE848329117</UserChecksum>
+        </File>
+        <File dnOrder="157">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_i2c2.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/i2c/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F8CF0421BB75A55B084FC0E188A6B6FA</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F8CF0421BB75A55B084FC0E188A6B6FA</UserChecksum>
+        </File>
+        <File dnOrder="158">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_spi1.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/spi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F6085D21ACF95F035E0B65B8ECA38A9E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F6085D21ACF95F035E0B65B8ECA38A9E</UserChecksum>
+        </File>
+        <File dnOrder="159">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">sys_dma.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/dma/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/dma/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0A6893369C4DA0EE7906866EB6E1D310</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0A6893369C4DA0EE7906866EB6E1D310</UserChecksum>
+        </File>
+        <File dnOrder="160">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">sys_input.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3618E41476EE539B6E4E8B52A817042D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3618E41476EE539B6E4E8B52A817042D</UserChecksum>
+        </File>
+        <File dnOrder="161">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">sys_input_listener.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">99F5C28835CA70CF308C005561EF92C6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">99F5C28835CA70CF308C005561EF92C6</UserChecksum>
+        </File>
+        <File dnOrder="162">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">sys_int.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/int/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/int/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">640A4B35B8CDB53BD8EA5077D81386BE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">640A4B35B8CDB53BD8EA5077D81386BE</UserChecksum>
+        </File>
+        <File dnOrder="163">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">sys_time.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/time/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/time/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">40A99C84F50EB7DFAA579B8675F140DD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">40A99C84F50EB7DFAA579B8675F140DD</UserChecksum>
+        </File>
+        <File dnOrder="164">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">tasks.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A2A28461F6C92AB1ED66F733F3D23CBF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A2A28461F6C92AB1ED66F733F3D23CBF</UserChecksum>
+        </File>
+        <File dnOrder="165">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">xc32_monitor.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/stdio/</LogicalPath>
+          <PhysicalPath dnOrder="4">/stdio/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0CDCE9B6891797FCD2AEA243F841353F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0CDCE9B6891797FCD2AEA243F841353F</UserChecksum>
+        </File>
+        <File dnOrder="166">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">app.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="167">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">bsp.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/bsp/</LogicalPath>
+          <PhysicalPath dnOrder="4">/bsp/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3A3D90BBDFDB486B57C8FED3BA7D4135</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3A3D90BBDFDB486B57C8FED3BA7D4135</UserChecksum>
+        </File>
+        <File dnOrder="168">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">configuration.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">752A016155AB307B6E6D142BA92F7C30</GeneratedChecksum>
+          <UserChecksum dnOrder="6">752A016155AB307B6E6D142BA92F7C30</UserChecksum>
+        </File>
+        <File dnOrder="169">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">definitions.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1282994E78E6BB4D59514F426BA1FE4F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1282994E78E6BB4D59514F426BA1FE4F</UserChecksum>
+        </File>
+        <File dnOrder="170">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">device.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">packs/PIC32MZ2048EFM144_DFP/</LogicalPath>
+          <PhysicalPath dnOrder="4">/../../packs/PIC32MZ2048EFM144_DFP/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5D5C52527AB1435153DB9B50ADE6B79D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5D5C52527AB1435153DB9B50ADE6B79D</UserChecksum>
+        </File>
+        <File dnOrder="171">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">driver.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1D2094DFA60F847FFD4E8153B6E78027</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1D2094DFA60F847FFD4E8153B6E78027</UserChecksum>
+        </File>
+        <File dnOrder="172">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">driver_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CC7DFCC51CD25171A3E400E18969354F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CC7DFCC51CD25171A3E400E18969354F</UserChecksum>
+        </File>
+        <File dnOrder="173">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_gfx_disp_intf.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/interface</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/interface/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2E7C78DB793465128C5FD8BAD86D7C4F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2E7C78DB793465128C5FD8BAD86D7C4F</UserChecksum>
+        </File>
+        <File dnOrder="174">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_gfx_ssd1963.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/driver/ssd1963</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/driver/controller/ssd1963/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">061F2C6C679ECBFDF817545A508B488E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">061F2C6C679ECBFDF817545A508B488E</UserChecksum>
+        </File>
+        <File dnOrder="175">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_gfx_ssd1963_cmd_defs.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/driver/ssd1963</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/driver/controller/ssd1963/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">628E3467AB8E86D77E36CEDC8105C005</GeneratedChecksum>
+          <UserChecksum dnOrder="6">628E3467AB8E86D77E36CEDC8105C005</UserChecksum>
+        </File>
+        <File dnOrder="176">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_gfx_ssd1963_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/driver/ssd1963</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/driver/controller/ssd1963/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">74292276C8245EAD5A764539F8D12ED4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">74292276C8245EAD5A764539F8D12ED4</UserChecksum>
+        </File>
+        <File dnOrder="177">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_i2c.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/i2c/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3C6689B8800C6234028EC2FBE82E25CF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3C6689B8800C6234028EC2FBE82E25CF</UserChecksum>
+        </File>
+        <File dnOrder="178">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_i2c_definitions.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/i2c/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">260EF469FECCFEF9418D6268909EE2F8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">260EF469FECCFEF9418D6268909EE2F8</UserChecksum>
+        </File>
+        <File dnOrder="179">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_maxtouch.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">96E55AC4B3153F31385A2A7066E9CCBB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">96E55AC4B3153F31385A2A7066E9CCBB</UserChecksum>
+        </File>
+        <File dnOrder="180">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_spi.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/spi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">53AD078A2F507226A6BDA2DBFEA03430</GeneratedChecksum>
+          <UserChecksum dnOrder="6">53AD078A2F507226A6BDA2DBFEA03430</UserChecksum>
+        </File>
+        <File dnOrder="181">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">drv_spi_definitions.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/driver/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/driver/spi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E2CB59CF36535862BE10D0969882502A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E2CB59CF36535862BE10D0969882502A</UserChecksum>
+        </File>
+        <File dnOrder="182">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">gfx_driver.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/driver/ssd1963</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/driver/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8F027A40B1B534856A2689F26CD5B50B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8F027A40B1B534856A2689F26CD5B50B</UserChecksum>
+        </File>
+        <File dnOrder="183">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_assets.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">226EFFF2060EB2C3777AD955B0A62130</GeneratedChecksum>
+          <UserChecksum dnOrder="6">226EFFF2060EB2C3777AD955B0A62130</UserChecksum>
+        </File>
+        <File dnOrder="184">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_harmony.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">96E97A25B5AFCE6A13F42ACBD9CB41AB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">96E97A25B5AFCE6A13F42ACBD9CB41AB</UserChecksum>
+        </File>
+        <File dnOrder="185">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_init.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">045E03AFCC9A25E0DD3E92E5D553A32B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">045E03AFCC9A25E0DD3E92E5D553A32B</UserChecksum>
+        </File>
+        <File dnOrder="186">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_scheme.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B595F5B7F28F0875E5D725F7E047B9BF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B595F5B7F28F0875E5D725F7E047B9BF</UserChecksum>
+        </File>
+        <File dnOrder="187">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_screen_Game_Level1.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CA882EDA226F7D6016C445E80E290F3E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CA882EDA226F7D6016C445E80E290F3E</UserChecksum>
+        </File>
+        <File dnOrder="188">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_screen_Game_Level2.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">104DC942D0AC1B07565ED9A667EB1811</GeneratedChecksum>
+          <UserChecksum dnOrder="6">104DC942D0AC1B07565ED9A667EB1811</UserChecksum>
+        </File>
+        <File dnOrder="189">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_screen_Menu.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">56F80AF7046CAFAAEB75507F6F33A414</GeneratedChecksum>
+          <UserChecksum dnOrder="6">56F80AF7046CAFAAEB75507F6F33A414</UserChecksum>
+        </File>
+        <File dnOrder="190">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">le_gen_screen_Splash.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/generated/screen/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\generated\screen\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">7A258978BAB9A60BCC9A9063FE2F0295</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7A258978BAB9A60BCC9A9063FE2F0295</UserChecksum>
+        </File>
+        <File dnOrder="191">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C999AADDDEA7D90A2AFA96D54D026BC5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C999AADDDEA7D90A2AFA96D54D026BC5</UserChecksum>
+        </File>
+        <File dnOrder="192">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_array.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/datastructure</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/datastructure/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E67A59E2225ADF2CF5381D6093DB1E3E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E67A59E2225ADF2CF5381D6093DB1E3E</UserChecksum>
+        </File>
+        <File dnOrder="193">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_color.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">604C9FB8887665B357E9602EDEDA8703</GeneratedChecksum>
+          <UserChecksum dnOrder="6">604C9FB8887665B357E9602EDEDA8703</UserChecksum>
+        </File>
+        <File dnOrder="194">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">AA8BD3A9727EBB2E6704E68475041A92</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AA8BD3A9727EBB2E6704E68475041A92</UserChecksum>
+        </File>
+        <File dnOrder="195">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_config.h</Name>
+          <Security dnOrder="2"/>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato\</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9E3727854140523F99E592AA6F4CC5AB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9E3727854140523F99E592AA6F4CC5AB</UserChecksum>
+        </File>
+        <File dnOrder="196">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_dynamicstring.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6A0405E660B0925025407776F6262EFD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6A0405E660B0925025407776F6262EFD</UserChecksum>
+        </File>
+        <File dnOrder="197">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_editwidget.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">54343037E38198C9B8027A62DCE4050E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">54343037E38198C9B8027A62DCE4050E</UserChecksum>
+        </File>
+        <File dnOrder="198">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_error.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C7B93982F5E8643904E5D87A04A67AEC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C7B93982F5E8643904E5D87A04A67AEC</UserChecksum>
+        </File>
+        <File dnOrder="199">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_event.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">723B51CDBCBF6481518F9716C2B89E31</GeneratedChecksum>
+          <UserChecksum dnOrder="6">723B51CDBCBF6481518F9716C2B89E31</UserChecksum>
+        </File>
+        <File dnOrder="200">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_fixedheap.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/memory</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/memory/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B2CD4B37F8A132D4A68A3EF659724815</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B2CD4B37F8A132D4A68A3EF659724815</UserChecksum>
+        </File>
+        <File dnOrder="201">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_fixedstring.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">73CCB5679A9FA723F86795D6249F9CA9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">73CCB5679A9FA723F86795D6249F9CA9</UserChecksum>
+        </File>
+        <File dnOrder="202">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_font.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/font</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/font/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">EA4CDD603A7B0A1FF821C6ED4539FC52</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EA4CDD603A7B0A1FF821C6ED4539FC52</UserChecksum>
+        </File>
+        <File dnOrder="203">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_image.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">625F9B0D01DCBD3C761F893422E29019</GeneratedChecksum>
+          <UserChecksum dnOrder="6">625F9B0D01DCBD3C761F893422E29019</UserChecksum>
+        </File>
+        <File dnOrder="204">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_image_utils.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4F75AE2BA02B082D70C5E22ED7659D8E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4F75AE2BA02B082D70C5E22ED7659D8E</UserChecksum>
+        </File>
+        <File dnOrder="205">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_imagedecoder_raw.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image/raw</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/raw/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">85E984C24A902740F771E44A998E4FB6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">85E984C24A902740F771E44A998E4FB6</UserChecksum>
+        </File>
+        <File dnOrder="206">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_input.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">ED05AB0F02E1ED8F54701ED3F7358638</GeneratedChecksum>
+          <UserChecksum dnOrder="6">ED05AB0F02E1ED8F54701ED3F7358638</UserChecksum>
+        </File>
+        <File dnOrder="207">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_list.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/datastructure</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/datastructure/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6FADA3D03D6BF8A7F7FF8E2072C0A304</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6FADA3D03D6BF8A7F7FF8E2072C0A304</UserChecksum>
+        </File>
+        <File dnOrder="208">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_math.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4E23727693850A95ECF602733069BBB6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4E23727693850A95ECF602733069BBB6</UserChecksum>
+        </File>
+        <File dnOrder="209">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_memory.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/memory</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/memory/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">41ABECA43D13A37858B2F60402742A94</GeneratedChecksum>
+          <UserChecksum dnOrder="6">41ABECA43D13A37858B2F60402742A94</UserChecksum>
+        </File>
+        <File dnOrder="210">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_palette.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">75B60FC55C7632E76003C0E6CFE30865</GeneratedChecksum>
+          <UserChecksum dnOrder="6">75B60FC55C7632E76003C0E6CFE30865</UserChecksum>
+        </File>
+        <File dnOrder="211">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_pixelbuffer.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">BA36F4EC46AD0FE9FA2F6F564057F066</GeneratedChecksum>
+          <UserChecksum dnOrder="6">BA36F4EC46AD0FE9FA2F6F564057F066</UserChecksum>
+        </File>
+        <File dnOrder="212">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_radiobutton_group.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radiobutton</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radiobutton/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E4C761A1B69E7D0A9C6B806A6EDC9A73</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E4C761A1B69E7D0A9C6B806A6EDC9A73</UserChecksum>
+        </File>
+        <File dnOrder="213">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_rect.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">159B138E35BA8D4EC5D578404E85E61E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">159B138E35BA8D4EC5D578404E85E61E</UserChecksum>
+        </File>
+        <File dnOrder="214">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_rectarray.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/datastructure</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/datastructure/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">58A3634707D8579A1024E20C6574F4FD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">58A3634707D8579A1024E20C6574F4FD</UserChecksum>
+        </File>
+        <File dnOrder="215">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_renderer.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/renderer</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/renderer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D9B85E2626E1EBA10B7ED42199A424F6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D9B85E2626E1EBA10B7ED42199A424F6</UserChecksum>
+        </File>
+        <File dnOrder="216">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_scheme.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1109F193B5217A48A9BC4A2C436D9BB1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1109F193B5217A48A9BC4A2C436D9BB1</UserChecksum>
+        </File>
+        <File dnOrder="217">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_state.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C59B5375D288DD8155EB0EEDB7CCC8BB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C59B5375D288DD8155EB0EEDB7CCC8BB</UserChecksum>
+        </File>
+        <File dnOrder="218">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_stream.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/core</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/core/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9441644EDD2DC3A635414B12371A2922</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9441644EDD2DC3A635414B12371A2922</UserChecksum>
+        </File>
+        <File dnOrder="219">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_string.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">99BD221E4C0710D99F68D961E5CB8D2F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">99BD221E4C0710D99F68D961E5CB8D2F</UserChecksum>
+        </File>
+        <File dnOrder="220">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_string_renderer.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E7C4AD4EC02AB220B1D85BF689FB8310</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E7C4AD4EC02AB220B1D85BF689FB8310</UserChecksum>
+        </File>
+        <File dnOrder="221">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_stringtable.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">455856A5EB35CD587C1C0C983CB67AF1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">455856A5EB35CD587C1C0C983CB67AF1</UserChecksum>
+        </File>
+        <File dnOrder="222">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_stringutils.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C3894DCCE69819578789798B12CABEA0</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C3894DCCE69819578789798B12CABEA0</UserChecksum>
+        </File>
+        <File dnOrder="223">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_tablestring.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/string</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/string/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">AEBA047D282A6BEA9CEE4A64D7E36639</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AEBA047D282A6BEA9CEE4A64D7E36639</UserChecksum>
+        </File>
+        <File dnOrder="224">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_utils.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/common</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/common/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5B7357F90BF94EEDCFE546AB8EC5237F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5B7357F90BF94EEDCFE546AB8EC5237F</UserChecksum>
+        </File>
+        <File dnOrder="225">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_variableheap.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/memory</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/memory/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">EAEB0A0800DF7B2F82ECA2E3D19546DE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EAEB0A0800DF7B2F82ECA2E3D19546DE</UserChecksum>
+        </File>
+        <File dnOrder="226">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2AA7E0398921984B8E0CD7AAECD04FEE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2AA7E0398921984B8E0CD7AAECD04FEE</UserChecksum>
+        </File>
+        <File dnOrder="227">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_arc.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/arc</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/arc/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">47368226AEA9C962809342DE590F8D1C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">47368226AEA9C962809342DE590F8D1C</UserChecksum>
+        </File>
+        <File dnOrder="228">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_bar_graph.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/bargraph</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/bargraph/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A24FB5B17BFAAEA6AB1A4D9F76E88106</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A24FB5B17BFAAEA6AB1A4D9F76E88106</UserChecksum>
+        </File>
+        <File dnOrder="229">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_button.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/button</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/button/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">AC24E4729F17CCDAEBF420AF0FA979DC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AC24E4729F17CCDAEBF420AF0FA979DC</UserChecksum>
+        </File>
+        <File dnOrder="230">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_checkbox.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/checkbox</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/checkbox/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">862BF0C7648463162D1EC51C713A677F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">862BF0C7648463162D1EC51C713A677F</UserChecksum>
+        </File>
+        <File dnOrder="231">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_circle.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circle</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circle/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D95FA5F98901C9CC6FE26BB344724333</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D95FA5F98901C9CC6FE26BB344724333</UserChecksum>
+        </File>
+        <File dnOrder="232">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_circular_gauge.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circulargauge</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circulargauge/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F68CF4820CF399CCB4EC9F90980EACD5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F68CF4820CF399CCB4EC9F90980EACD5</UserChecksum>
+        </File>
+        <File dnOrder="233">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_circular_slider.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/circularslider</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/circularslider/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CA3DD2725F0DBE77C847E1B8130CCABB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CA3DD2725F0DBE77C847E1B8130CCABB</UserChecksum>
+        </File>
+        <File dnOrder="234">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_drawsurface.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/drawsurface</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/drawsurface/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4CE881E4C9A8D3C5D08121EB09C04E92</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4CE881E4C9A8D3C5D08121EB09C04E92</UserChecksum>
+        </File>
+        <File dnOrder="235">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_gradient.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/gradient</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/gradient/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3123C0FBF1CE0CD4E06629747BC9B13D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3123C0FBF1CE0CD4E06629747BC9B13D</UserChecksum>
+        </File>
+        <File dnOrder="236">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_groupbox.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/groupbox</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/groupbox/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A7A8273675A7A024FAEA364AD085651E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A7A8273675A7A024FAEA364AD085651E</UserChecksum>
+        </File>
+        <File dnOrder="237">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_image.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/image</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/image/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0474700F19AA81C6C0A9EC2E2DF1CA24</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0474700F19AA81C6C0A9EC2E2DF1CA24</UserChecksum>
+        </File>
+        <File dnOrder="238">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_imagerotate.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagerotate</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagerotate/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9C52FBC485E383FEBEA5778211F36345</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9C52FBC485E383FEBEA5778211F36345</UserChecksum>
+        </File>
+        <File dnOrder="239">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_imagescale.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagescale</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagescale/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FF707A94C50F1395559559C629B7C33C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FF707A94C50F1395559559C629B7C33C</UserChecksum>
+        </File>
+        <File dnOrder="240">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_imagesequence.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/imagesequence</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/imagesequence/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5DE24AC84F5F52200A735F01250FA433</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5DE24AC84F5F52200A735F01250FA433</UserChecksum>
+        </File>
+        <File dnOrder="241">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_keypad.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/keypad</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/keypad/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">E4F076690475D757088D9F26914367FB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E4F076690475D757088D9F26914367FB</UserChecksum>
+        </File>
+        <File dnOrder="242">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_label.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/label</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/label/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">874906DCBB662192C01D8E58518FFA2A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">874906DCBB662192C01D8E58518FFA2A</UserChecksum>
+        </File>
+        <File dnOrder="243">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_line.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/line</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/line/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">BB876DBA63C9AA5E1BDA04E6F8D159B4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">BB876DBA63C9AA5E1BDA04E6F8D159B4</UserChecksum>
+        </File>
+        <File dnOrder="244">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_line_graph.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/linegraph</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/linegraph/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">95936E17A4664DBC88494D5C2E643219</GeneratedChecksum>
+          <UserChecksum dnOrder="6">95936E17A4664DBC88494D5C2E643219</UserChecksum>
+        </File>
+        <File dnOrder="245">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_list.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/list</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/list/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D36720C2AB59AE359A60139DA01118B9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D36720C2AB59AE359A60139DA01118B9</UserChecksum>
+        </File>
+        <File dnOrder="246">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_listwheel.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/listwheel</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/listwheel/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0290FE70AE27CA50818EB6B05B6415F4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0290FE70AE27CA50818EB6B05B6415F4</UserChecksum>
+        </File>
+        <File dnOrder="247">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_pie_chart.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/piechart</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/piechart/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">3C5EB1370CE06DEF75AA4BA33F0A91CD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3C5EB1370CE06DEF75AA4BA33F0A91CD</UserChecksum>
+        </File>
+        <File dnOrder="248">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_progressbar.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/progressbar</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/progressbar/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">65C59853E9956BFC2DCA58DA8D11045F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">65C59853E9956BFC2DCA58DA8D11045F</UserChecksum>
+        </File>
+        <File dnOrder="249">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_radial_menu.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radialmenu</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radialmenu/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0FF3FA9D084EBCE1749D14BF62EB32C7</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0FF3FA9D084EBCE1749D14BF62EB32C7</UserChecksum>
+        </File>
+        <File dnOrder="250">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_radiobutton.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/radiobutton</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/radiobutton/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2398D033E40652DD06A5EBCAE6DB15E6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2398D033E40652DD06A5EBCAE6DB15E6</UserChecksum>
+        </File>
+        <File dnOrder="251">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_rectangle.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/rectangle</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/rectangle/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B4E6C76446F53D78A7DD295D1C2ACF6D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B4E6C76446F53D78A7DD295D1C2ACF6D</UserChecksum>
+        </File>
+        <File dnOrder="252">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_scrollbar.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/scrollbar</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/scrollbar/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6D73F1FE21F206280716CDFBFF1880EB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6D73F1FE21F206280716CDFBFF1880EB</UserChecksum>
+        </File>
+        <File dnOrder="253">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_skin_classic_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">27CFDB56CED5C109C979478D3F269160</GeneratedChecksum>
+          <UserChecksum dnOrder="6">27CFDB56CED5C109C979478D3F269160</UserChecksum>
+        </File>
+        <File dnOrder="254">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_slider.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/slider</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/slider/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A614321B39F09D7E09931A4599EBB541</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A614321B39F09D7E09931A4599EBB541</UserChecksum>
+        </File>
+        <File dnOrder="255">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_textfield.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/textfield</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/textfield/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2FE5BB5940BFDC49581F4EA0D4E5A84F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2FE5BB5940BFDC49581F4EA0D4E5A84F</UserChecksum>
+        </File>
+        <File dnOrder="256">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_touchtest.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/touchtest</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/touchtest/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F6E8E2819B79D3657EB8884DE0660790</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F6E8E2819B79D3657EB8884DE0660790</UserChecksum>
+        </File>
+        <File dnOrder="257">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">legato_widget_window.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/gfx/legato/widget/window</LogicalPath>
+          <PhysicalPath dnOrder="4">/gfx/legato/widget/window/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">56C5A7F21143B2F7410F549DAB603BA2</GeneratedChecksum>
+          <UserChecksum dnOrder="6">56C5A7F21143B2F7410F549DAB603BA2</UserChecksum>
+        </File>
+        <File dnOrder="258">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">osal.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">/osal/</LogicalPath>
+          <PhysicalPath dnOrder="4">/osal/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F0AD88762263B7CB89B02AB4F5876059</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F0AD88762263B7CB89B02AB4F5876059</UserChecksum>
+        </File>
+        <File dnOrder="259">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">osal_definitions.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">/osal/</LogicalPath>
+          <PhysicalPath dnOrder="4">/osal/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0AC88C49E4585B606FD5AC6804F0C340</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0AC88C49E4585B606FD5AC6804F0C340</UserChecksum>
+        </File>
+        <File dnOrder="260">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">osal_impl_basic.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">/osal/</LogicalPath>
+          <PhysicalPath dnOrder="4">/osal/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">63FBE37825657165B9EA584BF05DBA43</GeneratedChecksum>
+          <UserChecksum dnOrder="6">63FBE37825657165B9EA584BF05DBA43</UserChecksum>
+        </File>
+        <File dnOrder="261">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_clk.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/clk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/clk/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">7066CC390335CF75126E2A50C46E3BDD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7066CC390335CF75126E2A50C46E3BDD</UserChecksum>
+        </File>
+        <File dnOrder="262">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_coretimer.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/coretimer/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/coretimer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">77E2C83A700CD1F724CFD90ED3AA2B71</GeneratedChecksum>
+          <UserChecksum dnOrder="6">77E2C83A700CD1F724CFD90ED3AA2B71</UserChecksum>
+        </File>
+        <File dnOrder="263">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_ebi.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/ebi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/ebi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">2FB4AA3D9381D5DACF95B3338F5A3125</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2FB4AA3D9381D5DACF95B3338F5A3125</UserChecksum>
+        </File>
+        <File dnOrder="264">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_evic.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/evic/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/evic/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B38028A617FDD4D90B80660771629645</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B38028A617FDD4D90B80660771629645</UserChecksum>
+        </File>
+        <File dnOrder="265">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_gpio.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/gpio/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/gpio/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0D272154B21B13DF3BA5F8DE30312CD4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0D272154B21B13DF3BA5F8DE30312CD4</UserChecksum>
+        </File>
+        <File dnOrder="266">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_i2c2.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/i2c/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">DE11A22E8708454E290E1F0A33663B2C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DE11A22E8708454E290E1F0A33663B2C</UserChecksum>
+        </File>
+        <File dnOrder="267">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_i2c_master.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/i2c/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/i2c/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0CE7018D4B951DF14C45D3AC2E8F9B19</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0CE7018D4B951DF14C45D3AC2E8F9B19</UserChecksum>
+        </File>
+        <File dnOrder="268">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_spi1.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/spi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">279EBCD5182DA4997A74D20D60AAB706</GeneratedChecksum>
+          <UserChecksum dnOrder="6">279EBCD5182DA4997A74D20D60AAB706</UserChecksum>
+        </File>
+        <File dnOrder="269">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_spi_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/peripheral/spi/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/spi/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4247D7FA1CFBCADA8B8446FDC0E12559</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4247D7FA1CFBCADA8B8446FDC0E12559</UserChecksum>
+        </File>
+        <File dnOrder="270">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_debug.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/debug/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/debug/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6972608768DDBE6E37A2D81B83DF490B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6972608768DDBE6E37A2D81B83DF490B</UserChecksum>
+        </File>
+        <File dnOrder="271">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_dma.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/dma/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/dma/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4A7FFAD7ACF8378CEC16FBF2BC2368BE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4A7FFAD7ACF8378CEC16FBF2BC2368BE</UserChecksum>
+        </File>
+        <File dnOrder="272">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_dma_mapping.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/dma/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/dma/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">42E557EFE638D7A736FB88AA84F085F1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">42E557EFE638D7A736FB88AA84F085F1</UserChecksum>
+        </File>
+        <File dnOrder="273">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_input.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">12A9F3A89C44A88EDB9D107DC1FE8EDA</GeneratedChecksum>
+          <UserChecksum dnOrder="6">12A9F3A89C44A88EDB9D107DC1FE8EDA</UserChecksum>
+        </File>
+        <File dnOrder="274">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_input_gesture.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5499BE8EDFB7930D2460DE8BA8E8818B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5499BE8EDFB7930D2460DE8BA8E8818B</UserChecksum>
+        </File>
+        <File dnOrder="275">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_input_keyboard.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A254F5CC3DD63C1432666958260CADAB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A254F5CC3DD63C1432666958260CADAB</UserChecksum>
+        </File>
+        <File dnOrder="276">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_input_listener.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">00AAAE838D855B5A8C560B371C7D0363</GeneratedChecksum>
+          <UserChecksum dnOrder="6">00AAAE838D855B5A8C560B371C7D0363</UserChecksum>
+        </File>
+        <File dnOrder="277">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_input_mouse.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9B0AB7A5A79745BE5AEC37B9A14D7090</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9B0AB7A5A79745BE5AEC37B9A14D7090</UserChecksum>
+        </File>
+        <File dnOrder="278">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_input_touch.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/input</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/input/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6012C94D59E0E69145C089AB1F736C28</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6012C94D59E0E69145C089AB1F736C28</UserChecksum>
+        </File>
+        <File dnOrder="279">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_int.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/int/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/int/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">47330C2D8F204B2B69F8A86240A564B6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">47330C2D8F204B2B69F8A86240A564B6</UserChecksum>
+        </File>
+        <File dnOrder="280">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_int_mapping.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/int/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/int/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FC7B55936A09E0CA1395AE4DFB1A188F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FC7B55936A09E0CA1395AE4DFB1A188F</UserChecksum>
+        </File>
+        <File dnOrder="281">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_ports.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/ports/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/ports/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6348A6C05D5693300B296BD46CCC535D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6348A6C05D5693300B296BD46CCC535D</UserChecksum>
+        </File>
+        <File dnOrder="282">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_ports_mapping.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/ports/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/ports/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">BC6E1661BF4CAC21B70F5F56A0D7BBDB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">BC6E1661BF4CAC21B70F5F56A0D7BBDB</UserChecksum>
+        </File>
+        <File dnOrder="283">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_time.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/time/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/time/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">466D676839280C0E7FC2CC6F78BA6EE9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">466D676839280C0E7FC2CC6F78BA6EE9</UserChecksum>
+        </File>
+        <File dnOrder="284">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_time_definitions.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/time/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/time/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">82C87C4CF49EE4D859363C15E9073333</GeneratedChecksum>
+          <UserChecksum dnOrder="6">82C87C4CF49EE4D859363C15E9073333</UserChecksum>
+        </File>
+        <File dnOrder="285">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">sys_time_local.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/time/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/time/src/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">62F39464265EC34979649F761FB4FE57</GeneratedChecksum>
+          <UserChecksum dnOrder="6">62F39464265EC34979649F761FB4FE57</UserChecksum>
+        </File>
+        <File dnOrder="286">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">system.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">BE95B4F134C5C929787B9DA6FDBF3501</GeneratedChecksum>
+          <UserChecksum dnOrder="6">BE95B4F134C5C929787B9DA6FDBF3501</UserChecksum>
+        </File>
+        <File dnOrder="287">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">system_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C3F5136D520DAC4416512EBFCCA023C3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C3F5136D520DAC4416512EBFCCA023C3</UserChecksum>
+        </File>
+        <File dnOrder="288">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">system_module.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/system/</LogicalPath>
+          <PhysicalPath dnOrder="4">/system/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">1C75A8A6B60598A2FD0D533F57839B72</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1C75A8A6B60598A2FD0D533F57839B72</UserChecksum>
+        </File>
+        <File dnOrder="289">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">toolchain_specifics.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9D344CAF1743381AA0EA1641ABCDE373</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9D344CAF1743381AA0EA1641ABCDE373</UserChecksum>
+        </File>
+        <File dnOrder="290">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">user.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/default/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+      </Files>
+      <Settings dnOrder="1">
+        <Setting append="true" category="C32" delimiter=";" dnOrder="0" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/default;../src/packs/PIC32MZ2048EFM144_DFP;;../src/mips"/>
+        <Setting category="C32-LD" dnOrder="1" key="heap-size" security="NON_SECURE" value="8192"/>
+        <Setting category="C32-LD" dnOrder="2" key="no-device-startup-code" security="NON_SECURE" value="true"/>
+        <Setting append="true" category="C32-LD" delimiter=";" dnOrder="3" key="preprocessor-macros" security="NON_SECURE" value=""/>
+      </Settings>
+    </Manifest>
+    <Settings dnOrder="5">
+      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.6.0"/>
+      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\PIC32MZ-EF_DFP\1.1.45\atdf\PIC32MZ2048EFM144.atdf"/>
+      <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
+      <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
+      <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
+      <Setting dnOrder="5" key="PackageFilter" value="aerospace;audio;aws_cloud;bootloader;bsp;bt;core;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;expresslogic_threadx;gfx;gfx_apps;micrium_ucos3;motor_control;net;touch;usb;wireless;x2c;"/>
+    </Settings>
+  </Configurator>
+</Configuration>
