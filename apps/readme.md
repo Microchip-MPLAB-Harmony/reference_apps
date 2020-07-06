@@ -30,3 +30,4 @@ Peripheral/Technology specific applications are available in technology reposito
 12. ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk_meb2/readme.md)
 13. ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md)
 14. ### [SAM E51 Curiosity Nano Evaluation Kit](./sam_e51_cnano/readme.md)
+15. ### [SAM E54 Curiosity Ultra Development Board](./sam_e54_cult/readme.md)

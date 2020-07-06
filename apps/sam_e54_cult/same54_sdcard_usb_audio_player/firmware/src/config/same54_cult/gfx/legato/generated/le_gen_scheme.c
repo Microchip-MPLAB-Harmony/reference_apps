@@ -1,0 +1,158 @@
+#include "gfx/legato/generated/le_gen_scheme.h"
+
+leScheme Backgroundgradientscheme;
+leScheme defaultScheme;
+leScheme gradientScheme;
+leScheme ListWheelScheme;
+leScheme NewScheme;
+leScheme ProgressScheme;
+leScheme volumeScheme;
+leScheme whiteScheme;
+
+void legato_initialize_schemes(void)
+{
+    leScheme_Initialize(&Backgroundgradientscheme, LE_COLOR_MODE_RGB_565);
+    Backgroundgradientscheme.base = 0x0000;
+    Backgroundgradientscheme.highlight = 0xC67A;
+    Backgroundgradientscheme.highlightLight = 0xFFFF;
+    Backgroundgradientscheme.shadow = 0x8410;
+    Backgroundgradientscheme.shadowDark = 0x4208;
+    Backgroundgradientscheme.foreground = 0x34FF;
+    Backgroundgradientscheme.foregroundInactive = 0x0008;
+    Backgroundgradientscheme.foregroundDisabled = 0x8410;
+    Backgroundgradientscheme.background = 0x000A;
+    Backgroundgradientscheme.backgroundInactive = 0xD71C;
+    Backgroundgradientscheme.backgroundDisabled = 0xC67A;
+    Backgroundgradientscheme.text = 0x0000;
+    Backgroundgradientscheme.textHighlight = 0x001F;
+    Backgroundgradientscheme.textHighlightText = 0xFFFF;
+    Backgroundgradientscheme.textInactive = 0xD71C;
+    Backgroundgradientscheme.textDisabled = 0x8C92;
+
+    leScheme_Initialize(&defaultScheme, LE_COLOR_MODE_RGB_565);
+    defaultScheme.base = 0x0000;
+    defaultScheme.highlight = 0xBDE0;
+    defaultScheme.highlightLight = 0xBDE0;
+    defaultScheme.shadow = 0xBDE0;
+    defaultScheme.shadowDark = 0xBDE0;
+    defaultScheme.foreground = 0x0000;
+    defaultScheme.foregroundInactive = 0xBDE0;
+    defaultScheme.foregroundDisabled = 0xBDE0;
+    defaultScheme.background = 0xFFE0;
+    defaultScheme.backgroundInactive = 0xFFE0;
+    defaultScheme.backgroundDisabled = 0xFFE0;
+    defaultScheme.text = 0xFFFF;
+    defaultScheme.textHighlight = 0x001F;
+    defaultScheme.textHighlightText = 0xFFFF;
+    defaultScheme.textInactive = 0xD71C;
+    defaultScheme.textDisabled = 0x8C92;
+
+    leScheme_Initialize(&gradientScheme, LE_COLOR_MODE_RGB_565);
+    gradientScheme.base = 0xDEFB;
+    gradientScheme.highlight = 0xC67A;
+    gradientScheme.highlightLight = 0xFFFF;
+    gradientScheme.shadow = 0x8410;
+    gradientScheme.shadowDark = 0x4208;
+    gradientScheme.foreground = 0xF800;
+    gradientScheme.foregroundInactive = 0x0000;
+    gradientScheme.foregroundDisabled = 0x0000;
+    gradientScheme.background = 0xFFFF;
+    gradientScheme.backgroundInactive = 0xD71C;
+    gradientScheme.backgroundDisabled = 0xC67A;
+    gradientScheme.text = 0x0000;
+    gradientScheme.textHighlight = 0x001F;
+    gradientScheme.textHighlightText = 0xFFFF;
+    gradientScheme.textInactive = 0xD71C;
+    gradientScheme.textDisabled = 0x8C92;
+
+    leScheme_Initialize(&ListWheelScheme, LE_COLOR_MODE_RGB_565);
+    ListWheelScheme.base = 0xFFFF;
+    ListWheelScheme.highlight = 0xFFFF;
+    ListWheelScheme.highlightLight = 0xFFFF;
+    ListWheelScheme.shadow = 0xFFFF;
+    ListWheelScheme.shadowDark = 0x4208;
+    ListWheelScheme.foreground = 0x0000;
+    ListWheelScheme.foregroundInactive = 0x841F;
+    ListWheelScheme.foregroundDisabled = 0x0000;
+    ListWheelScheme.background = 0xFFFF;
+    ListWheelScheme.backgroundInactive = 0xFFFF;
+    ListWheelScheme.backgroundDisabled = 0x6B4D;
+    ListWheelScheme.text = 0x0000;
+    ListWheelScheme.textHighlight = 0x001F;
+    ListWheelScheme.textHighlightText = 0xFFFF;
+    ListWheelScheme.textInactive = 0xD71C;
+    ListWheelScheme.textDisabled = 0x8C92;
+
+    leScheme_Initialize(&NewScheme, LE_COLOR_MODE_RGB_565);
+    NewScheme.base = 0x07FF;
+    NewScheme.highlight = 0x07FF;
+    NewScheme.highlightLight = 0xFFFF;
+    NewScheme.shadow = 0x8410;
+    NewScheme.shadowDark = 0x4208;
+    NewScheme.foreground = 0x0000;
+    NewScheme.foregroundInactive = 0x841F;
+    NewScheme.foregroundDisabled = 0x8410;
+    NewScheme.background = 0xFFFF;
+    NewScheme.backgroundInactive = 0x841F;
+    NewScheme.backgroundDisabled = 0x001F;
+    NewScheme.text = 0x0000;
+    NewScheme.textHighlight = 0x0000;
+    NewScheme.textHighlightText = 0x0000;
+    NewScheme.textInactive = 0x001F;
+    NewScheme.textDisabled = 0x001F;
+
+    leScheme_Initialize(&ProgressScheme, LE_COLOR_MODE_RGB_565);
+    ProgressScheme.base = 0xDEFB;
+    ProgressScheme.highlight = 0xC67A;
+    ProgressScheme.highlightLight = 0xFFFF;
+    ProgressScheme.shadow = 0x8410;
+    ProgressScheme.shadowDark = 0x4208;
+    ProgressScheme.foreground = 0x0000;
+    ProgressScheme.foregroundInactive = 0xDEFB;
+    ProgressScheme.foregroundDisabled = 0x8410;
+    ProgressScheme.background = 0xFFFF;
+    ProgressScheme.backgroundInactive = 0xD71C;
+    ProgressScheme.backgroundDisabled = 0xC67A;
+    ProgressScheme.text = 0x0000;
+    ProgressScheme.textHighlight = 0x0016;
+    ProgressScheme.textHighlightText = 0xFFFF;
+    ProgressScheme.textInactive = 0xD71C;
+    ProgressScheme.textDisabled = 0x8C92;
+
+    leScheme_Initialize(&volumeScheme, LE_COLOR_MODE_RGB_565);
+    volumeScheme.base = 0xB800;
+    volumeScheme.highlight = 0x0000;
+    volumeScheme.highlightLight = 0xFFFF;
+    volumeScheme.shadow = 0x0000;
+    volumeScheme.shadowDark = 0x4208;
+    volumeScheme.foreground = 0x0000;
+    volumeScheme.foregroundInactive = 0x0000;
+    volumeScheme.foregroundDisabled = 0x0000;
+    volumeScheme.background = 0xFFFF;
+    volumeScheme.backgroundInactive = 0xD71C;
+    volumeScheme.backgroundDisabled = 0x0000;
+    volumeScheme.text = 0x0000;
+    volumeScheme.textHighlight = 0x0000;
+    volumeScheme.textHighlightText = 0xFFFF;
+    volumeScheme.textInactive = 0xD71C;
+    volumeScheme.textDisabled = 0x0000;
+
+    leScheme_Initialize(&whiteScheme, LE_COLOR_MODE_RGB_565);
+    whiteScheme.base = 0xFFFF;
+    whiteScheme.highlight = 0xC67A;
+    whiteScheme.highlightLight = 0xFFFF;
+    whiteScheme.shadow = 0x8410;
+    whiteScheme.shadowDark = 0x4208;
+    whiteScheme.foreground = 0x0000;
+    whiteScheme.foregroundInactive = 0xD71C;
+    whiteScheme.foregroundDisabled = 0x8410;
+    whiteScheme.background = 0xFFFF;
+    whiteScheme.backgroundInactive = 0xD71C;
+    whiteScheme.backgroundDisabled = 0xC67A;
+    whiteScheme.text = 0xFFFF;
+    whiteScheme.textHighlight = 0x001F;
+    whiteScheme.textHighlightText = 0xFFFF;
+    whiteScheme.textInactive = 0xD71C;
+    whiteScheme.textDisabled = 0x8C92;
+
+}
