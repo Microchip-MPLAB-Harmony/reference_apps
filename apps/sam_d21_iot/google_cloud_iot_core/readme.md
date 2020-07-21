@@ -69,7 +69,8 @@ The below sections describes the steps to run the application.
 ### 1. How to setup the SAM-IoT WG Development Board
 - The SAM-IoT WG Development board comes with pre-loaded application for out-of-box experience for the end user. Connect the board to the host PC's USB port to power-up the board.  
 - Alternatively, the board can be powered using a Li-Po battery. In order to perform Firmware upgrade or WiFi configuration, the board must be connected through USB port.  
-- Once connected to PC, a mass storage drive icon by the name **CURIOSITY** will appear.
+- Once connected to PC, a mass storage drive icon by the name **CURIOSITY** will appear.  
+<img src = "images/hardware_setup.png" width="530" height="290" align="middle">  
 
 ### 2. Running the Demo
 - Open the drive and click open the CLICK-ME.HTM file to launch the Google IoT cloud landing page.
