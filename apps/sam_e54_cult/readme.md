@@ -10,6 +10,7 @@ nav_order: 14
 This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)   
 
 * [SDCard USB Audio Player](./same54_sdcard_usb_audio_player/readme.md)
+* [Live Update](./same54_uart_live_update/readme.md)
 
 ### **Note:**
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. 
