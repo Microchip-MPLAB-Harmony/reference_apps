@@ -93,7 +93,7 @@ The below sections describes the steps to run the application.
 		**`wifi <SSID>,<PASSWORD>,<SECURITY TYPE>`**
 
 ## Reference:
-- For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide]()
+- For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide](https://microchiptechnology.sharepoint.com/:b:/s/DeveloperHelp/EWzkyTjt7jFJmOdqFqAh2VkBFmixakdS3eswwwRVTU5H0g?download=1)
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
