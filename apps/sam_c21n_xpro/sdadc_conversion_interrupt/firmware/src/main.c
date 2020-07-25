@@ -61,16 +61,16 @@ uint16_t g_osr=64;
 bool g_result=false;
 
 
-void App_SDADC_Menu(void);
+void App_SDADC_Config(void);
 
 
-/******************************************************************************
-Function:     App_SDADC_Menu
+/*****************************************************************************
+Function:     App_SDADC_Config
 Description:  Displaying app features for getting input from user
 Input:        nothing 
 Output:       nothing 
 ******************************************************************************/
-void App_SDADC_Menu(void)
+void App_SDADC_Config(void)
 {
 
     printf("\r\nConversion range: %d mV\r\n",g_ref);
@@ -88,7 +88,7 @@ void Handler(SDADC_STATUS status, uintptr_t context)
 
 int main(void)
 {
-    char menu_input=0;
+    char config_input=0;
    
 
     /* Initialize all modules */
@@ -97,16 +97,16 @@ int main(void)
     SDADC_CallbackRegister(Handler,(uintptr_t)NULL);                             //Registering the callback function for RESRDY interrupt
                                                     
 
-    App_SDADC_Menu();
+    App_SDADC_Config();
     while ( true )
     {
 
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
 
-        scanf("%c",&menu_input);
+        scanf("%c",&config_input);
 
-        if(menu_input=='r') {
+        if(config_input=='r') {
 
    
             while(!g_result);
