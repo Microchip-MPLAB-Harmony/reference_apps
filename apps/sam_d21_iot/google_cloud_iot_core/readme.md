@@ -11,7 +11,7 @@ nav_order: 1
 -----
 
 ## <span style="color:red"> <b>Important:</b>
-> There could updates and bug fixes to the Google IoT sensor node application. Therefore, it is recommended to program SAM D21 IoT WG Development Board with the latest version of hex file from the [hex folder](./hex).  
+> There could be updates and bug fixes to the Google IoT sensor node application. Therefore, it is recommended to program SAM D21 IoT WG Development Board with the latest version of hex file from the [hex folder](./hex).  
 
 ## Description:
 
