@@ -58,16 +58,16 @@ uint16_t g_result_reg=0;                       // Data read from result register
 uint16_t g_ref=4096;                         // SDADC reference voltage in mV.
 uint16_t g_osr=64;
 
-void App_SDADC_Config(void);
+void App_SDADC_Menu(void);
 
 
 /******************************************************************************
-Function:     App_SDADC_Config
+Function:     App_SDADC_Menu
 Description:  Displaying app features for getting input from user
 Input:        nothing 
 Output:       nothing 
 ******************************************************************************/
-void App_SDADC_Config(void)
+void App_SDADC_Menu(void)
 {
 
     printf("\r\nConversion range: %d mV\r\n",g_ref);
@@ -79,7 +79,7 @@ void App_SDADC_Config(void)
 
 int main(void)
 {
-    char config_input=0;   
+    char menu_input=0;   
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
@@ -87,15 +87,15 @@ int main(void)
     SDADC_REGS->SDADC_REFCTRL |= SDADC_REFCTRL_ONREFBUF(0x01);
     
 
-    App_SDADC_Config();
+    App_SDADC_Menu();
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
           
-        scanf("%c",&config_input);
+        scanf("%c",&menu_input);
         
-        if(config_input=='r') {
+        if(menu_input=='r') {
             SDADC_ConversionStart();
             while(!SDADC_ConversionResultIsReady()){
                 

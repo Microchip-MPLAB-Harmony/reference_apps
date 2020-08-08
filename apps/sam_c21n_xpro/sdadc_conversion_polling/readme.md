@@ -1,7 +1,7 @@
 ---
 grand_parent: Reference Applications
 parent: SAM C21N Xplained Pro Evaluation Kit
-title: SDADC Conversion Interrupt Mode
+title: SDADC Conversion Polling Mode
 nav_order: 3
 ---
 <img src = "images/microchip_logo.png">
@@ -70,7 +70,7 @@ The pre-built hex file can be programmed by following the below steps
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Change the baud rate to 115200
 - SDADC is configured to use the internal VREF and the range is set to 4.096 V full scale and the default setting of OSR is 64  
-- Pressing the ‘r’ key will read the result and display it, in a form scaled to mV
+- Pressing the ‘r’ key will read the result and display it, in a form scaled to mV  
 <img src = "images/output.png" width="700" height="360" align="middle">  
 
 ## Comments:
@@ -78,7 +78,6 @@ The pre-built hex file can be programmed by following the below steps
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
-
 
 ## Revision:
 - v1.0 released demo application
