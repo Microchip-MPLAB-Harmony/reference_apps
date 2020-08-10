@@ -1,0 +1,2 @@
+(This file is not part of nanopb itself but is here to track which version the files in this directory came from)
+nanopb-0.3.9

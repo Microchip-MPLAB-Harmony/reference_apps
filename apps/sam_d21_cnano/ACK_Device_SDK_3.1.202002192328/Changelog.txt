@@ -1,0 +1,11 @@
+Version 3.1.202002192328
+- Added debug print statements into initialization sequence that indicates reset of ACK connectivity module and HMCU firmware version on restart of ACK Device SDK Implementation core.
+- Added a new validation suite that contains python scripts to perform various kinds of validation on an HMCU application without needing a physical ACK module connected to it.
+- Fixed a bug in STM32 over-the-air (OTA) update support that caused future OTA updates from affected HMCU firmware versions to be unreliable.
+- Added 2 new Microwave and HelloWorld sample applications. These applications help developers get quick started on prototyping devices with ACK.
+- Increased stack size from 1K to 1.5K for STM32 sample applications to improve their reliability.
+- Fixed possible buffer overflow issue that could occur during Alexa message encoding and decoding.
+- Removed CeilingFan and BoardBringupTest sample applications.
+
+Version 3.0.201909161834
+- Initial public release of ACK Device SDK.
