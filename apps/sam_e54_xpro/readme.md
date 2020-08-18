@@ -11,6 +11,7 @@ nav_order: 10
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO).
 
 * [Getting Started](./same54_getting_started/readme.md)
+* [Low Power](./same54_low_power/readme.md)
 * [SleepWalking](./sleepwalking/readme.md)
 * [Vending Machine](./same54_vending_machine/readme.md)
 
