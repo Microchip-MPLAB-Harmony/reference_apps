@@ -3,7 +3,7 @@
   <Configurator>
     <Name dnOrder="0" value="sam_e51_cnano"/>
     <Processor dnOrder="1" value="ATSAME51J20A"/>
-    <Harmony dnOrder="2" path="../../../../Projects/git_hub"/>
+    <Harmony dnOrder="2" path="../../../../../Projects/git_hub"/>
     <Folder_Name dnOrder="3" value=""/>
     <Manifest dnOrder="4">
       <Files dnOrder="0">

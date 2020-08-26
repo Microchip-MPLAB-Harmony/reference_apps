@@ -43,7 +43,7 @@ nav_order: 4
 
 ## Hardware Used:
 
-- [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/) (Need to update the proper link)
+- [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)
 - [Curiosity Nano Base for Click Boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
 - [Heart Rate 3 click](https://www.mikroe.com/heart-rate-3-click)
 - [EINK CLICK BUNDLE](https://www.mikroe.com/eink-click)
