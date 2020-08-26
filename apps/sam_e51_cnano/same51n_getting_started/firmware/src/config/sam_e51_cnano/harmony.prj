@@ -3,7 +3,7 @@
   <Configurator>
     <Name dnOrder="0" value="sam_e51_cnano"/>
     <Processor dnOrder="1" value="ATSAME51J20A"/>
-    <Harmony dnOrder="2" path="../../../../Projects/git_hub"/>
+    <Harmony dnOrder="2" path="../../../../../Projects/git_hub"/>
     <Folder_Name dnOrder="3" value=""/>
     <Manifest dnOrder="4">
       <Files dnOrder="0">
@@ -85,8 +85,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e51_cnano/peripheral/eic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/eic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">1314522759F2B9FC3C907C35C594AEDD</GeneratedChecksum>
-          <UserChecksum dnOrder="6">1314522759F2B9FC3C907C35C594AEDD</UserChecksum>
+          <GeneratedChecksum dnOrder="5">ADB7CCA993A21922024A98A41522AE92</GeneratedChecksum>
+          <UserChecksum dnOrder="6">ADB7CCA993A21922024A98A41522AE92</UserChecksum>
         </File>
         <File dnOrder="9">
           <Type dnOrder="0">SOURCE</Type>

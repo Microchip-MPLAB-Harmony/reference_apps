@@ -26,7 +26,7 @@ nav_order: 1
 
 ## Hardware Used:
 
-- [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/) (Need to update the proper link)  
+- [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  

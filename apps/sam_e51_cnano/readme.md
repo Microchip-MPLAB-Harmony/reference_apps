@@ -7,7 +7,7 @@ nav_order: 1
 ---
 # SAM E51 Curiosity Nano Evaluation Kit
 
-This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/) (Need to update the proper link).   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A).   
 
 * [Getting Started](./same51n_getting_started/readme.md)
 * [BLE Fitness Tracker](./ble_fitness_tracker/readme.md)
