@@ -1,8 +1,8 @@
 ---
-grand_parent: Amazon Alexa Connect (ACK) kit port OTA and Applications
-parent: SAM D21 Alexa Connect Kit (ACK) port based smart applications
-title: Amazon Alexa Connect (ACK) Dash Replenishment Application
-nav_order: 2
+grand_parent: Reference Applications
+parent: SAM D21 Curiosity Nano Evaluation Kit
+title: ACK Dash Replenishment Application
+nav_order: 9
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

@@ -1,10 +1,8 @@
 ---
-title: SAM D21 ACK OTA bootloader application
-parent: Amazon Alexa Connect (ACK) kit port OTA and Applications
-grand_parent: SAM D21 Curiosity Nano Evaluation Kit
-has_children: true
-has_toc: false
-nav_order: 2
+grand_parent: Reference Applications
+parent: SAM D21 Curiosity Nano Evaluation Kit
+title: ACK OTA Bootloader
+nav_order: 10
 ---
 
 

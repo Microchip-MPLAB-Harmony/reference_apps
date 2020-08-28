@@ -22,7 +22,7 @@ demonstrating the port. The folder also contains Over the Air (OTA) firmware upg
 
 > The communication interface between SAM D21 and ACK module is through UART.
 
-- This folder contains a set of applications (under folder "applications") which uses Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21.  
+- This folder contains a set of applications (under folder "**applications**) which uses Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21.  
   - The Application "**HelloWorld**" demonstrates turning ON/OFF of the development device (SAM D21 Curiosity Nano evaluation kit)
   - The Application "**SmartLight**" demonstrates controlling of smart light (LED0) on development device (SAM D21 Curiosity Nano evaluation kit)
   - The Application "**Microwave**" demonstrates controlling of a Microwave oven
