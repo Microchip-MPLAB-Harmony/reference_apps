@@ -1,9 +1,10 @@
-﻿---
+---
 grand_parent: Reference Applications
 parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: Snake Game
-nav_order: 
+nav_order: 6
 ---
+
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
@@ -13,7 +14,7 @@ nav_order:
 ## Description:
 > This demonstration represents the classic snake game wherein the player maneuvers the snake and tries to eat the mice (food), which eventually grows the length of the snake. The player needs to protect the snake from hitting the boundary.  
 > The application uses the Legato Graphics libray to implement the user interface. The template of each screen is made using the Legato Graphics Composer, while the snake was created using a rectangle widgets used inside a double chained list. The control for the thumbstick was implemented using the SPI driver library from Harmony 3.
-    
+
 ## Modules/Technology Used:
 - Legato Graphics Library
 - SSD1936 driver
@@ -26,24 +27,24 @@ nav_order:
 - [Thumbstick click from MikroElektronika]( https://www.mikroe.com/thumbstick-click )
 - [SSD1963 LCD Controller Graphics Card]( https://www.microchip.com/Developmenttools/ProductDetails/AC320214)
 - [High-Performance WVGA LCD Display Module with maXTouch ® Technology]( https://www.microchip.com/developmenttools/ProductDetails/AC320005-5#additional-summary )
-    
+
 
 ## Software/Tools Used:
  - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
  - [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)          
  - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
  - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)   
- - [MPLAB Harmony v3 "bsp" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0) 
+ - [MPLAB Harmony v3 "bsp" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)
 - [MPLAB Harmony v3 "gfx" repository v3.6.0](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.6.0)
 - MPLAB Harmony Configurator Plugin v3.5.0    
  - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 
 ## Setup:
-- Mount SSD1963 LCD Controller Graphics Card on the Graphics connector(J601) of Curiosity PIC32MZ EF 2.0 Development Board 
+- Mount SSD1963 LCD Controller Graphics Card on the Graphics connector(J601) of Curiosity PIC32MZ EF 2.0 Development Board
 - Mount Thumbstick click board on mikro bus click 1 connector of Curiosity PIC32MZ EF 2.0 Development Board
 - Connect the WVGA LCD Display Module ribbon to the connector(J2) of the  SSD1963 LCD Controller Graphics Card    
-- Plug the 5.5-14V power cable to the power connecter(J200) of the Curiosity PIC32MZ EF 2.0 Development Board 
+- Plug the 5.5-14V power cable to the power connecter(J200) of the Curiosity PIC32MZ EF 2.0 Development Board
 <img src = "images/PIC32_Snake_Game_Setup.png" width="600" height="800" align="middle">
 
 
@@ -73,7 +74,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Running the Demo:
 - Perform a reset by pressing RESET button on the Curiosity PIC32MZ EF 2.0 Development Board
-- After the board powers up, a splash screen should appear followed by the Menu screen. 
+- After the board powers up, a splash screen should appear followed by the Menu screen.
 - By using the Thumbstick, select the desired level to play and press the thumbstick to enter the level.
 - Use the thumbstick to change the snake direction in order to reach the food.
 - By pressing the Thumbstick button the user can go back to the Menu.  
@@ -87,12 +88,10 @@ The pre-built hex file can be programmed by following the below steps.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)      
-       
-## Revision: 
+
+## Revision:
 - v1.0 Released application demo
 
 
 ## History
 - None
-    
-    

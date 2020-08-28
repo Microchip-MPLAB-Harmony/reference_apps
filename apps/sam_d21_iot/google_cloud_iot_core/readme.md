@@ -1,6 +1,6 @@
 ---
 grand_parent: Reference Applications
-parent: SAM D21 IoT
+parent: SAM D21 IoT Development Board
 title: Google Cloud IoT Core Application
 nav_order: 1
 ---

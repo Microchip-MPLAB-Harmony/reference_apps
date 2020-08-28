@@ -3,7 +3,7 @@ title: Curiosity PIC32MZ EF 2.0 Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 2
+nav_order: 5
 ---
 # Curiosity PIC32MZ EF 2.0 Development Board
 
