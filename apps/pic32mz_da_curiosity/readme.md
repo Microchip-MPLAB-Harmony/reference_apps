@@ -11,7 +11,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 
 * [Getting Started](./pic32mzda_getting_started/readme.md)
-
+* [SD Card USB Audio Player](./pic32mzda_sdcard_usb_audio_player/readme.md)
 
 
 ### **Note:**
