@@ -10,6 +10,7 @@ nav_order: 11
 This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro).   
 
 * [Getting Started](./samd21_getting_started/readme.md)
+* [AC Sleepwalking Application built with ARM GCC Toolchain](./samd21_ac_sleepwalk_singleshot_gcc/readme.md)
 
 ### **Note:**
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
