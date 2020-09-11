@@ -39,7 +39,7 @@ The application implements an embedded network application to update and track d
   - Microchip File System (together with [MPFS utility](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/utilities/mpfs_generator))
 - Third Party Library
   - FreeRTOS
-- gfx mono libray (from [ASF](https://www.microchip.com/mplab/avr-support/advanced-software-framework))
+- gfx mono library (from [ASF](https://www.microchip.com/mplab/avr-support/advanced-software-framework))
 
 ## Hardware Used:
 - [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO)
