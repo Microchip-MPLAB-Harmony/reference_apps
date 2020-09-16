@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: Snake Game
-nav_order: 6
+nav_order: 7
 ---
 
 <img src = "images/microchip_logo.png">

@@ -5,6 +5,39 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Reference Applications Release v1.1.0 (September 2020)
+### New Applications
+| Application | Description | MCU | Developement Board/Kit |
+| --- | --- | --- | --- |
+| [google_cloud_iot_core](./apps/sam_d21_iot/google_cloud_iot_core/readme.md) |  Google Cloud IoT Core | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G18) | [SAM-IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A)|
+| [same51n_getting_started](./apps/sam_e51_cnano/same51n_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [SAME 51](https://www.microchip.com/wwwproducts/en/ATSAME51G18A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [ble_fitness_tracker](./apps/sam_e51_cnano/ble_fitness_tracker/readme.md) |  BLE Fitness Tracker | [SAME 51](https://www.microchip.com/wwwproducts/en/ATSAME51G18A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [pic32mzda_getting_started](./apps/pic32mz_da_curiosity/pic32mzda_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [PIC32MZ DA](https://www.microchip.com/wwwproducts/en/PIC32MZ2064DAR176) | [Curiosity PIC32MZ DA Development Board]()|
+| [pic32mzda_sdcard_usb_audio_player](./apps/pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player/readme.md) |  SD Card USB Audio Player | [PIC32MZ DA](https://www.microchip.com/wwwproducts/en/PIC32MZ2064DAR176) | [Curiosity PIC32MZ DA Development Board]()|
+| [ack_bootloader](./apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.md) |  Amazon Alexa Connect Kit (ACK) OTA Bootloader | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [ack_helloworld](./apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.md) |  Amazon Alexa Connect Kit (ACK) Hello World | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [ack_microwave](./apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.md) |  Amazon Alexa Connect Kit (ACK) Microwave | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [ack_smartlight](./apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.md) |  Amazon Alexa Connect Kit (ACK) SmartLight | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [ack_dashreplenishment](./apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.md) |  Amazon Alexa Connect Kit (ACK) DashReplenishment | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [pic18f_to_samd21_migration](./apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.md) |  Application migration from 8-bit PIC18F to 32-bit SAM D21 | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [atmega4809_to_samd21_migration](./apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.md) |  Application migration from 8-bit PIC18F to 32-bit SAM D21 | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
+| [wifi_rgb_easy_configuration](./apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/readme.md) |  WiFi based RGB LED Control | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
+| [snake_game](./apps/pic32mz_ef_curiosity_v2/snake_game/readme.md) |  Snake Game | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
+| [same54_vending_machine](./apps/sam_e54_xpro/same54_vending_machine/readme.md) |  Vending Machine | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO)|
+| [same54_low_power](./apps/sam_e54_xpro/same54_low_power/readme.md) |  Low Power | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO)|
+| [samd21_ac_sleepwalk_singleshot_gcc](./apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.md) | AC Sleepwalking Application built with GCC Toolchain  | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21J18A) | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro)|
+| [sdadc_conversion_interrupt](./apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.md) | SDADC Conversion Interrupt Mode | [SAM C21N](https://www.microchip.com/wwwproducts/en/ATSAMC21N18A) | [SAM C21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro)|
+| [sdadc_conversion_polling](./apps/sam_c21n_xpro/sdadc_conversion_polling/readme.md) | SDADC Conversion Polling Mode | [SAM C21N](https://www.microchip.com/wwwproducts/en/ATSAMC21N18A) | [SAM C21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro)|
+| [same54_sdcard_usb_audio_player](./apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.md) | SD Card USB Audio Player | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)|
+| [same54_uart_live_update](./apps/sam_e54_cult/same54_uart_live_update/readme.md) | Live Update | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)|
+| [saml11_trustzone_getting_started](./apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.md) | TrustZone Getting Started | [SAM L11](https://www.microchip.com/wwwproducts/en/ATSAML11E16A) | [SAML11 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320205)|
+
+### Updated Applications
+	- NA -
+
+### Known Issues
+	- TBD -
+
 ## Reference Applications Release v1.0.0 (June 2020)
 ### New Applications
 
@@ -44,17 +77,16 @@ The following table provides the list of new applications:
 | [pic32mz_uart_live_update](./apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.md)     | Live update on PIC32MZ  			| [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [PIC32MZ Embedded Connectivity with FPU Starter Kit](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DM320007)|
 
 ### Updated Applications
-	- NA - 
+	- NA -
 
 ### Known Issues
 1. The demo “pic32mz_ef_sk_meb2\audio_player\audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5\firmware\gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5\firmware\gfx_repo_patch” folder.  
 The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0.  
 2. The application “pic32mz_ef_curiosity_v2\msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns\firmware\usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns\firmware\usb_repo_patch” folder.  
-The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application. 
+The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application.
 This issue is expected to be fixed in a future release of "usb” repository.
 
 
 ### Development Tools
- 
-* Refer demo specfic documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
+* Refer demo specfic documentation in folder "docs" to know the tools and Harmony 3 packages used.

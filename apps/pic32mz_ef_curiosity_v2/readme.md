@@ -15,6 +15,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 * [Getting Started Middleware - EEPROM/Thumb drive temperature logger](./getting_started_middleware/readme.md)
 * [USB MSD with Multiple Drives](./msd_multiple_luns/readme.md)
 * [SD Card Audio Player](./sdcard_player/readme.md)
+* [WiFi based RGB LED Control](./wifi_rgb_easy_configuration/readme.md)
 * [Snake Game](./snake_game/readme.md)
 
 
