@@ -77,7 +77,7 @@ This following bullet points provides links to the detailed topics:
 ## Setting up the build platform
 - Download and extract [ACK Device SDK 3.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
-  `<Your ACK SDK Downloaded folder>\ACK_Device_SDK_3.1.202002192328\user\platform`
+  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_3.1.202002192328/user/platform`
 
 **Note**
 - Make sure you create **amazon.com** account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.)

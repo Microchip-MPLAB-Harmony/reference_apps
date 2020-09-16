@@ -19,7 +19,7 @@ nav_order: 1
  The periodicity of the temperature values reading can be changed to 1 second, 2 seconds, 4 seconds, and back to 500 milliseconds every time
  when the user presses the switch SW0 on the SAM L11 Xplained Pro Evaluation Kit.  
  The temperature readings are transferred to Non-secure mode application when it requests to Secure application through Non Secure Callables (NSC).  
-   
+
 
 - The Non-secure mode application requests the Secure mode application temperature values and prints them on a serial console once it receives from the Secure mode application. Further,  when it receives a request from the user (in the form of a key press on the serial console), it will request Secure mode application to retrieve the last five stored temperature values in the EEPROM. The Non-secure application prints the last five stored temperature values on the console.
 
@@ -81,7 +81,7 @@ The pre-built hex file can be programmed by following the below steps
 	- Open MPLAB X IDE
 	- Close all existing projects in IDE (if any project is opened)
 	- Go to File -> Open Project
-	- Select project path "..\reference_apps\apps\sam_l11_xpro\saml11_trustzone_getting_started"
+	- Select project path "../reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started"
 	- Select "firmware" folder, enable "Open Required Projects" and click on "Open Project" button
 	<img src = "images/group_project_path.png" width="700" height="400" align="middle">  
 
@@ -92,7 +92,7 @@ The pre-built hex file can be programmed by following the below steps
   - Procedure 2:
 	- Open MPLAB X IDE
 	- Close all existing projects in IDE (if any project is opened)
-	- Open the project (..\saml11_trustzone_getting_started\firmware\NonSecure\firmware\sam_l11_xpro_NonSecure.X) in MPLAB X IDE.
+	- Open the project (../saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X) in MPLAB X IDE.
 	<img src = "images/opened_non_secure_project.png" width="700" height="500" align="middle">  
 - Ensure "SAML11 Xplained Pro (EDBG)" is selected as hardware tool to program/debug the application.
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar.

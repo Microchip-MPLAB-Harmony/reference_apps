@@ -93,7 +93,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project (audio_player_lab4\firmware\audio_player_lab4.X) in MPLAB X IDE
+- Open the project (audio_player_lab4/firmware/audio_player_lab4.X) in MPLAB X IDE
 - Ensure "PKOB" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below

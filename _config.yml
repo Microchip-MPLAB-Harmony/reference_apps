@@ -86,7 +86,16 @@ exclude:
   - "*.txt"
   - "*.yml"
   - "*.bin"  
-
+  - "*.zip"
+  - "*.a"
+  - "*.link"  
+  - "*.group"
+  - "*.bib"
+  - "*.cgi"  
+  - "*.css"
+  - "*.js"
+  - "*.pdf"  
+  
 # Aux links for the upper right navigation
 aux_links:
   "Obtain Support from Microchip":

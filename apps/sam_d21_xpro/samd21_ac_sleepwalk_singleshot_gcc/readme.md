@@ -59,7 +59,7 @@ This can be done with two methods, either automatically or manually.
 1. Automatic Detection: If Atmel Studio is installed in PC, By default, MPLAB X IDE detects the ARM GCC toolchain (installed as a part of Atmel Studio) and shows it in the MPLAB X IDE's Project properties.
 Since the ARM GCC toolchain is already available, switch to the ARM GCC toolchain from the project properties.
 2. Manual: If Atmel Studio is not installed, install the ARM GCC toolchain manually.
-  Go to MPLAB X IDE -> Tools -> Options -> Embedded -> Build Tools -> Add -> give the base directory -> Enter the path of “xx\xxx\toolchain\arm\arm-gnu-toolchain\bin”. Save it.
+  Go to MPLAB X IDE -> Tools -> Options -> Embedded -> Build Tools -> Add -> give the base directory -> Enter the path of “xx/xxx/toolchain/arm/arm-gnu-toolchain\bin”. Save it.
 - <img src = "images/switch_toolchain.png" width="1026" height="659" align="middle">
 - Now, select the ARM GCC toolchain in the project properties. Select the Project -> Right Click -> Properties -> select the ARM GCC toolchain in compiler options and save.
 - <img src = "images/ac_sleepwalk_singleshot_project_gcc_settings.png" width="899" height="577" align="middle">

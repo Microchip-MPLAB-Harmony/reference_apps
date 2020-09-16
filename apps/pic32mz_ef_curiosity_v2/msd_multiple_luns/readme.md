@@ -97,8 +97,8 @@ The pre-built hex file can be programmed by following the below steps.
 ## Comments:
 - While formatting the SD card, change allocation unit size to 32K. This helps in reading the contents of the SD card faster.
    (To change allocation unit size, Right click on Drive > Select Format > change Allocation unit size)
-- This application is developed by applying a patch (available in folder "msd_multiple_luns\firmware\usb_repo_patch") to MPLAB Harmony v3 "usb" repository.
-   If you need to reconfigure or regenerate this demo using MHC, please refer the "Notes.txt" file under "msd_multiple_luns\firmware\usb_repo_patch" folder
+- This application is developed by applying a patch (available in folder "msd_multiple_luns/firmware/usb_repo_patch") to MPLAB Harmony v3 "usb" repository.
+   If you need to reconfigure or regenerate this demo using MHC, please refer the "Notes.txt" file under "msd_multiple_luns/firmware/usb_repo_patch" folder
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)              

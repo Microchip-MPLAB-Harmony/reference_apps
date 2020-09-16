@@ -76,7 +76,7 @@ This following bullet points provides links to the detailed topics:
 ## Setting up the build platform
 - Download and extract [ACK Device SDK 3.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
-  `<Your ACK SDK Downloaded folder>\ACK_Device_SDK_3.1.202002192328\user\platform`
+  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_3.1.202002192328/user/platform`
 
 ## <a id="project-structure"> </a>
 ## Project file structure
@@ -123,7 +123,7 @@ The pre-built hex file can be programmed by following the below steps.
 ### Setting up environment for OTA update
 - Open the project (`samd21_amazon_ack\bootloader\firmware\sam_d21_cnano.X`) in MPLAB X IDE
 - Build the code by clicking on the "*Clean and Build project*" button in MPLAB X IDE tool bar, but **do not program**
-- Open the project (`samd21_amazon_ack\applications\HelloWorld\firmware\sam_d21_cnano.X`) in MPLAB X IDE
+- Open the project (`samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X`) in MPLAB X IDE
 - Open the MPLAB Harmony 3 Configurator (MHC) from **Tools > MPLAB Harmony 3 Configurator** for HelloWorld project
 - After successful opening of MHC, in **Project Graph** select **System** and disable **Generate Fuse Settings** as shown below  
 	 <img src = "images/helloworld_fuse_settings.png" width="500" height="350">
@@ -135,7 +135,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Build the code by clicking on the "Clean and Build project" button in MPLAB X IDE tool bar, but **do not program**.
 - Navigate to **ota > utility** folder inside 'Your ACK SDK Downloaded folder' and run "hexmerge.py" script to merge bootloader and HelloWorld project's hex file
 
-		python hexmerge.py -o bootloader_helloworld_combined.hex -f your_sdk_folder\user\platform\samd21_amazon_ack\bootloader\firmware\sam_d21_cnano.X\dist\default\production\sam_d21_cnano.X.production.hex your_sdk_folder\user\platform\samd21_amazon_ack\applications\HelloWorld\firmware\sam_d21_cnano.X\dist\default\production\sam_d21_cnano.X.production.hex
+		python hexmerge.py -o bootloader_helloworld_combined.hex -f your_sdk_folder/user/platform/samd21_amazon_ack/bootloader/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex your_sdk_folder/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex
 
 **Note**
 - Output file "bootloader_helloworld_combined.hex" will be present in utility folder if specific path is not specified while running script.
@@ -145,13 +145,13 @@ The pre-built hex file can be programmed by following the below steps.
 ## <a id="building-the-ota-application"> </a>
 ### Building and upgrading the latest application firmware
 
-- Open the project (`samd21_amazon_ack\applications\HelloWorld\firmware\sam_d21_cnano.X`) in MPLAB X IDE
+- Open the project (`samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X`) in MPLAB X IDE
 - Change the firmware version from 1 to 2 in "ACKUser_GetFirmwareVersion" function in file 'ack_user_device.c'
 - Build the code by clicking on the "Clean and Build project" button in MPLAB X IDE tool bar, but **do not program**
 - Navigate to **ota > utility** folder inside 'Your ACK SDK Downloaded folder' and run "hex2ota.py" script to create a file suitable for uploading as latest application image from a hex file that was created by building the HelloWorld application.
 - In **validate-ota.py**, HMCU_OTA_COMPLETE(line no 79) timer should be increased to 120 seconds from 30 seconds for receiving the complete ota firmware  
 
-		python hex2ota.py --device-type ACKTESTDEVICE <Your ACK SDK Downloaded folder>\user\platform\samd21_amazon_ack\applications\HelloWorld\firmware\sam_d21_cnano.X\dist\default\production\sam_d21_cnano.X.production.hex SecondOtaFirmware.ota
+		python hex2ota.py --device-type ACKTESTDEVICE <Your ACK SDK Downloaded folder>/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex SecondOtaFirmware.ota
 
 - Navigate to **test > validation** folder inside ACK SDK and run "validate-ota.py" script to upgrade the new firmware
 

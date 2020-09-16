@@ -74,8 +74,8 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Programming/Debugging Application Project:
-- Open the project (atmega4809_to_samd21_migration\firmware\atmega4809_to_samd21_migration.X) in MPLAB X IDE
-- Ensure On-Board Nano Debuggeris selected as hardware tool to program/debug the application
+- Open the project (atmega4809_to_samd21_migration/firmware/atmega4809_to_samd21_migration.X) in MPLAB X IDE
+- Ensure On-Board Nano Debuggers selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 

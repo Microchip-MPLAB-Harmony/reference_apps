@@ -7,8 +7,9 @@ nav_order: 99
 
 ## Reference Applications Release v1.1.0 (September 2020)
 ### New Applications
-| Application | Description | MCU | Developement Board/Kit |
-| --- | --- | --- | --- |
+
+| Application | Description | MCU | Development Board/Kit |  
+| --- | --- | --- | --- |  
 | [google_cloud_iot_core](./apps/sam_d21_iot/google_cloud_iot_core/readme.md) |  Google Cloud IoT Core | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G18) | [SAM-IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A)|
 | [same51n_getting_started](./apps/sam_e51_cnano/same51n_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [SAME 51](https://www.microchip.com/wwwproducts/en/ATSAME51G18A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
 | [ble_fitness_tracker](./apps/sam_e51_cnano/ble_fitness_tracker/readme.md) |  BLE Fitness Tracker | [SAME 51](https://www.microchip.com/wwwproducts/en/ATSAME51G18A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
@@ -43,7 +44,7 @@ nav_order: 99
 
 The following table provides the list of new applications:
 
-| Application | Description | MCU | Developement Board/Kit |
+| Application | Description | MCU | Development Board/Kit |
 | --- | --- | --- | --- |
 | [samd21n_getting_started](./apps/sam_d21_cnano/samd21n_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
 | [fitness_tracker](./apps/sam_d21_cnano/fitness_tracker/readme.md) | Fitness Tracker using Curiosity Nano Base for click boards, Heart Rate 3 click and EINK CLICK BUNDLE | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)|
@@ -80,9 +81,9 @@ The following table provides the list of new applications:
 	- NA -
 
 ### Known Issues
-1. The demo “pic32mz_ef_sk_meb2\audio_player\audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5\firmware\gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5\firmware\gfx_repo_patch” folder.  
+1. The demo “pic32mz_ef_sk_meb2/audio_player/audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5/firmware/gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5/firmware/gfx_repo_patch” folder.  
 The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0.  
-2. The application “pic32mz_ef_curiosity_v2\msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns\firmware\usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns\firmware\usb_repo_patch” folder.  
+2. The application “pic32mz_ef_curiosity_v2/msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns/firmware/usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns/firmware/usb_repo_patch” folder.  
 The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application.
 This issue is expected to be fixed in a future release of "usb” repository.
 

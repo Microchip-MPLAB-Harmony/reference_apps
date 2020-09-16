@@ -78,7 +78,7 @@ This following bullet points provides links to the detailed topics:
 ## Setting up the build platform
 - Download and extract [ACK Device SDK 3.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
-  `<Your ACK SDK Downloaded folder>\ACK_Device_SDK_3.1.202002192328\user\platform`
+  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_3.1.202002192328/user/platform`
 
 ## <a id="project-structure"> </a>
 ## Project file structure
@@ -113,7 +113,7 @@ The pre-built hex file can be programmed by following the below steps.
 ## Programming/Debugging Microwave Application Project:
 
  <span style="color:blue"> *Before proceeding with this step complete "Setting up the build platform" step.* </span>
-- Open the project (`samd21_amazon_ack\applications\Microwave\firmware\sam_d21_cnano.X`) in MPLAB X IDE
+- Open the project (`samd21_amazon_ack/applications/Microwave/firmware/sam_d21_cnano.X`) in MPLAB X IDE
 - Ensure "PKOB nano" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 
