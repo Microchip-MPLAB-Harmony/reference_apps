@@ -108,9 +108,9 @@ NVMCTRL_ERROR NVMCTRL_ErrorGet( void );
 
 bool NVMCTRL_IsBusy( void );
 
-void NVMCTRL_RegionLock (NVMCTRL_MEMORY_REGION address);
+void NVMCTRL_RegionLock (NVMCTRL_MEMORY_REGION region);
 
-void NVMCTRL_RegionUnlock (NVMCTRL_MEMORY_REGION address);
+void NVMCTRL_RegionUnlock (NVMCTRL_MEMORY_REGION region);
 
 
 

@@ -56,7 +56,7 @@
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
 
-	extern "C" {
+    extern "C" {
 
 #endif
 // DOM-IGNORE-END
@@ -71,13 +71,23 @@ void SERCOM0_USART_Initialize( void );
 
 bool SERCOM0_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
 
+void SERCOM0_USART_TransmitterEnable( void );
+
+void SERCOM0_USART_TransmitterDisable( void );
+
 bool SERCOM0_USART_Write( void *buffer, const size_t size );
+
 
 bool SERCOM0_USART_TransmitterIsReady( void );
 
 bool SERCOM0_USART_TransmitComplete( void );
 
 void SERCOM0_USART_WriteByte( int data );
+
+
+void SERCOM0_USART_ReceiverEnable( void );
+
+void SERCOM0_USART_ReceiverDisable( void );
 
 bool SERCOM0_USART_Read( void *buffer, const size_t size );
 

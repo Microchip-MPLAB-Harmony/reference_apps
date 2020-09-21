@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-02-04T13:16:04Z */
+/* file generated from device description version 2020-08-24T19:30:19Z */
 #ifndef _SAML10_RTC_COMPONENT_H_
 #define _SAML10_RTC_COMPONENT_H_
 

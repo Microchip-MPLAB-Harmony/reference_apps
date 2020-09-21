@@ -60,8 +60,15 @@
 
 void SUPC_Initialize( void )
 {
+    uint32_t bodEnable = SUPC_REGS->SUPC_BOD33 & SUPC_BOD33_ENABLE_Msk;
+
     /* Configure BOD33. Mask the values loaded from NVM during reset. */
+    SUPC_REGS->SUPC_BOD33 &= ~SUPC_BOD33_ENABLE_Msk;
     SUPC_REGS->SUPC_BOD33 = (SUPC_REGS->SUPC_BOD33 & (SUPC_BOD33_ENABLE_Msk | SUPC_BOD33_ACTION_Msk | SUPC_BOD33_HYST_Msk | SUPC_BOD33_LEVEL_Msk)) | SUPC_BOD33_PSEL(0x0);
+    if (bodEnable)
+    {
+        SUPC_REGS->SUPC_BOD33 |= SUPC_BOD33_ENABLE_Msk;
+    }
 
     /* Configure VREG. Mask the values loaded from NVM during reset.*/
     SUPC_REGS->SUPC_VREG = SUPC_VREG_ENABLE_Msk | SUPC_VREG_VSVSTEP(0) | SUPC_VREG_VSPER(0) | SUPC_VREG_LPEFF_Msk | SUPC_VREG_STDBYPL0_Msk;

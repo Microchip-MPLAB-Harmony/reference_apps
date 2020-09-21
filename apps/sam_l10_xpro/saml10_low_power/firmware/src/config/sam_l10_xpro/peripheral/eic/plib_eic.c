@@ -81,16 +81,15 @@ void EIC_Initialize (void)
 
     /* NMI Control register */
 
-    /* Interrupt sense type and filter control for EXTINT channels 0 to 7*/
-    EIC_REGS->EIC_CONFIG =  EIC_CONFIG_SENSE0_NONE  |
-                              EIC_CONFIG_SENSE1_NONE  |
-                              EIC_CONFIG_SENSE2_NONE  |
-                              EIC_CONFIG_SENSE3_NONE  |
-                              EIC_CONFIG_SENSE4_NONE  |
-                              EIC_CONFIG_SENSE5_RISE | EIC_CONFIG_FILTEN5_Msk |
-                              EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_NONE ;
-
+    /* Interrupt sense type and filter control for EXTINT channels 0 to (8-1) */
+    EIC_REGS->EIC_CONFIG =  EIC_CONFIG_SENSE0_NONE 
+        | EIC_CONFIG_SENSE1_NONE 
+        | EIC_CONFIG_SENSE2_NONE 
+        | EIC_CONFIG_SENSE3_NONE 
+        | EIC_CONFIG_SENSE4_NONE 
+        | EIC_CONFIG_SENSE5_RISE | EIC_CONFIG_FILTEN5_Msk
+        | EIC_CONFIG_SENSE6_NONE 
+        | EIC_CONFIG_SENSE7_NONE ;
 
     /* External Interrupt Asynchronous Mode enable */
     EIC_REGS->EIC_ASYNCH = 0x20;
