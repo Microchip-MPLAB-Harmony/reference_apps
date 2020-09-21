@@ -13,8 +13,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">3C64B0B744B67F634A4B2C0AF49B32A8</GeneratedChecksum>
-          <UserChecksum dnOrder="6">3C64B0B744B67F634A4B2C0AF49B32A8</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B9388144EA8C18C396F2DB6CC40DCB4D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B9388144EA8C18C396F2DB6CC40DCB4D</UserChecksum>
         </File>
         <File dnOrder="1">
           <Type dnOrder="0">SOURCE</Type>
@@ -31,8 +31,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">4ABE2379A1380AA2E38D26502C9690D9</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4ABE2379A1380AA2E38D26502C9690D9</UserChecksum>
+          <GeneratedChecksum dnOrder="5">14E7E36F5D6BF5F617B92C04EEDAEE17</GeneratedChecksum>
+          <UserChecksum dnOrder="6">14E7E36F5D6BF5F617B92C04EEDAEE17</UserChecksum>
         </File>
         <File dnOrder="3">
           <Type dnOrder="0">SOURCE</Type>
@@ -76,8 +76,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/dmac/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/dmac/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">66874D5A256DC505390E48641A31F0FC</GeneratedChecksum>
-          <UserChecksum dnOrder="6">66874D5A256DC505390E48641A31F0FC</UserChecksum>
+          <GeneratedChecksum dnOrder="5">661991D94F732741B2C27E02F0001283</GeneratedChecksum>
+          <UserChecksum dnOrder="6">661991D94F732741B2C27E02F0001283</UserChecksum>
         </File>
         <File dnOrder="8">
           <Type dnOrder="0">SOURCE</Type>
@@ -85,8 +85,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/eic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/eic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">FC4F8CF8F4EAD3269EF6F5B6EA436CF5</GeneratedChecksum>
-          <UserChecksum dnOrder="6">FC4F8CF8F4EAD3269EF6F5B6EA436CF5</UserChecksum>
+          <GeneratedChecksum dnOrder="5">FED3C705CEBC31F02E554AC03EC9424B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FED3C705CEBC31F02E554AC03EC9424B</UserChecksum>
         </File>
         <File dnOrder="9">
           <Type dnOrder="0">SOURCE</Type>
@@ -103,8 +103,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/nvic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/nvic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">DF3C41290C700A2048FACD837956E0DC</GeneratedChecksum>
-          <UserChecksum dnOrder="6">DF3C41290C700A2048FACD837956E0DC</UserChecksum>
+          <GeneratedChecksum dnOrder="5">78A682DF36E5AABCA83118BBD5695257</GeneratedChecksum>
+          <UserChecksum dnOrder="6">78A682DF36E5AABCA83118BBD5695257</UserChecksum>
         </File>
         <File dnOrder="11">
           <Type dnOrder="0">SOURCE</Type>
@@ -121,8 +121,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/port/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/port/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">BC64AA83030346A991CDEB2AEB398477</GeneratedChecksum>
-          <UserChecksum dnOrder="6">BC64AA83030346A991CDEB2AEB398477</UserChecksum>
+          <GeneratedChecksum dnOrder="5">C8C8779174D7110DEBABE2144ABCD987</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C8C8779174D7110DEBABE2144ABCD987</UserChecksum>
         </File>
         <File dnOrder="13">
           <Type dnOrder="0">SOURCE</Type>
@@ -130,8 +130,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/rtc/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/rtc/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">8908A6F6360213F208061421EFDD9946</GeneratedChecksum>
-          <UserChecksum dnOrder="6">8908A6F6360213F208061421EFDD9946</UserChecksum>
+          <GeneratedChecksum dnOrder="5">591FB24F81906C2F0BAC896243A5994A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">591FB24F81906C2F0BAC896243A5994A</UserChecksum>
         </File>
         <File dnOrder="14">
           <Type dnOrder="0">SOURCE</Type>
@@ -139,8 +139,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/sercom/usart/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">7C14BCA8C878314C9A3C7D9A94628D2C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">7C14BCA8C878314C9A3C7D9A94628D2C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">5CEBF987D461074961D35F352E67EB2B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5CEBF987D461074961D35F352E67EB2B</UserChecksum>
         </File>
         <File dnOrder="15">
           <Type dnOrder="0">SOURCE</Type>
@@ -148,8 +148,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/sercom/i2c_master/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/i2c_master/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">3A4840EABF5157BC252413069865ABB7</GeneratedChecksum>
-          <UserChecksum dnOrder="6">3A4840EABF5157BC252413069865ABB7</UserChecksum>
+          <GeneratedChecksum dnOrder="5">E29A078481345472B808EA3705C64CBF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E29A078481345472B808EA3705C64CBF</UserChecksum>
         </File>
         <File dnOrder="16">
           <Type dnOrder="0">SOURCE</Type>
@@ -157,8 +157,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">31987BD86EE19226FFF4173AE2BDDAB7</GeneratedChecksum>
-          <UserChecksum dnOrder="6">31987BD86EE19226FFF4173AE2BDDAB7</UserChecksum>
+          <GeneratedChecksum dnOrder="5">24A7EAB2B3A9AEB5C8B83AD1716ED38D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">24A7EAB2B3A9AEB5C8B83AD1716ED38D</UserChecksum>
         </File>
         <File dnOrder="17">
           <Type dnOrder="0">SOURCE</Type>
@@ -166,8 +166,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/stdio/</LogicalPath>
           <PhysicalPath dnOrder="4">/stdio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A9F55E7CB78F22D9000CA03DC635973C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A9F55E7CB78F22D9000CA03DC635973C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">16BE5CCEE5F9AF5909BF3F69B51C7D93</GeneratedChecksum>
+          <UserChecksum dnOrder="6">16BE5CCEE5F9AF5909BF3F69B51C7D93</UserChecksum>
         </File>
         <File dnOrder="18">
           <Type dnOrder="0">HEADER</Type>
@@ -175,8 +175,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9A2DFB15CD542C838A86BA659389BF12</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9A2DFB15CD542C838A86BA659389BF12</UserChecksum>
+          <GeneratedChecksum dnOrder="5">CE59F9FD8366F55EF4466B4A5353A6E2</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CE59F9FD8366F55EF4466B4A5353A6E2</UserChecksum>
         </File>
         <File dnOrder="19">
           <Type dnOrder="0">HEADER</Type>
@@ -184,8 +184,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">0062E59D88847F422B943CF5DF9B5BDC</GeneratedChecksum>
-          <UserChecksum dnOrder="6">0062E59D88847F422B943CF5DF9B5BDC</UserChecksum>
+          <GeneratedChecksum dnOrder="5">2D2199802480A5E2E0EFD9E20A3B41F6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2D2199802480A5E2E0EFD9E20A3B41F6</UserChecksum>
         </File>
         <File dnOrder="20">
           <Type dnOrder="0">HEADER</Type>
@@ -193,8 +193,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">7702DCB69176B892B1F3580FB184BC57</GeneratedChecksum>
-          <UserChecksum dnOrder="6">7702DCB69176B892B1F3580FB184BC57</UserChecksum>
+          <GeneratedChecksum dnOrder="5">0EB58923E4C54CE1B161FD1FE251BC0C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0EB58923E4C54CE1B161FD1FE251BC0C</UserChecksum>
         </File>
         <File dnOrder="21">
           <Type dnOrder="0">HEADER</Type>
@@ -202,17 +202,17 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">0095908CE15AC65F24E4FFFD1689F7F1</GeneratedChecksum>
-          <UserChecksum dnOrder="6">0095908CE15AC65F24E4FFFD1689F7F1</UserChecksum>
+          <GeneratedChecksum dnOrder="5">113219F7C8F19CBC77EA60ADF7BA5527</GeneratedChecksum>
+          <UserChecksum dnOrder="6">113219F7C8F19CBC77EA60ADF7BA5527</UserChecksum>
         </File>
         <File dnOrder="22">
           <Type dnOrder="0">HEADER</Type>
-          <Name dnOrder="1">atsame54p20a_compat.h</Name>
+          <Name dnOrder="1">cachel1_armv7.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/</LogicalPath>
-          <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">EE5A8CDD0C821E273F02961AA2411F82</GeneratedChecksum>
-          <UserChecksum dnOrder="6">EE5A8CDD0C821E273F02961AA2411F82</UserChecksum>
+          <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
+          <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">01B82424BC59A54620F7E9E0DB808EBB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">01B82424BC59A54620F7E9E0DB808EBB</UserChecksum>
         </File>
         <File dnOrder="23">
           <Type dnOrder="0">HEADER</Type>
@@ -220,8 +220,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">5809D9A45D88F1C359687517E8DDA980</GeneratedChecksum>
-          <UserChecksum dnOrder="6">5809D9A45D88F1C359687517E8DDA980</UserChecksum>
+          <GeneratedChecksum dnOrder="5">F0FC87070F78020F158A3CDDF231B431</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F0FC87070F78020F158A3CDDF231B431</UserChecksum>
         </File>
         <File dnOrder="24">
           <Type dnOrder="0">HEADER</Type>
@@ -229,8 +229,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">E1EACA507FC548EC5E3199C2CC8C7C12</GeneratedChecksum>
-          <UserChecksum dnOrder="6">E1EACA507FC548EC5E3199C2CC8C7C12</UserChecksum>
+          <GeneratedChecksum dnOrder="5">5D044E95E4EC93AED60965DF65656284</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5D044E95E4EC93AED60965DF65656284</UserChecksum>
         </File>
         <File dnOrder="25">
           <Type dnOrder="0">HEADER</Type>
@@ -238,8 +238,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">4ADE05D62CCFA7A95C49C69B41AE743A</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4ADE05D62CCFA7A95C49C69B41AE743A</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B5109B4198364CE230FC6BFBA2D5E90B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B5109B4198364CE230FC6BFBA2D5E90B</UserChecksum>
         </File>
         <File dnOrder="26">
           <Type dnOrder="0">HEADER</Type>
@@ -247,8 +247,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">D0A91713174AE0A9464105CD4157DEC1</GeneratedChecksum>
-          <UserChecksum dnOrder="6">D0A91713174AE0A9464105CD4157DEC1</UserChecksum>
+          <GeneratedChecksum dnOrder="5">00A88E28C299A373117BC4D5B9E80C80</GeneratedChecksum>
+          <UserChecksum dnOrder="6">00A88E28C299A373117BC4D5B9E80C80</UserChecksum>
         </File>
         <File dnOrder="27">
           <Type dnOrder="0">HEADER</Type>
@@ -256,8 +256,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">FB9082D52CC87C29BABCEC7CDA5DA8CD</GeneratedChecksum>
-          <UserChecksum dnOrder="6">FB9082D52CC87C29BABCEC7CDA5DA8CD</UserChecksum>
+          <GeneratedChecksum dnOrder="5">734DF6998F09B2D22A4D9FE1D544FDFC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">734DF6998F09B2D22A4D9FE1D544FDFC</UserChecksum>
         </File>
         <File dnOrder="28">
           <Type dnOrder="0">HEADER</Type>
@@ -265,8 +265,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">787D64C13CE3DCD1082EA06108F51EC6</GeneratedChecksum>
-          <UserChecksum dnOrder="6">787D64C13CE3DCD1082EA06108F51EC6</UserChecksum>
+          <GeneratedChecksum dnOrder="5">5D653BEFE5E6B1D00AB3682CE5D24C11</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5D653BEFE5E6B1D00AB3682CE5D24C11</UserChecksum>
         </File>
         <File dnOrder="29">
           <Type dnOrder="0">HEADER</Type>
@@ -283,8 +283,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">B2E4B79E96D9481B139252F7F1C5924F</GeneratedChecksum>
-          <UserChecksum dnOrder="6">B2E4B79E96D9481B139252F7F1C5924F</UserChecksum>
+          <GeneratedChecksum dnOrder="5">42E8B722917508A3A9373D13AD827ED6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">42E8B722917508A3A9373D13AD827ED6</UserChecksum>
         </File>
         <File dnOrder="31">
           <Type dnOrder="0">HEADER</Type>
@@ -292,8 +292,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">AF3CC89090034E070238E8A7BE343262</GeneratedChecksum>
-          <UserChecksum dnOrder="6">AF3CC89090034E070238E8A7BE343262</UserChecksum>
+          <GeneratedChecksum dnOrder="5">376D5C7FD29CAA507ACB1AAB8746B1AD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">376D5C7FD29CAA507ACB1AAB8746B1AD</UserChecksum>
         </File>
         <File dnOrder="32">
           <Type dnOrder="0">HEADER</Type>
@@ -301,8 +301,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">8D06BEF47A08B8A7A91DE48D1C5DFDAB</GeneratedChecksum>
-          <UserChecksum dnOrder="6">8D06BEF47A08B8A7A91DE48D1C5DFDAB</UserChecksum>
+          <GeneratedChecksum dnOrder="5">52F91AC0727F2311EDA0E3BAA7719A9F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">52F91AC0727F2311EDA0E3BAA7719A9F</UserChecksum>
         </File>
         <File dnOrder="33">
           <Type dnOrder="0">HEADER</Type>
@@ -310,8 +310,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">CD5F1A2F242BE3D7B766157EEBF09823</GeneratedChecksum>
-          <UserChecksum dnOrder="6">CD5F1A2F242BE3D7B766157EEBF09823</UserChecksum>
+          <GeneratedChecksum dnOrder="5">624A16D50759D7A491C523D747764B49</GeneratedChecksum>
+          <UserChecksum dnOrder="6">624A16D50759D7A491C523D747764B49</UserChecksum>
         </File>
         <File dnOrder="34">
           <Type dnOrder="0">HEADER</Type>
@@ -319,8 +319,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">F25A22C1366F4CC798146B1A9416211F</GeneratedChecksum>
-          <UserChecksum dnOrder="6">F25A22C1366F4CC798146B1A9416211F</UserChecksum>
+          <GeneratedChecksum dnOrder="5">BDBE854662446C34BFE6F9B06A0FA221</GeneratedChecksum>
+          <UserChecksum dnOrder="6">BDBE854662446C34BFE6F9B06A0FA221</UserChecksum>
         </File>
         <File dnOrder="35">
           <Type dnOrder="0">HEADER</Type>
@@ -335,10 +335,10 @@
           <Type dnOrder="0">HEADER</Type>
           <Name dnOrder="1">device.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/</LogicalPath>
-          <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">5989369F98A57C69D35585B657F4825A</GeneratedChecksum>
-          <UserChecksum dnOrder="6">5989369F98A57C69D35585B657F4825A</UserChecksum>
+          <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">950ACD5FAB0B7DBC0FCEC031DA84018E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">950ACD5FAB0B7DBC0FCEC031DA84018E</UserChecksum>
         </File>
         <File dnOrder="37">
           <Type dnOrder="0">HEADER</Type>
@@ -355,8 +355,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">D07A0815C7A85771360229EBBCB1B24D</GeneratedChecksum>
-          <UserChecksum dnOrder="6">D07A0815C7A85771360229EBBCB1B24D</UserChecksum>
+          <GeneratedChecksum dnOrder="5">6F6485A8C65688863626F98A49768D10</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6F6485A8C65688863626F98A49768D10</UserChecksum>
         </File>
         <File dnOrder="39">
           <Type dnOrder="0">HEADER</Type>
@@ -364,8 +364,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">405303A229E3332A22D44B4462C244A6</GeneratedChecksum>
-          <UserChecksum dnOrder="6">405303A229E3332A22D44B4462C244A6</UserChecksum>
+          <GeneratedChecksum dnOrder="5">D35F77B422A8CF906BCB014476ED38B1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D35F77B422A8CF906BCB014476ED38B1</UserChecksum>
         </File>
         <File dnOrder="40">
           <Type dnOrder="0">HEADER</Type>
@@ -373,8 +373,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">2EBA17F22F3F191DDDE4E538A6898F48</GeneratedChecksum>
-          <UserChecksum dnOrder="6">2EBA17F22F3F191DDDE4E538A6898F48</UserChecksum>
+          <GeneratedChecksum dnOrder="5">0C74E6F76B5F37356237C4AC074A7AB4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0C74E6F76B5F37356237C4AC074A7AB4</UserChecksum>
         </File>
         <File dnOrder="41">
           <Type dnOrder="0">HEADER</Type>
@@ -382,8 +382,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">3E836111A0E92FD30B18322407F5D5A0</GeneratedChecksum>
-          <UserChecksum dnOrder="6">3E836111A0E92FD30B18322407F5D5A0</UserChecksum>
+          <GeneratedChecksum dnOrder="5">22FEADDADB287C37D5C14C321BDBC51B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">22FEADDADB287C37D5C14C321BDBC51B</UserChecksum>
         </File>
         <File dnOrder="42">
           <Type dnOrder="0">HEADER</Type>
@@ -391,8 +391,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">B4932F3565E2FEEA2DFA11F3956534C7</GeneratedChecksum>
-          <UserChecksum dnOrder="6">B4932F3565E2FEEA2DFA11F3956534C7</UserChecksum>
+          <GeneratedChecksum dnOrder="5">FF453F849F5FCA9C1EB37633C55AC384</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FF453F849F5FCA9C1EB37633C55AC384</UserChecksum>
         </File>
         <File dnOrder="43">
           <Type dnOrder="0">HEADER</Type>
@@ -400,8 +400,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">2CD1B1B228277C1B162A3B993E04D637</GeneratedChecksum>
-          <UserChecksum dnOrder="6">2CD1B1B228277C1B162A3B993E04D637</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B8B32A8F41246932755658F6FDF61AB5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B8B32A8F41246932755658F6FDF61AB5</UserChecksum>
         </File>
         <File dnOrder="44">
           <Type dnOrder="0">HEADER</Type>
@@ -409,8 +409,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">4CA41E2CF8FCB1545FF22C6EBD424552</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4CA41E2CF8FCB1545FF22C6EBD424552</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B63702B2BBF991BDED45E749F519DE9C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B63702B2BBF991BDED45E749F519DE9C</UserChecksum>
         </File>
         <File dnOrder="45">
           <Type dnOrder="0">HEADER</Type>
@@ -418,8 +418,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">F411CF4367E2AF5A2599BB57DE2CEB2C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">F411CF4367E2AF5A2599BB57DE2CEB2C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B1B76782EDC9F800793464A538D74C8D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B1B76782EDC9F800793464A538D74C8D</UserChecksum>
         </File>
         <File dnOrder="46">
           <Type dnOrder="0">HEADER</Type>
@@ -427,8 +427,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6A6D5AC4F9D4B5ED6D178E1DA41E144A</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6A6D5AC4F9D4B5ED6D178E1DA41E144A</UserChecksum>
+          <GeneratedChecksum dnOrder="5">F5CA1CAADAADF2EFD0CF1FCE2C1600B0</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F5CA1CAADAADF2EFD0CF1FCE2C1600B0</UserChecksum>
         </File>
         <File dnOrder="47">
           <Type dnOrder="0">HEADER</Type>
@@ -436,8 +436,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6FDD2FE80C8B3518E1BF78C42FA97957</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6FDD2FE80C8B3518E1BF78C42FA97957</UserChecksum>
+          <GeneratedChecksum dnOrder="5">68EF1A0FCD60BF1BFBF4086F28BD98DE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">68EF1A0FCD60BF1BFBF4086F28BD98DE</UserChecksum>
         </File>
         <File dnOrder="48">
           <Type dnOrder="0">HEADER</Type>
@@ -445,8 +445,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">27359E16F7A643FA675DB4A5DFB53C50</GeneratedChecksum>
-          <UserChecksum dnOrder="6">27359E16F7A643FA675DB4A5DFB53C50</UserChecksum>
+          <GeneratedChecksum dnOrder="5">2C118F1AEC9A7589122A2955FD1A58CB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">2C118F1AEC9A7589122A2955FD1A58CB</UserChecksum>
         </File>
         <File dnOrder="49">
           <Type dnOrder="0">HEADER</Type>
@@ -454,8 +454,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/CMSIS/CMSIS/Core/Include/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/CMSIS/CMSIS/Core/Include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A0246C3B848A6A45D54CE5DA8DF3B9C8</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A0246C3B848A6A45D54CE5DA8DF3B9C8</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B96ADDA2C111E73B26EBA5E7B4498912</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B96ADDA2C111E73B26EBA5E7B4498912</UserChecksum>
         </File>
         <File dnOrder="50">
           <Type dnOrder="0">HEADER</Type>
@@ -463,8 +463,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">547C224927310A6BD41249A1BB94FBE0</GeneratedChecksum>
-          <UserChecksum dnOrder="6">547C224927310A6BD41249A1BB94FBE0</UserChecksum>
+          <GeneratedChecksum dnOrder="5">892B00855EB855478D8BEFEA293A4D84</GeneratedChecksum>
+          <UserChecksum dnOrder="6">892B00855EB855478D8BEFEA293A4D84</UserChecksum>
         </File>
         <File dnOrder="51">
           <Type dnOrder="0">HEADER</Type>
@@ -472,8 +472,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">71B4CC1D3FC5E0A09E2473097A511391</GeneratedChecksum>
-          <UserChecksum dnOrder="6">71B4CC1D3FC5E0A09E2473097A511391</UserChecksum>
+          <GeneratedChecksum dnOrder="5">1C6AB6F3B28213E10027BEA5C94BAA51</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1C6AB6F3B28213E10027BEA5C94BAA51</UserChecksum>
         </File>
         <File dnOrder="52">
           <Type dnOrder="0">HEADER</Type>
@@ -481,8 +481,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">95DF376A5778E991C518B60833C9A70F</GeneratedChecksum>
-          <UserChecksum dnOrder="6">95DF376A5778E991C518B60833C9A70F</UserChecksum>
+          <GeneratedChecksum dnOrder="5">381D884B14AB6B407A85224D29D29912</GeneratedChecksum>
+          <UserChecksum dnOrder="6">381D884B14AB6B407A85224D29D29912</UserChecksum>
         </File>
         <File dnOrder="53">
           <Type dnOrder="0">HEADER</Type>
@@ -490,8 +490,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9DF3779DAF807C1979CBCC4102E652D0</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9DF3779DAF807C1979CBCC4102E652D0</UserChecksum>
+          <GeneratedChecksum dnOrder="5">3019CC5A953C430C17A96CF4061AD56E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3019CC5A953C430C17A96CF4061AD56E</UserChecksum>
         </File>
         <File dnOrder="54">
           <Type dnOrder="0">HEADER</Type>
@@ -499,8 +499,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">C3F1F050D669EE7B761366AA9265C8AD</GeneratedChecksum>
-          <UserChecksum dnOrder="6">C3F1F050D669EE7B761366AA9265C8AD</UserChecksum>
+          <GeneratedChecksum dnOrder="5">EE0675C8DA76F17BDC692D442B6B64D8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EE0675C8DA76F17BDC692D442B6B64D8</UserChecksum>
         </File>
         <File dnOrder="55">
           <Type dnOrder="0">HEADER</Type>
@@ -508,8 +508,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6B95988969F5A4A05FB810F998360DA8</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6B95988969F5A4A05FB810F998360DA8</UserChecksum>
+          <GeneratedChecksum dnOrder="5">7E1A5CEF2685B2154CC63F18DF40D188</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7E1A5CEF2685B2154CC63F18DF40D188</UserChecksum>
         </File>
         <File dnOrder="56">
           <Type dnOrder="0">HEADER</Type>
@@ -544,8 +544,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/eic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/eic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A15F3D1E610F5F577C9FCF34608055D5</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A15F3D1E610F5F577C9FCF34608055D5</UserChecksum>
+          <GeneratedChecksum dnOrder="5">165A61C97B23F740E95870387EB22FCC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">165A61C97B23F740E95870387EB22FCC</UserChecksum>
         </File>
         <File dnOrder="60">
           <Type dnOrder="0">HEADER</Type>
@@ -580,8 +580,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/port/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/port/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A2D6504AB235023C6459011EB8BF0564</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A2D6504AB235023C6459011EB8BF0564</UserChecksum>
+          <GeneratedChecksum dnOrder="5">203BDE92909CA472E5DD3BD7377048EE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">203BDE92909CA472E5DD3BD7377048EE</UserChecksum>
         </File>
         <File dnOrder="64">
           <Type dnOrder="0">HEADER</Type>
@@ -598,8 +598,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/sercom/usart/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9DD62C9C1A7CD5DEEADA358633D33BDE</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9DD62C9C1A7CD5DEEADA358633D33BDE</UserChecksum>
+          <GeneratedChecksum dnOrder="5">A15F95B595908AB3BFAAB10CA8CF56F1</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A15F95B595908AB3BFAAB10CA8CF56F1</UserChecksum>
         </File>
         <File dnOrder="66">
           <Type dnOrder="0">HEADER</Type>
@@ -607,8 +607,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/sercom/i2c_master/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/i2c_master/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">EE37003D8B226AA7F959E094775D84D3</GeneratedChecksum>
-          <UserChecksum dnOrder="6">EE37003D8B226AA7F959E094775D84D3</UserChecksum>
+          <GeneratedChecksum dnOrder="5">504DE36B9654C4BA08B1137D88C3D7FB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">504DE36B9654C4BA08B1137D88C3D7FB</UserChecksum>
         </File>
         <File dnOrder="67">
           <Type dnOrder="0">HEADER</Type>
@@ -616,8 +616,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/sercom/i2c_master/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/i2c_master/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">BCC5E485CEA55A52548E630A8FE9198A</GeneratedChecksum>
-          <UserChecksum dnOrder="6">BCC5E485CEA55A52548E630A8FE9198A</UserChecksum>
+          <GeneratedChecksum dnOrder="5">555AC09B32F566FBFB0A0505CF73ABD6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">555AC09B32F566FBFB0A0505CF73ABD6</UserChecksum>
         </File>
         <File dnOrder="68">
           <Type dnOrder="0">HEADER</Type>
@@ -625,8 +625,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/sercom/usart/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9B409E836AF212CD11C4BB20B1B7C26E</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9B409E836AF212CD11C4BB20B1B7C26E</UserChecksum>
+          <GeneratedChecksum dnOrder="5">60AC1E58C56C00111C35512E0C9AC899</GeneratedChecksum>
+          <UserChecksum dnOrder="6">60AC1E58C56C00111C35512E0C9AC899</UserChecksum>
         </File>
         <File dnOrder="69">
           <Type dnOrder="0">HEADER</Type>
@@ -634,8 +634,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">3B2CF9838BBF45F79CDFA45235FDEF8C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">3B2CF9838BBF45F79CDFA45235FDEF8C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B1EA217C67ECC2211FE8CAD2835BE02C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B1EA217C67ECC2211FE8CAD2835BE02C</UserChecksum>
         </File>
         <File dnOrder="70">
           <Type dnOrder="0">HEADER</Type>
@@ -643,8 +643,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">4A469D33B64BD40DB36B0CDA3FE3BFB2</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4A469D33B64BD40DB36B0CDA3FE3BFB2</UserChecksum>
+          <GeneratedChecksum dnOrder="5">7EF12949E25BBDE8365BC9C3E2E265A6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7EF12949E25BBDE8365BC9C3E2E265A6</UserChecksum>
         </File>
         <File dnOrder="71">
           <Type dnOrder="0">HEADER</Type>
@@ -652,8 +652,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A0EB0816915ECE5664BB1C6865D99FDA</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A0EB0816915ECE5664BB1C6865D99FDA</UserChecksum>
+          <GeneratedChecksum dnOrder="5">A8F3DB630AE542E192486610B20052AC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A8F3DB630AE542E192486610B20052AC</UserChecksum>
         </File>
         <File dnOrder="72">
           <Type dnOrder="0">HEADER</Type>
@@ -661,8 +661,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">10282C334CADA55CEA704530DD829615</GeneratedChecksum>
-          <UserChecksum dnOrder="6">10282C334CADA55CEA704530DD829615</UserChecksum>
+          <GeneratedChecksum dnOrder="5">16405DBA121A18603D94717E52854AB6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">16405DBA121A18603D94717E52854AB6</UserChecksum>
         </File>
         <File dnOrder="73">
           <Type dnOrder="0">HEADER</Type>
@@ -670,8 +670,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6B54E5C4ABE672DF89C40B4D34998715</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6B54E5C4ABE672DF89C40B4D34998715</UserChecksum>
+          <GeneratedChecksum dnOrder="5">81D1F8895C8F0089BE5F7B7CAE75F664</GeneratedChecksum>
+          <UserChecksum dnOrder="6">81D1F8895C8F0089BE5F7B7CAE75F664</UserChecksum>
         </File>
         <File dnOrder="74">
           <Type dnOrder="0">HEADER</Type>
@@ -679,8 +679,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">71BDE8DE452E14B613086D4087078DD3</GeneratedChecksum>
-          <UserChecksum dnOrder="6">71BDE8DE452E14B613086D4087078DD3</UserChecksum>
+          <GeneratedChecksum dnOrder="5">FFCDB02B342E37F94EF0135AAA98E26C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FFCDB02B342E37F94EF0135AAA98E26C</UserChecksum>
         </File>
         <File dnOrder="75">
           <Type dnOrder="0">HEADER</Type>
@@ -688,8 +688,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">EF9705D1F58002B02EDFF61DB381F080</GeneratedChecksum>
-          <UserChecksum dnOrder="6">EF9705D1F58002B02EDFF61DB381F080</UserChecksum>
+          <GeneratedChecksum dnOrder="5">AF0FD354CA8988AB2B8337A6B48B0C08</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AF0FD354CA8988AB2B8337A6B48B0C08</UserChecksum>
         </File>
         <File dnOrder="76">
           <Type dnOrder="0">HEADER</Type>
@@ -697,8 +697,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/pio/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/pio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">DB077DCA9FFA40281643E3BF7A37D5B0</GeneratedChecksum>
-          <UserChecksum dnOrder="6">DB077DCA9FFA40281643E3BF7A37D5B0</UserChecksum>
+          <GeneratedChecksum dnOrder="5">61F994965E04330AA6A7F6D281A51A3E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">61F994965E04330AA6A7F6D281A51A3E</UserChecksum>
         </File>
         <File dnOrder="77">
           <Type dnOrder="0">HEADER</Type>
@@ -706,8 +706,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">467B1B1D3F0503BE4CD1F87A917D016C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">467B1B1D3F0503BE4CD1F87A917D016C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">EBE210A5911C4B40B7BB33F26831918A</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EBE210A5911C4B40B7BB33F26831918A</UserChecksum>
         </File>
         <File dnOrder="78">
           <Type dnOrder="0">HEADER</Type>
@@ -715,8 +715,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">582B11734B5F04585392D141B4D00741</GeneratedChecksum>
-          <UserChecksum dnOrder="6">582B11734B5F04585392D141B4D00741</UserChecksum>
+          <GeneratedChecksum dnOrder="5">75A44D3B6E71862C1DDF435F3E40AAA9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">75A44D3B6E71862C1DDF435F3E40AAA9</UserChecksum>
         </File>
         <File dnOrder="79">
           <Type dnOrder="0">HEADER</Type>
@@ -724,8 +724,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9F45B47D980E3B8C5435E2C8FFBB8704</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9F45B47D980E3B8C5435E2C8FFBB8704</UserChecksum>
+          <GeneratedChecksum dnOrder="5">ED48438182D61A47E24537BBC6040B55</GeneratedChecksum>
+          <UserChecksum dnOrder="6">ED48438182D61A47E24537BBC6040B55</UserChecksum>
         </File>
         <File dnOrder="80">
           <Type dnOrder="0">HEADER</Type>
@@ -733,8 +733,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A285428E6DA394471EC1836A532C9D15</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A285428E6DA394471EC1836A532C9D15</UserChecksum>
+          <GeneratedChecksum dnOrder="5">723FB4DE75890C74FC22D65EB1B1435F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">723FB4DE75890C74FC22D65EB1B1435F</UserChecksum>
         </File>
         <File dnOrder="81">
           <Type dnOrder="0">HEADER</Type>
@@ -742,8 +742,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">47090EE71144BC66E10C9976FB1261A6</GeneratedChecksum>
-          <UserChecksum dnOrder="6">47090EE71144BC66E10C9976FB1261A6</UserChecksum>
+          <GeneratedChecksum dnOrder="5">C14AFA39E96E7CDEBFF7E6AEFE7A76D8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C14AFA39E96E7CDEBFF7E6AEFE7A76D8</UserChecksum>
         </File>
         <File dnOrder="82">
           <Type dnOrder="0">HEADER</Type>
@@ -751,8 +751,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9CD8403A0E087BFF0E93ACEBC5177B85</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9CD8403A0E087BFF0E93ACEBC5177B85</UserChecksum>
+          <GeneratedChecksum dnOrder="5">3448B62FDF48416310C7CED2A0A37D1C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">3448B62FDF48416310C7CED2A0A37D1C</UserChecksum>
         </File>
         <File dnOrder="83">
           <Type dnOrder="0">HEADER</Type>
@@ -760,8 +760,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">1CC58D8E05DC36C965D2457FD7AD35EC</GeneratedChecksum>
-          <UserChecksum dnOrder="6">1CC58D8E05DC36C965D2457FD7AD35EC</UserChecksum>
+          <GeneratedChecksum dnOrder="5">E03D9CF92E2149A1F3D6895DFB343A04</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E03D9CF92E2149A1F3D6895DFB343A04</UserChecksum>
         </File>
         <File dnOrder="84">
           <Type dnOrder="0">HEADER</Type>
@@ -769,8 +769,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">ADE12EF9C81066504F97A30956A8EEF7</GeneratedChecksum>
-          <UserChecksum dnOrder="6">ADE12EF9C81066504F97A30956A8EEF7</UserChecksum>
+          <GeneratedChecksum dnOrder="5">E7F13A74423AE379151D819EC8B880CC</GeneratedChecksum>
+          <UserChecksum dnOrder="6">E7F13A74423AE379151D819EC8B880CC</UserChecksum>
         </File>
         <File dnOrder="85">
           <Type dnOrder="0">HEADER</Type>
@@ -778,23 +778,33 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/component/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/component/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">794FDD60FE27CD19BA811AC015D1E9BC</GeneratedChecksum>
-          <UserChecksum dnOrder="6">794FDD60FE27CD19BA811AC015D1E9BC</UserChecksum>
+          <GeneratedChecksum dnOrder="5">0584CCD9DFFD4AFEA819CA2D7D666F4E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0584CCD9DFFD4AFEA819CA2D7D666F4E</UserChecksum>
+        </File>
+        <File dnOrder="86">
+          <Type dnOrder="0">LINKER</Type>
+          <Name dnOrder="1">ATSAME54P20A.ld</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">67D76CA6F818F9C7235E8442D2074A0B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">67D76CA6F818F9C7235E8442D2074A0B</UserChecksum>
         </File>
       </Files>
       <Settings dnOrder="1">
         <Setting append="true" category="C32" delimiter=";" dnOrder="0" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <Setting category="C32-LD" dnOrder="1" key="heap-size" security="NON_SECURE" value="512"/>
         <Setting category="C32-LD" dnOrder="2" key="no-device-startup-code" security="NON_SECURE" value="true"/>
-        <Setting append="true" category="C32-LD" delimiter=";" dnOrder="3" key="preprocessor-macros" security="NON_SECURE" value=""/>
-        <Setting category="C32Global" dnOrder="4" key="mdtcm" security="NON_SECURE" value=""/>
-        <Setting category="C32Global" dnOrder="5" key="mitcm" security="NON_SECURE" value=""/>
-        <Setting category="C32Global" dnOrder="6" key="mstacktcm" security="NON_SECURE" value="false"/>
+        <Setting append="true" category="C32-LD" delimiter=";=" dnOrder="3" key="preprocessor-macros" security="NON_SECURE" value=""/>
+        <Setting append="true" category="C32CPP" delimiter=";" dnOrder="4" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+        <Setting category="C32Global" dnOrder="5" key="mdtcm" security="NON_SECURE" value=""/>
+        <Setting category="C32Global" dnOrder="6" key="mitcm" security="NON_SECURE" value=""/>
+        <Setting category="C32Global" dnOrder="7" key="mstacktcm" security="NON_SECURE" value="false"/>
       </Settings>
     </Manifest>
     <Settings dnOrder="5">
-      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.6.0"/>
-      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\SAME54_DFP\3.3.64\atdf\ATSAME54P20A.atdf"/>
+      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.7.0"/>
+      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\SAME54_DFP\3.4.70\atdf\ATSAME54P20A.atdf"/>
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>

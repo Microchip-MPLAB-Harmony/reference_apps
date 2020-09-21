@@ -195,7 +195,7 @@ bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel )
 void DMAC_ChannelDisable ( DMAC_CHANNEL channel )
 {
     /* Disable the DMA channel */
-    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Pos);
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Msk);
 
     while((DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA & DMAC_CHCTRLA_ENABLE_Msk) != 0);
 
@@ -240,9 +240,11 @@ bool DMAC_ChannelSettingsSet (DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting)
     /* Get a pointer to the module hardware instance */
     dmac_descriptor_registers_t *const dmacDescReg = &descriptor_section[0];
 
-    /* Disable the channel */
     /* Disable the DMA channel */
-    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Pos);
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Msk);
+
+    /* Wait for channel to be disabled */
+    while((DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA & DMAC_CHCTRLA_ENABLE_Msk) != 0);
 
     /* Set the new settings */
     dmacDescReg[channel].DMAC_BTCTRL = setting;
@@ -291,13 +293,8 @@ void _DMAC_interruptHandler(uint8_t channel)
     }
 }
 
-
 void DMAC_0_InterruptHandler( void )
 {
-	_DMAC_interruptHandler(0);
+   _DMAC_interruptHandler(0);
 }
-
-
-
-
 

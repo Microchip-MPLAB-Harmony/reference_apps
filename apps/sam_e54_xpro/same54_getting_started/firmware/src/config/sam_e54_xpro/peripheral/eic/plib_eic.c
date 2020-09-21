@@ -76,7 +76,8 @@ void EIC_Initialize (void)
         /* Wait for sync */
     }
 
-    /* EIC is by default clocked by GCLK */
+    /* EIC is clocked by ultra low power clock */
+    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_CKSEL_Msk;
 
     /* NMI Control register */
 
@@ -88,17 +89,18 @@ void EIC_Initialize (void)
                               EIC_CONFIG_SENSE4_NONE  |
                               EIC_CONFIG_SENSE5_NONE  |
                               EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_NONE ;
+                              EIC_CONFIG_SENSE7_NONE  ;
 
     /* Interrupt sense type and filter control for EXTINT channels 8 to 15 */
-    EIC_REGS->EIC_CONFIG[1] =  EIC_CONFIG_SENSE0_NONE  |
-                              EIC_CONFIG_SENSE1_NONE  |
-                              EIC_CONFIG_SENSE2_NONE  |
-                              EIC_CONFIG_SENSE3_NONE  |
-                              EIC_CONFIG_SENSE4_NONE  |
-                              EIC_CONFIG_SENSE5_NONE  |
-                              EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_RISE ;
+    EIC_REGS->EIC_CONFIG[1] =  EIC_CONFIG_SENSE0_NONE 
+         |  EIC_CONFIG_SENSE1_NONE  
+         |  EIC_CONFIG_SENSE2_NONE  
+         |  EIC_CONFIG_SENSE3_NONE  
+         |  EIC_CONFIG_SENSE4_NONE  
+         |  EIC_CONFIG_SENSE5_NONE  
+         |  EIC_CONFIG_SENSE6_NONE  
+         |  EIC_CONFIG_SENSE7_RISE   ;
+    
 
 
     /* Debouncer enable */
