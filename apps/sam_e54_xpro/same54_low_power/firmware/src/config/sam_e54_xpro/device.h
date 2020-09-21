@@ -1,20 +1,22 @@
 /*******************************************************************************
-  EVSYS Peripheral Library
+  Device Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_evsys.c
+    device.h
 
   Summary:
-    EVSYS Source File
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
   Description:
     None
 
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,17 +39,17 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
 
-#include "plib_evsys.h"
+#pragma GCC diagnostic push
+#ifndef __cplusplus
+#pragma GCC diagnostic ignored "-Wnested-externs"
+#endif
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wattributes"
+#pragma GCC diagnostic ignored "-Wundef"
+#include "atsame54p20a.h"
+#pragma GCC diagnostic pop
+#include "device_cache.h"
+#include "toolchain_specifics.h"
 
-
-
-void EVSYS_Initialize( void )
-{
-    /*Event Channel User Configuration*/
-    EVSYS_REGS->EVSYS_USER[57] = EVSYS_USER_CHANNEL(0x1);
-
-    /* Event Channel 0 Configuration */
-    EVSYS_REGS->CHANNEL[0].EVSYS_CHANNEL = EVSYS_CHANNEL_EVGEN(12) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(0) \
-                                    | EVSYS_CHANNEL_RUNSTDBY_Msk | EVSYS_CHANNEL_ONDEMAND_Msk;
-}

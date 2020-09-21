@@ -65,27 +65,23 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for TEST_GPIO pin ***/
 #define TEST_GPIO_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 6)
 #define TEST_GPIO_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 6)
 #define TEST_GPIO_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 6)
-#define TEST_GPIO_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 6)) & 0x01)
 #define TEST_GPIO_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 6)
 #define TEST_GPIO_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 6)
+#define TEST_GPIO_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 6)) & 0x01)
 #define TEST_GPIO_PIN                  PORT_PIN_PC06
 
 /*** Macros for LED0 pin ***/
 #define LED0_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 18)
 #define LED0_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 18)
 #define LED0_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 18)
-#define LED0_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED0_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 18)
 #define LED0_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 18)
+#define LED0_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED0_PIN                  PORT_PIN_PC18
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -1042,7 +1038,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1081,7 +1077,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
