@@ -52,6 +52,11 @@
             <itemPath>../src/config/sam_e51_cnano/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e51_cnano/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e51_cnano/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e51_cnano/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e51_cnano/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/clock/plib_clock.h</itemPath>
@@ -79,9 +84,9 @@
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/spim/plib_sercom1_spi.h</itemPath>
-                <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/spim/plib_sercom_spi_common.h</itemPath>
+              <logicalFolder name="f2" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/spi_master/plib_sercom1_spi_master.h</itemPath>
+                <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f3" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/usart/plib_sercom0_usart.h</itemPath>
@@ -128,14 +133,10 @@
           <itemPath>../src/config/sam_e51_cnano/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e51_cnano/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e51_cnano/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e51_cnano/device.h</itemPath>
           <itemPath>../src/config/sam_e51_cnano/user.h</itemPath>
           <itemPath>../src/config/sam_e51_cnano/configuration.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e51_cnano/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME51J20A_DFP" projectFiles="true">
@@ -182,8 +183,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME51J20A_DFP/pio/same51j20a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME51J20A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAME51J20A_DFP/atsame51j20a_compat.h</itemPath>
           <itemPath>../src/packs/ATSAME51J20A_DFP/atsame51j20a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -199,6 +198,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -209,6 +209,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_e51_cnano" projectFiles="true">
+          <itemPath>../src/config/sam_e51_cnano/ATSAME51J20A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -284,8 +289,8 @@
               <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/spim/plib_sercom1_spi.c</itemPath>
+              <logicalFolder name="f2" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/spi_master/plib_sercom1_spi_master.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f3" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/usart/plib_sercom0_usart.c</itemPath>
@@ -333,6 +338,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e51_cnano/harmony.prj</itemPath>
       <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.xml</itemPath>
+      <itemPath>../src/config/sam_e51_cnano/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -354,8 +360,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
         <pack name="SAME51_DFP" vendor="Microchip" version="3.2.67"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -416,7 +422,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -511,7 +517,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1085,6 +1092,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MBOs_work/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/firmware/sam_e51_cnano.X/debug/sam_e51_cnano/sam_e51_cnano_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

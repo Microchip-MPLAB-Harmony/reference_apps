@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-12T17:26:27Z */
+/* file generated from device description version 2020-06-22T15:30:37Z */
 #ifndef _SAME51_ICM_COMPONENT_H_
 #define _SAME51_ICM_COMPONENT_H_
 
