@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAML10E16A
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-06-07T05:54:14Z */
+/* file generated from device description version 2020-08-24T19:30:19Z */
 #ifndef _SAML10E16A_H_
 #define _SAML10E16A_H_
 
@@ -30,12 +30,12 @@
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (0)
 
-/** \addtogroup SAML10E16A_definitions SAML10E16A definitions
+/** \addtogroup SAML10E16A_definitions b'SAML10E16A definitions
   This file defines all structures and symbols for SAML10E16A:
     - registers and bitfields
     - peripheral base address
     - peripheral ID
-    - PIO definitions
+    - PIO definitions'
  *  @{
  */
 
@@ -65,7 +65,7 @@
 #  define _UL_(x) x   /**< Assembler: Unsigned Long integer literal constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
-/** @}  end of Atmel Global Defines */
+/** @}  b'end of Atmel Global Defines' */
 
 /* ************************************************************************** */
 /*   CMSIS DEFINITIONS FOR SAML10E16A                                         */
@@ -82,17 +82,17 @@ typedef enum IRQn
   PendSV_IRQn               =  -2, /**< -2  Pendable request for system service */
   SysTick_IRQn              =  -1, /**< -1  System Tick Timer                   */
 /******  SAML10E16A specific Interrupt Numbers ***********************************/
-  MCLK_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (MCLK) */
-  OSCCTRL_IRQn              =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSCCTRL) */
   OSC32KCTRL_IRQn           =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSC32KCTRL) */
-  PM_IRQn                   =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (PM) */
+  OSCCTRL_IRQn              =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSCCTRL) */
+  MCLK_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (MCLK) */
   SUPC_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (SUPC) */
+  PM_IRQn                   =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (PM) */
   WDT_IRQn                  =   1, /**< 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /**< 2   Real-Time Counter (RTC)             */
-  EIC_0_IRQn                =   3, /**< 3   External Interrupt Controller (EIC) */
-  EIC_1_IRQn                =   4, /**< 4   External Interrupt Controller (EIC) */
-  EIC_2_IRQn                =   5, /**< 5   External Interrupt Controller (EIC) */
-  EIC_3_IRQn                =   6, /**< 6   External Interrupt Controller (EIC) */
+  EIC_EXTINT_0_IRQn         =   3, /**< 3   External Interrupt Controller (EIC) */
+  EIC_EXTINT_1_IRQn         =   4, /**< 4   External Interrupt Controller (EIC) */
+  EIC_EXTINT_2_IRQn         =   5, /**< 5   External Interrupt Controller (EIC) */
+  EIC_EXTINT_3_IRQn         =   6, /**< 6   External Interrupt Controller (EIC) */
   EIC_OTHER_IRQn            =   7, /**< 7   External Interrupt Controller (EIC) */
   FREQM_IRQn                =   8, /**< 8   Frequency Meter (FREQM)             */
   NVMCTRL_IRQn              =   9, /**< 9   Non-Volatile Memory Controller (NVMCTRL) */
@@ -141,7 +141,7 @@ typedef struct _DeviceVectors
 {
   /* Stack pointer */
   void* pvStack;
-  /* Cortex-M handlers */
+  /* CORTEX-M23 handlers */
   void* pfnReset_Handler;                        /* -15 Reset Vector, invoked on Power up and warm reset */
   void* pfnNonMaskableInt_Handler;               /* -14 Non maskable Interrupt, cannot be stopped or preempted */
   void* pfnHardFault_Handler;                    /* -13 Hard Fault, all classes of Fault */
@@ -162,10 +162,10 @@ typedef struct _DeviceVectors
   void* pfnSYSTEM_Handler;                       /*   0 System peripherals shared interrupt (MCLK OSCCTRL OSC32KCTRL PM SUPC) */
   void* pfnWDT_Handler;                          /*   1 Watchdog Timer (WDT) */
   void* pfnRTC_Handler;                          /*   2 Real-Time Counter (RTC) */
-  void* pfnEIC_0_Handler;                        /*   3 External Interrupt Controller (EIC) */
-  void* pfnEIC_1_Handler;                        /*   4 External Interrupt Controller (EIC) */
-  void* pfnEIC_2_Handler;                        /*   5 External Interrupt Controller (EIC) */
-  void* pfnEIC_3_Handler;                        /*   6 External Interrupt Controller (EIC) */
+  void* pfnEIC_EXTINT_0_Handler;                 /*   3 External Interrupt Controller (EIC) */
+  void* pfnEIC_EXTINT_1_Handler;                 /*   4 External Interrupt Controller (EIC) */
+  void* pfnEIC_EXTINT_2_Handler;                 /*   5 External Interrupt Controller (EIC) */
+  void* pfnEIC_EXTINT_3_Handler;                 /*   6 External Interrupt Controller (EIC) */
   void* pfnEIC_OTHER_Handler;                    /*   7 External Interrupt Controller (EIC) */
   void* pfnFREQM_Handler;                        /*   8 Frequency Meter (FREQM) */
   void* pfnNVMCTRL_Handler;                      /*   9 Non-Volatile Memory Controller (NVMCTRL) */
@@ -224,10 +224,10 @@ void SysTick_Handler               ( void );
 void SYSTEM_Handler                ( void );
 void WDT_Handler                   ( void );
 void RTC_Handler                   ( void );
-void EIC_0_Handler                 ( void );
-void EIC_1_Handler                 ( void );
-void EIC_2_Handler                 ( void );
-void EIC_3_Handler                 ( void );
+void EIC_EXTINT_0_Handler          ( void );
+void EIC_EXTINT_1_Handler          ( void );
+void EIC_EXTINT_2_Handler          ( void );
+void EIC_EXTINT_3_Handler          ( void );
 void EIC_OTHER_Handler             ( void );
 void FREQM_Handler                 ( void );
 void NVMCTRL_Handler               ( void );
@@ -269,9 +269,7 @@ void TRAM_Handler                  ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-/*
- * \brief Configuration of the CORTEX-M23 Processor and Core Peripherals
- */
+/** \brief Configuration of the CORTEX-M23 Processor and Core Peripherals */
 #define __FPU_PRESENT                  0 /**< FPU present or not                                                        */
 #define __MPU_PRESENT                  1 /**< MPU present or not                                                        */
 #define __NVIC_PRIO_BITS               2 /**< Number of Bits used for Priority Levels                                   */
@@ -288,7 +286,7 @@ void TRAM_Handler                  ( void );
 #include "system_saml10.h"
 #endif /* USE_CMSIS_INIT */
 
-/** \defgroup SAML10E16A_api Peripheral Software API
+/** \defgroup SAML10E16A_api b'Peripheral Software API'
  *  @{
  */
 
@@ -309,8 +307,8 @@ void TRAM_Handler                  ( void );
 #include "component/mclk.h"
 #include "component/nvmctrl.h"
 #include "component/opamp.h"
-#include "component/oscctrl.h"
 #include "component/osc32kctrl.h"
+#include "component/oscctrl.h"
 #include "component/pac.h"
 #include "component/pm.h"
 #include "component/port.h"
@@ -323,9 +321,9 @@ void TRAM_Handler                  ( void );
 #include "component/tram.h"
 #include "component/trng.h"
 #include "component/wdt.h"
-/** @}  end of Peripheral Software API */
+/** @}  b'end of Peripheral Software API' */
 
-/** \addtogroup SAML10E16A_id Peripheral Ids Definitions
+/** \addtogroup SAML10E16A_id b'Peripheral Ids Definitions'
  *  @{
  */
 
@@ -366,9 +364,9 @@ void TRAM_Handler                  ( void );
 #define ID_TRAM          ( 77) /**< \brief TrustRAM (TRAM) */
 
 #define ID_PERIPH_MAX    ( 77) /**< \brief Number of peripheral IDs */
-/** @}  end of Peripheral Ids Definitions */
+/** @}  b'end of Peripheral Ids Definitions' */
 
-/** \addtogroup SAML10E16A_base Peripheral Base Address Definitions
+/** \addtogroup SAML10E16A_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -411,9 +409,9 @@ void TRAM_Handler                  ( void );
 #define TRNG_REGS                        ((trng_registers_t*)0x42002800)               /**< \brief TRNG Registers Address       */
 #define WDT_REGS                         ((wdt_registers_t*)0x40002000)                /**< \brief WDT Registers Address        */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAML10E16A_base Peripheral Base Address Definitions
+/** \addtogroup SAML10E16A_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -454,9 +452,9 @@ void TRAM_Handler                  ( void );
 #define TRAM_BASE_ADDRESS                _UL_(0x42003400)                              /**< \brief TRAM Base Address */
 #define TRNG_BASE_ADDRESS                _UL_(0x42002800)                              /**< \brief TRNG Base Address */
 #define WDT_BASE_ADDRESS                 _UL_(0x40002000)                              /**< \brief WDT Base Address */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAML10E16A_pio Peripheral Pio Definitions
+/** \addtogroup SAML10E16A_pio b'Peripheral Pio Definitions'
  *  @{
  */
 
@@ -464,7 +462,7 @@ void TRAM_Handler                  ( void );
 /*   PIO DEFINITIONS FOR SAML10E16A                                           */
 /* ************************************************************************** */
 #include "pio/saml10e16a.h"
-/** @}  end of Peripheral Pio Definitions */
+/** @}  b'end of Peripheral Pio Definitions' */
 
 /* ************************************************************************** */
 /*   MEMORY MAPPING DEFINITIONS FOR SAML10E16A                                */
@@ -518,7 +516,7 @@ void TRAM_Handler                  ( void );
 /* ************************************************************************** */
 /**  DEVICE SIGNATURES FOR SAML10E16A                                         */
 /* ************************************************************************** */
-#define DSU_DID                        _UL_(0X20840000)
+#define CHIP_DSU_DID                   _UL_(0X20840000)
 
 /* ************************************************************************** */
 /**  ELECTRICAL DEFINITIONS FOR SAML10E16A                                    */
@@ -571,6 +569,8 @@ void TRAM_Handler                  ( void );
 #define EVENT_ID_GEN_AC_COMP_1                           41 /**< ID for AC event generator COMP_1 */
 #define EVENT_ID_GEN_AC_WIN_0                            42 /**< ID for AC event generator WIN_0 */
 #define EVENT_ID_GEN_DAC_EMPTY                           43 /**< ID for DAC event generator EMPTY */
+#define EVENT_ID_GEN_PTC_EOC                             44 /**< ID for PTC event generator EOC */
+#define EVENT_ID_GEN_PTC_WCOMP                           45 /**< ID for PTC event generator WCOMP */
 #define EVENT_ID_GEN_TRNG_DATARDY                        46 /**< ID for TRNG event generator DATARDY */
 #define EVENT_ID_GEN_CCL_LUT_0                           47 /**< ID for CCL event generator LUT_0 */
 #define EVENT_ID_GEN_CCL_LUT_1                           48 /**< ID for CCL event generator LUT_1 */
@@ -595,9 +595,11 @@ void TRAM_Handler                  ( void );
 #define EVENT_ID_USER_TC2_EVU                            13 /**< ID for TC2 event user EVU */
 #define EVENT_ID_USER_ADC_START                          14 /**< ID for ADC event user START */
 #define EVENT_ID_USER_ADC_FLUSH                          15 /**< ID for ADC event user FLUSH */
-#define EVENT_ID_USER_AC_COMP_0                          16 /**< ID for AC event user COMP_0 */
-#define EVENT_ID_USER_AC_COMP_1                          17 /**< ID for AC event user COMP_1 */
+#define EVENT_ID_USER_AC_SOC_0                           16 /**< ID for AC event user SOC_0 */
+#define EVENT_ID_USER_AC_SOC_1                           17 /**< ID for AC event user SOC_1 */
 #define EVENT_ID_USER_DAC_START                          18 /**< ID for DAC event user START */
+#define EVENT_ID_USER_PTC_STCONV                         19 /**< ID for PTC event user STCONV */
+#define EVENT_ID_USER_PTC_DSEQR                          20 /**< ID for PTC event user DSEQR */
 #define EVENT_ID_USER_CCL_LUT_0                          21 /**< ID for CCL event user LUT_0 */
 #define EVENT_ID_USER_CCL_LUT_1                          22 /**< ID for CCL event user LUT_1 */
 
@@ -605,7 +607,7 @@ void TRAM_Handler                  ( void );
 }
 #endif
 
-/** @}  end of SAML10E16A definitions */
+/** @}  b'end of SAML10E16A definitions' */
 
 
 #endif /* _SAML10E16A_H_ */

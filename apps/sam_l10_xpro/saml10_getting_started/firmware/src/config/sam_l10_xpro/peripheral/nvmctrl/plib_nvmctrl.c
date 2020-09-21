@@ -115,7 +115,7 @@ bool NVMCTRL_RowErase( uint32_t address )
 
 NVMCTRL_ERROR NVMCTRL_ErrorGet( void )
 {
-    return ((uint32_t) ((NVMCTRL_REGS->NVMCTRL_INTFLAG &  ~(NVMCTRL_INTFLAG_DONE_Msk))));
+    return ((NVMCTRL_ERROR) ((NVMCTRL_REGS->NVMCTRL_INTFLAG &  ~(NVMCTRL_INTFLAG_DONE_Msk))));
 }
 
 bool NVMCTRL_IsBusy(void)

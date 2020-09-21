@@ -77,7 +77,6 @@ void PM_IdleModeEnter( void )
 
     /* Ensure that SLEEPMODE bits are configured with the given value */
     while (!(PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val));
-
     /* Wait for interrupt instruction execution */
     __WFI();
 }

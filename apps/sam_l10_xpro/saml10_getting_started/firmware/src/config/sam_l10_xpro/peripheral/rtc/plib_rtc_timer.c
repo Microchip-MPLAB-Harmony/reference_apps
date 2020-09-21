@@ -113,8 +113,7 @@ uint32_t RTC_Timer32CounterGet ( void )
     {
         /* Wait for Synchronization before reading value from Count Register */
     }
-
-    return(RTC_REGS->MODE0.RTC_COUNT + 4);
+   return(RTC_REGS->MODE0.RTC_COUNT);
 }
 
 uint32_t RTC_Timer32PeriodGet ( void )
@@ -141,7 +140,7 @@ void RTC_Timer32InterruptDisable(RTC_TIMER32_INT_MASK interrupt)
 
  TAMPER_CHANNEL RTC_TamperSourceGet( void )
 {
-    return((RTC_REGS->MODE0.RTC_TAMPID) & (0xFF));
+    return((TAMPER_CHANNEL) ((RTC_REGS->MODE0.RTC_TAMPID) & (0xFF)));
 }
 
 uint32_t RTC_Timer32TimeStampGet( void )
@@ -157,9 +156,9 @@ void RTC_Timer32CallbackRegister ( RTC_TIMER32_CALLBACK callback, uintptr_t cont
 
 void RTC_InterruptHandler( void )
 {
-    rtcObj.timer32intCause = RTC_REGS->MODE0.RTC_INTFLAG;
+    rtcObj.timer32intCause = (RTC_TIMER32_INT_MASK) RTC_REGS->MODE0.RTC_INTFLAG;
     RTC_REGS->MODE0.RTC_INTFLAG = RTC_MODE0_INTFLAG_Msk;
-        
+
     /* Invoke registered Callback function */
     if(rtcObj.timer32BitCallback != NULL)
     {

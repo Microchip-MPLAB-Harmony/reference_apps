@@ -1,7 +1,7 @@
 /**
  * \brief Component description for NVMCTRL
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-06-07T05:54:14Z */
+/* file generated from device description version 2020-08-24T19:30:19Z */
 #ifndef _SAML10_NVMCTRL_COMPONENT_H_
 #define _SAML10_NVMCTRL_COMPONENT_H_
 
@@ -435,7 +435,7 @@ typedef struct
 
 #endif
 
-/** \addtogroup fuses_api Peripheral Software API
+/** \addtogroup fuses_api b'Peripheral Software API'
  *  @{
  */
 
@@ -776,6 +776,6 @@ typedef struct
 #define WDT_FUSES_WINDOW_Msk        (_U_(0xF) << WDT_FUSES_WINDOW_Pos)
 #define WDT_FUSES_WINDOW(value)     (WDT_FUSES_WINDOW_Msk & ((value) << WDT_FUSES_WINDOW_Pos))
 
-/** @}  end of Peripheral Software API */
+/** @}  b'end of Peripheral Software API' */
 
 #endif /* _SAML10_NVMCTRL_COMPONENT_H_ */
