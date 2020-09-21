@@ -23,8 +23,10 @@
               <itemPath>../src/config/pic32mk_gp_db/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/plib_spi_common.h</itemPath>
-              <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/plib_spi6.h</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
+                <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/spi_master/plib_spi6_master.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="tmr" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/tmr/plib_tmr_common.h</itemPath>
@@ -37,19 +39,18 @@
           </logicalFolder>
           <itemPath>../src/config/pic32mk_gp_db/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mk_gp_db/definitions.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MK1024GPE100_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MK1024GPE100_DFP/device.h</itemPath>
+          <itemPath>../src/config/pic32mk_gp_db/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mk_gp_db" projectFiles="true">
+          <itemPath>../src/config/pic32mk_gp_db/p32MK1024GPE100.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -73,7 +74,9 @@
               <itemPath>../src/config/pic32mk_gp_db/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/plib_spi6.c</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/spi_master/plib_spi6_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="tmr" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/tmr/plib_tmr2.c</itemPath>
@@ -98,6 +101,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mk_gp_db/harmony.prj</itemPath>
+      <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.xml</itemPath>
+      <itemPath>../src/config/pic32mk_gp_db/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -117,7 +122,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MK-GP_DFP" vendor="Microchip" version="1.3.90"/>
+        <pack name="PIC32MK-GP_DFP" vendor="Microchip" version="1.4.117"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -249,7 +254,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mk_gp_db;../src/packs/PIC32MK1024GPE100_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

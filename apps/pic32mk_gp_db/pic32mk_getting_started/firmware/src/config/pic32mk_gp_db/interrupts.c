@@ -67,27 +67,27 @@ void SPI6_TX_InterruptHandler( void );
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_TIMER_2_VECTOR, ipl1AUTO) TIMER_2_Handler (void)
+void __ISR(_TIMER_2_VECTOR, ipl1SOFT) TIMER_2_Handler (void)
 {
     TIMER_2_InterruptHandler();
 }
 
-void __ISR(_CHANGE_NOTICE_G_VECTOR, ipl1AUTO) CHANGE_NOTICE_G_Handler (void)
+void __ISR(_CHANGE_NOTICE_G_VECTOR, ipl1SOFT) CHANGE_NOTICE_G_Handler (void)
 {
     CHANGE_NOTICE_G_InterruptHandler();
 }
 
-void __ISR(_DMA0_VECTOR, ipl1AUTO) DMA0_Handler (void)
+void __ISR(_DMA0_VECTOR, ipl1SOFT) DMA0_Handler (void)
 {
     DMA0_InterruptHandler();
 }
 
-void __ISR(_SPI6_RX_VECTOR, ipl1AUTO) SPI6_RX_Handler (void)
+void __ISR(_SPI6_RX_VECTOR, ipl1SOFT) SPI6_RX_Handler (void)
 {
     SPI6_RX_InterruptHandler();
 }
 
-void __ISR(_SPI6_TX_VECTOR, ipl1AUTO) SPI6_TX_Handler (void)
+void __ISR(_SPI6_TX_VECTOR, ipl1SOFT) SPI6_TX_Handler (void)
 {
     SPI6_TX_InterruptHandler();
 }
