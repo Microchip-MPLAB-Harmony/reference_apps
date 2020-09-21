@@ -18,6 +18,11 @@
             <itemPath>../src/config/sam_e70_xult/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e70_xult/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e70_xult/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/clk/plib_clk.h</itemPath>
@@ -62,6 +67,7 @@
           <itemPath>../src/config/sam_e70_xult/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult/device.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/user.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/configuration.h</itemPath>
@@ -97,11 +103,6 @@
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f4" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_e70_xult/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME70Q21B_DFP" projectFiles="true">
@@ -146,7 +147,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME70Q21B_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAME70Q21B_DFP/atsame70q21b.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -162,6 +162,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -174,6 +175,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
+          <itemPath>../src/config/sam_e70_xult/ATSAME70Q21B.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -189,6 +195,9 @@
               <itemPath>../src/config/sam_e70_xult/driver/usart/src/drv_usart.c</itemPath>
               <itemPath>../src/config/sam_e70_xult/driver/usart/src/drv_usart_local.h</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
@@ -256,9 +265,6 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/main_e70.c</itemPath>
       <itemPath>../src/app_sensor_thread.c</itemPath>
       <itemPath>../src/app_eeprom_thread.c</itemPath>
@@ -269,6 +275,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e70_xult/harmony.prj</itemPath>
+      <itemPath>../src/config/sam_e70_xult/sam_e70_xult.xml</itemPath>
+      <itemPath>../src/config/sam_e70_xult/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -289,7 +297,7 @@
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.2.59"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.3.67"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -350,7 +358,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7"/>
+                  value="../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7;../src/third_party/rtos/FreeRTOS/Source/include;../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -445,7 +453,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

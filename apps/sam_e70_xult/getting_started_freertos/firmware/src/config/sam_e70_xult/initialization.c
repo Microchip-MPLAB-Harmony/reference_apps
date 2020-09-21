@@ -123,6 +123,7 @@ const DRV_USART_PLIB_INTERFACE drvUsart0PlibAPI = {
     .read = (DRV_USART_PLIB_READ)USART1_Read,
     .readIsBusy = (DRV_USART_PLIB_READ_IS_BUSY)USART1_ReadIsBusy,
     .readCountGet = (DRV_USART_PLIB_READ_COUNT_GET)USART1_ReadCountGet,
+	.readAbort = (DRV_USART_PLIB_READ_ABORT)USART1_ReadAbort,
     .writeCallbackRegister = (DRV_USART_PLIB_WRITE_CALLBACK_REG)USART1_WriteCallbackRegister,
     .write = (DRV_USART_PLIB_WRITE)USART1_Write,
     .writeIsBusy = (DRV_USART_PLIB_WRITE_IS_BUSY)USART1_WriteIsBusy,
@@ -220,7 +221,7 @@ void SYS_Initialize ( void* data )
 
 	TWIHS0_Initialize();
 
-	USART1_Initialize();
+    USART1_Initialize();
 
 
     /* Initialize I2C0 Driver Instance */
