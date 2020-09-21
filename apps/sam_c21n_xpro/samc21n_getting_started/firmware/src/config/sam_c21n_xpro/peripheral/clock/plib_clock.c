@@ -65,16 +65,16 @@ static void OSCCTRL_Initialize(void)
 
 static void OSC32KCTRL_Initialize(void)
 {
-	OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = 0x0;
+    OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = 0x0;
 
-	OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
+    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
 }
 
 
 
 static void GCLK0_Initialize(void)
 {
-    
+
     GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(1) | GCLK_GENCTRL_SRC(6) | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL0_Msk) == GCLK_SYNCBUSY_GENCTRL0_Msk)
@@ -94,27 +94,29 @@ void CLOCK_Initialize (void)
     GCLK0_Initialize();
 
 
-	/* Selection of the Generator and write Lock for EIC */
+    /* Selection of the Generator and write Lock for EIC */
     GCLK_REGS->GCLK_PCHCTRL[2] = GCLK_PCHCTRL_GEN(0x0)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[2] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
         /* Wait for synchronization */
     }
-	/* Selection of the Generator and write Lock for SERCOM4_CORE */
+    /* Selection of the Generator and write Lock for SERCOM4_CORE */
     GCLK_REGS->GCLK_PCHCTRL[23] = GCLK_PCHCTRL_GEN(0x0)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[23] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
         /* Wait for synchronization */
     }
-	/* Selection of the Generator and write Lock for SERCOM5_CORE */
+    /* Selection of the Generator and write Lock for SERCOM5_CORE */
     GCLK_REGS->GCLK_PCHCTRL[25] = GCLK_PCHCTRL_GEN(0x0)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[25] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
         /* Wait for synchronization */
     }
+
+
 
     /* Configure the APBC Bridge Clocks */
     MCLK_REGS->MCLK_APBCMASK = 0x60;

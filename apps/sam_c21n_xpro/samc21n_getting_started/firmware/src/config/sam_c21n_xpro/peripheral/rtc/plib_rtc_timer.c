@@ -112,8 +112,7 @@ uint32_t RTC_Timer32CounterGet ( void )
     {
         /* Wait for Synchronization before reading value from Count Register */
     }
-
-    return(RTC_REGS->MODE0.RTC_COUNT + 4);
+   return(RTC_REGS->MODE0.RTC_COUNT);
 }
 
 uint32_t RTC_Timer32PeriodGet ( void )
@@ -149,7 +148,7 @@ void RTC_InterruptHandler( void )
 {
     rtcObj.timer32intCause = (RTC_TIMER32_INT_MASK) RTC_REGS->MODE0.RTC_INTFLAG;
     RTC_REGS->MODE0.RTC_INTFLAG = RTC_MODE0_INTFLAG_Msk;
-        
+
     /* Invoke registered Callback function */
     if(rtcObj.timer32BitCallback != NULL)
     {
