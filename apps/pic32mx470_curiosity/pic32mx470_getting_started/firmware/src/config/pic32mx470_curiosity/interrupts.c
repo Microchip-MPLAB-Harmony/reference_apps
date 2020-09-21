@@ -66,22 +66,22 @@ void DMA_0_InterruptHandler( void );
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_TIMER_3_VECTOR, ipl1AUTO) TIMER_3_Handler (void)
+void __ISR(_TIMER_3_VECTOR, ipl1SOFT) TIMER_3_Handler (void)
 {
     TIMER_3_InterruptHandler();
 }
 
-void __ISR(_I2C_1_VECTOR, ipl1AUTO) I2C_1_Handler (void)
+void __ISR(_I2C_1_VECTOR, ipl1SOFT) I2C_1_Handler (void)
 {
     I2C_1_InterruptHandler();
 }
 
-void __ISR(_CHANGE_NOTICE_VECTOR, ipl1AUTO) CHANGE_NOTICE_Handler (void)
+void __ISR(_CHANGE_NOTICE_VECTOR, ipl1SOFT) CHANGE_NOTICE_Handler (void)
 {
     CHANGE_NOTICE_InterruptHandler();
 }
 
-void __ISR(_DMA_0_VECTOR, ipl1AUTO) DMA_0_Handler (void)
+void __ISR(_DMA_0_VECTOR, ipl1SOFT) DMA_0_Handler (void)
 {
     DMA_0_InterruptHandler();
 }
