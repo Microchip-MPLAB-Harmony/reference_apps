@@ -110,7 +110,6 @@ void DMAC_Initialize( void )
     /* Update the Priority Control register */
     DMAC_REGS->DMAC_PRICTRL0 = DMAC_PRICTRL0_LVLPRI0(1) | DMAC_PRICTRL0_RRLVLEN0_Msk | DMAC_PRICTRL0_LVLPRI1(1) | DMAC_PRICTRL0_RRLVLEN1_Msk | DMAC_PRICTRL0_LVLPRI2(1) | DMAC_PRICTRL0_RRLVLEN2_Msk | DMAC_PRICTRL0_LVLPRI3(1) | DMAC_PRICTRL0_RRLVLEN3_Msk;
 
-
     /***************** Configure DMA channel 0 ********************/
 
     DMAC_REGS->DMAC_CHID = 0;
@@ -220,7 +219,7 @@ void DMAC_ChannelDisable ( DMAC_CHANNEL channel )
     DMAC_REGS->DMAC_CHID = channel;
 
     /* Disable the DMA channel */
-    DMAC_REGS->DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Pos);
+    DMAC_REGS->DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Msk);
 
     while((DMAC_REGS->DMAC_CHCTRLA & DMAC_CHCTRLA_ENABLE_Msk) != 0);
 
@@ -277,7 +276,10 @@ bool DMAC_ChannelSettingsSet (DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting)
     DMAC_REGS->DMAC_CHID = channel;
 
     /* Disable the DMA channel */
-    DMAC_REGS->DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Pos);
+    DMAC_REGS->DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Msk);
+
+    /* Wait for channel to be disabled */
+    while((DMAC_REGS->DMAC_CHCTRLA & DMAC_CHCTRLA_ENABLE_Msk) != 0);
 
     /* Set the new settings */
     dmacDescReg[channel].DMAC_BTCTRL = setting;
