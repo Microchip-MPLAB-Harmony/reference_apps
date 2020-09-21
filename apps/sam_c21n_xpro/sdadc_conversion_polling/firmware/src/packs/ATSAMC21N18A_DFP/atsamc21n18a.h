@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAMC21N18A
  *
- * Copyright (c) 2019 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -30,12 +30,12 @@
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (0)
 
-/** \addtogroup SAMC21N18A_definitions SAMC21N18A definitions
+/** \addtogroup SAMC21N18A_definitions b'SAMC21N18A definitions
   This file defines all structures and symbols for SAMC21N18A:
     - registers and bitfields
     - peripheral base address
     - peripheral ID
-    - PIO definitions
+    - PIO definitions'
  *  @{
  */
 
@@ -65,7 +65,7 @@
 #  define _UL_(x) x   /**< Assembler: Unsigned Long integer literal constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
-/** @}  end of Atmel Global Defines */
+/** @}  b'end of Atmel Global Defines' */
 
 /* ************************************************************************** */
 /*   CMSIS DEFINITIONS FOR SAMC21N18A                                         */
@@ -82,12 +82,12 @@ typedef enum IRQn
   PendSV_IRQn               =  -2, /**< -2  Pendable request for system service */
   SysTick_IRQn              =  -1, /**< -1  System Tick Timer                   */
 /******  SAMC21N18A specific Interrupt Numbers ***********************************/
-  MCLK_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (MCLK) */
-  OSCCTRL_IRQn              =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSCCTRL) */
   OSC32KCTRL_IRQn           =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSC32KCTRL) */
+  OSCCTRL_IRQn              =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSCCTRL) */
+  MCLK_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (MCLK) */
   PAC_IRQn                  =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PAC) */
-  PM_IRQn                   =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PM) */
   SUPC_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (SUPC) */
+  PM_IRQn                   =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PM) */
   WDT_IRQn                  =   1, /**< 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /**< 2   Real-Time Counter (RTC)             */
   EIC_IRQn                  =   3, /**< 3   External Interrupt Controller (EIC) */
@@ -96,10 +96,10 @@ typedef enum IRQn
   NVMCTRL_IRQn              =   6, /**< 6   Non-Volatile Memory Controller (NVMCTRL) */
   DMAC_IRQn                 =   7, /**< 7   Direct Memory Access Controller (DMAC) */
   EVSYS_IRQn                =   8, /**< 8   Event System Interface (EVSYS)      */
-  SERCOM0_IRQn              =   9, /**< 9   Shared between SERCOM0 SERCOM6 (SERCOM0) */
   SERCOM6_IRQn              =   9, /**< 9   Shared between SERCOM0 SERCOM6 (SERCOM6) */
-  SERCOM1_IRQn              =  10, /**< 10  Shared between SERCOM1 SERCOM7 (SERCOM1) */
+  SERCOM0_IRQn              =   9, /**< 9   Shared between SERCOM0 SERCOM6 (SERCOM0) */
   SERCOM7_IRQn              =  10, /**< 10  Shared between SERCOM1 SERCOM7 (SERCOM7) */
+  SERCOM1_IRQn              =  10, /**< 10  Shared between SERCOM1 SERCOM7 (SERCOM1) */
   SERCOM2_IRQn              =  11, /**< 11  Serial Communication Interface (SERCOM2) */
   SERCOM3_IRQn              =  12, /**< 12  Serial Communication Interface (SERCOM3) */
   SERCOM4_IRQn              =  13, /**< 13  Serial Communication Interface (SERCOM4) */
@@ -109,12 +109,12 @@ typedef enum IRQn
   TCC0_IRQn                 =  17, /**< 17  Timer Counter Control (TCC0)        */
   TCC1_IRQn                 =  18, /**< 18  Timer Counter Control (TCC1)        */
   TCC2_IRQn                 =  19, /**< 19  Timer Counter Control (TCC2)        */
-  TC0_IRQn                  =  20, /**< 20  Shared between TC0 TC5 (TC0)        */
   TC5_IRQn                  =  20, /**< 20  Shared between TC0 TC5 (TC5)        */
-  TC1_IRQn                  =  21, /**< 21  Shared between TC1 TC6 (TC1)        */
+  TC0_IRQn                  =  20, /**< 20  Shared between TC0 TC5 (TC0)        */
   TC6_IRQn                  =  21, /**< 21  Shared between TC1 TC6 (TC6)        */
-  TC2_IRQn                  =  22, /**< 22  Shared between TC2 TC7 (TC2)        */
+  TC1_IRQn                  =  21, /**< 21  Shared between TC1 TC6 (TC1)        */
   TC7_IRQn                  =  22, /**< 22  Shared between TC2 TC7 (TC7)        */
+  TC2_IRQn                  =  22, /**< 22  Shared between TC2 TC7 (TC2)        */
   TC3_IRQn                  =  23, /**< 23  Basic Timer Counter (TC3)           */
   TC4_IRQn                  =  24, /**< 24  Basic Timer Counter (TC4)           */
   ADC0_IRQn                 =  25, /**< 25  Analog Digital Converter (ADC0)     */
@@ -133,7 +133,7 @@ typedef struct _DeviceVectors
 {
   /* Stack pointer */
   void* pvStack;
-  /* Cortex-M handlers */
+  /* CORTEX-M0PLUS handlers */
   void* pfnReset_Handler;                        /* -15 Reset Vector, invoked on Power up and warm reset */
   void* pfnNonMaskableInt_Handler;               /* -14 Non maskable Interrupt, cannot be stopped or preempted */
   void* pfnHardFault_Handler;                    /* -13 Hard Fault, all classes of Fault */
@@ -184,12 +184,6 @@ typedef struct _DeviceVectors
   void* pfnPTC_Handler;                          /*  30 Peripheral Touch Controller (PTC) */
 } DeviceVectors;
 
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
-#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
-#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -237,24 +231,16 @@ void DAC_Handler                   ( void );
 void SDADC_Handler                 ( void );
 void PTC_Handler                   ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
-#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
-#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-/*
- * \brief Configuration of the CORTEX-M0PLUS Processor and Core Peripherals
- */
+/** \brief Configuration of the CORTEX-M0PLUS Processor and Core Peripherals */
+#define __CM0PLUS_REV             0x0001 /**< Cortex-M0+ Core Revision                                                  */
 #define __MPU_PRESENT                  1 /**< MPU present or not                                                        */
 #define __NVIC_PRIO_BITS               2 /**< Number of Bits used for Priority Levels                                   */
 #define __VTOR_PRESENT                 1 /**< Vector Table Offset Register present or not                               */
 #define __Vendor_SysTickConfig         0 /**< Set to 1 if different SysTick Config is used                              */
 #define __ARCH_ARM                     1
 #define __ARCH_ARM_CORTEX_M            1
-#define __DEVICE_IS_SAM                1
 
 /*
  * \brief CMSIS includes
@@ -264,7 +250,7 @@ void PTC_Handler                   ( void );
 #include "system_samc21.h"
 #endif /* USE_CMSIS_INIT */
 
-/** \defgroup SAMC21N18A_api Peripheral Software API
+/** \defgroup SAMC21N18A_api b'Peripheral Software API'
  *  @{
  */
 
@@ -287,8 +273,8 @@ void PTC_Handler                   ( void );
 #include "component/mclk.h"
 #include "component/mtb.h"
 #include "component/nvmctrl.h"
-#include "component/oscctrl.h"
 #include "component/osc32kctrl.h"
+#include "component/oscctrl.h"
 #include "component/pac.h"
 #include "component/pm.h"
 #include "component/port.h"
@@ -302,9 +288,9 @@ void PTC_Handler                   ( void );
 #include "component/tcc.h"
 #include "component/tsens.h"
 #include "component/wdt.h"
-/** @}  end of Peripheral Software API */
+/** @}  b'end of Peripheral Software API' */
 
-/** \addtogroup SAMC21N18A_id Peripheral Ids Definitions
+/** \addtogroup SAMC21N18A_id b'Peripheral Ids Definitions'
  *  @{
  */
 
@@ -361,9 +347,9 @@ void PTC_Handler                   ( void );
 #define ID_TC7           (100) /**< \brief Basic Timer Counter (TC7) */
 
 #define ID_PERIPH_MAX    (100) /**< \brief Number of peripheral IDs */
-/** @}  end of Peripheral Ids Definitions */
+/** @}  b'end of Peripheral Ids Definitions' */
 
-/** \addtogroup SAMC21N18A_base Peripheral Base Address Definitions
+/** \addtogroup SAMC21N18A_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -422,9 +408,9 @@ void PTC_Handler                   ( void );
 #define TSENS_REGS                       ((tsens_registers_t*)0x40003000)              /**< \brief TSENS Registers Address      */
 #define WDT_REGS                         ((wdt_registers_t*)0x40002000)                /**< \brief WDT Registers Address        */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAMC21N18A_base Peripheral Base Address Definitions
+/** \addtogroup SAMC21N18A_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -481,9 +467,9 @@ void PTC_Handler                   ( void );
 #define TCC2_BASE_ADDRESS                _UL_(0x42002c00)                              /**< \brief TCC2 Base Address */
 #define TSENS_BASE_ADDRESS               _UL_(0x40003000)                              /**< \brief TSENS Base Address */
 #define WDT_BASE_ADDRESS                 _UL_(0x40002000)                              /**< \brief WDT Base Address */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAMC21N18A_pio Peripheral Pio Definitions
+/** \addtogroup SAMC21N18A_pio b'Peripheral Pio Definitions'
  *  @{
  */
 
@@ -491,7 +477,7 @@ void PTC_Handler                   ( void );
 /*   PIO DEFINITIONS FOR SAMC21N18A                                           */
 /* ************************************************************************** */
 #include "pio/samc21n18a.h"
-/** @}  end of Peripheral Pio Definitions */
+/** @}  b'end of Peripheral Pio Definitions' */
 
 /* ************************************************************************** */
 /*   MEMORY MAPPING DEFINITIONS FOR SAMC21N18A                                */
@@ -551,7 +537,7 @@ void PTC_Handler                   ( void );
 /* ************************************************************************** */
 /**  DEVICE SIGNATURES FOR SAMC21N18A                                         */
 /* ************************************************************************** */
-#define DSU_DID                        _UL_(0X11011420)
+#define CHIP_DSU_DID                   _UL_(0X11011420)
 
 /* ************************************************************************** */
 /**  ELECTRICAL DEFINITIONS FOR SAMC21N18A                                    */
@@ -710,7 +696,7 @@ void PTC_Handler                   ( void );
 }
 #endif
 
-/** @}  end of SAMC21N18A definitions */
+/** @}  b'end of SAMC21N18A definitions' */
 
 
 #endif /* _SAMC21N18A_H_ */

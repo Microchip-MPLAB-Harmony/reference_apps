@@ -4,30 +4,15 @@
 
 
 project: sdadc_conversion_polling
-creation_date: 2020-07-01T08:50:58.115+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-09-22T15:55:16.879+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mplabx_version: v5.40        # if MPLAB X plugin only
-plugin_version: v3.5.0        # if MPLAB X plugin only
+plugin_version: v3.6.0        # if MPLAB X plugin only
+compiler: XC32 (2.41)
 
 modules:
-    - {name: "aerospace", version: "v3.0.2"}
-    - {name: "audio", version: "v3.5.0"}
-    - {name: "bootloader", version: "v3.2.0"}
-    - {name: "bsp", version: "v3.7.0"}
-    - {name: "bt", version: "v3.4.0"}
-    - {name: "CMSIS-FreeRTOS", version: "v10.3.0"}
-    - {name: "contentmanager", version: "v1.3.1"}
-    - {name: "core", version: "v3.7.1"}
-    - {name: "csp", version: "v3.7.1"}
-    - {name: "dev_packs", version: "v3.7.0"}
-    - {name: "gfx", version: "v3.6.0"}
-    - {name: "gfx_apps", version: "v3.6.0"}
-    - {name: "just-the-docs", version: "unknown"}
-    - {name: "mhc", version: "v3.4.0"}
-    - {name: "quick_docs", version: "v1.0.0"}
-    - {name: "reference_apps", version: "unknown"}
-    - {name: "touch", version: "v3.6.0"}
-    - {name: "usb", version: "v3.5.0"}
-    - {name: "wolfMQTT", version: "v1.2.0"}
+    - {name: "csp", version: "v3.8.1"}
+    - {name: "dev_packs", version: "v3.8.0"}
+    - {name: "mhc", version: "v3.5.1"}
 
