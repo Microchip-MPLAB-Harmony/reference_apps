@@ -130,7 +130,7 @@ void SYS_Initialize ( void* data )
     TC0_CH0_TimerInitialize(); 
      
     
-	USART1_Initialize();
+    USART1_Initialize();
 
 
 
