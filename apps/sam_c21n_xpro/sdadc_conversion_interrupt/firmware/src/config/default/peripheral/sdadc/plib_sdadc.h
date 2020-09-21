@@ -84,6 +84,10 @@ extern "C" {
 
 void SDADC_Initialize( void );
 
+void SDADC_Enable( void );
+
+void SDADC_Disable( void );
+
 
 int16_t SDADC_ConversionResultGet( void );
 

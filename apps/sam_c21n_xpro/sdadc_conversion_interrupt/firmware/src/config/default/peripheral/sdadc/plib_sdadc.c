@@ -84,7 +84,7 @@ void SDADC_Initialize( void )
     SDADC_REGS->SDADC_CTRLB = SDADC_CTRLB_PRESCALER_DIV2 | SDADC_CTRLB_OSR_OSR64 | SDADC_CTRLB_SKPCNT(2U);
 
     /* Configure reference voltage */
-    SDADC_REGS->SDADC_REFCTRL = SDADC_REFCTRL_REFSEL_INTREF;
+    SDADC_REGS->SDADC_REFCTRL = SDADC_REFCTRL_REFSEL_INTREF | SDADC_REFCTRL_ONREFBUF_Msk;
 
     SDADC_REGS->SDADC_CTRLC = SDADC_CTRLC_FREERUN_Msk;
     /* Configure positive and negative input pins */
@@ -106,6 +106,24 @@ void SDADC_Initialize( void )
     {
         /* Wait for synchronization */
     }
+}
+
+void SDADC_Enable( void )
+{
+    SDADC_REGS->SDADC_CTRLA |= SDADC_CTRLA_ENABLE_Msk;
+    while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
+    {
+        /* Wait for synchronization */
+    }    
+}
+
+void SDADC_Disable( void )
+{
+    SDADC_REGS->SDADC_CTRLA &= ~SDADC_CTRLA_ENABLE_Msk;
+    while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
+    {
+        /* Wait for synchronization */
+    }    
 }
 
 

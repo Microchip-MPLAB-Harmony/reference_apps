@@ -56,7 +56,7 @@
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
 
-	extern "C" {
+    extern "C" {
 
 #endif
 // DOM-IGNORE-END
@@ -71,21 +71,29 @@ void SERCOM4_USART_Initialize( void );
 
 bool SERCOM4_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
 
+void SERCOM4_USART_TransmitterEnable( void );
+
+void SERCOM4_USART_TransmitterDisable( void );
+
 bool SERCOM4_USART_Write( void *buffer, const size_t size );
 
-bool SERCOM4_USART_WriteIsBusy( void );
 
-size_t SERCOM4_USART_WriteCountGet( void );
+bool SERCOM4_USART_TransmitterIsReady( void );
 
-void SERCOM4_USART_WriteCallbackRegister( SERCOM_USART_CALLBACK callback, uintptr_t context );
+bool SERCOM4_USART_TransmitComplete( void );
+
+void SERCOM4_USART_WriteByte( int data );
+
+
+void SERCOM4_USART_ReceiverEnable( void );
+
+void SERCOM4_USART_ReceiverDisable( void );
 
 bool SERCOM4_USART_Read( void *buffer, const size_t size );
 
-bool SERCOM4_USART_ReadIsBusy( void );
+bool SERCOM4_USART_ReceiverIsReady( void );
 
-size_t SERCOM4_USART_ReadCountGet( void );
-
-void SERCOM4_USART_ReadCallbackRegister( SERCOM_USART_CALLBACK callback, uintptr_t context );
+int SERCOM4_USART_ReadByte( void );
 
 USART_ERROR SERCOM4_USART_ErrorGet( void );
 
