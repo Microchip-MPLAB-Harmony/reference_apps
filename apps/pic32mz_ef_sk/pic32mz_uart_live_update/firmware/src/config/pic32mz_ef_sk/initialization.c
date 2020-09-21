@@ -170,7 +170,7 @@ void SYS_Initialize ( void* data )
     
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
-    PRECONbits.PFMWS = 2;
+    PRECONbits.PFMWS = 3;
     CFGCONbits.ECCCON = 3;
 
 

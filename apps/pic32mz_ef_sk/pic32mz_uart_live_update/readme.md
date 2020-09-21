@@ -32,20 +32,21 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 - [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit ](https://www.microchip.com/Developmenttools/ProductDetails/Dm320007)
 
 ## Software/Tools Used:
-<span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
+<span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
-- [MPLAB Harmony v3 "bsp" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)  
-- [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)  
-- [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)  
-- [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
-- [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)  
-- [MPLAB Harmony v3 "bootloader" repo v3.2.0](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.2.0)  
-- MPLAB Harmony Configurator Plugin v3.5.0  
-- [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)  
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
-- Windows command prompt  
-- Python 2.7  
-- Any Serial Terminal application like Tera Term terminal application.  
+- [MPLAB Harmony v3 "bsp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
+- [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+- [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
+- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
+- [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+- [MPLAB Harmony v3 "bootloader" repo v3.4.1](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.4.1)
+- [MPLAB Harmony v3 "bootloader_apps_uart" repo v3.0.1](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/releases/tag/v3.0.1)
+- MPLAB Harmony Configurator Plugin v3.6.0
+- [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
+- Windows command prompt
+- Python 2.7
+- Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
@@ -53,9 +54,9 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 
 **For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader.**
 
-1. Download the MPLAB Harmony [Bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader) package.
+1. Download the MPLAB Harmony [Bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader) and [Bootloader UART Apps](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart) packages.
 2. Connect a mini USB cable to the DEBUG port of the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit.
-3. Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: `<Your Harmony Framework download folder>/bootloader/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE.
+3. Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: `<Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE.
 4. Build the Live update application (path: `<Live Update application folder>/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE **but do not program**.
 5. From the command prompt, run the bootloader host script "**btl_host.py**" available at `<Your Harmony Framework download folder>/bootloader/tools_archive` to program the application binary.
  - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin`
@@ -93,4 +94,5 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
-- v1.0 released demo application
+- v1.1.0 regenerated and tested the application
+- v1.0.0 released demo application

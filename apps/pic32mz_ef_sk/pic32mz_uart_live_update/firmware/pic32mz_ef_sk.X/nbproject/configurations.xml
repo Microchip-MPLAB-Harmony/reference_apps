@@ -32,15 +32,9 @@
           </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_sk/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/definitions.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_sk/device.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/configuration.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MZ2048EFH144_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFH144_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
@@ -49,7 +43,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <itemPath>../src/config/pic32mz_ef_sk/app_mz.ld</itemPath>
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mz_ef_sk" projectFiles="true">
+          <itemPath>../src/config/pic32mz_ef_sk/app_mz.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -98,6 +96,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_sk/harmony.prj</itemPath>
       <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.xml</itemPath>
+      <itemPath>../src/config/pic32mz_ef_sk/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -249,7 +248,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mz_ef_sk;../src/packs/PIC32MZ2048EFH144_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
