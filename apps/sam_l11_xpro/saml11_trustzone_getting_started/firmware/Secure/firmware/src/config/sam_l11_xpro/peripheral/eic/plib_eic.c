@@ -76,7 +76,8 @@ void EIC_Initialize (void)
         /* Wait for sync */
     }
 
-    /* EIC is by default clocked by GCLK */
+    /* EIC is clocked by ultra low power clock */
+    EIC_SEC_REGS->EIC_CTRLA |= EIC_CTRLA_CKSEL_Msk;
 
     /* NMI Control register */
 

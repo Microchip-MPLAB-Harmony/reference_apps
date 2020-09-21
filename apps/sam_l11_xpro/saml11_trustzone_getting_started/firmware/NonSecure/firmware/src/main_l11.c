@@ -117,7 +117,6 @@ static void usartRxDmaChannelHandler(DMAC_TRANSFER_EVENT event, uintptr_t contex
     if (event == DMAC_TRANSFER_EVENT_COMPLETE)
     {
         isEEPROMReadReq = true;
-//        isEEPROMRead    = true;
     }
 }
 

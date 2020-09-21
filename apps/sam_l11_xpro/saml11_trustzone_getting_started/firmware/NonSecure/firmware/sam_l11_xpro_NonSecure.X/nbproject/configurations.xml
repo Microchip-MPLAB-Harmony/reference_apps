@@ -138,6 +138,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_l11_xpro/harmony.prj</itemPath>
       <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.xml</itemPath>
+      <itemPath>../src/config/sam_l11_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -157,8 +158,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.115"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.112"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -234,7 +235,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -287,7 +288,7 @@
         <property key="enable-check-sections" value="false"/>
         <property key="exclude-floating-point-library" value="false"/>
         <property key="exclude-standard-libraries" value="false"/>
-        <property key="extra-lib-directories" value="./"/>
+        <property key="extra-lib-directories" value="./;"/>
         <property key="fill-flash-options-addr" value=""/>
         <property key="fill-flash-options-const" value=""/>
         <property key="fill-flash-options-how" value="0"/>
@@ -309,7 +310,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value="NONSECURE;AS_SIZE=0x8000;BOOTPROT_SIZE=0x0;RS_SIZE=0x2000"/>
+                  value="NONSECURE;;AS_SIZE=0x8000;BOOTPROT_SIZE=0x0;RS_SIZE=0x2000"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -332,7 +333,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -390,6 +391,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MBOs_work/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X/debug/sam_l11_xpro/sam_l11_xpro_NonSecure_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

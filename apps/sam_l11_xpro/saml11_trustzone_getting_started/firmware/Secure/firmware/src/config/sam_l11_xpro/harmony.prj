@@ -3,7 +3,7 @@
   <Configurator>
     <Name dnOrder="0" value="sam_l11_xpro"/>
     <Processor dnOrder="1" value="ATSAML11E16A"/>
-    <Harmony dnOrder="2" path="D:\Projects\MH3_git"/>
+    <Harmony dnOrder="2" path="../../../../../../../Projects/git_hub"/>
     <Folder_Name dnOrder="3" value=""/>
     <Manifest dnOrder="4">
       <Files dnOrder="0">
@@ -130,8 +130,8 @@
           <Security dnOrder="2">SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_l11_xpro/peripheral/eic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/eic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">FC17685E5643E9AE1F7907191BFD67A6</GeneratedChecksum>
-          <UserChecksum dnOrder="6">FC17685E5643E9AE1F7907191BFD67A6</UserChecksum>
+          <GeneratedChecksum dnOrder="5">5BFE2DB54E911B2FB45C616D96C1D27F</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5BFE2DB54E911B2FB45C616D96C1D27F</UserChecksum>
         </File>
         <File dnOrder="14">
           <Type dnOrder="0">SOURCE</Type>
@@ -1261,7 +1261,7 @@
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="bsp;core;crypto;csp;csp_apps_sam_l10_l11;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bsp;bt;core;csp;gfx;gfx_apps;usb;"/>
       <Setting dnOrder="6" key="TRUSTZONE" value="true"/>
     </Settings>
   </Configurator>
