@@ -94,7 +94,7 @@ void _SYS_FS_Tasks(  void *pvParameters  )
 TaskHandle_t xAPP_SENSOR_THREAD_Tasks;
 
 void _APP_SENSOR_THREAD_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         APP_SENSOR_THREAD_Tasks();
@@ -104,7 +104,7 @@ void _APP_SENSOR_THREAD_Tasks(  void *pvParameters  )
 TaskHandle_t xAPP_EEPROM_THREAD_Tasks;
 
 void _APP_EEPROM_THREAD_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         APP_EEPROM_THREAD_Tasks();
@@ -114,7 +114,7 @@ void _APP_EEPROM_THREAD_Tasks(  void *pvParameters  )
 TaskHandle_t xAPP_USB_THREAD_Tasks;
 
 void _APP_USB_THREAD_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         APP_USB_THREAD_Tasks();
@@ -125,7 +125,7 @@ void _APP_USB_THREAD_Tasks(  void *pvParameters  )
 TaskHandle_t xAPP_USER_INPUT_THREAD_Tasks;
 
 void _APP_USER_INPUT_THREAD_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         APP_USER_INPUT_THREAD_Tasks();

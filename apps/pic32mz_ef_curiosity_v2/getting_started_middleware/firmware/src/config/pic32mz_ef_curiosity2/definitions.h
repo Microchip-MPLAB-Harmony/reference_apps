@@ -61,7 +61,7 @@
 #include "peripheral/uart/plib_uart6.h"
 #include "peripheral/coretimer/plib_coretimer.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
-#include "peripheral/i2c/plib_i2c1.h"
+#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "usb/usb_chapter_9.h"
 #include "usb/usb_host.h"
 #include "driver/usart/drv_usart.h"

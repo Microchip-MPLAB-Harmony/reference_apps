@@ -62,6 +62,11 @@
             <itemPath>../src/config/pic32mz_ef_curiosity2/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity2/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f3" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/cache/plib_cache.h</itemPath>
@@ -80,8 +85,10 @@
               <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/i2c/plib_i2c1.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/i2c/plib_i2c_master.h</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f5" displayName="uart" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/uart/plib_uart_common.h</itemPath>
@@ -151,12 +158,13 @@
           <itemPath>../src/config/pic32mz_ef_curiosity2/device_cache.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity2/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity2/definitions.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity2/device.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity2/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity2/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity2/configuration.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
+      <logicalFolder name="f2" displayName="FreeRTOS" projectFiles="true">
         <logicalFolder name="f1" displayName="Source" projectFiles="true">
           <logicalFolder name="f1" displayName="include" projectFiles="true">
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/croutine.h</itemPath>
@@ -186,18 +194,6 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f4" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal_freertos.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MZ2048EFM144_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFM144_DFP/device.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
       <itemPath>../src/app_sensor_thread.h</itemPath>
       <itemPath>../src/app_eeprom_thread.h</itemPath>
       <itemPath>../src/app_usb_thread.h</itemPath>
@@ -206,6 +202,13 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1"
+                       displayName="pic32mz_ef_curiosity2"
+                       projectFiles="true">
+          <itemPath>../src/config/pic32mz_ef_curiosity2/p32MZ2048EFM144.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -235,6 +238,9 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f7" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal_freertos.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f3" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/cache/plib_cache_local.h</itemPath>
@@ -254,7 +260,9 @@
               <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/i2c/plib_i2c1.c</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f5" displayName="uart" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity2/peripheral/uart/plib_uart6.c</itemPath>
@@ -329,9 +337,6 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_curiosity2/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/main_pic32mz.c</itemPath>
       <itemPath>../src/app_sensor_thread.c</itemPath>
       <itemPath>../src/app_eeprom_thread.c</itemPath>
@@ -344,6 +349,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity2/harmony.prj</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity2/pic32mz_ef_curiosity2.xml</itemPath>
+      <itemPath>../src/config/pic32mz_ef_curiosity2/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -400,7 +406,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_curiosity2;../src/packs/PIC32MZ2048EFM144_DFP;../src/config/pic32mz_ef_curiosity2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity2/system/fs/fat_fs/hardware_access;../src/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MZ;../src/third_party/rtos/FreeRTOS/Source/include"/>
+                  value="../src/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MZ;../src/third_party/rtos/FreeRTOS/Source/include;;../src/config/pic32mz_ef_curiosity2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity2/system/fs/fat_fs/hardware_access;../src;../src/config/pic32mz_ef_curiosity2;../src/packs/PIC32MZ2048EFM144_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -497,7 +503,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MZ;../src/third_party/rtos/FreeRTOS/Source/include;;../src/config/pic32mz_ef_curiosity2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity2/system/fs/fat_fs/hardware_access;../src;../src/config/pic32mz_ef_curiosity2;../src/packs/PIC32MZ2048EFM144_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -729,6 +736,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MBOs_work/reference_apps/apps/pic32mz_ef_curiosity_v2/getting_started_middleware/firmware/middleware_drivers_freertos_pic32mz_ef_curiosity2.X/debug/pic32mz_ef_curiosity2/middleware_drivers_freertos_pic32mz_ef_curiosity2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

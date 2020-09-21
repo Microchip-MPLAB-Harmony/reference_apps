@@ -3278,65 +3278,36 @@ USB_SPEED DRV_USBHS_HOST_ROOT_HUB_PortSpeedGet
 
 void DRV_USBHS_HOST_EndpointToggleClear
 (
-    DRV_HANDLE client,
-    USB_ENDPOINT endpointAndDirection
+    DRV_USBHS_HOST_PIPE_HANDLE pipeHandle
 )
 {
-    /* Start of local variables */
-    DRV_USBHS_OBJ * hDriver = NULL;
     USBHS_MODULE_ID usbID = USBHS_ID_0;
-    uint8_t epIter = 0;
     USB_DATA_DIRECTION  direction = USB_DATA_DIRECTION_DEVICE_TO_HOST;
-    /* End of local variables */
+    DRV_USBHS_HOST_PIPE_OBJ * pPipe = NULL;
+    DRV_USBHS_OBJ * hDriver = NULL;
 
-    if((client == DRV_HANDLE_INVALID) || (((DRV_USBHS_OBJ *)client) == NULL))
+    if ((pipeHandle != DRV_USBHS_HOST_PIPE_HANDLE_INVALID) && ((DRV_USBHS_HOST_PIPE_HANDLE)NULL != pipeHandle))
     {
-        SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "Invalid client");
-    }
-    else
-    {
-        hDriver = ((DRV_USBHS_CLIENT_OBJ *)client)->hDriver;
+        pPipe = (DRV_USBHS_HOST_PIPE_OBJ *)pipeHandle;
+        hDriver = ((DRV_USBHS_CLIENT_OBJ *)(pPipe->hClient))->hDriver;
         usbID = hDriver->usbDrvCommonObj.usbID;
+        direction = (pPipe->endpointAndDirection & 0x80) >> 7;
         
-        direction = (endpointAndDirection & 0x80) >> 7;
-        
-        /* Now map the device endpoint to host endpoint. This is required to
-         * jump to the appropriate entry in the endpoint table */
-        for(epIter = 1; epIter < DRV_USBHS_HOST_MAXIMUM_ENDPOINTS_NUMBER; epIter++)
+        if(USB_DATA_DIRECTION_HOST_TO_DEVICE == direction)
         {
-            if(true == hDriver->usbDrvHostObj.hostEndpointTable[epIter].endpoints[direction].inUse)
-            {
-                /* Please not that for a single non control endpoint there cannot
-                 * be multiple pipes. Hence there should be only 1 pipe object
-                 * that can be linked to this "endpointAndDirection". */
-                if((hDriver->usbDrvHostObj.hostEndpointTable[epIter].endpoints[direction].pipe)->endpointAndDirection
-                        == endpointAndDirection)
-                {
-                    /* Got the entry in the host endpoint table. We can exit
-                     * from this loop now for further processing */
-                    break;
-                }
-            }
-        }
-        
-        if(DRV_USBHS_HOST_MAXIMUM_ENDPOINTS_NUMBER != epIter)
-        {
-            if(USB_DATA_DIRECTION_HOST_TO_DEVICE == direction)
-            {
-                /* Clear the Data Toggle for TX Endpoint */
-                PLIB_USBHS_HostTxEndpointDataToggleClear(usbID, epIter);
-            }
-            else
-            {
-                /* Clear the Data Toggle for RX Endpoint */
-                PLIB_USBHS_HostRxEndpointDataToggleClear(usbID, epIter);
-            }
+            /* Clear the Data Toggle for TX Endpoint */
+            PLIB_USBHS_HostTxEndpointDataToggleClear(usbID, pPipe->hostEndpoint);
         }
         else
         {
-            SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "Device endpoint not found");
+            /* Clear the Data Toggle for RX Endpoint */
+            PLIB_USBHS_HostRxEndpointDataToggleClear(usbID, pPipe->hostEndpoint);
         }
-        
     }
+    else
+    {
+        SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "\r\nUSBHS HOST Driver: Invalid Pipe Handle");
+    }
+    
 } /* end of DRV_USBHS_HOST_EndpointToggleClear() */
 

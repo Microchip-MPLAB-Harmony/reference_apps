@@ -79,6 +79,8 @@ bool UART6_ReadIsBusy( void );
 
 size_t UART6_ReadCountGet( void );
 
+bool UART6_ReadAbort(void);
+
 bool UART6_WriteIsBusy( void );
 
 size_t UART6_WriteCountGet( void );
