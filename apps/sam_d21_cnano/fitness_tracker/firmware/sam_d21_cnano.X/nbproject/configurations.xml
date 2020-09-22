@@ -29,6 +29,11 @@
             <itemPath>../src/config/sam_d21_cnano/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_d21_cnano/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_d21_cnano/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_d21_cnano/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_d21_cnano/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_d21_cnano/peripheral/clock/plib_clock.h</itemPath>
@@ -53,9 +58,9 @@
                 <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/spim/plib_sercom3_spi.h</itemPath>
-                <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/spim/plib_sercom_spi_common.h</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/spi_master/plib_sercom3_spi_master.h</itemPath>
+                <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f3" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
@@ -98,14 +103,10 @@
           <itemPath>../src/config/sam_d21_cnano/device_cache.h</itemPath>
           <itemPath>../src/config/sam_d21_cnano/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_d21_cnano/definitions.h</itemPath>
+          <itemPath>../src/config/sam_d21_cnano/device.h</itemPath>
           <itemPath>../src/config/sam_d21_cnano/user.h</itemPath>
           <itemPath>../src/config/sam_d21_cnano/configuration.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_d21_cnano/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAMD21G17D_DFP" projectFiles="true">
@@ -137,8 +138,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/pio/samd21g17d.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d_compat.h</itemPath>
           <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -154,6 +153,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -164,6 +164,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_d21_cnano" projectFiles="true">
+          <itemPath>../src/config/sam_d21_cnano/ATSAMD21G17D.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -212,8 +217,8 @@
               <logicalFolder name="f2" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/spim/plib_sercom3_spi.c</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/spi_master/plib_sercom3_spi_master.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f3" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_d21_cnano/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
@@ -256,6 +261,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_d21_cnano/harmony.prj</itemPath>
+      <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.xml</itemPath>
+      <itemPath>../src/config/sam_d21_cnano/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -337,7 +344,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_d21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_d21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -432,7 +439,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_d21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -950,6 +958,8 @@
       </Simulator>
       <nEdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
@@ -959,6 +969,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -983,6 +994,9 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.log_level" value="0"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

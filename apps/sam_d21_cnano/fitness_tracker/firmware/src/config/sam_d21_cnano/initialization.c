@@ -270,6 +270,26 @@ const SYS_TIME_INIT sysTimeInitData =
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 
 
 /*******************************************************************************
@@ -285,6 +305,9 @@ const SYS_TIME_INIT sysTimeInitData =
 void SYS_Initialize ( void* data )
 {
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3);
+
+    STDIO_BufferModeSet();
+
 
   
     PORT_Initialize();

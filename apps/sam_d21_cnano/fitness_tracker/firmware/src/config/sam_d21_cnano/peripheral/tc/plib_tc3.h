@@ -111,7 +111,7 @@ void TC3_Timer16bitCompareSet( uint16_t compare );
 void TC3_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context );
 
 
-
+void TC3_TimerCommandSet(TC_COMMAND command);
 
 
 // DOM-IGNORE-BEGIN
