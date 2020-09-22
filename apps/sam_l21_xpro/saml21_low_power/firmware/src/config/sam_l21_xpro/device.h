@@ -1,21 +1,21 @@
 /*******************************************************************************
-  Real Time Counter (RTC) PLIB
+  Device Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_rtc.h
+    device.h
 
   Summary:
-    RTC PLIB Header file
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
   Description:
-    This file defines the interface to the RTC peripheral library. This
-    library provides access to and control of the associated peripheral
-    instance.
+    None
 
 *******************************************************************************/
+
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
@@ -41,52 +41,15 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_RTC_H
-#define PLIB_RTC_H
-
-#include "device.h"
-#include <stddef.h>
-#include <stdbool.h>
-#include <stdint.h>
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-extern "C" {
+#pragma GCC diagnostic push
+#ifndef __cplusplus
+#pragma GCC diagnostic ignored "-Wnested-externs"
 #endif
-// DOM-IGNORE-END
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wattributes"
+#pragma GCC diagnostic ignored "-Wundef"
+#include "atsaml21j18b.h"
+#pragma GCC diagnostic pop
+#include "device_cache.h"
+#include "toolchain_specifics.h"
 
-/* Frequency of Counter Clock for RTC */
-#define RTC_COUNTER_CLOCK_FREQUENCY        (1024 / (1 << (0x1 - 1)))
-
-typedef enum
-{
-    RTC_PER0_MASK = 0x0001,
-    RTC_PER1_MASK = 0x0002,
-    RTC_PER2_MASK = 0x0004,
-    RTC_PER3_MASK = 0x0008,
-    RTC_PER4_MASK = 0x0010,
-    RTC_PER5_MASK = 0x0020,
-    RTC_PER6_MASK = 0x0040,
-    RTC_PER7_MASK = 0x0080
-} RTC_PERIODIC_INT_MASK;
-
-
-void RTC_Initialize(void);
-bool RTC_PeriodicIntervalHasCompleted ( RTC_PERIODIC_INT_MASK period );
-bool RTC_Timer32CounterHasOverflowed ( void );
-bool RTC_Timer32CompareHasMatched( void );
-void RTC_Timer32Start ( void );
-void RTC_Timer32Stop ( void );
-void RTC_Timer32CounterSet ( uint32_t count );
-uint32_t RTC_Timer32CounterGet ( void );
-uint32_t RTC_Timer32FrequencyGet ( void );
-void RTC_Timer32CompareSet ( uint32_t compareValue );
-uint32_t RTC_Timer32PeriodGet ( void );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-}
-#endif
-// DOM-IGNORE-END
-
-#endif /* PLIB_RTC_H */

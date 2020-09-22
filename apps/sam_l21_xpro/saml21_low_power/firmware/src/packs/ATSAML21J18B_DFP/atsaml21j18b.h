@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T04:55:10Z */
+/* file generated from device description version 2020-08-25T05:25:15Z */
 #ifndef _SAML21J18B_H_
 #define _SAML21J18B_H_
 
@@ -30,12 +30,12 @@
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (0)
 
-/** \addtogroup SAML21J18B_definitions SAML21J18B definitions
+/** \addtogroup SAML21J18B_definitions b'SAML21J18B definitions
   This file defines all structures and symbols for SAML21J18B:
     - registers and bitfields
     - peripheral base address
     - peripheral ID
-    - PIO definitions
+    - PIO definitions'
  *  @{
  */
 
@@ -65,7 +65,7 @@
 #  define _UL_(x) x   /**< Assembler: Unsigned Long integer literal constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
-/** @}  end of Atmel Global Defines */
+/** @}  b'end of Atmel Global Defines' */
 
 /* ************************************************************************** */
 /*   CMSIS DEFINITIONS FOR SAML21J18B                                         */
@@ -125,7 +125,7 @@ typedef struct _DeviceVectors
 {
   /* Stack pointer */
   void* pvStack;
-  /* Cortex-M handlers */
+  /* CORTEX-M0PLUS handlers */
   void* pfnReset_Handler;                        /* -15 Reset Vector, invoked on Power up and warm reset */
   void* pfnNonMaskableInt_Handler;               /* -14 Non maskable Interrupt, cannot be stopped or preempted */
   void* pfnHardFault_Handler;                    /* -13 Hard Fault, all classes of Fault */
@@ -173,12 +173,6 @@ typedef struct _DeviceVectors
   void* pfnTRNG_Handler;                         /*  27 True Random Generator (TRNG) */
 } DeviceVectors;
 
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
-#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
-#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -223,24 +217,16 @@ void PTC_Handler                   ( void );
 void AES_Handler                   ( void );
 void TRNG_Handler                  ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
-#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
-#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-/*
- * \brief Configuration of the CORTEX-M0PLUS Processor and Core Peripherals
- */
+/** \brief Configuration of the CORTEX-M0PLUS Processor and Core Peripherals */
+#define __CM0PLUS_REV             0x0001 /**< Cortex-M0+ Core Revision                                                  */
 #define __MPU_PRESENT                  0 /**< MPU present or not                                                        */
 #define __NVIC_PRIO_BITS               2 /**< Number of Bits used for Priority Levels                                   */
 #define __VTOR_PRESENT                 1 /**< Vector Table Offset Register present or not                               */
 #define __Vendor_SysTickConfig         0 /**< Set to 1 if different SysTick Config is used                              */
 #define __ARCH_ARM                     1
 #define __ARCH_ARM_CORTEX_M            1
-#define __DEVICE_IS_SAM                1
 
 /*
  * \brief CMSIS includes
@@ -250,7 +236,7 @@ void TRNG_Handler                  ( void );
 #include "system_saml21.h"
 #endif /* USE_CMSIS_INIT */
 
-/** \defgroup SAML21J18B_api Peripheral Software API
+/** \defgroup SAML21J18B_api b'Peripheral Software API'
  *  @{
  */
 
@@ -286,9 +272,9 @@ void TRNG_Handler                  ( void );
 #include "component/trng.h"
 #include "component/usb.h"
 #include "component/wdt.h"
-/** @}  end of Peripheral Software API */
+/** @}  b'end of Peripheral Software API' */
 
-/** \addtogroup SAML21J18B_id Peripheral Ids Definitions
+/** \addtogroup SAML21J18B_id b'Peripheral Ids Definitions'
  *  @{
  */
 
@@ -337,9 +323,9 @@ void TRNG_Handler                  ( void );
 #define ID_DMAC          (129) /**< \brief Direct Memory Access Controller (DMAC) */
 
 #define ID_PERIPH_MAX    (129) /**< \brief Number of peripheral IDs */
-/** @}  end of Peripheral Ids Definitions */
+/** @}  b'end of Peripheral Ids Definitions' */
 
-/** \addtogroup SAML21J18B_base Peripheral Base Address Definitions
+/** \addtogroup SAML21J18B_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -389,9 +375,9 @@ void TRNG_Handler                  ( void );
 #define USB_REGS                         ((usb_registers_t*)0x41000000)                /**< \brief USB Registers Address        */
 #define WDT_REGS                         ((wdt_registers_t*)0x40001c00)                /**< \brief WDT Registers Address        */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAML21J18B_base Peripheral Base Address Definitions
+/** \addtogroup SAML21J18B_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -439,9 +425,9 @@ void TRNG_Handler                  ( void );
 #define TRNG_BASE_ADDRESS                _UL_(0x42003800)                              /**< \brief TRNG Base Address */
 #define USB_BASE_ADDRESS                 _UL_(0x41000000)                              /**< \brief USB Base Address */
 #define WDT_BASE_ADDRESS                 _UL_(0x40001c00)                              /**< \brief WDT Base Address */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAML21J18B_pio Peripheral Pio Definitions
+/** \addtogroup SAML21J18B_pio b'Peripheral Pio Definitions'
  *  @{
  */
 
@@ -449,7 +435,7 @@ void TRNG_Handler                  ( void );
 /*   PIO DEFINITIONS FOR SAML21J18B                                           */
 /* ************************************************************************** */
 #include "pio/saml21j18b.h"
-/** @}  end of Peripheral Pio Definitions */
+/** @}  b'end of Peripheral Pio Definitions' */
 
 /* ************************************************************************** */
 /*   MEMORY MAPPING DEFINITIONS FOR SAML21J18B                                */
@@ -652,7 +638,7 @@ void TRNG_Handler                  ( void );
 }
 #endif
 
-/** @}  end of SAML21J18B definitions */
+/** @}  b'end of SAML21J18B definitions' */
 
 
 #endif /* _SAML21J18B_H_ */

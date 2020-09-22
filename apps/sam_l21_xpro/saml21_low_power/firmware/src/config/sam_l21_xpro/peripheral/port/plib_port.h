@@ -65,27 +65,43 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
+/*** Macros for SW0 pin ***/
+#define SW0_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 2)) & 0x01)
+#define SW0_PIN                  PORT_PIN_PA02
+
 /*** Macros for TEST_GPIO pin ***/
 #define TEST_GPIO_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 5)
 #define TEST_GPIO_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 5)
 #define TEST_GPIO_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 5)
-#define TEST_GPIO_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 5)) & 0x01)
 #define TEST_GPIO_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 5)
 #define TEST_GPIO_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 5)
+#define TEST_GPIO_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 5)) & 0x01)
 #define TEST_GPIO_PIN                  PORT_PIN_PB05
+
+/*** Macros for I2C_SDA pin ***/
+#define I2C_SDA_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8)) & 0x01)
+#define I2C_SDA_PIN                  PORT_PIN_PA08
+
+/*** Macros for I2C_SCL pin ***/
+#define I2C_SCL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 9)) & 0x01)
+#define I2C_SCL_PIN                  PORT_PIN_PA09
 
 /*** Macros for LED0 pin ***/
 #define LED0_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 10)
 #define LED0_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 10)
 #define LED0_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 10)
-#define LED0_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10)) & 0x01)
 #define LED0_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 10)
 #define LED0_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 10)
+#define LED0_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10)) & 0x01)
 #define LED0_PIN                  PORT_PIN_PB10
 
+/*** Macros for SERCOM3_TX pin ***/
+#define SERCOM3_TX_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 22)) & 0x01)
+#define SERCOM3_TX_PIN                  PORT_PIN_PA22
 
-
+/*** Macros for SERCOM3_RX pin ***/
+#define SERCOM3_RX_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23)) & 0x01)
+#define SERCOM3_RX_PIN                  PORT_PIN_PA23
 // *****************************************************************************
 /* PORT Group
 
@@ -892,7 +908,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -931,7 +947,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
