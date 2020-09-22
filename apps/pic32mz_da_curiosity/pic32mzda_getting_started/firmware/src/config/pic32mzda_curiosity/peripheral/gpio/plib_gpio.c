@@ -99,7 +99,7 @@ void GPIO_Initialize ( void )
     /* PORTK Initialization */
 
 
-    /* unlock system for PPS configuration */
+    /* Unlock system for PPS configuration */
     SYSKEY = 0x00000000;
     SYSKEY = 0xAA996655;
     SYSKEY = 0x556699AA;
@@ -112,10 +112,8 @@ void GPIO_Initialize ( void )
     RPF12R = 2;
 
     /* Lock back the system after PPS configuration */
-    SYSKEY = 0x00000000;
-    SYSKEY = 0xAA996655;
-    SYSKEY = 0x556699AA;
     CFGCONbits.IOLOCK = 1;
+    SYSKEY = 0x00000000;
 
     uint32_t i;
     /* Initialize Interrupt Pin data structures */
@@ -349,7 +347,7 @@ bool GPIO_PinInterruptCallbackRegister(
 
 // *****************************************************************************
 /* Function:
-    void CHANGE_NOTICE_B_InterruptHandler()
+    void CHANGE_NOTICE_B_InterruptHandler(void)
 
   Summary:
     Interrupt Handler for change notice interrupt for channel B.
@@ -357,7 +355,7 @@ bool GPIO_PinInterruptCallbackRegister(
   Remarks:
 	It is an internal function called from ISR, user should not call it directly.
 */
-void CHANGE_NOTICE_B_InterruptHandler()
+void CHANGE_NOTICE_B_InterruptHandler(void)
 {
     uint8_t i;
     uint32_t status;
@@ -380,7 +378,7 @@ void CHANGE_NOTICE_B_InterruptHandler()
 
 // *****************************************************************************
 /* Function:
-    void CHANGE_NOTICE_G_InterruptHandler()
+    void CHANGE_NOTICE_G_InterruptHandler(void)
 
   Summary:
     Interrupt Handler for change notice interrupt for channel G.
@@ -388,7 +386,7 @@ void CHANGE_NOTICE_B_InterruptHandler()
   Remarks:
 	It is an internal function called from ISR, user should not call it directly.
 */
-void CHANGE_NOTICE_G_InterruptHandler()
+void CHANGE_NOTICE_G_InterruptHandler(void)
 {
     uint8_t i;
     uint32_t status;

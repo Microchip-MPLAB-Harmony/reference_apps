@@ -61,34 +61,37 @@
 // *****************************************************************************
 // *****************************************************************************
 
+
 /*** Macros for SW1 pin ***/
 #define SW1_Set()               (LATBSET = (1<<11))
 #define SW1_Clear()             (LATBCLR = (1<<11))
 #define SW1_Toggle()            (LATBINV= (1<<11))
-#define SW1_Get()               ((PORTB >> 11) & 0x1)
 #define SW1_OutputEnable()      (TRISBCLR = (1<<11))
 #define SW1_InputEnable()       (TRISBSET = (1<<11))
+#define SW1_Get()               ((PORTB >> 11) & 0x1)
+#define SW1_PIN                  GPIO_PIN_RB11
 #define SW1_InterruptEnable()   (CNENBSET = (1<<11))
 #define SW1_InterruptDisable()  (CNENBCLR = (1<<11))
-#define SW1_PIN                  GPIO_PIN_RB11
+
 /*** Macros for LED1 pin ***/
 #define LED1_Set()               (LATCSET = (1<<1))
 #define LED1_Clear()             (LATCCLR = (1<<1))
 #define LED1_Toggle()            (LATCINV= (1<<1))
-#define LED1_Get()               ((PORTC >> 1) & 0x1)
 #define LED1_OutputEnable()      (TRISCCLR = (1<<1))
 #define LED1_InputEnable()       (TRISCSET = (1<<1))
+#define LED1_Get()               ((PORTC >> 1) & 0x1)
 #define LED1_PIN                  GPIO_PIN_RC1
+
 /*** Macros for SW2 pin ***/
 #define SW2_Set()               (LATGSET = (1<<15))
 #define SW2_Clear()             (LATGCLR = (1<<15))
 #define SW2_Toggle()            (LATGINV= (1<<15))
-#define SW2_Get()               ((PORTG >> 15) & 0x1)
 #define SW2_OutputEnable()      (TRISGCLR = (1<<15))
 #define SW2_InputEnable()       (TRISGSET = (1<<15))
+#define SW2_Get()               ((PORTG >> 15) & 0x1)
+#define SW2_PIN                  GPIO_PIN_RG15
 #define SW2_InterruptEnable()   (CNENGSET = (1<<15))
 #define SW2_InterruptDisable()  (CNENGCLR = (1<<15))
-#define SW2_PIN                  GPIO_PIN_RG15
 
 
 // *****************************************************************************
@@ -325,52 +328,52 @@ typedef struct {
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-    GPIO_PortWrite(pin>>4, (uint32_t)(0x1) << (pin & 0xF), (uint32_t)(value) << (pin & 0xF));
+    GPIO_PortWrite((GPIO_PORT)(pin>>4), (uint32_t)(0x1) << (pin & 0xF), (uint32_t)(value) << (pin & 0xF));
 }
 
 static inline bool GPIO_PinRead(GPIO_PIN pin)
 {
-    return (bool)(((GPIO_PortRead(pin>>4)) >> (pin & 0xF)) & 0x1);
+    return (bool)(((GPIO_PortRead((GPIO_PORT)(pin>>4))) >> (pin & 0xF)) & 0x1);
 }
 
 static inline bool GPIO_PinLatchRead(GPIO_PIN pin)
 {
-    return (bool)((GPIO_PortLatchRead(pin>>4) >> (pin & 0xF)) & 0x1);
+    return (bool)((GPIO_PortLatchRead((GPIO_PORT)(pin>>4)) >> (pin & 0xF)) & 0x1);
 }
 
 static inline void GPIO_PinToggle(GPIO_PIN pin)
 {
-    GPIO_PortToggle(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortToggle((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinSet(GPIO_PIN pin)
 {
-    GPIO_PortSet(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortSet((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinClear(GPIO_PIN pin)
 {
-    GPIO_PortClear(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortClear((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInputEnable(GPIO_PIN pin)
 {
-    GPIO_PortInputEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinOutputEnable(GPIO_PIN pin)
 {
-    GPIO_PortOutputEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortOutputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInterruptEnable(GPIO_PIN pin)
 {
-    GPIO_PortInterruptEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInterruptEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInterruptDisable(GPIO_PIN pin)
 {
-    GPIO_PortInterruptDisable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInterruptDisable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 bool GPIO_PinInterruptCallbackRegister(

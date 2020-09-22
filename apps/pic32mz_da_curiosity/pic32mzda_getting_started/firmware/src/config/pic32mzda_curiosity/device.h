@@ -1,22 +1,24 @@
 /*******************************************************************************
-  UART4 PLIB
+  Device Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_uart4.h
+    device.h
 
   Summary:
-    UART4 PLIB Header File
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
   Description:
     None
 
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -37,64 +39,9 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
-#ifndef PLIB_UART4_H
-#define PLIB_UART4_H
-
-#include <stddef.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "device.h"
-#include "plib_uart_common.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
 // DOM-IGNORE-END
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Interface
-// *****************************************************************************
-// *****************************************************************************
+#include <xc.h>
+#include <sys/attribs.h>
+#include "toolchain_specifics.h"
 
-#define UART4_FrequencyGet()    (uint32_t)(100000000UL)
-
-/****************************** UART4 API *********************************/
-
-void UART4_Initialize( void );
-
-bool UART4_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
-
-bool UART4_Write( void *buffer, const size_t size );
-
-bool UART4_Read( void *buffer, const size_t size );
-
-UART_ERROR UART4_ErrorGet( void );
-
-bool UART4_AutoBaudQuery( void );
-
-void UART4_AutoBaudSet( bool enable );
-
-int UART4_ReadByte( void );
-
-bool UART4_ReceiverIsReady( void );
-
-void UART4_WriteByte( int data );
-
-bool UART4_TransmitterIsReady( void );
-
-bool UART4_TransmitComplete( void );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
-// DOM-IGNORE-END
-
-#endif // PLIB_UART4_H
