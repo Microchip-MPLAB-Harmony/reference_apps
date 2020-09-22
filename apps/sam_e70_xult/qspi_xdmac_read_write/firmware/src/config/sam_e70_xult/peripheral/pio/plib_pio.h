@@ -66,45 +66,45 @@
 #define PERF_TEST_QSPI_DMA_Write_Set()               (PIOC_REGS->PIO_SODR = (1<<31))
 #define PERF_TEST_QSPI_DMA_Write_Clear()             (PIOC_REGS->PIO_CODR = (1<<31))
 #define PERF_TEST_QSPI_DMA_Write_Toggle()            (PIOC_REGS->PIO_ODSR ^= (1<<31))
-#define PERF_TEST_QSPI_DMA_Write_Get()               ((PIOC_REGS->PIO_PDSR >> 31) & 0x1)
 #define PERF_TEST_QSPI_DMA_Write_OutputEnable()      (PIOC_REGS->PIO_OER = (1<<31))
 #define PERF_TEST_QSPI_DMA_Write_InputEnable()       (PIOC_REGS->PIO_ODR = (1<<31))
+#define PERF_TEST_QSPI_DMA_Write_Get()               ((PIOC_REGS->PIO_PDSR >> 31) & 0x1)
 #define PERF_TEST_QSPI_DMA_Write_PIN                  PIO_PIN_PC31
 
 /*** Macros for PERF_TEST_QSPI_Write pin ***/
 #define PERF_TEST_QSPI_Write_Set()               (PIOA_REGS->PIO_SODR = (1<<19))
 #define PERF_TEST_QSPI_Write_Clear()             (PIOA_REGS->PIO_CODR = (1<<19))
 #define PERF_TEST_QSPI_Write_Toggle()            (PIOA_REGS->PIO_ODSR ^= (1<<19))
-#define PERF_TEST_QSPI_Write_Get()               ((PIOA_REGS->PIO_PDSR >> 19) & 0x1)
 #define PERF_TEST_QSPI_Write_OutputEnable()      (PIOA_REGS->PIO_OER = (1<<19))
 #define PERF_TEST_QSPI_Write_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<19))
+#define PERF_TEST_QSPI_Write_Get()               ((PIOA_REGS->PIO_PDSR >> 19) & 0x1)
 #define PERF_TEST_QSPI_Write_PIN                  PIO_PIN_PA19
 
 /*** Macros for PERF_TEST_QSPI_Read pin ***/
 #define PERF_TEST_QSPI_Read_Set()               (PIOB_REGS->PIO_SODR = (1<<2))
 #define PERF_TEST_QSPI_Read_Clear()             (PIOB_REGS->PIO_CODR = (1<<2))
 #define PERF_TEST_QSPI_Read_Toggle()            (PIOB_REGS->PIO_ODSR ^= (1<<2))
-#define PERF_TEST_QSPI_Read_Get()               ((PIOB_REGS->PIO_PDSR >> 2) & 0x1)
 #define PERF_TEST_QSPI_Read_OutputEnable()      (PIOB_REGS->PIO_OER = (1<<2))
 #define PERF_TEST_QSPI_Read_InputEnable()       (PIOB_REGS->PIO_ODR = (1<<2))
+#define PERF_TEST_QSPI_Read_Get()               ((PIOB_REGS->PIO_PDSR >> 2) & 0x1)
 #define PERF_TEST_QSPI_Read_PIN                  PIO_PIN_PB2
 
 /*** Macros for PERF_TEST_QSPI_DMA_Read pin ***/
 #define PERF_TEST_QSPI_DMA_Read_Set()               (PIOB_REGS->PIO_SODR = (1<<3))
 #define PERF_TEST_QSPI_DMA_Read_Clear()             (PIOB_REGS->PIO_CODR = (1<<3))
 #define PERF_TEST_QSPI_DMA_Read_Toggle()            (PIOB_REGS->PIO_ODSR ^= (1<<3))
-#define PERF_TEST_QSPI_DMA_Read_Get()               ((PIOB_REGS->PIO_PDSR >> 3) & 0x1)
 #define PERF_TEST_QSPI_DMA_Read_OutputEnable()      (PIOB_REGS->PIO_OER = (1<<3))
 #define PERF_TEST_QSPI_DMA_Read_InputEnable()       (PIOB_REGS->PIO_ODR = (1<<3))
+#define PERF_TEST_QSPI_DMA_Read_Get()               ((PIOB_REGS->PIO_PDSR >> 3) & 0x1)
 #define PERF_TEST_QSPI_DMA_Read_PIN                  PIO_PIN_PB3
 
 /*** Macros for LED pin ***/
 #define LED_Set()               (PIOA_REGS->PIO_SODR = (1<<5))
 #define LED_Clear()             (PIOA_REGS->PIO_CODR = (1<<5))
 #define LED_Toggle()            (PIOA_REGS->PIO_ODSR ^= (1<<5))
-#define LED_Get()               ((PIOA_REGS->PIO_PDSR >> 5) & 0x1)
 #define LED_OutputEnable()      (PIOA_REGS->PIO_OER = (1<<5))
 #define LED_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<5))
+#define LED_Get()               ((PIOA_REGS->PIO_PDSR >> 5) & 0x1)
 #define LED_PIN                  PIO_PIN_PA5
 
 
