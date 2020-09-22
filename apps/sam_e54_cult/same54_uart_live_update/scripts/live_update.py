@@ -179,10 +179,6 @@ def main():
     else:
         error('invalid device')
 
-    if (options.swap == True):
-        if ((device != "SAME5X") and (device != "SAMD5X") and (device != "PIC32MZ") and (device != "PIC32MK")):
-            error('Bank Swapping not supported on this device')
-
     try:
         address = int(options.address, 0)
     except ValueError, inst:

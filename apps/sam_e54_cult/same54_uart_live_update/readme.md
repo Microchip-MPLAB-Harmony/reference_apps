@@ -35,14 +35,14 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
- - [MPLAB Harmony v3 "bsp" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)
- - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
- - [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)
- - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)
- - [MPLAB Harmony v3 "bootloader" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.4.0)
- - [MPLAB Harmony v3 "bootloader_apps_uart" repo v3.0.0](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/releases/tag/v3.0.0)
- - MPLAB Harmony Configurator Plugin v3.5.0
+ - [MPLAB Harmony v3 "bsp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+ - [MPLAB Harmony v3 "bootloader" repo v3.4.1](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.4.1)
+ - [MPLAB Harmony v3 "bootloader_apps_uart" repo v3.0.1](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/releases/tag/v3.0.1)
+ - MPLAB Harmony Configurator Plugin v3.6.0
  - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Windows command prompt
@@ -88,7 +88,7 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
     - Below output should be displayed on command prompt.
       * <img src = "images/merge_bootloader_and_live_update_app.png" width="735" height="32" align="middle">
 11. Run the **btl_host.py** from command prompt to program the merged binary to opposite panel. The merged binary **btl_app_merged.bin** will be generated in the path from where the **btl_app_merge_bin.py** was called from.
-    - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d same5x -a <Address> -f btl_app_merged.bin`
+    - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d same5x -a 0x00080000 -f btl_app_merged.bin`
     - **Note:**
       - If you need to know more information on the bootloader host script, refer help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm and <Your Harmony Framework download folder>/bootloader_apps_uart/docs/index.html`
 12. Following screenshot shows successful programming of the application binary.
@@ -122,4 +122,4 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
-- v1.0 released demo application
+- v1.1.0 released demo application
