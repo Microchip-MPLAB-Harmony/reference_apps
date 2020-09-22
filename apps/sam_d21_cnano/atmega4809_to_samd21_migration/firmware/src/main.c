@@ -115,8 +115,6 @@ int main ( void )
         (const void *)&(SERCOM5_REGS->USART_INT.SERCOM_DATA), \
         27);
     }
-    DMAC_ChannelDisable(DMAC_CHANNEL_0);
-
     
     while ( true )
     {
