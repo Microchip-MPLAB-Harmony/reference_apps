@@ -102,11 +102,16 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_d21_xpro/harmony.prj</itemPath>
       <itemPath>../../../../../../mhc/../csp_apps_sam_d21_da1/apps/ac/ac_sleepwalk_singleshot/firmware/src/config/sam_d21_xpro/sam_d21_xpro.xml</itemPath>
+      <itemPath>../src/config/sam_d21_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <itemPath>../src/config/sam_d21_xpro/ATSAMD21J18A.ld</itemPath>
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_d21_xpro" projectFiles="true">
+          <itemPath>../src/config/sam_d21_xpro/ATSAMD21J18A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"

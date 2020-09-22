@@ -85,8 +85,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_d21_xpro/peripheral/nvic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/nvic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">409E942FCD18E6868AE51AC06AC010C9</GeneratedChecksum>
-          <UserChecksum dnOrder="6">409E942FCD18E6868AE51AC06AC010C9</UserChecksum>
+          <GeneratedChecksum dnOrder="5">58C7321CEA741BE6B079F163366C59D5</GeneratedChecksum>
+          <UserChecksum dnOrder="6">58C7321CEA741BE6B079F163366C59D5</UserChecksum>
         </File>
         <File dnOrder="9">
           <Type dnOrder="0">SOURCE</Type>
@@ -130,8 +130,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_d21_xpro/peripheral/sercom/usart/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/sercom/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">5C72684D3E1E382CBF8EE9087FEC4C5F</GeneratedChecksum>
-          <UserChecksum dnOrder="6">5C72684D3E1E382CBF8EE9087FEC4C5F</UserChecksum>
+          <GeneratedChecksum dnOrder="5">657CDDE80BEBAD774BEAA083344C4312</GeneratedChecksum>
+          <UserChecksum dnOrder="6">657CDDE80BEBAD774BEAA083344C4312</UserChecksum>
         </File>
         <File dnOrder="14">
           <Type dnOrder="0">SOURCE</Type>
@@ -592,6 +592,15 @@
           <GeneratedChecksum dnOrder="5">AF14D78B734053187B6E93E19BD70449</GeneratedChecksum>
           <UserChecksum dnOrder="6">AF14D78B734053187B6E93E19BD70449</UserChecksum>
         </File>
+        <File dnOrder="65">
+          <Type dnOrder="0">LINKER</Type>
+          <Name dnOrder="1">ATSAMD21J18A.ld</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/sam_d21_xpro/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D5CD9172C8EF08FDC00E4F569329FFCF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D5CD9172C8EF08FDC00E4F569329FFCF</UserChecksum>
+        </File>
       </Files>
       <Settings dnOrder="1">
         <Setting append="true" category="C32" delimiter=";" dnOrder="0" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/sam_d21_xpro;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
@@ -602,12 +611,12 @@
       </Settings>
     </Manifest>
     <Settings dnOrder="5">
-      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.4.0"/>
-      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\SAMD21_DFP\3.0.24\samd21a\atdf\ATSAMD21J18A.atdf"/>
+      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.7.0"/>
+      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\SAMD21_DFP\3.4.104\samd21a\atdf\ATSAMD21J18A.atdf"/>
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="csp;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;gfx;gfx_apps;net;touch;usb;"/>
     </Settings>
   </Configurator>
 </Configuration>
