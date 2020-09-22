@@ -19,16 +19,16 @@ nav_order: 10
 > The Application demonstrates the usage OTA upgrade feature on SAMD21 Curiosity Nano evaluation kit using Amazon Alexa connect kit(ACK) SDK. The communication between SAM D21 Curiosity Nano and ACK Module is through UART interface.  
 
 This following bullet points provides links to the detailed topics:  
-- [Modules/Technology Used](#Modules-Technology-Used)
-- [Hardware Used](#Hardware-Used)
-- [Software/Tools Used](#software-Tools-Used)
-- [Hardware Setup](#Hardware-setup)
-- [Setting up the build platform](#setting-up-the-build-platform)
-- [Project file structure](#project-structure)
-- [Steps to program the hex file](#steps-to-program-the-hex-file)
-- [OTA Architecture](#ota-architecture)
-- [Setting up environment for OTA update](#setting-up-environment-for-OTA-update)
-- [Building and upgrading the latest application firmware](#building-the-ota-application)
+- [Modules/Technology Used](#Modules-Technology-Used)  
+- [Hardware Used](#Hardware-Used)  
+- [Software/Tools Used](#software-Tools-Used)  
+- [Hardware Setup](#Hardware-setup)  
+- [Setting up the build platform](#setting-up-the-build-platform)  
+- [Project file structure](#project-structure)  
+- [Steps to program the hex file](#steps-to-program-the-hex-file)  
+- [OTA Architecture](#ota-architecture)  
+- [Setting up environment for OTA update](#setting-up-environment-for-OTA-update)  
+- [Building and upgrading the latest application firmware](#building-the-ota-application)  
 - [Comments](#comments)
 
 ## <a id="Modules-Technology-Used"> </a>
@@ -50,10 +50,10 @@ This following bullet points provides links to the detailed topics:
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)        
- - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)
- - MPLAB Harmony Configurator Plugin v3.5.0
+ - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)        
+ - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
+ - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+ - MPLAB Harmony Configurator Plugin v3.6.0
  - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Python 3.8  
@@ -69,8 +69,8 @@ This following bullet points provides links to the detailed topics:
 - Connect Pin "PA21(Host MCU RX)" of *SAM D21 Curiosity Nano Evaluation Kit* to "TX" pin of TTL Cable
 - Connect common ground between *SAM D21 Curiosity Nano Evaluation Kit* and TTL Cable
 - Power the *SAM D21 Curiosity Nano Evaluation Kit* from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
-- Connect USB end of TTL cable to the Host PC
- <img src = "images/ack_hardware_validation.PNG" align="middle">
+- Connect USB end of TTL cable to the Host PC  
+<img src = "images/ack_hardware_validation.PNG" align="middle">
 
 ## <a id="setting-up-the-build-platform"> </a>
 ## Setting up the build platform
@@ -125,7 +125,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Build the code by clicking on the "*Clean and Build project*" button in MPLAB X IDE tool bar, but **do not program**
 - Open the project (`samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X`) in MPLAB X IDE
 - Open the MPLAB Harmony 3 Configurator (MHC) from **Tools > MPLAB Harmony 3 Configurator** for HelloWorld project
-- After successful opening of MHC, in **Project Graph** select **System** and disable **Generate Fuse Settings** as shown below  
+- After successful opening of MHC, in **Project Graph** select **System** and disable **Generate Fuse Settings** as shown below and generate the code  
 	 <img src = "images/helloworld_fuse_settings.png" width="500" height="350">
 - Change the memory configuration in project properties **(Right click on HelloWorld_sam_d21_cnano project > select properties > select xc32-ld > Symbols & Macros)**
 - Change the **Preprocessor macro definitions** as below to place the code in primary region  
@@ -136,10 +136,10 @@ The pre-built hex file can be programmed by following the below steps.
 - Navigate to **ota > utility** folder inside 'Your ACK SDK Downloaded folder' and run "hexmerge.py" script to merge bootloader and HelloWorld project's hex file
 
 		python hexmerge.py -o bootloader_helloworld_combined.hex -f your_sdk_folder/user/platform/samd21_amazon_ack/bootloader/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex your_sdk_folder/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex
+- Program "bootloader_helloworld_combined.hex" to *SAM D21 Curiosity Nano Evaluation Kit* by following steps in [Steps to program the hex file](#steps-to-program-the-hex-file) section.
 
 **Note**
 - Output file "bootloader_helloworld_combined.hex" will be present in utility folder if specific path is not specified while running script.
-- Program "bootloader_helloworld_combined.hex" to *SAM D21 Curiosity Nano Evaluation Kit* by following steps in [Steps to program the hex file](#steps-to-program-the-hex-file) section.
 - The fuse settings are not programmable through firmware and enabling the fuse settings increases the size of the binary when generated through the Hex file, So disabling it.
 
 ## <a id="building-the-ota-application"> </a>
@@ -171,4 +171,4 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
-- v1.0 released demo application
+- v1.1.0 released demo application
