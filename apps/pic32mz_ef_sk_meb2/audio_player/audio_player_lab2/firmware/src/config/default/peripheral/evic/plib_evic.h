@@ -61,6 +61,8 @@
 #endif
 // DOM-IGNORE-END
 
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -481,6 +483,7 @@ typedef enum
 
 } INT_SOURCE;
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Interface Routines
@@ -500,6 +503,7 @@ bool EVIC_SourceStatusGet( INT_SOURCE source );
 void EVIC_SourceStatusSet( INT_SOURCE source );
 
 void EVIC_SourceStatusClear( INT_SOURCE source );
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
