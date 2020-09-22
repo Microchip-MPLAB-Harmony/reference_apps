@@ -16,16 +16,16 @@ nav_order: 8
 > The application demonstrates an integration of Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21 and controlling of smart light (LED0) on SAM D21 Curiosity Nano.  
 
 This following bullet points provides links to the detailed topics:  
-- [Modules/Technology Used](#Modules-Technology-Used)
-- [Hardware Used](#Hardware-Used)
-- [Software/Tools Used](#software-Tools-Used)
-- [Hardware Setup](#Hardware-setup)
-- [Setting up the build platform](#setting-up-the-build-platform)
-- [Project file structure](#project-structure)
-- [Steps to program the hex file](#steps-to-program-the-hex-file)
-- [Programming/Debugging Smart Light Application Project](#programming-smart-light-application-project)
-- [Register your device](#register-your-device)
-- [Running the demo](#running-the-demo)
+- [Modules/Technology Used](#Modules-Technology-Used)  
+- [Hardware Used](#Hardware-Used)  
+- [Software/Tools Used](#software-Tools-Used)  
+- [Hardware Setup](#Hardware-setup)  
+- [Setting up the build platform](#setting-up-the-build-platform)  
+- [Project file structure](#project-structure)  
+- [Steps to program the hex file](#steps-to-program-the-hex-file)  
+- [Programming/Debugging Smart Light Application Project](#programming-smart-light-application-project)  
+- [Register your device](#register-your-device)  
+- [Running the demo](#running-the-demo)  
 - [Comments](#comments)
 
 ## <a id="Modules-Technology-Used"> </a>
@@ -47,10 +47,10 @@ This following bullet points provides links to the detailed topics:
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)        
- - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)
- - MPLAB Harmony Configurator Plugin v3.5.0
+ - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)        
+ - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
+ - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+ - MPLAB Harmony Configurator Plugin v3.6.0
  - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Python 3.8
@@ -141,4 +141,4 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
-- v1.0 released demo application
+- v1.1.0 released demo application
