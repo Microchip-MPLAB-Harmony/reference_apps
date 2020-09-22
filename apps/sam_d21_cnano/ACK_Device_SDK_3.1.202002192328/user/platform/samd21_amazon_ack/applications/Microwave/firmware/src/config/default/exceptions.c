@@ -55,7 +55,7 @@
 
 /* Brief default interrupt handlers for core IRQs.*/
 
-void NonMaskableInt_Handler(void)
+void __attribute__((noreturn)) NonMaskableInt_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
@@ -65,7 +65,7 @@ void NonMaskableInt_Handler(void)
     }
 }
 
-void HardFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
+void __attribute__((noreturn)) HardFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
 {
    uint32_t stacked_r0;
    uint32_t stacked_r1;

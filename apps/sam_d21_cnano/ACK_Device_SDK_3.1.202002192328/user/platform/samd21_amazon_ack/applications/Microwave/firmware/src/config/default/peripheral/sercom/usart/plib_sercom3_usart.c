@@ -107,6 +107,7 @@ void SERCOM3_USART_Initialize( void )
     /* Wait for sync */
     while(SERCOM3_REGS->USART_INT.SERCOM_SYNCBUSY);
 
+
     /* Enable the UART after the configurations */
     SERCOM3_REGS->USART_INT.SERCOM_CTRLA |= SERCOM_USART_INT_CTRLA_ENABLE_Msk;
 
@@ -116,19 +117,18 @@ void SERCOM3_USART_Initialize( void )
     /* Initialize instance object */
     sercom3USARTObj.rdCallback = NULL;
     sercom3USARTObj.rdInIndex = 0;
-	sercom3USARTObj.rdOutIndex = 0;
+    sercom3USARTObj.rdOutIndex = 0;
     sercom3USARTObj.isRdNotificationEnabled = false;
     sercom3USARTObj.isRdNotifyPersistently = false;
     sercom3USARTObj.rdThreshold = 0;
     sercom3USARTObj.wrCallback = NULL;
     sercom3USARTObj.wrInIndex = 0;
-	sercom3USARTObj.wrOutIndex = 0;
+    sercom3USARTObj.wrOutIndex = 0;
     sercom3USARTObj.isWrNotificationEnabled = false;
     sercom3USARTObj.isWrNotifyPersistently = false;
     sercom3USARTObj.wrThreshold = 0;
-	/* Enable error interrupt */
-	SERCOM3_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_ERROR_Msk;
-
+    /* Enable error interrupt */
+    SERCOM3_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_ERROR_Msk;
 
     /* Enable Receive Complete interrupt */
     SERCOM3_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk;
@@ -182,15 +182,13 @@ bool SERCOM3_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFr
             /* Configure Parity Options */
             if(serialSetup->parity == USART_PARITY_NONE)
             {
-                SERCOM3_REGS->USART_INT.SERCOM_CTRLA |= SERCOM_USART_INT_CTRLA_FORM(0x0) | SERCOM_USART_INT_CTRLA_SAMPR(sampleRate);
-
-                SERCOM3_REGS->USART_INT.SERCOM_CTRLB |= serialSetup->dataWidth | serialSetup->stopBits;
+                SERCOM3_REGS->USART_INT.SERCOM_CTRLA =  (SERCOM3_REGS->USART_INT.SERCOM_CTRLA & ~(SERCOM_USART_INT_CTRLA_SAMPR_Msk | SERCOM_USART_INT_CTRLA_FORM_Msk)) | SERCOM_USART_INT_CTRLA_FORM(0x0) | SERCOM_USART_INT_CTRLA_SAMPR(sampleRate); 
+                SERCOM3_REGS->USART_INT.SERCOM_CTRLB = (SERCOM3_REGS->USART_INT.SERCOM_CTRLB & ~(SERCOM_USART_INT_CTRLB_CHSIZE_Msk | SERCOM_USART_INT_CTRLB_SBMODE_Pos)) | ((uint32_t) serialSetup->dataWidth | (uint32_t) serialSetup->stopBits);
             }
             else
             {
-                SERCOM3_REGS->USART_INT.SERCOM_CTRLA |= SERCOM_USART_INT_CTRLA_FORM(0x1) | SERCOM_USART_INT_CTRLA_SAMPR(sampleRate);
-
-                SERCOM3_REGS->USART_INT.SERCOM_CTRLB |= serialSetup->dataWidth | serialSetup->parity | serialSetup->stopBits;
+                SERCOM3_REGS->USART_INT.SERCOM_CTRLA =  (SERCOM3_REGS->USART_INT.SERCOM_CTRLA & ~(SERCOM_USART_INT_CTRLA_SAMPR_Msk | SERCOM_USART_INT_CTRLA_FORM_Msk)) | SERCOM_USART_INT_CTRLA_FORM(0x1) | SERCOM_USART_INT_CTRLA_SAMPR(sampleRate); 
+                SERCOM3_REGS->USART_INT.SERCOM_CTRLB = (SERCOM3_REGS->USART_INT.SERCOM_CTRLB & ~(SERCOM_USART_INT_CTRLB_CHSIZE_Msk | SERCOM_USART_INT_CTRLB_SBMODE_Pos | SERCOM_USART_INT_CTRLB_PMODE_Msk)) | (uint32_t) serialSetup->dataWidth | (uint32_t) serialSetup->stopBits | (uint32_t) serialSetup->parity ;
             }
 
             /* Wait for sync */
@@ -217,7 +215,7 @@ void static SERCOM3_USART_ErrorClear( void )
     SERCOM3_REGS->USART_INT.SERCOM_INTFLAG = SERCOM_USART_INT_INTFLAG_ERROR_Msk;
 
     /* Clear all errors */
-    SERCOM3_REGS->USART_INT.SERCOM_STATUS = SERCOM_USART_INT_STATUS_PERR_Msk | SERCOM_USART_INT_STATUS_FERR_Msk | SERCOM_USART_INT_STATUS_BUFOVF_Msk;
+    SERCOM3_REGS->USART_INT.SERCOM_STATUS = SERCOM_USART_INT_STATUS_PERR_Msk | SERCOM_USART_INT_STATUS_FERR_Msk | SERCOM_USART_INT_STATUS_BUFOVF_Msk ;
 
     /* Flush existing error bytes from the RX FIFO */
     while((SERCOM3_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_RXC_Msk) == SERCOM_USART_INT_INTFLAG_RXC_Msk)
@@ -233,7 +231,7 @@ USART_ERROR SERCOM3_USART_ErrorGet( void )
 {
     USART_ERROR errorStatus = USART_ERROR_NONE;
 
-    errorStatus = SERCOM3_REGS->USART_INT.SERCOM_STATUS & (SERCOM_USART_INT_STATUS_PERR_Msk | SERCOM_USART_INT_STATUS_FERR_Msk | SERCOM_USART_INT_STATUS_BUFOVF_Msk);
+    errorStatus = (USART_ERROR) (SERCOM3_REGS->USART_INT.SERCOM_STATUS & (SERCOM_USART_INT_STATUS_PERR_Msk | SERCOM_USART_INT_STATUS_FERR_Msk | SERCOM_USART_INT_STATUS_BUFOVF_Msk ));
 
     if(errorStatus != USART_ERROR_NONE)
     {
@@ -321,15 +319,15 @@ static void SERCOM3_USART_ReadNotificationSend(void)
 size_t SERCOM3_USART_Read(uint8_t* pRdBuffer, const size_t size)
 {
     size_t nBytesRead = 0;
-	uint32_t rdOutIndex;
-	uint32_t rdInIndex;
+    uint32_t rdOutIndex;
+    uint32_t rdInIndex;
 
     while (nBytesRead < size)
     {
         SERCOM3_USART_RX_INT_DISABLE();
-		
-		rdOutIndex = sercom3USARTObj.rdOutIndex;
-		rdInIndex = sercom3USARTObj.rdInIndex;
+
+        rdOutIndex = sercom3USARTObj.rdOutIndex;
+        rdInIndex = sercom3USARTObj.rdInIndex;
 
         if (rdOutIndex != rdInIndex)
         {
@@ -354,12 +352,12 @@ size_t SERCOM3_USART_Read(uint8_t* pRdBuffer, const size_t size)
 size_t SERCOM3_USART_ReadCountGet(void)
 {
     size_t nUnreadBytesAvailable;
-	uint32_t rdOutIndex;
-	uint32_t rdInIndex;
-	
-	/* Take a snapshot of indices to avoid creation of critical section */
-	rdOutIndex = sercom3USARTObj.rdOutIndex;
-	rdInIndex = sercom3USARTObj.rdInIndex;
+    uint32_t rdOutIndex;
+    uint32_t rdInIndex;
+
+    /* Take a snapshot of indices to avoid creation of critical section */
+    rdOutIndex = sercom3USARTObj.rdOutIndex;
+    rdInIndex = sercom3USARTObj.rdInIndex;
 
     if ( rdInIndex >=  rdOutIndex)
     {
@@ -414,8 +412,8 @@ void SERCOM3_USART_ReadCallbackRegister( SERCOM_USART_RING_BUFFER_CALLBACK callb
 static bool SERCOM3_USART_TxPullByte(uint8_t* pWrByte)
 {
     bool isSuccess = false;
-	uint32_t wrInIndex = sercom3USARTObj.wrInIndex;
-	uint32_t wrOutIndex = sercom3USARTObj.wrOutIndex;
+    uint32_t wrInIndex = sercom3USARTObj.wrInIndex;
+    uint32_t wrOutIndex = sercom3USARTObj.wrOutIndex;
 
     if (wrOutIndex != wrInIndex)
     {
@@ -488,10 +486,10 @@ static void SERCOM3_USART_WriteNotificationSend(void)
 static size_t SERCOM3_USART_WritePendingBytesGet(void)
 {
     size_t nPendingTxBytes;
-	
-	/* Take a snapshot of indices to avoid creation of critical section */
-	uint32_t wrInIndex = sercom3USARTObj.wrInIndex;
-	uint32_t wrOutIndex = sercom3USARTObj.wrOutIndex;
+
+    /* Take a snapshot of indices to avoid creation of critical section */
+    uint32_t wrInIndex = sercom3USARTObj.wrInIndex;
+    uint32_t wrOutIndex = sercom3USARTObj.wrOutIndex;
 
     if ( wrInIndex >= wrOutIndex)
     {
@@ -510,7 +508,7 @@ size_t SERCOM3_USART_WriteCountGet(void)
     size_t nPendingTxBytes;
 
     nPendingTxBytes = SERCOM3_USART_WritePendingBytesGet();
-    
+
     return nPendingTxBytes;
 }
 
@@ -580,6 +578,7 @@ void SERCOM3_USART_WriteCallbackRegister( SERCOM_USART_RING_BUFFER_CALLBACK call
 }
 
 
+
 void static SERCOM3_USART_ISR_ERR_Handler( void )
 {
     USART_ERROR errorStatus = USART_ERROR_NONE;
@@ -587,7 +586,7 @@ void static SERCOM3_USART_ISR_ERR_Handler( void )
     errorStatus = (SERCOM3_REGS->USART_INT.SERCOM_STATUS &
                   (SERCOM_USART_INT_STATUS_PERR_Msk |
                   SERCOM_USART_INT_STATUS_FERR_Msk |
-                  SERCOM_USART_INT_STATUS_BUFOVF_Msk));
+                  SERCOM_USART_INT_STATUS_BUFOVF_Msk ));
 
     if(errorStatus != USART_ERROR_NONE)
     {
