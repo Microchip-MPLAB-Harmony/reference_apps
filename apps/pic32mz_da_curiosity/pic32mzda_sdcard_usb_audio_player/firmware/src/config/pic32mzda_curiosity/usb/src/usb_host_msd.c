@@ -297,7 +297,7 @@ void _USB_HOST_MSD_TransferTasks
                                 processedBytes = msdInstanceInfo->msdCBW->dCBWDataTransferLength ;
                             }
                             transferIsDone = true;
-                            msdResult = msdCSW->bCSWStatus;
+                            msdResult = (USB_HOST_MSD_RESULT)msdCSW->bCSWStatus;
                             SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\n\r CSW: bCSWStatus = 0x%X ", msdCSW->bCSWStatus);
                         }
                         else if (msdCSW->bCSWStatus == USB_MSD_CSW_STATUS_PHASE_ERROR)
@@ -1179,7 +1179,7 @@ void _USB_HOST_MSD_InterfaceAssign
          * this, a query must be setup first. */
 
         USB_HOST_DeviceEndpointQueryContextClear(&endpointQuery);
-        endpointQuery.flags = USB_HOST_ENDPOINT_QUERY_BY_DIRECTION|USB_HOST_ENDPOINT_QUERY_BY_TRANSFER_TYPE;
+        endpointQuery.flags = (USB_HOST_ENDPOINT_QUERY_FLAG)(USB_HOST_ENDPOINT_QUERY_BY_DIRECTION|USB_HOST_ENDPOINT_QUERY_BY_TRANSFER_TYPE);
         endpointQuery.direction  = USB_DATA_DIRECTION_DEVICE_TO_HOST;
         endpointQuery.transferType = USB_TRANSFER_TYPE_BULK;
 
@@ -1196,7 +1196,7 @@ void _USB_HOST_MSD_InterfaceAssign
                 /* Now open the the bulk out pipe */
 
                 USB_HOST_DeviceEndpointQueryContextClear(&endpointQuery);
-                endpointQuery.flags = USB_HOST_ENDPOINT_QUERY_BY_DIRECTION|USB_HOST_ENDPOINT_QUERY_BY_TRANSFER_TYPE;
+                endpointQuery.flags = (USB_HOST_ENDPOINT_QUERY_FLAG)(USB_HOST_ENDPOINT_QUERY_BY_DIRECTION|USB_HOST_ENDPOINT_QUERY_BY_TRANSFER_TYPE);
                 endpointQuery.direction  = USB_DATA_DIRECTION_HOST_TO_DEVICE;
                 endpointQuery.transferType = USB_TRANSFER_TYPE_BULK;
 

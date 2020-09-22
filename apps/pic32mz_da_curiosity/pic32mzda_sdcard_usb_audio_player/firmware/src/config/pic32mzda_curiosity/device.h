@@ -1,21 +1,24 @@
 /*******************************************************************************
-  Interface definition of Core Timer PLIB.
+  Device Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_coretimer.h
+    device.h
 
   Summary:
-    Interface definition of the Core Timer Plib .
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
   Description:
-    This file defines the interface for the Core Timer Plib.
+    None
+
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -36,42 +39,9 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_CORETIMER_H    // Guards against multiple inclusion
-#define PLIB_CORETIMER_H
+#include <xc.h>
+#include <sys/attribs.h>
+#include "toolchain_specifics.h"
 
-#include <stdint.h>
-#include <stdbool.h>
-
-#ifdef __cplusplus // Provide C++ Compatibility
-	extern "C" {
-#endif
-
-#define CORE_TIMER_FREQUENCY    99000000
-
-
-typedef void (*CORETIMER_CALLBACK)(uint32_t status, uintptr_t context);
-
-typedef struct
-{
-    CORETIMER_CALLBACK  callback;
-    uintptr_t           context;
-} CORETIMER_OBJECT ;
-
-void CORETIMER_Initialize(void);
-void CORETIMER_CallbackSet ( CORETIMER_CALLBACK callback, uintptr_t context );
-uint32_t CORETIMER_FrequencyGet (void);
-void CORETIMER_Start(void);
-void CORETIMER_Stop(void);
-uint32_t CORETIMER_CounterGet(void);
-void CORETIMER_CompareSet(uint32_t compare);
-
-void CORETIMER_DelayMs (uint32_t delay_ms);
-void CORETIMER_DelayUs (uint32_t delay_us);
-
-
-#ifdef __cplusplus // Provide C++ Compatibility
- }
-#endif
-
-#endif

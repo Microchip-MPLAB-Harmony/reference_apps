@@ -75,62 +75,62 @@ void GLCD_Interrupt_Handler( void );
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_CORE_TIMER_VECTOR, ipl1AUTO) CORE_TIMER_Handler (void)
+void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
 
-void __ISR(_I2C1_BUS_VECTOR, ipl1AUTO) I2C1_BUS_Handler (void)
+void __ISR(_I2C1_BUS_VECTOR, ipl1SRS) I2C1_BUS_Handler (void)
 {
     I2C1_BUS_InterruptHandler();
 }
 
-void __ISR(_I2C1_MASTER_VECTOR, ipl1AUTO) I2C1_MASTER_Handler (void)
+void __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
 {
     I2C1_MASTER_InterruptHandler();
 }
 
-void __ISR(_USB_VECTOR, ipl1AUTO) USB_Handler (void)
+void __ISR(_USB_VECTOR, ipl1SRS) USB_Handler (void)
 {
     DRV_USBHS_InterruptHandler();
 }
 
-void __ISR(_USB_DMA_VECTOR, ipl1AUTO) USB_DMA_Handler (void)
+void __ISR(_USB_DMA_VECTOR, ipl1SRS) USB_DMA_Handler (void)
 {
     DRV_USBHS_DMAInterruptHandler();
 }
 
-void __ISR(_DMA0_VECTOR, ipl1AUTO) DMA0_Handler (void)
+void __ISR(_DMA0_VECTOR, ipl1SRS) DMA0_Handler (void)
 {
     DMA0_InterruptHandler();
 }
 
-void __ISR(_DMA1_VECTOR, ipl1AUTO) DMA1_Handler (void)
+void __ISR(_DMA1_VECTOR, ipl1SRS) DMA1_Handler (void)
 {
     DMA1_InterruptHandler();
 }
 
-void __ISR(_DMA3_VECTOR, ipl1AUTO) DMA3_Handler (void)
+void __ISR(_DMA3_VECTOR, ipl1SRS) DMA3_Handler (void)
 {
     DMA3_InterruptHandler();
 }
 
-void __ISR(_I2C2_BUS_VECTOR, ipl1AUTO) I2C2_BUS_Handler (void)
+void __ISR(_I2C2_BUS_VECTOR, ipl1SRS) I2C2_BUS_Handler (void)
 {
     I2C2_BUS_InterruptHandler();
 }
 
-void __ISR(_I2C2_MASTER_VECTOR, ipl1AUTO) I2C2_MASTER_Handler (void)
+void __ISR(_I2C2_MASTER_VECTOR, ipl1SRS) I2C2_MASTER_Handler (void)
 {
     I2C2_MASTER_InterruptHandler();
 }
 
-void __ISR(_SDHC_VECTOR, ipl1AUTO) SDHC_Handler (void)
+void __ISR(_SDHC_VECTOR, ipl1SRS) SDHC_Handler (void)
 {
     SDHC_InterruptHandler();
 }
 
-void __ISR(_GLCD_VECTOR, ipl1AUTO) GLCD_Handler (void)
+void __ISR(_GLCD_VECTOR, ipl1SRS) GLCD_Handler (void)
 {
     GLCD_Interrupt_Handler();
 }

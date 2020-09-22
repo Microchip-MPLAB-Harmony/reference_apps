@@ -273,6 +273,11 @@
               <itemPath>../src/config/pic32mzda_curiosity/gfx/legato/legato_config.h</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f7" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mzda_curiosity/osal/osal.h</itemPath>
+            <itemPath>../src/config/pic32mzda_curiosity/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32mzda_curiosity/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f7" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mzda_curiosity/peripheral/cache/plib_cache.h</itemPath>
@@ -297,9 +302,11 @@
               <itemPath>../src/config/pic32mzda_curiosity/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f10" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/plib_i2c1.h</itemPath>
-              <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/plib_i2c_master.h</itemPath>
-              <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/plib_i2c2.h</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
+                <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+                <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/master/plib_i2c2_master.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f1" displayName="sdhc" projectFiles="true">
               <itemPath>../src/config/pic32mzda_curiosity/peripheral/sdhc/plib_sdhc_common.h</itemPath>
@@ -382,23 +389,12 @@
             <itemPath>../src/config/pic32mzda_curiosity/usb/usb_host_hub_interface.h</itemPath>
             <itemPath>../src/config/pic32mzda_curiosity/usb/usb_hub.h</itemPath>
           </logicalFolder>
+          <itemPath>../src/config/pic32mzda_curiosity/device.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/user.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/configuration.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/device_cache.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/definitions.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mzda_curiosity/osal/osal.h</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/osal/osal_impl_basic.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MZ2064DAR176_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2064DAR176_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/disk.h</itemPath>
@@ -407,6 +403,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mzda_curiosity" projectFiles="true">
+          <itemPath>../src/config/pic32mzda_curiosity/p32MZ2064DAR176.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -741,8 +742,10 @@
               <itemPath>../src/config/pic32mzda_curiosity/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f10" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/plib_i2c1.c</itemPath>
-              <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/plib_i2c2.c</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
+                <itemPath>../src/config/pic32mzda_curiosity/peripheral/i2c/master/plib_i2c2_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f1" displayName="sdhc" projectFiles="true">
               <itemPath>../src/config/pic32mzda_curiosity/peripheral/sdhc/plib_sdhc.c</itemPath>
@@ -810,6 +813,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mzda_curiosity/harmony.prj</itemPath>
       <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.xml</itemPath>
+      <itemPath>../src/config/pic32mzda_curiosity/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -866,7 +870,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access"/>
+                  value=";../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -961,7 +965,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value=";../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

@@ -91,24 +91,24 @@ static uint16_t SDHC_TransferModeSet ( uint32_t opcode )
 
     switch(opcode)
     {
-        case 51:
-        case 6:
-        case 17:
+        case SDHC_CMD_READ_SCR:
+        case SDHC_CMD_SET_BUS_WIDTH:
+        case SDHC_CMD_READ_SINGLE_BLOCK:
             /* Read single block of data from the device. */
             transfer_mode_reg = (_SDHCMODE_DMAEN_MASK | _SDHCMODE_DTXDSEL_MASK);
             break;
 
-        case 18:
+        case SDHC_CMD_READ_MULTI_BLOCK:
             /* Read multiple blocks of data from the device. */
             transfer_mode_reg = (_SDHCMODE_DMAEN_MASK | _SDHCMODE_DTXDSEL_MASK | _SDHCMODE_BSEL_MASK | _SDHCMODE_BCEN_MASK);
             break;
 
-        case 24:
+        case SDHC_CMD_WRITE_SINGLE_BLOCK:
             /* Write single block of data to the device. */
             transfer_mode_reg = _SDHCMODE_DMAEN_MASK;
             break;
 
-        case 25:
+        case SDHC_CMD_WRITE_MULTI_BLOCK:
             /* Write multiple blocks of data to the device. */
             transfer_mode_reg = (_SDHCMODE_DMAEN_MASK | _SDHCMODE_BSEL_MASK | _SDHCMODE_BCEN_MASK);
             break;
@@ -195,26 +195,6 @@ void SDHC_InterruptHandler(void)
     }
 }
 
-void SDHC_CardDetectEnable(void)
-{
-    CFGCON2bits.SDCDEN = 0x1;
-}
-
-void SDHC_CardDetectDisable(void)
-{
-    CFGCON2bits.SDCDEN = 0x0;
-}
-
-void SDHC_WriteProtectEnable(void)
-{
-    CFGCON2bits.SDWPEN = 0x1;
-}
-
-void SDHC_WriteProtectDisable(void)
-{
-    CFGCON2bits.SDWPEN = 0x0;
-}
-
 void SDHC_ErrorReset ( SDHC_RESET_TYPE resetType )
 {
     SDHCCON2 |= (resetType << 24);
@@ -280,6 +260,17 @@ bool SDHC_IsDatLineBusy ( void )
     return (((SDHCSTAT1 & _SDHCSTAT1_CINHDAT_MASK) == _SDHCSTAT1_CINHDAT_MASK)? true : false);
 }
 
+void SDHC_WriteProtectEnable(void)
+{
+    CFGCON2bits.SDWPEN = 0x1;
+}
+
+void SDHC_WriteProtectDisable(void)
+{
+    CFGCON2bits.SDWPEN = 0x0;
+}
+
+
 bool SDHC_IsWriteProtected ( void )
 {
     if (CFGCON2bits.SDWPEN)
@@ -293,6 +284,16 @@ bool SDHC_IsWriteProtected ( void )
     }
 }
 
+void SDHC_CardDetectEnable(void)
+{
+    CFGCON2bits.SDCDEN = 0x1;
+}
+
+void SDHC_CardDetectDisable(void)
+{
+    CFGCON2bits.SDCDEN = 0x0;
+}
+
 bool SDHC_IsCardAttached ( void )
 {
     return ((SDHCSTAT1 & _SDHCSTAT1_CARDINS_MASK) == _SDHCSTAT1_CARDINS_MASK)? true : false;
@@ -304,7 +305,7 @@ void SDHC_BlockSizeSet ( uint16_t blockSize )
     {
         blockSize = SDHC_MAX_BLOCK_SIZE;
     }
-    
+
     SDHCBLKCON = ((SDHCBLKCON & ~_SDHCBLKCON_BSIZE_MASK) | (blockSize));
 }
 
@@ -317,7 +318,7 @@ void SDHC_ClockEnable ( void )
 {
     /* Enable internal clock */
     SDHCCON2 |= _SDHCCON2_ICLKEN_MASK;
-    
+
     /* Wait for the internal clock to stabilize */
     SDHC_Delay(1000);
 
@@ -573,7 +574,6 @@ void SDHC_ModuleInit( void )
 
     /* Enable card inserted and card removed interrupt signals */
     SDHCINTSEN = (_SDHCINTSEN_CARDIISE_MASK | _SDHCINTSEN_CARDRISE_MASK);
-
     /* Enable SDHC interrupt */
     IEC5SET = 0x80000000L;
 }
