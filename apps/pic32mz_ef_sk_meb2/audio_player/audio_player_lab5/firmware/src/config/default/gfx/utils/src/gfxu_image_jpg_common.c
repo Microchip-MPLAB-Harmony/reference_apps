@@ -938,8 +938,10 @@ uint8_t JPEG_bPaintOneBlock(JPEGDECODER *pJpegDecoder)
         }
     }
     
+    GFX_Set(GFXF_DRAW_PIPELINE_MODE, GFX_PIPELINE_GCU);
     GFX_DrawBlit(&pJpegDecoder->pixelBlockBuffer,
         0, 0, shiftX, shiftY, pJpegDecoder->wPrevX + pJpegDecoder->wDrawX, pJpegDecoder->wPrevY + pJpegDecoder->wDrawY);
+    GFX_Set(GFXF_DRAW_PIPELINE_MODE, GFX_PIPELINE_GCUGPU);
     
     pJpegDecoder->wPrevX += shiftX;
 

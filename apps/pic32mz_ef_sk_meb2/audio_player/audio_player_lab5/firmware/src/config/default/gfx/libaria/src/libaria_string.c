@@ -188,6 +188,38 @@ laString laString_CreateFromCharBuffer(const char* chr, GFXU_FontAsset* fnt)
     return str;
 }
 
+laString laString_CreateFromCharBuffer16(const uint16_t* chr, uint16_t size, GFXU_FontAsset* fnt)
+{
+	laString str = { 0, 0, 0, 0, LA_STRING_NULLIDX };
+	uint32_t i;
+
+	if (laContext_GetActive() == NULL || chr == NULL)
+	{
+		laString_Initialize(&str);
+		return str;
+	}
+
+	if (size != 0)
+	{
+		laString_Allocate(&str, size);
+
+		if (str.capacity == 0)
+			return str;
+
+		for (i = 0; i < size; i++)
+		{
+			str.data[i] = (GFXU_CHAR)(chr[i]);
+		}
+
+		str.data[i] = '\0';
+	}
+
+	str.font = fnt;
+	str.table_index = LA_STRING_NULLIDX;
+
+	return str;
+}
+
 laString laString_CreateFromID(uint32_t id)
 {
     laString str = {0};

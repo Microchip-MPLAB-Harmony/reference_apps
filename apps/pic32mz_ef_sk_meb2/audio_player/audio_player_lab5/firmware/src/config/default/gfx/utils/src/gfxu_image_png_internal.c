@@ -23,7 +23,6 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-
 #include "gfx/utils/inc/gfxu_image.h"
 #include "gfx/utils/inc/gfxu_palette.h"
 #include "gfx/third_party/lodepng/lodepng.h"
@@ -144,6 +143,8 @@ GFX_Result GFXU_DrawImagePngInternal(GFXU_ImageAsset* img,
         GFX_Set(GFXF_DRAW_BLEND_MODE, blendMode | GFX_BLEND_CHANNEL);
         GFX_Set(GFXF_DRAW_ALPHA_ENABLE, GFX_TRUE);
 
+        
+        GFX_Set(GFXF_DRAW_PIPELINE_MODE, GFX_PIPELINE_GCU);
         result = GFX_DrawBlit(&pixBuffer,
                               src_x,
                               src_y,
@@ -151,6 +152,7 @@ GFX_Result GFXU_DrawImagePngInternal(GFXU_ImageAsset* img,
                               src_height,
                               dest_x,
                               dest_y);
+        GFX_Set(GFXF_DRAW_PIPELINE_MODE, GFX_PIPELINE_GCUGPU);
 
         GFX_Set(GFXF_DRAW_BLEND_MODE, blendMode);
     }

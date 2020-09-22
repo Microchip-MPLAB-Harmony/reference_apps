@@ -1,6 +1,5 @@
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -21,8 +20,6 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
-
 
 #include "gfx/libaria/inc/libaria_context.h"
 
@@ -32,9 +29,6 @@
 #include "gfx/libaria/inc/libaria_screen.h"
 #include "gfx/libaria/inc/libaria_utils.h"
 #include "gfx/libaria/inc/libaria_widget.h"
-
-// forward declare to avoid automated built test issue
-GFX_Rect laUtils_ClipWidgetToAncestors(laWidget* wgt);
 
 static void updateDirtyFlags(laWidget* widget)
 {
@@ -71,7 +65,7 @@ static void updateDirtyFlags(laWidget* widget)
 GFX_Result _laContext_PaintWidget(laWidget* widget)
 {
     laWidget* child;
-    GFX_Rect cacheRect;
+    GFX_Rect widgetRect, parentRect, clipRect, cacheRect;
     laBool alphaEnable;
     laBool shouldPaint = LA_FALSE;
     laBool painted = LA_FALSE;
@@ -150,18 +144,35 @@ GFX_Result _laContext_PaintWidget(laWidget* widget)
         // clip the damage rectangle to the child's parent
         if(widget->parent != NULL)
         {
-            // get the delta area between the parent tree and child
-            layer->clippedDrawingRect = laUtils_ClipWidgetToAncestors(widget);
+            widgetRect = laUtils_WidgetLayerRect(widget);
+            parentRect = laUtils_WidgetLayerRect(widget->parent);
+            
+            // child does not intersect parent at all, do not draw
+            if(GFX_RectIntersects(&widgetRect, &parentRect) == GFX_FALSE)
+            {
+                _laWidget_ValidateChildren(widget);
+        
+                return LA_SUCCESS;
+            }
+            
+            // get the delta area between the parent and child
+            GFX_RectClip(&widgetRect, &parentRect, &clipRect);
             
             // widget visible area does not intersect dirty area at all
             // do not draw
-            if(GFX_RectIntersects(&layer->clippedDrawingRect,
+            if(GFX_RectIntersects(&clipRect,
                                   &layer->frameRectList.rects[layer->frameRectIdx]) == GFX_FALSE)
             {
                 _laWidget_ValidateChildren(widget);
         
                 return LA_SUCCESS;
             }
+            
+            // get the delta area between the dirty area and the child/parent
+            // delta area
+            GFX_RectClip(&layer->frameRectList.rects[layer->frameRectIdx],
+                         &clipRect,
+                         &layer->clippedDrawingRect);
         }
         else
         {

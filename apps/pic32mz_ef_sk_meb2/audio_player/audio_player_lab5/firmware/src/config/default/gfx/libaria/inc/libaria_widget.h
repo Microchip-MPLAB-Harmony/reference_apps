@@ -1399,13 +1399,14 @@ LIB_EXPORT laResult laWidget_SetOptimizationFlags(laWidget* wgt, uint32_t flags)
 
 // *****************************************************************************
 /* Function:
-    laResult laWidget_GetMargin (laWidget* wgt, laMargin* mg)
+    laResult laWidget_GetMargins (laWidget* wgt, laMargin* mg)
 
   Summary:
-    Returns the margin value associated with the widget in the laMargin pointer
+    Returns the margin object, which contains the left, right, top and bottom 
+	values, associated with the widget in the laMargin pointer
 
   Description:
-    Returns the margin value associated with the widget in the laMargin pointer
+    Returns the margin object associated with the widget in the laMargin pointer
 
   Parameters:
     laWidget* wgt - the widget
@@ -1417,7 +1418,7 @@ LIB_EXPORT laResult laWidget_SetOptimizationFlags(laWidget* wgt, uint32_t flags)
   Remarks:
 
 */
-LIB_EXPORT laResult laWidget_GetMargin (laWidget* wgt, laMargin* mg);
+LIB_EXPORT laResult laWidget_GetMargins (laWidget* wgt, laMargin* mg);
 
 // *****************************************************************************
 /* Function:

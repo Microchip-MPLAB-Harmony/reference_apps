@@ -140,7 +140,7 @@ typedef enum
 
 typedef enum
 {
-    /* Normal File */
+    /* Normal File. Should not be combined with other attributes */
     SYS_FS_ATTR_FILE    = 0x00,
     /* Read only */
     SYS_FS_ATTR_RDO     = 0x01,
@@ -234,20 +234,18 @@ Description:
 
     Note: The Values mentioned below should be aligned with values in ff.h
 */
-typedef enum
-{
-    SYS_FS_FORMAT_FAT      = 0x01,
-    SYS_FS_FORMAT_FAT32    = 0x02,
-    SYS_FS_FORMAT_EXFAT    = 0x04,
-    SYS_FS_FORMAT_ANY      = 0x07,
-    SYS_FS_FORMAT_SFD      = 0x08
-}SYS_FS_FORMAT;
+
+#define SYS_FS_FORMAT_FAT      0x01
+#define SYS_FS_FORMAT_FAT32    0x02
+#define SYS_FS_FORMAT_EXFAT    0x04
+#define SYS_FS_FORMAT_ANY      0x07
+#define SYS_FS_FORMAT_SFD      0x08
 
 // *****************************************************************************
 /* Format parameter structure */
 typedef struct {
     /* Format option */
-    SYS_FS_FORMAT  fmt;
+    uint8_t  fmt;
     /* Number of FATs */
     uint8_t  n_fat;
     /* Data area alignment (sector) */
@@ -624,7 +622,6 @@ typedef struct
     uint16_t    ftime;
     /* Attribute */
     uint8_t     fattrib;
-#if SYS_FS_USE_LFN
     /* Alternate file name */
     char        altname[13];
     /* Primary file name */
@@ -638,10 +635,6 @@ typedef struct
     char       *lfname;
     /* Size of LFN buffer */
     uint32_t    lfsize;
-#else
-    /* Short file name (8.3 format) */
-    char        fname[13];
-#endif
 } SYS_FS_FSTAT;
 
 
@@ -3293,7 +3286,7 @@ SYS_FS_RESULT SYS_FS_DriveLabelSet
     opt           - Specifies the structure holding format options. If a null
                     pointer is given, fat code gives the function all options in default
                     value. The format option structure has five members described below:
-                    fmt     - Specifies combination of FAT type flags, SYS_FS_FORMAT.
+                    fmt     - Specifies combination of FAT type flags, SYS_FS_FORMAT_XXX.
                               These flags specify which FAT type to be created on the volume.
                               If two or more types are specified, one out of them will be
                               selected depends on the volume size and au_size.

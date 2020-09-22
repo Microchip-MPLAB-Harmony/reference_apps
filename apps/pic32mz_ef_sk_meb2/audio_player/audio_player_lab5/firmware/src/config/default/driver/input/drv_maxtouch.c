@@ -560,7 +560,7 @@ static void _RegRead(struct DEVICE_OBJECT *pDrvObject, void* val, size_t size, D
 bool MXT_INTERRUPT_PIN_VALUE_GET(void)
 {
 #ifndef BSP_MAXTOUCH_CHG_Get
-#error "MAXTOUCH_INT_Get is not defined. Please use Pin Settings Tab in MHC to define the Touch Interrupt pin with the name 'MAXTOUCH_INT' as GPIO_IN"   
+#error "BSP_MAXTOUCH_CHG_Get is not defined. Please use Pin Settings Tab in MHC to define the Touch Interrupt pin with the name 'BSP_MAXTOUCH_CHG' as GPIO_IN"   
 #else
 return(BSP_MAXTOUCH_CHG_Get());
 #endif
@@ -876,7 +876,7 @@ DRV_HANDLE DRV_MAXTOUCH_Open(const SYS_MODULE_INDEX index,
     
     if(pDrvInstance->drvI2CHandle == DRV_HANDLE_INVALID)
     {
-        pDrvInstance->drvI2CHandle = pDrvInstance->drvOpen(DRV_I2C_INDEX_0,
+        pDrvInstance->drvI2CHandle = pDrvInstance->drvOpen(0,
                                                            DRV_IO_INTENT_READWRITE);
     }
     
