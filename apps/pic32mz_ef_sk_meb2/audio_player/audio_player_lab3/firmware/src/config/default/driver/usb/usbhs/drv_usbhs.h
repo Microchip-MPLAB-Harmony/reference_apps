@@ -433,8 +433,7 @@ typedef struct
 /* Function:
     void DRV_USBHS_HOST_EndpointToggleClear
     (
-        DRV_HANDLE client,
-        USB_ENDPOINT endpointAndDirection
+        DRV_USBHS_HOST_PIPE_HANDLE pipeHandle
     )
 
   Summary:
@@ -450,20 +449,18 @@ typedef struct
 
   Parameters:
     handle - Handle to the driver.
-    USB_ENDPOINT - Endpoint number and direction.
+    pipeHandle - Handle to the pipe that connected to the device endpoint
+    whose toggle needs to be cleared.
 
   Example:
     <code>
 
     // This code shows how the USB Host Layer calls the
-    // DRV_USBHS_HOST_EndpointToggleClear function. The Endpoint number
-    // and Direction of the endpoint is required to the clear the data
-	// toggle to the endpoint.
+    // DRV_USBHS_HOST_EndpointToggleClear function.
 
-    DRV_HANDLE drvHandle;
-    USB_ENDPOINT endpointAndDirection ;
+    DRV_USBHS_HOST_PIPE_HANDLE pipeHandle;
 
-    DRV_USBHS_HOST_EndpointToggleClear(client, endpointAndDirection);
+    DRV_USBHS_HOST_EndpointToggleClear(pipeHandle);
 
     </code>
 
@@ -473,8 +470,7 @@ typedef struct
 
 void DRV_USBHS_HOST_EndpointToggleClear
 (
-    DRV_HANDLE client,
-    USB_ENDPOINT endpointAndDirection
+    DRV_USBHS_HOST_PIPE_HANDLE pipeHandle
 );
 
 // *****************************************************************************

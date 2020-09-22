@@ -2770,7 +2770,7 @@ void _DRV_USBHS_DEVICE_Tasks_ISR
         /* This means that RESUME was detected on the bus. */
         if(NULL != deviceModeClient->pEventCallBack)
         {
-            deviceModeClient->pEventCallBack(deviceModeClient->hClientArg, DRV_USBHS_EVENT_RESET_DETECT,  NULL);
+            deviceModeClient->pEventCallBack(deviceModeClient->hClientArg, DRV_USBHS_EVENT_RESUME_DETECT,  NULL);
         }
     }        
 
