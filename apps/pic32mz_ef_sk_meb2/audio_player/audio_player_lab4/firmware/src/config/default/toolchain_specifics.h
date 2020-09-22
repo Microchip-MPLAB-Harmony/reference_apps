@@ -72,5 +72,9 @@
 #define CACHE_LINE_SIZE                (16u)
 #define CACHE_ALIGN                    __COHERENT
 
+#ifndef FORMAT_ATTRIBUTE
+   #define FORMAT_ATTRIBUTE(archetype, string_index, first_to_check)  __attribute__ ((format (archetype, string_index, first_to_check)))
+#endif
+
 #endif // end of header
 
