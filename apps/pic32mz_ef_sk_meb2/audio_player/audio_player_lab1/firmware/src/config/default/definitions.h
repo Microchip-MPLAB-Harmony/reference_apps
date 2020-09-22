@@ -58,7 +58,7 @@
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
 #include "peripheral/coretimer/plib_coretimer.h"
-#include "peripheral/i2c/plib_i2c2.h"
+#include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "audio/driver/codec/ak4953/drv_ak4953.h"
 #include "audio/peripheral/i2s/plib_i2s1.h"
 #include "system/int/sys_int.h"

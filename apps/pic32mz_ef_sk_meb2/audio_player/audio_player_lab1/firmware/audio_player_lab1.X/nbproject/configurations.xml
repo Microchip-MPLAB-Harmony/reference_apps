@@ -35,6 +35,11 @@
             <itemPath>../src/config/default/driver/driver.h</itemPath>
             <itemPath>../src/config/default/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/default/osal/osal.h</itemPath>
+            <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/default/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f3" displayName="cache" projectFiles="true">
               <itemPath>../src/config/default/peripheral/cache/plib_cache.h</itemPath>
@@ -56,8 +61,10 @@
               <itemPath>../src/config/default/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/default/peripheral/i2c/plib_i2c2.h</itemPath>
-              <itemPath>../src/config/default/peripheral/i2c/plib_i2c_master.h</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/i2c/master/plib_i2c2_master.h</itemPath>
+                <itemPath>../src/config/default/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f5" displayName="system" projectFiles="true">
@@ -91,20 +98,9 @@
           <itemPath>../src/config/default/device_cache.h</itemPath>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
+          <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/default/osal/osal.h</itemPath>
-        <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/default/osal/osal_impl_basic.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MZ2048EFH144_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFH144_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app_tone_lookup_table.h</itemPath>
@@ -113,6 +109,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="default" projectFiles="true">
+          <itemPath>../src/config/default/p32MZ2048EFH144.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -169,7 +170,9 @@
               <itemPath>../src/config/default/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/default/peripheral/i2c/plib_i2c2.c</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/i2c/master/plib_i2c2_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="stdio" projectFiles="true">
@@ -204,6 +207,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony.prj</itemPath>
+      <itemPath>../src/config/default/default.xml</itemPath>
+      <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -355,7 +360,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/default;../src/packs/PIC32MZ2048EFH144_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
