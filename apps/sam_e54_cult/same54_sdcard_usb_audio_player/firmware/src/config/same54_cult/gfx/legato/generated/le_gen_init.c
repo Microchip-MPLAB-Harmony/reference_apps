@@ -4,9 +4,12 @@ static uint32_t currentScreen;
 
 void legato_initialize(void)
 {
-    legato_initialize_schemes();
-
     leSetStringTable(&stringTable);
+
+    initializeStrings();
+
+    screenInit_default();
+    screenInit_MusicScreen();
 
     currentScreen = -1;
 

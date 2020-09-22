@@ -72,24 +72,24 @@ static void SDHC1_TransferModeSet ( uint32_t opcode )
 
     switch(opcode)
     {
-        case 51:
-        case 6:
-        case 17:
+        case SDHC_CMD_READ_SCR:
+        case SDHC_CMD_SET_BUS_WIDTH:
+        case SDHC_CMD_READ_SINGLE_BLOCK:
             /* Read single block of data from the device. */
             transferMode = (SDHC_TMR_DMAEN_ENABLE | SDHC_TMR_DTDSEL_Msk);
             break;
 
-        case 18:
+        case SDHC_CMD_READ_MULTI_BLOCK:
             /* Read multiple blocks of data from the device. */
             transferMode = (SDHC_TMR_DMAEN_ENABLE | SDHC_TMR_DTDSEL_Msk | SDHC_TMR_MSBSEL_Msk | SDHC_TMR_BCEN_Msk);
             break;
 
-        case 24:
+        case SDHC_CMD_WRITE_SINGLE_BLOCK:
             /* Write single block of data to the device. */
             transferMode = SDHC_TMR_DMAEN_ENABLE;
             break;
 
-        case 25:
+        case SDHC_CMD_WRITE_MULTI_BLOCK:
             /* Write multiple blocks of data to the device. */
             transferMode = (SDHC_TMR_DMAEN_ENABLE | SDHC_TMR_MSBSEL_Msk | SDHC_TMR_BCEN_Msk);
             break;
@@ -232,11 +232,6 @@ bool SDHC1_IsDatLineBusy ( void )
     return (((SDHC1_REGS->SDHC_PSR & SDHC_PSR_CMDINHD_Msk) == SDHC_PSR_CMDINHD_Msk)? true : false);
 }
 
-bool SDHC1_IsWriteProtected ( void )
-{
-    return (SDHC1_REGS->SDHC_PSR & SDHC_PSR_WRPPL_Msk) ? false : true;
-}
-
 bool SDHC1_IsCardAttached ( void )
 {
     return ((SDHC1_REGS->SDHC_PSR & SDHC_PSR_CARDINS_Msk) == SDHC_PSR_CARDINS_Msk)? true : false;
@@ -326,6 +321,9 @@ void SDHC1_DmaSetup (
 
     /* The last descriptor line must indicate the end of the descriptor list */
     sdhc1DmaDescrTable[i-1].attribute |= (SDHC_DESC_TABLE_ATTR_END);
+
+    /* Clean the cache associated with the modified descriptors */
+    DCACHE_CLEAN_BY_ADDR((uint32_t*)(sdhc1DmaDescrTable), (i * sizeof(SDHC_ADMA_DESCR)));
 
     /* Set the starting address of the descriptor table */
     SDHC1_REGS->SDHC_ASAR[0] = (uint32_t)(&sdhc1DmaDescrTable[0]);

@@ -64,12 +64,16 @@ leLineGraphWidgetVTable lineGraphWidgetVTable;
 static void stringPreinvalidate(const leString* str,
                                 leLineGraphWidget* gph)
 {
+    (void)str; // unused
+
     gph->fn->invalidate(gph);
 }
 
 static void stringInvalidate(const leString* str,
                              leLineGraphWidget* gph)
 {
+    (void)str; // unused
+
     gph->fn->invalidate(gph);
 }
 
@@ -85,12 +89,12 @@ void leLineGraphWidget_Constructor(leLineGraphWidget* _this)
     _this->widget.rect.width = DEFAULT_WIDTH;
     _this->widget.rect.height = DEFAULT_HEIGHT;
 
-    _this->widget.borderType = LE_WIDGET_BORDER_NONE;
-    _this->widget.backgroundType = LE_WIDGET_BACKGROUND_NONE;
+    _this->widget.style.borderType = LE_WIDGET_BORDER_NONE;
+    _this->widget.style.backgroundType = LE_WIDGET_BACKGROUND_NONE;
     
     _this->tickLength = DEFAULT_TICK_LENGTH;
     _this->fillGraphArea = LE_TRUE;
-    _this->fillValueArea = LE_TRUE;
+    _this->fillValueArea = LE_FALSE;
     _this->stacked = LE_FALSE;
     
     _this->maxValue = DEFAULT_MAX_VALUE;
@@ -267,6 +271,8 @@ static int32_t getMaxValue(const leLineGraphWidget* _this,
                            leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->maxValue;
 }
@@ -276,6 +282,8 @@ static leResult setMaxValue(leLineGraphWidget* _this,
                             int32_t value)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
 
     if(value <= _this->minValue)
         return LE_FAILURE;
@@ -294,6 +302,8 @@ static int32_t getMinValue(const leLineGraphWidget* _this,
                            leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->minValue;
 }
@@ -303,6 +313,8 @@ static leResult setMinValue(leLineGraphWidget* _this,
                             int32_t value)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
     
     if(value >= _this->maxValue)
         return LE_FAILURE;
@@ -321,6 +333,8 @@ static leBool getValueAxisLabelsVisible(const leLineGraphWidget* _this,
                                         leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->valueAxisLabelsVisible;
 }
@@ -330,6 +344,8 @@ static leResult setValueAxisLabelsVisible(leLineGraphWidget* _this,
                                           leBool visible)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->valueAxisLabelsVisible == visible)
         return LE_SUCCESS;
@@ -389,6 +405,8 @@ static leBool getGridLinesVisible(const leLineGraphWidget* _this,
                                   leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->valueGridLinesVisible;
 }
@@ -398,6 +416,8 @@ static leResult setGridLinesVisible(leLineGraphWidget* _this,
                                     leBool visible)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->valueGridLinesVisible == visible)
         return LE_SUCCESS;
@@ -413,6 +433,8 @@ static leBool getValueAxisTicksVisible(const leLineGraphWidget* _this,
                                        leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->valueAxisTicksVisible;
 }
@@ -422,6 +444,8 @@ static leResult setValueAxisTicksVisible(leLineGraphWidget* _this,
                                          leBool visible)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->valueAxisTicksVisible == visible)
         return LE_SUCCESS;
@@ -437,6 +461,8 @@ static uint32_t getValueAxisTickInterval(const leLineGraphWidget* _this,
                                          leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->tickInterval;
 }
@@ -446,6 +472,8 @@ static leResult setValueAxisTickInterval(leLineGraphWidget* _this,
                                          uint32_t interval)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->tickInterval == interval)
         return LE_SUCCESS;
@@ -461,6 +489,8 @@ static uint32_t getValueAxisSubtickInterval(const leLineGraphWidget* _this,
                                             leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->subtickInterval;
 }
@@ -470,6 +500,8 @@ static leResult setValueAxisSubtickInterval(leLineGraphWidget* _this,
                                             uint32_t interval)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->subtickInterval == interval)
         return LE_SUCCESS;
@@ -485,6 +517,8 @@ static leBool getValueAxisSubticksVisible(const leLineGraphWidget* _this,
                                           leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->valueAxisSubticksVisible;
 }
@@ -494,6 +528,8 @@ static leResult setValueAxisSubticksVisible(leLineGraphWidget* _this,
                                             leBool visible)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->valueAxisSubticksVisible == visible)
         return LE_SUCCESS;
@@ -681,7 +717,9 @@ static leResult setDataInSeries(leLineGraphWidget* _this,
 {
 
     leLineGraphDataSeries* series;
-    //int32_t* data;
+    int32_t* data;
+
+    (void)value; // unused
     
     LE_ASSERT_THIS();
     
@@ -693,13 +731,13 @@ static leResult setDataInSeries(leLineGraphWidget* _this,
     if(index >= (int32_t) series->data.size)
         return LE_FAILURE;
     
-    //data = leArray_Get(&series->data, index);
+    data = leArray_Get(&series->data, index);
     
     prevDamagedRect = getValueDamagedRect(_this,
                                           seriesID,
                                           index);
     
-    //*data = value;
+    *data = value;
     
     damagedRect = getValueDamagedRect(_this,
                                       seriesID,
@@ -1026,6 +1064,8 @@ static leLineGraphTickPosition getValueAxisTicksPosition(const leLineGraphWidget
                                                          leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->valueAxisTicksPosition;
 }
@@ -1035,6 +1075,8 @@ static leResult setValueAxisTicksPosition(leLineGraphWidget* _this,
                                           leLineGraphTickPosition position)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->valueAxisTicksPosition == position)
         return LE_SUCCESS;
@@ -1050,6 +1092,8 @@ static leLineGraphTickPosition getValueAxisSubticksPosition(const leLineGraphWid
                                                             leLineGraphValueAxis axis)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     return _this->valueAxisSubticksPosition;
 }
@@ -1059,6 +1103,8 @@ static leResult setValueAxisSubticksPosition(leLineGraphWidget* _this,
                                              leLineGraphTickPosition position)
 {
     LE_ASSERT_THIS();
+
+    (void)axis; // unused
         
     if(_this->valueAxisSubticksPosition == position)
         return LE_SUCCESS;
@@ -1347,7 +1393,7 @@ static const leLineGraphWidgetVTable lineGraphWidgetVTable =
     .getChildCount = (void*)_leWidget_GetChildCount,
     .getChildAtIndex = (void*)_leWidget_GetChildAtIndex,
     .getIndexOfChild = (void*)_leWidget_GetIndexOfChild,
-    .containsDescendent = (void*)_leWidget_ContainsDescendent,
+    .containsDescendant = (void*)_leWidget_ContainsDescendant,
     .getScheme = (void*)_leWidget_GetScheme,
     .setScheme = (void*)_leWidget_SetScheme,
     .getBorderType = (void*)_leWidget_GetBorderType,
@@ -1378,7 +1424,6 @@ static const leLineGraphWidgetVTable lineGraphWidgetVTable =
     .resizeEvent = (void*)_leWidget_ResizeEvent,
     .focusLostEvent = (void*)_leWidget_FocusLostEvent,
     .focusGainedEvent = (void*)_leWidget_FocusGainedEvent,
-    .languageChangeEvent = (void*)_leWidget_LanguageChangeEvent,
 
     ._handleEvent = (void*)_leWidget_HandleEvent,
     ._validateChildren = (void*)_leWidget_ValidateChildren,

@@ -120,10 +120,6 @@ void leWidget_SkinClassic_Draw1x2BeveledBorder(const leRect* rect,
                                               leColor bototmRightInner,
                                               uint32_t a);
 
-void leWidget_SkinClassic_DrawBlit(leWidget* wgt,
-                                   lePixelBuffer* buffer,
-                                   uint32_t a);
-
 void leWidget_SkinClassic_DrawStandardLineBorder(leWidget* wgt,
                                                  uint32_t a);
 

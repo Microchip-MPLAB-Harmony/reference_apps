@@ -82,12 +82,16 @@ static void invalidateTextRect(const leButtonWidget* _this)
 static void stringPreinvalidate(const leString* str,
                                 leButtonWidget* btn)
 {
+    (void)str; // unused
+
     invalidateTextRect(btn);
 }
 
 static void stringInvalidate(const leString* str,
                              leButtonWidget* btn)
 {
+    (void)str; // unused
+
     invalidateTextRect(btn);
 }
 
@@ -107,7 +111,7 @@ void leButtonWidget_Constructor(leButtonWidget* _this)
     _this->state = LE_BUTTON_STATE_UP;
     _this->toggleable = LE_FALSE;
 
-    _this->widget.borderType = LE_WIDGET_BORDER_BEVEL;
+    _this->widget.style.borderType = LE_WIDGET_BORDER_BEVEL;
 
     _this->string = NULL;
 
@@ -223,7 +227,7 @@ static leResult setPressed(leButtonWidget* _this,
         dirty = LE_TRUE;
     }
        
-    if(_this->widget.borderType == LE_WIDGET_BORDER_BEVEL)
+    if(_this->widget.style.borderType == LE_WIDGET_BORDER_BEVEL)
     {
         dirty = LE_TRUE;
     }
@@ -703,7 +707,7 @@ static const leButtonWidgetVTable buttonWidgetVTable =
     .getChildCount = (void*)_leWidget_GetChildCount,
     .getChildAtIndex = (void*)_leWidget_GetChildAtIndex,
     .getIndexOfChild = (void*)_leWidget_GetIndexOfChild,
-    .containsDescendent = (void*)_leWidget_ContainsDescendent,
+    .containsDescendant = (void*)_leWidget_ContainsDescendant,
     .getScheme = (void*)_leWidget_GetScheme,
     .setScheme = (void*)_leWidget_SetScheme,
     .getBorderType = (void*)_leWidget_GetBorderType,
@@ -730,7 +734,6 @@ static const leButtonWidgetVTable buttonWidgetVTable =
     .resizeEvent = (void*)_leWidget_ResizeEvent,
     .focusLostEvent = (void*)_leWidget_FocusLostEvent,
     .focusGainedEvent = (void*)_leWidget_FocusGainedEvent,
-    .languageChangeEvent = (void*)_leWidget_LanguageChangeEvent,
 
     ._handleEvent = (void*)_leWidget_HandleEvent,
     ._validateChildren = (void*)_leWidget_ValidateChildren,

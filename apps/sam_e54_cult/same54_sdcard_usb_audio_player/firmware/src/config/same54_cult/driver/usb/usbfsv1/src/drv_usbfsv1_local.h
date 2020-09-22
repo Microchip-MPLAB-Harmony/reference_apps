@@ -62,21 +62,71 @@
 #define COMPILER_WORD_ALIGNED                               __attribute__((__aligned__(4)))
 
 #define DRV_USBFSV1_HOST_MAXIMUM_ENDPOINTS_NUMBER           10
-#define _DRV_USBFSV1_HOST_IRP_PER_FRAME_NUMBER              5
-#define _DRV_USBFSV1_SW_EP_NUMBER                           _DRV_USBFSV1_HOST_IRP_PER_FRAME_NUMBER
+#define DRV_USBFSV1_HOST_IRP_PER_FRAME_NUMBER               10
+#define _DRV_USBFSV1_SW_EP_NUMBER                           DRV_USBFSV1_HOST_IRP_PER_FRAME_NUMBER
 #define DRV_USBFSV1_POST_DETACH_DELAY                       2000
 
+#define DRV_USBFSV1_MAX_CONTROL_BANDWIDTH_FULL_SPEED      20
+#define DRV_USBFSV1_MAX_CONTROL_BANDWIDTH_LOW_SPEED       30
+#define DRV_USBFSV1_MAX_BANDWIDTH_PER_FRAME    70
 /* Number of Endpoints used */
 #define DRV_USBFSV1_ENDPOINT_NUMBER_MASK                    0x0F
 #define DRV_USBFSV1_ENDPOINT_DIRECTION_MASK                 0x80
 
 #define DRV_USBFSV1_AUTO_ZLP_ENABLE                         false
 
+/* Macro to define number of USB Device descriptor banks */
+#ifndef USB_DEVICE_DESC_BANK_NUMBER
+#define USB_DEVICE_DESC_BANK_NUMBER                         DEVICE_DESC_BANK_NUMBER
+#endif
+
+/* Macro to define number of USB Host Pipe */
+#ifndef USB_HOST_PIPE_NUMBER
+#define USB_HOST_PIPE_NUMBER                                HOST_PIPE_NUMBER
+#endif
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+/***********************************************
+ * Hardware Pipe Transfer Type Assignments
+ ***********************************************/
+
+#define DRV_USBFSV1_HOST_HW_PIPE_CONTROL 0
+#define DRV_USBFSV1_HOST_HW_PIPE_ISOC_IN 1
+#define DRV_USBFSV1_HOST_HW_PIPE_ISOC_OUT 2
+#define DRV_USBFSV1_HOST_HW_PIPE_INT_IN 3
+#define DRV_USBFSV1_HOST_HW_PIPE_INT_OUT 4
+#define DRV_USBFSV1_HOST_HW_PIPE_BULK_IN 5
+#define DRV_USBFSV1_HOST_HW_PIPE_BULK_OUT 6
+
+/************************************************
+ * Pipe Token Type
+ ************************************************/
+#define	DRV_USBFSV1_HOST_PIPE_TOKEN_SETUP  0x00
+#define	DRV_USBFSV1_HOST_PIPE_TOKEN_IN     0x01
+#define	DRV_USBFSV1_HOST_PIPE_TOKEN_OUT    0x02
+
+/************************************************
+ * Pipe Transfer Type
+ ************************************************/
+	
+#define DRV_USBFSV1_HOST_PIPE_TYPE_DISABLED   0x00
+#define DRV_USBFSV1_HOST_PIPE_TYPE_CONTROL    0x08
+#define DRV_USBFSV1_HOST_PIPE_TYPE_ISOC       0x10
+#define DRV_USBFSV1_HOST_PIPE_TYPE_BULK       0x18
+#define DRV_USBFSV1_HOST_PIPE_TYPE_INTERRUPT  0x20
+
+/************************************************
+ * Bank Type
+ ************************************************/
+
+#define DRV_USBFSV1_HOST_PIPE_BANK_SINGLE 0x0
+#define DRV_USBFSV1_HOST_PIPE_BANK_DUAL 0x4
+
+
 
 /***************************************************
  * This is an intermediate flag that is set by
@@ -215,8 +265,8 @@ typedef struct _USB_HOST_IRP_LOCAL
     uint32_t tempSize;
     DRV_USBFSV1_HOST_IRP_STATE tempState;
     uint32_t completedBytes;
+    uint32_t completedBytesInThisFrame;
     struct _USB_HOST_IRP_LOCAL * next;
-    struct _USB_HOST_IRP_LOCAL * previous;
     DRV_USB_HOST_PIPE_HANDLE  pipe;
 
 }
@@ -281,41 +331,27 @@ typedef struct _DRV_USBFSV1_HOST_PIPE_OBJ
     /* Hub Port*/
     uint8_t hubPort;
 
-    /* Host Pipe allocated*/
-    uint8_t hostPipeN;
+    /* Index of the pipe group to which this pipe belongs*/
+    uint8_t pipeGroupIndex;
+    
+    /* Pipe PCKSIZE field*/
+    uint8_t pckSize;
+
 }
 DRV_USBFSV1_HOST_PIPE_OBJ;
 
-/***********************************************
- * Possible states for the 1 millisecond timer
- * interrupt task.
- ***********************************************/
-typedef enum
-{
-    /* Nothing to be done */
-    DRV_USBFSV1_ONE_MILLISECOND_TASK_STATE_IDLE,
-
-    /* Task is attach debouncing */
-    DRV_USBFSV1_ONE_MILLISECOND_TASK_STATE_ATTACH_DEBOUNCING,
-
-    /* Task is detach debouncing */
-    DRV_USBFSV1_ONE_MILLISECOND_TASK_STATE_POST_DETACH_DELAY,
-
-    /* Providing reset delay */
-    DRV_USBFSV1_ONE_MILLISECOND_TASK_STATE_RESETTING_DELAY
-
-} DRV_USBFSV1_ONE_MILLISECOND_STATE_TASK_STATE;
-
 /************************************************
- * This is the Host SW EP Object.
+ * This is the Host SOF Frame IRP tracker.
  ************************************************/
-typedef struct _DRV_USBFSV1_HOST_SW_EP
+typedef struct
 {
-    bool tobeDone;
-    USB_TRANSFER_TYPE transferType;
+    /* Tracks the HW pipe type to which this IRP belongs */
+    int hardwarePipeType;
+
+    /* The pointer to the IRP to be processed */
     USB_HOST_IRP_LOCAL * pIRP;
-}
-DRV_USBFSV1_HOST_SW_EP;
+
+} DRV_USBFSV1_HOST_FRAME_IRP;
 
 /*********************************************
  * Host Transfer Group. This data structures
@@ -323,25 +359,25 @@ DRV_USBFSV1_HOST_SW_EP;
  * type.
  *********************************************/
 
-typedef struct _DRV_USBFSV1_HOST_TRANSFER_GROUP
+typedef struct 
 {
     /* The first pipe in this transfer
-     * group */
+     * group. This will link to other pipes */
     DRV_USBFSV1_HOST_PIPE_OBJ * pipe;
 
     /* The current pipe being serviced
-     * in this transfer group */
+     * in this pipe group */
     DRV_USBFSV1_HOST_PIPE_OBJ * currentPipe;
 
     /* The current IRP being serviced
-     * in the pipe */
+     * in this pipe group */
     void * currentIRP;
 
     /* Total number of pipes in this
-     * transfer group */
+     * pipe group */
     int nPipes;
-}
-DRV_USBFSV1_HOST_TRANSFER_GROUP;
+
+} DRV_USBFSV1_HOST_PIPE_GROUP;
 
 /********************************************
  * This enumeration list the possible status
@@ -425,34 +461,16 @@ typedef enum
     /* No device is attached */
     DRV_USBFSV1_HOST_ATTACH_STATE_CHECK_FOR_DEVICE_ATTACH = 0,
 
-    /* Waiting for debounce delay */
-    DRV_USBFSV1_HOST_ATTACH_STATE_DETECTED,
+    /* Start debounce delay */
+    DRV_USBFSV1_HOST_ATTACH_STATE_DEBOUNCING,
+
+    /* Wait for the debounce to complete */
+    DRV_USBFSV1_HOST_ATTACH_STATE_DEBOUNCING_WAIT,
 
     /* Debouncing is complete. Device is attached */
-    DRV_USBFSV1_HOST_ATTACH_STATE_READY,
+    DRV_USBFSV1_HOST_ATTACH_STATE_IDLE,
 
 } DRV_USBFSV1_HOST_ATTACH_STATE;
-
-/*********************************************
- * Host Mode Device Reset state
- *********************************************/
-typedef enum
-{
-    /* No Reset in progress */
-    DRV_USBFSV1_HOST_RESET_STATE_NO_RESET = 0,
-
-    /* Start the reset signalling */
-    DRV_USBFSV1_HOST_RESET_STATE_START,
-
-    /* Check if reset duration is done and stop reset */
-    DRV_USBFSV1_HOST_RESET_STATE_WAIT_FOR_COMPLETE,
-
-    DRV_USBFSV1_HOST_RESET_STATE_COMPLETE,
-    DRV_USBFSV1_HOST_RESET_STATE_COMPLETE2
-
-} DRV_USBFSV1_HOST_RESET_STATE;
-
-
 
 typedef enum
 {
@@ -478,6 +496,8 @@ DRV_USBFSV1_DEVICE_EP0_STATE;
 
 typedef struct _DRV_USBFSV1_OBJ_STRUCT
 {
+    _DRV_USBFSV1_FOR_HOST(uint32_t, hostTransactionBuffer[16]);
+    
     /* Indicates this object is in use */
     bool inUse;
 
@@ -524,7 +544,7 @@ typedef struct _DRV_USBFSV1_OBJ_STRUCT
     OSAL_MUTEX_DECLARE(mutexID);
 
     /* Pointer to the endpoint 0 Buffers */
-    uint8_t * endpoint0BufferPtr[DEVICE_DESC_BANK_NUMBER];
+    uint8_t * endpoint0BufferPtr[USB_DEVICE_DESC_BANK_NUMBER];
 
     /* Next Ping Pong state */
     uint32_t rxEndpointsNextPingPong;
@@ -542,9 +562,9 @@ typedef struct _DRV_USBFSV1_OBJ_STRUCT
 
     /* Attach state of the device */
     DRV_USBFSV1_HOST_ATTACH_STATE attachState;
-
+    
     /* Pointer to the endpoint table */
-    DRV_USBFSV1_HOST_ENDPOINT_OBJ hostEndpointTable[DRV_USBFSV1_HOST_MAXIMUM_ENDPOINTS_NUMBER];
+    usb_descriptor_host_registers_t  * hostPipeDescTable;
 
     /* Root Hub Port 0 attached device speed in host mode
      * In device mode, the speed at which the device attached */
@@ -571,42 +591,21 @@ typedef struct _DRV_USBFSV1_OBJ_STRUCT
     /* Driver flags to indicate different things */
     DRV_USBFSV1_FLAGS driverFlags;
 
-    /* Transfer Groups */
-    DRV_USBFSV1_HOST_TRANSFER_GROUP controlTransferGroup;
-
-    /* This is to track the reset state */
-    DRV_USBFSV1_HOST_RESET_STATE resetState;
+    /* Pipe Groups */
+    DRV_USBFSV1_HOST_PIPE_GROUP pipeGroup[7];
 
     /* This counts the reset signal duration */
     DRV_USBFSV1_HOST_ROOT_HUB_INFO rootHubInfo;
 
-    /* This counts the reset signal duration */
-    _DRV_USBFSV1_FOR_HOST(uint32_t, resetDuration);
-
     /* The SWEPBuffer index */
-    _DRV_USBFSV1_FOR_HOST(uint8_t, numSWEpEntry);
+    _DRV_USBFSV1_FOR_HOST(uint8_t, currentFrameIRPIndex);
 
     /* Placeholder for bandwidth consumed in frame */
     _DRV_USBFSV1_FOR_HOST(uint8_t, globalBWConsumed);
 
     /* Variable used SW Endpoint objects that is used by this HW instances for
      * USB transfer scheduling */
-    _DRV_USBFSV1_FOR_HOST(DRV_USBFSV1_HOST_SW_EP, drvUSBHostSWEp[_DRV_USBFSV1_SW_EP_NUMBER]);
-
-    /* This is needed to track if the host is generating reset signal */
-    _DRV_USBFSV1_FOR_HOST(bool, isResetting);
-
-    /* This counts the attach detach debounce interval*/
-    _DRV_USBFSV1_FOR_HOST(uint32_t, attachDebounceCounter);
-
-    /* This is the post detach delay counter */
-    _DRV_USBFSV1_FOR_HOST(uint32_t, detachDebounceCounter);
-
-    /* This flag is true if an attach de-bounce count is in progress */
-    _DRV_USBFSV1_FOR_HOST(bool, isAttachDebouncing);
-
-    /* This flag is true if an detach de-bounce count is in progress */
-    _DRV_USBFSV1_FOR_HOST(bool, isDetachDebouncing);
+    _DRV_USBFSV1_FOR_HOST(DRV_USBFSV1_HOST_FRAME_IRP, frameIRPList[DRV_USBFSV1_HOST_IRP_PER_FRAME_NUMBER]);
 
     /* This flag is true if an detach event has come and device de-enumeration
      * operation is in progress  */
@@ -621,6 +620,10 @@ typedef struct _DRV_USBFSV1_OBJ_STRUCT
     /* The UHD of the device attached to port assigned by the host */
     _DRV_USBFSV1_FOR_HOST(USB_HOST_DEVICE_OBJ_HANDLE, attachedDeviceObjHandle);
 
+    _DRV_USBFSV1_FOR_HOST(SYS_TIME_HANDLE, timerHandle);
+    
+    _DRV_USBFSV1_FOR_HOST(bool, isResetting);
+
 } DRV_USBFSV1_OBJ;
 
 /**************************************
@@ -628,83 +631,20 @@ typedef struct _DRV_USBFSV1_OBJ_STRUCT
  *************************************/
 
 void _DRV_USBFSV1_DEVICE_Initialize(DRV_USBFSV1_OBJ * drvObj, SYS_MODULE_INDEX index);
+
 void _DRV_USBFSV1_DEVICE_Tasks_ISR(DRV_USBFSV1_OBJ * hDriver);
+
 void _DRV_USBFSV1_HOST_Initialize
 (
     DRV_USBFSV1_OBJ * const pusbdrvObj,
-    const SYS_MODULE_INDEX index
+    const SYS_MODULE_INDEX index,
+    DRV_USBFSV1_INIT * usbInit
 );
+
 void _DRV_USBFSV1_HOST_Tasks_ISR(DRV_USBFSV1_OBJ * pusbdrvObj);
 
 void _DRV_USBFSV1_HOST_AttachDetachStateMachine (DRV_USBFSV1_OBJ * hDriver);
 
-bool _DRV_USBFSV1_HOST_TransferSchedule
-(
-    DRV_USBFSV1_OBJ * pusbdrvObj,
-    DRV_USBFSV1_TRANSACTION_RESULT lastResult,
-    unsigned int transactionSize,
-    bool frameExpiry
-);
-
-void _DRV_USBFSV1_SendTokenToAddress
-(
-	usb_registers_t * usbID,
-    uint8_t address,
-    uint16_t pid,
-    uint8_t endpoint,
-    bool isLowSpeed
-);
-
-bool _DRV_USBFSV1_HOST_NonControlIRPProcess
-(
-    DRV_USBFSV1_OBJ * pusbdrvObj,
-    USB_HOST_IRP_LOCAL * pirp,
-    DRV_USBFSV1_TRANSACTION_RESULT lastTransactionResult,
-    int lastTransactionsize
-);
-
-bool _DRV_USBFSV1_HOST_ControlXferProcess
-(
-    DRV_USBFSV1_OBJ * pusbdrvObj,
-    USB_HOST_IRP_LOCAL * pirp,
-    DRV_USBFSV1_TRANSACTION_RESULT deviceResponse,
-    unsigned int deviceResponseSize
-);
-
-void _DRV_USBFSV1_HOST_Calculate_Control_BW
-(
-    DRV_USBFSV1_OBJ * pusbdrvObj,
-    DRV_USBFSV1_HOST_TRANSFER_GROUP * ptransferGroup,
-    USB_HOST_IRP_LOCAL * pcontrolIRP
-);
-
-bool _DRV_USBFSV1_HOST_Calculate_NonControl_BW
-(
-    DRV_USBFSV1_OBJ * pusbdrvObj,
-    DRV_USBFSV1_HOST_TRANSFER_GROUP * ptransferGroup,
-    USB_HOST_IRP_LOCAL * ptransferIRP,
-    USB_TRANSFER_TYPE transferType,
-    uint8_t numSWEpEntry
-);
-
-void _DRV_USBFSV1_HOST_NonControl_Send_Token
-(
-    USB_HOST_IRP_LOCAL * pirp,
-    DRV_USBFSV1_OBJ *pusbdrvObj,
-    DRV_USBFSV1_HOST_PIPE_OBJ *pipe,
-    bool isLowSpeed
-);
-
-void _DRV_USBFSV1_HOST_ControlSendToken
-(
-    USB_HOST_IRP_LOCAL * pirp,
-    DRV_USBFSV1_OBJ *pusbdrvObj,
-    DRV_USBFSV1_HOST_PIPE_OBJ *pipe,
-    uint8_t endpoint,
-    uint8_t deviceAddress,
-    usb_registers_t * usbID,
-    bool isLowSpeed
-);
-
-
+void _DRV_USBFSV1_HOST_CreateFrameIRPList(DRV_USBFSV1_OBJ * hDriver);
+void _DRV_USBFSV1_HOST_ControlTransferDataStageSend(DRV_USBFSV1_OBJ * hDriver);
 #endif

@@ -403,7 +403,7 @@ void _USB_HOST_SCSI_BlockTransferCallback
         if(scsiObj->eventHandler != NULL)
         {
             /* Generate the event */
-            (scsiObj->eventHandler)(USB_HOST_SCSI_EVENT_COMMAND_COMPLETE, (USB_HOST_SCSI_COMMAND_HANDLE)(commandObj), scsiObj->context);
+            (scsiObj->eventHandler)((SYS_MEDIA_BLOCK_EVENT)USB_HOST_SCSI_EVENT_COMMAND_COMPLETE, (USB_HOST_SCSI_COMMAND_HANDLE)(commandObj), scsiObj->context);
         }
         
         /* Return the command object */
@@ -710,14 +710,14 @@ void USB_HOST_SCSI_Deinitialize(USB_HOST_MSD_LUN_HANDLE lunHandle)
             if(scsiObj->eventHandler != NULL)
             {
                 /* Generate the error event */
-                (scsiObj->eventHandler)(USB_HOST_SCSI_EVENT_COMMAND_ERROR, (USB_HOST_SCSI_COMMAND_HANDLE)(&scsiObj->commandObj), scsiObj->context);
+                (scsiObj->eventHandler)((SYS_MEDIA_BLOCK_EVENT)USB_HOST_SCSI_EVENT_COMMAND_ERROR, (USB_HOST_SCSI_COMMAND_HANDLE)(&scsiObj->commandObj), scsiObj->context);
             }
         }
         
         if(scsiObj->eventHandler != NULL)
         {
             /* Let the client know that device has been detached. */
-            scsiObj->eventHandler(USB_HOST_SCSI_EVENT_DETACH, USB_HOST_SCSI_COMMAND_HANDLE_INVALID, scsiObj->context);
+            scsiObj->eventHandler((SYS_MEDIA_BLOCK_EVENT)USB_HOST_SCSI_EVENT_DETACH, USB_HOST_SCSI_COMMAND_HANDLE_INVALID, scsiObj->context);
         }
 
         /* De-register from the file system */
@@ -843,7 +843,7 @@ void _USB_HOST_SCSI_TasksByIndex(int scsiObjIndex)
                     uint8_t * buffer = scsiObj->buffer;
 
                     /* The read and write will be blocking */
-                    scsiObj->mediaGeometry.mediaProperty = (SYS_FS_MEDIA_WRITE_IS_BLOCKING|SYS_FS_MEDIA_READ_IS_BLOCKING);
+                    scsiObj->mediaGeometry.mediaProperty = (SYS_MEDIA_PROPERTY)(SYS_FS_MEDIA_WRITE_IS_BLOCKING|SYS_FS_MEDIA_READ_IS_BLOCKING);
 
                     /* There is one read, write and erase region */
                     scsiObj->mediaGeometry.numReadRegions = 1;
@@ -1023,7 +1023,7 @@ void _USB_HOST_SCSI_TasksByIndex(int scsiObjIndex)
                 if(scsiObj->eventHandler != NULL)
                 {
                     /* Let the client know that device has been detached. */
-                    scsiObj->eventHandler(USB_HOST_SCSI_EVENT_DETACH, USB_HOST_SCSI_COMMAND_HANDLE_INVALID, scsiObj->context);
+                    scsiObj->eventHandler((SYS_MEDIA_BLOCK_EVENT)USB_HOST_SCSI_EVENT_DETACH, USB_HOST_SCSI_COMMAND_HANDLE_INVALID, scsiObj->context);
                 }
                 
                 _USB_HOST_SCSI_FILE_SYSTEM_DEREGISTER(scsiObj->fsHandle);
@@ -1660,7 +1660,7 @@ void _USB_HOST_SCSI_DetachDetectTasks(int scsiObjIndex)
                         if(scsiObj->eventHandler != NULL)
                         {
                             /* Let the client know that device has been detached. */
-                            scsiObj->eventHandler(USB_HOST_SCSI_EVENT_DETACH, USB_HOST_SCSI_COMMAND_HANDLE_INVALID, scsiObj->context);
+                            scsiObj->eventHandler((SYS_MEDIA_BLOCK_EVENT)USB_HOST_SCSI_EVENT_DETACH, USB_HOST_SCSI_COMMAND_HANDLE_INVALID, scsiObj->context);
                         }
                         
                         _USB_HOST_SCSI_FILE_SYSTEM_DEREGISTER(scsiObj->fsHandle);
@@ -2031,7 +2031,7 @@ void USB_HOST_SCSI_TransferTasks(USB_HOST_MSD_LUN_HANDLE lunHandle)
             if(scsiObj->eventHandler != NULL)
             {
                 /* Generate the event */
-                (scsiObj->eventHandler)(USB_HOST_SCSI_EVENT_COMMAND_ERROR, 
+                (scsiObj->eventHandler)((SYS_MEDIA_BLOCK_EVENT)USB_HOST_SCSI_EVENT_COMMAND_ERROR,
                                         (USB_HOST_SCSI_COMMAND_HANDLE)(commandObj), 
                                         scsiObj->context);
             }

@@ -67,8 +67,6 @@ bool SDHC1_IsCmdLineBusy ( void );
 
 bool SDHC1_IsDatLineBusy ( void );
 
-bool SDHC1_IsWriteProtected ( void );
-
 bool SDHC1_IsCardAttached ( void );
 
 bool SDHC1_ClockSet ( uint32_t clock);
@@ -92,9 +90,9 @@ void SDHC1_Initialize( void );
 void SDHC1_CallbackRegister(SDHC_CALLBACK callback, uintptr_t contextHandle);
 
 void SDHC1_CommandSend (
-    uint8_t opCode, 
+    uint8_t opCode,
     uint32_t argument,
-    uint8_t respType, 
+    uint8_t respType,
     SDHC_DataTransferFlags transferFlags
 );
 

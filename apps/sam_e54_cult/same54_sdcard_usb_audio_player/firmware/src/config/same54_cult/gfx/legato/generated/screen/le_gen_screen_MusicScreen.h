@@ -1,7 +1,10 @@
 #ifndef LE_GEN_SCREEN_MUSICSCREEN_H
 #define LE_GEN_SCREEN_MUSICSCREEN_H
 
-#include "gfx/legato/generated/le_gen_init.h"
+#include "gfx/legato/legato.h"
+
+#include "gfx/legato/generated/le_gen_scheme.h"
+#include "gfx/legato/generated/le_gen_assets.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -9,22 +12,20 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
-// widget list for this screen
-// layer 0
-extern leGradientWidget* GradientWidget1;
-extern leButtonWidget* PlayPausebutton;
-extern leButtonWidget* ButtonWidget0;
-extern leSliderWidget* volumecontrol;
-extern leRectangleWidget* RectangleWidget1;
-extern leRectangleWidget* RectangleWidget0;
-extern leLabelWidget* LabelWidget0;
-extern leLabelWidget* LabelWidget1;
-extern leImageWidget* ImageWidget0;
-extern leButtonWidget* ButtonWidget1;
-extern leLabelWidget* LabelWidget2;
-extern leListWheelWidget* ListWheelWidget0;
-extern leLabelWidget* LabelWidget4;
-
+// screen member widget declarations
+extern leGradientWidget* MusicScreen_GradientWidget1;
+extern leButtonWidget* MusicScreen_PlayPausebutton;
+extern leButtonWidget* MusicScreen_ButtonWidget0;
+extern leSliderWidget* MusicScreen_volumecontrol;
+extern leRectangleWidget* MusicScreen_RectangleWidget1;
+extern leRectangleWidget* MusicScreen_RectangleWidget0;
+extern leLabelWidget* MusicScreen_LabelWidget0;
+extern leLabelWidget* MusicScreen_LabelWidget1;
+extern leImageWidget* MusicScreen_ImageWidget0;
+extern leButtonWidget* MusicScreen_ButtonWidget1;
+extern leLabelWidget* MusicScreen_LabelWidget2;
+extern leListWheelWidget* MusicScreen_ListWheelWidget0;
+extern leLabelWidget* MusicScreen_LabelWidget4;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
@@ -36,13 +37,9 @@ void screenUpdate_MusicScreen(); // called when Legato is updating
 
 leWidget* screenGetRoot_MusicScreen(uint32_t lyrIdx); // gets a root widget for this screen
 
-// event handlers
-void MusicScreen_OnShow(void);
-
-void MusicScreen_OnHide(void);
-
-void MusicScreen_OnUpdate(void);
-
+// Screen Events:
+void MusicScreen_OnShow(); // called when this screen is shown
+void MusicScreen_OnHide(); // called when this screen is hidden
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

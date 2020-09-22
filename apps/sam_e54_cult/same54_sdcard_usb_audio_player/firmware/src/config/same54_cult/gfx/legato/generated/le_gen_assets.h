@@ -5,20 +5,23 @@
     Microchip Technology Inc.
 
   File Name:
-    generated/le_gen_assets.h
+    le_gen_assets.h
 
   Summary:
     Header file containing a list of asset specifications for use with the
-    MPLAB Harmony Graphics Stack.
+    Legato Graphics Stack.
+
 
   Description:
     Header file containing a list of asset specifications for use with the
-    MPLAB Harmony Graphics Stack.
+    Legato Graphics Stack.
+
 *******************************************************************************/
+
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C)  Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,6 +42,7 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+
 // DOM-IGNORE-END
 
 #ifndef LE_GEN_ASSETS_H
@@ -52,18 +56,17 @@ extern "C" {
 
 #include "gfx/legato/legato.h"
 
+extern const lePalette leGlobalPalette;
+
 /*****************************************************************************
-* MPLAB Harmony Graphics Asset Location IDs
-*****************************************************************************/
-/*****************************************************************************
-* MPLAB Harmony Graphics Image Assets
-*****************************************************************************/
+ * Legato Graphics Image Assets
+ *****************************************************************************/
 /*********************************
  * Legato Image Asset
  * Name:   mchpLogo
  * Size:   32x32 pixels
- * Format: RLE
- * Mode: RGB_565
+ * Type:   RGB Data
+ * Format: RGB_332
  ***********************************/
 extern leImage mchpLogo;
 
@@ -71,8 +74,8 @@ extern leImage mchpLogo;
  * Legato Image Asset
  * Name:   sdcard_sm
  * Size:   32x32 pixels
- * Format: RLE
- * Mode: RGB_565
+ * Type:   RGB Data
+ * Format: RGB_888
  ***********************************/
 extern leImage sdcard_sm;
 
@@ -80,71 +83,71 @@ extern leImage sdcard_sm;
  * Legato Image Asset
  * Name:   usb_icon_sm
  * Size:   32x32 pixels
- * Format: RLE
- * Mode: RGB_565
+ * Type:   RGB Data
+ * Format: RGB_888
  ***********************************/
 extern leImage usb_icon_sm;
 
 /*********************************
  * Legato Image Asset
  * Name:   mplabharmonylogo
- * Size:   150x111 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   270x200 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage mplabharmonylogo;
 
 /*********************************
  * Legato Image Asset
  * Name:   forward_music_1
- * Size:   110x92 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   225x189 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage forward_music_1;
 
 /*********************************
  * Legato Image Asset
  * Name:   music_icon_1
- * Size:   20x24 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   196x224 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage music_icon_1;
 
 /*********************************
  * Legato Image Asset
  * Name:   music_icon_3
- * Size:   20x20 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   177x177 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage music_icon_3;
 
 /*********************************
  * Legato Image Asset
  * Name:   play_pause_music
- * Size:   83x71 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   192x144 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage play_pause_music;
 
 /*********************************
  * Legato Image Asset
  * Name:   rewind_music_1
- * Size:   110x98 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   225x200 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage rewind_music_1;
 
 /*********************************
  * Legato Image Asset
  * Name:   sdcard1
- * Size:   50x42 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Size:   172x143 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage sdcard1;
 
@@ -152,47 +155,140 @@ extern leImage sdcard1;
  * Legato Image Asset
  * Name:   usbicon
  * Size:   83x49 pixels
- * Format: Raw
- * Mode: ARGB_8888
+ * Type:   RGB Data
+ * Format: RGBA_8888
  ***********************************/
 extern leImage usbicon;
 
+/*********************************
+ * Legato Image Asset
+ * Name:   sdcard1_0
+ * Size:   60x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage sdcard1_0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   forward_music
+ * Size:   100x84 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage forward_music;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   play_pause_music_0
+ * Size:   100x75 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage play_pause_music_0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   rewind_music
+ * Size:   100x89 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage rewind_music;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   music_icon_1_0
+ * Size:   30x34 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage music_icon_1_0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   music_icon_3_0
+ * Size:   30x30 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage music_icon_3_0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Image0
+ * Size:   170x126 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage Image0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Image1
+ * Size:   170x126 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage Image1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   mhc_3_logo
+ * Size:   132x141 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage mhc_3_logo;
+
 /*****************************************************************************
-* MPLAB Harmony Graphics Font Assets
-*****************************************************************************/
+ * Legato Graphics Font Assets
+ *****************************************************************************/
 /*********************************
  * Legato Font Asset
  * Name:         Arial
- * Height:       18
+ * Height:       21
  * Baseline:     13
  * Style:        Antialias
- * Glyph Count:  96
- * Range Count:  1
- * Glyph Ranges: 0x20-0x7F
+ * Glyph Count:  95
+ * Range Count:  16
+ * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont Arial;
 
 /*********************************
  * Legato Font Asset
  * Name:         Arial_sm
- * Height:       18
+ * Height:       21
  * Baseline:     13
  * Style:        Antialias
- * Glyph Count:  96
- * Range Count:  1
- * Glyph Ranges: 0x20-0x7F
+ * Glyph Count:  95
+ * Range Count:  15
+ * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont Arial_sm;
 
 /*********************************
  * Legato Font Asset
+ * Name:         NotoMono_Regular
+ * Height:       37
+ * Baseline:     9
+ * Style:        Plain
+ * Glyph Count:  95
+ * Range Count:  1
+ * Glyph Ranges: 0x20-0x7E
+***********************************/
+extern leRasterFont NotoMono_Regular;
+
+/*********************************
+ * Legato Font Asset
  * Name:         Arial_black_vsm
- * Height:       14
+ * Height:       21
  * Baseline:     10
  * Style:        Antialias
- * Glyph Count:  96
- * Range Count:  1
- * Glyph Ranges: 0x20-0x7F
+ * Glyph Count:  95
+ * Range Count:  3
+ * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont Arial_black_vsm;
 
@@ -201,38 +297,67 @@ extern leRasterFont Arial_black_vsm;
  * Encoding        ASCII
  * Language Count: 1
  * String Count:   24
-*****************************************************************************/
+ *****************************************************************************/
 
 // language IDs
 #define language_default    0
 
 // string IDs
-#define string_Done    0
-#define string_FileNotFound1    1
-#define string_FileNotFound2    2
-#define string_Flashing    3
-#define string_FlashingComplete    4
-#define string_Initializing    5
-#define string_InvalidFile    6
-#define string_Musicplayertitle    7
-#define string_NoMedium    8
-#define string_NoValidMedium    9
-#define string_NoValidMedium2    10
-#define string_Numbers    11
-#define string_Of    12
-#define string_Ok    13
-#define string_RecordCount    14
-#define string_SDCard    15
-#define string_SelectSource    16
-#define string_Title    17
-#define string_USB    18
-#define string_UnknownError    19
-#define string_endstring    20
-#define string_startstring    21
-#define string_stringNumberFiller    22
-#define string_zFileNotFound    23
+#define stringID_NoValidMedium    0
+#define stringID_SelectSource    1
+#define stringID_UnknownError    2
+#define stringID_Title    3
+#define stringID_FileNotFound1    4
+#define stringID_Done    5
+#define stringID_RecordCount    6
+#define stringID_Flashing    7
+#define stringID_NoValidMedium2    8
+#define stringID_startstring    9
+#define stringID_Initializing    10
+#define stringID_endstring    11
+#define stringID_USB    12
+#define stringID_FileNotFound2    13
+#define stringID_NoMedium    14
+#define stringID_Of    15
+#define stringID_Numbers    16
+#define stringID_Musicplayertitle    17
+#define stringID_stringNumberFiller    18
+#define stringID_Ok    19
+#define stringID_zFileNotFound    20
+#define stringID_FlashingComplete    21
+#define stringID_SDCard    22
+#define stringID_InvalidFile    23
 
 extern const leStringTable stringTable;
+
+
+// string list
+extern leTableString string_NoValidMedium;
+extern leTableString string_SelectSource;
+extern leTableString string_UnknownError;
+extern leTableString string_Title;
+extern leTableString string_FileNotFound1;
+extern leTableString string_Done;
+extern leTableString string_RecordCount;
+extern leTableString string_Flashing;
+extern leTableString string_NoValidMedium2;
+extern leTableString string_startstring;
+extern leTableString string_Initializing;
+extern leTableString string_endstring;
+extern leTableString string_USB;
+extern leTableString string_FileNotFound2;
+extern leTableString string_NoMedium;
+extern leTableString string_Of;
+extern leTableString string_Numbers;
+extern leTableString string_Musicplayertitle;
+extern leTableString string_stringNumberFiller;
+extern leTableString string_Ok;
+extern leTableString string_zFileNotFound;
+extern leTableString string_FlashingComplete;
+extern leTableString string_SDCard;
+extern leTableString string_InvalidFile;
+
+void initializeStrings(void);
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

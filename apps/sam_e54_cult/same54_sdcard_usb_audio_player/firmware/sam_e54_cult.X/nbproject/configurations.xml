@@ -24,7 +24,7 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f7" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f8" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/same54_cult/bsp/bsp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="driver" projectFiles="true">
@@ -54,7 +54,7 @@
             <itemPath>../src/config/same54_cult/driver/driver.h</itemPath>
             <itemPath>../src/config/same54_cult/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="gfx" projectFiles="true">
+          <logicalFolder name="f7" displayName="gfx" projectFiles="true">
             <logicalFolder name="f3" displayName="driver" projectFiles="true">
               <logicalFolder name="f1" displayName="ili9488" projectFiles="true">
                 <itemPath>../src/config/same54_cult/gfx/driver/gfx_driver.h</itemPath>
@@ -92,8 +92,8 @@
               </logicalFolder>
               <logicalFolder name="f10" displayName="generated" projectFiles="true">
                 <logicalFolder name="f1" displayName="screen" projectFiles="true">
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/screen/le_gen_screen_default.h</itemPath>
                   <itemPath>../src/config/same54_cult/gfx/legato/generated/screen/le_gen_screen_MusicScreen.h</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/generated/screen/le_gen_screen_default.h</itemPath>
                 </logicalFolder>
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_assets.h</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_harmony.h</itemPath>
@@ -101,6 +101,14 @@
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_scheme.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f5" displayName="image" projectFiles="true">
+                <logicalFolder name="f2" displayName="jpeg" projectFiles="true">
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/jpeg/legato_imagedecoder_jpeg.h</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/jpeg/legato_imagedecoder_jpeg_common.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f3" displayName="png" projectFiles="true">
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/png/legato_imagedecoder_png.h</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/png/lodepng.h</itemPath>
+                </logicalFolder>
                 <logicalFolder name="f1" displayName="raw" projectFiles="true">
                   <itemPath>../src/config/same54_cult/gfx/legato/image/raw/legato_imagedecoder_raw.h</itemPath>
                 </logicalFolder>
@@ -115,6 +123,7 @@
               </logicalFolder>
               <logicalFolder name="f7" displayName="renderer" projectFiles="true">
                 <itemPath>../src/config/same54_cult/gfx/legato/renderer/legato_renderer.h</itemPath>
+                <itemPath>../src/config/same54_cult/gfx/legato/renderer/legato_gpu.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f8" displayName="string" projectFiles="true">
                 <itemPath>../src/config/same54_cult/gfx/legato/string/legato_dynamicstring.h</itemPath>
@@ -224,6 +233,11 @@
               <itemPath>../src/config/same54_cult/gfx/legato/legato.h</itemPath>
               <itemPath>../src/config/same54_cult/gfx/legato/legato_config.h</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/same54_cult/osal/osal.h</itemPath>
+            <itemPath>../src/config/same54_cult/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/same54_cult/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f10" displayName="ccl" projectFiles="true">
@@ -340,17 +354,13 @@
             <itemPath>../src/config/same54_cult/usb/usb_msd.h</itemPath>
             <itemPath>../src/config/same54_cult/usb/scsi.h</itemPath>
           </logicalFolder>
+          <itemPath>../src/config/same54_cult/device.h</itemPath>
           <itemPath>../src/config/same54_cult/user.h</itemPath>
           <itemPath>../src/config/same54_cult/configuration.h</itemPath>
           <itemPath>../src/config/same54_cult/device_cache.h</itemPath>
           <itemPath>../src/config/same54_cult/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/same54_cult/definitions.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/same54_cult/osal/osal.h</itemPath>
-        <itemPath>../src/config/same54_cult/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/same54_cult/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME54P20A_DFP" projectFiles="true">
@@ -398,8 +408,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a_compat.h</itemPath>
           <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -415,6 +423,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -427,6 +436,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="same54_cult" projectFiles="true">
+          <itemPath>../src/config/same54_cult/ATSAME54P20A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -521,33 +535,31 @@
               </logicalFolder>
               <logicalFolder name="f10" displayName="generated" projectFiles="true">
                 <logicalFolder name="f1" displayName="font" projectFiles="true">
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/font/le_gen_font_Arial.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/font/le_gen_font_Arial_black_vsm.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/font/le_gen_font_Arial_sm.c</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/generated/font/le_gen_fonts.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="image" projectFiles="true">
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_forward_music_1.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_mchpLogo.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_mplabharmonylogo.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_music_icon_1.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_music_icon_3.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_play_pause_music.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_rewind_music_1.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_sdcard1.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_sdcard_sm.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_usbicon.c</itemPath>
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_image_usb_icon_sm.c</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/generated/image/le_gen_images.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f3" displayName="screen" projectFiles="true">
-                  <itemPath>../src/config/same54_cult/gfx/legato/generated/screen/le_gen_screen_default.c</itemPath>
                   <itemPath>../src/config/same54_cult/gfx/legato/generated/screen/le_gen_screen_MusicScreen.c</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/generated/screen/le_gen_screen_default.c</itemPath>
                 </logicalFolder>
+                <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_globalpalette.c</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_harmony.c</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_init.c</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_scheme.c</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/generated/le_gen_stringtable.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f5" displayName="image" projectFiles="true">
+                <logicalFolder name="f2" displayName="jpeg" projectFiles="true">
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/jpeg/legato_imagedecoder_jpeg.c</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/jpeg/legato_imagedecoder_jpeg_common.c</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/jpeg/jidctint.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f3" displayName="png" projectFiles="true">
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/png/legato_imagedecoder_png.c</itemPath>
+                  <itemPath>../src/config/same54_cult/gfx/legato/image/png/lodepng.c</itemPath>
+                </logicalFolder>
                 <logicalFolder name="f1" displayName="raw" projectFiles="true">
                   <itemPath>../src/config/same54_cult/gfx/legato/image/raw/legato_imagedecoder_raw.c</itemPath>
                   <itemPath>../src/config/same54_cult/gfx/legato/image/raw/legato_imagedecoder_raw_blend.c</itemPath>
@@ -580,6 +592,7 @@
                 <itemPath>../src/config/same54_cult/gfx/legato/renderer/legato_draw_line.c</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/renderer/legato_draw_rect.c</itemPath>
                 <itemPath>../src/config/same54_cult/gfx/legato/renderer/legato_renderer.c</itemPath>
+                <itemPath>../src/config/same54_cult/gfx/legato/renderer/legato_gpu.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f8" displayName="string" projectFiles="true">
                 <itemPath>../src/config/same54_cult/gfx/legato/string/legato_dynamicstring.c</itemPath>
@@ -820,6 +833,9 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/same54_cult/harmony.prj</itemPath>
+      <itemPath>../src/config/same54_cult/same54_cult.xml</itemPath>
+      <itemPath>../src/config/same54_cult/harmony-manifest-success.yml</itemPath>
+      <itemPath>../src/config/same54_cult/harmony-manifest-failure.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -901,7 +917,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/same54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/same54_cult/system/fs/fat_fs/file_system;../src/config/same54_cult/system/fs/fat_fs/hardware_access"/>
+                  value=";../src/config/same54_cult/system/fs/fat_fs/file_system;../src/config/same54_cult/system/fs/fat_fs/hardware_access;../src;../src/config/same54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -996,7 +1012,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value=";../src/config/same54_cult/system/fs/fat_fs/file_system;../src/config/same54_cult/system/fs/fat_fs/hardware_access;../src;../src/config/same54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

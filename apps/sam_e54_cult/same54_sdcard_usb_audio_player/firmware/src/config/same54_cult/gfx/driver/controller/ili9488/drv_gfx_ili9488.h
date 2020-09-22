@@ -60,15 +60,18 @@ void DRV_ILI9488_Update(void);
 uint32_t DRV_ILI9488_GetLayerCount();
 uint32_t DRV_ILI9488_GetActiveLayer();
 gfxResult DRV_ILI9488_SetActiveLayer(uint32_t idx);
+gfxLayerState DRV_ILI9488_GetLayerState(uint32_t idx);
 gfxResult DRV_ILI9488_BlitBuffer(int32_t x,
                            int32_t y,
-                           gfxPixelBuffer* buf,
-                           gfxBlend gfx);
+                           gfxPixelBuffer* buf);
 void DRV_ILI9488_Swap(void);
 uint32_t DRV_ILI9488_GetSwapCount(void);
+gfxResult DRV_ILI9488_SetPalette(gfxBuffer* palette,
+                                 gfxColorMode mode,
+                                 uint32_t colorCount);
 
 
-static const gfxDisplayDriver ili9488DisplayDriver =
+static const gfxDisplayDriver gfxDriverInterface =
 {
     DRV_ILI9488_GetColorMode,
     DRV_ILI9488_GetBufferCount,
@@ -78,11 +81,13 @@ static const gfxDisplayDriver ili9488DisplayDriver =
     DRV_ILI9488_GetLayerCount,
     DRV_ILI9488_GetActiveLayer,
     DRV_ILI9488_SetActiveLayer,
+    DRV_ILI9488_GetLayerState,
     DRV_ILI9488_BlitBuffer,
     DRV_ILI9488_Swap,
     DRV_ILI9488_GetSwapCount,
-	NULL /* GetFrameBuffer not supported */
-	
+	NULL, /* GetFrameBuffer not supported */
+	DRV_ILI9488_SetPalette,
+	NULL /**< nop ctrlConfig */
 };
 
 #ifdef __cplusplus

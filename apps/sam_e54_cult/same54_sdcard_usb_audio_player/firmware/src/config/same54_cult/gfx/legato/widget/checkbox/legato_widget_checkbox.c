@@ -120,15 +120,15 @@ void _leCheckBoxWidget_Constructor(leCheckBoxWidget* _this)
 
     _this->checked = LE_FALSE;
 
-    _this->widget.borderType = LE_WIDGET_BORDER_NONE;
+    _this->widget.style.borderType = LE_WIDGET_BORDER_NONE;
 
     _this->string = NULL;
 
     _this->imagePosition = LE_RELATIVE_POSITION_LEFTOF;
     _this->imageMargin = DEFAULT_IMAGE_MARGIN;
 
-    _this->widget.halign = LE_HALIGN_LEFT;
-    _this->widget.valign = LE_VALIGN_MIDDLE;
+    _this->widget.style.halign = LE_HALIGN_LEFT;
+    _this->widget.style.valign = LE_VALIGN_MIDDLE;
     
     _this->checkedImage = NULL;
     _this->uncheckedImage = NULL;
@@ -474,7 +474,7 @@ static const leCheckBoxWidgetVTable checkBoxWidgetVTable =
     .getChildCount = (void*)_leWidget_GetChildCount,
     .getChildAtIndex = (void*)_leWidget_GetChildAtIndex,
     .getIndexOfChild = (void*)_leWidget_GetIndexOfChild,
-    .containsDescendent = (void*)_leWidget_ContainsDescendent,
+    .containsDescendant = (void*)_leWidget_ContainsDescendant,
     .getScheme = (void*)_leWidget_GetScheme,
     .setScheme = (void*)_leWidget_SetScheme,
     .getBorderType = (void*)_leWidget_GetBorderType,

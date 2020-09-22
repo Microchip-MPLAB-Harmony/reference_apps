@@ -1,4 +1,3 @@
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
@@ -21,7 +20,6 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
 
 /*******************************************************************************
  Module for Microchip Graphics Library - Legato User Interface Library
@@ -39,11 +37,14 @@
     This module implements the routines to enable edit of library widgets.
 *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
+/** \file legato_editwidget.h
+ * @brief Edit widget functions and definitions.
+ *
+ * @details This module implements the routines to enable edit of library widgets.
+ */
 
 #ifndef LEGATO_EDITWIDGET_H
 #define LEGATO_EDITWIDGET_H
-//DOM-IGNORE-END
 
 #include "gfx/legato/common/legato_common.h"
 #include "gfx/legato/widget/legato_widget.h"

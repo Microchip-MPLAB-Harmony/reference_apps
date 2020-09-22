@@ -88,7 +88,10 @@ leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y)
 
     // reorient touch coordinates if the user interface is rotated
 #if LE_TOUCH_ORIENTATION != 0
-    displayRect = leGetRenderState()->displayRect;
+    displayRect.x = 0;
+    displayRect.y = 0;
+    displayRect.height = leGetRenderState()->dispDriver->getDisplayHeight();
+    displayRect.width = leGetRenderState()->dispDriver->getDisplayWidth();
 #endif
 
 #if LE_TOUCH_ORIENTATION == 0
@@ -115,6 +118,7 @@ leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y)
     if(evt == NULL)
         return LE_FAILURE;
     
+    evt->event.owner = NULL;
     evt->event.id = LE_EVENT_TOUCH_DOWN;
     evt->touchID = id;
     evt->x = pnt.x;
@@ -152,7 +156,10 @@ leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y)
 
     // reorient touch coordinates if the user interface is rotated
 #if LE_TOUCH_ORIENTATION != 0
-    displayRect = leGetRenderState()->displayRect;
+    displayRect.x = 0;
+    displayRect.y = 0;
+    displayRect.height = leGetRenderState()->dispDriver->getDisplayHeight();
+    displayRect.width = leGetRenderState()->dispDriver->getDisplayWidth();
 #endif
 
 #if LE_TOUCH_ORIENTATION == 0
@@ -174,7 +181,8 @@ leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y)
 
     if(evt == NULL)
         return LE_FAILURE;
-    
+
+    evt->event.owner = NULL;
     evt->event.id = LE_EVENT_TOUCH_UP;
     evt->touchID = id;
     evt->x = pnt.x;
@@ -209,7 +217,10 @@ leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y)
         return LE_FAILURE;
 
 #if LE_TOUCH_ORIENTATION != 0
-    displayRect = leGetRenderState()->displayRect;
+    displayRect.x = 0;
+    displayRect.y = 0;
+    displayRect.height = leGetRenderState()->dispDriver->getDisplayHeight();
+    displayRect.width = leGetRenderState()->dispDriver->getDisplayWidth();
 #endif
 
     // find any existing touch moved event and overwrite
@@ -280,6 +291,7 @@ leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y)
                 pnt.x = y;
 #endif
 
+    evt->event.owner = NULL;
     evt->event.id = LE_EVENT_TOUCH_MOVE;
     evt->touchID = id;
     evt->prevX = _state.touch[id].x;
@@ -308,14 +320,37 @@ leEventResult handleTouchDown(leWidgetEvent_TouchDown* evt)
 {
     leWidget* targetWidget = NULL;
     leWidget* rootWidget;
+    int32_t x, y;
     int32_t i;
+
+#if LE_DRIVER_LAYER_MODE == 1
+    gfxLayerState driverLayerState;
+#endif
     
     // find the topmost widget on the topmost layer for the touch event
     for(i = LE_LAYER_COUNT - 1; i >= 0; i--)
     {
         rootWidget = &leGetState()->rootWidget[i];
+
+        x = evt->x;
+        y = evt->y;
+
+
+// all layers look like they're at 0, 0 to legato
+// however, the driver could be rendering them at different coordinates
+// the event coordinates may need to be adjusted to account for this
+#if LE_DRIVER_LAYER_MODE == 1
+        driverLayerState = leGetRenderState()->dispDriver->getLayerState(i);
+
+        // need to remember this offset for subsequent touch down/move events
+        _state.driverAdjustX = driverLayerState.rect.x;
+        _state.driverAdjustY = driverLayerState.rect.y;
+
+        x -= driverLayerState.rect.x;
+        y -= driverLayerState.rect.y;
+#endif
         
-        targetWidget = leUtils_PickFromWidget(rootWidget, evt->x, evt->y);
+        targetWidget = leUtils_PickFromWidget(rootWidget, x, y);
         
         if(targetWidget != NULL)
             break; 
@@ -368,6 +403,11 @@ leBool handleTouchUp(leWidgetEvent_TouchUp* evt)
         
     if(leIsDrawing() == LE_FALSE)
     {
+#if LE_DRIVER_LAYER_MODE == 1
+        evt->x -= _state.driverAdjustX;
+        evt->y -= _state.driverAdjustY;
+#endif
+
         wgt->fn->_handleEvent(wgt, (leEvent*)evt);
 
 #ifdef INPUT_EVENT_DEBUG
@@ -389,6 +429,10 @@ leBool handleTouchMoved(leWidgetEvent_TouchMove* evt)
         
     if(leIsDrawing() == LE_FALSE)
     {
+#if LE_DRIVER_LAYER_MODE == 1
+        evt->x -= _state.driverAdjustX;
+        evt->y -= _state.driverAdjustY;
+#endif
        wgt->fn->_handleEvent(wgt, (leEvent*)evt);
 
 #ifdef INPUT_EVENT_DEBUG        

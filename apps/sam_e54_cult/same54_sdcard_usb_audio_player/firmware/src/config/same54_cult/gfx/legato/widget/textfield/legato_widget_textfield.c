@@ -66,12 +66,16 @@ static void _invalidateText(const leTextFieldWidget* _this)
 static void stringPreinvalidate(const leString* str,
                                 leTextFieldWidget* txt)
 {
+    (void)str; // unused
+
     _invalidateText(txt);
 }
 
 static void stringInvalidate(const leString* str,
                              leTextFieldWidget* txt)
 {
+    (void)str; // unused
+
     _invalidateText(txt);
 }
 
@@ -101,7 +105,7 @@ static void _setCursorFromPoint(leTextFieldWidget* _this,
     leUtils_ArrangeRectangleRelative(&textRect,
                                      leRect_Zero,
                                      widgetRect,
-                                     _this->editWidget.widget.halign,
+                                     _this->editWidget.widget.style.halign,
                                      LE_VALIGN_MIDDLE,
                                      0,
                                      _this->editWidget.widget.margin.left,
@@ -153,12 +157,12 @@ void leTextFieldWidget_Constructor(leTextFieldWidget* _this)
     _this->editWidget.widget.rect.width = DEFAULT_WIDTH;
     _this->editWidget.widget.rect.height = DEFAULT_HEIGHT;
     
-    _this->editWidget.widget.borderType = LE_WIDGET_BORDER_BEVEL;
+    _this->editWidget.widget.style.borderType = LE_WIDGET_BORDER_BEVEL;
 
     leDynamicString_Constructor(&_this->text);
     _this->hintText = NULL;
     
-    _this->editWidget.widget.halign = LE_HALIGN_LEFT;
+    _this->editWidget.widget.style.halign = LE_HALIGN_LEFT;
     _this->cursorPos = 0;
     _this->cursorEnable = LE_TRUE;
     _this->cursorDelay = DEFAULT_CURSOR_TIME;
@@ -277,7 +281,7 @@ static leResult setCursorPosition(leTextFieldWidget* _this,
     return LE_SUCCESS;
 }
 
-const static leString* getString(const leTextFieldWidget* _this)
+static const leString* getString(const leTextFieldWidget* _this)
 {
     LE_ASSERT_THIS();
     
@@ -480,6 +484,8 @@ static void editClear(leTextFieldWidget* _this)
 static void editAccept(leTextFieldWidget* _this)
 {   
     LE_ASSERT_THIS();
+
+    (void)_this; // unused
     
     leSetEditWidget(NULL);
 }
@@ -701,7 +707,7 @@ static const leTextFieldWidgetVTable textFieldWidgetVTable =
     .getChildCount = (void*)_leWidget_GetChildCount,
     .getChildAtIndex = (void*)_leWidget_GetChildAtIndex,
     .getIndexOfChild = (void*)_leWidget_GetIndexOfChild,
-    .containsDescendent = (void*)_leWidget_ContainsDescendent,
+    .containsDescendant = (void*)_leWidget_ContainsDescendant,
     .getScheme = (void*)_leWidget_GetScheme,
     .setScheme = (void*)_leWidget_SetScheme,
     .getBorderType = (void*)_leWidget_GetBorderType,
@@ -723,16 +729,8 @@ static const leTextFieldWidgetVTable textFieldWidgetVTable =
     .installEventFilter = (void*)_leWidget_InstallEventFilter,
     .removeEventFilter = (void*)_leWidget_RemoveEventFilter,
 
-    .update = (void*)_leWidget_Update,
-
-    .touchDownEvent = (void*)_leWidget_TouchDownEvent,
-    .touchUpEvent = (void*)_leWidget_TouchUpEvent,
-    .touchMoveEvent = (void*)_leWidget_TouchMoveEvent,
     .moveEvent = (void*)_leWidget_MoveEvent,
     .resizeEvent = (void*)_leWidget_ResizeEvent,
-    .focusLostEvent = (void*)_leWidget_FocusLostEvent,
-    .focusGainedEvent = (void*)_leWidget_FocusGainedEvent,
-    .languageChangeEvent = (void*)_leWidget_LanguageChangeEvent,
 
     ._handleEvent = (void*)_leWidget_HandleEvent,
     ._validateChildren = (void*)_leWidget_ValidateChildren,

@@ -23,10 +23,13 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+#include "gfx/legato/renderer/legato_gpu.h"
 #include "gfx/legato/renderer/legato_renderer.h"
 
 #include "gfx/legato/common/legato_math.h"
 #include "gfx/legato/datastructure/legato_rectarray.h"
+
+extern leRenderState _rendererState;
 
 leResult leRenderer_HorzLine(int32_t x,
                              int32_t y,
@@ -38,7 +41,7 @@ leResult leRenderer_HorzLine(int32_t x,
     leRect drawRect;
     lePoint pnt;
     int32_t i;
-    
+
     drawRect.x = x;
     drawRect.y = y;
     drawRect.width = w;
@@ -48,12 +51,20 @@ leResult leRenderer_HorzLine(int32_t x,
         return LE_FAILURE;
         
     leRenderer_ClipDrawRect(&drawRect, &clipRect);
-    
+
     pnt.y = clipRect.y;
-    
+
     a = leClampi(0, 255, a);
-    
-    if(a < 255)
+
+    if(a == 0)
+    {
+        return LE_SUCCESS;
+    }
+    else if(leGPU_DrawLine(x, y, x + clipRect.width - 1, y, &clipRect, clr, a) == LE_SUCCESS)
+    {
+        return LE_SUCCESS;
+    }
+    else if(a < 255)
     {
         for(i = 0; i < clipRect.width; i++)
         {
@@ -99,8 +110,16 @@ leResult leRenderer_VertLine(int32_t x,
     pnt.x = clipRect.x;
     
     a = leClampi(0, 255, a);
-    
-    if(a < 255)
+
+    if(a == 0)
+    {
+        return LE_SUCCESS;
+    }
+    else if(leGPU_DrawLine(x, y, x, y + clipRect.height - 1, &clipRect, clr, a) == LE_SUCCESS)
+    {
+        return LE_SUCCESS;
+    }
+    else if(a < 255)
     {
         for(i = 0; i < clipRect.height; i++)
         {
@@ -129,6 +148,8 @@ static void linePutPixel(int32_t x,
                          leColor clr,
                          uint32_t a)
 {
+    (void)a; // unused
+
     leRenderer_PutPixel(x, y, clr);
 }
 
@@ -155,6 +176,10 @@ leResult leRenderer_DrawLine(int32_t x0,
     a = leClampi(0, 255, a);
 
     if(a == 0)
+    {
+        return LE_SUCCESS;
+    }
+    else if(leGPU_DrawLine(x0, y0, x1, y1, &_rendererState.drawRect, clr, a) == LE_SUCCESS)
     {
         return LE_SUCCESS;
     }

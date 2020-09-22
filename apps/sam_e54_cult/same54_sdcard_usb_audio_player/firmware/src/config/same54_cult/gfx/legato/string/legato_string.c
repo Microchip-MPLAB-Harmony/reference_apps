@@ -43,6 +43,7 @@ static leStringVTable stringVTable;
 
 void _leString_Constructor(leString* _this)
 {
+    (void)_this; // unused
 }
 
 void _leString_Destructor(leString* _this)
@@ -161,8 +162,7 @@ leResult _leString_GetLineIndices(const leString* _this,
                 return LE_SUCCESS;
                 
             count += 1;
-                
-            /* TODO test this */
+
             *start = idx + 1;
         }
     }
@@ -262,7 +262,6 @@ leResult _leString_GetCharRect(const leString* _this,
     return LE_FAILURE;
 }
 
-// TODO does not support multiline
 leResult _leString_GetCharIndexAtPoint(const leString* _this,
                                        const lePoint* pt,
                                        uint32_t* charIdx)
@@ -293,7 +292,7 @@ leResult _leString_GetCharIndexAtPoint(const leString* _this,
     for(idx = 0; idx < len; idx++)
     {
         chr = _this->fn->charAt(_this, idx);
-        
+
         if(chr == LE_STRING_LINEBREAK)
         {
             rect.x = 0;

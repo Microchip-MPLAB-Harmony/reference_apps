@@ -65,144 +65,140 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for GFX_DISP_INTF_PIN_BACKLIGHT pin ***/
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 1)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 1)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 1)
-#define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 1)) & 0x01)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 1)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 1)
+#define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 1)) & 0x01)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_PIN                  PORT_PIN_PA01
 
 /*** Macros for GPIO_PC00 pin ***/
 #define GPIO_PC00_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 0)
 #define GPIO_PC00_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 0)
 #define GPIO_PC00_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 0)
-#define GPIO_PC00_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 0)) & 0x01)
 #define GPIO_PC00_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 0)
 #define GPIO_PC00_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 0)
+#define GPIO_PC00_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 0)) & 0x01)
 #define GPIO_PC00_PIN                  PORT_PIN_PC00
 
 /*** Macros for GPIO_PC01 pin ***/
 #define GPIO_PC01_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 1)
 #define GPIO_PC01_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 1)
 #define GPIO_PC01_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 1)
-#define GPIO_PC01_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 1)) & 0x01)
 #define GPIO_PC01_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 1)
 #define GPIO_PC01_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 1)
+#define GPIO_PC01_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 1)) & 0x01)
 #define GPIO_PC01_PIN                  PORT_PIN_PC01
 
 /*** Macros for GPIO_PC02 pin ***/
 #define GPIO_PC02_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 2)
 #define GPIO_PC02_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 2)
 #define GPIO_PC02_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 2)
-#define GPIO_PC02_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 2)) & 0x01)
 #define GPIO_PC02_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 2)
 #define GPIO_PC02_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 2)
+#define GPIO_PC02_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 2)) & 0x01)
 #define GPIO_PC02_PIN                  PORT_PIN_PC02
 
 /*** Macros for GPIO_PC03 pin ***/
 #define GPIO_PC03_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 3)
 #define GPIO_PC03_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 3)
 #define GPIO_PC03_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 3)
-#define GPIO_PC03_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 3)) & 0x01)
 #define GPIO_PC03_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 3)
 #define GPIO_PC03_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 3)
+#define GPIO_PC03_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 3)) & 0x01)
 #define GPIO_PC03_PIN                  PORT_PIN_PC03
 
 /*** Macros for GFX_DISP_INTF_PIN_CS pin ***/
 #define GFX_DISP_INTF_PIN_CS_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 4)
 #define GFX_DISP_INTF_PIN_CS_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 4)
 #define GFX_DISP_INTF_PIN_CS_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 4)
-#define GFX_DISP_INTF_PIN_CS_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 4)) & 0x01)
 #define GFX_DISP_INTF_PIN_CS_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 4)
 #define GFX_DISP_INTF_PIN_CS_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 4)
+#define GFX_DISP_INTF_PIN_CS_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 4)) & 0x01)
 #define GFX_DISP_INTF_PIN_CS_PIN                  PORT_PIN_PB04
 
 /*** Macros for GFX_DISP_INTF_PIN_RD pin ***/
 #define GFX_DISP_INTF_PIN_RD_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 8)
 #define GFX_DISP_INTF_PIN_RD_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 8)
 #define GFX_DISP_INTF_PIN_RD_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 8)
-#define GFX_DISP_INTF_PIN_RD_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
 #define GFX_DISP_INTF_PIN_RD_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 8)
 #define GFX_DISP_INTF_PIN_RD_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 8)
+#define GFX_DISP_INTF_PIN_RD_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
 #define GFX_DISP_INTF_PIN_RD_PIN                  PORT_PIN_PB08
 
 /*** Macros for GPIO_PC04 pin ***/
 #define GPIO_PC04_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 4)
 #define GPIO_PC04_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 4)
 #define GPIO_PC04_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 4)
-#define GPIO_PC04_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 4)) & 0x01)
 #define GPIO_PC04_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 4)
 #define GPIO_PC04_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 4)
+#define GPIO_PC04_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 4)) & 0x01)
 #define GPIO_PC04_PIN                  PORT_PIN_PC04
 
 /*** Macros for GPIO_PC05 pin ***/
 #define GPIO_PC05_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 5)
 #define GPIO_PC05_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 5)
 #define GPIO_PC05_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 5)
-#define GPIO_PC05_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5)) & 0x01)
 #define GPIO_PC05_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 5)
 #define GPIO_PC05_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 5)
+#define GPIO_PC05_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5)) & 0x01)
 #define GPIO_PC05_PIN                  PORT_PIN_PC05
 
 /*** Macros for GPIO_PC06 pin ***/
 #define GPIO_PC06_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 6)
 #define GPIO_PC06_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 6)
 #define GPIO_PC06_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 6)
-#define GPIO_PC06_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 6)) & 0x01)
 #define GPIO_PC06_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 6)
 #define GPIO_PC06_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 6)
+#define GPIO_PC06_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 6)) & 0x01)
 #define GPIO_PC06_PIN                  PORT_PIN_PC06
 
 /*** Macros for GPIO_PC07 pin ***/
 #define GPIO_PC07_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 7)
 #define GPIO_PC07_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 7)
 #define GPIO_PC07_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 7)
-#define GPIO_PC07_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 7)) & 0x01)
 #define GPIO_PC07_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 7)
 #define GPIO_PC07_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 7)
+#define GPIO_PC07_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 7)) & 0x01)
 #define GPIO_PC07_PIN                  PORT_PIN_PC07
 
 /*** Macros for BSP_MAXTOUCH_CHG pin ***/
 #define BSP_MAXTOUCH_CHG_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 16)
 #define BSP_MAXTOUCH_CHG_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 16)
 #define BSP_MAXTOUCH_CHG_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 16)
-#define BSP_MAXTOUCH_CHG_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 16)) & 0x01)
 #define BSP_MAXTOUCH_CHG_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 16)
 #define BSP_MAXTOUCH_CHG_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 16)
+#define BSP_MAXTOUCH_CHG_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 16)) & 0x01)
 #define BSP_MAXTOUCH_CHG_PIN                  PORT_PIN_PC16
 
 /*** Macros for GFX_DISP_INTF_PIN_RESET pin ***/
 #define GFX_DISP_INTF_PIN_RESET_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 18)
 #define GFX_DISP_INTF_PIN_RESET_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 18)
 #define GFX_DISP_INTF_PIN_RESET_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 18)
-#define GFX_DISP_INTF_PIN_RESET_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define GFX_DISP_INTF_PIN_RESET_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 18)
 #define GFX_DISP_INTF_PIN_RESET_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 18)
+#define GFX_DISP_INTF_PIN_RESET_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define GFX_DISP_INTF_PIN_RESET_PIN                  PORT_PIN_PC18
 
 /*** Macros for VBUS pin ***/
 #define VBUS_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 19)
 #define VBUS_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 19)
 #define VBUS_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 19)
-#define VBUS_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 19)) & 0x01)
 #define VBUS_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 19)
 #define VBUS_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 19)
+#define VBUS_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 19)) & 0x01)
 #define VBUS_PIN                  PORT_PIN_PC19
 
 /*** Macros for GFX_DISP_INTF_PIN_RSDC pin ***/
 #define GFX_DISP_INTF_PIN_RSDC_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 17)
 #define GFX_DISP_INTF_PIN_RSDC_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 17)
 #define GFX_DISP_INTF_PIN_RSDC_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 17)
-#define GFX_DISP_INTF_PIN_RSDC_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 17)) & 0x01)
 #define GFX_DISP_INTF_PIN_RSDC_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 17)
 #define GFX_DISP_INTF_PIN_RSDC_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 17)
+#define GFX_DISP_INTF_PIN_RSDC_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 17)) & 0x01)
 #define GFX_DISP_INTF_PIN_RSDC_PIN                  PORT_PIN_PB17
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -1159,7 +1155,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1198,7 +1194,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

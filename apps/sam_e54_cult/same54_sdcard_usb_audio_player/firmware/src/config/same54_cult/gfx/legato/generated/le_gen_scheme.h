@@ -3,14 +3,14 @@
 
 #include "gfx/legato/legato.h"
 
-extern leScheme Backgroundgradientscheme;
-extern leScheme defaultScheme;
-extern leScheme gradientScheme;
-extern leScheme ListWheelScheme;
-extern leScheme NewScheme;
-extern leScheme ProgressScheme;
-extern leScheme volumeScheme;
-extern leScheme whiteScheme;
+extern const leScheme ListWheelScheme;
+extern const leScheme defaultScheme;
+extern const leScheme ProgressScheme;
+extern const leScheme whiteScheme;
+extern const leScheme volumeScheme;
+extern const leScheme gradientScheme;
+extern const leScheme NewScheme;
+extern const leScheme Backgroundgradientscheme;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

@@ -239,12 +239,10 @@ void leWidget_SkinClassic_FillRoundCornerRect(const leRect* rect,
     drawRect.height = radius;
 
     leRenderer_ArcFill(&drawRect,
-                       rect->x + radius,
-                       rect->y + radius,
-                       radius,
                        90,
                        90,
                        radius,
+                       LE_FALSE,
                        clr,
                        LE_ARC_SMOOTH_EDGE,
                        a);
@@ -256,12 +254,10 @@ void leWidget_SkinClassic_FillRoundCornerRect(const leRect* rect,
     drawRect.height = radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x,
-                       drawRect.y + radius,
-                       radius,
                        0,
                        90,
                        radius,
+                       LE_FALSE,
                        clr,
                        LE_ARC_SMOOTH_EDGE,
                        a);
@@ -276,12 +272,10 @@ void leWidget_SkinClassic_FillRoundCornerRect(const leRect* rect,
     //pnt.y = drawRect.y + radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x + radius,
-                       drawRect.y + radius,
-                       radius,
                        180,
                        90,
                        radius,
+                       LE_FALSE,
                        clr,
                        LE_ARC_SMOOTH_EDGE,
                        a);
@@ -296,12 +290,10 @@ void leWidget_SkinClassic_FillRoundCornerRect(const leRect* rect,
     //pnt.y = drawRect.y + radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x + radius,
-                       drawRect.y + radius,
-                       radius,
                        270,
                        90,
                        radius,
+                       LE_FALSE,
                        clr,
                        LE_ARC_SMOOTH_EDGE,
                        a);
@@ -314,13 +306,13 @@ void leWidget_SkinClassic_DrawBackground(leWidget* wgt,
     leRect rect = wgt->fn->rectToScreen(wgt);
 
     //Only support round corners for no or line borders
-    if (wgt->cornerRadius > 0 && 
-        (wgt->borderType == LE_WIDGET_BORDER_NONE || 
-         wgt->borderType == LE_WIDGET_BORDER_LINE))
+    if (wgt->style.cornerRadius > 0 &&
+        (wgt->style.borderType == LE_WIDGET_BORDER_NONE ||
+         wgt->style.borderType == LE_WIDGET_BORDER_LINE))
     {
         leWidget_SkinClassic_FillRoundCornerRect(&rect, 
                                                  clr,
-                                                 wgt->cornerRadius,
+                                                 wgt->style.cornerRadius,
                                                  alpha);
     }    
     else
@@ -337,17 +329,17 @@ void leWidget_SkinClassic_DrawRoundCornerBackground(leWidget* wgt,
     
     leWidget_SkinClassic_FillRoundCornerRect(&rect, 
                                              clr,
-                                             wgt->cornerRadius,
+                                             wgt->style.cornerRadius,
                                              alpha);
 }
 
 void leWidget_SkinClassic_DrawStandardBackground(leWidget* wgt,
                                                  uint32_t alpha)
 {    
-    if(wgt->backgroundType == LE_WIDGET_BACKGROUND_FILL)
+    if(wgt->style.backgroundType == LE_WIDGET_BACKGROUND_FILL)
     {    
         leWidget_SkinClassic_DrawBackground(wgt,
-                                            wgt->scheme->base,
+                                            leScheme_GetRenderColor(wgt->scheme, LE_SCHM_BASE),
                                             alpha);
     }
 }
@@ -394,12 +386,10 @@ void leWidget_SkinClassic_DrawRoundCornerLineBorder(const leRect* rect,
     drawRect.height = radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x + radius,
-                       drawRect.y + radius,
-                       radius,
                        90,
                        90,
                        1,
+                       LE_FALSE,
                        clr,
                        LE_FALSE,
                        a);
@@ -411,12 +401,10 @@ void leWidget_SkinClassic_DrawRoundCornerLineBorder(const leRect* rect,
     drawRect.height = radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x,
-                       drawRect.y + radius,
-                       radius,
                        0,
                        90,
                        1,
+                       LE_FALSE,
                        clr,
                        LE_FALSE,
                        a);
@@ -428,12 +416,10 @@ void leWidget_SkinClassic_DrawRoundCornerLineBorder(const leRect* rect,
     drawRect.height = radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x + radius,
-                       drawRect.y + radius,
-                       radius,
                        180,
                        90,
                        1,
+                       LE_FALSE,
                        clr,
                        LE_FALSE,
                        a);
@@ -445,12 +431,10 @@ void leWidget_SkinClassic_DrawRoundCornerLineBorder(const leRect* rect,
     drawRect.height = radius;
     
     leRenderer_ArcFill(&drawRect,
-                       drawRect.x,
-                       drawRect.y,
-                       radius,
                        270,
                        90,
                        1,
+                       LE_FALSE,
                        clr,
                        LE_FALSE,
                        a);
@@ -603,54 +587,22 @@ void leWidget_SkinClassic_Draw1x2BeveledBorder(const leRect* rect,
                         a);
 }
 
-void leWidget_SkinClassic_DrawBlit(leWidget* wgt,
-                                   lePixelBuffer* buffer,
-                                   uint32_t alpha)
-{
-#if 0
-    leRect widgetRect = leUtils_WidgetLayerRect(wgt);
-    leRect clipRect, imgSrcRect;
-
-    leLayer* layer = leUtils_GetLayer(wgt);
-    
-    imgSrcRect.x = 0;
-    imgSrcRect.y = 0;
-    imgSrcRect.width = widgetRect.width;
-    imgSrcRect.height = widgetRect.height;
-
-    GFX_Set(GFXF_DRAW_MASK_ENABLE, LE_FALSE);
-
-    if(leRectIntersects(&widgetRect, &layer->drawRect) == LE_TRUE)
-    {
-        clipRect = leRectClipAdj(&widgetRect, &layer->drawRect, &imgSrcRect);
-
-        GFX_DrawBlit(buffer,
-                     imgSrcRect.x,
-                     imgSrcRect.y,
-                     imgSrcRect.width,
-                     imgSrcRect.height,
-                     clipRect.x,
-                     clipRect.y);
-    }
-#endif
-}
-
 void leWidget_SkinClassic_DrawStandardLineBorder(leWidget* wgt,
                                                  uint32_t alpha)
 {
     leRect rect = wgt->fn->rectToScreen(wgt);
 
-    if (wgt->cornerRadius == 0)
+    if (wgt->style.cornerRadius == 0)
     {
         leWidget_SkinClassic_DrawLineBorder(&rect,
-                                            wgt->scheme->shadowDark,
+                                            leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
                                             alpha);
     }
     else
     {
         leWidget_SkinClassic_DrawRoundCornerLineBorder(&rect,
-                                                       wgt->scheme->shadowDark,
-                                                       wgt->cornerRadius,
+                                                       leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
+                                                       wgt->style.cornerRadius,
                                                        alpha);
     }
 }
@@ -661,8 +613,8 @@ void leWidget_SkinClassic_DrawStandardRoundCornerLineBorder(leWidget* wgt,
     leRect rect = wgt->fn->rectToScreen(wgt);
 
     leWidget_SkinClassic_DrawRoundCornerLineBorder(&rect,
-                                                   wgt->scheme->shadowDark,
-                                                   wgt->cornerRadius,
+                                                   leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
+                                                   wgt->style.cornerRadius,
                                                    alpha);
 }
 
@@ -672,10 +624,10 @@ void leWidget_SkinClassic_DrawStandardRaisedBorder(leWidget* wgt,
     leRect rect = wgt->fn->rectToScreen(wgt);
 
     leWidget_SkinClassic_Draw2x2BeveledBorder(&rect,
-                                              wgt->scheme->highlightLight,
-                                              wgt->scheme->highlightLight,
-                                              wgt->scheme->shadowDark,
-                                              wgt->scheme->shadow,
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOW),
                                               alpha);
 }
 
@@ -685,10 +637,10 @@ void leWidget_SkinClassic_DrawStandardLoweredBorder(leWidget* wgt,
     leRect rect = wgt->fn->rectToScreen(wgt);
 
     leWidget_SkinClassic_Draw2x2BeveledBorder(&rect,
-                                              wgt->scheme->shadowDark,
-                                              wgt->scheme->shadow,
-                                              wgt->scheme->highlightLight,
-                                              wgt->scheme->highlightLight,
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOW),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
                                               alpha);
 }
 
@@ -698,9 +650,9 @@ void leWidget_SkinClassic_DrawStandardHybridBorder(leWidget* wgt,
     leRect rect = wgt->fn->rectToScreen(wgt);
 
     leWidget_SkinClassic_Draw1x2BeveledBorder(&rect,
-                                              wgt->scheme->highlightLight,
-                                              wgt->scheme->shadowDark,
-                                              wgt->scheme->shadow,
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
+                                              leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOW),
                                               alpha);
 }
 
@@ -709,12 +661,12 @@ void leWidget_SkinClassic_InvalidateBorderAreas(leWidget* wgt)
 	leRect rect, dmgRect;
 	int32_t width, height;
 	
-	if(wgt->borderType == LE_WIDGET_BORDER_NONE)
+	if(wgt->style.borderType == LE_WIDGET_BORDER_NONE)
 	    return;
 	
 	rect = wgt->fn->rectToScreen(wgt);
 	
-	if(wgt->borderType == LE_WIDGET_BORDER_LINE)
+	if(wgt->style.borderType == LE_WIDGET_BORDER_LINE)
 	{
 	    if(rect.width == 0 || rect.height == 0)
 			return;

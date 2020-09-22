@@ -161,7 +161,8 @@ typedef struct leRawDecodeState
     uint32_t sizeY; // the size in Y of the new data
 
     int32_t angle; // rotation angle
-    lePoint origin; // rotation origin
+    lePoint sourceOrigin; // rotation origin
+    lePoint targetOrigin; // rotation origin
 
     uint32_t rowIterator; // the row iterator
     uint32_t colIterator; // the column iterator

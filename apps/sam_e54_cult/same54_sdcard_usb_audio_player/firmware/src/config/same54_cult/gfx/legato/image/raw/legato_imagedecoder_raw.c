@@ -24,7 +24,7 @@
 // DOM-IGNORE-END
 
 
-#include <gfx/legato/image/legato_image.h>
+#include "gfx/legato/image/legato_image.h"
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
 #include "gfx/legato/common/legato_math.h"
@@ -33,6 +33,7 @@
 #include "gfx/legato/image/legato_palette.h"
 #include "gfx/legato/memory/legato_memory.h"
 #include "gfx/legato/renderer/legato_renderer.h"
+#include "gfx/legato/renderer/legato_gpu.h"
 
 #if LE_STREAMING_ENABLED == 1
 
@@ -68,7 +69,7 @@ static void _cleanup(leStreamManager* mgr);
 
 leResult _leRawImageDecoder_SourceIterateSetupStage(leRawDecodeState* state);
 leResult _leRawImageDecoder_TargetIterateSetupStage(leRawDecodeState* state);
-leResult _leRawImageDecoder_RotatedTargetIterateSetupStage(leRawDecodeState* state);
+//leResult _leRawImageDecoder_RotatedTargetIterateSetupStage(leRawDecodeState* state);
 
 leResult _leRawImageDecoder_PostReadStage(leRawDecodeState* state);
 
@@ -192,7 +193,7 @@ static leResult _initLookupStage(leRawDecodeState* state)
 
 static leResult _initConvertStage(leRawDecodeState* state)
 {
-    if(state->source->palette != NULL && state->source->palette->colorMode == state->targetMode)
+    if(state->source->palette != NULL && state->source->palette->buffer.mode == state->targetMode)
         return LE_SUCCESS;
 
     if(state->source->buffer.mode  == state->targetMode)
@@ -270,7 +271,19 @@ static leResult _draw(const leImage* img,
 
     state.globalAlpha = a;
 
-    state.targetMode = LE_GLOBAL_COLOR_MODE;
+    state.targetMode = leRenderer_CurrentColorMode();
+
+    if(img->header.location == LE_STREAM_LOCATION_ID_INTERNAL &&
+       img->format == LE_IMAGE_FORMAT_RAW)
+    {
+        if(leGPU_BlitBuffer(&state.source->buffer,
+                            &state.sourceRect,
+                            &state.destRect,
+                            a) == LE_SUCCESS)
+        {
+            return LE_SUCCESS;
+        }
+    }
 
     if(_leRawImageDecoder_SourceIterateSetupStage(&state) == LE_FAILURE ||
        _initReadStage(&state) == LE_FAILURE ||
@@ -481,9 +494,22 @@ static leResult _resizeDraw(const leImage* src,
     state.sizeX = sizeX;
     state.sizeY = sizeY;
 
-    state.targetMode = LE_GLOBAL_COLOR_MODE;
+    state.targetMode = leRenderer_CurrentColorMode();
 
     state.globalAlpha = a;
+
+
+    if(src->header.location == LE_STREAM_LOCATION_ID_INTERNAL &&
+       src->format == LE_IMAGE_FORMAT_RAW)
+    {
+        if(leGPU_BlitStretchBuffer(&state.source->buffer,
+                                   &state.sourceRect,
+                                   &state.destRect,
+                                   a) == LE_SUCCESS)
+        {
+            return LE_SUCCESS;
+        }
+    }
 
     // iterator setup
     if(_leRawImageDecoder_TargetIterateSetupStage(&state) == LE_FAILURE)
@@ -520,7 +546,8 @@ static leResult _resizeDraw(const leImage* src,
     }
 
     // convert and write
-    if(_initConvertStage(&state) == LE_FAILURE ||
+    if(_initBlendStage(&state) == LE_FAILURE ||
+	   _initConvertStage(&state) == LE_FAILURE ||
        _leRawImageDecoder_FrameBufferWriteStage(&state) == LE_FAILURE)
     {
         return LE_FAILURE;
@@ -753,11 +780,11 @@ static leResult _render(const leImage* src,
 static leResult _rotate(const leImage* src,
                         const leRect* srcRect,
                         leImageFilterMode mode,
-                        const lePoint* origin,
                         int32_t angle,
-                        leImage* target)
+                        leImage** target,
+                        leBool alloc)
 {
-    leRect imgRect, sourceClipRect, drawRect, targetRect, clipRect;
+    leRect imgRect, sourceClipRect, targetRect;
 
     // only allow a new setup if there isn't a current one
     if(state.mode != LE_RAW_MODE_NONE)
@@ -768,14 +795,10 @@ static leResult _rotate(const leImage* src,
 
     // can't blend
     if(mode == LE_IMAGEFILTER_BILINEAR &&
-      (LE_COLOR_MODE_IS_PIXEL(src->buffer.mode) == LE_FALSE ||
-       LE_COLOR_MODE_IS_PIXEL(target->buffer.mode) == LE_FALSE))
+      (LE_COLOR_MODE_IS_PIXEL(src->buffer.mode) == LE_FALSE))
     {
         return LE_FAILURE;
     }
-
-    if(target == NULL)
-        return LE_FAILURE;
 
     memset(&state, 0, sizeof(leRawDecodeState));
 
@@ -791,18 +814,46 @@ static leResult _rotate(const leImage* src,
     // trim the source rectangle to fit
     leRectClip(&imgRect, srcRect, &sourceClipRect);
 
-    drawRect.x = 0;
-    drawRect.y = 0;
-    drawRect.width = sourceClipRect.width;
-    drawRect.height = sourceClipRect.height;
+    if(target == NULL)
+        return LE_FAILURE;
 
     targetRect.x = 0;
     targetRect.y = 0;
-    targetRect.width = target->buffer.size.width;
-    targetRect.height = target->buffer.size.height;
+    targetRect.width = sourceClipRect.width;
+    targetRect.height = sourceClipRect.height;
 
-    /* make sure the dest rect is within the damaged rect area */
-    clipRect = leRectClipAdj(&drawRect, &targetRect, &sourceClipRect);
+    targetRect = leRotatedRectBounds(targetRect, angle);
+
+    if(alloc == LE_TRUE)
+    {
+        *target = leImage_Allocate(targetRect.width, targetRect.height, src->buffer.mode);
+
+        lePixelBufferAreaFill_Unsafe(&(*target)->buffer,
+                                     0,
+                                     0,
+                                     (*target)->buffer.size.width,
+                                     (*target)->buffer.size.height,
+                                     0);
+    }
+    else
+    {
+        if(*target == NULL)
+            return LE_FAILURE;
+
+        /*if((*target)->buffer.size.width < sourceClipRect.width ||
+           (*target)->buffer.size.height < sourceClipRect.height)
+            return LE_FAILURE;*/
+    }
+
+    state.target = *target;
+
+    state.destRect.x = 0;
+    state.destRect.y = 0;
+    state.destRect.width = state.target->buffer.size.width;
+    state.destRect.height = state.target->buffer.size.height;
+
+    if(state.target->buffer.pixels == NULL)
+        return LE_FAILURE;
 
     if(sourceClipRect.width <= 0 || sourceClipRect.height <= 0)
         return LE_FAILURE;
@@ -820,12 +871,12 @@ static leResult _rotate(const leImage* src,
     state.sourceRect = sourceClipRect;
 
     state.angle = angle;
-    state.origin = *origin;
+    state.sourceOrigin.x = state.sourceRect.x + state.sourceRect.width / 2;
+    state.sourceOrigin.y = state.sourceRect.y + state.sourceRect.height / 2;
+    state.targetOrigin.x = state.target->buffer.size.width / 2;
+    state.targetOrigin.y = state.target->buffer.size.height / 2;
 
     state.filterMode = mode;
-    state.target = target;
-
-    state.destRect = clipRect;
 
     state.targetMode = state.target->buffer.mode;
 
@@ -842,9 +893,7 @@ static leResult _rotate(const leImage* src,
     else
     {
         if(_leRawImageDecoder_RotateBilinearPreReadStage(&state) == LE_FAILURE)
-        {
             return LE_FAILURE;
-        }
     }
 
     // read stage
@@ -864,7 +913,8 @@ static leResult _rotate(const leImage* src,
     }
 
     // convert and write
-    if(_initConvertStage(&state) == LE_FAILURE ||
+    if(_initBlendStage(&state) == LE_FAILURE ||
+       _initConvertStage(&state) == LE_FAILURE ||
        _leRawImageDecoder_ImageWriteStage(&state) == LE_FAILURE)
     {
         return LE_FAILURE;
@@ -876,7 +926,6 @@ static leResult _rotate(const leImage* src,
 static leResult _rotateDraw(const leImage* src,
                             const leRect* srcRect,
                             leImageFilterMode mode,
-                            const lePoint* origin,
                             int32_t angle,
                             int32_t x,
                             int32_t y,
@@ -919,8 +968,14 @@ static leResult _rotateDraw(const leImage* src,
 
     // calculate bounds of rotated rectangle
     drawRect = leRotatedRectBounds(imgRect,
-                                   *origin,
                                    angle);
+
+    // center rotated rectangle over original rectangle
+    drawRect.x = imgRect.x + imgRect.width / 2;
+    drawRect.y = imgRect.y + imgRect.height / 2;
+
+    drawRect.x -= drawRect.width / 2;
+    drawRect.y -= drawRect.height / 2;
 
     /* make sure the dest rect is within the damaged rect area */
     leRectClip(&drawRect, &dmgRect, &clipRect);
@@ -944,20 +999,20 @@ static leResult _rotateDraw(const leImage* src,
     // store the target rect dimensions
     state.destRect = clipRect;
 
-    state.targetY = clipRect.y;
-    state.targetX = clipRect.x;
+    state.targetY = 0;
+    state.targetX = 0;
 
     state.angle = angle;
-    state.origin = *origin;
+    //state.sourceOrigin = srcRect->width
 
-    state.targetMode = LE_GLOBAL_COLOR_MODE;
+    state.targetMode = leRenderer_CurrentColorMode();
 
     state.globalAlpha = a;
 
     state.randomRLE = LE_TRUE;
 
     // iterator setup
-    if(_leRawImageDecoder_RotatedTargetIterateSetupStage(&state) == LE_FAILURE)
+    if(_leRawImageDecoder_TargetIterateSetupStage(&state) == LE_FAILURE)
         return LE_FAILURE;
 
     // filter pre read stage
@@ -992,7 +1047,8 @@ static leResult _rotateDraw(const leImage* src,
 
     // convert and write
     if(_initMaskStage(&state) == LE_FAILURE ||
-       _initConvertStage(&state) == LE_FAILURE ||
+		_initBlendStage(&state) == LE_FAILURE ||
+		_initConvertStage(&state) == LE_FAILURE ||
        _leRawImageDecoder_FrameBufferWriteStage(&state) == LE_FAILURE)
     {
         return LE_FAILURE;
@@ -1007,6 +1063,9 @@ static void _cleanup(leStreamManager* mgr)
 static void _decoderCleanup()
 #endif
 {
+#if LE_STREAMING_ENABLED == 1
+    (void)mgr; // unused
+#endif
     int32_t idx;
 
     if(state.mode != LE_RAW_MODE_NONE)
@@ -1092,6 +1151,10 @@ static leBool _isDone(leStreamManager* mgr)
 static leBool _decoderIsDone()
 #endif
 {
+#if LE_STREAMING_ENABLED == 1
+    (void)mgr; // unused
+#endif
+
     return state.done;
 }
 

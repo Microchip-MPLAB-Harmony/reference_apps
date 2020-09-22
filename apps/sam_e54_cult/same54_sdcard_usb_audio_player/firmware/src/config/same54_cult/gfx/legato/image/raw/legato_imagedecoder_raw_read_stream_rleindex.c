@@ -85,6 +85,8 @@ static leResult advanceStage()
 
 static void rleHeaderDataReady(leStream* strm)
 {
+    (void)strm; // unused
+
     // get the header values
     streamReadStage.rleDataSize = (streamReadStage.rleLengthSize & 0xFF00) >> 8;
     streamReadStage.rleLengthSize = (streamReadStage.rleLengthSize & 0xFF);
@@ -96,6 +98,8 @@ static void rleHeaderDataReady(leStream* strm)
 
 static leResult rleHeaderDecode(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     if(streamReadStage.stalled == LE_TRUE)
         return LE_FAILURE;
 
@@ -115,6 +119,7 @@ static leResult rleHeaderDecode(struct StreamReadStage* stage)
 static void irleDataReady(leStream* strm)
 {
     uint32_t i;
+    (void)strm; // unused
 
     // calculate rle block length and get the data
     streamReadStage.rleLength = 0;
@@ -158,6 +163,7 @@ static leResult readIRLEData()
 
 static leResult exec(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
     uint32_t offs;
 
     leRawSourceReadOperation* op;
@@ -319,6 +325,8 @@ static leResult exec_blocking(struct StreamReadStage* stage)
 
 static void cleanup(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     leStream_Close(&streamReadStage.stream);
 }
 

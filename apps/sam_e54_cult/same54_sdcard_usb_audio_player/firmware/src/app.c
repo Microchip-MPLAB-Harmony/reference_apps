@@ -158,20 +158,20 @@ static void App_TimerCallback( uintptr_t context)
 }
 static void deviceselectsourceStateChange()
 {
-    LabelWidget3->fn->setVisible(LabelWidget3, LE_FALSE);
-    ErrorMsgPanel->fn->setVisible(ErrorMsgPanel, LE_TRUE);
-    NoMediumLabel1->fn->setVisible(NoMediumLabel1, LE_TRUE);
-    NoMediumLabel2->fn->setVisible(NoMediumLabel2, LE_TRUE);
-    SelectMediumLabel->fn->setVisible(SelectMediumLabel, LE_FALSE);
+    default_LabelWidget3->fn->setVisible(default_LabelWidget3, LE_FALSE);
+    default_ErrorMsgPanel->fn->setVisible(default_ErrorMsgPanel, LE_TRUE);
+    default_NoMediumLabel1->fn->setVisible(default_NoMediumLabel1, LE_TRUE);
+    default_NoMediumLabel2->fn->setVisible(default_NoMediumLabel2, LE_TRUE);
+    default_SelectMediumLabel->fn->setVisible(default_SelectMediumLabel, LE_FALSE);
 }
 static void deviceConnectionStateChanged()
 {  
-    ErrorMsgPanel->fn->setVisible(ErrorMsgPanel, LE_FALSE);
-    USBButton->fn->setVisible(USBButton, LE_TRUE);
-    SDCardButton->fn->setVisible(SDCardButton, LE_TRUE);
-    SelectMediumPanel->fn->setVisible(SelectMediumPanel, LE_TRUE);
-    LabelWidget3->fn->setVisible(LabelWidget3, LE_FALSE);
-    SelectMediumLabel->fn->setVisible(SelectMediumLabel, LE_TRUE);
+    default_ErrorMsgPanel->fn->setVisible(default_ErrorMsgPanel, LE_FALSE);
+    default_USBButton->fn->setVisible(default_USBButton, LE_TRUE);
+    default_SDCardButton->fn->setVisible(default_SDCardButton, LE_TRUE);
+    default_SelectMediumPanel->fn->setVisible(default_SelectMediumPanel, LE_TRUE);
+    default_LabelWidget3->fn->setVisible(default_LabelWidget3, LE_FALSE);
+    default_SelectMediumLabel->fn->setVisible(default_SelectMediumLabel, LE_TRUE);
     leUpdate(0);
      
 }
@@ -180,8 +180,8 @@ void APP_SDCardButtonPressed(leButtonWidget* btn)
 {
     USE_SDMMC = 1;
     USE_MSDUSB = 0;
-    USBButton->fn->setVisible(USBButton, LE_FALSE);
-    SDCardButton->fn->setVisible(SDCardButton, LE_FALSE);
+    default_USBButton->fn->setVisible(default_USBButton, LE_FALSE);
+    default_SDCardButton->fn->setVisible(default_SDCardButton, LE_FALSE);
 }
 
 static leDynamicString songStr[50];
@@ -225,19 +225,19 @@ void APP_GUI_Tracklist(void){
             for (index = 0; index < (APP_SDCARD_AUDIO_FileCountGet()); index++)
             {
                 songStr[index].fn->setFromCStr(&songStr[index],(char *)_APP_DISPLAY_GetFileName(TablePointer[index].path));
-                ListWheelWidget0->fn->appendItem(ListWheelWidget0);
-                ListWheelWidget0->fn->setItemString(ListWheelWidget0, index, (leString*)&songStr[index]);
+                MusicScreen_ListWheelWidget0->fn->appendItem(MusicScreen_ListWheelWidget0);
+                MusicScreen_ListWheelWidget0->fn->setItemString(MusicScreen_ListWheelWidget0, index, (leString*)&songStr[index]);
                 if((index%2) == 0)
-                    ListWheelWidget0->fn->setItemIcon(ListWheelWidget0, index, &music_icon_1);
+                    MusicScreen_ListWheelWidget0->fn->setItemIcon(MusicScreen_ListWheelWidget0, index, &music_icon_1_0);
                 else
-                    ListWheelWidget0->fn->setItemIcon(ListWheelWidget0, index, &music_icon_3);
+                    MusicScreen_ListWheelWidget0->fn->setItemIcon(MusicScreen_ListWheelWidget0, index, &music_icon_3_0);
             }
             updatedTracklist = 1;
         }
     }
     else
     {
-        LabelWidget4->fn->setVisible(LabelWidget4, LE_TRUE); 
+        MusicScreen_LabelWidget4->fn->setVisible(MusicScreen_LabelWidget4, LE_TRUE); 
         updatedTracklist = 1;
     }
 }
@@ -261,7 +261,7 @@ void APP_Set_GUI_TrackPositionStr( void )
         sprintf( totalTimeStr1, "%02u:%02u", (int)mins, (int)secs);
         startStr.fn->setFromCStr(&startStr, totalTimeStr1);
 
-        LabelWidget1->fn->setString(LabelWidget1, (leString*)&startStr);
+        MusicScreen_LabelWidget1->fn->setString(MusicScreen_LabelWidget1, (leString*)&startStr);
         time = (appData.currPos - sizeof( WAV_FILE_HEADER))/(appData.sampleRate*2*appData.numOfChnls);
 
         mins = time / 60;
@@ -269,14 +269,14 @@ void APP_Set_GUI_TrackPositionStr( void )
         sprintf( currTimeStr, "%02u:%02du", (int)mins, (int)secs);
         endStr.fn->setFromCStr(&endStr, currTimeStr);
 
-        LabelWidget0->fn->setString(LabelWidget0, (leString*)&endStr);
+        MusicScreen_LabelWidget0->fn->setString(MusicScreen_LabelWidget0, (leString*)&endStr);
 
         if (time >= dur)
         {
             appData.state = APP_STATE_CLOSE_FILE;   // if at or past duration, force file to close
         }      
         progress = ((100*(appData.currPos-sizeof( WAV_FILE_HEADER)))/(appData.fileSize-sizeof( WAV_FILE_HEADER)));
-        RectangleWidget0->fn->setSize(RectangleWidget0, (progress*3)+10, 22);
+        MusicScreen_RectangleWidget0->fn->setSize(MusicScreen_RectangleWidget0, (progress*3)+10, 22);
         
   }
 }
@@ -284,7 +284,7 @@ void APP_Set_GUI_TrackPositionStr( void )
 void APP_Get_GUI_Volume( leSliderWidget* sld )
 {
     uint16_t volPercent;
-    volPercent = volumecontrol->fn->getValue( volumecontrol );
+    volPercent = MusicScreen_volumecontrol->fn->getValue( MusicScreen_volumecontrol );
     appData.volume = (volPercent * 255) / 100;
 
     DRV_CODEC_VolumeSet(appData.codecData.handle, DRV_CODEC_CHANNEL_LEFT_RIGHT, appData.volume);
@@ -311,11 +311,11 @@ void updateListview(void)
 {
  int32_t selecteditem = 0;
     if(songSelected == 0){
-        selecteditem = ListWheelWidget0->fn->getSelectedItem(ListWheelWidget0);
+        selecteditem = MusicScreen_ListWheelWidget0->fn->getSelectedItem(MusicScreen_ListWheelWidget0);
         if((selecteditem+1) >= APP_SDCARD_AUDIO_FileCountGet())
-            ListWheelWidget0->fn->setSelectedItem(ListWheelWidget0,0);
+            MusicScreen_ListWheelWidget0->fn->setSelectedItem(MusicScreen_ListWheelWidget0,0);
         else
-            ListWheelWidget0->fn->setSelectedItem(ListWheelWidget0,selecteditem+1);            
+            MusicScreen_ListWheelWidget0->fn->setSelectedItem(MusicScreen_ListWheelWidget0,selecteditem+1);            
     }
 }
 void APP_NextTrackButtonPressed(leButtonWidget* btn)
@@ -333,24 +333,24 @@ void APP_USBButtonPressed(leButtonWidget* btn)
 {
     USE_MSDUSB = 1;
     USE_SDMMC = 0;
-    USBButton->fn->setVisible(USBButton, LE_FALSE);
-    SDCardButton->fn->setVisible(SDCardButton, LE_FALSE);
+    default_USBButton->fn->setVisible(default_USBButton, LE_FALSE);
+    default_SDCardButton->fn->setVisible(default_SDCardButton, LE_FALSE);
 
 }
 void MusicScreen_OnShow(void){
-    PlayPausebutton->fn->setReleasedEventCallback(PlayPausebutton, &APP_PlayPauseButtonPressed);
-    ButtonWidget0->fn->setReleasedEventCallback(ButtonWidget0, &APP_NextTrackButtonPressed);
-    volumecontrol->fn->setValueChangedEventCallback(volumecontrol,&APP_Get_GUI_Volume);
-    ButtonWidget1->fn->setReleasedEventCallback(ButtonWidget1, &APP_rewindtrackButtonPressed);
-    ListWheelWidget0->fn->setSelectedItemChangedEventCallback(ListWheelWidget0,&APP_songSelection);
+    MusicScreen_PlayPausebutton->fn->setReleasedEventCallback(MusicScreen_PlayPausebutton, &APP_PlayPauseButtonPressed);
+    MusicScreen_ButtonWidget0->fn->setReleasedEventCallback(MusicScreen_ButtonWidget0, &APP_NextTrackButtonPressed);
+    MusicScreen_volumecontrol->fn->setValueChangedEventCallback(MusicScreen_volumecontrol,&APP_Get_GUI_Volume);
+    MusicScreen_ButtonWidget1->fn->setReleasedEventCallback(MusicScreen_ButtonWidget1, &APP_rewindtrackButtonPressed);
+    MusicScreen_ListWheelWidget0->fn->setSelectedItemChangedEventCallback(MusicScreen_ListWheelWidget0,&APP_songSelection);
     
     leFixedString_Constructor(&startStr, totalTimeStr, 10);
     startStr.fn->setFont(&startStr, leStringTable_GetStringFont(leGetState()->stringTable,
-                                                              string_endstring,
+                                                              string_endstring.index,
                                                               0));
     leFixedString_Constructor(&endStr, currentTimeStr, 10);
     endStr.fn->setFont(&endStr, leStringTable_GetStringFont(leGetState()->stringTable,
-                                                              string_endstring,
+                                                              string_endstring.index,
                                                               0));
         
 }
@@ -376,8 +376,8 @@ void default_OnHide(void){
 
 void default_OnShow()
 {
-    SDCardButton->fn->setReleasedEventCallback(SDCardButton, &APP_SDCardButtonPressed);
-    USBButton->fn->setReleasedEventCallback(USBButton, &APP_USBButtonPressed);
+    default_SDCardButton->fn->setReleasedEventCallback(default_SDCardButton, &APP_SDCardButtonPressed);
+    default_USBButton->fn->setReleasedEventCallback(default_USBButton, &APP_USBButtonPressed);
 
 }
 

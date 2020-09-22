@@ -109,6 +109,8 @@ void TC4_Compare8bitMatch1Set( uint8_t compareValue );
 
 TC_COMPARE_STATUS TC4_CompareStatusGet( void );
 
+void TC4_CompareCommandSet(TC_COMMAND command);
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

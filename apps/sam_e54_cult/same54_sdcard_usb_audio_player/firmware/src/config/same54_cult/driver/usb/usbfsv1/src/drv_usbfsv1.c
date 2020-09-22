@@ -179,21 +179,8 @@ SYS_MODULE_OBJ DRV_USBFSV1_Initialize
 
             if(drvObj->operationMode == DRV_USBFSV1_OPMODE_HOST)
             {
-                /* The root hub information is applicable for host mode operation. */
-                drvObj->rootHubInfo.rootHubAvailableCurrent = usbInit->rootHubAvailableCurrent;
-                drvObj->rootHubInfo.portIndication = usbInit->portIndication;
-                drvObj->rootHubInfo.portOverCurrentDetect = usbInit->portOverCurrentDetect;
-                drvObj->rootHubInfo.portPowerEnable = usbInit->portPowerEnable;
-
-                drvObj->usbID->HOST.USB_CTRLA |= USB_CTRLA_MODE_HOST;
-
-                /* Prior to device detection the software must set the VBUS is OK
-                 * bit in CTRLB (CTRLB.VBUSOK) register when the VBUS is available. */
-                /* The USB module is notified that the VBUS on the USB line is powered. */
-                drvObj->usbID->HOST.USB_CTRLB |= USB_HOST_CTRLB_VBUSOK_Msk;
-
                 /* Host mode specific driver initialization */
-                _DRV_USBFSV1_HOST_INIT(drvObj, drvIndex);
+                _DRV_USBFSV1_HOST_INIT(drvObj, drvIndex, usbInit);
             }
             else if(drvObj->operationMode == DRV_USBFSV1_OPMODE_DEVICE)
             {
@@ -686,91 +673,6 @@ void DRV_USBFSV1_TRCPT1_Handler(void)
     _DRV_USBFSV1_ISR_TRCPT1(sysObj.drvUSBFSV1Object);
 
 }/* end of USB_Handler() */
-
-// *****************************************************************************
-/* Function:
-    bool DRV_USBFSV1_HOST_Resume(DRV_HANDLE handle)
-
-  Summary:
-    Dynamic implementation of DRV_USBFSV1_HOST_Resume
-    client interface function.
-
-  Description:
-    This is the dynamic implementation of DRV_USBFSV1_HOST_Resume client
-    interface function. Function resumes a suspended BUS.
-
-  Remarks:
-    See drv_USBFSV1.h for usage information.
-*/
-
-bool DRV_USBFSV1_HOST_Resume
-(
-    DRV_HANDLE handle
-)
-{
-    DRV_USBFSV1_OBJ * pusbdrvObj;
-    bool retVal = false;
-
-    /* Check if the handle is valid */
-    if(handle == DRV_HANDLE_INVALID)
-    {
-        SYS_DEBUG(SYS_ERROR_INFO, "\r\nUSB USBFSV1 Driver: Invalid driver handle in DRV_USBFSV1_HOST_Resume().");
-    }
-    else
-    {
-        pusbdrvObj = (DRV_USBFSV1_OBJ *)handle;
-
-        /* Resume the bus */
-        pusbdrvObj->usbID->HOST.USB_CTRLB |= USB_HOST_CTRLB_SOFE_Msk;
-        retVal = true;
-    }
-
-    return (retVal);
-
-}/* end of DRV_USBFSV1_HOST_Resume() */
-
-// *****************************************************************************
-/* Function:
-    bool DRV_USBFSV1_HOST_Suspend(DRV_HANDLE handle)
-
-  Summary:
-    Dynamic implementation of DRV_USBFSV1_HOST_Suspend
-    client interface function.
-
-  Description:
-    This is the dynamic implementation of DRV_USBFSV1_HOST_Suspend client
-    interface function. Function suspends USB BUS.
-
-  Remarks:
-    See drv_USBFSV1.h for usage information.
-*/
-
-bool DRV_USBFSV1_HOST_Suspend
-(
-    DRV_HANDLE handle
-)
-{
-    DRV_USBFSV1_OBJ * pusbdrvObj;
-    bool retVal = false;
-
-    /* Check if the handle is valid */
-    if(handle == DRV_HANDLE_INVALID)
-    {
-        SYS_DEBUG(SYS_ERROR_INFO, "\r\nUSB USBFSV1 Driver: Invalid driver handle in DRV_USBFSV1_HOST_Suspend().");
-    }
-    else
-    {
-        pusbdrvObj = (DRV_USBFSV1_OBJ *)handle;
-
-        /* Suspend the bus */
-        pusbdrvObj->usbID->HOST.USB_CTRLB &= ~USB_HOST_CTRLB_SOFE_Msk;
-
-        retVal = true;
-    }
-
-    return (retVal);
-
-}/* end of DRV_USBFSV1_HOST_Suspend() */
 
 // *****************************************************************************
 /* Function:

@@ -2988,8 +2988,7 @@ void DRV_USBFSV1_HOST_ROOT_HUB_Initialize
 /* Function:
     void DRV_USBFSV1_HOST_EndpointToggleClear
     (
-        DRV_HANDLE client,
-        USB_ENDPOINT endpointAndDirection
+        DRV_USBFSV1_HOST_PIPE_HANDLE pipeHandle
     )
 
   Summary:
@@ -3011,14 +3010,11 @@ void DRV_USBFSV1_HOST_ROOT_HUB_Initialize
     <code>
 
     // This code shows how the USB Host Layer calls the
-    // DRV_USBFSV1_HOST_EndpointToggleClear function. The Endpoint number
-    // and Direction of the endpoint is required to the clear the data
-	// toggle to the endpoint.
+    // DRV_USBFSV1_HOST_EndpointToggleClear function.
 
-    DRV_HANDLE drvHandle;
-    USB_ENDPOINT endpointAndDirection ;
+    DRV_USBFSV1_HOST_PIPE_HANDLE pipeHandle;
 
-    DRV_USBFSV1_HOST_EndpointToggleClear(client, endpointAndDirection);
+    DRV_USBFSV1_HOST_EndpointToggleClear(pipeHandle);
 
     </code>
 
@@ -3028,8 +3024,7 @@ void DRV_USBFSV1_HOST_ROOT_HUB_Initialize
 
 void DRV_USBFSV1_HOST_EndpointToggleClear
 (
-    DRV_HANDLE client,
-    USB_ENDPOINT endpointAndDirection
+    DRV_USBFSV1_HOST_PIPE_HANDLE pipeHandle
 );
 // *****************************************************************************
 // *****************************************************************************

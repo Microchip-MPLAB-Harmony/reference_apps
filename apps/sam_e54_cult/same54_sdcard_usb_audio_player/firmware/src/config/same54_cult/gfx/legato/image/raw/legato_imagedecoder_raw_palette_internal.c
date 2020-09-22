@@ -61,7 +61,7 @@ void _leRawImageDecoder_LookupStage_Internal(leRawDecodeState* state)
     paletteStage.base.state = state;
 
 	paletteStage.base.exec = (leResult(*)(struct leRawDecodeStage *))stage_lookup;
-    paletteStage.paletteSize = leColorInfoTable[state->source->palette->colorMode].size;
+    paletteStage.paletteSize = leColorInfoTable[state->source->palette->buffer.mode].size;
 
     _leRawImageDecoder_InjectStage(state, (void*)&paletteStage);
 }

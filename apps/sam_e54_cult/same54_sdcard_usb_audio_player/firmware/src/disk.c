@@ -280,7 +280,7 @@ void DISK_Tasks()
         case DISK_STATE_NO_AUDIO_FILES:
             appDataPtr->state = APP_STATE_NO_MEDIA;
             diskData.state = DISK_STATE_RUNNING;
-            LabelWidget4->fn->setVisible(LabelWidget4, LE_TRUE); 
+            MusicScreen_LabelWidget4->fn->setVisible(MusicScreen_LabelWidget4, LE_TRUE); 
             break;
             
         default:

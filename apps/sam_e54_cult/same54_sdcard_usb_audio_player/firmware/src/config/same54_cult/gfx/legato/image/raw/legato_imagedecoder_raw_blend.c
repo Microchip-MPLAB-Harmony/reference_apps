@@ -64,7 +64,7 @@ static leResult stage_BlendRGBA8888(leRawDecodeStage* stage)
         resultClr = leRenderer_GetPixel(blendStage.base.state->targetX,
                                         blendStage.base.state->targetY);
 
-        resultClr = leColorConvert(LE_GLOBAL_COLOR_MODE,
+        resultClr = leColorConvert(stage->state->targetMode,
                                    LE_COLOR_MODE_RGBA_8888,
                                    resultClr);
 
@@ -89,7 +89,7 @@ static leResult stage_BlendARGB8888(leRawDecodeStage* stage)
         resultClr = leRenderer_GetPixel(blendStage.base.state->targetX,
                                         blendStage.base.state->targetY);
 
-        resultClr = leColorConvert(LE_GLOBAL_COLOR_MODE,
+        resultClr = leColorConvert(stage->state->targetMode,
                                    LE_COLOR_MODE_ARGB_8888,
                                    resultClr);
 

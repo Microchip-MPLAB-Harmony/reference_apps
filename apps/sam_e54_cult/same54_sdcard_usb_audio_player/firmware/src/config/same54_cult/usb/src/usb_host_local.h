@@ -140,6 +140,15 @@ typedef void *  USB_HOST_IRP_CALLBACK;
 #define USB_HOST_FREE(ptr)          free(ptr)
 #endif
 
+#ifdef DRV_USB_UHP_INSTANCES_NUMBER
+    #define _USB_HOST_InterrutpSourceDisable()  bool eventsStatusRestore = false;\
+                                                eventsStatusRestore = busObj->hcdInterface->hostEventsDisable(busObj->hcdHandle); 
+    #define _USB_HOST_InterrutpSourceEnable()   busObj->hcdInterface->hostEventsEnable(busObj->hcdHandle, eventsStatusRestore);
+#else 
+    #define _USB_HOST_InterrutpSourceDisable()
+    #define _USB_HOST_InterrutpSourceEnable()
+#endif 
+
 // *****************************************************************************
 /*  USB Host Layer Device State Enumeration
 

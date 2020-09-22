@@ -7,17 +7,14 @@
 /* storage control modules to the FatFs module with a defined API.       */
 /*-----------------------------------------------------------------------*/
 
+#include <string.h>
 #include "diskio.h"        /* FatFs lower layer API */
 #include "system/fs/sys_fs_media_manager.h"
-#include <string.h>
-
-#define ALIGN_32_BYTE_MASK  0x0000001F
 
 typedef struct
 {
     SYS_FS_MEDIA_COMMAND_STATUS commandStatus;
     SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle;
-    uint8_t alignedBuffer[FF_MAX_SS] __ALIGNED(32);
 } SYS_FS_DISK_DATA;
 
 static SYS_FS_DISK_DATA CACHE_ALIGN gSysFsDiskData[SYS_FS_MEDIA_NUMBER];
@@ -124,47 +121,17 @@ DRESULT disk_read
     uint32_t count   /* Number of sectors to read (1..128) */
 )
 {
-    uint32_t i;
     DRESULT result = RES_ERROR;
 
-    gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
-
-    /* Use aligned buffer to read if the received buffer address is not Aligned to 32 Bytes */
-    if (((uint32_t)buff & ALIGN_32_BYTE_MASK) != 0)
-    {
-        /* Read One Sector at a Time */
-        for (i = 0; i < count; i++)
-        {
-            gSysFsDiskData[pdrv].commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
-
-            /* submit the read request */
-            gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorRead(pdrv /* DISK 0 */ ,
-                    gSysFsDiskData[pdrv].alignedBuffer /* Destination Sector*/,
-                    sector,
-                    1 /* Number of Sectors */);
-
-            result = disk_checkCommandStatus(pdrv);
-
-            if (result != RES_OK)
-            {
-                break;
-            }
-
-            /* Copy the received data from aligned buffer to actual buffer */
-            memcpy(buff, gSysFsDiskData[pdrv].alignedBuffer, FF_MAX_SS);
-
-            buff += FF_MAX_SS;
-            sector++;
-        }
-    }
-    else
     {
         gSysFsDiskData[pdrv].commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
 
+        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
+
         /* submit the read request */
-        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorRead(pdrv /* DISK 0 */ ,
-                buff /* Destination Sector*/,
-                sector,
+        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorRead(pdrv /* DISK Number */ ,
+                buff /* Destination Buffer*/,
+                sector /* Source Sector */,
                 count /* Number of Sectors */);
 
         result = disk_checkCommandStatus(pdrv);
@@ -186,47 +153,18 @@ DRESULT disk_write
     uint32_t count       /* Number of sectors to write (1..128) */
 )
 {
-    uint32_t i;
     DRESULT result = RES_ERROR;
 
-    gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
-
-    /* Use aligned buffer to write if the received buffer address is not Aligned to 32 Bytes */
-    if (((uint32_t)buff & ALIGN_32_BYTE_MASK) != 0)
-    {
-        for (i = 0; i < count; i++)
-        {
-            /* Copy the actual buffer data into aligned buffer */
-            memcpy(gSysFsDiskData[pdrv].alignedBuffer, buff, FF_MAX_SS);
-
-            gSysFsDiskData[pdrv].commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
-
-            /* Submit the write request to media */
-            gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorWrite(pdrv /* DISK 0 */ ,
-                sector /* Destination Sector*/,
-                gSysFsDiskData[pdrv].alignedBuffer,
-                1 /* Number of Sectors */);
-
-            result = disk_checkCommandStatus(pdrv);
-
-            if (result != RES_OK)
-            {
-                break;
-            }
-
-            buff += FF_MAX_SS;
-            sector++;
-        }
-    }
-    else
     {
         gSysFsDiskData[pdrv].commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
 
+        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
+
         /* Submit the write request to media */
-        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorWrite(pdrv /* DISK 0 */ ,
-            sector /* Destination Sector*/,
-            (uint8_t *)buff,
-            count /* Number of Sectors */);
+        gSysFsDiskData[pdrv].commandHandle = SYS_FS_MEDIA_MANAGER_SectorWrite(pdrv /* DISK Number */ ,
+                sector /* Destination Sector*/,
+                (uint8_t *)buff /* Source Buffer */,
+                count /* Number of Sectors */);
 
         result = disk_checkCommandStatus(pdrv);
     }
@@ -261,10 +199,10 @@ DRESULT disk_ioctl (
         }
         mediaBlockSize = mediaGeometry->geometryTable[0].blockSize;
 
-        if (mediaBlockSize < 512)
+        if (mediaBlockSize < SYS_FS_FAT_MAX_SS)
         {
             /* Perform block to sector translation */
-            numBlocksPerSector = (512 / mediaBlockSize);
+            numBlocksPerSector = (SYS_FS_FAT_MAX_SS / mediaBlockSize);
         }
 
         numSectors = mediaGeometry->geometryTable[0].numBlocks / numBlocksPerSector;
@@ -281,7 +219,7 @@ DRESULT disk_ioctl (
  * FAT FS code. The present time should ideally be updated by a Real time clock
  * hardware module. Since this module is not integrated with Harmony FS framework,
  * a fixed time is set as given by the implementation of the function below.
- 
+
  * This Function is implemented as WEAK so that it can be overriden with
  * implementation to get time from RTC and populate the SYS_FS_TIME structure.
  */
