@@ -65,27 +65,31 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for LED0 pin ***/
 #define LED0_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 18)
 #define LED0_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 18)
 #define LED0_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 18)
-#define LED0_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED0_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 18)
 #define LED0_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 18)
+#define LED0_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED0_PIN                  PORT_PIN_PC18
 
 /*** Macros for ETH_RESET pin ***/
 #define ETH_RESET_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 21)
 #define ETH_RESET_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 21)
 #define ETH_RESET_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 21)
-#define ETH_RESET_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 21)) & 0x01)
 #define ETH_RESET_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 21)
 #define ETH_RESET_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 21)
+#define ETH_RESET_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 21)) & 0x01)
 #define ETH_RESET_PIN                  PORT_PIN_PC21
 
+/*** Macros for SW0 pin ***/
+#define SW0_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 31)) & 0x01)
+#define SW0_PIN                  PORT_PIN_PB31
 
-
+/*** Macros for ADC0_AIN12 pin ***/
+#define ADC0_AIN12_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 0)) & 0x01)
+#define ADC0_AIN12_PIN                  PORT_PIN_PB00
 // *****************************************************************************
 /* PORT Group
 
@@ -1042,7 +1046,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1081,7 +1085,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
