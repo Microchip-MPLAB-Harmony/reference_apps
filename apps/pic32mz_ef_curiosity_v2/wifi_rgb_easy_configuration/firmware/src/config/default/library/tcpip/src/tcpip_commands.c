@@ -48,7 +48,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include "tcpip/src/tcpip_private.h"
 #include "tcpip/tcpip_manager.h"
 
-#include "system/console/sys_console.h"
 #include "system/debug/sys_debug.h"
 #include "system/command/sys_command.h"
 
@@ -197,7 +196,8 @@ static int _Command_UdpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 #endif  // (TCPIP_UDP_COMMANDS)
 
 #if (TCPIP_TCP_COMMANDS)
-static int _Command_TcpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+static void _Command_TcpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+static void _Command_TcpTrace(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 #endif  // (TCPIP_TCP_COMMANDS)
 
 #if (TCPIP_PACKET_LOG_ENABLE)
@@ -453,7 +453,8 @@ static const SYS_CMD_DESCRIPTOR    tcpipCmdTbl[]=
     {"udpinfo",     (SYS_CMD_FNC)_Command_UdpInfo,              ": Check UDP statistics"},
 #endif  // (TCPIP_UDP_COMMANDS)
 #if (TCPIP_TCP_COMMANDS)
-    {"tcpinfo",     (SYS_CMD_FNC)_Command_TcpInfo,              ": Check TCP statistics"},
+    {"tcpinfo",     _Command_TcpInfo,                           ": Check TCP statistics"},
+    {"tcptrace",    _Command_TcpTrace,                          ": Enable TCP trace"},
 #endif  // (TCPIP_TCP_COMMANDS)
 #if (TCPIP_PACKET_LOG_ENABLE)
     {"plog",        (SYS_CMD_FNC)_Command_PktLog,               ": PKT flight log"},
@@ -470,7 +471,6 @@ static const SYS_CMD_DESCRIPTOR    tcpipCmdTbl[]=
 #if defined(TCPIP_STACK_USE_FTP_CLIENT)  && defined(TCPIP_FTPC_COMMANDS)
     {"ftpc", (SYS_CMD_FNC)_Command_FTPC_Service,   ": Connect FTP Client to Server"},
 #endif  // (TCPIP_STACK_USE_FTP_CLIENT)    
-    
 };
 
 bool TCPIP_Commands_Initialize(const TCPIP_STACK_MODULE_CTRL* const stackCtrl, const TCPIP_COMMAND_MODULE_CONFIG* const pCmdInit)
@@ -761,7 +761,7 @@ static int _Command_DHCPLeaseInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** 
         nextLease = TCPIP_DHCPS_LeaseEntryGet(netH, &leaseEntry, prevLease);
         if(!nextLease)
         {
-            (*pCmdIO->pCmdApi->print)(cmdIoParam, " \n\r No more entry present \r\n", 0);
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, " \r\n No more entry present \r\n", 0);
         }
         if(nextLease)
         {   // valid info
@@ -917,6 +917,18 @@ static int _CommandDhcpOptions(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** arg
                     bootName = dhcpInfo.bootFileName;
                 }
                 (*pCmdIO->pCmdApi->print)(cmdIoParam, "DHCP boot name: %s\r\n", bootName);
+
+                if(dhcpInfo.timeServersNo)
+                {
+                    TCPIP_Helper_IPAddressToString(dhcpInfo.timeServers, addBuff, sizeof(addBuff));
+                }
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "DHCP Time servers: %d, %s\r\n", dhcpInfo.timeServersNo, dhcpInfo.timeServersNo ? addBuff: "None");
+
+                if(dhcpInfo.ntpServersNo)
+                {
+                    TCPIP_Helper_IPAddressToString(dhcpInfo.ntpServers, addBuff, sizeof(addBuff));
+                }
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "DHCP NTP servers: %d, %s\r\n", dhcpInfo.ntpServersNo, dhcpInfo.ntpServersNo ? addBuff :  "None");
             }
         }
         else
@@ -2610,7 +2622,7 @@ static int _Command_HeapInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
             int currLowHitMem = 0;
             int currHiHitMem = 0;
 
-            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "TCPIP Heap distribution: \n\r");
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "TCPIP Heap distribution: \r\n");
 
             for(ix = 0; ix < nEntries; ix++)
             {
@@ -2624,22 +2636,22 @@ static int _Command_HeapInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
                     {
                         if(entryPrint == 0)
                         {
-                            (*pCmdIO->pCmdApi->print)(cmdIoParam, "[%4d,    %5d]:\n\r", distEntry.lowLimit, distEntry.highLimit);
-                            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tcurr hits: %d, \n\r", distEntry.currHits);
+                            (*pCmdIO->pCmdApi->print)(cmdIoParam, "[%4d,    %5d]:\r\n", distEntry.lowLimit, distEntry.highLimit);
+                            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tcurr hits: %d, \r\n", distEntry.currHits);
                             currLowHitMem += distEntry.currHits * distEntry.lowLimit;
                             currHiHitMem += distEntry.currHits * distEntry.highLimit;
                             entryPrint = 1;
                         }
-                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t mod: %d, \thits: %d, \n\r", pMDist->modId, pMDist->modHits);
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t mod: %d, \thits: %d, \r\n", pMDist->modId, pMDist->modHits);
                     }
                 }
                 if(distEntry.gHits)
                 {
-                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t mod: xx \thits: %d, \n\r", distEntry.gHits);
+                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t mod: xx \thits: %d, \r\n", distEntry.gHits);
                 }
             }
 
-            (*pCmdIO->pCmdApi->print)(cmdIoParam, "curr Low Lim: %d, curr Hi Lim: %d, max Free: %d, min Free: %d\n\r", currLowHitMem, currHiHitMem, heapSize - currLowHitMem, heapSize - currHiHitMem);
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "curr Low Lim: %d, curr Hi Lim: %d, max Free: %d, min Free: %d\r\n", currLowHitMem, currHiHitMem, heapSize - currLowHitMem, heapSize - currHiHitMem);
         }
 #endif  // defined(TCPIP_STACK_DRAM_DEBUG_ENABLE) 
 
@@ -4242,26 +4254,70 @@ static int _Command_UdpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 
 
 #if (TCPIP_TCP_COMMANDS)
-static int _Command_TcpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
-{
-    int  sktNo, ix;
+static void _Command_TcpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{   // tcpinfo <n>
+    int  sktNo, ix, startIx, stopIx;
     TCP_SOCKET_INFO sktInfo;
-
 
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
     sktNo = TCPIP_TCP_SocketsNumberGet();
+    
+    if(argc > 1)
+    {
+        startIx = atoi(argv[1]);
+        stopIx = startIx + 1;
+    }
+    else
+    {
+        startIx = 0;
+        stopIx = sktNo;
+    }
+
     (*pCmdIO->pCmdApi->print)(cmdIoParam, "TCP sockets: %d \r\n", sktNo);
-    for(ix = 0; ix < sktNo; ix++)
+    for(ix = startIx; ix < stopIx; ix++)
     {
         if(TCPIP_TCP_SocketInfoGet(ix, &sktInfo))
         {
-            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tsktIx: %d, addType: %d, remotePort: %d, localPort: %d, rxSize: %d, txSize: %d, state: %d, rxPend: %d, txPend: %d\r\n",
-                    ix, sktInfo.addressType, sktInfo.remotePort, sktInfo.localPort, sktInfo.rxSize, sktInfo.txSize, sktInfo.state, sktInfo.rxPending, sktInfo.txPending);
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tsktIx: %d, addType: %d, remotePort: %d, localPort: %d, flags: 0x%02x\r\n",
+                    ix, sktInfo.addressType, sktInfo.remotePort, sktInfo.localPort, sktInfo.flags);
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\trxSize: %d, txSize: %d, state: %d, rxPend: %d, txPend: %d\r\n",
+                    sktInfo.rxSize, sktInfo.txSize, sktInfo.state, sktInfo.rxPending, sktInfo.txPending);
         }
     }
+}
 
-    return true;
+static void _Command_TcpTrace(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{   // tcptrace on/off n
+
+    int     sktNo;
+    bool    traceOn;
+
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    
+    while(argc >= 3)
+    {
+        sktNo = atoi(argv[2]);
+        if(strcmp(argv[1], "on") == 0)
+        {
+            traceOn = true;
+        }
+        else if(strcmp(argv[1], "off") == 0)
+        {
+            traceOn = false;
+        }
+        else
+        {
+            break;
+        }
+
+        bool res = TCPIP_TCP_SocketTraceSet(sktNo, traceOn);
+
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "tcp trace %s for socket: %d %s\r\n", argv[1], sktNo, res ? "success" : "failed");
+        return;
+    }
+
+    (*pCmdIO->pCmdApi->msg)(cmdIoParam, "usage: tcptrace on/off n\r\n");
 }
 
 #endif  // (TCPIP_TCP_COMMANDS)
@@ -5534,11 +5590,14 @@ static int _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
         if ((argc < 2)||(argc > 5))
         {
             (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: ftpc nlist -p <server_pathname><filename_to_savelist>\r\n");
-            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: ftpc -p nlist test test.txt\r\n");
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: ftpc nlist -p test.txt\r\n");
             return false;
         }
 
-        ftpcDataConn.ftpcIsPassiveMode = false; 	
+        ftpcDataConn.ftpcIsPassiveMode = false;
+        ftpcDataConn.ftpcDataTxBuffSize = 0;
+        ftpcDataConn.ftpcDataRxBuffSize = 0;
+        
         for(uint8_t i =1; i < argc; i++)
         {
             if(strcmp("-p",argv[i])==0)
@@ -5582,11 +5641,14 @@ static int _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
         if ((argc < 2)||(argc > 5))
         {
             (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: ftpc ls -p <server_pathname><filename_to_savelist>\r\n");
-            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: ftpc -p ls test list.txt\r\n");
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: ftpc ls -p test list.txt\r\n");
             return false;
         }
 
-        ftpcDataConn.ftpcIsPassiveMode = false; 	
+        ftpcDataConn.ftpcIsPassiveMode = false;
+        ftpcDataConn.ftpcDataTxBuffSize = 0;
+        ftpcDataConn.ftpcDataRxBuffSize = 0;
+        
         for(uint8_t i =1; i < argc; i++)
         {
             if(strcmp("-p",argv[i])==0)
@@ -5621,11 +5683,33 @@ static int _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
     else
     {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "FTPC - Invalid Command\r\n");
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Supported Commands are,\r\n \
+        connect - Connect to FTP Server\r\n \
+        disconnect - Disconnect from FTP Server\r\n \
+        login - Login to FTP Server\r\n \
+        pwd - Print Working Directory\r\n \
+        mkdir - Create new Directory\r\n \
+        rmdir - Remove Directory\r\n \
+        cd - Change Directory\r\n \
+        cdup - Change to root Directory\r\n \
+        quit - Exits from FTP\r\n \
+        get - Get file from FTP Server\r\n \
+        put - Send file to FTP Server\r\n \
+        dele - Delete File\r\n \
+        ls - Lists files in Current Directory\r\n \
+        nlist - Name of files in Current Directory\r\n \
+        pasv - Enable Passive FTP session\r\n \
+        port - Send port number for Active FTP session\r\n \
+        type - Set file transfer type\r\n \
+        stru - Set File Structure\r\n \
+        mode - Set Transfer mode\r\n");
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "For command specific help, enter 'ftpc <command>'\r\n");
     }
     return false;
 }
 
 #endif // defined(TCPIP_STACK_USE_FTP_CLIENT)
+
 #endif // defined(TCPIP_STACK_COMMAND_ENABLE)
 
 

@@ -80,13 +80,13 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* TIME System Service Configuration Options */
-#define SYS_TIME_INDEX_0                     0
-#define SYS_TIME_MAX_TIMERS                  5
-#define SYS_TIME_HW_COUNTER_WIDTH            32
-#define SYS_TIME_HW_COUNTER_PERIOD           4294967295U
-#define SYS_TIME_HW_COUNTER_HALF_PERIOD	     (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY         200000000
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES      (620)
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (32)
+#define SYS_TIME_HW_COUNTER_PERIOD                  (4294967295U)
+#define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (200000000)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (620)
 
 #define SYS_CONSOLE_INDEX_0                       0
 
@@ -157,6 +157,7 @@ extern "C" {
 #define DRV_SPI_INSTANCES_NUMBER              1
 
 /*** WiFi WINC Driver Configuration ***/
+#define WDRV_WINC_GPIO_SOURCE               GPIO_PIN_RK0
 #define WDRV_WINC_SPI_INDEX                 DRV_SPI_INDEX_0
 #define WDRV_WINC_NETWORK_MODE_ETHERNET
 #define WDRV_WINC_DEVICE_WINC1500
@@ -196,7 +197,7 @@ extern "C" {
 #define TCPIP_DNS_CLIENT_CACHE_DEFAULT_TTL_VAL		1200
 #define TCPIP_DNS_CLIENT_CACHE_UNSOLVED_ENTRY_TMO	10
 #define TCPIP_DNS_CLIENT_LOOKUP_RETRY_TMO			5
-#define TCPIP_DNS_CLIENT_MAX_HOSTNAME_LEN			32
+#define TCPIP_DNS_CLIENT_MAX_HOSTNAME_LEN			64
 #define TCPIP_DNS_CLIENT_MAX_SELECT_INTERFACES		4
 #define TCPIP_DNS_CLIENT_DELETE_OLD_ENTRIES			true
 #define TCPIP_DNS_CLIENT_USER_NOTIFICATION   false
@@ -224,7 +225,7 @@ extern "C" {
 #define TCPIP_TCP_DELAYED_ACK_TIMEOUT		    		100
 #define TCPIP_TCP_FIN_WAIT_2_TIMEOUT		    		5000
 #define TCPIP_TCP_KEEP_ALIVE_TIMEOUT		    		10000
-#define TCPIP_TCP_CLOSE_WAIT_TIMEOUT		    		200
+#define TCPIP_TCP_CLOSE_WAIT_TIMEOUT		    		0
 #define TCPIP_TCP_MAX_RETRIES		            		5
 #define TCPIP_TCP_MAX_UNACKED_KEEP_ALIVES			6
 #define TCPIP_TCP_MAX_SYN_RETRIES		        	3
@@ -247,6 +248,10 @@ extern "C" {
 #define TCPIP_DHCP_CLIENT_CONNECT_PORT              68
 #define TCPIP_DHCP_SERVER_LISTEN_PORT               67
 #define TCPIP_DHCP_CLIENT_ENABLED                   true
+#define TCPIP_DHCP_USE_OPTION_TIME_SERVER           0
+#define TCPIP_DHCP_TIME_SERVER_ADDRESSES            0
+#define TCPIP_DHCP_USE_OPTION_NTP_SERVER            0
+#define TCPIP_DHCP_NTP_SERVER_ADDRESSES             0
 
 
 

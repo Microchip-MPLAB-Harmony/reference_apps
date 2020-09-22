@@ -62,7 +62,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #define TCPIP_HTTP_NET_DEBUG_MASK_CONN_TMO        (0x0080)
 
 // enable HTTP debugging levels
-#define TCPIP_HTTP_NET_DEBUG_LEVEL  (TCPIP_HTTP_NET_DEBUG_MASK_BASIC | TCPIP_HTTP_NET_DEBUG_MASK_CHUNK_INFO)
+#define TCPIP_HTTP_NET_DEBUG_LEVEL                (0)
 
 
 // the maximum length of a chunk header for a 32 bit chunk length:
@@ -160,7 +160,7 @@ typedef struct _tag_TCPIP_HTTP_FILE_BUFF_DCPT
     struct _tag_TCPIP_HTTP_FILE_BUFF_DCPT*    next;    // valid single list node
     uint16_t    fileBufferSize;    // size of the chunk buffer: without header/trailer, just the active data: TCPIP_HTTP_NET_FILE_PROCESS_BUFFER_SIZE
     uint16_t    fileBufferTotSize;  // TCPIP_HTTP_CHUNK_HEADER_LEN + TCPIP_HTTP_NET_FILE_PROCESS_BUFFER_SIZE + TCPIP_HTTP_CHUNK_FINAL_TRAILER_LEN + 1   
-    char        fileBuffer[0];      // buffer that's used for storage when a dynamic/binary file is output
+    char        fileBuffer[];       // buffer that's used for storage when a dynamic/binary file is output
                                     // NOTE: this buffer is also used to store the TCPIP_HTTP_DYN_VAR_DCPT and TCPIP_HTTP_DYN_ARG_DCPT[] 
                                     // when a dynamic variable is passed to the user!
 }TCPIP_HTTP_FILE_BUFF_DCPT;
@@ -245,7 +245,7 @@ typedef struct
     TCPIP_HTTP_DYN_VAR_DCPT         dynDcpt;        // this is what's passed to the user
                                                     // also stores the dynamic variable context across multiple calls
 
-    TCPIP_HTTP_DYN_ARG_DCPT         dynArgs[0];     // storing the dynamic variable argument descriptors  
+    TCPIP_HTTP_DYN_ARG_DCPT         dynArgs[];      // storing the dynamic variable argument descriptors  
                                                     // strings are stored in the fileBuffer
 }TCPIP_HTTP_DYNVAR_ALLOC_DCPT;   
 

@@ -1,21 +1,12 @@
-MPLAB Harmony v3 "wireless" repository (revision v3.0.0) doesn't support winc driver for PIC32 devices. 
+MPLAB Harmony v3 "wireless" repository (revision v3.2.0) doesn't fully support winc driver for PIC32 devices. 
 This project(wifi_rgb_easy_configuration_demo) has been created using the patch (in folder "wifi_repo_patch") 
 discussed in the following steps.
 
-1. To reconfigure or regenerate the project (wifi_rgb_easy_configuration_demo), Apply the patch by following below steps
-    a. Close the project and Harmony 3 configurator before applying the patch.
-    b. Make sure your "wireless" repository is intact with revision v3.0.0.
-    c. Copy and paste "drv_winc.py" from 
-       "your_downloaded_folder\wifi_rgb_easy_configuration\wifi_repo_patch\drv_winc.py" to 
-       "your_harmony_repo\wireless\driver\winc\config\drv_winc.py"
-    d. Copy and paste "wdrv_winc_eint.c" from 
-       "your_downloaded_folder\wifi_rgb_easy_configuration\wifi_repo_patch\wdrv_winc_eint.c" to 
-       "your_project_path\wifi_rgb_easy_configuration\firmware\src\config\default\driver\winc\dev\gpio\wdrv_winc_eint.c"
-    e. Copy and paste "wdrv_winc_spi.c" from 
+1. After reconfigure or regenerating the project (wifi_rgb_easy_configuration_demo), you may see build errors. Apply the patch by following below steps
+    a. Copy and paste "wdrv_winc_spi.c" from 
        "your_downloaded_folder\wifi_rgb_easy_configuration\wifi_repo_patch\wdrv_winc_spi.c" to 
        "your_project_path\wifi_rgb_easy_configuration\firmware\src\config\default\driver\winc\dev\spi\wdrv_winc_spi.c"       
-    f. Now, you can open the project in MPLAB X IDE, Launch Harmony 3 configurator and reconfigure/regenerate.
-    g. After regeneration remove/delete generated "mpfs_img2.c" file from the project before building.
+    b. After regeneration remove/delete generated "mpfs_img2.c" file from the project before building.
        
 Note: 
 1. The exisiting demo application (wifi_rgb_easy_configuration_demo) builds and works without the application of the patch discussed above.

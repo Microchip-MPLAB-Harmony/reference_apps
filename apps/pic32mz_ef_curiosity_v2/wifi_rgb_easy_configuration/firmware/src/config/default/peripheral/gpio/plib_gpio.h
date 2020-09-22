@@ -61,31 +61,34 @@
 // *****************************************************************************
 // *****************************************************************************
 
+
 /*** Macros for GPIO_RK0 pin ***/
 #define GPIO_RK0_Set()               (LATKSET = (1<<0))
 #define GPIO_RK0_Clear()             (LATKCLR = (1<<0))
 #define GPIO_RK0_Toggle()            (LATKINV= (1<<0))
-#define GPIO_RK0_Get()               ((PORTK >> 0) & 0x1)
 #define GPIO_RK0_OutputEnable()      (TRISKCLR = (1<<0))
 #define GPIO_RK0_InputEnable()       (TRISKSET = (1<<0))
+#define GPIO_RK0_Get()               ((PORTK >> 0) & 0x1)
+#define GPIO_RK0_PIN                  GPIO_PIN_RK0
 #define GPIO_RK0_InterruptEnable()   (CNENKSET = (1<<0))
 #define GPIO_RK0_InterruptDisable()  (CNENKCLR = (1<<0))
-#define GPIO_RK0_PIN                  GPIO_PIN_RK0
+
 /*** Macros for WDRV_WINC_RESETN pin ***/
 #define WDRV_WINC_RESETN_Set()               (LATKSET = (1<<4))
 #define WDRV_WINC_RESETN_Clear()             (LATKCLR = (1<<4))
 #define WDRV_WINC_RESETN_Toggle()            (LATKINV= (1<<4))
-#define WDRV_WINC_RESETN_Get()               ((PORTK >> 4) & 0x1)
 #define WDRV_WINC_RESETN_OutputEnable()      (TRISKCLR = (1<<4))
 #define WDRV_WINC_RESETN_InputEnable()       (TRISKSET = (1<<4))
+#define WDRV_WINC_RESETN_Get()               ((PORTK >> 4) & 0x1)
 #define WDRV_WINC_RESETN_PIN                  GPIO_PIN_RK4
+
 /*** Macros for WDRV_WINC_CHIP_EN pin ***/
 #define WDRV_WINC_CHIP_EN_Set()               (LATKSET = (1<<6))
 #define WDRV_WINC_CHIP_EN_Clear()             (LATKCLR = (1<<6))
 #define WDRV_WINC_CHIP_EN_Toggle()            (LATKINV= (1<<6))
-#define WDRV_WINC_CHIP_EN_Get()               ((PORTK >> 6) & 0x1)
 #define WDRV_WINC_CHIP_EN_OutputEnable()      (TRISKCLR = (1<<6))
 #define WDRV_WINC_CHIP_EN_InputEnable()       (TRISKSET = (1<<6))
+#define WDRV_WINC_CHIP_EN_Get()               ((PORTK >> 6) & 0x1)
 #define WDRV_WINC_CHIP_EN_PIN                  GPIO_PIN_RK6
 
 
@@ -323,52 +326,52 @@ typedef struct {
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-    GPIO_PortWrite(pin>>4, (uint32_t)(0x1) << (pin & 0xF), (uint32_t)(value) << (pin & 0xF));
+    GPIO_PortWrite((GPIO_PORT)(pin>>4), (uint32_t)(0x1) << (pin & 0xF), (uint32_t)(value) << (pin & 0xF));
 }
 
 static inline bool GPIO_PinRead(GPIO_PIN pin)
 {
-    return (bool)(((GPIO_PortRead(pin>>4)) >> (pin & 0xF)) & 0x1);
+    return (bool)(((GPIO_PortRead((GPIO_PORT)(pin>>4))) >> (pin & 0xF)) & 0x1);
 }
 
 static inline bool GPIO_PinLatchRead(GPIO_PIN pin)
 {
-    return (bool)((GPIO_PortLatchRead(pin>>4) >> (pin & 0xF)) & 0x1);
+    return (bool)((GPIO_PortLatchRead((GPIO_PORT)(pin>>4)) >> (pin & 0xF)) & 0x1);
 }
 
 static inline void GPIO_PinToggle(GPIO_PIN pin)
 {
-    GPIO_PortToggle(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortToggle((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinSet(GPIO_PIN pin)
 {
-    GPIO_PortSet(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortSet((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinClear(GPIO_PIN pin)
 {
-    GPIO_PortClear(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortClear((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInputEnable(GPIO_PIN pin)
 {
-    GPIO_PortInputEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinOutputEnable(GPIO_PIN pin)
 {
-    GPIO_PortOutputEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortOutputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInterruptEnable(GPIO_PIN pin)
 {
-    GPIO_PortInterruptEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInterruptEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInterruptDisable(GPIO_PIN pin)
 {
-    GPIO_PortInterruptDisable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInterruptDisable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 bool GPIO_PinInterruptCallbackRegister(

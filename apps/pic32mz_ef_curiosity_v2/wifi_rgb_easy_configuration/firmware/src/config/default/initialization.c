@@ -255,6 +255,7 @@ static const NET_PRES_TransportObject netPresTransObject0SS = {
     .fpOptionSet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsSet,
     .fpIsConnected       = (NET_PRES_TransBool)TCPIP_TCP_IsConnected,
     .fpWasReset          = (NET_PRES_TransBool)TCPIP_TCP_WasReset,
+    .fpWasDisconnected   = (NET_PRES_TransBool)TCPIP_TCP_WasDisconnected,
     .fpDisconnect        = (NET_PRES_TransBool)TCPIP_TCP_Disconnect,
     .fpConnect           = (NET_PRES_TransBool)TCPIP_TCP_Connect,
     .fpClose             = (NET_PRES_TransClose)TCPIP_TCP_Close,
@@ -278,6 +279,7 @@ static const NET_PRES_TransportObject netPresTransObject0SC = {
     .fpOptionSet         = (NET_PRES_TransOption)TCPIP_TCP_OptionsSet,
     .fpIsConnected       = (NET_PRES_TransBool)TCPIP_TCP_IsConnected,
     .fpWasReset          = (NET_PRES_TransBool)TCPIP_TCP_WasReset,
+    .fpWasDisconnected   = (NET_PRES_TransBool)TCPIP_TCP_WasDisconnected,
     .fpDisconnect        = (NET_PRES_TransBool)TCPIP_TCP_Disconnect,
     .fpConnect           = (NET_PRES_TransBool)TCPIP_TCP_Connect,
     .fpClose             = (NET_PRES_TransClose)TCPIP_TCP_Close,
@@ -301,6 +303,7 @@ static const NET_PRES_TransportObject netPresTransObject0DS = {
     .fpOptionSet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsSet,
     .fpIsConnected       = (NET_PRES_TransBool)TCPIP_UDP_IsConnected,
     .fpWasReset          = NULL,
+    .fpWasDisconnected   = NULL,
     .fpDisconnect        = (NET_PRES_TransBool)TCPIP_UDP_Disconnect,
     .fpConnect          = NULL,
     .fpClose             = (NET_PRES_TransClose)TCPIP_UDP_Close,
@@ -324,6 +327,7 @@ static const NET_PRES_TransportObject netPresTransObject0DC = {
     .fpOptionSet         = (NET_PRES_TransOption)TCPIP_UDP_OptionsSet,
     .fpIsConnected       = (NET_PRES_TransBool)TCPIP_UDP_IsConnected,
     .fpWasReset          = NULL,
+    .fpWasDisconnected   = NULL,
     .fpDisconnect        = (NET_PRES_TransBool)TCPIP_UDP_Disconnect,
     .fpConnect          = NULL,
     .fpClose             = (NET_PRES_TransClose)TCPIP_UDP_Close,
@@ -750,7 +754,7 @@ void SYS_Initialize ( void* data )
     
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
-    PRECONbits.PFMWS = 2;
+    PRECONbits.PFMWS = 3;
     CFGCONbits.ECCCON = 3;
 
 

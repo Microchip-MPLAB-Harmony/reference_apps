@@ -1,22 +1,23 @@
 /*******************************************************************************
- Debug Console Source file
+  SPI PLIB
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    xc32_monitor.c
+    plib_spi3_master.h
 
   Summary:
-    debug console Source File
+    SPI3 Master PLIB Header File
 
   Description:
-    None
+    This file has prototype of all the interfaces provided for particular
+    SPI peripheral.
 
 *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018-2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,18 +39,41 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
+#ifndef PLIB_SPI3_MASTER_H
+#define PLIB_SPI3_MASTER_H
 
-#ifdef __arm__
-/* Declaration of these functions are missing in stdio.h for ARM parts*/
-int _mon_getc(int canblock);
-void _mon_putc(char c);
-#endif //__arm__
+#include "device.h"
+#include "plib_spi_master_common.h"
 
-int _mon_getc(int canblock)
-{
-   return 0;
-}
+/* Provide C++ Compatibility */
+#ifdef __cplusplus
 
-void _mon_putc(char c)
-{
-}
+    extern "C" {
+
+#endif
+
+
+/****************************** SPI3 Interface *********************************/
+
+void SPI3_Initialize ( void );
+
+bool SPI3_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize);
+
+bool SPI3_Write(void* pTransmitData, size_t txSize);
+
+bool SPI3_Read(void* pReceiveData, size_t rxSize);
+
+bool SPI3_TransferSetup (SPI_TRANSFER_SETUP *setup, uint32_t spiSourceClock);
+
+bool SPI3_IsBusy(void);
+
+void SPI3_CallbackRegister(SPI_CALLBACK callback, uintptr_t context);
+
+/* Provide C++ Compatibility */
+#ifdef __cplusplus
+
+    }
+
+#endif
+
+#endif // PLIB_SPI3_MASTER_H

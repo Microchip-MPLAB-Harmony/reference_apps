@@ -58,16 +58,16 @@ typedef struct
     uintptr_t           context;
 } CORETIMER_OBJECT ;
 
-void CORETIMER_Initialize( void );
+void CORETIMER_Initialize(void);
 void CORETIMER_CallbackSet ( CORETIMER_CALLBACK callback, uintptr_t context );
-uint32_t CORETIMER_FrequencyGet ( void );
-void CORETIMER_Start();
-void CORETIMER_Stop();
-uint32_t CORETIMER_CounterGet();
+uint32_t CORETIMER_FrequencyGet (void);
+void CORETIMER_Start(void);
+void CORETIMER_Stop(void);
+uint32_t CORETIMER_CounterGet(void);
 void CORETIMER_CompareSet(uint32_t compare);
 
-void CORETIMER_DelayMs ( uint32_t delay_ms);
-void CORETIMER_DelayUs ( uint32_t delay_us);
+void CORETIMER_DelayMs (uint32_t delay_ms);
+void CORETIMER_DelayUs (uint32_t delay_us);
 
 
 #ifdef __cplusplus // Provide C++ Compatibility

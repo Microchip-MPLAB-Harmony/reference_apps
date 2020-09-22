@@ -57,7 +57,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #define TCPIP_TCP_DEBUG_MASK_TRACE_STATE    (0x0002)
 
 // enable TCP debugging levels
-#define TCPIP_TCP_DEBUG_LEVEL  (TCPIP_TCP_DEBUG_MASK_BASIC)
+#define TCPIP_TCP_DEBUG_LEVEL               (0)
 
 
 
@@ -138,7 +138,7 @@ typedef struct
 		uint16_t bTXASAPWithoutTimerReset : 1;	    // Transmit as soon as possible (for Flush), but do not reset retransmission timers
 		uint16_t bTXFIN : 1;					    // FIN needs to be transmitted
 		uint16_t bSocketReset : 1;				    // Socket has been reset (self-clearing semaphore)
-		uint16_t reserved : 1;				        // not used; future expansion
+		uint16_t bRxFin  : 1;				        // FIN received
 		uint16_t failedDisconnect : 1;			    // Failed to send a FIN
 		uint16_t halfThresType : 2; 		        // a TCP_OPTION_THRES_FLUSH_TYPE value
         uint16_t keepAlive : 1;  		            // keep alive option enabled
@@ -209,7 +209,7 @@ typedef struct
 
     uint8_t ttl;                    // socket TTL value
     uint8_t tos;                    // socket TOS value
-    uint8_t pad[0];                 // padding; not used
+    uint8_t pad[];                  // padding; not used
 } TCB_STUB;
 
 #endif  // _TCP_PRIVATE_H_

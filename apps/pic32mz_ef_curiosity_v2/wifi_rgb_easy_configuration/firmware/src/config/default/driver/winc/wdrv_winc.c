@@ -740,6 +740,58 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
             }
             break;
         }
+        
+        case M2M_SSL_REQ_ECC:
+		{
+            WDRV_WINC_ECC_REQ_INFO info;
+            if (NULL != pDcpt->pfSSLReqECCCB)
+            {
+                tstrEccReqInfo  *eccReqInfo;
+                eccReqInfo  = (tstrEccReqInfo *)pMsgContent;
+                
+                info.reqCmd = eccReqInfo->u16REQ;
+                info.seqNo = eccReqInfo->u32SeqNo;
+                info.status = eccReqInfo->u16Status;
+                info.userData = eccReqInfo->u32UserData;
+                
+                switch (info.reqCmd)
+                {
+                    case ECC_REQ_CLIENT_ECDH:
+                    case ECC_REQ_GEN_KEY:
+                    case ECC_REQ_SERVER_ECDH:
+                    {
+                        WDRV_WINC_ECDH_REQ_INFO ecdhReqInfo;
+                        memcpy(&ecdhReqInfo, &eccReqInfo->strEcdhREQ, sizeof(tstrEcdhReqInfo));
+                        pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdhReqInfo);
+                        break;
+                    }        
+
+                    case ECC_REQ_SIGN_VERIFY:
+                    {
+                        WDRV_WINC_ECDSA_VERIFY_REQ_INFO ecdsaVerifyReqInfo;
+                        memcpy(&ecdsaVerifyReqInfo, &eccReqInfo->strEcdsaVerifyREQ, sizeof(tstrEcdsaVerifyReqInfo));
+                        pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdsaVerifyReqInfo);
+                        break;
+                    }
+
+                    case ECC_REQ_SIGN_GEN:
+                    {
+                        WDRV_WINC_ECDSA_SIGN_REQ_INFO ecdsaSignReqInfo;
+                        memcpy(&ecdsaSignReqInfo, &eccReqInfo->strEcdsaSignREQ, sizeof(tstrEcdsaSignReqInfo));
+                        pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdsaSignReqInfo);
+                        break;
+                        
+                    }
+
+		    default:
+                    {
+                        break;
+                    }
+                }
+                                        
+            }
+            break;
+        }
 
         default:
         {
@@ -1098,6 +1150,13 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
             pDcpt->sysStat = SYS_STATUS_BUSY;
 
             WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
+            
+            if (OSAL_RESULT_TRUE != OSAL_MUTEX_Create(&pDcpt->eventProcessMutex))
+            {
+                WDRV_DBG_ERROR_PRINT("eventProcessMutex create failed\r\n");
+                pDcpt->sysStat = SYS_STATUS_ERROR;
+                break;
+            }
 
             /* Initialise SPI handling. */
             WDRV_WINC_SPIInitialize();
@@ -1131,17 +1190,22 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
         /* Running steady state. */
         case SYS_STATUS_READY:
         {
-            if (pDcpt->isOpen == true)
+            if (OSAL_RESULT_TRUE == OSAL_MUTEX_Lock(&pDcpt->eventProcessMutex, OSAL_WAIT_FOREVER))
             {
-                /* If driver instance is open the check HIF ISR semaphore and
-                   handle a pending event. */
-                if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->isrSemaphore, OSAL_WAIT_FOREVER))
+                if (pDcpt->isOpen == true)
                 {
-                    if (M2M_SUCCESS != m2m_wifi_handle_events())
+                    /* If driver instance is open the check HIF ISR semaphore and
+                       handle a pending event. */
+
+                    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->isrSemaphore, OSAL_WAIT_FOREVER))
                     {
-                        OSAL_SEM_Post(&pDcpt->isrSemaphore);
+                        if (M2M_SUCCESS != m2m_wifi_handle_events())
+                        {
+                            OSAL_SEM_Post(&pDcpt->isrSemaphore);
+                        }
                     }
                 }
+                OSAL_MUTEX_Unlock(&pDcpt->eventProcessMutex);
             }
             break;
         }
@@ -1424,10 +1488,16 @@ void WDRV_WINC_Close(DRV_HANDLE handle)
 
     /* Destroy M2M HIF semaphore. */
     OSAL_SEM_Post(&pDcpt->isrSemaphore);
-    OSAL_SEM_Delete(&pDcpt->isrSemaphore);
+    if (OSAL_RESULT_TRUE == OSAL_MUTEX_Lock(&pDcpt->eventProcessMutex, OSAL_WAIT_FOREVER))
+    {
+        /* Destroy M2M HIF semaphore. */
+        OSAL_SEM_Delete(&pDcpt->isrSemaphore);
 
-    /* Reset minimal state to show driver is closed. */
-    pDcpt->isOpen        = false;
+
+        /* Reset minimal state to show driver is closed. */
+        pDcpt->isOpen        = false;
+        OSAL_MUTEX_Unlock(&pDcpt->eventProcessMutex);
+    }
     pDcpt->isConnected   = false;
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
     pDcpt->haveIPAddress = false;

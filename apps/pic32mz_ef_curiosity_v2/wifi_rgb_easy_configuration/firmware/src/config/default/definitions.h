@@ -50,7 +50,7 @@
 #include <stdbool.h>
 #include "peripheral/ocmp/plib_ocmp8.h"
 #include "peripheral/ocmp/plib_ocmp6.h"
-#include "peripheral/spi/plib_spi3.h"
+#include "peripheral/spi/spi_master/plib_spi3_master.h"
 #include "driver/memory/drv_memory.h"
 #include "bsp/bsp.h"
 #include "peripheral/ocmp/plib_ocmp5.h"

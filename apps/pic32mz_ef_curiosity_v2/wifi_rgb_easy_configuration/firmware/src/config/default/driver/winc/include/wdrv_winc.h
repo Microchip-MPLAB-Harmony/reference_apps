@@ -519,6 +519,9 @@ typedef struct
 
     /* Callback to use for SSL cipher suite confirmation. */
     WDRV_WINC_SSL_CIPHERSUITELIST_CALLBACK pfSSLCipherSuiteListCB;
+    
+    /* Callback to use for SSL cipher suite confirmation. */
+    WDRV_WINC_SSL_REQ_ECC_CALLBACK pfSSLReqECCCB;
 #else
     /* Flag indicating that the receive Ethernet buffer has been initialized. */
     bool isEthBufSet;
@@ -542,6 +545,10 @@ typedef struct
 
     /* Semaphore for ISR to signal foreground. */
     OSAL_SEM_HANDLE_TYPE isrSemaphore;
+    
+    /* Mutex for event process. */
+    OSAL_MUTEX_HANDLE_TYPE eventProcessMutex;
+ 
 } WDRV_WINC_DCPT;
 
 // *****************************************************************************

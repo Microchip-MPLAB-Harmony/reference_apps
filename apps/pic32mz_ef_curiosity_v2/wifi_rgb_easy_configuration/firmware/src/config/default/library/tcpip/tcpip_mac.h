@@ -52,8 +52,9 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #ifndef __TCPIP_MAC_H_
 #define __TCPIP_MAC_H_
 #include <stdint.h>
+#include <stddef.h>
 #include <stdbool.h>
-
+#include "system/system_module.h"
 #include "driver/driver_common.h"
 
 // DOM-IGNORE-BEGIN
@@ -162,6 +163,10 @@ typedef enum
     // Internal/Embedded PIC32WK Wi-Fi MAC: room for 16 PIC32WK devices
     TCPIP_MODULE_MAC_PIC32WK        = 0x1090,
     TCPIP_MODULE_MAC_PIC32WK_0      = 0x1090,   // alternate numbered name
+
+    // Internal/Embedded PIC32MZW1 Wi-Fi MAC: room for 16 PIC32MZW1 devices
+    TCPIP_MODULE_MAC_PIC32MZW1      = 0x10A0,
+    TCPIP_MODULE_MAC_PIC32MZW1_0    = 0x10A0,   // alternate numbered name
 
     // Internal/Embedded EMAC of SAM9x60:
     TCPIP_MODULE_MAC_SAM9X60        = 0x1100,   // instance base
@@ -303,7 +308,7 @@ typedef struct _tag_MAC_DATA_SEGMENT
     uint8_t                  segClientData[4];
 
     /*  Additional client segment payload; Ignored by the MAC driver. */
-    uint8_t                  segClientLoad[0];
+    /*  uint8_t                  segClientLoad[]; */
 }TCPIP_MAC_DATA_SEGMENT;
 
 
@@ -831,7 +836,7 @@ struct _tag_TCPIP_MAC_PACKET
 
     /* Additional client packet payload, variable packet data.
        Ignored by the MAC driver. */
-    uint32_t                        pktClientLoad[0];
+    uint32_t                        pktClientLoad[];
 };
 
 
@@ -1101,7 +1106,37 @@ typedef enum
 
 }TCPIP_MAC_SYNCH_REQUEST;
 
+// *****************************************************************************
+/* TCP/IP MAC Checksum calculation offloading
 
+  Summary:
+    Defines the possible MAC checksum offloading capabilities.
+
+  Description:
+    Lists different TCP/IP layer checksum calculation supported by MAC
+    
+  Remarks:
+    Multiple values can be OR-ed together
+
+*/
+typedef enum
+{
+    /* No IP/TCP/UDP Checksum calculation by MAC driver */
+    TCPIP_MAC_CHECKSUM_NONE     = 0x00,
+            
+    /* TCP Checksum calculation by MAC driver */        
+    TCPIP_MAC_CHECKSUM_TCP      = 0x01,
+            
+    /* UDP Checksum calculation by MAC driver */        
+    TCPIP_MAC_CHECKSUM_UDP      = 0x02,
+            
+    /* IPv4 Checksum calculation by MAC driver */        
+    TCPIP_MAC_CHECKSUM_IPV4      = 0x04,            
+            
+    /* IPv6 Checksum calculation by MAC driver */        
+    TCPIP_MAC_CHECKSUM_IPV6      = 0x08,             
+            
+}TCPIP_MAC_CHECKSUM_OFFLOAD_FLAGS;
 
 // *****************************************************************************
 /*  Handle to a heap
@@ -1603,6 +1638,11 @@ typedef struct
 
     /* MAC link MTU size */
     TCPIP_MAC_LINK_MTU      linkMtu;
+	
+	/* Rx Checksum offload Enable */
+    TCPIP_MAC_CHECKSUM_OFFLOAD_FLAGS    checksumOffloadRx;
+    /* Tx Checksum offload Enable */
+    TCPIP_MAC_CHECKSUM_OFFLOAD_FLAGS    checksumOffloadTx;
     
 }TCPIP_MAC_PARAMETERS;
 
