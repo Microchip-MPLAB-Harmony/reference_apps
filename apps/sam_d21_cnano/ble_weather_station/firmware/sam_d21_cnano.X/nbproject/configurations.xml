@@ -33,6 +33,11 @@
             <itemPath>../src/config/samd21_cnano/driver/driver.h</itemPath>
             <itemPath>../src/config/samd21_cnano/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/samd21_cnano/osal/osal.h</itemPath>
+            <itemPath>../src/config/samd21_cnano/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/samd21_cnano/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/peripheral/clock/plib_clock.h</itemPath>
@@ -96,14 +101,10 @@
           <itemPath>../src/config/samd21_cnano/device_cache.h</itemPath>
           <itemPath>../src/config/samd21_cnano/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/samd21_cnano/definitions.h</itemPath>
+          <itemPath>../src/config/samd21_cnano/device.h</itemPath>
           <itemPath>../src/config/samd21_cnano/user.h</itemPath>
           <itemPath>../src/config/samd21_cnano/configuration.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/samd21_cnano/osal/osal.h</itemPath>
-        <itemPath>../src/config/samd21_cnano/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/samd21_cnano/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAMD21G17D_DFP" projectFiles="true">
@@ -135,8 +136,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/pio/samd21g17d.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d_compat.h</itemPath>
           <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -152,6 +151,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -167,6 +167,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="samd21_cnano" projectFiles="true">
+          <itemPath>../src/config/samd21_cnano/ATSAMD21G17D.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -262,6 +267,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/samd21_cnano/harmony.prj</itemPath>
+      <itemPath>../src/config/samd21_cnano/samd21_cnano.xml</itemPath>
+      <itemPath>../src/config/samd21_cnano/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -344,7 +351,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -439,7 +446,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
