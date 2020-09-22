@@ -65,63 +65,59 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for SAMD_SAMPLE_APPLICATIONS_LED pin ***/
 #define SAMD_SAMPLE_APPLICATIONS_LED_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 10)
 #define SAMD_SAMPLE_APPLICATIONS_LED_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 10)
 #define SAMD_SAMPLE_APPLICATIONS_LED_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 10)
-#define SAMD_SAMPLE_APPLICATIONS_LED_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_LED_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 10)
 #define SAMD_SAMPLE_APPLICATIONS_LED_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 10)
+#define SAMD_SAMPLE_APPLICATIONS_LED_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_LED_PIN                  PORT_PIN_PB10
 
 /*** Macros for SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1 pin ***/
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 23)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 23)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 23)
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 23)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 23)
+#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_PIN                  PORT_PIN_PA23
 
 /*** Macros for SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3 pin ***/
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 24)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 24)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 24)
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 24)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 24)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 24)
+#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 24)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_PIN                  PORT_PIN_PA24
 
 /*** Macros for SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2 pin ***/
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 25)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 25)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 25)
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 25)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 25)
+#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25)) & 0x01)
 #define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_PIN                  PORT_PIN_PA25
 
 /*** Macros for SAMD_HOST_INTERRUPT pin ***/
 #define SAMD_HOST_INTERRUPT_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 2)
 #define SAMD_HOST_INTERRUPT_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 2)
 #define SAMD_HOST_INTERRUPT_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 2)
-#define SAMD_HOST_INTERRUPT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 2)) & 0x01)
 #define SAMD_HOST_INTERRUPT_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 2)
 #define SAMD_HOST_INTERRUPT_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 2)
+#define SAMD_HOST_INTERRUPT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 2)) & 0x01)
 #define SAMD_HOST_INTERRUPT_PIN                  PORT_PIN_PB02
 
 /*** Macros for SAMD_MODULE_RESET pin ***/
 #define SAMD_MODULE_RESET_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 3)
 #define SAMD_MODULE_RESET_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 3)
 #define SAMD_MODULE_RESET_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 3)
-#define SAMD_MODULE_RESET_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 3)) & 0x01)
 #define SAMD_MODULE_RESET_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 3)
 #define SAMD_MODULE_RESET_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 3)
+#define SAMD_MODULE_RESET_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 3)) & 0x01)
 #define SAMD_MODULE_RESET_PIN                  PORT_PIN_PB03
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -280,6 +276,12 @@ typedef enum
 
     /* PB11 pin */
     PORT_PIN_PB11 = 43,
+
+    /* PB22 pin */
+    PORT_PIN_PB22 = 54,
+
+    /* PB23 pin */
+    PORT_PIN_PB23 = 55,
 
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
@@ -883,7 +885,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -922,7 +924,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
