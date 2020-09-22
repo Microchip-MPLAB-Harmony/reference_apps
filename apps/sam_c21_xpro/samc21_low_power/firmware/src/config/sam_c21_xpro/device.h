@@ -1,28 +1,24 @@
 /*******************************************************************************
-  Supply Controller(SUPC) PLIB
+  Device Header File
 
-  Company
+  Company:
     Microchip Technology Inc.
 
-  File Name
-    plib_supc.c
+  File Name:
+    device.h
 
-  Summary
-    SUPC PLIB Implementation File.
+  Summary:
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
-  Description
-    This file defines the interface to the SUPC peripheral library. This
-    library provides access to and control of the associated peripheral
-    instance.
-
-  Remarks:
-    None.
+  Description:
+    None
 
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -45,36 +41,15 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
-/* This section lists the other files that are included in this file.
-*/
-
-#include "device.h"
-#include "plib_supc.h"
-
-
-
-void SUPC_Initialize( void )
-{
-    uint32_t bodEnable = SUPC_REGS->SUPC_BODVDD & SUPC_BODVDD_ENABLE_Msk;
-
-    /* Configure BODVDD. Mask the values loaded from NVM during reset. */
-    SUPC_REGS->SUPC_BODVDD &= ~SUPC_BODVDD_ENABLE_Msk;
-    SUPC_REGS->SUPC_BODVDD = (SUPC_REGS->SUPC_BODVDD & (SUPC_BODVDD_ENABLE_Msk | SUPC_BODVDD_ACTION_Msk | SUPC_BODVDD_HYST_Msk | SUPC_BODVDD_LEVEL_Msk)) | SUPC_BODVDD_PSEL(0x0);
-    if (bodEnable)
-    {
-        SUPC_REGS->SUPC_BODVDD |= SUPC_BODVDD_ENABLE_Msk;
-    }
-
-    /* Configure VREF */
-    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0);
-
-}
-
-
-
+#pragma GCC diagnostic push
+#ifndef __cplusplus
+#pragma GCC diagnostic ignored "-Wnested-externs"
+#endif
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wattributes"
+#pragma GCC diagnostic ignored "-Wundef"
+#include "atsamc21j18a.h"
+#pragma GCC diagnostic pop
+#include "device_cache.h"
+#include "toolchain_specifics.h"
 

@@ -89,17 +89,18 @@ void EIC_Initialize (void)
                               EIC_CONFIG_SENSE4_NONE  |
                               EIC_CONFIG_SENSE5_NONE  |
                               EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_NONE ;
+                              EIC_CONFIG_SENSE7_NONE  ;
 
     /* Interrupt sense type and filter control for EXTINT channels 8 to 15 */
-    EIC_REGS->EIC_CONFIG[1] =  EIC_CONFIG_SENSE0_FALL  |
-                              EIC_CONFIG_SENSE1_NONE  |
-                              EIC_CONFIG_SENSE2_NONE  |
-                              EIC_CONFIG_SENSE3_NONE  |
-                              EIC_CONFIG_SENSE4_NONE  |
-                              EIC_CONFIG_SENSE5_NONE  |
-                              EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_NONE ;
+    EIC_REGS->EIC_CONFIG[1] =  EIC_CONFIG_SENSE0_FALL 
+         |  EIC_CONFIG_SENSE1_NONE  
+         |  EIC_CONFIG_SENSE2_NONE  
+         |  EIC_CONFIG_SENSE3_NONE  
+         |  EIC_CONFIG_SENSE4_NONE  
+         |  EIC_CONFIG_SENSE5_NONE  
+         |  EIC_CONFIG_SENSE6_NONE  
+         |  EIC_CONFIG_SENSE7_NONE   ;
+
 
     /* External Interrupt Asynchronous Mode enable */
     EIC_REGS->EIC_ASYNCH = 0x100;

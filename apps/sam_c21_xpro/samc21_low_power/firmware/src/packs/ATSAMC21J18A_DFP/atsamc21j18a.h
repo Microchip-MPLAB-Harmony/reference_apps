@@ -30,12 +30,12 @@
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (0)
 
-/** \addtogroup SAMC21J18A_definitions SAMC21J18A definitions
+/** \addtogroup SAMC21J18A_definitions b'SAMC21J18A definitions
   This file defines all structures and symbols for SAMC21J18A:
     - registers and bitfields
     - peripheral base address
     - peripheral ID
-    - PIO definitions
+    - PIO definitions'
  *  @{
  */
 
@@ -65,7 +65,7 @@
 #  define _UL_(x) x   /**< Assembler: Unsigned Long integer literal constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
-/** @}  end of Atmel Global Defines */
+/** @}  b'end of Atmel Global Defines' */
 
 /* ************************************************************************** */
 /*   CMSIS DEFINITIONS FOR SAMC21J18A                                         */
@@ -128,7 +128,7 @@ typedef struct _DeviceVectors
 {
   /* Stack pointer */
   void* pvStack;
-  /* Cortex-M handlers */
+  /* CORTEX-M0PLUS handlers */
   void* pfnReset_Handler;                        /* -15 Reset Vector, invoked on Power up and warm reset */
   void* pfnNonMaskableInt_Handler;               /* -14 Non maskable Interrupt, cannot be stopped or preempted */
   void* pfnHardFault_Handler;                    /* -13 Hard Fault, all classes of Fault */
@@ -179,12 +179,6 @@ typedef struct _DeviceVectors
   void* pfnPTC_Handler;                          /*  30 Peripheral Touch Controller (PTC) */
 } DeviceVectors;
 
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
-#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
-#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -232,24 +226,16 @@ void DAC_Handler                   ( void );
 void SDADC_Handler                 ( void );
 void PTC_Handler                   ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
-#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
-#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-/*
- * \brief Configuration of the CORTEX-M0PLUS Processor and Core Peripherals
- */
+/** \brief Configuration of the CORTEX-M0PLUS Processor and Core Peripherals */
+#define __CM0PLUS_REV             0x0001 /**< Cortex-M0+ Core Revision                                                  */
 #define __MPU_PRESENT                  1 /**< MPU present or not                                                        */
 #define __NVIC_PRIO_BITS               2 /**< Number of Bits used for Priority Levels                                   */
 #define __VTOR_PRESENT                 1 /**< Vector Table Offset Register present or not                               */
 #define __Vendor_SysTickConfig         0 /**< Set to 1 if different SysTick Config is used                              */
 #define __ARCH_ARM                     1
 #define __ARCH_ARM_CORTEX_M            1
-#define __DEVICE_IS_SAM                1
 
 /*
  * \brief CMSIS includes
@@ -259,7 +245,7 @@ void PTC_Handler                   ( void );
 #include "system_samc21.h"
 #endif /* USE_CMSIS_INIT */
 
-/** \defgroup SAMC21J18A_api Peripheral Software API
+/** \defgroup SAMC21J18A_api b'Peripheral Software API'
  *  @{
  */
 
@@ -297,9 +283,9 @@ void PTC_Handler                   ( void );
 #include "component/tcc.h"
 #include "component/tsens.h"
 #include "component/wdt.h"
-/** @}  end of Peripheral Software API */
+/** @}  b'end of Peripheral Software API' */
 
-/** \addtogroup SAMC21J18A_id Peripheral Ids Definitions
+/** \addtogroup SAMC21J18A_id b'Peripheral Ids Definitions'
  *  @{
  */
 
@@ -351,9 +337,9 @@ void PTC_Handler                   ( void );
 #define ID_CCL           ( 87) /**< \brief Configurable Custom Logic (CCL) */
 
 #define ID_PERIPH_MAX    ( 87) /**< \brief Number of peripheral IDs */
-/** @}  end of Peripheral Ids Definitions */
+/** @}  b'end of Peripheral Ids Definitions' */
 
-/** \addtogroup SAMC21J18A_base Peripheral Base Address Definitions
+/** \addtogroup SAMC21J18A_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -407,9 +393,9 @@ void PTC_Handler                   ( void );
 #define TSENS_REGS                       ((tsens_registers_t*)0x40003000)              /**< \brief TSENS Registers Address      */
 #define WDT_REGS                         ((wdt_registers_t*)0x40002000)                /**< \brief WDT Registers Address        */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAMC21J18A_base Peripheral Base Address Definitions
+/** \addtogroup SAMC21J18A_base b'Peripheral Base Address Definitions'
  *  @{
  */
 
@@ -461,9 +447,9 @@ void PTC_Handler                   ( void );
 #define TCC2_BASE_ADDRESS                _UL_(0x42002c00)                              /**< \brief TCC2 Base Address */
 #define TSENS_BASE_ADDRESS               _UL_(0x40003000)                              /**< \brief TSENS Base Address */
 #define WDT_BASE_ADDRESS                 _UL_(0x40002000)                              /**< \brief WDT Base Address */
-/** @}  end of Peripheral Base Address Definitions */
+/** @}  b'end of Peripheral Base Address Definitions' */
 
-/** \addtogroup SAMC21J18A_pio Peripheral Pio Definitions
+/** \addtogroup SAMC21J18A_pio b'Peripheral Pio Definitions'
  *  @{
  */
 
@@ -471,7 +457,7 @@ void PTC_Handler                   ( void );
 /*   PIO DEFINITIONS FOR SAMC21J18A                                           */
 /* ************************************************************************** */
 #include "pio/samc21j18a.h"
-/** @}  end of Peripheral Pio Definitions */
+/** @}  b'end of Peripheral Pio Definitions' */
 
 /* ************************************************************************** */
 /*   MEMORY MAPPING DEFINITIONS FOR SAMC21J18A                                */
@@ -664,7 +650,7 @@ void PTC_Handler                   ( void );
 }
 #endif
 
-/** @}  end of SAMC21J18A definitions */
+/** @}  b'end of SAMC21J18A definitions' */
 
 
 #endif /* _SAMC21J18A_H_ */
