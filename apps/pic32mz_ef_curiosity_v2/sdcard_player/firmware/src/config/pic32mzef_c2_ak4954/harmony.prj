@@ -31,8 +31,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/system/fs/fat_fs/hardware_access/</LogicalPath>
           <PhysicalPath dnOrder="4">/system/fs/fat_fs/hardware_access/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">755E6C5E0A73AAAA81D7C74B7EC14669</GeneratedChecksum>
-          <UserChecksum dnOrder="6">755E6C5E0A73AAAA81D7C74B7EC14669</UserChecksum>
+          <GeneratedChecksum dnOrder="5">EB450FD3BF1502E0CF6912FBE68299A7</GeneratedChecksum>
+          <UserChecksum dnOrder="6">EB450FD3BF1502E0CF6912FBE68299A7</UserChecksum>
         </File>
         <File dnOrder="3">
           <Type dnOrder="0">SOURCE</Type>
@@ -121,8 +121,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">322976BB28859B437B0D6D3B8E2AFE42</GeneratedChecksum>
-          <UserChecksum dnOrder="6">322976BB28859B437B0D6D3B8E2AFE42</UserChecksum>
+          <GeneratedChecksum dnOrder="5">4238740A6A08738E296E6139E26E53D8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4238740A6A08738E296E6139E26E53D8</UserChecksum>
         </File>
         <File dnOrder="13">
           <Type dnOrder="0">SOURCE</Type>
@@ -148,8 +148,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">20A3704EC8270F4849E6C6E3EED3104E</GeneratedChecksum>
-          <UserChecksum dnOrder="6">20A3704EC8270F4849E6C6E3EED3104E</UserChecksum>
+          <GeneratedChecksum dnOrder="5">AE36CF79E13843DFC50CB601EE35F7E3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">AE36CF79E13843DFC50CB601EE35F7E3</UserChecksum>
         </File>
         <File dnOrder="16">
           <Type dnOrder="0">SOURCE</Type>
@@ -157,8 +157,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">03BCDA676AC4D0F4E003DE0502CFD7C1</GeneratedChecksum>
-          <UserChecksum dnOrder="6">03BCDA676AC4D0F4E003DE0502CFD7C1</UserChecksum>
+          <GeneratedChecksum dnOrder="5">DA247818ECBEB231F870502C3F5AA9FB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">DA247818ECBEB231F870502C3F5AA9FB</UserChecksum>
         </File>
         <File dnOrder="17">
           <Type dnOrder="0">SOURCE</Type>
@@ -202,8 +202,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/clk/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/clk/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">7A41532718AEA12FF724F962C69C960E</GeneratedChecksum>
-          <UserChecksum dnOrder="6">7A41532718AEA12FF724F962C69C960E</UserChecksum>
+          <GeneratedChecksum dnOrder="5">976C8F32B5A1D023748D0EE9491BB108</GeneratedChecksum>
+          <UserChecksum dnOrder="6">976C8F32B5A1D023748D0EE9491BB108</UserChecksum>
         </File>
         <File dnOrder="22">
           <Type dnOrder="0">SOURCE</Type>
@@ -229,8 +229,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/evic/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/evic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">48CB8DC2876F02089F164BDA14279997</GeneratedChecksum>
-          <UserChecksum dnOrder="6">48CB8DC2876F02089F164BDA14279997</UserChecksum>
+          <GeneratedChecksum dnOrder="5">87DBA0C8F9952F5A0DADF5124DD73EE6</GeneratedChecksum>
+          <UserChecksum dnOrder="6">87DBA0C8F9952F5A0DADF5124DD73EE6</UserChecksum>
         </File>
         <File dnOrder="25">
           <Type dnOrder="0">SOURCE</Type>
@@ -238,17 +238,17 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/gpio/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/gpio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6BCDEF9B1D4992544CA83CCCC60C0761</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6BCDEF9B1D4992544CA83CCCC60C0761</UserChecksum>
+          <GeneratedChecksum dnOrder="5">544CFE04F6B8A5916C460378C67C9CDF</GeneratedChecksum>
+          <UserChecksum dnOrder="6">544CFE04F6B8A5916C460378C67C9CDF</UserChecksum>
         </File>
         <File dnOrder="26">
           <Type dnOrder="0">SOURCE</Type>
-          <Name dnOrder="1">plib_i2c1.c</Name>
+          <Name dnOrder="1">plib_i2c1_master.c</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/i2c/</LogicalPath>
-          <PhysicalPath dnOrder="4">/peripheral/i2c/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">CC0F8062668AFB038C63F9E4CFD5C304</GeneratedChecksum>
-          <UserChecksum dnOrder="6">CC0F8062668AFB038C63F9E4CFD5C304</UserChecksum>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/i2c/master</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/i2c/master/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A0812BE42897846B559337CF1C7D439C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A0812BE42897846B559337CF1C7D439C</UserChecksum>
         </File>
         <File dnOrder="27">
           <Type dnOrder="0">SOURCE</Type>
@@ -261,12 +261,12 @@
         </File>
         <File dnOrder="28">
           <Type dnOrder="0">SOURCE</Type>
-          <Name dnOrder="1">plib_spi1.c</Name>
+          <Name dnOrder="1">plib_spi1_master.c</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/spi/</LogicalPath>
-          <PhysicalPath dnOrder="4">/peripheral/spi/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6C8C47641C18C5B3641D9A5217050561</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6C8C47641C18C5B3641D9A5217050561</UserChecksum>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/spi/spi_master</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/spi/spi_master/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">6E88888BD67CD7A7B30CECEA79DBB66C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">6E88888BD67CD7A7B30CECEA79DBB66C</UserChecksum>
         </File>
         <File dnOrder="29">
           <Type dnOrder="0">SOURCE</Type>
@@ -292,8 +292,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/system/fs/</LogicalPath>
           <PhysicalPath dnOrder="4">/system/fs/src/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">8FA22626E2C716F0749A4BA7D2294539</GeneratedChecksum>
-          <UserChecksum dnOrder="6">8FA22626E2C716F0749A4BA7D2294539</UserChecksum>
+          <GeneratedChecksum dnOrder="5">7431A7FE842F3E96580673462066AF0C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7431A7FE842F3E96580673462066AF0C</UserChecksum>
         </File>
         <File dnOrder="32">
           <Type dnOrder="0">SOURCE</Type>
@@ -355,8 +355,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/stdio/</LogicalPath>
           <PhysicalPath dnOrder="4">/stdio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A9F55E7CB78F22D9000CA03DC635973C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A9F55E7CB78F22D9000CA03DC635973C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">16BE5CCEE5F9AF5909BF3F69B51C7D93</GeneratedChecksum>
+          <UserChecksum dnOrder="6">16BE5CCEE5F9AF5909BF3F69B51C7D93</UserChecksum>
         </File>
         <File dnOrder="39">
           <Type dnOrder="0">HEADER</Type>
@@ -400,8 +400,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">F9924D0D9C1EA4CE2FD2F36095E90887</GeneratedChecksum>
-          <UserChecksum dnOrder="6">F9924D0D9C1EA4CE2FD2F36095E90887</UserChecksum>
+          <GeneratedChecksum dnOrder="5">8749FE35F4F8425DDD87096A94253BFB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8749FE35F4F8425DDD87096A94253BFB</UserChecksum>
         </File>
         <File dnOrder="44">
           <Type dnOrder="0">HEADER</Type>
@@ -409,15 +409,15 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">81C130B654C0F66A85075A71D7BDA08B</GeneratedChecksum>
-          <UserChecksum dnOrder="6">81C130B654C0F66A85075A71D7BDA08B</UserChecksum>
+          <GeneratedChecksum dnOrder="5">9DA54851D0B082B34C325A4C04BDCC26</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9DA54851D0B082B34C325A4C04BDCC26</UserChecksum>
         </File>
         <File dnOrder="45">
           <Type dnOrder="0">HEADER</Type>
           <Name dnOrder="1">device.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">packs/PIC32MZ2048EFM144_DFP/</LogicalPath>
-          <PhysicalPath dnOrder="4">/../../packs/PIC32MZ2048EFM144_DFP/</PhysicalPath>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
           <GeneratedChecksum dnOrder="5">5D5C52527AB1435153DB9B50ADE6B79D</GeneratedChecksum>
           <UserChecksum dnOrder="6">5D5C52527AB1435153DB9B50ADE6B79D</UserChecksum>
         </File>
@@ -560,7 +560,7 @@
           <Type dnOrder="0">HEADER</Type>
           <Name dnOrder="1">osal.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">/osal/</LogicalPath>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/osal/</LogicalPath>
           <PhysicalPath dnOrder="4">/osal/</PhysicalPath>
           <GeneratedChecksum dnOrder="5">F0AD88762263B7CB89B02AB4F5876059</GeneratedChecksum>
           <UserChecksum dnOrder="6">F0AD88762263B7CB89B02AB4F5876059</UserChecksum>
@@ -569,7 +569,7 @@
           <Type dnOrder="0">HEADER</Type>
           <Name dnOrder="1">osal_definitions.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">/osal/</LogicalPath>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/osal/</LogicalPath>
           <PhysicalPath dnOrder="4">/osal/</PhysicalPath>
           <GeneratedChecksum dnOrder="5">0AC88C49E4585B606FD5AC6804F0C340</GeneratedChecksum>
           <UserChecksum dnOrder="6">0AC88C49E4585B606FD5AC6804F0C340</UserChecksum>
@@ -578,10 +578,10 @@
           <Type dnOrder="0">HEADER</Type>
           <Name dnOrder="1">osal_impl_basic.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">/osal/</LogicalPath>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/osal/</LogicalPath>
           <PhysicalPath dnOrder="4">/osal/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">63FBE37825657165B9EA584BF05DBA43</GeneratedChecksum>
-          <UserChecksum dnOrder="6">63FBE37825657165B9EA584BF05DBA43</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B358678B02AC7D3AD6CC80621ECC826D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B358678B02AC7D3AD6CC80621ECC826D</UserChecksum>
         </File>
         <File dnOrder="64">
           <Type dnOrder="0">HEADER</Type>
@@ -616,8 +616,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/coretimer/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/coretimer/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">1D877CBA54146E86B82DEF3259D51199</GeneratedChecksum>
-          <UserChecksum dnOrder="6">1D877CBA54146E86B82DEF3259D51199</UserChecksum>
+          <GeneratedChecksum dnOrder="5">21233A0A53C6AC48E24C8A7C17A33D00</GeneratedChecksum>
+          <UserChecksum dnOrder="6">21233A0A53C6AC48E24C8A7C17A33D00</UserChecksum>
         </File>
         <File dnOrder="68">
           <Type dnOrder="0">HEADER</Type>
@@ -643,26 +643,26 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/gpio/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/gpio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">F8AA6D711C9D86A831B9E260C3C23189</GeneratedChecksum>
-          <UserChecksum dnOrder="6">F8AA6D711C9D86A831B9E260C3C23189</UserChecksum>
+          <GeneratedChecksum dnOrder="5">410BC574069FEE0CE2BA1D0ACC33DADE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">410BC574069FEE0CE2BA1D0ACC33DADE</UserChecksum>
         </File>
         <File dnOrder="71">
           <Type dnOrder="0">HEADER</Type>
-          <Name dnOrder="1">plib_i2c1.h</Name>
+          <Name dnOrder="1">plib_i2c1_master.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/i2c/</LogicalPath>
-          <PhysicalPath dnOrder="4">/peripheral/i2c/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">D9FABFEA435EFF1F4FD9B61917E54CD1</GeneratedChecksum>
-          <UserChecksum dnOrder="6">D9FABFEA435EFF1F4FD9B61917E54CD1</UserChecksum>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/i2c/master</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/i2c/master/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">407D8CE5F0C091BCEBB78967FECBE53E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">407D8CE5F0C091BCEBB78967FECBE53E</UserChecksum>
         </File>
         <File dnOrder="72">
           <Type dnOrder="0">HEADER</Type>
-          <Name dnOrder="1">plib_i2c_master.h</Name>
+          <Name dnOrder="1">plib_i2c_master_common.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/i2c/</LogicalPath>
-          <PhysicalPath dnOrder="4">/peripheral/i2c/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">0CE7018D4B951DF14C45D3AC2E8F9B19</GeneratedChecksum>
-          <UserChecksum dnOrder="6">0CE7018D4B951DF14C45D3AC2E8F9B19</UserChecksum>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/i2c/master</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/i2c/master/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">B963C6FE44292A1C4A14C3BA5BE95AEE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B963C6FE44292A1C4A14C3BA5BE95AEE</UserChecksum>
         </File>
         <File dnOrder="73">
           <Type dnOrder="0">HEADER</Type>
@@ -675,21 +675,21 @@
         </File>
         <File dnOrder="74">
           <Type dnOrder="0">HEADER</Type>
-          <Name dnOrder="1">plib_spi1.h</Name>
+          <Name dnOrder="1">plib_spi1_master.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/spi/</LogicalPath>
-          <PhysicalPath dnOrder="4">/peripheral/spi/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">279EBCD5182DA4997A74D20D60AAB706</GeneratedChecksum>
-          <UserChecksum dnOrder="6">279EBCD5182DA4997A74D20D60AAB706</UserChecksum>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/spi/spi_master</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/spi/spi_master/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8B538ED26B7B1F9177E6F490AAE66B57</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8B538ED26B7B1F9177E6F490AAE66B57</UserChecksum>
         </File>
         <File dnOrder="75">
           <Type dnOrder="0">HEADER</Type>
-          <Name dnOrder="1">plib_spi_common.h</Name>
+          <Name dnOrder="1">plib_spi_master_common.h</Name>
           <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/spi/</LogicalPath>
-          <PhysicalPath dnOrder="4">/peripheral/spi/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">4247D7FA1CFBCADA8B8446FDC0E12559</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4247D7FA1CFBCADA8B8446FDC0E12559</UserChecksum>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/peripheral/spi/spi_master</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/spi/spi_master/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CFA758C8B7258190473EF7C60C4BA4E9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CFA758C8B7258190473EF7C60C4BA4E9</UserChecksum>
         </File>
         <File dnOrder="76">
           <Type dnOrder="0">HEADER</Type>
@@ -733,8 +733,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/system/fs/</LogicalPath>
           <PhysicalPath dnOrder="4">/system/fs/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">4F544734969AD07E8B3C3ABD83992DD8</GeneratedChecksum>
-          <UserChecksum dnOrder="6">4F544734969AD07E8B3C3ABD83992DD8</UserChecksum>
+          <GeneratedChecksum dnOrder="5">093944968954D1C41C73DDD55219E6AB</GeneratedChecksum>
+          <UserChecksum dnOrder="6">093944968954D1C41C73DDD55219E6AB</UserChecksum>
         </File>
         <File dnOrder="81">
           <Type dnOrder="0">HEADER</Type>
@@ -877,8 +877,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9D344CAF1743381AA0EA1641ABCDE373</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9D344CAF1743381AA0EA1641ABCDE373</UserChecksum>
+          <GeneratedChecksum dnOrder="5">FA212DEAE39D4E86EF4E6CB440610FE9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FA212DEAE39D4E86EF4E6CB440610FE9</UserChecksum>
         </File>
         <File dnOrder="97">
           <Type dnOrder="0">HEADER</Type>
@@ -898,22 +898,35 @@
           <GeneratedChecksum dnOrder="5">E9E601BFC1C7C2CC9488F0B46E7EA3CF</GeneratedChecksum>
           <UserChecksum dnOrder="6">E9E601BFC1C7C2CC9488F0B46E7EA3CF</UserChecksum>
         </File>
+        <File dnOrder="99">
+          <Type dnOrder="0">LINKER</Type>
+          <Name dnOrder="1">p32MZ2048EFM144.ld</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mzef_c2_ak4954/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">9175BBED360A1F5665567266A2A2A4FA</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9175BBED360A1F5665567266A2A2A4FA</UserChecksum>
+        </File>
       </Files>
       <Settings dnOrder="1">
         <Setting append="true" category="C32" delimiter=";" dnOrder="0" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/pic32mzef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;"/>
         <Setting append="true" category="C32" delimiter=";" dnOrder="1" key="extra-include-directories" security="NON_SECURE" value=";../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/hardware_access"/>
-        <Setting category="C32-LD" dnOrder="2" key="heap-size" security="NON_SECURE" value="4096"/>
-        <Setting category="C32-LD" dnOrder="3" key="no-device-startup-code" security="NON_SECURE" value="true"/>
-        <Setting append="true" category="C32-LD" delimiter=";" dnOrder="4" key="preprocessor-macros" security="NON_SECURE" value=""/>
+        <Setting category="C32" dnOrder="2" key="generate-micro-compressed-code" security="NON_SECURE" value="false"/>
+        <Setting category="C32-LD" dnOrder="3" key="heap-size" security="NON_SECURE" value="4096"/>
+        <Setting category="C32-LD" dnOrder="4" key="no-device-startup-code" security="NON_SECURE" value="true"/>
+        <Setting append="true" category="C32-LD" delimiter=";=" dnOrder="5" key="preprocessor-macros" security="NON_SECURE" value=""/>
+        <Setting append="true" category="C32CPP" delimiter=";" dnOrder="6" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/pic32mzef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;"/>
+        <Setting append="true" category="C32CPP" delimiter=";" dnOrder="7" key="extra-include-directories" security="NON_SECURE" value=";../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mzef_c2_ak4954/system/fs/fat_fs/hardware_access"/>
+        <Setting category="C32CPP" dnOrder="8" key="generate-micro-compressed-code" security="NON_SECURE" value="false"/>
       </Settings>
     </Manifest>
     <Settings dnOrder="5">
-      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.6.0"/>
-      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\PIC32MZ-EF_DFP\1.1.45\atdf\PIC32MZ2048EFM144.atdf"/>
+      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.7.0"/>
+      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\PIC32MZ-EF_DFP\1.3.57\atdf\PIC32MZ2048EFM144.atdf"/>
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bsp;bt;core;crypto;csp;gfx;gfx_apps;net;touch;usb;wireless;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;csp;gfx;gfx_apps;net;touch;usb;wireless;"/>
     </Settings>
   </Configurator>
 </Configuration>
