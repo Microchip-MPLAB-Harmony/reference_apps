@@ -80,13 +80,13 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* TIME System Service Configuration Options */
-#define SYS_TIME_INDEX_0                     0
-#define SYS_TIME_MAX_TIMERS                  5
-#define SYS_TIME_HW_COUNTER_WIDTH            16
-#define SYS_TIME_HW_COUNTER_PERIOD           65535U
-#define SYS_TIME_HW_COUNTER_HALF_PERIOD	     (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY         300000000
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES      (900)
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (16)
+#define SYS_TIME_HW_COUNTER_PERIOD                  (65535U)
+#define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (300000000)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (900)
 
 #define SYS_CONSOLE_INDEX_0                       0
 
@@ -128,6 +128,7 @@ extern "C" {
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
+#define SYS_FS_FAT_ALIGNED_BUFFER_LEN     512
 
 
 
@@ -203,7 +204,7 @@ extern "C" {
 #define TCPIP_TCP_DELAYED_ACK_TIMEOUT		    		100
 #define TCPIP_TCP_FIN_WAIT_2_TIMEOUT		    		5000
 #define TCPIP_TCP_KEEP_ALIVE_TIMEOUT		    		10000
-#define TCPIP_TCP_CLOSE_WAIT_TIMEOUT		    		200
+#define TCPIP_TCP_CLOSE_WAIT_TIMEOUT		    		0
 #define TCPIP_TCP_MAX_RETRIES		            		5
 #define TCPIP_TCP_MAX_UNACKED_KEEP_ALIVES			6
 #define TCPIP_TCP_MAX_SYN_RETRIES		        	3
@@ -226,6 +227,10 @@ extern "C" {
 #define TCPIP_DHCP_CLIENT_CONNECT_PORT              68
 #define TCPIP_DHCP_SERVER_LISTEN_PORT               67
 #define TCPIP_DHCP_CLIENT_ENABLED                   true
+#define TCPIP_DHCP_USE_OPTION_TIME_SERVER           0
+#define TCPIP_DHCP_TIME_SERVER_ADDRESSES            0
+#define TCPIP_DHCP_USE_OPTION_NTP_SERVER            0
+#define TCPIP_DHCP_NTP_SERVER_ADDRESSES             0
 
 
 
@@ -293,17 +298,6 @@ extern "C" {
 													TCPIP_NETWORK_CONFIG_IP_STATIC
 													
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0			DRV_GMAC_Object
-
-
-
-/*** tcpip_cmd Configuration ***/
-#define TCPIP_STACK_COMMAND_ENABLE
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUESTS         4
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DELAY    1000
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_TIMEOUT          5000
-#define TCPIP_STACK_COMMANDS_WIFI_ENABLE             	false
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    2000
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DATA_SIZE    100
 
 
 
@@ -486,6 +480,9 @@ extern "C" {
 #define TCPIP_INTMAC_MODULE_ID		    			GMAC_BASE_ADDRESS
 #define TCPIP_INTMAC_PERIPHERAL_CLK  				150000000
 
+#define DRV_GMAC_RX_CHKSM_OFFLOAD				(TCPIP_MAC_CHECKSUM_NONE)			
+#define DRV_GMAC_TX_CHKSM_OFFLOAD				(TCPIP_MAC_CHECKSUM_NONE)		
+
 #define DRV_GMAC_INSTANCES_NUMBER				1
 #define DRV_GMAC_NUMBER_OF_QUEUES				6
 #define DRV_GMAC_CLIENTS_NUMBER					1
@@ -519,10 +516,9 @@ extern "C" {
 
 
 
-
-#define TCPIP_INTMAC_PHY_CONFIG_FLAGS     			\
-                                                    DRV_ETHPHY_CFG_RMII | \
-													0                                                    
+#define TCPIP_INTMAC_PHY_CONFIG_FLAGS              	( 0 \
+                                                    | DRV_ETHPHY_CFG_RMII \
+                                                    )
 
 #define TCPIP_INTMAC_PHY_LINK_INIT_DELAY  			500
 #define TCPIP_INTMAC_PHY_ADDRESS		    			0
@@ -534,46 +530,6 @@ extern "C" {
 #define DRV_ETHPHY_NEG_DONE_TMO		    			2000
 #define DRV_ETHPHY_RESET_CLR_TMO					500
 
-
-
-/*** wolfCrypt Library Configuration ***/
-#define MICROCHIP_PIC32
-#define MICROCHIP_MPLAB_HARMONY
-#define MICROCHIP_MPLAB_HARMONY_3
-#define HAVE_MCAPI
-#define SIZEOF_LONG_LONG 8
-#define WOLFSSL_USER_IO
-#define NO_WRITEV
-#define NO_FILESYSTEM
-#define USE_FAST_MATH
-#define NO_PWDBASED
-#define HAVE_MCAPI
-#define WOLF_CRYPTO_CB
-#define NO_MD4
-#define WOLFSSL_SHA224
-#define WOLFSSL_AES_128
-#define WOLFSSL_AES_192
-#define WOLFSSL_AES_256
-#define WOLFSSL_AES_DIRECT
-#define HAVE_AES_DECRYPT
-#define HAVE_AES_ECB
-#define HAVE_AES_CBC
-#define WOLFSSL_AES_COUNTER
-#define HAVE_AESGCM
-#define HAVE_AESCCM
-#define NO_RC4
-#define NO_HC128
-#define NO_RABBIT
-#define HAVE_ECC
-#define NO_DH
-#define NO_DSA
-#define USE_CERT_BUFFERS_2048
-#define NO_DEV_RANDOM
-#define HAVE_HASHDRBG
-#define WC_NO_HARDEN
-#define SINGLE_THREADED
-#define NO_ERROR_STRINGS
-#define NO_WOLFSSL_MEMORY
 
 
 

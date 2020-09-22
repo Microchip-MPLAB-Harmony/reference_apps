@@ -81,7 +81,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #define DRV_MIIM_DEBUG_MASK_BASIC        (0x0001)
 
 // enable IPV4 debugging levels
-#define DRV_MIIM_DEBUG_LEVEL  (DRV_MIIM_DEBUG_MASK_BASIC)
+#define DRV_MIIM_DEBUG_LEVEL  (0)
 
 
 
@@ -91,7 +91,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 typedef struct _TAG_SGL_LIST_NODE
 {
 	struct _TAG_SGL_LIST_NODE*		next;		// next node in list
-    void*                           data[0];    // generic payload    
+    void*                           data[];     // generic payload    
 }SGL_LIST_NODE;	// generic linked list node definition
 
 

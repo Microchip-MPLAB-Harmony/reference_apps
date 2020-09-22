@@ -58,7 +58,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 #include "system/sys_time_h2_adapter.h"
 #include "system/debug/sys_debug.h"
-#include "system/console/sys_console.h"
 
 
 
@@ -877,9 +876,8 @@ static void _DRV_MIIM_ProcessOp( DRV_MIIM_OBJ * pMiimObj, DRV_MIIM_OP_DCPT* pOpD
 {
     bool checkDiscard;
     DRV_MIIM_TXFER_STAT newStat = DRV_MIIM_TXFER_NONE;
-    DRV_MIIM_CLIENT_DCPT* pClient = pOpDcpt->pOwner;
 
-    _MIIMAssertCond(pClient->parentObj == pMiimObj, __func__, __LINE__);
+    _MIIMAssertCond(pOpDcpt->pOwner->parentObj == pMiimObj, __func__, __LINE__);
     _MIIMAssertCond(pOpDcpt->opType != DRV_MIIM_OP_NONE, __func__, __LINE__);
     _MIIMAssertCond(pOpDcpt->qType == DRV_MIIM_QTYPE_BUSY, __func__, __LINE__);
 

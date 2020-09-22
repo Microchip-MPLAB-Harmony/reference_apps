@@ -4,30 +4,18 @@
 
 
 project: ftp_bootloader
-creation_date: 2020-06-19T23:09:45.375+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-09-22T20:02:59.071+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mplabx_version: v5.40        # if MPLAB X plugin only
-plugin_version: v3.5.0        # if MPLAB X plugin only
+plugin_version: v3.6.0        # if MPLAB X plugin only
+compiler: XC32 (2.41)
 
 modules:
-    - {name: "audio", version: "v3.5.0"}
-    - {name: "bootloader", version: "unknown"}
-    - {name: "bsp", version: "v3.7.0"}
-    - {name: "CMSIS-FreeRTOS", version: "v10.3.0"}
-    - {name: "contentmanager", version: "v1.3.1"}
-    - {name: "core", version: "v3.7.1"}
-    - {name: "crypto", version: "v3.5.1"}
-    - {name: "csp", version: "v3.7.1"}
-    - {name: "dev_packs", version: "v3.7.0"}
-    - {name: "gfx", version: "v3.6.0"}
-    - {name: "gfx_apps", version: "v3.6.0"}
-    - {name: "mhc", version: "v3.4.0"}
-    - {name: "mplabx_plugin", version: "unknown"}
-    - {name: "net", version: "v3.5.1"}
-    - {name: "touch", version: "v3.6.0"}
-    - {name: "usb", version: "v3.5.0"}
-    - {name: "wolfMQTT", version: "v1.2.0"}
-    - {name: "wolfssl", version: "v4.3.0"}
-    - {name: "zlib", version: "v1.2.11"}
+    - {name: "csp", version: "v3.8.1"}
+    - {name: "core", version: "v3.8.1"}
+    - {name: "dev_packs", version: "v3.8.0"}
+    - {name: "mhc", version: "v3.5.1"}
+    - {name: "net", version: "v3.6.1"}
+    - {name: "bsp", version: "v3.8.1"}
 

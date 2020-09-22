@@ -67,7 +67,7 @@ bool HSMCI_IsCmdLineBusy (void);
 
 bool HSMCI_IsDatLineBusy (void);
 
-void HSMCI_ClockSet ( uint32_t clock );
+bool HSMCI_ClockSet ( uint32_t clock );
 
 uint16_t HSMCI_CommandErrorGet(void);
 
@@ -81,10 +81,10 @@ void HSMCI_ModuleInit( void );
 
 void HSMCI_CallbackRegister(HSMCI_CALLBACK callback, uintptr_t contextHandle);
 
-void HSMCI_CommandSend ( 
-    uint8_t opCode, 
+void HSMCI_CommandSend (
+    uint8_t opCode,
     uint32_t argument,
-    uint8_t respType, 
+    uint8_t respType,
     HSMCI_DataTransferFlags transferFlags
 );
 
