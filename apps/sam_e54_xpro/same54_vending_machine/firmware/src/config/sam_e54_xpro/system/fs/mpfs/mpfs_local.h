@@ -120,12 +120,10 @@ typedef struct {
     unsigned char	fattrib;		/* Attribute */
     /* Short file name (8.3 format) */
     char        fname[13];
-#if SYS_FS_USE_LFN
     /* Pointer to the LFN buffer */
     char       *lfname;
     /* Size of LFN buffer in TCHAR */
     uint32_t    lfsize;
-#endif
 } MPFS_STATUS;
 
 // Alias of MPFSGetPosition

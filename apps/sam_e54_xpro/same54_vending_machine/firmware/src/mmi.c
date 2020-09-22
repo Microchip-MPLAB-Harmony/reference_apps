@@ -95,7 +95,7 @@ TimerHandle_t xTimers[1];
 // *****************************************************************************
 bool DisplayIP = false;
 
-void vTimerCallback(TimerHandle_t xTimer) 
+void vTimerCallback(TimerHandle_t xTimer)
 {
     DisplayIP = true;
 }

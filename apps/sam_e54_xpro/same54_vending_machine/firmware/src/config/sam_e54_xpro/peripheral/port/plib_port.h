@@ -65,108 +65,104 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for OLED_BUTTON_2 pin ***/
 #define OLED_BUTTON_2_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 4)
 #define OLED_BUTTON_2_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 4)
 #define OLED_BUTTON_2_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 4)
-#define OLED_BUTTON_2_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 4)) & 0x01)
 #define OLED_BUTTON_2_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 4)
 #define OLED_BUTTON_2_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 4)
+#define OLED_BUTTON_2_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 4)) & 0x01)
 #define OLED_BUTTON_2_PIN                  PORT_PIN_PB04
 
 /*** Macros for OLED_BUTTON_3 pin ***/
 #define OLED_BUTTON_3_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 5)
 #define OLED_BUTTON_3_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 5)
 #define OLED_BUTTON_3_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 5)
-#define OLED_BUTTON_3_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 5)) & 0x01)
 #define OLED_BUTTON_3_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 5)
 #define OLED_BUTTON_3_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 5)
+#define OLED_BUTTON_3_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 5)) & 0x01)
 #define OLED_BUTTON_3_PIN                  PORT_PIN_PB05
 
 /*** Macros for OLED_BUTTON_1 pin ***/
 #define OLED_BUTTON_1_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 7)
 #define OLED_BUTTON_1_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 7)
 #define OLED_BUTTON_1_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 7)
-#define OLED_BUTTON_1_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 7)) & 0x01)
 #define OLED_BUTTON_1_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 7)
 #define OLED_BUTTON_1_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 7)
+#define OLED_BUTTON_1_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 7)) & 0x01)
 #define OLED_BUTTON_1_PIN                  PORT_PIN_PB07
 
 /*** Macros for OLED_LED_1 pin ***/
 #define OLED_LED_1_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 8)
 #define OLED_LED_1_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 8)
 #define OLED_LED_1_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 8)
-#define OLED_LED_1_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
 #define OLED_LED_1_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 8)
 #define OLED_LED_1_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 8)
+#define OLED_LED_1_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
 #define OLED_LED_1_PIN                  PORT_PIN_PB08
 
 /*** Macros for OLED_LED_2 pin ***/
 #define OLED_LED_2_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 9)
 #define OLED_LED_2_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 9)
 #define OLED_LED_2_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 9)
-#define OLED_LED_2_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 9)) & 0x01)
 #define OLED_LED_2_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 9)
 #define OLED_LED_2_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 9)
+#define OLED_LED_2_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 9)) & 0x01)
 #define OLED_LED_2_PIN                  PORT_PIN_PB09
 
 /*** Macros for OLED_DISP_DATA_CMD_SEL pin ***/
 #define OLED_DISP_DATA_CMD_SEL_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 6)
 #define OLED_DISP_DATA_CMD_SEL_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 6)
 #define OLED_DISP_DATA_CMD_SEL_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 6)
-#define OLED_DISP_DATA_CMD_SEL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6)) & 0x01)
 #define OLED_DISP_DATA_CMD_SEL_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 6)
 #define OLED_DISP_DATA_CMD_SEL_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 6)
+#define OLED_DISP_DATA_CMD_SEL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6)) & 0x01)
 #define OLED_DISP_DATA_CMD_SEL_PIN                  PORT_PIN_PA06
 
 /*** Macros for OLED_LED_3 pin ***/
 #define OLED_LED_3_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 7)
 #define OLED_LED_3_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 7)
 #define OLED_LED_3_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 7)
-#define OLED_LED_3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7)) & 0x01)
 #define OLED_LED_3_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 7)
 #define OLED_LED_3_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 7)
+#define OLED_LED_3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7)) & 0x01)
 #define OLED_LED_3_PIN                  PORT_PIN_PA07
 
 /*** Macros for LED1 pin ***/
 #define LED1_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 18)
 #define LED1_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 18)
 #define LED1_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 18)
-#define LED1_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED1_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 18)
 #define LED1_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 18)
+#define LED1_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED1_PIN                  PORT_PIN_PC18
 
 /*** Macros for OLED_DISP_CS pin ***/
 #define OLED_DISP_CS_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 28)
 #define OLED_DISP_CS_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 28)
 #define OLED_DISP_CS_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 28)
-#define OLED_DISP_CS_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 28)) & 0x01)
 #define OLED_DISP_CS_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 28)
 #define OLED_DISP_CS_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 28)
+#define OLED_DISP_CS_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 28)) & 0x01)
 #define OLED_DISP_CS_PIN                  PORT_PIN_PB28
 
 /*** Macros for OLED_DISP_RESET pin ***/
 #define OLED_DISP_RESET_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 27)
 #define OLED_DISP_RESET_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 27)
 #define OLED_DISP_RESET_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 27)
-#define OLED_DISP_RESET_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 27)) & 0x01)
 #define OLED_DISP_RESET_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 27)
 #define OLED_DISP_RESET_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 27)
+#define OLED_DISP_RESET_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 27)) & 0x01)
 #define OLED_DISP_RESET_PIN                  PORT_PIN_PA27
 
 /*** Macros for SWITCH pin ***/
 #define SWITCH_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 31)
 #define SWITCH_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 31)
 #define SWITCH_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 31)
-#define SWITCH_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 31)) & 0x01)
 #define SWITCH_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 31)
 #define SWITCH_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 31)
+#define SWITCH_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 31)) & 0x01)
 #define SWITCH_PIN                  PORT_PIN_PB31
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -1123,7 +1119,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1162,7 +1158,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

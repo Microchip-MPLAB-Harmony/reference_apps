@@ -75,7 +75,7 @@
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
-#include "peripheral/sercom/spim/plib_sercom4_spi.h"
+#include "peripheral/sercom/spi_master/plib_sercom4_spi_master.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/mpfs/mpfs.h"

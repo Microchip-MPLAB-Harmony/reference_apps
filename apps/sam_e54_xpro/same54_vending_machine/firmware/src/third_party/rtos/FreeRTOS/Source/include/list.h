@@ -1,6 +1,6 @@
 /*
- * FreeRTOS Kernel V10.2.1
- * Copyright (C) 2019 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ * FreeRTOS Kernel V10.3.1
+ * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -225,7 +225,7 @@ typedef struct xLIST
 #define listGET_HEAD_ENTRY( pxList )	( ( ( pxList )->xListEnd ).pxNext )
 
 /*
- * Return the list item at the head of the list.
+ * Return the next list item.
  *
  * \page listGET_NEXT listGET_NEXT
  * \ingroup LinkedList

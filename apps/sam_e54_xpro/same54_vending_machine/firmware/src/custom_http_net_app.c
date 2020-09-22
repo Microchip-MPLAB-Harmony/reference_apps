@@ -13,23 +13,23 @@
 
 Microchip Technology Inc. and its subsidiaries.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
+Subject to your compliance with these terms, you may use Microchip software
+and any derivatives exclusively with Microchip products. It is your
+responsibility to comply with third party license terms applicable to your
+use of third party software (including open source software) that may
 accompany Microchip software.
 
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
+THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR
 PURPOSE.
 
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *****************************************************************************/
 
@@ -133,7 +133,7 @@ Function Prototypes and Memory Globalizers
         static TCPIP_HTTP_NET_IO_RESULT HTTPPostSNMPCommunity(TCPIP_HTTP_NET_CONN_HANDLE connHandle);
         #endif
     #endif
-    #if (HTTP_APP_USE_EMAIL != 0) 
+    #if (HTTP_APP_USE_EMAIL != 0)
         static TCPIP_HTTP_NET_IO_RESULT HTTPPostEmail(TCPIP_HTTP_NET_CONN_HANDLE connHandle);
     #endif
     #if defined(TCPIP_STACK_USE_DYNAMICDNS_CLIENT)
@@ -308,7 +308,7 @@ TCPIP_HTTP_NET_IO_RESULT TCPIP_HTTP_NET_ConnectionGetExecute(TCPIP_HTTP_NET_CONN
 
         ptr = TCPIP_HTTP_NET_ArgGet(httpDataBuff, (const uint8_t *)"led1");
         if(ptr)
-		{
+        {
             if(*ptr == '1')
             {
                 APP_LED_1StateSet();
@@ -394,7 +394,7 @@ TCPIP_HTTP_NET_IO_RESULT TCPIP_HTTP_NET_ConnectionPostExecute(TCPIP_HTTP_NET_CON
     #endif
 #endif
 
-#if (HTTP_APP_USE_EMAIL != 0) 
+#if (HTTP_APP_USE_EMAIL != 0)
     if(!strcmp((char *)filename, "email/index.htm"))
         return HTTPPostEmail(connHandle);
 #endif
@@ -926,10 +926,10 @@ static TCPIP_HTTP_NET_IO_RESULT HTTPPostSNMPCommunity(TCPIP_HTTP_NET_CONN_HANDLE
     This function sends an e-mail message using the SMTPC client.
     If encryption is needed it is done by the SMTPC module communicating with the SMTP server.
     (the NET_PRES layer has to be configured for encryption support).
-    
+
     It demonstrates the use of the SMTPC client, waiting for asynchronous
     processes in an HTTP callback.
-    
+
   Precondition:
     None
 
@@ -941,13 +941,13 @@ static TCPIP_HTTP_NET_IO_RESULT HTTPPostSNMPCommunity(TCPIP_HTTP_NET_CONN_HANDLE
     TCPIP_HTTP_NET_IO_RES_WAITING - the function is waiting for the SMTP process to complete
     TCPIP_HTTP_NET_IO_RES_NEED_DATA - data needed by this function has not yet arrived
  ****************************************************************************/
-#if (HTTP_APP_USE_EMAIL != 0) 
+#if (HTTP_APP_USE_EMAIL != 0)
 // size of an email parameter
-#define HTTP_APP_EMAIL_PARAM_SIZE           30 
+#define HTTP_APP_EMAIL_PARAM_SIZE           30
 // maximum size of the mail body
-#define HTTP_APP_EMAIL_BODY_SIZE            200 
+#define HTTP_APP_EMAIL_BODY_SIZE            200
 // maximum size of the mail attachment
-#define HTTP_APP_EMAIL_ATTACHMENT_SIZE      200 
+#define HTTP_APP_EMAIL_ATTACHMENT_SIZE      200
 
 // handle of the mail message submitted to SMTPC
 static TCPIP_SMTPC_MESSAGE_HANDLE postMailHandle = 0;
@@ -1118,7 +1118,7 @@ static TCPIP_HTTP_NET_IO_RESULT HTTPPostEmail(TCPIP_HTTP_NET_CONN_HANDLE connHan
             mySMTPMessage.nBuffers = 1;
             // set the notification function
             mySMTPMessage.messageCallback = postMailCallback;
-            
+
             postMailHandle = TCPIP_SMTPC_MailMessage(&mySMTPMessage, &postEmail.mailRes);
             if(postMailHandle == 0)
             {   // failed
@@ -1160,7 +1160,7 @@ static TCPIP_HTTP_NET_IO_RESULT HTTPPostEmail(TCPIP_HTTP_NET_CONN_HANDLE connHan
 
     return TCPIP_HTTP_NET_IO_RES_DONE;
 }
-#endif // (HTTP_APP_USE_EMAIL != 0) 
+#endif // (HTTP_APP_USE_EMAIL != 0)
 
 /****************************************************************************
   Function:
@@ -1673,7 +1673,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_uploadedmd5(TCPIP_HTTP_NET_CONN_HANDLE
     char *pMd5;
     uint8_t i;
     uint8_t *httpDataBuff;
-    HTTP_APP_DYNVAR_BUFFER *pDynBuffer;
+    HTTP_APP_DYNVAR_BUFFER *pDynBuffer = NULL;
 
     // Check for flag set in HTTPPostMD5
     if(TCPIP_HTTP_NET_ConnectionPostSmGet(connHandle) != SM_MD5_POST_COMPLETE)
@@ -1720,7 +1720,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_uploadedmd5(TCPIP_HTTP_NET_CONN_HANDLE
 TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_config_hostname(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt)
 {
     TCPIP_NET_HANDLE hNet;
-    HTTP_APP_DYNVAR_BUFFER *pDynBuffer;
+    HTTP_APP_DYNVAR_BUFFER *pDynBuffer = NULL;
     const char *nbnsName;
 
     hNet = TCPIP_HTTP_NET_ConnectionNetHandle(connHandle);
@@ -1855,7 +1855,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_config_mac(TCPIP_HTTP_NET_CONN_HANDLE 
     TCPIP_NET_HANDLE hNet;
     const TCPIP_MAC_ADDR *pMacAdd;
     char macAddStr[20];
-    HTTP_APP_DYNVAR_BUFFER *pDynBuffer;
+    HTTP_APP_DYNVAR_BUFFER *pDynBuffer = NULL;
 
     hNet = TCPIP_HTTP_NET_ConnectionNetHandle(connHandle);
     pMacAdd = (const TCPIP_MAC_ADDR*)TCPIP_STACK_NetAddressMac(hNet);
@@ -2081,7 +2081,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_read_comm(TCPIP_HTTP_NET_CONN_HANDLE c
     while(vDcpt->nArgs != 0 && vDcpt->dynArgs->argType == TCPIP_HTTP_DYN_ARG_TYPE_INT32)
     {
         uint8_t *dest;
-        HTTP_APP_DYNVAR_BUFFER *pDynBuffer;
+        HTTP_APP_DYNVAR_BUFFER *pDynBuffer = NULL;
         uint16_t num = vDcpt->dynArgs->argInt32;
 
         // Ensure no one tries to read illegal memory addresses by specifying
@@ -2127,7 +2127,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_write_comm(TCPIP_HTTP_NET_CONN_HANDLE 
     while(vDcpt->nArgs != 0 && vDcpt->dynArgs->argType == TCPIP_HTTP_DYN_ARG_TYPE_INT32)
     {
         uint8_t *dest;
-        HTTP_APP_DYNVAR_BUFFER *pDynBuffer;
+        HTTP_APP_DYNVAR_BUFFER *pDynBuffer = NULL;
         uint16_t num = vDcpt->dynArgs->argInt32;
 
         // Ensure no one tries to read illegal memory addresses by specifying

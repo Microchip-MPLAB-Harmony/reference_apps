@@ -140,7 +140,7 @@ typedef enum
 
 typedef enum
 {
-    /* Normal File */
+    /* Normal File. Should not be combined with other attributes */
     SYS_FS_ATTR_FILE    = 0x00,
     /* Read only */
     SYS_FS_ATTR_RDO     = 0x01,
@@ -605,12 +605,10 @@ typedef struct
     uint8_t     fattrib;
     /* Short file name (8.3 format) */
     char        fname[13];
-#if SYS_FS_USE_LFN
     /* Pointer to the LFN buffer */
     char       *lfname;
     /* Size of LFN buffer */
     uint32_t    lfsize;
-#endif
 } SYS_FS_FSTAT;
 
 
