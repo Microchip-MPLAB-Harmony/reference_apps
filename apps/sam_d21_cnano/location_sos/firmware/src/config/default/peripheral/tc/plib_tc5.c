@@ -127,6 +127,15 @@ uint32_t TC5_TimerFrequencyGet( void )
     return (uint32_t)(32768UL);
 }
 
+void TC5_TimerCommandSet(TC_COMMAND command)
+{
+    TC5_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
+    while((TC5_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    {
+        /* Wait for Write Synchronization */
+    }    
+}
+
 /* Get the current timer counter value */
 uint16_t TC5_Timer16bitCounterGet( void )
 {

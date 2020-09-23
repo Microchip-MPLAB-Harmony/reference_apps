@@ -92,6 +92,7 @@ const DRV_USART_PLIB_INTERFACE drvUsart0PlibAPI = {
     .read = (DRV_USART_PLIB_READ)SERCOM0_USART_Read,
     .readIsBusy = (DRV_USART_PLIB_READ_IS_BUSY)SERCOM0_USART_ReadIsBusy,
     .readCountGet = (DRV_USART_PLIB_READ_COUNT_GET)SERCOM0_USART_ReadCountGet,
+	.readAbort = (DRV_USART_PLIB_READ_ABORT)SERCOM0_USART_ReadAbort,
     .writeCallbackRegister = (DRV_USART_PLIB_WRITE_CALLBACK_REG)SERCOM0_USART_WriteCallbackRegister,
     .write = (DRV_USART_PLIB_WRITE)SERCOM0_USART_Write,
     .writeIsBusy = (DRV_USART_PLIB_WRITE_IS_BUSY)SERCOM0_USART_WriteIsBusy,
@@ -177,6 +178,26 @@ SYSTEM_OBJECTS sysObj;
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 
 
 /*******************************************************************************
@@ -192,6 +213,9 @@ SYSTEM_OBJECTS sysObj;
 void SYS_Initialize ( void* data )
 {
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3);
+
+    STDIO_BufferModeSet();
+
 
   
     PORT_Initialize();

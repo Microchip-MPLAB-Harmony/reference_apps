@@ -4,28 +4,16 @@
 
 
 project: location_sos
-creation_date: 2020-06-19T20:05:21.695+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-09-23T11:21:50.851+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mplabx_version: v5.40        # if MPLAB X plugin only
-plugin_version: v3.5.0        # if MPLAB X plugin only
+plugin_version: v3.6.0        # if MPLAB X plugin only
+compiler: XC32 (2.41)
 
 modules:
-    - {name: "audio", version: "v3.5.0"}
-    - {name: "bootloader", version: "v3.2.0"}
-    - {name: "bsp", version: "v3.7.0"}
-    - {name: "bt", version: "v3.4.0"}
-    - {name: "CMSIS-FreeRTOS", version: "unknown"}
-    - {name: "contentmanager", version: "v1.3.1"}
-    - {name: "core", version: "v3.7.1"}
-    - {name: "crypto", version: "v3.5.1"}
-    - {name: "csp", version: "v3.7.1"}
-    - {name: "dev_packs", version: "v3.7.0"}
-    - {name: "gfx", version: "v3.6.0"}
-    - {name: "gfx_apps", version: "v3.6.0"}
-    - {name: "mhc", version: "v3.4.0"}
-    - {name: "net", version: "v3.5.1"}
-    - {name: "touch", version: "v3.5.0"}
-    - {name: "usb", version: "v3.5.0"}
-    - {name: "wireless", version: "v3.1.1"}
+    - {name: "csp", version: "v3.8.1"}
+    - {name: "core", version: "v3.8.1"}
+    - {name: "dev_packs", version: "v3.8.0"}
+    - {name: "mhc", version: "v3.5.1"}
 

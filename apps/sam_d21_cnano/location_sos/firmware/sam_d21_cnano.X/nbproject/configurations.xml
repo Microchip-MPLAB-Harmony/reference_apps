@@ -14,6 +14,11 @@
             <itemPath>../src/config/default/driver/driver.h</itemPath>
             <itemPath>../src/config/default/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/default/osal/osal.h</itemPath>
+            <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/default/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.h</itemPath>
@@ -68,14 +73,10 @@
           <itemPath>../src/config/default/device_cache.h</itemPath>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
+          <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/default/osal/osal.h</itemPath>
-        <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/default/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAMD21G17D_DFP" projectFiles="true">
@@ -107,8 +108,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/pio/samd21g17d.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d_compat.h</itemPath>
           <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -124,6 +123,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -142,6 +142,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="default" projectFiles="true">
+          <itemPath>../src/config/default/ATSAMD21G17D.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -220,6 +225,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony.prj</itemPath>
+      <itemPath>../src/config/default/default.xml</itemPath>
+      <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -301,7 +308,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -396,7 +403,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
