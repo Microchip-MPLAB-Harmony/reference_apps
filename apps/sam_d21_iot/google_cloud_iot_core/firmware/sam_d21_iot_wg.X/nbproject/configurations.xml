@@ -74,6 +74,11 @@
             <itemPath>../src/config/SAMD21_WG_IOT/driver/driver.h</itemPath>
             <itemPath>../src/config/SAMD21_WG_IOT/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/SAMD21_WG_IOT/osal/osal.h</itemPath>
+            <itemPath>../src/config/SAMD21_WG_IOT/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/SAMD21_WG_IOT/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f8" displayName="adc" projectFiles="true">
               <itemPath>../src/config/SAMD21_WG_IOT/peripheral/adc/plib_adc_common.h</itemPath>
@@ -108,9 +113,9 @@
                 <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/spim/plib_sercom4_spi.h</itemPath>
-                <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/spim/plib_sercom_spi_common.h</itemPath>
+              <logicalFolder name="f3" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/spi_master/plib_sercom4_spi_master.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f2" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
@@ -156,6 +161,7 @@
           <itemPath>../src/config/SAMD21_WG_IOT/device_cache.h</itemPath>
           <itemPath>../src/config/SAMD21_WG_IOT/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/SAMD21_WG_IOT/definitions.h</itemPath>
+          <itemPath>../src/config/SAMD21_WG_IOT/device.h</itemPath>
           <itemPath>../src/config/SAMD21_WG_IOT/user.h</itemPath>
           <itemPath>../src/config/SAMD21_WG_IOT/configuration.h</itemPath>
         </logicalFolder>
@@ -246,11 +252,6 @@
         </logicalFolder>
         <itemPath>../src/mqtt/mqtt_packetTransfer_interface.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/SAMD21_WG_IOT/osal/osal.h</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/osal/osal_impl_basic.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAMD21G18A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
@@ -281,8 +282,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G18A_DFP/pio/samd21g18a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21G18A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAMD21G18A_DFP/atsamd21g18a_compat.h</itemPath>
           <itemPath>../src/packs/ATSAMD21G18A_DFP/atsamd21g18a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -298,6 +297,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -332,6 +332,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="SAMD21_WG_IOT" projectFiles="true">
+          <itemPath>../src/config/SAMD21_WG_IOT/ATSAMD21G18A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -431,8 +436,8 @@
               <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/spim/plib_sercom4_spi.c</itemPath>
+              <logicalFolder name="f3" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/spi_master/plib_sercom4_spi_master.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f2" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/SAMD21_WG_IOT/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
@@ -590,9 +595,9 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/debug_print.c</itemPath>
+      <itemPath>../src/led.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-      <itemPath>../src/led.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -600,6 +605,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/SAMD21_WG_IOT/harmony.prj</itemPath>
       <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.xml</itemPath>
+      <itemPath>../src/config/SAMD21_WG_IOT/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -681,7 +687,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/config/SAMD21_WG_IOT/driver/winc/include/;../src/config/SAMD21_WG_IOT/driver/winc/include/dev;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp/include;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/common;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/driver;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/socket;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash;../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/socket;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/driver;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/common;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp/include;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp;../src/config/SAMD21_WG_IOT/driver/winc/include/dev;../src/config/SAMD21_WG_IOT/driver/winc/include/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -776,7 +782,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

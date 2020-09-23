@@ -65,90 +65,130 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for SW0_GPIO_PA00 pin ***/
 #define SW0_GPIO_PA00_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 0)
 #define SW0_GPIO_PA00_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 0)
 #define SW0_GPIO_PA00_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 0)
-#define SW0_GPIO_PA00_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 0)) & 0x01)
 #define SW0_GPIO_PA00_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 0)
 #define SW0_GPIO_PA00_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 0)
+#define SW0_GPIO_PA00_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 0)) & 0x01)
 #define SW0_GPIO_PA00_PIN                  PORT_PIN_PA00
 
 /*** Macros for SW1_GPIO_PA01 pin ***/
 #define SW1_GPIO_PA01_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 1)
 #define SW1_GPIO_PA01_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 1)
 #define SW1_GPIO_PA01_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 1)
-#define SW1_GPIO_PA01_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 1)) & 0x01)
 #define SW1_GPIO_PA01_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 1)
 #define SW1_GPIO_PA01_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 1)
+#define SW1_GPIO_PA01_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 1)) & 0x01)
 #define SW1_GPIO_PA01_PIN                  PORT_PIN_PA01
+
+/*** Macros for LS_ADC_AIN2 pin ***/
+#define LS_ADC_AIN2_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
+#define LS_ADC_AIN2_PIN                  PORT_PIN_PB08
 
 /*** Macros for LED_DAT_GPIO_PA11 pin ***/
 #define LED_DAT_GPIO_PA11_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 11)
 #define LED_DAT_GPIO_PA11_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 11)
 #define LED_DAT_GPIO_PA11_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 11)
-#define LED_DAT_GPIO_PA11_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11)) & 0x01)
 #define LED_DAT_GPIO_PA11_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 11)
 #define LED_DAT_GPIO_PA11_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 11)
+#define LED_DAT_GPIO_PA11_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11)) & 0x01)
 #define LED_DAT_GPIO_PA11_PIN                  PORT_PIN_PA11
 
 /*** Macros for WDRV_WINC_RESETN pin ***/
 #define WDRV_WINC_RESETN_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 10)
 #define WDRV_WINC_RESETN_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 10)
 #define WDRV_WINC_RESETN_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 10)
-#define WDRV_WINC_RESETN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10)) & 0x01)
 #define WDRV_WINC_RESETN_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 10)
 #define WDRV_WINC_RESETN_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 10)
+#define WDRV_WINC_RESETN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10)) & 0x01)
 #define WDRV_WINC_RESETN_PIN                  PORT_PIN_PB10
 
 /*** Macros for WDRV_WINC_CHIP_EN pin ***/
 #define WDRV_WINC_CHIP_EN_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 11)
 #define WDRV_WINC_CHIP_EN_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 11)
 #define WDRV_WINC_CHIP_EN_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 11)
-#define WDRV_WINC_CHIP_EN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11)) & 0x01)
 #define WDRV_WINC_CHIP_EN_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 11)
 #define WDRV_WINC_CHIP_EN_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 11)
+#define WDRV_WINC_CHIP_EN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11)) & 0x01)
 #define WDRV_WINC_CHIP_EN_PIN                  PORT_PIN_PB11
+
+/*** Macros for WINC_SPI_SERCOM4_PAD0 pin ***/
+#define WINC_SPI_SERCOM4_PAD0_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 12)) & 0x01)
+#define WINC_SPI_SERCOM4_PAD0_PIN                  PORT_PIN_PA12
+
+/*** Macros for WINC_SPI_SERCOM4_PAD1 pin ***/
+#define WINC_SPI_SERCOM4_PAD1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 13)) & 0x01)
+#define WINC_SPI_SERCOM4_PAD1_PIN                  PORT_PIN_PA13
+
+/*** Macros for WINC_SPI_SERCOM4_PAD2 pin ***/
+#define WINC_SPI_SERCOM4_PAD2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 14)) & 0x01)
+#define WINC_SPI_SERCOM4_PAD2_PIN                  PORT_PIN_PA14
+
+/*** Macros for WINC_SPI_SERCOM4_PAD3 pin ***/
+#define WINC_SPI_SERCOM4_PAD3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 15)) & 0x01)
+#define WINC_SPI_SERCOM4_PAD3_PIN                  PORT_PIN_PA15
+
+/*** Macros for WINC_INT_EIC_EXTINT2 pin ***/
+#define WINC_INT_EIC_EXTINT2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18)) & 0x01)
+#define WINC_INT_EIC_EXTINT2_PIN                  PORT_PIN_PA18
 
 /*** Macros for WINC_WAKE_GPIO_PA19 pin ***/
 #define WINC_WAKE_GPIO_PA19_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 19)
 #define WINC_WAKE_GPIO_PA19_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 19)
 #define WINC_WAKE_GPIO_PA19_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 19)
-#define WINC_WAKE_GPIO_PA19_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 19)) & 0x01)
 #define WINC_WAKE_GPIO_PA19_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 19)
 #define WINC_WAKE_GPIO_PA19_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 19)
+#define WINC_WAKE_GPIO_PA19_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 19)) & 0x01)
 #define WINC_WAKE_GPIO_PA19_PIN                  PORT_PIN_PA19
 
 /*** Macros for LED_CON_GPIO_PA20 pin ***/
 #define LED_CON_GPIO_PA20_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 20)
 #define LED_CON_GPIO_PA20_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 20)
 #define LED_CON_GPIO_PA20_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 20)
-#define LED_CON_GPIO_PA20_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 20)) & 0x01)
 #define LED_CON_GPIO_PA20_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 20)
 #define LED_CON_GPIO_PA20_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 20)
+#define LED_CON_GPIO_PA20_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 20)) & 0x01)
 #define LED_CON_GPIO_PA20_PIN                  PORT_PIN_PA20
 
 /*** Macros for LED_WIFI_GPIO_PA21 pin ***/
 #define LED_WIFI_GPIO_PA21_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 21)
 #define LED_WIFI_GPIO_PA21_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 21)
 #define LED_WIFI_GPIO_PA21_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 21)
-#define LED_WIFI_GPIO_PA21_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 21)) & 0x01)
 #define LED_WIFI_GPIO_PA21_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 21)
 #define LED_WIFI_GPIO_PA21_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 21)
+#define LED_WIFI_GPIO_PA21_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 21)) & 0x01)
 #define LED_WIFI_GPIO_PA21_PIN                  PORT_PIN_PA21
+
+/*** Macros for I2C_SERCOM3_PAD0 pin ***/
+#define I2C_SERCOM3_PAD0_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 22)) & 0x01)
+#define I2C_SERCOM3_PAD0_PIN                  PORT_PIN_PA22
+
+/*** Macros for I2C_SERCOM3_PAD1 pin ***/
+#define I2C_SERCOM3_PAD1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23)) & 0x01)
+#define I2C_SERCOM3_PAD1_PIN                  PORT_PIN_PA23
 
 /*** Macros for LED_ERR_GPIO_PA25 pin ***/
 #define LED_ERR_GPIO_PA25_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 25)
 #define LED_ERR_GPIO_PA25_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 25)
 #define LED_ERR_GPIO_PA25_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 25)
-#define LED_ERR_GPIO_PA25_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25)) & 0x01)
 #define LED_ERR_GPIO_PA25_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 25)
 #define LED_ERR_GPIO_PA25_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 25)
+#define LED_ERR_GPIO_PA25_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25)) & 0x01)
 #define LED_ERR_GPIO_PA25_PIN                  PORT_PIN_PA25
 
+/*** Macros for TS_EIC_EXTINT15 pin ***/
+#define TS_EIC_EXTINT15_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 27)) & 0x01)
+#define TS_EIC_EXTINT15_PIN                  PORT_PIN_PA27
 
+/*** Macros for DBG_SERCOM5_PAD0 pin ***/
+#define DBG_SERCOM5_PAD0_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 2)) & 0x01)
+#define DBG_SERCOM5_PAD0_PIN                  PORT_PIN_PB02
 
+/*** Macros for DBG_SERCOM5_PAD1 pin ***/
+#define DBG_SERCOM5_PAD1_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 3)) & 0x01)
+#define DBG_SERCOM5_PAD1_PIN                  PORT_PIN_PB03
 // *****************************************************************************
 /* PORT Group
 
@@ -307,6 +347,12 @@ typedef enum
 
     /* PB11 pin */
     PORT_PIN_PB11 = 43,
+
+    /* PB22 pin */
+    PORT_PIN_PB22 = 54,
+
+    /* PB23 pin */
+    PORT_PIN_PB23 = 55,
 
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
@@ -910,7 +956,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -949,7 +995,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

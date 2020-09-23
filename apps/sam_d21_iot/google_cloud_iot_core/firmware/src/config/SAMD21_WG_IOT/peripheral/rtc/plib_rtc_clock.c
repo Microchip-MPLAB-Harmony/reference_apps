@@ -69,45 +69,46 @@
 #define ADJUST_TM_STRUCT_MONTH(mon) (mon - 1)
 
 
+static void RTC_ClockReadSynchronization(void)
+{
+   /* Read-synchronization for CLOCK register */
+   RTC_REGS->MODE2.RTC_READREQ = RTC_READREQ_RREQ_Msk | RTC_READREQ_ADDR(0x10);
+   while((RTC_REGS->MODE2.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
+   {
+       /* Wait for Read-Synchronization */
+   }
+}
+
 void RTC_Initialize(void)
 {
+    /* Writing to CTRL register will trigger write-synchronization */
     RTC_REGS->MODE2.RTC_CTRL |= RTC_MODE2_CTRL_SWRST_Msk;
-
-    RTC_REGS->MODE2.RTC_READREQ |= RTC_READREQ_RCONT_Msk;
-
     while((RTC_REGS->MODE2.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
     {
-        /* Wait for synchronization after Software Reset */
+        /* Wait for Write-Synchronization */
     }
 
+    /* Writing to CTRL register will trigger write-synchronization */
     RTC_REGS->MODE2.RTC_CTRL = RTC_MODE2_CTRL_MODE(2) | RTC_MODE2_CTRL_PRESCALER(0xA) | RTC_MODE2_CTRL_ENABLE_Msk;
-
-
     while((RTC_REGS->MODE2.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
     {
-        /* Wait for Synchronization after Enabling RTC */
+        /* Wait for Write-Synchronization */
     }
-
 
 }
 
 bool RTC_RTCCTimeSet (struct tm * initialTime )
 {
-    /*
-     * Add 1900 to the tm_year member and the adjust for the RTC reference year
-     * Set YEAR(according to Reference Year), MONTH and DAY
-     *set Hour Minute and Second
-     */
+    /* Writing to CLOCK register will trigger write-synchronization */
     RTC_REGS->MODE2.RTC_CLOCK = ((TM_STRUCT_REFERENCE_YEAR + initialTime->tm_year) - REFERENCE_YEAR) << RTC_MODE2_CLOCK_YEAR_Pos |
                     ((ADJUST_MONTH(initialTime->tm_mon)) << RTC_MODE2_CLOCK_MONTH_Pos) |
                     (initialTime->tm_mday << RTC_MODE2_CLOCK_DAY_Pos) |
                     (initialTime->tm_hour << RTC_MODE2_CLOCK_HOUR_Pos) |
                     (initialTime->tm_min << RTC_MODE2_CLOCK_MINUTE_Pos) |
                     (initialTime->tm_sec << RTC_MODE2_CLOCK_SECOND_Pos);
-
     while((RTC_REGS->MODE2.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
     {
-        /* Synchronization after writing value to CLOCK Register */
+        /* Wait for Write-Synchronization */
     }
     return true;
 }
@@ -116,11 +117,8 @@ void RTC_RTCCTimeGet ( struct tm * currentTime )
 {
     uint32_t dataClockCalendar = 0;
 
-    while((RTC_REGS->MODE2.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
-    {
-        /* Synchronization before reading value from CLOCK Register */
-    }
-
+    /* Enable read-synchronization for CLOCK register to avoid CPU stall */
+    RTC_ClockReadSynchronization();
     dataClockCalendar = RTC_REGS->MODE2.RTC_CLOCK;
 
     currentTime->tm_hour =  (dataClockCalendar & RTC_MODE2_CLOCK_HOUR_Msk) >> RTC_MODE2_CLOCK_HOUR_Pos;

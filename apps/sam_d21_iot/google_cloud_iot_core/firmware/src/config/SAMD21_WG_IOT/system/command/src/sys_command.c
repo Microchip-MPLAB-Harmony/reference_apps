@@ -55,6 +55,8 @@
 #include "configuration.h"
 #include "system/command/sys_command.h"
 #include "system/console/sys_console.h"
+#include "system/debug/sys_debug.h"
+
 #include "mqtt/mqtt_core/mqtt_core.h"
 #include "services/iot/cloud/crypto_client/crypto_client.h"
 #include "services/iot/cloud/cloud_service.h"
