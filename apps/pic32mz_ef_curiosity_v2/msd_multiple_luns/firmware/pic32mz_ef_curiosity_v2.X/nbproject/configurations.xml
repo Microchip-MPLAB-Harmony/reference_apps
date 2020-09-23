@@ -66,6 +66,11 @@
             <itemPath>../src/config/pic32mz_ef_curiosity_2/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity_2/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_2/osal/osal.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_2/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_2/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/clk/plib_clk.h</itemPath>
@@ -86,8 +91,10 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/nvm/plib_nvm.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/spi/plib_spi_common.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/spi/plib_spi2.h</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/spi/spi_master/plib_spi2_master.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f5" displayName="system" projectFiles="true">
@@ -137,20 +144,9 @@
           </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_curiosity_2/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_2/definitions.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_2/device.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_2/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_2/configuration.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_curiosity_2/osal/osal.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_2/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_2/osal/osal_impl_basic.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MZ2048EFM144_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFM144_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
@@ -158,6 +154,13 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1"
+                       displayName="pic32mz_ef_curiosity_2"
+                       projectFiles="true">
+          <itemPath>../src/config/pic32mz_ef_curiosity_2/p32MZ2048EFM144.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -207,7 +210,9 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/nvm/plib_nvm.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/spi/plib_spi2.c</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_2/peripheral/spi/spi_master/plib_spi2_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f3" displayName="stdio" projectFiles="true">
@@ -246,6 +251,9 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity_2/harmony.prj</itemPath>
+      <itemPath>../src/config/pic32mz_ef_curiosity_2/pic32mz_ef_curiosity_2.xml</itemPath>
+      <itemPath>../src/config/pic32mz_ef_curiosity_2/harmony-manifest-success.yml</itemPath>
+      <itemPath>../src/config/pic32mz_ef_curiosity_2/harmony-manifest-failure.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -397,7 +405,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mz_ef_curiosity_2;../src/packs/PIC32MZ2048EFM144_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

@@ -1,10 +1,10 @@
-MPLAB Harmony v3 "usb" repository (revision v3.4.0) doesn't have full support for USB MSD with Multiple Drives. 
+MPLAB Harmony v3 "usb" repository (revision v3.6.1) doesn't have full support for USB MSD with Multiple Drives. 
 This project(msd_multiple_luns) has been created using the patch (in folder "usb_repo_patch") 
 discussed in the following steps.
 
 1. To reconfigure or regenerate the project (msd_multiple_luns), Apply the patch by following below steps
     a. Close the project and Harmony 3 configurator before applying the patch.
-    b. Make sure your "usb" repository is intact with revision v3.4.0.
+    b. Make sure your "usb" repository is intact with revision v3.6.1.
     c. Copy and paste "module.py" from 
        "your_downloaded_folder\msd_multiple_luns\usb_repo_patch\module.py" to 
        "your_harmony_repo\usb\config\module.py"

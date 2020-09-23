@@ -64,7 +64,7 @@
 #include "peripheral/coretimer/plib_coretimer.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
 #include "driver/memory/drv_memory_nvm.h"
-#include "peripheral/spi/plib_spi2.h"
+#include "peripheral/spi/spi_master/plib_spi2_master.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
 #include "system/dma/sys_dma.h"

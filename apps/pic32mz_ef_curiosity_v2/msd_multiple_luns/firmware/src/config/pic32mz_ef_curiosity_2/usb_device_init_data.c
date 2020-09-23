@@ -313,7 +313,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
     1,                                                      // Number of interfaces in this configuration
     0x01,                                                   // Index value of this configuration
     0x00,                                                   // Configuration string index
-    USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED,     // Attributes
+    USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED, // Attributes
     50,
 	
 	/* Descriptor for Function 1 - MSD     */ 
@@ -363,7 +363,6 @@ USB_DEVICE_CONFIGURATION_DESCRIPTORS_TABLE fullSpeedConfigDescSet[1] =
 /**************************************
  *  String descriptors.
  *************************************/
-
  /*******************************************
  *  Language code string descriptor
  *******************************************/
@@ -420,27 +419,29 @@ USB_DEVICE_CONFIGURATION_DESCRIPTORS_TABLE fullSpeedConfigDescSet[1] =
  * consist only of ASCII characters "0" through "9" and capital letters "A"
  * through "F".
  ******************************************************************************/
-const struct
-{
-    uint8_t bLength;
-    uint8_t bDscType;
-    uint16_t string[12];
-}
-sd003 =
-{
-    sizeof(sd003),
-    USB_DESCRIPTOR_STRING,
-    {'1','2','3','4','5','6','7','8','9','9','9','9'}
-};
+    const struct
+    {
+        uint8_t bLength;                                    // Size of this descriptor in bytes
+        uint8_t bDscType;                                   // STRING descriptor type
+        uint16_t string[12];                                // String
+    }
+    serialNumberStringDescriptor =
+    {
+        sizeof(serialNumberStringDescriptor),
+        USB_DESCRIPTOR_STRING,
+        {'1','2','3','4','5','6','7','8','9','9','9','9'}
+		
+    };
+
 /***************************************
  * Array of string descriptors
  ***************************************/
- USB_DEVICE_STRING_DESCRIPTORS_TABLE stringDescriptors[4]=
+USB_DEVICE_STRING_DESCRIPTORS_TABLE stringDescriptors[4]=
 {
     (const uint8_t *const)&sd000,
     (const uint8_t *const)&sd001,
     (const uint8_t *const)&sd002,
-    (const uint8_t *const)&sd003
+    (const uint8_t *const)&serialNumberStringDescriptor,
 };
 
 /*******************************************
@@ -487,10 +488,5 @@ const USB_DEVICE_INIT usbDevInitData =
     /* Pointer to the USB Driver Functions. */
     .usbDriverInterface = DRV_USBHS_DEVICE_INTERFACE,
 	
-	/* Specify queue size for vendor endpoint read */
-    .queueSizeEndpointRead = 1,
-    
-    /* Specify queue size for vendor endpoint write */
-    .queueSizeEndpointWrite= 1,
 };
 // </editor-fold>

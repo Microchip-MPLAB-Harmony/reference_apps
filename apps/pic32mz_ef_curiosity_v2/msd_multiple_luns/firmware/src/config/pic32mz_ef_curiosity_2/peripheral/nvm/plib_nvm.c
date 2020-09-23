@@ -238,6 +238,10 @@ bool NVM_IsBusy( void )
 
 void NVM_ProgramFlashSwapBank( void )
 {
+    volatile uint32_t processorStatus;
+
+    processorStatus = __builtin_disable_interrupts();
+
     // NVMOP can be written only when WREN is zero. So, clear WREN.
     NVMCONCLR = _NVMCON_WREN_MASK;
 
@@ -245,10 +249,16 @@ void NVM_ProgramFlashSwapBank( void )
 
     // Map Program Flash Memory Bank 2 to lower region
     NVMCONSET = _NVMCON_PFSWAP_MASK;
+
+    __builtin_mtc0(12, 0, processorStatus);
 }
 
 void NVM_ProgramFlashWriteProtect( uint32_t address )
 {
+    volatile uint32_t processorStatus;
+
+    processorStatus = __builtin_disable_interrupts();
+
     NVM_WriteUnlockSequence();
 
     /* Program the 24-Bit address till where the memory has to be protected
@@ -257,36 +267,62 @@ void NVM_ProgramFlashWriteProtect( uint32_t address )
      * be protected from writes
      */
     NVMPWPSET = (address & _NVMPWP_PWP_MASK);
+
+    __builtin_mtc0(12, 0, processorStatus);
 }
 
 void NVM_ProgramFlashWriteProtectLock( void )
 {
+    volatile uint32_t processorStatus;
+
+    processorStatus = __builtin_disable_interrupts();
+
     NVM_WriteUnlockSequence();
 
     // Lock the Program flash Write protect register
     NVMPWPCLR = _NVMPWP_PWPULOCK_MASK;
+
+    __builtin_mtc0(12, 0, processorStatus);
 }
 
 void NVM_BootFlashWriteProtectEnable( NVM_BOOT_FLASH_WRITE_PROTECT writeProtectPage )
 {
+    volatile uint32_t processorStatus;
+
+    processorStatus = __builtin_disable_interrupts();
+
     NVM_WriteUnlockSequence();
 
     // Protect the appropriate boot page to disable writes
     NVMBWPSET = writeProtectPage;
+
+    __builtin_mtc0(12, 0, processorStatus);
 }
 
 void NVM_BootFlashWriteProtectDisable( NVM_BOOT_FLASH_WRITE_PROTECT writeProtectPage )
 {
+    volatile uint32_t processorStatus;
+
+    processorStatus = __builtin_disable_interrupts();
+
     NVM_WriteUnlockSequence();
 
     // Un-Protect the appropriate boot page to enable writes
     NVMBWPCLR = writeProtectPage;
+
+    __builtin_mtc0(12, 0, processorStatus);
 }
 
 void NVM_BootFlashWriteProtectLock( NVM_BOOT_FLASH_WRITE_PROTECT_LOCK writeProtectLock )
 {
+    volatile uint32_t processorStatus;
+
+    processorStatus = __builtin_disable_interrupts();
+
     NVM_WriteUnlockSequence();
 
     // Lock the Boot flash Write protect register
     NVMBWPCLR = writeProtectLock;
+
+    __builtin_mtc0(12, 0, processorStatus);
 }
