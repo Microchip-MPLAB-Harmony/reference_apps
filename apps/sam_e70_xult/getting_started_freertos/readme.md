@@ -44,7 +44,7 @@ nav_order: 3
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
  - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
  - MPLAB Harmony Configurator Plugin v3.6.0
- - [CMSIS-FreeRTOS v10.3.0](https://github.com/Microchip-MPLAB-Harmony/CMSIS-FreeRTOS/releases/tag/v10.3.0)
+ - [CMSIS-FreeRTOS 10.3.1](https://github.com/ARM-software/CMSIS-FreeRTOS/releases/tag/10.3.1)
  - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Any Serial Terminal application like Tera Term terminal application.

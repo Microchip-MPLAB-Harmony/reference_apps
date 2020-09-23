@@ -575,184 +575,170 @@
             <User dnOrder="0" value="150000000"/>
           </Values>
         </String>
-        <String dnOrder="113" id="SYSTICK_PERIOD">
+        <Comment dnOrder="113" id="SYSTICK_COMMENT">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </Comment>
+        <String dnOrder="114" id="SYSTICK_PERIOD">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="0x493e0"/>
           </Values>
         </String>
-        <Integer dnOrder="114" id="SYSTICK_PERIOD_US">
+        <Integer dnOrder="115" id="SYSTICK_PERIOD_US">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="1000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="115" id="SysTick_INTERRUPT_ENABLE">
+        <Boolean dnOrder="116" id="SysTick_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="FreeRTOS" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="116" id="SysTick_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="117" id="SysTick_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="117" id="SysTick_INTERRUPT_HANDLER">
+        <String dnOrder="118" id="SysTick_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="FreeRTOS" value="xPortSysTickHandler"/>
           </Values>
         </String>
-        <Boolean dnOrder="118" id="SysTick_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="119" id="SysTick_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="FreeRTOS" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="119" id="TCM_ENABLE">
+        <Boolean dnOrder="120" id="TCM_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="120" id="TCM_SIZE">
+        <String dnOrder="121" id="TCM_SIZE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="0 KB"/>
           </Values>
         </String>
-        <Integer dnOrder="121" id="TRNG_CLOCK_FREQUENCY">
+        <Integer dnOrder="122" id="TRNG_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="150000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="122" id="TWIHS0_CLOCK_ENABLE">
+        <Boolean dnOrder="123" id="TWIHS0_CLOCK_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="twihs0" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="123" id="TWIHS0_CLOCK_FREQUENCY">
+        <Integer dnOrder="124" id="TWIHS0_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="150000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="124" id="TWIHS0_INTERRUPT_ENABLE">
+        <Boolean dnOrder="125" id="TWIHS0_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="twihs0" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="125" id="TWIHS0_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="126" id="TWIHS0_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="126" id="TWIHS0_INTERRUPT_HANDLER">
+        <String dnOrder="127" id="TWIHS0_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="twihs0" value="TWIHS0_InterruptHandler"/>
           </Values>
         </String>
-        <Boolean dnOrder="127" id="TWIHS0_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="128" id="TWIHS0_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="twihs0" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="128" id="TWIHS1_CLOCK_FREQUENCY">
+        <Integer dnOrder="129" id="TWIHS1_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="150000000"/>
           </Values>
         </Integer>
-        <Integer dnOrder="129" id="TWIHS2_CLOCK_FREQUENCY">
+        <Integer dnOrder="130" id="TWIHS2_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="150000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="130" id="USART1_CLOCK_ENABLE">
+        <Boolean dnOrder="131" id="USART1_CLOCK_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="usart1" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="131" id="USART1_CLOCK_FREQUENCY">
+        <Integer dnOrder="132" id="USART1_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="150000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="132" id="USART1_INTERRUPT_ENABLE">
+        <Boolean dnOrder="133" id="USART1_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="usart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="133" id="USART1_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="134" id="USART1_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="134" id="USART1_INTERRUPT_HANDLER">
+        <String dnOrder="135" id="USART1_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="usart1" value="USART1_InterruptHandler"/>
           </Values>
         </String>
-        <Boolean dnOrder="135" id="USART1_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="136" id="USART1_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="usart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="136" id="WDT_INTERRUPT_ENABLE">
+        <Boolean dnOrder="137" id="WDT_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="137" id="WDT_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="138" id="WDT_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="true"/>
           </Values>
         </Boolean>
-        <String dnOrder="138" id="WDT_INTERRUPT_HANDLER">
+        <String dnOrder="139" id="WDT_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="WDT_Handler"/>
           </Values>
         </String>
-        <Boolean dnOrder="139" id="WDT_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="140" id="WDT_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="140" id="XDMAC_CLOCK_FREQUENCY">
+        <Integer dnOrder="141" id="XDMAC_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="150000000"/>
           </Values>
         </Integer>
+        <Boolean dnOrder="142" id="systickEnable">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">false</Value>
+            </Boolean>
+          </Attributes>
+        </Boolean>
       </Symbols>
     </UniqueComponent>
     <UniqueComponent dnOrder="2" id="dfp"/>
     <GeneratorComponent dnOrder="3" id="drv_i2c">
       <Symbols dnOrder="0">
-        <File dnOrder="0" id="DRV_I2C_ASYNC_HEADER">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="1" id="DRV_I2C_ASYNC_SRC">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Combo dnOrder="2" id="DRV_I2C_MODE">
+        <Combo dnOrder="0" id="DRV_I2C_MODE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="drv_i2c" value="Synchronous"/>
           </Values>
         </Combo>
-        <File dnOrder="3" id="DRV_I2C_SYNC_HEADER">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="4" id="DRV_I2C_SYNC_SRC">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
       </Symbols>
       <Instances dnOrder="1">
         <InstanceComponent dnOrder="0" id="drv_i2c" instance="0">
@@ -767,13 +753,6 @@
                 <Dynamic dnOrder="0" id="drv_i2c_0" value="TWIHS0"/>
               </Values>
             </String>
-            <Integer dnOrder="2" id="DRV_I2C_QUEUE_SIZE">
-              <Attributes dnOrder="0">
-                <Boolean dnOrder="0" id="visible">
-                  <Value dnOrder="0">false</Value>
-                </Boolean>
-              </Attributes>
-            </Integer>
           </Symbols>
           <Attachments dnOrder="1">
             <DirectDependency dnOrder="0" id="drv_i2c_I2C_dependency">
@@ -797,34 +776,6 @@
             <Dynamic dnOrder="0" id="drv_usart" value="Synchronous"/>
           </Values>
         </Combo>
-        <File dnOrder="1" id="USART_ASYNC_LOCAL">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="2" id="USART_ASYNC_SOURCE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="3" id="USART_SYNC_LOCAL">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="4" id="USART_SYNC_SOURCE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
       </Symbols>
       <Instances dnOrder="1">
         <InstanceComponent dnOrder="0" id="drv_usart" instance="0">
@@ -834,24 +785,38 @@
                 <User dnOrder="0" value="3"/>
               </Values>
             </Integer>
-            <String dnOrder="1" id="DRV_USART_PLIB">
-              <Values dnOrder="0">
-                <Dynamic dnOrder="0" id="drv_usart_0" value="USART1"/>
-              </Values>
-            </String>
-            <Integer dnOrder="2" id="DRV_USART_QUEUE_SIZE">
+            <Comment dnOrder="1" id="DRV_USART_DEPENDENCY_DMA_COMMENT">
               <Attributes dnOrder="0">
                 <Boolean dnOrder="0" id="visible">
                   <Value dnOrder="0">false</Value>
                 </Boolean>
               </Attributes>
-            </Integer>
-            <Integer dnOrder="3" id="DRV_USART_RX_DMA_CHANNEL">
+            </Comment>
+            <String dnOrder="2" id="DRV_USART_PLIB">
+              <Values dnOrder="0">
+                <Dynamic dnOrder="0" id="drv_usart_0" value="USART1"/>
+              </Values>
+            </String>
+            <Boolean dnOrder="3" id="DRV_USART_RX_DMA">
+              <Attributes dnOrder="0">
+                <Boolean dnOrder="0" id="readOnly">
+                  <Value dnOrder="0">false</Value>
+                </Boolean>
+              </Attributes>
+            </Boolean>
+            <Integer dnOrder="4" id="DRV_USART_RX_DMA_CHANNEL">
               <Values dnOrder="0">
                 <Dynamic dnOrder="0" id="drv_usart_0" value="-1"/>
               </Values>
             </Integer>
-            <Integer dnOrder="4" id="DRV_USART_TX_DMA_CHANNEL">
+            <Boolean dnOrder="5" id="DRV_USART_TX_DMA">
+              <Attributes dnOrder="0">
+                <Boolean dnOrder="0" id="readOnly">
+                  <Value dnOrder="0">false</Value>
+                </Boolean>
+              </Attributes>
+            </Boolean>
+            <Integer dnOrder="6" id="DRV_USART_TX_DMA_CHANNEL">
               <Values dnOrder="0">
                 <Dynamic dnOrder="0" id="drv_usart_0" value="-1"/>
               </Values>
@@ -1339,12 +1304,22 @@
           </Values>
         </Integer>
         <Boolean dnOrder="4" id="USART_INTERRUPT_MODE">
-          <Values dnOrder="0">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="readOnly">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+          <Values dnOrder="1">
             <Dynamic dnOrder="0" id="usart1" value="true"/>
           </Values>
         </Boolean>
         <KeyValueSet dnOrder="5" id="USART_MODE">
-          <Values dnOrder="0">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="readOnly">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+          <Values dnOrder="1">
             <Dynamic dnOrder="0" id="usart1" value="0"/>
           </Values>
         </KeyValueSet>
@@ -1356,7 +1331,12 @@
           </Attributes>
         </Comment>
         <Boolean dnOrder="7" id="USART_RING_BUFFER_ENABLE">
-          <Values dnOrder="0">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="readOnly">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+          <Values dnOrder="1">
             <Dynamic dnOrder="0" id="usart1" value="false"/>
           </Values>
         </Boolean>
@@ -1367,7 +1347,14 @@
         </Integer>
       </Symbols>
       <Attachments dnOrder="1">
-        <DirectCapability dnOrder="0" id="USART1_UART">
+        <DirectCapability dnOrder="0" id="USART1_SPI">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">false</Value>
+            </Boolean>
+          </Attributes>
+        </DirectCapability>
+        <DirectCapability dnOrder="1" id="USART1_UART">
           <Attributes dnOrder="0">
             <String dnOrder="0" id="targetComponentID">
               <Value dnOrder="0">drv_usart_0</Value>
@@ -1381,8 +1368,7 @@
     </UniqueComponent>
   </Components>
   <UserData>
-    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="0"/>
-    <ComponentGraph dnOrder="1" id="__ROOTVIEW">
+    <ComponentGraph dnOrder="0" id="__ROOTVIEW">
       <ElementPositions dnOrder="0">
         <ElementPosition dnOrder="0" id="FreeRTOS" x="38" y="76"/>
         <ElementPosition dnOrder="1" id="HarmonyCore" x="483" y="19"/>
@@ -1396,5 +1382,6 @@
         <ElementPosition dnOrder="9" id="usart1" x="224" y="93"/>
       </ElementPositions>
     </ComponentGraph>
+    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="1"/>
   </UserData>
 </Configuration>
