@@ -248,6 +248,8 @@ static void cleanup()
 
 static leResult exec(leStreamManager* man)
 {
+    (void)man; // unused
+
     while(renderState.state != SS_DONE)
     {
         switch(renderState.state)
@@ -285,6 +287,8 @@ static leResult exec(leStreamManager* man)
 
 static leResult exec_blocking(leStreamManager* man)
 {
+    (void)man; // unused
+
     while(renderState.state != SS_DONE)
     {
         switch(renderState.state)
@@ -319,11 +323,15 @@ static leResult exec_blocking(leStreamManager* man)
 
 static leBool isDone(leStreamManager* man)
 {
+    (void)man; // unused
+
     return renderState.state == SS_DONE;
 }
 
 static void abortDraw(leStreamManager* man)
 {
+    (void)man; // unused
+
     renderState.state = SS_CLEANUP;
 }
 

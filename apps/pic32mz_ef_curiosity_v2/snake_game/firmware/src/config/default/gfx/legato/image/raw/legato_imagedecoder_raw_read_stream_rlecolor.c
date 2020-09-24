@@ -81,6 +81,8 @@ static leResult advanceStage()
 
 static void rleHeaderDataReady(leStream* strm)
 {
+    (void)strm; // unused
+
     // get the header values
     streamReadStage.rleDataSize = (streamReadStage.rleLengthSize & 0xFF00) >> 8;
     streamReadStage.rleLengthSize = (streamReadStage.rleLengthSize & 0xFF);
@@ -92,6 +94,8 @@ static void rleHeaderDataReady(leStream* strm)
 
 static leResult rleHeaderDecode(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     if(streamReadStage.stalled == LE_TRUE)
         return LE_FAILURE;
 
@@ -110,6 +114,7 @@ static leResult rleHeaderDecode(struct StreamReadStage* stage)
 
 static void rleDataReady(leStream* strm)
 {
+    (void)strm; // unused
     uint32_t i;
 
     // calculate the RLE block values
@@ -154,6 +159,8 @@ static leResult readRLEData()
 
 static leResult exec(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     leRawSourceReadOperation* op;
 
     // no need to do anything if a data read is still pending
@@ -295,6 +302,8 @@ static leResult exec_blocking(struct StreamReadStage* stage)
 
 static void cleanup(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     leStream_Close(&streamReadStage.stream);
 }
 

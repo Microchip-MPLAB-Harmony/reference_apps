@@ -24,9 +24,10 @@
 // DOM-IGNORE-END
 
 
-#include <gfx/legato/image/legato_image.h>
+#include "gfx/legato/image/legato_image.h"
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#include "gfx/legato/common/legato_color.h"
 #include "gfx/legato/common/legato_pixelbuffer.h"
 #include "gfx/legato/image/legato_image.h"
 #include "gfx/legato/image/legato_image_utils.h"
@@ -62,6 +63,10 @@ static struct StreamPaletteStage
     enum StageState state;
 
     leStream stream;
+
+#if LE_ASSET_DECODER_USE_PALETTE_CACHE == 1
+    lePixelBuffer cacheBuffer;
+#endif
 } streamPaletteStage;
 
 static void advanceStage()
@@ -71,6 +76,8 @@ static void advanceStage()
 
 static void indexDataReady(leStream* strm)
 {
+    (void)strm; // unused
+
     streamPaletteStage.state = SS_READY;
 
     advanceStage();
@@ -152,14 +159,14 @@ leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* state)
     memset(&streamPaletteStage, 0, sizeof(streamPaletteStage));
 
 #if LE_ASSET_DECODER_USE_PALETTE_CACHE == 1
-    lePixelBufferCreate(LE_ASSET_DECODER_CACHE_SIZE / leColorModeInfoGet(state->source->palette->colorMode).size,
+    lePixelBufferCreate(LE_ASSET_DECODER_CACHE_SIZE / leColorInfoTable[state->source->palette->buffer.mode].size,
                         1,
-                        state->source->palette->colorMode,
+                        state->source->palette->buffer.mode,
                         cache,
                         &streamPaletteStage.cacheBuffer);
 
     leStream_Init(&streamPaletteStage.stream,
-                  state->source,
+                  (leStreamDescriptor*)state->source->palette,
                   LE_ASSET_DECODER_CACHE_SIZE,
                   leRawImageDecoderPaletteScratchBuffer,
                   NULL);
@@ -176,7 +183,7 @@ leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* state)
         return LE_FAILURE;
     }
 
-    streamPaletteStage.paletteSize = leColorInfoTable[state->source->palette->colorMode].size;
+    streamPaletteStage.paletteSize = leColorInfoTable[state->source->palette->buffer.mode].size;
 
     streamPaletteStage.base.state = state;
     streamPaletteStage.base.cleanup = (void*)cleanup;

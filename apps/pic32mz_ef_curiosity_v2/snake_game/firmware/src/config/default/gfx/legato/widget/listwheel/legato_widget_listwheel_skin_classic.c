@@ -111,7 +111,7 @@ void _leListWheelWidget_GetItemTextRect(const leListWheelWidget* whl,
     leUtils_ArrangeRectangleRelative(textRect,
                                      imageRect,
                                      bounds,
-                                     whl->widget.halign,
+                                     whl->widget.style.halign,
                                      LE_VALIGN_MIDDLE,
                                      whl->iconPos,
                                      whl->widget.margin.left,
@@ -250,7 +250,7 @@ void _leListWheelWidget_GetItemIconRect(leListWheelWidget* whl,
     leUtils_ArrangeRectangle(imgRect,
                              textRect,
                              bounds,
-                             whl->widget.halign,
+                             whl->widget.style.halign,
                              LE_VALIGN_MIDDLE,
                              whl->iconPos,
                              whl->widget.margin.left,
@@ -313,7 +313,7 @@ static void drawBorder(leListWheelWidget* whl);
 
 static void nextState(leListWheelWidget* whl)
 {
-    switch(whl->widget.drawState)
+    switch(whl->widget.status.drawState)
     {
         case NOT_STARTED:
         {
@@ -328,7 +328,7 @@ static void nextState(leListWheelWidget* whl)
             
             whl->paintState.per = leDivideRounding(whl->widget.rect.height, whl->visibleItems - 1);
             
-            whl->widget.drawState = DRAW_BACKGROUND;
+            whl->widget.status.drawState = DRAW_BACKGROUND;
             whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&drawBackground;
 
             return;
@@ -340,12 +340,13 @@ static void nextState(leListWheelWidget* whl)
                 whl->paintState.nextItem = whl->topItem;
                 whl->paintState.y = -1;
                 
-                whl->widget.drawState = DRAW_STRING;
+                whl->widget.status.drawState = DRAW_STRING;
                 whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&drawString;
             
                 return;
             }
         }
+        // fall through
         case DRAW_STRING:
         {            
             //printf("\n");
@@ -355,35 +356,38 @@ static void nextState(leListWheelWidget* whl)
                 whl->paintState.nextItem = whl->topItem;
                 whl->paintState.y = -1;
                 
-                whl->widget.drawState = DRAW_ICON;
+                whl->widget.status.drawState = DRAW_ICON;
                 whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&drawIcon;
             
                 return;
             }
         }
+        // fall through
         case DRAW_ICON:
         {
             if(whl->showIndicators == LE_TRUE)
             {                
-                whl->widget.drawState = DRAW_INDICATORS;
+                whl->widget.status.drawState = DRAW_INDICATORS;
                 whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&drawIndicators;
             
                 return;
             }
         }
+        // fall through
         case DRAW_INDICATORS:
         {
-            if(whl->widget.borderType != LE_WIDGET_BORDER_NONE)
+            if(whl->widget.style.borderType != LE_WIDGET_BORDER_NONE)
             {
                 whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&drawBorder;
-                whl->widget.drawState = DRAW_BORDER;
+                whl->widget.status.drawState = DRAW_BORDER;
                 
                 return;
             }
         }
+        // fall through
         case DRAW_BORDER:
         {
-            whl->widget.drawState = DONE;
+            whl->widget.status.drawState = DONE;
             whl->widget.drawFunc = NULL;
         }
     }
@@ -405,7 +409,7 @@ static void drawBackground(leListWheelWidget* whl)
     leRect widgetRect, drawRect;
     
     //printf("drawbackground\n");
-    if(whl->widget.backgroundType == LE_WIDGET_BACKGROUND_FILL)
+    if(whl->widget.style.backgroundType == LE_WIDGET_BACKGROUND_FILL)
     {
         if(whl->shaded == LE_TRUE)
         {
@@ -418,8 +422,8 @@ static void drawBackground(leListWheelWidget* whl)
             drawRect.height = (widgetRect.height / 2) - whl->indicatorArea;
             
             leRenderer_VertGradientRect(&drawRect,
-                                        whl->widget.scheme->backgroundDisabled,
-                                        whl->widget.scheme->backgroundInactive,
+                                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_BACKGROUND_DISABLED),
+                                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_BACKGROUND_INACTIVE),
                                         paintState.alpha);
             
             // lower rectangle
@@ -427,14 +431,14 @@ static void drawBackground(leListWheelWidget* whl)
             drawRect.height = (widgetRect.height / 2) - whl->indicatorArea;
             
             leRenderer_VertGradientRect(&drawRect,
-                                        whl->widget.scheme->backgroundInactive,
-                                        whl->widget.scheme->backgroundDisabled,
+                                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_BACKGROUND_INACTIVE),
+                                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_BACKGROUND_DISABLED),
                                         paintState.alpha);
         }
         else
         {
             leWidget_SkinClassic_DrawBackground((leWidget*)whl,
-                                                whl->widget.scheme->background,
+                                                leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_BACKGROUND),
                                                 paintState.alpha);
         }
     }
@@ -448,14 +452,14 @@ static void drawBackground(leListWheelWidget* whl)
         if (whl->indicatorFill == LE_LISTWHEEL_INDICATOR_FILL_GRADIENT)
         {
             leRenderer_VertGradientRect(&drawRect,
-                                        whl->widget.scheme->foregroundDisabled,
-                                        whl->widget.scheme->foregroundInactive,
+                                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND_DISABLED),
+                                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND_INACTIVE),
                                         paintState.alpha);
         }
         else
         {
             leRenderer_RectFill(&drawRect,
-                                whl->widget.scheme->foregroundInactive,
+                                leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND_INACTIVE),
                                 paintState.alpha);
         }
     }
@@ -470,7 +474,7 @@ static void onStringStreamFinished(leStreamManager* strm)
 
     nextItem(whl);
 
-    whl->widget.drawState = DRAW_STRING;
+    whl->widget.status.drawState = DRAW_STRING;
     whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&drawString;
 }
 #endif
@@ -535,8 +539,8 @@ static void drawString(leListWheelWidget* whl)
         item->string->fn->_draw(item->string,
                                 textRect.x,
                                 textRect.y,
-                                whl->widget.halign,
-                                whl->widget.scheme->textHighlightText,
+                                whl->widget.style.halign,
+                                leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_TEXT_HIGHLIGHTTEXT),
                                 paintState.alpha);
 
 #if LE_STREAMING_ENABLED == 1
@@ -545,7 +549,7 @@ static void drawString(leListWheelWidget* whl)
             leGetActiveStream()->onDone = onStringStreamFinished;
             leGetActiveStream()->userData = whl;
 
-            whl->widget.drawState = WAIT_STRING;
+            whl->widget.status.drawState = WAIT_STRING;
 
             return;
         }
@@ -558,8 +562,8 @@ static void drawString(leListWheelWidget* whl)
             item->string->fn->_draw(item->string,
                                 textRect.x,
                                 textRect.y,
-                                whl->widget.halign,
-                                whl->widget.scheme->text,
+                                whl->widget.style.halign,
+                                leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_TEXT),
                                 paintState.alpha);
 
 #if LE_STREAMING_ENABLED == 1
@@ -568,7 +572,7 @@ static void drawString(leListWheelWidget* whl)
                 leGetActiveStream()->onDone = onStringStreamFinished;
                 leGetActiveStream()->userData = whl;
 
-                whl->widget.drawState = WAIT_STRING;
+                whl->widget.status.drawState = WAIT_STRING;
 
                 return;
             }
@@ -599,7 +603,7 @@ static void drawString(leListWheelWidget* whl)
                 GFX_Set(GFXF_DRAW_COLOR, leColorConvert(
                                             leContext_GetActive()->colorMode,
                                             LE_COLOR_MODE_RGBA_8888,
-                                            whl->widget.scheme->text));
+                                            leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_TEXT);
 
                 GFX_Set(GFXF_DRAW_TARGET, &pixelBuff);
 
@@ -615,7 +619,7 @@ static void drawString(leListWheelWidget* whl)
                 if(whl->reader != NULL)
                 {
                     whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&waitString;
-                    whl->widget.drawState = WAIT_STRING;
+                    whl->widget.status.drawState = WAIT_STRING;
 
                     LE_FREE(buf);
 
@@ -706,7 +710,7 @@ static void onImageStreamFinished(leStreamManager* dec)
 {
     leListWheelWidget* whl = (leListWheelWidget*)dec->userData;
 
-    whl->widget.drawState = DRAW_ICON;
+    whl->widget.status.drawState = DRAW_ICON;
 
     nextState(whl);
 }
@@ -773,7 +777,7 @@ static void drawIcon(leListWheelWidget* whl)
                     leGetActiveStream()->onDone = onImageStreamFinished;
                     leGetActiveStream()->userData = whl;
 
-                    whl->widget.drawState = WAIT_ICON;
+                    whl->widget.status.drawState = WAIT_ICON;
 
                     return;
                 }
@@ -794,7 +798,7 @@ static void drawIcon(leListWheelWidget* whl)
                         leGetActiveStream()->onDone = onImageStreamFinished;
                         leGetActiveStream()->userData = whl;
 
-                        whl->widget.drawState = WAIT_ICON;
+                        whl->widget.status.drawState = WAIT_ICON;
 
                         return;
                     }
@@ -825,7 +829,7 @@ static void drawIcon(leListWheelWidget* whl)
                         GFX_Set(GFXF_DRAW_COLOR, leColorConvert(
                                                     leContext_GetActive()->colorMode,
                                                     LE_COLOR_MODE_RGBA_8888,
-                                                    whl->widget.scheme->text));
+                                                    leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND_TEXT));
 
                         GFX_Set(GFXF_DRAW_TARGET, &pixelBuff);
 
@@ -841,7 +845,7 @@ static void drawIcon(leListWheelWidget* whl)
 
                         if(whl->reader != NULL)
                         {
-                            whl->widget.drawState = WAIT_ICON;
+                            whl->widget.status.drawState = WAIT_ICON;
                             whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&waitIcon;
 
                             LE_FREE(buf);                        
@@ -950,32 +954,32 @@ static void drawIndicators(leListWheelWidget* whl)
     leRenderer_HorzLine(rect.x,
                         topLine,
                         rect.width,
-                        whl->widget.scheme->foreground,
+                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND),
                         paintState.alpha);
     
     // bottom inner line
     leRenderer_HorzLine(rect.x,
                         bottomLine,
                         rect.width,
-                        whl->widget.scheme->foreground,
+                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND),
                         paintState.alpha);
     
     // top inner line
     leRenderer_HorzLine(rect.x,
                         topLine + 1,
                         rect.width,
-                        whl->widget.scheme->foreground,
+                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND),
                         paintState.alpha);
     
     // bottom outer line
     leRenderer_HorzLine(rect.x,
                         bottomLine + 1,
                         rect.width,
-                        whl->widget.scheme->foreground,
+                        leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND),
                         paintState.alpha);
     
     //if the widget has no border, draw the vertical indicator borders
-    if (whl->widget.borderType == LE_WIDGET_BORDER_NONE)
+    if (whl->widget.style.borderType == LE_WIDGET_BORDER_NONE)
     {
         //left line
         drawRect.x = rect.x;
@@ -984,7 +988,7 @@ static void drawIndicators(leListWheelWidget* whl)
         drawRect.height = bottomLine - topLine;
         
         leRenderer_RectFill(&drawRect,
-                            whl->widget.scheme->foreground,
+                            leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND),
                             paintState.alpha);
      
         //right line
@@ -994,7 +998,7 @@ static void drawIndicators(leListWheelWidget* whl)
         drawRect.height = bottomLine - drawRect.y;
         
         leRenderer_RectFill(&drawRect,
-                            whl->widget.scheme->foreground,
+                            leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND),
                             paintState.alpha);
     }
     
@@ -1003,12 +1007,12 @@ static void drawIndicators(leListWheelWidget* whl)
 
 static void drawBorder(leListWheelWidget* whl)
 {
-    if(whl->widget.borderType == LE_WIDGET_BORDER_LINE)
+    if(whl->widget.style.borderType == LE_WIDGET_BORDER_LINE)
     {
         leWidget_SkinClassic_DrawStandardLineBorder((leWidget*)whl,
                                                     paintState.alpha);
     }
-    else if(whl->widget.borderType == LE_WIDGET_BORDER_BEVEL)
+    else if(whl->widget.style.borderType == LE_WIDGET_BORDER_BEVEL)
     {
         leWidget_SkinClassic_DrawStandardLoweredBorder((leWidget*)whl,
                                                        paintState.alpha);
@@ -1019,25 +1023,18 @@ static void drawBorder(leListWheelWidget* whl)
 
 void _leListWheelWidget_Paint(leListWheelWidget* whl)
 {
-    if(whl->widget.scheme == NULL)
-    {
-        whl->widget.drawState = DONE;
-        
-        return;
-    }
-    
-    if(whl->widget.drawState == NOT_STARTED)
+    if(whl->widget.status.drawState == NOT_STARTED)
         nextState(whl);
 
 #if LE_STREAMING_ENABLED == 1
-    if(whl->widget.drawState == WAIT_STRING ||
-       whl->widget.drawState == WAIT_ICON)
+    if(whl->widget.status.drawState == WAIT_STRING ||
+       whl->widget.status.drawState == WAIT_ICON)
     {
         return;
     }
 #endif
 
-    while(whl->widget.drawState != DONE)
+    while(whl->widget.status.drawState != DONE)
     {
         whl->widget.drawFunc((leWidget*)whl);
         
@@ -1046,8 +1043,8 @@ void _leListWheelWidget_Paint(leListWheelWidget* whl)
 #endif
 
 #if LE_STREAMING_ENABLED == 1
-        if(whl->widget.drawState == WAIT_STRING ||
-           whl->widget.drawState == WAIT_ICON)
+        if(whl->widget.status.drawState == WAIT_STRING ||
+           whl->widget.status.drawState == WAIT_ICON)
             break;
 #endif
     }

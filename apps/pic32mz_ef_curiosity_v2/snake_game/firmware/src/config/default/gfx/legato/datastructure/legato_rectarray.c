@@ -444,7 +444,8 @@ leResult leRectArray_CropToArea(leRectArray* arr,
     return LE_SUCCESS;
 }
 
-leResult leRectArray_CropToSize(leRectArray* arr, uint32_t size)
+leResult leRectArray_CropToSizeY(leRectArray* arr,
+                                 uint32_t size)
 {
     uint32_t rectItr;
     leRect split;
@@ -460,23 +461,46 @@ leResult leRectArray_CropToSize(leRectArray* arr, uint32_t size)
         {
             split = arr->rects[rectItr];
 
-#if LE_RENDER_LEFTRIGHT == 0
             // split favoring height if possible
             if((uint32_t)arr->rects[rectItr].height <= 2)
             {
                 arr->rects[rectItr].width >>= 1;
-                
+
                 split.width -= arr->rects[rectItr].width;
                 split.x += arr->rects[rectItr].width;
             }
             else
             {
                 arr->rects[rectItr].height >>= 1;
-                
+
                 split.height -= arr->rects[rectItr].height;
                 split.y += arr->rects[rectItr].height;
             }
-#else
+
+            leRectArray_PushBack(arr, &split);
+        }
+    }
+    
+    return LE_SUCCESS;
+}
+
+leResult leRectArray_CropToSizeX(leRectArray* arr,
+                                 uint32_t size)
+{
+    uint32_t rectItr;
+    leRect split;
+
+    /* minimal sane magic number size limit */
+    if(size < 4)
+        return LE_FAILURE;
+
+    for(rectItr = 0; rectItr < arr->size; rectItr++)
+    {
+        while((uint32_t)arr->rects[rectItr].width *
+        (uint32_t)arr->rects[rectItr].height > size)
+        {
+            split = arr->rects[rectItr];
+
             // split favoring width if possible
             if((uint32_t)arr->rects[rectItr].width <= 2)
             {
@@ -492,11 +516,10 @@ leResult leRectArray_CropToSize(leRectArray* arr, uint32_t size)
                 split.width -= arr->rects[rectItr].width;
                 split.x += arr->rects[rectItr].width;
             }
-#endif
 
             leRectArray_PushBack(arr, &split);
         }
     }
-    
+
     return LE_SUCCESS;
 }

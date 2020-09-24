@@ -75,6 +75,8 @@ static leResult advanceStage()
 
 static void colorDataReady(leStream* strm)
 {
+    (void)strm; // unused
+
     streamReadStage.state = SS_READY;
 
     advanceStage();
@@ -82,6 +84,7 @@ static void colorDataReady(leStream* strm)
 
 static leResult exec_nonblocking(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
     uint32_t addr;
     leRawSourceReadOperation* op;
 
@@ -163,6 +166,8 @@ leResult exec_blocking(struct StreamReadStage* stage)
 
 static void cleanup(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     leStream_Close(&streamReadStage.stream);
 }
 

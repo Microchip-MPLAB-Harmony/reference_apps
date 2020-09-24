@@ -57,7 +57,7 @@ extern "C" {
     
 #define SNAKE_INITIAL_POSITION_X 400
 #define SNAKE_INITIAL_POSITION_Y 240
-#define SNAKE_MAX_SIZE           10
+#define SNAKE_MAX_SIZE           8
 #define SNAKE_INITIAL_SIZE       1    
 #define SNAKE_STEP_SIZE          10
 #define SNAKE_PART_SIZE          20

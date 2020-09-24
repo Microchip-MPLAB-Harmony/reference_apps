@@ -32,6 +32,7 @@ void legato_hideCurrentScreen();
 void legato_updateCurrentScreen();
 
 //DOM-IGNORE-BEGIN
+
 #ifdef __cplusplus
 }
 #endif

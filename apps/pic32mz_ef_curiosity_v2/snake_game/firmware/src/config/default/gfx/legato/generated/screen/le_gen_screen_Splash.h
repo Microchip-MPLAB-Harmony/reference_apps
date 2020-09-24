@@ -1,7 +1,10 @@
 #ifndef LE_GEN_SCREEN_SPLASH_H
 #define LE_GEN_SCREEN_SPLASH_H
 
-#include "gfx/legato/generated/le_gen_init.h"
+#include "gfx/legato/legato.h"
+
+#include "gfx/legato/generated/le_gen_scheme.h"
+#include "gfx/legato/generated/le_gen_assets.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -9,12 +12,10 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
-// widget list for this screen
-// layer 0
-extern leWidget* Panel_splash_screen;
-extern leImageWidget* PIC32_logo;
-extern leImageWidget* Splash_bar;
-
+// screen member widget declarations
+extern leWidget* Splash_Panel_splash_screen;
+extern leImageWidget* Splash_PIC32_logo;
+extern leImageWidget* Splash_Splash_bar;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY

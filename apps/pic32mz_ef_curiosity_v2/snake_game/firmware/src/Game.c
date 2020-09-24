@@ -61,8 +61,8 @@ void Game_SelectLabelLevel(leLabelWidget* label)
 {
   static leScheme scheme;
     scheme = *label->fn->getScheme(label);
-    scheme.highlightLight = SNAKE_COLOR_YELLOW;
-    scheme.shadow = SNAKE_COLOR_YELLOW;
+    scheme.tables[leRenderer_CurrentColorMode()].colors.highlightLight = SNAKE_COLOR_YELLOW;
+    scheme.tables[leRenderer_CurrentColorMode()].colors.shadow = SNAKE_COLOR_YELLOW;
     label->fn->setScheme(label,&scheme);
 
 }
@@ -86,23 +86,23 @@ void Game_LevelSelectionTask()
           {
               case LEVEL_NOT_SELECTED:
               {
-                  Game_SelectLabelLevel(Level1_label);
+                  Game_SelectLabelLevel(Menu_Level1_label);
                   selected_level = LEVEL1;
                   break;
               }
               
               case LEVEL1:
               {
-                  Game_UnselectLabelLevel(Level1_label);
-                  Game_SelectLabelLevel(Level2_label);
+                  Game_UnselectLabelLevel(Menu_Level1_label);
+                  Game_SelectLabelLevel(Menu_Level2_label);
                   selected_level = LEVEL2;
                   break;
               }
               
               case LEVEL2:
               {
-                  Game_UnselectLabelLevel(Level2_label);
-                  Game_SelectLabelLevel(Level1_label);
+                  Game_UnselectLabelLevel(Menu_Level2_label);
+                  Game_SelectLabelLevel(Menu_Level1_label);
                   selected_level = LEVEL1;
                   break;
               }         
@@ -116,23 +116,23 @@ void Game_LevelSelectionTask()
           {
            case LEVEL_NOT_SELECTED:
               {
-                  Game_SelectLabelLevel(Level1_label);
+                  Game_SelectLabelLevel(Menu_Level1_label);
                   selected_level = LEVEL1;
                   break;
               }
               
               case LEVEL1:
               {
-                  Game_UnselectLabelLevel(Level1_label);
-                  Game_SelectLabelLevel(Level2_label);
+                  Game_UnselectLabelLevel(Menu_Level1_label);
+                  Game_SelectLabelLevel(Menu_Level2_label);
                   selected_level = LEVEL2;
                   break;
               }
               
               case LEVEL2:
               {
-                  Game_UnselectLabelLevel(Level2_label);
-                  Game_SelectLabelLevel(Level1_label);
+                  Game_UnselectLabelLevel(Menu_Level2_label);
+                  Game_SelectLabelLevel(Menu_Level1_label);
                   selected_level = LEVEL1;
                   break;
               }  
@@ -278,8 +278,8 @@ void Game_LabelWrite(leLabelWidget* label_wgt,unsigned int data)
    
     leDynamicString_Constructor(&snake_size_str);
     
-    snake_size_str.fn->setFont(&snake_size_str,leStringTable_GetStringFont(leGetState()->stringTable, string_Snake_Size_text, 0));
-          
+    snake_size_str.fn->setFont(&snake_size_str, leStringTable_GetStringFont(&stringTable, stringID_Snake_Size_text, 0));
+
     //convert the character string to leFixedString object
     snake_size_str.fn->setFromCStr(&snake_size_str,data_char);
        

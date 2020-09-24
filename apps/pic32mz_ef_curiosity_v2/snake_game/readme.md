@@ -30,13 +30,13 @@ nav_order: 7
 
 
 ## Software/Tools Used:
- - [MPLAB Harmony v3 "csp" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.7.1)
- - [MPLAB Harmony v3 "core" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.7.1)          
- - [MPLAB Harmony v3 "dev_packs" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.7.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.4.0)   
- - [MPLAB Harmony v3 "bsp" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.7.0)
-- [MPLAB Harmony v3 "gfx" repository v3.6.0](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.6.0)
-- MPLAB Harmony Configurator Plugin v3.5.0    
+ - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+ - [MPLAB Harmony v3 "bsp" repository v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
+- [MPLAB Harmony v3 "gfx" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.7.0)
+- MPLAB Harmony Configurator Plugin v3.6.0
  - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 
@@ -66,7 +66,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Programming/Debugging Application Project:
-- Open the project (snake_game\firmware\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
+- Open the project (snake_game/firmware/pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
 - Ensure "PKOB4" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
@@ -80,17 +80,15 @@ The pre-built hex file can be programmed by following the below steps.
 - By pressing the Thumbstick button the user can go back to the Menu.  
 <video width="550" height="400" autoplay controls> <source src="./images/snake_game.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
 
-
-
-
 ## Comments:
-- The game should end when the snake hit an obstacle when it doesn't have any remaining lives or when it eats food 10 times
+- This application is developed by applying a patch (available in folder "snake_game/firmware/gfx_ssd_driver_patch") to MPLAB Harmony v3 "gfx" repository. If you need to reconfigure or regenerate this demo using MHC, please refer the "Notes.txt" file under "snake_game/firmware/gfx_ssd_driver_patch" folder.
+- The game should end when the snake hit an obstacle when it doesn't have any remaining lives or when it eats food 8 times
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
-	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)      
+	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
-- v1.0 Released application demo
+- v1.1.0 released demo application
 
 
 ## History

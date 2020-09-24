@@ -1,7 +1,10 @@
 #ifndef LE_GEN_SCREEN_GAME_LEVEL1_H
 #define LE_GEN_SCREEN_GAME_LEVEL1_H
 
-#include "gfx/legato/generated/le_gen_init.h"
+#include "gfx/legato/legato.h"
+
+#include "gfx/legato/generated/le_gen_scheme.h"
+#include "gfx/legato/generated/le_gen_assets.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -9,22 +12,20 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
-// widget list for this screen
-// layer 0
-extern leWidget* PanelWidget2;
-extern leWidget* PanelWidget3;
-extern leImageWidget* HeartImage1_level1;
-extern leImageWidget* HeartImage2_level1;
-extern leImageWidget* HeartImage3_level1;
-extern leLabelWidget* Snake_size_text_1;
-extern leLabelWidget* LIfe_text_1;
-extern leLabelWidget* Snake_size_value_level1;
-extern leGradientWidget* GradientWidget0;
-extern leImageWidget* ImageWidget0;
-extern leLabelWidget* Game_Over_level1;
-extern leLabelWidget* Title_label_game_level_1;
-extern leLabelWidget* Game_Won_level1;
-
+// screen member widget declarations
+extern leWidget* Game_Level1_PanelWidget2;
+extern leWidget* Game_Level1_PanelWidget3;
+extern leImageWidget* Game_Level1_HeartImage1_level1;
+extern leImageWidget* Game_Level1_HeartImage2_level1;
+extern leImageWidget* Game_Level1_HeartImage3_level1;
+extern leLabelWidget* Game_Level1_Snake_size_text_1;
+extern leLabelWidget* Game_Level1_LIfe_text_1;
+extern leLabelWidget* Game_Level1_Snake_size_value_level1;
+extern leGradientWidget* Game_Level1_GradientWidget0;
+extern leImageWidget* Game_Level1_ImageWidget0;
+extern leLabelWidget* Game_Level1_Game_Over_level1;
+extern leLabelWidget* Game_Level1_Title_label_game_level_1;
+extern leLabelWidget* Game_Level1_Game_Won_level1;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY

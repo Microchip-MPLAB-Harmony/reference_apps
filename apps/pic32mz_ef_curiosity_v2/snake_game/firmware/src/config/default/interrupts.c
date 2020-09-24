@@ -68,27 +68,27 @@ void I2C2_MASTER_InterruptHandler( void );
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_CORE_TIMER_VECTOR, ipl1AUTO) CORE_TIMER_Handler (void)
+void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
 
-void __ISR(_SPI1_RX_VECTOR, ipl1AUTO) SPI1_RX_Handler (void)
+void __ISR(_SPI1_RX_VECTOR, ipl1SRS) SPI1_RX_Handler (void)
 {
     SPI1_RX_InterruptHandler();
 }
 
-void __ISR(_SPI1_TX_VECTOR, ipl1AUTO) SPI1_TX_Handler (void)
+void __ISR(_SPI1_TX_VECTOR, ipl1SRS) SPI1_TX_Handler (void)
 {
     SPI1_TX_InterruptHandler();
 }
 
-void __ISR(_I2C2_BUS_VECTOR, ipl1AUTO) I2C2_BUS_Handler (void)
+void __ISR(_I2C2_BUS_VECTOR, ipl1SRS) I2C2_BUS_Handler (void)
 {
     I2C2_BUS_InterruptHandler();
 }
 
-void __ISR(_I2C2_MASTER_VECTOR, ipl1AUTO) I2C2_MASTER_Handler (void)
+void __ISR(_I2C2_MASTER_VECTOR, ipl1SRS) I2C2_MASTER_Handler (void)
 {
     I2C2_MASTER_InterruptHandler();
 }

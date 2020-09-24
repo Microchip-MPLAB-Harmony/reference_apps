@@ -51,6 +51,8 @@ static struct
 
 static void streamDataReady(leStream* stream)
 {
+    (void)stream; // unused
+
     leFont_DrawGlyphData((leFont*)rasterStream.font,
                          &rasterStream.info,
                          glyphCache,

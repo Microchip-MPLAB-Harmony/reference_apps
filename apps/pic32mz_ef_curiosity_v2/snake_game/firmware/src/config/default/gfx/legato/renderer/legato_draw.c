@@ -25,6 +25,7 @@
 
 
 #include "gfx/legato/renderer/legato_renderer.h"
+#include "gfx/legato/renderer/legato_gpu.h"
 
 /* renderer function use only */
 extern leRenderState _rendererState;
@@ -46,8 +47,9 @@ static leResult blendPixel(int32_t x,
 leColor leRenderer_GetPixel(int32_t x,
                             int32_t y)
 {
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
 
     return lePixelBufferGet_Unsafe(_rendererState.renderBuffer,
                                    x,
@@ -61,12 +63,15 @@ leResult leRenderer_GetPixel_Safe(int32_t x,
     if(leRenderer_CullDrawXY(x, y) == LE_TRUE)
         return LE_FAILURE;
 
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
 
-    return lePixelBufferGet_Unsafe(_rendererState.renderBuffer,
+    *clr = lePixelBufferGet_Unsafe(_rendererState.renderBuffer,
                                    x,
                                    y);
+
+    return LE_SUCCESS;
 }
 
 static PixelPutFn pixelPutFn = putPixel;
@@ -75,8 +80,9 @@ leResult leRenderer_PutPixel(int32_t x,
                              int32_t y,
                              leColor clr)
 {
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
     
     return pixelPutFn(x, y, clr, 0);
 }
@@ -88,8 +94,9 @@ leResult leRenderer_PutPixel_Safe(int32_t x,
     if(leRenderer_CullDrawXY(x, y) == LE_TRUE)
         return LE_FAILURE;
 
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
 
     return pixelPutFn(x, y, clr, 0);
 }
@@ -99,8 +106,9 @@ leResult leRenderer_BlendPixel(int32_t x,
                                leColor clr,
                                uint32_t a)
 {
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
     
 #if LE_ALPHA_BLENDING_ENABLED == 1
     return blendPixel(x, y, clr, a);
@@ -117,8 +125,9 @@ leResult leRenderer_BlendPixel_Safe(int32_t x,
     if(leRenderer_CullDrawXY(x, y) == LE_TRUE)
         return LE_FAILURE;
 
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     return blendPixel(x, y, clr, a);
@@ -152,6 +161,8 @@ leResult putPixel(int32_t x,
                   leColor clr,
                   uint32_t a)
 {
+    (void)a; // unused
+
     lePixelBufferSet_Unsafe(_rendererState.renderBuffer,
                             x,
                             y,
@@ -170,7 +181,8 @@ leResult blendPixel(int32_t x, int32_t y, leColor clr, uint32_t a)
     
     nativeSource = lePixelBufferGet_Unsafe(_rendererState.renderBuffer, x, y);
     
-    rgbaSource = leColorConvert(LE_GLOBAL_COLOR_MODE, LE_COLOR_MODE_RGBA_8888, clr);
+    rgbaSource = leColorConvert(leRenderer_CurrentColorMode(),
+                                 LE_COLOR_MODE_RGBA_8888, clr);
     
     // blend with alpha channel
     
@@ -179,13 +191,18 @@ leResult blendPixel(int32_t x, int32_t y, leColor clr, uint32_t a)
     rgbaSource &= ~(RGBA_8888_ALPHA_MASK);
     rgbaSource |= a;
     
-    rgbaDest = leColorConvert(LE_GLOBAL_COLOR_MODE, LE_COLOR_MODE_RGBA_8888, nativeSource);
+    rgbaDest = leColorConvert(leRenderer_CurrentColorMode(),
+                              LE_COLOR_MODE_RGBA_8888,
+                              nativeSource);
+
     rgbaDest |= RGBA_8888_ALPHA_MASK;
     
     resultClr = leColorBlend_RGBA_8888(rgbaSource, rgbaDest);
     
     // convert to destination format
-    clr = leColorConvert(LE_COLOR_MODE_RGBA_8888, LE_GLOBAL_COLOR_MODE, resultClr);
+    clr = leColorConvert(LE_COLOR_MODE_RGBA_8888,
+                         leRenderer_CurrentColorMode(),
+                         resultClr);
     
     lePixelBufferSet_Unsafe(_rendererState.renderBuffer,
                             x,
@@ -203,11 +220,27 @@ leResult leRenderer_FillArea(int32_t x,
                              leColor clr,
                              uint32_t a)
 {
+#if LE_ALPHA_BLENDING_ENABLED == 1	
     uint32_t w, h;
-    lePoint pnt;
+#endif
 
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    lePoint pnt;
+    leRect fillRect;
+
+    // adjust for rectangle position
+    pnt.x = x - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    pnt.y = y - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
+
+    if(a == 0)
+        return LE_SUCCESS;
+
+    fillRect.x = pnt.x;
+    fillRect.y = pnt.y;
+    fillRect.width = width;
+    fillRect.height = height;
+
+    if(leGPU_FillRect(&fillRect, clr, a) == LE_SUCCESS)
+        return LE_SUCCESS;
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     if(a < 255) // also test global alpha value
@@ -216,10 +249,8 @@ leResult leRenderer_FillArea(int32_t x,
         {
             for(w = 0; w < width; w++)
             {
-                pnt.x = x + w;
-                pnt.y = y + h;
-
-                leRenderer_BlendPixel_Safe(pnt.x, pnt.y, clr, a);
+                // blend pixel will adjust for the rectangle
+                leRenderer_BlendPixel_Safe(x + w, y + h, clr, a);
             }
         }
     }
@@ -227,8 +258,8 @@ leResult leRenderer_FillArea(int32_t x,
     {
 #endif
         lePixelBufferAreaFill_Unsafe(_rendererState.renderBuffer,
-                                     x,
-                                     y,
+                                     pnt.x,
+                                     pnt.y,
                                      width,
                                      height,
                                      clr);
@@ -246,11 +277,34 @@ leResult leRenderer_FillArea_Safe(int32_t x,
                                   leColor clr,
                                   uint32_t a)
 {
+#if LE_ALPHA_BLENDING_ENABLED == 1	
     uint32_t w, h;
+#endif
     lePoint pnt;
+    leRect fillRect;
 
-    x -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].x;
-    y -= _rendererState.frameRectList.rects[_rendererState.frameRectIdx].y;
+    // adjust for rectangle position
+    pnt.x = x - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    pnt.y = y - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
+
+    if(a == 0)
+        return LE_SUCCESS;
+
+    fillRect.x = pnt.x;
+    fillRect.y = pnt.y;
+    fillRect.width = width;
+    fillRect.height = height;
+
+    if(a == 0)
+        return LE_SUCCESS;
+
+    fillRect.x = pnt.x;
+    fillRect.y = pnt.y;
+    fillRect.width = width;
+    fillRect.height = height;
+
+    if(leGPU_FillRect(&fillRect, clr, a) == LE_SUCCESS)
+        return LE_SUCCESS;
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     if(a < 255) // also test global alpha value
@@ -259,10 +313,8 @@ leResult leRenderer_FillArea_Safe(int32_t x,
         {
             for(w = 0; w < width; w++)
             {
-                pnt.x = x + w;
-                pnt.y = y + h;
-
-                leRenderer_BlendPixel(pnt.x, pnt.y, clr, a);
+                // blend pixel will adjust for the rectangle position
+                leRenderer_BlendPixel(x + w, y + h, clr, a);
             }
         }
     }
@@ -270,8 +322,8 @@ leResult leRenderer_FillArea_Safe(int32_t x,
     {
 #endif
         lePixelBufferAreaFill(_rendererState.renderBuffer,
-                              x,
-                              y,
+                              pnt.x,
+                              pnt.y,
                               width,
                               height,
                               clr);

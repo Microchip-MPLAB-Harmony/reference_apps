@@ -79,6 +79,8 @@ static leResult advanceStage()
 
 static void indexDataReady(leStream* strm)
 {
+    (void)strm; // unused
+
     leRawSourceReadOperation* op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     streamReadStage.readBuffer.pixels = &op->data;
@@ -95,6 +97,8 @@ static void indexDataReady(leStream* strm)
 
 static leResult exec_nonblocking(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     uint32_t offs;
 
     // no need to do anything if a data read is still pending
@@ -184,6 +188,8 @@ static leResult exec_blocking(struct StreamReadStage* stage)
 
 static void cleanup(struct StreamReadStage* stage)
 {
+    (void)stage; // unused
+
     leStream_Close(&streamReadStage.stream);
 }
 
@@ -191,7 +197,6 @@ leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
-#if LE_ASSET_DECODER_USE_PIXEL_CACHE == 0
     if(state->source->buffer.mode == LE_COLOR_MODE_INDEX_1)
     {
         streamReadStage.mod = 8;
@@ -205,6 +210,7 @@ leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* state)
         streamReadStage.mod = 1;
     }
 
+#if LE_ASSET_DECODER_USE_PIXEL_CACHE == 0
     leStream_Init(&streamReadStage.stream,
                   (leStreamDescriptor*)state->source,
                   0,

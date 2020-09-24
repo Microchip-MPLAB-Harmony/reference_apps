@@ -64,11 +64,11 @@ extern "C" {
 #define ShowGameLevel_2() legato_showScreen(LEVEL2_SCREEN_ID);
 #define GetRoot_Game_Level2() screenGetRoot_Game_Level2(0);
     
-#define GAME_OVER_LEVEL1 Game_Over_level1
-#define GAME_OVER_LEVEL2 Game_Over_level2
+#define GAME_OVER_LEVEL1 Game_Level1_Game_Over_level1
+#define GAME_OVER_LEVEL2 Game_Level2_Game_Over_level2
     
-#define GAME_WON_LEVEL1  Game_Won_level1
-#define GAME_WON_LEVEL2  Game_Won_level2
+#define GAME_WON_LEVEL1  Game_Level1_Game_Won_level1
+#define GAME_WON_LEVEL2  Game_Level2_Game_Won_level2
     
 #define GAME_OVER_TRUE true
 #define GAME_OVER_FALSE false
@@ -78,23 +78,23 @@ extern "C" {
 #define LEVEL2 2
 #define LEVEL3 3
     
-    
-#define MENU_SCREEN_ID screenID_Menu
-#define LEVEL1_SCREEN_ID screenID_Game_Level1
-#define LEVEL2_SCREEN_ID screenID_Game_Level2
+#define SPLASH_SCREEN_ID    screenID_Splash    
+#define MENU_SCREEN_ID      screenID_Menu
+#define LEVEL1_SCREEN_ID    screenID_Game_Level1
+#define LEVEL2_SCREEN_ID    screenID_Game_Level2
     
 
-#define HEART_1_LVL1 HeartImage1_level1
-#define HEART_2_LVL1 HeartImage2_level1
-#define HEART_3_LVL1 HeartImage3_level1
+#define HEART_1_LVL1 Game_Level1_HeartImage1_level1
+#define HEART_2_LVL1 Game_Level1_HeartImage2_level1
+#define HEART_3_LVL1 Game_Level1_HeartImage3_level1
 
-#define HEART_1_LVL2 HeartImage1_level2
-#define HEART_2_LVL2 HeartImage2_level2
-#define HEART_3_LVL2 HeartImage3_level2
+#define HEART_1_LVL2 Game_Level2_HeartImage1_level2
+#define HEART_2_LVL2 Game_Level2_HeartImage2_level2
+#define HEART_3_LVL2 Game_Level2_HeartImage3_level2
     
     
-#define SNAKE_SIZE_VALUE_LVL1 Snake_size_value_level1
-#define SNAKE_SIZE_VALUE_LVL2 Snake_size_value_level2
+#define SNAKE_SIZE_VALUE_LVL1 Game_Level1_Snake_size_value_level1
+#define SNAKE_SIZE_VALUE_LVL2 Game_Level2_Snake_size_value_level2
     
     
 #define SCREEN_UPPER_LIMIT 100

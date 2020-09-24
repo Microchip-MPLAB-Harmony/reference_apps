@@ -61,77 +61,86 @@
 // *****************************************************************************
 // *****************************************************************************
 
+
 /*** Macros for GFX_DISP_INTF_PIN_WR pin ***/
 #define GFX_DISP_INTF_PIN_WR_Set()               (LATCSET = (1<<3))
 #define GFX_DISP_INTF_PIN_WR_Clear()             (LATCCLR = (1<<3))
 #define GFX_DISP_INTF_PIN_WR_Toggle()            (LATCINV= (1<<3))
-#define GFX_DISP_INTF_PIN_WR_Get()               ((PORTC >> 3) & 0x1)
 #define GFX_DISP_INTF_PIN_WR_OutputEnable()      (TRISCCLR = (1<<3))
 #define GFX_DISP_INTF_PIN_WR_InputEnable()       (TRISCSET = (1<<3))
+#define GFX_DISP_INTF_PIN_WR_Get()               ((PORTC >> 3) & 0x1)
 #define GFX_DISP_INTF_PIN_WR_PIN                  GPIO_PIN_RC3
+
 /*** Macros for GFX_DISP_INTF_PIN_RESET pin ***/
 #define GFX_DISP_INTF_PIN_RESET_Set()               (LATJSET = (1<<14))
 #define GFX_DISP_INTF_PIN_RESET_Clear()             (LATJCLR = (1<<14))
 #define GFX_DISP_INTF_PIN_RESET_Toggle()            (LATJINV= (1<<14))
-#define GFX_DISP_INTF_PIN_RESET_Get()               ((PORTJ >> 14) & 0x1)
 #define GFX_DISP_INTF_PIN_RESET_OutputEnable()      (TRISJCLR = (1<<14))
 #define GFX_DISP_INTF_PIN_RESET_InputEnable()       (TRISJSET = (1<<14))
+#define GFX_DISP_INTF_PIN_RESET_Get()               ((PORTJ >> 14) & 0x1)
 #define GFX_DISP_INTF_PIN_RESET_PIN                  GPIO_PIN_RJ14
+
 /*** Macros for GFX_DISP_INTF_PIN_BACKLIGHT pin ***/
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Set()               (LATBSET = (1<<6))
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Clear()             (LATBCLR = (1<<6))
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Toggle()            (LATBINV= (1<<6))
-#define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               ((PORTB >> 6) & 0x1)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_OutputEnable()      (TRISBCLR = (1<<6))
 #define GFX_DISP_INTF_PIN_BACKLIGHT_InputEnable()       (TRISBSET = (1<<6))
+#define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               ((PORTB >> 6) & 0x1)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_PIN                  GPIO_PIN_RB6
+
 /*** Macros for GFX_DISP_INTF_PIN_RSDC pin ***/
 #define GFX_DISP_INTF_PIN_RSDC_Set()               (LATKSET = (1<<1))
 #define GFX_DISP_INTF_PIN_RSDC_Clear()             (LATKCLR = (1<<1))
 #define GFX_DISP_INTF_PIN_RSDC_Toggle()            (LATKINV= (1<<1))
-#define GFX_DISP_INTF_PIN_RSDC_Get()               ((PORTK >> 1) & 0x1)
 #define GFX_DISP_INTF_PIN_RSDC_OutputEnable()      (TRISKCLR = (1<<1))
 #define GFX_DISP_INTF_PIN_RSDC_InputEnable()       (TRISKSET = (1<<1))
+#define GFX_DISP_INTF_PIN_RSDC_Get()               ((PORTK >> 1) & 0x1)
 #define GFX_DISP_INTF_PIN_RSDC_PIN                  GPIO_PIN_RK1
+
 /*** Macros for GFX_DISP_INTF_PIN_CS pin ***/
 #define GFX_DISP_INTF_PIN_CS_Set()               (LATKSET = (1<<2))
 #define GFX_DISP_INTF_PIN_CS_Clear()             (LATKCLR = (1<<2))
 #define GFX_DISP_INTF_PIN_CS_Toggle()            (LATKINV= (1<<2))
-#define GFX_DISP_INTF_PIN_CS_Get()               ((PORTK >> 2) & 0x1)
 #define GFX_DISP_INTF_PIN_CS_OutputEnable()      (TRISKCLR = (1<<2))
 #define GFX_DISP_INTF_PIN_CS_InputEnable()       (TRISKSET = (1<<2))
+#define GFX_DISP_INTF_PIN_CS_Get()               ((PORTK >> 2) & 0x1)
 #define GFX_DISP_INTF_PIN_CS_PIN                  GPIO_PIN_RK2
+
 /*** Macros for GFX_DISP_INTF_PIN_RD pin ***/
 #define GFX_DISP_INTF_PIN_RD_Set()               (LATKSET = (1<<3))
 #define GFX_DISP_INTF_PIN_RD_Clear()             (LATKCLR = (1<<3))
 #define GFX_DISP_INTF_PIN_RD_Toggle()            (LATKINV= (1<<3))
-#define GFX_DISP_INTF_PIN_RD_Get()               ((PORTK >> 3) & 0x1)
 #define GFX_DISP_INTF_PIN_RD_OutputEnable()      (TRISKCLR = (1<<3))
 #define GFX_DISP_INTF_PIN_RD_InputEnable()       (TRISKSET = (1<<3))
+#define GFX_DISP_INTF_PIN_RD_Get()               ((PORTK >> 3) & 0x1)
 #define GFX_DISP_INTF_PIN_RD_PIN                  GPIO_PIN_RK3
+
 /*** Macros for THUMBSTICK_INT pin ***/
 #define THUMBSTICK_INT_Set()               (LATFSET = (1<<12))
 #define THUMBSTICK_INT_Clear()             (LATFCLR = (1<<12))
 #define THUMBSTICK_INT_Toggle()            (LATFINV= (1<<12))
-#define THUMBSTICK_INT_Get()               ((PORTF >> 12) & 0x1)
 #define THUMBSTICK_INT_OutputEnable()      (TRISFCLR = (1<<12))
 #define THUMBSTICK_INT_InputEnable()       (TRISFSET = (1<<12))
+#define THUMBSTICK_INT_Get()               ((PORTF >> 12) & 0x1)
 #define THUMBSTICK_INT_PIN                  GPIO_PIN_RF12
+
 /*** Macros for SS1 pin ***/
 #define SS1_Set()               (LATDSET = (1<<9))
 #define SS1_Clear()             (LATDCLR = (1<<9))
 #define SS1_Toggle()            (LATDINV= (1<<9))
-#define SS1_Get()               ((PORTD >> 9) & 0x1)
 #define SS1_OutputEnable()      (TRISDCLR = (1<<9))
 #define SS1_InputEnable()       (TRISDSET = (1<<9))
+#define SS1_Get()               ((PORTD >> 9) & 0x1)
 #define SS1_PIN                  GPIO_PIN_RD9
+
 /*** Macros for BSP_MAXTOUCH_CHG pin ***/
 #define BSP_MAXTOUCH_CHG_Set()               (LATDSET = (1<<0))
 #define BSP_MAXTOUCH_CHG_Clear()             (LATDCLR = (1<<0))
 #define BSP_MAXTOUCH_CHG_Toggle()            (LATDINV= (1<<0))
-#define BSP_MAXTOUCH_CHG_Get()               ((PORTD >> 0) & 0x1)
 #define BSP_MAXTOUCH_CHG_OutputEnable()      (TRISDCLR = (1<<0))
 #define BSP_MAXTOUCH_CHG_InputEnable()       (TRISDSET = (1<<0))
+#define BSP_MAXTOUCH_CHG_Get()               ((PORTD >> 0) & 0x1)
 #define BSP_MAXTOUCH_CHG_PIN                  GPIO_PIN_RD0
 
 
@@ -345,42 +354,42 @@ void GPIO_PortOutputEnable(GPIO_PORT port, uint32_t mask);
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-    GPIO_PortWrite(pin>>4, (uint32_t)(0x1) << (pin & 0xF), (uint32_t)(value) << (pin & 0xF));
+    GPIO_PortWrite((GPIO_PORT)(pin>>4), (uint32_t)(0x1) << (pin & 0xF), (uint32_t)(value) << (pin & 0xF));
 }
 
 static inline bool GPIO_PinRead(GPIO_PIN pin)
 {
-    return (bool)(((GPIO_PortRead(pin>>4)) >> (pin & 0xF)) & 0x1);
+    return (bool)(((GPIO_PortRead((GPIO_PORT)(pin>>4))) >> (pin & 0xF)) & 0x1);
 }
 
 static inline bool GPIO_PinLatchRead(GPIO_PIN pin)
 {
-    return (bool)((GPIO_PortLatchRead(pin>>4) >> (pin & 0xF)) & 0x1);
+    return (bool)((GPIO_PortLatchRead((GPIO_PORT)(pin>>4)) >> (pin & 0xF)) & 0x1);
 }
 
 static inline void GPIO_PinToggle(GPIO_PIN pin)
 {
-    GPIO_PortToggle(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortToggle((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinSet(GPIO_PIN pin)
 {
-    GPIO_PortSet(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortSet((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinClear(GPIO_PIN pin)
 {
-    GPIO_PortClear(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortClear((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinInputEnable(GPIO_PIN pin)
 {
-    GPIO_PortInputEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortInputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 static inline void GPIO_PinOutputEnable(GPIO_PIN pin)
 {
-    GPIO_PortOutputEnable(pin>>4, 0x1 << (pin & 0xF));
+    GPIO_PortOutputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
 

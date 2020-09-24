@@ -34,6 +34,7 @@
 #include "gfx/legato/datastructure/legato_rectarray.h"
 #include "gfx/driver/gfx_driver.h"
 
+static leState* _state;
 leRenderState _rendererState;
 
 #define SCRACH_BUFFER_SZ     (LE_SCRATCH_BUFFER_SIZE_KB * 1024)
@@ -51,6 +52,11 @@ leRenderState* leGetRenderState()
     return &_rendererState; 
 }
 
+leColorMode leRenderer_CurrentColorMode()
+{
+    return _rendererState.renderBuffer->mode;
+}
+
 lePalette* leRenderer_GetGlobalPalette()
 {
     return _rendererState.globalPalette;
@@ -58,9 +64,6 @@ lePalette* leRenderer_GetGlobalPalette()
 
 leResult leRenderer_SetGlobalPalette(lePalette* pal)
 {
-    if(LE_GLOBAL_COLOR_MODE != LE_COLOR_MODE_PALETTE)
-        return LE_FAILURE;
-
     _rendererState.globalPalette = pal;
 
     return LE_SUCCESS;
@@ -68,21 +71,18 @@ leResult leRenderer_SetGlobalPalette(lePalette* pal)
 
 leColor leRenderer_GlobalPaletteLookup(uint32_t idx)
 {
-    LE_ASSERT(LE_GLOBAL_COLOR_MODE == LE_COLOR_MODE_PALETTE &&
-              _rendererState.globalPalette != NULL);
-
     return lePalette_GetColor(_rendererState.globalPalette, idx);
 }
 
 leColor leRenderer_ConvertColor(leColor inColor, leColorMode inMode)
 {
-    return leColorConvert(inMode, LE_GLOBAL_COLOR_MODE, inColor);
+    return leColorConvert(inMode, _rendererState.renderBuffer->mode, inColor);
 }
 
-leRect leRenderer_GetDisplayRect()
+/*leRect leRenderer_GetDisplayRect()
 {
     return _rendererState.displayRect;
-}
+}*/
 
 leRect leRenderer_GetDrawRect()
 {
@@ -115,8 +115,13 @@ void leRenderer_ClipDrawRect(const leRect* rect,
     leRectClip(rect, &_rendererState.drawRect, res);
 }
 
-leResult leRenderer_Initialize(const gfxDisplayDriver* dispDriver)
+leResult leRenderer_Initialize(const gfxDisplayDriver* dispDriver,
+                               const gfxGraphicsProcessor* gpuDriver)
 {
+    uint32_t itr;
+
+    _state = leGetState();
+
     memset(&_rendererState, 0, sizeof(leRenderState));
  
     if(dispDriver == NULL ||
@@ -127,28 +132,34 @@ leResult leRenderer_Initialize(const gfxDisplayDriver* dispDriver)
        dispDriver->update == NULL ||
        dispDriver->blitBuffer == NULL ||
        dispDriver->swap == NULL ||
-       dispDriver->getVSYNCCount == NULL)
+       dispDriver->getVSYNCCount == NULL ||
+       dispDriver->setPalette == NULL)
     {
         return LE_FAILURE;
     }
- 
+
     _rendererState.dispDriver = dispDriver;
+    _rendererState.gpuDriver = gpuDriver;
+
     _rendererState.bufferCount = dispDriver->getBufferCount();
     
-    _rendererState.displayRect.x = 0;
+    /*_rendererState.displayRect.x = 0;
     _rendererState.displayRect.y = 0;
     _rendererState.displayRect.width = dispDriver->getDisplayWidth();
-    _rendererState.displayRect.height = dispDriver->getDisplayHeight();
-    
-    leRectArray_Create(&_rendererState.prevDamageRects);
-    leRectArray_Create(&_rendererState.currentDamageRects);
-    leRectArray_Create(&_rendererState.pendingDamageRects);
-    leRectArray_Create(&_rendererState.frameRectList);
-    leRectArray_Create(&_rendererState.scratchRectList);
-    
+    _rendererState.displayRect.height = dispDriver->getDisplayHeight();*/
+
+    for(itr = 0; itr < LE_LAYER_COUNT; ++itr)
+    {
+        leRectArray_Create(&_rendererState.layerStates[itr].prevDamageRects);
+        leRectArray_Create(&_rendererState.layerStates[itr].currentDamageRects);
+        leRectArray_Create(&_rendererState.layerStates[itr].pendingDamageRects);
+        leRectArray_Create(&_rendererState.layerStates[itr].frameRectList);
+        leRectArray_Create(&_rendererState.layerStates[itr].scratchRectList);
+    }
+
     _rendererState.frameState = LE_FRAME_READY;
     
-    maxScratchPixels = SCRACH_BUFFER_SZ / leColorInfoTable[LE_GLOBAL_COLOR_MODE].size;
+    //maxScratchPixels = SCRACH_BUFFER_SZ / leColorInfoTable[LE_GLOBAL_COLOR_MODE].size;
     
     //leRenderer_DamageArea(&lyr->widget.rect, LE_FALSE);
     
@@ -157,11 +168,16 @@ leResult leRenderer_Initialize(const gfxDisplayDriver* dispDriver)
 
 void leRenderer_Shutdown()
 {
-    leRectArray_Destroy(&_rendererState.prevDamageRects);
-    leRectArray_Destroy(&_rendererState.currentDamageRects);
-    leRectArray_Destroy(&_rendererState.pendingDamageRects);
-    leRectArray_Destroy(&_rendererState.frameRectList);
-    leRectArray_Destroy(&_rendererState.scratchRectList);
+    uint32_t itr;
+
+    for(itr = 0; itr < LE_LAYER_COUNT; ++itr)
+    {
+        leRectArray_Destroy(&_rendererState.layerStates[itr].prevDamageRects);
+        leRectArray_Destroy(&_rendererState.layerStates[itr].currentDamageRects);
+        leRectArray_Destroy(&_rendererState.layerStates[itr].pendingDamageRects);
+        leRectArray_Destroy(&_rendererState.layerStates[itr].frameRectList);
+        leRectArray_Destroy(&_rendererState.layerStates[itr].scratchRectList);
+    }
 }
 
 static void addDamageRectToList(leRectArray* arr, const leRect* rect)
@@ -202,12 +218,12 @@ static void addRectToFrameList(leRect* rect)
     leRect rects[4];
 #endif
 
-    if(_rendererState.frameRectList.size > 0)
+    if(_rendererState.layerStates[_rendererState.layerIdx].frameRectList.size > 0)
     {
-        for(i = 0; i < _rendererState.frameRectList.size; i++)
+        for(i = 0; i < _rendererState.layerStates[_rendererState.layerIdx].frameRectList.size; i++)
         {
             // area is already covered by an existing rect
-            if(leRectContainsRect(&_rendererState.frameRectList.rects[i], rect) == LE_TRUE)
+            if(leRectContainsRect(&_rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[i], rect) == LE_TRUE)
             {
                 return;
             }
@@ -229,19 +245,23 @@ static void addRectToFrameList(leRect* rect)
         }
     }
     
-    leRectArray_PushBack(&_rendererState.frameRectList, rect);
+    leRectArray_PushBack(&_rendererState.layerStates[_rendererState.layerIdx].frameRectList, rect);
 }
 
-leResult leRenderer_DamageArea(const leRect* rect)
+leResult leRenderer_DamageArea(const leRect* rect,
+                               uint32_t layerIdx)
 {
     leRect clipRect;
+
+    if(layerIdx >= LE_LAYER_COUNT)
+        return LE_FAILURE;
     
     // make sure rect is inside the layer
-    if(leRectIntersects(&_rendererState.displayRect, rect) == LE_FALSE)
+    if(leRectIntersects(&_state->rootWidget[layerIdx].rect, rect) == LE_FALSE)
         return LE_FAILURE;    
     
     // clip the incoming rectangle
-    leRectClip(&_rendererState.displayRect, rect, &clipRect);
+    leRectClip(&_state->rootWidget[layerIdx].rect, rect, &clipRect);
         
     // initiate a new render frame if necessary
     if(_rendererState.frameState <= LE_FRAME_PREFRAME)
@@ -249,7 +269,7 @@ leResult leRenderer_DamageArea(const leRect* rect)
         _rendererState.frameState = LE_FRAME_PREFRAME;
         
         // drawing not in progress, add the rectangle to the current list
-        addDamageRectToList(&_rendererState.currentDamageRects, &clipRect);
+        addDamageRectToList(&_rendererState.layerStates[layerIdx].currentDamageRects, &clipRect);
     }
     else
     {
@@ -257,7 +277,7 @@ leResult leRenderer_DamageArea(const leRect* rect)
         
         // there is a frame in progress, add to the list that will be processed
         // next time around
-        addDamageRectToList(&_rendererState.pendingDamageRects, &clipRect);
+        addDamageRectToList(&_rendererState.layerStates[layerIdx].pendingDamageRects, &clipRect);
     }
     
     return LE_SUCCESS;
@@ -265,68 +285,13 @@ leResult leRenderer_DamageArea(const leRect* rect)
 
 static leResult preFrame()
 {
-    uint32_t i;
-    leRect rect;
-    
     _rendererState.layerIdx = 0;
-    
-    leRectArray_Clear(&_rendererState.scratchRectList);
-    leRectArray_Clear(&_rendererState.frameRectList);
-    
-    //printf("dump: %i\n", dump++);
-    
-    // merge rectangle lists
-    if(_rendererState.bufferCount > 1)
+
+    if(_rendererState.renderBuffer != NULL)
     {
-        for(i = 0; i < _rendererState.prevDamageRects.size; i++)
-        {
-            leRectArray_PushBack(&_rendererState.scratchRectList,
-                                 &_rendererState.prevDamageRects.rects[i]);
-        }
-    }
-    
-    for(i = 0; i < _rendererState.currentDamageRects.size; i++)
-    {
-        leRectArray_PushBack(&_rendererState.scratchRectList,
-                             &_rendererState.currentDamageRects.rects[i]);
-    }
-    
-    // remove duplicate rectangles from combined list
-    leRectArray_RemoveDuplicates(&_rendererState.scratchRectList);
-    
-    // combine any adjacent rectangles
-    leRectArray_MergeSimilar(&_rendererState.scratchRectList);
-    
-    // remove overlapping space
-    leRectArray_RemoveOverlapping(&_rendererState.scratchRectList);
-    
-    // crop to scratch buffer size limit
-    leRectArray_CropToSize(&_rendererState.scratchRectList, maxScratchPixels);
-    
-    while(_rendererState.scratchRectList.size != 0)
-    {
-        rect = _rendererState.scratchRectList.rects[0];
-        
-        leRectArray_RemoveAt(&_rendererState.scratchRectList, 0);
-        
-        addRectToFrameList(&rect);
+        _rendererState.renderBuffer->mode = -1;
     }
 
-#if LE_RENDER_LEFTRIGHT == 0
-    // sort frame rects by Y
-    leRectArray_SortByY(&_rendererState.frameRectList);
-#else
-    // sort frame rects by X
-    leRectArray_SortByX(&_rendererState.frameRectList);
-#endif
-
-    _rendererState.frameRectIdx = 0;
-    _rendererState.frameDrawCount = 0;
-    _rendererState.renderBuffer = &renderBuffer;
-    
-    if(_rendererState.frameRectList.size == 0)
-        return LE_FAILURE;
-        
     _rendererState.frameState = LE_FRAME_PRELAYER;
     
     return LE_SUCCESS;
@@ -334,10 +299,99 @@ static leResult preFrame()
 
 static void preLayer()
 {
+    uint32_t i;
+    leRect rect;
+
     if(_rendererState.dispDriver->setActiveLayer(_rendererState.layerIdx) != 0)
+    {
+        _rendererState.frameState = LE_FRAME_POSTLAYER;
+
         return;
-        
-    _rendererState.frameState = LE_FRAME_PRERECT;
+    }
+
+    //printf("dump: %i\n", dump++);
+
+    leRectArray_Clear(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList);
+    leRectArray_Clear(&_rendererState.layerStates[_rendererState.layerIdx].frameRectList);
+
+    maxScratchPixels = SCRACH_BUFFER_SZ / leColorInfoTable[leGetLayerColorMode(_rendererState.layerIdx)].size;
+
+    // merge rectangle lists
+    if(_rendererState.bufferCount > 1)
+    {
+        for(i = 0; i < _rendererState.layerStates[_rendererState.layerIdx].prevDamageRects.size; i++)
+        {
+            leRectArray_PushBack(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList,
+                                 &_rendererState.layerStates[_rendererState.layerIdx].prevDamageRects.rects[i]);
+        }
+    }
+
+    for(i = 0; i < _rendererState.layerStates[_rendererState.layerIdx].currentDamageRects.size; i++)
+    {
+        leRectArray_PushBack(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList,
+                             &_rendererState.layerStates[_rendererState.layerIdx].currentDamageRects.rects[i]);
+    }
+
+    if(_rendererState.layerStates[_rendererState.layerIdx].scratchRectList.size == 0)
+    {
+        _rendererState.frameState = LE_FRAME_POSTLAYER;
+
+        return;
+    }
+
+    // remove duplicate rectangles from combined list
+    leRectArray_RemoveDuplicates(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList);
+
+    // combine any adjacent rectangles
+    leRectArray_MergeSimilar(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList);
+
+    // remove overlapping space
+    leRectArray_RemoveOverlapping(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList);
+
+    // crop to scratch buffer size limit
+    if(leGetLayerRenderHorizontal(_rendererState.layerIdx) == LE_TRUE)
+    {
+        // sort frame rects by X
+        leRectArray_CropToSizeX(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList, maxScratchPixels);
+    }
+    else
+    {
+        // sort frame rects by Y
+        leRectArray_CropToSizeY(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList, maxScratchPixels);
+    }
+
+    while(_rendererState.layerStates[_rendererState.layerIdx].scratchRectList.size != 0)
+    {
+        rect = _rendererState.layerStates[_rendererState.layerIdx].scratchRectList.rects[0];
+
+        leRectArray_RemoveAt(&_rendererState.layerStates[_rendererState.layerIdx].scratchRectList, 0);
+
+        addRectToFrameList(&rect);
+    }
+
+    if(leGetLayerRenderHorizontal(_rendererState.layerIdx) == LE_TRUE)
+    {
+        // sort frame rects by X
+        leRectArray_SortByX(&_rendererState.layerStates[_rendererState.layerIdx].frameRectList);
+    }
+    else
+    {
+        // sort frame rects by Y
+        leRectArray_SortByY(&_rendererState.layerStates[_rendererState.layerIdx].frameRectList);
+    }
+
+    _rendererState.frameRectIdx = 0;
+    _rendererState.frameDrawCount = 0;
+    _rendererState.renderBuffer = &renderBuffer;
+
+    if(_rendererState.layerStates[_rendererState.layerIdx].frameRectList.size == 0)
+    {
+        _rendererState.frameState = LE_FRAME_POSTLAYER;
+    }
+    else
+    {
+        _rendererState.frameState = LE_FRAME_PRERECT;
+    }
 }
 
 static void invalidateWidget(leWidget* wgt, leRect* rect)
@@ -345,7 +399,7 @@ static void invalidateWidget(leWidget* wgt, leRect* rect)
     uint32_t idx;
     leRect localRect;
     
-    if(wgt->visible == LE_FALSE)
+    if(LE_TEST_FLAG(wgt->flags, LE_WIDGET_VISIBLE) == LE_FALSE)
     {
         wgt->fn->_validateChildren(wgt);
 
@@ -372,7 +426,7 @@ static void preRect()
 {
     //uint32_t idx;
     
-    if(_rendererState.frameRectIdx == _rendererState.frameRectList.size)
+    if(_rendererState.frameRectIdx == _rendererState.layerStates[_rendererState.layerIdx].frameRectList.size)
     {
         _rendererState.frameState = LE_FRAME_POSTFRAME;
         
@@ -384,14 +438,14 @@ static void preRect()
     //for(idx = 0; idx < leGetState()->rootWidgets.size; idx++)
     //{
         invalidateWidget(&leGetState()->rootWidget[_rendererState.layerIdx],
-                         &_rendererState.frameRectList.rects[_rendererState.frameRectIdx]);
+                         &_rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx]);
     //}
     
     // set up render buffer to match damaged rectangle size
-    renderBuffer.size.width = _rendererState.frameRectList.rects[_rendererState.frameRectIdx].width;
-    renderBuffer.size.height = _rendererState.frameRectList.rects[_rendererState.frameRectIdx].height;
+    renderBuffer.size.width = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].width;
+    renderBuffer.size.height = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].height;
     renderBuffer.pixel_count = renderBuffer.size.width * renderBuffer.size.height;
-    renderBuffer.mode = LE_GLOBAL_COLOR_MODE;
+    renderBuffer.mode = leGetLayerColorMode(_rendererState.layerIdx);
     renderBuffer.pixels = &scratchBuffer;
     renderBuffer.buffer_length = renderBuffer.pixel_count * leColorInfoTable[renderBuffer.mode].size;
     renderBuffer.flags &= ~(BF_LOCKED); // clear any lock on the buffer
@@ -411,11 +465,11 @@ static leWidget* findDirtyWidget(leArray* widgetArray)
     {
         wgt = widgetArray->values[idx];
         
-        if(wgt->dirtyState == LE_WIDGET_DIRTY_STATE_DIRTY)
+        if(wgt->status.dirtyState == LE_WIDGET_DIRTY_STATE_DIRTY)
         {
             return wgt;
         }
-        else if(wgt->dirtyState == LE_WIDGET_DIRTY_STATE_CHILD)
+        else if(wgt->status.dirtyState == LE_WIDGET_DIRTY_STATE_CHILD)
         {
             child = findDirtyWidget(&wgt->children);
             
@@ -425,7 +479,7 @@ static leWidget* findDirtyWidget(leArray* widgetArray)
             }
             else
             {
-                wgt->dirtyState = LE_WIDGET_DIRTY_STATE_CLEAN;
+                wgt->status.dirtyState = LE_WIDGET_DIRTY_STATE_CLEAN;
             }
         }
     }
@@ -444,7 +498,7 @@ static void preWidget()
     }
     else
     {
-        _rendererState.currentWidget->drawState = LE_WIDGET_DRAW_STATE_READY;
+        _rendererState.currentWidget->status.drawState = LE_WIDGET_DRAW_STATE_READY;
         _rendererState.frameState = LE_FRAME_DRAWING;
     }
 }
@@ -476,7 +530,7 @@ static void updateWidgetDirtyFlags(leWidget* widget)
         }
         else
         {            
-            // clear all dirty flags for this child and its descendents
+            // clear all dirty flags for this child and its descendants
             child->fn->_validateChildren(child);
         }
     }
@@ -494,8 +548,8 @@ static leBool paintWidget(leWidget* widget)
     leBool painted = LE_FALSE;
 #endif
     
-    // skip any child that isn't dirty or that does not have a dirty descendent
-    if(widget->dirtyState == LE_WIDGET_DIRTY_STATE_CLEAN)
+    // skip any child that isn't dirty or that does not have a dirty descendant
+    if(widget->status.dirtyState == LE_WIDGET_DIRTY_STATE_CLEAN)
         return LE_TRUE;
         
     // if widget is completely transparent just mark clean and return
@@ -509,7 +563,7 @@ static leBool paintWidget(leWidget* widget)
     }
 #endif
     
-    if(widget->dirtyState == LE_WIDGET_DIRTY_STATE_DIRTY)
+    if(widget->status.dirtyState == LE_WIDGET_DIRTY_STATE_DIRTY)
     {
         shouldPaint = LE_TRUE;
     }
@@ -537,7 +591,7 @@ static leBool paintWidget(leWidget* widget)
             // widget visible area does not intersect dirty area at all
             // do not draw
             if(leRectIntersects(&clipRect,
-                                &_rendererState.frameRectList.rects[_rendererState.frameRectIdx]) == LE_FALSE)
+                                &_rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx]) == LE_FALSE)
             {
                 widget->fn->_validateChildren(widget);
         
@@ -546,14 +600,14 @@ static leBool paintWidget(leWidget* widget)
             
             // get the delta area between the dirty area and the child/parent
             // delta area
-            leRectClip(&_rendererState.frameRectList.rects[_rendererState.frameRectIdx],
+            leRectClip(&_rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx],
                        &clipRect,
                        &_rendererState.drawRect);
         }
         else
         {
             //layer->dmgRectPtr = &layer->currentRect;
-            _rendererState.drawRect = _rendererState.frameRectList.rects[_rendererState.frameRectIdx];
+            _rendererState.drawRect = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx];
         }
         
         // turn off clipping by default
@@ -574,7 +628,7 @@ static leBool paintWidget(leWidget* widget)
         
         //printf("painting widget - %i, %i\n", widget->type, widget->id);
         
-        if(widget->drawState != LE_WIDGET_DRAW_STATE_DONE)
+        if(widget->status.drawState != LE_WIDGET_DRAW_STATE_DONE)
             return LE_FALSE;
             
         _rendererState.frameDrawCount++;
@@ -582,11 +636,11 @@ static leBool paintWidget(leWidget* widget)
     
     if(widget->children.size > 0)
     {
-        widget->dirtyState = LE_WIDGET_DIRTY_STATE_CHILD;
+        widget->status.dirtyState = LE_WIDGET_DIRTY_STATE_CHILD;
     }
     else
     {
-        widget->dirtyState = LE_WIDGET_DIRTY_STATE_CLEAN;
+        widget->status.dirtyState = LE_WIDGET_DIRTY_STATE_CLEAN;
     }
     
     //widget->fn->_clearDirtyState(widget);
@@ -625,7 +679,7 @@ static void _nextRect()
 {
     _rendererState.frameRectIdx += 1;
 
-    if(_rendererState.frameRectIdx < _rendererState.frameRectList.size)
+    if(_rendererState.frameRectIdx < _rendererState.layerStates[_rendererState.layerIdx].frameRectList.size)
     {
         _rendererState.frameState = LE_FRAME_PRERECT;
     }
@@ -637,10 +691,10 @@ static void _nextRect()
 
 static leResult postRect()
 {
-    leRect frameRect = _rendererState.frameRectList.rects[_rendererState.frameRectIdx];
+    leRect frameRect = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx];
 
     /* render buffer may be locked by something or display driver may not be ready */
-    if(_rendererState.dispDriver->blitBuffer(frameRect.x, frameRect.y, (gfxPixelBuffer*)&renderBuffer, GFX_BLEND_NONE) == GFX_FAILURE)
+    if(_rendererState.dispDriver->blitBuffer(frameRect.x, frameRect.y, (gfxPixelBuffer*)&renderBuffer) == GFX_FAILURE)
     {
         return LE_FAILURE;
     }
@@ -673,12 +727,15 @@ static void postLayer()
 
 static void postFrame()
 {
+    uint32_t itr;
+
     _rendererState.frameDrawCount = 0;
     
     // move current rects to previous list
     if(_rendererState.bufferCount > 1)
     {
-        leRectArray_Copy(&_rendererState.currentDamageRects, &_rendererState.prevDamageRects);
+        leRectArray_Copy(&_rendererState.layerStates[_rendererState.layerIdx].currentDamageRects,
+                         &_rendererState.layerStates[_rendererState.layerIdx].prevDamageRects);
     }
     
     // need to automatically fill the back buffer the first time this layer
@@ -692,47 +749,50 @@ static void postFrame()
     //rects. This avoids a full redraw of the frame later
     if (_rendererState.drawCount == 1 && _rendererState.bufferCount > 1)
     {
-        if(_rendererState.prevDamageRects.size > MAX_RECTARRAYS_SZ)
+        if(_rendererState.layerStates[_rendererState.layerIdx].prevDamageRects.size > MAX_RECTARRAYS_SZ)
         {
-            leRectArray_Destroy(&_rendererState.prevDamageRects);
+            leRectArray_Destroy(&_rendererState.layerStates[_rendererState.layerIdx].prevDamageRects);
         }
         else
         {
-            leRectArray_Clear(&_rendererState.prevDamageRects);
+            leRectArray_Clear(&_rendererState.layerStates[_rendererState.layerIdx].prevDamageRects);
         }
     }
     
     _rendererState.drawCount++;
     
-    // manage the layer's rectangle arrays            
-    if(_rendererState.pendingDamageRects.size > 0)
+    // manage the layer's rectangle arrays
+    for(itr = 0; itr < LE_LAYER_COUNT; ++itr)
     {
-        leRectArray_Copy(&_rendererState.pendingDamageRects, 
-                         &_rendererState.currentDamageRects);
-
-        if(_rendererState.pendingDamageRects.size > MAX_RECTARRAYS_SZ)
+        if(_rendererState.layerStates[itr].pendingDamageRects.size > 0)
         {
-            leRectArray_Destroy(&_rendererState.pendingDamageRects);
+            leRectArray_Copy(&_rendererState.layerStates[itr].pendingDamageRects,
+                             &_rendererState.layerStates[itr].currentDamageRects);
+
+            if(_rendererState.layerStates[_rendererState.layerIdx].pendingDamageRects.size > MAX_RECTARRAYS_SZ)
+            {
+                leRectArray_Destroy(&_rendererState.layerStates[itr].pendingDamageRects);
+            }
+            else
+            {
+                leRectArray_Clear(&_rendererState.layerStates[itr].pendingDamageRects);
+            }
+
+            _rendererState.frameState = LE_FRAME_PREFRAME;
         }
         else
         {
-            leRectArray_Clear(&_rendererState.pendingDamageRects);
-        }
+            if(_rendererState.layerStates[itr].currentDamageRects.size > MAX_RECTARRAYS_SZ)
+            {
+                leRectArray_Destroy(&_rendererState.layerStates[itr].currentDamageRects);
+            }
+            else
+            {
+                leRectArray_Clear(&_rendererState.layerStates[itr].currentDamageRects);
+            }
 
-        _rendererState.frameState = LE_FRAME_PREFRAME;
-    }
-    else
-    {
-        if(_rendererState.currentDamageRects.size > MAX_RECTARRAYS_SZ)
-        {
-            leRectArray_Destroy(&_rendererState.currentDamageRects);
+            _rendererState.frameState = LE_FRAME_READY;
         }
-        else
-        {
-            leRectArray_Clear(&_rendererState.currentDamageRects);
-        }
-
-        _rendererState.frameState = LE_FRAME_READY;
     }
     
     /*GFX_SetDebugRect(layer->currentDrawingRect.x,
@@ -752,8 +812,8 @@ void leRenderer_Paint()
 #if LE_PREEMPTION_LEVEL == 0
 
     while(_rendererState.frameState != LE_FRAME_READY)
-#endif
     {
+#endif
         switch(_rendererState.frameState)
         {
             case LE_FRAME_PREFRAME:

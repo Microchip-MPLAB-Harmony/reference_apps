@@ -1,24 +1,25 @@
 #include "gfx/legato/generated/screen/le_gen_screen_Menu.h"
 
-// widget list for layer 0
-static leWidget* root0;
+// screen member widget declarations
+leWidget* root0;
 
-leWidget* PanelWidget0;
-leLabelWidget* Level1_label;
-leLabelWidget* Level2_label;
-leGradientWidget* GradientWidget2;
-leImageWidget* ImageWidget1;
-leLabelWidget* LabelWidget1;
+leWidget* Menu_PanelWidget0;
+leLabelWidget* Menu_Level1_label;
+leLabelWidget* Menu_Level2_label;
+leGradientWidget* Menu_GradientWidget2;
+leImageWidget* Menu_ImageWidget1;
+leLabelWidget* Menu_LabelWidget1;
 
-// string list for this screen
-static leTableString tableString_Level1;
-static leTableString tableString_Level2;
-static leTableString tableString_Game_title_label;
-
+static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
 leResult screenInit_Menu()
 {
+    if(initialized == LE_TRUE)
+        return LE_FAILURE;
+
+    initialized = LE_TRUE;
+
     return LE_SUCCESS;
 }
 
@@ -27,67 +28,65 @@ leResult screenShow_Menu()
     if(showing == LE_TRUE)
         return LE_FAILURE;
 
-    // initialize static strings
-    leTableString_Constructor(&tableString_Level1, string_Level1);
-    leTableString_Constructor(&tableString_Level2, string_Level2);
-    leTableString_Constructor(&tableString_Game_title_label, string_Game_title_label);
-
     // layer 0
     root0 = leWidget_New();
-    root0->fn->setPosition(root0, 0, 0);
     root0->fn->setSize(root0, 800, 480);
     root0->fn->setBackgroundType(root0, LE_WIDGET_BACKGROUND_NONE);
     root0->fn->setMargins(root0, 0, 0, 0, 0);
+    root0->flags |= LE_WIDGET_IGNOREEVENTS;
+    root0->flags |= LE_WIDGET_IGNOREPICK;
 
-    PanelWidget0 = leWidget_New();
-    PanelWidget0->fn->setPosition(PanelWidget0, 0, 99);
-    PanelWidget0->fn->setSize(PanelWidget0, 800, 380);
-    PanelWidget0->fn->setScheme(PanelWidget0, &PanelScheme);
-    root0->fn->addChild(root0, PanelWidget0);
+    Menu_PanelWidget0 = leWidget_New();
+    Menu_PanelWidget0->fn->setPosition(Menu_PanelWidget0, 0, 99);
+    Menu_PanelWidget0->fn->setSize(Menu_PanelWidget0, 800, 380);
+    Menu_PanelWidget0->fn->setScheme(Menu_PanelWidget0, &PanelScheme);
+    root0->fn->addChild(root0, (leWidget*)Menu_PanelWidget0);
 
-    Level1_label = leLabelWidget_New();
-    Level1_label->fn->setPosition(Level1_label, 239, 165);
-    Level1_label->fn->setSize(Level1_label, 285, 72);
-    Level1_label->fn->setScheme(Level1_label, &Level_label_scheme);
-    Level1_label->fn->setBorderType(Level1_label, LE_WIDGET_BORDER_BEVEL);
-    Level1_label->fn->setHAlignment(Level1_label, LE_HALIGN_CENTER);
-    Level1_label->fn->setVAlignment(Level1_label, LE_VALIGN_TOP);
-    Level1_label->fn->setString(Level1_label, (leString*)&tableString_Level1);
-    root0->fn->addChild(root0, (leWidget*)Level1_label);
+    Menu_Level1_label = leLabelWidget_New();
+    Menu_Level1_label->fn->setPosition(Menu_Level1_label, 239, 165);
+    Menu_Level1_label->fn->setSize(Menu_Level1_label, 285, 72);
+    Menu_Level1_label->fn->setScheme(Menu_Level1_label, &Level_label_scheme);
+    Menu_Level1_label->fn->setBorderType(Menu_Level1_label, LE_WIDGET_BORDER_BEVEL);
+    Menu_Level1_label->fn->setHAlignment(Menu_Level1_label, LE_HALIGN_CENTER);
+    Menu_Level1_label->fn->setVAlignment(Menu_Level1_label, LE_VALIGN_TOP);
+    Menu_Level1_label->fn->setString(Menu_Level1_label, (leString*)&string_Level1);
+    root0->fn->addChild(root0, (leWidget*)Menu_Level1_label);
 
-    Level2_label = leLabelWidget_New();
-    Level2_label->fn->setPosition(Level2_label, 239, 277);
-    Level2_label->fn->setSize(Level2_label, 285, 72);
-    Level2_label->fn->setScheme(Level2_label, &Level_label_scheme);
-    Level2_label->fn->setBorderType(Level2_label, LE_WIDGET_BORDER_BEVEL);
-    Level2_label->fn->setHAlignment(Level2_label, LE_HALIGN_CENTER);
-    Level2_label->fn->setVAlignment(Level2_label, LE_VALIGN_TOP);
-    Level2_label->fn->setString(Level2_label, (leString*)&tableString_Level2);
-    root0->fn->addChild(root0, (leWidget*)Level2_label);
+    Menu_Level2_label = leLabelWidget_New();
+    Menu_Level2_label->fn->setPosition(Menu_Level2_label, 239, 277);
+    Menu_Level2_label->fn->setSize(Menu_Level2_label, 285, 72);
+    Menu_Level2_label->fn->setScheme(Menu_Level2_label, &Level_label_scheme);
+    Menu_Level2_label->fn->setBorderType(Menu_Level2_label, LE_WIDGET_BORDER_BEVEL);
+    Menu_Level2_label->fn->setHAlignment(Menu_Level2_label, LE_HALIGN_CENTER);
+    Menu_Level2_label->fn->setVAlignment(Menu_Level2_label, LE_VALIGN_TOP);
+    Menu_Level2_label->fn->setString(Menu_Level2_label, (leString*)&string_Level2);
+    root0->fn->addChild(root0, (leWidget*)Menu_Level2_label);
 
-    GradientWidget2 = leGradientWidget_New();
-    GradientWidget2->fn->setPosition(GradientWidget2, 0, 0);
-    GradientWidget2->fn->setSize(GradientWidget2, 800, 100);
-    GradientWidget2->fn->setScheme(GradientWidget2, &Gradient_scheme);
-    GradientWidget2->fn->setDirection(GradientWidget2, LE_DIRECTION_DOWN);
-    root0->fn->addChild(root0, (leWidget*)GradientWidget2);
+    Menu_GradientWidget2 = leGradientWidget_New();
+    Menu_GradientWidget2->fn->setPosition(Menu_GradientWidget2, 0, 0);
+    Menu_GradientWidget2->fn->setSize(Menu_GradientWidget2, 800, 100);
+    Menu_GradientWidget2->fn->setScheme(Menu_GradientWidget2, &Gradient_scheme);
+    Menu_GradientWidget2->fn->setDirection(Menu_GradientWidget2, LE_DIRECTION_DOWN);
+    root0->fn->addChild(root0, (leWidget*)Menu_GradientWidget2);
 
-    ImageWidget1 = leImageWidget_New();
-    ImageWidget1->fn->setPosition(ImageWidget1, 4, 3);
-    ImageWidget1->fn->setSize(ImageWidget1, 250, 58);
-    ImageWidget1->fn->setBackgroundType(ImageWidget1, LE_WIDGET_BACKGROUND_NONE);
-    ImageWidget1->fn->setImage(ImageWidget1, &MicrochipLogoHorizontalWhiteRed);
-    root0->fn->addChild(root0, (leWidget*)ImageWidget1);
+    Menu_ImageWidget1 = leImageWidget_New();
+    Menu_ImageWidget1->fn->setPosition(Menu_ImageWidget1, 4, 3);
+    Menu_ImageWidget1->fn->setSize(Menu_ImageWidget1, 361, 84);
+    Menu_ImageWidget1->fn->setBackgroundType(Menu_ImageWidget1, LE_WIDGET_BACKGROUND_NONE);
+    Menu_ImageWidget1->fn->setBorderType(Menu_ImageWidget1, LE_WIDGET_BORDER_NONE);
+    Menu_ImageWidget1->fn->setImage(Menu_ImageWidget1, (leImage*)&MicrochipLogoHorizontalWhiteRed);
+    root0->fn->addChild(root0, (leWidget*)Menu_ImageWidget1);
 
-    LabelWidget1 = leLabelWidget_New();
-    LabelWidget1->fn->setPosition(LabelWidget1, 210, 38);
-    LabelWidget1->fn->setSize(LabelWidget1, 384, 53);
-    LabelWidget1->fn->setScheme(LabelWidget1, &Title_text_scheme);
-    LabelWidget1->fn->setBackgroundType(LabelWidget1, LE_WIDGET_BACKGROUND_NONE);
-    LabelWidget1->fn->setString(LabelWidget1, (leString*)&tableString_Game_title_label);
-    root0->fn->addChild(root0, (leWidget*)LabelWidget1);
+    Menu_LabelWidget1 = leLabelWidget_New();
+    Menu_LabelWidget1->fn->setPosition(Menu_LabelWidget1, 210, 54);
+    Menu_LabelWidget1->fn->setSize(Menu_LabelWidget1, 384, 53);
+    Menu_LabelWidget1->fn->setScheme(Menu_LabelWidget1, &Title_text_scheme);
+    Menu_LabelWidget1->fn->setBackgroundType(Menu_LabelWidget1, LE_WIDGET_BACKGROUND_NONE);
+    Menu_LabelWidget1->fn->setString(Menu_LabelWidget1, (leString*)&string_Game_title_label);
+    root0->fn->addChild(root0, (leWidget*)Menu_LabelWidget1);
 
     leAddRootWidget(root0, 0);
+    leSetLayerColorMode(0, LE_COLOR_MODE_RGB_565);
 
     showing = LE_TRUE;
 
@@ -100,28 +99,28 @@ void screenUpdate_Menu()
 
 void screenHide_Menu()
 {
+
     leRemoveRootWidget(root0, 0);
-
     leWidget_Delete(root0);
-
     root0 = NULL;
 
-    PanelWidget0 = NULL;
-    Level1_label = NULL;
-    Level2_label = NULL;
-    GradientWidget2 = NULL;
-    ImageWidget1 = NULL;
-    LabelWidget1 = NULL;
+    Menu_PanelWidget0 = NULL;
+    Menu_Level1_label = NULL;
+    Menu_Level2_label = NULL;
+    Menu_GradientWidget2 = NULL;
+    Menu_ImageWidget1 = NULL;
+    Menu_LabelWidget1 = NULL;
 
-    tableString_Level1.fn->destructor(&tableString_Level1);
-    tableString_Level2.fn->destructor(&tableString_Level2);
-    tableString_Game_title_label.fn->destructor(&tableString_Game_title_label);
+
     showing = LE_FALSE;
 }
 
 void screenDestroy_Menu()
 {
+    if(initialized == LE_FALSE)
+        return;
 
+    initialized = LE_FALSE;
 }
 
 leWidget* screenGetRoot_Menu(uint32_t lyrIdx)

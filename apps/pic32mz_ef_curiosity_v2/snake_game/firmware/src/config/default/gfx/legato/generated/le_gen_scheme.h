@@ -3,16 +3,16 @@
 
 #include "gfx/legato/legato.h"
 
-extern leScheme Bars_scheme;
-extern leScheme Game_Over_scheme;
-extern leScheme Gradient_scheme;
-extern leScheme Level_label_scheme;
-extern leScheme ListScheme;
-extern leScheme PanelScheme;
-extern leScheme RightPanelscheme;
-extern leScheme SnakePart_sheme;
-extern leScheme Splash_Panel;
-extern leScheme Title_text_scheme;
+extern const leScheme SnakePart_sheme;
+extern const leScheme Level_label_scheme;
+extern const leScheme Gradient_scheme;
+extern const leScheme Title_text_scheme;
+extern const leScheme RightPanelscheme;
+extern const leScheme PanelScheme;
+extern const leScheme Game_Over_scheme;
+extern const leScheme ListScheme;
+extern const leScheme Splash_Panel;
+extern const leScheme Bars_scheme;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

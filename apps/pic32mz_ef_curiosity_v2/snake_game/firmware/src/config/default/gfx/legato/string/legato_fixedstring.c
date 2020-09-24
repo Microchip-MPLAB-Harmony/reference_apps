@@ -479,7 +479,6 @@ static const leFixedStringVTable fixedStringVTable =
     .getLineIndices = (void*)_leString_GetLineIndices,
     .getCharRect = (void*)_leString_GetCharRect,
     .getCharIndexAtPoint = (void*)_leString_GetCharIndexAtPoint,
-    .getCharIndexAtPoint = (void*)_leString_GetCharIndexAtPoint,
     ._draw = (void*)_leString_Draw,
     .preinvalidate = (void*)_leString_PreInvalidate,
     .invalidate = (void*)_leString_Invalidate,

@@ -84,7 +84,7 @@ void Snake_AddAtHead(leWidget* c_root)
 void Snake_AddAtTail(leWidget* c_root)
 {
   struct Snake* part_s;
-    
+
   //dynamically allocate memory space 
   part_s = (struct Snake*) malloc(sizeof(struct Snake));
   
@@ -284,7 +284,7 @@ void Snake_EatingTask()
 {
     leWidget* c_root;
     uint32_t c_screen;
-    
+
     c_screen = legato_getCurrentScreen();
     
     c_root = Game_GetCurrentScreenRoot();
@@ -294,11 +294,11 @@ void Snake_EatingTask()
     {
       
       Snake_AddAtTail(c_root);
-      
-      Snake_FoodRespawn();     
-      
+
+      Snake_FoodRespawn();
+
       Snake_IncrementSize();
-      
+
       //update the label that specify the snake size
       switch(c_screen)
       {
@@ -381,7 +381,7 @@ void Snake_RandomColorSet(struct Snake* sn_part)
 void Snake_PartColorSet(struct Snake* sn_part,leColor clr)
 {
     sn_part->SnakePart_scheme = *sn_part->SnakePart->fn->getScheme(sn_part->SnakePart);
-    sn_part->SnakePart_scheme.base = clr;
+    sn_part->SnakePart_scheme.tables[leRenderer_CurrentColorMode()].values[LE_SCHM_BASE] = clr;
     sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&sn_part->SnakePart_scheme);   
 }
 
