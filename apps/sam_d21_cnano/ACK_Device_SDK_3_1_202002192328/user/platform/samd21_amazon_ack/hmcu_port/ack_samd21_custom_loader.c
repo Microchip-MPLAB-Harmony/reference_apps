@@ -35,7 +35,7 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-#include "ACK_SAMD21_ota.h"
+#include "ack_samd21_ota.h"
 #include <stdbool.h>
 #include <stdint.h>
 #include "definitions.h"
