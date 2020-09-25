@@ -38,7 +38,7 @@ var myVariable = `
   },"6": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mx470_curiosity/pic32mx470_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mx470_curiosity/pic32mx470_getting_started/readme.html#softwaretools-used"
   },"7": {
@@ -74,7 +74,7 @@ var myVariable = `
   },"12": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mx470_curiosity/pic32mx470_getting_started/readme.html#revision",
     "relUrl": "/apps/pic32mx470_curiosity/pic32mx470_getting_started/readme.html#revision"
   },"13": {
@@ -116,7 +116,7 @@ var myVariable = `
   },"19": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_da_curiosity/pic32mzda_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_da_curiosity/pic32mzda_getting_started/readme.html#softwaretools-used"
   },"20": {
@@ -152,7 +152,7 @@ var myVariable = `
   },"25": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_da_curiosity/pic32mzda_getting_started/readme.html#revision",
     "relUrl": "/apps/pic32mz_da_curiosity/pic32mzda_getting_started/readme.html#revision"
   },"26": {
@@ -188,7 +188,7 @@ var myVariable = `
   },"31": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “gfx” repository v3.7.0 | MPLAB Harmony v3 “touch” repository v3.6.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.6.1 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “gfx” repository v3.7.0 | MPLAB Harmony v3 “touch” repository v3.8.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player/readme.html#softwaretools-used"
   },"32": {
@@ -224,7 +224,7 @@ var myVariable = `
   },"37": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player/readme.html#revision",
     "relUrl": "/apps/pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player/readme.html#revision"
   },"38": {
@@ -266,7 +266,7 @@ var myVariable = `
   },"44": {
     "doc": "Getting Started Extended",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/getting_started_ext/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/getting_started_ext/readme.html#softwaretools-used"
   },"45": {
@@ -308,7 +308,7 @@ var myVariable = `
   },"51": {
     "doc": "Getting Started Extended",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/getting_started_ext/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/getting_started_ext/readme.html#revision"
   },"52": {
@@ -344,7 +344,7 @@ var myVariable = `
   },"57": {
     "doc": "Getting Started Middleware",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “usb” repo v3.5.0 | MPLAB Harmony v3 “bsp” repo v3.7.0 | MPLAB Harmony Configurator Plugin v3.5.0 | CMSIS-FreeRTOS v10.3.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “usb” repo v3.6.1 | MPLAB Harmony v3 “bsp” repo v3.8.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/getting_started_middleware/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/getting_started_middleware/readme.html#softwaretools-used"
   },"58": {
@@ -380,7 +380,7 @@ var myVariable = `
   },"63": {
     "doc": "Getting Started Middleware",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/getting_started_middleware/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/getting_started_middleware/readme.html#revision"
   },"64": {
@@ -416,7 +416,7 @@ var myVariable = `
   },"69": {
     "doc": "USB MSD with Multiple Drives",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “usb” repository v3.6.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/msd_multiple_luns/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/msd_multiple_luns/readme.html#softwaretools-used"
   },"70": {
@@ -452,7 +452,7 @@ var myVariable = `
   },"75": {
     "doc": "USB MSD with Multiple Drives",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/msd_multiple_luns/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/msd_multiple_luns/readme.html#revision"
   },"76": {
@@ -488,7 +488,7 @@ var myVariable = `
   },"81": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/pic32mzef_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/pic32mzef_getting_started/readme.html#softwaretools-used"
   },"82": {
@@ -524,7 +524,7 @@ var myVariable = `
   },"87": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/pic32mzef_getting_started/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/pic32mzef_getting_started/readme.html#revision"
   },"88": {
@@ -560,7 +560,7 @@ var myVariable = `
   },"93": {
     "doc": "SD Card Audio Player",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/sdcard_player/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/sdcard_player/readme.html#softwaretools-used"
   },"94": {
@@ -596,7 +596,7 @@ var myVariable = `
   },"99": {
     "doc": "SD Card Audio Player",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/sdcard_player/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/sdcard_player/readme.html#revision"
   },"100": {
@@ -632,7 +632,7 @@ var myVariable = `
   },"105": {
     "doc": "Snake Game",
     "title": "Software/Tools Used:",
-    "content": ". | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “gfx” repository v3.6.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . ",
+    "content": ". | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “gfx” repository v3.7.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#softwaretools-used"
   },"106": {
@@ -650,7 +650,7 @@ var myVariable = `
   },"108": {
     "doc": "Snake Game",
     "title": "Programming/Debugging Application Project:",
-    "content": ". | Open the project (snake_game\\firmware\\\\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE | Ensure “PKOB4” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
+    "content": ". | Open the project (snake_game/firmware/pic32mz_ef_curiosity_v2.X) in MPLAB X IDE | Ensure “PKOB4” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#programmingdebugging-application-project"
   },"109": {
@@ -662,13 +662,13 @@ var myVariable = `
   },"110": {
     "doc": "Snake Game",
     "title": "Comments:",
-    "content": ". | The game should end when the snake hit an obstacle when it doesn’t have any remaining lives or when it eats food 10 times | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
+    "content": ". | This application is developed by applying a patch (available in folder “snake_game/firmware/gfx_ssd_driver_patch”) to MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “snake_game/firmware/gfx_ssd_driver_patch” folder. | The game should end when the snake hit an obstacle when it doesn’t have any remaining lives or when it eats food 8 times | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#comments",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#comments"
   },"111": {
     "doc": "Snake Game",
     "title": "Revision:",
-    "content": ". | v1.0 Released application demo | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/snake_game/readme.html#revision"
   },"112": {
@@ -710,7 +710,7 @@ var myVariable = `
   },"118": {
     "doc": "WiFi based RGB LED Control",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “wireless” repo v3.1.1 | MPLAB Harmony v3 “net” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.0 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “wireless” repo v3.2.0 | MPLAB Harmony v3 “net” repo v3.6.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/readme.html#softwaretools-used"
   },"119": {
@@ -746,7 +746,7 @@ var myVariable = `
   },"124": {
     "doc": "WiFi based RGB LED Control",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/readme.html#revision"
   },"125": {
@@ -788,13 +788,13 @@ var myVariable = `
   },"131": {
     "doc": "Live update on PIC32MZ",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repo v3.7.0 | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bootloader” repo v3.2.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Windows command prompt | Python 2.7 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repo v3.8.1 | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bootloader” repo v3.4.1 | MPLAB Harmony v3 “bootloader_apps_uart” repo v3.0.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Windows command prompt | Python 2.7 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.html#softwaretools-used"
   },"132": {
     "doc": "Live update on PIC32MZ",
     "title": "Running the Bootloader application:",
-    "content": "For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader. | Download the MPLAB Harmony Bootloader package. | Connect a mini USB cable to the DEBUG port of the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit. | Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: &lt;Your Harmony Framework download folder&gt;/bootloader/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X) using the MPLAB X IDE. | Build the Live update application (path: &lt;Live Update application folder&gt;/firmware/pic32mz_ef_sk.X) using the MPLAB X IDE but do not program. | From the command prompt, run the bootloader host script “btl_host.py” available at &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive to program the application binary. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_host.py -v -s -i &lt;COM PORT&gt; -d pic32mz -a 0x9D100000 -f &lt;Live Update application folder&gt;/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin | Note: If you need to know more information on the bootloader host script, refer Help for setting up the host script available at &lt;Your Harmony Framework download folder&gt;/bootloader/doc/help_bootloader.chm | . | Following screenshot shows successful programming of the application binary. | The messages “Swapping Bank And Rebooting and Reboot Done” in below screenshot signifies that bootloading is successful. | . | . ",
+    "content": "For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader. | Download the MPLAB Harmony Bootloader and Bootloader UART Apps packages. | Connect a mini USB cable to the DEBUG port of the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit. | Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X) using the MPLAB X IDE. | Build the Live update application (path: &lt;Live Update application folder&gt;/firmware/pic32mz_ef_sk.X) using the MPLAB X IDE but do not program. | From the command prompt, run the bootloader host script “btl_host.py” available at &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive to program the application binary. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_host.py -v -s -i &lt;COM PORT&gt; -d pic32mz -a 0x9D100000 -f &lt;Live Update application folder&gt;/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin | Note: If you need to know more information on the bootloader host script, refer Help for setting up the host script available at &lt;Your Harmony Framework download folder&gt;/bootloader/doc/help_bootloader.chm | . | Following screenshot shows successful programming of the application binary. | The messages “Swapping Bank And Rebooting and Reboot Done” in below screenshot signifies that bootloading is successful. | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.html#running-the-bootloader-application",
     "relUrl": "/apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.html#running-the-bootloader-application"
   },"133": {
@@ -812,7 +812,7 @@ var myVariable = `
   },"135": {
     "doc": "Live update on PIC32MZ",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk/pic32mz_uart_live_update/readme.html#revision"
   },"136": {
@@ -854,7 +854,7 @@ var myVariable = `
   },"142": {
     "doc": "Audio-Tone using a Lookup Table",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab1/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab1/readme.html#softwaretools-used"
   },"143": {
@@ -890,7 +890,7 @@ var myVariable = `
   },"148": {
     "doc": "Audio-Tone using a Lookup Table",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab1/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab1/readme.html#revision"
   },"149": {
@@ -926,7 +926,7 @@ var myVariable = `
   },"154": {
     "doc": "Audio-Tone Application by reading the tone from a text file stored in an SD card",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab2/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab2/readme.html#softwaretools-used"
   },"155": {
@@ -944,7 +944,7 @@ var myVariable = `
   },"157": {
     "doc": "Audio-Tone Application by reading the tone from a text file stored in an SD card",
     "title": "Programming/Debugging Application Project:",
-    "content": ". | Open the project (audio_player_lab1/firmware/audio_player_lab1.X) in MPLAB X IDE | Ensure “PKOB” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
+    "content": ". | Open the project (audio_player_lab2/firmware/audio_player_lab2.X) in MPLAB X IDE | Ensure “PKOB” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab2/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab2/readme.html#programmingdebugging-application-project"
   },"158": {
@@ -962,7 +962,7 @@ var myVariable = `
   },"160": {
     "doc": "Audio-Tone Application by reading the tone from a text file stored in an SD card",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab2/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab2/readme.html#revision"
   },"161": {
@@ -998,7 +998,7 @@ var myVariable = `
   },"166": {
     "doc": "SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.6.1 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab3/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab3/readme.html#softwaretools-used"
   },"167": {
@@ -1034,7 +1034,7 @@ var myVariable = `
   },"172": {
     "doc": "SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab3/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab3/readme.html#revision"
   },"173": {
@@ -1070,7 +1070,7 @@ var myVariable = `
   },"178": {
     "doc": "SD Card Reader .wav Audio player",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.6.1 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab4/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab4/readme.html#softwaretools-used"
   },"179": {
@@ -1106,7 +1106,7 @@ var myVariable = `
   },"184": {
     "doc": "SD Card Reader .wav Audio player",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab4/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab4/readme.html#revision"
   },"185": {
@@ -1142,7 +1142,7 @@ var myVariable = `
   },"190": {
     "doc": "SD Card Audio Player/Reader with Aria Graphics",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “gfx” repository v3.6.0 | MPLAB Harmony v3 “touch” repository v3.6.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.1 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.6.1 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “gfx” repository v3.7.0 | MPLAB Harmony v3 “touch” repository v3.8.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/readme.html#softwaretools-used"
   },"191": {
@@ -1172,13 +1172,13 @@ var myVariable = `
   },"195": {
     "doc": "SD Card Audio Player/Reader with Aria Graphics",
     "title": "Comments:",
-    "content": ". | This application is developed by applying a patch (available in folder “audio_player_lab5\\firmware\\\\gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under “audio_player_lab5\\firmware\\\\gfx_repo_patch” folder. | Reference Training Module: Lab 5: Display Graphics Support to Select and Play Audio File | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
+    "content": ". | Reference Training Module: Lab 5: Display Graphics Support to Select and Play Audio File | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/readme.html#comments",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/readme.html#comments"
   },"196": {
     "doc": "SD Card Audio Player/Reader with Aria Graphics",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/audio_player_lab5/readme.html#revision"
   },"197": {
@@ -1292,7 +1292,7 @@ var myVariable = `
   },"215": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#softwaretools-used"
   },"216": {
@@ -1328,7 +1328,7 @@ var myVariable = `
   },"221": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#revision"
   },"222": {
@@ -1364,7 +1364,7 @@ var myVariable = `
   },"227": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | Stable Voltage Source to INN[1] and INP[1] pins, or PB08 and PB09 pins respectively | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | Stable Voltage Source to INN[1] and INP[1] pins, or PB08 and PB09 pins respectively | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#softwaretools-used"
   },"228": {
@@ -1400,7 +1400,7 @@ var myVariable = `
   },"233": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#revision",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#revision"
   },"234": {
@@ -1436,7 +1436,7 @@ var myVariable = `
   },"239": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | Stable Voltage Source to INN[1] and INP[1] pins, or PB08 and PB09 pins respectively | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | Stable Voltage Source to INN[1] and INP[1] pins, or PB08 and PB09 pins respectively | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#softwaretools-used"
   },"240": {
@@ -1472,7 +1472,7 @@ var myVariable = `
   },"245": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#revision",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#revision"
   },"246": {
@@ -1514,7 +1514,7 @@ var myVariable = `
   },"252": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#softwaretools-used"
   },"253": {
@@ -1550,7 +1550,7 @@ var myVariable = `
   },"258": {
     "doc": "Low Power",
     "title": "Revision:",
-    "content": ". | v1.0 released new demo application. | . ",
+    "content": ". | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#revision",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#revision"
   },"259": {
@@ -1592,7 +1592,7 @@ var myVariable = `
   },"265": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#softwaretools-used"
   },"266": {
@@ -1628,7 +1628,7 @@ var myVariable = `
   },"271": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#revision"
   },"272": {
@@ -1664,7 +1664,7 @@ var myVariable = `
   },"277": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bt” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Microchip Bluetooth Data | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bt” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Microchip Bluetooth Data | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#softwaretools-used"
   },"278": {
@@ -1700,7 +1700,7 @@ var myVariable = `
   },"283": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Comments:",
-    "content": ". | Other features on the application like the Step Count and Light are not supported by this demo. Navigating to these screens may lead to an undefined behavior. | Code related for custom private services are added manually, harmony v3 framework doesn’t generate code related to it. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | Other features on the application like the Step Count and Light are not supported by this demo. Navigating to these screens may lead to an undefined behavior. | Code related for custom private services are added manually, harmony v3 framework doesn’t generate code related to it. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#comments"
   },"284": {
@@ -1736,7 +1736,7 @@ var myVariable = `
   },"289": {
     "doc": "Fitness Tracker",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#softwaretools-used"
   },"290": {
@@ -1772,7 +1772,7 @@ var myVariable = `
   },"295": {
     "doc": "Fitness Tracker",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#revision"
   },"296": {
@@ -1808,7 +1808,7 @@ var myVariable = `
   },"301": {
     "doc": "Location Tagged SOS",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.30 | MPLAB XC32 Compiler v2.30 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#softwaretools-used"
   },"302": {
@@ -1850,7 +1850,7 @@ var myVariable = `
   },"308": {
     "doc": "Location Tagged SOS",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#revision"
   },"309": {
@@ -1886,7 +1886,7 @@ var myVariable = `
   },"314": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#softwaretools-used"
   },"315": {
@@ -1922,7 +1922,7 @@ var myVariable = `
   },"320": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#revision"
   },"321": {
@@ -1958,7 +1958,7 @@ var myVariable = `
   },"326": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#softwaretools-used"
   },"327": {
@@ -1994,7 +1994,7 @@ var myVariable = `
   },"332": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#revision"
   },"333": {
@@ -2048,7 +2048,7 @@ var myVariable = `
   },"341": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#softwaretools-used"
   },"342": {
@@ -2138,7 +2138,7 @@ var myVariable = `
   },"356": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Comments:",
-    "content": ". | Dash Replenishment application is built as a standalone project, if you wish to implement OTA firmware upgrade feature to this application, follow the instructions in the bootloader application’s readme file. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | Dash Replenishment application is built as a standalone project, if you wish to implement OTA firmware upgrade feature to this application, follow the instructions in the bootloader application’s readme file. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#comments"
   },"357": {
@@ -2192,7 +2192,7 @@ var myVariable = `
   },"365": {
     "doc": "ACK Hello World Application",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#softwaretools-used"
   },"366": {
@@ -2282,7 +2282,7 @@ var myVariable = `
   },"380": {
     "doc": "ACK Hello World Application",
     "title": "Comments:",
-    "content": ". | HelloWorld application is built as standalone project, if you wish to use OTA feature, follow instructions in bootloader application’s readme file | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | HelloWorld application is built as standalone project, if you wish to use OTA feature, follow instructions in bootloader application’s readme file | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#comments"
   },"381": {
@@ -2336,7 +2336,7 @@ var myVariable = `
   },"389": {
     "doc": "ACK Microwave Application",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#softwaretools-used"
   },"390": {
@@ -2426,7 +2426,7 @@ var myVariable = `
   },"404": {
     "doc": "ACK Microwave Application",
     "title": "Comments:",
-    "content": ". | Microwave application cannot support OTA feature because of limitation of code size. You can migrate to higher memory part in SAMD 21 MCU family. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | Microwave application cannot support OTA feature because of limitation of code size. You can migrate to higher memory part in SAMD 21 MCU family. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#comments"
   },"405": {
@@ -2480,7 +2480,7 @@ var myVariable = `
   },"413": {
     "doc": "ACK Smart Light Application",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#softwaretools-used"
   },"414": {
@@ -2570,7 +2570,7 @@ var myVariable = `
   },"428": {
     "doc": "ACK Smart Light Application",
     "title": "Comments:",
-    "content": ". | Brightness option using PWM is not implemented, trying to control brightness will result in OFF if value is less than 128. | Smart Light application is built as a standalone project, if you wish to implement OTA firmware upgrade feature to this application, follow the instructions in the bootloader application’s readme file. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | Brightness option using PWM is not implemented, trying to control brightness will result in OFF if value is less than 128. | Smart Light application is built as a standalone project, if you wish to implement OTA firmware upgrade feature to this application, follow the instructions in the bootloader application’s readme file. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#comments"
   },"429": {
@@ -2624,7 +2624,7 @@ var myVariable = `
   },"437": {
     "doc": "ACK OTA Bootloader",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#softwaretools-used"
   },"438": {
@@ -2684,7 +2684,7 @@ var myVariable = `
   },"447": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
-    "content": "Setting up environment for OTA update . | Open the project (samd21_amazon_ack\\bootloader\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program | Open the project (samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X) in MPLAB X IDE | Open the MPLAB Harmony 3 Configurator (MHC) from Tools &gt; MPLAB Harmony 3 Configurator for HelloWorld project | After successful opening of MHC, in Project Graph select System and disable Generate Fuse Settings as shown below | Change the memory configuration in project properties (Right click on HelloWorld_sam_d21_cnano project &gt; select properties &gt; select xc32-ld &gt; Symbols &amp; Macros) | Change the Preprocessor macro definitions as below to place the code in primary region ROM_ORIGIN=0x1000; ROM_LENGTH=0xF800 | Define “ACK_VALIDATION” macro and “ACK_HOST_FIRMWARE_UPDATE” in HelloWorld application file “ack_user_config.h” | Increase Memory pool size macro “ACK_MEMORY_POOL_SIZE” value to 684 in ack_user_configh.h | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program. | Navigate to ota &gt; utility folder inside ‘Your ACK SDK Downloaded folder’ and run “hexmerge.py” script to merge bootloader and HelloWorld project’s hex file . python hexmerge.py -o bootloader_helloworld_combined.hex -f your_sdk_folder/user/platform/samd21_amazon_ack/bootloader/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex your_sdk_folder/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex . | . Note . | Output file “bootloader_helloworld_combined.hex” will be present in utility folder if specific path is not specified while running script. | Program “bootloader_helloworld_combined.hex” to SAM D21 Curiosity Nano Evaluation Kit by following steps in Steps to program the hex file section. | The fuse settings are not programmable through firmware and enabling the fuse settings increases the size of the binary when generated through the Hex file, So disabling it. | . ",
+    "content": "Setting up environment for OTA update . | Open the project (samd21_amazon_ack\\bootloader\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program | Open the project (samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X) in MPLAB X IDE | Open the MPLAB Harmony 3 Configurator (MHC) from Tools &gt; MPLAB Harmony 3 Configurator for HelloWorld project | After successful opening of MHC, in Project Graph select System and disable Generate Fuse Settings as shown below and generate the code | Change the memory configuration in project properties (Right click on HelloWorld_sam_d21_cnano project &gt; select properties &gt; select xc32-ld &gt; Symbols &amp; Macros) | Change the Preprocessor macro definitions as below to place the code in primary region ROM_ORIGIN=0x1000; ROM_LENGTH=0xF800 | Define “ACK_VALIDATION” macro and “ACK_HOST_FIRMWARE_UPDATE” in HelloWorld application file “ack_user_config.h” | Increase Memory pool size macro “ACK_MEMORY_POOL_SIZE” value to 684 in ack_user_configh.h | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program. | Navigate to ota &gt; utility folder inside ‘Your ACK SDK Downloaded folder’ and run “hexmerge.py” script to merge bootloader and HelloWorld project’s hex file . python hexmerge.py -o bootloader_helloworld_combined.hex -f your_sdk_folder/user/platform/samd21_amazon_ack/bootloader/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex your_sdk_folder/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex . | Program “bootloader_helloworld_combined.hex” to SAM D21 Curiosity Nano Evaluation Kit by following steps in Steps to program the hex file section. | . Note . | Output file “bootloader_helloworld_combined.hex” will be present in utility folder if specific path is not specified while running script. | The fuse settings are not programmable through firmware and enabling the fuse settings increases the size of the binary when generated through the Hex file, So disabling it. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
   },"448": {
@@ -2696,7 +2696,7 @@ var myVariable = `
   },"449": {
     "doc": "ACK OTA Bootloader",
     "title": "Comments:",
-    "content": ". | If you wish to remove the firmware update feature from your application undefine “ACK_HOST_FIRMWARE_UPDATE” Macro in “ack_user_config.h” and change Preprocessor macro definitions settings to default. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | If you wish to remove the firmware update feature from your application undefine “ACK_HOST_FIRMWARE_UPDATE” Macro in “ack_user_config.h” and change Preprocessor macro definitions settings to default. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#comments"
   },"450": {
@@ -2858,7 +2858,7 @@ var myVariable = `
   },"476": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Comments:",
-    "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#comments"
   },"477": {
@@ -2912,13 +2912,13 @@ var myVariable = `
   },"485": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Software Development Tools Used:",
-    "content": ". | MPLAB X IDE v5.40 | MPLAB Harmony Configurator Plugin v3.5.0 (installed through MPLABX &gt; plugins) | MPLAB XC32 Compiler v2.41 | . ",
+    "content": ". | MPLAB X IDE v5.40 | MPLAB Harmony Configurator Plugin v3.6.0 (installed through MPLABX &gt; plugins) | MPLAB XC32 Compiler v2.41 | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#software-development-tools-used",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#software-development-tools-used"
   },"486": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Harmony 3 Packages Used:",
-    "content": "This project has been verified to work with the following versions of Harmony 3 packages: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of Harmony 3 packages: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#harmony-3-packages-used",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#harmony-3-packages-used"
   },"487": {
@@ -2936,7 +2936,7 @@ var myVariable = `
   },"489": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Comments:",
-    "content": ". | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.0 released demo application | . ",
+    "content": ". | The application “sam_d21_iot/google_cloud_iot_core is developed by applying a patch (available in folder google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder. | The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of “reference_apps” repository. | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#comments",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#comments"
   },"490": {
@@ -2978,7 +2978,7 @@ var myVariable = `
   },"496": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “csp_apps_sam_d21_da1” repo v3.0.0 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “reference_apps” repo v1.1.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | ARM GNU Toolchain v6.3.1 | MPLAB XC32 Compiler v2.41 [Optional] | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “csp_apps_sam_d21_da1” repo v3.0.0 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “reference_apps” repo v1.1.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | ARM GNU Toolchain v6.3.1 | MPLAB XC32 Compiler v2.41 [Optional] | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#softwaretools-used"
   },"497": {
@@ -3026,7 +3026,7 @@ var myVariable = `
   },"504": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#revision",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#revision"
   },"505": {
@@ -3062,7 +3062,7 @@ var myVariable = `
   },"510": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#softwaretools-used"
   },"511": {
@@ -3098,7 +3098,7 @@ var myVariable = `
   },"516": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#revision"
   },"517": {
@@ -3146,7 +3146,7 @@ var myVariable = `
   },"524": {
     "doc": "BLE Fitness Tracker",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bt” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bt” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#softwaretools-used"
   },"525": {
@@ -3188,7 +3188,7 @@ var myVariable = `
   },"531": {
     "doc": "BLE Fitness Tracker",
     "title": "Revision:",
-    "content": "| v1.0 released demo application | . ",
+    "content": "| v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#revision"
   },"532": {
@@ -3224,7 +3224,7 @@ var myVariable = `
   },"537": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#softwaretools-used"
   },"538": {
@@ -3260,7 +3260,7 @@ var myVariable = `
   },"543": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#revision"
   },"544": {
@@ -3302,7 +3302,7 @@ var myVariable = `
   },"550": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “gfx” repository v3.6.0 | MPLAB Harmony v3 “touch” repository v3.6.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.6.1 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “gfx” repository v3.7.0 | MPLAB Harmony v3 “touch” repository v3.8.0 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#softwaretools-used"
   },"551": {
@@ -3338,7 +3338,7 @@ var myVariable = `
   },"556": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#revision",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#revision"
   },"557": {
@@ -3374,13 +3374,13 @@ var myVariable = `
   },"562": {
     "doc": "Live update on SAME54",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repo v3.7.0 | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “bootloader” repo v3.4.0 | MPLAB Harmony v3 “bootloader_apps_uart” repo v3.0.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Windows command prompt | Python 2.7 or above | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repo v3.8.1 | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony v3 “bootloader” repo v3.4.1 | MPLAB Harmony v3 “bootloader_apps_uart” repo v3.0.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Windows command prompt | Python 2.7 or above | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#softwaretools-used"
   },"563": {
     "doc": "Live update on SAME54",
     "title": "Running the Bootloader application:",
-    "content": "For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader. | Download the MPLAB Harmony Bootloader package. | Download the MPLAB Harmony UART Bootloader Applications package. | Connect a micro USB cable to the DEBUG port of the SAM E54 Curiosity Ultra Development Board. | Open the UART Fail Safe Bootloader which is in (path: &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X) using the MPLAB X IDE. | The project needs to be reconfigured to work on SAM E54 Curiosity Ultra Development Board. Launch the MHC and follow below steps to reconfigure for SAM E54 Curiosity Ultra Development Board. | Remove SERCOM2 . | . | Add SERCOM1 to Project Graph . | . | Configure SERCOM1 peripheral . | . | Launch Pin Configurations plugin under MHC-&gt;Tools-&gt;Pin Configurations. Remove SERCOM2 Pin configurations. | . | Configure SERCOM1 pins. | . | Note: . | The SAM E54 Curiosity Ultra Development Board uses SERCOM1 peripheral for EDBG. Hence SERCOM peripheral and its pins need to be reconfigured from SAM E54 Xplained Pro to SAM E54 Curiosity Ultra Development Board. | Do not close the MHC as we have to build the project again. | . | . | Regenerate the project. Build and program the UART Fail Safe Bootloader using the MPLAB X IDE. | The following shows the steps to rebuild the UART Fail Safe Bootloader using the MPLAB X IDE. This step is to create Bootloader binary image which will be merged with Live Update application to create a single binary image as shown in Step 10. | Remove the Device Fuse configurations from the custom linker script as they will be updated by the UART Fail Safe Bootloader project . | . | Enable Execute this line After Build option in the MPLAB X Project properties-&gt;Building option . | . | Regenerate the project | . | Build the UART Fail Safe Bootloader application again using the MPLAB X IDE but do not program. | This is required to generate the binary file for Bootloader application | . | Build the Live update application (path: &lt;Live Update application folder&gt;/firmware/sam_e54_cult.X) using the MPLAB X IDE but do not program. | Run the btl_app_merge_bin.py script from command prompt to merge the generated Bootloader binary and Live update application binary. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_app_merge_bin.py -o 0x2000 -b &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X/dist/&lt;Config Name&gt;/production/&lt;Project Name&gt;.production.bin -a &lt;Live Update application folder&gt;/firmware/sam_e54_cult.X/dist/&lt;Config Name&gt;/production/&lt;Project Name&gt;.production.bin | Below output should be displayed on command prompt. | . | . | Run the btl_host.py from command prompt to program the merged binary to opposite panel. The merged binary btl_app_merged.bin will be generated in the path from where the btl_app_merge_bin.py was called from. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_host.py -v -s -i &lt;COM PORT&gt; -d same5x -a &lt;Address&gt; -f btl_app_merged.bin | Note: . | If you need to know more information on the bootloader host script, refer help for setting up the host script available at &lt;Your Harmony Framework download folder&gt;/bootloader/doc/help_bootloader.chm and &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/docs/index.html | . | . | Following screenshot shows successful programming of the application binary. | The messages “Swapping Bank And Rebooting and Reboot Done” in below screenshot signifies that bootloading is successful. | . | . | . ",
+    "content": "For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader. | Download the MPLAB Harmony Bootloader package. | Download the MPLAB Harmony UART Bootloader Applications package. | Connect a micro USB cable to the DEBUG port of the SAM E54 Curiosity Ultra Development Board. | Open the UART Fail Safe Bootloader which is in (path: &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X) using the MPLAB X IDE. | The project needs to be reconfigured to work on SAM E54 Curiosity Ultra Development Board. Launch the MHC and follow below steps to reconfigure for SAM E54 Curiosity Ultra Development Board. | Remove SERCOM2 . | . | Add SERCOM1 to Project Graph . | . | Configure SERCOM1 peripheral . | . | Launch Pin Configurations plugin under MHC-&gt;Tools-&gt;Pin Configurations. Remove SERCOM2 Pin configurations. | . | Configure SERCOM1 pins. | . | Note: . | The SAM E54 Curiosity Ultra Development Board uses SERCOM1 peripheral for EDBG. Hence SERCOM peripheral and its pins need to be reconfigured from SAM E54 Xplained Pro to SAM E54 Curiosity Ultra Development Board. | Do not close the MHC as we have to build the project again. | . | . | Regenerate the project. Build and program the UART Fail Safe Bootloader using the MPLAB X IDE. | The following shows the steps to rebuild the UART Fail Safe Bootloader using the MPLAB X IDE. This step is to create Bootloader binary image which will be merged with Live Update application to create a single binary image as shown in Step 10. | Remove the Device Fuse configurations from the custom linker script as they will be updated by the UART Fail Safe Bootloader project . | . | Enable Execute this line After Build option in the MPLAB X Project properties-&gt;Building option . | . | Regenerate the project | . | Build the UART Fail Safe Bootloader application again using the MPLAB X IDE but do not program. | This is required to generate the binary file for Bootloader application | . | Build the Live update application (path: &lt;Live Update application folder&gt;/firmware/sam_e54_cult.X) using the MPLAB X IDE but do not program. | Run the btl_app_merge_bin.py script from command prompt to merge the generated Bootloader binary and Live update application binary. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_app_merge_bin.py -o 0x2000 -b &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X/dist/&lt;Config Name&gt;/production/&lt;Project Name&gt;.production.bin -a &lt;Live Update application folder&gt;/firmware/sam_e54_cult.X/dist/&lt;Config Name&gt;/production/&lt;Project Name&gt;.production.bin | Below output should be displayed on command prompt. | . | . | Run the btl_host.py from command prompt to program the merged binary to opposite panel. The merged binary btl_app_merged.bin will be generated in the path from where the btl_app_merge_bin.py was called from. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_host.py -v -s -i &lt;COM PORT&gt; -d same5x -a 0x00080000 -f btl_app_merged.bin | Note: . | If you need to know more information on the bootloader host script, refer help for setting up the host script available at &lt;Your Harmony Framework download folder&gt;/bootloader/doc/help_bootloader.chm and &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/docs/index.html | . | . | Following screenshot shows successful programming of the application binary. | The messages “Swapping Bank And Rebooting and Reboot Done” in below screenshot signifies that bootloading is successful. | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#running-the-bootloader-application",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#running-the-bootloader-application"
   },"564": {
@@ -3398,7 +3398,7 @@ var myVariable = `
   },"566": {
     "doc": "Live update on SAME54",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#revision",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#revision"
   },"567": {
@@ -3440,7 +3440,7 @@ var myVariable = `
   },"573": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#softwaretools-used"
   },"574": {
@@ -3476,7 +3476,7 @@ var myVariable = `
   },"579": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#revision"
   },"580": {
@@ -3512,7 +3512,7 @@ var myVariable = `
   },"585": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Data Visualizer | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Data Visualizer | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#softwaretools-used"
   },"586": {
@@ -3548,7 +3548,7 @@ var myVariable = `
   },"591": {
     "doc": "Low Power",
     "title": "Revision:",
-    "content": ". | v1.0 released new demo application. | . ",
+    "content": ". | v1.1.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#revision"
   },"592": {
@@ -3584,7 +3584,7 @@ var myVariable = `
   },"597": {
     "doc": "Vending Machine",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.1 | MPLAB Harmony Configurator Plugin v3.5.1 | MPLAB Harmony v3 “core” repo v3.7.2 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.0 | MPLAB Harmony v3 “net” repo v3.6.1 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.40 | Any Serial Terminal application, such as Tera Term terminal application. | Any TCP/IP debug application, such as Hercules SETUP utility - useful serial port terminal (RS-485 or RS-232 terminal) , UDP/IP terminal and TCP/IP Client Server terminal. Produced by www.HW-group.com. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony v3 “net” repo v3.6.1 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application, such as Tera Term terminal application. | Any TCP/IP debug application, such as Hercules SETUP utility - useful serial port terminal (RS-485 or RS-232 terminal) , UDP/IP terminal and TCP/IP Client Server terminal. Produced by www.HW-group.com. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#softwaretools-used"
   },"598": {
@@ -3614,13 +3614,13 @@ var myVariable = `
   },"602": {
     "doc": "Vending Machine",
     "title": "Comments:",
-    "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Create your first tcpip application | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
+    "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Create your first tcpip application | Look MPLAB Harmony TCP/IP Help documentaion for Harmony 3 Net APIs and how to use MPFS utility to generate MPFS image of web pages. | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#comments",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#comments"
   },"603": {
     "doc": "Vending Machine",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#revision"
   },"604": {
@@ -3656,7 +3656,7 @@ var myVariable = `
   },"609": {
     "doc": "SleepWalking",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Standalone Data Visualizer | Any Serial Terminal application like Tera Term terminal application | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Standalone Data Visualizer | Any Serial Terminal application like Tera Term terminal application | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#softwaretools-used"
   },"610": {
@@ -3692,7 +3692,7 @@ var myVariable = `
   },"615": {
     "doc": "SleepWalking",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#revision"
   },"616": {
@@ -3734,7 +3734,7 @@ var myVariable = `
   },"622": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “net” repo v3.5.1 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repository v3.8.1 | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “net” repo v3.6.1 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#softwaretools-used"
   },"623": {
@@ -3770,7 +3770,7 @@ var myVariable = `
   },"628": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#revision"
   },"629": {
@@ -3806,7 +3806,7 @@ var myVariable = `
   },"634": {
     "doc": "Getting Started with Drivers",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#softwaretools-used"
   },"635": {
@@ -3842,7 +3842,7 @@ var myVariable = `
   },"640": {
     "doc": "Getting Started with Drivers",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#revision"
   },"641": {
@@ -3878,7 +3878,7 @@ var myVariable = `
   },"646": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony v3 “core” repo v3.7.1 | MPLAB Harmony Configurator Plugin v3.5.0 | CMSIS-FreeRTOS v10.3.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#softwaretools-used"
   },"647": {
@@ -3914,7 +3914,7 @@ var myVariable = `
   },"652": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#revision"
   },"653": {
@@ -3950,7 +3950,7 @@ var myVariable = `
   },"658": {
     "doc": "XDMAC with QSPI",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#softwaretools-used"
   },"659": {
@@ -3986,7 +3986,7 @@ var myVariable = `
   },"664": {
     "doc": "XDMAC with QSPI",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#revision"
   },"665": {
@@ -4022,7 +4022,7 @@ var myVariable = `
   },"670": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#softwaretools-used"
   },"671": {
@@ -4058,7 +4058,7 @@ var myVariable = `
   },"676": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#revision"
   },"677": {
@@ -4100,7 +4100,7 @@ var myVariable = `
   },"683": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#softwaretools-used"
   },"684": {
@@ -4136,7 +4136,7 @@ var myVariable = `
   },"689": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#revision"
   },"690": {
@@ -4172,7 +4172,7 @@ var myVariable = `
   },"695": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Data Visualizer | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Data Visualizer | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#softwaretools-used"
   },"696": {
@@ -4208,7 +4208,7 @@ var myVariable = `
   },"701": {
     "doc": "Low Power",
     "title": "Revision:",
-    "content": ". | v1.0 released new demo application. | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#revision",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#revision"
   },"702": {
@@ -4250,7 +4250,7 @@ var myVariable = `
   },"708": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#softwaretools-used"
   },"709": {
@@ -4286,7 +4286,7 @@ var myVariable = `
   },"714": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Revision:",
-    "content": ". | v1.0 released new demo application. | . ",
+    "content": ". | v1.1.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#revision"
   },"715": {
@@ -4328,7 +4328,7 @@ var myVariable = `
   },"721": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#softwaretools-used"
   },"722": {
@@ -4358,13 +4358,13 @@ var myVariable = `
   },"726": {
     "doc": "Low Power",
     "title": "Comments:",
-    "content": ". | Reference Training Module: Low Power Application on SAM L21 (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
+    "content": ". | Reference Training Module: Low Power Application on SAM L21 (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#comments",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#comments"
   },"727": {
     "doc": "Low Power",
     "title": "Revision:",
-    "content": ". | v1.0 released new demo application. | . ",
+    "content": "| . | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#revision",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#revision"
   },"728": {
@@ -4418,7 +4418,7 @@ var myVariable = `
   },"736": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
-    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
+    "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.5.1 | MPLAB Harmony Configurator Plugin v3.6.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mk_gp_db/pic32mk_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mk_gp_db/pic32mk_getting_started/readme.html#softwaretools-used"
   },"737": {
@@ -4454,7 +4454,7 @@ var myVariable = `
   },"742": {
     "doc": "Getting Started",
     "title": "Revision:",
-    "content": ". | v1.0 released demo application | . ",
+    "content": ". | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mk_gp_db/pic32mk_getting_started/readme.html#revision",
     "relUrl": "/apps/pic32mk_gp_db/pic32mk_getting_started/readme.html#revision"
   },"743": {
@@ -4472,13 +4472,13 @@ var myVariable = `
   },"745": {
     "doc": "Release notes",
     "title": "Reference Applications Release v1.1.0 (September 2020)",
-    "content": "New Applications . | Application | Description | MCU | Development Board/Kit | . | google_cloud_iot_core | Google Cloud IoT Core | SAM D21 | SAM-IoT WG Development Board | . | same51n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . | ble_fitness_tracker | BLE Fitness Tracker | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . | pic32mzda_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MZ DA | Curiosity PIC32MZ DA Development Board | . | pic32mzda_sdcard_usb_audio_player | SD Card USB Audio Player | PIC32MZ DA | Curiosity PIC32MZ DA Development Board | . | ack_bootloader | Amazon Alexa Connect Kit (ACK) OTA Bootloader | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_helloworld | Amazon Alexa Connect Kit (ACK) Hello World | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_microwave | Amazon Alexa Connect Kit (ACK) Microwave | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_smartlight | Amazon Alexa Connect Kit (ACK) SmartLight | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_dashreplenishment | Amazon Alexa Connect Kit (ACK) DashReplenishment | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | pic18f_to_samd21_migration | Application migration from 8-bit PIC18F to 32-bit SAM D21 | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | atmega4809_to_samd21_migration | Application migration from 8-bit PIC18F to 32-bit SAM D21 | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | wifi_rgb_easy_configuration | WiFi based RGB LED Control | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | snake_game | Snake Game | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | same54_vending_machine | Vending Machine | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | same54_low_power | Low Power | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samd21_ac_sleepwalk_singleshot_gcc | AC Sleepwalking Application built with GCC Toolchain | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | sdadc_conversion_interrupt | SDADC Conversion Interrupt Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | sdadc_conversion_polling | SDADC Conversion Polling Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | same54_sdcard_usb_audio_player | SD Card USB Audio Player | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | same54_uart_live_update | Live Update | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | saml11_trustzone_getting_started | TrustZone Getting Started | SAM L11 | SAML11 Xplained Pro Evaluation Kit | . Updated Applications . - NA - . Known Issues . - TBD - . ",
+    "content": "New Applications . | Application | Description | MCU | Development Board/Kit | . | google_cloud_iot_core | Google Cloud IoT Core | SAM D21 | SAM-IoT WG Development Board | . | same51n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . | ble_fitness_tracker | BLE Fitness Tracker | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . | pic32mzda_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MZ DA | Curiosity PIC32MZ DA Development Board | . | pic32mzda_sdcard_usb_audio_player | SD Card USB Audio Player | PIC32MZ DA | Curiosity PIC32MZ DA Development Board | . | ack_bootloader | Amazon Alexa Connect Kit (ACK) OTA Bootloader | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_helloworld | Amazon Alexa Connect Kit (ACK) Hello World | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_microwave | Amazon Alexa Connect Kit (ACK) Microwave | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_smartlight | Amazon Alexa Connect Kit (ACK) SmartLight | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_dashreplenishment | Amazon Alexa Connect Kit (ACK) DashReplenishment | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | pic18f_to_samd21_migration | Application migration from 8-bit PIC18F to 32-bit SAM D21 | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | atmega4809_to_samd21_migration | Application migration from 8-bit PIC18F to 32-bit SAM D21 | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | wifi_rgb_easy_configuration | WiFi based RGB LED Control | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | snake_game | Snake Game | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | same54_vending_machine | Vending Machine | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | same54_low_power | Low Power | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samd21_ac_sleepwalk_singleshot_gcc | AC Sleepwalking Application built with GCC Toolchain | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | sdadc_conversion_interrupt | SDADC Conversion Interrupt Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | sdadc_conversion_polling | SDADC Conversion Polling Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | same54_sdcard_usb_audio_player | SD Card USB Audio Player | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | same54_uart_live_update | Live Update | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | saml11_trustzone_getting_started | TrustZone Getting Started | SAM L11 | SAML11 Xplained Pro Evaluation Kit | . Updated Applications . - NA - . Known Issues . | The application “pic32mz_ef_curiosity_v2/msd_multiple_luns” is developed by applying a patch (available in folder “msd_multiple_luns/firmware/usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns/firmware/usb_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.1 for USB Code Generation for this demo application. This issue is expected to be fixed in a future release of “usb” repository. | The application “pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration is developed by applying a patch (available in folder wifi_rgb_easy_configuration/firmware/wifi_repo_patch”) to MPLAB Harmony v3 “wireless” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “wifi_rgb_easy_configuration/firmware/wifi_repo_patch” folder. The patch is applied due to a known issue for PIC32 devices in “wireless” repo v3.2.0. This issue is expected to be fixed in a future release of “wireless” repository. | The application “pic32mz_ef_curiosity_v2/snake_game” is developed by applying a patch (available in folder “snake_game/firmware/gfx_ssd_driver_patch”) to MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “snake_game/firmware/gfx_ssd_driver_patch” folder. The patch is applied due to a known issue in “gfx” repo v3.7.0. This issue is expected to be fixed in a future release of “gfx” repository. | The application “sam_d21_iot/google_cloud_iot_core” is developed by applying a patch (available in folder “google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder. The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of “reference_apps” repository. | . ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#reference-applications-release-v110-september-2020",
     "relUrl": "/release_notes.html#reference-applications-release-v110-september-2020"
   },"746": {
     "doc": "Release notes",
     "title": "Reference Applications Release v1.0.0 (June 2020)",
-    "content": "New Applications . The following table provides the list of new applications: . | Application | Description | MCU | Development Board/Kit | . | samd21n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | fitness_tracker | Fitness Tracker using Curiosity Nano Base for click boards, Heart Rate 3 click and EINK CLICK BUNDLE | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | location_sos | Location Tagged SOS using Curiosity Nano Base for click boards and GSM-GPS click | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | ble_weather_station | BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | pic32mzef_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | getting_started_ext | Getting Started Extended using Harmony v3 Peripheral Libraries | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | getting_started_middleware | Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | msd_multiple_luns | USB MSD with Multiple Drives | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | sdcard_player | SD Card Audio Player | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | saml10_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM L10 | SAM L10 Xplained Pro Evaluation Kit | . | saml10_low_power | Low Power | SAM L10 | SAM L10 Xplained Pro Evaluation Kit | . | saml21_low_power | Low Power | SAM L21 | SAM L21 Xplained Pro Evaluation Kit | . | samc21_low_power | Low Power | SAM C21 | SAM C21 Xplained Pro Evaluation Kit | . | same70_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | getting_started_drv | Getting Started using Harmony v3 Drivers | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | getting_started_freertos | Getting Started using Harmony v3 Drivers and FreeRTOS | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | qspi_xdmac_read_write | XDMAC with QSPI | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | ftp_bootloader | Ethernet bootloader - File Transfer Protocol | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | same54_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | sleepwalking | SleepWalking | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samd21_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | samc21n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | pic32mk_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MK | PIC32MK General Purpose (GP) Development Board | . | pic32mx470_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MX | Curiosity PIC32MX470 Development Board | . | audio_player_lab1 | Audio-Tone using a Lookup Table | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab2 | Audio-Tone Application by reading the tone from a text file stored in an SD card | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab3 | SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab4 | SD Card Reader “.wav” Audio player | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab5 | SD Card Audio Player/Reader with Aria Graphics | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | pic32mz_uart_live_update | Live update on PIC32MZ | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit | . Updated Applications . - NA - . Known Issues . | The demo “pic32mz_ef_sk_meb2/audio_player/audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5/firmware/gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5/firmware/gfx_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0. | The application “pic32mz_ef_curiosity_v2/msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns/firmware/usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns/firmware/usb_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application. This issue is expected to be fixed in a future release of “usb” repository. | . Development Tools . | Refer demo specfic documentation in folder “docs” to know the tools and Harmony 3 packages used. | . ",
+    "content": "New Applications . The following table provides the list of new applications: . | Application | Description | MCU | Development Board/Kit | . | samd21n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | fitness_tracker | Fitness Tracker using Curiosity Nano Base for click boards, Heart Rate 3 click and EINK CLICK BUNDLE | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | location_sos | Location Tagged SOS using Curiosity Nano Base for click boards and GSM-GPS click | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | ble_weather_station | BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | pic32mzef_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | getting_started_ext | Getting Started Extended using Harmony v3 Peripheral Libraries | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | getting_started_middleware | Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | msd_multiple_luns | USB MSD with Multiple Drives | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | sdcard_player | SD Card Audio Player | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | saml10_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM L10 | SAM L10 Xplained Pro Evaluation Kit | . | saml10_low_power | Low Power | SAM L10 | SAM L10 Xplained Pro Evaluation Kit | . | saml21_low_power | Low Power | SAM L21 | SAM L21 Xplained Pro Evaluation Kit | . | samc21_low_power | Low Power | SAM C21 | SAM C21 Xplained Pro Evaluation Kit | . | same70_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | getting_started_drv | Getting Started using Harmony v3 Drivers | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | getting_started_freertos | Getting Started using Harmony v3 Drivers and FreeRTOS | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | qspi_xdmac_read_write | XDMAC with QSPI | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | ftp_bootloader | Ethernet bootloader - File Transfer Protocol | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | same54_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | sleepwalking | SleepWalking | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samd21_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | samc21n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | pic32mk_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MK | PIC32MK General Purpose (GP) Development Board | . | pic32mx470_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MX | Curiosity PIC32MX470 Development Board | . | audio_player_lab1 | Audio-Tone using a Lookup Table | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab2 | Audio-Tone Application by reading the tone from a text file stored in an SD card | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab3 | SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab4 | SD Card Reader “.wav” Audio player | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab5 | SD Card Audio Player/Reader with Aria Graphics | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | pic32mz_uart_live_update | Live update on PIC32MZ | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit | . Updated Applications . - NA - . Known Issues . | The demo “pic32mz_ef_sk_meb2/audio_player/audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5/firmware/gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5/firmware/gfx_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0. | The application “pic32mz_ef_curiosity_v2/msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns/firmware/usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns/firmware/usb_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application. This issue is expected to be fixed in a future release of “usb” repository. | . Development Tools . | Refer demo specific documentation in folder “docs” to know the tools and Harmony 3 packages used. | . ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#reference-applications-release-v100-june-2020",
     "relUrl": "/release_notes.html#reference-applications-release-v100-june-2020"
   },"747": {
