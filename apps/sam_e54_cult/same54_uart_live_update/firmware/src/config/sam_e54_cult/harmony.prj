@@ -853,15 +853,6 @@
           <GeneratedChecksum dnOrder="5">0584CCD9DFFD4AFEA819CA2D7D666F4E</GeneratedChecksum>
           <UserChecksum dnOrder="6">0584CCD9DFFD4AFEA819CA2D7D666F4E</UserChecksum>
         </File>
-        <File dnOrder="94">
-          <Type dnOrder="0">LINKER</Type>
-          <Name dnOrder="1">ATSAME54P20A.ld</Name>
-          <Security dnOrder="2">NON_SECURE</Security>
-          <LogicalPath dnOrder="3">config/sam_e54_cult/</LogicalPath>
-          <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">67D76CA6F818F9C7235E8442D2074A0B</GeneratedChecksum>
-          <UserChecksum dnOrder="6">67D76CA6F818F9C7235E8442D2074A0B</UserChecksum>
-        </File>
       </Files>
       <Settings dnOrder="1">
         <Setting append="true" category="C32" delimiter=";" dnOrder="0" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
