@@ -66,7 +66,7 @@
 #include "debug_print.h"
 #include "led.h"
 #include "mqtt/mqtt_core/mqtt_core.h"
-#if CFG_ENABLE_CLI
+#ifdef CFG_ENABLE_CLI
 #include "system/command/sys_command.h"
 #endif
 
@@ -296,7 +296,7 @@ void APP_Tasks(void)
     {
         case APP_STATE_CRYPTO_INIT:
         {
-        #if CFG_ENABLE_CLI     
+        #ifdef CFG_ENABLE_CLI     
             set_deviceId(attDeviceID);
         #endif   
             debug_init(attDeviceID);      
@@ -321,7 +321,7 @@ void APP_Tasks(void)
                   break;
                }
             }
-        #if CFG_ENABLE_CLI   
+        #ifdef CFG_ENABLE_CLI   
             set_deviceId(attDeviceID);
         #endif  
             debug_setPrefix(attDeviceID);
