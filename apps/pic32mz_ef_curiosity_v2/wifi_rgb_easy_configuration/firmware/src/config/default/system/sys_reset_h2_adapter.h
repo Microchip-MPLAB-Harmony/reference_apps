@@ -78,7 +78,18 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // *****************************************************************************
 // *****************************************************************************
 
-#define SYS_RESET_SoftwareReset() (RSTC_REGS->RSTC_CR |= RSTC_CR_PROCRST_Msk | RSTC_CR_KEY_PASSWD)
+#define SYS_RESET_SoftwareReset()	\
+	__builtin_disable_interrupts();	\
+	/* Unlock System */				\
+	SYSKEY = 0x00000000;			\
+	SYSKEY = 0xAA996655;			\
+	SYSKEY = 0x556699AA;			\
+	RSWRSTSET = _RSWRST_SWRST_MASK;	\
+	/* Read RSWRST register to trigger reset */	\
+	(void) RSWRST;					\
+	/* Prevent any unwanted code execution until reset occurs */	\
+	while(1)						
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

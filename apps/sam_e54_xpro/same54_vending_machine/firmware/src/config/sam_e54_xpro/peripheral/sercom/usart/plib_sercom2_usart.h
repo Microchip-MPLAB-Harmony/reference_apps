@@ -89,6 +89,8 @@ void SERCOM2_USART_WriteThresholdSet(uint32_t nBytesThreshold);
 
 void SERCOM2_USART_WriteCallbackRegister( SERCOM_USART_RING_BUFFER_CALLBACK callback, uintptr_t context);
 
+
+
 size_t SERCOM2_USART_Read(uint8_t* pRdBuffer, const size_t size);
 
 size_t SERCOM2_USART_ReadCountGet(void);

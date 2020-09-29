@@ -1613,6 +1613,71 @@ void TCPIP_HTTP_Print_led(HTTP_CONN_HANDLE connHandle, uint16_t num)
     TCPIP_TCP_Put(TCPIP_HTTP_CurrentConnectionSocketGet(connHandle), (num ? '1' : '0'));
 }
 
+void TCPIP_HTTP_Print_nextSSID(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_prevSSID(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_prevWLAN(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_nextWLAN(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_scan(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_fwver(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_bssCount(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_ssid(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_valid(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_name(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_privacy(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_wlan(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
+void TCPIP_HTTP_Print_strength(HTTP_CONN_HANDLE connHandle)
+{
+    return;
+}
+
 void TCPIP_HTTP_Print_ledSelected(HTTP_CONN_HANDLE connHandle, uint16_t num, uint16_t state)
 {
     // Determine which LED to check

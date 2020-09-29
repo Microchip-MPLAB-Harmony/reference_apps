@@ -372,7 +372,6 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/http_net_print.h</itemPath>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/mmi.h</itemPath>
     </logicalFolder>
@@ -611,8 +610,8 @@
         <itemPath>../src/web_pages/status.xml</itemPath>
         <itemPath>../src/web_pages/upload.htm</itemPath>
       </logicalFolder>
-      <itemPath>../src/http_net_print.c</itemPath>
       <itemPath>../src/custom_http_net_app.c</itemPath>
+      <itemPath>../src/http_net_print.c</itemPath>
       <itemPath>../src/mpfs_net_img.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/mmi.c</itemPath>

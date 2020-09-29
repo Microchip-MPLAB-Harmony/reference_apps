@@ -78,7 +78,10 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // *****************************************************************************
 // *****************************************************************************
 
-#define SYS_RESET_SoftwareReset() (RSTC_REGS->RSTC_CR |= RSTC_CR_PROCRST_Msk | RSTC_CR_KEY_PASSWD)
+ 
+#define SYS_RESET_SoftwareReset()	\
+    NVIC_SystemReset()
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

@@ -73,7 +73,7 @@ void _NET_PRES_Tasks(  void *pvParameters  )
 TaskHandle_t xAPP_Tasks;
 
 void _APP_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         APP_Tasks();
@@ -84,7 +84,7 @@ void _APP_Tasks(  void *pvParameters  )
 TaskHandle_t xMMI_Tasks;
 
 void _MMI_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
         MMI_Tasks();

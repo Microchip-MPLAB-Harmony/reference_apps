@@ -105,7 +105,7 @@ void __attribute__((noreturn)) BusFault_Handler(void)
    }
 }
 
-void UsageFault_Handler(void)
+void __attribute__((noreturn)) UsageFault_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
    __builtin_software_breakpoint();
