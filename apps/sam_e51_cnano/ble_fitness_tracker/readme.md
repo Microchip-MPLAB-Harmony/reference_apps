@@ -183,6 +183,8 @@ device should appear as **MCHP_SAM_E51_HR** in the list of Bluetooth devices.
 
 
 ## Comments:
+- The application “sam_e51_cnano/ble_fitness_tracker" is developed by applying a patch (available in folder ble_fitness_tracker/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under ble_fitness_tracker/firmware/app_patch” folder.  
+The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
 - Place your index finger gently on the heart rate 3 click sensor, don’t push or put pressure on the sensor (the heart rate values may not be accurate)
 - Make sure smartphone screen is not turned off when reading Heart Rate Sensor data using the MBD smartphone APP and also, don't switch to any other smartphone App(s)
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs](https://microchipdeveloper.com/harmony3:same54-getting-started-training-module)

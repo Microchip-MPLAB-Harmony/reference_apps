@@ -7,5 +7,4 @@ This project(google_cloud_iot_core) has been created using the patch discussed i
 Note: 
 1. The exisiting demo application (google_cloud_iot_core) builds and works without the application of the patch discussed above.
 2. The patch needs to be applied only if you wish to reconfigure or regenerate the existing demo application. 
-3. Future "reference_apps" repository is expected to have the fix for this issue
-   Once the feature is supported, Please check the release notes of the reference_apps.
+3. Future "reference_apps" repository is expected to have the fix for this issue. Once the feature is supported, Please check the release notes of the reference_apps.

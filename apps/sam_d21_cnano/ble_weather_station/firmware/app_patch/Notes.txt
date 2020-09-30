@@ -1,0 +1,10 @@
+This project(ble_weather_station) has been created using the patch discussed in the following steps.
+
+1. To reconfigure or regenerate the project (ble_weather_station), Apply the patch by following below steps
+    a.Open the project in MPLAB X IDE, Launch Harmony 3 configurator and reconfigure.
+    b.During Regeneration,In Generate project window, Change Generate Settings 'Merge Strategy' to "USER_RECENT" and generate the code.
+       
+Note: 
+1. The exisiting demo application (ble_weather_station) builds and works without the application of the patch discussed above.
+2. The patch needs to be applied only if you wish to reconfigure or regenerate the existing demo application. 
+3. Future "reference_apps" repository is expected to have the fix for this issue. Once the feature is supported, Please check the release notes of the reference_apps.

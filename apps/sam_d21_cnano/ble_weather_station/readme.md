@@ -165,6 +165,8 @@ device should appear as MCHP in the list of Bluetooth devices.
 - Keep finger on weather click board to see PTH values changing and move the 10DOF click board to see accelerometer and gyroscope values changing.
 
 ## Comments:
+- The application “sam_d21_cnano/ble_weather_station" is developed by applying a patch (available in folder ble_weather_station/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under ble_weather_station/firmware/app_patch” folder.  
+The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
 -  Other features on the application like the Step Count and Light are not supported by this demo. Navigating to these screens may lead to an undefined behavior.
 - Code related for custom private services are added manually, harmony v3 framework doesn't generate code related to it.
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs](https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module)
