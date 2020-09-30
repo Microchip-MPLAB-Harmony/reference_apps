@@ -37,15 +37,17 @@ nav_order: 99
 	- NA -
 
 ### Known Issues
-1. The application “pic32mz_ef_curiosity_v2/msd_multiple_luns” is developed by applying a patch (available in folder “msd_multiple_luns/firmware/usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns/firmware/usb_repo_patch” folder.  
-The patch is applied due to a known issue with MHC v3.5.1 for USB Code Generation for this demo application.
-This issue is expected to be fixed in a future release of "usb” repository.
-2. The application “pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration is developed by applying a patch (available in folder wifi_rgb_easy_configuration/firmware/wifi_repo_patch”) to MPLAB Harmony v3 “wireless” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “wifi_rgb_easy_configuration/firmware/wifi_repo_patch” folder.  
-The patch is applied due to a known issue for PIC32 devices in "wireless" repo v3.2.0. This issue is expected to be fixed in a future release of "wireless” repository.
-3. The application “pic32mz_ef_curiosity_v2/snake_game" is developed by applying a patch (available in folder "snake_game/firmware/gfx_ssd_driver_patch”) to MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “snake_game/firmware/gfx_ssd_driver_patch” folder.
-The patch is applied due to a known issue in "gfx" repo v3.7.0. This issue is expected to be fixed in a future release of "gfx” repository.
-4. The application “sam_d21_iot/google_cloud_iot_core" is developed by applying a patch (available in folder "google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder.  
+1. The application “sam_d21_iot/google_cloud_iot_core" is developed by applying a patch (available in folder "google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder.  
 The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
+2. The application “sam_d21_cnano/ble_weather_station" is developed by applying a patch (available in folder "ble_weather_station/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “ble_weather_station/firmware/app_patch” folder.  
+The patch is applied due to a known issue in "bt" repo and in the application. This issue is expected to be fixed in a future release of "reference_apps" repository and "bt" repository.
+3. The application “sam_e51_cnano/ble_weather_station" is developed by applying a patch (available in folder "ble_fitness_tracker/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “ble_fitness_tracker/firmware/app_patch” folder.  
+The patch is applied due to a known issue in "bt" repo and in the application. This issue is expected to be fixed in a future release of "reference_apps" repository and "bt" repository.
+4. The application “pic32mz_ef_curiosity_v2/snake_game" is developed by applying a patch (available in folder "snake_game/firmware/gfx_ssd_driver_patch”) to MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “snake_game/firmware/gfx_ssd_driver_patch” folder.
+The patch is applied due to a known issue in "gfx" repo v3.7.0. This issue is expected to be fixed in a future release of "gfx” repository.
+5. The application demos “pic32mz_ef_curiosity_v2/snake_game", "pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player", "sam_e54_cult/same54_sdcard_usb_audio_player" and "pic32mz_ef_sk_meb2/audio_player/audio_player_lab5" having Graphics features are developed using Graphics library "gfx" v3.7.0. These demos could version incompatibility when regenerated with a higher version of "gfx" repo. This limitation is expected to be fixed in a future release of "reference_apps” repository.
+
+
 
 
 ## Reference Applications Release v1.0.0 (June 2020)
