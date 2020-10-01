@@ -55,7 +55,7 @@ Refer to the following links for release notes and reference application informa
 
 - [Release Notes](./release_notes.md)
 - [MPLAB® Harmony License](./mplab_harmony_license.md)
-- [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/Microchip-MPLAB-Harmony/reference_apps/wiki)
+- [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/wiki)
 - [MPLAB® Harmony 3 Reference Applications Index](./apps/readme.md)
 
 # Contents Summary
@@ -68,11 +68,11 @@ Refer to the following links for release notes and reference application informa
 
 ____
 
-[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/mplab_harmony_license.md)
-[![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/reference_apps.svg)](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest)
-[![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/reference_apps.svg)](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest)
-[![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/reference_apps.svg)](https://github.com/Microchip-MPLAB-Harmony/reference_apps/graphs/commit-activity)
-[![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/reference_apps.svg)]()
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/blob/master/mplab_harmony_license.md)
+[![Latest release](https://img.shields.io/github/release/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest)
+[![Latest release date](https://img.shields.io/github/release-date/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest)
+[![Commit activity](https://img.shields.io/github/commit-activity/y/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/graphs/commit-activity)
+[![Contributors](https://img.shields.io/github/contributors-anon/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)]()
 
 ____
 
@@ -81,5 +81,5 @@ ____
 [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/)
 [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech)
 
-[![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/reference_apps.svg?style=social)]()
-[![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/reference_apps.svg?style=social)]()
+[![](https://img.shields.io/github/stars/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg?style=social)]()
+[![](https://img.shields.io/github/watchers/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg?style=social)]()

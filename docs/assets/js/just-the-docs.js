@@ -4567,10 +4567,10 @@ function initSearch() {
 		var path = location.substring(0, location.lastIndexOf("/"));
 		var directoryName = path.substring(path.lastIndexOf("/")+1);
 		var fileName = location.substring(location.lastIndexOf("/")+1);		
-		// var ParentDirectoryName = path.substring(path.lastIndexOf("/")-12);	
+		// var ParentDirectoryName = path.substring(path.lastIndexOf("/")-12);		
 	
 		var s_before = "http://localhost:4000/reference_apps/";
-		var repo_name = "reference_apps";		
+		var repo_name = "MPLAB-Harmony-Reference-Apps";		
 
         var cur_path_from_repo = path.substring(path.lastIndexOf(repo_name));
 

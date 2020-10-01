@@ -20,8 +20,8 @@ lang: en-US
 timezone: America/Phoenix
 
 description: Harmony 3 Reference Applications package
-url: "https://microchip-mplab-harmony.github.io"
-baseurl: "/reference_apps"
+url: "https://microchiptech.github.io"
+baseurl: "/MPLAB-Harmony-Reference-Apps"
 remote_theme: "Microchip-MPLAB-Harmony/just-the-docs@mchp-harmony"
 
 # Build settings
