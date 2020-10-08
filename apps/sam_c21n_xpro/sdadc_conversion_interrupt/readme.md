@@ -74,6 +74,7 @@ The pre-built hex file can be programmed by following the below steps
 <img src = "images/output.png" width="700" height="360" align="middle">  
 
 ## Comments:
+- Reference Application Note: [Using Sigma-Delta Analog-to-Digital Converter on SAMC MCU with MPLAB Harmony v3](https://www.microchip.com/wwwappnotes/appnotes.aspx?appnote=en1003095)
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs](https://microchipdeveloper.com/harmony3:samc21-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
