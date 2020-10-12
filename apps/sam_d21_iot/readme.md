@@ -9,11 +9,22 @@ nav_order: 1
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on SAM D21 IoT Development Boards.
 
+|SI No| Demo Name | Download Link |
+| --- | --- | -- |
+| 1 | [Google Cloud IoT Core](./google_cloud_iot_core/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/google_cloud_iot_core.zip) |
 
-* [Google Cloud IoT Core](./google_cloud_iot_core/readme.md)
-  - Developed on [SAM D21 IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A).
-  - Pre-provisioned to send data to the Google Cloud IoT Core.
+### More Application Demos
 
-### **Note:**
-The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
-Peripheral/Technology specific applications are available in technology repositories like [csp](https://github.com/Microchip-MPLAB-Harmony/csp), [core](https://github.com/Microchip-MPLAB-Harmony/core), [usb](https://github.com/Microchip-MPLAB-Harmony/usb), [net](https://github.com/Microchip-MPLAB-Harmony/net), [audio](https://github.com/Microchip-MPLAB-Harmony/audio), [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps), etc
+Following is the list of application demos on [SAM D21 IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A) and other Development Boards/Kits having the same part number **(ATSAMD21G18A)** in MPLAB Harmony v3 Repositories.
+
+**Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
+
+[comment]:#ListStart
+
+<span style = "color:red"> **No Repos** </span>
+
+
+
+[comment]:#ListEnd

@@ -9,9 +9,23 @@ nav_order: 2
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A).   
 
-* [Getting Started](./same51n_getting_started/readme.md)
-* [BLE Fitness Tracker](./ble_fitness_tracker/readme.md)
+|SI No| Demo Name | Download Link |
+| --- | --- | -- |
+| 1 | [Getting Started](./same51n_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same51n_getting_started.zip) |
+| 2 | [BLE Fitness Tracker](./ble_fitness_tracker/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ble_fitness_tracker.zip) |
 
-### **Note:**
-The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
-Peripheral/Technology specific applications are available in technology repositories like [csp](https://github.com/Microchip-MPLAB-Harmony/csp), [core](https://github.com/Microchip-MPLAB-Harmony/core), [usb](https://github.com/Microchip-MPLAB-Harmony/usb), [net](https://github.com/Microchip-MPLAB-Harmony/net), [audio](https://github.com/Microchip-MPLAB-Harmony/audio), [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps), [bt](https://github.com/Microchip-MPLAB-Harmony/bt), etc
+### More Application Demos
+
+Following is the list of application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** in MPLAB Harmony v3 Repositories.
+
+**Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
+
+[comment]:#ListStart
+
+<span style = "color:red"> **No Repos** </span>
+
+
+
+[comment]:#ListEnd
