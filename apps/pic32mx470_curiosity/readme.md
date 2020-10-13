@@ -22,13 +22,15 @@ Following is the list of application demos on **Curiosity PIC32MX470 Development
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [bootloader_apps_uart](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [uart_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/bootloader) | pic32mx470_curiosity.X |
 | 2 | [uart_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/test_app) | pic32mx470_curiosity.X |
@@ -36,7 +38,7 @@ Following is the list of application demos on **Curiosity PIC32MX470 Development
 
 #### Repo Name: [bootloader_apps_usb](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [usb_device_hid_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/bootloader) | pic32mx470_curiosity.X |
 | 2 | [usb_device_hid_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/test_app) | pic32mx470_curiosity.X |
@@ -46,7 +48,7 @@ Following is the list of application demos on **Curiosity PIC32MX470 Development
 
 #### Repo Name: [core_apps_pic32mx](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mx)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [driver/i2c/async/i2c_eeprom](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mx/tree/master/apps/driver/i2c/async/i2c_eeprom) | pic32mx470_curiosity.X |
 | 2 | [driver/i2c/sync/i2c_eeprom](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mx/tree/master/apps/driver/i2c/sync/i2c_eeprom) | pic32mx470_curiosity_freertos.X |
@@ -70,7 +72,7 @@ Following is the list of application demos on **Curiosity PIC32MX470 Development
 
 #### Repo Name: [csp_apps_pic32mx](https://github.com/Microchip-MPLAB-Harmony/csp_apps_pic32mx)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [adc/adc_interrupt_mode](https://github.com/Microchip-MPLAB-Harmony/csp_apps_pic32mx/tree/master/apps/adc/adc_interrupt_mode) | pic32mx470_curiosity.X |
 | 2 | [adc/adc_polled_mode](https://github.com/Microchip-MPLAB-Harmony/csp_apps_pic32mx/tree/master/apps/adc/adc_polled_mode) | pic32mx470_curiosity.X |
@@ -103,10 +105,11 @@ Following is the list of application demos on **Curiosity PIC32MX470 Development
 
 #### Repo Name: [usb](https://github.com/Microchip-MPLAB-Harmony/usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mx470_curiosity.X |
 | 2 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mx470_curiosity_freertos.X |
 
 
 [comment]:#ListEnd
+

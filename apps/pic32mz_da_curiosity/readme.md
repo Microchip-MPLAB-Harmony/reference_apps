@@ -23,16 +23,19 @@ Following is the list of application demos on **Curiosity PIC32MZ DA Development
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [legato_climate_control](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/legato_climate_control) | legato_cc_mzda_cu_tm5000.X |
 | 2 | [legato_dashboard](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/legato_dashboard) | legato_db_mzda_cu_tm5000.X |
 
 
 [comment]:#ListEnd
+

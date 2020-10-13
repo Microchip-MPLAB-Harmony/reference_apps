@@ -28,13 +28,15 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [audio](https://github.com/Microchip-MPLAB-Harmony/audio)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [audio_tone](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps/audio_tone) | audio_tone_pic32mz_ef_c2_ak4954.X |
 | 2 | [universal_audio_decoders](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps/universal_audio_decoders) | uad_pic32mz_ef_c2_ak4954.X |
@@ -45,14 +47,14 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 #### Repo Name: [aws_cloud](https://github.com/Microchip-MPLAB-Harmony/aws_cloud)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [led_shadow_client_ecc](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/tree/master/apps/led_shadow_client_ecc) | pic32mz_ef_curiosity_v2.X |
 
 
 #### Repo Name: [bt](https://github.com/Microchip-MPLAB-Harmony/bt)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [audio/bm64_a2dp_hfp](https://github.com/Microchip-MPLAB-Harmony/bt/tree/master/apps/audio/bm64_a2dp_hfp) | bm64_a2dp_hfp_pic32mz_ef_c2_ak4954.X |
 | 2 | [data/ble_comm](https://github.com/Microchip-MPLAB-Harmony/bt/tree/master/apps/data/ble_comm) | ble_pic32mz_ef_c2_bm64.X |
@@ -62,14 +64,14 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 #### Repo Name: [cryptoauthlib_apps](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [serial_number](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps/tree/master/apps/serial_number) | pic32mz_ef_curiosity_2.X |
 
 
 #### Repo Name: [crypto_apps_encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt/tree/master/apps/encrypt_decrypt) | pic32mz_ef_sk.X |
 | 2 | [encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt/tree/master/apps/encrypt_decrypt) | pic32mz_ef_sk_rtos.X |
@@ -78,7 +80,7 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 #### Repo Name: [crypto_apps_large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash/tree/master/apps/large_hash) | pic32mz_ef_sk.X |
 | 2 | [large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash/tree/master/apps/large_hash) | pic32mz_ef_sk_rtos.X |
@@ -87,7 +89,7 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 #### Repo Name: [crypto_apps_speed_test](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [speed_tests](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test/tree/master/apps/speed_tests) | PIC32MZ_EF_starterKit_hw.X |
 | 2 | [speed_tests](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test/tree/master/apps/speed_tests) | PIC32MZ_EF_starterKit_sw.X |
@@ -95,14 +97,14 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 #### Repo Name: [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [legato_adventure](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/legato_adventure) | legato_adv_mzef_cu_tm4301b.X |
 
 
 #### Repo Name: [net](https://github.com/Microchip-MPLAB-Harmony/net)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [iperf_demo](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/iperf_demo) | pic32mz_ef_sk.X |
 | 2 | [iperf_demo](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/iperf_demo) | pic32mz_ef_sk_freertos.X |
@@ -123,9 +125,10 @@ Following is the list of application demos on **Curiosity PIC32MZ EF 2.0 Develop
 
 #### Repo Name: [usb](https://github.com/Microchip-MPLAB-Harmony/usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mz_ef_curiosity_2.X |
 
 
 [comment]:#ListEnd
+

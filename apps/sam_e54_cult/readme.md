@@ -22,13 +22,15 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [audio](https://github.com/Microchip-MPLAB-Harmony/audio)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [audio_player_basic](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps/audio_player_basic) | apb_sam_e54_cult_wm8904_i2s_sdmmc.X |
 | 2 | [audio_player_basic](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps/audio_player_basic) | apb_sam_e54_cult_wm8904_i2s_sdmmc_freertos.X |
@@ -40,7 +42,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [aws_cloud](https://github.com/Microchip-MPLAB-Harmony/aws_cloud)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [led_shadow_client_ecc](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/tree/master/apps/led_shadow_client_ecc) | sam_e54_xpro.X |
 | 2 | [led_shadow_client_ecc](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/tree/master/apps/led_shadow_client_ecc) | sam_e54_xpro_winc1500.X |
@@ -49,14 +51,14 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [azure-rtos-threadx](https://github.com/Microchip-MPLAB-Harmony/azure-rtos-threadx)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [basic_threadx](https://github.com/Microchip-MPLAB-Harmony/azure-rtos-threadx/tree/master/apps/basic_threadx) | sam_e54_xpro.X |
 
 
 #### Repo Name: [bootloader_apps_ethernet](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_ethernet)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [udp_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_ethernet/tree/master/apps/udp_bootloader/bootloader) | sam_e54_xpro.X |
 | 2 | [udp_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_ethernet/tree/master/apps/udp_bootloader/test_app) | sam_e54_xpro.X |
@@ -64,7 +66,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [bootloader_apps_i2c](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [i2c_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c/tree/master/apps/i2c_bootloader/bootloader) | sam_e54_xpro.X |
 | 2 | [i2c_bootloader/host_app_nvm](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c/tree/master/apps/i2c_bootloader/host_app_nvm) | sam_e54_xpro.X |
@@ -78,7 +80,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [bootloader_apps_sdcard](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_sdcard)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [sdcard_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_sdcard/tree/master/apps/sdcard_bootloader/bootloader) | sam_e54_xpro.X |
 | 2 | [sdcard_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_sdcard/tree/master/apps/sdcard_bootloader/test_app) | sam_e54_xpro.X |
@@ -86,7 +88,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [bootloader_apps_uart](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [uart_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/bootloader) | sam_e54_xpro.X |
 | 2 | [uart_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/test_app) | sam_e54_xpro.X |
@@ -96,7 +98,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [bootloader_apps_usb](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [usb_device_hid_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/bootloader) | sam_e54_xpro.X |
 | 2 | [usb_device_hid_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/test_app) | sam_e54_xpro.X |
@@ -106,7 +108,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [bt](https://github.com/Microchip-MPLAB-Harmony/bt)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [data/ble_comm](https://github.com/Microchip-MPLAB-Harmony/bt/tree/master/apps/data/ble_comm) | ble_sam_e54_cult_bm64.X |
 | 2 | [data/ble_comm](https://github.com/Microchip-MPLAB-Harmony/bt/tree/master/apps/data/ble_comm) | ble_sam_e54_cult_bm71.X |
@@ -115,14 +117,14 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [classb_sam_e5x_d5x](https://github.com/Microchip-MPLAB-Harmony/classb_sam_e5x_d5x)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [sam_e5x_d5x/classb_api_usage](https://github.com/Microchip-MPLAB-Harmony/classb_sam_e5x_d5x/tree/master/apps/sam_e5x_d5x/classb_api_usage) | classb_api_usage.X |
 
 
 #### Repo Name: [core_apps_sam_d5x_e5x](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_d5x_e5x)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [driver/i2c/async/i2c_eeprom](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_d5x_e5x/tree/master/apps/driver/i2c/async/i2c_eeprom) | sam_e54_xpro.X |
 | 2 | [driver/i2c/async/i2c_multi_slave](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_d5x_e5x/tree/master/apps/driver/i2c/async/i2c_multi_slave) | sam_e54_xpro.X |
@@ -165,7 +167,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [cryptoauthlib_apps](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [serial_number](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps/tree/master/apps/serial_number) | sam_e54_xpro_onboard_ecc508.X |
 | 2 | [serial_number](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps/tree/master/apps/serial_number) | sam_e54_xpro_ta100.X |
@@ -176,7 +178,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [crypto_apps_encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt/tree/master/apps/encrypt_decrypt) | sam_e54_xplained_pro.X |
 | 2 | [encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt/tree/master/apps/encrypt_decrypt) | sam_e54_xplained_pro_rtos.X |
@@ -185,7 +187,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [crypto_apps_large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash/tree/master/apps/large_hash) | sam_e54_xplained_pro.X |
 | 2 | [large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash/tree/master/apps/large_hash) | sam_e54_xplained_pro_rtos.X |
@@ -194,7 +196,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [crypto_apps_speed_test](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [speed_tests](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test/tree/master/apps/speed_tests) | sam_e54_xplained_pro_hw.X |
 | 2 | [speed_tests](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test/tree/master/apps/speed_tests) | sam_e54_xplained_pro_hwsw.X |
@@ -202,7 +204,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [csp_apps_sam_d5x_e5x](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [ac/ac_sleepwalk_singleshot](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/tree/master/apps/ac/ac_sleepwalk_singleshot) | sam_e54_xpro.X |
 | 2 | [adc/adc_dma_sequencing](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/tree/master/apps/adc/adc_dma_sequencing) | sam_e54_xpro.X |
@@ -255,7 +257,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [aria_benchmark](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/aria_benchmark) | aria_bm_e54_cu_cpro.X |
 | 2 | [legato_adventure](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/legato_adventure) | legato_adv_e54_cu_cpro_parallel.X |
@@ -267,14 +269,14 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [micrium_ucos3](https://github.com/Microchip-MPLAB-Harmony/micrium_ucos3)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [basic](https://github.com/Microchip-MPLAB-Harmony/micrium_ucos3/tree/master/apps/basic) | sam_e54_xpro.X |
 
 
 #### Repo Name: [motor_control](https://github.com/Microchip-MPLAB-Harmony/motor_control)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [pmsm_foc_encoder_position_sam_e54](https://github.com/Microchip-MPLAB-Harmony/motor_control/tree/master/apps/pmsm_foc_encoder_position_sam_e54) | mchv3_sam_e54_pim.X |
 | 2 | [pmsm_foc_encoder_position_sam_e54](https://github.com/Microchip-MPLAB-Harmony/motor_control/tree/master/apps/pmsm_foc_encoder_position_sam_e54) | mclv2_sam_e54_pim.X |
@@ -286,7 +288,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [net](https://github.com/Microchip-MPLAB-Harmony/net)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_client) | sam_e54_xpro.X |
 | 2 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_client) | sam_e54_xpro_freertos.X |
@@ -336,7 +338,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [touch_apps](https://github.com/Microchip-MPLAB-Harmony/touch_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [onboard_sensor](https://github.com/Microchip-MPLAB-Harmony/touch_apps/tree/master/apps/onboard_sensor) | sam_e54_xpro.X |
 | 2 | [qt1_mutualcap_xpro_board](https://github.com/Microchip-MPLAB-Harmony/touch_apps/tree/master/apps/qt1_mutualcap_xpro_board) | sam_e54_xpro.X |
@@ -344,7 +346,7 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [usb](https://github.com/Microchip-MPLAB-Harmony/usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_dual](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_dual) | sam_e54_xpro.X |
 | 2 | [device/cdc_com_port_dual](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_dual) | sam_e54_xpro_freertos.X |
@@ -354,10 +356,11 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 #### Repo Name: [wireless](https://github.com/Microchip-MPLAB-Harmony/wireless)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [ap_scan](https://github.com/Microchip-MPLAB-Harmony/wireless/tree/master/apps/ap_scan) | sam_e54_xpro_winc1500.X |
 | 2 | [ap_scan](https://github.com/Microchip-MPLAB-Harmony/wireless/tree/master/apps/ap_scan) | sam_e54_xpro_winc3400.X |
 
 
 [comment]:#ListEnd
+

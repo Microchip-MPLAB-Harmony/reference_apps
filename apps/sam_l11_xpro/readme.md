@@ -22,13 +22,15 @@ Following is the list of application demos on **SAM L11 Xplained Pro Evaluation 
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [core_apps_sam_l10_l11](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_l10_l11)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [rtos/freertos/basic_freertos_trustZone/NonSecure](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_l10_l11/tree/master/apps/rtos/freertos/basic_freertos_trustZone/NonSecure) | sam_l11_xpro_NonSecure.X |
 | 2 | [rtos/freertos/basic_freertos_trustZone/Secure](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_l10_l11/tree/master/apps/rtos/freertos/basic_freertos_trustZone/Secure) | sam_l11_xpro_Secure.X |
@@ -36,7 +38,7 @@ Following is the list of application demos on **SAM L11 Xplained Pro Evaluation 
 
 #### Repo Name: [crypto_apps_encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt/tree/master/apps/encrypt_decrypt) | sam_l11_xplained_pro_hw.X |
 | 2 | [encrypt_decrypt](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_encrypt_decrypt/tree/master/apps/encrypt_decrypt) | sam_l11_xplained_pro_sw.X |
@@ -44,7 +46,7 @@ Following is the list of application demos on **SAM L11 Xplained Pro Evaluation 
 
 #### Repo Name: [crypto_apps_large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash/tree/master/apps/large_hash) | sam_l11_xplained_pro_hw.X |
 | 2 | [large_hash](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_large_hash/tree/master/apps/large_hash) | sam_l11_xplained_pro_sw.X |
@@ -52,7 +54,7 @@ Following is the list of application demos on **SAM L11 Xplained Pro Evaluation 
 
 #### Repo Name: [crypto_apps_speed_test](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [speed_tests](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test/tree/master/apps/speed_tests) | sam_l11_xplained_pro_hw.X |
 | 2 | [speed_tests](https://github.com/Microchip-MPLAB-Harmony/crypto_apps_speed_test/tree/master/apps/speed_tests) | sam_l11_xplained_pro_hwsw.X |
@@ -60,7 +62,7 @@ Following is the list of application demos on **SAM L11 Xplained Pro Evaluation 
 
 #### Repo Name: [csp_apps_sam_l10_l11](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_l10_l11)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [trustZone/eic/eic_pin_toggle/NonSecure](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_l10_l11/tree/master/apps/trustZone/eic/eic_pin_toggle/NonSecure) | sam_l11_xpro_NonSecure.X |
 | 2 | [trustZone/eic/eic_pin_toggle/Secure](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_l10_l11/tree/master/apps/trustZone/eic/eic_pin_toggle/Secure) | sam_l11_xpro_Secure.X |
@@ -73,3 +75,4 @@ Following is the list of application demos on **SAM L11 Xplained Pro Evaluation 
 
 
 [comment]:#ListEnd
+

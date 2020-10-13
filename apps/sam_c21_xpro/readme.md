@@ -22,20 +22,22 @@ Following is the list of application demos on **SAM C21 Xplained Pro evaluation 
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [csp_apps_sam_c20_c21](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [ccl/manchester_encoder](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21/tree/master/apps/ccl/manchester_encoder) | sam_c21_xpro.X |
 
 
 #### Repo Name: [motor_control](https://github.com/Microchip-MPLAB-Harmony/motor_control)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [acim_vhz_sam_c21](https://github.com/Microchip-MPLAB-Harmony/motor_control/tree/master/apps/acim_vhz_sam_c21) | mchv3_sam_c21_pim.X |
 | 2 | [bldc_bc_hall_sam_c21](https://github.com/Microchip-MPLAB-Harmony/motor_control/tree/master/apps/bldc_bc_hall_sam_c21) | mclv2_sam_c21_pim.X |
@@ -49,10 +51,11 @@ Following is the list of application demos on **SAM C21 Xplained Pro evaluation 
 
 #### Repo Name: [touch_apps](https://github.com/Microchip-MPLAB-Harmony/touch_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [qt1_mutualcap_xpro_board](https://github.com/Microchip-MPLAB-Harmony/touch_apps/tree/master/apps/qt1_mutualcap_xpro_board) | sam_c21_xpro.X |
 | 2 | [qt1_selfcap_xpro_board](https://github.com/Microchip-MPLAB-Harmony/touch_apps/tree/master/apps/qt1_selfcap_xpro_board) | sam_c21_xpro.X |
 
 
 [comment]:#ListEnd
+

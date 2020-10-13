@@ -28,13 +28,15 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [audio](https://github.com/Microchip-MPLAB-Harmony/audio)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [audio_tone](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps/audio_tone) | audio_tone_pic32mz_ef_btadk_ak4954.X |
 | 2 | [microphone_loopback](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps/microphone_loopback) | mic_loopback_pic32mz_ef_btadk_ak4954.X |
@@ -42,14 +44,14 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [azure-rtos-threadx](https://github.com/Microchip-MPLAB-Harmony/azure-rtos-threadx)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [basic_threadx](https://github.com/Microchip-MPLAB-Harmony/azure-rtos-threadx/tree/master/apps/basic_threadx) | pic32mz_ef_sk.X |
 
 
 #### Repo Name: [bootloader_apps_ethernet](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_ethernet)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [udp_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_ethernet/tree/master/apps/udp_bootloader/bootloader) | pic32mz_ef_sk.X |
 | 2 | [udp_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_ethernet/tree/master/apps/udp_bootloader/test_app) | pic32mz_ef_sk.X |
@@ -57,7 +59,7 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [bootloader_apps_uart](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [uart_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/bootloader) | pic32mz_ef_sk.X |
 | 2 | [uart_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/test_app) | pic32mz_ef_sk.X |
@@ -67,7 +69,7 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [bootloader_apps_usb](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [usb_device_hid_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/bootloader) | pic32mz_ef_sk.X |
 | 2 | [usb_device_hid_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/test_app) | pic32mz_ef_sk.X |
@@ -77,7 +79,7 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [core_apps_pic32mz_ef](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mz_ef)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [driver/memory/async/nvm_sst26_read_write](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mz_ef/tree/master/apps/driver/memory/async/nvm_sst26_read_write) | pic32mz_ef_sk.X |
 | 2 | [driver/memory/sync/nvm_sst26_read_write](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mz_ef/tree/master/apps/driver/memory/sync/nvm_sst26_read_write) | pic32mz_ef_sk_freertos.X |
@@ -106,7 +108,7 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [csp_apps_pic32mz_ef](https://github.com/Microchip-MPLAB-Harmony/csp_apps_pic32mz_ef)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [adchs/adchs_interrupt](https://github.com/Microchip-MPLAB-Harmony/csp_apps_pic32mz_ef/tree/master/apps/adchs/adchs_interrupt) | pic32mz_ef_sk.X |
 | 2 | [adchs/adchs_polled](https://github.com/Microchip-MPLAB-Harmony/csp_apps_pic32mz_ef/tree/master/apps/adchs/adchs_polled) | pic32mz_ef_sk.X |
@@ -140,14 +142,14 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [aria_thermostat](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/aria_thermostat) | aria_th_mzef_cu_tm5000_ssd1963.X |
 
 
 #### Repo Name: [net](https://github.com/Microchip-MPLAB-Harmony/net)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_client) | pic32mz_ef_sk_freertos.X |
 | 2 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_server) | pic32mz_ef_sk_freertos.X |
@@ -177,10 +179,11 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 
 #### Repo Name: [usb](https://github.com/Microchip-MPLAB-Harmony/usb)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mz_ef_sk.X |
 | 2 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mz_ef_sk_freertos.X |
 
 
 [comment]:#ListEnd
+

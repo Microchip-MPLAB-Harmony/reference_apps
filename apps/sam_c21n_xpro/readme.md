@@ -24,20 +24,22 @@ Following is the list of application demos on **SAM C21N Xplained Pro Evaluation
 
 
 
+
+
 [comment]:#ListStart
 
 
 
 #### Repo Name: [azure-rtos-threadx](https://github.com/Microchip-MPLAB-Harmony/azure-rtos-threadx)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [basic_threadx](https://github.com/Microchip-MPLAB-Harmony/azure-rtos-threadx/tree/master/apps/basic_threadx) | sam_c21n_xpro.X |
 
 
 #### Repo Name: [bootloader_apps_i2c](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [i2c_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c/tree/master/apps/i2c_bootloader/bootloader) | sam_c21n_xpro.X |
 | 2 | [i2c_bootloader/host_app_nvm](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c/tree/master/apps/i2c_bootloader/host_app_nvm) | sam_c21n_xpro.X |
@@ -46,7 +48,7 @@ Following is the list of application demos on **SAM C21N Xplained Pro Evaluation
 
 #### Repo Name: [bootloader_apps_uart](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [uart_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/bootloader) | sam_c21n_xpro.X |
 | 2 | [uart_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/test_app) | sam_c21n_xpro.X |
@@ -54,7 +56,7 @@ Following is the list of application demos on **SAM C21N Xplained Pro Evaluation
 
 #### Repo Name: [core_apps_sam_c20_c21](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_c20_c21)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [driver/i2c/async/i2c_eeprom](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_c20_c21/tree/master/apps/driver/i2c/async/i2c_eeprom) | sam_c21n_xpro.X |
 | 2 | [driver/i2c/async/i2c_multi_slave](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_c20_c21/tree/master/apps/driver/i2c/async/i2c_multi_slave) | sam_c21n_xpro.X |
@@ -83,7 +85,7 @@ Following is the list of application demos on **SAM C21N Xplained Pro Evaluation
 
 #### Repo Name: [csp_apps_sam_c20_c21](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [ac/ac_sleepwalk_singleshot](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21/tree/master/apps/ac/ac_sleepwalk_singleshot) | sam_c21n_xpro.X |
 | 2 | [ac/ac_wav_gen](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21/tree/master/apps/ac/ac_wav_gen) | sam_c21n_xpro.X |
@@ -135,9 +137,10 @@ Following is the list of application demos on **SAM C21N Xplained Pro Evaluation
 
 #### Repo Name: [micrium_ucos3](https://github.com/Microchip-MPLAB-Harmony/micrium_ucos3)
 
-|SI No| Demo Name | MPLAB X Project Name |
+|SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [basic](https://github.com/Microchip-MPLAB-Harmony/micrium_ucos3/tree/master/apps/basic) | sam_c21n_xpro.X |
 
 
 [comment]:#ListEnd
+
