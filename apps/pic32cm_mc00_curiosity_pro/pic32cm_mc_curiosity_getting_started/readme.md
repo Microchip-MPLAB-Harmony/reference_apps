@@ -8,13 +8,9 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Migrating ASF SAM C21 application to MPLAB Harmony v3 PIC32CM MC
+# Getting Started Application on PIC32CM MC Curiosity Pro Development Board
 -----
 ## Description:
-
-> This Application shows you how to migrate an application from Advanced Software Framework (ASF) to MPLAB® Harmony v3 software framework using 32-bit Arm® Cortex®-based M0+ PIC32CM MC microcontroller.
-
-This example will migrate a pre developed [ASF SAMC21 IO1 xplained demo application](https://start.atmel.com/#examples/SAMC21XplainedPro/io/IO1/xplained/demo) available in Atmel START.
 
 The application reads current room temperature from the temperature sensor and light level from light sensor on the I/O1 Xplained Pro Extension and sends it to the console.
 The application will utilize below peripherals:
@@ -47,8 +43,7 @@ The application will utilize below peripherals:
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
-- Connect the PIC32CM MC Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port
-
+- Connect the PIC32CM MC Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
 <img src = "images/hardware.jpg" align="middle" width="500" height="500">
 
 ## Programming hex file:
@@ -77,9 +72,11 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 - Press the Reset switch on the PIC32CM MC Curiosity Pro Development Board.
 - The application prints temperature and light sensor continuously.  
-<img src = "images/console_message_after_reset.png" align="middle">
+
+	<img src = "images/console_message_after_reset.png" align="middle">
 - Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to vary the light value. Place the finger on the temperature sensor to vary the temperature.  
-<img src = "images/console_message_after_covering_lightsensor.png" align="middle">
+
+	<img src = "images/console_message_after_covering_lightsensor.png" align="middle">
 
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs](https://microchipdeveloper.com/harmony3:samc21-getting-started-training-module)
@@ -88,4 +85,4 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
-- v1.1.0 released demo application
+- v1.2.0 released demo application
