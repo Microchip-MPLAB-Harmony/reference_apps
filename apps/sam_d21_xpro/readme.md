@@ -14,6 +14,7 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 | --- | --- | -- |
 | 1 | [Getting Started](./samd21_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_getting_started.zip) |
 | 2 | [AC Sleepwalking Application built with ARM GCC Toolchain](./samd21_ac_sleepwalk_singleshot_gcc/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_ac_sleepwalk_singleshot_gcc.zip) |
+| 3 | [Getting Started with Harmony v3 Drivers on SAM D21 MCU Using FreeRTOS](./samd21_getting_started_freertos/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_getting_started_freertos.zip) |
 
 ### More Application Demos
 
@@ -31,7 +32,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [bootloader_apps_i2c](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [i2c_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c/tree/master/apps/i2c_bootloader/bootloader) | sam_d21_xpro.X |
 | 2 | [i2c_bootloader/host_app_nvm](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_i2c/tree/master/apps/i2c_bootloader/host_app_nvm) | sam_d21_xpro.X |
@@ -41,7 +42,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [bootloader_apps_uart](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [uart_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/bootloader) | sam_d21_xpro.X |
 | 2 | [uart_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/tree/master/apps/uart_bootloader/test_app) | sam_d21_xpro.X |
@@ -49,7 +50,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [bootloader_apps_usb](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [usb_device_hid_bootloader/bootloader](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/bootloader) | sam_d21_xpro.X |
 | 2 | [usb_device_hid_bootloader/test_app](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_usb/tree/master/apps/usb_device_hid_bootloader/test_app) | sam_d21_xpro.X |
@@ -59,14 +60,14 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [bt](https://github.com/Microchip-MPLAB-Harmony/bt)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [data/ble_comm](https://github.com/Microchip-MPLAB-Harmony/bt/tree/master/apps/data/ble_comm) | ble_sam_d21_xpro_bm71.X |
 
 
 #### Repo Name: [core_apps_sam_d21_da1](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_d21_da1)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [driver/i2c/async/i2c_multi_slave](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_d21_da1/tree/master/apps/driver/i2c/async/i2c_multi_slave) | sam_d21_xpro.X |
 | 2 | [driver/i2c_eeprom/at24/at24_eeprom_read_write](https://github.com/Microchip-MPLAB-Harmony/core_apps_sam_d21_da1/tree/master/apps/driver/i2c_eeprom/at24/at24_eeprom_read_write) | sam_d21_xpro.X |
@@ -86,7 +87,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [cryptoauthlib_apps](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [serial_number](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps/tree/master/apps/serial_number) | sam_d21_xpro.X |
 | 2 | [serial_number](https://github.com/Microchip-MPLAB-Harmony/cryptoauthlib_apps/tree/master/apps/serial_number) | sam_d21_xpro_ta100.X |
@@ -97,7 +98,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [csp_apps_sam_d21_da1](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d21_da1)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [ac/ac_sleepwalk_singleshot](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d21_da1/tree/master/apps/ac/ac_sleepwalk_singleshot) | sam_d21_xpro.X |
 | 2 | [ac/ac_wav_gen](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d21_da1/tree/master/apps/ac/ac_wav_gen) | sam_d21_xpro.X |
@@ -137,7 +138,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [touch_apps](https://github.com/Microchip-MPLAB-Harmony/touch_apps)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [qt1_mutualcap_xpro_board](https://github.com/Microchip-MPLAB-Harmony/touch_apps/tree/master/apps/qt1_mutualcap_xpro_board) | sam_d21_xpro.X |
 | 2 | [qt1_selfcap_xpro_board](https://github.com/Microchip-MPLAB-Harmony/touch_apps/tree/master/apps/qt1_selfcap_xpro_board) | sam_d21_xpro.X |
@@ -145,7 +146,7 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [usb](https://github.com/Microchip-MPLAB-Harmony/usb)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_dual](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_dual) | sam_d21_xpro.X |
 | 2 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | sam_d21_xpro.X |
@@ -153,11 +154,10 @@ Following is the list of application demos on **SAM D21 Xplained Pro Evaluation 
 
 #### Repo Name: [wireless](https://github.com/Microchip-MPLAB-Harmony/wireless)
 
-|SI No| Demo Name | MPLAB X Project Name | 
+|SI No| Demo Name | MPLAB X Project Name |
 | --- | --- | --- |
 | 1 | [ap_scan](https://github.com/Microchip-MPLAB-Harmony/wireless/tree/master/apps/ap_scan) | sam_d21_xpro_winc1500.X |
 | 2 | [ap_scan](https://github.com/Microchip-MPLAB-Harmony/wireless/tree/master/apps/ap_scan) | sam_d21_xpro_winc3400.X |
 
 
 [comment]:#ListEnd
-
