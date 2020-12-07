@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E54 Curiosity Ultra Development Board
 title: SD Card USB Audio Player with Legato Graphics
-nav_order: 1
+nav_order: 2
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

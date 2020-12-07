@@ -1,0 +1,14 @@
+configName: sam_e54_cult
+folderName: sam_e54_cult
+format_version: v1.0
+frameworkPath: ..\..\..\..\harmony_github
+processor: ATSAME54P20A
+projectName: getting_started_sam_e54_cult
+settings:
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;net;touch;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.4.70\atdf\ATSAME54P20A.atdf
