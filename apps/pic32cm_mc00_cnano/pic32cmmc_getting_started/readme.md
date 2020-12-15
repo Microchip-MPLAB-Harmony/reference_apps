@@ -1,6 +1,6 @@
 ---
 grand_parent: Reference Applications
-parent: PIC32CM MC Curiosity Nano Evaluation Kit
+parent: PIC32CM MC00 Curiosity Nano Evaluation Kit
 title: Getting Started
 nav_order: 1
 ---
@@ -8,11 +8,11 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Getting Started Application on PIC32CM MC Curiosity Nano Evaluation Kit
+# Getting Started Application on PIC32CM MC00 Curiosity Nano Evaluation Kit
 -----
 ## Description:
 
-> This application demonstrates an LED (LED0) toggle on a timeout basis and prints the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds, and back to 500 milliseconds every time you press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit.
+> This application demonstrates an LED (LED0) toggle on a timeout basis and prints the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds, and back to 500 milliseconds every time you press the switch SW0 on the PIC32CM MC00 Curiosity Nano Evaluation Kit.
 
 ## Modules/Technology Used:
 - Peripheral Modules
@@ -23,7 +23,7 @@ nav_order: 1
 
 ## Hardware Used:
 
-- [PIC32CM MC Curiosity Nano Evaluation Kit]()   
+- [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)   
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
@@ -39,7 +39,7 @@ nav_order: 1
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
-- Connect the PIC32CM MC Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port
+- Connect the PIC32CM MC00 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port
 
 <img src = "images/getting_started_demo_setup.jpg" align="middle">
 
@@ -62,15 +62,15 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Programming/Debugging Application Project:
 - Open the project (pic32cmmc_getting_started\firmware\pic32cm_mc_cnano.X) in MPLAB X IDE
-- Ensure "PIC32CM MC Curiosity Nano" is selected as hardware tool to program/debug the application
+- Ensure "PIC32CM MC00 Curiosity Nano" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
-- An LED (LED0) on the PIC32CM MC Curiosity Nano Evaluation Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds
+- An LED (LED0) on the PIC32CM MC00 Curiosity Nano Evaluation Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds
 - And also, the LED toggling rate is displayed on the serial terminal
-- Press the switch SW0 on the PIC32CM MC Curiosity Nano Evaluation Kit to change the default periodicity of the timeout to one second
-- Every subsequent pressing of the switch SW0 on the PIC32CM MC Curiosity Nano Evaluation Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order
+- Press the switch SW0 on the PIC32CM MC00 Curiosity Nano Evaluation Kit to change the default periodicity of the timeout to one second
+- Every subsequent pressing of the switch SW0 on the PIC32CM MC00 Curiosity Nano Evaluation Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order
 
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs](https://microchipdeveloper.com/harmony3:samc21-getting-started-training-module)

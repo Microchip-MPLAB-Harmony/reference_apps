@@ -16,8 +16,8 @@ The following reference applications are provided to evaluate solutions on 32-bi
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
 Peripheral/Technology specific applications are available in technology repositories like [csp](https://github.com/Microchip-MPLAB-Harmony/csp), [core](https://github.com/Microchip-MPLAB-Harmony/core), [usb](https://github.com/Microchip-MPLAB-Harmony/usb), [net](https://github.com/Microchip-MPLAB-Harmony/net), [audio](https://github.com/Microchip-MPLAB-Harmony/audio), [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps), etc
 
-1. ### [PIC32CM MC Curiosity Pro Development Board](.pic32cm_mc00_curiosity_pro/readme.md)
-2. ### [PIC32CM MC Curiosity Nano Evaluation Kit](./pic32cm_mc_cnano/readme.md)
+1. ### [PIC32CM MC00 Curiosity Pro Development Board](.pic32cm_mc00_curiosity_pro/readme.md)
+2. ### [PIC32CM MC00 Curiosity Nano Evaluation Kit](./pic32cm_mc00_cnano/readme.md)
 3. ### [SAM D21 IoT Development Board](./sam_d21_iot/readme.md)
 4. ### [SAM E51 Curiosity Nano Evaluation Kit](./sam_e51_cnano/readme.md)
 5. ### [Curiosity PIC32MZ DA Development Board](./pic32mz_da_curiosity/readme.md)
