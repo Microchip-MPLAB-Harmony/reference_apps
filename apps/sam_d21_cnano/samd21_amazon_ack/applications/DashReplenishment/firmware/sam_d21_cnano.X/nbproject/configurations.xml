@@ -33,6 +33,7 @@
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaTimeHoldController.pb.h</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaToggleController.pb.h</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AVS.pb.h</itemPath>
+                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaThermostatController.pb.h</itemPath>
               </logicalFolder>
               <logicalFolder name="v3avs_types" displayName="v3avs_types" projectFiles="true">
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3Brightness.pb.h</itemPath>
@@ -68,6 +69,7 @@
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3ToggleState.pb.h</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3Volume.pb.h</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3Weight.pb.h</itemPath>
+                <itemPath>../../../../../../../core/generated/v3avs_types/V3ThermostatMode.pb.h</itemPath>
               </logicalFolder>
               <itemPath>../../../../../../../core/generated/acp.pb.h</itemPath>
             </logicalFolder>
@@ -79,10 +81,8 @@
             <itemPath>../../../../../../../core/ack_core_directives.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_endpointhealth.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_event_builder.h</itemPath>
-            <itemPath>../../../../../../../core/ack_core_factoryreset.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_heaplet.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_heaplet_internal.h</itemPath>
-            <itemPath>../../../../../../../core/ack_core_hostconfig.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_lifecycle.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_logging.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_math.h</itemPath>
@@ -93,7 +93,6 @@
             <itemPath>../../../../../../../core/ack_core_status.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_testautomation.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_tick64.h</itemPath>
-            <itemPath>../../../../../../../core/ack_core_userguidedsetup.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_validation.h</itemPath>
           </logicalFolder>
           <logicalFolder name="DashReplenishment"
@@ -119,6 +118,7 @@
             <logicalFolder name="details" displayName="details" projectFiles="true">
               <itemPath>../../../../../../../include/details/ack_debug_print.h</itemPath>
               <itemPath>../../../../../../../include/details/ack_types.h</itemPath>
+              <itemPath>../../../../../../../include/details/ack_user_module.h</itemPath>
             </logicalFolder>
             <itemPath>../../../../../../../include/ack.h</itemPath>
             <itemPath>../../../../../../../include/ack_brightness_controller.h</itemPath>
@@ -275,6 +275,7 @@
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaTimeHoldController.pb.c</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaToggleController.pb.c</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AVS.pb.c</itemPath>
+                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaThermostatController.pb.c</itemPath>
               </logicalFolder>
               <logicalFolder name="v3avs_types" displayName="v3avs_types" projectFiles="true">
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3Brightness.pb.c</itemPath>
@@ -310,6 +311,7 @@
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3ToggleState.pb.c</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3Volume.pb.c</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_types/V3Weight.pb.c</itemPath>
+                <itemPath>../../../../../../../core/generated/v3avs_types/V3ThermostatMode.pb.c</itemPath>
               </logicalFolder>
               <itemPath>../../../../../../../core/generated/acp.pb.c</itemPath>
             </logicalFolder>
@@ -332,9 +334,7 @@
             <itemPath>../../../../../../../core/ack_core_drs.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_endpointhealth.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_event_builder.c</itemPath>
-            <itemPath>../../../../../../../core/ack_core_factoryreset.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_heaplet.c</itemPath>
-            <itemPath>../../../../../../../core/ack_core_hostconfig.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_lifecycle.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_logging.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_math.c</itemPath>
@@ -353,8 +353,9 @@
             <itemPath>../../../../../../../core/ack_core_tick64.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_timeholdcontroller.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_togglecontroller.c</itemPath>
-            <itemPath>../../../../../../../core/ack_core_userguidedsetup.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_validation.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_module_acp.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_thermostatcontroller.c</itemPath>
           </logicalFolder>
           <logicalFolder name="DashReplenishment"
                          displayName="DashReplenishment"

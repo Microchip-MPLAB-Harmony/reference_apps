@@ -18,6 +18,7 @@
                 <sourceRootElem>../../../../../../../../external</sourceRootElem>
                 <sourceRootElem>../../../../../../../../include</sourceRootElem>
                 <sourceRootElem>../../../../../../..</sourceRootElem>
+                <sourceRootElem>../../../../../../../include/details</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
