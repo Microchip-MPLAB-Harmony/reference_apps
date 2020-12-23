@@ -74,8 +74,12 @@ void debug_setPrefix(const char *prefix)
    strncpy(debug_message_prefix,prefix,sizeof(debug_message_prefix));
 }
 
-void debug_printer(debug_severity_t debug_severity, debug_errorLevel_t error_level, char* format, ...)
+void debug_printer(debug_severity_t debug_severity, debug_errorLevel_t error_level, const char* format, ...)
 {
+    char tmpBuf[APP_PRINT_BUFFER_SIZ];
+    size_t len = 0;
+    va_list args;
+    
     if(debug_severity >= SEVERITY_NONE && debug_severity <= SEVERITY_DEBUG)
     {
         if(debug_severity <= debug_severity_filter)
@@ -83,11 +87,12 @@ void debug_printer(debug_severity_t debug_severity, debug_errorLevel_t error_lev
             if(error_level < LEVEL_NORMAL) error_level = LEVEL_NORMAL;
             if(error_level > LEVEL_ERROR) error_level = LEVEL_ERROR;
 
-            debug_printf("%s\4 %s %s ",debug_message_prefix, severity_strings[debug_severity], level_strings[error_level]);
-            va_list argptr;
-            va_start(argptr, format);
-            debug_printf(format , argptr);
-            va_end(argptr);
+           debug_printf("%s\4 %s %s ",debug_message_prefix, severity_strings[debug_severity], level_strings[error_level]);
+
+            va_start( args, format );
+            len = vsnprintf(tmpBuf, APP_PRINT_BUFFER_SIZ, format, args);
+            va_end( args );
+            debug_NPrintBuff((uint8_t*)tmpBuf, len);;
             debug_printf(CSI_RESET"\r\n");
         }
     }

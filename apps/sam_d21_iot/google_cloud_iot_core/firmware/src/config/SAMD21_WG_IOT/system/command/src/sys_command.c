@@ -900,12 +900,20 @@ static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     char *credentials[3];
     char *pch;
     uint8_t params = 0;
-	uint8_t i;
+	uint8_t i,j;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
+    char dummy_ssid[100];
+    uint8_t dummy_argc = 0;
+    
+    for(j=1;j<argc;j++){
+      
+        sprintf(&dummy_ssid[dummy_argc],"%s ",argv[j]);
+        dummy_argc += strlen(argv[j])+1;
+    }      
     
     for(i=0;i<=2;i++)credentials[i]='\0';
 
-    pch = strtok (argv[1], ",");
+    pch = strtok (&dummy_ssid[0], ",");
     credentials[0]=pch;
        
     while (pch != NULL && params <= 2)
