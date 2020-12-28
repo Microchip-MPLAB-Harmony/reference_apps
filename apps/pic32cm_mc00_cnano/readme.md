@@ -12,6 +12,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32cmmc_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32cmmc_getting_started.zip) |
+| 1 | [Temperature Based Fan Speed Control with OLED display](./pic32cmmc_temp_based_fan_control_oled_c/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32cmmc_temp_based_fan_control_oled_c.zip) |
 
 ### More Application Demos
 
