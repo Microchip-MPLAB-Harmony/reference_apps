@@ -70,7 +70,7 @@ This following bullet points provides links to the detailed topics:
 - Connect common ground between *SAM D21 Curiosity Nano Evaluation Kit* and TTL Cable
 - Power the *SAM D21 Curiosity Nano Evaluation Kit* from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
 - Connect USB end of TTL cable to the Host PC  
-<img src = "images/ack_hardware_validation.PNG" align="middle">
+<img src = "images/ack_hardware_validation.png" align="middle">
 
 ## <a id="setting-up-the-build-platform"> </a>
 ## Setting up the build platform

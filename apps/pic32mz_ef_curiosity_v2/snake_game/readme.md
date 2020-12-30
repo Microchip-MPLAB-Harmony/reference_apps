@@ -45,7 +45,7 @@ nav_order: 7
 - Mount Thumbstick click board on mikro bus click 1 connector of Curiosity PIC32MZ EF 2.0 Development Board
 - Connect the WVGA LCD Display Module ribbon to the connector(J2) of the  SSD1963 LCD Controller Graphics Card    
 - Plug the 5.5-14V power cable to the power connecter(J200) of the Curiosity PIC32MZ EF 2.0 Development Board
-<img src = "images/PIC32_Snake_Game_Setup.png" width="600" height="800" align="middle">
+<img src = "images/pic32_snake_game_setup.png" width="600" height="800" align="middle">
 
 
 ## Programming hex file:

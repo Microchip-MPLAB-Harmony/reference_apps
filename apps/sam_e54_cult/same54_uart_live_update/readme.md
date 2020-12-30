@@ -61,15 +61,15 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 4. Open the UART Fail Safe Bootloader which is in (path: `<Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X`) using the MPLAB X IDE.
 5. The project needs to be reconfigured to work on SAM E54 Curiosity Ultra Development Board. Launch the MHC and follow below steps to reconfigure for SAM E54 Curiosity Ultra Development Board.
     * Remove SERCOM2
-      * <img src = "images/uartFailSafeBootloader_remove_sercom2.png" width="775" height="302" align="middle">
+      * <img src = "images/uartfailsafebootloader_remove_sercom2.png" width="775" height="302" align="middle">
     * Add SERCOM1 to Project Graph
-      * <img src = "images/uartFailSafeBootloader_add_sercom1.png" width="527" height="418" align="middle">
+      * <img src = "images/uartfailsafebootloader_add_sercom1.png" width="527" height="418" align="middle">
     * Configure SERCOM1 peripheral
-      * <img src = "images/uartFailSafeBootloader_sercom1_conf.png" width="806" height="314" align="middle">
+      * <img src = "images/uartfailsafebootloader_sercom1_conf.png" width="806" height="314" align="middle">
     * Launch Pin Configurations plugin under **MHC->Tools->Pin Configurations**. Remove SERCOM2 Pin configurations.
-      * <img src = "images/uartFailSafeBootloader_undo_sercom2_pin_conf.png" width="854" height="325" align="middle">
+      * <img src = "images/uartfailsafebootloader_undo_sercom2_pin_conf.png" width="854" height="325" align="middle">
     * Configure SERCOM1 pins.
-      * <img src = "images/uartFailSafeBootloader_sercom1_pin_conf.png" width="848" height="134" align="middle">
+      * <img src = "images/uartfailsafebootloader_sercom1_pin_conf.png" width="848" height="134" align="middle">
     - **Note:**
       - The SAM E54 Curiosity Ultra Development Board uses SERCOM1 peripheral for EDBG. Hence SERCOM peripheral and its pins need to be reconfigured from SAM E54 Xplained Pro to SAM E54 Curiosity Ultra Development Board.
       - Do not close the MHC as we have to build the project again.

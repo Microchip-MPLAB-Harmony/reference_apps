@@ -63,7 +63,7 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
   - **Note:** If you need to know more information on the bootloader host script, refer Help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm`
 6. Following screenshot shows successful programming of the application binary.
 7. The messages "Swapping Bank And Rebooting and Reboot Done" in below screenshot signifies that bootloading is successful.
-- <img src = "images/BootloaderScript_Result.png" width="442" height="153" align="middle">
+- <img src = "images/bootloaderscript_result.png" width="442" height="153" align="middle">
 
 ## Running the Live update application:
 1. Perform "Running the Bootloader application" steps mentioned above, if not done already.
@@ -72,9 +72,9 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 4. Run the host script "**live_update.py**" for live update application from command prompt available at `<Live Update application folder>/scripts` to program the new version of the firmware to an inactive panel while the current version of the application is being run from the active panel.
    - `python <Live Update application folder>/scripts/live_update.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/firmware/pic32mz_ef_sk.X/dist/pic32mz_ef_sk/production/pic32mz_ef_sk.X.production.bin`
    - The following screenshot shows the Live update script help.
-   - <img src = "images/BootloaderScript_Help.png" width="656" height="315" align="middle">
+   - <img src = "images/bootloaderscript_help.png" width="656" height="315" align="middle">
 5. The following screenshot shows the example for output of successful firmware programming.
-   - <img src = "images/LiveUpdateScrip_Result.png" width="522" height="262" align="middle">
+   - <img src = "images/liveupdatescrip_result.png" width="522" height="262" align="middle">
 6. If the Live update is success then LED3 should turn ON.
    * This indicates that the Live update is successful
 7. In case of any error during the Live update i.e. in Step 4, the LED3 turns OFF. Follow the below steps recover from the error:
