@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sys_input}
+children:
+- type: ElementPosition
+  attributes: {x: '294', y: '170', id: sys_input}

@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: supc}
+children:
+- type: ElementPosition
+  attributes: {x: '380', y: '436', id: supc}
