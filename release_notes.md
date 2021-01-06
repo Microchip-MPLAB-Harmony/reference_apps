@@ -5,6 +5,56 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Reference Applications Release v1.2.0 (January 2021)
+### New Applications
+
+| Application | Description | MCU | Development Board/Kit |  
+| --- | --- | --- | --- |  
+| [pic32cm_mc_curiosity_getting_started](./apps/pic32cm_mc00_curiosity_pro/pic32cm_mc_curiosity_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00048) | [PIC32CM MC Curiosity Pro Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV15N46A)|
+| [pic32cmmc_getting_started](./apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00032) | [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)|
+| [pic32cmmc_temp_based_fan_control_oled_c](./apps/pic32cm_mc00_cnano/pic32cmmc_temp_based_fan_control_oled_c/readme.md) | Temperature based Fan Speed Control with OLED C click display | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00032) | [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)|
+| [getting_started_drivers_middleware](./apps/sam_e70_xpld/getting_started_drivers_middleware/readme.md) | Getting Started with Drivers and Middleware | [SAM E70](https://www.microchip.com/wwwproducts/en/ATSAME70Q21B) | [SAM E70 Xplained Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAME70-XPLD)|
+| [same54c_getting_started](./apps/sam_e54_cult/same54c_getting_started/readme.md) | Getting Started using Harmony v3 Peripheral Libraries | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)|
+| [samd21_getting_started_freertos](./apps/sam_d21_xpro/samd21_getting_started_freertos/readme.md) | Getting Started with Harmony v3 Drivers using FreeRTOS | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21J18A) | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro)|
+| [same51n_low_power_with_oled_c_click](./apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.md) | Low Power Application with OLED C Click | [SAME 51](https://www.microchip.com/wwwproducts/en/ATSAME51G18A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+
+### Updated Applications  
+
+| Application | Description | MCU | Development Board/Kit | Comment |  
+| --- | --- | --- | --- | --- |  
+| [snake_game](./apps/pic32mz_ef_curiosity_v2/snake_game/readme.md) |  Snake Game | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)| Fixed image view issue in documentation |  
+| [ack_bootloader](./apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.md) |  Amazon Alexa Connect Kit (ACK) OTA Bootloader | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to support ACK SDK v3.2 |  
+| [ack_helloworld](./apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.md) |  Amazon Alexa Connect Kit (ACK) Hello World | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to support ACK SDK v3.2 |  
+| [ack_microwave](./apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.md) |  Amazon Alexa Connect Kit (ACK) Microwave | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to support ACK SDK v3.2 |
+| [ack_smartlight](./apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.md) |  Amazon Alexa Connect Kit (ACK) SmartLight | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to support ACK SDK v3.2 |
+| [ack_dashreplenishment](./apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.md) |  Amazon Alexa Connect Kit (ACK) DashReplenishment | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to support ACK SDK v3.2 |
+| [google_cloud_iot_core](./apps/sam_d21_iot/google_cloud_iot_core/readme.md) |  Google Cloud IoT Core | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G18) | [SAM-IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A)| Update demo to support 32 character length password and SSID to support single space character |
+| [snake_game](./apps/pic32mz_ef_curiosity_v2/snake_game/readme.md) |  Snake Game | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)| Fixed image view issue in documentation |
+| [snake_game](./apps/pic32mz_ef_curiosity_v2/snake_game/readme.md) |  Snake Game | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)| Fixed image view issue in documentation |
+| [sdadc_conversion_interrupt](./apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.md) | SDADC Conversion Interrupt Mode | [SAM C21N](https://www.microchip.com/wwwproducts/en/ATSAMC21N18A) | [SAM C21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro)| Updated documentation with reference application note link |
+| [sdadc_conversion_polling](./apps/sam_c21n_xpro/sdadc_conversion_polling/readme.md) | SDADC Conversion Polling Mode | [SAM C21N](https://www.microchip.com/wwwproducts/en/ATSAMC21N18A) | [SAM C21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro)| Updated documentation with reference application note link |
+
+
+
+
+
+### Known Issues
+1. The application “sam_d21_iot/google_cloud_iot_core" is developed by applying a patch (available in folder "google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder.  
+The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
+2. The application “sam_d21_cnano/ble_weather_station" is developed by applying a patch (available in folder "ble_weather_station/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “ble_weather_station/firmware/app_patch” folder.  
+The patch is applied due to a known issue in "bt" repo and in the application. This issue is expected to be fixed in a future release of "reference_apps" repository and "bt" repository.
+3. The application “sam_e51_cnano/ble_weather_station" is developed by applying a patch (available in folder "ble_fitness_tracker/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “ble_fitness_tracker/firmware/app_patch” folder.  
+The patch is applied due to a known issue in "bt" repo and in the application. This issue is expected to be fixed in a future release of "reference_apps" repository and "bt" repository.
+4. The application “pic32mz_ef_curiosity_v2/snake_game" is developed by applying a patch (available in folder "snake_game/firmware/gfx_ssd_driver_patch”) to MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “snake_game/firmware/gfx_ssd_driver_patch” folder.
+The patch is applied due to a known issue in "gfx" repo v3.7.0. This issue is expected to be fixed in a future release of "gfx” repository.
+5. The application demos “pic32mz_ef_curiosity_v2/snake_game", "pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player", "sam_e54_cult/same54_sdcard_usb_audio_player" and "pic32mz_ef_sk_meb2/audio_player/audio_player_lab5" having Graphics features are developed using Graphics library "gfx" v3.7.0. These demos could version incompatibility when regenerated with a higher version of "gfx" repo. This limitation is expected to be fixed in a future release of "reference_apps” repository.
+
+
+### Development Tools
+
+* Refer demo specific documentation in folder "docs" to know the tools and Harmony 3 packages used.
+
+
 ## Reference Applications Release v1.1.0 (September 2020)
 ### New Applications
 
@@ -47,7 +97,9 @@ The patch is applied due to a known issue in "bt" repo and in the application. T
 The patch is applied due to a known issue in "gfx" repo v3.7.0. This issue is expected to be fixed in a future release of "gfx” repository.
 5. The application demos “pic32mz_ef_curiosity_v2/snake_game", "pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player", "sam_e54_cult/same54_sdcard_usb_audio_player" and "pic32mz_ef_sk_meb2/audio_player/audio_player_lab5" having Graphics features are developed using Graphics library "gfx" v3.7.0. These demos could version incompatibility when regenerated with a higher version of "gfx" repo. This limitation is expected to be fixed in a future release of "reference_apps” repository.
 
+### Development Tools
 
+* Refer demo specific documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
 
 ## Reference Applications Release v1.0.0 (June 2020)

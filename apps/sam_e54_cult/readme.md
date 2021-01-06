@@ -25,6 +25,8 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 
 
 
+
+
 [comment]:#ListStart
 
 
@@ -268,6 +270,33 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 | 6 | [legato_showcase](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/legato_showcase) | legato_sc_e54_cu_cpro_parallel.X |
 
 
+#### Repo Name: [gfx_apps_sam_d5x_e5x](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x)
+
+|SI No| Demo Name | MPLAB X Project Name | 
+| --- | --- | --- |
+| 1 | [blank_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/blank_quickstart) | blank_quickstart_e54_cult_cpro_spi.X |
+| 2 | [legato_adventure](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_adventure) | legato_adv_e54_cu_cpro_parallel.X |
+| 3 | [legato_benchmark](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_benchmark) | legato_bm_e54_cu_cpro_parallel.X |
+| 4 | [legato_cooker](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_cooker) | legato_ck_e54_cult_cpro_parallel.X |
+| 5 | [legato_flash](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_flash) | legato_fl_e54_cult_cpro_parallel.X |
+| 6 | [legato_monitor](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_monitor) | legato_mn_e54_cult_cpro_parallel.X |
+| 7 | [legato_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_quickstart) | legato_qs_e54_cult_cpro_parallel.X |
+| 8 | [legato_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_quickstart) | legato_qs_e54_cu_cpro_spi.X |
+| 9 | [legato_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_quickstart) | legato_qs_e54_cu_tm4301b_ssd1963.X |
+| 10 | [legato_quickstart_ext_res](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_quickstart_ext_res) | legato_qs_x_r_e54_cult_cpro_parallel.X |
+| 11 | [legato_showcase](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_d5x_e5x/tree/master/apps/legato_showcase) | legato_sc_e54_cu_cpro_parallel.X |
+
+
+#### Repo Name: [gfx_aria](https://github.com/Microchip-MPLAB-Harmony/gfx_aria)
+
+|SI No| Demo Name | MPLAB X Project Name | 
+| --- | --- | --- |
+| 1 | [aria_benchmark](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_benchmark) | aria_bm_e54_cu_cpro.X |
+| 2 | [aria_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart) | aria_qs_e54_cult_xpro_parallel.X |
+| 3 | [aria_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart) | aria_qs_e54_cu_tm4301b_ssd1963.X |
+| 4 | [aria_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart) | aria_qs_e54_cu_tm5000_ssd1963_freertos.X |
+
+
 #### Repo Name: [micrium_ucos3](https://github.com/Microchip-MPLAB-Harmony/micrium_ucos3)
 
 |SI No| Demo Name | MPLAB X Project Name | 
@@ -287,54 +316,54 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 | 6 | [pmsm_foc_pll_estimator_sam_e54](https://github.com/Microchip-MPLAB-Harmony/motor_control/tree/master/apps/pmsm_foc_pll_estimator_sam_e54) | mclv2_sam_e54_pim.X |
 
 
-#### Repo Name: [net](https://github.com/Microchip-MPLAB-Harmony/net)
+#### Repo Name: [net_apps_sam_e5x](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x)
 
 |SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
-| 1 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_client) | sam_e54_xpro.X |
-| 2 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_client) | sam_e54_xpro_freertos.X |
-| 3 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_server) | sam_e54_xpro.X |
-| 4 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_server) | sam_e54_xpro_freertos.X |
-| 5 | [berkeley_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_client) | sam_e54_xpro.X |
-| 6 | [berkeley_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_client) | sam_e54_xpro_freertos.X |
-| 7 | [berkeley_udp_relay](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_relay) | sam_e54_xpro.X |
-| 8 | [berkeley_udp_relay](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_relay) | sam_e54_xpro_freertos.X |
-| 9 | [berkeley_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_server) | sam_e54_xpro.X |
-| 10 | [berkeley_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_server) | sam_e54_xpro_freertos.X |
-| 11 | [iperf_demo](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/iperf_demo) | sam_e54_xpro.X |
-| 12 | [iperf_demo](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/iperf_demo) | sam_e54_xpro_freertos.X |
-| 13 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_nvm_mpfs) | sam_e54_xpro.X |
-| 14 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_nvm_mpfs) | sam_e54_xpro_freertos.X |
-| 15 | [snmpv3_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_sdcard_fatfs) | sam_e54_xpro.X |
-| 16 | [snmpv3_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_sdcard_fatfs) | sam_e54_xpro_freertos.X |
-| 17 | [tcpip_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_client_server) | sam_e54_xpro_freertos.X |
-| 18 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client) | sam_e54_xpro.X |
-| 19 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client) | sam_e54_xpro_freertos.X |
-| 20 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client_server) | sam_e54_xpro.X |
-| 21 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client_server) | sam_e54_xpro_freertos.X |
-| 22 | [tcpip_tcp_demo_at24mac](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_demo_at24mac) | sam_e54_xpro.X |
-| 23 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_server) | sam_e54_xpro.X |
-| 24 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_server) | sam_e54_xpro_freertos.X |
-| 25 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client) | sam_e54_xpro.X |
-| 26 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client) | sam_e54_xpro_freertos.X |
-| 27 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client_server) | sam_e54_xpro.X |
-| 28 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client_server) | sam_e54_xpro_freertos.X |
-| 29 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_server) | sam_e54_xpro.X |
-| 30 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_server) | sam_e54_xpro_freertos.X |
-| 31 | [web_ftp_server_mpfs_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_ftp_server_mpfs_fatfs) | sam_e54_xpro.X |
-| 32 | [web_ftp_server_mpfs_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_ftp_server_mpfs_fatfs) | sam_e54_xpro_freertos.X |
-| 33 | [web_ftp_server_usb_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_ftp_server_usb_fatfs) | sam_e54_xpro.X |
-| 34 | [web_ftp_server_usb_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_ftp_server_usb_fatfs) | sam_e54_xpro_freertos.X |
-| 35 | [web_net_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_net_server_nvm_mpfs) | sam_e54_xpro.X |
-| 36 | [web_net_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_net_server_nvm_mpfs) | sam_e54_xpro_freertos.X |
-| 37 | [web_net_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_net_server_sdcard_fatfs) | sam_e54_xpro.X |
-| 38 | [web_net_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_net_server_sdcard_fatfs) | sam_e54_xpro_freertos.X |
-| 39 | [web_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_server_nvm_mpfs) | sam_e54_xpro.X |
-| 40 | [web_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_server_nvm_mpfs) | sam_e54_xpro_freertos.X |
-| 41 | [web_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_server_sdcard_fatfs) | sam_e54_xpro.X |
-| 42 | [web_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_server_sdcard_fatfs) | sam_e54_xpro_freertos.X |
-| 43 | [wolfssl_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/wolfssl_tcp_client) | sam_e54_xpro_sw.X |
-| 44 | [wolfssl_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/wolfssl_tcp_server) | sam_e54_xpro_sw.X |
+| 1 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_tcp_client) | sam_e54_xpro.X |
+| 2 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_tcp_client) | sam_e54_xpro_freertos.X |
+| 3 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_tcp_server) | sam_e54_xpro.X |
+| 4 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_tcp_server) | sam_e54_xpro_freertos.X |
+| 5 | [berkeley_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_udp_client) | sam_e54_xpro.X |
+| 6 | [berkeley_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_udp_client) | sam_e54_xpro_freertos.X |
+| 7 | [berkeley_udp_relay](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_udp_relay) | sam_e54_xpro.X |
+| 8 | [berkeley_udp_relay](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_udp_relay) | sam_e54_xpro_freertos.X |
+| 9 | [berkeley_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_udp_server) | sam_e54_xpro.X |
+| 10 | [berkeley_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/berkeley_udp_server) | sam_e54_xpro_freertos.X |
+| 11 | [iperf_demo](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/iperf_demo) | sam_e54_xpro.X |
+| 12 | [iperf_demo](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/iperf_demo) | sam_e54_xpro_freertos.X |
+| 13 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/snmpv3_nvm_mpfs) | sam_e54_xpro.X |
+| 14 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/snmpv3_nvm_mpfs) | sam_e54_xpro_freertos.X |
+| 15 | [snmpv3_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/snmpv3_sdcard_fatfs) | sam_e54_xpro.X |
+| 16 | [snmpv3_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/snmpv3_sdcard_fatfs) | sam_e54_xpro_freertos.X |
+| 17 | [tcpip_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_client_server) | sam_e54_xpro_freertos.X |
+| 18 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_client) | sam_e54_xpro.X |
+| 19 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_client) | sam_e54_xpro_freertos.X |
+| 20 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_client_server) | sam_e54_xpro.X |
+| 21 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_client_server) | sam_e54_xpro_freertos.X |
+| 22 | [tcpip_tcp_demo_at24mac](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_demo_at24mac) | sam_e54_xpro.X |
+| 23 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_server) | sam_e54_xpro.X |
+| 24 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_tcp_server) | sam_e54_xpro_freertos.X |
+| 25 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_udp_client) | sam_e54_xpro.X |
+| 26 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_udp_client) | sam_e54_xpro_freertos.X |
+| 27 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_udp_client_server) | sam_e54_xpro.X |
+| 28 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_udp_client_server) | sam_e54_xpro_freertos.X |
+| 29 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_udp_server) | sam_e54_xpro.X |
+| 30 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/tcpip_udp_server) | sam_e54_xpro_freertos.X |
+| 31 | [web_ftp_server_mpfs_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_ftp_server_mpfs_fatfs) | sam_e54_xpro.X |
+| 32 | [web_ftp_server_mpfs_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_ftp_server_mpfs_fatfs) | sam_e54_xpro_freertos.X |
+| 33 | [web_ftp_server_usb_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_ftp_server_usb_fatfs) | sam_e54_xpro.X |
+| 34 | [web_ftp_server_usb_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_ftp_server_usb_fatfs) | sam_e54_xpro_freertos.X |
+| 35 | [web_net_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_net_server_nvm_mpfs) | sam_e54_xpro.X |
+| 36 | [web_net_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_net_server_nvm_mpfs) | sam_e54_xpro_freertos.X |
+| 37 | [web_net_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_net_server_sdcard_fatfs) | sam_e54_xpro.X |
+| 38 | [web_net_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_net_server_sdcard_fatfs) | sam_e54_xpro_freertos.X |
+| 39 | [web_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_server_nvm_mpfs) | sam_e54_xpro.X |
+| 40 | [web_server_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_server_nvm_mpfs) | sam_e54_xpro_freertos.X |
+| 41 | [web_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_server_sdcard_fatfs) | sam_e54_xpro.X |
+| 42 | [web_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/web_server_sdcard_fatfs) | sam_e54_xpro_freertos.X |
+| 43 | [wolfssl_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/wolfssl_tcp_client) | sam_e54_xpro_sw.X |
+| 44 | [wolfssl_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_sam_e5x/tree/master/apps/wolfssl_tcp_server) | sam_e54_xpro_sw.X |
 
 
 #### Repo Name: [touch_apps](https://github.com/Microchip-MPLAB-Harmony/touch_apps)
@@ -353,14 +382,17 @@ Following is the list of application demos on **SAM E54 Curiosity Ultra Developm
 | 2 | [device/cdc_com_port_dual](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_dual) | sam_e54_xpro_freertos.X |
 | 3 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | sam_e54_xpro.X |
 | 4 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | sam_e54_xpro_freertos.X |
-
-
-#### Repo Name: [wireless](https://github.com/Microchip-MPLAB-Harmony/wireless)
-
-|SI No| Demo Name | MPLAB X Project Name | 
-| --- | --- | --- |
-| 1 | [ap_scan](https://github.com/Microchip-MPLAB-Harmony/wireless/tree/master/apps/ap_scan) | sam_e54_xpro_winc1500.X |
-| 2 | [ap_scan](https://github.com/Microchip-MPLAB-Harmony/wireless/tree/master/apps/ap_scan) | sam_e54_xpro_winc3400.X |
+| 5 | [device/cdc_serial_emulator](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_serial_emulator) | sam_e54_xpro.X |
+| 6 | [device/hid_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/hid_basic) | sam_e54_xpro.X |
+| 7 | [device/hid_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/hid_basic) | sam_e54_xpro_freertos.X |
+| 8 | [device/hid_mouse](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/hid_mouse) | sam_e54_xpro.X |
+| 9 | [device/hid_mouse](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/hid_mouse) | sam_e54_xpro_freertos.X |
+| 10 | [device/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/msd_basic) | sam_e54_xpro.X |
+| 11 | [device/printer_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/printer_basic) | sam_e54_xpro.X |
+| 12 | [device/vendor](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/vendor) | sam_e54_xpro.X |
+| 13 | [device/vendor](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/vendor) | sam_e54_xpro_freertos.X |
+| 14 | [host/cdc_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/cdc_basic) | sam_e54_xpro.X |
+| 15 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | sam_e54_xpro.X |
 
 
 [comment]:#ListEnd

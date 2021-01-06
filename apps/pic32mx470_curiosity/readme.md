@@ -3,7 +3,7 @@ title: Curiosity PIC32MX470 Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 14
+nav_order: 18
 ---
 # Curiosity PIC32MX470 Development Board
 
@@ -19,6 +19,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 Following is the list of application demos on **Curiosity PIC32MX470 Development Board** and other Development Boards/Kits having the same part number **(PIC32MX470F512H)** in MPLAB Harmony v3 Repositories.
 
 **Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
 
 
 
@@ -109,6 +111,8 @@ Following is the list of application demos on **Curiosity PIC32MX470 Development
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mx470_curiosity.X |
 | 2 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mx470_curiosity_freertos.X |
+| 3 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | pic32mx470_curiosity.X |
+| 4 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | pic32mx470_curiosity_freertos.X |
 
 
 [comment]:#ListEnd

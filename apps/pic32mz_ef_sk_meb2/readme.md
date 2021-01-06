@@ -3,7 +3,7 @@ title: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 15
+nav_order: 19
 ---
 
 # PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II
@@ -25,6 +25,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 Following is the list of application demos on **PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit** and other Development Boards/Kits having the same part number **(PIC32MZ2048EFH144)** in MPLAB Harmony v3 Repositories.
 
 **Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
 
 
 
@@ -147,34 +149,45 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 | 1 | [aria_thermostat](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps/aria_thermostat) | aria_th_mzef_cu_tm5000_ssd1963.X |
 
 
-#### Repo Name: [net](https://github.com/Microchip-MPLAB-Harmony/net)
+#### Repo Name: [gfx_aria](https://github.com/Microchip-MPLAB-Harmony/gfx_aria)
 
 |SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
-| 1 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_client) | pic32mz_ef_sk_freertos.X |
-| 2 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_tcp_server) | pic32mz_ef_sk_freertos.X |
-| 3 | [berkeley_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_client) | pic32mz_ef_sk_freertos.X |
-| 4 | [berkeley_udp_relay](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_relay) | pic32mz_ef_sk_freertos.X |
-| 5 | [berkeley_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/berkeley_udp_server) | pic32mz_ef_sk_freertos.X |
-| 6 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_nvm_mpfs) | pic32mz_ef_sk.X |
-| 7 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_nvm_mpfs) | pic32mz_ef_sk_freertos.X |
-| 8 | [snmpv3_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/snmpv3_sdcard_fatfs) | pic32mz_ef_sk_freertos.X |
-| 9 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client) | pic32mz_ef_sk.X |
-| 10 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client) | pic32mz_ef_sk_freertos.X |
-| 11 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client_server) | pic32mz_ef_sk.X |
-| 12 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_client_server) | pic32mz_ef_sk_freertos.X |
-| 13 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk.X |
-| 14 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk_enc28j60.X |
-| 15 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk_encx24j600.X |
-| 16 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk_freertos.X |
-| 17 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client) | pic32mz_ef_sk.X |
-| 18 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client) | pic32mz_ef_sk_freertos.X |
-| 19 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client_server) | pic32mz_ef_sk.X |
-| 20 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_client_server) | pic32mz_ef_sk_freertos.X |
-| 21 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_server) | pic32mz_ef_sk.X |
-| 22 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/tcpip_udp_server) | pic32mz_ef_sk_freertos.X |
-| 23 | [web_ftp_server_mpfs_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_ftp_server_mpfs_fatfs) | pic32mz_ef_sk_freertos.X |
-| 24 | [web_net_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps/web_net_server_sdcard_fatfs) | pic32mz_ef_sk_freertos.X |
+| 1 | [aria_flash](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_flash) | aria_fl_mzef_sk_meb2_tm4301b.X |
+| 2 | [aria_quickstart_ext_res](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart_ext_res) | aria_qs_msd_fs_sqi_flash_mzef_sk_tm4301b.X |
+| 3 | [aria_quickstart_ext_res](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart_ext_res) | aria_qs_msd_host_sdcard_fs_mzef_sk_tm4301b.X |
+| 4 | [aria_quickstart_ext_res](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart_ext_res) | aria_qs_x_r_mzef_sk_meb2_tm4301b.X |
+| 5 | [aria_thermostat](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_thermostat) | aria_th_mzef_cu_tm5000_ssd1963.X |
+
+
+#### Repo Name: [net_apps_pic32mz](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz)
+
+|SI No| Demo Name | MPLAB X Project Name | 
+| --- | --- | --- |
+| 1 | [berkeley_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/berkeley_tcp_client) | pic32mz_ef_sk_freertos.X |
+| 2 | [berkeley_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/berkeley_tcp_server) | pic32mz_ef_sk_freertos.X |
+| 3 | [berkeley_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/berkeley_udp_client) | pic32mz_ef_sk_freertos.X |
+| 4 | [berkeley_udp_relay](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/berkeley_udp_relay) | pic32mz_ef_sk_freertos.X |
+| 5 | [berkeley_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/berkeley_udp_server) | pic32mz_ef_sk_freertos.X |
+| 6 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/snmpv3_nvm_mpfs) | pic32mz_ef_sk.X |
+| 7 | [snmpv3_nvm_mpfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/snmpv3_nvm_mpfs) | pic32mz_ef_sk_freertos.X |
+| 8 | [snmpv3_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/snmpv3_sdcard_fatfs) | pic32mz_ef_sk_freertos.X |
+| 9 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_client) | pic32mz_ef_sk.X |
+| 10 | [tcpip_tcp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_client) | pic32mz_ef_sk_freertos.X |
+| 11 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_client_server) | pic32mz_ef_sk.X |
+| 12 | [tcpip_tcp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_client_server) | pic32mz_ef_sk_freertos.X |
+| 13 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk.X |
+| 14 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk_enc28j60.X |
+| 15 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk_encx24j600.X |
+| 16 | [tcpip_tcp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_tcp_server) | pic32mz_ef_sk_freertos.X |
+| 17 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_udp_client) | pic32mz_ef_sk.X |
+| 18 | [tcpip_udp_client](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_udp_client) | pic32mz_ef_sk_freertos.X |
+| 19 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_udp_client_server) | pic32mz_ef_sk.X |
+| 20 | [tcpip_udp_client_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_udp_client_server) | pic32mz_ef_sk_freertos.X |
+| 21 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_udp_server) | pic32mz_ef_sk.X |
+| 22 | [tcpip_udp_server](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/tcpip_udp_server) | pic32mz_ef_sk_freertos.X |
+| 23 | [web_ftp_server_mpfs_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/web_ftp_server_mpfs_fatfs) | pic32mz_ef_sk_freertos.X |
+| 24 | [web_net_server_sdcard_fatfs](https://github.com/Microchip-MPLAB-Harmony/net_apps_pic32mz/tree/master/apps/web_net_server_sdcard_fatfs) | pic32mz_ef_sk_freertos.X |
 
 
 #### Repo Name: [usb](https://github.com/Microchip-MPLAB-Harmony/usb)
@@ -183,6 +196,19 @@ Following is the list of application demos on **PIC32MZ Embedded Connectivity wi
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mz_ef_sk.X |
 | 2 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mz_ef_sk_freertos.X |
+| 3 | [device/hid_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/hid_basic) | pic32mz_ef_sk.X |
+| 4 | [device/hid_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/hid_basic) | pic32mz_ef_sk_freertos.X |
+| 5 | [device/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/msd_basic) | pic32mz_ef_sk.X |
+| 6 | [device/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/msd_basic) | pic32mz_ef_sk_freertos.X |
+| 7 | [device/vendor](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/vendor) | pic32mz_ef_sk.X |
+| 8 | [device/vendor](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/vendor) | pic32mz_ef_sk_freertos.X |
+| 9 | [dual_role/host_msd_device_hid](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/dual_role/host_msd_device_hid) | pic32mz_ef_sk.X |
+| 10 | [host/cdc_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/cdc_basic) | pic32mz_ef_sk.X |
+| 11 | [host/cdc_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/cdc_basic) | pic32mz_ef_sk_freertos.X |
+| 12 | [host/hub_cdc_hid](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/hub_cdc_hid) | pic32mz_ef_sk.X |
+| 13 | [host/hub_msd](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/hub_msd) | pic32mz_ef_sk.X |
+| 14 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | pic32mz_ef_sk.X |
+| 15 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | pic32mz_ef_sk_freertos.X |
 
 
 [comment]:#ListEnd

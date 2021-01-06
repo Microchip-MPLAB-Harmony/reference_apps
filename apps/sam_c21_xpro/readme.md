@@ -3,7 +3,7 @@ title: SAM C21 Xplained Pro evaluation kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 8
+nav_order: 10
 ---
 
 # SAM C21 Xplained Pro evaluation kit
@@ -24,6 +24,8 @@ Following is the list of application demos on **SAM C21 Xplained Pro evaluation 
 
 
 
+
+
 [comment]:#ListStart
 
 
@@ -33,6 +35,20 @@ Following is the list of application demos on **SAM C21 Xplained Pro evaluation 
 |SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [ccl/manchester_encoder](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21/tree/master/apps/ccl/manchester_encoder) | sam_c21_xpro.X |
+
+
+#### Repo Name: [gfx_apps_sam_c20_c21](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_c20_c21)
+
+|SI No| Demo Name | MPLAB X Project Name | 
+| --- | --- | --- |
+| 1 | [legato_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_sam_c20_c21/tree/master/apps/legato_quickstart) | legato_qs_c21_xpro_cpro.X |
+
+
+#### Repo Name: [gfx_aria](https://github.com/Microchip-MPLAB-Harmony/gfx_aria)
+
+|SI No| Demo Name | MPLAB X Project Name | 
+| --- | --- | --- |
+| 1 | [aria_quickstart](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/tree/master/apps/aria_quickstart) | aria_qs_c21_xpld_oled1.X |
 
 
 #### Repo Name: [motor_control](https://github.com/Microchip-MPLAB-Harmony/motor_control)

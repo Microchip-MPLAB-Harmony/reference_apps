@@ -3,7 +3,7 @@ title: PIC32MK General Purpose (GP) Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 13
+nav_order: 17
 ---
 # PIC32MK General Purpose (GP) Development Board
 
@@ -19,6 +19,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 Following is the list of application demos on **PIC32MK General Purpose (GP) Development Board** and other Development Boards/Kits having the same part number **(PIC32MK1024GPE100)** in MPLAB Harmony v3 Repositories.
 
 **Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
 
 
 
@@ -103,6 +105,11 @@ Following is the list of application demos on **PIC32MK General Purpose (GP) Dev
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mk_gp_db.X |
 | 2 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | pic32mk_gp_db_freertos.X |
+| 3 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | pic32mk_gp_db.X |
+| 4 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | pic32mk_gp_db_freertos.X |
+| 5 | [multi_usb/device_cdc_host_msd](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/multi_usb/device_cdc_host_msd) | pic32mk_gp_db.X |
+| 6 | [multi_usb/device_dual_cdc](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/multi_usb/device_dual_cdc) | pic32mk_gp_db.X |
+| 7 | [multi_usb/host_msd_dual](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/multi_usb/host_msd_dual) | pic32mk_gp_db.X |
 
 
 [comment]:#ListEnd

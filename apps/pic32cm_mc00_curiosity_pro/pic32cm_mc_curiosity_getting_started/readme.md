@@ -1,6 +1,6 @@
 ---
 grand_parent: Reference Applications
-parent: PIC32CM MC Curiosity Pro Development Board
+parent: PIC32CM MC00 Curiosity Pro Development Board
 title: Getting Started
 nav_order: 1
 ---
@@ -8,7 +8,7 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Getting Started Application on PIC32CM MC Curiosity Pro Development Board
+# Getting Started Application on PIC32CM MC00 Curiosity Pro Development Board
 -----
 ## Description:
 
@@ -26,7 +26,7 @@ The application will utilize below peripherals:
 
 ## Hardware Used:
 
-- [PIC32CM MC Curiosity Pro Development Board]()
+- [PIC32CM MC00 Curiosity Pro Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV15N46A)
 - [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO)   
 
 ## Software/Tools Used:
@@ -43,7 +43,7 @@ The application will utilize below peripherals:
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
-- Connect the PIC32CM MC Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
+- Connect the PIC32CM MC00 Curiosity Pro Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
 <img src = "images/hardware.jpg" align="middle" width="500" height="500">
 
 ## Programming hex file:
@@ -65,12 +65,12 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Programming/Debugging Application Project:
 - Open the project (pic32cm_mc_curiosity_getting_started\firmware\pic32cm_mc00_curiosity_pro.X) in MPLAB X IDE
-- Ensure "PIC32CM MC Curiosity pro" is selected as hardware tool to program/debug the application
+- Ensure "PIC32CM MC00 Curiosity pro" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
-- Press the Reset switch on the PIC32CM MC Curiosity Pro Development Board.
+- Press the Reset switch on the PIC32CM MC00 Curiosity Pro Development Board.
 - The application prints temperature and light sensor continuously.  
 
 	<img src = "images/console_message_after_reset.png" align="middle">

@@ -3,7 +3,7 @@ title: SAM L21 Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 7
+nav_order: 9
 ---
 # SAM L21 Xplained Pro Evaluation Kit
 
@@ -18,6 +18,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 Following is the list of application demos on **SAM L21 Xplained Pro Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAML21J18B)** in MPLAB Harmony v3 Repositories.
 
 **Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
 
 
 
@@ -141,6 +143,7 @@ Following is the list of application demos on **SAM L21 Xplained Pro Evaluation 
 |SI No| Demo Name | MPLAB X Project Name | 
 | --- | --- | --- |
 | 1 | [device/cdc_com_port_single](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/device/cdc_com_port_single) | sam_l21_xpro.X |
+| 2 | [host/msd_basic](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps/host/msd_basic) | sam_l21_xpro.X |
 
 
 [comment]:#ListEnd

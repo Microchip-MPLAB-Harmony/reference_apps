@@ -3,7 +3,7 @@ title: SAM C21N Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 12
+nav_order: 16
 ---
 # SAM C21N Xplained Pro Evaluation Kit
 
@@ -21,6 +21,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 Following is the list of application demos on **SAM C21N Xplained Pro Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAMC21N18A)** in MPLAB Harmony v3 Repositories.
 
 **Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
+
+
 
 
 
