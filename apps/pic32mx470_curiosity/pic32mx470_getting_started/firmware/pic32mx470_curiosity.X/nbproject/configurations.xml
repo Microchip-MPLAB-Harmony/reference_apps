@@ -99,9 +99,21 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="pic32mx470_curiosity.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/i2c1.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/tmr2.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/tmr3.yml</itemPath>
+        <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/uart2.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32mx470_curiosity/harmony.prj</itemPath>
-      <itemPath>../src/config/pic32mx470_curiosity/pic32mx470_curiosity.xml</itemPath>
       <itemPath>../src/config/pic32mx470_curiosity/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -143,6 +155,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>

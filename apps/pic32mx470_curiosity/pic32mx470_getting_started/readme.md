@@ -37,15 +37,15 @@ nav_order: 1
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- - MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
- - Any Serial Terminal application like Tera Term terminal application.
+- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.2  
+- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- Any Serial Terminal application like Tera Term terminal application.  
 
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Setup:  
 - Connect the Type-A male to mini-B USB cable to mini-B DEBUG USB port to power and debug the PIC32MX470 Curiosity Development Board.
@@ -80,15 +80,16 @@ The pre-built hex file can be programmed by following the below steps
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Change the baud rate to 115200
 - You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below  
-<img src = "images/result1.png" width="425" height="235" align="middle">  
-- Also, notice LED1 blinking at a 500 millisecond rate
+
+  <img src = "images/result1.png" width="425" height="235" align="middle">  
+- Also, notice LED1 blinking at a 500 millisecond rate  
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
-<img src = "images/temp_sensor_placement.jpg" width="500" height="325" align="middle">  
+  <img src = "images/temp_sensor_placement.jpg" width="500" height="325" align="middle">  
 - Press the S1 switch on the Curiosity PIC32MX470 Development Board to change the default sampling rate to one second  
-<img src = "images/user_button_placement.jpg" width="500" height="325" align="middle">  
-<img src = "images/result2.png" width="345" height="165" align="middle">  
+  <img src = "images/user_button_placement.jpg" width="500" height="325" align="middle">  
+  <img src = "images/result2.png" width="345" height="165" align="middle">  
 - Every subsequent press of switch S1 on the Curiosity PIC32MX470 Development Board changes the default sampling rate to two seconds, four seconds, 500 milliseconds and back to one second in cyclic order as shown below  
-<img src = "images/result3.png" width="315" height="440" align="middle">  
+  <img src = "images/result3.png" width="315" height="440" align="middle">  
 - While the temperature sampling rate changes on every switch S1 press, notice LED1 toggling at the same sampling rate
 
 ## Comments:
@@ -98,5 +99,6 @@ The pre-built hex file can be programmed by following the below steps
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Regenerated and tested application.
 - v1.0.0 - Released demo application
