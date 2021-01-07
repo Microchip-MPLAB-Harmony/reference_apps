@@ -177,9 +177,20 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_e51_cnano.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/rtc.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom5.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/settings.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e51_cnano/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.xml</itemPath>
       <itemPath>../src/config/sam_e51_cnano/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -200,8 +211,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME51_DFP" vendor="Microchip" version="3.2.67"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME51_DFP" vendor="Microchip" version="3.2.67"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -222,6 +233,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -918,6 +930,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -931,6 +944,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
                   value="D:/MBOs_work/reference_apps/apps/sam_e51_cnano/same51n_getting_started/firmware/sam_e51_cnano.X/debug/sam_e51_cnano/sam_e51_cnano_ptg"/>
