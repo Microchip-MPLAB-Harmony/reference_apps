@@ -1,0 +1,62 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tmr2}
+children:
+- type: Symbols
+  children:
+  - type: Hex
+    attributes: {id: TCON_REG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tmr2, value: '8'}
+  - type: KeyValueSet
+    attributes: {id: TIMER_32BIT_MODE_SEL}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: Integer
+    attributes: {id: TIMER_CLOCK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tmr2, value: '60000000'}
+  - type: Long
+    attributes: {id: TIMER_PERIOD}
+    children:
+    - type: Attributes
+      children:
+      - type: Long
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '4294967295'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tmr2, value: '29999999'}
+  - type: Float
+    attributes: {id: TIMER_TIME_PERIOD_MS}
+    children:
+    - type: Attributes
+      children:
+      - type: Float
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '71582.79'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '500.0'}
+  - type: Integer
+    attributes: {id: TIMER_WIDTH}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tmr2, value: '32'}
+- type: ElementPosition
+  attributes: {x: '38', y: '68', id: tmr2}

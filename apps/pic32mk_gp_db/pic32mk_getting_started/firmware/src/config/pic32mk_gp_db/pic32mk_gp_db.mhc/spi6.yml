@@ -1,0 +1,31 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: spi6}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: SPI_BRG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi6, value: '29'}
+  - type: Comment
+    attributes: {id: SPI_CLOCK_MODE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '***SPI Mode 0 is Selected***'}
+  - type: KeyValueSet
+    attributes: {id: SPI_SPICON_MSSEN}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+- type: ElementPosition
+  attributes: {x: '360', y: '20', id: spi6}

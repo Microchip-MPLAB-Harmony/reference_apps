@@ -99,9 +99,18 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="pic32mk_gp_db.mhc" projectFiles="true">
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/spi6.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/tmr2.yml</itemPath>
+        <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/uart6.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32mk_gp_db/harmony.prj</itemPath>
-      <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.xml</itemPath>
       <itemPath>../src/config/pic32mk_gp_db/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -143,6 +152,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -413,6 +423,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
