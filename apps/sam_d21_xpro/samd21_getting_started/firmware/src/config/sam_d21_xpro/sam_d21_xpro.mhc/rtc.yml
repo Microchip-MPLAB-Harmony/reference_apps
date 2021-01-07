@@ -1,0 +1,106 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: rtc}
+children:
+- type: Symbols
+  children:
+  - type: String
+    attributes: {id: CALLBACK_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_Timer32CallbackRegister}
+  - type: String
+    attributes: {id: COMPARE_SET_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_Timer32CompareSet}
+  - type: String
+    attributes: {id: COUNTER_GET_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_Timer32CounterGet}
+  - type: String
+    attributes: {id: FREQUENCY_GET_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_Timer32FrequencyGet}
+  - type: String
+    attributes: {id: IRQ_ENUM_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_IRQn}
+  - type: String
+    attributes: {id: PERIOD_SET_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: ''}
+  - type: Hex
+    attributes: {id: RTC_MODE0_INTENSET}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: '1'}
+  - type: Boolean
+    attributes: {id: RTC_MODE0_INTENSET_CMP0_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: RTC_MODE0_MATCHCLR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Hex
+    attributes: {id: RTC_MODE0_TIMER_COMPARE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '512'}
+  - type: String
+    attributes: {id: TIMER_PERIOD_MAX}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: '0xFFFFFFFF'}
+  - type: String
+    attributes: {id: TIMER_START_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_Timer32Start}
+  - type: String
+    attributes: {id: TIMER_STOP_API_NAME}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: RTC_Timer32Stop}
+  - type: Integer
+    attributes: {id: TIMER_WIDTH}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: '32'}
+- type: ElementPosition
+  attributes: {x: '46', y: '137', id: rtc}
