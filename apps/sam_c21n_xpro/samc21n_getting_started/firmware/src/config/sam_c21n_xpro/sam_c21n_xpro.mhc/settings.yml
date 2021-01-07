@@ -1,0 +1,13 @@
+configName: sam_c21n_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../../../Projects/git_hub
+processor: ATSAMC21N18A
+projectName: ''
+settings:
+  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMC21_DFP\3.5.83\samc21n\atdf\ATSAMC21N18A.atdf
