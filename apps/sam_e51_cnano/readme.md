@@ -17,21 +17,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-Following is the list of application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** in MPLAB Harmony v3 Repositories.
-
-**Note:** To get a demo listed below, go to the main page of the repository (Click on the Repo Name) and then click **Code** button to clone or download as zip file. The repo can also be downloaded using **MPLAB Harmony Content Manager** by following [these](https://microchip-mplab-harmony.github.io/contentmanager/) instructions.  
-
-
-
-
-
-
-
-[comment]:#ListStart
-
-<span style = "color:red"> **No Repos** </span>
-
-
-
-[comment]:#ListEnd
-
+For more application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** <a href="https://mplab-discover.microchip.com/v1/offeringtype/com.microchip.ide.project?s0=ATSAME51J20A" target="_blank"> CLICK HERE </a>

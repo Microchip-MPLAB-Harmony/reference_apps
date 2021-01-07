@@ -12,10 +12,6 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 
 The following reference applications are provided to evaluate solutions on 32-bit SAM and PIC MCUs.
 
-### **Note:**
-The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
-Peripheral/Technology specific applications are available in technology repositories like [csp](https://github.com/Microchip-MPLAB-Harmony/csp), [core](https://github.com/Microchip-MPLAB-Harmony/core), [usb](https://github.com/Microchip-MPLAB-Harmony/usb), [net](https://github.com/Microchip-MPLAB-Harmony/net), [audio](https://github.com/Microchip-MPLAB-Harmony/audio), [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps), etc
-
 - ### [PIC32CM MC00 Curiosity Pro Development Board](./pic32cm_mc00_curiosity_pro/readme.md)
 - ### [PIC32CM MC00 Curiosity Nano Evaluation Kit](./pic32cm_mc00_cnano/readme.md)
 - ### [SAM D21 IoT Development Board](./sam_d21_iot/readme.md)
@@ -37,3 +33,7 @@ Peripheral/Technology specific applications are available in technology reposito
 - ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk_meb2/readme.md)
 - ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md)
 - ### [SAM L11 Xplained Pro Evaluation Kit](./sam_l11_xpro/readme.md)
+
+### **Note:**
+The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
+Peripheral/Technology specific applications are available in technology repositories like [csp](https://github.com/Microchip-MPLAB-Harmony/csp), [core](https://github.com/Microchip-MPLAB-Harmony/core), [usb](https://github.com/Microchip-MPLAB-Harmony/usb), [net](https://github.com/Microchip-MPLAB-Harmony/net), [audio](https://github.com/Microchip-MPLAB-Harmony/audio), [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps), etc
