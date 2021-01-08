@@ -173,9 +173,24 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="pic32cm_mc00_curiosity_pro.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/adc0.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/sercom0.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.mhc/supc.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32cm_mc00_curiosity_pro/harmony.prj</itemPath>
-      <itemPath>../src/config/pic32cm_mc00_curiosity_pro/pic32cm_mc00_curiosity_pro.xml</itemPath>
       <itemPath>../src/config/pic32cm_mc00_curiosity_pro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -218,6 +233,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>

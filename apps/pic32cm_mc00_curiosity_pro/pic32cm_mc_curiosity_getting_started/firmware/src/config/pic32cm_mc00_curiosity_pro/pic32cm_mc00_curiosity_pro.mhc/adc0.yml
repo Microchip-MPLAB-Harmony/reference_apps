@@ -1,0 +1,63 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: adc0}
+children:
+- type: Symbols
+  children:
+  - type: Combo
+    attributes: {id: ADC_CONV_TRIGGER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: SW Trigger}
+  - type: KeyValueSet
+    attributes: {id: ADC_INPUTCTRL_MUXPOS}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '3'}
+  - type: String
+    attributes: {id: ADC_NVM_CALIB_REG}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: OTP5_ADDR}
+  - type: KeyValueSet
+    attributes: {id: ADC_REFCTRL_REFSEL}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: Comment
+    attributes: {id: ADC_SAMPCTRL_SAMPLEN_TIME}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '**** Conversion Time is 2.66666666667 uS ****'}
+  - type: Menu
+    attributes: {id: ADC_SEQUENCE_MENU}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Comment
+    attributes: {id: ADC_SUPC_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: ElementPosition
+  attributes: {x: '12', y: '321', id: adc0}
