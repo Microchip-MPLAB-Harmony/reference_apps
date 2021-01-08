@@ -15,7 +15,7 @@ nav_order: 2
 
 ## Modules/Technology Used:
 - Peripheral Modules
-	- SDADC       
+	- SDADC
 	- SUPC
 	- EVSYS
 	- SERCOM(USART)
@@ -27,14 +27,13 @@ nav_order: 2
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- - MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
- - Any Serial Terminal application like Tera Term terminal application.
- - Stable Voltage Source to INN[1] and INP[1] pins, or PB08 and PB09 pins respectively
+- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.2  
+- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- Any Serial Terminal application like Tera Term terminal application.  
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
@@ -71,7 +70,7 @@ The pre-built hex file can be programmed by following the below steps
 - Change the baud rate to 115200
 - SDADC is configured to use the internal VREF and the range is set to 4.096 V full scale and the default setting of OSR is 64  
 - Pressing the ‘r’ key will read the result and display it, in a form scaled to mV  
-<img src = "images/output.png" width="700" height="360" align="middle">  
+  <img src = "images/output.png" width="700" height="360" align="middle">  
 
 ## Comments:
 - Reference Application Note: [Using Sigma-Delta Analog-to-Digital Converter on SAMC MCU with MPLAB Harmony v3](https://www.microchip.com/wwwappnotes/appnotes.aspx?appnote=en1003095)
@@ -81,5 +80,6 @@ The pre-built hex file can be programmed by following the below steps
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Regenerated and tested application.
 - v1.0.0 - Released demo application
