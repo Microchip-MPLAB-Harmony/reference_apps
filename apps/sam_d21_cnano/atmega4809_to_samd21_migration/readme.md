@@ -39,11 +39,11 @@ nav_order: 10
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)    
- - MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)    
+ - MPLAB Harmony 3 Launcher Plugin v3.6.2
+ - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Any Serial Terminal application like Tera Term terminal application.  
 
@@ -90,11 +90,12 @@ The pre-built hex file can be programmed by following the below steps.
 <img src = "images/result1.png" width="400" height="200" align="middle">
 - Press Switch **SW0** on the SAMD21 Curiosity Nano kit to toggle the LED0 twice with 500ms of delay.
 ## Comments:
-- Reference Migration Guide: [Application migration from 8-bit AVR to 32-bit SAM D21 on SAM D21 Curiosity Nano](https://microchip-mplab-harmony.github.io/quick_docs/migration/atmega4809_to_samd21_migration/readme.html)
+- Reference Migration Guide: [Application migration from 8-bit AVR to 32-bit SAM D21 on SAM D21 Curiosity Nano](https://microchip-mplab-harmony.github.io/quick_docs/source/migration/atmega4809_to_samd21_migration/readme.html)
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs](https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.2.0 - Regenerated and tested application.
 - v1.1.0 released demo application
