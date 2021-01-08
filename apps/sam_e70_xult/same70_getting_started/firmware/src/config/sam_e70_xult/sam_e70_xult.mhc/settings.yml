@@ -1,0 +1,13 @@
+configName: sam_e70_xult
+folderName: ''
+format_version: v1.0
+frameworkPath: D:\Projects\git_hub
+processor: ATSAME70Q21B
+projectName: ''
+settings:
+  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.3.73\same70b\atdf\ATSAME70Q21B.atdf
