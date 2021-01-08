@@ -1,0 +1,131 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: adc}
+children:
+- type: Symbols
+  children:
+  - type: Combo
+    attributes: {id: ADC_CONV_TRIGGER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: HW Event Trigger}
+  - type: Boolean
+    attributes: {id: ADC_CTRLA_ONDEMAND}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: ADC_CTRLA_RUNSTDBY}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: ADC_CTRLB_PRESCALER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: KeyValueSet
+    attributes: {id: ADC_CTRLC_WINMODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: KeyValueSet
+    attributes: {id: ADC_EVCTRL_FLUSH}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: ADC_EVCTRL_START}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Boolean
+    attributes: {id: ADC_INTENSET_WINMON}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Comment
+    attributes: {id: ADC_SAMPCTRL_SAMPLEN_TIME}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '**** Conversion Time is 32.0 uS ****'}
+  - type: Menu
+    attributes: {id: ADC_SEQUENCE_MENU}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: ADC_WINDOW_OUTPUT_EVENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: ADC_WINLT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '3000'}
+  - type: Integer
+    attributes: {id: ADC_WINUT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+- type: ElementPosition
+  attributes: {x: '30', y: '160', id: adc}
