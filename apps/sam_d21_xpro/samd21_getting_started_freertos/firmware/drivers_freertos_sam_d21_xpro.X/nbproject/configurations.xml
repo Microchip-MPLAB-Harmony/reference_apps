@@ -18,6 +18,11 @@
             <itemPath>../src/config/sam_d21_xpro/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_d21_xpro/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_d21_xpro/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_d21_xpro/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_d21_xpro/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_d21_xpro/peripheral/clock/plib_clock.h</itemPath>
@@ -67,6 +72,7 @@
           <itemPath>../src/config/sam_d21_xpro/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/sam_d21_xpro/user.h</itemPath>
           <itemPath>../src/config/sam_d21_xpro/configuration.h</itemPath>
+          <itemPath>../src/config/sam_d21_xpro/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -98,11 +104,6 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f4" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_d21_xpro/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/osal/osal_freertos.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAMD21J18A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
@@ -133,8 +134,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21J18A_DFP/pio/samd21j18a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21J18A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAMD21J18A_DFP/atsamd21j18a_compat.h</itemPath>
           <itemPath>../src/packs/ATSAMD21J18A_DFP/atsamd21j18a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -150,6 +149,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -162,6 +162,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_d21_xpro" projectFiles="true">
+          <itemPath>../src/config/sam_d21_xpro/ATSAMD21J18A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -177,6 +182,9 @@
               <itemPath>../src/config/sam_d21_xpro/driver/usart/src/drv_usart.c</itemPath>
               <itemPath>../src/config/sam_d21_xpro/driver/usart/src/drv_usart_local.h</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_d21_xpro/osal/osal_freertos.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
@@ -244,9 +252,6 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_d21_xpro/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/main_d21.c</itemPath>
       <itemPath>../src/app_sensor_thread.c</itemPath>
       <itemPath>../src/app_eeprom_thread.c</itemPath>
@@ -255,9 +260,24 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_d21_xpro.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/drv_usart.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/sercom3.yml</itemPath>
+        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/settings.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_d21_xpro/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.xml</itemPath>
+      <itemPath>../src/config/sam_d21_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -273,7 +293,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>2.41</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -299,6 +319,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -339,7 +360,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_d21_xpro;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0"/>
+                  value="../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;../src/third_party/rtos/FreeRTOS/Source/include;../src;../src/config/sam_d21_xpro;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -434,7 +455,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_d21_xpro;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -477,6 +499,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -491,7 +514,10 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MBOs_work/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/firmware/drivers_freertos_sam_d21_xpro.X/debug/sam_d21_xpro/drivers_freertos_sam_d21_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
