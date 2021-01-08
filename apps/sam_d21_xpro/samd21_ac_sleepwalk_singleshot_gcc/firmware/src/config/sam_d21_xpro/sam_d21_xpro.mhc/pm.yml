@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: pm}
+children:
+- type: ElementPosition
+  attributes: {x: '24', y: '78', id: pm}
