@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: dsu}
+children:
+- type: ElementPosition
+  attributes: {x: '128', y: '177', id: dsu}
