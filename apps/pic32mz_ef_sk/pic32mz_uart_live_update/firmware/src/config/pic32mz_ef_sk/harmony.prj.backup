@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration>
+  <Configurator>
+    <Name dnOrder="0" value="pic32mz_ef_sk"/>
+    <Processor dnOrder="1" value="PIC32MZ2048EFH144"/>
+    <Harmony dnOrder="2" path="../../../../harmony_github"/>
+    <Folder_Name dnOrder="3" value=""/>
+    <Manifest dnOrder="4">
+      <Files dnOrder="0">
+        <File dnOrder="0">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">app.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="1">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">app_live_update.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="2">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">bsp.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/bsp/</LogicalPath>
+          <PhysicalPath dnOrder="4">/bsp/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">64D0F9C57F1452BD074A574237B811D7</GeneratedChecksum>
+          <UserChecksum dnOrder="6">64D0F9C57F1452BD074A574237B811D7</UserChecksum>
+        </File>
+        <File dnOrder="3">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">exceptions.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4238740A6A08738E296E6139E26E53D8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4238740A6A08738E296E6139E26E53D8</UserChecksum>
+        </File>
+        <File dnOrder="4">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">initialization.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">94FEAAD355F33763AC84D67402D4D7F3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">94FEAAD355F33763AC84D67402D4D7F3</UserChecksum>
+        </File>
+        <File dnOrder="5">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">interrupts.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">773068D0DAE32F8CAAF3E7851982C579</GeneratedChecksum>
+          <UserChecksum dnOrder="6">773068D0DAE32F8CAAF3E7851982C579</UserChecksum>
+        </File>
+        <File dnOrder="6">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">main.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="7">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_clk.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/clk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/clk/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">348E1BD972633E1AFDBDCCD133C30C5B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">348E1BD972633E1AFDBDCCD133C30C5B</UserChecksum>
+        </File>
+        <File dnOrder="8">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_coretimer.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/coretimer/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/coretimer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">F8BB2BAA74068083A80E6E229BBCF3E3</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F8BB2BAA74068083A80E6E229BBCF3E3</UserChecksum>
+        </File>
+        <File dnOrder="9">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_evic.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/evic/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/evic/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">D533E30AE6D77F6DC90BCB0671452228</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D533E30AE6D77F6DC90BCB0671452228</UserChecksum>
+        </File>
+        <File dnOrder="10">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_gpio.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/gpio/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/gpio/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">085AD21E69A015135F99F9AE4E244A69</GeneratedChecksum>
+          <UserChecksum dnOrder="6">085AD21E69A015135F99F9AE4E244A69</UserChecksum>
+        </File>
+        <File dnOrder="11">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_nvm.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/nvm/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/nvm/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">CA41C0116AA86AA82F796A658ADFE1E7</GeneratedChecksum>
+          <UserChecksum dnOrder="6">CA41C0116AA86AA82F796A658ADFE1E7</UserChecksum>
+        </File>
+        <File dnOrder="12">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">plib_uart2.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/uart/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/uart/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">8261FC864D79E86119FE1236D3E41764</GeneratedChecksum>
+          <UserChecksum dnOrder="6">8261FC864D79E86119FE1236D3E41764</UserChecksum>
+        </File>
+        <File dnOrder="13">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">tasks.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">05C3A7AE80B236FB79DCA8C36D499779</GeneratedChecksum>
+          <UserChecksum dnOrder="6">05C3A7AE80B236FB79DCA8C36D499779</UserChecksum>
+        </File>
+        <File dnOrder="14">
+          <Type dnOrder="0">SOURCE</Type>
+          <Name dnOrder="1">xc32_monitor.c</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/stdio/</LogicalPath>
+          <PhysicalPath dnOrder="4">/stdio/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">16BE5CCEE5F9AF5909BF3F69B51C7D93</GeneratedChecksum>
+          <UserChecksum dnOrder="6">16BE5CCEE5F9AF5909BF3F69B51C7D93</UserChecksum>
+        </File>
+        <File dnOrder="15">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">app.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="16">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">app_live_update.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3"/>
+          <PhysicalPath dnOrder="4">/../../</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+        <File dnOrder="17">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">bsp.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/bsp/</LogicalPath>
+          <PhysicalPath dnOrder="4">/bsp/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">A9C595E0E5A92D2B85C18D2A27597B84</GeneratedChecksum>
+          <UserChecksum dnOrder="6">A9C595E0E5A92D2B85C18D2A27597B84</UserChecksum>
+        </File>
+        <File dnOrder="18">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">configuration.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">76016C9804D6DE17B74C92D82294562E</GeneratedChecksum>
+          <UserChecksum dnOrder="6">76016C9804D6DE17B74C92D82294562E</UserChecksum>
+        </File>
+        <File dnOrder="19">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">definitions.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">BBB2A14EE58A458F17A112AF92556FFE</GeneratedChecksum>
+          <UserChecksum dnOrder="6">BBB2A14EE58A458F17A112AF92556FFE</UserChecksum>
+        </File>
+        <File dnOrder="20">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">device.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">5D5C52527AB1435153DB9B50ADE6B79D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5D5C52527AB1435153DB9B50ADE6B79D</UserChecksum>
+        </File>
+        <File dnOrder="21">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_clk.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/clk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/clk/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">7066CC390335CF75126E2A50C46E3BDD</GeneratedChecksum>
+          <UserChecksum dnOrder="6">7066CC390335CF75126E2A50C46E3BDD</UserChecksum>
+        </File>
+        <File dnOrder="22">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_coretimer.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/coretimer/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/coretimer/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">C28AA8F266DD056E96DCBE0761337241</GeneratedChecksum>
+          <UserChecksum dnOrder="6">C28AA8F266DD056E96DCBE0761337241</UserChecksum>
+        </File>
+        <File dnOrder="23">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_evic.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/evic/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/evic/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">0718C4C8BAA47288E82FE9CCD4854832</GeneratedChecksum>
+          <UserChecksum dnOrder="6">0718C4C8BAA47288E82FE9CCD4854832</UserChecksum>
+        </File>
+        <File dnOrder="24">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_gpio.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/gpio/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/gpio/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">4C6C4A7B7E33767128AA763FFAE2E394</GeneratedChecksum>
+          <UserChecksum dnOrder="6">4C6C4A7B7E33767128AA763FFAE2E394</UserChecksum>
+        </File>
+        <File dnOrder="25">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_nvm.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/nvm/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/nvm/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">42ECD2217FBCF58E950E691EEB8D7E11</GeneratedChecksum>
+          <UserChecksum dnOrder="6">42ECD2217FBCF58E950E691EEB8D7E11</UserChecksum>
+        </File>
+        <File dnOrder="26">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_uart2.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/uart/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/uart/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">86D499749C924875389705AA3D0C9FD7</GeneratedChecksum>
+          <UserChecksum dnOrder="6">86D499749C924875389705AA3D0C9FD7</UserChecksum>
+        </File>
+        <File dnOrder="27">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">plib_uart_common.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/peripheral/uart/</LogicalPath>
+          <PhysicalPath dnOrder="4">/peripheral/uart/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">903175300C64256E267D1DB8F91D7861</GeneratedChecksum>
+          <UserChecksum dnOrder="6">903175300C64256E267D1DB8F91D7861</UserChecksum>
+        </File>
+        <File dnOrder="28">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">toolchain_specifics.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5">FA212DEAE39D4E86EF4E6CB440610FE9</GeneratedChecksum>
+          <UserChecksum dnOrder="6">FA212DEAE39D4E86EF4E6CB440610FE9</UserChecksum>
+        </File>
+        <File dnOrder="29">
+          <Type dnOrder="0">HEADER</Type>
+          <Name dnOrder="1">user.h</Name>
+          <Security dnOrder="2">NON_SECURE</Security>
+          <LogicalPath dnOrder="3">config/pic32mz_ef_sk/</LogicalPath>
+          <PhysicalPath dnOrder="4">/</PhysicalPath>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
+        </File>
+      </Files>
+      <Settings dnOrder="1">
+        <Setting append="true" category="C32" delimiter=";" dnOrder="0" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/pic32mz_ef_sk;../src/packs/PIC32MZ2048EFH144_DFP;"/>
+        <Setting category="C32" dnOrder="1" key="generate-micro-compressed-code" security="NON_SECURE" value="false"/>
+        <Setting category="C32-LD" dnOrder="2" key="heap-size" security="NON_SECURE" value="512"/>
+        <Setting category="C32-LD" dnOrder="3" key="no-device-startup-code" security="NON_SECURE" value="true"/>
+        <Setting append="true" category="C32-LD" delimiter=";=" dnOrder="4" key="preprocessor-macros" security="NON_SECURE" value=""/>
+        <Setting append="true" category="C32CPP" delimiter=";" dnOrder="5" key="extra-include-directories" security="NON_SECURE" value="../src;../src/config/pic32mz_ef_sk;../src/packs/PIC32MZ2048EFH144_DFP;"/>
+        <Setting category="C32CPP" dnOrder="6" key="generate-micro-compressed-code" security="NON_SECURE" value="false"/>
+      </Settings>
+    </Manifest>
+    <Settings dnOrder="5">
+      <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.7.0"/>
+      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\PIC32MZ-EF_DFP\1.3.57\atdf\PIC32MZ2048EFH144.atdf"/>
+      <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
+      <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
+      <Setting dnOrder="4" key="MERGE_STRATEGY" value="ALL"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;gfx;gfx_apps;net;touch;usb;"/>
+    </Settings>
+  </Configurator>
+</Configuration>

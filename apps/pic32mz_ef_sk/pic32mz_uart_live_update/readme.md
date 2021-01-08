@@ -34,15 +34,15 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
-- [MPLAB Harmony v3 "bsp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
-- [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+- [MPLAB Harmony v3 "bsp" repo v3.8.2](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.2)
+- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
 - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
 - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
-- [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
 - [MPLAB Harmony v3 "bootloader" repo v3.4.1](https://github.com/Microchip-MPLAB-Harmony/bootloader/tree/v3.4.1)
-- [MPLAB Harmony v3 "bootloader_apps_uart" repo v3.0.1](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/releases/tag/v3.0.1)
-- MPLAB Harmony Configurator Plugin v3.6.0
-- [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB Harmony v3 "bootloader_apps_uart" repo v3.0.2](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart/releases/tag/v3.0.2)
+- MPLAB Harmony 3 Launcher Plugin v3.6.2
+- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
 - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 - Windows command prompt
 - Python 2.7
@@ -88,11 +88,12 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
    * Observe the change in LED toggling compared to the LED which was toggling in the previous step. This indicates that the newly updated image is running properly.
 
 ## Comments:
-- Reference Application Note: [Live Update application on PIC32MZ MCUs using MPLAB Harmony v3]()
+- Reference Application Note: [Live Update application on PIC32MZ MCUs using MPLAB Harmony v3](http://ww1.microchip.com/downloads/en/Appnotes/Live_Update_Application_on_PIC32MZ_MCUs_Using_MPLAB_Harmonyv3_DS00003703A.pdf)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.2.0 regenerated and tested the application
 - v1.1.0 regenerated and tested the application
 - v1.0.0 released demo application

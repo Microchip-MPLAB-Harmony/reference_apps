@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: dfp}
+children:
+- type: ElementPosition
+  attributes: {x: '1', y: '42', id: dfp}

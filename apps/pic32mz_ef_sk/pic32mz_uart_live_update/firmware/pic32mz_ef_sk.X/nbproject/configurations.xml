@@ -93,9 +93,19 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="pic32mz_ef_sk.mhc" projectFiles="true">
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/BSP_PIC32MZ_EF_Starter_Kit.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/nvm.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/uart2.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32mz_ef_sk/harmony.prj</itemPath>
-      <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.xml</itemPath>
       <itemPath>../src/config/pic32mz_ef_sk/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -137,6 +147,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>${MP_CC_DIR}/xc32-objcopy -I ihex -O binary ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin</makeCustomizationPostStep>
