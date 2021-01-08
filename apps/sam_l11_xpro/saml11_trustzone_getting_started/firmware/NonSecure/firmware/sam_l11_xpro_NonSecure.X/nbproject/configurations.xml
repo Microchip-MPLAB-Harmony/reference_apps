@@ -135,9 +135,22 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_l11_xpro.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/pm.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/rtc.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/sercom0.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/sercom1.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/settings.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_l11_xpro/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.xml</itemPath>
       <itemPath>../src/config/sam_l11_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -195,6 +208,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -376,6 +390,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -390,6 +405,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
                   value="D:/MBOs_work/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X/debug/sam_l11_xpro/sam_l11_xpro_NonSecure_ptg"/>

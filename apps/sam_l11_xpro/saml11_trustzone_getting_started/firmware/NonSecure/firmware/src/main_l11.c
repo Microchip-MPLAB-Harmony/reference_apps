@@ -148,14 +148,14 @@ int main ( void )
         if (isEEPROMReadReq == true)       //Request to Temperature Reading from EEPROM
         {
             isEEPROMReadReq     = false;
-            readEEPROMTemperatureDataReq(&eepromRxBuffer[1]);
+            readEEPROMTemperatureDataReq(&eepromRxBuffer[0]);
         }
         if (getEEPROMTemperatureDataReadStatus(&wrIndex) == true)   //Printing Temperature values read from EEPROM
         {
             isEEPROMReadReq = false;
-            EEPROM_PrintTemperature(&eepromRxBuffer[1], wrIndex);
+            EEPROM_PrintTemperature(&eepromRxBuffer[0], wrIndex);
             DMAC_ChannelTransfer(DMAC_CHANNEL_1, (const void *)&(SERCOM0_REGS->USART_INT.SERCOM_DATA), \
-                &uartRxBuffer[1], 1);
+                &uartRxBuffer[0], 1);
         }
         secureAppEntry();
     }

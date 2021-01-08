@@ -1,0 +1,14 @@
+configName: sam_l11_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../../../../../Projects/git_hub
+processor: ATSAML11E16A
+projectName: ''
+settings:
+  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAML11_DFP\4.0.114\atdf\ATSAML11E16A.atdf
