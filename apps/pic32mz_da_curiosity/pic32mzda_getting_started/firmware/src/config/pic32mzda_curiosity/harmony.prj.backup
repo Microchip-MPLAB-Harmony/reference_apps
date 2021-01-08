@@ -3,7 +3,7 @@
   <Configurator>
     <Name dnOrder="0" value="pic32mzda_curiosity"/>
     <Processor dnOrder="1" value="PIC32MZ2064DAR176"/>
-    <Harmony dnOrder="2" path="../../../../Harmony_public_release"/>
+    <Harmony dnOrder="2" path="../../../../../Harmony_public_release"/>
     <Folder_Name dnOrder="3" value=""/>
     <Manifest dnOrder="4">
       <Files dnOrder="0">
