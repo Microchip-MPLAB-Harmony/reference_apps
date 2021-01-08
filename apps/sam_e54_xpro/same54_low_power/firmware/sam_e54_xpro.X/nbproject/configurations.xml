@@ -204,9 +204,25 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_e54_xpro.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/adc1.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/pm.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/rtc.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom3.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/supc.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e54_xpro/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.xml</itemPath>
       <itemPath>../src/config/sam_e54_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -227,8 +243,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.3.64"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.1.43"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -249,6 +265,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -410,6 +427,7 @@
         <property key="mdtcm" value=""/>
         <property key="mitcm" value=""/>
         <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
         <property key="wpo-lto" value="false"/>
@@ -422,7 +440,10 @@
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -436,9 +457,10 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/microchip/harmony/v3/training/dev/same54_low_power/firmware/sam_e54_xpro.X/debug/sam_e54_xpro/sam_e54_xpro_ptg"/>
+                  value="D:/MBOs_work/reference_apps/apps/sam_e54_xpro/same54_low_power/firmware/sam_e54_xpro.X/debug/sam_e54_xpro/sam_e54_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -449,6 +471,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
       </EdbgTool>
       <PICkit3PlatformTool>
