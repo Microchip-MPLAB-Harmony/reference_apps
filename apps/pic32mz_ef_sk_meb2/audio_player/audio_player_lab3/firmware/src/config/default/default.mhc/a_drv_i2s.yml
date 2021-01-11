@@ -1,0 +1,69 @@
+format_version: v1.0
+type: GeneratorComponent
+attributes: {id: a_drv_i2s}
+children:
+- type: Instances
+  children:
+  - type: InstanceComponent
+    attributes: {instance: '0', id: a_drv_i2s}
+    children:
+    - type: Symbols
+      children:
+      - type: String
+        attributes: {id: DRV_I2S_PLIB}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: a_drv_i2s_0, value: I2S1}
+      - type: Boolean
+        attributes: {id: DRV_I2S_RX_DMA}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: a_drv_i2s_0, value: 'true'}
+      - type: Boolean
+        attributes: {id: DRV_I2S_TX_DMA}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: a_drv_i2s_0, value: 'true'}
+      - type: Boolean
+        attributes: {id: DRV_I2S_TX_RX_DMA}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: a_drv_i2s_0, value: 'true'}
+    - type: Attachments
+      children:
+      - type: DirectCapability
+        attributes: {id: drv_i2s}
+        children:
+        - type: Attributes
+          children:
+          - type: String
+            attributes: {id: targetComponentID}
+            children:
+            - {type: Value, value: audio_codec_ak4953}
+          - type: String
+            attributes: {id: targetAttachmentID}
+            children:
+            - {type: Value, value: DRV_I2S}
+      - type: DirectDependency
+        attributes: {id: drv_i2s_I2S_dependency}
+        children:
+        - type: Attributes
+          children:
+          - type: String
+            attributes: {id: targetComponentID}
+            children:
+            - {type: Value, value: a_i2s1}
+          - type: String
+            attributes: {id: targetAttachmentID}
+            children:
+            - {type: Value, value: SPI1_I2S}
+- type: ElementPosition
+  attributes: {x: '142', y: '214', id: a_drv_i2s}

@@ -229,7 +229,14 @@ typedef enum
      * flag will cause the IRP to completed only when the
      * a ZLP was requested and acknowledged and the amount
      * of data was a multiple of endpoint maximum packet size. */
-    USB_HOST_IRP_WAIT_FOR_ZLP 
+    USB_HOST_IRP_WAIT_FOR_ZLP,
+
+    /* This enum value serves as s hint to the compiler to keep the enum value
+     * to atleast 16 bits wide. This is because the bit 15 of the flags member
+     * is used internally by the implementation is certain places to track IRP
+     * direction.  Adding this enum will ensure that the compiler will always
+     * allocate 16 bits for this enum, even in the case of packing */
+    USB_HOST_IRP_DIRECTION = 0x8000
 
 } USB_HOST_IRP_FLAG;
 
