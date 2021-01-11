@@ -223,9 +223,25 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
+        <itemPath>../src/config/default/default.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/drv_usart.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sercom0.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sercom5.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/tc4.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/tc5.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/default/harmony.prj</itemPath>
-      <itemPath>../src/config/default/default.xml</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -268,6 +284,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>${MP_CC_DIR}/xc32-objcopy -I ihex -O binary ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin</makeCustomizationPostStep>
