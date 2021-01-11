@@ -168,7 +168,7 @@ uint8_t hr3_set_settings( sw_reset_t sw_reset, diag_mode_t diag_mode,
                           susp_count_t susp_counter, reg_read_t reg_read )
 {
     uint8_t reg = DIAGNOSIS;
-    uint8_t temp[3U] = { 0 };
+    uint8_t temp[3] = { 0 };
 
     temp[2] |= ( sw_reset << DIAG_SW_RST );
     temp[2] |= ( diag_mode << DIAG_EN );
@@ -536,7 +536,7 @@ uint8_t hr3_set_prpct_count( uint16_t count )
 uint8_t hr3_set_timer_and_average_num( bool enable, uint8_t av_num )
 {
     uint8_t reg = TIM_NUMAV;
-    uint8_t temp[3U] = { 0 };
+    uint8_t temp[3] = { 0 };
 
     if( av_num > 15 || av_num < 0 )
         return -1;
@@ -640,7 +640,7 @@ uint8_t hr3_set_led_currents( uint8_t led1_current, uint8_t led2_current,
                               uint8_t led3_current )
 {
     uint8_t reg = LED_CONFIG;
-    uint8_t temp[3U] = { 0 };
+    uint8_t temp[3] = { 0 };
     unsigned long currents = 0;
 
     if( led1_current > 63 ||
@@ -666,7 +666,7 @@ uint8_t hr3_set_led_currents( uint8_t led1_current, uint8_t led2_current,
 uint8_t hr3_set_dynamic_settings( dynamic_modes_t* modes )
 {
     uint8_t reg = SETTINGS;
-    uint8_t temp[3] = { 0,0,0 };
+    uint8_t temp[3] = { 0 };
     unsigned long buffer = 0;
 
     buffer |= ( modes->transmit << STT_DYNMC1 );
@@ -1216,7 +1216,7 @@ uint32_t hr3_calibrate( void )
 uint8_t hr3_read_enable( void )
 {
     uint8_t reg = DIAGNOSIS;
-    uint8_t temp[3U] = { 0 };
+    uint8_t temp[3] = { 0 };
 
     temp[2] |= ( 1 << DIAG_REG_READ );
 
@@ -1229,7 +1229,7 @@ uint8_t hr3_read_enable( void )
 uint8_t hr3_read_disable( void )
 {
     uint8_t reg = DIAGNOSIS;
-    uint8_t temp[3U] = { 0 };
+    uint8_t temp[3] = { 0 };
 
     temp[2] &= ~( 1 << DIAG_REG_READ );
 

@@ -259,9 +259,27 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_d21_cnano.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sercom3.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sercom5.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/tc3.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_d21_cnano/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.xml</itemPath>
       <itemPath>../src/config/sam_d21_cnano/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -304,6 +322,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>${MP_CC_DIR}/xc32-objcopy -I ihex -O binary ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin </makeCustomizationPostStep>
