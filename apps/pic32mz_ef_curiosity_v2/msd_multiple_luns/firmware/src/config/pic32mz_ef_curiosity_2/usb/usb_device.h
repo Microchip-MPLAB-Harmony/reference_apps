@@ -2431,13 +2431,9 @@ void USB_DEVICE_RemoteWakeupStartTimed ( USB_DEVICE_HANDLE usbDeviceHandle );
 
             case USB_DEVICE_EVENT_CONTROL_TRANSFER_DATA_SENT:
                 
-                // This means that data in the data stage of the control
-                // read transfer has been sent. The application would typically
-                // end the control transfer by calling the 
-                // USB_DEVICE_ControlStatus function with
-                // USB_DEVICE_CONTROL_STATUS_OK flag (as shown in this example).
-
-                USB_DEVICE_ControlStatus(usbDeviceHandle, USB_DEVICE_CONTROL_STATUS_OK);
+                 // This means that data in the data stage of the control
+                // read transfer has been sent. This indicates that the control transfer is 
+                // completed. 
                 break;
 
             case USB_DEVICE_EVENT_CONTROL_TRANSFER_ABORTED:
@@ -2550,12 +2546,9 @@ USB_DEVICE_CONTROL_TRANSFER_RESULT USB_DEVICE_ControlSend
             case USB_DEVICE_EVENT_CONTROL_TRANSFER_DATA_SENT:
                 
                 // This means that data in the data stage of the control
-                // read transfer has been sent. The application would typically
-                // end the control transfer by calling the 
-                // USB_DEVICE_ControlStatus function with
-                // USB_DEVICE_CONTROL_STATUS_OK flag (as shown in this example).
+                // read transfer has been sent. This indicates that the control transfer is 
+                // completed. 
 
-                USB_DEVICE_ControlStatus(usbDeviceHandle, USB_DEVICE_CONTROL_STATUS_OK);
                 break;
 
             case USB_DEVICE_EVENT_CONTROL_TRANSFER_ABORTED:
@@ -2638,10 +2631,9 @@ USB_DEVICE_CONTROL_TRANSFER_RESULT USB_DEVICE_ControlReceive
 
     // The following code example shows an example of how the
     // USB_DEVICE_ControlStatus() function is called in response to the
-    // USB_DEVICE_EVENT_CONTROL_TRANSFER_DATA_RECEIVED and
-    // USB_DEVICE_EVENT_CONTROL_TRANSFER_DATA_SENT event to complete the control
-    // transfer. Here, the application code acknowledges the status stage of the
-    // control transfer.
+    // USB_DEVICE_EVENT_CONTROL_TRANSFER_DATA_RECEIVED event to complete the 
+	// control transfer. Here, the application code acknowledges the status 
+	// stage of the control transfer.
 
     void APP_USBDeviceControlTransferEventHandler
     (
@@ -2678,12 +2670,8 @@ USB_DEVICE_CONTROL_TRANSFER_RESULT USB_DEVICE_ControlReceive
             case USB_DEVICE_EVENT_CONTROL_TRANSFER_DATA_SENT:
                 
                 // This means that data in the data stage of the control
-                // read transfer has been sent. The application would typically
-                // end the control transfer by calling the 
-                // USB_DEVICE_ControlStatus function with
-                // USB_DEVICE_CONTROL_STATUS_OK flag (as shown in this example).
-
-                USB_DEVICE_ControlStatus(usbDeviceHandle, USB_DEVICE_CONTROL_STATUS_OK);
+                // read transfer has been sent. This indicates that the control transfer is 
+                // completed. 
                 break;
 
             case USB_DEVICE_EVENT_CONTROL_TRANSFER_ABORTED:

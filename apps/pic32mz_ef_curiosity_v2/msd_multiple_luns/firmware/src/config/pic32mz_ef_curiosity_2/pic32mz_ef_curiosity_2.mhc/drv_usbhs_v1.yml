@@ -1,0 +1,15 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: drv_usbhs_v1}
+children:
+- type: Symbols
+  children:
+  - type: Combo
+    attributes: {id: USB_SPEED}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: High Speed}
+- type: ElementPosition
+  attributes: {x: '440', y: '50', id: drv_usbhs_v1}

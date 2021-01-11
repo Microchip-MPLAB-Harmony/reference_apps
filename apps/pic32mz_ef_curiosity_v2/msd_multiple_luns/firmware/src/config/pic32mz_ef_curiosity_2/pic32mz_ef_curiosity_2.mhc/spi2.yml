@@ -1,0 +1,98 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: spi2}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: SPI_BAUD_RATE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '25000000'}
+  - type: Integer
+    attributes: {id: SPI_BRG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: '1'}
+  - type: Hex
+    attributes: {id: SPI_DUMMY_DATA}
+    children:
+    - type: Attributes
+      children:
+      - type: Long
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '4294967295'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: '4294967295'}
+  - type: Boolean
+    attributes: {id: SPI_INTERRUPT_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: SPI_MSTR_MODE_EN}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: '0'}
+  - type: KeyValueSet
+    attributes: {id: SPI_SPICON_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: KeyValueSet
+    attributes: {id: SPI_SPICON_MSSEN}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: '1'}
+      - type: User
+        attributes: {value: '1'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: SPI2_SPI}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_sdspi_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_sdspi_SPI_dependency}
+- type: ElementPosition
+  attributes: {x: '35', y: '395', id: spi2}
