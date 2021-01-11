@@ -1,0 +1,49 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: lib_wolfssl}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: wolfsslOsalHeapKeys}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: WolfSSL_Crypto_Dependency}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: lib_wolfcrypt}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: lib_wolfcrypt}
+  - type: DirectCapability
+    attributes: {id: lib_wolfssl}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: TCP/IP STACK}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: 'PRESENTATION LAYER:net_Pres:Net_Pres_Crypto_Dependency'}
+- type: ElementPosition
+  attributes: {x: '618', y: '310', id: lib_wolfssl}

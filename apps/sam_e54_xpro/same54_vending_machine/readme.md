@@ -50,14 +50,16 @@ The application implements an embedded network application to update and track d
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
  - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- - MPLAB Harmony Configurator Plugin v3.6.0
  - [MPLAB Harmony v3 "CMSIS-FreeRTOS" repo v10.3.1](https://github.com/Microchip-MPLAB-Harmony/CMSIS-FreeRTOS/releases/tag/v10.3.1)
- - [MPLAB Harmony v3 "net" repo v3.6.1](https://github.com/Microchip-MPLAB-Harmony/net/releases/tag/v3.6.1)
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB Harmony v3 "net" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/net/releases/tag/v3.7.0)
+ - [MPLAB Harmony v3 "crypto" repo v3.6.1](https://github.com/Microchip-MPLAB-Harmony/crypto/releases/tag/v3.6.1)
+ - [MPLAB Harmony v3 "wolfssl" repo v4.5.0](https://github.com/Microchip-MPLAB-Harmony/wolfssl/releases/tag/v4.5.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
+ - MPLAB Harmony 3 Launcher Plugin v3.6.2
+ - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Any Serial Terminal application, such as Tera Term terminal application.
  - Any TCP/IP debug application, such as Hercules SETUP utility - useful serial port terminal (RS-485 or RS-232 terminal) , UDP/IP terminal and TCP/IP Client Server terminal. Produced by www.HW-group.com.
@@ -125,4 +127,5 @@ Machine. Use the Button 3 on the OLED to pick an item from the VM. The count of 
     - [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.2.0 Regenerated and tested application
 - v1.1.0 Released demo application

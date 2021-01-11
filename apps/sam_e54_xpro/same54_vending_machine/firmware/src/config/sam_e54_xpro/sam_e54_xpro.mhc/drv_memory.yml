@@ -1,0 +1,173 @@
+format_version: v1.0
+type: GeneratorComponent
+attributes: {id: drv_memory}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: DRV_MEMORY_COMMON_FS_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_memory, value: 'true'}
+  - type: Combo
+    attributes: {id: DRV_MEMORY_COMMON_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_memory, value: Synchronous}
+  - type: Boolean
+    attributes: {id: DRV_MEMORY_COMMON_SYS_TIME_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_memory, value: 'true'}
+  - type: File
+    attributes: {id: DRV_MEMORY_FS_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+- type: Instances
+  children:
+  - type: InstanceComponent
+    attributes: {instance: '0', id: drv_memory}
+    children:
+    - type: Symbols
+      children:
+      - type: Integer
+        attributes: {id: DRV_MEMORY_BUFFER_QUEUE_SIZE}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_memory_0, value: '1'}
+      - type: String
+        attributes: {id: DRV_MEMORY_DEVICE}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_memory_0, value: NVMCTRL}
+      - type: Comment
+        attributes: {id: DRV_MEMORY_DEVICE_COMMENT}
+        children:
+        - type: Attributes
+          children:
+          - type: String
+            attributes: {id: text}
+            children:
+            - {type: Value, value: '*** Configure Memory Device in NVMCTRL Configurations
+                ***'}
+          - type: Boolean
+            attributes: {id: visible}
+            children:
+            - {type: Value, value: 'true'}
+      - type: Integer
+        attributes: {id: DRV_MEMORY_DEVICE_POLL_US}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: visible}
+            children:
+            - {type: Value, value: 'true'}
+      - type: Combo
+        attributes: {id: DRV_MEMORY_DEVICE_TYPE}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: visible}
+            children:
+            - {type: Value, value: 'true'}
+        - type: Values
+          children:
+          - type: User
+            attributes: {value: SYS_FS_MEDIA_TYPE_NVM}
+      - type: Boolean
+        attributes: {id: DRV_MEMORY_ERASE_ENABLE}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_memory_0, value: 'true'}
+      - type: Boolean
+        attributes: {id: DRV_MEMORY_FS_ENABLE}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_memory_0, value: 'true'}
+      - type: Boolean
+        attributes: {id: DRV_MEMORY_INTERRUPT_ENABLE}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_memory_0, value: 'false'}
+      - type: String
+        attributes: {id: DRV_MEMORY_PLIB}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_memory_0, value: DRV_NVMCTRL}
+      - type: File
+        attributes: {id: DRV_MEMORY_PLIB_HEADER}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: enabled}
+            children:
+            - {type: Value, value: 'true'}
+          - type: String
+            attributes: {id: name}
+            children:
+            - {type: Value, value: drv_memory_nvmctrl.h}
+      - type: File
+        attributes: {id: DRV_MEMORY_PLIB_SOURCE}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: enabled}
+            children:
+            - {type: Value, value: 'true'}
+          - type: String
+            attributes: {id: name}
+            children:
+            - {type: Value, value: drv_memory_nvmctrl.c}
+      - type: File
+        attributes: {id: DRV_MEMORY_PLIB_SYS_DEF}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: enabled}
+            children:
+            - {type: Value, value: 'true'}
+    - type: Attachments
+      children:
+      - type: DirectDependency
+        attributes: {id: drv_memory_MEMORY_dependency}
+        children:
+        - type: Attributes
+          children:
+          - type: String
+            attributes: {id: targetComponentID}
+            children:
+            - {type: Value, value: nvmctrl}
+          - type: String
+            attributes: {id: targetAttachmentID}
+            children:
+            - {type: Value, value: NVMCTRL_MEMORY}
+- type: ElementPosition
+  attributes: {x: '189', y: '568', id: drv_memory}

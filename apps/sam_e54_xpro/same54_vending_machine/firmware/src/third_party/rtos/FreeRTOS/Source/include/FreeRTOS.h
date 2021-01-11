@@ -241,8 +241,24 @@ extern "C" {
 	#define configASSERT_DEFINED 1
 #endif
 
+/* configPRECONDITION should be defined as configASSERT.
+The CBMC proofs need a way to track assumptions and assertions.
+A configPRECONDITION statement should express an implicit invariant or
+assumption made.  A configASSERT statement should express an invariant that must
+hold explicit before calling the code. */
+#ifndef configPRECONDITION
+	#define configPRECONDITION( X ) configASSERT(X)
+	#define configPRECONDITION_DEFINED 0
+#else
+	#define configPRECONDITION_DEFINED 1
+#endif
+
 #ifndef portMEMORY_BARRIER
 	#define portMEMORY_BARRIER()
+#endif
+
+#ifndef portSOFTWARE_BARRIER
+	#define portSOFTWARE_BARRIER()
 #endif
 
 /* The timers module relies on xTaskGetSchedulerState(). */
@@ -937,6 +953,7 @@ V8 if desired. */
 	#define pcTimerGetTimerName pcTimerGetName
 	#define pcQueueGetQueueName pcQueueGetName
 	#define vTaskGetTaskInfo vTaskGetInfo
+	#define xTaskGetIdleRunTimeCounter ulTaskGetIdleRunTimeCounter
 
 	/* Backward compatibility within the scheduler code only - these definitions
 	are not really required but are included for completeness. */

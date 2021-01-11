@@ -1,0 +1,17 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpipCmd}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: TCPIP_STACK_COMMANDS_STORAGE_ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: ElementPosition
+  attributes: {x: '580', y: '20', id: tcpipCmd}

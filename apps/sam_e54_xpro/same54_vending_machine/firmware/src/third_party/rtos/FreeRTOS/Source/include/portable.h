@@ -118,7 +118,8 @@ extern "C" {
 	#endif
 #endif
 
-/* Used by heap_5.c. */
+/* Used by heap_5.c to define the start address and size of each memory region
+that together comprise the total FreeRTOS heap space. */
 typedef struct HeapRegion
 {
 	uint8_t *pucStartAddress;

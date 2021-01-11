@@ -1,0 +1,15 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpipSmtpc}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: TCPIP_SMTPC_HEAP_SIZE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcpipSmtpc, value: '352'}
+- type: ElementPosition
+  attributes: {x: '450', y: '120', id: tcpipSmtpc}

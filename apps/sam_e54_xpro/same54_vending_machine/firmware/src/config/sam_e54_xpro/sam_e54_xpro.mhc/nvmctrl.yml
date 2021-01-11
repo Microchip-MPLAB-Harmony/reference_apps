@@ -1,0 +1,73 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: nvmctrl}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: DRV_MEMORY_CONNECTED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_memory_0, value: 'true'}
+  - type: Integer
+    attributes: {id: ERASE_BUFFER_SIZE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Comment
+    attributes: {id: ERASE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: MEMORY_MEDIA_SIZE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: NVM_RWS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: nvmctrl, value: '5'}
+  - type: String
+    attributes: {id: START_ADDRESS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: NVMCTRL_MEMORY}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_memory_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_memory_MEMORY_dependency}
+- type: ElementPosition
+  attributes: {x: '29', y: '632', id: nvmctrl}

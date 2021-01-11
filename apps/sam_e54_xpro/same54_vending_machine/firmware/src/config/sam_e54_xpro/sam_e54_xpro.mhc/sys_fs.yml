@@ -1,0 +1,191 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sys_fs}
+children:
+- type: Symbols
+  children:
+  - type: File
+    attributes: {id: SYS_FS_DISKIO_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_DISKIO_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Boolean
+    attributes: {id: SYS_FS_FAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: SYS_FS_FAT_CODE_PAGE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_FAT_CONF_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Boolean
+    attributes: {id: SYS_FS_FAT_EXFAT_ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_FAT_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_FAT_INTERFACE_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_FAT_INTERFACE_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Boolean
+    attributes: {id: SYS_FS_FAT_READONLY}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_FAT_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_FS_FAT_UNICODE_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Combo
+    attributes: {id: SYS_FS_FAT_VERSION}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Setting
+    attributes: {id: SYS_FS_FAT_XC32CPP_INCLUDE_PATH}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Setting
+    attributes: {id: SYS_FS_FAT_XC32_INCLUDE_PATH}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Integer
+    attributes: {id: SYS_FS_MAX_FILES}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '25'}
+  - type: Boolean
+    attributes: {id: SYS_FS_MPFS}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: File
+    attributes: {id: SYS_FS_MPFS_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SYS_FS_MPFS_LOCAL_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SYS_FS_MPFS_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+- type: Attachments
+  children:
+  - type: MultiCapability
+    attributes: {id: sys_fs_DRV_MEDIA_dependency}
+    children:
+    - type: TargetAttachments
+      children:
+      - type: TargetAttachment
+        attributes: {targetComponentID: drv_memory_0, targetAttachmentID: drv_media}
+- type: ElementPosition
+  attributes: {x: '375', y: '606', id: sys_fs}
