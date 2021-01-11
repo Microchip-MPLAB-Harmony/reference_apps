@@ -52,14 +52,14 @@ available for purchase from Microchip Direct.
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "bsp" repository v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
+ - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
+ - [MPLAB Harmony v3 "bsp" repository v3.8.2](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.2)
  - [MPLAB Harmony v3 "audio" repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/audio/releases/tag/v3.5.0)
- - [MPLAB Harmony v3 "usb" repository v3.6.1](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.6.1)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- -  MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB Harmony v3 "usb" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.7.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
+ -  MPLAB Harmony 3 Launcher Plugin v3.6.2
+ - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
@@ -99,7 +99,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
-- Go to the folder "audio_player_lab4\firmware\sample_audio" and copy a few sample WAV files to the micro SD card
+- Go to the folder **audio_player_lab4\firmware\sample_audio** and copy a few sample WAV files to the micro SD card
 - Insert the micro SD card into the micro SD card slot (J8) on the MEB II
 - Connect a USB cable from the micro USB connector (J4) on the PIC32MZEF Starter Kit board to the PC
 - Connect a headphone to the HP Out connector on the MEB II and you should hear the audio track being played
@@ -112,5 +112,6 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.2.0 regenerated and tested the application
 - v1.1.0 regenerated and tested the application
 - v1.0.0 released demo application

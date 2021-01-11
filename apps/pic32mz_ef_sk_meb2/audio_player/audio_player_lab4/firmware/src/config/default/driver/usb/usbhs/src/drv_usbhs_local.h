@@ -106,6 +106,13 @@
 
 #define DRV_USBHS_FIFO_PAGES 36
 
+#if (DRV_USBHS_HOST_SUPPORT == true)
+#include "system/time/sys_time.h"
+#define _DRV_USBHS_FOR_HOST(x, y) x y
+#else
+#define _DRV_USBHS_FOR_HOST(x, y)
+#endif
+
 #if ((DRV_USBHS_DEVICE_SUPPORT == true) && (DRV_USBHS_HOST_SUPPORT == true))
 #define DRV_USBHS_CLIENTS_NUMBER 2
 #else
@@ -563,9 +570,6 @@ typedef struct _DRV_USBHS_COMMON_OBJ_STRUCT
 
     /* Non ISR Task Routine state */
     DRV_USBHS_TASK_STATE state;
-
-    /* System Timer Service delay handle */
-    SYS_TMR_HANDLE timerHandle;
     
     /* Current VBUS level when running in device mode */
     USBHS_VBUS_LEVEL vbusLevel;
@@ -631,6 +635,10 @@ typedef struct _DRV_USBHS_HOST_OBJ_STRUCT
 
     /* This counts the reset signal duration */
     DRV_USBHS_HOST_ROOT_HUB_INFO rootHubInfo;
+
+    /* System Timer Service delay handle. Needed
+     * for host mode only. */
+    _DRV_USBHS_FOR_HOST(SYS_TIME_HANDLE, timerHandle);
 
 } DRV_USBHS_HOST_OBJ;
 

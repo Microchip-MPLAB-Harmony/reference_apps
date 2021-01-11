@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: drv_usbhs_v1}
+children:
+- type: ElementPosition
+  attributes: {x: '430', y: '366', id: drv_usbhs_v1}
