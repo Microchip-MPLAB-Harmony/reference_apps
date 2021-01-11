@@ -1,0 +1,65 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: i2c1}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: BRG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: '982'}
+  - type: Integer
+    attributes: {id: I2CS_CORE_TIMER_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: '99000000'}
+  - type: Integer
+    attributes: {id: I2CS_RISE_TIME_CORE_TIMER_CNTS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: '29'}
+  - type: Integer
+    attributes: {id: I2CS_SETUP_TIME_CORE_TIMER_CNTS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: '9'}
+  - type: Integer
+    attributes: {id: I2C_CLOCK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: '99000000'}
+  - type: Combo
+    attributes: {id: I2C_OPERATING_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: Master}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: I2C1_I2C}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_i2c_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_i2c_I2C_dependency}
+- type: ElementPosition
+  attributes: {x: '59', y: '185', id: i2c1}
