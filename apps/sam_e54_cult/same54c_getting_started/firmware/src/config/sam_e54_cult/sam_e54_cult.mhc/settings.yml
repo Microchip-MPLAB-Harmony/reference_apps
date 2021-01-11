@@ -5,7 +5,7 @@ frameworkPath: ..\..\..\..\harmony_github
 processor: ATSAME54P20A
 projectName: getting_started_sam_e54_cult
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;net;touch;usb;
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;reference_apps;net;quick_docs;touch;usb;
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'

@@ -186,18 +186,18 @@
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="sam_e54_cult.mhc" projectFiles="true">
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\cmsis.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\core.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\dfp.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\eic.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\evsys.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\GraphSettings.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\nvmctrl.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\project.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\rtc.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\sercom1.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\sercom6.yml</itemPath>
-        <itemPath>..\src\config\sam_e54_cult\sam_e54_cult.mhc\settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/rtc.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/sercom1.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/sercom6.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/settings.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>..\src\config\sam_e54_cult\harmony-manifest-success.yml</itemPath>
@@ -216,7 +216,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>2.41</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -283,7 +283,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -379,7 +379,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -439,6 +439,8 @@
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MassMarket/reference_apps/apps/sam_e54_cult/same54c_getting_started/firmware/sam_e54_cult.X/debug/sam_e54_cult/sam_e54_cult_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
