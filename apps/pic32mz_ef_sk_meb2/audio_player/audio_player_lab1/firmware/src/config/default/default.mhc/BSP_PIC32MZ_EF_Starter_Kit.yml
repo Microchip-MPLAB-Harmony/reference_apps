@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: BSP_PIC32MZ_EF_Starter_Kit, bsp: 'true'}
+children:
+- type: ElementPosition
+  attributes: {x: '249', y: '19', id: BSP_PIC32MZ_EF_Starter_Kit}
