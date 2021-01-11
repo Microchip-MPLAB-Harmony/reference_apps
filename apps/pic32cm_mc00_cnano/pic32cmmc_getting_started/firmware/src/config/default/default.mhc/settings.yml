@@ -1,0 +1,14 @@
+configName: default
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../Harmony_3xx_Master
+processor: PIC32CM1216MC00032
+projectName: ''
+settings:
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;reference_apps;net;quick_docs;touch;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\PIC32CM-MC_DFP\1.0.32\atdf\PIC32CM1216MC00032.atdf
