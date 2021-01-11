@@ -1,0 +1,13 @@
+configName: sam_c21_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../../../Harmony_public_release
+processor: ATSAMC21J18A
+projectName: ''
+settings:
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;gfx;gfx_apps;net;touch;usb;wireless;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMC21_DFP\3.5.83\samc21\atdf\ATSAMC21J18A.atdf
