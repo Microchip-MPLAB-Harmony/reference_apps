@@ -1,6 +1,6 @@
 /* sha.h
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -100,9 +100,15 @@ enum {
     #include "wolfssl/wolfcrypt/port/caam/wolfcaam_sha.h"
 #elif defined(WOLFSSL_HAVE_MCHP_HW_SHA1)
     #include "port/pic32/crypt_sha1_hw.h"
+#elif defined(WOLFSSL_RENESAS_TSIP_CRYPT) && \
+   !defined(NO_WOLFSSL_RENESAS_TSIP_CRYPT_HASH)
+    #include "wolfssl/wolfcrypt/port/Renesas/renesas-tsip-crypt.h"
+#elif defined(WOLFSSL_PSOC6_CRYPTO)
+    #include "wolfssl/wolfcrypt/port/cypress/psoc6_crypto.h"
 #else
+
 /* Sha digest */
-typedef struct wc_Sha {
+struct wc_Sha {
 #ifdef FREESCALE_LTC_SHA
         ltc_hash_ctx_t ctx;
 #elif defined(STM32_HASH)
@@ -136,7 +142,12 @@ typedef struct wc_Sha {
 #if defined(WOLFSSL_HASH_FLAGS) || defined(WOLF_CRYPTO_CB)
     word32 flags; /* enum wc_HashFlags in hash.h */
 #endif
-} wc_Sha;
+};
+
+#ifndef WC_SHA_TYPE_DEFINED
+    typedef struct wc_Sha wc_Sha;
+    #define WC_SHA_TYPE_DEFINED
+#endif
 
 #endif /* WOLFSSL_TI_HASH */
 
@@ -158,8 +169,8 @@ WOLFSSL_API void wc_ShaSizeSet(wc_Sha* sha, word32 len);
 #endif
 
 #if defined(WOLFSSL_HASH_FLAGS) || defined(WOLF_CRYPTO_CB)
-    WOLFSSL_LOCAL int wc_ShaSetFlags(wc_Sha* sha, word32 flags);
-    WOLFSSL_LOCAL int wc_ShaGetFlags(wc_Sha* sha, word32* flags);
+    WOLFSSL_API int wc_ShaSetFlags(wc_Sha* sha, word32 flags);
+    WOLFSSL_API int wc_ShaGetFlags(wc_Sha* sha, word32* flags);
 #endif
 
 #ifdef __cplusplus

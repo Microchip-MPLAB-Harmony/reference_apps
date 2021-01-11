@@ -1,6 +1,6 @@
 /* sha512.c
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -26,7 +26,7 @@
 
 #include <wolfssl/wolfcrypt/settings.h>
 
-#if defined(WOLFSSL_SHA512) || defined(WOLFSSL_SHA384)
+#if (defined(WOLFSSL_SHA512) || defined(WOLFSSL_SHA384)) && !defined(WOLFSSL_ARMASM) && !defined(WOLFSSL_PSOC6_CRYPTO)
 
 #if defined(HAVE_FIPS) && \
 	defined(HAVE_FIPS_VERSION) && (HAVE_FIPS_VERSION >= 2)
@@ -222,9 +222,12 @@ static int InitSha512(wc_Sha512* sha512)
         esp_sha_hw_unlock();
     }
     /* always set mode as INIT
-    *  whether using HW or SW is detemined at first call of update()
+    *  whether using HW or SW is determined at first call of update()
     */
     sha512->ctx.mode = ESP32_SHA_INIT;
+#endif
+#if defined(WOLFSSL_HASH_FLAGS) || defined(WOLF_CRYPTO_CB)
+    sha512->flags = 0;
 #endif
     return 0;
 }
@@ -936,10 +939,13 @@ static int InitSha384(wc_Sha384* sha384)
         esp_sha_hw_unlock();
     }
     /* always set mode as INIT
-    *  whether using HW or SW is detemined at first call of update()
+    *  whether using HW or SW is determined at first call of update()
     */
     sha384->ctx.mode = ESP32_SHA_INIT;
 
+#endif
+#if defined(WOLFSSL_HASH_FLAGS) || defined(WOLF_CRYPTO_CB)
+    sha384->flags = 0;
 #endif
 
     return 0;

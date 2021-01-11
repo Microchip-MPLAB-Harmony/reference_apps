@@ -391,8 +391,8 @@ typedef struct __attribute__((__packed__))
     uint8_t nextHeader;
     uint8_t reserved;
 
-    union {
-
+    union
+    {
         struct __attribute__((__packed__))
         {
             uint16_t m : 1;
@@ -427,7 +427,7 @@ typedef struct __attribute__((__packed__))
   Remarks:
     Any extension headers present are considered part of the payload length.
  */
-typedef struct
+typedef struct __attribute__((aligned(2), packed))
 {
     unsigned long V_T_F; // Version , Traffic class and Flow Label 
     unsigned short PayloadLength; // Length of IPv6 payload, i.e. the rest of packet following this IPv6 header in octets 
@@ -584,8 +584,10 @@ typedef struct _IPV6_PACKET
     unsigned short upperLayerHeaderLen;         // Total length of the upper layer header
     unsigned short upperLayerChecksumOffset;    // Offset of the upper layer checksum
     unsigned char upperLayerHeaderType;         // Type definition for the upper-layer header type
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             unsigned char reserved :         3;
             unsigned char useUnspecAddr :    1; // This packet should use the unspecified address
             unsigned char sourceSpecified :  1; // The upper layer or application layer specified a source address
@@ -602,9 +604,9 @@ typedef struct _IPV6_PACKET
     void * neighbor;                            // The neighbor that the message was received from    
     unsigned short offsetInSegment;             // Offset used for storing fragment transmission information
     uint32_t queuedPacketTimeout;				// Time out for IPv6 packets which are queued
-    IPV6_DATA_SEGMENT_HEADER payload;			// IPv6 data segment payload
     TCPIP_NET_HANDLE netIfH;                    // packet network interface
     IPV6_HEADER ipv6Header;						// IPv6 header definition
+    IPV6_DATA_SEGMENT_HEADER payload;			// IPv6 data segment payload
 } IPV6_PACKET;
 
 // *****************************************************************************

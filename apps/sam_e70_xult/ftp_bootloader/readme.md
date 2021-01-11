@@ -39,14 +39,14 @@ nav_order: 5
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
- - [MPLAB Harmony v3 "bsp" repository v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "bsp" repository v3.8.2](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.2)
+ - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
  - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "net" repo v3.6.1](https://github.com/Microchip-MPLAB-Harmony/net/releases/tag/v3.6.1)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- -  MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB Harmony v3 "net" repo v3.7.0](https://github.com/Microchip-MPLAB-Harmony/net/releases/tag/v3.7.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
+ -  MPLAB Harmony 3 Launcher Plugin v3.6.2
+ - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Any Serial Terminal application like Tera Term terminal application.
 
@@ -59,6 +59,7 @@ nav_order: 5
 - Insert the LAN8740 PHY daughter board on the ETHERNET PHY MODULE header
 - Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E70 Xplained Ultra Evaluation Kit
 - Establish a connection between the router/switch with the SAM E70 Xplained Ultra Evaluation Kit through the RJ45 connector
+- Copy **test.bin** from **ftp_bootloader** to **microSD**
 - Insert the microSD card into the microSD card slot on the backside of the hardware board
 - <img src = "images/hardware_setup.png" width="600" height="400" align="middle">
 
@@ -114,12 +115,13 @@ The pre-built hex file can be programmed by following the below steps.
 - <img src = "images/output2.png" width="600" height="400" align="middle">
 
 ## Comments:
-- Reference Application Note: [File Transfer Protocol using MPLAB Harmony v3 TCP/IP Stack ](TBD)
+- Reference Application Note: [File Transfer Protocol using MPLAB Harmony v3 TCP/IP Stack ](http://ww1.microchip.com/downloads/en/Appnotes/File-Transfer-Protocol-Using-MPLAB-Harmonyv3-TCPIP-DS00003475A.pdf)
 - Getting Started Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM E70 MCUs](https://microchipdeveloper.com/harmony3:same70-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.2.0 regenerated and tested the application
 - v1.1.0 regenerated and tested the application
 - v1.0.0 released demo application

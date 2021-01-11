@@ -115,7 +115,7 @@ typedef s4 *psm; //
 
 typedef void *pvoid;
 typedef void *pfvoid;
-typedef void (*PFUNC)();
+typedef void (*PFUNC)(void);
 typedef void (*PFUNC_PAR)(u1);
 
 typedef void ServiceFctType(pvoid);

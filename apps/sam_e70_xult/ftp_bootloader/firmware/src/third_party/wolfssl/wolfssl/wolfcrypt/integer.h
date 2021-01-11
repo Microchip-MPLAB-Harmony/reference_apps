@@ -1,6 +1,6 @@
 /* integer.h
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -229,6 +229,9 @@ typedef int ltm_prime_callback(unsigned char *dst, int len, void *dat);
 #define mp_isodd(a) \
     (((a)->used > 0 && (((a)->dp[0] & 1u) == 1u)) ? MP_YES : MP_NO)
 #define mp_isneg(a)  (((a)->sign != MP_ZPOS) ? MP_YES : MP_NO)
+#define mp_isword(a, w) \
+    ((((a)->used == 1) && ((a)->dp[0] == w)) || ((w == 0) && ((a)->used == 0)) \
+                                                               ? MP_YES : MP_NO)
 
 /* number of primes */
 #ifdef MP_8BIT
@@ -284,6 +287,8 @@ MP_API int  mp_to_unsigned_bin_at_pos(int x, mp_int *t, unsigned char *b);
 MP_API int  mp_to_unsigned_bin (mp_int * a, unsigned char *b);
 MP_API int  mp_to_unsigned_bin_len(mp_int * a, unsigned char *b, int c);
 MP_API int  mp_exptmod (mp_int * G, mp_int * X, mp_int * P, mp_int * Y);
+MP_API int  mp_exptmod_ex (mp_int * G, mp_int * X, int digits, mp_int * P,
+                           mp_int * Y);
 /* end functions needed by Rsa */
 
 /* functions added to support above needed, removed TOOM and KARATSUBA */
@@ -313,6 +318,7 @@ MP_API int  mp_is_bit_set (mp_int * a, mp_digit b);
 MP_API int  mp_mod (mp_int * a, mp_int * b, mp_int * c);
 MP_API int  mp_div(mp_int * a, mp_int * b, mp_int * c, mp_int * d);
 MP_API int  mp_div_2(mp_int * a, mp_int * b);
+MP_API int  mp_div_2_mod_ct (mp_int* a, mp_int* b, mp_int* c);
 MP_API int  mp_add (mp_int * a, mp_int * b, mp_int * c);
 int  s_mp_add (mp_int * a, mp_int * b, mp_int * c);
 int  s_mp_sub (mp_int * a, mp_int * b, mp_int * c);
@@ -322,9 +328,12 @@ MP_API int  mp_reduce_is_2k(mp_int *a);
 MP_API int  mp_dr_is_modulus(mp_int *a);
 MP_API int  mp_exptmod_fast (mp_int * G, mp_int * X, mp_int * P, mp_int * Y,
                              int);
+MP_API int  mp_exptmod_base_2 (mp_int * X, mp_int * P, mp_int * Y);
+#define mp_exptmod_nct(G,X,P,Y)    mp_exptmod_fast(G,X,P,Y,0)
 MP_API int  mp_montgomery_setup (mp_int * n, mp_digit * rho);
 int  fast_mp_montgomery_reduce (mp_int * x, mp_int * n, mp_digit rho);
 MP_API int  mp_montgomery_reduce (mp_int * x, mp_int * n, mp_digit rho);
+#define mp_montgomery_reduce_ex(x, n, rho, ct) mp_montgomery_reduce (x, n, rho)
 MP_API void mp_dr_setup(mp_int *a, mp_digit *d);
 MP_API int  mp_dr_reduce (mp_int * x, mp_int * n, mp_digit k);
 MP_API int  mp_reduce_2k(mp_int *a, mp_int *n, mp_digit d);
@@ -348,6 +357,8 @@ MP_API int  mp_sqr (mp_int * a, mp_int * b);
 MP_API int  mp_mulmod (mp_int * a, mp_int * b, mp_int * c, mp_int * d);
 MP_API int  mp_submod (mp_int* a, mp_int* b, mp_int* c, mp_int* d);
 MP_API int  mp_addmod (mp_int* a, mp_int* b, mp_int* c, mp_int* d);
+MP_API int  mp_submod_ct (mp_int* a, mp_int* b, mp_int* c, mp_int* d);
+MP_API int  mp_addmod_ct (mp_int* a, mp_int* b, mp_int* c, mp_int* d);
 MP_API int  mp_mul_d (mp_int * a, mp_digit b, mp_int * c);
 MP_API int  mp_2expt (mp_int * a, int b);
 MP_API int  mp_set_bit (mp_int * a, int b);

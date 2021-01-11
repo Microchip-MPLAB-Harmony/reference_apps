@@ -12,7 +12,7 @@
 */
 /* blake2-int.h
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -42,7 +42,7 @@
 
 #if defined(_MSC_VER)
     #define ALIGN(x) __declspec(align(x))
-#elif defined(__GNUC__)
+#elif defined(__IAR_SYSTEMS_ICC__) || defined(__GNUC__)
     #define ALIGN(x) __attribute__((aligned(x)))
 #else
     #define ALIGN(x)

@@ -696,7 +696,7 @@ enum {
 
 /* SHA-384 */
 typedef struct CRYPT_SHA384_CTX {
-    long long holder[32];       /* This structure should be large enough to hold the internal 
+    uint64_t holder[32];       /* This structure should be large enough to hold the internal 
                                    representation, the size is checked during initialization*/
 
 } CRYPT_SHA384_CTX;
@@ -826,7 +826,7 @@ enum {
 
 /* SHA-512 */
 typedef struct CRYPT_SHA512_CTX {
-    long long holder[36];       /* This structure should be large enough to hold 
+    uint64_t holder[36];       /* This structure should be large enough to hold 
                                    the internal representation, the size is checked 
                                    during initialization*/
 
@@ -957,7 +957,7 @@ enum {
 
 /* HMAC */
 typedef struct CRYPT_HMAC_CTX {
-    long long holder[96];   /* This structure should be large enough to hold 
+    uint64_t holder[96];   /* This structure should be large enough to hold 
                                the internal representation, the size is checked 
                                during initialization*/
 } CRYPT_HMAC_CTX;
@@ -1330,7 +1330,7 @@ int CRYPT_RNG_BlockGenerate(CRYPT_RNG_CTX*, unsigned char*, unsigned int);
 
 /* TDES */
 typedef struct CRYPT_TDES_CTX {
-    int holder[104];   /* This structure should be large enough to hold 
+    int holder[112];   /* This structure should be large enough to hold 
                           the internal representation, the size is checked 
                           during initialization*/
 } CRYPT_TDES_CTX;

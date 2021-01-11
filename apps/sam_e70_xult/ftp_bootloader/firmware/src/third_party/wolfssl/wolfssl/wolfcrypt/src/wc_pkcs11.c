@@ -1,12 +1,12 @@
 /* wc_pkcs11.c
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
  * wolfSSL is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
  * wolfSSL is distributed in the hope that it will be useful,
@@ -335,7 +335,7 @@ int wc_Pkcs11Token_Open(Pkcs11Token* token, int readWrite)
 
 /**
  * Close the token's session.
- * All object, like keys, will be destoyed.
+ * All object, like keys, will be destroyed.
  *
  * @param  token    [in]  Token object.
  */
@@ -523,7 +523,7 @@ static int Pkcs11CreateEccPrivateKey(CK_OBJECT_HANDLE* privateKey,
  *
  * @param  session  [in]  Session object.
  * @param  mech     [in]  Mechanism to look for.
- * @return  NOT_COMPILED_IN when mechanism not avaialble.
+ * @return  NOT_COMPILED_IN when mechanism not available.
  *          0 when mechanism is available.
  */
 static int Pkcs11MechAvail(Pkcs11Session* session, CK_MECHANISM_TYPE mech)
@@ -869,7 +869,7 @@ static int Pkcs11RsaPublic(Pkcs11Session* session, wc_CryptoInfo* info)
 
     WOLFSSL_MSG("PKCS#11: RSA Public Key Operation");
 
-    if (ret == 0 && info->pk.rsa.outLen == NULL) {
+    if (info->pk.rsa.outLen == NULL) {
         ret = BAD_FUNC_ARG;
     }
 
@@ -941,7 +941,7 @@ static int Pkcs11RsaPrivate(Pkcs11Session* session, wc_CryptoInfo* info)
 
     WOLFSSL_MSG("PKCS#11: RSA Private Key Operation");
 
-    if (ret == 0 && info->pk.rsa.outLen == NULL) {
+    if (info->pk.rsa.outLen == NULL) {
         ret = BAD_FUNC_ARG;
     }
 
@@ -1061,8 +1061,8 @@ static int Pkcs11GetRsaPublicKey(RsaKey* key, Pkcs11Session* session,
         ret = WC_HW_E;
 
     if (ret == 0) {
-        modSz = tmpl[0].ulValueLen;
-        expSz = tmpl[1].ulValueLen;
+        modSz = (int)tmpl[0].ulValueLen;
+        expSz = (int)tmpl[1].ulValueLen;
         mod = (unsigned char*)XMALLOC(modSz, key->heap,
                                                        DYNAMIC_TYPE_TMP_BUFFER);
         if (mod == NULL)
@@ -1162,9 +1162,9 @@ static int Pkcs11RsaKeyGen(Pkcs11Session* session, wc_CryptoInfo* info)
         ret = Pkcs11GetRsaPublicKey(key, session, pubKey);
 
     if (pubKey != NULL_PTR)
-        ret = session->func->C_DestroyObject(session->handle, pubKey);
+        ret = (int)session->func->C_DestroyObject(session->handle, pubKey);
     if (ret != 0 && privKey != NULL_PTR)
-        ret = session->func->C_DestroyObject(session->handle, privKey);
+        ret = (int)session->func->C_DestroyObject(session->handle, privKey);
 
     return ret;
 }
@@ -1190,7 +1190,7 @@ static int Pkcs11FindEccKey(CK_OBJECT_HANDLE* key, CK_OBJECT_CLASS keyClass,
     int             ret = 0;
     int             i;
     unsigned char*  ecPoint = NULL;
-    word32          len;
+    word32          len = 0;
     CK_RV           rv;
     CK_ULONG        count;
     CK_UTF8CHAR     params[MAX_EC_PARAM_LEN];
@@ -1326,10 +1326,11 @@ static int Pkcs11GetEccPublicKey(ecc_key* key, Pkcs11Session* session,
                                  CK_OBJECT_HANDLE pubKey)
 {
     int            ret = 0;
-    int            i = 0;
+    word32         i = 0;
     int            curveIdx;
     unsigned char* point = NULL;
     int            pointSz;
+    byte           tag;
     CK_RV          rv;
     CK_ATTRIBUTE   tmpl[] = {
         { CKA_EC_POINT,  NULL_PTR, 0 },
@@ -1360,7 +1361,9 @@ static int Pkcs11GetEccPublicKey(ecc_key* key, Pkcs11Session* session,
     if (ret == 0 && pointSz < key->dp->size * 2 + 1 + 2)
         ret = ASN_PARSE_E;
     /* Step over the OCTET_STRING wrapper. */
-    if (ret == 0 && point[i++] != ASN_OCTET_STRING)
+    if (ret == 0 && GetASNTag(point, &i, &tag, pointSz) != 0)
+        ret = ASN_PARSE_E;
+    if (ret == 0 && tag != ASN_OCTET_STRING)
         ret = ASN_PARSE_E;
     if (ret == 0 && point[i] >= ASN_LONG_LENGTH) {
         if (point[i++] != (ASN_LONG_LENGTH | 1))
@@ -1608,9 +1611,9 @@ static word32 Pkcs11ECDSASig_Encode(byte* sig, word32 sz)
     word32 i;
 
     /* Find first byte of data in r and s. */
-    while (sig[rStart] == 0x00 && rStart < sz - 1)
+    while (rStart < sz - 1 && sig[rStart] == 0x00)
         rStart++;
-    while (sig[sz + sStart] == 0x00 && sStart < sz - 1)
+    while (sStart < sz - 1 && sig[sz + sStart] == 0x00)
         sStart++;
     /* Check if 0 needs to be prepended to make integer a positive number. */
     rHigh = sig[rStart] >> 7;
@@ -1667,6 +1670,7 @@ static int Pkcs11ECDSASig_Decode(const byte* in, word32 inSz, byte* sig,
 {
     int ret = 0;
     word32 i = 0;
+    byte   tag;
     int len, seqLen = 2;
 
     /* Make sure zeros in place when decoding short integers. */
@@ -1690,7 +1694,9 @@ static int Pkcs11ECDSASig_Decode(const byte* in, word32 inSz, byte* sig,
         ret = ASN_PARSE_E;
 
     /* Check INT */
-    if (ret == 0 && in[i++] != ASN_INTEGER)
+    if (ret == 0 && GetASNTag(in, &i, &tag, inSz) != 0)
+        ret = ASN_PARSE_E;
+    if (ret == 0 && tag != ASN_INTEGER)
         ret = ASN_PARSE_E;
     if (ret == 0 && (len = in[i++]) > sz + 1)
         ret = ASN_PARSE_E;
@@ -1712,7 +1718,9 @@ static int Pkcs11ECDSASig_Decode(const byte* in, word32 inSz, byte* sig,
     if (ret == 0 && i + 2 > inSz)
         ret = ASN_PARSE_E;
     /* Check INT */
-    if (ret == 0 && in[i++] != ASN_INTEGER)
+    if (ret == 0 && GetASNTag(in, &i, &tag, inSz) != 0)
+        ret = ASN_PARSE_E;
+    if (ret == 0 && tag != ASN_INTEGER)
         ret = ASN_PARSE_E;
     if (ret == 0 && (len = in[i++]) > sz + 1)
         ret = ASN_PARSE_E;

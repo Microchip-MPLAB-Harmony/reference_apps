@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: efc}
+children:
+- type: ElementPosition
+  attributes: {x: '13', y: '314', id: efc}

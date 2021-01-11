@@ -312,7 +312,7 @@ const TCPIP_TCP_MODULE_CONFIG tcpipTCPInitData =
 /*** DHCP client Initialization Data ***/
 const TCPIP_DHCP_MODULE_CONFIG tcpipDHCPInitData =
 {     
-    .dhcpEnable     = TCPIP_DHCP_CLIENT_ENABLED,   
+    .dhcpEnable     = false,   
     .dhcpTmo        = TCPIP_DHCP_TIMEOUT,
     .dhcpCliPort    = TCPIP_DHCP_CLIENT_CONNECT_PORT,
     .dhcpSrvPort    = TCPIP_DHCP_SERVER_LISTEN_PORT,
@@ -348,65 +348,84 @@ const DRV_ETHPHY_INIT tcpipPhyInitData =
 
 };
 
+
+const DRV_GMAC_RXQUE_FILTER_INIT DRV_GMAC_Rx_Filt_Init =
+{ 
+	.type1FiltCount = TCPIP_GMAC_SCREEN1_COUNT_QUE,
+	.type2FiltCount = TCPIP_GMAC_SCREEN2_COUNT_QUE,
+};
+	
 /*** GMAC MAC Initialization Data ***/
 const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
 { 
 	/** QUEUE 0 Intialization**/
-		.gmac_queue_config[0].queueEnable	= true,
+	.gmac_queue_config[0].queueTxEnable	= true,
+	.gmac_queue_config[0].queueRxEnable	= true,
 	.gmac_queue_config[0].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0,
 	.gmac_queue_config[0].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0,
 	.gmac_queue_config[0].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE0,
 	.gmac_queue_config[0].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE0,
+	.gmac_queue_config[0].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0,
 	.gmac_queue_config[0].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE0,
 	.gmac_queue_config[0].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0,
 	.gmac_queue_config[0].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0,
 
 	/** QUEUE 1 Intialization**/
-		.gmac_queue_config[1].queueEnable	= false,	
+	.gmac_queue_config[1].queueTxEnable	= false,
+	.gmac_queue_config[1].queueRxEnable	= false,
 	.gmac_queue_config[1].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE1,
 	.gmac_queue_config[1].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE1,
 	.gmac_queue_config[1].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE1,
 	.gmac_queue_config[1].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE1,
+	.gmac_queue_config[1].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE1,
 	.gmac_queue_config[1].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE1,
 	.gmac_queue_config[1].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE1,
 	.gmac_queue_config[1].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE1,
 
 	/** QUEUE 2 Intialization**/
-		.gmac_queue_config[2].queueEnable	= false,	
+	.gmac_queue_config[2].queueTxEnable	= false,
+	.gmac_queue_config[2].queueRxEnable	= false,		
 	.gmac_queue_config[2].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE2,
 	.gmac_queue_config[2].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE2,
 	.gmac_queue_config[2].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE2,
 	.gmac_queue_config[2].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE2,
+	.gmac_queue_config[2].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE2,
 	.gmac_queue_config[2].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE2,
 	.gmac_queue_config[2].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE2,
 	.gmac_queue_config[2].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE2,
 
 	/** QUEUE 3 Intialization**/
-		.gmac_queue_config[3].queueEnable	= false,	
+	.gmac_queue_config[3].queueTxEnable	= false,
+	.gmac_queue_config[3].queueRxEnable	= false,
 	.gmac_queue_config[3].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE3,
 	.gmac_queue_config[3].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE3,
 	.gmac_queue_config[3].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE3,
 	.gmac_queue_config[3].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE3,
+	.gmac_queue_config[3].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE3,
 	.gmac_queue_config[3].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE3,
 	.gmac_queue_config[3].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE3,
 	.gmac_queue_config[3].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE3,
 
 	/** QUEUE 4 Intialization**/
-		.gmac_queue_config[4].queueEnable	= false,	
+	.gmac_queue_config[4].queueTxEnable	= false,
+	.gmac_queue_config[4].queueRxEnable	= false,		
 	.gmac_queue_config[4].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE4,
 	.gmac_queue_config[4].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE4,
 	.gmac_queue_config[4].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE4,
 	.gmac_queue_config[4].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE4,
+	.gmac_queue_config[4].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE4,
 	.gmac_queue_config[4].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE4,
 	.gmac_queue_config[4].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE4,
 	.gmac_queue_config[4].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE4,
 
 	/** QUEUE 5 Intialization**/
-	.gmac_queue_config[5].queueEnable	= false,	
+	.gmac_queue_config[5].queueTxEnable	= false,
+	.gmac_queue_config[5].queueRxEnable	= false,
 	.gmac_queue_config[5].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE5,
 	.gmac_queue_config[5].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE5,
 	.gmac_queue_config[5].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE5,
 	.gmac_queue_config[5].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE5,
+	.gmac_queue_config[5].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE5,
 	.gmac_queue_config[5].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE5,
 	.gmac_queue_config[5].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE5,
 	.gmac_queue_config[5].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE5,
@@ -415,6 +434,11 @@ const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
     .ethModuleId            = TCPIP_INTMAC_MODULE_ID,
     .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
     .pPhyInit               = &tcpipPhyInitData,
+	.checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
+    .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
+    .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
+    .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,
+	.pRxQueFiltInit			= &DRV_GMAC_Rx_Filt_Init,
 };
 
 
@@ -429,10 +453,10 @@ const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
 /*** FTP Client Initialization Data ***/
 const TCPIP_FTPC_MODULE_CONFIG_TYPE tcpipFTPClientInitData =
 { 
-    .nMaxClients   			= TCPIP_FTPC_MAX_NUM_CLIENT,
-	.data_tx_buffsize_dflt 	= TCPIP_FTPC_DATA_SKT_TX_BUFF_SIZE_DFLT,
-	.data_rx_buffsize_dflt 	= TCPIP_FTPC_DATA_SKT_RX_BUFF_SIZE_DFLT,	
-    .ftpcTmo				= TCPIP_FTPC_TMO,
+    .nMaxClients            = TCPIP_FTPC_MAX_NUM_CLIENT,
+    .data_tx_buffsize_dflt  = TCPIP_FTPC_DATA_SKT_TX_BUFF_SIZE_DFLT,
+    .data_rx_buffsize_dflt  = TCPIP_FTPC_DATA_SKT_RX_BUFF_SIZE_DFLT,    
+    .ftpcTmo                = TCPIP_FTPC_TMO,
 };
 
 
@@ -443,6 +467,18 @@ const TCPIP_IPV6_MODULE_CONFIG  tcpipIPv6InitData =
     .rxfragmentBufSize      = TCPIP_IPV6_RX_FRAGMENTED_BUFFER_SIZE,
     .fragmentPktRxTimeout   = TCPIP_IPV6_FRAGMENT_PKT_TIMEOUT,
 };
+
+/*** IPv4 Initialization Data ***/
+
+
+const TCPIP_IPV4_MODULE_CONFIG  tcpipIPv4InitData = 
+{
+    .arpEntries = TCPIP_IPV4_ARP_SLOTS, 
+};
+
+
+
+
 
 
 TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
@@ -459,7 +495,7 @@ TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
 
 const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] =
 {
-	/*** Network Configuration Index 0 ***/
+    /*** Network Configuration Index 0 ***/
     {
         TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0,       // interface
         TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX0,            // hostName
@@ -479,7 +515,7 @@ const size_t TCPIP_HOSTS_CONFIGURATION_SIZE = sizeof (TCPIP_HOSTS_CONFIGURATION)
 
 const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
 {
-    {TCPIP_MODULE_IPV4,             0},
+    {TCPIP_MODULE_IPV4,             &tcpipIPv4InitData},
 
     {TCPIP_MODULE_ICMP,             0},                             // TCPIP_MODULE_ICMP
 
@@ -492,7 +528,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_DHCP_CLIENT,      &tcpipDHCPInitData},            // TCPIP_MODULE_DHCP_CLIENT
     {TCPIP_MODULE_ANNOUNCE,         &tcpipAnnounceInitData},        // TCPIP_MODULE_ANNOUNCE
 
-	{TCPIP_MODULE_FTP_CLIENT,       &tcpipFTPClientInitData},       // TCPIP_MODULE_FTP_CLIENT
+    {TCPIP_MODULE_FTP_CLIENT,       &tcpipFTPClientInitData},       // TCPIP_MODULE_FTP_CLIENT
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
@@ -523,7 +559,7 @@ const size_t TCPIP_STACK_MODULE_CONFIG_TBL_SIZE = sizeof (TCPIP_STACK_MODULE_CON
  ********************************************************************/
 
 
-SYS_MODULE_OBJ TCPIP_STACK_Init()
+SYS_MODULE_OBJ TCPIP_STACK_Init(void)
 {
     TCPIP_STACK_INIT    tcpipInit;
 
@@ -539,14 +575,14 @@ SYS_MODULE_OBJ TCPIP_STACK_Init()
 
 // <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
-const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] = 
+const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 {
-	{
-		.mountName = SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0,
-		.devName   = SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0, 
-		.mediaType = SYS_FS_MEDIA_TYPE_IDX0,
-		.fsType   = SYS_FS_TYPE_IDX0   
-	},
+    {
+        .mountName = SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0,
+        .devName   = SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0,
+        .mediaType = SYS_FS_MEDIA_TYPE_IDX0,
+        .fsType   = SYS_FS_TYPE_IDX0
+    },
 };
 
 
@@ -643,7 +679,7 @@ const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
 
 const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
 {
-    .uartPLIB = &sysConsole0UARTPlibAPI,
+    .uartPLIB = &sysConsole0UARTPlibAPI,    
 };
 
 const SYS_CONSOLE_INIT sysConsole0Init =
@@ -698,26 +734,27 @@ const SYS_DEBUG_INIT debugInit =
 void SYS_Initialize ( void* data )
 {
 
+
     EFC_Initialize();
   
     CLOCK_Initialize();
 	PIO_Initialize();
 
-  
 
- 
+
+  
 
  
     TC0_CH0_TimerInitialize(); 
      
     
 	BSP_Initialize();
-	USART1_Initialize();
-    
+    USART1_Initialize();
+
     if (APP_Bootloader_Enter() == false)
-        {
-            APP_Run_Application();
-        }
+    {
+        APP_Run_Application();
+    }
 
     XDMAC_Initialize();
 
@@ -753,6 +790,7 @@ void SYS_Initialize ( void* data )
     SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
+    CRYPT_WCCB_Initialize();
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );
 
