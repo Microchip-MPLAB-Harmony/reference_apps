@@ -631,6 +631,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: drv_usbhs_v1, value: 'true'}
+  - type: Boolean
+    attributes: {id: PMC_MCKR_UPLLDIV2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Hex
     attributes: {id: PMC_PCER0}
     children:
