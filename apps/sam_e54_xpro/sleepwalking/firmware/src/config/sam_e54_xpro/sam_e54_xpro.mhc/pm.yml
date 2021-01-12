@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: pm}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: PM_STDBYCFG_FASTWKUP}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: KeyValueSet
+    attributes: {id: PM_STDBYCFG_RAMCFG}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+- type: ElementPosition
+  attributes: {x: '18', y: '240', id: pm}
