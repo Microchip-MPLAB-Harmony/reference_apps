@@ -173,6 +173,7 @@ void send_hr_data_over_ble(void)
 
 void APP_Initialize ( void )
 {
+    DRV_BM71_Initialize();
     /* Place the App state machine in its initial state. */
     app_hr3Data.state = APP_HR3_STATE_INIT;
     app_hr3Data.i2cHandle      = DRV_HANDLE_INVALID;
@@ -203,6 +204,7 @@ void APP_Initialize ( void )
  */
 void APP_Tasks ( void )
 {
+    DRV_BM71_Tasks();
     bleTasks(); 
 
     /* Check the application's current state. */

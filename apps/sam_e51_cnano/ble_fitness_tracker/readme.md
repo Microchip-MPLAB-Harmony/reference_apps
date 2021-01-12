@@ -27,12 +27,12 @@ nav_order: 4
   an index finger on top of the sensor to get the heart rate via I2C interface.
 
 > The eINK display is a very low power consumption display and it has the ability to retain the information,
-  even after disconnecting from the power source.
-  The host MCU SAM E51 is interfaced with the Heart Rate 3 click over the I2C interface and eINK click over SPI Interface.
+  even after disconnecting from the power source. The host MCU SAM E51 is interfaced with the Heart Rate 3 click
+  over the I2C interface and eINK click over SPI Interface.
 
 ## Modules/Technology Used:
 
-- Peripheral Modules      
+- Peripheral Modules  
 	- Timer
 	- EIC
 - Driver Modules
@@ -52,14 +52,15 @@ nav_order: 4
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- - [MPLAB Harmony v3 "bt" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/bt/releases/tag/v3.4.0)     
- - MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
+- [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
+- [MPLAB Harmony v3 "bt" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/bt/releases/tag/v3.4.0)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.2  
+- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- Microchip Bluetooth Data Android App - Install using "\ble_fitness_tracker\firmware\android_apk\mbd_3_1.apk"  
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
@@ -112,7 +113,7 @@ nav_order: 4
 - Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board  
 - Power the SAM E51 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)  
 
-	<img src = "images/ble_fitness_tracker_demo_setup.jpg" width="600" height="650">  
+  <img src = "images/ble_fitness_tracker_demo_setup.jpg" width="600" height="650">  
 
 
 ## Programming hex file:
@@ -141,33 +142,38 @@ The pre-built hex file can be programmed by following the below steps.
 <span style="color:blue"> *Before proceeding, install the Microchip Bluetooth Data android app in an Android Smartphone.* </span>
 - Enable Bluetooth and location from Smartphone settings
 - Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano
-- Parallelly, open the "**Microchip Bluetooth Data (MBD)**" android app from your smartphone and tap on "Bluetooth Smart" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
+- Parallelly, open the "**Microchip Bluetooth Data (MBD)**" android app from your smartphone
+  and tap on "Bluetooth Smart" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
 <img src = "images/mbd_appscreen1.jpg" width="250" height="450" align="middle">
 
 - After power up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor
 - After successful initialization of heart rate sensor, two integrated LEDs on the heart rate 3 click lights up
 
--  Now, scan for Bluetooth devices by tapping START SCAN option on the MBD APP. The BM71
-device should appear as **MCHP_SAM_E51_HR** in the list of Bluetooth devices.  
+-  Now, scan for Bluetooth devices by tapping START SCAN option on the MBD APP.
+  The BM71 device should appear as **MCHP_SAM_E51_HR** in the list of Bluetooth devices.  
 <img src = "images/mbd_appscreen2.jpg" width="250" height="450" align="middle">
 
-- Stop the scan and connect the **MCHP BLE device** by clicking on **MCHP_SAM_E51_HR**.  This will establish a connection between the MBD BLE application and the BM71 BLE device.  
-<img src = "images/mbd_appscreen3.jpg" width="250" height="450" align="middle"> <img src = "images/mbd_appscreen4.jpg" width="250" height="450" align="middle">
+- Stop the scan and connect the **MCHP BLE device** by clicking on **MCHP_SAM_E51_HR**.
+  This will establish a connection between the MBD BLE application and the BM71 BLE device.  
+<img src = "images/mbd_appscreen3.jpg" width="250" height="450" align="middle">
+<img src = "images/mbd_appscreen4.jpg" width="250" height="450" align="middle">
 
-- Once BLE device is connected, the application shows the different services screen page. Scrolll down and tap on the **Heart Rate Service**, it will redirect to **Sensor Location** page.  
+- Once BLE device is connected, the application shows the different services screen. Scrolll down
+  and tap on the **Heart Rate Service**, it will redirect to **Sensor Location** screen.  
 <img src = "images/mbd_appscreen5.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
 
 - Place your index finger gently on the heart rate 3 click sensor as shown in the figure below.  
 <img src = "images/ble_fitness_tracker_demo_run.jpg" width="600" height="600" align="middle">
 
-- In the bottom right corner of the **Sensor Location** page, disable and enable the **Notify Button**.  
+- In the bottom right corner of the **Sensor Location** screen, disable and enable the **Notify Button**.  
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen7.jpg" width="250" height="450" align="middle">  
 
 - Wait till the LED "LED0" on SAM E51 Curiosity Nano board goes off. Once the LED is off, lift your finger.  
   **Note**: Make sure smartphone screen is not turned off and also don't switch to any other App(s) on your smartphone.
-- The heart rate value (in bpm - beats per minute) gets displayed on the **Sensor Loaction** page as shown in the figure below. Also, the same heart rate value gets displayed on the eINK display.  
+- The heart rate value (in bpm - beats per minute) gets displayed on the **Sensor Loaction** screen as shown
+  in the figure below. Also, the same heart rate value gets displayed on the eINK display.  
 <img src = "images/mbd_appscreen8.jpg" width="250" height="450" align="middle">
 
 ### Running the Demo with out BLE:
@@ -183,8 +189,6 @@ device should appear as **MCHP_SAM_E51_HR** in the list of Bluetooth devices.
 
 
 ## Comments:
-- The application “sam_e51_cnano/ble_fitness_tracker" is developed by applying a patch (available in folder ble_fitness_tracker/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under ble_fitness_tracker/firmware/app_patch” folder.  
-The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
 - Place your index finger gently on the heart rate 3 click sensor, don’t push or put pressure on the sensor (the heart rate values may not be accurate)
 - Make sure smartphone screen is not turned off when reading Heart Rate Sensor data using the MBD smartphone APP and also, don't switch to any other smartphone App(s)
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs](https://microchipdeveloper.com/harmony3:same54-getting-started-training-module)
@@ -192,6 +196,8 @@ The patch is applied due to a known issue in the application. This issue is expe
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 - Code related for Heart Rate services are added manually, harmony v3 framework doesn't generate code related to it.
+
 ## Revision:
+- v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Regenerated and tested application.
 - v1.0.0 - Released demo application

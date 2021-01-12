@@ -307,6 +307,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_Initialize( );
 
     STDIO_BufferModeSet();
@@ -340,8 +341,6 @@ void SYS_Initialize ( void* data )
     sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
     /* Initialize SPI0 Driver Instance */
     sysObj.drvSPI0 = DRV_SPI_Initialize(DRV_SPI_INDEX_0, (SYS_MODULE_INIT *)&drvSPI0InitData);
-    DRV_BM71_Initialize();
-
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
 

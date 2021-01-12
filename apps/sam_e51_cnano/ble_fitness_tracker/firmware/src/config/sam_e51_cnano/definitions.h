@@ -65,7 +65,6 @@
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
 #include "driver/spi/drv_spi.h"
-#include "bt/driver/bm71/drv_bm71.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
