@@ -486,7 +486,9 @@ leResult leRenderer_ArcFill(const leRect* drawRect,
     if (spanAngle == 0 || thickness == 0)
         return LE_SUCCESS;
 
-    leResolvedAngleRanges ranges = leResolveAngles(startAngle, spanAngle);
+    leResolvedAngleRanges ranges;
+
+    leResolveAngles(startAngle, spanAngle, &ranges);
 
     // determine bounding rectangle points
     if(thickness <= 1)
@@ -591,10 +593,12 @@ leResult leRenderer_ArcFill(const leRect* drawRect,
 
     if(rounded == LE_TRUE)
     {
-        lePoint point = lePointOnCircle((drawRect->width / 2) + 1,
-                                        startAngle);
-
+        lePoint point;
         leRect tipRect;
+
+        lePointOnCircle((drawRect->width / 2) + 1,
+                        startAngle,
+                        &point);
 
         point.y *= -1;
 
@@ -612,8 +616,9 @@ leResult leRenderer_ArcFill(const leRect* drawRect,
                               clr,
                               a);
 
-        point = lePointOnCircle((drawRect->width / 2) + 1,
-                                 startAngle + spanAngle);
+        lePointOnCircle((drawRect->width / 2) + 1,
+                        startAngle + spanAngle,
+                        &point);
 
         point.y *= -1;
 

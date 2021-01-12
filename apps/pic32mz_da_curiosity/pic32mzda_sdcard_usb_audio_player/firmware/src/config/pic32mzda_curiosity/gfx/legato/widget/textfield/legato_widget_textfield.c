@@ -92,7 +92,7 @@ static void _setCursorFromPoint(leTextFieldWidget* _this,
                                 const lePoint* pnt)
 {
     leRect widgetRect;
-    leRect textRect;
+    leRect textRect, charRect;
     uint32_t charIdx;
     lePoint lclPnt = *pnt;
 
@@ -135,6 +135,18 @@ static void _setCursorFromPoint(leTextFieldWidget* _this,
         _this->text.fn->getCharIndexAtPoint(&_this->text,
                                             &lclPnt,
                                             &charIdx);
+
+        // round the point
+        _this->text.fn->getCharRect(&_this->text,
+                                    charIdx,
+                                    &charRect);
+
+        lclPnt.x -= charRect.x;
+
+        if(lclPnt.x >= charRect.width >> 1)
+        {
+            charIdx += 1;
+        }
 
         _this->fn->setCursorPosition(_this, charIdx);
     }

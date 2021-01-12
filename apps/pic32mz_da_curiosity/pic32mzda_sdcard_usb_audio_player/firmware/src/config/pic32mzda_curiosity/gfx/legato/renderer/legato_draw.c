@@ -23,7 +23,9 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-
+#include "gfx/legato/common/legato_utils.h"
+#include "gfx/legato/common/legato_math.h"
+#include "gfx/legato/core/legato_state.h"
 #include "gfx/legato/renderer/legato_renderer.h"
 #include "gfx/legato/renderer/legato_gpu.h"
 
@@ -51,7 +53,11 @@ leColor leRenderer_GetPixel(int32_t x,
     x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
     y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
 
-    return lePixelBufferGet_Unsafe(_rendererState.renderBuffer,
+#if LE_RENDER_ORIENTATION != 0
+    leUtils_PointLogicalToScratch((int16_t*)&x, (int16_t*)&y);
+#endif
+
+    return lePixelBufferGet_Unsafe(leGetRenderBuffer(),
                                    x,
                                    y);
 }
@@ -67,7 +73,11 @@ leResult leRenderer_GetPixel_Safe(int32_t x,
     x -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
     y -= _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
 
-    *clr = lePixelBufferGet_Unsafe(_rendererState.renderBuffer,
+#if LE_RENDER_ORIENTATION != 0
+    leUtils_PointLogicalToScratch((int16_t*)&x, (int16_t*)&y);
+#endif
+
+    *clr = lePixelBufferGet_Unsafe(leGetRenderBuffer(),
                                    x,
                                    y);
 
@@ -163,7 +173,11 @@ leResult putPixel(int32_t x,
 {
     (void)a; // unused
 
-    lePixelBufferSet_Unsafe(_rendererState.renderBuffer,
+#if LE_RENDER_ORIENTATION != 0
+    leUtils_PointLogicalToScratch((int16_t*)&x, (int16_t*)&y);
+#endif
+
+    lePixelBufferSet_Unsafe(leGetRenderBuffer(),
                             x,
                             y,
                             clr);
@@ -178,33 +192,59 @@ leResult blendPixel(int32_t x, int32_t y, leColor clr, uint32_t a)
     leColor rgbaSource;
     leColor rgbaDest;
     leColor resultClr;
-    
-    nativeSource = lePixelBufferGet_Unsafe(_rendererState.renderBuffer, x, y);
-    
-    rgbaSource = leColorConvert(leRenderer_CurrentColorMode(),
-                                 LE_COLOR_MODE_RGBA_8888, clr);
-    
-    // blend with alpha channel
-    
-    
-    // blend with alpha argument value
-    rgbaSource &= ~(RGBA_8888_ALPHA_MASK);
-    rgbaSource |= a;
-    
+    uint32_t currentAlpha;
+    uint32_t alphaPercent;
+
+#if LE_RENDER_ORIENTATION != 0
+    leUtils_PointLogicalToScratch((int16_t*)&x, (int16_t*)&y);
+#endif
+
+    // upscale to alpha channel type
+    nativeSource = lePixelBufferGet_Unsafe(leGetRenderBuffer(), x, y);
+
     rgbaDest = leColorConvert(leRenderer_CurrentColorMode(),
                               LE_COLOR_MODE_RGBA_8888,
                               nativeSource);
 
-    rgbaDest |= RGBA_8888_ALPHA_MASK;
+    rgbaSource = leColorConvert(leRenderer_CurrentColorMode(),
+                                LE_COLOR_MODE_RGBA_8888,
+                                clr);
     
+    // blend existing alpha channel value with alpha argument value
+    switch(leRenderer_CurrentColorMode())
+    {
+        case LE_COLOR_MODE_ARGB_8888:
+        case LE_COLOR_MODE_RGBA_8888:
+        case LE_COLOR_MODE_RGBA_5551:
+        {
+
+            currentAlpha = rgbaSource & 0xFF;
+            alphaPercent = lePercentWholeRounded(a, 255);
+            currentAlpha = lePercentOf(currentAlpha, alphaPercent);
+
+            rgbaSource &= ~(RGBA_8888_ALPHA_MASK);
+            rgbaSource |= currentAlpha;
+
+            break;
+        }
+        default:
+        {
+            rgbaSource &= ~(RGBA_8888_ALPHA_MASK);
+            rgbaSource |= a;
+        }
+    }
+
+    if((rgbaSource & RGBA_8888_ALPHA_MASK) == 0)
+        return LE_SUCCESS;
+
     resultClr = leColorBlend_RGBA_8888(rgbaSource, rgbaDest);
-    
+
     // convert to destination format
     clr = leColorConvert(LE_COLOR_MODE_RGBA_8888,
                          leRenderer_CurrentColorMode(),
                          resultClr);
     
-    lePixelBufferSet_Unsafe(_rendererState.renderBuffer,
+    lePixelBufferSet_Unsafe(leGetRenderBuffer(),
                             x,
                             y,
                             clr);
@@ -257,7 +297,23 @@ leResult leRenderer_FillArea(int32_t x,
     else
     {
 #endif
-        lePixelBufferAreaFill_Unsafe(_rendererState.renderBuffer,
+
+#if LE_RENDER_ORIENTATION != 0
+        leRect rotRect;
+        rotRect.x = pnt.x;
+        rotRect.y = pnt.y;
+        rotRect.width = width;
+        rotRect.height = height;
+
+        leUtils_RectLogicalToScratch(&rotRect);
+
+        pnt.x = rotRect.x;
+        pnt.y = rotRect.y;
+        width = rotRect.width;
+        height = rotRect.height;
+#endif
+
+        lePixelBufferAreaFill_Unsafe(leGetRenderBuffer(),
                                      pnt.x,
                                      pnt.y,
                                      width,
@@ -321,7 +377,23 @@ leResult leRenderer_FillArea_Safe(int32_t x,
     else
     {
 #endif
-        lePixelBufferAreaFill(_rendererState.renderBuffer,
+
+#if LE_RENDER_ORIENTATION > 0
+        leRect rotRect;
+        rotRect.x = pnt.x;
+        rotRect.y = pnt.y;
+        rotRect.width = width;
+        rotRect.height = height;
+
+        leUtils_RectLogicalToScratch(&rotRect);
+
+        pnt.x = rotRect.x;
+        pnt.y = rotRect.y;
+        width = rotRect.width;
+        height = rotRect.height;
+#endif
+
+        lePixelBufferAreaFill(leGetRenderBuffer(),
                               pnt.x,
                               pnt.y,
                               width,

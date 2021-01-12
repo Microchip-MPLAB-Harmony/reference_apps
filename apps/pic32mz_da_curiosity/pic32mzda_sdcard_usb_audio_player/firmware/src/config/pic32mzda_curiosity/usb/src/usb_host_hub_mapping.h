@@ -44,6 +44,7 @@
 
 #include "usb/src/usb_external_dependencies.h"
 
+#ifdef USB_HOST_HUB_SUPPORT
 #if (USB_HOST_HUB_SUPPORT == true)
     #include "usb/usb_host_hub_interface.h"
     extern USB_HUB_INTERFACE externalHubInterface;
@@ -51,6 +52,10 @@
 #else
     #define USB_HOST_HUB_INTERFACE (NULL)
 #endif
+#else
+    #define USB_HOST_HUB_INTERFACE (NULL)
+#endif
+
 
 
 #endif

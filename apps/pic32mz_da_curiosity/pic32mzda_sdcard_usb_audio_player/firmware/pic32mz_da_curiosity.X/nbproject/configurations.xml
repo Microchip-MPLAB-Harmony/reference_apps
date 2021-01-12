@@ -810,9 +810,42 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="pic32mzda_curiosity.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_codec_ak4954.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_decoders.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_i2s1.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/ddr.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_sdmmc.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_disp_pdatm4301b_480x272.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_hal_le.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_legato.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_maxtouch_controller.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c1.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c2.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/legato_gfx_pda_tm4301b.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/le_gfx_driver_glcd.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sdhc.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_input.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/uart4.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host_msd.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32mzda_curiosity/harmony.prj</itemPath>
-      <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.xml</itemPath>
       <itemPath>../src/config/pic32mzda_curiosity/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -829,7 +862,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.30</languageToolchainVersion>
+        <languageToolchainVersion>2.41</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -854,6 +887,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>

@@ -26,16 +26,20 @@
 
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#if LE_ENABLE_RAW_DECODER == 1
+
 #include "gfx/legato/renderer/legato_renderer.h"
 
 void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
-static struct InternalBlendStage
+struct InternalBlendStage
 {
     leRawDecodeStage base;
     leRenderState* renderer;
-} blendStage;
+};
+
+static LE_COHERENT_ATTR struct InternalBlendStage blendStage;
 
 static leResult stage_BlendRGBA5551(leRawDecodeStage* stage)
 {
@@ -130,3 +134,5 @@ void _leRawImageDecoder_BlendStage_Internal(leRawDecodeState* state)
 
     _leRawImageDecoder_InjectStage(state, (void*)&blendStage);
 }
+
+#endif /* LE_ENABLE_RAW_DECODER */

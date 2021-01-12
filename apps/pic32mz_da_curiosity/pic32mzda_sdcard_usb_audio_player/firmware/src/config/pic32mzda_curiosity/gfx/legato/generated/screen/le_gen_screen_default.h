@@ -28,17 +28,17 @@ extern leLabelWidget* default_NoMediumLabel1;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
-leResult screenInit_default(); // called when Legato is initialized
-leResult screenShow_default(); // called when screen is shown
-void screenHide_default(); // called when screen is hidden
-void screenDestroy_default(); // called when Legato is destroyed
-void screenUpdate_default(); // called when Legato is updating
+leResult screenInit_default(void); // called when Legato is initialized
+leResult screenShow_default(void); // called when screen is shown
+void screenHide_default(void); // called when screen is hidden
+void screenDestroy_default(void); // called when Legato is destroyed
+void screenUpdate_default(void); // called when Legato is updating
 
 leWidget* screenGetRoot_default(uint32_t lyrIdx); // gets a root widget for this screen
 
 // Screen Events:
-void default_OnShow(); // called when this screen is shown
-void default_OnHide(); // called when this screen is hidden
+void default_OnShow(void); // called when this screen is shown
+void default_OnHide(void); // called when this screen is hidden
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

@@ -166,7 +166,7 @@ typedef struct leTextFieldWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leTextFieldWidget* leTextFieldWidget_New();
+leTextFieldWidget* leTextFieldWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -178,7 +178,7 @@ LIB_EXPORT leTextFieldWidget* leTextFieldWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leTextFieldWidget_Constructor(leTextFieldWidget* wgt);
+void leTextFieldWidget_Constructor(leTextFieldWidget* wgt);
 
 
 #ifdef _DOXYGEN_

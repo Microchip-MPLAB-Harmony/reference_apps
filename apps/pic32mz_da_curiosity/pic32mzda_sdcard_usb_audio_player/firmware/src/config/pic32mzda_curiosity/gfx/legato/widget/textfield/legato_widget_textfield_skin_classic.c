@@ -56,7 +56,9 @@ void _leTextFieldWidget_GetTextRect(leTextFieldWidget* txt,
                                     leRect* textRect,
                                     leRect* drawRect)
 {
-    leRect bounds = txt->fn->localRect(txt);
+    leRect bounds;
+
+    txt->fn->localRect(txt, &bounds);
 
     *textRect = leRect_Zero;
     *drawRect = leRect_Zero;
@@ -92,9 +94,11 @@ void _leTextFieldWidget_GetCursorRect(const leTextFieldWidget* txt,
                                       leRect* cursorRect)
 {
     leRect textRect;
-    leRect bounds = txt->fn->localRect(txt);
+    leRect bounds;
     leRect charRect;
     const leString* str = NULL;
+
+    txt->fn->localRect(txt, &bounds);
 
     if(txt->text.fn->length(&txt->text) > 0)
     {
@@ -141,7 +145,7 @@ void _leTextFieldWidget_GetCursorRect(const leTextFieldWidget* txt,
         // middle of the text
         else
         {
-            txt->hintText->fn->getCharRect(txt->hintText, txt->cursorPos, &charRect);
+            txt->hintText->fn->getCharRect(str, txt->cursorPos, &charRect);
 
             cursorRect->x = textRect.x + charRect.x;
         }

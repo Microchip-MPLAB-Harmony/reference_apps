@@ -23,6 +23,13 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+/** \file legato_fixedheap.h
+* @brief Fixed Heap function and definitions
+*
+* @details Internal library use only
+*
+*/
+
 #ifndef LEGATO_FIXEDHEAP_H
 #define LEGATO_FIXEDHEAP_H
 

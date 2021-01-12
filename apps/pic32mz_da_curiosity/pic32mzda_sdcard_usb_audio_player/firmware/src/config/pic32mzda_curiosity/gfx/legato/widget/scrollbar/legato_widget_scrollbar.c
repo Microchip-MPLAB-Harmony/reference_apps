@@ -214,7 +214,7 @@ static void destructor(leScrollBarWidget* _this)
     _leWidget_Destructor((leWidget*)_this);
 }
 
-leScrollBarWidget* leScrollBarWidget_New()
+leScrollBarWidget* leScrollBarWidget_New(void)
 {
     leScrollBarWidget* bar = NULL;
 
@@ -620,7 +620,7 @@ void _leScrollBarWidget_Paint(leScrollBarWidget* _this);
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
-void _leScrollBarWidget_GenerateVTable()
+void _leScrollBarWidget_GenerateVTable(void)
 {
     _leWidget_FillVTable((void*)&scrollBarWidgetVTable);
 

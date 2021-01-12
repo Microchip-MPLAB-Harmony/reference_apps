@@ -158,7 +158,7 @@ typedef struct leDrawSurfaceWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leDrawSurfaceWidget* leDrawSurfaceWidget_New();
+leDrawSurfaceWidget* leDrawSurfaceWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -170,7 +170,7 @@ LIB_EXPORT leDrawSurfaceWidget* leDrawSurfaceWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leDrawSurfaceWidget_Constructor(leDrawSurfaceWidget* sfc);
+void leDrawSurfaceWidget_Constructor(leDrawSurfaceWidget* sfc);
 // *****************************************************************************
 
 #ifdef _DOXYGEN_

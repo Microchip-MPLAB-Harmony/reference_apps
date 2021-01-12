@@ -198,14 +198,14 @@ leResult _leWidget_SetX(leWidget* _this,
         return LE_SUCCESS;
 
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
         
     _this->rect.x = x;
 
     // invalidate new area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
 
     _this->fn->_damageArea(_this, &area);
         
@@ -230,14 +230,14 @@ leResult _leWidget_SetY(leWidget* _this,
         return LE_SUCCESS;
 
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
         
     _this->rect.y = y;
     
     // invalidate new area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
         
@@ -256,7 +256,7 @@ leResult _leWidget_SetPosition(leWidget* _this,
         return LE_FAILURE;
 
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
 
     _this->fn->_damageArea(_this, &area);
 
@@ -272,7 +272,7 @@ leResult _leWidget_SetPosition(leWidget* _this,
     _this->fn->_handleEvent(_this, (leEvent*)&_moveEvent);
 
     // invalidate new area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
 
@@ -291,7 +291,7 @@ leResult _leWidget_Translate(leWidget* _this,
     LE_ASSERT_THIS();
 
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
     
@@ -307,7 +307,7 @@ leResult _leWidget_Translate(leWidget* _this,
     _this->fn->_handleEvent(_this, (leEvent*)&_moveEvent);
 
     // invalidate new area 
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
       
@@ -332,14 +332,14 @@ leResult _leWidget_SetWidth(leWidget* _this,
         return LE_SUCCESS;
 
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
         
     _this->rect.width = width;
     
     // invalidate new area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
        
@@ -364,14 +364,14 @@ leResult _leWidget_SetHeight(leWidget* _this,
         return LE_SUCCESS;
 
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
         
     _this->rect.height = height;
     
     // invalidate new area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
         
@@ -400,7 +400,7 @@ leResult _leWidget_SetSize(leWidget* _this,
     }
         
     // invalidate old area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
     
@@ -416,7 +416,7 @@ leResult _leWidget_SetSize(leWidget* _this,
     _this->fn->_handleEvent(_this, (leEvent*)&_resizeEvent);
 
     // invalidate new area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
   
@@ -667,54 +667,49 @@ leResult _leWidget_SetVisible(leWidget* _this, leBool visible)
     return LE_SUCCESS;
 }
 
-leRect _leWidget_LocalRect(const leWidget* _this)
+void _leWidget_LocalRect(const leWidget* _this,
+                         leRect* res)
 {
-    leRect res;
-    
     LE_ASSERT_THIS();
     
-    res = _this->rect;
+    *res = _this->rect;
     
-    res.x = 0;
-    res.y = 0;
-    
-    return res;
+    res->x = 0;
+    res->y = 0;
 }
 
-leRect _leWidget_RectToParentSpace(const leWidget* _this)
+void _leWidget_RectToParentSpace(const leWidget* _this,
+                                 leRect* res)
 {
-    leRect rect = {0};
-    
     LE_ASSERT_THIS();
+
+    *res = leRect_Zero;
     
     if(_this != NULL && _this->parent != NULL)
     {
-        rect = _this->rect;
+        *res = _this->rect;
         
-        rect.x += _this->parent->rect.x;
-        rect.y += _this->parent->rect.y;
+        res->x += _this->parent->rect.x;
+        res->y += _this->parent->rect.y;
     }
-    
-    return rect;
 }
 
-leRect _leWidget_RectToScreenSpace(const leWidget* _this)
+void _leWidget_RectToScreenSpace(const leWidget* _this,
+                                 leRect* res)
 {
-    leRect rect = {0};
- 
     LE_ASSERT_THIS();
+
+    *res = leRect_Zero;
     
     if(_this == NULL)
-        return rect;
+        return;
         
-    rect = _this->rect;
+    *res = _this->rect;
     
     if(_this != NULL && _this->parent != NULL)
     {
-        leUtils_RectToScreenSpace(_this->parent, &rect);
+        leUtils_RectToScreenSpace(_this->parent, res);
     }
-    
-    return rect;
 }
 
 static leBool isAncestorOf(const leWidget* sub, const leWidget* obj)
@@ -1048,11 +1043,17 @@ leResult _leWidget_SetVAlignment(leWidget* _this,
     return LE_SUCCESS;
 }
 
-leMargin _leWidget_GetMargins(const leWidget* _this)
+leResult _leWidget_GetMargins(const leWidget* _this,
+                              leMargin* mg)
 {
     LE_ASSERT_THIS();
+
+    if(mg == NULL)
+        return LE_FAILURE;
     
-    return _this->margin;
+    *mg = _this->margin;
+
+    return LE_SUCCESS;
 }
 
 leResult _leWidget_SetMargins(leWidget* _this,
@@ -1146,7 +1147,7 @@ void _leWidget_Invalidate(const leWidget* _this)
     LE_ASSERT_THIS();
     
     // invalidate entire area
-    area = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
 }
@@ -1495,7 +1496,7 @@ void _leWidget_Update(leWidget* _this, uint32_t dt)
 }
 
 #if LE_DYNAMIC_VTABLES == 1
-void _leWidget_GenerateVTable()
+void _leWidget_GenerateVTable(void)
 {
     widgetVTable.getType = _leWidget_GetType;
     widgetVTable.getX = _leWidget_GetX;

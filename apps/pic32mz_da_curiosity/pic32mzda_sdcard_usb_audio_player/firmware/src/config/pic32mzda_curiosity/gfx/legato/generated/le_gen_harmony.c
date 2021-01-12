@@ -40,13 +40,19 @@ static LegatoState legatoState;
 
 void Legato_Initialize(void)
 {
+
+    gfxIOCTLArg_Palette pal;
+
     leInitialize(&gfxDriverInterface, &gfxGPUInterface);
 
-    gfxDriverInterface.setPalette(leGlobalPalette.header.address,
-                                  leGlobalPalette.colorMode,
-                                  leGlobalPalette.colorCount);
+    pal.palette = leGlobalPalette.header.address;
+    pal.mode = leGlobalPalette.colorMode;
+    pal.colorCount = leGlobalPalette.colorCount;
 
-    legato_initialize();
+    gfxDriverInterface.ioctl(GFX_IOCTL_SET_PALETTE, &pal);
+
+
+    legato_initializeScreenState();
 
 
     inputListener.handleTouchDown = &touchDownHandler;
@@ -72,7 +78,7 @@ void Legato_Tasks(void)
         {
             //Legato_DemoModeProcessEvents();
 
-            legato_updateCurrentScreen();
+            legato_updateScreenState();
 
             leUpdate(0);
 

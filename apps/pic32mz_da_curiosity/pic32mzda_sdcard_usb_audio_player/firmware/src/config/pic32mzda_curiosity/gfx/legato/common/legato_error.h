@@ -91,7 +91,7 @@
  * @param param1 val is not used.
  * @return void.
  */
-void leAssert();
+void leAssert(void) __attribute__ ((noreturn));;
 
 // *****************************************************************************
 /* Function:
@@ -120,7 +120,7 @@ void leAssert();
  * @endcode
  * @return pointer the global error message.
  */
-const char* leGetErrorMessage();
+const char* leGetErrorMessage(void);
 
 // *****************************************************************************
 /* Function:
@@ -184,7 +184,7 @@ void leSetErrorMessage(const char* msg);
  * @param param1 msg is the message to print.
  * @return void.
  */
-void leSprintfErrorMessage(const char* fmt, ...);
+void leSprintfErrorMessage(const char* fmt, ...) __attribute__ ((noreturn));;
 
 #endif
 

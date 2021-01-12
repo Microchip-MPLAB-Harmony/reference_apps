@@ -21,6 +21,12 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
+/** \file legato_tablestring.h
+* @brief Definition for the table string feature.
+*
+* @details .
+*/
+
 #ifndef LEGATO_TABLESTRING_H
 #define LEGATO_TABLESTRING_H
 
@@ -103,7 +109,7 @@ typedef struct leTableString
  * @param  idx is the table from which to create
  * @return returns a new table string.
  */
-LIB_EXPORT leTableString* leTableString_New(uint32_t idx);
+leTableString* leTableString_New(uint32_t idx);
 
 // *****************************************************************************
 /* Function:
@@ -144,8 +150,8 @@ LIB_EXPORT leTableString* leTableString_New(uint32_t idx);
  * @param idx is the index location
  * @return void.
  */
-LIB_EXPORT void leTableString_Constructor(leTableString* str,
-                                          uint32_t idx);
+void leTableString_Constructor(leTableString* str,
+                               uint32_t idx);
 
 
 #ifdef _DOXYGEN_

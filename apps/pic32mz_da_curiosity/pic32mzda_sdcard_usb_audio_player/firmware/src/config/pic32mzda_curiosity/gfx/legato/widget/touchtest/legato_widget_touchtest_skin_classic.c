@@ -144,7 +144,7 @@ static void drawLines(leTouchTestWidget* tch)
     uint32_t i, j;
     leColor c1, c2, clr;
     
-    widgetRect = tch->fn->rectToScreen(tch);
+    tch->fn->rectToScreen(tch, &widgetRect);
     
     // draw lines
     j = tch->start;

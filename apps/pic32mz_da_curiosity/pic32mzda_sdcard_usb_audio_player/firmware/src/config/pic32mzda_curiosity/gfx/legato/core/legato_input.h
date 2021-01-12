@@ -261,10 +261,10 @@ typedef struct leInputState
 /**
   * @cond INTERNAL
   */
-leInputState* _leGetInputState();
+leInputState* _leGetInputState(void);
 
-leResult leInput_Init();
-void leInput_Shutdown();
+leResult leInput_Init(void);
+void leInput_Shutdown(void);
 /**
   * @endcond
   *
@@ -305,7 +305,7 @@ void leInput_Shutdown();
  * @param void.
  * @return LE_TRUE if input is enabled, otherwise LE_FALSE.
  */
-LIB_EXPORT leBool leInput_GetEnabled();
+leBool leInput_GetEnabled(void);
 
 // *****************************************************************************
 /* Function:
@@ -336,7 +336,7 @@ LIB_EXPORT leBool leInput_GetEnabled();
  * @param enable the new status.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leInput_SetEnabled(leBool enable);
+leResult leInput_SetEnabled(leBool enable);
 
 // *****************************************************************************
 /* Function:
@@ -372,7 +372,7 @@ LIB_EXPORT leResult leInput_SetEnabled(leBool enable);
  * @param y is the y coordinate.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y);
+leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y);
 
 // *****************************************************************************
 /* Function:
@@ -408,7 +408,7 @@ LIB_EXPORT leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y);
  * @param y is the y coordinate.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y);
+leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y);
 
 // *****************************************************************************
 /* Function:
@@ -444,7 +444,7 @@ LIB_EXPORT leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y);
  * @param y is the y coordinate.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y);
+leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y);
 
 /* internal use only */
 /**
@@ -454,14 +454,14 @@ LIB_EXPORT leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y);
 // alternative input APIs (not yet implemented)
 
 /*
-LIB_EXPORT leResult leInput_InjectGesture(leGesture id, int32_t x, int32_t y);
+leResult leInput_InjectGesture(leGesture id, int32_t x, int32_t y);
 
-LIB_EXPORT leResult leInput_InjectKeyDown(leKey key);
-LIB_EXPORT leResult leInput_InjectKeyUp(leKey key);
+leResult leInput_InjectKeyDown(leKey key);
+leResult leInput_InjectKeyUp(leKey key);
 
-LIB_EXPORT leResult leInput_InjectMouseButtonDown(leMouseButton button);
-LIB_EXPORT leResult leInput_InjectMouseButtonUp(leMouseButton button);
-LIB_EXPORT leResult leInput_InjectMouseMoved(int32_t x, int32_t y);*/
+leResult leInput_InjectMouseButtonDown(leMouseButton button);
+leResult leInput_InjectMouseButtonUp(leMouseButton button);
+leResult leInput_InjectMouseMoved(int32_t x, int32_t y);*/
 
 leEventResult _leInput_HandleInputEvent(leEvent* evt);
 /**

@@ -272,7 +272,7 @@ typedef struct leLineGraphWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leLineGraphWidget* leLineGraphWidget_New();
+leLineGraphWidget* leLineGraphWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -284,7 +284,7 @@ LIB_EXPORT leLineGraphWidget* leLineGraphWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leLineGraphWidget_Constructor(leLineGraphWidget* wgt);
+void leLineGraphWidget_Constructor(leLineGraphWidget* wgt);
 
 // *****************************************************************************
 /* Virtual Member Function:

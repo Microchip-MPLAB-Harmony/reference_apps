@@ -86,7 +86,7 @@ typedef struct leRectArray
  * @param arr is array to initialize.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_Create(leRectArray* arr);
+leResult leRectArray_Create(leRectArray* arr);
 
 
 // *****************************************************************************
@@ -108,7 +108,7 @@ LIB_EXPORT leResult leRectArray_Create(leRectArray* arr);
  * @param sz The desired capacity.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_Resize(leRectArray* arr, uint32_t sz);
+leResult leRectArray_Resize(leRectArray* arr, uint32_t sz);
 
 // *****************************************************************************
 /**
@@ -125,8 +125,8 @@ LIB_EXPORT leResult leRectArray_Resize(leRectArray* arr, uint32_t sz);
  * @param val is the value to push.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_PushFront(leRectArray* arr,
-                                          const leRect* rect);
+leResult leRectArray_PushFront(leRectArray* arr,
+                               const leRect* rect);
 
 // *****************************************************************************
 /**
@@ -141,7 +141,7 @@ LIB_EXPORT leResult leRectArray_PushFront(leRectArray* arr,
  * @param arr The pointer to the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_PopFront(leRectArray* arr);
+leResult leRectArray_PopFront(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -157,7 +157,7 @@ LIB_EXPORT leResult leRectArray_PopFront(leRectArray* arr);
  * @param val is the value to push.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_PushBack(leRectArray* arr, const leRect* rect);
+leResult leRectArray_PushBack(leRectArray* arr, const leRect* rect);
 
 // *****************************************************************************
 /**
@@ -171,7 +171,7 @@ LIB_EXPORT leResult leRectArray_PushBack(leRectArray* arr, const leRect* rect);
  * @param arr is the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_PopBack(leRectArray* arr);
+leResult leRectArray_PopBack(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -191,9 +191,9 @@ LIB_EXPORT leResult leRectArray_PopBack(leRectArray* arr);
  * @param val is value to insert.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_InsertAt(leRectArray* arr,
-                                         uint32_t idx,
-                                         const leRect* rect);
+leResult leRectArray_InsertAt(leRectArray* arr,
+                              uint32_t idx,
+                              const leRect* rect);
 
 // *****************************************************************************
 /**
@@ -209,7 +209,7 @@ LIB_EXPORT leResult leRectArray_InsertAt(leRectArray* arr,
  * @param idx is the location at which to insert value.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_RemoveAt(leRectArray* arr, uint32_t idx);
+leResult leRectArray_RemoveAt(leRectArray* arr, uint32_t idx);
 
 // *****************************************************************************
 /**
@@ -225,7 +225,7 @@ LIB_EXPORT leResult leRectArray_RemoveAt(leRectArray* arr, uint32_t idx);
  * @param dest is the destination array.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_Copy(leRectArray* src, leRectArray* dest);
+leResult leRectArray_Copy(leRectArray* src, leRectArray* dest);
 
 // *****************************************************************************
 /**
@@ -239,7 +239,7 @@ LIB_EXPORT leResult leRectArray_Copy(leRectArray* src, leRectArray* dest);
  * @param arr is the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_Clear(leRectArray* arr);
+leResult leRectArray_Clear(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -252,7 +252,7 @@ LIB_EXPORT leResult leRectArray_Clear(leRectArray* arr);
  * @param arr the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_Destroy(leRectArray* arr);
+leResult leRectArray_Destroy(leRectArray* arr);
 
 
 // *****************************************************************************
@@ -266,7 +266,7 @@ LIB_EXPORT leResult leRectArray_Destroy(leRectArray* arr);
  * @param arr the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_RemoveDuplicates(leRectArray* arr);
+leResult leRectArray_RemoveDuplicates(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -279,7 +279,7 @@ LIB_EXPORT leResult leRectArray_RemoveDuplicates(leRectArray* arr);
  * @param arr is the array to sort.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_SortBySize(leRectArray* arr);
+leResult leRectArray_SortBySize(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -293,7 +293,7 @@ LIB_EXPORT leResult leRectArray_SortBySize(leRectArray* arr);
  * @param arr the array to sort.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_SortByX(leRectArray* arr);
+leResult leRectArray_SortByX(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -307,7 +307,7 @@ LIB_EXPORT leResult leRectArray_SortByX(leRectArray* arr);
  * @param arr the array to analyze.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_SortByY(leRectArray* arr);
+leResult leRectArray_SortByY(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -320,7 +320,7 @@ LIB_EXPORT leResult leRectArray_SortByY(leRectArray* arr);
  * @param arr the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_MergeSimilar(leRectArray* arr);
+leResult leRectArray_MergeSimilar(leRectArray* arr);
 
 // *****************************************************************************
 /**
@@ -335,7 +335,23 @@ LIB_EXPORT leResult leRectArray_MergeSimilar(leRectArray* arr);
  * @param arr the array to modify.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_RemoveOverlapping(leRectArray* arr);
+leResult leRectArray_RemoveOverlapping(leRectArray* arr);
+
+#if LE_SCRATCH_BUFFER_PADDING == 1
+// *****************************************************************************
+/**
+ * @brief Pad existing rectangles
+ * @details Analyzes and splits rectangles in order to conform them to a defined
+ * padding strategy.
+ * @code
+ * leRectArray* arr;
+ * leRectArray_PadRectangles(arr)
+ * @endcode
+ * @param arr the array to modify.
+ * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
+ */
+leResult leRectArray_PadRectangles(leRectArray* arr);
+#endif
 
 // *****************************************************************************
 /**
@@ -356,9 +372,9 @@ LIB_EXPORT leResult leRectArray_RemoveOverlapping(leRectArray* arr);
  * @param height arr the crop height.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leRectArray_CropToArea(leRectArray* arr,
-                                           uint32_t width,
-                                           uint32_t height);
+leResult leRectArray_CropToArea(leRectArray* arr,
+                                uint32_t width,
+                                uint32_t height);
 
 
 // *****************************************************************************

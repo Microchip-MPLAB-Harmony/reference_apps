@@ -121,7 +121,7 @@ void _leWindowWidget_GetIconRect(const leWindowWidget* win,
                                      win->widget.margin.bottom,
                                      win->iconMargin);
                                      
-    *imgRect = leRectClipAdj(imgRect, &barRect, imgSrcRect);    
+    leRectClipAdj(imgRect, &barRect, imgSrcRect, imgRect);
     
     leUtils_RectToScreenSpace((leWidget*)win, imgRect);                                 
 }
@@ -356,7 +356,7 @@ static void drawBorder(leWindowWidget* win)
     }
     else if(win->widget.style.borderType == LE_WIDGET_BORDER_BEVEL)
     {
-        rect = win->fn->localRect(win);
+        win->fn->localRect(win, &rect);
         
         leUtils_RectToScreenSpace((leWidget*)win, &rect);
         

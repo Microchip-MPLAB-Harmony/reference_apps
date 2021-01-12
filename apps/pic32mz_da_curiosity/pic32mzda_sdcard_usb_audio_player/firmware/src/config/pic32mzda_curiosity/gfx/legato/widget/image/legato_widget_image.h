@@ -60,16 +60,6 @@ typedef struct leImage leImage;
 // Section: Data Types and Constants
 // *****************************************************************************
 // *****************************************************************************
-#if LE_IMAGE_WIDGET_DEBUG_CB == 1
-typedef void (*leImageWidget_DrawEventCallback)(leImageWidget* );
-
-#define DEBUG_START_VFN void (*setDebugDrawStartCallback)(THIS_TYPE* _this, leImageWidget_DrawEventCallback cb);
-#define DEBUG_END_VFN void (*setDebugDrawEndCallback)(THIS_TYPE* _this, leImageWidget_DrawEventCallback cb);
-#else
-#define DEBUG_START_VFN
-#define DEBUG_END_VFN
-#endif
-
 
 /* internal use only */
 /**
@@ -81,9 +71,7 @@ typedef void (*leImageWidget_DrawEventCallback)(leImageWidget* );
     \
     leImage*  (*getImage)(const THIS_TYPE* _this); \
     leResult  (*setImage)(THIS_TYPE* _this, leImage* img); \
-    DEBUG_START_VFN \
-    DEBUG_END_VFN \
-    
+
 typedef struct leImageWidgetVTable
 {
 	LE_IMAGEWIDGET_VTABLE(leImageWidget)
@@ -137,7 +125,7 @@ typedef struct leImageWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leImageWidget* leImageWidget_New();
+leImageWidget* leImageWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -149,7 +137,7 @@ LIB_EXPORT leImageWidget* leImageWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leImageWidget_Constructor(leImageWidget* img);
+void leImageWidget_Constructor(leImageWidget* img);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

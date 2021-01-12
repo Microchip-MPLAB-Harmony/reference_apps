@@ -303,7 +303,9 @@ void leWidget_SkinClassic_DrawBackground(leWidget* wgt,
                                          leColor clr,
                                          uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
 
     //Only support round corners for no or line borders
     if (wgt->style.cornerRadius > 0 &&
@@ -325,7 +327,9 @@ void leWidget_SkinClassic_DrawRoundCornerBackground(leWidget* wgt,
                                                     leColor clr,
                                                     uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
     
     leWidget_SkinClassic_FillRoundCornerRect(&rect, 
                                              clr,
@@ -590,7 +594,9 @@ void leWidget_SkinClassic_Draw1x2BeveledBorder(const leRect* rect,
 void leWidget_SkinClassic_DrawStandardLineBorder(leWidget* wgt,
                                                  uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
 
     if (wgt->style.cornerRadius == 0)
     {
@@ -610,7 +616,9 @@ void leWidget_SkinClassic_DrawStandardLineBorder(leWidget* wgt,
 void leWidget_SkinClassic_DrawStandardRoundCornerLineBorder(leWidget* wgt,
                                                             uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
 
     leWidget_SkinClassic_DrawRoundCornerLineBorder(&rect,
                                                    leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
@@ -621,7 +629,9 @@ void leWidget_SkinClassic_DrawStandardRoundCornerLineBorder(leWidget* wgt,
 void leWidget_SkinClassic_DrawStandardRaisedBorder(leWidget* wgt,
                                                    uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
 
     leWidget_SkinClassic_Draw2x2BeveledBorder(&rect,
                                               leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
@@ -634,7 +644,9 @@ void leWidget_SkinClassic_DrawStandardRaisedBorder(leWidget* wgt,
 void leWidget_SkinClassic_DrawStandardLoweredBorder(leWidget* wgt,
                                                     uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
 
     leWidget_SkinClassic_Draw2x2BeveledBorder(&rect,
                                               leScheme_GetRenderColor(wgt->scheme, LE_SCHM_SHADOWDARK),
@@ -647,7 +659,9 @@ void leWidget_SkinClassic_DrawStandardLoweredBorder(leWidget* wgt,
 void leWidget_SkinClassic_DrawStandardHybridBorder(leWidget* wgt,
                                                    uint32_t alpha)
 {
-    leRect rect = wgt->fn->rectToScreen(wgt);
+    leRect rect;
+
+    wgt->fn->rectToScreen(wgt, &rect);
 
     leWidget_SkinClassic_Draw1x2BeveledBorder(&rect,
                                               leScheme_GetRenderColor(wgt->scheme, LE_SCHM_HIGHLIGHTLIGHT),
@@ -664,7 +678,7 @@ void leWidget_SkinClassic_InvalidateBorderAreas(leWidget* wgt)
 	if(wgt->style.borderType == LE_WIDGET_BORDER_NONE)
 	    return;
 	
-	rect = wgt->fn->rectToScreen(wgt);
+	wgt->fn->rectToScreen(wgt, &rect);
 	
 	if(wgt->style.borderType == LE_WIDGET_BORDER_LINE)
 	{

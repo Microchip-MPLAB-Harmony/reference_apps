@@ -20,7 +20,7 @@ leLabelWidget* MusicScreen_LabelWidget4;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_MusicScreen()
+leResult screenInit_MusicScreen(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -30,14 +30,14 @@ leResult screenInit_MusicScreen()
     return LE_SUCCESS;
 }
 
-leResult screenShow_MusicScreen()
+leResult screenShow_MusicScreen(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
 
     // layer 0
     root0 = leWidget_New();
-    root0->fn->setSize(root0, 480, 320);
+    root0->fn->setSize(root0, 480, 272);
     root0->fn->setBackgroundType(root0, LE_WIDGET_BACKGROUND_NONE);
     root0->fn->setMargins(root0, 0, 0, 0, 0);
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
@@ -174,11 +174,11 @@ leResult screenShow_MusicScreen()
     return LE_SUCCESS;
 }
 
-void screenUpdate_MusicScreen()
+void screenUpdate_MusicScreen(void)
 {
 }
 
-void screenHide_MusicScreen()
+void screenHide_MusicScreen(void)
 {
     MusicScreen_OnHide(); // raise event
 
@@ -205,7 +205,7 @@ void screenHide_MusicScreen()
     showing = LE_FALSE;
 }
 
-void screenDestroy_MusicScreen()
+void screenDestroy_MusicScreen(void)
 {
     if(initialized == LE_FALSE)
         return;

@@ -19,7 +19,7 @@ leLabelWidget* default_NoMediumLabel1;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_default()
+leResult screenInit_default(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -29,14 +29,14 @@ leResult screenInit_default()
     return LE_SUCCESS;
 }
 
-leResult screenShow_default()
+leResult screenShow_default(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
 
     // layer 0
     root0 = leWidget_New();
-    root0->fn->setSize(root0, 480, 320);
+    root0->fn->setSize(root0, 480, 272);
     root0->fn->setBackgroundType(root0, LE_WIDGET_BACKGROUND_NONE);
     root0->fn->setMargins(root0, 0, 0, 0, 0);
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
@@ -160,11 +160,11 @@ leResult screenShow_default()
     return LE_SUCCESS;
 }
 
-void screenUpdate_default()
+void screenUpdate_default(void)
 {
 }
 
-void screenHide_default()
+void screenHide_default(void)
 {
     default_OnHide(); // raise event
 
@@ -190,7 +190,7 @@ void screenHide_default()
     showing = LE_FALSE;
 }
 
-void screenDestroy_default()
+void screenDestroy_default(void)
 {
     if(initialized == LE_FALSE)
         return;

@@ -115,7 +115,9 @@ typedef struct leRenderState
                                   
     lePalette* globalPalette;     // the pointer to the global palette
 
-    lePixelBuffer* renderBuffer;  // the current scratch buffer
+    int32_t currentScratchBuffer; // the index of the current scratch buffer
+
+    gfxIOCTLArg_Value val;
 } leRenderState;
 
 typedef struct leGradient
@@ -135,7 +137,7 @@ leResult leRenderer_Initialize(const gfxDisplayDriver* dispDriver,
                                const gfxGraphicsProcessor* gpuDriver);
 
 // internal use only
-void leRenderer_Shutdown();
+void leRenderer_Shutdown(void);
 /**
   * @endcond
   *
@@ -164,7 +166,7 @@ void leRenderer_Shutdown();
 leResult leRenderer_DamageArea(const leRect* rect, uint32_t layerIdx);
 
 // internal use only
-void leRenderer_Paint();
+void leRenderer_Paint(void);
 
 // *****************************************************************************
 /* Function:
@@ -181,7 +183,24 @@ void leRenderer_Paint();
   Returns:
     leRenderState* - the current render state
 */
-leRenderState* leGetRenderState();
+leRenderState* leGetRenderState(void);
+
+// *****************************************************************************
+/* Function:
+    lePixelBuffer* leGetRenderBuffer();
+
+  Summary:
+    Gets a pointer to the current render buffer.  Use with caution.
+
+  Description:
+    Gets a pointer to the current render buffer.  Use with caution.
+
+  Parameters:
+
+  Returns:
+    lePixelBuffer* - the current render buffer
+*/
+lePixelBuffer* leGetRenderBuffer(void);
 
 // *****************************************************************************
 /* Function:
@@ -198,7 +217,7 @@ leRenderState* leGetRenderState();
   Returns:
     leColorMode - the current render color mode
 */
-leColorMode leRenderer_CurrentColorMode();
+leColorMode leRenderer_CurrentColorMode(void);
 
 // *****************************************************************************
 /* Function:
@@ -215,7 +234,7 @@ leColorMode leRenderer_CurrentColorMode();
   Returns:
     lePalette* - the current global palette
 */
-lePalette* leRenderer_GetGlobalPalette();
+lePalette* leRenderer_GetGlobalPalette(void);
 
 // *****************************************************************************
 /* Function:
@@ -274,7 +293,7 @@ leColor leRenderer_ConvertColor(leColor inColor, leColorMode inMode);
 
 // *****************************************************************************
 /* Function:
-    leRect leRenderer_GetDrawRect()
+    void leRenderer_GetDrawRect(leRect* rect)
 
   Summary:
     Gets the current draw rectangle.
@@ -285,9 +304,9 @@ leColor leRenderer_ConvertColor(leColor inColor, leColorMode inMode);
   Parameters:
 
   Returns:
-    leRect - the draw rectangle
+    void
 */
-leRect leRenderer_GetDrawRect();
+void leRenderer_GetDrawRect(leRect* rect);
 
 // *****************************************************************************
 /* Function:

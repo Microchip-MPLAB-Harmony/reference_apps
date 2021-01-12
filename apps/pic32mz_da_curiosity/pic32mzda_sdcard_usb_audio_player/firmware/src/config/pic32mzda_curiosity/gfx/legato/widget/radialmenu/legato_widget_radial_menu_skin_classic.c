@@ -144,7 +144,7 @@ static void drawEllipse(leRadialMenuWidget* mn)
     if(mn->rotationDegrees == 0 && mn->highlightProminent == LE_TRUE && mn->widgetList.size > 0)
     {
         item = leList_Get(&mn->widgetList, mn->prominentIndex);
-        widgetRect = item->widget->fn->rectToScreen(item->widget);
+        item->widget->fn->rectToScreen(item->widget, &widgetRect);
 
         // top line
         highlightRect = widgetRect;
