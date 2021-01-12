@@ -221,6 +221,7 @@ int GFX_Disp_Intf_WriteCommand(GFX_Disp_Intf intf, uint8_t cmd)
     //Start Transfer
     GFX_Disp_Intf_StartTransfer(&cmd, 1, NULL, 0);
 
+    while(!_GFX_Disp_Intf_Ready());
         
     return 0;
 }
@@ -239,6 +240,7 @@ int GFX_Disp_Intf_WriteData(GFX_Disp_Intf intf, uint8_t * data, int bytes)
     //Start Transfer
     GFX_Disp_Intf_StartTransfer(NULL, 0, data, bytes);
 
+    while(!_GFX_Disp_Intf_Ready());
     
     return 0;
 }
@@ -257,6 +259,7 @@ int GFX_Disp_Intf_WriteData16(GFX_Disp_Intf intf, uint16_t * data, int num)
     //Start Transfer
     GFX_Disp_Intf_StartTransfer(NULL, 0, (uint8_t*) data, num);
 
+    while(!_GFX_Disp_Intf_Ready());
     
     return 0;
 }
@@ -312,6 +315,7 @@ int GFX_Disp_Intf_Write(GFX_Disp_Intf intf, uint8_t * data, int bytes)
     //Start Transfer
     GFX_Disp_Intf_StartTransfer(NULL, 0, (uint8_t*) data, bytes);
 
+    while(!_GFX_Disp_Intf_Ready());
     
     return 0;
 }
@@ -327,6 +331,7 @@ int GFX_Disp_Intf_WriteDataByte(GFX_Disp_Intf intf, uint8_t data)
     //Start single byte data write
     GFX_Disp_Intf_StartTransfer(NULL, 0, (uint8_t*) &data, 1);
 
+    while(!_GFX_Disp_Intf_Ready());
     
     return 0;
 }

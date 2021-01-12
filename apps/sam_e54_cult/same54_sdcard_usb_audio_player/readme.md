@@ -55,17 +55,17 @@ nav_order: 2
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
  - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "bsp" repository v3.8.1](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.1)
+ - [MPLAB Harmony v3 "bsp" repository v3.8.2](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.2)
  - [MPLAB Harmony v3 "audio" repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/audio/releases/tag/v3.5.0)
- - [MPLAB Harmony v3 "usb" repository v3.6.1](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.6.1)
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- - [MPLAB Harmony v3 "gfx" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.7.0)
- - [MPLAB Harmony v3 "touch" repository v3.8.0](https://github.com/Microchip-MPLAB-Harmony/touch/releases/tag/v3.8.0)
- - MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB Harmony v3 "usb" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.7.0)
+ - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
+ - [MPLAB Harmony v3 "gfx" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.9.0)
+ - [MPLAB Harmony v3 "touch" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/touch/releases/tag/v3.9.0)
+ - MPLAB Harmony 3 Launcher Plugin v3.6.2
+ - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
@@ -108,14 +108,14 @@ The pre-built hex file can be programmed by following the below steps.
 WAV audio files
 - Reset the board by pressing RESET switch  
 - You should see a display as shown below  
-	<img src = "images/display_screen1.png" width="460" height="260" align="middle">
+	<img src = "images/display_screen1.png" width="520" height="280" align="middle">
 - Wait till initialization completes and display renders as shown below  
-  <img src = "images/display_screen2.png" width="460" height="260" align="middle">
+  <img src = "images/display_screen2.png" width="520" height="280" align="middle">
 - Select the source (SD CARD/USB) to play audio  
 - The following screen is shown if the audio source is not connected or connected improperly. Make sure insert the SD Card or USB Thumb Drive properly in the sockets. You could unplug and re-plug if you are continuing to see the below screen.  
- **Note**:
-	1. SD Card socket is at J704 (Back side of the board) on SAME54 Curiosity Ultra Board
-	2. USB Thumb drive connector is at J200 (Target USB) on SAME54 Curiosity Ultra Board  
+ **Note**:  
+ 1. SD Card socket is at J704 (Back side of the board) on SAME54 Curiosity Ultra Board
+ 2. USB Thumb drive connector is at J200 (Target USB) on SAME54 Curiosity Ultra Board  
 
 	<img src = "images/display_screen3.png" width="460" height="260" align="middle">  
 
@@ -126,13 +126,13 @@ WAV audio files
 
 	<img src = "images/display_screen4.png" width="860" height="320" align="middle">  
 
- - **Track List** : Shows all the tracks in list wheel, available in the selected source(Move the list wheel to change the track)  
- - **Progress Indicator** : Indicates the current track progress time
- - **Rewind** : Re-plays the current track from starting
- - **Play/Pause** : Play and Pause the track
- - **Next Track** : Plays next track in the list
- - **Song Duration** : Duration of the track
- - **Volume Control** : Increases/Decreases the volume level  
+  - **Track List** : Shows all the tracks in list wheel, available in the selected source(Move the list wheel to change the track)  
+  - **Progress Indicator** : Indicates the current track progress time
+  - **Rewind** : Re-plays the current track from starting
+  - **Play/Pause** : Play and Pause the track
+  - **Next Track** : Plays next track in the list
+  - **Song Duration** : Duration of the track
+  - **Volume Control** : Increases/Decreases the volume level  
 - If the source mounted is empty, display renders as shown below  
 
 	<img src = "images/display_screen5.png" width="460" height="260" align="middle">  
@@ -148,4 +148,5 @@ If you need to reconfigure or regenerate this demo using the MHC, make sure you 
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.2.0 - Regenerated and tested application
 - v1.1.0 released demo application

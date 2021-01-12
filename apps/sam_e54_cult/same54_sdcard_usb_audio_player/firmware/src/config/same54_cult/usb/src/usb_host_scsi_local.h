@@ -589,25 +589,6 @@ void _USB_HOST_SCSI_BlockTransferCallback
 
 void _USB_HOST_SCSI_DetachDetectTasks(int scsiObjIndex);
 
-// ******************************************************************************
-/* Function:
-    void USB_HOST_SCSI_Tasks (USB_HOST_MSD_LUN_HANDLE lunHandle)
-
-  Summary:
-    This function is called by the MSD Host Client Driver to update the driver
-    state machine.
-
-  Description:
-    This function is called by the MSD Host Client Driver to update the driver
-    state machine.
-
-  Remarks:
-    The application will never need to call this function. This function is
-    always called the USB Host MSD Client Driver.
-*/
-
-void USB_HOST_SCSI_Tasks(USB_HOST_MSD_LUN_HANDLE lunHandle);
-
 // *****************************************************************************
 /* Function:
     void * _USB_HOST_SCSI_TimerCallback

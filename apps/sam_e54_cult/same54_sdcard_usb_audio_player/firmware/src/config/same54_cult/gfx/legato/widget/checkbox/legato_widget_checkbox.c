@@ -84,12 +84,16 @@ static void invalidateContents(const leCheckBoxWidget* _this)
 static void stringPreinvalidate(const leString* str,
                                 leCheckBoxWidget* cbox)
 {
+    (void)str; // unused
+
     invalidateContents(cbox);
 }
 
 static void stringInvalidate(const leString* str,
                              leCheckBoxWidget* cbox)
 {
+    (void)str; // unused
+
     invalidateContents(cbox);
 }
 
@@ -492,7 +496,6 @@ static const leCheckBoxWidgetVTable checkBoxWidgetVTable =
     .hasFocus = (void*)_leWidget_HasFocus,
     .setFocus = (void*)_leWidget_SetFocus,
     .invalidate = (void*)_leWidget_Invalidate,
-    .invalidateContents = (void*)_leWidget_InvalidateContents,
     .installEventFilter = (void*)_leWidget_InstallEventFilter,
     .removeEventFilter = (void*)_leWidget_RemoveEventFilter,
 

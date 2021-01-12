@@ -64,7 +64,7 @@ void _leGroupBoxWidget_GetTextRect(const leGroupBoxWidget* box,
     if(box->string == NULL)
         return;
     
-    bounds = box->fn->localRect(box);
+    box->fn->localRect(box, &bounds);
     
     box->string->fn->getRect(box->string, textRect);
     
@@ -200,7 +200,7 @@ static void drawOutline(leGroupBoxWidget* box)
     leRect widgetRect, textRect; 
     int32_t top, bottom, left, right;
     
-    widgetRect = box->fn->rectToScreen(box);
+    box->fn->rectToScreen(box, &widgetRect);
     
     if(box->string != NULL)
     {

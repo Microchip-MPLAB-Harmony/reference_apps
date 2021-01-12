@@ -499,9 +499,9 @@ typedef struct leWidget leWidget;
     leResult           (*setEnabled)(THIS_TYPE* _this, leBool enbl); \
     leBool             (*getVisible)(const THIS_TYPE* _this); \
     leResult           (*setVisible)(THIS_TYPE* _this, leBool vis); \
-    leRect             (*localRect)(const THIS_TYPE* _this); \
-    leRect             (*rectToParent)(const THIS_TYPE* _this); \
-    leRect             (*rectToScreen)(const THIS_TYPE* _this); \
+    void               (*localRect)(const THIS_TYPE* _this, leRect* res); \
+    void               (*rectToParent)(const THIS_TYPE* _this, leRect* res); \
+    void               (*rectToScreen)(const THIS_TYPE* _this, leRect* res); \
     leResult           (*addChild)(THIS_TYPE* _this, leWidget* chld); \
     leResult           (*insertChild)(THIS_TYPE* _this, leWidget* chld, uint32_t idx); \
     leResult           (*removeChild)(THIS_TYPE* _this, leWidget* chld); \
@@ -523,7 +523,7 @@ typedef struct leWidget leWidget;
     leResult           (*setHAlignment)(THIS_TYPE* _this, leHAlignment halgn); \
     leVAlignment       (*getVAlignment)(const THIS_TYPE* _this); \
     leResult           (*setVAlignment)(THIS_TYPE* _this, leVAlignment valgn); \
-    leMargin           (*getMargins)(const THIS_TYPE* _this); \
+    leResult           (*getMargins)(const THIS_TYPE* _this, leMargin* mg); \
     leResult           (*setMargins)(THIS_TYPE* _this, uint32_t l, uint32_t t, uint32_t r, uint32_t b); \
     uint32_t           (*getCornerRadius)(const THIS_TYPE* _this); \
     leResult           (*setCornerRadius)(THIS_TYPE* _this, uint32_t rad); \
@@ -683,7 +683,7 @@ typedef struct leWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leWidget* leWidget_New();
+leWidget* leWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -695,7 +695,7 @@ LIB_EXPORT leWidget* leWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leWidget_Constructor(leWidget* wgt);
+void leWidget_Constructor(leWidget* wgt);
 
 /*    Function:
         void leWidget_Delete(leWidget* wgt)
@@ -730,7 +730,7 @@ LIB_EXPORT void leWidget_Constructor(leWidget* wgt);
  * @param param1 wgt is the widget to delete
  * @return void.
  */
-LIB_EXPORT void leWidget_Delete(leWidget* wgt);
+void leWidget_Delete(leWidget* wgt);
 
 // *****************************************************************************
 /* Virtual Member Function:
@@ -1606,10 +1606,12 @@ leResult _leWidget_SetVisible(leWidget* _this, leBool visible);
  * leWidget* wgt;
  * leRect rec = wgt->fn->localRect(wgt);
  * @endcode
- * @param param1 wgt is the widget to query
- * @return returns leRect.
+ * @param wgt the widget to query
+ * @param res the resultant rectangle
+ * @return returns void.
  */
-leRect _leWidget_LocalRect(const leWidget* _this);
+void _leWidget_LocalRect(const leWidget* _this,
+                         leRect* res);
 
 // *****************************************************************************
 /* Virtual Member Function:
@@ -1639,14 +1641,16 @@ leRect _leWidget_LocalRect(const leWidget* _this);
  * leWidget* wgt;
  * leRect rec = wgt->fn->rectToParent(wgt);
  * @endcode
- * @param param1 wgt is the widget to query
- * @return returns leRect.
+ * @param wgt the widget to query
+ * @param res the resultant rectangle
+ * @return returns void.
  */
-leRect _leWidget_RectToParentSpace(const leWidget* _this);
+void _leWidget_RectToParentSpace(const leWidget* _this,
+                                 leRect* res);
 
 // *****************************************************************************
 /* Virtual Member Function:
-    leRect rectToScreen(const leWidgetWidget* _this)
+    void rectToScreen(const leWidgetWidget* _this, leRect* res)
 
   Summary:
      Gets the widget's bounding rectangle in screen space
@@ -1656,12 +1660,13 @@ leRect _leWidget_RectToParentSpace(const leWidget* _this);
 
   Parameters:
     const leWidgetWidget* _this - The widget to operate on
+    leRect* res - the resultant rectangle
 
   Remarks:
     Usage - _this->fn->rectToScreen(_this);
 
   Returns:
-    leRect - the bounding rectangle
+    void
 */
 /**
  * @brief Get widget rectangle.
@@ -1672,10 +1677,12 @@ leRect _leWidget_RectToParentSpace(const leWidget* _this);
  * leWidget* wgt;
  * leRect rec = wgt->fn->rectToScreen(wgt);
  * @endcode
- * @param param1 wgt is the widget to query
- * @return returns leRect.
+ * @param wgt the widget to query
+ * @param res the resultant rectangle
+ * @return returns void.
  */
-leRect _leWidget_RectToScreenSpace(const leWidget* _this);
+void _leWidget_RectToScreenSpace(const leWidget* _this,
+                                 leRect* res);
 
 // *****************************************************************************
 /* Virtual Member Function:
@@ -2406,10 +2413,11 @@ leResult _leWidget_SetVAlignment(leWidget* _this,
  * leWidget* wgt;
  * leMargin margin = wgt->fn->getMargins(wgt);
  * @endcode
- * @param param1 wgt is the widget to query
- * @return returns leMargin.
+ * @param wgt the widget to query
+ * @param mg the margins
+ * @return returns leResult.
  */
-leMargin _leWidget_GetMargins(const leWidget* _this);
+leResult _leWidget_GetMargins(const leWidget* _this, leMargin* mg);
 
 // *****************************************************************************
 /* Virtual Member Function:

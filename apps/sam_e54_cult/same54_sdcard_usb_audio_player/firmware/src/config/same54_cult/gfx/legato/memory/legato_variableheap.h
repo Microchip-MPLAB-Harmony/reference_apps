@@ -23,7 +23,7 @@
 /** \file legato_variableheap.h
  * @brief Variable heap functions and definitions.
  *
- * @details .
+ * @details Internal library use only
  */
 
 #ifndef LEGATO_VARIABLEHEAP_H

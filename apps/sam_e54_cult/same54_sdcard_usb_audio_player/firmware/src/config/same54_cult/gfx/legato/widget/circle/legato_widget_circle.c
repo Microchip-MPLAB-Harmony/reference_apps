@@ -94,16 +94,18 @@ leCircleWidget* leCircleWidget_New()
     return cir;
 }
 
-static lePoint getOrigin(const leCircleWidget* _this)
+static leResult getOrigin(const leCircleWidget* _this,
+                          lePoint* pnt)
 {
-    lePoint pnt;
-    
     LE_ASSERT_THIS();
+
+    if(pnt == NULL)
+        return LE_FAILURE;
     
-    pnt.x = _this->x;
-    pnt.y = _this->y;
-        
-    return pnt;
+    pnt->x = _this->x;
+    pnt->y = _this->y;
+
+    return LE_SUCCESS;
 }
 
 static leResult setOrigin(leCircleWidget* _this,

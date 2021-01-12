@@ -139,7 +139,7 @@ typedef struct leWindowWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leWindowWidget* leWindowWidget_New();
+leWindowWidget* leWindowWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -151,7 +151,7 @@ LIB_EXPORT leWindowWidget* leWindowWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leWindowWidget_Constructor(leWindowWidget* wgt);
+void leWindowWidget_Constructor(leWindowWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

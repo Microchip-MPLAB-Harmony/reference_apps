@@ -1,0 +1,51 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sdhc1}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: SDCARD_EMMCEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_sdmmc_0, value: 'false'}
+  - type: Boolean
+    attributes: {id: SDCARD_SDCDEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_sdmmc_0, value: 'true'}
+  - type: Boolean
+    attributes: {id: SDCARD_SDWPEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_sdmmc_0, value: 'false'}
+  - type: Integer
+    attributes: {id: SDHC_CLK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sdhc1, value: '120000000'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: SDHC1_SDHC}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_sdmmc_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_sdmmc_SDHC_dependency}
+- type: ElementPosition
+  attributes: {x: '307', y: '151', id: sdhc1}

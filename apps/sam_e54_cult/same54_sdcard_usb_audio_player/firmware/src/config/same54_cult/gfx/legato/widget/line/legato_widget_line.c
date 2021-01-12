@@ -71,7 +71,7 @@ static void destructor(leLineWidget* _this)
     _leWidget_Destructor((leWidget*)_this);
 }
 
-leLineWidget* leLineWidget_New()
+leLineWidget* leLineWidget_New(void)
 {
     leLineWidget* line = NULL;
 
@@ -85,16 +85,18 @@ leLineWidget* leLineWidget_New()
     return line;
 }
 
-static lePoint getStartPoint(const leLineWidget* _this)
+static leResult getStartPoint(const leLineWidget* _this,
+                              lePoint* pnt)
 {
-    lePoint pnt;
-    
     LE_ASSERT_THIS();
-    
-    pnt.x = _this->x1;
-    pnt.y = _this->y1;
+
+    if(pnt == NULL)
+        return LE_FAILURE;
+
+    pnt->x = _this->x1;
+    pnt->y = _this->y1;
         
-    return pnt;
+    return LE_SUCCESS;
 }
 
 static leResult setStartPoint(leLineWidget* _this,
@@ -114,16 +116,16 @@ static leResult setStartPoint(leLineWidget* _this,
     return LE_SUCCESS;
 }
 
-static lePoint getEndPoint(const leLineWidget* _this)
+static leResult getEndPoint(const leLineWidget* _this,
+                            lePoint* pnt)
 {
-    lePoint pnt;
-    
-    LE_ASSERT_THIS();
-    
-    pnt.x = _this->x2;
-    pnt.y = _this->y2;
-        
-    return pnt;
+    if(pnt == NULL)
+        return LE_FAILURE;
+
+    pnt->x = _this->x2;
+    pnt->y = _this->y2;
+
+    return LE_SUCCESS;
 }
 
 static leResult setEndPoint(leLineWidget* _this,
@@ -148,7 +150,7 @@ void _leLineWidget_Paint(leLineWidget* _this);
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
-void _leLineWidget_GenerateVTable()
+void _leLineWidget_GenerateVTable(void)
 {
     _leWidget_FillVTable((void*)&lineWidgetVTable);
     

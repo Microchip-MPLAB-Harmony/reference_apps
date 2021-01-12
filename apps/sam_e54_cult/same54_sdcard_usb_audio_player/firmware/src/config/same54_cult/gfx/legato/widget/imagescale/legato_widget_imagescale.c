@@ -356,8 +356,6 @@ static leResult setFilter(leImageScaleWidget* _this,
     return LE_SUCCESS;
 }
 
-void _leImageScaleWidget_Paint(leImageScaleWidget* _this);
-
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 

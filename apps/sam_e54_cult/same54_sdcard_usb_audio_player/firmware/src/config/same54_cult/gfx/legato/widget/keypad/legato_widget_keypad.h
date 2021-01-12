@@ -210,8 +210,8 @@ typedef struct leKeyPadWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leKeyPadWidget* leKeyPadWidget_New(uint32_t rows,
-                                              uint32_t cols);
+leKeyPadWidget* leKeyPadWidget_New(uint32_t rows,
+                                   uint32_t cols);
 
 /**
  * @brief Initialize widget.
@@ -227,9 +227,9 @@ LIB_EXPORT leKeyPadWidget* leKeyPadWidget_New(uint32_t rows,
  * @param cols is the number of columns.
  * @return void.
  */
-LIB_EXPORT void leKeyPadWidget_Constructor(leKeyPadWidget* wgt,
-                                           uint32_t rows,
-                                           uint32_t cols);
+void leKeyPadWidget_Constructor(leKeyPadWidget* wgt,
+                                uint32_t rows,
+                                uint32_t cols);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

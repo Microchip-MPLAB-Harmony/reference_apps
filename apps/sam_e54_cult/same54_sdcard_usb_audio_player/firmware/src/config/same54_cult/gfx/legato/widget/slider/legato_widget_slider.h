@@ -195,7 +195,7 @@ typedef struct leSliderWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leSliderWidget* leSliderWidget_New();
+leSliderWidget* leSliderWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -207,7 +207,7 @@ LIB_EXPORT leSliderWidget* leSliderWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leSliderWidget_Constructor(leSliderWidget* sld);
+void leSliderWidget_Constructor(leSliderWidget* sld);
 
 
 #ifdef _DOXYGEN_

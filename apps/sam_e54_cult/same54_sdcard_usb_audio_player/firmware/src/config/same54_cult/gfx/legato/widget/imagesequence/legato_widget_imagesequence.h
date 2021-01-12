@@ -200,7 +200,7 @@ typedef struct leImageSequenceWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leImageSequenceWidget* leImageSequenceWidget_New();
+leImageSequenceWidget* leImageSequenceWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -212,7 +212,7 @@ LIB_EXPORT leImageSequenceWidget* leImageSequenceWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leImageSequenceWidget_Constructor(leImageSequenceWidget* wgt);
+void leImageSequenceWidget_Constructor(leImageSequenceWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

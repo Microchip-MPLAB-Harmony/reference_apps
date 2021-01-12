@@ -112,7 +112,7 @@ typedef struct leGradientWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leGradientWidget* leGradientWidget_New();
+leGradientWidget* leGradientWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -124,7 +124,7 @@ LIB_EXPORT leGradientWidget* leGradientWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leGradientWidget_Constructor(leGradientWidget* grad);
+void leGradientWidget_Constructor(leGradientWidget* grad);
 
 
 #ifdef _DOXYGEN_

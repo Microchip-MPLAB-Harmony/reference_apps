@@ -294,7 +294,7 @@ typedef struct leCircularSliderWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leCircularSliderWidget* leCircularSliderWidget_New();
+leCircularSliderWidget* leCircularSliderWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -306,7 +306,7 @@ LIB_EXPORT leCircularSliderWidget* leCircularSliderWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leCircularSliderWidget_Constructor(leCircularSliderWidget* wgt);
+void leCircularSliderWidget_Constructor(leCircularSliderWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

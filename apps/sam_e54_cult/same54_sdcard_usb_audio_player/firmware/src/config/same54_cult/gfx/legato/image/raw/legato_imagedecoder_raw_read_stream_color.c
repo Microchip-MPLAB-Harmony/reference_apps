@@ -26,14 +26,14 @@
 
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#if LE_ENABLE_RAW_DECODER == 1
+
 #if LE_STREAMING_ENABLED == 1
 
 #include "gfx/legato/renderer/legato_renderer.h"
 #include "gfx/legato/image/legato_image_utils.h"
 
-#if LE_ASSET_DECODER_USE_PIXEL_CACHE == 1
 #define cache leRawImageDecoderScratchBuffer
-#endif
 
 void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
@@ -45,16 +45,18 @@ enum StageState
     SS_DONE
 };
 
-static struct StreamReadStage
+struct StreamReadStage
 {
     leRawDecodeStage base;
 
     enum StageState state;
 
     leStream stream;
-} streamReadStage;
+};
 
-static leResult advanceStage()
+static LE_COHERENT_ATTR struct StreamReadStage streamReadStage;
+
+static leResult advanceStage(void)
 {
     streamReadStage.base.state->readIndex += 1;
 
@@ -107,11 +109,14 @@ static leResult exec_nonblocking(struct StreamReadStage* stage)
                      leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size;
 
     // read the pixel
-    leStream_Read(&streamReadStage.stream,
-                  addr,
-                  leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
-                  (uint8_t*)&op->data,
-                  colorDataReady);
+    if(leStream_Read(&streamReadStage.stream,
+                     addr,
+                     leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
+                     (uint8_t*)&op->data,
+                     colorDataReady) == LE_FAILURE)
+    {
+        return LE_FAILURE;
+    }
 
     // only stall out of the read is still pending
     if(leStream_IsDataReady(&streamReadStage.stream) == LE_FALSE)
@@ -152,11 +157,12 @@ leResult exec_blocking(struct StreamReadStage* stage)
                          leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size;
 
         // read the pixel
-        leStream_Read(&streamReadStage.stream,
-                      addr,
-                      leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
-                      (uint8_t*)&op->data,
-                      NULL);
+        while(leStream_Read(&streamReadStage.stream,
+                            addr,
+                            leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
+                            (uint8_t*)&op->data,
+                            NULL) != LE_SUCCESS)
+        { }
 
         streamReadStage.base.state->readIndex += 1;
     }
@@ -175,19 +181,11 @@ leResult _leRawImageDecoder_ReadStage_StreamColor(leRawDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
-#if LE_ASSET_DECODER_USE_PIXEL_CACHE == 0
-    leStream_Init(&streamReadStage.stream,
-                  (leStreamDescriptor*)state->source,
-                  0,
-                  NULL,
-                  NULL);
-#else
     leStream_Init(&streamReadStage.stream,
                   (struct leStreamDescriptor*)state->source,
-                  LE_ASSET_DECODER_CACHE_SIZE,
+                  LE_ASSET_DECODER_PIXEL_CACHE_SIZE,
                   leRawImageDecoderScratchBuffer,
                   NULL);
-#endif
 
     if(leStream_Open(&streamReadStage.stream) == LE_FAILURE)
     {
@@ -212,3 +210,5 @@ leResult _leRawImageDecoder_ReadStage_StreamColor(leRawDecodeState* state)
 }
 
 #endif
+
+#endif /* LE_ENABLE_RAW_DECODER */

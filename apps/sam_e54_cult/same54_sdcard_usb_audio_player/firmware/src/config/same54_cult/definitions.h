@@ -89,7 +89,7 @@
 #include "system/fs/fat_fs/file_system/ffconf.h"
 #include "system/fs/fat_fs/hardware_access/diskio.h"
 #include "audio/peripheral/i2s/plib_i2s.h"
-#include "gfx/driver/controller/ili9488/drv_gfx_ili9488.h"
+#include "gfx/driver/controller/external_controller/drv_gfx_external_controller.h"
 #include "audio/driver/codec/wm8904/drv_wm8904.h"
 #include "app.h"
 

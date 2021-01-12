@@ -1,0 +1,124 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: gfx_hal_le}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: DisplayDataEnablePolarity}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: 'true'}
+  - type: Boolean
+    attributes: {id: DisplayHSYNCNegative}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: 'false'}
+  - type: Integer
+    attributes: {id: DisplayHeight}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '480'}
+      - type: User
+        attributes: {value: '320'}
+  - type: Integer
+    attributes: {id: DisplayHorzBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayHorzFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayHorzPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '41'}
+  - type: String
+    attributes: {id: DisplayName}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: maXTouch Curiosity Pro}
+  - type: Boolean
+    attributes: {id: DisplayVSYNCNegative}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: 'false'}
+  - type: Integer
+    attributes: {id: DisplayVertBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayVertFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayVertPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '10'}
+  - type: Integer
+    attributes: {id: DisplayWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '320'}
+      - type: User
+        attributes: {value: '480'}
+  - type: String
+    attributes: {id: DriverName}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: LE External Controller}
+  - type: Integer
+    attributes: {id: RefreshRate}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal_le, value: '0'}
+  - type: String
+    attributes: {id: gfx_display}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: gfx_disp_mxt_cpro_320x480}
+  - type: String
+    attributes: {id: gfx_driver}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: le_gfx_driver_external}
+- type: ElementPosition
+  attributes: {x: '797', y: '79', id: gfx_hal_le}

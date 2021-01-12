@@ -29,17 +29,17 @@ extern leLabelWidget* MusicScreen_LabelWidget4;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
-leResult screenInit_MusicScreen(); // called when Legato is initialized
-leResult screenShow_MusicScreen(); // called when screen is shown
-void screenHide_MusicScreen(); // called when screen is hidden
-void screenDestroy_MusicScreen(); // called when Legato is destroyed
-void screenUpdate_MusicScreen(); // called when Legato is updating
+leResult screenInit_MusicScreen(void); // called when Legato is initialized
+leResult screenShow_MusicScreen(void); // called when screen is shown
+void screenHide_MusicScreen(void); // called when screen is hidden
+void screenDestroy_MusicScreen(void); // called when Legato is destroyed
+void screenUpdate_MusicScreen(void); // called when Legato is updating
 
 leWidget* screenGetRoot_MusicScreen(uint32_t lyrIdx); // gets a root widget for this screen
 
 // Screen Events:
-void MusicScreen_OnShow(); // called when this screen is shown
-void MusicScreen_OnHide(); // called when this screen is hidden
+void MusicScreen_OnShow(void); // called when this screen is shown
+void MusicScreen_OnHide(void); // called when this screen is hidden
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

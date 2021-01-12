@@ -1,0 +1,79 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: a_i2s}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: I2S_CLKCTRL_0_CLKMODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Integer
+    attributes: {id: I2S_CLKCTRL_0_MCKDIV}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: Integer
+    attributes: {id: I2S_CLKCTRL_0_MCKOUTDIV}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: KeyValueSet
+    attributes: {id: I2S_CLKCTRL_0_SLOTSIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '3'}
+  - type: KeyValueSet
+    attributes: {id: I2S_LRCLK_INVERT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: KeyValueSet
+    attributes: {id: I2S_RXCTRL_DATASIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: Boolean
+    attributes: {id: I2S_RX_SERIALIZER_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: I2S_TXCTRL_DATASIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: I2S_I2S}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: a_drv_i2s_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_i2s_I2S_dependency}
+- type: ElementPosition
+  attributes: {x: '852', y: '422', id: a_i2s}

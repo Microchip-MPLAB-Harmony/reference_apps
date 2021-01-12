@@ -99,7 +99,7 @@ typedef struct leMemoryStatusReport
  * @param void.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-leResult leMemory_Init();
+leResult leMemory_Init(void);
 
 #if LE_USE_DEBUG_ALLOCATOR == 1
 #define LE_MALLOC(size) leMalloc(size, __LINE__, __FUNCTION__, __FILE__)
@@ -121,10 +121,10 @@ leResult leMemory_Init();
  * @param void.
  * @return void.
  */
-LIB_EXPORT void* leMalloc(size_t size,
-                          size_t line,
-                          const char* func,
-                          const char* file);
+void* leMalloc(size_t size,
+               size_t line,
+               const char* func,
+               const char* file);
 
 /**
  * @brief Malloc Memory.
@@ -139,11 +139,11 @@ LIB_EXPORT void* leMalloc(size_t size,
  * @param file.
  * @return void.
  */
-LIB_EXPORT void* leRealloc(void* ptr,
-                           size_t size,
-                           size_t line,
-                           const char* func,
-                           const char* file);
+void* leRealloc(void* ptr,
+                size_t size,
+                size_t line,
+                const char* func,
+                const char* file);
 
 /**
  * @brief Malloc Memory.
@@ -154,7 +154,7 @@ LIB_EXPORT void* leRealloc(void* ptr,
  * @param void.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT void leFree(void* ptr);
+void leFree(void* ptr);
 #else
 /**
  * @brief Malloc Memory.
@@ -165,7 +165,7 @@ LIB_EXPORT void leFree(void* ptr);
  * @param size.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT void* leMalloc(size_t size);
+void* leMalloc(size_t size);
 
 /**
  * @brief Realloc Memory.
@@ -177,8 +177,8 @@ LIB_EXPORT void* leMalloc(size_t size);
  * @param size.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT void* leRealloc(void* ptr,
-                           size_t size);
+void* leRealloc(void* ptr,
+                size_t size);
 
 /**
  * @brief Free Memory.
@@ -190,7 +190,7 @@ LIB_EXPORT void* leRealloc(void* ptr,
  * @param ptr.
  * @return void.
  */
-LIB_EXPORT void leFree(void* ptr);
+void leFree(void* ptr);
 #endif
 
 /**
@@ -202,10 +202,10 @@ LIB_EXPORT void leFree(void* ptr);
  * @param rpt.
  * @return void.
  */
-LIB_EXPORT void leMemoryGetUsageReport(leMemoryStatusReport* rpt);
+void leMemoryGetUsageReport(leMemoryStatusReport* rpt);
 
 #ifdef _WIN32
-LIB_EXPORT void leMemoryDumpAllocations();
+void leMemoryDumpAllocations(void);
 #endif
 
 /**
@@ -217,7 +217,7 @@ LIB_EXPORT void leMemoryDumpAllocations();
  * @param void.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leMemoryValidateHeaps();
+leResult leMemoryValidateHeaps(void);
 
 #else
 

@@ -298,13 +298,6 @@ uint32_t _leTableString_ToChar(const leTableString* _this, leChar* buf, uint32_t
     return size;
 }
 
-leResult _leString_Draw(const leString* _this,
-                        int32_t x,
-                        int32_t y,
-                        leHAlignment align,
-                        leColor clr,
-                        uint32_t a);
-
 /*leResult _leTableString_Draw(const leTableString* _this,
                              int32_t x,
                              int32_t y,
@@ -378,7 +371,7 @@ uint32_t _leTableString_SizeInBytes(leTableString* _this)
 #if LE_DYNAMIC_VTABLES == 1
 void _leString_FillVTable(leStringVTable* vt);
 
-void _leTableString_GenerateVTable()
+void _leTableString_GenerateVTable(void)
 {
     _leString_FillVTable((void*)&tableStringVTable);
     

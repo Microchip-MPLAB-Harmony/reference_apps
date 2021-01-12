@@ -1,0 +1,29 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: drv_usbfs_v1}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: USB_HOST_VBUS_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: String
+    attributes: {id: USB_HOST_VBUS_ENABLE_PIN_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: VBUS}
+  - type: Combo
+    attributes: {id: USB_OPERATION_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_usbfs_v1, value: Host}
+- type: ElementPosition
+  attributes: {x: '791', y: '5', id: drv_usbfs_v1}

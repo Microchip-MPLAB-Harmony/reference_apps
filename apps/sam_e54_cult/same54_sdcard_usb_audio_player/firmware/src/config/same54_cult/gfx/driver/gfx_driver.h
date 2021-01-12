@@ -32,7 +32,7 @@
 
   Summary:
     This file defines the common macros and definitions used by MPLAB Harmony Graphics
-	Suite drivers.
+    Suite drivers.
 
   Description:
     This file defines the common macros and definitions used by the
@@ -166,93 +166,6 @@ typedef enum gfxBool
     GFX_FALSE = 0,
     GFX_TRUE
 } gfxBool;
-
-// *****************************************************************************
-/* Enumeration:
-    ctlrCfg
-
-  Summary:
-    Display controller config requests
-
-  Description:
-    Display controller config requests
-
-  Remarks:
-    None.
-*/
-/**
- * @brief This enum represents layer configurations.
- * @details Layer configurations are used to communicate the state
- * of layers.
- */
-typedef enum
-{
-    /* Layer configurations */
-    GFX_CTRLR_SET_LAYER_LOCK = GFX_CTRLR_LAYER_START,
-    GFX_CTRLR_SET_LAYER_UNLOCK,            
-    GFX_CTRLR_SET_LAYER_SIZE,
-    GFX_CTRLR_SET_LAYER_ALPHA,
-    GFX_CTRLR_SET_LAYER_WINDOW_SIZE,
-    GFX_CTRLR_SET_LAYER_WINDOW_POSITION,
-    GFX_CTRLR_SET_LAYER_BASE_ADDRESS,
-    GFX_CTRLR_SET_LAYER_COLOR_MODE,
-    GFX_CTRLR_SET_LAYER_ENABLE,
-    GFX_CTRLR_SET_LAYER_DISABLE,
-    GFX_CTRLR_LAYER_END,
-} ctlrCfg;
-
-// *****************************************************************************
-/* Structure:
-    argSetSize
-
-  Summary:
-    CtrlCfg parameter for setting layer size.
-*/
-/**
- * @brief This struct represents layer size.
- * @details Layer size is used to define the extent of a layer.
- */
-typedef struct
-{
-    unsigned int layerID;
-    unsigned int width;
-    unsigned int height;
-} argSetSize;
-
-// *****************************************************************************
-/* Structure:
-    argSetSize
-
-  Summary:
-    CtrlCfg parameter for setting layer position.
-*/
-/**
- * @brief This struct represents layer position.
- * @details Layer position is used to define the location of a layer.
- */
-typedef struct
-{
-    unsigned int layerID;
-    int xpos;
-    int ypos;
-} argSetPosition;
-
-// *****************************************************************************
-/* Structure:
-    argSetSize
-
-  Summary:
-    CtrlCfg parameter for setting a layer register value.
-*/
-/**
- * @brief This struct represents layer register value.
- * @details .
- */
-typedef struct
-{
-    unsigned int layerID;
-    unsigned int value;
-} argSetValue;
 
 // *****************************************************************************
 /* Structure:
@@ -497,6 +410,22 @@ typedef struct gfxColorModeInfo
  */
 extern const gfxColorModeInfo gfxColorInfoTable[];
 
+/**
+ * @brief This enum represents orientation modes.
+ * @details List of buffer orientations. Orientation is orthogonal.
+ * Rotation which is not parallel to the x or y axis is not supported.
+ * @attention These definitions are an abstraction of GPU register
+ * definitions. Each GPU driver will perform the correct mapping
+ * to actual register set values.
+*/
+typedef enum gfxOrientation
+{
+    GFX_ORIENT_0,      /**< Buffer is 0 degrees rotated. */
+    GFX_ORIENT_90,     /**< Buffer is 90 degrees rotated. */
+    GFX_ORIENT_180,    /**< Buffer is 180 degrees rotated. */
+    GFX_ORIENT_270,    /**< Buffer is 270 degrees rotated. */
+}
+gfxOrientation;
 
 // *****************************************************************************
 /* Structure:
@@ -597,6 +526,7 @@ typedef struct gfxPixelBuffer
     
     uint32_t buffer_length;
     gfxBuffer pixels;
+    gfxOrientation orientation;
 
     uint32_t flags;
 } gfxPixelBuffer;
@@ -1089,47 +1019,159 @@ gfxResult gfxPixelBuffer_SetLocked(gfxPixelBuffer* buffer,
                                    gfxBool locked);
 
 
+/**
+ * @brief This struct represents the possible IOCTL requests for a gfx driver.
+ * @details This struct represents the possible IOCTL requests for a gfx driver.
+ */
+typedef enum gfxDriverIOCTLRequest
+{
+    GFX_IOCTL_RESET, // resets the device, arg = NULL
+    GFX_IOCTL_GET_COLOR_MODE, // returns the supported color mode for the driver, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_GET_BUFFER_COUNT, // returns the driver buffer count, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_GET_DISPLAY_SIZE, // returns the driver buffer count, arg = gfxIOCTLArg_DisplaySize
+    GFX_IOCTL_ENABLE_GPU, // tells the driver to utilize a GPU if possible, arg = gfxIOCTLArg_Value
+    
+    GFX_IOCTL_LAYER_SWAP, // indicates that the driver should swap the current layer, arg = NULL
+    GFX_IOCTL_FRAME_START, // indicates that the driver should begin a new frame, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_FRAME_END, // indicates that the driver should end the current frame, arg = NULL
+    GFX_IOCTL_GET_VSYNC_COUNT, // gets the current driver vsync count, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_GET_FRAMEBUFFER, // gets a pointer to the internal driver frame buffer, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_SET_PALETTE, // sets the current driver palette, arg = gfxIOCTLArg_Palette
+    
+    GFX_IOCTL_GET_LAYER_COUNT, // gets the driver layer count, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_GET_ACTIVE_LAYER, // gets the active driver layer, arg = gfxIOCTLArg_Value
+    GFX_IOCTL_SET_ACTIVE_LAYER, // sets the active driver layer, arg = gfxIOCTLArg_Value
 
+    GFX_IOCTL_SET_LAYER_LOCK, // locks a layer, arg = gfxIOCTLArg_LayerValue
+    GFX_IOCTL_GET_LAYER_ENABLED, // get layer enabled, arg = gfxIOCTLArg_LayerValue
+    GFX_IOCTL_SET_LAYER_ENABLED, // set layer enabled, arg = gfxIOCTLArg_LayerValue
+    GFX_IOCTL_SET_LAYER_UNLOCK, // unlocks a layer, arg = gfxIOCTLArg_LayerValue
+    GFX_IOCTL_GET_LAYER_RECT, // get layer rect, arg = gfxIOCTLArg_LayerRect
+    GFX_IOCTL_SET_LAYER_POSITION, // set layer position, arg = gfxIOCTLArg_LayerPosition
+    GFX_IOCTL_SET_LAYER_SIZE, // sets a layer size, arg = gfxIOCTLArg_LayerSize
+    GFX_IOCTL_SET_LAYER_WINDOW_SIZE, // set layer clipped window size, arg = gfxIOCTLArg_LayerWindowSize
+    GFX_IOCTL_SET_LAYER_ALPHA, // set layer alpha value, arg = gfxIOCTLArg_LayerValue
+    GFX_IOCTL_SET_LAYER_BASE_ADDRESS, // set layer base address, arg = gfxIOCTLArg_LayerValue
+    GFX_IOCTL_SET_LAYER_COLOR_MODE, // set layer color mode, arg = gfxIOCTLArg_LayerValue
+} gfxDriverIOCTLRequest;
 
-// *****************************************************************************
-/* Structure:
-    struct gfxDisplayDriver
+#define GFX_IOCTL_LAYER_REQ_START GFX_IOCTL_SET_LAYER_LOCK
+#define GFX_IOCTL_LAYER_REQ_END   GFX_IOCTL_SET_LAYER_COLOR_MODE
 
-  Summary:
-    Defines the interface for a Legato display driver.  All drivers must,
-    at a minimum, implement these interfaces
+/**
+ * @brief This enum represents the possible IOCTL responses for a gfx driver.
+ * @details This enum represents the possible IOCTL responses for a gfx driver.
+ */
+typedef enum gfxDriverIOCTLResponse
+{
+    GFX_IOCTL_UNSUPPORTED   = -1,
+    GFX_IOCTL_OK            =  0,
+    GFX_IOCTL_ERROR_UNKNOWN =  1,
+} gfxDriverIOCTLResponse;
 
-    getColorMode - returns the supported color mode for the driver
+/**
+ * @brief This struct represents a standard IOCTL value argument.
+ * @details This struct represents a standard IOCTL value argument.
+ */
+typedef struct gfxIOCTLArg_Value
+{
+    union
+    {
+        uint32_t v_uint;
+        int32_t v_int;
+        void* v_pointer;
+        gfxBool v_bool;
+        gfxColorMode v_colormode;
+        gfxPixelBuffer* v_pbuffer;
+    } value;
+} gfxIOCTLArg_Value;
 
-    getBufferCount - returns the number of buffers the driver is configured to use
+/**
+ * @brief This struct represents a standard IOCTL size value argument.
+ * @details This struct represents a standard IOCTL size value argument.
+ */
+typedef struct gfxIOCTLArg_DisplaySize
+{
+    uint32_t width;
+    uint32_t height;
+} gfxIOCTLArg_DisplaySize;
 
-    getDisplayWidth - returns the width of the driver frame buffer
+/**
+ * @brief This struct represents an IOCTL palette argument.
+ * @details This struct represents an IOCTL palette value argument.
+ */
+typedef struct gfxIOCTLArg_Palette
+{
+    gfxBuffer* palette;
+    gfxColorMode mode;
+    uint32_t colorCount;
+} gfxIOCTLArg_Palette;
 
-    getDisplayHeight - returns the height of the driver frame buffer
+/**
+ * @brief This struct represents a basic layer request argument.
+ * @details This struct represents a basic layer request argument.
+ */
+typedef struct
+{
+    uint32_t id;
+} gfxIOCTLArg_LayerArg;
 
-    update - the driver tasks/update function
+/**
+ * @brief This struct represents layer position.
+ * @details Layer point is used to define the position of a layer.
+ */
+typedef struct
+{
+    gfxIOCTLArg_LayerArg base;
+    
+    int32_t x;
+    int32_t y;
+} gfxIOCTLArg_LayerPosition;
 
-    getLayerCount - the number of hardware layers the driver supports
+/**
+ * @brief This struct represents layer size.
+ * @details Layer size is used to define the extent of a layer.
+ */
+typedef struct
+{
+    gfxIOCTLArg_LayerArg base;
+    
+    uint32_t width;
+    uint32_t height;
+} gfxIOCTLArg_LayerSize;
 
-    getActiveLayer - the current active hardware layer
+/**
+ * @brief This struct represents a layer rectangle.
+ * @details Layer size is used to define the dimensions of a layer.
+ */
+typedef struct
+{
+    gfxIOCTLArg_LayerArg base;
+    
+    int32_t x;
+    int32_t y;
+    uint32_t width;
+    uint32_t height;
+} gfxIOCTLArg_LayerRect;
 
-    setActiveLayer - sets the current active hardware layer
-                     all buffer writes should go to this layer
+/**
+ * @brief This struct represents a common layer value.
+ * @details .
+ */
+typedef struct
+{
+    gfxIOCTLArg_LayerArg base;
+    
+    union
+    {
+        uint32_t v_uint;
+        int32_t v_int;
+        void* v_pointer;
+        gfxBool v_bool;
+        gfxColorMode v_colormode;
+    } value;
+} gfxIOCTLArg_LayerValue;
 
-    blitBuffer - instructs the driver to blit a buffer (buf) at
-                 location (x, y)
-
-    swap - instructs the driver to swap its buffer chain
-
-    getVSYNCCount - queries the driver for its VSYNC counter
-                    if a driver implements this counter this value
-                    can be used to do frame rate calculations
-
-    getFrameBuffer - returns the frame buffer of the active layer
-
-    ctrlrConfig - driver interface for configuring the display controller
-
-*/
 /**
  * @brief This struct represents the display driver interface.
  * @details Establishes the interface for a Legato display driver.  All drivers
@@ -1142,77 +1184,17 @@ gfxResult gfxPixelBuffer_SetLocked(gfxPixelBuffer* buffer,
  */
 typedef struct gfxDisplayDriver
 {
-    gfxColorMode (*getColorMode)(void);
-
-    uint32_t (*getBufferCount)(void);
-
-    uint32_t (*getDisplayWidth)(void);
-
-    uint32_t (*getDisplayHeight)(void);
-
     void (*update)(void);
 
-    uint32_t (*getLayerCount)(void);
-
-    uint32_t (*getActiveLayer)(void);
-
-    gfxResult (*setActiveLayer)(uint32_t idx);
-
-    gfxLayerState (*getLayerState)(uint32_t idx);
-
     gfxResult (*blitBuffer)(int32_t x,
-                           int32_t y,
-                           gfxPixelBuffer* buf);
+                            int32_t y,
+                            gfxPixelBuffer* buf);
 
-    void (*swap)(void);
-
-    uint32_t (*getVSYNCCount)(void);
-
-    gfxPixelBuffer* (*getFrameBuffer)(int32_t idx);
-
-    gfxResult (*setPalette)(gfxBuffer* palette,
-                            gfxColorMode mode,
-                            uint32_t colorCount);
-
-    gfxResult (*ctrlrConfig) (ctlrCfg request, void * arg);
+    gfxDriverIOCTLResponse (*ioctl)(gfxDriverIOCTLRequest request,
+                                    void* arg);
 
 } gfxDisplayDriver;
 
-// *****************************************************************************
-/* Structure:
-    struct gfxGraphicsProcessor
-
-  Summary:
-    Defines the interface for a Legato display driver.  All drivers must,
-    at a minimum, implement these interfaces
-
-    getColorMode - returns the supported color mode for the driver
-
-    getBufferCount - returns the number of buffers the driver is configured to use
-
-    getDisplayWidth - returns the width of the driver frame buffer
-
-    getDisplayHeight - returns the height of the driver frame buffer
-
-    update - the driver tasks/update function
-
-    getLayerCount - the number of hardware layers the driver supports
-
-    getActiveLayer - the current active hardware layer
-
-    setActiveLayer - sets the current active hardware layer
-                     all buffer writes should go to this layer
-
-    blitBuffer - instructs the driver to blit a buffer (buf) at
-                 location (x, y)
-
-    swap - instructs the driver to swap its buffer chain
-
-    getVSYNCCount - queries the driver for its VSYNC counter
-                    if a driver implements this counter this value
-                    can be used to do frame rate calculations
-
-*/
 /**
  * @brief This struct represents the graphics processor interface.
  * @details Establishes the interface for a Legato GPU driver.  All drivers

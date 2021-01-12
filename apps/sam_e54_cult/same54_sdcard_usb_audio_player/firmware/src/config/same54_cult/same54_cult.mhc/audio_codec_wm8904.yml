@@ -1,0 +1,57 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: audio_codec_wm8904}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: DRV_WM8904_AUDIO_DATA_FORMAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '3'}
+  - type: String
+    attributes: {id: DRV_WM8904_I2C}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: audio_codec_wm8904, value: DRV_I2C_1}
+  - type: String
+    attributes: {id: DRV_WM8904_I2S}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: audio_codec_wm8904, value: DRV_I2S_0}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: DRV_I2C}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_i2c_1}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_i2c}
+  - type: DirectDependency
+    attributes: {id: DRV_I2S}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: a_drv_i2s_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_i2s}
+- type: ElementPosition
+  attributes: {x: '1038', y: '126', id: audio_codec_wm8904}

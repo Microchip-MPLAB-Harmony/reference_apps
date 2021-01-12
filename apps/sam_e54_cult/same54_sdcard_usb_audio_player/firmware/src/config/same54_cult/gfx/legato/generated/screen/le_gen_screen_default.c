@@ -23,7 +23,7 @@ leButtonWidget* default_InfoOKButton;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_default()
+leResult screenInit_default(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -33,7 +33,7 @@ leResult screenInit_default()
     return LE_SUCCESS;
 }
 
-leResult screenShow_default()
+leResult screenShow_default(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
@@ -196,11 +196,11 @@ leResult screenShow_default()
     return LE_SUCCESS;
 }
 
-void screenUpdate_default()
+void screenUpdate_default(void)
 {
 }
 
-void screenHide_default()
+void screenHide_default(void)
 {
     default_OnHide(); // raise event
 
@@ -230,7 +230,7 @@ void screenHide_default()
     showing = LE_FALSE;
 }
 
-void screenDestroy_default()
+void screenDestroy_default(void)
 {
     if(initialized == LE_FALSE)
         return;

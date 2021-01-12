@@ -77,17 +77,6 @@ typedef unsigned __int64     uint64_t;
 #include <stdint.h>
 #endif
 
-/* export macros for shared libraries */
-#ifdef _WIN32
-#ifdef LIBRARY
-#define LIB_EXPORT __declspec( dllexport )
-#else
-#define LIB_EXPORT __declspec( dllimport )
-#endif
-#else
-#define LIB_EXPORT 
-#endif
-
 #ifndef WIN32
 //#include "osal/osal.h" FIXME for H3
 #endif

@@ -38,6 +38,12 @@
   Description:
 *******************************************************************************/
 
+/** \file legato_widget_skin_classic_common.h
+* @brief Common functions for the classic widget skin.
+*
+* @details Common functions for the classic widget skin.
+*/
+
 // DOM-IGNORE-BEGIN
 
 #ifndef LEGATO_WIDGET_SKIN_CLASSIC_COMMON_H

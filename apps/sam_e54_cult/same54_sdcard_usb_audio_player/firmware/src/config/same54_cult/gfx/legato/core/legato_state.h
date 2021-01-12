@@ -92,7 +92,7 @@ typedef struct leState
 /**
   * @cond INTERNAL
   */
-leState* leGetState();
+leState* leGetState(void);
 /**
   * @endcond
   *
@@ -124,7 +124,7 @@ leResult leInitialize(const gfxDisplayDriver* dispDriver,
  * @endcode
  * @return void.
  */
-LIB_EXPORT void leShutdown();
+void leShutdown(void);
 
 // *****************************************************************************
 /**
@@ -143,7 +143,7 @@ LIB_EXPORT void leShutdown();
  * @param dt is a delta time.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leUpdate(uint32_t dt);
+leResult leUpdate(uint32_t dt);
 
 // *****************************************************************************
 /**
@@ -155,7 +155,7 @@ LIB_EXPORT leResult leUpdate(uint32_t dt);
  * @param void.
  * @return the color mode of the current context.
  */
-LIB_EXPORT leColorMode leGetColorMode();
+leColorMode leGetColorMode(void);
     
 /**
  * @brief Get layer color mode.
@@ -166,7 +166,7 @@ LIB_EXPORT leColorMode leGetColorMode();
  * @param lyrIdx is the index of the layer to query
  * @return the color mode of layer.
  */
-LIB_EXPORT leColorMode leGetLayerColorMode(uint32_t lyrIdx);
+leColorMode leGetLayerColorMode(uint32_t lyrIdx);
 
 /**
  * @brief Set layer color mode.
@@ -218,7 +218,7 @@ leResult leSetLayerRenderHorizontal(uint32_t lyrIdx, leBool horz);
  * @endcode
  * @return the display rectangle.
  */
-LIB_EXPORT leRect leGetDisplayRect();
+leRect leGetDisplayRect();
 #endif
 
 // *****************************************************************************
@@ -232,7 +232,7 @@ LIB_EXPORT leRect leGetDisplayRect();
  * @param void.
  * @return leStringTable pointer.
  */
-LIB_EXPORT leStringTable* leGetStringTable();
+leStringTable* leGetStringTable(void);
 
 // *****************************************************************************
 /* Function:
@@ -265,7 +265,7 @@ LIB_EXPORT leStringTable* leGetStringTable();
  * @param table is pointer to a string table.
  * @return void.
  */
-LIB_EXPORT void leSetStringTable(const leStringTable* table);
+void leSetStringTable(const leStringTable* table);
 
 // *****************************************************************************
 /* Function:
@@ -296,7 +296,7 @@ LIB_EXPORT void leSetStringTable(const leStringTable* table);
  * @param void.
  * @return void.
  */
-LIB_EXPORT uint32_t leGetStringLanguage();
+uint32_t leGetStringLanguage(void);
 
 // *****************************************************************************
 /* Function:
@@ -329,7 +329,7 @@ LIB_EXPORT uint32_t leGetStringLanguage();
  * @param void.
  * @return void.
  */
-LIB_EXPORT void leSetStringLanguage(uint32_t id);
+void leSetStringLanguage(uint32_t id);
 
 // *****************************************************************************
 /* Function:
@@ -360,7 +360,7 @@ LIB_EXPORT void leSetStringLanguage(uint32_t id);
  * @param void.
  * @return void.
  */
-LIB_EXPORT leScheme* leGetDefaultScheme();
+leScheme* leGetDefaultScheme(void);
 
 // *****************************************************************************
 /* Function:
@@ -397,7 +397,7 @@ LIB_EXPORT leScheme* leGetDefaultScheme();
  * @param void.
  * @return void.
  */
-LIB_EXPORT leWidget* leGetFocusWidget();
+leWidget* leGetFocusWidget(void);
 
 // *****************************************************************************
 /* Function:
@@ -430,7 +430,7 @@ LIB_EXPORT leWidget* leGetFocusWidget();
  * @param void.
  * @return void.
  */
-LIB_EXPORT leResult leSetFocusWidget(leWidget* widget);
+leResult leSetFocusWidget(leWidget* widget);
 
 // *****************************************************************************
 /* Function:
@@ -468,7 +468,7 @@ LIB_EXPORT leResult leSetFocusWidget(leWidget* widget);
  * @param void.
  * @return leEditWidget pointer.
  */
-LIB_EXPORT leEditWidget* leGetEditWidget();
+leEditWidget* leGetEditWidget(void);
 
 // *****************************************************************************
 /* Function:
@@ -500,7 +500,7 @@ LIB_EXPORT leEditWidget* leGetEditWidget();
  * @param void.
  * @return leEditWidget pointer.
  */
-LIB_EXPORT leResult leSetEditWidget(leEditWidget* widget);
+leResult leSetEditWidget(leEditWidget* widget);
     
 // *****************************************************************************
 /* Function:
@@ -534,7 +534,7 @@ LIB_EXPORT leResult leSetEditWidget(leEditWidget* widget);
  * @param cb is the new callback function.
  * @return leResult.
  */
-LIB_EXPORT leResult leSetLanguageChangedCallback(leLanguageChangedCallback_FnPtr cb);
+leResult leSetLanguageChangedCallback(leLanguageChangedCallback_FnPtr cb);
  
 // *****************************************************************************
 /* Function:
@@ -562,7 +562,7 @@ LIB_EXPORT leResult leSetLanguageChangedCallback(leLanguageChangedCallback_FnPtr
  * @param void.
  * @return void.
  */
-LIB_EXPORT void leRedrawAll();
+void leRedrawAll(void);
 
 /*  Function:
         leBool leIsDrawing()
@@ -591,7 +591,7 @@ LIB_EXPORT void leRedrawAll();
  * @param void.
  * @return true.
  */
-LIB_EXPORT leBool leIsDrawing();
+leBool leIsDrawing(void);
 
 /*  Function:
         leResult leAddRootWidget(leWidget* wgt, uint32_t layer)
@@ -626,8 +626,8 @@ LIB_EXPORT leBool leIsDrawing();
  * @param void.
  * @return leResult.
  */
-LIB_EXPORT leResult leAddRootWidget(leWidget* wgt,
-                                    uint32_t layer);
+leResult leAddRootWidget(leWidget* wgt,
+                         uint32_t layer);
 
 /*  Function:
         leResult leRemoveRootWidget(leWidget* wgt, uint32_t layer)
@@ -659,8 +659,8 @@ LIB_EXPORT leResult leAddRootWidget(leWidget* wgt,
  * @param void.
  * @return leResult.
  */
-LIB_EXPORT leResult leRemoveRootWidget(leWidget* wgt,
-                                       uint32_t layer);
+leResult leRemoveRootWidget(leWidget* wgt,
+                            uint32_t layer);
 
 /*  Function:
         leBool leWidgetIsInScene(const leWidget* wgt)
@@ -715,7 +715,7 @@ int32_t leGetWidgetLayer(const leWidget* wgt);
  * @param void.
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-leResult leEdit_StartEdit();
+leResult leEdit_StartEdit(void);
 
 /**
  * @brief Send end edit command.
@@ -725,7 +725,7 @@ leResult leEdit_StartEdit();
  * @endcode
  * @return void.
  */
-void leEdit_EndEdit();
+void leEdit_EndEdit(void);
 
 /**
  * @brief Send clear command.
@@ -735,7 +735,7 @@ void leEdit_EndEdit();
  * @endcode
  * @return void.
  */
-void leEdit_Clear();
+void leEdit_Clear(void);
 
 /**
  * @brief Send accept command.
@@ -745,7 +745,7 @@ void leEdit_Clear();
  * @endcode
  * @return void.
  */
-void leEdit_Accept();
+void leEdit_Accept(void);
 
 /*  Function:
         leResult leEdit_Accept(const leWidget* wgt)
@@ -821,7 +821,7 @@ void leEdit_Append(leString* str);
  * @param void.
  * @return void.
  */
-void leEdit_Backspace();
+void leEdit_Backspace(void);
 
 #if LE_STREAMING_ENABLED == 1
 /*  Function:
@@ -839,7 +839,7 @@ void leEdit_Backspace();
     Returns:
 
 */
-leStreamManager* leGetActiveStream();
+leStreamManager* leGetActiveStream(void);
 
 /*  Function:
         leResult leRunActiveStream()
@@ -855,7 +855,7 @@ leStreamManager* leGetActiveStream();
     Returns:
 
 */
-leResult leRunActiveStream();
+leResult leRunActiveStream(void);
 
 /*  Function:
         void leAbortActiveStream
@@ -873,7 +873,7 @@ leResult leRunActiveStream();
     Returns:
 
 */
-void leAbortActiveStream();
+void leAbortActiveStream(void);
 #endif
 
 #endif /* LEGATO_STATE_H */

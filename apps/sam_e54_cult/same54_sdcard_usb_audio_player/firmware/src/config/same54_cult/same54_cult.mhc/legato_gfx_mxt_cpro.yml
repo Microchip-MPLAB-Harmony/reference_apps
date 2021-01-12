@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: legato_gfx_mxt_cpro}
+children:
+- type: ElementPosition
+  attributes: {x: '0', y: '171', id: legato_gfx_mxt_cpro}

@@ -48,46 +48,46 @@ leState* leGetState()
 
 #if LE_DYNAMIC_VTABLES == 1
 /* vtable generation functions, make sure child classes come after base ones */
-typedef void (*vtableFn)();
+typedef void (*vtableFn)(void);
 
-void _leString_GenerateVTable();
-void _leDynamicString_GenerateVTable();
-void _leFixedString_GenerateVTable();
-void _leTableString_GenerateVTable();
+void _leString_GenerateVTable(void);
+void _leDynamicString_GenerateVTable(void);
+void _leFixedString_GenerateVTable(void);
+void _leTableString_GenerateVTable(void);
 
-void _leWidget_GenerateVTable();
-void _leEditWidget_GenerateVTable();
+void _leWidget_GenerateVTable(void);
+void _leEditWidget_GenerateVTable(void);
 
-void _leArcWidget_GenerateVTable();
-void _leBarGraphWidget_GenerateVTable();
-void _leButtonWidget_GenerateVTable();
-void _leCheckBoxWidget_GenerateVTable();
-void _leCircleWidget_GenerateVTable();
-void _leCircularGaugeWidget_GenerateVTable();
-void _leCircularSliderWidget_GenerateVTable();
-void _leDrawSurfaceWidget_GenerateVTable();
-void _leGradientWidget_GenerateVTable();
-void _leGroupBoxWidget_GenerateVTable();
-void _leImageWidget_GenerateVTable();
-void _leImageRotateWidget_GenerateVTable();
-void _leImageScaleWidget_GenerateVTable();
-void _leImageSequenceWidget_GenerateVTable();
-void _leKeyPadWidget_GenerateVTable();
-void _leLabelWidget_GenerateVTable();
-void _leLineWidget_GenerateVTable();
-void _leLineGraphWidget_GenerateVTable();
-void _leListWidget_GenerateVTable();
-void _leListWheelWidget_GenerateVTable();
-void _lePieChartWidget_GenerateVTable();
-void _leProgressBarWidget_GenerateVTable();
-void _leRadialMenuWidget_GenerateVTable();
-void _leRadioButtonWidget_GenerateVTable();
-void _leRectangleWidget_GenerateVTable();
-void _leScrollBarWidget_GenerateVTable();
-void _leSliderWidget_GenerateVTable();
-void _leTextFieldWidget_GenerateVTable();
-void _leTouchTestWidget_GenerateVTable();
-void _leWindowWidget_GenerateVTable();
+void _leArcWidget_GenerateVTable(void);
+void _leBarGraphWidget_GenerateVTable(void);
+void _leButtonWidget_GenerateVTable(void);
+void _leCheckBoxWidget_GenerateVTable(void);
+void _leCircleWidget_GenerateVTable(void);
+void _leCircularGaugeWidget_GenerateVTable(void);
+void _leCircularSliderWidget_GenerateVTable(void);
+void _leDrawSurfaceWidget_GenerateVTable(void);
+void _leGradientWidget_GenerateVTable(void);
+void _leGroupBoxWidget_GenerateVTable(void);
+void _leImageWidget_GenerateVTable(void);
+void _leImageRotateWidget_GenerateVTable(void);
+void _leImageScaleWidget_GenerateVTable(void);
+void _leImageSequenceWidget_GenerateVTable(void);
+void _leKeyPadWidget_GenerateVTable(void);
+void _leLabelWidget_GenerateVTable(void);
+void _leLineWidget_GenerateVTable(void);
+void _leLineGraphWidget_GenerateVTable(void);
+void _leListWidget_GenerateVTable(void);
+void _leListWheelWidget_GenerateVTable(void);
+void _lePieChartWidget_GenerateVTable(void);
+void _leProgressBarWidget_GenerateVTable(void);
+void _leRadialMenuWidget_GenerateVTable(void);
+void _leRadioButtonWidget_GenerateVTable(void);
+void _leRectangleWidget_GenerateVTable(void);
+void _leScrollBarWidget_GenerateVTable(void);
+void _leSliderWidget_GenerateVTable(void);
+void _leTextFieldWidget_GenerateVTable(void);
+void _leTouchTestWidget_GenerateVTable(void);
+void _leWindowWidget_GenerateVTable(void);
 
 vtableFn vtableFnTable[] =
 {
@@ -230,6 +230,7 @@ leResult leInitialize(const gfxDisplayDriver* dispDriver,
 {
     uint32_t idx;
     leWidget* root;
+    gfxIOCTLArg_DisplaySize disp;
     
     if(_initialized == LE_TRUE)
         return LE_FAILURE;
@@ -267,11 +268,22 @@ leResult leInitialize(const gfxDisplayDriver* dispDriver,
         root = &_state.rootWidget[idx];
         
         leWidget_Constructor(root);
+
+        disp.width = 0;
+        disp.height = 0;
+
+        dispDriver->ioctl(GFX_IOCTL_GET_DISPLAY_SIZE, &disp);
         
         root->rect.x = 0;
         root->rect.y = 0;
-        root->rect.width = dispDriver->getDisplayWidth();
-        root->rect.height = dispDriver->getDisplayHeight();
+
+#if LE_RENDER_ORIENTATION == 0 || LE_RENDER_ORIENTATION == 180
+        root->rect.width = disp.width;
+        root->rect.height = disp.height;
+#else
+        root->rect.width = disp.height;
+        root->rect.height = disp.width;
+#endif
 
         root->fn->invalidate(root);
         root->flags |= LE_WIDGET_ISROOT;
@@ -343,7 +355,7 @@ leResult leUpdate(uint32_t dt)
 {
 #if LE_DRIVER_LAYER_MODE == 1
     uint32_t itr;
-    gfxLayerState driverLayerState;
+    gfxIOCTLArg_LayerRect layerRect;
 #endif
 
     leEvent_ProcessEvents();
@@ -351,18 +363,30 @@ leResult leUpdate(uint32_t dt)
 #if LE_DRIVER_LAYER_MODE == 1
     for(itr = 0; itr < LE_LAYER_COUNT; ++itr)
     {
-        driverLayerState = leGetRenderState()->dispDriver->getLayerState(itr);
+        layerRect.base.id = itr;
+        layerRect.x = 0;
+        layerRect.y = 0;
+        layerRect.width = 0;
+        layerRect.height = 0;
 
-        _state.layerStates[itr].driverPosition.x = driverLayerState.rect.x;
-        _state.layerStates[itr].driverPosition.y = driverLayerState.rect.y;
+        leGetRenderState()->dispDriver->ioctl(GFX_IOCTL_GET_LAYER_RECT, &layerRect);
+
+        _state.layerStates[itr].driverPosition.x = layerRect.x;
+        _state.layerStates[itr].driverPosition.y = layerRect.y;
 
         _state.rootWidget[itr].fn->setPosition(&_state.rootWidget[itr],
                                                0,
                                                0);
 
+#if LE_RENDER_ORIENTATION == 90 || LE_RENDER_ORIENTATION == 270
         _state.rootWidget[itr].fn->setSize(&_state.rootWidget[itr],
-                                           driverLayerState.rect.width,
-                                           driverLayerState.rect.height);
+                                           layerRect.height,
+                                           layerRect.width);
+#else
+        _state.rootWidget[itr].fn->setSize(&_state.rootWidget[itr],
+                                           layerRect.width,
+                                           layerRect.height);
+#endif
     }
 #endif
 

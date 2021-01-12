@@ -41,12 +41,23 @@
 
 // DOM-IGNORE-BEGIN
 
+/** \file legato_imagedeocder_jpeg.h
+* @brief JPEG Image decoder
+*
+* @details Internal library use only
+*
+*/
+
 #ifndef LE_IMAGEDECODER_JPEG_H
 #define LE_IMAGEDECODER_JPEG_H
 
 #include "gfx/legato/image/legato_image.h"
+
+#if LE_ENABLE_JPEG_DECODER == 1
+
 #include "gfx/legato/common/legato_pixelbuffer.h"
 #include "gfx/legato/image/jpeg/legato_imagedecoder_jpeg_common.h"
 
+#endif /* LE_ENABLE_JPEG_DECODER */
 
 #endif /* LE_IMAGEDECODER_JPEG_H */

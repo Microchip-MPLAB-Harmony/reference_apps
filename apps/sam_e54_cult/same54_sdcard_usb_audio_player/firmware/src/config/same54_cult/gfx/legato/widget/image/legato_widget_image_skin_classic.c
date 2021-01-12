@@ -37,10 +37,6 @@
 
 #include "gfx/legato/widget/legato_widget_skin_classic_common.h"
 
-#if LE_IMAGE_WIDGET_DEBUG == 1
-uint8_t startCounting = 0;
-#endif
-
 enum
 {
     NOT_STARTED = LE_WIDGET_DRAW_STATE_READY,
@@ -63,7 +59,9 @@ static struct
 void _leImageWidget_GetImageRect(leImageWidget* img,
                                  leRect* imgRect)
 {
-    leRect bounds = img->fn->localRect(img);
+    leRect bounds;
+
+    img->fn->localRect(img, &bounds);
 
     imgRect->x = 0;
     imgRect->y = 0;
@@ -183,14 +181,6 @@ static void onImageStreamFinished(leStreamManager* dec)
 static void drawImage(leImageWidget* img)
 {
     leRect imgRect, imgSrcRect;
-
-#if LE_IMAGE_WIDGET_DEBUG == 1
-    if(img->ImageDrawStart != NULL && startCounting == 0)
-    {
-        img->debugDrawStart(img);
-        startCounting = 1;
-    }
-#endif
 
     imgSrcRect.x = 0;
     imgSrcRect.y = 0;

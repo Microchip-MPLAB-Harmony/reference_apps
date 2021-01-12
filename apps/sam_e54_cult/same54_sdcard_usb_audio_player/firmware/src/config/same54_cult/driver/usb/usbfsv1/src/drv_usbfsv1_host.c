@@ -2732,7 +2732,7 @@ void _DRV_USBFSV1_HOST_Tasks_ISR(DRV_USBFSV1_OBJ * hDriver)
     if ((USB_HOST_INTFLAG_RST_Msk == (HOST->USB_INTFLAG & USB_HOST_INTFLAG_RST_Msk)) &&
             (USB_HOST_INTENSET_RST_Msk == (HOST->USB_INTENSET & USB_HOST_INTENSET_RST_Msk)))
     {
-        int iterator = 0;
+        iterator = 0;
 
         /* Reset signaling complete */
         hDriver->isResetting = false;
