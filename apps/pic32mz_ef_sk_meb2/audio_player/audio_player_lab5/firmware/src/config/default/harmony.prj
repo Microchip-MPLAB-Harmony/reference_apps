@@ -760,8 +760,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/default/gfx/libaria</LogicalPath>
           <PhysicalPath dnOrder="4">/gfx/libaria/src/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">E74B1198AA7646839DF5CC2D08B7C765</GeneratedChecksum>
-          <UserChecksum dnOrder="6">E74B1198AA7646839DF5CC2D08B7C765</UserChecksum>
+          <GeneratedChecksum dnOrder="5">827CE4FE4ACB5AA8444B780078A5AC94</GeneratedChecksum>
+          <UserChecksum dnOrder="6">827CE4FE4ACB5AA8444B780078A5AC94</UserChecksum>
         </File>
         <File dnOrder="84">
           <Type dnOrder="0">SOURCE</Type>
@@ -3581,7 +3581,7 @@
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;gfx;gfx_apps;net;touch;usb;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;reference_apps;net;quick_docs;touch;usb;"/>
     </Settings>
   </Configurator>
   <MHGC>

@@ -526,11 +526,6 @@ void _laLayer_FinishFrame(laLayer* layer)
         if(layer->layerDrawCount == 0 && layer->bufferCount > 1)
             laRectArray_PushBack(&layer->pendingDamageRects, &layer->widget.rect);
         
-        //After the back buffer has been tagged for fill, clear the prevDamaged 
-        //rects. This avoids a full redraw of the frame later
-        if (layer->layerDrawCount == 1 &&  layer->bufferCount > 1)
-            laRectArray_Clear(&layer->prevDamageRects);
-        
         layer->layerDrawCount++;
         
         // manage the layer's rectangle arrays            
