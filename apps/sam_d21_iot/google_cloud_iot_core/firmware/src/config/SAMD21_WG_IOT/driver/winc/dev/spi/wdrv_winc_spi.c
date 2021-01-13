@@ -40,10 +40,13 @@
 #include "osal/osal.h"
 #include "wdrv_winc_common.h"
 
-#if defined(__PIC32MZ__)
+#if defined(USE_CACHE_MAINTENANCE)
+/* Cache Management to be enabled in core & system components of MHC Project Graph*/
 #include "system/cache/sys_cache.h"
 #include "sys/kmem.h"
+#endif /* defined(USE_CACHE_MAINTENANCE)*/
 
+#if defined(__PIC32MZ__) && defined(USE_CACHE_MAINTENANCE)
 #define WDRV_DCACHE_CLEAN(addr, size) _DataCacheClean(addr, size)
 #else /* !defined(__PIC32MZ__) */
 #define WDRV_DCACHE_CLEAN(addr, size) do { } while (0)
@@ -61,12 +64,11 @@ static DRV_HANDLE spiHandle = DRV_HANDLE_INVALID;
 static OSAL_SEM_HANDLE_TYPE txSyncSem;
 static OSAL_SEM_HANDLE_TYPE rxSyncSem;
 
-#if defined(__PIC32MZ__)
+#if defined(__PIC32MZ__) && defined(USE_CACHE_MAINTENANCE)
 /****************************************************************************
  * Function:        _DataCacheClean
  * Summary: Used in Cache management to clean cache based on address.
  * Cache Management to be enabled in core & system components of MHC.
- * If not enabled in the project graph, below code segment should be disabled.
  *****************************************************************************/
 static void _DataCacheClean(unsigned char *address, uint32_t size)
 {
@@ -79,7 +81,7 @@ static void _DataCacheClean(unsigned char *address, uint32_t size)
         SYS_CACHE_CleanDCache_by_Addr((uint32_t *)a, s);
     }
 }
-#endif /* defined(__PIC32MZ__) */
+#endif /* defined(__PIC32MZ__) && defined(USE_CACHE_MAINTENANCE)*/
 
 static DRV_SPI_TRANSFER_HANDLE transferTxHandle;
 static DRV_SPI_TRANSFER_HANDLE transferRxHandle;

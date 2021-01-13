@@ -45,22 +45,19 @@ nav_order: 1
 - [MIC33050 Voltage Regulator](https://www.microchip.com/wwwproducts/en/MIC33050)
 - TEMT6000 ambient light sensor
 
-## Software Development Tools Used:
-- [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
--  MPLAB Harmony Configurator Plugin v3.6.0 (installed through MPLABX > plugins)
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 
+## Software/Tools Used:
+<span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
-## Harmony 3 Packages Used:
-<span style="color:blue"> *This project has been verified to work with the following versions of Harmony 3 packages:*</span>  
-
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)          
+ - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
+ - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)            
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
+ - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
+ - MPLAB Harmony 3 Launcher Plugin v3.6.2  
+ - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
+ - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)   
 
-
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Application Demonstration:
 
@@ -93,7 +90,7 @@ The below sections describes the steps to run the application.
 		**`wifi <SSID>,<PASSWORD>,<SECURITY TYPE>`**
 
 ## Reference:
-- For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide](https://microchiptechnology.sharepoint.com/:b:/s/DeveloperHelp/EWzkyTjt7jFJmOdqFqAh2VkBFmixakdS3eswwwRVTU5H0g?download=1)
+- For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/SAM_IoT_WG_Development_Board_User_Guide.pdf)
 
 ## Comments:
 - The application “sam_d21_iot/google_cloud_iot_core is developed by applying a patch (available in folder google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder.  
@@ -103,4 +100,5 @@ The patch is applied due to a known issue in the application. This issue is expe
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
+- v1.2.0 - Regenerated and tested application.
 - v1.1.0 released demo application

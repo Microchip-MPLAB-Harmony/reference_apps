@@ -602,9 +602,30 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="SAMD21_WG_IOT.mhc" projectFiles="true">
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/adc.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/core.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/drvWifiWinc.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/project.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/rtc.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sercom3.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sercom4.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sercom5.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/tc3.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/SAMD21_WG_IOT/harmony.prj</itemPath>
-      <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.xml</itemPath>
       <itemPath>../src/config/SAMD21_WG_IOT/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -647,6 +668,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>

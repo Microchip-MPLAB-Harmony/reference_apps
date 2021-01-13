@@ -37,6 +37,16 @@
 
 #include "osal/osal.h"
 #include "wdrv_winc_common.h"
+/*******************************************************************************
+*   Depending upon the OSAL mode,
+*   a support level specific implementation file is included by this
+*   file to give the required level of compatibility. The available
+*   support levels include, OSAL_USE_NONE, OSAL_USE_BASIC, and
+*   OSAL_USE_RTOS.
+*******************************************************************************/
+#define OSAL_USE_NONE        0
+#define OSAL_USE_BASIC       0
+#define OSAL_USE_RTOS        0
 
 #if (OSAL_USE_RTOS == 1 || OSAL_USE_RTOS == 9)
 void WDRV_MSDelay(uint32_t ms)
