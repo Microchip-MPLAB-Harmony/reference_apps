@@ -26,6 +26,8 @@
 
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#if LE_ENABLE_RAW_DECODER == 1
+
 #include "gfx/legato/common/legato_pixelbuffer.h"
 #include "gfx/legato/image/legato_palette.h"
 #include "gfx/legato/renderer/legato_renderer.h"
@@ -33,14 +35,16 @@
 void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
-static struct InternalPaletteStage
+struct InternalPaletteStage
 {
     leRawDecodeStage base;
 
     leColor lookupIndex;
 
     uint32_t paletteSize;
-} paletteStage;
+};
+
+static LE_COHERENT_ATTR struct InternalPaletteStage paletteStage;
 
 static leResult stage_lookup(struct InternalPaletteStage* stage)
 {
@@ -97,3 +101,5 @@ leResult _leRawImageDecoder_ImageRenderPostLookupStage(leRawDecodeState* state)
 
     return LE_SUCCESS;
 }
+
+#endif /* LE_ENABLE_RAW_DECODER */

@@ -67,7 +67,9 @@ void _leCheckBoxWidget_GetImageRect(const leCheckBoxWidget* cbox,
 									leRect* imgSrcRect)
 {
     leRect textRect = leRect_Zero;
-    leRect bounds = cbox->fn->localRect(cbox);
+    leRect bounds;
+
+    cbox->fn->localRect(cbox, &bounds);
     
     imgRect->x = 0;
     imgRect->y = 0;
@@ -118,7 +120,7 @@ void _leCheckBoxWidget_GetImageRect(const leCheckBoxWidget* cbox,
                              cbox->widget.margin.bottom,
                              cbox->imageMargin);
 
-	*imgRect = leRectClipAdj(imgRect, &bounds, imgSrcRect);
+	leRectClipAdj(imgRect, &bounds, imgSrcRect, imgRect);
 
 	// move the rect to screen space
 	leUtils_RectToScreenSpace((leWidget*)cbox, imgRect);
@@ -138,8 +140,8 @@ void _leCheckBoxWidget_GetTextRect(const leCheckBoxWidget* cbox,
         return;
     
     cbox->string->fn->getRect(cbox->string, textRect);
-    
-    bounds = cbox->fn->localRect(cbox);
+
+    cbox->fn->localRect(cbox, &bounds);
     
     // calculate image dimensions
     if(cbox->checked == LE_TRUE)
@@ -217,6 +219,7 @@ static void nextState(leCheckBoxWidget* cbox)
                 return;
             }
         }
+        // fall through
         case DRAW_BACKGROUND:
         {
             cbox->widget.status.drawState = DRAW_IMAGE;
@@ -235,6 +238,7 @@ static void nextState(leCheckBoxWidget* cbox)
                 return;
             }
         }
+        // fall through
         case DRAW_STRING:
         {
             if(cbox->widget.style.borderType != LE_WIDGET_BORDER_NONE)
@@ -245,6 +249,7 @@ static void nextState(leCheckBoxWidget* cbox)
                 return;
             }
         }
+        // fall through
         case DRAW_BORDER:
         {
             cbox->widget.status.drawState = DONE;

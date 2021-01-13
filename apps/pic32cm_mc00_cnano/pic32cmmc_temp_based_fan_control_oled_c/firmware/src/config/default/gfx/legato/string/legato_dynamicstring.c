@@ -473,7 +473,7 @@ uint32_t _leDynamicString_ToChar(const leDynamicString* _this,
 #if LE_DYNAMIC_VTABLES == 1
 void _leString_FillVTable(leStringVTable* vt);
 
-void _leDynamicString_GenerateVTable()
+void _leDynamicString_GenerateVTable(void)
 {
     _leString_FillVTable((void*)&dynamicStringVTable);
     

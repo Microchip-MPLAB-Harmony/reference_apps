@@ -150,8 +150,6 @@ static leResult setFilter(leImageRotateWidget* _this,
     return LE_SUCCESS;
 }
 
-void _leImageRotateWidget_Paint(leImageRotateWidget* _this);
-
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 

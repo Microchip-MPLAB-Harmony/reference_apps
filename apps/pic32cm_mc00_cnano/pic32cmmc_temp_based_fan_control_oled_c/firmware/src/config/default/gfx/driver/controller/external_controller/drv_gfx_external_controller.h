@@ -79,101 +79,6 @@ int DRV_SSD1351_Initialize(void);
 void DRV_SSD1351_Update(void);
 
 /**
- * @brief Get color mode.
- * @details Returns the current color mode.
- * @code
- * gfxDisplayDriver*  drv;
- * gfxColorMode mode = drv->getColorMode();
- * @endcode
- * @return RGB color mode.
- */
-gfxColorMode DRV_SSD1351_GetColorMode(void);
-
-/**
- * @brief Get buffer count.
- * @details Returns the number of configured buffers. In a single buffer system
- * count will be 1. In a double buffered system, the count would be at least 2.
- * @code
- * gfxDisplayDriver*  drv;
- * uint32_t cnt = drv->getBufferCount();
- * @endcode
- * @return number of configured buffers.
- */
-uint32_t DRV_SSD1351_GetBufferCount(void);
-
-/**
- * @brief Get display width.
- * @details Returns the max number of horizontal pixels. This is the horizonal portion
- * of the screen resolution.
- * @see DRV_LCC_GetDisplayHeight()
- * @code
- * gfxDisplayDriver*  drv;
- * uint32_t width = drv->getDisplayWidth();
- * @endcode
- * @return horizontal display width.
- */
-uint32_t DRV_SSD1351_GetDisplayWidth(void);
-
-/**
- * @brief Get display height.
- * @details Returns the max number vertical pixels. This is the vertical portion
- * of the screen resolution.
- * @see DRV_LCC_GetDisplayWidth()
- * @code
- * gfxDisplayDriver*  drv;
- * uint32_t width = drv->getDisplayHeight();
- * @endcode
- * @return vertical display height.
- */
-uint32_t DRV_SSD1351_GetDisplayHeight(void);
-
-/**
- * @brief Get layer count.
- * @details Returns the number of display layers configured.
- * @code
- * gfxDisplayDriver*  drv;
- * uint32_t cnt = drv->getLayerCount();
- * @endcode
- * @return number of display layers.
- */
-uint32_t DRV_SSD1351_GetLayerCount();
-
-/**
- * @brief Get active layer.
- * @details Returns the index of the active layer.
- * @code
- * gfxDisplayDriver*  drv;
- * uint32_t layer = drv->getActiveLayer();
- * @endcode
- * @return layer index.
- */
-uint32_t DRV_SSD1351_GetActiveLayer();
-
-/**
- * @brief Set active layer.
- * @details Sets active the layer at <span style="color: #820a32"><em>idx</em></span> position.
- * @code
- * gfxDisplayDriver* drv;
- * uint32_t idx;
- * gfxResult res = drv->setActiveLayer(idx);
- * @endcode
- * @return GFX_SUCCESS if layer at idx is active, otherwise GFX_FAILURE.
- */
-gfxResult DRV_SSD1351_SetActiveLayer(uint32_t idx);
-
-/**
- * @brief Gets the state for a hardware layer.
- * @details Gets the state of layer <span style="color: #820a32"><em>idx</em></span> .
- * @code
- * gfxDisplayDriver* drv;
- * uint32_t idx;
- * gfxLayerState state = drv->getLayerState(idx);
- * @endcode
- * @return The state of the layer.
- */
-gfxLayerState DRV_SSD1351_GetLayerState(uint32_t idx);
-
-/**
  * @brief Blit buffer.
  * @details Copies <span style="color: #820a32"><em>buf</em></span>
  * to the framebuffer at location <span style="color: #820a32"><em>x</em></span> and
@@ -187,42 +92,17 @@ gfxLayerState DRV_SSD1351_GetLayerState(uint32_t idx);
 gfxResult DRV_SSD1351_BlitBuffer(int32_t x, int32_t y, gfxPixelBuffer* buf);
 
 /**
- * @brief Swap buffer.
- * @details Swaps the rendering buffer with the display buffer. The display buffer now
- * becomes the rendering buffer. Swapping support double buffering technology.
+ * @brief Graphics driver generic IOCTL interface.
+ * @details Sends an IOCTL message to the driver.
  * @code
- * gfxDisplayDriver* drv;
- * drv->swap();
+ * gfxIOCTLArg_Value val;
+ * val.value.v_uint = 1;
+ * DRV_SSD1351_IOCTL(GFX_IOCTL_FRAME_START, &val);
  * @endcode
- * @return void.
+ * @return gfxDriverIOCTLResponse the IOCTL handler response
  */
-void DRV_SSD1351_Swap(void);
-
-/**
- * @brief Get VSYNC count.
- * @details Returns the vertical pulse count. This can be used
- * as an interrupt to indicate the end of a frame or start of a new frame.
- * This value can also be used to do frame rate calculations.
- * @code
- * gfxDisplayDriver* drv;
- * drv->getVSYNCCount();
- * @endcode
- * @return VSYNC count.
- */
-uint32_t DRV_SSD1351_GetSwapCount(void);
-
-/**
- * @brief Set global palette.
- * @details Sets the global palette for the driver.  Used for blitting color map buffers.
- * @code
- * gfxDisplayDriver* drv;
- * gfxResult res = drv->setPalette(addr, colorMode, colorCount);
- * @endcode
- * @return GFX_SUCCESS if the palette was successfully set, otherwise GFX_FAILURE.
- */
-gfxResult DRV_SSD1351_SetPalette(gfxBuffer* palette,
-                                           gfxColorMode mode,
-                                           uint32_t colorCount);
+ gfxDriverIOCTLResponse DRV_SSD1351_IOCTL(gfxDriverIOCTLRequest req,
+                                                    void* arg);
 
 /**
  * @brief Defines the External Controller interface functions.
@@ -232,21 +112,9 @@ gfxResult DRV_SSD1351_SetPalette(gfxBuffer* palette,
  */
 static const gfxDisplayDriver gfxDriverInterface =
 {
-    DRV_SSD1351_GetColorMode,         /**< implements getColorMode */
-    DRV_SSD1351_GetBufferCount,       /**< implements getBufferCount */
-    DRV_SSD1351_GetDisplayWidth,      /**< implements getDisplayWidth */
-    DRV_SSD1351_GetDisplayHeight,     /**< implements getDisplayHeight */
-    DRV_SSD1351_Update,               /**< implements update */
-    DRV_SSD1351_GetLayerCount,        /**< implements layerCount */
-    DRV_SSD1351_GetActiveLayer,       /**< implements activeLayer */
-    DRV_SSD1351_SetActiveLayer,       /**< implements setActive */
-    DRV_SSD1351_GetLayerState,        /**< implements getLayerState */
-    DRV_SSD1351_BlitBuffer,           /**< implements blitbuffer */
-    DRV_SSD1351_Swap,                 /**< implements swap. */
-    DRV_SSD1351_GetSwapCount,         /**< implements getVSYNCCount */
-    NULL,                                       /**< nop getframebuffer */
-    DRV_SSD1351_SetPalette,           /**< implements setPalette */
-    NULL                                        /**< nop ctrlConfig */
+    .update = DRV_SSD1351_Update,				       
+    .blitBuffer = DRV_SSD1351_BlitBuffer,			   
+	.ioctl = DRV_SSD1351_IOCTL,                
 };
 
 #ifdef __cplusplus

@@ -119,7 +119,9 @@ typedef struct leString
 /**
  * @brief Delete string.
  * @details Deletes <span class="param">str</span>. Frees the memory that was
- * allocated using the la{TYPE}String_New type allocator functions
+ * allocated using the la{TYPE}String_New type allocator functions.  This
+ * function is used to delete all string-type objects that were allocated
+ * with their class-specific new functions.
  * @see leString_New().
  * @code
  * leString * str;
@@ -128,7 +130,7 @@ typedef struct leString
  * @param str is the string to delete.
  * @return void.
  */
-LIB_EXPORT void leString_Delete(leString* str);
+void leString_Delete(leString* str);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

@@ -37,7 +37,7 @@
     Get palette color
 *******************************************************************************/
 
-/** \file legato_event.h
+/** \file legato_palette.h
  * @brief Palette functions and definitions.
  *
  * @details Defines palette assets and get palette color.

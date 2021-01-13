@@ -138,7 +138,7 @@ static void drawSliceLabel(lePieChartWidget* chart,
     str.fn->setFont(&str, chart->labelFont);
 
     //Get the string rectangle
-    bounds = chart->fn->localRect(chart);
+    chart->fn->localRect(chart, &bounds);
     str.fn->getRect(&str, &textRect);
 
     leRectClip(&textRect, &bounds, &drawRect);

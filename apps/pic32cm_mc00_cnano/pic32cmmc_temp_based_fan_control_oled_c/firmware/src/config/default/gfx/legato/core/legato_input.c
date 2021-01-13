@@ -33,11 +33,6 @@
 
 #include <string.h>
 
-#ifdef LEGATO_SIM
-#undef LE_TOUCH_ORIENTATION
-#define LE_TOUCH_ORIENTATION 0
-#endif
-
 static leInputState _state; // the global input state
 
 leInputState* _leGetInputState()
@@ -76,7 +71,7 @@ leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y)
     leWidgetEvent_TouchDown* evt;
     lePoint pnt;
 #if LE_TOUCH_ORIENTATION != 0
-    leRect displayRect;
+    gfxIOCTLArg_DisplaySize dispSize;
 #endif
 
     if(_state.enabled == LE_FALSE ||               // inputs are disabled
@@ -88,24 +83,24 @@ leResult leInput_InjectTouchDown(uint32_t id, int32_t x, int32_t y)
 
     // reorient touch coordinates if the user interface is rotated
 #if LE_TOUCH_ORIENTATION != 0
-    displayRect.x = 0;
-    displayRect.y = 0;
-    displayRect.height = leGetRenderState()->dispDriver->getDisplayHeight();
-    displayRect.width = leGetRenderState()->dispDriver->getDisplayWidth();
+    dispSize.width = 0;
+    dispSize.height = 0;
+
+    leGetRenderState()->dispDriver->ioctl(GFX_IOCTL_GET_DISPLAY_SIZE, &dispSize);
 #endif
 
 #if LE_TOUCH_ORIENTATION == 0
     pnt.x = x;
     pnt.y = y;
 #elif LE_TOUCH_ORIENTATION == 90 // 90 degrees
-    pnt.y = x;
-	pnt.x = displayRect.width - 1 - y;
+    pnt.y = dispSize.width - 1 - x;
+	pnt.x = y;
 #elif LE_TOUCH_ORIENTATION == 180 // 180 degrees
-    pnt.x = displayRect.width - 1 - x;
-    pnt.y = displayRect.height - 1 - y;
+    pnt.x = dispSize.width - 1 - x;
+    pnt.y = dispSize.height - 1 - y;
 #else // 270 degrees
-    pnt.y = displayRect.height - 1 - x;
-    pnt.x = y;
+    pnt.y = x;
+    pnt.x = dispSize.height - 1 - y;
 #endif
 
     // dispatch the event
@@ -143,7 +138,7 @@ leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y)
     leWidgetEvent_TouchUp* evt;
     lePoint pnt;
 #if LE_TOUCH_ORIENTATION != 0
-    leRect displayRect;
+    gfxIOCTLArg_DisplaySize dispSize;
 #endif
 
     if(id >= LE_MAX_TOUCH_STATES ||         // don't overrun array
@@ -156,24 +151,24 @@ leResult leInput_InjectTouchUp(uint32_t id, int32_t x, int32_t y)
 
     // reorient touch coordinates if the user interface is rotated
 #if LE_TOUCH_ORIENTATION != 0
-    displayRect.x = 0;
-    displayRect.y = 0;
-    displayRect.height = leGetRenderState()->dispDriver->getDisplayHeight();
-    displayRect.width = leGetRenderState()->dispDriver->getDisplayWidth();
+    dispSize.width = 0;
+    dispSize.height = 0;
+
+    leGetRenderState()->dispDriver->ioctl(GFX_IOCTL_GET_DISPLAY_SIZE, &dispSize);
 #endif
 
 #if LE_TOUCH_ORIENTATION == 0
     pnt.x = x;
     pnt.y = y;
 #elif LE_TOUCH_ORIENTATION == 90 // 90 degrees
-    pnt.y = x;
-    pnt.x = displayRect.width - 1 - y;
+    pnt.y = dispSize.width - 1 - x;
+	pnt.x = y;
 #elif LE_TOUCH_ORIENTATION == 180 // 180 degrees
-    pnt.x = displayRect.width - 1 - x;
-    pnt.y = displayRect.height - 1 - y;
+    pnt.x = dispSize.width - 1 - x;
+    pnt.y = dispSize.height - 1 - y;
 #else // 270 degrees
-    pnt.y = displayRect.height - 1 - x;
-    pnt.x = y;
+    pnt.y = x;
+    pnt.x = dispSize.height - 1 - y;
 #endif
 
     // dispatch event
@@ -209,7 +204,7 @@ leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y)
     lePoint pnt;
     leListNode* node;
 #if LE_TOUCH_ORIENTATION != 0
-    leRect displayRect;
+    gfxIOCTLArg_DisplaySize dispSize;
 #endif
 
     if(id >= LE_MAX_TOUCH_STATES ||         // don't overrun array
@@ -217,10 +212,10 @@ leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y)
         return LE_FAILURE;
 
 #if LE_TOUCH_ORIENTATION != 0
-    displayRect.x = 0;
-    displayRect.y = 0;
-    displayRect.height = leGetRenderState()->dispDriver->getDisplayHeight();
-    displayRect.width = leGetRenderState()->dispDriver->getDisplayWidth();
+    dispSize.width = 0;
+    dispSize.height = 0;
+
+    leGetRenderState()->dispDriver->ioctl(GFX_IOCTL_GET_DISPLAY_SIZE, &dispSize);
 #endif
 
     // find any existing touch moved event and overwrite
@@ -238,21 +233,21 @@ leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y)
             {   
 #ifdef INPUT_EVENT_DEBUG
                 printf("overwriting previous move event\n");
-#endif                
+#endif
 
                 // reorient touch coordinates if the user interface is rotated
 #if LE_TOUCH_ORIENTATION == 0
                 pnt.x = x;
                 pnt.y = y;
 #elif LE_TOUCH_ORIENTATION == 90 // 90 degrees
-                pnt.y = x;
-                pnt.x = displayRect.width - 1 - y;
+                pnt.y = dispSize.width - 1 - x;
+	            pnt.x = y;
 #elif LE_TOUCH_ORIENTATION == 180 // 180 degrees
-                pnt.x = displayRect.width - 1 - x;
-                pnt.y = displayRect.height - 1 - y;
+                pnt.x = dispSize.width - 1 - x;
+                pnt.y = dispSize.height - 1 - y;
 #else // 270 degrees
-                pnt.y = displayRect.height - 1 - x;
-                pnt.x = y;
+                pnt.y = x;
+                pnt.x = dispSize.height - 1 - y;
 #endif
                 
                 evt->x = x;
@@ -279,16 +274,16 @@ leResult leInput_InjectTouchMoved(uint32_t id, int32_t x, int32_t y)
     // reorient touch coordinates if the user interface is rotated
 #if LE_TOUCH_ORIENTATION == 0
     pnt.x = x;
-                pnt.y = y;
+    pnt.y = y;
 #elif LE_TOUCH_ORIENTATION == 90 // 90 degrees
-    pnt.y = x;
-    pnt.x = displayRect.width - 1 - y;
+    pnt.y = dispSize.width - 1 - x;
+	pnt.x = y;
 #elif LE_TOUCH_ORIENTATION == 180 // 180 degrees
-    pnt.x = displayRect.width - 1 - x;
-                pnt.y = displayRect.height - 1 - y;
+    pnt.x = dispSize.width - 1 - x;
+    pnt.y = dispSize.height - 1 - y;
 #else // 270 degrees
-                pnt.y = displayRect.height - 1 - x;
-                pnt.x = y;
+    pnt.y = x;
+    pnt.x = dispSize.height - 1 - y;
 #endif
 
     evt->event.owner = NULL;
@@ -324,7 +319,7 @@ leEventResult handleTouchDown(leWidgetEvent_TouchDown* evt)
     int32_t i;
 
 #if LE_DRIVER_LAYER_MODE == 1
-    gfxLayerState driverLayerState;
+    gfxIOCTLArg_LayerRect layerRect;
 #endif
     
     // find the topmost widget on the topmost layer for the touch event
@@ -340,14 +335,20 @@ leEventResult handleTouchDown(leWidgetEvent_TouchDown* evt)
 // however, the driver could be rendering them at different coordinates
 // the event coordinates may need to be adjusted to account for this
 #if LE_DRIVER_LAYER_MODE == 1
-        driverLayerState = leGetRenderState()->dispDriver->getLayerState(i);
+        layerRect.base.id = i;
+        layerRect.x = 0;
+        layerRect.y = 0;
+        layerRect.width = 0;
+        layerRect.height = 0;
+
+        leGetRenderState()->dispDriver->ioctl(GFX_IOCTL_GET_LAYER_RECT, &layerRect);
 
         // need to remember this offset for subsequent touch down/move events
-        _state.driverAdjustX = driverLayerState.rect.x;
-        _state.driverAdjustY = driverLayerState.rect.y;
+        _state.driverAdjustX = layerRect.x;
+        _state.driverAdjustY = layerRect.y;
 
-        x -= driverLayerState.rect.x;
-        y -= driverLayerState.rect.y;
+        x -= layerRect.x;
+        y -= layerRect.y;
 #endif
         
         targetWidget = leUtils_PickFromWidget(rootWidget, x, y);

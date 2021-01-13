@@ -60,7 +60,7 @@ void _leRectangleWidget_InvalidateRect(leRectangleWidget* rct)
 	if(rct->thickness == 0)
 	    return;
 	    
-	rect = rct->fn->localRect(rct);
+	rct->fn->localRect(rct, &rect);
 	    
 	if(rect.width <= rct->thickness || rect.height <= rct->thickness)
 	{
@@ -166,7 +166,7 @@ static void drawEdge(leRectangleWidget* rct)
 {
     leRect widgetRect, edgeRect;
     
-    widgetRect = rct->fn->rectToScreen(rct);
+    rct->fn->rectToScreen(rct, &widgetRect);
 
     // left bar
     edgeRect.x = widgetRect.x;

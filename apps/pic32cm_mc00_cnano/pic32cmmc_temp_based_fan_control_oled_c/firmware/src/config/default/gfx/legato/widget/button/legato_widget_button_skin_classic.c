@@ -65,7 +65,9 @@ void _leButtonWidget_GetImageRect(const leButtonWidget* btn,
 								  leRect* imgSrcRect)
 {
     leRect textRect = leRect_Zero;
-    leRect bounds = btn->fn->localRect(btn);
+    leRect bounds;
+
+    btn->fn->localRect(btn, &bounds);
     
     imgRect->x = 0;
     imgRect->y = 0;
@@ -114,7 +116,7 @@ void _leButtonWidget_GetImageRect(const leButtonWidget* btn,
         imgRect->y += btn->pressedOffset;
     }                             
                              
-    *imgRect = leRectClipAdj(imgRect, &bounds, imgSrcRect); 
+    leRectClipAdj(imgRect, &bounds, imgSrcRect, imgRect);
     
     // move the rect to screen space
     leUtils_RectToScreenSpace((leWidget*)btn, imgRect);                         
@@ -135,7 +137,7 @@ void _leButtonWidget_GetTextRect(const leButtonWidget* btn,
         
     btn->string->fn->getRect(btn->string, textRect);
     
-    bounds = btn->fn->localRect(btn);
+    btn->fn->localRect(btn, &bounds);
     
     if(btn->state != LE_BUTTON_STATE_UP)
     {
@@ -188,7 +190,7 @@ void _leButtonWidget_InvalidateBorderAreas(const leButtonWidget* btn)
 	if(btn->widget.style.borderType == LE_WIDGET_BORDER_NONE)
 	    return;
 	
-	rect = btn->fn->rectToScreen(btn);
+	btn->fn->rectToScreen(btn, &rect);
 	
 	if(btn->widget.style.borderType == LE_WIDGET_BORDER_LINE)
 	{

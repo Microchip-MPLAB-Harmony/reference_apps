@@ -190,7 +190,7 @@ typedef struct leTouchTestWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leTouchTestWidget* leTouchTestWidget_New();
+leTouchTestWidget* leTouchTestWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -202,7 +202,7 @@ LIB_EXPORT leTouchTestWidget* leTouchTestWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leTouchTestWidget_Constructor(leTouchTestWidget* wgt);
+void leTouchTestWidget_Constructor(leTouchTestWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

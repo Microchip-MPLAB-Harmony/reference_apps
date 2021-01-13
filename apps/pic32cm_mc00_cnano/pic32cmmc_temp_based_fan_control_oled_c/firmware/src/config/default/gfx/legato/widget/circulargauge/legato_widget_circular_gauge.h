@@ -323,7 +323,7 @@ typedef struct leCircularGaugeLabelRange
  * @endcode
  * @return a widget object pointer.
  */
-leCircularGaugeWidget* leCircularGaugeWidget_New();
+leCircularGaugeWidget* leCircularGaugeWidget_New(void);
 
 
 /**

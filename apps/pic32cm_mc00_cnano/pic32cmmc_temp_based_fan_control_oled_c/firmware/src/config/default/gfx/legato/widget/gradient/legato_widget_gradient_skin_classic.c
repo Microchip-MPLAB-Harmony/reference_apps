@@ -100,7 +100,7 @@ static void drawBackground(leGradientWidget* grad)
     
     if(grad->widget.style.backgroundType == LE_WIDGET_BACKGROUND_FILL)
     {
-        rect = grad->fn->rectToScreen(grad);
+        grad->fn->rectToScreen(grad, &rect);
         
         if(grad->dir == LE_DIRECTION_LEFT)
         {

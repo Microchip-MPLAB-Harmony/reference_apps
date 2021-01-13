@@ -1,0 +1,128 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sys_time}
+children:
+- type: Symbols
+  children:
+  - type: Comment
+    attributes: {id: SYS_TIME_ACHIEVABLEE_TICK_RATE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: 'Achievable Tick Rate Resolution (ms):1.0ms'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Long
+    attributes: {id: SYS_TIME_ACHIEVABLE_TICK_RATE_HZ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sys_time, value: '100000000'}
+  - type: Combo
+    attributes: {id: SYS_TIME_OPERATING_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sys_time, value: TICK BASED}
+  - type: String
+    attributes: {id: SYS_TIME_PLIB}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sys_time, value: TC0}
+  - type: Comment
+    attributes: {id: SYS_TIME_PLIB_ERROR}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: Warning!!! SYS Tick is not supported with RTC in calendar
+            mode}
+  - type: String
+    attributes: {id: SYS_TIME_REMOTE_COMPONENT_ID}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sys_time, value: tc0}
+  - type: File
+    attributes: {id: SYS_TIME_TICKLESS_LOCAL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_TIME_TICKLESS_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: SYS_TIME_TICK_BASED_LOCAL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SYS_TIME_TICK_BASED_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Float
+    attributes: {id: SYS_TIME_TICK_RATE_MS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: SYS_TIME_USE_FLOATING_POINT_CALCULATIONS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: sys_time_TMR_dependency}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: tc0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: TC0_TMR}
+- type: ElementPosition
+  attributes: {x: '310', y: '100', id: sys_time}

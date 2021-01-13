@@ -36,7 +36,7 @@
 
 static char errorMsg[LE_ERRORMSG_SIZE];
 
-LIB_EXPORT const char* leGetErrorMessage()
+const char* leGetErrorMessage()
 {
     return errorMsg;
 }

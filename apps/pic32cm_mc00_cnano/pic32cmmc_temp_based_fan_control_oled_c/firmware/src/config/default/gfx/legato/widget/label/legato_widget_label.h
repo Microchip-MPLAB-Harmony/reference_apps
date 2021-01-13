@@ -114,7 +114,7 @@ typedef struct leLabelWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leLabelWidget* leLabelWidget_New();
+leLabelWidget* leLabelWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -126,7 +126,7 @@ LIB_EXPORT leLabelWidget* leLabelWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leLabelWidget_Constructor(leLabelWidget* wgt);
+void leLabelWidget_Constructor(leLabelWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

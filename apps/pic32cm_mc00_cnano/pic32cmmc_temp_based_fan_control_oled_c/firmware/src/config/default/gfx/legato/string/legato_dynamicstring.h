@@ -75,11 +75,11 @@ typedef struct leDynamicString
  * this function.
  * @see leDynamicString_Delete()
  * @code
- * leDynamicString * str = leDynamicString_New();
+ * leDynamicString * str = leDynamicString_New(void);
  * @endcode
  * @return pointer to the newly allocated string
  */
-LIB_EXPORT leDynamicString* leDynamicString_New();
+leDynamicString* leDynamicString_New(void);
 
 // *****************************************************************************
 /**
@@ -94,7 +94,7 @@ LIB_EXPORT leDynamicString* leDynamicString_New();
  * @param str the string to construct.
  * @return void
  */
-LIB_EXPORT void leDynamicString_Constructor(leDynamicString* str);
+void leDynamicString_Constructor(leDynamicString* str);
 
 
 #ifdef _DOXYGEN_

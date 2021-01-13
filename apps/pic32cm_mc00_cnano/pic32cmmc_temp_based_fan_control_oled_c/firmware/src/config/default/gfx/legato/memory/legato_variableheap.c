@@ -812,10 +812,14 @@ static leResult _validateBlock(Block* blk)
     LE_ASSERT((uint32_t)blk->next != 0xFEFEFEFE);
 
     if(blk->prev != NULL)
+    {
         LE_ASSERT(blk->prev->next == blk);
+    }
 
     if(blk->next != NULL)
+    {
         LE_ASSERT(blk->next->prev == blk);
+    }
 
     // validate header checksum
 

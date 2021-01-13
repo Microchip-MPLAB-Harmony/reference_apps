@@ -205,12 +205,6 @@ static leResult setRadius(leCircularSliderWidget* _this,
     if(_this->radius == rad)
         return LE_SUCCESS;
         
-    if (_this->radius < (_this->outsideBorderArc.thickness + 
-                         _this->activeArc.thickness + 
-                         _this->insideBorderArc.thickness))
-        return LE_FAILURE;
-
-    _this->radius = rad;
     _this->radius = rad;
     
     _this->fn->invalidate(_this);
@@ -739,14 +733,8 @@ static leBool getPercent(leCircularSliderWidget* _this,
     int32_t endAngle;
     lePoint centerPt;
     float rad, mag, dot, det;
-    int32_t deg;
+    int32_t deg, adj;
     float xf, yf;
-
-    // normalize the angles the angle span
-    leNormalizeAngles(_this->startAngle,
-                      _this->spanAngle,
-                      &startAngle,
-                      &endAngle);
 
     // transform the vector
     centerPt.x = _this->widget.rect.width / 2;
@@ -776,9 +764,25 @@ static leBool getPercent(leCircularSliderWidget* _this,
         deg += 360;
     }
 
-    // calculate the percent
-    deg -= startAngle;
+    // normalize the angles the angle span
+    leNormalizeAngles(_this->startAngle,
+                      _this->spanAngle,
+                      &startAngle,
+                      &endAngle);
+
+    adj = 360 - startAngle;
+
     endAngle -= startAngle;
+    startAngle = 0;
+
+    deg += adj;
+
+    if(deg >= 360)
+    {
+        deg -= 360;
+    }
+
+    // calculate the percent
     startAngle = 0;
 
     if(deg < 0)
@@ -787,7 +791,14 @@ static leBool getPercent(leCircularSliderWidget* _this,
     if(deg > endAngle)
         return LE_FALSE;
 
-    *percent = lePercentWholeRounded(deg, endAngle);
+    if(_this->spanAngle < 0)
+    {
+        *percent = 100 - lePercentWholeRounded(deg, endAngle);
+    }
+    else
+    {
+        *percent = lePercentWholeRounded(deg, endAngle);
+    }
 
     return LE_TRUE;
 }
@@ -827,13 +838,15 @@ static leBool _pointInButton(leCircularSliderWidget* _this,
                              lePoint pt)
 {
     lePoint centerPt;
+    lePoint btnPnt;
 
     uint32_t deg = leDegreesFromPercent(_this->value,
                                         _this->spanAngle,
                                         _this->startAngle);
 
-    lePoint btnPnt = lePointOnCircle(_this->radius,
-                                     deg);
+    lePointOnCircle(_this->radius,
+                    deg,
+                    &btnPnt);
 
     btnPnt.y *= -1;
 
@@ -966,7 +979,7 @@ void _leCircularSliderWidget_Paint(leCircularSliderWidget* _this);
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
-void _leCircularSliderWidget_GenerateVTable()
+void _leCircularSliderWidget_GenerateVTable(void)
 {
     _leWidget_FillVTable((void*)&circularSliderWidgetVTable);
     

@@ -26,6 +26,8 @@
 
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#if LE_ENABLE_RAW_DECODER == 1
+
 #include "gfx/legato/common/legato_error.h"
 #include "gfx/legato/image/legato_image_utils.h"
 #include "gfx/legato/renderer/legato_renderer.h"
@@ -33,7 +35,7 @@
 void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
-static struct InternalReadStage
+struct InternalReadStage
 {
     leRawDecodeStage base;
     void (*decode)(void);
@@ -42,11 +44,13 @@ static struct InternalReadStage
 
     uint32_t dataSize;
     uint32_t imgBPP;
-} internalReadStage;
+};
+
+static struct InternalReadStage LE_COHERENT_ATTR internalReadStage;
 
 #include <stdio.h>
 
-static void colorDecode()
+static void colorDecode(void)
 {
     leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
@@ -56,7 +60,7 @@ static void colorDecode()
                                        op->y);
 }
 
-static void indexDecode()
+static void indexDecode(void)
 {
     leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
@@ -64,7 +68,7 @@ static void indexDecode()
                                             op->bufferIndex);
 }
 
-static void rleSequentialDecode()
+static void rleSequentialDecode(void)
 {
     leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
@@ -75,7 +79,7 @@ static void rleSequentialDecode()
                                    &internalReadStage.lastOffset);
 }
 
-static void rleRandomDecode()
+static void rleRandomDecode(void)
 {
     leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
@@ -89,7 +93,7 @@ static void rleRandomDecode()
                                    &internalReadStage.lastOffset);
 }
 
-static void indexRLESequentialDecode()
+static void indexRLESequentialDecode(void)
 {
     uint32_t srcClr;
 
@@ -114,7 +118,7 @@ static void indexRLESequentialDecode()
     op->data = srcClr;
 }
 
-static void indexRLERandomDecode()
+static void indexRLERandomDecode(void)
 {
     uint32_t srcClr;
 
@@ -208,3 +212,5 @@ leResult _leRawImageDecoder_ReadStage_Internal(leRawDecodeState* state)
 
     return LE_SUCCESS;
 }
+
+#endif /* LE_ENABLE_RAW_DECODER */

@@ -132,18 +132,17 @@ void _leListWheelWidget_GetItemTextRect(const leListWheelWidget* whl,
     drawRect->y += y;  
 }
 
-leRect _leListWheelWidget_GetIndicatorRect(leListWheelWidget* whl)
+void _leListWheelWidget_GetIndicatorRect(leListWheelWidget* whl,
+                                         leRect* res)
 {
-    leRect indicatorRect, widgetRect;
+    leRect widgetRect;
     
-    widgetRect = whl->fn->rectToScreen(whl);
+    whl->fn->rectToScreen(whl, &widgetRect);
     
-    indicatorRect.x = widgetRect.x;
-    indicatorRect.y = widgetRect.y + widgetRect.height / 2 - whl->indicatorArea;
-    indicatorRect.width = widgetRect.width;
-    indicatorRect.height = whl->indicatorArea * 2;
-    
-    return indicatorRect;
+    res->x = widgetRect.x;
+    res->y = widgetRect.y + widgetRect.height / 2 - whl->indicatorArea;
+    res->width = widgetRect.width;
+    res->height = whl->indicatorArea * 2;
 }
 
 void _leListWheelWidget_ItemRectApplyEffects(leListWheelWidget* whl,
@@ -153,7 +152,7 @@ void _leListWheelWidget_ItemRectApplyEffects(leListWheelWidget* whl,
     leRect midLineRect,widgetRect;
     int32_t pct = 100;
     
-    widgetRect = whl->fn->rectToScreen(whl);
+    whl->fn->rectToScreen(whl, &widgetRect);
     
     midLineRect.y = widgetRect.y + widgetRect.height/2;
     midLineRect.x = widgetRect.x;
@@ -259,7 +258,7 @@ void _leListWheelWidget_GetItemIconRect(leListWheelWidget* whl,
                              whl->widget.margin.bottom,
                              whl->iconMargin);   
                              
-    *imgRect = leRectClipAdj(imgRect, &bounds, imgSrcRect); 
+    leRectClipAdj(imgRect, &bounds, imgSrcRect, imgRect);
     
     leUtils_RectToScreenSpace((leWidget*)whl, imgRect); 
     
@@ -413,7 +412,7 @@ static void drawBackground(leListWheelWidget* whl)
     {
         if(whl->shaded == LE_TRUE)
         {
-            widgetRect = whl->fn->rectToScreen(whl);
+            whl->fn->rectToScreen(whl, &widgetRect);
             
             // upper rectangle
             drawRect.x = widgetRect.x;
@@ -445,9 +444,9 @@ static void drawBackground(leListWheelWidget* whl)
     
     if (whl->indicatorFill != LE_LISTWHEEL_INDICATOR_FILL_NONE)
     {
-        widgetRect = whl->fn->rectToScreen(whl);
+        whl->fn->rectToScreen(whl, &widgetRect);
             
-        drawRect = _leListWheelWidget_GetIndicatorRect(whl);
+        _leListWheelWidget_GetIndicatorRect(whl, &drawRect);
         
         if (whl->indicatorFill == LE_LISTWHEEL_INDICATOR_FILL_GRADIENT)
         {
@@ -512,8 +511,8 @@ static void drawString(leListWheelWidget* whl)
                                        whl->paintState.y,
                                        &textRect,
                                        &drawRect);
-    
-    widgetRect = whl->fn->rectToScreen(whl);
+
+    whl->fn->rectToScreen(whl, &widgetRect);
     
     if(leRectIntersects(&drawRect, &widgetRect) == LE_FALSE)
     {
@@ -744,27 +743,48 @@ static void drawIcon(leListWheelWidget* whl)
                                        whl->paintState.y,
                                        &imgRect,
                                        &imgSrcRect);
-    
-    widgetRect = whl->fn->rectToScreen(whl);
+
+    whl->fn->rectToScreen(whl, &widgetRect);
     
     if(leRectIntersects(&imgRect, &widgetRect) == LE_TRUE)
     {
         // clip imgrect to widget rect
-        imgRect = leRectClipAdj(&imgRect, &widgetRect, &imgSrcRect);
+        leRectClipAdj(&imgRect, &widgetRect, &imgSrcRect, &imgRect);
         
-            midLineRect.y = widgetRect.y + widgetRect.height/2;
-            midLineRect.x = widgetRect.x;
-            midLineRect.height = 1;
-            midLineRect.width = widgetRect.width;
-            
-            clipRect = leRectClipAdj(&imgRect, &widgetRect, &imgSrcRect);
-            
-            _leListWheelWidget_GetItemRect(whl,
-                                       whl->paintState.nextItem,
-                                       whl->paintState.y,
-                                       &itemRect);
-            
-            if (leRectIntersects(&itemRect, &midLineRect) == LE_TRUE)
+        midLineRect.y = widgetRect.y + widgetRect.height/2;
+        midLineRect.x = widgetRect.x;
+        midLineRect.height = 1;
+        midLineRect.width = widgetRect.width;
+
+        leRectClipAdj(&imgRect, &widgetRect, &imgSrcRect, &clipRect);
+
+        _leListWheelWidget_GetItemRect(whl,
+                                   whl->paintState.nextItem,
+                                   whl->paintState.y,
+                                   &itemRect);
+
+        if (leRectIntersects(&itemRect, &midLineRect) == LE_TRUE)
+        {
+            leImage_Draw(item->icon,
+                         &imgSrcRect,
+                         clipRect.x, clipRect.y,
+                         paintState.alpha);
+
+#if LE_STREAMING_ENABLED == 1
+            if(leGetActiveStream() != NULL)
+            {
+                leGetActiveStream()->onDone = onImageStreamFinished;
+                leGetActiveStream()->userData = whl;
+
+                whl->widget.status.drawState = WAIT_ICON;
+
+                return;
+            }
+#endif
+        }
+        else if (whl->hideWheel == LE_FALSE)
+        {
+            if (whl->zoomEffects == LE_LISTWHEEL_ZOOM_EFFECT_NONE)
             {
                 leImage_Draw(item->icon,
                              &imgSrcRect,
@@ -783,150 +803,129 @@ static void drawIcon(leListWheelWidget* whl)
                 }
 #endif
             }
-            else if (whl->hideWheel == LE_FALSE)
+            else
             {
-                if (whl->zoomEffects == LE_LISTWHEEL_ZOOM_EFFECT_NONE)
+#if 0
+                lePixelBuffer pixelBuff;
+                void * buf;
+                GFX_BlendMode blendMode;
+                leRect newImgRect = imgRect;
+
+                //Pre-render to a buffer
+                buf = LE_MALLOC(
+                                                imgRect.width *
+                                                imgRect.height *
+                                                4);
+                if (buf != NULL)
                 {
-                    leImage_Draw(item->icon,
-                                 &imgSrcRect,
-                                 clipRect.x, clipRect.y,
-                                 paintState.alpha);
+                    lePixelBufferCreate(imgRect.width,
+                                          imgRect.height,
+                                          LE_COLOR_MODE_RGBA_8888,
+                                          buf,
+                                          &pixelBuff);
+                    memset(pixelBuff.pixels, 0x0, pixelBuff.buffer_length);
 
-#if LE_STREAMING_ENABLED == 1
-                    if(leGetActiveStream() != NULL)
+                    GFX_Set(GFXF_DRAW_COLOR, leColorConvert(
+                                                leContext_GetActive()->colorMode,
+                                                LE_COLOR_MODE_RGBA_8888,
+                                                leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND_TEXT));
+
+                    GFX_Set(GFXF_DRAW_TARGET, &pixelBuff);
+
+                    leDrawImage(item->icon,
+                                   0,
+                                   0,
+                                   imgSrcRect.width,
+                                   imgSrcRect.height,
+                                   0,
+                                   0,
+                                   &leContext_GetActive()->memIntf,
+                                   &whl->reader);
+
+                    if(whl->reader != NULL)
                     {
-                        leGetActiveStream()->onDone = onImageStreamFinished;
-                        leGetActiveStream()->userData = whl;
-
                         whl->widget.status.drawState = WAIT_ICON;
+                        whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&waitIcon;
+
+                        LE_FREE(buf);
 
                         return;
                     }
-#endif
-                }
-                else 
-                {
-#if 0
-                    lePixelBuffer pixelBuff;
-                    void * buf;
-                    GFX_BlendMode blendMode;
-                    leRect newImgRect = imgRect;
 
-                    //Pre-render to a buffer
-                    buf = LE_MALLOC(
-                                                    imgRect.width * 
-                                                    imgRect.height * 
-                                                    4);
-                    if (buf != NULL)
+                    GFX_Set(GFXF_DRAW_TARGET, NULL);
+
+                    //Process alpha channel
+                    GFX_Set(GFXF_DRAW_RESIZE_MODE, GFX_RESIZE_BILINEAR);
+                    GFX_Get(GFXF_DRAW_BLEND_MODE, &blendMode);
+                    GFX_Set(GFXF_DRAW_BLEND_MODE, blendMode | GFX_BLEND_CHANNEL);
+
+                    //Use draw blit to scale it up!
+                    _leListWheelWidget_ItemRectApplyEffects(whl,
+                                                    imgRect,
+                                                    &newImgRect);
+
+                    if (newImgRect.height != 0 &&
+                        newImgRect.width != 0 &&
+                        leRectIntersects(&newImgRect,
+                                           &layer->drawRect) == LE_TRUE)
                     {
-                        lePixelBufferCreate(imgRect.width,
-                                              imgRect.height,
-                                              LE_COLOR_MODE_RGBA_8888,
-                                              buf,
-                                              &pixelBuff);
-                        memset(pixelBuff.pixels, 0x0, pixelBuff.buffer_length);
+                        leRect textRect, textSrcRect, bounds;
 
-                        GFX_Set(GFXF_DRAW_COLOR, leColorConvert(
-                                                    leContext_GetActive()->colorMode,
-                                                    LE_COLOR_MODE_RGBA_8888,
-                                                    leScheme_GetRenderColor(whl->widget.scheme, LE_SCHM_FOREGROUND_TEXT));
+                        _leListWheelWidget_GetItemTextRect(whl,
+                                       whl->paintState.nextItem,
+                                       whl->paintState.y,
+                                       &textRect,
+                                       &textSrcRect);
 
-                        GFX_Set(GFXF_DRAW_TARGET, &pixelBuff);
-
-                        leDrawImage(item->icon,
-                                       0,
-                                       0,
-                                       imgSrcRect.width,
-                                       imgSrcRect.height,
-                                       0,
-                                       0,
-                                       &leContext_GetActive()->memIntf,
-                                       &whl->reader);
-
-                        if(whl->reader != NULL)
-                        {
-                            whl->widget.status.drawState = WAIT_ICON;
-                            whl->widget.drawFunc = (leWidget_DrawFunction_FnPtr)&waitIcon;
-
-                            LE_FREE(buf);                        
-
-                            return;
-                        }
-
-                        GFX_Set(GFXF_DRAW_TARGET, NULL);
-
-                        //Process alpha channel
-                        GFX_Set(GFXF_DRAW_RESIZE_MODE, GFX_RESIZE_BILINEAR);
-                        GFX_Get(GFXF_DRAW_BLEND_MODE, &blendMode);
-                        GFX_Set(GFXF_DRAW_BLEND_MODE, blendMode | GFX_BLEND_CHANNEL);
-
-                        //Use draw blit to scale it up!
                         _leListWheelWidget_ItemRectApplyEffects(whl,
-                                                        imgRect,
-                                                        &newImgRect);
+                                                                textRect,
+                                                                &textRect);
 
-                        if (newImgRect.height != 0 &&
-                            newImgRect.width != 0 && 
-                            leRectIntersects(&newImgRect,
-                                               &layer->drawRect) == LE_TRUE)
-                        {
-                            leRect textRect, textSrcRect, bounds;
+                        bounds.x = 0;
+                        bounds.y = 0;
+                        bounds.width = whl->widget.rect.width;
+                        bounds.height = textSrcRect.height;
 
-                            _leListWheelWidget_GetItemTextRect(whl,
-                                           whl->paintState.nextItem,
-                                           whl->paintState.y,
-                                           &textRect,
-                                           &textSrcRect);
+                        // arrange image rect
+                        leUtils_ArrangeRectangle(&newImgRect,
+                                                 textRect,
+                                                 bounds,
+                                                 whl->halign,
+                                                 LE_VALIGN_MIDDLE,
+                                                 whl->iconPos,
+                                                 whl->widget.margin.left,
+                                                 whl->widget.margin.top,
+                                                 whl->widget.margin.right,
+                                                 whl->widget.margin.bottom,
+                                                 whl->iconMargin);
 
-                            _leListWheelWidget_ItemRectApplyEffects(whl, 
-                                                                    textRect,
-                                                                    &textRect);
+                        leUtils_RectToScreenSpace((leWidget*)whl, &newImgRect);
 
-                            bounds.x = 0;
-                            bounds.y = 0;
-                            bounds.width = whl->widget.rect.width;
-                            bounds.height = textSrcRect.height;
+                        newImgRect.y += getItemY(whl, whl->paintState.y, bounds.height);
 
-                            // arrange image rect
-                            leUtils_ArrangeRectangle(&newImgRect,
-                                                     textRect,
-                                                     bounds,
-                                                     whl->halign,
-                                                     LE_VALIGN_MIDDLE,
-                                                     whl->iconPos,
-                                                     whl->widget.margin.left,
-                                                     whl->widget.margin.top,
-                                                     whl->widget.margin.right,
-                                                     whl->widget.margin.bottom,
-                                                     whl->iconMargin); 
-                            
-                            leUtils_RectToScreenSpace((leWidget*)whl, &newImgRect); 
+                        leRectClip(&newImgRect,
+                                     &layer->drawRect,
+                                     &newImgRect);
 
-                            newImgRect.y += getItemY(whl, whl->paintState.y, bounds.height);                        
-
-                            leRectClip(&newImgRect, 
-                                         &layer->drawRect,
-                                         &newImgRect);
-
-                            GFX_DrawStretchBlit(&pixelBuff,
-                                            0,
-                                            0,
-                                            pixelBuff.size.width,
-                                            pixelBuff.size.height,
-                                            newImgRect.x,
-                                            newImgRect.y,
-                                            newImgRect.width,
-                                            newImgRect.height);
-                        }
-
-                        GFX_Set(GFXF_DRAW_BLEND_MODE, blendMode);
-
-                        LE_FREE(buf);
+                        GFX_DrawStretchBlit(&pixelBuff,
+                                        0,
+                                        0,
+                                        pixelBuff.size.width,
+                                        pixelBuff.size.height,
+                                        newImgRect.x,
+                                        newImgRect.y,
+                                        newImgRect.width,
+                                        newImgRect.height);
                     }
-#endif
+
+                    GFX_Set(GFXF_DRAW_BLEND_MODE, blendMode);
+
+                    LE_FREE(buf);
                 }
+#endif
             }
         }
+    }
     
     nextItem(whl);
 }
@@ -938,7 +937,7 @@ static void drawIndicators(leListWheelWidget* whl)
     uint32_t topLine;
     uint32_t bottomLine;
     
-    rect = whl->fn->rectToScreen(whl);
+    whl->fn->rectToScreen(whl, &rect);
     halfHeight = rect.height / 2;
     
     topLine = (rect.y + halfHeight) - whl->indicatorArea;

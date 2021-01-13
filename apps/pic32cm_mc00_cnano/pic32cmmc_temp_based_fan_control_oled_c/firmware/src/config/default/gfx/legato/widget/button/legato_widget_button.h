@@ -211,7 +211,7 @@ typedef struct leButtonWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leButtonWidget* leButtonWidget_New();
+leButtonWidget* leButtonWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -223,7 +223,7 @@ LIB_EXPORT leButtonWidget* leButtonWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leButtonWidget_Constructor(leButtonWidget* wgt);
+void leButtonWidget_Constructor(leButtonWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

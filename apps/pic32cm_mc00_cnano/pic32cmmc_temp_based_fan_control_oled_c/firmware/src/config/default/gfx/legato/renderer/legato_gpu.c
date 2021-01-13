@@ -1,6 +1,19 @@
 #include "gfx/legato/renderer/legato_gpu.h"
 
+#include "gfx/legato/common/legato_utils.h"
+#include "gfx/legato/core/legato_state.h"
+
 extern leRenderState _rendererState;
+
+#if LE_RENDER_ORIENTATION == 0
+#define GPU_ORIENTATION GFX_ORIENT_0
+#elif LE_RENDER_ORIENTATION == 90
+#define GPU_ORIENTATION GFX_ORIENT_90
+#elif LE_RENDER_ORIENTATION == 180
+#define GPU_ORIENTATION GFX_ORIENT_180
+#else
+#define GPU_ORIENTATION GFX_ORIENT_270
+#endif
 
 static gfxColorMode _convertColorMode(leColorMode mode)
 {
@@ -33,28 +46,51 @@ leResult leGPU_DrawLine(int32_t x0,
     gfxPoint p0, p1;
     gfxRect clipRect;
     gfxColor drawClr;
+    gfxResult res;
 
     if(_rendererState.gpuDriver == NULL ||
        _rendererState.gpuDriver->drawLine == NULL)
         return LE_FAILURE;
 
-    buf.pixel_count = _rendererState.renderBuffer->pixel_count;
-    buf.size.width = _rendererState.renderBuffer->size.width;
-    buf.size.height = _rendererState.renderBuffer->size.height;
-    buf.mode = _convertColorMode(_rendererState.renderBuffer->mode);
-    buf.buffer_length = _rendererState.renderBuffer->buffer_length;
+    buf.pixel_count = leGetRenderBuffer()->pixel_count;
+    buf.size.width = leGetRenderBuffer()->size.width;
+    buf.size.height = leGetRenderBuffer()->size.height;
+    buf.mode = _convertColorMode(leGetRenderBuffer()->mode);
+    buf.buffer_length = leGetRenderBuffer()->buffer_length;
     buf.flags = 0;
-    buf.pixels = (gfxBuffer)_rendererState.renderBuffer->pixels;
+    buf.pixels = (gfxBuffer)leGetRenderBuffer()->pixels;
+    buf.orientation = GPU_ORIENTATION;
 
-    p0.x = x0;
-    p0.y = y0;
-    p1.x = x1;
-    p1.y = y1;
+    p0.x = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x - x0;
+    p0.y = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y - y0;
+    p1.x = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x - x1;
+    p1.y = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y - y1;
 
-    clipRect.x = clip->x;
-    clipRect.y = clip->y;
+    clipRect.x = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x - clip->x;
+    clipRect.y = _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y - clip->y;
     clipRect.width = clip->width;
     clipRect.height = clip->height;
+
+#if LE_RENDER_ORIENTATION != 0
+    leUtils_PointLogicalToScratch((int16_t*)&p0.x,
+                                  (int16_t*)&p0.y);
+
+    leUtils_PointLogicalToScratch((int16_t*)&p1.x,
+                                  (int16_t*)&p1.y);
+
+    leRect rotRect;
+    rotRect.x = clipRect.x;
+    rotRect.y = clipRect.y;
+    rotRect.width = clipRect.width;
+    rotRect.height = clipRect.height;
+
+    leUtils_RectLogicalToScratch(&rotRect);
+
+    clipRect.x = rotRect.x;
+    clipRect.y = rotRect.y;
+    clipRect.width = rotRect.width;
+    clipRect.height = rotRect.height;
+#endif
 
     drawClr = clr;
 
@@ -68,11 +104,11 @@ leResult leGPU_DrawLine(int32_t x0,
     }
 #endif
 
-    _rendererState.gpuDriver->drawLine(&buf,
-                                       &p0,
-                                       &p1,
-                                       &clipRect,
-                                       drawClr);
+    res = _rendererState.gpuDriver->drawLine(&buf,
+                                             &p0,
+                                             &p1,
+                                             &clipRect,
+                                             drawClr);
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     if(a <= 255)
@@ -84,7 +120,7 @@ leResult leGPU_DrawLine(int32_t x0,
     }
 #endif
 
-    return LE_SUCCESS;
+    return res == GFX_SUCCESS ? LE_SUCCESS : LE_FAILURE;
 }
 
 leResult leGPU_FillRect(const leRect* rect,
@@ -94,23 +130,40 @@ leResult leGPU_FillRect(const leRect* rect,
     gfxPixelBuffer buf;
     gfxRect fillRect;
     gfxColor drawClr;
+    gfxResult res;
 
     if(_rendererState.gpuDriver == NULL ||
        _rendererState.gpuDriver->fillRect == NULL)
         return LE_FAILURE;
 
-    buf.pixel_count = _rendererState.renderBuffer->pixel_count;
-    buf.size.width = _rendererState.renderBuffer->size.width;
-    buf.size.height = _rendererState.renderBuffer->size.height;
-    buf.mode = _convertColorMode(_rendererState.renderBuffer->mode);
-    buf.buffer_length = _rendererState.renderBuffer->buffer_length;
+    buf.pixel_count = leGetRenderBuffer()->pixel_count;
+    buf.size.width = leGetRenderBuffer()->size.width;
+    buf.size.height = leGetRenderBuffer()->size.height;
+    buf.mode = _convertColorMode(leGetRenderBuffer()->mode);
+    buf.buffer_length = leGetRenderBuffer()->buffer_length;
     buf.flags = 0;
-    buf.pixels = (gfxBuffer)_rendererState.renderBuffer->pixels;
+    buf.pixels = (gfxBuffer)leGetRenderBuffer()->pixels;
+    buf.orientation = GPU_ORIENTATION;
 
     fillRect.x = rect->x;
     fillRect.y = rect->y;
     fillRect.width = rect->width;
     fillRect.height = rect->height;
+
+#if LE_RENDER_ORIENTATION != 0
+    leRect rotRect;
+    rotRect.x = fillRect.x;
+    rotRect.y = fillRect.y;
+    rotRect.width = fillRect.width;
+    rotRect.height = fillRect.height;
+
+    leUtils_RectLogicalToScratch(&rotRect);
+
+    fillRect.x = rotRect.x;
+    fillRect.y = rotRect.y;
+    fillRect.width = rotRect.width;
+    fillRect.height = rotRect.height;
+#endif
 
     drawClr = clr;
 
@@ -124,9 +177,9 @@ leResult leGPU_FillRect(const leRect* rect,
     }
 #endif
 
-    _rendererState.gpuDriver->fillRect(&buf,
-                                       &fillRect,
-                                       drawClr);
+    res = _rendererState.gpuDriver->fillRect(&buf,
+                                             &fillRect,
+                                             drawClr);
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     if(a <= 255)
@@ -138,7 +191,7 @@ leResult leGPU_FillRect(const leRect* rect,
     }
 #endif
 
-    return LE_SUCCESS;
+    return res == GFX_SUCCESS ? LE_SUCCESS : LE_FAILURE;
 }
 
 leResult leGPU_BlitBuffer(const lePixelBuffer* sourceBuffer,
@@ -148,6 +201,7 @@ leResult leGPU_BlitBuffer(const lePixelBuffer* sourceBuffer,
 {
     gfxPixelBuffer sourceBuf, destBuf;
     gfxRect gfxSourceRect, gfxDestRect;
+    gfxResult res;
 
     if(_rendererState.gpuDriver == NULL ||
        _rendererState.gpuDriver->blitBuffer == NULL)
@@ -165,17 +219,19 @@ leResult leGPU_BlitBuffer(const lePixelBuffer* sourceBuffer,
     sourceBuf.buffer_length = sourceBuffer->buffer_length;
     sourceBuf.flags = 0;
     sourceBuf.pixels = (gfxBuffer)sourceBuffer->pixels;
+    sourceBuf.orientation = GFX_ORIENT_0;
 
-    destBuf.pixel_count = _rendererState.renderBuffer->pixel_count;
-    destBuf.size.width = _rendererState.renderBuffer->size.width;
-    destBuf.size.height = _rendererState.renderBuffer->size.height;
-    destBuf.mode = _convertColorMode(_rendererState.renderBuffer->mode);
-    destBuf.buffer_length = _rendererState.renderBuffer->buffer_length;
+    destBuf.pixel_count = leGetRenderBuffer()->pixel_count;
+    destBuf.size.width = leGetRenderBuffer()->size.width;
+    destBuf.size.height = leGetRenderBuffer()->size.height;
+    destBuf.mode = _convertColorMode(leGetRenderBuffer()->mode);
+    destBuf.buffer_length = leGetRenderBuffer()->buffer_length;
     destBuf.flags = 0;
-    destBuf.pixels = (gfxBuffer)_rendererState.renderBuffer->pixels;
+    destBuf.pixels = (gfxBuffer)leGetRenderBuffer()->pixels;
+    destBuf.orientation = GPU_ORIENTATION;
 
-    gfxDestRect.x = destRect->x;
-    gfxDestRect.y = destRect->y;
+    gfxDestRect.x = destRect->x - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    gfxDestRect.y = destRect->y - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
     gfxDestRect.width = destRect->width;
     gfxDestRect.height = destRect->height;
 
@@ -189,10 +245,10 @@ leResult leGPU_BlitBuffer(const lePixelBuffer* sourceBuffer,
     }
 #endif
 
-    _rendererState.gpuDriver->blitBuffer(&sourceBuf,
-                                         &gfxSourceRect,
-                                         &destBuf,
-                                         &gfxDestRect);
+    res = _rendererState.gpuDriver->blitBuffer(&sourceBuf,
+                                               &gfxSourceRect,
+                                               &destBuf,
+                                               &gfxDestRect);
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     if(a <= 255)
@@ -204,7 +260,7 @@ leResult leGPU_BlitBuffer(const lePixelBuffer* sourceBuffer,
     }
 #endif
 
-    return LE_SUCCESS;
+    return res == GFX_SUCCESS ? LE_SUCCESS : LE_FAILURE;
 }
 
 leResult leGPU_BlitStretchBuffer(const lePixelBuffer* sourceBuffer,
@@ -214,6 +270,7 @@ leResult leGPU_BlitStretchBuffer(const lePixelBuffer* sourceBuffer,
 {
     gfxPixelBuffer sourceBuf, destBuf;
     gfxRect gfxSourceRect, gfxDestRect;
+    gfxResult res;
 
     if(_rendererState.gpuDriver == NULL ||
        _rendererState.gpuDriver->blitBuffer == NULL)
@@ -231,17 +288,19 @@ leResult leGPU_BlitStretchBuffer(const lePixelBuffer* sourceBuffer,
     sourceBuf.buffer_length = sourceBuffer->buffer_length;
     sourceBuf.flags = 0;
     sourceBuf.pixels = (gfxBuffer)sourceBuffer->pixels;
+    sourceBuf.orientation = GFX_ORIENT_0;
 
-    destBuf.pixel_count = _rendererState.renderBuffer->pixel_count;
-    destBuf.size.width = _rendererState.renderBuffer->size.width;
-    destBuf.size.height = _rendererState.renderBuffer->size.height;
-    destBuf.mode = _convertColorMode(_rendererState.renderBuffer->mode);
-    destBuf.buffer_length = _rendererState.renderBuffer->buffer_length;
+    destBuf.pixel_count = leGetRenderBuffer()->pixel_count;
+    destBuf.size.width = leGetRenderBuffer()->size.width;
+    destBuf.size.height = leGetRenderBuffer()->size.height;
+    destBuf.mode = _convertColorMode(leGetRenderBuffer()->mode);
+    destBuf.buffer_length = leGetRenderBuffer()->buffer_length;
     destBuf.flags = 0;
-    destBuf.pixels = (gfxBuffer)_rendererState.renderBuffer->pixels;
+    destBuf.pixels = (gfxBuffer)leGetRenderBuffer()->pixels;
+    destBuf.orientation = GPU_ORIENTATION;
 
-    gfxDestRect.x = destRect->x;
-    gfxDestRect.y = destRect->y;
+    gfxDestRect.x = destRect->x - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].x;
+    gfxDestRect.y = destRect->y - _rendererState.layerStates[_rendererState.layerIdx].frameRectList.rects[_rendererState.frameRectIdx].y;
     gfxDestRect.width = destRect->width;
     gfxDestRect.height = destRect->height;
 
@@ -255,10 +314,10 @@ leResult leGPU_BlitStretchBuffer(const lePixelBuffer* sourceBuffer,
     }
 #endif
 
-    _rendererState.gpuDriver->blitBuffer(&sourceBuf,
-                                         &gfxSourceRect,
-                                         &destBuf,
-                                         &gfxDestRect);
+    res = _rendererState.gpuDriver->blitBuffer(&sourceBuf,
+                                               &gfxSourceRect,
+                                               &destBuf,
+                                               &gfxDestRect);
 
 #if LE_ALPHA_BLENDING_ENABLED == 1
     if(a <= 255)
@@ -270,5 +329,5 @@ leResult leGPU_BlitStretchBuffer(const lePixelBuffer* sourceBuffer,
     }
 #endif
 
-    return LE_SUCCESS;
+    return res == GFX_SUCCESS ? LE_SUCCESS : LE_FAILURE;
 }

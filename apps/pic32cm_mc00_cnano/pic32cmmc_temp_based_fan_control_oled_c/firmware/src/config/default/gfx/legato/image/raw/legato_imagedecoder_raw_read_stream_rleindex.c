@@ -26,14 +26,14 @@
 
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#if LE_ENABLE_RAW_DECODER == 1
+
 #if LE_STREAMING_ENABLED == 1
 
 #include "gfx/legato/renderer/legato_renderer.h"
 #include "gfx/legato/image/legato_image_utils.h"
 
-#if LE_ASSET_DECODER_USE_PIXEL_CACHE == 1
 #define cache leRawImageDecoderScratchBuffer
-#endif
 
 #define RLE_HEADER_SIZE 2
 #define RLE_BLOCK_SIZE_MAX 8
@@ -41,7 +41,7 @@
 void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
-static struct StreamReadStage
+struct StreamReadStage
 {
     leRawDecodeStage base;
 
@@ -62,11 +62,13 @@ static struct StreamReadStage
     leBool stalled;
 
     leStream stream;
-} streamReadStage;
+};
+
+static LE_COHERENT_ATTR struct StreamReadStage streamReadStage;
 
 static leResult exec(struct StreamReadStage* stage);
 
-static leResult advanceStage()
+static leResult advanceStage(void)
 {
     streamReadStage.base.state->readIndex += 1;
 
@@ -104,11 +106,14 @@ static leResult rleHeaderDecode(struct StreamReadStage* stage)
         return LE_FAILURE;
 
     // read the header data
-    leStream_Read(&streamReadStage.stream,
-                  (uint32_t)streamReadStage.base.state->source->header.address,
-                  RLE_HEADER_SIZE,
-                  (void*)&streamReadStage.rleLengthSize,
-                  rleHeaderDataReady);
+    if(leStream_Read(&streamReadStage.stream,
+                     (uint32_t)streamReadStage.base.state->source->header.address,
+                     RLE_HEADER_SIZE,
+                     (void*)&streamReadStage.rleLengthSize,
+                     rleHeaderDataReady) == LE_FAILURE)
+    {
+        return LE_FAILURE;
+    }
 
     // only stall out of the request wasn't handled immediately
     streamReadStage.stalled = !leStream_IsDataReady(&streamReadStage.stream);
@@ -138,7 +143,7 @@ static void irleDataReady(leStream* strm)
     streamReadStage.stalled = LE_FALSE;
 }
 
-static leResult readIRLEData()
+static leResult readIRLEData(void)
 {
     // only increment after the first read
     if(streamReadStage.rleDecodeCount > 0)
@@ -148,13 +153,16 @@ static leResult readIRLEData()
     }
 
     // get some RLE data
-    leStream_Read(&streamReadStage.stream,
-                  (uint32_t)(((uint8_t*)streamReadStage.stream.desc->address) +
-                      RLE_HEADER_SIZE +
-                      (streamReadStage.rleBlockOffset * (streamReadStage.rleLengthSize + streamReadStage.rleDataSize))),
-                  streamReadStage.rleLengthSize + streamReadStage.rleDataSize,
-                  (void*)&streamReadStage.rleBlock,
-                  irleDataReady);
+    if(leStream_Read(&streamReadStage.stream,
+                     (uint32_t)(((uint8_t*)streamReadStage.stream.desc->address) +
+                     RLE_HEADER_SIZE +
+                     (streamReadStage.rleBlockOffset * (streamReadStage.rleLengthSize + streamReadStage.rleDataSize))),
+                     streamReadStage.rleLengthSize + streamReadStage.rleDataSize,
+                     (void*)&streamReadStage.rleBlock,
+                     irleDataReady) == LE_FAILURE)
+    {
+        return LE_FAILURE;
+    }
 
     streamReadStage.rleDecodeCount += 1;
 
@@ -280,13 +288,14 @@ static leResult exec_blocking(struct StreamReadStage* stage)
                 }
 
                 // get some RLE data
-                leStream_Read(&streamReadStage.stream,
-                              (uint32_t)(((uint8_t*)streamReadStage.stream.desc->address) +
-                              RLE_HEADER_SIZE +
-                              (streamReadStage.rleBlockOffset * (streamReadStage.rleLengthSize + streamReadStage.rleDataSize))),
-                              streamReadStage.rleLengthSize + streamReadStage.rleDataSize,
-                              (void*)&streamReadStage.rleBlock,
-                              irleDataReady);
+                while(leStream_Read(&streamReadStage.stream,
+                                   (uint32_t)(((uint8_t*)streamReadStage.stream.desc->address) +
+                                   RLE_HEADER_SIZE +
+                                   (streamReadStage.rleBlockOffset * (streamReadStage.rleLengthSize + streamReadStage.rleDataSize))),
+                                   streamReadStage.rleLengthSize + streamReadStage.rleDataSize,
+                                   (void*)&streamReadStage.rleBlock,
+                                   irleDataReady) != LE_SUCCESS)
+                { }
 
                 streamReadStage.rleDecodeCount += 1;
 
@@ -334,19 +343,11 @@ leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
-#if LE_ASSET_DECODER_USE_PIXEL_CACHE == 0
-    leStream_Init(&streamReadStage.stream,
-                  (leStreamDescriptor*)state->source,
-                  0,
-                  NULL,
-                  NULL);
-#else
     leStream_Init(&streamReadStage.stream,
                   (struct leStreamDescriptor*)state->source,
-                  LE_ASSET_DECODER_CACHE_SIZE,
+                  LE_ASSET_DECODER_PIXEL_CACHE_SIZE,
                   leRawImageDecoderScratchBuffer,
                   NULL);
-#endif
 
     if(leStream_Open(&streamReadStage.stream) == LE_FAILURE)
     {
@@ -384,3 +385,5 @@ leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* state)
 }
 
 #endif
+
+#endif /* LE_ENABLE_RAW_DECODER */

@@ -56,7 +56,7 @@ static void invalidateImageRect(const leImageWidget* _this)
     
     _leImageWidget_GetImageRect(_this, &imgRect, &clipRect);
     
-    rect = _this->fn->localRect(_this);
+    _this->fn->localRect(_this, &rect);
     
     leRectClip(&rect, &imgRect, &clipRect);
     
@@ -84,11 +84,6 @@ void _leImageWidget_Constructor(leImageWidget* _this)
     _this->widget.style.backgroundType = LE_WIDGET_BACKGROUND_FILL;
 
     _this->image = NULL;
-    
-#if LE_IMAGE_WIDGET_DEBUG_CB == 1
-    leImageWidget_DrawEventCallback debugDrawStart;
-    leImageWidget_DrawEventCallback debugDrawEnd;
-#endif
 }
 
 void _leImageWidget_Destructor(leImageWidget* _this)
@@ -152,20 +147,6 @@ leResult _leImageWidget_SetImage(leImageWidget* _this,
     return LE_SUCCESS;
 }
 
-#if LE_IMAGE_WIDGET_DEBUG_CB == 1
-void leImageWidget_SetDebugStartCallBack(leImageWidget* _this,
-                                         leImageWidget_DrawEventCallback cb)
-{
-    _this->debugDrawStart = cb;
-}
-
-void leImageWidget_SetDebugCallBackEnd(leImageWidget* _this,
-                                       leImageWidget_DrawEventCallback cb)
-{
-    _this->debugDrawEnd = cb;
-}
-#endif
-
 void _leImageWidget_Paint(leImageWidget* _this);
 
 #if LE_DYNAMIC_VTABLES == 1
@@ -183,11 +164,6 @@ void _leImageWidget_GenerateVTable()
     /* member functions */
     imageWidgetVTable.getImage = _leImageWidget_GetImage;
     imageWidgetVTable.setImage = _leImageWidget_SetImage;
-    
-#if LE_IMAGE_WIDGET_DEBUG_CB == 1
-    imageWidgetVTable.setDebugDrawStartCallback = leImageWidget_SetDebugStartCallBack;
-    imageWidgetVTable.setDebugDrawEndCallback = leImageWidget_SetDebugCallBackEnd;
-#endif
 }
 
 void _leImageWidget_FillVTable(leImageWidgetVTable* tbl)
@@ -281,11 +257,6 @@ static const leImageWidgetVTable imageWidgetVTable =
     /* member functions */
     .getImage = _leImageWidget_GetImage,
     .setImage = _leImageWidget_SetImage,
-
-#if LE_IMAGE_WIDGET_DEBUG_CB == 1
-    .setDebugDrawStartCallback = leImageWidget_SetDebugStartCallBack,
-    .setDebugDrawEndCallback = leImageWidget_SetDebugCallBackEnd,
-#endif
 };
 #endif
 

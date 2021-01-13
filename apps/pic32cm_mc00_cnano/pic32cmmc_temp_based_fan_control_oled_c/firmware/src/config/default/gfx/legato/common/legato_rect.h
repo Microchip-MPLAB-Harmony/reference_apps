@@ -69,7 +69,7 @@
  * @param point is the criteria
  * @returns LE_TRUE if inside, otherwise LE_FALSE;
  */
-LIB_EXPORT leBool leRectContainsPoint(const leRect* rect, const lePoint* point);
+leBool leRectContainsPoint(const leRect* rect, const lePoint* point);
 
 // *****************************************************************************
 /**
@@ -85,7 +85,7 @@ LIB_EXPORT leBool leRectContainsPoint(const leRect* rect, const lePoint* point);
  * @param point is the criteria
  * @returns LE_TRUE if inside, otherwise LE_FALSE;
  */
-LIB_EXPORT leBool leRectContainsRect(const leRect* l_rect, const leRect* r_rect);
+leBool leRectContainsRect(const leRect* l_rect, const leRect* r_rect);
 
 // *****************************************************************************
 /**
@@ -101,7 +101,7 @@ LIB_EXPORT leBool leRectContainsRect(const leRect* l_rect, const leRect* r_rect)
  * @param r_rect a rectangle.
  * @returns LE_TRUE if intersect, otherwise LE_FALSE;
  */
-LIB_EXPORT leBool leRectIntersects(const leRect* l_rect, const leRect* r_rect);
+leBool leRectIntersects(const leRect* l_rect, const leRect* r_rect);
 
 // *****************************************************************************
 /**
@@ -111,14 +111,17 @@ LIB_EXPORT leBool leRectIntersects(const leRect* l_rect, const leRect* r_rect);
  * @code
  * leRect* l_rect;
  * leRect* r_rect;
- * leRect rect = leRectCombine(l_rect, r_rect);
+ * leRect res;
+ * leRectCombine(l_rect, r_rect, &res);
  * @endcode
  * @param l_rect a rectangle.
  * @param r_rect a rectangle.
+ * @param res the resulting rectangle
  * @return leRect.
  */
-LIB_EXPORT leRect leRectCombine(const leRect* l_rect,
-                                const leRect* r_rect);
+void leRectCombine(const leRect* l_rect,
+                   const leRect* r_rect,
+                   leRect* res);
 
 // *****************************************************************************
 /**
@@ -136,9 +139,9 @@ LIB_EXPORT leRect leRectCombine(const leRect* l_rect,
  * @param result is the new rectangle.
  * @return void.
  */
-LIB_EXPORT void leRectClip(const leRect* l_rect,
-                           const leRect* r_rect, 
-                           leRect* result);
+void leRectClip(const leRect* l_rect,
+                const leRect* r_rect,
+                leRect* result);
 
 // *****************************************************************************
 /* Function:
@@ -174,11 +177,13 @@ LIB_EXPORT void leRectClip(const leRect* l_rect,
  * @param l_rect a rectangle.
  * @param r_rect a rectangle.
  * @param result is the adjusted rectangle.
+ * @param res the resultant rectangle
  * @return void.
  */
-LIB_EXPORT leRect leRectClipAdj(const leRect* l_rect,
-                                const leRect* r_rect, 
-                                leRect* adj);
+void leRectClipAdj(const leRect* l_rect,
+                   const leRect* r_rect,
+                   leRect* adj,
+                   leRect* res);
 
 // *****************************************************************************                 
 /**
@@ -192,10 +197,12 @@ LIB_EXPORT leRect leRectClipAdj(const leRect* l_rect,
  * @endcode
  * @param p1 the first point
  * @param p2 the second point
+ * @param res the resultant rectangle
  * @return leRect structure based on 2 points.
  */
-LIB_EXPORT leRect leRectFromPoints(const lePoint* p1,
-                                   const lePoint* p2);
+void leRectFromPoints(const lePoint* p1,
+                      const lePoint* p2,
+                      leRect* res);
 
 // *****************************************************************************
 /**
@@ -213,9 +220,9 @@ LIB_EXPORT leRect leRectFromPoints(const lePoint* p1,
  * @param p2 the point of the lower right vertex
  * @return void.
  */
-LIB_EXPORT void leRectToPoints(const leRect* rect,
-                               lePoint* p1,
-                               lePoint* p2);    
+void leRectToPoints(const leRect* rect,
+                    lePoint* p1,
+                    lePoint* p2);
 
 // *****************************************************************************
 /**
@@ -234,9 +241,9 @@ LIB_EXPORT void leRectToPoints(const leRect* rect,
  * @param res
  * @return the number of non-overlapping rectangles returned.
  */
-LIB_EXPORT uint32_t leRectSplit(const leRect* sub,
-                                const leRect* obj,
-                                leRect res[4]); 
+uint32_t leRectSplit(const leRect* sub,
+                     const leRect* obj,
+                     leRect res[4]);
 
 // *****************************************************************************
 /**
@@ -253,8 +260,8 @@ LIB_EXPORT uint32_t leRectSplit(const leRect* sub,
  * @param r a point.
  * @return leRect.
  */
-LIB_EXPORT int32_t leRectCompare(const leRect* l,
-                                 const leRect* r);   
+int32_t leRectCompare(const leRect* l,
+                      const leRect* r);
 
 // *****************************************************************************
 /**
@@ -271,8 +278,8 @@ LIB_EXPORT int32_t leRectCompare(const leRect* l,
  * @param r a point.
  * @returns LE_TRUE if similar, otherwise LE_FALSE;
  */
-LIB_EXPORT leBool leRectsAreSimilar(const leRect* l,
-                                      const leRect* r);                                                            
+leBool leRectsAreSimilar(const leRect* l,
+                         const leRect* r);
 
 /**
   * @cond INTERNAL

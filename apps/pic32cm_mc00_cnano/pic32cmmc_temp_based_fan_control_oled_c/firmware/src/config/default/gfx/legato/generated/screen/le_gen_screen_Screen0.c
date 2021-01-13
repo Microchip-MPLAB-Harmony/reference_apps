@@ -9,7 +9,7 @@ leTextFieldWidget* Screen0_TextFieldWidget0;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_Screen0()
+leResult screenInit_Screen0(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -19,7 +19,7 @@ leResult screenInit_Screen0()
     return LE_SUCCESS;
 }
 
-leResult screenShow_Screen0()
+leResult screenShow_Screen0(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
@@ -57,11 +57,11 @@ leResult screenShow_Screen0()
     return LE_SUCCESS;
 }
 
-void screenUpdate_Screen0()
+void screenUpdate_Screen0(void)
 {
 }
 
-void screenHide_Screen0()
+void screenHide_Screen0(void)
 {
 
     leRemoveRootWidget(root0, 0);
@@ -75,7 +75,7 @@ void screenHide_Screen0()
     showing = LE_FALSE;
 }
 
-void screenDestroy_Screen0()
+void screenDestroy_Screen0(void)
 {
     if(initialized == LE_FALSE)
         return;

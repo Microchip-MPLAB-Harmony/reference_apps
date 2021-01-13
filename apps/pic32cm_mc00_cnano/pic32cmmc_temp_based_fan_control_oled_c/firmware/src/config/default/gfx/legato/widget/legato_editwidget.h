@@ -250,14 +250,14 @@ void _leEditWidget_EditBackspace(leEditWidget* _this);
 
 
 // DOM-IGNORE-BEGIN
-leResult _leEditWidget_StartEdit();
-void _leEditWidget_EndEdit();
+leResult _leEditWidget_StartEdit(void);
+void _leEditWidget_EndEdit(void);
 
-void _leEditWidget_Clear();
-void _leEditWidget_Accept();
+void _leEditWidget_Clear(void);
+void _leEditWidget_Accept(void);
 void _leEditWidget_Set(const leString* str);
 void _leEditWidget_Append(const leString* str);
-void _leEditWidget_Backspace();
+void _leEditWidget_Backspace(void);
 // DOM-IGNORE-END
 
 #endif // LEGATO_EDITWIDGET_H

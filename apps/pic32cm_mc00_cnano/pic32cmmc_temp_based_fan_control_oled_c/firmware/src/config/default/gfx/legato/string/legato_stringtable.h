@@ -119,7 +119,7 @@ typedef struct leStringInfo
  * @param table is the table to query.
  * @return the number of strings in the table.
  */
-LIB_EXPORT uint32_t leStringTable_GetStringCount(const leStringTable* table);
+uint32_t leStringTable_GetStringCount(const leStringTable* table);
 
 // *****************************************************************************
 /**
@@ -132,7 +132,7 @@ LIB_EXPORT uint32_t leStringTable_GetStringCount(const leStringTable* table);
  * @param table is the table to query.
  * @return the number of languages in the table.
  */
-LIB_EXPORT uint32_t leStringTable_GetLanguageCount(const leStringTable* table);
+uint32_t leStringTable_GetLanguageCount(const leStringTable* table);
 
 // *****************************************************************************
 /**
@@ -148,9 +148,9 @@ LIB_EXPORT uint32_t leStringTable_GetLanguageCount(const leStringTable* table);
  * @param languageID the search criteria.
  * @return the offset of the string in bytes.
  */
-LIB_EXPORT uint32_t leStringTable_GetStringOffset(const leStringTable* table,
-                                                  uint32_t stringID,
-                                                  uint32_t languageID);
+uint32_t leStringTable_GetStringOffset(const leStringTable* table,
+                                       uint32_t stringID,
+                                       uint32_t languageID);
 
 // *****************************************************************************
 /**
@@ -165,8 +165,8 @@ LIB_EXPORT uint32_t leStringTable_GetStringOffset(const leStringTable* table,
  * @param stringID is the search criteria.
  * @return the offset of the string in bytes.
  */
-LIB_EXPORT uint32_t leStringTable_GetActiveStringOffset(const leStringTable* table,
-                                                        uint32_t stringID);
+uint32_t leStringTable_GetActiveStringOffset(const leStringTable* table,
+                                             uint32_t stringID);
 
 // *****************************************************************************
 /**
@@ -185,9 +185,9 @@ LIB_EXPORT uint32_t leStringTable_GetActiveStringOffset(const leStringTable* tab
  * @param languageID the language search criteria.
  * @return the font for the string.
  */
-LIB_EXPORT leFont* leStringTable_GetStringFont(const leStringTable* table,
-                                               uint32_t stringID,
-                                               uint32_t languageID);
+leFont* leStringTable_GetStringFont(const leStringTable* table,
+                                    uint32_t stringID,
+                                    uint32_t languageID);
 
 // *****************************************************************************
 /**
@@ -202,8 +202,8 @@ LIB_EXPORT leFont* leStringTable_GetStringFont(const leStringTable* table,
  * @param info is the filled leStringInfo structure
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringTable_StringLookup(const leStringTable* table,
-                                               leStringInfo* info);
+leResult leStringTable_StringLookup(const leStringTable* table,
+                                    leStringInfo* info);
 
 // *****************************************************************************
 /**
@@ -219,8 +219,8 @@ LIB_EXPORT leResult leStringTable_StringLookup(const leStringTable* table,
  * @param info is the info search criteria.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringTable_GetStringLength(const leStringTable* table,
-                                                  leStringInfo* info);
+leResult leStringTable_GetStringLength(const leStringTable* table,
+                                       leStringInfo* info);
 
 
 #endif /* LEGATO_STRINGTABLE_H */

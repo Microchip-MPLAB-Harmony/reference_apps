@@ -70,9 +70,9 @@ typedef struct leLineWidget leLineWidget;
 #define LE_LINEWIDGET_VTABLE(THIS_TYPE) \
     LE_WIDGET_VTABLE(THIS_TYPE) \
     \
-    lePoint   (*getStartPoint)(const THIS_TYPE* _this); \
+    leResult  (*getStartPoint)(const THIS_TYPE* _this, lePoint* pnt); \
     leResult  (*setStartPoint)(THIS_TYPE* _this, int32_t x, int32_t y); \
-    lePoint   (*getEndPoint)(const THIS_TYPE* _this); \
+    leResult  (*getEndPoint)(const THIS_TYPE* _this, lePoint* pnt); \
     leResult  (*setEndPoint)(THIS_TYPE* _this, int32_t x, int32_t y); \
     
 typedef struct leLineWidgetVTable
@@ -122,7 +122,7 @@ typedef struct leLineWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leLineWidget* leLineWidget_New();
+leLineWidget* leLineWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -134,7 +134,7 @@ LIB_EXPORT leLineWidget* leLineWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leLineWidget_Constructor(leLineWidget* wgt);
+void leLineWidget_Constructor(leLineWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget
