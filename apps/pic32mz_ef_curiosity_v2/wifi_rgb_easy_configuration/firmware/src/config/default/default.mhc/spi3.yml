@@ -1,0 +1,66 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: spi3}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: SPI_BRG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi3, value: '49'}
+  - type: Comment
+    attributes: {id: SPI_CLOCK_MODE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '***SPI Mode 0 is Selected***'}
+  - type: Hex
+    attributes: {id: SPI_DUMMY_DATA}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: Boolean
+    attributes: {id: SPI_INTERRUPT_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi3, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: SPI_MSTR_MODE_EN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi3, value: '0'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: SPI3_SPI}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_spi_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_spi_SPI_dependency}
+- type: ElementPosition
+  attributes: {x: '20', y: '448', id: spi3}

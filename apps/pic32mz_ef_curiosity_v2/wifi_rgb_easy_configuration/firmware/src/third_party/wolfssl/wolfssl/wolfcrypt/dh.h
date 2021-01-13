@@ -1,6 +1,6 @@
 /* dh.h
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -45,11 +45,19 @@
 #ifdef WOLFSSL_ASYNC_CRYPT
     #include <wolfssl/wolfcrypt/async.h>
 #endif
+
+/* Optional support extended DH public / private keys */
+#if !defined(WOLFSSL_DH_EXTRA) && (defined(WOLFSSL_QT) || \
+        defined(OPENSSL_ALL) || defined(WOLFSSL_OPENSSH) || \
+        defined(WOLFSSL_STATIC_EPHEMERAL))
+    #define WOLFSSL_DH_EXTRA
+#endif
+
 typedef struct DhParams {
-    #ifdef HAVE_FFDHE_Q
+#ifdef HAVE_FFDHE_Q
     const byte* q;
     word32      q_len;
-    #endif /* HAVE_FFDHE_Q */
+#endif /* HAVE_FFDHE_Q */
     const byte* p;
     word32      p_len;
     const byte* g;
@@ -57,14 +65,22 @@ typedef struct DhParams {
 } DhParams;
 
 /* Diffie-Hellman Key */
-typedef struct DhKey {
-    mp_int p, g, q;                         /* group parameters  */
+struct DhKey {
+    mp_int p, g, q; /* group parameters */
+#ifdef WOLFSSL_DH_EXTRA
+    mp_int pub;
+    mp_int priv;
+#endif
     void* heap;
 #ifdef WOLFSSL_ASYNC_CRYPT
     WC_ASYNC_DEV asyncDev;
 #endif
-} DhKey;
+};
 
+#ifndef WC_DH_TYPE_DEFINED
+    typedef struct DhKey DhKey;
+    #define WC_DH_TYPE_DEFINED
+#endif
 
 #ifdef HAVE_FFDHE_2048
 WOLFSSL_API const DhParams* wc_Dh_ffdhe2048_Get(void);
@@ -93,11 +109,20 @@ WOLFSSL_API int wc_DhAgree(DhKey* key, byte* agree, word32* agreeSz,
                        word32 pubSz);
 
 WOLFSSL_API int wc_DhKeyDecode(const byte* input, word32* inOutIdx, DhKey* key,
-                           word32);
+                           word32); /* wc_DhKeyDecode is in asn.c */
+
 WOLFSSL_API int wc_DhSetKey(DhKey* key, const byte* p, word32 pSz, const byte* g,
                         word32 gSz);
 WOLFSSL_API int wc_DhSetKey_ex(DhKey* key, const byte* p, word32 pSz,
                         const byte* g, word32 gSz, const byte* q, word32 qSz);
+
+#ifdef WOLFSSL_DH_EXTRA
+WOLFSSL_API int wc_DhImportKeyPair(DhKey* key, const byte* priv, word32 privSz,
+                                   const byte* pub, word32 pubSz);
+WOLFSSL_API int wc_DhExportKeyPair(DhKey* key, byte* priv, word32* pPrivSz, 
+                                   byte* pub, word32* pPubSz);
+#endif /* WOLFSSL_DH_EXTRA */
+
 WOLFSSL_API int wc_DhSetCheckKey(DhKey* key, const byte* p, word32 pSz,
                         const byte* g, word32 gSz, const byte* q, word32 qSz,
                         int trusted, WC_RNG* rng);
@@ -124,4 +149,3 @@ WOLFSSL_API int wc_DhExportParamsRaw(DhKey* dh, byte* p, word32* pSz,
 
 #endif /* NO_DH */
 #endif /* WOLF_CRYPT_DH_H */
-

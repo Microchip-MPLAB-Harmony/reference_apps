@@ -124,6 +124,11 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 {
     WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
 
+    if (NULL == pMsgContent)
+    {
+        return;
+    }
+
     switch (msgType)
     {
         /* Requested BSS scan has completed. */
@@ -518,16 +523,24 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             break;
         }
 
-#ifdef WDRV_WINC_ENABLE_BLE
+#ifdef WDRV_WINC_DEVICE_WINC3400
         /* A BLE message has been received, pass it on to the BLE application. */
         case M2M_WIFI_RESP_BLE_API_RECV:
         {
-            if (true == pDcpt->bleActive)
-            {
-                const tstrM2mBleApiMsg *const pBLEMsg = (const tstrM2mBleApiMsg *const)pMsgContent;
+            static const uint8_t bleGapMDevReadyMsg[] = {0x05, 0x01, 0x34, 0x3F, 0x00, 0x0D, 0x00, 0x00, 0x00};
+            const tstrM2mBleApiMsg *const pBLEMsg = (const tstrM2mBleApiMsg *const)pMsgContent;
 
-                platform_interface_callback((uint8_t*)pBLEMsg->data, pBLEMsg->u16Len);
+            if ((false == pDcpt->isOpen)
+                    && (9 == pBLEMsg->u16Len)
+                    && (0 == memcmp(pBLEMsg->data, bleGapMDevReadyMsg, 9))
+                    )
+            {
+                pDcpt->isOpen = true;
             }
+
+#ifdef WDRV_WINC_ENABLE_BLE
+            platform_interface_callback((uint8_t*)pBLEMsg->data, pBLEMsg->u16Len);
+#endif
             break;
         }
 #endif
@@ -740,20 +753,20 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
             }
             break;
         }
-        
+
         case M2M_SSL_REQ_ECC:
-		{
+        {
             WDRV_WINC_ECC_REQ_INFO info;
             if (NULL != pDcpt->pfSSLReqECCCB)
             {
                 tstrEccReqInfo  *eccReqInfo;
                 eccReqInfo  = (tstrEccReqInfo *)pMsgContent;
-                
+
                 info.reqCmd = eccReqInfo->u16REQ;
                 info.seqNo = eccReqInfo->u32SeqNo;
                 info.status = eccReqInfo->u16Status;
                 info.userData = eccReqInfo->u32UserData;
-                
+
                 switch (info.reqCmd)
                 {
                     case ECC_REQ_CLIENT_ECDH:
@@ -764,7 +777,7 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
                         memcpy(&ecdhReqInfo, &eccReqInfo->strEcdhREQ, sizeof(tstrEcdhReqInfo));
                         pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdhReqInfo);
                         break;
-                    }        
+                    }
 
                     case ECC_REQ_SIGN_VERIFY:
                     {
@@ -780,15 +793,15 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
                         memcpy(&ecdsaSignReqInfo, &eccReqInfo->strEcdsaSignREQ, sizeof(tstrEcdsaSignReqInfo));
                         pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdsaSignReqInfo);
                         break;
-                        
+
                     }
 
-		    default:
+            default:
                     {
                         break;
                     }
                 }
-                                        
+
             }
             break;
         }
@@ -1150,7 +1163,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
             pDcpt->sysStat = SYS_STATUS_BUSY;
 
             WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
-            
+
             if (OSAL_RESULT_TRUE != OSAL_MUTEX_Create(&pDcpt->eventProcessMutex))
             {
                 WDRV_DBG_ERROR_PRINT("eventProcessMutex create failed\r\n");
@@ -1369,7 +1382,7 @@ DRV_HANDLE WDRV_WINC_Open(const SYS_MODULE_INDEX index, const DRV_IO_INTENT inte
 #endif
 
     /* Initialise driver state. */
-    pDcpt->isOpen                   = true;
+    pDcpt->isOpen                   = false;
     pDcpt->isAP                     = false;
     pDcpt->isProvisioning           = false;
     pDcpt->isConnected              = false;
@@ -1448,9 +1461,22 @@ DRV_HANDLE WDRV_WINC_Open(const SYS_MODULE_INDEX index, const DRV_IO_INTENT inte
     m2m_wifi_get_mac_address(pDcpt->ethAddress);
 
 #ifdef WDRV_WINC_DEVICE_WINC3400
+    while (false == pDcpt->isOpen)
+    {
+        if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->isrSemaphore, OSAL_WAIT_FOREVER))
+        {
+            if (M2M_SUCCESS != m2m_wifi_handle_events())
+            {
+                OSAL_SEM_Post(&pDcpt->isrSemaphore);
+            }
+        }
+    }
+
     /* On WINC3400 place BLE into restricted state. */
     m2m_wifi_req_restrict_ble();
 #endif
+
+    pDcpt->isOpen = true;
 
     return (DRV_HANDLE)pDcpt;
 }

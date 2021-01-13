@@ -66,9 +66,6 @@ void EVIC_Initialize( void )
     IPC47SET = 0x40000 | 0x0;  /* UART6_TX:  Priority 1 / Subpriority 0 */
 
 
-
-    /* Configure Shadow Register Set */
-    PRISS = 0x76543210;
 }
 
 void EVIC_SourceEnable( INT_SOURCE source )

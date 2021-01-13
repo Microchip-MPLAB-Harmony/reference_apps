@@ -1,6 +1,6 @@
 /* sha3.h
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -58,7 +58,8 @@ enum {
     WC_SHA3_512_DIGEST_SIZE  = 64,
     WC_SHA3_512_COUNT        =  9,
 
-#ifndef HAVE_SELFTEST
+#if !defined(HAVE_SELFTEST) || \
+    defined(HAVE_SELFTEST_VERSION) && (HAVE_SELFTEST_VERSION >= 2)
     /* These values are used for HMAC, not SHA-3 directly.
      * They come from from FIPS PUB 202. */
     WC_SHA3_224_BLOCK_SIZE = 144,
@@ -87,8 +88,9 @@ enum {
 #elif defined(WOLFSSL_AFALG_XILINX_SHA3)
     #include <wolfssl/wolfcrypt/port/af_alg/afalg_hash.h>
 #else
+
 /* Sha3 digest */
-typedef struct Sha3 {
+struct Sha3 {
     /* State data that is processed for each block. */
     word64 s[25];
     /* Unprocessed message data. */
@@ -104,8 +106,16 @@ typedef struct Sha3 {
 #if defined(WOLFSSL_HASH_FLAGS) || defined(WOLF_CRYPTO_CB)
     word32 flags; /* enum wc_HashFlags in hash.h */
 #endif
-} wc_Sha3;
+};
+
+#ifndef WC_SHA3_TYPE_DEFINED
+    typedef struct Sha3 wc_Sha3;
+    #define WC_SHA3_TYPE_DEFINED
 #endif
+
+#endif
+
+typedef wc_Sha3 wc_Shake;
 
 
 WOLFSSL_API int wc_InitSha3_224(wc_Sha3*, void*, int);
@@ -136,9 +146,15 @@ WOLFSSL_API void wc_Sha3_512_Free(wc_Sha3*);
 WOLFSSL_API int wc_Sha3_512_GetHash(wc_Sha3*, byte*);
 WOLFSSL_API int wc_Sha3_512_Copy(wc_Sha3* src, wc_Sha3* dst);
 
+WOLFSSL_API int wc_InitShake256(wc_Shake*, void*, int);
+WOLFSSL_API int wc_Shake256_Update(wc_Shake*, const byte*, word32);
+WOLFSSL_API int wc_Shake256_Final(wc_Shake*, byte*, word32);
+WOLFSSL_API void wc_Shake256_Free(wc_Shake*);
+WOLFSSL_API int wc_Shake256_Copy(wc_Shake* src, wc_Sha3* dst);
+
 #if defined(WOLFSSL_HASH_FLAGS) || defined(WOLF_CRYPTO_CB)
-    WOLFSSL_LOCAL int wc_Sha3_SetFlags(wc_Sha3* sha3, word32 flags);
-    WOLFSSL_LOCAL int wc_Sha3_GetFlags(wc_Sha3* sha3, word32* flags);
+    WOLFSSL_API int wc_Sha3_SetFlags(wc_Sha3* sha3, word32 flags);
+    WOLFSSL_API int wc_Sha3_GetFlags(wc_Sha3* sha3, word32* flags);
 #endif
 
 #ifdef __cplusplus

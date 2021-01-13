@@ -1,0 +1,59 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpip_apps_config}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_ANNOUNCE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_DHCP_CLIENT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_DHCP_SERVER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_DNS_CLIENT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_HTTP_NET_SERVER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_HTTP_SERVER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: TCPIP_AUTOCONFIG_ENABLE_NBNS}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+- type: ElementPosition
+  attributes: {x: '16', y: '20', id: tcpip_apps_config}

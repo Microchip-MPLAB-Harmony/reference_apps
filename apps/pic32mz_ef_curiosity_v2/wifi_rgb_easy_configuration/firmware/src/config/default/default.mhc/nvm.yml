@@ -1,0 +1,37 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: nvm}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: DRV_MEMORY_CONNECTED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_memory_0, value: 'true'}
+  - type: Integer
+    attributes: {id: MEMORY_MEDIA_SIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '64'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: NVM_MEMORY}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_memory_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_memory_MEMORY_dependency}
+- type: ElementPosition
+  attributes: {x: '9', y: '283', id: nvm}

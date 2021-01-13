@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpipAnnounce}
+children:
+- type: ElementPosition
+  attributes: {x: '155', y: '61', id: tcpipAnnounce}

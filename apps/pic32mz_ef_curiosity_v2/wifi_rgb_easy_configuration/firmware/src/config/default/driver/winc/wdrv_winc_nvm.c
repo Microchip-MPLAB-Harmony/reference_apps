@@ -395,7 +395,7 @@ static bool _WDRV_WINC_NVMFindSection
 #else
     else
     {
-        tstrOtaControlSec strControl;
+        tstrOtaControlSec strControl = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
         if (0 == flashMap[region].address)
         {

@@ -36,31 +36,32 @@
 *******************************************************************************/
 
 #include "wdrv_winc_stack_drv.h"
-
+    
 const TCPIP_MAC_OBJECT WDRV_WINC_MACObject =
 {
-    TCPIP_MODULE_MAC_WINC,
-    "WINC",
-    WDRV_WINC_MACInitialize,
-    WDRV_WINC_MACDeinitialize,
-    WDRV_WINC_MACReinitialize,
-    WDRV_WINC_MACStatus,
-    WDRV_WINC_MACTasks,
-    WDRV_WINC_MACOpen,
-    WDRV_WINC_MACClose,
-    WDRV_WINC_MACLinkCheck,
-    WDRV_WINC_MACRxFilterHashTableEntrySet,
-    WDRV_WINC_MACPowerMode,
-    WDRV_WINC_MACPacketTx,
-    WDRV_WINC_MACPacketRx,
-    WDRV_WINC_MACProcess,
-    WDRV_WINC_MACStatisticsGet,
-    WDRV_WINC_MACParametersGet,
-    WDRV_WINC_MACRegisterStatisticsGet,
-    WDRV_WINC_MACConfigGet,
-    WDRV_WINC_MACEventMaskSet,
-    WDRV_WINC_MACEventAcknowledge,
-    WDRV_WINC_MACEventPendingGet,
+     .macId = TCPIP_MODULE_MAC_WINC,
+    .macType = TCPIP_MAC_TYPE_WLAN,
+    .macName= "WINC",
+    .TCPIP_MAC_Initialize = WDRV_WINC_MACInitialize,
+    .TCPIP_MAC_Deinitialize = WDRV_WINC_MACDeinitialize,
+    .TCPIP_MAC_Reinitialize =WDRV_WINC_MACReinitialize,
+   .TCPIP_MAC_Status                   =WDRV_WINC_MACStatus,
+    .TCPIP_MAC_Tasks                    =WDRV_WINC_MACTasks,
+    .TCPIP_MAC_Open                     =WDRV_WINC_MACOpen,
+    .TCPIP_MAC_Close                    =WDRV_WINC_MACClose,
+    .TCPIP_MAC_LinkCheck                =WDRV_WINC_MACLinkCheck,
+    .TCPIP_MAC_RxFilterHashTableEntrySet =WDRV_WINC_MACRxFilterHashTableEntrySet,
+    .TCPIP_MAC_PowerMode                =WDRV_WINC_MACPowerMode,
+    .TCPIP_MAC_PacketTx                 =WDRV_WINC_MACPacketTx,
+    .TCPIP_MAC_PacketRx                 =WDRV_WINC_MACPacketRx,
+    .TCPIP_MAC_Process                  =WDRV_WINC_MACProcess,
+    .TCPIP_MAC_StatisticsGet            =WDRV_WINC_MACStatisticsGet,
+    .TCPIP_MAC_ParametersGet            =WDRV_WINC_MACParametersGet,
+    .TCPIP_MAC_RegisterStatisticsGet    =WDRV_WINC_MACRegisterStatisticsGet,
+    .TCPIP_MAC_ConfigGet                =WDRV_WINC_MACConfigGet,
+    .TCPIP_MAC_EventMaskSet             =WDRV_WINC_MACEventMaskSet,
+    .TCPIP_MAC_EventAcknowledge         =WDRV_WINC_MACEventAcknowledge,
+    .TCPIP_MAC_EventPendingGet          =WDRV_WINC_MACEventPendingGet,
 };
 
 //DOM-IGNORE-END

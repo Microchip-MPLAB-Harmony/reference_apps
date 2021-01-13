@@ -193,11 +193,11 @@ static int CRYPT_SHA384_Process(wc_Sha384* sha384, const byte* data, word32 len)
   {
       for (uint8_t y = 0; y < (SHA384_BLOCK_SIZE >> 2); y++)
       {
-          uint32_t data = ((ptr[0] & 0xff)) |
-                          ((ptr[1] & 0xff) << 8) |
-                          ((ptr[2] & 0xff) << 16) |
-                          ((ptr[3] & 0xff) << 24);
-          iPtr[y] = data;
+          uint32_t datay = ((ptr[0] & 0xff)) |
+                           ((ptr[1] & 0xff) << 8) |
+                           ((ptr[2] & 0xff) << 16) |
+                           ((ptr[3] & 0xff) << 24);
+          iPtr[y] = datay;
           ptr+=4;
       }
       //shaCr.s.START = 1;

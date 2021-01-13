@@ -1,6 +1,6 @@
 /* fe_low_mem.c
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -141,7 +141,7 @@ static void xc_diffadd(byte *x5, byte *z5,
 }
 
 #ifndef FREESCALE_LTC_ECC
-int curve25519(byte *result, byte *e, byte *q)
+int curve25519(byte *result, const byte *e, const byte *q)
 {
 	/* Current point: P_m */
 	byte xm[F25519_SIZE];

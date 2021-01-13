@@ -1,6 +1,6 @@
 /* ed25519.c
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -61,7 +61,7 @@ int wc_ed25519_make_public(ed25519_key* key, unsigned char* pubKey,
     ge_p3 A;
 #endif
 
-    if (key == NULL || pubKeySz != ED25519_PUB_KEY_SIZE)
+    if (key == NULL || pubKey == NULL || pubKeySz != ED25519_PUB_KEY_SIZE)
         ret = BAD_FUNC_ARG;
 
     if (ret == 0)
@@ -263,7 +263,7 @@ static int ed25519_sign_msg(const byte* in, word32 inLen, byte* out,
 int wc_ed25519_sign_msg(const byte* in, word32 inLen, byte* out,
                         word32 *outLen, ed25519_key* key)
 {
-    return ed25519_sign_msg(in, inLen, out, outLen, key, Ed25519, NULL, 0);
+    return ed25519_sign_msg(in, inLen, out, outLen, key, (byte)Ed25519, NULL, 0);
 }
 
 /*
@@ -365,7 +365,7 @@ static int ed25519_verify_msg(const byte* sig, word32 sigLen, const byte* msg,
     *res = 0;
 
     /* check on basics needed to verify signature */
-    if (sigLen < ED25519_SIG_SIZE || (sig[ED25519_SIG_SIZE-1] & 224))
+    if (sigLen != ED25519_SIG_SIZE || (sig[ED25519_SIG_SIZE-1] & 224))
         return BAD_FUNC_ARG;
 
     /* uncompress A (public key), test if valid, and negate it */
@@ -439,8 +439,8 @@ static int ed25519_verify_msg(const byte* sig, word32 sigLen, const byte* msg,
 int wc_ed25519_verify_msg(const byte* sig, word32 sigLen, const byte* msg,
                           word32 msgLen, int* res, ed25519_key* key)
 {
-    return ed25519_verify_msg(sig, sigLen, msg, msgLen, res, key, Ed25519, NULL,
-                                                                             0);
+    return ed25519_verify_msg(sig, sigLen, msg, msgLen, res, key, (byte)Ed25519,
+                                                                       NULL, 0);
 }
 
 /*
@@ -606,14 +606,15 @@ int wc_ed25519_import_public(const byte* in, word32 inLen, ed25519_key* key)
             key->pointY[i] = *(in + 2*ED25519_KEY_SIZE - i);
         }
         XMEMCPY(key->p, key->pointY, ED25519_KEY_SIZE);
+        key->pubKeySet = 1;
         ret = 0;
 #else
         /* pass in (x,y) and store compressed key */
         ret = ge_compress_key(key->p, in+1,
                               in+1+ED25519_PUB_KEY_SIZE, ED25519_PUB_KEY_SIZE);
-#endif /* FREESCALE_LTC_ECC */
         if (ret == 0)
             key->pubKeySet = 1;
+#endif /* FREESCALE_LTC_ECC */
         return ret;
     }
 

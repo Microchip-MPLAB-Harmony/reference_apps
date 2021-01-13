@@ -1,6 +1,6 @@
 /* misc.h
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -18,9 +18,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
  */
+/*
 
+DESCRIPTION
+This module implements the arithmetic-shift right, left, byte swapping, XOR,
+masking and clearing memory logic.
 
-
+*/
 #ifndef WOLF_CRYPT_MISC_H
 #define WOLF_CRYPT_MISC_H
 
@@ -94,9 +98,12 @@ word32 btoi(byte b);
 
 WOLFSSL_LOCAL byte ctMaskGT(int a, int b);
 WOLFSSL_LOCAL byte ctMaskGTE(int a, int b);
+WOLFSSL_LOCAL int  ctMaskIntGTE(int a, int b);
 WOLFSSL_LOCAL byte ctMaskLT(int a, int b);
 WOLFSSL_LOCAL byte ctMaskLTE(int a, int b);
 WOLFSSL_LOCAL byte ctMaskEq(int a, int b);
+WOLFSSL_LOCAL word16 ctMask16GT(int a, int b);
+WOLFSSL_LOCAL word16 ctMask16LT(int a, int b);
 WOLFSSL_LOCAL word16 ctMask16Eq(int a, int b);
 WOLFSSL_LOCAL byte ctMaskNotEq(int a, int b);
 WOLFSSL_LOCAL byte ctMaskSel(byte m, byte a, byte b);

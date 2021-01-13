@@ -1,6 +1,6 @@
 /* hmac.c
  *
- * Copyright (C) 2006-2019 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -65,8 +65,7 @@
     {
         if (hmac == NULL || (key == NULL && keySz != 0) ||
            !(type == WC_MD5 || type == WC_SHA || type == WC_SHA256 ||
-                type == WC_SHA384 || type == WC_SHA512 ||
-                type == BLAKE2B_ID)) {
+                type == WC_SHA384 || type == WC_SHA512)) {
             return BAD_FUNC_ARG;
         }
 
@@ -131,8 +130,7 @@ int wc_HmacSizeByType(int type)
             type == WC_SHA224 || type == WC_SHA256 ||
             type == WC_SHA384 || type == WC_SHA512 ||
             type == WC_SHA3_224 || type == WC_SHA3_256 ||
-            type == WC_SHA3_384 || type == WC_SHA3_512 ||
-            type == BLAKE2B_ID)) {
+            type == WC_SHA3_384 || type == WC_SHA3_512)) {
         return BAD_FUNC_ARG;
     }
 
@@ -171,12 +169,6 @@ int wc_HmacSizeByType(int type)
             ret = WC_SHA512_DIGEST_SIZE;
             break;
     #endif /* WOLFSSL_SHA512 */
-
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            ret = BLAKE2B_OUTBYTES;
-            break;
-    #endif /* HAVE_BLAKE2 */
 
     #ifdef WOLFSSL_SHA3
         case WC_SHA3_224:
@@ -245,12 +237,6 @@ int _InitHmac(Hmac* hmac, int type, void* heap)
             break;
     #endif /* WOLFSSL_SHA512 */
 
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            ret = wc_InitBlake2b(&hmac->hash.blake2b, BLAKE2B_256);
-            break;
-    #endif /* HAVE_BLAKE2 */
-
     #ifdef WOLFSSL_SHA3
     #ifndef WOLFSSL_NOSHA3_224
         case WC_SHA3_224:
@@ -303,15 +289,20 @@ int wc_HmacSetKey(Hmac* hmac, int type, const byte* key, word32 length)
             type == WC_SHA224 || type == WC_SHA256 ||
             type == WC_SHA384 || type == WC_SHA512 ||
             type == WC_SHA3_224 || type == WC_SHA3_256 ||
-            type == WC_SHA3_384 || type == WC_SHA3_512 ||
-            type == BLAKE2B_ID)) {
+            type == WC_SHA3_384 || type == WC_SHA3_512)) {
         return BAD_FUNC_ARG;
     }
 
+#ifndef HAVE_FIPS
     /* if set key has already been run then make sure and free existing */
-    if (hmac->macType != 0) {
+    /* This is for async and PIC32MZ situations, and just normally OK,
+       provided the user calls wc_HmacInit() first. That function is not
+       available in FIPS builds. In current FIPS builds, the hashes are
+       not allocating resources. */
+    if (hmac->macType != WC_HASH_TYPE_NONE) {
         wc_HmacFree(hmac);
     }
+#endif
 
     hmac->innerHashKeyed = 0;
     hmac->macType = (byte)type;
@@ -456,27 +447,6 @@ int wc_HmacSetKey(Hmac* hmac, int type, const byte* key, word32 length)
             }
             break;
     #endif /* WOLFSSL_SHA512 */
-
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            hmac_block_size = BLAKE2B_BLOCKBYTES;
-            if (length <= BLAKE2B_BLOCKBYTES) {
-                if (key != NULL) {
-                    XMEMCPY(ip, key, length);
-                }
-            }
-            else {
-                ret = wc_Blake2bUpdate(&hmac->hash.blake2b, key, length);
-                if (ret != 0)
-                    break;
-                ret = wc_Blake2bFinal(&hmac->hash.blake2b, ip, BLAKE2B_256);
-                if (ret != 0)
-                    break;
-
-                length = BLAKE2B_256;
-            }
-            break;
-    #endif /* HAVE_BLAKE2 */
 
     #ifdef WOLFSSL_SHA3
     #ifndef WOLFSSL_NOSHA3_224
@@ -643,13 +613,6 @@ static int HmacKeyInnerHash(Hmac* hmac)
             break;
     #endif /* WOLFSSL_SHA512 */
 
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            ret = wc_Blake2bUpdate(&hmac->hash.blake2b, (byte*)hmac->ipad,
-                                                            BLAKE2B_BLOCKBYTES);
-            break;
-    #endif /* HAVE_BLAKE2 */
-
     #ifdef WOLFSSL_SHA3
     #ifndef WOLFSSL_NOSHA3_224
         case WC_SHA3_224:
@@ -759,12 +722,6 @@ int wc_HmacUpdate(Hmac* hmac, const byte* msg, word32 length)
             ret = wc_Sha512Update(&hmac->hash.sha512, msg, length);
             break;
     #endif /* WOLFSSL_SHA512 */
-
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            ret = wc_Blake2bUpdate(&hmac->hash.blake2b, msg, length);
-            break;
-    #endif /* HAVE_BLAKE2 */
 
     #ifdef WOLFSSL_SHA3
     #ifndef WOLFSSL_NOSHA3_224
@@ -939,24 +896,6 @@ int wc_HmacFinal(Hmac* hmac, byte* hash)
             break;
     #endif /* WOLFSSL_SHA512 */
 
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            ret = wc_Blake2bFinal(&hmac->hash.blake2b, (byte*)hmac->innerHash,
-                                                                   BLAKE2B_256);
-            if (ret != 0)
-                break;
-            ret = wc_Blake2bUpdate(&hmac->hash.blake2b, (byte*)hmac->opad,
-                                                            BLAKE2B_BLOCKBYTES);
-            if (ret != 0)
-                break;
-            ret = wc_Blake2bUpdate(&hmac->hash.blake2b, (byte*)hmac->innerHash,
-                                                                   BLAKE2B_256);
-            if (ret != 0)
-                break;
-            ret = wc_Blake2bFinal(&hmac->hash.blake2b, hash, BLAKE2B_256);
-            break;
-    #endif /* HAVE_BLAKE2 */
-
     #ifdef WOLFSSL_SHA3
     #ifndef WOLFSSL_NOSHA3_224
         case WC_SHA3_224:
@@ -1046,6 +985,7 @@ int wc_HmacInit(Hmac* hmac, void* heap, int devId)
         return BAD_FUNC_ARG;
 
     XMEMSET(hmac, 0, sizeof(Hmac));
+    hmac->macType = WC_HASH_TYPE_NONE;
     hmac->heap = heap;
 #ifdef WOLF_CRYPTO_CB
     hmac->devId = devId;
@@ -1135,11 +1075,6 @@ void wc_HmacFree(Hmac* hmac)
             wc_Sha512Free(&hmac->hash.sha512);
             break;
     #endif /* WOLFSSL_SHA512 */
-
-    #ifdef HAVE_BLAKE2
-        case BLAKE2B_ID:
-            break;
-    #endif /* HAVE_BLAKE2 */
 
     #ifdef WOLFSSL_SHA3
     #ifndef WOLFSSL_NOSHA3_224
@@ -1281,9 +1216,16 @@ int wolfSSL_GetHmacMaxSize(void)
         word32 hashSz = wc_HmacSizeByType(type);
         byte   n = 0x1;
 
+        /* RFC 5869 states that the length of output keying material in
+           octets must be L <= 255*HashLen or N = ceil(L/HashLen) */
+
+        if (out == NULL || ((outSz/hashSz) + ((outSz % hashSz) != 0)) > 255)
+            return BAD_FUNC_ARG;
+
         ret = wc_HmacInit(&myHmac, NULL, INVALID_DEVID);
         if (ret != 0)
             return ret;
+
 
         while (outIdx < outSz) {
             int    tmpSz = (n == 1) ? 0 : hashSz;

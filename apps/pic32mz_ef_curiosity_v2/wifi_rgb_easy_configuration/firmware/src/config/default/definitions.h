@@ -48,6 +48,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "crypto/crypto.h"
 #include "peripheral/ocmp/plib_ocmp8.h"
 #include "peripheral/ocmp/plib_ocmp6.h"
 #include "peripheral/spi/spi_master/plib_spi3_master.h"
@@ -73,15 +74,14 @@
 #include "system/debug/sys_debug.h"
 #include "library/tcpip/tcpip.h"
 #include "system/sys_time_h2_adapter.h"
-#include "system/sys_clk_h2_adapter.h"
 #include "system/sys_random_h2_adapter.h"
-#include "system/sys_reset_h2_adapter.h"
 #include "driver/winc/include/wdrv_winc_api.h"
 #include "system/command/sys_command.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
+#include "wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/mpfs/mpfs.h"

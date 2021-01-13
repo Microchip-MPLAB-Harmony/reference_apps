@@ -1,11 +1,11 @@
-MPLAB Harmony v3 "wireless" repository (revision v3.2.0) doesn't fully support winc driver for PIC32 devices. 
+MPLAB Harmony v3 "wireless" repository (revision v3.3.1) doesn't fully support winc driver for PIC32 devices. 
 This project(wifi_rgb_easy_configuration_demo) has been created using the patch (in folder "wifi_repo_patch") 
 discussed in the following steps.
 
 1. After reconfigure or regenerating the project (wifi_rgb_easy_configuration_demo), you may see build errors. Apply the patch by following below steps
-    a. Copy and paste "wdrv_winc_spi.c" from 
-       "your_downloaded_folder\wifi_rgb_easy_configuration\wifi_repo_patch\wdrv_winc_spi.c" to 
-       "your_project_path\wifi_rgb_easy_configuration\firmware\src\config\default\driver\winc\dev\spi\wdrv_winc_spi.c"       
+    a. Copy and paste "wdrv_winc_stack_itf.c" from 
+       "your_downloaded_folder\wifi_rgb_easy_configuration\wifi_repo_patch\wdrv_winc_stack_itf.c" to 
+       "your_project_path\wifi_rgb_easy_configuration\firmware\src\config\default\driver\winc\stack_driver\wdrv_winc_stack_itf.c"       
     b. After regeneration remove/delete generated "mpfs_img2.c" file from the project before building.
        
 Note: 
