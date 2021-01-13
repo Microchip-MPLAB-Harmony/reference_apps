@@ -164,6 +164,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3);
 
     STDIO_BufferModeSet();
@@ -190,8 +191,6 @@ void SYS_Initialize ( void* data )
 
     TC3_TimerInitialize();
 
-
-    DRV_BM71_Initialize();
 
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);

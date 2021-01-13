@@ -75,10 +75,7 @@ void SYS_Tasks ( void )
     
 
     /* Maintain Device Drivers */
-    	DRV_BM71_Tasks();
-
-
-
+    
 
     /* Maintain Middleware & Other Libraries */
     

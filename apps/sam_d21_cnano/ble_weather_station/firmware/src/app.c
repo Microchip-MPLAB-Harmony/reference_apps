@@ -139,6 +139,7 @@ static void App_TimerCallback( uintptr_t context)
  */
 void APP_Initialize ( void )
 {
+    DRV_BM71_Initialize();
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */   
@@ -165,6 +166,7 @@ DRV_HANDLE tmrHandle;
 
 void APP_Tasks ( void )
 {    
+    DRV_BM71_Tasks();
     bleTasks(); 
     
     /* Check the application's current state. */

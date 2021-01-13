@@ -59,13 +59,10 @@
 #include "peripheral/systick/plib_systick.h"
 #include "peripheral/sercom/usart/plib_sercom5_usart.h"
 #include "peripheral/tc/plib_tc3.h"
-#include "system/time/sys_time.h"
-#include "bt/driver/bm71/drv_bm71.h"
 #include "system/int/sys_int.h"
-#include "system/ports/sys_ports.h"
-#include "system/dma/sys_dma.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
+#include "system/time/sys_time.h"
 #include "app.h"
 
 

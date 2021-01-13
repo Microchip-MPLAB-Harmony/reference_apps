@@ -26,7 +26,7 @@ nav_order: 4
 
 ## Hardware Used:
 
-- [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)   
+- [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)
 - [Curiosity Nano Base for click boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
 - [WEATHER CLICK](https://www.mikroe.com/weather-click)
 - [10DOF Click](https://www.mikroe.com/10dof-click)
@@ -35,17 +35,17 @@ nav_order: 4
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)          
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
- - [MPLAB Harmony v3 "bt" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/bt/releases/tag/v3.4.0)     
- - MPLAB Harmony Configurator Plugin v3.6.0
- - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
- - [Microchip Bluetooth Data](https://play.google.com/store/apps/details?id=com.microchip.bluetooth.data&hl=en)
+- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
+- [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
+- [MPLAB Harmony v3 "bt" repo v3.4.0](https://github.com/Microchip-MPLAB-Harmony/bt/releases/tag/v3.4.0)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.2  
+- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- Microchip Bluetooth Data Android App - Install using "\ble_weather_station\firmware\android_apk\mbd_3_1.apk"  
 
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Adding private characteristics to BM71:
 #### Hardware Setup
@@ -165,8 +165,6 @@ device should appear as MCHP in the list of Bluetooth devices.
 - Keep finger on weather click board to see PTH values changing and move the 10DOF click board to see accelerometer and gyroscope values changing.
 
 ## Comments:
-- The application “sam_d21_cnano/ble_weather_station" is developed by applying a patch (available in folder ble_weather_station/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under ble_weather_station/firmware/app_patch” folder.  
-The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
 -  Other features on the application like the Step Count and Light are not supported by this demo. Navigating to these screens may lead to an undefined behavior.
 - Code related for custom private services are added manually, harmony v3 framework doesn't generate code related to it.
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs](https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module)
@@ -175,5 +173,6 @@ The patch is applied due to a known issue in the application. This issue is expe
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
+- v1.2.0 regenerated and tested the demo application
 - v1.1.0 regenerated and tested the demo application
 - v1.0.0 released demo application
