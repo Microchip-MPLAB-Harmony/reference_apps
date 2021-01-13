@@ -66,7 +66,9 @@ void _leRadioButtonWidget_GetImageRect(const leRadioButtonWidget* btn,
 									   leRect* imgSrcRect)
 {
     leRect textRect;
-    leRect bounds = btn->fn->localRect(btn);
+    leRect bounds;
+
+    btn->fn->localRect(btn, &bounds);
     
     imgRect->x = 0;
     imgRect->y = 0;
@@ -122,7 +124,7 @@ void _leRadioButtonWidget_GetImageRect(const leRadioButtonWidget* btn,
                              btn->widget.margin.bottom,
                              btn->imageMargin);
 
-	*imgRect = leRectClipAdj(imgRect, &bounds, imgSrcRect);
+	leRectClipAdj(imgRect, &bounds, imgSrcRect, imgRect);
 
 	// move the rect to layer space
 	leUtils_RectToScreenSpace((leWidget*)btn, imgRect);
@@ -136,7 +138,7 @@ void _leRadioButtonWidget_GetTextRect(leRadioButtonWidget* btn,
     
     leRect imgRect = {0};
     
-    bounds = btn->fn->localRect(btn);
+    btn->fn->localRect(btn, &bounds);
     
     if(btn->string != NULL)
     {

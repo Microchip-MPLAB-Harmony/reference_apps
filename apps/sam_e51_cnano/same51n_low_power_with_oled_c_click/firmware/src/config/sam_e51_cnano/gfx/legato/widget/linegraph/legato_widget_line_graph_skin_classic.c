@@ -175,53 +175,52 @@ static void _calculateCategoryPoints(leLineGraphWidget* graph)
     }
 }
 
-static leRect _getCategoryTextRect(const leLineGraphWidget* graph,
-                                   uint32_t catIdx)
+static void _getCategoryTextRect(const leLineGraphWidget* graph,
+                                 uint32_t catIdx,
+                                 leRect* rect)
 {
-    leRect labelRect = leRect_Zero;
+    *rect = leRect_Zero;
     leLineGraphCategory* cat;
 
     if (catIdx >= graph->categories.size)
-        return labelRect;
+        return;
 
     cat = (leLineGraphCategory*)graph->categories.values[catIdx];
 
     if(cat == NULL)
-        return labelRect;
+        return;
 
     if(cat->text == NULL)
-        return labelRect;
+        return;
 
-    cat->text->fn->getRect(cat->text, &labelRect);
+    cat->text->fn->getRect(cat->text, rect);
 
-    labelRect.x = cat->drawX;
-    labelRect.x -= labelRect.width / 2;
-    labelRect.y = paintState.graphRect.y + paintState.graphRect.height + 1;
+    rect->x = cat->drawX;
+    rect->x -= rect->width / 2;
+    rect->y = paintState.graphRect.y + paintState.graphRect.height + 1;
 
     // get center of category, arrange text below it
     switch(graph->categAxisTicksPosition)
     {
         case LINE_GRAPH_TICK_OUT:
         {
-            labelRect.y += 1 + graph->tickLength;
+            rect->y += 1 + graph->tickLength;
 
             break;
         }
         case LINE_GRAPH_TICK_CENTER:
         {
-            labelRect.y += 1 + (graph->tickLength / 2);
+            rect->y += 1 + (graph->tickLength / 2);
 
             break;
         }
         case LINE_GRAPH_TICK_IN:
         {
-            labelRect.y += 1;
+            rect->y += 1;
 
             break;
         }
     }
-
-    return labelRect;
 }
 
 static void _getCategoryLabelMaxDrawRect(const leLineGraphWidget* graph,
@@ -642,6 +641,7 @@ static void fillRegion(leLineGraphWidget* graph,
     lePoint prevOld, prevNew; //old and new points of previous category
     lePoint scanPointA;
     lePoint scanPointB;
+    void* arrayVal;
 
     prevCategory = leArray_Get(&graph->categories, categoryIndex - 1);
 
@@ -653,7 +653,8 @@ static void fillRegion(leLineGraphWidget* graph,
 
     nowOld.y = paintState.originPoint.y - (int32_t) ((float) (category->stackValue  - paintState.originValue) * paintState.pixelsPerUnit);
 
-    prevOldValue = (int32_t)leArray_Get(&series->data, categoryIndex - 1);
+    arrayVal = leArray_Get(&series->data, categoryIndex - 1);
+    prevOldValue = (int32_t)arrayVal;
     prevOld.y = paintState.originPoint.y - (int32_t) ((float) (prevCategory->stackValue - prevOldValue  - paintState.originValue) * paintState.pixelsPerUnit);
 
     //Fill the region using vertical lines for now
@@ -700,6 +701,7 @@ static void drawStackedFills(leLineGraphWidget* graph)
     int32_t value = 0;
     leLineGraphDataSeries* series;
     leLineGraphCategory* category;
+    void* arrayVal;
     
     for (categoryIndex = 0; (categoryIndex < (int32_t)graph->categories.size); categoryIndex++)
     {
@@ -718,7 +720,8 @@ static void drawStackedFills(leLineGraphWidget* graph)
         {
             if (categoryIndex < (int32_t)series->data.size)
             {
-                value = (int32_t)leArray_Get(&series->data, categoryIndex);
+                arrayVal = leArray_Get(&series->data, categoryIndex);
+                value = (int32_t)arrayVal;
             }
             
             category = leArray_Get(&graph->categories, categoryIndex);
@@ -757,6 +760,7 @@ static void drawUnstackedFills(leLineGraphWidget* graph)
     int32_t seriesIndex;
     int32_t categoryIndex;
     leLineGraphDataSeries* series;
+    void* arrayVal;
             
     //Do the fills first, then plot the points/lines
     if (graph->fillValueArea == LE_TRUE)
@@ -775,7 +779,8 @@ static void drawUnstackedFills(leLineGraphWidget* graph)
                 (categoryIndex < (int32_t)graph->categories.size && categoryIndex < (int32_t)series->data.size);
                  categoryIndex++)
             {
-                value = (int32_t)leArray_Get(&series->data, categoryIndex);
+                arrayVal = leArray_Get(&series->data, categoryIndex);
+                value = (int32_t)arrayVal;
 
                 if (graph->fillValueArea == LE_TRUE && (int32_t)graph->categories.size > 1)
                 {
@@ -1476,8 +1481,9 @@ static void drawString(leLineGraphWidget* graph)
             if (category == NULL || category->text == NULL)
                 continue;
 
-            textRect = _getCategoryTextRect(graph,
-                                            categoryIndex);
+            _getCategoryTextRect(graph,
+                                 categoryIndex,
+                                 &textRect);
 
             category->text->fn->_draw(category->text,
                                       textRect.x,

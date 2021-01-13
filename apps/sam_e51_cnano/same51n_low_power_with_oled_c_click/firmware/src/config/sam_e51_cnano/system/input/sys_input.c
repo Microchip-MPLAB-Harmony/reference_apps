@@ -91,7 +91,7 @@ uint8_t listenerFlags[SYS_INP_MAX_LISTENERS];
     return 0;
 }*/
 
-int32_t SYS_INP_Init()
+int32_t SYS_INP_Init(void)
 {
     eventCount = 0;
 
@@ -103,10 +103,11 @@ int32_t SYS_INP_Init()
     return 0;
 }
 
-void SYS_INP_Tasks()
+void SYS_INP_Tasks(void)
 {
     uint32_t i, j;
-    
+
+
     // no events?  nothing to do
     if(eventCount == 0)
         return;

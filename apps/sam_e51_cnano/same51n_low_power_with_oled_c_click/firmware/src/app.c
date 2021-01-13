@@ -221,9 +221,9 @@ void APP_Tasks ( void )
             SYSTICK_TimerStart();
             SYSTICK_TimerCallbackSet(SYSTICK_TimerCallbackHandler, 0);
 
-            sprintf( (char*)lcl_currTimeStr, "000F");
-            startStr.fn->setFromCStr(&startStr, (char*)lcl_currTimeStr);
-            Screen0_TextFieldWidget0->fn->setString(Screen0_TextFieldWidget0, (leString*)&startStr);
+//            sprintf( (char*)lcl_currTimeStr, "000F");
+//            startStr.fn->setFromCStr(&startStr, (char*)lcl_currTimeStr);
+//            Screen0_TextFieldWidget0->fn->setString(Screen0_TextFieldWidget0, (leString*)&startStr);
             /* Read the temperature sensor value from I/O1 Xplained Pro through SERCOM3 I²C */
             SERCOM2_I2C_WriteRead (TEMP_SENSOR_SLAVE_ADDR, &i2cWrData, 1, i2cRdData, 2);
             

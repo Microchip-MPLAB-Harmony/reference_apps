@@ -123,7 +123,7 @@ typedef struct leArcWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leArcWidget* leArcWidget_New();
+leArcWidget* leArcWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -135,7 +135,7 @@ LIB_EXPORT leArcWidget* leArcWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leArcWidget_Constructor(leArcWidget* wgt);
+void leArcWidget_Constructor(leArcWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

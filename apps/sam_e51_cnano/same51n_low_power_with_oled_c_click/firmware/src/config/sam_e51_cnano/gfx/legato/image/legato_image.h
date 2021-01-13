@@ -238,12 +238,12 @@ typedef struct leImage
  * @param locationID the location ID of the image
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_Create(leImage* img,
-                                   uint32_t width,
-                                   uint32_t height,
-                                   leColorMode mode,
-                                   void* data,
-                                   uint32_t locationID);
+leResult leImage_Create(leImage* img,
+                        uint32_t width,
+                        uint32_t height,
+                        leColorMode mode,
+                        void* data,
+                        uint32_t locationID);
 
 // *****************************************************************************
 /* Function:
@@ -286,9 +286,9 @@ LIB_EXPORT leResult leImage_Create(leImage* img,
  * @param mode the color mode of the image
  * @return a valid image or null if there wasn't enough memory for the allocation
  */
-LIB_EXPORT leImage* leImage_Allocate(uint32_t width,
-                                     uint32_t height,
-                                     leColorMode mode);
+leImage* leImage_Allocate(uint32_t width,
+                          uint32_t height,
+                          leColorMode mode);
 
 // *****************************************************************************
 /* Function:
@@ -318,7 +318,7 @@ LIB_EXPORT leImage* leImage_Allocate(uint32_t width,
  * @param img the image to free
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_Free(leImage* img);
+leResult leImage_Free(leImage* img);
 
 // *****************************************************************************
 /* Structure:
@@ -383,7 +383,7 @@ typedef struct leImageDecoder
  * @param void.
  * @return number of events.
  */
-void leImage_InitDecoders();
+void leImage_InitDecoders(void);
 
 #if LE_STREAMING_ENABLED == 1
 // *****************************************************************************
@@ -428,11 +428,11 @@ typedef struct leImageStreamDecoder
  * @param img is the image to draw.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_Draw(const leImage* img,
-                                 const leRect* sourceRect,
-                                 int32_t x,
-                                 int32_t y,
-                                 uint32_t a);
+leResult leImage_Draw(const leImage* img,
+                      const leRect* sourceRect,
+                      int32_t x,
+                      int32_t y,
+                      uint32_t a);
 
 
 // *****************************************************************************
@@ -469,12 +469,12 @@ LIB_EXPORT leResult leImage_Draw(const leImage* img,
  * @param src is the image to resize.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_Resize(const leImage* src,
-                                   const leRect* sourceRect,
-                                   leImageFilterMode mode,
-                                   uint32_t sizeX,
-                                   uint32_t sizeY,
-                                   leImage* target);
+leResult leImage_Resize(const leImage* src,
+                        const leRect* sourceRect,
+                        leImageFilterMode mode,
+                        uint32_t sizeX,
+                        uint32_t sizeY,
+                        leImage* target);
 
 // *****************************************************************************
 /* Function:
@@ -512,14 +512,14 @@ LIB_EXPORT leResult leImage_Resize(const leImage* src,
  * @param src is the image to resize.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_ResizeDraw(const leImage* src,
-                                       const leRect* sourceRect,
-                                       leImageFilterMode mode,
-                                       uint32_t sizeX,
-                                       uint32_t sizeY,
-                                       int32_t x,
-                                       int32_t y,
-                                       uint32_t a);
+leResult leImage_ResizeDraw(const leImage* src,
+                            const leRect* sourceRect,
+                            leImageFilterMode mode,
+                            uint32_t sizeX,
+                            uint32_t sizeY,
+                            int32_t x,
+                            int32_t y,
+                            uint32_t a);
 
 // *****************************************************************************
 /* Function:
@@ -562,11 +562,11 @@ LIB_EXPORT leResult leImage_ResizeDraw(const leImage* src,
  * @param dst the destination image to fill
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_Copy(const leImage* src,
-                                 const leRect* sourceRect,
-                                 int32_t x,
-                                 int32_t y,
-                                 leImage* dst);
+leResult leImage_Copy(const leImage* src,
+                      const leRect* sourceRect,
+                      int32_t x,
+                      int32_t y,
+                      leImage* dst);
 
 // *****************************************************************************
 /* Function:
@@ -616,13 +616,13 @@ LIB_EXPORT leResult leImage_Copy(const leImage* src,
  * @param dst  set to true to skip the blend stage for the source image
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leImage_Render(const leImage* src,
-                                   const leRect* sourceRect,
-                                   int32_t x,
-                                   int32_t y,
-                                   leBool ignoreMask,
-                                   leBool ignoreAlpha,
-                                   leImage* dst);
+leResult leImage_Render(const leImage* src,
+                        const leRect* sourceRect,
+                        int32_t x,
+                        int32_t y,
+                        leBool ignoreMask,
+                        leBool ignoreAlpha,
+                        leImage* dst);
 
 /**
  * @brief Rotate image.

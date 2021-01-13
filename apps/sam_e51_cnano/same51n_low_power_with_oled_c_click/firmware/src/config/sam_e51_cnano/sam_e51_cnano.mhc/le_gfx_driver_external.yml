@@ -10,7 +10,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: Driver Asynchronous}
+        attributes: {value: Synchronous}
   - type: Hex
     attributes: {id: Command0}
     children:
@@ -150,7 +150,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: File
     attributes: {id: GFX_EXTERNAL_CONTROLLER_C}
     children:
@@ -159,7 +159,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: Hex
     attributes: {id: MemoryWriteCommand}
     children:
@@ -297,4 +297,4 @@ children:
         children:
         - {type: Value, value: gfx_driver}
 - type: ElementPosition
-  attributes: {x: '501', y: '208', id: le_gfx_driver_external}
+  attributes: {x: '487', y: '235', id: le_gfx_driver_external}

@@ -54,7 +54,9 @@ void _leImageSequenceWidget_GetImageRect(leImageSequenceWidget* img,
                                          leRect* imgRect,
                                          leRect* imgSrcRect)
 {
-    leRect bounds = img->fn->localRect(img);
+    leRect bounds;
+
+    img->fn->localRect(img, &bounds);
     
     imgRect->x = 0;
     imgRect->y = 0;
@@ -85,7 +87,7 @@ void _leImageSequenceWidget_GetImageRect(leImageSequenceWidget* img,
                              img->widget.margin.bottom,
                              0);
         
-    *imgRect = leRectClipAdj(imgRect, &bounds, imgSrcRect);
+    leRectClipAdj(imgRect, &bounds, imgSrcRect, imgRect);
         
     leUtils_RectToScreenSpace((leWidget*)img, imgRect); 
 }

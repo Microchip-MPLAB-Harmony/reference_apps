@@ -68,7 +68,7 @@ void _leLabelWidget_GetTextRect(leLabelWidget* lbl,
     lbl->string->fn->getRect(lbl->string,
                              textRect);
     
-    bounds = lbl->fn->localRect(lbl);
+    lbl->fn->localRect(lbl, &bounds);
     
     // arrange relative to image rect
     leUtils_ArrangeRectangleRelative(textRect,

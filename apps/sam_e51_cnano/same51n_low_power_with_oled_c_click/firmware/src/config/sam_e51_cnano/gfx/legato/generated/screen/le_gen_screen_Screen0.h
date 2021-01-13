@@ -19,11 +19,11 @@ extern leTextFieldWidget* Screen0_TextFieldWidget0;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
-leResult screenInit_Screen0(); // called when Legato is initialized
-leResult screenShow_Screen0(); // called when screen is shown
-void screenHide_Screen0(); // called when screen is hidden
-void screenDestroy_Screen0(); // called when Legato is destroyed
-void screenUpdate_Screen0(); // called when Legato is updating
+leResult screenInit_Screen0(void); // called when Legato is initialized
+leResult screenShow_Screen0(void); // called when screen is shown
+void screenHide_Screen0(void); // called when screen is hidden
+void screenDestroy_Screen0(void); // called when Legato is destroyed
+void screenUpdate_Screen0(void); // called when Legato is updating
 
 leWidget* screenGetRoot_Screen0(uint32_t lyrIdx); // gets a root widget for this screen
 

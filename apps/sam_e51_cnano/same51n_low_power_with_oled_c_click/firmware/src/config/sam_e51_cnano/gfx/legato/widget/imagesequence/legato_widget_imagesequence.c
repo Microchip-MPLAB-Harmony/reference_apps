@@ -149,7 +149,7 @@ static void update(leImageSequenceWidget* _this,
     }
 }
 
-leImageSequenceWidget* leImageSequenceWidget_New()
+leImageSequenceWidget* leImageSequenceWidget_New(void)
 {
     leImageSequenceWidget* img = LE_MALLOC(sizeof(leImageSequenceWidget));
     

@@ -197,7 +197,7 @@ typedef struct leScrollBarWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leScrollBarWidget* leScrollBarWidget_New();
+leScrollBarWidget* leScrollBarWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -209,7 +209,7 @@ LIB_EXPORT leScrollBarWidget* leScrollBarWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leScrollBarWidget_Constructor(leScrollBarWidget* wgt);
+void leScrollBarWidget_Constructor(leScrollBarWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

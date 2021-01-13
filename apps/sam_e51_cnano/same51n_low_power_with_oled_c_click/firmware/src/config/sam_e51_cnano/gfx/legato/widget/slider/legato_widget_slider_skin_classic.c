@@ -54,7 +54,9 @@ static struct
 void _leSliderWidget_GetSlideAreaRect(leSliderWidget* sld, leRect* rect)
 {
     leRect scrollRect;
-    leRect widgetRect = sld->fn->localRect(sld);
+    leRect widgetRect;
+
+    sld->fn->localRect(sld, &widgetRect);
     
     if(sld->alignment == LE_ORIENTATION_VERTICAL)
     {
@@ -78,7 +80,9 @@ void _leSliderWidget_GetHandleRect(leSliderWidget* sld, leRect* rect)
 {
     leRect scrollRect;
     uint32_t val, max, percent;
-    leRect widgetRect = sld->fn->localRect(sld);
+    leRect widgetRect;
+
+    sld->fn->localRect(sld, &widgetRect);
     
     val = sld->value - sld->min;
     max = sld->max - sld->min;

@@ -128,7 +128,7 @@ static void drawImage(leImageRotateWidget* img)
     imgRect.width = img->image->buffer.size.width;
     imgRect.height = img->image->buffer.size.height;
 
-    wgtRect = img->fn->rectToScreen(img);
+    img->fn->rectToScreen(img, &wgtRect);
 
     x = wgtRect.x + (wgtRect.width / 2) - (img->image->buffer.size.width / 2);
     y = wgtRect.y + (wgtRect.height / 2) - (img->image->buffer.size.height / 2);

@@ -286,7 +286,7 @@ typedef struct leListWheelWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leListWheelWidget* leListWheelWidget_New();
+leListWheelWidget* leListWheelWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -298,7 +298,7 @@ LIB_EXPORT leListWheelWidget* leListWheelWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leListWheelWidget_Constructor(leListWheelWidget* wgt);
+void leListWheelWidget_Constructor(leListWheelWidget* wgt);
 
 
 #ifdef _DOXYGEN_

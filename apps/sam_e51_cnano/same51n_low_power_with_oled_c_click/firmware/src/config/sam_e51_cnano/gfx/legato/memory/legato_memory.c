@@ -38,12 +38,12 @@
 
 #include "gfx/legato/memory/legato_fixedheap.h"
 
-uint8_t fixedHeap16[LE_FIXEDHEAP_BLOCK_SIZE(16) * LE_FIXEDHEAP_SIZE_16];
-uint8_t fixedHeap32[LE_FIXEDHEAP_BLOCK_SIZE(32) * LE_FIXEDHEAP_SIZE_32];
-uint8_t fixedHeap64[LE_FIXEDHEAP_BLOCK_SIZE(64) * LE_FIXEDHEAP_SIZE_64];
-uint8_t fixedHeap128[LE_FIXEDHEAP_BLOCK_SIZE(128) * LE_FIXEDHEAP_SIZE_128];
-uint8_t fixedHeap196[LE_FIXEDHEAP_BLOCK_SIZE(196) * LE_FIXEDHEAP_SIZE_196];
-uint8_t fixedHeap256[LE_FIXEDHEAP_BLOCK_SIZE(256) * LE_FIXEDHEAP_SIZE_256];
+uint8_t LE_COHERENT_MEMORY fixedHeap16[LE_FIXEDHEAP_BLOCK_SIZE(16) * LE_FIXEDHEAP_SIZE_16];
+uint8_t LE_COHERENT_MEMORY fixedHeap32[LE_FIXEDHEAP_BLOCK_SIZE(32) * LE_FIXEDHEAP_SIZE_32];
+uint8_t LE_COHERENT_MEMORY fixedHeap64[LE_FIXEDHEAP_BLOCK_SIZE(64) * LE_FIXEDHEAP_SIZE_64];
+uint8_t LE_COHERENT_MEMORY fixedHeap128[LE_FIXEDHEAP_BLOCK_SIZE(128) * LE_FIXEDHEAP_SIZE_128];
+uint8_t LE_COHERENT_MEMORY fixedHeap196[LE_FIXEDHEAP_BLOCK_SIZE(196) * LE_FIXEDHEAP_SIZE_196];
+uint8_t LE_COHERENT_MEMORY fixedHeap256[LE_FIXEDHEAP_BLOCK_SIZE(256) * LE_FIXEDHEAP_SIZE_256];
 
 typedef struct leFixedMemoryPoolDef
 {
@@ -67,7 +67,7 @@ leFixedHeap fixedHeaps[LE_FIXED_HEAP_COUNT];
 
 #endif
 
-uint8_t variableHeapData[LE_VARIABLEHEAP_SIZE];
+uint8_t LE_COHERENT_MEMORY variableHeapData[LE_VARIABLEHEAP_SIZE];
 
 leVariableHeap variableHeap;
 
@@ -482,7 +482,7 @@ void leMemoryGetUsageReport(leMemoryStatusReport* rpt)
 
 #include <stdio.h>
 
-void leMemoryPrintReport()
+void leMemoryPrintReport(void)
 {
     leVariableHeap_Dump(&variableHeap, LE_TRUE);
 #if 0

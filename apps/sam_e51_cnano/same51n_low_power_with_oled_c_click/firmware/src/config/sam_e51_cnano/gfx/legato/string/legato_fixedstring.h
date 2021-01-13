@@ -77,8 +77,8 @@ typedef struct leFixedString
  * @endcode
  * @return pointer to the newly allocated string
  */
-LIB_EXPORT leFixedString* leFixedString_New(leChar* buf,
-                                            uint32_t size);
+leFixedString* leFixedString_New(leChar* buf,
+                                 uint32_t size);
 
 // *****************************************************************************
 /**
@@ -94,9 +94,9 @@ LIB_EXPORT leFixedString* leFixedString_New(leChar* buf,
  * @endcode
  * @return void
  */
-LIB_EXPORT void leFixedString_Constructor(leFixedString* str,
-                                          leChar* buf,
-                                          uint32_t size);
+void leFixedString_Constructor(leFixedString* str,
+                               leChar* buf,
+                               uint32_t size);
 
 // *****************************************************************************
 

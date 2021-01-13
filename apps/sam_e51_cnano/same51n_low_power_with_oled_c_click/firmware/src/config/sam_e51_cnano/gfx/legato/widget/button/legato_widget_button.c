@@ -274,16 +274,19 @@ static leResult setString(leButtonWidget* _this,
 
     _this->string = str;
 
-    _this->string->fn->setPreInvalidateCallback((leString*)_this->string,
-                                                (leString_InvalidateCallback)stringPreinvalidate,
-                                                _this);
+    if(_this->string != NULL)
+    {
+        _this->string->fn->setPreInvalidateCallback((leString*) _this->string,
+                                                    (leString_InvalidateCallback) stringPreinvalidate,
+                                                    _this);
 
-    _this->string->fn->setInvalidateCallback((leString*)_this->string,
-                                             (leString_InvalidateCallback)stringInvalidate,
-                                             _this);
+        _this->string->fn->setInvalidateCallback((leString*) _this->string,
+                                                 (leString_InvalidateCallback) stringInvalidate,
+                                                 _this);
 
-    invalidateTextRect(_this);
-
+        invalidateTextRect(_this);
+    }
+    
     return LE_SUCCESS;
 }
 
@@ -505,7 +508,7 @@ static void touchUp(leButtonWidget* _this,
     
     LE_ASSERT_THIS();
     
-    rect = _this->fn->localRect(_this);
+    _this->fn->localRect(_this, &rect);
 
     pnt.x = evt->x;
     pnt.y = evt->y;
@@ -582,7 +585,7 @@ static void touchMoved(leButtonWidget* _this,
     
     LE_ASSERT_THIS();
     
-    rect = _this->fn->localRect(_this);
+    _this->fn->localRect(_this, &rect);
     
     pnt.x = evt->x;
     pnt.y = evt->y;
@@ -627,7 +630,7 @@ void _leButtonWidget_Paint(leButtonWidget* _this);
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
-void _leButtonWidget_GenerateVTable()
+void _leButtonWidget_GenerateVTable(void)
 {
     _leWidget_FillVTable((void*)&buttonWidgetVTable);
     

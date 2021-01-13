@@ -126,7 +126,7 @@ typedef struct leRadioButtonGroup
  * @param param1 wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT leResult leRadioButtonGroup_Create(leRadioButtonGroup** grp);
+leResult leRadioButtonGroup_Create(leRadioButtonGroup** grp);
 
 /*    Function:
         void leRadioButtonGroup_Destroy(leRadioButtonGroup* grp)
@@ -155,7 +155,7 @@ LIB_EXPORT leResult leRadioButtonGroup_Create(leRadioButtonGroup** grp);
  * @param param1 wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leRadioButtonGroup_Destroy(leRadioButtonGroup* grp);
+void leRadioButtonGroup_Destroy(leRadioButtonGroup* grp);
 
 /*    Function:
         leResult leRadioButtonGroup_AddButton(leRadioButtonGroup* grp,
@@ -187,7 +187,7 @@ LIB_EXPORT void leRadioButtonGroup_Destroy(leRadioButtonGroup* grp);
  * @param param1 wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT leResult leRadioButtonGroup_AddButton(leRadioButtonGroup* grp,leRadioButtonWidget* btn);
+leResult leRadioButtonGroup_AddButton(leRadioButtonGroup* grp,leRadioButtonWidget* btn);
 
 /*    Function:
         leResult leRadioButtonGroup_RemoveButton(leRadioButtonGroup* grp,
@@ -219,8 +219,8 @@ LIB_EXPORT leResult leRadioButtonGroup_AddButton(leRadioButtonGroup* grp,leRadio
  * @param param1 wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT leResult leRadioButtonGroup_RemoveButton(leRadioButtonGroup* grp,
-                                                    leRadioButtonWidget* btn);
+leResult leRadioButtonGroup_RemoveButton(leRadioButtonGroup* grp,
+                                         leRadioButtonWidget* btn);
 
 /*    Function:
         leResult leRadioButtonGroup_SelectButton(leRadioButtonGroup* grp,
@@ -254,8 +254,8 @@ LIB_EXPORT leResult leRadioButtonGroup_RemoveButton(leRadioButtonGroup* grp,
  * @param param2 btn is the button to select
  * @return void.
  */
-LIB_EXPORT leResult leRadioButtonGroup_SelectButton(leRadioButtonGroup* grp,
-                                                    leRadioButtonWidget* btn);
+leResult leRadioButtonGroup_SelectButton(leRadioButtonGroup* grp,
+                                         leRadioButtonWidget* btn);
                                                     
 
 #endif // LE_RADIOBUTTON_WIDGET_ENABLED

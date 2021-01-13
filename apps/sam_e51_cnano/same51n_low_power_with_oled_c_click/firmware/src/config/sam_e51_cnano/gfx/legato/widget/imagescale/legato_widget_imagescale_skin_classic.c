@@ -63,7 +63,9 @@ void _leImageScaleWidget_GetImageRect(const leImageScaleWidget* img,
     
     int32_t aspect;
     
-    leRect bounds = img->fn->localRect(img);
+    leRect bounds;
+
+    img->fn->localRect(img, &bounds);
     
     imgRect->x = 0;
     imgRect->y = 0;

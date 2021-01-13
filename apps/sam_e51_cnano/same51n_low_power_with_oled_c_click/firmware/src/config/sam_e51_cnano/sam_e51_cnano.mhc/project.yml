@@ -6,20 +6,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: EC3E20E19299D5985E9C16AF34ED6C72
+- generatedChecksum: B6A5ABDC5514E248B68A45FC26D1B145
   logicalPath: config\sam_e51_cnano\gfx\interface\spi4
   name: drv_gfx_disp_intf_spi4.c
   physicalPath: gfx\interface\spi4
   security: NON_SECURE
   type: SOURCE
-  userChecksum: EC3E20E19299D5985E9C16AF34ED6C72
-- generatedChecksum: 9438527E53405C8BF5B2B4E05E312406
+  userChecksum: B6A5ABDC5514E248B68A45FC26D1B145
+- generatedChecksum: FAA7EBF2E58119EE986D12290D46B7C2
   logicalPath: config\sam_e51_cnano\gfx\driver\external_controller
   name: drv_gfx_external_controller.c
   physicalPath: gfx\driver\controller\external_controller
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3278EBDF1E7CCB080DD43BC7783F3F78
+  userChecksum: FAA7EBF2E58119EE986D12290D46B7C2
 - generatedChecksum: 1D8D347F015F2D6805D228650C53E2E4
   logicalPath: config\sam_e51_cnano\driver\spi
   name: drv_spi.c
@@ -48,13 +48,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 36FA79243A4ABD63DAAEA023290EDE3B
-- generatedChecksum: D298E78CC8FB88660890006A35E9B001
+- generatedChecksum: 760E405F6A0E1395FBD34DD9C80DE5B1
   logicalPath: config\sam_e51_cnano
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D298E78CC8FB88660890006A35E9B001
+  userChecksum: 760E405F6A0E1395FBD34DD9C80DE5B1
 - generatedChecksum: 950922AA6D86AE39FDE379568774907D
   logicalPath: config\sam_e51_cnano
   name: interrupts.c
@@ -62,13 +62,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 950922AA6D86AE39FDE379568774907D
-- generatedChecksum: 5CE14AD869159C9B4DD69BEB18859C73
+- generatedChecksum: BD56AABB9ED9F9439F14C3A58FDA4676
   logicalPath: config\sam_e51_cnano\gfx\legato\image\jpeg
   name: jidctint.c
   physicalPath: gfx\legato\image\jpeg
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5CE14AD869159C9B4DD69BEB18859C73
+  userChecksum: BD56AABB9ED9F9439F14C3A58FDA4676
 - generatedChecksum: C21794CF23ED8E17E2E3FCE12002F225
   logicalPath: config\sam_e51_cnano\gfx\legato\generated\font
   name: le_gen_fonts.c
@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2D48DB8AD17CFF23FA87412540899BA2
-- generatedChecksum: 7B27ABEA143D66C8E8F9A9E2A0E7BAFE
+- generatedChecksum: B3CE19A5FC9AE2944FECF0FDA2847E3B
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_harmony.c
   physicalPath: gfx\legato\generated
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7B27ABEA143D66C8E8F9A9E2A0E7BAFE
+  userChecksum: B3CE19A5FC9AE2944FECF0FDA2847E3B
 - generatedChecksum: F85E70D2DD122473B514B0D0FEEFF534
   logicalPath: config\sam_e51_cnano\gfx\legato\generated\image
   name: le_gen_images.c
@@ -97,13 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: F85E70D2DD122473B514B0D0FEEFF534
-- generatedChecksum: FEC7B3FDB9396D5F78B4C7594AF5F67C
+- generatedChecksum: 4A0B00DF20738414078086EB7AEFCC30
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_init.c
   physicalPath: gfx\legato\generated
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FEC7B3FDB9396D5F78B4C7594AF5F67C
+  userChecksum: 4A0B00DF20738414078086EB7AEFCC30
 - generatedChecksum: 3BC5A5CFEAF9FCD2BCAD3785C1B6C5A4
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_scheme.c
@@ -111,13 +111,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 3BC5A5CFEAF9FCD2BCAD3785C1B6C5A4
-- generatedChecksum: 53EC2AA530369817AD2F732E94CB20D3
+- generatedChecksum: 24188E9ED603DD5401DCE3AE35F100D2
   logicalPath: config\sam_e51_cnano\gfx\legato\generated\screen
   name: le_gen_screen_Screen0.c
   physicalPath: gfx\legato\generated\screen
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 53EC2AA530369817AD2F732E94CB20D3
+  userChecksum: 24188E9ED603DD5401DCE3AE35F100D2
 - generatedChecksum: 1A0067D1E78CBC73A39CF78EE6CC53D1
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_stringtable.c
@@ -139,13 +139,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E94315C195A45FF08B0139E2B45361BF
-- generatedChecksum: D801337F03035B928D43958A1FA736A4
+- generatedChecksum: D5267278C45E6C26787A4F43711E0BCD
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_color_blend.c
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D801337F03035B928D43958A1FA736A4
+  userChecksum: D5267278C45E6C26787A4F43711E0BCD
 - generatedChecksum: 52C224E473C92A243A2088CA26FC4D4D
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_color_convert.c
@@ -167,27 +167,27 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5E9BA6B6BE8679E6B74CD26D3C79755B
-- generatedChecksum: E702B5867E4FE03F12DE20E693D7CFA6
+- generatedChecksum: 74C24E7B319ADC8668D49EF3884CF937
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_draw.c
   physicalPath: gfx\legato\renderer
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E702B5867E4FE03F12DE20E693D7CFA6
-- generatedChecksum: C3E112686AB152FE07BF92FD6073C77D
+  userChecksum: 74C24E7B319ADC8668D49EF3884CF937
+- generatedChecksum: B47C2B94656F56D52E89DC68EB5F382A
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_draw_arc.c
   physicalPath: gfx\legato\renderer
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C3E112686AB152FE07BF92FD6073C77D
-- generatedChecksum: B81B6991221BBF9241CC85FCDFDB9E0A
+  userChecksum: B47C2B94656F56D52E89DC68EB5F382A
+- generatedChecksum: 5C03344C63C48D6EFBD514FEE8215C0E
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_draw_line.c
   physicalPath: gfx\legato\renderer
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B81B6991221BBF9241CC85FCDFDB9E0A
+  userChecksum: 5C03344C63C48D6EFBD514FEE8215C0E
 - generatedChecksum: 05F537129E62A0A653F25D17A5A337FF
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_draw_rect.c
@@ -195,27 +195,27 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 05F537129E62A0A653F25D17A5A337FF
-- generatedChecksum: BA424598BA014416DD049AEE1A99DC33
+- generatedChecksum: D5DFD46741296DA701BCC19BFE3261F7
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_dynamicstring.c
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BA424598BA014416DD049AEE1A99DC33
-- generatedChecksum: C9B90FDFF3C867E8314E3AF295CAD2CF
+  userChecksum: D5DFD46741296DA701BCC19BFE3261F7
+- generatedChecksum: 0892D9FD231475AD088F284F9D65D0E8
   logicalPath: config\sam_e51_cnano\gfx\legato\widget
   name: legato_editwidget.c
   physicalPath: gfx\legato\widget
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C9B90FDFF3C867E8314E3AF295CAD2CF
-- generatedChecksum: AA382C9817090ED03A2CBF086CD89CE2
+  userChecksum: 0892D9FD231475AD088F284F9D65D0E8
+- generatedChecksum: 847835D8D58B709AD3DE9B32B698137A
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_error.c
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AA382C9817090ED03A2CBF086CD89CE2
+  userChecksum: 847835D8D58B709AD3DE9B32B698137A
 - generatedChecksum: 6BE27C8A351299B6B06C9E6989FA7CC3
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_event.c
@@ -230,13 +230,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 01014B4BC02CB8016B18A8C0F988237C
-- generatedChecksum: 2D462BC92B6EBEE72A482314E96B6E10
+- generatedChecksum: 0229A4CF2EC1D9A2EDC422F27A4F31B5
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_fixedstring.c
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2D462BC92B6EBEE72A482314E96B6E10
+  userChecksum: 0229A4CF2EC1D9A2EDC422F27A4F31B5
 - generatedChecksum: A86BC44CF6D3E3F3F9D52066D9F6D2AC
   logicalPath: config\sam_e51_cnano\gfx\legato\font
   name: legato_font.c
@@ -244,20 +244,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: A86BC44CF6D3E3F3F9D52066D9F6D2AC
-- generatedChecksum: 34715C88FF0F450AC942F599A0D17BD6
+- generatedChecksum: FAA5159532F54F3E7C0927DEF7C98EC3
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_gpu.c
   physicalPath: gfx\legato\renderer
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 34715C88FF0F450AC942F599A0D17BD6
-- generatedChecksum: DB51512FE15150530EF94F017145B1C8
+  userChecksum: FAA5159532F54F3E7C0927DEF7C98EC3
+- generatedChecksum: F8EBF44636747F306E5F5FB65337CE02
   logicalPath: config\sam_e51_cnano\gfx\legato\image
   name: legato_image.c
   physicalPath: gfx\legato\image
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DB51512FE15150530EF94F017145B1C8
+  userChecksum: F8EBF44636747F306E5F5FB65337CE02
 - generatedChecksum: 3AA0D34DB9343AF0E35B8F0C576C89FA
   logicalPath: config\sam_e51_cnano\gfx\legato\image
   name: legato_image_utils.c
@@ -265,139 +265,139 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 3AA0D34DB9343AF0E35B8F0C576C89FA
-- generatedChecksum: 4C0215CD6BC22EB7A9487660F8C96BDF
+- generatedChecksum: BB8EECC64D7BF9FC3EBBEADCB464A643
   logicalPath: config\sam_e51_cnano\gfx\legato\image\jpeg
   name: legato_imagedecoder_jpeg.c
   physicalPath: gfx\legato\image\jpeg
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4C0215CD6BC22EB7A9487660F8C96BDF
-- generatedChecksum: 8A868EBB0CB8853D31310AEEC899B236
+  userChecksum: BB8EECC64D7BF9FC3EBBEADCB464A643
+- generatedChecksum: 2B8A48A113099D6CD10A08FF5AFA5B4A
   logicalPath: config\sam_e51_cnano\gfx\legato\image\jpeg
   name: legato_imagedecoder_jpeg_common.c
   physicalPath: gfx\legato\image\jpeg
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8A868EBB0CB8853D31310AEEC899B236
-- generatedChecksum: 6CB8CE5E216B81103030A3D8A4C899AA
+  userChecksum: 2B8A48A113099D6CD10A08FF5AFA5B4A
+- generatedChecksum: 7ED23EB2E6665334A605D3C1A27CF606
   logicalPath: config\sam_e51_cnano\gfx\legato\image\png
   name: legato_imagedecoder_png.c
   physicalPath: gfx\legato\image\png
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6CB8CE5E216B81103030A3D8A4C899AA
-- generatedChecksum: 0EBEA25E82A35BF75001F02D5497ACD2
+  userChecksum: 7ED23EB2E6665334A605D3C1A27CF606
+- generatedChecksum: BDF2FD21931B2A068C5333DC3F9376B5
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0EBEA25E82A35BF75001F02D5497ACD2
-- generatedChecksum: AB6C99E0E2A660FD805375C9ED77CCAF
+  userChecksum: BDF2FD21931B2A068C5333DC3F9376B5
+- generatedChecksum: 743343860061C49F5E8F7D7A5CC307F4
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_blend.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AB6C99E0E2A660FD805375C9ED77CCAF
-- generatedChecksum: 31205E995806B1A5BD43D602D6486EB4
+  userChecksum: 743343860061C49F5E8F7D7A5CC307F4
+- generatedChecksum: 2009633255D8F939A03C573DD73EEE91
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_convert.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 31205E995806B1A5BD43D602D6486EB4
-- generatedChecksum: 669A80F779B1D2A7C56AEB70CB349948
+  userChecksum: 2009633255D8F939A03C573DD73EEE91
+- generatedChecksum: 59356D8E3167B6CBCFC374B05503CC8F
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_mask.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 669A80F779B1D2A7C56AEB70CB349948
-- generatedChecksum: 257A7EDCB9F812658FF68FC0899B19FF
+  userChecksum: 59356D8E3167B6CBCFC374B05503CC8F
+- generatedChecksum: 60428440243934CA28A223226F1B0864
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_palette_internal.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 257A7EDCB9F812658FF68FC0899B19FF
-- generatedChecksum: E376675E2B29DD9A4C27652750950262
+  userChecksum: 60428440243934CA28A223226F1B0864
+- generatedChecksum: 346A7E813B095C4D8A39B09A06FE722C
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_palette_stream.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E376675E2B29DD9A4C27652750950262
-- generatedChecksum: 84D4BA17A381977396910B48F3A98443
+  userChecksum: 346A7E813B095C4D8A39B09A06FE722C
+- generatedChecksum: 60F2C174A6DEA3BF33A3B97DEF528EED
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_read_internal.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 84D4BA17A381977396910B48F3A98443
-- generatedChecksum: F6793D70D1995F11945060AA1C72C049
+  userChecksum: 60F2C174A6DEA3BF33A3B97DEF528EED
+- generatedChecksum: 3D8DBEEFD7D605C792F329471CAEBDE6
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_read_stream_color.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F6793D70D1995F11945060AA1C72C049
-- generatedChecksum: 3DFF38FC69EF9F5D53ECE1229AE186A5
+  userChecksum: 3D8DBEEFD7D605C792F329471CAEBDE6
+- generatedChecksum: 368D18B822E55E3E477EBD4A757EF716
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_read_stream_index.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3DFF38FC69EF9F5D53ECE1229AE186A5
-- generatedChecksum: 44576AF3B9778DA69A938BBEC135D244
+  userChecksum: 368D18B822E55E3E477EBD4A757EF716
+- generatedChecksum: 449F30952AD3F2A2C98BE08EFD1A2DF5
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_read_stream_rlecolor.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 44576AF3B9778DA69A938BBEC135D244
-- generatedChecksum: E5C5F5B5539477D175FC1BFDD6477765
+  userChecksum: 449F30952AD3F2A2C98BE08EFD1A2DF5
+- generatedChecksum: 747B9EE67B4B34504C0DD2109447F03B
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_read_stream_rleindex.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E5C5F5B5539477D175FC1BFDD6477765
-- generatedChecksum: 676C099CB62AAE1A1E8AB1458815A39D
+  userChecksum: 747B9EE67B4B34504C0DD2109447F03B
+- generatedChecksum: FF7CD26700193D2D1EFE12ADBA80D2A6
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_rotate.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 676C099CB62AAE1A1E8AB1458815A39D
-- generatedChecksum: 1B6CA684BA0CC006155925092F0FAA38
+  userChecksum: FF7CD26700193D2D1EFE12ADBA80D2A6
+- generatedChecksum: 51FC029DB6443F4A35E62411F58D08B9
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_scale.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1B6CA684BA0CC006155925092F0FAA38
-- generatedChecksum: E3B0AC1687A836DA0187B3CD71EC47E9
+  userChecksum: 51FC029DB6443F4A35E62411F58D08B9
+- generatedChecksum: 8BA399A776A7E9DD780A96793C062A04
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_setup.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E3B0AC1687A836DA0187B3CD71EC47E9
-- generatedChecksum: 6FFB28DF3FC55B69B6F5E2D552EB8CC3
+  userChecksum: 8BA399A776A7E9DD780A96793C062A04
+- generatedChecksum: F42AC34D95AC7EACDAF9E90D48242428
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw_write.c
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6FFB28DF3FC55B69B6F5E2D552EB8CC3
-- generatedChecksum: 2C7AE9D3537FC2EC9FB76BA5D12AE07A
+  userChecksum: F42AC34D95AC7EACDAF9E90D48242428
+- generatedChecksum: 6C67DCE4BC3F98B18543ECD14AEA712C
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_input.c
   physicalPath: gfx\legato\core
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2C7AE9D3537FC2EC9FB76BA5D12AE07A
+  userChecksum: 6C67DCE4BC3F98B18543ECD14AEA712C
 - generatedChecksum: 166EFFCA3A6ED925F2EECB58B757BC83
   logicalPath: config\sam_e51_cnano\gfx\legato\datastructure
   name: legato_list.c
@@ -405,20 +405,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 166EFFCA3A6ED925F2EECB58B757BC83
-- generatedChecksum: B0A86C279F678503A949E41EDE619168
+- generatedChecksum: 515E5CF2FBDF1AECE8D0D4B1ECFDF13F
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_math.c
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B0A86C279F678503A949E41EDE619168
-- generatedChecksum: 441703C110295FF5738AE7DE39D6406B
+  userChecksum: 515E5CF2FBDF1AECE8D0D4B1ECFDF13F
+- generatedChecksum: E9A4A944EADB1C731F31920210914DDD
   logicalPath: config\sam_e51_cnano\gfx\legato\memory
   name: legato_memory.c
   physicalPath: gfx\legato\memory
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 441703C110295FF5738AE7DE39D6406B
+  userChecksum: E9A4A944EADB1C731F31920210914DDD
 - generatedChecksum: CE69218FE966EFCC87A06C76D9D662B6
   logicalPath: config\sam_e51_cnano\gfx\legato\image
   name: legato_palette.c
@@ -426,13 +426,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: CE69218FE966EFCC87A06C76D9D662B6
-- generatedChecksum: AEA8FFDF63FA7F175142F8D89FB02007
+- generatedChecksum: 518010961543C2F91BFC945395568E1B
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_pixelbuffer.c
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AEA8FFDF63FA7F175142F8D89FB02007
+  userChecksum: 518010961543C2F91BFC945395568E1B
 - generatedChecksum: 5FF49D5FB970A042947F296C77BEB2F0
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radiobutton
   name: legato_radiobutton_group.c
@@ -454,34 +454,34 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: EA7FB6E29DA7227B1B48FBD66056D7EC
-- generatedChecksum: 71AA999045BE5D0FDE6D05E24821CA5A
+- generatedChecksum: DF7D41678B9DA0AD3EE0D99A16711EE8
   logicalPath: config\sam_e51_cnano\gfx\legato\font
   name: legato_rasterfont_stream.c
   physicalPath: gfx\legato\font
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 71AA999045BE5D0FDE6D05E24821CA5A
-- generatedChecksum: B069B6FBDBC6D3FACB151438AFE7C230
+  userChecksum: DF7D41678B9DA0AD3EE0D99A16711EE8
+- generatedChecksum: CEA5EBCAD80F2905A5E6ACDE2AD4F8FE
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_rect.c
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B069B6FBDBC6D3FACB151438AFE7C230
-- generatedChecksum: 5B54B0FDC5609C3067B670490FDD0AFD
+  userChecksum: CEA5EBCAD80F2905A5E6ACDE2AD4F8FE
+- generatedChecksum: AAD40235137F4975F38347A98DF7B9B4
   logicalPath: config\sam_e51_cnano\gfx\legato\datastructure
   name: legato_rectarray.c
   physicalPath: gfx\legato\datastructure
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5B54B0FDC5609C3067B670490FDD0AFD
-- generatedChecksum: 6C8079BF96739FD3B9A37022D46A71C5
+  userChecksum: AAD40235137F4975F38347A98DF7B9B4
+- generatedChecksum: 90079F5B32382EF3E77B27C7F70D2CFD
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_renderer.c
   physicalPath: gfx\legato\renderer
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6C8079BF96739FD3B9A37022D46A71C5
+  userChecksum: 90079F5B32382EF3E77B27C7F70D2CFD
 - generatedChecksum: EF00DAB935C4977E34A72B5D976F572A
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_scheme.c
@@ -489,13 +489,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: EF00DAB935C4977E34A72B5D976F572A
-- generatedChecksum: 731D53877B29CC9077F75BDC2470D3AF
+- generatedChecksum: 3BD7FFC7658199344F70441E058BECB4
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_state.c
   physicalPath: gfx\legato\core
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 731D53877B29CC9077F75BDC2470D3AF
+  userChecksum: 3BD7FFC7658199344F70441E058BECB4
 - generatedChecksum: 57FDDCBDBE41DEC2C6DF1FB160834AB9
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_stream.c
@@ -503,13 +503,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 57FDDCBDBE41DEC2C6DF1FB160834AB9
-- generatedChecksum: 9F9490F1010E3E44A093406DE5FC10F3
+- generatedChecksum: 08E8E1B99B41C9226B9081065AF1DB58
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_string.c
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9F9490F1010E3E44A093406DE5FC10F3
+  userChecksum: 08E8E1B99B41C9226B9081065AF1DB58
 - generatedChecksum: 56971255CFEC12B89CF325D1853C47AB
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_string_renderer.c
@@ -517,13 +517,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 56971255CFEC12B89CF325D1853C47AB
-- generatedChecksum: F24707171E91664EC033CA8CA7DA5A1F
+- generatedChecksum: 47B82889C85ED3825DC2BA4B19D159F8
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_string_renderer_stream.c
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F24707171E91664EC033CA8CA7DA5A1F
+  userChecksum: 47B82889C85ED3825DC2BA4B19D159F8
 - generatedChecksum: 40C1D751635A0126FCB40529C5885A18
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_stringtable.c
@@ -538,34 +538,34 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 060CC7A3D51063736F9A9A95A4A98ABC
-- generatedChecksum: C5F040974502FC2B591D9CEDCE226612
+- generatedChecksum: DAFA9F0BA6E7FC81E93F21287B9FDC84
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_tablestring.c
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C5F040974502FC2B591D9CEDCE226612
-- generatedChecksum: 429999DFD6AA1366814114338DE664A4
+  userChecksum: DAFA9F0BA6E7FC81E93F21287B9FDC84
+- generatedChecksum: 251CE72162CB7CA77E528C3847C7CF43
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_utils.c
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 429999DFD6AA1366814114338DE664A4
-- generatedChecksum: AAA08B4AEBD7C0505F5E855D1FA5BE2E
+  userChecksum: 251CE72162CB7CA77E528C3847C7CF43
+- generatedChecksum: 2756954421692BABE89ACFD9705828E1
   logicalPath: config\sam_e51_cnano\gfx\legato\memory
   name: legato_variableheap.c
   physicalPath: gfx\legato\memory
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AAA08B4AEBD7C0505F5E855D1FA5BE2E
-- generatedChecksum: 6B2E204B813965EF5E25B71D3DD34E63
+  userChecksum: 2756954421692BABE89ACFD9705828E1
+- generatedChecksum: AB1A2A934883EDD7F12707CE7FE62DED
   logicalPath: config\sam_e51_cnano\gfx\legato\widget
   name: legato_widget.c
   physicalPath: gfx\legato\widget
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6B2E204B813965EF5E25B71D3DD34E63
+  userChecksum: AB1A2A934883EDD7F12707CE7FE62DED
 - generatedChecksum: 5FE816B6FE74D7712D2DB342720D1D47
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\arc
   name: legato_widget_arc.c
@@ -594,41 +594,41 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 35A82F1532D19DDBB4B76D96FFC8DDCB
-- generatedChecksum: C798A712611320F8A2802FDE5BC2C142
+- generatedChecksum: 99F6026FF6AE78E67C7B2EB8A0A9E41F
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\button
   name: legato_widget_button.c
   physicalPath: gfx\legato\widget\button
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C798A712611320F8A2802FDE5BC2C142
-- generatedChecksum: E55A01CBD71FA95CE12DCC1CC65AAF1F
+  userChecksum: 99F6026FF6AE78E67C7B2EB8A0A9E41F
+- generatedChecksum: 58BF4DE5BFF7A5D28A1B7D86ED134E18
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\button
   name: legato_widget_button_skin_classic.c
   physicalPath: gfx\legato\widget\button
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E55A01CBD71FA95CE12DCC1CC65AAF1F
-- generatedChecksum: 4419499F217191832AD3975D8168F104
+  userChecksum: 58BF4DE5BFF7A5D28A1B7D86ED134E18
+- generatedChecksum: DA3A725AFAC71E0D067EE6B5773BC2E6
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\checkbox
   name: legato_widget_checkbox.c
   physicalPath: gfx\legato\widget\checkbox
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4419499F217191832AD3975D8168F104
-- generatedChecksum: 8C49077AC5F9CECFA2A07FAAFE254334
+  userChecksum: DA3A725AFAC71E0D067EE6B5773BC2E6
+- generatedChecksum: 84AE0954F00574B77315F2865EEC51C3
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\checkbox
   name: legato_widget_checkbox_skin_classic.c
   physicalPath: gfx\legato\widget\checkbox
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8C49077AC5F9CECFA2A07FAAFE254334
-- generatedChecksum: 62A424923AE1EDC93401A80946D25172
+  userChecksum: 84AE0954F00574B77315F2865EEC51C3
+- generatedChecksum: 6D890C3F3916113CBE31D33DD094E0C0
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circle
   name: legato_widget_circle.c
   physicalPath: gfx\legato\widget\circle
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 62A424923AE1EDC93401A80946D25172
+  userChecksum: 6D890C3F3916113CBE31D33DD094E0C0
 - generatedChecksum: B747DBE1BEFA8A368B3067626926930E
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circle
   name: legato_widget_circle_skin_classic.c
@@ -650,20 +650,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 48F3A5A5500694D32C42816FEF7FA167
-- generatedChecksum: 7BE35EF7F8463074487AE0CB09B1E68C
+- generatedChecksum: B24783ADFA7DFDAF6793DF2739CAB98B
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circularslider
   name: legato_widget_circular_slider.c
   physicalPath: gfx\legato\widget\circularslider
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7BE35EF7F8463074487AE0CB09B1E68C
-- generatedChecksum: 6BAAE445D04301E0BB77E832861B4348
+  userChecksum: B24783ADFA7DFDAF6793DF2739CAB98B
+- generatedChecksum: 1C67BBBD10320E21578AED7A5BE38A53
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circularslider
   name: legato_widget_circular_slider_skin_classic.c
   physicalPath: gfx\legato\widget\circularslider
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6BAAE445D04301E0BB77E832861B4348
+  userChecksum: 1C67BBBD10320E21578AED7A5BE38A53
 - generatedChecksum: E44A08BCB748C7F00A26088C1CAF63F6
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\drawsurface
   name: legato_widget_drawsurface.c
@@ -671,13 +671,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E44A08BCB748C7F00A26088C1CAF63F6
-- generatedChecksum: 7A0C5BAA7A91DE5B7FC084F4790D328E
+- generatedChecksum: A1FD9363F690637DCD67C21743B7EB92
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\drawsurface
   name: legato_widget_drawsurface_skin_classic.c
   physicalPath: gfx\legato\widget\drawsurface
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7A0C5BAA7A91DE5B7FC084F4790D328E
+  userChecksum: A1FD9363F690637DCD67C21743B7EB92
 - generatedChecksum: CB874DD990A51D24395D1BD6396D9429
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\gradient
   name: legato_widget_gradient.c
@@ -685,13 +685,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: CB874DD990A51D24395D1BD6396D9429
-- generatedChecksum: 61D510A74E7F927330133AE0CCAD1133
+- generatedChecksum: 6EDCF200BFE71A664C24B5FA485D36F9
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\gradient
   name: legato_widget_gradient_skin_classic.c
   physicalPath: gfx\legato\widget\gradient
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 61D510A74E7F927330133AE0CCAD1133
+  userChecksum: 6EDCF200BFE71A664C24B5FA485D36F9
 - generatedChecksum: D0B1280D641F0C841CD875281E249CF6
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\groupbox
   name: legato_widget_groupbox.c
@@ -699,69 +699,69 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D0B1280D641F0C841CD875281E249CF6
-- generatedChecksum: EFBAB41E835A4CE865B580870467C1FF
+- generatedChecksum: B4F2B6C7D3862E4C323D79E4D7518734
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\groupbox
   name: legato_widget_groupbox_skin_classic.c
   physicalPath: gfx\legato\widget\groupbox
   security: NON_SECURE
   type: SOURCE
-  userChecksum: EFBAB41E835A4CE865B580870467C1FF
-- generatedChecksum: BE7E1D43B569321908A7F69925C4B54B
+  userChecksum: B4F2B6C7D3862E4C323D79E4D7518734
+- generatedChecksum: ABAC13672F9F8AE01B8BD3701057E569
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\image
   name: legato_widget_image.c
   physicalPath: gfx\legato\widget\image
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BE7E1D43B569321908A7F69925C4B54B
-- generatedChecksum: DD2A67C78529944E169EA9183FCC448F
+  userChecksum: ABAC13672F9F8AE01B8BD3701057E569
+- generatedChecksum: 58A0A375BF738CA4A6144DA190AA7583
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\image
   name: legato_widget_image_skin_classic.c
   physicalPath: gfx\legato\widget\image
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DD2A67C78529944E169EA9183FCC448F
-- generatedChecksum: 414B0FA05B4567E9EC24F74E330728AC
+  userChecksum: 58A0A375BF738CA4A6144DA190AA7583
+- generatedChecksum: 0EE2A63B32DD120F26AEFD3990842459
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagerotate
   name: legato_widget_imagerotate.c
   physicalPath: gfx\legato\widget\imagerotate
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 414B0FA05B4567E9EC24F74E330728AC
-- generatedChecksum: 0A514291F63E3DABD8376EBD76B8FF50
+  userChecksum: 0EE2A63B32DD120F26AEFD3990842459
+- generatedChecksum: C7E3A6F542663EC8E8C9006980A5C469
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagerotate
   name: legato_widget_imagerotate_skin_classic.c
   physicalPath: gfx\legato\widget\imagerotate
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0A514291F63E3DABD8376EBD76B8FF50
-- generatedChecksum: 050C9839F7DDF984EE54D8063A0220BA
+  userChecksum: C7E3A6F542663EC8E8C9006980A5C469
+- generatedChecksum: 08F24981384EABD4A0FA8E240461DAA7
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagescale
   name: legato_widget_imagescale.c
   physicalPath: gfx\legato\widget\imagescale
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 050C9839F7DDF984EE54D8063A0220BA
-- generatedChecksum: D1088768269A80EB916615A960DC4CBC
+  userChecksum: 08F24981384EABD4A0FA8E240461DAA7
+- generatedChecksum: 56A13F4BE8418F75EDAF1DF458A3B476
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagescale
   name: legato_widget_imagescale_skin_classic.c
   physicalPath: gfx\legato\widget\imagescale
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D1088768269A80EB916615A960DC4CBC
-- generatedChecksum: E2AB156F1A4880F80377420C4F089A58
+  userChecksum: 56A13F4BE8418F75EDAF1DF458A3B476
+- generatedChecksum: F66E7A496224477623426397509EE1EF
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagesequence
   name: legato_widget_imagesequence.c
   physicalPath: gfx\legato\widget\imagesequence
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E2AB156F1A4880F80377420C4F089A58
-- generatedChecksum: 191E5474C262D739317597FC47A0D739
+  userChecksum: F66E7A496224477623426397509EE1EF
+- generatedChecksum: 59CA977AFD703D93FADBBFC309001323
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagesequence
   name: legato_widget_imagesequence_skin_classic.c
   physicalPath: gfx\legato\widget\imagesequence
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 191E5474C262D739317597FC47A0D739
+  userChecksum: 59CA977AFD703D93FADBBFC309001323
 - generatedChecksum: DC3530C7E6E6815724E4CFE97745F524
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\keypad
   name: legato_widget_keypad.c
@@ -783,34 +783,34 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: A60D16F409981457F45C57B739DC4CEA
-- generatedChecksum: F5C739E61F0A1540E69DE13F55430B16
+- generatedChecksum: CF1C5372BCB070A603069C83B201F78B
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\label
   name: legato_widget_label_skin_classic.c
   physicalPath: gfx\legato\widget\label
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F5C739E61F0A1540E69DE13F55430B16
-- generatedChecksum: 1DEC1F0376EBE7D9DD42FB0CC37333CE
+  userChecksum: CF1C5372BCB070A603069C83B201F78B
+- generatedChecksum: 8CFA9ED260540C1FD8BE5136F99E8FF4
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\line
   name: legato_widget_line.c
   physicalPath: gfx\legato\widget\line
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1DEC1F0376EBE7D9DD42FB0CC37333CE
-- generatedChecksum: 5C3C3FD61C0E3E2ED0CA93642FAFFACB
+  userChecksum: 8CFA9ED260540C1FD8BE5136F99E8FF4
+- generatedChecksum: A0E88EBBF2D5AFB19EDDE4FD02FB0BF2
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\linegraph
   name: legato_widget_line_graph.c
   physicalPath: gfx\legato\widget\linegraph
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5C3C3FD61C0E3E2ED0CA93642FAFFACB
-- generatedChecksum: EAC5273970D582BACF3066D8FCABF2A3
+  userChecksum: A0E88EBBF2D5AFB19EDDE4FD02FB0BF2
+- generatedChecksum: FC92FEA0EF79326E130960A7815592C8
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\linegraph
   name: legato_widget_line_graph_skin_classic.c
   physicalPath: gfx\legato\widget\linegraph
   security: NON_SECURE
   type: SOURCE
-  userChecksum: EAC5273970D582BACF3066D8FCABF2A3
+  userChecksum: FC92FEA0EF79326E130960A7815592C8
 - generatedChecksum: DA5CF6C9C72D3A934BE3C147C0072E61
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\line
   name: legato_widget_line_skin_classic.c
@@ -818,34 +818,34 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: DA5CF6C9C72D3A934BE3C147C0072E61
-- generatedChecksum: 9CCDFF6F33689D0A9246BBFA0E79C178
+- generatedChecksum: D117102CA5CC99F9074FD40F1AFBFA6B
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\list
   name: legato_widget_list.c
   physicalPath: gfx\legato\widget\list
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9CCDFF6F33689D0A9246BBFA0E79C178
-- generatedChecksum: 8F10A2AEF65C02269D3686BA97A809BF
+  userChecksum: D117102CA5CC99F9074FD40F1AFBFA6B
+- generatedChecksum: 3512FE734F3E16603B18C9148BFDDBD4
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\list
   name: legato_widget_list_skin_classic.c
   physicalPath: gfx\legato\widget\list
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8F10A2AEF65C02269D3686BA97A809BF
-- generatedChecksum: 814E06F910AB1C865114C4BA515E54A3
+  userChecksum: 3512FE734F3E16603B18C9148BFDDBD4
+- generatedChecksum: ECE3936F4FD58C8FA9DA20C26280EA88
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\listwheel
   name: legato_widget_listwheel.c
   physicalPath: gfx\legato\widget\listwheel
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 814E06F910AB1C865114C4BA515E54A3
-- generatedChecksum: CDE210FA9EBDE76C14C3862707F82DEF
+  userChecksum: ECE3936F4FD58C8FA9DA20C26280EA88
+- generatedChecksum: D96216D2E0C59E796E925D9CC376DCDC
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\listwheel
   name: legato_widget_listwheel_skin_classic.c
   physicalPath: gfx\legato\widget\listwheel
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CDE210FA9EBDE76C14C3862707F82DEF
+  userChecksum: D96216D2E0C59E796E925D9CC376DCDC
 - generatedChecksum: 490BEADFF405F33559B5F4C0EE5BF4EE
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\piechart
   name: legato_widget_pie_chart.c
@@ -853,13 +853,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 490BEADFF405F33559B5F4C0EE5BF4EE
-- generatedChecksum: 115D5CAAC23B8B2E0A0E89B05C7E6409
+- generatedChecksum: D7D1FE433A3D4FCE6D7CEDCCE49AFFFF
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\piechart
   name: legato_widget_pie_chart_skin_classic.c
   physicalPath: gfx\legato\widget\piechart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 115D5CAAC23B8B2E0A0E89B05C7E6409
+  userChecksum: D7D1FE433A3D4FCE6D7CEDCCE49AFFFF
 - generatedChecksum: 1B8CBA57FD5ADBD62F10A06F48A939E1
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\progressbar
   name: legato_widget_progressbar.c
@@ -867,13 +867,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 1B8CBA57FD5ADBD62F10A06F48A939E1
-- generatedChecksum: FBD44D4987A2E8B98AD3D23D560FD525
+- generatedChecksum: F3FB57EDB6FFCB2E6EB5555749BF4D5C
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\progressbar
   name: legato_widget_progressbar_skin_classic.c
   physicalPath: gfx\legato\widget\progressbar
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FBD44D4987A2E8B98AD3D23D560FD525
+  userChecksum: F3FB57EDB6FFCB2E6EB5555749BF4D5C
 - generatedChecksum: AA257CD7400EDA24B50265B2D989B027
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radialmenu
   name: legato_widget_radial_menu.c
@@ -881,27 +881,27 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: AA257CD7400EDA24B50265B2D989B027
-- generatedChecksum: 408B1E5D710BF93E1B45313AC94B9239
+- generatedChecksum: 0DAAB0013266070071BFBF96367CDC11
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radialmenu
   name: legato_widget_radial_menu_skin_classic.c
   physicalPath: gfx\legato\widget\radialmenu
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 408B1E5D710BF93E1B45313AC94B9239
-- generatedChecksum: FD27BB3881ED1F15C69FC5CC9FE23541
+  userChecksum: 0DAAB0013266070071BFBF96367CDC11
+- generatedChecksum: 1C784862C50ED1C8F14EE68ACAECC2B5
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radiobutton
   name: legato_widget_radiobutton.c
   physicalPath: gfx\legato\widget\radiobutton
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FD27BB3881ED1F15C69FC5CC9FE23541
-- generatedChecksum: A844B7644EE21A510821600E3C64403B
+  userChecksum: 1C784862C50ED1C8F14EE68ACAECC2B5
+- generatedChecksum: 5DEFF07BB2BD5B251C150F7B82B5CEFA
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radiobutton
   name: legato_widget_radiobutton_skin_classic.c
   physicalPath: gfx\legato\widget\radiobutton
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A844B7644EE21A510821600E3C64403B
+  userChecksum: 5DEFF07BB2BD5B251C150F7B82B5CEFA
 - generatedChecksum: 5A0E271B112E916C48C38DC54658CA80
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\rectangle
   name: legato_widget_rectangle.c
@@ -909,20 +909,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5A0E271B112E916C48C38DC54658CA80
-- generatedChecksum: B749B49995248A2851ED6A8F8EAB5A04
+- generatedChecksum: 30FD49D363373A55B0F466ACC46E2E28
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\rectangle
   name: legato_widget_rectangle_skin_classic.c
   physicalPath: gfx\legato\widget\rectangle
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B749B49995248A2851ED6A8F8EAB5A04
-- generatedChecksum: 8A89218372B5F89163561C284B839926
+  userChecksum: 30FD49D363373A55B0F466ACC46E2E28
+- generatedChecksum: DC446141D9EFFC613301599B284D958C
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\scrollbar
   name: legato_widget_scrollbar.c
   physicalPath: gfx\legato\widget\scrollbar
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8A89218372B5F89163561C284B839926
+  userChecksum: DC446141D9EFFC613301599B284D958C
 - generatedChecksum: F8F62A07AA9A333C5B8A9D676F95DD0B
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\scrollbar
   name: legato_widget_scrollbar_skin_classic.c
@@ -937,13 +937,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 88505DF5660858302C1493DED7A9EBD3
-- generatedChecksum: BA16892FB69C68275674D5CE2C366B71
+- generatedChecksum: 693B655D419728451085EBECD1C59D90
   logicalPath: config\sam_e51_cnano\gfx\legato\widget
   name: legato_widget_skin_classic_common.c
   physicalPath: gfx\legato\widget
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BA16892FB69C68275674D5CE2C366B71
+  userChecksum: 693B655D419728451085EBECD1C59D90
 - generatedChecksum: B0AB09B41C8A16B0E635CA0D364EC1E4
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\slider
   name: legato_widget_slider.c
@@ -951,41 +951,41 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: B0AB09B41C8A16B0E635CA0D364EC1E4
-- generatedChecksum: F080BA5976DE162B0B46EF27E0D2C15B
+- generatedChecksum: D7D66FE009CD8F87DFD88453B1555E14
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\slider
   name: legato_widget_slider_skin_classic.c
   physicalPath: gfx\legato\widget\slider
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F080BA5976DE162B0B46EF27E0D2C15B
-- generatedChecksum: 292526CD60109BB1E79584DB59D73423
+  userChecksum: D7D66FE009CD8F87DFD88453B1555E14
+- generatedChecksum: FFDA857BF0C6C921FECCF599E759748E
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\textfield
   name: legato_widget_textfield.c
   physicalPath: gfx\legato\widget\textfield
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 292526CD60109BB1E79584DB59D73423
-- generatedChecksum: 31F27B4F2A14D2B94E09521EFD591490
+  userChecksum: FFDA857BF0C6C921FECCF599E759748E
+- generatedChecksum: AE553B35F27AA1F295138C3653937EFE
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\textfield
   name: legato_widget_textfield_skin_classic.c
   physicalPath: gfx\legato\widget\textfield
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 31F27B4F2A14D2B94E09521EFD591490
-- generatedChecksum: C326B48B3A0ECB1D8A67C62B549F9EAF
+  userChecksum: AE553B35F27AA1F295138C3653937EFE
+- generatedChecksum: 72FA4D40E37244D4F6E80D3DCE054119
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\touchtest
   name: legato_widget_touchtest.c
   physicalPath: gfx\legato\widget\touchtest
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C326B48B3A0ECB1D8A67C62B549F9EAF
-- generatedChecksum: CD84A4490B356DFE56FA87E2ADD8C79C
+  userChecksum: 72FA4D40E37244D4F6E80D3DCE054119
+- generatedChecksum: A6265782C064D9BD7B613F4D504BB7E1
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\touchtest
   name: legato_widget_touchtest_skin_classic.c
   physicalPath: gfx\legato\widget\touchtest
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CD84A4490B356DFE56FA87E2ADD8C79C
+  userChecksum: A6265782C064D9BD7B613F4D504BB7E1
 - generatedChecksum: BD6B229F0B6AEB6DC11EE89F1C94CA02
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\window
   name: legato_widget_window.c
@@ -993,13 +993,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: BD6B229F0B6AEB6DC11EE89F1C94CA02
-- generatedChecksum: 1522B4DA607AF9CDCC043EBE9C989A12
+- generatedChecksum: 10543C226B948C51688A4B554B0A50A9
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\window
   name: legato_widget_window_skin_classic.c
   physicalPath: gfx\legato\widget\window
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1522B4DA607AF9CDCC043EBE9C989A12
+  userChecksum: 10543C226B948C51688A4B554B0A50A9
 - generatedChecksum: 328F1E09E0DD9BEE901C4562A3E5180A
   logicalPath: config\sam_e51_cnano
   name: libc_syscalls.c
@@ -1007,13 +1007,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 328F1E09E0DD9BEE901C4562A3E5180A
-- generatedChecksum: A9A120FBFFC8A03BC99035259E691446
+- generatedChecksum: 483F4DAA35ED044F90A401FAB9E4E26C
   logicalPath: config\sam_e51_cnano\gfx\legato\image\png
   name: lodepng.c
   physicalPath: gfx\legato\image\png
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A9A120FBFFC8A03BC99035259E691446
+  userChecksum: 483F4DAA35ED044F90A401FAB9E4E26C
 - generatedChecksum: null
   logicalPath: ''
   name: main.c
@@ -1161,13 +1161,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5182754E707E008E4C8788FCAB430380
-- generatedChecksum: 3618E41476EE539B6E4E8B52A817042D
+- generatedChecksum: 00476FA3C353B9AB067B0EDF1DD27182
   logicalPath: config\sam_e51_cnano\system\input
   name: sys_input.c
   physicalPath: system\input
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3618E41476EE539B6E4E8B52A817042D
+  userChecksum: 00476FA3C353B9AB067B0EDF1DD27182
 - generatedChecksum: 99F5C28835CA70CF308C005561EF92C6
   logicalPath: config\sam_e51_cnano\system\input
   name: sys_input_listener.c
@@ -1385,13 +1385,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 148257D6CC39D0D388939E5C721A027A
-- generatedChecksum: 18F5A33A7C4D4A6DB499E6233D4526AF
+- generatedChecksum: 38A04B93D159BEE38BDF19D515BE01F1
   logicalPath: config\sam_e51_cnano\gfx\driver\external_controller
   name: drv_gfx_external_controller.h
   physicalPath: gfx\driver\controller\external_controller
   security: NON_SECURE
   type: HEADER
-  userChecksum: 18F5A33A7C4D4A6DB499E6233D4526AF
+  userChecksum: 38A04B93D159BEE38BDF19D515BE01F1
 - generatedChecksum: 53AD078A2F507226A6BDA2DBFEA03430
   logicalPath: config\sam_e51_cnano\driver\spi
   name: drv_spi.h
@@ -1441,13 +1441,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 38C5839FE00D4E3CEEA95425F87805C3
-- generatedChecksum: 524661ACAAE226F816112C0292B9DCAB
+- generatedChecksum: 159A765500F8450D2A12F23B308B8BDC
   logicalPath: config\sam_e51_cnano\gfx\driver\external_controller
   name: gfx_driver.h
   physicalPath: gfx\driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 524661ACAAE226F816112C0292B9DCAB
+  userChecksum: 159A765500F8450D2A12F23B308B8BDC
 - generatedChecksum: 55AF83E29D42461C300039354669841C
   logicalPath: packs\ATSAME51J20A_DFP\component
   name: hmatrixb.h
@@ -1476,34 +1476,34 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: AA09E34FB43ECEFFF800897DAA571F61
-- generatedChecksum: B304831F3C1AFA7F7A497602EDC016F8
+- generatedChecksum: 042D3F04407D0A343BB7CACD25439A9C
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_harmony.h
   physicalPath: gfx\legato\generated
   security: NON_SECURE
   type: HEADER
-  userChecksum: B304831F3C1AFA7F7A497602EDC016F8
-- generatedChecksum: 9CD34B1BF6C65ABB9C5E45B924D134B6
+  userChecksum: 042D3F04407D0A343BB7CACD25439A9C
+- generatedChecksum: A0EF378E7CEC7393625CFDDC465529F4
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_init.h
   physicalPath: gfx\legato\generated
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9CD34B1BF6C65ABB9C5E45B924D134B6
-- generatedChecksum: 97A4B83D0D2C57BAC1B8C597B72D5199
+  userChecksum: A0EF378E7CEC7393625CFDDC465529F4
+- generatedChecksum: 687C0ABB099506F5778602881EB3D96D
   logicalPath: config\sam_e51_cnano\gfx\legato\generated
   name: le_gen_scheme.h
   physicalPath: gfx\legato\generated
   security: NON_SECURE
   type: HEADER
-  userChecksum: 97A4B83D0D2C57BAC1B8C597B72D5199
-- generatedChecksum: F4E7858962CDF477351E6AAEFC2169E5
+  userChecksum: 687C0ABB099506F5778602881EB3D96D
+- generatedChecksum: 56A44D16B3C57D007A9154C0A1FF2FD7
   logicalPath: config\sam_e51_cnano\gfx\legato\generated\screen
   name: le_gen_screen_Screen0.h
   physicalPath: gfx\legato\generated\screen
   security: NON_SECURE
   type: HEADER
-  userChecksum: F4E7858962CDF477351E6AAEFC2169E5
+  userChecksum: 56A44D16B3C57D007A9154C0A1FF2FD7
 - generatedChecksum: 993110774813AF4280462AE794C64083
   logicalPath: config\sam_e51_cnano\gfx\legato
   name: legato.h
@@ -1518,76 +1518,76 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6A358135828719657F3A57D2FD2BBF8A
-- generatedChecksum: D7D2E3CC543419FD9B13D65C165B0AA4
+- generatedChecksum: 803A3E4DA0BAC462B6FD5037EEB403FC
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_color.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: D7D2E3CC543419FD9B13D65C165B0AA4
-- generatedChecksum: CCC00FD3CB803647CB70DA2AE30254AF
+  userChecksum: 803A3E4DA0BAC462B6FD5037EEB403FC
+- generatedChecksum: 13553FC080D7DB70E8038CABB05F2B87
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_common.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: CCC00FD3CB803647CB70DA2AE30254AF
-- generatedChecksum: 23A5E205315C0F2BD88B2E1FF91FBBE6
+  userChecksum: 13553FC080D7DB70E8038CABB05F2B87
+- generatedChecksum: 058A7174699649E5FF218001AA92B05A
   logicalPath: config\sam_e51_cnano\gfx\legato
   name: legato_config.h
   physicalPath: gfx\legato
   security: NON_SECURE
   type: HEADER
-  userChecksum: 23A5E205315C0F2BD88B2E1FF91FBBE6
-- generatedChecksum: 2F7F24A60D7D1CB51EB616AB6E1DB634
+  userChecksum: 058A7174699649E5FF218001AA92B05A
+- generatedChecksum: 30A2B9F9E41BB023C20363CE7E0256A4
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_dynamicstring.h
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: HEADER
-  userChecksum: 2F7F24A60D7D1CB51EB616AB6E1DB634
-- generatedChecksum: 5F891114BD0545F6BE6F2F53FF2BBBD2
+  userChecksum: 30A2B9F9E41BB023C20363CE7E0256A4
+- generatedChecksum: D1322A069859371BFA289DC605C5F1A9
   logicalPath: config\sam_e51_cnano\gfx\legato\widget
   name: legato_editwidget.h
   physicalPath: gfx\legato\widget
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5F891114BD0545F6BE6F2F53FF2BBBD2
-- generatedChecksum: 6491D4C18DD94DC5D8752AC207508C56
+  userChecksum: D1322A069859371BFA289DC605C5F1A9
+- generatedChecksum: 9ABEDADEC6151E5F97498A8623932D09
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_error.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6491D4C18DD94DC5D8752AC207508C56
-- generatedChecksum: 0EA8AF736A2A98E6EC5F9CB5725C7A17
+  userChecksum: 9ABEDADEC6151E5F97498A8623932D09
+- generatedChecksum: 399F86EA062F4D826F593A3D9DB79D87
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_event.h
   physicalPath: gfx\legato\core
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0EA8AF736A2A98E6EC5F9CB5725C7A17
-- generatedChecksum: 5B96149BA0B344329F3225A5CDDB508A
+  userChecksum: 399F86EA062F4D826F593A3D9DB79D87
+- generatedChecksum: 5B4BEAE42537264A02A3558EAEBA8514
   logicalPath: config\sam_e51_cnano\gfx\legato\memory
   name: legato_fixedheap.h
   physicalPath: gfx\legato\memory
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5B96149BA0B344329F3225A5CDDB508A
-- generatedChecksum: E2B37D8113D33C8006E408BE448A7BA6
+  userChecksum: 5B4BEAE42537264A02A3558EAEBA8514
+- generatedChecksum: 295D1BDE726B062609ECDD25D6FE5C01
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_fixedstring.h
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: HEADER
-  userChecksum: E2B37D8113D33C8006E408BE448A7BA6
-- generatedChecksum: 65BAE1417B2CDA6AF1DB7C68FB2076E4
+  userChecksum: 295D1BDE726B062609ECDD25D6FE5C01
+- generatedChecksum: C61FB415C6EB89C02C332803FA1E277B
   logicalPath: config\sam_e51_cnano\gfx\legato\font
   name: legato_font.h
   physicalPath: gfx\legato\font
   security: NON_SECURE
   type: HEADER
-  userChecksum: 65BAE1417B2CDA6AF1DB7C68FB2076E4
+  userChecksum: C61FB415C6EB89C02C332803FA1E277B
 - generatedChecksum: 223FBC4FC8651E3CCF8D58D95CBE73EF
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_gpu.h
@@ -1595,55 +1595,55 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 223FBC4FC8651E3CCF8D58D95CBE73EF
-- generatedChecksum: 05EAE95A069088A9EEAE611E2862FB0A
+- generatedChecksum: 613845B7106CD0CCD79F1A3DBFE92904
   logicalPath: config\sam_e51_cnano\gfx\legato\image
   name: legato_image.h
   physicalPath: gfx\legato\image
   security: NON_SECURE
   type: HEADER
-  userChecksum: 05EAE95A069088A9EEAE611E2862FB0A
-- generatedChecksum: 4F75AE2BA02B082D70C5E22ED7659D8E
+  userChecksum: 613845B7106CD0CCD79F1A3DBFE92904
+- generatedChecksum: 20F5C4A58F413B7AD3ECF05A45A69861
   logicalPath: config\sam_e51_cnano\gfx\legato\image
   name: legato_image_utils.h
   physicalPath: gfx\legato\image
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4F75AE2BA02B082D70C5E22ED7659D8E
-- generatedChecksum: 3A33A851522E07EEB3509AD8D9633DED
+  userChecksum: 20F5C4A58F413B7AD3ECF05A45A69861
+- generatedChecksum: F0B4EF8BC9ECFC58C9F62CB647948CB5
   logicalPath: config\sam_e51_cnano\gfx\legato\image\jpeg
   name: legato_imagedecoder_jpeg.h
   physicalPath: gfx\legato\image\jpeg
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3A33A851522E07EEB3509AD8D9633DED
-- generatedChecksum: DFEB402FABFE3A1FFCF0F6B1B2837440
+  userChecksum: F0B4EF8BC9ECFC58C9F62CB647948CB5
+- generatedChecksum: 1602CC67EF74146364F65BC8543A00AD
   logicalPath: config\sam_e51_cnano\gfx\legato\image\jpeg
   name: legato_imagedecoder_jpeg_common.h
   physicalPath: gfx\legato\image\jpeg
   security: NON_SECURE
   type: HEADER
-  userChecksum: DFEB402FABFE3A1FFCF0F6B1B2837440
-- generatedChecksum: 41A5A13E42976BB54CAC17621B75C65F
+  userChecksum: 1602CC67EF74146364F65BC8543A00AD
+- generatedChecksum: 7ADDAC9059A85F81FAFFBF0953F115C2
   logicalPath: config\sam_e51_cnano\gfx\legato\image\png
   name: legato_imagedecoder_png.h
   physicalPath: gfx\legato\image\png
   security: NON_SECURE
   type: HEADER
-  userChecksum: 41A5A13E42976BB54CAC17621B75C65F
-- generatedChecksum: 92B99191D7F6CED016E4E1E676F93D2B
+  userChecksum: 7ADDAC9059A85F81FAFFBF0953F115C2
+- generatedChecksum: B81AA9C48BB7A1416D0D25EC35D5A2AA
   logicalPath: config\sam_e51_cnano\gfx\legato\image\raw
   name: legato_imagedecoder_raw.h
   physicalPath: gfx\legato\image\raw
   security: NON_SECURE
   type: HEADER
-  userChecksum: 92B99191D7F6CED016E4E1E676F93D2B
-- generatedChecksum: D7806097C632CCA34D2A578E18876B8F
+  userChecksum: B81AA9C48BB7A1416D0D25EC35D5A2AA
+- generatedChecksum: 47A67BD8B145601637452E0047D104CD
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_input.h
   physicalPath: gfx\legato\core
   security: NON_SECURE
   type: HEADER
-  userChecksum: D7806097C632CCA34D2A578E18876B8F
+  userChecksum: 47A67BD8B145601637452E0047D104CD
 - generatedChecksum: 762C92704327F16E64BA44BFB203A6E6
   logicalPath: config\sam_e51_cnano\gfx\legato\datastructure
   name: legato_list.h
@@ -1651,62 +1651,62 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 762C92704327F16E64BA44BFB203A6E6
-- generatedChecksum: 0111B43862A08FB2E0111C0C471C5871
+- generatedChecksum: 5A155613C6E3BD1248189A7585F9AF0D
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_math.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0111B43862A08FB2E0111C0C471C5871
-- generatedChecksum: B307DF6EB422E6DB099CA7500DAFC238
+  userChecksum: 5A155613C6E3BD1248189A7585F9AF0D
+- generatedChecksum: BEB3F3D63025ED8FA62EF5752BF851B0
   logicalPath: config\sam_e51_cnano\gfx\legato\memory
   name: legato_memory.h
   physicalPath: gfx\legato\memory
   security: NON_SECURE
   type: HEADER
-  userChecksum: B307DF6EB422E6DB099CA7500DAFC238
-- generatedChecksum: 5936559DC4DE978A5BB7D7314A86E665
+  userChecksum: BEB3F3D63025ED8FA62EF5752BF851B0
+- generatedChecksum: E06D754A5AFC61E5C2F7954EC89FDDCC
   logicalPath: config\sam_e51_cnano\gfx\legato\image
   name: legato_palette.h
   physicalPath: gfx\legato\image
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5936559DC4DE978A5BB7D7314A86E665
-- generatedChecksum: 94AD417BA19CCA432A5EE5E2D65FF6D8
+  userChecksum: E06D754A5AFC61E5C2F7954EC89FDDCC
+- generatedChecksum: D04F42C4BDF251F652FB931F1A34A52C
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_pixelbuffer.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: 94AD417BA19CCA432A5EE5E2D65FF6D8
-- generatedChecksum: A2C4CFEE39B1BE90466CB00AD52F4AA0
+  userChecksum: D04F42C4BDF251F652FB931F1A34A52C
+- generatedChecksum: 9E276EF2015D1F1A5E491CC936FD9DC1
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radiobutton
   name: legato_radiobutton_group.h
   physicalPath: gfx\legato\widget\radiobutton
   security: NON_SECURE
   type: HEADER
-  userChecksum: A2C4CFEE39B1BE90466CB00AD52F4AA0
-- generatedChecksum: AFB01980DEE8ED3F9797A154EB28621C
+  userChecksum: 9E276EF2015D1F1A5E491CC936FD9DC1
+- generatedChecksum: 7578127311E17F9429A0B685EC9EEC97
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_rect.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: AFB01980DEE8ED3F9797A154EB28621C
-- generatedChecksum: 63818FE90AED4851A418C2D1950B4069
+  userChecksum: 7578127311E17F9429A0B685EC9EEC97
+- generatedChecksum: F96F7917094EBDD9921EA20737D7FC3B
   logicalPath: config\sam_e51_cnano\gfx\legato\datastructure
   name: legato_rectarray.h
   physicalPath: gfx\legato\datastructure
   security: NON_SECURE
   type: HEADER
-  userChecksum: 63818FE90AED4851A418C2D1950B4069
-- generatedChecksum: 755449D8D9F585ACD93DDD0E88926205
+  userChecksum: F96F7917094EBDD9921EA20737D7FC3B
+- generatedChecksum: F5536C6CB211C4D900A1D86BE9BC8ADA
   logicalPath: config\sam_e51_cnano\gfx\legato\renderer
   name: legato_renderer.h
   physicalPath: gfx\legato\renderer
   security: NON_SECURE
   type: HEADER
-  userChecksum: 755449D8D9F585ACD93DDD0E88926205
+  userChecksum: F5536C6CB211C4D900A1D86BE9BC8ADA
 - generatedChecksum: 8DE4FBC5FE1338053AAC6B23F9554D2F
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_scheme.h
@@ -1714,13 +1714,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 8DE4FBC5FE1338053AAC6B23F9554D2F
-- generatedChecksum: 06CB3BBCE14CE36B9A20F6610A1222B1
+- generatedChecksum: 27E2986E39A7E7CEF850B1023C0B3EB4
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_state.h
   physicalPath: gfx\legato\core
   security: NON_SECURE
   type: HEADER
-  userChecksum: 06CB3BBCE14CE36B9A20F6610A1222B1
+  userChecksum: 27E2986E39A7E7CEF850B1023C0B3EB4
 - generatedChecksum: CB5AF592F872E94656BCB5A2D31A5B43
   logicalPath: config\sam_e51_cnano\gfx\legato\core
   name: legato_stream.h
@@ -1728,13 +1728,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CB5AF592F872E94656BCB5A2D31A5B43
-- generatedChecksum: CEB3B7B5BE312EFAE28D1EF7AEE59326
+- generatedChecksum: 6AEF5FC0FC2CD30713AC5F8947101B2D
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_string.h
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: HEADER
-  userChecksum: CEB3B7B5BE312EFAE28D1EF7AEE59326
+  userChecksum: 6AEF5FC0FC2CD30713AC5F8947101B2D
 - generatedChecksum: 820FD03AC923CFD43C2506C70B19F783
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_string_renderer.h
@@ -1742,272 +1742,272 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 820FD03AC923CFD43C2506C70B19F783
-- generatedChecksum: 93259E84A62F34A0A04F5BFCB3297764
+- generatedChecksum: BD15246AF6C9A8FFF816F29D2C3DCDDC
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_stringtable.h
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: HEADER
-  userChecksum: 93259E84A62F34A0A04F5BFCB3297764
-- generatedChecksum: 23821255B155E531402E33B27026411A
+  userChecksum: BD15246AF6C9A8FFF816F29D2C3DCDDC
+- generatedChecksum: 6729534E5E4135F693D358A4D3FE72B8
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_stringutils.h
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: HEADER
-  userChecksum: 23821255B155E531402E33B27026411A
-- generatedChecksum: 0DCC58F996C1B2595E9862E6BA2D969B
+  userChecksum: 6729534E5E4135F693D358A4D3FE72B8
+- generatedChecksum: AD73789EC166A514CEB5D3A58A9A3897
   logicalPath: config\sam_e51_cnano\gfx\legato\string
   name: legato_tablestring.h
   physicalPath: gfx\legato\string
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0DCC58F996C1B2595E9862E6BA2D969B
-- generatedChecksum: B94995EFE98A1183097E4F2D2B34AC0E
+  userChecksum: AD73789EC166A514CEB5D3A58A9A3897
+- generatedChecksum: D3234BFBF6F6A81B7C1C71B35E8DEB74
   logicalPath: config\sam_e51_cnano\gfx\legato\common
   name: legato_utils.h
   physicalPath: gfx\legato\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: B94995EFE98A1183097E4F2D2B34AC0E
-- generatedChecksum: C8C2D5C1C267C038FD3080F8AFB6398C
+  userChecksum: D3234BFBF6F6A81B7C1C71B35E8DEB74
+- generatedChecksum: 17E34C88F31AE0B00F5EBBDD4CC4D8F0
   logicalPath: config\sam_e51_cnano\gfx\legato\memory
   name: legato_variableheap.h
   physicalPath: gfx\legato\memory
   security: NON_SECURE
   type: HEADER
-  userChecksum: C8C2D5C1C267C038FD3080F8AFB6398C
-- generatedChecksum: 9AC490B1D5B0D7A4E8E16DFE200C1C49
+  userChecksum: 17E34C88F31AE0B00F5EBBDD4CC4D8F0
+- generatedChecksum: 6370BE961A73E0203F53FB06A650D0A0
   logicalPath: config\sam_e51_cnano\gfx\legato\widget
   name: legato_widget.h
   physicalPath: gfx\legato\widget
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9AC490B1D5B0D7A4E8E16DFE200C1C49
-- generatedChecksum: DE2FEE009979D26BDEE06B22119B5467
+  userChecksum: 6370BE961A73E0203F53FB06A650D0A0
+- generatedChecksum: C0448E9B842F142F56295C3C6AF2D471
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\arc
   name: legato_widget_arc.h
   physicalPath: gfx\legato\widget\arc
   security: NON_SECURE
   type: HEADER
-  userChecksum: DE2FEE009979D26BDEE06B22119B5467
-- generatedChecksum: A7A2858699CCBB020F5C7F28C835C490
+  userChecksum: C0448E9B842F142F56295C3C6AF2D471
+- generatedChecksum: 2EBAB8757A7C6AF496542296CC80307B
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\bargraph
   name: legato_widget_bar_graph.h
   physicalPath: gfx\legato\widget\bargraph
   security: NON_SECURE
   type: HEADER
-  userChecksum: A7A2858699CCBB020F5C7F28C835C490
-- generatedChecksum: FC41A5275823D909D40A3F7E43567D5C
+  userChecksum: 2EBAB8757A7C6AF496542296CC80307B
+- generatedChecksum: B1CB1F67E0E4D9311BC532E6B6BD3907
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\button
   name: legato_widget_button.h
   physicalPath: gfx\legato\widget\button
   security: NON_SECURE
   type: HEADER
-  userChecksum: FC41A5275823D909D40A3F7E43567D5C
-- generatedChecksum: 449B8FA8EC2A58F76E58EEAFD8205B1C
+  userChecksum: B1CB1F67E0E4D9311BC532E6B6BD3907
+- generatedChecksum: 43CDD2F674AB491DB54D5ED2262C978D
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\checkbox
   name: legato_widget_checkbox.h
   physicalPath: gfx\legato\widget\checkbox
   security: NON_SECURE
   type: HEADER
-  userChecksum: 449B8FA8EC2A58F76E58EEAFD8205B1C
-- generatedChecksum: 0BA6B6988CBB623CFD74F83D459700A3
+  userChecksum: 43CDD2F674AB491DB54D5ED2262C978D
+- generatedChecksum: 3761B2661F5F40BAEBC08AB004EF61DA
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circle
   name: legato_widget_circle.h
   physicalPath: gfx\legato\widget\circle
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0BA6B6988CBB623CFD74F83D459700A3
-- generatedChecksum: 6E19A6A51208F9A62B48D63ACA297679
+  userChecksum: 3761B2661F5F40BAEBC08AB004EF61DA
+- generatedChecksum: E47FC9FA3ECD9F66671A6E89AF08DA8A
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circulargauge
   name: legato_widget_circular_gauge.h
   physicalPath: gfx\legato\widget\circulargauge
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6E19A6A51208F9A62B48D63ACA297679
-- generatedChecksum: 2C54C8601FC3289D32F238F351590EBB
+  userChecksum: E47FC9FA3ECD9F66671A6E89AF08DA8A
+- generatedChecksum: 2ACA91ABCA3945B56C9F20A0A3A54CD3
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\circularslider
   name: legato_widget_circular_slider.h
   physicalPath: gfx\legato\widget\circularslider
   security: NON_SECURE
   type: HEADER
-  userChecksum: 2C54C8601FC3289D32F238F351590EBB
-- generatedChecksum: C942AB420E59089453896CCEE3B8CAAF
+  userChecksum: 2ACA91ABCA3945B56C9F20A0A3A54CD3
+- generatedChecksum: 1764775B7C2A7E69671079612E23943F
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\drawsurface
   name: legato_widget_drawsurface.h
   physicalPath: gfx\legato\widget\drawsurface
   security: NON_SECURE
   type: HEADER
-  userChecksum: C942AB420E59089453896CCEE3B8CAAF
-- generatedChecksum: 2419D753293F2847CA4923C08CD3D703
+  userChecksum: 1764775B7C2A7E69671079612E23943F
+- generatedChecksum: 63B32E97BE8DE20B6300FD3F47D91055
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\gradient
   name: legato_widget_gradient.h
   physicalPath: gfx\legato\widget\gradient
   security: NON_SECURE
   type: HEADER
-  userChecksum: 2419D753293F2847CA4923C08CD3D703
-- generatedChecksum: 1524BC5E0C7A6C16D4F6891CA25FFC5D
+  userChecksum: 63B32E97BE8DE20B6300FD3F47D91055
+- generatedChecksum: D8129C08C17C5D7A2F45B984749B746D
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\groupbox
   name: legato_widget_groupbox.h
   physicalPath: gfx\legato\widget\groupbox
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1524BC5E0C7A6C16D4F6891CA25FFC5D
-- generatedChecksum: 1ED2B3874A18897DC5FDDD0FD4C1FA5D
+  userChecksum: D8129C08C17C5D7A2F45B984749B746D
+- generatedChecksum: ECD94FF5C399154A64FB54F2D9DB2E97
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\image
   name: legato_widget_image.h
   physicalPath: gfx\legato\widget\image
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1ED2B3874A18897DC5FDDD0FD4C1FA5D
-- generatedChecksum: DF511C0B855CA57179BC959D205FA3D4
+  userChecksum: ECD94FF5C399154A64FB54F2D9DB2E97
+- generatedChecksum: 8AEF553BA23CF20DBD3AD048741EB535
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagerotate
   name: legato_widget_imagerotate.h
   physicalPath: gfx\legato\widget\imagerotate
   security: NON_SECURE
   type: HEADER
-  userChecksum: DF511C0B855CA57179BC959D205FA3D4
-- generatedChecksum: CEF96C799B024150FF23D6C5398FEDE9
+  userChecksum: 8AEF553BA23CF20DBD3AD048741EB535
+- generatedChecksum: 48794E46195FB67FE5F77D7A36798A99
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagescale
   name: legato_widget_imagescale.h
   physicalPath: gfx\legato\widget\imagescale
   security: NON_SECURE
   type: HEADER
-  userChecksum: CEF96C799B024150FF23D6C5398FEDE9
-- generatedChecksum: 4AADAA741A771B7AF5082CF8CE2888D0
+  userChecksum: 48794E46195FB67FE5F77D7A36798A99
+- generatedChecksum: 311B28E997063D065FC561FB64322809
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\imagesequence
   name: legato_widget_imagesequence.h
   physicalPath: gfx\legato\widget\imagesequence
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4AADAA741A771B7AF5082CF8CE2888D0
-- generatedChecksum: AEA86E1844C25E7B40C067B2C2ECA989
+  userChecksum: 311B28E997063D065FC561FB64322809
+- generatedChecksum: E4388D5D0402AE9906331FD264181E96
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\keypad
   name: legato_widget_keypad.h
   physicalPath: gfx\legato\widget\keypad
   security: NON_SECURE
   type: HEADER
-  userChecksum: AEA86E1844C25E7B40C067B2C2ECA989
-- generatedChecksum: 1538C32EE43071194181359491EC324A
+  userChecksum: E4388D5D0402AE9906331FD264181E96
+- generatedChecksum: 6CBAA1A97C7A86D8D7064CD4E6857DF7
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\label
   name: legato_widget_label.h
   physicalPath: gfx\legato\widget\label
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1538C32EE43071194181359491EC324A
-- generatedChecksum: 8E736B8D85C3EE6A29C08B468835B3F5
+  userChecksum: 6CBAA1A97C7A86D8D7064CD4E6857DF7
+- generatedChecksum: 75D40482DFCFEA8720D3B9B63AB0D5B1
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\line
   name: legato_widget_line.h
   physicalPath: gfx\legato\widget\line
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8E736B8D85C3EE6A29C08B468835B3F5
-- generatedChecksum: 8D161BAFA7D5D5D31ACE2D03CA58ADE8
+  userChecksum: 75D40482DFCFEA8720D3B9B63AB0D5B1
+- generatedChecksum: 15E48B5CFC564739184424CAF813009F
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\linegraph
   name: legato_widget_line_graph.h
   physicalPath: gfx\legato\widget\linegraph
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8D161BAFA7D5D5D31ACE2D03CA58ADE8
-- generatedChecksum: ED02D60E643689EDEE8BFB5FFA73B774
+  userChecksum: 15E48B5CFC564739184424CAF813009F
+- generatedChecksum: 20DEECB16B121DE01E32528E80BE0A19
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\list
   name: legato_widget_list.h
   physicalPath: gfx\legato\widget\list
   security: NON_SECURE
   type: HEADER
-  userChecksum: ED02D60E643689EDEE8BFB5FFA73B774
-- generatedChecksum: 6071874332CEE3815153549BD2B572D6
+  userChecksum: 20DEECB16B121DE01E32528E80BE0A19
+- generatedChecksum: 82FE46F1DF1B9AC483E059C47B216832
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\listwheel
   name: legato_widget_listwheel.h
   physicalPath: gfx\legato\widget\listwheel
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6071874332CEE3815153549BD2B572D6
-- generatedChecksum: 892B711E79B20BEE1DD2CD0CE12355F4
+  userChecksum: 82FE46F1DF1B9AC483E059C47B216832
+- generatedChecksum: B3CFADE028AFEA439223906E776FCF7A
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\piechart
   name: legato_widget_pie_chart.h
   physicalPath: gfx\legato\widget\piechart
   security: NON_SECURE
   type: HEADER
-  userChecksum: 892B711E79B20BEE1DD2CD0CE12355F4
-- generatedChecksum: 9BCE370FBC742E3ABD3B90E06AED8975
+  userChecksum: B3CFADE028AFEA439223906E776FCF7A
+- generatedChecksum: 9A4F6EA7452116DEA9425C1B15691DDF
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\progressbar
   name: legato_widget_progressbar.h
   physicalPath: gfx\legato\widget\progressbar
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9BCE370FBC742E3ABD3B90E06AED8975
-- generatedChecksum: 16CACA84AC9FC7918D04D47CD6DBF6FE
+  userChecksum: 9A4F6EA7452116DEA9425C1B15691DDF
+- generatedChecksum: 502D2A03014465D16BB691EA9EA2A93A
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radialmenu
   name: legato_widget_radial_menu.h
   physicalPath: gfx\legato\widget\radialmenu
   security: NON_SECURE
   type: HEADER
-  userChecksum: 16CACA84AC9FC7918D04D47CD6DBF6FE
-- generatedChecksum: 5ADCF22E1987CD34798118712043B7CD
+  userChecksum: 502D2A03014465D16BB691EA9EA2A93A
+- generatedChecksum: CF44E658CC8F3A2D92F2BF72D59412C2
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\radiobutton
   name: legato_widget_radiobutton.h
   physicalPath: gfx\legato\widget\radiobutton
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5ADCF22E1987CD34798118712043B7CD
-- generatedChecksum: 18A5B0A02BF2BEBBDB3FA76083DCF284
+  userChecksum: CF44E658CC8F3A2D92F2BF72D59412C2
+- generatedChecksum: 3C64F6DBD82AD09E12CE486F7FC2E55D
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\rectangle
   name: legato_widget_rectangle.h
   physicalPath: gfx\legato\widget\rectangle
   security: NON_SECURE
   type: HEADER
-  userChecksum: 18A5B0A02BF2BEBBDB3FA76083DCF284
-- generatedChecksum: B7945DE0E6A208E3E3E7DC053C048379
+  userChecksum: 3C64F6DBD82AD09E12CE486F7FC2E55D
+- generatedChecksum: 9E239CE183C03029B1B8CB7F22835A09
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\scrollbar
   name: legato_widget_scrollbar.h
   physicalPath: gfx\legato\widget\scrollbar
   security: NON_SECURE
   type: HEADER
-  userChecksum: B7945DE0E6A208E3E3E7DC053C048379
-- generatedChecksum: 733136F31CF380F554FE05CB6E5AD425
+  userChecksum: 9E239CE183C03029B1B8CB7F22835A09
+- generatedChecksum: 5CA501C2F9E9FE79A4F311568626DA44
   logicalPath: config\sam_e51_cnano\gfx\legato\widget
   name: legato_widget_skin_classic_common.h
   physicalPath: gfx\legato\widget
   security: NON_SECURE
   type: HEADER
-  userChecksum: 733136F31CF380F554FE05CB6E5AD425
-- generatedChecksum: D06DF13252130A318780558112C1D32F
+  userChecksum: 5CA501C2F9E9FE79A4F311568626DA44
+- generatedChecksum: 0B4EA51F3089D2E99738AB1110E7A4E8
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\slider
   name: legato_widget_slider.h
   physicalPath: gfx\legato\widget\slider
   security: NON_SECURE
   type: HEADER
-  userChecksum: D06DF13252130A318780558112C1D32F
-- generatedChecksum: 66F3124E7F680C1150E52A8382ABABF4
+  userChecksum: 0B4EA51F3089D2E99738AB1110E7A4E8
+- generatedChecksum: ADBC052CC601B3458A18AF005369E632
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\textfield
   name: legato_widget_textfield.h
   physicalPath: gfx\legato\widget\textfield
   security: NON_SECURE
   type: HEADER
-  userChecksum: 66F3124E7F680C1150E52A8382ABABF4
-- generatedChecksum: 3D93C667304E6F03956AE1D443129E43
+  userChecksum: ADBC052CC601B3458A18AF005369E632
+- generatedChecksum: 888705E272E58B0AB066BC8FDC136020
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\touchtest
   name: legato_widget_touchtest.h
   physicalPath: gfx\legato\widget\touchtest
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3D93C667304E6F03956AE1D443129E43
-- generatedChecksum: 44BE511933BBEC821ED38FADFBC84873
+  userChecksum: 888705E272E58B0AB066BC8FDC136020
+- generatedChecksum: 997EF7032EF79E6E4F8721CCA15A744E
   logicalPath: config\sam_e51_cnano\gfx\legato\widget\window
   name: legato_widget_window.h
   physicalPath: gfx\legato\widget\window
   security: NON_SECURE
   type: HEADER
-  userChecksum: 44BE511933BBEC821ED38FADFBC84873
-- generatedChecksum: E7439F8E4502BC9DE9E4427AF5C1D64B
+  userChecksum: 997EF7032EF79E6E4F8721CCA15A744E
+- generatedChecksum: 288C8B8C00AA685CA12FE4166B2306B9
   logicalPath: config\sam_e51_cnano\gfx\legato\image\png
   name: lodepng.h
   physicalPath: gfx\legato\image\png
   security: NON_SECURE
   type: HEADER
-  userChecksum: E7439F8E4502BC9DE9E4427AF5C1D64B
+  userChecksum: 288C8B8C00AA685CA12FE4166B2306B9
 - generatedChecksum: CF52B476541D2CB04A86DF49A686FAA0
   logicalPath: packs\ATSAME51J20A_DFP\component
   name: mclk.h
@@ -2344,13 +2344,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 33CFF9B17F00BDAE39FD8EC48112B9EF
-- generatedChecksum: 12A9F3A89C44A88EDB9D107DC1FE8EDA
+- generatedChecksum: D21A943666F73BB99268A0C55B0327FD
   logicalPath: config\sam_e51_cnano\system\input
   name: sys_input.h
   physicalPath: system\input
   security: NON_SECURE
   type: HEADER
-  userChecksum: 12A9F3A89C44A88EDB9D107DC1FE8EDA
+  userChecksum: D21A943666F73BB99268A0C55B0327FD
 - generatedChecksum: 5499BE8EDFB7930D2460DE8BA8E8818B
   logicalPath: config\sam_e51_cnano\system\input
   name: sys_input_gesture.h

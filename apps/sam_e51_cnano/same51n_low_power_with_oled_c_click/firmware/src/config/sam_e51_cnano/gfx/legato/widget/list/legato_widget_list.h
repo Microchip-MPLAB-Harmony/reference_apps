@@ -232,7 +232,7 @@ typedef struct leListWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leListWidget* leListWidget_New();
+leListWidget* leListWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -244,7 +244,7 @@ LIB_EXPORT leListWidget* leListWidget_New();
  * @param lst is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leListWidget_Constructor(leListWidget* wgt);
+void leListWidget_Constructor(leListWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

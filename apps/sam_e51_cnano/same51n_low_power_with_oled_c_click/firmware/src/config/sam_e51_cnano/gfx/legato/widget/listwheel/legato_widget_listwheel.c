@@ -1251,7 +1251,7 @@ void _leListWheelWidget_Paint(leListWheelWidget* _this);
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
-void _leListWheelWidget_GenerateVTable()
+void _leListWheelWidget_GenerateVTable(void)
 {
     _leWidget_FillVTable((void*)&listWheelWidgetVTable);
     

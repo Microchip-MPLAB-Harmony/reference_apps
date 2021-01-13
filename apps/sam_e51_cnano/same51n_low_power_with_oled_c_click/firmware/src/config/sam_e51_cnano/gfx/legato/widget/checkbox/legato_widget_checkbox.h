@@ -184,7 +184,7 @@ typedef struct leCheckBoxWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leCheckBoxWidget* leCheckBoxWidget_New();
+leCheckBoxWidget* leCheckBoxWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -196,7 +196,7 @@ LIB_EXPORT leCheckBoxWidget* leCheckBoxWidget_New();
  * @param _this is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leCheckBoxWidget_Constructor(leCheckBoxWidget* _this);
+void leCheckBoxWidget_Constructor(leCheckBoxWidget* _this);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

@@ -314,19 +314,19 @@ DRV_GFX_DEPRECATED int GFX_Disp_Intf_WriteCommandParm(GFX_Disp_Intf intf, uint8_
 
 int GFX_Disp_Intf_Write(GFX_Disp_Intf intf, uint8_t * data, int bytes)
 {
-    GFX_DISP_INTF_SPI * spiIntf = (GFX_DISP_INTF_SPI *) intf;
+    GFX_DISP_INTF_SPI * spiIntfPtr = (GFX_DISP_INTF_SPI *) intf;
     
-    if (spiIntf == NULL ||
-        bytes == 0 ||
-        data == NULL)
+    if (spiIntfPtr == NULL || bytes == 0 || data == NULL)
         return -1;
     
-    spiIntf->drvSPITransStatus = SPI_TRANS_CMD_WR_PENDING;
-    DRV_SPI_WriteTransferAdd(spiIntf->drvSPIHandle,
+    spiIntfPtr->drvSPITransStatus = SPI_TRANS_CMD_WR_PENDING;
+    
+    DRV_SPI_WriteTransferAdd(spiIntfPtr->drvSPIHandle,
                             (void *) data,
                             (size_t) bytes,
-                            (void *) &spiIntf->drvSPITransferHandle);
-    if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiIntf->drvSPITransferHandle)
+                            (void *) &spiIntfPtr->drvSPITransferHandle);
+                            
+    if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiIntfPtr->drvSPITransferHandle)
     {
         return -1;
     }
@@ -339,20 +339,20 @@ int GFX_Disp_Intf_Write(GFX_Disp_Intf intf, uint8_t * data, int bytes)
 
 int GFX_Disp_Intf_Read(GFX_Disp_Intf intf, uint8_t * data, int bytes)
 {
-    GFX_DISP_INTF_SPI * spiIntf = (GFX_DISP_INTF_SPI *) intf;
+    GFX_DISP_INTF_SPI * spiIntfPtr = (GFX_DISP_INTF_SPI *) intf;
     
-    if (spiIntf == NULL ||
-        bytes == 0 ||
-        data == NULL)
+    if (spiIntfPtr == NULL || bytes == 0 || data == NULL)
         return -1;
     
     // Read the valid pixels
-    spiIntf->drvSPITransStatus = SPI_TRANS_CMD_RD_PENDING;
-    DRV_SPI_ReadTransferAdd(spiIntf->drvSPIHandle,
+    spiIntfPtr->drvSPITransStatus = SPI_TRANS_CMD_RD_PENDING;
+    
+    DRV_SPI_ReadTransferAdd(spiIntfPtr->drvSPIHandle,
                             (void *) data,
                             bytes,
-                            (void *) &spiIntf->drvSPITransferHandle);
-    if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiIntf->drvSPITransferHandle)
+                            (void *) &spiIntfPtr->drvSPITransferHandle);
+                            
+    if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiIntfPtr->drvSPITransferHandle)
         return -1;
 
     while(!GFX_Disp_Intf_Ready(intf));

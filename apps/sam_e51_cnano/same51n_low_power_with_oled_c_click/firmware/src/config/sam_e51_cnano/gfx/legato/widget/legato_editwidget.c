@@ -149,7 +149,7 @@ void _leEditWidget_Backspace()
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
-void _leEditWidget_GenerateVTable()
+void _leEditWidget_GenerateVTable(void)
 {
     _leWidget_FillVTable((void*)&editWidgetVTable);
 

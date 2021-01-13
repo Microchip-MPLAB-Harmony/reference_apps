@@ -26,6 +26,8 @@
 
 #include "gfx/legato/image/jpeg/legato_imagedecoder_jpeg_common.h"
 
+#if LE_ENABLE_JPEG_DECODER == 1
+
 #include "gfx/legato/memory/legato_memory.h"
 #include "gfx/legato/common/legato_rect.h"
 
@@ -976,9 +978,11 @@ uint8_t JPEG_bPaintOneBlock(JPEGDECODER *pJpegDecoder)
     return 0;
 }
 
+static LE_COHERENT_ATTR JPEGDECODER JPEG_JpegDecoder;
+
 int8_t JPEG_bInterpretResourceHeader(leImage* img)
 {
-    JPEGDECODER JPEG_JpegDecoder;
+
 
     if (img == NULL)
         return -1;
@@ -993,3 +997,5 @@ int8_t JPEG_bInterpretResourceHeader(leImage* img)
 
     return 0;
 }
+
+#endif /* LE_ENABLE_JPEG_DECODER */

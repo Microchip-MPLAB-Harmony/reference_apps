@@ -50,27 +50,40 @@ extern "C" {
 // DOM-IGNORE-END
 
 
-#define LE_DEFAULT_COLOR_MODE              LE_COLOR_MODE_RGB_565
-#define LE_TOUCH_ORIENTATION               0
-#define LE_DRIVER_LAYER_MODE               1
+#include <toolchain_specifics.h>
 
-#define LE_ASSERT_ENABLE                   0
+#define LE_COHERENT_ATTR                     CACHE_ALIGN
+#define LE_COHERENT_MEMORY                   LE_COHERENT_ATTR
 
-#define LE_PREEMPTION_LEVEL                0
-#define LE_STREAMING_ENABLED               0
+
+#define LE_DEFAULT_COLOR_MODE                LE_COLOR_MODE_RGB_565
+#define LE_TOUCH_ORIENTATION                 0
+#define LE_RENDER_ORIENTATION                0
+#define LE_DRIVER_LAYER_MODE                 1
+#define LE_DYNAMIC_VTABLES                   0
+
+#define LE_ASSERT_ENABLE                     0
+
+// image decoder configuration
+#define LE_ENABLE_RAW_DECODER                1
+#define LE_ENABLE_JPEG_DECODER               1
+#define LE_ENABLE_PNG_DECODER                1
+
+#define LE_PREEMPTION_LEVEL                  0
+#define LE_STREAMING_ENABLED                 0
 
 #if LE_STREAMING_ENABLED == 1
-#define LE_ASSET_DECODER_CACHE_SIZE        128
-#define LE_ASSET_DECODER_USE_PIXEL_CACHE   0
-#define LE_ASSET_DECODER_USE_PALETTE_CACHE 0
-#define LE_ASSET_DECODER_USE_MASK_CACHE    0
-#define LE_ASSET_DECODER_USE_BLEND_CACHE   0
-#define LE_RASTERFONT_GLYPH_CACHE_SIZE     1024
+#define LE_ASSET_DECODER_PIXEL_CACHE_SIZE    128
+#define LE_ASSET_DECODER_PALETTE_CACHE_SIZE  128
+#define LE_ASSET_DECODER_MASK_CACHE_SIZE     128
+#define LE_ASSET_DECODER_BLEND_CACHE_SIZE    128
+#define LE_JPEG_DECODER_CACHE_SIZE           2048
+#define LE_RASTERFONT_GLYPH_CACHE_SIZE       1024
 #endif
 
 // default Font Support
-#define LE_INCLUDE_DEFAULT_1BPP_FONT       0
-#define LE_INCLUDE_DEFAULT_8BPP_FONT       0
+#define LE_INCLUDE_DEFAULT_1BPP_FONT         0
+#define LE_INCLUDE_DEFAULT_8BPP_FONT         0
 
 // widget inclusion
 #define LE_ARC_WIDGET_ENABLED              0
@@ -109,9 +122,7 @@ extern "C" {
 #define LE_USE_DEBUG_ALLOCATOR             0
 #define LE_MALLOC_ZEROIZE                  0
 
-#if LE_USE_DEBUG_ALLOCATOR == 1
 #define LE_USE_ALLOCATION_TRACKING         0
-#endif
 
 // variable heap configuration
 #define LE_VARIABLEHEAP_DEBUGLEVEL         0
@@ -143,7 +154,9 @@ extern "C" {
 
 // renderer config
 #define LE_ALPHA_BLENDING_ENABLED          1
+#define LE_SCRATCH_BUFFER_COUNT            1
 #define LE_SCRATCH_BUFFER_SIZE_KB          16
+#define LE_SCRATCH_BUFFER_PADDING          0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE
 

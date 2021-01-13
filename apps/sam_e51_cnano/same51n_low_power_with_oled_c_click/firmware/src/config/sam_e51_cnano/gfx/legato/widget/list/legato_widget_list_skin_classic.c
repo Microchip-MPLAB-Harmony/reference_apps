@@ -284,7 +284,7 @@ void _leListWidget_GetIconRect(const leListWidget* lst,
                              lst->widget.margin.bottom,
                              lst->iconMargin);
                              
-    *iconRect = leRectClipAdj(iconRect, &rowRect, imgSrcRect); 
+    leRectClipAdj(iconRect, &rowRect, imgSrcRect, iconRect);
     
     leUtils_RectToScreenSpace((leWidget*)lst, iconRect);
     
@@ -438,7 +438,7 @@ static void drawBackground(leListWidget* lst)
                                             paintState.alpha);
     }
     
-    widgetRect = lst->fn->rectToScreen(lst);
+    lst->fn->rectToScreen(lst, &widgetRect);
 
     // draw item highlights
     if(lst->items.size > 0)

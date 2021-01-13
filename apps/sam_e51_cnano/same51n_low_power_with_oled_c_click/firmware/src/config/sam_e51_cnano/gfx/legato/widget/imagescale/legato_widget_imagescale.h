@@ -153,7 +153,7 @@ void _leImageScaleWidget_Paint(leImageScaleWidget* img);
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leImageScaleWidget* leImageScaleWidget_New();
+leImageScaleWidget* leImageScaleWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -165,7 +165,7 @@ LIB_EXPORT leImageScaleWidget* leImageScaleWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leImageScaleWidget_Constructor(leImageScaleWidget* wgt);
+void leImageScaleWidget_Constructor(leImageScaleWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

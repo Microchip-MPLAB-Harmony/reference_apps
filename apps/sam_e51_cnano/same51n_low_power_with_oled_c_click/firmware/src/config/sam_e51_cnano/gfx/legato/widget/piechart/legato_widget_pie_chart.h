@@ -175,7 +175,7 @@ typedef struct lePieChartWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT lePieChartWidget* lePieChartWidget_New();
+lePieChartWidget* lePieChartWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -187,7 +187,7 @@ LIB_EXPORT lePieChartWidget* lePieChartWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void lePieChartWidget_Constructor(lePieChartWidget* wgt);
+void lePieChartWidget_Constructor(lePieChartWidget* wgt);
 
 
 #ifdef _DOXYGEN_

@@ -18,6 +18,15 @@ children:
     children:
     - type: Symbols
       children:
+      - type: Comment
+        attributes: {id: DRV_SPI_DEPENDENCY_DMA_COMMENT}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: visible}
+            children:
+            - {type: Value, value: 'false'}
       - type: String
         attributes: {id: DRV_SPI_MODE}
         children:
@@ -46,6 +55,15 @@ children:
           children:
           - type: Dynamic
             attributes: {id: drv_spi_0, value: '-1'}
+      - type: Boolean
+        attributes: {id: DRV_SPI_TX_RX_DMA}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: readOnly}
+            children:
+            - {type: Value, value: 'false'}
     - type: Attachments
       children:
       - type: DirectCapability

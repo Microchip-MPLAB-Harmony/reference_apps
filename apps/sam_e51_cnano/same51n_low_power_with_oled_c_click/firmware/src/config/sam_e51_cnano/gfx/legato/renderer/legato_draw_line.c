@@ -46,10 +46,10 @@ leResult leRenderer_HorzLine(int32_t x,
     drawRect.y = y;
     drawRect.width = w;
     drawRect.height = 1;
-    
+
     if(leRenderer_CullDrawRect(&drawRect) == LE_TRUE)
         return LE_FAILURE;
-        
+
     leRenderer_ClipDrawRect(&drawRect, &clipRect);
 
     pnt.y = clipRect.y;
@@ -60,7 +60,13 @@ leResult leRenderer_HorzLine(int32_t x,
     {
         return LE_SUCCESS;
     }
-    else if(leGPU_DrawLine(x, y, x + clipRect.width - 1, y, &clipRect, clr, a) == LE_SUCCESS)
+    else if(leGPU_DrawLine(drawRect.x,
+                           drawRect.x,
+                           w,
+                           1,
+                           &clipRect,
+                           clr,
+                           a) == LE_SUCCESS)
     {
         return LE_SUCCESS;
     }
@@ -69,7 +75,7 @@ leResult leRenderer_HorzLine(int32_t x,
         for(i = 0; i < clipRect.width; i++)
         {
             pnt.x = clipRect.x + i;
-            
+
             leRenderer_BlendPixel(pnt.x, pnt.y, clr, a);
         }
     }
@@ -78,11 +84,11 @@ leResult leRenderer_HorzLine(int32_t x,
         for(i = 0; i < clipRect.width; i++)
         {
             pnt.x = clipRect.x + i;
-            
+
             leRenderer_PutPixel(pnt.x, pnt.y, clr);
         }
     }
-    
+
     return LE_SUCCESS;
 }
 
@@ -96,26 +102,32 @@ leResult leRenderer_VertLine(int32_t x,
     leRect drawRect;
     lePoint pnt;
     int32_t i;
-    
+
     drawRect.x = x;
     drawRect.y = y;
     drawRect.width = 1;
     drawRect.height = h;
-    
+
     if(leRenderer_CullDrawRect(&drawRect) == LE_TRUE)
         return LE_FAILURE;
-        
+
     leRenderer_ClipDrawRect(&drawRect, &clipRect);
-    
+
     pnt.x = clipRect.x;
-    
+
     a = leClampi(0, 255, a);
 
     if(a == 0)
     {
         return LE_SUCCESS;
     }
-    else if(leGPU_DrawLine(x, y, x, y + clipRect.height - 1, &clipRect, clr, a) == LE_SUCCESS)
+    else if(leGPU_DrawLine(drawRect.x,
+                           drawRect.y,
+                           1,
+                           h,
+                           &clipRect,
+                           clr,
+                           a) == LE_SUCCESS)
     {
         return LE_SUCCESS;
     }
@@ -124,7 +136,7 @@ leResult leRenderer_VertLine(int32_t x,
         for(i = 0; i < clipRect.height; i++)
         {
             pnt.y = clipRect.y + i;
-            
+
             leRenderer_BlendPixel(pnt.x, pnt.y, clr, a);
         }
     }
@@ -133,11 +145,11 @@ leResult leRenderer_VertLine(int32_t x,
         for(i = 0; i < clipRect.height; i++)
         {
             pnt.y = clipRect.y + i;
-            
+
             leRenderer_PutPixel(pnt.x, pnt.y, clr);
         }
-    } 
-    
+    }
+
     return LE_SUCCESS;
 }
 
@@ -170,16 +182,22 @@ leResult leRenderer_DrawLine(int32_t x0,
 {
     int32_t dx, sx, dy, sy, e2, err;
     lePoint lp1, lp2, drawPoint;
-    
+
     LinePutPixelFn putPixelFn;
-    
+
     a = leClampi(0, 255, a);
 
     if(a == 0)
     {
         return LE_SUCCESS;
     }
-    else if(leGPU_DrawLine(x0, y0, x1, y1, &_rendererState.drawRect, clr, a) == LE_SUCCESS)
+    else if(leGPU_DrawLine(x0,
+                           y0,
+                           x1,
+                           y1,
+                           &_rendererState.drawRect,
+                           clr,
+                           a) == LE_SUCCESS)
     {
         return LE_SUCCESS;
     }
@@ -199,50 +217,50 @@ leResult leRenderer_DrawLine(int32_t x0,
     lp2.y = y1;
 
     dx = lp2.x - lp1.x;
-    
+
     if(dx < 0)
         dx *= -1;
-        
+
     sx = lp1.x < lp2.x ? 1 : -1;
-    
+
     dy = lp2.y - lp1.y;
-    
+
     if(dy < 0)
         dy *= -1;
-        
+
     dy *= -1;
-    
-    sy = lp1.y < lp2.y ? 1 : -1; 
+
+    sy = lp1.y < lp2.y ? 1 : -1;
     err = dx + dy;
-       
+
     for(;;)
-    {  
+    {
         drawPoint.x = lp1.x;
         drawPoint.y = lp1.y;
-        
+
         if(leRenderer_CullDrawPoint(&drawPoint) == LE_FALSE)
         {
             putPixelFn(drawPoint.x, drawPoint.y, clr, a);
         }
-        
+
         if(lp1.x == lp2.x && lp1.y == lp2.y)
             break;
-        
+
         e2 = 2 * err;
-        
+
         if(e2 >= dy)
         {
             err += dy;
             lp1.x += sx;
         }
-        
+
         if(e2 <= dx)
         {
             err += dx;
             lp1.y += sy;
         }
     }
-   
+
     return LE_SUCCESS;
 }
 
@@ -263,7 +281,7 @@ leResult leRenderer_EllipseLine(int32_t x,
     while (sa != (startAngle + centerAngle))
     {
         leEllipsePoint(sa, a, b, theta, &p);
-        
+
         p.x += x;
         p.y += y;
 
@@ -274,7 +292,7 @@ leResult leRenderer_EllipseLine(int32_t x,
 #endif
 
         if (sa != startAngle)
-        {     
+        {
             leRenderer_DrawLine(lp.x,
                                 lp.y,
                                 p.x,
@@ -285,7 +303,7 @@ leResult leRenderer_EllipseLine(int32_t x,
 
         lp.x = p.x;
         lp.y = p.y;
-        
+
         //Clockwise
         if (centerAngle < 0)
         {

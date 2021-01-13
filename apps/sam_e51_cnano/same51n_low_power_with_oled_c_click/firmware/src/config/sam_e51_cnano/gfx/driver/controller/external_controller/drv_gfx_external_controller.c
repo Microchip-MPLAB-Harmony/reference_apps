@@ -1,4 +1,3 @@
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
@@ -21,7 +20,6 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
 
 /*******************************************************************************
   Custom SSD1351Display Top-Level Driver Source File
@@ -81,59 +79,23 @@ static uint8_t pixelBuffer[SCREEN_WIDTH * PIXEL_BUFFER_BYTES_PER_PIXEL];
 typedef enum
 {
     INIT = 0,
-    IDLE,
-    BLIT_COLUMN_CMD,
-    BLIT_COLUMN_DATA,
-    BLIT_PAGE_CMD,
-    BLIT_PAGE_DATA,
-    BLIT_WRITE_CMD,
-    BLIT_WRITE_DATA,
-    BLIT_DONE,
+    RUN,
     ERROR,
 } DRV_STATE;
 
-typedef struct SSD1351_DRV 
+typedef struct ILI9488_DRV 
 {   
     /* Driver state */
     DRV_STATE state;
         
     /* Port-specific private data */
     void *port_priv;
-
-    struct
-    {
-        int32_t x;
-        int32_t y;
-        gfxPixelBuffer* buf;
-    } blitParms;
 } SSD1351_DRV;
-
-typedef struct 
-{
-    /* Command */
-    uint8_t cmd;
-    
-    /* Number of command parameters */
-    uint8_t parmCount;
-    
-    /* Command parameters, max of 16 */
-    uint8_t parms[16];
-    
-    /* delay */
-    unsigned int delayms;
-    
-} SSD1351_CMD_PARAM;
 
 SSD1351_DRV drv;
 
 static uint32_t swapCount = 0;
 
-const SSD1351_CMD_PARAM initCmdParm[] =
-{
-    {0xaf, 0, {0x0}, 200}, //Make display ON
-    {0xa0, 1, {0x32,}, 0}, //SET_REMAP_DUAL_COM_LINE_COMMAND
-    {0xa1, 1, {0x20,}, 0}, //SET_DISPLAY_START_LINE_COMMAND
-};
 
 /* ************************************************************************** */
 
@@ -205,174 +167,34 @@ int DRV_SSD1351_Initialize(void)
     return 0;
 }
 
-static int DRV_SSD1351_Configure(SSD1351_DRV *drv,
-                                           const SSD1351_CMD_PARAM *initVals,
-                                           int numVals)
+static int DRV_SSD1351_Configure(SSD1351_DRV *drvPtr)
 {
-    GFX_Disp_Intf intf = (GFX_Disp_Intf) drv->port_priv;
-    unsigned int i, returnValue;
+    GFX_Disp_Intf intf = (GFX_Disp_Intf) drvPtr->port_priv;
+    uint8_t cmd;
+    uint8_t parms[16];
 
     DRV_SSD1351_NCSAssert(intf);
-    
-    for (i = 0; i < numVals; i++, initVals++)
-    {
-        returnValue = GFX_Disp_Intf_WriteCommand(intf, initVals->cmd);
-        if (0 != returnValue)
-            break;
-        
-        while (GFX_Disp_Intf_Ready(intf) == false);
-        
-        if (initVals->parms != NULL &&
-            initVals->parmCount > 0)
-        {
-            returnValue = GFX_Disp_Intf_WriteData(intf, 
-                                                 (uint8_t *) initVals->parms,
-                                                 initVals->parmCount);
-            if (0 != returnValue)
-                break;
-        
-            while (GFX_Disp_Intf_Ready(intf) == false);
-        }
-        
-        if (initVals->delayms > 0)
-        {
-            DRV_SSD1351_DelayMS(initVals->delayms);
-        }
-    }
+
+    //Make display ON
+    cmd = 0xaf;
+    GFX_Disp_Intf_WriteCommand(intf, cmd);
+    DRV_SSD1351_DelayMS(200);
+
+    //SET_REMAP_DUAL_COM_LINE_COMMAND
+    cmd = 0xa0;
+    parms[0] = 0x32;
+    GFX_Disp_Intf_WriteCommand(intf, cmd);
+    GFX_Disp_Intf_WriteData(intf, parms, 1);
+
+    //SET_DISPLAY_START_LINE_COMMAND
+    cmd = 0xa1;
+    parms[0] = 0x20;
+    GFX_Disp_Intf_WriteCommand(intf, cmd);
+    GFX_Disp_Intf_WriteData(intf, parms, 1);
 
     DRV_SSD1351_NCSDeassert(intf);
 
     return 0;
-}
-
-void DRV_SSD1351_Transfer(GFX_Disp_Intf intf)
-{
-    static int row;
-    uint16_t clr;
-    uint16_t* ptr;
-    uint8_t parm[4];
-    
-    switch (drv.state)
-    {
-        case BLIT_COLUMN_CMD:
-        {
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-            
-            DRV_SSD1351_NCSAssert(intf);
-                    
-            drv.state = BLIT_COLUMN_DATA;
-            
-            GFX_Disp_Intf_WriteCommand(intf, 0x15);
-                   
-            break;
-        }
-        case BLIT_COLUMN_DATA:
-        {
-            uint32_t x = drv.blitParms.x;
-
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-
-            drv.state = BLIT_PAGE_CMD;
-
-            //Add X offset
-            x += 16;
-
-            //Write X/Column Address
-            parm[0] = x;
-            parm[1] = (x + drv.blitParms.buf->size.width - 1);
-            GFX_Disp_Intf_WriteData(intf, parm, 2);
-
-            break;
-        }
-        case BLIT_PAGE_CMD:
-        {
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-                        
-            drv.state = BLIT_PAGE_DATA;
-            
-            GFX_Disp_Intf_WriteCommand(intf, 0x75);
-                   
-            break;
-        }
-        case BLIT_PAGE_DATA:
-        {
-            uint32_t y = drv.blitParms.y;
-
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-
-            drv.state = BLIT_WRITE_CMD;
-
-            //Write Y/Page Address
-            parm[0] = y;
-            parm[1] = (y + drv.blitParms.buf->size.height - 1);
-            GFX_Disp_Intf_WriteData(intf, parm, 2);
-
-            break;
-        }
-        case BLIT_WRITE_CMD:
-        {
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-            
-            drv.state = BLIT_WRITE_DATA;
-            
-            //Start Memory Write
-            GFX_Disp_Intf_WriteCommand(intf, 0x5c);
-
-        row = 0;
-
-            break;
-        }
-        case BLIT_WRITE_DATA:
-        {
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-
-            if (row < drv.blitParms.buf->size.height)
-            {
-                int col, dataIdx;
-                ptr = gfxPixelBufferOffsetGet_Unsafe(drv.blitParms.buf, 0, row);
-                for(col = 0, dataIdx = 0; col < drv.blitParms.buf->size.width; col++)
-                {
-                    clr = ptr[col];
-                    pixelBuffer[dataIdx++] = (uint8_t) (clr >> 8);
-                    pixelBuffer[dataIdx++] = (uint8_t) (uint8_t) (clr & 0xff);
-                }
-                GFX_Disp_Intf_WriteData(intf,
-                                        pixelBuffer,
-                                        PIXEL_BUFFER_BYTES_PER_PIXEL *
-                                        drv.blitParms.buf->size.width);
-                row++;
-            }
-           
-            if (row >= drv.blitParms.buf->size.height)
-            {
-                drv.state = BLIT_DONE;
-            }
-            
-            break;
-        }
-        case BLIT_DONE:
-        {
-            if (GFX_Disp_Intf_Ready(intf) == false)
-                break;
-
-            DRV_SSD1351_NCSDeassert(intf); 
-            gfxPixelBuffer_SetLocked(drv.blitParms.buf, GFX_FALSE);
-            drv.state = IDLE;
-            break;
-        }
-        case IDLE:
-        case ERROR:
-        default:
-        {
-            break;
-        }        
-    }
 }
 
 
@@ -396,9 +218,14 @@ void DRV_SSD1351_Transfer(GFX_Disp_Intf intf)
 */
 void DRV_SSD1351_Update(void)
 {
+    uint32_t openVal;
+    
     if(drv.state == INIT)
     {
-        drv.port_priv = (void *) GFX_Disp_Intf_Open();
+        openVal = GFX_Disp_Intf_Open();
+        
+        drv.port_priv = (void *)openVal;
+        
         if (drv.port_priv == 0)
         {
             drv.state = ERROR;
@@ -407,100 +234,145 @@ void DRV_SSD1351_Update(void)
 
         DRV_SSD1351_Reset();
 
-        DRV_SSD1351_Configure(&drv,
-                              initCmdParm,
-                              sizeof(initCmdParm)/sizeof(SSD1351_CMD_PARAM));
+        DRV_SSD1351_Configure(&drv);
 
-
-        drv.state = IDLE;
-    }
-    else if (drv.state != IDLE)
-    {
-        DRV_SSD1351_Transfer((GFX_Disp_Intf) drv.port_priv);
+        drv.state = RUN;
     }
 }
 
-gfxColorMode DRV_SSD1351_GetColorMode(void)
-{
-    return PIXEL_BUFFER_COLOR_MODE;
-}
-
-uint32_t DRV_SSD1351_GetBufferCount(void)
-{
-    return 1;
-}
-
-uint32_t DRV_SSD1351_GetDisplayWidth(void)
-{
-    return SCREEN_WIDTH;
-}
-
-uint32_t DRV_SSD1351_GetDisplayHeight(void)
-{
-    return SCREEN_HEIGHT;
-}
-
-uint32_t DRV_SSD1351_GetLayerCount()
-{
-    return 1;
-}
-
-uint32_t DRV_SSD1351_GetActiveLayer()
-{
-    return 0;
-}
-
-gfxLayerState DRV_SSD1351_GetLayerState(uint32_t idx)
-{
-    gfxLayerState state;
-
-    state.rect.x = 0;
-    state.rect.y = 0;
-    state.rect.width = SCREEN_WIDTH;
-    state.rect.height = SCREEN_HEIGHT;
-    state.enabled = GFX_TRUE;
-
-    return state;
-}
-
-gfxResult DRV_SSD1351_SetActiveLayer(uint32_t idx)
-{
-    return GFX_SUCCESS;
-}
 
 gfxResult DRV_SSD1351_BlitBuffer(int32_t x,
-                                int32_t y,
-                                gfxPixelBuffer* buf)
+                                           int32_t y,
+                                           gfxPixelBuffer* buf)
 {
 
-    if(drv.state != IDLE)
-        return GFX_FAILURE;
+    int row;
+    uint16_t clr;
+    uint16_t* ptr;
+    uint8_t parm[4];
 
-    drv.blitParms.x = x;
-    drv.blitParms.y = y;
-    drv.blitParms.buf = buf;
-    drv.state = BLIT_COLUMN_CMD;
+    GFX_Disp_Intf intf;
     
-    gfxPixelBuffer_SetLocked(buf, GFX_TRUE);
+    if (drv.state != RUN)
+        return GFX_FAILURE;
+    
+    intf = (GFX_Disp_Intf) drv.port_priv;
 
+    //Add X offset
+    x += 16;
+
+    DRV_SSD1351_NCSAssert(intf);
+
+    //Write X/Column Address
+    parm[0] = x;
+    parm[1] = (x + buf->size.width - 1);
+    GFX_Disp_Intf_WriteCommand(intf, 0x15);
+    GFX_Disp_Intf_WriteData(intf, parm, 2);
+    
+    //Write Y/Page Address
+    parm[0] = y;
+    parm[1] = (y + buf->size.height - 1);
+    GFX_Disp_Intf_WriteCommand(intf, 0x75);
+    GFX_Disp_Intf_WriteData(intf, parm, 2);
+
+    //Start Memory Write
+    GFX_Disp_Intf_WriteCommand(intf, 0x5c);
+
+
+    for(row = 0; row < buf->size.height; row++)
+    {
+        int col, dataIdx;
+        ptr = gfxPixelBufferOffsetGet_Unsafe(buf, 0, row);
+        for(col = 0, dataIdx = 0; col < buf->size.width; col++)
+        {
+            clr = ptr[col];
+            pixelBuffer[dataIdx++] = (uint8_t) (clr >> 8);
+            pixelBuffer[dataIdx++] = (uint8_t) (uint8_t) (clr & 0xff);
+        }
+        GFX_Disp_Intf_WriteData(intf,
+                                pixelBuffer,
+                                PIXEL_BUFFER_BYTES_PER_PIXEL *
+                                buf->size.width);
+    }
+    DRV_SSD1351_NCSDeassert(intf);
 
     return GFX_SUCCESS;
 }
 
-void DRV_SSD1351_Swap(void)
+gfxDriverIOCTLResponse DRV_SSD1351_IOCTL(gfxDriverIOCTLRequest request,
+                                     void* arg)
 {
-    swapCount++;
-}
-
-uint32_t DRV_SSD1351_GetSwapCount(void)
-{
-    return swapCount;
-}
-
-gfxResult DRV_SSD1351_SetPalette(gfxBuffer* palette,
-                                           gfxColorMode mode,
-                                           uint32_t colorCount)
-{
-    return GFX_FAILURE;
+    gfxIOCTLArg_Value* val;
+    gfxIOCTLArg_DisplaySize* disp;
+    gfxIOCTLArg_LayerRect* rect;
+    
+    switch(request)
+    {
+        case GFX_IOCTL_GET_COLOR_MODE:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_colormode = PIXEL_BUFFER_COLOR_MODE;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_BUFFER_COUNT:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 1;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_DISPLAY_SIZE:
+        {
+            disp = (gfxIOCTLArg_DisplaySize*)arg;            
+            
+            disp->width = DISPLAY_WIDTH;
+            disp->height = DISPLAY_HEIGHT;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_LAYER_COUNT:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 1;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_ACTIVE_LAYER:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 0;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_LAYER_RECT:
+        {
+            rect = (gfxIOCTLArg_LayerRect*)arg;
+            
+            rect->base.id = 0;
+            rect->x = 0;
+            rect->y = 0;
+            rect->width = DISPLAY_WIDTH;
+            rect->height = DISPLAY_HEIGHT;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_VSYNC_COUNT:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = swapCount;
+            
+            return GFX_IOCTL_OK;
+        }
+        default:
+        { }
+    }
+    
+    return GFX_IOCTL_UNSUPPORTED;
 }
 
