@@ -26,18 +26,22 @@
 
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
+#if LE_ENABLE_RAW_DECODER == 1
+
 #include "gfx/legato/image/legato_palette.h"
 #include "gfx/legato/renderer/legato_renderer.h"
 
 void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
-static struct ConvertStage
+struct ConvertStage
 {
     leRawDecodeStage base;
 
     leColorMode sourceMode;
-} convertStage;
+};
+
+static LE_COHERENT_ATTR struct ConvertStage convertStage;
 
 static leResult stage_convertColor(leRawDecodeStage* stage)
 {
@@ -74,3 +78,5 @@ leResult _leRawImageDecoder_ConvertStage(leRawDecodeState* state)
 
     return LE_SUCCESS;
 }
+
+#endif /* LE_ENABLE_RAW_DECODER */

@@ -329,60 +329,53 @@ void Snake_EatingTask()
 void Snake_RandomColorSet(struct Snake* sn_part)
 {
     static leColor color_count = SNAKE_RED_STATE;
-    
+
     switch(color_count)
     {
         case SNAKE_RED_STATE:
         {
-          Snake_PartColorSet(sn_part, SNAKE_COLOR_RED);
+          sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_RED);
         }
           break;
           
         case SNAKE_BLUE_STATE:
-            
-          Snake_PartColorSet(sn_part, SNAKE_COLOR_BLUE);
-          
+        {
+          sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_BLUE);
+        }
           break;
           
         case SNAKE_GREEN_STATE:
-            
-          Snake_PartColorSet(sn_part, SNAKE_COLOR_GREEN);
-          
+        {
+          sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_GREEN);
+        }
           break;
           
         case SNAKE_YELLOW_STATE:
-            
-          Snake_PartColorSet(sn_part, SNAKE_COLOR_YELLOW);
-          
+        {
+          sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_YELLOW);
+        }
           break;
           
         case SNAKE_ORANGE_STATE:
-            
-          Snake_PartColorSet(sn_part, SNAKE_COLOR_ORANGE);
-          
+        {
+          sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_ORANGE);
+        }
           break;
           
         case SNAKE_PURPLE_STATE:
-            
-          Snake_PartColorSet(sn_part, SNAKE_COLOR_PURPLE);
-          
+        {
+          sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_PURPLE);
+        }
           break;
           
         default:
-            Snake_PartColorSet(sn_part, SNAKE_COLOR_RED);
+            sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&SnakePart_Scheme_RED);
             color_count = SNAKE_RED_STATE;
           break;
     
     }
     
     color_count++;
-}
-
-void Snake_PartColorSet(struct Snake* sn_part,leColor clr)
-{
-    sn_part->SnakePart_scheme = *sn_part->SnakePart->fn->getScheme(sn_part->SnakePart);
-    sn_part->SnakePart_scheme.tables[leRenderer_CurrentColorMode()].values[LE_SCHM_BASE] = clr;
-    sn_part->SnakePart->fn->setScheme(sn_part->SnakePart,&sn_part->SnakePart_scheme);   
 }
 
 leRectangleWidget* Snake_CreateSnakePart()

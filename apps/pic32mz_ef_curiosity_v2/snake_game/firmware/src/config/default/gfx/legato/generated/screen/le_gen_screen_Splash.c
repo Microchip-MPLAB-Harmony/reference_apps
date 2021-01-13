@@ -10,7 +10,7 @@ leImageWidget* Splash_Splash_bar;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_Splash()
+leResult screenInit_Splash(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -20,7 +20,7 @@ leResult screenInit_Splash()
     return LE_SUCCESS;
 }
 
-leResult screenShow_Splash()
+leResult screenShow_Splash(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
@@ -64,11 +64,11 @@ leResult screenShow_Splash()
     return LE_SUCCESS;
 }
 
-void screenUpdate_Splash()
+void screenUpdate_Splash(void)
 {
 }
 
-void screenHide_Splash()
+void screenHide_Splash(void)
 {
 
     leRemoveRootWidget(root0, 0);
@@ -83,7 +83,7 @@ void screenHide_Splash()
     showing = LE_FALSE;
 }
 
-void screenDestroy_Splash()
+void screenDestroy_Splash(void)
 {
     if(initialized == LE_FALSE)
         return;

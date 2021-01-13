@@ -147,7 +147,7 @@ void _leImageRotateWidget_Paint(leImageRotateWidget* img);
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leImageRotateWidget* leImageRotateWidget_New();
+leImageRotateWidget* leImageRotateWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -159,7 +159,7 @@ LIB_EXPORT leImageRotateWidget* leImageRotateWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leImageRotateWidget_Constructor(leImageRotateWidget* wgt);
+void leImageRotateWidget_Constructor(leImageRotateWidget* wgt);
 
 #ifdef _DOXYGEN_
 #define THIS_TYPE struct leWidget

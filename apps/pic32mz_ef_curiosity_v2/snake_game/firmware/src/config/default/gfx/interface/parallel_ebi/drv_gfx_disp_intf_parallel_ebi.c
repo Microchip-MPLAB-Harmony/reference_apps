@@ -49,9 +49,9 @@
 
 #define EBI_BASE_ADDR  __KSEG3_EBI_DATA_MEM_BASE
 
-// Use Address bit 1 as DCX
+// Use Address bit 12 as DCX
 // This lets set set DCX = 1 by writing the data/params to ILI9488_DBIB_DATA_ADDR
-#define GFX_DISP_INTF_SMC_DATA_ADDR  (EBI_BASE_ADDR | (1 << 1))
+#define GFX_DISP_INTF_SMC_DATA_ADDR  (EBI_BASE_ADDR | (1 << 12))
 #define GFX_DISP_INTF_SMC_CMD_ADDR EBI_BASE_ADDR
 
 // Data width for 16-bit SMC
@@ -95,7 +95,7 @@ typedef struct
 
 GFX_DISP_INTF_EBI ebiIntf = {.cmdAddr  = NULL, .dataAddr = NULL, .locked = 0};
 
-static inline void GFX_Disp_Intf_DelayNOP()
+static inline void GFX_Disp_Intf_DelayNOP(void)
 {
     unsigned int i;
 

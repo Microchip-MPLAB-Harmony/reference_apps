@@ -67,7 +67,7 @@
 #define LE_CIRCLEWIDGET_VTABLE(THIS_TYPE) \
     LE_WIDGET_VTABLE(THIS_TYPE) \
     \
-    lePoint          (*getOrigin)(const THIS_TYPE* _this); \
+    leResult         (*getOrigin)(const THIS_TYPE* _this, lePoint* pnt); \
     leResult         (*setOrigin)(THIS_TYPE* _this, const lePoint org); \
     int32_t          (*getOriginX)(const THIS_TYPE* _this); \
     leResult         (*setOriginX)(THIS_TYPE* _this, const int32_t x); \
@@ -137,7 +137,7 @@ typedef struct leCircleWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leCircleWidget* leCircleWidget_New();
+leCircleWidget* leCircleWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -149,7 +149,7 @@ LIB_EXPORT leCircleWidget* leCircleWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leCircleWidget_Constructor(leCircleWidget* cir);
+void leCircleWidget_Constructor(leCircleWidget* cir);
 
 
 #ifdef _DOXYGEN_

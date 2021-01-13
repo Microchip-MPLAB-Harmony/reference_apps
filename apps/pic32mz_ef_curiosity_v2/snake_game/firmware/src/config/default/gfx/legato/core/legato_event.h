@@ -122,9 +122,9 @@ typedef struct leEventState
   * @cond INTERNAL
   *
   */
-leEventState* _leGetEventState();
-leResult leEvent_Init();
-void leEvent_Shutdown();
+leEventState* _leGetEventState(void);
+leResult leEvent_Init(void);
+void leEvent_Shutdown(void);
 /**
   * @endcond
   *
@@ -185,7 +185,7 @@ typedef enum leEventResult
   * @endcode
   * @return number of events.
   */
-uint32_t leEvent_GetCount();
+uint32_t leEvent_GetCount(void);
 
 // *****************************************************************************
 /* Function:
@@ -215,7 +215,7 @@ uint32_t leEvent_GetCount();
  * @endcode
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leEvent_SetFilter(leEvent_FilterEvent cb); 
+leResult leEvent_SetFilter(leEvent_FilterEvent cb);
 
 // *****************************************************************************
 /* Function:
@@ -277,7 +277,7 @@ leResult leEvent_AddEvent(leEvent* evt);
  * @endcode
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-leResult leEvent_ClearList();
+leResult leEvent_ClearList(void);
 
 // *****************************************************************************
 /* Function:
@@ -307,6 +307,6 @@ leResult leEvent_ClearList();
  * @endcode
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-leResult leEvent_ProcessEvents();
+leResult leEvent_ProcessEvents(void);
 
 #endif /* LEGATO_EVENT_H */

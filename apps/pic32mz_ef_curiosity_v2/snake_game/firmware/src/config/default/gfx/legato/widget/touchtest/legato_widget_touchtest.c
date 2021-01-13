@@ -206,7 +206,7 @@ static void handleTouchMovedEvent(leTouchTestWidget* _this,
     
     LE_ASSERT_THIS();
     
-    rect = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &rect);
 
     pnt.x = evt->x;
     pnt.y = evt->y;

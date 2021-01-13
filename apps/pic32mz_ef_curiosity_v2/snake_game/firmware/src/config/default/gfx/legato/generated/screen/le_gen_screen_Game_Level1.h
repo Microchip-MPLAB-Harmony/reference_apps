@@ -29,11 +29,11 @@ extern leLabelWidget* Game_Level1_Game_Won_level1;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
-leResult screenInit_Game_Level1(); // called when Legato is initialized
-leResult screenShow_Game_Level1(); // called when screen is shown
-void screenHide_Game_Level1(); // called when screen is hidden
-void screenDestroy_Game_Level1(); // called when Legato is destroyed
-void screenUpdate_Game_Level1(); // called when Legato is updating
+leResult screenInit_Game_Level1(void); // called when Legato is initialized
+leResult screenShow_Game_Level1(void); // called when screen is shown
+void screenHide_Game_Level1(void); // called when screen is hidden
+void screenDestroy_Game_Level1(void); // called when Legato is destroyed
+void screenUpdate_Game_Level1(void); // called when Legato is updating
 
 leWidget* screenGetRoot_Game_Level1(uint32_t lyrIdx); // gets a root widget for this screen
 

@@ -106,7 +106,7 @@ typedef enum
  * @param param2 r is an integer.
  * @return the lessor of l and r.
  */
-LIB_EXPORT int32_t leMini(int32_t l, int32_t r);
+int32_t leMini(int32_t l, int32_t r);
 
 // *****************************************************************************
 /* Function:
@@ -133,7 +133,7 @@ LIB_EXPORT int32_t leMini(int32_t l, int32_t r);
  * @param param2 r is an integer.
  * @return the maximum of l and r.
  */
-LIB_EXPORT int32_t leMaxi(int32_t l, int32_t r);
+int32_t leMaxi(int32_t l, int32_t r);
 
 // *****************************************************************************
 /* Function:
@@ -160,7 +160,7 @@ LIB_EXPORT int32_t leMaxi(int32_t l, int32_t r);
  * @param param2 r is an float.
  * @return the minimum of l and r.
  */
-LIB_EXPORT float leMinf(float l, float r);
+float leMinf(float l, float r);
 
 // *****************************************************************************
 /* Function:
@@ -187,7 +187,7 @@ LIB_EXPORT float leMinf(float l, float r);
  * @param param2 r is an float.
  * @return the maximum of l and r.
  */
-LIB_EXPORT float leMaxf(float l, float r);
+float leMaxf(float l, float r);
 
 // *****************************************************************************
 /* Function:
@@ -218,7 +218,7 @@ LIB_EXPORT float leMaxf(float l, float r);
  * @param param3 i is an integer.
  * @return a clamp integer
  */
-LIB_EXPORT int32_t leClampi(int32_t min, int32_t max, int32_t i);
+int32_t leClampi(int32_t min, int32_t max, int32_t i);
 
 // *****************************************************************************
 /* Function:
@@ -248,7 +248,7 @@ LIB_EXPORT int32_t leClampi(int32_t min, int32_t max, int32_t i);
  * @param param3 f is an float.
  * @return a clamp integer
  */
-LIB_EXPORT float leClampf(float min, float max, float f);
+float leClampf(float min, float max, float f);
 
 // *****************************************************************************
 /* Function:
@@ -280,7 +280,7 @@ LIB_EXPORT float leClampf(float min, float max, float f);
  * @param param2 r is an integer.
  * @return percentage represented as a whole number
  */
-LIB_EXPORT uint32_t lePercent(uint32_t l, uint32_t r);
+uint32_t lePercent(uint32_t l, uint32_t r);
 
 // *****************************************************************************
 /* Function:
@@ -316,7 +316,7 @@ LIB_EXPORT uint32_t lePercent(uint32_t l, uint32_t r);
  * @param param2 r is an integer.
  * @return percentage represented as a whole number.
  */
-LIB_EXPORT uint32_t lePercentWholeRounded(uint32_t l, uint32_t r);
+uint32_t lePercentWholeRounded(uint32_t l, uint32_t r);
 
 // *****************************************************************************
 /* Function:
@@ -344,7 +344,7 @@ LIB_EXPORT uint32_t lePercentWholeRounded(uint32_t l, uint32_t r);
  * @param param2 percent is the percent to apply.
  * @return the percentage of the number.
  */
-LIB_EXPORT uint32_t lePercentOf(uint32_t num, uint32_t percent);
+uint32_t lePercentOf(uint32_t num, uint32_t percent);
 
 // *****************************************************************************
 /* Function:
@@ -376,7 +376,7 @@ LIB_EXPORT uint32_t lePercentOf(uint32_t num, uint32_t percent);
  * @param param2 percent is the percent to apply.
  * @return resultant percentage of the number.
  */
-LIB_EXPORT void lePercentOfDec(uint32_t num, uint32_t percent, uint32_t* whl, uint32_t* dec);
+void lePercentOfDec(uint32_t num, uint32_t percent, uint32_t* whl, uint32_t* dec);
 
 // *****************************************************************************
 /* Function:
@@ -409,7 +409,7 @@ LIB_EXPORT void lePercentOfDec(uint32_t num, uint32_t percent, uint32_t* whl, ui
  * @param param3 newMax is the new range maximum.
  * @return resultant percentage of the number.
  */
-LIB_EXPORT uint32_t leScaleInteger(uint32_t num, uint32_t oldMax, uint32_t newMax);
+uint32_t leScaleInteger(uint32_t num, uint32_t oldMax, uint32_t newMax);
 
 // *****************************************************************************
 /* Function:
@@ -440,7 +440,7 @@ LIB_EXPORT uint32_t leScaleInteger(uint32_t num, uint32_t oldMax, uint32_t newMa
  * @param param3 newMax is the percent to apply.
  * @return resultant percentage of the number.
  */
-LIB_EXPORT int32_t leScaleIntegerSigned(int32_t num, int32_t oldMax, int32_t newMax);
+int32_t leScaleIntegerSigned(int32_t num, int32_t oldMax, int32_t newMax);
 
 // *****************************************************************************
 /* Function:
@@ -465,7 +465,7 @@ LIB_EXPORT int32_t leScaleIntegerSigned(int32_t num, int32_t oldMax, int32_t new
  * @param param1 val is an integer.
  * @return the absolute value
  */
-LIB_EXPORT uint32_t leAbsoluteValue(int32_t val);
+uint32_t leAbsoluteValue(int32_t val);
 
 // *****************************************************************************
 /* Function:
@@ -497,7 +497,7 @@ LIB_EXPORT uint32_t leAbsoluteValue(int32_t val);
  * @param param2 per is the percent to apply.
  * @return the interpolated value
  */
-LIB_EXPORT int32_t leLerp(int32_t x, int32_t y, uint32_t per);
+int32_t leLerp(int32_t x, int32_t y, uint32_t per);
 
 // *****************************************************************************
 /* Function:
@@ -526,7 +526,7 @@ LIB_EXPORT int32_t leLerp(int32_t x, int32_t y, uint32_t per);
  * @param param3 per is the percent to apply.
  * @return equivalent to int32_t( ((float)num)/((float)denom) + 0.5 ) without using floating point
  */
-LIB_EXPORT int32_t leDivideRounding(int32_t num, int32_t denom);
+int32_t leDivideRounding(int32_t num, int32_t denom);
 
 /**************************************************************************
   Function:
@@ -554,7 +554,7 @@ LIB_EXPORT int32_t leDivideRounding(int32_t num, int32_t denom);
  * @param param3 points is the position to query.
  * @return resultant percentage of the number.
  */
-LIB_EXPORT leResult lePolarToXY(int32_t r, int32_t a, lePoint* p);
+leResult lePolarToXY(int32_t r, int32_t a, lePoint* p);
 
 // *****************************************************************************
 /* Function:
@@ -584,7 +584,7 @@ LIB_EXPORT leResult lePolarToXY(int32_t r, int32_t a, lePoint* p);
  * @param param2 per is the percent to apply.
  * @return normalize an angle in degrees.
  */
-LIB_EXPORT int32_t leNormalizeAngle(int32_t t);
+int32_t leNormalizeAngle(int32_t t);
 
 
 // *****************************************************************************
@@ -615,7 +615,7 @@ LIB_EXPORT int32_t leNormalizeAngle(int32_t t);
  * @param param1 v is the value in degrees.
  * @return sine fixed point value
  */
-LIB_EXPORT int32_t leSin(int32_t v);
+int32_t leSin(int32_t v);
 
 // *****************************************************************************
 /* Function:
@@ -645,7 +645,7 @@ LIB_EXPORT int32_t leSin(int32_t v);
  * @param param1 v is the value in degrees.
  * @return cosine fixed point value
  */
-LIB_EXPORT int32_t leCos(int32_t v);
+int32_t leCos(int32_t v);
 
 /************************************************************************************************
   Function:
@@ -677,7 +677,7 @@ LIB_EXPORT int32_t leCos(int32_t v);
  * @param param2 quadrant of the rotation.
  * @return void.
  */
-LIB_EXPORT leResult leEllipsePoint(int32_t t, int32_t a, int32_t b, int32_t theta, lePoint* p);
+leResult leEllipsePoint(int32_t t, int32_t a, int32_t b, int32_t theta, lePoint* p);
 
 // *****************************************************************************
 /* Function:
@@ -703,7 +703,7 @@ LIB_EXPORT leResult leEllipsePoint(int32_t t, int32_t a, int32_t b, int32_t thet
  * @param param1 val is value.
  * @return the angle in radians
  */
-LIB_EXPORT double leAtan(double val);
+double leAtan(double val);
 
 typedef struct
 {
@@ -863,9 +863,10 @@ int32_t leGetYGivenXOnLine(lePoint p1, lePoint p2, int32_t x);
 
 // *****************************************************************************
 /* Function:
-    lePoint leRotatePoint(lePoint pos,
-                          lePoint org,
-                          int32_t ang)
+    void leRotatePoint(lePoint pos,
+                       lePoint org,
+                       int32_t ang,
+                       lePoint* res)
 
   Summary:
     Rotates a point given an origin and an angle in degrees.
@@ -893,22 +894,26 @@ int32_t leGetYGivenXOnLine(lePoint p1, lePoint p2, int32_t x);
  * lePoint point;
  * lePoint origin;
  * int32_t angle;
- * lePoint rot = leRotatePoint(point, origin, angle);
+ * lePoint res;
+ * leRotatePoint(point, origin, angle, &res);
  * @endcode
  * @param param1 point is point to rotate.
  * @param param2 origin of the rotation.
  * @param param3 angle is the angle in degrees.
- * @return the rotated point.
+ * @param param4 the resulting point
+ * @return void
  */
-lePoint leRotatePoint(lePoint pos,
-                      lePoint org,
-                      int32_t ang);
+void leRotatePoint(lePoint pos,
+                   lePoint org,
+                   int32_t ang,
+                   lePoint* res);
 
 // *****************************************************************************
 /* Function:
-    leRect leRotatedRectBounds(leRect rect,
-                               lePoint org,
-                               int32_t ang)
+    void leRotatedRectBounds(leRect rect,
+                             lePoint org,
+                             int32_t ang,
+                             leRect* res)
 
   Summary:
     Calculates the bounding rectangle of an area rotated around
@@ -938,13 +943,15 @@ lePoint leRotatePoint(lePoint pos,
  * @code
  * uint32_t whole = lePercentOf(l, percent);
  * @endcode
- * @param param1 rect is area to rotate.
- * @param param3 angle is the angle in degrees.
- * @return resultant percentage of the number.
+ * @param rect area to rotate.
+ * @param ang the angle in degrees.
+ * @param res the resultant rectangle
+ * @return void
  */
 
-leRect leRotatedRectBounds(leRect rect,
-                           int32_t ang);
+void leRotatedRectBounds(leRect rect,
+                         int32_t ang,
+                         leRect* res);
 
 
 // *****************************************************************************
@@ -968,8 +975,9 @@ leRect leRotatedRectBounds(leRect rect,
 */
 float leSqrt(const float x);
 
-lePoint lePointOnCircle(uint32_t radius,
-                        int32_t angle);
+void lePointOnCircle(uint32_t radius,
+                     int32_t angle,
+                     lePoint* res);
 
 uint32_t leDegreesFromPercent(uint32_t percent,
                               int32_t centerAngle,
@@ -1001,8 +1009,9 @@ typedef struct leResolvedAngleRanges
     } angle1;
 } leResolvedAngleRanges;
 
-leResolvedAngleRanges leResolveAngles(int32_t startAngle,
-                                      int32_t spanAngle);
+void leResolveAngles(int32_t startAngle,
+                     int32_t spanAngle,
+                     leResolvedAngleRanges* res);
 
 float leRound(float flt);
 

@@ -220,7 +220,7 @@ typedef struct leRadioButtonWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leRadioButtonWidget* leRadioButtonWidget_New();
+leRadioButtonWidget* leRadioButtonWidget_New(void);
 
 /**
  * @brief Initialize widget.
@@ -232,7 +232,7 @@ LIB_EXPORT leRadioButtonWidget* leRadioButtonWidget_New();
  * @param wgt is the widget to initialize
  * @return void.
  */
-LIB_EXPORT void leRadioButtonWidget_Constructor(leRadioButtonWidget* wgt);
+void leRadioButtonWidget_Constructor(leRadioButtonWidget* wgt);
 
 
 #ifdef _DOXYGEN_
@@ -336,7 +336,7 @@ virtual leResult setSelected(leRadioButtonWidget* _this);
 
 // *****************************************************************************
 /* Virtual Member Function:
-    void select(leRadioButtonWidget* _this)
+    void selected(leRadioButtonWidget* _this)
 
   Summary:
      internal use only
@@ -344,7 +344,7 @@ virtual leResult setSelected(leRadioButtonWidget* _this);
 
 // *****************************************************************************
 /* Virtual Member Function:
-    void deselect(leRadioButtonWidget* _this)
+    void deselected(leRadioButtonWidget* _this)
 
   Summary:
      internal use only

@@ -65,7 +65,7 @@
 enum BufferFlags
 {
     BF_NONE = 0,
-    BF_LOCKED = 1 << 0,
+    //BF_LOCKED = 1 << 0,
 };
 
 // *****************************************************************************
@@ -97,7 +97,7 @@ typedef struct lePixelBuffer
     uint32_t buffer_length;
     leBuffer pixels;
 
-    uint32_t flags;
+    uint32_t reserved;
 } lePixelBuffer;
 
 // *****************************************************************************
@@ -140,11 +140,11 @@ typedef struct lePixelBuffer
  * @param param1 buffer is the source color value.
  * @return leResult.
  */
-LIB_EXPORT leResult lePixelBufferCreate(const int32_t width,
-                                        const int32_t height,
-                                        const leColorMode mode,
-                                        const void* const address,
-                                        lePixelBuffer* buffer);
+leResult lePixelBufferCreate(const int32_t width,
+                             const int32_t height,
+                             const leColorMode mode,
+                             const void* const address,
+                             lePixelBuffer* buffer);
 
 // *****************************************************************************
 /* Function:
@@ -173,9 +173,9 @@ LIB_EXPORT leResult lePixelBufferCreate(const int32_t width,
  * @param param1 buffer is the source color value.
  * @return leBuffer.
  */
-LIB_EXPORT leBuffer lePixelBufferOffsetGet(const lePixelBuffer* const buffer,
-                                           uint32_t x,
-                                           uint32_t y);
+leBuffer lePixelBufferOffsetGet(const lePixelBuffer* const buffer,
+                                uint32_t x,
+                                uint32_t y);
 
 // *****************************************************************************
 /* Function:
@@ -206,9 +206,9 @@ LIB_EXPORT leBuffer lePixelBufferOffsetGet(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return leBuffer.
  */
-LIB_EXPORT leBuffer lePixelBufferOffsetGet_Unsafe(const lePixelBuffer* const buffer,
-                                                  uint32_t x,
-                                                  uint32_t y);                                                  
+leBuffer lePixelBufferOffsetGet_Unsafe(const lePixelBuffer* const buffer,
+                                       uint32_t x,
+                                       uint32_t y);
 
 // *****************************************************************************
 /* Function:
@@ -237,9 +237,9 @@ LIB_EXPORT leBuffer lePixelBufferOffsetGet_Unsafe(const lePixelBuffer* const buf
  * @param param1 buffer is the source color value.
  * @return leColor.
  */
-LIB_EXPORT leColor lePixelBufferGet(const lePixelBuffer* const buffer,
-                                    uint32_t x,
-                                    uint32_t y);
+leColor lePixelBufferGet(const lePixelBuffer* const buffer,
+                         uint32_t x,
+                         uint32_t y);
 
 // *****************************************************************************
 /* Function:
@@ -268,9 +268,9 @@ LIB_EXPORT leColor lePixelBufferGet(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return leResult.
  */
-LIB_EXPORT leColor lePixelBufferGet_Unsafe(const lePixelBuffer* const buffer,
-                                           uint32_t x,
-                                           uint32_t y);
+leColor lePixelBufferGet_Unsafe(const lePixelBuffer* const buffer,
+                                uint32_t x,
+                                uint32_t y);
 
 /**
  * @brief Get color at index
@@ -284,8 +284,8 @@ LIB_EXPORT leColor lePixelBufferGet_Unsafe(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return leResult.
  */
-LIB_EXPORT leColor lePixelBufferGetIndex_Unsafe(const lePixelBuffer* const buffer,
-                                                const uint32_t idx);
+leColor lePixelBufferGetIndex(const lePixelBuffer* const buffer,
+                              const uint32_t idx);
 
 
 /**
@@ -330,9 +330,9 @@ leColor lePixelBufferGetIndex_Unsafe(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return leResult.
  */
-LIB_EXPORT leResult lePixelBufferClipRect(const lePixelBuffer* const buffer,
-                                          const leRect* const rect,
-                                          leRect* result);   
+leResult lePixelBufferClipRect(const lePixelBuffer* const buffer,
+                               const leRect* const rect,
+                               leRect* result);
 
 // *****************************************************************************
 /* Function:
@@ -366,10 +366,10 @@ LIB_EXPORT leResult lePixelBufferClipRect(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return leResult.
  */
-LIB_EXPORT leResult lePixelBufferSet(const lePixelBuffer* const buffer,
-                                     uint32_t x,
-                                     uint32_t y,
-                                     leColor color);
+leResult lePixelBufferSet(const lePixelBuffer* const buffer,
+                          uint32_t x,
+                          uint32_t y,
+                          leColor color);
 
 // *****************************************************************************
 /* Function:
@@ -405,10 +405,10 @@ LIB_EXPORT leResult lePixelBufferSet(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return leResult.
  */
-LIB_EXPORT leResult lePixelBufferSet_Unsafe(const lePixelBuffer* const buffer,
-                                            uint32_t x,
-                                            uint32_t y,
-                                            leColor color);
+leResult lePixelBufferSet_Unsafe(const lePixelBuffer* const buffer,
+                                 uint32_t x,
+                                 uint32_t y,
+                                 leColor color);
 
 // *****************************************************************************
 /* Function:
@@ -481,12 +481,12 @@ leResult lePixelBufferAreaFill(const lePixelBuffer* const buffer,
  * @param param1 buffer is the source color value.
  * @return true if the buffer locked, otherwse false.
  */
-LIB_EXPORT leResult lePixelBufferAreaFill_Unsafe(const lePixelBuffer* const buffer,
-                                                 uint32_t x,
-                                                 uint32_t y,
-                                                 uint32_t w,
-                                                 uint32_t h,
-                                                 leColor color);
+leResult lePixelBufferAreaFill_Unsafe(const lePixelBuffer* const buffer,
+                                      uint32_t x,
+                                      uint32_t y,
+                                      uint32_t w,
+                                      uint32_t h,
+                                      leColor color);
 
 // *****************************************************************************
 /* Function:
@@ -541,7 +541,7 @@ leResult lePixelBufferCopy(lePixelBuffer* dest,
  * @param param1 buffer is the source color value.
  * @return true if the buffer locked, otherwse false.
  */
-LIB_EXPORT leBool lePixelBuffer_IsLocked(const lePixelBuffer* const buffer);
+leBool lePixelBuffer_IsLocked(const lePixelBuffer* const buffer);
 
 // *****************************************************************************
 /* Function:
@@ -571,8 +571,8 @@ LIB_EXPORT leBool lePixelBuffer_IsLocked(const lePixelBuffer* const buffer);
  * @param param2 locked is the source color mode
  * @return leResult.
  */
-LIB_EXPORT leResult lePixelBuffer_SetLocked(lePixelBuffer* buffer,
-                                            leBool locked);
+leResult lePixelBuffer_SetLocked(lePixelBuffer* buffer,
+                                 leBool locked);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

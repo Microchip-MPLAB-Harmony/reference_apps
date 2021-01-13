@@ -129,7 +129,7 @@ typedef struct leGroupBoxWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leGroupBoxWidget* leGroupBoxWidget_New();
+leGroupBoxWidget* leGroupBoxWidget_New(void);
 
 /**
  * @brief Initialize widget.

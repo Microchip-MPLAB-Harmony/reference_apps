@@ -378,7 +378,9 @@ leResult leRectArray_MergeSimilar(leRectArray* arr)
         {
             if(leRectsAreSimilar(&arr->rects[i], &arr->rects[j]) == LE_TRUE)
             {
-                arr->rects[i] = leRectCombine(&arr->rects[i], &arr->rects[j]);
+                leRectCombine(&arr->rects[i],
+                              &arr->rects[j],
+                              &arr->rects[i]);
                 
                 leRectArray_RemoveAt(arr, j);
                 
@@ -411,6 +413,44 @@ leResult leRectArray_RemoveOverlapping(leRectArray* arr)
     
     return LE_SUCCESS;
 }
+
+#if LE_SCRATCH_BUFFER_PADDING == 1
+leResult leRectArray_PadRectangles(leRectArray* arr)
+{
+    uint32_t rectItr, mod, oldWidth;
+    leRect splitRect;
+
+    for(rectItr = 0; rectItr < arr->size; rectItr++)
+    {
+        mod = arr->rects[rectItr].width % 4;
+
+        if(mod != 0)
+        {
+            oldWidth = arr->rects[rectItr].width;
+            splitRect = arr->rects[rectItr];
+
+            arr->rects[rectItr].width >>= 1;
+
+            mod = arr->rects[rectItr].width % 4;
+
+            arr->rects[rectItr].width += 4 - mod;
+
+            splitRect.width = oldWidth >> 1;
+            splitRect.x += splitRect.width;
+
+            mod = splitRect.width % 4;
+            splitRect.x -= 4 - mod;
+            splitRect.width += 4 - mod;
+
+            splitRect.x = arr->rects[rectItr].x + oldWidth - splitRect.width;
+
+            leRectArray_PushBack(arr, &splitRect);
+        }
+    }
+
+    return LE_SUCCESS;
+}
+#endif
 
 leResult leRectArray_CropToArea(leRectArray* arr,
                                 uint32_t width,

@@ -219,7 +219,7 @@ static leResult setSelected(leRadioButtonWidget* _this)
     return res;
 }
 
-static void select(leRadioButtonWidget* _this)
+static void selected(leRadioButtonWidget* _this)
 {
     LE_ASSERT_THIS();
     
@@ -238,7 +238,7 @@ static void select(leRadioButtonWidget* _this)
     _invalidateContents(_this);
 }
 
-static void deselect(leRadioButtonWidget* _this)
+static void deselected(leRadioButtonWidget* _this)
 {
     LE_ASSERT_THIS();
     
@@ -474,7 +474,7 @@ static void handleTouchDownEvent(leRadioButtonWidget* _this,
     
     _leRadioButtonWidget_GetImageRect(_this, &imgRect, &imgSrcRect);
     
-    widgetRect = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &widgetRect);
     
     leRectClip(&imgRect, &widgetRect, &clipRect);
     
@@ -498,7 +498,7 @@ static void handleTouchUpEvent(leRadioButtonWidget* _this,
     
     _leRadioButtonWidget_GetImageRect(_this, &imgRect, &imgSrcRect);
     
-    widgetRect = _this->fn->rectToScreen(_this);
+    _this->fn->rectToScreen(_this, &widgetRect);
     
     leRectClip(&imgRect, &widgetRect, &clipRect);
 
@@ -523,8 +523,6 @@ static void handleTouchMovedEvent(leRadioButtonWidget* _this,
     leWidgetEvent_Accept((leWidgetEvent*)evt, (leWidget*)_this);
 }
 
-void _leRadioButtonWidget_Paint(leRadioButtonWidget* _this);
-
 #if LE_DYNAMIC_VTABLES == 1
 void _leWidget_FillVTable(leWidgetVTable* tbl);
 
@@ -545,8 +543,8 @@ void _leRadioButtonWidget_GenerateVTable()
     radioButtonWidgetVTable.getGroup = getGroup;
     radioButtonWidgetVTable.getSelected = getSelected;
     radioButtonWidgetVTable.setSelected = setSelected;
-    radioButtonWidgetVTable.select = select;
-    radioButtonWidgetVTable.deselect = deselect;
+    radioButtonWidgetVTable.select = selected;
+    radioButtonWidgetVTable.deselect = deselected;
     radioButtonWidgetVTable.getString = getString;
     radioButtonWidgetVTable.setString = setString;
     radioButtonWidgetVTable.getSelectedImage = getSelectedImage;
@@ -657,8 +655,8 @@ static const leRadioButtonWidgetVTable radioButtonWidgetVTable =
     .getGroup = getGroup,
     .getSelected = getSelected,
     .setSelected = setSelected,
-    .select = select,
-    .deselect = deselect,
+    .select = selected,
+    .deselect = deselected,
     .getString = getString,
     .setString = setString,
     .getSelectedImage = getSelectedImage,

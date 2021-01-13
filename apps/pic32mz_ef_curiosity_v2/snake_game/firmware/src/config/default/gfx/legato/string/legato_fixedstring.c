@@ -434,7 +434,7 @@ uint32_t _leFixedString_ToChar(const leFixedString* _this,
 #if LE_DYNAMIC_VTABLES == 1
 void _leString_FillVTable(leStringVTable* vt);
 
-void _leFixedString_GenerateVTable()
+void _leFixedString_GenerateVTable(void)
 {
     _leString_FillVTable((void*)&fixedStringVTable);
     

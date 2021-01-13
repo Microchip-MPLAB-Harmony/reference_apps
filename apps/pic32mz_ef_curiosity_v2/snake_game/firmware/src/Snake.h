@@ -327,37 +327,6 @@ void Snake_DirectionTask(uint16_t Current_Head_X, uint16_t Current_Head_Y);
 
 void Snake_EatingTask();
 
-
-/*******************************************************************************
- Function:
-    void Snake_PartColorSet(struct Snake* sn_part,leColor clr);
-
-  Summary:
-   The routine for coloring a specific part of the snake
-
-  Description:
-    This function set the color of a specific part of the snake. 
-
-  Precondition:
-    
-
-  Parameters:
-    
-   sn_part - pointer to the Snake structure that represent a snake part
- 
-   clr     - the color value for a 565 color format
-  
-  Returns:
-    None.
-
-
-  Remarks:
-    
-*/
-
-void Snake_PartColorSet(struct Snake* sn_part,leColor clr);
-
-
 /*******************************************************************************
  Function:
     void Snake_RandomColorSet(struct Snake* sn_part);

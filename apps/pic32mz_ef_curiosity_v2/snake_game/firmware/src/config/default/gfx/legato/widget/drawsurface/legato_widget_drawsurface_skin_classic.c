@@ -118,7 +118,7 @@ static void drawCallback(leDrawSurfaceWidget* sfc)
     // paint callback
     if(sfc->cb != NULL)
     {
-        rect = sfc->fn->localRect(sfc);
+        sfc->fn->localRect(sfc, &rect);
         
         if(sfc->cb(sfc, &rect) == LE_FALSE)
             return;

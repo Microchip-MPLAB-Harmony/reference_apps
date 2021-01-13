@@ -19,11 +19,11 @@ extern leImageWidget* Splash_Splash_bar;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
-leResult screenInit_Splash(); // called when Legato is initialized
-leResult screenShow_Splash(); // called when screen is shown
-void screenHide_Splash(); // called when screen is hidden
-void screenDestroy_Splash(); // called when Legato is destroyed
-void screenUpdate_Splash(); // called when Legato is updating
+leResult screenInit_Splash(void); // called when Legato is initialized
+leResult screenShow_Splash(void); // called when screen is shown
+void screenHide_Splash(void); // called when screen is hidden
+void screenDestroy_Splash(void); // called when Legato is destroyed
+void screenUpdate_Splash(void); // called when Legato is updating
 
 leWidget* screenGetRoot_Splash(uint32_t lyrIdx); // gets a root widget for this screen
 

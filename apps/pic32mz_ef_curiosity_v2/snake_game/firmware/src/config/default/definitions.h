@@ -59,7 +59,7 @@
 #include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "system/input/sys_input.h"
 #include "peripheral/ebi/plib_ebi.h"
-#include "gfx/driver/controller/ssd1963/drv_gfx_ssd1963.h"
+#include "gfx/driver/controller/external_controller/drv_gfx_external_controller.h"
 #include "peripheral/spi/spi_master/plib_spi1_master.h"
 #include "driver/spi/drv_spi.h"
 #include "driver/input/drv_maxtouch.h"

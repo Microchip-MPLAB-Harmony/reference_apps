@@ -26,11 +26,9 @@
           </logicalFolder>
           <logicalFolder name="f1" displayName="gfx" projectFiles="true">
             <logicalFolder name="f3" displayName="driver" projectFiles="true">
-              <logicalFolder name="f1" displayName="ssd1963" projectFiles="true">
+              <logicalFolder name="f1" displayName="external_controller" projectFiles="true">
                 <itemPath>../src/config/default/gfx/driver/gfx_driver.h</itemPath>
-                <itemPath>../src/config/default/gfx/driver/controller/ssd1963/drv_gfx_ssd1963.h</itemPath>
-                <itemPath>../src/config/default/gfx/driver/controller/ssd1963/drv_gfx_ssd1963_common.h</itemPath>
-                <itemPath>../src/config/default/gfx/driver/controller/ssd1963/drv_gfx_ssd1963_cmd_defs.h</itemPath>
+                <itemPath>../src/config/default/gfx/driver/controller/external_controller/drv_gfx_external_controller.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="interface" projectFiles="true">
@@ -318,9 +316,9 @@
           </logicalFolder>
           <logicalFolder name="f1" displayName="gfx" projectFiles="true">
             <logicalFolder name="f3" displayName="driver" projectFiles="true">
-              <logicalFolder name="f1" displayName="ssd1963" projectFiles="true">
+              <logicalFolder name="f1" displayName="external_controller" projectFiles="true">
                 <itemPath>../src/config/default/gfx/driver/gfx_driver.c</itemPath>
-                <itemPath>../src/config/default/gfx/driver/controller/ssd1963/drv_gfx_ssd1963.c</itemPath>
+                <itemPath>../src/config/default/gfx/driver/controller/external_controller/drv_gfx_external_controller.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="interface" projectFiles="true">
@@ -621,9 +619,31 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
+        <itemPath>../src/config/default/default.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/ebi.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/gfx_disp_pdatm5000_800x480.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/gfx_hal_le.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/gfx_legato.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/gfx_maxtouch_controller.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/i2c2.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/legato_gfx_pda_tm5000.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/le_gfx_driver_external.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/le_gfx_intf_parallel_ebi.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/spi1.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sys_input.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sys_time.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/default/harmony.prj</itemPath>
-      <itemPath>../src/config/default/default.xml</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -665,6 +685,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -1407,6 +1428,7 @@
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1420,6 +1442,9 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/MassMarket/reference_apps/apps/pic32mz_ef_curiosity_v2/snake_game/firmware/pic32mz_ef_curiosity_v2.X/debug/default/pic32mz_ef_curiosity_v2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -1435,7 +1460,6 @@
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptionsedbg.eraseb4program" value="true"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

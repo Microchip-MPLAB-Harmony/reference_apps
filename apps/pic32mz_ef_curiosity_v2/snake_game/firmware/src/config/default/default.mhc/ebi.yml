@@ -1,0 +1,128 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: ebi}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: CFGEBIC_EBICSEN0}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: CFGEBIC_EBIDAT}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '2'}
+  - type: Boolean
+    attributes: {id: CFGEBIC_EBIDAT0}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ebi, value: 'true'}
+  - type: Boolean
+    attributes: {id: CFGEBIC_EBIDAT1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ebi, value: 'true'}
+  - type: Hex
+    attributes: {id: CFGEBIC_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ebi, value: '19'}
+  - type: KeyValueSet
+    attributes: {id: EBIMSK0_MEMSIZE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '8'}
+  - type: Hex
+    attributes: {id: EBIMSK0_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ebi, value: '40'}
+  - type: KeyValueSet
+    attributes: {id: EBISMCON_SMDWIDTH0}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '0'}
+  - type: Hex
+    attributes: {id: EBISMCON_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ebi, value: '1'}
+  - type: Integer
+    attributes: {id: EBISMT0_TAS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '3'}
+  - type: Integer
+    attributes: {id: EBISMT0_TBTA}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '0'}
+  - type: Integer
+    attributes: {id: EBISMT0_TRC}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '0'}
+  - type: Integer
+    attributes: {id: EBISMT0_TWP}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '2'}
+  - type: Integer
+    attributes: {id: EBISMT0_TWR}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_intf_parallel_ebi, value: '3'}
+  - type: Hex
+    attributes: {id: EBISMT0_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ebi, value: '1575872'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: ebi_cs0}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: le_gfx_intf_parallel_ebi}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: EBI_CS}
+- type: ElementPosition
+  attributes: {x: '21', y: '333', id: ebi}

@@ -214,10 +214,10 @@ typedef struct leFontStream
 {
     leStream stream;
 
-    leResult (*open)();
+    leResult (*open)(void);
     leResult (*drawGlyph)(const leFontGlyph* glyph, int32_t x, int32_t y, leColor clr, uint32_t alpha, leFontStream_DrawCompleteFn cb);
-    leBool (*isDone)();
-    void (*close)();
+    leBool (*isDone)(void);
+    void (*close)(void);
 
     leFontStream_DrawCompleteFn cb;
 } leFontStream;
@@ -232,7 +232,7 @@ typedef struct leFontStream
     A pre-defined 12 point monospaced 1bpp font that includes the standard
     ASCII range of characters.
 */
-LIB_EXPORT extern leRasterFont LiberationMono1;
+extern leRasterFont LiberationMono1;
 #endif
 
 #if LE_INCLUDE_DEFAULT_8BPP_FONT == 1
@@ -244,7 +244,7 @@ LIB_EXPORT extern leRasterFont LiberationMono1;
     A pre-defined 12 point monospaced 8bpp font that includes the standard
     ASCII range of characters.
 */
-LIB_EXPORT extern leRasterFont LiberationMono8;
+extern leRasterFont LiberationMono8;
 #endif
 
 // *****************************************************************************

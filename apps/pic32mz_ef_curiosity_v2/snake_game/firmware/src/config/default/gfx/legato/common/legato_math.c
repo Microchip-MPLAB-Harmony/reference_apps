@@ -347,49 +347,47 @@ int32_t leDivideRounding(int32_t num, int32_t denom)
     }
 }
 
-static leArcQuadrantQuery leQueryArcQuadrants(int32_t startAngle,
-                                              int32_t endAngle)
+static void leQueryArcQuadrants(int32_t startAngle,
+                                int32_t endAngle,
+                                leArcQuadrantQuery* query)
 {
-    leArcQuadrantQuery query;
-    query.q1 = LE_FALSE;
-    query.q2 = LE_FALSE;
-    query.q3 = LE_FALSE;
-    query.q4 = LE_FALSE;
+    query->q1 = LE_FALSE;
+    query->q2 = LE_FALSE;
+    query->q3 = LE_FALSE;
+    query->q4 = LE_FALSE;
 
     if(startAngle == endAngle)
-        return query;
+        return;
 
     if((endAngle - startAngle) > 270 || (startAngle - endAngle) < -270)
     {
-        query.q1 = LE_TRUE;
-        query.q2 = LE_TRUE;
-        query.q3 = LE_TRUE;
-        query.q4 = LE_TRUE;
+        query->q1 = LE_TRUE;
+        query->q2 = LE_TRUE;
+        query->q3 = LE_TRUE;
+        query->q4 = LE_TRUE;
 
-        return query;
+        return;
     }
 
-    query.q1 = startAngle >= 0 && startAngle < 90;
-    query.q2 = startAngle >= 90 && startAngle < 180;
-    query.q3 = startAngle >= 180 && startAngle < 270;
-    query.q4 = startAngle >= 270 && startAngle < 360;
+    query->q1 = startAngle >= 0 && startAngle < 90;
+    query->q2 = startAngle >= 90 && startAngle < 180;
+    query->q3 = startAngle >= 180 && startAngle < 270;
+    query->q4 = startAngle >= 270 && startAngle < 360;
 
-    if(query.q1 == LE_TRUE)
+    if(query->q1 == LE_TRUE)
     {
-        query.q2 = endAngle >= 90;
+        query->q2 = endAngle >= 90;
     }
 
-    if(query.q1 == LE_TRUE || query.q2 == LE_TRUE)
+    if(query->q1 == LE_TRUE || query->q2 == LE_TRUE)
     {
-        query.q3 = endAngle >= 180;
+        query->q3 = endAngle >= 180;
     }
 
-    if(query.q1 == LE_TRUE || query.q2 == LE_TRUE || query.q3 == LE_TRUE)
+    if(query->q1 == LE_TRUE || query->q2 == LE_TRUE || query->q3 == LE_TRUE)
     {
-        query.q4 = endAngle >= 270;
+        query->q4 = endAngle >= 270;
     }
-
-    return query;
 }
 
 leBool lePointOnLineSide(lePoint* pt,
@@ -451,11 +449,12 @@ int32_t leGetYGivenXOnLine(lePoint p1, lePoint p2, int32_t x)
     return (p1.y - ((p1.y - p2.y) * (p1.x - x))/(p1.x - p2.x));
 }
 
-lePoint leRotatePoint(lePoint pos,
-                      lePoint org,
-                      int32_t ang)
+void leRotatePoint(lePoint pos,
+                   lePoint org,
+                   int32_t ang,
+                   lePoint* res)
 {
-    lePoint res = lePoint_Zero;
+    *res = lePoint_Zero;
 
     pos.x -= org.x;
     pos.y -= org.y;
@@ -463,21 +462,20 @@ lePoint leRotatePoint(lePoint pos,
     int32_t s = leSin(-ang);
     int32_t c = leCos(-ang);
 
-    res.x = ((pos.x * c) / TRIG_SCALAR) - ((pos.y * s) / TRIG_SCALAR);
-    res.y = ((pos.x * s) / TRIG_SCALAR) + ((pos.y * c) / TRIG_SCALAR);
+    res->x = ((pos.x * c) / TRIG_SCALAR) - ((pos.y * s) / TRIG_SCALAR);
+    res->y = ((pos.x * s) / TRIG_SCALAR) + ((pos.y * c) / TRIG_SCALAR);
 
-    res.x += org.x;
-    res.y += org.y;
-
-    return res;
+    res->x += org.x;
+    res->y += org.y;
 }
 
-leRect leRotatedRectBounds(leRect rect,
-                           int32_t ang)
+void leRotatedRectBounds(leRect rect,
+                         int32_t ang,
+                         leRect* res)
 {
     lePoint point[4];
     lePoint org;
-    leRect res;
+
     int32_t minX = 99999;
     int32_t maxX = -99999;
     int32_t minY = 99999;
@@ -500,10 +498,10 @@ leRect leRotatedRectBounds(leRect rect,
     org.x = 0;
     org.y = 0;
 
-    point[0] = leRotatePoint(point[0], org, -ang);
-    point[1] = leRotatePoint(point[1], org, -ang);
-    point[2] = leRotatePoint(point[2], org, -ang);
-    point[3] = leRotatePoint(point[3], org, -ang);
+    leRotatePoint(point[0], org, -ang, &point[0]);
+    leRotatePoint(point[1], org, -ang, &point[1]);
+    leRotatePoint(point[2], org, -ang, &point[2]);
+    leRotatePoint(point[3], org, -ang, &point[3]);
 
     for(i = 0; i < 4; i++)
     {
@@ -528,12 +526,10 @@ leRect leRotatedRectBounds(leRect rect,
         }
     }
 
-    res.x = 0;
-    res.y = 0;
-    res.width = (maxX - minX) + 8;
-    res.height = (maxY - minY) + 8;
-
-    return res;
+    res->x = 0;
+    res->y = 0;
+    res->width = (maxX - minX) + 8;
+    res->height = (maxY - minY) + 8;
 }
 
 #define SQRT_MAGIC_F 0x5f3759df
@@ -554,11 +550,10 @@ float leSqrt(const float x)
     return x * u.x * (1.5f - xhalf * u.x * u.x); // newton step
 }
 
-lePoint lePointOnCircle(uint32_t radius,
-                        int32_t angle)
+void lePointOnCircle(uint32_t radius,
+                     int32_t angle,
+                     lePoint* res)
 {
-    lePoint point;
-
     while (angle < 0)
     {
         angle += 360;
@@ -569,9 +564,7 @@ lePoint lePointOnCircle(uint32_t radius,
         angle -= 360;
     }
 
-    lePolarToXY(radius, angle, &point);
-
-    return point;
+    lePolarToXY(radius, angle, res);
 }
 
 void leNormalizeAngles(int32_t startAngle,
@@ -608,11 +601,11 @@ void leNormalizeAngles(int32_t startAngle,
     *normalizedEndAngle = *normalizedStartAngle + spanAngle;
 }
 
-leResolvedAngleRanges leResolveAngles(int32_t startAngle,
-                                      int32_t spanAngle)
+void leResolveAngles(int32_t startAngle,
+                     int32_t spanAngle,
+                     leResolvedAngleRanges* rngs)
 {
-    struct leResolvedAngleRanges ranges;
-    memset(&ranges, 0, sizeof(ranges));
+    memset(rngs, 0, sizeof(struct leResolvedAngleRanges));
 
     if(startAngle > 360)
     {
@@ -626,63 +619,90 @@ leResolvedAngleRanges leResolveAngles(int32_t startAngle,
 
     if((startAngle < 0) && (startAngle + spanAngle > 0))
     {
-        ranges.angleCount = 2;
+        rngs->angleCount = 2;
 
-        ranges.angle0.startAngle = 360 + startAngle;
-        ranges.angle0.endAngle = 360;
-        ranges.angle0.quadrants = leQueryArcQuadrants(ranges.angle0.startAngle, ranges.angle0.endAngle);
+        rngs->angle0.startAngle = 360 + startAngle;
+        rngs->angle0.endAngle = 360;
 
-        ranges.angle1.startAngle = 0;
-        ranges.angle1.endAngle = startAngle + spanAngle;
-        ranges.angle1.quadrants = leQueryArcQuadrants(ranges.angle1.startAngle, ranges.angle1.endAngle);
+        leQueryArcQuadrants(rngs->angle0.startAngle,
+                            rngs->angle0.endAngle,
+                            &rngs->angle0.quadrants);
+
+        rngs->angle1.startAngle = 0;
+        rngs->angle1.endAngle = startAngle + spanAngle;
+
+        leQueryArcQuadrants(rngs->angle1.startAngle,
+                            rngs->angle1.endAngle,
+                            &rngs->angle1.quadrants);
     }
     else if((startAngle > 0) && (startAngle + spanAngle < 0))
     {
-        ranges.angleCount = 2;
+        rngs->angleCount = 2;
 
-        ranges.angle0.startAngle = 360 + startAngle + spanAngle;
-        ranges.angle0.endAngle = 360;
-        ranges.angle0.quadrants = leQueryArcQuadrants(ranges.angle0.startAngle, ranges.angle0.endAngle);
+        rngs->angle0.startAngle = 360 + startAngle + spanAngle;
+        rngs->angle0.endAngle = 360;
 
-        ranges.angle1.startAngle = 0;
-        ranges.angle1.endAngle = startAngle;
-        ranges.angle1.quadrants = leQueryArcQuadrants(ranges.angle1.startAngle, ranges.angle1.endAngle);
+        leQueryArcQuadrants(rngs->angle0.startAngle,
+                            rngs->angle0.endAngle,
+                            &rngs->angle0.quadrants);
+
+        rngs->angle1.startAngle = 0;
+        rngs->angle1.endAngle = startAngle;
+
+        leQueryArcQuadrants(rngs->angle1.startAngle,
+                            rngs->angle1.endAngle,
+                            &rngs->angle1.quadrants);
     }
     else if((startAngle < 0) && (startAngle + spanAngle < -360))
     {
-        ranges.angleCount = 2;
+        rngs->angleCount = 2;
 
-        ranges.angle0.startAngle = 0;
-        ranges.angle0.endAngle = 360 + startAngle;
-        ranges.angle0.quadrants = leQueryArcQuadrants(ranges.angle0.startAngle, ranges.angle0.endAngle);
+        rngs->angle0.startAngle = 0;
+        rngs->angle0.endAngle = 360 + startAngle;
 
-        ranges.angle1.startAngle = 720 + (startAngle + spanAngle);
-        ranges.angle1.endAngle = 360;
-        ranges.angle1.quadrants = leQueryArcQuadrants(ranges.angle1.startAngle, ranges.angle1.endAngle);
+        leQueryArcQuadrants(rngs->angle0.startAngle,
+                            rngs->angle0.endAngle,
+                            &rngs->angle0.quadrants);
+
+        rngs->angle1.startAngle = 720 + (startAngle + spanAngle);
+        rngs->angle1.endAngle = 360;
+
+        leQueryArcQuadrants(rngs->angle1.startAngle,
+                            rngs->angle1.endAngle,
+                            &rngs->angle1.quadrants);
     }
     else if((startAngle > 0) && (startAngle + spanAngle > 360))
     {
-        ranges.angleCount = 2;
+        rngs->angleCount = 2;
 
-        ranges.angle0.startAngle = 0;
-        ranges.angle0.endAngle = (startAngle + spanAngle) - 360;
-        ranges.angle0.quadrants = leQueryArcQuadrants(ranges.angle0.startAngle, ranges.angle0.endAngle);
+        rngs->angle0.startAngle = 0;
+        rngs->angle0.endAngle = (startAngle + spanAngle) - 360;
 
-        ranges.angle1.startAngle = startAngle;
-        ranges.angle1.endAngle = 360;
-        ranges.angle1.quadrants = leQueryArcQuadrants(ranges.angle1.startAngle, ranges.angle1.endAngle);
+        leQueryArcQuadrants(rngs->angle0.startAngle,
+                            rngs->angle0.endAngle,
+                            &rngs->angle0.quadrants);
+
+        rngs->angle1.startAngle = startAngle;
+        rngs->angle1.endAngle = 360;
+
+        leQueryArcQuadrants(rngs->angle1.startAngle,
+                            rngs->angle1.endAngle,
+                            &rngs->angle1.quadrants);
     }
     else if((startAngle == 0) && spanAngle < 0)
     {
-        ranges.angleCount = 1;
+        rngs->angleCount = 1;
 
-        ranges.angle0.startAngle = 360 + spanAngle;
-        ranges.angle0.endAngle = 360;
-        ranges.angle0.quadrants = leQueryArcQuadrants(ranges.angle0.startAngle, ranges.angle0.endAngle);
+        rngs->angle0.startAngle = 360 + spanAngle;
+        rngs->angle0.endAngle = 360;
+
+        leQueryArcQuadrants(rngs->angle0.startAngle,
+                            rngs->angle0.endAngle,
+                            &rngs->angle0.quadrants);
     }
     else
     {
-        ranges.angleCount = 1;
+        rngs->angleCount = 1;
 
         if(startAngle < 0 && spanAngle > 0)
         {
@@ -699,12 +719,13 @@ leResolvedAngleRanges leResolveAngles(int32_t startAngle,
             spanAngle *= -1;
         }
 
-        ranges.angle0.startAngle = startAngle;
-        ranges.angle0.endAngle = startAngle + spanAngle;
-        ranges.angle0.quadrants = leQueryArcQuadrants(ranges.angle0.startAngle, ranges.angle0.endAngle);
-    }
+        rngs->angle0.startAngle = startAngle;
+        rngs->angle0.endAngle = startAngle + spanAngle;
 
-    return ranges;
+        leQueryArcQuadrants(rngs->angle0.startAngle,
+                            rngs->angle0.endAngle,
+                            &rngs->angle0.quadrants);
+    }
 }
 
 float leRound(float flt)

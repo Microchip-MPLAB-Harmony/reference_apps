@@ -28,7 +28,7 @@ leLabelWidget* Game_Level2_Game_Won_level2;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_Game_Level2()
+leResult screenInit_Game_Level2(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -38,7 +38,7 @@ leResult screenInit_Game_Level2()
     return LE_SUCCESS;
 }
 
-leResult screenShow_Game_Level2()
+leResult screenShow_Game_Level2(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
@@ -227,11 +227,11 @@ leResult screenShow_Game_Level2()
     return LE_SUCCESS;
 }
 
-void screenUpdate_Game_Level2()
+void screenUpdate_Game_Level2(void)
 {
 }
 
-void screenHide_Game_Level2()
+void screenHide_Game_Level2(void)
 {
 
     leRemoveRootWidget(root0, 0);
@@ -264,7 +264,7 @@ void screenHide_Game_Level2()
     showing = LE_FALSE;
 }
 
-void screenDestroy_Game_Level2()
+void screenDestroy_Game_Level2(void)
 {
     if(initialized == LE_FALSE)
         return;

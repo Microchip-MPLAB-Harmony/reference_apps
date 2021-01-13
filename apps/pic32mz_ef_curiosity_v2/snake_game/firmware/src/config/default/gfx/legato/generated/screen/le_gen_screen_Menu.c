@@ -13,7 +13,7 @@ leLabelWidget* Menu_LabelWidget1;
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
-leResult screenInit_Menu()
+leResult screenInit_Menu(void)
 {
     if(initialized == LE_TRUE)
         return LE_FAILURE;
@@ -23,7 +23,7 @@ leResult screenInit_Menu()
     return LE_SUCCESS;
 }
 
-leResult screenShow_Menu()
+leResult screenShow_Menu(void)
 {
     if(showing == LE_TRUE)
         return LE_FAILURE;
@@ -45,7 +45,7 @@ leResult screenShow_Menu()
     Menu_Level1_label = leLabelWidget_New();
     Menu_Level1_label->fn->setPosition(Menu_Level1_label, 239, 165);
     Menu_Level1_label->fn->setSize(Menu_Level1_label, 285, 72);
-    Menu_Level1_label->fn->setScheme(Menu_Level1_label, &Level_label_scheme);
+    Menu_Level1_label->fn->setScheme(Menu_Level1_label, &Unselected_Level_label_scheme);
     Menu_Level1_label->fn->setBorderType(Menu_Level1_label, LE_WIDGET_BORDER_BEVEL);
     Menu_Level1_label->fn->setHAlignment(Menu_Level1_label, LE_HALIGN_CENTER);
     Menu_Level1_label->fn->setVAlignment(Menu_Level1_label, LE_VALIGN_TOP);
@@ -55,7 +55,7 @@ leResult screenShow_Menu()
     Menu_Level2_label = leLabelWidget_New();
     Menu_Level2_label->fn->setPosition(Menu_Level2_label, 239, 277);
     Menu_Level2_label->fn->setSize(Menu_Level2_label, 285, 72);
-    Menu_Level2_label->fn->setScheme(Menu_Level2_label, &Level_label_scheme);
+    Menu_Level2_label->fn->setScheme(Menu_Level2_label, &Unselected_Level_label_scheme);
     Menu_Level2_label->fn->setBorderType(Menu_Level2_label, LE_WIDGET_BORDER_BEVEL);
     Menu_Level2_label->fn->setHAlignment(Menu_Level2_label, LE_HALIGN_CENTER);
     Menu_Level2_label->fn->setVAlignment(Menu_Level2_label, LE_VALIGN_TOP);
@@ -93,11 +93,11 @@ leResult screenShow_Menu()
     return LE_SUCCESS;
 }
 
-void screenUpdate_Menu()
+void screenUpdate_Menu(void)
 {
 }
 
-void screenHide_Menu()
+void screenHide_Menu(void)
 {
 
     leRemoveRootWidget(root0, 0);
@@ -115,7 +115,7 @@ void screenHide_Menu()
     showing = LE_FALSE;
 }
 
-void screenDestroy_Menu()
+void screenDestroy_Menu(void)
 {
     if(initialized == LE_FALSE)
         return;

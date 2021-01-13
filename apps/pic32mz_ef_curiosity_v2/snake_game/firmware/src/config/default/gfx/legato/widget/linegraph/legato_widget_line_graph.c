@@ -48,12 +48,13 @@
  
 void _leLineGraphWidget_GetGraphRect(const leLineGraphWidget* graph, leRect* graphRect);
 
-lePoint _leLineGraphWidget_GetOriginPoint(const leLineGraphWidget* _this);
+void _leLineGraphWidget_GetOriginPoint(const leLineGraphWidget* _this, lePoint* pnt);
 
-static lePoint getValuePoint(const leLineGraphWidget* _this,
-                             uint32_t seriesID,
-                             uint32_t categoryIndex,
-                             lePoint originPoint);
+static void getValuePoint(const leLineGraphWidget* _this,
+                          uint32_t seriesID,
+                          uint32_t categoryIndex,
+                          lePoint originPoint,
+                          lePoint* pnt);
 
 static
 #if LE_DYNAMIC_VTABLES == 0
@@ -142,9 +143,10 @@ leLineGraphWidget* leLineGraphWidget_New()
     return graph;
 }
 
-static leRect getValueDamagedRect(const leLineGraphWidget* graph,
-                                  uint32_t seriesID,
-                                  uint32_t categoryID)
+static void getValueDamagedRect(const leLineGraphWidget* graph,
+                                uint32_t seriesID,
+                                uint32_t categoryID,
+                                leRect* res)
 {
     
     leRect damagedRect;
@@ -156,7 +158,7 @@ static leRect getValueDamagedRect(const leLineGraphWidget* graph,
     {
         leRect widgetRect;
     
-        widgetRect = graph->fn->rectToScreen(graph);
+        graph->fn->rectToScreen(graph, &widgetRect);
         
         damagedRect.height = widgetRect.height;
         damagedRect.y = widgetRect.y;
@@ -182,9 +184,9 @@ static leRect getValueDamagedRect(const leLineGraphWidget* graph,
         leRect valueRect;
         leLineGraphDataSeries* series;
         
-        originPoint = _leLineGraphWidget_GetOriginPoint(graph);
+        _leLineGraphWidget_GetOriginPoint(graph, &originPoint);
         
-        valuePoint = getValuePoint(graph, seriesID, categoryID, originPoint);
+        getValuePoint(graph, seriesID, categoryID, originPoint, &valuePoint);
         
         series = leArray_Get(&graph->dataSeries, seriesID);
         
@@ -199,28 +201,30 @@ static leRect getValueDamagedRect(const leLineGraphWidget* graph,
             //Get point from previous category
             if(categoryID > 0)
             {
-                valuePoint = getValuePoint(graph, seriesID, categoryID - 1, originPoint);
+                getValuePoint(graph, seriesID, categoryID - 1, originPoint, &valuePoint);
+
                 valueRect.x = valuePoint.x - (series->pointSize/2 + 2);
                 valueRect.y = valuePoint.y - (series->pointSize/2 + 2);
                 valueRect.height = valueRect.width = series->pointSize + 4;
                     
-                damagedRect = leRectCombine(&damagedRect, &valueRect);
+                leRectCombine(&damagedRect, &valueRect, &damagedRect);
             }
             
             //Get point from next category
             if(categoryID + 1 < graph->categories.size)
             {
-                valuePoint = getValuePoint(graph, seriesID, categoryID + 1, originPoint);
+                getValuePoint(graph, seriesID, categoryID + 1, originPoint, &valuePoint);
+
                 valueRect.x = valuePoint.x - series->pointSize/2 + 2;
                 valueRect.y = valuePoint.y - series->pointSize/2 + 2;
                 valueRect.height = valueRect.width = series->pointSize + 4;
 
-                damagedRect = leRectCombine(&damagedRect, &valueRect);
+                leRectCombine(&damagedRect, &valueRect, &damagedRect);
             }
         }
     }
 
-    return damagedRect;
+    *res = damagedRect;
 }
 
 static uint32_t getTickLength(const leLineGraphWidget* _this)
@@ -733,17 +737,19 @@ static leResult setDataInSeries(leLineGraphWidget* _this,
     
     data = leArray_Get(&series->data, index);
     
-    prevDamagedRect = getValueDamagedRect(_this,
-                                          seriesID,
-                                          index);
+    getValueDamagedRect(_this,
+                        seriesID,
+                        index,
+                        &prevDamagedRect);
     
     *data = value;
     
-    damagedRect = getValueDamagedRect(_this,
-                                      seriesID,
-                                      index);
+    getValueDamagedRect(_this,
+                        seriesID,
+                        index,
+                        &damagedRect);
     
-    damagedRect = leRectCombine(&prevDamagedRect, &damagedRect);
+    leRectCombine(&prevDamagedRect, &damagedRect, &damagedRect);
 
     _this->fn->_damageArea(_this, &damagedRect);
     
@@ -1139,7 +1145,8 @@ static leResult setCategoryAxisTicksPosition(leLineGraphWidget* _this,
     return LE_SUCCESS;      
 }
 
-lePoint _leLineGraphWidget_GetOriginPoint(const leLineGraphWidget* _this)
+void _leLineGraphWidget_GetOriginPoint(const leLineGraphWidget* _this,
+                                       lePoint* pnt)
 {
     lePoint originPoint = {0};
     leRect graphRect = {0};
@@ -1166,13 +1173,14 @@ lePoint _leLineGraphWidget_GetOriginPoint(const leLineGraphWidget* _this)
         originPoint.y = graphRect.y;
     }
     
-    return originPoint;
+    *pnt = originPoint;
 }
 
-static lePoint getValuePoint(const leLineGraphWidget* _this,
-                             uint32_t seriesID,
-                             uint32_t categoryIndex,
-                             lePoint originPoint)
+static void getValuePoint(const leLineGraphWidget* _this,
+                          uint32_t seriesID,
+                          uint32_t categoryIndex,
+                          lePoint originPoint,
+                          lePoint* pnt)
 {
     lePoint valuePoint = {0};
     leRect graphRect = {0};
@@ -1184,6 +1192,7 @@ static lePoint getValuePoint(const leLineGraphWidget* _this,
     int32_t stackedNegValue;
     float pixelsPerUnit;
     unsigned int i;
+    void* val;
     
     LE_ASSERT_THIS();
     
@@ -1217,8 +1226,9 @@ static lePoint getValuePoint(const leLineGraphWidget* _this,
             
             if(series == NULL)
                 break;
-            
-            value = (int32_t)leArray_Get(&series->data, categoryIndex);
+
+            val = leArray_Get(&series->data, categoryIndex);
+            value = (int32_t)(val);
             
             //if(valuePtr != NULL)
             //{
@@ -1240,9 +1250,14 @@ static lePoint getValuePoint(const leLineGraphWidget* _this,
         series = leArray_Get(&_this->dataSeries, seriesID);
         
         if(series == NULL)
-            return originPoint;
-            
-        value = (int32_t)leArray_Get(&series->data, categoryIndex);
+        {
+            *pnt = originPoint;
+
+            return;
+        }
+
+        val = leArray_Get(&series->data, categoryIndex);
+        value = (int32_t)val;
         
         //if(valuePtr != NULL)
         //{
@@ -1270,8 +1285,8 @@ static lePoint getValuePoint(const leLineGraphWidget* _this,
     {
         valuePoint.y = originPoint.y + (int32_t) ((float)(originValue - value) * pixelsPerUnit);
     }
-    
-    return valuePoint;
+
+    *pnt = valuePoint;
 }
 
 static void handleLanguageChangeEvent(leLineGraphWidget* _this)

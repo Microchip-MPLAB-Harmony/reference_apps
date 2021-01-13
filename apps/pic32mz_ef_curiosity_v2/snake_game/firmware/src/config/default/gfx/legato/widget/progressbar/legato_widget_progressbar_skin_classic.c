@@ -60,7 +60,7 @@ void _leProgressBarWidget_GetBarRect(const leProgressBarWidget* bar,
     int32_t i;
     uint32_t p1, p2;
     
-    rect = bar->fn->rectToScreen(bar);
+    bar->fn->rectToScreen(bar, &rect);
     
     if(val2 < val1)
     {

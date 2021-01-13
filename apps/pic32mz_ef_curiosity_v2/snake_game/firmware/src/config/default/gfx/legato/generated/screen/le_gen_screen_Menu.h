@@ -22,11 +22,11 @@ extern leLabelWidget* Menu_LabelWidget1;
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
-leResult screenInit_Menu(); // called when Legato is initialized
-leResult screenShow_Menu(); // called when screen is shown
-void screenHide_Menu(); // called when screen is hidden
-void screenDestroy_Menu(); // called when Legato is destroyed
-void screenUpdate_Menu(); // called when Legato is updating
+leResult screenInit_Menu(void); // called when Legato is initialized
+leResult screenShow_Menu(void); // called when screen is shown
+void screenHide_Menu(void); // called when screen is hidden
+void screenDestroy_Menu(void); // called when Legato is destroyed
+void screenUpdate_Menu(void); // called when Legato is updating
 
 leWidget* screenGetRoot_Menu(uint32_t lyrIdx); // gets a root widget for this screen
 

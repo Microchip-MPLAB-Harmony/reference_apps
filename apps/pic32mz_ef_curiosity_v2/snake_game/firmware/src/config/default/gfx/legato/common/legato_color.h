@@ -317,7 +317,7 @@ typedef enum leColorName
  * @paramname is the name to query
  * @return the color value of the given name in the specified format.
  */
-LIB_EXPORT leColor leColorValue(leColorMode mode, leColorName name);
+leColor leColorValue(leColorMode mode, leColorName name);
 
 // *****************************************************************************
 /* Function:
@@ -352,7 +352,7 @@ LIB_EXPORT leColor leColorValue(leColorMode mode, leColorName name);
  * @param name is the name to query
  * @return the red color channel
  */
-LIB_EXPORT uint32_t leColorChannelRed(leColor clr, leColorMode mode);
+uint32_t leColorChannelRed(leColor clr, leColorMode mode);
 
 // *****************************************************************************
 /* Function:
@@ -387,7 +387,7 @@ LIB_EXPORT uint32_t leColorChannelRed(leColor clr, leColorMode mode);
  * @parammode is the format.
  * @return the green color channel.
  */
-LIB_EXPORT uint32_t leColorChannelGreen(leColor clr, leColorMode mode);
+uint32_t leColorChannelGreen(leColor clr, leColorMode mode);
 
 // *****************************************************************************
 /* Function:
@@ -422,7 +422,7 @@ LIB_EXPORT uint32_t leColorChannelGreen(leColor clr, leColorMode mode);
  * @param name is the name to query.
  * @return the blue color channel.
  */
-LIB_EXPORT uint32_t leColorChannelBlue(leColor clr, leColorMode mode);
+uint32_t leColorChannelBlue(leColor clr, leColorMode mode);
 
 // *****************************************************************************
 /* Function:
@@ -457,7 +457,7 @@ LIB_EXPORT uint32_t leColorChannelBlue(leColor clr, leColorMode mode);
  * @param mode is the source color mode
  * @return the alpha color channel.
  */
-LIB_EXPORT uint32_t leColorChannelAlpha(leColor clr, leColorMode mode);
+uint32_t leColorChannelAlpha(leColor clr, leColorMode mode);
 
 // *****************************************************************************
 /* Function:
@@ -496,9 +496,9 @@ LIB_EXPORT uint32_t leColorChannelAlpha(leColor clr, leColorMode mode);
  * @param color is the color to convert.
  * @return the result color.
  */
-LIB_EXPORT leColor leColorConvert(leColorMode mode_in,
-                                  leColorMode mode_out,
-                                  leColor color);
+leColor leColorConvert(leColorMode mode_in,
+                       leColorMode mode_out,
+                       leColor color);
 
 // *****************************************************************************
 /* Function:
@@ -533,7 +533,7 @@ LIB_EXPORT leColor leColorConvert(leColorMode mode_in,
  * @param back is the background color
  * @return the blended result color.
  */
-LIB_EXPORT leColor leColorBlend_RGBA_8888(leColor fore, leColor back);
+leColor leColorBlend_RGBA_8888(leColor fore, leColor back);
 
 // *****************************************************************************
 /* Function:
@@ -568,7 +568,7 @@ LIB_EXPORT leColor leColorBlend_RGBA_8888(leColor fore, leColor back);
  * @param back is the background color
  * @return the blended result color.
  */
-LIB_EXPORT leColor leColorBlend_ARGB_8888(leColor fore, leColor back);
+leColor leColorBlend_ARGB_8888(leColor fore, leColor back);
 
 // *****************************************************************************
 /* Function:
@@ -611,10 +611,10 @@ LIB_EXPORT leColor leColorBlend_ARGB_8888(leColor fore, leColor back);
  * @param back is the background color
  * @return the result color.
  */
-LIB_EXPORT leColor leColorLerp(leColor l,
-                               leColor r,
-                               uint32_t percent,
-                               leColorMode mode);
+leColor leColorLerp(leColor l,
+                    leColor r,
+                    uint32_t percent,
+                    leColorMode mode);
                                    
 // *****************************************************************************
 /* Function:
@@ -665,13 +665,13 @@ LIB_EXPORT leColor leColorLerp(leColor l,
  * @param mode is the input color mode.
  * @return the result color.
  */
-LIB_EXPORT leColor leColorBilerp(leColor c00,
-                                 leColor c01,
-                                 leColor c10,
-                                 leColor c11,
-                                 uint32_t xper,
-                                 uint32_t yper,
-                                 leColorMode mode);                                   
+leColor leColorBilerp(leColor c00,
+                      leColor c01,
+                      leColor c10,
+                      leColor c11,
+                      uint32_t xper,
+                      uint32_t yper,
+                      leColorMode mode);
 
 leColor leColorSwap(leColor clr,
                     leColorMode mode);

@@ -1,0 +1,971 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: le_gfx_driver_external}
+children:
+- type: Symbols
+  children:
+  - type: Combo
+    attributes: {id: BaseDriverType}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: SSD1963}
+  - type: Hex
+    attributes: {id: Command0}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '226'}
+  - type: String
+    attributes: {id: Command0Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Set PLL Config}
+  - type: Integer
+    attributes: {id: Command0Delay}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '10'}
+  - type: Hex
+    attributes: {id: Command0Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '29'}
+  - type: Hex
+    attributes: {id: Command0Parm1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+  - type: Hex
+    attributes: {id: Command0Parm2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '84'}
+  - type: Integer
+    attributes: {id: Command0ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '3'}
+  - type: Hex
+    attributes: {id: Command1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '224'}
+  - type: Hex
+    attributes: {id: Command10}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '190'}
+  - type: String
+    attributes: {id: Command10Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Turn on backlight}
+  - type: Hex
+    attributes: {id: Command10Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '6'}
+  - type: Hex
+    attributes: {id: Command10Parm1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '255'}
+  - type: Hex
+    attributes: {id: Command10Parm2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: Hex
+    attributes: {id: Command10Parm3}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command10Parm4}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Integer
+    attributes: {id: Command10ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '5'}
+  - type: Hex
+    attributes: {id: Command11}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '41'}
+  - type: String
+    attributes: {id: Command11Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Turn on the display}
+  - type: Integer
+    attributes: {id: Command11ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: String
+    attributes: {id: Command1Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Enable PLL}
+  - type: Integer
+    attributes: {id: Command1Delay}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '10'}
+  - type: Hex
+    attributes: {id: Command1Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: Integer
+    attributes: {id: Command1ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: Hex
+    attributes: {id: Command2}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '224'}
+  - type: String
+    attributes: {id: Command2Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Use PLL as System Clock}
+  - type: Integer
+    attributes: {id: Command2Delay}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '10'}
+  - type: Hex
+    attributes: {id: Command2Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '3'}
+  - type: Integer
+    attributes: {id: Command2ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: Hex
+    attributes: {id: Command3}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: String
+    attributes: {id: Command3Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Software Reset}
+  - type: Integer
+    attributes: {id: Command3Delay}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '10'}
+  - type: Integer
+    attributes: {id: Command3ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command4}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '230'}
+  - type: String
+    attributes: {id: Command4Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Set Pixel Clock to 15MHz}
+      - type: User
+        attributes: {value: Set Pixel Clock to 30MHz}
+  - type: Hex
+    attributes: {id: Command4Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+      - type: User
+        attributes: {value: '4'}
+  - type: Hex
+    attributes: {id: Command4Parm1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '102'}
+      - type: User
+        attributes: {value: '204'}
+  - type: Hex
+    attributes: {id: Command4Parm2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '100'}
+      - type: User
+        attributes: {value: '206'}
+  - type: Integer
+    attributes: {id: Command4ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '3'}
+  - type: Hex
+    attributes: {id: Command5}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '176'}
+  - type: String
+    attributes: {id: Command5Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: 'Set Panel Mode, 480x272,
+            RGB'}
+      - type: User
+        attributes: {value: 'Set Panel Mode, 800x480, RGB'}
+  - type: Hex
+    attributes: {id: Command5Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '32'}
+  - type: Hex
+    attributes: {id: Command5Parm1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command5Parm2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+      - type: User
+        attributes: {value: '3'}
+  - type: Hex
+    attributes: {id: Command5Parm3}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '223'}
+      - type: User
+        attributes: {value: '31'}
+  - type: Hex
+    attributes: {id: Command5Parm4}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: Hex
+    attributes: {id: Command5Parm5}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '15'}
+      - type: User
+        attributes: {value: '223'}
+  - type: Hex
+    attributes: {id: Command5Parm6}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Integer
+    attributes: {id: Command5ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '7'}
+  - type: Hex
+    attributes: {id: Command6}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '180'}
+  - type: String
+    attributes: {id: Command6Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Set Horizontal Period}
+  - type: Hex
+    attributes: {id: Command6Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '2'}
+      - type: User
+        attributes: {value: '3'}
+  - type: Hex
+    attributes: {id: Command6Parm1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '12'}
+      - type: User
+        attributes: {value: '159'}
+  - type: Hex
+    attributes: {id: Command6Parm2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command6Parm3}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '42'}
+      - type: User
+        attributes: {value: '87'}
+  - type: Hex
+    attributes: {id: Command6Parm4}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '40'}
+      - type: User
+        attributes: {value: '47'}
+  - type: Hex
+    attributes: {id: Command6Parm5}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command6Parm6}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command6Parm7}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Integer
+    attributes: {id: Command6ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '8'}
+  - type: Hex
+    attributes: {id: Command7}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '182'}
+  - type: String
+    attributes: {id: Command7Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Set Vertical Period}
+  - type: Hex
+    attributes: {id: Command7Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+      - type: User
+        attributes: {value: '2'}
+  - type: Hex
+    attributes: {id: Command7Parm1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '29'}
+      - type: User
+        attributes: {value: '46'}
+  - type: Hex
+    attributes: {id: Command7Parm2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command7Parm3}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '11'}
+      - type: User
+        attributes: {value: '38'}
+  - type: Hex
+    attributes: {id: Command7Parm4}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '9'}
+  - type: Hex
+    attributes: {id: Command7Parm5}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command7Parm6}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Hex
+    attributes: {id: Command7Parm7}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '0'}
+  - type: Integer
+    attributes: {id: Command7ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '8'}
+  - type: Hex
+    attributes: {id: Command8}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '58'}
+  - type: String
+    attributes: {id: Command8Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Set Pixel Format RGB565 (16bpp)}
+  - type: Hex
+    attributes: {id: Command8Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '85'}
+  - type: Integer
+    attributes: {id: Command8ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: Hex
+    attributes: {id: Command9}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '240'}
+  - type: String
+    attributes: {id: Command9Comment}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: Set Data Interface}
+  - type: Hex
+    attributes: {id: Command9Parm0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '3'}
+  - type: Integer
+    attributes: {id: Command9ParmsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '1'}
+  - type: String
+    attributes: {id: ControllerName}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: SSD1963}
+  - type: Integer
+    attributes: {id: DisplayHeight}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '480'}
+  - type: Integer
+    attributes: {id: DisplayWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '800'}
+  - type: Integer
+    attributes: {id: InitCommandsCount}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '12'}
+  - type: Hex
+    attributes: {id: MemoryWriteCommand}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '44'}
+  - type: Integer
+    attributes: {id: PostResetDelay}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '30'}
+  - type: Hex
+    attributes: {id: SetXAddressCommand}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '42'}
+  - type: Hex
+    attributes: {id: SetYAddressCommand}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_external, value: '43'}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: Graphics Display}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_disp_pdatm5000_800x480}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_display}
+  - type: DirectDependency
+    attributes: {id: Parallel Display Interface}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: le_gfx_intf_parallel_ebi}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: le_gfx_intf_parallel_ebi}
+  - type: DirectCapability
+    attributes: {id: gfx_driver_external}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_legato}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_driver}
+- type: ElementPosition
+  attributes: {x: '430', y: '280', id: le_gfx_driver_external}

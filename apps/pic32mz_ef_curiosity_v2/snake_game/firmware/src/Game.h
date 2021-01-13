@@ -160,8 +160,6 @@ extern bool game_update_flag;
 
 extern bool splash_screen_time_update;
 
-extern leDynamicString snake_size_str;
-
 extern struct Hearts hearts;
 
 extern SYS_TIME_HANDLE sys_timer_menu_selection;

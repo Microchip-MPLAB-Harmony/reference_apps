@@ -50,7 +50,8 @@ bool game_update_flag;
 
 bool splash_screen_time_update;
 
-leDynamicString snake_size_str;
+leFixedString startStr;
+static leChar currTimeStr[15];
 
 struct Hearts hearts;
 
@@ -59,17 +60,12 @@ SYS_TIME_HANDLE sys_timer_menu_selection;
 
 void Game_SelectLabelLevel(leLabelWidget* label)
 {
-  static leScheme scheme;
-    scheme = *label->fn->getScheme(label);
-    scheme.tables[leRenderer_CurrentColorMode()].colors.highlightLight = SNAKE_COLOR_YELLOW;
-    scheme.tables[leRenderer_CurrentColorMode()].colors.shadow = SNAKE_COLOR_YELLOW;
-    label->fn->setScheme(label,&scheme);
-
+    label->fn->setScheme(label,&Selected_Level_label_scheme);
 }
 
 void Game_UnselectLabelLevel(leLabelWidget* label)
 {
-  label->fn->setScheme(label,&Level_label_scheme);
+  label->fn->setScheme(label,&Unselected_Level_label_scheme);
 }
 
 void Game_LevelSelectionTask()
@@ -272,20 +268,12 @@ void Game_HeartIconsInit()
 
 void Game_LabelWrite(leLabelWidget* label_wgt,unsigned int data)
 {
-    char data_char[10];
+    static char currTimeStr[15];
     
-    sprintf(data_char,"%u/%d",data,SNAKE_MAX_SIZE);
-   
-    leDynamicString_Constructor(&snake_size_str);
-    
-    snake_size_str.fn->setFont(&snake_size_str, leStringTable_GetStringFont(&stringTable, stringID_Snake_Size_text, 0));
+    sprintf( currTimeStr, "%u/%d", data, SNAKE_MAX_SIZE);
 
-    //convert the character string to leFixedString object
-    snake_size_str.fn->setFromCStr(&snake_size_str,data_char);
-       
-    //Set ClockLabel text to object
-    label_wgt->fn->setString(label_wgt, (leString*)&snake_size_str);
-    
+    startStr.fn->setFromCStr(&startStr, currTimeStr);
+    label_wgt->fn->setString(label_wgt, (leString*)&startStr);
 }
 
 void Game_Init()
@@ -293,10 +281,16 @@ void Game_Init()
     SYS_TIME_TimerStop(sys_timer_menu_selection);
     
     Game_ScreenInit();
-    
+
+    leFixedString_Constructor(&startStr, currTimeStr, 10);
+    startStr.fn->setFont(&startStr, leStringTable_GetStringFont(leGetState()->stringTable,
+                                                              string_Snake_Size_text.index,
+                                                              0));
+
     Snake_Init();
 
     SYS_TIME_TimerStart(sys_timer_game_update_handle);
+
 }
 
 
@@ -312,9 +306,6 @@ void Game_Task()
         {
             //stop the timer callback that take care of the "game_update_flag"
             SYS_TIME_TimerStop(sys_timer_game_update_handle);
-            
-            //destroy the "snake_size_str" dynamic string object to prevent a reset if the Constructor for this object is called again
-            snake_size_str.fn->destructor(&snake_size_str);
             
             //destroy all the widgets that were dynamic allocating the snake and the food to avoid resets when calling again the malloc creating again new widgets for the snake
             Snake_Destroy();

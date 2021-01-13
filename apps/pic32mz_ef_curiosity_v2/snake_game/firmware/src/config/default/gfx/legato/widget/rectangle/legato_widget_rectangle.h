@@ -102,7 +102,7 @@ typedef struct leRectangleWidget
  * @endcode
  * @return a widget object pointer.
  */
-LIB_EXPORT leRectangleWidget* leRectangleWidget_New();
+leRectangleWidget* leRectangleWidget_New(void);
 
 /**
  * @brief Initialize widget.

@@ -64,9 +64,9 @@
  * @param size is the size of the destination string in leChar
  * @return returns the number of codepoints copied.
  */
-LIB_EXPORT uint32_t leStringUtils_FromCStr(const char* str,
-                                           leChar* buf,
-                                           uint32_t size);
+uint32_t leStringUtils_FromCStr(const char* str,
+                                leChar* buf,
+                                uint32_t size);
 
 // *****************************************************************************
 /**
@@ -85,10 +85,10 @@ LIB_EXPORT uint32_t leStringUtils_FromCStr(const char* str,
  * @param buf is an integer.
  * @return the number of chars copied
  */
-LIB_EXPORT uint32_t leStringUtils_ToCStr(const leChar* str,
-                                         uint32_t strSize,
-                                         char* buf,
-                                         uint32_t bufSize);
+uint32_t leStringUtils_ToCStr(const leChar* str,
+                              uint32_t strSize,
+                              char* buf,
+                              uint32_t bufSize);
 
 // *****************************************************************************
 /**
@@ -103,10 +103,10 @@ LIB_EXPORT uint32_t leStringUtils_ToCStr(const leChar* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetRect(const leChar* str,
-                                          uint32_t size,
-                                          const leFont* font,
-                                          leRect* rect);
+leResult leStringUtils_GetRect(const leChar* str,
+                               uint32_t size,
+                               const leFont* font,
+                               leRect* rect);
 
 // *****************************************************************************
 /**
@@ -123,9 +123,9 @@ LIB_EXPORT leResult leStringUtils_GetRect(const leChar* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetRectCStr(const char* str,
-                                              const leFont* font,
-                                              leRect* rect);
+leResult leStringUtils_GetRectCStr(const char* str,
+                                   const leFont* font,
+                                   leRect* rect);
 
 // *****************************************************************************
 /**
@@ -141,8 +141,8 @@ LIB_EXPORT leResult leStringUtils_GetRectCStr(const char* str,
  * @param size is an integer.
  * @return the number of lines in the string.
  */
-LIB_EXPORT uint32_t leStringUtils_GetLineCount(const leChar* str,
-                                               uint32_t size);
+uint32_t leStringUtils_GetLineCount(const leChar* str,
+                                    uint32_t size);
 
 // *****************************************************************************
 /**
@@ -155,7 +155,7 @@ LIB_EXPORT uint32_t leStringUtils_GetLineCount(const leChar* str,
  * @param str is an integer.
  * @return the number of lines in the string.
  */
-LIB_EXPORT uint32_t leStringUtils_GetLineCountCStr(const char* str);
+uint32_t leStringUtils_GetLineCountCStr(const char* str);
 
 // *****************************************************************************
 /**
@@ -175,11 +175,11 @@ LIB_EXPORT uint32_t leStringUtils_GetLineCountCStr(const char* str);
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetLineIndices(const leChar* str,
-                                                 uint32_t size,
-                                                 uint32_t line,
-                                                 uint32_t* start,
-                                                 uint32_t* end);
+leResult leStringUtils_GetLineIndices(const leChar* str,
+                                      uint32_t size,
+                                      uint32_t line,
+                                      uint32_t* start,
+                                      uint32_t* end);
 
 // *****************************************************************************
 /* Function:
@@ -215,10 +215,10 @@ LIB_EXPORT leResult leStringUtils_GetLineIndices(const leChar* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetLineIndicesCStr(const char* str,
-                                                     uint32_t line,
-                                                     uint32_t* start,
-                                                     uint32_t* end);
+leResult leStringUtils_GetLineIndicesCStr(const char* str,
+                                          uint32_t line,
+                                          uint32_t* start,
+                                          uint32_t* end);
 
 // *****************************************************************************
 /* Function:
@@ -256,11 +256,11 @@ LIB_EXPORT leResult leStringUtils_GetLineIndicesCStr(const char* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetLineRect(const leChar* str,
-                                              uint32_t size,
-                                              const leFont* font,
-                                              uint32_t line,
-                                              leRect* rect);
+leResult leStringUtils_GetLineRect(const leChar* str,
+                                   uint32_t size,
+                                   const leFont* font,
+                                   uint32_t line,
+                                   leRect* rect);
 
 // *****************************************************************************
 /* Function:
@@ -297,10 +297,10 @@ LIB_EXPORT leResult leStringUtils_GetLineRect(const leChar* str,
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
 
-LIB_EXPORT leResult leStringUtils_GetLineRectCStr(const char* str,
-                                                  const leFont* font,
-                                                  uint32_t line,
-                                                  leRect* rect);
+leResult leStringUtils_GetLineRectCStr(const char* str,
+                                       const leFont* font,
+                                       uint32_t line,
+                                       leRect* rect);
 
 // *****************************************************************************
 /* Function:
@@ -338,11 +338,11 @@ LIB_EXPORT leResult leStringUtils_GetLineRectCStr(const char* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetCharRect(const leChar* str,
-                                              uint32_t size,
-                                              const leFont* font,
-                                              uint32_t charIdx,
-                                              leRect* rect);
+leResult leStringUtils_GetCharRect(const leChar* str,
+                                   uint32_t size,
+                                   const leFont* font,
+                                   uint32_t charIdx,
+                                   leRect* rect);
 
 // *****************************************************************************
 /* Function:
@@ -378,10 +378,10 @@ LIB_EXPORT leResult leStringUtils_GetCharRect(const leChar* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetCharRectCStr(const char* str,
-                                                  const leFont* font,
-                                                  uint32_t charIdx,
-                                                  leRect* rect);
+leResult leStringUtils_GetCharRectCStr(const char* str,
+                                       const leFont* font,
+                                       uint32_t charIdx,
+                                       leRect* rect);
 
 // *****************************************************************************
 /* Function:
@@ -419,11 +419,11 @@ LIB_EXPORT leResult leStringUtils_GetCharRectCStr(const char* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetCharIndexAtPoint(const leChar* str,
-                                                      uint32_t size,
-                                                      const leFont* font,
-                                                      const lePoint pt,
-                                                      uint32_t* charIdx);
+leResult leStringUtils_GetCharIndexAtPoint(const leChar* str,
+                                           uint32_t size,
+                                           const leFont* font,
+                                           const lePoint pt,
+                                           uint32_t* charIdx);
 
 // *****************************************************************************
 /* Function:
@@ -458,10 +458,10 @@ LIB_EXPORT leResult leStringUtils_GetCharIndexAtPoint(const leChar* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leStringUtils_GetCharIndexAtPointCStr(const char* str,
-                                                          const leFont* font,
-                                                          const lePoint pt,
-                                                          uint32_t* charIdx);
+leResult leStringUtils_GetCharIndexAtPointCStr(const char* str,
+                                               const leFont* font,
+                                               const lePoint pt,
+                                               uint32_t* charIdx);
 
 // *****************************************************************************
 /* Function:
@@ -503,10 +503,10 @@ LIB_EXPORT leResult leStringUtils_GetCharIndexAtPointCStr(const char* str,
  * @param buf is an integer.
  * @return LE_SUCCESS if set, otherwise LE_FAILURE.
  */
-LIB_EXPORT leResult leDecodeCodePoint(uint32_t encoding,
-                                      uint8_t* data,
-                                      uint32_t max,
-                                      uint32_t* codePoint,
-                                      uint32_t* offset);
+leResult leDecodeCodePoint(uint32_t encoding,
+                           uint8_t* data,
+                           uint32_t max,
+                           uint32_t* codePoint,
+                           uint32_t* offset);
 
 #endif /* LE_STRINGUTILS_H */

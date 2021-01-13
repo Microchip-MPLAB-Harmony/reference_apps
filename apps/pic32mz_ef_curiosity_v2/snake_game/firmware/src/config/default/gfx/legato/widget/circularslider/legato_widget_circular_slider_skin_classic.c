@@ -188,12 +188,15 @@ static void drawCircularSlider(leCircularSliderWidget* slider)
     // draw circular button
     if (slider->circleButtonArc.visible == LE_TRUE)
     {
+        lePoint btnPnt;
+
         uint32_t deg = leDegreesFromPercent(slider->value,
                                             slider->spanAngle,
                                             slider->startAngle);
 
-        lePoint btnPnt = lePointOnCircle(slider->radius,
-                                         deg);
+        lePointOnCircle(slider->radius,
+                        deg,
+                        &btnPnt);
 
         btnPnt.y *= -1;
 
