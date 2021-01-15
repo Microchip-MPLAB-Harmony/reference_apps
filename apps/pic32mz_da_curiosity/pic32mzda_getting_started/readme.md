@@ -71,6 +71,8 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
+- Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
+- Set the baud rate to 115200
 - Reset or power cycle the device.
 - An LED (LED1[RGB-RED]) on the Curiosity PIC32MZ DA Development Board toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds.
 - And the LED toggling rate is displayed on the serial terminal.

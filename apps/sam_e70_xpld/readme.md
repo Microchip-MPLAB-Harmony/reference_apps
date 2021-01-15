@@ -16,4 +16,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **SAM E70 Xplained Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME70Q21B)** <a href="https://mplab-discover.microchip.com/v1/offeringtype/com.microchip.ide.project?s0=ATSAME70Q21B" target="_blank"> CLICK HERE </a>
+For more application demos on **SAM E70 Xplained Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME70Q21B)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)

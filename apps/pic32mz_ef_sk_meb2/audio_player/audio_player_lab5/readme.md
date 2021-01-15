@@ -65,12 +65,12 @@ available for purchase from Microchip Direct.
 - [MPLAB Harmony v3 "usb" repository v3.6.1](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.6.1)
 - [MPLAB Harmony v3 "mhc" repo v3.5.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.5.1)
 - [MPLAB Harmony v3 "gfx_aria" repository v3.7.1](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/releases/tag/v3.7.1)
-    - **Note:**
-    - Aria Graphics support from **gfx** v3.9.0 onwards is deprecated and archived in a separate **gfx_aria** v3.7.1 repo.
-    - If you have a **gfx** repo already downloaded,
-        - Move it outside your Harmony download location
-    - Download **gfx_aria** repo (if not done already)
-    - Rename **gfx_aria** to **gfx** repo
+	- **Note:** Aria Graphics support from **gfx** v3.9.0 onwards is deprecated and archived in a separate **gfx_aria** v3.7.1 repo.
+		- If you have a **gfx** repo already downloaded,
+	- Move it outside your Harmony download location
+	- Download **gfx_aria** repo (if not done already)
+	- Rename **gfx_aria** to **gfx** repo
+	- For dependency of Aria Graphics library on other Harmony components Refer Aria Graphics library's [Dependent Components](https://github.com/Microchip-MPLAB-Harmony/gfx_aria/blob/master/release_notes.md)
 - [MPLAB Harmony v3 "touch" repository v3.8.0](https://github.com/Microchip-MPLAB-Harmony/touch/releases/tag/v3.8.0)
 -  MPLAB Harmony Configurator Plugin v3.6.0
 - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide)

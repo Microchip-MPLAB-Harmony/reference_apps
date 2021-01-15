@@ -70,6 +70,8 @@ The pre-built hex file can be programmed by following the below steps.
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
+- Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
+- Set the baud rate to 9600
 - Press the Reset switch on the PIC32CM MC00 Curiosity Pro Development Board.
 - The application prints temperature and light sensor continuously.  
 

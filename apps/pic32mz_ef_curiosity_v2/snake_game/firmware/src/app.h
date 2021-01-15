@@ -57,14 +57,13 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
-#include "config\default\system\time\sys_time.h"
-#include "config\default\bsp\bsp.h"
+#include "config/default/system/time/sys_time.h"
+#include "config/default/bsp/bsp.h"
 #include "gfx/legato/generated/screen/le_gen_screen_Game.h"
 #include "gfx/legato/generated/screen/le_gen_screen_Menu.h"
-#include "config\default\driver\spi\drv_spi.h"
+#include "config/default/driver/spi/drv_spi.h"
 #include "Thumbstick.h"
-#include "config/default/bsp/bsp.h"
-#include "config\default\gfx\legato\widget\legato_widget.h"
+#include "config/default/gfx/legato/widget/legato_widget.h"
 #include "Snake.h"
 #include "Game.h"
 

@@ -43,7 +43,7 @@
 extern "C" {
 #endif
 
-#include "config\default\driver\spi\drv_spi.h"
+#include "config/default/driver/spi/drv_spi.h"
     
     
 #define byte_1                 0b00000110

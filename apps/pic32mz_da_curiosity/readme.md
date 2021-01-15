@@ -17,4 +17,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **Curiosity PIC32MZ DA Development Board** and other Development Boards/Kits having the same part number **(PIC32MZ2064DAR176)** <a href="https://mplab-discover.microchip.com/v1/offeringtype/com.microchip.ide.project?s0=PIC32MZ2064DAR176" target="_blank"> CLICK HERE </a>
+For more application demos on **Curiosity PIC32MZ DA Development Board** and other Development Boards/Kits having the same part number **(PIC32MZ2064DAR176)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)

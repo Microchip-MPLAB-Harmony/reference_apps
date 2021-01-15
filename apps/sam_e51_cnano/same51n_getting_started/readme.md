@@ -70,6 +70,8 @@ The pre-built hex file can be programmed by following the below steps.
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
+- Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
+- Set the baud rate to 115200
 - An LED (LED0) on the SAM E51 Curiosity Nano Evaluation Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds
 - And also, the LED toggling rate is displayed on the serial terminal
 - Press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to change the default periodicity of the timeout to one second

@@ -15,4 +15,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on S
 
 ### More Application Demos
 
-For more application demos on [SAM D21 IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A) and other Development Boards/Kits having the same part number **(ATSAMD21G18A)** <a href="https://mplab-discover.microchip.com/v1/offeringtype/com.microchip.ide.project?s0=ATSAMD21G18A" target="_blank"> CLICK HERE </a>
+For more application demos on [SAM D21 IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A) and other Development Boards/Kits having the same part number **(ATSAMD21G18A)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)

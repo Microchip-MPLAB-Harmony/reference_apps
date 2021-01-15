@@ -27,4 +27,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **SAM D21 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAMD21G17D)** <a href="https://mplab-discover.microchip.com/v1/offeringtype/com.microchip.ide.project?s0=ATSAMD21G17D" target="_blank"> CLICK HERE </a>
+For more application demos on **SAM D21 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAMD21G17D)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
