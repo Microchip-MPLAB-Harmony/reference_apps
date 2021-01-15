@@ -81,7 +81,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Programming/Debugging Application Project:
-- Open the project (pic32cmmc_temp_based_fan_control_oled_c\firmware\pic32cm_mc_cnano.X) in MPLAB X IDE
+- Open the project (pic32cmmc_temp_based_fan_control_oled_c/firmware/pic32cm_mc_cnano.X) in MPLAB X IDE
 - Ensure "PIC32CM MC00 Curiosity Nano" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below

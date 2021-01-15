@@ -58,7 +58,7 @@ nav_order: 4
 - MPLAB Harmony 3 Launcher Plugin v3.6.2  
 - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
 - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
-- **Microchip Bluetooth Data Android App** - Install using "\ble_fitness_tracker\firmware\android_apk\mbd_3_1.apk"  
+- **Microchip Bluetooth Data Android App** - Install using "/ble_fitness_tracker/firmware/android_apk/mbd_3_1.apk"  
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn't seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 

@@ -72,7 +72,7 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project (samd21_getting_started\firmware\drivers_freertos_sam_d21_xpro.X) in MPLAB X IDE
+- Open the project (samd21_getting_started/firmware/drivers_freertos_sam_d21_xpro.X) in MPLAB X IDE
 - Ensure "EDBG" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below

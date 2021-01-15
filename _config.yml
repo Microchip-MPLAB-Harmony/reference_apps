@@ -95,6 +95,11 @@ exclude:
   - "*.css"
   - "*.js"
   - "*.pdf"  
+  - "*.backup"
+  - "*.inc"
+  - "*.idx"
+  - "*.apk"
+  - "*.dump"
   
 # Aux links for the upper right navigation
 aux_links:
