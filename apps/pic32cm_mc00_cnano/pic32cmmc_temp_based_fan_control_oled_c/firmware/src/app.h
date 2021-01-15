@@ -1,3 +1,23 @@
+/*******************************************************************************
+  MPLAB Harmony Application Header File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    app.h
+
+  Summary:
+    This header file provides prototypes and definitions for the application.
+
+  Description:
+    This header file provides function prototypes and data type definitions for
+    the application.  Some of these are required by the system (such as the
+    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
+    internally by the application (such as the "APP_STATES" definition).  Both
+    are defined here for convenience.
+*******************************************************************************/
+// DOM-IGNORE-BEGIN
 /*******************************************************************************************
 * © [2020] Microchip Technology Inc. and its subsidiaries
  
@@ -19,27 +39,7 @@
  * OVERRIDE ANY OTHER PRIOR OR SUBSEQUENT TERMS OR CONDITIONS THAT MIGHT APPLY TO THIS SOFTWARE 
  * AND BY USING THE SOFTWARE, YOU AGREE TO THESE TERMS. 
 *******************************************************************************************/
-
-
-/*******************************************************************************
-  MPLAB Harmony Application Header File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    app.h
-
-  Summary:
-    This header file provides prototypes and definitions for the application.
-
-  Description:
-    This header file provides function prototypes and data type definitions for
-    the application.  Some of these are required by the system (such as the
-    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "APP_STATES" definition).  Both
-    are defined here for convenience.
-*******************************************************************************/
+// DOM-IGNORE-END
 
 #ifndef _APP_H
 #define _APP_H

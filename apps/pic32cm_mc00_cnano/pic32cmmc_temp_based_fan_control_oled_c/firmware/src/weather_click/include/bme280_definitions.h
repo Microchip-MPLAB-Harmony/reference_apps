@@ -14,7 +14,7 @@
     This header file provides register definitions for the BME280 sensor. Please
     refer to BME280 sensor data-sheet for more information.
 *******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************************
 * © [2020] Microchip Technology Inc. and its subsidiaries
  
@@ -36,7 +36,7 @@
  * OVERRIDE ANY OTHER PRIOR OR SUBSEQUENT TERMS OR CONDITIONS THAT MIGHT APPLY TO THIS SOFTWARE 
  * AND BY USING THE SOFTWARE, YOU AGREE TO THESE TERMS. 
 *******************************************************************************************/
-
+// DOM-IGNORE-END
 
 #ifndef BME280_DEFINITIONS_H
 #define	BME280_DEFINITIONS_H

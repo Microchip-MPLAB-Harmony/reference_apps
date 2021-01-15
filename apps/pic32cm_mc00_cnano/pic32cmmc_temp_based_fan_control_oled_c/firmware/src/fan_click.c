@@ -1,33 +1,41 @@
-/**
- * \file
- * \brief  Fan Click Driver (EMC2301)
- *
- * \copyright (c) 2017 Microchip Technology Inc. and its subsidiaries.
- *            You may use this software and any derivatives exclusively with
- *            Microchip products.
- *
- * \page License
- * 
- * (c) 2017 Microchip Technology Inc. and its subsidiaries. You may use this
- * software and any derivatives exclusively with Microchip products.
- * 
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
- * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
- * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
- * PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
- * WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
- * 
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
- * INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
- * WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
- * BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
- * FULLEST EXTENT ALLOWED BY LAW, MICROCHIPS TOTAL LIABILITY ON ALL CLAIMS IN
- * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
- * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- * 
- * MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
- * TERMS.
- */
+/*******************************************************************************
+  Source File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    fan_click.c
+
+  Summary:
+ * Fan Click Driver (EMC2301)
+
+  Description:
+ *******************************************************************************/
+
+// DOM-IGNORE-BEGIN
+/*******************************************************************************************
+* © [2020] Microchip Technology Inc. and its subsidiaries
+ 
+ * Subject to your compliance with these terms, you may use this Microchip software
+ * and any derivatives exclusively with Microchip products. You are responsible for 
+ * complying with third party license terms applicable to your use of third party 
+ * software (including open source software) that may accompany this Microchip software.
+ 
+ * SOFTWARE IS ?AS IS.? NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO 
+ * THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY,
+ * OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, 
+ * SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
+ * WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF 
+ * THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, 
+ * MICROCHIP?S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT 
+ * OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. ADDITIONALLY, MICROCHIP 
+ * OFFERS NO SUPPORT FOR THE SOFTWARE. YOU MAY CONTACT YOUR LOCAL MICROCHIP FIELD SALES SUPPORT 
+ * REPRESENTATIVE TO INQUIRE ABOUT SUPPORT SERVICES AND APPLICABLE FEES, IF ANY. THESE TERMS 
+ * OVERRIDE ANY OTHER PRIOR OR SUBSEQUENT TERMS OR CONDITIONS THAT MIGHT APPLY TO THIS SOFTWARE 
+ * AND BY USING THE SOFTWARE, YOU AGREE TO THESE TERMS. 
+*******************************************************************************************/
+// DOM-IGNORE-END
 
 #include "fan_click.h"
 #include "definitions.h"
