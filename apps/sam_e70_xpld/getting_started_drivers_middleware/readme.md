@@ -7,7 +7,10 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Getting Started with Drivers and Middleware (USB) on SAM MCUs using MPLAB® Harmony v3
+# Getting Started with Drivers and Middleware (USB) on SAM E70 Xplained Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_drivers_middleware.zip" > Download </a> </h2>
+
+
 -----
 ## Description:
 
@@ -81,7 +84,7 @@ The pre-built hex file can be programmed by following the below steps
 
 
 ## Comments:
-- Reference Training Module: [Getting Started with Harmony v3 Drivers and System Services on SAM E70/S70/V70/V71 MCUs](https://microchipdeveloper.com/harmony3:same70-getting-started-training-module-drivers)
+- Reference Training Module: [Getting Started with USB on SAM MCUs Using MPLAB® Harmony v3](https://microchipdeveloper.com/harmony3:usb-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  

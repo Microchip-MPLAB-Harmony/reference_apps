@@ -1,13 +1,13 @@
 ---
-title: Curiosity PIC32MZ DA Development Board
+title: PIC32MZ DA Curiosity Development Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
 nav_order: 5
 ---
-# Curiosity PIC32MZ DA Development Board
+# PIC32MZ DA Curiosity Development Kit
 
-This folder contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MZ DA Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A).
+This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32MZ DA Curiosity Development Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A).
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
@@ -17,4 +17,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **Curiosity PIC32MZ DA Development Board** and other Development Boards/Kits having the same part number **(PIC32MZ2064DAR176)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
+For more application demos on **PIC32MZ DA Curiosity Development Kit** and other Development Boards/Kits having the same part number **(PIC32MZ2064DAR176)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)

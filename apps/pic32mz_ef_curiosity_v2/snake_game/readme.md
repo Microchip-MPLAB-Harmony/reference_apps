@@ -9,6 +9,8 @@ nav_order: 7
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Snake Game Application on Curiosity PIC32MZ EF 2.0 Development Board + High-Performance WVGA LCD Display Module with maXTouch Technology using Legato Graphics
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/snake_game.zip" > Download </a> </h2>
+
 ----
 
 ## Description:

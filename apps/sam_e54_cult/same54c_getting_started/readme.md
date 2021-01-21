@@ -8,6 +8,8 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application with SAM E54 Curiosity Ultra Development Board
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54c_getting_started.zip" > Download </a> </h2>
+
 -----
 ## Description
 
@@ -39,7 +41,7 @@ nav_order: 1
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
  - Any Serial Terminal application like Tera Term terminal application.  
 
- <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
+<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Hardware Setup:
 - Connect the SAM E54 Curiosity Ultra Development Board to the Host PC as a USB Device

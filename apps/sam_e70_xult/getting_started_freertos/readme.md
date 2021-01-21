@@ -8,6 +8,9 @@ nav_order: 3
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application using Harmony v3 Drivers and FreeRTOS on SAM E70 Xplained Ultra Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_freertos.zip" > Download </a> </h2>
+
+
 -----
 ## Description:
 

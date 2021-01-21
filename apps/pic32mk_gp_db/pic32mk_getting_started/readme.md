@@ -1,20 +1,22 @@
 ---
 title: Getting Started
 grand_parent: Reference Applications
-parent: PIC32MK General Purpose (GP) Development Board
+parent: PIC32MK General Purpose (GP) Development Kit
 nav_order: 1
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Getting Started Application on PIC32MK General Purpose (GP) Development Board
+# Getting Started Application on PIC32MK General Purpose (GP) Development Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mk_getting_started.zip" > Download </a> </h2>
+
 -----
 ## Description
 
 >  The application reads the current room temperature from the temperature sensor on the MikroElectronika Weather click board.
 	The temperature reading is displayed on a serial console periodically every 500 milliseconds. The periodicity of the temperature
 	values displayed on the serial console is changed to one second, two seconds, four seconds, and back to 500 milliseconds every
-	time you press the switch S1 on the PIC32MK GP Development Board. Also, an LED (LED1) is toggled every time the temperature is
+	time you press the switch S1 on the PIC32MK GP Development Kit. Also, an LED (LED1) is toggled every time the temperature is
 	displayed on the serial console.
 
 ## Modules/Technology Used:
@@ -29,7 +31,7 @@ nav_order: 1
 
 ## Hardware Used:
 
-- [PIC32MK General Purpose (GP) Development Board](http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=DM320106)   
+- [PIC32MK General Purpose (GP) Development Kit](http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=DM320106)   
 - [MikroElectronika Weather click board](https://www.mikroe.com/weather-click)
 
 
@@ -47,8 +49,8 @@ nav_order: 1
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Setup:  
-- Connect the Type-A male to Micro-B USB cable to the Micro-B Serial USB port (J25) on the PIC32MK GP Development Board for logs
-- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J12) to power and debug the PIC32MK GP Development Board
+- Connect the Type-A male to Micro-B USB cable to the Micro-B Serial USB port (J25) on the PIC32MK GP Development Kit for logs
+- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J12) to power and debug the PIC32MK GP Development Kit
 - Connect the MikroElectronika Weather click board on the mikroBUS interface J29. Ensure the
   following hardware modification before connecting the Weather click board  
   <img src = "images/hardware_setup.jpg" width="525" height="590" align="middle">  
@@ -92,10 +94,10 @@ The pre-built hex file can be programmed by following the below steps
 - Also, notice LED1 blinking at a 500 millisecond rate
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
 <img src = "images/temp_sensor_placement.png" width="525" height="590" align="middle">  
-- Press the S1 switch on the PIC32MK General Purpose (GP) Development Board to change the default sampling rate to one second
+- Press the S1 switch on the PIC32MK General Purpose (GP) Development Kit to change the default sampling rate to one second
 <img src = "images/user_button_placement.png" width="525" height="590" align="middle">  
 <img src = "images/result2.png" width="345" height="165" align="middle">  
-- Every subsequent press of switch S1 on the PIC32MK General Purpose (GP) Development Board changes the default sampling rate to two seconds, four seconds, 500 milliseconds and back to one second in cyclic order as shown below  
+- Every subsequent press of switch S1 on the PIC32MK General Purpose (GP) Development Kit changes the default sampling rate to two seconds, four seconds, 500 milliseconds and back to one second in cyclic order as shown below  
 <img src = "images/result3.png" width="315" height="440" align="middle">  
 
 - While the temperature sampling rate changes on every switch S1 press, notice LED1 toggling at the same sampling rate

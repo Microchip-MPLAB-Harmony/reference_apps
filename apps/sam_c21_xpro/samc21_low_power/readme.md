@@ -7,7 +7,9 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Low Power Application on SAM C21 Xplained Pro evaluation kit
+# Low Power Application on SAM C21 Xplained Pro Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samc21_low_power.zip" > Download </a> </h2>
+
 -----
 ## Description
 

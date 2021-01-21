@@ -8,6 +8,9 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Low Power Application on SAM E54 Xplained Pro Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_low_power.zip" > Download </a> </h2>
+
+
 -----
 ## Description
 

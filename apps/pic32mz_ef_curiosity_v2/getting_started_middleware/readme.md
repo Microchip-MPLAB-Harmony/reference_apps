@@ -8,6 +8,8 @@ nav_order: 3
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS on Curiosity PIC32MZ EF 2.0 Development Board
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_middleware.zip" > Download </a> </h2>
+
 -----
 ## Description
 

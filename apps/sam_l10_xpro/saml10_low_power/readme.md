@@ -8,6 +8,8 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Low Power Application on SAM L10 Xplained Pro Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/saml10_low_power.zip" > Download </a> </h2>
+
 -----
 ## Description
 
@@ -31,13 +33,13 @@ nav_order: 2
 	- PM
 	- SUPC
 	- EIC
-	- EVSYS 
+	- EVSYS
 
 ## Hardware Used:
 
 - [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320204)
 - [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO)  
-**Note**: The application is being developed on a SAM L10 XPRO board. Ensure that you use the same revision on 
+**Note**: The application is being developed on a SAM L10 XPRO board. Ensure that you use the same revision on
 the evaluation board before going further, else you could face issues with power consumption values.
 
 ## Software/Tools Used:
@@ -86,7 +88,7 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below.  
 
 ## Running the Demo:
-- Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable 
+- Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable
 connected to Micro-B port, and reconnect it back.
 - Change the baud rate to 115200
 - Perform reset by pressing the "RESET" switch
@@ -111,9 +113,9 @@ connected to Micro-B port, and reconnect it back.
 
 **Note**: The average value is considered when measuring the power consumption of the device because the instant value is not stable. Then, the power consumption of the device in Standby mode is 8.66 µA.
 - Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element) to print the temperature on the terminal and observe the power consumption of the device  
-<img src = "images/device_wakes_up_and_print_temperature.png" width="700" height="350" align="middle"> 
+<img src = "images/device_wakes_up_and_print_temperature.png" width="700" height="350" align="middle">
 - Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode  
-<img src = "images/standby_idle_transition.png" width="700" height="260" align="middle"> 
+<img src = "images/standby_idle_transition.png" width="700" height="260" align="middle">
 - The following image shows the device in Idle mode with a measured power consumption of 844 µA  
 <img src = "images/device_in_idle_mode.png" width="700" height="350" align="middle">  
 

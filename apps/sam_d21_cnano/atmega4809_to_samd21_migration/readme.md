@@ -9,6 +9,8 @@ nav_order: 10
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Application migration from 8-bit AVR to 32-bit SAM D21 on SAM D21 Curiosity Nano
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/atmega4809_to_samd21_migration.zip" > Download </a> </h2>
+
 -----
 ## Description:
 

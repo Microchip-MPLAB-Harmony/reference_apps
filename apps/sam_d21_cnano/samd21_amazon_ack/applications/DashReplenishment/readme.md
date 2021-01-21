@@ -9,6 +9,8 @@ nav_order: 9
 
 # Amazon Alexa Connect Kit (ACK) Dash Replenishment Application on SAM D21 Curiosity Nano
 
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_amazon_ack.zip" > Download </a> </h2>
+
 
 -----
 
@@ -54,7 +56,7 @@ This following bullet points provides links to the detailed topics:
  - MPLAB Harmony 3 Launcher Plugin v3.6.2  
  - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
- 
+
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## <a id="Hardware-setup"> </a>

@@ -8,6 +8,8 @@ nav_order: 6
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SD Card Audio Player/Reader with Aria Graphics on PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab5.zip" > Download </a> </h2>
+
 -----
 
 ## Description

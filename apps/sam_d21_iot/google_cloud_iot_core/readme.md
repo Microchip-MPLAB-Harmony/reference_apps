@@ -8,6 +8,8 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Google Cloud IoT Core Application on SAM D21 IoT WG Development Board
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/google_cloud_iot_core.zip" > Download </a> </h2>
+
 -----
 
 ## <span style="color:red"> <b>Important:</b>
@@ -17,7 +19,7 @@ nav_order: 1
 
 > The SAM-IoT WG Development board based on SAM D21 microcontroller is a small and easily expandable demonstration and development platform for Wi-Fi based IoT Node applications. This specific development board comes pre-provisioned for Google IoT core and hence the name "WG". The application that comes pre-programmed with factory shipped boards demonstrates MQTT data transfer of on-board light and temperature sensor data to Google IoT core.
 
-## Key Highlights of SAM-IoT WG Development Board:
+## Key Highlights of [SAM-IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A):
 
 * On-board Light and Temperature Sensors.
 * Additional sensors can be interfaced using "click boards" through on-board [mikroBUS connector](https://www.mikroe.com/click).

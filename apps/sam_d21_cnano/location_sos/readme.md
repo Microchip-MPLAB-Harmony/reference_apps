@@ -8,21 +8,15 @@ nav_order: 3
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Location Tagged SOS Application on SAM D21 Curiosity Nano and Nano Base for Click boards
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/location_sos.zip" > Download </a> </h2>
+
 -----
 
 ## Description:
 
-> The application demonstrates the solution based on Microchip products in a personal emergency or
-    in a situation to communicates a distress signal by sending out a location-tagged SOS SMS. The
-    Mikroelektronika GSM-GPS click board, used in this application, contains a hardware module that
-    combines the GSM/GPRS and GPS functionality used for tracking the device and sending out the
-    emergency or distress signal. The MCU is interfaced with the GPS module over the UART interface
-    to perform the acquisition and tracking of GPS coordinates. It registers the event callbacks for
-    location tracking of the GPS receiver.
+> The application demonstrates the solution based on Microchip products in a personal emergency or to communicate a distress signal by sending out a location-tagged SOS SMS. The Mikroelektronika GSM-GPS click board, used in this application, contains a hardware module that combines the GSM/GPRS and GPS functionality used to track the device and send out the emergency or distress signal. The MCU is interfaced with the GPS module over the UART interface to perform the GPS coordinates' acquisition and tracking. It registers the event callbacks for location tracking of the GPS receiver.
 
-> The application arranges the GSM/GPRS module for sending SMS to a configured mobile phone number.
-    Once the GPS position is available, the application sends the following location tagged SOS SMS to
-    the configured mobile phone number when emergency switch is pressed.
+> The application arranges the GSM/GPRS module for sending SMS to a configured mobile phone number. Once the GPS position is available, the application sends the following location-tagged SOS SMS to the configured mobile phone number when the emergency switch is pressed..
 
 > SAM D21 Curiosity Nano Location tagged SOS.  
     Please attend emergency at:  

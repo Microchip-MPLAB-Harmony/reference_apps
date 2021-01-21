@@ -8,6 +8,8 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # AC Sleepwalking Application built with GCC Toolchain on SAM D21 Xplained Pro Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_ac_sleepwalk_singleshot_gcc.zip" > Download </a> </h2>
+
 -----
 ## Description:
 
@@ -36,7 +38,6 @@ nav_order: 2
 - MPLAB Harmony 3 Launcher Plugin v3.6.2
 - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
 - [ARM GNU Toolchain v6.3.1](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers)
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
 - Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>

@@ -8,6 +8,8 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Low Power Application on SAM E51 Curiosity Nano Evaluation Kit with OLED C click board for display using MPLAB Harmony Legato Graphics
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same51n_low_power_with_oled_c_click.zip" > Download </a> </h2>
+
 -----
 ## Description
 

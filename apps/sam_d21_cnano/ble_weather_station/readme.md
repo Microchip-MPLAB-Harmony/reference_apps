@@ -8,6 +8,9 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ble_weather_station.zip" > Download </a> </h2>
+
+
 -----
 
 ## Description:

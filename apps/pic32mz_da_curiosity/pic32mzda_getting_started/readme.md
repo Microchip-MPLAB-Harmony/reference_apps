@@ -1,17 +1,19 @@
 ---
 grand_parent: Reference Applications
-parent: Curiosity PIC32MZ DA Development Board
+parent: PIC32MZ DA Curiosity Development Kit
 title: Getting Started
 nav_order: 1
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Getting Started Application with Curiosity PIC32MZ DA Development Board
+# Getting Started Application with PIC32MZ DA Curiosity Development Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mzda_getting_started.zip" > Download </a> </h2>
+
 -----
 ## Description
 
-> This application demonstrates an LED (LED1[RGB-RED]) toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW1 on the Curiosity PIC32MZ DA Development Board.
+> This application demonstrates an LED (LED1[RGB-RED]) toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW1 on the PIC32MZ DA Curiosity Development Kit.
 
 > The demo application has additional functionality to print the current room temperature periodically using on board temperature sensor.
 
@@ -27,7 +29,7 @@ nav_order: 1
 
 ## Hardware Used:
 
-- [Curiosity PIC32MZ DA Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A)   
+- [PIC32MZ DA Curiosity Development Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A)   
 
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
@@ -43,7 +45,7 @@ nav_order: 1
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
 ## Hardware Setup:
-- Connect the Curiosity PIC32MZ DA Development Board to the Host PC as a USB Device
+- Connect the PIC32MZ DA Curiosity Development Kit to the Host PC as a USB Device
 	through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port.  
 
 	<img src = "images/hardware_setup.jpg" width="800" height="380" align="middle">
@@ -74,14 +76,14 @@ The pre-built hex file can be programmed by following the below steps
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Set the baud rate to 115200
 - Reset or power cycle the device.
-- An LED (LED1[RGB-RED]) on the Curiosity PIC32MZ DA Development Board toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds.
+- An LED (LED1[RGB-RED]) on the PIC32MZ DA Curiosity Development Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds.
 - And the LED toggling rate is displayed on the serial terminal.
-- Press the switch SW1 on the Curiosity PIC32MZ DA Development Board to change the periodicity of the timeout to one second.
-- Every subsequent pressing of the switch SW1 on the Curiosity PIC32MZ DA Development Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
-- Press the switch SW2 on the Curiosity PIC32MZ DA Development Board to read and print the Temperature from the Temperature Sensor.
+- Press the switch SW1 on the PIC32MZ DA Curiosity Development Kit to change the periodicity of the timeout to one second.
+- Every subsequent pressing of the switch SW1 on the PIC32MZ DA Curiosity Development Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
+- Press the switch SW2 on the PIC32MZ DA Curiosity Development Kit to read and print the Temperature from the Temperature Sensor.
 - The temperature read is displayed on a serial console on a periodical basis.
-- Press the switch SW1 on the Curiosity PIC32MZ DA Development Board to change the
-periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch SW1 on the Curiosity PIC32MZ DA Development Board.
+- Press the switch SW1 on the PIC32MZ DA Curiosity Development Kit to change the
+periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch SW1 on the PIC32MZ DA Curiosity Development Kit.
 
 
 ## Comments:

@@ -1,17 +1,21 @@
 ---
 grand_parent: Reference Applications
-parent: Curiosity PIC32MZ DA Development Board
+parent: PIC32MZ DA Curiosity Development Kit
 title: SD Card USB Audio Player with Legato Graphics
 nav_order: 2
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# SD Card USB Audio Player on Curiosity PIC32MZ DA Development Board + High-Performance 4.3" WQVGA Display Module with maXTouch® Technology using Legato Graphics  
+# SD Card USB Audio Player on PIC32MZ DA Curiosity Development Kit + High-Performance 4.3" WQVGA Display Module with maXTouch® Technology using Legato Graphics  
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mzda_sdcard_usb_audio_player.zip" > Download </a> </h2>
+
+-----
+
 
 ## Description
 
-> This application reads a WAV audio file from the SD card or USB thumb drive on the Curiosity PIC32MZ DA Development Board and streams
+> This application reads a WAV audio file from the SD card or USB thumb drive on the PIC32MZ DA Curiosity Development Kit and streams
   it over the I²S interface through the audio CODEC. The application implements the functionality of an audio player
   (for WAV files only).  
 
@@ -44,7 +48,7 @@ nav_order: 2
 
 ## Hardware Used:
 
-- [Curiosity PIC32MZ DA Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A)
+- [PIC32MZ DA Curiosity Development Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A)
 - [AC324954 - PIC32 Audio Codec Daughter Card](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/AC324954)
 - [High-Performance 4.3" WQVGA Display Module with maXTouch® Technology](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/AC320005-4)
 - Micro SD Card
@@ -69,12 +73,12 @@ nav_order: 2
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
-- Attach the 24-bit pass through card to the GFX Connector on the Curiosity PIC32MZ DA Development Board
+- Attach the 24-bit pass through card to the GFX Connector on the PIC32MZ DA Curiosity Development Kit
 - Connect the ribbon cable from the High-Performance 4.3" WQVGA maXTouch Display to the ribbon connector on the 24-bit pass through card. Make sure that the S1 switch on the 24-bit pass through card is set to 2.
-- Connect AC324954 - PIC32 Audio Codec Daughter Card to XC32 HEADER 1 on the Curiosity PIC32MZ DA Development Board  
-- Connect a USB cable from the host computer to the DEBUG USB port on the Curiosity PIC32MZ DA Development Board. This USB connection is used for programming and debugging.
+- Connect AC324954 - PIC32 Audio Codec Daughter Card to XC32 HEADER 1 on the PIC32MZ DA Curiosity Development Kit  
+- Connect a USB cable from the host computer to the DEBUG USB port on the PIC32MZ DA Curiosity Development Kit. This USB connection is used for programming and debugging.
 - Connect the wired stereo headphone to the audio jack  
-- Connect Barrel jack power adapter to Curiosity PIC32MZ DA Development Board
+- Connect Barrel jack power adapter to PIC32MZ DA Curiosity Development Kit
 
 **Note** : DEBUG USB and Barrel Jack both should be connected
 
@@ -113,8 +117,8 @@ WAV audio files
 - Select the source (SD CARD/USB) to play audio  
 - The following screen is shown if the audio source is not connected or connected improperly. Make sure to insert the SD Card or USB Thumb Drive properly in the sockets. You could unplug and re-plug if you are continuing to see the below screen.  
 **Note**:  
-1. SD Card socket is at J500 (Back side of the board) on Curiosity PIC32MZ DA Development Board
-2. USB Thumb drive connector is at J301 (Target USB) on Curiosity PIC32MZ DA Development Board   
+1. SD Card socket is at J500 (Back side of the board) on PIC32MZ DA Curiosity Development Kit
+2. USB Thumb drive connector is at J301 (Target USB) on PIC32MZ DA Curiosity Development Kit   
 
  <img src = "images/display_screen3.png" width="460" height="260" align="middle">  
 

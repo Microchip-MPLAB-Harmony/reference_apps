@@ -7,7 +7,10 @@ nav_order: 2
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# SleepWalking Application Demo on SAM E54 Xplained Pro Evaluation Kit
+# SleepWalking Application on SAM E54 Xplained Pro Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sleepwalking.zip" > Download </a> </h2>
+
+
 -----
 
 ## Description:

@@ -8,6 +8,9 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # TrustZone Getting Started Application on SAM L11 Xplained Pro Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/saml11_trustzone_getting_started.zip" > Download </a> </h2>
+
+
 -----
 ## Description
 
@@ -20,7 +23,7 @@ nav_order: 1
   is displayed on the serial console. The periodicity of the temperature values reading can be changed to 1 second, 2 seconds,
   4 seconds, and back to 500 milliseconds every time when the user presses the switch SW0 on the SAM L11 Xplained Pro Evaluation Kit.
   The temperature readings are transferred to Non-secure mode application when it requests to Secure application through
-  Non Secure Callables (NSC).
+  Non Secure Callable (NSC).
 
 - The Non-secure mode application requests the Secure mode application temperature values and prints them on a serial
   console once it receives from the Secure mode application. Further,  when it receives a request from the user (in the

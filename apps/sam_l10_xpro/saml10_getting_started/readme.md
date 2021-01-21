@@ -8,6 +8,9 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application on SAM L10 Xplained Pro Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/saml10_getting_started.zip" > Download </a> </h2>
+
+
 -----
 ## Description:
 
@@ -46,7 +49,7 @@ nav_order: 1
 
 ## Setup:
 - Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM L10 Xplained Pro Evaluation Kit
-- The SAM L10 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B 
+- The SAM L10 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B
   DEBUG USB port to power and debug the SAM L10 Xplained Pro Evaluation Kit  
 
   <img src = "images/hardware_setup.png" width="500" height="470" align="middle">

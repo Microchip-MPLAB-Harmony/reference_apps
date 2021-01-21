@@ -8,6 +8,8 @@ nav_order: 5
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SD Card Audio Player Application on Curiosity PIC32MZ EF 2.0 Development Board
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sdcard_player.zip" > Download </a> </h2>
+
 -----
 ## Description:
 

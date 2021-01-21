@@ -9,6 +9,8 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application on PIC32CM MC00 Curiosity Pro Development Board
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32cm_mc_curiosity_getting_started.zip" > Download </a> </h2>
+
 -----
 ## Description:
 

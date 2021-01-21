@@ -8,6 +8,8 @@ nav_order: 6
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # WiFi based RGB LED Control Application on Curiosity PIC32MZ EF 2.0 Development Board
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/wifi_rgb_easy_configuration.zip" > Download </a> </h2>
+
 -----
 ## Description:
 

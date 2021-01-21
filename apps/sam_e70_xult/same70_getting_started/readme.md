@@ -8,6 +8,9 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application on SAM E70 Xplained Ultra Evaluation Kit
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same70_getting_started.zip" > Download </a> </h2>
+
+
 -----
 ## Description:
 

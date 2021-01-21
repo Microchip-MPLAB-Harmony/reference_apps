@@ -8,6 +8,8 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # BLE Fitness Tracker Application on SAM E51 Curiosity Nano and Nano Base for Click boards
+<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ble_fitness_tracker.zip" > Download </a> </h2>
+
 -----
 
 ## Description:
