@@ -1,0 +1,95 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_audio_player_lab5",
+		"version": "1.2.0",
+		"displayName": "SD Card Audio Player/Reader with Aria Graphics",
+		"projectName": "audio_player_lab5",
+		"shortDescription": "SD Card Audio Player/Reader with Aria Graphics on PIC32MZ Embedded Connectivity with FPU Starter Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.2.51"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFH144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"Core Timer", "I2S", "I2C", "Timer"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32MZ2048EFH144",
+			"PIC32MZ Family",
+			"I2C",
+			"I2S",
+			"Core Timer",
+			"Timer",
+			"Driver",
+			"AK4953",
+			"Starter Kit",
+			"PIC32MZ EF",
+			"PIC32MZEF",
+			"Audio",
+			"Tone",
+			"Lookup",
+			"Table",
+			"Codec",
+			"Decoder",
+			"WAV",
+			"MEB-II",
+			"MEB2",			
+			"SDCARD",
+			"SPI",
+			"File System",
+			"USB",
+			"MSD",
+			"Graphics",
+			"Display",
+			"Aria"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

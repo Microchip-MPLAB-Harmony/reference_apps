@@ -1,0 +1,97 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mzda_sdcard_usb_audio_player",
+		"version": "1.2.0",
+		"displayName": "SD Card USB Audio Player with display on PIC32MZ DA",
+		"projectName": "sdcard_usb_audio_player_pic32mz_da_curiosity",
+		"shortDescription": "SD Card USB Audio Player using High-Performance 4.3 WQVGA Display on PIC32MZ DA Curiosity Development Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-DA_DFP",
+			"semverRange": "^1.2.102"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2064DAR176",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32MZ DA Curiosity Development Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"I2C", "I2S", "Timer", "USB"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32MZ2064DAR176",
+			"PIC32MZ Family",
+			"I2C",
+			"I2S",
+			"Timer",
+			"USB",
+			"Display",
+			"Curiosity",
+			"Legato",
+			"Graphics",
+			"Thumb Drive",
+			"Micro SD",
+			"Card",
+			"AK4954",
+			"SDCARD",
+			"MSD",
+			"TM4301B",
+			"maXTouch",
+			"MAX TOUCH",
+			"WAV",
+			"Decoder",
+			"File System",
+			"Codec",
+			"Audio",
+			"WQVGA",
+			"High-Performance",
+			"Player",
+			"Curiosity",
+			"PIC32MZ DA",
+			"PIC32MZDA"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

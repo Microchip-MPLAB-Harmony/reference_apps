@@ -1,0 +1,88 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cm_mc_curiosity_getting_started",
+		"version": "1.2.0",
+		"displayName": "Getting Started Application on PIC32CM MC00 Curiosity Pro Development Board",
+		"projectName": "getting_started_pic32cm_mc00_curiosity_pro",
+		"shortDescription": "Demonstrates how to get started using the basic peripherals like ADC, SERCOM2(I2C) and SERCOM(USART)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32CM-MC_DFP",
+			"semverRange": "^1.0.36"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32CM1216MC00048",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32CM MC00 Curiosity Pro Development Board"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]			
+		],
+		"peripherals": [
+			"ADC", "SERCOM (USART)", "SERCOM2(I2C)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32CM1216MC00048",
+			"PIC32CM MC Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"SERCOM",
+			"FLEXCOM",
+			"Getting Started",
+			"I2C",
+			"ADC",
+			"Temperature",
+			"Sensor",
+			"Light",
+			"Curiosity",
+			"Pro",
+			"PIC32CM MC00",
+			"temperature",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"			
+
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

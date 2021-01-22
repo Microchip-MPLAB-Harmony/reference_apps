@@ -1,0 +1,87 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_getting_started_ext",
+		"version": "1.2.0",
+		"displayName": "Getting Started Extended Application on Curiosity PIC32MZ EF 2.0 Development Board",
+		"projectName": "getting_started_ext_pic32mz_ef_curiosity_v2",
+		"shortDescription": "Demonstrates how to get started using the basic peripherals like I2C, Timer, GPIO, UART and DMA",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.2.51"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFM144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"I2C", "Timer", "GPIO", "UART", "DMA"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32MZ2048EFM144",
+			"PIC32MZ Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"I2C",
+			"Timer",
+			"GPIO",
+			"DMA",
+			"temperature",
+			"Curiosity",
+			"PIC32MZ EF",
+			"PIC32MZEF",
+			"temperature",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"
+			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

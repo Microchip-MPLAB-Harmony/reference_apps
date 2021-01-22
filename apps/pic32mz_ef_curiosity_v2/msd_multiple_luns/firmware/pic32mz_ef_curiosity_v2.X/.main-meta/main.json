@@ -1,0 +1,86 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_msd_multiple_luns",
+		"version": "1.2.0",
+		"displayName": "USB MSD with Multiple Drives Application",
+		"projectName": "msd_multiple_luns_pic32mz_ef_curiosity_v2",
+		"shortDescription": "This application demonstrates the creation of a USB device with multiple drives or logical units (LUN)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.2.51"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFM144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"Core Timer", "USB"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32MZ2048EFM144",
+			"PIC32MZ Family",
+			"Core Timer",
+			"Driver",
+			"Memory",
+			"NVM",
+			"Timer",
+			"USB",
+			"SDSPI",			
+			"Curiosity",
+			"Thumb Drive",
+			"Micro SD",
+			"Card",
+			"SDCARD",
+			"MSD",
+			"File System",
+			"Curiosity",
+			"PIC32MZ EF",
+			"PIC32MZEF"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

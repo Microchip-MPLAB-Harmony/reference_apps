@@ -1,0 +1,82 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sdadc_conversion_polling",
+		"version": "1.2.0",
+		"displayName": "SDADC Conversion polling Mode",
+		"projectName": "sdadc_conversion_interrupt_sam_c21n_xpro",
+		"shortDescription": "Demonstrates SDADC Conversion polling Mode Application on SAMC21N Xplained Pro Evaluation Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMC21_DFP",
+			"semverRange": "^3.4.78"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21N18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"SDADC", "SUPC", "EVSYS", "SERCOM(USART)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21N18A",
+			"SAMC21N Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"SDADC",
+			"SUPC",
+			"EVSYS",
+			"SAM C21N",
+			"SAMC21N",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

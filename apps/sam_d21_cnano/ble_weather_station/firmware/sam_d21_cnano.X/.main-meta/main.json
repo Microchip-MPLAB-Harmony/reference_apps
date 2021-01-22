@@ -1,0 +1,92 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_ble_weather_station",
+		"version": "1.2.0",
+		"displayName": "BLE based Weather Station and Motion Sensor Application",
+		"projectName": "ble_weather_station_sam_d21_cnano",
+		"shortDescription": "Demonstrates integrating BM71 Xpro, Weather click and orientation click on SAM D21 Curiosity Nano",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.3.98"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMD21G17D",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM D21 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"EIC", "Timer", "GPIO", "SERCOM(USART)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMD21G17D",
+			"SAMD21 Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"BM71",
+			"Click",
+			"Weather",
+			"10DOF",
+			"Pressure",
+			"Humidity",
+			"Orientation",
+			"Accelerometer",
+			"Gyroscope",
+			"Motion",
+			"Sensor",
+			"BLE",
+			"Bluetooth",
+			"SAM D21",
+			"SAMD21",	
+			"Curiosity",
+			"Nano",
+			"Base",
+			"Adapter"			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

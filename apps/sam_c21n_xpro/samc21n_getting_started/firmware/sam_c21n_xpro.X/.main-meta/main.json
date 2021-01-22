@@ -1,0 +1,84 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samc21n_getting_started",
+		"version": "1.2.0",
+		"displayName": "Getting Started Application on SAMC21N Xplained Pro Evaluation Kit",
+		"projectName": "getting_started_sam_c21n_xpro",
+		"shortDescription": "Demonstrates how to get started using the basic peripherals like RTC, PORTS, SERCOM(I2C) and SERCOM(USART)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMC21_DFP",
+			"semverRange": "^3.4.78"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21N18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"RTC", "PORTS", "SERCOM(I2C)", "SERCOM(USART)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21N18A",
+			"SAMC21N Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"I2C",
+			"RTC",
+			"GPIO",
+			"Temperature",
+			"SAM C21N",
+			"SAMC21N",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"
+			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

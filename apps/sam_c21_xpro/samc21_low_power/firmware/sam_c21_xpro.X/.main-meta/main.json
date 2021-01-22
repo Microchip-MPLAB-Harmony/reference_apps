@@ -1,0 +1,93 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samc21_low_power",
+		"version": "1.2.0",
+		"displayName": "Low Power Application on SAM C21 Xplained Pro evaluation kit",
+		"projectName": "low_power_sam_c21_xpro",
+		"shortDescription": "Standby and Idle mode low Power Application on SAM C21 Xplained Pro evaluation kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMC21_DFP",
+			"semverRange": "^3.4.78"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21J18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM C21 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"I2C", "RTC", "USART", "DMAC", "ADC", "PM", "SUPC", "EIC", "EVSYS"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21J18A",
+			"SAMC21 Family",
+			"I2C",
+			"RTC",
+			"USART",
+			"DMAC",
+			"ADC",
+			"PM",
+			"SUPC",
+			"EIC",
+			"EVSYS",
+			"Low Power",
+			"Standby",
+			"Idle",
+			"Temperature",
+			"Light",
+			"Sensor",
+			"SAM C21",
+			"SAMC21",
+			"Xplained Pro",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit",
+			"Power Debugger"
+			
+			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

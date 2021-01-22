@@ -1,0 +1,84 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml10_getting_started",
+		"version": "1.2.0",
+		"displayName": "Getting Started Application on SAM L10 Xplained Pro Evaluation Kit",
+		"projectName": "getting_started_sam_l10_xpro",
+		"shortDescription": "Demonstrates how to get started using the basic peripherals like RTC, PORTS, SERCOM(I2C) and SERCOM(USART)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAML10_DFP",
+			"semverRange": "^3.4.85"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAML10E16A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM L10 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"RTC", "PORTS", "SERCOM(I2C)", "SERCOM(USART)", "DMAC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAML10E16A",
+			"SAMLL1x Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"I2C",
+			"RTC",
+			"PORTS",
+			"Temperature",
+			"SAM L10",
+			"SAML10",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"
+			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

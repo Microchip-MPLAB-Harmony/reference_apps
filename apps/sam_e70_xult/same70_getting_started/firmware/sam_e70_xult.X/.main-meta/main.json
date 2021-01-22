@@ -1,0 +1,82 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same70_getting_started",
+		"version": "1.2.0",
+		"displayName": "Getting Started Application on SAM E70 Xplained Ultra Evaluation Kit",
+		"projectName": "getting_started_sam_e70_xult",
+		"shortDescription": "Demonstrates how to get started using the basic peripherals like PORTS, Timer, XDMAC, USART, TWIHS(I2C)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME70_DFP",
+			"semverRange": "^4.4.78"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME70Q21B",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E70 Xplained Ultra Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"PORTS", "Timer", "TWIHS (I2C)", "USART", "XDMAC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME70Q21B",
+			"SAME70 Family",
+			"USART",
+			"I2C",
+			"FLEXCOM",
+			"Getting Started",
+			"Timer",
+			"PORTS",
+			"Temperature",	
+			"Sensor",	
+			"SAM E70",
+			"SAME70",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"		
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

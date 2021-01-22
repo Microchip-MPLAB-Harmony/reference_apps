@@ -1,0 +1,82 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_google_cloud_iot_core",
+		"version": "1.2.0",
+		"displayName": "Google Cloud IoT Core Application",
+		"projectName": "google_cloud_iot_core_sam_d21_iot_wg",
+		"shortDescription": "Google Cloud IoT Core Application on SAM D21 IoT WG Development Board",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.3.98"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMD21G18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM D21 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"EIC", "Timer", "GPIO", "SERCOM(USART)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMD21G18A",
+			"SAMD21 Family",		
+			"Click",
+			"IoT",
+			"Google",
+			"Core",
+			"Node",
+			"Sensor",
+			"Cloud",
+			"SAM D21",
+			"SAMD21",	
+			"SAM IoT WG",
+			"WINC1510",
+			"ECC608A",
+			"Secure"			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

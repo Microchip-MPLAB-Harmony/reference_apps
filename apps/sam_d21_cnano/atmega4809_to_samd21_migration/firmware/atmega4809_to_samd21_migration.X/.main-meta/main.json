@@ -1,0 +1,83 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_atmega4809_to_samd21_migration",
+		"version": "1.2.0",
+		"displayName": "Application migration from 8-bit AVR to 32-bit SAM D21",
+		"projectName": "atmega4809_to_sam_d21_cnano",
+		"shortDescription": "Application migration from 8-bit AVR to 32-bit SAM D21 on SAM D21 Curiosity Nano",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.3.98"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMD21G17D",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM D21 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"RTC", "PORTS", "EIC", "SERCOM(SPI)", "SERCOM(USART)", "DMA", "Systick"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMD21G17D",
+			"SAMD21 Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"SPI",
+			"RTC",
+			"GPIO",
+			"Systick",
+			"Hello World",
+			"SAM D21",
+			"SAMD21",
+			"Migration",
+			"atmega4809"	
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

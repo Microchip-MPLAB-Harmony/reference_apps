@@ -1,0 +1,90 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same51n_low_power_with_oled_c_click",
+		"version": "1.2.0",
+		"displayName": "Low Power Application with display",
+		"projectName": "low_power_with_oled_c_click_sam_e51_cnano",
+		"shortDescription": "Low Power Application using OLED C click display on SAM E51 Curiosity Nano Evaluation Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME51_DFP",
+			"semverRange": "^3.3.85"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME51J20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"RTC", "DMAC","ADC","PM","SUPC","EIC","EVSYS","SPI","Systick","Timer", "SERCOM(USART), SERCOM(SPI)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME51J20A",
+			"SAME51 Family",
+			"Click",
+			"Low power",
+			"Standby",
+			"Idle",
+			"Temperature",
+			"Sensor",			
+			"SAM E51",
+			"SAME51",
+			"OLED",
+			"Click",
+			"Display",
+			"Curiosity",
+			"Nano",
+			"Base",	
+			"Legato",
+			"Graphics",
+			"Weather",
+			"Adapter",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"				
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

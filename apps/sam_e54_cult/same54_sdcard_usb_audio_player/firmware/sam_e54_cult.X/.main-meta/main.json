@@ -1,0 +1,95 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_sdcard_usb_audio_player",
+		"version": "1.2.0",
+		"displayName": "SD Card USB Audio Player with display on SAME54",
+		"projectName": "sdcard_usb_audio_player_sam_e54_cult",
+		"shortDescription": "SD Card USB Audio Player using maXTouch Curiosity Pro Board Display on SAM E54 Curiosity Ultra Development Board",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME54_DFP",
+			"semverRange": "^3.1.43"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME54P20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E54 Curiosity Ultra Development Board"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"PORTS", "EIC", "SERCOM(I2C)", "SERCOM(I2S)", "Timer"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME54P20A",			
+			"SAME54 Family",
+			"I2C",
+			"I2S",
+			"Timer",
+			"USB",
+			"Display",
+			"Curiosity",
+			"Legato",
+			"Graphics",
+			"Thumb Drive",
+			"Micro SD",
+			"Card",
+			"WM8904",
+			"SDCARD",
+			"MSD",
+			"maXTouch",
+			"MAX TOUCH",
+			"WAV",
+			"Decoder",
+			"File System",
+			"Codec",
+			"Audio",
+			"AC328904",
+			"SAM E54",
+			"Curiosity",
+			"Ultra",
+			"SAME54"	
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

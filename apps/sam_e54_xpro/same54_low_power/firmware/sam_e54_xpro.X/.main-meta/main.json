@@ -1,0 +1,92 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_low_power",
+		"version": "1.2.0",
+		"displayName": "Low Power Application on SAM E54 Xplained Pro Evaluation Kit",
+		"projectName": "low_power_sam_e54_xpro",
+		"shortDescription": "Standby and Idle mode low Power Application on SAM E54 Xplained Pro Evaluation Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME54_DFP",
+			"semverRange": "^3.1.43"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME54P20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E54 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"PORTS", "RTC", "EIC", "SERCOM(USART)", "SERCOM(I2C)", "DMAC", "ADC", "PM", "SUPC", "EVSYS"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME54P20A",
+			"SAME54 Family",
+			"I2C",
+			"RTC",
+			"USART",
+			"DMAC",
+			"ADC",
+			"PM",
+			"SUPC",
+			"EIC",
+			"EVSYS",
+			"Low Power",
+			"Standby",
+			"Idle",
+			"Temperature",
+			"Light",
+			"Sensor",
+			"SAM E54",
+			"SAME54",
+			"Xplained Pro",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit",
+			"Power Debugger"			
+	
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

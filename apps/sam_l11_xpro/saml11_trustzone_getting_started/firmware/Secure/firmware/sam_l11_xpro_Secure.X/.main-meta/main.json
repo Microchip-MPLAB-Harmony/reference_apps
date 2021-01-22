@@ -1,0 +1,90 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml11_trustzone_getting_started_secure",
+		"version": "1.2.0",
+		"displayName": "TrustZone Getting Started Application on SAM L11 Xplained Pro Evaluation Kit",
+		"projectName": "trustzone_sam_l11_xpro_Secure",
+		"shortDescription": "Demonstrates the TrustZone feature on SAM L11 microcontroller)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAML11_DFP",
+			"semverRange": "^4.0.115"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAML11E16A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM L11 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"Non-secure USART", "Non-secure DMAC", "Non-secure PORT Pins (USART Pins only)", 
+			"Secure PORT Pins (All pins by default are secure)",
+			"Secure I2C",
+			"Secure RTC",
+			"Secure EIC"			
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAML11E16A",
+			"SAMLL1x Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"I2C",
+			"RTC",
+			"PORTS",
+			"Non-secure",
+			"secure",
+			"Temperature",			
+			"TrustZone",
+			"SAM L11",
+			"SAML11",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

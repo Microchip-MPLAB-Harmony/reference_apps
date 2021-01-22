@@ -1,0 +1,84 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mx470_getting_started",
+		"version": "1.2.0",
+		"displayName": "Getting Started Application on Curiosity PIC32MX470 Development Board",
+		"projectName": "getting_started_pic32mx470_curiosity",
+		"shortDescription": "Demonstrates how to get started using the basic peripherals like UART, SPI, Timer, Core Timer, DMA and GPIOs",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MX_DFP",
+			"semverRange": "^1.3.231"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MX470F512H",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "Curiosity PIC32MX470 Development Board"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"UART", "SPI", "Timer", "Core Timer", "GPIO", "DMA"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32MX470F512H",
+			"PIC32MX Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"FLEXCOM",
+			"Getting Started",
+			"SPI",
+			"Timer",
+			"Core Timer",
+			"GPIO",
+			"DMA",
+			"Weather",
+			"Click",
+			"USB",
+			"Curiosity",
+			"PIC32MX470"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

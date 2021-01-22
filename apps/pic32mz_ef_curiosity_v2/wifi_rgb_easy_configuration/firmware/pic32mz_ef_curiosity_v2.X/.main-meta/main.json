@@ -1,0 +1,88 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_wifi_rgb_easy_configuration",
+		"version": "1.2.0",
+		"displayName": "WiFi based RGB LED Control Application",
+		"projectName": "wifi_rgb_easy_configuration_pic32mz_ef_curiosity_v2",
+		"shortDescription": "WiFi based RGB LED Control Application on Curiosity PIC32MZ EF 2.0 Development Board",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.2.51"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFM144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"Core Timer", "OC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32MZ2048EFM144",
+			"PIC32MZ Family",
+			"TCP/IP",
+			"TCPIP",
+			"Stack",
+			"SYS Console",
+			"SYS Command",
+			"Core Timer",
+			"STDIO",
+			"WINC1500",
+			"Driver",
+			"Memory",
+			"NVM",
+			"Timer",
+			"Curiosity",
+			"File System",
+			"Curiosity",
+			"PIC32MZ EF",
+			"PIC32MZEF",
+			"RGB",
+			"Wireless"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
