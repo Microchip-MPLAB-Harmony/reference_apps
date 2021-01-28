@@ -1,0 +1,14 @@
+configName: sam_e54_xpro
+folderName: drivers_freertos_same54-pro
+format_version: v1.0
+frameworkPath: C:\Users\i53196\Harmony3
+processor: ATSAME54P20A
+projectName: getting_started_drivers_freertos_same54-pro
+settings:
+  PackageFilter: audio;bootloader;bootloader_apps_ethernet;bootloader_apps_uart;bsp;bt;core;core;crypto;csp;csp;csp_apps_sam_d5x_e5x;gfx;reference_apps;net;net;quick_docs;reference_apps;touch;usb;wireless;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.4.70\atdf\ATSAME54P20A.atdf

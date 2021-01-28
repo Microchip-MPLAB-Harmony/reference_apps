@@ -1,0 +1,90 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_getting_started_freertos",
+		"version": "1.2.0",
+		"displayName": "Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS",
+		"projectName": "getting_started_drivers_freertos_sam_e54_xpro",
+		"shortDescription": "Demonstrates how to get started using Harmony drivers for peripherals like SERCOM(USART), SERCOM(I2C) with FreeRTOS and the basic peripherals like PORTS, and RTC, EIC",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.45.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME54_DFP",
+			"semverRange": "^3.4.76"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME54P20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E54 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"PORTS", "RTC", "EIC", "SERCOM(USART)", "SERCOM(I2C)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME54P20A",
+			"SAME54 Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"I2C",
+			"SERCOM",
+			"FLEXCOM",
+			"Getting Started",
+			"EIC",
+			"RTC",
+			"PORTS",
+			"Temperature",
+			"Sensor",
+			"SAM E54",
+			"SAME54",
+			"Xplained Pro",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit",
+			"Driver",
+			"Synchronous",
+			"FreeRTOS"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

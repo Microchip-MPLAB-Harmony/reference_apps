@@ -16,6 +16,7 @@ This folder contains the **MPLAB® Harmony 3 reference applications** developed 
 | 2 | [Low Power](./same54_low_power/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_low_power.zip) |
 | 3 | [SleepWalking](./sleepwalking/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sleepwalking.zip) |
 | 4 | [Vending Machine](./same54_vending_machine/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_vending_machine.zip) |
+| 5 | [Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS](./same54_getting_started_freertos/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started_freertos.zip) |
 
 
 ### More Application Demos
