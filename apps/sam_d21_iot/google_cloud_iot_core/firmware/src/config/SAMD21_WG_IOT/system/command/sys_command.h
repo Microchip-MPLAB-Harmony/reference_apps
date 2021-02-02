@@ -780,8 +780,6 @@ SYS_CMD_DEVICE_NODE* SYS_CMDIO_GET_HANDLE(short num);
 bool SYS_CMD_DELETE(SYS_CMD_DEVICE_NODE* pDevNode);
 #endif
 
-void set_deviceId(char *id);
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 

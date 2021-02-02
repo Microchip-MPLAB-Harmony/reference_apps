@@ -136,7 +136,7 @@ SYS_TIME_HANDLE App_DataTaskHandle = SYS_TIME_HANDLE_INVALID;
 volatile bool App_DataTaskTmrExpired = false;
 SYS_TIME_HANDLE App_CloudTaskHandle = SYS_TIME_HANDLE_INVALID;  
 volatile bool App_CloudTaskTmrExpired = false;
-
+extern void sys_cmd_init();
 // *****************************************************************************
 /* Application Data
 
@@ -232,6 +232,7 @@ void APP_Initialize(void)
     /* Open I2C driver client */
     ADC_Enable();
     LED_test();
+    sys_cmd_init(); // CLI init
 #if (CFG_APP_WINC_DEBUG == 1)    
     WDRV_WINC_DebugRegisterCallback(debug_printf);
 #endif

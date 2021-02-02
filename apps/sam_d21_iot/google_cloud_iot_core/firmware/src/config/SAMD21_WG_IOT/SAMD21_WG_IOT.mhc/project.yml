@@ -264,7 +264,7 @@ files:
   physicalPath: system\command\src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2AC711CF7BE9ADE8F68BCB66E03236D7
+  userChecksum: 6A54802433B130F9F753FF71CC0B773B
 - generatedChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
   logicalPath: config\SAMD21_WG_IOT\system\console
   name: sys_console.c
@@ -1041,7 +1041,7 @@ files:
   physicalPath: system\command
   security: NON_SECURE
   type: HEADER
-  userChecksum: 7CD35BD2771EC6F8DCEA4E8B28D3F166
+  userChecksum: CD4D57FA548C4424287C649841CA2843
 - generatedChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
   logicalPath: config\SAMD21_WG_IOT\system\console
   name: sys_console.h

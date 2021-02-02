@@ -28,6 +28,7 @@
 #include "definitions.h"                // SYS function prototypes
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
@@ -38,8 +39,7 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-
-
+     
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */

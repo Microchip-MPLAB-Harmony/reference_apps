@@ -202,6 +202,7 @@ char APP_HexToChar(uint8_t hex);
 
 void APP_DebugPrintBuffer(const uint8_t *pBuf, uint16_t bufLen);
 
+void set_deviceId(char *id);
 
 typedef union
 {
