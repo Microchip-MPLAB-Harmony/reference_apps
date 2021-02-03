@@ -4,6 +4,13 @@ attributes: {id: sys_command}
 children:
 - type: Symbols
   children:
+  - type: Integer
+    attributes: {id: SYS_COMMAND_PRINT_BUFFER_SIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2048'}
   - type: String
     attributes: {id: SYS_CONSOLE_DEVICE}
     children:

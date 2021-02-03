@@ -32,7 +32,7 @@
 #define NO_ERROR 0
 
 #include <stdint.h>
-#include "../../cryptoauthlib/lib/atca_iface.h"
+#include "cryptoauthlib.h"
 
 extern ATCAIfaceCfg cfg_ateccx08a_i2c_custom;
 extern uint8_t cryptoDeviceInitialized;

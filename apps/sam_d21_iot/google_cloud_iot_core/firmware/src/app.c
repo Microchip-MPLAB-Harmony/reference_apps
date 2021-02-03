@@ -491,8 +491,8 @@ void APP_SendToCloud(void)
    // This part runs every CFG_SEND_INTERVAL seconds
    float rawTemperature = APP_GetTempSensorValue();
    int light = APP_GetLightSensorValue();
-   int len = sprintf(json, "{\"Light\":%d,\"Temp\":\"%f\"}", 
-                        light,rawTemperature);
+   int len = sprintf(json, "{\"Light\":%d,\"Temp\":\"%d\"}", 
+                        light,(int)rawTemperature);
 
    
    if (len >0) {

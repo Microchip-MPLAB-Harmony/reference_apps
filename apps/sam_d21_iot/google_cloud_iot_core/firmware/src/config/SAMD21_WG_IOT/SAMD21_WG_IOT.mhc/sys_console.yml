@@ -5,6 +5,13 @@ children:
 - type: Symbols
   children:
   - type: Integer
+    attributes: {id: SYS_CONSOLE_PRINT_BUFFER_SIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2048'}
+  - type: Integer
     attributes: {id: SYS_CONSOLE_UART_CONNECTION_COUNTER}
     children:
     - type: Values
@@ -75,33 +82,6 @@ children:
             attributes: {id: enabled}
             children:
             - {type: Value, value: 'true'}
-      - type: File
-        attributes: {id: SYS_CONSOLE_USB_CDC_SOURCE}
-        children:
-        - type: Attributes
-          children:
-          - type: Boolean
-            attributes: {id: enabled}
-            children:
-            - {type: Value, value: 'false'}
-      - type: File
-        attributes: {id: SYS_CONSOLE_USB_DEFINITIONS_HEADER}
-        children:
-        - type: Attributes
-          children:
-          - type: Boolean
-            attributes: {id: enabled}
-            children:
-            - {type: Value, value: 'false'}
-      - type: File
-        attributes: {id: SYS_CONSOLE_USB_HEADER}
-        children:
-        - type: Attributes
-          children:
-          - type: Boolean
-            attributes: {id: enabled}
-            children:
-            - {type: Value, value: 'false'}
     - type: Attachments
       children:
       - type: DirectDependency

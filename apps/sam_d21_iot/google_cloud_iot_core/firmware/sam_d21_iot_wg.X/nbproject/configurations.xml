@@ -74,6 +74,11 @@
             <itemPath>../src/config/SAMD21_WG_IOT/driver/driver.h</itemPath>
             <itemPath>../src/config/SAMD21_WG_IOT/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f5" displayName="library" projectFiles="true">
+            <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_config.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <itemPath>../src/config/SAMD21_WG_IOT/osal/osal.h</itemPath>
             <itemPath>../src/config/SAMD21_WG_IOT/osal/osal_definitions.h</itemPath>
@@ -170,66 +175,6 @@
                      displayName="credentials_storage"
                      projectFiles="true">
         <itemPath>../src/credentials_storage/credentials_storage.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="cryptoauthlib"
-                     displayName="cryptoauthlib"
-                     projectFiles="true">
-        <logicalFolder name="config" displayName="config" projectFiles="true">
-          <itemPath>../src/cryptoauthlib/config/cryptoauthlib_config.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="lib" displayName="lib" projectFiles="true">
-          <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_client.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_date.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_def.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_der.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_host_hw.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_host_sw.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_pem.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="basic" displayName="basic" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_helpers.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
-            <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
-              <itemPath>../src/cryptoauthlib/lib/crypto/hashes/sha1_routines.h</itemPath>
-              <itemPath>../src/cryptoauthlib/lib/crypto/hashes/sha2_routines.h</itemPath>
-            </logicalFolder>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_ecdsa.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_rand.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_sha1.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_sha2.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="hal" displayName="hal" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/hal/atca_hal.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/hal/atca_start_config.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/hal/atca_start_iface.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/hal/hal_i2c.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="host" displayName="host" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/host/atca_host.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/jwt/atca_jwt.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="tls" displayName="tls" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/tls/atcatls.h</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/tls/atcatls_cfg.h</itemPath>
-          </logicalFolder>
-          <itemPath>../src/cryptoauthlib/lib/atca_bool.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_cfgs.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_command.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_compiler.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_device.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_devtypes.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_execution.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_iface.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_status.h</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/cryptoauthlib.h</itemPath>
-        </logicalFolder>
       </logicalFolder>
       <logicalFolder name="iot_config" displayName="iot_config" projectFiles="true">
         <itemPath>../src/iot_config/cloud_config.h</itemPath>
@@ -404,6 +349,120 @@
               <itemPath>../src/config/SAMD21_WG_IOT/driver/winc/wdrv_winc_wps.c</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f5" displayName="library" projectFiles="true">
+            <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
+              <logicalFolder name="f4" displayName="atcacert" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_client.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_client.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_date.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_date.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_def.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_def.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_der.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_der.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_host_hw.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_host_hw.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_host_sw.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_host_sw.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_pem.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert/atcacert_pem.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="f5" displayName="calib" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_aes.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_aes_gcm.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_aes_gcm.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_basic.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_basic.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_checkmac.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_command.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_command.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_counter.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_derivekey.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_ecdh.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_execution.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_execution.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_gendig.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_genkey.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_hmac.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_info.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_kdf.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_lock.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_mac.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_nonce.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_privwrite.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_random.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_read.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_secureboot.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_selftest.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_sha.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_sign.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_updateextra.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_verify.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/calib/calib_write.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="f2" displayName="crypto" projectFiles="true">
+                <logicalFolder name="f1" displayName="hashes" projectFiles="true">
+                  <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes/sha1_routines.c</itemPath>
+                  <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes/sha1_routines.h</itemPath>
+                  <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes/sha2_routines.c</itemPath>
+                  <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes/sha2_routines.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbc.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cmac.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ctr.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_rand.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_rand.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="f1" displayName="hal" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/atca_hal.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/atca_hal.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/atca_start_config.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/atca_start_iface.h</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/hal_i2c_harmony.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/hal_harmony_init.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/hal/hal_cortex_m_delay.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="f6" displayName="host" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/host/atca_host.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/host/atca_host.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="f3" displayName="jwt" projectFiles="true">
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/jwt/atca_jwt.c</itemPath>
+                <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/jwt/atca_jwt.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_basic.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_basic.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_bool.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_cfgs.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_cfgs.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_compiler.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_debug.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_debug.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_device.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_device.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_devtypes.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_helpers.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_helpers.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_iface.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_iface.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_status.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/atca_version.h</itemPath>
+              <itemPath>../src/config/SAMD21_WG_IOT/library/cryptoauthlib/cryptoauthlib.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f8" displayName="adc" projectFiles="true">
               <itemPath>../src/config/SAMD21_WG_IOT/peripheral/adc/plib_adc.c</itemPath>
@@ -484,78 +543,6 @@
                      projectFiles="true">
         <itemPath>../src/credentials_storage/credentials_storage.c</itemPath>
       </logicalFolder>
-      <logicalFolder name="cryptoauthlib"
-                     displayName="cryptoauthlib"
-                     projectFiles="true">
-        <logicalFolder name="lib" displayName="lib" projectFiles="true">
-          <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_client.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_date.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_def.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_der.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_host_hw.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_host_sw.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/atcacert/atcacert_pem.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="basic" displayName="basic" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_aes.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_checkmac.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_counter.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_derivekey.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_ecdh.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_gendig.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_genkey.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_hmac.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_info.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_kdf.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_lock.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_mac.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_nonce.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_privwrite.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_random.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_read.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_secureboot.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_selftest.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_sha.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_sign.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_updateextra.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_verify.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_basic_write.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/basic/atca_helpers.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
-            <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
-              <itemPath>../src/cryptoauthlib/lib/crypto/hashes/sha1_routines.c</itemPath>
-              <itemPath>../src/cryptoauthlib/lib/crypto/hashes/sha2_routines.c</itemPath>
-            </logicalFolder>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_ecdsa.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_rand.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_sha1.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/crypto/atca_crypto_sw_sha2.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="hal" displayName="hal" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/hal/atca_hal.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/hal/hal_i2c.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/hal/hal_timer.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="host" displayName="host" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/host/atca_host.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/jwt/atca_jwt.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="tls" displayName="tls" projectFiles="true">
-            <itemPath>../src/cryptoauthlib/lib/tls/atcatls.c</itemPath>
-            <itemPath>../src/cryptoauthlib/lib/tls/atcatls_cfg.c</itemPath>
-          </logicalFolder>
-          <itemPath>../src/cryptoauthlib/lib/atca_cfgs.c</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_command.c</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_device.c</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_execution.c</itemPath>
-          <itemPath>../src/cryptoauthlib/lib/atca_iface.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
       <logicalFolder name="mqtt" displayName="mqtt" projectFiles="true">
         <logicalFolder name="mqtt_comm_bsd"
                        displayName="mqtt_comm_bsd"
@@ -605,8 +592,10 @@
                    projectFiles="false">
       <logicalFolder name="f1" displayName="SAMD21_WG_IOT.mhc" projectFiles="true">
         <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/adc.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/atecc608.yml</itemPath>
         <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/cmsis.yml</itemPath>
         <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/core.yml</itemPath>
+        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/cryptoauthlib.yml</itemPath>
         <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/dfp.yml</itemPath>
         <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/drvWifiWinc.yml</itemPath>
         <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/drv_spi.yml</itemPath>
@@ -710,7 +699,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/socket;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/driver;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/common;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp/include;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp;../src/config/SAMD21_WG_IOT/driver/winc/include/dev;../src/config/SAMD21_WG_IOT/driver/winc/include/"/>
+                  value="../src/config/SAMD21_WG_IOT/library/cryptoauthlib;../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto;../src/config/SAMD21_WG_IOT/library/cryptoauthlib/pkcs11;../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/socket;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/driver;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/common;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp/include;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp;../src/config/SAMD21_WG_IOT/driver/winc/include/dev;../src/config/SAMD21_WG_IOT/driver/winc/include/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1386,7 +1375,7 @@
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="E:/00_Data/01_Project/Harmony_3/02_WG_IOT/release/sam_d21_iot/google_cloud_iot_core/firmware/sam_d21_iot_wg.X/debug/SAMD21_WG_IOT/sam_d21_iot_wg_ptg"/>
+                  value="D:/LTBD/MASS_MARKET_GIT/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/firmware/sam_d21_iot_wg.X/debug/SAMD21_WG_IOT/sam_d21_iot_wg_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

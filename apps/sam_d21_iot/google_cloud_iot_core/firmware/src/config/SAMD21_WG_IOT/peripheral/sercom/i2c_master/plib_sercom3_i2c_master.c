@@ -58,7 +58,7 @@
 
 
 /* SERCOM3 I2C baud value */
-#define SERCOM3_I2CM_BAUD_VALUE         (0x34U)
+#define SERCOM3_I2CM_BAUD_VALUE         (0xE8U)
 
 
 static SERCOM_I2C_OBJ sercom3I2CObj;

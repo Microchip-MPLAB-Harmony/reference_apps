@@ -170,6 +170,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: drvWifiWinc, value: '0'}
+  - type: File
+    attributes: {id: DRV_WIFI_WINC_SYS_RTOS_TASK}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
 - type: Attachments
   children:
   - type: DirectDependency
