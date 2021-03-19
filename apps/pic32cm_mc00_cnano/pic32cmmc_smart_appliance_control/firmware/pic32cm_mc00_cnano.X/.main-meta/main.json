@@ -1,0 +1,86 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cmmc_smart_appliance_control",
+		"version": "1.2.0",
+		"displayName": "Smart Appliance Control with BM71 Click",
+		"projectName": "pic32cmmc_smart_appliance_control",
+		"shortDescription": "Smart Appliance Control with BM71 Click on PIC32CM MC00 Curiosity Nano Evaluation kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.45.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32CM-MC_DFP",
+			"semverRange": "^1.0.36"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32CM1216MC00032",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32CM MC00 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]			
+		],
+		"peripherals": [
+			"Timer", "SERCOM (I2C)", "SERCOM (SPI)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32CM1216MC00032",
+			"PIC32CM MC00",
+			"PIC32CM MC Family",
+			"SAM C21",
+			"Motor",
+			"BM71",
+			"Bluetooth",
+			"BLE",
+			"EIC",
+			"RTC",
+			"GPIO",
+			"SERCOM",
+			"I2C",
+			"Fan",
+			"Speed",
+			"Curiosity",
+			"Nano",
+			"Base",	
+			"Adapter"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

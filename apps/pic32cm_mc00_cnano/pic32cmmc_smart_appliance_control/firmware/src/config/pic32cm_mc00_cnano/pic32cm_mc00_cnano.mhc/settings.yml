@@ -1,0 +1,14 @@
+configName: pic32cm_mc00_cnano
+folderName: pic32cm_mc00_cnano
+format_version: v1.0
+frameworkPath: ..\..\..\..\Projects\git_hub
+processor: PIC32CM1216MC00032
+projectName: smart_appliance_control_pic32cm_mc00_cnano
+settings:
+  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\PIC32CM-MC_DFP\1.0.32\atdf\PIC32CM1216MC00032.atdf
