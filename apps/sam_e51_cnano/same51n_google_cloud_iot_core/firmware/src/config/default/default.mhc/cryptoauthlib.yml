@@ -1,0 +1,76 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: cryptoauthlib}
+children:
+- type: Symbols
+  children:
+  - type: ListEntry
+    attributes: {id: CAL_DEVICE_LIST_ENTRIES}
+    children:
+    - type: Attributes
+      children:
+      - type: StringArray
+        attributes: {id: values}
+        children:
+        - type: Values
+          children:
+          - {type: Value, value: ATECC608}
+  - type: Boolean
+    attributes: {id: CAL_ENABLE_DEBUG_PRINT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: CAL_ENABLE_RTOS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: cryptoauthlib, value: 'false'}
+  - type: Boolean
+    attributes: {id: CAL_ENABLE_TA100_AES_AUTH}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: cryptoauthlib, value: 'false'}
+  - type: Boolean
+    attributes: {id: CAL_ENABLE_TA100_FCE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: cryptoauthlib, value: 'false'}
+  - type: Boolean
+    attributes: {id: CAL_ENABLE_WOLFCRYPTO}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: cryptoauthlib, value: 'false'}
+  - type: ListEntry
+    attributes: {id: CAL_HAL_LIST_ENTRIES}
+    children:
+    - type: Attributes
+      children:
+      - type: StringArray
+        attributes: {id: values}
+        children:
+        - type: Values
+          children:
+          - {type: Value, value: I2C}
+  - type: ListEntry
+    attributes: {id: CAL_PLIB_LIST_ENTRIES}
+    children:
+    - type: Attributes
+      children:
+      - type: StringArray
+        attributes: {id: values}
+        children:
+        - type: Values
+          children:
+          - {type: Value, value: sercom2_i2c}
+- type: ElementPosition
+  attributes: {x: '30', y: '360', id: cryptoauthlib}

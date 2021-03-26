@@ -1,0 +1,81 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sam_e51n_google_cloud_iot_core",
+		"version": "1.3.0",
+		"displayName": "Google Cloud IoT Core Application",
+		"projectName": "google_cloud_iot_core_sam_e51_cnano",
+		"shortDescription": "Google Cloud IoT Core Application on SAM E51 Curiosity Nano Evaluation Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.3.98"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMD21G18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"ADC", "Trust_Go", "ATECC608", "COMMAND" ,"CONSOLE", "Core" ,"EIC", "RTC", "SysTick", "SPI", "USART", "I2C", "Timer", "WINC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME51J20A",
+			"SAME51 Family",		
+			"Click",
+			"IoT",
+			"Google",
+			"Core",
+			"Node",
+			"Sensor",
+			"Cloud",
+			"SAM E51",
+			"SAME51",	
+			"WINC1510",
+			"ECC608A",
+			"Secure"			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

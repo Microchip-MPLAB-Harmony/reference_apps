@@ -1,0 +1,39 @@
+[flash]
+size is 1M
+region at 0x004000 is [root certificates]
+region at 0x007000 is [http files]
+region at 0x00A000 is [downloader firmware]
+region             is [wifi firmware]
+
+[root certificates]
+type is root certificates
+schema is 1
+file is winc1500_19.6.1/root_certs/Equifax_Secure_Certificate_Authority.cer
+file is winc1500_19.6.1/root_certs/GlobalSignRoot.cer
+file is winc1500_19.6.1/root_certs/GlobalSignRoot2.cer
+file is winc1500_19.6.1/root_certs/GTS_Root_R1.cer
+file is winc1500_19.6.1/root_certs/GTS_Root_R2.cer
+
+[downloader firmware]
+type is firmware    
+schema is 1
+file is winc1500_19.6.1/firmware/downloader_firmware.bin
+prefix is NMIS
+
+[wifi firmware]
+type is firmware
+schema is 1
+file is winc1500_19.6.1/firmware/wifi_firmware.bin
+prefix is NMID
+
+[http files]
+type is http files
+schema is 2
+filename length is 32
+file is winc1500_19.6.1/http_files/default.html
+file is winc1500_19.6.1/http_files/error.json
+file is winc1500_19.6.1/http_files/favicon.ico
+file is winc1500_19.6.1/http_files/logo.png
+file is winc1500_19.6.1/http_files/ok.json
+file is winc1500_19.6.1/http_files/scanresults.json
+file is winc1500_19.6.1/http_files/style.css
