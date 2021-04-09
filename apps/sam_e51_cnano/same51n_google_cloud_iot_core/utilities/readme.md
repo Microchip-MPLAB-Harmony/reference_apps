@@ -32,8 +32,8 @@ certificates.
     **winc_programmer -p COM29 -d winc1500 -i winc1500_19.6.1.prog -if prog -w -r -pfw winc1500_19.6.1\firmware\programmer_firmware_3A0.bin**
 
     **NOTE** : Respective device COM PORT should be selected in above command and all other serial terminal application should be closed
-- Wait till **verify passed** message comes up as shown below
-  <img src = "images/firmware_upg.png" align="middle">
+- Wait till **verify passed** message comes up as shown below  
+<img src = "images/firmware_upg.png" align="middle">
 
 ### Revision:
 - v1.3.0 released utility
