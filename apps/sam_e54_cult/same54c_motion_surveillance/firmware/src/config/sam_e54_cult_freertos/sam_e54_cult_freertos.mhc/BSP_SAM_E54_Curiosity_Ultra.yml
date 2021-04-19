@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: BSP_SAM_E54_Curiosity_Ultra, bsp: 'true'}
+children:
+- type: ElementPosition
+  attributes: {x: '131', y: '92', id: BSP_SAM_E54_Curiosity_Ultra}

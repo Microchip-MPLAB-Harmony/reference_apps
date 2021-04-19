@@ -14,6 +14,7 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 | 1 | [Getting Started](./same54c_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54c_getting_started.zip) |
 | 2 | [SD Card USB Audio Player](./same54_sdcard_usb_audio_player/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_sdcard_usb_audio_player.zip) |
 | 3 | [Live Update](./same54_uart_live_update/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_uart_live_update.zip) |
+| 4 | [Surveillance Camera](./same54c_motion_surveillance/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54c_motion_surveillance.zip) |
 
 ### More Application Demos
 

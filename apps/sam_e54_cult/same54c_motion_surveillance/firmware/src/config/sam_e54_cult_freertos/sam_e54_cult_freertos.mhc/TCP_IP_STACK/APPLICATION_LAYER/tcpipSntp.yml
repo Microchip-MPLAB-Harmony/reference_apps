@@ -1,0 +1,15 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tcpipSntp}
+children:
+- type: Symbols
+  children:
+  - type: String
+    attributes: {id: TCPIP_NTP_DEFAULT_IF}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcpipSntp, value: GMAC}
+- type: ElementPosition
+  attributes: {x: '170', y: '280', id: tcpipSntp}

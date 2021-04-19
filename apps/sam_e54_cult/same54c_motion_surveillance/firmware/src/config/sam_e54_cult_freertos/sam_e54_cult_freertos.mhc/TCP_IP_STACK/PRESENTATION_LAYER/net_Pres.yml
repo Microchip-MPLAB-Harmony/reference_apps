@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: net_Pres}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: NET_PRES_SUPPORT_DATAGRAM}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: net_Pres, value: 'true'}
+  - type: Boolean
+    attributes: {id: NET_PRES_SUPPORT_STREAM}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: net_Pres, value: 'true'}
+- type: ElementPosition
+  attributes: {x: '20', y: '20', id: net_Pres}

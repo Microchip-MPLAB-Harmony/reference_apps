@@ -1,0 +1,10 @@
+format_version: v1.0
+type: GroupComponent
+attributes: {displayName: TCP/IP STACK, id: TCP/IP STACK}
+children:
+- type: ElementPosition
+  attributes: {x: '290', y: '400', id: TCP/IP STACK}
+- type: Attachments
+  children:
+  - type: Attachment
+    attributes: {namespace: PRESENTATION LAYER, id: 'net_Pres:Net_Pres_Crypto_Dependency'}
