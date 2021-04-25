@@ -20,6 +20,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 5.2 | [Eink Display Bundle Click example](./same51n_mikroe_click/eink_bundle/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/eink_bundle.zip)  |
 | 5.3 | [Heart Rate 9 Click Example](./same51n_mikroe_click/heartrate9/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/heartrate9.zip)  |
 | 5.4 | [IR Thermo 2 Click Example](./same51n_mikroe_click/ir_thermo2/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ir_thermo2.zip)  |
+| 5.5 | [10DOF Click Example](./same51n_mikroe_click/10dof/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/10dof.zip)  |
+
 ### More Application Demos
 
 For more application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
