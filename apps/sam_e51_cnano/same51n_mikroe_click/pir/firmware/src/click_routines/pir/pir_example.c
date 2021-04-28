@@ -1,11 +1,11 @@
 /*******************************************************************************
-  PIR click source file
+  PIR click example source file
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    pir.c
+    pir_example.c
 
   Summary:
 
@@ -38,45 +38,20 @@
 /**
   Section: Included Files
  */
-
-#include "definitions.h"                // SYS function prototypes
-#include "click_interface.h"
+#include "../click_interface.h"
 #include "pir.h"
+#include "pir_example.h"
+
 
 /**
-  Section: Macro Declarations
+  Section: Example Code
  */
 
-#define PIR_SENSOR_ADDR                 0x4D
-#define PIR_REG_ADDR                    0x00
-
-/**
-  Section: Variable Definitions
- */
-
-/**
-  Section: Private function prototypes
- */
-
-bool pir_isMotionDetected(void)
-{
-    float out_val;
-    bool motion_detected = false;   
-    uint8_t pReadBuffer[1]={0};
+void Pir_example(void) {
     
-    CLICK_PIR_I2C_WriteRead(PIR_SENSOR_ADDR, PIR_REG_ADDR, 1, pReadBuffer, 1);
-    while(CLICK_PIR_I2C_IsBusy() == true);
-    
-    out_val  = ( float )( 3303 - 0 );
-    out_val *= pReadBuffer[0];
-    out_val /= 4095;
-    out_val += 0;
-
-    if (out_val >= 6.0)
+    if(true == pir_isMotionDetected())
     {
-        motion_detected = true;
+            printf("MOTION DETECTED \r\n");
     }
-    
-    return motion_detected;
+    CLICK_I2C_DelayMs(1000);    
 }
-

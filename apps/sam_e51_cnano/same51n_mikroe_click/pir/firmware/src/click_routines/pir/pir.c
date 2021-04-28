@@ -1,11 +1,11 @@
 /*******************************************************************************
-  PIR click example source file
+  PIR click source file
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    pir_example.c
+    pir.c
 
   Summary:
 
@@ -38,20 +38,54 @@
 /**
   Section: Included Files
  */
-#include "click_interface.h"
-#include "pir.h"
-#include "pir_example.h"
 
+#include "definitions.h"                // SYS function prototypes
+#include "../click_interface.h"
+#include "pir.h"
 
 /**
-  Section: Example Code
+  Section: Macro Declarations
  */
 
-void Pir_example(void) {
+/* Note: With "PIR_MOTION_DETECTED = 6.0" the PIR Sensor is capable of
+detecting the motion from distance of nearly 4-5 feet and with
+"PIR_MOTION_DETECTED = 7.0" the motion is detected from a distance
+nearly 2-3 feet. Configure the value based on the requirement. */
+#define PIR_MOTION_DETECTED             (6.0)
+
+#define PIR_OUTPUT_CODE                 4095
+#define PIR_OUT_MIN                     0
+#define PIR_OUT_MAX                     3303
+#define PIR_SENSOR_ADDR                 0x4D
+#define PIR_REG_ADDR                    0x00
+
+/**
+  Section: Variable Definitions
+ */
+
+/**
+  Section: Private function prototypes
+ */
+
+bool pir_isMotionDetected(void)
+{
+    float out_val;
+    bool motion_detected = false;   
+    uint8_t pReadBuffer[1]={0};
     
-    if(true == pir_isMotionDetected())
+    CLICK_PIR_I2C_WriteRead(PIR_SENSOR_ADDR, PIR_REG_ADDR, 1, pReadBuffer, 1);
+    while(CLICK_PIR_I2C_IsBusy() == true);
+    
+    out_val  = ( float )( PIR_OUT_MAX - PIR_OUT_MIN );
+    out_val *= pReadBuffer[0];
+    out_val /= PIR_OUTPUT_CODE;
+    out_val += PIR_OUT_MIN;
+
+    if (out_val >= PIR_MOTION_DETECTED)
     {
-            printf("MOTION DETECTED \r\n");
+        motion_detected = true;
     }
-    CLICK_I2C_DelayMs(1000);    
+    
+    return motion_detected;
 }
+

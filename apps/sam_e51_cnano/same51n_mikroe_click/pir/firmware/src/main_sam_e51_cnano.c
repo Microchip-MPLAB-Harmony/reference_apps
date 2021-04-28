@@ -18,7 +18,7 @@
 
 //DOM-IGNORE-BEGIN 
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -53,7 +53,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include <string.h>
 #include "definitions.h"                // SYS function prototypes
-#include "click_routines/pir_example.h"
+#include "click_routines/pir/pir_example.h"
 
 // *****************************************************************************
 // *****************************************************************************
