@@ -1,0 +1,79 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_fan",
+		"version": "1.3.0",
+		"displayName": "Fan click example on SAM E51 Curiosity Nano Evaluation Kit",
+		"projectName": "fan_click_sam_e51_cnano",
+		"shortDescription": "Demonstrates fan control (on, off and speed control) on SAM E51 Curiosity Nano Evaluation Kit using Fan Click board",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.41.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME51_DFP",
+			"semverRange": "^3.4.98"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.5"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME51J20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"EIC", "RTC", "GPIO", "SERCOM(I2C)", "SERCOM(USART)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME51J20A",
+			"SAME51 Family",
+			"Fan",
+			"Click",
+			"Mikroe",
+			"Mikroelektronika",
+			"GPIO",
+			"SAM E51",
+			"SAME51",
+			"Curiosity",
+			"Nano",
+			"Base"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
