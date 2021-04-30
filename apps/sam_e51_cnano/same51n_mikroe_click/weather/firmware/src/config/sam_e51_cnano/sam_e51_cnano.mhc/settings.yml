@@ -1,0 +1,13 @@
+configName: sam_e51_cnano
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../../../Projects/git_hub
+processor: ATSAME51J20A
+projectName: ''
+settings:
+  PackageFilter: audio;bsp;core;csp;gfx;quick_docs;reference_apps;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.4.98\atdf\ATSAME51J20A.atdf
