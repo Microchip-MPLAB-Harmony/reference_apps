@@ -34,7 +34,7 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
-
+// DOM-IGNORE-END
 
 #ifndef _CLICK_INTERFACE_H
 #define _CLICK_INTERFACE_H
@@ -60,8 +60,8 @@
 #define CLICK_PIR_I2C_WriteRead			SERCOM2_I2C_WriteRead
 
 // Timer Definitions
-#define CLICK_I2C_TimerStart 			SYSTICK_TimerStart
-#define CLICK_I2C_DelayMs				SYSTICK_DelayMs
+#define CLICK_PIR_TimerStart 			SYSTICK_TimerStart
+#define CLICK_PIR_DelayMs				SYSTICK_DelayMs
 
 
 #endif // _CLICK_INTERFACE_H

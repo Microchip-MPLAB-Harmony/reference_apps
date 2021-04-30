@@ -34,6 +34,7 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
+// DOM-IGNORE-END
 
 /**
   Section: Included Files
@@ -47,11 +48,11 @@
   Section: Example Code
  */
 
-void Pir_example(void) {
-    
+void Pir_example(void) 
+{
+    CLICK_PIR_DelayMs(1000);     
     if(true == pir_isMotionDetected())
     {
             printf("MOTION DETECTED \r\n");
-    }
-    CLICK_I2C_DelayMs(1000);    
+    }   
 }

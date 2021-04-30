@@ -53,6 +53,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include <string.h>
 #include "definitions.h"                // SYS function prototypes
+#include "click_routines/click_interface.h"
 #include "click_routines/pir/pir_example.h"
 
 // *****************************************************************************
@@ -64,7 +65,8 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-
+    CLICK_PIR_TimerStart();
+    
     while ( true )
     {
         Pir_example();

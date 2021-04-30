@@ -34,6 +34,7 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
+// DOM-IGNORE-END
 
 /**
   Section: Included Files
@@ -70,12 +71,12 @@ nearly 2-3 feet. Configure the value based on the requirement. */
 bool pir_isMotionDetected(void)
 {
     float out_val;
-    bool motion_detected = false;   
+    bool motion_detected = false;
     uint8_t pReadBuffer[1]={0};
-    
+
     CLICK_PIR_I2C_WriteRead(PIR_SENSOR_ADDR, PIR_REG_ADDR, 1, pReadBuffer, 1);
     while(CLICK_PIR_I2C_IsBusy() == true);
-    
+
     out_val  = ( float )( PIR_OUT_MAX - PIR_OUT_MIN );
     out_val *= pReadBuffer[0];
     out_val /= PIR_OUTPUT_CODE;
@@ -85,7 +86,7 @@ bool pir_isMotionDetected(void)
     {
         motion_detected = true;
     }
-    
+
     return motion_detected;
 }
 
