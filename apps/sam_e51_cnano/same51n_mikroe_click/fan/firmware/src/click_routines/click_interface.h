@@ -54,7 +54,11 @@
  *  mikroBUS socket #1 to mount Fan click board.
  *  The I2C lines from MCU coming to this socket are from
  *  SERCOM2 peripheral.
- *
+ * 
+ * 2. Timer
+ *  The Fan click  example on SAM E51 Curiosity Nano uses
+ *  Systick timer module on the MCU to implement the time
+ *  requirement of the Fan click routines/examples.
  */
 
 // I2C Definitions

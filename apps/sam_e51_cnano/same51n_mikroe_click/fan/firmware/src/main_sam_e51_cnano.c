@@ -84,10 +84,10 @@ int main ( void )
         if(switchPressEvent == true)
         {
             ++speed_count;
-            if(speed_count == 1) // Default speed on
+            if(speed_count == 1) 
             {
-                fan_switch_on(); 
-                printf("\r\nFan running at default speed\r\n");
+                fan_switch_on(); // Switch on sets fan to medium speed
+                printf("\r\nFan turned ON at medium speed\r\n");
             }
             else if(speed_count == 2)
             {
@@ -96,14 +96,15 @@ int main ( void )
             }            
             else if(speed_count == 3)
             {
-                speed_count = 0;
                 fan_set_speed(SPEED_MEDIUM);
                 printf("\r\nFan running at medium speed\r\n");                
             }
-            else
+            else if(speed_count == 4)
             {
-                ;
-            }            
+                speed_count = 0;
+                fan_switch_off();
+                printf("\r\nFan is turned OFF\r\n");                
+            }      
             switchPressEvent = false;
         }
     }

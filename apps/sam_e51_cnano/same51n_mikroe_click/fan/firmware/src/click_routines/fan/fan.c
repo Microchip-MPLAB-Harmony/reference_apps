@@ -380,18 +380,18 @@ void fan_switch_off()
 
 void fan_switch_on()
 {
-    fan_set_target_tach(0x7F);
+    fan_set_target_tach(0x3F);
 }
 
 void fan_set_speed(fan_speed_t fspeed)
 {
     if(fspeed == SPEED_MEDIUM)
     {
-        fan_set_target_tach(0x7F);        
+        fan_set_target_tach(0x3F);        
     }
     else if(fspeed == SPEED_LOW)
     {
-        fan_set_target_tach(0x00);  
+        fan_set_target_tach(0x7F);  
     }
     else if(fspeed == SPEED_HIGH)
     {
