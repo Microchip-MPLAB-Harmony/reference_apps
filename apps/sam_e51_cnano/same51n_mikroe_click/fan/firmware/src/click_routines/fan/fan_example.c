@@ -8,8 +8,10 @@
     fan_example.c
 
   Summary:
+    Fan click routine example implementation File.
 
   Description:
+    This file implements the usage of the Fan click routine APIs.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN

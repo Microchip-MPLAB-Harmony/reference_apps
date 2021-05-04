@@ -8,8 +8,11 @@
     fan.c
 
   Summary:
+    Fan click routine Implementation File.
 
   Description:
+    This file defines the interface to Fan click using I2C PLIB.
+    This click routine provides to control DC fan.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -35,6 +38,8 @@
     TERMS.
 */
 // DOM-IGNORE-END
+#include "fan.h"
+#include "click_routines/click_interface.h"
 
 /******************************************************************************
 * Preprocessor Constants
@@ -100,186 +105,8 @@
 #define EMC2301_FAN_CONFIG1_EDGES_VALUE(x)      EMC2301_GET_VALUE(EMC2301_FAN_CONFIG1_EDGES, x)
 #define EMC2301_FAN_CONFIG1_EDGES(x)            EMC2301_SET_VALUE(EMC2301_FAN_CONFIG1_EDGES, x)
 
-/******************************************************************************
-* Typedefs
-*******************************************************************************/
-/**
- * @enum Configuration Bits
- */
-enum
-{
-    USE_EXT_CLK = 0,    /**< Enables the EMC2301 to use a clock present on the CLK */
-    DR_EXT_CLK  = 2,    /**< Enables the internal tach clock */
-    WD_EN       = 32,   /**< Enables the watchdog timer. default 0 */
-    DIS_TO      = 64,   /**< Disables the SMBus timeout function, 1 default */
-    MASK        = 128   /**< Blocks the ALERT pin from being asserted, 0 default */
-};
 
-/**
- * @enum Status register results
- */
-typedef enum
-{
-    FAN_STALL = 1,      /**< Indicates that the fan driver has stalled */
-    FAN_SPIN  = 2,      /**< Indicates that the fan driver cannot spin up */
-    FAN_DRIVE_FAIL = 4, /**< Indicates that the driver cannot meet the programmed fan speed */
-    FAN_WATCH = 128     /**< Indicates that the watchdog timer has expired */
-} fan_status_t;
-
-/**
- * @enum FAN PWM Base frequencies
- */
-typedef enum
-{
-    FAN_FREQ_26KHZ = 0, /**< Base of 26kHz */
-    FAN_FREQ_19_531KHZ, /**< Base of 19.5431kHz */
-    FAN_FREQ_4_882HZ,   /**< Base of 4.882Hz */
-    FAN_FREQ_2_441HZ    /**< Base of 2.441Hz */
-} fan_base_freq_t;
-
-
-/**
- * @enum Range of tach readings
- *
- * Adjusts the range of reported and programmed tachometer reading values.
- * The RANGE bits determine the weighting of all TACH values
- */
-typedef enum
-{
-    RPM_MIN_500,
-    RPM_MIN_1000,
-    RPM_MIN_2000,
-    RPM_MIN_4000
-} fan_range_t;
-
-/**
- * @enum Number of Fan Edges
- *
- * Determines the minimum number of edges that must be detected on the
- * TACHx signal to determine a single rotation. A typical fan measured 5 edges
- * ( for a 2-pole fan ). For more accurate tachometer measurement, the minimum
- * number of edges measured may be increased.
- */
-typedef enum
-{
-    EDGE_1_POLE,
-    EDGE_2_POLE,
-    EDGE_3_POLE,
-    EDGE_4_POLE
-} fan_edges_t;
-
-/**
- * @enum Update Time Configuration
- */
-typedef enum
-{
-    UPDATE_100MS,
-    UPDATE_200MS,
-    UPDATE_300MS,
-    UPDATE_400MS,
-    UPDATE_500MS,
-    UPDATE_800MS,
-    UPDATE_1200MS,
-    UPDATE_1600MS
-} fan_update_t;
-
-/**
- * @enum Derivative options
- *
- * Control some of the advanced options that affect the derivative portion of
- * the RPM-based Fan Speed Control Algorithm
- */
-typedef enum
-{
-    DERIVATIVE_NONE,
-    DERIVATIVE_BASIC,
-    DERIVATIVE_STEP,
-    DERIVATIVE_BOTH
-} fan_derivative_t;
-
-
-/**
- * @enum Error range options
- *
- * Control some of the advanced options that affect the error window. When the
- * measured fan speed is within the programmed error window around the target
- * speed, then the fan drive setting is not updated. The algorithm will
- * continue to monitor the fan speed and calculate necessary drive setting
- * changes based on the error.
- */
-typedef enum
-{
-    RPM_0,
-    RPM_50,
-    RPM_100,
-    RPM_200
-} fan_error_t;
-
-
-/**
- * @enum Gain for PID settings
- *
- */
-typedef enum
-{
-    FAN_GAIN1X,
-    FAN_GAIN2X,
-    FAN_GAIN4X,
-    FAN_GAIN8X
-} fan_gain_t;
-
-
-/**
- * @enum How mnay update cycles are used for detection of error
- *
- * Determines how many update cycles are used for the Drive Fail detection
- * function
-*/
-typedef enum
-{
-    DRIVE_CNT_DISABLED,
-    DRIVE_CNT_16,
-    DRIVE_CNT_32,
-    DRIVE_CNT_64,
-} fan_drive_fail_count_t;
-
-
-/**
- * @enum Spin up percent
- *
- * Determines the final drive level that is used by the Spin Up Routine
- */
-typedef enum
-{
-    SPINUP_30PERCENT, /**< 30% of duty */
-    SPINUP_35PERCENT, /**< 35% of duty */
-    SPINUP_40PERCENT, /**< 40% of duty */
-    SPINUP_45PERCENT, /**< 45% of duty */
-    SPINUP_50PERCENT, /**< 50% of duty */
-    SPINUP_55PERCENT, /**< 55% of duty */
-    SPINUP_60PERCENT, /**< 60% of duty */
-    SPINUP_65PERCENT  /**< 65% of duty */
-} fan_spinup_t;
-
-
-/**
- * @enum Spin time options
- *
- */
-typedef enum
-{
-    SPINUP_250MS, /**< 250ms delay */
-    SPINUP_500,   /**< 500ms delay */
-    SPINUP_1S,    /**< 1s delay */
-    SPINUP_2S     /**< 2s delay */
-} fan_spintime_t;
-
-
-
-#include "fan.h"
-#include "click_routines/click_interface.h"
-
-uint8_t fan_config_reg;
+static uint8_t fan_config_reg;
 
 static uint8_t fan_read(uint8_t reg)
 {

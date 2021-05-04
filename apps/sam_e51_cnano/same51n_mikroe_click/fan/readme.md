@@ -14,7 +14,7 @@ nav_order: 3
 -----
 ## Description:
 
-> This example application demonstrates fan control (on, off and speed control) on SAM E51 Curiosity Nano Evaluation Kit using Fan Click board
+> This example application demonstrates DC fan control (on, off and speed control) on SAM E51 Curiosity Nano Evaluation Kit using Fan Click board
 
 ## Modules/Technology Used:
 - Peripheral Modules
@@ -129,8 +129,8 @@ You could use this demonstration as an example to add motion sensor functionalit
 		The I2C configuration depends on
  			- 32-bit MCU
  			- 32-bit MCU development board
- 			- The socket on which you have mounted the PIR click board  
- 		*Example: The Fan click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the PIR Click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU.*  
+ 			- The socket on which you have mounted the Fan click board  
+ 		*Example: The Fan click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Fan Click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU.*  
 		*MHC Project Graph - I2C configuration*  
 		<img src = "images/i2c_config.png">  
 
@@ -141,7 +141,7 @@ You could use this demonstration as an example to add motion sensor functionalit
 		- Configure Timer peripheral block in the MHC project graph  
 		The Timer configuration depends on
  			- 32-bit MCU  
-		*Example: The Fan click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of PIR click example.*  
+		*Example: The Fan click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of Fan click example.*  
 		*MHC Project Graph - SysTick configuration*  
 		<img src = "images/systick_configure.png">  
 

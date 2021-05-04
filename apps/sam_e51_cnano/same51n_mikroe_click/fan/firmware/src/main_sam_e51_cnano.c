@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    main.c
+    main_sam_e51_cnano.c
 
   Summary:
     This file contains the "main" function for a project.

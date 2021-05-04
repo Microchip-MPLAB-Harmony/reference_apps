@@ -8,8 +8,11 @@
     fan.h
 
   Summary:
+    Fan click routine declaration File.
 
   Description:
+    This file declares the interface to Fan click using I2C PLIB.
+    This click routine provides to control DC fan.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
