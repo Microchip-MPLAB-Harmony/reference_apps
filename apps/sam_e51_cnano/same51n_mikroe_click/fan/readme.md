@@ -73,10 +73,10 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Running the Demo:
 - After power up, by default when the application runs, the fan is switched off.  
-		1. When the user presses the switch on the board, the fan is turned on at default speed.  
-		2. When the user presses the switch on the board for second time, the fan is run at low speed.  
-		3. When the user presses the switch on the board for third time, the fan is run at medium speed.
-		4. When the user presses the switch on the board for fourth time, the fan is turned off.
+	1. When the user presses the switch on the board, the fan is turned on at default speed.  
+	2. When the user presses the switch on the board for second time, the fan is run at low speed.  
+	3. When the user presses the switch on the board for third time, the fan is run at medium speed.
+	4. When the user presses the switch on the board for fourth time, the fan is turned off.
 
 - The above steps are repeated for subsequent switch press events  
 <img src = "images/fan_click_run.png" align="middle">
