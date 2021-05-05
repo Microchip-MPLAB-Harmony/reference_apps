@@ -11,7 +11,7 @@
     Heart Rate 9 click routine Implementation File.
 
   Description
-    This file defines the interface to the Heart Rate 9 click using UART PLIB.
+    This file defines the interface to the Heart Rate 9 click using USART PLIB.
     This click routine provides to read the sensor data on Heart Rate 9 click.
 
   Remarks:
@@ -55,7 +55,7 @@
 /**
   Section: Macro Declarations
  */
-#define RECEIVE_BUFFER_SIZE     (CLICK_HEARTRATE9_UART_READ_BUFFER_SIZE * 10)
+#define RECEIVE_BUFFER_SIZE     (CLICK_HEARTRATE9_USART_READ_BUFFER_SIZE * 10)
 
 typedef enum
 {
@@ -71,7 +71,7 @@ typedef enum
  */
 static HEART_RATE_DATA_BUF_PROCESS_STATE    heartrate9_read_byte_state = HEADER_BYTE1;
 
-static volatile char rx_data[CLICK_HEARTRATE9_UART_READ_BUFFER_SIZE]   = {0};
+static volatile char rx_data[CLICK_HEARTRATE9_USART_READ_BUFFER_SIZE]   = {0};
 static volatile char rx_buff[RECEIVE_BUFFER_SIZE]   = {0};
 static volatile uint16_t rx_buff_in_index           = 0;
 static          uint16_t rx_buff_out_index          = 0;
@@ -120,12 +120,12 @@ static void heartrate9_ReadCallback(SERCOM_USART_EVENT event, uintptr_t context)
 {
     uint32_t nBytesAvailable = 0;
     
-    if (event == CLICK_HEARTRATE9_UART_EVENT_READ_THRESHOLD_REACHED)
+    if (event == CLICK_HEARTRATE9_USART_EVENT_READ_THRESHOLD_REACHED)
     {
         /* Receiver should atleast have the thershold number of bytes in the ring buffer */
-        nBytesAvailable = CLICK_HEARTRATE9_UART_ReadCountGet();
+        nBytesAvailable = CLICK_HEARTRATE9_USART_ReadCountGet();
         
-        no_of_bytes_rcvd = CLICK_HEARTRATE9_UART_Read((uint8_t*)&rx_data[0], nBytesAvailable);
+        no_of_bytes_rcvd = CLICK_HEARTRATE9_USART_Read((uint8_t*)&rx_data[0], nBytesAvailable);
         hr9_data_rx_flag = true;
     }
 }
@@ -141,10 +141,10 @@ static void heartrate9_set_rst(uint8_t state)
 static void heartrate9_click_initialize(void)
 {
     /* Register callback functions and send start message */
-    CLICK_HEARTRATE9_UART_ReadCallbackRegister(heartrate9_ReadCallback, 0);
-    CLICK_HEARTRATE9_UART_Read((uint8_t*)rx_buff, RECEIVE_BUFFER_SIZE);
-    CLICK_HEARTRATE9_UART_ReadThresholdSet(10);
-    CLICK_HEARTRATE9_UART_ReadNotificationEnable(true, false);
+    CLICK_HEARTRATE9_USART_ReadCallbackRegister(heartrate9_ReadCallback, 0);
+    CLICK_HEARTRATE9_USART_Read((uint8_t*)rx_buff, RECEIVE_BUFFER_SIZE);
+    CLICK_HEARTRATE9_USART_ReadThresholdSet(10);
+    CLICK_HEARTRATE9_USART_ReadNotificationEnable(true, false);
     CLICK_HEARTRATE9_TimerStart();
     heartrate9_set_rst(0);
     CLICK_HEARTRATE9_DelayMs(1);

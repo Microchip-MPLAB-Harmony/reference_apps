@@ -73,12 +73,12 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Set the baud rate to 115200
-- Keep your finger on Pulse Detection Indicator as show here.
+- Keep your finger on Pulse Detection Indicator as shown here.
 
 	<img src = "images/proper_finger_placement.png" width="550" height="320" align="middle">
 	<img src = "images/wrong_way_finger_placement.png" width="550" height="320" align="middle">
 
-	*Note*: Cover the Heart Rate Sensor by placing your finger on Pulse Detection Indicator as show below
+	*Note*: Cover the Heart Rate Sensor by placing your finger on Pulse Detection Indicator as shown below
 	<img src = "images/oximeter_heart_rate_sensor.png" width="350" height="350" align="center">
 - Now, press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the Heart Rate.  
 	<img src = "images/heartrate9_click_run.png" width="660" height="340" align="middle">
@@ -164,7 +164,7 @@ You could use this demonstration as an example to add Heart Rate functionality t
 		*Example: The Heart Rate 9 click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs*  			
 		<img src = "images/map_click.png">
 
-		**Note:** Define the value of **CLICK_HEARTRATE9_UART_READ_BUFFER_SIZE** same as **USART_READ_BUFFER_SIZE** defined in the respective USART PLIB '.c' file
+		**Note:** Define the value of **CLICK_HEARTRATE9_USART_READ_BUFFER_SIZE** same as **USART_READ_BUFFER_SIZE** defined in the respective USART PLIB '.c' file
 
 9. The **click_routines** folder contain an example C source file **heartrate9_example.c**. You could use **heartrate9_example.c** as a reference to add Heart Rate 9 functionality to your application.
 

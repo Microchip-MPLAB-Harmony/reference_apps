@@ -54,7 +54,7 @@
 
 /**	Click routine interfaces/resources Macro Declarations
  *
- * 	1. UART
+ * 	1. USART
  *  The heartrate9 click example on SAM E51 Curiosity Nano uses
  *  mikroBUS socket #1 on the Curiosity Nano Base for Click boards
  *  to mount heartrate9 click board. The USART lines from MCU coming to
@@ -68,13 +68,13 @@
  */
 
 // SERCOM USART Definitions
-#define CLICK_HEARTRATE9_UART_Read                          SERCOM4_USART_Read
-#define CLICK_HEARTRATE9_UART_ReadThresholdSet              SERCOM4_USART_ReadThresholdSet
-#define CLICK_HEARTRATE9_UART_ReadNotificationEnable        SERCOM4_USART_ReadNotificationEnable
-#define CLICK_HEARTRATE9_UART_ReadCallbackRegister          SERCOM4_USART_ReadCallbackRegister
-#define CLICK_HEARTRATE9_UART_ReadCountGet                  SERCOM4_USART_ReadCountGet
-#define CLICK_HEARTRATE9_UART_EVENT_READ_THRESHOLD_REACHED  SERCOM_USART_EVENT_READ_THRESHOLD_REACHED
-#define CLICK_HEARTRATE9_UART_READ_BUFFER_SIZE              128                 //Define value same as SERCOM4_USART_READ_BUFFER_SIZE defined in the respective USART PLIB '.c' file
+#define CLICK_HEARTRATE9_USART_Read                          SERCOM4_USART_Read
+#define CLICK_HEARTRATE9_USART_ReadThresholdSet              SERCOM4_USART_ReadThresholdSet
+#define CLICK_HEARTRATE9_USART_ReadNotificationEnable        SERCOM4_USART_ReadNotificationEnable
+#define CLICK_HEARTRATE9_USART_ReadCallbackRegister          SERCOM4_USART_ReadCallbackRegister
+#define CLICK_HEARTRATE9_USART_ReadCountGet                  SERCOM4_USART_ReadCountGet
+#define CLICK_HEARTRATE9_USART_EVENT_READ_THRESHOLD_REACHED  SERCOM_USART_EVENT_READ_THRESHOLD_REACHED
+#define CLICK_HEARTRATE9_USART_READ_BUFFER_SIZE              128                 //Define value same as SERCOM4_USART_READ_BUFFER_SIZE defined in the respective USART PLIB '.c' file
 
 // Timer Definitions
 #define CLICK_HEARTRATE9_TimerStart                         SYSTICK_TimerStart
