@@ -128,15 +128,15 @@ void PAC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handl
 void RAMECC_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM0_USART_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM1_SPI_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM2_I2C_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
+void SERCOM2_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
+void SERCOM2_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
+void SERCOM2_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
+void SERCOM2_OTHER_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM3_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM3_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM3_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM3_OTHER_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM4_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM4_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM4_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM4_OTHER_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
+void SERCOM4_USART_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM5_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM5_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 void SERCOM5_2_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -270,18 +270,18 @@ const DeviceVectors exception_table=
     .pfnSERCOM1_1_Handler          = ( void * ) SERCOM1_SPI_InterruptHandler,
     .pfnSERCOM1_2_Handler          = ( void * ) SERCOM1_SPI_InterruptHandler,
     .pfnSERCOM1_OTHER_Handler      = ( void * ) SERCOM1_SPI_InterruptHandler,
-    .pfnSERCOM2_0_Handler          = ( void * ) SERCOM2_I2C_InterruptHandler,
-    .pfnSERCOM2_1_Handler          = ( void * ) SERCOM2_I2C_InterruptHandler,
-    .pfnSERCOM2_2_Handler          = ( void * ) SERCOM2_I2C_InterruptHandler,
-    .pfnSERCOM2_OTHER_Handler      = ( void * ) SERCOM2_I2C_InterruptHandler,
+    .pfnSERCOM2_0_Handler          = ( void * ) SERCOM2_0_Handler,
+    .pfnSERCOM2_1_Handler          = ( void * ) SERCOM2_1_Handler,
+    .pfnSERCOM2_2_Handler          = ( void * ) SERCOM2_2_Handler,
+    .pfnSERCOM2_OTHER_Handler      = ( void * ) SERCOM2_OTHER_Handler,
     .pfnSERCOM3_0_Handler          = ( void * ) SERCOM3_0_Handler,
     .pfnSERCOM3_1_Handler          = ( void * ) SERCOM3_1_Handler,
     .pfnSERCOM3_2_Handler          = ( void * ) SERCOM3_2_Handler,
     .pfnSERCOM3_OTHER_Handler      = ( void * ) SERCOM3_OTHER_Handler,
-    .pfnSERCOM4_0_Handler          = ( void * ) SERCOM4_0_Handler,
-    .pfnSERCOM4_1_Handler          = ( void * ) SERCOM4_1_Handler,
-    .pfnSERCOM4_2_Handler          = ( void * ) SERCOM4_2_Handler,
-    .pfnSERCOM4_OTHER_Handler      = ( void * ) SERCOM4_OTHER_Handler,
+    .pfnSERCOM4_0_Handler          = ( void * ) SERCOM4_USART_InterruptHandler,
+    .pfnSERCOM4_1_Handler          = ( void * ) SERCOM4_USART_InterruptHandler,
+    .pfnSERCOM4_2_Handler          = ( void * ) SERCOM4_USART_InterruptHandler,
+    .pfnSERCOM4_OTHER_Handler      = ( void * ) SERCOM4_USART_InterruptHandler,
     .pfnSERCOM5_0_Handler          = ( void * ) SERCOM5_0_Handler,
     .pfnSERCOM5_1_Handler          = ( void * ) SERCOM5_1_Handler,
     .pfnSERCOM5_2_Handler          = ( void * ) SERCOM5_2_Handler,

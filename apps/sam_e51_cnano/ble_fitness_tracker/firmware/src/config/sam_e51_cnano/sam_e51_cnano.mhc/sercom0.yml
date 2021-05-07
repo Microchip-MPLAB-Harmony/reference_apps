@@ -139,4 +139,4 @@ children:
       - type: User
         attributes: {value: '1'}
 - type: ElementPosition
-  attributes: {x: '281', y: '359', id: sercom0}
+  attributes: {x: '121', y: '335', id: sercom0}

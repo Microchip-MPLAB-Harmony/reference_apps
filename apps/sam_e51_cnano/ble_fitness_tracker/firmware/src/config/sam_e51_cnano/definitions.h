@@ -50,7 +50,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
-#include "peripheral/sercom/i2c_master/plib_sercom2_i2c_master.h"
 #include "peripheral/sercom/spi_master/plib_sercom1_spi_master.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
@@ -60,15 +59,12 @@
 #include "peripheral/systick/plib_systick.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/sercom/usart/plib_sercom5_usart.h"
+#include "peripheral/sercom/usart/plib_sercom4_usart.h"
 #include "peripheral/eic/plib_eic.h"
 #include "peripheral/tc/plib_tc0.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
-#include "driver/spi/drv_spi.h"
 #include "system/int/sys_int.h"
-#include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
-#include "system/dma/sys_dma.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
 #include "app.h"
@@ -193,12 +189,6 @@ Remarks:
         
 typedef struct
 {
-    /* I2C0 Driver Object */
-    SYS_MODULE_OBJ drvI2C0;
-
-    /* SPI0 Driver Object */
-    SYS_MODULE_OBJ drvSPI0;
-
     SYS_MODULE_OBJ  sysTime;
 
 } SYSTEM_OBJECTS;

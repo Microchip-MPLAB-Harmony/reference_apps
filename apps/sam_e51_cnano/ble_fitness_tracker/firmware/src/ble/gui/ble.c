@@ -66,7 +66,7 @@ static char message_buf1 [MAX_BLE_BUFSIZE];
 static char message_buf2 [MAX_BLE_BUFSIZE];
 static char message_buf3 [MAX_BLE_BUFSIZE]; 
 
-static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t context);
+static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t context);
 
 void bleInitialize(bool all)
 {
@@ -75,7 +75,7 @@ void bleInitialize(bool all)
         bleData.state = BLE_STATE_OPEN;    
         bleData.bt.context = (uintptr_t) &_appBleContext;  
         bleData.bt.eventHandler = 
-            (DRV_BT_EVENT_HANDLER) _BLEEventHandler;
+            (CUSTOM_BT_EVENT_HANDLER) _BLEEventHandler;
     }
     
     laWidget_SetVisible((laWidget*)SendMessageButton, LA_FALSE);
@@ -100,12 +100,12 @@ void bleTasks()
         //----------------------------------------------------------------------
         case BLE_STATE_OPEN:
         {
-            if (SYS_STATUS_READY == DRV_BT_Status())
+            if (SYS_STATUS_READY == CUSTOM_BT_Status())
             {            
                 // open BT module
-                bleData.bt.handle = DRV_BT_Open(DRV_IO_INTENT_READ, DRV_BT_PROTOCOL_ALL);
+                bleData.bt.handle = CUSTOM_BT_Open(BM71_IO_INTENT_READ, CUSTOM_BT_PROTOCOL_ALL);
 
-                if(bleData.bt.handle != DRV_HANDLE_INVALID)
+                if(bleData.bt.handle != BM71_HANDLE_INVALID)
                 {
                         bleData.state = BLE_STATE_SET_BT_EVENT_HANDLER;
                 }
@@ -122,7 +122,7 @@ void bleTasks()
         //----------------------------------------------------------------------
         case BLE_STATE_SET_BT_EVENT_HANDLER:
         {          
-            DRV_BT_EventHandlerSet(bleData.bt.handle,
+            CUSTOM_BT_EventHandlerSet(bleData.bt.handle,
                                           bleData.bt.eventHandler,
                                           (uintptr_t)0);                                  
 
@@ -146,16 +146,16 @@ void bleTasks()
 
 }
 
-static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t context)
+static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t context)
 {
     switch(event)
     {
-        case DRV_BT_EVENT_BLESPP_MSG_RECEIVED:
+        case CUSTOM_BT_EVENT_BLESPP_MSG_RECEIVED:
         {           
             laString tempStr;                                      
             char buf[MAX_BLE_BUFSIZE];
             
-            if (DRV_BT_ReadDataFromBLE(bleData.bt.handle, (uint8_t*)buf, MAX_BLE_BUFSIZE ))
+            if (CUSTOM_BT_ReadDataFromBLE(bleData.bt.handle, (uint8_t*)buf, MAX_BLE_BUFSIZE ))
             {
                 strcpy(message_buf1, message_buf2);
                 strcpy(message_buf2, message_buf3);
@@ -195,12 +195,12 @@ static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t conte
         }
         break;
         
-        case DRV_BT_EVENT_BLE_STATUS_CHANGED:
+        case CUSTOM_BT_EVENT_BLE_STATUS_CHANGED:
         {           
             switch(param)
             {             
-                case DRV_BM64_BLE_STATUS_STANDBY:
-                case DRV_BM64_BLE_STATUS_SCANNING:
+                case CUSTOM_BM64_BLE_STATUS_STANDBY:
+                case CUSTOM_BM64_BLE_STATUS_SCANNING:
                     laWidget_SetVisible((laWidget*)Connected_Image, LA_FALSE);
                     laWidget_SetVisible((laWidget*)PairedImage, LA_FALSE);
                     laWidget_SetVisible((laWidget*)No_pair_no_connection_Image, LA_TRUE);
@@ -208,7 +208,7 @@ static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t conte
                     appData.waitingToConnect = true;
                     bleInitialize(false);
                     break;
-                case DRV_BM64_BLE_STATUS_ADVERTISING:
+                case CUSTOM_BM64_BLE_STATUS_ADVERTISING:
                     laWidget_SetVisible((laWidget*)Connected_Image, LA_FALSE);
                     laWidget_SetVisible((laWidget*)PairedImage, LA_TRUE);        // actually, advertising
                     laWidget_SetVisible((laWidget*)No_pair_no_connection_Image, LA_FALSE);
@@ -216,7 +216,7 @@ static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t conte
                     appData.waitingToConnect = true;
                     bleInitialize(false);                    
                     break;
-                case DRV_BM64_BLE_STATUS_CONNECTED:
+                case CUSTOM_BM64_BLE_STATUS_CONNECTED:
                     laWidget_SetVisible((laWidget*)Connected_Image, LA_TRUE);
                     laWidget_SetVisible((laWidget*)PairedImage, LA_FALSE);
                     laWidget_SetVisible((laWidget*)No_pair_no_connection_Image, LA_FALSE);

@@ -93,8 +93,8 @@ typedef enum
 
 typedef struct
 {
-    DRV_HANDLE handle;
-    DRV_BT_EVENT_HANDLER eventHandler;
+    BM71_HANDLE handle;
+    CUSTOM_BT_EVENT_HANDLER eventHandler;
     uintptr_t context;
 } DATA_BT;
 

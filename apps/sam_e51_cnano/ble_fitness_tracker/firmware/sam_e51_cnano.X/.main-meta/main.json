@@ -4,13 +4,13 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_ble_fitness_tracker",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "BLE Fitness Tracker Application",
 		"projectName": "ble_fitness_tracker_sam_e51_cnano",
 		"shortDescription": "Demonstrates integrating BM71 Xpro, Heart Rate and EINK Click bundle on SAM E51 Curiosity Nano)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.45.0"
 		},
 		"compiler": [
 			{
@@ -20,11 +20,11 @@
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.3.85"
+			"semverRange": "^3.4.98"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.6.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

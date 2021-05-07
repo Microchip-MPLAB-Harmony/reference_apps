@@ -55,18 +55,15 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
 #include "peripheral/eic/plib_eic.h"
 #include "peripheral/port/plib_port.h"
 #include "definitions.h"
-#include "custom_bt/driver/bm71/custom_drv_bm71.h"
+#include "custom_bt/bm71/custom_bm71.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
-
 extern "C" {
-
 #endif
 // DOM-IGNORE-END
 
@@ -90,72 +87,33 @@ extern "C" {
 typedef enum
 {
     /* Initial state. */
-    APP_HR3_STATE_INIT,
+    APP_INIT_STATE,
 
-    /* periodic service */
-    APP_HR3_STATE_PERIODIC_SERVICE,
+    /* Checking, is Heartrate 9 data ready */
+    CHKNG_HEART_RATE_DATA_RDY_STATE,
+
+    /* Process the Heartrate 9 sensor read data */
+    HEART_RATE_SENSOR_DATA_PROSS_STATE,
 
     /* Error state */
-    APP_HR3_STATE_ERROR,
+    EINK_UPDATE_STATE,
 
     /* Idle state */
-    APP_HR3_STATE_IDLE,
+    APP_IDLE_STATE,
 
-} APP_HR3_STATES;
+} APP_STATES;
 
 #define QUERY_DELAY        500        // 1/2 sec
 
-// *****************************************************************************
-/* Application Data
-
-  Summary:
-    Holds application data
-
-  Description:
-    This structure holds the application's data.
-
-  Remarks:
-    Application strings and buffers are be defined outside this structure.
- */
-
 typedef struct
 {
     /* The application's current state */
-    APP_HR3_STATES state;
-
-    /* I2C driver client handle */
-    DRV_HANDLE i2cHandle;
-    
-    DRV_HANDLE SPIHandle;
-
-    /* I2C driver transfer handle */
-    DRV_I2C_TRANSFER_HANDLE transferHandle;
-    
-    /* Handle to periodic system timer */
-    SYS_TIME_HANDLE tmrHandle;
-
-    /* buffer for data transfer */
-    uint8_t rxBuffer[2];
-
-    /* flag to check whether read transfer is done */
-    volatile bool isTransferDone;
-
-    /* sensor value */
-    uint16_t heartRate;
-
-} APP_HR3_DATA;
-
-
-typedef struct
-{
-    /* The application's current state */
-    DRV_HANDLE drvSPIHandle;
-    DRV_SPI_TRANSFER_HANDLE transferHandle;
     volatile bool transferStatus;
        
     uint16_t queryDelay;
     
     bool waitingToConnect;
+    APP_STATES app_state;
     uint16_t waitingToConnectTimer;
 } APP_DATA;
 // *****************************************************************************
@@ -238,14 +196,6 @@ void APP_Initialize ( void );
 
 void APP_Tasks( void );
 
-void APP_HR3_I2C_Write_Ptr ( unsigned char slave_address, unsigned char *buffer, 
-                            unsigned long count, unsigned long end_mode );
-void APP_HR3_I2C_Read_Ptr ( unsigned char slave_address,unsigned char *buffer, 
-                              unsigned long count, unsigned long end_mode );
-void APP_HR3_I2C_Write_Read_Ptr ( unsigned char slave_address,unsigned char *txbuffer, 
-                                 unsigned long txcount, unsigned char *rxbuffer, 
-                                 unsigned long rxcount, unsigned long end_mode );
-
 // make boards with multiple switches/LEDs compatible with those with just one
 #ifdef LED1_On
 #define LED_On                 LED1_On
@@ -257,44 +207,42 @@ void APP_HR3_I2C_Write_Read_Ptr ( unsigned char slave_address,unsigned char *txb
 #define LED1_Toggle            CNANO_LED_Toggle
 #endif
 
-#endif /* APP_H */
-
 // *****************************************************************************
 /*** Bluetooth Driver Configuration ***/
 
-#define DRV_BM71_CLIENTS_NUMBER                 1
+#define CUSTOM_BM71_CLIENTS_NUMBER                 1
    
 /* Bluetooth Driver Abstraction definition */
-#define DRV_BT_Initialize                       DRV_BM71_Initialize
-#define DRV_BT_Status                           DRV_BM71_Status
-#define DRV_BT_Tasks                            DRV_BM71_Tasks
-#define DRV_BT_Open                             DRV_BM71_Open
-#define DRV_BT_Close                            DRV_BM71_Close
-#define DRV_BT_EventHandlerSet                  DRV_BM71_EventHandlerSet
-#define DRV_BT_GetPowerStatus                   DRV_BM71_GetPowerStatus
+#define CUSTOM_BT_Initialize                       CUSTOM_BM71_Initialize
+#define CUSTOM_BT_Status                           CUSTOM_BM71_Status
+#define CUSTOM_BT_Tasks                            CUSTOM_BM71_Tasks
+#define CUSTOM_BT_Open                             CUSTOM_BM71_Open
+#define CUSTOM_BT_Close                            CUSTOM_BM71_Close
+#define CUSTOM_BT_EventHandlerSet                  CUSTOM_BM71_EventHandlerSet
+#define CUSTOM_BT_GetPowerStatus                   CUSTOM_BM71_GetPowerStatus
 
-#define DRV_BT_EVENT_HANDLER                    DRV_BM71_EVENT_HANDLER
-#define DRV_BT_EVENT                            DRV_BM71_EVENT
-#define DRV_BT_EVENT_BLESPP_MSG_RECEIVED        DRV_BM71_EVENT_BLESPP_MSG_RECEIVED
-#define DRV_BT_EVENT_BLE_STATUS_CHANGED         DRV_BM71_EVENT_BLE_STATUS_CHANGED
+#define CUSTOM_BT_EVENT_HANDLER                    CUSTOM_BM71_EVENT_HANDLER
+#define CUSTOM_BT_EVENT                            CUSTOM_BM71_EVENT
+#define CUSTOM_BT_EVENT_BLESPP_MSG_RECEIVED        CUSTOM_BM71_EVENT_BLESPP_MSG_RECEIVED
+#define CUSTOM_BT_EVENT_BLE_STATUS_CHANGED         CUSTOM_BM71_EVENT_BLE_STATUS_CHANGED
 
-#define DRV_BT_PROTOCOL_BLE                     DRV_BM71_PROTOCOL_BLE               
-#define DRV_BT_PROTOCOL                         DRV_BM71_PROTOCOL
+#define CUSTOM_BT_PROTOCOL_BLE                     CUSTOM_BM71_PROTOCOL_BLE               
+#define CUSTOM_BT_PROTOCOL                         CUSTOM_BM71_PROTOCOL
 
-#define DRV_BT_STATUS_READY                     DRV_BM71_STATUS_READY
+#define CUSTOM_BT_STATUS_READY                     CUSTOM_BM71_STATUS_READY
 
-#define DRV_BT_BLE_STATUS                       DRV_BM71_BLE_STATUS
-#define DRV_BT_BLE_STATUS_STANDBY               DRV_BM71_BLE_STATUS_STANDBY
-#define DRV_BT_BLE_STATUS_ADVERTISING           DRV_BM71_BLE_STATUS_ADVERTISING
-#define DRV_BT_BLE_STATUS_SCANNING              DRV_BM71_BLE_STATUS_SCANNING
-#define DRV_BT_BLE_STATUS_CONNECTED             DRV_BM71_BLE_STATUS_CONNECTED
+#define CUSTOM_BT_BLE_STATUS                       CUSTOM_BM71_BLE_STATUS
+#define CUSTOM_BT_BLE_STATUS_STANDBY               CUSTOM_BM71_BLE_STATUS_STANDBY
+#define CUSTOM_BT_BLE_STATUS_ADVERTISING           CUSTOM_BM71_BLE_STATUS_ADVERTISING
+#define CUSTOM_BT_BLE_STATUS_SCANNING              CUSTOM_BM71_BLE_STATUS_SCANNING
+#define CUSTOM_BT_BLE_STATUS_CONNECTED             CUSTOM_BM71_BLE_STATUS_CONNECTED
 
-#define DRV_BT_ClearBLEData                     DRV_BM71_ClearBLEData
-#define DRV_BT_ReadDataFromBLE                  DRV_BM71_ReadDataFromBLE
-#define DRV_BT_SendDataOverBLE                  DRV_BM71_SendDataOverBLE
+#define CUSTOM_BT_ClearBLEData                     CUSTOM_BM71_ClearBLEData
+#define CUSTOM_BT_ReadDataFromBLE                  CUSTOM_BM71_ReadDataFromBLE
+#define CUSTOM_BT_SendDataOverBLE                  CUSTOM_BM71_SendDataOverBLE
 
-#define DRV_BT_BLE_QueryStatus                  DRV_BM71_BLE_QueryStatus
-#define DRV_BT_BLE_EnableAdvertising            DRV_BM71_BLE_EnableAdvertising
+#define CUSTOM_BT_BLE_QueryStatus                  CUSTOM_BM71_BLE_QueryStatus
+#define CUSTOM_BT_BLE_EnableAdvertising            CUSTOM_BM71_BLE_EnableAdvertising
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
@@ -302,6 +250,8 @@ void APP_HR3_I2C_Write_Read_Ptr ( unsigned char slave_address,unsigned char *txb
 #endif
 //DOM-IGNORE-END
 
+
+#endif /* APP_H */
 /*******************************************************************************
  End of File
  */

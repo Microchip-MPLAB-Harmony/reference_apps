@@ -7,7 +7,7 @@ nav_order: 4
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# BLE Fitness Tracker Application on SAM E51 Curiosity Nano and Nano Base for Click boards
+# BLE Fitness Tracker Application on SAM E51 Curiosity Nano Evaluation Kit and Nano Base for Click boards
 <h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ble_fitness_tracker.zip" > Download </a> </h2>
 
 -----
@@ -18,34 +18,35 @@ nav_order: 4
   on a very low power consuming display and posts this Heart Rate data to Microchip Bluetooth Data (MBD)
   android mobile application via BLE (Bluetooth Low Energy).  
 
-
-> The Mikro Elektronika Heart Rate 3 click board is used to read the heart pulse.
+> The Mikro Elektronika Heart Rate 9 click board is used to read the heart pulse.
   Mikroelektronika eINK click bundle is used for displaying heart rate.
   The eINK click bundle contains the eINK click adapter board and the eINK display. BM71
   Bluetooth module is used to send the heart rate data over BLE.
 
-> The Heart Rate 3 click contains two integrated LEDs, a photosensitive element and an advanced low noise analog front end to provide clean and accurate heart rate readings. It is enough to place
-  an index finger on top of the sensor to get the heart rate via the I2C interface.
+> The Heart Rate 9 click introduces Microchip's proprietary method of measuring multiple
+  signals in a body using pseudorandom binary sequence generation and phase division multiplexing
+  This algorithm for processing data from the sensor and it can send data for 3 different diodes
+  (green, ir, red) who give out a diagram of the heartbeat and its frequency per minute.
 
 > The eINK display is a very low power consumption display and it can retain the information,
-  even after disconnecting from the power source. The host MCU SAM E51 is interfaced with the Heart Rate 3 click over the I2C interface and eINK click over SPI Interface.
+  even after disconnecting from the power source. The host MCU SAM E51 is interfaced with the
+  Heart Rate 9 click over the USART interface and eINK click over SPI Interface.
 
 ## Modules/Technology Used:
 
 - Peripheral Modules  
 	- Timer
 	- EIC
-- Driver Modules
-	- SPI Driver
-	- I2C Driver
-  - BM71 Driver
+	- SERCOM (SPI)
+	- SERCOM (USART)
+- BM71 Driver
 - STDIO Library
 
 ## Hardware Used:
 
 - [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)
 - [Curiosity Nano Base for Click Boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
-- [Heart Rate 3 click](https://www.mikroe.com/heart-rate-3-click)
+- [Heart Rate 9 click](https://www.mikroe.com/heart-rate-9-click)
 - [EINK CLICK BUNDLE](https://www.mikroe.com/eink-click)
 - [BM71-XPRO](https://www.microchip.com/Developmenttools/ProductDetails/DM164146)
 
@@ -60,7 +61,7 @@ nav_order: 4
 - MPLAB Harmony 3 Launcher Plugin v3.6.2  
 - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
 - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
-- **Microchip Bluetooth Data Android App** - Install using "/ble_fitness_tracker/firmware/android_apk/mbd_3_1.apk"  
+- Install [Microchip Bluetooth Data Android App](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/mbd_3_1.apk) in your android mobile  
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn't seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
@@ -74,7 +75,7 @@ nav_order: 4
 <img src = "images/ble_setup.jpg" width="400" height="300" align="middle">
 
 #### Programming private characteristics
-- Download the manual configuration tool from [BM70/71 Firmware & Software Tools v1.11](https://www.microchip.com/wwwproducts/en/BM71)
+- Download the manual configuration tool from [BM70/71 Firmware & Software Tools v1.11](https://ww1.microchip.com/downloads/en/DeviceDoc/Firmware%20&%20Software%20Tools%20v1.11.zip)
 - Extract and locate configuration tool from below location
  	- Your_downloaded_folder ```\Firmware & Software Tools v1.11\ConfigurationTool\IS187x_102_BLEDK3v1.11_UI1.00```
 - Double click on "`IS187x_102_BLEDK3v1.11_UI1.00.exe` "
@@ -108,12 +109,12 @@ nav_order: 4
 
 ## Setup:
 - Mount SAM E51 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN" (U3) connector of Curiosity Nano Base board
-- Mount Heart Rate 3 click board on mikro bus click 2 connector of Curiosity Nano Base board
+- Mount Heart Rate 9 click board on mikro bus 3 connector of Curiosity Nano Base board
 - Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 1 connector of Curiosity Nano Base board
 - Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board  
 - Power the SAM E51 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)  
 
-  <img src = "images/ble_fitness_tracker_demo_setup.jpg" width="600" height="650">  
+  <img src = "images/ble_fitness_tracker_demo_setup.jpg" width="600" height="550" align="middle">  
 
 
 ## Programming hex file:
@@ -141,13 +142,13 @@ The prebuilt hex file can be programmed by following the below steps.
 ## Running the Demo:
 <span style="color:blue"> *Before proceeding, install the Microchip Bluetooth Data android app in an Android Smartphone.* </span>
 - Enable Bluetooth and location from Smartphone settings
-- Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano
+- Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano Evaluation Kit
 - Parallelly, open the "**Microchip Bluetooth Data (MBD)**" android app from your smartphone
   and tap on "Bluetooth Smart" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
 <img src = "images/mbd_appscreen1.jpg" width="250" height="450" align="middle">
 
 - After power-up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor
-- After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 3 click lights up
+- After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 9 click lights up
 
 -  Now, scan for Bluetooth devices by tapping START SCAN option on the MBD APP.
   The BM71 device should appear as **MCHP_SAM_E51_HR** in the list of Bluetooth devices.  
@@ -163,14 +164,16 @@ The prebuilt hex file can be programmed by following the below steps.
 <img src = "images/mbd_appscreen5.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
 
-- Place your index finger gently on the heart rate 3 click sensor as shown in the figure below.  
-<img src = "images/ble_fitness_tracker_demo_run.jpg" width="600" height="600" align="middle">
+- Keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.  
+  <img src = "images/finger_placement.png" width="432" height="158" align="middle">
+
+  <img src = "images/ble_fitness_tracker_demo_run.jpg" width="600" height="600" align="middle">
 
 - In the bottom right corner of the **Sensor Location** screen, disable and enable the **Notify Button**.  
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen7.jpg" width="250" height="450" align="middle">  
 
-- Wait till the LED "LED0" on SAM E51 Curiosity Nano board goes off. Once the LED is off, lift your finger.  
+- Wait till the LED "LED0" on SAM E51 Curiosity Nano Evaluation Kit goes off. Once the LED is off, lift your finger.  
   **Note**: Make sure smartphone screens are not turned off and don't switch to any other App(s) on your smartphone.
 - The heart rate value (in bpm - beats per minute) gets displayed on the **Sensor Loaction** screen as shown
   in the figure below. Also, the same heart rate value gets displayed on the eINK display.  
@@ -178,20 +181,22 @@ The prebuilt hex file can be programmed by following the below steps.
 
 ### Running the Demo without BLE:
 #### Note: To test the demo without BLE, disconnect the BM71-XPRO from EXT 1 connector of the Curiosity Nano Base board.
-- Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano
+- Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano Evaluation Kit
 - After power-up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor
-- After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 3 click lights up
-- Press the switch "SW0" on SAM E51 Curiosity Nano board, LED "LED0" on SAM E51 Curiosity Nano board glows on
-- Place your index finger gently on the heart rate 3 click sensor as shown in the figure below  
+- After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 9 click lights up
+- Press the switch "SW0" on SAM E51 Curiosity Nano Evaluation Kit, LED "LED0" on SAM E51 Curiosity Nano Evaluation Kit glows on
+- Place your index finger gently on the heart rate 9 click sensor as shown in the figure below  
 <img src = "images/ble_fitness_tracker_demo_run.jpg" width="600" height="600" align="middle">
-- Wait till the LED "LED0" on SAM E51 Curiosity Nano board goes off and then lift your finger
+- Wait till the LED "LED0" on SAM E51 Curiosity Nano Evaluation Kit goes off and then lift your finger
 - The heart rate value (in bpm - beats per minute) gets displayed on the eINK display
 
-
 ## Comments:
-- Place your index finger gently on the heart rate 3 click sensor, don't push or put pressure on the sensor (the heart rate values may not be accurate)
+- Place your index finger gently on the heart rate 9 click sensor, don't push or put pressure on the sensor (the heart rate values may not be accurate)
 - Make sure the smartphone screen is not turned off when reading Heart Rate Sensor data using the MBD smartphone APP and also, don't switch to any other smartphone App(s)
-- Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs](https://microchipdeveloper.com/harmony3:same54-getting-started-training-module)
+- Reference Training Module:  
+	1. [Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs](https://microchipdeveloper.com/harmony3:same54-getting-started-training-module)
+	2. [Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries](https://microchipdeveloper.com/harmony3:low-power-application-on-sam-e54)
+	3. [Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS](https://microchipdeveloper.com/harmony3:same54-getting-started-tm-drivers-freertos)
 - This application demo builds and works out of the box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to set up and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  

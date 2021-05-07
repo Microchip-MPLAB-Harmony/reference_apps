@@ -3,7 +3,7 @@
   <Components>
     <UniqueComponent dnOrder="0" id="bluetooth_bm71">
       <Symbols dnOrder="0">
-        <String dnOrder="0" id="DRV_BM71_USART">
+        <String dnOrder="0" id="CUSTOM_BM71_USART">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="bluetooth_bm71" value="SERCOM0_USART"/>
           </Values>

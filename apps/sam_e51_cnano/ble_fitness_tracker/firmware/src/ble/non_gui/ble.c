@@ -62,13 +62,13 @@ extern APP_DATA appData;
 
 #define MAX_BLE_BUFSIZE 21
 
-static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t context);
+static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t context);
 
 void bleInitialize(bool all)        // parameter not used in non_gui version
 {
     bleData.state = BLE_STATE_OPEN;    
     bleData.bt.context = (uintptr_t) &_appBleContext;  
-    bleData.bt.eventHandler = (DRV_BT_EVENT_HANDLER) _BLEEventHandler;    
+    bleData.bt.eventHandler = (CUSTOM_BT_EVENT_HANDLER) _BLEEventHandler;    
 } //End bleInitialize()
 
 void bleTasks()
@@ -80,12 +80,12 @@ void bleTasks()
         //----------------------------------------------------------------------
         case BLE_STATE_OPEN:
         {
-            if (SYS_STATUS_READY == DRV_BT_Status())
+            if (SYS_STATUS_READY == CUSTOM_BT_Status())
             {            
                 // open BT module
-                bleData.bt.handle = DRV_BT_Open(DRV_IO_INTENT_READ, DRV_BT_PROTOCOL_BLE);
+                bleData.bt.handle = CUSTOM_BT_Open(BM71_IO_INTENT_READ, CUSTOM_BT_PROTOCOL_BLE);
 
-                if(bleData.bt.handle != DRV_HANDLE_INVALID)
+                if(bleData.bt.handle != BM71_HANDLE_INVALID)
                 {
                         bleData.state = BLE_STATE_SET_BT_EVENT_HANDLER;
                 }
@@ -102,7 +102,7 @@ void bleTasks()
         //----------------------------------------------------------------------
         case BLE_STATE_SET_BT_EVENT_HANDLER:
         {          
-            DRV_BT_EventHandlerSet(bleData.bt.handle,
+            CUSTOM_BT_EventHandlerSet(bleData.bt.handle,
                                           bleData.bt.eventHandler,
                                           (uintptr_t)0);                                  
 
@@ -126,15 +126,15 @@ void bleTasks()
 
 }
 
-static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t context)
+static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t context)
 {
     switch(event)
     {
-        case DRV_BT_EVENT_BLESPP_MSG_RECEIVED:
+        case CUSTOM_BT_EVENT_BLESPP_MSG_RECEIVED:
         {                                               
             char buf[MAX_BLE_BUFSIZE];
             
-            if (DRV_BT_ReadDataFromBLE(bleData.bt.handle, (uint8_t*)buf, MAX_BLE_BUFSIZE ))
+            if (CUSTOM_BT_ReadDataFromBLE(bleData.bt.handle, (uint8_t*)buf, MAX_BLE_BUFSIZE ))
             {
                 int i;
                 for (i=0; i < strlen(buf); i++)
@@ -153,17 +153,17 @@ static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t conte
         }
         break;
         
-        case DRV_BT_EVENT_BLE_STATUS_CHANGED:
+        case CUSTOM_BT_EVENT_BLE_STATUS_CHANGED:
         {           
             switch(param)
             {             
-                case DRV_BT_BLE_STATUS_STANDBY:
-                case DRV_BT_BLE_STATUS_SCANNING:
-                case DRV_BT_BLE_STATUS_ADVERTISING:
+                case CUSTOM_BT_BLE_STATUS_STANDBY:
+                case CUSTOM_BT_BLE_STATUS_SCANNING:
+                case CUSTOM_BT_BLE_STATUS_ADVERTISING:
                     LED1_On();
                     appData.waitingToConnect = true;                    
                     break;
-                case DRV_BT_BLE_STATUS_CONNECTED:                        
+                case CUSTOM_BT_BLE_STATUS_CONNECTED:                        
                     LED1_Off();
                     appData.waitingToConnect = false;
                     break;                    
