@@ -46,7 +46,6 @@
 
 #include <xc.h>
 #include <stdint.h>
-#include "definitions.h"
 /**	Click routine interfaces/resources Macro Declarations
  *
  * 	1. I2C

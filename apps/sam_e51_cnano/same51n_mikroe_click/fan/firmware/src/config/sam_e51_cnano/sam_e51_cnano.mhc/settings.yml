@@ -5,9 +5,9 @@ frameworkPath: ../../../../../Projects/git_hub
 processor: ATSAME51J20A
 projectName: ''
 settings:
-  PackageFilter: audio;bsp;core;csp;gfx;quick_docs;reference_apps;usb
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;gfx;gfx_apps;gfx_apps_pic32mz_da;net;net;reference_apps;touch;usb;wireless;
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.4.98\atdf\ATSAME51J20A.atdf
+  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.3.78\atdf\ATSAME51J20A.atdf
