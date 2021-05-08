@@ -1,0 +1,116 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sercom0}
+children:
+- type: Symbols
+  children:
+  - type: Hex
+    attributes: {id: I2CM_BAUD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '255'}
+  - type: Comment
+    attributes: {id: I2C_BAUD_ERROR_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '**** Achievable I2C Clock Frequency = 181268Hz'}
+  - type: File
+    attributes: {id: SERCOM_USART_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/sercom_u2201/templates/plib_sercom_usart_ring_buffer.h.ftl}
+  - type: File
+    attributes: {id: SERCOM_USART_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/sercom_u2201/templates/plib_sercom_usart_ring_buffer.c.ftl}
+  - type: Integer
+    attributes: {id: SPI_BAUD_REG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '47'}
+  - type: Integer
+    attributes: {id: USART_BAUD_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '64277'}
+  - type: KeyValueSet
+    attributes: {id: USART_FORM}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '0'}
+  - type: Boolean
+    attributes: {id: USART_LIN_MASTER_SUPPORTED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'false'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: USART_RXPO}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Integer
+    attributes: {id: USART_RX_RING_BUFFER_SIZE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: USART_SAMPLE_COUNT}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '16'}
+  - type: Integer
+    attributes: {id: USART_SAMPLE_RATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '0'}
+  - type: Integer
+    attributes: {id: USART_TX_RING_BUFFER_SIZE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: ElementPosition
+  attributes: {x: '5', y: '324', id: sercom0}

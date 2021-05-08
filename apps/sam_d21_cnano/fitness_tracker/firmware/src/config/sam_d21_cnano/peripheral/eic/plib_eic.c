@@ -98,12 +98,12 @@ void EIC_Initialize(void)
                               EIC_CONFIG_SENSE7_NONE ;
 
     /* External Interrupt enable*/
-    EIC_REGS->EIC_INTENSET = 0x804;
+    EIC_REGS->EIC_INTENSET = 0x800;
 
     /* Callbacks for enabled interrupts */
     eicCallbackObject[0].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[1].eicPinNo = EIC_PIN_MAX;
-    eicCallbackObject[2].eicPinNo = EIC_PIN_2;
+    eicCallbackObject[2].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[3].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[4].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[5].eicPinNo = EIC_PIN_MAX;

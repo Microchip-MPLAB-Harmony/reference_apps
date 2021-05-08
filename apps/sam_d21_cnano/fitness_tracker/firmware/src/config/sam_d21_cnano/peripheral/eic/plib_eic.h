@@ -77,9 +77,6 @@
 
 typedef enum
 {
-    /* External Interrupt Controller Pin 2 */
-    EIC_PIN_2 = 2,
-
     /* External Interrupt Controller Pin 11 */
     EIC_PIN_11 = 11,
 

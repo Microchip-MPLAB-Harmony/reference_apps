@@ -39,6 +39,7 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 // DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
@@ -49,22 +50,58 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
+
+#include "click_routines/eink_bundle/eink_bundle.h"
+#include "click_routines/eink_bundle/eink_bundle_image.h"
+#include "click_routines/eink_bundle/eink_bundle_font.h"
+#include "click_routines/heartrate9/heartrate9.h"
+
+static volatile bool switchPressEvent       = false;
+static char lcl_buffer[20]                  = {0};
+static int8_t   heartrate_data              = -1;
+
+static void Switch_Press_Handler(uintptr_t context)
+{
+    CNANO_LED_Clear();
+    switchPressEvent = true;
+}
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
+
 int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    EIC_CallbackRegister(EIC_PIN_11, Switch_Press_Handler, 0);
     
-    SYSTICK_TimerStart();
-
+    eink_init();
+    eink_image_bmp(mchp_logo);
+    eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
+    
     while ( true )
     {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
+        if(switchPressEvent == true)
+        {
+            if(true == is_heartrate9_byte_ready())  // Checking the Heartrate sensor data ready Status
+            {
+                heartrate_data      = -1;
+                while(-1 == heartrate_data)
+                {
+                    heartrate_data = heartrate9_read_byte();
+                }
+                CNANO_LED_Set();
+                printf("Heartrate = %d bpm \t\r\n", (uint8_t)heartrate_data);
+                sprintf(lcl_buffer, "%dbpm", (uint8_t)heartrate_data);
+                eink_image_bmp(heartrate_image);
+                eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);                
+                eink_text(lcl_buffer, 0, 118 );                
+            }
+            switchPressEvent        = false;
+        }
     }
 
     /* Execution should not come here during normal operation */

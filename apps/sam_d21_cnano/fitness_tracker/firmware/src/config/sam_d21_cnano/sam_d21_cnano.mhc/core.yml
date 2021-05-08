@@ -371,19 +371,47 @@ children:
       - type: User
         attributes: {value: '1'}
   - type: Boolean
-    attributes: {id: GCLK_ID_22_CHEN}
+    attributes: {id: GCLK_ID_20_CHEN}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
   - type: Integer
+    attributes: {id: GCLK_ID_20_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '96000000'}
+  - type: Boolean
+    attributes: {id: GCLK_ID_21_CHEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Integer
+    attributes: {id: GCLK_ID_21_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '96000000'}
+  - type: Boolean
+    attributes: {id: GCLK_ID_22_CHEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Integer
     attributes: {id: GCLK_ID_22_FREQ}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48000000'}
+        attributes: {id: core, value: '0'}
   - type: KeyValueSet
     attributes: {id: GCLK_ID_22_GENSEL}
     children:
@@ -397,14 +425,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Integer
     attributes: {id: GCLK_ID_23_FREQ}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48000000'}
+        attributes: {id: core, value: '0'}
   - type: KeyValueSet
     attributes: {id: GCLK_ID_23_GENSEL}
     children:
@@ -439,14 +467,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Integer
     attributes: {id: GCLK_ID_27_FREQ}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48000000'}
+        attributes: {id: core, value: '0'}
   - type: KeyValueSet
     attributes: {id: GCLK_ID_27_GENSEL}
     children:
@@ -567,47 +595,68 @@ children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
   - type: Boolean
-    attributes: {id: NVIC_11_0_ENABLE}
+    attributes: {id: NVIC_10_0_ENABLE}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
+  - type: String
+    attributes: {id: NVIC_10_0_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: SERCOM1_SPI_InterruptHandler}
+  - type: Boolean
+    attributes: {id: NVIC_10_0_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: NVIC_11_0_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: NVIC_11_0_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: SERCOM2_I2C_InterruptHandler}
+        attributes: {id: core, value: SERCOM2_Handler}
   - type: Boolean
     attributes: {id: NVIC_11_0_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: NVIC_12_0_ENABLE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: NVIC_12_0_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: SERCOM3_SPI_InterruptHandler}
+        attributes: {id: core, value: SERCOM3_Handler}
   - type: Boolean
     attributes: {id: NVIC_12_0_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: NVIC_14_0_ENABLE}
     children:
@@ -635,21 +684,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: NVIC_18_0_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: TC3_TimerInterruptHandler}
+        attributes: {id: core, value: TC3_Handler}
   - type: Boolean
     attributes: {id: NVIC_18_0_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: NVIC_4_0_ENABLE}
     children:
@@ -671,6 +720,27 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: NVIC_9_0_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: String
+    attributes: {id: NVIC_9_0_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: SERCOM0_USART_InterruptHandler}
+  - type: Boolean
+    attributes: {id: NVIC_9_0_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
   - type: Integer
     attributes: {id: OSC8M_CLOCK_FREQ}
     children:
@@ -679,56 +749,105 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '2000000'}
   - type: String
-    attributes: {id: PIN_10_DIR}
+    attributes: {id: PIN_10_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_11_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_11_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: CLICK_EINK_BUNDLE_BSY}
+  - type: String
+    attributes: {id: PIN_11_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: PIN_11_INEN}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'True'}
+  - type: String
+    attributes: {id: PIN_11_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_11_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_11_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: PIN_11_PULLEN}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_12_DIR}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: Out}
   - type: String
-    attributes: {id: PIN_10_FUNCTION_NAME}
+    attributes: {id: PIN_12_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: EINK_C_DC}
+        attributes: {value: CLICK_EINK_BUNDLE_RST}
   - type: String
-    attributes: {id: PIN_10_FUNCTION_TYPE}
+    attributes: {id: PIN_12_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: PIN_10_INEN}
+    attributes: {id: PIN_12_INEN}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: ''}
   - type: String
-    attributes: {id: PIN_10_LAT}
+    attributes: {id: PIN_12_LAT}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: High}
   - type: String
-    attributes: {id: PIN_10_MODE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_10_PERIPHERAL_FUNCTION}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: PIN_11_PERIPHERAL_FUNCTION}
+    attributes: {id: PIN_12_MODE}
     children:
     - type: Values
       children:
@@ -736,6 +855,55 @@ children:
         attributes: {value: ''}
   - type: String
     attributes: {id: PIN_12_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: PIN_13_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: SERCOM0_PAD0}
+  - type: String
+    attributes: {id: PIN_13_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_13_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: C}
+  - type: String
+    attributes: {id: PIN_14_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: SERCOM0_PAD1}
+  - type: String
+    attributes: {id: PIN_14_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_14_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: C}
+  - type: String
+    attributes: {id: PIN_16_PERIPHERAL_FUNCTION}
     children:
     - type: Values
       children:
@@ -854,84 +1022,7 @@ children:
       - type: User
         attributes: {value: 'True'}
   - type: String
-    attributes: {id: PIN_21_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_21_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: SERCOM2_PAD0}
-  - type: String
-    attributes: {id: PIN_21_INEN}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_21_LAT}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: High}
-  - type: String
-    attributes: {id: PIN_21_MODE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
     attributes: {id: PIN_21_PERIPHERAL_FUNCTION}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: C}
-  - type: String
-    attributes: {id: PIN_21_PULLEN}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_22_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_22_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: SERCOM2_PAD1}
-  - type: String
-    attributes: {id: PIN_22_INEN}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_22_LAT}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: High}
-  - type: String
-    attributes: {id: PIN_22_MODE}
     children:
     - type: Values
       children:
@@ -943,13 +1034,6 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: C}
-  - type: String
-    attributes: {id: PIN_22_PULLEN}
-    children:
-    - type: Values
-      children:
-      - type: User
         attributes: {value: ''}
   - type: String
     attributes: {id: PIN_25_FUNCTION_TYPE}
@@ -957,7 +1041,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: SERCOM3_PAD0}
+        attributes: {value: SERCOM1_PAD0}
   - type: String
     attributes: {id: PIN_25_MODE}
     children:
@@ -971,14 +1055,14 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: D}
+        attributes: {value: C}
   - type: String
     attributes: {id: PIN_26_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: SERCOM3_PAD1}
+        attributes: {value: SERCOM1_PAD1}
   - type: String
     attributes: {id: PIN_26_MODE}
     children:
@@ -992,21 +1076,63 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: D}
+        attributes: {value: C}
   - type: String
-    attributes: {id: PIN_27_PERIPHERAL_FUNCTION}
+    attributes: {id: PIN_27_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: PIN_27_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: CLICK_EINK_BUNDLE_CS}
+  - type: String
+    attributes: {id: PIN_27_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: PIN_27_INEN}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: ''}
   - type: String
+    attributes: {id: PIN_27_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: High}
+  - type: String
+    attributes: {id: PIN_27_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_27_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
     attributes: {id: PIN_28_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: SERCOM3_PAD3}
+        attributes: {value: SERCOM1_PAD3}
   - type: String
     attributes: {id: PIN_28_MODE}
     children:
@@ -1020,7 +1146,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: D}
+        attributes: {value: C}
   - type: String
     attributes: {id: PIN_2_PERIPHERAL_FUNCTION}
     children:
@@ -1050,49 +1176,7 @@ children:
       - type: User
         attributes: {value: D}
   - type: String
-    attributes: {id: PIN_32_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_32_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: EINK_C_BSY}
-  - type: String
-    attributes: {id: PIN_32_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: PIN_32_INEN}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: 'True'}
-  - type: String
-    attributes: {id: PIN_32_MODE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
     attributes: {id: PIN_32_PERIPHERAL_FUNCTION}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: PIN_32_PULLEN}
     children:
     - type: Values
       children:
@@ -1132,7 +1216,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: EINK_C_RST}
+        attributes: {value: CLICK_HEARTRATE9_RST}
   - type: String
     attributes: {id: PIN_38_FUNCTION_TYPE}
     children:
@@ -1169,70 +1253,7 @@ children:
       - type: User
         attributes: {value: GPIO}
   - type: String
-    attributes: {id: PIN_41_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: PIN_41_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: EINK_C_CS}
-  - type: String
-    attributes: {id: PIN_41_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: PIN_41_INEN}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_41_LAT}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: High}
-  - type: String
-    attributes: {id: PIN_41_MODE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
     attributes: {id: PIN_41_PERIPHERAL_FUNCTION}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: PIN_47_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: HR3_RDY}
-  - type: String
-    attributes: {id: PIN_47_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: EIC_EXTINT2}
-  - type: String
-    attributes: {id: PIN_47_MODE}
     children:
     - type: Values
       children:
@@ -1244,48 +1265,6 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: A}
-  - type: String
-    attributes: {id: PIN_48_DIR}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: Out}
-  - type: String
-    attributes: {id: PIN_48_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: CLICK_HR3_RST}
-  - type: String
-    attributes: {id: PIN_48_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: GPIO}
-  - type: String
-    attributes: {id: PIN_48_INEN}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_48_LAT}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: High}
-  - type: String
-    attributes: {id: PIN_48_MODE}
-    children:
-    - type: Values
-      children:
-      - type: User
         attributes: {value: ''}
   - type: String
     attributes: {id: PIN_48_PERIPHERAL_FUNCTION}
@@ -1293,42 +1272,63 @@ children:
     - type: Values
       children:
       - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_8_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: PIN_8_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: CLICK_EINK_BUNDLE_DC}
+  - type: String
+    attributes: {id: PIN_8_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
         attributes: {value: GPIO}
+  - type: String
+    attributes: {id: PIN_8_INEN}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_8_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: High}
+  - type: String
+    attributes: {id: PIN_8_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
   - type: String
     attributes: {id: PIN_8_PERIPHERAL_FUNCTION}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: ''}
-  - type: String
-    attributes: {id: PIN_9_FUNCTION_NAME}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: CLICK_HR3_CLK}
-  - type: String
-    attributes: {id: PIN_9_FUNCTION_TYPE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: TCC0_WO0}
-  - type: String
-    attributes: {id: PIN_9_MODE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: ''}
+        attributes: {value: GPIO}
   - type: String
     attributes: {id: PIN_9_PERIPHERAL_FUNCTION}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: E}
+        attributes: {value: ''}
   - type: String
     attributes: {id: PM_APBA_INITIAL_VALUE}
     children:
@@ -1342,7 +1342,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x108b0'}
+        attributes: {id: core, value: '0x1008c'}
   - type: Boolean
     attributes: {id: PORT_GROUP_0}
     children:
@@ -1356,14 +1356,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x10000020'}
+        attributes: {id: core, value: '0x40080'}
   - type: String
     attributes: {id: PORT_GROUP_0_OUT}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x10003020'}
+        attributes: {id: core, value: '0x40080'}
   - type: String
     attributes: {id: PORT_GROUP_0_PAD_0}
     children:
@@ -1378,6 +1378,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: PA01}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_11}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA11}
   - type: String
     attributes: {id: PORT_GROUP_0_PAD_12}
     children:
@@ -1470,6 +1477,20 @@ children:
       - type: Dynamic
         attributes: {id: core, value: PA07}
   - type: String
+    attributes: {id: PORT_GROUP_0_PAD_8}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA08}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PAD_9}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: PA09}
+  - type: String
     attributes: {id: PORT_GROUP_0_PINCFG0}
     children:
     - type: Values
@@ -1484,19 +1505,26 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0x0'}
   - type: String
+    attributes: {id: PORT_GROUP_0_PINCFG11}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
     attributes: {id: PORT_GROUP_0_PINCFG12}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x1'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_0_PINCFG13}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x1'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_0_PINCFG16}
     children:
@@ -1538,7 +1566,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x2'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_0_PINCFG28}
     children:
@@ -1552,7 +1580,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x1'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_0_PINCFG5}
     children:
@@ -1566,7 +1594,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x0'}
+        attributes: {id: core, value: '0x2'}
   - type: String
     attributes: {id: PORT_GROUP_0_PINCFG7}
     children:
@@ -1574,6 +1602,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PINCFG8}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x1'}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PINCFG9}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x1'}
   - type: String
     attributes: {id: PORT_GROUP_0_PMUX0}
     children:
@@ -1601,9 +1643,23 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x4'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_0_PMUX3}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PMUX4}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x22'}
+  - type: String
+    attributes: {id: PORT_GROUP_0_PMUX5}
     children:
     - type: Values
       children:
@@ -1615,21 +1671,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x22'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_0_PMUX8}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x33'}
+        attributes: {id: core, value: '0x22'}
   - type: String
     attributes: {id: PORT_GROUP_0_PMUX9}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x30'}
+        attributes: {id: core, value: '0x20'}
   - type: Boolean
     attributes: {id: PORT_GROUP_1}
     children:
@@ -1643,14 +1699,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x800408'}
+        attributes: {id: core, value: '0x800600'}
   - type: String
     attributes: {id: PORT_GROUP_1_OUT}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x800c08'}
+        attributes: {id: core, value: '0x800e00'}
   - type: String
     attributes: {id: PORT_GROUP_1_PAD_10}
     children:
@@ -1720,7 +1776,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x1'}
+        attributes: {id: core, value: '0x0'}
   - type: String
     attributes: {id: PORT_GROUP_1_PINCFG22}
     children:
@@ -1785,89 +1841,117 @@ children:
       - type: Dynamic
         attributes: {id: core, value: PORT}
   - type: Boolean
-    attributes: {id: SERCOM2_CORE_CLOCK_ENABLE}
+    attributes: {id: SERCOM0_CORE_CLOCK_ENABLE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom2, value: 'true'}
+        attributes: {id: sercom0, value: 'true'}
+  - type: Integer
+    attributes: {id: SERCOM0_CORE_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '96000000'}
+  - type: Boolean
+    attributes: {id: SERCOM0_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'true'}
+  - type: Boolean
+    attributes: {id: SERCOM0_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: String
+    attributes: {id: SERCOM0_INTERRUPT_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: SERCOM0_USART_InterruptHandler}
+  - type: Boolean
+    attributes: {id: SERCOM0_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'true'}
+  - type: Boolean
+    attributes: {id: SERCOM1_CORE_CLOCK_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom1, value: 'true'}
+  - type: Integer
+    attributes: {id: SERCOM1_CORE_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '96000000'}
+  - type: Boolean
+    attributes: {id: SERCOM1_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom1, value: 'true'}
+  - type: Boolean
+    attributes: {id: SERCOM1_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: String
+    attributes: {id: SERCOM1_INTERRUPT_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom1, value: SERCOM1_SPI_InterruptHandler}
+  - type: Boolean
+    attributes: {id: SERCOM1_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom1, value: 'true'}
   - type: Integer
     attributes: {id: SERCOM2_CORE_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48000000'}
-  - type: Boolean
-    attributes: {id: SERCOM2_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom2, value: 'true'}
+        attributes: {id: core, value: '0'}
   - type: Boolean
     attributes: {id: SERCOM2_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: SERCOM2_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom2, value: SERCOM2_I2C_InterruptHandler}
-  - type: Boolean
-    attributes: {id: SERCOM2_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom2, value: 'true'}
-  - type: Boolean
-    attributes: {id: SERCOM3_CORE_CLOCK_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom3, value: 'true'}
+        attributes: {id: core, value: 'true'}
   - type: Integer
     attributes: {id: SERCOM3_CORE_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48000000'}
-  - type: Boolean
-    attributes: {id: SERCOM3_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom3, value: 'true'}
+        attributes: {id: core, value: '0'}
   - type: Boolean
     attributes: {id: SERCOM3_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: SERCOM3_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom3, value: SERCOM3_SPI_InterruptHandler}
-  - type: Boolean
-    attributes: {id: SERCOM3_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: sercom3, value: 'true'}
+        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: SERCOM5_CORE_CLOCK_ENABLE}
     children:
@@ -1990,48 +2074,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: TC3_CLOCK_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tc3, value: 'true'}
   - type: Integer
     attributes: {id: TC3_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48000000'}
-  - type: Boolean
-    attributes: {id: TC3_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tc3, value: 'true'}
+        attributes: {id: core, value: '0'}
   - type: Boolean
     attributes: {id: TC3_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: TC3_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tc3, value: TC3_TimerInterruptHandler}
-  - type: Boolean
-    attributes: {id: TC3_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tc3, value: 'true'}
+        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: USE_SYSTICK_INTERRUPT}
     children:
@@ -2056,4 +2112,4 @@ children:
         children:
         - {type: Value, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '560', y: '20', id: core}
+  attributes: {x: '289', y: '34', id: core}

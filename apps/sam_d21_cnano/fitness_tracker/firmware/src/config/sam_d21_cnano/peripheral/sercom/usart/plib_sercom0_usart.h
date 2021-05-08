@@ -1,20 +1,24 @@
 /*******************************************************************************
-  System Exceptions File
+  SERCOM Universal Synchronous/Asynchrnous Receiver/Transmitter PLIB
 
-  File Name:
-    exceptions.c
+  Company
+    Microchip Technology Inc.
 
-  Summary:
-    This file contains a function which overrides the default _weak_ exception
-    handlers provided by the interrupt.c file.
+  File Name
+    plib_sercom0_usart.h
 
-  Description:
-    This file redefines the default _weak_  exception handler with a more debug
-    friendly one. If an unexpected exception occurs the code will stop in a
-    while(1) loop.
- *******************************************************************************/
+  Summary
+    USART peripheral library interface.
 
-// DOM-IGNORE-BEGIN
+  Description
+    This file defines the interface to the USART peripheral library. This
+    library provides access to and control of the associated peripheral
+    instance.
+
+  Remarks:
+    None.
+*******************************************************************************/
+
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,44 +41,76 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
+
+#ifndef PLIB_SERCOM0_USART_H // Guards against multiple inclusion
+#define PLIB_SERCOM0_USART_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include "definitions.h"
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Exception Handling Routine
-// *****************************************************************************
-// *****************************************************************************
+#include "plib_sercom_usart_common.h"
 
-/* Brief default interrupt handlers for core IRQs.*/
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus // Provide C++ Compatibility
 
-void __attribute__((noreturn)) NonMaskableInt_Handler(void)
-{
-#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
-    __builtin_software_breakpoint();
+    extern "C" {
+
 #endif
-    while (1)
-    {
+// DOM-IGNORE-END
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
+// *****************************************************************************
+// *****************************************************************************
+
+void SERCOM0_USART_Initialize( void );
+
+bool SERCOM0_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
+
+USART_ERROR SERCOM0_USART_ErrorGet( void );
+
+uint32_t SERCOM0_USART_FrequencyGet( void );
+
+size_t SERCOM0_USART_Write(uint8_t* pWrBuffer, const size_t size );
+
+size_t SERCOM0_USART_WriteCountGet(void);
+
+size_t SERCOM0_USART_WriteFreeBufferCountGet(void);
+
+size_t SERCOM0_USART_WriteBufferSizeGet(void);
+
+bool SERCOM0_USART_WriteNotificationEnable(bool isEnabled, bool isPersistent);
+
+void SERCOM0_USART_WriteThresholdSet(uint32_t nBytesThreshold);
+
+void SERCOM0_USART_WriteCallbackRegister( SERCOM_USART_RING_BUFFER_CALLBACK callback, uintptr_t context);
+
+
+
+size_t SERCOM0_USART_Read(uint8_t* pRdBuffer, const size_t size);
+
+size_t SERCOM0_USART_ReadCountGet(void);
+
+size_t SERCOM0_USART_ReadFreeBufferCountGet(void);
+
+size_t SERCOM0_USART_ReadBufferSizeGet(void);
+
+bool SERCOM0_USART_ReadNotificationEnable(bool isEnabled, bool isPersistent);
+
+void SERCOM0_USART_ReadThresholdSet(uint32_t nBytesThreshold);
+
+void SERCOM0_USART_ReadCallbackRegister( SERCOM_USART_RING_BUFFER_CALLBACK callback, uintptr_t context);
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
     }
-}
 
-void __attribute__((noreturn)) HardFault_Handler(void)
-{
-#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
-   __builtin_software_breakpoint();
 #endif
-   while (1)
-   {
-   }
-}
+// DOM-IGNORE-END
 
-/*******************************************************************************
- End of File
- */
-
+#endif //PLIB_SERCOM0_USART_H

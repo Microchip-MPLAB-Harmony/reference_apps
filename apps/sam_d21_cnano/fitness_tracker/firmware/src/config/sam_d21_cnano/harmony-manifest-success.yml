@@ -4,13 +4,13 @@
 
 
 project: fitness_tracker
-creation_date: 2021-01-11T10:42:48.548+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-05-08T19:19:37.424+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.6.5
+mhc_version: v3.7.1
 mplabx_version: v5.45        # if MPLAB X plugin only
-plugin_version: v3.6.2        # if MPLAB X plugin only
-compiler: XC32 (2.41)
+plugin_version: v3.6.4        # if MPLAB X plugin only
+compiler: XC32 (2.50)
 
 modules:
     - {name: "csp", version: "v3.8.3"}
