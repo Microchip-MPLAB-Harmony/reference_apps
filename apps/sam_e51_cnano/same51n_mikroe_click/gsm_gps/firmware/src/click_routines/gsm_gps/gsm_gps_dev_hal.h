@@ -1,6 +1,6 @@
 /******************************************************************************
-* Title                 :   AT PARSER
-* Filename              :   dev_adapter.h
+* Title                 :   GSM GPS Dev Hal
+* Filename              :   gsm_gps_dev_hal.h
 * Author                :   MSV
 * Origin Date           :   10/03/2016
 * Notes                 :   None
@@ -20,13 +20,6 @@
 * Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
 * Karnataka 560066
 *******************************************************************************/
-/**
- * @file dev_adapter.h
- * @brief Device Adapter
- *
- * @par
- * Used for adaptation needed for the particular device.
- */
 //DOM-IGNORE-BEGIN 
 /*******************************************************************************
  Copyright (C) 2021  Microchip Technology Incorporated and its subsidiaries.

@@ -1,5 +1,26 @@
+/*******************************************************************************
+  Click interface header file
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    click_interface.h
+
+  Summary:
+    Click routine interface implementation File.
+
+  Description
+    This file defines the interface to the GSM GPS click routines and MHC
+    PLIB APIs.
+
+  Remarks:
+    None.
+ *******************************************************************************/
+
+// DOM-IGNORE-BEGIN
 /*
-    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2021 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -19,6 +40,7 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
+// DOM-IGNORE-END
 
 #ifndef _CLICK_INTERFACES_H
 #define _CLICK_INTERFACES_H

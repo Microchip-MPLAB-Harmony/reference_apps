@@ -46,14 +46,17 @@
 			]
 		],
 		"peripherals": [
-			"EIC", "RTC", "GPIO", "SERCOM(I2C)", "SERCOM(USART)"
+			"EIC", "RTC", "GPIO", "SERCOM(USART)"
 		],
 		"keywords": [
 			"MHC",
 			"Harmony",
 			"ATSAME51J20A",
 			"SAME51 Family",
-			"Fan",
+			"GSM",
+			"GPS",
+			"GSM-GPS",
+			"GPS-GSM",
 			"Click",
 			"Mikroe",
 			"Mikroelektronika",

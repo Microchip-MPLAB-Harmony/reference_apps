@@ -1,10 +1,10 @@
-/****************************************************************************
-* Title                 :   GSM ADAPTER
-* Filename              :   gsm_adapter.h
+/******************************************************************************
+* Title                 :   GSM GPS Dev Hal
+* Filename              :   gsm_gps_dev_hal.c
 * Author                :   MSV
 * Origin Date           :   10/03/2016
 * Notes                 :   None
-*****************************************************************************/
+*******************************************************************************/
 /**************************CHANGE LIST **************************************
 *
 *    Date    Software Version    Initials   Description
@@ -19,10 +19,6 @@
 * Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
 * Karnataka 560066
 *******************************************************************************/
-/**
- * @file gsm_gps.c
- * @brief GSM GPS App
- */
 //DOM-IGNORE-BEGIN 
 /*******************************************************************************
  Copyright (C) 2021  Microchip Technology Incorporated and its subsidiaries.

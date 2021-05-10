@@ -1,6 +1,6 @@
 /******************************************************************************
-* Title                 :   AT PARSER
-* Filename              :   config.h
+* Title                 :   GSM GPS config
+* Filename              :   gsm_gps_config.h
 * Author                :   MSV
 * Origin Date           :   10/03/2016
 * Notes                 :   None
@@ -20,10 +20,6 @@
 * Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
 * Karnataka 560066
 *******************************************************************************/
-/**
- * @file config.h
- * @brief AT Parser Configuration
- */
 //DOM-IGNORE-BEGIN 
 /*******************************************************************************
  Copyright (C) 2021  Microchip Technology Incorporated and its subsidiaries.

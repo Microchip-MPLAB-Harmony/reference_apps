@@ -20,10 +20,6 @@
 * Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
 * Karnataka 560066
 *******************************************************************************/
-/**
- * @file gsm_gps.h
- * @brief GSM GPS App
- */
 //DOM-IGNORE-BEGIN 
 /*******************************************************************************
  Copyright (C) 2021  Microchip Technology Incorporated and its subsidiaries.
