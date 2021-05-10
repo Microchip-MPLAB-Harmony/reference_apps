@@ -1,0 +1,14 @@
+configName: sam_e51_cnano
+folderName: sam_e51_cnano
+format_version: v1.0
+frameworkPath: ..\..\..\..\Projects\git_hub
+processor: ATSAME51J20A
+projectName: heartrate9_click_sam_e51_cnano
+settings:
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;core_apps_sam_d5x_e5x;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;gfx;gfx_apps;MPLAB-Harmony-Reference-Apps;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;touch;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.4.98\atdf\ATSAME51J20A.atdf
