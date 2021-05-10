@@ -24,6 +24,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 5.6 | [LED Driver 3 Click Example](./same51n_mikroe_click/leddriver3/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/leddriver3.zip)  |
 | 5.7 | [EEPROM 4 Click Example](./same51n_mikroe_click/eeprom4/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/eeprom4.zip)  |
 | 5.8 | [Thumbstick Click Example](./same51n_mikroe_click/thumbstick/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/thumbstick.zip)  |
+| 5.9 | [XPRO Adapter Click Example](./same51n_mikroe_click/xpro_adapter/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/xpro_adapter.zip)  |
 ### More Application Demos
 
 For more application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
