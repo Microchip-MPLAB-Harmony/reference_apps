@@ -50,10 +50,12 @@ nav_order: 1
   <img src = "images/gps_gsm_click_demo_setup.png" align="middle">
 
 ## Programming hex file:
+
+**Note:** The prebuilt hex file is configured to send SMS to a mobile phone number mentioned in gsm_gps_example.h (Macro - GSM_GPS_EXAMPLE_USER_MOBILE_NUMBER)
+
 The pre-built hex file can be programmed by following the below steps.  
 
 ### Steps to program the hex file
-- **Note: The prebuilt hex file is configured to send SMS to a mobile phone number mentioned in gsm_gps_example.h (Macro - GSM_GPS_EXAMPLE_USER_MOBILE_NUMBER)**
 - Open MPLAB X IDE
 - Close all existing projects in IDE, if any project is opened.
 - Go to File -> Import -> Hex/ELF File
@@ -72,11 +74,11 @@ The pre-built hex file can be programmed by following the below steps.
 
 	<img src = "images/mobile_config.png" align="middle">  
 - Define the macro to your mobile phone number preceded by country code.  
-	For example, Below is the macro definition to configure an Indian mobile phone number "9845912319"  
+	For example, Below is the macro definition to configure an Indian mobile phone number "1234567890"  
 
 	<img src = "images/mobile_config_macro.png" align="middle">  
 
-	**Note:** "+91" is the country code for India in the above screenshot.
+	**Note:** "+91" is the country code for India in the above screenshot and "1234567890" is a dummy phone number.
 
 ## Programming/Debugging Application Project:
 - Ensure the project (gsm_gps/firmware/sam_e51_cnano.X) is open in MPLAB X IDE
@@ -91,6 +93,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 	<img src = "images/gps_gsm_click_demo_run.png" align="middle">
 
+**Note:** The message "Location information not found yet! Try Again" appears when the GPS receiver hasn't yet acquired and tracked satellites to provide position information.
 
 ## Instructions to add GSM GPS functionality to your application:
 
