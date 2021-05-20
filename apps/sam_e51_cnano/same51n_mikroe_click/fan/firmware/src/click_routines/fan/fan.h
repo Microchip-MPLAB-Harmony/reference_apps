@@ -41,6 +41,7 @@
 #ifndef FAN_H_
 #define FAN_H_
 
+#include "string.h"
 #include "definitions.h"
 
 /******************************************************************************
