@@ -201,6 +201,8 @@
         <logicalFolder name="eink_bundle" displayName="eink_bundle" projectFiles="true">
           <itemPath>../src/click_routines/eink_bundle/eink_bundle.c</itemPath>
           <itemPath>../src/click_routines/eink_bundle/eink_bundle_example.c</itemPath>
+          <itemPath>C:/harmony/v3/rapid_events/rapid_prototype_event3_ext1/firmware/src/click_routines/eink_bundle/eink_bundle_font.c</itemPath>
+          <itemPath>C:/harmony/v3/rapid_events/rapid_prototype_event3_ext1/firmware/src/click_routines/eink_bundle/eink_bundle_image.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
@@ -268,6 +270,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>C:/harmony/v3/rapid_events/rapid_prototype_event3_ext1/firmware/src/click_routines/eink_bundle</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

@@ -36,8 +36,8 @@
 */
 //DOM-IGNORE-END 
 
-#ifndef EINK_EXAMPLE_H
-#define	EINK_EXAMPLE_H
+#ifndef _EINK_BUNDLE_EXAMPLE_H
+#define	_EINK_BUNDLE_EXAMPLE_H
 
 void eink_example(void);
 

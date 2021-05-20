@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
+                <sourceRootElem>C:/harmony/v3/rapid_events/rapid_prototype_event3_ext1/firmware/src/click_routines/eink_bundle</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
