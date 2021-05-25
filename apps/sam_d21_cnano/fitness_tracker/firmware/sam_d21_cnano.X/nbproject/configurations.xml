@@ -128,6 +128,8 @@
                      projectFiles="true">
         <logicalFolder name="eink_bundle" displayName="eink_bundle" projectFiles="true">
           <itemPath>../src/click_routines/eink_bundle/eink_bundle.c</itemPath>
+          <itemPath>../src/click_routines/eink_bundle/eink_bundle_font.c</itemPath>
+          <itemPath>../src/click_routines/eink_bundle/eink_bundle_image.c</itemPath>
         </logicalFolder>
         <logicalFolder name="heartrate9" displayName="heartrate9" projectFiles="true">
           <itemPath>../src/click_routines/heartrate9/heartrate9.c</itemPath>
