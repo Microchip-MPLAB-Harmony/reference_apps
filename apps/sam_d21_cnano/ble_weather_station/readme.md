@@ -60,7 +60,7 @@ nav_order: 4
 <img src = "images/ble_setup.jpg" width="400" height="200" align="middle">
 
 #### Programming private characteristics
-- Download the manual configuration tool from [BM70/71 Firmware & Software Tools v1.11](https://www.microchip.com/wwwproducts/en/BM71)
+- Download the manual configuration tool from [BM70/71 Firmware & Software Tools v1.11](https://ww1.microchip.com/downloads/en/DeviceDoc/Firmware%20&%20Software%20Tools%20v1.11.zip)
 - Extract and locate configuration tool from below location
  	- Your_downloaded_folder ```\Firmware & Software Tools v1.11\ConfigurationTool\IS187x_102_BLEDK3v1.11_UI1.00```
 - Double click on ```IS187x_102_BLEDK3v1.11_UI1.00.exe```
