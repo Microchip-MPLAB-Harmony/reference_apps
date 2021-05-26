@@ -75,9 +75,9 @@ This following bullet points provides links to the detailed topics:
 
 ## <a id="setting-up-the-build-platform"> </a>
 ## Setting up the build platform
-- Download and extract [ACK Device SDK 3.2](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
+- Download and extract [ACK Device SDK 4.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
-  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_3.2.202009091708/user/platform`
+  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_4.1.202104181201/user/platform`
 
 **Note**
 - Make sure you create **amazon.com** account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.)
@@ -86,7 +86,7 @@ This following bullet points provides links to the detailed topics:
 ## <a id="project-structure"> </a>
 ## Project file structure
 - ACK SDK file/directory structure, refer "Readme.txt" in  
-`<Your ACK SDK Downloaded folder>\ACK_Device_SDK_3.2.202009091708\`
+`<Your ACK SDK Downloaded folder>\ACK_Device_SDK_4.1.202104181201\`
 - SAM D21 ACK port file/directory is as follows
   - user/platform/samd21_amazon_ack/
     - **applications**                : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler
@@ -144,5 +144,6 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
+- v1.3.0 Updated to support Amazon ACK SDK 4.1
 - v1.2.0 Updated to support Amazon ACK SDK 3.2
 - v1.1.0 released demo application

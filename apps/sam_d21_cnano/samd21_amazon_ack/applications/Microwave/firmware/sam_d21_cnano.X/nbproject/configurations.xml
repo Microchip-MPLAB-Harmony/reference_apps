@@ -11,65 +11,7 @@
               <logicalFolder name="v3avs_capabilities"
                              displayName="v3avs_capabilities"
                              projectFiles="true">
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3Alexa.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaBrightnessController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaColorController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaColorTemperatureController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCooking.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingFoodTemperatureController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingFoodTemperatureSensor.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingPresetController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingTemperatureController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingTemperatureSensor.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingTimeController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaEndpointHealth.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaInventoryLevelSensor.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaInventoryLevelUsageSensor.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaInventoryUsageSensor.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaModeController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaPercentageController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaPowerController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaRangeController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaTimeHoldController.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaToggleController.pb.h</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AVS.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaThermostatController.pb.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="v3avs_types" displayName="v3avs_types" projectFiles="true">
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Brightness.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3BrightnessDelta.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Color.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ColorTemperatureInKelvin.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Connectivity.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3CookingMode.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Count.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3DateTime.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3DeviceState.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Duration.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3EnumeratedPowerLevel.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3FoodItem.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3IntegralPowerLevel.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3InventoryConsumed.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3InventoryCount.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3InventoryReplaced.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ItemQuantity.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Length.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Level.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Mode.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ModeDelta.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Percentage.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3PercentageDelta.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3PowerState.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3PresetName.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Range.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3RangeDelta.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3RequiredInteraction.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Temperature.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3TimeInterval.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ToggleState.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Volume.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Weight.pb.h</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ThermostatMode.pb.h</itemPath>
               </logicalFolder>
               <itemPath>../../../../../../../core/generated/acp.pb.h</itemPath>
             </logicalFolder>
@@ -86,7 +28,6 @@
             <itemPath>../../../../../../../core/ack_core_lifecycle.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_logging.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_math.h</itemPath>
-            <itemPath>../../../../../../../core/ack_core_ota.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_outbound_events.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_processevent.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_protobuf_utilities.h</itemPath>
@@ -94,6 +35,20 @@
             <itemPath>../../../../../../../core/ack_core_testautomation.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_tick64.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_validation.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_cooking_mode.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_count.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_device_usage.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_document.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_document_wrappers.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_fixed_memory.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_food_item.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_inventory_level.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_item_quantity.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_power_level.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_temperature.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_time_interval.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_volume.h</itemPath>
+            <itemPath>../../../../../../../core/ack_core_weight.h</itemPath>
           </logicalFolder>
           <logicalFolder name="external" displayName="external" projectFiles="true">
             <logicalFolder name="nanopb" displayName="nanopb" projectFiles="true">
@@ -114,6 +69,57 @@
               <itemPath>../../../../../../../include/details/ack_debug_print.h</itemPath>
               <itemPath>../../../../../../../include/details/ack_types.h</itemPath>
               <itemPath>../../../../../../../include/details/ack_user_module.h</itemPath>
+              <itemPath>../../../../../../../include/details/ack_document.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="generated" displayName="generated" projectFiles="true">
+              <itemPath>../../../../../../../include/generated/ack_generated_ack.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_brightness_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_color_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_color_temperature_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking_food_temperature_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking_food_temperature_sensor.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking_preset_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking_temperature_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking_temperature_sensor.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_cooking_time_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_device_usage_estimation.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_device_usage_meter.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_endpoint_health.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_inventory_level_sensor.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_inventory_level_usage_sensor.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_inventory_usage_sensor.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_mode_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_percentage_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_power_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_range_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_temperature_sensor.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_thermostat_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_time_hold_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_alexa_toggle_controller.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_color.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_connectivity.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_cooking_mode.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_count.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_device_state.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_enumerated_power_level.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_food_item.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_integral_power_level.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_inventory_count.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_inventory_level.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_item_quantity.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_length.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_percentage.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_power_level.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_power_state.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_required_interaction.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_temperature.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_thermostat_mode.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_time_interval.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_toggle_state.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_volume.h</itemPath>
+              <itemPath>../../../../../../../include/generated/ack_generated_weight.h</itemPath>
             </logicalFolder>
             <itemPath>../../../../../../../include/ack.h</itemPath>
             <itemPath>../../../../../../../include/ack_brightness_controller.h</itemPath>
@@ -135,6 +141,9 @@
             <itemPath>../../../../../../../include/ack_toggle_controller.h</itemPath>
             <itemPath>../../../../../../../include/ack_user_device.h</itemPath>
             <itemPath>../../../../../../../include/ack_user_platform.h</itemPath>
+            <itemPath>../../../../../../../include/ack_device_usage.h</itemPath>
+            <itemPath>../../../../../../../include/ack_temperature_sensor.h</itemPath>
+            <itemPath>../../../../../../../include/ack_thermostat_controller.h</itemPath>
           </logicalFolder>
           <logicalFolder name="Microwave" displayName="Microwave" projectFiles="true">
             <itemPath>../../../../../../../applications/Microwave/ack_user_config.h</itemPath>
@@ -254,63 +263,7 @@
               <logicalFolder name="v3avs_capabilities"
                              displayName="v3avs_capabilities"
                              projectFiles="true">
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3Alexa.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaBrightnessController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaColorController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaColorTemperatureController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCooking.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingFoodTemperatureController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingFoodTemperatureSensor.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingPresetController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingTemperatureController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingTemperatureSensor.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaCookingTimeController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaEndpointHealth.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaInventoryLevelSensor.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaInventoryLevelUsageSensor.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaInventoryUsageSensor.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaModeController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaPercentageController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaPowerController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaRangeController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaTimeHoldController.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AlexaToggleController.pb.c</itemPath>
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AVS.pb.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="v3avs_types" displayName="v3avs_types" projectFiles="true">
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Brightness.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3BrightnessDelta.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Color.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ColorTemperatureInKelvin.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Connectivity.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3CookingMode.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Count.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3DateTime.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3DeviceState.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Duration.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3EnumeratedPowerLevel.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3FoodItem.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3IntegralPowerLevel.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3InventoryConsumed.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3InventoryCount.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3InventoryReplaced.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ItemQuantity.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Length.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Level.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Mode.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ModeDelta.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Percentage.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3PercentageDelta.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3PowerState.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3PresetName.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Range.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3RangeDelta.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3RequiredInteraction.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Temperature.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3TimeInterval.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3ToggleState.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Volume.pb.c</itemPath>
-                <itemPath>../../../../../../../core/generated/v3avs_types/V3Weight.pb.c</itemPath>
               </logicalFolder>
               <itemPath>../../../../../../../core/generated/acp.pb.c</itemPath>
             </logicalFolder>
@@ -341,7 +294,6 @@
             <itemPath>../../../../../../../core/ack_core_modecontroller.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_modulediagnostics.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_module_pins.c</itemPath>
-            <itemPath>../../../../../../../core/ack_core_ota.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_outbound_events.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_percentagecontroller.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_powercontroller.c</itemPath>
@@ -355,6 +307,22 @@
             <itemPath>../../../../../../../core/ack_core_validation.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_module_acp.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_thermostatcontroller.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_cooking_mode.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_count.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_debug_print.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_device_usage.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_document.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_document_wrappers.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_fixed_memory.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_food_item.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_inventory_level.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_item_quantity.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_power_level.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_temperature.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_temperaturesensor.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_time_interval.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_volume.c</itemPath>
+            <itemPath>../../../../../../../core/ack_core_weight.c</itemPath>
           </logicalFolder>
           <logicalFolder name="external" displayName="external" projectFiles="true">
             <logicalFolder name="nanopb" displayName="nanopb" projectFiles="true">
@@ -457,7 +425,7 @@
         <targetDevice>ATSAMD21G17D</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>nEdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.41</languageToolchainVersion>
         <platform>3</platform>
@@ -622,7 +590,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1149,6 +1117,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1162,9 +1131,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/Ack_final/ACK_Device_SDK_3.1.202002192328/user/platform/samd21_amazon_ack/applications/Microwave/firmware/Microwave.X/debug/default/Microwave_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

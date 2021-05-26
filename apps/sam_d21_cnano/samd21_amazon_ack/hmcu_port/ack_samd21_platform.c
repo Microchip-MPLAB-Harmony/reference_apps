@@ -248,25 +248,17 @@ uint32_t ACKPlatform_CalculateCrc32(const void* pInput, size_t length)
     return ACK_CalculateCrc32(pInput,length);
 }
  
-void ACKPlatform_DebugPrint(const char* pMessage, ...)
+void ACKPlatform_DebugPrint(const char* pMessage)
 {
-   
-    char print_buffer[250];
-
-    va_list argumentptr;
-    va_start(argumentptr, pMessage);
-    int count = vsnprintf(print_buffer, sizeof(print_buffer) - 2, pMessage, argumentptr);
-    va_end(argumentptr);
     
-    if (count >= 0)
-    {
-        print_buffer[count] = '\r';
-        print_buffer[count + 1] = '\n';
-        count += 2;
+   size_t count;
 
-        SERCOM5_USART_Write((uint8_t*)print_buffer, count);
-    }
-  
+   count = strlen(pMessage);
+   
+   if (count >= 0)
+   {
+     SERCOM5_USART_Write((uint8_t*)pMessage,count);
+   }
 }
 
 #ifdef ACK_HOST_FIRMWARE_UPDATE

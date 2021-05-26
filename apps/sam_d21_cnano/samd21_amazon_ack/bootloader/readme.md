@@ -43,8 +43,8 @@ This following bullet points provides links to the detailed topics:
 ## Hardware Used:
 
 - [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)   
-- [Connecting wires](https://www.amazon.in/ELEMENTZ-FEMALE-DUPONT-JUMPER-CONNECTOR/dp/B00LMYG0GQ/ref=pd_sbs_328_8?_encoding=UTF8&pd_rd_i=B00LMYG0GQ&pd_rd_r=689b332b-5300-4a27-a232-39088072a76c&pd_rd_w=1d7E1&pd_rd_wg=UslPz&pf_rd_p=00b53f5d-d1f8-4708-89df-2987ccce05ce&pf_rd_r=SXXDRV3KQ5MHXQFH7FFE&psc=1&refRID=SXXDRV3KQ5MHXQFH7FFE)
-- USB to TTL cable
+- [USI MT7697H Development Kit for Alexa Connect Kit - ACK Module](https://www.amazon.com/dp/B07WJGSCH2)
+- Connection wires
 
 ## <a id="software-Tools-Used"> </a>
 ## Software/Tools Used:
@@ -63,20 +63,21 @@ This following bullet points provides links to the detailed topics:
 ## <a id="Hardware-setup"> </a>
 ## Hardware Setup:
 ### Hardware connections for Validation
-- Connect Pin "PB02(ACK HOST INTERRUPT Pin)" of *SAM D21 Curiosity Nano Evaluation Kit* to "RTS" pin of TTL Cable
-- Connect Pin "PB03(ACK MODULE RESET Pin)" of *SAM D21 Curiosity Nano Evaluation Kit* to "CTS" pin of TTL Cable
-- Connect Pin "PA20(Host MCU TX)" of *SAM D21 Curiosity Nano Evaluation Kit* to "RX" pin of TTL Cable
-- Connect Pin "PA21(Host MCU RX)" of *SAM D21 Curiosity Nano Evaluation Kit* to "TX" pin of TTL Cable
-- Connect common ground between *SAM D21 Curiosity Nano Evaluation Kit* and TTL Cable
-- Power the *SAM D21 Curiosity Nano Evaluation Kit* from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
-- Connect USB end of TTL cable to the Host PC  
-<img src = "images/ack_hardware_validation.png" align="middle">
+- Connect Pin "PB02(ACK HOST INTERRUPT Pin)" of *SAM D21 Curiosity Nano Evaluation Kit* to "INT"(INST) pin of *ACK Module*
+- Connect Pin "PB03(ACK MODULE RESET Pin)" of *SAM D21 Curiosity Nano Evaluation Kit* to "RESET"(RES) pin of *ACK Module*  
+- Connect Pin "PA20(Host MCU TX)" of *SAM D21 Curiosity Nano Evaluation Kit* to "ACK RX" pin of *ACK Module*  
+- Connect Pin "PA21(Host MCU RX)" of *SAM D21 Curiosity Nano Evaluation Kit* to "ACK TX" pin of *ACK Module*
+- Connect Pin "VTG(Voltage Target)" of *SAM D21 Curiosity Nano Evaluation Kit* to "IOREF" pin of *ACK Module*
+- Connect common ground between *SAM D21 Curiosity Nano Evaluation Kit* and *ACK Module*
+- Power the *SAM D21 Curiosity Nano Evaluation Kit* Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
+- Power the *ACK Module* from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (DEBUG)  
+	<img src = "images/ack_hardware.png" align="middle">
 
 ## <a id="setting-up-the-build-platform"> </a>
 ## Setting up the build platform
-- Download and extract [ACK Device SDK 3.2](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
+- Download and extract [ACK Device SDK 4.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
-  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_3.2.202009091708/user/platform`
+  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_4.1.202104181201/user/platform`
 
 **Note**
 - Make sure you create **amazon.com** account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.)
@@ -85,7 +86,7 @@ This following bullet points provides links to the detailed topics:
 ## <a id="project-structure"> </a>
 ## Project file structure
 - ACK SDK file/directory structure, refer "Readme.txt" in  
-`<Your ACK SDK Downloaded folder>\ACK_Device_SDK_3.2.202009091708\`
+`<Your ACK SDK Downloaded folder>\ACK_Device_SDK_4.1.202104181201\`
 - SAM D21 ACK port file/directory is as follows
   - user/platform/samd21_amazon_ack/
     - **applications**                : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler
@@ -134,7 +135,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Change the memory configuration in project properties **(Right click on HelloWorld_sam_d21_cnano project > select properties > select xc32-ld > Symbols & Macros)**
 - Change the **Preprocessor macro definitions** as below to place the code in primary region  
 `ROM_ORIGIN=0x1000; ROM_LENGTH=0xF800`
-- Define "**ACK_VALIDATION**" macro and "**ACK_HOST_FIRMWARE_UPDATE**" in HelloWorld application file "ack_user_config.h"
+- Define "**ACK_HOST_FIRMWARE_UPDATE**" in HelloWorld application file "ack_user_config.h"
 - Increase Memory pool size macro "**ACK_MEMORY_POOL_SIZE**" value to 684 in ack_user_configh.h
 - Build the code by clicking on the "Clean and Build project" button in MPLAB X IDE tool bar, but **do not program**.
 - Navigate to **ota > utility** folder inside 'Your ACK SDK Downloaded folder' and run "hexmerge.py" script to merge bootloader and HelloWorld project's hex file
@@ -153,18 +154,14 @@ The pre-built hex file can be programmed by following the below steps.
 - Change the firmware version from 1 to 2 in "ACKUser_GetFirmwareVersion" function in file 'ack_user_device.c'
 - Build the code by clicking on the "Clean and Build project" button in MPLAB X IDE tool bar, but **do not program**
 - Navigate to **ota > utility** folder inside 'Your ACK SDK Downloaded folder' and run "hex2ota.py" script to create a file suitable for uploading as latest application image from a hex file that was created by building the HelloWorld application.
-- In **validate-ota.py**, HMCU_OTA_COMPLETE(line no 79) timer should be increased to 120 seconds from 30 seconds for receiving the complete ota firmware  
 
 		python hex2ota.py --device-type ACKTESTDEVICE <Your ACK SDK Downloaded folder>/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex SecondOtaFirmware.ota
 
-- Navigate to **test > validation** folder inside ACK SDK and run "validate-ota.py" script to upgrade the new firmware
-
-		python validate-ota.py -pd <HMCU_DEBUG_PORT> -pm <HMCU_PORT> -t ACKTESTDEVICE -n 2 SecondOtaFirmware.ota
-- Click on Switch SW0 on SAMD21 Curiosity Nano to reset the device.
-- Successful OTA completes with PASS message indicating successful upgradation of new firmware.
+  * "--device-type" : USER Device Type should be enterted, for example here it is used as "ACKTESTDEVICE"
+- Upgrade the firmware using amazon portal
+- once successfully completed, click on Switch SW0 on SAMD21 Curiosity Nano to reset the device.
 
 **Note**
-- The above procedure is to demonstrate the OTA feature. If you wish to use in production scenario, remove "ACK_VALIDATION" Macro in "ack_user_config.h"
 - The Switch SW0 is implemented to reset the device on press.
 
 ## Comments:
@@ -175,5 +172,6 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
+- v1.3.0 Updated to support Amazon ACK SDK 4.1
 - v1.2.0 Updated to support Amazon ACK SDK 3.2
 - v1.1.0 released demo application
