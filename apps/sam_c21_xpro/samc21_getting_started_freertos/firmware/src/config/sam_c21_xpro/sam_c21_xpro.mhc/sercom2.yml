@@ -1,0 +1,127 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sercom2}
+children:
+- type: Symbols
+  children:
+  - type: Hex
+    attributes: {id: I2CM_BAUD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '232'}
+  - type: Integer
+    attributes: {id: I2C_SCLSM}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '0'}
+  - type: String
+    attributes: {id: RECEIVE_DATA_REGISTER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: ''}
+  - type: File
+    attributes: {id: SERCOM_I2CM_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SERCOM_I2CM_MASTER_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SERCOM_I2CM_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: SERCOM_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '2'}
+  - type: Integer
+    attributes: {id: SPI_BAUD_REG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '23'}
+  - type: String
+    attributes: {id: TRANSMIT_DATA_REGISTER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: ''}
+  - type: Integer
+    attributes: {id: USART_BAUD_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '63019'}
+  - type: KeyValueSet
+    attributes: {id: USART_FORM}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '0'}
+  - type: Boolean
+    attributes: {id: USART_LIN_MASTER_SUPPORTED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: 'true'}
+  - type: Integer
+    attributes: {id: USART_SAMPLE_COUNT}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '16'}
+  - type: Integer
+    attributes: {id: USART_SAMPLE_RATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: '0'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: SERCOM2_I2C}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_i2c_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_i2c_I2C_dependency}
+- type: ElementPosition
+  attributes: {x: '25', y: '347', id: sercom2}
