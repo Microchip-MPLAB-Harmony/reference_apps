@@ -7,7 +7,7 @@ nav_order: 2
 ---
 # PIC32CM MC00 Curiosity Nano Evaluation Kit
 
-This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32CM MC00 Curiosity Nano Evaluation Kit]().   
+This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A).   
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
