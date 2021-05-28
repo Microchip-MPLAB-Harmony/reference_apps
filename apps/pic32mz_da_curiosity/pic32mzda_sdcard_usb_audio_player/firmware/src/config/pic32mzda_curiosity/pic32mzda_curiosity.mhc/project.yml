@@ -27,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: BB7509DBA3F9E66FFD7F675227423656
-- generatedChecksum: 75AE14DF344233DEC150775CF55790D6
+- generatedChecksum: EE9A6A0E8B758C543BDBB165C4D89E1F
   logicalPath: config\pic32mzda_curiosity\gfx\driver\glcd
   name: drv_gfx_glcd.c
   physicalPath: gfx\driver\controller\glcd
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 75AE14DF344233DEC150775CF55790D6
+  userChecksum: EE9A6A0E8B758C543BDBB165C4D89E1F
 - generatedChecksum: 13F062B063A4F4AE0B19CE872943995B
   logicalPath: config\pic32mzda_curiosity\driver\i2c
   name: drv_i2c.c

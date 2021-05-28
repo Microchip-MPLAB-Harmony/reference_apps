@@ -49,6 +49,12 @@ children:
   - type: Combo
     attributes: {id: I2C_OPERATING_MODE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic

@@ -9,14 +9,6 @@
           <logicalFolder name="f2" displayName="audio" projectFiles="true">
             <logicalFolder name="f1" displayName="decoder" projectFiles="true">
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
-                <logicalFolder name="f3" displayName="mp3" projectFiles="true">
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/assembly.h</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/coder.h</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/mp3common.h</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/mp3dec.h</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/mpadecobjfixpt.h</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/statname.h</itemPath>
-                </logicalFolder>
                 <logicalFolder name="f1" displayName="wav" projectFiles="true">
                   <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/wav/wav_dec.h</itemPath>
                 </logicalFolder>
@@ -417,23 +409,6 @@
           <logicalFolder name="f2" displayName="audio" projectFiles="true">
             <logicalFolder name="f1" displayName="decoder" projectFiles="true">
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
-                <logicalFolder name="f3" displayName="mp3" projectFiles="true">
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/mp3dec.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/mp3tabs.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/bitstream.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/buffers.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/dct32.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/dequant.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/dqchan.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/huffman.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/hufftabs.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/imdct.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/polyphase.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/scalfact.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/stproc.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/subband.c</itemPath>
-                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/trigtabs.c</itemPath>
-                </logicalFolder>
                 <logicalFolder name="f1" displayName="wav" projectFiles="true">
                   <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/wav/wav_dec.c</itemPath>
                 </logicalFolder>

@@ -101,14 +101,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: le_gfx_driver_glcd, value: '9090909'}
+        attributes: {id: le_gfx_driver_glcd, value: '16666666'}
   - type: Integer
     attributes: {id: RefreshRate}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: gfx_hal_le, value: '60'}
+        attributes: {id: gfx_hal_le, value: '111'}
   - type: String
     attributes: {id: gfx_display}
     children:
@@ -124,4 +124,4 @@ children:
       - type: Dynamic
         attributes: {id: le_gfx_driver_glcd, value: le_gfx_driver_glcd}
 - type: ElementPosition
-  attributes: {x: '730', y: '316', id: gfx_hal_le}
+  attributes: {x: '628', y: '341', id: gfx_hal_le}
