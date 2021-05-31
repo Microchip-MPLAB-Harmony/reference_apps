@@ -8,7 +8,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Live update Application on PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mz_uart_live_update.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mz_uart_live_update.zip" > Download </a> </h2>
 
 -----
 

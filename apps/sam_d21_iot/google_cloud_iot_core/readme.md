@@ -8,7 +8,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Google Cloud IoT Core Application on SAM D21 IoT WG Development Board
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/google_cloud_iot_core.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/google_cloud_iot_core.zip" > Download </a> </h2>
 
 -----
 
@@ -102,6 +102,6 @@ The patch is applied due to a known issue in the application. This issue is expe
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
-- v1.3.0 - Supported with harmony based crypto and bug fixes 
+- v1.3.0 - Supported with harmony based crypto and bug fixes
 - v1.2.0 - Regenerated and tested application.
 - v1.1.0 released demo application

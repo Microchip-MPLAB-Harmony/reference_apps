@@ -9,7 +9,7 @@ nav_order: 9
 
 # Amazon Alexa Connect Kit (ACK) Dash Replenishment Application on SAM D21 Curiosity Nano
 
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_amazon_ack.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_amazon_ack.zip" > Download </a> </h2>
 
 
 -----

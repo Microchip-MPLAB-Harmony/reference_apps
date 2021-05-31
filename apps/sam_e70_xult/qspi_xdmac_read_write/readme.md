@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # XDMAC with QSPI Application on SAM E70 Xplained Ultra Evaluation Kit
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/qspi_xdmac_read_write.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/qspi_xdmac_read_write.zip" > Download </a> </h2>
 
 
 -----

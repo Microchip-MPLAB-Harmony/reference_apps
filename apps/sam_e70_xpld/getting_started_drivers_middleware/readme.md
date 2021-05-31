@@ -8,7 +8,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started with Drivers and Middleware (USB) on SAM E70 Xplained Evaluation Kit
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_drivers_middleware.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_drivers_middleware.zip" > Download </a> </h2>
 
 
 -----

@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started_freertos.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started_freertos.zip" > Download </a> </h2>
 
 -----
 ## Description:
@@ -26,11 +26,11 @@ nav_order: 4
 	- SERCOM(I2C)
 	- SERCOM(USART)
 - Drivers
-	- SERCOM(I2C)	
+	- SERCOM(I2C)
 	- USART
 - Third Party Libraries
 	- FreeRTOS
-	
+
 ## Hardware Used:
 
 - [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)

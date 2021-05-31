@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ble_weather_station.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ble_weather_station.zip" > Download </a> </h2>
 
 
 -----
@@ -46,7 +46,7 @@ nav_order: 4
 - MPLAB Harmony 3 Launcher Plugin v3.6.2  
 - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
 - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
-- [Microchip Bluetooth Data Android App](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/mbd_3_1.apk) 
+- [Microchip Bluetooth Data Android App](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/mbd_3_1.apk)
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 

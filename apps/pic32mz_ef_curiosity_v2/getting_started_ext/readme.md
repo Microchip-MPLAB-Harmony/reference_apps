@@ -8,7 +8,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Extended Application on Curiosity PIC32MZ EF 2.0 Development Board
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_ext.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_ext.zip" > Download </a> </h2>
 
 -----
 ## Description

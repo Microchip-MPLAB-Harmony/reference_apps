@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Motion Surveillance Application on SAM E54 Curiosity Ultra Development Board
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54c_motion_surveillance.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54c_motion_surveillance.zip" > Download </a> </h2>
 
 -----
 

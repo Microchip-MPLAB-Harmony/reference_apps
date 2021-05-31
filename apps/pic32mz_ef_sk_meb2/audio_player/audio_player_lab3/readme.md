@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card on PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab3.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab3.zip" > Download </a> </h2>
 
 -----
 

@@ -8,7 +8,7 @@ nav_order: 3
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Live Update Application on SAM E54 Curiosity Ultra Development Board
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_uart_live_update.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_uart_live_update.zip" > Download </a> </h2>
 
 -----
 

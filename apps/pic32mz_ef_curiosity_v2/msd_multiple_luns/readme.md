@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # USB MSD with Multiple Drives Application on Curiosity PIC32MZ EF 2.0 Development Board
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/msd_multiple_luns.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/msd_multiple_luns.zip" > Download </a> </h2>
 
 -----
 ## Description

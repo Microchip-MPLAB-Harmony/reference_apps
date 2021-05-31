@@ -8,7 +8,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # AC Sleepwalking Application built with GCC Toolchain on SAM D21 Xplained Pro Kit
-<h2 style="text-align:center;"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_ac_sleepwalk_singleshot_gcc.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_ac_sleepwalk_singleshot_gcc.zip" > Download </a> </h2>
 
 -----
 ## Description:

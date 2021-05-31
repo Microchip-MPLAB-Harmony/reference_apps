@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Google Cloud IoT Core Application on SAM E51 Curiosity Nano Evaluation Kit
-<h2 align = "center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same51n_google_cloud_iot_core.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same51n_google_cloud_iot_core.zip" > Download </a> </h2>
 
 -----
 
