@@ -83,8 +83,7 @@ The pre-built hex file can be programmed by following the below steps.
 - After the board powers up, a splash screen should appear followed by the Menu screen.
 - By using the Thumbstick, select the desired level to play and press the thumbstick to enter the level.
 - Use the thumbstick to change the snake direction in order to reach the food.
-- By pressing the Thumbstick button the user can go back to the Menu.  
-<video width="550" height="400" autoplay controls> <source src="./images/snake_game.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+- By pressing the Thumbstick button the user can go back to the Menu.
 
 ## Comments:
 - The game should end when the snake hit an obstacle when it doesn't have any remaining lives or when it eats food 8 times
