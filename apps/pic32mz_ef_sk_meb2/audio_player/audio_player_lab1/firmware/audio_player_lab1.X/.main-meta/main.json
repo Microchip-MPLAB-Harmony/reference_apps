@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_audio_player_lab1",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "Audio-Tone using a Lookup Table",
 		"projectName": "audio_player_lab1",
 		"shortDescription": "Audio-Tone using a Lookup Table Application on PIC32MZ Embedded Connectivity with FPU Starter Kit",

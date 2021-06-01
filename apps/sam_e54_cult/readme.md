@@ -18,4 +18,4 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 
 ### More Application Demos
 
-For more application demos on **SAM E54 Curiosity Ultra Development Board** and other Development Boards/Kits having the same part number **(ATSAME54P20A)** <a href="https://mplab-discover.microchip.com/v1?s0=ATSAME54P20A" target="_blank"> CLICK HERE </a>
+For more application demos on **SAM E54 Curiosity Ultra Development Board** and other Development Boards/Kits having the same part number **(ATSAME54P20A)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=ATSAME54P20A" target="_blank"> CLICK HERE </a>

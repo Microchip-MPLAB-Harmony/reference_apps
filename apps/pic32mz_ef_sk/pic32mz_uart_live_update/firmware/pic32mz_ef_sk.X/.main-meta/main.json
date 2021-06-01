@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mz_uart_live_update",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "Live update Application on PIC32MZEF",
 		"projectName": "uart_live_update_pic32mz_ef_sk",
 		"shortDescription": "Demonstrates the live update feature available on PIC32MZ devices",

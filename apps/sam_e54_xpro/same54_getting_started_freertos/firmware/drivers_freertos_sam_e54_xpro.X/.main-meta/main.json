@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_getting_started_freertos",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS",
 		"projectName": "getting_started_drivers_freertos_sam_e54_xpro",
 		"shortDescription": "Demonstrates how to get started using Harmony drivers for peripherals like SERCOM(USART), SERCOM(I2C) with FreeRTOS and the basic peripherals like PORTS, and RTC, EIC",

@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sdadc_conversion_polling",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "SDADC Conversion polling Mode",
 		"projectName": "sdadc_conversion_interrupt_sam_c21n_xpro",
 		"shortDescription": "Demonstrates SDADC Conversion polling Mode Application on SAMC21N Xplained Pro Evaluation Kit",

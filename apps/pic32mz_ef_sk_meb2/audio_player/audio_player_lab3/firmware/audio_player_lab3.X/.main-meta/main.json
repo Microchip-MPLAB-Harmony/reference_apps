@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_audio_player_lab3",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "SD Card Reader and Audio-Tone Application",
 		"projectName": "audio_player_lab3",
 		"shortDescription": "SD Card Reader - detected as MSD in PC to load files, and Audio-Tone Application by reading the tone from a text file",

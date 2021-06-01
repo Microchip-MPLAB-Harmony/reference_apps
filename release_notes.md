@@ -5,13 +5,12 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Reference Applications Release v1.2.0 (January 2021)
+## Reference Applications Release v1.3.0 (June 2021)
 ### New Applications
 
 | Application | Description | MCU | Development Board/Kit |  
 | --- | --- | --- | --- |  
 | [same51n_google_cloud_iot_core](./apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.md) |  Google Cloud IoT Core Application | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
-| [gcp_iot_provisioning_serial_bridge](./apps/sam_e51_cnano/same51n_google_cloud_iot_core/gcp_iot_provisioning_serial_bridge/readme.md) |  Serial Bridge Application to upgrade ATWINC1510 Firmware and Google Cloud IoT Provisioning | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
 | [same54c_motion_surveillance](./apps/sam_e54_cult/same54c_motion_surveillance/readme.md) | Motion Surveillance Application | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)|
 | [pic32cmmc_smart_appliance_control](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control/readme.md) | Smart Appliance Control Application | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00032) | [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)|
 | [10dof](./apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.md) | MikroElektronika 10DOF Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|

@@ -16,4 +16,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **Curiosity PIC32MX470 Development Board** and other Development Boards/Kits having the same part number **(PIC32MX470F512H)** <a href="https://mplab-discover.microchip.com/v1?s0=PIC32MX470F512H" target="_blank"> CLICK HERE </a>
+For more application demos on **Curiosity PIC32MX470 Development Board** and other Development Boards/Kits having the same part number **(PIC32MX470F512H)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=PIC32MX470F512H" target="_blank"> CLICK HERE </a>

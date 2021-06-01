@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_vending_machine",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "Vending Machine Application on SAM E54 Xplained Pro Evaluation Kit",
 		"projectName": "vending_machine_sam_e54_xpro",
 		"shortDescription": "Demonstrates implementation of an embedded network application to update and track drinks status of a Vending Machine",

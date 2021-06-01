@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_audio_player_lab2",
-		"version": "1.2.0",
+		"version": "1.3.0",
 		"displayName": "Audio-Tone from a text file",
 		"projectName": "audio_player_lab2",
 		"shortDescription": "Audio-Tone Application by reading the tone from a text file stored in an SD card on PIC32MZ Embedded Connectivity with FPU Starter Kit",
