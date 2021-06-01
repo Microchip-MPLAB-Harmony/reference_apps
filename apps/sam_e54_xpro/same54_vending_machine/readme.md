@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E54 Xplained Pro Evaluation Kit
 title: Vending Machine
-nav_order: 3
+nav_order: 5
 ---
 
 <img src = "images/microchip_logo.png">

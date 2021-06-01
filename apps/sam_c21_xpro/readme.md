@@ -17,4 +17,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **SAM C21 Xplained Pro evaluation kit** and other Development Boards/Kits having the same part number **(ATSAMC21J18A)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
+For more application demos on **SAM C21 Xplained Pro evaluation kit** and other Development Boards/Kits having the same part number **(ATSAMC21J18A)** <a href="https://mplab-discover.microchip.com/v1?s0=ATSAMC21J18A" target="_blank"> CLICK HERE </a>

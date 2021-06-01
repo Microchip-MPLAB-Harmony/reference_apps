@@ -13,12 +13,13 @@ This folder contains the **MPLAB® Harmony 3 reference applications** developed 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started](./same54_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started.zip) |
-| 2 | [Low Power](./same54_low_power/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_low_power.zip) |
-| 3 | [SleepWalking](./sleepwalking/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sleepwalking.zip) |
-| 4 | [Vending Machine](./same54_vending_machine/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_vending_machine.zip) |
-| 5 | [Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS](./same54_getting_started_freertos/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started_freertos.zip) |
+| 2 | [Getting Started with Drivers using FreeRTOS](./same54_getting_started_freertos/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started_freertos.zip) |
+| 3 | [Low Power](./same54_low_power/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_low_power.zip) |
+| 4 | [SleepWalking](./sleepwalking/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sleepwalking.zip) |
+| 5 | [Vending Machine](./same54_vending_machine/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_vending_machine.zip) |
+
 
 
 ### More Application Demos
 
-For more application demos on **SAM E54 Xplained Pro Evalution Kit** and other Development Boards/Kits having the same part number **(ATSAME54P20A)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
+For more application demos on **SAM E54 Xplained Pro Evalution Kit** and other Development Boards/Kits having the same part number **(ATSAME54P20A)** <a href="https://mplab-discover.microchip.com/v1?s0=ATSAME54P20A" target="_blank"> CLICK HERE </a>

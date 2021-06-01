@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM MC00 Curiosity Nano Evaluation Kit
 title: Smart Appliance Control with BM71 Click on PIC32CM MC00 Curiosity Nano Evaluation kit
-nav_order: 2
+nav_order: 3
 ---
 
 <img src = "images/microchip_logo.png">

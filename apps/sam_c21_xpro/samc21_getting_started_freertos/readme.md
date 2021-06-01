@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM C21 Xplained Pro Evaluation Kit
 title: Getting Started
-nav_order: 4
+nav_order: 1
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

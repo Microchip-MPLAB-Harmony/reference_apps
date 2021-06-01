@@ -15,4 +15,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **PIC32CM MC00 Curiosity Pro Development Board** and other Development Boards/Kits having the same part number **(PIC32CM1216MC00048)** <a href="" target="_blank"> CLICK HERE </a> (Coming Soon)
+For more application demos on **PIC32CM MC00 Curiosity Pro Development Board** and other Development Boards/Kits having the same part number **(PIC32CM1216MC00048)** <a href="https://mplab-discover.microchip.com/v1?s0=PIC32CM1216MC00048" target="_blank"> CLICK HERE </a>

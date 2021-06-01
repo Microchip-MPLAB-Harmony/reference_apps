@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E54 Xplained Pro Evaluation Kit
 title: Low Power
-nav_order: 2
+nav_order: 3
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
