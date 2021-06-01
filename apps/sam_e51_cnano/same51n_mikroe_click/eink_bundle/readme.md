@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: Eink Click display bundle Example
-nav_order: 2
+nav_order: 7
 ---
 
 <img src = "images/microchip_logo.png">

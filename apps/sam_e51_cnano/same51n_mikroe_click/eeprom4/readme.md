@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: EEPROM 4 Click Example
-nav_order: 1
+nav_order: 12
 ---
 
 <img src = "images/microchip_logo.png">

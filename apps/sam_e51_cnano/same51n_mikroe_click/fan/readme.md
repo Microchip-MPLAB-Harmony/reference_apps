@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: Fan Click Example
-nav_order: 3
+nav_order: 15
 ---
 
 <img src = "images/microchip_logo.png">

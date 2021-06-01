@@ -1,8 +1,7 @@
 ---
-title: MikroElektronika Click Boards examples on SAM E51 Curiosity Nano Evaluation Kit
+grand_parent: Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
-has_children: true
-has_toc: false
+title: MikroElektronika Click Boards examples on SAM E51 Curiosity Nano Evaluation Kit
 nav_order: 5
 ---
 # MikroElektronika Click Boards examples on SAM E51 Curiosity Nano Evaluation Kit

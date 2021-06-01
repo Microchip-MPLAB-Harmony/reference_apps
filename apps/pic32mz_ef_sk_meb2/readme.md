@@ -13,11 +13,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [SD Card Player/Reader series](./audio_player/readme.md) |  |
-| 2 | [Audio-Tone using a Lookup Table](./audio_player/audio_player_lab1/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab1.zip) |
-| 3 | [Audio-Tone Application by reading the tone from a text file stored in an SD card](./audio_player/audio_player_lab2/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab2.zip) |
-| 4 | [SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card](./audio_player/audio_player_lab3/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab3.zip) |
-| 5 | [SD Card Reader ".wav" Audio player](./audio_player/audio_player_lab4/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab4.zip) |
-| 6 | [SD Card Audio Player/Reader with Aria Graphics](./audio_player/audio_player_lab5/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab5.zip) |
+
 
 
 ### More Application Demos

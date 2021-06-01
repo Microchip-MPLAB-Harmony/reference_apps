@@ -1,7 +1,7 @@
 ---
 grand_parent: Reference Applications
 parent: SAM C21 Xplained Pro Evaluation Kit
-title: Getting Started
+title: Getting Started with Drivers using FreeRTOS
 nav_order: 1
 ---
 <img src = "images/microchip_logo.png">

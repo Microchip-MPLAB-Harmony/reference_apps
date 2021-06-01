@@ -14,18 +14,15 @@ nav_order: 1
 >  This folder contains a series of applications which uses MPLAB Harmony v3 framework
    for Quick Audio Prototyping, and in the process creates an SD card Audio Player/Reader.
 
-- The Application **audio_player_lab1** is the basic audio application that generates an audio tone using a lookup table
-- The Application **audio_player_lab2** is an extension of application **audio_player_lab1**, it generates an audio tone using
-  a text file stored in an SD Card
-- The Application **audio_player_lab3** is an extension of application **audio_player_lab2**, it also generates an audio tone
-  using a text file stored in an SD Card. Additionally, it adds the SD card reader support to load audio files
-- The Application **audio_player_lab4** is an extension of application **audio_player_lab3**, implements an audio player by reading
-  ".wav" audio files from the SD card
-- The Application **audio_player_lab5** is an extension of application **audio_player_lab4**, implements graphical user interface
-  to the audio reader (storing audio files in the SD card) and player (playing ".wav" audio files from the SD card)
+   |SI No| Demo Name | Description | Download Link |
+   | --- | --- | -- | -- |
+   | 1 |[audio_player_lab1](./audio_player_lab1/readme.md) | Basic audio application that generates an audio tone using a lookup table | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab1.zip) |
+   | 2 |[audio_player_lab2](./audio_player_lab2/readme.md) | Extension of application **audio_player_lab1**, it generates an audio tone using a text file stored in an SD Card | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab2.zip) |
+   | 3 |[audio_player_lab3](./audio_player_lab3/readme.md) | Extension of application **audio_player_lab2**, it adds the SD card reader support to load audio files | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab3.zip) |
+   | 4 |[audio_player_lab4](./audio_player_lab4/readme.md) | Extension of application **audio_player_lab3**, it implements an audio player by reading ".wav" audio files from the SD card | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab4.zip) |
+   | 5 |[audio_player_lab5](./audio_player_lab5/readme.md) | Extension of application **audio_player_lab4**, it implements graphical user interface to the audio reader and player | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab5.zip) |
 
-
-## Modules/Technology Used:
+  ## Modules/Technology Used:
 - Refer the documentation in individual application folder
 
 ## Hardware Used:

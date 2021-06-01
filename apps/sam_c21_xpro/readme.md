@@ -1,5 +1,5 @@
 ---
-title: SAM C21 Xplained Pro evaluation kit
+title: SAM C21 Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
@@ -12,7 +12,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Getting Started](./samc21_getting_started_freertos/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samc21_getting_started_freertos.zip) |
+| 1 | [Getting Started with Drivers using FreeRTOS](./samc21_getting_started_freertos/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samc21_getting_started_freertos.zip) |
 | 2 | [Low Power](./samc21_low_power/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samc21_low_power.zip) |
 
 ### More Application Demos

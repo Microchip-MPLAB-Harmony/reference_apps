@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: IR Thermo 2 Click Example
-nav_order: 4
+nav_order: 9
 ---
 
 <img src = "images/microchip_logo.png">
