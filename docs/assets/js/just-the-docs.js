@@ -1622,5302 +1622,5308 @@ var myVariable = `
   },"270": {
     "doc": "SD Card Player/Reader series",
     "title": "Description",
-    "content": "This folder contains a series of applications which uses MPLAB Harmony v3 framework for Quick Audio Prototyping, and in the process creates an SD card Audio Player/Reader. | SI No | Demo Name | Description | Download Link | . | 1 | audio_player_lab1 | Basic audio application that generates an audio tone using a lookup table | Click Here | . | 2 | audio_player_lab2 | Extension of application audio_player_lab1, it generates an audio tone using a text file stored in an SD Card | Click Here | . | 3 | audio_player_lab3 | Extension of application audio_player_lab2, it adds the SD card reader support to load audio files | Click Here | . | 4 | audio_player_lab4 | Extension of application audio_player_lab3, it implements an audio player by reading “.wav” audio files from the SD card | Click Here | . | 5 | audio_player_lab5 | Extension of application audio_player_lab4, it implements graphical user interface to the audio reader and player | Click Here | . ## Modules/Technology Used: . | Refer the documentation in individual application folder | . ",
+    "content": "This folder contains a series of applications which uses MPLAB Harmony v3 framework for Quick Audio Prototyping, and in the process creates an SD card Audio Player/Reader. | SI No | Demo Name | Description | Download Link | . | 1 | audio_player_lab1 | Basic audio application that generates an audio tone using a lookup table | Click Here | . | 2 | audio_player_lab2 | Extension of application audio_player_lab1, it generates an audio tone using a text file stored in an SD Card | Click Here | . | 3 | audio_player_lab3 | Extension of application audio_player_lab2, it adds the SD card reader support to load audio files | Click Here | . | 4 | audio_player_lab4 | Extension of application audio_player_lab3, it implements an audio player by reading “.wav” audio files from the SD card | Click Here | . | 5 | audio_player_lab5 | Extension of application audio_player_lab4, it implements graphical user interface to the audio reader and player | Click Here | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#description",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#description"
   },"271": {
+    "doc": "SD Card Player/Reader series",
+    "title": "Modules/Technology Used:",
+    "content": ". | Refer the documentation in individual application folder | . ",
+    "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#modulestechnology-used",
+    "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#modulestechnology-used"
+  },"272": {
     "doc": "SD Card Player/Reader series",
     "title": "Hardware Used:",
     "content": ". | PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit | PIC32 Multimedia Expansion Board II | . Note: This application is a reference only to the existing users of Multimedia Expansion Board II (MEB II) to port/develop their application(s) using MPLAB Harmony v3 as the Multimedia Expansion Board II (MEB II) is now a matured product and the same is not available for purchase from Microchip Direct. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#hardware-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#hardware-used"
-  },"272": {
+  },"273": {
     "doc": "SD Card Player/Reader series",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.7.1 | MPLAB Harmony v3 “dev_packs” repo v3.7.0 | MPLAB Harmony v3 “bsp” repository v3.7.0 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “gfx” repository v3.6.0 | MPLAB Harmony v3 “touch” repository v3.6.0 | MPLAB Harmony v3 “usb” repository v3.5.0 | MPLAB Harmony v3 “mhc” repo v3.4.0 | MPLAB Harmony Configurator Plugin v3.5.0 | MPLAB X IDE v5.40 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#softwaretools-used"
-  },"273": {
+  },"274": {
     "doc": "SD Card Player/Reader series",
     "title": "Setup:",
-    "content": ". | Connect the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port. | Connect the USB Type-A male to Micro-B male cable for SD card reader functionality | Insert Micro SD card containing audio files in waveform audio format (WAV) | Connect the wired stereo headphone to the audio jack | . Note: It is not necessary to have an MPLAB Real ICE™ to program/debug the code. The PIC32MZ EF Starter Kit includes a PICkit™ on-board (PKOB) debugger. The PKOB debugger can be connected to a host PC through the USB Mini-B connector on the PIC32MZ EF Starter Kit for programming/debugging (see the red cable in the hardware setup). ",
+    "content": ". | Refer the Setup in individual application folder | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#setup",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#setup"
-  },"274": {
+  },"275": {
     "doc": "SD Card Player/Reader series",
     "title": "Programming binary/hex file:",
     "content": ". | Refer the documentation in individual application folder | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#programming-binaryhex-file",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#programming-binaryhex-file"
-  },"275": {
+  },"276": {
     "doc": "SD Card Player/Reader series",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Refer the documentation in individual application folder | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#programmingdebugging-application-project"
-  },"276": {
+  },"277": {
     "doc": "SD Card Player/Reader series",
     "title": "Running the Demo:",
     "content": ". | Refer the documentation in individual application folder | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#running-the-demo",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#running-the-demo"
-  },"277": {
+  },"278": {
     "doc": "SD Card Player/Reader series",
     "title": "Comments:",
     "content": ". | Reference Training Module: MPLAB® Harmony v3 SD Card Audio Player/Reader Tutorial | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#comments",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#comments"
-  },"278": {
+  },"279": {
     "doc": "SD Card Player/Reader series",
     "title": "Revision:",
     "content": ". | v1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#revision",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html#revision"
-  },"279": {
+  },"280": {
     "doc": "SD Card Player/Reader series",
     "title": "SD Card Player/Reader series",
-    "content": ". ",
+    "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/audio_player/readme.html",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/audio_player/readme.html"
-  },"280": {
+  },"281": {
     "doc": "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II",
     "title": "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II. | SI No | Demo Name | Download Link | . | 1 | SD Card Player/Reader series |   | . More Application Demos . For more application demos on PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit and other Development Boards/Kits having the same part number (PIC32MZ2048EFH144) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32mz_ef_sk_meb2/readme.html",
     "relUrl": "/apps/pic32mz_ef_sk_meb2/readme.html"
-  },"281": {
+  },"282": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAMC21N Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#getting-started-application-on-samc21n-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#getting-started-application-on-samc21n-xplained-pro-evaluation-kit"
-  },"282": {
+  },"283": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html"
-  },"283": {
+  },"284": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "This application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension. The temperature read is displayed on a serial console periodically every 500 milliseconds. The periodicity of the temperature values displayed on the serial console is changed to 1 second, 2 seconds, 4 seconds and back to 500 milliseconds every time you press the switch SW0 on the SAMC21N Xplained Pro Evaluation Kit. Also, an LED LED0 is toggled every time temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#description",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#description"
-  },"284": {
+  },"285": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | RTC | PORTS | SERCOM(I2C) | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#modulestechnology-used"
-  },"285": {
+  },"286": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAMC21N Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#hardware-used"
-  },"286": {
+  },"287": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#softwaretools-used"
-  },"287": {
+  },"288": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAMC21N Xplained Pro Evaluation Kit | The SAMC21N Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG ) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAMC21N Xplained Pro Evaluation Kit. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#setup"
-  },"288": {
+  },"289": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMC21N18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#programming-hex-file"
-  },"289": {
+  },"290": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started\\firmware\\\\sam_c21n_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#programmingdebugging-application-project"
-  },"290": {
+  },"291": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED0 blinking at 500 millisecond rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press the switch SW0 on SAMC21N Xplained Pro Evaluation Kit to change the default sampling rate to 1 second | Every subsequent pressing of switch SW0 on SAMC21N Xplained Pro Evaluation Kit changes the default sampling rate to 2 seconds, 4 seconds and 500 ms and back to 1 second in cyclic order as shown below | While the temperature sampling rate changes on every switch SW0 press, notice the LED0 toggling at the same sampling rate | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#running-the-demo"
-  },"291": {
+  },"292": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#comments"
-  },"292": {
+  },"293": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html#revision"
-  },"293": {
+  },"294": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/samc21n_getting_started/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/samc21n_getting_started/readme.html"
-  },"294": {
+  },"295": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "SDADC Conversion Interrupt Mode Application on SAMC21N Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#sdadc-conversion-interrupt-mode-application-on-samc21n-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#sdadc-conversion-interrupt-mode-application-on-samc21n-xplained-pro-evaluation-kit"
-  },"295": {
+  },"296": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html"
-  },"296": {
+  },"297": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Description:",
     "content": "This application demonstrates SDADC Conversion in interrupt mode. The application uses internal bandgap reference as the input voltage source. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#description",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#description"
-  },"297": {
+  },"298": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SDADC | SUPC | EVSYS | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#modulestechnology-used"
-  },"298": {
+  },"299": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Hardware Used:",
     "content": ". | SAMC21N Xplained Pro Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#hardware-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#hardware-used"
-  },"299": {
+  },"300": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#softwaretools-used"
-  },"300": {
+  },"301": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Setup:",
     "content": ". | Ensure that both the positive (INP) and negative (INN) pins on SAMC21N Xplained Pro Evaluation Kit are connected to a voltage source | The SAMC21N Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG ) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAMC21N Xplained Pro Evaluation Kit. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#setup",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#setup"
-  },"301": {
+  },"302": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMC21N18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#programming-hex-file"
-  },"302": {
+  },"303": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sdadc_conversion_interrupt\\firmware\\\\sam_c21n_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#programmingdebugging-application-project"
-  },"303": {
+  },"304": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | SDADC is configured to use the internal VREF and the range is set to 4.096 V full scale and the default setting of OSR is 64 | Pressing the ‘r’ key will read the result and display it, in a form scaled to mV | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#running-the-demo",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#running-the-demo"
-  },"304": {
+  },"305": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Comments:",
     "content": ". | Reference Application Note: Using Sigma-Delta Analog-to-Digital Converter on SAMC MCU with MPLAB Harmony v3 | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#comments",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#comments"
-  },"305": {
+  },"306": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#revision",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html#revision"
-  },"306": {
+  },"307": {
     "doc": "SDADC Conversion Interrupt Mode",
     "title": "SDADC Conversion Interrupt Mode",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_interrupt/readme.html"
-  },"307": {
+  },"308": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "SDADC Conversion Polling Mode Application on SAMC21N Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#sdadc-conversion-polling-mode-application-on-samc21n-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#sdadc-conversion-polling-mode-application-on-samc21n-xplained-pro-evaluation-kit"
-  },"308": {
+  },"309": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html"
-  },"309": {
+  },"310": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Description:",
     "content": "This application demonstrates SDADC Conversion in Polling mode. The application uses internal bandgap reference as the input voltage source. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#description",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#description"
-  },"310": {
+  },"311": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SDADC | SUPC | EVSYS | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#modulestechnology-used"
-  },"311": {
+  },"312": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Hardware Used:",
     "content": ". | SAMC21N Xplained Pro Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#hardware-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#hardware-used"
-  },"312": {
+  },"313": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#softwaretools-used"
-  },"313": {
+  },"314": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Setup:",
     "content": ". | Ensure that both the positive (INP) and negative (INN) pins on SAMC21N Xplained Pro Evaluation Kit are connected to a voltage source | The SAMC21N Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG ) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAMC21N Xplained Pro Evaluation Kit. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#setup",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#setup"
-  },"314": {
+  },"315": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMC21N18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#programming-hex-file"
-  },"315": {
+  },"316": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sdadc_conversion_interrupt\\firmware\\\\sam_c21n_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#programmingdebugging-application-project"
-  },"316": {
+  },"317": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | SDADC is configured to use the internal VREF and the range is set to 4.096 V full scale and the default setting of OSR is 64 | Pressing the ‘r’ key will read the result and display it, in a form scaled to mV | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#running-the-demo",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#running-the-demo"
-  },"317": {
+  },"318": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Comments:",
     "content": ". | Reference Application Note: Using Sigma-Delta Analog-to-Digital Converter on SAMC MCU with MPLAB Harmony v3 | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#comments",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#comments"
-  },"318": {
+  },"319": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#revision",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html#revision"
-  },"319": {
+  },"320": {
     "doc": "SDADC Conversion Polling Mode",
     "title": "SDADC Conversion Polling Mode",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/sdadc_conversion_polling/readme.html"
-  },"320": {
+  },"321": {
     "doc": "SAM C21N Xplained Pro Evaluation Kit",
     "title": "SAM C21N Xplained Pro Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM C21N Xplained Pro Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | SDADC Conversion Polling Mode | Click Here | . | 3 | SDADC Conversion Interrupt Mode | Click Here | . More Application Demos . For more application demos on SAM C21N Xplained Pro Evaluation Kit and other Development Boards/Kits having the same part number (ATSAMC21N18A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21n_xpro/readme.html",
     "relUrl": "/apps/sam_c21n_xpro/readme.html"
-  },"321": {
+  },"322": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Getting Started with Harmony v3 Drivers on SAM C21 MCU Using FreeRTOS",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#getting-started-with-harmony-v3-drivers-on-sam-c21-mcu-using-freertos",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#getting-started-with-harmony-v3-drivers-on-sam-c21-mcu-using-freertos"
-  },"322": {
+  },"323": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html"
-  },"323": {
+  },"324": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit. The temperature reading is displayed on a serial console periodically every second. Further, the application writes the temperature readings to EEPROM. When a character is entered on the console, the last five written temperature values are read from the EEPROM and displayed on the console. Also, an LED0 is toggled every time the temperature is displayed on the serial console . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#description",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#description"
-  },"324": {
+  },"325": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | SERCOM(I2C) | SERCOM(USART) | . | Drivers . | I2C | USART | . | Third Party Libraries . | FreeRTOS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#modulestechnology-used"
-  },"325": {
+  },"326": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Hardware Used:",
     "content": ". | SAM C21 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#hardware-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#hardware-used"
-  },"326": {
+  },"327": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “bsp” repo v3.8.2 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32/32++ Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#softwaretools-used"
-  },"327": {
+  },"328": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM C21 Xplained Pro Evaluation Kit | The SAM C21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM C21 Xplained Pro Evaluation Kit . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#setup",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#setup"
-  },"328": {
+  },"329": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMC21J18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#programming-hex-file"
-  },"329": {
+  },"330": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (samc21_getting_started/firmware/drivers_freertos_sam_c21_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#programmingdebugging-application-project"
-  },"330": {
+  },"331": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °C) being displayed on the terminal every second, as shown below . | Also, notice the LED0 blinking at one second rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press any key to display the last five written temperature values from the EEPROM | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#running-the-demo",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#running-the-demo"
-  },"331": {
+  },"332": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Drivers on SAM C21 MCUs Using FreeRTOS | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#comments",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#comments"
-  },"332": {
+  },"333": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Revision:",
     "content": ". | v1.3.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#revision",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html#revision"
-  },"333": {
+  },"334": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Getting Started with Drivers using FreeRTOS",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_c21_xpro/samc21_getting_started_freertos/readme.html"
-  },"334": {
+  },"335": {
     "doc": "Low Power",
     "title": "Low Power Application on SAM C21 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#low-power-application-on-sam-c21-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#low-power-application-on-sam-c21-xplained-pro-evaluation-kit"
-  },"335": {
+  },"336": {
     "doc": "Low Power",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html"
-  },"336": {
+  },"337": {
     "doc": "Low Power",
     "title": "Description",
     "content": "The application demonstrates low power application on SAM C21 Xplained Pro evaluation kit. On power-up, the application is in sleep (standby) mode. The application wakes up from the sleep mode and enters active mode when you cover the light sensor (by placing a hand over it) on the I/O1 Xplained Pro extension kit. The application periodically prints room temperature on a serial terminal while the light sensor is covered. The application goes back to sleep (standby) mode when you uncover the light sensor. LED0 in the SAM C21 evaluation kit is toggled every time the temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#description",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#description"
-  },"337": {
+  },"338": {
     "doc": "Low Power",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | I2C | RTC | USART | DMAC | ADC | PM | SUPC | EIC | EVSYS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#modulestechnology-used"
-  },"338": {
+  },"339": {
     "doc": "Low Power",
     "title": "Hardware Used:",
     "content": ". | SAM C21 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | Power Debugger | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#hardware-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#hardware-used"
-  },"339": {
+  },"340": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommend to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#softwaretools-used"
-  },"340": {
+  },"341": {
     "doc": "Low Power",
     "title": "Setup:",
     "content": ". | Connect the I/O1 Xplained Pro extension kit to Extension Header 2 (EXT2) of the SAMC21 Xplained Pro evaluation kit | Remove the current measurement jumper on the SAMC21 (highlighted in hardware setup with letter A) and connect to channel A of power debugger using burg connectors (highlighted in hardware setup with letter B) as shown in the Hardware Setup figure | Probe Pin #9 (PA28 - Switch pin) and Pin #10 (PA27 - wake-up test pin) on Extension Header 3 (EXT3) as highlighted in the Hardware Setup figure to measure wake-up time | Connect a USB cable to the DEBUG USB port for programming. | Connect a USB cable to the power debugger DEBUG USB port for current measurement. | . Note : . | Make sure common ground is connected with the board while using logic analyzer/CRO. | SAMC21 supports both 3.3 V and 5 V. The SAMC21 Xplained Pro kit operates at 3.3 V since the VCC-SEL jumper on board is set to 3.3 V | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#setup",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#setup"
-  },"341": {
+  },"342": {
     "doc": "Low Power",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMC21J18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#programming-hex-file"
-  },"342": {
+  },"343": {
     "doc": "Low Power",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (low_power\\firmware\\\\sam_c21_xpro.X) in MPLAB X IDE. | Ensure “SAMC21 Xplained Pro (EDBG)” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#programmingdebugging-application-project"
-  },"343": {
+  },"344": {
     "doc": "Low Power",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port, and reconnect it back. | Change the baud rate to 115200 | Perform a reset by pressing the “RESET” switch | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered | You should see the temperature values (in °F) getting printed on the terminal every 500 milliseconds for the duration the light sensor is covered | Observe Current Consumption on Data Visualizer Note:The Data Visualizer is a program to process and visualize data. The Data Visualizer can receive data from various sources such as the Embedded Debugger Data Gateway Interface (EDBG DGI) and COM ports. It is possible to track an application in run-time using a terminal graph or oscilloscope. It analyzes the power consumption of an application through correlation of code execution and power consumption when used together with a supported probe or board. | Open Data Visualizer application from your PC and select Power Debugger Data Gateway on DGI Control Panel | Click on the Connect button to have the Data Visualizer ready to receive information from the Power Debugger Data Gateway | After the Data Visualizer is connected to the Power Debugger Data Gateway, select the Power interface and click on the Start button | On the right-hand side of the Power Analysis window, click on the Control Panel tab and Disable Channel B Below image shows the device in Standby mode, smaller peaks are the 500ms timer expiry peaks | Cover the light sensor on the IO Xplained Pro board (by placing your hand over it) to print the temperature on the terminal. The following image shows the power consumption values in Standby mode and CPU Active mode | Press Switch SW0 to switch from Standby mode to Idle mode. The following image shows the transition power consumption values from Standby to Idle mode. Idle mode consumes more power compared to Standby mode | Place your hand over the light sensor. The device will wake up on the next ADC window monitor interrupt, read and print data on serial and then re-enter Standby mode. The following image shows the transition of the power consumption by switching from Idle mode to Standby mode Note that the above results highlight the power consumption is lower in Standby mode than in Idle mode. | . | Wake-up Time Measurement Using Logic Analyzer/ Cathode-Ray Oscilloscope (CRO) To demonstrate the CPU wake up time, switch SW0 is configured to generate an interrupt. A General Purpose Input/Output (GPIO) is toggled in the Interrupt Service Routine (ISR) of the switch press event. The MCU comes out of Sleep mode when an interrupt occurs (in this case, the switch press interrupt). The time between the switch press and the GPIO toggle in the ISR is the wake up time. | Press the SW0 switch and capture the signals to measure the wake-up time in Standby and Idle mode. The following image shows the wake-up time from Standby mode | The following image shows the wake-up time from Idle mode By observing the outputs, you can conclude that the wake-up time is greater in Standby mode than in Idle mode | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#running-the-demo",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#running-the-demo"
-  },"344": {
+  },"345": {
     "doc": "Low Power",
     "title": "Comments:",
     "content": ". | Reference Training Module: Low Power Application on SAMC2x (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#comments",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#comments"
-  },"345": {
+  },"346": {
     "doc": "Low Power",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html#revision",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html#revision"
-  },"346": {
+  },"347": {
     "doc": "Low Power",
     "title": "Low Power",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/samc21_low_power/readme.html",
     "relUrl": "/apps/sam_c21_xpro/samc21_low_power/readme.html"
-  },"347": {
+  },"348": {
     "doc": "SAM C21 Xplained Pro Evaluation Kit",
     "title": "SAM C21 Xplained Pro evaluation kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM C21 Xplained Pro evaluation kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started with Drivers using FreeRTOS | Click Here | . | 2 | Low Power | Click Here | . More Application Demos . For more application demos on SAM C21 Xplained Pro evaluation kit and other Development Boards/Kits having the same part number (ATSAMC21J18A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/readme.html#sam-c21-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_c21_xpro/readme.html#sam-c21-xplained-pro-evaluation-kit"
-  },"348": {
+  },"349": {
     "doc": "SAM C21 Xplained Pro Evaluation Kit",
     "title": "SAM C21 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_c21_xpro/readme.html",
     "relUrl": "/apps/sam_c21_xpro/readme.html"
-  },"349": {
+  },"350": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Application migration from 8-bit AVR to 32-bit SAM D21 on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#application-migration-from-8-bit-avr-to-32-bit-sam-d21-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#application-migration-from-8-bit-avr-to-32-bit-sam-d21-on-sam-d21-curiosity-nano"
-  },"350": {
+  },"351": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html"
-  },"351": {
+  },"352": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Description:",
     "content": "This Applications acts as reference for migrating applications from 8-bit AVR Microcontroller (MCU) to 32- bit MCU. This example shows how to migrate an application from ATmega4809 MCU to SAMD21G17D MCU. This application uses the AVR ATMega4809 application which helps in Getting Started with UART on ATMega4809 . The AVR ATMega4809 application shows how to implement a command line interface. This way, the microcontroller can receive control commands via the USART. In this use case, an LED is controlled using commands sent from the MPLAB Data Visualizer. The application shows steps to get started migrating to SAMD21 and later extend the functionality by adding more peripherals. The migration application makes use of SAM D21 Curiosity Nano Evaluation Kit and MPLAB® Harmony v3 framework. The application sends “Hello World” message to serial terminal using (SERCOM) USART and utilizes STDIO library to receive the command from the serial terminal to control the LED0 on SAMD21 Curiosity Nano Evaluation Kit. Switch SW0 is configured with External Interrupt controller (EIC) to toggle the LED0, when switch is pressed. It allows demonstrates Serial Peripheral Interface(SPI) self loop back mode and Direct memory Address (DMA) to send SPI self loopback status to the serial terminal. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#description"
-  },"352": {
+  },"353": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORT | EIC | SERCOM(SPI) | SERCOM(USART) | DMA | Systick | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#modulestechnology-used"
-  },"353": {
+  },"354": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#hardware-used"
-  },"354": {
+  },"355": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#softwaretools-used"
-  },"355": {
+  },"356": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Setup:",
     "content": ". | Connect the SAM D21 Curiosity Nano Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port | Connect a wire from PA16 to PA19 on SAM D21 Curiosity Nano Development Kit for SPI Self Loopback testing. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#setup",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#setup"
-  },"356": {
+  },"357": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#programming-hex-file"
-  },"357": {
+  },"358": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (atmega4809_to_samd21_migration/firmware/atmega4809_to_samd21_migration.X) in MPLAB X IDE | Ensure On-Board Nano Debuggers selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#programmingdebugging-application-project"
-  },"358": {
+  },"359": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term and configure it to 9600 baud rate and the standard 8-N-1 frame format | Enable Local echo and select carriage return + line feed for transmit | In Tera Term you should see Hello World message displayed | Below you will see a message Received SPI Valid Data indicating SPI self loopback test success | Type ON in serial terminal and press Enter to turn on LED0 on SAMD21 Curiosity Nano kit | Type OFF in serial terminal and press Enter to turn off LED0 on SAMD21 Curiosity Nano kit | Press Switch SW0 on the SAMD21 Curiosity Nano kit to toggle the LED0 twice with 500ms of delay. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#running-the-demo"
-  },"359": {
+  },"360": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Comments:",
     "content": "| Reference Migration Guide: Application migration from 8-bit AVR to 32-bit SAM D21 on SAM D21 Curiosity Nano | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#comments"
-  },"360": {
+  },"361": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html#revision"
-  },"361": {
+  },"362": {
     "doc": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "title": "Application migration from 8-bit AVR to 32-bit SAM D21",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html",
     "relUrl": "/apps/sam_d21_cnano/atmega4809_to_samd21_migration/readme.html"
-  },"362": {
+  },"363": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#ble-based-weather-station-and-motion-sensor-application-on-sam-d21-curiosity-nano-and-nano-base-for-click-boards",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#ble-based-weather-station-and-motion-sensor-application-on-sam-d21-curiosity-nano-and-nano-base-for-click-boards"
-  },"363": {
+  },"364": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html"
-  },"364": {
+  },"365": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Description:",
     "content": "The application demonstrates a solution based on Microchip products for environmental or weather industry products. The application demonstrates posting of weather and motion sensor data collected from the various sensors to android mobile application via BLE (Bluetooth Low Energy). The PTH (Pressure, Temperature and Humidity) collected from the Mikro elektronika weather click board and motion sensor data collected from the Mikro elektronika 10DOF Click are posted to the android application via BM71 Bluetooth module. The host microcntroller (SAM D21) is interfaced to the weather click and 10DOF click over the I2C interface and BM71 XPRO over UART. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#description"
-  },"365": {
+  },"366": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | Timer | SERCOM | . | Driver Modules . | BM71 Driver | . | STDIO Library | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#modulestechnology-used"
-  },"366": {
+  },"367": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | Curiosity Nano Base for click boards | WEATHER CLICK | 10DOF Click | BM71-XPRO | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#hardware-used"
-  },"367": {
+  },"368": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “bt” repo v3.4.0 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Microchip Bluetooth Data Android App | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#softwaretools-used"
-  },"368": {
+  },"369": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Adding private characteristics to BM71:",
     "content": "Hardware Setup . | In BM71-XPRO, Change jumper J2 to select USB | In BM71-XPRO, Configure DIP switch SW2 with below configurations | All DIP switch ON | Power the BM71-XPRO from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J1) | Perform reset by pressing switch SW1 on BM71-XPRO and check blue LD1 is ON | . Programming private characteristics . | Download the manual configuration tool from BM70/71 Firmware &amp; Software Tools v1.11 | Extract and locate configuration tool from below location - Your_downloaded_folder \\\\Firmware &amp; Software Tools v1.11\\\\ConfigurationTool\\\\IS187x_102_BLEDK3v1.11_UI1.00 | Double click on IS187x_102_BLEDK3v1.11_UI1.00.exe | Click on “Load” button and select “Load Text File” | Select “bm71_environmental_private_service.txt” from bm71_configuration folder present in firmware folder | Click on “EDIT” option . | Select “0x01: BM71” in BLEDK and click ok . | Click on “Finish” . | Click on “Write” . | Select respective COM Port and set baud rate to 115200 then click on Write . | Click on Yes to successfully update the private characteristics on to BM71 module. | After successful update, click ok and remove the power from BM71-XPRO and change jumper J2 to select EXT . | Turn OFF DIP 1 switch | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#adding-private-characteristics-to-bm71",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#adding-private-characteristics-to-bm71"
-  },"369": {
+  },"370": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Setup:",
     "content": ". | Mount SAM D21 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount Weather click board on mikro bus click 1 connector of Curiosity Nano Base board | Mount the 10DOF Click on the mikro bus 2 connector of Curiosity Nano Base board | Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board | Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#setup",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#setup"
-  },"370": {
+  },"371": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . Before proceeding with this step complete “Adding private characteristics to BM71” step. | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#programming-hex-file"
-  },"371": {
+  },"372": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Programming/Debugging Application Project:",
     "content": "Before proceeding with this step complete “Adding private characteristics to BM71” step. | Open the project (ble_weather_station\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#programmingdebugging-application-project"
-  },"372": {
+  },"373": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Running the Demo:",
     "content": "Before proceeding install Microchip Bluetooth Data android app in an Android Smartphone. | Enable Bluetooth and location from Smatphone settings | Perform reset by unplugging and re-plugging the power cable of SAM D21 Curiosity Nano | After power up, open “Microchip Bluetooth Data (MBD)” android app from your smartphone and tap on “BLE Sensor Node” icon on the dashboard. If prompted, allow the application to turn on Bluetooth. | Scan for Bluetooth devices by tapping START SCAN option. The BM71 device should appear as MCHP in the list of Bluetooth devices. | Stop the scan and connect using the MCHP BLE device. This will establish a connection between the MBD BLE application and the BM71 BLE device. | Once connected, the application shows the proximity screen and displays the Status of the Bluetooth link and using RSSI, the approximate range between the Android device and the SAM D21 Curiosity Nano Evaluation Kit . | Navigate to the Environment Sensor screen by swiping left on the proximity screen as shown in above figure . | Tap on the Graph button next to the Temperature, Humidity and Pressure to see the PTH values plotted on graphs . | Navigate to the Accelerometer Sensor screen by swiping twice on to left from Environment screen . | Click on start button to see the Accelerometer values plotted on graph . | Navigate to the Gyroscope Sensor screen by swiping left on the Accelerometer screen . | Click on start button to see the Gyroscope values plotted on graph . | Navigate to the 3D Plot screen by swiping left on the Gyroscope screen . | Keep finger on weather click board to see PTH values changing and move the 10DOF click board to see accelerometer and gyroscope values changing. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#running-the-demo"
-  },"373": {
+  },"374": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "Comments:",
     "content": ". | Other features on the application like the Step Count and Light are not supported by this demo. Navigating to these screens may lead to an undefined behavior. | Code related for custom private services are added manually, harmony v3 framework doesn’t generate code related to it. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 regenerated and tested the demo application | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html#comments"
-  },"374": {
+  },"375": {
     "doc": "BLE based Weather Station and Motion Sensor Application",
     "title": "BLE based Weather Station and Motion Sensor Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/ble_weather_station/readme.html",
     "relUrl": "/apps/sam_d21_cnano/ble_weather_station/readme.html"
-  },"375": {
+  },"376": {
     "doc": "Fitness Tracker",
     "title": "Fitness Tracker Application on SAM D21 Curiosity Nano Evaluation Kit and Nano Base for Click boards",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#fitness-tracker-application-on-sam-d21-curiosity-nano-evaluation-kit-and-nano-base-for-click-boards",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#fitness-tracker-application-on-sam-d21-curiosity-nano-evaluation-kit-and-nano-base-for-click-boards"
-  },"376": {
+  },"377": {
     "doc": "Fitness Tracker",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html"
-  },"377": {
+  },"378": {
     "doc": "Fitness Tracker",
     "title": "Description:",
     "content": "The application demonstrates a solution based on Microchip products for health care industry and wearable products. The application displays heart rate readings (in beats per minute - bpm) on a very low power consuming display. The Mikroelektronika Heart Rate 9 click board is used to read the heart pulse. Mikroelektronika eINK click bundle is used for displaying heart rate. The eINK click bundle contains the eINK click adapter board and the eINK display. The Heart Rate 9 click introduces Microchip’s proprietary method of measuring multiple signals in a body using pseudorandom binary sequence generation and phase division multiplexing This algorithm for processing data from the sensor and it can send data for 3 different diodes (green, ir, red) who give out a diagram of the heartbeat and its frequency per minute. The eINK display is a very low power consumption display and it can retain the information, even after disconnecting from the power source. The host MCU SAM D21 is interfaced with the Heart Rate 9 click over the USART interface and eINK click over SPI Interface. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#description"
-  },"378": {
+  },"379": {
     "doc": "Fitness Tracker",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | Timer | EIC | SERCOM (SPI) | SERCOM (USART) | . | STDIO Library | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#modulestechnology-used"
-  },"379": {
+  },"380": {
     "doc": "Fitness Tracker",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | Curiosity Nano Base for click boards | Heart Rate 9 click | EINK CLICK BUNDLE | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#hardware-used"
-  },"380": {
+  },"381": {
     "doc": "Fitness Tracker",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html"
-  },"381": {
+  },"382": {
     "doc": "Fitness Tracker",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#softwaretools-used"
-  },"382": {
+  },"383": {
     "doc": "Fitness Tracker",
     "title": "Setup:",
     "content": ". | Mount SAM D21 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount Heart Rate 3 click board on mikro bus click 3 connector of Curiosity Nano Base board | Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 1 connector of Curiosity Nano Base board | Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#setup",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#setup"
-  },"383": {
+  },"384": {
     "doc": "Fitness Tracker",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#programming-hex-file"
-  },"384": {
+  },"385": {
     "doc": "Fitness Tracker",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (fitness_tracker\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#programmingdebugging-application-project"
-  },"385": {
+  },"386": {
     "doc": "Fitness Tracker",
     "title": "Running the Demo:",
     "content": ". | Perform a reset by unplugging and re-plugging the power cable of SAM D21 Curiosity Nano Evaluation Kit | After power up, the application displays the “microchip logo” on the eINK display and initializes the heart rate sensor | After successful initialization, keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below. Note: Place your index finger gently on the heart rate 9 click sensor as shown in the above figure . | Press switch “SW0” on SAM D21 Curiosity Nano Evaluation Kit, LED “LED0” on SAM D21 Curiosity Nano Evaluation Kit glows on | Wait till the LED “LED0” on SAM D21 Curiosity Nano Evaluation Kit goes off and then lift your finger | The heart rate value (in bpm - beats per minute) gets displayed on the eINK display | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#running-the-demo"
-  },"386": {
+  },"387": {
     "doc": "Fitness Tracker",
     "title": "Comments:",
     "content": ". | Place your index finger gently on the heart rate 3 click sensor, don’t push or put pressure on the sensor (the heart rate values may not be accurate) | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | Getting Started with Harmony v3 Drivers on SAM D21 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#comments"
-  },"387": {
+  },"388": {
     "doc": "Fitness Tracker",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html#revision"
-  },"388": {
+  },"389": {
     "doc": "Fitness Tracker",
     "title": "Fitness Tracker",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/fitness_tracker/readme.html",
     "relUrl": "/apps/sam_d21_cnano/fitness_tracker/readme.html"
-  },"389": {
+  },"390": {
     "doc": "Location Tagged SOS",
     "title": "Location Tagged SOS Application on SAM D21 Curiosity Nano and Nano Base for Click boards",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#location-tagged-sos-application-on-sam-d21-curiosity-nano-and-nano-base-for-click-boards",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#location-tagged-sos-application-on-sam-d21-curiosity-nano-and-nano-base-for-click-boards"
-  },"390": {
+  },"391": {
     "doc": "Location Tagged SOS",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html"
-  },"391": {
+  },"392": {
     "doc": "Location Tagged SOS",
     "title": "Description:",
     "content": "The application demonstrates the solution based on Microchip products in a personal emergency or to communicate a distress signal by sending out a location-tagged SOS SMS. The Mikroelektronika GSM-GPS click board, used in this application, contains a hardware module that combines the GSM/GPRS and GPS functionality used to track the device and send out the emergency or distress signal. The MCU is interfaced with the GPS module over the UART interface to perform the GPS coordinates’ acquisition and tracking. It registers the event callbacks for location tracking of the GPS receiver. The application arranges the GSM/GPRS module for sending SMS to a configured mobile phone number. Once the GPS position is available, the application sends the following location-tagged SOS SMS to the configured mobile phone number when the emergency switch is pressed.. SAM D21 Curiosity Nano Location tagged SOS. Please attend emergency at: Latitude : xx.xxxxxx Longitude : xx.xxxxxx Altitude : xx.xxxxxx . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#description"
-  },"392": {
+  },"393": {
     "doc": "Location Tagged SOS",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | Timer | EIC | NVM | . | Driver Modules . | USART Driver | . | STDIO Library | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#modulestechnology-used"
-  },"393": {
+  },"394": {
     "doc": "Location Tagged SOS",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | Curiosity Nano Base for click boards | GSM-GPS click | Li-ion or Lipo Battery (optional) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#hardware-used"
-  },"394": {
+  },"395": {
     "doc": "Location Tagged SOS",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#softwaretools-used"
-  },"395": {
+  },"396": {
     "doc": "Location Tagged SOS",
     "title": "Setup 1: Uses Separate power supplies for SAMD21 Curiosity Nano and GSM-GPS Click",
     "content": ". | Mount SAM D21 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount GSM-GPS click board on mikro bus click 1 connector of Curiosity Nano Base and connect the GPS and GSM antennas on GSM-GPS click board connectors | Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | Wait for about 60 seconds | Power the GSM-GPS click board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port of GSM-GPS click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#setup-1-uses-separate-power-supplies-for-samd21-curiosity-nano-and-gsm-gps-click",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#setup-1-uses-separate-power-supplies-for-samd21-curiosity-nano-and-gsm-gps-click"
-  },"396": {
+  },"397": {
     "doc": "Location Tagged SOS",
     "title": "Setup 2: Uses Li-ion battery",
     "content": ". | Mount SAM D21 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board. | Mount GSM-GPS click board on mikro bus click 1 connector of Curiosity Nano Base and connect the GPS and GSM antennas on GSM-GPS click board connectors. | Connect Li-ion or Lipo Battery on J1 connector and make sure SW1 slider switch is moved to Battery on position in Curiosity Nano Base board. | Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105). | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#setup-2-uses-li-ion-battery",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#setup-2-uses-li-ion-battery"
-  },"397": {
+  },"398": {
     "doc": "Location Tagged SOS",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#programming-hex-file"
-  },"398": {
+  },"399": {
     "doc": "Location Tagged SOS",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (location_sos\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#programmingdebugging-application-project"
-  },"399": {
+  },"400": {
     "doc": "Location Tagged SOS",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port and reconnect it back | Change the baud rate to 115200 | Perform a reset by unplugging the power cable of SAM D21 Curiosity Nano | After power up, The LEDs on GSM-GPS click boards gives the following indications: . | LED marked STA is on; this indicates the GSM module is switching on | LED marked TXA is blinking, this indicates the GPS acquisition and position data is exchanged by the receiver | LED marked PPS is off. The PPS LED indicates pulse-per-second signal for precise timing. It glows on, after successful positioning | . | After one minute, the GPS achieves successful position as indicated by the blinking of LED PPS. Note: . | The GPS on the GSM-GPS click has a one second Time-To-First-Fix (TTFF) from a hot start and 30 seconds from cold start | If the position is not achieved after 1 minute, then: . | It could be because of non-availability of GPS signals. Make sure that you have placed the GPS antenna such that it can receive the signals from the GPS satellites. Try placing it under the open sky to be able to receive signals | After using the option above, if the device is still not receiving the position indication, try resetting the board by unplugging the power cable of SAM D21 Curiosity Nano board and turn off and turn on the battery supply by sliding SW1 switch on Curiosity Nano Base or unplug the power cable of GSM-GPS Click board | . | Once the GPS position is achieved, user can press switch SW0 on SAM D21 Curiosity Nano board to send SMS to configured mobile number with GPS location. | GSM module sends below message to configured mobile number SAM D21 Curiosity Nano Location tagged SOS Please attend emergency at: Latitude : xx.xxxxxx Longitude : xx.xxxxxx Altitude : xx.xxxxxx http://maps.google.com/maps?q=loc:xx.xxxxxx(Latitude),xx.xxxxxx(Longitude) | User can change the mobile number by long pressing (more than 4 seconds) switch SW0 on SAM D21 Curiosity Nano board. An option will be displayed on serial terminal to update the cell phone number | Updated cell phone number is stored in NVM memory, updated number will be used further to send SMS, even after power reset | If GPS position is not achieved, short pressing SW0 on SAM D21 Curiosity Nano board sends a blank SMS without GPS location. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#running-the-demo"
-  },"400": {
+  },"401": {
     "doc": "Location Tagged SOS",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#comments"
-  },"401": {
+  },"402": {
     "doc": "Location Tagged SOS",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html#revision"
-  },"402": {
+  },"403": {
     "doc": "Location Tagged SOS",
     "title": "Location Tagged SOS",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/location_sos/readme.html",
     "relUrl": "/apps/sam_d21_cnano/location_sos/readme.html"
-  },"403": {
+  },"404": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Application migration from 8-bit PIC18F to 32-bit SAM D21 on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#application-migration-from-8-bit-pic18f-to-32-bit-sam-d21-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#application-migration-from-8-bit-pic18f-to-32-bit-sam-d21-on-sam-d21-curiosity-nano"
-  },"404": {
+  },"405": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html"
-  },"405": {
+  },"406": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Description:",
     "content": "This Applications acts as reference for migrating applications from 8-bit PIC Microcontroller (MCU) to 32- bit MCU. This example shows how to migrate an application from PIC18F47Q10 MCU to SAMD21G17D MCU. This application uses the PIC18 application which helps in Getting Started with UART Using EUSART on PIC18. The PIC18 application shows how to implement a command line interface. This way, the microcontroller can receive control commands via the EUSART. In this use case, an LED is controlled using commands sent from the MPLAB Data Visualizer. The application shows steps to get started migrating to SAMD21 and later extend the functionality by adding more peripherals. The migration application makes use of SAM D21 Curiosity Nano Evaluation Kit and MPLAB® Harmony v3 framework. The application sends “Hello World” message to serial terminal using (SERCOM) USART and utilizes STDIO library to receive the command from the serial terminal to control the LED0 on SAMD21 Curiosity Nano Evaluation Kit. Switch SW0 is configured with External Interrupt controller (EIC) to toggle the LED0, when switch is pressed. It allows demonstrates Serial Peripheral Interface(SPI) self loop back mode and Direct memory Address (DMA) to send SPI self loopback status to the serial terminal. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#description"
-  },"406": {
+  },"407": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORT | EIC | SERCOM(SPI) | SERCOM(USART) | DMA | Systick | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#modulestechnology-used"
-  },"407": {
+  },"408": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#hardware-used"
-  },"408": {
+  },"409": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#softwaretools-used"
-  },"409": {
+  },"410": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Setup:",
     "content": ". | Connect the SAM D21 Curiosity Nano Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port | Connect a wire from PA16 to PA19 on SAM D21 Curiosity Nano Development Kit for SPI Self Loopback testing. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#setup",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#setup"
-  },"410": {
+  },"411": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#programming-hex-file"
-  },"411": {
+  },"412": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (pic18f_to_samd21_migration\\firmware\\\\pic18f_to_samd21_migration.X) in MPLAB X IDE | Ensure On-Board Nano Debuggeris selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#programmingdebugging-application-project"
-  },"412": {
+  },"413": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term and configure it to 9600 baud rate and the standard 8-N-1 frame format | Enable Local echo and select carriage return + line feed for transmit | In Tera Term you should see Hello World message displayed | Below you will see a message Received SPI Valid Data indicating SPI self loopback test success | Type ON in serial terminal and press Enter to turn on LED0 on SAMD21 Curiosity Nano kit | Type OFF in serial terminal and press Enter to turn off LED0 on SAMD21 Curiosity Nano kit | Press Switch SW0 on the SAMD21 Curiosity Nano kit to toggle the LED0 twice with 500ms of delay. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#running-the-demo"
-  },"413": {
+  },"414": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Comments:",
     "content": ". | Reference Migration Guide: Application migration from 8-bit PIC18F to 32-bit SAM D21 on SAM D21 Curiosity Nano | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | Getting Started with UART Using EUSART on PIC18 | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#comments"
-  },"414": {
+  },"415": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html#revision"
-  },"415": {
+  },"416": {
     "doc": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "title": "Application migration from 8-bit PIC18F to 32-bit SAM D21",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html",
     "relUrl": "/apps/sam_d21_cnano/pic18f_to_samd21_migration/readme.html"
-  },"416": {
+  },"417": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAM D21 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#getting-started-application-on-sam-d21-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#getting-started-application-on-sam-d21-curiosity-nano-evaluation-kit"
-  },"417": {
+  },"418": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html"
-  },"418": {
+  },"419": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "This application demonstrates an LED (LED0) toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW0 on the SAM D21 Curiosity Nano Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#description"
-  },"419": {
+  },"420": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | RTC | GPIO | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#modulestechnology-used"
-  },"420": {
+  },"421": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#hardware-used"
-  },"421": {
+  },"422": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#softwaretools-used"
-  },"422": {
+  },"423": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Connect the SAM D21 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#setup"
-  },"423": {
+  },"424": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#programming-hex-file"
-  },"424": {
+  },"425": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#programmingdebugging-application-project"
-  },"425": {
+  },"426": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | An LED (LED0) on the SAM D21 Curiosity Nano Evaluation Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds | And also, the LED toggling rate is displayed on the serial terminal | Press the switch SW0 on the SAM D21 Curiosity Nano Evaluation Kit to change the default periodicity of the timeout to one second | Every subsequent pressing of the switch SW0 on the SAM D21 Curiosity Nano Evaluation Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#running-the-demo"
-  },"426": {
+  },"427": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#comments"
-  },"427": {
+  },"428": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html#revision"
-  },"428": {
+  },"429": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21n_getting_started/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21n_getting_started/readme.html"
-  },"429": {
+  },"430": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Amazon Alexa Connect Kit (ACK) Dash Replenishment Application on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#amazon-alexa-connect-kit-ack-dash-replenishment-application-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#amazon-alexa-connect-kit-ack-dash-replenishment-application-on-sam-d21-curiosity-nano"
-  },"430": {
+  },"431": {
     "doc": "ACK Dash Replenishment Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"431": {
+  },"432": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Description:",
     "content": "The application demonstrates an integration of Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21 and presenting dashboard replenishment on SAM D21 Curiosity Nano. This following bullet points provides links to the detailed topics: . | Modules/Technology Used | Hardware Used | Software/Tools Used | Hardware Setup | Setting up the build platform | Project file structure | Steps to program the hex file | Programming/Debugging Dash Replenishment Application Project | Register your device | Running the demo | Comments | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#description"
-  },"432": {
+  },"433": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"433": {
+  },"434": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM | Systick | Port | NVMCTRL | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#modulestechnology-used"
-  },"434": {
+  },"435": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"435": {
+  },"436": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | USI MT7697H Development Kit for Alexa Connect Kit - ACK Module | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#hardware-used"
-  },"436": {
+  },"437": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"437": {
+  },"438": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#softwaretools-used"
-  },"438": {
+  },"439": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"439": {
+  },"440": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Hardware Setup:",
     "content": "Hardware connections with ACK Module . | Connect Pin “PB02(ACK HOST INTERRUPT Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “INT”(INST) pin of ACK Module | Connect Pin “PB03(ACK MODULE RESET Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “RESET”(RES) pin of ACK Module | Connect Pin “PA20(Host MCU TX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK RX” pin of ACK Module | Connect Pin “PA21(Host MCU RX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK TX” pin of ACK Module | Connect Pin “VTG(Voltage Target)” of SAM D21 Curiosity Nano Evaluation Kit to “IOREF” pin of ACK Module | Connect common ground between SAM D21 Curiosity Nano Evaluation Kit and ACK Module | Power the SAM D21 Curiosity Nano Evaluation Kit Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | Power the ACK Module from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (DEBUG) . | . Note: Please contact Amazon for details on the other hardware/equipment required for this demo application. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#hardware-setup",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#hardware-setup"
-  },"440": {
+  },"441": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"441": {
+  },"442": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Setting up the build platform",
     "content": ". | Download and extract ACK Device SDK 3.2 from Amazon developer website. | Copy and paste extracted SAM D21 ACK port folder “samd21_amazon_ack” into ACK device SDK’s user platform folder &lt;Your ACK SDK Downloaded folder&gt;/ACK_Device_SDK_3.2.202009091708/user/platform | . Note . | Make sure you create amazon.com account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.) | “ACK Module with MediaTek chipset” is used in these demo’s. make sure you download proper ACK SDK from the Amazon website | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#setting-up-the-build-platform",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#setting-up-the-build-platform"
-  },"442": {
+  },"443": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"443": {
+  },"444": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Project file structure",
     "content": ". | ACK SDK file/directory structure, refer “Readme.txt” in &lt;Your ACK SDK Downloaded folder&gt;\\\\ACK_Device_SDK_3.2.202009091708\\\\ | SAM D21 ACK port file/directory is as follows . | user/platform/samd21_amazon_ack/ . | applications : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler | bootloader : Contains bootloader for over-the-air(OTA) firmware upgrade feature | hmcu_port : Contains shared host specific platform and OTA files | ota : Contains OTA source, config and header files | ack_samd21_cutom_loader.c : Contains bootloader specific code | ack_samd21_platform.c : Contains SAMD21 platform specific code | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#project-file-structure",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#project-file-structure"
-  },"444": {
+  },"445": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#programming-hex-file"
-  },"445": {
+  },"446": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": "Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"446": {
+  },"447": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"447": {
+  },"448": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Programming/Debugging Dash Replenishment Application Project:",
     "content": "Before proceeding with this step complete “Setting up the build platform” step. | Open the project (samd21_amazon_ack/applications/DashReplenishment/firmware/sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#programmingdebugging-dash-replenishment-application-project",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#programmingdebugging-dash-replenishment-application-project"
-  },"448": {
+  },"449": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"449": {
+  },"450": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Register your device",
     "content": ". | Register ACK Module with Amazon by following the procedure | If you successfully registered your device. you should see the status LED on your ACK development board change from white to green. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#register-your-device",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#register-your-device"
-  },"450": {
+  },"451": {
     "doc": "ACK Dash Replenishment Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"451": {
+  },"452": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Running the Demo:",
     "content": "Note: This demo does not have functional running/test steps as the other required hardware/equipment needs to be procured. Please contact Amazon for help on running this demo application. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#running-the-demo"
-  },"452": {
+  },"453": {
     "doc": "ACK Dash Replenishment Application",
     "title": "Comments:",
     "content": ". | Dash Replenishment application is built as a standalone project, if you wish to implement OTA firmware upgrade feature to this application, follow the instructions in the bootloader application’s readme file. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 Updated to support Amazon ACK SDK 3.2 | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html#comments"
-  },"453": {
+  },"454": {
     "doc": "ACK Dash Replenishment Application",
     "title": "ACK Dash Replenishment Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/DashReplenishment/readme.html"
-  },"454": {
+  },"455": {
     "doc": "ACK Hello World Application",
     "title": "Amazon Alexa Connect Kit (ACK) Hello World Application on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#amazon-alexa-connect-kit-ack-hello-world-application-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#amazon-alexa-connect-kit-ack-hello-world-application-on-sam-d21-curiosity-nano"
-  },"455": {
+  },"456": {
     "doc": "ACK Hello World Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"456": {
+  },"457": {
     "doc": "ACK Hello World Application",
     "title": "Description:",
     "content": "The application demonstrates an integration of Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21 and controlling ON/OFF development kit(LED0) on SAM D21 Curiosity Nano Evaluation Kit. This following bullet points provides links to the detailed topics: . | Modules/Technology Used | Hardware Used | Software/Tools Used | Hardware Setup | Setting up the build platform | Project file structure | Steps to program the hex file | Programming/Debugging HelloWorld Application Project | Register your device | Running the demo | Comments | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#description"
-  },"457": {
+  },"458": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"458": {
+  },"459": {
     "doc": "ACK Hello World Application",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM | Systick | Port | NVMCTRL | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#modulestechnology-used"
-  },"459": {
+  },"460": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"460": {
+  },"461": {
     "doc": "ACK Hello World Application",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | USI MT7697H Development Kit for Alexa Connect Kit - ACK Module | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#hardware-used"
-  },"461": {
+  },"462": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"462": {
+  },"463": {
     "doc": "ACK Hello World Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#softwaretools-used"
-  },"463": {
+  },"464": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"464": {
+  },"465": {
     "doc": "ACK Hello World Application",
     "title": "Hardware Setup:",
     "content": "Hardware connections with ACK Module . | Connect Pin “PB02(ACK HOST INTERRUPT Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “INT”(INST) pin of ACK Module | Connect Pin “PB03(ACK MODULE RESET Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “RESET”(RES) pin of ACK Module | Connect Pin “PA20(Host MCU TX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK RX” pin of ACK Module | Connect Pin “PA21(Host MCU RX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK TX” pin of ACK Module | Connect Pin “VTG(Voltage Target)” of SAM D21 Curiosity Nano Evaluation Kit to “IOREF” pin of ACK Module | Connect common ground between SAM D21 Curiosity Nano Evaluation Kit and ACK Module | Power the SAM D21 Curiosity Nano Evaluation Kit Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | Power the ACK Module from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (DEBUG) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#hardware-setup",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#hardware-setup"
-  },"465": {
+  },"466": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"466": {
+  },"467": {
     "doc": "ACK Hello World Application",
     "title": "Setting up the build platform",
     "content": ". | Download and extract ACK Device SDK 3.2 from Amazon developer website. | Copy and paste extracted SAM D21 ACK port folder “samd21_amazon_ack” into ACK device SDK’s user platform folder &lt;Your ACK SDK Downloaded folder&gt;/ACK_Device_SDK_3.2.202009091708/user/platform | . Note . | Make sure you create amazon.com account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.) | “ACK Module with MediaTek chipset” is used in these demo’s. make sure you download proper ACK SDK from the Amazon website | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#setting-up-the-build-platform",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#setting-up-the-build-platform"
-  },"467": {
+  },"468": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"468": {
+  },"469": {
     "doc": "ACK Hello World Application",
     "title": "Project file structure",
     "content": ". | ACK SDK file/directory structure, refer “Readme.txt” in &lt;Your ACK SDK Downloaded folder&gt;\\\\ACK_Device_SDK_3.2.202009091708\\\\ | SAM D21 ACK port file/directory is as follows . | user/platform/samd21_amazon_ack/ . | applications : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler | bootloader : Contains bootloader for over-the-air(OTA) firmware upgrade feature | hmcu_port : Contains shared host specific platform and OTA files | ota : Contains OTA source, config and header files | ack_samd21_cutom_loader.c : Contains bootloader specific code | ack_samd21_platform.c : Contains SAMD21 platform specific code | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#project-file-structure",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#project-file-structure"
-  },"469": {
+  },"470": {
     "doc": "ACK Hello World Application",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#programming-hex-file"
-  },"470": {
+  },"471": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": "Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"471": {
+  },"472": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"472": {
+  },"473": {
     "doc": "ACK Hello World Application",
     "title": "Programming/Debugging Hello World Application Project:",
     "content": "Before proceeding with this step complete “Setting up the build platform” step. | Open the project (samd21_amazon_ack/applications/Helloworld/firmware/sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#programmingdebugging-hello-world-application-project",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#programmingdebugging-hello-world-application-project"
-  },"473": {
+  },"474": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"474": {
+  },"475": {
     "doc": "ACK Hello World Application",
     "title": "Register your device",
     "content": ". | Register ACK Module with Amazon by following the procedure | If you successfully registered your device. you should see the status LED on your ACK development board change from white to green. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#register-your-device",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#register-your-device"
-  },"475": {
+  },"476": {
     "doc": "ACK Hello World Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"476": {
+  },"477": {
     "doc": "ACK Hello World Application",
     "title": "Running the Demo:",
     "content": ". | Open Amazon Alexa App from smart phone. | Reset/power cycle the SAM D21 Curiosity Nano Evaluation Kit device and wait till status LED on ACK Module to green. | When you say “Alexa, turn on development device” or tap the power button in the Alexa app GUI. A LED0 on the SAM D21 Curiosity Nano Evaluation Kit board turns ON. | When you say “Alexa, turn off development device” or tap the power button in the Alexa app GUI. A LED0 on the SAM D21 Curiosity Nano Evaluation Kit turns Off. | . Note - To open Alexa app GUI for development device, In Amazon Alexa app navigate to Devices &gt; All devices and select Development device. it will provide the options to control the LED . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#running-the-demo"
-  },"477": {
+  },"478": {
     "doc": "ACK Hello World Application",
     "title": "Comments:",
     "content": ". | HelloWorld application is built as standalone project, if you wish to use OTA feature, follow instructions in bootloader application’s readme file | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 Updated to support Amazon ACK SDK 3.2 | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html#comments"
-  },"478": {
+  },"479": {
     "doc": "ACK Hello World Application",
     "title": "ACK Hello World Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/HelloWorld/readme.html"
-  },"479": {
+  },"480": {
     "doc": "ACK Microwave Application",
     "title": "Amazon Alexa Connect Kit (ACK) Microwave Application on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#amazon-alexa-connect-kit-ack-microwave-application-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#amazon-alexa-connect-kit-ack-microwave-application-on-sam-d21-curiosity-nano"
-  },"480": {
+  },"481": {
     "doc": "ACK Microwave Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"481": {
+  },"482": {
     "doc": "ACK Microwave Application",
     "title": "Description:",
     "content": "The application demonstrates an integration of Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21 and controlling microwave on SAM D21 Curiosity Nano. This following bullet points provides links to the detailed topics: . | Modules/Technology Used | Hardware Used | Software/Tools Used | Hardware Setup | Setting up the build platform | Project file structure | Steps to program the hex file | Programming/Debugging Microwave Application Project | Register your device | Running the demo | Comments | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#description"
-  },"482": {
+  },"483": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"483": {
+  },"484": {
     "doc": "ACK Microwave Application",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM | Systick | Port | NVMCTRL | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#modulestechnology-used"
-  },"484": {
+  },"485": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"485": {
+  },"486": {
     "doc": "ACK Microwave Application",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | USI MT7697H Development Kit for Alexa Connect Kit - ACK Module | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#hardware-used"
-  },"486": {
+  },"487": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"487": {
+  },"488": {
     "doc": "ACK Microwave Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#softwaretools-used"
-  },"488": {
+  },"489": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"489": {
+  },"490": {
     "doc": "ACK Microwave Application",
     "title": "Hardware Setup:",
     "content": "Hardware connections with ACK Module . | Connect Pin “PB02(ACK HOST INTERRUPT Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “INT”(INST) pin of ACK Module | Connect Pin “PB03(ACK MODULE RESET Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “RESET”(RES) pin of ACK Module | Connect Pin “PA20(Host MCU TX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK RX” pin of ACK Module | Connect Pin “PA21(Host MCU RX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK TX” pin of ACK Module | Connect Pin “VTG(Voltage Target)” of SAM D21 Curiosity Nano Evaluation Kit to “IOREF” pin of ACK Module | Connect common ground between SAM D21 Curiosity Nano Evaluation Kit and ACK Module | Power the SAM D21 Curiosity Nano Evaluation Kit Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | Power the ACK Module from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (DEBUG) . | . Note: Please contact Amazon for details on the other hardware/equipment required for this demo application. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#hardware-setup",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#hardware-setup"
-  },"490": {
+  },"491": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"491": {
+  },"492": {
     "doc": "ACK Microwave Application",
     "title": "Setting up the build platform",
     "content": ". | Download and extract ACK Device SDK 3.2 from Amazon developer website. | Copy and paste extracted SAM D21 ACK port folder “samd21_amazon_ack” into ACK device SDK’s user platform folder &lt;Your ACK SDK Downloaded folder&gt;/ACK_Device_SDK_3.2.202009091708/user/platform | . Note . | Make sure you create amazon.com account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.) | “ACK Module with MediaTek chipset” is used in these demo’s. make sure you download proper ACK SDK from the Amazon website | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#setting-up-the-build-platform",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#setting-up-the-build-platform"
-  },"492": {
+  },"493": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"493": {
+  },"494": {
     "doc": "ACK Microwave Application",
     "title": "Project file structure",
     "content": ". | ACK SDK file/directory structure, refer “Readme.txt” in &lt;Your ACK SDK Downloaded folder&gt;\\\\ACK_Device_SDK_3.2.202009091708\\\\ | SAM D21 ACK port file/directory is as follows . | user/platform/samd21_amazon_ack/ . | applications : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler | bootloader : Contains bootloader for over-the-air(OTA) firmware upgrade feature | hmcu_port : Contains shared host specific platform and OTA files | ota : Contains OTA source, config and header files | ack_samd21_cutom_loader.c : Contains bootloader specific code | ack_samd21_platform.c : Contains SAMD21 platform specific code | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#project-file-structure",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#project-file-structure"
-  },"494": {
+  },"495": {
     "doc": "ACK Microwave Application",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#programming-hex-file"
-  },"495": {
+  },"496": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": "Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"496": {
+  },"497": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"497": {
+  },"498": {
     "doc": "ACK Microwave Application",
     "title": "Programming/Debugging Microwave Application Project:",
     "content": "Before proceeding with this step complete “Setting up the build platform” step. | Open the project (samd21_amazon_ack/applications/Microwave/firmware/sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#programmingdebugging-microwave-application-project",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#programmingdebugging-microwave-application-project"
-  },"498": {
+  },"499": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"499": {
+  },"500": {
     "doc": "ACK Microwave Application",
     "title": "Register your device",
     "content": ". | Register ACK Module with Amazon by following the procedure | If you successfully registered your device. you should see the status LED on your ACK development board change from white to green. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#register-your-device",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#register-your-device"
-  },"500": {
+  },"501": {
     "doc": "ACK Microwave Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"501": {
+  },"502": {
     "doc": "ACK Microwave Application",
     "title": "Running the Demo:",
     "content": "Note: This demo does not have functional running/test steps as the other required hardware/equipment needs to be procured. Please contact Amazon for help on running this demo application. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#running-the-demo"
-  },"502": {
+  },"503": {
     "doc": "ACK Microwave Application",
     "title": "Comments:",
     "content": ". | Microwave application cannot support OTA feature because of limitation of code size. You can migrate to higher memory part in SAMD 21 MCU family. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 Updated to support Amazon ACK SDK 3.2 | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html#comments"
-  },"503": {
+  },"504": {
     "doc": "ACK Microwave Application",
     "title": "ACK Microwave Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/Microwave/readme.html"
-  },"504": {
+  },"505": {
     "doc": "ACK Smart Light Application",
     "title": "Amazon Alexa Connect Kit (ACK) Smart Light Application on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#amazon-alexa-connect-kit-ack-smart-light-application-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#amazon-alexa-connect-kit-ack-smart-light-application-on-sam-d21-curiosity-nano"
-  },"505": {
+  },"506": {
     "doc": "ACK Smart Light Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"506": {
+  },"507": {
     "doc": "ACK Smart Light Application",
     "title": "Description:",
     "content": "The application demonstrates an integration of Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21 and controlling of smart light (LED0) on SAM D21 Curiosity Nano. This following bullet points provides links to the detailed topics: . | Modules/Technology Used | Hardware Used | Software/Tools Used | Hardware Setup | Setting up the build platform | Project file structure | Steps to program the hex file | Programming/Debugging Smart Light Application Project | Register your device | Running the demo | Comments | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#description"
-  },"507": {
+  },"508": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"508": {
+  },"509": {
     "doc": "ACK Smart Light Application",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM | Systick | Port | NVMCTRL | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#modulestechnology-used"
-  },"509": {
+  },"510": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"510": {
+  },"511": {
     "doc": "ACK Smart Light Application",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | USI MT7697H Development Kit for Alexa Connect Kit - ACK Module | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#hardware-used"
-  },"511": {
+  },"512": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"512": {
+  },"513": {
     "doc": "ACK Smart Light Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#softwaretools-used"
-  },"513": {
+  },"514": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"514": {
+  },"515": {
     "doc": "ACK Smart Light Application",
     "title": "Hardware Setup:",
     "content": "Hardware connections with ACK Module . | Connect Pin “PB02(ACK HOST INTERRUPT Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “INT”(INST) pin of ACK Module | Connect Pin “PB03(ACK MODULE RESET Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “RESET”(RES) pin of ACK Module | Connect Pin “PA20(Host MCU TX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK RX” pin of ACK Module | Connect Pin “PA21(Host MCU RX)” of SAM D21 Curiosity Nano Evaluation Kit to “ACK TX” pin of ACK Module | Connect Pin “VTG(Voltage Target)” of SAM D21 Curiosity Nano Evaluation Kit to “IOREF” pin of ACK Module | Connect common ground between SAM D21 Curiosity Nano Evaluation Kit and ACK Module | Power the SAM D21 Curiosity Nano Evaluation Kit Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | Power the ACK Module from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (DEBUG) . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#hardware-setup",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#hardware-setup"
-  },"515": {
+  },"516": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"516": {
+  },"517": {
     "doc": "ACK Smart Light Application",
     "title": "Setting up the build platform",
     "content": ". | Download and extract ACK Device SDK 3.2 from Amazon developer website. | Copy and paste extracted SAM D21 ACK port folder “samd21_amazon_ack” into ACK device SDK’s user platform folder &lt;Your ACK SDK Downloaded folder&gt;/ACK_Device_SDK_3.2.202009091708/user/platform | . Note . | Make sure you create amazon.com account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.) | “ACK Module with MediaTek chipset” is used in these demo’s. make sure you download proper ACK SDK from the Amazon website | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#setting-up-the-build-platform",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#setting-up-the-build-platform"
-  },"517": {
+  },"518": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"518": {
+  },"519": {
     "doc": "ACK Smart Light Application",
     "title": "Project file structure",
     "content": ". | ACK SDK file/directory structure, refer “Readme.txt” in &lt;Your ACK SDK Downloaded folder&gt;\\\\ACK_Device_SDK_3.2.202009091708\\\\ | SAM D21 ACK port file/directory is as follows . | user/platform/samd21_amazon_ack/ . | applications : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler | bootloader : Contains bootloader for over-the-air(OTA) firmware upgrade feature | hmcu_port : Contains shared host specific platform and OTA files | ota : Contains OTA source, config and header files | ack_samd21_cutom_loader.c : Contains bootloader specific code | ack_samd21_platform.c : Contains SAMD21 platform specific code | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#project-file-structure",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#project-file-structure"
-  },"519": {
+  },"520": {
     "doc": "ACK Smart Light Application",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#programming-hex-file"
-  },"520": {
+  },"521": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": "Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"521": {
+  },"522": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"522": {
+  },"523": {
     "doc": "ACK Smart Light Application",
     "title": "Programming/Debugging Smart Light Application Project:",
     "content": "Before proceeding with this step complete “Setting up the build platform” step. | Open the project (samd21_amazon_ack/applications/SmartLight/firmware/sam_d21_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#programmingdebugging-smart-light-application-project",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#programmingdebugging-smart-light-application-project"
-  },"523": {
+  },"524": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"524": {
+  },"525": {
     "doc": "ACK Smart Light Application",
     "title": "Register your device",
     "content": ". | Register ACK Module with Amazon by following the procedure | If you successfully registered your device. you should see the status LED on your ACK development board change from white to green. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#register-your-device",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#register-your-device"
-  },"525": {
+  },"526": {
     "doc": "ACK Smart Light Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"526": {
+  },"527": {
     "doc": "ACK Smart Light Application",
     "title": "Running the Demo:",
     "content": ". | Open Amazon Alexa App from your phone if you closed it. | Reset/power cycle the SAM D21 Curiosity Nano Evaluation Kit and wait till the status LED on ACK development board turns to green. | When you say “Alexa, turn on development device” or tap the power button in the Alexa app GUI. A LED0 on the SAM D21 Curiosity Nano Evaluation Kit turns ON. | When you say “Alexa, turn off development device” or tap the power button in the Alexa app GUI. A LED0 on the SAM D21 Curiosity Nano Evaluation Kit turns Off. | To turn off the LED after a specific timeout, use option “Turnoff timer” in Alexa app GUI and select the required timeout. | To Toggle the LED and change the toggling speed, use option “Speed” in Alexa app GUI and select the required speed. | . Note . | To open Alexa app GUI for development device, In Amazon Alexa app navigate to Devices &gt; All devices and select Development device. it will provide the options to control the smart lights | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#running-the-demo"
-  },"527": {
+  },"528": {
     "doc": "ACK Smart Light Application",
     "title": "Comments:",
     "content": ". | Brightness option using PWM is not implemented, trying to control brightness will result in OFF if value is less than 128. | Smart Light application is built as a standalone project, if you wish to implement OTA firmware upgrade feature to this application, follow the instructions in the bootloader application’s readme file. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 Updated to support Amazon ACK SDK 3.2 | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html#comments"
-  },"528": {
+  },"529": {
     "doc": "ACK Smart Light Application",
     "title": "ACK Smart Light Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/applications/SmartLight/readme.html"
-  },"529": {
+  },"530": {
     "doc": "ACK OTA Bootloader",
     "title": "Amazon Alexa Connect Kit (ACK) OTA Bootloader Application on SAM D21 Curiosity Nano",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#amazon-alexa-connect-kit-ack-ota-bootloader-application-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#amazon-alexa-connect-kit-ack-ota-bootloader-application-on-sam-d21-curiosity-nano"
-  },"530": {
+  },"531": {
     "doc": "ACK OTA Bootloader",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"531": {
+  },"532": {
     "doc": "ACK OTA Bootloader",
     "title": "Description:",
     "content": "The Application demonstrates the usage OTA upgrade feature on SAMD21 Curiosity Nano evaluation kit using Amazon Alexa connect kit(ACK) SDK. The communication between SAM D21 Curiosity Nano and ACK Module is through UART interface. This following bullet points provides links to the detailed topics: . | Modules/Technology Used | Hardware Used | Software/Tools Used | Hardware Setup | Setting up the build platform | Project file structure | Steps to program the hex file | OTA Architecture | Setting up environment for OTA update | Building and upgrading the latest application firmware | Comments | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#description"
-  },"532": {
+  },"533": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"533": {
+  },"534": {
     "doc": "ACK OTA Bootloader",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM | Systick | Port | NVMCTRL | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#modulestechnology-used"
-  },"534": {
+  },"535": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"535": {
+  },"536": {
     "doc": "ACK OTA Bootloader",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | Connecting wires | USB to TTL cable | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#hardware-used"
-  },"536": {
+  },"537": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"537": {
+  },"538": {
     "doc": "ACK OTA Bootloader",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#softwaretools-used"
-  },"538": {
+  },"539": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"539": {
+  },"540": {
     "doc": "ACK OTA Bootloader",
     "title": "Hardware Setup:",
     "content": "Hardware connections for Validation . | Connect Pin “PB02(ACK HOST INTERRUPT Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “RTS” pin of TTL Cable | Connect Pin “PB03(ACK MODULE RESET Pin)” of SAM D21 Curiosity Nano Evaluation Kit to “CTS” pin of TTL Cable | Connect Pin “PA20(Host MCU TX)” of SAM D21 Curiosity Nano Evaluation Kit to “RX” pin of TTL Cable | Connect Pin “PA21(Host MCU RX)” of SAM D21 Curiosity Nano Evaluation Kit to “TX” pin of TTL Cable | Connect common ground between SAM D21 Curiosity Nano Evaluation Kit and TTL Cable | Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) | Connect USB end of TTL cable to the Host PC | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#hardware-setup",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#hardware-setup"
-  },"540": {
+  },"541": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"541": {
+  },"542": {
     "doc": "ACK OTA Bootloader",
     "title": "Setting up the build platform",
     "content": ". | Download and extract ACK Device SDK 3.2 from Amazon developer website. | Copy and paste extracted SAM D21 ACK port folder “samd21_amazon_ack” into ACK device SDK’s user platform folder &lt;Your ACK SDK Downloaded folder&gt;/ACK_Device_SDK_3.2.202009091708/user/platform | . Note . | Make sure you create amazon.com account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.) | “ACK Module with MediaTek chipset” is used in these demo’s. make sure you download proper ACK SDK from the Amazon website | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#setting-up-the-build-platform",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#setting-up-the-build-platform"
-  },"542": {
+  },"543": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"543": {
+  },"544": {
     "doc": "ACK OTA Bootloader",
     "title": "Project file structure",
     "content": ". | ACK SDK file/directory structure, refer “Readme.txt” in &lt;Your ACK SDK Downloaded folder&gt;\\\\ACK_Device_SDK_3.2.202009091708\\\\ | SAM D21 ACK port file/directory is as follows . | user/platform/samd21_amazon_ack/ . | applications : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler | bootloader : Contains bootloader for over-the-air(OTA) firmware upgrade feature | hmcu_port : Contains shared host specific platform and OTA files | ota : Contains OTA source, config and header files | ack_samd21_cutom_loader.c : Contains bootloader specific code | ack_samd21_platform.c : Contains SAMD21 platform specific code | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#project-file-structure",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#project-file-structure"
-  },"544": {
+  },"545": {
     "doc": "ACK OTA Bootloader",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#programming-hex-file"
-  },"545": {
+  },"546": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": "Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"546": {
+  },"547": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": "OTA architecture . | The SAM D21 Curiosity Nano Evaluation Kit has SAMD21G17D microcontroller mounted on it. | The SAMD21G17D has 128 KB of flash memory. For the implementation of OTA, the flash memory is divided into 4 sections/regions namely Bootloader, Status , Primary and Staging partition . | Bootloader : This section starts from the top of the flash and has a size of 3KB. It is used to store the bootloader application. The bootloader checks whether a new version of the application firmware is present or not in the staging region. if present, the bootloader upgrades the application firmware from the staging region to primary memory region and runs the latest application firmware from the primary memory region; if not present, the bootloader runs the existing application firmware in the primary memory region. | Status : This section starts from end of the bootloader region and has a size of 1KB. It stores known pattern to indicate that a new version of application firmware is present in staging region. | Primary : It starts from end of the status region and has a size of 62KB. The primary region holds the application firmware. | Staging: It starts from end of the primary partition and has a size of 62KB. The staging region holds a new version of the application firmware which needs to be upgraded. | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"547": {
+  },"548": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": "Setting up environment for OTA update . | Open the project (samd21_amazon_ack\\bootloader\\firmware\\\\sam_d21_cnano.X) in MPLAB X IDE | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program | Open the project (samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X) in MPLAB X IDE | Open the MPLAB Harmony 3 Configurator (MHC) from Tools &gt; MPLAB Harmony 3 Configurator for HelloWorld project | After successful opening of MHC, in Project Graph select System and disable Generate Fuse Settings as shown below and generate the code | Change the memory configuration in project properties (Right click on HelloWorld_sam_d21_cnano project &gt; select properties &gt; select xc32-ld &gt; Symbols &amp; Macros) | Change the Preprocessor macro definitions as below to place the code in primary region ROM_ORIGIN=0x1000; ROM_LENGTH=0xF800 | Define “ACK_VALIDATION” macro and “ACK_HOST_FIRMWARE_UPDATE” in HelloWorld application file “ack_user_config.h” | Increase Memory pool size macro “ACK_MEMORY_POOL_SIZE” value to 684 in ack_user_configh.h | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program. | Navigate to ota &gt; utility folder inside ‘Your ACK SDK Downloaded folder’ and run “hexmerge.py” script to merge bootloader and HelloWorld project’s hex file . python hexmerge.py -o bootloader_helloworld_combined.hex -f your_sdk_folder/user/platform/samd21_amazon_ack/bootloader/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex your_sdk_folder/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex . | Program “bootloader_helloworld_combined.hex” to SAM D21 Curiosity Nano Evaluation Kit by following steps in Steps to program the hex file section. | . Note . | Output file “bootloader_helloworld_combined.hex” will be present in utility folder if specific path is not specified while running script. | The fuse settings are not programmable through firmware and enabling the fuse settings increases the size of the binary when generated through the Hex file, So disabling it. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"548": {
+  },"549": {
     "doc": "ACK OTA Bootloader",
     "title": " ",
     "content": "Building and upgrading the latest application firmware . | Open the project (samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X) in MPLAB X IDE | Change the firmware version from 1 to 2 in “ACKUser_GetFirmwareVersion” function in file ‘ack_user_device.c’ | Build the code by clicking on the “Clean and Build project” button in MPLAB X IDE tool bar, but do not program | Navigate to ota &gt; utility folder inside ‘Your ACK SDK Downloaded folder’ and run “hex2ota.py” script to create a file suitable for uploading as latest application image from a hex file that was created by building the HelloWorld application. | In validate-ota.py, HMCU_OTA_COMPLETE(line no 79) timer should be increased to 120 seconds from 30 seconds for receiving the complete ota firmware . python hex2ota.py --device-type ACKTESTDEVICE &lt;Your ACK SDK Downloaded folder&gt;/user/platform/samd21_amazon_ack/applications/HelloWorld/firmware/sam_d21_cnano.X/dist/default/production/sam_d21_cnano.X.production.hex SecondOtaFirmware.ota . | Navigate to test &gt; validation folder inside ACK SDK and run “validate-ota.py” script to upgrade the new firmware . python validate-ota.py -pd &lt;HMCU_DEBUG_PORT&gt; -pm &lt;HMCU_PORT&gt; -t ACKTESTDEVICE -n 2 SecondOtaFirmware.ota . | Click on Switch SW0 on SAMD21 Curiosity Nano to reset the device. | Successful OTA completes with PASS message indicating successful upgradation of new firmware. | . Note . | The above procedure is to demonstrate the OTA feature. If you wish to use in production scenario, remove “ACK_VALIDATION” Macro in “ack_user_config.h” | The Switch SW0 is implemented to reset the device on press. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"549": {
+  },"550": {
     "doc": "ACK OTA Bootloader",
     "title": "Comments:",
     "content": ". | If you wish to remove the firmware update feature from your application undefine “ACK_HOST_FIRMWARE_UPDATE” Macro in “ack_user_config.h” and change Preprocessor macro definitions settings to default. | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 Updated to support Amazon ACK SDK 3.2 | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html#comments"
-  },"550": {
+  },"551": {
     "doc": "ACK OTA Bootloader",
     "title": "ACK OTA Bootloader",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/bootloader/readme.html"
-  },"551": {
+  },"552": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Amazon Alexa Connect Kit (ACK) SDK port, Smart Applications and Over the Air (OTA) firmware upgrade on SAM D21 Curiosity Nano",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#amazon-alexa-connect-kit-ack-sdk-port-smart-applications-and-over-the-air-ota-firmware-upgrade-on-sam-d21-curiosity-nano",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#amazon-alexa-connect-kit-ack-sdk-port-smart-applications-and-over-the-air-ota-firmware-upgrade-on-sam-d21-curiosity-nano"
-  },"552": {
+  },"553": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Description:",
     "content": "This folder contains the SAM D21 microcontroller port for Amazon’s Alexa Connect Kit (ACK) Software Development Kit (SDK) and smart applications demonstrating the port. The folder also contains Over the Air (OTA) firmware upgrade feature for the smart Applications. SAM D21 is an low-power, high-performance Microchip’s ARM® Cortex®-M0+ based flash microcontroller, it is ideal for a wide range of home automation, consumer, metering, and industrial applications. Microchip offers a low cost SAM D21 Curiosity Nano evaluation kit to evaluate SAMD21G17D microcontroller. Alexa Connect Kit (ACK) is Amazon’s managed service that makes it easy to integrate Alexa into your product With ACK, you don’t need to write an Alexa skill, manage a cloud service, or develop complex network and security firmware to connect your product to Alexa. Instead, you integrate the ACK module into your product. ACK provides the managed services, software, and tools you can use to develop and manage your Alexa-connected products on an ongoing basis. Users can benefit from Alexa device control and other features, such as Amazon’s Wi-fi Simple Setup (WSS). The communication interface between SAM D21 and ACK module is through UART. | This folder contains a set of applications (under folder “applications) which uses Amazon Alexa connect kit (ACK) SDK with host microcontroller SAM D21. | The Application “HelloWorld” demonstrates turning ON/OFF of the development device (SAM D21 Curiosity Nano evaluation kit) | The Application “SmartLight” demonstrates controlling of smart light (LED0) on development device (SAM D21 Curiosity Nano evaluation kit) | The Application “Microwave” demonstrates controlling of a Microwave oven | The Application “DashReplenishment” demonstrates dashboard replenishment | . | The folder contains a folder “bootloader”. The bootloader helps demonstrate OTA firmware upgrade feature. | . This following bullet points provides links to the detailed topics: . | Modules/Technology Used | Hardware Used | Software/Tools Used | Hardware Setup | Setting up the build platform | Project file structure | Steps to program the hex file | Programming/Debugging Application Projects | Register your device | Running the demo | OTA Architecture | Setting up environment for OTA update | Building and upgrading the OTA application | Comments | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#description",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#description"
-  },"553": {
+  },"554": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"554": {
+  },"555": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Modules/Technology Used:",
     "content": "Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#modulestechnology-used"
-  },"555": {
+  },"556": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"556": {
+  },"557": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Curiosity Nano Evaluation Kit | USI MT7697H Development Kit for Alexa Connect Kit - ACK Module | Connection wires | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#hardware-used"
-  },"557": {
+  },"558": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"558": {
+  },"559": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#softwaretools-used"
-  },"559": {
+  },"560": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"560": {
+  },"561": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Hardware Setup:",
     "content": "Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#hardware-setup",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#hardware-setup"
-  },"561": {
+  },"562": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"562": {
+  },"563": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Setting up the build platform",
     "content": ". | Download and extract ACK Device SDK 3.2 from Amazon developer website. | Copy and paste extracted SAM D21 ACK port folder “samd21_amazon_ack” into ACK device SDK’s user platform folder &lt;Your ACK SDK Downloaded folder&gt;/ACK_Device_SDK_3.2.202009091708/user/platform | . Note . | Make sure you create amazon.com account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.) | “ACK Module with MediaTek chipset” is used in these demo’s. make sure you download proper ACK SDK from the Amazon website | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#setting-up-the-build-platform",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#setting-up-the-build-platform"
-  },"563": {
+  },"564": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"564": {
+  },"565": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Project file structure",
     "content": ". | ACK SDK file/directory structure, refer “Readme.txt” in &lt;Your ACK SDK Downloaded folder&gt;\\\\ACK_Device_SDK_3.2.202009091708\\\\ | SAM D21 ACK port file/directory is as follows . | user/platform/samd21_amazon_ack/ . | applications : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler | bootloader : Contains bootloader for over-the-air(OTA) firmware upgrade feature | hmcu_port : Contains shared host specific platform and OTA files | ota : Contains OTA source, config and header files | ack_samd21_cutom_loader.c : Contains bootloader specific code | ack_samd21_platform.c : Contains SAMD21 platform specific code | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#project-file-structure",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#project-file-structure"
-  },"565": {
+  },"566": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"566": {
+  },"567": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Programming hex file:",
     "content": "Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#programming-hex-file"
-  },"567": {
+  },"568": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"568": {
+  },"569": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Programming/Debugging Application Projects:",
     "content": "Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#programmingdebugging-application-projects",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#programmingdebugging-application-projects"
-  },"569": {
+  },"570": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"570": {
+  },"571": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Register your device",
     "content": "Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#register-your-device",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#register-your-device"
-  },"571": {
+  },"572": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"572": {
+  },"573": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Running the Demo:",
     "content": "Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#running-the-demo"
-  },"573": {
+  },"574": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": "OTA architecture . Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"574": {
+  },"575": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": "Setting up environment for OTA update . Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"575": {
+  },"576": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": " ",
     "content": "Building and upgrading the OTA application . Refer the documentation in individual application folder . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"576": {
+  },"577": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.2.0 Updated to support Amazon ACK SDK 3.2 | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#comments",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html#comments"
-  },"577": {
+  },"578": {
     "doc": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "title": "Amazon Alexa Connect (ACK) kit port OTA and Applications",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/samd21_amazon_ack/readme.html",
     "relUrl": "/apps/sam_d21_cnano/samd21_amazon_ack/readme.html"
-  },"578": {
+  },"579": {
     "doc": "SAM D21 Curiosity Nano Evaluation Kit",
     "title": "SAM D21 Curiosity Nano Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM D21 Curiosity Nano Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | Fitness Tracker | Click Here | . | 3 | Location Tagged SOS | Click Here | . | 4 | BLE Weather Station and Motion Sensor | Click Here | . | 5 | Amazon Alexa Connect (ACK) kit port, OTA and Applications | Download Package Click Here | . |   | ACK Hello World |   | . |   | ACK Microwave |   | . |   | ACK Smart Light |   | . |   | ACK Dash Replenishment |   | . |   | ACK OTA Bootloader |   | . | 6 | Application migration from 8-bit PIC18F to 32-bit SAM D21 | Click Here | . | 7 | Application migration from 8-bit AVR to 32-bit SAM D21 | Click Here | . More Application Demos . For more application demos on SAM D21 Curiosity Nano Evaluation Kit and other Development Boards/Kits having the same part number (ATSAMD21G17D) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_cnano/readme.html",
     "relUrl": "/apps/sam_d21_cnano/readme.html"
-  },"579": {
+  },"580": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Google Cloud IoT Core Application on SAM D21 IoT WG Development Board",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#google-cloud-iot-core-application-on-sam-d21-iot-wg-development-board",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#google-cloud-iot-core-application-on-sam-d21-iot-wg-development-board"
-  },"580": {
+  },"581": {
     "doc": "Google Cloud IoT Core Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html"
-  },"581": {
+  },"582": {
     "doc": "Google Cloud IoT Core Application",
     "title": " Important:",
     "content": "There could be updates and bug fixes to the Google IoT sensor node application. Therefore, it is recommended to program SAM D21 IoT WG Development Board with the latest version of hex file from the hex folder. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#-important",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#-important"
-  },"582": {
+  },"583": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Description:",
     "content": "The SAM-IoT WG Development board based on SAM D21 microcontroller is a small and easily expandable demonstration and development platform for Wi-Fi based IoT Node applications. This specific development board comes pre-provisioned for Google IoT core and hence the name “WG”. The application that comes pre-programmed with factory shipped boards demonstrates MQTT data transfer of on-board light and temperature sensor data to Google IoT core. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#description",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#description"
-  },"583": {
+  },"584": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Key Highlights of SAM-IoT WG Development Board:",
     "content": ". | On-board Light and Temperature Sensors. | Additional sensors can be interfaced using “click boards” through on-board mikroBUS connector. | On-board nEDBG debugger. Hence, no external debugger needed. | Virtual COM and USB Mass Storage for Drag &amp; Drop programming. | Dual power supply options. USB or Battery. | On-board Li-Po battery charging circuitry. | ATECC608A based secure cloud connectivity | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#key-highlights-of-sam-iot-wg-development-board",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#key-highlights-of-sam-iot-wg-development-board"
-  },"584": {
+  },"585": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Features of SAM-IoT WG Development Board:",
     "content": ". | Drag &amp; Drop of application hex files. Hence, no need for IDE to program SAM D21 microcontroller. | Drag &amp; Drop of Wi-Fi credentials to connect to the internet. | Microcontroller peripheral libraries and Middleware are based on MPLAB Harmony 3 Software framework. | MPLABX IDE based project. | Command Line Interface (CLI) support for Wi-Fi credentials configuration. | 4 LED indicators to indicate the operating status. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#features-of-sam-iot-wg-development-board",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#features-of-sam-iot-wg-development-board"
-  },"585": {
+  },"586": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Components Used:",
     "content": ". | ATSAMD21G18A microcontroller | ATWINC1510 Wi-FI module | ATECC608A secure element | MCP9808 digital temperature sensor | MCP73871 Battery Charger | MIC33050 Voltage Regulator | TEMT6000 ambient light sensor | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#components-used",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#components-used"
-  },"586": {
+  },"587": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#softwaretools-used"
-  },"587": {
+  },"588": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Application Demonstration:",
     "content": "The below sections describes the steps to run the application. 1. How to setup the SAM-IoT WG Development Board . | The SAM-IoT WG Development board comes with pre-loaded application for out-of-box experience for the end user. Connect the board to the host PC’s USB port to power-up the board. | Alternatively, the board can be powered using a Li-Po battery. In order to perform Firmware upgrade or WiFi configuration, the board must be connected through USB port. | Once connected to PC, a mass storage drive icon by the name CURIOSITY will appear. | . 2. Running the Demo . | Open the drive and click open the CLICK-ME.HTM file to launch the Google IoT cloud landing page. | In the landing page, enter Wi-Fi credentials (SSID, Password, security type) and download WIFI.CFG file. | Drag &amp; Drop the downloaded WIFI.CFG onto the CURIOSITY drive to set the Wi-Fi credentials. | If the Wi-Fi network is active, then the SAM-IoT WG Development board establishes connectivity with the Wi-Fi network and securely connects to the Google IoT cloud. | After successful connection, the SAM-IoT WG Development board pushes the real time light and temperature sensors data to the landing page. | . 3. Firmware upgrade and WiFi configuration process . | Firmware upgrade through Drag &amp; Drop . | Download the latest version of hex file from the hex folder. Drag &amp; Drop the downloaded .hex file onto the CURIOSITY drive. | This will automatically program the microcontroller with the supplied .hex file. There is no need to open the MPLABX IDE to program the .hex file through Drag &amp; Drop method. | Firmware upgrade through MPLABX IDE . | . | This method is usually followed by most of the developers to program the .hex file from MPLABX IDE environment. | WiFi configuration through Drag &amp; Drop . | . | This is nothing but the WIFI.CFG Drag &amp; Drop method discussed in the previous section. | WiFi configuration through CLI . | . | Open a terminal application on the host PC for the virtual COM port of connected SAM-IoT WG Development board, with 9600-8-None-1 settings | Just enter the below command to set the Wi-Fi credentials. wifi &lt;SSID&gt;,&lt;PASSWORD&gt;,&lt;SECURITY TYPE&gt; | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#application-demonstration",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#application-demonstration"
-  },"588": {
+  },"589": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Reference:",
     "content": ". | For more details on the application usage, functionality and other details, refer to the SAM-IoT WG Development Board User Guide | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#reference",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#reference"
-  },"589": {
+  },"590": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Comments:",
     "content": ". | The application “sam_d21_iot/google_cloud_iot_core is developed by applying a patch (available in folder google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder. The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of “reference_apps” repository. | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.3.0 - Supported with harmony based crypto and bug fixes | v1.2.0 - Regenerated and tested application. | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html#comments",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html#comments"
-  },"590": {
+  },"591": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Google Cloud IoT Core Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_d21_iot/google_cloud_iot_core/readme.html"
-  },"591": {
+  },"592": {
     "doc": "SAM D21 IoT Development Board",
     "title": "SAM D21 IoT Development Board",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM D21 IoT Development Boards. | SI No | Demo Name | Download Link | . | 1 | Google Cloud IoT Core | Click Here | . More Application Demos . For more application demos on SAM D21 IoT WG Development Board and other Development Boards/Kits having the same part number (ATSAMD21G18A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_iot/readme.html",
     "relUrl": "/apps/sam_d21_iot/readme.html"
-  },"592": {
+  },"593": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "AC Sleepwalking Application built with GCC Toolchain on SAM D21 Xplained Pro Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#ac-sleepwalking-application-built-with-gcc-toolchain-on-sam-d21-xplained-pro-kit",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#ac-sleepwalking-application-built-with-gcc-toolchain-on-sam-d21-xplained-pro-kit"
-  },"593": {
+  },"594": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html"
-  },"594": {
+  },"595": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Description:",
     "content": "This application demonstrates how to use the AC (Analog Comparators) Peripheral library to perform a single-shot conversion when the peripheral is triggered by the RTC (Real-Time Counter) compare event. The generation of a trigger and compare operation is done while the CPU is in the standby sleep mode. The AC generates the interrupt at the end of the comparison which wakes the CPU. The application demonstrates to build an MPLAB Harmony v3 project with ARM GNU Toolchain in MPLABX IDE. The page demonstrates configuring, building, and running an MPLAB Harmony v3 peripheral library (PLIB) based application with the ARM GCC toolchain developed on the SAM D21 Xplained Pro Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#description",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#description"
-  },"595": {
+  },"596": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | AC | PORTS | RTC | PM (Power Manager) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#modulestechnology-used"
-  },"596": {
+  },"597": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Xplained Pro Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#hardware-used"
-  },"597": {
+  },"598": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “csp_apps_sam_d21_da1” repo v3.0.0 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | ARM GNU Toolchain v6.3.1 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#softwaretools-used"
-  },"598": {
+  },"599": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Setting up SAM D21 Xplained Pro Evaluation Kit:",
     "content": ". | Connect a voltage below VDD to pin 17 of the EXT1 connector | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#setting-up-sam-d21-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#setting-up-sam-d21-xplained-pro-evaluation-kit"
-  },"599": {
+  },"600": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Prerequisite:",
     "content": ". | Download and install ARM GNU Toolchain v6.3.1. | Note: If Atmel Studio is already installed in PC, then installing ARM GCC toolchain is not required as Atmel Studio is already bundled with ARM GNU Toolchain. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#prerequisite",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#prerequisite"
-  },"600": {
+  },"601": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Configure the project to use ARM GCC Toolchain:",
     "content": "This can be done with two methods, either automatically or manually. | Automatic Detection: If Atmel Studio is installed in PC, By default, MPLAB X IDE detects the ARM GCC toolchain (installed as a part of Atmel Studio) and shows it in the MPLAB X IDE’s Project properties. Since the ARM GCC toolchain is already available, switch to the ARM GCC toolchain from the project properties. | Manual: If Atmel Studio is not installed, install the ARM GCC toolchain manually. Go to MPLAB X IDE -&gt; Tools -&gt; Options -&gt; Embedded -&gt; Build Tools -&gt; Add -&gt; give the base directory -&gt; Enter the path of “xx/xxx/toolchain/arm/arm-gnu-toolchain\\bin”. Save it. | | Now, select the ARM GCC toolchain in the project properties. Select the Project -&gt; Right Click -&gt; Properties -&gt; select the ARM GCC toolchain in compiler options and save. | | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#configure-the-project-to-use-arm-gcc-toolchain",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#configure-the-project-to-use-arm-gcc-toolchain"
-  },"601": {
+  },"602": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file: . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21J18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#programming-hex-file"
-  },"602": {
+  },"603": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sam_d21_xpro\\\\samd21_ac_sleepwalk_singleshot_gcc\\firmware\\\\sam_d21_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#programmingdebugging-application-project"
-  },"603": {
+  },"604": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Running the Demo:",
     "content": ". | Perform Prerequisite, Configure the project to use ARM GCC Toolchain and Setting up SAM D21 Xplained Pro Evaluation Kit steps mentioned above, if not done already. | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Connect to the EDBG Virtual COM port and configure the baud rate to 115200 | Build and Program the application using the MPLAB X IDE. | The console displays the message stating whether voltage at PA04 is lower or greater than the internal bandgap voltage (1.1 V) | LED0 toggles when comparison is done. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#running-the-demo"
-  },"604": {
+  },"605": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Comments:",
     "content": ". | Reference Guide: Build MPLAB Harmony v3 project with ARM GCC toolchain in MPLAB X IDE | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#comments",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#comments"
-  },"605": {
+  },"606": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "Revision:",
     "content": ". | v1.2.0 regenerated and tested demo application | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#revision",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html#revision"
-  },"606": {
+  },"607": {
     "doc": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "title": "AC Sleepwalking Application built with ARM GCC Toolchain",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html",
     "relUrl": "/apps/sam_d21_xpro/samd21_ac_sleepwalk_singleshot_gcc/readme.html"
-  },"607": {
+  },"608": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAM D21 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#getting-started-application-on-sam-d21-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#getting-started-application-on-sam-d21-xplained-pro-evaluation-kit"
-  },"608": {
+  },"609": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html"
-  },"609": {
+  },"610": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension. The temperature read is displayed on a serial console periodically every 500 milliseconds. The periodicity of the temperature values displayed on the serial console is changed to 1 second, 2 seconds, 4 seconds and back to 500 milliseconds every time you press the switch SW0 on the SAM D21 Xplained Pro Evaluation Kit. Also, an LED0 is toggled every time the temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#description",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#description"
-  },"610": {
+  },"611": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | RTC | DMAC | SERCOM(I2C) | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#modulestechnology-used"
-  },"611": {
+  },"612": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#hardware-used"
-  },"612": {
+  },"613": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#softwaretools-used"
-  },"613": {
+  },"614": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM D21 Xplained Pro Evaluation Kit | The SAM D21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM D21 Xplained Pro Evaluation Kit . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#setup"
-  },"614": {
+  },"615": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21J18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#programming-hex-file"
-  },"615": {
+  },"616": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (samd21_getting_started\\firmware\\\\sam_d21_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#programmingdebugging-application-project"
-  },"616": {
+  },"617": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED0 blinking at 500 millisecond rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press the switch SW0 on SAM D21 Xplained Pro Evaluation Kit to change the default sampling rate to one second | Every subsequent pressing of switch SW0 on SAM D21 Xplained Pro Evaluation Kit changes the default sampling rate to two seconds, four seconds and 500 ms and back to one second in cyclic order as shown below | While the temperature sampling rate changes on every switch SW0 press, notice the LED0 toggling at the same sampling rate | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#running-the-demo"
-  },"617": {
+  },"618": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#comments"
-  },"618": {
+  },"619": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html#revision"
-  },"619": {
+  },"620": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started/readme.html",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started/readme.html"
-  },"620": {
+  },"621": {
     "doc": "Getting Started",
     "title": "Getting Started with Harmony v3 Drivers on SAM D21 MCU Using FreeRTOS",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#getting-started-with-harmony-v3-drivers-on-sam-d21-mcu-using-freertos",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#getting-started-with-harmony-v3-drivers-on-sam-d21-mcu-using-freertos"
-  },"621": {
+  },"622": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html"
-  },"622": {
+  },"623": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit. The temperature reading is displayed on a serial console periodically every second. Further, the application writes the temperature readings to EEPROM. When a character is entered on the console, the last five written temperature values are read from the EEPROM and displayed on the console. Also, an LED0 is toggled every time the temperature is displayed on the serial console . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#description",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#description"
-  },"623": {
+  },"624": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | SERCOM(I2C) | SERCOM(USART) | . | Drivers . | SERCOM(I2C) | USART | . | Third Party Libraries . | FreeRTOS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#modulestechnology-used"
-  },"624": {
+  },"625": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM D21 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#hardware-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#hardware-used"
-  },"625": {
+  },"626": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#softwaretools-used"
-  },"626": {
+  },"627": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM D21 Xplained Pro Evaluation Kit | The SAM D21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM D21 Xplained Pro Evaluation Kit . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#setup",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#setup"
-  },"627": {
+  },"628": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAMD21J18A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#programming-hex-file"
-  },"628": {
+  },"629": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (samd21_getting_started/firmware/drivers_freertos_sam_d21_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#programmingdebugging-application-project"
-  },"629": {
+  },"630": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every second, as shown below . | Also, notice the LED0 blinking at one second rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press any key to display the last five written temperature values from the EEPROM | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#running-the-demo",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#running-the-demo"
-  },"630": {
+  },"631": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Drivers on SAM D21 MCUs Using FreeRTOS | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#comments",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#comments"
-  },"631": {
+  },"632": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#revision",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html#revision"
-  },"632": {
+  },"633": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_d21_xpro/samd21_getting_started_freertos/readme.html"
-  },"633": {
+  },"634": {
     "doc": "SAM D21 Xplained Pro Evaluation Kit",
     "title": "SAM D21 Xplained Pro Evaluation Kit",
     "content": "This repository contains the MPLAB® Harmony 3 reference applications developed on SAM D21 Xplained Pro Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | Getting Started with Harmony v3 Drivers on SAM D21 MCU Using FreeRTOS | Click Here | . | 3 | AC Sleepwalking Application built with ARM GCC Toolchain | Click Here | . More Application Demos . For more application demos on SAM D21 Xplained Pro Evaluation Kit and other Development Boards/Kits having the same part number (ATSAMD21J18A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_d21_xpro/readme.html",
     "relUrl": "/apps/sam_d21_xpro/readme.html"
-  },"634": {
+  },"635": {
     "doc": "BLE Fitness Tracker",
     "title": "BLE Fitness Tracker Application on SAM E51 Curiosity Nano Evaluation Kit and Nano Base for Click boards",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#ble-fitness-tracker-application-on-sam-e51-curiosity-nano-evaluation-kit-and-nano-base-for-click-boards",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#ble-fitness-tracker-application-on-sam-e51-curiosity-nano-evaluation-kit-and-nano-base-for-click-boards"
-  },"635": {
+  },"636": {
     "doc": "BLE Fitness Tracker",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html"
-  },"636": {
+  },"637": {
     "doc": "BLE Fitness Tracker",
     "title": "Description:",
     "content": "The application demonstrates a solution based on Microchip products for the health care industry and wearable products. The application displays heart rate readings (in beats per minute - bpm) on a very low power consuming display and posts this Heart Rate data to Microchip Bluetooth Data (MBD) android mobile application via BLE (Bluetooth Low Energy). The Mikro Elektronika Heart Rate 9 click board is used to read the heart pulse. Mikroelektronika eINK click bundle is used for displaying heart rate. The eINK click bundle contains the eINK click adapter board and the eINK display. BM71 Bluetooth module is used to send the heart rate data over BLE. The Heart Rate 9 click introduces Microchip’s proprietary method of measuring multiple signals in a body using pseudorandom binary sequence generation and phase division multiplexing This algorithm for processing data from the sensor and it can send data for 3 different diodes (green, ir, red) who give out a diagram of the heartbeat and its frequency per minute. The eINK display is a very low power consumption display and it can retain the information, even after disconnecting from the power source. The host MCU SAM E51 is interfaced with the Heart Rate 9 click over the USART interface and eINK click over SPI Interface. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#description"
-  },"637": {
+  },"638": {
     "doc": "BLE Fitness Tracker",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | Timer | EIC | SERCOM (SPI) | SERCOM (USART) | . | BM71 Driver | STDIO Library | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#modulestechnology-used"
-  },"638": {
+  },"639": {
     "doc": "BLE Fitness Tracker",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | Heart Rate 9 click | EINK CLICK BUNDLE | BM71-XPRO | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#hardware-used"
-  },"639": {
+  },"640": {
     "doc": "BLE Fitness Tracker",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “bt” repo v3.4.0 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Install Microchip Bluetooth Data Android App in your android mobile | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#softwaretools-used"
-  },"640": {
+  },"641": {
     "doc": "BLE Fitness Tracker",
     "title": "Adding private characteristics to BM71:",
     "content": "Hardware Setup . | In BM71-XPRO, Change jumper J2 to select USB | In BM71-XPRO, Configure DIP switch SW2 with the below configurations . | All DIP switch ON | . | Power the BM71-XPRO from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J1) | Perform reset by pressing switch SW1 on BM71-XPRO and check blue LD1 is ON | . Programming private characteristics . | Download the manual configuration tool from BM70/71 Firmware &amp; Software Tools v1.11 | Extract and locate configuration tool from below location - Your_downloaded_folder \\\\Firmware &amp; Software Tools v1.11\\\\ConfigurationTool\\\\IS187x_102_BLEDK3v1.11_UI1.00 | Double click on “IS187x_102_BLEDK3v1.11_UI1.00.exe “ | Click on “Load” button and select “Load Text File” | Select “bm71_heart_rate_service_chars_config.txt” from bm71_configuration folder present in firmware folder | Click on “EDIT” option . | Select “0x01: BM71” in BLEDK and click ok . | Click on “Finish” . | Click on “Write” . | Select respective COM Port and set baud rate to 115200 then click on Write . | Click on Yes to successfully update the private characteristics on to BM71 module . | After successful update, click OK and remove the power from BM71-XPRO and change jumper J2 to select EXT . | Turn OFF DIP 1 switch | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#adding-private-characteristics-to-bm71",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#adding-private-characteristics-to-bm71"
-  },"641": {
+  },"642": {
     "doc": "BLE Fitness Tracker",
     "title": "Setup:",
     "content": ". | Mount SAM E51 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN” (U3) connector of Curiosity Nano Base board | Mount Heart Rate 9 click board on mikro bus 3 connector of Curiosity Nano Base board | Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 1 connector of Curiosity Nano Base board | Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board | Power the SAM E51 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105) . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#setup"
-  },"642": {
+  },"643": {
     "doc": "BLE Fitness Tracker",
     "title": "Programming hex file:",
     "content": "The prebuilt hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51G17D” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#programming-hex-file"
-  },"643": {
+  },"644": {
     "doc": "BLE Fitness Tracker",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (ble_fitness_tracker\\firmware\\\\sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#programmingdebugging-application-project"
-  },"644": {
+  },"645": {
     "doc": "BLE Fitness Tracker",
     "title": "Running the Demo:",
     "content": "Before proceeding, install the Microchip Bluetooth Data android app in an Android Smartphone. | Enable Bluetooth and location from Smartphone settings | Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano Evaluation Kit | Parallelly, open the “Microchip Bluetooth Data (MBD)” android app from your smartphone and tap on “Bluetooth Smart” icon on the dashboard. If prompted, allow the application to turn on Bluetooth. | After power-up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor | After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 9 click lights up . | Now, scan for Bluetooth devices by tapping START SCAN option on the MBD APP. The BM71 device should appear as MCHP_SAM_E51_HR in the list of Bluetooth devices. | Stop the scan and connect the MCHP BLE device by clicking on MCHP_SAM_E51_HR. This will establish a connection between the MBD BLE application and the BM71 BLE device. | Once BLE device is connected, the application shows the different services screen. Scrolll down and tap on the Heart Rate Service, it will redirect to Sensor Location screen. | Keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below. | In the bottom right corner of the Sensor Location screen, disable and enable the Notify Button. | Wait till the LED “LED0” on SAM E51 Curiosity Nano Evaluation Kit goes off. Once the LED is off, lift your finger. Note: Make sure smartphone screens are not turned off and don’t switch to any other App(s) on your smartphone. | The heart rate value (in bpm - beats per minute) gets displayed on the Sensor Loaction screen as shown in the figure below. Also, the same heart rate value gets displayed on the eINK display. | . Running the Demo without BLE: . Note: To test the demo without BLE, disconnect the BM71-XPRO from EXT 1 connector of the Curiosity Nano Base board. | Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano Evaluation Kit | After power-up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor | After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 9 click lights up | Press the switch “SW0” on SAM E51 Curiosity Nano Evaluation Kit, LED “LED0” on SAM E51 Curiosity Nano Evaluation Kit glows on | Place your index finger gently on the heart rate 9 click sensor as shown in the figure below | Wait till the LED “LED0” on SAM E51 Curiosity Nano Evaluation Kit goes off and then lift your finger | The heart rate value (in bpm - beats per minute) gets displayed on the eINK display | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#running-the-demo"
-  },"645": {
+  },"646": {
     "doc": "BLE Fitness Tracker",
     "title": "Comments:",
     "content": ". | Place your index finger gently on the heart rate 9 click sensor, don’t push or put pressure on the sensor (the heart rate values may not be accurate) | Make sure the smartphone screen is not turned off when reading Heart Rate Sensor data using the MBD smartphone APP and also, don’t switch to any other smartphone App(s) | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of the box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to set up and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | Code related for Heart Rate services are added manually. Harmony v3 framework doesn’t generate code about it. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#comments"
-  },"646": {
+  },"647": {
     "doc": "BLE Fitness Tracker",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html#revision"
-  },"647": {
+  },"648": {
     "doc": "BLE Fitness Tracker",
     "title": "BLE Fitness Tracker",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/readme.html",
     "relUrl": "/apps/sam_e51_cnano/ble_fitness_tracker/readme.html"
-  },"648": {
+  },"649": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#getting-started-application-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#getting-started-application-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"649": {
+  },"650": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html"
-  },"650": {
+  },"651": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "This application demonstrates an LED (LED0) toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#description"
-  },"651": {
+  },"652": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | RTC | GPIO | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#modulestechnology-used"
-  },"652": {
+  },"653": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#hardware-used"
-  },"653": {
+  },"654": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#softwaretools-used"
-  },"654": {
+  },"655": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#setup"
-  },"655": {
+  },"656": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#programming-hex-file"
-  },"656": {
+  },"657": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same51n_getting_started\\firmware\\\\sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#programmingdebugging-application-project"
-  },"657": {
+  },"658": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | An LED (LED0) on the SAM E51 Curiosity Nano Evaluation Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds | And also, the LED toggling rate is displayed on the serial terminal | Press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to change the default periodicity of the timeout to one second | Every subsequent pressing of the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#running-the-demo"
-  },"658": {
+  },"659": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#comments"
-  },"659": {
+  },"660": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html#revision"
-  },"660": {
+  },"661": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_getting_started/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_getting_started/readme.html"
-  },"661": {
+  },"662": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Google Cloud IoT Core Application on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#google-cloud-iot-core-application-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#google-cloud-iot-core-application-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"662": {
+  },"663": {
     "doc": "Google Cloud IoT Core Application",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"663": {
+  },"664": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Description:",
     "content": "This application demonstrates the implementation of an IoT sensor node on the Google cloud platform. The demo is developed on the SAM E51 Curiosity Nano Evaluation Kit connected with Curiosity Nano Base. The SAM E51 Curiosity Nano Evaluation Kit is based on SAM E51 microcontroller, is a small and easily expandable demonstration and development platform for applications. Typical IoT application development problem can be partitioned into three blocks: - Smart (Application logic): Implemented through the ATSAME51 microcontroller - Security: Implemented through the ATECC608 secure element - Connectivity: Implemented through the ATWINC1510 WiFi controller module . This application utilizes Mikroelektronika click interface and Microchip XPRO interfaces available on Curiosity Nano base to create a Google IoT node application. The application demonstrates MQTT data transfer of light and temperature sensor data to Google IoT cloud. Below is the Index of topics in this document. | Modules/Technology Used | ATWINC1510 Firmware upgrade and Google Cloud IoT Provisioning Guide | Hardware Used | Software/Tools Used | Setup | Programming hex file | Programming/Debugging Application Project | Running the Demo . | WiFi configuration process | Reading Device signature | Google IoT Core Account Setup Guide | Instructions to add your device to Google cloud registry | Fetching data from Google Cloud and displaying on UI | . | Comments | Revision | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#description"
-  },"664": {
+  },"665": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"665": {
+  },"666": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | ADC | Trust&amp;Go | ATECC608 | COMMAND | CONSOLE | Core | EIC | RTC | SysTick | SPI | USART | I2C | Timer | WINC | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#modulestechnology-used"
-  },"666": {
+  },"667": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"667": {
+  },"668": {
     "doc": "Google Cloud IoT Core Application",
     "title": "ATWINC1510 Firmware upgrade and Google Cloud IoT Provisioning (Root certificate upgrade) Guide",
     "content": "Refer the documentation in utilities folder If this is the first time you are building/running this version of the demo, you must complete this step before proceeding further. Otherwise, you may skip this step. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#atwinc1510-firmware-upgrade-and-google-cloud-iot-provisioning-root-certificate-upgrade-guide",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#atwinc1510-firmware-upgrade-and-google-cloud-iot-provisioning-root-certificate-upgrade-guide"
-  },"668": {
+  },"669": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"669": {
+  },"670": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | I/O1 Xplained Pro Extension Kit | WIFI 7 CLICK | ATECC608B Trust | LED DRIVER 3 CLICK | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#hardware-used"
-  },"670": {
+  },"671": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"671": {
+  },"672": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “wireless” repo v3.3.1 | “cryptoauthlib” repo v3.3.0 | MPLAB Harmony “crypto” repo v3.6.3 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Python 3.8 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#softwaretools-used"
-  },"672": {
+  },"673": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"673": {
+  },"674": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Setup:",
     "content": ". | Mount SAM E51 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount WiFi 7 Click board on mikroBUS click 1 connector of Curiosity Nano Base board | Mount ATECC608B TRUST add on board on the mikroBUS click 2 connector of Curiosity Nano Base board | Slide the DIP SW1 of 1 on ATECC608B TRUST add on board to the ON state to enable the device selection | Mount LED Driver 3 Click board on mikroBUS click 3 connector of Curiosity Nano Base board | Connect the I/O1 Xplained Pro extension kit to the Extension Header 1 (EXT1) connector of Curiosity Nano Base board | Connect a USB cable to the DEBUG USB port for programming | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#setup"
-  },"674": {
+  },"675": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"675": {
+  },"676": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#programming-hex-file"
-  },"676": {
+  },"677": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"677": {
+  },"678": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same51n_google_cloud_iot_core/firmware/sam_e51_cnano.X) in MPLAB X IDE. | Ensure “PKOB nano” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#programmingdebugging-application-project"
-  },"678": {
+  },"679": {
     "doc": "Google Cloud IoT Core Application",
     "title": " ",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"679": {
+  },"680": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Running the Demo",
     "content": ". 1. WiFi configuration process . WiFi configuration through Command Line Interface(CLI) . | Open a serial terminal application on a host PC for the virtual COM port of the connected SAM E51 Curiosity Evaluation Kit, with 9600-8-None-1 settings. | Enter the below command to set the WiFi credentials. wifi ,, . | SSID : WIFI Name | PASSWORD : WIFI PASSWORD | SECURITY TYPE : (1 or 2 or 3) - OPEN —— (1) - WPA/WPA2 —— (2) - WEP —— (3) | . | . Note : No need of repeating this step every time while running the demo, Device remembers last used WiFi credentials and try to connect to it. If WiFi credentials changes, this step should be performed. 2. Reading Device signature . This device signature will be used to register the device with a Google cloud account . | Make sure serial terminal application is running | Enter the below command to read the device serial number device | Enter the below command to read the device’s ECC public key key . Note : Type “help” to see full command list . | . 3. Google IoT Core Account Setup Guide . | Log into the console | Use your personal Gmail account to log in. Select “Try for free”. Note : If you do not have a Gmail account, create a new email account from HERE | Create a new Google cloud project by clicking the Select a project option | Click on NEW PROJECT | Enter a Project name as gcp-same51-demo | Select organization (if available) or “No organization” | Once the project is created, the home page looks like below. Note : This Project Id is user unique identifier. It is defined in the cloud_config.h file, this helps to send the data to particular GCP account | In the search bar, type “billing” to get to the billing page. Click Link a billing account to add the credit card information. Follow the prompts to complete the billing information. Once it is completed you can use the free trail version available Note : Credit card is mandatory to complete the bill section | In the search bar type “Pub/Sub API” and click on “Enable API”. | Enter “Google Cloud IoT API” in the search bar. Once you select it, click Enable | In the navigation pane, select Pub/Sub -&gt; Topics as shown in the below figure | Click Create Topic | Enter the name of topic as “events” and click “Create Topic” | Click on “Subscriptions” and click on “CREATE SUBSCRIPTION” | Enter the “subscription ID” as example and select a “Cloud Pub/Sub topic” as below and click on CREATE | In the navigation pane, select IoT Core | Click on “CREATE REGISTRY” | Enter details as shown below and click on “Create a Registry” | Search for “IAM and admin” -&gt; service accounts | Click on “CREATE SERVICE ACCOUNT” | Enter the details as shown below and click on “CREATE” . | Select the roles as shown below | Click on “CONTINUE” | Select the created demo class from service accounts | Navigate to “KEYS” tab | Select “ADD KEY” and “Create new key” | Select “JSON” and click on “CREATE” | A JSON file will be downloaded, Rename it to “example.json”, copy and paste into scripts folder of same51n_google_cloud_iot_core project | . Note : Creating a Google could account and adding registry to it is one time process . 4. Instructions to add your device to Google cloud registry . | In Google cloud search bar, search for IOT core and select the “sam_e51_iot” registry which was created earlier | Select “Devices” and click on “CREATE A DEVICE” | Enter the device serial number starting with ‘d’ as shown below and click on create | Add the public key read from the device in command prompt as shown below | You have successfully added device into Registry of google cloud | . Note : Following above steps, you can add more devices Fetching_data_from_Google_Cloud_and_displaying_on_UI . 5. Fetching data from Google Cloud and displaying on UI . | If the WiFi network is active, then the SAME51 Curiosity Nano Evaluation kit establishes connectivity with the WiFi network and securely connects to the Google IoT cloud. | After successful connection, the SAME51 Curiosity Nano Evaluation kit pushes the real time light and temperature sensors data to the cloud. | Open command prompt on your PC | Navigate to scripts folder and type below command python gcp_gui.py –creds example.json example | A UI opens and starts displaying light and temperature values fetching from google cloud with serial number of the particular device | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#running-the-demo"
-  },"680": {
+  },"681": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Comments:",
     "content": ". | The application “sam_e51_cnano/same51n_google_cloud_iot_core is developed by applying a patch (available in folder same51n_google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “same51n_google_cloud_iot_core/firmware/app_patch” folder. The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of “reference_apps” repository. | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . Revision: . | v1.3.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html#comments"
-  },"681": {
+  },"682": {
     "doc": "Google Cloud IoT Core Application",
     "title": "Google Cloud IoT Core Application",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.html"
-  },"682": {
+  },"683": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Low Power Application on SAM E51 Curiosity Nano Evaluation Kit with OLED C click board for display using MPLAB Harmony Legato Graphics",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#low-power-application-on-sam-e51-curiosity-nano-evaluation-kit-with-oled-c-click-board-for-display-using-mplab-harmony-legato-graphics",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#low-power-application-on-sam-e51-curiosity-nano-evaluation-kit-with-oled-c-click-board-for-display-using-mplab-harmony-legato-graphics"
-  },"683": {
+  },"684": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html"
-  },"684": {
+  },"685": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Description",
     "content": "In this application demonstration, the SAM E51 MCU is configured to operate in low power standby sleep mode on power-up. The device wakes up from standby mode and enters active mode when the user covers the light sensor (placing a hand over it, for example) on the I/O1 Xplained Pro extension kit. When the light sensor is covered, the device reads the room temperature using temperature sensor on the I/O1 Xplained Pro extension kit and displays it on the OLED C Click display board. The application periodically prints room temperature on a serial terminal while the light sensor is covered. The device goes back to standby mode when the user uncovers the light sensor. The temperature read is displayed on the OLED C Click and also on the serial console. LED0 in the SAM E51 Curiosity Nano Evaluation Kit is toggled every time the temperature is displayed on the OLED C Click. When the user presses the switch button SW0, the application switches Sleep mode from Standby to Idle mode. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#description"
-  },"685": {
+  },"686": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | I2C | RTC | USART | DMAC | ADC0 | PM | SUPC | EIC | EVSYS | SPI | SysTick | Timer | Legato graphics | LE External controller | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#modulestechnology-used"
-  },"686": {
+  },"687": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | I/O1 Xplained Pro Extension Kit | OLED C Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#hardware-used"
-  },"687": {
+  },"688": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “gfx” repository v3.9.0 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#softwaretools-used"
-  },"688": {
+  },"689": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Setup:",
     "content": ". | Mount SAM E51 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount OLED C Click board on mikro bus click 1 connector of Curiosity Nano Base board | Connect the I/O1 Xplained Pro extension kit to the Extension Header 1 (EXT1) connector of Curiosity Nano Base board | Connect a USB cable to the DEBUG USB port for programming | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#setup"
-  },"689": {
+  },"690": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#programming-hex-file"
-  },"690": {
+  },"691": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same51n_low_power_with_oled_c_click/firmware/sam_e51_cnano.X) in MPLAB X IDE. | Ensure “PKOB nano” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#programmingdebugging-application-project"
-  },"691": {
+  },"692": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port, and reconnect it back. | Change the baud rate to 115200 | After power up, the application displays the temperature on OLED C Click board | Verify the application title message with the current temperature value displayed on Serial Console . | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered . | Press the switch button SW0, the application switches Sleep mode from Standby mode to Idle mode. Cover the light sensor on the I/O Xplained Pro board by placing your hand over it to wakeup and print the temperature and message on the terminal. | . Note: . | When the device reads the room temperature and prints it on the serial terminal, the temperature is also displayed on the OLED C Click board. | This application demo does not provide the power consumption values of SAM E51 MCU in standby or idle sleep mode. Interested users could refer “Low Power Application on SAM E54 (Cortex M4) MCUs Using MPLAB Harmony v3 Peripheral Libraries” for power consumption numbers presented for an MCU (SAM E54) of the same family as SAM E51. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#running-the-demo"
-  },"692": {
+  },"693": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Comments:",
     "content": ". | Reference Training Module: Low Power Application on SAM E54 (Cortex M4) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#comments"
-  },"693": {
+  },"694": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Revision:",
     "content": ". | v1.2.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html#revision"
-  },"694": {
+  },"695": {
     "doc": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_low_power_with_oled_c_click/readme.html"
-  },"695": {
+  },"696": {
     "doc": "10DOF Click Example",
     "title": "10DOF Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#10dof-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#10dof-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"696": {
+  },"697": {
     "doc": "10DOF Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html"
-  },"697": {
+  },"698": {
     "doc": "10DOF Click Example",
     "title": "Description:",
     "content": "This example demonstrates the reading of weather parameters (Temperature and pressure), Motion parameters (Gyroscope, Accelerometer, Quaternion) from 10DOF Click and displays it on a serial terminal when the switch on SAM E51 Curiosity Nano Evaluation Kit is pressed. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#description"
-  },"698": {
+  },"699": {
     "doc": "10DOF Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | SYSTICK | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#modulestechnology-used"
-  },"699": {
+  },"700": {
     "doc": "10DOF Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika 10DOF Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#hardware-used"
-  },"700": {
+  },"701": {
     "doc": "10DOF Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#softwaretools-used"
-  },"701": {
+  },"702": {
     "doc": "10DOF Click Example",
     "title": "Setup:",
     "content": ". | Mount SAM E51 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount 10DOF Click board on mikroBUS click 1 connector of Curiosity Nano Base board | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#setup"
-  },"702": {
+  },"703": {
     "doc": "10DOF Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#programming-hex-file"
-  },"703": {
+  },"704": {
     "doc": "10DOF Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (10dof/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#programmingdebugging-application-project"
-  },"704": {
+  },"705": {
     "doc": "10DOF Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the weather (Temperature and Pressure) and motion parameters (Gyroscope, Accelerometer, Quaternion). | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit prints the latest weather and motion parameters. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#running-the-demo"
-  },"705": {
+  },"706": {
     "doc": "10DOF Click Example",
     "title": "Instructions to add 10dof functionality to your application:",
     "content": "You could use this demonstration as an example to add 10dof functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the 10dof demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder 10dof/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The 10dof click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The 10dof click example source files gets added to your project . | . | The 10dof click example uses the I2C and Timer peripherals. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the 10dof click board Example: The 10dof click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the 10dof click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The 10dof click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of 10dof click routines. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The 10dof click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file 10dof_example.c. You could use 10dof_example.c as a reference to add 10dof functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#instructions-to-add-10dof-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#instructions-to-add-10dof-functionality-to-your-application"
-  },"706": {
+  },"707": {
     "doc": "10DOF Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#comments"
-  },"707": {
+  },"708": {
     "doc": "10DOF Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html#revision"
-  },"708": {
+  },"709": {
     "doc": "10DOF Click Example",
     "title": "10DOF Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/10dof/readme.html"
-  },"709": {
+  },"710": {
     "doc": "EEPROM 4 Click Example",
     "title": "EEPROM 4 Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#eeprom-4-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#eeprom-4-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"710": {
+  },"711": {
     "doc": "EEPROM 4 Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html"
-  },"711": {
+  },"712": {
     "doc": "EEPROM 4 Click Example",
     "title": "Description:",
     "content": "This example demonstrates writing and reading known data to EEPROM 4 memory location when the switch is pressed on SAM E51 Curiosity Nano Evaluation Kit. The data read is matched with written data and printed on a serial terminal when the EEPROM test is successful. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#description"
-  },"712": {
+  },"713": {
     "doc": "EEPROM 4 Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | GPIO | SERCOM (SPI) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#modulestechnology-used"
-  },"713": {
+  },"714": {
     "doc": "EEPROM 4 Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika EEPROM 4 Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#hardware-used"
-  },"714": {
+  },"715": {
     "doc": "EEPROM 4 Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#softwaretools-used"
-  },"715": {
+  },"716": {
     "doc": "EEPROM 4 Click Example",
     "title": "Setup:",
     "content": ". | Mount SAM E51 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount EEPROM 4 Click board on mikroBUS click 1 connector of Curiosity Nano Base board | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#setup"
-  },"716": {
+  },"717": {
     "doc": "EEPROM 4 Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#programming-hex-file"
-  },"717": {
+  },"718": {
     "doc": "EEPROM 4 Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (eeprom4/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#programmingdebugging-application-project"
-  },"718": {
+  },"719": {
     "doc": "EEPROM 4 Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to test the EEPROM 4 by writing and reading know data . | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit tests the EEPROM 4. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#running-the-demo"
-  },"719": {
+  },"720": {
     "doc": "EEPROM 4 Click Example",
     "title": "Instructions to add eeprom4 functionality to your application:",
     "content": "You could use this demonstration as an example to add eeprom4 functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the eeprom4 demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder eeprom4/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The eeprom4 click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The eeprom4 click example source files gets added to your project . | . | The eeprom4 click example uses the SPI peripheral. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure SPI: - Add the SPI peripheral block to the MHC project graph . | Configure SPI Pins using MHC Pin configuration Window The SPI configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the eeprom4 click board Example: The eeprom4 click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the eeprom4 click board. The SPI lines from MCU coming to this socket are from the SERCOM1 peripheral on the MCU. MHC Project Graph - SPI configuration | . MHC Pin Configurator - SPI Chip select pin configuration . MHC Pin Configurator - EEPROM write protect and Hold pin configuration . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The eeprom4 click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file eeprom4_example.c. You could use eeprom4_example.c as a reference to add eeprom4 functionality in your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#instructions-to-add-eeprom4-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#instructions-to-add-eeprom4-functionality-to-your-application"
-  },"720": {
+  },"721": {
     "doc": "EEPROM 4 Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#comments"
-  },"721": {
+  },"722": {
     "doc": "EEPROM 4 Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html#revision"
-  },"722": {
+  },"723": {
     "doc": "EEPROM 4 Click Example",
     "title": "EEPROM 4 Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eeprom4/readme.html"
-  },"723": {
+  },"724": {
     "doc": "Eink Click display bundle Example",
     "title": "Eink Click display bundle example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#eink-click-display-bundle-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#eink-click-display-bundle-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"724": {
+  },"725": {
     "doc": "Eink Click display bundle Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html"
-  },"725": {
+  },"726": {
     "doc": "Eink Click display bundle Example",
     "title": "Description:",
     "content": "This example demonstrates the display capability of Eink click bundle board on SAM E51 Curiosity Nano Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#description"
-  },"726": {
+  },"727": {
     "doc": "Eink Click display bundle Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SYSTICK | GPIO | SERCOM (SPI) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#modulestechnology-used"
-  },"727": {
+  },"728": {
     "doc": "Eink Click display bundle Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika Eink Click Bundle | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#hardware-used"
-  },"728": {
+  },"729": {
     "doc": "Eink Click display bundle Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#softwaretools-used"
-  },"729": {
+  },"730": {
     "doc": "Eink Click display bundle Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#setup"
-  },"730": {
+  },"731": {
     "doc": "Eink Click display bundle Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#programming-hex-file"
-  },"731": {
+  },"732": {
     "doc": "Eink Click display bundle Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (eink_bundle/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#programmingdebugging-application-project"
-  },"732": {
+  },"733": {
     "doc": "Eink Click display bundle Example",
     "title": "Running the Demo:",
     "content": ". | After power up, when the demo is running, The Eink display shows as below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#running-the-demo"
-  },"733": {
+  },"734": {
     "doc": "Eink Click display bundle Example",
     "title": "Instructions to add Eink display functionality to your application:",
     "content": "You could use this demonstration as an example to add Eink display functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the Eink Click display demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder eink_bundle/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The Eink display click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The Eink display click example source files gets added to your project . | . | The Eink display click example uses the SPI, Timer peripherals and PORT pins . The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure SPI: - Add the SPI peripheral block to the MHC project graph . | Configure SPI Pins using MHC Pin configuration Window The SPI configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the Eink click bundle board Example: The Eink display click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Eink Click Bundle board. The SPI lines from MCU coming to this socket are from the SERCOM1 peripheral on the MCU. MHC Project Graph - SPI configuration | . MHC Pin Configurator - SPI pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The Eink display click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of Eink display click routines. MHC Project Graph - SysTick configuration | . | Configure PORT Pins: . | The Eink click bundle needs three additional pins for configuration and data exchange. These parent . | Data/Config pin | Busy indicator pin | Reset pin | . | Configure PORT pins needed by Eink click bundle in the MHC Pin Configurator The PORT pin configuration depends on . | 32-bit MCU | 32-bit MCU development board | The socket on which you have mounted the Eink bundle click board Example: The PORT pin configuration for the Eink display click example on SAM E51 Curiosity Nano Evaluation Kit is below. MHC Pin Configurator - PORT pin configuration | . | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The Eink display click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file eink_bundle_example.c. You could use eink_bundle_example.c as a reference to add Eink display functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#instructions-to-add-eink-display-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#instructions-to-add-eink-display-functionality-to-your-application"
-  },"734": {
+  },"735": {
     "doc": "Eink Click display bundle Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#comments"
-  },"735": {
+  },"736": {
     "doc": "Eink Click display bundle Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html#revision"
-  },"736": {
+  },"737": {
     "doc": "Eink Click display bundle Example",
     "title": "Eink Click display bundle Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/eink_bundle/readme.html"
-  },"737": {
+  },"738": {
     "doc": "Fan Click Example",
     "title": "Fan Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#fan-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#fan-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"738": {
+  },"739": {
     "doc": "Fan Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html"
-  },"739": {
+  },"740": {
     "doc": "Fan Click Example",
     "title": "Description:",
     "content": "This example application demonstrates DC fan control (on, off and speed control) on SAM E51 Curiosity Nano Evaluation Kit using Fan Click board . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#description"
-  },"740": {
+  },"741": {
     "doc": "Fan Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SYSTICK | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#modulestechnology-used"
-  },"741": {
+  },"742": {
     "doc": "Fan Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika Fan Click | 5V DC Fan | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#hardware-used"
-  },"742": {
+  },"743": {
     "doc": "Fan Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.9.0 | MPLAB Harmony v3 “dev_packs” repo v3.9.0 | MPLAB Harmony v3 “mhc” repo v3.7.1 | MPLAB Harmony 3 Launcher Plugin v3.6.4 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#softwaretools-used"
-  },"743": {
+  },"744": {
     "doc": "Fan Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#setup"
-  },"744": {
+  },"745": {
     "doc": "Fan Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#programming-hex-file"
-  },"745": {
+  },"746": {
     "doc": "Fan Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (apps/sam_e51_cnano/same51n_mikroe_click/fan/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#programmingdebugging-application-project"
-  },"746": {
+  },"747": {
     "doc": "Fan Click Example",
     "title": "Running the Demo:",
     "content": ". | After power up, by default when the application runs, the fan is switched off. | When the user presses the switch on the board, the fan is turned on at default speed. | When the user presses the switch on the board for second time, the fan is run at low speed. | When the user presses the switch on the board for third time, the fan is run at medium speed. | When the user presses the switch on the board for fourth time, the fan is turned off. | . | The above steps are repeated for subsequent switch press events | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#running-the-demo"
-  },"747": {
+  },"748": {
     "doc": "Fan Click Example",
     "title": "Instructions to add Fan functionality to your application:",
     "content": "You could use this demonstration as an example to add motion sensor functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the Fan example demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder fan/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The Fan click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The Fan click example source files gets added to your project . | . | The Fan click example uses the I2C and Timer peripherals . The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the Fan click board Example: The Fan click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Fan Click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The Fan click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of Fan click example. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines and example to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The Fan click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file fan_example.c. You could use fan_example.c as a reference to add fan functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#instructions-to-add-fan-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#instructions-to-add-fan-functionality-to-your-application"
-  },"748": {
+  },"749": {
     "doc": "Fan Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#comments"
-  },"749": {
+  },"750": {
     "doc": "Fan Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html#revision"
-  },"750": {
+  },"751": {
     "doc": "Fan Click Example",
     "title": "Fan Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/fan/readme.html"
-  },"751": {
+  },"752": {
     "doc": "GSM GPS Click Example",
     "title": "GSM GPS Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#gsm-gps-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#gsm-gps-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"752": {
+  },"753": {
     "doc": "GSM GPS Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html"
-  },"753": {
+  },"754": {
     "doc": "GSM GPS Click Example",
     "title": "Description:",
     "content": "The application demonstrates sending out a location-tagged SMS on SAM E51 Curiosity Nano Evaluation Kit using GSM GPS Click board. ## Modules/Technology Used: . | Peripheral Modules . | EIC | SYSTICK | GPIO | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#description"
-  },"754": {
+  },"755": {
     "doc": "GSM GPS Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika GSM GPS Click | GSM Antenna | Active GPS Antenna | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#hardware-used"
-  },"755": {
+  },"756": {
     "doc": "GSM GPS Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#softwaretools-used"
-  },"756": {
+  },"757": {
     "doc": "GSM GPS Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#setup"
-  },"757": {
+  },"758": {
     "doc": "GSM GPS Click Example",
     "title": "Programming hex file:",
     "content": "Note: The prebuilt hex file is configured to send SMS to a mobile phone number mentioned in gsm_gps_example.h (Macro - GSM_GPS_EXAMPLE_USER_MOBILE_NUMBER) . The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#programming-hex-file"
-  },"758": {
+  },"759": {
     "doc": "GSM GPS Click Example",
     "title": "Configure Mobile Phone Number:",
     "content": ". | Open the project (gsm_gps/firmware/sam_e51_cnano.X) in MPLAB X IDE | Open header file gsm_gps_example.h . | Define the macro to your mobile phone number preceded by country code. For example, Below is the macro definition to configure an Indian mobile phone number “1234567890” . Note: “+91” is the country code for India in the above screenshot and “1234567890” is a dummy phone number. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#configure-mobile-phone-number",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#configure-mobile-phone-number"
-  },"759": {
+  },"760": {
     "doc": "GSM GPS Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Ensure the project (gsm_gps/firmware/sam_e51_cnano.X) is open in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#programmingdebugging-application-project"
-  },"760": {
+  },"761": {
     "doc": "GSM GPS Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Follow instructions on the screen to send SMS to the configured mobile phone . | . Note: The message “Location information not found yet! Try Again” appears when the GPS receiver hasn’t yet acquired and tracked satellites to provide position information. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#running-the-demo"
-  },"761": {
+  },"762": {
     "doc": "GSM GPS Click Example",
     "title": "Instructions to add GSM GPS functionality to your application:",
     "content": "You could use this demonstration as an example to add GSM GPS functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the GSM GPS demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder gsm_gps/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The GSM GPS click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The GSM GPS click example source files gets added to your project . | . | The GSM GPS click example uses the USART and Timer peripherals. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure USART: - Add the USART peripheral block to the MHC project graph . | Configure USART Pins using MHC Pin configuration Window The USART configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the Heart Rate 9 click board Example: The GSM GPS click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the GSM GPS click board. The USART lines from MCU coming to this socket are from the SERCOM4 peripheral on the MCU. MHC Project Graph - USART configuration | . MHC Pin Configurator - USART pin configuration . | Configure GSM GPS Click Reset Pin: - Configure GSM GPS Click Reset Pin using MHC Pin configuration Window The Power Pin configuration depends on - The socket on which you have mounted the GSM GPS click board Example: The GSM GPS click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the GSM GPS click board. The Power Pin line from the GSM GPS Click coming to this socket is PA07 on the MCU. MHC Pin Configurator - Power pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The GSM GPS click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of GSM GPS click routines. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The GSM GPS click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file gsm_gps_example.c. You could use gsm_gps_example.c as a reference to add GSM GPS functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#instructions-to-add-gsm-gps-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#instructions-to-add-gsm-gps-functionality-to-your-application"
-  },"762": {
+  },"763": {
     "doc": "GSM GPS Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#comments"
-  },"763": {
+  },"764": {
     "doc": "GSM GPS Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html#revision"
-  },"764": {
+  },"765": {
     "doc": "GSM GPS Click Example",
     "title": "GSM GPS Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/gsm_gps/readme.html"
-  },"765": {
+  },"766": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Heart Rate 9 Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#heart-rate-9-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#heart-rate-9-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"766": {
+  },"767": {
     "doc": "Heart Rate 9 Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html"
-  },"767": {
+  },"768": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Description:",
     "content": "This example demonstrates the reading of Heart Rate and displays it on a serial terminal on SAM E51 Curiosity Nano Evaluation Kit using Heart Rate 9 Click board. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#description"
-  },"768": {
+  },"769": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | SYSTICK | GPIO | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#modulestechnology-used"
-  },"769": {
+  },"770": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika Heart Rate 9 Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#hardware-used"
-  },"770": {
+  },"771": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#softwaretools-used"
-  },"771": {
+  },"772": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#setup"
-  },"772": {
+  },"773": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#programming-hex-file"
-  },"773": {
+  },"774": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sam_e51_cnano/same51n_mikroe_click/heartrate9/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#programmingdebugging-application-project"
-  },"774": {
+  },"775": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Keep your finger on Pulse Detection Indicator as shown here. Note: Cover the Heart Rate Sensor by placing your finger on Pulse Detection Indicator as shown below . | Now, press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the Heart Rate. | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit prints the Heart Rate. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#running-the-demo"
-  },"775": {
+  },"776": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Instructions to add Heart Rate functionality to your application:",
     "content": "You could use this demonstration as an example to add Heart Rate functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the Heart Rate 9 demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder heartrate9/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The Heart Rate 9 click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The Heart Rate 9 click example source files gets added to your project . | . | The Heart Rate 9 click example uses the USART and Timer peripherals. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure USART: - Add the USART peripheral block to the MHC project graph . | Configure USART Pins using MHC Pin configuration Window The USART configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the Heart Rate 9 click board Example: The Heart Rate 9 click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Heart Rate 9 click board. The USART lines from MCU coming to this socket are from the SERCOM4 peripheral on the MCU. MHC Project Graph - USART configuration | . MHC Pin Configurator - USART pin configuration . | Configure Heart Rate 9 Click Reset Pin: - Configure Heart Rate 9 Click Reset Pin using MHC Pin configuration Window The Reset Pin configuration depends on - The socket on which you have mounted the Heart Rate 9 click board Example: The Heart Rate 9 click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Heart Rate 9 click board. The Reset Pin line from the Heart Rate 9 Click coming to this socket is PA07 on the MCU. MHC Pin Configurator - Reset pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The Heart Rate 9 click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of Heart Rate 9 click routines. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The Heart Rate 9 click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . Note: Define the value of CLICK_HEARTRATE9_USART_READ_BUFFER_SIZE same as USART_READ_BUFFER_SIZE defined in the respective USART PLIB ‘.c’ file . | . | The click_routines folder contain an example C source file heartrate9_example.c. You could use heartrate9_example.c as a reference to add Heart Rate 9 functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#instructions-to-add-heart-rate-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#instructions-to-add-heart-rate-functionality-to-your-application"
-  },"776": {
+  },"777": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#comments"
-  },"777": {
+  },"778": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html#revision"
-  },"778": {
+  },"779": {
     "doc": "Heart Rate 9 Click Example",
     "title": "Heart Rate 9 Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/heartrate9/readme.html"
-  },"779": {
+  },"780": {
     "doc": "IR Thermo 2 Click Example",
     "title": "IR Thermo 2 Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#ir-thermo-2-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#ir-thermo-2-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"780": {
+  },"781": {
     "doc": "IR Thermo 2 Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html"
-  },"781": {
+  },"782": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Description:",
     "content": "This example demonstrates contactless reading of object temperature and displays it on a serial terminal on SAM E51 Curiosity Nano Evaluation Kit using IR Thermo 2 click board. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#description"
-  },"782": {
+  },"783": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#modulestechnology-used"
-  },"783": {
+  },"784": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika IR Thermo 2 Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#hardware-used"
-  },"784": {
+  },"785": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#softwaretools-used"
-  },"785": {
+  },"786": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#setup"
-  },"786": {
+  },"787": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#programming-hex-file"
-  },"787": {
+  },"788": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sam_e51_cnano/same51n_mikroe_click/ir_thermo2/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#programmingdebugging-application-project"
-  },"788": {
+  },"789": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | To measure the object temperature, keep a hot object / cold object facing the Infrared Thermopile Sensor on IR Thermo 2 click with a 8 : 1 distance ratio. For example, if you need to measure the object surface temperature of a 4-inch area with the IR thermo 2 click that has a Distance/Surface ratio of 8:1, the maximum distance from where you can accurately measure the temperature will be 32 inches (8:1 x 4) | Now, press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the object temperature. Note: Here, the above object temperature values measured by keeping Cold and Hot water on top of the IR Thermo 2 Click of a 1 inch object surface. | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit prints the object temperature. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#running-the-demo"
-  },"789": {
+  },"790": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Instructions to add contactless object temperature functionality to your application:",
     "content": "You could use this demonstration as an example to add IR Thermo 2 functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the IR Thermo 2 demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder ir_thermo2/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The IR Thermo 2 click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The IR Thermo 2 click example source files gets added to your project . | . | The IR Thermo 2 click example uses the I2C peripheral. The configuration of this peripheral for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the IR Thermo 2 click board Example: The IR Thermo 2 click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the IR Thermo 2 click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The IR Thermo 2 click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file ir_thermo2_example.c. You could use ir_thermo2_example.c as a reference to add contactless object temperature functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#instructions-to-add-contactless-object-temperature-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#instructions-to-add-contactless-object-temperature-functionality-to-your-application"
-  },"790": {
+  },"791": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#comments"
-  },"791": {
+  },"792": {
     "doc": "IR Thermo 2 Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html#revision"
-  },"792": {
+  },"793": {
     "doc": "IR Thermo 2 Click Example",
     "title": "IR Thermo 2 Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/ir_thermo2/readme.html"
-  },"793": {
+  },"794": {
     "doc": "LED DRIVER3 Click Example",
     "title": "LED DRIVER 3 Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#led-driver-3-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#led-driver-3-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"794": {
+  },"795": {
     "doc": "LED DRIVER3 Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html"
-  },"795": {
+  },"796": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Description:",
     "content": "This example demonstrates RGB color (Red/Green/Blue) one by one with a 500ms delay on the LED Driver 3 click board when the switch is pressed on the SAM E51 Curiosity Nano Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#description"
-  },"796": {
+  },"797": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | SYSTICK | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#modulestechnology-used"
-  },"797": {
+  },"798": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika LED Driver 3 Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#hardware-used"
-  },"798": {
+  },"799": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#softwaretools-used"
-  },"799": {
+  },"800": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Setup:",
     "content": ". | Mount SAM E51 Curiosity Nano Evaluation Kit on “CNANO56_HOST_CONN”(U3) connector of Curiosity Nano Base board | Mount LED Driver 3 Click board on mikroBUS click 1 connector of Curiosity Nano Base board | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#setup"
-  },"800": {
+  },"801": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#programming-hex-file"
-  },"801": {
+  },"802": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (leddriver3/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#programmingdebugging-application-project"
-  },"802": {
+  },"803": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to display the RGB color (Red/Green/Blue) one by one with 500ms delay on LED Driver 3 click board | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit displays RGB. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#running-the-demo"
-  },"803": {
+  },"804": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Instructions to add led driver3 functionality to your application:",
     "content": "You could use this demonstration as an example to add led driver3 functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the led driver3 demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder leddriver3/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The led driver3 click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The led driver3 click example source files gets added to your project . | . | The led driver3 click example uses the I2C and Timer peripherals. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the led driver3 click board Example: The led driver3 click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the led driver3 click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The led driver3 click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of led driver3 click routines. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The led driver3 click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file leddriver3_example.c. You could use leddriver3_example.c as a reference to add led driver3 functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#instructions-to-add-led-driver3-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#instructions-to-add-led-driver3-functionality-to-your-application"
-  },"804": {
+  },"805": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#comments"
-  },"805": {
+  },"806": {
     "doc": "LED DRIVER3 Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html#revision"
-  },"806": {
+  },"807": {
     "doc": "LED DRIVER3 Click Example",
     "title": "LED DRIVER3 Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/leddriver3/readme.html"
-  },"807": {
+  },"808": {
     "doc": "PIR Click Example",
     "title": "PIR Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#pir-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#pir-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"808": {
+  },"809": {
     "doc": "PIR Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html"
-  },"809": {
+  },"810": {
     "doc": "PIR Click Example",
     "title": "Description:",
     "content": "This example demonstrates the motion detection using PIR click board on SAM E51 Curiosity Nano Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#description"
-  },"810": {
+  },"811": {
     "doc": "PIR Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SYSTICK | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#modulestechnology-used"
-  },"811": {
+  },"812": {
     "doc": "PIR Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika PIR Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#hardware-used"
-  },"812": {
+  },"813": {
     "doc": "PIR Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.9.0 | MPLAB Harmony v3 “dev_packs” repo v3.9.0 | MPLAB Harmony v3 “mhc” repo v3.7.1 | MPLAB Harmony 3 Launcher Plugin v3.6.4 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#softwaretools-used"
-  },"813": {
+  },"814": {
     "doc": "PIR Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#setup"
-  },"814": {
+  },"815": {
     "doc": "PIR Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#programming-hex-file"
-  },"815": {
+  },"816": {
     "doc": "PIR Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (apps/sam_e51_cnano/same51n_mikroe_click/pir/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#programmingdebugging-application-project"
-  },"816": {
+  },"817": {
     "doc": "PIR Click Example",
     "title": "Running the Demo:",
     "content": ". | After power up, when the demo is running, move your hand over the PIR click boards | Every time you move the hand over the click board a message on the serial terminal is printed | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#running-the-demo"
-  },"817": {
+  },"818": {
     "doc": "PIR Click Example",
     "title": "Instructions to add Motion Sensor functionality to your application:",
     "content": "You could use this demonstration as an example to add motion sensor functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the PIR example demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder pir/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The PIR click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The PIR click example source files gets added to your project . | . | The PIR click example uses the I2C and Timer peripherals . The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the PIR click board Example: The PIR click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the PIR Click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The PIR click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of PIR click example. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines and example to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The PIR click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file pir_example.c. You could use pir_example.c as a reference to add motion sensor functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#instructions-to-add-motion-sensor-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#instructions-to-add-motion-sensor-functionality-to-your-application"
-  },"818": {
+  },"819": {
     "doc": "PIR Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#comments"
-  },"819": {
+  },"820": {
     "doc": "PIR Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html#revision"
-  },"820": {
+  },"821": {
     "doc": "PIR Click Example",
     "title": "PIR Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/pir/readme.html"
-  },"821": {
+  },"822": {
     "doc": "Thumbstick Click Example",
     "title": "Thumbstick Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#thumbstick-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#thumbstick-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"822": {
+  },"823": {
     "doc": "Thumbstick Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html"
-  },"823": {
+  },"824": {
     "doc": "Thumbstick Click Example",
     "title": "Description:",
     "content": "This example demonstrates the 360 degree directional movement of input device (joystick) and push button on SAM E51 Curiosity Nano Evaluation Kit using Thumbstick click board. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#description"
-  },"824": {
+  },"825": {
     "doc": "Thumbstick Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SYSTICK | GPIO | EIC | SERCOM (USART) | SERCOM (SPI) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#modulestechnology-used"
-  },"825": {
+  },"826": {
     "doc": "Thumbstick Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika Thumbstick Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#hardware-used"
-  },"826": {
+  },"827": {
     "doc": "Thumbstick Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.9.0 | MPLAB Harmony v3 “dev_packs” repo v3.9.0 | MPLAB Harmony v3 “mhc” repo v3.7.1 | MPLAB Harmony 3 Launcher Plugin v3.6.4 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#softwaretools-used"
-  },"827": {
+  },"828": {
     "doc": "Thumbstick Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#setup"
-  },"828": {
+  },"829": {
     "doc": "Thumbstick Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#programming-hex-file"
-  },"829": {
+  },"830": {
     "doc": "Thumbstick Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sam_e51_cnano/same51n_mikroe_click/thumbstick/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#programmingdebugging-application-project"
-  },"830": {
+  },"831": {
     "doc": "Thumbstick Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | A message is printed on the terminal whenever Thumbstick’s push button pressed or UP/DOWN/LEFT/RIGHT Thumbstick’s 360 degree rotation is made. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#running-the-demo"
-  },"831": {
+  },"832": {
     "doc": "Thumbstick Click Example",
     "title": "Instructions to add Thumbstick functionality to your application:",
     "content": "You could use this demonstration as an example to add Thumbstick functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the Thumbstick demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder thumbstick/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The Thumbstick click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The Thumbstick click example source files gets added to your project . | . | The Thumbstick click example uses the SPI, Timer peripherals and PORT Pins. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure SPI: - Add the SPI peripheral block to the MHC project graph . | Configure SPI Pins using MHC Pin configuration Window The SPI configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the Thumbstick click board Example: The Thumbstick click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Thumbstick click board. The SPI lines from MCU coming to this socket are from the SERCOM1 peripheral on the MCU. MHC Project Graph - SPI configuration | . MHC Pin Configurator - SPI pin configuration . | Configure Thumbstick Push Button: - Add the EIC peripheral block to the MHC project graph . | Configure EIC Pins using MHC Pin configuration Window The EIC configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the Thumbstick click board Example: The Thumbstick click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Thumbstick click board. The PA04 EIC line coming to this socket from MCU needs to be configured for the Thumbstick’s push button INT pin to work. MHC Project Graph - EIC configuration | . MHC Pin Configurator - EIC pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The Thumbstick click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of Thumbstick click routines. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The Thumbstick click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file thumbstick_example.c. You could use thumbstick_example.c as a reference to add Thumbstick functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#instructions-to-add-thumbstick-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#instructions-to-add-thumbstick-functionality-to-your-application"
-  },"832": {
+  },"833": {
     "doc": "Thumbstick Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#comments"
-  },"833": {
+  },"834": {
     "doc": "Thumbstick Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html#revision"
-  },"834": {
+  },"835": {
     "doc": "Thumbstick Click Example",
     "title": "Thumbstick Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/thumbstick/readme.html"
-  },"835": {
+  },"836": {
     "doc": "USB UART Click Example",
     "title": "USB UART Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#usb-uart-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#usb-uart-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"836": {
+  },"837": {
     "doc": "USB UART Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html"
-  },"837": {
+  },"838": {
     "doc": "USB UART Click Example",
     "title": "Description:",
     "content": "This example demonstrates the reading of a character and displays it on a serial terminal on SAM E51 Curiosity Nano Evaluation Kit using USB UART Click board. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#description"
-  },"838": {
+  },"839": {
     "doc": "USB UART Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | GPIO | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#modulestechnology-used"
-  },"839": {
+  },"840": {
     "doc": "USB UART Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika USB UART Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#hardware-used"
-  },"840": {
+  },"841": {
     "doc": "USB UART Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.9.0 | MPLAB Harmony v3 “dev_packs” repo v3.9.0 | MPLAB Harmony v3 “mhc” repo v3.7.1 | MPLAB Harmony 3 Launcher Plugin v3.6.4 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#softwaretools-used"
-  },"841": {
+  },"842": {
     "doc": "USB UART Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port | Mount MikroElektronika USB UART Click over mikroBUS socket #1 on the SAM E51 Curiosity Nano Evaluation Kit. | Connect the MikroElektronika USB UART Click to the Host PC as a USB Device through a Type-A male to mini-B USB cable connected to mini-B USB port. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#setup"
-  },"842": {
+  },"843": {
     "doc": "USB UART Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#programming-hex-file"
-  },"843": {
+  },"844": {
     "doc": "USB UART Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#programmingdebugging-application-project"
-  },"844": {
+  },"845": {
     "doc": "USB UART Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 . | Now, open another Tera Term terminal application on your PC and Set the baud rate to 115200 to test MikroElektronika USB UART Click. | Goto Setup -&gt; Terminal and enable Local echo . | For every key press, the entered key is printed on terminal. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#running-the-demo"
-  },"845": {
+  },"846": {
     "doc": "USB UART Click Example",
     "title": "Instructions to add USB UART functionality to your application:",
     "content": "You could use this demonstration as an example to add USB UART functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the USB UART demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder usb_uart/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The USB UART click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The USB UART click example source files gets added to your project . | . | The USB UART click example uses the USART peripheral. The configuration of this peripheral for your application depends on the 32-bit MCU and development board you are using. | Configure USART: - Add the USART peripheral block to the MHC project graph . | Configure USART Pins using MHC Pin configuration Window The USART configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the USB UART click board Example: The USB UART click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the USB UART click board. The USART lines from MCU coming to this socket are from the SERCOM4 peripheral on the MCU. MHC Project Graph - USART configuration | . MHC Pin Configurator - USART pin configuration . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The USB UART click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file usb_uart_example.c. You could use usb_uart_example.c as a reference to add USB UART functionality to your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#instructions-to-add-usb-uart-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#instructions-to-add-usb-uart-functionality-to-your-application"
-  },"846": {
+  },"847": {
     "doc": "USB UART Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#comments"
-  },"847": {
+  },"848": {
     "doc": "USB UART Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html#revision"
-  },"848": {
+  },"849": {
     "doc": "USB UART Click Example",
     "title": "USB UART Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.html"
-  },"849": {
+  },"850": {
     "doc": "Weather Click Example",
     "title": "Weather Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#weather-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#weather-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"850": {
+  },"851": {
     "doc": "Weather Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html"
-  },"851": {
+  },"852": {
     "doc": "Weather Click Example",
     "title": "Description:",
     "content": "This example demonstrates the reading of weather parameters (temperature, pressure, humidity) and displays it on a serial terminal on SAM E51 Curiosity Nano Evaluation Kit using Weather Click board. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#description"
-  },"852": {
+  },"853": {
     "doc": "Weather Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | SYSTICK | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#modulestechnology-used"
-  },"853": {
+  },"854": {
     "doc": "Weather Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | MikroElektronika Weather Click | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#hardware-used"
-  },"854": {
+  },"855": {
     "doc": "Weather Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#softwaretools-used"
-  },"855": {
+  },"856": {
     "doc": "Weather Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#setup"
-  },"856": {
+  },"857": {
     "doc": "Weather Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#programming-hex-file"
-  },"857": {
+  },"858": {
     "doc": "Weather Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (weather/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#programmingdebugging-application-project"
-  },"858": {
+  },"859": {
     "doc": "Weather Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the weather parameters. (Temperature, Pressure and Humidity) | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit prints the weather parameters. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#running-the-demo"
-  },"859": {
+  },"860": {
     "doc": "Weather Click Example",
     "title": "Instructions to add weather functionality to your application:",
     "content": "You could use this demonstration as an example to add weather functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the weather demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder weather/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The weather click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The weather click example source files gets added to your project . | . | The weather click example uses the I2C and Timer peripherals. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the weather click board Example: The weather click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the weather click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Configure Timer: . | Configure Timer peripheral block in the MHC project graph The Timer configuration depends on - 32-bit MCU Example: The weather click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of weather click routines. MHC Project Graph - SysTick configuration | . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The weather click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file weather_example.c. You could use weather_example.c as a reference to add weather functionality in your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#instructions-to-add-weather-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#instructions-to-add-weather-functionality-to-your-application"
-  },"860": {
+  },"861": {
     "doc": "Weather Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#comments"
-  },"861": {
+  },"862": {
     "doc": "Weather Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html#revision"
-  },"862": {
+  },"863": {
     "doc": "Weather Click Example",
     "title": "Weather Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/weather/readme.html"
-  },"863": {
+  },"864": {
     "doc": "XPRO Adapter Click Example",
     "title": "XPRO Adapter Click example on SAM E51 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#xpro-adapter-click-example-on-sam-e51-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#xpro-adapter-click-example-on-sam-e51-curiosity-nano-evaluation-kit"
-  },"864": {
+  },"865": {
     "doc": "XPRO Adapter Click Example",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html"
-  },"865": {
+  },"866": {
     "doc": "XPRO Adapter Click Example",
     "title": "Description:",
     "content": "This example demonstrates the reading of temperature and displays it on a serial terminal on SAM E51 Curiosity Nano Evaluation Kit using I/O1 Xplained Pro Extension Kit connected to XPRO-ADAPTER Click board. More Xplained Pro Extension Kits to the XPRO-ADAPTER Click could be found at the Microchip Development Tools link. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#description",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#description"
-  },"866": {
+  },"867": {
     "doc": "XPRO Adapter Click Example",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | GPIO | SERCOM (I2C) | SERCOM (USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#modulestechnology-used"
-  },"867": {
+  },"868": {
     "doc": "XPRO Adapter Click Example",
     "title": "Hardware Used:",
     "content": ". | SAM E51 Curiosity Nano Evaluation Kit | Curiosity Nano Base for Click Boards | I/O1 Xplained Pro Extension Kit | XPRO-ADAPTER Click | More Xplained Pro Extension Kits | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#hardware-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#hardware-used"
-  },"868": {
+  },"869": {
     "doc": "XPRO Adapter Click Example",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.9.0 | MPLAB Harmony v3 “dev_packs” repo v3.9.0 | MPLAB Harmony v3 “mhc” repo v3.7.1 | MPLAB Harmony 3 Launcher Plugin v3.6.4 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#softwaretools-used"
-  },"869": {
+  },"870": {
     "doc": "XPRO Adapter Click Example",
     "title": "Setup:",
     "content": ". | Connect the SAM E51 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port | Mount I/O1 Xplained Pro Extension Kit on to XPRO-ADAPTER Click. | Insert XPRO-ADAPTER Click to mikroBUS socket #1 on the Curiosity Nano Base for Click boards as shown in the following figure. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#setup",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#setup"
-  },"870": {
+  },"871": {
     "doc": "XPRO Adapter Click Example",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME51J20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#programming-hex-file"
-  },"871": {
+  },"872": {
     "doc": "XPRO Adapter Click Example",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sam_e51_cnano/same51n_mikroe_click/xpro_adapter/firmware/sam_e51_cnano.X) in MPLAB X IDE | Ensure “PKOB nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#programmingdebugging-application-project"
-  },"872": {
+  },"873": {
     "doc": "XPRO Adapter Click Example",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | For every switch press, the SAM E51 Curiosity Nano Evaluation Kit to prints the temperature. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#running-the-demo"
-  },"873": {
+  },"874": {
     "doc": "XPRO Adapter Click Example",
     "title": "Instructions to add XPRO Adapter functionality to your application:",
     "content": "You could use this demonstration as an example to add XPRO Adapter functionality to your MPLAB Harmony v3 based application. Follow the below steps. | If you haven’t downloaded the XPRO Adapter demo yet Click Here to download, otherwise go to next step | Unzip the downloaded .zip file | From the unzipped folder xpro_adapter/firmware/src, copy the folder click_routines to the folder firmware/src under your MPLAB Harmony v3 application project | Open MPLAB X IDE | Open your application project | In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Header Files . | Click on “Add” button to add the selected folder . | The XPRO Adapter click example header files gets added to your project . | . | In the project explorer, Right click on folder Source Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…” | . | Click on “Add Folder…” button . | Select the “click_routines” folder and select “Files of Types” as Source Files . | Click on “Add” button to add the selected folder . | The XPRO Adapter click example source files gets added to your project . | . | The XPRO Adapter click example uses the I2C peripheral. The configuration of this peripheral for your application depends on the 32-bit MCU and development board you are using. | Configure I2C: - Add the I2C peripheral block to the MHC project graph . | Configure I2C Pins using MHC Pin configuration Window The I2C configuration depends on - 32-bit MCU - 32-bit MCU development board - The socket on which you have mounted the XPRO Adapter click board Example: The XPRO Adapter click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the XPRO Adapter click board. The I2C lines from MCU coming to this socket are from the SERCOM2 peripheral on the MCU. MHC Project Graph - I2C configuration | . MHC Pin Configurator - I2C pin configuration . | Map Generic Macros: . | After generating the project, following the above configuration, map the generic macros used in the click routines to the Harmony PLIB APIs of the 32-bit MCU your project is running on | The generic macros should be mapped in the header file click_interface.h . Example: The XPRO Adapter click routines for the example on SAM E51 Curiosity Nano Evaluation Kit uses the following Harmony PLIB APIs . | . | . | The click_routines folder contain an example C source file xpro_adapter_example.c and . You could use xpro_adapter_example.c as a reference to add XPRO Adapter functionality in your application. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#instructions-to-add-xpro-adapter-functionality-to-your-application",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#instructions-to-add-xpro-adapter-functionality-to-your-application"
-  },"874": {
+  },"875": {
     "doc": "XPRO Adapter Click Example",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#comments",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#comments"
-  },"875": {
+  },"876": {
     "doc": "XPRO Adapter Click Example",
     "title": "Revision:",
     "content": ". | v1.3.0 - Created application example | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#revision",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html#revision"
-  },"876": {
+  },"877": {
     "doc": "XPRO Adapter Click Example",
     "title": "XPRO Adapter Click Example",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/xpro_adapter/readme.html"
-  },"877": {
+  },"878": {
     "doc": "MikroElektronika Click Boards examples on SAM E51 Curiosity Nano Evaluation Kit",
     "title": "MikroElektronika Click Boards examples on SAM E51 Curiosity Nano Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM E51 Curiosity Nano Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Weather Click Example | Click Here | . | 2 | Eink Display Bundle Click example | Click Here | . | 3 | Heart Rate 9 Click Example | Click Here | . | 4 | IR Thermo 2 Click Example | Click Here | . | 5 | 10DOF Click Example | Click Here | . | 6 | LED Driver 3 Click Example | Click Here | . | 7 | EEPROM 4 Click Example | Click Here | . | 8 | Thumbstick Click Example | Click Here | . | 9 | XPRO Adapter Click Example | Click Here | . | 10 | Fan Click Example | Click Here | . | 11 | GSM GPS Click Example | Click Here | . | 12 | PIR Click Example | Click Here | . | 13 | USB UART Click Example | Click Here | . More Application Demos . For more application demos on SAM E51 Curiosity Nano Evaluation Kit and other Development Boards/Kits having the same part number (ATSAME51J20A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/same51n_mikroe_click/readme.html",
     "relUrl": "/apps/sam_e51_cnano/same51n_mikroe_click/readme.html"
-  },"878": {
+  },"879": {
     "doc": "SAM E51 Curiosity Nano Evaluation Kit",
     "title": "SAM E51 Curiosity Nano Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM E51 Curiosity Nano Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | BLE Fitness Tracker | Click Here | . | 3 | Low Power Application with OLED C Click | Click Here | . | 4 | Google Cloud IoT Core | Click Here | . | 5 | MikroElektronika Click Boards example applications |   | . More Application Demos . For more application demos on SAM E51 Curiosity Nano Evaluation Kit and other Development Boards/Kits having the same part number (ATSAME51J20A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e51_cnano/readme.html",
     "relUrl": "/apps/sam_e51_cnano/readme.html"
-  },"879": {
+  },"880": {
     "doc": "Getting Started",
     "title": "Getting Started Application with SAM E54 Curiosity Ultra Development Board",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#getting-started-application-with-sam-e54-curiosity-ultra-development-board",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#getting-started-application-with-sam-e54-curiosity-ultra-development-board"
-  },"880": {
+  },"881": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html"
-  },"881": {
+  },"882": {
     "doc": "Getting Started",
     "title": "Description",
     "content": "This application demonstrates an LED1 toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW1 on the SAM E54 Curiosity Ultra Development Board. The demo application has additional functionality to print the current room temperature periodically using on board temperature sensor. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#description",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#description"
-  },"882": {
+  },"883": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM | RTC | EIC | DMAC | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#modulestechnology-used"
-  },"883": {
+  },"884": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Curiosity Ultra Development Board | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#hardware-used"
-  },"884": {
+  },"885": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.1 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#softwaretools-used"
-  },"885": {
+  },"886": {
     "doc": "Getting Started",
     "title": "Hardware Setup:",
     "content": ". | Connect the SAM E54 Curiosity Ultra Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#hardware-setup",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#hardware-setup"
-  },"886": {
+  },"887": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#programming-hex-file"
-  },"887": {
+  },"888": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same54c_getting_started/firmware/sam_e54_cult.X) in MPLAB X IDE | Ensure “SAM E54 Curiosity Ultra” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#programmingdebugging-application-project"
-  },"888": {
+  },"889": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Set the baud rate to 115200 | Reset or power cycle the device. | An LED1 on the SAM E54 Curiosity Ultra Development Board toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds. | And the LED toggling rate is displayed on the serial terminal. | Press the switch SW1 on the SAM E54 Curiosity Ultra Development Board to change the periodicity of the timeout to one second. | Every subsequent pressing of the switch SW1 on the SAM E54 Curiosity Ultra Development Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order. | Press the switch SW2 on the SAM E54 Curiosity Ultra Board to read and print the Temperature from the Temperature Sensor. | The temperature read is displayed on a serial console on a periodical basis. | Press the switch SW1 on the SAM E54 Curiosity Ultra Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch SW1 on the SAM E54 Curiosity Ultra Development Board. | Below diagram shows the sample output log displayed on command prompt. | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#running-the-demo"
-  },"889": {
+  },"890": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Getting Started Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#comments"
-  },"890": {
+  },"891": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html#revision"
-  },"891": {
+  },"892": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_getting_started/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54c_getting_started/readme.html"
-  },"892": {
+  },"893": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Motion Surveillance Application on SAM E54 Curiosity Ultra Development Board",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#motion-surveillance-application-on-sam-e54-curiosity-ultra-development-board",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#motion-surveillance-application-on-sam-e54-curiosity-ultra-development-board"
-  },"893": {
+  },"894": {
     "doc": "Motion Surveillance on SAME54",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html"
-  },"894": {
+  },"895": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Description:",
     "content": "The Motion Surveillance application detects a motion in front of the ArduCAM (camera) using the PIR Click (motion sensor) board. ArduCAM captures an image with resolution 320x240 and stores the image in an external storage device (microSD Card). Additionally, the application demonstrates a live preview of captured images. The live preview of captured images is demonstrated by running an HTTP web server on the development board. The user connects to the webserver through an internet browser and view the live preview of the captured images. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#description",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#description"
-  },"895": {
+  },"896": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | NVMCTRL | PORT | SYSTICK | SERCOM - USART | SERCOM - I2C | SERCOM - SPI | RTC | SDHC | TC | CRYPTO | NVIC | . | System Services . | Debug | Command | File System | Time | Console | DMA | . | Middleware libraries . | TCP/IP Stack | Harmony Core | FreeRTOS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#modulestechnology-used"
-  },"896": {
+  },"897": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Curiosity Ultra Development Board | Arducam Mini 2MP Plus – OV2640 SPI Camera Module | mikroBUS Xplained Pro | MikroElektronika PIR Click | microSD Card | LAN8740 PHY daughter board Note: The link above points to LAN8720A PHY Daughter Board. You can procure the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit and remove the LAN8740 PHY Daughter board on it and use it for this demo. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#hardware-used"
-  },"897": {
+  },"898": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Software/Tools Used:",
     "content": "*This project has been verified to work with the following versions of software tools: * . | MPLAB Harmony v3 “bsp” repo v3.9.0 | MPLAB Harmony v3 “csp” repo v3.9.0 | MPLAB Harmony v3 “core” repo v3.9.0 | MPLAB Harmony v3 “dev_packs” repo v3.9.0 | MPLAB Harmony v3 “mhc” repo v3.7.1 | MPLAB Harmony v3 “net” repo v3.7.1 | MPLAB Harmony v3 “wolfssl” repo wolfRand-RC2 | MPLAB Harmony v3 “crypto” repo v3.7.1 | CMSIS-FreeRTOS “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony 3 Launcher Plugin v3.6.4 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.50 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#softwaretools-used"
-  },"898": {
+  },"899": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Hardware Setup:",
     "content": ". | Mount the MikroElektronika PIR Click on to the mikroBUS Xplained Pro adapter and then connect the mikroBUS Xplained Pro to EXT1 of the SAM E54 Curiosity Ultra Development Board | Bend the CS and VCC pins of Arducam Mini 2MP Plus – OV2640 SPI Camera Module as shown in the following image. | Mount the modified Arducam Mini 2MP Plus – OV2640 SPI Camera Module on to the Arduino R3 Uno compatible interface (J503) present on the SAM E54 Curiosity Ultra Development Board and connect the ArduCAM pins to the SAM E54 Curiosity Ultra Development Board as shown bellow. | VCC -&gt; 3V3 pin (3.3V) of Arduino R3 Uno compatible interface using a Male to Female Jumper Wire | CS -&gt; PC15 pin of mikroBUS header (CS pin) using a Male to Female Jumper Wire . | Note: The CS pin from the ArduCAM module is not directly mounted to the SERCOM0 (SPI) SSL (PB28) pin coming on the Arduino R3 Uno interface. This is because the SSL (PB28) pin on Arduino R3 Uno interface is found to have signal integrity issue. As an alternative, the CS pin from the ArduCAM module is connected to PC15 pin coming on to the mikroBUS header and used as SPI slave select pin. | . | Connect the remaining ArduCAM pins directly to the Arduino R3 Uno compatible interface (J503). i.e. | SCL -&gt; PD08 | SDA -&gt; PD09 | GND -&gt; GND | SCK -&gt; PB25 | MISO -&gt; PC25 | MOSI -&gt; PB24 | . | . | Mount LAN8740 PHY daughter board on Ethernet PHY header | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#hardware-setup",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#hardware-setup"
-  },"899": {
+  },"900": {
     "doc": "Motion Surveillance on SAME54",
     "title": "TCP/IP Network Setup:",
     "content": "To run the webserver component in the demo application, the target development board and the host computer should be in the same network. The host computer can be connected to a router via an ethernet cable or Wi-Fi. The target board should be connected to the router via an ethernet cable. Please refer to the following connection diagram. | The application is configured and build with LAN8740 PHY driver. To use a different PHY, use MPLAB® Harmony Configurator (MHC) to select and configure the PHY. Make sure that correct PHY address and configuration flags are used for the particular PHY daughter board. The MII/RMII and I/O configuration flags should match the hardware for the PHY board. This application demonstration assumes that IPv4 is enabled. If IPv4 is not enabled in MHC, the code in app.c will not build and needs to be updated to remove the IPv4 dependencies. | The demo has DHCP enabled, and expect a DHCP server to be available. If there is no DHCP server, then the default static IP address will be used: 192.168.100.11. If this static address does not match your network settings, use MPLAB® Harmony Configurator (MHC) to modify the static IP address of the network interface. | The NetBIOS name of the application is specified during the initialization of TCP/IP stack. It is the hostName member of TCPIP_HOSTS_CONFIGURATION structure. The NetBIOS service must be enabled in demonstration configuration, for the demonstration to respond to NetBIOS queries. Alternatively, use the IPv4 or IPv6 address (if IPv6 is enabled) of the board directly. | The IPv4 and IPv6 addresses can be obtained by running the TCP/IP Discovery utility on the computer. Ex: ipconfig . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#tcpip-network-setup",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#tcpip-network-setup"
-  },"900": {
+  },"901": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#programming-hex-file"
-  },"901": {
+  },"902": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same54c_motion_surveillance/firmware/sam_e54_cult_freertos.X) in MPLAB X IDE | Ensure “PKOB” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#programmingdebugging-application-project"
-  },"902": {
+  },"903": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Running the Surveillance application demo:",
     "content": ". | Perform “Hardware Setup” steps mentioned above, if not done already. | Ensure a microSD Card is formatted and loaded with the web_pages provided within the same54c_motion_surveillance/firmware/src/web_pages directory. | Insert this microSD Card at J704 socket (back side of the board) on SAM E54 Curiosity Ultra Development Board. | . | Build and download the demonstration project on the target board. | Serial Terminal Configuration: . | Open a standard terminal application on the computer (like Hyper-terminal or Tera Term) and configure the virtual COM port. | Set the serial baud rate to 115200 baud in the terminal application. | See that the initialization prints on the serial port terminal. | . | When the DHCP client is enabled in the demonstration, wait for the DHCP server to assign an IP address for the development board. This will be printed on the serial port terminal. | . | Alternatively: Use ipconfig to get the IP address of the board and ping to test if the device is reachable. | . | An LED “LED2” on the SAM E54 Curiosity Ultra Development Board toggles when a motion is detected in front of the motion sensor (PIR click). | An JPEG format image with 320x240 resolution is captured and stored on the microSD Card. Check the logs in the terminal for the motion detection, start capture and saved image events. | Steps to preview the captured images: . | Step 1: Live streaming of captured images: . | An HTTP server is hosted by the demonstration application. Open a web browser and direct it to the board running the HTTP server by typing the URL in the address bar (for example, https://mchpboard_c or by entering the assigned IP address i.e. http://192.168.100.11/ in the URL bar), and then press Enter key. | On the loaded page, Go to the Motion Surveillance under the left Menu. | The following image shows how the Motion Surveillance page looks. When the motion sensor detects a motion, the captured images will be live previewed on this page. | . | Note: . | When the motion sensor detects a motion, the ArduCAM captures an image (resolution 320x240) and stores in web_pages/arducam folder on the microSD Card. | The maximum number of images that the application stores on the microSD Card is 255. If the number of images captured exceeds 255, the application overwrites the images from the beginning. User can increase the storage size based on the available free size of the microSD Card by changing the MAX_FILE_NAMES macro in the app_ardu_cam.h header file. | . | If any error (check logs in the terminal), reset the device or reload the page or click Motion Surveillance menu option. | . | . | Step 2: Preview the images stored on the microSD Card using Windows Photo Viewer application: . | Remove the microSD Card from the J704 socket (back side of the board) on SAM E54 Curiosity Ultra Development Board and insert into personal computer. | Goto web_pages/arducam folder and preview the captured images using any photo preview application. | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#running-the-surveillance-application-demo",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#running-the-surveillance-application-demo"
-  },"903": {
+  },"904": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#comments",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#comments"
-  },"904": {
+  },"905": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Revision:",
     "content": ". | v1.3.0 Created demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#revision",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html#revision"
-  },"905": {
+  },"906": {
     "doc": "Motion Surveillance on SAME54",
     "title": "Motion Surveillance on SAME54",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54c_motion_surveillance/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54c_motion_surveillance/readme.html"
-  },"906": {
+  },"907": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "SD Card USB Audio Player on SAM E54 Curiosity Ultra Development Board + maXTouch® Curiosity Pro Board using Legato Graphics",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#sd-card-usb-audio-player-on-sam-e54-curiosity-ultra-development-board--maxtouch-curiosity-pro-board-using-legato-graphics",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#sd-card-usb-audio-player-on-sam-e54-curiosity-ultra-development-board--maxtouch-curiosity-pro-board-using-legato-graphics"
-  },"907": {
+  },"908": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html"
-  },"908": {
+  },"909": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Description",
     "content": "This application reads a WAV audio file from the SD card or USB thumb drive on the SAM E54 Curiosity Ultra Development Board and streams it over the I²S interface through the audio CODEC. The application implements the functionality of an audio player (for WAV files only). The application displays audio tracks from the SD card/USB Thumb in a list wheel box. It allows to navigate the list to select and play a track. It also provides volume increase/decrease scroll bar, Play/Pause button, Next Track button, Rewind button, and a track progress bar. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#description",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#description"
-  },"909": {
+  },"910": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | SERCOM (I2C) | SERCOM (I2S) | Timer | . | Drivers . | I2S Driver | I2C Driver | WM8904 Driver | SDCARD (SPI) Driver | USB High Speed Driver | MSD Function Driver | Legato Graphics Display driver w/ MXT Curiosity Pro Display | Max Touch Controller Driver | . | BSP Library . | SAME54 Curiosity Ultra BSP | . | Audio Decoder Libraries . | WAV Decoder Library | . | System Services . | File System | Input System | . | Middleware . | USB device layer | Legato Graphics | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#modulestechnology-used"
-  },"910": {
+  },"911": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Curiosity Ultra Development Board | AC328904 - PIC32 Audio Codec Daughter Card | maXTouch® Curiosity Pro Board | Micro SD Card | USB Thumb Drive | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#hardware-used"
-  },"911": {
+  },"912": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “bsp” repository v3.8.2 | MPLAB Harmony v3 “audio” repository v3.5.0 | MPLAB Harmony v3 “usb” repository v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “gfx” repository v3.9.0 | MPLAB Harmony v3 “touch” repository v3.9.0 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#softwaretools-used"
-  },"912": {
+  },"913": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Setup:",
     "content": ". | Attach the 24-bit pass through card to the GFX Connector on the SAM E54 Curiosity Ultra board | Connect the ribbon cable from the maXTouch Curiosity Pro Display to the ribbon connector on the 24-bit pass through card. Make sure that the S1 switch on the 24-bit pass through card is set to 2. | On the backside of the maXTouch Curiosity Pro display, set the IM[2:0] switches to ‘011’ for 8-bit MCU mode. | Connect AC328904 - PIC32 Audio Codec Daughter Card to XC32 Header on the SAM E54 Curiosity Ultra board | Connect audio jack to HP OUT of Audio Codec Daughter Card to XC32 Header | Connect a USB cable from the host computer to the DEBUG USB port on the SAM E54 Curiosity Ultra board. This USB connection is used for code download and debugging. | Connect the wired stereo headphone to the audio jack . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#setup",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#setup"
-  },"913": {
+  },"914": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#programming-hex-file"
-  },"914": {
+  },"915": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sdcard_usb_audio_player\\firmware\\\\sam_e54_cult.X) in MPLAB X IDE | Ensure “PKOB” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#programmingdebugging-application-project"
-  },"915": {
+  },"916": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Running the Demo:",
     "content": ". | Make sure that the micro SD card/USB Thumb drive contains WAV audio files | Reset the board by pressing RESET switch | You should see a display as shown below | Wait till initialization completes and display renders as shown below | Select the source (SD CARD/USB) to play audio | The following screen is shown if the audio source is not connected or connected improperly. Make sure insert the SD Card or USB Thumb Drive properly in the sockets. You could unplug and re-plug if you are continuing to see the below screen. Note: . | SD Card socket is at J704 (Back side of the board) on SAME54 Curiosity Ultra Board | USB Thumb drive connector is at J200 (Target USB) on SAME54 Curiosity Ultra Board | . | Once the Source is mounted, display renders the audio player options as shown below . | Description of the options available are shown in below image . | Track List : Shows all the tracks in list wheel, available in the selected source(Move the list wheel to change the track) | Progress Indicator : Indicates the current track progress time | Rewind : Re-plays the current track from starting | Play/Pause : Play and Pause the track | Next Track : Plays next track in the list | Song Duration : Duration of the track | Volume Control : Increases/Decreases the volume level | . | If the source mounted is empty, display renders as shown below . | Listen to your favorite track. Notice the track list will scroll as the tracks get played out one after the other. | The user interface should respond to touch events and you should be able to select next or rewind tracks for playing, increase or decrease volume level, and select the particular track. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#running-the-demo"
-  },"916": {
+  },"917": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Comments:",
     "content": ". | This application is developed by modifying a drv_wm8904.c file. If you need to reconfigure or regenerate this demo using the MHC, make sure you don’t replace this file. This issue is expected to be fixed in the future Harmony “audio” repo release. | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#comments",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#comments"
-  },"917": {
+  },"918": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#revision",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html#revision"
-  },"918": {
+  },"919": {
     "doc": "SD Card USB Audio Player with Legato Graphics",
     "title": "SD Card USB Audio Player with Legato Graphics",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54_sdcard_usb_audio_player/readme.html"
-  },"919": {
+  },"920": {
     "doc": "Live update on SAME54",
     "title": "Live Update Application on SAM E54 Curiosity Ultra Development Board",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#live-update-application-on-sam-e54-curiosity-ultra-development-board",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#live-update-application-on-sam-e54-curiosity-ultra-development-board"
-  },"920": {
+  },"921": {
     "doc": "Live update on SAME54",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html"
-  },"921": {
+  },"922": {
     "doc": "Live update on SAME54",
     "title": "Description:",
     "content": "The Live update application uses the dual bank flash feature available on the SAME54 Microcontrollers (MCUs). The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, the application considers the bank on which it is currently executing as an active bank while the other bank is marked as an inactive bank. The dual bank flash enables programming the inactive bank with a new version of the firmware while running the current version of the firmware from the active bank. The application updates the new version of the firmware to the inactive bank while the current version of the firmware runs from the active bank. The Application Task checks the NVM Control status register to identify the flash bank which has the latest version of the firmware (active bank) and toggles a specific LED at a periodic rate. For example, when there is no Live update then the LED1 is toggled for every 500ms if the application running from BANK-A else 1000ms if it is running from BANK-B. When there is a Live update request from the Host PC, after receiving the firmware image, the LED1 stops toggling and LED2 starts toggling with the toggle rate same as LED1. After a successful Live update i.e., by pressing the SW2, the device swaps the banks and resets. Then the LED2 stops toggling and LED1 starts toggling. Here, you can observe the change in the LED1 toggle rate after firmware upgrade. For example, the LED1 is toggled for every 500ms if the application running from BANK-A else 1000ms if it is running from BANK-B. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#description",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#description"
-  },"922": {
+  },"923": {
     "doc": "Live update on SAME54",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | NVMCTRL | DSU | SYSTICK | SERCOM | Harmony Core | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#modulestechnology-used"
-  },"923": {
+  },"924": {
     "doc": "Live update on SAME54",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Curiosity Ultra Development Board | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#hardware-used"
-  },"924": {
+  },"925": {
     "doc": "Live update on SAME54",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repo v3.8.2 | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “bootloader” repo v3.4.1 | MPLAB Harmony v3 “bootloader_apps_uart” repo v3.0.2 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Windows command prompt | Python 2.7 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#softwaretools-used"
-  },"925": {
+  },"926": {
     "doc": "Live update on SAME54",
     "title": "Running the Bootloader application:",
     "content": "For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader. | Download the MPLAB Harmony Bootloader package. | Download the MPLAB Harmony UART Bootloader Applications package. | Connect a micro USB cable to the DEBUG port of the SAM E54 Curiosity Ultra Development Board. | Open the UART Fail Safe Bootloader which is in (path: &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X) using the MPLAB X IDE. | The project needs to be reconfigured to work on SAM E54 Curiosity Ultra Development Board. Launch the MHC and follow below steps to reconfigure for SAM E54 Curiosity Ultra Development Board. | Remove SERCOM2 . | . | Add SERCOM1 to Project Graph . | . | Configure SERCOM1 peripheral . | . | Launch Pin Configurations plugin under MHC-&gt;Tools-&gt;Pin Configurations. Remove SERCOM2 Pin configurations. | . | Configure SERCOM1 pins. | . | Note: . | The SAM E54 Curiosity Ultra Development Board uses SERCOM1 peripheral for EDBG. Hence SERCOM peripheral and its pins need to be reconfigured from SAM E54 Xplained Pro to SAM E54 Curiosity Ultra Development Board. | Do not close the MHC as we have to build the project again. | . | . | Regenerate the project. Build and program the UART Fail Safe Bootloader using the MPLAB X IDE. | The following shows the steps to rebuild the UART Fail Safe Bootloader using the MPLAB X IDE. This step is to create Bootloader binary image which will be merged with Live Update application to create a single binary image as shown in Step 10. | Remove the Device Fuse configurations from the custom linker script as they will be updated by the UART Fail Safe Bootloader project . | . | Enable Execute this line After Build option in the MPLAB X Project properties-&gt;Building option . | . | Regenerate the project | . | Build the UART Fail Safe Bootloader application again using the MPLAB X IDE but do not program. | This is required to generate the binary file for Bootloader application | . | Build the Live update application (path: &lt;Live Update application folder&gt;/firmware/sam_e54_cult.X) using the MPLAB X IDE but do not program. | Run the btl_app_merge_bin.py script from command prompt to merge the generated Bootloader binary and Live update application binary. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_app_merge_bin.py -o 0x2000 -b &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X/dist/&lt;Config Name&gt;/production/&lt;Project Name&gt;.production.bin -a &lt;Live Update application folder&gt;/firmware/sam_e54_cult.X/dist/&lt;Config Name&gt;/production/&lt;Project Name&gt;.production.bin | Below output should be displayed on command prompt. | . | . | Run the btl_host.py from command prompt to program the merged binary to opposite panel. The merged binary btl_app_merged.bin will be generated in the path from where the btl_app_merge_bin.py was called from. | python &lt;Your Harmony Framework download folder&gt;/bootloader/tools_archive/btl_host.py -v -s -i &lt;COM PORT&gt; -d same5x -a 0x00080000 -f btl_app_merged.bin | Note: . | If you need to know more information on the bootloader host script, refer help for setting up the host script available at &lt;Your Harmony Framework download folder&gt;/bootloader/doc/help_bootloader.chm and &lt;Your Harmony Framework download folder&gt;/bootloader_apps_uart/docs/index.html | . | . | Following screenshot shows successful programming of the application binary. | The messages “Swapping Bank And Rebooting and Reboot Done” in below screenshot signifies that bootloading is successful. | . | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#running-the-bootloader-application",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#running-the-bootloader-application"
-  },"926": {
+  },"927": {
     "doc": "Live update on SAME54",
     "title": "Running the Live update application:",
     "content": ". | Perform “Running the Bootloader application” steps mentioned above, if not done already. | If the above step is successful, then LED1 should start blinking on the SAM E54 Curiosity Ultra Development Board. | Run the host script “live_update.py” from command prompt available at &lt;Live Update application folder&gt;/scripts to program the new version of the firmware to an inactive panel while the current version of the application is being run from the active panel. | python &lt;Live Update application folder&gt;/scripts/live_update.py -v -i &lt;COM PORT&gt; -d same5x -a &lt;Address&gt; -f btl_app_merged.bin. The merged binary btl_app_merged.bin will be generated in the path from where the btl_app_merge_bin.py was called from. | Note: If you need to know more information on the Live Update Script, Open command prompt, goto &lt;Live Update application folder&gt;/scripts then enter python live_update.py --help. The below output shows the Live Update Script help. | . | Below output should be displayed on command prompt. | . | . | LED1 stops blinking and LED2 starts blinking which indicates the application programming is successful. | LED1 stops blinking and LED2 toggles for every 500ms then Application is running from BANK A | LED1 stops blinking and LED2 toggles for every 1000ms then Application is running from BANK B | . | Press Switch SW2 to swap the bank and reset the device for the programmed application firmware to run. | LED2 stops blinking and LED1 toggles for every 500ms then Application is running from BANK A | LED2 stops blinking and LED1 toggles for every 1000ms then Application is running from BANK B | . | In case of any error during the Live update both LED1 and LED2 will be turned ON. Follow the below steps recover from the error. | Press and hold the Switch SW2 to reset the system then repeat the step 4 to program the Live update application. OR | Reset or Power cycle the device and repeat from the step 4 to program the Live update application. | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#running-the-live-update-application",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#running-the-live-update-application"
-  },"927": {
+  },"928": {
     "doc": "Live update on SAME54",
     "title": "Comments:",
     "content": ". | Reference Application Note: Live Update application on SAME54 MCUs using MPLAB Harmony v3 | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#comments",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#comments"
-  },"928": {
+  },"929": {
     "doc": "Live update on SAME54",
     "title": "Revision:",
     "content": ". | v1.2.0 regenerated and tested demo application | v1.1.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html#revision",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html#revision"
-  },"929": {
+  },"930": {
     "doc": "Live update on SAME54",
     "title": "Live update on SAME54",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/same54_uart_live_update/readme.html",
     "relUrl": "/apps/sam_e54_cult/same54_uart_live_update/readme.html"
-  },"930": {
+  },"931": {
     "doc": "SAM E54 Curiosity Ultra Development Board",
     "title": "SAM E54 Curiosity Ultra Development Board",
     "content": "This repository contains the MPLAB® Harmony 3 reference applications developed on SAM E54 Curiosity Ultra Development Board . | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | SD Card USB Audio Player | Click Here | . | 3 | Live Update | Click Here | . | 4 | Motion Surveillance | Click Here | . More Application Demos . For more application demos on SAM E54 Curiosity Ultra Development Board and other Development Boards/Kits having the same part number (ATSAME54P20A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_cult/readme.html",
     "relUrl": "/apps/sam_e54_cult/readme.html"
-  },"931": {
+  },"932": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAM E54 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#getting-started-application-on-sam-e54-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#getting-started-application-on-sam-e54-xplained-pro-evaluation-kit"
-  },"932": {
+  },"933": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html"
-  },"933": {
+  },"934": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension. The temperature read is displayed on a serial console periodically every 500 milliseconds. The periodicity of the temperature values displayed on the serial console is changed to 1 second, 2 seconds, 4 seconds and back to 500 milliseconds every time you press the switch SW0 on the SAM E54 Xplained Pro Evaluation Kit. Also, LED0 is toggled every time temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#description",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#description"
-  },"934": {
+  },"935": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | RTC | DMAC | SERCOM(I2C) | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#modulestechnology-used"
-  },"935": {
+  },"936": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#hardware-used"
-  },"936": {
+  },"937": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#softwaretools-used"
-  },"937": {
+  },"938": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E54 Xplained Pro Evaluation Kit | The SAM E54 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM E54 Xplained Pro Evaluation Kit . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#setup"
-  },"938": {
+  },"939": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#programming-hex-file"
-  },"939": {
+  },"940": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same54_getting_started\\firmware\\\\sam_e54_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#programmingdebugging-application-project"
-  },"940": {
+  },"941": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED0 blinking at 500 millisecond rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press the switch SW0 on SAM E54 Xplained Pro Evaluation Kit to change the default sampling rate to one second | Every subsequent pressing of switch SW0 on SAM E54 Xplained Pro Evaluation Kit changes the default sampling rate to two seconds, four seconds and 500 ms and back to one second in cyclic order as shown below | While the temperature sampling rate changes on every switch SW0 press, notice the LED0 toggling at the same sampling rate | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#running-the-demo"
-  },"941": {
+  },"942": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#comments"
-  },"942": {
+  },"943": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html#revision"
-  },"943": {
+  },"944": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started/readme.html"
-  },"944": {
+  },"945": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#getting-started-with-harmony-v3-drivers-on-sam-e54-mcu-using-freertos",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#getting-started-with-harmony-v3-drivers-on-sam-e54-mcu-using-freertos"
-  },"945": {
+  },"946": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html"
-  },"946": {
+  },"947": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit. The temperature reading is displayed on a serial console periodically every second. Further, the application writes the temperature readings to EEPROM. When a character is entered on the console, the last five written temperature values are read from the EEPROM and displayed on the console. Also, an LED0 is toggled every time the temperature is displayed on the serial console . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#description",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#description"
-  },"947": {
+  },"948": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | SERCOM(I2C) | SERCOM(USART) | . | Drivers . | SERCOM(I2C) | USART | . | Third Party Libraries . | FreeRTOS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#modulestechnology-used"
-  },"948": {
+  },"949": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#hardware-used"
-  },"949": {
+  },"950": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#softwaretools-used"
-  },"950": {
+  },"951": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E54 Xplained Pro Evaluation Kit | The SAM E54 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM E54 Xplained Pro Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#setup",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#setup"
-  },"951": {
+  },"952": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#programming-hex-file"
-  },"952": {
+  },"953": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same54_getting_started/firmware/drivers_freertos_sam_e54_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#programmingdebugging-application-project"
-  },"953": {
+  },"954": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every second, as shown below . | Also, notice the LED0 blinking at one second rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press any key to display the last five written temperature values from the EEPROM | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#running-the-demo"
-  },"954": {
+  },"955": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#comments",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#comments"
-  },"955": {
+  },"956": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Revision:",
     "content": ". | v1.3.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html#revision"
-  },"956": {
+  },"957": {
     "doc": "Getting Started with Drivers using FreeRTOS",
     "title": "Getting Started with Drivers using FreeRTOS",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_getting_started_freertos/readme.html"
-  },"957": {
+  },"958": {
     "doc": "Low Power",
     "title": "Low Power Application on SAM E54 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#low-power-application-on-sam-e54-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#low-power-application-on-sam-e54-xplained-pro-evaluation-kit"
-  },"958": {
+  },"959": {
     "doc": "Low Power",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html"
-  },"959": {
+  },"960": {
     "doc": "Low Power",
     "title": "Description",
     "content": "The application demonstrates, on power-up, the device is set to Standby Sleep mode. The device wakes up from Standby mode and enters Active mode when you cover the light sensor (by placing a hand over it, for example) on the I/O1 Xplained Pro extension kit. The application periodically prints room temperature on a serial terminal while the light sensor is covered. The device goes back to Standby mode when you uncover the light sensor. LED0 in the SAM E54 evaluation kit is toggled every time the temperature is displayed on the serial console. When you press the switch button SW0, the application switches Sleep mode from Standby mode to Idle mode. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#description",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#description"
-  },"960": {
+  },"961": {
     "doc": "Low Power",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | I2C | RTC | USART | DMAC | ADC1 | PM | SUPC | EIC | EVSYS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#modulestechnology-used"
-  },"961": {
+  },"962": {
     "doc": "Low Power",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#hardware-used"
-  },"962": {
+  },"963": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Data Visualizer | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#softwaretools-used"
-  },"963": {
+  },"964": {
     "doc": "Low Power",
     "title": "Setup:",
     "content": ". | Connect the I/O1 Xplained Pro extension kit to the Extension Header 1 (EXT1) of the SAM E54 Xplained Pro evaluation kit | Connect a USB cable to the DEBUG USB port for programming . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#setup",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#setup"
-  },"964": {
+  },"965": {
     "doc": "Low Power",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#programming-hex-file"
-  },"965": {
+  },"966": {
     "doc": "Low Power",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same54_low_power\\firmware\\\\sam_e54_xpro.X) in MPLAB X IDE. | Ensure “SAM E54 Xplained Pro (EDBG)” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#programmingdebugging-application-project"
-  },"966": {
+  },"967": {
     "doc": "Low Power",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port, and reconnect it back. | Change the baud rate to 115200 | Perform reset by pressing the “RESET” switch | Verify the application title message is displayed . | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered | Observe Current Consumption on Data Visualizer Note: The Data Visualizer is a program to process and visualize data. The Data Visualizer can receive data from various sources such as the Embedded Debugger Data Gateway Interface (EDBG DGI) and COM ports. It is possible to track an application in run-time using a terminal graph or oscilloscope. It analyzes the power consumption of an application through correlation of code execution and power consumption when used together with a supported probe or board. | Open the Data Visualizer application from your PC and select the connected SAM E54 Xplained Pro B board on the DGI Control Panel, then click on Connect. The Data Visualizer will then start searching for protocols from the SAM E54 Xplained Pro board through the EDBG . | Once the Data Visualizer is connected to the SAM E54 EDBG, different interfaces will appear. Select the Power interface and click on the Start button to start measuring the power consumption of the device | Ensure that the jumpers for Current Measurement on the SAM E54 Xplained Pro are set to MEASURE for the MCU and BYPASS for the I/Os | The Power Analysis window will appear on the Data Visualizer tool interface | The step image shows the device in Standby mode with its measured power consumption. You can observe small peaks that illustrate the 500 milliseconds Real-Time Clock (RTC) timer expiry Note: The average value is considered when measuring the power consumption of the device because the instant value is not stable. Then, the power consumption of the device in Standby mode is 225.0 µA. | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element) to print the temperature on the terminal and observe the power consumption of the device | Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode | The following image shows the device in Idle mode with a measured power consumption of 1869.5 µA Note: You can observe that the small peaks coming from RTC timer expiry disappeared because the power consumption in Idle mode is higher than the power required to start ADC conversion. | Place your hand over the light sensor. The device will wake up on the next ADC window monitor interrupt, read and print data on serial and then re-enter Standby mode. The following image shows the transition of the power consumption by switching from Idle mode to Standby mode Note that the above results highlight the power consumption is lower in Standby mode than in Idle mode. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#running-the-demo"
-  },"967": {
+  },"968": {
     "doc": "Low Power",
     "title": "Comments:",
     "content": ". | Reference Training Module: Low Power Application on SAM E54 (Cortex M4) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#comments",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#comments"
-  },"968": {
+  },"969": {
     "doc": "Low Power",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html#revision"
-  },"969": {
+  },"970": {
     "doc": "Low Power",
     "title": "Low Power",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_low_power/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_low_power/readme.html"
-  },"970": {
+  },"971": {
     "doc": "Vending Machine",
     "title": "Vending Machine Application on SAM E54 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#vending-machine-application-on-sam-e54-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#vending-machine-application-on-sam-e54-xplained-pro-evaluation-kit"
-  },"971": {
+  },"972": {
     "doc": "Vending Machine",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html"
-  },"972": {
+  },"973": {
     "doc": "Vending Machine",
     "title": "Description:",
     "content": "The application implements an embedded network application to update and track drinks status of a Vending Machine (VM). | The SAM E54 Xplained Pro Evaluation Kit will act as a HTTP-Server to keep track of the items in the Vending Machine. | The HTTP-Client (PC web page) talks to the HTTP-server and displays the status of the Vending Machine. | The OLED1 Xplained Pro extension kit will act man machine interface (MMI) to select and confirm drinks with buttons (up/down and select) and an OLED displays VM information. | The VM application uses Button 1 (Down) and Button 2 (Up) to scroll through the VM items and Button 3 to select an item from the Vending Machine. | The LEDs above the button indicates a button press with a blink. | The OLED (128 x 32) is used to display the drink name and their corresponding number of the items in a Vending Machine. | When Button 3 (Select) is pressed the HTTP-Server will decrement the count of an item and updates the HTTPClient(Web page) through ethernet interface. | . | When a Bay of a VM is empty it sends out a message to a specific TCP server. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#description",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#description"
-  },"973": {
+  },"974": {
     "doc": "Vending Machine",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | TC | NVMCTRL | SERCOM(SPI) | SERCOM(USART) | . | Driver Modules . | MEMORY | I2C Driver | . | System service . | TIME | CONSOLE, DEBUG, COMMAND | . | Libraries . | TCP/IP stack | Microchip File System (together with MPFS utility) | . | Third Party Library . | FreeRTOS | . | gfx mono library (from ASF) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#modulestechnology-used"
-  },"974": {
+  },"975": {
     "doc": "Vending Machine",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Xplained Pro Evaluation Kit | OLED1 Xplained Pro extension kit | Cat 5 Ethernet Cable | USB Male A to USB Male B Micro Cable | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#hardware-used"
-  },"975": {
+  },"976": {
     "doc": "Vending Machine",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony v3 “net” repo v3.7.0 | MPLAB Harmony v3 “crypto” repo v3.6.1 | MPLAB Harmony v3 “wolfssl” repo v4.5.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application, such as Tera Term terminal application. | Any TCP/IP debug application, such as Hercules SETUP utility - useful serial port terminal (RS-485 or RS-232 terminal) , UDP/IP terminal and TCP/IP Client Server terminal. Produced by www.HW-group.com. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#softwaretools-used"
-  },"976": {
+  },"977": {
     "doc": "Vending Machine",
     "title": "Setup:",
     "content": ". | Connect the OLED1 Xplained Pro extension kit to Extension Header 1 (EXT1) on the SAM E54 Xplained Pro Evaluation Kit | Establish a connection between the router/switch with the SAM E54 Xplained Pro Evaluation Kit through the RJ45 connector. Make sure your PC is connected to the same router/switch. | Connect the micro USB cable from the computer to the DEBUG USB connect on the SAM E54 Xplained Pro Evaluation Kit . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#setup",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#setup"
-  },"977": {
+  },"978": {
     "doc": "Vending Machine",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#programming-hex-file"
-  },"978": {
+  },"979": {
     "doc": "Vending Machine",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (same54_vending_machine\\firmware\\\\sam_e54_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#programmingdebugging-application-project"
-  },"979": {
+  },"980": {
     "doc": "Vending Machine",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC, select the virtual COM port of SAM E54 Xplained Pro Evaluation Kit, and change the baud rate to 115200 | You should see the text on the OLED screen in series like the screens below: | You should see demo information and IP address (after DHCP success) in Tera Term terminal, as shown below: | Open a web browser and enter the HTTP- Server IP address (e.g. http://192.168.1.101) that you got on the tera term in the previous step. Click on the ‘Vending Machine’ tab to see the page for the Vending Machine Demo. | Use the Button 1 and Button 2 on the OLED1 Xplained Pro to scroll through the items of the Vending Machine. Use the Button 3 on the OLED to pick an item from the VM. The count of the corresponding item on the OLED screen will be decremented by 1 and is reflected on the Web page as well as on the OLED screen. | Run Hercules SETUP utility, and start TCP Server to listen on Port 80 . | Note: you need to update source code in app.c to fill your PC’s IP address that running this TCP Server | . | Press the select Button 3 and make one or more item to zero count. After few second, you will see this screen to notice bay empty (e.g. item 1. coca-cola). | In ‘Vending Machine’ webpage, you can pick an ITEM and change the COUNT to a new number, then press UPDATE to confirm. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#running-the-demo"
-  },"980": {
+  },"981": {
     "doc": "Vending Machine",
     "title": "Comments:",
     "content": ". | Reference Training Module: . | Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | Create your first tcpip application | Look MPLAB Harmony TCP/IP Help documentaion for Harmony 3 Net APIs and how to use MPFS utility to generate MPFS image of web pages. | . | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#comments",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#comments"
-  },"981": {
+  },"982": {
     "doc": "Vending Machine",
     "title": "Revision:",
     "content": ". | v1.2.0 Regenerated and tested application | v1.1.0 Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html#revision"
-  },"982": {
+  },"983": {
     "doc": "Vending Machine",
     "title": "Vending Machine",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/same54_vending_machine/readme.html",
     "relUrl": "/apps/sam_e54_xpro/same54_vending_machine/readme.html"
-  },"983": {
+  },"984": {
     "doc": "SleepWalking",
     "title": "SleepWalking Application on SAM E54 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#sleepwalking-application-on-sam-e54-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#sleepwalking-application-on-sam-e54-xplained-pro-evaluation-kit"
-  },"984": {
+  },"985": {
     "doc": "SleepWalking",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html"
-  },"985": {
+  },"986": {
     "doc": "SleepWalking",
     "title": "Description:",
     "content": "This application demonstrates SleepWalking using the Event System. The application uses an ADC with a Window Monitoring feature in Standby mode for the following use cases: . | Standby mode with Interrupts (IRQ) | Standby mode with Event System (SleepWalking) On power up, the application is in STDBY_IRQ_MODE. It is possible to switch from STDBY_IRQ_MODE to STDBY_EVSYS_MODE by pressing the switch button (SW0) embedded on the SAM E54 Xplained Pro board. The application wakes up from Sleep mode and enters into ACTIVE_MODE when the embedded light sensor on the I/O1 Xplained Pro extension kit is covered. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#description",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#description"
-  },"986": {
+  },"987": {
     "doc": "SleepWalking",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | ADC | CMCC | DMAC | EVSYS | NVMCTRL | PM | RTC | SERCOM | SUPC | SYSTICK | . | STDIO Library | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#modulestechnology-used"
-  },"987": {
+  },"988": {
     "doc": "SleepWalking",
     "title": "Hardware Used:",
     "content": ". | SAM E54 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#hardware-used",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#hardware-used"
-  },"988": {
+  },"989": {
     "doc": "SleepWalking",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Standalone Data Visualizer | Any Serial Terminal application like Tera Term terminal application | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#softwaretools-used"
-  },"989": {
+  },"990": {
     "doc": "SleepWalking",
     "title": "Setup:",
     "content": ". | Ensure jumper to measure MCU current is set to MEASURE | Ensure jumper to measure I/O current is set to BYPASS | Connect the I/O1 Xplained Pro Extension Kit to the EXT XPRO connector 2 on the SAM E54 Xplained Pro Evaluation Kit | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Evaluation Kit | | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#setup",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#setup"
-  },"990": {
+  },"991": {
     "doc": "SleepWalking",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME54P20A” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#programming-hex-file"
-  },"991": {
+  },"992": {
     "doc": "SleepWalking",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (sleepwalking\\firmware\\\\sam_e54_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#programmingdebugging-application-project"
-  },"992": {
+  },"993": {
     "doc": "SleepWalking",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term or any equivalent serial communication tool | In the Tera Term: New Connection window, select the Serial Port number allocated to the connected SAM E54 | Configure the Tera Term Serial port interface to 115200 speed | Reset the board by pressing the reset button. The application will start by displaying the following message on the serial terminal. | . | Open the standalone Data Visualizer tool | In the Data Visualizer window, select SAM E54 Xplained Pro, and then click Connect | Once the protocols are displayed, select the protocol Power and then click Start | The Data Visualizer will display the power consumption details in the Power Analysis window | When the application starts, the device will run on Standby with IRQ mode. The data analyzer shows the power consumption of the device when the CPU is woken up every 10 milliseconds by an RTC Compare ‘0’ interrupt to start an ADC conversion | Using the SW0 push button, it is possible to change the application mode from Standby with IRQ to SleepWalking. In this mode the CPU is woken up only when an ADC window monitoring interrupt occurs. The data analyzer shows the power consumption of the device when running in Standby with the Event System (SleepWalking) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#running-the-demo"
-  },"993": {
+  },"994": {
     "doc": "SleepWalking",
     "title": "Comments:",
     "content": ". | Reference Application Note: SleepWalking with Event System Using the SAM E54 | Getting Started Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony . | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#comments",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#comments"
-  },"994": {
+  },"995": {
     "doc": "SleepWalking",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html#revision",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html#revision"
-  },"995": {
+  },"996": {
     "doc": "SleepWalking",
     "title": "SleepWalking",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/sleepwalking/readme.html",
     "relUrl": "/apps/sam_e54_xpro/sleepwalking/readme.html"
-  },"996": {
+  },"997": {
     "doc": "SAM E54 Xplained Pro Evaluation Kit",
     "title": "SAM E54 Xplained Pro Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM E54 Xplained Pro Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | Getting Started with Drivers using FreeRTOS | Click Here | . | 3 | Low Power | Click Here | . | 4 | SleepWalking | Click Here | . | 5 | Vending Machine | Click Here | . More Application Demos . For more application demos on SAM E54 Xplained Pro Evalution Kit and other Development Boards/Kits having the same part number (ATSAME54P20A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e54_xpro/readme.html",
     "relUrl": "/apps/sam_e54_xpro/readme.html"
-  },"997": {
+  },"998": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Getting Started with Drivers and Middleware (USB) on SAM E70 Xplained Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#getting-started-with-drivers-and-middleware-usb-on-sam-e70-xplained-evaluation-kit",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#getting-started-with-drivers-and-middleware-usb-on-sam-e70-xplained-evaluation-kit"
-  },"998": {
+  },"999": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html"
-  },"999": {
+  },"1000": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Description:",
     "content": "This application reads the current room temperature from the AT30TSE758A temperature sensor chip on the I/O1 Xplained Pro every second using I2C. This is indicated by a blinking orange LED on the I/O1 Xplained Pro. Further, it also writes these temperature values into the sensor chip’s own integrated EEPROM using the same I2C peripheral instance. The application also uses an ADC channel to read the output voltage of the TEMT6000 ambient light sensor on the I/O1 Xplained Pro Extension Kit and displays it as a percentage of the sensor’s full-scale output when requested through the serial terminal menu. This serial terminal menu is made available through the SAM E70 Xplained Evaluation Kit’s Target USB port by configuring it as a USB CDC class device. This menu allows you to fetch temperature, light sensor data and even toggle the LED on the SAME70 Xplained Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#description",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#description"
-  },"1000": {
+  },"1001": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | Timer | . | Drivers . | TWIHS(I2C) | USART | USB CDC | . | System Services . | Timer | . | Middleware . | USB Device Stack (USBHS) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#modulestechnology-used"
-  },"1001": {
+  },"1002": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Hardware Used:",
     "content": ". | SAM E70 Xplained Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#hardware-used",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#hardware-used"
-  },"1002": {
+  },"1003": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#softwaretools-used"
-  },"1003": {
+  },"1004": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E70 Xplained Evaluation Kit | The SAM E70 Xplained Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the micro-B DEBUG USB port to power and debug the SAM E70 Xplained Evaluation Kit. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#setup",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#setup"
-  },"1004": {
+  },"1005": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME70Q21B” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#programming-hex-file"
-  },"1005": {
+  },"1006": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started_drivers_middleware/firmware/sam_e70_xult.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#programmingdebugging-application-project"
-  },"1006": {
+  },"1007": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#running-the-demo"
-  },"1007": {
+  },"1008": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with USB on SAM MCUs Using MPLAB® Harmony v3 | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#comments",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#comments"
-  },"1008": {
+  },"1009": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Revision:",
     "content": ". | v1.2.0 - Created demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#revision",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html#revision"
-  },"1009": {
+  },"1010": {
     "doc": "Getting Started with Drivers and Middleware",
     "title": "Getting Started with Drivers and Middleware",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html",
     "relUrl": "/apps/sam_e70_xpld/getting_started_drivers_middleware/readme.html"
-  },"1010": {
+  },"1011": {
     "doc": "SAM E70 Xplained Evaluation Kit",
     "title": "SAM E70 Xplained Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM E70 Xplained Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . More Application Demos . For more application demos on SAM E70 Xplained Evaluation Kit and other Development Boards/Kits having the same part number (ATSAME70Q21B) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xpld/readme.html",
     "relUrl": "/apps/sam_e70_xpld/readme.html"
-  },"1011": {
+  },"1012": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "File Transfer Protocol Application on SAM E70 Xplained Ultra Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#file-transfer-protocol-application-on-sam-e70-xplained-ultra-evaluation-kit",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#file-transfer-protocol-application-on-sam-e70-xplained-ultra-evaluation-kit"
-  },"1012": {
+  },"1013": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html"
-  },"1013": {
+  },"1014": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Description:",
     "content": "This application demonstrates creating ethernet bootloader where an FTP client downloads a binary file from the FTP server, which in turn is used to program the microcontroller. The FAT-FS File System with SDCARD as storage media is used in the application and the FTP client will write to and read from this FS. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#description",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#description"
-  },"1014": {
+  },"1015": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | USART1 | Timer (TC0) | HSMCI | . | System Services . | DEBUG | Command | File System | Time | Console | . | Middleware libraries . | TCP/IP Stack | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#modulestechnology-used"
-  },"1015": {
+  },"1016": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Hardware Used:",
     "content": ". | SAM E70 Xplained Ultra Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#hardware-used",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#hardware-used"
-  },"1016": {
+  },"1017": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “bsp” repository v3.8.2 | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “net” repo v3.7.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#softwaretools-used"
-  },"1017": {
+  },"1018": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Setup:",
     "content": ". | Ensure the ERASE (J400) jumper is Open on SAM E70 Xplained Ultra Evaluation Kit | Open the J805 Jumper which on the ETHERNET PHY MODULE . | . | Insert the LAN8740 PHY daughter board on the ETHERNET PHY MODULE header | Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E70 Xplained Ultra Evaluation Kit | Establish a connection between the router/switch with the SAM E70 Xplained Ultra Evaluation Kit through the RJ45 connector | Copy test.bin from ftp_bootloader to microSD | Insert the microSD card into the microSD card slot on the backside of the hardware board | | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#setup",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#setup"
-  },"1018": {
+  },"1019": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME70Q21B” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#programming-hex-file"
-  },"1019": {
+  },"1020": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (ftp_bootloader\\firmware\\\\sam_e70_xult.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#programmingdebugging-application-project"
-  },"1020": {
+  },"1021": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Running the Demo:",
     "content": "FTP Server Setup . | Before running the FTP client application, an FTP server should be setup. For this demonstration, the FileZilla Server Interface is used as the FTP server running on the user PC. Refer to https://wiki.filezilla-project.org/Documentation for more information on this | FileZilla Server setup: . | Open the FileZilla server interface | In the pop-up window, enter a hostname, port and password for admin interface. Click “Connect” | Click on User icon User or go to Edit-&gt;User for adding client | In the User window, click “General”. Add client by clicking “Add” option enable account and password. This will be the username and password for connecting from the FTP client | | In Shared folders, add the path of folder where the binary to be downloaded is located | | . | . FTP Client Connect . | From a terminal window application (like Tera Term), connect to the COM port enumerated by SAM E70 Xplained Ultra board | Restart the application (i.e reset the SAM E70 board) | The IP address will be displayed on the terminal once it is ready. Now, user can connect to the FTP server . | Type “ftpc connect ” . | . | Upon successful connection, enter the login details . | Type “ftpc login ” . | . | Once logged in, use ftpc get command to download a binary from the server . | Type “ftpc get -a -a ” | . | After the binary is successfully downloaded it can be flashed to the MCU by using the ‘boot’ command. | MCU is reset automatically after the programming is complete and application code starts executing. Displaying the message: ** Executing Application code ** | . Output . | | After MCU reset, the following message gets printed: | | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#running-the-demo"
-  },"1021": {
+  },"1022": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Comments:",
     "content": ". | Reference Application Note: File Transfer Protocol using MPLAB Harmony v3 TCP/IP Stack | Getting Started Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM E70 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony . | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#comments",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#comments"
-  },"1022": {
+  },"1023": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Revision:",
     "content": ". | v1.2.0 regenerated and tested the application | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html#revision"
-  },"1023": {
+  },"1024": {
     "doc": "Ethernet bootloader - File Transfer Protocol",
     "title": "Ethernet bootloader - File Transfer Protocol",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/ftp_bootloader/readme.html",
     "relUrl": "/apps/sam_e70_xult/ftp_bootloader/readme.html"
-  },"1024": {
+  },"1025": {
     "doc": "Getting Started with Drivers",
     "title": "Getting Started Application using Harmony v3 Drivers on SAM E70 Xplained Ultra Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#getting-started-application-using-harmony-v3-drivers-on-sam-e70-xplained-ultra-evaluation-kit",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#getting-started-application-using-harmony-v3-drivers-on-sam-e70-xplained-ultra-evaluation-kit"
-  },"1025": {
+  },"1026": {
     "doc": "Getting Started with Drivers",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html"
-  },"1026": {
+  },"1027": {
     "doc": "Getting Started with Drivers",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit. The temperature reading is displayed on a serial console periodically every second. Further, the application writes the temperature readings to EEPROM. When a character is entered on the console, the last five written temperature values are read from the EEPROM and displayed on the console. Also, an LED (LED3) is toggled every time the temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#description",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#description"
-  },"1027": {
+  },"1028": {
     "doc": "Getting Started with Drivers",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | USART | Timer | XDMAC | . | Drivers . | TWIHS(I2C | USART | . | System Services . | Timer | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#modulestechnology-used"
-  },"1028": {
+  },"1029": {
     "doc": "Getting Started with Drivers",
     "title": "Hardware Used:",
     "content": ". | SAM E70 Xplained Ultra Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#hardware-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#hardware-used"
-  },"1029": {
+  },"1030": {
     "doc": "Getting Started with Drivers",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#softwaretools-used"
-  },"1030": {
+  },"1031": {
     "doc": "Getting Started with Drivers",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E70 Xplained Ultra Evaluation Kit | The SAM E70 Xplained Ultra Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the micro-B DEBUG USB port to power and debug the SAM E70 Xplained Ultra Evaluation Kit. | . Hardware Modification: . | IO1 Xplained Pro features Microchip’s AT30TSE758 temperature sensor chip with an 8 kbit serial EEPROM. The temperature sensor has two TWI addresses: one for the temperature sensor and one for the EEPROM. The A2 address line of TWI must be soldered to 0. This is done to modify the address of the EEPROM on the I/O1 Xplained Pro Extension Kit so that it does not conflict with the address of EEPROM on SAM E70 Xplained Evaluation Kit. The modification changes the address of temperature sensor to 0x4B and EEPROM to 0x50. These modified addresses are used in this demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#setup",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#setup"
-  },"1031": {
+  },"1032": {
     "doc": "Getting Started with Drivers",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME70Q21B” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#programming-hex-file"
-  },"1032": {
+  },"1033": {
     "doc": "Getting Started with Drivers",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started_drv\\firmware\\\\drivers_sam_e70_xult.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#programmingdebugging-application-project"
-  },"1033": {
+  },"1034": {
     "doc": "Getting Started with Drivers",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED3 blinking at 1 second rate | Press any character on the terminal to display the last five values written to the EEPROM | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#running-the-demo"
-  },"1034": {
+  },"1035": {
     "doc": "Getting Started with Drivers",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Drivers and System Services on SAM E70/S70/V70/V71 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#comments",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#comments"
-  },"1035": {
+  },"1036": {
     "doc": "Getting Started with Drivers",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html#revision"
-  },"1036": {
+  },"1037": {
     "doc": "Getting Started with Drivers",
     "title": "Getting Started with Drivers",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_drv/readme.html",
     "relUrl": "/apps/sam_e70_xult/getting_started_drv/readme.html"
-  },"1037": {
+  },"1038": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Getting Started Application using Harmony v3 Drivers and FreeRTOS on SAM E70 Xplained Ultra Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#getting-started-application-using-harmony-v3-drivers-and-freertos-on-sam-e70-xplained-ultra-evaluation-kit",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#getting-started-application-using-harmony-v3-drivers-and-freertos-on-sam-e70-xplained-ultra-evaluation-kit"
-  },"1038": {
+  },"1039": {
     "doc": "Getting Started with FreeRTOS",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html"
-  },"1039": {
+  },"1040": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit. The temperature reading is displayed on a serial console periodically every second. Further, the application writes the temperature readings to EEPROM. When a character is entered on the console, the last five written temperature values are read from the EEPROM and displayed on the console. Also, an LED (LED3) is toggled every time the temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#description",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#description"
-  },"1040": {
+  },"1041": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | USART | Timer | XDMAC | . | Drivers . | TWIHS(I2C) | USART | . | System Services . | Timer | . | Third Party Libraries . | FreeRTOS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#modulestechnology-used"
-  },"1041": {
+  },"1042": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Hardware Used:",
     "content": ". | SAM E70 Xplained Ultra Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#hardware-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#hardware-used"
-  },"1042": {
+  },"1043": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “CMSIS-FreeRTOS” repo v10.3.1 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#softwaretools-used"
-  },"1043": {
+  },"1044": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E70 Xplained Ultra Evaluation Kit | The SAM E70 Xplained Ultra Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the micro-B DEBUG USB port to power and debug the SAM E70 Xplained Ultra Evaluation Kit. | . Hardware Modification: . | IO1 Xplained Pro features Microchip’s AT30TSE758 temperature sensor chip with an 8 kbit serial EEPROM. The temperature sensor has two TWI addresses: one for the temperature sensor and one for the EEPROM. The A2 address line of TWI must be soldered to 0. This is done to modify the address of the EEPROM on the I/O1 Xplained Pro Extension Kit so that it does not conflict with the address of EEPROM on SAM E70 Xplained Evaluation Kit. The modification changes the address of temperature sensor to 0x4B and EEPROM to 0x50. These modified addresses are used in this demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#setup",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#setup"
-  },"1044": {
+  },"1045": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME70Q21B” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#programming-hex-file"
-  },"1045": {
+  },"1046": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started_freertos\\firmware\\\\drivers_freertos_sam_e70_xult.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#programmingdebugging-application-project"
-  },"1046": {
+  },"1047": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED3 blinking at 1 second rate | Press any character on the terminal to display the last five values written to the EEPROM | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#running-the-demo"
-  },"1047": {
+  },"1048": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Drivers on SAM E70/S70/V70/V71 MCUs Using FreeRTOS | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#comments",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#comments"
-  },"1048": {
+  },"1049": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html#revision"
-  },"1049": {
+  },"1050": {
     "doc": "Getting Started with FreeRTOS",
     "title": "Getting Started with FreeRTOS",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/getting_started_freertos/readme.html",
     "relUrl": "/apps/sam_e70_xult/getting_started_freertos/readme.html"
-  },"1050": {
+  },"1051": {
     "doc": "XDMAC with QSPI",
     "title": "XDMAC with QSPI Application on SAM E70 Xplained Ultra Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#xdmac-with-qspi-application-on-sam-e70-xplained-ultra-evaluation-kit",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#xdmac-with-qspi-application-on-sam-e70-xplained-ultra-evaluation-kit"
-  },"1051": {
+  },"1052": {
     "doc": "XDMAC with QSPI",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html"
-  },"1052": {
+  },"1053": {
     "doc": "XDMAC with QSPI",
     "title": "Description:",
     "content": "This application demonstrates the usage of Direct Memory Access Controller (XDMAC) with QSPI on Cortex-M7 based MCU (SAM E70). The application writes and reads 80KB data into the External Serial Flash memory using the QSPI, with and without using XDMAC. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#description",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#description"
-  },"1053": {
+  },"1054": {
     "doc": "XDMAC with QSPI",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EFC | MPU | QSPI | XDMAC | SYSTICK | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#modulestechnology-used"
-  },"1054": {
+  },"1055": {
     "doc": "XDMAC with QSPI",
     "title": "Hardware Used:",
     "content": ". | SAM E70 Xplained Ultra Evaluation Kit | Logic Analyzer or Oscilloscope | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#hardware-used",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#hardware-used"
-  },"1055": {
+  },"1056": {
     "doc": "XDMAC with QSPI",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “core” repo v3.8.1 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#softwaretools-used"
-  },"1056": {
+  },"1057": {
     "doc": "XDMAC with QSPI",
     "title": "Setup:",
     "content": ". | Connect the micro USB to the Host computer | Connect the Saleae Logic Analyzer and establish a connection with the Host PC | Configure the four channels to measure the QSPI throughput as follows . | Channel 0 is PA19, which is configured to Set and Clear the pin before and after the QSPI Write without DMA | Channel 1 is PB2, which is configured to Set and Clear the pin before and after the QSPI Read without DMA | Channel 2 is PC31, which is configured to Set and Clear the pin before and after the QSPI Write with DMA | Channel 3 is PB3, which is configured to Set and Clear the pin before and after the QSPI Read with DMA | . | | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#setup",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#setup"
-  },"1057": {
+  },"1058": {
     "doc": "XDMAC with QSPI",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME70Q21B” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#programming-hex-file"
-  },"1058": {
+  },"1059": {
     "doc": "XDMAC with QSPI",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (qspi_xdmac_read_write/firmware/sam_e70_xult.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#programmingdebugging-application-project"
-  },"1059": {
+  },"1060": {
     "doc": "XDMAC with QSPI",
     "title": "Running the Demo:",
     "content": ". | Start capturing samples using the Logic Analyzer Software | Reset the hardware to start the application run from the beginning | Stop capturing the sample in the Logic Analyzer Software | Verify the the above mentioned four GPIO Pin waveforms and timestamps to see the QSPI performance with and without using the XDMAC for the following cases . | Write 80KB of data to external serial Flash without using the DMA | Read 80KB of data from the external serial Flash without using the DMA | Write 80KB of data to external serial Flash using the DMA | Read 80KB of data from the external serial Flash using the DMA | | . | LED1 toggles on success else turns ON if any error | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#running-the-demo"
-  },"1060": {
+  },"1061": {
     "doc": "XDMAC with QSPI",
     "title": "Comments:",
     "content": ". | Reference Application Note: Using XDMAC with QSPI on CORTEX-M7 MCUs Using MPLAB Harmony v3 | Getting Started Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM E70 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony . | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#comments",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#comments"
-  },"1061": {
+  },"1062": {
     "doc": "XDMAC with QSPI",
     "title": "Revision:",
     "content": ". | v1.2.0 regenerated and tested the application | v1.1.0 regenerated and tested the application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html#revision"
-  },"1062": {
+  },"1063": {
     "doc": "XDMAC with QSPI",
     "title": "XDMAC with QSPI",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html",
     "relUrl": "/apps/sam_e70_xult/qspi_xdmac_read_write/readme.html"
-  },"1063": {
+  },"1064": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAM E70 Xplained Ultra Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#getting-started-application-on-sam-e70-xplained-ultra-evaluation-kit",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#getting-started-application-on-sam-e70-xplained-ultra-evaluation-kit"
-  },"1064": {
+  },"1065": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html"
-  },"1065": {
+  },"1066": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension. The temperature read is displayed on a serial console periodically every 500 milliseconds. The periodicity of the temperature values displayed on the serial console is changed to 1 second, 2 seconds, 4 seconds, and back to 500 milliseconds every time you press the switch SW0 on the SAM E70 Xplained Ultra Evaluation Kit. Also, an LED, LED3, is toggled every time the temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#description",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#description"
-  },"1066": {
+  },"1067": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | USART | Timer | XDMAC | TWIHS(I2C) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#modulestechnology-used"
-  },"1067": {
+  },"1068": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM E70 Xplained Ultra Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#hardware-used"
-  },"1068": {
+  },"1069": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#softwaretools-used"
-  },"1069": {
+  },"1070": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E70 Xplained Ultra Evaluation Kit | The SAM E70 Xplained Ultra Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the micro-B DEBUG USB port to power and debug the SAM E70 Xplained Ultra Evaluation Kit. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#setup"
-  },"1070": {
+  },"1071": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAME70Q21B” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#programming-hex-file"
-  },"1071": {
+  },"1072": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started\\firmware\\\\sam_e70_xult.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#programmingdebugging-application-project"
-  },"1072": {
+  },"1073": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED3 blinking at 500 millisecond rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press the switch SW0 on SAM E70 Xplained Ultra Evaluation Kit to change the default sampling rate to 1 second | Every subsequent pressing of switch SW0 on SAM E70 Xplained Ultra Evaluation Kit changes the default sampling rate to 2 seconds, 4 seconds, and 500 ms and back to 1 second in cyclic order as shown below. | While the temperature sampling rate changes on every switch SW0 press, notice the LED3 toggling at the same sampling rate | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#running-the-demo"
-  },"1073": {
+  },"1074": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM E70/S70/V70/V71 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#comments"
-  },"1074": {
+  },"1075": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html#revision"
-  },"1075": {
+  },"1076": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/same70_getting_started/readme.html",
     "relUrl": "/apps/sam_e70_xult/same70_getting_started/readme.html"
-  },"1076": {
+  },"1077": {
     "doc": "SAM E70 Xplained Ultra Evaluation Kit",
     "title": "SAM E70 Xplained Ultra Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM E70 Xplained Ultra Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | Getting Started with Drivers | Click Here | . | 3 | Getting Started with FreeRTOS | Click Here | . | 4 | XDMAC with QSPI | Click Here | . | 5 | Ethernet bootloader - File Transfer Protocol | Click Here | . More Application Demos . For more application demos on SAM E70 Xplained Ultra Evaluation Kit and other Development Boards/Kits having the same part number (ATSAME70Q21B) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_e70_xult/readme.html",
     "relUrl": "/apps/sam_e70_xult/readme.html"
-  },"1077": {
+  },"1078": {
     "doc": "Getting Started",
     "title": "Getting Started Application on SAM L10 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#getting-started-application-on-sam-l10-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#getting-started-application-on-sam-l10-xplained-pro-evaluation-kit"
-  },"1078": {
+  },"1079": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html"
-  },"1079": {
+  },"1080": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "The application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension. The temperature read is displayed on a serial console periodically every 500 milliseconds. The periodicity of the temperature values displayed on the serial console is changed to one second, two seconds, four seconds, and back to 500 milliseconds every time you press the switch SW0 on the SAM L10 Xplained Pro Evaluation Kit. Also, an LED0 is toggled every time the temperature is displayed on the serial console. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#description",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#description"
-  },"1080": {
+  },"1081": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | PORTS | RTC | DMAC | SERCOM(I2C) | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#modulestechnology-used"
-  },"1081": {
+  },"1082": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | SAM L10 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#hardware-used"
-  },"1082": {
+  },"1083": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#softwaretools-used"
-  },"1083": {
+  },"1084": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM L10 Xplained Pro Evaluation Kit | The SAM L10 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM L10 Xplained Pro Evaluation Kit . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#setup"
-  },"1084": {
+  },"1085": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAML10E16A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#programming-hex-file"
-  },"1085": {
+  },"1086": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (getting_started\\firmware\\\\sam_l10_xpro.X) in MPLAB X IDE | Ensure “EDBG” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#programmingdebugging-application-project"
-  },"1086": {
+  },"1087": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED0 blinking at 500 millisecond rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press the switch SW0 on SAM L10 Xplained Pro Evaluation Kit to change the default sampling rate to one second | Every subsequent pressing of switch SW0 on SAM L10 Xplained Pro Evaluation Kit changes the default sampling rate to two seconds, four seconds and 500 ms and back to one second in cyclic order as shown below | While the temperature sampling rate changes on every switch SW0 press, notice the LED0 toggling at the same sampling rate | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#running-the-demo"
-  },"1087": {
+  },"1088": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAM L10 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#comments"
-  },"1088": {
+  },"1089": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html#revision"
-  },"1089": {
+  },"1090": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_getting_started/readme.html",
     "relUrl": "/apps/sam_l10_xpro/saml10_getting_started/readme.html"
-  },"1090": {
+  },"1091": {
     "doc": "Low Power",
     "title": "Low Power Application on SAM L10 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#low-power-application-on-sam-l10-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#low-power-application-on-sam-l10-xplained-pro-evaluation-kit"
-  },"1091": {
+  },"1092": {
     "doc": "Low Power",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html"
-  },"1092": {
+  },"1093": {
     "doc": "Low Power",
     "title": "Description",
     "content": "The application demonstrates, on power-up, the device is set to Standby Sleep mode. The device wakes up from Standby mode and enters Active mode when you cover the light sensor (by placing a hand over it, for example) on the I/O1 Xplained Pro extension kit. The application periodically prints room temperature on a serial terminal while the light sensor is covered. The device goes back to Standby mode when you uncover the light sensor. LED0 in the SAM L10 evaluation kit is toggled every time the temperature is displayed on the serial console. When you press the switch button SW0, the application switches Sleep mode from Standby mode to Idle mode. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#description",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#description"
-  },"1093": {
+  },"1094": {
     "doc": "Low Power",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | I2C | RTC | USART | DMAC | ADC | PM | SUPC | EIC | EVSYS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#modulestechnology-used"
-  },"1094": {
+  },"1095": {
     "doc": "Low Power",
     "title": "Hardware Used:",
     "content": ". | SAM L10 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit Note: The application is being developed on a SAM L10 XPRO board. Ensure that you use the same revision on the evaluation board before going further, else you could face issues with power consumption values. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#hardware-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#hardware-used"
-  },"1095": {
+  },"1096": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Data Visualizer | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#softwaretools-used"
-  },"1096": {
+  },"1097": {
     "doc": "Low Power",
     "title": "Setup:",
     "content": ". | Connect the I/O1 Xplained Pro extension kit to the Extension Header 1 (EXT1) of the SAML10 Xplained Pro evaluation kit | Probe PA27 (SW0 pin) and PA06 (wake-up test pin) on Extension Header 2 (EXT2) as highlighted in the Hardware Setup figure to measure wake-up time | Connect a USB cable to the DEBUG USB port for programming Note : Make sure common ground is connected with the board while using the logic analyzer or CRO. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#setup",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#setup"
-  },"1097": {
+  },"1098": {
     "doc": "Low Power",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAML10E16A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#programming-hex-file"
-  },"1098": {
+  },"1099": {
     "doc": "Low Power",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (saml10_low_power\\firmware\\\\low_power_app_sam_l10_xpro.X) in MPLAB X IDE. | Ensure “SAML10 Xplained Pro (EDBG)” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#programmingdebugging-application-project"
-  },"1099": {
+  },"1100": {
     "doc": "Low Power",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port, and reconnect it back. | Change the baud rate to 115200 | Perform reset by pressing the “RESET” switch | Verify the application title message is displayed . | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered | Observe Current Consumption on Data Visualizer Note: The Data Visualizer is a program to process and visualize data. The Data Visualizer can receive data from various sources such as the Embedded Debugger Data Gateway Interface (EDBG DGI) and COM ports. It is possible to track an application in run-time using a terminal graph or oscilloscope. It analyzes the power consumption of an application through correlation of code execution and power consumption when used together with a supported probe or board. | Open the Data Visualizer application from your PC and select the connected SAM L10 Xplained Pro B board on the DGI Control Panel, then click on Connect. The Data Visualizer will then start searching for protocols from the SAM L10 Xplained Pro board through the EDBG . | Once the Data Visualizer is connected to the SAM L10 EDBG, different interfaces will appear. Select the Power interface and click on the Start button to start measuring the power consumption of the device | Ensure that the jumpers for Current Measurement on the SAM L10 Xplained Pro are set to MEASURE for the MCU and BYPASS for the I/Os | The Power Analysis window will appear on the Data Visualizer tool interface | The step image shows the device in Standby mode with its measured power consumption. You can observe small peaks that illustrate the 500 milliseconds Real-Time Clock (RTC) timer expiry | . Note: The average value is considered when measuring the power consumption of the device because the instant value is not stable. Then, the power consumption of the device in Standby mode is 8.66 µA. | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element) to print the temperature on the terminal and observe the power consumption of the device | Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode | The following image shows the device in Idle mode with a measured power consumption of 844 µA | . Note: You can observe that the small peaks coming from RTC timer expiry disappeared because the power consumption in Idle mode is higher than the power required to start ADC conversion. | Place your hand over the light sensor. The device will wake up on the next ADC window monitor interrupt, read and print data on serial and then re-enter Standby mode. The following image shows the transition of the power consumption by switching from Idle mode to Standby mode | . Note that the above results highlight the power consumption is lower in Standby mode than in Idle mode. | Wake-up Time Measurement Using Logic Analyzer/ Cathode-Ray Oscilloscope (CRO) To demonstrate the CPU wake up time, switch SW0 is configured to generate an interrupt. A General Purpose Input/Output (GPIO) is toggled in the Interrupt Service Routine (ISR) of the switch press event. The MCU comes out of Sleep mode when an interrupt occurs (in this case, the switch press interrupt). The time between the switch press and the GPIO toggle in the ISR is the wake up time. | Connect your logic analyzer or your CRO to the board according to the step image | Press the SW0 switch and capture the signals to measure the wake-up time in Standby and Idle mode. The following image shows the wake-up time from Standby mode | The following image shows the wake-up time from Idle mode . By observing the outputs, you can conclude that the wake-up time is greater in Standby mode than in Idle mode . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#running-the-demo",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#running-the-demo"
-  },"1100": {
+  },"1101": {
     "doc": "Low Power",
     "title": "Comments:",
     "content": ". | Reference Training Module: Low Power Application on SAM L10 (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#comments",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#comments"
-  },"1101": {
+  },"1102": {
     "doc": "Low Power",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Regenerated and tested application. | v1.0.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html#revision",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html#revision"
-  },"1102": {
+  },"1103": {
     "doc": "Low Power",
     "title": "Low Power",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/saml10_low_power/readme.html",
     "relUrl": "/apps/sam_l10_xpro/saml10_low_power/readme.html"
-  },"1103": {
+  },"1104": {
     "doc": "SAM L10 Xplained Pro Evaluation Kit",
     "title": "SAM L10 Xplained Pro Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM L10 Xplained Pro Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Getting Started | Click Here | . | 2 | Low Power | Click Here | . More Application Demos . For more application demos on SAM L10 Xplained Pro Evaluation Kit and other Development Boards/Kits having the same part number (ATSAML10E16A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l10_xpro/readme.html",
     "relUrl": "/apps/sam_l10_xpro/readme.html"
-  },"1104": {
+  },"1105": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "TrustZone Getting Started Application on SAM L11 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#trustzone-getting-started-application-on-sam-l11-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#trustzone-getting-started-application-on-sam-l11-xplained-pro-evaluation-kit"
-  },"1105": {
+  },"1106": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html"
-  },"1106": {
+  },"1107": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Description",
     "content": "This Application demonstrates the TrustZone feature on SAM L11 microcontroller (MCU). The application has two projects pertaining to Secure and Non-Secure modes of SAM L11, that work together on the same MCU and offers security isolation between the trusted and the non-trusted resources in the device. | The Secure mode application reads the current room temperature from the temperature sensor on the I/O1 Xplained Pro Extension Kit every 500 milliseconds. Further, the application writes the temperature readings to EEPROM and reads when a request received from the Non-secure mode application. Also, an LED (LED0) is toggled every time the temperature is displayed on the serial console. The periodicity of the temperature values reading can be changed to 1 second, 2 seconds, 4 seconds, and back to 500 milliseconds every time when the user presses the switch SW0 on the SAM L11 Xplained Pro Evaluation Kit. The temperature readings are transferred to Non-secure mode application when it requests to Secure application through Non Secure Callable (NSC). | The Non-secure mode application requests the Secure mode application temperature values and prints them on a serial console once it receives from the Secure mode application. Further, when it receives a request from the user (in the form of a key press on the serial console), it will request Secure mode application to retrieve the last five stored temperature values in the EEPROM. The Non-secure application prints the last five stored temperature values on the console. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#description",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#description"
-  },"1107": {
+  },"1108": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | Secure PORT Pins (All pins by default are secure) | Secure I2C | Secure RTC | Secure EIC | Non-secure USART | Non-secure DMAC | Non-secure PORT Pins (USART Pins only) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#modulestechnology-used"
-  },"1108": {
+  },"1109": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Hardware Used:",
     "content": ". | SAM L11 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#hardware-used"
-  },"1109": {
+  },"1110": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#softwaretools-used"
-  },"1110": {
+  },"1111": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Setup:",
     "content": ". | Connect the I/O1 Xplained Pro Extension Kit to the Extension Header 1 (EXT1) of the SAM L11 Xplained Pro Evaluation Kit | The SAM L11 Xplained Pro Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the micro-B DEBUG USB port to power and debug the SAM L11 Xplained Pro Evaluation Kit. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#setup",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#setup"
-  },"1111": {
+  },"1112": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps . Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAML11E16A” | Ensure the proper tool is selected under “Hardware Tool” | Click on “Next” button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on “Finish” button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime. | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#programming-hex-file"
-  },"1112": {
+  },"1113": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Programming/Debugging Application Project:",
     "content": ". | The Trustzone project can be opened in two ways. | Procedure 1: . | Open MPLAB X IDE | Close all existing projects in IDE (if any project is opened) | Go to File -&gt; Open Project | Select project path “../reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started” | Select “firmware” folder, enable “Open Required Projects” and click on “Open Project” button . | Once the project opens, set the “trustzone_sam_l11_xpro_NonSecure” project as Main Project by right clicking on the project. | . | Procedure 2: . | Open MPLAB X IDE | Close all existing projects in IDE (if any project is opened) | Open the project (../saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X) in MPLAB X IDE. | . | . | Ensure “SAML11 Xplained Pro (EDBG)” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#programmingdebugging-application-project"
-  },"1113": {
+  },"1114": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below . | Also, notice the LED0 blinking at 500 millisecond rate | You may vary the temperature by placing your finger on the temperature sensor (for a few seconds) | Press the switch SW0 on SAM L11 Xplained Pro Evaluation Kit to change the default sampling rate to 1 second. | Every subsequent pressing of switch SW0 on SAM L11 Xplained Pro Evaluation Kit changes the default sampling rate to 2 seconds, 4 seconds, and 500 ms and back to 1 second in cyclic order as shown below. | While the temperature sampling rate changes on every switch SW0 press, notice the LED0 toggling at the same sampling rate | Press any character on the terminal to display the last five values written to the EEPROM | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#running-the-demo"
-  },"1114": {
+  },"1115": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Comments:",
     "content": ". | Reference Training Module: Arm TrustZone Getting Started Application on SAM L11 MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#comments",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#comments"
-  },"1115": {
+  },"1116": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "Revision:",
     "content": ". | v1.2.0 - Regenerated and tested application. | v1.1.0 - Released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#revision",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html#revision"
-  },"1116": {
+  },"1117": {
     "doc": "TrustZone Getting Started on SAM L11",
     "title": "TrustZone Getting Started on SAM L11",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html",
     "relUrl": "/apps/sam_l11_xpro/saml11_trustzone_getting_started/readme.html"
-  },"1117": {
+  },"1118": {
     "doc": "SAM L11 Xplained Pro Evaluation Kit",
     "title": "SAM L11 Xplained Pro Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM L11 Xplained Pro Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Trustzone Getting Started on SAM L11 Xplained Pro Evaluation Kit | Click Here | . More Application Demos . For more application demos on SAM L11 Xplained Pro Evaluation Kit and other Development Boards/Kits having the same part number (ATSAML11E16A) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l11_xpro/readme.html",
     "relUrl": "/apps/sam_l11_xpro/readme.html"
-  },"1118": {
+  },"1119": {
     "doc": "Low Power",
     "title": "Low Power Application on SAM L21 Xplained Pro Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#low-power-application-on-sam-l21-xplained-pro-evaluation-kit",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#low-power-application-on-sam-l21-xplained-pro-evaluation-kit"
-  },"1119": {
+  },"1120": {
     "doc": "Low Power",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html"
-  },"1120": {
+  },"1121": {
     "doc": "Low Power",
     "title": "Description",
     "content": "The application demonstrates low power application on SAM L21 Xplained Pro Evaluation Kit. on power-up, the device is set to Standby Sleep mode. The device wakes up from Standby mode and enters Active mode when you cover the light sensor (by placing a hand over it, for example) on the I/O1 Xplained Pro extension kit. The application periodically prints room temperature on a serial terminal while the light sensor is covered. The device goes back to Standby mode when you uncover the light sensor. LED0 in the SAM L21 evaluation kit is toggled every time the temperature is displayed on the serial console. When you press the switch button SW0, the application switches Sleep mode from Standby mode to Idle mode. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#description",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#description"
-  },"1121": {
+  },"1122": {
     "doc": "Low Power",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | I2C | RTC | USART | DMAC | ADC | PM | SUPC | EIC | EVSYS | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#modulestechnology-used",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#modulestechnology-used"
-  },"1122": {
+  },"1123": {
     "doc": "Low Power",
     "title": "Hardware Used:",
     "content": ". | SAM L21 Xplained Pro Evaluation Kit | I/O1 Xplained Pro Extension Kit | . Note: The application is being developed on a SAM L21 XPRO-B board. Ensure that you use the same revision on the evaluation board before going further, else you could face issues with power consumption values. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#hardware-used",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#hardware-used"
-  },"1123": {
+  },"1124": {
     "doc": "Low Power",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#softwaretools-used",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#softwaretools-used"
-  },"1124": {
+  },"1125": {
     "doc": "Low Power",
     "title": "Setup:",
     "content": ". | Connect the I/O1 Xplained Pro extension kit to the Extension Header 2 (EXT2) of the SAML21 Xplained Pro evaluation kit | Probe PA02 (SW0 pin) and PB05 (wake-up test pin) on Extension Header 1 (EXT1) as highlighted in the Hardware Setup figure to measure wake-up time | Connect a USB cable to the DEBUG USB port for programming | . Note : Make sure common ground is connected with the board while using the logic analyzer or CRO. ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#setup",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#setup"
-  },"1125": {
+  },"1126": {
     "doc": "Low Power",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “ATSAML21J18B” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#programming-hex-file",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#programming-hex-file"
-  },"1126": {
+  },"1127": {
     "doc": "Low Power",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (saml21_low_power\\firmware\\\\sam_l21_xpro.X) in MPLAB X IDE. | Ensure “SAML21 Xplained Pro (EDBG)” is selected as hardware tool to program/debug the application. | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar. | Follow the steps in “Running the Demo” section below. | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#programmingdebugging-application-project"
-  },"1127": {
+  },"1128": {
     "doc": "Low Power",
     "title": "Running the Demo:",
     "content": ". | Open Tera Term, connect to serial console. If there is any connection issue on tera terminal, unplug the USB cable connected to Micro-B port, and reconnect it back. | Change the baud rate to 115200 | Perform a reset by pressing the “RESET” switch | Verify the application title message is displayed | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered | Observe Current Consumption on Data Visualizer Note:The Data Visualizer is a program to process and visualize data. The Data Visualizer can receive data from various sources such as the Embedded Debugger Data Gateway Interface (EDBG DGI) and COM ports. It is possible to track an application in run-time using a terminal graph or oscilloscope. It analyzes the power consumption of an application through correlation of code execution and power consumption when used together with a supported probe or board. | Open the Data Visualizer application from your PC and select the connected SAM L21 Xplained Pro B board on the DGI Control Panel, then click on Connect. The Data Visualizer will then start searching for protocols from the SAM L21 Xplained Pro board through the EDBG | Once the Data Visualizer is connected to the SAM L21 EDBG, different interfaces will appear. Select the Power interface and click on the Start button to start measuring the power consumption of the device | Ensure that the jumpers for Current Measurement on the SAM L21 Xplained Pro are set to MEASURE for the MCU and BYPASS for the I/Os | The Power Analysis window will appear on the Data Visualizer tool interface | The step image shows the device in Standby mode with its measured power consumption. You can observe small peaks that illustrate the 500 milliseconds Real-Time Clock (RTC) timer expiry Note: The average value is considered when measuring the power consumption of the device because the instant value is not stable. Then, the power consumption of the device in Standby mode is 6.99 µA. | Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element) to print the temperature on the terminal and observe the power consumption of the device | Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode | The following image shows the device in Idle mode with a measured power consumption of 530 µA | . Note: You can observe that the small peaks coming from RTC timer expiry disappeared because the power consumption in Idle mode is higher than the power required to start ADC conversion. | Place your hand over the light sensor. The device will wake up on the next ADC window monitor interrupt, read and print data on serial and then re-enter Standby mode. The following image shows the transition of the power consumption by switching from Idle mode to Standby mode | . Note that the above results highlight the power consumption is lower in Standby mode than in Idle mode. | Wake-up Time Measurement Using Logic Analyzer/ Cathode-Ray Oscilloscope (CRO) To demonstrate the CPU wake up time, switch SW0 is configured to generate an interrupt. A General Purpose Input/Output (GPIO) is toggled in the Interrupt Service Routine (ISR) of the switch press event. The MCU comes out of Sleep mode when an interrupt occurs (in this case, the switch press interrupt). The time between the switch press and the GPIO toggle in the ISR is the wake up time. | Connect your logic analyzer or your CRO to the board according to the step image | Press the SW0 switch and capture the signals to measure the wake-up time in Standby and Idle mode. The following image shows the wake-up time from Standby mode | The following image shows the wake-up time from Idle mode | By observing the outputs, you can conclude that the wake-up time is greater in Standby mode than in Idle mode | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#running-the-demo",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#running-the-demo"
-  },"1128": {
+  },"1129": {
     "doc": "Low Power",
     "title": "Comments:",
     "content": ". | Reference Training Module: Low Power Application on SAM L21 (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#comments",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#comments"
-  },"1129": {
+  },"1130": {
     "doc": "Low Power",
     "title": "Revision:",
     "content": "| . | v1.2.0 - Regenerated and tested application. | v1.1.0 regenerated and tested the demo application | v1.0.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html#revision",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html#revision"
-  },"1130": {
+  },"1131": {
     "doc": "Low Power",
     "title": "Low Power",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/saml21_low_power/readme.html",
     "relUrl": "/apps/sam_l21_xpro/saml21_low_power/readme.html"
-  },"1131": {
+  },"1132": {
     "doc": "SAM L21 Xplained Pro Evaluation Kit",
     "title": "SAM L21 Xplained Pro Evaluation Kit",
     "content": "This folder contains the MPLAB® Harmony 3 reference applications developed on SAM L21 Xplained Pro Evaluation Kit. | SI No | Demo Name | Download Link | . | 1 | Low Power | Click Here | . More Application Demos . For more application demos on SAM L21 Xplained Pro Evaluation Kit and other Development Boards/Kits having the same part number (ATSAML21J18B) CLICK HERE . ",
     "url": "http://localhost:4000/reference_apps/apps/sam_l21_xpro/readme.html",
     "relUrl": "/apps/sam_l21_xpro/readme.html"
-  },"1132": {
+  },"1133": {
     "doc": "Reference Applications",
     "title": "Reference Application Repository",
     "content": "This repository contains the MPLAB® Harmony 3 reference applications developed on Microchip 32-bit SAM and PIC development boards/kits. ",
     "url": "http://localhost:4000/reference_apps/apps/readme.html#reference-application-repository",
     "relUrl": "/apps/readme.html#reference-application-repository"
-  },"1133": {
+  },"1134": {
     "doc": "Reference Applications",
     "title": "Reference Applications",
     "content": "The following reference applications are provided to evaluate solutions on 32-bit SAM and PIC MCUs. | PIC32CM MC00 Curiosity Pro Development Board . | PIC32CM MC00 Curiosity Nano Evaluation Kit . | SAM D21 IoT Development Board . | SAM E51 Curiosity Nano Evaluation Kit . | PIC32MZ DA Curiosity Development Kit . | SAM D21 Curiosity Nano Evaluation Kit . | Curiosity PIC32MZ EF 2.0 Development Board . | SAM L10 Xplained Pro Evaluation Kit . | SAM L21 Xplained Pro Evaluation Kit . | SAM C21 Xplained Pro evaluation kit . | SAM E70 Xplained Ultra Evaluation Kit . | SAM E70 Xplained Evaluation Kit . | SAM E54 Xplained Pro Evaluation Kit . | SAM E54 Curiosity Ultra Development Board . | SAM D21 Xplained Pro Evaluation Kit . | SAMC21N Xplained Pro Evaluation Kit . | PIC32MK General Purpose (GP) Development Kit . | Curiosity PIC32MX470 Development Board . | PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II . | PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit . | SAM L11 Xplained Pro Evaluation Kit . | . Note: . The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features. Peripheral/Technology specific applications are available in technology repositories like csp, core, usb, net, audio, gfx_apps, etc . ",
     "url": "http://localhost:4000/reference_apps/apps/readme.html",
     "relUrl": "/apps/readme.html"
-  },"1134": {
+  },"1135": {
     "doc": "Getting Started",
     "title": "Getting Started Application on PIC32CM MC00 Curiosity Nano Evaluation Kit",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#getting-started-application-on-pic32cm-mc00-curiosity-nano-evaluation-kit",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#getting-started-application-on-pic32cm-mc00-curiosity-nano-evaluation-kit"
-  },"1135": {
+  },"1136": {
     "doc": "Getting Started",
     "title": "  Download  ",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html"
-  },"1136": {
+  },"1137": {
     "doc": "Getting Started",
     "title": "Description:",
     "content": "This application demonstrates an LED (LED0) toggle on a timeout basis and prints the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds, and back to 500 milliseconds every time you press the switch SW0 on the PIC32CM MC00 Curiosity Nano Evaluation Kit. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#description",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#description"
-  },"1137": {
+  },"1138": {
     "doc": "Getting Started",
     "title": "Modules/Technology Used:",
     "content": ". | Peripheral Modules . | EIC | RTC | GPIO | SERCOM(USART) | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#modulestechnology-used",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#modulestechnology-used"
-  },"1138": {
+  },"1139": {
     "doc": "Getting Started",
     "title": "Hardware Used:",
     "content": ". | PIC32CM MC00 Curiosity Nano Evaluation Kit | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#hardware-used",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#hardware-used"
-  },"1139": {
+  },"1140": {
     "doc": "Getting Started",
     "title": "Software/Tools Used:",
     "content": "This project has been verified to work with the following versions of software tools: . | MPLAB Harmony v3 “csp” repo v3.8.3 | MPLAB Harmony v3 “dev_packs” repo v3.8.0 | MPLAB Harmony v3 “mhc” repo v3.6.5 | MPLAB Harmony 3 Launcher Plugin v3.6.2 | MPLAB X IDE v5.45 | MPLAB XC32 Compiler v2.41 | Any Serial Terminal application like Tera Term terminal application. | . Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#softwaretools-used",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#softwaretools-used"
-  },"1140": {
+  },"1141": {
     "doc": "Getting Started",
     "title": "Setup:",
     "content": ". | Connect the PIC32CM MC00 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#setup",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#setup"
-  },"1141": {
+  },"1142": {
     "doc": "Getting Started",
     "title": "Programming hex file:",
     "content": "The pre-built hex file can be programmed by following the below steps. Steps to program the hex file . | Open MPLAB X IDE | Close all existing projects in IDE, if any project is opened. | Go to File -&gt; Import -&gt; Hex/ELF File | In the “Import Image File” window, Step 1 - Create Prebuilt Project, Click the “Browse” button to select the prebuilt hex file. | Select Device has “PIC32CM1216MC00032” | Ensure the proper tool is selected under “Hardware Tool” | Click on Next button | In the “Import Image File” window, Step 2 - Select Project Name and Folder, select appropriate project name and folder | Click on Finish button | In MPLAB X IDE, click on “Make and Program Device” Button. The device gets programmed in sometime | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#programming-hex-file",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#programming-hex-file"
-  },"1142": {
+  },"1143": {
     "doc": "Getting Started",
     "title": "Programming/Debugging Application Project:",
     "content": ". | Open the project (pic32cmmc_getting_started/firmware/pic32cm_mc_cnano.X) in MPLAB X IDE | Ensure “PIC32CM MC00 Curiosity Nano” is selected as hardware tool to program/debug the application | Build the code and program the device by clicking on the “make and program” button in MPLAB X IDE tool bar | Follow the steps in “Running the Demo” section below | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#programmingdebugging-application-project",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#programmingdebugging-application-project"
-  },"1143": {
+  },"1144": {
     "doc": "Getting Started",
     "title": "Running the Demo:",
     "content": ". | Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button) | Change the baud rate to 115200 | An LED (LED0) on the PIC32CM MC00 Curiosity Nano Evaluation Kit toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds | And also, the LED toggling rate is displayed on the serial terminal | Press the switch SW0 on the PIC32CM MC00 Curiosity Nano Evaluation Kit to change the default periodicity of the timeout to one second | Every subsequent pressing of the switch SW0 on the PIC32CM MC00 Curiosity Nano Evaluation Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#running-the-demo",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#running-the-demo"
-  },"1144": {
+  },"1145": {
     "doc": "Getting Started",
     "title": "Comments:",
     "content": ". | Reference Training Module: Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs | This application demo builds and works out of box by following the instructions above in “Running the Demo” section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony. | How to Setup MPLAB Harmony v3 Software Development Framework | How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project | . | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#comments",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#comments"
-  },"1145": {
+  },"1146": {
     "doc": "Getting Started",
     "title": "Revision:",
     "content": ". | v1.2.0 released demo application | . ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#revision",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html#revision"
-  },"1146": {
+  },"1147": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": ". ",
     "url": "http://localhost:4000/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html",
     "relUrl": "/apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.html"
-  },"1147": {
+  },"1148": {
     "doc": "Release notes",
     "title": "Microchip MPLAB® Harmony 3 Release Notes",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#microchip-mplab-harmony-3-release-notes",
     "relUrl": "/release_notes.html#microchip-mplab-harmony-3-release-notes"
-  },"1148": {
+  },"1149": {
     "doc": "Release notes",
     "title": "Reference Applications Release v1.3.0 (June 2021)",
     "content": "New Applications . | Application | Description | MCU | Development Board/Kit | . | same51n_google_cloud_iot_core | Google Cloud IoT Core Application | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | same54c_motion_surveillance | Motion Surveillance Application | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | pic32cmmc_smart_appliance_control | Smart Appliance Control Application | PIC32CM MC00 | PIC32CM MC00 Curiosity Nano Evaluation Kit | . | 10dof | MikroElektronika 10DOF Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | eeprom4 | MikroElektronika EEPROM 4 Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | leddriver3 | MikroElektronika LED DRIVER 3 Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | gsm_gps | MikroElektronika GSM-GPS Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | pir | MikroElektronika PIR Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | thumbstick | MikroElektronika Thumbstick Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | usb_uart | MikroElektronika USB UART Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | xpro_adapter | MikroElektronika XPRO Adapter Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | eink_bundle | MikroElektronika EINK Bundle Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | fan | MikroElektronika Fan Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | heartrate9 | MikroElektronika Heart Rate 9 Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | ir_thermo2 | MikroElektronika IrThermo 2 Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | weather | MikroElektronika Weather Click Board example | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | . | same54_getting_started_freertos | Getting Started with Harmony Drivers using FreeRTOS | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samc21_getting_started_freertos | Getting Started with Harmony Drivers using FreeRTOS | SAM C21 | SAM C21 Xplained Pro Evaluation Kit | . Updated Applications . | Application | Description | MCU | Development Board/Kit | Comment | . | snake_game | Snake Game | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | Removed video reference in readme | . | ack_bootloader | Amazon Alexa Connect Kit (ACK) OTA Bootloader | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v4.0 | . | ack_helloworld | Amazon Alexa Connect Kit (ACK) Hello World | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v4.0 | . | ack_microwave | Amazon Alexa Connect Kit (ACK) Microwave | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v4.0 | . | ack_smartlight | Amazon Alexa Connect Kit (ACK) SmartLight | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v4.0 | . | ack_dashreplenishment | Amazon Alexa Connect Kit (ACK) DashReplenishment | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v4.0 | . | google_cloud_iot_core | Google Cloud IoT Core | SAM D21 | SAM-IoT WG Development Board | Updated to integrate CryptAuthLib, Harmony System service and WINC driver | . | fitness_tracker | Fitness Tracker | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to replace Heart rate 3 click board with Heart rate 9 click board | . | ble_fitness_tracker | BLE Fitness Tracker | SAM E51 | SAM E51 Curiosity Nano Evaluation Kit | Updated to replace Heart rate 3 click board with Heart rate 9 click board | . | pic32mzda_sdcard_usb_audio_player | SD Card USB Audio Player | PIC32MZ DA | PIC32MZ DA Curiosity Development Kit | Updated to support multiple bit rates, fixed display refresh rate. Removed unused Audio decoders (Adpcm and mp3) files | . Known Issues . | . | . | . | . ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#reference-applications-release-v130-june-2021",
     "relUrl": "/release_notes.html#reference-applications-release-v130-june-2021"
-  },"1149": {
+  },"1150": {
     "doc": "Release notes",
     "title": "Reference Applications Release v1.2.0 (January 2021)",
     "content": "New Applications . | Application | Description | MCU | Development Board/Kit | . | pic32cm_mc_curiosity_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32CM MC00 | PIC32CM MC Curiosity Pro Development Board | . | pic32cmmc_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32CM MC00 | PIC32CM MC00 Curiosity Nano Evaluation Kit | . | pic32cmmc_temp_based_fan_control_oled_c | Temperature based Fan Speed Control with OLED C click display | PIC32CM MC00 | PIC32CM MC00 Curiosity Nano Evaluation Kit | . | getting_started_drivers_middleware | Getting Started with Drivers and Middleware | SAM E70 | SAM E70 Xplained Evaluation Kit | . | same54c_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | samd21_getting_started_freertos | Getting Started with Harmony v3 Drivers using FreeRTOS | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | same51n_low_power_with_oled_c_click | Low Power Application with OLED C Click | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . Updated Applications . | Application | Description | MCU | Development Board/Kit | Comment | . | snake_game | Snake Game | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | Fixed image view issue in documentation | . | ack_bootloader | Amazon Alexa Connect Kit (ACK) OTA Bootloader | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v3.2 | . | ack_helloworld | Amazon Alexa Connect Kit (ACK) Hello World | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v3.2 | . | ack_microwave | Amazon Alexa Connect Kit (ACK) Microwave | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v3.2 | . | ack_smartlight | Amazon Alexa Connect Kit (ACK) SmartLight | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v3.2 | . | ack_dashreplenishment | Amazon Alexa Connect Kit (ACK) DashReplenishment | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | Updated to support ACK SDK v3.2 | . | google_cloud_iot_core | Google Cloud IoT Core | SAM D21 | SAM-IoT WG Development Board | Update demo to support 32 character length password and SSID to support single space character | . | snake_game | Snake Game | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | Fixed image view issue in documentation | . | sdadc_conversion_interrupt | SDADC Conversion Interrupt Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | Updated documentation with reference application note link | . | sdadc_conversion_polling | SDADC Conversion Polling Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | Updated documentation with reference application note link | . Known Issues . | The application “sam_d21_iot/google_cloud_iot_core” is developed by applying a patch (available in folder “google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder. The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of “reference_apps” repository. | The application “pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration” is developed by applying a patch (available in folder “wifi_rgb_easy_configuration/firmware/wifi_repo_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “wifi_rgb_easy_configuration/firmware/wifi_repo_patch” folder. The patch is applied due to a known issue in “wireless” repo. This issue is expected to be fixed in a future release of “wireless” repo. | The application demo “pic32mz_ef_sk_meb2/audio_player/audio_player_lab5” is developed using Aria Graphics library. From gfx v3.9.0 onwards Aria Graphics support is deprecated and archived in a separate gfx_aria v3.7.1 repo. If you wish to regenerate this demo, follow the notes mentioned in “Software/Tools Used” section in readme for audio_player_lab5. | . Development Tools . | Refer demo specific documentation in folder “docs” to know the tools and Harmony 3 packages used. | . ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#reference-applications-release-v120-january-2021",
     "relUrl": "/release_notes.html#reference-applications-release-v120-january-2021"
-  },"1150": {
+  },"1151": {
     "doc": "Release notes",
     "title": "Reference Applications Release v1.1.0 (September 2020)",
     "content": "New Applications . | Application | Description | MCU | Development Board/Kit | . | google_cloud_iot_core | Google Cloud IoT Core | SAM D21 | SAM-IoT WG Development Board | . | same51n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . | ble_fitness_tracker | BLE Fitness Tracker | SAME 51 | SAM E51 Curiosity Nano Evaluation Kit | . | pic32mzda_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MZ DA | Curiosity PIC32MZ DA Development Board | . | pic32mzda_sdcard_usb_audio_player | SD Card USB Audio Player | PIC32MZ DA | Curiosity PIC32MZ DA Development Board | . | ack_bootloader | Amazon Alexa Connect Kit (ACK) OTA Bootloader | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_helloworld | Amazon Alexa Connect Kit (ACK) Hello World | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_microwave | Amazon Alexa Connect Kit (ACK) Microwave | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_smartlight | Amazon Alexa Connect Kit (ACK) SmartLight | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | ack_dashreplenishment | Amazon Alexa Connect Kit (ACK) DashReplenishment | SAM D21 | SAM D21 Curiosity Nano Evaluation Kit | . | pic18f_to_samd21_migration | Application migration from 8-bit PIC18F to 32-bit SAM D21 | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | atmega4809_to_samd21_migration | Application migration from 8-bit PIC18F to 32-bit SAM D21 | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | wifi_rgb_easy_configuration | WiFi based RGB LED Control | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | snake_game | Snake Game | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | same54_vending_machine | Vending Machine | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | same54_low_power | Low Power | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samd21_ac_sleepwalk_singleshot_gcc | AC Sleepwalking Application built with GCC Toolchain | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | sdadc_conversion_interrupt | SDADC Conversion Interrupt Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | sdadc_conversion_polling | SDADC Conversion Polling Mode | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | same54_sdcard_usb_audio_player | SD Card USB Audio Player | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | same54_uart_live_update | Live Update | SAM E54 | SAM E54 Curiosity Ultra Development Board | . | saml11_trustzone_getting_started | TrustZone Getting Started | SAM L11 | SAML11 Xplained Pro Evaluation Kit | . Updated Applications . - NA - . Known Issues . | The application “sam_d21_iot/google_cloud_iot_core” is developed by applying a patch (available in folder “google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder. The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of “reference_apps” repository. | The application “sam_d21_cnano/ble_weather_station” is developed by applying a patch (available in folder “ble_weather_station/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “ble_weather_station/firmware/app_patch” folder. The patch is applied due to a known issue in “bt” repo and in the application. This issue is expected to be fixed in a future release of “reference_apps” repository and “bt” repository. | The application “sam_e51_cnano/ble_weather_station” is developed by applying a patch (available in folder “ble_fitness_tracker/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “ble_fitness_tracker/firmware/app_patch” folder. The patch is applied due to a known issue in “bt” repo and in the application. This issue is expected to be fixed in a future release of “reference_apps” repository and “bt” repository. | The application “pic32mz_ef_curiosity_v2/snake_game” is developed by applying a patch (available in folder “snake_game/firmware/gfx_ssd_driver_patch”) to MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “snake_game/firmware/gfx_ssd_driver_patch” folder. The patch is applied due to a known issue in “gfx” repo v3.7.0. This issue is expected to be fixed in a future release of “gfx” repository. | The application demos “pic32mz_ef_curiosity_v2/snake_game”, “pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player”, “sam_e54_cult/same54_sdcard_usb_audio_player” and “pic32mz_ef_sk_meb2/audio_player/audio_player_lab5” having Graphics features are developed using Graphics library “gfx” v3.7.0. These demos could version incompatibility when regenerated with a higher version of “gfx” repo. This limitation is expected to be fixed in a future release of “reference_apps” repository. | . Development Tools . | Refer demo specific documentation in folder “docs” to know the tools and Harmony 3 packages used. | . ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#reference-applications-release-v110-september-2020",
     "relUrl": "/release_notes.html#reference-applications-release-v110-september-2020"
-  },"1151": {
+  },"1152": {
     "doc": "Release notes",
     "title": "Reference Applications Release v1.0.0 (June 2020)",
     "content": "New Applications . The following table provides the list of new applications: . | Application | Description | MCU | Development Board/Kit | . | samd21n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | fitness_tracker | Fitness Tracker using Curiosity Nano Base for click boards, Heart Rate 3 click and EINK CLICK BUNDLE | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | location_sos | Location Tagged SOS using Curiosity Nano Base for click boards and GSM-GPS click | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | ble_weather_station | BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards | SAMD 21 | SAM D21 Curiosity Nano Evaluation Kit | . | pic32mzef_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | getting_started_ext | Getting Started Extended using Harmony v3 Peripheral Libraries | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | getting_started_middleware | Getting Started Application using Harmony v3 Drivers, System Services, Middleware and FreeRTOS | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | msd_multiple_luns | USB MSD with Multiple Drives | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | sdcard_player | SD Card Audio Player | PIC32MZ EF | Curiosity PIC32MZ EF 2.0 Development Board | . | saml10_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM L10 | SAM L10 Xplained Pro Evaluation Kit | . | saml10_low_power | Low Power | SAM L10 | SAM L10 Xplained Pro Evaluation Kit | . | saml21_low_power | Low Power | SAM L21 | SAM L21 Xplained Pro Evaluation Kit | . | samc21_low_power | Low Power | SAM C21 | SAM C21 Xplained Pro Evaluation Kit | . | same70_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | getting_started_drv | Getting Started using Harmony v3 Drivers | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | getting_started_freertos | Getting Started using Harmony v3 Drivers and FreeRTOS | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | qspi_xdmac_read_write | XDMAC with QSPI | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | ftp_bootloader | Ethernet bootloader - File Transfer Protocol | SAM E70 | SAM E70 Xplained Ultra Evaluation Kit | . | same54_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | sleepwalking | SleepWalking | SAM E54 | SAM E54 Xplained Pro Evaluation Kit | . | samd21_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM D21 | SAM D21 Xplained Pro Evaluation Kit | . | samc21n_getting_started | Getting Started using Harmony v3 Peripheral Libraries | SAM C21N | SAM C21N Xplained Pro Evaluation Kit | . | pic32mk_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MK | PIC32MK General Purpose (GP) Development Board | . | pic32mx470_getting_started | Getting Started using Harmony v3 Peripheral Libraries | PIC32MX | Curiosity PIC32MX470 Development Board | . | audio_player_lab1 | Audio-Tone using a Lookup Table | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab2 | Audio-Tone Application by reading the tone from a text file stored in an SD card | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab3 | SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab4 | SD Card Reader “.wav” Audio player | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | audio_player_lab5 | SD Card Audio Player/Reader with Aria Graphics | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II | . | pic32mz_uart_live_update | Live update on PIC32MZ | PIC32MZ EF | PIC32MZ Embedded Connectivity with FPU Starter Kit | . Updated Applications . - NA - . Known Issues . | The demo “pic32mz_ef_sk_meb2/audio_player/audio_player_lab5” is developed by applying a patch (available in folder “audio_player_lab5/firmware/gfx_repo_patch”) to the MPLAB Harmony v3 “gfx” repository. If you need to reconfigure or regenerate this demo using the MHC, please refer the “Notes.txt” file under audio_player_lab5/firmware/gfx_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.0 for Aria GAC Code Generation. This issue is expected to be fixed in gfx release v3.7.0. | The application “pic32mz_ef_curiosity_v2/msd_multiple_luns” is developed by by applying a patch (available in folder “msd_multiple_luns/firmware/usb_repo_patch”) to MPLAB Harmony v3 “usb” repository. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “msd_multiple_luns/firmware/usb_repo_patch” folder. The patch is applied due to a known issue with MHC v3.5.0 for USB Code Generation for this demo application. This issue is expected to be fixed in a future release of “usb” repository. | . Development Tools . | Refer demo specific documentation in folder “docs” to know the tools and Harmony 3 packages used. | . ",
     "url": "http://localhost:4000/reference_apps/release_notes.html#reference-applications-release-v100-june-2020",
     "relUrl": "/release_notes.html#reference-applications-release-v100-june-2020"
-  },"1152": {
+  },"1153": {
     "doc": "Release notes",
     "title": "Release notes",
     "content": " ",
     "url": "http://localhost:4000/reference_apps/release_notes.html",
     "relUrl": "/release_notes.html"
-  },"1153": {
+  },"1154": {
     "doc": "Harmony 3 Reference Applications Package",
     "title": "Harmony 3 Reference Applications Package",
     "content": "# MPLAB® Harmony 3 Reference Applications MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices. Refer to the following links for more information. - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit) - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus) - [Microchip MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony) - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/) This repository contains the MPLAB® Harmony 3 Reference Application Package. Reference applications are standalone applications which demonstrates specific features or capabilities of Microchip 32-bit SAM and PIC MCUs. These applications are developed on Microchip 32-bit SAM and PIC development boards/kits. In addition to having the MCU, the 32-bit SAM and PIC MCU development boards/kits also provide support to exercise the features of MCU through additional hardware like displays, communication buses, transceivers, sensors, external memories, etc. The additional hardware features are available on the MCU development boards/kits or is available as plugin through interface headers like mikroBUS Click or Xplained Pro extensions. Following are the typical application types in this repository - Large feature-rich applications involving integration of several technologies like Audio, USB, TCP/IP, Wireless, Security, Low Power, RTOS, etc - Applications demonstrating certain capabilities of the Microchip 32-bit SAM and PIC MCUs. For example: Low Power application on SAM L21 Xplained Pro Evaluation Kit demonstrating idle and standby modes - Applications demonstrating capabilities of Microchip 32-bit SAM and PIC MCUs development boards/kits (Curiosity, Nano, etc.) which allows extending hardware capability through mikroBUS Click or Xplained Pro extensions - Getting started applications pertaining to the Microchip's MCU products. These getting started applications demonstrates usage of MPLAB Harmony 3 framework by exercising commonly used peripheral features The above application types serve as a reference source to evaluate solutions on 32-bit SAM and PIC MCUs by developing applications using MPLAB Harmony 3 software framework on Microchip 32-bit SAM and PIC development boards/kits. **Repository and demo application support:** - The following table lists the fundamental and few technology specific repositories in MPLAB Harmony 3 Software Framework | Repository | # Demo Application | --- | ---| [csp](https://github.com/Microchip-MPLAB-Harmony/csp/tree/master/apps) | Simple applications that directly control the SAM and PIC peripherals | [core](https://github.com/Microchip-MPLAB-Harmony/core/tree/master/apps) | Applications that use the drivers and system services that have advanced capabilities and a higher level of abstraction that gives better hardware independence | [usb](https://github.com/Microchip-MPLAB-Harmony/usb/tree/master/apps) | Applications that demonstrate the capabilities of the MPLAB Harmony USB stack | [net](https://github.com/Microchip-MPLAB-Harmony/net/tree/master/apps) | Applications that demonstrate the capabilities of the MPLAB Harmony TCP/IP stack. These applications use well-known protocols like TCP, UDP, HTTP, SMTP, etc. | [gfx](https://github.com/Microchip-MPLAB-Harmony/gfx/tree/master/apps) | Quick start applications that demonstrates MPLAB Harmony Aria/Legato Graphics Libraries | [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps/tree/master/apps) | Non quick start applications that demonstrates MPLAB Harmony Aria/Legato Graphics Libraries | [audio](https://github.com/Microchip-MPLAB-Harmony/audio/tree/master/apps) | Applications that demonstrates capabilities of the MPLAB Harmony audio offerings, drivers for hardware codecs that can be connected to development boards, audio decoders, etc. | ### Note: The above is not an exhaustive list of all MPLAB Harmony 3 packages and corresponding application offerings. Refer the MPLAB Harmony 3 GitHub [Launch page](https://github.com/Microchip-MPLAB-Harmony) to view the complete list of MPLAB Harmony 3 packages. In each of these packages refer the underlying “apps” folder for the applications offering. Refer to the following links for release notes and reference application information. - [Release Notes](/reference_apps/release_notes.html) - [MPLAB® Harmony License](/reference_apps/mplab_harmony_license.html) - [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/wiki) - [MPLAB® Harmony 3 Reference Applications Index](/reference_apps/apps/readme.html) # Contents Summary | Folder | Description | --- | --- | apps | Example reference applications | docs | Reference applications help documentation | ____ [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/blob/master/mplab_harmony_license.md) [![Latest release](https://img.shields.io/github/release/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest) [![Latest release date](https://img.shields.io/github/release-date/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest) [![Commit activity](https://img.shields.io/github/commit-activity/y/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/graphs/commit-activity) [![Contributors](https://img.shields.io/github/contributors-anon/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)]() ____ [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology) [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology) [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/) [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech) [![](https://img.shields.io/github/stars/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg?style=social)]() [![](https://img.shields.io/github/watchers/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg?style=social)]() ",

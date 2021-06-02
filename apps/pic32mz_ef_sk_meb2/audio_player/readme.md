@@ -20,7 +20,7 @@ nav_order: 1
    | 4 |[audio_player_lab4](./audio_player_lab4/readme.md) | Extension of application **audio_player_lab3**, it implements an audio player by reading ".wav" audio files from the SD card | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab4.zip) |
    | 5 |[audio_player_lab5](./audio_player_lab5/readme.md) | Extension of application **audio_player_lab4**, it implements graphical user interface to the audio reader and player | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/audio_player_lab5.zip) |
 
-  ## Modules/Technology Used:
+## Modules/Technology Used:
 - Refer the documentation in individual application folder
 
 ## Hardware Used:
@@ -51,12 +51,6 @@ available for purchase from Microchip Direct.
 
 ## Setup:
 - Refer the Setup in individual application folder
-
-**Note:**
-It is not necessary to have an MPLAB Real ICE™ to program/debug the code. The PIC32MZ EF Starter Kit
-includes a PICkit™ on-board (PKOB) debugger. The PKOB debugger can be connected to a host PC through
-the USB Mini-B connector on the PIC32MZ EF Starter Kit for programming/debugging
-(see the red cable in the hardware setup).
 
 ## Programming binary/hex file:
 - Refer the documentation in individual application folder
