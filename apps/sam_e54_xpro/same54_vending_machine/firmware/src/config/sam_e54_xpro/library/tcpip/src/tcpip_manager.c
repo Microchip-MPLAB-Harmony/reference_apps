@@ -791,13 +791,15 @@ static bool _TCPIP_DoInitialize(const TCPIP_STACK_INIT * init)
         dupIpAddr.Val = 0;
         for(netIx = 0, pIf = tcpipNetIf; netIx < nNets && !initFail; netIx++, pIf++)
         {
-            dupIpAddr.Val = pIf->DefaultIPAddr.Val;
-            for(ix = netIx + 1, pScanIf = pIf + 1; ix < nNets; ix++, pScanIf++)
-            {
-                if(pScanIf->DefaultIPAddr.Val == dupIpAddr.Val)
+            if((dupIpAddr.Val = pIf->DefaultIPAddr.Val) != 0)
+            {   // IP address 0 does not count as duplicate
+                for(ix = netIx + 1, pScanIf = pIf + 1; ix < nNets; ix++, pScanIf++)
                 {
-                    initFail = 6;
-                    break;
+                    if(pScanIf->DefaultIPAddr.Val == dupIpAddr.Val)
+                    {
+                        initFail = 6;
+                        break;
+                    }
                 }
             }
         }
@@ -843,7 +845,7 @@ static bool _TCPIP_DoInitialize(const TCPIP_STACK_INIT * init)
 
             // check the power mode
             powerMode = TCPIP_Helper_StringToPowerMode(pUsrConfig->powerMode);
-            if(powerMode != TCPIP_MAC_POWER_FULL)
+            if(powerMode != TCPIP_MAC_POWER_FULL && powerMode != TCPIP_MAC_POWER_DOWN)
             {   
                 SYS_ERROR_PRINT(SYS_ERROR_ERROR, TCPIP_STACK_HDR_MESSAGE "Power Mode initialization fail: %d\r\n", powerMode);
                 initFail = 7;
@@ -960,7 +962,7 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
     while(true)
     {
         if(_TCPIPStackNetIsPrimary(pNetIf))
-        {
+        {   // init primary interface
 #if defined(TCPIP_STACK_USE_EVENT_NOTIFICATION) && (TCPIP_STACK_USER_NOTIFICATION != 0)
             if(!TCPIP_Notification_Initialize(&pNetIf->registeredClients))
             {
@@ -980,8 +982,9 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
                     pNetIf->pMacConfig = configData = pConfig->configData;
                 }
             }
-            // init the MAC
-            {
+
+            if(stackCtrlData->powerMode == TCPIP_MAC_POWER_FULL)
+            {   // init the MAC
                 TCPIP_STACK_StacktoMacCtrl(&macCtrl, stackCtrlData);
                 TCPIP_MAC_INIT macInit =
                 {
@@ -999,17 +1002,17 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
                     netUpFail = 1;
                     break;
                 }
-            }
 
-            // open the MAC
-            pNetIf->hIfMac = (*pMacObj->TCPIP_MAC_Open)(pMacObj->macId, DRV_IO_INTENT_READWRITE);
-            if(pNetIf->hIfMac == DRV_HANDLE_INVALID)
-            {
-                pNetIf->hIfMac = 0;
-                pNetIf->macObjHandle = 0;
-                SYS_ERROR_PRINT(SYS_ERROR_ERROR, TCPIP_STACK_HDR_MESSAGE "%s MAC Open failed\r\n", pMacObj->macName);
-                netUpFail = 1;
-                break;
+                // open the MAC
+                pNetIf->hIfMac = (*pMacObj->TCPIP_MAC_Open)(pMacObj->macId, DRV_IO_INTENT_READWRITE);
+                if(pNetIf->hIfMac == DRV_HANDLE_INVALID)
+                {
+                    pNetIf->hIfMac = 0;
+                    pNetIf->macObjHandle = 0;
+                    SYS_ERROR_PRINT(SYS_ERROR_ERROR, TCPIP_STACK_HDR_MESSAGE "%s MAC Open failed\r\n", pMacObj->macName);
+                    netUpFail = 1;
+                    break;
+                }
             }
         }
 
@@ -1038,19 +1041,23 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
             pEntry++;
         }
 
-        if(!netUpFail && _TCPIPStackNetIsPrimary(pNetIf))
+        if(!netUpFail && pNetIf->hIfMac != 0)
         {
 #if defined(TCPIP_STACK_USE_EVENT_NOTIFICATION)
-
-            if(!(*pNetIf->pMacObj->TCPIP_MAC_EventMaskSet)(pNetIf->hIfMac, TCPIP_STACK_MAC_ALL_EVENTS, true))
+            if(_TCPIPStackNetIsPrimary(pNetIf))
             {
-                SYS_ERROR_PRINT(SYS_ERROR_ERROR, TCPIP_STACK_HDR_MESSAGE "%s MAC event notification setting failed\r\n", pNetIf->pMacObj->macName);
-                netUpFail = 1;
-                break;
+                if(!(*pNetIf->pMacObj->TCPIP_MAC_EventMaskSet)(pNetIf->hIfMac, TCPIP_STACK_MAC_ALL_EVENTS, true))
+                {
+                    SYS_ERROR_PRINT(SYS_ERROR_ERROR, TCPIP_STACK_HDR_MESSAGE "%s MAC event notification setting failed\r\n", pNetIf->pMacObj->macName);
+                    netUpFail = 1;
+                    break;
+                }
             }
 #endif  // defined(TCPIP_STACK_USE_EVENT_NOTIFICATION)
 
             // completed the MAC initialization
+            pNetIf->Flags.bMacInitialize = true;
+            pNetIf->Flags.bMacInitDone = false;
         }
 
         break;
@@ -1061,8 +1068,6 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
         return false;
     }
 
-    pNetIf->Flags.bMacInitialize = true;
-    pNetIf->Flags.bMacInitDone = false;
 
 #if (_TCPIP_STACK_ALIAS_INTERFACE_SUPPORT)
     TCPIP_NET_IF* pPriIf;
@@ -1128,7 +1133,7 @@ bool TCPIP_STACK_NetUp(TCPIP_NET_HANDLE netH, const TCPIP_NETWORK_CONFIG* pUsrCo
         }
 
         powerMode = TCPIP_Helper_StringToPowerMode(pUsrConfig->powerMode);
-        if(powerMode != TCPIP_MAC_POWER_FULL)
+        if(powerMode != TCPIP_MAC_POWER_FULL && powerMode != TCPIP_MAC_POWER_DOWN)
         {   
             SYS_ERROR_PRINT(SYS_ERROR_ERROR, TCPIP_STACK_HDR_MESSAGE "Power Mode initialization fail: %d\r\n", powerMode);
             return false;
@@ -1671,12 +1676,19 @@ static bool _TCPIPStackIsRunState(void)
         {
             pPriIf = _TCPIPStackNetGetPrimary(pNetIf);    // look at the primary initialization
 
-            if(pPriIf->Flags.bMacInitDone == 0)
+            if(pPriIf->Flags.powerMode == TCPIP_MAC_POWER_FULL)
             {
-                return false;  // not done
+                if(pPriIf->Flags.bMacInitDone == 0)
+                {
+                    return false;  // not done
+                }
+                else if(pPriIf->Flags.bInterfaceEnabled != 0)
+                {
+                    ifUpMask |= (1 << netIx);
+                }
             }
-            else if(pPriIf->Flags.bInterfaceEnabled != 0)
-            {
+            else
+            {   // done
                 ifUpMask |= (1 << netIx);
             }
         }
@@ -1740,7 +1752,7 @@ static void _TCPIPStackSetIfNumberName(void)
             TCPIP_NET_IF* pAliasIf;
             for(pAliasIf = _TCPIPStackNetGetAlias(pNetIf), aliasIx = 0; pAliasIf != 0; pAliasIf = _TCPIPStackNetGetAlias(pAliasIf), aliasIx++)
             {
-                snprintf(pAliasIf->ifName, sizeof(pAliasIf->ifName), "%s%d:%d", ifName, ifNumber[pNetIf->macType], aliasIx);
+                snprintf(pAliasIf->ifName, sizeof(pAliasIf->ifName), "%s%d:%d", ifName, ifNumber[pNetIf->macType], aliasIx % 10);
                 pAliasIf->ifName[sizeof(pAliasIf->ifName) - 1] = 0;
             }
 #endif  // (_TCPIP_STACK_ALIAS_INTERFACE_SUPPORT)
@@ -3413,7 +3425,7 @@ static bool _LoadNetworkConfig(const TCPIP_NETWORK_CONFIG* pUsrConfig, TCPIP_NET
 
     if(restartIf)
     {   // save old data that's still useful
-        strncpy(oldIfName, pNetIf->ifName, sizeof(pNetIf->ifName)); 
+        strncpy(oldIfName, pNetIf->ifName, sizeof(oldIfName) - 1); 
         pMacConfig = pNetIf->pMacConfig;
         netIfIx = pNetIf->netIfIx;
 #if (_TCPIP_STACK_ALIAS_INTERFACE_SUPPORT)
@@ -3523,7 +3535,7 @@ static bool _LoadNetworkConfig(const TCPIP_NETWORK_CONFIG* pUsrConfig, TCPIP_NET
     if(restartIf)
     {   
         // restore the if name
-        strncpy(pNetIf->ifName, oldIfName, sizeof(pNetIf->ifName)); 
+        memcpy(pNetIf->ifName, oldIfName, sizeof(pNetIf->ifName)); 
         // restore MAC config data
         pNetIf->pMacConfig = pMacConfig;
         pNetIf->netIfIx = netIfIx;

@@ -1540,7 +1540,7 @@ typedef enum
 /*  Link MTU per MAC Type
 
   Summary:
-    MTU size correspondig to the MAC types.
+    MTU size corresponding to the MAC types.
 
   Description:
     Lists the Maximum Transmission Unit corresponding to a MAC type.
@@ -1641,7 +1641,7 @@ typedef struct
     /*  packet free function */
     TCPIP_MAC_PKT_FreeF     pktFreeF;
 
-    /*  packet allocation function */
+    /*  packet acknowledge function */
     TCPIP_MAC_PKT_AckF      pktAckF;
 
     /* Synchronization object request function */

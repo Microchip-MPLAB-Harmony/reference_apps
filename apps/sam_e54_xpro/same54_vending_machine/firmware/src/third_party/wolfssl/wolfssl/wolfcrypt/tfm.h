@@ -70,7 +70,7 @@
       #define TFM_X86_64
    #endif
 #endif
-#if defined(TFM_X86_64)
+#if defined(TFM_X86_64) || defined(TFM_AARCH_64)
     #if !defined(FP_64BIT)
        #define FP_64BIT
     #endif
@@ -738,6 +738,7 @@ int  fp_sqr_comba64(fp_int *a, fp_int *b);
 #define mp_tohex(M, S)     mp_toradix((M), (S), MP_RADIX_HEX)
 
 MP_API int  mp_init (mp_int * a);
+MP_API int  mp_init_copy(fp_int * a, fp_int * b);
 MP_API void mp_clear (mp_int * a);
 MP_API void mp_free (mp_int * a);
 MP_API void mp_forcezero (mp_int * a);
@@ -808,7 +809,6 @@ MP_API int mp_radix_size (mp_int * a, int radix, int *size);
     MP_API int mp_montgomery_setup(fp_int *a, fp_digit *rho);
     MP_API int mp_div_2(fp_int * a, fp_int * b);
     MP_API int mp_div_2_mod_ct(mp_int *a, mp_int *b, mp_int *c);
-    MP_API int mp_init_copy(fp_int * a, fp_int * b);
 #endif
 
 #if defined(HAVE_ECC) || !defined(NO_RSA) || !defined(NO_DSA) || \
@@ -832,6 +832,7 @@ MP_API int  mp_lcm(fp_int *a, fp_int *b, fp_int *c);
 MP_API int  mp_rand_prime(mp_int* N, int len, WC_RNG* rng, void* heap);
 MP_API int  mp_exch(mp_int *a, mp_int *b);
 #endif /* WOLFSSL_KEY_GEN */
+MP_API int  mp_cond_swap_ct (mp_int * a, mp_int * b, int c, int m);
 
 MP_API int  mp_cnt_lsb(fp_int *a);
 MP_API int  mp_div_2d(fp_int *a, int b, fp_int *c, fp_int *d);
