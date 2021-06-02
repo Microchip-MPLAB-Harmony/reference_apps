@@ -4,8 +4,6 @@ parent: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II
 title: SD Card Player/Reader series
 nav_order: 1
 ---
-<img src = "images/microchip_logo.png">
-<img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SD Card Audio Player/Reader Application on PIC32MZ Embedded Connectivity with FPU Starter Kit + Multimedia Expansion Board II
 -----
@@ -52,12 +50,7 @@ available for purchase from Microchip Direct.
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
-- Connect the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit to the Host PC as a USB Device
-  through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port.
-- Connect the USB Type-A male to Micro-B male cable for SD card reader functionality
-- Insert Micro SD card containing audio files in waveform audio format (WAV)
-- Connect the wired stereo headphone to the audio jack
-<img src = "images/hardware_setup.png" width="700" height="525" align="middle">
+- Refer the Setup in individual application folder
 
 **Note:**
 It is not necessary to have an MPLAB Real ICE™ to program/debug the code. The PIC32MZ EF Starter Kit
