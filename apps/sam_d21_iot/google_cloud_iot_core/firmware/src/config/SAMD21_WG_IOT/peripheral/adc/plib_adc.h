@@ -104,6 +104,12 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold);
 
 void ADC_WindowModeSet(ADC_WINMODE mode);
 
+void ADC_InterruptsClear(ADC_STATUS interruptMask);
+
+void ADC_InterruptsEnable(ADC_STATUS interruptMask);
+
+void ADC_InterruptsDisable(ADC_STATUS interruptMask);
+
 
 bool ADC_ConversionStatusGet( void );
 

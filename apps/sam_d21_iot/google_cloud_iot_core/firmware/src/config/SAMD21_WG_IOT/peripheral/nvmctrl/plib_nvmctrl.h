@@ -61,29 +61,24 @@
 #endif
 
 // DOM-IGNORE-END
+// *****************************************************************************
+// *****************************************************************************
+// Section: Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
 
 #define NVMCTRL_FLASH_START_ADDRESS        (0x00000000U)
-#define NVMCTRL_FLASH_SIZE                 (0x40000U)
 #define NVMCTRL_FLASH_PAGESIZE             (64U)
 #define NVMCTRL_FLASH_ROWSIZE              (256U)
 
 
 
-typedef enum
-{
-    /* No error */
-    NVMCTRL_ERROR_NONE = 0x0,
+#define NVMCTRL_ERROR_NONE 0x0U
+#define NVMCTRL_ERROR_PROG 0x4U
+#define NVMCTRL_ERROR_LOCK 0x8U
+#define NVMCTRL_ERROR_NVM 0x10U
 
-    /* NVMCTRL invalid commands and/or bad keywords error */
-    NVMCTRL_ERROR_PROG = 0x4,
-
-    /* NVMCTRL lock error */
-    NVMCTRL_ERROR_LOCK = 0x8,
-
-    /* NVMCTRL programming or erase error */
-    NVMCTRL_ERROR_NVM = 0x10,
-
-} NVMCTRL_ERROR;
+typedef uint32_t NVMCTRL_ERROR;
 
 
 void NVMCTRL_Initialize(void);

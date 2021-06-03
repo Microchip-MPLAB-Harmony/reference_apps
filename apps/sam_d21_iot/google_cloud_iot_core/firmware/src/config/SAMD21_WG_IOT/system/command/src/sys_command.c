@@ -56,6 +56,7 @@
 #include "system/command/sys_command.h"
 #include "system/console/sys_console.h"
 #include "system/debug/sys_debug.h"
+#include "system/reset/sys_reset.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -95,13 +96,13 @@ typedef struct
 #define         LINE_TERM       "\r\n"          // line terminator
 #define         _promptStr      ">"             // prompt string
 
-// descriptor of the command I/O node 
+// descriptor of the command I/O node
 typedef struct SYS_CMD_IO_DCPT
 {
     SYS_CMD_DEVICE_NODE devNode;
     // internally maintained data
     struct SYS_CMD_IO_DCPT* next;   // linked list node
-    const struct _KEY_SEQ_DCPT* pSeqDcpt; // current escape sequence in progress 
+    const struct _KEY_SEQ_DCPT* pSeqDcpt; // current escape sequence in progress
     int16_t         seqChars;   // # of characters from the escape sequence
     char            seqBuff[VT100_MAX_ESC_SEQ_SIZE + 2];     // 0x1b + escape sequence + \0
     char*           cmdPnt; // current pointer
@@ -153,7 +154,7 @@ typedef void (*_keySeqProcess)(SYS_CMD_IO_DCPT* pCmdIO, const struct _KEY_SEQ_DC
 
 typedef struct _KEY_SEQ_DCPT
 {
-    char*           keyCode;    // pointer to the key code sequence
+    const char*     keyCode;    // pointer to the key code sequence
     _keySeqProcess  keyFnc;     // key processing functions
     int             keySize;    // # of characters in the sequence
 }KEY_SEQ_DCPT;
@@ -169,7 +170,7 @@ static void _keyEndProcess(SYS_CMD_IO_DCPT* pCmdIO, const KEY_SEQ_DCPT* pSeqDcpt
 // dummy table holding the escape sequences + expected sequence size
 // detection of a sequence is done using only the first 3 characters
 #define         VT100_DETECT_SEQ_SIZE    3
-static const KEY_SEQ_DCPT keySeqTbl[] = 
+static const KEY_SEQ_DCPT keySeqTbl[] =
 {
     // keyCode      keyFnc              keySize
     {"\x1b[A",      _keyUpProcess,      sizeof("\x1b[A") - 1},
@@ -188,8 +189,8 @@ static void     CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 static void     CommandQuit(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // command quit
 static void     CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // help
 
-static int      StringToArgs(char *pRawString, char *argv[]); // Convert string to argc & argv[]
-static bool     ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO);      // parse the command buffer
+static int      StringToArgs(char *str, char *argv[], size_t argvSize); 
+static void     ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO);      // parse the command buffer
 
 static void     DisplayNodeMsg(SYS_CMD_IO_DCPT* pCmdIO, histCmdNode* pNext);
 
@@ -344,7 +345,7 @@ bool SYS_CMD_Tasks(void)
 static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
 {
     char newCh;
-    int ix;
+    int ix, len;
     const KEY_SEQ_DCPT *pKeyDcpt, *pFoundSeq;
     const SYS_CMD_API* pCmdApi = pCmdIO->devNode.pCmdApi;
     const void* cmdIoParam = pCmdIO->devNode.cmdIoParam;
@@ -422,7 +423,6 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
         {
             if(pCmdIO->cmdEnd > pCmdIO->cmdPnt)
             {
-                int ix, len;
                 char* pSrc = pCmdIO->cmdPnt; // current
                 char* pDst = pCmdIO->cmdPnt - 1;
                 len = pCmdIO->cmdEnd - pSrc;
@@ -431,7 +431,7 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
                     *pDst++ = *pSrc++;
                 }
                 pCmdIO->cmdPnt--; pCmdIO->cmdEnd--;
-                // update the display; erase to the end of line(<ESC>[K) and move cursor backwards (<ESC>[{COUNT}D) 
+                // update the display; erase to the end of line(<ESC>[K) and move cursor backwards (<ESC>[{COUNT}D)
                 *pCmdIO->cmdEnd = '\0';
                 sprintf(pCmdIO->ctrlBuff, "\b\x1b[K%s\x1b[%dD", pCmdIO->cmdPnt, len);
                 (*pCmdApi->msg)(cmdIoParam, pCmdIO->ctrlBuff);
@@ -447,7 +447,6 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
     {   // delete
         if(pCmdIO->cmdEnd > pCmdIO->cmdPnt)
         {
-            int ix, len;
             char* pSrc = pCmdIO->cmdPnt + 1;
             char* pDst = pCmdIO->cmdPnt;
             len = pCmdIO->cmdEnd - pSrc;
@@ -456,7 +455,7 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
                 *pDst++ = *pSrc++;
             }
             pCmdIO->cmdEnd--;
-            // update the display; erase to the end of line(<ESC>[K) and move cursor backwards (<ESC>[{COUNT}D) 
+            // update the display; erase to the end of line(<ESC>[K) and move cursor backwards (<ESC>[{COUNT}D)
             *pCmdIO->cmdEnd = '\0';
             sprintf(pCmdIO->ctrlBuff, "\x1b[K%s\x1b[%dD", pCmdIO->cmdPnt, len);
             (*pCmdApi->msg)(cmdIoParam, pCmdIO->ctrlBuff);
@@ -469,7 +468,6 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
     }
     else if(pCmdIO->cmdEnd - pCmdIO->cmdBuff < sizeof(pCmdIO->cmdBuff) - 1)
     {   // valid char; insert and echo it back
-        int ix;
         int n_chars = pCmdIO->cmdEnd - pCmdIO->cmdPnt;  // existent chars
         if(n_chars != 0)
         {   // move the existing chars to the right, for insertion...
@@ -743,7 +741,7 @@ static void SendCommandCharacter(const void* cmdIoParam, char c)
 static int IsCommandReady(const void* cmdIoParam)
 {
     return (int)SYS_CONSOLE_ReadCountGet(_cmdInitData.consoleIndex);
-    }
+}
 
 static char GetCommandCharacter(const void* cmdIoParam)
 {
@@ -760,7 +758,7 @@ static void CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     const void* cmdIoParam = pCmdIO->cmdIoParam;
     (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** System Reboot ***\r\n" );
 
-   //  SYS_RESET_SoftwareReset();
+    SYS_RESET_SoftwareReset();
 
 }
 
@@ -857,11 +855,11 @@ static void CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 
 }
 
-static bool ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO)
+static void ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO)
 {
     int  argc = 0;
-    char *argv[MAX_CMD_ARGS + 1] = {0};
-    char saveCmd[SYS_CMD_MAX_LENGTH + 1]; 
+    char *argv[MAX_CMD_ARGS] = {0};
+    char saveCmd[SYS_CMD_MAX_LENGTH + 1];
     const void* cmdIoParam = pCmdIO->devNode.cmdIoParam;
 
     int            ix, grp_ix;
@@ -870,41 +868,51 @@ static bool ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO)
     strncpy(saveCmd, pCmdIO->cmdBuff, sizeof(saveCmd));     // make a copy of the command
 
     // parse a command string to *argv[]
-    argc = StringToArgs(saveCmd, argv);
+    argc = StringToArgs(saveCmd, argv, MAX_CMD_ARGS);
 
-    if(argc != 0)
-    {   // ok, there's smth here
+    if(argc > MAX_CMD_ARGS)
+    {
+        (*pCmdIO->devNode.pCmdApi->print)(cmdIoParam, "\n\r Too many arguments. Maximum args supported: %d!\r\n", MAX_CMD_ARGS);
+    }
+    else if(argc == 0)
+    {
+        (*pCmdIO->devNode.pCmdApi->msg)(cmdIoParam, " *** Command Processor: Please type in a command***" LINE_TERM);
+    }
+    else
+    {
+        if(argc > 0)
+        {   // ok, there's smth here
+            // add it to the history list
+            histCmdNode* pN = CmdRemoveTail(&pCmdIO->histList);
+            strncpy(pN->cmdBuff, pCmdIO->cmdBuff, sizeof(saveCmd)); // Need save non-parsed string
+            CmdAddHead(&pCmdIO->histList, pN);
+            pCmdIO->currHistN = 0;
 
-        // add it to the history list
-        histCmdNode* pN = CmdRemoveTail(&pCmdIO->histList);
-        strncpy(pN->cmdBuff, pCmdIO->cmdBuff, sizeof(saveCmd)); // Need save non-parsed string
-        CmdAddHead(&pCmdIO->histList, pN);
-        pCmdIO->currHistN = 0;
-
-        // try built-in commands first
-        for(ix = 0, pDcpt = _builtinCmdTbl; ix < sizeof(_builtinCmdTbl)/sizeof(*_builtinCmdTbl); ix++, pDcpt++)
-        {
-            if(!strcmp(argv[0], pDcpt->cmdStr))
-            {   // command found
-                (*pDcpt->cmdFnc)(&pCmdIO->devNode, argc, argv);     // call command handler
-                return true;
-            }
-        }
-        // search user commands
-        for (grp_ix=0; grp_ix < MAX_CMD_GROUP; grp_ix++)
-        {
-            if (_usrCmdTbl[grp_ix].pCmd == 0)
-            {
-               continue;
-            }
-
-            for(ix = 0, pDcpt = _usrCmdTbl[grp_ix].pCmd; ix < _usrCmdTbl[grp_ix].nCmds; ix++, pDcpt++)
+            // try built-in commands first
+            for(ix = 0, pDcpt = _builtinCmdTbl; ix < sizeof(_builtinCmdTbl)/sizeof(*_builtinCmdTbl); ix++, pDcpt++)
             {
                 if(!strcmp(argv[0], pDcpt->cmdStr))
+                {   // command found
+                    (*pDcpt->cmdFnc)(&pCmdIO->devNode, argc, argv);     // call command handler
+                    return;
+                }
+            }
+            // search user commands
+            for (grp_ix=0; grp_ix < MAX_CMD_GROUP; grp_ix++)
+            {
+                if (_usrCmdTbl[grp_ix].pCmd == 0)
                 {
-                    // command found
-                    (*pDcpt->cmdFnc)(&pCmdIO->devNode, argc, argv);
-                    return true;
+                    continue;
+                }
+
+                for(ix = 0, pDcpt = _usrCmdTbl[grp_ix].pCmd; ix < _usrCmdTbl[grp_ix].nCmds; ix++, pDcpt++)
+                {
+                    if(!strcmp(argv[0], pDcpt->cmdStr))
+                    {
+                        // command found
+                        (*pDcpt->cmdFnc)(&pCmdIO->devNode, argc, argv);
+                        return;
+                    }
                 }
             }
         }
@@ -912,67 +920,71 @@ static bool ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO)
         // command not found
         (*pCmdIO->devNode.pCmdApi->msg)(cmdIoParam, " *** Command Processor: unknown command. ***\r\n");
     }
-    else
-    {
-        (*pCmdIO->devNode.pCmdApi->msg)(cmdIoParam, " *** Command Processor: Please type in a command***" LINE_TERM);
-    }
-
-    return false;
 }
 
 /*
-  parse a string into '*argv[]', delimitor is space or tab
-  param pRawString, the whole line of command string
-  param argv, parsed argument string array
-  return number of parsed argument
+  parse a string into '*argv[]' tokens
+  token delimitor is space, tab or comma
+  parts within quotes (") are parsed as a single token
+  return number of parsed tokens
+  < 0 if error
 */
-static int StringToArgs(char *pRawString, char *argv[]) {
-  int argc = 0, i = 0, strsize = 0;
+static int StringToArgs(char *str, char *argv[], size_t argvSize) 
+{
+    char* pTkn;
+    char* qStart, *qEnd;   // special char '"' starting position;  
+    int nArgs = 0;
+    
+    while(str)
+    {
+        qStart = strchr(str, '"');
+        if(qStart != 0)
+        {
+            *qStart = 0;
+        }
 
-  if(pRawString == NULL)
-    return 0;
+        // parse until quote
+        while((pTkn = strtok(str, " \t,")) != 0)
+        {
+            str = 0;
+            if(nArgs < argvSize)
+            {
+                argv[nArgs] = pTkn;
+            }
+            nArgs++;
+        }
 
-  strsize = strlen(pRawString);
+        if(qStart == 0)
+        {   // done
+            break;
+        }
 
-  while(argc < MAX_CMD_ARGS) {
+        // get end quote
+        qStart++;
+        qEnd = strchr(qStart, '"');
+        if(qEnd == 0 || qEnd - qStart == 0)
+        {   // no matching quote end or empty string within quotes
+            return -1;
+        }
+        *qEnd = 0;
+        if(nArgs < argvSize)
+        {
+            argv[nArgs] = qStart;
+        }
+        nArgs++;
 
-    // skip white space characters of string head
-    while ((*pRawString == ' ') || (*pRawString == '\t')) {
-      ++pRawString;
-      if (++i >= strsize) {
-        return (argc);
-      }
+        // continue parsing
+        str = qEnd + 1;
     }
 
-    if (*pRawString == '\0') {
-      argv[argc] = NULL;
-      return (argc);
-    }
 
-    argv[argc++] = pRawString;
-
-    // find end of string
-    while (*pRawString && (*pRawString != ' ') && (*pRawString != '\t')) {
-      ++pRawString;
-    }
-
-    if (*pRawString == '\0') {
-    argv[argc] = NULL;
-    return (argc);
-    }
-
-    *pRawString++ = '\0';
-  }
-
-  SYS_CONSOLE_Print(_cmdInitData.consoleIndex, "\n\r Too many arguments. Maximum argus supported is %d!\r\n", MAX_CMD_ARGS);
-
-  return (0);
+    return nArgs;
 }
 
 static void _keyUpProcess(SYS_CMD_IO_DCPT* pCmdIO, const KEY_SEQ_DCPT* pSeqDcpt)
 {   // up arrow
     histCmdNode *pNext;
-    
+
     if(pCmdIO->currHistN)
     {
         pNext = pCmdIO->currHistN->next;
@@ -1046,7 +1058,7 @@ static void _keyEndProcess(SYS_CMD_IO_DCPT* pCmdIO, const KEY_SEQ_DCPT* pSeqDcpt
 {   // end key
     const SYS_CMD_API* pCmdApi = pCmdIO->devNode.pCmdApi;
     const void* cmdIoParam = pCmdIO->devNode.cmdIoParam;
-    
+
     int nChars = pCmdIO->cmdEnd - pCmdIO->cmdPnt;
     if(nChars)
     {

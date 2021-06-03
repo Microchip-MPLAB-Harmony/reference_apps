@@ -154,45 +154,32 @@ static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
 //    const void* cmdIoParam = pCmdIO->cmdIoParam;
     char *credentials[3];
-    char *pch;
+//    char *pch;
     uint8_t params = 0;
 	uint8_t i,j;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
     char dummy_ssid[100];
     uint8_t dummy_argc = 0;
-    
-    for(j=1;j<argc;j++){
-      
-        sprintf(&dummy_ssid[dummy_argc],"%s ",argv[j]);
-        dummy_argc += strlen(argv[j])+1;
-    }      
-    
-    for(i=0;i<=2;i++)credentials[i]='\0';
 
-    pch = strtok (&dummy_ssid[0], ",");
-    credentials[0]=pch;
-       
-    while (pch != NULL && params <= 2)
+     for(i=0;i<=2;i++)credentials[i]='\0';
+    if(argc >4 )
     {
-        credentials[params] = pch;
-        params++;
-        pch = strtok (NULL, ",");
-
-    }
-    
-    if(credentials[0]!=NULL)
-    {
-        if(credentials[1]==NULL && credentials[2]==NULL) params=1;
-        else if(credentials[1]!= NULL && credentials[2]== NULL)
-        {
-            params=atoi(credentials[1]);//Resuse the same variable to store the auth type
-            if (params==2 || params==3)params=5;
-            else if(params==1);
-            else params=2;
+        for(j=1;j<=(argc-3);j++){
+          sprintf(&dummy_ssid[dummy_argc],"%s ",argv[j]); 
+          dummy_argc += strlen(argv[j])+1;
         }
-		else params = atoi(credentials[2]);		
+        credentials[0] = dummy_ssid;
+        credentials[1] = argv[argc - 2];
+        credentials[2] = argv[argc - 1];
+        params = atoi(credentials[2]);
+        
+    }else{
+        credentials[0] = argv[1];
+        credentials[1] = argv[2];
+        credentials[2] = argv[3];
+        params = atoi(credentials[2]);
     }
-
+  
     switch (params)
     {
         case WIFI_PARAMS_OPEN:

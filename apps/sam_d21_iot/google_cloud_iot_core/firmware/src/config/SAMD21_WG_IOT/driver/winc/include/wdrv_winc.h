@@ -85,7 +85,12 @@
 #include "wdrv_winc_sta.h"
 #include "wdrv_winc_wps.h"
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
+#include "wdrv_winc_socket.h"
 #include "wdrv_winc_ssl.h"
+#else
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+#include "tcpip/src/link_list.h"
+#endif
 #endif
 #ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
 #include "wdrv_winc_host_file.h"
@@ -103,6 +108,8 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#define WDRV_WINC_NUM_ASSOCS    1
+        
 // *****************************************************************************
 /*  Firmware Version Information
 
@@ -228,102 +235,7 @@ typedef enum
     WDRV_WINC_OP_MODE_PROV_AP
 } WDRV_WINC_OP_MODE;
 
-#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-// *****************************************************************************
-/*  ICMP Echo Status Codes
-
-  Summary:
-    Defines the ICMP echo status codes.
-
-  Description:
-    This enumeration defines the ICMP status supplied by the ICMP echo response
-    callback.
-
-  Remarks:
-    This is only defined for use with the WINC in socket mode.
-*/
-
-typedef enum
-{
-    /* The operation completed successfully. */
-    WDRV_WINC_ICMP_ECHO_STATUS_SUCCESS = 0,
-
-    /* ICMP destination unreachable. */
-    WDRV_WINC_ICMP_ECHO_STATUS_UNREACH = 1,
-
-    /* The operation timed out. */
-    WDRV_WINC_ICMP_ECHO_STATUS_TIMEOUT = 2
-} WDRV_WINC_ICMP_ECHO_STATUS;
-#endif
-
-#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-// *****************************************************************************
-/* DHCP Address Event Handler Function Pointer
-
-  Summary:
-    Pointer to a DHCP address event handler function.
-
-  Description:
-    This data type defines a function event handler to receive notification
-    of allocation of IP address via DHCP.
-
-  Parameters:
-    handle      - Client handle obtained by a call to WDRV_WINC_Open.
-    ipAddress   - IPv4 address.
-
-  Returns:
-    None.
-
-  Remarks:
-    Only supported with the socket mode WINC driver.
-
-    See WDRV_WINC_IPSetUseDHCP and WDRV_WINC_IPDHCPServerConfigure.
-*/
-
-typedef void (*WDRV_WINC_DHCP_ADDRESS_EVENT_HANDLER)
-(
-    DRV_HANDLE handle,
-    uint32_t ipAddress
-);
-
-// *****************************************************************************
-/* ICMP Echo Response Event Handler Function Pointer
-
-  Summary:
-    Pointer to an ICMP echo response event handler function.
-
-  Description:
-    This data type defines a function event handler which is
-    called in response to an ICMP echo request response event.
-
-  Parameters:
-    handle      - Client handle obtained by a call to WDRV_WINC_Open.
-    ipAddress   - IPv4 address.
-    rtt         - The round-trip time.
-    statusCode  - Status code.
-
-  Returns:
-    None.
-
-  Remarks:
-    Only supported with the socket mode WINC driver.
-
-    The status code indicates if the ICMP echo request was successful or not.
-    It may take the form of either:
-
-        PING_ERR_SUCCESS        - The request was successful.
-        PING_ERR_DEST_UNREACH   - The destination was unreachable.
-        PING_ERR_TIMEOUT        - The request timed out.
-*/
-
-typedef void (*WDRV_WINC_ICMP_ECHO_RSP_EVENT_HANDLER)
-(
-    DRV_HANDLE handle,
-    uint32_t ipAddress,
-    uint32_t rtt,
-    WDRV_WINC_ICMP_ECHO_STATUS statusCode
-);
-#else
+#ifndef WDRV_WINC_NETWORK_MODE_SOCKET
 // *****************************************************************************
 /*  Ethernet Message Received Callback
 
@@ -362,6 +274,27 @@ typedef void (*WDRV_WINC_ETH_MSG_RECV_CALLBACK)
 #endif
 
 // *****************************************************************************
+// *****************************************************************************
+// Section: WINC MAC Driver Data Types
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/*  Multicast Filter Size
+
+  Summary:
+    Size of multicast filter
+
+  Description:
+    Number of elements in the multicast filter.
+
+  Remarks:
+    None.
+*/
+
+#define MULTICAST_FILTER_SIZE   16
+
+// *****************************************************************************
 /*  WINC Driver Descriptor
 
   Summary:
@@ -377,22 +310,19 @@ typedef void (*WDRV_WINC_ETH_MSG_RECV_CALLBACK)
 
 typedef struct
 {
-    /* Flag indicating if the driver has been initialized. */
-    bool isInit;
-
-    /* Driver status which can be queried via WDRV_WINC_Status. */
-    SYS_STATUS sysStat;
+    /* Primary driver handle. */
+    DRV_HANDLE handle;
 
     /* Intent used to open driver. */
     DRV_IO_INTENT intent;
 
-    /* Flag indicating if this instance of the driver has been opened by
-        a call to WDRV_WINC_Open. */
-    bool isOpen;
-
     /* Flag indicating if this instance is operating as s station or soft-AP. */
     bool isAP;
 
+#ifdef WDRV_WINC_DEVICE_WINC3400
+    /* Flag indicating if BLE cortex has booted. */
+    bool isBLEInitStarted;
+#endif
     /* Flag indicating if this instance is a provisioning Soft-AP. */
     bool isProvisioning;
 
@@ -512,14 +442,14 @@ typedef struct
     WDRV_WINC_HTTPPROV_INFO_CALLBACK pfProvConnectInfoCB;
 
     /* Callback to use for events relating to firmware update downloads. */
-    WDRV_WINC_STATUS_CALLBACK pfOTADownloadStatusCB;
+    WDRV_WINC_OTA_STATUS_CALLBACK pfOTADownloadStatusCB;
 
     /* Callback to use for events relating to firmware switching. */
-    WDRV_WINC_STATUS_CALLBACK pfSwitchFirmwareStatusCB;
+    WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB;
 
     /* Callback to use for SSL cipher suite confirmation. */
     WDRV_WINC_SSL_CIPHERSUITELIST_CALLBACK pfSSLCipherSuiteListCB;
-    
+
     /* Callback to use for SSL cipher suite confirmation. */
     WDRV_WINC_SSL_REQ_ECC_CALLBACK pfSSLReqECCCB;
 #else
@@ -541,14 +471,104 @@ typedef struct
 
     WDRV_WINC_HOST_FILE_STATUS_CALLBACK pfHostFileCB;
 #endif
+    /* Semaphore for driver events. */
+    OSAL_SEM_HANDLE_TYPE drvEventSemaphore;
+} WDRV_WINC_CTRLDCPT;
 
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+// *****************************************************************************
+/*  WINC MAC Driver Descriptor
 
-    /* Semaphore for ISR to signal foreground. */
-    OSAL_SEM_HANDLE_TYPE isrSemaphore;
-    
-    /* Mutex for event process. */
-    OSAL_MUTEX_HANDLE_TYPE eventProcessMutex;
- 
+  Summary:
+    Driver descriptor for the WINC MAC driver.
+
+  Description:
+    Structure containing the system level descriptor for the WINC driver.
+    This structure is initialized by a call to WDRV_WINC_Initialize.
+
+  Remarks:
+    None.
+*/
+
+typedef struct
+{
+    /* Primary driver handle. */
+    DRV_HANDLE handle;
+
+    /* Linked list of receive Ethernet packets. */
+    PROTECTED_SINGLE_LIST ethRxPktList;
+
+    /* Multicast filter list. */
+    TCPIP_MAC_ADDR multicastFilterList[MULTICAST_FILTER_SIZE];
+
+    /* Access semaphore to protect access to multicast filter list. */
+    OSAL_SEM_HANDLE_TYPE multicastFilterListSemaphore;
+
+    /* Event function pointer for signalling TCP/IP stack. */
+    TCPIP_MAC_EventF eventF;
+
+    /*  Packet allocation function */
+    TCPIP_MAC_PKT_AllocF pktAllocF;
+
+    /*  Packet free function */
+    TCPIP_MAC_PKT_FreeF pktFreeF;
+
+    /*  Packet allocation function */
+    TCPIP_MAC_PKT_AckF pktAckF;
+
+    /* Event function parameters to pass to TCP/IP stack. */
+    const void *eventParam;
+
+    /* Mask of currently enabled events to signal. */
+    TCPIP_MAC_EVENT eventMask;
+
+    /* Current events to be signalled to stack. */
+    TCPIP_MAC_EVENT events;
+
+    /* Access semaphore to protect updates to event state. */
+    OSAL_SEM_HANDLE_TYPE eventSemaphore;
+
+    /* Current receive Ethernet packet. */
+    TCPIP_MAC_PACKET *pCurRxPacket;
+
+    /* Access semaphore to protect updates to current receive Ethernet packet. */
+    OSAL_SEM_HANDLE_TYPE curRxPacketSemaphore;
+} WDRV_WINC_MACDCPT;
+#endif
+
+// *****************************************************************************
+/*  PIC32MZW Driver Descriptor
+
+  Summary:
+    The defines the PIC32MZW driver descriptor.
+
+  Description:
+    This data type defines the system level descriptor for the PIC32MZW driver.
+    This structure is initialized by a call to WDRV_PIC32MZW_Initialize.
+
+  Remarks:
+    None.
+*/
+
+typedef struct _WDRV_WINC_DCPT
+{
+    /* Flag indicating if the driver has been initialized. */
+    bool isInit;
+
+    /* Driver status which can be queried via WDRV_WINC_Status. */
+    SYS_STATUS sysStat;
+
+    /* Flag indicating if this instance of the driver has been opened by
+        a call to WDRV_WINC_Open. */
+    bool isOpen;
+
+    /* Pointer to instance specific descriptor (Control). */
+    WDRV_WINC_CTRLDCPT  *pCtrl;
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+    /* Pointer to instance specific descriptor (MAC). */
+    WDRV_WINC_MACDCPT   *pMac;
+#endif
 } WDRV_WINC_DCPT;
 
 // *****************************************************************************
@@ -587,7 +607,11 @@ typedef struct
 
  */
 
+#ifndef WDRV_WINC_DEVICE_USE_SYS_DEBUG
 void WDRV_WINC_DebugRegisterCallback(WDRV_WINC_DEBUG_PRINT_CALLBACK const pfDebugPrintCallback);
+#else
+#define WDRV_WINC_DebugRegisterCallback(...)
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -1107,6 +1131,50 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDeviceNameSet
 
 #ifdef WDRV_WINC_DEVICE_MULTI_GAIN_TABLE
 WDRV_WINC_STATUS WDRV_WINC_GainTableIndexSet(DRV_HANDLE handle, uint8_t index);
+#endif
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_AutoRateSelectRate
+    (
+        DRV_HANDLE handle,
+        bool autoSel,
+        WDRV_WINC_DATA_RATE rate
+    )
+
+  Summary:
+    Sets the auto rate transmit rate.
+
+  Description:
+    Sets the auto rate transmit rate.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle  - Client handle obtained by a call to WDRV_WINC_Open.
+    autoSel - Flag indicating auto rate selection.
+    rate    - Required data rate.
+
+  Returns:
+    WDRV_WINC_STATUS_OK             - The rate has been set.
+    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+
+  Remarks:
+    If autoSel is true then the requested rate is used for the initial data rate
+      after association only, the WINC then manages the data rate.
+
+    If autoSel is false then the requested rate (or nearest supported) is used
+      for all data transmission.
+
+*/
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+WDRV_WINC_STATUS WDRV_WINC_AutoRateSelectTransmitRate(DRV_HANDLE handle, bool autoSel, WDRV_WINC_DATA_RATE rate);
 #endif
 
 // DOM-IGNORE-BEGIN

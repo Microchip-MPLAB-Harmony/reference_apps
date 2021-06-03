@@ -84,8 +84,7 @@ static void APP_WiFiConnectionStateChanged(uint8_t status);
 static void APP_ProvisionRespCb(DRV_HANDLE handle, WDRV_WINC_SSID * targetSSID, WDRV_WINC_AUTH_CONTEXT * authCtx, bool status);
 static void APP_DHCPAddressEventCb(DRV_HANDLE handle, uint32_t ipAddress);
 static void APP_GetTimeNotifyCb(DRV_HANDLE handle, uint32_t timeUTC);
-static void APP_ConnectNotifyCb(DRV_HANDLE handle, WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode);
-
+static void APP_ConnectNotifyCb(DRV_HANDLE handle,WDRV_WINC_ASSOC_HANDLE assochandle, WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode);
 
 
 // *****************************************************************************
@@ -238,7 +237,7 @@ void APP_Initialize(void)
 #endif
 }
 
-static void APP_ConnectNotifyCb(DRV_HANDLE handle, WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode)
+static void APP_ConnectNotifyCb(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE assochandle,WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode)
 {
     if (WDRV_WINC_CONN_STATE_CONNECTED == currentState)
     {
@@ -353,7 +352,7 @@ void APP_Tasks(void)
             m2m_wifi_configure_sntp((uint8_t *)GOOGLE_NTP_HOSTNAME, strlen(GOOGLE_NTP_HOSTNAME), SNTP_ENABLE_DHCP);
             m2m_wifi_enable_sntp(1); 
             WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)wdrvHandle;
-            pDcpt->pfProvConnectInfoCB = APP_ProvisionRespCb;
+            pDcpt->pCtrl->pfProvConnectInfoCB = APP_ProvisionRespCb;
             wifi_init(APP_WiFiConnectionStateChanged, mode);
 
             if (mode == WIFI_DEFAULT) {

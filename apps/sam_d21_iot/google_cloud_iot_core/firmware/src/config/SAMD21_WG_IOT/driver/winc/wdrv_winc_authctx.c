@@ -105,6 +105,34 @@ typedef struct
 } PKCS1_RSA_PRIVATE_KEY;
 
 // *****************************************************************************
+/*  Map RSA private key indexes to offsets
+
+  Summary:
+    Table to map index of key elements to offsets within structure.
+
+  Description:
+    Table to map index of key elements to offsets within structure.
+
+  Remarks:
+    None.
+*/
+
+#ifdef WDRV_WINC_DEVICE_ENTERPRISE_CONNECT
+static const int rsaPriKeyMap[] = {
+    offsetof(PKCS1_RSA_PRIVATE_KEY, version),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, modulus),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, publicExponent),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, privateExponent),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, prime1),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, prime2),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, exponent1),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, exponent2),
+    offsetof(PKCS1_RSA_PRIVATE_KEY, coefficient),
+    -1
+};
+#endif
+
+// *****************************************************************************
 // *****************************************************************************
 // Section: WINC Driver Authentication Context Implementation
 // *****************************************************************************
@@ -115,9 +143,23 @@ static int asn1DecodeTag(const uint8_t *pASN1, uint8_t *pTag, uint32_t *pLength,
                                                     const uint8_t **pContents)
 {
     int numTagBytes;
+    uint32_t localLength;
+
+    if (NULL == pASN1)
+    {
+        return 0;
+    }
+
+    if (NULL == pLength)
+    {
+        pLength = &localLength;
+    }
 
     if (NULL != pTag)
+    {
         *pTag = *pASN1;
+    }
+
     pASN1++;
     numTagBytes = 1;
 
@@ -130,17 +172,10 @@ static int asn1DecodeTag(const uint8_t *pASN1, uint8_t *pTag, uint32_t *pLength,
         pASN1++;
         numTagBytes += (1+numLenBytes);
 
-        if (NULL != pLength)
+        *pLength = 0;
+        while(numLenBytes--)
         {
-            *pLength = 0;
-            while(numLenBytes--)
-            {
-                *pLength = (*pLength << 8) | *pASN1++;
-            }
-        }
-        else
-        {
-            pASN1 += numLenBytes;
+            *pLength = (*pLength << 8) | *pASN1++;
         }
     }
     else
@@ -159,14 +194,15 @@ static int asn1DecodeTag(const uint8_t *pASN1, uint8_t *pTag, uint32_t *pLength,
     return numTagBytes;
 }
 
-static void PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
+static bool PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
                                         PKCS1_RSA_PRIVATE_KEY * const pPrivateKey)
 {
     uint8_t tagID;
     uint32_t tagLength;
     const uint8_t *pTagContents;
     int numTagBytes;
-    int tagIndex = 0;
+    const int *pAddrOffset;
+    ADDR_LENGTH *pPriKeyTag;
 
 /*
     RSAPrivateKey ::= SEQUENCE {
@@ -185,7 +221,7 @@ static void PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
 
     if ((NULL == pKey) || (NULL == pPrivateKey))
     {
-        return;
+        return false;
     }
 
     memset(pPrivateKey, 0, sizeof(PKCS1_RSA_PRIVATE_KEY));
@@ -195,11 +231,17 @@ static void PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
     if (ASN1_TAG_SEQUENCE != tagID)
     {
         // Not SEQUENCE
-        return;
+        return false;
+    }
+
+    if ((int)keyLength < numTagBytes)
+    {
+        return false;
     }
 
     pKey = pTagContents;
     keyLength = tagLength;
+    pAddrOffset = rsaPriKeyMap;
 
     do
     {
@@ -214,70 +256,13 @@ static void PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
                 tagLength--;
             }
 
-            switch (tagIndex++)
+            if (*pAddrOffset >= 0)
             {
-                case 0:
-                {
-                    pPrivateKey->version.pAddress = pTagContents;
-                    pPrivateKey->version.length   = tagLength;
-                    break;
-                }
+                pPriKeyTag = (ADDR_LENGTH*)&((uint8_t*)pPrivateKey)[*pAddrOffset];
+                pAddrOffset++;
 
-                case 1:
-                {
-                    pPrivateKey->modulus.pAddress = pTagContents;
-                    pPrivateKey->modulus.length   = tagLength;
-                    break;
-                }
-
-                case 2:
-                {
-                    pPrivateKey->publicExponent.pAddress = pTagContents;
-                    pPrivateKey->publicExponent.length   = tagLength;
-                    break;
-                }
-
-                case 3:
-                {
-                    pPrivateKey->privateExponent.pAddress = pTagContents;
-                    pPrivateKey->privateExponent.length   = tagLength;
-                    break;
-                }
-
-                case 4:
-                {
-                    pPrivateKey->prime1.pAddress = pTagContents;
-                    pPrivateKey->prime1.length   = tagLength;
-                    break;
-                }
-
-                case 5:
-                {
-                    pPrivateKey->prime2.pAddress = pTagContents;
-                    pPrivateKey->prime2.length   = tagLength;
-                    break;
-                }
-
-                case 6:
-                {
-                    pPrivateKey->exponent1.pAddress = pTagContents;
-                    pPrivateKey->exponent1.length   = tagLength;
-                    break;
-                }
-
-                case 7:
-                {
-                    pPrivateKey->exponent2.pAddress = pTagContents;
-                    pPrivateKey->exponent2.length   = tagLength;
-                    break;
-                }
-
-                case 8:
-                {
-                    pPrivateKey->coefficient.pAddress = pTagContents;
-                    pPrivateKey->coefficient.length   = tagLength;
-                    break;
-                }
+                pPriKeyTag->pAddress  = pTagContents;
+                pPriKeyTag->length    = tagLength;
             }
         }
 
@@ -285,8 +270,67 @@ static void PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
         keyLength -= numTagBytes;
     }
     while(keyLength);
+
+    return true;
 }
 #endif
+
+//*******************************************************************************
+/*
+  Function:
+    bool _DRV_WINC_WEPKeyIsValid
+    (
+        uint8_t idx,
+        uint8_t *const pKey,
+        uint8_t size
+    )
+
+  Summary:
+    Checks if WEP key is valid.
+
+  Description:
+    Determines if the WEP key, index and size are valid.
+
+  Precondition:
+    None.
+
+  Parameters:
+    idx  - Key index.
+    pKey - Pointer to key.
+    size - Size of key.
+
+  Returns:
+    true or false indicating if WEP key information is valid.
+
+*/
+
+static bool _DRV_WINC_WEPKeyIsValid
+(
+    uint8_t idx,
+    uint8_t *const pKey,
+    uint8_t size
+)
+{
+    /* Check index. Index values 1-4 is only allowed*/
+    if ((idx < 1) || (idx > 4))
+    {
+        return false;
+    }
+    /* Check key. */
+    if (NULL == pKey)
+    {
+        return false;
+    }
+    /* Check size. */
+    if (
+            (WDRV_WINC_WEP_40_KEY_STRING_SIZE != size)
+        &&  (WDRV_WINC_WEP_104_KEY_STRING_SIZE != size)
+    )
+    {
+        return false;
+    }
+    return true;
+}
 
 //*******************************************************************************
 /*
@@ -329,10 +373,11 @@ bool WDRV_WINC_AuthCtxIsValid(const WDRV_WINC_AUTH_CONTEXT *const pAuthCtx)
         /* Check WEP authentication. */
         case WDRV_WINC_AUTH_TYPE_WEP:
         {
-            /* Ensure WEP index and key size is valid. */
-            if ((pAuthCtx->authInfo.WEP.idx > 4) ||
-               (  (WEP_40_KEY_STRING_SIZE != pAuthCtx->authInfo.WEP.size) &&
-                  (WEP_104_KEY_STRING_SIZE != pAuthCtx->authInfo.WEP.size)))
+            if (false == _DRV_WINC_WEPKeyIsValid(
+                    pAuthCtx->authInfo.WEP.idx,
+                    (uint8_t *const)(pAuthCtx->authInfo.WEP.key),
+                    pAuthCtx->authInfo.WEP.size
+            ))
             {
                 return false;
             }
@@ -345,9 +390,9 @@ bool WDRV_WINC_AuthCtxIsValid(const WDRV_WINC_AUTH_CONTEXT *const pAuthCtx)
             break;
         }
 
-        /* Unknown authentication scheme. */
         default:
         {
+            /* Unknown authentication scheme. */
             return false;
         }
     }
@@ -460,15 +505,13 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWEP
 )
 {
     /* Ensure authentication context is valid. */
-    if (NULL == pAuthCtx)
+    if ((NULL == pAuthCtx) || (NULL == pKey))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
 
-    /* Ensure the index and key size are valid. */
-    if ((idx > 4) ||
-        ((WEP_40_KEY_STRING_SIZE != size) && (WEP_104_KEY_STRING_SIZE != size))
-        || (NULL == pKey))
+    /* Ensure the index and key are valid. */
+    if (false == _DRV_WINC_WEPKeyIsValid(idx, pKey, size))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -523,7 +566,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWPA
     }
 
     /* Ensure the key size is correct and the key was provided. */
-    if ((size >= M2M_MAX_PSK_LEN) || (NULL == pPSK))
+    if ((size > WDRV_WINC_PSK_LEN) || (NULL == pPSK))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -532,7 +575,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWPA
     pAuthCtx->authType = WDRV_WINC_AUTH_TYPE_WPA_PSK;
 
     /* Copy the key and zero out unused parts of the buffer. */
-    memset(&pAuthCtx->authInfo.WPAPerPSK.key, 0, M2M_MAX_PSK_LEN);
+    memset(&pAuthCtx->authInfo.WPAPerPSK.key, 0, WDRV_WINC_PSK_LEN+1);
     memcpy(&pAuthCtx->authInfo.WPAPerPSK.key, pPSK, size);
     pAuthCtx->authInfo.WPAPerPSK.size = size;
 
@@ -668,7 +711,10 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWPAEnterpriseTLS
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
 
-    PKCS1_ParseRSAPrivateKeyDER(pPrivateKey, privateKeyLength, &privateKey);
+    if (false == PKCS1_ParseRSAPrivateKeyDER(pPrivateKey, privateKeyLength, &privateKey))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
 
     /* Set authentication type to WPA. */
     pAuthCtx->authType = WDRV_WINC_AUTH_TYPE_802_1X_TLS;

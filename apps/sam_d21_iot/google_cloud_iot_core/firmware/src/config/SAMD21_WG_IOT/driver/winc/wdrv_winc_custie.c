@@ -136,7 +136,7 @@ WDRV_WINC_STATUS WDRV_WINC_CustIEStoreCtxAddIE
     uint8_t dataOffset;
 
     /* Ensure the storage context is valid. */
-    if (NULL == pCustIECtx)
+    if ((NULL == pCustIECtx) || (NULL == pData))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }

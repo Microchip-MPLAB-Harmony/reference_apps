@@ -1,2034 +1,2328 @@
 files:
 - generatedChecksum: 9D9015C26BCFC4AD97314B4C148F90C0
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: ATECC608_0.c
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9D9015C26BCFC4AD97314B4C148F90C0
 - generatedChecksum: null
   logicalPath: ''
   name: app.c
-  physicalPath: ..\..
+  physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: CF70E7026CD5128284BCC060BC27B2D6
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+- generatedChecksum: 182D1D052B42C2314AEDD8835F4A3E4F
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_basic.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CF70E7026CD5128284BCC060BC27B2D6
-- generatedChecksum: D14D1E6E14FBF6FD9DACF1DBF01062DD
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  userChecksum: 182D1D052B42C2314AEDD8835F4A3E4F
+- generatedChecksum: 6E4CBB332534E51810441984EF645DCC
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_basic.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D14D1E6E14FBF6FD9DACF1DBF01062DD
+  userChecksum: 6E4CBB332534E51810441984EF645DCC
 - generatedChecksum: 7A3C7433D5B1A51B74A8924E342D644E
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_bool.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7A3C7433D5B1A51B74A8924E342D644E
 - generatedChecksum: 48C0047FA7FB30A7861778876B5071DF
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_cfgs.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 48C0047FA7FB30A7861778876B5071DF
 - generatedChecksum: F0BFA9CA8C736ED732A529954EBB4CAE
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_cfgs.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: F0BFA9CA8C736ED732A529954EBB4CAE
 - generatedChecksum: 438BE57ED488CFF75E81BAEDD0F20BA6
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_compiler.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 438BE57ED488CFF75E81BAEDD0F20BA6
 - generatedChecksum: 8500092E7EA1EB920BF9E9DDFF2038F7
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_hw_aes.h
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8500092E7EA1EB920BF9E9DDFF2038F7
 - generatedChecksum: 65171793E500AE687BC8CCD3C6049D31
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_hw_aes_cbc.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 65171793E500AE687BC8CCD3C6049D31
 - generatedChecksum: 4D0E47CEBD07FD982465D42A55DDEFFE
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_hw_aes_cbcmac.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 4D0E47CEBD07FD982465D42A55DDEFFE
 - generatedChecksum: B674D95DED12D3239D9B2D31C3A8504A
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_hw_aes_ccm.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: B674D95DED12D3239D9B2D31C3A8504A
-- generatedChecksum: 08A64A9051E86869223102BA11C2A0AD
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+- generatedChecksum: 139F2FA958373139D344DB282F2F359B
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_hw_aes_cmac.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 08A64A9051E86869223102BA11C2A0AD
+  userChecksum: 139F2FA958373139D344DB282F2F359B
 - generatedChecksum: 2524D72F7A43204248272C0893543EB7
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_hw_aes_ctr.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2524D72F7A43204248272C0893543EB7
-- generatedChecksum: 8043F01F892767646AD7D46158FC6463
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+- generatedChecksum: 16B6D66A2EDABDACD74461AEF7450F00
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
+  name: atca_crypto_pbkdf2.c
+  physicalPath: library/cryptoauthlib/crypto
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 16B6D66A2EDABDACD74461AEF7450F00
+- generatedChecksum: 7C762D60F610163BBEBD98A0C1718728
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw.h
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8043F01F892767646AD7D46158FC6463
-- generatedChecksum: 4B532B685AD0C9C275D5D5416B9E0145
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  userChecksum: 7C762D60F610163BBEBD98A0C1718728
+- generatedChecksum: B5EA343D1BC163882E441D84DFFB506F
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_ecdsa.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4B532B685AD0C9C275D5D5416B9E0145
+  userChecksum: B5EA343D1BC163882E441D84DFFB506F
 - generatedChecksum: A9B48CDA4A6F4AE7EA0421C70C9AA8A2
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_ecdsa.h
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: A9B48CDA4A6F4AE7EA0421C70C9AA8A2
-- generatedChecksum: 2D568A8FCA40F20A3494C7701A8D56F1
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+- generatedChecksum: 48D7E0FFB6075E881511DF73FEAE7AE9
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_rand.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2D568A8FCA40F20A3494C7701A8D56F1
+  userChecksum: 48D7E0FFB6075E881511DF73FEAE7AE9
 - generatedChecksum: 54B5FFC548BD32AD9DCC330452BF8FBE
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_rand.h
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 54B5FFC548BD32AD9DCC330452BF8FBE
 - generatedChecksum: 7ED683421A04E7C89F264388445A65D3
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_sha1.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7ED683421A04E7C89F264388445A65D3
 - generatedChecksum: A1D4B8DF10B6AB9164B16D14A4E49A32
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_sha1.h
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: A1D4B8DF10B6AB9164B16D14A4E49A32
-- generatedChecksum: 944E9C33A933469A26FF4AA548282F73
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+- generatedChecksum: 77B63DCBA7374CED0C5D2E8B61FF374C
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_sha2.c
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 944E9C33A933469A26FF4AA548282F73
+  userChecksum: 77B63DCBA7374CED0C5D2E8B61FF374C
 - generatedChecksum: 2DF89DD03016078326191F5B0452C596
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto
   name: atca_crypto_sw_sha2.h
-  physicalPath: library\cryptoauthlib\crypto
+  physicalPath: library/cryptoauthlib/crypto
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2DF89DD03016078326191F5B0452C596
 - generatedChecksum: 367980753E682BFC5D189349D2A8359A
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_debug.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 367980753E682BFC5D189349D2A8359A
 - generatedChecksum: DF024729BA32598B139988DB4C303D52
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_debug.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: DF024729BA32598B139988DB4C303D52
 - generatedChecksum: 46B4F899D1552805AFFAFC04293E7F73
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_device.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 46B4F899D1552805AFFAFC04293E7F73
-- generatedChecksum: 613120B09FC2DC168914128AC43F8148
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+- generatedChecksum: DE8BAD918C7262C675DB9380FECE5A6B
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_device.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 613120B09FC2DC168914128AC43F8148
+  userChecksum: DE8BAD918C7262C675DB9380FECE5A6B
 - generatedChecksum: 7106109F765A6B18291B237D7A2F5CC4
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_devtypes.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7106109F765A6B18291B237D7A2F5CC4
-- generatedChecksum: B3EB62213363569E3411B766F5779532
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+- generatedChecksum: C5366E682DFACCD812753A30B040BA5E
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: atca_hal.c
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B3EB62213363569E3411B766F5779532
-- generatedChecksum: 5E4B5E5407252F03090F55256EE5DDE0
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  userChecksum: C5366E682DFACCD812753A30B040BA5E
+- generatedChecksum: 73F5CDC7AC0D03FC264460CDFA27B4D9
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: atca_hal.h
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5E4B5E5407252F03090F55256EE5DDE0
+  userChecksum: 73F5CDC7AC0D03FC264460CDFA27B4D9
 - generatedChecksum: EAAF448A85A5BF54F4A9B7C763F4CDAF
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_helpers.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: EAAF448A85A5BF54F4A9B7C763F4CDAF
 - generatedChecksum: 4C7F2D4E1754F7D33CADFA1724B68939
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_helpers.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 4C7F2D4E1754F7D33CADFA1724B68939
-- generatedChecksum: BFB16F15EFACF8C1FD4E02153E4B8C31
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\host
+- generatedChecksum: EAA41D469D076D0834655C74BE1C6A63
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/host
   name: atca_host.c
-  physicalPath: library\cryptoauthlib\host
+  physicalPath: library/cryptoauthlib/host
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BFB16F15EFACF8C1FD4E02153E4B8C31
+  userChecksum: EAA41D469D076D0834655C74BE1C6A63
 - generatedChecksum: 6E89F7C656132778C623E58EEB5CBB73
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\host
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/host
   name: atca_host.h
-  physicalPath: library\cryptoauthlib\host
+  physicalPath: library/cryptoauthlib/host
   security: NON_SECURE
   type: SOURCE
   userChecksum: 6E89F7C656132778C623E58EEB5CBB73
-- generatedChecksum: 8DA2E86780A0D2BD259927952BCF3935
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+- generatedChecksum: B87DEC376F3EDD9A6EC4522772C950AB
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_iface.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: B87DEC376F3EDD9A6EC4522772C950AB
 - generatedChecksum: 6BA62AD744FE91AD4780A50B9483B634
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_iface.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 6BA62AD744FE91AD4780A50B9483B634
-- generatedChecksum: CA051859F3F10276EE04149B20E844AF
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\jwt
+- generatedChecksum: C420E11E0D4FD37C0179EBF82FBA7E29
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/jwt
   name: atca_jwt.c
-  physicalPath: library\cryptoauthlib\jwt
+  physicalPath: library/cryptoauthlib/jwt
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CA051859F3F10276EE04149B20E844AF
+  userChecksum: C420E11E0D4FD37C0179EBF82FBA7E29
 - generatedChecksum: F41DD68794903B094FB89C320406C227
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\jwt
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/jwt
   name: atca_jwt.h
-  physicalPath: library\cryptoauthlib\jwt
+  physicalPath: library/cryptoauthlib/jwt
   security: NON_SECURE
   type: SOURCE
   userChecksum: F41DD68794903B094FB89C320406C227
 - generatedChecksum: 020C76CD6D5D9555C514427B9B3EAC49
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: atca_start_config.h
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
   userChecksum: 020C76CD6D5D9555C514427B9B3EAC49
 - generatedChecksum: 020C76CD6D5D9555C514427B9B3EAC49
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: atca_start_iface.h
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
   userChecksum: 020C76CD6D5D9555C514427B9B3EAC49
 - generatedChecksum: C44F01BA65C6AC0A0BB2F1F257D2C405
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_status.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: C44F01BA65C6AC0A0BB2F1F257D2C405
 - generatedChecksum: 9F6C09BA42D5F83B35F111C330A9131D
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_utils_sizes.c
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9F6C09BA42D5F83B35F111C330A9131D
-- generatedChecksum: 947CA757AA4B0F3C275476AE1895FE80
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+- generatedChecksum: B5BF81234E684F6BB27C37AACAC948B8
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_version.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 947CA757AA4B0F3C275476AE1895FE80
+  userChecksum: B5BF81234E684F6BB27C37AACAC948B8
 - generatedChecksum: 39B479CDDBCD8CEB51C6FDAD2D5D6527
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 39B479CDDBCD8CEB51C6FDAD2D5D6527
-- generatedChecksum: 211050E83F1EB4D7E5E1B5EFE6693CC1
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+- generatedChecksum: F71702CE59B594A4320A4A67E840B735
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_client.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 211050E83F1EB4D7E5E1B5EFE6693CC1
+  userChecksum: F71702CE59B594A4320A4A67E840B735
 - generatedChecksum: 481CEFA6107D950DA2593A78494043C4
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_client.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 481CEFA6107D950DA2593A78494043C4
-- generatedChecksum: E1F6E19BE0F5C1147E9CAEDEDE1866F1
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+- generatedChecksum: 76C166BE499C06C2DE08A30F4638F1FC
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_date.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E1F6E19BE0F5C1147E9CAEDEDE1866F1
-- generatedChecksum: E2AD6521ED3BA4CF60934CC5A66A14C2
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  userChecksum: 76C166BE499C06C2DE08A30F4638F1FC
+- generatedChecksum: 97BDFD21248DE60EA44A06564EB4A9E1
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_date.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E2AD6521ED3BA4CF60934CC5A66A14C2
+  userChecksum: 97BDFD21248DE60EA44A06564EB4A9E1
 - generatedChecksum: 7EE1A85B7E90E04BAF4BCE9CD912FE79
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_def.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7EE1A85B7E90E04BAF4BCE9CD912FE79
 - generatedChecksum: 7E81275CEC5D18195AFAB0069751E90F
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_def.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7E81275CEC5D18195AFAB0069751E90F
 - generatedChecksum: CA5248E40F9A4EA9DD0811D8670F1D08
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_der.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: CA5248E40F9A4EA9DD0811D8670F1D08
 - generatedChecksum: 78E60FE1968E176C2FAAECFF28F15859
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_der.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 78E60FE1968E176C2FAAECFF28F15859
 - generatedChecksum: 1FD52A0985CB9AB9612CC71F43229BB3
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_host_hw.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 1FD52A0985CB9AB9612CC71F43229BB3
 - generatedChecksum: EEBBBFD34F708E36768B5D57BAF655E7
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_host_hw.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: EEBBBFD34F708E36768B5D57BAF655E7
 - generatedChecksum: 8F2BE817F0A3805F591C160C0AB2A8B1
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_host_sw.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8F2BE817F0A3805F591C160C0AB2A8B1
 - generatedChecksum: 938C9787ED5322AEC1364D6F77BAE706
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_host_sw.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: 938C9787ED5322AEC1364D6F77BAE706
-- generatedChecksum: B43120C9C0EBACC26AAE248978D18B77
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+- generatedChecksum: 30F93CA4DB6FDE06690376D7A559CF32
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_pem.c
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B43120C9C0EBACC26AAE248978D18B77
+  userChecksum: 30F93CA4DB6FDE06690376D7A559CF32
 - generatedChecksum: DD048659E440B34428ED209F89C42D9D
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\atcacert
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/atcacert
   name: atcacert_pem.h
-  physicalPath: library\cryptoauthlib\atcacert
+  physicalPath: library/cryptoauthlib/atcacert
   security: NON_SECURE
   type: SOURCE
   userChecksum: DD048659E440B34428ED209F89C42D9D
 - generatedChecksum: D81A0A83EE6097AEEF8B8A524B921BBE
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_aes.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: D81A0A83EE6097AEEF8B8A524B921BBE
 - generatedChecksum: C9552CA702A3272DF9CD9A0CF3C614FD
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_aes_gcm.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: C9552CA702A3272DF9CD9A0CF3C614FD
 - generatedChecksum: EA3115EBE1DA89D1E95D834CAD16F601
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_aes_gcm.h
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: EA3115EBE1DA89D1E95D834CAD16F601
-- generatedChecksum: CFA64865E81C18D03739BBC8BAC14847
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: 17C3E3CE6F1AC0B48D6C9D41C5E78566
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_basic.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CFA64865E81C18D03739BBC8BAC14847
-- generatedChecksum: E4A275FEBA335C6AC13CC6CC33222FF7
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  userChecksum: 17C3E3CE6F1AC0B48D6C9D41C5E78566
+- generatedChecksum: 7156C1F3443D8890E462C64568987FC8
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_basic.h
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E4A275FEBA335C6AC13CC6CC33222FF7
+  userChecksum: 7156C1F3443D8890E462C64568987FC8
 - generatedChecksum: A884DB08629E4695434C706C4230727C
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_checkmac.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: A884DB08629E4695434C706C4230727C
-- generatedChecksum: A88517BE06011D70B9D535073C71F16C
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: C30C4AA004D44E9B2A124C18A40F8F05
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_command.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A88517BE06011D70B9D535073C71F16C
+  userChecksum: C30C4AA004D44E9B2A124C18A40F8F05
 - generatedChecksum: C647A6D4029CC332EDFF5BFFB89654A8
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_command.h
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: C647A6D4029CC332EDFF5BFFB89654A8
 - generatedChecksum: A9A1B98EFECF32B7F93AE5B59BF8E0E8
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_counter.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: A9A1B98EFECF32B7F93AE5B59BF8E0E8
 - generatedChecksum: 2A92914CEB45FEF801A142E1E2CAA5BA
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_derivekey.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2A92914CEB45FEF801A142E1E2CAA5BA
-- generatedChecksum: ACDEE14F90F65CD874CA67C171B9D997
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: 037D62AB95DFF5D98575548E69E78319
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_ecdh.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: ACDEE14F90F65CD874CA67C171B9D997
-- generatedChecksum: 6CFD1C1AF745C4F922E6AB6991A7EB98
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  userChecksum: 037D62AB95DFF5D98575548E69E78319
+- generatedChecksum: D059776930CA9142D2D44E912FFAB740
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_execution.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6CFD1C1AF745C4F922E6AB6991A7EB98
-- generatedChecksum: DFCBBF1A205C9B50A863C43B50D46389
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  userChecksum: D059776930CA9142D2D44E912FFAB740
+- generatedChecksum: 88650BB1C64DF85297146DB38F4A9A22
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_execution.h
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DFCBBF1A205C9B50A863C43B50D46389
+  userChecksum: 88650BB1C64DF85297146DB38F4A9A22
 - generatedChecksum: 5B7A1501266F78F3C790B776043CDFB6
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_gendig.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5B7A1501266F78F3C790B776043CDFB6
 - generatedChecksum: BDC2785995C64F2543135A7495438421
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_genkey.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: BDC2785995C64F2543135A7495438421
+- generatedChecksum: 5A3969505B12EA66C633878A6140A2F5
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
+  name: calib_helpers.c
+  physicalPath: library/cryptoauthlib/calib
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 5A3969505B12EA66C633878A6140A2F5
 - generatedChecksum: 38EF4DCFFC7B15BD8C0764468CCF0F54
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_hmac.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 38EF4DCFFC7B15BD8C0764468CCF0F54
-- generatedChecksum: 31664EABC540B293222E6141F5A598C1
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: E08ED9C0626D95B4E6BD954B3E57FF15
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_info.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 31664EABC540B293222E6141F5A598C1
+  userChecksum: E08ED9C0626D95B4E6BD954B3E57FF15
 - generatedChecksum: D3AEDA710B4B571020A6A1E93C7ACC94
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_kdf.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: D3AEDA710B4B571020A6A1E93C7ACC94
 - generatedChecksum: B44139417AF98919F0658FE2A01956CD
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_lock.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: B44139417AF98919F0658FE2A01956CD
 - generatedChecksum: 75047A7395A29787E1F153BC53111732
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_mac.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 75047A7395A29787E1F153BC53111732
 - generatedChecksum: 0DCA9A9619EC283EDEA0004AC5D64D01
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_nonce.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DCA9A9619EC283EDEA0004AC5D64D01
-- generatedChecksum: 885F510B195923D125F037279279A666
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: 7E627DF11DB5E2702C9502031A70C2F5
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_privwrite.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 885F510B195923D125F037279279A666
+  userChecksum: 7E627DF11DB5E2702C9502031A70C2F5
 - generatedChecksum: E578C71AEB8AC9418FAFE9AF51E840E8
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_random.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: E578C71AEB8AC9418FAFE9AF51E840E8
-- generatedChecksum: D79EEA33F42D7064B692147420CE132F
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: F4260F3FF15F1AFB6592EB57472B65E1
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_read.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D79EEA33F42D7064B692147420CE132F
+  userChecksum: F4260F3FF15F1AFB6592EB57472B65E1
 - generatedChecksum: EE3AF8F403379659507CE05FDC2FBA88
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_secureboot.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: EE3AF8F403379659507CE05FDC2FBA88
 - generatedChecksum: 51138AB4EAFF12235CD3BAF8DF3C542C
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_selftest.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 51138AB4EAFF12235CD3BAF8DF3C542C
 - generatedChecksum: C7A8282FFBF8BBAC54C1B46987DC8138
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_sha.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: C7A8282FFBF8BBAC54C1B46987DC8138
-- generatedChecksum: B131A023956E6E473A1A5AEA500BB0E1
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: BA37AA9CBC843A8254A34A4BA4F0C19D
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_sign.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B131A023956E6E473A1A5AEA500BB0E1
+  userChecksum: BA37AA9CBC843A8254A34A4BA4F0C19D
 - generatedChecksum: B565C2FA644B9FB81FA673BD50D62D60
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_updateextra.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: B565C2FA644B9FB81FA673BD50D62D60
 - generatedChecksum: 5841CE8DED618FF5E886CC37F2DB47AF
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_verify.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5841CE8DED618FF5E886CC37F2DB47AF
-- generatedChecksum: E73408ADDB1AD44D740D2F667FC31DED
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\calib
+- generatedChecksum: 286701FEBEE8B665827FE2D0A2290910
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/calib
   name: calib_write.c
-  physicalPath: library\cryptoauthlib\calib
+  physicalPath: library/cryptoauthlib/calib
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E73408ADDB1AD44D740D2F667FC31DED
+  userChecksum: 286701FEBEE8B665827FE2D0A2290910
 - generatedChecksum: FE7621D4C509011330C1FE849EB44D84
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: cryptoauthlib.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: SOURCE
   userChecksum: FE7621D4C509011330C1FE849EB44D84
-- generatedChecksum: 1D8D347F015F2D6805D228650C53E2E4
-  logicalPath: config\SAMD21_WG_IOT\driver\spi
+- generatedChecksum: 0224E6E5C287291C791D1C7D9900593C
+  logicalPath: config/SAMD21_WG_IOT/driver/spi
   name: drv_spi.c
-  physicalPath: driver\spi\src
+  physicalPath: driver/spi/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1D8D347F015F2D6805D228650C53E2E4
+  userChecksum: 0224E6E5C287291C791D1C7D9900593C
 - generatedChecksum: 097A6213CF0F4D2B7E49DE6ADA05C7B3
-  logicalPath: config\SAMD21_WG_IOT\driver\spi
+  logicalPath: config/SAMD21_WG_IOT/driver/spi
   name: drv_spi_local.h
-  physicalPath: driver\spi\src
+  physicalPath: driver/spi/src
   security: NON_SECURE
   type: SOURCE
   userChecksum: 097A6213CF0F4D2B7E49DE6ADA05C7B3
-- generatedChecksum: 52D6CB302A96344120B2C84B06C4EEDA
-  logicalPath: config\SAMD21_WG_IOT
+- generatedChecksum: 0D18A719A1E40A8875895284967F66D0
+  logicalPath: config/SAMD21_WG_IOT
   name: exceptions.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 52D6CB302A96344120B2C84B06C4EEDA
+  userChecksum: 0D18A719A1E40A8875895284967F66D0
 - generatedChecksum: 50415DAF89BC94DD9533B8A4CBFD9CE6
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\spi_flash
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/spi_flash
   name: flexible_flash.c
-  physicalPath: driver\winc\drv\spi_flash
+  physicalPath: driver/winc/drv/spi_flash
   security: NON_SECURE
   type: SOURCE
   userChecksum: 50415DAF89BC94DD9533B8A4CBFD9CE6
 - generatedChecksum: B15D96EEA51D471E3CE9CC053E32813E
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: hal_cortex_m_delay.c
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
   userChecksum: B15D96EEA51D471E3CE9CC053E32813E
 - generatedChecksum: C8C6B8FEE104051759D144788E469CE6
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: hal_harmony_init.c
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
   userChecksum: C8C6B8FEE104051759D144788E469CE6
 - generatedChecksum: 2C73B489A476FDAEA18D51FD06F29943
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\hal
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/hal
   name: hal_i2c_harmony.c
-  physicalPath: library\cryptoauthlib\hal
+  physicalPath: library/cryptoauthlib/hal
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2C73B489A476FDAEA18D51FD06F29943
-- generatedChecksum: 3C63F5974032F955C08121EBC138D953
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\socket
+- generatedChecksum: 42E9114F4574E86D8B903DEB748B20BA
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/socket
   name: inet_addr.c
-  physicalPath: driver\winc\drv\socket
+  physicalPath: driver/winc/drv/socket
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3C63F5974032F955C08121EBC138D953
-- generatedChecksum: 3B5CBB3613E9F795E3DFCE538BDD17FB
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\socket
+  userChecksum: 42E9114F4574E86D8B903DEB748B20BA
+- generatedChecksum: 299BF6E41010E75E54EE96E1FAC1590F
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/socket
   name: inet_ntop.c
-  physicalPath: driver\winc\drv\socket
+  physicalPath: driver/winc/drv/socket
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3B5CBB3613E9F795E3DFCE538BDD17FB
+  userChecksum: 299BF6E41010E75E54EE96E1FAC1590F
 - generatedChecksum: 2EC81EDE3822EC49BCC20946B8DEA73B
-  logicalPath: config\SAMD21_WG_IOT
+  logicalPath: config/SAMD21_WG_IOT
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2EC81EDE3822EC49BCC20946B8DEA73B
-- generatedChecksum: 4CF9BC5250349F9957E053FA78B5B7CA
-  logicalPath: config\SAMD21_WG_IOT
+- generatedChecksum: 5F635D1D3073F2CCBE217055E63CC18C
+  logicalPath: config/SAMD21_WG_IOT
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4CF9BC5250349F9957E053FA78B5B7CA
-- generatedChecksum: 328F1E09E0DD9BEE901C4562A3E5180A
-  logicalPath: config\SAMD21_WG_IOT
+  userChecksum: 5F635D1D3073F2CCBE217055E63CC18C
+- generatedChecksum: 6513F2461B8F476B68CA73906086047F
+  logicalPath: config/SAMD21_WG_IOT
   name: libc_syscalls.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 328F1E09E0DD9BEE901C4562A3E5180A
-- generatedChecksum: 4AFF189CD3697B93B8B90A21345B086C
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 6513F2461B8F476B68CA73906086047F
+- generatedChecksum: 181C5103C02792A0746BADD1D4C1D9B9
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: m2m_hif.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4AFF189CD3697B93B8B90A21345B086C
-- generatedChecksum: FA2D4A2BAD559B86667EC49FF6B9A282
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 181C5103C02792A0746BADD1D4C1D9B9
+- generatedChecksum: F648EDA2CC1B6E679A5B09A57B11546D
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: m2m_ota.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FA2D4A2BAD559B86667EC49FF6B9A282
-- generatedChecksum: 37B237B499C5B75580EBBAB58DD25ECF
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: F648EDA2CC1B6E679A5B09A57B11546D
+- generatedChecksum: 55B7E9D0C22558D4A28395AECD15AC50
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: m2m_periph.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 37B237B499C5B75580EBBAB58DD25ECF
-- generatedChecksum: E48FB1BA1F7B1988405764D53327C994
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 55B7E9D0C22558D4A28395AECD15AC50
+- generatedChecksum: 21F438F4ADA9BCDB55A6AFAD7DF93EA6
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: m2m_ssl.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E48FB1BA1F7B1988405764D53327C994
-- generatedChecksum: 92E203719F3E5B9B54A8B078FCDABD34
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 21F438F4ADA9BCDB55A6AFAD7DF93EA6
+- generatedChecksum: 9EC6C95204C1754CC9DB8014A6593C1B
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: m2m_wifi.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 92E203719F3E5B9B54A8B078FCDABD34
+  userChecksum: 9EC6C95204C1754CC9DB8014A6593C1B
 - generatedChecksum: null
   logicalPath: ''
   name: main.c
-  physicalPath: ..\..
+  physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: BCAEAB73AD0EA84C30042645E32629AC
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\common
+- generatedChecksum: 5BB451997FAC1DAD779E92B0F37B1C09
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/common
   name: nm_common.c
-  physicalPath: driver\winc\drv\common
+  physicalPath: driver/winc/drv/common
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BCAEAB73AD0EA84C30042645E32629AC
-- generatedChecksum: FBADF9E181FD70DB1DC83E331AD6FB5E
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 5BB451997FAC1DAD779E92B0F37B1C09
+- generatedChecksum: 4CB01D94B778FD8215712467BD55B4FD
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: nmasic.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FBADF9E181FD70DB1DC83E331AD6FB5E
-- generatedChecksum: A58EEC6C3CDF907C9C0E2DA6276E6A56
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 4CB01D94B778FD8215712467BD55B4FD
+- generatedChecksum: E5BF3FAE3FA2C006285DAE58E2C0D0A0
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: nmbus.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A58EEC6C3CDF907C9C0E2DA6276E6A56
-- generatedChecksum: C72C963FDB7511995436BE220DDFCDE8
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: E5BF3FAE3FA2C006285DAE58E2C0D0A0
+- generatedChecksum: 36F0143131B212203AB99CED4DB550AD
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: nmdrv.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C72C963FDB7511995436BE220DDFCDE8
-- generatedChecksum: 50132D71906F92F55379F4FA06402606
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\driver
+  userChecksum: 36F0143131B212203AB99CED4DB550AD
+- generatedChecksum: 6AF733A7BD3B2E4DE5598622CE3A5334
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/driver
   name: nmspi.c
-  physicalPath: driver\winc\drv\driver
+  physicalPath: driver/winc/drv/driver
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 50132D71906F92F55379F4FA06402606
-- generatedChecksum: 126FFC8B713B3C649701E9A9D909A989
-  logicalPath: config\SAMD21_WG_IOT\peripheral\adc
+  userChecksum: 6AF733A7BD3B2E4DE5598622CE3A5334
+- generatedChecksum: E5B03B58705C93E3D535C3C2560EC468
+  logicalPath: config/SAMD21_WG_IOT/peripheral/adc
   name: plib_adc.c
-  physicalPath: peripheral\adc
+  physicalPath: peripheral/adc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 126FFC8B713B3C649701E9A9D909A989
-- generatedChecksum: AFA8910A0D8C40E186EA60EDBAE9FC2D
-  logicalPath: config\SAMD21_WG_IOT\peripheral\clock
+  userChecksum: E5B03B58705C93E3D535C3C2560EC468
+- generatedChecksum: D8B6DC0E7BF11CC3042292ADEBE56F9B
+  logicalPath: config/SAMD21_WG_IOT/peripheral/clock
   name: plib_clock.c
-  physicalPath: peripheral\clock
+  physicalPath: peripheral/clock
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AFA8910A0D8C40E186EA60EDBAE9FC2D
-- generatedChecksum: 4D4840F52EFC9053F1C963C6F81E8B51
-  logicalPath: config\SAMD21_WG_IOT\peripheral\dmac
+  userChecksum: D8B6DC0E7BF11CC3042292ADEBE56F9B
+- generatedChecksum: 45D546994680BE58641DFC3AEBAA8F0B
+  logicalPath: config/SAMD21_WG_IOT/peripheral/dmac
   name: plib_dmac.c
-  physicalPath: peripheral\dmac
+  physicalPath: peripheral/dmac
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4D4840F52EFC9053F1C963C6F81E8B51
-- generatedChecksum: 7E2653F42E4CBD3BCC90C75335CB307F
-  logicalPath: config\SAMD21_WG_IOT\peripheral\eic
+  userChecksum: 45D546994680BE58641DFC3AEBAA8F0B
+- generatedChecksum: B5AD48575AD231670C448C322A0C5441
+  logicalPath: config/SAMD21_WG_IOT/peripheral/eic
   name: plib_eic.c
-  physicalPath: peripheral\eic
+  physicalPath: peripheral/eic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7E2653F42E4CBD3BCC90C75335CB307F
-- generatedChecksum: C99E6D9B9BA371EA749B7DC16BC2C209
-  logicalPath: config\SAMD21_WG_IOT\peripheral\evsys
+  userChecksum: B5AD48575AD231670C448C322A0C5441
+- generatedChecksum: C3ECDED3D6301DB0DE622293ED615D21
+  logicalPath: config/SAMD21_WG_IOT/peripheral/evsys
   name: plib_evsys.c
-  physicalPath: peripheral\evsys
+  physicalPath: peripheral/evsys
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C99E6D9B9BA371EA749B7DC16BC2C209
-- generatedChecksum: 7D20AF51E38F7F18CCCECDBBF36F5C28
-  logicalPath: config\SAMD21_WG_IOT\peripheral\nvic
+  userChecksum: C3ECDED3D6301DB0DE622293ED615D21
+- generatedChecksum: 29CBF08F8C7761823071D6819463E683
+  logicalPath: config/SAMD21_WG_IOT/peripheral/nvic
   name: plib_nvic.c
-  physicalPath: peripheral\nvic
+  physicalPath: peripheral/nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7D20AF51E38F7F18CCCECDBBF36F5C28
-- generatedChecksum: 12BB5180FB5A5EF3F5A1310030E4E6C5
-  logicalPath: config\SAMD21_WG_IOT\peripheral\nvmctrl
+  userChecksum: 29CBF08F8C7761823071D6819463E683
+- generatedChecksum: E85A8757F82A322C86C52D9BF238E9E1
+  logicalPath: config/SAMD21_WG_IOT/peripheral/nvmctrl
   name: plib_nvmctrl.c
-  physicalPath: peripheral\nvmctrl
+  physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 12BB5180FB5A5EF3F5A1310030E4E6C5
-- generatedChecksum: 3E9888882F9003C1770BF7D21759EF04
-  logicalPath: config\SAMD21_WG_IOT\peripheral\port
+  userChecksum: E85A8757F82A322C86C52D9BF238E9E1
+- generatedChecksum: C12C961B0D77D1661DAEFEED5C3BCAAA
+  logicalPath: config/SAMD21_WG_IOT/peripheral/port
   name: plib_port.c
-  physicalPath: peripheral\port
+  physicalPath: peripheral/port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3E9888882F9003C1770BF7D21759EF04
-- generatedChecksum: 72C60A68612DB8526FAAB5677A14021B
-  logicalPath: config\SAMD21_WG_IOT\peripheral\rtc
+  userChecksum: C12C961B0D77D1661DAEFEED5C3BCAAA
+- generatedChecksum: 2B0E04CD9F6C3400802BCF5C32CDDB24
+  logicalPath: config/SAMD21_WG_IOT/peripheral/rtc
   name: plib_rtc_clock.c
-  physicalPath: peripheral\rtc
+  physicalPath: peripheral/rtc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 72C60A68612DB8526FAAB5677A14021B
-- generatedChecksum: 91E39F3F1FA4815F4C015A5A4CD19300
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\i2c_master
+  userChecksum: 2B0E04CD9F6C3400802BCF5C32CDDB24
+- generatedChecksum: 723E836E660E14E8E0FB8EC900530303
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/i2c_master
   name: plib_sercom3_i2c_master.c
-  physicalPath: peripheral\sercom\i2c_master
+  physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 91E39F3F1FA4815F4C015A5A4CD19300
-- generatedChecksum: BBBE5EA41B5C19AF205BB14B82ED473F
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\spi_master
+  userChecksum: 723E836E660E14E8E0FB8EC900530303
+- generatedChecksum: D5CADB9FB02B4DCE013A210EEA3B56E1
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/spi_master
   name: plib_sercom4_spi_master.c
-  physicalPath: peripheral\sercom\spi_master
+  physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BBBE5EA41B5C19AF205BB14B82ED473F
-- generatedChecksum: 91970A2E08AA53089896EAFEE7562A29
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\usart
+  userChecksum: D5CADB9FB02B4DCE013A210EEA3B56E1
+- generatedChecksum: F74CC3C2482333A662A12D6594890925
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/usart
   name: plib_sercom5_usart.c
-  physicalPath: peripheral\sercom\usart
+  physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 91970A2E08AA53089896EAFEE7562A29
-- generatedChecksum: 686CB949E571938F0D1080D641DCA3CA
-  logicalPath: config\SAMD21_WG_IOT\peripheral\tc
+  userChecksum: F74CC3C2482333A662A12D6594890925
+- generatedChecksum: 27ECA258D8118406BF6BBF2CFCE2EC94
+  logicalPath: config/SAMD21_WG_IOT/peripheral/tc
   name: plib_tc3.c
-  physicalPath: peripheral\tc
+  physicalPath: peripheral/tc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 686CB949E571938F0D1080D641DCA3CA
+  userChecksum: 27ECA258D8118406BF6BBF2CFCE2EC94
 - generatedChecksum: 2678A6AC469B2CBC962FC647A763814C
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto\hashes
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes
   name: sha1_routines.c
-  physicalPath: library\cryptoauthlib\crypto\hashes
+  physicalPath: library/cryptoauthlib/crypto/hashes
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2678A6AC469B2CBC962FC647A763814C
 - generatedChecksum: 604A05C17479FC6839FB64A83B4F5C36
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto\hashes
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes
   name: sha1_routines.h
-  physicalPath: library\cryptoauthlib\crypto\hashes
+  physicalPath: library/cryptoauthlib/crypto/hashes
   security: NON_SECURE
   type: SOURCE
   userChecksum: 604A05C17479FC6839FB64A83B4F5C36
 - generatedChecksum: F8BB44C367E52E7A3A24643E786055A7
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto\hashes
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes
   name: sha2_routines.c
-  physicalPath: library\cryptoauthlib\crypto\hashes
+  physicalPath: library/cryptoauthlib/crypto/hashes
   security: NON_SECURE
   type: SOURCE
   userChecksum: F8BB44C367E52E7A3A24643E786055A7
 - generatedChecksum: 03F315974E54C941C8B481677BAE592A
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib\crypto\hashes
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib/crypto/hashes
   name: sha2_routines.h
-  physicalPath: library\cryptoauthlib\crypto\hashes
+  physicalPath: library/cryptoauthlib/crypto/hashes
   security: NON_SECURE
   type: SOURCE
   userChecksum: 03F315974E54C941C8B481677BAE592A
-- generatedChecksum: 4F545B6DDC75A7DFBEE9B0840585B182
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\socket
+- generatedChecksum: 0DCAF0B3E79E6A142F6BE312A934E982
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/socket
   name: socket.c
-  physicalPath: driver\winc\drv\socket
+  physicalPath: driver/winc/drv/socket
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4F545B6DDC75A7DFBEE9B0840585B182
-- generatedChecksum: BB1420A2B759E599DD72EDCB06A70325
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\drv\spi_flash
+  userChecksum: 0DCAF0B3E79E6A142F6BE312A934E982
+- generatedChecksum: 296AA90B032CDAD904E3F73A98A8DF4C
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/drv/spi_flash
   name: spi_flash.c
-  physicalPath: driver\winc\drv\spi_flash
+  physicalPath: driver/winc/drv/spi_flash
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BB1420A2B759E599DD72EDCB06A70325
-- generatedChecksum: 949BBD944EC8B81E639121B72E7C7510
-  logicalPath: config\SAMD21_WG_IOT
+  userChecksum: 296AA90B032CDAD904E3F73A98A8DF4C
+- generatedChecksum: 2645E564BD945DAED1424FD8D7B39330
+  logicalPath: config/SAMD21_WG_IOT
   name: startup_xc32.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 949BBD944EC8B81E639121B72E7C7510
-- generatedChecksum: 6A54802433B130F9F753FF71CC0B773B
-  logicalPath: config\SAMD21_WG_IOT\system\command
+  userChecksum: 2645E564BD945DAED1424FD8D7B39330
+- generatedChecksum: B272B2EB06FC4376B9EEB88671E27D74
+  logicalPath: config/SAMD21_WG_IOT/system/command
   name: sys_command.c
-  physicalPath: system\command\src
+  physicalPath: system/command/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6A54802433B130F9F753FF71CC0B773B
+  userChecksum: B272B2EB06FC4376B9EEB88671E27D74
 - generatedChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
-  logicalPath: config\SAMD21_WG_IOT\system\console
+  logicalPath: config/SAMD21_WG_IOT/system/console
   name: sys_console.c
-  physicalPath: system\console\src
+  physicalPath: system/console/src
   security: NON_SECURE
   type: SOURCE
   userChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
 - generatedChecksum: 5BA0902794A8669B3FE37E8A8BEE9D65
-  logicalPath: config\SAMD21_WG_IOT\system\console
+  logicalPath: config/SAMD21_WG_IOT/system/console
   name: sys_console_local.h
-  physicalPath: system\console\src
+  physicalPath: system/console/src
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5BA0902794A8669B3FE37E8A8BEE9D65
 - generatedChecksum: CA5E9B63704372DE5FBC0BDC006B16C3
-  logicalPath: config\SAMD21_WG_IOT\system\console
+  logicalPath: config/SAMD21_WG_IOT/system/console
   name: sys_console_uart.c
-  physicalPath: system\console\src
+  physicalPath: system/console/src
   security: NON_SECURE
   type: SOURCE
   userChecksum: CA5E9B63704372DE5FBC0BDC006B16C3
 - generatedChecksum: 767495C6A39617A915D8107093DC1A72
-  logicalPath: config\SAMD21_WG_IOT\system\console
+  logicalPath: config/SAMD21_WG_IOT/system/console
   name: sys_console_uart.h
-  physicalPath: system\console\src
+  physicalPath: system/console/src
   security: NON_SECURE
   type: SOURCE
   userChecksum: 767495C6A39617A915D8107093DC1A72
 - generatedChecksum: 5D10B9438117B64220180660AB022150
-  logicalPath: config\SAMD21_WG_IOT\system\console
+  logicalPath: config/SAMD21_WG_IOT/system/console
   name: sys_console_uart_definitions.h
-  physicalPath: system\console\src
+  physicalPath: system/console/src
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5D10B9438117B64220180660AB022150
 - generatedChecksum: 5182754E707E008E4C8788FCAB430380
-  logicalPath: config\SAMD21_WG_IOT\system\dma
+  logicalPath: config/SAMD21_WG_IOT/system/dma
   name: sys_dma.c
-  physicalPath: system\dma
+  physicalPath: system/dma
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5182754E707E008E4C8788FCAB430380
-- generatedChecksum: AC4D91625233534A323364884F492CC6
-  logicalPath: config\SAMD21_WG_IOT\system\int
+- generatedChecksum: 02C3C1B519E59992810626BB6098CF56
+  logicalPath: config/SAMD21_WG_IOT/system/int
   name: sys_int.c
-  physicalPath: system\int\src
+  physicalPath: system/int/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AC4D91625233534A323364884F492CC6
-- generatedChecksum: 40A99C84F50EB7DFAA579B8675F140DD
-  logicalPath: config\SAMD21_WG_IOT\system\time
+  userChecksum: 02C3C1B519E59992810626BB6098CF56
+- generatedChecksum: 003FBAA52BB0F67321DDAFD98601DC86
+  logicalPath: config/SAMD21_WG_IOT/system/reset
+  name: sys_reset.c
+  physicalPath: system/reset
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 003FBAA52BB0F67321DDAFD98601DC86
+- generatedChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
+  logicalPath: config/SAMD21_WG_IOT/system/time
   name: sys_time.c
-  physicalPath: system\time\src
+  physicalPath: system/time/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 40A99C84F50EB7DFAA579B8675F140DD
+  userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
 - generatedChecksum: 8363F9D477FCBF5CC51D25E5AA345BB8
-  logicalPath: config\SAMD21_WG_IOT
+  logicalPath: config/SAMD21_WG_IOT
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8363F9D477FCBF5CC51D25E5AA345BB8
-- generatedChecksum: 4F38D53E5F023DBC0D405056BC43568F
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+- generatedChecksum: CB3A90D20B6E340FF37EF5D1EE567112
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4F38D53E5F023DBC0D405056BC43568F
-- generatedChecksum: 77997C36D4C45AEC165A240204B431D0
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: CB3A90D20B6E340FF37EF5D1EE567112
+- generatedChecksum: 1C250277649C756DDA1BF1A3DFF46C83
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_assoc.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 77997C36D4C45AEC165A240204B431D0
-- generatedChecksum: 0AA4DC2EEF840D3D9476F233D5E983CE
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: 1C250277649C756DDA1BF1A3DFF46C83
+- generatedChecksum: E17A5533170340AAD26EEBDF6E22A73F
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_authctx.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0AA4DC2EEF840D3D9476F233D5E983CE
-- generatedChecksum: 072228C81D703764548E987D431BD9BD
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: E17A5533170340AAD26EEBDF6E22A73F
+- generatedChecksum: 23D94F4BD1C11F40C9C2EBF80D6B216C
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_bssctx.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 072228C81D703764548E987D431BD9BD
-- generatedChecksum: E51CA3A2315D290EE8ED4424B8B56829
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: 23D94F4BD1C11F40C9C2EBF80D6B216C
+- generatedChecksum: 2E3D0002E340212CD288B40ED6C46241
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_bssfind.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E51CA3A2315D290EE8ED4424B8B56829
-- generatedChecksum: 042776CF9DF2009E8DA017F5380889EA
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: 2E3D0002E340212CD288B40ED6C46241
+- generatedChecksum: 85251A7D979B2FDF1E1D25E84F0AB99A
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_custie.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 042776CF9DF2009E8DA017F5380889EA
+  userChecksum: 85251A7D979B2FDF1E1D25E84F0AB99A
 - generatedChecksum: 2308409367BFCF71D93D65F748729975
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\dev\gpio
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/dev/gpio
   name: wdrv_winc_eint.c
-  physicalPath: driver\winc\dev\gpio
+  physicalPath: driver/winc/dev/gpio
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2308409367BFCF71D93D65F748729975
 - generatedChecksum: 08BEBE8A13076E61A844A43D2A7D2F16
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\dev\gpio
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/dev/gpio
   name: wdrv_winc_gpio.c
-  physicalPath: driver\winc\dev\gpio
+  physicalPath: driver/winc/dev/gpio
   security: NON_SECURE
   type: SOURCE
   userChecksum: 08BEBE8A13076E61A844A43D2A7D2F16
-- generatedChecksum: 1F86F413BBF00772717E7B2108374D65
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+- generatedChecksum: F18A50E6DB2A037301F58A914EE28F59
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_host_file.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1F86F413BBF00772717E7B2108374D65
+  userChecksum: F18A50E6DB2A037301F58A914EE28F59
 - generatedChecksum: 8EC1AFE5482D0690045233EE8F1243FF
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_httpprovctx.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8EC1AFE5482D0690045233EE8F1243FF
-- generatedChecksum: 00CAE7603997384F4E3EA921E88D95DD
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+- generatedChecksum: 036ED0AD91DDEED319B9717BB2F0FD34
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_nvm.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 00CAE7603997384F4E3EA921E88D95DD
-- generatedChecksum: DA9E5CC7166DB440C7455068BEF22120
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\osal
+  userChecksum: 036ED0AD91DDEED319B9717BB2F0FD34
+- generatedChecksum: 8D67A127E985C4290BC7F3477FB8351A
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/osal
   name: wdrv_winc_osal.c
-  physicalPath: driver\winc\osal
+  physicalPath: driver/winc/osal
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DA9E5CC7166DB440C7455068BEF22120
-- generatedChecksum: 8DA7EBDD57D257EDAB74390BAA6984D5
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: 8D67A127E985C4290BC7F3477FB8351A
+- generatedChecksum: E6978BADAFB1B4D18E10CE9203CEFEBF
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_powersave.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8DA7EBDD57D257EDAB74390BAA6984D5
-- generatedChecksum: 448DA56FF5229CAD907C2EF76F8D7B23
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: E6978BADAFB1B4D18E10CE9203CEFEBF
+- generatedChecksum: 4DBAFA0ED6522507AB21F9CD4B9D9513
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_socket.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 448DA56FF5229CAD907C2EF76F8D7B23
-- generatedChecksum: E5A07F904CB44DD45846968DCDD08416
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: 4DBAFA0ED6522507AB21F9CD4B9D9513
+- generatedChecksum: 3DD10B2F76B33E5992BFBD2414CA0356
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_softap.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E5A07F904CB44DD45846968DCDD08416
-- generatedChecksum: DE3D5EC4924CF7C21A0035E663D7EDA4
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\dev\spi
+  userChecksum: 3DD10B2F76B33E5992BFBD2414CA0356
+- generatedChecksum: BBD7FECCBFCB49AE5B15DCA0B9F182D2
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/dev/spi
   name: wdrv_winc_spi.c
-  physicalPath: driver\winc\dev\spi
+  physicalPath: driver/winc/dev/spi
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DE3D5EC4924CF7C21A0035E663D7EDA4
-- generatedChecksum: 29A99C3302D799CD8D98C0401BCE6F6A
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: BBD7FECCBFCB49AE5B15DCA0B9F182D2
+- generatedChecksum: C10080B1E0B43C51F7553E8985831817
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_ssl.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 29A99C3302D799CD8D98C0401BCE6F6A
-- generatedChecksum: C706F6D1B298F29D7B8294458E31E8C1
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: C10080B1E0B43C51F7553E8985831817
+- generatedChecksum: C73AE3969B43B0E5A001DC9D791481FC
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_sta.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C706F6D1B298F29D7B8294458E31E8C1
-- generatedChecksum: BBE1B933992365209BF29C2A154EC52E
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: C73AE3969B43B0E5A001DC9D791481FC
+- generatedChecksum: 0E05FA2D3237381C3C0217A9C86A7003
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_systime.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BBE1B933992365209BF29C2A154EC52E
-- generatedChecksum: 9E4CF8EA80BA07268679D84E171B9D8E
-  logicalPath: config\SAMD21_WG_IOT\driver\winc
+  userChecksum: 0E05FA2D3237381C3C0217A9C86A7003
+- generatedChecksum: D8399AAD9B69D69A67A8F188A0862F1C
+  logicalPath: config/SAMD21_WG_IOT/driver/winc
   name: wdrv_winc_wps.c
-  physicalPath: driver\winc
+  physicalPath: driver/winc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9E4CF8EA80BA07268679D84E171B9D8E
-- generatedChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-  logicalPath: config\SAMD21_WG_IOT\stdio
+  userChecksum: D8399AAD9B69D69A67A8F188A0862F1C
+- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
+  logicalPath: config/SAMD21_WG_IOT/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-- generatedChecksum: E83A2568EB70A3E393A9421C4CEDDDD5
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
+- generatedChecksum: 6DE7A9F0A5973D127B56B9739EBCDE20
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: ac.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: E83A2568EB70A3E393A9421C4CEDDDD5
-- generatedChecksum: 590A4F4CE794B1EB4CDE657634C91913
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 6DE7A9F0A5973D127B56B9739EBCDE20
+- generatedChecksum: 666C6398DBEF40FA8716BED23EEE17DB
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: ac.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 666C6398DBEF40FA8716BED23EEE17DB
+- generatedChecksum: B403F7E9E144078FDB282986C647CAB6
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: adc.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 590A4F4CE794B1EB4CDE657634C91913
+  userChecksum: B403F7E9E144078FDB282986C647CAB6
+- generatedChecksum: 35ABE5A146EF291395FAEFB4F1B44003
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: adc.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 35ABE5A146EF291395FAEFB4F1B44003
 - generatedChecksum: null
   logicalPath: ''
   name: app.h
-  physicalPath: ..\..
+  physicalPath: ../..
   security: NON_SECURE
   type: HEADER
   userChecksum: null
 - generatedChecksum: 20A6C0B1F2E70363166E8B5FE4800659
-  logicalPath: config\SAMD21_WG_IOT\library\cryptoauthlib
+  logicalPath: config/SAMD21_WG_IOT/library/cryptoauthlib
   name: atca_config.h
-  physicalPath: library\cryptoauthlib
+  physicalPath: library/cryptoauthlib
   security: NON_SECURE
   type: HEADER
   userChecksum: 20A6C0B1F2E70363166E8B5FE4800659
-- generatedChecksum: 3721B1E6D4F7F77152CF9BD8683D6B91
-  logicalPath: packs\ATSAMD21G18A_DFP
-  name: atsamd21g18a.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 3721B1E6D4F7F77152CF9BD8683D6B91
 - generatedChecksum: 01B82424BC59A54620F7E9E0DB808EBB
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cachel1_armv7.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 01B82424BC59A54620F7E9E0DB808EBB
 - generatedChecksum: 00A88E28C299A373117BC4D5B9E80C80
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armcc.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 00A88E28C299A373117BC4D5B9E80C80
 - generatedChecksum: 734DF6998F09B2D22A4D9FE1D544FDFC
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armclang.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 734DF6998F09B2D22A4D9FE1D544FDFC
 - generatedChecksum: 5D653BEFE5E6B1D00AB3682CE5D24C11
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armclang_ltm.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 5D653BEFE5E6B1D00AB3682CE5D24C11
 - generatedChecksum: 60385A5C6C9882B5D30709A1F6EAEC35
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_compiler.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 60385A5C6C9882B5D30709A1F6EAEC35
 - generatedChecksum: 42E8B722917508A3A9373D13AD827ED6
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_gcc.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 42E8B722917508A3A9373D13AD827ED6
 - generatedChecksum: 376D5C7FD29CAA507ACB1AAB8746B1AD
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_iccarm.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 376D5C7FD29CAA507ACB1AAB8746B1AD
 - generatedChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_version.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
-- generatedChecksum: 678EDE6CCDEDCC6A970C98D40B1E39A3
-  logicalPath: config\SAMD21_WG_IOT
+- generatedChecksum: 7E9F310D55D04646BE9E65DBE306462C
+  logicalPath: config/SAMD21_WG_IOT
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 678EDE6CCDEDCC6A970C98D40B1E39A3
+  userChecksum: 7E9F310D55D04646BE9E65DBE306462C
 - generatedChecksum: CCBD23918BE14943EA128B0D552031C5
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm0plus.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: CCBD23918BE14943EA128B0D552031C5
-- generatedChecksum: 016B5B4A71E106E734B16CA1517FF382
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 2D601C40C8593379036C7CDDA46F2FC7
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: dac.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 016B5B4A71E106E734B16CA1517FF382
-- generatedChecksum: F3C7EBB657FD9CD7804A568061EFD202
-  logicalPath: config\SAMD21_WG_IOT
+  userChecksum: 2D601C40C8593379036C7CDDA46F2FC7
+- generatedChecksum: 2AD9700A41DC94A60C663A17CEDB2703
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: dac.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 2AD9700A41DC94A60C663A17CEDB2703
+- generatedChecksum: E8DAA059D46A7CAB821AAA41F8C836A7
+  logicalPath: config/SAMD21_WG_IOT
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: F3C7EBB657FD9CD7804A568061EFD202
-- generatedChecksum: C0DDB9E7E3888CE027C282388A2F2D8E
-  logicalPath: config\SAMD21_WG_IOT
+  userChecksum: E8DAA059D46A7CAB821AAA41F8C836A7
+- generatedChecksum: 7200FE37B300952D70C11DFE5DA3D6B7
+  logicalPath: config/SAMD21_WG_IOT
   name: device.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: C0DDB9E7E3888CE027C282388A2F2D8E
+  userChecksum: 7200FE37B300952D70C11DFE5DA3D6B7
 - generatedChecksum: 85D3482D395C59BDFF268B01940CDDDE
-  logicalPath: config\SAMD21_WG_IOT
+  logicalPath: config/SAMD21_WG_IOT
   name: device_cache.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: 85D3482D395C59BDFF268B01940CDDDE
-- generatedChecksum: C2E075A57123D0F17F6743EB79FB5708
-  logicalPath: packs\ATSAMD21G18A_DFP\component
-  name: dmac.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 983C98A4EF0520058FDA4F148861BA89
+  logicalPath: config/SAMD21_WG_IOT
+  name: device_vectors.h
+  physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: C2E075A57123D0F17F6743EB79FB5708
+  userChecksum: 983C98A4EF0520058FDA4F148861BA89
+- generatedChecksum: 18A84C15FD2374EB72ABAF9A32CC4824
+  logicalPath: packs/ATSAMD21G18A_DFP/component
+  name: dmac.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 18A84C15FD2374EB72ABAF9A32CC4824
+- generatedChecksum: 6300BE9AA96CD27B16EF756D3746C79D
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: dmac.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6300BE9AA96CD27B16EF756D3746C79D
 - generatedChecksum: 1D2094DFA60F847FFD4E8153B6E78027
-  logicalPath: config\SAMD21_WG_IOT\driver
+  logicalPath: config/SAMD21_WG_IOT/driver
   name: driver.h
   physicalPath: driver
   security: NON_SECURE
   type: HEADER
   userChecksum: 1D2094DFA60F847FFD4E8153B6E78027
 - generatedChecksum: CC7DFCC51CD25171A3E400E18969354F
-  logicalPath: config\SAMD21_WG_IOT\driver
+  logicalPath: config/SAMD21_WG_IOT/driver
   name: driver_common.h
   physicalPath: driver
   security: NON_SECURE
   type: HEADER
   userChecksum: CC7DFCC51CD25171A3E400E18969354F
 - generatedChecksum: 53AD078A2F507226A6BDA2DBFEA03430
-  logicalPath: config\SAMD21_WG_IOT\driver\spi
+  logicalPath: config/SAMD21_WG_IOT/driver/spi
   name: drv_spi.h
-  physicalPath: driver\spi
+  physicalPath: driver/spi
   security: NON_SECURE
   type: HEADER
   userChecksum: 53AD078A2F507226A6BDA2DBFEA03430
 - generatedChecksum: E2CB59CF36535862BE10D0969882502A
-  logicalPath: config\SAMD21_WG_IOT\driver\spi
+  logicalPath: config/SAMD21_WG_IOT/driver/spi
   name: drv_spi_definitions.h
-  physicalPath: driver\spi
+  physicalPath: driver/spi
   security: NON_SECURE
   type: HEADER
   userChecksum: E2CB59CF36535862BE10D0969882502A
-- generatedChecksum: 817445C5CD46BF44AEA791F24FFCFD9B
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 6D81FF0B634113CCCB5A86460EFA92DD
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: dsu.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 817445C5CD46BF44AEA791F24FFCFD9B
-- generatedChecksum: B8FB6160556BB72F85D96E71F7B775D6
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 6D81FF0B634113CCCB5A86460EFA92DD
+- generatedChecksum: 6214EC701605FB5C8C1E5B015A6BBF93
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: dsu.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6214EC701605FB5C8C1E5B015A6BBF93
+- generatedChecksum: 9955C7383F71E1CC057E359CED682DE4
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: ecc_types.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: B8FB6160556BB72F85D96E71F7B775D6
-- generatedChecksum: D354D94F76074F550A3D39339988740E
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 9955C7383F71E1CC057E359CED682DE4
+- generatedChecksum: CB730B525EBC40B7156534FE53671C76
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: eic.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: D354D94F76074F550A3D39339988740E
-- generatedChecksum: CCEBBAD0032227AD71BE82D0A235ADD8
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: CB730B525EBC40B7156534FE53671C76
+- generatedChecksum: 331018A81FE90593154578739C6281E8
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: eic.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 331018A81FE90593154578739C6281E8
+- generatedChecksum: 33344F7F14581555250B166FB7614171
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: evsys.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: CCEBBAD0032227AD71BE82D0A235ADD8
+  userChecksum: 33344F7F14581555250B166FB7614171
+- generatedChecksum: CE77849CE511728E1B207931CECD98FB
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: evsys.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: CE77849CE511728E1B207931CECD98FB
 - generatedChecksum: 6AF14B56BB039866305C230DB435B19E
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\spi_flash
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash
   name: flexible_flash.h
-  physicalPath: driver\winc\include\drv\spi_flash
+  physicalPath: driver/winc/include/drv/spi_flash
   security: NON_SECURE
   type: HEADER
   userChecksum: 6AF14B56BB039866305C230DB435B19E
-- generatedChecksum: 1F81BE55AB45CB807013941A75AA1A57
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: C3C79A66D5ABA685FC43266F7F152385
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: gclk.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1F81BE55AB45CB807013941A75AA1A57
-- generatedChecksum: 56D435F7656CC2343B84F1E66D164D64
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: C3C79A66D5ABA685FC43266F7F152385
+- generatedChecksum: FFB96168C3B0354E64304000DC949D21
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: gclk.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: FFB96168C3B0354E64304000DC949D21
+- generatedChecksum: B4D2953A582F026B48357CEC3EE41597
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: hmatrixb.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 56D435F7656CC2343B84F1E66D164D64
-- generatedChecksum: 998DBA248933E5682F2276B60B8FD8D8
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: B4D2953A582F026B48357CEC3EE41597
+- generatedChecksum: 7A9446AACF2CC5568124D50148A07768
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: i2s.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 998DBA248933E5682F2276B60B8FD8D8
-- generatedChecksum: 36E945349E464C6AF5194D1499EFDED3
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 7A9446AACF2CC5568124D50148A07768
+- generatedChecksum: 4017D6C4D2082CB4A87FEFE5411B6559
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: i2s.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 4017D6C4D2082CB4A87FEFE5411B6559
+- generatedChecksum: 6D080D59DE913B21D0565F65BE7371FA
+  logicalPath: config/SAMD21_WG_IOT
+  name: interrupts.h
+  physicalPath: ''
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6D080D59DE913B21D0565F65BE7371FA
+- generatedChecksum: 67425BB33C9075607E40580599779775
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: m2m_hif.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 36E945349E464C6AF5194D1499EFDED3
-- generatedChecksum: F6F9844A4685C64C5E1E053F60388BF3
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 67425BB33C9075607E40580599779775
+- generatedChecksum: 7114DA3CA982AFA2E47900E46D1509D7
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: m2m_ota.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: F6F9844A4685C64C5E1E053F60388BF3
-- generatedChecksum: 74790CAE1FA5A252F4473D363ADA8494
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 7114DA3CA982AFA2E47900E46D1509D7
+- generatedChecksum: E9B15B7E86659E4E2EC3B170D30A8DE0
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: m2m_periph.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 74790CAE1FA5A252F4473D363ADA8494
-- generatedChecksum: C3BF55155E31B94572ED0AD9BD116D80
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\socket
+  userChecksum: E9B15B7E86659E4E2EC3B170D30A8DE0
+- generatedChecksum: 8897007B4F6EBDAF8137051408F381D3
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/socket
   name: m2m_socket_host_if.h
-  physicalPath: driver\winc\include\drv\socket
+  physicalPath: driver/winc/include/drv/socket
   security: NON_SECURE
   type: HEADER
-  userChecksum: C3BF55155E31B94572ED0AD9BD116D80
-- generatedChecksum: 86229CA4D96AFDA0DF4392F5D3C55BB0
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 8897007B4F6EBDAF8137051408F381D3
+- generatedChecksum: 483D615B9081DBBEE79FDCD2FEF1979A
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: m2m_ssl.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 86229CA4D96AFDA0DF4392F5D3C55BB0
-- generatedChecksum: 6B72F807C1BBAB8F592C0DF9B2275D27
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 483D615B9081DBBEE79FDCD2FEF1979A
+- generatedChecksum: EEBA32BF94B083AB0962A08B909C5C26
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: m2m_types.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6B72F807C1BBAB8F592C0DF9B2275D27
-- generatedChecksum: C3EB4439406A6304FB9E015CB03596DA
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: EEBA32BF94B083AB0962A08B909C5C26
+- generatedChecksum: F6DD4E8AABBD29C4ABE52EEE29778259
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: m2m_wifi.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: C3EB4439406A6304FB9E015CB03596DA
+  userChecksum: F6DD4E8AABBD29C4ABE52EEE29778259
 - generatedChecksum: B96ADDA2C111E73B26EBA5E7B4498912
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: mpu_armv7.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: B96ADDA2C111E73B26EBA5E7B4498912
-- generatedChecksum: F37178E00FC83646B507901642A0100D
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 204900BCF2F31182DBB6827DADD8BD65
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: mtb.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: F37178E00FC83646B507901642A0100D
-- generatedChecksum: E3CD925EBF5C70893FEFE2376B89F492
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\socket
+  userChecksum: 204900BCF2F31182DBB6827DADD8BD65
+- generatedChecksum: 668C8C74576C20FDD720B238DFB915D8
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: mtb.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 668C8C74576C20FDD720B238DFB915D8
+- generatedChecksum: E60DF899D0CC0CCF1111E7F418A7FE00
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/socket
   name: netinet_in.h
-  physicalPath: driver\winc\include\drv\socket
+  physicalPath: driver/winc/include/drv/socket
   security: NON_SECURE
   type: HEADER
-  userChecksum: E3CD925EBF5C70893FEFE2376B89F492
-- generatedChecksum: 14E4E22E94C64D659025E4CC9FE45ED6
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\bsp
+  userChecksum: E60DF899D0CC0CCF1111E7F418A7FE00
+- generatedChecksum: 8F2BD643CF1D6CD462DDE81B698B43E3
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/bsp
   name: nm_bsp.h
-  physicalPath: driver\winc\include\drv\bsp
+  physicalPath: driver/winc/include/drv/bsp
   security: NON_SECURE
   type: HEADER
-  userChecksum: 14E4E22E94C64D659025E4CC9FE45ED6
-- generatedChecksum: E977771A3BEEE2358E7C4764C829C4E5
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\common
+  userChecksum: 8F2BD643CF1D6CD462DDE81B698B43E3
+- generatedChecksum: E555740324B3E2541849DD558A31CA08
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/common
   name: nm_common.h
-  physicalPath: driver\winc\include\drv\common
+  physicalPath: driver/winc/include/drv/common
   security: NON_SECURE
   type: HEADER
-  userChecksum: E977771A3BEEE2358E7C4764C829C4E5
-- generatedChecksum: 9FB5924949388BCCF95C7175705C8FCE
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\common
+  userChecksum: E555740324B3E2541849DD558A31CA08
+- generatedChecksum: 2E73E0802ED89EEF8A0A96C652CB40F4
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/common
   name: nm_debug.h
-  physicalPath: driver\winc\include\drv\common
+  physicalPath: driver/winc/include/drv/common
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9FB5924949388BCCF95C7175705C8FCE
-- generatedChecksum: 0AF5B94EA779A4426CDFF48E97A4085B
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 2E73E0802ED89EEF8A0A96C652CB40F4
+- generatedChecksum: C15347C108D8FF952AE56C165A2CF34E
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: nmasic.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0AF5B94EA779A4426CDFF48E97A4085B
-- generatedChecksum: 29C48D91576855C4A2F09B32B49A6D8D
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: C15347C108D8FF952AE56C165A2CF34E
+- generatedChecksum: A0234F0899A89A28C49C4152BDF3E2B6
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: nmbus.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 29C48D91576855C4A2F09B32B49A6D8D
-- generatedChecksum: 92B1C663B331B2810F3D5F5D3F91C975
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: A0234F0899A89A28C49C4152BDF3E2B6
+- generatedChecksum: 2F2C7E281087A408134926B780916C56
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: nmdrv.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: 92B1C663B331B2810F3D5F5D3F91C975
-- generatedChecksum: E388C8F3C2C2BA55401B47CEE9EB1E26
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\driver
+  userChecksum: 2F2C7E281087A408134926B780916C56
+- generatedChecksum: F860FE242115BAEC707A7E749AD8F390
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/driver
   name: nmspi.h
-  physicalPath: driver\winc\include\drv\driver
+  physicalPath: driver/winc/include/drv/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: E388C8F3C2C2BA55401B47CEE9EB1E26
-- generatedChecksum: 7296DA017FF9C40DCC08191D6999B77B
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: F860FE242115BAEC707A7E749AD8F390
+- generatedChecksum: 566F84A8071CBEDE4954C7DCD06B1F8D
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: nvmctrl.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 7296DA017FF9C40DCC08191D6999B77B
+  userChecksum: 566F84A8071CBEDE4954C7DCD06B1F8D
+- generatedChecksum: BA9C26A9F15ED6C123020B6BA997A1C3
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: nvmctrl.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: BA9C26A9F15ED6C123020B6BA997A1C3
 - generatedChecksum: F0AD88762263B7CB89B02AB4F5876059
-  logicalPath: config\SAMD21_WG_IOT\osal
+  logicalPath: config/SAMD21_WG_IOT/osal
   name: osal.h
   physicalPath: osal
   security: NON_SECURE
   type: HEADER
   userChecksum: F0AD88762263B7CB89B02AB4F5876059
 - generatedChecksum: 0AC88C49E4585B606FD5AC6804F0C340
-  logicalPath: config\SAMD21_WG_IOT\osal
+  logicalPath: config/SAMD21_WG_IOT/osal
   name: osal_definitions.h
   physicalPath: osal
   security: NON_SECURE
   type: HEADER
   userChecksum: 0AC88C49E4585B606FD5AC6804F0C340
-- generatedChecksum: B358678B02AC7D3AD6CC80621ECC826D
-  logicalPath: config\SAMD21_WG_IOT\osal
+- generatedChecksum: B040122CCA94A0636810D6F15F13B751
+  logicalPath: config/SAMD21_WG_IOT/osal
   name: osal_impl_basic.h
   physicalPath: osal
   security: NON_SECURE
   type: HEADER
-  userChecksum: B358678B02AC7D3AD6CC80621ECC826D
-- generatedChecksum: D5A9C90744DEFF4CCDD467B77B6406CB
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: B040122CCA94A0636810D6F15F13B751
+- generatedChecksum: FD2D8EFCE93F5BE3304475DA0AFAFE72
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: pac.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: D5A9C90744DEFF4CCDD467B77B6406CB
-- generatedChecksum: 1E99A28C6048BBF66DCE29E972766DF8
-  logicalPath: config\SAMD21_WG_IOT\peripheral\adc
+  userChecksum: FD2D8EFCE93F5BE3304475DA0AFAFE72
+- generatedChecksum: C284D03B3569B43807AF831D1361D637
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: pac0.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: C284D03B3569B43807AF831D1361D637
+- generatedChecksum: 971132501684FA497CFE6811090CF6FD
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: pac1.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 971132501684FA497CFE6811090CF6FD
+- generatedChecksum: B43B1C083FF9FEB9054B6EA52E742154
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: pac2.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: B43B1C083FF9FEB9054B6EA52E742154
+- generatedChecksum: E1EBCFB84A88D86D910775A333EB0D50
+  logicalPath: config/SAMD21_WG_IOT/peripheral/adc
   name: plib_adc.h
-  physicalPath: peripheral\adc
+  physicalPath: peripheral/adc
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1E99A28C6048BBF66DCE29E972766DF8
-- generatedChecksum: F7DC05A42425D90B9B6A28567834C02C
-  logicalPath: config\SAMD21_WG_IOT\peripheral\adc
+  userChecksum: E1EBCFB84A88D86D910775A333EB0D50
+- generatedChecksum: 8A304BB3ADE3A89AD85D8DE4B7FC76B9
+  logicalPath: config/SAMD21_WG_IOT/peripheral/adc
   name: plib_adc_common.h
-  physicalPath: peripheral\adc
+  physicalPath: peripheral/adc
   security: NON_SECURE
   type: HEADER
-  userChecksum: F7DC05A42425D90B9B6A28567834C02C
-- generatedChecksum: C591D09F115E12D00921D14939E3900D
-  logicalPath: config\SAMD21_WG_IOT\peripheral\clock
+  userChecksum: 8A304BB3ADE3A89AD85D8DE4B7FC76B9
+- generatedChecksum: D9883C70E96468DEE4D7B4669D1C837B
+  logicalPath: config/SAMD21_WG_IOT/peripheral/clock
   name: plib_clock.h
-  physicalPath: peripheral\clock
+  physicalPath: peripheral/clock
   security: NON_SECURE
   type: HEADER
-  userChecksum: C591D09F115E12D00921D14939E3900D
-- generatedChecksum: 7E781B5EB55D5AF7787872E213EFB0C0
-  logicalPath: config\SAMD21_WG_IOT\peripheral\dmac
+  userChecksum: D9883C70E96468DEE4D7B4669D1C837B
+- generatedChecksum: D8EBF1DC06537E3B084B530EA100B512
+  logicalPath: config/SAMD21_WG_IOT/peripheral/dmac
   name: plib_dmac.h
-  physicalPath: peripheral\dmac
+  physicalPath: peripheral/dmac
   security: NON_SECURE
   type: HEADER
-  userChecksum: 7E781B5EB55D5AF7787872E213EFB0C0
+  userChecksum: D8EBF1DC06537E3B084B530EA100B512
 - generatedChecksum: 0987922DE88C11DCC74AC3EC490B2C8D
-  logicalPath: config\SAMD21_WG_IOT\peripheral\eic
+  logicalPath: config/SAMD21_WG_IOT/peripheral/eic
   name: plib_eic.h
-  physicalPath: peripheral\eic
+  physicalPath: peripheral/eic
   security: NON_SECURE
   type: HEADER
   userChecksum: 0987922DE88C11DCC74AC3EC490B2C8D
 - generatedChecksum: CCAEF942C66AF995876DFD85CEFF611F
-  logicalPath: config\SAMD21_WG_IOT\peripheral\evsys
+  logicalPath: config/SAMD21_WG_IOT/peripheral/evsys
   name: plib_evsys.h
-  physicalPath: peripheral\evsys
+  physicalPath: peripheral/evsys
   security: NON_SECURE
   type: HEADER
   userChecksum: CCAEF942C66AF995876DFD85CEFF611F
-- generatedChecksum: E95AB23B866AA0CE6F0ABF637E9E2C83
-  logicalPath: config\SAMD21_WG_IOT\peripheral\nvic
+- generatedChecksum: 55ECCC7FA71BD15B46EF80DC0515ED7A
+  logicalPath: config/SAMD21_WG_IOT/peripheral/nvic
   name: plib_nvic.h
-  physicalPath: peripheral\nvic
+  physicalPath: peripheral/nvic
   security: NON_SECURE
   type: HEADER
-  userChecksum: E95AB23B866AA0CE6F0ABF637E9E2C83
-- generatedChecksum: 71D16914F1E580B0AF77141622DCD865
-  logicalPath: config\SAMD21_WG_IOT\peripheral\nvmctrl
+  userChecksum: 55ECCC7FA71BD15B46EF80DC0515ED7A
+- generatedChecksum: AC180A559D971C09B668281BC2087C10
+  logicalPath: config/SAMD21_WG_IOT/peripheral/nvmctrl
   name: plib_nvmctrl.h
-  physicalPath: peripheral\nvmctrl
+  physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: HEADER
-  userChecksum: 71D16914F1E580B0AF77141622DCD865
-- generatedChecksum: 3028E6286A608166B1B08E7C07C3EEF1
-  logicalPath: config\SAMD21_WG_IOT\peripheral\port
+  userChecksum: AC180A559D971C09B668281BC2087C10
+- generatedChecksum: F8D7FD08FAD610917B0B2B1F0B81AACD
+  logicalPath: config/SAMD21_WG_IOT/peripheral/port
   name: plib_port.h
-  physicalPath: peripheral\port
+  physicalPath: peripheral/port
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3028E6286A608166B1B08E7C07C3EEF1
+  userChecksum: F8D7FD08FAD610917B0B2B1F0B81AACD
 - generatedChecksum: 1B603FD2A1A26E2EFECC96A9647DEDC7
-  logicalPath: config\SAMD21_WG_IOT\peripheral\rtc
+  logicalPath: config/SAMD21_WG_IOT/peripheral/rtc
   name: plib_rtc.h
-  physicalPath: peripheral\rtc
+  physicalPath: peripheral/rtc
   security: NON_SECURE
   type: HEADER
   userChecksum: 1B603FD2A1A26E2EFECC96A9647DEDC7
-- generatedChecksum: 504DE36B9654C4BA08B1137D88C3D7FB
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\i2c_master
+- generatedChecksum: 9053F42912596C45C33FEA8A00A164F5
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/i2c_master
   name: plib_sercom3_i2c_master.h
-  physicalPath: peripheral\sercom\i2c_master
+  physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: 504DE36B9654C4BA08B1137D88C3D7FB
-- generatedChecksum: 11A3F9ED97057C23B28E1D0E6D181A13
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\spi_master
+  userChecksum: 9053F42912596C45C33FEA8A00A164F5
+- generatedChecksum: 8DF55A8E90018AC6902E975BA4A2BEDB
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/spi_master
   name: plib_sercom4_spi_master.h
-  physicalPath: peripheral\sercom\spi_master
+  physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: 11A3F9ED97057C23B28E1D0E6D181A13
+  userChecksum: 8DF55A8E90018AC6902E975BA4A2BEDB
 - generatedChecksum: 8FCF87489C52EC5F0EC90FEE597E0EEC
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\usart
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/usart
   name: plib_sercom5_usart.h
-  physicalPath: peripheral\sercom\usart
+  physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: HEADER
   userChecksum: 8FCF87489C52EC5F0EC90FEE597E0EEC
 - generatedChecksum: 555AC09B32F566FBFB0A0505CF73ABD6
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\i2c_master
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/i2c_master
   name: plib_sercom_i2c_master_common.h
-  physicalPath: peripheral\sercom\i2c_master
+  physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: HEADER
   userChecksum: 555AC09B32F566FBFB0A0505CF73ABD6
-- generatedChecksum: A06CFE6AEC7B18A5C3DEAC185207002C
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\spi_master
+- generatedChecksum: BED7AF34A8D633C6994B780C19D7157F
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/spi_master
   name: plib_sercom_spi_master_common.h
-  physicalPath: peripheral\sercom\spi_master
+  physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: A06CFE6AEC7B18A5C3DEAC185207002C
-- generatedChecksum: 925FCFFDB3C2D6B21726F0B97CDA821B
-  logicalPath: config\SAMD21_WG_IOT\peripheral\sercom\usart
+  userChecksum: BED7AF34A8D633C6994B780C19D7157F
+- generatedChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
+  logicalPath: config/SAMD21_WG_IOT/peripheral/sercom/usart
   name: plib_sercom_usart_common.h
-  physicalPath: peripheral\sercom\usart
+  physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: HEADER
-  userChecksum: 925FCFFDB3C2D6B21726F0B97CDA821B
+  userChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
 - generatedChecksum: 0DE96936AB21998A284FA176F870E596
-  logicalPath: config\SAMD21_WG_IOT\peripheral\tc
+  logicalPath: config/SAMD21_WG_IOT/peripheral/tc
   name: plib_tc3.h
-  physicalPath: peripheral\tc
+  physicalPath: peripheral/tc
   security: NON_SECURE
   type: HEADER
   userChecksum: 0DE96936AB21998A284FA176F870E596
 - generatedChecksum: 6DBEAF7BD42014F5492374805406687A
-  logicalPath: config\SAMD21_WG_IOT\peripheral\tc
+  logicalPath: config/SAMD21_WG_IOT/peripheral/tc
   name: plib_tc_common.h
-  physicalPath: peripheral\tc
+  physicalPath: peripheral/tc
   security: NON_SECURE
   type: HEADER
   userChecksum: 6DBEAF7BD42014F5492374805406687A
-- generatedChecksum: EBC9AD17B5DCF76A8EDA531E3D2ECDA5
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 482E54FA91E3C975FBC8AEE336572A05
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: pm.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: EBC9AD17B5DCF76A8EDA531E3D2ECDA5
-- generatedChecksum: 7AED24682E6782ACD411A220C99C4F7A
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 482E54FA91E3C975FBC8AEE336572A05
+- generatedChecksum: 58E5A0D47B870051D9D331C99AF9D1CD
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: pm.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 58E5A0D47B870051D9D331C99AF9D1CD
+- generatedChecksum: AD1FFF76CF4017691BF733C246C6C279
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: port.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 7AED24682E6782ACD411A220C99C4F7A
-- generatedChecksum: B838D9B01315613C8EFF25C5BB950F80
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: AD1FFF76CF4017691BF733C246C6C279
+- generatedChecksum: 6D71AC20D2608BD6E23E85C67AF905D3
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: port.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6D71AC20D2608BD6E23E85C67AF905D3
+- generatedChecksum: 133A647B5363278AEBE4EA1BDC83B4C6
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: ptc.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: B838D9B01315613C8EFF25C5BB950F80
-- generatedChecksum: 87D1C55E9ECF3BCCB24FA600CBFCC930
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 133A647B5363278AEBE4EA1BDC83B4C6
+- generatedChecksum: 66CFCF5DF4849F807DA52A0D269B26A2
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: ptc.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 66CFCF5DF4849F807DA52A0D269B26A2
+- generatedChecksum: A577BA8BDF20D9977DC15C3456C0F0FF
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: rtc.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 87D1C55E9ECF3BCCB24FA600CBFCC930
-- generatedChecksum: DC4D76B9794A235883D7F5D3FDC6F082
-  logicalPath: packs\ATSAMD21G18A_DFP\pio
+  userChecksum: A577BA8BDF20D9977DC15C3456C0F0FF
+- generatedChecksum: B71541ECB386B4086F72A7BCF3C7DA60
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: rtc.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: B71541ECB386B4086F72A7BCF3C7DA60
+- generatedChecksum: 622D7CF512F3748A0F866CD109C7AB7C
+  logicalPath: packs/ATSAMD21G18A_DFP
   name: samd21g18a.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\pio
+  physicalPath: ../../packs/ATSAMD21G18A_DFP
   security: NON_SECURE
   type: HEADER
-  userChecksum: DC4D76B9794A235883D7F5D3FDC6F082
-- generatedChecksum: 4253FCE0B35C0AB2AA0253652C488761
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 622D7CF512F3748A0F866CD109C7AB7C
+- generatedChecksum: E7168F7BAD665CBBF6A3B2DB15515D41
+  logicalPath: packs/ATSAMD21G18A_DFP/pio
+  name: samd21g18a.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/pio
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E7168F7BAD665CBBF6A3B2DB15515D41
+- generatedChecksum: 10E1F496FCCDE2FA5DDB467BEF74C4E5
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sbmatrix.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 10E1F496FCCDE2FA5DDB467BEF74C4E5
+- generatedChecksum: 83917655CEC793F1684CD40BAFF3BD6F
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: sercom.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4253FCE0B35C0AB2AA0253652C488761
-- generatedChecksum: 52D97E76A42608B36588376A0C57C5D1
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\socket
+  userChecksum: 83917655CEC793F1684CD40BAFF3BD6F
+- generatedChecksum: 0D0BD1CF8FBD96B0FDFDF93B602720BB
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sercom0.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0D0BD1CF8FBD96B0FDFDF93B602720BB
+- generatedChecksum: 0E7F28415A2A5BBAE48C22096D3C5F74
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sercom1.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0E7F28415A2A5BBAE48C22096D3C5F74
+- generatedChecksum: BDEE5B392D4864C9EFDB7D99927921F1
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sercom2.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: BDEE5B392D4864C9EFDB7D99927921F1
+- generatedChecksum: 9625242B058FC24FAD2B17C389C3D4AC
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sercom3.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 9625242B058FC24FAD2B17C389C3D4AC
+- generatedChecksum: 8AC182D72B27DCFF4DB39B657249E518
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sercom4.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 8AC182D72B27DCFF4DB39B657249E518
+- generatedChecksum: FD2510BC57F7413FFE7CC12E82D44B77
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sercom5.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: FD2510BC57F7413FFE7CC12E82D44B77
+- generatedChecksum: FFB28AB4424E2AA32C28B9BBD25932E4
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/socket
   name: socket.h
-  physicalPath: driver\winc\include\drv\socket
+  physicalPath: driver/winc/include/drv/socket
   security: NON_SECURE
   type: HEADER
-  userChecksum: 52D97E76A42608B36588376A0C57C5D1
-- generatedChecksum: 50316907B1C917E20FAFBA79D1248176
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\spi_flash
+  userChecksum: FFB28AB4424E2AA32C28B9BBD25932E4
+- generatedChecksum: 60CF08E7ACC796D94BD7DFE110FE995D
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash
   name: spi_flash.h
-  physicalPath: driver\winc\include\drv\spi_flash
+  physicalPath: driver/winc/include/drv/spi_flash
   security: NON_SECURE
   type: HEADER
-  userChecksum: 50316907B1C917E20FAFBA79D1248176
-- generatedChecksum: 5041B117FE96710B5376AD9AAA67E6D8
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\drv\spi_flash
+  userChecksum: 60CF08E7ACC796D94BD7DFE110FE995D
+- generatedChecksum: 4331D2261FE1B93252555E47A4D02E42
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash
   name: spi_flash_map.h
-  physicalPath: driver\winc\include\drv\spi_flash
+  physicalPath: driver/winc/include/drv/spi_flash
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5041B117FE96710B5376AD9AAA67E6D8
-- generatedChecksum: CD4D57FA548C4424287C649841CA2843
-  logicalPath: config\SAMD21_WG_IOT\system\command
+  userChecksum: 4331D2261FE1B93252555E47A4D02E42
+- generatedChecksum: 712D1407BC82CB6B3C4C44FED4F14D26
+  logicalPath: config/SAMD21_WG_IOT/system/command
   name: sys_command.h
-  physicalPath: system\command
+  physicalPath: system/command
   security: NON_SECURE
   type: HEADER
-  userChecksum: CD4D57FA548C4424287C649841CA2843
+  userChecksum: 712D1407BC82CB6B3C4C44FED4F14D26
 - generatedChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
-  logicalPath: config\SAMD21_WG_IOT\system\console
+  logicalPath: config/SAMD21_WG_IOT/system/console
   name: sys_console.h
-  physicalPath: system\console
+  physicalPath: system/console
   security: NON_SECURE
   type: HEADER
   userChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
 - generatedChecksum: 6BB6C54C5CD963A5A940CF7BB28F4E10
-  logicalPath: config\SAMD21_WG_IOT\system\debug
+  logicalPath: config/SAMD21_WG_IOT/system/debug
   name: sys_debug.h
-  physicalPath: system\debug
+  physicalPath: system/debug
   security: NON_SECURE
   type: HEADER
   userChecksum: 6BB6C54C5CD963A5A940CF7BB28F4E10
 - generatedChecksum: 473DBCC8C06479687B347E462B9F6B3B
-  logicalPath: config\SAMD21_WG_IOT\system\dma
+  logicalPath: config/SAMD21_WG_IOT/system/dma
   name: sys_dma.h
-  physicalPath: system\dma
+  physicalPath: system/dma
   security: NON_SECURE
   type: HEADER
   userChecksum: 473DBCC8C06479687B347E462B9F6B3B
 - generatedChecksum: 33CFF9B17F00BDAE39FD8EC48112B9EF
-  logicalPath: config\SAMD21_WG_IOT\system\dma
+  logicalPath: config/SAMD21_WG_IOT/system/dma
   name: sys_dma_mapping.h
-  physicalPath: system\dma
+  physicalPath: system/dma
   security: NON_SECURE
   type: HEADER
   userChecksum: 33CFF9B17F00BDAE39FD8EC48112B9EF
 - generatedChecksum: 1329D2DEB6E5AC9515AD4D165C60DC74
-  logicalPath: config\SAMD21_WG_IOT\system\int
+  logicalPath: config/SAMD21_WG_IOT/system/int
   name: sys_int.h
-  physicalPath: system\int
+  physicalPath: system/int
   security: NON_SECURE
   type: HEADER
   userChecksum: 1329D2DEB6E5AC9515AD4D165C60DC74
 - generatedChecksum: 00278F169FFB0CBBAB3A68B5D647F093
-  logicalPath: config\SAMD21_WG_IOT\system\int
+  logicalPath: config/SAMD21_WG_IOT/system/int
   name: sys_int_mapping.h
-  physicalPath: system\int
+  physicalPath: system/int
   security: NON_SECURE
   type: HEADER
   userChecksum: 00278F169FFB0CBBAB3A68B5D647F093
 - generatedChecksum: 128790423D136B2CC5D2046ECD9F3129
-  logicalPath: config\SAMD21_WG_IOT\system\ports
+  logicalPath: config/SAMD21_WG_IOT/system/ports
   name: sys_ports.h
-  physicalPath: system\ports
+  physicalPath: system/ports
   security: NON_SECURE
   type: HEADER
   userChecksum: 128790423D136B2CC5D2046ECD9F3129
 - generatedChecksum: 0077CD2365E6F28D76DF1D212FF80059
-  logicalPath: config\SAMD21_WG_IOT\system\ports
+  logicalPath: config/SAMD21_WG_IOT/system/ports
   name: sys_ports_mapping.h
-  physicalPath: system\ports
+  physicalPath: system/ports
   security: NON_SECURE
   type: HEADER
   userChecksum: 0077CD2365E6F28D76DF1D212FF80059
+- generatedChecksum: 8E43BD17134E69982826F202D0AB42C5
+  logicalPath: config/SAMD21_WG_IOT/system/reset
+  name: sys_reset.h
+  physicalPath: system/reset
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 8E43BD17134E69982826F202D0AB42C5
 - generatedChecksum: 466D676839280C0E7FC2CC6F78BA6EE9
-  logicalPath: config\SAMD21_WG_IOT\system\time
+  logicalPath: config/SAMD21_WG_IOT/system/time
   name: sys_time.h
-  physicalPath: system\time
+  physicalPath: system/time
   security: NON_SECURE
   type: HEADER
   userChecksum: 466D676839280C0E7FC2CC6F78BA6EE9
-- generatedChecksum: 82C87C4CF49EE4D859363C15E9073333
-  logicalPath: config\SAMD21_WG_IOT\system\time
+- generatedChecksum: 125CB4EFA4E80BCD6041E8AC22F2E2FC
+  logicalPath: config/SAMD21_WG_IOT/system/time
   name: sys_time_definitions.h
-  physicalPath: system\time
+  physicalPath: system/time
   security: NON_SECURE
   type: HEADER
-  userChecksum: 82C87C4CF49EE4D859363C15E9073333
+  userChecksum: 125CB4EFA4E80BCD6041E8AC22F2E2FC
 - generatedChecksum: 62F39464265EC34979649F761FB4FE57
-  logicalPath: config\SAMD21_WG_IOT\system\time
+  logicalPath: config/SAMD21_WG_IOT/system/time
   name: sys_time_local.h
-  physicalPath: system\time\src
+  physicalPath: system/time/src
   security: NON_SECURE
   type: HEADER
   userChecksum: 62F39464265EC34979649F761FB4FE57
-- generatedChecksum: 0258BE6535CDDE44682CC0CDCB222880
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 486AC61EE71D8D443C426AD68798A33A
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: sysctrl.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0258BE6535CDDE44682CC0CDCB222880
+  userChecksum: 486AC61EE71D8D443C426AD68798A33A
+- generatedChecksum: EB6BC525F20110B5BB7BCA4D40814C96
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: sysctrl.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: EB6BC525F20110B5BB7BCA4D40814C96
 - generatedChecksum: BE95B4F134C5C929787B9DA6FDBF3501
-  logicalPath: config\SAMD21_WG_IOT\system
+  logicalPath: config/SAMD21_WG_IOT/system
   name: system.h
   physicalPath: system
   security: NON_SECURE
   type: HEADER
   userChecksum: BE95B4F134C5C929787B9DA6FDBF3501
 - generatedChecksum: C3F5136D520DAC4416512EBFCCA023C3
-  logicalPath: config\SAMD21_WG_IOT\system
+  logicalPath: config/SAMD21_WG_IOT/system
   name: system_common.h
   physicalPath: system
   security: NON_SECURE
   type: HEADER
   userChecksum: C3F5136D520DAC4416512EBFCCA023C3
 - generatedChecksum: 1C75A8A6B60598A2FD0D533F57839B72
-  logicalPath: config\SAMD21_WG_IOT\system
+  logicalPath: config/SAMD21_WG_IOT/system
   name: system_module.h
   physicalPath: system
   security: NON_SECURE
   type: HEADER
   userChecksum: 1C75A8A6B60598A2FD0D533F57839B72
-- generatedChecksum: E9BCB2B0F7AA6142C2681C1155F88131
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 62247071F0F4D0995E4F20C5E4F959E2
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: tc.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: E9BCB2B0F7AA6142C2681C1155F88131
-- generatedChecksum: 5819925250D9C7C86B56A48BF0949196
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+  userChecksum: 62247071F0F4D0995E4F20C5E4F959E2
+- generatedChecksum: A3169EE6471B80F202EF75DB7D75B8A0
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tc3.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: A3169EE6471B80F202EF75DB7D75B8A0
+- generatedChecksum: CF08F07227563D24EC6DFD621FF8F779
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tc4.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: CF08F07227563D24EC6DFD621FF8F779
+- generatedChecksum: 7F3C12BD011BF49D2A9624CBE711CAA8
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tc5.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 7F3C12BD011BF49D2A9624CBE711CAA8
+- generatedChecksum: 1ECF0674584BE961B1EEF35C232B5878
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tc6.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1ECF0674584BE961B1EEF35C232B5878
+- generatedChecksum: 81E3E0D085674FDDB6A5667D39AE56B4
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tc7.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 81E3E0D085674FDDB6A5667D39AE56B4
+- generatedChecksum: ED30E602304B5FBEA49439D66ECC76F1
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: tcc.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5819925250D9C7C86B56A48BF0949196
+  userChecksum: ED30E602304B5FBEA49439D66ECC76F1
+- generatedChecksum: 3332A0546C2C3F72DCFA76832A5F9D19
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tcc0.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 3332A0546C2C3F72DCFA76832A5F9D19
+- generatedChecksum: 0A2B448E1535EEC12E394995FE1AE54A
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tcc1.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0A2B448E1535EEC12E394995FE1AE54A
+- generatedChecksum: A4F9CEA337DBBD7C70C4DCDE9656A99C
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: tcc2.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: A4F9CEA337DBBD7C70C4DCDE9656A99C
 - generatedChecksum: 20E829A99B86C2889E4E2E536161C27A
-  logicalPath: config\SAMD21_WG_IOT
+  logicalPath: config/SAMD21_WG_IOT
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: 20E829A99B86C2889E4E2E536161C27A
-- generatedChecksum: F123D6104DB9C55CD684CE27F3B22781
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: 60BF327C0EDB55BABB34AA93CC3D6FB7
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: usb.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: F123D6104DB9C55CD684CE27F3B22781
+  userChecksum: 60BF327C0EDB55BABB34AA93CC3D6FB7
+- generatedChecksum: 617E901C702EFD6FA46BC53B61865ACE
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: usb.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 617E901C702EFD6FA46BC53B61865ACE
 - generatedChecksum: null
-  logicalPath: config\SAMD21_WG_IOT
+  logicalPath: config/SAMD21_WG_IOT
   name: user.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: 32A74523001CC4C187FF490A0F7E430D
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+- generatedChecksum: 033E6D1A1DE09563D6768BE330BAFFE2
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 32A74523001CC4C187FF490A0F7E430D
-- generatedChecksum: 94B68E35BC47CF9000E56A2CD968A2B3
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  userChecksum: 033E6D1A1DE09563D6768BE330BAFFE2
+- generatedChecksum: C3BE476E2A3338FC87BCC424CDB0FD27
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_api.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 94B68E35BC47CF9000E56A2CD968A2B3
-- generatedChecksum: E75B5C98C066A7DBF10B854AC419D0EA
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  userChecksum: C3BE476E2A3338FC87BCC424CDB0FD27
+- generatedChecksum: E59D88313B67DE2CEA6F7D0BEE5F61A9
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_assoc.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: E75B5C98C066A7DBF10B854AC419D0EA
-- generatedChecksum: E667A4438FD611E9A681D7653603E19C
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  userChecksum: E59D88313B67DE2CEA6F7D0BEE5F61A9
+- generatedChecksum: C075415B0DB869ED1617FA1E40EE4161
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_authctx.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: E667A4438FD611E9A681D7653603E19C
-- generatedChecksum: DCF6D51C1FF5B6DC23CDE9C179F59510
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  userChecksum: C075415B0DB869ED1617FA1E40EE4161
+- generatedChecksum: 9CB4C8148FBEC1422E85410A1754935E
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_bssctx.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: DCF6D51C1FF5B6DC23CDE9C179F59510
-- generatedChecksum: 66D1B025A1551D0291F7DD7DB598D062
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  userChecksum: 9CB4C8148FBEC1422E85410A1754935E
+- generatedChecksum: 1A09A1E2933FB272AC441BF0EB0B43E5
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_bssfind.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 66D1B025A1551D0291F7DD7DB598D062
+  userChecksum: 1A09A1E2933FB272AC441BF0EB0B43E5
 - generatedChecksum: B117332A9D5A92CB9D3A57B30921F9E0
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_client_api.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: B117332A9D5A92CB9D3A57B30921F9E0
-- generatedChecksum: 090F50A1A8B5A9D5B8A6B6024C3DFBBC
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+- generatedChecksum: FCC216979BC4F8E0696D2A1C7CF15C21
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_common.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 090F50A1A8B5A9D5B8A6B6024C3DFBBC
+  userChecksum: FCC216979BC4F8E0696D2A1C7CF15C21
 - generatedChecksum: ADB81872B1C02AAA29834AF1452AEA03
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_custie.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: ADB81872B1C02AAA29834AF1452AEA03
-- generatedChecksum: 882B3D96C17040A22E26C464B499B830
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+- generatedChecksum: 64F8DF83B137E462F595A5501401D8CF
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_debug.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 882B3D96C17040A22E26C464B499B830
+  userChecksum: 64F8DF83B137E462F595A5501401D8CF
 - generatedChecksum: D1BE44448B9DB014BA1243C35D01B3B1
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\dev
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/dev
   name: wdrv_winc_gpio.h
-  physicalPath: driver\winc\include\dev
+  physicalPath: driver/winc/include/dev
   security: NON_SECURE
   type: HEADER
   userChecksum: D1BE44448B9DB014BA1243C35D01B3B1
-- generatedChecksum: 0DADB059BB343DF4DB81D7100A5AA1AF
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+- generatedChecksum: 76E11A9BB21E12895904A3AE3113E30C
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_host_file.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0DADB059BB343DF4DB81D7100A5AA1AF
+  userChecksum: 76E11A9BB21E12895904A3AE3113E30C
 - generatedChecksum: C44FEE06CF9D7796C6736E1FE5018876
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_httpprovctx.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: C44FEE06CF9D7796C6736E1FE5018876
 - generatedChecksum: 6D8663694E91681409832090DCF4A883
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_nvm.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: 6D8663694E91681409832090DCF4A883
 - generatedChecksum: BB29E3755A067138F9A41BB5C23D4423
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_powersave.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: BB29E3755A067138F9A41BB5C23D4423
-- generatedChecksum: 5349FD28B7523A6EE43D71D759EF873F
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+- generatedChecksum: F70714D3F24AAC58E9C6D457DD9C3383
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_socket.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5349FD28B7523A6EE43D71D759EF873F
+  userChecksum: F70714D3F24AAC58E9C6D457DD9C3383
 - generatedChecksum: E5AF59122D8CB3058702BE143FD19B91
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_softap.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: E5AF59122D8CB3058702BE143FD19B91
 - generatedChecksum: D6499F908C8F6253A65EC8A2BFDFD131
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include\dev
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include/dev
   name: wdrv_winc_spi.h
-  physicalPath: driver\winc\include\dev
+  physicalPath: driver/winc/include/dev
   security: NON_SECURE
   type: HEADER
   userChecksum: D6499F908C8F6253A65EC8A2BFDFD131
-- generatedChecksum: F6790781CBA0124F3BAC11F0E281344F
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+- generatedChecksum: 2570CBAD686F31AC11168A7D364DD929
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_ssl.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: F6790781CBA0124F3BAC11F0E281344F
-- generatedChecksum: A1B48BB2953DDC97F059D0CD22B70A74
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  userChecksum: 2570CBAD686F31AC11168A7D364DD929
+- generatedChecksum: 5F1F038052B3DF272C98FD6B9FA63139
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_sta.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: A1B48BB2953DDC97F059D0CD22B70A74
+  userChecksum: 5F1F038052B3DF272C98FD6B9FA63139
 - generatedChecksum: 1AA3F541AE8FC4E3D38E558DE8AD6FDA
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_systime.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: 1AA3F541AE8FC4E3D38E558DE8AD6FDA
 - generatedChecksum: 864E55BD2393FAB02C5879ED5EFC940F
-  logicalPath: config\SAMD21_WG_IOT\driver\winc\include
+  logicalPath: config/SAMD21_WG_IOT/driver/winc/include
   name: wdrv_winc_wps.h
-  physicalPath: driver\winc\include
+  physicalPath: driver/winc/include
   security: NON_SECURE
   type: HEADER
   userChecksum: 864E55BD2393FAB02C5879ED5EFC940F
-- generatedChecksum: AF14D78B734053187B6E93E19BD70449
-  logicalPath: packs\ATSAMD21G18A_DFP\component
+- generatedChecksum: FF1BA6166BFA6C9898A26FEC0DA4A381
+  logicalPath: packs/ATSAMD21G18A_DFP/component
   name: wdt.h
-  physicalPath: ..\..\packs\ATSAMD21G18A_DFP\component
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: AF14D78B734053187B6E93E19BD70449
-- generatedChecksum: 29AFB0F8B0B358086267A5A68EBEFC01
-  logicalPath: config\SAMD21_WG_IOT
+  userChecksum: FF1BA6166BFA6C9898A26FEC0DA4A381
+- generatedChecksum: 14B863AA7D761D40752745B7DCF2250A
+  logicalPath: packs/ATSAMD21G18A_DFP/instance
+  name: wdt.h
+  physicalPath: ../../packs/ATSAMD21G18A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 14B863AA7D761D40752745B7DCF2250A
+- generatedChecksum: 670CB22822AF7EE972757912E2F86A88
+  logicalPath: config/SAMD21_WG_IOT
   name: ATSAMD21G18A.ld
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 29AFB0F8B0B358086267A5A68EBEFC01
+  userChecksum: 670CB22822AF7EE972757912E2F86A88
 format_version: v1.0
 libraries: []
 settings:

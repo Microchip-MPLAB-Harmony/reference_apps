@@ -70,7 +70,7 @@ WDRV_WINC_STATUS WDRV_WINC_WPSEnrolleeDiscoveryStartPIN(DRV_HANDLE handle, uint3
     char pinStr[9];
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -88,7 +88,7 @@ WDRV_WINC_STATUS WDRV_WINC_WPSEnrolleeDiscoveryStartPIN(DRV_HANDLE handle, uint3
 
     sprintf(pinStr, "%08" PRIu32, pin);
 
-    pDcpt->pfWPSDiscoveryCB = pfWPSDiscoveryCallback;
+    pDcpt->pCtrl->pfWPSDiscoveryCB = pfWPSDiscoveryCallback;
 
     if (M2M_SUCCESS != m2m_wifi_wps(WPS_PIN_TRIGGER, pinStr))
     {
@@ -107,7 +107,7 @@ WDRV_WINC_STATUS WDRV_WINC_WPSEnrolleeDiscoveryStartPBC(DRV_HANDLE handle, const
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -118,7 +118,7 @@ WDRV_WINC_STATUS WDRV_WINC_WPSEnrolleeDiscoveryStartPBC(DRV_HANDLE handle, const
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
-    pDcpt->pfWPSDiscoveryCB = pfWPSDiscoveryCallback;
+    pDcpt->pCtrl->pfWPSDiscoveryCB = pfWPSDiscoveryCallback;
 
     if (M2M_SUCCESS != m2m_wifi_wps(WPS_PBC_TRIGGER, NULL))
     {
@@ -137,7 +137,7 @@ WDRV_WINC_STATUS WDRV_WINC_WPSEnrolleeDiscoveryStop(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }

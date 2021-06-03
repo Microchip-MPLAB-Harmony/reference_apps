@@ -48,7 +48,15 @@
 #include "wdrv_winc.h"
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_host_file.h"
-#include "m2m_ota.h"
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+#include "include/winc.h"
+#else
+#include "spi_flash.h"
+#ifdef WDRV_WINC_DEVICE_FLEXIBLE_FLASH_MAP
+#include "flexible_flash.h"
+#endif
+#include "spi_flash_map.h"
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -86,9 +94,11 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileDownload
 )
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_HOST_FILE_DCPT *pHostFileDcpt;
 
     /* Ensure the driver handle and file URL are valid. */
-    if ((NULL == pDcpt) || (NULL == pFileURL) || (NULL == pfHostFileGetCB))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl)
+        || (NULL == pFileURL) || (NULL == pfHostFileGetCB))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -100,21 +110,30 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileDownload
     }
 
     /* Ensure WINC is connected. */
-    if (false == pDcpt->isConnected)
+    if (false == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
-    pDcpt->hostFileDcpt.handle = HFD_INVALID_HANDLER;
-    pDcpt->hostFileDcpt.size   = 0;
+    pHostFileDcpt = &pDcpt->pCtrl->hostFileDcpt;
 
-    if (M2M_ERR_FAIL == m2m_ota_host_file_get((char*)pFileURL,
-                                                pDcpt->hostFileDcpt.getFileCB))
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
     {
+        return WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR;
+    }
+
+    pHostFileDcpt->handle = HFD_INVALID_HANDLER;
+    pHostFileDcpt->size   = 0;
+
+    if (M2M_ERR_FAIL == m2m_ota_host_file_get((char*)pFileURL, pHostFileDcpt->getFileCB))
+    {
+        OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
-    pDcpt->pfHostFileCB = pfHostFileGetCB;
+    pDcpt->pCtrl->pfHostFileCB = pfHostFileGetCB;
+
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -127,6 +146,7 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileDownload
         DRV_HANDLE handle,
         WDRV_WINC_HOST_FILE_HANDLE fileHandle,
         void *pBuffer,
+        uint32_t bufferSize,
         uint32_t offset,
         uint32_t size,
         const WDRV_WINC_HOST_FILE_STATUS_CALLBACK pfHostFileReadStatusCB
@@ -149,6 +169,7 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileRead
     DRV_HANDLE handle,
     WDRV_WINC_HOST_FILE_HANDLE fileHandle,
     void *pBuffer,
+    uint32_t bufferSize,
     uint32_t offset,
     uint32_t size,
     const WDRV_WINC_HOST_FILE_STATUS_CALLBACK pfHostFileReadStatusCB
@@ -160,7 +181,7 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileRead
     uint32_t hifSize;
 
     /* Ensure the driver handle and file handle are valid. */
-    if ((NULL == pDcpt) || (NULL == pHostFileDcpt))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pHostFileDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -171,38 +192,82 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileRead
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
+    {
+        return WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR;
+    }
+
     /* Ensure the file handle is valid. */
-    if ((pHostFileDcpt != &pDcpt->hostFileDcpt) ||
+    if ((pHostFileDcpt != &pDcpt->pCtrl->hostFileDcpt) ||
                                 (HFD_INVALID_HANDLER == pHostFileDcpt->handle))
     {
+        OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
 
+    pDcpt->pCtrl->pfHostFileCB = NULL;
+
     if (NULL != pBuffer)
     {
-        pHostFileDcpt->pBuffer = pBuffer;
-        pHostFileDcpt->offset  = offset;
-        pHostFileDcpt->remain  = size;
+        pHostFileDcpt->pBuffer      = pBuffer;
+        pHostFileDcpt->bufferSpace  = bufferSize;
+        pHostFileDcpt->offset       = offset;
+        pHostFileDcpt->remain       = size;
     }
 
     if ((0 != pHostFileDcpt->size) && (pHostFileDcpt->offset >= pHostFileDcpt->size))
     {
+        OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
 
-    hifSize = pHostFileDcpt->remain;
-    if (hifSize > 128)
+    if (0 != (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
     {
-        hifSize = 128;
+            WDRV_WINC_STATUS status;
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+            /* Ensure flash is out of power save mode. */
+            if (M2M_SUCCESS != spi_flash_enable(1))
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+                return WDRV_WINC_STATUS_REQUEST_ERROR;
+            }
+#endif
+            status = m2m_ota_host_file_read_spi(pHostFileDcpt->handle, pBuffer, offset, size);
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+            /* Return flash to power save mode. */
+            if (M2M_SUCCESS != spi_flash_enable(0))
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+                return WDRV_WINC_STATUS_REQUEST_ERROR;
+            }
+#endif
+            if (M2M_SUCCESS != status)
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+                return WDRV_WINC_STATUS_REQUEST_ERROR;
+            }
+    }
+    else
+    {
+        hifSize = pHostFileDcpt->remain;
+        if (hifSize > 128)
+        {
+            hifSize = 128;
+        }
+
+        if (M2M_SUCCESS != m2m_ota_host_file_read_hif(pHostFileDcpt->handle,
+                    pHostFileDcpt->offset, hifSize, pHostFileDcpt->readFileCB))
+        {
+            OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+            return WDRV_WINC_STATUS_REQUEST_ERROR;
+        }
+
+        pDcpt->pCtrl->pfHostFileCB = pfHostFileReadStatusCB;
     }
 
-    if (M2M_ERR_FAIL == m2m_ota_host_file_read_hif(pHostFileDcpt->handle,
-                pHostFileDcpt->offset, hifSize, pDcpt->hostFileDcpt.readFileCB))
-    {
-        return WDRV_WINC_STATUS_REQUEST_ERROR;
-    }
-
-    pDcpt->pfHostFileCB = pfHostFileReadStatusCB;
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -241,7 +306,7 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileErase
                                 = (WDRV_WINC_HOST_FILE_DCPT *const)fileHandle;
 
     /* Ensure the driver handle and file handle are valid. */
-    if ((NULL == pDcpt) || (NULL == pHostFileDcpt))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pHostFileDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -252,20 +317,36 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileErase
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
-    /* Ensure the file handle is valid. */
-    if ((pHostFileDcpt != &pDcpt->hostFileDcpt) ||
-                                (HFD_INVALID_HANDLER == pHostFileDcpt->handle))
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
     {
-        return WDRV_WINC_STATUS_INVALID_ARG;
+        return WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR;
     }
 
-    if (M2M_ERR_FAIL == m2m_ota_host_file_erase(pHostFileDcpt->handle,
-                                                    pHostFileDcpt->eraseFileCB))
+    if (0 != (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
+    else
+    {
+        /* Ensure the file handle is valid. */
+        if ((pHostFileDcpt != &pDcpt->pCtrl->hostFileDcpt) ||
+                                    (HFD_INVALID_HANDLER == pHostFileDcpt->handle))
+        {
+            OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+            return WDRV_WINC_STATUS_INVALID_ARG;
+        }
 
-    pDcpt->pfHostFileCB = pfHostFileEraseStatusCB;
+        if (M2M_ERR_FAIL == m2m_ota_host_file_erase(pHostFileDcpt->handle,
+                                                        pHostFileDcpt->eraseFileCB))
+        {
+            OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+            return WDRV_WINC_STATUS_REQUEST_ERROR;
+        }
+    }
+
+    pDcpt->pCtrl->pfHostFileCB = pfHostFileEraseStatusCB;
+
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -298,9 +379,11 @@ WDRV_WINC_HOST_FILE_HANDLE WDRV_WINC_HostFileFindByID
 )
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_HOST_FILE_DCPT *pHostFileDcpt;
+    uint8_t currentId;
 
     /* Ensure the driver handle and file handle are valid. */
-    if ((NULL == pDcpt) || (HFD_INVALID_HANDLER == id))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (HFD_INVALID_HANDLER == id))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -311,14 +394,62 @@ WDRV_WINC_HOST_FILE_HANDLE WDRV_WINC_HostFileFindByID
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
-    if (HFD_INVALID_HANDLER == pDcpt->hostFileDcpt.handle)
+    pHostFileDcpt = &pDcpt->pCtrl->hostFileDcpt;
+
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
     {
-        pDcpt->hostFileDcpt.handle = m2m_ota_host_file_get_id();
+        return WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR;
     }
 
-    if (id == pDcpt->hostFileDcpt.handle)
+    if (HFD_INVALID_HANDLER == pHostFileDcpt->handle)
     {
-        return (WDRV_WINC_HOST_FILE_HANDLE)&pDcpt->hostFileDcpt;
+        if (0 != (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
+        {
+            uint8_t flashBuffer[8];
+            uint32_t flashStart = 0;
+            uint32_t flashSize  = 0;
+
+            pHostFileDcpt->handle = HFD_INVALID_HANDLER;
+            pHostFileDcpt->size   = 0;
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+            /* Ensure flash is out of power save mode. */
+            if (M2M_SUCCESS != spi_flash_enable(1))
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+                return WDRV_WINC_STATUS_REQUEST_ERROR;
+            }
+#endif
+            if (M2M_SUCCESS == spi_flexible_flash_find_section(ENTRY_ID_HOSTFILE, &flashStart, &flashSize))
+            {
+                spi_flash_read(flashBuffer, flashStart, 8);
+
+                pHostFileDcpt->handle = flashBuffer[0];
+                pHostFileDcpt->size   = *(uint32_t*)&flashBuffer[4];
+            }
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+            /* Return flash to power save mode. */
+            if (M2M_SUCCESS != spi_flash_enable(0))
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+                return WDRV_WINC_STATUS_REQUEST_ERROR;
+            }
+#endif
+        }
+        else
+        {
+            pHostFileDcpt->handle = m2m_ota_host_file_get_id();
+        }
+    }
+
+    currentId = pHostFileDcpt->handle;
+
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
+    if (id == currentId)
+    {
+        return (WDRV_WINC_HOST_FILE_HANDLE)pHostFileDcpt;
     }
 
     return WDRV_WINC_HOST_FILE_INVALID_HANDLE;
@@ -342,6 +473,7 @@ WDRV_WINC_HOST_FILE_HANDLE WDRV_WINC_HostFileFindByID
 
 uint32_t WDRV_WINC_HostFileGetSize(const WDRV_WINC_HOST_FILE_HANDLE fileHandle)
 {
+    uint32_t size = 0;
     WDRV_WINC_HOST_FILE_DCPT *const pHostFileDcpt
                                 = (WDRV_WINC_HOST_FILE_DCPT *const)fileHandle;
 
@@ -350,5 +482,69 @@ uint32_t WDRV_WINC_HostFileGetSize(const WDRV_WINC_HOST_FILE_HANDLE fileHandle)
         return 0;
     }
 
-    return pHostFileDcpt->size;
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
+    {
+        return 0;
+    }
+
+    if (HFD_INVALID_HANDLER != pHostFileDcpt->handle)
+    {
+        size = pHostFileDcpt->size;
+    }
+
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
+    return size;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_HostFileUpdateReadBuffer
+    (
+        const WDRV_WINC_HOST_FILE_HANDLE fileHandle,
+        void *pBuffer,
+        uint32_t bufferSize
+    );
+
+  Summary:
+    Update the read buffer.
+
+  Description:
+    Update the buffer associated with a read file operation.
+
+  Remarks:
+    See wdrv_winc_host_flle.h for usage information.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_HostFileUpdateReadBuffer
+(
+    const WDRV_WINC_HOST_FILE_HANDLE fileHandle,
+    void *pBuffer,
+    uint32_t bufferSize
+)
+{
+    WDRV_WINC_HOST_FILE_DCPT *const pHostFileDcpt
+                                = (WDRV_WINC_HOST_FILE_DCPT *const)fileHandle;
+
+    if ((NULL == pHostFileDcpt) || (NULL == pBuffer) || (0 == bufferSize))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
+    {
+        return WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR;
+    }
+
+    if (HFD_INVALID_HANDLER != pHostFileDcpt->handle)
+    {
+        pHostFileDcpt->pBuffer      = pBuffer;
+        pHostFileDcpt->bufferSpace  = bufferSize;
+    }
+
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
+    return WDRV_WINC_STATUS_OK;
 }

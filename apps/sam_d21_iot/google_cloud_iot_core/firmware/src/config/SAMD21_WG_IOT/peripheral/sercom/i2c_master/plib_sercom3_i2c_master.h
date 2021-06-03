@@ -75,11 +75,11 @@
 
 void SERCOM3_I2C_Initialize(void);
 
-bool SERCOM3_I2C_Read(uint16_t address, uint8_t *pdata, uint32_t length);
+bool SERCOM3_I2C_Read(uint16_t address, uint8_t* rdData, uint32_t rdLength);
 
-bool SERCOM3_I2C_Write(uint16_t address, uint8_t *pdata, uint32_t length);
+bool SERCOM3_I2C_Write(uint16_t address, uint8_t* wrData, uint32_t wrLength);
 
-bool SERCOM3_I2C_WriteRead(uint16_t address, uint8_t *wdata, uint32_t wlength, uint8_t *rdata, uint32_t rlength);
+bool SERCOM3_I2C_WriteRead(uint16_t address, uint8_t* wrData, uint32_t wrLength, uint8_t* rdData, uint32_t rdLength);
 
 bool SERCOM3_I2C_IsBusy(void);
 
@@ -90,7 +90,7 @@ void SERCOM3_I2C_CallbackRegister(SERCOM_I2C_CALLBACK callback, uintptr_t contex
 bool SERCOM3_I2C_TransferSetup(SERCOM_I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq );
 
 
-	
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 }

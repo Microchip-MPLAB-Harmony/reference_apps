@@ -53,6 +53,15 @@ children:
         attributes: {id: source}
         children:
         - {type: Value, value: ../peripheral/sercom_u2201/templates/plib_sercom_usart_ring_buffer.h.ftl}
+  - type: Comment
+    attributes: {id: SERCOM_USART_RING_BUFFER_SIZE_CONFIG}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SERCOM_USART_SOURCE}
     children:
@@ -106,10 +115,21 @@ children:
     children:
     - type: Attributes
       children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
       - type: Boolean
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom5, value: 'true'}
+  - type: Boolean
+    attributes: {id: USART_INTERRUPT_MODE_ENABLE}
+    children:
     - type: Values
       children:
       - type: Dynamic
@@ -121,8 +141,8 @@ children:
       children:
       - type: Dynamic
         attributes: {id: sercom5, value: 'false'}
-  - type: Boolean
-    attributes: {id: USART_RING_BUFFER_ENABLE}
+  - type: KeyValueSet
+    attributes: {id: USART_OPERATING_MODE}
     children:
     - type: Attributes
       children:
@@ -130,6 +150,30 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom5, value: '2'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom5, value: 'true'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_MODE_ENABLE}
+    children:
     - type: Values
       children:
       - type: Dynamic
@@ -144,6 +188,12 @@ children:
   - type: Integer
     attributes: {id: USART_RX_RING_BUFFER_SIZE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: User
@@ -172,6 +222,12 @@ children:
   - type: Integer
     attributes: {id: USART_TX_RING_BUFFER_SIZE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: User

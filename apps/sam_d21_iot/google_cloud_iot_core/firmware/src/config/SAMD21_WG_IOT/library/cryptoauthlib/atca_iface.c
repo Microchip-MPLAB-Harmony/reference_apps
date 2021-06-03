@@ -388,9 +388,9 @@ ATCA_STATUS releaseATCAIface(ATCAIface ca_iface)
         }
         if (ATCA_CUSTOM_IFACE == ca_iface->mIfaceCFG->iface_type)
         {
-#ifndef ATCA_NO_HEAP            
+#ifndef ATCA_NO_HEAP
             hal_free(ca_iface->hal);
-#endif           
+#endif
             ca_iface->hal = NULL;
         }
     }

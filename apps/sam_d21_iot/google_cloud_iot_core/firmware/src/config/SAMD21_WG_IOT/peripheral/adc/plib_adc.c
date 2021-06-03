@@ -54,6 +54,7 @@
 */
 
 #include "plib_adc.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -191,6 +192,21 @@ void ADC_WindowModeSet(ADC_WINMODE mode)
 uint16_t ADC_ConversionResultGet( void )
 {
     return (uint16_t)ADC_REGS->ADC_RESULT;
+}
+
+void ADC_InterruptsClear(ADC_STATUS interruptMask)
+{
+    ADC_REGS->ADC_INTFLAG = interruptMask;
+}
+
+void ADC_InterruptsEnable(ADC_STATUS interruptMask)
+{
+    ADC_REGS->ADC_INTENSET = interruptMask;
+}
+
+void ADC_InterruptsDisable(ADC_STATUS interruptMask)
+{
+    ADC_REGS->ADC_INTENCLR = interruptMask;
 }
 
 

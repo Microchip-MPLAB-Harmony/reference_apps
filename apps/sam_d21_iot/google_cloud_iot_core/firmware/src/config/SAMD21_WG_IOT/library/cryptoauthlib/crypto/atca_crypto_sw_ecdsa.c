@@ -40,5 +40,9 @@ int atcac_sw_ecdsa_verify_p256(const uint8_t msg[ATCA_ECC_P256_FIELD_SIZE],
                                const uint8_t signature[ATCA_ECC_P256_SIGNATURE_SIZE],
                                const uint8_t public_key[ATCA_ECC_P256_PUBLIC_KEY_SIZE])
 {
+    (void)msg;
+    (void)signature;
+    (void)public_key;
+
     return ATCA_UNIMPLEMENTED;
 }

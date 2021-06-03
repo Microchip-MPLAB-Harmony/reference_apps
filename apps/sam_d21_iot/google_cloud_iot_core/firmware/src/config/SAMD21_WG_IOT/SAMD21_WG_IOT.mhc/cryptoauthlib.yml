@@ -51,15 +51,6 @@ children:
       - type: Dynamic
         attributes: {id: cryptoauthlib, value: 'false'}
   - type: File
-    attributes: {id: CAL_FILE_SRC_40}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
-  - type: File
     attributes: {id: CAL_FILE_SRC_41}
     children:
     - type: Attributes
@@ -475,6 +466,24 @@ children:
         - {type: Value, value: 'true'}
   - type: File
     attributes: {id: CAL_FILE_SRC_87}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CAL_FILE_SRC_88}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CAL_FILE_SRC_89}
     children:
     - type: Attributes
       children:

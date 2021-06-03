@@ -56,10 +56,15 @@ nav_order: 1
  - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
  - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
  - MPLAB Harmony 3 Launcher Plugin v3.6.2  
- - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
+ - [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
  - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)   
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
+
+## <a id="WINC_Firmware_upgrade_and_Google_Cloud_IoT_Provisioning_Guide"> </a>
+## ATWINC1510 Firmware upgrade and Google Cloud IoT Provisioning (Root certificate upgrade) Guide
+<span style="color:blue"> [Refer the documentation in utilities  folder](./utilities/readme.md) </span>  
+<span style="color:red"> **If this is the first time you are building/running this version of the demo, you must complete this step before proceeding further. Otherwise, you may skip this step.** </span>
 
 ## Application Demonstration:
 
@@ -95,8 +100,6 @@ The below sections describes the steps to run the application.
 - For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/SAM_IoT_WG_Development_Board_User_Guide.pdf)
 
 ## Comments:
-- The application “sam_d21_iot/google_cloud_iot_core is developed by applying a patch (available in folder google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “google_cloud_iot_core/firmware/app_patch” folder.  
-The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  

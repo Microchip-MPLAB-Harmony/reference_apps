@@ -52,6 +52,7 @@
 #include "plib_rtc.h"
 #include "device.h"
 #include <stdlib.h>
+#include "interrupts.h"
 
 /* Reference Year */
 #define REFERENCE_YEAR              (2016U)
