@@ -10,21 +10,21 @@
 		"shortDescription": "Application migration from 8-bit PIC18F to 32-bit SAM D21 on SAM D21 Curiosity Nano",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.0.0"
 			}
 		],
 		"dfp": {
 			"name": "SAMD21_DFP",
-			"semverRange": "^3.3.98"
+			"semverRange": "^3.4.116"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.6.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
