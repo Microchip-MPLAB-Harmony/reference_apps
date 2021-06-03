@@ -5,10 +5,10 @@ frameworkPath: ../../../../../../../../../LTBD/Harmony_public_release
 processor: ATSAMD21J17D
 projectName: ''
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;gfx;gfx_apps;net;touch;usb;wireless;
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;gfx;gfx_apps;gfx_apps_sam_d5x_e5x;net;net_apps_sam_e70_v71;reference_apps;touch;usb;wireless
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
   CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.104\samd21d\atdf\ATSAMD21J17D.atdf
+  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21d\atdf\ATSAMD21J17D.atdf
