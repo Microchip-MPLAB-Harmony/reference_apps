@@ -91,11 +91,6 @@ static void qspi_memcpy_8bit(uint8_t* dst, uint8_t* src, uint32_t count)
     }
 }
 
-static inline void qspi_end_transfer( void )
-{
-    QSPI_REGS->QSPI_CR = QSPI_CR_LASTXFER_Msk;
-}
-
 static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_TRANSFER_TYPE tfr_type, uint32_t address )
 {
     uint32_t mask = 0;
@@ -147,6 +142,11 @@ static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_TRAN
     (void)dummy;
 
     return true;
+}
+
+void QSPI_EndTransfer( void )
+{
+    QSPI_REGS->QSPI_CR = QSPI_CR_LASTXFER_Msk;
 }
 
 bool QSPI_CommandWrite( qspi_command_xfer_t *qspi_command_xfer, uint32_t address )
@@ -208,7 +208,7 @@ bool QSPI_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_d
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     /* Poll Status register to know status if instruction has end */
     while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {
@@ -246,7 +246,7 @@ bool QSPI_RegisterWrite( qspi_register_xfer_t *qspi_register_xfer, uint32_t *tx_
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     /* Poll Status register to know status if instruction has end */
     while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {
@@ -393,7 +393,7 @@ QSPI_MemoryRead(
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
     // Poll Status register to know status if instruction has ended
     while( !(QSPI_REGS->QSPI_SR & QSPI_SR_INSTRE_Msk) ) {
         ;   // spin lock
@@ -426,7 +426,7 @@ bool QSPI_MemoryWrite( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *tx_data, 
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     /* Poll Status register to know status if instruction has end */
     while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {

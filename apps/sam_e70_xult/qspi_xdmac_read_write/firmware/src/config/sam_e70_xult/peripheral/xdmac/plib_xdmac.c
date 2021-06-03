@@ -40,6 +40,7 @@
 
 #include "device.h"
 #include "plib_xdmac.h"
+#include "interrupts.h"
 
 /* Macro for limiting XDMAC objects to highest channel enabled */
 #define XDMAC_ACTIVE_CHANNELS_MAX 2
@@ -209,4 +210,16 @@ void XDMAC_ChannelBlockLengthSet (XDMAC_CHANNEL channel, uint16_t length)
     XDMAC_REGS->XDMAC_GD= (XDMAC_GD_DI0_Msk << channel);
 
     XDMAC_REGS->XDMAC_CHID[channel].XDMAC_CBC = length;
+}
+
+void XDMAC_ChannelSuspend (XDMAC_CHANNEL channel)
+{
+    /* Suspend the channel */
+    XDMAC_REGS->XDMAC_GRWS = (XDMAC_GRWS_RWS0_Msk << channel);
+}
+
+void XDMAC_ChannelResume (XDMAC_CHANNEL channel)
+{
+    /* Resume the channel */
+    XDMAC_REGS->XDMAC_GRWR = (XDMAC_GRWR_RWR0_Msk << channel);
 }

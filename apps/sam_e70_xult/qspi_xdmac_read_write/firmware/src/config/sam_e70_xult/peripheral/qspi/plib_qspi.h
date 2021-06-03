@@ -76,6 +76,8 @@ Interface definition of QSPI PLIB.
 
 void QSPI_Initialize( void );
 
+void QSPI_EndTransfer( void );
+
 bool QSPI_CommandWrite( qspi_command_xfer_t *qspi_command_xfer, uint32_t address );
 
 bool QSPI_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_data, uint8_t rx_data_length );

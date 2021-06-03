@@ -1,7 +1,7 @@
 /**
  * \brief Component description for HSMCI
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_HSMCI_COMPONENT_H_
 #define _SAME70_HSMCI_COMPONENT_H_
 
@@ -658,6 +658,10 @@
 #define HSMCI_BLKR_REG_OFST            (0x18)              /**< (HSMCI_BLKR) Block Register Offset */
 #define HSMCI_CSTOR_REG_OFST           (0x1C)              /**< (HSMCI_CSTOR) Completion Signal Timeout Register Offset */
 #define HSMCI_RSPR_REG_OFST            (0x20)              /**< (HSMCI_RSPR) Response Register 0 Offset */
+#define HSMCI_RSPR0_REG_OFST           (0x20)              /**< (HSMCI_RSPR0) Response Register 0 Offset */
+#define HSMCI_RSPR1_REG_OFST           (0x24)              /**< (HSMCI_RSPR1) Response Register 0 Offset */
+#define HSMCI_RSPR2_REG_OFST           (0x28)              /**< (HSMCI_RSPR2) Response Register 0 Offset */
+#define HSMCI_RSPR3_REG_OFST           (0x2C)              /**< (HSMCI_RSPR3) Response Register 0 Offset */
 #define HSMCI_RDR_REG_OFST             (0x30)              /**< (HSMCI_RDR) Receive Data Register Offset */
 #define HSMCI_TDR_REG_OFST             (0x34)              /**< (HSMCI_TDR) Transmit Data Register Offset */
 #define HSMCI_SR_REG_OFST              (0x40)              /**< (HSMCI_SR) Status Register Offset */
@@ -669,6 +673,262 @@
 #define HSMCI_WPMR_REG_OFST            (0xE4)              /**< (HSMCI_WPMR) Write Protection Mode Register Offset */
 #define HSMCI_WPSR_REG_OFST            (0xE8)              /**< (HSMCI_WPSR) Write Protection Status Register Offset */
 #define HSMCI_FIFO_REG_OFST            (0x200)             /**< (HSMCI_FIFO) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO0_REG_OFST           (0x200)             /**< (HSMCI_FIFO0) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO1_REG_OFST           (0x204)             /**< (HSMCI_FIFO1) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO2_REG_OFST           (0x208)             /**< (HSMCI_FIFO2) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO3_REG_OFST           (0x20C)             /**< (HSMCI_FIFO3) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO4_REG_OFST           (0x210)             /**< (HSMCI_FIFO4) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO5_REG_OFST           (0x214)             /**< (HSMCI_FIFO5) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO6_REG_OFST           (0x218)             /**< (HSMCI_FIFO6) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO7_REG_OFST           (0x21C)             /**< (HSMCI_FIFO7) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO8_REG_OFST           (0x220)             /**< (HSMCI_FIFO8) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO9_REG_OFST           (0x224)             /**< (HSMCI_FIFO9) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO10_REG_OFST          (0x228)             /**< (HSMCI_FIFO10) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO11_REG_OFST          (0x22C)             /**< (HSMCI_FIFO11) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO12_REG_OFST          (0x230)             /**< (HSMCI_FIFO12) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO13_REG_OFST          (0x234)             /**< (HSMCI_FIFO13) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO14_REG_OFST          (0x238)             /**< (HSMCI_FIFO14) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO15_REG_OFST          (0x23C)             /**< (HSMCI_FIFO15) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO16_REG_OFST          (0x240)             /**< (HSMCI_FIFO16) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO17_REG_OFST          (0x244)             /**< (HSMCI_FIFO17) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO18_REG_OFST          (0x248)             /**< (HSMCI_FIFO18) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO19_REG_OFST          (0x24C)             /**< (HSMCI_FIFO19) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO20_REG_OFST          (0x250)             /**< (HSMCI_FIFO20) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO21_REG_OFST          (0x254)             /**< (HSMCI_FIFO21) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO22_REG_OFST          (0x258)             /**< (HSMCI_FIFO22) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO23_REG_OFST          (0x25C)             /**< (HSMCI_FIFO23) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO24_REG_OFST          (0x260)             /**< (HSMCI_FIFO24) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO25_REG_OFST          (0x264)             /**< (HSMCI_FIFO25) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO26_REG_OFST          (0x268)             /**< (HSMCI_FIFO26) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO27_REG_OFST          (0x26C)             /**< (HSMCI_FIFO27) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO28_REG_OFST          (0x270)             /**< (HSMCI_FIFO28) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO29_REG_OFST          (0x274)             /**< (HSMCI_FIFO29) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO30_REG_OFST          (0x278)             /**< (HSMCI_FIFO30) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO31_REG_OFST          (0x27C)             /**< (HSMCI_FIFO31) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO32_REG_OFST          (0x280)             /**< (HSMCI_FIFO32) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO33_REG_OFST          (0x284)             /**< (HSMCI_FIFO33) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO34_REG_OFST          (0x288)             /**< (HSMCI_FIFO34) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO35_REG_OFST          (0x28C)             /**< (HSMCI_FIFO35) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO36_REG_OFST          (0x290)             /**< (HSMCI_FIFO36) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO37_REG_OFST          (0x294)             /**< (HSMCI_FIFO37) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO38_REG_OFST          (0x298)             /**< (HSMCI_FIFO38) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO39_REG_OFST          (0x29C)             /**< (HSMCI_FIFO39) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO40_REG_OFST          (0x2A0)             /**< (HSMCI_FIFO40) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO41_REG_OFST          (0x2A4)             /**< (HSMCI_FIFO41) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO42_REG_OFST          (0x2A8)             /**< (HSMCI_FIFO42) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO43_REG_OFST          (0x2AC)             /**< (HSMCI_FIFO43) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO44_REG_OFST          (0x2B0)             /**< (HSMCI_FIFO44) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO45_REG_OFST          (0x2B4)             /**< (HSMCI_FIFO45) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO46_REG_OFST          (0x2B8)             /**< (HSMCI_FIFO46) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO47_REG_OFST          (0x2BC)             /**< (HSMCI_FIFO47) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO48_REG_OFST          (0x2C0)             /**< (HSMCI_FIFO48) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO49_REG_OFST          (0x2C4)             /**< (HSMCI_FIFO49) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO50_REG_OFST          (0x2C8)             /**< (HSMCI_FIFO50) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO51_REG_OFST          (0x2CC)             /**< (HSMCI_FIFO51) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO52_REG_OFST          (0x2D0)             /**< (HSMCI_FIFO52) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO53_REG_OFST          (0x2D4)             /**< (HSMCI_FIFO53) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO54_REG_OFST          (0x2D8)             /**< (HSMCI_FIFO54) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO55_REG_OFST          (0x2DC)             /**< (HSMCI_FIFO55) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO56_REG_OFST          (0x2E0)             /**< (HSMCI_FIFO56) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO57_REG_OFST          (0x2E4)             /**< (HSMCI_FIFO57) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO58_REG_OFST          (0x2E8)             /**< (HSMCI_FIFO58) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO59_REG_OFST          (0x2EC)             /**< (HSMCI_FIFO59) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO60_REG_OFST          (0x2F0)             /**< (HSMCI_FIFO60) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO61_REG_OFST          (0x2F4)             /**< (HSMCI_FIFO61) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO62_REG_OFST          (0x2F8)             /**< (HSMCI_FIFO62) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO63_REG_OFST          (0x2FC)             /**< (HSMCI_FIFO63) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO64_REG_OFST          (0x300)             /**< (HSMCI_FIFO64) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO65_REG_OFST          (0x304)             /**< (HSMCI_FIFO65) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO66_REG_OFST          (0x308)             /**< (HSMCI_FIFO66) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO67_REG_OFST          (0x30C)             /**< (HSMCI_FIFO67) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO68_REG_OFST          (0x310)             /**< (HSMCI_FIFO68) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO69_REG_OFST          (0x314)             /**< (HSMCI_FIFO69) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO70_REG_OFST          (0x318)             /**< (HSMCI_FIFO70) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO71_REG_OFST          (0x31C)             /**< (HSMCI_FIFO71) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO72_REG_OFST          (0x320)             /**< (HSMCI_FIFO72) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO73_REG_OFST          (0x324)             /**< (HSMCI_FIFO73) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO74_REG_OFST          (0x328)             /**< (HSMCI_FIFO74) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO75_REG_OFST          (0x32C)             /**< (HSMCI_FIFO75) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO76_REG_OFST          (0x330)             /**< (HSMCI_FIFO76) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO77_REG_OFST          (0x334)             /**< (HSMCI_FIFO77) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO78_REG_OFST          (0x338)             /**< (HSMCI_FIFO78) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO79_REG_OFST          (0x33C)             /**< (HSMCI_FIFO79) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO80_REG_OFST          (0x340)             /**< (HSMCI_FIFO80) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO81_REG_OFST          (0x344)             /**< (HSMCI_FIFO81) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO82_REG_OFST          (0x348)             /**< (HSMCI_FIFO82) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO83_REG_OFST          (0x34C)             /**< (HSMCI_FIFO83) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO84_REG_OFST          (0x350)             /**< (HSMCI_FIFO84) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO85_REG_OFST          (0x354)             /**< (HSMCI_FIFO85) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO86_REG_OFST          (0x358)             /**< (HSMCI_FIFO86) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO87_REG_OFST          (0x35C)             /**< (HSMCI_FIFO87) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO88_REG_OFST          (0x360)             /**< (HSMCI_FIFO88) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO89_REG_OFST          (0x364)             /**< (HSMCI_FIFO89) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO90_REG_OFST          (0x368)             /**< (HSMCI_FIFO90) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO91_REG_OFST          (0x36C)             /**< (HSMCI_FIFO91) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO92_REG_OFST          (0x370)             /**< (HSMCI_FIFO92) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO93_REG_OFST          (0x374)             /**< (HSMCI_FIFO93) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO94_REG_OFST          (0x378)             /**< (HSMCI_FIFO94) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO95_REG_OFST          (0x37C)             /**< (HSMCI_FIFO95) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO96_REG_OFST          (0x380)             /**< (HSMCI_FIFO96) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO97_REG_OFST          (0x384)             /**< (HSMCI_FIFO97) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO98_REG_OFST          (0x388)             /**< (HSMCI_FIFO98) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO99_REG_OFST          (0x38C)             /**< (HSMCI_FIFO99) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO100_REG_OFST         (0x390)             /**< (HSMCI_FIFO100) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO101_REG_OFST         (0x394)             /**< (HSMCI_FIFO101) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO102_REG_OFST         (0x398)             /**< (HSMCI_FIFO102) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO103_REG_OFST         (0x39C)             /**< (HSMCI_FIFO103) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO104_REG_OFST         (0x3A0)             /**< (HSMCI_FIFO104) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO105_REG_OFST         (0x3A4)             /**< (HSMCI_FIFO105) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO106_REG_OFST         (0x3A8)             /**< (HSMCI_FIFO106) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO107_REG_OFST         (0x3AC)             /**< (HSMCI_FIFO107) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO108_REG_OFST         (0x3B0)             /**< (HSMCI_FIFO108) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO109_REG_OFST         (0x3B4)             /**< (HSMCI_FIFO109) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO110_REG_OFST         (0x3B8)             /**< (HSMCI_FIFO110) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO111_REG_OFST         (0x3BC)             /**< (HSMCI_FIFO111) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO112_REG_OFST         (0x3C0)             /**< (HSMCI_FIFO112) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO113_REG_OFST         (0x3C4)             /**< (HSMCI_FIFO113) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO114_REG_OFST         (0x3C8)             /**< (HSMCI_FIFO114) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO115_REG_OFST         (0x3CC)             /**< (HSMCI_FIFO115) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO116_REG_OFST         (0x3D0)             /**< (HSMCI_FIFO116) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO117_REG_OFST         (0x3D4)             /**< (HSMCI_FIFO117) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO118_REG_OFST         (0x3D8)             /**< (HSMCI_FIFO118) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO119_REG_OFST         (0x3DC)             /**< (HSMCI_FIFO119) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO120_REG_OFST         (0x3E0)             /**< (HSMCI_FIFO120) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO121_REG_OFST         (0x3E4)             /**< (HSMCI_FIFO121) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO122_REG_OFST         (0x3E8)             /**< (HSMCI_FIFO122) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO123_REG_OFST         (0x3EC)             /**< (HSMCI_FIFO123) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO124_REG_OFST         (0x3F0)             /**< (HSMCI_FIFO124) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO125_REG_OFST         (0x3F4)             /**< (HSMCI_FIFO125) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO126_REG_OFST         (0x3F8)             /**< (HSMCI_FIFO126) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO127_REG_OFST         (0x3FC)             /**< (HSMCI_FIFO127) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO128_REG_OFST         (0x400)             /**< (HSMCI_FIFO128) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO129_REG_OFST         (0x404)             /**< (HSMCI_FIFO129) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO130_REG_OFST         (0x408)             /**< (HSMCI_FIFO130) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO131_REG_OFST         (0x40C)             /**< (HSMCI_FIFO131) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO132_REG_OFST         (0x410)             /**< (HSMCI_FIFO132) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO133_REG_OFST         (0x414)             /**< (HSMCI_FIFO133) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO134_REG_OFST         (0x418)             /**< (HSMCI_FIFO134) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO135_REG_OFST         (0x41C)             /**< (HSMCI_FIFO135) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO136_REG_OFST         (0x420)             /**< (HSMCI_FIFO136) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO137_REG_OFST         (0x424)             /**< (HSMCI_FIFO137) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO138_REG_OFST         (0x428)             /**< (HSMCI_FIFO138) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO139_REG_OFST         (0x42C)             /**< (HSMCI_FIFO139) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO140_REG_OFST         (0x430)             /**< (HSMCI_FIFO140) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO141_REG_OFST         (0x434)             /**< (HSMCI_FIFO141) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO142_REG_OFST         (0x438)             /**< (HSMCI_FIFO142) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO143_REG_OFST         (0x43C)             /**< (HSMCI_FIFO143) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO144_REG_OFST         (0x440)             /**< (HSMCI_FIFO144) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO145_REG_OFST         (0x444)             /**< (HSMCI_FIFO145) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO146_REG_OFST         (0x448)             /**< (HSMCI_FIFO146) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO147_REG_OFST         (0x44C)             /**< (HSMCI_FIFO147) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO148_REG_OFST         (0x450)             /**< (HSMCI_FIFO148) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO149_REG_OFST         (0x454)             /**< (HSMCI_FIFO149) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO150_REG_OFST         (0x458)             /**< (HSMCI_FIFO150) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO151_REG_OFST         (0x45C)             /**< (HSMCI_FIFO151) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO152_REG_OFST         (0x460)             /**< (HSMCI_FIFO152) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO153_REG_OFST         (0x464)             /**< (HSMCI_FIFO153) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO154_REG_OFST         (0x468)             /**< (HSMCI_FIFO154) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO155_REG_OFST         (0x46C)             /**< (HSMCI_FIFO155) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO156_REG_OFST         (0x470)             /**< (HSMCI_FIFO156) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO157_REG_OFST         (0x474)             /**< (HSMCI_FIFO157) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO158_REG_OFST         (0x478)             /**< (HSMCI_FIFO158) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO159_REG_OFST         (0x47C)             /**< (HSMCI_FIFO159) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO160_REG_OFST         (0x480)             /**< (HSMCI_FIFO160) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO161_REG_OFST         (0x484)             /**< (HSMCI_FIFO161) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO162_REG_OFST         (0x488)             /**< (HSMCI_FIFO162) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO163_REG_OFST         (0x48C)             /**< (HSMCI_FIFO163) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO164_REG_OFST         (0x490)             /**< (HSMCI_FIFO164) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO165_REG_OFST         (0x494)             /**< (HSMCI_FIFO165) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO166_REG_OFST         (0x498)             /**< (HSMCI_FIFO166) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO167_REG_OFST         (0x49C)             /**< (HSMCI_FIFO167) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO168_REG_OFST         (0x4A0)             /**< (HSMCI_FIFO168) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO169_REG_OFST         (0x4A4)             /**< (HSMCI_FIFO169) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO170_REG_OFST         (0x4A8)             /**< (HSMCI_FIFO170) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO171_REG_OFST         (0x4AC)             /**< (HSMCI_FIFO171) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO172_REG_OFST         (0x4B0)             /**< (HSMCI_FIFO172) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO173_REG_OFST         (0x4B4)             /**< (HSMCI_FIFO173) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO174_REG_OFST         (0x4B8)             /**< (HSMCI_FIFO174) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO175_REG_OFST         (0x4BC)             /**< (HSMCI_FIFO175) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO176_REG_OFST         (0x4C0)             /**< (HSMCI_FIFO176) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO177_REG_OFST         (0x4C4)             /**< (HSMCI_FIFO177) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO178_REG_OFST         (0x4C8)             /**< (HSMCI_FIFO178) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO179_REG_OFST         (0x4CC)             /**< (HSMCI_FIFO179) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO180_REG_OFST         (0x4D0)             /**< (HSMCI_FIFO180) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO181_REG_OFST         (0x4D4)             /**< (HSMCI_FIFO181) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO182_REG_OFST         (0x4D8)             /**< (HSMCI_FIFO182) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO183_REG_OFST         (0x4DC)             /**< (HSMCI_FIFO183) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO184_REG_OFST         (0x4E0)             /**< (HSMCI_FIFO184) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO185_REG_OFST         (0x4E4)             /**< (HSMCI_FIFO185) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO186_REG_OFST         (0x4E8)             /**< (HSMCI_FIFO186) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO187_REG_OFST         (0x4EC)             /**< (HSMCI_FIFO187) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO188_REG_OFST         (0x4F0)             /**< (HSMCI_FIFO188) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO189_REG_OFST         (0x4F4)             /**< (HSMCI_FIFO189) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO190_REG_OFST         (0x4F8)             /**< (HSMCI_FIFO190) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO191_REG_OFST         (0x4FC)             /**< (HSMCI_FIFO191) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO192_REG_OFST         (0x500)             /**< (HSMCI_FIFO192) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO193_REG_OFST         (0x504)             /**< (HSMCI_FIFO193) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO194_REG_OFST         (0x508)             /**< (HSMCI_FIFO194) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO195_REG_OFST         (0x50C)             /**< (HSMCI_FIFO195) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO196_REG_OFST         (0x510)             /**< (HSMCI_FIFO196) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO197_REG_OFST         (0x514)             /**< (HSMCI_FIFO197) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO198_REG_OFST         (0x518)             /**< (HSMCI_FIFO198) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO199_REG_OFST         (0x51C)             /**< (HSMCI_FIFO199) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO200_REG_OFST         (0x520)             /**< (HSMCI_FIFO200) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO201_REG_OFST         (0x524)             /**< (HSMCI_FIFO201) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO202_REG_OFST         (0x528)             /**< (HSMCI_FIFO202) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO203_REG_OFST         (0x52C)             /**< (HSMCI_FIFO203) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO204_REG_OFST         (0x530)             /**< (HSMCI_FIFO204) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO205_REG_OFST         (0x534)             /**< (HSMCI_FIFO205) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO206_REG_OFST         (0x538)             /**< (HSMCI_FIFO206) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO207_REG_OFST         (0x53C)             /**< (HSMCI_FIFO207) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO208_REG_OFST         (0x540)             /**< (HSMCI_FIFO208) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO209_REG_OFST         (0x544)             /**< (HSMCI_FIFO209) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO210_REG_OFST         (0x548)             /**< (HSMCI_FIFO210) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO211_REG_OFST         (0x54C)             /**< (HSMCI_FIFO211) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO212_REG_OFST         (0x550)             /**< (HSMCI_FIFO212) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO213_REG_OFST         (0x554)             /**< (HSMCI_FIFO213) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO214_REG_OFST         (0x558)             /**< (HSMCI_FIFO214) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO215_REG_OFST         (0x55C)             /**< (HSMCI_FIFO215) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO216_REG_OFST         (0x560)             /**< (HSMCI_FIFO216) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO217_REG_OFST         (0x564)             /**< (HSMCI_FIFO217) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO218_REG_OFST         (0x568)             /**< (HSMCI_FIFO218) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO219_REG_OFST         (0x56C)             /**< (HSMCI_FIFO219) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO220_REG_OFST         (0x570)             /**< (HSMCI_FIFO220) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO221_REG_OFST         (0x574)             /**< (HSMCI_FIFO221) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO222_REG_OFST         (0x578)             /**< (HSMCI_FIFO222) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO223_REG_OFST         (0x57C)             /**< (HSMCI_FIFO223) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO224_REG_OFST         (0x580)             /**< (HSMCI_FIFO224) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO225_REG_OFST         (0x584)             /**< (HSMCI_FIFO225) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO226_REG_OFST         (0x588)             /**< (HSMCI_FIFO226) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO227_REG_OFST         (0x58C)             /**< (HSMCI_FIFO227) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO228_REG_OFST         (0x590)             /**< (HSMCI_FIFO228) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO229_REG_OFST         (0x594)             /**< (HSMCI_FIFO229) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO230_REG_OFST         (0x598)             /**< (HSMCI_FIFO230) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO231_REG_OFST         (0x59C)             /**< (HSMCI_FIFO231) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO232_REG_OFST         (0x5A0)             /**< (HSMCI_FIFO232) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO233_REG_OFST         (0x5A4)             /**< (HSMCI_FIFO233) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO234_REG_OFST         (0x5A8)             /**< (HSMCI_FIFO234) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO235_REG_OFST         (0x5AC)             /**< (HSMCI_FIFO235) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO236_REG_OFST         (0x5B0)             /**< (HSMCI_FIFO236) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO237_REG_OFST         (0x5B4)             /**< (HSMCI_FIFO237) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO238_REG_OFST         (0x5B8)             /**< (HSMCI_FIFO238) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO239_REG_OFST         (0x5BC)             /**< (HSMCI_FIFO239) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO240_REG_OFST         (0x5C0)             /**< (HSMCI_FIFO240) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO241_REG_OFST         (0x5C4)             /**< (HSMCI_FIFO241) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO242_REG_OFST         (0x5C8)             /**< (HSMCI_FIFO242) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO243_REG_OFST         (0x5CC)             /**< (HSMCI_FIFO243) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO244_REG_OFST         (0x5D0)             /**< (HSMCI_FIFO244) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO245_REG_OFST         (0x5D4)             /**< (HSMCI_FIFO245) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO246_REG_OFST         (0x5D8)             /**< (HSMCI_FIFO246) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO247_REG_OFST         (0x5DC)             /**< (HSMCI_FIFO247) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO248_REG_OFST         (0x5E0)             /**< (HSMCI_FIFO248) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO249_REG_OFST         (0x5E4)             /**< (HSMCI_FIFO249) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO250_REG_OFST         (0x5E8)             /**< (HSMCI_FIFO250) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO251_REG_OFST         (0x5EC)             /**< (HSMCI_FIFO251) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO252_REG_OFST         (0x5F0)             /**< (HSMCI_FIFO252) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO253_REG_OFST         (0x5F4)             /**< (HSMCI_FIFO253) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO254_REG_OFST         (0x5F8)             /**< (HSMCI_FIFO254) FIFO Memory Aperture0 0 Offset */
+#define HSMCI_FIFO255_REG_OFST         (0x5FC)             /**< (HSMCI_FIFO255) FIFO Memory Aperture0 0 Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief HSMCI register API structure */

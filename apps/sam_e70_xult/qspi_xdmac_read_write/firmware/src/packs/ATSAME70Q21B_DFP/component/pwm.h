@@ -1,7 +1,7 @@
 /**
  * \brief Component description for PWM
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_PWM_COMPONENT_H_
 #define _SAME70_PWM_COMPONENT_H_
 
@@ -1473,6 +1473,8 @@
 #define PWM_FPV1_REG_OFST              (0x68)              /**< (PWM_FPV1) PWM Fault Protection Value Register 1 Offset */
 #define PWM_FPE_REG_OFST               (0x6C)              /**< (PWM_FPE) PWM Fault Protection Enable Register Offset */
 #define PWM_ELMR_REG_OFST              (0x7C)              /**< (PWM_ELMR) PWM Event Line 0 Mode Register 0 Offset */
+#define PWM_ELMR0_REG_OFST             (0x7C)              /**< (PWM_ELMR0) PWM Event Line 0 Mode Register 0 Offset */
+#define PWM_ELMR1_REG_OFST             (0x80)              /**< (PWM_ELMR1) PWM Event Line 0 Mode Register 0 Offset */
 #define PWM_SSPR_REG_OFST              (0xA0)              /**< (PWM_SSPR) PWM Spread Spectrum Register Offset */
 #define PWM_SSPUP_REG_OFST             (0xA4)              /**< (PWM_SSPUP) PWM Spread Spectrum Update Register Offset */
 #define PWM_SMMR_REG_OFST              (0xB0)              /**< (PWM_SMMR) PWM Stepper Motor Mode Register Offset */
