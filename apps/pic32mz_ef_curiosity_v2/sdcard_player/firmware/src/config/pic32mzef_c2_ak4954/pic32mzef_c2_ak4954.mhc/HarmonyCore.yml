@@ -117,6 +117,12 @@ children:
   - type: Boolean
     attributes: {id: ENABLE_DRV_COMMON}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -138,6 +144,12 @@ children:
   - type: Boolean
     attributes: {id: ENABLE_SYS_COMMON}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -159,6 +171,12 @@ children:
   - type: Boolean
     attributes: {id: ENABLE_SYS_MEDIA}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -170,6 +188,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: drv_sdspi_0, value: 'true'}
+  - type: File
+    attributes: {id: GEN_APP_TASKS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: Menu
     attributes: {id: GEN_APP_TASK_MENU}
     children:
@@ -288,6 +315,15 @@ children:
         children:
         - {type: Value, value: 'true'}
   - type: File
+    attributes: {id: SYSTEM_MEDIA}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
     attributes: {id: SYSTEM_MODULE}
     children:
     - type: Attributes
@@ -325,6 +361,24 @@ children:
         - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SYS_CACHE_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SYS_DEBUG_DEF_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: SYS_DEBUG_HEADER}
     children:
     - type: Attributes
       children:

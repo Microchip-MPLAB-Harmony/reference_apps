@@ -102,8 +102,6 @@ bool FATFS_error(uintptr_t handle);
 
 int FATFS_mkfs (uint8_t vol, const MKFS_PARM* opt, void* work, uint32_t len);
 
-int FATFS_expand (FIL* fp, uint32_t fsz, uint8_t opt);
-
 int FATFS_fdisk (uint8_t pdrv, const uint32_t szt[], void* work);
 
 int FATFS_getclusters (const char *path, uint32_t *tot_sec, uint32_t *free_sec);

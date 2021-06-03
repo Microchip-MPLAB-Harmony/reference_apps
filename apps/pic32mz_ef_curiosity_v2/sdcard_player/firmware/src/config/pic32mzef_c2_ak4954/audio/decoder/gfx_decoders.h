@@ -1,5 +1,0 @@
-
-
-/*** GFX Image Decode Configuration ***/
-
-

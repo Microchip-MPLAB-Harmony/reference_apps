@@ -900,6 +900,60 @@ children:
       children:
       - type: User
         attributes: {value: DIGITAL}
+  - type: File
+    attributes: {id: CACHE_HEADER_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_LOCAL_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_PIC32MZ_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_SOURCE_PIC32MZ_C}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_SOURCE_PIC32MZ_S}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_SYSTEM_DEF_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: CAN1_CLOCK_FREQUENCY}
     children:
@@ -1261,7 +1315,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0'}
+        attributes: {id: core, value: '1'}
   - type: Integer
     attributes: {id: DCH2_ECON_SIRQEN_VALUE}
     children:
@@ -1289,7 +1343,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0'}
+        attributes: {id: core, value: '1'}
   - type: Integer
     attributes: {id: DCH3_ECON_SIRQEN_VALUE}
     children:
@@ -1304,6 +1358,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '28176'}
+  - type: File
+    attributes: {id: DEVICE_CACHE_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: Boolean
     attributes: {id: DMA0_INTERRUPT_ENABLE}
     children:
@@ -1712,6 +1775,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: CORE_TIMER_InterruptHandler}
+  - type: Boolean
+    attributes: {id: EVIC_109_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
+    attributes: {id: EVIC_109_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: EVIC_110_ENABLE}
     children:
@@ -2426,6 +2503,27 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '99000000'}
+  - type: Boolean
+    attributes: {id: SPI1_FAULT_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi1, value: 'false'}
+  - type: Boolean
+    attributes: {id: SPI1_FAULT_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: SPI1_FAULT_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi1, value: 'false'}
   - type: Boolean
     attributes: {id: SPI1_RX_INTERRUPT_ENABLE}
     children:

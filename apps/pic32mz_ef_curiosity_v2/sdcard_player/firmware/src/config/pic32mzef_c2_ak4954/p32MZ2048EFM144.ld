@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC Compiler -  PIC32MZ2048EFM144 linker script
- * Build date : Jul 28 2020
+ * Build date : Aug 03 2020
  * 
  * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.

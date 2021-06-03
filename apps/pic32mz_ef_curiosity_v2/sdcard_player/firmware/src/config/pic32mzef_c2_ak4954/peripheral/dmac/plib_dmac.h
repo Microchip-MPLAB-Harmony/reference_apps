@@ -21,7 +21,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -117,9 +117,35 @@ typedef enum
     DMAC_TRANSFER_EVENT_ERROR,
 
     /* No events yet. */
-    DMAC_TRANSFER_EVENT_NONE
+    DMAC_TRANSFER_EVENT_NONE,
+
+    /* Half Data is transferred */
+    DMAC_TRANSFER_EVENT_HALF_COMPLETE
 
 } DMAC_TRANSFER_EVENT;
+
+// *****************************************************************************
+/* DMA Data Pattern Size
+
+  Summary:
+    Identifies the pattern size for data matching
+
+  Description:
+    This data type Identifies size of pattern data which will be matched with
+    transmitted data.
+
+  Remarks:
+    None.
+*/
+typedef enum
+{ 
+  /* pattern size is of 1 byte */
+  DMAC_DATA_PATTERN_SIZE_1_BYTE,
+
+  /* pattern size is of 2 bytes */
+  DMAC_DATA_PATTERN_SIZE_2_BYTE
+
+} DMAC_DATA_PATTERN_SIZE;
 
 typedef void (*DMAC_CHANNEL_CALLBACK) (DMAC_TRANSFER_EVENT status, uintptr_t contextHandle);
 
@@ -187,6 +213,44 @@ typedef enum
 } DMAC_CHANNEL;
 
 // *****************************************************************************
+/* DMA CRC Setup
+
+  Summary:
+    Fundamental data object that represents DMA CRC setup parameters.
+
+  Description:
+    None
+
+  Remarks:
+    None
+*/
+typedef struct
+{
+    /* DCRCCON[CRCAPP]: The DMA transfers data from the source into the CRC engine and 
+     * writes the calculated CRC value to the destination when enabled
+    */
+    bool append_mode;
+
+    /* DCRCCON[BITO]: The input data is bit reversed (reflected input) when enabled */
+    bool reverse_crc_input;
+
+    /* DCRCCON[PLEN]: Determines the length of the polynomial Example: 16, 32 */
+    uint8_t polynomial_length;
+
+    /* DCRCXOR: Polynomial for calculating the CRC */
+    uint32_t polynomial;
+
+    /* DRCRDATA: Input Non direct Seed for calculating the CRC */
+    uint32_t non_direct_seed;
+
+    /* The calculated CRC is bit reversed (reflected output) before final XOR */
+    bool reverse_crc_output;
+
+    /* The XOR value used to generate final CRC output */
+    uint32_t final_xor_value;
+} DMAC_CRC_SETUP;
+
+// *****************************************************************************
 // *****************************************************************************
 // Section: DMAC API
 // *****************************************************************************
@@ -247,6 +311,10 @@ void DMAC_ChannelCallbackRegister(DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLB
 */
 bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, size_t srcSize, const void *destAddr, size_t destSize, size_t cellSize);
 
+bool DMAC_ChainTransferSetup( DMAC_CHANNEL channel, const void *srcAddr, size_t srcSize, const void *destAddr, size_t destSize, size_t cellSize);
+
+void DMAC_ChannelPatternMatchSetup(DMAC_CHANNEL channel, DMAC_DATA_PATTERN_SIZE patternSize, uint16_t patternMatchData);
+void DMAC_ChannelPatternMatchDisable(DMAC_CHANNEL channel);
 // *****************************************************************************
 /* Function:
    void DMAC_ChannelDisable (DMAC_CHANNEL channel)
@@ -296,6 +364,126 @@ void DMAC_ChannelDisable (DMAC_CHANNEL channel);
     </code>
 */
 bool DMAC_ChannelIsBusy (DMAC_CHANNEL channel);
+
+// *****************************************************************************
+/* Function:
+   void DMAC_ChannelCRCSetup
+
+  Summary:
+    DMA Channel CRC setup and enable function
+
+  Description:
+    Sets up the DMA CRC engine for a particular channel and enables it.
+    CRC can be enabled for only one channel at a time.
+    Application needs to call this API with proper setup parameters every time
+    before starting any DMA transfer.
+
+    Note:
+    - A non direct seed should be used while setting up the DMA CRC
+
+    - The source buffer used for the DMA transfer should be appended with
+      additional zero bits based on the CRC to be generated as shown in example
+      - For 16 Bit CRC - Two bytes of 0's needs to be appended
+      - For 32 Bit CRC - Four bytes of 0's needs to be appended
+
+    - Currently LFSR CRC type is only supported
+
+  Parameters:
+    - DMAC_CHANNEL channel      : DMA channel this callback pertains to
+    - DMAC_CRC_SETUP crcSetup   : parameter holding the crc setup information
+
+  Returns:
+    void
+
+  Example:
+    <code>
+    const uint8_t srcBuffer[13] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 0, 0, 0, 0};
+    uint8_t CACHE_ALIGN dstBuffer[13] = {0};
+
+    DMAC_CRC_SETUP crcSetup = {0};
+
+    crcSetup.reverse_data_input = true;
+    crcSetup.polynomial_length  = 32;
+    crcSetup.polynomial         = 0x04C11DB7;
+    crcSetup.non_direct_seed    = 0x46AF6449;
+    crcSetup.reverse_crc_output = true;
+    crcSetup.final_xor_value    = 0xFFFFFFFF;
+
+    DMAC_ChannelCRCSetup(DMAC_CHANNEL_0, crcSetup);
+
+    DMAC_ChannelTransfer(DMAC_CHANNEL_0, &srcBuffer, 13, &dstBuffer, 13, 13);
+    </code>
+*/
+void DMAC_ChannelCRCSetup( DMAC_CHANNEL channel, DMAC_CRC_SETUP CRCSetup );
+
+// *****************************************************************************
+/* Function:
+   void DMAC_CRCDisable
+
+  Summary:
+    DMA CRC disable function
+
+  Description:
+    Disables CRC generation for the DMA transfers
+
+  Parameters:
+    None
+
+  Returns:
+    void
+
+  Example:
+    <code>
+    DMAC_CRCDisable();
+    </code>
+*/
+void DMAC_CRCDisable( void );
+
+// *****************************************************************************
+/* Function:
+   uint32_t DMAC_CRCRead
+
+  Summary:
+    DMA CRC read function
+
+  Description:
+    Reads the generated DMA CRC value. It performs crc reverse and final xor
+    opeartion based on setup paramters during DMAC_ChannelCRCSetup()
+
+    Note: Once Read is done, DMAC_ChannelCRCSetup() has to be called
+    again to setup the seed before performing DMA transfer for CRC generation.
+
+  Parameters:
+    None
+
+  Returns:
+    - crc: Generated crc value
+
+  Example:
+    <code>
+    DMAC_CRC_SETUP crcSetup = {0};
+    transfer_completed = false;
+    uint32_t crc = 0;
+
+    crcSetup.reverse_data_input = true;
+    crcSetup.polynomial_length  = 32;
+    crcSetup.polynomial         = 0x04C11DB7;
+    crcSetup.non_direct_seed    = 0x46AF6449;
+    crcSetup.reverse_crc_output = true;
+    crcSetup.final_xor_value    = 0xFFFFFFFF;
+
+    DMAC_ChannelCRCSetup(DMAC_CHANNEL_0, crcSetup);
+
+    DMAC_ChannelTransfer(...);
+
+    if (transfer_completed == true)
+    {
+        crc = DMAC_CRCRead();
+    }
+
+    </code>
+*/
+uint32_t DMAC_CRCRead( void );
 
 // *****************************************************************************
 /* Function:
