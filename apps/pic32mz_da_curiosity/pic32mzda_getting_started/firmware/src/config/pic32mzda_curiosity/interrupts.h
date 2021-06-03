@@ -5,17 +5,13 @@
     Microchip Technology Inc.
 
   File Name:
-    interrupt.c
+    interrupt.h
 
   Summary:
     Interrupt vectors mapping
 
   Description:
-    This file maps all the interrupt vectors to their corresponding
-    implementations. If a particular module interrupt is used, then its ISR
-    definition can be found in corresponding PLIB source file. If a module
-    interrupt is not used, then its ISR implementation is mapped to dummy
-    handler.
+    This file contains declarations of device vectors used by Harmony 3
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -43,66 +39,23 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
-#include "interrupts.h"
-#include "definitions.h"
+#include <stdint.h>
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: System Interrupt Vector Functions
+// Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
 
 
-void TIMER_1_InterruptHandler( void );
-void I2C1_BUS_InterruptHandler( void );
-void I2C1_MASTER_InterruptHandler( void );
-void CHANGE_NOTICE_B_InterruptHandler( void );
-void CHANGE_NOTICE_G_InterruptHandler( void );
-void DMA0_InterruptHandler( void );
 
-
-
-/* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_TIMER_1_VECTOR, ipl1SRS) TIMER_1_Handler (void)
-{
-    TIMER_1_InterruptHandler();
-}
-
-void __ISR(_I2C1_BUS_VECTOR, ipl1SRS) I2C1_BUS_Handler (void)
-{
-    I2C1_BUS_InterruptHandler();
-}
-
-void __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
-{
-    I2C1_MASTER_InterruptHandler();
-}
-
-void __ISR(_CHANGE_NOTICE_B_VECTOR, ipl1SRS) CHANGE_NOTICE_B_Handler (void)
-{
-    CHANGE_NOTICE_B_InterruptHandler();
-}
-
-void __ISR(_CHANGE_NOTICE_G_VECTOR, ipl1SRS) CHANGE_NOTICE_G_Handler (void)
-{
-    CHANGE_NOTICE_G_InterruptHandler();
-}
-
-void __ISR(_DMA0_VECTOR, ipl1SRS) DMA0_Handler (void)
-{
-    DMA0_InterruptHandler();
-}
-
-
-
-
-/*******************************************************************************
- End of File
-*/
+#endif // INTERRUPTS_H
