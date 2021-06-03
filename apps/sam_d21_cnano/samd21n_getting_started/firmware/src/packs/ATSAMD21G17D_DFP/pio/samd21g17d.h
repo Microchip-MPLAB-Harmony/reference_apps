@@ -1,7 +1,7 @@
 /**
  * \brief Peripheral I/O description for SAMD21G17D
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-11-25T06:54:13Z */
+/* file generated from device description version 2020-11-19T13:00:04Z */
 #ifndef _SAMD21G17D_GPIO_H_
 #define _SAMD21G17D_GPIO_H_
 

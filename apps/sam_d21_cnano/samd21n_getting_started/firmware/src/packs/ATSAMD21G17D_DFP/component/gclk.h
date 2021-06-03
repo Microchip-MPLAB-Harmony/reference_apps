@@ -1,7 +1,7 @@
 /**
  * \brief Component description for GCLK
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-11-25T06:54:16Z */
+/* file generated from device description version 2020-11-19T13:00:05Z */
 #ifndef _SAMD21_GCLK_COMPONENT_H_
 #define _SAMD21_GCLK_COMPONENT_H_
 
@@ -135,6 +135,7 @@
 #define   GCLK_CLKCTRL_GEN_GCLK5_Val          _U_(0x5)                                             /**< (GCLK_CLKCTRL) Generic clock generator 5  */
 #define   GCLK_CLKCTRL_GEN_GCLK6_Val          _U_(0x6)                                             /**< (GCLK_CLKCTRL) Generic clock generator 6  */
 #define   GCLK_CLKCTRL_GEN_GCLK7_Val          _U_(0x7)                                             /**< (GCLK_CLKCTRL) Generic clock generator 7  */
+#define   GCLK_CLKCTRL_GEN_GCLK8_Val          _U_(0x8)                                             /**< (GCLK_CLKCTRL) Generic clock generator 8  */
 #define GCLK_CLKCTRL_GEN_GCLK0                (GCLK_CLKCTRL_GEN_GCLK0_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 0 Position  */
 #define GCLK_CLKCTRL_GEN_GCLK1                (GCLK_CLKCTRL_GEN_GCLK1_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 1 Position  */
 #define GCLK_CLKCTRL_GEN_GCLK2                (GCLK_CLKCTRL_GEN_GCLK2_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 2 Position  */
@@ -143,6 +144,7 @@
 #define GCLK_CLKCTRL_GEN_GCLK5                (GCLK_CLKCTRL_GEN_GCLK5_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 5 Position  */
 #define GCLK_CLKCTRL_GEN_GCLK6                (GCLK_CLKCTRL_GEN_GCLK6_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 6 Position  */
 #define GCLK_CLKCTRL_GEN_GCLK7                (GCLK_CLKCTRL_GEN_GCLK7_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 7 Position  */
+#define GCLK_CLKCTRL_GEN_GCLK8                (GCLK_CLKCTRL_GEN_GCLK8_Val << GCLK_CLKCTRL_GEN_Pos) /**< (GCLK_CLKCTRL) Generic clock generator 8 Position  */
 #define GCLK_CLKCTRL_CLKEN_Pos                _U_(14)                                              /**< (GCLK_CLKCTRL) Clock Enable Position */
 #define GCLK_CLKCTRL_CLKEN_Msk                (_U_(0x1) << GCLK_CLKCTRL_CLKEN_Pos)                 /**< (GCLK_CLKCTRL) Clock Enable Mask */
 #define GCLK_CLKCTRL_CLKEN(value)             (GCLK_CLKCTRL_CLKEN_Msk & ((value) << GCLK_CLKCTRL_CLKEN_Pos))
