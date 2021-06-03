@@ -1,81 +1,87 @@
 {
-	"metaDataVersion": "1.0.0",
-	"category": "com.microchip.ide.project",
-	"content": {
-		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_thumbstick",
-		"version": "1.3.0",
-		"displayName": "Thumbstick Click example on SAM E51 Curiosity Nano Evaluation Kit",
-		"projectName": "thumbstick_click_sam_e51_cnano",
-		"shortDescription": "Demonstrates the 360 degree directional movement of input device (joystick) using Thumbstick click board",
-		"ide": {
-			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
-		},
-		"compiler": [
-			{
-				"name": "XC32",
-				"semverRange": ">=2.50.0"
-			}
-		],
-		"dfp": {
-			"name": "SAME51_DFP",
-			"semverRange": "^3.4.98"
-		},
-		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.7.1"
-		},
-		"device": {
-			"metaDataVersion": "1.0.0",
-			"category": "com.microchip.portal.contentRef",
-			"content": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.device",
-				"name": "ATSAME51J20A",
-				"versionRange": "*"
-			}
-		},
-		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
-		"peripherals": [
-			"SYSTICK", "EIC", "GPIO", "SERCOM(USART)", "SERCOM(SPI)"
-		],
-		"keywords": [
-			"MHC",
-			"Harmony",
-			"ATSAME51J20A",
-			"SAME51 Family",
-			"Thumbstick",
-			"Thumbstick Click",
-			"joystick",
-			"Click",
-			"Mikroe",
-			"Mikroelektronika",
-			"GPIO",
-			"SAM E51",
-			"SAME51",
-			"Curiosity",
-			"Nano",
-			"Base"
-		],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./../../readme.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
-	}
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.1.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_thumbstick",
+      "version":"1.3.0",
+      "displayName":"Thumbstick Click example on SAM E51 Curiosity Nano Evaluation Kit",
+      "projectName":"thumbstick_click_sam_e51_cnano",
+      "shortDescription":"Demonstrates the 360 degree directional movement of input device (joystick) using Thumbstick click board",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=5.50.0"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=3.00.0"
+         }
+      ],
+      "dfp":{
+         "name":"SAME51_DFP",
+         "semverRange":"^3.4.98"
+      },
+      "configurator":{
+         "name":"MHC",
+         "semverRange":">=3.7.2"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"ATSAME51J20A",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "SAM E51 Curiosity Nano Evaluation Kit"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "SYSTICK",
+         "EIC",
+         "GPIO",
+         "SERCOM(USART)",
+         "SERCOM(SPI)"
+      ],
+      "keywords":[
+         "MHC",
+         "Harmony",
+         "ATSAME51J20A",
+         "SAME51 Family",
+         "Thumbstick",
+         "Thumbstick Click",
+         "joystick",
+         "Click",
+         "Mikroe",
+         "Mikroelektronika",
+         "GPIO",
+         "SAM E51",
+         "SAME51",
+         "Curiosity",
+         "Nano",
+         "Base"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
 }
