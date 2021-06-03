@@ -29,6 +29,15 @@ children:
         attributes: {id: source}
         children:
         - {type: Value, value: ../peripheral/sercom_u2201/templates/plib_sercom_usart_ring_buffer.h.ftl}
+  - type: Comment
+    attributes: {id: SERCOM_USART_RING_BUFFER_SIZE_CONFIG}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SERCOM_USART_SOURCE}
     children:
@@ -60,19 +69,46 @@ children:
       - type: Dynamic
         attributes: {id: sercom0, value: '0'}
   - type: Boolean
+    attributes: {id: USART_INTERRUPT_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'true'}
+  - type: Boolean
     attributes: {id: USART_LIN_MASTER_SUPPORTED}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: sercom0, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: USART_OPERATING_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '2'}
   - type: Boolean
     attributes: {id: USART_RING_BUFFER_ENABLE}
     children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
     - type: Values
       children:
       - type: User
         attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'true'}
   - type: KeyValueSet
     attributes: {id: USART_RXPO}
     children:

@@ -1,22 +1,17 @@
 /*******************************************************************************
- System Tasks File
+ System Interrupts File
+
+  Company:
+    Microchip Technology Inc.
 
   File Name:
-    tasks.c
+    interrupt.h
 
   Summary:
-    This file contains source code necessary to maintain system's polled tasks.
+    Interrupt vectors mapping
 
   Description:
-    This file contains source code necessary to maintain system's polled tasks.
-    It implements the "SYS_Tasks" function that calls the individual "Tasks"
-    functions for all polled MPLAB Harmony modules in the system.
-
-  Remarks:
-    This file requires access to the systemObjects global data structure that
-    contains the object handles to all MPLAB Harmony module objects executing
-    polled in the system.  These handles are passed into the individual module
-    "Tasks" functions to identify the instance of the module to maintain.
+    This file contains declarations of device vectors used by Harmony 3
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -44,52 +39,31 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
-#include "configuration.h"
-#include "definitions.h"
-
-
+#include <stdint.h>
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: System "Tasks" Routine
+// Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
 
-/*******************************************************************************
-  Function:
-    void SYS_Tasks ( void )
-
-  Remarks:
-    See prototype in system/common/sys_module.h.
-*/
-void SYS_Tasks ( void )
-{
-    /* Maintain system services */
-    
-
-    /* Maintain Device Drivers */
-    
-
-    /* Maintain Middleware & Other Libraries */
-    
-
-    /* Maintain the application's state machine. */
-        /* Call Application task APP. */
-    APP_Tasks();
+void Reset_Handler (void);
+void NonMaskableInt_Handler (void);
+void HardFault_Handler (void);
+void SysTick_Handler (void);
+void EIC_InterruptHandler (void);
+void SERCOM0_USART_InterruptHandler (void);
+void SERCOM1_SPI_InterruptHandler (void);
 
 
 
-
-}
-
-/*******************************************************************************
- End of File
- */
-
+#endif // INTERRUPTS_H

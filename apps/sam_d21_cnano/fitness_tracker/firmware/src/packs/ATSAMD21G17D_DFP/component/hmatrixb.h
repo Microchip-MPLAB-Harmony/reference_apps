@@ -1,7 +1,7 @@
 /**
  * \brief Component description for HMATRIXB
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-11-25T06:54:16Z */
+/* file generated from device description version 2020-11-19T13:00:05Z */
 #ifndef _SAMD21_HMATRIXB_COMPONENT_H_
 #define _SAMD21_HMATRIXB_COMPONENT_H_
 
@@ -53,6 +53,22 @@
 #define HMATRIXB_PRAS_REG_OFST         (0x00)              /**< (HMATRIXB_PRAS) Priority A for Slave Offset */
 #define HMATRIXB_PRBS_REG_OFST         (0x04)              /**< (HMATRIXB_PRBS) Priority B for Slave Offset */
 #define HMATRIXB_SFR_REG_OFST          (0x110)             /**< (HMATRIXB_SFR) Special Function Offset */
+#define HMATRIXB_SFR0_REG_OFST         (0x110)             /**< (HMATRIXB_SFR0) Special Function Offset */
+#define HMATRIXB_SFR1_REG_OFST         (0x114)             /**< (HMATRIXB_SFR1) Special Function Offset */
+#define HMATRIXB_SFR2_REG_OFST         (0x118)             /**< (HMATRIXB_SFR2) Special Function Offset */
+#define HMATRIXB_SFR3_REG_OFST         (0x11C)             /**< (HMATRIXB_SFR3) Special Function Offset */
+#define HMATRIXB_SFR4_REG_OFST         (0x120)             /**< (HMATRIXB_SFR4) Special Function Offset */
+#define HMATRIXB_SFR5_REG_OFST         (0x124)             /**< (HMATRIXB_SFR5) Special Function Offset */
+#define HMATRIXB_SFR6_REG_OFST         (0x128)             /**< (HMATRIXB_SFR6) Special Function Offset */
+#define HMATRIXB_SFR7_REG_OFST         (0x12C)             /**< (HMATRIXB_SFR7) Special Function Offset */
+#define HMATRIXB_SFR8_REG_OFST         (0x130)             /**< (HMATRIXB_SFR8) Special Function Offset */
+#define HMATRIXB_SFR9_REG_OFST         (0x134)             /**< (HMATRIXB_SFR9) Special Function Offset */
+#define HMATRIXB_SFR10_REG_OFST        (0x138)             /**< (HMATRIXB_SFR10) Special Function Offset */
+#define HMATRIXB_SFR11_REG_OFST        (0x13C)             /**< (HMATRIXB_SFR11) Special Function Offset */
+#define HMATRIXB_SFR12_REG_OFST        (0x140)             /**< (HMATRIXB_SFR12) Special Function Offset */
+#define HMATRIXB_SFR13_REG_OFST        (0x144)             /**< (HMATRIXB_SFR13) Special Function Offset */
+#define HMATRIXB_SFR14_REG_OFST        (0x148)             /**< (HMATRIXB_SFR14) Special Function Offset */
+#define HMATRIXB_SFR15_REG_OFST        (0x14C)             /**< (HMATRIXB_SFR15) Special Function Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief PRS register API structure */
