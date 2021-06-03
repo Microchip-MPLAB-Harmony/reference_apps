@@ -10,21 +10,21 @@
 		"shortDescription": "Standby and Idle mode low Power Application on SAM L21 Xplained Pro Evaluation Kit",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.0.0"
 			}
 		],
 		"dfp": {
 			"name": "SAML21_DFP",
-			"semverRange": "^3.4.82"
+			"semverRange": "^3.5.87"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.6.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

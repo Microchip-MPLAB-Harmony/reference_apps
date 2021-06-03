@@ -53,8 +53,10 @@
 /* This section lists the other files that are included in this file.
 */
 
+#include "interrupts.h"
 #include "device.h"
 #include "plib_supc.h"
+
 
 
 
@@ -64,41 +66,44 @@ void SUPC_Initialize( void )
 
     /* Configure BOD33. Mask the values loaded from NVM during reset. */
     SUPC_REGS->SUPC_BOD33 &= ~SUPC_BOD33_ENABLE_Msk;
-    SUPC_REGS->SUPC_BOD33 = (SUPC_REGS->SUPC_BOD33 & (SUPC_BOD33_ENABLE_Msk | SUPC_BOD33_ACTION_Msk | SUPC_BOD33_HYST_Msk | SUPC_BOD33_LEVEL_Msk)) | SUPC_BOD33_PSEL(0x0);
-    if (bodEnable)
+    SUPC_REGS->SUPC_BOD33 = (SUPC_REGS->SUPC_BOD33 & (SUPC_BOD33_ENABLE_Msk | SUPC_BOD33_ACTION_Msk | SUPC_BOD33_HYST_Msk | SUPC_BOD33_LEVEL_Msk)) | SUPC_BOD33_PSEL(0x0UL);
+    if (bodEnable != 0U)
     {
         SUPC_REGS->SUPC_BOD33 |= SUPC_BOD33_ENABLE_Msk;
     }
 
     /* Configure VREG. Mask the values loaded from NVM during reset.*/
-    SUPC_REGS->SUPC_VREG = SUPC_VREG_ENABLE_Msk | SUPC_VREG_VSVSTEP(0) | SUPC_VREG_VSPER(0) | SUPC_VREG_LPEFF_Msk | SUPC_VREG_STDBYPL0_Msk;
+    SUPC_REGS->SUPC_VREG = SUPC_VREG_ENABLE_Msk | SUPC_VREG_VSVSTEP(0) | SUPC_VREG_VSPER(0UL) | SUPC_VREG_LPEFF_Msk | SUPC_VREG_STDBYPL0_Msk;
 
     /* Configure VREF */
-    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0);
+    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0UL);
 
 }
 
 void SUPC_SetOutputPin( SUPC_OUTPIN pin )
 {
-    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_SETOUT(1 << pin);
+    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_SETOUT(1UL <<(uint32_t)pin);
 }
 
 void SUPC_ClearOutputPin( SUPC_OUTPIN pin )
 {
-    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_CLROUT(1 << pin);
+    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_CLROUT(1UL <<(uint32_t)pin);
 }
 
 void SUPC_SelectVoltageRegulator(SUPC_VREGSEL regsel)
 {
     if(SUPC_VREGSEL_BUCK == regsel)
     {
-        SUPC_REGS->SUPC_VREG |= (1 << SUPC_VREG_SEL_Pos);
+        SUPC_REGS->SUPC_VREG |= (1UL << SUPC_VREG_SEL_Pos);
     }
     else
     {
-        SUPC_REGS->SUPC_VREG &= ~(1 << SUPC_VREG_SEL_Pos);
+        SUPC_REGS->SUPC_VREG &= ~(1UL << SUPC_VREG_SEL_Pos);
     }
-    while(!(SUPC_REGS->SUPC_STATUS & SUPC_STATUS_VREGRDY_Msk));
+    while((SUPC_REGS->SUPC_STATUS & SUPC_STATUS_VREGRDY_Msk) == 0U)
+    {
+        /* Do nothing */
+    }
 }
 
 

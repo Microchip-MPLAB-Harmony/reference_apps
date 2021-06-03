@@ -66,6 +66,17 @@
 
 // *****************************************************************************
 // *****************************************************************************
+// Section: Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+#define ADC_STATUS_NONE 0U
+#define ADC_STATUS_RESRDY ADC_INTFLAG_RESRDY_Msk
+#define ADC_STATUS_WINMON ADC_INTFLAG_WINMON_Msk
+#define ADC_STATUS_MASK (ADC_STATUS_RESRDY | ADC_STATUS_OVERRUN | ADC_STATUS_WINMON)    
+#define ADC_STATUS_INVALID 0xFFFFFFFFU
+
+// *****************************************************************************
+// *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
@@ -120,15 +131,7 @@ typedef enum
     ADC_NEGINPUT_GND = ADC_INPUTCTRL_MUXNEG_GND,
 }ADC_NEGINPUT;
 
-typedef enum
-{
-    ADC_STATUS_RESRDY = ADC_INTFLAG_RESRDY_Msk,
-    ADC_STATUS_WINMON = ADC_INTFLAG_WINMON_Msk,
-    /* Force compiler to reserve 32-bit for this enum */
-    ADC_STATUS_INVALID = 0xFFFFFFFF
-}ADC_STATUS;
-
-
+typedef uint32_t ADC_STATUS;
 typedef enum
 {
     ADC_WINMODE_DISABLED = ADC_CTRLC_WINMODE_DISABLE_Val,
