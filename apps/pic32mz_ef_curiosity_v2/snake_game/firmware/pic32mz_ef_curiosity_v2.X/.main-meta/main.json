@@ -1,88 +1,92 @@
 {
-	"metaDataVersion": "1.0.0",
-	"category": "com.microchip.ide.project",
-	"content": {
-		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_snake_game",
-		"version": "1.3.0",
-		"displayName": "Snake Game Application",
-		"projectName": "snake_game_pic32mz_ef_curiosity_v2",
-		"shortDescription": "Snake Game Application on Curiosity PIC32MZ EF 2.0 Development Board + High-Performance WVGA LCD Display Module",
-		"ide": {
-			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
-		},
-		"compiler": [
-			{
-				"name": "XC32",
-				"semverRange": ">=2.41.0"
-			}
-		],
-		"dfp": {
-			"name": "PIC32MZ-EF_DFP",
-			"semverRange": "^1.2.51"
-		},
-		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.5"
-		},
-		"device": {
-			"metaDataVersion": "1.0.0",
-			"category": "com.microchip.portal.contentRef",
-			"content": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.device",
-				"name": "PIC32MZ2048EFM144",
-				"versionRange": "*"
-			}
-		},
-		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
-		"peripherals": [
-			"SPI", "Timer", "Core Timer"
-		],
-		"keywords": [
-			"MHC",
-			"Harmony",
-			"PIC32MZ2048EFM144",
-			"PIC32MZ Family",
-			"Timer",
-			"Display",
-			"SSD1936",
-			"Curiosity",
-			"Legato",
-			"Graphics",
-			"maXTouch",
-			"MAX TOUCH",
-			"File System",
-			"WQVGA",
-			"High-Performance",
-			"Player",
-			"Curiosity",
-			"PIC32MZ EF",
-			"PIC32MZEF",
-			"Click",
-			"Thumbstick",
-			"Driver",
-			"System Service"
-		],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./../../readme.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
-	}
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.1.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_snake_game",
+      "version":"1.3.0",
+      "displayName":"Snake Game Application",
+      "projectName":"snake_game_pic32mz_ef_curiosity_v2",
+      "shortDescription":"Snake Game Application on Curiosity PIC32MZ EF 2.0 Development Board + High-Performance WVGA LCD Display Module",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=5.50.0"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=3.00.0"
+         }
+      ],
+      "dfp":{
+         "name":"PIC32MZ-EF_DFP",
+         "semverRange":"^1.3.58"
+      },
+      "configurator":{
+         "name":"MHC",
+         "semverRange":">=3.7.2"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"PIC32MZ2048EFM144",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "Curiosity PIC32MZ EF 2.0 Development Board"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "SPI",
+         "Timer",
+         "Core Timer"
+      ],
+      "keywords":[
+         "MHC",
+         "Harmony",
+         "PIC32MZ2048EFM144",
+         "PIC32MZ Family",
+         "Timer",
+         "Display",
+         "SSD1936",
+         "Curiosity",
+         "Legato",
+         "Graphics",
+         "maXTouch",
+         "MAX TOUCH",
+         "File System",
+         "WQVGA",
+         "High-Performance",
+         "Player",
+         "Curiosity",
+         "PIC32MZ EF",
+         "PIC32MZEF",
+         "Click",
+         "Thumbstick",
+         "Driver",
+         "System Service"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
 }

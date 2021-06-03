@@ -112,13 +112,13 @@ void APP_Initialize ( void )
     Game_SetSplashScreenUpdatePendingStatus(false);
     
     //setting the System Timer callback function for polling periodically the user input regarding the menu selection
-    sys_timer_menu_selection = SYS_TIME_TimerCreate(1, SYS_TIME_MSToCount(GAME_SYS_TIME_300MS), &Game_SysTimerMenuSelection, NULL, SYS_TIME_PERIODIC);
+    sys_timer_menu_selection = SYS_TIME_TimerCreate(1, SYS_TIME_MSToCount(GAME_SYS_TIME_300MS), &Game_SysTimerMenuSelection, (uintptr_t)NULL, SYS_TIME_PERIODIC);
     
     //setting the System Timer callback function for periodically setting the game update flag
-    sys_timer_game_update_handle = SYS_TIME_TimerCreate(0, SYS_TIME_MSToCount(GAME_SYS_TIME_150MS), &SysTimer_Game_Update_CallBack, NULL, SYS_TIME_PERIODIC);
+    sys_timer_game_update_handle = SYS_TIME_TimerCreate(0, SYS_TIME_MSToCount(GAME_SYS_TIME_150MS), &SysTimer_Game_Update_CallBack, (uintptr_t)NULL, SYS_TIME_PERIODIC);
     
     //setting the System Timer callback function for updating the splash screen
-    game_sys_timer_splash_screen_handle = SYS_TIME_TimerCreate(2, SYS_TIME_MSToCount(GAME_SYS_TIME_2000MS), &Game_SysTimerSplashScreenCallBack, NULL, SYS_TIME_PERIODIC);
+    game_sys_timer_splash_screen_handle = SYS_TIME_TimerCreate(2, SYS_TIME_MSToCount(GAME_SYS_TIME_2000MS), &Game_SysTimerSplashScreenCallBack, (uintptr_t)NULL, SYS_TIME_PERIODIC);
      
     SYS_TIME_TimerStart(game_sys_timer_splash_screen_handle);
     

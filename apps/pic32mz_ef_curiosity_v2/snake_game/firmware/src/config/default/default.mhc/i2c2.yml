@@ -39,9 +39,22 @@ children:
       children:
       - type: Dynamic
         attributes: {id: legato_gfx_pda_tm5000, value: '10000'}
+  - type: Long
+    attributes: {id: I2C_CLOCK_SPEED_HZ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c2, value: '10000'}
   - type: Combo
     attributes: {id: I2C_OPERATING_MODE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic

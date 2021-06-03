@@ -39,6 +39,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: ebi, value: '19'}
+  - type: Hex
+    attributes: {id: EBICS0_CSADDR}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: KeyValueSet
     attributes: {id: EBIMSK0_MEMSIZE}
     children:
