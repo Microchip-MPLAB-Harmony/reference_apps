@@ -5,12 +5,10 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f2" displayName="ACK" projectFiles="true">
-          <logicalFolder name="core" displayName="core" projectFiles="true">
-            <logicalFolder name="generated" displayName="generated" projectFiles="true">
-              <logicalFolder name="v3avs_capabilities"
-                             displayName="v3avs_capabilities"
-                             projectFiles="true">
+        <logicalFolder name="f1" displayName="ACK" projectFiles="true">
+          <logicalFolder name="f1" displayName="core" projectFiles="true">
+            <logicalFolder name="f1" displayName="generated" projectFiles="true">
+              <logicalFolder name="f1" displayName="v3avs_capabilities" projectFiles="true">
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AVS.pb.h</itemPath>
               </logicalFolder>
               <itemPath>../../../../../../../core/generated/acp.pb.h</itemPath>
@@ -50,28 +48,28 @@
             <itemPath>../../../../../../../core/ack_core_volume.h</itemPath>
             <itemPath>../../../../../../../core/ack_core_weight.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="external" displayName="external" projectFiles="true">
-            <logicalFolder name="nanopb" displayName="nanopb" projectFiles="true">
+          <logicalFolder name="f2" displayName="external" projectFiles="true">
+            <logicalFolder name="f1" displayName="nanopb" projectFiles="true">
               <itemPath>../../../../../../../external/nanopb/pb.h</itemPath>
               <itemPath>../../../../../../../external/nanopb/pb_common.h</itemPath>
               <itemPath>../../../../../../../external/nanopb/pb_decode.h</itemPath>
               <itemPath>../../../../../../../external/nanopb/pb_encode.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="hmcu_port" displayName="hmcu_port" projectFiles="true">
-            <logicalFolder name="ota" displayName="ota" projectFiles="true">
+          <logicalFolder name="f3" displayName="hmcu_port" projectFiles="true">
+            <logicalFolder name="f1" displayName="ota" projectFiles="true">
               <itemPath>../../../../hmcu_port/ota/ack_samd21_ota.h</itemPath>
               <itemPath>../../../../hmcu_port/ota/ack_samd21_ota_config.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="include" displayName="include" projectFiles="true">
-            <logicalFolder name="details" displayName="details" projectFiles="true">
+          <logicalFolder name="f4" displayName="include" projectFiles="true">
+            <logicalFolder name="f1" displayName="details" projectFiles="true">
               <itemPath>../../../../../../../include/details/ack_debug_print.h</itemPath>
               <itemPath>../../../../../../../include/details/ack_types.h</itemPath>
               <itemPath>../../../../../../../include/details/ack_user_module.h</itemPath>
               <itemPath>../../../../../../../include/details/ack_document.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="generated" displayName="generated" projectFiles="true">
+            <logicalFolder name="f2" displayName="generated" projectFiles="true">
               <itemPath>../../../../../../../include/generated/ack_generated_ack.h</itemPath>
               <itemPath>../../../../../../../include/generated/ack_generated_alexa.h</itemPath>
               <itemPath>../../../../../../../include/generated/ack_generated_alexa_brightness_controller.h</itemPath>
@@ -145,41 +143,41 @@
             <itemPath>../../../../../../../include/ack_temperature_sensor.h</itemPath>
             <itemPath>../../../../../../../include/ack_thermostat_controller.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="SmartLight" displayName="SmartLight" projectFiles="true">
+          <logicalFolder name="f5" displayName="SmartLight" projectFiles="true">
             <itemPath>../../../../../../../applications/SmartLight/ack_user_config.h</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="f1" displayName="default" projectFiles="true">
+        <logicalFolder name="f2" displayName="default" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f5" displayName="clock" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="eic" projectFiles="true">
+            <logicalFolder name="f2" displayName="eic" projectFiles="true">
               <itemPath>../src/config/default/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/default/peripheral/evsys/plib_evsys.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/default/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="pac" projectFiles="true">
+            <logicalFolder name="f6" displayName="pac" projectFiles="true">
               <itemPath>../src/config/default/peripheral/pac/plib_pac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="port" projectFiles="true">
+            <logicalFolder name="f7" displayName="port" projectFiles="true">
               <itemPath>../src/config/default/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="sercom" projectFiles="true">
+            <logicalFolder name="f8" displayName="sercom" projectFiles="true">
               <logicalFolder name="f1" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom3_usart.h</itemPath>
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="systick" projectFiles="true">
+            <logicalFolder name="f9" displayName="systick" projectFiles="true">
               <itemPath>../src/config/default/peripheral/systick/plib_systick.h</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -187,6 +185,8 @@
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
           <itemPath>../src/config/default/device.h</itemPath>
+          <itemPath>../src/config/default/interrupts.h</itemPath>
+          <itemPath>../src/config/default/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -216,10 +216,49 @@
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/wdt.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/adc.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/i2s.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/mtb.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pac0.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pac1.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pac2.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/ptc.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sbmatrix.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sysctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc3.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/usb.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/wdt.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/pio/samd21g17d.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d.h</itemPath>
+          <itemPath>../src/packs/ATSAMD21G17D_DFP/samd21g17d.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -241,6 +280,25 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
+        <itemPath>../src/config/default/default.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sercom3.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sercom5.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -254,12 +312,10 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f2" displayName="ACK" projectFiles="true">
-          <logicalFolder name="core" displayName="core" projectFiles="true">
-            <logicalFolder name="generated" displayName="generated" projectFiles="true">
-              <logicalFolder name="v3avs_capabilities"
-                             displayName="v3avs_capabilities"
-                             projectFiles="true">
+        <logicalFolder name="f1" displayName="ACK" projectFiles="true">
+          <logicalFolder name="f1" displayName="core" projectFiles="true">
+            <logicalFolder name="f1" displayName="generated" projectFiles="true">
+              <logicalFolder name="f1" displayName="v3avs_capabilities" projectFiles="true">
                 <itemPath>../../../../../../../core/generated/v3avs_capabilities/V3AVS.pb.c</itemPath>
               </logicalFolder>
               <itemPath>../../../../../../../core/generated/acp.pb.c</itemPath>
@@ -321,54 +377,54 @@
             <itemPath>../../../../../../../core/ack_core_volume.c</itemPath>
             <itemPath>../../../../../../../core/ack_core_weight.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="external" displayName="external" projectFiles="true">
-            <logicalFolder name="nanopb" displayName="nanopb" projectFiles="true">
+          <logicalFolder name="f2" displayName="external" projectFiles="true">
+            <logicalFolder name="f1" displayName="nanopb" projectFiles="true">
               <itemPath>../../../../../../../external/nanopb/pb_common.c</itemPath>
               <itemPath>../../../../../../../external/nanopb/pb_decode.c</itemPath>
               <itemPath>../../../../../../../external/nanopb/pb_encode.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="hmcu_port" displayName="hmcu_port" projectFiles="true">
-            <logicalFolder name="ota" displayName="ota" projectFiles="true">
+          <logicalFolder name="f3" displayName="hmcu_port" projectFiles="true">
+            <logicalFolder name="f1" displayName="ota" projectFiles="true">
               <itemPath>../../../../hmcu_port/ota/ack_samd21_ota.c</itemPath>
             </logicalFolder>
             <itemPath>../../../../hmcu_port/ack_samd21_platform.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="SmartLight" displayName="SmartLight" projectFiles="true">
+          <logicalFolder name="f4" displayName="SmartLight" projectFiles="true">
             <itemPath>../../../../../../../applications/SmartLight/SmartLight.c</itemPath>
           </logicalFolder>
           <itemPath>../../../../../../ack_user_device.c</itemPath>
         </logicalFolder>
-        <logicalFolder name="f1" displayName="default" projectFiles="true">
+        <logicalFolder name="f2" displayName="default" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f5" displayName="clock" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="eic" projectFiles="true">
+            <logicalFolder name="f2" displayName="eic" projectFiles="true">
               <itemPath>../src/config/default/peripheral/eic/plib_eic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/default/peripheral/evsys/plib_evsys.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/default/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/default/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="pac" projectFiles="true">
+            <logicalFolder name="f6" displayName="pac" projectFiles="true">
               <itemPath>../src/config/default/peripheral/pac/plib_pac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="port" projectFiles="true">
+            <logicalFolder name="f7" displayName="port" projectFiles="true">
               <itemPath>../src/config/default/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="sercom" projectFiles="true">
+            <logicalFolder name="f8" displayName="sercom" projectFiles="true">
               <logicalFolder name="f1" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom3_usart.c</itemPath>
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="systick" projectFiles="true">
+            <logicalFolder name="f9" displayName="systick" projectFiles="true">
               <itemPath>../src/config/default/peripheral/systick/plib_systick.c</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -384,25 +440,6 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
-        <itemPath>../src/config/default/default.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -420,13 +457,13 @@
         <targetDevice>ATSAMD21G17D</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>nEdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.1.71"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.4.116"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -451,7 +488,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>(if not exist $(ProjectDir)\..\..\hex mkdir $(ProjectDir)\..\..\hex) &amp; (copy "$(ProjectDir)\dist\$(ConfName)\production"\"*.hex" "$(ProjectDir)\..\..\hex\")</makeCustomizationPostStep>
+        <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; mkdir ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/${ImagePath} ${ProjectDir}/../../hex/ </makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -489,7 +526,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../../../../../../../applications/SmartLight;../../../../../../../external;../../../../../../../include;../../../../hmcu_port;../../../../../../../core/generated;../../../../../../../core/generated/v3avs_capabilities;../../../../../../../core/generated/v3avs_types;../../../../../../../external/nanopb;../../../../../../../include/details;../../../../hmcu_port/ota"/>
+                  value="../../../../../../../applications/SmartLight;../../../../../../../core/generated;../../../../../../../core/generated/v3avs_capabilities;../../../../../../../core/generated/v3avs_types;../../../../../../../external;../../../../../../../external/nanopb;../../../../../../../include;../../../../../../../include/details;../../../../hmcu_port;../../../../hmcu_port/ota;../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -501,6 +538,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value=""/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -532,6 +570,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -563,7 +602,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";ROM_LENGTH=0xF800"/>
+        <property key="preprocessor-macros" value="ROM_LENGTH=0xF800"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -585,7 +624,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/default;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -613,6 +652,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <PICkit3PlatformTool>
@@ -1101,7 +1141,7 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
-      <nEdbgTool>
+      <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
@@ -1112,6 +1152,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1125,9 +1166,53 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
                   value="D:/Ack_final/ACK_Device_SDK_3.1.202002192328/user/platform/samd21_amazon_ack/applications/SmartLight/firmware/SmartLight.X/debug/default/SmartLight_ptg"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value="0-20003fff"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </Tool>
+      <nEdbgTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-1ffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
