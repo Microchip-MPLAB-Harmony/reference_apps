@@ -3,7 +3,7 @@
   <Configurator>
     <Name dnOrder="0" value="default"/>
     <Processor dnOrder="1" value="ATSAMD21G17D"/>
-    <Harmony dnOrder="2" path="../../../../../../../Harmony_public_release"/>
+    <Harmony dnOrder="2" path="../../../../../../../../../../Harmony_public_release"/>
     <Folder_Name dnOrder="3" value=""/>
     <Manifest dnOrder="4">
       <Files dnOrder="0">
