@@ -506,8 +506,8 @@ static void _DRV_USART_RemoveClientTransfersFromList(
 }
 
 static void _DRV_USART_ReadAbort(DRV_USART_OBJ* dObj, DRV_USART_CLIENT_OBJ* clientObj)
-{    
-    DRV_USART_BUFFER_OBJ* bufferObj = NULL;   	
+{
+    DRV_USART_BUFFER_OBJ* bufferObj = NULL;
 
     // Get the buffer object at the head of the list
     bufferObj = _DRV_USART_TransferObjListGet(dObj, DRV_USART_DIRECTION_RX);
@@ -518,7 +518,7 @@ static void _DRV_USART_ReadAbort(DRV_USART_OBJ* dObj, DRV_USART_CLIENT_OBJ* clie
         return;
     }
 
-	/* Make sure the ongoing request belongs to the client that called this API and is currently with the PLIB */
+    /* Make sure the ongoing request belongs to the client that called this API and is currently with the PLIB */
     if ((bufferObj->clientHandle == clientObj->clientHandle) && (bufferObj->currentState == DRV_USART_BUFFER_IS_PROCESSING))
     {
 
@@ -529,11 +529,11 @@ static void _DRV_USART_ReadAbort(DRV_USART_OBJ* dObj, DRV_USART_CLIENT_OBJ* clie
         }
         else
         {
-            dObj->usartPlib->readAbort();						
+            dObj->usartPlib->readAbort();
         }
 
         /* Free the buffer at the top of the list */
-        _DRV_USART_RemoveTransferObjFromList(dObj, DRV_USART_DIRECTION_RX);                
+        _DRV_USART_RemoveTransferObjFromList(dObj, DRV_USART_DIRECTION_RX);
     }
 }
 
@@ -556,14 +556,14 @@ static bool _DRV_USART_QueuePurge(const DRV_HANDLE handle, DRV_USART_DIRECTION d
     {
         return false;
     }
-	
-	if (dir == DRV_USART_DIRECTION_RX)
-	{	
-		/* For read, abort the ongoing read request and then remove the queued requests */
-		_DRV_USART_ReadAbort(dObj, clientObj);
-	}
 
-	/* Remove any pending read requests in the queue */
+    if (dir == DRV_USART_DIRECTION_RX)
+    {
+        /* For read, abort the ongoing read request and then remove the queued requests */
+        _DRV_USART_ReadAbort(dObj, clientObj);
+    }
+
+    /* Remove any pending read requests in the queue */
     _DRV_USART_RemoveClientTransfersFromList(dObj, clientObj, dir);
 
     _DRV_USART_ResourceUnlock(dObj);
@@ -574,7 +574,7 @@ static bool _DRV_USART_QueuePurge(const DRV_HANDLE handle, DRV_USART_DIRECTION d
 static void _DRV_USART_WriteSubmit( DRV_USART_OBJ* dObj )
 {
     // Get the buffer object at the top of the list
-    DRV_USART_BUFFER_OBJ* bufferObj = _DRV_USART_TransferObjListGet(dObj, DRV_USART_DIRECTION_TX);	
+    DRV_USART_BUFFER_OBJ* bufferObj = _DRV_USART_TransferObjListGet(dObj, DRV_USART_DIRECTION_TX);
 
     if (bufferObj == NULL)
     {
@@ -591,13 +591,28 @@ static void _DRV_USART_WriteSubmit( DRV_USART_OBJ* dObj )
 
     if(dObj->txDMAChannel != SYS_DMA_CHANNEL_NONE)
     {
+        if (dObj->dataWidth > DRV_USART_DATA_8_BIT)
+        {
+            SYS_DMA_DataWidthSetup(dObj->txDMAChannel, SYS_DMA_WIDTH_16_BIT);
 
-        SYS_DMA_ChannelTransfer(
-            dObj->txDMAChannel,
-            (const void *)bufferObj->buffer,
-            (const void *)dObj->txAddress,
-            bufferObj->size
-        );
+            SYS_DMA_ChannelTransfer(
+                dObj->txDMAChannel,
+                (const void *)bufferObj->buffer,
+                (const void *)dObj->txAddress,
+                (bufferObj->size << 1)
+            );
+        }
+        else
+        {
+            SYS_DMA_DataWidthSetup(dObj->txDMAChannel, SYS_DMA_WIDTH_8_BIT);
+
+            SYS_DMA_ChannelTransfer(
+                dObj->txDMAChannel,
+                (const void *)bufferObj->buffer,
+                (const void *)dObj->txAddress,
+                bufferObj->size
+            );
+        }
     }
     else
     {
@@ -607,9 +622,9 @@ static void _DRV_USART_WriteSubmit( DRV_USART_OBJ* dObj )
 
 static void _DRV_USART_ReadSubmit( DRV_USART_OBJ* dObj )
 {
+    uint32_t errorMask;
     // Get the buffer object at the top of the list
     DRV_USART_BUFFER_OBJ* bufferObj = _DRV_USART_TransferObjListGet(dObj, DRV_USART_DIRECTION_RX);
-	uint32_t errorMask;
 
     if (bufferObj == NULL)
     {
@@ -626,16 +641,32 @@ static void _DRV_USART_ReadSubmit( DRV_USART_OBJ* dObj )
 
     if(dObj->rxDMAChannel != SYS_DMA_CHANNEL_NONE)
     {
-		/* UART errors (if any) must be cleared before initiating a new DMA request */
-		errorMask = dObj->usartPlib->errorGet();
+        /* UART errors (if any) must be cleared before initiating a new DMA request */
+        errorMask = dObj->usartPlib->errorGet();
         (void)errorMask;
 
-        SYS_DMA_ChannelTransfer(
-            dObj->rxDMAChannel,
-            (const void *)dObj->rxAddress,
-            (const void *)bufferObj->buffer,
-            bufferObj->size
-        );
+        if (dObj->dataWidth > DRV_USART_DATA_8_BIT)
+        {
+            SYS_DMA_DataWidthSetup(dObj->rxDMAChannel, SYS_DMA_WIDTH_16_BIT);
+
+            SYS_DMA_ChannelTransfer(
+                dObj->rxDMAChannel,
+                (const void *)dObj->rxAddress,
+                (const void *)bufferObj->buffer,
+                (bufferObj->size << 1)
+            );
+        }
+        else
+        {
+            SYS_DMA_DataWidthSetup(dObj->rxDMAChannel, SYS_DMA_WIDTH_8_BIT);
+
+            SYS_DMA_ChannelTransfer(
+                dObj->rxDMAChannel,
+                (const void *)dObj->rxAddress,
+                (const void *)bufferObj->buffer,
+                bufferObj->size
+            );
+        }
     }
     else
     {
@@ -863,6 +894,7 @@ SYS_MODULE_OBJ DRV_USART_Initialize(
     dObj->remapParity           = usartInit->remapParity;
     dObj->remapStopBits         = usartInit->remapStopBits;
     dObj->remapError            = usartInit->remapError;
+    dObj->dataWidth             = usartInit->dataWidth;
 
     /* Register a callback with either DMA or USART PLIB based on configuration.
      * dObj is used as a context parameter, that will be used to distinguish the
@@ -1121,6 +1153,11 @@ bool DRV_USART_SerialSetup(
         /* Clock source cannot be modified dynamically, so passing the '0' to pick
          * the configured clock source value */
          isSuccess = dObj->usartPlib->serialSetup(&setupRemap, 0);
+
+         if (isSuccess == true)
+         {
+            dObj->dataWidth = setup->dataWidth;
+         }
     }
 
     OSAL_MUTEX_Unlock(&(dObj->mutexTransferObjects));
@@ -1361,7 +1398,7 @@ bool DRV_USART_ReadQueuePurge( const DRV_HANDLE handle )
 bool DRV_USART_ReadAbort(const DRV_HANDLE handle)
 {
     DRV_USART_OBJ* dObj = NULL;
-    DRV_USART_CLIENT_OBJ* clientObj = NULL;    
+    DRV_USART_CLIENT_OBJ* clientObj = NULL;
 
     /* Validate the driver handle */
     clientObj = _DRV_USART_DriverHandleValidate(handle);
@@ -1377,11 +1414,11 @@ bool DRV_USART_ReadAbort(const DRV_HANDLE handle)
     {
         return false;
     }
-	
-	_DRV_USART_ReadAbort(dObj, clientObj);
-	
-	// Submit the next request (if any) from the queue to the USART PLIB
-	_DRV_USART_ReadSubmit(dObj);
+
+    _DRV_USART_ReadAbort(dObj, clientObj);
+
+    // Submit the next request (if any) from the queue to the USART PLIB
+    _DRV_USART_ReadSubmit(dObj);
 
     _DRV_USART_ResourceUnlock(dObj);
 

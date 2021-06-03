@@ -21,6 +21,12 @@ children:
   - type: KeyValueSet
     attributes: {id: SERCOM_MODE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -92,10 +98,21 @@ children:
     children:
     - type: Attributes
       children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
       - type: Boolean
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'true'}
+  - type: Boolean
+    attributes: {id: USART_INTERRUPT_MODE_ENABLE}
+    children:
     - type: Values
       children:
       - type: Dynamic
@@ -107,8 +124,8 @@ children:
       children:
       - type: Dynamic
         attributes: {id: sercom0, value: 'false'}
-  - type: Boolean
-    attributes: {id: USART_RING_BUFFER_ENABLE}
+  - type: KeyValueSet
+    attributes: {id: USART_OPERATING_MODE}
     children:
     - type: Attributes
       children:
@@ -116,6 +133,30 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: '1'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom0, value: 'false'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_MODE_ENABLE}
+    children:
     - type: Values
       children:
       - type: Dynamic
@@ -143,6 +184,24 @@ children:
         attributes: {id: sercom0, value: '0'}
 - type: Attachments
   children:
+  - type: DirectCapability
+    attributes: {id: SERCOM0_I2C}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: DirectCapability
+    attributes: {id: SERCOM0_SPI}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
   - type: DirectCapability
     attributes: {id: SERCOM0_UART}
     children:
