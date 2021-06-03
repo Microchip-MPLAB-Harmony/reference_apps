@@ -1,23 +1,18 @@
 /*******************************************************************************
-  DMAC Peripheral Library Interface Header File
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_dmac.h
+    interrupt.h
 
   Summary:
-    DMAC peripheral library interface.
+    Interrupt vectors mapping
 
   Description:
-    This file defines the interface to the DMAC peripheral library. This
-    library provides access to and control of the DMAC controller.
-
-  Remarks:
-    None.
-
-*******************************************************************************/
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -41,79 +36,33 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_DMAC_H    // Guards against multiple inclusion
-#define PLIB_DMAC_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include <stdint.h>
 
-/*  This section lists the other files that are included in this file.
-*/
-#include <device.h>
-#include <string.h>
-#include <stdbool.h>
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Data Types
+// Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
 
-// *****************************************************************************
+void Reset_Handler (void);
+void NonMaskableInt_Handler (void);
+void HardFault_Handler (void);
+void SysTick_Handler (void);
+void EIC_EXTINT_15_InterruptHandler (void);
+void ADC0_OTHER_InterruptHandler (void);
 
-#define DMAC_BITCOUNT_VALUE 20
-        
-typedef enum
-{
-    /* DMAC Channel 0 */
-    DMAC_CHANNEL_0 = 0,
-} DMAC_CHANNEL;
 
-typedef enum
-{
-    /* Data was transferred successfully. */
-    DMAC_TRANSFER_EVENT_COMPLETE,
 
-    /* Error while processing the request */
-    DMAC_TRANSFER_EVENT_ERROR
-
-} DMAC_TRANSFER_EVENT;
-
-typedef uint32_t DMAC_CHANNEL_CONFIG;
-
-typedef void (*DMAC_CHANNEL_CALLBACK) (DMAC_TRANSFER_EVENT event, uintptr_t contextHandle);
-
-uint16_t adc_result_store [DMAC_BITCOUNT_VALUE];
-
-void DMAC_Initialize( void );
-void DMAC_Descriptor_Initialize ( void );
-void DMAC_ChannelCallbackRegister (DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK eventHandler, const uintptr_t contextHandle);
-bool DMAC_ChannelTransfer (DMAC_CHANNEL channel, const void *srcAddr, const void *destAddr, size_t blockSize);
-bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel );
-void DMAC_ChannelDisable ( DMAC_CHANNEL channel );
-DMAC_CHANNEL_CONFIG  DMAC_ChannelSettingsGet ( DMAC_CHANNEL channel );
-bool  DMAC_ChannelSettingsSet ( DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG settings );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
-// DOM-IGNORE-END
-
-#endif //PLIB_DMAC_H
+#endif // INTERRUPTS_H
