@@ -79,7 +79,7 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
   - type: KeyValueSet
-    attributes: {id: DEVICE_SECURITY}
+    attributes: {id: DEVICE_SECURITY_CMD}
     children:
     - type: Values
       children:
@@ -346,13 +346,6 @@ children:
         attributes: {id: enabled}
         children:
         - {type: Value, value: 'true'}
-  - type: Boolean
-    attributes: {id: FUSE_CONFIG_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: 'true'}
   - type: Integer
     attributes: {id: GCLK_0_FREQ}
     children:
@@ -1498,7 +1491,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0xbb80'}
+        attributes: {id: core, value: '0xBB80'}
   - type: Integer
     attributes: {id: SYSTICK_PERIOD_US}
     children:
@@ -1590,4 +1583,4 @@ children:
         children:
         - {type: Value, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '300', y: '165', id: core}
+  attributes: {x: '553', y: '111', id: core}
