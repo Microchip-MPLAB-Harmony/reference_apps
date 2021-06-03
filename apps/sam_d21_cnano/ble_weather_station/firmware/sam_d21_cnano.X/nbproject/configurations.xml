@@ -4,46 +4,50 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f5" displayName="10DOF_click" projectFiles="true">
+      <logicalFolder name="f1" displayName="10DOF_click" projectFiles="true">
         <itemPath>../src/10DOF_click/include/bmp180.h</itemPath>
         <itemPath>../src/10DOF_click/include/bno055.h</itemPath>
         <itemPath>../src/10DOF_click/include/bno055_defs.h</itemPath>
         <itemPath>../src/10DOF_click/include/bno055_hal.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f4" displayName="ble" projectFiles="true">
+      <logicalFolder name="f2" displayName="ble" projectFiles="true">
         <logicalFolder name="f1" displayName="non_gui" projectFiles="true">
           <itemPath>../src/ble/non_gui/ble.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
+      <logicalFolder name="f3" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="samd21_cnano" projectFiles="true">
-          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+          <logicalFolder name="f4" displayName="driver" projectFiles="true">
+            <itemPath>../src/config/samd21_cnano/driver/driver.h</itemPath>
+            <itemPath>../src/config/samd21_cnano/driver/driver_common.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f1" displayName="osal" projectFiles="true">
             <itemPath>../src/config/samd21_cnano/osal/osal.h</itemPath>
             <itemPath>../src/config/samd21_cnano/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/samd21_cnano/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f5" displayName="clock" projectFiles="true">
+          <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="evsys" projectFiles="true">
+            <logicalFolder name="f2" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/peripheral/evsys/plib_evsys.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f3" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f4" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="port" projectFiles="true">
+            <logicalFolder name="f5" displayName="port" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f2" displayName="i2c_master" projectFiles="true">
+            <logicalFolder name="f6" displayName="sercom" projectFiles="true">
+              <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/samd21_cnano/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/samd21_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="usart" projectFiles="true">
+              <logicalFolder name="f2" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom3_usart.h</itemPath>
                 <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
                 <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
@@ -57,15 +61,15 @@
               <itemPath>../src/config/samd21_cnano/peripheral/tc/plib_tc3.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="system" projectFiles="true">
-            <logicalFolder name="f5" displayName="debug" projectFiles="true">
+          <logicalFolder name="f3" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="debug" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="int" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/samd21_cnano/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="time" projectFiles="true">
+            <logicalFolder name="f3" displayName="time" projectFiles="true">
               <itemPath>../src/config/samd21_cnano/system/time/sys_time.h</itemPath>
               <itemPath>../src/config/samd21_cnano/system/time/sys_time_definitions.h</itemPath>
               <itemPath>../src/config/samd21_cnano/system/time/src/sys_time_local.h</itemPath>
@@ -80,11 +84,13 @@
           <itemPath>../src/config/samd21_cnano/device.h</itemPath>
           <itemPath>../src/config/samd21_cnano/user.h</itemPath>
           <itemPath>../src/config/samd21_cnano/configuration.h</itemPath>
+          <itemPath>../src/config/samd21_cnano/interrupts.h</itemPath>
+          <itemPath>../src/config/samd21_cnano/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="custom_bt" displayName="custom_bt" projectFiles="true">
-        <logicalFolder name="driver" displayName="driver" projectFiles="true">
-          <logicalFolder name="bm71" displayName="bm71" projectFiles="true">
+      <logicalFolder name="f4" displayName="custom_bt" projectFiles="true">
+        <logicalFolder name="f1" displayName="driver" projectFiles="true">
+          <logicalFolder name="f1" displayName="bm71" projectFiles="true">
             <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71.h</itemPath>
             <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_ble.h</itemPath>
             <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_command_decode.h</itemPath>
@@ -95,7 +101,7 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
+      <logicalFolder name="f5" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAMD21G17D_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/ac.h</itemPath>
@@ -122,10 +128,49 @@
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/wdt.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/adc.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/i2s.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/mtb.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pac0.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pac1.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pac2.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/ptc.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sbmatrix.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/sysctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc3.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/usb.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/wdt.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/pio/samd21g17d.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMD21G17D_DFP/atsamd21g17d.h</itemPath>
+          <itemPath>../src/packs/ATSAMD21G17D_DFP/samd21g17d.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -153,103 +198,9 @@
       <itemPath>../src/bme280_bno055.h</itemPath>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="samd21_cnano" projectFiles="true">
-          <itemPath>../src/config/samd21_cnano/ATSAMD21G17D.ld</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-    </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
-      <logicalFolder name="f3" displayName="10DOF_click" projectFiles="true">
-        <itemPath>../src/10DOF_click/src/bmp180.c</itemPath>
-        <itemPath>../src/10DOF_click/src/bno055.c</itemPath>
-        <itemPath>../src/10DOF_click/src/bno055_hal.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="ble" projectFiles="true">
-        <logicalFolder name="f1" displayName="non_gui" projectFiles="true">
-          <itemPath>../src/ble/non_gui/ble.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="samd21_cnano" projectFiles="true">
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f5" displayName="clock" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/clock/plib_clock.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="evsys" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/evsys/plib_evsys.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/nvic/plib_nvic.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="nvmctrl" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="port" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/port/plib_port.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f2" displayName="i2c_master" projectFiles="true">
-                <itemPath>../src/config/samd21_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f1" displayName="usart" projectFiles="true">
-                <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom3_usart.c</itemPath>
-                <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-            <logicalFolder name="f7" displayName="systick" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/systick/plib_systick.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f8" displayName="tc" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/peripheral/tc/plib_tc3.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
-            <itemPath>../src/config/samd21_cnano/stdio/xc32_monitor.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="system" projectFiles="true">
-            <logicalFolder name="f2" displayName="int" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/system/int/src/sys_int.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="time" projectFiles="true">
-              <itemPath>../src/config/samd21_cnano/system/time/src/sys_time.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <itemPath>../src/config/samd21_cnano/initialization.c</itemPath>
-          <itemPath>../src/config/samd21_cnano/interrupts.c</itemPath>
-          <itemPath>../src/config/samd21_cnano/exceptions.c</itemPath>
-          <itemPath>../src/config/samd21_cnano/startup_xc32.c</itemPath>
-          <itemPath>../src/config/samd21_cnano/libc_syscalls.c</itemPath>
-          <itemPath>../src/config/samd21_cnano/tasks.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="custom_bt" displayName="custom_bt" projectFiles="true">
-        <logicalFolder name="driver" displayName="driver" projectFiles="true">
-          <logicalFolder name="bm71" displayName="bm71" projectFiles="true">
-            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71.c</itemPath>
-            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_ble.c</itemPath>
-            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_command_decode.c</itemPath>
-            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_command_send.c</itemPath>
-            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_gpio.c</itemPath>
-            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_uart.c</itemPath>
-          </logicalFolder>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f4" displayName="Weather_click" projectFiles="true">
-        <itemPath>../src/weather_click/src/bme280_driver.c</itemPath>
-      </logicalFolder>
-      <itemPath>../src/bme280_bno055.c</itemPath>
-      <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
-                   projectFiles="false">
+                   projectFiles="true">
       <logicalFolder name="f1" displayName="samd21_cnano.mhc" projectFiles="true">
         <itemPath>../src/config/samd21_cnano/samd21_cnano.mhc/cmsis.yml</itemPath>
         <itemPath>../src/config/samd21_cnano/samd21_cnano.mhc/core.yml</itemPath>
@@ -270,6 +221,100 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/samd21_cnano/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="samd21_cnano" projectFiles="true">
+          <itemPath>../src/config/samd21_cnano/ATSAMD21G17D.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="10DOF_click" projectFiles="true">
+        <itemPath>../src/10DOF_click/src/bmp180.c</itemPath>
+        <itemPath>../src/10DOF_click/src/bno055.c</itemPath>
+        <itemPath>../src/10DOF_click/src/bno055_hal.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="ble" projectFiles="true">
+        <logicalFolder name="f1" displayName="non_gui" projectFiles="true">
+          <itemPath>../src/ble/non_gui/ble.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="samd21_cnano" projectFiles="true">
+          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/clock/plib_clock.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="evsys" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/evsys/plib_evsys.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="nvic" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/nvic/plib_nvic.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f4" displayName="nvmctrl" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f5" displayName="port" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/port/plib_port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="sercom" projectFiles="true">
+              <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
+                <itemPath>../src/config/samd21_cnano/peripheral/sercom/i2c_master/plib_sercom2_i2c_master.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="f2" displayName="usart" projectFiles="true">
+                <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom3_usart.c</itemPath>
+                <itemPath>../src/config/samd21_cnano/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="f7" displayName="systick" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/systick/plib_systick.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f8" displayName="tc" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/peripheral/tc/plib_tc3.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
+            <itemPath>../src/config/samd21_cnano/stdio/xc32_monitor.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="int" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/system/int/src/sys_int.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="time" projectFiles="true">
+              <itemPath>../src/config/samd21_cnano/system/time/src/sys_time.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/samd21_cnano/initialization.c</itemPath>
+          <itemPath>../src/config/samd21_cnano/interrupts.c</itemPath>
+          <itemPath>../src/config/samd21_cnano/exceptions.c</itemPath>
+          <itemPath>../src/config/samd21_cnano/startup_xc32.c</itemPath>
+          <itemPath>../src/config/samd21_cnano/libc_syscalls.c</itemPath>
+          <itemPath>../src/config/samd21_cnano/tasks.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="custom_bt" projectFiles="true">
+        <logicalFolder name="f1" displayName="driver" projectFiles="true">
+          <logicalFolder name="f1" displayName="bm71" projectFiles="true">
+            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71.c</itemPath>
+            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_ble.c</itemPath>
+            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_command_decode.c</itemPath>
+            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_command_send.c</itemPath>
+            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_gpio.c</itemPath>
+            <itemPath>../src/custom_bt/driver/bm71/custom_drv_bm71_uart.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="Weather_click" projectFiles="true">
+        <itemPath>../src/weather_click/src/bme280_driver.c</itemPath>
+      </logicalFolder>
+      <itemPath>../src/bme280_bno055.c</itemPath>
+      <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
+    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -285,11 +330,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.3.98"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.4.116"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -314,7 +359,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>(if not exist $(ProjectDir)\..\..\hex mkdir $(ProjectDir)\..\..\hex) &amp; (copy "$(ProjectDir)\dist\$(ConfName)\production"\"*.hex" "$(ProjectDir)\..\..\hex\")</makeCustomizationPostStep>
+        <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; mkdir ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/${ImagePath} ${ProjectDir}/../../hex/ </makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -352,7 +397,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -364,6 +409,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value=""/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -395,6 +441,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -448,7 +495,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/samd21_cnano;../src/packs/ATSAMD21G17D_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -476,6 +523,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <PICkit3PlatformTool>
@@ -964,6 +1012,49 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-1ffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value="0-20003fff"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </Tool>
       <nEdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="communication.activationmode" value="nohv"/>
