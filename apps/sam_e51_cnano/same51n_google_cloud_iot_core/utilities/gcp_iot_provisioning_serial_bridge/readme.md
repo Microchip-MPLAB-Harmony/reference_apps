@@ -13,13 +13,6 @@ The application interfaces with the PC over UART and with the WiFi 7 click (ATWI
 
 ## Modules/Technology Used:
 
-- Peripheral Modules
-	- EIC
-  - SPI
-  - USART
-  - Serial bridge
-  - WINC
-
 ## Hardware Used:
   - [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)
   - [Curiosity Nano Base for Click Boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
@@ -28,14 +21,8 @@ The application interfaces with the PC over UART and with the WiFi 7 click (ATWI
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)            
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
- - [MPLAB Harmony v3 "wireless" repo v3.3.1](https://github.com/Microchip-MPLAB-Harmony/wireless/releases/tag/v3.3.1)  
- - MPLAB Harmony 3 Launcher Plugin v3.6.2  
- - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
+ - [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
+ - [MPLAB XC32 Compiler v3.0](https://www.microchip.com/mplab/compilers)
 
  <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
 
@@ -52,7 +39,7 @@ The pre-built hex file can be programmed by following the below steps
 - Open MPLAB X IDE
 - Close all existing projects in IDE, if any project is opened
 - Go to File -> Import -> Hex/ELF File
-- In the "Import Image File" window, Step 1 - Create Prebuilt Project, click the "Browse" button to select the prebuilt hex file.
+- In the "Import Image File" window, Step 1 - Create Prebuilt Project, click the "Browse" button to select the prebuilt hex file in "gcp_iot_provisioning_serial_bridge/hex" folder.
 - Select Device has "ATSAME51J20A"
 - Ensure the proper tool is selected under "Hardware Tool"
 - Click on "Next" button
@@ -61,18 +48,11 @@ The pre-built hex file can be programmed by following the below steps
 - In MPLAB X IDE, click on "Make and Program Device" Button. The device gets programmed in sometime.
 - Follow the steps in "Running the Demo" section below
 
-## Programming/Debugging Application Project:
-- Open the project (gcp_iot_provisioning_serial_bridge/firmware/sam_e51_cnano.X) in MPLAB X IDE.
-- Ensure "PKOB nano" is selected as hardware tool to program/debug the application.
-- Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar.
-- Follow the steps in "Running the Demo" section below.
-
 ## Running the Demo
 - Ensure the board is powered on (a USB cable is connected to the DEBUG USB port)
-- Refer the **"Running the Demo"** section in the documentation under utilities/[readme](../readme.md) file
+- Refer the **"Running the Demo"** section in the documentation under utility/[readme](../readme.md) file
 
 ## Comments:
-- This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
