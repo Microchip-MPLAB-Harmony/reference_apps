@@ -108,7 +108,17 @@ void _APP_USER_INPUT_THREAD_Tasks(  void *pvParameters  )
 */
 void SYS_Tasks ( void )
 {
-    /* Create OS Thread for APP_SENSOR_THREAD_Tasks. */
+    /* Maintain system services */
+    
+
+    /* Maintain Device Drivers */
+    
+
+    /* Maintain Middleware & Other Libraries */
+    
+
+    /* Maintain the application's state machine. */
+        /* Create OS Thread for APP_SENSOR_THREAD_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_SENSOR_THREAD_Tasks,
                 "APP_SENSOR_THREAD_Tasks",
                 1024,
@@ -132,6 +142,14 @@ void SYS_Tasks ( void )
                 1,
                 &xAPP_USER_INPUT_THREAD_Tasks);
 
+
+
+
+    /* Start RTOS Scheduler. */
+    
+     /**********************************************************************
+     * Create all Threads for APP Tasks before starting FreeRTOS Scheduler *
+     ***********************************************************************/
     vTaskStartScheduler(); /* This function never returns. */
 
 }

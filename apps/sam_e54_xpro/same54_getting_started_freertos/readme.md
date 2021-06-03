@@ -39,14 +39,13 @@ nav_order: 2
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
-- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
-- [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)  
-- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
-- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
-- [MPLAB Harmony v3 "CMSIS-FreeRTOS" repo v10.3.1](https://github.com/Microchip-MPLAB-Harmony/CMSIS-FreeRTOS/releases/tag/v10.3.1)  
-- MPLAB Harmony 3 Launcher Plugin v3.6.2  
-- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)
+- [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.1)
+- [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)
+- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)
+- [MPLAB Harmony v3 "CMSIS-FreeRTOS" repo v10.3.1](https://github.com/Microchip-MPLAB-Harmony/CMSIS-FreeRTOS/releases/tag/v10.3.1)
+- MPLAB Harmony 3 Launcher Plugin v3.6.4
+- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
 - Any Serial Terminal application like Tera Term terminal application.  
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
@@ -55,7 +54,7 @@ nav_order: 2
 - Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E54 Xplained Pro Evaluation Kit
 - The SAM E54 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B
   DEBUG USB port to power and debug the SAM E54 Xplained Pro Evaluation Kit  
-  <img src = "images/To_pc.png" width="500" height="425" align="middle">
+  <img src = "images/To_pc.png" width="750" height="802" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps
@@ -84,12 +83,12 @@ The pre-built hex file can be programmed by following the below steps
 - Change the baud rate to 115200
 - You should see the temperature values (in °F) being displayed on the terminal every second, as shown below  
 
-  <img src = "images/result1.png" width="325" height="185" align="middle">  
+  <img src = "images/result1.png">  
 - Also, notice the LED0 blinking at one second rate
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
-  <img src = "images/temp_sensor_placement.png" width="500" height="425" align="middle">  
+  <img src = "images/temp_sensor_placement.png" width="750" height="801" align="middle">  
 - Press any key to display the last five written temperature values from the EEPROM  
-  <img src = "images/result2.png" width="345" height="320" align="middle">  
+  <img src = "images/result2.png">  
 
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS](https://microchipdeveloper.com/harmony3:same54-getting-started-tm-drivers-freertos)
