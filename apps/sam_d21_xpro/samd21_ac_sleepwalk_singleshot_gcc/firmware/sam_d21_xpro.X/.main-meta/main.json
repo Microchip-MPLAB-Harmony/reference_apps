@@ -1,84 +1,90 @@
 {
-	"metaDataVersion": "1.0.0",
-	"category": "com.microchip.ide.project",
-	"content": {
-		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_ac_sleepwalk_singleshot_gcc",
-		"version": "1.3.0",
-		"displayName": "AC Sleepwalking Application built with GCC",
-		"projectName": "ac_sleepwalk_singleshot_sam_d21_xpro",
-		"shortDescription": "Demonstrates how to use the AC (Analog Comparators) Peripheral library to perform a single-shot conversion with GCC toolchain",
-		"ide": {
-			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
-		},
-		"compiler": [
-			{
-				"name": "AVR-GCC",
-				"semverRange": ">=6.3.1"
-			}
-		],
-		"dfp": {
-			"name": "SAMD21_DFP",
-			"semverRange": "^3.3.98"
-		},
-		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.5"
-		},
-		"device": {
-			"metaDataVersion": "1.0.0",
-			"category": "com.microchip.portal.contentRef",
-			"content": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.device",
-				"name": "ATSAMD21J18A",
-				"versionRange": "*"
-			}
-		},
-		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
-		"peripherals": [
-			"AC", "RTC", "PORTS", "PM", "SERCOM(USART)"
-		],
-		"keywords": [
-			"MHC",
-			"Harmony",
-			"ATSAMD21J18A",
-			"SAMD21 Family",
-			"UART",
-			"USART",
-			"FLEXCOM",
-			"GCC",
-			"AVR",
-			"GNU",
-			"XC32",			
-			"AC",
-			"RTC",
-			"PORTS",
-			"PM",
-			"SAM D21",
-			"SAMD21",
-			"single-shot",
-			"conversion"
-		],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./../../readme.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
-	}
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.1.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_ac_sleepwalk_singleshot_gcc",
+      "version":"1.3.0",
+      "displayName":"AC Sleepwalking Application built with GCC",
+      "projectName":"ac_sleepwalk_singleshot_sam_d21_xpro",
+      "shortDescription":"Demonstrates how to use the AC (Analog Comparators) Peripheral library to perform a single-shot conversion with GCC toolchain",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=5.50.0"
+      },
+      "compiler":[
+         {
+            "name":"AVR-GCC",
+            "semverRange":">=6.3.1"
+         }
+      ],
+      "dfp":{
+         "name":"SAMD21_DFP",
+         "semverRange":"^3.4.116"
+      },
+      "configurator":{
+         "name":"MHC",
+         "semverRange":">=3.7.2"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"ATSAMD21J18A",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "SAM D21 Xplained Pro Evaluation Kit"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "AC",
+         "RTC",
+         "PORTS",
+         "PM",
+         "SERCOM(USART)"
+      ],
+      "keywords":[
+         "MHC",
+         "Harmony",
+         "ATSAMD21J18A",
+         "SAMD21 Family",
+         "UART",
+         "USART",
+         "FLEXCOM",
+         "GCC",
+         "AVR",
+         "GNU",
+         "XC32",
+         "AC",
+         "RTC",
+         "PORTS",
+         "PM",
+         "SAM D21",
+         "SAMD21",
+         "single-shot",
+         "conversion"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
 }

@@ -44,6 +44,7 @@
 #include "plib_rtc.h"
 #include "device.h"
 #include <stdlib.h>
+#include "interrupts.h"
 
 static void RTC_CountReadSynchronization(void)
 {

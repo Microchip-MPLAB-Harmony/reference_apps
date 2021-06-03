@@ -45,6 +45,7 @@
 // DOM-IGNORE-END
 #include "device.h"
 #include "plib_ac.h"
+#include "interrupts.h"
 
 AC_OBJECT acObj;
 

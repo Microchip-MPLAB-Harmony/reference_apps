@@ -1,20 +1,20 @@
 /*******************************************************************************
- Debug Console Source file
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    xc32_monitor.c
+    interrupt.h
 
   Summary:
-    debug console Source File
+    Interrupt vectors mapping
 
   Description:
-    None
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-*******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -36,28 +36,31 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#include "definitions.h"
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
-#ifdef __arm__
-/* Declaration of these functions are missing in stdio.h for ARM parts*/
-int _mon_getc(int canblock);
-void _mon_putc(char c);
-#endif //__arm__
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+#include <stdint.h>
 
-int _mon_getc(int canblock)
-{
-   volatile int c = 0;
-   while(SERCOM3_USART_Read((void*)&c, 1) != true);
-   return c;
-}
 
-void _mon_putc(char c)
-{
-   uint8_t size = 0;
-   do
-   {
-       size = SERCOM3_USART_Write((void*)&c, 1);
-   }while (size != 1);
-}
+// *****************************************************************************
+// *****************************************************************************
+// Section: Handler Routines
+// *****************************************************************************
+// *****************************************************************************
+
+void Reset_Handler (void);
+void NonMaskableInt_Handler (void);
+void HardFault_Handler (void);
+void AC_InterruptHandler (void);
+
+
+
+#endif // INTERRUPTS_H
