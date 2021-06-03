@@ -137,6 +137,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3);
 
     STDIO_BufferModeSet();
