@@ -10,12 +10,12 @@
 		"shortDescription": "Demonstrates RGB color at 500ms rate on SAM E51 Curiosity Nano Evaluation Kit using LED DRIVER 3 Click",		
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.0.0"
 			}
 		],
 		"dfp": {
