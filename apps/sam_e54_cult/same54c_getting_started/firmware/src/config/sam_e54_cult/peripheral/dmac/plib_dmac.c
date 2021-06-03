@@ -45,6 +45,7 @@
 // DOM-IGNORE-END
 
 #include "plib_dmac.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -53,6 +54,8 @@
 // *****************************************************************************
 
 #define DMAC_CHANNELS_NUMBER        1
+
+#define DMAC_CRC_CHANNEL_OFFSET     0x20U
 
 /* DMAC channels object configuration structure */
 typedef struct
@@ -64,10 +67,10 @@ typedef struct
 } DMAC_CH_OBJECT ;
 
 /* Initial write back memory section for DMAC */
-static  dmac_descriptor_registers_t _write_back_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(16);
+static  dmac_descriptor_registers_t _write_back_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(8);
 
 /* Descriptor section for DMAC */
-static  dmac_descriptor_registers_t  descriptor_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(16);
+static  dmac_descriptor_registers_t  descriptor_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(8);
 
 /* DMAC Channels object information structure */
 DMAC_CH_OBJECT dmacChannelObj[DMAC_CHANNELS_NUMBER];
@@ -154,7 +157,15 @@ bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, const void
         }
         else
         {
-            dmacDescReg->DMAC_DSTADDR = (uint32_t) (destAddr);
+            if ((DMAC_REGS->DMAC_CRCCTRL & DMAC_CRCCTRL_CRCMODE_Msk) == DMAC_CRCCTRL_CRCMODE_DEFAULT)
+            {
+                dmacDescReg->DMAC_DSTADDR = (uint32_t) (destAddr);
+            }
+            else
+            {
+                /* Store the Value in the destination address as seed to the CRC engine in Memory modes */
+                dmacDescReg->DMAC_DSTADDR = *((uint32_t *)destAddr);
+            }
         }
 
         /*Calculate the beat size and then set the BTCNT value */
@@ -205,7 +216,9 @@ void DMAC_ChannelDisable ( DMAC_CHANNEL channel )
 
 uint16_t DMAC_ChannelGetTransferredCount( DMAC_CHANNEL channel )
 {
-    return(descriptor_section[channel].DMAC_BTCNT - _write_back_section[channel].DMAC_BTCNT);
+    uint16_t transferredCount = descriptor_section[channel].DMAC_BTCNT;
+    transferredCount -= _write_back_section[channel].DMAC_BTCNT;
+    return(transferredCount);
 }
 
 
@@ -250,6 +263,116 @@ bool DMAC_ChannelSettingsSet (DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting)
     dmacDescReg[channel].DMAC_BTCTRL = setting;
 
     return true;
+}
+
+/*******************************************************************************
+    This function Disables the CRC engine and clears the CRC Control register
+********************************************************************************/
+void DMAC_CRCDisable( void )
+{
+    DMAC_REGS->DMAC_CRCCTRL = DMAC_CRCCTRL_RESETVALUE;
+}
+
+/*******************************************************************************
+    This function sets the CRC Engine to use DMAC channel for calculating CRC.
+
+    This Function has to be called before submitting DMA transfer request for
+    the channel to calculate CRC
+********************************************************************************/
+
+void DMAC_ChannelCRCSetup(DMAC_CHANNEL channel, DMAC_CRC_SETUP CRCSetup)
+{
+    /* Disable CRC Engine and clear the CRC Control register before configuring */
+    DMAC_CRCDisable();
+
+    /* Store Initial Seed value only in default mode */
+    if (CRCSetup.crc_mode == DMAC_CRC_MODE_DEFAULT)
+    {
+        DMAC_REGS->DMAC_CRCCHKSUM = CRCSetup.seed;
+    }
+
+    /* Setup the CRC engine to use DMA Channel.
+     * CRC engine is enabled by writing the DMA channel to the DMAC_CRCCTRL_CRCSRC bits
+     */
+    DMAC_REGS->DMAC_CRCCTRL = (DMAC_CRCCTRL_CRCPOLY(CRCSetup.polynomial_type) | DMAC_CRCCTRL_CRCMODE(CRCSetup.crc_mode) | DMAC_CRCCTRL_CRCSRC((DMAC_CRC_CHANNEL_OFFSET + channel)));
+}
+
+/*******************************************************************************
+    This function returns the Caclculated CRC Value.
+********************************************************************************/
+
+uint32_t DMAC_CRCRead( void )
+{
+    return (DMAC_REGS->DMAC_CRCCHKSUM);
+}
+
+/*******************************************************************************
+    This function sets the CRC Engine in IO mode to get the data using the CPU
+    which will be written in CRCDATAIN register. It internally calculates the
+    Beat Size to be used based on the buffer length.
+
+    This function returns the final CRC value once the computation is done
+********************************************************************************/
+uint32_t DMAC_CRCCalculate(void *buffer, uint32_t length, DMAC_CRC_SETUP CRCSetup)
+{
+    uint8_t beatSize    = DMAC_CRC_BEAT_SIZE_BYTE;
+    uint32_t counter    = 0;
+    uint8_t *buffer_8   = (uint8_t *)buffer;
+    uint16_t *buffer_16 = (uint16_t *)buffer;
+    uint32_t *buffer_32 = (uint32_t *)buffer;
+
+    /* Calculate the beatsize to be used basd on buffer length */
+    if ((length & 0x3U) == 0)
+    {
+        beatSize = DMAC_CRC_BEAT_SIZE_WORD;
+        length = length >> 0x2U;
+    }
+    else if ((length & 0x1U) == 0)
+    {
+        beatSize = DMAC_CRC_BEAT_SIZE_HWORD;
+        length = length >> 0x1U;
+    }
+
+    /* Disable CRC Engine and clear the CRC Control register before configuring */
+    DMAC_CRCDisable();
+
+    DMAC_REGS->DMAC_CRCCHKSUM = CRCSetup.seed;
+
+    /* Setup the CRC engine to use IO Mode.
+     * CRC engine is enabled by writing the IO mode to the DMAC_CRCCTRL_CRCSRC bits
+     */
+    DMAC_REGS->DMAC_CRCCTRL = (DMAC_CRCCTRL_CRCPOLY(CRCSetup.polynomial_type) | DMAC_CRCCTRL_CRCBEATSIZE(beatSize) | DMAC_CRCCTRL_CRCSRC_IO );
+
+    /* Start the CRC calculation by writing the buffer into CRCDATAIN register based
+     * on the beat size configured
+     */
+    for (counter = 0; counter < length; counter++)
+    {
+        if (beatSize == DMAC_CRC_BEAT_SIZE_BYTE)
+        {
+            DMAC_REGS->DMAC_CRCDATAIN = buffer_8[counter];
+        }
+        else if (beatSize == DMAC_CRC_BEAT_SIZE_HWORD)
+        {
+            DMAC_REGS->DMAC_CRCDATAIN = buffer_16[counter];
+        }
+        else if (beatSize == DMAC_CRC_BEAT_SIZE_WORD)
+        {
+            DMAC_REGS->DMAC_CRCDATAIN = buffer_32[counter];
+        }
+
+        /* Wait until CRC Calculation is completed for the current data in CRCDATAIN */
+        while (!(DMAC_REGS->DMAC_CRCSTATUS & DMAC_CRCSTATUS_CRCBUSY_Msk))
+        {
+            ;
+        }
+
+        /* Clear the busy bit */
+        DMAC_REGS->DMAC_CRCSTATUS = DMAC_CRCSTATUS_CRCBUSY_Msk;
+    }
+
+    /* Return the final CRC calculated for the entire buffer */
+    return (DMAC_REGS->DMAC_CRCCHKSUM);
 }
 
 //*******************************************************************************
