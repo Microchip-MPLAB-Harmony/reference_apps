@@ -181,13 +181,20 @@ void BME280Sensor_Initialize(void)
     BME280_PowerMode_Set(BME280_NORMAL_MODE);
 }
 
-//uint8_t uartTxBuffer[20] = {0};
+static void oled_C_click_dispaly_referesh()
+{
+    GFX_DISP_INTF_PIN_EN_Clear();
+    GFX_DISP_INTF_PIN_RW_Clear();
+    GFX_DISP_INTF_PIN_EN_Set();
+}
 
 static uint16_t      temperatureVal;
 
 void APP_Tasks ( void )
 {   
-    static char currTimeStr[15];           
+    static char currTimeStr[15];    
+    
+    oled_C_click_dispaly_referesh();
     /* Check the application's current state. */
     switch ( appData.state )
     {

@@ -409,8 +409,8 @@ static void SYS_TIME_PLIBCallback(uint32_t status, uintptr_t context)
 {
     SYS_TIME_COUNTER_OBJ* counterObj = (SYS_TIME_COUNTER_OBJ *)&gSystemCounterObj;
     SYS_TIME_TIMER_OBJ* tmrActive = counterObj->tmrActive;
-	
-	SYS_TIME_Counter64Update();
+
+    SYS_TIME_Counter64Update();
 
     if (tmrActive != NULL)
     {
@@ -420,7 +420,7 @@ static void SYS_TIME_PLIBCallback(uint32_t status, uintptr_t context)
 
         counterObj->interruptNestingCount--;
     }
-    
+
 }
 
 static SYS_TIME_HANDLE SYS_TIME_TimerObjectCreate(
@@ -477,9 +477,8 @@ static void SYS_TIME_CounterInit(SYS_MODULE_INIT* init)
     SYS_TIME_INIT* initData = (SYS_TIME_INIT *)init;
 
     counterObj->timePlib = initData->timePlib;
-	counterObj->hwTimerTickFreq = (uint32_t)SYS_TIME_TICK_FREQ_IN_HZ;
+    counterObj->hwTimerTickFreq = (uint32_t)SYS_TIME_TICK_FREQ_IN_HZ;
     counterObj->hwTimerIntNum = initData->hwTimerIntNum;
-    counterObj->hwTimerPeriodValue = counterObj->timePlib->timerFrequencyGet()/SYS_TIME_TICK_FREQ_IN_HZ;
 
     counterObj->swCounter64Low = 0;
     counterObj->swCounter64High = 0;
@@ -487,10 +486,6 @@ static void SYS_TIME_CounterInit(SYS_MODULE_INIT* init)
     counterObj->interruptNestingCount = 0;
 
     counterObj->timePlib->timerCallbackSet(SYS_TIME_PLIBCallback, 0);
-    if (counterObj->timePlib->timerPeriodSet != NULL)
-    {
-        counterObj->timePlib->timerPeriodSet(counterObj->hwTimerPeriodValue);
-    }
     counterObj->timePlib->timerStart();
 }
 
@@ -616,16 +611,16 @@ uint32_t  SYS_TIME_CountToMS ( uint32_t count )
 
 uint32_t SYS_TIME_USToCount ( uint32_t us )
 {
-	uint32_t count = (((uint64_t)us * gSystemCounterObj.hwTimerTickFreq) / 1000000);   
-		
-	return count;
+    uint32_t count = (((uint64_t)us * gSystemCounterObj.hwTimerTickFreq) / 1000000);
+
+    return count;
 }
 
 uint32_t SYS_TIME_MSToCount ( uint32_t ms )
 {
-	uint32_t count = (((uint64_t)ms * gSystemCounterObj.hwTimerTickFreq) / 1000);
-	
-	return count;
+    uint32_t count = (((uint64_t)ms * gSystemCounterObj.hwTimerTickFreq) / 1000);
+
+    return count;
 }
 
 // *****************************************************************************

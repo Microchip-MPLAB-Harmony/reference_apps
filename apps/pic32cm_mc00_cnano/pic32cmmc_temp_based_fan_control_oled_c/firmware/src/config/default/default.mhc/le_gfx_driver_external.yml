@@ -142,24 +142,6 @@ children:
       children:
       - type: User
         attributes: {value: 1-byte}
-  - type: File
-    attributes: {id: GFX_EXTERNAL_CONTROLLER_ASYNC_C}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'false'}
-  - type: File
-    attributes: {id: GFX_EXTERNAL_CONTROLLER_C}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
   - type: Hex
     attributes: {id: MemoryWriteCommand}
     children:
@@ -194,6 +176,27 @@ children:
         attributes: {id: visible}
         children:
         - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: PostResetDelay}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Integer
+    attributes: {id: ResetAssertDuration}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Boolean
+    attributes: {id: ResetEnable}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
   - type: Hex
     attributes: {id: SetXAddressCommand}
     children:
