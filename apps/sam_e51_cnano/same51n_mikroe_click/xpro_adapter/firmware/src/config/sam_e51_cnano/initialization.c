@@ -57,7 +57,7 @@
 #pragma config BOD33USERLEVEL = 0x1c
 #pragma config BOD33_ACTION = RESET
 #pragma config BOD33_HYST = 0x2
-#pragma config NVMCTRL_BOOTPROT = 0xF
+#pragma config NVMCTRL_BOOTPROT = 0
 #pragma config NVMCTRL_SEESBLK = 0x0
 #pragma config NVMCTRL_SEEPSZ = 0x0
 #pragma config RAMECC_ECCDIS = SET
