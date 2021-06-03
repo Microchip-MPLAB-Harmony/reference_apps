@@ -49,18 +49,38 @@
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_gpio.h"
 #include "wdrv_winc_spi.h"
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+#include "include/winc.h"
+#include "driver/winc_asic.h"
+#else
 #include "m2m_wifi.h"
 #ifdef WDRV_WINC_DEVICE_WINC3400
 #include "m2m_flash.h"
 #endif
+#endif
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
+#ifndef WDRV_WINC_DEVICE_LITE_DRIVER
 #include "m2m_ota.h"
 #include "socket.h"
 #include "m2m_ssl.h"
+#endif
 #include "wdrv_winc_ssl.h"
 #endif
 #ifdef WDRV_WINC_ENABLE_BLE
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+#include "winc_ble_platform.h"
+#else
 #include "platform.h"
+#endif
+#endif
+#ifndef WDRV_WINC_NETWORK_MODE_SOCKET
+#include "wdrv_winc_ethernet.h"
+#endif
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+#include "wdrv_winc_mac.h"
+#include "tcpip/tcpip_mac.h"
+#include "tcpip/src/tcpip_manager_control.h"
+#include "tcpip/src/tcpip_packet.h"
 #endif
 
 // *****************************************************************************
@@ -70,14 +90,305 @@
 // *****************************************************************************
 
 /* This is user configurable function pointer for printf style output from driver. */
+#ifndef WDRV_WINC_DEVICE_USE_SYS_DEBUG
 WDRV_WINC_DEBUG_PRINT_CALLBACK pfWINCDebugPrintCb;
+#endif
 
 /* This is the driver instance structure. */
-static WDRV_WINC_DCPT wincDescriptor =
+static WDRV_WINC_DCPT wincDescriptor[2] =
 {
-    .isInit = false,
-    .sysStat = SYS_STATUS_UNINITIALIZED,
+    {
+        .isInit  = false,
+        .sysStat = SYS_STATUS_UNINITIALIZED,
+        .isOpen  = false,
+        .pCtrl   = NULL,
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+        .pMac    = NULL,
+#endif
+    },
+    {
+        .isInit  = false,
+        .sysStat = SYS_STATUS_UNINITIALIZED,
+        .isOpen  = false,
+        .pCtrl   = NULL,
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+        .pMac    = NULL,
+#endif
+    }
 };
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+
+const TCPIP_MAC_OBJECT WDRV_WINC_MACObject =
+{
+    .macId                                  = TCPIP_MODULE_MAC_WINC,
+#if TCPIP_STACK_VERSION_MAJOR != 7
+    .macType                                = TCPIP_MAC_TYPE_WLAN,
+#endif
+    .macName                                = "WINC",
+    .TCPIP_MAC_Initialize                   = WDRV_WINC_Initialize,
+    .TCPIP_MAC_Deinitialize                 = WDRV_WINC_Deinitialize,
+    .TCPIP_MAC_Reinitialize                 = WDRV_WINC_Reinitialize,
+    .TCPIP_MAC_Status                       = WDRV_WINC_Status,
+    .TCPIP_MAC_Tasks                        = WDRV_WINC_MACTasks,
+    .TCPIP_MAC_Open                         = WDRV_WINC_Open,
+    .TCPIP_MAC_Close                        = WDRV_WINC_Close,
+    .TCPIP_MAC_LinkCheck                    = WDRV_WINC_MACLinkCheck,
+    .TCPIP_MAC_RxFilterHashTableEntrySet    = WDRV_WINC_MACRxFilterHashTableEntrySet,
+    .TCPIP_MAC_PowerMode                    = WDRV_WINC_MACPowerMode,
+    .TCPIP_MAC_PacketTx                     = WDRV_WINC_MACPacketTx,
+    .TCPIP_MAC_PacketRx                     = WDRV_WINC_MACPacketRx,
+    .TCPIP_MAC_Process                      = WDRV_WINC_MACProcess,
+    .TCPIP_MAC_StatisticsGet                = WDRV_WINC_MACStatisticsGet,
+    .TCPIP_MAC_ParametersGet                = WDRV_WINC_MACParametersGet,
+    .TCPIP_MAC_RegisterStatisticsGet        = WDRV_WINC_MACRegisterStatisticsGet,
+    .TCPIP_MAC_ConfigGet                    = WDRV_WINC_MACConfigGet,
+    .TCPIP_MAC_EventMaskSet                 = WDRV_WINC_MACEventMaskSet,
+    .TCPIP_MAC_EventAcknowledge             = WDRV_WINC_MACEventAcknowledge,
+    .TCPIP_MAC_EventPendingGet              = WDRV_WINC_MACEventPendingGet,
+};
+
+#define TCPIP_THIS_MODULE_ID TCPIP_MODULE_MAC_WINC
+
+#define PACKET_BUFFER_SIZE 1564
+#define MAX_TX_PACKET_SIZE 1518
+#define MAX_RX_PACKET_SIZE 1518
+
+static void _WDRV_WINC_MACCheckRecvPacket(WDRV_WINC_DCPT *const pDcpt);
+#endif
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+/* Translation table for data rates.*/
+static tenuWlanTxRate arRateTranslateTable[] = {
+    TX_RATE_LOWEST, TX_RATE_AUTO,   TX_RATE_1,      TX_RATE_2,
+    TX_RATE_5_5,    TX_RATE_11,     TX_RATE_6,      TX_RATE_9,
+    TX_RATE_12,     TX_RATE_18,     TX_RATE_24,     TX_RATE_36,
+    TX_RATE_48,     TX_RATE_54,     TX_RATE_MCS_0,  TX_RATE_MCS_1,
+    TX_RATE_MCS_2,  TX_RATE_MCS_3,  TX_RATE_MCS_4,  TX_RATE_MCS_5,
+    TX_RATE_MCS_6,  TX_RATE_MCS_7};
+#endif
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: WINC MAC Driver Global Data
+// *****************************************************************************
+// *****************************************************************************
+
+/* This is the Control driver instance descriptor. */
+static WDRV_WINC_CTRLDCPT wincCtrlDescriptor;
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+/* This is the driver instance descriptor. */
+static WDRV_WINC_MACDCPT wincMACDescriptor;
+
+/* This provides a managed list of packets. */
+static PROTECTED_SINGLE_LIST packetPoolFreeList;
+#endif
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: WINC MAC Driver Implementation
+// *****************************************************************************
+// *****************************************************************************
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+//*******************************************************************************
+/*
+  Function:
+    bool _WDRV_WINC_MACEthernetMsgStackCallback
+    (
+        TCPIP_MAC_PACKET *ptrPacket,
+        const void *ackParam
+    )
+
+  Summary:
+    Ethernet receive packet ACK function callback.
+
+  Description:
+    This callback is called when the TCP/IP stack wishes to release an Ethernet
+      frame which has been past to it.
+
+  Precondition:
+    WDRV_PktPoolInitialize must have been called to initialize the packet pool.
+
+  Parameters:
+    ptrPacket - Pointer to Ethernet frame being returned.
+    ackParam  - Extra parameters.
+
+  Returns:
+    false
+
+  Remarks:
+    None.
+
+*/
+
+static bool _WDRV_WINC_MACEthernetMsgStackCallback
+(
+    TCPIP_MAC_PACKET *ptrPacket,
+    const void *ackParam
+)
+{
+    if (NULL == ptrPacket)
+    {
+        return false;
+    }
+
+    TCPIP_Helper_ProtectedSingleListTailAdd(&packetPoolFreeList, (SGL_LIST_NODE*)ptrPacket);
+
+    return true;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    void _WDRV_WINC_MACEthernetMsgRecvCallback
+    (
+        DRV_HANDLE handle,
+        const uint8_t *const pEthMsg,
+        uint16_t lengthEthMsg,
+        bool isFragmented,
+        uint8_t fragNum
+    )
+
+  Summary:
+    Ethernet frame receive callback.
+
+  Description:
+    This callback is called when an Ethernet frame has been received from the
+      WINC via the basic driver.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle       - Client handle obtained by a call to WDRV_WINC_Open.
+    pEthMsg      - Pointer to received Ethernet frame.
+    lengthEthMsg - Length of received Ethernet frame.
+    isFragmented - Is this frame part of a larger fragmented Ethernet frame.
+    fragNum      - Fragment number if fragmented.
+
+  Returns:
+    None.
+
+  Remarks:
+    Registered by a call to WDRV_WINC_EthernetRecvPacket.
+
+*/
+
+static void _WDRV_WINC_MACEthernetMsgRecvCallback
+(
+    DRV_HANDLE handle,
+    const uint8_t *const pEthMsg,
+    uint16_t lengthEthMsg,
+    bool isFragmented,
+    uint8_t fragNum
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[1];
+    TCPIP_MAC_PACKET *ptrPacket;
+    TCPIP_MAC_EVENT events = 0;
+
+    if ((NULL == pDcpt->pMac) || (NULL == pDcpt->pMac->pCurRxPacket))
+    {
+        return;
+    }
+
+    ptrPacket = pDcpt->pMac->pCurRxPacket;
+
+    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->curRxPacketSemaphore, OSAL_WAIT_FOREVER))
+    {
+        ptrPacket->next     = NULL;
+        ptrPacket->ackFunc  = _WDRV_WINC_MACEthernetMsgStackCallback;
+        ptrPacket->ackParam = NULL;
+
+        ptrPacket->pDSeg->segLen = lengthEthMsg;
+        ptrPacket->pDSeg->segSize = lengthEthMsg;
+        ptrPacket->pktFlags = TCPIP_MAC_PKT_FLAG_QUEUED;
+        ptrPacket->tStamp = SYS_TMR_TickCountGet();
+
+        TCPIP_Helper_ProtectedSingleListTailAdd(&pDcpt->pMac->ethRxPktList, (SGL_LIST_NODE*)ptrPacket);
+        pDcpt->pMac->pCurRxPacket = NULL;
+        OSAL_SEM_Post(&pDcpt->pMac->curRxPacketSemaphore);
+
+        if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->eventSemaphore, OSAL_WAIT_FOREVER))
+        {
+            events = pDcpt->pMac->events | ~pDcpt->pMac->eventMask;
+            pDcpt->pMac->events |= TCPIP_EV_RX_DONE;
+            OSAL_SEM_Post(&pDcpt->pMac->eventSemaphore);
+
+            if (0 == (events & TCPIP_EV_RX_DONE))
+            {
+                pDcpt->pMac->eventF(TCPIP_EV_RX_DONE, pDcpt->pMac->eventParam);
+            }
+        }
+        else
+        {
+            WDRV_DBG_ERROR_PRINT("MAC receive failed to lock event semaphore\r\n");
+        }
+    }
+
+    _WDRV_WINC_MACCheckRecvPacket(pDcpt);
+}
+
+//*******************************************************************************
+/*
+  Function:
+    void _WDRV_WINC_MACCheckRecvPacket(WDRV_WINC_DCPT *const pDcpt)
+
+  Summary:
+    Check if a new Ethernet receive packet is needed.
+
+  Description:
+    Ensures that after an Ethernet frames has been passed on that another is
+      queued with the WINC for reception.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_PktPoolInitialize must have been called to initialize the packet pool.
+
+  Parameters:
+    pDcpt - Pointer to current MAC driver descriptor structure.
+
+  Returns:
+    None.
+
+  Remarks:
+    None.
+
+*/
+
+static void _WDRV_WINC_MACCheckRecvPacket(WDRV_WINC_DCPT *const pDcpt)
+{
+    /* Ensure the driver handle is valid. */
+    if ((NULL == pDcpt) || (NULL == pDcpt->pMac))
+    {
+        return;
+    }
+
+    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->curRxPacketSemaphore, OSAL_WAIT_FOREVER))
+    {
+        if (NULL == pDcpt->pMac->pCurRxPacket)
+        {
+            pDcpt->pMac->pCurRxPacket = (TCPIP_MAC_PACKET*)TCPIP_Helper_ProtectedSingleListHeadRemove(&packetPoolFreeList);
+
+            if (NULL != pDcpt->pMac->pCurRxPacket)
+            {
+                pDcpt->pMac->pCurRxPacket->next = NULL;
+                WDRV_WINC_EthernetRecvPacket((DRV_HANDLE)pDcpt,
+                                        pDcpt->pMac->pCurRxPacket->pDSeg->segLoad,
+                                        PACKET_BUFFER_SIZE,
+                                        &_WDRV_WINC_MACEthernetMsgRecvCallback);
+            }
+        }
+
+        OSAL_SEM_Post(&pDcpt->pMac->curRxPacketSemaphore);
+    }
+}
+
+#endif
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -122,9 +433,9 @@ static WDRV_WINC_DCPT wincDescriptor =
 
 static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgContent)
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
 
-    if (NULL == pMsgContent)
+    if ((NULL == pMsgContent) || (NULL == pDcpt->pCtrl))
     {
         return;
     }
@@ -138,28 +449,28 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                     (const tstrM2mScanDone *const)pMsgContent;
 
             /* Check that a scan was requested. */
-            if (false == pDcpt->scanInProgress)
+            if (false == pDcpt->pCtrl->scanInProgress)
             {
                 break;
             }
 
             /* Clear scan in progress flag. */
-            pDcpt->scanInProgress = false;
+            pDcpt->pCtrl->scanInProgress = false;
 
             if (M2M_SUCCESS == pScanDoneInfo->s8ScanState)
             {
                 /* Scan completed successfully. */
-                pDcpt->scanNumScanResults = pScanDoneInfo->u8NumofCh;
+                pDcpt->pCtrl->scanNumScanResults = pScanDoneInfo->u8NumofCh;
 
                 if (pScanDoneInfo->u8NumofCh > 0)
                 {
                     /* If there are BSS results available, request the first one. */
-                    m2m_wifi_req_scan_result(pDcpt->scanIndex);
+                    m2m_wifi_req_scan_result(pDcpt->pCtrl->scanIndex);
                 }
-                else if (NULL != pDcpt->pfBSSFindNotifyCB)
+                else if (NULL != pDcpt->pCtrl->pfBSSFindNotifyCB)
                 {
                     /* If no results are available then signal callback. */
-                    pDcpt->pfBSSFindNotifyCB((DRV_HANDLE)pDcpt, 0, 0, NULL);
+                    pDcpt->pCtrl->pfBSSFindNotifyCB((DRV_HANDLE)pDcpt, 0, 0, NULL);
                 }
                 else
                 {
@@ -169,7 +480,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             else
             {
                 /* Ensure no results are available if scan fails. */
-                pDcpt->scanNumScanResults = 0;
+                pDcpt->pCtrl->scanNumScanResults = 0;
             }
 
             break;
@@ -181,41 +492,45 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             const tstrM2mWifiscanResult *const pScanAPInfo =
                     (const tstrM2mWifiscanResult *const)pMsgContent;
 
+#ifdef WDRV_WINC_DEVICE_EXT_CONNECT_PARAMS
             /* Copy BSS scan results from message buffer into driver local cache. */
-            memcpy(pDcpt->lastBSSScanInfo.bssid, pScanAPInfo->au8BSSID, 6);
-            memcpy(pDcpt->lastBSSScanInfo.ssid.name, pScanAPInfo->au8SSID, 32);
+            memcpy(pDcpt->pCtrl->lastBSSScanInfo.ctx.bssid.addr, pScanAPInfo->au8BSSID, 6);
+            pDcpt->pCtrl->lastBSSScanInfo.ctx.bssid.valid = true;
+#endif
 
-            pDcpt->lastBSSScanInfo.ssid.length = strlen((const char*)pScanAPInfo->au8SSID);
-            pDcpt->lastBSSScanInfo.rssi        = pScanAPInfo->s8rssi;
-            pDcpt->lastBSSScanInfo.authType    = pScanAPInfo->u8AuthType;
-            pDcpt->lastBSSScanInfo.channel     = pScanAPInfo->u8ch;
+            memcpy(pDcpt->pCtrl->lastBSSScanInfo.ctx.ssid.name, pScanAPInfo->au8SSID, WDRV_WINC_MAX_SSID_LEN);
+            pDcpt->pCtrl->lastBSSScanInfo.ctx.ssid.length = strlen((const char*)pScanAPInfo->au8SSID);
+
+            pDcpt->pCtrl->lastBSSScanInfo.rssi        = pScanAPInfo->s8rssi;
+            pDcpt->pCtrl->lastBSSScanInfo.authType    = pScanAPInfo->u8AuthType;
+            pDcpt->pCtrl->lastBSSScanInfo.ctx.channel = pScanAPInfo->u8ch;
 
             /* Mark BSS scan cache as valid. */
-            pDcpt->isBSSScanInfoValid = true;
+            pDcpt->pCtrl->isBSSScanInfoValid = true;
 
-            if (NULL != pDcpt->pfBSSFindNotifyCB)
+            if (NULL != pDcpt->pCtrl->pfBSSFindNotifyCB)
             {
                 bool findResult;
 
                 /* Notify the user application of the scan results. */
-                findResult = pDcpt->pfBSSFindNotifyCB((DRV_HANDLE)pDcpt,
-                        pDcpt->scanIndex+1, pDcpt->scanNumScanResults, &pDcpt->lastBSSScanInfo);
+                findResult = pDcpt->pCtrl->pfBSSFindNotifyCB((DRV_HANDLE)pDcpt,
+                        pDcpt->pCtrl->scanIndex+1, pDcpt->pCtrl->scanNumScanResults, &pDcpt->pCtrl->lastBSSScanInfo);
 
                 /* Check if the callback requested the next set of results. */
                 if (true == findResult)
                 {
                     /* Request the next BSS results, or end operation if no
                        more are available. */
-                    pDcpt->scanIndex++;
+                    pDcpt->pCtrl->scanIndex++;
 
-                    if (pDcpt->scanIndex < m2m_wifi_get_num_ap_found())
+                    if (pDcpt->pCtrl->scanIndex < m2m_wifi_get_num_ap_found())
                     {
-                        m2m_wifi_req_scan_result(pDcpt->scanIndex);
-                        pDcpt->isBSSScanInfoValid = false;
+                        m2m_wifi_req_scan_result(pDcpt->pCtrl->scanIndex);
+                        pDcpt->pCtrl->isBSSScanInfoValid = false;
                     }
-                    else pDcpt->pfBSSFindNotifyCB = NULL;
+                    else pDcpt->pCtrl->pfBSSFindNotifyCB = NULL;
                 }
-                else pDcpt->pfBSSFindNotifyCB = NULL;
+                else pDcpt->pCtrl->pfBSSFindNotifyCB = NULL;
 
                 /* The user callback is cleared on error or end of scan. */
             }
@@ -233,12 +548,12 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             {
                 /* If WiFi has connected update local state. If DHCP is not in
                    use then also signal an IP address is assigned. */
-                pDcpt->isConnected = true;
+                pDcpt->pCtrl->isConnected = true;
 
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-                if ((false == pDcpt->useDHCP) && (0 != pDcpt->ipAddress))
+                if ((false == pDcpt->pCtrl->useDHCP) && (0 != pDcpt->pCtrl->ipAddress))
                 {
-                    pDcpt->haveIPAddress = true;
+                    pDcpt->pCtrl->haveIPAddress = true;
                 }
 #endif
             }
@@ -246,8 +561,8 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             {
                 /* If WiFi has disconnect update local state and invalidate any
                    association data held locally in the driver. */
-                pDcpt->isConnected    = false;
-                pDcpt->assocInfoValid = false;
+                pDcpt->pCtrl->isConnected    = false;
+                pDcpt->pCtrl->assocInfoValid = false;
             }
 #ifdef WDRV_WINC_DEVICE_BSS_ROAMING
             else if (M2M_WIFI_ROAMED == pConnectState->u8CurrState)
@@ -259,10 +574,11 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                 /* No other state should be signalled. */
             }
 
-            if (NULL != pDcpt->pfConnectNotifyCB)
+            if (NULL != pDcpt->pCtrl->pfConnectNotifyCB)
             {
                 /* Update user application via callback if set. */
-                pDcpt->pfConnectNotifyCB((DRV_HANDLE)pDcpt,
+                pDcpt->pCtrl->pfConnectNotifyCB((DRV_HANDLE)pDcpt,
+                        (WDRV_WINC_ASSOC_HANDLE)pDcpt,
                         pConnectState->u8CurrState, pConnectState->u8ErrCode);
             }
 
@@ -275,7 +591,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             const tstrM2MDefaultConnResp *const pDefaultConnectRsp =
                     (const tstrM2MDefaultConnResp *const)pMsgContent;
 
-            if (NULL != pDcpt->pfConnectNotifyCB)
+            if (NULL != pDcpt->pCtrl->pfConnectNotifyCB)
             {
                 WDRV_WINC_CONN_ERROR errorCode;
 
@@ -313,7 +629,8 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                 }
 
                 /* Update user application via callback if set. */
-                pDcpt->pfConnectNotifyCB((DRV_HANDLE)pDcpt,
+                pDcpt->pCtrl->pfConnectNotifyCB((DRV_HANDLE)pDcpt,
+                        (WDRV_WINC_ASSOC_HANDLE)pDcpt,
                         M2M_WIFI_DISCONNECTED, errorCode);
             }
 
@@ -326,21 +643,21 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
         {
             const uint8_t *const pIP = (const uint8_t *const)pMsgContent;
 
-            if (false == pDcpt->isAP)
+            if (false == pDcpt->pCtrl->isAP)
             {
                 /* For a STA signal that an IP address has now been assigned. */
-                pDcpt->haveIPAddress = true;
+                pDcpt->pCtrl->haveIPAddress = true;
             }
 
-            pDcpt->ipAddress = ( (uint32_t)pIP[3] << 24) |
-                               ( (uint32_t)pIP[2] << 16) |
-                               ( (uint32_t)pIP[1] << 8 ) |
-                               ( (uint32_t)pIP[0]);
+            pDcpt->pCtrl->ipAddress = ( (uint32_t)pIP[3] << 24) |
+                                      ( (uint32_t)pIP[2] << 16) |
+                                      ( (uint32_t)pIP[1] << 8 ) |
+                                      ( (uint32_t)pIP[0]);
 
-            if (NULL != pDcpt->pfDHCPAddressEventCB)
+            if (NULL != pDcpt->pCtrl->pfDHCPAddressEventCB)
             {
                 /* Signal IP address to user application via callback. */
-                pDcpt->pfDHCPAddressEventCB((DRV_HANDLE)pDcpt, pDcpt->ipAddress);
+                pDcpt->pCtrl->pfDHCPAddressEventCB((DRV_HANDLE)pDcpt, pDcpt->pCtrl->ipAddress);
             }
 
             break;
@@ -357,10 +674,10 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             /* Convert from internal M2M time structure to UTC. */
             timeUTC = WDRV_WINC_LocalTimeToUTC(pSysTime);
 
-            if (NULL != pDcpt->pfSystemTimeGetCurrentCB)
+            if (NULL != pDcpt->pCtrl->pfSystemTimeGetCurrentCB)
             {
                 /* Pass time to user application if callback was supplied. */
-                pDcpt->pfSystemTimeGetCurrentCB((DRV_HANDLE)pDcpt, timeUTC);
+                pDcpt->pCtrl->pfSystemTimeGetCurrentCB((DRV_HANDLE)pDcpt, timeUTC);
             }
 
             break;
@@ -372,7 +689,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
         case M2M_WIFI_RESP_PROVISION_INFO:
         {
             /* The information is only useful for the user application. */
-            if (NULL != pDcpt->pfProvConnectInfoCB)
+            if (NULL != pDcpt->pCtrl->pfProvConnectInfoCB)
             {
                 WDRV_WINC_SSID         targetSSID;
                 WDRV_WINC_AUTH_CONTEXT authCtx;
@@ -382,13 +699,13 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 
                 /* Check the SSID length. */
                 targetSSID.length = strlen((const char *)pProvInfo->au8SSID);
-                if (targetSSID.length > 32)
+                if (targetSSID.length > WDRV_WINC_MAX_SSID_LEN)
                 {
                     break;
                 }
 
                 /* Copy SSID to local structure, clear unused space. */
-                memset(&targetSSID.name, 0, 32);
+                memset(&targetSSID.name, 0, WDRV_WINC_MAX_SSID_LEN);
                 memcpy(&targetSSID.name, pProvInfo->au8SSID, targetSSID.length);
 
                 /* Copy authentication information to local context. Currently
@@ -404,10 +721,10 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 
                 /* Pass information to user application via the callback, the
                    callback is cleared after this operation has completed. */
-                pDcpt->pfProvConnectInfoCB((DRV_HANDLE)pDcpt, &targetSSID,
+                pDcpt->pCtrl->pfProvConnectInfoCB((DRV_HANDLE)pDcpt, &targetSSID,
                         &authCtx, (M2M_SUCCESS == pProvInfo->u8Status) ? true : false);
 
-                pDcpt->pfProvConnectInfoCB = NULL;
+                pDcpt->pCtrl->pfProvConnectInfoCB = NULL;
             }
 
             break;
@@ -421,35 +738,37 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                     (const tstrM2MConnInfo *const)pMsgContent;
 
             /* Copy and check the SSID length. */
-            pDcpt->assocSSID.length = strlen(pConnInfo->acSSID);
-            if (pDcpt->assocSSID.length > 32)
+            pDcpt->pCtrl->assocSSID.length = strlen(pConnInfo->acSSID);
+            if (pDcpt->pCtrl->assocSSID.length > WDRV_WINC_MAX_SSID_LEN)
             {
                 break;
             }
 
             /* Copy the SSID, ensuring unused space is cleared. */
-            memset(&pDcpt->assocSSID.name, 0, 32);
-            memcpy(&pDcpt->assocSSID.name, pConnInfo->acSSID, pDcpt->assocSSID.length);
+            memset(&pDcpt->pCtrl->assocSSID.name, 0, WDRV_WINC_MAX_SSID_LEN);
+            memcpy(&pDcpt->pCtrl->assocSSID.name, pConnInfo->acSSID, pDcpt->pCtrl->assocSSID.length);
 
             /* Copy the authentication type. */
-            pDcpt->assocAuthType = pConnInfo->u8SecType;
+            pDcpt->pCtrl->assocAuthType = pConnInfo->u8SecType;
 
             /* Copy the peer IP and MAC addresses. */
-            pDcpt->assocPeerAddress.ipAddress = ( (uint32_t)pConnInfo->au8IPAddr[3] << 24) |
+            pDcpt->pCtrl->assocPeerAddress.ipAddress = ( (uint32_t)pConnInfo->au8IPAddr[3] << 24) |
                                                 ( (uint32_t)pConnInfo->au8IPAddr[2] << 16) |
                                                 ( (uint32_t)pConnInfo->au8IPAddr[1] << 8)  |
                                                 ( (uint32_t)pConnInfo->au8IPAddr[0]);
 
-            memcpy(&pDcpt->assocPeerAddress.macAddress, pConnInfo->au8MACAddress, 6);
+            memcpy(&pDcpt->pCtrl->assocPeerAddress.macAddress.addr, pConnInfo->au8MACAddress, 6);
+            pDcpt->pCtrl->assocPeerAddress.macAddress.valid = true;
 
             /* Mark local store of association as valid. */
-            pDcpt->assocInfoValid = true;
+            pDcpt->pCtrl->assocInfoValid = true;
 
-            if (NULL != pDcpt->pfAssociationInfoCB)
+            if (NULL != pDcpt->pCtrl->pfAssociationInfoCB)
             {
                 /* Pass association information to user application via callback. */
-                pDcpt->pfAssociationInfoCB((DRV_HANDLE)pDcpt, &pDcpt->assocSSID,
-                        &pDcpt->assocPeerAddress, pDcpt->assocAuthType, pConnInfo->s8RSSI);
+                pDcpt->pCtrl->pfAssociationInfoCB((DRV_HANDLE)pDcpt, (WDRV_WINC_ASSOC_HANDLE)pDcpt,
+                        &pDcpt->pCtrl->assocSSID, &pDcpt->pCtrl->assocPeerAddress,
+                        pDcpt->pCtrl->assocAuthType, pConnInfo->s8RSSI);
             }
             break;
         }
@@ -460,15 +779,15 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             const int8_t *const pRSSI = (const int8_t *const)pMsgContent;
 
             /* Store locally. */
-            pDcpt->rssi = *pRSSI;
+            pDcpt->pCtrl->rssi = *pRSSI;
 
-            if (NULL != pDcpt->pfAssociationRSSICB)
+            if (NULL != pDcpt->pCtrl->pfAssociationRSSICB)
             {
                 /* Pass RSSI value to user application if callback supplied.
                    the callback is cleared after this operation has completed. */
-                pDcpt->pfAssociationRSSICB((DRV_HANDLE)pDcpt, pDcpt->rssi);
+                pDcpt->pCtrl->pfAssociationRSSICB((DRV_HANDLE)pDcpt, pDcpt->pCtrl->rssi);
 
-                pDcpt->pfAssociationRSSICB = NULL;
+                pDcpt->pCtrl->pfAssociationRSSICB = NULL;
             }
             break;
         }
@@ -480,7 +799,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                     (const tstrM2MWPSInfo *const)pMsgContent;
 
             /* The information is only useful for the user application. */
-            if (NULL != pDcpt->pfWPSDiscoveryCB)
+            if (NULL != pDcpt->pCtrl->pfWPSDiscoveryCB)
             {
                 WDRV_WINC_BSS_CONTEXT bssCtx;
                 WDRV_WINC_AUTH_CONTEXT authCtx;
@@ -511,13 +830,13 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 
                     default:
                     {
-                        pDcpt->pfWPSDiscoveryCB((DRV_HANDLE)pDcpt, NULL, NULL);
+                        pDcpt->pCtrl->pfWPSDiscoveryCB((DRV_HANDLE)pDcpt, NULL, NULL);
                         return;
                     }
                 }
 
                 // Pass the BSS and authentication contexts to the user application. */
-                pDcpt->pfWPSDiscoveryCB((DRV_HANDLE)pDcpt, &bssCtx, &authCtx);
+                pDcpt->pCtrl->pfWPSDiscoveryCB((DRV_HANDLE)pDcpt, &bssCtx, &authCtx);
             }
 
             break;
@@ -535,7 +854,9 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                     && (0 == memcmp(pBLEMsg->data, bleGapMDevReadyMsg, 9))
                     )
             {
-                pDcpt->isOpen = true;
+                pDcpt->sysStat = SYS_STATUS_READY;
+                WDRV_DBG_INFORM_PRINT("BLE Init\r\n");
+                m2m_wifi_req_restrict_ble();
             }
 
 #ifdef WDRV_WINC_ENABLE_BLE
@@ -593,7 +914,12 @@ static void _WDRV_WINC_EthernetCallback
     const void *const pCtrlBuf
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+
+    if (NULL == pDcpt->pCtrl)
+    {
+        return;
+    }
 
     /* Ensure on received Ethernet packets are handled. */
     if (M2M_WIFI_RESP_ETHERNET_RX_PACKET == msgType)
@@ -603,10 +929,10 @@ static void _WDRV_WINC_EthernetCallback
         bool isFragmented;
 
         /* Only process if the callback has been set. */
-        if (NULL != pDcpt->pfEthernetMsgRecvCB)
+        if (NULL != pDcpt->pCtrl->pfEthernetMsgRecvCB)
         {
             /* Check for message fragmentation. */
-            if ((0 == pEthCtrlBuf->u16RemainingDataSize) && (1 == pDcpt->ethFragNum))
+            if ((0 == pEthCtrlBuf->u16RemainingDataSize) && (1 == pDcpt->pCtrl->ethFragNum))
             {
                 isFragmented = false;
             }
@@ -616,17 +942,17 @@ static void _WDRV_WINC_EthernetCallback
             }
 
             /* Pass Ethernet frame to user application. */
-            pDcpt->pfEthernetMsgRecvCB((DRV_HANDLE)pDcpt, pMsgContent,
-                    pEthCtrlBuf->u16DataSize, isFragmented, pDcpt->ethFragNum);
+            pDcpt->pCtrl->pfEthernetMsgRecvCB((DRV_HANDLE)pDcpt, pMsgContent,
+                    pEthCtrlBuf->u16DataSize, isFragmented, pDcpt->pCtrl->ethFragNum);
 
             /* Check if the last fragment and reset state for next packet. */
             if (0 == pEthCtrlBuf->u16RemainingDataSize)
             {
-                pDcpt->ethFragNum = 1;
+                pDcpt->pCtrl->ethFragNum = 1;
             }
             else
             {
-                pDcpt->ethFragNum++;
+                pDcpt->pCtrl->ethFragNum++;
             }
         }
     }
@@ -665,20 +991,25 @@ static void _WDRV_WINC_EthernetCallback
 
 static void _WDRV_WINC_OTAUpdateCallback(uint8_t type, uint8_t status)
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+
+    if (NULL == pDcpt->pCtrl)
+    {
+        return;
+    }
 
     switch (type)
     {
         case DL_STATUS:
         {
             /* If callback supplied update with download status. */
-            if (NULL != pDcpt->pfOTADownloadStatusCB)
+            if (NULL != pDcpt->pCtrl->pfOTADownloadStatusCB)
             {
-                pDcpt->pfOTADownloadStatusCB((DRV_HANDLE)pDcpt, status);
+                pDcpt->pCtrl->pfOTADownloadStatusCB((DRV_HANDLE)pDcpt, status);
             }
 
-            pDcpt->updateInProgress      = false;
-            pDcpt->pfOTADownloadStatusCB = NULL;
+            pDcpt->pCtrl->updateInProgress      = false;
+            pDcpt->pCtrl->pfOTADownloadStatusCB = NULL;
             break;
         }
 
@@ -686,12 +1017,12 @@ static void _WDRV_WINC_OTAUpdateCallback(uint8_t type, uint8_t status)
         case RB_STATUS:
         {
             /* If callback supplied update with switch status. */
-            if (NULL != pDcpt->pfSwitchFirmwareStatusCB)
+            if (NULL != pDcpt->pCtrl->pfSwitchFirmwareStatusCB)
             {
-                pDcpt->pfSwitchFirmwareStatusCB((DRV_HANDLE)pDcpt, status);
+                pDcpt->pCtrl->pfSwitchFirmwareStatusCB((DRV_HANDLE)pDcpt, status);
             }
 
-            pDcpt->pfSwitchFirmwareStatusCB = NULL;
+            pDcpt->pCtrl->pfSwitchFirmwareStatusCB = NULL;
             break;
         }
 
@@ -733,7 +1064,12 @@ static void _WDRV_WINC_OTAUpdateCallback(uint8_t type, uint8_t status)
 
 static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+
+    if ((NULL == pMsgContent) || (NULL == pDcpt->pCtrl))
+    {
+        return;
+    }
 
     switch (msgType)
     {
@@ -741,7 +1077,7 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
         case M2M_SSL_RESP_SET_CS_LIST:
         {
             /* List is only of interest to user application via callback. */
-            if (NULL != pDcpt->pfSSLCipherSuiteListCB)
+            if (NULL != pDcpt->pCtrl->pfSSLCipherSuiteListCB)
             {
                 const tstrSslSetActiveCsList *const pSSLCSList = (const tstrSslSetActiveCsList *const)pMsgContent;
 
@@ -749,60 +1085,70 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
 
                 cipherSuiteCtx.ciperSuites = pSSLCSList->u32CsBMP;
 
-                pDcpt->pfSSLCipherSuiteListCB((DRV_HANDLE)pDcpt, &cipherSuiteCtx);
+                pDcpt->pCtrl->pfSSLCipherSuiteListCB((DRV_HANDLE)pDcpt, &cipherSuiteCtx);
             }
             break;
         }
 
         case M2M_SSL_REQ_ECC:
         {
-            WDRV_WINC_ECC_REQ_INFO info;
-            if (NULL != pDcpt->pfSSLReqECCCB)
+            tstrEccReqInfo                  *const pECCReqInfo = (tstrEccReqInfo *const)pMsgContent;
+            WINC_WDRV_ECC_REQ_TYPE          reqType;
+            WDRV_WINC_ECC_HANDSHAKE_INFO    handshakeData;
+            WDRV_WINC_ECC_REQ_EX_INFO       eccReqExInfo;
+            WDRV_WINC_ECC_REQ_EX_INFO       *pECCReqExInfo = &eccReqExInfo;
+
+            if (NULL == pDcpt->pCtrl->pfSSLReqECCCB)
             {
-                tstrEccReqInfo  *eccReqInfo;
-                eccReqInfo  = (tstrEccReqInfo *)pMsgContent;
+                break;
+            }
 
-                info.reqCmd = eccReqInfo->u16REQ;
-                info.seqNo = eccReqInfo->u32SeqNo;
-                info.status = eccReqInfo->u16Status;
-                info.userData = eccReqInfo->u32UserData;
+            reqType                 = pECCReqInfo->u16REQ;
+            handshakeData.data[0]   = pECCReqInfo->u32UserData;
+            handshakeData.data[1]   = pECCReqInfo->u32SeqNo;
 
-                switch (info.reqCmd)
+            memset(&eccReqExInfo, 0, sizeof(WDRV_WINC_ECC_REQ_EX_INFO));
+
+            switch (reqType)
+            {
+                case ECC_REQ_CLIENT_ECDH:
+                case ECC_REQ_SERVER_ECDH:
                 {
-                    case ECC_REQ_CLIENT_ECDH:
-                    case ECC_REQ_GEN_KEY:
-                    case ECC_REQ_SERVER_ECDH:
-                    {
-                        WDRV_WINC_ECDH_REQ_INFO ecdhReqInfo;
-                        memcpy(&ecdhReqInfo, &eccReqInfo->strEcdhREQ, sizeof(tstrEcdhReqInfo));
-                        pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdhReqInfo);
-                        break;
-                    }
+                    memcpy(&eccReqExInfo.ecdhInfo.pubKey.x, &pECCReqInfo->strEcdhREQ.strPubKey.X, ECC_POINT_MAX_SIZE);
+                    memcpy(&eccReqExInfo.ecdhInfo.pubKey.y, &pECCReqInfo->strEcdhREQ.strPubKey.Y, ECC_POINT_MAX_SIZE);
+                    eccReqExInfo.ecdhInfo.pubKey.size      = pECCReqInfo->strEcdhREQ.strPubKey.u16Size;
+                    eccReqExInfo.ecdhInfo.pubKey.privKeyID = pECCReqInfo->strEcdhREQ.strPubKey.u16PrivKeyID;
 
-                    case ECC_REQ_SIGN_VERIFY:
-                    {
-                        WDRV_WINC_ECDSA_VERIFY_REQ_INFO ecdsaVerifyReqInfo;
-                        memcpy(&ecdsaVerifyReqInfo, &eccReqInfo->strEcdsaVerifyREQ, sizeof(tstrEcdsaVerifyReqInfo));
-                        pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdsaVerifyReqInfo);
-                        break;
-                    }
-
-                    case ECC_REQ_SIGN_GEN:
-                    {
-                        WDRV_WINC_ECDSA_SIGN_REQ_INFO ecdsaSignReqInfo;
-                        memcpy(&ecdsaSignReqInfo, &eccReqInfo->strEcdsaSignREQ, sizeof(tstrEcdsaSignReqInfo));
-                        pDcpt->pfSSLReqECCCB((DRV_HANDLE)pDcpt, info, &ecdsaSignReqInfo);
-                        break;
-
-                    }
-
-            default:
-                    {
-                        break;
-                    }
+                    memcpy(&eccReqExInfo.ecdhInfo.key, &pECCReqInfo->strEcdhREQ.au8Key, ECC_POINT_MAX_SIZE);
+                    break;
                 }
 
+                case ECC_REQ_GEN_KEY:
+                {
+                    pECCReqExInfo = NULL;
+                    break;
+                }
+
+                case ECC_REQ_SIGN_GEN:
+                {
+                    eccReqExInfo.ecdsaSignReqInfo.curveType = pECCReqInfo->strEcdsaSignREQ.u16CurveType;
+                    eccReqExInfo.ecdsaSignReqInfo.hashSz    = pECCReqInfo->strEcdsaSignREQ.u16HashSz;
+                    break;
+                }
+
+                case ECC_REQ_SIGN_VERIFY:
+                {
+                    eccReqExInfo.ecdsaVerifyReqInfo.nSig = pECCReqInfo->strEcdsaVerifyREQ.u32nSig;
+                    break;
+                }
+
+                default:
+                {
+                    return;
+                }
             }
+
+            pDcpt->pCtrl->pfSSLReqECCCB((DRV_HANDLE)pDcpt, reqType, &handshakeData, pECCReqExInfo);
             break;
         }
 
@@ -855,27 +1201,43 @@ static void _WDRV_WINC_HostFileGetCallback
     uint32_t size
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+    WDRV_WINC_HOST_FILE_DCPT *pHostFileDcpt;
+
+    if (NULL == pDcpt->pCtrl)
+    {
+        return;
+    }
+
+    pHostFileDcpt = &pDcpt->pCtrl->hostFileDcpt;
+
+    if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
+    {
+        return;
+    }
 
     if (OTA_STATUS_SUCCESS == status)
     {
-        pDcpt->hostFileDcpt.handle = handle;
-        pDcpt->hostFileDcpt.size   = size;
+        pHostFileDcpt->handle = handle;
+        pHostFileDcpt->size   = size;
     }
     else
     {
-        pDcpt->hostFileDcpt.handle = HFD_INVALID_HANDLER;
-        pDcpt->hostFileDcpt.size   = 0;
+        pHostFileDcpt->handle = HFD_INVALID_HANDLER;
+        pHostFileDcpt->size   = 0;
     }
 
-    pDcpt->hostFileDcpt.offset = 0;
-    pDcpt->hostFileDcpt.remain = 0;
-    pDcpt->hostFileDcpt.pBuffer = NULL;
+    pHostFileDcpt->offset       = 0;
+    pHostFileDcpt->remain       = 0;
+    pHostFileDcpt->pBuffer      = NULL;
+    pHostFileDcpt->bufferSpace  = 0;
 
-    if (NULL != pDcpt->pfHostFileCB)
+    OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
+    if (NULL != pDcpt->pCtrl->pfHostFileCB)
     {
-        pDcpt->pfHostFileCB((DRV_HANDLE)pDcpt,
-                (WDRV_WINC_HOST_FILE_HANDLE)&pDcpt->hostFileDcpt,
+        pDcpt->pCtrl->pfHostFileCB((DRV_HANDLE)pDcpt,
+                (WDRV_WINC_HOST_FILE_HANDLE)pHostFileDcpt,
                 WDRV_WINC_HOST_FILE_OP_DOWNLOAD, status);
     }
 }
@@ -920,42 +1282,112 @@ static void _WDRV_WINC_HostFileReadHIFCallback
     uint32_t size
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+    WDRV_WINC_HOST_FILE_DCPT *pHostFileDcpt;
+
+    if (NULL == pDcpt->pCtrl)
+    {
+        return;
+    }
+
+    pHostFileDcpt = &pDcpt->pCtrl->hostFileDcpt;
 
     if (OTA_STATUS_SUCCESS == status)
     {
-        if ((NULL != pDcpt->hostFileDcpt.pBuffer) && (size <= pDcpt->hostFileDcpt.remain))
+        if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
         {
-            if (pDcpt->hostFileDcpt.remain < size)
+            return;
+        }
+
+        if ((NULL != pHostFileDcpt->pBuffer) && (size <= pHostFileDcpt->remain))
+        {
+            if (pHostFileDcpt->remain < size)
             {
-                size = pDcpt->hostFileDcpt.remain;
+                size = pHostFileDcpt->remain;
             }
 
-            memcpy(pDcpt->hostFileDcpt.pBuffer, pBuffer, size);
+            uint32_t sizeRemain = size;
 
-            pDcpt->hostFileDcpt.remain  -= size;
-            pDcpt->hostFileDcpt.pBuffer += size;
-            pDcpt->hostFileDcpt.offset  += size;
-
-            if (pDcpt->hostFileDcpt.remain > 0)
+            while (sizeRemain)
             {
+                if (pHostFileDcpt->bufferSpace < sizeRemain)
+                {
+                    memcpy(pHostFileDcpt->pBuffer, pBuffer, pHostFileDcpt->bufferSpace);
+
+                    pBuffer    += pHostFileDcpt->bufferSpace;
+                    sizeRemain -= pHostFileDcpt->bufferSpace;
+
+                    pHostFileDcpt->pBuffer     = NULL;
+                    pHostFileDcpt->bufferSpace = 0;
+
+                    if (NULL != pDcpt->pCtrl->pfHostFileCB)
+                    {
+                        OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
+                        pDcpt->pCtrl->pfHostFileCB((DRV_HANDLE)pDcpt,
+                                (WDRV_WINC_HOST_FILE_HANDLE)pHostFileDcpt,
+                                WDRV_WINC_HOST_FILE_OP_READ_BUF_FULL, status);
+
+                        if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
+                        {
+                            return;
+                        }
+
+                        if ((NULL == pHostFileDcpt->pBuffer) || (0 == pHostFileDcpt->bufferSpace))
+                        {
+                            pHostFileDcpt->remain = 0;
+                            size = 0;
+
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    memcpy(pHostFileDcpt->pBuffer, pBuffer, sizeRemain);
+
+                    pHostFileDcpt->pBuffer     += sizeRemain;
+                    pHostFileDcpt->bufferSpace -= sizeRemain;
+
+                    break;
+                }
+            }
+
+            pHostFileDcpt->remain  -= size;
+            pHostFileDcpt->offset  += size;
+
+            if (pHostFileDcpt->remain > 0)
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
                 WDRV_WINC_HostFileRead((DRV_HANDLE)pDcpt,
-                    (WDRV_WINC_HOST_FILE_HANDLE)&pDcpt->hostFileDcpt,
-                    NULL, 0, 0, pDcpt->pfHostFileCB);
+                    (WDRV_WINC_HOST_FILE_HANDLE)pHostFileDcpt,
+                    NULL, 0, 0, 0, pDcpt->pCtrl->pfHostFileCB);
+            }
+            else
+            {
+                OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
+
+                if (NULL != pDcpt->pCtrl->pfHostFileCB)
+                {
+                    pDcpt->pCtrl->pfHostFileCB((DRV_HANDLE)pDcpt,
+                            (WDRV_WINC_HOST_FILE_HANDLE)pHostFileDcpt,
+                            WDRV_WINC_HOST_FILE_OP_READ, status);
+                }
             }
         }
         else
         {
+            OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
             status = OTA_STATUS_FAIL;
         }
     }
-
-    if ((OTA_STATUS_SUCCESS != status) || (0 == pDcpt->hostFileDcpt.remain))
+    else
     {
-        if (NULL != pDcpt->pfHostFileCB)
+        if (NULL != pDcpt->pCtrl->pfHostFileCB)
         {
-            pDcpt->pfHostFileCB((DRV_HANDLE)pDcpt,
-                    (WDRV_WINC_HOST_FILE_HANDLE)&pDcpt->hostFileDcpt,
+            pDcpt->pCtrl->pfHostFileCB((DRV_HANDLE)pDcpt,
+                    (WDRV_WINC_HOST_FILE_HANDLE)&pDcpt->pCtrl->hostFileDcpt,
                     WDRV_WINC_HOST_FILE_OP_READ, status);
         }
     }
@@ -989,19 +1421,124 @@ static void _WDRV_WINC_HostFileReadHIFCallback
 
 static void _WDRV_WINC_HostFileEraseCallback(uint8_t status)
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+    WDRV_WINC_HOST_FILE_DCPT *pHostFileDcpt;
 
-    if (NULL != pDcpt->pfHostFileCB)
+    if (NULL == pDcpt->pCtrl)
     {
-        pDcpt->pfHostFileCB((DRV_HANDLE)pDcpt,
-                (WDRV_WINC_HOST_FILE_HANDLE)&pDcpt->hostFileDcpt,
+        return;
+    }
+
+    pHostFileDcpt = &pDcpt->pCtrl->hostFileDcpt;
+
+    if (NULL != pDcpt->pCtrl->pfHostFileCB)
+    {
+        pDcpt->pCtrl->pfHostFileCB((DRV_HANDLE)pDcpt,
+                (WDRV_WINC_HOST_FILE_HANDLE)pHostFileDcpt,
                 WDRV_WINC_HOST_FILE_OP_ERASE, status);
 
-        pDcpt->hostFileDcpt.handle = HFD_INVALID_HANDLER;
-        pDcpt->hostFileDcpt.size   = 0;
+        if (OSAL_RESULT_TRUE != OSAL_SEM_Pend(&pHostFileDcpt->hfdSemaphore, OSAL_WAIT_FOREVER))
+        {
+            return;
+        }
+
+        pHostFileDcpt->handle = HFD_INVALID_HANDLER;
+        pHostFileDcpt->size   = 0;
+
+        OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
     }
 }
 #endif
+
+//*******************************************************************************
+/*
+  Function:
+    void _WDRV_WINC_ResetCtrlDcpt(WDRV_WINC_CTRLDCPT *pCtrl)
+
+  Summary:
+    Reset control descriptor to initial state.
+
+  Description:
+    Called upon initialization and opening to reset the initial state.
+
+  Precondition:
+    None.
+
+  Parameters:
+    pCtrl - Pointer to control descriptor.
+
+  Returns:
+    None.
+
+  Remarks:
+    None.
+
+*/
+
+static void _WDRV_WINC_ResetCtrlDcpt(WDRV_WINC_CTRLDCPT *pCtrl)
+{
+    if (NULL == pCtrl)
+    {
+        return;
+    }
+
+    /* Initialise driver state. */
+    pCtrl->isAP                     = false;
+    pCtrl->isProvisioning           = false;
+    pCtrl->isConnected              = false;
+    pCtrl->scanInProgress           = false;
+    pCtrl->isBSSScanInfoValid       = false;
+    pCtrl->scanParamDefault         = true;
+    pCtrl->scanNumSlots             = M2M_SCAN_DEFAULT_NUM_SLOTS;
+    pCtrl->scanActiveScanTime       = M2M_SCAN_DEFAULT_SLOT_TIME;
+    pCtrl->scanNumProbes            = M2M_SCAN_DEFAULT_NUM_PROBE;
+    pCtrl->scanRSSIThreshold        = M2M_FASTCONNECT_DEFAULT_RSSI_THRESH;
+    pCtrl->scanPassiveScanTime      = M2M_SCAN_DEFAULT_PASSIVE_SLOT_TIME;
+    pCtrl->powerSaveDTIMInterval    = 0;
+    pCtrl->rssi                     = 0;
+    pCtrl->userHandle               = 0;
+
+    pCtrl->assocInfoValid           = false;
+
+    pCtrl->pfBSSFindNotifyCB        = NULL;
+    pCtrl->pfConnectNotifyCB        = NULL;
+    pCtrl->pfSystemTimeGetCurrentCB = NULL;
+    pCtrl->pfAssociationInfoCB      = NULL;
+    pCtrl->pfAssociationRSSICB      = NULL;
+    pCtrl->pfWPSDiscoveryCB         = NULL;
+
+#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
+    pCtrl->updateInProgress         = false;
+    pCtrl->haveIPAddress            = false;
+    pCtrl->useDHCP                  = true;
+
+    pCtrl->ipAddress                = 0;
+    pCtrl->netMask                  = 0;
+    pCtrl->dnsServerAddress         = 0;
+    pCtrl->gatewayAddress           = 0;
+    pCtrl->dhcpServerAddress        = 0x010AA8C0;
+
+    pCtrl->pfDHCPAddressEventCB     = NULL;
+    pCtrl->pfICMPEchoResponseCB     = NULL;
+    pCtrl->pfProvConnectInfoCB      = NULL;
+    pCtrl->pfOTADownloadStatusCB    = NULL;
+    pCtrl->pfSwitchFirmwareStatusCB = NULL;
+    pCtrl->pfSSLCipherSuiteListCB   = NULL;
+#endif
+#ifdef WDRV_WINC_ENABLE_BLE
+    pCtrl->bleActive                = false;
+#endif
+
+#ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
+    pCtrl->hostFileDcpt.handle      = HFD_INVALID_HANDLER;
+    pCtrl->hostFileDcpt.pBuffer     = NULL;
+    pCtrl->hostFileDcpt.getFileCB   = _WDRV_WINC_HostFileGetCallback;
+    pCtrl->hostFileDcpt.readFileCB  = _WDRV_WINC_HostFileReadHIFCallback;
+    pCtrl->hostFileDcpt.eraseFileCB = _WDRV_WINC_HostFileEraseCallback;
+
+    pCtrl->pfHostFileCB             = NULL;
+#endif
+}
 
 // *****************************************************************************
 // *****************************************************************************
@@ -1036,17 +1573,108 @@ SYS_MODULE_OBJ WDRV_WINC_Initialize
     const SYS_MODULE_INIT *const init
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *pDcpt;
+
+    if (WDRV_WINC_SYS_IDX_0 == index)
+    {
+//        const WDRV_WINC_SYS_INIT* const pInitData = (const WDRV_WINC_SYS_INIT* const)init;
+
+        pDcpt = &wincDescriptor[0];
+
+        if (true == pDcpt->isInit)
+        {
+            return (SYS_MODULE_OBJ)pDcpt;
+        }
+
+#ifndef WDRV_WINC_DEVICE_USE_SYS_DEBUG
+        pfWINCDebugPrintCb = NULL;
+#endif
+
+        wincCtrlDescriptor.intent     = 0;
+        wincCtrlDescriptor.userHandle = 0;
+
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+        winc_bsp_init();
+#endif
+    }
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+    else if (TCPIP_MODULE_MAC_WINC == index)
+    {
+        uint8_t i;
+        const TCPIP_MAC_MODULE_CTRL *pStackInitData;
+        TCPIP_MAC_PACKET *ptrPacket;
+
+        if (NULL == init)
+        {
+            return SYS_MODULE_OBJ_INVALID;
+        }
+
+        pStackInitData = ((TCPIP_MAC_INIT *)init)->macControl;
+
+        if (NULL == pStackInitData)
+        {
+            return SYS_MODULE_OBJ_INVALID;
+        }
+
+        pDcpt = &wincDescriptor[1];
+
+        WDRV_DBG_TRACE_PRINT("WDRV_WINC_Initialize(%s)\r\n", (true == pDcpt->isInit) ? "partial" : "full");
+
+        if (true == pDcpt->isInit)
+        {
+            return (SYS_MODULE_OBJ)pDcpt;
+        }
+
+        TCPIP_Helper_ProtectedSingleListInitialize(&packetPoolFreeList);
+
+        for (i=0; i<4; i++)
+        {
+            ptrPacket = _TCPIP_PKT_ALLOC_FNC(sizeof(TCPIP_MAC_PACKET), MAX_RX_PACKET_SIZE, 0);
+
+            if (NULL == ptrPacket)
+            {
+                return false;
+            }
+
+            ptrPacket->next = NULL;
+
+            TCPIP_Helper_ProtectedSingleListTailAdd(&packetPoolFreeList, (SGL_LIST_NODE*)ptrPacket);
+        }
+
+        TCPIP_Helper_ProtectedSingleListInitialize(&wincMACDescriptor.ethRxPktList);
+
+        for (i=0; i<MULTICAST_FILTER_SIZE; i++)
+        {
+            memset(&wincMACDescriptor.multicastFilterList[i], 0, sizeof(TCPIP_MAC_ADDR));
+        }
+        OSAL_SEM_Create(&wincMACDescriptor.multicastFilterListSemaphore, OSAL_SEM_TYPE_BINARY, 1, 1);
+
+        wincMACDescriptor.eventF       = pStackInitData->eventF;
+        wincMACDescriptor.pktAllocF    = pStackInitData->pktAllocF;
+        wincMACDescriptor.pktFreeF     = pStackInitData->pktFreeF;
+        wincMACDescriptor.pktAckF      = pStackInitData->pktAckF;
+        wincMACDescriptor.eventParam   = pStackInitData->eventParam;
+        wincMACDescriptor.eventMask    = 0;
+        wincMACDescriptor.events       = 0;
+        OSAL_SEM_Create(&wincMACDescriptor.eventSemaphore, OSAL_SEM_TYPE_BINARY, 1, 1);
+
+        wincMACDescriptor.pCurRxPacket = NULL;
+        OSAL_SEM_Create(&wincMACDescriptor.curRxPacketSemaphore, OSAL_SEM_TYPE_BINARY, 1, 1);
+    }
+#endif
+    else
+    {
+        return SYS_MODULE_OBJ_INVALID;
+    }
 
     /* Set initial state. */
-    pDcpt->isInit  = false;
+    pDcpt->isInit  = true;
     pDcpt->isOpen  = false;
-    pDcpt->sysStat = SYS_STATUS_UNINITIALIZED;
-    pDcpt->intent  = 0;
-
-    pDcpt->userHandle = 0;
-
-    pfWINCDebugPrintCb = NULL;
+    pDcpt->sysStat = SYS_STATUS_BUSY;
+    pDcpt->pCtrl   = &wincCtrlDescriptor;
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+    pDcpt->pMac    = &wincMACDescriptor;
+#endif
 
     return (SYS_MODULE_OBJ)pDcpt;
 }
@@ -1072,17 +1700,47 @@ void WDRV_WINC_Deinitialize(SYS_MODULE_OBJ object)
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)object;
 
-    if (SYS_STATUS_UNINITIALIZED != pDcpt->sysStat)
+    if ((SYS_MODULE_OBJ_INVALID == object) || (NULL == pDcpt))
     {
-        /* De-initialise SPI handling. */
-        WDRV_WINC_SPIDeinitialize();
+        return;
     }
 
-    /* Clear internal state. */
-    pDcpt->isInit  = false;
-    pDcpt->isOpen  = false;
     pDcpt->sysStat = SYS_STATUS_UNINITIALIZED;
-    pDcpt->intent  = 0;
+
+    if (pDcpt == &wincDescriptor[0])
+    {
+        /* De-initialise the interrupts. */
+        WDRV_WINC_INTDeinitialize();
+
+        OSAL_SEM_Post(&pDcpt->pCtrl->drvEventSemaphore);
+#ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
+        OSAL_SEM_Post(&pDcpt->pCtrl->hostFileDcpt.hfdSemaphore);
+#endif
+    }
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+    else if (pDcpt == &wincDescriptor[1])
+    {
+        OSAL_SEM_Delete(&wincMACDescriptor.multicastFilterListSemaphore);
+        OSAL_SEM_Delete(&wincMACDescriptor.eventSemaphore);
+        OSAL_SEM_Delete(&wincMACDescriptor.curRxPacketSemaphore);
+
+        wincMACDescriptor.eventF        = NULL;
+        wincMACDescriptor.pktAllocF     = NULL;
+        wincMACDescriptor.pktFreeF      = NULL;
+        wincMACDescriptor.pktAckF       = NULL;
+
+        while (NULL != TCPIP_Helper_ProtectedSingleListHeadRemove(&wincMACDescriptor.ethRxPktList))
+        {
+        }
+
+        while (NULL != TCPIP_Helper_ProtectedSingleListHeadRemove(&packetPoolFreeList))
+        {
+        }
+    }
+#endif
+
+    /* Clear internal state. */
+    pDcpt->isOpen = false;
 }
 
 //*******************************************************************************
@@ -1112,6 +1770,30 @@ void WDRV_WINC_Reinitialize
     const SYS_MODULE_INIT *const init
 )
 {
+    if ((WDRV_WINC_DCPT *const)object == &wincDescriptor[0])
+    {
+        WDRV_WINC_Deinitialize(object);
+
+        while(SYS_STATUS_UNINITIALIZED != WDRV_WINC_Status(sysObj.drvWifiWinc))
+        {
+#ifndef DRV_WIFI_WINC_RTOS_STACK_SIZE
+            WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+#else
+            WDRV_MSDelay(1);
+#endif
+        }
+
+        WDRV_WINC_Initialize(0, init);
+
+        while(SYS_STATUS_READY != WDRV_WINC_Status(sysObj.drvWifiWinc))
+        {
+#ifndef DRV_WIFI_WINC_RTOS_STACK_SIZE
+            WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+#else
+            WDRV_MSDelay(1);
+#endif
+        }
+    }
 }
 
 //*******************************************************************************
@@ -1132,8 +1814,91 @@ void WDRV_WINC_Reinitialize
 
 SYS_STATUS WDRV_WINC_Status(SYS_MODULE_OBJ object)
 {
-    return ((WDRV_WINC_DCPT *)object)->sysStat;
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)object;
+
+    if ((SYS_MODULE_OBJ_INVALID == object) || (NULL == pDcpt))
+    {
+        return SYS_STATUS_ERROR;
+    }
+
+    if ((SYS_STATUS_UNINITIALIZED == pDcpt->sysStat) && (true == pDcpt->isInit))
+    {
+        return SYS_STATUS_BUSY;
+    }
+
+    return pDcpt->sysStat;
 }
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+//*******************************************************************************
+/*
+  Function:
+    void WDRV_WINC_MACTasks(SYS_MODULE_OBJ object)
+
+  Summary:
+    Maintains the WINC MAC drivers state machine.
+
+  Description:
+    This function is used to maintain the driver's internal state machine.
+
+  Remarks:
+    See wdrv_winc_api.h for usage information.
+
+*/
+
+void WDRV_WINC_MACTasks(SYS_MODULE_OBJ object)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)object;
+
+    if ((SYS_MODULE_OBJ_INVALID == object) || (NULL == pDcpt))
+    {
+        return;
+    }
+
+    switch (pDcpt->sysStat)
+    {
+        /* Uninitialised state. */
+        case SYS_STATUS_UNINITIALIZED:
+        {
+            if (true == pDcpt->isInit)
+            {
+                pDcpt->isInit = false;
+            }
+
+            break;
+        }
+
+        case SYS_STATUS_BUSY:
+        {
+            if (SYS_STATUS_READY == wincDescriptor[0].sysStat)
+            {
+                _WDRV_WINC_MACCheckRecvPacket(pDcpt);
+
+                pDcpt->sysStat = SYS_STATUS_READY;
+            }
+            break;
+        }
+
+        /* Running steady state. */
+        case SYS_STATUS_READY:
+        {
+            break;
+        }
+
+        /* Error state.*/
+        case SYS_STATUS_ERROR:
+        {
+            break;
+        }
+
+        default:
+        {
+            pDcpt->sysStat = SYS_STATUS_ERROR;
+            break;
+        }
+    }
+}
+#endif
 
 //*******************************************************************************
 /*
@@ -1155,33 +1920,81 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)object;
 
+    if ((SYS_MODULE_OBJ_INVALID == object) || (NULL == pDcpt))
+    {
+        return;
+    }
+
     switch (pDcpt->sysStat)
     {
         /* Uninitialised state. */
         case SYS_STATUS_UNINITIALIZED:
         {
-            pDcpt->sysStat = SYS_STATUS_BUSY;
-
-            WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
-
-            if (OSAL_RESULT_TRUE != OSAL_MUTEX_Create(&pDcpt->eventProcessMutex))
+            if (true == pDcpt->isInit)
             {
-                WDRV_DBG_ERROR_PRINT("eventProcessMutex create failed\r\n");
+                /* Destroy M2M HIF semaphore. */
+                OSAL_SEM_Delete(&pDcpt->pCtrl->drvEventSemaphore);
+
+#ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
+                OSAL_SEM_Delete(&pDcpt->pCtrl->hostFileDcpt.hfdSemaphore);
+#endif
+
+                pDcpt->pCtrl->intent = 0;
+#ifdef WDRV_WINC_DEVICE_WINC3400
+                pDcpt->pCtrl->isBLEInitStarted = false;
+#endif
+                m2m_wifi_deinit(NULL);
+
+                /* De-initialise SPI handling. */
+                WDRV_WINC_SPIDeinitialize();
+
+                pDcpt->isInit = false;
+            }
+
+            break;
+        }
+
+        case SYS_STATUS_BUSY:
+        {
+            tstrWifiInitParam wifiParam;
+
+            if (NULL == pDcpt->pCtrl)
+            {
                 pDcpt->sysStat = SYS_STATUS_ERROR;
                 break;
             }
+
+#ifdef WDRV_WINC_DEVICE_WINC3400
+            if (true == pDcpt->pCtrl->isBLEInitStarted)
+            {
+                if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pCtrl->drvEventSemaphore, OSAL_WAIT_FOREVER))
+                {
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+                    if (M2M_SUCCESS != m2m_wifi_handle_events(NULL))
+#else
+                    if (M2M_SUCCESS != m2m_wifi_handle_events())
+#endif
+                    {
+                        OSAL_SEM_Post(&pDcpt->pCtrl->drvEventSemaphore);
+                    }
+                }
+
+                break;
+            }
+#endif
+            WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
 
             /* Initialise SPI handling. */
             WDRV_WINC_SPIInitialize();
 
 #ifndef WDRV_WINC_DEVICE_SPLIT_INIT
-            pDcpt->isInit  = true;
             pDcpt->sysStat = SYS_STATUS_READY;
 #else
             if (M2M_SUCCESS != m2m_wifi_init_hold())
             {
                 WDRV_DBG_ERROR_PRINT("m2m_wifi_init_hold failed\r\n");
                 pDcpt->sysStat = SYS_STATUS_ERROR;
+                break;
             }
             else
             {
@@ -1192,34 +2005,123 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 
                 m2m_flash_init();
 #endif
-
-                pDcpt->isInit  = true;
-                pDcpt->sysStat = SYS_STATUS_READY;
             }
 #endif
+            /* Create a semaphore for tracking WINC HIF events. */
+            if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&pDcpt->pCtrl->drvEventSemaphore,
+                                                    OSAL_SEM_TYPE_COUNTING, 10, 0))
+            {
+                pDcpt->sysStat = SYS_STATUS_ERROR;
+                return;
+            }
+
+            /* Initialise the interrupts. */
+            WDRV_WINC_INTInitialize();
+
+            memset(&wifiParam, 0, sizeof(tstrWifiInitParam));
+            /* Construct M2M WiFi initialisation structure. */
+            wifiParam.pfAppWifiCb = _WDRV_WINC_WifiCallback;
+#ifndef WDRV_WINC_NETWORK_MODE_SOCKET
+            /* Ethernet mode required callback and Ethernet buffers. */
+            wifiParam.strEthInitParam.pfAppEthCb = _WDRV_WINC_EthernetCallback;
+            wifiParam.strEthInitParam.au8ethRcvBuf = NULL;
+            wifiParam.strEthInitParam.u16ethRcvBufSize = 0;
+#ifdef WDRV_WINC_DEVICE_DYNAMIC_BYPASS_MODE
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+            wifiParam.strEthInitParam.u8EthernetEnable = M2M_WIFI_MODE_ETHERNET;
+#else
+            wifiParam.strEthInitParam.u8EthernetEnable = true;
+#endif
+#endif
+#else
+#ifdef WDRV_WINC_DEVICE_DYNAMIC_BYPASS_MODE
+            wifiParam.strEthInitParam.u8EthernetEnable = false;
+#endif
+#endif
+
+            /* Initialise M2M WiFi and thus WINC device. */
+#ifndef WDRV_WINC_DEVICE_SPLIT_INIT
+            if (M2M_SUCCESS != m2m_wifi_init(&wifiParam))
+#else
+            if (M2M_SUCCESS != m2m_wifi_init_start(&wifiParam))
+#endif
+            {
+                WDRV_DBG_ERROR_PRINT("m2m_wifi_init_start failed\r\n");
+                pDcpt->sysStat = SYS_STATUS_ERROR;
+
+                return;
+            }
+
+#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
+            /* Socket mode requires the socket interface and SSL be initialised. */
+            socketInit();
+
+            m2m_ssl_init(&_WDRV_WINC_SSLCallback);
+#endif
+            _WDRV_WINC_ResetCtrlDcpt(&wincCtrlDescriptor);
+
+#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
+#if defined(WDRV_WINC_DEVICE_WINC1500)
+#ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
+            m2m_ota_init(_WDRV_WINC_OTAUpdateCallback, NULL, _WDRV_WINC_HostFileGetCallback);
+
+            OSAL_SEM_Create(&wincCtrlDescriptor.hostFileDcpt.hfdSemaphore, OSAL_SEM_TYPE_BINARY, 1, 1);
+#else
+            m2m_ota_init(&_WDRV_WINC_OTAUpdateCallback, NULL);
+#endif // #ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
+#elif defined(WDRV_WINC_DEVICE_WINC3400)
+#ifndef WDRV_WINC_DEVICE_LITE_DRIVER
+            m2m_ota_init(_WDRV_WINC_OTAUpdateCallback);
+#else
+            m2m_ota_init(_WDRV_WINC_OTAUpdateCallback, NULL);
+#endif
+#endif
+#endif
+            /* Retrieve MAC address from WINC device. */
+            m2m_wifi_get_mac_address(pDcpt->pCtrl->ethAddress);
+
+#ifdef WDRV_WINC_DEVICE_WINC3400
+            /* Delay moving to READY until BLE core initializes. */
+            pDcpt->pCtrl->isBLEInitStarted = true;
+#else
+            pDcpt->sysStat = SYS_STATUS_READY;
+#endif
+
+#ifndef WDRV_WINC_NETWORK_MODE_SOCKET
+            pDcpt->pCtrl->isEthBufSet              = false;
+            pDcpt->pCtrl->ethFragNum               = 1;
+            pDcpt->pCtrl->pfEthernetMsgRecvCB      = NULL;
+#endif
+            WDRV_DBG_INFORM_PRINT("WINC: Initializing...complete\r\n");
             break;
         }
 
         /* Running steady state. */
         case SYS_STATUS_READY:
         {
-            if (OSAL_RESULT_TRUE == OSAL_MUTEX_Lock(&pDcpt->eventProcessMutex, OSAL_WAIT_FOREVER))
+            if (pDcpt->isOpen == true)
             {
-                if (pDcpt->isOpen == true)
-                {
-                    /* If driver instance is open the check HIF ISR semaphore and
-                       handle a pending event. */
+                /* If driver instance is open the check HIF ISR semaphore and
+                   handle a pending event. */
 
-                    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->isrSemaphore, OSAL_WAIT_FOREVER))
+                if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pCtrl->drvEventSemaphore, OSAL_WAIT_FOREVER))
+                {
+                    if (SYS_STATUS_READY != pDcpt->sysStat)
                     {
-                        if (M2M_SUCCESS != m2m_wifi_handle_events())
-                        {
-                            OSAL_SEM_Post(&pDcpt->isrSemaphore);
-                        }
+                        break;
+                    }
+
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+                    if (M2M_SUCCESS != m2m_wifi_handle_events(NULL))
+#else
+                    if (M2M_SUCCESS != m2m_wifi_handle_events())
+#endif
+                    {
+                        OSAL_SEM_Post(&pDcpt->pCtrl->drvEventSemaphore);
                     }
                 }
-                OSAL_MUTEX_Unlock(&pDcpt->eventProcessMutex);
             }
+
             break;
         }
 
@@ -1231,7 +2133,6 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 
         default:
         {
-            WDRV_DBG_ERROR_PRINT("Should never happen\r\n");
             pDcpt->sysStat = SYS_STATUS_ERROR;
             break;
         }
@@ -1265,6 +2166,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 
  */
 
+#ifndef WDRV_WINC_DEVICE_USE_SYS_DEBUG
 void WDRV_WINC_DebugRegisterCallback
 (
     WDRV_WINC_DEBUG_PRINT_CALLBACK const pfDebugPrintCallback
@@ -1272,6 +2174,7 @@ void WDRV_WINC_DebugRegisterCallback
 {
     pfWINCDebugPrintCb = pfDebugPrintCallback;
 }
+#endif
 
 //*******************************************************************************
 /*
@@ -1292,8 +2195,32 @@ void WDRV_WINC_DebugRegisterCallback
 
 DRV_HANDLE WDRV_WINC_Open(const SYS_MODULE_INDEX index, const DRV_IO_INTENT intent)
 {
-    tstrWifiInitParam wifiParam;
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *pDcpt = NULL;
+
+    if (WDRV_WINC_SYS_IDX_0 == index)
+    {
+        pDcpt = &wincDescriptor[0];
+
+        if (NULL == pDcpt->pCtrl)
+        {
+            return DRV_HANDLE_INVALID;
+        }
+    }
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+    else if (TCPIP_MODULE_MAC_WINC == index)
+    {
+        pDcpt = &wincDescriptor[1];
+
+        if (NULL == pDcpt->pMac)
+        {
+            return DRV_HANDLE_INVALID;
+        }
+    }
+#endif
+    else
+    {
+        return DRV_HANDLE_INVALID;
+    }
 
     /* Check that the driver has been initialised. */
     if (false == pDcpt->isInit)
@@ -1304,176 +2231,46 @@ DRV_HANDLE WDRV_WINC_Open(const SYS_MODULE_INDEX index, const DRV_IO_INTENT inte
     /* Check if the driver has already been opened. */
     if (true == pDcpt->isOpen)
     {
-        if (pDcpt->intent == intent)
-        {
-            return (DRV_HANDLE)pDcpt;
-        }
-        else
+        if ((0 == index) && (pDcpt->pCtrl->intent != intent))
         {
             return DRV_HANDLE_INVALID;
         }
-    }
-
-    /* Create a semaphore for tracking WINC HIF events. */
-    if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&pDcpt->isrSemaphore,
-                                            OSAL_SEM_TYPE_COUNTING, 10, 0))
-    {
-        return DRV_HANDLE_INVALID;
-    }
-
-    pDcpt->intent = intent;
-
-    /* Check if opening for exclusive access to NVM rather than whole device. */
-
-    if (0 != (pDcpt->intent & DRV_IO_INTENT_EXCLUSIVE))
-    {
-#ifdef WDRV_WINC_DEVICE_SPLIT_INIT
-        m2m_wifi_deinit(NULL);
-#endif
-        if (M2M_SUCCESS != m2m_wifi_download_mode())
-        {
-            return DRV_HANDLE_INVALID;
-        }
-
-        pDcpt->isOpen = true;
 
         return (DRV_HANDLE)pDcpt;
     }
 
-    /* Initialise the interrupts. */
-    WDRV_WINC_INTInitialize();
-
-    memset(&wifiParam, 0, sizeof(tstrWifiInitParam));
-    /* Construct M2M WiFi initialisation structure. */
-    wifiParam.pfAppWifiCb = _WDRV_WINC_WifiCallback;
-#ifndef WDRV_WINC_NETWORK_MODE_SOCKET
-    /* Ethernet mode required callback and Ethernet buffers. */
-    wifiParam.strEthInitParam.pfAppEthCb = _WDRV_WINC_EthernetCallback;
-    wifiParam.strEthInitParam.au8ethRcvBuf = NULL;
-    wifiParam.strEthInitParam.u16ethRcvBufSize = 0;
-#ifdef WDRV_WINC_DEVICE_DYNAMIC_BYPASS_MODE
-    wifiParam.strEthInitParam.u8EthernetEnable = true;
-#endif
-#else
-    /* For socket mode. */
-#ifdef WDRV_WINC_DEVICE_DYNAMIC_BYPASS_MODE
-    wifiParam.strEthInitParam.u8EthernetEnable = false;
-#endif
-#endif
-
-    /* Initialise M2M WiFi and thus WINC device. */
-#ifndef WDRV_WINC_DEVICE_SPLIT_INIT
-    if (M2M_SUCCESS != m2m_wifi_init(&wifiParam))
-#else
-    if (M2M_SUCCESS != m2m_wifi_init_start(&wifiParam))
-#endif
+    if ((false == wincDescriptor[0].isOpen) && (false == wincDescriptor[1].isOpen))
     {
-        WDRV_DBG_ERROR_PRINT("m2m_wifi_init_start failed\r\n");
-        pDcpt->sysStat = SYS_STATUS_ERROR;
-
-        return DRV_HANDLE_INVALID;
+        _WDRV_WINC_ResetCtrlDcpt(pDcpt->pCtrl);
     }
 
-#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    /* Socket mode requires the socket interface and SSL be initialised. */
-    socketInit();
-
-    m2m_ssl_init(&_WDRV_WINC_SSLCallback);
-#endif
-
-    /* Initialise driver state. */
-    pDcpt->isOpen                   = false;
-    pDcpt->isAP                     = false;
-    pDcpt->isProvisioning           = false;
-    pDcpt->isConnected              = false;
-    pDcpt->scanInProgress           = false;
-    pDcpt->isBSSScanInfoValid       = false;
-    pDcpt->scanParamDefault         = true;
-    pDcpt->scanNumSlots             = M2M_SCAN_DEFAULT_NUM_SLOTS;
-    pDcpt->scanActiveScanTime       = M2M_SCAN_DEFAULT_SLOT_TIME;
-    pDcpt->scanNumProbes            = M2M_SCAN_DEFAULT_NUM_PROBE;
-    pDcpt->scanRSSIThreshold        = M2M_FASTCONNECT_DEFAULT_RSSI_THRESH;
-    pDcpt->scanPassiveScanTime      = M2M_SCAN_DEFAULT_PASSIVE_SLOT_TIME;
-    pDcpt->powerSaveDTIMInterval    = 0;
-    pDcpt->rssi                     = 0;
-    pDcpt->userHandle               = 0;
-
-    pDcpt->assocInfoValid           = false;
-
-    pDcpt->pfBSSFindNotifyCB        = NULL;
-    pDcpt->pfConnectNotifyCB        = NULL;
-    pDcpt->pfSystemTimeGetCurrentCB = NULL;
-    pDcpt->pfAssociationInfoCB      = NULL;
-    pDcpt->pfAssociationRSSICB      = NULL;
-    pDcpt->pfWPSDiscoveryCB         = NULL;
-
-#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pDcpt->updateInProgress         = false;
-    pDcpt->haveIPAddress            = false;
-    pDcpt->useDHCP                  = true;
-
-    pDcpt->ipAddress                = 0;
-    pDcpt->netMask                  = 0;
-    pDcpt->dnsServerAddress         = 0;
-    pDcpt->gatewayAddress           = 0;
-    pDcpt->dhcpServerAddress        = 0x010AA8C0;
-
-    pDcpt->pfDHCPAddressEventCB     = NULL;
-    pDcpt->pfICMPEchoResponseCB     = NULL;
-    pDcpt->pfProvConnectInfoCB      = NULL;
-    pDcpt->pfOTADownloadStatusCB    = NULL;
-    pDcpt->pfSwitchFirmwareStatusCB = NULL;
-    pDcpt->pfSSLCipherSuiteListCB   = NULL;
-#else
-    pDcpt->isEthBufSet              = false;
-
-    pDcpt->ethFragNum               = 1;
-
-    pDcpt->pfEthernetMsgRecvCB      = NULL;
-#endif
-#ifdef WDRV_WINC_ENABLE_BLE
-    pDcpt->bleActive                = false;
-#endif
-
-#ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
-    pDcpt->hostFileDcpt.handle      = HFD_INVALID_HANDLER;
-    pDcpt->hostFileDcpt.pBuffer     = NULL;
-    pDcpt->hostFileDcpt.getFileCB   = _WDRV_WINC_HostFileGetCallback;
-    pDcpt->hostFileDcpt.readFileCB  = _WDRV_WINC_HostFileReadHIFCallback;
-    pDcpt->hostFileDcpt.eraseFileCB = _WDRV_WINC_HostFileEraseCallback;
-
-    pDcpt->pfHostFileCB             = NULL;
-#endif
-
-#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-#if defined(WDRV_WINC_DEVICE_WINC1500)
-#ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
-    m2m_ota_init(_WDRV_WINC_OTAUpdateCallback, NULL, _WDRV_WINC_HostFileGetCallback);
-#else
-    m2m_ota_init(&_WDRV_WINC_OTAUpdateCallback, NULL);
-#endif // #ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
-#elif defined(WDRV_WINC_DEVICE_WINC3400)
-    m2m_ota_init(_WDRV_WINC_OTAUpdateCallback);
-#endif
-#endif
-
-    /* Retrieve MAC address from WINC device. */
-    m2m_wifi_get_mac_address(pDcpt->ethAddress);
-
-#ifdef WDRV_WINC_DEVICE_WINC3400
-    while (false == pDcpt->isOpen)
+    if (WDRV_WINC_SYS_IDX_0 == index)
     {
-        if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->isrSemaphore, OSAL_WAIT_FOREVER))
+        pDcpt->pCtrl->handle    = (DRV_HANDLE)pDcpt;
+        pDcpt->pCtrl->intent    = intent;
+
+        /* Check if opening for exclusive access to NVM rather than whole device. */
+
+        if (0 != (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
         {
-            if (M2M_SUCCESS != m2m_wifi_handle_events())
+#ifdef WDRV_WINC_DEVICE_SPLIT_INIT
+            m2m_wifi_deinit(NULL);
+#endif
+            if (M2M_SUCCESS != m2m_wifi_download_mode())
             {
-                OSAL_SEM_Post(&pDcpt->isrSemaphore);
+                return DRV_HANDLE_INVALID;
             }
+
+            pDcpt->isOpen = true;
+
+            return (DRV_HANDLE)pDcpt;
         }
     }
-
-    /* On WINC3400 place BLE into restricted state. */
-    m2m_wifi_req_restrict_ble();
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+    else
+    {
+        pDcpt->pMac->handle = (DRV_HANDLE)pDcpt;
+    }
 #endif
 
     pDcpt->isOpen = true;
@@ -1504,31 +2301,695 @@ void WDRV_WINC_Close(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return;
     }
 
-    /* De-initialise the interrupts. */
-    WDRV_WINC_INTDeinitialize();
-
-    /* Destroy M2M HIF semaphore. */
-    OSAL_SEM_Post(&pDcpt->isrSemaphore);
-    if (OSAL_RESULT_TRUE == OSAL_MUTEX_Lock(&pDcpt->eventProcessMutex, OSAL_WAIT_FOREVER))
+    if (handle == pDcpt->pCtrl->handle)
     {
-        /* Destroy M2M HIF semaphore. */
-        OSAL_SEM_Delete(&pDcpt->isrSemaphore);
-
-
-        /* Reset minimal state to show driver is closed. */
-        pDcpt->isOpen        = false;
-        OSAL_MUTEX_Unlock(&pDcpt->eventProcessMutex);
-    }
-    pDcpt->isConnected   = false;
+        pDcpt->pCtrl->isConnected   = false;
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pDcpt->haveIPAddress = false;
+        pDcpt->pCtrl->haveIPAddress = false;
 #endif
+    }
+
+    pDcpt->isOpen = false;
 }
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+// *****************************************************************************
+// *****************************************************************************
+// Section: WINC MAC Driver Implementation
+// *****************************************************************************
+// *****************************************************************************
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_MACLinkCheck(DRV_HANDLE handle)
+
+  Summary:
+    Indicates the state of the network link.
+
+  Description:
+    Returns a flag indicating if the network link is active or not.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+bool WDRV_WINC_MACLinkCheck(DRV_HANDLE handle)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
+    {
+        return false;
+    }
+
+    return pDcpt->pCtrl->isConnected;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_RES WDRV_WINC_MACRxFilterHashTableEntrySet
+    (
+        DRV_HANDLE handle,
+        const TCPIP_MAC_ADDR* DestMACAddr
+    )
+
+  Summary:
+    Adds an entry to the receive multicast filter.
+
+  Description:
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_RES WDRV_WINC_MACRxFilterHashTableEntrySet
+(
+    DRV_HANDLE handle,
+    const TCPIP_MAC_ADDR* DestMACAddr
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    TCPIP_MAC_ADDR *pFirstFree;
+    uint8_t i;
+    uint8_t macHash;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pDcpt->pMac) || (NULL == DestMACAddr))
+    {
+        return TCPIP_MAC_RES_OP_ERR;
+    }
+
+    WDRV_DBG_TRACE_PRINT("WDRV_WINC_MACRxFilterHashTableEntrySet %02x:%02x:%02x:%02x:%02x:%02x\r\n",
+            DestMACAddr->v[0], DestMACAddr->v[1], DestMACAddr->v[2],
+            DestMACAddr->v[3], DestMACAddr->v[4], DestMACAddr->v[5]);
+
+    macHash = 0;
+
+    for (i=0; i<6; i++)
+    {
+        macHash |= DestMACAddr->v[i];
+    }
+
+    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->multicastFilterListSemaphore, OSAL_WAIT_FOREVER))
+    {
+        if (0 == macHash)
+        {
+            for (i=0; i<MULTICAST_FILTER_SIZE; i++)
+            {
+                if (0 != pDcpt->pMac->multicastFilterList[i].v[0])
+                {
+                    if (WDRV_WINC_STATUS_OK !=
+                            WDRV_WINC_MulticastMACFilterRemove((DRV_HANDLE)pDcpt,
+                                                                   pDcpt->pMac->multicastFilterList[i].v))
+                    {
+                        OSAL_SEM_Post(&pDcpt->pMac->multicastFilterListSemaphore);
+                        return TCPIP_MAC_RES_OP_ERR;
+                    }
+
+                    memset(&pDcpt->pMac->multicastFilterList[i], 0, sizeof(TCPIP_MAC_ADDR));
+                }
+            }
+        }
+        else
+        {
+            pFirstFree = NULL;
+
+            for (i=0; i<MULTICAST_FILTER_SIZE; i++)
+            {
+                if (0 != pDcpt->pMac->multicastFilterList[i].v[0])
+                {
+                    if (0 == memcmp(DestMACAddr, &pDcpt->pMac->multicastFilterList[i], sizeof(TCPIP_MAC_ADDR)))
+                    {
+                        OSAL_SEM_Post(&pDcpt->pMac->multicastFilterListSemaphore);
+                        return TCPIP_MAC_RES_OK;
+                    }
+                }
+                else if (NULL == pFirstFree)
+                {
+                    pFirstFree = &pDcpt->pMac->multicastFilterList[i];
+                }
+            }
+
+            if (NULL == pFirstFree)
+            {
+                OSAL_SEM_Post(&pDcpt->pMac->multicastFilterListSemaphore);
+                return TCPIP_MAC_RES_OP_ERR;
+            }
+
+            if (WDRV_WINC_STATUS_OK != WDRV_WINC_MulticastMACFilterAdd((DRV_HANDLE)pDcpt, DestMACAddr->v))
+            {
+                OSAL_SEM_Post(&pDcpt->pMac->multicastFilterListSemaphore);
+                return TCPIP_MAC_RES_OP_ERR;
+            }
+
+            memcpy(pFirstFree, DestMACAddr, sizeof(TCPIP_MAC_ADDR));
+        }
+
+        OSAL_SEM_Post(&pDcpt->pMac->multicastFilterListSemaphore);
+    }
+
+    return TCPIP_MAC_RES_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_MACPowerMode(DRV_HANDLE handle, TCPIP_MAC_POWER_MODE pwrMode)
+
+  Summary:
+    Change the power mode.
+
+  Description:
+    Not currently supported.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+bool WDRV_WINC_MACPowerMode(DRV_HANDLE handle, TCPIP_MAC_POWER_MODE pwrMode)
+{
+    WDRV_DBG_TRACE_PRINT("WDRV_WINC_MACPowerMode\r\n");
+    return false;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPacket)
+
+  Summary:
+    Send an Ethernet frame via the WINC.
+
+  Description:
+    Takes an Ethernet frame from the TCP/IP stack and schedules it with the
+      WINC.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPacket)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    uint8_t *payLoadPtr;
+    int pktLen = 0;
+
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pDcpt->pMac))
+    {
+        return TCPIP_MAC_RES_PACKET_ERR;
+    }
+
+    if ((NULL == ptrPacket) || (NULL == ptrPacket->pDSeg))
+    {
+        return TCPIP_MAC_RES_PACKET_ERR;
+    }
+
+    if ((NULL == pDcpt->pMac->pktAllocF) || (NULL == pDcpt->pMac->pktAckF))
+    {
+        return TCPIP_MAC_RES_PACKET_ERR;
+    }
+
+#ifdef WDRV_WINC_MAC_TX_PKT_INSPECT_HOOK
+    WDRV_WINC_MAC_TX_PKT_INSPECT_HOOK(ptrPacket);
+#endif
+
+    if ((false == pDcpt->pCtrl->isConnected) || (ptrPacket->pDSeg->segLen > MAX_TX_PACKET_SIZE))
+    {
+        WDRV_DBG_TRACE_PRINT("Link down or packet too large (%d)\r\n", ptrPacket->pDSeg->segLen);
+
+        pDcpt->pMac->pktAckF(ptrPacket, TCPIP_MAC_PKT_ACK_MAC_REJECT_ERR, TCPIP_THIS_MODULE_ID);
+        return TCPIP_MAC_RES_PACKET_ERR;
+    }
+
+    if (NULL == ptrPacket->pDSeg->next)
+    {
+        if (WDRV_WINC_STATUS_OK != WDRV_WINC_EthernetSendPacket(
+                    (DRV_HANDLE)pDcpt, ptrPacket->pDSeg->segLoad, ptrPacket->pDSeg->segLen))
+        {
+            WDRV_DBG_TRACE_PRINT("Error sending single segment packet\r\n");
+            return TCPIP_MAC_RES_PACKET_ERR;
+        }
+
+        pDcpt->pMac->pktAckF(ptrPacket, TCPIP_MAC_PKT_ACK_TX_OK, TCPIP_THIS_MODULE_ID);
+    }
+    else
+    {
+        WDRV_WINC_STATUS status;
+        uint8_t *pktbuf;
+        TCPIP_MAC_DATA_SEGMENT *pDSeg;
+
+        pDSeg = ptrPacket->pDSeg;
+
+        while (NULL != pDSeg)
+        {
+            pktLen += pDSeg->segLen;
+
+            pDSeg = pDSeg->next;
+        }
+
+        if (pktLen > MAX_RX_PACKET_SIZE)
+        {
+            pDcpt->pMac->pktAckF(ptrPacket, TCPIP_MAC_PKT_ACK_MAC_REJECT_ERR, TCPIP_THIS_MODULE_ID);
+
+            WDRV_DBG_TRACE_PRINT("MAC TX: payload too big (%d)\r\n", pktLen);
+
+            return TCPIP_MAC_RES_OP_ERR;
+        }
+
+        pktbuf = payLoadPtr = OSAL_Malloc(pktLen);
+
+        if (NULL == pktbuf)
+        {
+            pDcpt->pMac->pktAckF(ptrPacket, TCPIP_MAC_PKT_ACK_MAC_REJECT_ERR, TCPIP_THIS_MODULE_ID);
+
+            WDRV_DBG_TRACE_PRINT("MAC TX: malloc fail\r\n");
+
+            return TCPIP_MAC_RES_OP_ERR;
+        }
+
+        pDSeg = ptrPacket->pDSeg;
+
+        while (NULL != pDSeg)
+        {
+            memcpy(pktbuf, pDSeg->segLoad, pDSeg->segLen);
+
+            pktbuf += pDSeg->segLen;
+
+            pDSeg = pDSeg->next;
+        }
+
+        pDcpt->pMac->pktAckF(ptrPacket, TCPIP_MAC_PKT_ACK_TX_OK, TCPIP_THIS_MODULE_ID);
+
+        status = WDRV_WINC_EthernetSendPacket(handle, payLoadPtr, pktLen);
+
+        OSAL_Free(payLoadPtr);
+
+        if (WDRV_WINC_STATUS_OK != status)
+        {
+            WDRV_DBG_TRACE_PRINT("Error sending multi-segment packet\r\n");
+            return TCPIP_MAC_RES_PACKET_ERR;
+        }
+    }
+
+    return TCPIP_MAC_RES_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_PACKET* WDRV_WINC_MACPacketRx
+    (
+        DRV_HANDLE handle,
+        TCPIP_MAC_RES* pRes,
+        const TCPIP_MAC_PACKET_RX_STAT** ppPktStat
+    )
+
+  Summary:
+    Retrieve an Ethernet frame.
+
+  Description:
+    Called by the TCP/IP to retrieve the next received Ethernet frame.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_PACKET* WDRV_WINC_MACPacketRx
+(
+    DRV_HANDLE handle,
+    TCPIP_MAC_RES* pRes,
+    const TCPIP_MAC_PACKET_RX_STAT** ppPktStat
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    TCPIP_MAC_PACKET* ptrPacket;
+
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pMac))
+    {
+        return NULL;
+    }
+
+    ptrPacket = (TCPIP_MAC_PACKET*)TCPIP_Helper_ProtectedSingleListHeadRemove(&pDcpt->pMac->ethRxPktList);
+
+    if (NULL != ptrPacket)
+    {
+#ifdef WDRV_WINC_MAC_RX_PKT_INSPECT_HOOK
+        WDRV_WINC_MAC_RX_PKT_INSPECT_HOOK(ptrPacket);
+#endif
+        ptrPacket->next = NULL;
+    }
+
+    return ptrPacket;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_RES WDRV_WINC_MACProcess(DRV_HANDLE handle)
+
+  Summary:
+    Regular update to MAC state machine.
+
+  Description:
+    Called by the TCP/IP to update the internal state machine.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_RES WDRV_WINC_MACProcess(DRV_HANDLE handle)
+{
+    if (DRV_HANDLE_INVALID == handle)
+    {
+        return TCPIP_MAC_RES_OP_ERR;
+    }
+
+    return TCPIP_MAC_RES_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_RES WDRV_WINC_MACStatisticsGet
+    (
+        DRV_HANDLE handle,
+        TCPIP_MAC_RX_STATISTICS* pRxStatistics,
+        TCPIP_MAC_TX_STATISTICS* pTxStatistics
+    )
+
+  Summary:
+    Return statistics.
+
+  Description:
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_RES WDRV_WINC_MACStatisticsGet
+(
+    DRV_HANDLE handle,
+    TCPIP_MAC_RX_STATISTICS* pRxStatistics,
+    TCPIP_MAC_TX_STATISTICS* pTxStatistics
+)
+{
+    if (DRV_HANDLE_INVALID == handle)
+    {
+        return TCPIP_MAC_RES_OP_ERR;
+    }
+
+    if (NULL != pRxStatistics)
+    {
+        memset(pRxStatistics, 0, sizeof(TCPIP_MAC_RX_STATISTICS));
+    }
+
+    if (NULL != pTxStatistics)
+    {
+        memset(pTxStatistics, 0, sizeof(TCPIP_MAC_TX_STATISTICS));
+    }
+
+    return TCPIP_MAC_RES_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_RES WDRV_WINC_MACParametersGet
+    (
+        DRV_HANDLE handle,
+        TCPIP_MAC_PARAMETERS* pMacParams
+    )
+
+  Summary:
+    Retrieve MAC parameter.
+
+  Description:
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_RES WDRV_WINC_MACParametersGet
+(
+    DRV_HANDLE handle,
+    TCPIP_MAC_PARAMETERS* pMacParams
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+
+    /* Ensure the driver handle and user pointer is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pMacParams))
+    {
+        return TCPIP_MAC_RES_IS_BUSY;
+    }
+
+    if (SYS_STATUS_READY == pDcpt->sysStat)
+    {
+        if (NULL != pMacParams)
+        {
+            WDRV_WINC_EthernetAddressGet(handle, pMacParams->ifPhyAddress.v);
+
+            pMacParams->processFlags = (TCPIP_MAC_PROCESS_FLAG_RX | TCPIP_MAC_PROCESS_FLAG_TX);
+            pMacParams->macType = TCPIP_MAC_TYPE_WLAN;
+            pMacParams->linkMtu = TCPIP_MAC_LINK_MTU_WLAN;
+        }
+
+        return TCPIP_MAC_RES_OK;
+    }
+
+    return TCPIP_MAC_RES_IS_BUSY;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_RES WDRV_WINC_MACRegisterStatisticsGet
+    (
+        DRV_HANDLE handle,
+        TCPIP_MAC_STATISTICS_REG_ENTRY* pRegEntries,
+        int nEntries,
+        int* pHwEntries
+    )
+
+  Summary:
+
+  Description:
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_RES WDRV_WINC_MACRegisterStatisticsGet
+(
+    DRV_HANDLE handle,
+    TCPIP_MAC_STATISTICS_REG_ENTRY* pRegEntries,
+    int nEntries,
+    int* pHwEntries
+)
+{
+    return TCPIP_MAC_RES_OP_ERR;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    size_t WDRV_WINC_MACConfigGet
+    (
+        DRV_HANDLE handle,
+        void* configBuff,
+        size_t buffSize,
+        size_t* pConfigSize
+    )
+
+  Summary:
+
+  Description:
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+size_t WDRV_WINC_MACConfigGet
+(
+    DRV_HANDLE handle,
+    void* configBuff,
+    size_t buffSize,
+    size_t* pConfigSize
+)
+{
+    if (NULL != pConfigSize)
+    {
+        *pConfigSize = sizeof(TCPIP_MODULE_MAC_WINC_CONFIG);
+    }
+
+    if ((NULL != configBuff) && (buffSize >= sizeof(TCPIP_MODULE_MAC_WINC_CONFIG)))
+    {
+        return sizeof(TCPIP_MODULE_MAC_WINC_CONFIG);
+    }
+
+    return 0;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_MACEventMaskSet
+    (
+        DRV_HANDLE handle,
+        TCPIP_MAC_EVENT macEvents,
+        bool enable
+    )
+
+  Summary:
+    Set or clear the event mask.
+
+  Description:
+    Sets or clears particular events within the event mask.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+bool WDRV_WINC_MACEventMaskSet
+(
+    DRV_HANDLE handle,
+    TCPIP_MAC_EVENT macEvents,
+    bool enable
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pMac))
+    {
+        return false;
+    }
+
+    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->eventSemaphore, OSAL_WAIT_FOREVER))
+    {
+        if (true == enable)
+        {
+            pDcpt->pMac->eventMask |= macEvents;
+        }
+        else
+        {
+            pDcpt->pMac->eventMask &= ~macEvents;
+        }
+
+        OSAL_SEM_Post(&pDcpt->pMac->eventSemaphore);
+
+        return true;
+    }
+    else
+    {
+        WDRV_DBG_ERROR_PRINT("Event mask failed to lock event semaphore\r\n");
+
+        return false;
+    }
+}
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_MACEventAcknowledge(DRV_HANDLE handle, TCPIP_MAC_EVENT macEvents)
+
+  Summary:
+    Acknowledge an event.
+
+  Description:
+    Indicates that certain events are to be acknowledged and cleared.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+bool WDRV_WINC_MACEventAcknowledge(DRV_HANDLE handle, TCPIP_MAC_EVENT macEvents)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pMac))
+    {
+        return false;
+    }
+
+    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->eventSemaphore, OSAL_WAIT_FOREVER))
+    {
+        pDcpt->pMac->events &= ~macEvents;
+        OSAL_SEM_Post(&pDcpt->pMac->eventSemaphore);
+
+        return true;
+    }
+    else
+    {
+        WDRV_DBG_ERROR_PRINT("Event ACK failed to lock event semaphore\r\n");
+
+        return false;
+    }
+}
+
+//*******************************************************************************
+/*
+  Function:
+    TCPIP_MAC_EVENT WDRV_WINC_MACEventPendingGet(DRV_HANDLE handle)
+
+  Summary:
+    Retrieve the current events.
+
+  Description:
+    Returns the current event state.
+
+  Remarks:
+    See wdrv_winc_mac.h for usage information.
+
+*/
+
+TCPIP_MAC_EVENT WDRV_WINC_MACEventPendingGet(DRV_HANDLE handle)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    TCPIP_MAC_EVENT events;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pMac))
+    {
+        return 0;
+    }
+
+    if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&pDcpt->pMac->eventSemaphore, OSAL_WAIT_FOREVER))
+    {
+        events = pDcpt->pMac->events;
+        OSAL_SEM_Post(&pDcpt->pMac->eventSemaphore);
+
+        return events;
+    }
+    else
+    {
+        WDRV_DBG_ERROR_PRINT("Event get failed to lock event semaphore\r\n");
+
+        return TCPIP_MAC_EV_NONE;
+    }
+}
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -1566,7 +3027,7 @@ WDRV_WINC_STATUS WDRV_WINC_MulticastMACFilterAdd
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pEthAddress))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pEthAddress))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -1610,7 +3071,7 @@ WDRV_WINC_STATUS WDRV_WINC_MulticastMACFilterRemove
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pEthAddress))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pEthAddress))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -1653,13 +3114,13 @@ WDRV_WINC_STATUS WDRV_WINC_EthernetAddressGet
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pEthAddress))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pEthAddress))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
 
     /* Copy the WINC MAC address to caller buffer. */
-    memcpy(pEthAddress, pDcpt->ethAddress, 6);
+    memcpy(pEthAddress, pDcpt->pCtrl->ethAddress, 6);
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -1685,17 +3146,17 @@ WDRV_WINC_OP_MODE WDRV_WINC_OperatingModeGet(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_OP_MODE_UNKNOWN;
     }
 
-    if (false == pDcpt->isAP)
+    if (false == pDcpt->pCtrl->isAP)
     {
         /* WINC is acting as a STA. */
         return WDRV_WINC_OP_MODE_STA;
     }
-    else if (false == pDcpt->isProvisioning)
+    else if (false == pDcpt->pCtrl->isProvisioning)
     {
         /* WINC is acting as an AP. */
         return WDRV_WINC_OP_MODE_AP;
@@ -1730,7 +3191,7 @@ WDRV_WINC_STATUS WDRV_WINC_UserHandleSet(DRV_HANDLE handle, uintptr_t userHandle
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -1741,7 +3202,7 @@ WDRV_WINC_STATUS WDRV_WINC_UserHandleSet(DRV_HANDLE handle, uintptr_t userHandle
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
-    pDcpt->userHandle = userHandle;
+    pDcpt->pCtrl->userHandle = userHandle;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -1768,7 +3229,7 @@ uintptr_t WDRV_WINC_UserHandleGet(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return 0;
     }
@@ -1779,7 +3240,7 @@ uintptr_t WDRV_WINC_UserHandleGet(DRV_HANDLE handle)
         return 0;
     }
 
-    return pDcpt->userHandle;
+    return pDcpt->pCtrl->userHandle;
 }
 
 //*******************************************************************************
@@ -1811,7 +3272,7 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDriverVersionGet
     const WDRV_WINC_DCPT *const pDcpt = (const WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pDriverVersion))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDriverVersion))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -1875,7 +3336,7 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDeviceFirmwareVersionGet
     tstrM2mRev info;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pFirmwareVersion))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pFirmwareVersion))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -1947,7 +3408,7 @@ uint32_t WDRV_WINC_InfoDeviceIDGet(DRV_HANDLE handle)
     const WDRV_WINC_DCPT *const pDcpt = (const WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return 0;
     }
@@ -1958,7 +3419,11 @@ uint32_t WDRV_WINC_InfoDeviceIDGet(DRV_HANDLE handle)
         return 0;
     }
 
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+    return winc_chip_get_id();
+#else
     return m2m_wifi_get_chipId();
+#endif
 }
 
 //*******************************************************************************
@@ -1989,7 +3454,7 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDeviceMACAddressGet(DRV_HANDLE handle,
     const WDRV_WINC_DCPT *const pDcpt = (const WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pMACAddress))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pMACAddress))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -2056,7 +3521,7 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDeviceNameSet
     const WDRV_WINC_DCPT *const pDcpt = (const WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pDeviceName))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDeviceName))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -2098,15 +3563,15 @@ WDRV_WINC_STATUS WDRV_WINC_GainTableIndexSet(DRV_HANDLE handle, uint8_t index)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
-        return 0;
+        return WDRV_WINC_STATUS_INVALID_ARG;
     }
 
     /* Ensure the driver instance has been opened for use. */
     if (false == pDcpt->isOpen)
     {
-        return 0;
+        return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
 #if defined(WDRV_WINC_DEVICE_WINC1500)
@@ -2128,6 +3593,87 @@ WDRV_WINC_STATUS WDRV_WINC_GainTableIndexSet(DRV_HANDLE handle, uint8_t index)
 //*******************************************************************************
 /*
   Function:
+    WDRV_WINC_STATUS WDRV_WINC_AutoRateSelectRate
+    (
+        DRV_HANDLE handle,
+        bool autoSel,
+        WDRV_WINC_DATA_RATE rate
+    )
+
+  Summary:
+    Sets the auto rate transmit rate.
+
+  Description:
+    Sets the auto rate transmit rate.
+
+  Remarks:
+    See wdrv_winc.h for usage information.
+
+*/
+
+#ifdef WDRV_WINC_DEVICE_WINC1500
+WDRV_WINC_STATUS WDRV_WINC_AutoRateSelectTransmitRate
+(
+    DRV_HANDLE handle,
+    bool autoSel,
+    WDRV_WINC_DATA_RATE rate
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    tstrConfAutoRate confAutoRate;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    if (rate > WDRV_WINC_DATA_RATE_MCS_7)
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    confAutoRate.u16ArMaxRecoveryFailThreshold  = 5;
+    confAutoRate.u16ArMinRecoveryFailThreshold  = 1;
+    confAutoRate.enuWlanTxRate                  = TX_RATE_AUTO;
+    confAutoRate.enuArInitialRateSel            = TX_RATE_AUTO;
+    confAutoRate.u8ArEnoughTxThreshold          = 10;
+    confAutoRate.u8ArSuccessTXThreshold         = 5;
+    confAutoRate.u8ArFailTxThreshold            = 3;
+
+    if (true == autoSel)
+    {
+        confAutoRate.enuWlanTxRate       = TX_RATE_AUTO;
+        confAutoRate.enuArInitialRateSel = arRateTranslateTable[rate];
+    }
+    else if (WDRV_WINC_DATA_RATE_ANY != rate)
+    {
+        confAutoRate.enuWlanTxRate = arRateTranslateTable[rate];
+    }
+    else
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    if (M2M_SUCCESS != m2m_wifi_conf_auto_rate(&confAutoRate))
+    {
+        return WDRV_WINC_STATUS_REQUEST_ERROR;
+    }
+
+    return WDRV_WINC_STATUS_OK;
+}
+
+#endif
+
+//*******************************************************************************
+/*
+  Function:
     void WDRV_WINC_ISR(void);
 
   Summary:
@@ -2144,7 +3690,17 @@ WDRV_WINC_STATUS WDRV_WINC_GainTableIndexSet(DRV_HANDLE handle, uint8_t index)
 
 void WDRV_WINC_ISR(void)
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor;
+    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
 
-    OSAL_SEM_PostISR(&pDcpt->isrSemaphore);
+    if (NULL == pDcpt->pCtrl)
+    {
+        return;
+    }
+
+    if (false == pDcpt->isInit)
+    {
+        return;
+    }
+
+    OSAL_SEM_PostISR(&pDcpt->pCtrl->drvEventSemaphore);
 }

@@ -80,7 +80,7 @@ SYS_CMD_Tasks();
 
 
     /* Maintain Device Drivers */
-    WDRV_WINC_Tasks(sysObj.drvWifiWinc); 
+    WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
 
 

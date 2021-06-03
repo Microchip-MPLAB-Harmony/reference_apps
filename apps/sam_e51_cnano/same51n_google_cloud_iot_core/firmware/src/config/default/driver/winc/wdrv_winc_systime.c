@@ -113,7 +113,7 @@ WDRV_WINC_STATUS WDRV_WINC_SystemTimeSNTPClientEnable(DRV_HANDLE handle,
 #endif
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -174,7 +174,7 @@ WDRV_WINC_STATUS WDRV_WINC_SystemTimeSNTPClientDisable(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -206,7 +206,7 @@ WDRV_WINC_STATUS WDRV_WINC_SystemTimeSetCurrent(DRV_HANDLE handle, uint32_t curT
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -235,7 +235,7 @@ WDRV_WINC_STATUS WDRV_WINC_SystemTimeGetCurrent(DRV_HANDLE handle,
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -246,7 +246,7 @@ WDRV_WINC_STATUS WDRV_WINC_SystemTimeGetCurrent(DRV_HANDLE handle,
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
-    pDcpt->pfSystemTimeGetCurrentCB = pfGetCurrentCallback;
+    pDcpt->pCtrl->pfSystemTimeGetCurrentCB = pfGetCurrentCallback;
 
     if (M2M_SUCCESS != m2m_wifi_get_system_time())
     {

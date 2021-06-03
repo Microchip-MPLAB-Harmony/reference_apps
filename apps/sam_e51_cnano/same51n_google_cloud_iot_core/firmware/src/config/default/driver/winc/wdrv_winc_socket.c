@@ -46,7 +46,9 @@
 #include "wdrv_winc.h"
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_socket.h"
+#ifndef WDRV_WINC_DEVICE_LITE_DRIVER
 #include "m2m_ota.h"
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -100,10 +102,10 @@ static void _WDRV_WINC_ICMPEchoResponseCallback
     {
         WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
-        if (NULL != pDcpt->pfICMPEchoResponseCB)
+        if (NULL != pDcpt->pCtrl->pfICMPEchoResponseCB)
         {
             /* Call ICMP echo response callback if present. */
-            pDcpt->pfICMPEchoResponseCB(handle, ipAddress, rtt, errorCode);
+            pDcpt->pCtrl->pfICMPEchoResponseCB(handle, ipAddress, rtt, errorCode);
         }
     }
 }
@@ -146,7 +148,7 @@ WDRV_WINC_STATUS WDRV_WINC_IPAddressSet
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -158,15 +160,15 @@ WDRV_WINC_STATUS WDRV_WINC_IPAddressSet
     }
 
     /* Ensure WINC is not connected. */
-    if (true == pDcpt->isConnected)
+    if (true == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     /* Set IP address details. */
-    pDcpt->ipAddress = ipAddress;
-    pDcpt->netMask   = netMask;
-    pDcpt->useDHCP   = false;
+    pDcpt->pCtrl->ipAddress = ipAddress;
+    pDcpt->pCtrl->netMask   = netMask;
+    pDcpt->pCtrl->useDHCP   = false;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -192,18 +194,18 @@ uint32_t WDRV_WINC_IPAddressGet(DRV_HANDLE handle)
     const WDRV_WINC_DCPT *const pDcpt = (const WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return 0;
     }
 
     /* Ensure driver is open and has obtained an IP address. */
-    if ((false == pDcpt->isOpen) || (false == pDcpt->haveIPAddress))
+    if ((false == pDcpt->isOpen) || (false == pDcpt->pCtrl->haveIPAddress))
     {
         return 0;
     }
 
-    return pDcpt->ipAddress;
+    return pDcpt->pCtrl->ipAddress;
 }
 
 //*******************************************************************************
@@ -236,7 +238,7 @@ WDRV_WINC_STATUS WDRV_WINC_IPDNSServerAddressSet
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -248,14 +250,14 @@ WDRV_WINC_STATUS WDRV_WINC_IPDNSServerAddressSet
     }
 
     /* Ensure WINC is not connected. */
-    if (true == pDcpt->isConnected)
+    if (true == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     /* Set DNS server address and turn off DHCP. */
-    pDcpt->dnsServerAddress = dnsServerAddress;
-    pDcpt->useDHCP = false;
+    pDcpt->pCtrl->dnsServerAddress = dnsServerAddress;
+    pDcpt->pCtrl->useDHCP = false;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -290,7 +292,7 @@ WDRV_WINC_STATUS WDRV_WINC_IPDefaultGatewaySet
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -302,14 +304,14 @@ WDRV_WINC_STATUS WDRV_WINC_IPDefaultGatewaySet
     }
 
     /* Ensure WINC is not connected. */
-    if (true == pDcpt->isConnected)
+    if (true == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     /* Set default gateway address and turn off DHCP. */
-    pDcpt->gatewayAddress = gatewayAddress;
-    pDcpt->useDHCP = false;
+    pDcpt->pCtrl->gatewayAddress = gatewayAddress;
+    pDcpt->pCtrl->useDHCP = false;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -345,7 +347,7 @@ WDRV_WINC_STATUS WDRV_WINC_IPUseDHCPSet
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -357,14 +359,14 @@ WDRV_WINC_STATUS WDRV_WINC_IPUseDHCPSet
     }
 
     /* Ensure WINC is not connected. */
-    if (true == pDcpt->isConnected)
+    if (true == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     /* Enable DHCP and set callback. */
-    pDcpt->useDHCP = true;
-    pDcpt->pfDHCPAddressEventCB = pfDHCPAddressEventCallback;
+    pDcpt->pCtrl->useDHCP = true;
+    pDcpt->pCtrl->pfDHCPAddressEventCB = pfDHCPAddressEventCallback;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -390,12 +392,12 @@ bool WDRV_WINC_IPUseDHCPGet(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return false;
     }
 
-    return ((true == pDcpt->useDHCP) || (0 == pDcpt->ipAddress));
+    return ((true == pDcpt->pCtrl->useDHCP) || (0 == pDcpt->pCtrl->ipAddress));
 }
 
 //*******************************************************************************
@@ -430,7 +432,7 @@ WDRV_WINC_STATUS WDRV_WINC_IPDHCPServerConfigure
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -442,10 +444,10 @@ WDRV_WINC_STATUS WDRV_WINC_IPDHCPServerConfigure
     }
 
     /* Set DHCP server address and event callback. */
-    pDcpt->dhcpServerAddress = ipAddress;
-    pDcpt->pfDHCPAddressEventCB = pfDHCPAddressEventCallback;
+    pDcpt->pCtrl->dhcpServerAddress = ipAddress;
+    pDcpt->pCtrl->pfDHCPAddressEventCB = pfDHCPAddressEventCallback;
 #ifdef WDRV_WINC_DEVICE_SOFT_AP_EXT
-    pDcpt->netMask = netMask;
+    pDcpt->pCtrl->netMask = netMask;
 #endif
 
     return WDRV_WINC_STATUS_OK;
@@ -471,13 +473,19 @@ bool WDRV_WINC_IPLinkActive(DRV_HANDLE handle)
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
     /* Ensure the driver instance has been opened for use. */
     if (false == pDcpt->isOpen)
     {
         return false;
     }
 
-    return pDcpt->haveIPAddress;
+    return pDcpt->pCtrl->haveIPAddress;
 }
 
 //*******************************************************************************
@@ -512,7 +520,7 @@ WDRV_WINC_STATUS WDRV_WINC_ICMPEchoRequest
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
-    if ((NULL == pDcpt) || (0 == ipAddress))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (0 == ipAddress))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -529,7 +537,7 @@ WDRV_WINC_STATUS WDRV_WINC_ICMPEchoRequest
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
-    pDcpt->pfICMPEchoResponseCB = pfICMPEchoResponseCB;
+    pDcpt->pCtrl->pfICMPEchoResponseCB = pfICMPEchoResponseCB;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -541,7 +549,7 @@ WDRV_WINC_STATUS WDRV_WINC_ICMPEchoRequest
     (
         DRV_HANDLE handle,
         char *pURL,
-        WDRV_WINC_STATUS_CALLBACK pfUpdateStatusCB
+        const WDRV_WINC_OTA_STATUS_CALLBACK pfUpdateStatusCB
     )
 
   Summary:
@@ -560,13 +568,13 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateFromURL
 (
     DRV_HANDLE handle,
     char *pURL,
-    const WDRV_WINC_STATUS_CALLBACK pfUpdateStatusCB
+    const WDRV_WINC_OTA_STATUS_CALLBACK pfUpdateStatusCB
 )
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pURL))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pURL))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -578,20 +586,20 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateFromURL
     }
 
     /* Ensure an update isn't in progress. */
-    if (true == pDcpt->updateInProgress)
+    if (true == pDcpt->pCtrl->updateInProgress)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     /* Start an OTA update. */
-    if (M2M_SUCCESS != m2m_ota_start_update((uint8_t*)pURL))
+    if (M2M_SUCCESS != m2m_ota_start_update((WDRV_WINC_DEVICE_URL_TYPE*)pURL))
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     /* Set in progress flag and callback. */
-    pDcpt->updateInProgress      = true;
-    pDcpt->pfOTADownloadStatusCB = pfUpdateStatusCB;
+    pDcpt->pCtrl->updateInProgress      = true;
+    pDcpt->pCtrl->pfOTADownloadStatusCB = pfUpdateStatusCB;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -617,7 +625,7 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle)
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -629,7 +637,7 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle)
     }
 
     /* Ensure an update isn't in progress. */
-    if (false == pDcpt->updateInProgress)
+    if (false == pDcpt->pCtrl->updateInProgress)
     {
         return WDRV_WINC_STATUS_OK;
     }
@@ -646,10 +654,62 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle)
 //*******************************************************************************
 /*
   Function:
+    WDRV_WINC_STATUS WDRV_WINC_RollbackActiveFirmwareImage
+    (
+        DRV_HANDLE handle,
+        const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+    );
+
+  Summary:
+    Rolls back to a previous version.
+
+  Description:
+    Requests that the firmware be rolled back to a previous version.
+
+  Remarks:
+    See wdrv_winc_socket.h for usage information.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_RollbackActiveFirmwareImage
+(
+    DRV_HANDLE handle,
+    const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    /* Rollback the OTA. */
+    if (M2M_SUCCESS != m2m_ota_rollback())
+    {
+        return WDRV_WINC_STATUS_REQUEST_ERROR;
+    }
+
+    /* Store callback. */
+    pDcpt->pCtrl->pfSwitchFirmwareStatusCB = pfSwitchFirmwareStatusCB;
+
+    return WDRV_WINC_STATUS_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
     WDRV_WINC_STATUS WDRV_WINC_SwitchActiveFirmwareImage
     (
         DRV_HANDLE handle,
-        const WDRV_WINC_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+        const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
     )
 
   Summary:
@@ -668,15 +728,21 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle)
 WDRV_WINC_STATUS WDRV_WINC_SwitchActiveFirmwareImage
 (
     DRV_HANDLE handle,
-    const WDRV_WINC_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+    const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
 )
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
     /* Switch active firmware partitions. */
@@ -686,7 +752,7 @@ WDRV_WINC_STATUS WDRV_WINC_SwitchActiveFirmwareImage
     }
 
     /* Store callback. */
-    pDcpt->pfSwitchFirmwareStatusCB = pfSwitchFirmwareStatusCB;
+    pDcpt->pCtrl->pfSwitchFirmwareStatusCB = pfSwitchFirmwareStatusCB;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -717,7 +783,7 @@ WDRV_WINC_STATUS WDRV_WINC_SocketRegisterEventCallback
     tpfAppSocketCb pfAppSocketCb
 )
 {
-    if (0 == handle)
+    if (DRV_HANDLE_INVALID == handle)
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -753,7 +819,7 @@ WDRV_WINC_STATUS WDRV_WINC_SocketRegisterResolverCallback
     tpfAppResolveCb pfAppResolveCb
 )
 {
-    if (0 == handle)
+    if (DRV_HANDLE_INVALID == handle)
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }

@@ -61,10 +61,10 @@ void WDRV_WINC_INTInitialize(void)
     EIC_InterruptEnable(WDRV_WINC_EIC_SOURCE);
 #elif defined WDRV_WINC_GPIO_SOURCE
     GPIO_PinInterruptCallbackRegister(WDRV_WINC_GPIO_SOURCE, (GPIO_PIN_CALLBACK)WDRV_WINC_ISR, 0);
-    GPIO_PinInterruptEnable(WDRV_WINC_GPIO_SOURCE);    
+    GPIO_PinInterruptEnable(WDRV_WINC_GPIO_SOURCE);
 #elif defined WDRV_WINC_PIO_SOURCE
-	PIO_PinInterruptCallbackRegister(WDRV_WINC_PIO_SOURCE, (PIO_PIN_CALLBACK)WDRV_WINC_ISR, 0);
-    PIO_PinInterruptEnable(WDRV_WINC_PIO_SOURCE); 
+    PIO_PinInterruptCallbackRegister(WDRV_WINC_PIO_SOURCE, (PIO_PIN_CALLBACK)WDRV_WINC_ISR, 0);
+    PIO_PinInterruptEnable(WDRV_WINC_PIO_SOURCE);
 #else
     /* disable the external interrupt */
     SYS_INT_SourceDisable(WDRV_INT_SOURCE);
@@ -86,7 +86,7 @@ void WDRV_WINC_INTDeinitialize(void)
 #ifdef WDRV_WINC_EIC_SOURCE
     EIC_InterruptEnable(WDRV_WINC_EIC_SOURCE);
 #elif defined WDRV_WINC_GPIO_SOURCE
-    GPIO_PinInterruptEnable(WDRV_WINC_GPIO_SOURCE);     
+    GPIO_PinInterruptEnable(WDRV_WINC_GPIO_SOURCE);
 #elif defined WDRV_WINC_PIO_SOURCE
     PIO_PinInterruptEnable(WDRV_WINC_PIO_SOURCE);
 #else

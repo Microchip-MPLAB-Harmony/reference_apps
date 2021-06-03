@@ -52,7 +52,9 @@
 #include <stdint.h>
 
 #include "wdrv_winc_common.h"
+#ifndef WDRV_WINC_DEVICE_LITE_DRIVER
 #include "m2m_ota.h"
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -75,6 +77,9 @@
 
 typedef struct
 {
+    /* Semaphore to protect access to this structure. */
+    OSAL_SEM_HANDLE_TYPE hfdSemaphore;
+
     /* File handle received from WINC. */
     uint8_t         handle;
 
@@ -98,6 +103,9 @@ typedef struct
 
     /* Pointer to current write buffer for read operation. */
     uint8_t         *pBuffer;
+
+    /* Remaining space in buffer. */
+    uint32_t        bufferSpace;
 } WDRV_WINC_HOST_FILE_DCPT;
 
 // *****************************************************************************
@@ -126,7 +134,10 @@ typedef enum
     WDRV_WINC_HOST_FILE_OP_READ,
 
     /* File erase operation. */
-    WDRV_WINC_HOST_FILE_OP_ERASE
+    WDRV_WINC_HOST_FILE_OP_ERASE,
+
+    /* File read buffer is full. */
+    WDRV_WINC_HOST_FILE_OP_READ_BUF_FULL
 } WDRV_WINC_HOST_FILE_OPERATION;
 
 // *****************************************************************************
@@ -245,10 +256,11 @@ typedef void (*WDRV_WINC_HOST_FILE_STATUS_CALLBACK)
     pfHostFileGetCB - Pointer to the callback function to receive the status.
 
   Returns:
-    WDRV_WINC_STATUS_OK             - The information has been returned.
-    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
-    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
-    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+    WDRV_WINC_STATUS_OK                  - The information has been returned.
+    WDRV_WINC_STATUS_NOT_OPEN            - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG         - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR       - The request to the WINC was rejected.
+    WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR - Unable to lock the resource.
 
   Remarks:
     None.
@@ -270,6 +282,7 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileDownload
         DRV_HANDLE handle,
         WDRV_WINC_HOST_FILE_HANDLE fileHandle,
         void *pBuffer,
+        uint32_t bufferSize,
         uint32_t offset,
         uint32_t size,
         const WDRV_WINC_HOST_FILE_STATUS_CALLBACK pfHostFileReadStatusCB
@@ -291,15 +304,17 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileDownload
     handle                  - Client handle obtained by a call to WDRV_WINC_Open.
     fileHandle              - File handle obtained by call to WDRV_WINC_HostFileDownload
     pBuffer                 - Pointer to buffer to receive data from file.
+    bufferSize              - Size of buffer pointed to by pBuffer.
     offset                  - Offset into the file to begin the read operation from.
     size                    - Size of read operation.
     pfHostFileReadStatusCB  - Pointer to callback function to receive status.
 
   Returns:
-    WDRV_WINC_STATUS_OK             - The information has been returned.
-    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
-    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
-    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+    WDRV_WINC_STATUS_OK                  - The information has been returned.
+    WDRV_WINC_STATUS_NOT_OPEN            - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG         - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR       - The request to the WINC was rejected.
+    WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR - Unable to lock the resource.
 
   Remarks:
     None.
@@ -311,6 +326,7 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileRead
     DRV_HANDLE handle,
     WDRV_WINC_HOST_FILE_HANDLE fileHandle,
     void *pBuffer,
+    uint32_t bufferSize,
     uint32_t offset,
     uint32_t size,
     const WDRV_WINC_HOST_FILE_STATUS_CALLBACK pfHostFileReadStatusCB
@@ -344,10 +360,11 @@ WDRV_WINC_STATUS WDRV_WINC_HostFileRead
     pfHostFileEraseStatusCB - Pointer to callback function to receive status.
 
   Returns:
-    WDRV_WINC_STATUS_OK             - The information has been returned.
-    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
-    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
-    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+    WDRV_WINC_STATUS_OK                  - The information has been returned.
+    WDRV_WINC_STATUS_NOT_OPEN            - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG         - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR       - The request to the WINC was rejected.
+    WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR - Unable to lock the resource.
 
   Remarks:
     None.
@@ -425,5 +442,49 @@ WDRV_WINC_HOST_FILE_HANDLE WDRV_WINC_HostFileFindByID
 */
 
 uint32_t WDRV_WINC_HostFileGetSize(const WDRV_WINC_HOST_FILE_HANDLE fileHandle);
+
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_HostFileUpdateReadBuffer
+    (
+        const WDRV_WINC_HOST_FILE_HANDLE fileHandle,
+        void *pBuffer,
+        uint32_t bufferSize
+    );
+
+  Summary:
+    Update the read buffer.
+
+  Description:
+    Update the buffer associated with a read file operation.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+    WDRV_WINC_HostFileDownload should have been called to obtain a valid file handle.
+
+  Parameters:
+    fileHandle              - File handle obtained by call to WDRV_WINC_HostFileDownload
+    pBuffer                 - Pointer to buffer to receive data from file.
+    bufferSize              - Size of buffer pointed to by pBuffer.
+
+  Returns:
+    WDRV_WINC_STATUS_OK                  - The information has been returned.
+    WDRV_WINC_STATUS_INVALID_ARG         - The parameters were incorrect.
+    WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR - Unable to lock the resource.
+
+  Remarks:
+    None.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_HostFileUpdateReadBuffer
+(
+    const WDRV_WINC_HOST_FILE_HANDLE fileHandle,
+    void *pBuffer,
+    uint32_t bufferSize
+);
 
 #endif /* _WDRV_WINC_HOST_FILE_H */

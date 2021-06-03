@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -428,16 +428,15 @@ int8_t spi_flash_enable(uint8_t enable)
         if(s8Ret != M2M_SUCCESS) {
             goto ERR1;
         }
-        if(enable) {
             /* GPIO15/16/17/18 */
             u32Val &= ~((0x7777ul) << 12);
+		if(enable) {
             u32Val |= ((0x1111ul) << 12);
             nm_write_reg(0x1410, u32Val);
             spi_flash_leave_low_power_mode();
         } else {
             spi_flash_enter_low_power_mode();
             /* Disable pinmux to SPI flash to minimize leakage. */
-            u32Val &= ~((0x7777ul) << 12);
             u32Val |= ((0x0010ul) << 12);
             nm_write_reg(0x1410, u32Val);
         }

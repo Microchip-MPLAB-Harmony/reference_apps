@@ -54,6 +54,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <inttypes.h>
 
 #include "configuration.h"
 #include "definitions.h"
@@ -64,6 +65,7 @@
 #endif
 // DOM-IGNORE-END
 
+#ifndef WDRV_WINC_DEVICE_USE_SYS_DEBUG
 // *****************************************************************************
 /*  Debug Callback
 
@@ -153,6 +155,27 @@ typedef void (*WDRV_WINC_DEBUG_PRINT_CALLBACK)(const char*, ...);
 
 // Reference debug output channel printf-like function.
 extern WDRV_WINC_DEBUG_PRINT_CALLBACK pfWINCDebugPrintCb;
+#else
+#define WDRV_DBG_VERBOSE_PRINT(...)         do { _SYS_DEBUG_PRINT(SYS_ERROR_DEBUG, __VA_ARGS__); } while (0)
+#define WDRV_DBG_TRACE_PRINT(...)           do { _SYS_DEBUG_PRINT(SYS_ERROR_INFO, __VA_ARGS__); } while (0)
+#define WDRV_DBG_INFORM_PRINT(...)          do { _SYS_DEBUG_PRINT(SYS_ERROR_WARNING, __VA_ARGS__); } while (0)
+#define WDRV_DBG_ERROR_PRINT(...)           do { _SYS_DEBUG_PRINT(SYS_ERROR_ERROR, __VA_ARGS__); } while (0)
+
+#endif
+
+// Function to receive MAC RX packets for inspection
+//#define WDRV_WINC_MAC_RX_PKT_INSPECT_HOOK
+
+// Function to receive MAC TX packets for inspection
+//#define WDRV_WINC_MAC_TX_PKT_INSPECT_HOOK
+
+#ifdef WDRV_WINC_MAC_RX_PKT_INSPECT_HOOK
+void WDRV_WINC_MAC_RX_PKT_INSPECT_HOOK(const TCPIP_MAC_PACKET *const ptrPacket);
+#endif
+
+#ifdef WDRV_WINC_MAC_TX_PKT_INSPECT_HOOK
+void WDRV_WINC_MAC_TX_PKT_INSPECT_HOOK(const TCPIP_MAC_PACKET *const ptrPacket);
+#endif
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus

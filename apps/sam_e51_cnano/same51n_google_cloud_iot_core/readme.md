@@ -81,16 +81,16 @@ Below is the Index of topics in this document.
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)            
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
- - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
- - [MPLAB Harmony v3 "wireless" repo v3.3.1](https://github.com/Microchip-MPLAB-Harmony/wireless/releases/tag/v3.3.1)  
- - ["cryptoauthlib" repo v3.3.0](https://github.com/MicrochipTech/cryptoauthlib/releases/tag/v3.3.0)
- - [MPLAB Harmony "crypto" repo v3.6.3](https://github.com/Microchip-MPLAB-Harmony/crypto/releases/tag/v3.6.3)
- - MPLAB Harmony 3 Launcher Plugin v3.6.2  
- - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
+ - [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)  
+ - [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.1)            
+ - [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)  
+ - [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)
+ - [MPLAB Harmony v3 "wireless_wifi" repo v3.4.1](https://github.com/Microchip-MPLAB-Harmony/wireless/releases/tag/v3.4.1)  
+ - ["cryptoauthlib" repo v3.3.1](https://github.com/MicrochipTech/cryptoauthlib/releases/tag/v3.3.1)
+ - [MPLAB Harmony "crypto" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/crypto/releases/tag/v3.7.1)  
+ - MPLAB Harmony 3 Launcher Plugin v3.6.4  
+ - [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
+ - [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)   
  - Python 3.8   
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>  
@@ -253,8 +253,6 @@ Fetching_data_from_Google_Cloud_and_displaying_on_UI
  <img src = "images/output.png" align="middle">
 
 ## Comments:
-- The application “sam_e51_cnano/same51n_google_cloud_iot_core is developed by applying a patch (available in folder same51n_google_cloud_iot_core/firmware/app_patch”) to MPLAB Harmony v3. If you need to reconfigure or regenerate this demo using MHC, please refer the “Notes.txt” file under “same51n_google_cloud_iot_core/firmware/app_patch” folder.  
-The patch is applied due to a known issue in the application. This issue is expected to be fixed in a future release of "reference_apps" repository.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  

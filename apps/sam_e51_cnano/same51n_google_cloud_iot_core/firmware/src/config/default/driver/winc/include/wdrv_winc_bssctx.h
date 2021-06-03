@@ -82,9 +82,9 @@ typedef struct
     WDRV_WINC_MAC_ADDR bssid;
 #endif
     /* Current channel of BSS. */
-    uint8_t channel;
+    WDRV_WINC_CHANNEL_ID channel;
 
-    /* Flag indicating if SSID should be cloaked. */
+    /* Flag indicating if SSID is cloaked. */
     bool cloaked;
 } WDRV_WINC_BSS_CONTEXT;
 
@@ -252,7 +252,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSCtxSetBSSID
     WDRV_WINC_STATUS WDRV_WINC_BSSCtxSetChannel
     (
         WDRV_WINC_BSS_CONTEXT *const pBSSCtx,
-        uint8_t channel
+        WDRV_WINC_CHANNEL_ID channel
     )
 
   Summary:
@@ -274,14 +274,15 @@ WDRV_WINC_STATUS WDRV_WINC_BSSCtxSetBSSID
     WDRV_WINC_STATUS_INVALID_CONTEXT - The BSS context is not valid.
 
   Remarks:
-    channel may be WDRV_WINC_ALL_CHANNELS to represent no fixed channel.
+    channel may be WDRV_WINC_ALL_CHANNELS or WDRV_WINC_CID_ANY to represent no
+      fixed channel.
 
 */
 
 WDRV_WINC_STATUS WDRV_WINC_BSSCtxSetChannel
 (
     WDRV_WINC_BSS_CONTEXT *const pBSSCtx,
-    uint8_t channel
+    WDRV_WINC_CHANNEL_ID channel
 );
 
 //*******************************************************************************

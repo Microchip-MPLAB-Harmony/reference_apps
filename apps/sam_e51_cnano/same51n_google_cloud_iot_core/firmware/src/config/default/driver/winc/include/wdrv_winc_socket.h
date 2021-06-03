@@ -57,7 +57,9 @@
 
 #include "wdrv_winc.h"
 #include "wdrv_winc_httpprovctx.h"
+#ifndef WDRV_WINC_DEVICE_LITE_DRIVER
 #include "socket.h"
+#endif
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
@@ -82,6 +84,7 @@
 
   Remarks:
     None.
+
 */
 
 typedef enum
@@ -101,6 +104,11 @@ typedef enum
     /* The flash is too small for the update. */
     WDRV_WINC_OTA_STATUS_INSUFFICIENT_FLASH = /*DOM-IGNORE-BEGIN*/ OTA_STATUS_INVALID_FLASH_SIZE /*DOM-IGNORE-END*/,
 
+#ifdef WDRV_WINC_DEVICE_OTA_STATUS_EXTENDED
+    /* An OTA operation is already enabled. */
+    WDRV_WINC_OTA_STATUS_ALREADY_ENABLED = /*DOM-IGNORE-BEGIN*/ OTA_STATUS_ALREADY_ENABLED /*DOM-IGNORE-END*/,
+#endif
+
     /* An OTA operation is in progress. */
     WDRV_WINC_OTA_STATUS_BUSY = /*DOM-IGNORE-BEGIN*/ OTA_STATUS_UPDATE_INPROGRESS /*DOM-IGNORE-END*/,
 
@@ -116,6 +124,130 @@ typedef enum
     /* The OTA operation was aborted. */
     WDRV_WINC_OTA_STATUS_ABORTED = /*DOM-IGNORE-BEGIN*/ OTA_STATUS_ABORTED /*DOM-IGNORE-END*/
 } WDRV_WINC_OTA_UPDATE_STATUS;
+
+// *****************************************************************************
+/*  ICMP Echo Status Codes
+
+  Summary:
+    Defines the ICMP echo status codes.
+
+  Description:
+    This enumeration defines the ICMP status supplied by the ICMP echo response
+    callback.
+
+  Remarks:
+    This is only defined for use with the WINC in socket mode.
+
+*/
+
+typedef enum
+{
+    /* The operation completed successfully. */
+    WDRV_WINC_ICMP_ECHO_STATUS_SUCCESS = 0,
+
+    /* ICMP destination unreachable. */
+    WDRV_WINC_ICMP_ECHO_STATUS_UNREACH = 1,
+
+    /* The operation timed out. */
+    WDRV_WINC_ICMP_ECHO_STATUS_TIMEOUT = 2
+} WDRV_WINC_ICMP_ECHO_STATUS;
+
+// *****************************************************************************
+/* ICMP Echo Response Event Handler Function Pointer
+
+  Summary:
+    Pointer to an ICMP echo response event handler function.
+
+  Description:
+    This data type defines a function event handler which is
+    called in response to an ICMP echo request response event.
+
+  Parameters:
+    handle      - Client handle obtained by a call to WDRV_WINC_Open.
+    ipAddress   - IPv4 address.
+    rtt         - The round-trip time.
+    statusCode  - Status code.
+
+  Returns:
+    None.
+
+  Remarks:
+    Only supported with the socket mode WINC driver.
+
+    The status code indicates if the ICMP echo request was successful or not.
+    It may take the form of either:
+
+        PING_ERR_SUCCESS        - The request was successful.
+        PING_ERR_DEST_UNREACH   - The destination was unreachable.
+        PING_ERR_TIMEOUT        - The request timed out.
+
+*/
+
+typedef void (*WDRV_WINC_ICMP_ECHO_RSP_EVENT_HANDLER)
+(
+    DRV_HANDLE handle,
+    uint32_t ipAddress,
+    uint32_t rtt,
+    WDRV_WINC_ICMP_ECHO_STATUS statusCode
+);
+
+// *****************************************************************************
+/* DHCP Address Event Handler Function Pointer
+
+  Summary:
+    Pointer to a DHCP address event handler function.
+
+  Description:
+    This data type defines a function event handler to receive notification
+    of allocation of IP address via DHCP.
+
+  Parameters:
+    handle      - Client handle obtained by a call to WDRV_WINC_Open.
+    ipAddress   - IPv4 address.
+
+  Returns:
+    None.
+
+  Remarks:
+    Only supported with the socket mode WINC driver.
+
+    See WDRV_WINC_IPSetUseDHCP and WDRV_WINC_IPDHCPServerConfigure.
+
+*/
+
+typedef void (*WDRV_WINC_DHCP_ADDRESS_EVENT_HANDLER)
+(
+    DRV_HANDLE handle,
+    uint32_t ipAddress
+);
+
+// *****************************************************************************
+/* OTA Status Callback Function Pointer
+
+  Summary:
+    Pointer to an OTA status callback function.
+
+  Description:
+    This defines an OTA status function callback type which can be passed
+    into certain OTA functions to receive feedback.
+
+  Parameters:
+    handle  - Client handle obtained by a call to WDRV_WINC_Open.
+    status  - A status value.
+
+  Returns:
+    None.
+
+  Remarks:
+    None.
+
+*/
+
+typedef void (*WDRV_WINC_OTA_STATUS_CALLBACK)
+(
+    DRV_HANDLE handle,
+    WDRV_WINC_OTA_UPDATE_STATUS status
+);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -491,7 +623,7 @@ WDRV_WINC_STATUS WDRV_WINC_ICMPEchoRequest
     (
         DRV_HANDLE handle,
         char *pURL,
-        WDRV_WINC_STATUS_CALLBACK pfUpdateStatusCB
+        const WDRV_WINC_OTA_STATUS_CALLBACK pfUpdateStatusCB
     )
 
   Summary:
@@ -526,7 +658,7 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateFromURL
 (
     DRV_HANDLE handle,
     char *pURL,
-    const WDRV_WINC_STATUS_CALLBACK pfUpdateStatusCB
+    const WDRV_WINC_OTA_STATUS_CALLBACK pfUpdateStatusCB
 );
 
 //*******************************************************************************
@@ -564,10 +696,50 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle);
 //*******************************************************************************
 /*
   Function:
+    WDRV_WINC_STATUS WDRV_WINC_RollbackActiveFirmwareImage
+    (
+        DRV_HANDLE handle,
+        const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+    );
+
+  Summary:
+    Rolls back to a previous version.
+
+  Description:
+    Requests that the firmware be rolled back to a previous version.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle                   - Client handle obtained by a call to WDRV_WINC_Open.
+    pfSwitchFirmwareStatusCB - Function callback to receive status updates.
+
+  Returns:
+    WDRV_WINC_STATUS_OK             - The request has been accepted.
+    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+
+  Remarks:
+    None.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_RollbackActiveFirmwareImage
+(
+    DRV_HANDLE handle,
+    const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+);
+
+//*******************************************************************************
+/*
+  Function:
     WDRV_WINC_STATUS WDRV_WINC_SwitchActiveFirmwareImage
     (
         DRV_HANDLE handle,
-        const WDRV_WINC_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+        const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
     )
 
   Summary:
@@ -588,6 +760,7 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle);
 
   Returns:
     WDRV_WINC_STATUS_OK             - The request has been accepted.
+    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
     WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
     WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
 
@@ -599,7 +772,7 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle);
 WDRV_WINC_STATUS WDRV_WINC_SwitchActiveFirmwareImage
 (
     DRV_HANDLE handle,
-    const WDRV_WINC_STATUS_CALLBACK pfSwitchFirmwareStatusCB
+    const WDRV_WINC_OTA_STATUS_CALLBACK pfSwitchFirmwareStatusCB
 );
 
 //*******************************************************************************

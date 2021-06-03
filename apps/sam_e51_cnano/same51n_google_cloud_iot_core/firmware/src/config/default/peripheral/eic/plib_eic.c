@@ -54,6 +54,7 @@
 */
 
 #include "plib_eic.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -62,14 +63,14 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
 	   EIC will be disabled. */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_SWRST_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
     {
@@ -102,13 +103,13 @@ void EIC_Initialize (void)
     
 
     /* External Interrupt Asynchronous Mode enable */
-    EIC_REGS->EIC_ASYNCH = 0x10;
+    EIC_REGS->EIC_ASYNCH = 0x10U;
 
 
 
 
     /* External Interrupt enable*/
-    EIC_REGS->EIC_INTENSET = 0x4010;
+    EIC_REGS->EIC_INTENSET = 0x4010U;
 
     /* Callbacks for enabled interrupts */
     eicCallbackObject[0].eicPinNo = EIC_PIN_MAX;
@@ -128,7 +129,7 @@ void EIC_Initialize (void)
     eicCallbackObject[14].eicPinNo = EIC_PIN_14;
     eicCallbackObject[15].eicPinNo = EIC_PIN_MAX;
     /* Enable the EIC */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_ENABLE_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_ENABLE_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_ENABLE_Msk) == EIC_SYNCBUSY_ENABLE_Msk)
     {

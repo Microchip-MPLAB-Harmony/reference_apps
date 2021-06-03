@@ -49,8 +49,9 @@
 #include "wdrv_winc.h"
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_ssl.h"
+#ifndef WDRV_WINC_DEVICE_LITE_DRIVER
 #include "socket.h"
-#include "m2m_ssl.h"
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -332,14 +333,13 @@ WDRV_WINC_STATUS WDRV_WINC_SSLActiveCipherSuitesSet
 (
     DRV_HANDLE handle,
     WDRV_WINC_CIPHER_SUITE_CONTEXT *pSSLCipherSuiteCtx,
-    WDRV_WINC_SSL_CIPHERSUITELIST_CALLBACK pfSSLListCallback,
-    WDRV_WINC_SSL_REQ_ECC_CALLBACK pfECCREQCallback
+    WDRV_WINC_SSL_CIPHERSUITELIST_CALLBACK pfSSLListCallback
 )
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
 
-    /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pSSLCipherSuiteCtx))
+    /* Ensure the driver handle and user pointer are valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pSSLCipherSuiteCtx))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -350,8 +350,7 @@ WDRV_WINC_STATUS WDRV_WINC_SSLActiveCipherSuitesSet
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
-    pDcpt->pfSSLCipherSuiteListCB = pfSSLListCallback;
-    pDcpt->pfSSLReqECCCB = pfECCREQCallback;
+    pDcpt->pCtrl->pfSSLCipherSuiteListCB = pfSSLListCallback;
 
     /* Set the active cipher suite. */
     if (M2M_SUCCESS != m2m_ssl_set_active_ciphersuites(pSSLCipherSuiteCtx->ciperSuites))
@@ -365,10 +364,59 @@ WDRV_WINC_STATUS WDRV_WINC_SSLActiveCipherSuitesSet
 //*******************************************************************************
 /*
   Function:
+    WDRV_WINC_STATUS WDRV_WINC_SSLECCReqCallbackSet
+    (
+        DRV_HANDLE handle,
+        WDRV_WINC_REQ_ECC_CALLBACK pfECCREQCallback
+    )
+
+  Summary:
+    Set the ECC request callback.
+
+  Description:
+    Registers the ECC request callback with the driver.
+
+  Remarks:
+    See wdrv_winc_ssl.h for usage information.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_SSLECCReqCallbackSet
+(
+    DRV_HANDLE handle,
+    WDRV_WINC_SSL_REQ_ECC_CALLBACK pfECCREQCallback
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
+
+    /* Ensure the driver handle is valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    pDcpt->pCtrl->pfSSLReqECCCB = pfECCREQCallback;
+
+    return WDRV_WINC_STATUS_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
     WDRV_WINC_STATUS WDRV_WINC_SSLECCHandShakeRsp
     (
-        WDRV_WINC_ECC_RSP_INFO eccRsp,
-        uint8_t *pRspDataBuff, 
+        DRV_HANDLE handle,
+        WINC_WDRV_ECC_REQ_TYPE reqType,
+        WINC_WDRV_ECC_STATUS status,
+        const WDRV_WINC_ECC_HANDSHAKE_INFO *const pHandshakeData,
+        const WDRV_WINC_ECDH_INFO *const pECDHRspInfo,
+        const uint8_t *const pRspDataBuff,
         uint16_t rspDataSz
     )
 
@@ -385,24 +433,111 @@ WDRV_WINC_STATUS WDRV_WINC_SSLActiveCipherSuitesSet
 
 WDRV_WINC_STATUS WDRV_WINC_SSLECCHandShakeRsp
 (
-    WDRV_WINC_ECC_RSP_INFO eccRsp,
-    uint8_t *pRspDataBuff, 
+    DRV_HANDLE handle,
+    WINC_WDRV_ECC_REQ_TYPE reqType,
+    WINC_WDRV_ECC_STATUS status,
+    const WDRV_WINC_ECC_HANDSHAKE_INFO *const pHandshakeData,
+    const WDRV_WINC_ECDH_INFO *const pECDHRspInfo,
+    const uint8_t *const pRspDataBuff,
     uint16_t rspDataSz
 )
 {
-    int8_t result = M2M_SUCCESS;
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
+    int8_t result;
     tstrEccReqInfo strECCResp;
-    
-    strECCResp.u16REQ = eccRsp.reqCmd;
-    strECCResp.u16Status = eccRsp.status;
-    strECCResp.u32SeqNo = eccRsp.seqNo;
-    strECCResp.u32UserData = eccRsp.userData;
-    memcpy(&strECCResp.strEcdhREQ, &eccRsp.ecdhRspInfo, sizeof(tstrEcdhReqInfo));
-            
+
+    /* Ensure the driver handle and user pointers are valid. */
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pHandshakeData))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure both data pointer and size are either both set or not. */
+    if (((NULL == pRspDataBuff) || (0 == rspDataSz)) && ((NULL != pRspDataBuff) || (0 != rspDataSz)))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    memset(&strECCResp, 0, sizeof(tstrEccReqInfo));
+
+    strECCResp.u16REQ       = reqType;
+    strECCResp.u32UserData  = pHandshakeData->data[0];
+    strECCResp.u32SeqNo     = pHandshakeData->data[1];
+
+    if (WINC_WDRV_ECC_STATUS_SUCCESS == status)
+    {
+        strECCResp.u16Status = 0;
+    }
+    else
+    {
+        strECCResp.u16Status = 1;
+    }
+
+    switch(reqType)
+    {
+        case WDRV_WINC_ECC_REQ_CLIENT_ECDH:
+        {
+            if (NULL == pECDHRspInfo)
+            {
+                return WDRV_WINC_STATUS_INVALID_ARG;
+            }
+
+            memcpy(&strECCResp.strEcdhREQ.strPubKey.X, &pECDHRspInfo->pubKey.x, ECC_POINT_MAX_SIZE);
+            memcpy(&strECCResp.strEcdhREQ.strPubKey.Y, &pECDHRspInfo->pubKey.y, ECC_POINT_MAX_SIZE);
+            strECCResp.strEcdhREQ.strPubKey.u16Size      = pECDHRspInfo->pubKey.size;
+            strECCResp.strEcdhREQ.strPubKey.u16PrivKeyID = pECDHRspInfo->pubKey.privKeyID;
+
+            memcpy(&strECCResp.strEcdhREQ.au8Key, &pECDHRspInfo->key, ECC_POINT_MAX_SIZE);
+            break;
+        }
+
+        case WDRV_WINC_ECC_REQ_SERVER_ECDH:
+        {
+            if (NULL == pECDHRspInfo)
+            {
+                return WDRV_WINC_STATUS_INVALID_ARG;
+            }
+
+            memcpy(&strECCResp.strEcdhREQ.au8Key, &pECDHRspInfo->key, ECC_POINT_MAX_SIZE);
+            break;
+        }
+
+        case WDRV_WINC_ECC_REQ_GEN_KEY:
+        {
+            if (NULL == pECDHRspInfo)
+            {
+                return WDRV_WINC_STATUS_INVALID_ARG;
+            }
+
+            memcpy(&strECCResp.strEcdhREQ.strPubKey.X, &pECDHRspInfo->pubKey.x, ECC_POINT_MAX_SIZE);
+            memcpy(&strECCResp.strEcdhREQ.strPubKey.Y, &pECDHRspInfo->pubKey.y, ECC_POINT_MAX_SIZE);
+            strECCResp.strEcdhREQ.strPubKey.u16Size      = pECDHRspInfo->pubKey.size;
+            strECCResp.strEcdhREQ.strPubKey.u16PrivKeyID = pECDHRspInfo->pubKey.privKeyID;
+            break;
+        }
+
+        case WDRV_WINC_ECC_REQ_SIGN_GEN:
+        case WDRV_WINC_ECC_REQ_SIGN_VERIFY:
+        {
+            break;
+        }
+
+        default:
+        {
+            return WDRV_WINC_STATUS_INVALID_ARG;
+        }
+    }
+
     m2m_ssl_ecc_process_done();
-    
-    result = m2m_ssl_handshake_rsp(&strECCResp, pRspDataBuff, rspDataSz);
-    
+
+    result = m2m_ssl_handshake_rsp(&strECCResp, (uint8_t*)pRspDataBuff, rspDataSz);
+
     if (M2M_SUCCESS == result)
     {
         return WDRV_WINC_STATUS_OK;
@@ -418,10 +553,11 @@ WDRV_WINC_STATUS WDRV_WINC_SSLECCHandShakeRsp
   Function:
     WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveCert
     (
-        uint16_t *pCurveType, 
-        uint8_t *pHash, 
-        uint8_t *pSig, 
-        WDRV_WINC_EC_Point_Rep *pKey
+        DRV_HANDLE handle,
+        uint16_t *pCurveType,
+        uint8_t *pHash,
+        uint8_t *pSig,
+        WDRV_WINC_EC_POINT_REP *pKey
     )
 
   Summary:
@@ -437,17 +573,35 @@ WDRV_WINC_STATUS WDRV_WINC_SSLECCHandShakeRsp
 
 WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveCert
 (
-    uint16_t *pCurveType, 
-    uint8_t *pHash, 
-    uint8_t *pSig, 
-    WDRV_WINC_EC_Point_Rep *pKey
+    DRV_HANDLE handle,
+    uint16_t *pCurveType,
+    uint8_t *pHash,
+    uint8_t *pSig,
+    WDRV_WINC_EC_POINT_REP *pKey
 )
 {
-    int8_t result = M2M_SUCCESS;
-    result = m2m_ssl_retrieve_cert(pCurveType, pHash, pSig, (tstrECPoint*)pKey);
-    
-    if (M2M_SUCCESS == result)
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
+    tstrECPoint wincKey;
+
+    /* Ensure the driver handle and user pointers are valid. */
+    if ((NULL == pDcpt) || (NULL == pHash) || (NULL == pSig) || (NULL == pKey))
     {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    if (M2M_SUCCESS == m2m_ssl_retrieve_cert(pCurveType, pHash, pSig, &wincKey))
+    {
+        memcpy(&pKey->x, &wincKey.X, ECC_POINT_MAX_SIZE);
+        memcpy(&pKey->y, &wincKey.Y, ECC_POINT_MAX_SIZE);
+        pKey->size      = wincKey.u16Size;
+        pKey->privKeyID = wincKey.u16PrivKeyID;
+
         return WDRV_WINC_STATUS_OK;
     }
     else
@@ -461,7 +615,8 @@ WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveCert
   Function:
     WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveHash
     (
-        uint8_t *pHash, 
+        DRV_HANDLE handle,
+        uint8_t *pHash,
         uint16_t hashSz
     )
 
@@ -478,14 +633,26 @@ WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveCert
 
 WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveHash
 (
-    uint8_t* pHash, 
+    DRV_HANDLE handle,
+    uint8_t* pHash,
     uint16_t hashSz
 )
 {
-    int8_t result = M2M_SUCCESS;
-    result = m2m_ssl_retrieve_hash(pHash, hashSz);
-    
-    if (M2M_SUCCESS == result)
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
+
+    /* Ensure the driver handle is valid. */
+    if ((NULL == pDcpt) || (NULL == pHash))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    if (M2M_SUCCESS == m2m_ssl_retrieve_hash(pHash, hashSz))
     {
         return WDRV_WINC_STATUS_OK;
     }
@@ -498,7 +665,7 @@ WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveHash
 //*******************************************************************************
 /*
   Function:
-    WDRV_WINC_STATUS WDRV_WINC_SSLStopRetrieveCert(void)
+    WDRV_WINC_STATUS WDRV_WINC_SSLStopRetrieveCert(DRV_HANDLE handle)
 
   Summary:
     Stop processing the certificate
@@ -511,8 +678,23 @@ WDRV_WINC_STATUS WDRV_WINC_SSLRetrieveHash
 
 */
 
-WDRV_WINC_STATUS WDRV_WINC_SSLStopRetrieveCert(void)
+WDRV_WINC_STATUS WDRV_WINC_SSLStopRetrieveCert(DRV_HANDLE handle)
 {
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const )handle;
+
+    /* Ensure the driver handle is valid. */
+    if (NULL == pDcpt)
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
     m2m_ssl_stop_processing_certs();
+
     return WDRV_WINC_STATUS_OK;
 }

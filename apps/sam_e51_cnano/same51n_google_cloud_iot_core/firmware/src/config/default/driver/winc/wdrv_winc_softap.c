@@ -99,7 +99,7 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
 #endif
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pBSSCtx))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pBSSCtx))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -112,7 +112,7 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
 
 #ifndef WDRV_WINC_NETWORK_MODE_SOCKET
     /* For Ethernet mode ensure Ethernet buffer is set. */
-    if (false == pDcpt->isEthBufSet)
+    if (false == pDcpt->pCtrl->isEthBufSet)
     {
         return WDRV_WINC_STATUS_NO_ETH_BUFFER;
     }
@@ -167,8 +167,8 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
         pAPCfg->u8SecType = M2M_WIFI_SEC_WEP;
 
         if ((pAuthCtx->authInfo.WEP.idx > 4) ||
-            (   (WEP_40_KEY_STRING_SIZE != pAuthCtx->authInfo.WEP.size) &&
-                (WEP_104_KEY_STRING_SIZE != pAuthCtx->authInfo.WEP.size)))
+            (   (WDRV_WINC_WEP_40_KEY_STRING_SIZE != pAuthCtx->authInfo.WEP.size) &&
+                (WDRV_WINC_WEP_104_KEY_STRING_SIZE != pAuthCtx->authInfo.WEP.size)))
         {
             return WDRV_WINC_STATUS_INVALID_ARG;
         }
@@ -188,13 +188,13 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
     /* Set DHCP server address, for Ethernet mode a value is still required
        even though not used. */
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pAPCfg->au8DHCPServerIP[0] = pDcpt->dhcpServerAddress & 0xff;
-    pAPCfg->au8DHCPServerIP[1] = (pDcpt->dhcpServerAddress >> 8) & 0xff;
-    pAPCfg->au8DHCPServerIP[2] = (pDcpt->dhcpServerAddress >> 16) & 0xff;
-    pAPCfg->au8DHCPServerIP[3] = (pDcpt->dhcpServerAddress >> 24) & 0xff;
+    pAPCfg->au8DHCPServerIP[0] = pDcpt->pCtrl->dhcpServerAddress & 0xff;
+    pAPCfg->au8DHCPServerIP[1] = (pDcpt->pCtrl->dhcpServerAddress >> 8) & 0xff;
+    pAPCfg->au8DHCPServerIP[2] = (pDcpt->pCtrl->dhcpServerAddress >> 16) & 0xff;
+    pAPCfg->au8DHCPServerIP[3] = (pDcpt->pCtrl->dhcpServerAddress >> 24) & 0xff;
 
-    pDcpt->haveIPAddress = true;
-    pDcpt->ipAddress     = pDcpt->dhcpServerAddress;
+    pDcpt->pCtrl->haveIPAddress = true;
+    pDcpt->pCtrl->ipAddress     = pDcpt->pCtrl->dhcpServerAddress;
 #else
     pAPCfg->au8DHCPServerIP[0] = 192;
     pAPCfg->au8DHCPServerIP[1] = 168;
@@ -202,25 +202,25 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
     pAPCfg->au8DHCPServerIP[3] = 1;
 #endif
 #ifdef WDRV_WINC_DEVICE_SOFT_AP_EXT
-    apCfg.strApConfigExt.au8DNSServerIP[0] = pDcpt->dnsServerAddress & 0xff;
-    apCfg.strApConfigExt.au8DNSServerIP[1] = (pDcpt->dnsServerAddress >> 8) & 0xff;
-    apCfg.strApConfigExt.au8DNSServerIP[2] = (pDcpt->dnsServerAddress >> 16) & 0xff;
-    apCfg.strApConfigExt.au8DNSServerIP[3] = (pDcpt->dnsServerAddress >> 24) & 0xff;
+    apCfg.strApConfigExt.au8DNSServerIP[0] = pDcpt->pCtrl->dnsServerAddress & 0xff;
+    apCfg.strApConfigExt.au8DNSServerIP[1] = (pDcpt->pCtrl->dnsServerAddress >> 8) & 0xff;
+    apCfg.strApConfigExt.au8DNSServerIP[2] = (pDcpt->pCtrl->dnsServerAddress >> 16) & 0xff;
+    apCfg.strApConfigExt.au8DNSServerIP[3] = (pDcpt->pCtrl->dnsServerAddress >> 24) & 0xff;
 
-    apCfg.strApConfigExt.au8DefRouterIP[0] = pDcpt->gatewayAddress & 0xff;
-    apCfg.strApConfigExt.au8DefRouterIP[1] = (pDcpt->gatewayAddress >> 8) & 0xff;
-    apCfg.strApConfigExt.au8DefRouterIP[2] = (pDcpt->gatewayAddress >> 16) & 0xff;
-    apCfg.strApConfigExt.au8DefRouterIP[3] = (pDcpt->gatewayAddress >> 24) & 0xff;
+    apCfg.strApConfigExt.au8DefRouterIP[0] = pDcpt->pCtrl->gatewayAddress & 0xff;
+    apCfg.strApConfigExt.au8DefRouterIP[1] = (pDcpt->pCtrl->gatewayAddress >> 8) & 0xff;
+    apCfg.strApConfigExt.au8DefRouterIP[2] = (pDcpt->pCtrl->gatewayAddress >> 16) & 0xff;
+    apCfg.strApConfigExt.au8DefRouterIP[3] = (pDcpt->pCtrl->gatewayAddress >> 24) & 0xff;
 
-    apCfg.strApConfigExt.au8SubnetMask[0] = pDcpt->netMask & 0xff;
-    apCfg.strApConfigExt.au8SubnetMask[1] = (pDcpt->netMask >> 8) & 0xff;
-    apCfg.strApConfigExt.au8SubnetMask[2] = (pDcpt->netMask >> 16) & 0xff;
-    apCfg.strApConfigExt.au8SubnetMask[3] = (pDcpt->netMask >> 24) & 0xff;
+    apCfg.strApConfigExt.au8SubnetMask[0] = pDcpt->pCtrl->netMask & 0xff;
+    apCfg.strApConfigExt.au8SubnetMask[1] = (pDcpt->pCtrl->netMask >> 8) & 0xff;
+    apCfg.strApConfigExt.au8SubnetMask[2] = (pDcpt->pCtrl->netMask >> 16) & 0xff;
+    apCfg.strApConfigExt.au8SubnetMask[3] = (pDcpt->pCtrl->netMask >> 24) & 0xff;
 #endif
 
     pAPCfg->u8SsidHide = pBSSCtx->cloaked;
 
-    pDcpt->pfConnectNotifyCB = pfNotifyCallback;
+    pDcpt->pCtrl->pfConnectNotifyCB = pfNotifyCallback;
 
     if (NULL == pHTTPProvCtx)
     {
@@ -249,12 +249,12 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
             return WDRV_WINC_STATUS_REQUEST_ERROR;
         }
 
-        pDcpt->pfProvConnectInfoCB = pHTTPProvCtx->pfProvConnectInfoCB;
-        pDcpt->isProvisioning = true;
+        pDcpt->pCtrl->pfProvConnectInfoCB = pHTTPProvCtx->pfProvConnectInfoCB;
+        pDcpt->pCtrl->isProvisioning = true;
     }
 #endif
 
-    pDcpt->isAP = true;
+    pDcpt->pCtrl->isAP = true;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -280,7 +280,7 @@ WDRV_WINC_STATUS WDRV_WINC_APStop(DRV_HANDLE handle)
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -292,12 +292,12 @@ WDRV_WINC_STATUS WDRV_WINC_APStop(DRV_HANDLE handle)
     }
 
     /* Ensure operation mode is really Soft-AP. */
-    if (false == pDcpt->isAP)
+    if (false == pDcpt->pCtrl->isAP)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
-    if (true == pDcpt->isProvisioning)
+    if (true == pDcpt->pCtrl->isProvisioning)
     {
         /* Stop a provisioning Soft-AP. */
         if (M2M_SUCCESS != m2m_wifi_stop_provision_mode())
@@ -315,13 +315,13 @@ WDRV_WINC_STATUS WDRV_WINC_APStop(DRV_HANDLE handle)
     }
 
     /* Clear AP state. */
-    pDcpt->isAP           = false;
-    pDcpt->isProvisioning = false;
-    pDcpt->assocInfoValid = false;
+    pDcpt->pCtrl->isAP           = false;
+    pDcpt->pCtrl->isProvisioning = false;
+    pDcpt->pCtrl->assocInfoValid = false;
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pDcpt->haveIPAddress  = false;
-    pDcpt->ipAddress      = 0;
-#endif    
+    pDcpt->pCtrl->haveIPAddress  = false;
+    pDcpt->pCtrl->ipAddress      = 0;
+#endif
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -356,7 +356,7 @@ WDRV_WINC_STATUS WDRV_WINC_APSetCustIE
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pCustIECtx))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pCustIECtx))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -368,7 +368,7 @@ WDRV_WINC_STATUS WDRV_WINC_APSetCustIE
     }
 
     /* Ensure operation mode is really Soft-AP. */
-    if (false == pDcpt->isAP)
+    if (false == pDcpt->pCtrl->isAP)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }

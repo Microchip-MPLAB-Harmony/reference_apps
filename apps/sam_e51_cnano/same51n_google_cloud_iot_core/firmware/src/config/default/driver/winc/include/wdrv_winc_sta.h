@@ -248,7 +248,6 @@ WDRV_WINC_STATUS WDRV_WINC_BSSDisconnect(DRV_HANDLE handle);
     WDRV_WINC_STATUS_NOT_OPEN        - The driver instance is not open.
     WDRV_WINC_STATUS_INVALID_ARG     - The parameters were incorrect.
     WDRV_WINC_STATUS_CONNECT_FAIL    - The disconnection has failed.
-    WDRV_WINC_STATUS_REQUEST_ERROR   - The request to the WINC was rejected.
 
   Remarks:
     None.

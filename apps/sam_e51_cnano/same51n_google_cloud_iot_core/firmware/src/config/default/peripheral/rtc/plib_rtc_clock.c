@@ -49,8 +49,10 @@
 /* This section lists the other files that are included in this file.
 */
 
+#include "interrupts.h"
 #include "plib_rtc.h"
 #include <stdlib.h>
+
 
 /* Reference Year */
 #define REFERENCE_YEAR              (2016U)
@@ -62,15 +64,15 @@
 #define ADJUST_TM_YEAR(year)        (year + TM_STRUCT_REFERENCE_YEAR)
 
 /* Adjust user month */
-#define ADJUST_MONTH(month)         (month + 1)
+#define ADJUST_MONTH(month)         (month + 1U)
 
 /* Adjust to tm structure month */
-#define ADJUST_TM_STRUCT_MONTH(mon) (mon - 1)
+#define ADJUST_TM_STRUCT_MONTH(mon) (mon - 1U)
 
 
 void RTC_Initialize(void)
 {
-    RTC_REGS->MODE2.RTC_CTRLA |= RTC_MODE2_CTRLA_SWRST_Msk;
+    RTC_REGS->MODE2.RTC_CTRLA |= (uint16_t)RTC_MODE2_CTRLA_SWRST_Msk;
 
     while((RTC_REGS->MODE2.RTC_SYNCBUSY & RTC_MODE2_SYNCBUSY_SWRST_Msk) == RTC_MODE2_SYNCBUSY_SWRST_Msk)
     {
@@ -78,7 +80,7 @@ void RTC_Initialize(void)
     }
 
 
-    RTC_REGS->MODE2.RTC_CTRLA = RTC_MODE2_CTRLA_MODE(2) | RTC_MODE2_CTRLA_PRESCALER(0xB) | RTC_MODE2_CTRLA_CLOCKSYNC_Msk | RTC_MODE2_CTRLA_ENABLE_Msk ;
+    RTC_REGS->MODE2.RTC_CTRLA = (uint16_t)(RTC_MODE2_CTRLA_MODE(2UL) | RTC_MODE2_CTRLA_PRESCALER(0xBUL) | RTC_MODE2_CTRLA_CLOCKSYNC_Msk | RTC_MODE2_CTRLA_ENABLE_Msk );
 
 
     while((RTC_REGS->MODE2.RTC_SYNCBUSY & RTC_MODE2_SYNCBUSY_ENABLE_Msk) == RTC_MODE2_SYNCBUSY_ENABLE_Msk)
@@ -93,12 +95,12 @@ bool RTC_PeriodicIntervalHasCompleted (RTC_PERIODIC_INT_MASK period)
 {
     bool periodIntervalComplete = false;
 
-    if( (RTC_REGS->MODE2.RTC_INTFLAG & period) == period )
+    if( (RTC_REGS->MODE2.RTC_INTFLAG & (uint16_t)period) == (uint16_t)period )
     {
         periodIntervalComplete = true;
 
         /* Clear Periodic Interval Interrupt */
-        RTC_REGS->MODE2.RTC_INTFLAG = period;
+        RTC_REGS->MODE2.RTC_INTFLAG = (uint16_t)period;
     }
 
     return periodIntervalComplete;
@@ -111,12 +113,12 @@ bool RTC_RTCCTimeSet (struct tm * initialTime )
      * Set YEAR(according to Reference Year), MONTH and DAY
      *set Hour Minute and Second
      */
-    RTC_REGS->MODE2.RTC_CLOCK = ((TM_STRUCT_REFERENCE_YEAR + initialTime->tm_year) - REFERENCE_YEAR) << RTC_MODE2_CLOCK_YEAR_Pos |
-                    ((ADJUST_MONTH(initialTime->tm_mon)) << RTC_MODE2_CLOCK_MONTH_Pos) |
-                    (initialTime->tm_mday << RTC_MODE2_CLOCK_DAY_Pos) |
-                    (initialTime->tm_hour << RTC_MODE2_CLOCK_HOUR_Pos) |
-                    (initialTime->tm_min << RTC_MODE2_CLOCK_MINUTE_Pos) |
-                    (initialTime->tm_sec << RTC_MODE2_CLOCK_SECOND_Pos);
+    RTC_REGS->MODE2.RTC_CLOCK = (uint32_t)(((TM_STRUCT_REFERENCE_YEAR + (uint32_t)initialTime->tm_year) - REFERENCE_YEAR) << RTC_MODE2_CLOCK_YEAR_Pos |
+                    ((ADJUST_MONTH((uint32_t)initialTime->tm_mon)) << RTC_MODE2_CLOCK_MONTH_Pos) |
+                    ((uint32_t)initialTime->tm_mday << RTC_MODE2_CLOCK_DAY_Pos) |
+                    ((uint32_t)initialTime->tm_hour << RTC_MODE2_CLOCK_HOUR_Pos) |
+                    ((uint32_t)initialTime->tm_min << RTC_MODE2_CLOCK_MINUTE_Pos) |
+                    ((uint32_t)initialTime->tm_sec << RTC_MODE2_CLOCK_SECOND_Pos));
 
     while((RTC_REGS->MODE2.RTC_SYNCBUSY & RTC_MODE2_SYNCBUSY_CLOCK_Msk) == RTC_MODE2_SYNCBUSY_CLOCK_Msk)
     {
@@ -127,7 +129,8 @@ bool RTC_RTCCTimeSet (struct tm * initialTime )
 
 void RTC_RTCCTimeGet ( struct tm * currentTime )
 {
-    uint32_t dataClockCalendar = 0;
+    uint32_t dataClockCalendar = 0U;
+    uint32_t timeMask = 0U;
 
     while((RTC_REGS->MODE2.RTC_SYNCBUSY & RTC_MODE2_SYNCBUSY_CLOCKSYNC_Msk) == RTC_MODE2_SYNCBUSY_CLOCKSYNC_Msk)
     {
@@ -136,13 +139,19 @@ void RTC_RTCCTimeGet ( struct tm * currentTime )
 
     dataClockCalendar = RTC_REGS->MODE2.RTC_CLOCK;
 
-    currentTime->tm_hour =  (dataClockCalendar & RTC_MODE2_CLOCK_HOUR_Msk) >> RTC_MODE2_CLOCK_HOUR_Pos;
-    currentTime->tm_min  =  (dataClockCalendar & RTC_MODE2_CLOCK_MINUTE_Msk) >> RTC_MODE2_CLOCK_MINUTE_Pos;
-    currentTime->tm_sec  =  (dataClockCalendar & RTC_MODE2_CLOCK_SECOND_Msk) >> RTC_MODE2_CLOCK_SECOND_Pos;
+    timeMask = (dataClockCalendar & RTC_MODE2_CLOCK_HOUR_Msk) >> RTC_MODE2_CLOCK_HOUR_Pos;
+    currentTime->tm_hour = (int)timeMask;
+    timeMask = (dataClockCalendar & RTC_MODE2_CLOCK_MINUTE_Msk) >> RTC_MODE2_CLOCK_MINUTE_Pos;
+    currentTime->tm_min = (int)timeMask;
+    timeMask = (dataClockCalendar & RTC_MODE2_CLOCK_SECOND_Msk) >> RTC_MODE2_CLOCK_SECOND_Pos;
+    currentTime->tm_sec = (int)timeMask;
 
-    currentTime->tm_mon  =  ADJUST_TM_STRUCT_MONTH(((dataClockCalendar & RTC_MODE2_CLOCK_MONTH_Msk) >> RTC_MODE2_CLOCK_MONTH_Pos));
-    currentTime->tm_year =  (((dataClockCalendar & RTC_MODE2_CLOCK_YEAR_Msk)>> RTC_MODE2_CLOCK_YEAR_Pos) + REFERENCE_YEAR) - TM_STRUCT_REFERENCE_YEAR;
-    currentTime->tm_mday =  (dataClockCalendar & RTC_MODE2_CLOCK_DAY_Msk) >> RTC_MODE2_CLOCK_DAY_Pos;
+    timeMask = ADJUST_TM_STRUCT_MONTH(((dataClockCalendar & RTC_MODE2_CLOCK_MONTH_Msk) >> RTC_MODE2_CLOCK_MONTH_Pos));
+    currentTime->tm_mon  = (int)timeMask; 
+    timeMask = (((dataClockCalendar & RTC_MODE2_CLOCK_YEAR_Msk)>> RTC_MODE2_CLOCK_YEAR_Pos) + REFERENCE_YEAR) - TM_STRUCT_REFERENCE_YEAR;
+    currentTime->tm_year = (int)timeMask; 
+    timeMask = (dataClockCalendar & RTC_MODE2_CLOCK_DAY_Msk) >> RTC_MODE2_CLOCK_DAY_Pos;
+    currentTime->tm_mday = (int)timeMask; 
 }
 void RTC_BackupRegisterSet( BACKUP_REGISTER reg, uint32_t value )
 {
@@ -155,21 +164,27 @@ uint32_t RTC_BackupRegisterGet( BACKUP_REGISTER reg )
 }
  TAMPER_CHANNEL RTC_TamperSourceGet( void )
 {
-    return((TAMPER_CHANNEL) (RTC_REGS->MODE2.RTC_TAMPID) & (0xFF));
+    return((TAMPER_CHANNEL) (RTC_REGS->MODE2.RTC_TAMPID) & (0xFFU));
 }
 
 void RTC_RTCCTimeStampGet(  struct tm * timeStamp  )
 {
-    uint32_t dataClockCalendar = 0;
+   uint32_t dataClockCalendar = 0U;
+   uint32_t timeMask = 0U;
 
-    dataClockCalendar = RTC_REGS->MODE2.RTC_TIMESTAMP;
+   dataClockCalendar = RTC_REGS->MODE2.RTC_TIMESTAMP;
+   timeMask = (dataClockCalendar & RTC_MODE2_TIMESTAMP_HOUR_Msk) >> RTC_MODE2_TIMESTAMP_HOUR_Pos;
+   timeStamp->tm_hour = (int)timeMask;
+   timeMask = (dataClockCalendar & RTC_MODE2_TIMESTAMP_MINUTE_Msk) >> RTC_MODE2_TIMESTAMP_MINUTE_Pos;
+   timeStamp->tm_min = (int)timeMask;
+   timeMask = (dataClockCalendar & RTC_MODE2_TIMESTAMP_SECOND_Msk) >> RTC_MODE2_TIMESTAMP_SECOND_Pos;
+   timeStamp->tm_sec = (int)timeMask;
 
-    timeStamp->tm_hour =  (dataClockCalendar & RTC_MODE2_TIMESTAMP_HOUR_Msk) >> RTC_MODE2_TIMESTAMP_HOUR_Pos;
-    timeStamp->tm_min  =  (dataClockCalendar & RTC_MODE2_TIMESTAMP_MINUTE_Msk) >> RTC_MODE2_TIMESTAMP_MINUTE_Pos;
-    timeStamp->tm_sec  =  (dataClockCalendar & RTC_MODE2_TIMESTAMP_SECOND_Msk) >> RTC_MODE2_TIMESTAMP_SECOND_Pos;
-
-    timeStamp->tm_mon  =  ADJUST_TM_STRUCT_MONTH(((dataClockCalendar & RTC_MODE2_TIMESTAMP_MONTH_Msk) >> RTC_MODE2_TIMESTAMP_MONTH_Pos));
-    timeStamp->tm_year =  (((dataClockCalendar & RTC_MODE2_TIMESTAMP_YEAR_Msk)>> RTC_MODE2_TIMESTAMP_YEAR_Pos) + REFERENCE_YEAR) - TM_STRUCT_REFERENCE_YEAR;
-    timeStamp->tm_mday =  (dataClockCalendar & RTC_MODE2_TIMESTAMP_DAY_Msk) >> RTC_MODE2_TIMESTAMP_DAY_Pos;
+   timeMask = ADJUST_TM_STRUCT_MONTH(((dataClockCalendar & RTC_MODE2_TIMESTAMP_MONTH_Msk) >> RTC_MODE2_TIMESTAMP_MONTH_Pos));
+   timeStamp->tm_mon  = (int)timeMask;
+   timeMask = (((dataClockCalendar & RTC_MODE2_TIMESTAMP_YEAR_Msk)>> RTC_MODE2_TIMESTAMP_YEAR_Pos) + REFERENCE_YEAR) - TM_STRUCT_REFERENCE_YEAR;
+   timeStamp->tm_year = (int)timeMask; 
+   timeMask = (dataClockCalendar & RTC_MODE2_TIMESTAMP_DAY_Msk) >> RTC_MODE2_TIMESTAMP_DAY_Pos;
+   timeStamp->tm_mday = (int)timeMask; 
 }
 

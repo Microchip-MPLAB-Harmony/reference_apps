@@ -59,7 +59,7 @@
 //*******************************************************************************
 /*
   Function:
-    WDRV_WINC_STATUS WDRV_WINC_AssociationSSIDGet
+    WDRV_WINC_STATUS WDRV_WINC_AssocSSIDGet
     (
         DRV_HANDLE handle,
         WDRV_WINC_SSID *const pSSID,
@@ -77,17 +77,17 @@
 
 */
 
-WDRV_WINC_STATUS WDRV_WINC_AssociationSSIDGet
+WDRV_WINC_STATUS WDRV_WINC_AssocSSIDGet
 (
-    DRV_HANDLE handle,
+    WDRV_WINC_ASSOC_HANDLE assocHandle,
     WDRV_WINC_SSID *const pSSID,
     WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)assocHandle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((WDRV_WINC_ASSOC_HANDLE_INVALID == assocHandle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -99,18 +99,18 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationSSIDGet
     }
 
     /* Store the callback for use later. */
-    pDcpt->pfAssociationInfoCB = pfAssociationInfoCB;
+    pDcpt->pCtrl->pfAssociationInfoCB = pfAssociationInfoCB;
 
-    if ((true == pDcpt->assocInfoValid) && (NULL != pSSID))
+    if ((true == pDcpt->pCtrl->assocInfoValid) && (NULL != pSSID))
     {
         /* If association information store in driver and user application
            supplied a buffer, copy the SSID to the buffer. */
 
-        memcpy(pSSID, &pDcpt->assocSSID, sizeof(WDRV_WINC_SSID));
+        memcpy(pSSID, &pDcpt->pCtrl->assocSSID, sizeof(WDRV_WINC_SSID));
 
         return WDRV_WINC_STATUS_OK;
     }
-    else if (true == pDcpt->isConnected)
+    else if (true == pDcpt->pCtrl->isConnected)
     {
         /* If the WINC is currently connected and either the association
            information isn't currently cached or the user application didn't
@@ -137,7 +137,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationSSIDGet
 //*******************************************************************************
 /*
   Function:
-    WDRV_WINC_STATUS WDRV_WINC_AssociationPeerAddressGet
+    WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
     (
         DRV_HANDLE handle,
         WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress,
@@ -156,17 +156,17 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationSSIDGet
 
 */
 
-WDRV_WINC_STATUS WDRV_WINC_AssociationPeerAddressGet
+WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
 (
-    DRV_HANDLE handle,
+    WDRV_WINC_ASSOC_HANDLE assocHandle,
     WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress,
     WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)assocHandle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((WDRV_WINC_ASSOC_HANDLE_INVALID == assocHandle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -178,18 +178,18 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationPeerAddressGet
     }
 
     /* Store the callback for use later. */
-    pDcpt->pfAssociationInfoCB = pfAssociationInfoCB;
+    pDcpt->pCtrl->pfAssociationInfoCB = pfAssociationInfoCB;
 
-    if ((true == pDcpt->assocInfoValid) && (NULL != pPeerAddress))
+    if ((true == pDcpt->pCtrl->assocInfoValid) && (NULL != pPeerAddress))
     {
         /* If association information store in driver and user application
            supplied a buffer, copy the peer address to the buffer. */
 
-         memcpy(pPeerAddress, &pDcpt->assocPeerAddress, sizeof(WDRV_WINC_NETWORK_ADDRESS));
+        memcpy(pPeerAddress, &pDcpt->pCtrl->assocPeerAddress, sizeof(WDRV_WINC_NETWORK_ADDRESS));
 
         return WDRV_WINC_STATUS_OK;
     }
-    else if (true == pDcpt->isConnected)
+    else if (true == pDcpt->pCtrl->isConnected)
     {
         /* If the WINC is currently connected and either the association
            information isn't currently cached or the user application didn't
@@ -216,7 +216,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationPeerAddressGet
 //*******************************************************************************
 /*
   Function:
-    WDRV_WINC_STATUS WDRV_WINC_AssociationAuthTypeGet
+    WDRV_WINC_STATUS WDRV_WINC_AssocAuthTypeGet
     (
         DRV_HANDLE handle,
         WDRV_WINC_AUTH_TYPE *const pAuthType,
@@ -234,17 +234,17 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationPeerAddressGet
 
 */
 
-WDRV_WINC_STATUS WDRV_WINC_AssociationAuthTypeGet
+WDRV_WINC_STATUS WDRV_WINC_AssocAuthTypeGet
 (
-    DRV_HANDLE handle,
+    WDRV_WINC_ASSOC_HANDLE assocHandle,
     WDRV_WINC_AUTH_TYPE *const pAuthType,
     WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)assocHandle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((WDRV_WINC_ASSOC_HANDLE_INVALID == assocHandle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -256,18 +256,18 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationAuthTypeGet
     }
 
     /* Store the callback for use later. */
-    pDcpt->pfAssociationInfoCB = pfAssociationInfoCB;
+    pDcpt->pCtrl->pfAssociationInfoCB = pfAssociationInfoCB;
 
-    if ((true == pDcpt->assocInfoValid) && (NULL != pAuthType))
+    if ((true == pDcpt->pCtrl->assocInfoValid) && (NULL != pAuthType))
     {
         /* If association information store in driver and user application
            supplied a buffer, copy the authentication type to the buffer. */
 
-        *pAuthType = pDcpt->assocAuthType;
+        *pAuthType = pDcpt->pCtrl->assocAuthType;
 
         return WDRV_WINC_STATUS_OK;
     }
-    else if (true == pDcpt->isConnected)
+    else if (true == pDcpt->pCtrl->isConnected)
     {
         /* If the WINC is currently connected and either the association
            information isn't currently cached or the user application didn't
@@ -294,7 +294,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationAuthTypeGet
 //*******************************************************************************
 /*
   Function:
-    WDRV_WINC_STATUS WDRV_WINC_AssociationRSSIGet
+    WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
     (
         DRV_HANDLE handle,
         int8_t *const pRSSI,
@@ -312,17 +312,17 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationAuthTypeGet
 
 */
 
-WDRV_WINC_STATUS WDRV_WINC_AssociationRSSIGet
+WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
 (
-    DRV_HANDLE handle,
+    WDRV_WINC_ASSOC_HANDLE assocHandle,
     int8_t *const pRSSI,
     WDRV_WINC_ASSOC_RSSI_CALLBACK const pfAssociationRSSICB
 )
 {
-    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)assocHandle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((WDRV_WINC_ASSOC_HANDLE_INVALID == assocHandle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -334,9 +334,9 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationRSSIGet
     }
 
     /* Store the callback for use later. */
-    pDcpt->pfAssociationRSSICB = pfAssociationRSSICB;
+    pDcpt->pCtrl->pfAssociationRSSICB = pfAssociationRSSICB;
 
-    if (true == pDcpt->isConnected)
+    if (true == pDcpt->pCtrl->isConnected)
     {
         /* WINC is currently connected. */
 
@@ -344,7 +344,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationRSSIGet
         {
             /* No callback has been provided. */
 
-            if ((0 == pDcpt->rssi) && (NULL == pRSSI))
+            if ((0 == pDcpt->pCtrl->rssi) && (NULL == pRSSI))
             {
                 /* No previous RSSI information and no callback or
                    user application buffer to receive the information. */
@@ -356,7 +356,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssociationRSSIGet
                 /* A current RSSI value exists and the user application provided
                    a buffer to receive it, copy the information. */
 
-                *pRSSI = pDcpt->rssi;
+                *pRSSI = pDcpt->pCtrl->rssi;
 
                 return WDRV_WINC_STATUS_OK;
             }

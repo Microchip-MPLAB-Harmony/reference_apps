@@ -62,6 +62,7 @@
 
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_authctx.h"
+#include "wdrv_winc_bssctx.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -86,60 +87,84 @@
 
 typedef enum
 {
-    /* 2.4Ghz (2412 MHz) channel 1. */
+    /* 2.4GHz (2412 MHz) channel 1. */
     WDRV_WINC_CM_2_4G_CH1 = 0x0001,
 
-    /* 2.4Ghz (2417 MHz) channel 2. */
+    /* 2.4GHz (2417 MHz) channel 2. */
     WDRV_WINC_CM_2_4G_CH2 = 0x0002,
 
-    /* 2.4Ghz (2422 MHz) channel 3. */
+    /* 2.4GHz (2422 MHz) channel 3. */
     WDRV_WINC_CM_2_4G_CH3 = 0x0004,
 
-    /* 2.4Ghz (2427 MHz) channel 4. */
+    /* 2.4GHz (2427 MHz) channel 4. */
     WDRV_WINC_CM_2_4G_CH4 = 0x0008,
 
-    /* 2.4Ghz (2432 MHz) channel 5. */
+    /* 2.4GHz (2432 MHz) channel 5. */
     WDRV_WINC_CM_2_4G_CH5 = 0x0010,
 
-    /* 2.4Ghz (2437 MHz) channel 6. */
+    /* 2.4GHz (2437 MHz) channel 6. */
     WDRV_WINC_CM_2_4G_CH6 = 0x0020,
 
-    /* 2.4Ghz (2442 MHz) channel 7. */
+    /* 2.4GHz (2442 MHz) channel 7. */
     WDRV_WINC_CM_2_4G_CH7 = 0x0040,
 
-    /* 2.4Ghz (2447 MHz) channel 8. */
+    /* 2.4GHz (2447 MHz) channel 8. */
     WDRV_WINC_CM_2_4G_CH8 = 0x0080,
 
-    /* 2.4Ghz (2452 MHz) channel 9. */
+    /* 2.4GHz (2452 MHz) channel 9. */
     WDRV_WINC_CM_2_4G_CH9 = 0x0100,
 
-    /* 2.4Ghz (2457 MHz) channel 10. */
+    /* 2.4GHz (2457 MHz) channel 10. */
     WDRV_WINC_CM_2_4G_CH10 = 0x0200,
 
-    /* 2.4Ghz (2462 MHz) channel 11. */
+    /* 2.4GHz (2462 MHz) channel 11. */
     WDRV_WINC_CM_2_4G_CH11 = 0x0400,
 
-    /* 2.4Ghz (2467 MHz) channel 12. */
+    /* 2.4GHz (2467 MHz) channel 12. */
     WDRV_WINC_CM_2_4G_CH12 = 0x0800,
 
-    /* 2.4Ghz (2472 MHz) channel 13. */
+    /* 2.4GHz (2472 MHz) channel 13. */
     WDRV_WINC_CM_2_4G_CH13 = 0x1000,
 
-    /* 2.4Ghz (2484 MHz) channel 14. */
+    /* 2.4GHz (2484 MHz) channel 14. */
     WDRV_WINC_CM_2_4G_CH14 = 0x2000,
 
-    /* 2.4Ghz channels 1 through 14 */
+    /* 2.4GHz channels 1 through 14 */
     WDRV_WINC_CM_2_4G_ALL = 0x3fff,
 
-    /* 2.4Ghz channels 1 through 11 */
+    /* 2.4GHz channels 1 through 11 */
     WDRV_WINC_CM_2_4G_NORTH_AMERICA = 0x07ff,
 
-    /* 2.4Ghz channels 1 through 13 */
+    /* 2.4GHz channels 1 through 13 */
     WDRV_WINC_CM_2_4G_EUROPE = 0x1fff,
 
-    /* 2.4Ghz channels 1 through 14 */
+    /* 2.4GHz channels 1 through 14 */
     WDRV_WINC_CM_2_4G_ASIA = 0x3fff
 } WDRV_WINC_CHANNEL_MASK;
+
+// *****************************************************************************
+/*  Scan Matching Mode.
+
+  Summary:
+    List of possible scan matching modes.
+
+  Description:
+    The scan matching mode can be to stop on first match or match all.
+
+  Remarks:
+    None.
+*/
+
+#ifdef WDRV_WINC_DEVICE_SCAN_STOP_ON_FIRST
+typedef enum
+{
+    /* Stop scan on first match. */
+    WDRV_WINC_SCAN_MATCH_MODE_STOP_ON_FIRST,
+
+    /* Scan for all matches. */
+    WDRV_WINC_SCAN_MATCH_MODE_FIND_ALL
+} WDRV_WINC_SCAN_MATCH_MODE;
+#endif
 
 // *****************************************************************************
 /*  BSS Information
@@ -158,20 +183,14 @@ typedef enum
 
 typedef struct
 {
-    /* BSSID of BSS provider. */
-    uint8_t bssid[6];
-
-    /* SSID of BSS. */
-    WDRV_WINC_SSID ssid;
+    /* BSS context information (BSSID, SSID, channel etc). */
+    WDRV_WINC_BSS_CONTEXT ctx;
 
     /* Signal strength RSSI of BSS. */
     int8_t rssi;
 
     /* Authentication type of BSS. */
     WDRV_WINC_AUTH_TYPE authType;
-
-    /* Channel BSS is operating on. */
-    uint8_t channel;
 } WDRV_WINC_BSS_INFO;
 
 // *****************************************************************************
@@ -223,8 +242,9 @@ typedef bool (*WDRV_WINC_BSSFIND_NOTIFY_CALLBACK)
     WDRV_WINC_STATUS WDRV_WINC_BSSFindFirst
     (
         DRV_HANDLE handle,
-        uint8_t channel,
+        WDRV_WINC_CHANNEL_ID channel,
         bool active,
+        const WDRV_WINC_SSID_LIST *const pSSIDList,
         const WDRV_WINC_BSSFIND_NOTIFY_CALLBACK pfNotifyCallback
     )
 
@@ -241,9 +261,11 @@ typedef bool (*WDRV_WINC_BSSFIND_NOTIFY_CALLBACK)
 
   Parameters:
     handle           - Client handle obtained by a call to WDRV_WINC_Open.
-    channel          - Channel to scan, maybe WDRV_WINC_ALL_CHANNELS in
-                         which case all enabled channels are scanned.
+    channel          - Channel to scan, maybe WDRV_WINC_ALL_CHANNELS or
+                         WDRV_WINC_CID_ANY in which case all enabled channels
+                         are scanned.
     active           - Use active vs passive scanning.
+    pSSIDList        - Pointer to list of SSIDs to match on.
     pfNotifyCallback - Callback to receive notification of first BSS found.
 
   Returns:
@@ -254,8 +276,8 @@ typedef bool (*WDRV_WINC_BSSFIND_NOTIFY_CALLBACK)
     WDRV_WINC_STATUS_SCAN_IN_PROGRESS - A scan is already in progress.
 
   Remarks:
-    If channel is WDRV_WINC_ALL_CHANNELS then all enabled channels are
-      scanned. The enabled channels can be configured using
+    If channel is WDRV_WINC_ALL_CHANNELS or WDRV_WINC_CID_ANY then all enabled
+      channels are scanned. The enabled channels can be configured using
       WDRV_WINC_BSSFindSetEnabledChannels. How the scan is performed can
       be configured using WDRV_WINC_BSSFindSetScanParameters.
 
@@ -264,8 +286,9 @@ typedef bool (*WDRV_WINC_BSSFIND_NOTIFY_CALLBACK)
 WDRV_WINC_STATUS WDRV_WINC_BSSFindFirst
 (
     DRV_HANDLE handle,
-    uint8_t channel,
+    WDRV_WINC_CHANNEL_ID channel,
     bool active,
+    const WDRV_WINC_SSID_LIST *const pSSIDList,
     const WDRV_WINC_BSSFIND_NOTIFY_CALLBACK pfNotifyCallback
 );
 
@@ -516,8 +539,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSFindSetRSSIThreshold
     WDRV_WINC_STATUS_OK            - The request was accepted.
     WDRV_WINC_STATUS_NOT_OPEN      - The driver instance is not open.
     WDRV_WINC_STATUS_INVALID_ARG   - The parameters were incorrect.
-    WDRV_WINC_STATUS_REQUEST_ERROR - The WINC was unable to accept this
-                                           request.
+    WDRV_WINC_STATUS_REQUEST_ERROR - The WINC was unable to accept this request.
 
   Remarks:
     None.
@@ -529,6 +551,49 @@ WDRV_WINC_STATUS WDRV_WINC_BSSFindSetEnabledChannels
     DRV_HANDLE handle,
     WDRV_WINC_CHANNEL_MASK channelMask
 );
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_BSSFindSetScanMatchMode
+    (
+        DRV_HANDLE handle,
+        WDRV_WINC_SCAN_MATCH_MODE matchMode
+    )
+
+  Summary:
+    Configures the scan matching mode.
+
+  Description:
+    This function configures the matching mode, either stop on first or
+      match all, used when scanning for SSIDs.
+
+  Precondition:
+    WDRV_WINC_Initialize must have been called.
+    WDRV_WINC_Open must have been called to obtain a valid handle.
+
+  Parameters:
+    handle    - Client handle obtained by a call to WDRV_WINC_Open.
+    matchMode - Required scan matching mode.
+
+  Returns:
+    WDRV_WINC_STATUS_OK            - The request was accepted.
+    WDRV_WINC_STATUS_NOT_OPEN      - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG   - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR - The WINC was unable to accept this request.
+
+  Remarks:
+    None.
+
+*/
+
+#ifdef WDRV_WINC_DEVICE_SCAN_STOP_ON_FIRST
+WDRV_WINC_STATUS WDRV_WINC_BSSFindSetScanMatchMode
+(
+    DRV_HANDLE handle,
+    WDRV_WINC_SCAN_MATCH_MODE matchMode
+);
+#endif
 
 //*******************************************************************************
 /*
