@@ -52,11 +52,11 @@ volatile bool txThresholdEventReceived = false;
 uint8_t rxBuffer[512];
 volatile uint32_t nBytesRead = 0;
 
-extern SYSTICK_OBJECT systick;
+volatile uint32_t         ACKsystickCounter;
 
-uint32_t SYSTICK_TickCounterGet ( void )
+uint32_t ACK_SYSTICK_TickCounterGet ( void )
 {
-    return systick.tickCounter;
+    return ACKsystickCounter;
 }
 
 void usartReadEventHandler(SERCOM_USART_EVENT event, uintptr_t context )
@@ -76,6 +76,12 @@ void usartWriteEventHandler(SERCOM_USART_EVENT event, uintptr_t context )
 {
     txThresholdEventReceived = true;
 }
+
+void sys_timeout_handler(uintptr_t context)
+{
+	ACKsystickCounter++;
+}
+
 
 static uint32_t sg_samd21DigitalPins[] =
 {
@@ -126,15 +132,20 @@ void ACKPlatform_Initialize(void)
     memset(rxBuffer,0,512);
     
     SERCOM3_USART_ReadNotificationEnable(true, true);
+    
+    ACKsystickCounter = 0;
+    
+    SYSTICK_TimerCallbackSet(&sys_timeout_handler, (uintptr_t) NULL);
 }
 
 uint32_t ACKPlatform_TickCount(void)
 {
-    return (1000 * SYSTICK_TickCounterGet())/SYSTICK_INTERRUPT_PERIOD_IN_US;
+    return (1000 * ACK_SYSTICK_TickCounterGet())/SYSTICK_INTERRUPT_PERIOD_IN_US;
 }
 
 void ACKPlatform_Delay(uint32_t milliseconds)
 {
+    
     SYSTICK_DelayMs(milliseconds);
 }
 
@@ -180,14 +191,14 @@ void ACKPlatform_SetDigitalPinPWMLevel(ACKHardwarePin_t pin, uint8_t val)
 bool ACKPlatform_Send(const void* pBuffer, size_t length, uint32_t timeoutMilliseconds)
 {
     uint32_t delayTicks = 0;
-    uint32_t startTime = SYSTICK_TickCounterGet();     
+    uint32_t startTime = ACK_SYSTICK_TickCounterGet();     
     
     delayTicks=(1000 * timeoutMilliseconds)/SYSTICK_INTERRUPT_PERIOD_IN_US;
     
     SERCOM3_USART_Write((uint8_t*)pBuffer, length);
     
     while(txThresholdEventReceived != true){
-        if ((SYSTICK_TickCounterGet() - startTime) >= delayTicks)
+        if ((ACK_SYSTICK_TickCounterGet() - startTime) >= delayTicks)
         {
             ACK_DEBUG_PRINT_D("\r\nH-TX ERROR");
             return false;
@@ -202,12 +213,12 @@ uint32_t lastreadbyte = 0;
 bool ACKPlatform_Receive(void* pBuffer, size_t length, uint32_t timeoutMilliseconds)
 {
     uint32_t delayTicks = 0;
-    uint32_t startTime = SYSTICK_TickCounterGet();
+    uint32_t startTime = ACK_SYSTICK_TickCounterGet();
     delayTicks=(1000 * timeoutMilliseconds)/SYSTICK_INTERRUPT_PERIOD_IN_US;
     
     while(nBytesRead < (length))
     {
-        if ((SYSTICK_TickCounterGet() - startTime) >= delayTicks)
+        if ((ACK_SYSTICK_TickCounterGet() - startTime) >= delayTicks)
         {
             ACK_DEBUG_PRINT_D("H-RX ERROR");
             nBytesRead = 0;
