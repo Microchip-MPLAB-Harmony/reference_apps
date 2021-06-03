@@ -10,12 +10,12 @@
 		"shortDescription": "Demonstrates how to read weather data and motion sensor data using 10DOF Click board",		
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.0.0"
 			}
 		],
 		"dfp": {

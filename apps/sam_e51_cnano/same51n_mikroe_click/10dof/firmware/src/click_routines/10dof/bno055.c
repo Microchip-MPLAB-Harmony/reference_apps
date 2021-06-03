@@ -202,7 +202,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_write_register( u8 v_addr_u8,
     communication routine*/
     BNO055_RETURN_FUNCTION_TYPE com_rslt = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if (p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -220,7 +220,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_write_page_id( u8 v_page_id_u8 )
     BNO055_RETURN_FUNCTION_TYPE com_rslt = ERROR;
     u8 v_data_u8r = BNO055_ZERO_U8X;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -288,7 +288,7 @@ BNO055_RETURN_FUNCTION_TYPE get_bno55_accel_xyz(
     };
     s8 v_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -384,7 +384,7 @@ BNO055_RETURN_FUNCTION_TYPE get_bno55_gyro_xyz( struct bno055_gyro_t *gyro )
     };
     s8 v_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -486,7 +486,7 @@ BNO055_RETURN_FUNCTION_TYPE get_bn055_quaternion_wxyz(
     };
     s8 v_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -563,7 +563,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_get_operation_mode(
     u8 v_data_u8r = BNO055_ZERO_U8X;
     s8 v_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -635,7 +635,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_set_operation_mode( u8
     u8 v_prev_opmode_u8 = OPERATION_MODE_CONFIG;
     s8 v_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -757,7 +757,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_get_accel_range(
     u8 v_data_u8r = BNO055_ZERO_U8X;
     s8 v_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -811,7 +811,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_set_accel_range(
     u8 v_prev_opmode_u8 = OPERATION_MODE_CONFIG;
     s8 v_pg_stat_s8 = ERROR;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
@@ -880,7 +880,7 @@ BNO055_RETURN_FUNCTION_TYPE bno055_set_gyro_range(
     s8 v_pg_stat_s8 = ERROR;
     u8 v_prev_opmode_u8 = OPERATION_MODE_CONFIG;
     /* Check the struct p_bno055 is empty */
-    if ( p_bno055 == BNO055_ZERO_U8X )
+    if ( p_bno055 == NULL )
         return E_NULL_PTR;
     else
     {
