@@ -9,6 +9,14 @@
           <logicalFolder name="f2" displayName="audio" projectFiles="true">
             <logicalFolder name="f1" displayName="decoder" projectFiles="true">
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
+                <logicalFolder name="f3" displayName="mp3" projectFiles="true">
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/assembly.h</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/coder.h</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/mp3common.h</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/mp3dec.h</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/mpadecobjfixpt.h</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/pub/statname.h</itemPath>
+                </logicalFolder>
                 <logicalFolder name="f1" displayName="wav" projectFiles="true">
                   <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/wav/wav_dec.h</itemPath>
                 </logicalFolder>
@@ -387,10 +395,52 @@
           <itemPath>../src/config/pic32mzda_curiosity/device_cache.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mzda_curiosity/definitions.h</itemPath>
+          <itemPath>../src/config/pic32mzda_curiosity/interrupts.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/disk.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="pic32mzda_curiosity.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_codec_ak4954.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_decoders.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_i2s1.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/ddr.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_sdmmc.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_disp_pdatm4301b_480x272.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_hal_le.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_legato.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_maxtouch_controller.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c1.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c2.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/legato_gfx_pda_tm4301b.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/le_gfx_driver_glcd.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sdhc.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_input.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/uart4.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host.yml</itemPath>
+        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host_msd.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/pic32mzda_curiosity/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -409,6 +459,23 @@
           <logicalFolder name="f2" displayName="audio" projectFiles="true">
             <logicalFolder name="f1" displayName="decoder" projectFiles="true">
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
+                <logicalFolder name="f3" displayName="mp3" projectFiles="true">
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/mp3dec.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/mp3tabs.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/bitstream.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/buffers.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/dct32.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/dequant.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/dqchan.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/huffman.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/hufftabs.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/imdct.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/polyphase.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/scalfact.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/stproc.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/subband.c</itemPath>
+                  <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/mp3/fixpnt/real/trigtabs.c</itemPath>
+                </logicalFolder>
                 <logicalFolder name="f1" displayName="wav" projectFiles="true">
                   <itemPath>../src/config/pic32mzda_curiosity/audio/decoder/audio_decoders/wav/wav_dec.c</itemPath>
                 </logicalFolder>
@@ -782,47 +849,6 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="pic32mzda_curiosity.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_codec_ak4954.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_decoders.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_i2s1.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/ddr.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_sdmmc.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_disp_pdatm4301b_480x272.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_hal_le.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_legato.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_maxtouch_controller.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c1.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c2.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/legato_gfx_pda_tm4301b.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/le_gfx_driver_glcd.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/project.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sdhc.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_input.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/uart4.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host_msd.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32mzda_curiosity/harmony-manifest-success.yml</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -837,11 +863,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MZ-DA_DFP" vendor="Microchip" version="1.1.98"/>
+        <pack name="PIC32MZ-DA_DFP" vendor="Microchip" version="1.4.118"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -865,7 +891,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>(if not exist $(ProjectDir)\..\..\hex mkdir $(ProjectDir)\..\..\hex) &amp; (copy "$(ProjectDir)\dist\$(ConfName)\production"\"*.hex" "$(ProjectDir)\..\..\hex\")</makeCustomizationPostStep>
+        <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; mkdir ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/${ImagePath} ${ProjectDir}/../../hex/ </makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -879,11 +905,11 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value=";../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP"/>
+                  value="../src;../src/config/pic32mzda_curiosity;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2064DAR176_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value=""/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
@@ -891,6 +917,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value=""/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -922,6 +949,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -975,7 +1003,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value=";../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP"/>
+                  value="../src;../src/config/pic32mzda_curiosity;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2064DAR176_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1003,6 +1031,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <PICkit3PlatformTool>
@@ -1148,7 +1177,9 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1162,6 +1193,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="programmerToGoFilePath"
                   value="D:/LTBD/Q4_2020/pic32mzda/USB_thumb/Development/thumb_driver_player_legato_graphics/firmware/pic32mzda_curiosity.X/debug/pic32mzda_curiosity/pic32mzda_curiosity_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
@@ -1267,7 +1299,9 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1281,8 +1315,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/LTBD/Q4_2020/pic32mzda/USB_thumb/Development/thumb_driver_player_legato_graphics/firmware/pic32mzda_curiosity.X/debug/pic32mzda_curiosity/pic32mzda_curiosity_ptg"/>
+        <property key="memories.rww" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -1298,7 +1331,6 @@
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptionsedbg.eraseb4program" value="true"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

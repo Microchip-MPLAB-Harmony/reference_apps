@@ -46,6 +46,13 @@ children:
       children:
       - type: User
         attributes: {value: '100000'}
+  - type: Long
+    attributes: {id: I2C_CLOCK_SPEED_HZ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: i2c1, value: '100000'}
   - type: Combo
     attributes: {id: I2C_OPERATING_MODE}
     children:

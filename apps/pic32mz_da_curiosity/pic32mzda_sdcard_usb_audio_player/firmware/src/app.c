@@ -417,25 +417,37 @@ void APP_PlayerInitialize ( void )
 void APP_UpdateTrackPosition()
 {
     uint32_t dur, time;
+     APP_GUI_Tracklist();
     if( appData.sampleRate && appData.numOfChnls )
     {
-        switch( appData.currentStreamType )
-        {
-            case APP_STREAM_WAV:
-                dur = (appData.fileSize - sizeof( WAV_FILE_HEADER ))/(appData.sampleRate*2*appData.numOfChnls);
-                time = (appData.currPos - sizeof( WAV_FILE_HEADER))/(appData.sampleRate*2*appData.numOfChnls);
-                break;
+        dur = (appData.fileSize - sizeof( WAV_FILE_HEADER ))/(appData.sampleRate*2*appData.numOfChnls);
+        time = (appData.currPos - sizeof( WAV_FILE_HEADER))/(appData.sampleRate*2*appData.numOfChnls);
 
-            default:
-                time = dur = 0;
-                break;
-        }
-       
         if (time >= dur)
         {
             appData.state = APP_STATE_CLOSE_FILE;   // if at or past duration, force file to close
-        }        
+        }      
+
     }
+//    if( appData.sampleRate && appData.numOfChnls )
+//    {
+//        switch( appData.currentStreamType )
+//        {
+//            case APP_STREAM_WAV:
+//                dur = (appData.fileSize - sizeof( WAV_FILE_HEADER ))/(appData.sampleRate*2*appData.numOfChnls);
+//                time = (appData.currPos - sizeof( WAV_FILE_HEADER))/(appData.sampleRate*2*appData.numOfChnls);
+//                break;
+//
+//            default:
+//                time = dur = 0;
+//                break;
+//        }
+//       
+//        if (time >= dur)
+//        {
+//            appData.state = APP_STATE_CLOSE_FILE;   // if at or past duration, force file to close
+//        }        
+//    }
 }
 
 // *****************************************************************************
@@ -982,9 +994,11 @@ if(USE_MSDUSB)
                     appData.state = APP_STATE_CLOSE_FILE;
                 }
             }
-            appData.currPos = SYS_FS_FileTell( appData.fileHandle );            
+            appData.currPos = SYS_FS_FileTell( appData.fileHandle );     
+           
             //APP_UpdateTrackPosition();
-            APP_Set_GUI_TrackPositionStr();
+            //APP_GUI_Tracklist();
+           APP_Set_GUI_TrackPositionStr();
 
             if( appData.prevVol != appData.volume )
             {

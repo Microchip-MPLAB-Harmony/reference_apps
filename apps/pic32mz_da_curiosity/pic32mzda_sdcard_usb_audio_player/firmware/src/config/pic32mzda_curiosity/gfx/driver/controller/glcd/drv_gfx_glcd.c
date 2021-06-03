@@ -112,6 +112,7 @@ const char* DRIVER_NAME = "GLCD";
 static volatile DRV_STATE state;
 static unsigned int vsyncCount = 0;
 static unsigned int activeLayer = 0;
+static bool vblankSync = true;
 
 volatile int32_t waitForAlphaSetting[GFX_GLCD_LAYERS] = {0};
 
@@ -280,7 +281,7 @@ void DRV_GLCD_Initialize()
     hsyncLength     = 41;
     vsyncLength     = 10;
     upperMargin     = 2;
-    lowerMargin     = 10;
+    lowerMargin     = 2;
 
 
     /* glcd initialization */
@@ -365,6 +366,10 @@ void GLCD_Interrupt_Handler(void)
     unsigned int i = 0;
     
     EVIC_SourceStatusClear(INT_SOURCE_GLCD);
+	
+    //Sync on vblank?
+    if (vblankSync && PLIB_GLCD_IsVerticalBlankingActive() == true)
+        return;    	
 
     PLIB_GLCD_VSyncInterruptDisable();
 
@@ -660,6 +665,31 @@ gfxDriverIOCTLResponse DRV_GLCD_IOCTL(gfxDriverIOCTLRequest request,
         {
             return DRV_GLCD_SetPalette((gfxIOCTLArg_Palette*)arg);
         }
+        case GFX_IOCTL_SET_VBLANK_SYNC:
+        {
+            vblankSync = ((gfxIOCTLArg_Value*)arg)->value.v_bool;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_STATUS:
+        {
+            unsigned int i;
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 0;
+            
+            for (i = 0; i < GFX_GLCD_LAYERS; i++)
+            {
+                if (drvLayer[i].updateLock != LAYER_UNLOCKED)
+                {
+                    val->value.v_uint = 1;
+
+                    break;
+                }
+            }
+
+            return GFX_IOCTL_OK;
+        }		
         default:
         {
             if (request >= GFX_IOCTL_LAYER_REQ_START && 

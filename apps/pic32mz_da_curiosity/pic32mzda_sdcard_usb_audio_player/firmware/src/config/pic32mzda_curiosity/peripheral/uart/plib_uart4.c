@@ -50,34 +50,29 @@
 
 void static UART4_ErrorClear( void )
 {
-    /* rxBufferLen = (FIFO level + RX register) */
-    uint8_t rxBufferLen = UART_RXFIFO_DEPTH;
+    UART_ERROR errors = UART_ERROR_NONE;
     uint8_t dummyData = 0u;
 
-    /* If it's a overrun error then clear it to flush FIFO */
-    if(U4STA & _U4STA_OERR_MASK)
-    {
-        U4STACLR = _U4STA_OERR_MASK;
-    }
+    errors = (UART_ERROR)(U4STA & (_U4STA_OERR_MASK | _U4STA_FERR_MASK | _U4STA_PERR_MASK));
 
-    /* Read existing error bytes from FIFO to clear parity and framing error flags */
-    while(U4STA & (_U4STA_FERR_MASK | _U4STA_PERR_MASK))
+    if(errors != UART_ERROR_NONE)
     {
-        dummyData = (uint8_t )(U4RXREG );
-        rxBufferLen--;
-
-        /* Try to flush error bytes for one full FIFO and exit instead of
-         * blocking here if more error bytes are received */
-        if(rxBufferLen == 0u)
+        /* If it's a overrun error then clear it to flush FIFO */
+        if(U4STA & _U4STA_OERR_MASK)
         {
-            break;
+            U4STACLR = _U4STA_OERR_MASK;
         }
+
+        /* Read existing error bytes from FIFO to clear parity and framing error flags */
+        while(U4STA & _U4STA_URXDA_MASK)
+        {
+            dummyData = U4RXREG;
+        }
+
     }
 
     // Ignore the warning
     (void)dummyData;
-
-    return;
 }
 
 void UART4_Initialize( void )
@@ -98,7 +93,7 @@ void UART4_Initialize( void )
     U4MODE = 0x8;
 
     /* Enable UART4 Receiver and Transmitter */
-    U4STASET = (_U4STA_UTXEN_MASK | _U4STA_URXEN_MASK);
+    U4STASET = (_U4STA_UTXEN_MASK | _U4STA_URXEN_MASK );
 
     /* BAUD Rate register Setup */
     U4BRG = 214;
@@ -200,12 +195,14 @@ bool UART4_Read(void* buffer, const size_t size )
 
     if(lBuffer != NULL)
     {
-        /* Clear errors before submitting the request.
-         * ErrorGet clears errors internally. */
-        UART4_ErrorGet();
+
+        /* Clear error flags and flush out error data that may have been received when no active request was pending */
+        UART4_ErrorClear();
 
         while( size > processedSize )
         {
+            while(!(U4STA & _U4STA_URXDA_MASK));
+
             /* Error status */
             errorStatus = (U4STA & (_U4STA_OERR_MASK | _U4STA_FERR_MASK | _U4STA_PERR_MASK));
 
@@ -213,13 +210,19 @@ bool UART4_Read(void* buffer, const size_t size )
             {
                 break;
             }
-
-            /* Receiver buffer has data */
-            if((U4STA & _U4STA_URXDA_MASK) == _U4STA_URXDA_MASK)
+            if (( U4MODE & (_U4MODE_PDSEL0_MASK | _U4MODE_PDSEL1_MASK)) == (_U4MODE_PDSEL0_MASK | _U4MODE_PDSEL1_MASK))
             {
-                *lBuffer++ = (U4RXREG );
-                processedSize++;
+                /* 9-bit mode */
+                *(uint16_t*)lBuffer = (U4RXREG );
+                lBuffer += 2;
             }
+            else
+            {
+                /* 8-bit mode */
+                *lBuffer++ = (U4RXREG );
+            }
+
+            processedSize++;
         }
 
         if(size == processedSize)
@@ -241,11 +244,22 @@ bool UART4_Write( void* buffer, const size_t size )
     {
         while( size > processedSize )
         {
-            if(!(U4STA & _U4STA_UTXBF_MASK))
+            /* Wait while TX buffer is full */
+            while (U4STA & _U4STA_UTXBF_MASK);
+
+            if (( U4MODE & (_U4MODE_PDSEL0_MASK | _U4MODE_PDSEL1_MASK)) == (_U4MODE_PDSEL0_MASK | _U4MODE_PDSEL1_MASK))
             {
-                U4TXREG = *lBuffer++;
-                processedSize++;
+                /* 9-bit mode */
+                U4TXREG = *(uint16_t*)lBuffer;
+                lBuffer += 2;
             }
+            else
+            {
+                /* 8-bit mode */
+                U4TXREG = *lBuffer++;
+            }
+
+            processedSize++;
         }
 
         status = true;
@@ -257,9 +271,8 @@ bool UART4_Write( void* buffer, const size_t size )
 UART_ERROR UART4_ErrorGet( void )
 {
     UART_ERROR errors = UART_ERROR_NONE;
-    uint32_t status = U4STA;
 
-    errors = (UART_ERROR)(status & (_U4STA_OERR_MASK | _U4STA_FERR_MASK | _U4STA_PERR_MASK));
+    errors = (UART_ERROR)(U4STA & (_U4STA_OERR_MASK | _U4STA_FERR_MASK | _U4STA_PERR_MASK));
 
     if(errors != UART_ERROR_NONE)
     {

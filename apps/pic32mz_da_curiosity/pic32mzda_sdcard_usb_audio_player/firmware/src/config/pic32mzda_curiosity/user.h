@@ -52,7 +52,7 @@ extern "C" {
 
     
 #define SWAPCHANNELS
-#define NUM_SAMPLES                     5152
+#define NUM_SAMPLES                     9152
 #define BUFFER_SIZE                     4*NUM_SAMPLES      
     
 #define VBUS_AH_PowerEnable()              (LATESET = (1<<0))

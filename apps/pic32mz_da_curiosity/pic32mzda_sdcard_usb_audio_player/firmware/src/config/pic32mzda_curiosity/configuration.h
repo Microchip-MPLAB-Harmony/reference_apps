@@ -103,13 +103,13 @@ extern "C" {
 #define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
+#define SYS_FS_ALIGNED_BUFFER_LEN         512
 
 
-#define SYS_FS_FAT_VERSION                "v0.14"
+#define SYS_FS_FAT_VERSION                "v0.14a"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
-#define SYS_FS_FAT_ALIGNED_BUFFER_LEN     512
 
 
 
@@ -148,8 +148,8 @@ extern "C" {
 /* I2S Driver Instance 0 Configuration Options */
 #define DRV_I2S_INDEX_0                       0
 #define DRV_I2S_CLIENTS_NUMBER_IDX0           1
-#define DRV_I2S_QUEUE_DEPTH_COMBINED          8
-#define DRV_I2S_QUEUE_SIZE_IDX0               8
+#define DRV_I2S_QUEUE_DEPTH_COMBINED          32
+#define DRV_I2S_QUEUE_SIZE_IDX0               32
 #define DRV_I2S_DATA_LENGTH_IDX0              16
 #define DRV_I2S_INT_SRC_IDX0                  _DMA0_VECTOR
 #define DRV_I2S_XMIT_DMA_CH_IDX0              SYS_DMA_CHANNEL_0
