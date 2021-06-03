@@ -41,6 +41,7 @@
 // DOM-IGNORE-END
 #include "device.h"
 #include "plib_afec1.h"
+#include "interrupts.h"
 
 #define AFEC_SEQ1_CHANNEL_NUM (8U)
 

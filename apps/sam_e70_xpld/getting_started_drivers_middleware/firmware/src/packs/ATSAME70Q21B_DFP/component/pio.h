@@ -1,7 +1,7 @@
 /**
  * \brief Component description for PIO
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_PIO_COMPONENT_H_
 #define _SAME70_PIO_COMPONENT_H_
 
@@ -4935,6 +4935,8 @@
 #define PIO_PUER_REG_OFST              (0x64)              /**< (PIO_PUER) Pull-up Enable Register Offset */
 #define PIO_PUSR_REG_OFST              (0x68)              /**< (PIO_PUSR) Pad Pull-up Status Register Offset */
 #define PIO_ABCDSR_REG_OFST            (0x70)              /**< (PIO_ABCDSR) Peripheral ABCD Select Register 0 Offset */
+#define PIO_ABCDSR0_REG_OFST           (0x70)              /**< (PIO_ABCDSR0) Peripheral ABCD Select Register 0 Offset */
+#define PIO_ABCDSR1_REG_OFST           (0x74)              /**< (PIO_ABCDSR1) Peripheral ABCD Select Register 0 Offset */
 #define PIO_IFSCDR_REG_OFST            (0x80)              /**< (PIO_IFSCDR) Input Filter Slow Clock Disable Register Offset */
 #define PIO_IFSCER_REG_OFST            (0x84)              /**< (PIO_IFSCER) Input Filter Slow Clock Enable Register Offset */
 #define PIO_IFSCSR_REG_OFST            (0x88)              /**< (PIO_IFSCSR) Input Filter Slow Clock Status Register Offset */

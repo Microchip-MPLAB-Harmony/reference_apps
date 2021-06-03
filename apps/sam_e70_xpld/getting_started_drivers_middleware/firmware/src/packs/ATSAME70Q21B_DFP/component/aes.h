@@ -1,7 +1,7 @@
 /**
  * \brief Component description for AES
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_AES_COMPONENT_H_
 #define _SAME70_AES_COMPONENT_H_
 
@@ -260,15 +260,47 @@
 #define AES_IMR_REG_OFST               (0x18)              /**< (AES_IMR) Interrupt Mask Register Offset */
 #define AES_ISR_REG_OFST               (0x1C)              /**< (AES_ISR) Interrupt Status Register Offset */
 #define AES_KEYWR_REG_OFST             (0x20)              /**< (AES_KEYWR) Key Word Register Offset */
+#define AES_KEYWR0_REG_OFST            (0x20)              /**< (AES_KEYWR0) Key Word Register Offset */
+#define AES_KEYWR1_REG_OFST            (0x24)              /**< (AES_KEYWR1) Key Word Register Offset */
+#define AES_KEYWR2_REG_OFST            (0x28)              /**< (AES_KEYWR2) Key Word Register Offset */
+#define AES_KEYWR3_REG_OFST            (0x2C)              /**< (AES_KEYWR3) Key Word Register Offset */
+#define AES_KEYWR4_REG_OFST            (0x30)              /**< (AES_KEYWR4) Key Word Register Offset */
+#define AES_KEYWR5_REG_OFST            (0x34)              /**< (AES_KEYWR5) Key Word Register Offset */
+#define AES_KEYWR6_REG_OFST            (0x38)              /**< (AES_KEYWR6) Key Word Register Offset */
+#define AES_KEYWR7_REG_OFST            (0x3C)              /**< (AES_KEYWR7) Key Word Register Offset */
 #define AES_IDATAR_REG_OFST            (0x40)              /**< (AES_IDATAR) Input Data Register Offset */
+#define AES_IDATAR0_REG_OFST           (0x40)              /**< (AES_IDATAR0) Input Data Register Offset */
+#define AES_IDATAR1_REG_OFST           (0x44)              /**< (AES_IDATAR1) Input Data Register Offset */
+#define AES_IDATAR2_REG_OFST           (0x48)              /**< (AES_IDATAR2) Input Data Register Offset */
+#define AES_IDATAR3_REG_OFST           (0x4C)              /**< (AES_IDATAR3) Input Data Register Offset */
 #define AES_ODATAR_REG_OFST            (0x50)              /**< (AES_ODATAR) Output Data Register Offset */
+#define AES_ODATAR0_REG_OFST           (0x50)              /**< (AES_ODATAR0) Output Data Register Offset */
+#define AES_ODATAR1_REG_OFST           (0x54)              /**< (AES_ODATAR1) Output Data Register Offset */
+#define AES_ODATAR2_REG_OFST           (0x58)              /**< (AES_ODATAR2) Output Data Register Offset */
+#define AES_ODATAR3_REG_OFST           (0x5C)              /**< (AES_ODATAR3) Output Data Register Offset */
 #define AES_IVR_REG_OFST               (0x60)              /**< (AES_IVR) Initialization Vector Register Offset */
+#define AES_IVR0_REG_OFST              (0x60)              /**< (AES_IVR0) Initialization Vector Register Offset */
+#define AES_IVR1_REG_OFST              (0x64)              /**< (AES_IVR1) Initialization Vector Register Offset */
+#define AES_IVR2_REG_OFST              (0x68)              /**< (AES_IVR2) Initialization Vector Register Offset */
+#define AES_IVR3_REG_OFST              (0x6C)              /**< (AES_IVR3) Initialization Vector Register Offset */
 #define AES_AADLENR_REG_OFST           (0x70)              /**< (AES_AADLENR) Additional Authenticated Data Length Register Offset */
 #define AES_CLENR_REG_OFST             (0x74)              /**< (AES_CLENR) Plaintext/Ciphertext Length Register Offset */
 #define AES_GHASHR_REG_OFST            (0x78)              /**< (AES_GHASHR) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR0_REG_OFST           (0x78)              /**< (AES_GHASHR0) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR1_REG_OFST           (0x7C)              /**< (AES_GHASHR1) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR2_REG_OFST           (0x80)              /**< (AES_GHASHR2) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR3_REG_OFST           (0x84)              /**< (AES_GHASHR3) GCM Intermediate Hash Word Register Offset */
 #define AES_TAGR_REG_OFST              (0x88)              /**< (AES_TAGR) GCM Authentication Tag Word Register Offset */
+#define AES_TAGR0_REG_OFST             (0x88)              /**< (AES_TAGR0) GCM Authentication Tag Word Register Offset */
+#define AES_TAGR1_REG_OFST             (0x8C)              /**< (AES_TAGR1) GCM Authentication Tag Word Register Offset */
+#define AES_TAGR2_REG_OFST             (0x90)              /**< (AES_TAGR2) GCM Authentication Tag Word Register Offset */
+#define AES_TAGR3_REG_OFST             (0x94)              /**< (AES_TAGR3) GCM Authentication Tag Word Register Offset */
 #define AES_CTRR_REG_OFST              (0x98)              /**< (AES_CTRR) GCM Encryption Counter Value Register Offset */
 #define AES_GCMHR_REG_OFST             (0x9C)              /**< (AES_GCMHR) GCM H Word Register Offset */
+#define AES_GCMHR0_REG_OFST            (0x9C)              /**< (AES_GCMHR0) GCM H Word Register Offset */
+#define AES_GCMHR1_REG_OFST            (0xA0)              /**< (AES_GCMHR1) GCM H Word Register Offset */
+#define AES_GCMHR2_REG_OFST            (0xA4)              /**< (AES_GCMHR2) GCM H Word Register Offset */
+#define AES_GCMHR3_REG_OFST            (0xA8)              /**< (AES_GCMHR3) GCM H Word Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief AES register API structure */

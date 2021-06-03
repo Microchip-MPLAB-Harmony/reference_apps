@@ -1,7 +1,7 @@
 /**
  * \brief Component description for USBHS
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_USBHS_COMPONENT_H_
 #define _SAME70_USBHS_COMPONENT_H_
 
@@ -2544,12 +2544,82 @@
 #define USBHS_DEVEPT_REG_OFST          (0x1C)              /**< (USBHS_DEVEPT) Device Endpoint Register Offset */
 #define USBHS_DEVFNUM_REG_OFST         (0x20)              /**< (USBHS_DEVFNUM) Device Frame Number Register Offset */
 #define USBHS_DEVEPTCFG_REG_OFST       (0x100)             /**< (USBHS_DEVEPTCFG) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG0_REG_OFST      (0x100)             /**< (USBHS_DEVEPTCFG0) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG1_REG_OFST      (0x104)             /**< (USBHS_DEVEPTCFG1) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG2_REG_OFST      (0x108)             /**< (USBHS_DEVEPTCFG2) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG3_REG_OFST      (0x10C)             /**< (USBHS_DEVEPTCFG3) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG4_REG_OFST      (0x110)             /**< (USBHS_DEVEPTCFG4) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG5_REG_OFST      (0x114)             /**< (USBHS_DEVEPTCFG5) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG6_REG_OFST      (0x118)             /**< (USBHS_DEVEPTCFG6) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG7_REG_OFST      (0x11C)             /**< (USBHS_DEVEPTCFG7) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG8_REG_OFST      (0x120)             /**< (USBHS_DEVEPTCFG8) Device Endpoint Configuration Register Offset */
+#define USBHS_DEVEPTCFG9_REG_OFST      (0x124)             /**< (USBHS_DEVEPTCFG9) Device Endpoint Configuration Register Offset */
 #define USBHS_DEVEPTISR_REG_OFST       (0x130)             /**< (USBHS_DEVEPTISR) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR0_REG_OFST      (0x130)             /**< (USBHS_DEVEPTISR0) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR1_REG_OFST      (0x134)             /**< (USBHS_DEVEPTISR1) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR2_REG_OFST      (0x138)             /**< (USBHS_DEVEPTISR2) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR3_REG_OFST      (0x13C)             /**< (USBHS_DEVEPTISR3) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR4_REG_OFST      (0x140)             /**< (USBHS_DEVEPTISR4) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR5_REG_OFST      (0x144)             /**< (USBHS_DEVEPTISR5) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR6_REG_OFST      (0x148)             /**< (USBHS_DEVEPTISR6) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR7_REG_OFST      (0x14C)             /**< (USBHS_DEVEPTISR7) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR8_REG_OFST      (0x150)             /**< (USBHS_DEVEPTISR8) Device Endpoint Interrupt Status Register Offset */
+#define USBHS_DEVEPTISR9_REG_OFST      (0x154)             /**< (USBHS_DEVEPTISR9) Device Endpoint Interrupt Status Register Offset */
 #define USBHS_DEVEPTICR_REG_OFST       (0x160)             /**< (USBHS_DEVEPTICR) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR0_REG_OFST      (0x160)             /**< (USBHS_DEVEPTICR0) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR1_REG_OFST      (0x164)             /**< (USBHS_DEVEPTICR1) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR2_REG_OFST      (0x168)             /**< (USBHS_DEVEPTICR2) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR3_REG_OFST      (0x16C)             /**< (USBHS_DEVEPTICR3) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR4_REG_OFST      (0x170)             /**< (USBHS_DEVEPTICR4) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR5_REG_OFST      (0x174)             /**< (USBHS_DEVEPTICR5) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR6_REG_OFST      (0x178)             /**< (USBHS_DEVEPTICR6) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR7_REG_OFST      (0x17C)             /**< (USBHS_DEVEPTICR7) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR8_REG_OFST      (0x180)             /**< (USBHS_DEVEPTICR8) Device Endpoint Interrupt Clear Register Offset */
+#define USBHS_DEVEPTICR9_REG_OFST      (0x184)             /**< (USBHS_DEVEPTICR9) Device Endpoint Interrupt Clear Register Offset */
 #define USBHS_DEVEPTIFR_REG_OFST       (0x190)             /**< (USBHS_DEVEPTIFR) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR0_REG_OFST      (0x190)             /**< (USBHS_DEVEPTIFR0) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR1_REG_OFST      (0x194)             /**< (USBHS_DEVEPTIFR1) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR2_REG_OFST      (0x198)             /**< (USBHS_DEVEPTIFR2) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR3_REG_OFST      (0x19C)             /**< (USBHS_DEVEPTIFR3) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR4_REG_OFST      (0x1A0)             /**< (USBHS_DEVEPTIFR4) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR5_REG_OFST      (0x1A4)             /**< (USBHS_DEVEPTIFR5) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR6_REG_OFST      (0x1A8)             /**< (USBHS_DEVEPTIFR6) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR7_REG_OFST      (0x1AC)             /**< (USBHS_DEVEPTIFR7) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR8_REG_OFST      (0x1B0)             /**< (USBHS_DEVEPTIFR8) Device Endpoint Interrupt Set Register Offset */
+#define USBHS_DEVEPTIFR9_REG_OFST      (0x1B4)             /**< (USBHS_DEVEPTIFR9) Device Endpoint Interrupt Set Register Offset */
 #define USBHS_DEVEPTIMR_REG_OFST       (0x1C0)             /**< (USBHS_DEVEPTIMR) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR0_REG_OFST      (0x1C0)             /**< (USBHS_DEVEPTIMR0) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR1_REG_OFST      (0x1C4)             /**< (USBHS_DEVEPTIMR1) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR2_REG_OFST      (0x1C8)             /**< (USBHS_DEVEPTIMR2) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR3_REG_OFST      (0x1CC)             /**< (USBHS_DEVEPTIMR3) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR4_REG_OFST      (0x1D0)             /**< (USBHS_DEVEPTIMR4) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR5_REG_OFST      (0x1D4)             /**< (USBHS_DEVEPTIMR5) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR6_REG_OFST      (0x1D8)             /**< (USBHS_DEVEPTIMR6) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR7_REG_OFST      (0x1DC)             /**< (USBHS_DEVEPTIMR7) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR8_REG_OFST      (0x1E0)             /**< (USBHS_DEVEPTIMR8) Device Endpoint Interrupt Mask Register Offset */
+#define USBHS_DEVEPTIMR9_REG_OFST      (0x1E4)             /**< (USBHS_DEVEPTIMR9) Device Endpoint Interrupt Mask Register Offset */
 #define USBHS_DEVEPTIER_REG_OFST       (0x1F0)             /**< (USBHS_DEVEPTIER) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER0_REG_OFST      (0x1F0)             /**< (USBHS_DEVEPTIER0) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER1_REG_OFST      (0x1F4)             /**< (USBHS_DEVEPTIER1) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER2_REG_OFST      (0x1F8)             /**< (USBHS_DEVEPTIER2) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER3_REG_OFST      (0x1FC)             /**< (USBHS_DEVEPTIER3) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER4_REG_OFST      (0x200)             /**< (USBHS_DEVEPTIER4) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER5_REG_OFST      (0x204)             /**< (USBHS_DEVEPTIER5) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER6_REG_OFST      (0x208)             /**< (USBHS_DEVEPTIER6) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER7_REG_OFST      (0x20C)             /**< (USBHS_DEVEPTIER7) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER8_REG_OFST      (0x210)             /**< (USBHS_DEVEPTIER8) Device Endpoint Interrupt Enable Register Offset */
+#define USBHS_DEVEPTIER9_REG_OFST      (0x214)             /**< (USBHS_DEVEPTIER9) Device Endpoint Interrupt Enable Register Offset */
 #define USBHS_DEVEPTIDR_REG_OFST       (0x220)             /**< (USBHS_DEVEPTIDR) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR0_REG_OFST      (0x220)             /**< (USBHS_DEVEPTIDR0) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR1_REG_OFST      (0x224)             /**< (USBHS_DEVEPTIDR1) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR2_REG_OFST      (0x228)             /**< (USBHS_DEVEPTIDR2) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR3_REG_OFST      (0x22C)             /**< (USBHS_DEVEPTIDR3) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR4_REG_OFST      (0x230)             /**< (USBHS_DEVEPTIDR4) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR5_REG_OFST      (0x234)             /**< (USBHS_DEVEPTIDR5) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR6_REG_OFST      (0x238)             /**< (USBHS_DEVEPTIDR6) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR7_REG_OFST      (0x23C)             /**< (USBHS_DEVEPTIDR7) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR8_REG_OFST      (0x240)             /**< (USBHS_DEVEPTIDR8) Device Endpoint Interrupt Disable Register Offset */
+#define USBHS_DEVEPTIDR9_REG_OFST      (0x244)             /**< (USBHS_DEVEPTIDR9) Device Endpoint Interrupt Disable Register Offset */
 #define USBHS_HSTCTRL_REG_OFST         (0x400)             /**< (USBHS_HSTCTRL) Host General Control Register Offset */
 #define USBHS_HSTISR_REG_OFST          (0x404)             /**< (USBHS_HSTISR) Host Global Interrupt Status Register Offset */
 #define USBHS_HSTICR_REG_OFST          (0x408)             /**< (USBHS_HSTICR) Host Global Interrupt Clear Register Offset */
@@ -2563,14 +2633,104 @@
 #define USBHS_HSTADDR2_REG_OFST        (0x428)             /**< (USBHS_HSTADDR2) Host Address 2 Register Offset */
 #define USBHS_HSTADDR3_REG_OFST        (0x42C)             /**< (USBHS_HSTADDR3) Host Address 3 Register Offset */
 #define USBHS_HSTPIPCFG_REG_OFST       (0x500)             /**< (USBHS_HSTPIPCFG) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG0_REG_OFST      (0x500)             /**< (USBHS_HSTPIPCFG0) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG1_REG_OFST      (0x504)             /**< (USBHS_HSTPIPCFG1) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG2_REG_OFST      (0x508)             /**< (USBHS_HSTPIPCFG2) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG3_REG_OFST      (0x50C)             /**< (USBHS_HSTPIPCFG3) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG4_REG_OFST      (0x510)             /**< (USBHS_HSTPIPCFG4) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG5_REG_OFST      (0x514)             /**< (USBHS_HSTPIPCFG5) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG6_REG_OFST      (0x518)             /**< (USBHS_HSTPIPCFG6) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG7_REG_OFST      (0x51C)             /**< (USBHS_HSTPIPCFG7) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG8_REG_OFST      (0x520)             /**< (USBHS_HSTPIPCFG8) Host Pipe Configuration Register Offset */
+#define USBHS_HSTPIPCFG9_REG_OFST      (0x524)             /**< (USBHS_HSTPIPCFG9) Host Pipe Configuration Register Offset */
 #define USBHS_HSTPIPISR_REG_OFST       (0x530)             /**< (USBHS_HSTPIPISR) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR0_REG_OFST      (0x530)             /**< (USBHS_HSTPIPISR0) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR1_REG_OFST      (0x534)             /**< (USBHS_HSTPIPISR1) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR2_REG_OFST      (0x538)             /**< (USBHS_HSTPIPISR2) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR3_REG_OFST      (0x53C)             /**< (USBHS_HSTPIPISR3) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR4_REG_OFST      (0x540)             /**< (USBHS_HSTPIPISR4) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR5_REG_OFST      (0x544)             /**< (USBHS_HSTPIPISR5) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR6_REG_OFST      (0x548)             /**< (USBHS_HSTPIPISR6) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR7_REG_OFST      (0x54C)             /**< (USBHS_HSTPIPISR7) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR8_REG_OFST      (0x550)             /**< (USBHS_HSTPIPISR8) Host Pipe Status Register Offset */
+#define USBHS_HSTPIPISR9_REG_OFST      (0x554)             /**< (USBHS_HSTPIPISR9) Host Pipe Status Register Offset */
 #define USBHS_HSTPIPICR_REG_OFST       (0x560)             /**< (USBHS_HSTPIPICR) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR0_REG_OFST      (0x560)             /**< (USBHS_HSTPIPICR0) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR1_REG_OFST      (0x564)             /**< (USBHS_HSTPIPICR1) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR2_REG_OFST      (0x568)             /**< (USBHS_HSTPIPICR2) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR3_REG_OFST      (0x56C)             /**< (USBHS_HSTPIPICR3) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR4_REG_OFST      (0x570)             /**< (USBHS_HSTPIPICR4) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR5_REG_OFST      (0x574)             /**< (USBHS_HSTPIPICR5) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR6_REG_OFST      (0x578)             /**< (USBHS_HSTPIPICR6) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR7_REG_OFST      (0x57C)             /**< (USBHS_HSTPIPICR7) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR8_REG_OFST      (0x580)             /**< (USBHS_HSTPIPICR8) Host Pipe Clear Register Offset */
+#define USBHS_HSTPIPICR9_REG_OFST      (0x584)             /**< (USBHS_HSTPIPICR9) Host Pipe Clear Register Offset */
 #define USBHS_HSTPIPIFR_REG_OFST       (0x590)             /**< (USBHS_HSTPIPIFR) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR0_REG_OFST      (0x590)             /**< (USBHS_HSTPIPIFR0) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR1_REG_OFST      (0x594)             /**< (USBHS_HSTPIPIFR1) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR2_REG_OFST      (0x598)             /**< (USBHS_HSTPIPIFR2) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR3_REG_OFST      (0x59C)             /**< (USBHS_HSTPIPIFR3) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR4_REG_OFST      (0x5A0)             /**< (USBHS_HSTPIPIFR4) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR5_REG_OFST      (0x5A4)             /**< (USBHS_HSTPIPIFR5) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR6_REG_OFST      (0x5A8)             /**< (USBHS_HSTPIPIFR6) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR7_REG_OFST      (0x5AC)             /**< (USBHS_HSTPIPIFR7) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR8_REG_OFST      (0x5B0)             /**< (USBHS_HSTPIPIFR8) Host Pipe Set Register Offset */
+#define USBHS_HSTPIPIFR9_REG_OFST      (0x5B4)             /**< (USBHS_HSTPIPIFR9) Host Pipe Set Register Offset */
 #define USBHS_HSTPIPIMR_REG_OFST       (0x5C0)             /**< (USBHS_HSTPIPIMR) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR0_REG_OFST      (0x5C0)             /**< (USBHS_HSTPIPIMR0) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR1_REG_OFST      (0x5C4)             /**< (USBHS_HSTPIPIMR1) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR2_REG_OFST      (0x5C8)             /**< (USBHS_HSTPIPIMR2) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR3_REG_OFST      (0x5CC)             /**< (USBHS_HSTPIPIMR3) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR4_REG_OFST      (0x5D0)             /**< (USBHS_HSTPIPIMR4) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR5_REG_OFST      (0x5D4)             /**< (USBHS_HSTPIPIMR5) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR6_REG_OFST      (0x5D8)             /**< (USBHS_HSTPIPIMR6) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR7_REG_OFST      (0x5DC)             /**< (USBHS_HSTPIPIMR7) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR8_REG_OFST      (0x5E0)             /**< (USBHS_HSTPIPIMR8) Host Pipe Mask Register Offset */
+#define USBHS_HSTPIPIMR9_REG_OFST      (0x5E4)             /**< (USBHS_HSTPIPIMR9) Host Pipe Mask Register Offset */
 #define USBHS_HSTPIPIER_REG_OFST       (0x5F0)             /**< (USBHS_HSTPIPIER) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER0_REG_OFST      (0x5F0)             /**< (USBHS_HSTPIPIER0) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER1_REG_OFST      (0x5F4)             /**< (USBHS_HSTPIPIER1) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER2_REG_OFST      (0x5F8)             /**< (USBHS_HSTPIPIER2) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER3_REG_OFST      (0x5FC)             /**< (USBHS_HSTPIPIER3) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER4_REG_OFST      (0x600)             /**< (USBHS_HSTPIPIER4) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER5_REG_OFST      (0x604)             /**< (USBHS_HSTPIPIER5) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER6_REG_OFST      (0x608)             /**< (USBHS_HSTPIPIER6) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER7_REG_OFST      (0x60C)             /**< (USBHS_HSTPIPIER7) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER8_REG_OFST      (0x610)             /**< (USBHS_HSTPIPIER8) Host Pipe Enable Register Offset */
+#define USBHS_HSTPIPIER9_REG_OFST      (0x614)             /**< (USBHS_HSTPIPIER9) Host Pipe Enable Register Offset */
 #define USBHS_HSTPIPIDR_REG_OFST       (0x620)             /**< (USBHS_HSTPIPIDR) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR0_REG_OFST      (0x620)             /**< (USBHS_HSTPIPIDR0) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR1_REG_OFST      (0x624)             /**< (USBHS_HSTPIPIDR1) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR2_REG_OFST      (0x628)             /**< (USBHS_HSTPIPIDR2) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR3_REG_OFST      (0x62C)             /**< (USBHS_HSTPIPIDR3) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR4_REG_OFST      (0x630)             /**< (USBHS_HSTPIPIDR4) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR5_REG_OFST      (0x634)             /**< (USBHS_HSTPIPIDR5) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR6_REG_OFST      (0x638)             /**< (USBHS_HSTPIPIDR6) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR7_REG_OFST      (0x63C)             /**< (USBHS_HSTPIPIDR7) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR8_REG_OFST      (0x640)             /**< (USBHS_HSTPIPIDR8) Host Pipe Disable Register Offset */
+#define USBHS_HSTPIPIDR9_REG_OFST      (0x644)             /**< (USBHS_HSTPIPIDR9) Host Pipe Disable Register Offset */
 #define USBHS_HSTPIPINRQ_REG_OFST      (0x650)             /**< (USBHS_HSTPIPINRQ) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ0_REG_OFST     (0x650)             /**< (USBHS_HSTPIPINRQ0) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ1_REG_OFST     (0x654)             /**< (USBHS_HSTPIPINRQ1) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ2_REG_OFST     (0x658)             /**< (USBHS_HSTPIPINRQ2) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ3_REG_OFST     (0x65C)             /**< (USBHS_HSTPIPINRQ3) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ4_REG_OFST     (0x660)             /**< (USBHS_HSTPIPINRQ4) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ5_REG_OFST     (0x664)             /**< (USBHS_HSTPIPINRQ5) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ6_REG_OFST     (0x668)             /**< (USBHS_HSTPIPINRQ6) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ7_REG_OFST     (0x66C)             /**< (USBHS_HSTPIPINRQ7) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ8_REG_OFST     (0x670)             /**< (USBHS_HSTPIPINRQ8) Host Pipe IN Request Register Offset */
+#define USBHS_HSTPIPINRQ9_REG_OFST     (0x674)             /**< (USBHS_HSTPIPINRQ9) Host Pipe IN Request Register Offset */
 #define USBHS_HSTPIPERR_REG_OFST       (0x680)             /**< (USBHS_HSTPIPERR) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR0_REG_OFST      (0x680)             /**< (USBHS_HSTPIPERR0) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR1_REG_OFST      (0x684)             /**< (USBHS_HSTPIPERR1) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR2_REG_OFST      (0x688)             /**< (USBHS_HSTPIPERR2) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR3_REG_OFST      (0x68C)             /**< (USBHS_HSTPIPERR3) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR4_REG_OFST      (0x690)             /**< (USBHS_HSTPIPERR4) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR5_REG_OFST      (0x694)             /**< (USBHS_HSTPIPERR5) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR6_REG_OFST      (0x698)             /**< (USBHS_HSTPIPERR6) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR7_REG_OFST      (0x69C)             /**< (USBHS_HSTPIPERR7) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR8_REG_OFST      (0x6A0)             /**< (USBHS_HSTPIPERR8) Host Pipe Error Register Offset */
+#define USBHS_HSTPIPERR9_REG_OFST      (0x6A4)             /**< (USBHS_HSTPIPERR9) Host Pipe Error Register Offset */
 #define USBHS_CTRL_REG_OFST            (0x800)             /**< (USBHS_CTRL) General Control Register Offset */
 #define USBHS_SR_REG_OFST              (0x804)             /**< (USBHS_SR) General Status Register Offset */
 #define USBHS_SCR_REG_OFST             (0x808)             /**< (USBHS_SCR) General Status Clear Register Offset */

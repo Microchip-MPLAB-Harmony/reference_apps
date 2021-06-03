@@ -1,7 +1,7 @@
 /**
  * \brief Component description for MATRIX
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_MATRIX_COMPONENT_H_
 #define _SAME70_MATRIX_COMPONENT_H_
 
@@ -263,7 +263,29 @@
 #define MATRIX_PRAS_REG_OFST           (0x00)              /**< (MATRIX_PRAS) Priority Register A for Slave 0 Offset */
 #define MATRIX_PRBS_REG_OFST           (0x04)              /**< (MATRIX_PRBS) Priority Register B for Slave 0 Offset */
 #define MATRIX_MCFG_REG_OFST           (0x00)              /**< (MATRIX_MCFG) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG0_REG_OFST          (0x00)              /**< (MATRIX_MCFG0) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG1_REG_OFST          (0x04)              /**< (MATRIX_MCFG1) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG2_REG_OFST          (0x08)              /**< (MATRIX_MCFG2) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG3_REG_OFST          (0x0C)              /**< (MATRIX_MCFG3) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG4_REG_OFST          (0x10)              /**< (MATRIX_MCFG4) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG5_REG_OFST          (0x14)              /**< (MATRIX_MCFG5) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG6_REG_OFST          (0x18)              /**< (MATRIX_MCFG6) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG7_REG_OFST          (0x1C)              /**< (MATRIX_MCFG7) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG8_REG_OFST          (0x20)              /**< (MATRIX_MCFG8) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG9_REG_OFST          (0x24)              /**< (MATRIX_MCFG9) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG10_REG_OFST         (0x28)              /**< (MATRIX_MCFG10) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG11_REG_OFST         (0x2C)              /**< (MATRIX_MCFG11) Master Configuration Register 0 Offset */
+#define MATRIX_MCFG12_REG_OFST         (0x30)              /**< (MATRIX_MCFG12) Master Configuration Register 0 Offset */
 #define MATRIX_SCFG_REG_OFST           (0x40)              /**< (MATRIX_SCFG) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG0_REG_OFST          (0x40)              /**< (MATRIX_SCFG0) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG1_REG_OFST          (0x44)              /**< (MATRIX_SCFG1) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG2_REG_OFST          (0x48)              /**< (MATRIX_SCFG2) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG3_REG_OFST          (0x4C)              /**< (MATRIX_SCFG3) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG4_REG_OFST          (0x50)              /**< (MATRIX_SCFG4) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG5_REG_OFST          (0x54)              /**< (MATRIX_SCFG5) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG6_REG_OFST          (0x58)              /**< (MATRIX_SCFG6) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG7_REG_OFST          (0x5C)              /**< (MATRIX_SCFG7) Slave Configuration Register 0 Offset */
+#define MATRIX_SCFG8_REG_OFST          (0x60)              /**< (MATRIX_SCFG8) Slave Configuration Register 0 Offset */
 #define MATRIX_MRCR_REG_OFST           (0x100)             /**< (MATRIX_MRCR) Master Remap Control Register Offset */
 #define CCFG_CAN0_REG_OFST             (0x110)             /**< (CCFG_CAN0) CAN0 Configuration Register Offset */
 #define CCFG_SYSIO_REG_OFST            (0x114)             /**< (CCFG_SYSIO) System I/O and CAN1 Configuration Register Offset */

@@ -1,7 +1,7 @@
 /**
  * \brief Component description for GMAC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_GMAC_COMPONENT_H_
 #define _SAME70_GMAC_COMPONENT_H_
 
@@ -1663,18 +1663,69 @@
 #define GMAC_TXLPI_REG_OFST            (0x278)             /**< (GMAC_TXLPI) Transmit LPI Transitions Offset */
 #define GMAC_TXLPITIME_REG_OFST        (0x27C)             /**< (GMAC_TXLPITIME) Transmit LPI Time Offset */
 #define GMAC_ISRPQ_REG_OFST            (0x400)             /**< (GMAC_ISRPQ) Interrupt Status Register Priority Queue (1..5) Offset */
+#define GMAC_ISRPQ0_REG_OFST           (0x400)             /**< (GMAC_ISRPQ0) Interrupt Status Register Priority Queue (1..5) Offset */
+#define GMAC_ISRPQ1_REG_OFST           (0x404)             /**< (GMAC_ISRPQ1) Interrupt Status Register Priority Queue (1..5) Offset */
+#define GMAC_ISRPQ2_REG_OFST           (0x408)             /**< (GMAC_ISRPQ2) Interrupt Status Register Priority Queue (1..5) Offset */
+#define GMAC_ISRPQ3_REG_OFST           (0x40C)             /**< (GMAC_ISRPQ3) Interrupt Status Register Priority Queue (1..5) Offset */
+#define GMAC_ISRPQ4_REG_OFST           (0x410)             /**< (GMAC_ISRPQ4) Interrupt Status Register Priority Queue (1..5) Offset */
 #define GMAC_TBQBAPQ_REG_OFST          (0x440)             /**< (GMAC_TBQBAPQ) Transmit Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_TBQBAPQ0_REG_OFST         (0x440)             /**< (GMAC_TBQBAPQ0) Transmit Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_TBQBAPQ1_REG_OFST         (0x444)             /**< (GMAC_TBQBAPQ1) Transmit Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_TBQBAPQ2_REG_OFST         (0x448)             /**< (GMAC_TBQBAPQ2) Transmit Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_TBQBAPQ3_REG_OFST         (0x44C)             /**< (GMAC_TBQBAPQ3) Transmit Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_TBQBAPQ4_REG_OFST         (0x450)             /**< (GMAC_TBQBAPQ4) Transmit Buffer Queue Base Address Register Priority Queue (1..5) Offset */
 #define GMAC_RBQBAPQ_REG_OFST          (0x480)             /**< (GMAC_RBQBAPQ) Receive Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_RBQBAPQ0_REG_OFST         (0x480)             /**< (GMAC_RBQBAPQ0) Receive Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_RBQBAPQ1_REG_OFST         (0x484)             /**< (GMAC_RBQBAPQ1) Receive Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_RBQBAPQ2_REG_OFST         (0x488)             /**< (GMAC_RBQBAPQ2) Receive Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_RBQBAPQ3_REG_OFST         (0x48C)             /**< (GMAC_RBQBAPQ3) Receive Buffer Queue Base Address Register Priority Queue (1..5) Offset */
+#define GMAC_RBQBAPQ4_REG_OFST         (0x490)             /**< (GMAC_RBQBAPQ4) Receive Buffer Queue Base Address Register Priority Queue (1..5) Offset */
 #define GMAC_RBSRPQ_REG_OFST           (0x4A0)             /**< (GMAC_RBSRPQ) Receive Buffer Size Register Priority Queue (1..5) Offset */
+#define GMAC_RBSRPQ0_REG_OFST          (0x4A0)             /**< (GMAC_RBSRPQ0) Receive Buffer Size Register Priority Queue (1..5) Offset */
+#define GMAC_RBSRPQ1_REG_OFST          (0x4A4)             /**< (GMAC_RBSRPQ1) Receive Buffer Size Register Priority Queue (1..5) Offset */
+#define GMAC_RBSRPQ2_REG_OFST          (0x4A8)             /**< (GMAC_RBSRPQ2) Receive Buffer Size Register Priority Queue (1..5) Offset */
+#define GMAC_RBSRPQ3_REG_OFST          (0x4AC)             /**< (GMAC_RBSRPQ3) Receive Buffer Size Register Priority Queue (1..5) Offset */
+#define GMAC_RBSRPQ4_REG_OFST          (0x4B0)             /**< (GMAC_RBSRPQ4) Receive Buffer Size Register Priority Queue (1..5) Offset */
 #define GMAC_CBSCR_REG_OFST            (0x4BC)             /**< (GMAC_CBSCR) Credit-Based Shaping Control Register Offset */
 #define GMAC_CBSISQA_REG_OFST          (0x4C0)             /**< (GMAC_CBSISQA) Credit-Based Shaping IdleSlope Register for Queue A Offset */
 #define GMAC_CBSISQB_REG_OFST          (0x4C4)             /**< (GMAC_CBSISQB) Credit-Based Shaping IdleSlope Register for Queue B Offset */
 #define GMAC_ST1RPQ_REG_OFST           (0x500)             /**< (GMAC_ST1RPQ) Screening Type 1 Register Priority Queue Offset */
+#define GMAC_ST1RPQ0_REG_OFST          (0x500)             /**< (GMAC_ST1RPQ0) Screening Type 1 Register Priority Queue Offset */
+#define GMAC_ST1RPQ1_REG_OFST          (0x504)             /**< (GMAC_ST1RPQ1) Screening Type 1 Register Priority Queue Offset */
+#define GMAC_ST1RPQ2_REG_OFST          (0x508)             /**< (GMAC_ST1RPQ2) Screening Type 1 Register Priority Queue Offset */
+#define GMAC_ST1RPQ3_REG_OFST          (0x50C)             /**< (GMAC_ST1RPQ3) Screening Type 1 Register Priority Queue Offset */
 #define GMAC_ST2RPQ_REG_OFST           (0x540)             /**< (GMAC_ST2RPQ) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ0_REG_OFST          (0x540)             /**< (GMAC_ST2RPQ0) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ1_REG_OFST          (0x544)             /**< (GMAC_ST2RPQ1) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ2_REG_OFST          (0x548)             /**< (GMAC_ST2RPQ2) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ3_REG_OFST          (0x54C)             /**< (GMAC_ST2RPQ3) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ4_REG_OFST          (0x550)             /**< (GMAC_ST2RPQ4) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ5_REG_OFST          (0x554)             /**< (GMAC_ST2RPQ5) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ6_REG_OFST          (0x558)             /**< (GMAC_ST2RPQ6) Screening Type 2 Register Priority Queue Offset */
+#define GMAC_ST2RPQ7_REG_OFST          (0x55C)             /**< (GMAC_ST2RPQ7) Screening Type 2 Register Priority Queue Offset */
 #define GMAC_IERPQ_REG_OFST            (0x600)             /**< (GMAC_IERPQ) Interrupt Enable Register Priority Queue (1..5) Offset */
+#define GMAC_IERPQ0_REG_OFST           (0x600)             /**< (GMAC_IERPQ0) Interrupt Enable Register Priority Queue (1..5) Offset */
+#define GMAC_IERPQ1_REG_OFST           (0x604)             /**< (GMAC_IERPQ1) Interrupt Enable Register Priority Queue (1..5) Offset */
+#define GMAC_IERPQ2_REG_OFST           (0x608)             /**< (GMAC_IERPQ2) Interrupt Enable Register Priority Queue (1..5) Offset */
+#define GMAC_IERPQ3_REG_OFST           (0x60C)             /**< (GMAC_IERPQ3) Interrupt Enable Register Priority Queue (1..5) Offset */
+#define GMAC_IERPQ4_REG_OFST           (0x610)             /**< (GMAC_IERPQ4) Interrupt Enable Register Priority Queue (1..5) Offset */
 #define GMAC_IDRPQ_REG_OFST            (0x620)             /**< (GMAC_IDRPQ) Interrupt Disable Register Priority Queue (1..5) Offset */
+#define GMAC_IDRPQ0_REG_OFST           (0x620)             /**< (GMAC_IDRPQ0) Interrupt Disable Register Priority Queue (1..5) Offset */
+#define GMAC_IDRPQ1_REG_OFST           (0x624)             /**< (GMAC_IDRPQ1) Interrupt Disable Register Priority Queue (1..5) Offset */
+#define GMAC_IDRPQ2_REG_OFST           (0x628)             /**< (GMAC_IDRPQ2) Interrupt Disable Register Priority Queue (1..5) Offset */
+#define GMAC_IDRPQ3_REG_OFST           (0x62C)             /**< (GMAC_IDRPQ3) Interrupt Disable Register Priority Queue (1..5) Offset */
+#define GMAC_IDRPQ4_REG_OFST           (0x630)             /**< (GMAC_IDRPQ4) Interrupt Disable Register Priority Queue (1..5) Offset */
 #define GMAC_IMRPQ_REG_OFST            (0x640)             /**< (GMAC_IMRPQ) Interrupt Mask Register Priority Queue (1..5) Offset */
+#define GMAC_IMRPQ0_REG_OFST           (0x640)             /**< (GMAC_IMRPQ0) Interrupt Mask Register Priority Queue (1..5) Offset */
+#define GMAC_IMRPQ1_REG_OFST           (0x644)             /**< (GMAC_IMRPQ1) Interrupt Mask Register Priority Queue (1..5) Offset */
+#define GMAC_IMRPQ2_REG_OFST           (0x648)             /**< (GMAC_IMRPQ2) Interrupt Mask Register Priority Queue (1..5) Offset */
+#define GMAC_IMRPQ3_REG_OFST           (0x64C)             /**< (GMAC_IMRPQ3) Interrupt Mask Register Priority Queue (1..5) Offset */
+#define GMAC_IMRPQ4_REG_OFST           (0x650)             /**< (GMAC_IMRPQ4) Interrupt Mask Register Priority Queue (1..5) Offset */
 #define GMAC_ST2ER_REG_OFST            (0x6E0)             /**< (GMAC_ST2ER) Screening Type 2 Ethertype Register Offset */
+#define GMAC_ST2ER0_REG_OFST           (0x6E0)             /**< (GMAC_ST2ER0) Screening Type 2 Ethertype Register Offset */
+#define GMAC_ST2ER1_REG_OFST           (0x6E4)             /**< (GMAC_ST2ER1) Screening Type 2 Ethertype Register Offset */
+#define GMAC_ST2ER2_REG_OFST           (0x6E8)             /**< (GMAC_ST2ER2) Screening Type 2 Ethertype Register Offset */
+#define GMAC_ST2ER3_REG_OFST           (0x6EC)             /**< (GMAC_ST2ER3) Screening Type 2 Ethertype Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief GMAC_SA register API structure */

@@ -14,7 +14,9 @@ nav_order: 1
 -----
 ## Description:
 
-> This application reads the current room temperature from the [AT30TSE758A](https://www.microchip.com/wwwproducts/en/AT30TSE758A) temperature sensor chip on the I/O1 Xplained Pro every second using I2C. This is indicated by a blinking orange LED on the I/O1 Xplained Pro. Further, it also writes these temperature values into the sensor chip's own integrated EEPROM using the same I2C peripheral instance. The application also uses an ADC channel to read the output voltage of the [TEMT6000](https://www.vishay.com/docs/81579/temt6000.pdf) ambient light sensor on the I/O1 Xplained Pro Extension Kit and displays it as a percentage of the sensor's full-scale output when requested through the serial terminal menu. This serial terminal menu is made available through the SAM E70 Xplained Evaluation Kit's Target USB port by configuring it as a USB CDC class device. This menu allows you to fetch temperature, light sensor data and even toggle the LED on the SAME70 Xplained Evaluation Kit.
+> This application reads the current room temperature from the [AT30TSE758A](https://www.microchip.com/wwwproducts/en/AT30TSE758A) temperature sensor chip on the I/O1 Xplained Pro every second using I2C. This is indicated by a blinking orange LED on the I/O1 Xplained Pro. Further, it also writes these temperature values into the sensor chip's own integrated EEPROM using the same I2C peripheral instance. The application also uses an ADC channel to read the output voltage of the [TEMT6000](https://www.vishay.com/docs/81579/temt6000.pdf) ambient light sensor on the I/O1 Xplained Pro Extension Kit and displays it as a percentage of the sensor's full-scale output when requested through the serial terminal menu.
+
+> The serial terminal menu is made available through the SAM E70 Xplained Evaluation Kit's TARGET USB port by configuring it as a USB CDC class device. This menu allows you to fetch temperature, light sensor data and even toggle the LED on the SAME70 Xplained Evaluation Kit.
 
 ## Modules/Technology Used:
 - Peripheral Modules  
@@ -37,23 +39,27 @@ nav_order: 1
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
- - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
- - MPLAB Harmony 3 Launcher Plugin v3.6.2
- - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
- - Any Serial Terminal application like Tera Term terminal application.
+- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)
+- [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.1)
+- [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)
+- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)
+- MPLAB Harmony 3 Launcher Plugin v3.6.4
+- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
+- Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
 ## Setup:
 - Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E70 Xplained Evaluation Kit
-- The SAM E70 Xplained Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the
-  micro-B DEBUG USB port to power and debug the SAM E70 Xplained Evaluation Kit.  
+- The SAM E70 Xplained Evaluation Kit allows the Embedded Debugger (EDBG) to be used for programming and debugging. Connect the Type-A male to micro-B USB cable to the
+  micro-B DEBUG USB port to power and debug the SAM E70 Xplained Evaluation Kit.
+- Connect the Type-A male to micro-B USB cable to the
+  micro-B TARGET USB port which is configured as USB CDC class device to test the demo.
+- **Note:**
+    - The kit can be powered from the EDBG USB or from the target USB.
+    - The kit automatically selects a source to draw power. Priority is given to TARGET USB power input.
 
-	<img src = "images/hardware_setup.png" width="425" height="370" align="middle">
+	<img src = "images/hardware_setup.png" width="750" height="538" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps
@@ -79,7 +85,15 @@ The pre-built hex file can be programmed by following the below steps
 
 ## Running the Demo:
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
-<img src = "images/result1.png" width="425" height="235" align="middle">  
+- Configure the TARGET USB port in the Tera terminal application and change the baud rate to 115200
+- Press **"h"** to show the **Getting Started Menu**.
+    - **1** - Toggle board LED ()
+    - **2** - Show latest temperature value
+    - **3** - Show past 5 temperature values from EEPROM
+    - **4** - Show latest light sensor value
+    - **h** - Show this menu
+
+    <img src = "images/result1.png" >
 
 
 
@@ -91,4 +105,5 @@ The pre-built hex file can be programmed by following the below steps
 
 
 ## Revision:
+- v1.3.0 - regenerated and tested application
 - v1.2.0 - Created demo application
