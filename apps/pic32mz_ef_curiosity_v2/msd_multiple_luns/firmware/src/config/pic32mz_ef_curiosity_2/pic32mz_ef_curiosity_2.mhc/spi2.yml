@@ -4,6 +4,13 @@ attributes: {id: spi2}
 children:
 - type: Symbols
   children:
+  - type: Boolean
+    attributes: {id: SPIS_SLAVE_SELECT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: 'true'}
   - type: Integer
     attributes: {id: SPI_BAUD_RATE}
     children:

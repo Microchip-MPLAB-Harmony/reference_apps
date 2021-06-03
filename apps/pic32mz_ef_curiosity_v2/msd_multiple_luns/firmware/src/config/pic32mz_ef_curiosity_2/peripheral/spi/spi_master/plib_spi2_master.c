@@ -61,7 +61,7 @@ SPI_OBJECT spi2Obj;
 
 void SPI2_Initialize ( void )
 {
-    uint32_t rdata;
+    uint32_t rdata = 0U;
 
     /* Disable SPI2 Interrupts */
     IEC4CLR = 0x4000;
@@ -164,7 +164,7 @@ bool SPI2_Read(void* pReceiveData, size_t rxSize)
 bool SPI2_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;
-    uint32_t dummyData;
+    uint32_t dummyData = 0U;
 
     /* Verify the request */
     if((((txSize > 0) && (pTransmitData != NULL)) || ((rxSize > 0) && (pReceiveData != NULL))) && (spi2Obj.transferIsBusy == false))

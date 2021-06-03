@@ -1364,6 +1364,20 @@ children:
       - type: Dynamic
         attributes: {id: core, value: DMA1_InterruptHandler}
   - type: Boolean
+    attributes: {id: EVIC_142_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
+    attributes: {id: EVIC_142_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
     attributes: {id: EVIC_143_ENABLE}
     children:
     - type: Values
@@ -1888,6 +1902,27 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '99000000'}
+  - type: Boolean
+    attributes: {id: SPI2_FAULT_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: 'false'}
+  - type: Boolean
+    attributes: {id: SPI2_FAULT_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: SPI2_FAULT_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi2, value: 'false'}
   - type: Boolean
     attributes: {id: SPI2_RX_INTERRUPT_ENABLE}
     children:

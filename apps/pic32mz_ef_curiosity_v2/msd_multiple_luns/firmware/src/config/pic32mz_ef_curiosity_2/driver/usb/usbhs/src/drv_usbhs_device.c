@@ -2872,8 +2872,8 @@ void _DRV_USBHS_DEVICE_Tasks_ISR
                      * from the FIFO to the IRP */
 
                     data = (uint8_t *)irp->data;
-                    *((unsigned int *)(data)) = *((unsigned int *)PLIB_USBHS_GetEP0FIFOAddress(usbID));
-                    *((unsigned int *)(data + 4)) = *((unsigned int *)PLIB_USBHS_GetEP0FIFOAddress(usbID));
+                    *((unsigned int *)(data)) = *((unsigned volatile int *)PLIB_USBHS_GetEP0FIFOAddress(usbID));
+                    *((unsigned int *)(data + 4)) = *((unsigned volatile int *)PLIB_USBHS_GetEP0FIFOAddress(usbID));
 
                     /* Remember the size and direction of the data stage */
                     endpoint0DataStageSize = *((unsigned short int *)(data + 6));

@@ -1,23 +1,22 @@
 /*******************************************************************************
-  SPI PLIB
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_spi2.h
+    interrupt.h
 
   Summary:
-    SPI2 PLIB Header File
+    Interrupt vectors mapping
 
   Description:
-    This file has prototype of all the interfaces provided for particular
-    SPI peripheral.
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-*******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018-2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -37,43 +36,26 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_SPI2_H
-#define PLIB_SPI2_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
-#include "device.h"
-#include "plib_spi_common.h"
-
-/* Provide C++ Compatibility */
-#ifdef __cplusplus
-
-    extern "C" {
-
-#endif
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+#include <stdint.h>
 
 
-/****************************** SPI2 Interface *********************************/
+// *****************************************************************************
+// *****************************************************************************
+// Section: Handler Routines
+// *****************************************************************************
+// *****************************************************************************
 
-void SPI2_Initialize ( void );
 
-bool SPI2_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize);
 
-bool SPI2_Write(void* pTransmitData, size_t txSize);
-
-bool SPI2_Read(void* pReceiveData, size_t rxSize);
-
-bool SPI2_TransferSetup (SPI_TRANSFER_SETUP *setup, uint32_t spiSourceClock);
-
-bool SPI2_IsBusy(void);
-
-void SPI2_CallbackRegister(SPI_CALLBACK callback, uintptr_t context);
-
-/* Provide C++ Compatibility */
-#ifdef __cplusplus
-
-    }
-
-#endif
-
-#endif // PLIB_SPI2_H
+#endif // INTERRUPTS_H
