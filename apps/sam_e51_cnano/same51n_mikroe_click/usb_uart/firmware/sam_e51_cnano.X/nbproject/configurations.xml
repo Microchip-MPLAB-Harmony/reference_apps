@@ -4,37 +4,35 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="click_routines"
-                     displayName="click_routines"
-                     projectFiles="true">
-        <logicalFolder name="usb_uart" displayName="usb_uart" projectFiles="true">
+      <logicalFolder name="f1" displayName="click_routines" projectFiles="true">
+        <logicalFolder name="f1" displayName="usb_uart" projectFiles="true">
           <itemPath>../src/click_routines/usb_uart/usb_uart.h</itemPath>
           <itemPath>../src/click_routines/usb_uart/usb_uart_example.h</itemPath>
         </logicalFolder>
         <itemPath>../src/click_routines/click_interface.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
+      <logicalFolder name="f2" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_e51_cnano" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f4" displayName="clock" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="cmcc" projectFiles="true">
+            <logicalFolder name="f2" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/cmcc/plib_cmcc.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="evsys" projectFiles="true">
+            <logicalFolder name="f3" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/evsys/plib_evsys.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="port" projectFiles="true">
+            <logicalFolder name="f6" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="sercom" projectFiles="true">
+            <logicalFolder name="f7" displayName="sercom" projectFiles="true">
               <logicalFolder name="f1" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
@@ -50,7 +48,7 @@
           <itemPath>../src/config/sam_e51_cnano/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
+      <logicalFolder name="f3" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME51J20A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
             <itemPath>../src/packs/ATSAME51J20A_DFP/component/ac.h</itemPath>
@@ -92,7 +90,7 @@
             <itemPath>../src/packs/ATSAME51J20A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/component/wdt.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+          <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/ac.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/adc0.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/adc1.h</itemPath>
@@ -151,7 +149,7 @@
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/wdt.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME51J20A_DFP/pio/same51j20a.h</itemPath>
           </logicalFolder>
           <itemPath>../src/packs/ATSAME51J20A_DFP/same51j20a.h</itemPath>
@@ -176,6 +174,25 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="sam_e51_cnano.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom4.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom5.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/stdio.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e51_cnano/harmony-manifest-success.yml</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -188,36 +205,34 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="click_routines"
-                     displayName="click_routines"
-                     projectFiles="true">
-        <logicalFolder name="usb_uart" displayName="usb_uart" projectFiles="true">
+      <logicalFolder name="f1" displayName="click_routines" projectFiles="true">
+        <logicalFolder name="f1" displayName="usb_uart" projectFiles="true">
           <itemPath>../src/click_routines/usb_uart/usb_uart.c</itemPath>
           <itemPath>../src/click_routines/usb_uart/usb_uart_example.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
+      <logicalFolder name="f2" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_e51_cnano" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f4" displayName="clock" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="cmcc" projectFiles="true">
+            <logicalFolder name="f2" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/cmcc/plib_cmcc.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="evsys" projectFiles="true">
+            <logicalFolder name="f3" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/evsys/plib_evsys.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="port" projectFiles="true">
+            <logicalFolder name="f6" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_e51_cnano/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="sercom" projectFiles="true">
+            <logicalFolder name="f7" displayName="sercom" projectFiles="true">
               <logicalFolder name="f1" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
                 <itemPath>../src/config/sam_e51_cnano/peripheral/sercom/usart/plib_sercom4_usart.c</itemPath>
@@ -236,25 +251,6 @@
       </logicalFolder>
       <itemPath>../src/main_sam_e51_cnano.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1" displayName="sam_e51_cnano.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/stdio.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e51_cnano/harmony-manifest-success.yml</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -269,7 +265,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -298,7 +294,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>(if not exist $(ProjectDir)\..\..\hex mkdir $(ProjectDir)\..\..\hex) &amp; (copy "$(ProjectDir)\dist\$(ConfName)\production"\"*.hex" "$(ProjectDir)\..\..\hex\")</makeCustomizationPostStep>
+        <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; mkdir ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/${ImagePath} ${ProjectDir}/../../hex/</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -348,6 +344,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value=""/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -379,6 +376,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -460,6 +458,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <PICkit3PlatformTool>
@@ -990,7 +989,7 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
-      <nEdbgTool>
+      <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="arm.use_vtor" value="false"/>
         <property key="arm.vtor_adr" value="exception_table"/>
@@ -1034,6 +1033,49 @@
         <property key="script.log_level" value="1"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </Tool>
+      <nEdbgTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

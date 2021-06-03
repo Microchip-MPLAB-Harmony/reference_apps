@@ -12,6 +12,15 @@ children:
       - type: Dynamic
         attributes: {id: sercom5, value: '255'}
   - type: Integer
+    attributes: {id: I2CS_SDASETUP_TIME_NS}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '2050'}
+  - type: Integer
     attributes: {id: I2CS_SDASETUP_TIME_REG_VALUE}
     children:
     - type: Values
@@ -35,6 +44,12 @@ children:
   - type: KeyValueSet
     attributes: {id: SERCOM_MODE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
