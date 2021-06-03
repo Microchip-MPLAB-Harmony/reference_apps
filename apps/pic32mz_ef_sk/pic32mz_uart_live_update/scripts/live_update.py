@@ -68,17 +68,17 @@ devices = {
 
 #------------------------------------------------------------------------------
 def error(text):
-    sys.stderr.write('Error: %s\n' % text)
+    sys.stderr.write('\nError: %s\n' % text)
     sys.exit(-1)
 
 #------------------------------------------------------------------------------
 def warning(text):
-    sys.stderr.write('Warning: %s\n' % text)
+    sys.stderr.write('\nWarning: %s\n' % text)
 
 #------------------------------------------------------------------------------
 def verbose(verb, text):
     if verb:
-        print text
+        print("\n" + text)
 
 #------------------------------------------------------------------------------
 def crc32_tab_gen():
@@ -119,13 +119,13 @@ def get_response(port):
     elif len(v) > 1:
         error('invalid response received (size > 1)')
 
-    return ord(v[0])
+    return (v[0])
 
 #------------------------------------------------------------------------------
 def send_request(port, cmd, size, data):
     req = uint32(BL_GUARD) + size + [cmd] + data
 
-    port.write(''.join(map(chr, req)))
+    port.write(bytes(bytearray(req)))
 
     for i in range(3):
         resp = get_response(port)
@@ -137,6 +137,28 @@ def send_request(port, cmd, size, data):
             return resp
 
     error('no response received, giving up')
+
+# Print iterations progress
+def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '|'):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+
+    print ('\r%s |%s| %s%% %s \r' % (prefix, bar, percent, suffix), end =""),
+
+    if iteration == total: 
+        print()
 
 #------------------------------------------------------------------------------
 def main():
@@ -187,10 +209,10 @@ def main():
 
     try:
         address = int(options.address, 0)
-    except ValueError, inst:
+    except ValueError as inst:
         error('invalid address value: %s' % options.address)
 
-    if (("SAM" in device)):
+    if (("SAM" in device) or ("PIC32C" in device)):
         if address < BOOTLOADER_SIZE and options.boot == False:
             error('address is within the bootlaoder area, use --boot options to unlock writes')
     else:
@@ -199,7 +221,7 @@ def main():
 
     try:
         port = serial.Serial(options.port, options.baud, timeout=1)
-    except serial.serialutil.SerialException, inst:
+    except serial.serialutil.SerialException as inst:
         error(inst)
 
     if options.tune:
@@ -208,8 +230,8 @@ def main():
         port.write(chr(0x55))
 
     try:
-        data = data = [ord(x) for x in open(options.file, 'rb').read()]
-    except Exception, inst:
+        data = data = [(x) for x in open(options.file, 'rb').read()]
+    except Exception as inst:
         error(inst)
 
     while len(data) % ERASE_SIZE > 0:
@@ -222,21 +244,20 @@ def main():
 
     verbose(options.verbose, 'Live Update request started.\n')
 
-    verbose(options.verbose, '\nUnlocking')
+    verbose(options.verbose, 'Unlocking\n')
     resp = send_request(port, BL_CMD_UNLOCK, uint32(8), uint32(address) + uint32(size))
 
     if resp != BL_RESP_OK:
         error('invalid response code (0x%02x). Check that your file size and address are correct.' % resp)
 
     # Create data blocks of ERASE_SIZE each
-    blocks = [data[i:i + ERASE_SIZE] for i in xrange(0, len(data), ERASE_SIZE)]
-
-    verbose(options.verbose, 'Uploading %d blocks at address %d (0x%x)\n' % (len(blocks), address, address))
+    blocks = [data[i:i + ERASE_SIZE] for i in range(0, len(data), ERASE_SIZE)]
 
     addr = address
 
     for idx, blk in enumerate(blocks):
-        verbose(options.verbose, '... block %d of %d' % (idx+1, len(blocks)))
+        printProgressBar(idx+1, len(blocks), prefix = 'Programming:', suffix = 'Complete', length = 50)
+
 
         resp = send_request(port, BL_CMD_DATA, uint32(ERASE_SIZE + 4), uint32(addr) + blk)
         addr += ERASE_SIZE
