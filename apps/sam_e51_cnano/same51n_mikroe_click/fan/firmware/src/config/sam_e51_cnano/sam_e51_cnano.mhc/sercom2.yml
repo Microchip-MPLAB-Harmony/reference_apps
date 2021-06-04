@@ -252,6 +252,13 @@ children:
         children:
         - {type: Value, value: '---'}
   - type: Boolean
+    attributes: {id: USART_INTERRUPT_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: 'true'}
+  - type: Boolean
     attributes: {id: USART_LIN_MASTER_SUPPORTED}
     children:
     - type: Values
@@ -285,6 +292,13 @@ children:
         attributes: {id: label}
         children:
         - {type: Value, value: '---'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom2, value: 'false'}
   - type: Boolean
     attributes: {id: USART_RUNSTDBY}
     children:
