@@ -1,7 +1,7 @@
 /**
  * \brief Component description for SDADC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-03T13:06:13Z */
+/* file generated from device description version 2020-08-13T21:04:00Z */
 #ifndef _PIC32CMMC00_SDADC_COMPONENT_H_
 #define _PIC32CMMC00_SDADC_COMPONENT_H_
 
@@ -60,13 +60,10 @@
 #define SDADC_REFCTRL_REFSEL_AREFB            (SDADC_REFCTRL_REFSEL_AREFB_Val << SDADC_REFCTRL_REFSEL_Pos) /**< (SDADC_REFCTRL) External Reference Position  */
 #define SDADC_REFCTRL_REFSEL_DAC              (SDADC_REFCTRL_REFSEL_DAC_Val << SDADC_REFCTRL_REFSEL_Pos) /**< (SDADC_REFCTRL) Internal DAC Output Position  */
 #define SDADC_REFCTRL_REFSEL_INTVCC           (SDADC_REFCTRL_REFSEL_INTVCC_Val << SDADC_REFCTRL_REFSEL_Pos) /**< (SDADC_REFCTRL) VDDANA Position  */
-#define SDADC_REFCTRL_REFRANGE_Pos            _U_(4)                                               /**< (SDADC_REFCTRL) Reference Range Position */
-#define SDADC_REFCTRL_REFRANGE_Msk            (_U_(0x3) << SDADC_REFCTRL_REFRANGE_Pos)             /**< (SDADC_REFCTRL) Reference Range Mask */
-#define SDADC_REFCTRL_REFRANGE(value)         (SDADC_REFCTRL_REFRANGE_Msk & ((value) << SDADC_REFCTRL_REFRANGE_Pos))
 #define SDADC_REFCTRL_ONREFBUF_Pos            _U_(7)                                               /**< (SDADC_REFCTRL) Reference Buffer Position */
 #define SDADC_REFCTRL_ONREFBUF_Msk            (_U_(0x1) << SDADC_REFCTRL_ONREFBUF_Pos)             /**< (SDADC_REFCTRL) Reference Buffer Mask */
 #define SDADC_REFCTRL_ONREFBUF(value)         (SDADC_REFCTRL_ONREFBUF_Msk & ((value) << SDADC_REFCTRL_ONREFBUF_Pos))
-#define SDADC_REFCTRL_Msk                     _U_(0xB3)                                            /**< (SDADC_REFCTRL) Register Mask  */
+#define SDADC_REFCTRL_Msk                     _U_(0x83)                                            /**< (SDADC_REFCTRL) Register Mask  */
 
 
 /* -------- SDADC_CTRLB : (SDADC Offset: 0x02) (R/W 16) Control B -------- */

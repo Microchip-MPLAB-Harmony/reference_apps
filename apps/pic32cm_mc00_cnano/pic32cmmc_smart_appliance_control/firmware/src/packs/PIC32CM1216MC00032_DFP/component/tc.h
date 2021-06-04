@@ -1,7 +1,7 @@
 /**
  * \brief Component description for TC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-03T13:06:13Z */
+/* file generated from device description version 2020-08-13T21:04:00Z */
 #ifndef _PIC32CMMC00_TC_COMPONENT_H_
 #define _PIC32CMMC00_TC_COMPONENT_H_
 
@@ -485,12 +485,24 @@
 #define TC_COUNT32_COUNT_REG_OFST      (0x14)              /**< (TC_COUNT32_COUNT) COUNT32 Count Offset */
 #define TC_COUNT8_PER_REG_OFST         (0x1B)              /**< (TC_COUNT8_PER) COUNT8 Period Offset */
 #define TC_COUNT8_CC_REG_OFST          (0x1C)              /**< (TC_COUNT8_CC) COUNT8 Compare and Capture Offset */
+#define TC_COUNT8_CC0_REG_OFST         (0x1C)              /**< (TC_COUNT8_CC0) COUNT8 Compare and Capture Offset */
+#define TC_COUNT8_CC1_REG_OFST         (0x1D)              /**< (TC_COUNT8_CC1) COUNT8 Compare and Capture Offset */
 #define TC_COUNT16_CC_REG_OFST         (0x1C)              /**< (TC_COUNT16_CC) COUNT16 Compare and Capture Offset */
+#define TC_COUNT16_CC0_REG_OFST        (0x1C)              /**< (TC_COUNT16_CC0) COUNT16 Compare and Capture Offset */
+#define TC_COUNT16_CC1_REG_OFST        (0x1E)              /**< (TC_COUNT16_CC1) COUNT16 Compare and Capture Offset */
 #define TC_COUNT32_CC_REG_OFST         (0x1C)              /**< (TC_COUNT32_CC) COUNT32 Compare and Capture Offset */
+#define TC_COUNT32_CC0_REG_OFST        (0x1C)              /**< (TC_COUNT32_CC0) COUNT32 Compare and Capture Offset */
+#define TC_COUNT32_CC1_REG_OFST        (0x20)              /**< (TC_COUNT32_CC1) COUNT32 Compare and Capture Offset */
 #define TC_COUNT8_PERBUF_REG_OFST      (0x2F)              /**< (TC_COUNT8_PERBUF) COUNT8 Period Buffer Offset */
 #define TC_COUNT8_CCBUF_REG_OFST       (0x30)              /**< (TC_COUNT8_CCBUF) COUNT8 Compare and Capture Buffer Offset */
+#define TC_COUNT8_CCBUF0_REG_OFST      (0x30)              /**< (TC_COUNT8_CCBUF0) COUNT8 Compare and Capture Buffer Offset */
+#define TC_COUNT8_CCBUF1_REG_OFST      (0x31)              /**< (TC_COUNT8_CCBUF1) COUNT8 Compare and Capture Buffer Offset */
 #define TC_COUNT16_CCBUF_REG_OFST      (0x30)              /**< (TC_COUNT16_CCBUF) COUNT16 Compare and Capture Buffer Offset */
+#define TC_COUNT16_CCBUF0_REG_OFST     (0x30)              /**< (TC_COUNT16_CCBUF0) COUNT16 Compare and Capture Buffer Offset */
+#define TC_COUNT16_CCBUF1_REG_OFST     (0x32)              /**< (TC_COUNT16_CCBUF1) COUNT16 Compare and Capture Buffer Offset */
 #define TC_COUNT32_CCBUF_REG_OFST      (0x30)              /**< (TC_COUNT32_CCBUF) COUNT32 Compare and Capture Buffer Offset */
+#define TC_COUNT32_CCBUF0_REG_OFST     (0x30)              /**< (TC_COUNT32_CCBUF0) COUNT32 Compare and Capture Buffer Offset */
+#define TC_COUNT32_CCBUF1_REG_OFST     (0x34)              /**< (TC_COUNT32_CCBUF1) COUNT32 Compare and Capture Buffer Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief TC register API structure */
