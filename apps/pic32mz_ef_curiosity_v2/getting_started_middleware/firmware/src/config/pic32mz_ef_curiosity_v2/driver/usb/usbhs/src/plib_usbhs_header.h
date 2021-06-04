@@ -345,7 +345,7 @@ PLIB_INLINE_API void PLIB_USBHS_LoadEPInIndex(USBHS_MODULE_ID index, uint8_t end
      USBHS_LoadEPInIndex_Default(index, endpoint);
 }
 
-PLIB_INLINE_API uint8_t* PLIB_USBHS_GetEP0FIFOAddress(USBHS_MODULE_ID index)
+PLIB_INLINE_API  volatile uint8_t* PLIB_USBHS_GetEP0FIFOAddress(USBHS_MODULE_ID index)
 {
      return USBHS_GetEP0FIFOAddress_Default(index);
 }

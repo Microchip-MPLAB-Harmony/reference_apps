@@ -258,10 +258,10 @@ PLIB_TEMPLATE void USBHS_LoadEPInIndex_Default
     PLIB_USBHS_GetEP0FIFOAddress function.
 */
 
-PLIB_TEMPLATE uint8_t * USBHS_GetEP0FIFOAddress_Default(USBHS_MODULE_ID index)
+PLIB_TEMPLATE volatile uint8_t * USBHS_GetEP0FIFOAddress_Default(USBHS_MODULE_ID index)
 {
     volatile usbhs_registers_t * usbhs = (usbhs_registers_t *)(index);
-    return ((uint8_t *)(&usbhs->FIFO[0]));
+    return (( volatile uint8_t *)(&usbhs->FIFO[0]));
 }
 
 //******************************************************************************

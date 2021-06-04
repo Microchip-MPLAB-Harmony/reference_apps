@@ -69,6 +69,10 @@ void UART6_Initialize( void );
 
 bool UART6_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
 
+bool UART6_AutoBaudQuery( void );
+
+void UART6_AutoBaudSet( bool enable );
+
 bool UART6_Write( void *buffer, const size_t size );
 
 bool UART6_Read( void *buffer, const size_t size );
