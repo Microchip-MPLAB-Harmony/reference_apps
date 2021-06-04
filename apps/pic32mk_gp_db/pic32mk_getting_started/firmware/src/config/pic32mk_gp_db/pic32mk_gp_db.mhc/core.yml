@@ -979,6 +979,20 @@ children:
       - type: Dynamic
         attributes: {id: core, value: UART6_TX_Handler}
   - type: Boolean
+    attributes: {id: EVIC_227_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
+    attributes: {id: EVIC_227_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
     attributes: {id: EVIC_228_ENABLE}
     children:
     - type: Values
@@ -1547,6 +1561,27 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '60000000'}
+  - type: Boolean
+    attributes: {id: SPI6_FAULT_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi6, value: 'false'}
+  - type: Boolean
+    attributes: {id: SPI6_FAULT_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: SPI6_FAULT_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi6, value: 'false'}
   - type: Boolean
     attributes: {id: SPI6_RX_INTERRUPT_ENABLE}
     children:

@@ -1,38 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configurationDescriptor version="65">
-  <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mk_gp_db" projectFiles="true">
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f3" displayName="clk" projectFiles="true">
+  <logicalFolder displayName="root" name="root" projectFiles="true">
+    <logicalFolder displayName="Header Files" name="HeaderFiles" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="pic32mk_gp_db" name="f1" projectFiles="true">
+          <logicalFolder displayName="peripheral" name="f1" projectFiles="true">
+            <logicalFolder displayName="clk" name="f1" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="coretimer" projectFiles="true">
+            <logicalFolder displayName="coretimer" name="f2" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/coretimer/plib_coretimer.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="dmac" projectFiles="true">
+            <logicalFolder displayName="dmac" name="f3" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="evic" projectFiles="true">
+            <logicalFolder displayName="evic" name="f4" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/evic/plib_evic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="gpio" projectFiles="true">
+            <logicalFolder displayName="gpio" name="f5" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="spi" projectFiles="true">
-              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+            <logicalFolder displayName="spi" name="f6" projectFiles="true">
+              <logicalFolder displayName="spi_master" name="f1" projectFiles="true">
                 <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
                 <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/spi_master/plib_spi6_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="tmr" projectFiles="true">
+            <logicalFolder displayName="tmr" name="f7" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/tmr/plib_tmr_common.h</itemPath>
               <itemPath>../src/config/pic32mk_gp_db/peripheral/tmr/plib_tmr2.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="uart" projectFiles="true">
+            <logicalFolder displayName="uart" name="f8" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/uart/plib_uart_common.h</itemPath>
               <itemPath>../src/config/pic32mk_gp_db/peripheral/uart/plib_uart6.h</itemPath>
             </logicalFolder>
@@ -40,52 +38,49 @@
           <itemPath>../src/config/pic32mk_gp_db/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mk_gp_db/definitions.h</itemPath>
           <itemPath>../src/config/pic32mk_gp_db/device.h</itemPath>
+          <itemPath>../src/config/pic32mk_gp_db/interrupts.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mk_gp_db" projectFiles="true">
+    <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="pic32mk_gp_db" name="f1" projectFiles="true">
           <itemPath>../src/config/pic32mk_gp_db/p32MK1024GPE100.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mk_gp_db" projectFiles="true">
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f3" displayName="clk" projectFiles="true">
+    <logicalFolder displayName="Source Files" name="SourceFiles" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="pic32mk_gp_db" name="f1" projectFiles="true">
+          <logicalFolder displayName="peripheral" name="f1" projectFiles="true">
+            <logicalFolder displayName="clk" name="f1" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="coretimer" projectFiles="true">
+            <logicalFolder displayName="coretimer" name="f2" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/coretimer/plib_coretimer.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="dmac" projectFiles="true">
+            <logicalFolder displayName="dmac" name="f3" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="evic" projectFiles="true">
+            <logicalFolder displayName="evic" name="f4" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/evic/plib_evic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="gpio" projectFiles="true">
+            <logicalFolder displayName="gpio" name="f5" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="spi" projectFiles="true">
-              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+            <logicalFolder displayName="spi" name="f6" projectFiles="true">
+              <logicalFolder displayName="spi_master" name="f1" projectFiles="true">
                 <itemPath>../src/config/pic32mk_gp_db/peripheral/spi/spi_master/plib_spi6_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="tmr" projectFiles="true">
+            <logicalFolder displayName="tmr" name="f7" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/tmr/plib_tmr2.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="uart" projectFiles="true">
+            <logicalFolder displayName="uart" name="f8" projectFiles="true">
               <itemPath>../src/config/pic32mk_gp_db/peripheral/uart/plib_uart6.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
+          <logicalFolder displayName="stdio" name="f2" projectFiles="true">
             <itemPath>../src/config/pic32mk_gp_db/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <itemPath>../src/config/pic32mk_gp_db/initialization.c</itemPath>
@@ -96,10 +91,8 @@
       <itemPath>../src/bme280_driver.c</itemPath>
       <itemPath>../src/main_pic32mk.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1" displayName="pic32mk_gp_db.mhc" projectFiles="true">
+    <logicalFolder displayName="Important Files" name="ExternalFiles" projectFiles="true">
+      <logicalFolder displayName="pic32mk_gp_db.mhc" name="f1" projectFiles="true">
         <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/core.yml</itemPath>
         <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/core_timer.yml</itemPath>
         <itemPath>../src/config/pic32mk_gp_db/pic32mk_gp_db.mhc/dfp.yml</itemPath>
@@ -123,8 +116,8 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MK1024GPE100</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>3.00</languageToolchainVersion>
@@ -145,7 +138,7 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
@@ -153,7 +146,7 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>(if not exist $(ProjectDir)\..\..\hex mkdir $(ProjectDir)\..\..\hex) &amp; (copy "$(ProjectDir)\dist\$(ConfName)\production"\"*.hex" "$(ProjectDir)\..\..\hex\")</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
@@ -168,8 +161,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mk_gp_db;../src/packs/PIC32MK1024GPE100_DFP"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mk_gp_db;../src/packs/PIC32MK1024GPE100_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -266,8 +258,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mk_gp_db;../src/packs/PIC32MK1024GPE100_DFP"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mk_gp_db;../src/packs/PIC32MK1024GPE100_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -376,8 +367,7 @@
         <property key="TIMER7" value="true"/>
         <property key="TIMER8" value="true"/>
         <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
@@ -396,8 +386,7 @@
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
         <property key="memories.instruction.ram" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
         <property key="poweroptions.powerenable" value="false"/>
@@ -406,8 +395,7 @@
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${programoptions.preservedataflash.ranges}"/>
+        <property key="programoptions.preservedataflash.ranges" value="${programoptions.preservedataflash.ranges}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -423,8 +411,7 @@
       <PKOBSKDEPlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
@@ -438,8 +425,7 @@
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges" value=""/>
         <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges"
-                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveeeprom.ranges" value="${memories.eedata.default}"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
@@ -448,8 +434,7 @@
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -464,8 +449,7 @@
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges" value=""/>
         <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges"
-                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveeeprom.ranges" value="${memories.eedata.default}"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>

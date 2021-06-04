@@ -61,7 +61,7 @@ SPI_OBJECT spi6Obj;
 
 void SPI6_Initialize ( void )
 {
-    uint32_t rdata;
+    uint32_t rdata = 0U;
 
     /* Disable SPI6 Interrupts */
     IEC7CLR = 0x8;
@@ -164,7 +164,7 @@ bool SPI6_Read(void* pReceiveData, size_t rxSize)
 bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;
-    uint32_t dummyData;
+    uint32_t dummyData = 0U;
 
     /* Verify the request */
     if((((txSize > 0) && (pTransmitData != NULL)) || ((rxSize > 0) && (pReceiveData != NULL))) && (spi6Obj.transferIsBusy == false))
