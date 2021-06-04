@@ -4,15 +4,15 @@
 
 
 project: eink_bundle
-creation_date: 2021-04-19T11:04:26.641+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-06-04T15:00:13.739+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.7.0-tc.3
-mplabx_version: v5.45        # if MPLAB X plugin only
-plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (2.41)
+mhc_mode: Headless            # [IDE|Standalone|Headless]
+mhc_version: v3.7.2
+mplabx_version: NA        # if MPLAB X plugin only
+plugin_version: NA        # if MPLAB X plugin only
+compiler: xc32
 
 modules:
-    - {name: "csp", version: "unknown"}
-    - {name: "dev_packs", version: "unknown"}
+    - {name: "csp", version: "v3.9.1"}
+    - {name: "dev_packs", version: "v3.9.0"}
 
