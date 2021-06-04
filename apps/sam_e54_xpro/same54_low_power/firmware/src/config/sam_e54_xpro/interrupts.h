@@ -1,24 +1,20 @@
 /*******************************************************************************
-  SERCOM Universal Synchronous/Asynchrnous Receiver/Transmitter PLIB
+ System Interrupts File
 
-  Company
+  Company:
     Microchip Technology Inc.
 
-  File Name
-    plib_sercom1_usart.h
+  File Name:
+    interrupt.h
 
-  Summary
-    USART peripheral library interface.
+  Summary:
+    Interrupt vectors mapping
 
-  Description
-    This file defines the interface to the USART peripheral library. This
-    library provides access to and control of the associated peripheral
-    instance.
+  Description:
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-  Remarks:
-    None.
-*******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -40,61 +36,34 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_SERCOM1_USART_H // Guards against multiple inclusion
-#define PLIB_SERCOM1_USART_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include <stdint.h>
 
-#include "plib_sercom_usart_common.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-
-	extern "C" {
-
-#endif
-// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface Routines
+// Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
 
-void SERCOM1_USART_Initialize( void );
+void Reset_Handler (void);
+void NonMaskableInt_Handler (void);
+void HardFault_Handler (void);
+void EIC_EXTINT_15_InterruptHandler (void);
+void DMAC_0_InterruptHandler (void);
+void SERCOM3_I2C_InterruptHandler (void);
+void ADC1_OTHER_InterruptHandler (void);
 
-bool SERCOM1_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
 
-bool SERCOM1_USART_Write( void *buffer, const size_t size );
 
-bool SERCOM1_USART_TransmitterIsReady( void );
-
-bool SERCOM1_USART_TransmitComplete( void );
-
-void SERCOM1_USART_WriteByte( int data );
-
-bool SERCOM1_USART_Read( void *buffer, const size_t size );
-
-bool SERCOM1_USART_ReceiverIsReady( void );
-
-int SERCOM1_USART_ReadByte( void );
-
-USART_ERROR SERCOM1_USART_ErrorGet( void );
-
-uint32_t SERCOM1_USART_FrequencyGet( void );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
-// DOM-IGNORE-END
-
-#endif //PLIB_SERCOM1_USART_H
+#endif // INTERRUPTS_H

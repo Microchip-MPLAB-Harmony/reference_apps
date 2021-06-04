@@ -140,6 +140,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_Initialize( );
 
     STDIO_BufferModeSet();

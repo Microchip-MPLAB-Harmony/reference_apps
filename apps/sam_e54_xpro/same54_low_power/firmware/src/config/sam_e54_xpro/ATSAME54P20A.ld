@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAME54P20A linker script
  * 
- * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -102,8 +102,8 @@ MEMORY
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH
   tcm (WX) : ORIGIN = TCM_ORIGIN, LENGTH = __XC32_TCM_LENGTH
   config_00804000 : ORIGIN = 0x00804000, LENGTH = 0x4
-  config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
   config_00804008 : ORIGIN = 0x00804008, LENGTH = 0x4
+  config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
 
 }
 
@@ -143,12 +143,12 @@ SECTIONS
     .config_00804000 : {
       KEEP(*(.config_00804000))
     } > config_00804000
-    .config_00804004 : {
-      KEEP(*(.config_00804004))
-    } > config_00804004
     .config_00804008 : {
       KEEP(*(.config_00804008))
     } > config_00804008
+    .config_00804004 : {
+      KEEP(*(.config_00804004))
+    } > config_00804004
 
     /*
      * The linker moves the .vectors section into itcm when itcm is
