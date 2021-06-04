@@ -212,7 +212,7 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '65535.0'}
+        - {type: Value, value: '65536.0'}
       - type: Boolean
         attributes: {id: visible}
         children:

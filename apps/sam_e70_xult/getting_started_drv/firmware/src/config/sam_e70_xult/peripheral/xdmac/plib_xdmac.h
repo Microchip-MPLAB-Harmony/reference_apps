@@ -84,6 +84,10 @@ bool XDMAC_ChannelSettingsSet (XDMAC_CHANNEL channel, XDMAC_CHANNEL_CONFIG setti
 
 void XDMAC_ChannelBlockLengthSet (XDMAC_CHANNEL channel, uint16_t length);
 
+void XDMAC_ChannelSuspend (XDMAC_CHANNEL channel);
+
+void XDMAC_ChannelResume (XDMAC_CHANNEL channel);
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

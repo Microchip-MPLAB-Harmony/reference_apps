@@ -40,6 +40,7 @@
 
 #include "device.h"
 #include "plib_usart1.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -47,15 +48,46 @@
 // *****************************************************************************
 // *****************************************************************************
 
+static void USART1_ErrorClear( void )
+{
+    uint8_t dummyData = 0u;
+
+   if (USART1_REGS->US_CSR & (US_CSR_USART_OVRE_Msk | US_CSR_USART_PARE_Msk | US_CSR_USART_FRAME_Msk))
+   {
+        /* Clear the error flags */
+        USART1_REGS->US_CR = US_CR_USART_RSTSTA_Msk;
+
+        /* Flush existing error bytes from the RX FIFO */
+        while (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk)
+        {
+            dummyData = (USART1_REGS->US_RHR & US_RHR_RXCHR_Msk);
+        }
+   }
+
+    /* Ignore the warning */
+    (void)dummyData;
+}
+
+
 USART_OBJECT usart1Obj;
 
 static void USART1_ISR_RX_Handler( void )
 {
+    uint16_t rxData = 0;
+
     if(usart1Obj.rxBusyStatus == true)
     {
-        while((US_CSR_USART_RXRDY_Msk == (USART1_REGS->US_CSR& US_CSR_USART_RXRDY_Msk)) && (usart1Obj.rxSize > usart1Obj.rxProcessedSize) )
+        while((USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk) && (usart1Obj.rxSize > usart1Obj.rxProcessedSize))
         {
-            usart1Obj.rxBuffer[usart1Obj.rxProcessedSize++] = (USART1_REGS->US_RHR& US_RHR_RXCHR_Msk);
+            rxData = USART1_REGS->US_RHR & US_RHR_RXCHR_Msk;
+            if (USART1_REGS->US_MR & US_MR_USART_MODE9_Msk)
+            {
+                ((uint16_t*)usart1Obj.rxBuffer)[usart1Obj.rxProcessedSize++] = (uint16_t)rxData;
+            }
+            else
+            {
+                usart1Obj.rxBuffer[usart1Obj.rxProcessedSize++] = (uint8_t)rxData;
+            }
         }
 
         /* Check if the buffer is done */
@@ -83,16 +115,24 @@ static void USART1_ISR_TX_Handler( void )
 {
     if(usart1Obj.txBusyStatus == true)
     {
-        while((US_CSR_USART_TXEMPTY_Msk == (USART1_REGS->US_CSR& US_CSR_USART_TXEMPTY_Msk)) && (usart1Obj.txSize > usart1Obj.txProcessedSize) )
+        while((USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk) && (usart1Obj.txSize > usart1Obj.txProcessedSize))
         {
-            USART1_REGS->US_THR|= usart1Obj.txBuffer[usart1Obj.txProcessedSize++];
+            if (USART1_REGS->US_MR & US_MR_USART_MODE9_Msk)
+            {
+                USART1_REGS->US_THR = ((uint16_t*)usart1Obj.txBuffer)[usart1Obj.txProcessedSize++] & US_THR_TXCHR_Msk;
+            }
+            else
+            {
+                USART1_REGS->US_THR = usart1Obj.txBuffer[usart1Obj.txProcessedSize++] & US_THR_TXCHR_Msk;
+            }
         }
 
         /* Check if the buffer is done */
         if(usart1Obj.txProcessedSize >= usart1Obj.txSize)
         {
             usart1Obj.txBusyStatus = false;
-            USART1_REGS->US_IDR = US_IDR_USART_TXEMPTY_Msk;
+
+            USART1_REGS->US_IDR = US_IDR_USART_TXRDY_Msk;
 
             if(usart1Obj.txCallback != NULL)
             {
@@ -114,7 +154,11 @@ void USART1_InterruptHandler( void )
 
     if(errorStatus != 0)
     {
-        /* Client must call USARTx_ErrorGet() function to clear the errors */
+        /* Save the error to be reported later */
+        usart1Obj.errorStatus = (USART_ERROR)errorStatus;
+
+        /* Clear error flags and flush the error data */
+        USART1_ErrorClear();
 
         /* Disable Read, Overrun, Parity and Framing error interrupts */
         USART1_REGS->US_IDR = (US_IDR_USART_RXRDY_Msk | US_IDR_USART_FRAME_Msk | US_IDR_USART_PARE_Msk | US_IDR_USART_OVRE_Msk);
@@ -130,32 +174,16 @@ void USART1_InterruptHandler( void )
     }
 
     /* Receiver status */
-    if(US_CSR_USART_RXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk))
+    if (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk)
     {
         USART1_ISR_RX_Handler();
     }
 
     /* Transmitter status */
-    if(US_CSR_USART_TXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk))
+    if ( (USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk) && (USART1_REGS->US_IMR & US_IMR_USART_TXRDY_Msk) )
     {
         USART1_ISR_TX_Handler();
     }
-}
-
-static void USART1_ErrorClear( void )
-{
-    uint8_t dummyData = 0u;
-
-    USART1_REGS->US_CR = US_CR_USART_RSTSTA_Msk;
-
-    /* Flush existing error bytes from the RX FIFO */
-    while( US_CSR_USART_RXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk) )
-    {
-        dummyData = (USART1_REGS->US_RHR & US_RHR_RXCHR_Msk);
-    }
-
-    /* Ignore the warning */
-    (void)dummyData;
 }
 
 void USART1_Initialize( void )
@@ -183,19 +211,14 @@ void USART1_Initialize( void )
     usart1Obj.txProcessedSize = 0;
     usart1Obj.txBusyStatus = false;
     usart1Obj.txCallback = NULL;
+    usart1Obj.errorStatus = USART_ERROR_NONE;
 }
 
 USART_ERROR USART1_ErrorGet( void )
 {
-    USART_ERROR errors = USART_ERROR_NONE;
-    uint32_t status = USART1_REGS->US_CSR;
+    USART_ERROR errors = usart1Obj.errorStatus;
 
-    errors = (USART_ERROR)(status & (US_CSR_USART_OVRE_Msk | US_CSR_USART_PARE_Msk | US_CSR_USART_FRAME_Msk));
-
-    if(errors != USART_ERROR_NONE)
-    {
-        USART1_ErrorClear();
-    }
+    usart1Obj.errorStatus = USART_ERROR_NONE;
 
     /* All errors are cleared, but send the previous error state */
     return errors;
@@ -260,21 +283,24 @@ bool USART1_SerialSetup( USART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
 bool USART1_Read( void *buffer, const size_t size )
 {
     bool status = false;
-    uint8_t * lBuffer = (uint8_t *)buffer;
+    uint8_t* pBuffer = (uint8_t *)buffer;
 
-    if(NULL != lBuffer)
+    if(pBuffer != NULL)
     {
-        /* Clear errors before submitting the request.
-         * ErrorGet clears errors internally. */
-        USART1_ErrorGet();
-
         /* Check if receive request is in progress */
         if(usart1Obj.rxBusyStatus == false)
         {
-            usart1Obj.rxBuffer = lBuffer;
+            /* Clear errors that may have got generated when there was no active read request pending */
+            USART1_ErrorClear();
+
+            /* Clear the errors related to pervious read requests */
+            usart1Obj.errorStatus = USART_ERROR_NONE;
+
+            usart1Obj.rxBuffer = pBuffer;
             usart1Obj.rxSize = size;
             usart1Obj.rxProcessedSize = 0;
             usart1Obj.rxBusyStatus = true;
+
             status = true;
 
             /* Enable Read, Overrun, Parity and Framing error interrupts */
@@ -288,27 +314,34 @@ bool USART1_Read( void *buffer, const size_t size )
 bool USART1_Write( void *buffer, const size_t size )
 {
     bool status = false;
-    uint8_t * lBuffer = (uint8_t *)buffer;
+    uint8_t* pBuffer = (uint8_t *)buffer;
 
-    if(NULL != lBuffer)
+    if(NULL != pBuffer)
     {
         /* Check if transmit request is in progress */
         if(usart1Obj.txBusyStatus == false)
         {
-            usart1Obj.txBuffer = lBuffer;
+            usart1Obj.txBuffer = pBuffer;
             usart1Obj.txSize = size;
             usart1Obj.txProcessedSize = 0;
             usart1Obj.txBusyStatus = true;
             status = true;
 
-            /* Initiate the transfer by sending first byte */
-            if(US_CSR_USART_TXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk))
+            /* Initiate the transfer by writing as many bytes as possible */
+            while ((USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk) && (usart1Obj.txProcessedSize < usart1Obj.txSize))
             {
-                USART1_REGS->US_THR = (US_THR_TXCHR(*lBuffer) & US_THR_TXCHR_Msk);
-                usart1Obj.txProcessedSize++;
+                if (USART1_REGS->US_MR & US_MR_USART_MODE9_Msk)
+                {
+                    USART1_REGS->US_THR = ((uint16_t*)pBuffer)[usart1Obj.txProcessedSize++] & US_THR_TXCHR_Msk;
+                }
+                else
+                {
+                    USART1_REGS->US_THR = pBuffer[usart1Obj.txProcessedSize++] & US_THR_TXCHR_Msk;
+                }
             }
 
-            USART1_REGS->US_IER = US_IER_USART_TXEMPTY_Msk;
+            USART1_REGS->US_IER = US_IER_USART_TXRDY_Msk;
+
         }
     }
 
@@ -343,16 +376,16 @@ bool USART1_ReadIsBusy( void )
 bool USART1_ReadAbort(void)
 {
     if (usart1Obj.rxBusyStatus == true)
-    {        
+    {
         /* Disable Read, Overrun, Parity and Framing error interrupts */
-        USART1_REGS->US_IDR = (US_IDR_USART_RXRDY_Msk | US_IDR_USART_FRAME_Msk | US_IDR_USART_PARE_Msk | US_IDR_USART_OVRE_Msk);	
-        
-        usart1Obj.rxBusyStatus = false;                
-        
-        /* If required application should read the num bytes processed prior to calling the read abort API */        
+        USART1_REGS->US_IDR = (US_IDR_USART_RXRDY_Msk | US_IDR_USART_FRAME_Msk | US_IDR_USART_PARE_Msk | US_IDR_USART_OVRE_Msk);
+
+        usart1Obj.rxBusyStatus = false;
+
+        /* If required application should read the num bytes processed prior to calling the read abort API */
         usart1Obj.rxSize = usart1Obj.rxProcessedSize = 0;
     }
-    
+
     return true;
 }
 

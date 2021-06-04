@@ -43,6 +43,7 @@ It allows user to Program, Erase and lock the on-chip FLASH memory.
 #include <string.h>
 #include "device.h"
 #include "plib_efc.h"
+#include "interrupts.h"
 
 static uint32_t status = 0;
 

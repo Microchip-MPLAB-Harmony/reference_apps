@@ -1,7 +1,7 @@
 /**
  * \brief Component description for SPI
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-03-04T11:03:42Z */
+/* file generated from device description version 2020-11-26T11:12:57Z */
 #ifndef _SAME70_SPI_COMPONENT_H_
 #define _SAME70_SPI_COMPONENT_H_
 
@@ -307,6 +307,10 @@
 #define SPI_IDR_REG_OFST               (0x18)              /**< (SPI_IDR) Interrupt Disable Register Offset */
 #define SPI_IMR_REG_OFST               (0x1C)              /**< (SPI_IMR) Interrupt Mask Register Offset */
 #define SPI_CSR_REG_OFST               (0x30)              /**< (SPI_CSR) Chip Select Register Offset */
+#define SPI_CSR0_REG_OFST              (0x30)              /**< (SPI_CSR0) Chip Select Register Offset */
+#define SPI_CSR1_REG_OFST              (0x34)              /**< (SPI_CSR1) Chip Select Register Offset */
+#define SPI_CSR2_REG_OFST              (0x38)              /**< (SPI_CSR2) Chip Select Register Offset */
+#define SPI_CSR3_REG_OFST              (0x3C)              /**< (SPI_CSR3) Chip Select Register Offset */
 #define SPI_WPMR_REG_OFST              (0xE4)              /**< (SPI_WPMR) Write Protection Mode Register Offset */
 #define SPI_WPSR_REG_OFST              (0xE8)              /**< (SPI_WPSR) Write Protection Status Register Offset */
 
