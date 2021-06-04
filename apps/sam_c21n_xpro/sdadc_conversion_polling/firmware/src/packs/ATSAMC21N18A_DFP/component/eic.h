@@ -1,7 +1,7 @@
 /**
  * \brief Component description for EIC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-11-25T02:18:36Z */
+/* file generated from device description version 2020-12-11T17:48:13Z */
 #ifndef _SAMC21_EIC_COMPONENT_H_
 #define _SAMC21_EIC_COMPONENT_H_
 
@@ -392,6 +392,8 @@
 #define EIC_INTFLAG_REG_OFST           (0x14)              /**< (EIC_INTFLAG) Interrupt Flag Status and Clear Offset */
 #define EIC_ASYNCH_REG_OFST            (0x18)              /**< (EIC_ASYNCH) External Interrupt Asynchronous Mode Offset */
 #define EIC_CONFIG_REG_OFST            (0x1C)              /**< (EIC_CONFIG) External Interrupt Sense Configuration Offset */
+#define EIC_CONFIG0_REG_OFST           (0x1C)              /**< (EIC_CONFIG0) External Interrupt Sense Configuration Offset */
+#define EIC_CONFIG1_REG_OFST           (0x20)              /**< (EIC_CONFIG1) External Interrupt Sense Configuration Offset */
 #define EIC_DEBOUNCEN_REG_OFST         (0x30)              /**< (EIC_DEBOUNCEN) Debouncer Enable Offset */
 #define EIC_DPRESCALER_REG_OFST        (0x34)              /**< (EIC_DPRESCALER) Debouncer Prescaler Offset */
 #define EIC_PINSTATE_REG_OFST          (0x38)              /**< (EIC_PINSTATE) Pin State Offset */
