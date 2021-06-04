@@ -12,7 +12,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: TWIHS_CLK_SRC_FREQ}
     children:

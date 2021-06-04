@@ -42,6 +42,7 @@
 //DOM-IGNORE-END
 
 #include "plib_pio.h"
+#include "interrupts.h"
 
 
 #define PIO_MAX_NUM_OF_CHANNELS     5

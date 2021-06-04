@@ -5,10 +5,10 @@
     Microchip Technology Inc.
 
   File Name
-    plib_twihs0.c
+    plib_twihs0_master.c
 
   Summary
-    TWIHS peripheral library interface.
+    TWIHS Master peripheral library interface.
 
   Description
 
@@ -48,7 +48,7 @@
 // *****************************************************************************
 
 #include "device.h"
-#include "plib_twihs0.h"
+#include "plib_twihs0_master.h"
 
 // *****************************************************************************
 // *****************************************************************************

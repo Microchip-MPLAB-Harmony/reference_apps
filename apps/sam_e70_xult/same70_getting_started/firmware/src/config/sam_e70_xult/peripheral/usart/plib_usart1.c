@@ -40,6 +40,7 @@
 
 #include "device.h"
 #include "plib_usart1.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -51,17 +52,22 @@ static void USART1_ErrorClear( void )
 {
     uint8_t dummyData = 0u;
 
-    USART1_REGS->US_CR = US_CR_USART_RSTSTA_Msk;
+   if (USART1_REGS->US_CSR & (US_CSR_USART_OVRE_Msk | US_CSR_USART_PARE_Msk | US_CSR_USART_FRAME_Msk))
+   {
+        /* Clear the error flags */
+        USART1_REGS->US_CR = US_CR_USART_RSTSTA_Msk;
 
-    /* Flush existing error bytes from the RX FIFO */
-    while( US_CSR_USART_RXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk) )
-    {
-        dummyData = (USART1_REGS->US_RHR & US_RHR_RXCHR_Msk);
-    }
+        /* Flush existing error bytes from the RX FIFO */
+        while (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk)
+        {
+            dummyData = (USART1_REGS->US_RHR & US_RHR_RXCHR_Msk);
+        }
+   }
 
     /* Ignore the warning */
     (void)dummyData;
 }
+
 
 void USART1_Initialize( void )
 {
@@ -81,6 +87,7 @@ void USART1_Initialize( void )
 USART_ERROR USART1_ErrorGet( void )
 {
     USART_ERROR errors = USART_ERROR_NONE;
+
     uint32_t status = USART1_REGS->US_CSR;
 
     errors = (USART_ERROR)(status & (US_CSR_USART_OVRE_Msk | US_CSR_USART_PARE_Msk | US_CSR_USART_FRAME_Msk));
@@ -149,17 +156,18 @@ bool USART1_Read( void *buffer, const size_t size )
     bool status = false;
     uint32_t errorStatus = 0;
     size_t processedSize = 0;
-    uint8_t * lBuffer = (uint8_t *)buffer;
+    uint8_t* pBuffer = (uint8_t *)buffer;
 
-    if(NULL != lBuffer)
+    if(pBuffer != NULL)
     {
-        /* Clear errors before submitting the request.
-         * ErrorGet clears errors internally. */
-        USART1_ErrorGet();
+        /* Clear errors that may have got generated when there was no active read request pending */
+        USART1_ErrorClear();
 
         while( size > processedSize )
         {
-            /* Error status */
+            while (!(USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk));
+
+            /* Read error status */
             errorStatus = (USART1_REGS->US_CSR & (US_CSR_USART_OVRE_Msk | US_CSR_USART_FRAME_Msk | US_CSR_USART_PARE_Msk));
 
             if(errorStatus != 0)
@@ -167,11 +175,17 @@ bool USART1_Read( void *buffer, const size_t size )
                 break;
             }
 
-            if(US_CSR_USART_RXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk))
+            if (USART1_REGS->US_MR & US_MR_USART_MODE9_Msk)
             {
-                *lBuffer++ = (USART1_REGS->US_RHR& US_RHR_RXCHR_Msk);
-                processedSize++;
+                *((uint16_t*)pBuffer) = (USART1_REGS->US_RHR & US_RHR_RXCHR_Msk);
+                pBuffer += 2;
             }
+            else
+            {
+                *pBuffer++ = (USART1_REGS->US_RHR & US_RHR_RXCHR_Msk);
+            }
+
+            processedSize++;
         }
 
         if(size == processedSize)
@@ -187,16 +201,21 @@ bool USART1_Write( void *buffer, const size_t size )
 {
     bool status = false;
     size_t processedSize = 0;
-    uint8_t * lBuffer = (uint8_t *)buffer;
+    uint8_t* pBuffer = (uint8_t *)buffer;
 
-    if(NULL != lBuffer)
+    if(NULL != pBuffer)
     {
         while( size > processedSize )
         {
-            if(US_CSR_USART_TXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk))
+            while (!(USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk));
+
+            if (USART1_REGS->US_MR & US_MR_USART_MODE9_Msk)
             {
-                USART1_REGS->US_THR = (US_THR_TXCHR(*lBuffer++) & US_THR_TXCHR_Msk);
-                processedSize++;
+                USART1_REGS->US_THR = ((uint16_t*)pBuffer)[processedSize++] & US_THR_TXCHR_Msk;
+            }
+            else
+            {
+                USART1_REGS->US_THR = pBuffer[processedSize++] & US_THR_TXCHR_Msk;
             }
         }
 
@@ -213,14 +232,14 @@ int USART1_ReadByte( void )
 
 void USART1_WriteByte( int data )
 {
-    while ((US_CSR_USART_TXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk)) == 0);
+    while (!(USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk));
 
     USART1_REGS->US_THR = (US_THR_TXCHR(data) & US_THR_TXCHR_Msk);
 }
 
 bool USART1_TransmitterIsReady( void )
 {
-    if(US_CSR_USART_TXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk))
+    if(USART1_REGS->US_CSR & US_CSR_USART_TXRDY_Msk)
     {
         return true;
     }
@@ -230,7 +249,7 @@ bool USART1_TransmitterIsReady( void )
 
 bool USART1_TransmitComplete( void )
 {
-    if(US_CSR_USART_TXEMPTY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_TXEMPTY_Msk))
+    if(USART1_REGS->US_CSR & US_CSR_USART_TXEMPTY_Msk)
     {
         return true;
     }
@@ -240,7 +259,7 @@ bool USART1_TransmitComplete( void )
 
 bool USART1_ReceiverIsReady( void )
 {
-    if(US_CSR_USART_RXRDY_Msk == (USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk))
+    if(USART1_REGS->US_CSR & US_CSR_USART_RXRDY_Msk)
     {
         return true;
     }

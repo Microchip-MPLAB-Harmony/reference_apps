@@ -1010,7 +1010,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x493e0'}
+        attributes: {id: core, value: '0x493E0'}
   - type: Integer
     attributes: {id: SYSTICK_PERIOD_US}
     children:
