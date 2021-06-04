@@ -54,7 +54,9 @@
 */
 
 #include "device.h"
+#include "interrupts.h"
 #include "plib_sdadc.h"
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data
@@ -62,7 +64,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-SDADC_CALLBACK_OBJECT SDADC_CallbackObj;
+static SDADC_CALLBACK_OBJECT SDADC_CallbackObj;
 // *****************************************************************************
 // *****************************************************************************
 // Section: SDADC Implementation
@@ -73,7 +75,7 @@ SDADC_CALLBACK_OBJECT SDADC_CallbackObj;
 void SDADC_Initialize( void )
 {
     /* Software Reset */
-    SDADC_REGS->SDADC_CTRLA = SDADC_CTRLA_SWRST_Msk;
+    SDADC_REGS->SDADC_CTRLA = (uint8_t)SDADC_CTRLA_SWRST_Msk;
 
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_SWRST_Msk) == SDADC_SYNCBUSY_SWRST_Msk)
     {
@@ -81,28 +83,28 @@ void SDADC_Initialize( void )
     }
 
     /* Set prescaler, over sampling ratio and skip count */
-    SDADC_REGS->SDADC_CTRLB = SDADC_CTRLB_PRESCALER_DIV2 | SDADC_CTRLB_OSR_OSR64 | SDADC_CTRLB_SKPCNT(2U);
+    SDADC_REGS->SDADC_CTRLB = (uint16_t)(SDADC_CTRLB_PRESCALER_DIV2 | SDADC_CTRLB_OSR_OSR64 | SDADC_CTRLB_SKPCNT(2UL));
 
     /* Configure reference voltage */
-    SDADC_REGS->SDADC_REFCTRL = SDADC_REFCTRL_REFSEL_INTREF | SDADC_REFCTRL_ONREFBUF_Msk;
+    SDADC_REGS->SDADC_REFCTRL = (uint8_t)(SDADC_REFCTRL_REFSEL_INTREF | SDADC_REFCTRL_ONREFBUF_Msk);
 
-    SDADC_REGS->SDADC_CTRLC = SDADC_CTRLC_FREERUN_Msk;
+    SDADC_REGS->SDADC_CTRLC = (uint8_t)SDADC_CTRLC_FREERUN_Msk;
     /* Configure positive and negative input pins */
-    SDADC_REGS->SDADC_INPUTCTRL = SDADC_INPUTCTRL_MUXSEL_AIN1;
+    SDADC_REGS->SDADC_INPUTCTRL = (uint8_t)SDADC_INPUTCTRL_MUXSEL_AIN1;
 
     /* Clear all interrupts */
-    SDADC_REGS->SDADC_INTFLAG = SDADC_INTFLAG_Msk;
+    SDADC_REGS->SDADC_INTFLAG = (uint8_t)SDADC_INTFLAG_Msk;
 
     /* Enable interrupt */
-    SDADC_REGS->SDADC_INTENSET = SDADC_INTENSET_RESRDY_Msk;
+    SDADC_REGS->SDADC_INTENSET = (uint8_t)(SDADC_INTENSET_RESRDY_Msk);
     SDADC_CallbackObj.callback = NULL;
 
 
 
     /* Enable SDADC */
-    SDADC_REGS->SDADC_CTRLA |= SDADC_CTRLA_ENABLE_Msk;
+    SDADC_REGS->SDADC_CTRLA |= (uint8_t)SDADC_CTRLA_ENABLE_Msk;
 
-    while((SDADC_REGS->SDADC_SYNCBUSY))
+    while((SDADC_REGS->SDADC_SYNCBUSY) != 0U)
     {
         /* Wait for synchronization */
     }
@@ -110,7 +112,7 @@ void SDADC_Initialize( void )
 
 void SDADC_Enable( void )
 {
-    SDADC_REGS->SDADC_CTRLA |= SDADC_CTRLA_ENABLE_Msk;
+    SDADC_REGS->SDADC_CTRLA |= (uint8_t)SDADC_CTRLA_ENABLE_Msk;
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for synchronization */
@@ -119,7 +121,7 @@ void SDADC_Enable( void )
 
 void SDADC_Disable( void )
 {
-    SDADC_REGS->SDADC_CTRLA &= ~SDADC_CTRLA_ENABLE_Msk;
+    SDADC_REGS->SDADC_CTRLA &= (uint8_t)(~SDADC_CTRLA_ENABLE_Msk);
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for synchronization */
@@ -130,7 +132,8 @@ void SDADC_Disable( void )
 int16_t SDADC_ConversionResultGet( void )
 {
     /* right-shift by 8-bits to get signed 16-bit result */
-    return ((int16_t)(SDADC_REGS->SDADC_RESULT >> 8));
+    uint32_t result = SDADC_REGS->SDADC_RESULT >> 8U;
+    return ((int16_t)result);
 }
 
 
@@ -145,10 +148,10 @@ void SDADC_CallbackRegister( SDADC_CALLBACK callback, uintptr_t context )
 
 void SDADC_InterruptHandler( void )
 {
-    volatile SDADC_STATUS status;
+    SDADC_STATUS status;
     status = SDADC_REGS->SDADC_INTFLAG;
     /* Clear interrupt flags */
-    SDADC_REGS->SDADC_INTFLAG = SDADC_INTFLAG_Msk;
+    SDADC_REGS->SDADC_INTFLAG = (uint8_t)SDADC_INTFLAG_Msk;
 
     if (SDADC_CallbackObj.callback != NULL)
     {
