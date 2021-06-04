@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAML10E16A linker script
  * 
- * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -89,12 +89,12 @@ MEMORY
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH
   config_00804000 : ORIGIN = 0x00804000, LENGTH = 0x4
-  config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
-  config_0080C004 : ORIGIN = 0x0080C004, LENGTH = 0x4
   config_0080C040 : ORIGIN = 0x0080C040, LENGTH = 0x4
-  config_0080C044 : ORIGIN = 0x0080C044, LENGTH = 0x4
+  config_0080C004 : ORIGIN = 0x0080C004, LENGTH = 0x4
   config_0080C048 : ORIGIN = 0x0080C048, LENGTH = 0x4
   config_0080C04C : ORIGIN = 0x0080C04C, LENGTH = 0x4
+  config_0080C044 : ORIGIN = 0x0080C044, LENGTH = 0x4
+  config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
 
 }
 
@@ -134,24 +134,24 @@ SECTIONS
     .config_00804000 : {
       KEEP(*(.config_00804000))
     } > config_00804000
-    .config_00804004 : {
-      KEEP(*(.config_00804004))
-    } > config_00804004
-    .config_0080C004 : {
-      KEEP(*(.config_0080C004))
-    } > config_0080C004
     .config_0080C040 : {
       KEEP(*(.config_0080C040))
     } > config_0080C040
-    .config_0080C044 : {
-      KEEP(*(.config_0080C044))
-    } > config_0080C044
+    .config_0080C004 : {
+      KEEP(*(.config_0080C004))
+    } > config_0080C004
     .config_0080C048 : {
       KEEP(*(.config_0080C048))
     } > config_0080C048
     .config_0080C04C : {
       KEEP(*(.config_0080C04C))
     } > config_0080C04C
+    .config_0080C044 : {
+      KEEP(*(.config_0080C044))
+    } > config_0080C044
+    .config_00804004 : {
+      KEEP(*(.config_00804004))
+    } > config_00804004
 
     /*
      * The linker moves the .vectors section into itcm when itcm is

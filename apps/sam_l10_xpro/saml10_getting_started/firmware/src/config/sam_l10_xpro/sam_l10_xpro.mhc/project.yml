@@ -1,543 +1,781 @@
 files:
-- generatedChecksum: B9388144EA8C18C396F2DB6CC40DCB4D
-  logicalPath: config\sam_l10_xpro
+- generatedChecksum: 9D5EE038B893127B787BC03DFA6B467F
+  logicalPath: config/sam_l10_xpro
   name: exceptions.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B9388144EA8C18C396F2DB6CC40DCB4D
+  userChecksum: 9D5EE038B893127B787BC03DFA6B467F
 - generatedChecksum: 7DAAB4AAA63DB9D4F2AA17AFA162AD4D
-  logicalPath: config\sam_l10_xpro
+  logicalPath: config/sam_l10_xpro
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7DAAB4AAA63DB9D4F2AA17AFA162AD4D
-- generatedChecksum: 0B3F9FE805B35B38B53E6A64836E1860
-  logicalPath: config\sam_l10_xpro
+- generatedChecksum: 2BA907CB99FC845EFAA0A2E6DFFF32A8
+  logicalPath: config/sam_l10_xpro
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0B3F9FE805B35B38B53E6A64836E1860
-- generatedChecksum: 328F1E09E0DD9BEE901C4562A3E5180A
-  logicalPath: config\sam_l10_xpro
+  userChecksum: 2BA907CB99FC845EFAA0A2E6DFFF32A8
+- generatedChecksum: 6513F2461B8F476B68CA73906086047F
+  logicalPath: config/sam_l10_xpro
   name: libc_syscalls.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 328F1E09E0DD9BEE901C4562A3E5180A
+  userChecksum: 6513F2461B8F476B68CA73906086047F
 - generatedChecksum: null
   logicalPath: ''
   name: main_l10.c
-  physicalPath: ..\..
+  physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 76DB71F953F61F7E3803E2598AFB5134
-  logicalPath: config\sam_l10_xpro\peripheral\clock
+- generatedChecksum: 99522365DEC2CDD8528EC2C191146974
+  logicalPath: config/sam_l10_xpro/peripheral/clock
   name: plib_clock.c
-  physicalPath: peripheral\clock
+  physicalPath: peripheral/clock
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 76DB71F953F61F7E3803E2598AFB5134
-- generatedChecksum: 75E8AA1846FB9F77D786B7BF033C7CD5
-  logicalPath: config\sam_l10_xpro\peripheral\dmac
+  userChecksum: 99522365DEC2CDD8528EC2C191146974
+- generatedChecksum: 0EC196460606E472C6FE1BE05FBEB480
+  logicalPath: config/sam_l10_xpro/peripheral/dmac
   name: plib_dmac.c
-  physicalPath: peripheral\dmac
+  physicalPath: peripheral/dmac
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 75E8AA1846FB9F77D786B7BF033C7CD5
-- generatedChecksum: BD383E215738FDBCC96C894B2C5EB56D
-  logicalPath: config\sam_l10_xpro\peripheral\eic
+  userChecksum: 0EC196460606E472C6FE1BE05FBEB480
+- generatedChecksum: A640B7249FEF609628CF2B7461D81722
+  logicalPath: config/sam_l10_xpro/peripheral/eic
   name: plib_eic.c
-  physicalPath: peripheral\eic
+  physicalPath: peripheral/eic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BD383E215738FDBCC96C894B2C5EB56D
-- generatedChecksum: C99E6D9B9BA371EA749B7DC16BC2C209
-  logicalPath: config\sam_l10_xpro\peripheral\evsys
+  userChecksum: A640B7249FEF609628CF2B7461D81722
+- generatedChecksum: C3ECDED3D6301DB0DE622293ED615D21
+  logicalPath: config/sam_l10_xpro/peripheral/evsys
   name: plib_evsys.c
-  physicalPath: peripheral\evsys
+  physicalPath: peripheral/evsys
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C99E6D9B9BA371EA749B7DC16BC2C209
-- generatedChecksum: 646CBF0A39DC1AF97C38728E64770455
-  logicalPath: config\sam_l10_xpro\peripheral\nvic
+  userChecksum: C3ECDED3D6301DB0DE622293ED615D21
+- generatedChecksum: 0C00293E53E6A4E901DDC72BF7844E45
+  logicalPath: config/sam_l10_xpro/peripheral/nvic
   name: plib_nvic.c
-  physicalPath: peripheral\nvic
+  physicalPath: peripheral/nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 646CBF0A39DC1AF97C38728E64770455
-- generatedChecksum: 5B19C25F77B7B44EB38287580BA5A510
-  logicalPath: config\sam_l10_xpro\peripheral\nvmctrl
+  userChecksum: 0C00293E53E6A4E901DDC72BF7844E45
+- generatedChecksum: 3E5669CAC60931813D1B8CF65D1F07E9
+  logicalPath: config/sam_l10_xpro/peripheral/nvmctrl
   name: plib_nvmctrl.c
-  physicalPath: peripheral\nvmctrl
+  physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5B19C25F77B7B44EB38287580BA5A510
-- generatedChecksum: 0BAD7EAAF0E8E55ED22EAA616638AD6B
-  logicalPath: config\sam_l10_xpro\peripheral\pm
+  userChecksum: 3E5669CAC60931813D1B8CF65D1F07E9
+- generatedChecksum: 295EC4F84D0FFCF4D1DA1954720E7FA9
+  logicalPath: config/sam_l10_xpro/peripheral/pm
   name: plib_pm.c
-  physicalPath: peripheral\pm
+  physicalPath: peripheral/pm
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0BAD7EAAF0E8E55ED22EAA616638AD6B
-- generatedChecksum: 366B41FB28066F0B2C7B35DEFB58C64A
-  logicalPath: config\sam_l10_xpro\peripheral\port
+  userChecksum: 295EC4F84D0FFCF4D1DA1954720E7FA9
+- generatedChecksum: 7A9FF73054EEA19F1220B69C5CB3524F
+  logicalPath: config/sam_l10_xpro/peripheral/port
   name: plib_port.c
-  physicalPath: peripheral\port
+  physicalPath: peripheral/port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 366B41FB28066F0B2C7B35DEFB58C64A
-- generatedChecksum: AA13691AD53D3626F4AACF1E24E0E324
-  logicalPath: config\sam_l10_xpro\peripheral\rtc
+  userChecksum: 7A9FF73054EEA19F1220B69C5CB3524F
+- generatedChecksum: DBC80AD534769256B50F8D46198C9189
+  logicalPath: config/sam_l10_xpro/peripheral/rtc
   name: plib_rtc_timer.c
-  physicalPath: peripheral\rtc
+  physicalPath: peripheral/rtc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AA13691AD53D3626F4AACF1E24E0E324
-- generatedChecksum: BA256F143618050030BCE1EE849B6494
-  logicalPath: config\sam_l10_xpro\peripheral\sercom\usart
+  userChecksum: DBC80AD534769256B50F8D46198C9189
+- generatedChecksum: 31B217C1563DADE6879CA72DE12EB189
+  logicalPath: config/sam_l10_xpro/peripheral/sercom/usart
   name: plib_sercom0_usart.c
-  physicalPath: peripheral\sercom\usart
+  physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BA256F143618050030BCE1EE849B6494
-- generatedChecksum: 5E0D8FF77DE6259E32DE8D0A3FF0F398
-  logicalPath: config\sam_l10_xpro\peripheral\sercom\i2c_master
+  userChecksum: 31B217C1563DADE6879CA72DE12EB189
+- generatedChecksum: F93550148656EF2AADBC8CA791B07AB3
+  logicalPath: config/sam_l10_xpro/peripheral/sercom/i2c_master
   name: plib_sercom1_i2c_master.c
-  physicalPath: peripheral\sercom\i2c_master
+  physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5E0D8FF77DE6259E32DE8D0A3FF0F398
-- generatedChecksum: 949BBD944EC8B81E639121B72E7C7510
-  logicalPath: config\sam_l10_xpro
+  userChecksum: F93550148656EF2AADBC8CA791B07AB3
+- generatedChecksum: 2645E564BD945DAED1424FD8D7B39330
+  logicalPath: config/sam_l10_xpro
   name: startup_xc32.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 949BBD944EC8B81E639121B72E7C7510
-- generatedChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-  logicalPath: config\sam_l10_xpro\stdio
+  userChecksum: 2645E564BD945DAED1424FD8D7B39330
+- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
+  logicalPath: config/sam_l10_xpro/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-- generatedChecksum: B1226786415F9B20758FE8E23E233CE9
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
+- generatedChecksum: E87BCD77FAB922F4454A24BB7BF0894F
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: ac.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: B1226786415F9B20758FE8E23E233CE9
-- generatedChecksum: 474C6EF66B2B689DB926AE3AA53F48CB
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: E87BCD77FAB922F4454A24BB7BF0894F
+- generatedChecksum: 19EF761F2A037953419D660AD80B6524
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: ac.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 19EF761F2A037953419D660AD80B6524
+- generatedChecksum: 2D3227D53911C1D902089ED5C36426A9
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: adc.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 474C6EF66B2B689DB926AE3AA53F48CB
-- generatedChecksum: 88944E91A85756AF650DAEF9D9322C9F
-  logicalPath: packs\ATSAML10E16A_DFP
-  name: atsaml10e16a.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP
+  userChecksum: 2D3227D53911C1D902089ED5C36426A9
+- generatedChecksum: 9565CC4B49B3B02CDD2AF2363DFF5165
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: adc.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
   security: NON_SECURE
   type: HEADER
-  userChecksum: 88944E91A85756AF650DAEF9D9322C9F
+  userChecksum: 9565CC4B49B3B02CDD2AF2363DFF5165
 - generatedChecksum: 01B82424BC59A54620F7E9E0DB808EBB
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cachel1_armv7.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 01B82424BC59A54620F7E9E0DB808EBB
-- generatedChecksum: D083E231381A8103FB0EE4055181F90F
-  logicalPath: packs\ATSAML10E16A_DFP\component
+- generatedChecksum: B9A4E856900C9AE3DCBCDB15C8EAF2DE
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: ccl.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: D083E231381A8103FB0EE4055181F90F
+  userChecksum: B9A4E856900C9AE3DCBCDB15C8EAF2DE
+- generatedChecksum: 741277F9ECB377987C35C1D015AE6CE6
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: ccl.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 741277F9ECB377987C35C1D015AE6CE6
 - generatedChecksum: 00A88E28C299A373117BC4D5B9E80C80
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armcc.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 00A88E28C299A373117BC4D5B9E80C80
 - generatedChecksum: 734DF6998F09B2D22A4D9FE1D544FDFC
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armclang.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 734DF6998F09B2D22A4D9FE1D544FDFC
 - generatedChecksum: 5D653BEFE5E6B1D00AB3682CE5D24C11
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armclang_ltm.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 5D653BEFE5E6B1D00AB3682CE5D24C11
 - generatedChecksum: 60385A5C6C9882B5D30709A1F6EAEC35
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_compiler.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 60385A5C6C9882B5D30709A1F6EAEC35
 - generatedChecksum: 42E8B722917508A3A9373D13AD827ED6
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_gcc.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 42E8B722917508A3A9373D13AD827ED6
 - generatedChecksum: 376D5C7FD29CAA507ACB1AAB8746B1AD
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_iccarm.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 376D5C7FD29CAA507ACB1AAB8746B1AD
 - generatedChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_version.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
 - generatedChecksum: 0FA8F383A68E6909F4F1D040B920F2F2
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm23.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 0FA8F383A68E6909F4F1D040B920F2F2
-- generatedChecksum: 8148893677E9029400979A2C42738F9D
-  logicalPath: packs\ATSAML10E16A_DFP\component
+- generatedChecksum: E007E3DB459D8873D69237971B73972F
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: dac.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8148893677E9029400979A2C42738F9D
-- generatedChecksum: 649CB0EBB242054AEB16B6E7790AE2B7
-  logicalPath: config\sam_l10_xpro
+  userChecksum: E007E3DB459D8873D69237971B73972F
+- generatedChecksum: C536EAB02B8DAF24339CE704B4BBE0D2
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: dac.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: C536EAB02B8DAF24339CE704B4BBE0D2
+- generatedChecksum: C444684D3B1DA93807C2EC0A037B73A6
+  logicalPath: config/sam_l10_xpro
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 649CB0EBB242054AEB16B6E7790AE2B7
-- generatedChecksum: 5B85DD016F2D0FDE3D9DF0A8A3AAC181
-  logicalPath: config\sam_l10_xpro
+  userChecksum: C444684D3B1DA93807C2EC0A037B73A6
+- generatedChecksum: 39E05A5B598D6E3B8B757EB5B466B989
+  logicalPath: config/sam_l10_xpro
   name: device.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5B85DD016F2D0FDE3D9DF0A8A3AAC181
+  userChecksum: 39E05A5B598D6E3B8B757EB5B466B989
 - generatedChecksum: E95046F5E32C686DFC28E77070067C5F
-  logicalPath: config\sam_l10_xpro
+  logicalPath: config/sam_l10_xpro
   name: device_cache.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: E95046F5E32C686DFC28E77070067C5F
-- generatedChecksum: 393DC5C2C823051DB336C268785FBF28
-  logicalPath: packs\ATSAML10E16A_DFP\component
+- generatedChecksum: B9FA806A8356C739EE510EDDF7CA8119
+  logicalPath: config/sam_l10_xpro
+  name: device_vectors.h
+  physicalPath: ''
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: B9FA806A8356C739EE510EDDF7CA8119
+- generatedChecksum: 2E335CFA29D91E9AB886280D0B0D7FAF
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: dmac.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 393DC5C2C823051DB336C268785FBF28
-- generatedChecksum: 3F502CEEF776F0DA5917A9808C582F94
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 2E335CFA29D91E9AB886280D0B0D7FAF
+- generatedChecksum: 0D90B89C5BA35450BFD34F3EB40ECBFC
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: dmac.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0D90B89C5BA35450BFD34F3EB40ECBFC
+- generatedChecksum: 556063444AD70739B08025D5137CBDFD
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: dsu.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3F502CEEF776F0DA5917A9808C582F94
-- generatedChecksum: 97B734AC66921915344D47E215D3B768
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 556063444AD70739B08025D5137CBDFD
+- generatedChecksum: DC708BA9427E19D5FA8711F69A009112
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: dsu.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: DC708BA9427E19D5FA8711F69A009112
+- generatedChecksum: 46B9D4D0F49B1331068F691A27DD004F
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: eic.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 97B734AC66921915344D47E215D3B768
-- generatedChecksum: F8D6B77B54969D3A00C1C769FEBCE9BB
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 46B9D4D0F49B1331068F691A27DD004F
+- generatedChecksum: 1BE4A675C79C5B56D77C5605211DFA1A
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: eic.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1BE4A675C79C5B56D77C5605211DFA1A
+- generatedChecksum: 3CD23DEE9B9AF6074E45B41CE88D29BD
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: evsys.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: F8D6B77B54969D3A00C1C769FEBCE9BB
-- generatedChecksum: 167CE28A64AA3F9B619BBE7D7D6BE020
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 3CD23DEE9B9AF6074E45B41CE88D29BD
+- generatedChecksum: E99DD325A21E6AD75CD6EF0243B01702
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: evsys.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E99DD325A21E6AD75CD6EF0243B01702
+- generatedChecksum: 919B60E8237927120C67E3894AAADCAE
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: freqm.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 167CE28A64AA3F9B619BBE7D7D6BE020
-- generatedChecksum: 20508974065CDD7D57C99E036FC778AE
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 919B60E8237927120C67E3894AAADCAE
+- generatedChecksum: 2E4A50D46C0ED2D2FEDD3254EE9D039E
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: freqm.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 2E4A50D46C0ED2D2FEDD3254EE9D039E
+- generatedChecksum: 44A36012AACD45A54B32A3520CC12D49
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: gclk.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 20508974065CDD7D57C99E036FC778AE
-- generatedChecksum: 3E5EEB06D7F1BC738639FD41B7F27E21
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 44A36012AACD45A54B32A3520CC12D49
+- generatedChecksum: FC615D1A0F211C86D18B276A5F7B5C19
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: gclk.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: FC615D1A0F211C86D18B276A5F7B5C19
+- generatedChecksum: 3459D9E071FC44CCF5554AFE36B881F4
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: idau.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3E5EEB06D7F1BC738639FD41B7F27E21
-- generatedChecksum: F2F5A442958EDEF69DC790DEF2950181
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 3459D9E071FC44CCF5554AFE36B881F4
+- generatedChecksum: C0099B289FD7BF78721EA7C548DDF6EC
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: idau.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: C0099B289FD7BF78721EA7C548DDF6EC
+- generatedChecksum: 16817CADE6D50EEB31F34E6559FD2878
+  logicalPath: config/sam_l10_xpro
+  name: interrupts.h
+  physicalPath: ''
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 16817CADE6D50EEB31F34E6559FD2878
+- generatedChecksum: ED4DA51B2AF6ACE1580580BD94DC0B2C
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: mclk.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: F2F5A442958EDEF69DC790DEF2950181
+  userChecksum: ED4DA51B2AF6ACE1580580BD94DC0B2C
+- generatedChecksum: 85736D1FF940F705FABCF3016E864669
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: mclk.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 85736D1FF940F705FABCF3016E864669
 - generatedChecksum: AF4D338B8CE47DE6D837EBA192EB7ADC
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: mpu_armv8.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: AF4D338B8CE47DE6D837EBA192EB7ADC
-- generatedChecksum: CBF85FCDA2A92DBF5241B0EB01A2D84E
-  logicalPath: packs\ATSAML10E16A_DFP\component
+- generatedChecksum: 8DE8FDC3AA1CFA926BF7971528ED8DFE
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: nvmctrl.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: CBF85FCDA2A92DBF5241B0EB01A2D84E
-- generatedChecksum: 3CCA19ED99764E53C4E60AC5D5B0300D
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 8DE8FDC3AA1CFA926BF7971528ED8DFE
+- generatedChecksum: 2BB55B0E49AEDF1C680C5C7E7B2D2486
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: nvmctrl.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 2BB55B0E49AEDF1C680C5C7E7B2D2486
+- generatedChecksum: 107F0D44F0B1BC53F449D82BCB70E29C
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: opamp.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3CCA19ED99764E53C4E60AC5D5B0300D
-- generatedChecksum: 6B203B32D4692EEA42AE949D0BF516B1
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 107F0D44F0B1BC53F449D82BCB70E29C
+- generatedChecksum: E37299A06DA8C9957723899ED4470D89
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: opamp.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E37299A06DA8C9957723899ED4470D89
+- generatedChecksum: 56459E96BBA2F27237AAF9C51549AB8E
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: osc32kctrl.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6B203B32D4692EEA42AE949D0BF516B1
-- generatedChecksum: 576AED318967BFE1F34F49BD1C5A574A
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 56459E96BBA2F27237AAF9C51549AB8E
+- generatedChecksum: 0E119B742CBA1821CC5278530FA47204
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: osc32kctrl.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0E119B742CBA1821CC5278530FA47204
+- generatedChecksum: 3121C3710E678642F7AEB68EC4CE1F1A
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: oscctrl.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 576AED318967BFE1F34F49BD1C5A574A
-- generatedChecksum: D895D308CB1C9580B3813AD3E718AF4E
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 3121C3710E678642F7AEB68EC4CE1F1A
+- generatedChecksum: 346944477F3376755E0A5ACD2A20DB23
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: oscctrl.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 346944477F3376755E0A5ACD2A20DB23
+- generatedChecksum: 0D4F3EE57887CF6F3413F3998725E554
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: pac.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: D895D308CB1C9580B3813AD3E718AF4E
+  userChecksum: 0D4F3EE57887CF6F3413F3998725E554
+- generatedChecksum: 98129683458CC061C153BED703E9EE05
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: pac.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 98129683458CC061C153BED703E9EE05
 - generatedChecksum: BB4FAC4F00C0D5A94EC40CE92DE7B515
-  logicalPath: config\sam_l10_xpro\peripheral\clock
+  logicalPath: config/sam_l10_xpro/peripheral/clock
   name: plib_clock.h
-  physicalPath: peripheral\clock
+  physicalPath: peripheral/clock
   security: NON_SECURE
   type: HEADER
   userChecksum: BB4FAC4F00C0D5A94EC40CE92DE7B515
-- generatedChecksum: 3A89E54D5A5E63233B53B023386895F1
-  logicalPath: config\sam_l10_xpro\peripheral\dmac
+- generatedChecksum: E963F095BAA5CC77B6679087B20C3A7F
+  logicalPath: config/sam_l10_xpro/peripheral/dmac
   name: plib_dmac.h
-  physicalPath: peripheral\dmac
+  physicalPath: peripheral/dmac
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3A89E54D5A5E63233B53B023386895F1
+  userChecksum: E963F095BAA5CC77B6679087B20C3A7F
 - generatedChecksum: 51195DF51995BC40151BF8074ABAA97B
-  logicalPath: config\sam_l10_xpro\peripheral\eic
+  logicalPath: config/sam_l10_xpro/peripheral/eic
   name: plib_eic.h
-  physicalPath: peripheral\eic
+  physicalPath: peripheral/eic
   security: NON_SECURE
   type: HEADER
   userChecksum: 51195DF51995BC40151BF8074ABAA97B
 - generatedChecksum: CCAEF942C66AF995876DFD85CEFF611F
-  logicalPath: config\sam_l10_xpro\peripheral\evsys
+  logicalPath: config/sam_l10_xpro/peripheral/evsys
   name: plib_evsys.h
-  physicalPath: peripheral\evsys
+  physicalPath: peripheral/evsys
   security: NON_SECURE
   type: HEADER
   userChecksum: CCAEF942C66AF995876DFD85CEFF611F
-- generatedChecksum: E95AB23B866AA0CE6F0ABF637E9E2C83
-  logicalPath: config\sam_l10_xpro\peripheral\nvic
+- generatedChecksum: 55ECCC7FA71BD15B46EF80DC0515ED7A
+  logicalPath: config/sam_l10_xpro/peripheral/nvic
   name: plib_nvic.h
-  physicalPath: peripheral\nvic
+  physicalPath: peripheral/nvic
   security: NON_SECURE
   type: HEADER
-  userChecksum: E95AB23B866AA0CE6F0ABF637E9E2C83
-- generatedChecksum: FA7F3A7639F35DFE3100A2D10556FF3E
-  logicalPath: config\sam_l10_xpro\peripheral\nvmctrl
+  userChecksum: 55ECCC7FA71BD15B46EF80DC0515ED7A
+- generatedChecksum: 71D66549C9619951ADF755BE83308B69
+  logicalPath: config/sam_l10_xpro/peripheral/nvmctrl
   name: plib_nvmctrl.h
-  physicalPath: peripheral\nvmctrl
+  physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: HEADER
-  userChecksum: FA7F3A7639F35DFE3100A2D10556FF3E
+  userChecksum: 71D66549C9619951ADF755BE83308B69
 - generatedChecksum: 8C396397F7AACEFD9F327A14A8ED33F1
-  logicalPath: config\sam_l10_xpro\peripheral\pm
+  logicalPath: config/sam_l10_xpro/peripheral/pm
   name: plib_pm.h
-  physicalPath: peripheral\pm
+  physicalPath: peripheral/pm
   security: NON_SECURE
   type: HEADER
   userChecksum: 8C396397F7AACEFD9F327A14A8ED33F1
-- generatedChecksum: DC5C04EB9040394A7B30C6424EFA7832
-  logicalPath: config\sam_l10_xpro\peripheral\port
+- generatedChecksum: DE831C27B1F73667031A8B5A030D196A
+  logicalPath: config/sam_l10_xpro/peripheral/port
   name: plib_port.h
-  physicalPath: peripheral\port
+  physicalPath: peripheral/port
   security: NON_SECURE
   type: HEADER
-  userChecksum: DC5C04EB9040394A7B30C6424EFA7832
-- generatedChecksum: F4D9C1F62211B4F449BD92508D0D2384
-  logicalPath: config\sam_l10_xpro\peripheral\rtc
+  userChecksum: DE831C27B1F73667031A8B5A030D196A
+- generatedChecksum: CFB2F067B701B3CB0926CB0E2A6A8B49
+  logicalPath: config/sam_l10_xpro/peripheral/rtc
   name: plib_rtc.h
-  physicalPath: peripheral\rtc
+  physicalPath: peripheral/rtc
   security: NON_SECURE
   type: HEADER
-  userChecksum: F4D9C1F62211B4F449BD92508D0D2384
+  userChecksum: CFB2F067B701B3CB0926CB0E2A6A8B49
 - generatedChecksum: 692896BFA94B0D698518331D3652B192
-  logicalPath: config\sam_l10_xpro\peripheral\sercom\usart
+  logicalPath: config/sam_l10_xpro/peripheral/sercom/usart
   name: plib_sercom0_usart.h
-  physicalPath: peripheral\sercom\usart
+  physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: HEADER
   userChecksum: 692896BFA94B0D698518331D3652B192
-- generatedChecksum: D9136965DAC98EC94EDF9D7F99C30062
-  logicalPath: config\sam_l10_xpro\peripheral\sercom\i2c_master
+- generatedChecksum: 43B4A52EBF9A4D3D4479988420940683
+  logicalPath: config/sam_l10_xpro/peripheral/sercom/i2c_master
   name: plib_sercom1_i2c_master.h
-  physicalPath: peripheral\sercom\i2c_master
+  physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: D9136965DAC98EC94EDF9D7F99C30062
+  userChecksum: 43B4A52EBF9A4D3D4479988420940683
 - generatedChecksum: 555AC09B32F566FBFB0A0505CF73ABD6
-  logicalPath: config\sam_l10_xpro\peripheral\sercom\i2c_master
+  logicalPath: config/sam_l10_xpro/peripheral/sercom/i2c_master
   name: plib_sercom_i2c_master_common.h
-  physicalPath: peripheral\sercom\i2c_master
+  physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: HEADER
   userChecksum: 555AC09B32F566FBFB0A0505CF73ABD6
-- generatedChecksum: 925FCFFDB3C2D6B21726F0B97CDA821B
-  logicalPath: config\sam_l10_xpro\peripheral\sercom\usart
+- generatedChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
+  logicalPath: config/sam_l10_xpro/peripheral/sercom/usart
   name: plib_sercom_usart_common.h
-  physicalPath: peripheral\sercom\usart
+  physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: HEADER
-  userChecksum: 925FCFFDB3C2D6B21726F0B97CDA821B
-- generatedChecksum: 6734C0D796B6C4C5734241D361E1BB91
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
+- generatedChecksum: 14CB8D2A1B12484FEB1C96A627B44DAC
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: pm.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6734C0D796B6C4C5734241D361E1BB91
-- generatedChecksum: E1BEF451A880514E03E241F872B34B9B
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 14CB8D2A1B12484FEB1C96A627B44DAC
+- generatedChecksum: AEA6156A98DFF506171F509E5BC2E970
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: pm.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: AEA6156A98DFF506171F509E5BC2E970
+- generatedChecksum: B6F45B656CA451B2B91C2AB45377BCFF
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: port.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: E1BEF451A880514E03E241F872B34B9B
-- generatedChecksum: C8AF585A2210F2BCD98414C02D0C0EAA
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: B6F45B656CA451B2B91C2AB45377BCFF
+- generatedChecksum: 206C7DB7FB1FF79868843FB45B664FEE
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: port.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 206C7DB7FB1FF79868843FB45B664FEE
+- generatedChecksum: 9F11AC5C064883EAB2AB16D777221B9D
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: ptc.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: C8AF585A2210F2BCD98414C02D0C0EAA
-- generatedChecksum: 510BDBBE7D005255BC35603F3378528F
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 9F11AC5C064883EAB2AB16D777221B9D
+- generatedChecksum: DBA50A4F84441BF37008CC173C4057CB
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: ptc.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: DBA50A4F84441BF37008CC173C4057CB
+- generatedChecksum: 37D63F6FD72E4356C6AB4BF51198D985
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: rstc.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 510BDBBE7D005255BC35603F3378528F
-- generatedChecksum: 3FAFC8CB44F6551E901B1150DDB94084
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 37D63F6FD72E4356C6AB4BF51198D985
+- generatedChecksum: A7A5854E32F3EFF264AAD52EB4290FFC
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: rstc.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: A7A5854E32F3EFF264AAD52EB4290FFC
+- generatedChecksum: 7D2620FB31D953D6B1D80E303C9E8675
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: rtc.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3FAFC8CB44F6551E901B1150DDB94084
-- generatedChecksum: 90BA8A22A8E2452C152AFDF6575F59E3
-  logicalPath: packs\ATSAML10E16A_DFP\pio
+  userChecksum: 7D2620FB31D953D6B1D80E303C9E8675
+- generatedChecksum: 3A1967A4B998894F940942BF7A7F6481
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: rtc.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 3A1967A4B998894F940942BF7A7F6481
+- generatedChecksum: DD0FF07B54C67F93D3132E9729E737C5
+  logicalPath: packs/ATSAML10E16A_DFP
   name: saml10e16a.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\pio
+  physicalPath: ../../packs/ATSAML10E16A_DFP
   security: NON_SECURE
   type: HEADER
-  userChecksum: 90BA8A22A8E2452C152AFDF6575F59E3
-- generatedChecksum: B28DEE51ECB17BE6FC20583A51DECD9D
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: DD0FF07B54C67F93D3132E9729E737C5
+- generatedChecksum: E92D6102877BA75DBB30EBFFFD6E9859
+  logicalPath: packs/ATSAML10E16A_DFP/pio
+  name: saml10e16a.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/pio
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E92D6102877BA75DBB30EBFFFD6E9859
+- generatedChecksum: 01D7121E92A2D610925E7167CA6B916A
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: sercom.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: B28DEE51ECB17BE6FC20583A51DECD9D
-- generatedChecksum: 48C08267181960F0D4B8A22CAB7CFA09
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 01D7121E92A2D610925E7167CA6B916A
+- generatedChecksum: BAB529628114A00B5FB25CB037D4AF63
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: sercom0.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: BAB529628114A00B5FB25CB037D4AF63
+- generatedChecksum: 235B822944D2C38F64F5B2BD84A6AAF8
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: sercom1.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 235B822944D2C38F64F5B2BD84A6AAF8
+- generatedChecksum: 1E4BFE75F8D206EEC6100B0BF713A43C
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: sercom2.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1E4BFE75F8D206EEC6100B0BF713A43C
+- generatedChecksum: 573CA4595776754B4124AFA30C80F80F
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: supc.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 48C08267181960F0D4B8A22CAB7CFA09
-- generatedChecksum: DD8A5DFA0E2BAC3BF8CF8E9B401F5FA4
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 573CA4595776754B4124AFA30C80F80F
+- generatedChecksum: 6B40134F9F5DA5D848E3FA2AF34B24AE
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: supc.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6B40134F9F5DA5D848E3FA2AF34B24AE
+- generatedChecksum: F189B721B34C956DD25BD48BC3825066
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: tc.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: DD8A5DFA0E2BAC3BF8CF8E9B401F5FA4
+  userChecksum: F189B721B34C956DD25BD48BC3825066
+- generatedChecksum: 68A79018841BC111D39A93A609121740
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: tc0.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 68A79018841BC111D39A93A609121740
+- generatedChecksum: 2151B0E90F94210922AC7EA4F4AB77C0
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: tc1.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 2151B0E90F94210922AC7EA4F4AB77C0
+- generatedChecksum: 6C889B116948911C8C4B7952915640F5
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: tc2.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6C889B116948911C8C4B7952915640F5
 - generatedChecksum: 20E829A99B86C2889E4E2E536161C27A
-  logicalPath: config\sam_l10_xpro
+  logicalPath: config/sam_l10_xpro
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: 20E829A99B86C2889E4E2E536161C27A
-- generatedChecksum: 92C92A6B70777715EA22C05539CFA7E5
-  logicalPath: packs\ATSAML10E16A_DFP\component
+- generatedChecksum: 68C6B816F5E93776D18E6F0857C7E684
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: tram.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 92C92A6B70777715EA22C05539CFA7E5
-- generatedChecksum: 9CFFDA7F3BD7FF000B7882494E3B4D80
-  logicalPath: packs\ATSAML10E16A_DFP\component
+  userChecksum: 68C6B816F5E93776D18E6F0857C7E684
+- generatedChecksum: 87FC5044518242792BF0D463D42001A9
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: tram.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 87FC5044518242792BF0D463D42001A9
+- generatedChecksum: 6114FE2D2B06C08C00DA1570475DB447
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: trng.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9CFFDA7F3BD7FF000B7882494E3B4D80
+  userChecksum: 6114FE2D2B06C08C00DA1570475DB447
+- generatedChecksum: 3B8CBEE50C701CDC13F5969E2CF5C7A2
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: trng.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 3B8CBEE50C701CDC13F5969E2CF5C7A2
 - generatedChecksum: 8710F2682DA1C97558850902DABA38BA
-  logicalPath: packs\CMSIS\CMSIS\Core\Include
+  logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: tz_context.h
-  physicalPath: ..\..\packs\CMSIS\CMSIS\Core\Include
+  physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
   userChecksum: 8710F2682DA1C97558850902DABA38BA
-- generatedChecksum: 00F5724D6297A8F9F5094040A22311D1
-  logicalPath: packs\ATSAML10E16A_DFP\component
+- generatedChecksum: 2E453EFF713C07C3138734CF44740F1E
+  logicalPath: packs/ATSAML10E16A_DFP/component
   name: wdt.h
-  physicalPath: ..\..\packs\ATSAML10E16A_DFP\component
+  physicalPath: ../../packs/ATSAML10E16A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: 00F5724D6297A8F9F5094040A22311D1
-- generatedChecksum: 018F0E76048A04862029A683C436ACED
-  logicalPath: config\sam_l10_xpro
+  userChecksum: 2E453EFF713C07C3138734CF44740F1E
+- generatedChecksum: E30466BD5197C9C0BBECCB0D64C62C77
+  logicalPath: packs/ATSAML10E16A_DFP/instance
+  name: wdt.h
+  physicalPath: ../../packs/ATSAML10E16A_DFP/instance
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E30466BD5197C9C0BBECCB0D64C62C77
+- generatedChecksum: 2F61CA3A88374E5671CD7BF516BE9E8C
+  logicalPath: config/sam_l10_xpro
   name: ATSAML10E16A.ld
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 018F0E76048A04862029A683C436ACED
+  userChecksum: 2F61CA3A88374E5671CD7BF516BE9E8C
 format_version: v1.0
 libraries: []
 settings:

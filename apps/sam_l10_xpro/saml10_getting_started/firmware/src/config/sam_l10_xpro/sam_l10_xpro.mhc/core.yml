@@ -1451,7 +1451,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x7d00'}
+        attributes: {id: core, value: '0x7D00'}
   - type: Integer
     attributes: {id: SYSTICK_PERIOD_US}
     children:
