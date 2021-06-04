@@ -123,7 +123,7 @@ const DRV_USART_PLIB_INTERFACE drvUsart0PlibAPI = {
     .read = (DRV_USART_PLIB_READ)USART1_Read,
     .readIsBusy = (DRV_USART_PLIB_READ_IS_BUSY)USART1_ReadIsBusy,
     .readCountGet = (DRV_USART_PLIB_READ_COUNT_GET)USART1_ReadCountGet,
-	.readAbort = (DRV_USART_PLIB_READ_ABORT)USART1_ReadAbort,
+    .readAbort = (DRV_USART_PLIB_READ_ABORT)USART1_ReadAbort,
     .writeCallbackRegister = (DRV_USART_PLIB_WRITE_CALLBACK_REG)USART1_WriteCallbackRegister,
     .write = (DRV_USART_PLIB_WRITE)USART1_Write,
     .writeIsBusy = (DRV_USART_PLIB_WRITE_IS_BUSY)USART1_WriteIsBusy,
@@ -159,6 +159,8 @@ const DRV_USART_INIT drvUsart0InitData =
     .remapStopBits = drvUsart0remapStopBits,
 
     .remapError = drvUsart0remapError,
+
+    .dataWidth = DRV_USART_DATA_8_BIT,
 };
 
 // </editor-fold>
@@ -207,6 +209,7 @@ SYSTEM_OBJECTS sysObj;
 
 void SYS_Initialize ( void* data )
 {
+
 
     EFC_Initialize();
   

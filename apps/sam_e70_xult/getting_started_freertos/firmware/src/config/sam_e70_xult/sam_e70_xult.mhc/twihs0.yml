@@ -12,7 +12,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: TWIHS_CLK_SRC_FREQ}
     children:
@@ -41,9 +41,22 @@ children:
       children:
       - type: Dynamic
         attributes: {id: twihs0, value: '192'}
+  - type: Boolean
+    attributes: {id: TWIHS_INTERRUPT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: twihs0, value: 'true'}
   - type: Combo
     attributes: {id: TWIHS_OPMODE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
