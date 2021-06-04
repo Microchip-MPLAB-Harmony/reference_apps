@@ -58,18 +58,20 @@
 void PM_Initialize( void )
 {
     /* Configure PM */
-    PM_REGS->PM_STDBYCFG = PM_STDBYCFG_VREGSMOD(2)| PM_STDBYCFG_DPGPDSW_Msk;
+    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_VREGSMOD(2UL)| PM_STDBYCFG_DPGPDSW_Msk);
 
-    PM_REGS->PM_PLCFG = PM_PLCFG_PLDIS_Msk;
+    PM_REGS->PM_PLCFG = (uint8_t)PM_PLCFG_PLDIS_Msk;
 }
 
 void PM_IdleModeEnter( void )
 {
     /* Configure Idle Sleep mode */
-    PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_IDLE_Val;
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_IDLE_Val;
 
-    /* Ensure that SLEEPMODE bits are configured with the given value */
-    while (!(PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val));
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val) == 0U)
+    {
+        /* Ensure that SLEEPMODE bits are configured with the given value */
+    }
     /* Wait for interrupt instruction execution */
     __WFI();
 }
@@ -77,10 +79,12 @@ void PM_IdleModeEnter( void )
 void PM_StandbyModeEnter( void )
 {
     /* Configure Standby Sleep */
-    PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_STANDBY_Val;
-
-    /* Ensure that SLEEPMODE bits are configured with the given value */
-    while (!(PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_STANDBY_Val));
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_STANDBY_Val;
+  
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_STANDBY_Val) == 0U)
+    {
+        /* Ensure that SLEEPMODE bits are configured with the given value */
+    }
 
     /* Wait for interrupt instruction execution */
     __WFI();
@@ -90,10 +94,12 @@ void PM_StandbyModeEnter( void )
 void PM_OffModeEnter( void )
 {
     /* Configure Off Sleep */
-    PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_OFF_Val;
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_OFF_Val;
 
-    /* Ensure that SLEEPMODE bits are configured with the given value */
-    while (!(PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_OFF_Val));
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_OFF_Val) == 0U)
+    {
+        /* Ensure that SLEEPMODE bits are configured with the given value */
+    }
 
     /* Wait for interrupt instruction execution */
     __WFI();
@@ -104,18 +110,20 @@ bool PM_ConfigurePerformanceLevel(PLCFG_PLSEL plsel)
     bool status = false;
 
     /* Write the value only if Performance Level Disable is not set */
-    if (!(PM_REGS->PM_PLCFG & PM_PLCFG_PLDIS_Msk))
+    if ((PM_REGS->PM_PLCFG & PM_PLCFG_PLDIS_Msk) == 0U)
     {
         if((PM_REGS->PM_PLCFG & PM_PLCFG_PLSEL_Msk) != plsel)
         {
             /* Clear INTFLAG.PLRDY */
-            PM_REGS->PM_INTFLAG |= PM_INTENCLR_PLRDY_Msk;
+            PM_REGS->PM_INTFLAG |= (uint8_t)PM_INTENCLR_PLRDY_Msk;
 
             /* Write PLSEL bits */
             PM_REGS->PM_PLCFG  = plsel;
 
-            /* Wait for performance level transition to complete */
-            while(!(PM_REGS->PM_INTFLAG & PM_INTFLAG_PLRDY_Msk));
+            while((PM_REGS->PM_INTFLAG & PM_INTFLAG_PLRDY_Msk) == 0U)
+            {
+                /* Wait for performance level transition to complete */
+            }
 
             status = true;
         }

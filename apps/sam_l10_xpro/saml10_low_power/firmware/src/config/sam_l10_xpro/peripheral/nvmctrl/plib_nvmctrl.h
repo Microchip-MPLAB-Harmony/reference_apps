@@ -63,7 +63,6 @@
 // DOM-IGNORE-END
 
 #define NVMCTRL_FLASH_START_ADDRESS        (0x00000000U)
-#define NVMCTRL_FLASH_SIZE                 (0x10000U)
 #define NVMCTRL_FLASH_PAGESIZE             (64U)
 #define NVMCTRL_FLASH_ROWSIZE              (256U)
 

@@ -1,7 +1,7 @@
 /**
  * \brief Component description for EVSYS
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-24T19:30:19Z */
+/* file generated from device description version 2020-11-19T07:18:13Z */
 #ifndef _SAML10_EVSYS_COMPONENT_H_
 #define _SAML10_EVSYS_COMPONENT_H_
 
@@ -521,13 +521,38 @@
 #define EVSYS_BUSYCH_REG_OFST          (0x18)              /**< (EVSYS_BUSYCH) Busy Channels Offset */
 #define EVSYS_READYUSR_REG_OFST        (0x1C)              /**< (EVSYS_READYUSR) Ready Users Offset */
 #define EVSYS_USER_REG_OFST            (0x120)             /**< (EVSYS_USER) User Multiplexer n Offset */
+#define EVSYS_USER0_REG_OFST           (0x120)             /**< (EVSYS_USER0) User Multiplexer n Offset */
+#define EVSYS_USER1_REG_OFST           (0x121)             /**< (EVSYS_USER1) User Multiplexer n Offset */
+#define EVSYS_USER2_REG_OFST           (0x122)             /**< (EVSYS_USER2) User Multiplexer n Offset */
+#define EVSYS_USER3_REG_OFST           (0x123)             /**< (EVSYS_USER3) User Multiplexer n Offset */
+#define EVSYS_USER4_REG_OFST           (0x124)             /**< (EVSYS_USER4) User Multiplexer n Offset */
+#define EVSYS_USER5_REG_OFST           (0x125)             /**< (EVSYS_USER5) User Multiplexer n Offset */
+#define EVSYS_USER6_REG_OFST           (0x126)             /**< (EVSYS_USER6) User Multiplexer n Offset */
+#define EVSYS_USER7_REG_OFST           (0x127)             /**< (EVSYS_USER7) User Multiplexer n Offset */
+#define EVSYS_USER8_REG_OFST           (0x128)             /**< (EVSYS_USER8) User Multiplexer n Offset */
+#define EVSYS_USER9_REG_OFST           (0x129)             /**< (EVSYS_USER9) User Multiplexer n Offset */
+#define EVSYS_USER10_REG_OFST          (0x12A)             /**< (EVSYS_USER10) User Multiplexer n Offset */
+#define EVSYS_USER11_REG_OFST          (0x12B)             /**< (EVSYS_USER11) User Multiplexer n Offset */
+#define EVSYS_USER12_REG_OFST          (0x12C)             /**< (EVSYS_USER12) User Multiplexer n Offset */
+#define EVSYS_USER13_REG_OFST          (0x12D)             /**< (EVSYS_USER13) User Multiplexer n Offset */
+#define EVSYS_USER14_REG_OFST          (0x12E)             /**< (EVSYS_USER14) User Multiplexer n Offset */
+#define EVSYS_USER15_REG_OFST          (0x12F)             /**< (EVSYS_USER15) User Multiplexer n Offset */
+#define EVSYS_USER16_REG_OFST          (0x130)             /**< (EVSYS_USER16) User Multiplexer n Offset */
+#define EVSYS_USER17_REG_OFST          (0x131)             /**< (EVSYS_USER17) User Multiplexer n Offset */
+#define EVSYS_USER18_REG_OFST          (0x132)             /**< (EVSYS_USER18) User Multiplexer n Offset */
+#define EVSYS_USER19_REG_OFST          (0x133)             /**< (EVSYS_USER19) User Multiplexer n Offset */
+#define EVSYS_USER20_REG_OFST          (0x134)             /**< (EVSYS_USER20) User Multiplexer n Offset */
+#define EVSYS_USER21_REG_OFST          (0x135)             /**< (EVSYS_USER21) User Multiplexer n Offset */
+#define EVSYS_USER22_REG_OFST          (0x136)             /**< (EVSYS_USER22) User Multiplexer n Offset */
 #define EVSYS_INTENCLR_REG_OFST        (0x1D4)             /**< (EVSYS_INTENCLR) Interrupt Enable Clear Offset */
 #define EVSYS_INTENSET_REG_OFST        (0x1D5)             /**< (EVSYS_INTENSET) Interrupt Enable Set Offset */
 #define EVSYS_INTFLAG_REG_OFST         (0x1D6)             /**< (EVSYS_INTFLAG) Interrupt Flag Status and Clear Offset */
 #define EVSYS_NONSECCHAN_REG_OFST      (0x1D8)             /**< (EVSYS_NONSECCHAN) Channels Security Attribution Offset */
 #define EVSYS_NSCHKCHAN_REG_OFST       (0x1DC)             /**< (EVSYS_NSCHKCHAN) Non-Secure Channels Check Offset */
 #define EVSYS_NONSECUSER_REG_OFST      (0x1E0)             /**< (EVSYS_NONSECUSER) Users Security Attribution Offset */
+#define EVSYS_NONSECUSER0_REG_OFST     (0x1E0)             /**< (EVSYS_NONSECUSER0) Users Security Attribution Offset */
 #define EVSYS_NSCHKUSER_REG_OFST       (0x1F0)             /**< (EVSYS_NSCHKUSER) Non-Secure Users Check Offset */
+#define EVSYS_NSCHKUSER0_REG_OFST      (0x1F0)             /**< (EVSYS_NSCHKUSER0) Non-Secure Users Check Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief CHANNEL register API structure */

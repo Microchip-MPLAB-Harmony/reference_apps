@@ -1,7 +1,7 @@
 /**
  * \brief Component description for RTC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-24T19:30:19Z */
+/* file generated from device description version 2020-11-19T07:18:13Z */
 #ifndef _SAML10_RTC_COMPONENT_H_
 #define _SAML10_RTC_COMPONENT_H_
 
@@ -1422,9 +1422,13 @@
 #define RTC_MODE1_PER_REG_OFST         (0x1C)              /**< (RTC_MODE1_PER) MODE1 Counter Period Offset */
 #define RTC_MODE0_COMP_REG_OFST        (0x20)              /**< (RTC_MODE0_COMP) MODE0 Compare n Value Offset */
 #define RTC_MODE1_COMP_REG_OFST        (0x20)              /**< (RTC_MODE1_COMP) MODE1 Compare n Value Offset */
+#define RTC_MODE1_COMP0_REG_OFST       (0x20)              /**< (RTC_MODE1_COMP0) MODE1 Compare n Value Offset */
+#define RTC_MODE1_COMP1_REG_OFST       (0x22)              /**< (RTC_MODE1_COMP1) MODE1 Compare n Value Offset */
 #define RTC_MODE2_ALARM_REG_OFST       (0x20)              /**< (RTC_MODE2_ALARM) MODE2_ALARM Alarm n Value Offset */
 #define RTC_MODE2_MASK_REG_OFST        (0x24)              /**< (RTC_MODE2_MASK) MODE2_ALARM Alarm n Mask Offset */
 #define RTC_GP_REG_OFST                (0x40)              /**< (RTC_GP) General Purpose Offset */
+#define RTC_GP0_REG_OFST               (0x40)              /**< (RTC_GP0) General Purpose Offset */
+#define RTC_GP1_REG_OFST               (0x44)              /**< (RTC_GP1) General Purpose Offset */
 #define RTC_TAMPCTRL_REG_OFST          (0x60)              /**< (RTC_TAMPCTRL) Tamper Control Offset */
 #define RTC_MODE0_TIMESTAMP_REG_OFST   (0x64)              /**< (RTC_MODE0_TIMESTAMP) MODE0 Timestamp Offset */
 #define RTC_MODE1_TIMESTAMP_REG_OFST   (0x64)              /**< (RTC_MODE1_TIMESTAMP) MODE1 Timestamp Offset */

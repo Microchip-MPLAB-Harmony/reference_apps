@@ -1,7 +1,7 @@
 /**
  * \brief Component description for DSU
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-24T19:30:19Z */
+/* file generated from device description version 2020-11-19T07:18:13Z */
 #ifndef _SAML10_DSU_COMPONENT_H_
 #define _SAML10_DSU_COMPONENT_H_
 
@@ -389,9 +389,13 @@
 #define DSU_LENGTH_REG_OFST            (0x08)              /**< (DSU_LENGTH) Length Offset */
 #define DSU_DATA_REG_OFST              (0x0C)              /**< (DSU_DATA) Data Offset */
 #define DSU_DCC_REG_OFST               (0x10)              /**< (DSU_DCC) Debug Communication Channel n Offset */
+#define DSU_DCC0_REG_OFST              (0x10)              /**< (DSU_DCC0) Debug Communication Channel n Offset */
+#define DSU_DCC1_REG_OFST              (0x14)              /**< (DSU_DCC1) Debug Communication Channel n Offset */
 #define DSU_DID_REG_OFST               (0x18)              /**< (DSU_DID) Device Identification Offset */
 #define DSU_CFG_REG_OFST               (0x1C)              /**< (DSU_CFG) Configuration Offset */
 #define DSU_BCC_REG_OFST               (0x20)              /**< (DSU_BCC) Boot ROM Communication Channel n Offset */
+#define DSU_BCC0_REG_OFST              (0x20)              /**< (DSU_BCC0) Boot ROM Communication Channel n Offset */
+#define DSU_BCC1_REG_OFST              (0x24)              /**< (DSU_BCC1) Boot ROM Communication Channel n Offset */
 #define DSU_ENTRY0_REG_OFST            (0x1000)            /**< (DSU_ENTRY0) CoreSight ROM Table Entry 0 Offset */
 #define DSU_ENTRY1_REG_OFST            (0x1004)            /**< (DSU_ENTRY1) CoreSight ROM Table Entry 1 Offset */
 #define DSU_END_REG_OFST               (0x1008)            /**< (DSU_END) CoreSight ROM Table End Offset */

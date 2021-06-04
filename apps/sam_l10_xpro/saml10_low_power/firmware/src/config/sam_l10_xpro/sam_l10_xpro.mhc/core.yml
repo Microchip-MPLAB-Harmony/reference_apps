@@ -1787,7 +1787,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x2ee0'}
+        attributes: {id: core, value: '0x2EE0'}
   - type: Float
     attributes: {id: SYSTICK_PERIOD_MS}
     children:
