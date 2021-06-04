@@ -54,33 +54,43 @@
 extern "C" {
 #endif
 // DOM-IGNORE-END
+// *****************************************************************************
+// *****************************************************************************
+// Section:Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
 
 /* Frequency of Counter Clock for RTC */
-#define RTC_COUNTER_CLOCK_FREQUENCY        (1024 / (1 << (0x1 - 1)))
+#define RTC_COUNTER_CLOCK_FREQUENCY        (1024U / (1UL << (0x1U - 1U)))
 
+#define RTC_TIMER32_INT_MASK_PER0  RTC_MODE0_INTENSET_PER0_Msk
+#define RTC_TIMER32_INT_MASK_PER1  RTC_MODE0_INTENSET_PER1_Msk
+#define RTC_TIMER32_INT_MASK_PER2  RTC_MODE0_INTENSET_PER2_Msk
+#define RTC_TIMER32_INT_MASK_PER3  RTC_MODE0_INTENSET_PER3_Msk
+#define RTC_TIMER32_INT_MASK_PER4  RTC_MODE0_INTENSET_PER4_Msk
+#define RTC_TIMER32_INT_MASK_PER5  RTC_MODE0_INTENSET_PER5_Msk
+#define RTC_TIMER32_INT_MASK_PER6  RTC_MODE0_INTENSET_PER6_Msk
+#define RTC_TIMER32_INT_MASK_PER7  RTC_MODE0_INTENSET_PER7_Msk
+#define RTC_TIMER32_INT_MASK_CMP0  RTC_MODE0_INTENSET_CMP0_Msk
+#define RTC_TIMER32_INT_MASK_TAMPER  RTC_MODE0_INTENSET_TAMPER_Msk
+#define RTC_TIMER32_INT_MASK_OVF  RTC_MODE0_INTENSET_OVF_Msk
+#define RTC_TIMER32_INT_MASK_INVALID 0xFFFFFFFFU
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
+
+typedef uint32_t RTC_TIMER32_INT_MASK;
 typedef enum
 {
-    RTC_TIMER32_INT_MASK_PER0 = RTC_MODE0_INTENSET_PER0_Msk,
-    RTC_TIMER32_INT_MASK_PER1 = RTC_MODE0_INTENSET_PER1_Msk,
-    RTC_TIMER32_INT_MASK_PER2 = RTC_MODE0_INTENSET_PER2_Msk,
-    RTC_TIMER32_INT_MASK_PER3 = RTC_MODE0_INTENSET_PER3_Msk,
-    RTC_TIMER32_INT_MASK_PER4 = RTC_MODE0_INTENSET_PER4_Msk,
-    RTC_TIMER32_INT_MASK_PER5 = RTC_MODE0_INTENSET_PER5_Msk,
-    RTC_TIMER32_INT_MASK_PER6 = RTC_MODE0_INTENSET_PER6_Msk,
-    RTC_TIMER32_INT_MASK_PER7 = RTC_MODE0_INTENSET_PER7_Msk,
-    RTC_TIMER32_INT_MASK_CMP0 = RTC_MODE0_INTENSET_CMP0_Msk,
-    RTC_TIMER32_INT_MASK_TAMPER = RTC_MODE0_INTENSET_TAMPER_Msk,
-    RTC_TIMER32_INT_MASK_OVF = RTC_MODE0_INTENSET_OVF_Msk,
-   /* Force the compiler to reserve 32-bit memory for enum */
-    RTC_TIMER32_INT_MASK_INVALID = 0xFFFFFFFF
-} RTC_TIMER32_INT_MASK;
-typedef enum
-{
-    TAMPER_CHANNEL_0 = 0,
-    TAMPER_CHANNEL_1 = 1,
-    TAMPER_CHANNEL_2 = 2,
-    TAMPER_CHANNEL_3 = 3,
-    TAMPER_CHANNEL_4 = 4
+    TAMPER_CHANNEL_0 = 0U,
+    TAMPER_CHANNEL_1 = 1U,
+    TAMPER_CHANNEL_2 = 2U,
+    TAMPER_CHANNEL_3 = 3U,
+    TAMPER_CHANNEL_4 = 4U
 } TAMPER_CHANNEL;
 typedef void (*RTC_TIMER32_CALLBACK)( RTC_TIMER32_INT_MASK intCause, uintptr_t context );
 
@@ -100,8 +110,8 @@ uint32_t RTC_Timer32CounterGet ( void );
 uint32_t RTC_Timer32FrequencyGet ( void );
 void RTC_Timer32CompareSet ( uint32_t compareValue );
 uint32_t RTC_Timer32PeriodGet ( void );
-void RTC_Timer32InterruptEnable( RTC_TIMER32_INT_MASK interrupt );
-void RTC_Timer32InterruptDisable( RTC_TIMER32_INT_MASK interrupt );
+void RTC_Timer32InterruptEnable( RTC_TIMER32_INT_MASK interruptMask );
+void RTC_Timer32InterruptDisable( RTC_TIMER32_INT_MASK interruptMask );
 TAMPER_CHANNEL RTC_TamperSourceGet( void );
 uint32_t RTC_Timer32TimeStampGet( void );
 void RTC_Timer32CallbackRegister ( RTC_TIMER32_CALLBACK callback, uintptr_t context );

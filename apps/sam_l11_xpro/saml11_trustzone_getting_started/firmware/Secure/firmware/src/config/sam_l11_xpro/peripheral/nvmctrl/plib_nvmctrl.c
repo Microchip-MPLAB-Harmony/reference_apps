@@ -49,6 +49,7 @@
 
 #include <string.h>
 #include "plib_nvmctrl.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -115,7 +116,15 @@ bool NVMCTRL_RowErase( uint32_t address )
 
 NVMCTRL_ERROR NVMCTRL_ErrorGet( void )
 {
-    return ((NVMCTRL_ERROR) ((NVMCTRL_SEC_REGS->NVMCTRL_INTFLAG &  ~(NVMCTRL_INTFLAG_DONE_Msk))));
+    volatile uint32_t nvm_error = 0;
+
+    /* Get the error bits set */
+    nvm_error = (NVMCTRL_REGS->NVMCTRL_INTFLAG & (NVMCTRL_INTFLAG_PROGE_Msk | NVMCTRL_INTFLAG_LOCKE_Msk | NVMCTRL_INTFLAG_NVME_Msk | NVMCTRL_INTFLAG_KEYE_Msk));
+
+    /* Clear the error bits in INTFLAG register */
+    NVMCTRL_REGS->NVMCTRL_INTFLAG |= nvm_error;
+
+    return ((NVMCTRL_ERROR) nvm_error);
 }
 
 bool NVMCTRL_IsBusy(void)

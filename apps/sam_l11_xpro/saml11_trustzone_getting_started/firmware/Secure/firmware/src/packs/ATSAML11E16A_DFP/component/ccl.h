@@ -1,7 +1,7 @@
 /**
  * \brief Component description for CCL
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-24T19:30:38Z */
+/* file generated from device description version 2020-11-19T07:18:37Z */
 #ifndef _SAML11_CCL_COMPONENT_H_
 #define _SAML11_CCL_COMPONENT_H_
 
@@ -199,7 +199,10 @@
 /** \brief CCL register offsets definitions */
 #define CCL_CTRL_REG_OFST              (0x00)              /**< (CCL_CTRL) Control Offset */
 #define CCL_SEQCTRL_REG_OFST           (0x04)              /**< (CCL_SEQCTRL) SEQ Control x Offset */
+#define CCL_SEQCTRL0_REG_OFST          (0x04)              /**< (CCL_SEQCTRL0) SEQ Control x Offset */
 #define CCL_LUTCTRL_REG_OFST           (0x08)              /**< (CCL_LUTCTRL) LUT Control x Offset */
+#define CCL_LUTCTRL0_REG_OFST          (0x08)              /**< (CCL_LUTCTRL0) LUT Control x Offset */
+#define CCL_LUTCTRL1_REG_OFST          (0x0C)              /**< (CCL_LUTCTRL1) LUT Control x Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief CCL register API structure */

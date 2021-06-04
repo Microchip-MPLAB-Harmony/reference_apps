@@ -49,7 +49,10 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#include "device_vectors.h"
+#include "interrupts.h"
 #include "definitions.h"
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -58,8 +61,9 @@
 // *****************************************************************************
 
 extern uint32_t _stack;
+extern const H3DeviceVectors exception_table;
 
-void Dummy_Handler(void);
+extern void Dummy_Handler(void);
 
 /* Brief default interrupt handler for unused IRQs.*/
 void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, noreturn))Dummy_Handler(void)
@@ -67,51 +71,42 @@ void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, no
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
 #endif
-    while (1)
+    while (true)
     {
     }
 }
 /* Device vectors list dummy definition*/
-void Reset_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void NonMaskableInt_Handler     ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void HardFault_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DMAC_0_InterruptHandler    ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DMAC_1_InterruptHandler    ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DMAC_2_InterruptHandler    ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DMAC_3_InterruptHandler    ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DMAC_OTHER_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM0_USART_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 
 
 
-/* Mutiple handlers for vector */
+/* Multiple handlers for vector */
 
 
 
 __attribute__ ((section(".vectors")))
-const DeviceVectors exception_table=
+const H3DeviceVectors exception_table=
 {
     /* Configure Initial Stack Pointer, using linker-generated symbols */
-    .pvStack = (void*) (&_stack),
+    .pvStack = &_stack,
 
-    .pfnReset_Handler              = ( void * ) Reset_Handler,
-    .pfnNonMaskableInt_Handler     = ( void * ) NonMaskableInt_Handler,
-    .pfnHardFault_Handler          = ( void * ) HardFault_Handler,
-    .pfnSVCall_Handler             = ( void * ) SVCall_Handler,
-    .pfnPendSV_Handler             = ( void * ) PendSV_Handler,
-    .pfnSysTick_Handler            = ( void * ) SysTick_Handler,
-    .pfnDMAC_0_Handler             = ( void * ) DMAC_0_InterruptHandler,
-    .pfnDMAC_1_Handler             = ( void * ) DMAC_1_InterruptHandler,
-    .pfnDMAC_2_Handler             = ( void * ) DMAC_2_InterruptHandler,
-    .pfnDMAC_3_Handler             = ( void * ) DMAC_3_InterruptHandler,
-    .pfnDMAC_OTHER_Handler         = ( void * ) DMAC_OTHER_InterruptHandler,
-    .pfnSERCOM0_0_Handler          = ( void * ) SERCOM0_USART_InterruptHandler,
-    .pfnSERCOM0_1_Handler          = ( void * ) SERCOM0_USART_InterruptHandler,
-    .pfnSERCOM0_2_Handler          = ( void * ) SERCOM0_USART_InterruptHandler,
-    .pfnSERCOM0_OTHER_Handler      = ( void * ) SERCOM0_USART_InterruptHandler,
+    .pfnReset_Handler              = Reset_Handler,
+    .pfnNonMaskableInt_Handler     = NonMaskableInt_Handler,
+    .pfnHardFault_Handler          = HardFault_Handler,
+    .pfnSVCall_Handler             = SVCall_Handler,
+    .pfnPendSV_Handler             = PendSV_Handler,
+    .pfnSysTick_Handler            = SysTick_Handler,
+    .pfnDMAC_0_Handler             = DMAC_0_InterruptHandler,
+    .pfnDMAC_1_Handler             = DMAC_1_InterruptHandler,
+    .pfnDMAC_2_Handler             = DMAC_2_InterruptHandler,
+    .pfnDMAC_3_Handler             = DMAC_3_InterruptHandler,
+    .pfnDMAC_OTHER_Handler         = DMAC_OTHER_InterruptHandler,
+    .pfnSERCOM0_0_Handler          = SERCOM0_USART_InterruptHandler,
+    .pfnSERCOM0_1_Handler          = SERCOM0_USART_InterruptHandler,
+    .pfnSERCOM0_2_Handler          = SERCOM0_USART_InterruptHandler,
+    .pfnSERCOM0_OTHER_Handler      = SERCOM0_USART_InterruptHandler,
 
 
 };
