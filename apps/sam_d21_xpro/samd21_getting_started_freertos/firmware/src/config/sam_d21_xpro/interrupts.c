@@ -50,7 +50,10 @@
 // *****************************************************************************
 
 #include "configuration.h"
+#include "device_vectors.h"
+#include "interrupts.h"
 #include "definitions.h"
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -59,98 +62,93 @@
 // *****************************************************************************
 
 extern uint32_t _stack;
+extern const H3DeviceVectors exception_table;
 
-void Dummy_Handler(void);
+extern void Dummy_Handler(void);
 
 /* Brief default interrupt handler for unused IRQs.*/
 void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, noreturn))Dummy_Handler(void)
 {
-    while (1)
+    while (true)
     {
     }
 }
 /* Device vectors list dummy definition*/
-void Reset_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void NonMaskableInt_Handler     ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void HardFault_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void vPortSVCHandler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void xPortPendSVHandler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void xPortSysTickHandler        ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void PM_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SYSCTRL_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void WDT_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void RTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void EIC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void NVMCTRL_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DMAC_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void USB_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void EVSYS_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM0_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM1_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM2_I2C_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM3_USART_InterruptHandler ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM4_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void SERCOM5_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TCC0_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TCC1_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TCC2_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TC3_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TC4_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TC5_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TC6_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void TC7_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void ADC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void AC_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void DAC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void PTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-void I2S_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void vPortSVCHandler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void xPortPendSVHandler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void PM_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SYSCTRL_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void WDT_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void RTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void EIC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void NVMCTRL_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void DMAC_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void USB_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void EVSYS_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SERCOM0_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SERCOM1_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SERCOM4_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SERCOM5_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TCC0_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TCC1_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TCC2_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TC3_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TC4_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TC5_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TC6_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void TC7_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void ADC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void AC_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void DAC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void PTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void I2S_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 
 
 
-/* Mutiple handlers for vector */
+/* Multiple handlers for vector */
 
 
 
 __attribute__ ((section(".vectors")))
-const DeviceVectors exception_table=
+const H3DeviceVectors exception_table=
 {
     /* Configure Initial Stack Pointer, using linker-generated symbols */
-    .pvStack = (void*) (&_stack),
+    .pvStack = &_stack,
 
-    .pfnReset_Handler              = ( void * ) Reset_Handler,
-    .pfnNonMaskableInt_Handler     = ( void * ) NonMaskableInt_Handler,
-    .pfnHardFault_Handler          = ( void * ) HardFault_Handler,
-    .pfnSVCall_Handler             = ( void * ) vPortSVCHandler,
-    .pfnPendSV_Handler             = ( void * ) xPortPendSVHandler,
-    .pfnSysTick_Handler            = ( void * ) xPortSysTickHandler,
-    .pfnPM_Handler                 = ( void * ) PM_Handler,
-    .pfnSYSCTRL_Handler            = ( void * ) SYSCTRL_Handler,
-    .pfnWDT_Handler                = ( void * ) WDT_Handler,
-    .pfnRTC_Handler                = ( void * ) RTC_Handler,
-    .pfnEIC_Handler                = ( void * ) EIC_Handler,
-    .pfnNVMCTRL_Handler            = ( void * ) NVMCTRL_Handler,
-    .pfnDMAC_Handler               = ( void * ) DMAC_Handler,
-    .pfnUSB_Handler                = ( void * ) USB_Handler,
-    .pfnEVSYS_Handler              = ( void * ) EVSYS_Handler,
-    .pfnSERCOM0_Handler            = ( void * ) SERCOM0_Handler,
-    .pfnSERCOM1_Handler            = ( void * ) SERCOM1_Handler,
-    .pfnSERCOM2_Handler            = ( void * ) SERCOM2_I2C_InterruptHandler,
-    .pfnSERCOM3_Handler            = ( void * ) SERCOM3_USART_InterruptHandler,
-    .pfnSERCOM4_Handler            = ( void * ) SERCOM4_Handler,
-    .pfnSERCOM5_Handler            = ( void * ) SERCOM5_Handler,
-    .pfnTCC0_Handler               = ( void * ) TCC0_Handler,
-    .pfnTCC1_Handler               = ( void * ) TCC1_Handler,
-    .pfnTCC2_Handler               = ( void * ) TCC2_Handler,
-    .pfnTC3_Handler                = ( void * ) TC3_Handler,
-    .pfnTC4_Handler                = ( void * ) TC4_Handler,
-    .pfnTC5_Handler                = ( void * ) TC5_Handler,
-    .pfnTC6_Handler                = ( void * ) TC6_Handler,
-    .pfnTC7_Handler                = ( void * ) TC7_Handler,
-    .pfnADC_Handler                = ( void * ) ADC_Handler,
-    .pfnAC_Handler                 = ( void * ) AC_Handler,
-    .pfnDAC_Handler                = ( void * ) DAC_Handler,
-    .pfnPTC_Handler                = ( void * ) PTC_Handler,
-    .pfnI2S_Handler                = ( void * ) I2S_Handler,
+    .pfnReset_Handler              = Reset_Handler,
+    .pfnNonMaskableInt_Handler     = NonMaskableInt_Handler,
+    .pfnHardFault_Handler          = HardFault_Handler,
+    .pfnSVCall_Handler             = vPortSVCHandler,
+    .pfnPendSV_Handler             = xPortPendSVHandler,
+    .pfnSysTick_Handler            = xPortSysTickHandler,
+    .pfnPM_Handler                 = PM_Handler,
+    .pfnSYSCTRL_Handler            = SYSCTRL_Handler,
+    .pfnWDT_Handler                = WDT_Handler,
+    .pfnRTC_Handler                = RTC_Handler,
+    .pfnEIC_Handler                = EIC_Handler,
+    .pfnNVMCTRL_Handler            = NVMCTRL_Handler,
+    .pfnDMAC_Handler               = DMAC_Handler,
+    .pfnUSB_Handler                = USB_Handler,
+    .pfnEVSYS_Handler              = EVSYS_Handler,
+    .pfnSERCOM0_Handler            = SERCOM0_Handler,
+    .pfnSERCOM1_Handler            = SERCOM1_Handler,
+    .pfnSERCOM2_Handler            = SERCOM2_I2C_InterruptHandler,
+    .pfnSERCOM3_Handler            = SERCOM3_USART_InterruptHandler,
+    .pfnSERCOM4_Handler            = SERCOM4_Handler,
+    .pfnSERCOM5_Handler            = SERCOM5_Handler,
+    .pfnTCC0_Handler               = TCC0_Handler,
+    .pfnTCC1_Handler               = TCC1_Handler,
+    .pfnTCC2_Handler               = TCC2_Handler,
+    .pfnTC3_Handler                = TC3_Handler,
+    .pfnTC4_Handler                = TC4_Handler,
+    .pfnTC5_Handler                = TC5_Handler,
+    .pfnTC6_Handler                = TC6_Handler,
+    .pfnTC7_Handler                = TC7_Handler,
+    .pfnADC_Handler                = ADC_Handler,
+    .pfnAC_Handler                 = AC_Handler,
+    .pfnDAC_Handler                = DAC_Handler,
+    .pfnPTC_Handler                = PTC_Handler,
+    .pfnI2S_Handler                = I2S_Handler,
 
 
 };
