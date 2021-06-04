@@ -1,7 +1,7 @@
 /**
  * \brief Component description for I2S
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -448,12 +448,18 @@
 /** \brief I2S register offsets definitions */
 #define I2S_CTRLA_REG_OFST             (0x00)              /**< (I2S_CTRLA) Control A Offset */
 #define I2S_CLKCTRL_REG_OFST           (0x04)              /**< (I2S_CLKCTRL) Clock Unit n Control Offset */
+#define I2S_CLKCTRL0_REG_OFST          (0x04)              /**< (I2S_CLKCTRL0) Clock Unit n Control Offset */
+#define I2S_CLKCTRL1_REG_OFST          (0x08)              /**< (I2S_CLKCTRL1) Clock Unit n Control Offset */
 #define I2S_INTENCLR_REG_OFST          (0x0C)              /**< (I2S_INTENCLR) Interrupt Enable Clear Offset */
 #define I2S_INTENSET_REG_OFST          (0x10)              /**< (I2S_INTENSET) Interrupt Enable Set Offset */
 #define I2S_INTFLAG_REG_OFST           (0x14)              /**< (I2S_INTFLAG) Interrupt Flag Status and Clear Offset */
 #define I2S_SYNCBUSY_REG_OFST          (0x18)              /**< (I2S_SYNCBUSY) Synchronization Status Offset */
 #define I2S_SERCTRL_REG_OFST           (0x20)              /**< (I2S_SERCTRL) Serializer n Control Offset */
+#define I2S_SERCTRL0_REG_OFST          (0x20)              /**< (I2S_SERCTRL0) Serializer n Control Offset */
+#define I2S_SERCTRL1_REG_OFST          (0x24)              /**< (I2S_SERCTRL1) Serializer n Control Offset */
 #define I2S_DATA_REG_OFST              (0x30)              /**< (I2S_DATA) Data n Offset */
+#define I2S_DATA0_REG_OFST             (0x30)              /**< (I2S_DATA0) Data n Offset */
+#define I2S_DATA1_REG_OFST             (0x34)              /**< (I2S_DATA1) Data n Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief I2S register API structure */
