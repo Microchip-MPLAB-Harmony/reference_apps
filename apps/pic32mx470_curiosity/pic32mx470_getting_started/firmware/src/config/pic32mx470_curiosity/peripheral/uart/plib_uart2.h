@@ -69,6 +69,10 @@ void UART2_Initialize( void );
 
 bool UART2_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
 
+bool UART2_AutoBaudQuery( void );
+
+void UART2_AutoBaudSet( bool enable );
+
 bool UART2_Write( void *buffer, const size_t size );
 
 bool UART2_Read( void *buffer, const size_t size );

@@ -41,7 +41,11 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+#ifndef DEVICE_H
+#define DEVICE_H
+
 #include <xc.h>
 #include <sys/attribs.h>
 #include "toolchain_specifics.h"
 
+#endif //DEVICE_H
