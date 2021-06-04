@@ -1,228 +1,235 @@
 files:
-- generatedChecksum: 39FF52903D784BEF79D3640DC1072AFA
-  logicalPath: config\pic32mz_ef_curiosity_v2
+- generatedChecksum: AB67D8A7D0606ADFF3E9184E6CB5B5F9
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: exceptions.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 39FF52903D784BEF79D3640DC1072AFA
+  userChecksum: AB67D8A7D0606ADFF3E9184E6CB5B5F9
 - generatedChecksum: 980CFA051CAFFED953A8CFC5429C8B2E
-  logicalPath: config\pic32mz_ef_curiosity_v2
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: 980CFA051CAFFED953A8CFC5429C8B2E
-- generatedChecksum: 778FEE6D86AA253B89E5F35B26E203B0
-  logicalPath: config\pic32mz_ef_curiosity_v2
+- generatedChecksum: A1EBB2ABAB777927893B380635058123
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 778FEE6D86AA253B89E5F35B26E203B0
+  userChecksum: A1EBB2ABAB777927893B380635058123
 - generatedChecksum: null
   logicalPath: ''
   name: main_pic32mz.c
-  physicalPath: ..\..
+  physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
 - generatedChecksum: 65A7BD3CB0B8FE05768B2EC9A503C3AB
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\cache
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/cache
   name: plib_cache.c
-  physicalPath: peripheral\cache
+  physicalPath: peripheral/cache
   security: NON_SECURE
   type: SOURCE
   userChecksum: 65A7BD3CB0B8FE05768B2EC9A503C3AB
 - generatedChecksum: 4FD2B20C75E8ABCE5AFD77297FA520F4
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\cache
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/cache
   name: plib_cache_local.h
-  physicalPath: peripheral\cache
+  physicalPath: peripheral/cache
   security: NON_SECURE
   type: SOURCE
   userChecksum: 4FD2B20C75E8ABCE5AFD77297FA520F4
 - generatedChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\cache
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/cache
   name: plib_cache_pic32mz.S
-  physicalPath: peripheral\cache
+  physicalPath: peripheral/cache
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
 - generatedChecksum: 8F1C8B483E8AB487460AC08C70EE1D89
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\clk
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/clk
   name: plib_clk.c
-  physicalPath: peripheral\clk
+  physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8F1C8B483E8AB487460AC08C70EE1D89
-- generatedChecksum: E39053B164A69213ADBA9F4BAA38F970
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\dmac
+- generatedChecksum: D0A4F5EF2C49C2791711F4B2C66ACD34
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/dmac
   name: plib_dmac.c
-  physicalPath: peripheral\dmac
+  physicalPath: peripheral/dmac
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E39053B164A69213ADBA9F4BAA38F970
-- generatedChecksum: CED0CC387C60A9E6CA8B6D3D503691E1
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\evic
+  userChecksum: D0A4F5EF2C49C2791711F4B2C66ACD34
+- generatedChecksum: 76EB4A70202F2D00B23A9B899FE5E85D
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/evic
   name: plib_evic.c
-  physicalPath: peripheral\evic
+  physicalPath: peripheral/evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CED0CC387C60A9E6CA8B6D3D503691E1
+  userChecksum: 76EB4A70202F2D00B23A9B899FE5E85D
 - generatedChecksum: F18E96A652140D6B6D5357A595F820A3
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\gpio
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/gpio
   name: plib_gpio.c
-  physicalPath: peripheral\gpio
+  physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
   userChecksum: F18E96A652140D6B6D5357A595F820A3
 - generatedChecksum: 08F858BC766BF9C7602A55E3538BFBD5
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\i2c\master
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/i2c/master
   name: plib_i2c1_master.c
-  physicalPath: peripheral\i2c\master
+  physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: SOURCE
   userChecksum: 08F858BC766BF9C7602A55E3538BFBD5
 - generatedChecksum: 4D1CFBB074BB9C27C12E01A30E732FFE
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\tmr1
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/tmr1
   name: plib_tmr1.c
-  physicalPath: peripheral\tmr1
+  physicalPath: peripheral/tmr1
   security: NON_SECURE
   type: SOURCE
   userChecksum: 4D1CFBB074BB9C27C12E01A30E732FFE
-- generatedChecksum: EDEA57ADBECEFE61CF83D838C6F81D75
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\uart
+- generatedChecksum: B23CF9B999661031C69C69CB244B3AB8
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/uart
   name: plib_uart6.c
-  physicalPath: peripheral\uart
+  physicalPath: peripheral/uart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: EDEA57ADBECEFE61CF83D838C6F81D75
-- generatedChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-  logicalPath: config\pic32mz_ef_curiosity_v2\stdio
+  userChecksum: B23CF9B999661031C69C69CB244B3AB8
+- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
+  logicalPath: config/pic32mz_ef_curiosity_v2/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-- generatedChecksum: 9E0763C9B7B03C39892D0A182FB9080A
-  logicalPath: config\pic32mz_ef_curiosity_v2
+  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
+- generatedChecksum: 84CFD747E4B69442563751F3D722D7F5
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9E0763C9B7B03C39892D0A182FB9080A
-- generatedChecksum: 5D5C52527AB1435153DB9B50ADE6B79D
-  logicalPath: config\pic32mz_ef_curiosity_v2
+  userChecksum: 84CFD747E4B69442563751F3D722D7F5
+- generatedChecksum: E189C26B2269F8DE46033CCD0621958D
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: device.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5D5C52527AB1435153DB9B50ADE6B79D
+  userChecksum: E189C26B2269F8DE46033CCD0621958D
 - generatedChecksum: 1CA1C2C02834207DCB4B0E3C00338FCC
-  logicalPath: config\pic32mz_ef_curiosity_v2
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: device_cache.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: 1CA1C2C02834207DCB4B0E3C00338FCC
-- generatedChecksum: 24BC8C10232FA4332F1DE3BB31302AE6
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\cache
-  name: plib_cache.h
-  physicalPath: peripheral\cache
+- generatedChecksum: 4CF4A86296482D5331331BA301C20BB2
+  logicalPath: config/pic32mz_ef_curiosity_v2
+  name: interrupts.h
+  physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 24BC8C10232FA4332F1DE3BB31302AE6
+  userChecksum: 4CF4A86296482D5331331BA301C20BB2
+- generatedChecksum: 37885E3505BF5B0FD6AFE768807361C1
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/cache
+  name: plib_cache.h
+  physicalPath: peripheral/cache
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 37885E3505BF5B0FD6AFE768807361C1
 - generatedChecksum: 3D2558D7758EF020BBF792820203C0A2
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\cache
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/cache
   name: plib_cache_pic32mz.h
-  physicalPath: peripheral\cache
+  physicalPath: peripheral/cache
   security: NON_SECURE
   type: HEADER
   userChecksum: 3D2558D7758EF020BBF792820203C0A2
 - generatedChecksum: 7066CC390335CF75126E2A50C46E3BDD
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\clk
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/clk
   name: plib_clk.h
-  physicalPath: peripheral\clk
+  physicalPath: peripheral/clk
   security: NON_SECURE
   type: HEADER
   userChecksum: 7066CC390335CF75126E2A50C46E3BDD
-- generatedChecksum: 010E7C6872724F56A94D25C46D528ECA
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\dmac
+- generatedChecksum: D4A1E2329C517DB8AB49B9143079554F
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/dmac
   name: plib_dmac.h
-  physicalPath: peripheral\dmac
+  physicalPath: peripheral/dmac
   security: NON_SECURE
   type: HEADER
-  userChecksum: 010E7C6872724F56A94D25C46D528ECA
-- generatedChecksum: B38028A617FDD4D90B80660771629645
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\evic
+  userChecksum: D4A1E2329C517DB8AB49B9143079554F
+- generatedChecksum: 815CCB981B6CB758464D89480121DC08
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/evic
   name: plib_evic.h
-  physicalPath: peripheral\evic
+  physicalPath: peripheral/evic
   security: NON_SECURE
   type: HEADER
-  userChecksum: B38028A617FDD4D90B80660771629645
+  userChecksum: 815CCB981B6CB758464D89480121DC08
 - generatedChecksum: 3534751454B654D052B52676D465D88B
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\gpio
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/gpio
   name: plib_gpio.h
-  physicalPath: peripheral\gpio
+  physicalPath: peripheral/gpio
   security: NON_SECURE
   type: HEADER
   userChecksum: 3534751454B654D052B52676D465D88B
 - generatedChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\i2c\master
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/i2c/master
   name: plib_i2c1_master.h
-  physicalPath: peripheral\i2c\master
+  physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: HEADER
   userChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
 - generatedChecksum: B963C6FE44292A1C4A14C3BA5BE95AEE
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\i2c\master
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/i2c/master
   name: plib_i2c_master_common.h
-  physicalPath: peripheral\i2c\master
+  physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: HEADER
   userChecksum: B963C6FE44292A1C4A14C3BA5BE95AEE
 - generatedChecksum: 32D7539D9231F3C159ABECE91A0281EA
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\tmr1
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/tmr1
   name: plib_tmr1.h
-  physicalPath: peripheral\tmr1
+  physicalPath: peripheral/tmr1
   security: NON_SECURE
   type: HEADER
   userChecksum: 32D7539D9231F3C159ABECE91A0281EA
 - generatedChecksum: 69E7C8CDAB1B32838331EE261170CEA4
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\tmr1
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/tmr1
   name: plib_tmr1_common.h
-  physicalPath: peripheral\tmr1
+  physicalPath: peripheral/tmr1
   security: NON_SECURE
   type: HEADER
   userChecksum: 69E7C8CDAB1B32838331EE261170CEA4
-- generatedChecksum: 4048988B3590F67C7F4767F4CE7CA811
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\uart
+- generatedChecksum: BF528AAAE932C4E5F2A80A7DEF4C80F8
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/uart
   name: plib_uart6.h
-  physicalPath: peripheral\uart
+  physicalPath: peripheral/uart
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4048988B3590F67C7F4767F4CE7CA811
-- generatedChecksum: 903175300C64256E267D1DB8F91D7861
-  logicalPath: config\pic32mz_ef_curiosity_v2\peripheral\uart
+  userChecksum: BF528AAAE932C4E5F2A80A7DEF4C80F8
+- generatedChecksum: 91611515A95D92B82B7F4064C16D122B
+  logicalPath: config/pic32mz_ef_curiosity_v2/peripheral/uart
   name: plib_uart_common.h
-  physicalPath: peripheral\uart
+  physicalPath: peripheral/uart
   security: NON_SECURE
   type: HEADER
-  userChecksum: 903175300C64256E267D1DB8F91D7861
+  userChecksum: 91611515A95D92B82B7F4064C16D122B
 - generatedChecksum: FA212DEAE39D4E86EF4E6CB440610FE9
-  logicalPath: config\pic32mz_ef_curiosity_v2
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: FA212DEAE39D4E86EF4E6CB440610FE9
-- generatedChecksum: 9175BBED360A1F5665567266A2A2A4FA
-  logicalPath: config\pic32mz_ef_curiosity_v2
+- generatedChecksum: 07A482DAB7473FC475EA656561967B15
+  logicalPath: config/pic32mz_ef_curiosity_v2
   name: p32MZ2048EFM144.ld
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 9175BBED360A1F5665567266A2A2A4FA
+  userChecksum: 07A482DAB7473FC475EA656561967B15
 format_version: v1.0
 libraries: []
 settings:

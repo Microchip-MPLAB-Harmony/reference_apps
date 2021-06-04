@@ -50,34 +50,29 @@
 
 void static UART6_ErrorClear( void )
 {
-    /* rxBufferLen = (FIFO level + RX register) */
-    uint8_t rxBufferLen = UART_RXFIFO_DEPTH;
+    UART_ERROR errors = UART_ERROR_NONE;
     uint8_t dummyData = 0u;
 
-    /* If it's a overrun error then clear it to flush FIFO */
-    if(U6STA & _U6STA_OERR_MASK)
-    {
-        U6STACLR = _U6STA_OERR_MASK;
-    }
+    errors = (UART_ERROR)(U6STA & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
 
-    /* Read existing error bytes from FIFO to clear parity and framing error flags */
-    while(U6STA & (_U6STA_FERR_MASK | _U6STA_PERR_MASK))
+    if(errors != UART_ERROR_NONE)
     {
-        dummyData = (uint8_t )(U6RXREG );
-        rxBufferLen--;
-
-        /* Try to flush error bytes for one full FIFO and exit instead of
-         * blocking here if more error bytes are received */
-        if(rxBufferLen == 0u)
+        /* If it's a overrun error then clear it to flush FIFO */
+        if(U6STA & _U6STA_OERR_MASK)
         {
-            break;
+            U6STACLR = _U6STA_OERR_MASK;
         }
+
+        /* Read existing error bytes from FIFO to clear parity and framing error flags */
+        while(U6STA & _U6STA_URXDA_MASK)
+        {
+            dummyData = U6RXREG;
+        }
+
     }
 
     // Ignore the warning
     (void)dummyData;
-
-    return;
 }
 
 void UART6_Initialize( void )
@@ -90,7 +85,7 @@ void UART6_Initialize( void )
     U6MODE = 0x8;
 
     /* Enable UART6 Receiver and Transmitter */
-    U6STASET = (_U6STA_UTXEN_MASK | _U6STA_URXEN_MASK | _U6STA_UTXISEL1_MASK);
+    U6STASET = (_U6STA_UTXEN_MASK | _U6STA_URXEN_MASK | _U6STA_UTXISEL1_MASK );
 
     /* BAUD Rate register Setup */
     U6BRG = 216;
@@ -178,6 +173,25 @@ bool UART6_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
     return status;
 }
 
+bool UART6_AutoBaudQuery( void )
+{
+    if(U6MODE & _U6MODE_ABAUD_MASK)
+        return true;
+    else
+        return false;
+}
+
+void UART6_AutoBaudSet( bool enable )
+{
+    if( enable == true )
+    {
+        U6MODESET = _U6MODE_ABAUD_MASK;
+    }
+
+    /* Turning off ABAUD if it was on can lead to unpredictable behavior, so that
+       direction of control is not allowed in this function.                      */
+}
+
 bool UART6_Read(void* buffer, const size_t size )
 {
     bool status = false;
@@ -187,12 +201,13 @@ bool UART6_Read(void* buffer, const size_t size )
 
     if(lBuffer != NULL)
     {
-        /* Clear errors before submitting the request.
-         * ErrorGet clears errors internally. */
-        UART6_ErrorGet();
+        /* Clear error flags and flush out error data that may have been received when no active request was pending */
+        UART6_ErrorClear();
 
         while( size > processedSize )
         {
+            while(!(U6STA & _U6STA_URXDA_MASK));
+
             /* Error status */
             errorStatus = (U6STA & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
 
@@ -200,13 +215,19 @@ bool UART6_Read(void* buffer, const size_t size )
             {
                 break;
             }
-
-            /* Receiver buffer has data */
-            if((U6STA & _U6STA_URXDA_MASK) == _U6STA_URXDA_MASK)
+            if (( U6MODE & (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK)) == (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK))
             {
-                *lBuffer++ = (U6RXREG );
-                processedSize++;
+                /* 9-bit mode */
+                *(uint16_t*)lBuffer = (U6RXREG );
+                lBuffer += 2;
             }
+            else
+            {
+                /* 8-bit mode */
+                *lBuffer++ = (U6RXREG );
+            }
+
+            processedSize++;
         }
 
         if(size == processedSize)
@@ -228,11 +249,22 @@ bool UART6_Write( void* buffer, const size_t size )
     {
         while( size > processedSize )
         {
-            if(!(U6STA & _U6STA_UTXBF_MASK))
+            /* Wait while TX buffer is full */
+            while (U6STA & _U6STA_UTXBF_MASK);
+
+            if (( U6MODE & (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK)) == (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK))
             {
-                U6TXREG = *lBuffer++;
-                processedSize++;
+                /* 9-bit mode */
+                U6TXREG = *(uint16_t*)lBuffer;
+                lBuffer += 2;
             }
+            else
+            {
+                /* 8-bit mode */
+                U6TXREG = *lBuffer++;
+            }
+
+            processedSize++;
         }
 
         status = true;
@@ -244,9 +276,8 @@ bool UART6_Write( void* buffer, const size_t size )
 UART_ERROR UART6_ErrorGet( void )
 {
     UART_ERROR errors = UART_ERROR_NONE;
-    uint32_t status = U6STA;
 
-    errors = (UART_ERROR)(status & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
+    errors = (UART_ERROR)(U6STA & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
 
     if(errors != UART_ERROR_NONE)
     {
