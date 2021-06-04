@@ -54,6 +54,7 @@
 */
 
 #include "plib_eic.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -62,14 +63,14 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
 	   EIC will be disabled. */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_SWRST_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
     {
@@ -77,7 +78,7 @@ void EIC_Initialize (void)
     }
 
     /* EIC is clocked by ultra low power clock */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_CKSEL_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_CKSEL_Msk;
 
     /* NMI Control register */
 
@@ -104,14 +105,14 @@ void EIC_Initialize (void)
 
 
     /* Debouncer enable */
-    EIC_REGS->EIC_DEBOUNCEN = 0x8;
+    EIC_REGS->EIC_DEBOUNCEN = 0x8U;
 
 
     /* Debouncer Setting */
-    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0) | EIC_DPRESCALER_PRESCALER1(0) ;
+    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0UL) | EIC_DPRESCALER_PRESCALER1(0UL) ;
 
     /* External Interrupt enable*/
-    EIC_REGS->EIC_INTENSET = 0x8;
+    EIC_REGS->EIC_INTENSET = 0x8U;
 
     /* Callbacks for enabled interrupts */
     eicCallbackObject[0].eicPinNo = EIC_PIN_MAX;
@@ -131,7 +132,7 @@ void EIC_Initialize (void)
     eicCallbackObject[14].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[15].eicPinNo = EIC_PIN_MAX;
     /* Enable the EIC */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_ENABLE_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_ENABLE_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_ENABLE_Msk) == EIC_SYNCBUSY_ENABLE_Msk)
     {
@@ -165,15 +166,15 @@ void EIC_InterruptHandler(void)
     uint32_t eicIntFlagStatus = 0;
 
     /* Find any triggered channels, run associated callback handlers */
-    for (currentChannel = 0; currentChannel < EXTINT_COUNT; currentChannel++)
+    for (currentChannel = 0U; currentChannel < EXTINT_COUNT; currentChannel++)
     {
         /* Verify if the EXTINT x Interrupt Pin is enabled */
-        if ((eicCallbackObject[currentChannel].eicPinNo == currentChannel))
+        if (((uint8_t)eicCallbackObject[currentChannel].eicPinNo == currentChannel))
         {
             /* Read the interrupt flag status */
             eicIntFlagStatus = EIC_REGS->EIC_INTFLAG & (1UL << currentChannel);
 
-            if (eicIntFlagStatus)
+            if (0U != eicIntFlagStatus)
             {
                 /* Find any associated callback entries in the callback table */
                 if ((eicCallbackObject[currentChannel].callback != NULL))

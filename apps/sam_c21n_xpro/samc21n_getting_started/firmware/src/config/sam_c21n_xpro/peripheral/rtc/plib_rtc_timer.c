@@ -41,15 +41,16 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+#include "interrupts.h"
 #include "plib_rtc.h"
 #include <stdlib.h>
 
-RTC_OBJECT rtcObj;
+static RTC_OBJECT rtcObj;
 
 
 void RTC_Initialize(void)
 {
-    RTC_REGS->MODE0.RTC_CTRLA = RTC_MODE0_CTRLA_SWRST_Msk;
+    RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)RTC_MODE0_CTRLA_SWRST_Msk;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_SWRST_Msk) == RTC_MODE0_SYNCBUSY_SWRST_Msk)
     {
@@ -57,18 +58,18 @@ void RTC_Initialize(void)
     }
 
 
-    RTC_REGS->MODE0.RTC_CTRLA = RTC_MODE0_CTRLA_MODE(0) | RTC_MODE0_CTRLA_PRESCALER(0x1) | RTC_MODE0_CTRLA_COUNTSYNC_Msk |RTC_MODE0_CTRLA_MATCHCLR_Msk ;
+    RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)(RTC_MODE0_CTRLA_MODE(0UL) | RTC_MODE0_CTRLA_PRESCALER(0x1UL) | RTC_MODE0_CTRLA_COUNTSYNC_Msk |RTC_MODE0_CTRLA_MATCHCLR_Msk );
 
-   RTC_REGS->MODE0.RTC_COMP = 0x200;
+   RTC_REGS->MODE0.RTC_COMP = 0x200U;
 
-    RTC_REGS->MODE0.RTC_INTENSET = 0x100;
+    RTC_REGS->MODE0.RTC_INTENSET = 0x100U;
 
 }
 
 
 void RTC_Timer32Start ( void )
 {
-    RTC_REGS->MODE0.RTC_CTRLA |= RTC_MODE0_CTRLA_ENABLE_Msk;
+    RTC_REGS->MODE0.RTC_CTRLA |= (uint16_t)RTC_MODE0_CTRLA_ENABLE_Msk;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_ENABLE_Msk) == RTC_MODE0_SYNCBUSY_ENABLE_Msk)
     {
@@ -79,7 +80,7 @@ void RTC_Timer32Start ( void )
 
 void RTC_Timer32Stop ( void )
 {
-    RTC_REGS->MODE0.RTC_CTRLA &= ~(RTC_MODE0_CTRLA_ENABLE_Msk);
+    RTC_REGS->MODE0.RTC_CTRLA &= (uint16_t)(~RTC_MODE0_CTRLA_ENABLE_Msk);
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_ENABLE_Msk) == RTC_MODE0_SYNCBUSY_ENABLE_Msk)
     {
@@ -118,6 +119,7 @@ uint32_t RTC_Timer32CounterGet ( void )
 uint32_t RTC_Timer32PeriodGet ( void )
 {
     /* Get 32Bit Compare Value */
+             /*lint -e{9048} PC lint incorrectly reports a missing 'U' Suffix */
     return (RTC_MODE0_COUNT_COUNT_Msk);
 }
 
@@ -127,14 +129,14 @@ uint32_t RTC_Timer32FrequencyGet ( void )
     return RTC_COUNTER_CLOCK_FREQUENCY;
 }
 
-void RTC_Timer32InterruptEnable(RTC_TIMER32_INT_MASK interrupt)
+void RTC_Timer32InterruptEnable(RTC_TIMER32_INT_MASK interruptMask)
 {
-    RTC_REGS->MODE0.RTC_INTENSET = interrupt;
+    RTC_REGS->MODE0.RTC_INTENSET = (uint16_t)interruptMask;
 }
 
-void RTC_Timer32InterruptDisable(RTC_TIMER32_INT_MASK interrupt)
+void RTC_Timer32InterruptDisable(RTC_TIMER32_INT_MASK interruptMask)
 {
-    RTC_REGS->MODE0.RTC_INTENCLR = interrupt;
+    RTC_REGS->MODE0.RTC_INTENCLR = (uint16_t)interruptMask;
 }
 
 
@@ -147,7 +149,7 @@ void RTC_Timer32CallbackRegister ( RTC_TIMER32_CALLBACK callback, uintptr_t cont
 void RTC_InterruptHandler( void )
 {
     rtcObj.timer32intCause = (RTC_TIMER32_INT_MASK) RTC_REGS->MODE0.RTC_INTFLAG;
-    RTC_REGS->MODE0.RTC_INTFLAG = RTC_MODE0_INTFLAG_Msk;
+    RTC_REGS->MODE0.RTC_INTFLAG = (uint16_t)RTC_MODE0_INTFLAG_Msk;
 
     /* Invoke registered Callback function */
     if(rtcObj.timer32BitCallback != NULL)
