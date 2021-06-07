@@ -72,7 +72,7 @@ children:
         children:
         - {type: Value, value: 'false'}
   - type: KeyValueSet
-    attributes: {id: DEVICE_SECURITY}
+    attributes: {id: DEVICE_SECURITY_CMD}
     children:
     - type: Values
       children:
@@ -1392,7 +1392,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0xb71b00'}
+        attributes: {id: core, value: '0xB71B00'}
   - type: Float
     attributes: {id: SYSTICK_PERIOD_MS}
     children:

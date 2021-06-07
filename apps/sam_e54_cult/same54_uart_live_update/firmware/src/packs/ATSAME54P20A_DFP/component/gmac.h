@@ -1,7 +1,7 @@
 /**
  * \brief Component description for GMAC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-06-22T15:30:56Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_GMAC_COMPONENT_H_
 #define _SAME54_GMAC_COMPONENT_H_
 
@@ -364,13 +364,16 @@
 #define GMAC_ISR_SRI_Pos                      _U_(26)                                              /**< (GMAC_ISR) TSU Seconds Register Increment Position */
 #define GMAC_ISR_SRI_Msk                      (_U_(0x1) << GMAC_ISR_SRI_Pos)                       /**< (GMAC_ISR) TSU Seconds Register Increment Mask */
 #define GMAC_ISR_SRI(value)                   (GMAC_ISR_SRI_Msk & ((value) << GMAC_ISR_SRI_Pos))  
+#define GMAC_ISR_RXLPISBC_Pos                 _U_(27)                                              /**< (GMAC_ISR) Enable RX LPI Indication Position */
+#define GMAC_ISR_RXLPISBC_Msk                 (_U_(0x1) << GMAC_ISR_RXLPISBC_Pos)                  /**< (GMAC_ISR) Enable RX LPI Indication Mask */
+#define GMAC_ISR_RXLPISBC(value)              (GMAC_ISR_RXLPISBC_Msk & ((value) << GMAC_ISR_RXLPISBC_Pos))
 #define GMAC_ISR_WOL_Pos                      _U_(28)                                              /**< (GMAC_ISR) Wake On LAN Position */
 #define GMAC_ISR_WOL_Msk                      (_U_(0x1) << GMAC_ISR_WOL_Pos)                       /**< (GMAC_ISR) Wake On LAN Mask */
 #define GMAC_ISR_WOL(value)                   (GMAC_ISR_WOL_Msk & ((value) << GMAC_ISR_WOL_Pos))  
 #define GMAC_ISR_TSUCMP_Pos                   _U_(29)                                              /**< (GMAC_ISR) Tsu timer comparison Position */
 #define GMAC_ISR_TSUCMP_Msk                   (_U_(0x1) << GMAC_ISR_TSUCMP_Pos)                    /**< (GMAC_ISR) Tsu timer comparison Mask */
 #define GMAC_ISR_TSUCMP(value)                (GMAC_ISR_TSUCMP_Msk & ((value) << GMAC_ISR_TSUCMP_Pos))
-#define GMAC_ISR_Msk                          _U_(0x37FC7CFF)                                      /**< (GMAC_ISR) Register Mask  */
+#define GMAC_ISR_Msk                          _U_(0x3FFC7CFF)                                      /**< (GMAC_ISR) Register Mask  */
 
 
 /* -------- GMAC_IER : (GMAC Offset: 0x28) ( /W 32) Interrupt Enable Register -------- */
@@ -443,13 +446,16 @@
 #define GMAC_IER_SRI_Pos                      _U_(26)                                              /**< (GMAC_IER) TSU Seconds Register Increment Position */
 #define GMAC_IER_SRI_Msk                      (_U_(0x1) << GMAC_IER_SRI_Pos)                       /**< (GMAC_IER) TSU Seconds Register Increment Mask */
 #define GMAC_IER_SRI(value)                   (GMAC_IER_SRI_Msk & ((value) << GMAC_IER_SRI_Pos))  
+#define GMAC_IER_RXLPISBC_Pos                 _U_(27)                                              /**< (GMAC_IER) Enable RX LPI Indication Position */
+#define GMAC_IER_RXLPISBC_Msk                 (_U_(0x1) << GMAC_IER_RXLPISBC_Pos)                  /**< (GMAC_IER) Enable RX LPI Indication Mask */
+#define GMAC_IER_RXLPISBC(value)              (GMAC_IER_RXLPISBC_Msk & ((value) << GMAC_IER_RXLPISBC_Pos))
 #define GMAC_IER_WOL_Pos                      _U_(28)                                              /**< (GMAC_IER) Wake On LAN Position */
 #define GMAC_IER_WOL_Msk                      (_U_(0x1) << GMAC_IER_WOL_Pos)                       /**< (GMAC_IER) Wake On LAN Mask */
 #define GMAC_IER_WOL(value)                   (GMAC_IER_WOL_Msk & ((value) << GMAC_IER_WOL_Pos))  
 #define GMAC_IER_TSUCMP_Pos                   _U_(29)                                              /**< (GMAC_IER) Tsu timer comparison Position */
 #define GMAC_IER_TSUCMP_Msk                   (_U_(0x1) << GMAC_IER_TSUCMP_Pos)                    /**< (GMAC_IER) Tsu timer comparison Mask */
 #define GMAC_IER_TSUCMP(value)                (GMAC_IER_TSUCMP_Msk & ((value) << GMAC_IER_TSUCMP_Pos))
-#define GMAC_IER_Msk                          _U_(0x37FCFCFF)                                      /**< (GMAC_IER) Register Mask  */
+#define GMAC_IER_Msk                          _U_(0x3FFCFCFF)                                      /**< (GMAC_IER) Register Mask  */
 
 
 /* -------- GMAC_IDR : (GMAC Offset: 0x2C) ( /W 32) Interrupt Disable Register -------- */
@@ -522,13 +528,16 @@
 #define GMAC_IDR_SRI_Pos                      _U_(26)                                              /**< (GMAC_IDR) TSU Seconds Register Increment Position */
 #define GMAC_IDR_SRI_Msk                      (_U_(0x1) << GMAC_IDR_SRI_Pos)                       /**< (GMAC_IDR) TSU Seconds Register Increment Mask */
 #define GMAC_IDR_SRI(value)                   (GMAC_IDR_SRI_Msk & ((value) << GMAC_IDR_SRI_Pos))  
+#define GMAC_IDR_RXLPISBC_Pos                 _U_(27)                                              /**< (GMAC_IDR) Enable RX LPI Indication Position */
+#define GMAC_IDR_RXLPISBC_Msk                 (_U_(0x1) << GMAC_IDR_RXLPISBC_Pos)                  /**< (GMAC_IDR) Enable RX LPI Indication Mask */
+#define GMAC_IDR_RXLPISBC(value)              (GMAC_IDR_RXLPISBC_Msk & ((value) << GMAC_IDR_RXLPISBC_Pos))
 #define GMAC_IDR_WOL_Pos                      _U_(28)                                              /**< (GMAC_IDR) Wake On LAN Position */
 #define GMAC_IDR_WOL_Msk                      (_U_(0x1) << GMAC_IDR_WOL_Pos)                       /**< (GMAC_IDR) Wake On LAN Mask */
 #define GMAC_IDR_WOL(value)                   (GMAC_IDR_WOL_Msk & ((value) << GMAC_IDR_WOL_Pos))  
 #define GMAC_IDR_TSUCMP_Pos                   _U_(29)                                              /**< (GMAC_IDR) Tsu timer comparison Position */
 #define GMAC_IDR_TSUCMP_Msk                   (_U_(0x1) << GMAC_IDR_TSUCMP_Pos)                    /**< (GMAC_IDR) Tsu timer comparison Mask */
 #define GMAC_IDR_TSUCMP(value)                (GMAC_IDR_TSUCMP_Msk & ((value) << GMAC_IDR_TSUCMP_Pos))
-#define GMAC_IDR_Msk                          _U_(0x37FCFCFF)                                      /**< (GMAC_IDR) Register Mask  */
+#define GMAC_IDR_Msk                          _U_(0x3FFCFCFF)                                      /**< (GMAC_IDR) Register Mask  */
 
 
 /* -------- GMAC_IMR : (GMAC Offset: 0x30) ( R/ 32) Interrupt Mask Register -------- */
@@ -603,13 +612,16 @@
 #define GMAC_IMR_SRI_Pos                      _U_(26)                                              /**< (GMAC_IMR) TSU Seconds Register Increment Position */
 #define GMAC_IMR_SRI_Msk                      (_U_(0x1) << GMAC_IMR_SRI_Pos)                       /**< (GMAC_IMR) TSU Seconds Register Increment Mask */
 #define GMAC_IMR_SRI(value)                   (GMAC_IMR_SRI_Msk & ((value) << GMAC_IMR_SRI_Pos))  
+#define GMAC_IMR_RXLPISBC_Pos                 _U_(27)                                              /**< (GMAC_IMR) Enable RX LPI Indication Position */
+#define GMAC_IMR_RXLPISBC_Msk                 (_U_(0x1) << GMAC_IMR_RXLPISBC_Pos)                  /**< (GMAC_IMR) Enable RX LPI Indication Mask */
+#define GMAC_IMR_RXLPISBC(value)              (GMAC_IMR_RXLPISBC_Msk & ((value) << GMAC_IMR_RXLPISBC_Pos))
 #define GMAC_IMR_WOL_Pos                      _U_(28)                                              /**< (GMAC_IMR) Wake On Lan Position */
 #define GMAC_IMR_WOL_Msk                      (_U_(0x1) << GMAC_IMR_WOL_Pos)                       /**< (GMAC_IMR) Wake On Lan Mask */
 #define GMAC_IMR_WOL(value)                   (GMAC_IMR_WOL_Msk & ((value) << GMAC_IMR_WOL_Pos))  
 #define GMAC_IMR_TSUCMP_Pos                   _U_(29)                                              /**< (GMAC_IMR) Tsu timer comparison Position */
 #define GMAC_IMR_TSUCMP_Msk                   (_U_(0x1) << GMAC_IMR_TSUCMP_Pos)                    /**< (GMAC_IMR) Tsu timer comparison Mask */
 #define GMAC_IMR_TSUCMP(value)                (GMAC_IMR_TSUCMP_Msk & ((value) << GMAC_IMR_TSUCMP_Pos))
-#define GMAC_IMR_Msk                          _U_(0x37FCFCFF)                                      /**< (GMAC_IMR) Register Mask  */
+#define GMAC_IMR_Msk                          _U_(0x3FFCFCFF)                                      /**< (GMAC_IMR) Register Mask  */
 
 
 /* -------- GMAC_MAN : (GMAC Offset: 0x34) (R/W 32) PHY Maintenance Register -------- */
@@ -708,13 +720,16 @@
 #define GMAC_HRT_Msk                          _U_(0xFFFFFFFF)                                      /**< (GMAC_HRT) Register Mask  */
 
 
-/* -------- GMAC_TIDM : (GMAC Offset: 0xA8) (R/W 32) Type ID Match Register -------- */
-#define GMAC_TIDM_RESETVALUE                  _U_(0x00)                                            /**<  (GMAC_TIDM) Type ID Match Register  Reset Value */
+/* -------- GMAC_TIDM : (GMAC Offset: 0xA8) (R/W 32) Type ID Match n Register -------- */
+#define GMAC_TIDM_RESETVALUE                  _U_(0x00)                                            /**<  (GMAC_TIDM) Type ID Match n Register  Reset Value */
 
-#define GMAC_TIDM_TID_Pos                     _U_(0)                                               /**< (GMAC_TIDM) Type ID Match 1 Position */
-#define GMAC_TIDM_TID_Msk                     (_U_(0xFFFF) << GMAC_TIDM_TID_Pos)                   /**< (GMAC_TIDM) Type ID Match 1 Mask */
+#define GMAC_TIDM_TID_Pos                     _U_(0)                                               /**< (GMAC_TIDM) Type ID Match n Position */
+#define GMAC_TIDM_TID_Msk                     (_U_(0xFFFF) << GMAC_TIDM_TID_Pos)                   /**< (GMAC_TIDM) Type ID Match n Mask */
 #define GMAC_TIDM_TID(value)                  (GMAC_TIDM_TID_Msk & ((value) << GMAC_TIDM_TID_Pos))
-#define GMAC_TIDM_Msk                         _U_(0x0000FFFF)                                      /**< (GMAC_TIDM) Register Mask  */
+#define GMAC_TIDM_ENID_Pos                    _U_(31)                                              /**< (GMAC_TIDM) Enable Copying of TID n Matched Frames Position */
+#define GMAC_TIDM_ENID_Msk                    (_U_(0x1) << GMAC_TIDM_ENID_Pos)                     /**< (GMAC_TIDM) Enable Copying of TID n Matched Frames Mask */
+#define GMAC_TIDM_ENID(value)                 (GMAC_TIDM_ENID_Msk & ((value) << GMAC_TIDM_ENID_Pos))
+#define GMAC_TIDM_Msk                         _U_(0x8000FFFF)                                      /**< (GMAC_TIDM) Register Mask  */
 
 
 /* -------- GMAC_WOL : (GMAC Offset: 0xB8) (R/W 32) Wake on LAN -------- */
@@ -1473,7 +1488,11 @@
 #define GMAC_RJFML_REG_OFST            (0x48)              /**< (GMAC_RJFML) RX Jumbo Frame Max Length Register Offset */
 #define GMAC_HRB_REG_OFST              (0x80)              /**< (GMAC_HRB) Hash Register Bottom [31:0] Offset */
 #define GMAC_HRT_REG_OFST              (0x84)              /**< (GMAC_HRT) Hash Register Top [63:32] Offset */
-#define GMAC_TIDM_REG_OFST             (0xA8)              /**< (GMAC_TIDM) Type ID Match Register Offset */
+#define GMAC_TIDM_REG_OFST             (0xA8)              /**< (GMAC_TIDM) Type ID Match n Register Offset */
+#define GMAC_TIDM0_REG_OFST            (0xA8)              /**< (GMAC_TIDM0) Type ID Match n Register Offset */
+#define GMAC_TIDM1_REG_OFST            (0xAC)              /**< (GMAC_TIDM1) Type ID Match n Register Offset */
+#define GMAC_TIDM2_REG_OFST            (0xB0)              /**< (GMAC_TIDM2) Type ID Match n Register Offset */
+#define GMAC_TIDM3_REG_OFST            (0xB4)              /**< (GMAC_TIDM3) Type ID Match n Register Offset */
 #define GMAC_WOL_REG_OFST              (0xB8)              /**< (GMAC_WOL) Wake on LAN Offset */
 #define GMAC_IPGS_REG_OFST             (0xBC)              /**< (GMAC_IPGS) IPG Stretch Register Offset */
 #define GMAC_SVLAN_REG_OFST            (0xC0)              /**< (GMAC_SVLAN) Stacked VLAN Register Offset */
@@ -1589,7 +1608,7 @@ typedef struct
   __IO  uint32_t                       GMAC_HRB;           /**< Offset: 0x80 (R/W  32) Hash Register Bottom [31:0] */
   __IO  uint32_t                       GMAC_HRT;           /**< Offset: 0x84 (R/W  32) Hash Register Top [63:32] */
         gmac_sa_registers_t            SA[GMAC_SA_NUMBER]; /**< Offset: 0x88  */
-  __IO  uint32_t                       GMAC_TIDM[4];       /**< Offset: 0xA8 (R/W  32) Type ID Match Register */
+  __IO  uint32_t                       GMAC_TIDM[4];       /**< Offset: 0xA8 (R/W  32) Type ID Match n Register */
   __IO  uint32_t                       GMAC_WOL;           /**< Offset: 0xB8 (R/W  32) Wake on LAN */
   __IO  uint32_t                       GMAC_IPGS;          /**< Offset: 0xBC (R/W  32) IPG Stretch Register */
   __IO  uint32_t                       GMAC_SVLAN;         /**< Offset: 0xC0 (R/W  32) Stacked VLAN Register */

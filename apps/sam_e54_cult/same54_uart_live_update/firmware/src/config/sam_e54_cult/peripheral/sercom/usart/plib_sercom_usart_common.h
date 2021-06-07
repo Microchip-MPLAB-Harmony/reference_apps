@@ -66,6 +66,30 @@
 
 // *****************************************************************************
 // *****************************************************************************
+// Section:Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/* USART Error convenience macros */
+// *****************************************************************************
+// *****************************************************************************
+    /* Error status when no error has occurred */
+#define USART_ERROR_NONE 0U
+
+    /* Error status when parity error has occurred */
+#define USART_ERROR_PARITY SERCOM_USART_INT_STATUS_PERR_Msk
+
+    /* Error status when framing error has occurred */
+#define USART_ERROR_FRAMING SERCOM_USART_INT_STATUS_FERR_Msk
+
+    /* Error status when overrun error has occurred */
+#define USART_ERROR_OVERRUN SERCOM_USART_INT_STATUS_BUFOVF_Msk
+
+
+// *****************************************************************************
+// *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
@@ -85,21 +109,7 @@
     None.
 */
 
-typedef enum
-{
-    /* Error status when no error has occurred */
-    USART_ERROR_NONE,
-
-    /* Error status when parity error has occurred */
-    USART_ERROR_PARITY = SERCOM_USART_INT_STATUS_PERR_Msk,
-
-    /* Error status when framing error has occurred */
-    USART_ERROR_FRAMING = SERCOM_USART_INT_STATUS_FERR_Msk,
-
-    /* Error status when overrun error has occurred */
-    USART_ERROR_OVERRUN = SERCOM_USART_INT_STATUS_BUFOVF_Msk
-
-} USART_ERROR;
+typedef uint16_t USART_ERROR;
 
 // *****************************************************************************
 /* USART DATA
@@ -128,7 +138,7 @@ typedef enum
     USART_DATA_9_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_9_BIT,
 
     /* Force the compiler to reserve 32-bit memory for each enum */
-    USART_DATA_INVALID = 0xFFFFFFFF
+    USART_DATA_INVALID = 0xFFFFFFFFU
 
 } USART_DATA;
 
@@ -158,7 +168,7 @@ typedef enum
     USART_PARITY_NONE = 0x2,
 
     /* Force the compiler to reserve 32-bit memory for each enum */
-    USART_PARITY_INVALID = 0xFFFFFFFF
+    USART_PARITY_INVALID = 0xFFFFFFFFU
 
 } USART_PARITY;
 
@@ -183,7 +193,7 @@ typedef enum
     USART_STOP_2_BIT = SERCOM_USART_INT_CTRLB_SBMODE_2_BIT,
 
     /* Force the compiler to reserve 32-bit memory for each enum */
-    USART_STOP_INVALID = 0xFFFFFFFF
+    USART_STOP_INVALID = 0xFFFFFFFFU
 
 } USART_STOP;
 
@@ -293,6 +303,8 @@ typedef struct
 
     volatile bool                        rxBusyStatus;
 
+    volatile USART_ERROR                 errorStatus;
+
 } SERCOM_USART_OBJECT;
 
 
@@ -356,6 +368,8 @@ typedef struct
 
     volatile uint32_t                                   wrOutIndex;
 
+    uint32_t                                            wrBufferSize;
+
     bool                                                isWrNotificationEnabled;
 
     uint32_t                                            wrThreshold;
@@ -370,11 +384,15 @@ typedef struct
 
     volatile uint32_t                                   rdOutIndex;
 
+    uint32_t                                            rdBufferSize;
+
     bool                                                isRdNotificationEnabled;
 
     uint32_t                                            rdThreshold;
 
     bool                                                isRdNotifyPersistently;
+
+    volatile USART_ERROR                                errorStatus;
 
 } SERCOM_USART_RING_BUFFER_OBJECT;
 

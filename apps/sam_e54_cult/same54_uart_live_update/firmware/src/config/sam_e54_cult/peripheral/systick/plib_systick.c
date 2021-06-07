@@ -39,57 +39,59 @@
 *******************************************************************************/
 
 #include "device.h"
-#include "peripheral/systick/plib_systick.h"
+#include "interrupts.h"
+#include "plib_systick.h"
 
 
 void SYSTICK_TimerInitialize ( void )
 {
-	SysTick->CTRL = 0;
-	SysTick->VAL = 0;
-	SysTick->LOAD = 0xb71b00 - 1;
-	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk;
+    SysTick->CTRL = 0U;
+    SysTick->VAL = 0U;
+    SysTick->LOAD = 0xB71B00U - 1U;
+    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk;
 }
 
 void SYSTICK_TimerRestart ( void )
 {
-	SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
-	SysTick->VAL = 0;
-	SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
+    SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
+    SysTick->VAL = 0U;
+    SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
 }
 
 void SYSTICK_TimerStart ( void )
 {
-	SysTick->VAL = 0;
-	SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
+    SysTick->VAL = 0U;
+    SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
 }
 
 void SYSTICK_TimerStop ( void )
 {
-	SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
+    SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
 }
 
 void SYSTICK_TimerPeriodSet ( uint32_t period )
 {
-	SysTick->LOAD = period - 1;
+    SysTick->LOAD = period - 1U;
 }
 
 uint32_t SYSTICK_TimerPeriodGet ( void )
 {
-		return(SysTick->LOAD);
+        return(SysTick->LOAD);
 }
 
 uint32_t SYSTICK_TimerCounterGet ( void )
 {
-	return (SysTick->VAL);
+    return (SysTick->VAL);
 }
 
 uint32_t SYSTICK_TimerFrequencyGet ( void )
 {
-	return (SYSTICK_FREQ);
+    return (SYSTICK_FREQ);
 }
+
 
 bool SYSTICK_TimerPeriodHasExpired(void)
 {
-	return (SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) > 0;
+   return ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) > 0U);
 }
 

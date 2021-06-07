@@ -51,6 +51,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#include "interrupts.h"
 #include "plib_pac.h"
 
 // *****************************************************************************
@@ -75,10 +76,10 @@ void PAC_Initialize( void )
 bool PAC_PeripheralIsProtected( PAC_PERIPHERAL peripheral )
 {
     bool status = false;
-    uint32_t *statusRegBaseAddr = (uint32_t*) &(PAC_REGS->PAC_STATUSA);
+    const volatile uint32_t *statusRegBaseAddr = (const volatile uint32_t*) &(PAC_REGS->PAC_STATUSA);
 
     /* Verify if the peripheral is protected or not */
-    status = (bool)((*(statusRegBaseAddr + (peripheral / 32))) & (1 << (peripheral % 32)));
+    status = (((*(statusRegBaseAddr + ((uint32_t)peripheral / 32U))) & (1UL << ((uint32_t)peripheral % 32U))) != 0U);
 
     return status;
 }
@@ -86,6 +87,6 @@ bool PAC_PeripheralIsProtected( PAC_PERIPHERAL peripheral )
 void PAC_PeripheralProtectSetup( PAC_PERIPHERAL peripheral, PAC_PROTECTION operation )
 {
     /* Set Peripheral Access Control */
-    PAC_REGS->PAC_WRCTRL = PAC_WRCTRL_PERID(peripheral) | PAC_WRCTRL_KEY(operation);
+    PAC_REGS->PAC_WRCTRL = PAC_WRCTRL_PERID((uint32_t)peripheral) | PAC_WRCTRL_KEY((uint32_t)operation);
 }
 
