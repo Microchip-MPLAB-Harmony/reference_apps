@@ -10,21 +10,21 @@
 		"shortDescription": "Demonstrates SDADC Conversion polling Mode Application on SAMC21N Xplained Pro Evaluation Kit",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.50"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.00"
 			}
 		],
 		"dfp": {
 			"name": "SAMC21_DFP",
-			"semverRange": "^3.4.78"
+			"semverRange": "^3.5.95"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.7.2"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
