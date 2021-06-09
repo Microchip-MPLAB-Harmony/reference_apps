@@ -10,21 +10,21 @@
 		"shortDescription": "Demonstrates how to get started using the basic peripherals like UART, SPI, Timer, Core Timer, DMA and GPIOs",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.50"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.00"
 			}
 		],
 		"dfp": {
 			"name": "PIC32MX_DFP",
-			"semverRange": "^1.3.231"
+			"semverRange": "^1.5.259"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.7.2"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
