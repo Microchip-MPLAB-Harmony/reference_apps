@@ -61,6 +61,12 @@
 // *****************************************************************************
 // *****************************************************************************
 
+DRV_HANDLE usartHandle;
+DRV_USART_BUFFER_HANDLE usartWriteBufferHandle;
+DRV_USART_BUFFER_HANDLE usartReadBufferHandle;  
+volatile bool isUsartWriteCompleted;
+volatile bool usartReadRequest;
+
 /******************************************************************************
   Function:
     void APP_SENSOR_I2CEventHandler ( 

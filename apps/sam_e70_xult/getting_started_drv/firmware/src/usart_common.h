@@ -88,11 +88,11 @@ extern "C" {
   Remarks:
     Application strings and buffers are be defined outside this structure.
  */
-DRV_HANDLE usartHandle;
-DRV_USART_BUFFER_HANDLE usartWriteBufferHandle;
-DRV_USART_BUFFER_HANDLE usartReadBufferHandle;  
-volatile bool isUsartWriteCompleted;
-volatile bool usartReadRequest;
+extern DRV_HANDLE usartHandle;
+extern DRV_USART_BUFFER_HANDLE usartWriteBufferHandle;
+extern DRV_USART_BUFFER_HANDLE usartReadBufferHandle;  
+extern volatile bool isUsartWriteCompleted;
+extern volatile bool usartReadRequest;
 
 // *****************************************************************************
 // *****************************************************************************
