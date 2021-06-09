@@ -45,12 +45,12 @@ nav_order: 3
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
-- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
-- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
-- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
-- MPLAB Harmony 3 Launcher Plugin v3.6.2  
-- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.4 and above  
+- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)  
 - [Data Visualizer](https://www.microchip.com/mplab/avr-support/data-visualizer)  
 - Any Serial Terminal application like Tera Term terminal application.  
 
@@ -120,12 +120,16 @@ connected to Micro-B port, and reconnect it back.
 **Note** that the above results highlight the power consumption is lower in Standby mode than in Idle mode.
 
 ## Comments:
-- Reference Training Module: [Low Power Application on SAM E54 (Cortex M4) MCUs Using MPLAB Harmony v3 Peripheral Libraries](https://microchipdeveloper.com/harmony3:low-power-application-on-sam-e54)
+- Reference Training Module:  
+	1. [Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs](https://microchipdeveloper.com/harmony3:same54-getting-started-training-module)  
+	2. [Low Power Application on SAM E54 (Arm® Cortex® M4) MCUs Using MPLAB® Harmony v3 Peripheral Libraries](https://microchipdeveloper.com/harmony3:low-power-application-on-sam-e54)
+	3. [Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS](https://microchipdeveloper.com/harmony3:same54-getting-started-tm-drivers-freertos#Steps_anchor)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 
 ## Revision:
+- v1.3.0 - Regenerated and tested application.
 - v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Released demo application
