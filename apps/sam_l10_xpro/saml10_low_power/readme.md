@@ -45,12 +45,12 @@ the evaluation board before going further, else you could face issues with power
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
-- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
-- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
-- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
-- MPLAB Harmony 3 Launcher Plugin v3.6.2  
-- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.4 and above  
+- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)  
 - [Data Visualizer](https://www.microchip.com/mplab/avr-support/data-visualizer)  
 - Any Serial Terminal application like Tera Term terminal application.  
 
@@ -143,6 +143,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 
 
 ## Revision:
+- v1.3.0 - Regenerated and tested application.
 - v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Regenerated and tested application.
 - v1.0.0 - Released demo application
