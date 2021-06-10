@@ -142,24 +142,6 @@ children:
       children:
       - type: User
         attributes: {value: 1-byte}
-  - type: File
-    attributes: {id: GFX_EXTERNAL_CONTROLLER_ASYNC_C}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'false'}
-  - type: File
-    attributes: {id: GFX_EXTERNAL_CONTROLLER_C}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
   - type: Hex
     attributes: {id: MemoryWriteCommand}
     children:

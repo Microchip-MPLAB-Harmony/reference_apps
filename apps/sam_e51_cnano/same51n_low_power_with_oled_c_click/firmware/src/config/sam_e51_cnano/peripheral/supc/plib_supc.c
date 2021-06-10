@@ -55,6 +55,7 @@
 
 #include "device.h"
 #include "plib_supc.h"
+#include "interrupts.h"
 
 
 void SUPC_Initialize( void )

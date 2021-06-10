@@ -41,13 +41,14 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+#include "interrupts.h"
 #include "plib_rtc.h"
 #include <stdlib.h>
 
 
 void RTC_Initialize(void)
 {
-    RTC_REGS->MODE0.RTC_CTRLA = RTC_MODE0_CTRLA_SWRST_Msk;
+    RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)RTC_MODE0_CTRLA_SWRST_Msk;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_SWRST_Msk) == RTC_MODE0_SYNCBUSY_SWRST_Msk)
     {
@@ -56,23 +57,23 @@ void RTC_Initialize(void)
 
 
 
-    RTC_REGS->MODE0.RTC_CTRLA = RTC_MODE0_CTRLA_MODE(0) | RTC_MODE0_CTRLA_PRESCALER(0x1) | RTC_MODE0_CTRLA_COUNTSYNC_Msk |RTC_MODE0_CTRLA_MATCHCLR_Msk ;
+    RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)(RTC_MODE0_CTRLA_MODE(0UL) | RTC_MODE0_CTRLA_PRESCALER(0x1UL) | RTC_MODE0_CTRLA_COUNTSYNC_Msk |RTC_MODE0_CTRLA_MATCHCLR_Msk );
 
-    RTC_REGS->MODE0.RTC_COMP[0] = 0x200;
+    RTC_REGS->MODE0.RTC_COMP[0] = 0x200U;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COMP0_Msk) == RTC_MODE0_SYNCBUSY_COMP0_Msk)
     {
         /* Wait for Synchronization after writing Compare Value */
     }
 
-    RTC_REGS->MODE0.RTC_COMP[1] = 0x0;
+    RTC_REGS->MODE0.RTC_COMP[1] = 0x0U;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COMP1_Msk) == RTC_MODE0_SYNCBUSY_COMP1_Msk)
     {
         /* Wait for Synchronization after writing Compare Value */
     }
 
-    RTC_REGS->MODE0.RTC_EVCTRL = 0x100;
+    RTC_REGS->MODE0.RTC_EVCTRL = 0x100U;
 }
 
 
@@ -132,7 +133,7 @@ bool RTC_Timer32CounterHasOverflowed ( void )
 
 void RTC_Timer32Start ( void )
 {
-    RTC_REGS->MODE0.RTC_CTRLA |= RTC_MODE0_CTRLA_ENABLE_Msk;
+    RTC_REGS->MODE0.RTC_CTRLA |= (uint16_t)RTC_MODE0_CTRLA_ENABLE_Msk;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_ENABLE_Msk) == RTC_MODE0_SYNCBUSY_ENABLE_Msk)
     {
@@ -143,7 +144,7 @@ void RTC_Timer32Start ( void )
 
 void RTC_Timer32Stop ( void )
 {
-    RTC_REGS->MODE0.RTC_CTRLA &= ~(RTC_MODE0_CTRLA_ENABLE_Msk);
+    RTC_REGS->MODE0.RTC_CTRLA &= (uint16_t)(~RTC_MODE0_CTRLA_ENABLE_Msk);
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_ENABLE_Msk) == RTC_MODE0_SYNCBUSY_ENABLE_Msk)
     {
@@ -191,6 +192,7 @@ uint32_t RTC_Timer32CounterGet ( void )
 uint32_t RTC_Timer32PeriodGet ( void )
 {
     /* Get 32Bit Compare Value */
+             /*lint -e{9048} PC lint incorrectly reports a missing 'U' Suffix */
     return (RTC_MODE0_COUNT_COUNT_Msk);
 }
 
