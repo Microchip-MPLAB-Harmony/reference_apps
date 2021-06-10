@@ -162,14 +162,6 @@ typedef enum
     CUSTOM_BM71_DEC_EVENT_GATT_ATTRIBUTE_DATA,
 } CUSTOM_BM71_DEC_EVENT;           // BM71 decoded events
 
-enum {
-    CUSTOM_BM71_SYSTEM_INIT,         //init
-    CUSTOM_BM71_SYSTEM_POWER_OFF,    //event
-    CUSTOM_BM71_SYSTEM_POWER_ON,     //event
-    CUSTOM_BM71_SYSTEM_STANDBY,      //event
-    CUSTOM_BM71_SYSTEM_CONNECTED,    //event
-} CUSTOM_BM71_SystemStatus;        // BT internal system status
-
 /////////////////////////////// new //////////////////////////////////////
 
 #define BM_PKT_LEN_MAX    0x01FF

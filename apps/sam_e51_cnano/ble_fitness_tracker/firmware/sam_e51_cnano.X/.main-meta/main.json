@@ -10,12 +10,12 @@
 		"shortDescription": "Demonstrates integrating BM71 Xpro, Heart Rate and EINK Click bundle on SAM E51 Curiosity Nano)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.00"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"semverRange": ">=3.7.2"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
