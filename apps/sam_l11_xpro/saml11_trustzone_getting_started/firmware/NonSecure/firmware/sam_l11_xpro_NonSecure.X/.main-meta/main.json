@@ -10,21 +10,21 @@
 		"shortDescription": "Demonstrates the TrustZone feature on SAM L11 microcontroller)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.50"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.00"
 			}
 		],
 		"dfp": {
 			"name": "SAML11_DFP",
-			"semverRange": "^4.0.115"
+			"semverRange": "^4.2.130"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.7.2"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

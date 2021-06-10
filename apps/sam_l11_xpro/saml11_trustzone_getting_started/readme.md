@@ -49,12 +49,12 @@ nav_order: 1
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
 
-- [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)  
-- [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)  
-- [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)  
-- MPLAB Harmony 3 Launcher Plugin v3.6.2  
-- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)  
-- [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)  
+- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)  
+- [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)  
+- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)  
+- MPLAB Harmony 3 Launcher Plugin v3.6.4 and above  
+- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
+- [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)  
 - Any Serial Terminal application like Tera Term terminal application.  
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
@@ -65,6 +65,14 @@ nav_order: 1
 
   <img src = "images/hardware_setup.jpg" width="600" height="650">
 
+### Hardware Modification:
+- IO1 Xplained Pro features Microchip’s AT30TSE758 temperature sensor chip with an 8 kbit serial EEPROM.
+	  The temperature sensor has two TWI addresses: one for the temperature sensor and one for the EEPROM.
+	  The A2 address line of TWI must be soldered to 0. This is done to modify the address of the EEPROM
+	  on the I/O1 Xplained Pro Extension Kit so that it does not conflict with the address of EEPROM on
+	  SAM E70 Xplained Evaluation Kit. The modification changes the address of temperature sensor to 0x4B
+	  and EEPROM to 0x50. These modified addresses are used in this demo application
+  <img src = "images/hardware_modification.png" width="300" height="200" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps
@@ -132,5 +140,6 @@ The pre-built hex file can be programmed by following the below steps
 
 
 ## Revision:
+- v1.3.0 - Regenerated and tested application.
 - v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Released demo application
