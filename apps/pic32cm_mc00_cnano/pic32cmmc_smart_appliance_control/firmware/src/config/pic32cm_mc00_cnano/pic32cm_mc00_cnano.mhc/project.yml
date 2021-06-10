@@ -405,6 +405,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 910E341D5ED32041F91EEDD6DA77194D
+- generatedChecksum: 1D2094DFA60F847FFD4E8153B6E78027
+  logicalPath: config/pic32cm_mc00_cnano/driver
+  name: driver.h
+  physicalPath: driver
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1D2094DFA60F847FFD4E8153B6E78027
+- generatedChecksum: CC7DFCC51CD25171A3E400E18969354F
+  logicalPath: config/pic32cm_mc00_cnano/driver
+  name: driver_common.h
+  physicalPath: driver
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: CC7DFCC51CD25171A3E400E18969354F
 - generatedChecksum: 5CD4504EEB40FDC4A4F78CEE275375AB
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71.h

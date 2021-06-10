@@ -99,7 +99,7 @@ static void I2CBufferEventHandler(uintptr_t context)
 
 static void EIC_Button_Handler(uintptr_t context)
 {
-    button_pressed = ~button_pressed;
+    button_pressed = ((button_pressed + 1) & 0x01);
     if(button_pressed == false)
     {
         strcpy(appData.BLE_Cmd_buf, (char *)"FAN_OFF");

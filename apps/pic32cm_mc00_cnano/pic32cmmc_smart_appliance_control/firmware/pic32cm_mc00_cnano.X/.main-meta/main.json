@@ -10,21 +10,21 @@
 		"shortDescription": "Smart Appliance Control with BM71 Click on PIC32CM MC00 Curiosity Nano Evaluation kit",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.00"
 			}
 		],
 		"dfp": {
 			"name": "PIC32CM-MC_DFP",
-			"semverRange": "^1.0.36"
+			"semverRange": "^1.2.52"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.7.2"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
