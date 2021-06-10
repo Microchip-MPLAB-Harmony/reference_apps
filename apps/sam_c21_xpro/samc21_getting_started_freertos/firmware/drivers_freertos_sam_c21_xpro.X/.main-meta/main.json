@@ -1,0 +1,88 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samc21_getting_started_freertos",
+		"version": "1.3.0",
+		"displayName": "Getting Started with Harmony v3 Drivers on SAM C21 MCU Using FreeRTOS",
+		"projectName": "getting_started_drivers_freertos_sam_c21_xpro",
+		"shortDescription": "Demonstrates how to get started using Harmony drivers for peripherals like SERCOM(USART), SERCOM(I2C) with FreeRTOS and the basic peripherals like PORTS",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.00"
+			}
+		],
+		"dfp": {
+			"name": "SAMC21_DFP",
+			"semverRange": "^3.5.95"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.7.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21J18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM C21 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"PORTS", "SERCOM(USART)", "SERCOM(I2C)"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21J18A",
+			"SAMC21 Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"I2C",
+			"SERCOM",
+			"FLEXCOM",
+			"Getting Started",
+			"PORTS",
+			"Temperature",
+			"Sensor",
+			"SAM C21",
+			"SAMC21",
+			"Xplained Pro",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit",
+			"Driver",
+			"Synchronous",
+			"FreeRTOS"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
