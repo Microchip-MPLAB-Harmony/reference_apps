@@ -330,7 +330,7 @@ int8_t chip_wake(void)
     {
         ret = nm_read_reg_with_ret(CLOCKS_EN_REG, (uint32_t *)&clk_status_reg);
         if(ret != M2M_SUCCESS) {
-            M2M_ERR("Bus error (5).%d %x\n",ret,clk_status_reg);
+            M2M_ERR("Bus error (5).%d %" PRIx32 "\r\n",ret,clk_status_reg);
             goto _WAKE_EXIT;
         }
         if(clk_status_reg & NBIT2) {

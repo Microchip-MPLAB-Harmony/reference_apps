@@ -55,8 +55,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "system_config.h"
-#include "system_definitions.h"
 #include "wdrv_winc.h"
 
 // DOM-IGNORE-BEGIN

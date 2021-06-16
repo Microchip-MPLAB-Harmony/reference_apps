@@ -55,6 +55,12 @@
   Section: Module-Only Globals and Functions
   ***************************************************************************/
 
+#include "sys/kmem.h"
+
+#define CACHE_ALIGN_CHECK  (CACHE_LINE_SIZE - 1)
+
+uint8_t CACHE_ALIGN mpfsAlignedBuffer[SYS_FS_ALIGNED_BUFFER_LEN] __ALIGNED(CACHE_LINE_SIZE);
+
 /* Array of File Objects. */
 static MPFS_FILE_OBJ CACHE_ALIGN gSysMpfsFileObj[SYS_FS_MAX_FILES];
 
@@ -162,7 +168,7 @@ static int MPFSFindFile
     uint8_t *ptr = NULL;
     int32_t index = 0;
     uint16_t hash = 0;
-    static uint16_t CACHE_ALIGN hashBuffer[CACHE_LINE_SIZE] = {0};
+    static uint16_t CACHE_ALIGN hashBuffer[32] = {0};
     static uint8_t CACHE_ALIGN fileName[(SYS_FS_FILE_NAME_LEN + ((SYS_FS_FILE_NAME_LEN%CACHE_LINE_SIZE)? (CACHE_LINE_SIZE - (SYS_FS_FILE_NAME_LEN%CACHE_LINE_SIZE)) : 0))];
 
     /* Calculate the hash value for the file name. */
@@ -228,20 +234,81 @@ static bool MPFSDiskRead
     SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
     SYS_FS_MEDIA_COMMAND_STATUS commandStatus = SYS_FS_MEDIA_COMMAND_UNKNOWN;
 
-    commandHandle = SYS_FS_MEDIA_MANAGER_Read (diskNum, destination, source, nBytes);
+    uint32_t bytesToTransfer    = nBytes;
+    uint32_t currentXferLen     = 0;
 
-    if (commandHandle == SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID)
+    /* Use Aligned Buffer if input buffer is in Cacheable address space and
+     * is not aligned to cache line size OR if the input buffer is in Cacheable address and the size is not a multiple of cache line */
+    if (((IS_KVA0((uint8_t *)destination) == true) && (((uint32_t)destination & CACHE_ALIGN_CHECK) != 0)) ||
+       ((IS_KVA0((uint8_t *)destination) == true) && ((nBytes % CACHE_LINE_SIZE) != 0)))
     {
-        return false;
+        /* When aligned buffer is used the total number of bytes will be divided by the aligned
+         * buffer size and will be sent to drivers in iterations.
+         * As the total number of bytes are now divided into chunks it may effect the overall throughput.
+         * Increasing the length of the buffer will increase the throughput but consume more RAM memory.
+        */
+
+        while (bytesToTransfer > 0)
+        {
+            /* Calculate the number of bytes to be transferred with current request */
+            if (bytesToTransfer > SYS_FS_ALIGNED_BUFFER_LEN)
+            {
+                currentXferLen  = SYS_FS_ALIGNED_BUFFER_LEN;
+            }
+            else
+            {
+                currentXferLen  = bytesToTransfer;
+            }
+
+            commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
+            commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
+
+            commandHandle = SYS_FS_MEDIA_MANAGER_Read (diskNum, mpfsAlignedBuffer, source, currentXferLen);
+
+            if (commandHandle == SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID)
+            {
+                return false;
+            }
+
+            commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
+
+            while ( (commandStatus == SYS_FS_MEDIA_COMMAND_IN_PROGRESS) ||
+                    (commandStatus == SYS_FS_MEDIA_COMMAND_QUEUED))
+            {
+                SYS_FS_MEDIA_MANAGER_TransferTask (diskNum);
+                commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
+            }
+
+            if (commandStatus != SYS_FS_MEDIA_COMMAND_COMPLETED)
+            {
+                return false;
+            }
+
+            /* Copy the received data from aligned buffer to actual buffer */
+            memcpy(destination, mpfsAlignedBuffer, currentXferLen);
+
+            bytesToTransfer -= currentXferLen;
+            destination     += currentXferLen;
+            source          += currentXferLen;
+        }
     }
-
-    commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
-
-    while ( (commandStatus == SYS_FS_MEDIA_COMMAND_IN_PROGRESS) ||
-            (commandStatus == SYS_FS_MEDIA_COMMAND_QUEUED))
+    else
     {
-        SYS_FS_MEDIA_MANAGER_TransferTask (diskNum);
+        commandHandle = SYS_FS_MEDIA_MANAGER_Read (diskNum, destination, source, nBytes);
+
+        if (commandHandle == SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID)
+        {
+            return false;
+        }
+
         commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
+
+        while ( (commandStatus == SYS_FS_MEDIA_COMMAND_IN_PROGRESS) ||
+                (commandStatus == SYS_FS_MEDIA_COMMAND_QUEUED))
+        {
+            SYS_FS_MEDIA_MANAGER_TransferTask (diskNum);
+            commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
+        }
     }
 
     return (commandStatus == SYS_FS_MEDIA_COMMAND_COMPLETED) ? true : false;
@@ -574,7 +641,7 @@ int MPFS_Stat
             else
             {
                 /* Populate the file details. */
-                strncpy (stat->lfname, file, fileLen);
+                memcpy (stat->lfname, file, fileLen);
                 stat->lfname[fileLen] = '\0';
             }
         }
@@ -586,7 +653,7 @@ int MPFS_Stat
         }
 
         /* Populate the file details. */
-        strncpy (stat->fname, file, fileLen);
+        memcpy (stat->fname, file, fileLen);
         stat->fname[fileLen] = '\0';
 
         stat->fattrib = fileRecord.flags;
@@ -749,7 +816,7 @@ int MPFS_DirRead
             else
             {
                 /* Populate the file details. */
-                strncpy (stat->lfname, (const char *)fileName, fileLen);
+                memcpy (stat->lfname, (const char *)fileName, fileLen);
                 stat->lfname[fileLen] = '\0';
             }
         }
@@ -760,7 +827,7 @@ int MPFS_DirRead
         }
 
         /* Populate the file details. */
-        strncpy (stat->fname, (const char *)fileName, fileLen);
+        memcpy (stat->fname, (const char *)fileName, fileLen);
         stat->fname[fileLen] = '\0';
 
         stat->fattrib = fileRecord.flags;

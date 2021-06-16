@@ -120,20 +120,23 @@ typedef struct
     /* Union of data structures for each authentication type. */
     union
     {
+        /* WEP authentication state. */
+        struct
+        {
+            /* The WEP key index in the range 1-4. */
+            uint8_t idx;
+            /* The WEP key size is 10 for WEP_40 and 26 for WEP_104. */
+            uint8_t size;
+            /* The WEP key. */
+            uint8_t key[WDRV_WINC_WEP_104_KEY_STRING_SIZE+1];
+        } WEP;
+
         /* WPA-PSK (Personal) authentication state. */
         struct
         {
             uint8_t size;
             uint8_t key[M2M_MAX_PSK_LEN];
         } WPAPerPSK;
-
-        /* WEP authentication state. */
-        struct
-        {
-            uint8_t idx;
-            uint8_t size;
-            uint8_t key[WEP_104_KEY_STRING_SIZE+1];
-        } WEP;
 
 #ifdef WDRV_WINC_DEVICE_ENTERPRISE_CONNECT
         /* 802.1x (MS-CHAPv2) authentication state. */
@@ -279,7 +282,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetOpen
     Configure an authentication context for WEP authentication.
 
   Description:
-    The type and state information are configured appropriately for WEP
+    The auth type and information are configured appropriately for WEP
       authentication.
 
   Precondition:

@@ -49,7 +49,6 @@
 // *****************************************************************************
 
 #include "app.h"
-#include "wdrv_winc_stack_drv.h"
 #include "wdrv_winc.h"
 #include "tcpip/src/tcpip_manager_control.h"
 extern void LEDinit(void);
@@ -105,6 +104,7 @@ APP_DATA appData;
 /* TODO:  Add any necessary callback functions.
 */
 
+static DRV_HANDLE wdrvHandle;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -112,70 +112,23 @@ APP_DATA appData;
 // *****************************************************************************
 
 APP_LED_STATE LEDstate = APP_LED_STATE_OFF;
-void _APP_WINCInit( void )
-{    
-    WDRV_WINC_BSS_CONTEXT BSSCtx;
-    WDRV_WINC_AUTH_CONTEXT authCtx;
-    
-    /* Obtain an interface handle for WINC1500 MAC */
-    TCPIP_NET_IF *pNetIf = TCPIP_STACK_MACIdToNet(TCPIP_MODULE_MAC_WINC);
-    
-    /* register a 'printf' style function to print colsole logs from wifi driver */
-    WDRV_WINC_DebugRegisterCallback(SYS_CMD_PRINT);
-    
-    /* This demo uses WINC1500 in station mode */
-    WDRV_WINC_MACOperatingModeSet(pNetIf->hIfMac, WDRV_WINC_OP_MODE_AP);
-    
-    /* Turn on WINC MAC auto-connect so that wifi driver's state machine initiates connection 
-     * attempt to the specified AP */
-    WDRV_WINC_MACAutoConnectSet(pNetIf->hIfMac, true);    
-    
-    /* Obtain the internal BSS context of WINC MAC */
-    WDRV_WINC_MACBSSCtxGet(pNetIf->hIfMac, &BSSCtx);
-    
-    /* Reset the internal BSS context */
-    WDRV_WINC_BSSCtxSetDefaults(&BSSCtx);
-    
-    /* Prepare the BSS context with desired AP's parameters */
-    WDRV_WINC_BSSCtxSetChannel(&BSSCtx, WLAN_CHANNEL);
-    WDRV_WINC_BSSCtxSetSSID(&BSSCtx, (uint8_t*)WLAN_SSID, strlen(WLAN_SSID));
-    
-    /* Save the internal BSS context */
-    WDRV_WINC_MACBSSCtxSet(pNetIf->hIfMac, &BSSCtx);
-    
-    /* Obtain the internal Authorization context of WINC MAC */
-    WDRV_WINC_MACAuthCtxGet(pNetIf->hIfMac, &authCtx);
-    
-    /* Reset the internal Auth context */
-    WDRV_WINC_AuthCtxSetDefaults(&authCtx);
-    
-    /* Prepare the Auth context with desired AP's Security settings */    
-    if (WDRV_WINC_AUTH_TYPE_OPEN == WLAN_AUTH)
-    {
-        WDRV_WINC_AuthCtxSetOpen(&authCtx);
-    }
-    else if (WDRV_WINC_AUTH_TYPE_WPA_PSK == WLAN_AUTH)
-    {
-        WDRV_WINC_AuthCtxSetWPA(&authCtx, (uint8_t*)WLAN_WPA_PASSPHRASE, strlen(WLAN_WPA_PASSPHRASE));
-    }
-    else if (WDRV_WINC_AUTH_TYPE_WEP == WLAN_AUTH)
-    {
-        WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEP_KEY_INDEX, (uint8_t*)WLAN_WEP_KEY, strlen(WLAN_WEP_KEY));
-    }
-    else  
-    {
-        // other type not considered for this demo. default to open.
-        WDRV_WINC_AuthCtxSetOpen(&authCtx);
-    }
-    
-}
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Initialization and State Machine Functions
 // *****************************************************************************
 // *****************************************************************************
-
+static void _APP_ConnectNotifyCallback(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE assocHandle, WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode)
+{
+    if (WDRV_WINC_CONN_STATE_CONNECTED == currentState)
+    {
+        SYS_CONSOLE_PRINT("\r\nAP Connected\r\n");
+    }
+    else if (WDRV_WINC_CONN_STATE_DISCONNECTED == currentState)
+    {
+        SYS_CONSOLE_PRINT("\r\nAP Disconnected\r\n");
+    }
+}
 /*******************************************************************************
   Function:
     void APP_Initialize ( void )
@@ -188,10 +141,7 @@ void APP_Initialize ( void )
 {
     
     /* Place the application state machine in its initial state. */
-    appData.state = APP_MOUNT_DISK;
-
-    /* Initialize WINC MAC */
-    _APP_WINCInit();           
+    appData.state = APP_STATE_INIT;         
     
     LEDinit();
 }
@@ -219,6 +169,60 @@ void APP_Tasks ( void )
 
     switch(appData.state)
     {
+         case APP_STATE_INIT:
+        {
+            if (SYS_STATUS_READY == WDRV_WINC_Status(sysObj.drvWifiWinc))
+            {
+                appData.state = APP_STATE_WDRV_INIT_READY;
+            }
+            break;
+        }
+
+        case APP_STATE_WDRV_INIT_READY:
+        {
+            wdrvHandle = WDRV_WINC_Open(0, 0);
+
+            if (DRV_HANDLE_INVALID != wdrvHandle)
+            {
+                WDRV_WINC_AUTH_CONTEXT authCtx;
+                WDRV_WINC_BSS_CONTEXT  bssCtx;
+
+                /* Reset the internal BSS context */
+                WDRV_WINC_BSSCtxSetDefaults(&bssCtx);
+
+                /* Prepare the BSS context with desired AP's parameters */
+                WDRV_WINC_BSSCtxSetChannel(&bssCtx, WLAN_CHANNEL);
+                WDRV_WINC_BSSCtxSetSSID(&bssCtx, (uint8_t*)WLAN_SSID, strlen(WLAN_SSID));
+
+                /* Reset the internal Auth context */
+                WDRV_WINC_AuthCtxSetDefaults(&authCtx);
+
+                /* Prepare the Auth context with desired AP's Security settings */
+                if (WDRV_WINC_AUTH_TYPE_OPEN == WLAN_AUTH)
+                {
+                    WDRV_WINC_AuthCtxSetOpen(&authCtx);
+                }
+                else if (WDRV_WINC_AUTH_TYPE_WPA_PSK == WLAN_AUTH)
+                {
+                    WDRV_WINC_AuthCtxSetWPA(&authCtx, (uint8_t*)WLAN_WPA_PASSPHRASE, strlen(WLAN_WPA_PASSPHRASE));
+                }
+                else if (WDRV_WINC_AUTH_TYPE_WEP == WLAN_AUTH)
+                {
+                    WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEP_KEY_INDEX, (uint8_t*)WLAN_WEP_KEY, strlen(WLAN_WEP_KEY));
+                }
+                else
+                {
+                    // other type not considered for this demo. default to open.
+                    WDRV_WINC_AuthCtxSetOpen(&authCtx);
+                }
+
+                if (WDRV_WINC_STATUS_OK == WDRV_WINC_APStart(wdrvHandle, &bssCtx, &authCtx, NULL,&_APP_ConnectNotifyCallback))
+                {
+                    appData.state = APP_MOUNT_DISK;
+                }
+            }
+            break;
+        }
         case APP_MOUNT_DISK:
             if(SYS_FS_Mount(APP_SYS_FS_NVM_VOL, APP_SYS_FS_MOUNT_POINT, APP_SYS_FS_TYPE, 0, NULL) == 0)
             {
@@ -255,7 +259,7 @@ void APP_Tasks ( void )
                     netBiosName = TCPIP_STACK_NetBIOSName(netH);
 
 #if defined(TCPIP_STACK_USE_NBNS)
-                    SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS enabled\r\n", netName, netBiosName);
+                  //  SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS enabled\r\n", netName, netBiosName);
 #else
                     SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS disabled\r\n", netName, netBiosName);
 #endif // defined(TCPIP_STACK_USE_NBNS)
@@ -296,6 +300,7 @@ void APP_Tasks ( void )
                 if(dwLastIP[i].Val != ipAddr.Val)
                 {
                     dwLastIP[i].Val = ipAddr.Val;
+                    
                     SYS_CONSOLE_PRINT("%s IP Address: %d.%d.%d.%d \r\n",
                             TCPIP_STACK_NetNameGet(netH),
                             ipAddr.v[0], ipAddr.v[1], ipAddr.v[2], ipAddr.v[3]);

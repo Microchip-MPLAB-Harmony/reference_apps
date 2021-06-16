@@ -52,6 +52,7 @@
 #include <ctype.h>
 #include <stdint.h>
 #include <stdbool.h>
+
 #include "system/system_module.h"
 
 // DOM-IGNORE-BEGIN
@@ -59,6 +60,44 @@
     extern "C" {
 #endif
 // DOM-IGNORE-END
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: PIC32MZW Driver System Data Types
+// *****************************************************************************
+// *****************************************************************************
+
+#define WDRV_WINC_SYS_IDX_0         0
+
+/*  WiFi Control Initialization Data
+
+  Summary:
+    Data that's passed to the Control instance.
+
+  Description:
+    This structure defines the Control instance initialization.
+
+*/
+
+typedef struct
+{
+} WDRV_WINC_SYS_INIT;
+
+/*  WiFi MAC Initialization Data
+
+  Summary:
+    Data that's passed to the MAC at initialization time as part of the
+    TCPIP_MAC_INIT data structure.
+
+  Description:
+    This structure defines the MAC initialization data for the
+    WiFi MAC/Ethernet controller.
+
+*/
+
+typedef struct
+{
+} TCPIP_MODULE_MAC_WINC_CONFIG;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -239,6 +278,36 @@ void WDRV_WINC_Reinitialize
 */
 
 SYS_STATUS WDRV_WINC_Status(SYS_MODULE_OBJ object);
+
+#ifndef WDRV_WINC_NETWORK_MODE_SOCKET
+//*******************************************************************************
+/*
+  Function:
+    void WDRV_WINC_MACTasks(SYS_MODULE_OBJ object)
+
+  Summary:
+    Maintains the WINC MAC drivers state machine.
+
+  Description:
+    This function is used to maintain the driver's internal state machine.
+
+  Precondition:
+    WDRV_WINC_Initialize must have been called before calling this function.
+
+  Parameters:
+    object  - Driver object handle, returned from WDRV_WINC_Initialize
+
+  Returns:
+    None.
+
+  Remarks:
+    This function is normally not called directly by an application. It is
+      called by the TCP/IP stack.
+
+*/
+
+void WDRV_WINC_MACTasks(SYS_MODULE_OBJ object);
+#endif
 
 //*******************************************************************************
 /*

@@ -61,7 +61,7 @@ SPI_OBJECT spi3Obj;
 
 void SPI3_Initialize ( void )
 {
-    uint32_t rdata;
+    uint32_t rdata = 0U;
 
     /* Disable SPI3 Interrupts */
     IEC4CLR = 0x4000000;
@@ -164,7 +164,7 @@ bool SPI3_Read(void* pReceiveData, size_t rxSize)
 bool SPI3_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;
-    uint32_t dummyData;
+    uint32_t dummyData = 0U;
 
     /* Verify the request */
     if((((txSize > 0) && (pTransmitData != NULL)) || ((rxSize > 0) && (pReceiveData != NULL))) && (spi3Obj.transferIsBusy == false))

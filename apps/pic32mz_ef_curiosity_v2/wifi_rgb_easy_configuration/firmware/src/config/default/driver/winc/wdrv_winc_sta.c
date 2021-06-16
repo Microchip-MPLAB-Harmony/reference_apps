@@ -55,6 +55,47 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#ifdef WDRV_WINC_NETWORK_MODE_SOCKET
+static bool _WDRV_WINC_ConnNetCfg(WDRV_WINC_CTRLDCPT *const pCtrl)
+{
+    if ((false == pCtrl->useDHCP) && (0 != pCtrl->ipAddress))
+    {
+        /* If not using DHCP, turn off DHCP on the WINC and config the IP
+           address and subnet, gateway and DNS server static addresses. */
+        tstrM2MIPConfig pIPConfig;
+
+        if (M2M_SUCCESS != m2m_wifi_enable_dhcp(0))
+        {
+            return false;
+        }
+
+        pIPConfig.u32DNS        = pCtrl->dnsServerAddress;
+        pIPConfig.u32Gateway    = pCtrl->gatewayAddress;
+        pIPConfig.u32StaticIP   = pCtrl->ipAddress;
+        pIPConfig.u32SubnetMask = pCtrl->netMask;
+
+        if (M2M_SUCCESS != m2m_wifi_set_static_ip(&pIPConfig))
+        {
+            return false;
+        }
+
+        pCtrl->useDHCP = false;
+    }
+    else
+    {
+        if (M2M_SUCCESS != m2m_wifi_enable_dhcp(1))
+        {
+            return false;
+        }
+
+        pCtrl->useDHCP   = true;
+        pCtrl->ipAddress = 0;
+    }
+
+    return true;
+}
+#endif
+
 //*******************************************************************************
 /*
   Function:
@@ -94,7 +135,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
 #endif
 
     /* Ensure the driver handle and user pointer is valid. */
-    if ((NULL == pDcpt) || (NULL == pBSSCtx))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pBSSCtx))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -126,7 +167,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
 
 #ifndef WDRV_WINC_NETWORK_MODE_SOCKET
     /* Ethernet mode must have the Ethernet buffer set. */
-    if (false == pDcpt->isEthBufSet)
+    if (false == pDcpt->pCtrl->isEthBufSet)
     {
         return WDRV_WINC_STATUS_NO_ETH_BUFFER;
     }
@@ -135,50 +176,15 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
     /* Set the channel, translating the all channel identifier if needed. */
     channel = pBSSCtx->channel;
 
-    if (WDRV_WINC_ALL_CHANNELS == channel)
+    if ((WDRV_WINC_ALL_CHANNELS == channel) || (WDRV_WINC_CID_ANY == channel))
     {
         channel = M2M_WIFI_CH_ALL;
     }
 
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    if ((false == pDcpt->useDHCP) && (0 != pDcpt->ipAddress))
+    if (false == _WDRV_WINC_ConnNetCfg(pDcpt->pCtrl))
     {
-        /* If not using DHCP, turn off DHCP on the WINC and config the IP
-           address and subnet, gateway and DNS server static addresses. */
-        tstrM2MIPConfig pIPConfig;
-
-        result = m2m_wifi_enable_dhcp(0);
-
-        if (M2M_SUCCESS != result)
-        {
-            return WDRV_WINC_STATUS_CONNECT_FAIL;
-        }
-
-        pIPConfig.u32DNS        = pDcpt->dnsServerAddress;
-        pIPConfig.u32Gateway    = pDcpt->gatewayAddress;
-        pIPConfig.u32StaticIP   = pDcpt->ipAddress;
-        pIPConfig.u32SubnetMask = pDcpt->netMask;
-
-        result = m2m_wifi_set_static_ip(&pIPConfig);
-
-        if (M2M_SUCCESS != result)
-        {
-            return WDRV_WINC_STATUS_CONNECT_FAIL;
-        }
-
-        pDcpt->useDHCP = false;
-    }
-    else
-    {
-        result = m2m_wifi_enable_dhcp(1);
-
-        if (M2M_SUCCESS != result)
-        {
-            return WDRV_WINC_STATUS_CONNECT_FAIL;
-        }
-
-        pDcpt->useDHCP   = true;
-        pDcpt->ipAddress = 0;
+        return WDRV_WINC_STATUS_CONNECT_FAIL;
     }
 #endif
 
@@ -194,7 +200,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
 
     networkID.pu8Ssid = (uint8_t*)pBSSCtx->ssid.name;
     networkID.u8SsidLen = pBSSCtx->ssid.length;
-    networkID.enuChannel = pBSSCtx->channel;
+    networkID.enuChannel = channel;
 #endif
 
     if ((NULL == pAuthCtx) || (WDRV_WINC_AUTH_TYPE_OPEN == pAuthCtx->authType))
@@ -216,7 +222,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
 
         pskLength = pAuthCtx->authInfo.WPAPerPSK.size;
 
-        if ((M2M_MAX_PSK_LEN-1) == pskLength)
+        if (WDRV_WINC_PSK_LEN == pskLength)
         {
             pskParams.pu8Psk          = (uint8_t*)pAuthCtx->authInfo.WPAPerPSK.key;
             pskParams.pu8Passphrase   = NULL;
@@ -363,10 +369,10 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
         return WDRV_WINC_STATUS_CONNECT_FAIL;
     }
 
-    pDcpt->pfConnectNotifyCB   = pfNotifyCallback;
-    pDcpt->isConnected         = false;
+    pDcpt->pCtrl->pfConnectNotifyCB   = pfNotifyCallback;
+    pDcpt->pCtrl->isConnected         = false;
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pDcpt->haveIPAddress       = false;
+    pDcpt->pCtrl->haveIPAddress       = false;
 #endif
 
     return WDRV_WINC_STATUS_OK;
@@ -401,7 +407,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSReconnect
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -413,16 +419,21 @@ WDRV_WINC_STATUS WDRV_WINC_BSSReconnect
     }
 
     /* Ensure WINC is not connected. */
-    if (true == pDcpt->isConnected)
+    if (true == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
 #ifndef WDRV_WINC_NETWORK_MODE_SOCKET
     /* For Ethernet mode ensure Ethernet buffer is allocated. */
-    if (false == pDcpt->isEthBufSet)
+    if (false == pDcpt->pCtrl->isEthBufSet)
     {
         return WDRV_WINC_STATUS_NO_ETH_BUFFER;
+    }
+#else
+    if (false == _WDRV_WINC_ConnNetCfg(pDcpt->pCtrl))
+    {
+        return WDRV_WINC_STATUS_CONNECT_FAIL;
     }
 #endif
 
@@ -432,10 +443,10 @@ WDRV_WINC_STATUS WDRV_WINC_BSSReconnect
         return WDRV_WINC_STATUS_CONNECT_FAIL;
     }
 
-    pDcpt->pfConnectNotifyCB   = pfNotifyCallback;
-    pDcpt->isConnected         = false;
+    pDcpt->pCtrl->pfConnectNotifyCB   = pfNotifyCallback;
+    pDcpt->pCtrl->isConnected         = false;
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pDcpt->haveIPAddress       = false;
+    pDcpt->pCtrl->haveIPAddress       = false;
 #endif
 
     return WDRV_WINC_STATUS_OK;
@@ -462,7 +473,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSDisconnect(DRV_HANDLE handle)
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -474,7 +485,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSDisconnect(DRV_HANDLE handle)
     }
 
     /* Ensure WINC is not connected. */
-    if (false == pDcpt->isConnected)
+    if (false == pDcpt->pCtrl->isConnected)
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
@@ -485,11 +496,11 @@ WDRV_WINC_STATUS WDRV_WINC_BSSDisconnect(DRV_HANDLE handle)
         return WDRV_WINC_STATUS_DISCONNECT_FAIL;
     }
 
-    pDcpt->isConnected    = false;
+    pDcpt->pCtrl->isConnected    = false;
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-    pDcpt->haveIPAddress  = false;
+    pDcpt->pCtrl->haveIPAddress  = false;
 #endif
-    pDcpt->assocInfoValid = false;
+    pDcpt->pCtrl->assocInfoValid = false;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -527,7 +538,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSRoamingConfigure
     int8_t result;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -536,12 +547,6 @@ WDRV_WINC_STATUS WDRV_WINC_BSSRoamingConfigure
     if (false == pDcpt->isOpen)
     {
         return WDRV_WINC_STATUS_NOT_OPEN;
-    }
-
-    /* Ensure WINC is not connected. */
-    if (false == pDcpt->isConnected)
-    {
-        return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
     result = M2M_ERR_FAIL;

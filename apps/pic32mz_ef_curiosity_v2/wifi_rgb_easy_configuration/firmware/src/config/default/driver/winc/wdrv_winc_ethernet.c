@@ -42,8 +42,6 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "system_config.h"
-#include "system_definitions.h"
 #include "wdrv_winc.h"
 #include "wdrv_winc_common.h"
 
@@ -88,8 +86,12 @@ WDRV_WINC_STATUS WDRV_WINC_EthernetRecvPacket
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle, supplied Ethernet buffer and callback are valid. */
-    if ((NULL == pDcpt) || (NULL == pEthBuf)
-                        || (0 == lengthEthBuf) || (NULL == pfEthMsgRecvCB))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    if ((NULL == pEthBuf) || (0 == lengthEthBuf) || (NULL == pfEthMsgRecvCB))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -107,10 +109,10 @@ WDRV_WINC_STATUS WDRV_WINC_EthernetRecvPacket
     }
 
     /* Store callback for later use. */
-    pDcpt->pfEthernetMsgRecvCB = pfEthMsgRecvCB;
+    pDcpt->pCtrl->pfEthernetMsgRecvCB = pfEthMsgRecvCB;
 
     /* Indicate the Ethernet buffer has been set. */
-    pDcpt->isEthBufSet = true;
+    pDcpt->pCtrl->isEthBufSet = true;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -146,7 +148,12 @@ WDRV_WINC_STATUS WDRV_WINC_EthernetSendPacket
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
 
     /* Ensure the driver handle and supplied Ethernet frame are valid. */
-    if ((NULL == pDcpt) || (NULL == pEthBuf) || (0 == lengthEthBuf))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    if ((NULL == pEthBuf) || (0 == lengthEthBuf))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }

@@ -84,7 +84,7 @@ WDRV_WINC_STATUS WDRV_WINC_PowerSaveSetMode
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -96,7 +96,7 @@ WDRV_WINC_STATUS WDRV_WINC_PowerSaveSetMode
     }
 
     /* Set the sleep mode. */
-    if (M2M_SUCCESS != m2m_wifi_set_sleep_mode(mode, pDcpt->powerSaveDTIMInterval ? 0 : 1))
+    if (M2M_SUCCESS != m2m_wifi_set_sleep_mode(mode, pDcpt->pCtrl->powerSaveDTIMInterval ? 1 : 0))
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
@@ -125,7 +125,7 @@ WDRV_WINC_PS_MODE WDRV_WINC_PowerSaveGetMode(DRV_HANDLE handle)
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return WDRV_WINC_PS_MODE_INVALID;
     }
@@ -171,7 +171,7 @@ WDRV_WINC_STATUS WDRV_WINC_PowerSaveSetBeaconInterval
     tstrM2mLsnInt listenIntervalOpt;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -182,6 +182,12 @@ WDRV_WINC_STATUS WDRV_WINC_PowerSaveSetBeaconInterval
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
 
+    /* Don't update WINC if interval hasn't changed. */
+    if (pDcpt->pCtrl->powerSaveDTIMInterval == numBeaconIntervals)
+    {
+        return WDRV_WINC_STATUS_OK;
+    }
+
     /* Set the listen period. */
     listenIntervalOpt.u16LsnInt = numBeaconIntervals;
 
@@ -190,7 +196,16 @@ WDRV_WINC_STATUS WDRV_WINC_PowerSaveSetBeaconInterval
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
 
-    pDcpt->powerSaveDTIMInterval = numBeaconIntervals;
+    /* If DTIM has changed from/to zero, update sleep mode to enable/disable broadcast tracking. */
+    if ((0 != numBeaconIntervals) || (0 != pDcpt->pCtrl->powerSaveDTIMInterval))
+    {
+        if (M2M_SUCCESS != m2m_wifi_set_sleep_mode(m2m_wifi_get_sleep_mode(), pDcpt->pCtrl->powerSaveDTIMInterval ? 1 : 0))
+        {
+            return WDRV_WINC_STATUS_REQUEST_ERROR;
+        }
+    }
+
+    pDcpt->pCtrl->powerSaveDTIMInterval = numBeaconIntervals;
 
     return WDRV_WINC_STATUS_OK;
 }
@@ -226,7 +241,7 @@ WDRV_WINC_STATUS WDRV_WINC_PowerSaveManualSleep
     WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)handle;
 
     /* Ensure the driver handle is valid. */
-    if (NULL == pDcpt)
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }

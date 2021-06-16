@@ -59,8 +59,12 @@
 #include "definitions.h"
 #include "osal/osal.h"
 #include "wdrv_winc_debug.h"
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+#include "include/winc.h"
+#else
 #include "m2m_wifi.h"
 #include "m2m_types.h"
+#endif
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
@@ -74,6 +78,83 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/* Maximum length of an SSID. */
+#define WDRV_WINC_MAX_SSID_LEN              32
+
+/* Address of a MAC address. */
+#define WDRV_WINC_MAC_ADDR_LEN              6
+
+/* Length of 40 bit WEP key. */
+#define WDRV_WINC_WEP_40_KEY_STRING_SIZE    10
+
+/* Length of 104 bit WEP key. */
+#define WDRV_WINC_WEP_104_KEY_STRING_SIZE   26
+
+/* Length of PSK (ASCII encoded binary). */
+#define WDRV_WINC_PSK_LEN                   64
+
+// *****************************************************************************
+/*  WiFi Channels
+
+  Summary:
+    A list of supported WiFi channels.
+
+  Description:
+    A list of supported WiFi channels.
+
+  Remarks:
+    None.
+
+*/
+
+typedef enum _WDRV_WINCCHANNEL_ID
+{
+    /* Any valid channel. */
+    WDRV_WINC_CID_ANY,
+
+    /* 2.4 GHz channel 1 - 2412 MHz. */
+    WDRV_WINC_CID_2_4G_CH1,
+
+    /* 2.4 GHz channel 2 - 2417 MHz. */
+    WDRV_WINC_CID_2_4G_CH2,
+
+    /* 2.4 GHz channel 3 - 2422 MHz. */
+    WDRV_WINC_CID_2_4G_CH3,
+
+    /* 2.4 GHz channel 4 - 2427 MHz. */
+    WDRV_WINC_CID_2_4G_CH4,
+
+    /* 2.4 GHz channel 5 - 2432 MHz. */
+    WDRV_WINC_CID_2_4G_CH5,
+
+    /* 2.4 GHz channel 6 - 2437 MHz. */
+    WDRV_WINC_CID_2_4G_CH6,
+
+    /* 2.4 GHz channel 7 - 2442 MHz. */
+    WDRV_WINC_CID_2_4G_CH7,
+
+    /* 2.4 GHz channel 8 - 2447 MHz. */
+    WDRV_WINC_CID_2_4G_CH8,
+
+    /* 2.4 GHz channel 9 - 2452 MHz. */
+    WDRV_WINC_CID_2_4G_CH9,
+
+    /* 2.4 GHz channel 10 - 2457 MHz. */
+    WDRV_WINC_CID_2_4G_CH10,
+
+    /* 2.4 GHz channel 11 - 2462 MHz. */
+    WDRV_WINC_CID_2_4G_CH11,
+
+    /* 2.4 GHz channel 12 - 2467 MHz. */
+    WDRV_WINC_CID_2_4G_CH12,
+
+    /* 2.4 GHz channel 13 - 2472 MHz. */
+    WDRV_WINC_CID_2_4G_CH13,
+
+    /* 2.4 GHz channel 14 - 2484 MHz. */
+    WDRV_WINC_CID_2_4G_CH14
+} WDRV_WINC_CHANNEL_ID;
+
 // *****************************************************************************
 /* WINC Driver All Channels
 
@@ -85,6 +166,7 @@
 
   Remarks:
     None.
+
 */
 
 #define WDRV_WINC_ALL_CHANNELS      0xff
@@ -101,6 +183,7 @@
 
   Remarks:
     None.
+
 */
 
 typedef enum _WDRV_WINC_STATUS
@@ -142,7 +225,10 @@ typedef enum _WDRV_WINC_STATUS
     WDRV_WINC_STATUS_NO_SPACE,
 
     /* No Ethernet buffer was available. */
-    WDRV_WINC_STATUS_NO_ETH_BUFFER
+    WDRV_WINC_STATUS_NO_ETH_BUFFER,
+
+    /* Unable to lock the request resource. */
+    WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR,
 } WDRV_WINC_STATUS;
 
 // *****************************************************************************
@@ -156,6 +242,7 @@ typedef enum _WDRV_WINC_STATUS
 
   Remarks:
     None.
+
 */
 
 typedef enum
@@ -164,8 +251,75 @@ typedef enum
     WDRV_WINC_CONN_STATE_DISCONNECTED /*DOM-IGNORE-BEGIN*/ = M2M_WIFI_DISCONNECTED /*DOM-IGNORE-END*/,
 
     /* Association state is connected. */
-    WDRV_WINC_CONN_STATE_CONNECTED /*DOM-IGNORE-BEGIN*/ = M2M_WIFI_CONNECTED /*DOM-IGNORE-END*/
+    WDRV_WINC_CONN_STATE_CONNECTED /*DOM-IGNORE-BEGIN*/ = M2M_WIFI_CONNECTED /*DOM-IGNORE-END*/,
+
+#ifdef WDRV_WINC_DEVICE_BSS_ROAMING
+    /* Association state has been updated due to roaming. */
+    WDRV_WINC_CONN_STATE_ROAMED /*DOM-IGNORE-BEGIN*/ = M2M_WIFI_ROAMED /*DOM-IGNORE-END*/
+#endif
 } WDRV_WINC_CONN_STATE;
+
+// *****************************************************************************
+/*  Transmit Data Rates
+
+  Summary:
+    Defines possible data rates.
+
+  Description:
+    Possible data rates.
+
+  Remarks:
+    None.
+
+*/
+
+typedef enum
+{
+    /* The lowest possible data rate. */
+    WDRV_WINC_DATA_RATE_LOWEST,
+    /* Any data rate. */
+    WDRV_WINC_DATA_RATE_ANY,
+    /* 1 Mbps  */
+    WDRV_WINC_DATA_RATE_1,
+    /* 2 Mbps  */
+    WDRV_WINC_DATA_RATE_2,
+    /* 5 Mbps  */
+    WDRV_WINC_DATA_RATE_5_5,
+    /* 11 Mbps */
+    WDRV_WINC_DATA_RATE_11,
+    /* 6 Mbps  */
+    WDRV_WINC_DATA_RATE_6,
+    /* 9 Mbps  */
+    WDRV_WINC_DATA_RATE_9,
+    /* 12 Mbps */
+    WDRV_WINC_DATA_RATE_12,
+    /* 18 Mbps */
+    WDRV_WINC_DATA_RATE_18,
+    /* 24 Mbps */
+    WDRV_WINC_DATA_RATE_24,
+    /* 36 Mbps */
+    WDRV_WINC_DATA_RATE_36,
+    /* 48 Mbps */
+    WDRV_WINC_DATA_RATE_48,
+    /* 54 Mbps */
+    WDRV_WINC_DATA_RATE_54,
+    /* MCS-0: 6.5 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_0,
+    /* MCS-1: 13 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_1,
+    /* MCS-2: 19.5 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_2,
+    /* MCS-3: 26 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_3,
+    /* MCS-4: 39 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_4,
+    /* MCS-5: 52 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_5,
+    /* MCS-6: 58.5 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_6,
+    /* MCS-7: 65 Mbps */
+    WDRV_WINC_DATA_RATE_MCS_7
+} WDRV_WINC_DATA_RATE;
 
 // *****************************************************************************
 /*  Connection Error
@@ -178,6 +332,7 @@ typedef enum
 
   Remarks:
     None.
+
 */
 
 typedef enum
@@ -201,16 +356,40 @@ typedef enum
 
   Remarks:
     None.
+
 */
 
 typedef struct _WDRV_WINC_SSID
 {
-    /* SSID name, up to 32 characters long. */
-    uint8_t name[32];
+    /* SSID name, up to WDRV_WINC_MAX_SSID_LEN characters long. */
+    uint8_t name[WDRV_WINC_MAX_SSID_LEN];
 
     /* Length of SSID name. */
     uint8_t length;
 } WDRV_WINC_SSID;
+
+// *****************************************************************************
+/*  SSID Linked List
+
+  Summary:
+    Structure to hold an SSID linked list element.
+
+  Description:
+    An element structure which can form part of an SSID linked list.
+
+  Remarks:
+    None.
+
+*/
+
+typedef struct _WDRV_WINC_SSID_LIST
+{
+    /* Pointer to next SSID element in list. */
+    struct _WDRV_WINC_SSID_LIST *pNext;
+
+    /* SSID structure. */
+    WDRV_WINC_SSID ssid;
+} WDRV_WINC_SSID_LIST;
 
 // *****************************************************************************
 /*  MAC Address
@@ -223,16 +402,48 @@ typedef struct _WDRV_WINC_SSID
 
   Remarks:
     None.
+
 */
 
 typedef struct _WDRV_WINC_MAC_ADDR
 {
-    /* MAC address, must be M2M_MAC_ADDRES_LEN characters long. */
-    uint8_t addr[M2M_MAC_ADDRES_LEN];
+    /* MAC address, must be WDRV_WINC_MAC_ADDR_LEN characters long. */
+    uint8_t addr[WDRV_WINC_MAC_ADDR_LEN];
 
     /* Is the address valid? */
     bool valid;
 } WDRV_WINC_MAC_ADDR;
+
+// *****************************************************************************
+/*  Association Handle
+
+  Summary:
+    A handle representing an association instance.
+
+  Description:
+    An association handle references a single association instance between AP and STA.
+
+  Remarks:
+    None.
+
+*/
+
+typedef uintptr_t WDRV_WINC_ASSOC_HANDLE;
+
+// *****************************************************************************
+/* Invalid Association Handle
+
+ Summary:
+    Invalid association handle.
+
+ Description:
+    Defines a value for an association handle which isn't yet valid.
+
+ Remarks:
+    None.
+*/
+
+#define WDRV_WINC_ASSOC_HANDLE_INVALID  (((WDRV_WINC_ASSOC_HANDLE) -1))
 
 // *****************************************************************************
 /*  Connection Notify Callback
@@ -246,6 +457,7 @@ typedef struct _WDRV_WINC_MAC_ADDR
 
   Parameters:
     handle          - Client handle obtained by a call to WDRV_WINC_Open.
+    assocHandle     - Association handle.
     currentState    - Current connection state.
     errorCode       - Error code.
 
@@ -254,44 +466,15 @@ typedef struct _WDRV_WINC_MAC_ADDR
 
   Remarks:
     None.
+
 */
 
 typedef void (*WDRV_WINC_BSSCON_NOTIFY_CALLBACK)
 (
     DRV_HANDLE handle,
+    WDRV_WINC_ASSOC_HANDLE assocHandle,
     WDRV_WINC_CONN_STATE currentState,
     WDRV_WINC_CONN_ERROR errorCode
-);
-
-// *****************************************************************************
-/* Generic Status Callback Function Pointer
-
-  Summary:
-    Pointer to a generic status callback function.
-
-  Description:
-    This defines a generic status function callback type which can be passed
-    into certain functions to receive feedback.
-
-  Parameters:
-    handle  - Client handle obtained by a call to WDRV_WINC_Open.
-    status  - A status value.
-
-  Returns:
-    None.
-
-  Remarks:
-    The value of the status passed to the function is dependant on the function
-    used to register the callback.
-
-    See WDRV_WINC_OTAUpdateFromURL, WDRV_WINC_SwitchActiveFirmwareImage,
-    WDRV_WINC_HostFileRead and WDRV_WINC_HostFileErase.
-*/
-
-typedef void (*WDRV_WINC_STATUS_CALLBACK)
-(
-    DRV_HANDLE handle,
-    uint8_t status
 );
 
 // *****************************************************************************

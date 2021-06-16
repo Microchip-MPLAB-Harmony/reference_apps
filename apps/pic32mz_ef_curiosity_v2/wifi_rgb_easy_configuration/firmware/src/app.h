@@ -121,8 +121,11 @@
 
 typedef enum
 {
+    
+    APP_STATE_INIT=0,
+    APP_STATE_WDRV_INIT_READY,
     /* The application mounts the disk. */
-    APP_MOUNT_DISK = 0,
+    APP_MOUNT_DISK,
 
     /* In this state, the application waits for the initialization of the TCP/IP stack
        to complete. */

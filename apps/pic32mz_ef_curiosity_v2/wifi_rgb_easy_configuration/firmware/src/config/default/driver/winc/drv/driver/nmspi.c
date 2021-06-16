@@ -530,7 +530,7 @@ static int8_t spi_write_reg(uint32_t u32Addr, uint32_t u32Val)
 
     if (spi_cmd(cmd, u32Addr, u32Val, 4, clockless) != N_OK)
     {
-        M2M_ERR("[spi_write_reg]: Failed cmd, write reg (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_write_reg]: Failed cmd, write reg (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
@@ -541,7 +541,7 @@ static int8_t spi_write_reg(uint32_t u32Addr, uint32_t u32Val)
 
     if (spi_cmd_rsp(cmd) != N_OK)
     {
-        M2M_ERR("[spi_write_reg]: Failed cmd response, write reg (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_write_reg]: Failed cmd response, write reg (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
@@ -558,13 +558,13 @@ static int8_t spi_write_block(uint32_t u32Addr, uint8_t *puBuf, uint16_t u16Sz)
     **/
     if (spi_cmd(CMD_DMA_EXT_WRITE, u32Addr, 0, u16Sz, 0) != N_OK)
     {
-        M2M_ERR("[spi_write_block]: Failed cmd, write block (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_write_block]: Failed cmd, write block (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
     if (spi_cmd_rsp(CMD_DMA_EXT_WRITE) != N_OK)
     {
-        M2M_ERR("[spi_write_block]: Failed cmd response, write block (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_write_block]: Failed cmd response, write block (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
@@ -616,13 +616,13 @@ static int8_t spi_read_reg(uint32_t u32Addr, uint32_t* pu32RetVal)
 
     if (spi_cmd(cmd, u32Addr, 0, 4, clockless) != N_OK)
     {
-        M2M_ERR("[spi_read_reg]: Failed cmd, read reg (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_read_reg]: Failed cmd, read reg (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
     if (spi_cmd_rsp(cmd) != N_OK)
     {
-        M2M_ERR("[spi_read_reg]: Failed cmd response, read reg (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_read_reg]: Failed cmd response, read reg (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
@@ -648,13 +648,13 @@ static int8_t spi_read_block(uint32_t u32Addr, uint8_t *puBuf, uint16_t u16Sz)
     **/
     if (spi_cmd(CMD_DMA_EXT_READ, u32Addr, 0, u16Sz, 0) != N_OK)
     {
-        M2M_ERR("[spi_read_block]: Failed cmd, read block (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_read_block]: Failed cmd, read block (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
     if (spi_cmd_rsp(CMD_DMA_EXT_READ) != N_OK)
     {
-        M2M_ERR("[spi_read_block]: Failed cmd response, read block (%08x)...\r\n", u32Addr);
+        M2M_ERR("[spi_read_block]: Failed cmd response, read block (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
     }
 
@@ -839,7 +839,7 @@ int8_t nm_spi_read_reg_with_ret(uint32_t u32Addr, uint32_t* pu32RetVal)
             return M2M_SUCCESS;
         }
 
-        M2M_ERR("Reset and retry %d %x\r\n", retry, u32Addr);
+        M2M_ERR("Reset and retry %d %" PRIx32 "\r\n", retry, u32Addr);
         spi_reset();
     }
 
@@ -876,7 +876,7 @@ int8_t nm_spi_write_reg(uint32_t u32Addr, uint32_t u32Val)
             return M2M_SUCCESS;
         }
 
-        M2M_ERR("Reset and retry %d %x %x\r\n", retry, u32Addr, u32Val);
+        M2M_ERR("Reset and retry %d %" PRIx32 " %" PRIx32 "\r\n", retry, u32Addr, u32Val);
         spi_reset();
     }
 
@@ -930,7 +930,7 @@ int8_t nm_spi_read_block(uint32_t u32Addr, uint8_t *puBuf, uint16_t u16Sz)
             return M2M_SUCCESS;
         }
 
-        M2M_ERR("Reset and retry %d %x %d\r\n", retry, u32Addr, u16Sz);
+        M2M_ERR("Reset and retry %d %" PRIx32 " %d\r\n", retry, u32Addr, u16Sz);
         spi_reset();
     }
 
@@ -973,7 +973,7 @@ int8_t nm_spi_write_block(uint32_t u32Addr, uint8_t *puBuf, uint16_t u16Sz)
             return M2M_SUCCESS;
         }
 
-        M2M_ERR("Reset and retry %d %x %d\r\n", retry, u32Addr, u16Sz);
+        M2M_ERR("Reset and retry %d %" PRIx32 " %d\r\n", retry, u32Addr, u16Sz);
         spi_reset();
     }
 

@@ -4,6 +4,13 @@ attributes: {id: spi3}
 children:
 - type: Symbols
   children:
+  - type: Boolean
+    attributes: {id: SPIS_SLAVE_SELECT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi3, value: 'true'}
   - type: Integer
     attributes: {id: SPI_BRG_VALUE}
     children:
@@ -43,6 +50,12 @@ children:
   - type: KeyValueSet
     attributes: {id: SPI_MSTR_MODE_EN}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic

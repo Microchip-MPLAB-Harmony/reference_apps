@@ -33,7 +33,7 @@
    may not be faster on all
 */
 #include <wolfssl/wolfcrypt/types.h>       /* will set MP_xxBIT if not default */
-#ifdef WOLFSSL_SP_MATH
+#if defined(WOLFSSL_SP_MATH) || defined(WOLFSSL_SP_MATH_ALL)
     #include <wolfssl/wolfcrypt/sp_int.h>
 #elif defined(USE_FAST_MATH)
     #include <wolfssl/wolfcrypt/tfm.h>
@@ -42,7 +42,11 @@
 #include <wolfssl/wolfcrypt/random.h>
 
 #ifndef CHAR_BIT
-    #include <limits.h>
+    #if defined(WOLFSSL_LINUXKM)
+        #include <linux/limits.h>
+    #else
+        #include <limits.h>
+    #endif
 #endif
 
 #include <wolfssl/wolfcrypt/mpi_class.h>
@@ -68,7 +72,7 @@ extern "C" {
 
 
 /* detect 64-bit mode if possible */
-#if defined(__x86_64__) && !(defined (_MSC_VER) && defined(__clang__))
+#if (defined(__x86_64__) || defined(__aarch64__)) && !(defined (_MSC_VER) && defined(__clang__))
    #if !(defined(MP_64BIT) && defined(MP_16BIT) && defined(MP_8BIT))
       #define MP_64BIT
    #endif
@@ -157,7 +161,7 @@ extern "C" {
 #define MP_OKAY       0   /* ok result */
 #define MP_MEM        -2  /* out of mem */
 #define MP_VAL        -3  /* invalid input */
-#define MP_NOT_INF	  -4  /* point not at infinity */
+#define MP_NOT_INF    -4  /* point not at infinity */
 #define MP_RANGE      MP_NOT_INF
 
 #define MP_YES        1   /* yes response */
@@ -301,6 +305,7 @@ MP_API int  mp_div_2d (mp_int * a, int b, mp_int * c, mp_int * d);
 MP_API void mp_zero (mp_int * a);
 MP_API void mp_clamp (mp_int * a);
 MP_API void mp_exch (mp_int * a, mp_int * b);
+MP_API int  mp_cond_swap_ct (mp_int * a, mp_int * b, int c, int m);
 MP_API void mp_rshd (mp_int * a, int b);
 MP_API void mp_rshb (mp_int * a, int b);
 MP_API int  mp_mod_2d (mp_int * a, int b, mp_int * c);

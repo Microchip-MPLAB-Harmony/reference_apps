@@ -47,11 +47,15 @@
 #include "wdrv_winc.h"
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_nvm.h"
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+#include "include/winc.h"
+#else
 #include "spi_flash.h"
 #ifdef WDRV_WINC_DEVICE_FLEXIBLE_FLASH_MAP
 #include "flexible_flash.h"
 #endif
 #include "spi_flash_map.h"
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -165,6 +169,11 @@ static uint8_t _WDRV_WINC_NVMCRC7(uint8_t crc, const uint8_t *pBuff, uint16_t le
     uint16_t g;
     uint8_t inv;
 
+    if (NULL == pBuff)
+    {
+        return 0;
+    }
+
     for (i=0; i<len; i++)
     {
         for (g=0; g<8; g++)
@@ -205,6 +214,11 @@ static uint8_t _WDRV_WINC_NVMCRC7(uint8_t crc, const uint8_t *pBuff, uint16_t le
 
 static bool _WDRV_WINC_NVMVerifyCtrlSec(tstrOtaControlSec *pstrControlSec)
 {
+    if (NULL == pstrControlSec)
+    {
+        return false;
+    }
+
     if(pstrControlSec->u32OtaMagicValue != OTA_MAGIC_VALUE)
     {
         return false;
@@ -247,6 +261,11 @@ static bool _WDRV_WINC_NVMVerifyCtrlSec(tstrOtaControlSec *pstrControlSec)
 
 static bool _WDRV_WINC_NVMReadCtrlSec(tstrOtaControlSec *pstrControlSec)
 {
+    if (NULL == pstrControlSec)
+    {
+        return false;
+    }
+
     if (M2M_SUCCESS == spi_flash_read((uint8_t*)pstrControlSec, M2M_CONTROL_FLASH_OFFSET, sizeof(tstrOtaControlSec)))
     {
         if (true == _WDRV_WINC_NVMVerifyCtrlSec(pstrControlSec))
@@ -439,7 +458,7 @@ static bool _WDRV_WINC_NVMFindSection
     }
 #endif
 
-    WDRV_DBG_INFORM_PRINT("NVM Lookup %2d: 0x%06x %0d\r\n", region, *pStartAddr, *pSize);
+    WDRV_DBG_INFORM_PRINT("NVM Lookup %2d: 0x%06" PRIx32 " %0" PRId32 "\r\n", region, *pStartAddr, *pSize);
 
     return true;
 }
@@ -478,7 +497,8 @@ WDRV_WINC_STATUS WDRV_WINC_NVMEraseSector
     uint32_t flashRegionSize;
 
     /* Ensure the driver handle and region are valid. */
-    if ((NULL == pDcpt) || (region >= NUM_WDRV_WINC_NVM_REGIONS))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl)
+            || (region >= NUM_WDRV_WINC_NVM_REGIONS))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -490,7 +510,7 @@ WDRV_WINC_STATUS WDRV_WINC_NVMEraseSector
     }
 
     /* Ensure the driver is opened for exclusive flash access. */
-    if (0 == (pDcpt->intent & DRV_IO_INTENT_EXCLUSIVE))
+    if (0 == (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
     {
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
@@ -578,7 +598,8 @@ WDRV_WINC_STATUS WDRV_WINC_NVMWrite
     uint32_t flashRegionSize;
 
     /* Ensure the driver handle, buffer pointer and region are valid. */
-    if ((NULL == pDcpt) || (NULL == pBuffer) || (region >= NUM_WDRV_WINC_NVM_REGIONS))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl)
+            || (NULL == pBuffer) || (region >= NUM_WDRV_WINC_NVM_REGIONS))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -590,7 +611,7 @@ WDRV_WINC_STATUS WDRV_WINC_NVMWrite
     }
 
     /* Ensure the driver is opened for exclusive flash access. */
-    if (0 == (pDcpt->intent & DRV_IO_INTENT_EXCLUSIVE))
+    if (0 == (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
     {
         return WDRV_WINC_STATUS_NOT_OPEN;
     }
@@ -670,7 +691,8 @@ WDRV_WINC_STATUS WDRV_WINC_NVMRead
     uint32_t flashRegionSize;
 
     /* Ensure the driver handle, buffer pointer and region are valid. */
-    if ((NULL == pDcpt) || (NULL == pBuffer) || (region >= NUM_WDRV_WINC_NVM_REGIONS))
+    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl)
+            || (NULL == pBuffer) || (region >= NUM_WDRV_WINC_NVM_REGIONS))
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -682,7 +704,7 @@ WDRV_WINC_STATUS WDRV_WINC_NVMRead
     }
 
     /* Ensure the driver is opened for exclusive flash access. */
-    if (0 == (pDcpt->intent & DRV_IO_INTENT_EXCLUSIVE))
+    if (0 == (pDcpt->pCtrl->intent & DRV_IO_INTENT_EXCLUSIVE))
     {
         return WDRV_WINC_STATUS_NOT_OPEN;
     }

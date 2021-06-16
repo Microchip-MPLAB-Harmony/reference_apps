@@ -116,7 +116,7 @@ uint32_t TMR3_FrequencyGet(void)
 
 void TIMER_3_InterruptHandler (void)
 {
-    uint32_t status;
+    uint32_t status  = 0U;
     status = IFS0bits.T3IF;
     IFS0CLR = _IFS0_T3IF_MASK;
 

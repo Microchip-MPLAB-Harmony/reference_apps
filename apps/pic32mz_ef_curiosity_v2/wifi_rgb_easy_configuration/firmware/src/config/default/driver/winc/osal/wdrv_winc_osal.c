@@ -48,7 +48,7 @@
 #define OSAL_USE_BASIC       0
 #define OSAL_USE_RTOS        0
 
-#if (OSAL_USE_RTOS == 1 || OSAL_USE_RTOS == 9)
+#ifdef DRV_WIFI_WINC_RTOS_STACK_SIZE
 void WDRV_MSDelay(uint32_t ms)
 {
     if (!ms)
