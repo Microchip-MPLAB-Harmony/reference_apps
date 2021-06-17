@@ -60,16 +60,16 @@ nav_order: 4
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:  *</span>
 
 - [MPLAB Harmony v3 "bsp" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.9.0)
-- [MPLAB Harmony v3 "csp" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.0)
-- [MPLAB Harmony v3 "core" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.0)
+- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)
+- [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.1)
 - [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)
-- [MPLAB Harmony v3 "mhc" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.1)
-- [MPLAB Harmony v3 "net" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/net/tree/v3.7.1)
-- [MPLAB Harmony v3 "wolfssl" repo wolfRand-RC2](https://github.com/Microchip-MPLAB-Harmony/wolfssl/tree/wolfRand-RC2)
+- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)
+- [MPLAB Harmony v3 "net" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/net/tree/v3.7.2)
+- [MPLAB Harmony v3 "wolfssl" repo v4.7.0](https://github.com/Microchip-MPLAB-Harmony/wolfssl/tree/v4.7.0)
 - [MPLAB Harmony v3 "crypto" repo v3.7.1](https://github.com/Microchip-MPLAB-Harmony/crypto/tree/v3.7.1)
 - [CMSIS-FreeRTOS "CMSIS-FreeRTOS" repo v10.3.1](https://github.com/Microchip-MPLAB-Harmony/CMSIS-FreeRTOS/tree/v10.3.1)
 - MPLAB Harmony 3 Launcher Plugin v3.6.4
-- [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
 - [MPLAB XC32 Compiler v2.50](https://www.microchip.com/mplab/compilers)
 - Any Serial Terminal application like Tera Term terminal application.
 

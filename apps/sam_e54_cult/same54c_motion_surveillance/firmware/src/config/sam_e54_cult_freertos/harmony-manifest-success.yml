@@ -4,20 +4,20 @@
 
 
 project: same54c_motion_surveillance
-creation_date: 2021-04-26T19:35:19.173+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-06-17T14:15:35.217+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.7.1
-mplabx_version: v5.45        # if MPLAB X plugin only
-plugin_version: v3.6.2        # if MPLAB X plugin only
+mhc_version: v3.7.2
+mplabx_version: v5.50        # if MPLAB X plugin only
+plugin_version: v3.6.4        # if MPLAB X plugin only
 compiler: XC32 (2.50)
 
 modules:
-    - {name: "core", version: "v3.9.0"}
-    - {name: "csp", version: "v3.9.0"}
+    - {name: "core", version: "v3.9.1"}
+    - {name: "csp", version: "v3.9.1"}
     - {name: "dev_packs", version: "v3.9.0"}
     - {name: "wolfssl", version: "unknown"}
-    - {name: "net", version: "v3.7.1"}
+    - {name: "net", version: "v3.7.2"}
     - {name: "bsp", version: "v3.9.0"}
     - {name: "crypto", version: "v3.7.1"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.1"}

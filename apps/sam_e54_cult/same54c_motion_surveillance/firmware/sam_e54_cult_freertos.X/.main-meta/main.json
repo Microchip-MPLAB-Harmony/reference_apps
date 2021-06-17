@@ -1,101 +1,112 @@
 {
-	"metaDataVersion": "1.0.0",
-	"category": "com.microchip.ide.project",
-	"content": {
-		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54c_motion_surveillance",
-		"version": "1.3.0",
-		"displayName": "Motion Surveillance on SAM E54 Curiosity Ultra Development Board",
-		"projectName": "motion_surveillance_sam_e54_cult",
-		"shortDescription": "Demonstrates the detection of motion in front of camera and live preview of captured images on webnet server",
-		"ide": {
-			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
-		},
-		"compiler": [
-			{
-				"name": "XC32",
-				"semverRange": ">=2.50"
-			}
-		],
-		"dfp": {
-			"name": "SAME54_DFP",
-			"semverRange": "^3.4.76"
-		},
-		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.7.1"
-		},
-		"device": {
-			"metaDataVersion": "1.0.0",
-			"category": "com.microchip.portal.contentRef",
-			"content": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.device",
-				"name": "ATSAME54P20A",
-				"versionRange": "*"
-			}
-		},
-		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E54 Curiosity Ultra Development Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
-		"peripherals": [
-			"NVMCTRL", "PORT", "SYSTICK", "SERCOM(I2C)", "SERCOM(SPI)", "RTC", "SDHC", "TC", "CRYPTO", "NVIC",
-		],
-		"keywords": [
-			"MHC",
-			"Harmony",
-			"ATSAME54P20A",
-			"SAME54 Family",
-			"SERCOM",
-			"I2C",
-			"SPI",
-			"RTC",
-			"SDHC",
-			"Timer",
-			"TCP/IP",
-			"Surveillance",
-			"Curiosity",
-			"Motion Surveillance",
-			"PIR Click",
-			"Thumb Drive",
-			"Micro SD",
-			"Card",
-			"ArduCAM",
-			"ARDUCAM",
-			"OV2640",
-			"OV2640 Sensor",
-			"ETHERNET",
-			"Motion Detection",
-			"Camera Capture",
-			"File System",
-			"Live Capture",
-			"SPI Camera",
-			"Arduino Uno R3 compatible interface",
-			"SAM E54",
-			"Curiosity",
-			"Ultra",
-			"SAME54",
-			"SPI Camera",
-			"ArduCAM-M-2MP camera shield",
-			"SAM E54 Curiosity Ultra Development Board",
-		],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./../../readme.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
-	}
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.1.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54c_motion_surveillance",
+      "version":"1.3.0",
+      "displayName":"Motion Surveillance on SAM E54 Curiosity Ultra Development Board",
+      "projectName":"motion_surveillance_sam_e54_cult",
+      "shortDescription":"Demonstrates the detection of motion in front of camera and live preview of captured images on webnet server",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=5.45.0"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=2.50"
+         }
+      ],
+      "dfp":{
+         "name":"SAME54_DFP",
+         "semverRange":"^3.4.76"
+      },
+      "configurator":{
+         "name":"MHC",
+         "semverRange":">=3.7.1"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"ATSAME54P20A",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "SAM E54 Curiosity Ultra Development Board"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "NVMCTRL",
+         "PORT",
+         "SYSTICK",
+         "SERCOM(I2C)",
+         "SERCOM(SPI)",
+         "RTC",
+         "SDHC",
+         "TC",
+         "CRYPTO",
+         "NVIC"
+      ],
+      "keywords":[
+         "MHC",
+         "Harmony",
+         "ATSAME54P20A",
+         "SAME54 Family",
+         "SERCOM",
+         "I2C",
+         "SPI",
+         "RTC",
+         "SDHC",
+         "Timer",
+         "TCP/IP",
+         "Surveillance",
+         "Curiosity",
+         "Motion Surveillance",
+         "PIR Click",
+         "Thumb Drive",
+         "Micro SD",
+         "Card",
+         "ArduCAM",
+         "ARDUCAM",
+         "OV2640",
+         "OV2640 Sensor",
+         "ETHERNET",
+         "Motion Detection",
+         "Camera Capture",
+         "File System",
+         "Live Capture",
+         "SPI Camera",
+         "Arduino Uno R3 compatible interface",
+         "SAM E54",
+         "Curiosity",
+         "Ultra",
+         "SAME54",
+         "SPI Camera",
+         "ArduCAM-M-2MP camera shield",
+         "SAM E54 Curiosity Ultra Development Board"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
 }

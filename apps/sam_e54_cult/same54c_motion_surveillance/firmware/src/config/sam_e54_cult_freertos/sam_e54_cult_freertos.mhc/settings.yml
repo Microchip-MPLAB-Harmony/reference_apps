@@ -1,11 +1,11 @@
 configName: sam_e54_cult_freertos
 folderName: sam_e54_cult_freertos
 format_version: v1.0
-frameworkPath: ..\..\..\..\harmony_github
+frameworkPath: D:\MassMarket\github_repos
 processor: ATSAME54P20A
 projectName: sam_e54_cult_freertos
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;core_apps_sam_d5x_e5x;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;gfx;gfx_apps;MPLAB-Harmony-Reference-Apps;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;touch;usb
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;core_apps_sam_d5x_e5x;crypto;cryptoauthlib;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;gfx;gfx_apps;gfx_apps_pic32mz_ef;gfx_aria;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;reference_apps;touch;usb;wireless
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'

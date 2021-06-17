@@ -75,6 +75,33 @@ children:
             attributes: {id: enabled}
             children:
             - {type: Value, value: 'true'}
+      - type: File
+        attributes: {id: SYS_CONSOLE_USB_CDC_SOURCE}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: enabled}
+            children:
+            - {type: Value, value: 'false'}
+      - type: File
+        attributes: {id: SYS_CONSOLE_USB_DEFINITIONS_HEADER}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: enabled}
+            children:
+            - {type: Value, value: 'false'}
+      - type: File
+        attributes: {id: SYS_CONSOLE_USB_HEADER}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: enabled}
+            children:
+            - {type: Value, value: 'false'}
     - type: Attachments
       children:
       - type: DirectDependency

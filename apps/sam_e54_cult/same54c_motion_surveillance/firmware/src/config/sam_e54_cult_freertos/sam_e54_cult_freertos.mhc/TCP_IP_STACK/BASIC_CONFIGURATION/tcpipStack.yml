@@ -27,6 +27,15 @@ children:
         attributes: {id: visible}
         children:
         - {type: Value, value: 'true'}
+  - type: Menu
+    attributes: {id: TCPIP_STACK_RTOS_MENU}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Boolean
     attributes: {id: TCPIP_STACK_SYS_RANDOM_H2_ADAPTER}
     children:
@@ -34,5 +43,14 @@ children:
       children:
       - type: Dynamic
         attributes: {id: tcpipStack, value: 'true'}
+  - type: File
+    attributes: {id: TCPIP_SYS_RTOS_TASK}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
 - type: ElementPosition
   attributes: {x: '240', y: '20', id: tcpipStack}
