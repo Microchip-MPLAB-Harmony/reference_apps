@@ -50,7 +50,13 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
 
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END  
 /* The implementation of the bridge functionality is a subset of the IEEE 802.1D - 2004 standard.
  * Not implemented functionality and known limitations:
  *  - IEEE 802.3 and IEEE 802.11 support only
@@ -687,7 +693,7 @@ SYS_STATUS TCPIP_MAC_Bridge_Status(TCPIP_MAC_BRIDGE_HANDLE brHandle);
     - false if failed
       
   Remarks:
-    Function exists only if MAC bridge statistics is enabled
+    Function exists only if MAC bridge statistics are enabled
 
  */
 bool TCPIP_MAC_Bridge_StatisticsGet(TCPIP_MAC_BRIDGE_HANDLE brHandle, TCPIP_MAC_BRIDGE_STAT* pStat, bool clear);
@@ -945,6 +951,12 @@ TCPIP_MAC_BRIDGE_RESULT TCPIP_MAC_Bridge_FDBAddEntry(TCPIP_MAC_BRIDGE_HANDLE brH
 */
 
 void  TCPIP_MAC_Bridge_Task(void);
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
+#endif
+//DOM-IGNORE-END
 
 #endif //  __TCPIP_MAC_BRIDGE_H_
 

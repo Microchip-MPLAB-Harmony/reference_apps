@@ -122,13 +122,13 @@ extern "C" {
 #define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
+#define SYS_FS_ALIGNED_BUFFER_LEN         512
 
 
-#define SYS_FS_FAT_VERSION                "v0.14"
+#define SYS_FS_FAT_VERSION                "v0.14a"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
-#define SYS_FS_FAT_ALIGNED_BUFFER_LEN     512
 
 
 
@@ -216,6 +216,7 @@ extern "C" {
 #define TCPIP_TCP_QUIET_TIME		        	    0
 #define TCPIP_TCP_COMMANDS   false
 #define TCPIP_TCP_EXTERN_PACKET_PROCESS   false
+#define TCPIP_TCP_DISABLE_CRYPTO_USAGE		        	    false
 
 
 
@@ -506,7 +507,8 @@ extern "C" {
 #define TCPIP_GMAC_TX_PRIO_COUNT				1
 #define TCPIP_GMAC_RX_PRIO_COUNT				1
 #define DRV_GMAC_NUMBER_OF_QUEUES				6
-#define DRV_GMAC_RMII_MODE					0
+#define DRV_GMAC_RMII_MODE						0
+#define DRV_GMAC_DESCRIPTOR_ADDRESS				0x2045f000
 
 
 

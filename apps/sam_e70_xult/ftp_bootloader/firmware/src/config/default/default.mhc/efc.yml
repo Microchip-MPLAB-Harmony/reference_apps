@@ -2,5 +2,14 @@ format_version: v1.0
 type: UniqueComponent
 attributes: {id: efc}
 children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: NVM_RWS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: efc, value: '6'}
 - type: ElementPosition
   attributes: {x: '13', y: '314', id: efc}

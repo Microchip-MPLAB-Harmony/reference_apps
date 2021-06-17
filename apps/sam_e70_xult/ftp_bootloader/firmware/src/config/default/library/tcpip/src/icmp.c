@@ -546,8 +546,9 @@ static void  TCPIP_ICMP_Process(void)
                 // Get the sequence number and identifier fields
                 if(pIcmpEchoRequest != 0)
                 {   // we have an extended  request in place
+                    TCPIP_NET_IF* pktIf = (TCPIP_NET_IF*)pRxPkt->pktIf;
                     if(pIcmpEchoRequest->identifier == pRxHdr->wIdentifier && pIcmpEchoRequest->sequenceNumber == pRxHdr->wSequenceNumber &&
-                            pIcmpEchoRequest->targetAddr.Val == srcAdd)
+                            (pIcmpEchoRequest->targetAddr.Val == srcAdd || (srcAdd == _TCPIPStackNetAddress(pktIf) && pIcmpEchoRequest->targetAddr.Val == 0x0100007f)))
                     {   // our reply
                         if(pIcmpEchoRequest->callback)
                         {
@@ -620,6 +621,8 @@ static bool _ICMPProcessEchoRequest(TCPIP_NET_IF* pNetIf, TCPIP_MAC_PACKET* pRxP
 {
     ICMP_PACKET* pTxHdr;
     TCPIP_UINT16_VAL checksum;
+    IPV4_PACKET ipv4Pkt;
+    IPV4_HEADER* pIpv4Hdr;
 
     // adjust the checksum
     pTxHdr = (ICMP_PACKET*)pRxPkt->pTransportLayer;
@@ -645,25 +648,35 @@ static bool _ICMPProcessEchoRequest(TCPIP_NET_IF* pNetIf, TCPIP_MAC_PACKET* pRxP
     for(pFragPkt = pRxPkt; pFragPkt != 0; pFragPkt = pFragPkt->pkt_next)
     {
         TCPIP_PKT_FlightLogTx(pFragPkt, TCPIP_THIS_MODULE_ID);
-        TCPIP_IPV4_MacPacketSwitchTxToRx(pFragPkt, true); 
+        TCPIP_IPV4_MacPacketSwitchTxToRx(pFragPkt, true, pFragPkt != pRxPkt); 
         pFragPkt->next = 0; // single packet
     }
 
-    if(!TCPIP_IPV4_MacPacketTransmit(pRxPkt, pNetIf, (IPV4_ADDR*)&srcAdd))
-    {   // failed; discard the segments
+    // set proper address fields
+    pIpv4Hdr = (IPV4_HEADER*)pRxPkt->pNetLayer;
+    ipv4Pkt.srcAddress.Val = pIpv4Hdr->SourceAddress.Val;
+    ipv4Pkt.destAddress.Val = pIpv4Hdr->DestAddress.Val;
+    ipv4Pkt.netIfH = pNetIf;
+    
+    if(!TCPIP_IPV4_PktTx(&ipv4Pkt, pRxPkt, false))
+    {   // failed; discard the segments (these are RX MAC buffers)
         for(pFragPkt = pRxPkt; pFragPkt != 0; pFragPkt = pFragPkt->pkt_next)
         {
-            if((pFragPkt->pktFlags & TCPIP_MAC_PKT_FLAG_QUEUED) == 0)
-            {
-                TCPIP_PKT_PacketAcknowledge(pFragPkt, TCPIP_MAC_PKT_ACK_MAC_REJECT_ERR);
-            }
+            TCPIP_PKT_PacketAcknowledge(pFragPkt, TCPIP_MAC_PKT_ACK_MAC_REJECT_ERR);
         }
         return false;
     }
 #else
-    TCPIP_IPV4_MacPacketSwitchTxToRx(pRxPkt, true); 
+    TCPIP_IPV4_MacPacketSwitchTxToRx(pRxPkt, true, false); 
+
+    // set proper address fields
+    pIpv4Hdr = (IPV4_HEADER*)pRxPkt->pNetLayer;
+    ipv4Pkt.srcAddress.Val = pIpv4Hdr->SourceAddress.Val;
+    ipv4Pkt.destAddress.Val = pIpv4Hdr->DestAddress.Val;
+    ipv4Pkt.netIfH = pNetIf;
+    
     TCPIP_PKT_FlightLogTx(pRxPkt, TCPIP_THIS_MODULE_ID);
-    if(!TCPIP_IPV4_MacPacketTransmit(pRxPkt, pNetIf, (IPV4_ADDR*)&srcAdd))
+    if(!TCPIP_IPV4_PktTx(&ipv4Pkt, pRxPkt, false))
     {
         TCPIP_PKT_PacketAcknowledge(pRxPkt, TCPIP_MAC_PKT_ACK_MAC_REJECT_ERR);
         return false;

@@ -41,6 +41,7 @@
 #include "device.h"
 #include "plib_hsmci.h"
 #include "peripheral/xdmac/plib_xdmac.h"
+#include "interrupts.h"
 
 #define HSMCI_DMA_CHANNEL      0
 
@@ -342,7 +343,10 @@ void HSMCI_ResponseRead (
             /* Drop the CRC byte.
              * The CRC byte for the CID and CSD response is not copied.
              */
-            memcpy((void*)response, (void*)((char*)response + 1),31);
+			 /* Note: The memcpy function copies n characters from the object pointed to by s2 into the object pointed to by s1. 
+			  * If copying takes place between objects that overlap, the behavior is undefined. Hence, using memmove.
+			 */
+            memmove((void*)response, (void*)((char*)response + 1),31);
 
             break;
 

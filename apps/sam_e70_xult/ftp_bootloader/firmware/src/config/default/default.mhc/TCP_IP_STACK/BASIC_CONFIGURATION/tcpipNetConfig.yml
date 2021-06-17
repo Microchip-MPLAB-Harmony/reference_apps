@@ -59,6 +59,15 @@ children:
           - type: Dynamic
             attributes: {id: tcpipNetConfig_0, value: DRV_GMAC_Object}
       - type: Boolean
+        attributes: {id: TCPIP_NETWORK_INTERFACE_FLAG_IPV6_ADDRESS_IDX0}
+        children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: visible}
+            children:
+            - {type: Value, value: 'true'}
+      - type: Boolean
         attributes: {id: TCPIP_STACK_NETWORK_CONFIG_IDX0}
         children:
         - type: Values

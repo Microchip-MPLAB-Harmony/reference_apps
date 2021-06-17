@@ -11,6 +11,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: drv_sdmmc, value: 'true'}
+  - type: File
+    attributes: {id: DRV_SDMMC_FS_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
 - type: Instances
   children:
   - type: InstanceComponent
@@ -35,6 +44,12 @@ children:
       - type: Combo
         attributes: {id: DRV_SDMMC_CARD_DETECTION_METHODS_LIST2}
         children:
+        - type: Attributes
+          children:
+          - type: Boolean
+            attributes: {id: visible}
+            children:
+            - {type: Value, value: 'true'}
         - type: Values
           children:
           - type: Dynamic

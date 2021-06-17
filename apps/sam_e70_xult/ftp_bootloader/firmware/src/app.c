@@ -136,7 +136,7 @@ static void APP_SysFSEventHandler(SYS_FS_EVENT event,void* eventData,uintptr_t c
             }
 
             break;
-
+        case SYS_FS_EVENT_MOUNT_WITH_NO_FILESYSTEM:
         case SYS_FS_EVENT_ERROR:
             break;
     }

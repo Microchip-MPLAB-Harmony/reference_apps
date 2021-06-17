@@ -1,13 +1,13 @@
 configName: default
 folderName: ''
 format_version: v1.0
-frameworkPath: D:\Harmony3_New
+frameworkPath: D:\MassMarket\github_repos
 processor: ATSAME70Q21B
 projectName: ''
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;reference_apps;net;quick_docs;touch;usb;
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;core_apps_sam_d5x_e5x;crypto;cryptoauthlib;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;gfx;gfx_apps;gfx_apps_pic32mz_ef;gfx_aria;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;reference_apps;touch;usb;wireless
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.3.73\same70b\atdf\ATSAME70Q21B.atdf
+  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.5.86\same70b\atdf\ATSAME70Q21B.atdf

@@ -69,7 +69,9 @@ block cipher mechanism that uses n-bit binary string parameter key with 128-bits
 #include <smmintrin.h>
 
 #endif /* WOLFSSL_AESNI */
-
+#ifdef WOLFSSL_IMXRT_DCP
+    #include "fsl_dcp.h"
+#endif
 
 #ifdef WOLFSSL_XILINX_CRYPT
 #include "xsecure_aes.h"
@@ -82,6 +84,10 @@ block cipher mechanism that uses n-bit binary string parameter key with 128-bits
 
 #if defined(WOLFSSL_DEVCRYPTO_AES) || defined(WOLFSSL_DEVCRYPTO_CBC)
 #include <wolfssl/wolfcrypt/port/devcrypto/wc_devcrypto.h>
+#endif
+
+#ifdef WOLFSSL_SILABS_SE_ACCEL
+    #include <wolfssl/wolfcrypt/port/silabs/silabs_aes.h>
 #endif
 
 #if defined(HAVE_AESGCM) && !defined(WC_NO_RNG)
@@ -148,7 +154,8 @@ enum {
 #endif
 
 #ifdef HAVE_PKCS11
-    AES_MAX_ID_LEN   = 32,
+    AES_MAX_ID_LEN      = 32,
+    AES_MAX_LABEL_LEN   = 32,
 #endif
 };
 
@@ -179,6 +186,12 @@ struct Aes {
 #ifdef GCM_TABLE
     /* key-based fast multiplication table. */
     ALIGN16 byte M0[256][AES_BLOCK_SIZE];
+#elif defined(GCM_TABLE_4BIT)
+    #if defined(BIG_ENDIAN_ORDER) || defined(WC_16BIT_CPU)
+        ALIGN16 byte M0[16][AES_BLOCK_SIZE];
+    #else
+        ALIGN16 byte M0[32][AES_BLOCK_SIZE];
+    #endif
 #endif /* GCM_TABLE */
 #ifdef HAVE_CAVIUM_OCTEON_SYNC
     word32 y0;
@@ -194,6 +207,8 @@ struct Aes {
 #ifdef HAVE_PKCS11
     byte id[AES_MAX_ID_LEN];
     int  idLen;
+    char label[AES_MAX_LABEL_LEN];
+    int  labelLen;
 #endif
 #ifdef WOLFSSL_ASYNC_CRYPT
     WC_ASYNC_DEV asyncDev;
@@ -236,9 +251,15 @@ struct Aes {
 #if defined(WOLFSSL_RENESAS_TSIP_TLS) && \
     defined(WOLFSSL_RENESAS_TSIP_TLS_AES_CRYPT)
     TSIP_AES_CTX ctx;
-#endif
+#endif	
 #if defined(WOLFSSL_HAVE_MCHP_HW_CRYPTO) && defined(WOLFSSL_HAVE_MCHP_HW_AES_DIRECT)
     crypt_aes_hw_descriptor hwDesc;
+#endif
+#if defined(WOLFSSL_IMXRT_DCP)
+    dcp_handle_t handle;
+#endif
+#if defined(WOLFSSL_SILABS_SE_ACCEL)
+    silabs_aes_t ctx;
 #endif
     void*  heap; /* memory hint to use */
 };
@@ -438,6 +459,8 @@ WOLFSSL_API int wc_AesGetKeySize(Aes* aes, word32* keySize);
 WOLFSSL_API int  wc_AesInit(Aes* aes, void* heap, int devId);
 #ifdef HAVE_PKCS11
 WOLFSSL_API int  wc_AesInit_Id(Aes* aes, unsigned char* id, int len, void* heap,
+        int devId);
+WOLFSSL_API int  wc_AesInit_Label(Aes* aes, const char* label, void* heap,
         int devId);
 #endif
 WOLFSSL_API void wc_AesFree(Aes* aes);

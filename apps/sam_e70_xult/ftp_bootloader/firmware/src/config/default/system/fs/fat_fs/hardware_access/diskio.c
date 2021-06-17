@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------*/
-/* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2014        */
+/* Low level disk I/O module SKELETON for FatFs     (C)ChaN, 2019        */
 /*-----------------------------------------------------------------------*/
 /* If a working storage control module is available, it should be        */
 /* attached to the FatFs via a glue function rather than modifying it.   */
@@ -16,7 +16,7 @@
 
 typedef struct
 {
-    uint8_t alignedBuffer[SYS_FS_FAT_ALIGNED_BUFFER_LEN] __ALIGNED(CACHE_LINE_SIZE);
+    uint8_t alignedBuffer[SYS_FS_ALIGNED_BUFFER_LEN] __ALIGNED(CACHE_LINE_SIZE);
     SYS_FS_MEDIA_COMMAND_STATUS commandStatus;
     SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle;
 } SYS_FS_DISK_DATA;
@@ -75,9 +75,9 @@ static DRESULT disk_checkCommandStatus(uint8_t pdrv)
 }
 
 /* Definitions of physical drive number for each drive */
-#define ATA     0   /* Example: Map ATA harddisk to physical drive 0 */
-#define MMC     1   /* Example: Map MMC/SD card to physical drive 1 */
-#define USB     2   /* Example: Map USB MSD to physical drive 2 */
+#define DEV_RAM		0	/* Example: Map Ramdisk to physical drive 0 */
+#define DEV_MMC		1	/* Example: Map MMC/SD card to physical drive 1 */
+#define DEV_USB		2	/* Example: Map USB MSD to physical drive 2 */
 
 
 /*-----------------------------------------------------------------------*/
@@ -145,10 +145,10 @@ DRESULT disk_read
         while (bytesToTransfer > 0)
         {
             /* Calculate the number of sectors to be transferred with current request */
-            if (bytesToTransfer > SYS_FS_FAT_ALIGNED_BUFFER_LEN)
+            if (bytesToTransfer > SYS_FS_ALIGNED_BUFFER_LEN)
             {
-                sectorXferCntr  = (SYS_FS_FAT_ALIGNED_BUFFER_LEN / SYS_FS_FAT_MAX_SS);
-                currentXferLen  = SYS_FS_FAT_ALIGNED_BUFFER_LEN;
+                sectorXferCntr  = (SYS_FS_ALIGNED_BUFFER_LEN / SYS_FS_FAT_MAX_SS);
+                currentXferLen  = SYS_FS_ALIGNED_BUFFER_LEN;
             }
             else
             {
@@ -232,10 +232,10 @@ DRESULT disk_write
         while (bytesToTransfer > 0)
         {
             /* Calculate the number of sectors to be transferred with current request */
-            if (bytesToTransfer > SYS_FS_FAT_ALIGNED_BUFFER_LEN)
+            if (bytesToTransfer > SYS_FS_ALIGNED_BUFFER_LEN)
             {
-                sectorXferCntr  = (SYS_FS_FAT_ALIGNED_BUFFER_LEN / SYS_FS_FAT_MAX_SS);
-                currentXferLen  = SYS_FS_FAT_ALIGNED_BUFFER_LEN;
+                sectorXferCntr  = (SYS_FS_ALIGNED_BUFFER_LEN / SYS_FS_FAT_MAX_SS);
+                currentXferLen  = SYS_FS_ALIGNED_BUFFER_LEN;
             }
             else
             {

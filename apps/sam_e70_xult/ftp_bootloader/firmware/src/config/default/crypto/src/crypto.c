@@ -407,6 +407,32 @@ int CRYPT_RNG_Initialize(CRYPT_RNG_CTX* rng)
 #endif
 }
 
+/* RNG Deinitialize (free) */
+int CRYPT_RNG_Deinitialize(CRYPT_RNG_CTX* rng)
+{
+    if (rng == NULL)
+    {
+        return BAD_FUNC_ARG;
+    }
+    WC_RNG* myRng = (WC_RNG*)(rng);
+    //doing what wc_rng_free does
+    void* heap = myRng->heap;
+
+    wc_FreeRng(myRng);
+
+    int len = sizeof(WC_RNG);
+    volatile byte* z = (volatile byte*)myRng;
+    while (len--) *z++ = 0;
+    //doing what XFREE does
+    void* xp = (void*)(myRng);
+    if(xp) 
+    {
+        free(xp);
+    }
+    (void)heap;
+
+    return 0;
+}
 
 /* RNG Get single bytes, < 0 on error */
 int CRYPT_RNG_Get(CRYPT_RNG_CTX* rng, unsigned char* b)
