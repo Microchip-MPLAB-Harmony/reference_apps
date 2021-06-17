@@ -317,8 +317,10 @@ static void _SYS_FS_MountVolume
     const uint8_t *volumeName
 )
 {
-    uint8_t volumeIndex = 0;
-    uint8_t handlerIndex = 0;
+    uint8_t volumeIndex    = 0;
+    uint8_t handlerIndex   = 0;
+    SYS_FS_EVENT fsEvent   = SYS_FS_EVENT_ERROR;
+
     const SYS_FS_MEDIA_MOUNT_DATA *fsMount = (const SYS_FS_MEDIA_MOUNT_DATA *)&gSYSFSMediaManagerObj.fsMountTable[0];
 
     for (volumeIndex = 0; volumeIndex < SYS_FS_VOLUME_NUMBER; volumeIndex++)
@@ -333,16 +335,25 @@ static void _SYS_FS_MountVolume
             continue;
         }
 
-        if (SYS_FS_RES_SUCCESS == SYS_FS_Mount(fsMount[volumeIndex].devName, fsMount[volumeIndex].mountName, fsMount[volumeIndex].fsType, 0, NULL))
+        if (SYS_FS_Mount(fsMount[volumeIndex].devName, fsMount[volumeIndex].mountName, fsMount[volumeIndex].fsType, 0, NULL) == SYS_FS_RES_SUCCESS)
         {
-            for (handlerIndex = 0; handlerIndex < SYS_FS_CLIENT_NUMBER; handlerIndex++)
+            fsEvent = SYS_FS_EVENT_MOUNT;
+
+            // Check If mount has passed with no file system on Media
+            if (SYS_FS_Error() == SYS_FS_ERROR_NO_FILESYSTEM)
             {
-                if (gSYSFSEventHandler[handlerIndex].eventHandler)
-                {
-                    gSYSFSEventHandler[handlerIndex].eventHandler(SYS_FS_EVENT_MOUNT,
-                            (void*)fsMount[volumeIndex].mountName,
-                            gSYSFSEventHandler[handlerIndex].context);
-                }
+                fsEvent = SYS_FS_EVENT_MOUNT_WITH_NO_FILESYSTEM;
+            }
+        }
+
+        // Call all the registered event handlers with updated fsEvent
+        for (handlerIndex = 0; handlerIndex < SYS_FS_CLIENT_NUMBER; handlerIndex++)
+        {
+            if (gSYSFSEventHandler[handlerIndex].eventHandler != NULL)
+            {
+                gSYSFSEventHandler[handlerIndex].eventHandler(fsEvent,
+                        (void*)fsMount[volumeIndex].mountName,
+                        gSYSFSEventHandler[handlerIndex].context);
             }
         }
 
@@ -398,7 +409,7 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
         mediaObj->numVolumes++;
 
         volumeNameLen = strlen(gSYSFSVolumeName[mediaObj->mediaType]);
-        strncpy (volumeObj->volumeName, gSYSFSVolumeName[mediaObj->mediaType], volumeNameLen);
+        memcpy (volumeObj->volumeName, gSYSFSVolumeName[mediaObj->mediaType], volumeNameLen);
 
         /* Store the volume name */
         volumeObj->volumeName[volumeNameLen++] = mediaObj->mediaId;
@@ -462,10 +473,7 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
         volumeObj->inUse = true;
 
         /* Mount the Media */
-        if (fsType != 0xFF)
-        {
-            _SYS_FS_MountVolume (mediaObj->mediaType, (const uint8_t *)(volumeObj->volumeName));
-        }
+        _SYS_FS_MountVolume (mediaObj->mediaType, (const uint8_t *)(volumeObj->volumeName));
 
         /* Continue if there is more than one partition on media */
         if (!partitionMap)

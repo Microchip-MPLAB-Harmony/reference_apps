@@ -377,6 +377,17 @@ gfxDriverIOCTLResponse DRV_ILI9488_IOCTL(gfxDriverIOCTLRequest request,
             
             return GFX_IOCTL_OK;
         }
+        case GFX_IOCTL_GET_STATUS:
+		{
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            if (drv.state == RUN)
+                val->value.v_uint = 0;
+            else
+                val->value.v_uint = 1;
+            
+            return GFX_IOCTL_OK;
+	    }
         default:
         { }
     }

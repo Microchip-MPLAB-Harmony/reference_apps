@@ -1,7 +1,7 @@
 /**
  * \brief Component description for CAN
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-06-22T15:30:56Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_CAN_COMPONENT_H_
 #define _SAME54_CAN_COMPONENT_H_
 
@@ -504,10 +504,7 @@
 #define CAN_CCCR_TXP_Pos                      _U_(14)                                              /**< (CAN_CCCR) Transmit Pause Position */
 #define CAN_CCCR_TXP_Msk                      (_U_(0x1) << CAN_CCCR_TXP_Pos)                       /**< (CAN_CCCR) Transmit Pause Mask */
 #define CAN_CCCR_TXP(value)                   (CAN_CCCR_TXP_Msk & ((value) << CAN_CCCR_TXP_Pos))  
-#define CAN_CCCR_NISO_Pos                     _U_(15)                                              /**< (CAN_CCCR) Non ISO Operation Position */
-#define CAN_CCCR_NISO_Msk                     (_U_(0x1) << CAN_CCCR_NISO_Pos)                      /**< (CAN_CCCR) Non ISO Operation Mask */
-#define CAN_CCCR_NISO(value)                  (CAN_CCCR_NISO_Msk & ((value) << CAN_CCCR_NISO_Pos))
-#define CAN_CCCR_Msk                          _U_(0x0000F3FF)                                      /**< (CAN_CCCR) Register Mask  */
+#define CAN_CCCR_Msk                          _U_(0x000073FF)                                      /**< (CAN_CCCR) Register Mask  */
 
 
 /* -------- CAN_NBTP : (CAN Offset: 0x1C) (R/W 32) Nominal Bit Timing and Prescaler -------- */
@@ -536,10 +533,8 @@
 #define CAN_TSCC_TSS(value)                   (CAN_TSCC_TSS_Msk & ((value) << CAN_TSCC_TSS_Pos))  
 #define   CAN_TSCC_TSS_ZERO_Val               _U_(0x0)                                             /**< (CAN_TSCC) Timestamp counter value always 0x0000  */
 #define   CAN_TSCC_TSS_INC_Val                _U_(0x1)                                             /**< (CAN_TSCC) Timestamp counter value incremented by TCP  */
-#define   CAN_TSCC_TSS_EXT_Val                _U_(0x2)                                             /**< (CAN_TSCC) External timestamp counter value used  */
 #define CAN_TSCC_TSS_ZERO                     (CAN_TSCC_TSS_ZERO_Val << CAN_TSCC_TSS_Pos)          /**< (CAN_TSCC) Timestamp counter value always 0x0000 Position  */
 #define CAN_TSCC_TSS_INC                      (CAN_TSCC_TSS_INC_Val << CAN_TSCC_TSS_Pos)           /**< (CAN_TSCC) Timestamp counter value incremented by TCP Position  */
-#define CAN_TSCC_TSS_EXT                      (CAN_TSCC_TSS_EXT_Val << CAN_TSCC_TSS_Pos)           /**< (CAN_TSCC) External timestamp counter value used Position  */
 #define CAN_TSCC_TCP_Pos                      _U_(16)                                              /**< (CAN_TSCC) Timestamp Counter Prescaler Position */
 #define CAN_TSCC_TCP_Msk                      (_U_(0xF) << CAN_TSCC_TCP_Pos)                       /**< (CAN_TSCC) Timestamp Counter Prescaler Mask */
 #define CAN_TSCC_TCP(value)                   (CAN_TSCC_TCP_Msk & ((value) << CAN_TSCC_TCP_Pos))  

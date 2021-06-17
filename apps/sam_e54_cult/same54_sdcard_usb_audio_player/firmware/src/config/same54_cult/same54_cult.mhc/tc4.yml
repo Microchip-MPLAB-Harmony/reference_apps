@@ -171,10 +171,16 @@ children:
   - type: Long
     attributes: {id: TC_TIMER_PERIOD}
     children:
+    - type: Attributes
+      children:
+      - type: Long
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '255'}
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tc4, value: '255'}
+        attributes: {id: tc4, value: '256'}
   - type: File
     attributes: {id: TC_TIMER_SOURCE}
     children:
@@ -192,7 +198,7 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '0.002125'}
+        - {type: Value, value: '0.0021333334'}
   - type: String
     attributes: {id: TIMER_PERIOD_MAX}
     children:

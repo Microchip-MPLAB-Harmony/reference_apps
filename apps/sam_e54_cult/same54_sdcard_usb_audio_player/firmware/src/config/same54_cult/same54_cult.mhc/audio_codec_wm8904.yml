@@ -54,4 +54,4 @@ children:
         children:
         - {type: Value, value: drv_i2s}
 - type: ElementPosition
-  attributes: {x: '1038', y: '126', id: audio_codec_wm8904}
+  attributes: {x: '1032', y: '183', id: audio_codec_wm8904}

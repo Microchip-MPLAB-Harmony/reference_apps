@@ -10,21 +10,21 @@
 		"shortDescription": "SD Card USB Audio Player using maXTouch Curiosity Pro Board Display on SAM E54 Curiosity Ultra Development Board",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.41.0"
+				"semverRange": ">=3.0.0"
 			}
 		],
 		"dfp": {
 			"name": "SAME54_DFP",
-			"semverRange": "^3.1.43"
+			"semverRange": "^3.5.87"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.5"
+			"semverRange": ">=3.6.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

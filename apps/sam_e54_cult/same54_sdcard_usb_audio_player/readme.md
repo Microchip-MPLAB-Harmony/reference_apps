@@ -58,18 +58,18 @@ nav_order: 2
 ## Software/Tools Used:
 <span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>
 
- - [MPLAB Harmony v3 "csp" repo v3.8.3](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.8.3)
- - [MPLAB Harmony v3 "core" repo v3.8.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)
- - [MPLAB Harmony v3 "dev_packs" repo v3.8.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.8.0)
- - [MPLAB Harmony v3 "bsp" repository v3.8.2](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.8.2)
+ - [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)
+ - [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.1)
+ - [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)
+ - [MPLAB Harmony v3 "bsp" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.9.0)
  - [MPLAB Harmony v3 "audio" repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/audio/releases/tag/v3.5.0)
- - [MPLAB Harmony v3 "usb" repository v3.7.0](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.7.0)
- - [MPLAB Harmony v3 "mhc" repo v3.6.5](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.6.5)
- - [MPLAB Harmony v3 "gfx" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.9.0)
- - [MPLAB Harmony v3 "touch" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/touch/releases/tag/v3.9.0)
- - MPLAB Harmony 3 Launcher Plugin v3.6.2
- - [MPLAB X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
- - [MPLAB XC32 Compiler v2.41](https://www.microchip.com/mplab/compilers)
+ - [MPLAB Harmony v3 "usb" repository v3.7.2](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.7.2)
+ - [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)
+ - [MPLAB Harmony v3 "gfx" repository v3.9.3](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.9.3)
+ - [MPLAB Harmony v3 "touch" repository v3.9.2](https://github.com/Microchip-MPLAB-Harmony/touch/releases/tag/v3.9.2)
+ - MPLAB Harmony 3 Launcher Plugin v3.6.4
+ - [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
+ - [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
@@ -144,12 +144,13 @@ WAV audio files
 - The user interface should respond to touch events and you should be able to select next or rewind tracks for playing, increase or decrease volume level, and select the particular track.
 
 ## Comments:
-- This application is developed by modifying a drv_wm8904.c file.
-If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace this file. This issue is expected to be fixed in the future Harmony "audio" repo release.
+- This application is developed by modifying a drv_wm8904.c and i2s.h file.
+If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace these file. This issue is expected to be fixed in the future Harmony "audio" repo release.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.3.0 - Regenerated and tested application
 - v1.2.0 - Regenerated and tested application
 - v1.1.0 released demo application

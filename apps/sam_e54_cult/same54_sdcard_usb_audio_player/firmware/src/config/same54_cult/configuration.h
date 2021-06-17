@@ -105,7 +105,7 @@ extern "C" {
 #define SYS_FS_CWD_STRING_LEN             1024
 
 
-#define SYS_FS_FAT_VERSION                "v0.14"
+#define SYS_FS_FAT_VERSION                "v0.14a"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
@@ -308,7 +308,7 @@ extern "C" {
 #define DRV_USBFSV1_HOST_RESET_DURATION                     100
 
 /* Alignment for buffers that are submitted to USB Driver*/ 
-#define USB_ALIGN  CACHE_ALIGN
+#define USB_ALIGN  __ALIGNED(CACHE_LINE_SIZE)
 
 /* Number of MSD Function driver instances in the application */
 #define USB_HOST_MSD_INSTANCES_NUMBER         1

@@ -531,7 +531,7 @@ typedef struct gfxPixelBuffer
     uint32_t flags;
 } gfxPixelBuffer;
 
-
+typedef void (*gfxIRQCallBack) (uintptr_t layerID);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -1029,6 +1029,7 @@ typedef enum gfxDriverIOCTLRequest
     GFX_IOCTL_GET_COLOR_MODE, // returns the supported color mode for the driver, arg = gfxIOCTLArg_Value
     GFX_IOCTL_GET_BUFFER_COUNT, // returns the driver buffer count, arg = gfxIOCTLArg_Value
     GFX_IOCTL_GET_DISPLAY_SIZE, // returns the driver buffer count, arg = gfxIOCTLArg_DisplaySize
+	GFX_IOCTL_GET_STATUS, // returns the driver status. 0 = idle/ready, arg = gfxIOCTLArg_Value
     GFX_IOCTL_ENABLE_GPU, // tells the driver to utilize a GPU if possible, arg = gfxIOCTLArg_Value
     
     GFX_IOCTL_LAYER_SWAP, // indicates that the driver should swap the current layer, arg = NULL
@@ -1037,10 +1038,13 @@ typedef enum gfxDriverIOCTLRequest
     GFX_IOCTL_GET_VSYNC_COUNT, // gets the current driver vsync count, arg = gfxIOCTLArg_Value
     GFX_IOCTL_GET_FRAMEBUFFER, // gets a pointer to the internal driver frame buffer, arg = gfxIOCTLArg_Value
     GFX_IOCTL_SET_PALETTE, // sets the current driver palette, arg = gfxIOCTLArg_Palette
+    GFX_IOCTL_SET_VBLANK_SYNC, // sets the driver to sync update w/ vblank or not, arg = gfxIOCTLArg_Value	
     
     GFX_IOCTL_GET_LAYER_COUNT, // gets the driver layer count, arg = gfxIOCTLArg_Value
     GFX_IOCTL_GET_ACTIVE_LAYER, // gets the active driver layer, arg = gfxIOCTLArg_Value
     GFX_IOCTL_SET_ACTIVE_LAYER, // sets the active driver layer, arg = gfxIOCTLArg_Value
+	
+	GFX_IOCTL_SET_BRIGHTNESS, // sets the screen backlight brightness, arg = gfxIOCTLArg_Value
 
     GFX_IOCTL_SET_LAYER_LOCK, // locks a layer, arg = gfxIOCTLArg_LayerValue
     GFX_IOCTL_GET_LAYER_ENABLED, // get layer enabled, arg = gfxIOCTLArg_LayerValue
@@ -1053,6 +1057,9 @@ typedef enum gfxDriverIOCTLRequest
     GFX_IOCTL_SET_LAYER_ALPHA, // set layer alpha value, arg = gfxIOCTLArg_LayerValue
     GFX_IOCTL_SET_LAYER_BASE_ADDRESS, // set layer base address, arg = gfxIOCTLArg_LayerValue
     GFX_IOCTL_SET_LAYER_COLOR_MODE, // set layer color mode, arg = gfxIOCTLArg_LayerValue
+
+    GFX_IOCTL_SET_IRQ_CALLBACK, // set a callback for the driver IRQ, arg = gfxIOCTLArg_LayerValue
+
 } gfxDriverIOCTLRequest;
 
 #define GFX_IOCTL_LAYER_REQ_START GFX_IOCTL_SET_LAYER_LOCK
@@ -1115,6 +1122,17 @@ typedef struct
 {
     uint32_t id;
 } gfxIOCTLArg_LayerArg;
+
+/**
+ * @brief This struct represents layer IRQ callback.
+ * @details Allows the caller of the driver to set an IRQ callback.
+ */
+typedef struct
+{
+    gfxIOCTLArg_LayerArg base;
+
+    gfxIRQCallBack callback;
+} gfxIOCTLArg_LayerIRQCallback;
 
 /**
  * @brief This struct represents layer position.
