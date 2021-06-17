@@ -106,6 +106,12 @@ void ADC0_WindowModeSet(ADC_WINMODE mode);
 
 bool ADC0_ConversionSequenceIsFinished(void);
 
+void ADC0_InterruptsClear(ADC_STATUS interruptMask);
+
+void ADC0_InterruptsEnable(ADC_STATUS interruptMask);
+
+void ADC0_InterruptsDisable(ADC_STATUS interruptMask);
+
 
 bool ADC0_ConversionStatusGet( void );
 

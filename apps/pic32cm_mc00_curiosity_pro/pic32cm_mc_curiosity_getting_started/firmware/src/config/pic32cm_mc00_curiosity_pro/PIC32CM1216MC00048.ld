@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  PIC32CM1216MC00048 linker script
  * 
- * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -89,10 +89,10 @@ MEMORY
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH
   config_D0804000 : ORIGIN = 0xD0804000, LENGTH = 0x4
-  config_D0804004 : ORIGIN = 0xD0804004, LENGTH = 0x4
   config_D0806020 : ORIGIN = 0xD0806020, LENGTH = 0x4
-  config_D0806030 : ORIGIN = 0xD0806030, LENGTH = 0x4
+  config_D0804004 : ORIGIN = 0xD0804004, LENGTH = 0x4
   config_D0806034 : ORIGIN = 0xD0806034, LENGTH = 0x4
+  config_D0806030 : ORIGIN = 0xD0806030, LENGTH = 0x4
 
 }
 
@@ -132,18 +132,18 @@ SECTIONS
     .config_D0804000 : {
       KEEP(*(.config_D0804000))
     } > config_D0804000
-    .config_D0804004 : {
-      KEEP(*(.config_D0804004))
-    } > config_D0804004
     .config_D0806020 : {
       KEEP(*(.config_D0806020))
     } > config_D0806020
-    .config_D0806030 : {
-      KEEP(*(.config_D0806030))
-    } > config_D0806030
+    .config_D0804004 : {
+      KEEP(*(.config_D0804004))
+    } > config_D0804004
     .config_D0806034 : {
       KEEP(*(.config_D0806034))
     } > config_D0806034
+    .config_D0806030 : {
+      KEEP(*(.config_D0806030))
+    } > config_D0806030
 
     /*
      * The linker moves the .vectors section into itcm when itcm is

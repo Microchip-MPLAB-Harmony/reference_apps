@@ -1,7 +1,7 @@
 /**
  * \brief Component description for HMATRIXB
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-03T13:06:13Z */
+/* file generated from device description version 2020-08-13T21:04:01Z */
 #ifndef _PIC32CMMC00_HMATRIXB_COMPONENT_H_
 #define _PIC32CMMC00_HMATRIXB_COMPONENT_H_
 
@@ -269,9 +269,57 @@
 #define HMATRIXB_PRAS_REG_OFST         (0x00)              /**< (HMATRIXB_PRAS) Priority A for Slave Offset */
 #define HMATRIXB_PRBS_REG_OFST         (0x04)              /**< (HMATRIXB_PRBS) Priority B for Slave Offset */
 #define HMATRIXB_MCFG_REG_OFST         (0x00)              /**< (HMATRIXB_MCFG) Master Configuration Offset */
+#define HMATRIXB_MCFG0_REG_OFST        (0x00)              /**< (HMATRIXB_MCFG0) Master Configuration Offset */
+#define HMATRIXB_MCFG1_REG_OFST        (0x04)              /**< (HMATRIXB_MCFG1) Master Configuration Offset */
+#define HMATRIXB_MCFG2_REG_OFST        (0x08)              /**< (HMATRIXB_MCFG2) Master Configuration Offset */
+#define HMATRIXB_MCFG3_REG_OFST        (0x0C)              /**< (HMATRIXB_MCFG3) Master Configuration Offset */
+#define HMATRIXB_MCFG4_REG_OFST        (0x10)              /**< (HMATRIXB_MCFG4) Master Configuration Offset */
+#define HMATRIXB_MCFG5_REG_OFST        (0x14)              /**< (HMATRIXB_MCFG5) Master Configuration Offset */
+#define HMATRIXB_MCFG6_REG_OFST        (0x18)              /**< (HMATRIXB_MCFG6) Master Configuration Offset */
+#define HMATRIXB_MCFG7_REG_OFST        (0x1C)              /**< (HMATRIXB_MCFG7) Master Configuration Offset */
+#define HMATRIXB_MCFG8_REG_OFST        (0x20)              /**< (HMATRIXB_MCFG8) Master Configuration Offset */
+#define HMATRIXB_MCFG9_REG_OFST        (0x24)              /**< (HMATRIXB_MCFG9) Master Configuration Offset */
+#define HMATRIXB_MCFG10_REG_OFST       (0x28)              /**< (HMATRIXB_MCFG10) Master Configuration Offset */
+#define HMATRIXB_MCFG11_REG_OFST       (0x2C)              /**< (HMATRIXB_MCFG11) Master Configuration Offset */
+#define HMATRIXB_MCFG12_REG_OFST       (0x30)              /**< (HMATRIXB_MCFG12) Master Configuration Offset */
+#define HMATRIXB_MCFG13_REG_OFST       (0x34)              /**< (HMATRIXB_MCFG13) Master Configuration Offset */
+#define HMATRIXB_MCFG14_REG_OFST       (0x38)              /**< (HMATRIXB_MCFG14) Master Configuration Offset */
+#define HMATRIXB_MCFG15_REG_OFST       (0x3C)              /**< (HMATRIXB_MCFG15) Master Configuration Offset */
 #define HMATRIXB_SCFG_REG_OFST         (0x40)              /**< (HMATRIXB_SCFG) Slave Configuration Offset */
+#define HMATRIXB_SCFG0_REG_OFST        (0x40)              /**< (HMATRIXB_SCFG0) Slave Configuration Offset */
+#define HMATRIXB_SCFG1_REG_OFST        (0x44)              /**< (HMATRIXB_SCFG1) Slave Configuration Offset */
+#define HMATRIXB_SCFG2_REG_OFST        (0x48)              /**< (HMATRIXB_SCFG2) Slave Configuration Offset */
+#define HMATRIXB_SCFG3_REG_OFST        (0x4C)              /**< (HMATRIXB_SCFG3) Slave Configuration Offset */
+#define HMATRIXB_SCFG4_REG_OFST        (0x50)              /**< (HMATRIXB_SCFG4) Slave Configuration Offset */
+#define HMATRIXB_SCFG5_REG_OFST        (0x54)              /**< (HMATRIXB_SCFG5) Slave Configuration Offset */
+#define HMATRIXB_SCFG6_REG_OFST        (0x58)              /**< (HMATRIXB_SCFG6) Slave Configuration Offset */
+#define HMATRIXB_SCFG7_REG_OFST        (0x5C)              /**< (HMATRIXB_SCFG7) Slave Configuration Offset */
+#define HMATRIXB_SCFG8_REG_OFST        (0x60)              /**< (HMATRIXB_SCFG8) Slave Configuration Offset */
+#define HMATRIXB_SCFG9_REG_OFST        (0x64)              /**< (HMATRIXB_SCFG9) Slave Configuration Offset */
+#define HMATRIXB_SCFG10_REG_OFST       (0x68)              /**< (HMATRIXB_SCFG10) Slave Configuration Offset */
+#define HMATRIXB_SCFG11_REG_OFST       (0x6C)              /**< (HMATRIXB_SCFG11) Slave Configuration Offset */
+#define HMATRIXB_SCFG12_REG_OFST       (0x70)              /**< (HMATRIXB_SCFG12) Slave Configuration Offset */
+#define HMATRIXB_SCFG13_REG_OFST       (0x74)              /**< (HMATRIXB_SCFG13) Slave Configuration Offset */
+#define HMATRIXB_SCFG14_REG_OFST       (0x78)              /**< (HMATRIXB_SCFG14) Slave Configuration Offset */
+#define HMATRIXB_SCFG15_REG_OFST       (0x7C)              /**< (HMATRIXB_SCFG15) Slave Configuration Offset */
 #define HMATRIXB_MRCR_REG_OFST         (0x100)             /**< (HMATRIXB_MRCR) Master Remap Control Offset */
 #define HMATRIXB_SFR_REG_OFST          (0x110)             /**< (HMATRIXB_SFR) Special Function Offset */
+#define HMATRIXB_SFR0_REG_OFST         (0x110)             /**< (HMATRIXB_SFR0) Special Function Offset */
+#define HMATRIXB_SFR1_REG_OFST         (0x114)             /**< (HMATRIXB_SFR1) Special Function Offset */
+#define HMATRIXB_SFR2_REG_OFST         (0x118)             /**< (HMATRIXB_SFR2) Special Function Offset */
+#define HMATRIXB_SFR3_REG_OFST         (0x11C)             /**< (HMATRIXB_SFR3) Special Function Offset */
+#define HMATRIXB_SFR4_REG_OFST         (0x120)             /**< (HMATRIXB_SFR4) Special Function Offset */
+#define HMATRIXB_SFR5_REG_OFST         (0x124)             /**< (HMATRIXB_SFR5) Special Function Offset */
+#define HMATRIXB_SFR6_REG_OFST         (0x128)             /**< (HMATRIXB_SFR6) Special Function Offset */
+#define HMATRIXB_SFR7_REG_OFST         (0x12C)             /**< (HMATRIXB_SFR7) Special Function Offset */
+#define HMATRIXB_SFR8_REG_OFST         (0x130)             /**< (HMATRIXB_SFR8) Special Function Offset */
+#define HMATRIXB_SFR9_REG_OFST         (0x134)             /**< (HMATRIXB_SFR9) Special Function Offset */
+#define HMATRIXB_SFR10_REG_OFST        (0x138)             /**< (HMATRIXB_SFR10) Special Function Offset */
+#define HMATRIXB_SFR11_REG_OFST        (0x13C)             /**< (HMATRIXB_SFR11) Special Function Offset */
+#define HMATRIXB_SFR12_REG_OFST        (0x140)             /**< (HMATRIXB_SFR12) Special Function Offset */
+#define HMATRIXB_SFR13_REG_OFST        (0x144)             /**< (HMATRIXB_SFR13) Special Function Offset */
+#define HMATRIXB_SFR14_REG_OFST        (0x148)             /**< (HMATRIXB_SFR14) Special Function Offset */
+#define HMATRIXB_SFR15_REG_OFST        (0x14C)             /**< (HMATRIXB_SFR15) Special Function Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief PRS register API structure */
