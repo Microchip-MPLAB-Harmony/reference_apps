@@ -171,6 +171,13 @@ static uint8_t getTemperature (uint8_t* rawTempValue)
     return (uint8_t)temp;
 }
 
+static void oled_C_click_dispaly_referesh()
+{
+    GFX_DISP_INTF_PIN_EN_Clear();
+    GFX_DISP_INTF_PIN_RW_Clear();
+    GFX_DISP_INTF_PIN_EN_Set();
+}
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Initialization and State Machine Functions
@@ -212,6 +219,7 @@ void APP_Tasks ( void )
 {
     static char lcl_currTimeStr[15];           
 
+    oled_C_click_dispaly_referesh();
     /* Check the application's current state. */
     switch ( appData.state )
     {

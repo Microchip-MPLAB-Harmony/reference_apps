@@ -13,13 +13,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: B6A5ABDC5514E248B68A45FC26D1B145
-- generatedChecksum: C21CE2719DDD4113F823BEE9A304F324
+- generatedChecksum: EEBE16FAFF344DA8B61668D1AF944016
   logicalPath: config/sam_e51_cnano/gfx/driver/external_controller
   name: drv_gfx_external_controller.c
   physicalPath: gfx/driver/controller/external_controller
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0CCD2D42535CA70FA74C37BD213F5777
+  userChecksum: EEBE16FAFF344DA8B61668D1AF944016
 - generatedChecksum: 0224E6E5C287291C791D1C7D9900593C
   logicalPath: config/sam_e51_cnano/driver/spi
   name: drv_spi.c

@@ -145,19 +145,10 @@ static inline void DRV_SSD1351_DelayMS(int ms)
 */
 static void DRV_SSD1351_Reset(void)
 {
-    GFX_DISP_INTF_PIN_EN_Clear();
-    GFX_DISP_INTF_PIN_RESET_Set();
-    GFX_DISP_INTF_PIN_RW_Clear();
-    
+    DRV_SSD1351_Reset_Assert();
     DRV_SSD1351_DelayMS(1);
-    
-    GFX_DISP_INTF_PIN_RESET_Clear();
-    
+    DRV_SSD1351_Reset_Deassert();
     DRV_SSD1351_DelayMS(2);
-    
-    GFX_DISP_INTF_PIN_RESET_Set();
-    
-    GFX_DISP_INTF_PIN_EN_Set();
 }
 
 int DRV_SSD1351_Initialize(void)
@@ -369,6 +360,17 @@ gfxDriverIOCTLResponse DRV_SSD1351_IOCTL(gfxDriverIOCTLRequest request,
             
             return GFX_IOCTL_OK;
         }
+        case GFX_IOCTL_GET_STATUS:
+		{
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            if (drv.state == RUN)
+                val->value.v_uint = 0;
+            else
+                val->value.v_uint = 1;
+            
+            return GFX_IOCTL_OK;
+	    }
         default:
         { }
     }
