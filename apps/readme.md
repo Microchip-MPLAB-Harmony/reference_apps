@@ -30,7 +30,6 @@ The following reference applications are provided to evaluate solutions on 32-bi
 - ### [SAMC21N Xplained Pro Evaluation Kit](./sam_c21n_xpro/readme.md)
 - ### [PIC32MK General Purpose (GP) Development Kit](./pic32mk_gp_db/readme.md)
 - ### [Curiosity PIC32MX470 Development Board](./pic32mx470_curiosity/readme.md)
-- ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit + MEB-II](./pic32mz_ef_sk_meb2/readme.md)
 - ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md)
 - ### [SAM L11 Xplained Pro Evaluation Kit](./sam_l11_xpro/readme.md)
 
