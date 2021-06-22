@@ -24,7 +24,7 @@
       },
       "configurator":{
          "name":"MHC",
-         "semverRange":">=3.7.2"
+         "semverRange":">=3.6.4"
       },
       "device":{
          "metaDataVersion":"1.0.0",

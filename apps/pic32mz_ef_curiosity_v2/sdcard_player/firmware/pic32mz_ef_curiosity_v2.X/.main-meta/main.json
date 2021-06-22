@@ -3,7 +3,7 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mzda_sdcard_player",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sdcard_player",
 		"version": "1.3.0",
 		"displayName": "SD Card Audio Player",
 		"projectName": "sdcard_player_pic32mz_ef_curiosity_v2",
