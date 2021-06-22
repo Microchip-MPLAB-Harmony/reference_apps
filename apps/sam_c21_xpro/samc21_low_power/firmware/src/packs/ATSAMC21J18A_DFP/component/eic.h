@@ -1,7 +1,7 @@
 /**
  * \brief Component description for EIC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-11-25T02:24:13Z */
+/* file generated from device description version 2020-12-11T17:47:32Z */
 #ifndef _SAMC21_EIC_COMPONENT_H_
 #define _SAMC21_EIC_COMPONENT_H_
 
@@ -309,6 +309,8 @@
 #define EIC_INTFLAG_REG_OFST           (0x14)              /**< (EIC_INTFLAG) Interrupt Flag Status and Clear Offset */
 #define EIC_ASYNCH_REG_OFST            (0x18)              /**< (EIC_ASYNCH) EIC Asynchronous edge Detection Enable Offset */
 #define EIC_CONFIG_REG_OFST            (0x1C)              /**< (EIC_CONFIG) Configuration n Offset */
+#define EIC_CONFIG0_REG_OFST           (0x1C)              /**< (EIC_CONFIG0) Configuration n Offset */
+#define EIC_CONFIG1_REG_OFST           (0x20)              /**< (EIC_CONFIG1) Configuration n Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief EIC register API structure */

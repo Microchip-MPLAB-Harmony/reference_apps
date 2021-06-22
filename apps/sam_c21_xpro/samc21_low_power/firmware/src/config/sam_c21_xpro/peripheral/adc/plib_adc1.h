@@ -106,6 +106,12 @@ void ADC1_WindowModeSet(ADC_WINMODE mode);
 
 bool ADC1_ConversionSequenceIsFinished(void);
 
+void ADC1_InterruptsClear(ADC_STATUS interruptMask);
+
+void ADC1_InterruptsEnable(ADC_STATUS interruptMask);
+
+void ADC1_InterruptsDisable(ADC_STATUS interruptMask);
+
 
 void ADC1_CallbackRegister( ADC_CALLBACK callback, uintptr_t context );
 

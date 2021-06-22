@@ -58,17 +58,19 @@
 void PM_Initialize( void )
 {
     /* Configure PM */
-    PM_REGS->PM_STDBYCFG = PM_STDBYCFG_VREGSMOD(2);
+    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_VREGSMOD(2UL));
 
 }
 
 void PM_IdleModeEnter( void )
 {
     /* Configure Idle Sleep mode */
-    PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_IDLE_Val;
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_IDLE_Val;
 
-    /* Ensure that SLEEPMODE bits are configured with the given value */
-    while (!(PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val));
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val) == 0U)
+    {
+        /* Ensure that SLEEPMODE bits are configured with the given value */
+    }
     /* Wait for interrupt instruction execution */
     __WFI();
 }
@@ -76,10 +78,12 @@ void PM_IdleModeEnter( void )
 void PM_StandbyModeEnter( void )
 {
     /* Configure Standby Sleep */
-    PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_STANDBY_Val;
-
-    /* Ensure that SLEEPMODE bits are configured with the given value */
-    while (!(PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_STANDBY_Val));
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_STANDBY_Val;
+  
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_STANDBY_Val) == 0U)
+    {
+        /* Ensure that SLEEPMODE bits are configured with the given value */
+    }
 
     /* Wait for interrupt instruction execution */
     __WFI();

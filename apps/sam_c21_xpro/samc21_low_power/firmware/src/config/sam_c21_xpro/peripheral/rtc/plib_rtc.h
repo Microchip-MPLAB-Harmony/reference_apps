@@ -54,20 +54,44 @@
 extern "C" {
 #endif
 // DOM-IGNORE-END
+// *****************************************************************************
+// *****************************************************************************
+// Section:Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
 
 /* Frequency of Counter Clock for RTC */
-#define RTC_COUNTER_CLOCK_FREQUENCY        (1024 / (1 << (0x1 - 1)))
+#define RTC_COUNTER_CLOCK_FREQUENCY        (1024U / (1UL << (0x1U - 1U)))
+
+#define RTC_TIMER32_INT_MASK_PER0  RTC_MODE0_INTENSET_PER0_Msk
+#define RTC_TIMER32_INT_MASK_PER1  RTC_MODE0_INTENSET_PER1_Msk
+#define RTC_TIMER32_INT_MASK_PER2  RTC_MODE0_INTENSET_PER2_Msk
+#define RTC_TIMER32_INT_MASK_PER3  RTC_MODE0_INTENSET_PER3_Msk
+#define RTC_TIMER32_INT_MASK_PER4  RTC_MODE0_INTENSET_PER4_Msk
+#define RTC_TIMER32_INT_MASK_PER5  RTC_MODE0_INTENSET_PER5_Msk
+#define RTC_TIMER32_INT_MASK_PER6  RTC_MODE0_INTENSET_PER6_Msk
+#define RTC_TIMER32_INT_MASK_PER7  RTC_MODE0_INTENSET_PER7_Msk
+#define RTC_TIMER32_INT_MASK_CMP0  RTC_MODE0_INTENSET_CMP0_Msk
+#define RTC_TIMER32_INT_MASK_OVF  RTC_MODE0_INTENSET_OVF_Msk
+#define RTC_TIMER32_INT_MASK_INVALID 0xFFFFFFFFU
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
 
 typedef enum
 {
-    RTC_PER0_MASK = 0x0001,
-    RTC_PER1_MASK = 0x0002,
-    RTC_PER2_MASK = 0x0004,
-    RTC_PER3_MASK = 0x0008,
-    RTC_PER4_MASK = 0x0010,
-    RTC_PER5_MASK = 0x0020,
-    RTC_PER6_MASK = 0x0040,
-    RTC_PER7_MASK = 0x0080
+    RTC_PER0_MASK = 0x0001U,
+    RTC_PER1_MASK = 0x0002U,
+    RTC_PER2_MASK = 0x0004U,
+    RTC_PER3_MASK = 0x0008U,
+    RTC_PER4_MASK = 0x0010U,
+    RTC_PER5_MASK = 0x0020U,
+    RTC_PER6_MASK = 0x0040U,
+    RTC_PER7_MASK = 0x0080U
 } RTC_PERIODIC_INT_MASK;
 
 

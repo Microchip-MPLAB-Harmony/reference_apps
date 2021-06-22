@@ -53,6 +53,7 @@
 /* This section lists the other files that are included in this file.
 */
 
+#include "interrupts.h"
 #include "plib_adc1.h"
 
 // *****************************************************************************
@@ -60,13 +61,13 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-ADC_CALLBACK_OBJ ADC1_CallbackObject;
+static ADC_CALLBACK_OBJ ADC1_CallbackObject;
 
 #define ADC1_LINEARITY_POS  (6)
-#define ADC1_LINEARITY_Msk   (0x7 << ADC1_LINEARITY_POS)
+#define ADC1_LINEARITY_Msk   (0x7UL << ADC1_LINEARITY_POS)
 
 #define ADC1_BIASCAL_POS  (9)
-#define ADC1_BIASCAL_Msk   (0x7 << ADC1_BIASCAL_POS)
+#define ADC1_BIASCAL_Msk   (0x7UL << ADC1_BIASCAL_POS)
 
 
 // *****************************************************************************
@@ -80,44 +81,45 @@ ADC_CALLBACK_OBJ ADC1_CallbackObject;
 void ADC1_Initialize( void )
 {
     /* Reset ADC */
-    ADC1_REGS->ADC_CTRLA = ADC_CTRLA_SWRST_Msk;
+    ADC1_REGS->ADC_CTRLA = (uint8_t)ADC_CTRLA_SWRST_Msk;
 
     while((ADC1_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_SWRST_Msk) == ADC_SYNCBUSY_SWRST_Msk)
     {
         /* Wait for Synchronization */
     }
     /* Write linearity calibration in BIASREFBUF and bias calibration in BIASCOMP */
-    ADC1_REGS->ADC_CALIB = (uint32_t)(ADC_CALIB_BIASREFBUF(((*(uint64_t*)OTP5_ADDR) & ADC1_LINEARITY_Msk))) \
-        | ADC_CALIB_BIASCOMP((((*(uint64_t*)OTP5_ADDR) & ADC1_BIASCAL_Msk) >> ADC1_BIASCAL_POS));
+    uint32_t calib_low_word = (uint32_t)(*(uint64_t*)OTP5_ADDR);
+    ADC1_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_BIASREFBUF((calib_low_word & ADC1_LINEARITY_Msk) >> ADC1_LINEARITY_POS)) | 
+                                      (ADC_CALIB_BIASCOMP((calib_low_word & ADC1_BIASCAL_Msk) >> ADC1_BIASCAL_POS)));
 
     /* Prescaler */
-    ADC1_REGS->ADC_CTRLB = ADC_CTRLB_PRESCALER_DIV256;
+    ADC1_REGS->ADC_CTRLB = (uint8_t)ADC_CTRLB_PRESCALER_DIV256;
     /* Sampling length */
-    ADC1_REGS->ADC_SAMPCTRL = ADC_SAMPCTRL_SAMPLEN(3U);
+    ADC1_REGS->ADC_SAMPCTRL = (uint8_t)ADC_SAMPCTRL_SAMPLEN(3UL);
 
     /* Reference */
-    ADC1_REGS->ADC_REFCTRL = ADC_REFCTRL_REFSEL_INTVCC2;
+    ADC1_REGS->ADC_REFCTRL = (uint8_t)ADC_REFCTRL_REFSEL_INTVCC2;
 
     /* Input pin */
     ADC1_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN10;
 
     /* Resolution & Operation Mode */
-    ADC1_REGS->ADC_CTRLC = ADC_CTRLC_RESSEL_8BIT | ADC_CTRLC_WINMODE(1) ;
+    ADC1_REGS->ADC_CTRLC = (uint16_t)(ADC_CTRLC_RESSEL_8BIT | ADC_CTRLC_WINMODE(1UL) );
 
 
     /* Upper threshold for window mode  */
-    ADC1_REGS->ADC_WINUT = 0;
+    ADC1_REGS->ADC_WINUT = (uint16_t)(0);
     /* Lower threshold for window mode  */
-    ADC1_REGS->ADC_WINLT = 150;
+    ADC1_REGS->ADC_WINLT = (uint16_t)(150);
     /* Clear all interrupt flags */
-    ADC1_REGS->ADC_INTFLAG = ADC_INTFLAG_Msk;
+    ADC1_REGS->ADC_INTFLAG = (uint8_t)ADC_INTFLAG_Msk;
     /* Enable interrupts */
-    ADC1_REGS->ADC_INTENSET = ADC_INTENSET_WINMON_Msk;
+    ADC1_REGS->ADC_INTENSET = (uint8_t)(ADC_INTENSET_WINMON_Msk);
     /* Events configuration  */
-    ADC1_REGS->ADC_EVCTRL = ADC_EVCTRL_STARTEI_Msk;
+    ADC1_REGS->ADC_EVCTRL = (uint8_t)(ADC_EVCTRL_STARTEI_Msk);
 
-    ADC1_REGS->ADC_CTRLA |= ADC_CTRLA_RUNSTDBY_Msk | ADC_CTRLA_ONDEMAND_Msk;
-    while(ADC1_REGS->ADC_SYNCBUSY)
+    ADC1_REGS->ADC_CTRLA |= (uint8_t)(ADC_CTRLA_RUNSTDBY_Msk | ADC_CTRLA_ONDEMAND_Msk);
+    while(0U != ADC1_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */
     }
@@ -126,8 +128,8 @@ void ADC1_Initialize( void )
 /* Enable ADC module */
 void ADC1_Enable( void )
 {
-    ADC1_REGS->ADC_CTRLA |= ADC_CTRLA_ENABLE_Msk;
-    while(ADC1_REGS->ADC_SYNCBUSY)
+    ADC1_REGS->ADC_CTRLA |= (uint8_t)ADC_CTRLA_ENABLE_Msk;
+    while(0U != ADC1_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */
     }
@@ -136,8 +138,8 @@ void ADC1_Enable( void )
 /* Disable ADC module */
 void ADC1_Disable( void )
 {
-    ADC1_REGS->ADC_CTRLA &= ~ADC_CTRLA_ENABLE_Msk;
-    while(ADC1_REGS->ADC_SYNCBUSY)
+    ADC1_REGS->ADC_CTRLA &= (uint8_t)(~ADC_CTRLA_ENABLE_Msk);
+    while(0U != ADC1_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */
     }
@@ -159,7 +161,7 @@ void ADC1_ChannelSelect( ADC_POSINPUT positiveInput, ADC_NEGINPUT negativeInput 
 void ADC1_ConversionStart( void )
 {
     /* Start conversion */
-    ADC1_REGS->ADC_SWTRIG |= ADC_SWTRIG_START_Msk;
+    ADC1_REGS->ADC_SWTRIG |= (uint8_t)ADC_SWTRIG_START_Msk;
 
     while((ADC1_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_SWTRIG_Msk) == ADC_SYNCBUSY_SWTRIG_Msk)
     {
@@ -183,7 +185,7 @@ void ADC1_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 {
     ADC1_REGS->ADC_WINLT = low_threshold;
     ADC1_REGS->ADC_WINUT = high_threshold;
-    while((ADC1_REGS->ADC_SYNCBUSY))
+    while(0U != (ADC1_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
     }
@@ -191,9 +193,9 @@ void ADC1_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC1_WindowModeSet(ADC_WINMODE mode)
 {
-    ADC1_REGS->ADC_CTRLC &= ~ADC_CTRLC_WINMODE_Msk;
-    ADC1_REGS->ADC_CTRLC |= (mode << ADC_CTRLC_WINMODE_Pos);
-    while((ADC1_REGS->ADC_SYNCBUSY))
+    ADC1_REGS->ADC_CTRLC &= (uint16_t)(~ADC_CTRLC_WINMODE_Msk);
+    ADC1_REGS->ADC_CTRLC |= (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
+    while(0U != (ADC1_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
     }
@@ -203,6 +205,21 @@ void ADC1_WindowModeSet(ADC_WINMODE mode)
 uint16_t ADC1_ConversionResultGet( void )
 {
     return (uint16_t)ADC1_REGS->ADC_RESULT;
+}
+
+void ADC1_InterruptsClear(ADC_STATUS interruptMask)
+{
+    ADC1_REGS->ADC_INTFLAG = (uint8_t)interruptMask;
+}
+
+void ADC1_InterruptsEnable(ADC_STATUS interruptMask)
+{
+    ADC1_REGS->ADC_INTENSET = (uint8_t)interruptMask;
+}
+
+void ADC1_InterruptsDisable(ADC_STATUS interruptMask)
+{
+    ADC1_REGS->ADC_INTENCLR = (uint8_t)interruptMask;
 }
 
 /* Register callback function */
@@ -216,10 +233,10 @@ void ADC1_CallbackRegister( ADC_CALLBACK callback, uintptr_t context )
 
 void ADC1_InterruptHandler( void )
 {
-    volatile ADC_STATUS status;
+    ADC_STATUS status;
     status = ADC1_REGS->ADC_INTFLAG;
     /* Clear interrupt flag */
-    ADC1_REGS->ADC_INTFLAG = ADC_INTENSET_WINMON_Msk;
+    ADC1_REGS->ADC_INTFLAG = (uint8_t)(ADC_INTENSET_WINMON_Msk);
     if (ADC1_CallbackObject.callback != NULL)
     {
         ADC1_CallbackObject.callback(status, ADC1_CallbackObject.context);
@@ -229,10 +246,10 @@ void ADC1_InterruptHandler( void )
 bool ADC1_ConversionStatusGet( void )
 {
     bool status;
-    status =  (bool)((ADC1_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk) >> ADC_INTFLAG_RESRDY_Pos);
+    status =  (((ADC1_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk) >> ADC_INTFLAG_RESRDY_Pos) != 0U);
     if (status == true)
     {
-        ADC1_REGS->ADC_INTFLAG = ADC_INTFLAG_RESRDY_Msk;
+        ADC1_REGS->ADC_INTFLAG = (uint8_t)ADC_INTFLAG_RESRDY_Msk;
     }
     return status;
 }

@@ -53,8 +53,10 @@
 /* This section lists the other files that are included in this file.
 */
 
+#include "interrupts.h"
 #include "device.h"
 #include "plib_supc.h"
+
 
 
 
@@ -64,14 +66,14 @@ void SUPC_Initialize( void )
 
     /* Configure BODVDD. Mask the values loaded from NVM during reset. */
     SUPC_REGS->SUPC_BODVDD &= ~SUPC_BODVDD_ENABLE_Msk;
-    SUPC_REGS->SUPC_BODVDD = (SUPC_REGS->SUPC_BODVDD & (SUPC_BODVDD_ENABLE_Msk | SUPC_BODVDD_ACTION_Msk | SUPC_BODVDD_HYST_Msk | SUPC_BODVDD_LEVEL_Msk)) | SUPC_BODVDD_PSEL(0x0);
-    if (bodEnable)
+    SUPC_REGS->SUPC_BODVDD = (SUPC_REGS->SUPC_BODVDD & (SUPC_BODVDD_ENABLE_Msk | SUPC_BODVDD_ACTION_Msk | SUPC_BODVDD_HYST_Msk | SUPC_BODVDD_LEVEL_Msk)) | SUPC_BODVDD_PSEL(0x0UL);
+    if (bodEnable != 0U)
     {
         SUPC_REGS->SUPC_BODVDD |= SUPC_BODVDD_ENABLE_Msk;
     }
 
     /* Configure VREF */
-    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0);
+    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0UL);
 
 }
 
