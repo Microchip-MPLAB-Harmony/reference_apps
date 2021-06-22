@@ -182,6 +182,7 @@ The pre-built hex file can be programmed by following the below steps.
 -  Based on the command received from the MBD application, the fan will be controlled.
 
 ## Comments:
+- This application is developed by modifying **"drv_bm71.c"** file. If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace this file. This issue is expected to be fixed in a future Harmony release.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
