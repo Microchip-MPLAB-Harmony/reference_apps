@@ -1,3 +1,9 @@
+---
+grand_parent: Reference Applications
+parent: SAM D21 IoT Development Board
+title: Serial Bridge Application
+nav_order: 99
+---
 
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
