@@ -44,10 +44,25 @@ nav_order: 99
 | [ble_fitness_tracker](./apps/sam_e51_cnano/ble_fitness_tracker/readme.md) |  BLE Fitness Tracker |  [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)| Updated to replace Heart rate 3 click board with Heart rate 9 click board |
 | [pic32mzda_sdcard_usb_audio_player](./apps/pic32mz_da_curiosity/pic32mzda_sdcard_usb_audio_player/readme.md) |  SD Card USB Audio Player |  [PIC32MZ DA](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [PIC32MZ DA Curiosity Development Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A)| Updated to support multiple bit rates, fixed display refresh rate. Removed unused Audio decoders (Adpcm and mp3) files |
 
+
+### Deleted Applications  
+
+| Application | Description | Comment |  
+| --- | --- |  --- |  
+| audio_player_lab1 |  Audio-Tone using a Lookup Table | Removed MEB-II based audio demo as hardware is matured |  
+| audio_player_lab2 |  Audio-Tone Application by reading the tone from a text file stored in an SD card | Removed MEB-II based audio demo as hardware is matured |  
+| audio_player_lab3 |  SD Card Reader and Audio-Tone Application by reading the tone from a text file stored in an SD card | Removed MEB-II based audio demo as hardware is matured |  
+| audio_player_lab4 |  SD Card Reader ".wav" Audio player | Removed MEB-II based audio demo as hardware is matured |  
+| audio_player_lab5 |  SD Card Audio Player/Reader with Aria Graphics | Removed MEB-II based audio demo as hardware is matured |  
+
+
 ### Known Issues
-1. .
-2. .
-3. .
+1. The application 'pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control' is developed by modifying **"drv_bm71.c"** file. If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace this file. This issue is expected to be fixed in a future Harmony release of "bt" repo.
+2. The application 'sam_e54_cult/same54_sdcard_usb_audio_player' is developed by modifying the generated **"drv_wm8904.c"** and **"i2s.h"** files. If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace these files. These issues are expected to be fixed in a future Harmony release of "dev_packs" repo.
+
+### Development Tools
+
+* Refer demo specific documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
 
 ## Reference Applications Release v1.2.0 (January 2021)
