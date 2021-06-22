@@ -1135,7 +1135,7 @@
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="D:/MassMarket/github_repos/reference_apps/apps/sam_e70_xult/ftp_bootloader/firmware/sam_e70_xult.X/debug/default/sam_e70_xult_ptg"/>
+                  value="D:/MassMarket/reference_apps/apps/sam_e70_xult/ftp_bootloader/firmware/sam_e70_xult.X/debug/default/sam_e70_xult_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

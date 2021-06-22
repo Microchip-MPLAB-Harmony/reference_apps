@@ -259,6 +259,11 @@ void APP_Initialize ( void )
     /* Place the App state machine in its initial state. */
     appData.state = APP_MOUNT_WAIT;
 
+    if (APP_Bootloader_Enter() == false)
+    {
+        APP_Run_Application();
+    }
+
     /* Register the File System Event handler */
     SYS_FS_EventHandlerSet((void const*)APP_SysFSEventHandler,(uintptr_t)NULL);
     

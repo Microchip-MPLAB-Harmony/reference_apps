@@ -752,11 +752,6 @@ void SYS_Initialize ( void* data )
 	BSP_Initialize();
     USART1_Initialize();
 
-    if (APP_Bootloader_Enter() == false)
-    {
-        APP_Run_Application();
-    }
-
     XDMAC_Initialize();
 
 	RSWDT_REGS->RSWDT_MR = RSWDT_MR_WDDIS_Msk;	// Disable RSWDT 
