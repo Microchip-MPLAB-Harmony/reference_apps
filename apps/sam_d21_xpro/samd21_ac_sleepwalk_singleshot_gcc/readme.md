@@ -92,7 +92,7 @@ The pre-built hex file can be programmed by following the below steps
 - Connect to the EDBG Virtual COM port and configure the baud rate to **115200**
 - Build and Program the application using the MPLAB X IDE.
 - The console displays the message stating whether voltage at PA04 is lower or greater than the internal bandgap voltage (1.1 V)
-- LED0 toggles when comparison is done.
+- LED0 toggles when comparison is done.  
 <img src = "images/ac_sleepwalk_singleshot_output.png" width="658" height="298" align="middle">
 
 ## Comments:

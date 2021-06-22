@@ -75,10 +75,10 @@ The pre-built hex file can be programmed by following the below steps.
 - Set the baud rate to 115200
 - Keep your finger on Pulse Detection Indicator as shown here.
 
-	<img src = "images/proper_finger_placement.png" width="550" height="320" align="middle">
+	<img src = "images/proper_finger_placement.png" width="550" height="320" align="middle">  
 	<img src = "images/wrong_way_finger_placement.png" width="550" height="320" align="middle">
 
-	*Note*: Cover the Heart Rate Sensor by placing your finger on Pulse Detection Indicator as shown below
+	*Note*: Cover the Heart Rate Sensor by placing your finger on Pulse Detection Indicator as shown below  
 	<img src = "images/oximeter_heart_rate_sensor.png" width="350" height="350" align="center">
 - Now, press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the Heart Rate.  
 	<img src = "images/heartrate9_click_run.png" width="660" height="340" align="middle">

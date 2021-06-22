@@ -89,11 +89,13 @@ The pre-built hex file can be programmed by following the below steps.
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
-- Perform a reset by unplugging and re-plugging the power cable of SAM D21 Curiosity Nano Evaluation Kit  
-- After power up, the application displays the "microchip logo" on the eINK display and initializes the heart rate sensor  
+
+- Perform a reset by unplugging and re-plugging the power cable of SAM D21 Curiosity Nano Evaluation Kit.  
+- After power up, the application displays the "microchip logo" on the eINK display and initializes the heart rate sensor.  
 - After successful initialization, keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.  
-  <img src = "images/finger_placement.png" width="432" height="158" align="middle">
-  <img src = "images/fitness_tracker_demo_run.jpg" width="600" height="500" align="middle">
+
+  <img src = "images/finger_placement.png" width="432" height="158" align="middle">  
+	<img src = "images/fitness_tracker_demo_run.jpg" width="600" height="500" align="middle">
 
   **Note:** Place your index finger gently on the heart rate 9 click sensor as shown in the above figure  
 - Press switch "SW0" on SAM D21 Curiosity Nano Evaluation Kit, LED "LED0" on SAM D21 Curiosity Nano Evaluation Kit glows on  
@@ -112,7 +114,7 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
-– v1.3.0 - Regenerated and tested application.
+- v1.3.0 - Regenerated and tested application.
 - v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Regenerated and tested application.
 - v1.0.0 - Released demo application

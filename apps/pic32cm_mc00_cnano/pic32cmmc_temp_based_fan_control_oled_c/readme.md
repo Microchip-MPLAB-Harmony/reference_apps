@@ -25,10 +25,12 @@ nav_order: 2
 - Peripheral Modules
 	- SYS Time
 	- Timer       
-	- Legato graphics
-	- LE External controller
 	- SERCOM(I2C)
 	- SERCOM(SPI)
+- Drivers
+	- LE External controller
+- Middleware
+	- Legato graphics
 
 ## Hardware Used:
 
@@ -99,5 +101,5 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
-– v1.3.0 - Regenerated and tested application.
+- v1.3.0 - Regenerated and tested application.  
 - v1.2.0 released demo application

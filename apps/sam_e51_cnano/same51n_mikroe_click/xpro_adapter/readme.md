@@ -52,7 +52,7 @@ nav_order: 14
 - Mount [I/O1 Xplained Pro Extension Kit ](https://www.microchip.com/developmenttools/ProductDetails/ATIO1-XPRO) on to [XPRO-ADAPTER Click](https://www.mikroe.com/xpro-adapter-click).
 - Insert [XPRO-ADAPTER Click](https://www.mikroe.com/xpro-adapter-click) to mikroBUS socket #1 on the Curiosity Nano Base for Click boards as shown in the following figure.
 
-  <img src = "images/xpro_adapter_click_hw_setup.png" width="750" height="662" align="middle">
+  <img src = "images/xpro_adapter_click_hw_setup.png" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  

@@ -18,11 +18,11 @@ nav_order: 3
 > This application demonstrates a smart appliance control using BLE. The application connects through BM71 XPRO to Microchip Bluetooth Data (MBD) android mobile application via BLE (Bluetooth Low Energy). The BM71 XPRO uses a transparent service for data exchange with the android MBD mobile application. Based on the mobile application's commands, the fan connected to Fan click via the I2C interface is controlled. The BM71 XPRO interfaces to the MCU over SERCOM - USART interface.
 
 > A fan is controlled by following the below commands:  
-  1. **FAN_ON**     - To turn "On" the Fan with low speed.
-  2. **FAN_OFF**    - To turn "Off" the Fan.
-  3. **FAN_LOW**    - To run the fan with low speed.
-  4. **FAN_HIGH**   - To run the fan with high speed.
-  5. **FAN_MID**    - To run the fan with medium speed.
+	1. **FAN_ON**     - To turn "On" the Fan with low speed.  
+	2. **FAN_OFF**    - To turn "Off" the Fan.  
+	3. **FAN_LOW**    - To run the fan with low speed.  
+	4. **FAN_HIGH**   - To run the fan with high speed.  
+	5. **FAN_MID**    - To run the fan with medium speed.
 
 ## Modules/Technology Used:
 - Peripheral Modules
@@ -76,7 +76,7 @@ nav_order: 3
 - Double click on "`IS187x_102_BLEDK3v1.11_UI1.00.exe` "
 - Click on "Load" button and select "Load Text File"  
 <img src = "images/ble_config_loading_mainscreen.png" width="300" height="300" align="middle"> <img src = "images/ble_config_loading_step1.png" width="300" height="300" align="middle">
-- Select “**IS1871SF_102_BLEDK3v1.11_UI v1.00(BM71)_default.txt**” from your_downloaded_folder ```\Firmware & Software Tools v1.11\ConfigurationTool\IS187x_102_BLEDK3v1.11_UI1.00```  
+- Select **“IS1871SF_102_BLEDK3v1.11_UI v1.00(BM71)_default.txt”** from your_downloaded_folder ```\Firmware & Software Tools v1.11\ConfigurationTool\IS187x_102_BLEDK3v1.11_UI1.00```  
 <img src = "images/ble_config_loading_step2.png" width="800" height="225" align="middle">  
 - Click on "EDIT" option  
 <img src = "images/ble_config_loading_step3.png" width="300" height="250" align="middle">

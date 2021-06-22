@@ -102,8 +102,8 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 9. Build the Live update application (path: `<Live Update application folder>/firmware/sam_e54_cult.X`) using the MPLAB X IDE **but do not program**.
 10. Run the **btl_app_merge_bin.py** script from command prompt to merge the generated Bootloader binary and Live update application binary.
     - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_app_merge_bin.py -o 0x2000 -b <Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X/dist/<Config Name>/production/<Project Name>.production.bin -a <Live Update application folder>/hex/sam_e54_cult.X.production.bin`
-    - Below output should be displayed on command prompt.
-    <img src = "images/merge_bootloader_and_live_update_app.png" width="735" height="32" align="middle">
+    - Below output should be displayed on command prompt.  
+		<img src = "images/merge_bootloader_and_live_update_app.png" width="735" height="32" align="middle">
 11. Run the **btl_host.py** from command prompt to program the merged binary to opposite panel. The merged binary **btl_app_merged.bin** will be generated in the path from where the **btl_app_merge_bin.py** was called from.
     - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d same5x -a 0x00080000 -f btl_app_merged.bin`
     - **Note:**
@@ -117,10 +117,10 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 2. If the above step is successful, then **LED1 should start blinking** on the SAM E54 Curiosity Ultra Development Board.
 3. Run the host script "**live_update.py**" from command prompt available at `<Live Update application folder>/scripts` to program the new version of the firmware to an inactive panel while the current version of the application is being run from the active panel.
     - `python <Live Update application folder>/scripts/live_update.py -v -i <COM PORT> -d same5x -a <Address> -f btl_app_merged.bin`. The merged binary **btl_app_merged.bin** will be generated in the path from where the **btl_app_merge_bin.py** was called from.
-    - **Note:** If you need to know more information on the Live Update Script, Open command prompt, goto `<Live Update application folder>/scripts` then enter `python live_update.py --help`. The below output shows the Live Update Script help.
-    <img src = "images/live_update_help.png" >
-    - Below output should be displayed on command prompt.
-    <img src = "images/live_update_log.png" >
+    - **Note:** If you need to know more information on the Live Update Script, Open command prompt, goto `<Live Update application folder>/scripts` then enter `python live_update.py --help`. The below output shows the Live Update Script help.  
+		<img src = "images/live_update_help.png" >  
+		Below output should be displayed on command prompt.  
+		<img src = "images/live_update_log.png" >
 4. LED1 stops blinking and LED2 starts blinking which indicates the application programming is successful.
    * LED1 stops blinking and LED2 toggles for every 500ms then Application is running from BANK A
    * LED1 stops blinking and LED2 toggles for every 1000ms then Application is running from BANK B

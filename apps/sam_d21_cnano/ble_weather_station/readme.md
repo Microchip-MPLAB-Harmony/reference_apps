@@ -176,7 +176,7 @@ device should appear as MCHP in the list of Bluetooth devices.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
-– v1.3.0 - Regenerated and tested application.
+- v1.3.0 - Regenerated and tested application.
 - v1.2.0 regenerated and tested the demo application
 - v1.1.0 regenerated and tested the demo application
 - v1.0.0 released demo application

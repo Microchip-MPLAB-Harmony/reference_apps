@@ -84,8 +84,9 @@ The pre-built hex file can be programmed by following the below steps
 - Also, notice the LED0 blinking at 500 millisecond rate
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
 <img src = "images/temp_sensor_placement.png" width="425" height="405" align="middle">  
-- Press the switch SW0 on SAMC21N Xplained Pro Evaluation Kit to change the default sampling rate to 1 second
-  <img src = "images/user_button_placement.png" width="475" height="405" align="middle">  
+- Press the switch SW0 on SAMC21N Xplained Pro Evaluation Kit to change the default sampling rate to 1 second  
+
+	<img src = "images/user_button_placement.png" width="475" height="405" align="middle">  
   <img src = "images/result2.png" width="345" height="165" align="middle">  
 - Every subsequent pressing of switch SW0 on SAMC21N Xplained Pro Evaluation Kit changes the default sampling
   rate to 2 seconds, 4 seconds and 500 ms and back to 1 second in cyclic order as shown below  

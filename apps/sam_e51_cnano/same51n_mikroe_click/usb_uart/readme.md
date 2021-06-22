@@ -46,7 +46,7 @@ nav_order: 18
 - Mount [MikroElektronika USB UART Click](https://www.mikroe.com/usb-uart-click) over mikroBUS socket #1 on the [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A).
 - Connect the [MikroElektronika USB UART Click](https://www.mikroe.com/usb-uart-click) to the Host PC as a USB Device through a Type-A male to mini-B USB cable connected to mini-B USB port.
 
-  <img src = "images/usb_uart_click_demo_setup.png" width="686" height="896" align="middle">
+  <img src = "images/usb_uart_click_demo_setup.png" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  

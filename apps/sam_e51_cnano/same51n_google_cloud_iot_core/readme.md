@@ -25,7 +25,8 @@ The SAM E51 Curiosity Nano Evaluation Kit is based on SAM E51 microcontroller, i
 
 >This application utilizes Mikroelektronika click interface and Microchip XPRO interfaces available on Curiosity Nano base to create a Google IoT node application. The application demonstrates MQTT data transfer of light and temperature sensor data to Google IoT cloud.
 
-Below is the Index of topics in this document.  
+> Below is the Index of topics in this document.  
+
 - [Modules/Technology Used](#Modules_Technology_Used)  
 - [ATWINC1510 Firmware upgrade and Google Cloud IoT Provisioning Guide](#WINC_Firmware_upgrade_and_Google_Cloud_IoT_Provisioning_Guide)  
 - [Hardware Used](#Hardware_Used)  

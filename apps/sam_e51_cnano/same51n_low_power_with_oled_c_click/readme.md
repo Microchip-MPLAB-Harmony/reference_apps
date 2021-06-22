@@ -120,7 +120,8 @@ connected to Micro-B port, and reconnect it back.
   Cover the light sensor on the I/O Xplained Pro board by placing your hand over it to wakeup and print the temperature and message on the terminal.  
 <img src = "images/console_message_after_wakeup_from_idle_mode.png" width="600" height="300" align="middle">
 
-**Note**:
+**Note**:  
+
 - When the device reads the room temperature and prints it on the serial terminal, the temperature
   is also displayed on the OLED C Click board.  
 - This application demo does not provide the power consumption values of SAM E51 MCU in standby or
