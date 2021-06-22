@@ -125,6 +125,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 	By observing the outputs, you can conclude that the wake-up time is greater in Standby mode than in Idle mode
 
 ## Comments:
+- This application is developed by modifying a **"eic.c"** file. If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace this file. This change is to measure the instant wakeup time of the device.
 - Reference Training Module: [Low Power Application on SAMC2x (Cortex M0+) MCUs Using MPLAB Harmony v3 Peripheral Libraries](https://microchipdeveloper.com/harmony3:low-power-application-on-samc21)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
