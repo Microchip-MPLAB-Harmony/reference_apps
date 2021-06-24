@@ -195,7 +195,7 @@ extern "C" {
 #define DRV_WM8904_MIC_GAIN	                      	        28
 
 #define DRV_WM8904_I2S_DRIVER_MODULE_INDEX_IDX0             DRV_I2S_INDEX_0
-#define DRV_WM8904_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_0
+#define DRV_WM8904_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_1
 /* CODEC Driver Abstraction definition */
 
 //Codec Driver Instance

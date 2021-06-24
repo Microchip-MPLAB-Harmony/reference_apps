@@ -82,9 +82,7 @@ void I2S_Initialize ( void )
     I2S_REGS->I2S_TXCTRL = I2S_TXCTRL_MONO(0) |
                                             I2S_TXCTRL_WORDADJ(1) |
                                             I2S_TXCTRL_DATASIZE(0x0) |
-                                            I2S_TXCTRL_SLOTADJ(1) |
-                                            I2S_TXCTRL_CLKSEL(0) |
-                                            I2S_TXCTRL_SERMODE(I2S_TXCTRL_SERMODE_TX_Val);
+                                            I2S_TXCTRL_SLOTADJ(1);
 
     // configure RX serializer
     I2S_REGS->I2S_RXCTRL = I2S_RXCTRL_MONO(0) |

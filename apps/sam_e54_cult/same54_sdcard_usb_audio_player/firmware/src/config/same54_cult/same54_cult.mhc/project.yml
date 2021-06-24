@@ -48,20 +48,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 37780F17759DED907A0F36E28BFB3136
-- generatedChecksum: C6C114BAA065DD95F7FBAF9A76BBF032
+- generatedChecksum: 989F7226115330EAA2E0AD3A57FD2A24
   logicalPath: config/same54_cult/audio/driver/i2s
   name: drv_i2s.c
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C6C114BAA065DD95F7FBAF9A76BBF032
-- generatedChecksum: 08F4D5AEB0865BF6C9CC7F6D5E425CEF
+  userChecksum: 989F7226115330EAA2E0AD3A57FD2A24
+- generatedChecksum: B4725BD9958F563F4B5B26712B1E69CE
   logicalPath: config/same54_cult/audio/driver/i2s
   name: drv_i2s_local.h
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 08F4D5AEB0865BF6C9CC7F6D5E425CEF
+  userChecksum: B4725BD9958F563F4B5B26712B1E69CE
 - generatedChecksum: D60987ADDBC55D814DF1F8934395B71C
   logicalPath: config/same54_cult/driver/input
   name: drv_maxtouch.c
@@ -97,13 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E33A0119F9AED8DC8C41703EAF695D35
-- generatedChecksum: 81A9CA796EC350DFABF203DBF8E39D03
+- generatedChecksum: FAB02B5F23421E3F7FF0E284BA2157F8
   logicalPath: config/same54_cult/audio/driver/codec/wm8904
   name: drv_wm8904.c
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F73BF740C50CC505FC7B612CC973DF04
+  userChecksum: FAB02B5F23421E3F7FF0E284BA2157F8
 - generatedChecksum: 9D29C13630DD4B005FE28A01D8E8B258
   logicalPath: config/same54_cult/audio/driver/codec/wm8904
   name: drv_wm8904_local.h
@@ -139,13 +139,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 36FA79243A4ABD63DAAEA023290EDE3B
-- generatedChecksum: E801412CA981E57AAA4288B9A65AD0C0
+- generatedChecksum: 8048D20445CC5D49D9D4A2307A81ABC8
   logicalPath: config/same54_cult
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E801412CA981E57AAA4288B9A65AD0C0
+  userChecksum: 8048D20445CC5D49D9D4A2307A81ABC8
 - generatedChecksum: 8DC0740157F8195EC39B2F3419038502
   logicalPath: config/same54_cult
   name: interrupts.c
@@ -1154,13 +1154,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: F689446246BDAF08A00ED0D3E0B4D151
-- generatedChecksum: CEF3B4F4C9A55F6E7A5472471C285AF0
+- generatedChecksum: 894FCD56ED01B2D4C6A07219E69DCFFE
   logicalPath: config/same54_cult/audio/peripheral/i2s
   name: plib_i2s.c
   physicalPath: audio/peripheral/i2s
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CEF3B4F4C9A55F6E7A5472471C285AF0
+  userChecksum: 894FCD56ED01B2D4C6A07219E69DCFFE
 - generatedChecksum: DE010F21539BF9B4718DBA9588A3F417
   logicalPath: config/same54_cult/peripheral/nvic
   name: plib_nvic.c
@@ -1504,13 +1504,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
-- generatedChecksum: BE6053161BCCDFBA1EA627B2A8B6891C
+- generatedChecksum: C2C28F044D318E6915AFE1C1C2C587F1
   logicalPath: config/same54_cult
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: BE6053161BCCDFBA1EA627B2A8B6891C
+  userChecksum: C2C28F044D318E6915AFE1C1C2C587F1
 - generatedChecksum: 624A16D50759D7A491C523D747764B49
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm4.h
@@ -1630,13 +1630,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 3DCC478824D5F8545672CBCAAA7194CB
-- generatedChecksum: FD9DE9C94277157A1ED800E36B95BCA0
+- generatedChecksum: 544A37E4657E5098790F6534C7D03BDF
   logicalPath: config/same54_cult/audio/driver/i2s
   name: drv_i2s_definitions.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: FD9DE9C94277157A1ED800E36B95BCA0
+  userChecksum: 544A37E4657E5098790F6534C7D03BDF
 - generatedChecksum: 96E55AC4B3153F31385A2A7066E9CCBB
   logicalPath: config/same54_cult/driver/input
   name: drv_maxtouch.h
@@ -1700,13 +1700,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CCE581F343A40B6165CBB99261F1DAC7
-- generatedChecksum: 0024F706CE67C238BD66253AAC3408E4
+- generatedChecksum: 24FF19CFF22D72BE689580ADC156A46E
   logicalPath: config/same54_cult/audio/driver/codec/wm8904
   name: drv_wm8904.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0024F706CE67C238BD66253AAC3408E4
+  userChecksum: 24FF19CFF22D72BE689580ADC156A46E
 - generatedChecksum: 924292325E5C1D62240A4881AC4B17BC
   logicalPath: packs/ATSAME54P20A_DFP/component
   name: dsu.h
@@ -1832,7 +1832,7 @@ files:
   physicalPath: ../../packs/ATSAME54P20A_DFP/component
   security: NON_SECURE
   type: HEADER
-  userChecksum: F5CA1CAADAADF2EFD0CF1FCE2C1600B0
+  userChecksum: 2635DDB5A2EA54E74D0F4C66E2C11248
 - generatedChecksum: F17508619FAF026792E3CAAF15D1FF67
   logicalPath: packs/ATSAME54P20A_DFP/instance
   name: i2s.h

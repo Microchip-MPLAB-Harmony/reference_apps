@@ -99,9 +99,13 @@ static bool _DRV_I2S_ResourceLock(DRV_I2S_OBJ * object)
 
     /* We will disable I2S and/or DMA interrupt so that the driver resource
      * is not updated asynchronously. */
-    if ((SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel) || (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
+    if (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel)
     {
         SYS_INT_SourceDisable(dObj->interruptDMA);
+    }
+    if (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel)
+    {
+        SYS_INT_SourceDisable(dObj->interruptRxDMA);
     }
 
     SYS_INT_SourceDisable(dObj->interruptI2S);
@@ -114,11 +118,15 @@ static bool _DRV_I2S_ResourceUnlock(DRV_I2S_OBJ * object)
     DRV_I2S_OBJ * dObj = object;
 
     /* Restore the interrupt and release mutex. */
-    if( (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel) || (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
+    if (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel)
     {
         SYS_INT_SourceEnable(dObj->interruptDMA);
     }
-
+    if (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel)
+    {
+        SYS_INT_SourceEnable(dObj->interruptRxDMA);
+    }
+    
     SYS_INT_SourceEnable(dObj->interruptI2S);
 
     OSAL_MUTEX_Unlock(&(dObj->mutexDriverInstance));
@@ -450,6 +458,8 @@ SYS_MODULE_OBJ DRV_I2S_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     dObj->txAddress             = i2sInit->i2sTransmitAddress;
     dObj->rxAddress             = i2sInit->i2sReceiveAddress;
     dObj->interruptDMA          = i2sInit->interruptDMA;
+
+    dObj->interruptRxDMA        = i2sInit->interruptRxDMA;
     dObj->dmaDataLength         = i2sInit->dmaDataLength;
 
     /* Create the Mutexes needed for RTOS mode. These calls always passes in the

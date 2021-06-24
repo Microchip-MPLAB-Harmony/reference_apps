@@ -281,6 +281,7 @@ SYS_MODULE_OBJ  DRV_WM8904_Initialize
     drvObj->numClients                      = 0;
     drvObj->masterMode                      = wm8904Init->masterMode;
     drvObj->i2sDriverModuleIndex            = wm8904Init->i2sDriverModuleIndex;
+    drvObj->i2cDriverModuleIndex            = wm8904Init->i2cDriverModuleIndex;
     drvObj->samplingRate                    = wm8904Init->samplingRate;
     drvObj->audioDataFormat                 = wm8904Init->audioDataFormat;
     drvObj->enableMicInput                  = wm8904Init->enableMicInput;
@@ -1680,7 +1681,11 @@ void _samplingRateSet(DRV_WM8904_OBJ *drvObj, uint32_t sampleRate, bool standalo
     if (fvco >= FVCO_MIN)
     {
         double nk = (double)fvco / (double)FREF;    // calc N.K value
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wbad-function-cast"
+// ignore error: cast from function call of type 'double' to non-matching type 'unsigned char' [-Werror=bad-function-cast]
         uint16_t n = (uint8_t) floor(nk);            // integer part N
+  #pragma GCC diagnostic pop
         double k = nk - (double)n;                  // frac part K
         uint16_t k16 = (uint16_t)(65536.0 * k);     // K converted to parts in 65536
         uint16_t lrclk_rate = bitClk / sampleRate;
@@ -2489,7 +2494,7 @@ static void _DRV_WM8904_ControlTasks (DRV_WM8904_OBJ *drvObj)
         case DRV_WM8904_STATE_OPEN:
         {
             /* Open the I2C Driver */
-            drvObj->drvI2CHandle = DRV_I2C_Open( DRV_I2C_INDEX_1,
+            drvObj->drvI2CHandle = DRV_I2C_Open(drvObj->i2cDriverModuleIndex,
                     DRV_IO_INTENT_READWRITE );
             
             if ( DRV_HANDLE_INVALID == drvObj->drvI2CHandle )
