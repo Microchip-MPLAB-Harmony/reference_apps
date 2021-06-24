@@ -5,9 +5,9 @@ frameworkPath: ../../../../../Harmony_public_release
 processor: PIC32MZ2048EFM144
 projectName: ''
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;gfx;gfx_apps;net;touch;usb;wireless;
+  PackageFilter: audio;audio_public;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;gfx;gfx_apps;gfx_apps_sam_d5x_e5x;net;net_apps_sam_e70_v71;reference_apps;touch;usb;wireless_apps_winc1500;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\PIC32MZ-EF_DFP\1.3.57\atdf\PIC32MZ2048EFM144.atdf
+  DFPPath: .\dev_packs\Microchip\PIC32MZ-EF_DFP\1.3.58\atdf\PIC32MZ2048EFM144.atdf

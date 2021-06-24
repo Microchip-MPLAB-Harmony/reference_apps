@@ -4,6 +4,13 @@ attributes: {id: drv_i2c}
 children:
 - type: Symbols
   children:
+  - type: Integer
+    attributes: {id: DRV_I2C_FORCED_WRITE_API_GENERATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_i2c, value: '1'}
   - type: Combo
     attributes: {id: DRV_I2C_MODE}
     children:
@@ -18,6 +25,13 @@ children:
     children:
     - type: Symbols
       children:
+      - type: Boolean
+        attributes: {id: DRV_I2C_INCLUDE_FORCED_WRITE_API}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_i2c_0, value: 'true'}
       - type: String
         attributes: {id: DRV_I2C_PLIB}
         children:

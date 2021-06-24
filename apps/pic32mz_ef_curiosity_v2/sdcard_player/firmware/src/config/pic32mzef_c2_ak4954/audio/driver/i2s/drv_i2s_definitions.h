@@ -104,7 +104,7 @@ typedef enum
 typedef    void (* DRV_BAUDSET)(const uint32_t);
 
 //PLIB Interface Member Functions 
-typedef    uint32_t (* DRV_I2S_LRCLK_GET)();
+typedef    uint32_t (* DRV_I2S_LRCLK_GET)(void);
 
 typedef    uint32_t (* DRV_I2S_REFCLOCKSET)(uint32_t, uint32_t, uint32_t);
 typedef    uint32_t (* DRV_I2S_BAUDRATESET)(uint32_t, uint32_t);
@@ -252,6 +252,9 @@ typedef struct
 
     /* I2S receive register address used for DMA operation. */
     void                        *i2sReceiveAddress;
+
+    /* Interrupt source ID for DMA RX interrupt. */
+    INT_SOURCE                  interruptRxDMA;
 
     /* Interrupt source ID for DMA interrupt. */
     INT_SOURCE                  interruptDMA;

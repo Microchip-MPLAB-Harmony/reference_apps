@@ -20,27 +20,27 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: A3E17273BDAD8A51FDF695EBF9AD9A77
-- generatedChecksum: CDDAF0762B3130FCE2DC6D702E04C2A4
+- generatedChecksum: 8A4CDDAC2BC85DFA1471AA06A9EB2D03
   logicalPath: config/pic32mzef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954.c
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CDDAF0762B3130FCE2DC6D702E04C2A4
-- generatedChecksum: BB7509DBA3F9E66FFD7F675227423656
+  userChecksum: 8A4CDDAC2BC85DFA1471AA06A9EB2D03
+- generatedChecksum: D7CB7F305208715624357B71229B20B4
   logicalPath: config/pic32mzef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954_local.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BB7509DBA3F9E66FFD7F675227423656
-- generatedChecksum: 13F062B063A4F4AE0B19CE872943995B
+  userChecksum: D7CB7F305208715624357B71229B20B4
+- generatedChecksum: 39534E1CE0B7BEBCA64DAF598E5024E7
   logicalPath: config/pic32mzef_c2_ak4954/driver/i2c
   name: drv_i2c.c
   physicalPath: driver/i2c/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 13F062B063A4F4AE0B19CE872943995B
+  userChecksum: 39534E1CE0B7BEBCA64DAF598E5024E7
 - generatedChecksum: 37780F17759DED907A0F36E28BFB3136
   logicalPath: config/pic32mzef_c2_ak4954/driver/i2c
   name: drv_i2c_local.h
@@ -55,13 +55,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: AF0B16E0482BD623C201B23916653971
-- generatedChecksum: 08F4D5AEB0865BF6C9CC7F6D5E425CEF
+- generatedChecksum: B4725BD9958F563F4B5B26712B1E69CE
   logicalPath: config/pic32mzef_c2_ak4954/audio/driver/i2s
   name: drv_i2s_local.h
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 08F4D5AEB0865BF6C9CC7F6D5E425CEF
+  userChecksum: B4725BD9958F563F4B5B26712B1E69CE
 - generatedChecksum: ACF6F4EC084D3A5D3F7A6C7C46179D1D
   logicalPath: config/pic32mzef_c2_ak4954/driver/sdspi
   name: drv_sdspi.c
@@ -104,13 +104,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9E153A6D4F8E0EA1F6901BAED7DD80FD
-- generatedChecksum: AE36CF79E13843DFC50CB601EE35F7E3
+- generatedChecksum: 343ACDC51DB57A91C545568CB5FC6DA5
   logicalPath: config/pic32mzef_c2_ak4954
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AE36CF79E13843DFC50CB601EE35F7E3
+  userChecksum: 343ACDC51DB57A91C545568CB5FC6DA5
 - generatedChecksum: 2FAE20BC1C63D62F04F8638FB020A8EE
   logicalPath: config/pic32mzef_c2_ak4954
   name: interrupts.c
@@ -181,20 +181,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 544CFE04F6B8A5916C460378C67C9CDF
-- generatedChecksum: A0812BE42897846B559337CF1C7D439C
+- generatedChecksum: 9FA8E6F7097DF374E74B96F1039F51A4
   logicalPath: config/pic32mzef_c2_ak4954/peripheral/i2c/master
   name: plib_i2c1_master.c
   physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A0812BE42897846B559337CF1C7D439C
-- generatedChecksum: 2C5CFD456E83A78B8002254FD7967D7C
+  userChecksum: 9FA8E6F7097DF374E74B96F1039F51A4
+- generatedChecksum: CDF2DC6741D441B7E73A29D707F8AD3A
   logicalPath: config/pic32mzef_c2_ak4954/audio/peripheral/i2s
   name: plib_i2s2.c
   physicalPath: audio/peripheral/i2s
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2C5CFD456E83A78B8002254FD7967D7C
+  userChecksum: CDF2DC6741D441B7E73A29D707F8AD3A
 - generatedChecksum: 1CB0EB0C57E49D46DDC8850B3419CF1C
   logicalPath: config/pic32mzef_c2_ak4954/peripheral/spi/spi_master
   name: plib_spi1_master.c
@@ -300,13 +300,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 3A3D90BBDFDB486B57C8FED3BA7D4135
-- generatedChecksum: 6E39668FAF4BDCF37041F4B8074BDD70
+- generatedChecksum: 4A141E8F9AEF87E9C8A636650FB609C5
   logicalPath: config/pic32mzef_c2_ak4954
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6E39668FAF4BDCF37041F4B8074BDD70
+  userChecksum: 4A141E8F9AEF87E9C8A636650FB609C5
 - generatedChecksum: 9E2BBAAD9DF543532FE730638777EC32
   logicalPath: config/pic32mzef_c2_ak4954
   name: definitions.h
@@ -349,13 +349,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CC7DFCC51CD25171A3E400E18969354F
-- generatedChecksum: 7784A95760EEC4C530F2952C3200E5BE
+- generatedChecksum: EAD815C10EEA424B3FB22EA1BE3EB29D
   logicalPath: config/pic32mzef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: HEADER
-  userChecksum: 7784A95760EEC4C530F2952C3200E5BE
+  userChecksum: EAD815C10EEA424B3FB22EA1BE3EB29D
 - generatedChecksum: 3C6689B8800C6234028EC2FBE82E25CF
   logicalPath: config/pic32mzef_c2_ak4954/driver/i2c
   name: drv_i2c.h
@@ -363,13 +363,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 3C6689B8800C6234028EC2FBE82E25CF
-- generatedChecksum: 260EF469FECCFEF9418D6268909EE2F8
+- generatedChecksum: 5FA3FDC136CCB667D6952682F7664DE1
   logicalPath: config/pic32mzef_c2_ak4954/driver/i2c
   name: drv_i2c_definitions.h
   physicalPath: driver/i2c
   security: NON_SECURE
   type: HEADER
-  userChecksum: 260EF469FECCFEF9418D6268909EE2F8
+  userChecksum: 5FA3FDC136CCB667D6952682F7664DE1
 - generatedChecksum: 286480D625E01930A6754127AA6F0360
   logicalPath: config/pic32mzef_c2_ak4954/audio/driver/i2s
   name: drv_i2s.h
@@ -377,13 +377,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 286480D625E01930A6754127AA6F0360
-- generatedChecksum: 8EEB17867F41E54FD6535DB4F88AC6FE
+- generatedChecksum: AE82E3B652F0386ADFA939DDC3B8F3FA
   logicalPath: config/pic32mzef_c2_ak4954/audio/driver/i2s
   name: drv_i2s_definitions.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8EEB17867F41E54FD6535DB4F88AC6FE
+  userChecksum: AE82E3B652F0386ADFA939DDC3B8F3FA
 - generatedChecksum: 341441BD242D06D0382178FB46ECDAC1
   logicalPath: config/pic32mzef_c2_ak4954/driver/sdspi
   name: drv_sdspi.h
@@ -503,13 +503,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 410BC574069FEE0CE2BA1D0ACC33DADE
-- generatedChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
+- generatedChecksum: D6ECFE797E49453D076C8DF185763EB9
   logicalPath: config/pic32mzef_c2_ak4954/peripheral/i2c/master
   name: plib_i2c1_master.h
   physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: HEADER
-  userChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
+  userChecksum: D6ECFE797E49453D076C8DF185763EB9
 - generatedChecksum: B963C6FE44292A1C4A14C3BA5BE95AEE
   logicalPath: config/pic32mzef_c2_ak4954/peripheral/i2c/master
   name: plib_i2c_master_common.h

@@ -59,7 +59,7 @@ nav_order: 5
  - [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)  
  - [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)  
  - [MPLAB Harmony v3 "bsp" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.9.0)  
- - [MPLAB Harmony v3 "audio” repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/audio/tag/v3.5.0)  
+ - [MPLAB Harmony v3 "audio” repository v3.5.1](https://github.com/Microchip-MPLAB-Harmony/audio/tag/v3.5.1)  
  - MPLAB Harmony 3 Launcher Plugin v3.6.4  
  - [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
  - [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)

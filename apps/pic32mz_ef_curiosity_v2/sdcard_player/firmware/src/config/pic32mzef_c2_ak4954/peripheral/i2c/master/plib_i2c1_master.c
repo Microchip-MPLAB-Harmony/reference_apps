@@ -132,7 +132,7 @@ static void I2C1_TransferSM(void)
 
         case I2C_STATE_ADDR_BYTE_2_SEND:
             /* Transmit the 2nd byte of the 10-bit slave address */
-            if (!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK))
+            if ((!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK)) || (i2c1Obj.forcedWrite == true))
             {
                 if (!(I2C1STAT & _I2C1STAT_TBF_MASK))
                 {
@@ -192,7 +192,7 @@ static void I2C1_TransferSM(void)
             break;
 
         case I2C_STATE_WRITE:
-            if (!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK))
+            if ((!(I2C1STAT & _I2C1STAT_ACKSTAT_MASK)) || (i2c1Obj.forcedWrite == true))
             {
                 /* ACK received */
                 if (i2c1Obj.writeCount < i2c1Obj.writeSize)
@@ -352,6 +352,7 @@ bool I2C1_Read(uint16_t address, uint8_t* rdata, size_t rlength)
     i2c1Obj.transferType        = I2C_TRANSFER_TYPE_READ;
     i2c1Obj.error               = I2C_ERROR_NONE;
     i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.forcedWrite         = false;
 
     I2C1CONSET                  = _I2C1CON_SEN_MASK;
     IEC3SET                     = _IEC3_I2C1MIE_MASK;
@@ -379,6 +380,7 @@ bool I2C1_Write(uint16_t address, uint8_t* wdata, size_t wlength)
     i2c1Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
     i2c1Obj.error               = I2C_ERROR_NONE;
     i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.forcedWrite         = false;
 
     I2C1CONSET                  = _I2C1CON_SEN_MASK;
     IEC3SET                     = _IEC3_I2C1MIE_MASK;
@@ -387,6 +389,32 @@ bool I2C1_Write(uint16_t address, uint8_t* wdata, size_t wlength)
     return true;
 }
 
+bool I2C1_WriteForced(uint16_t address, uint8_t* wdata, size_t wlength)
+{
+    /* State machine must be idle and I2C module should not have detected a start bit on the bus */
+    if((i2c1Obj.state != I2C_STATE_IDLE) || (I2C1STAT & _I2C1STAT_S_MASK))
+    {
+        return false;
+    }
+
+    i2c1Obj.address             = address;
+    i2c1Obj.readBuffer          = NULL;
+    i2c1Obj.readSize            = 0;
+    i2c1Obj.writeBuffer         = wdata;
+    i2c1Obj.writeSize           = wlength;
+    i2c1Obj.writeCount          = 0;
+    i2c1Obj.readCount           = 0;
+    i2c1Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
+    i2c1Obj.error               = I2C_ERROR_NONE;
+    i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.forcedWrite         = true;
+
+    I2C1CONSET                  = _I2C1CON_SEN_MASK;
+    IEC3SET                     = _IEC3_I2C1MIE_MASK;
+    IEC3SET                     = _IEC3_I2C1BIE_MASK;
+
+    return true;
+}
 
 bool I2C1_WriteRead(uint16_t address, uint8_t* wdata, size_t wlength, uint8_t* rdata, size_t rlength)
 {
@@ -406,6 +434,7 @@ bool I2C1_WriteRead(uint16_t address, uint8_t* wdata, size_t wlength, uint8_t* r
     i2c1Obj.transferType        = I2C_TRANSFER_TYPE_WRITE;
     i2c1Obj.error               = I2C_ERROR_NONE;
     i2c1Obj.state               = I2C_STATE_ADDR_BYTE_1_SEND;
+    i2c1Obj.forcedWrite         = false;
 
     I2C1CONSET                  = _I2C1CON_SEN_MASK;
     IEC3SET                     = _IEC3_I2C1MIE_MASK;

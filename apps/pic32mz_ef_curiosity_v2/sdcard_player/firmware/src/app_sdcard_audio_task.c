@@ -91,6 +91,9 @@ static void APP_SysFSEventHandler(SYS_FS_EVENT event,void* mountName, uintptr_t 
             break;
         case SYS_FS_EVENT_ERROR:
             break;
+         case SYS_FS_EVENT_MOUNT_WITH_NO_FILESYSTEM:
+            break;    
+            
     }
 }
 

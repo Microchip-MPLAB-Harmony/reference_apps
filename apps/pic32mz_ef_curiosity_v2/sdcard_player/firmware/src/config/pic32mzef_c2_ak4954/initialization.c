@@ -213,6 +213,8 @@ const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
     /* I2C PLib Transfer Write Add function */
     .write = (DRV_I2C_PLIB_WRITE)I2C1_Write,
 
+    /* I2C PLib Transfer Forced Write Add function */
+    .writeForced = (DRV_I2C_PLIB_WRITE)I2C1_WriteForced,
 
     /* I2C PLib Transfer Write Read Add function */
     .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C1_WriteRead,

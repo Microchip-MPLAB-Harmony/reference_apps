@@ -435,6 +435,10 @@ static void _DRV_I2C_PLibCallbackHandler( uintptr_t contextHandle )
                 transferObj->currentState = DRV_I2C_TRANSFER_OBJ_IS_PROCESSING;
                 dObj->i2cPlib->write(transferObj->slaveAddress, transferObj->writeBuffer, transferObj->writeSize);
                 break;
+            case DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_FORCED:
+                transferObj->currentState = DRV_I2C_TRANSFER_OBJ_IS_PROCESSING;
+                dObj->i2cPlib->writeForced(transferObj->slaveAddress, transferObj->writeBuffer, transferObj->writeSize);
+                break;
             case DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_READ:
                 transferObj->currentState = DRV_I2C_TRANSFER_OBJ_IS_PROCESSING;
                 dObj->i2cPlib->writeRead(transferObj->slaveAddress, transferObj->writeBuffer, transferObj->writeSize, transferObj->readBuffer, transferObj->readSize);
@@ -813,6 +817,14 @@ static void _DRV_I2C_WriteReadTransferAdd (
     /* Get the driver object from the client handle */
     dObj = &gDrvI2CObj[clientObj->drvIndex];
 
+    if (transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_FORCED)
+    {
+        /* Return error if the PLIB is not enabled to generate the I2C Forced Write API */
+        if (dObj->i2cPlib->writeForced == NULL)
+        {
+            return;
+        }
+    }
 
     if(_DRV_I2C_ResourceLock(dObj) == false)
     {
@@ -874,6 +886,14 @@ static void _DRV_I2C_WriteReadTransferAdd (
                 transferObj->writeSize
             );
         }
+        else if (transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_FORCED)
+        {
+            dObj->i2cPlib->writeForced(
+                transferObj->slaveAddress,
+                transferObj->writeBuffer,
+                transferObj->writeSize
+            );
+        }
         else
         {
             dObj->i2cPlib->writeRead(
@@ -899,6 +919,18 @@ void DRV_I2C_ReadTransferAdd(
 {
     _DRV_I2C_WriteReadTransferAdd(handle, address, NULL, 0,
         buffer, size, transferHandle, DRV_I2C_TRANSFER_OBJ_FLAG_READ);
+}
+
+void DRV_I2C_ForcedWriteTransferAdd(
+    const DRV_HANDLE handle,
+    const uint16_t address,
+    void* const buffer,
+    const size_t size,
+    DRV_I2C_TRANSFER_HANDLE* const transferHandle
+)
+{
+    _DRV_I2C_WriteReadTransferAdd(handle, address, buffer, size,
+        NULL, 0, transferHandle, DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_FORCED);
 }
 
 void DRV_I2C_WriteTransferAdd(
