@@ -208,8 +208,8 @@ extern "C" {
 #define DRV_CODEC_Tasks                                     DRV_AK4954_Tasks
 #define DRV_CODEC_Open                                      DRV_AK4954_Open
 #define DRV_CODEC_Close                                     DRV_AK4954_Close
-#define DRV_CODEC_BufferEventHandlerSet                     DRV_AK4954_BufferEventHandlerSet
 #define DRV_CODEC_CommandEventHandlerSet                    DRV_AK4954_CommandEventHandlerSet
+#define DRV_CODEC_BufferEventHandlerSet                     DRV_AK4954_BufferEventHandlerSet
 #define DRV_CODEC_BufferAddWrite                            DRV_AK4954_BufferAddWrite
 #define DRV_CODEC_BufferAddRead                             DRV_AK4954_BufferAddRead
 #define DRV_CODEC_BufferAddWriteRead                        DRV_AK4954_BufferAddWriteRead

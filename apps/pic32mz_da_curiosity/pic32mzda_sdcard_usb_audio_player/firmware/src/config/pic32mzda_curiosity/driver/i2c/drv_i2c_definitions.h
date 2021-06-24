@@ -121,6 +121,7 @@ typedef bool (* DRV_I2C_PLIB_READ)( uint16_t, uint8_t *, uint32_t );
 
 typedef bool (* DRV_I2C_PLIB_WRITE)( uint16_t, uint8_t *, uint32_t );
 
+typedef bool (* DRV_I2C_PLIB_WRITE_FORCED)( uint16_t, uint8_t *, uint32_t );
 
 typedef bool (* DRV_I2C_PLIB_WRITE_READ)( uint16_t, uint8_t *, uint32_t, uint8_t *, uint32_t );
 
@@ -174,6 +175,8 @@ typedef struct
     /* I2C PLib write API */
     DRV_I2C_PLIB_WRITE                          write;
 
+    /* I2C PLib forced write API */
+    DRV_I2C_PLIB_WRITE_FORCED                   writeForced;
 
     /* I2C PLib writeRead API */
     DRV_I2C_PLIB_WRITE_READ                     writeRead;

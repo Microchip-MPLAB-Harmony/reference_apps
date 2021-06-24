@@ -4,13 +4,13 @@
 
 
 project: pic32mzda_sdcard_usb_audio_player
-creation_date: 2021-06-08T18:01:00.842+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-06-24T11:13:26.895+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.7.2
 mplabx_version: v5.50        # if MPLAB X plugin only
 plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (2.41)
+compiler: XC32 (3.00)
 
 modules:
     - {name: "csp", version: "v3.9.1"}
@@ -18,5 +18,5 @@ modules:
     - {name: "usb", version: "v3.7.2"}
     - {name: "dev_packs", version: "v3.9.0"}
     - {name: "gfx", version: "v3.9.3"}
-    - {name: "audio", version: "v3.5.0"}
+    - {name: "audio", version: "unknown"}
 

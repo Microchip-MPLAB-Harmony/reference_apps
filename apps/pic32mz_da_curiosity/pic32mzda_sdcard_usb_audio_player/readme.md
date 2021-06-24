@@ -61,7 +61,7 @@ nav_order: 2
  - [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.9.1)
  - [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)
  - [MPLAB Harmony v3 "bsp" repository v3.9.0](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/tag/v3.9.0)
- - [MPLAB Harmony v3 "audio" repository v3.5.0](https://github.com/Microchip-MPLAB-Harmony/audio/releases/tag/v3.5.0)
+ - [MPLAB Harmony v3 "audio" repository v3.5.1](https://github.com/Microchip-MPLAB-Harmony/audio/releases/tag/v3.5.1)
  - [MPLAB Harmony v3 "usb" repository v3.7.2](https://github.com/Microchip-MPLAB-Harmony/usb/releases/tag/v3.7.2)
  - [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)
  - [MPLAB Harmony v3 "gfx" repository v3.9.3](https://github.com/Microchip-MPLAB-Harmony/gfx/releases/tag/v3.9.3)

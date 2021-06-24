@@ -10,7 +10,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: drv_i2c, value: '0'}
+        attributes: {id: drv_i2c, value: '1'}
   - type: Combo
     attributes: {id: DRV_I2C_MODE}
     children:
@@ -85,7 +85,7 @@ children:
         - type: Values
           children:
           - type: Dynamic
-            attributes: {id: drv_i2c_1, value: 'false'}
+            attributes: {id: drv_i2c_1, value: 'true'}
       - type: String
         attributes: {id: DRV_I2C_PLIB}
         children:
