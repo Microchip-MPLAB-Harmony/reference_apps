@@ -57,8 +57,7 @@ nav_order: 99
 
 
 ### Known Issues
-1. The application 'pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control' is developed by modifying **"drv_bm71.c"** file. If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace this file. This issue is expected to be fixed in a future Harmony release of "bt" repo.
-2. The application 'sam_e54_cult/same54_sdcard_usb_audio_player' is developed by modifying the generated **"drv_wm8904.c"** and **"i2s.h"** files. If you need to reconfigure or regenerate this demo using the MHC, make sure you don't replace these files. These issues are expected to be fixed in a future Harmony release of "dev_packs" repo.
+- None
 
 ### Development Tools
 
