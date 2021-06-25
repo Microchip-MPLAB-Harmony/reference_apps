@@ -56,7 +56,6 @@ extern DRV_BM71_OBJ    gDrvBm71Obj;
 // DRV_BM71 to avoid name conflicts
 
 void DRV_BM71_BLE_Query_status( void );
-void DRV_BM71_BLE_EnabAdvertising(bool enable);
 
 /*-----------------------global functions --------------------*/
 // *****************************************************************************
@@ -188,9 +187,9 @@ void DRV_BM71_BLE_WriteAdvertisingData(void)
     uint8_t chksum;
     uint8_t i,size;
 
-    char *name = "TransparentUARTDemo";
+    const char *name = "TransparentUARTDemo";
     size = strlen(name);
-    char *p = name;   
+    const char *p = name;   
 
     command[0] = 0xAA;      //header byte 0
     command[1] = 0x00;      //header byte 1

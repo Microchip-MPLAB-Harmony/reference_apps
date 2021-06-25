@@ -6,27 +6,27 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 2F1ABC41D2FCF0CD19526CC60A3AC604
+- generatedChecksum: 49CFD066878B32FB447307A230B2895C
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71.c
   physicalPath: bt/driver/bm71
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2F1ABC41D2FCF0CD19526CC60A3AC604
-- generatedChecksum: E58F76125860FA699D3CA6741F3230C4
+  userChecksum: 49CFD066878B32FB447307A230B2895C
+- generatedChecksum: 1FF4C6A494D43D0BABC578317C7F9EFF
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_ble.c
   physicalPath: bt/driver/bm71
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E58F76125860FA699D3CA6741F3230C4
-- generatedChecksum: 8342946F1988E34B20D75CAD01E00733
+  userChecksum: 1FF4C6A494D43D0BABC578317C7F9EFF
+- generatedChecksum: B753F5144739AEBA437ED31D28CA5F6F
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_command_decode.c
   physicalPath: bt/driver/bm71
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8342946F1988E34B20D75CAD01E00733
+  userChecksum: B753F5144739AEBA437ED31D28CA5F6F
 - generatedChecksum: 5CC0BA61AF2C74CC4B2C3D42C1CA10B5
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_command_send.c
@@ -41,13 +41,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 62600D59BA59AE9319C7F202EEBCD6BE
-- generatedChecksum: 72C8DA632B6C71876D79E4C2ADCD9102
+- generatedChecksum: AF38CC7383A953A8D6C0B823B5195794
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_local.h
   physicalPath: bt/driver/bm71
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 72C8DA632B6C71876D79E4C2ADCD9102
+  userChecksum: AF38CC7383A953A8D6C0B823B5195794
 - generatedChecksum: 822BEFB6D1622B5C1EDE28B2C6FEA64D
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_uart.c
@@ -426,13 +426,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5CD4504EEB40FDC4A4F78CEE275375AB
-- generatedChecksum: BE77C7ADD092E700FE7FBCA74D6EA516
+- generatedChecksum: 1B547266EF1374EBBEF5C69BC52910DB
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_ble.h
   physicalPath: bt/driver/bm71
   security: NON_SECURE
   type: HEADER
-  userChecksum: BE77C7ADD092E700FE7FBCA74D6EA516
+  userChecksum: 1B547266EF1374EBBEF5C69BC52910DB
 - generatedChecksum: FEE1E112F225D3F7C7765F3875886035
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71_command_decode.h

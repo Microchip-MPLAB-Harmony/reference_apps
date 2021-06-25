@@ -162,13 +162,14 @@ typedef enum
     DRV_BM71_DEC_EVENT_GATT_ATTRIBUTE_DATA,
 } DRV_BM71_DEC_EVENT;           // BM71 decoded events
 
-//enum {
-//    DRV_BM71_SYSTEM_INIT,         //init
-//    DRV_BM71_SYSTEM_POWER_OFF,    //event
-//    DRV_BM71_SYSTEM_POWER_ON,     //event
-//    DRV_BM71_SYSTEM_STANDBY,      //event
-//    DRV_BM71_SYSTEM_CONNECTED,    //event
-//} DRV_BM71_SystemStatus;        // BT internal system status
+typedef enum 
+{
+    DRV_BM71_SYSTEM_INIT = 0,         //init
+    DRV_BM71_SYSTEM_POWER_OFF,    //event
+    DRV_BM71_SYSTEM_POWER_ON,     //event
+    DRV_BM71_SYSTEM_STANDBY,      //event
+    DRV_BM71_SYSTEM_CONNECTED,    //event
+} DRV_BM71_SYSTEMSTATUS;        // BT internal system status
 
 /////////////////////////////// new //////////////////////////////////////
 
@@ -392,7 +393,7 @@ typedef enum _bm_application_cmd_state
 //////////////////////////////////////////////////////////////////////////
 
 void DRV_BM71_Timer_1ms( uintptr_t context);
-void DRV_BM71_Timer1MS_event();
+void DRV_BM71_Timer1MS_event( void );
 void DRV_BM71_EventHandler(uint8_t event, uint16_t para, uint8_t* para_full);
 
 void DRV_BM71_SPPBuffClear( void );

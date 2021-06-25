@@ -4,7 +4,7 @@
 
 
 project: pic32cmmc_smart_appliance_control
-creation_date: 2021-06-10T12:37:27.649+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-06-25T11:45:18.615+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.7.2
@@ -15,6 +15,6 @@ compiler: XC32 (3.00)
 modules:
     - {name: "csp", version: "v3.9.1"}
     - {name: "core", version: "v3.9.1"}
-    - {name: "bt", version: "v3.4.0"}
+    - {name: "bt", version: "unknown"}
     - {name: "dev_packs", version: "v3.9.0"}
 

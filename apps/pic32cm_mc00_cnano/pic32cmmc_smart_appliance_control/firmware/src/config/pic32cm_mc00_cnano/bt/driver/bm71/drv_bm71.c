@@ -60,7 +60,9 @@
 #include "bt/driver/bm71/drv_bm71_gpio.h"
 #include "system/time/sys_time.h"
 
-//#define SYS_DEBUG(x,y)    printf(y)      // comment out printf if not defined
+#ifndef SYS_DEBUG
+#define SYS_DEBUG(x,y)    printf(y)      // comment out printf if not defined
+#endif
 
 // all #defines, enums and non-static functions and variables prefixed by
 // DRV_BM71 to avoid name conflicts

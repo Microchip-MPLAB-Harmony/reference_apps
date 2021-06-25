@@ -115,8 +115,6 @@ void DRV_BM71_CommandDecodeMain( void )
 	}
 }
 
-extern volatile uint8_t DRV_BM71_eusartRxCount;
-
 void DRV_BM71_CommandHandler(void) {
     uint8_t current_byte;
 

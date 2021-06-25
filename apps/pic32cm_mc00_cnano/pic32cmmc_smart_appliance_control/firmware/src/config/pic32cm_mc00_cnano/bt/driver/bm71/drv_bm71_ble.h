@@ -47,7 +47,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 void DRV_BM71_BLE_Timer1MS_event( void );
 
-// new
 void DRV_BM71_BLE_WriteAdvertisingData(void);
 void DRV_BM71_BLE_EnabAdvertising(bool enable);
 void DRV_BM71_BLE_SetAdvertisingParams(void);

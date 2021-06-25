@@ -236,7 +236,6 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32cm_mc00_cnano/harmony-manifest-success.yml</itemPath>
-      <itemPath>../src/config/pic32cm_mc00_cnano/harmony-manifest-failure.yml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -1099,6 +1098,8 @@
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/Projects/git_hub/reference_apps/apps/pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control/firmware/pic32cm_mc00_cnano.X/debug/pic32cm_mc00_cnano/pic32cm_mc00_cnano_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
