@@ -45,10 +45,10 @@
 
 
 /* Array to store callback objects of each configured interrupt */
-GPIO_PIN_CALLBACK_OBJ portPinCbObj[2];
+GPIO_PIN_CALLBACK_OBJ portPinCbObj[3];
 
 /* Array to store number of interrupts in each PORT Channel + previous interrupt count */
-uint8_t portNumCb[10 + 1] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, };
+uint8_t portNumCb[10 + 1] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, };
 
 /******************************************************************************
   Function:
@@ -79,9 +79,9 @@ void GPIO_Initialize ( void )
     /* PORTH Initialization */
 
     /* PORTJ Initialization */
-    LATJ = 0x80; /* Initial Latch Value */
-    TRISJCLR = 0x80; /* Direction Control */
-    CNPUJSET = 0x30; /* Pull-Up Enable */
+    LATJ = 0x88; /* Initial Latch Value */
+    TRISJCLR = 0x88; /* Direction Control */
+    CNPUJSET = 0x70; /* Pull-Up Enable */
     /* Change Notice Enable */
     CNCONJSET = _CNCONJ_ON_MASK;
     PORTJ;
@@ -111,7 +111,9 @@ void GPIO_Initialize ( void )
     
     portPinCbObj[0 + 1].pin = GPIO_PIN_RJ5;
     
-    for(i=0; i<2; i++)
+    portPinCbObj[0 + 2].pin = GPIO_PIN_RJ6;
+    
+    for(i=0; i<3; i++)
     {
         portPinCbObj[i].callback = NULL;
     }
@@ -357,7 +359,7 @@ void CHANGE_NOTICE_J_InterruptHandler(void)
     IFS3CLR = _IFS3_CNJIF_MASK;
 
     /* Check pending events and call callback if registered */
-    for(i = 0; i < 2; i++)
+    for(i = 0; i < 3; i++)
     {
         if((status & (1 << (portPinCbObj[i].pin & 0xF))) && (portPinCbObj[i].callback != NULL))
         {

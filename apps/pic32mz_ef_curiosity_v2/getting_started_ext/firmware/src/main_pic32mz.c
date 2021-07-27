@@ -65,6 +65,9 @@
 
 #define SWITCH_PRESSED_STATE                    0   // Active LOW switch
 
+#define SWITCH_1                                1   // Switch 1 is pressed
+#define SWITCH_3                                3   // Switch 1 is pressed
+
 /* Timer Counter Time period match values for input clock of 4096 Hz */
 #define PERIOD_500MS                            2048
 #define PERIOD_1S                               4096
@@ -82,6 +85,8 @@ static volatile bool startTemperatureReading  = false;
 static volatile uint8_t TemperatureReadStartMsgLen  = 0x00;
 static volatile bool isUARTTxComplete = true;
 static volatile bool isTemperatureRead = false;
+static volatile uint8_t prevSwitchPressedState = SWITCH_1;
+static volatile uint8_t currSwitchPressedState = SWITCH_1;
 static uint8_t temperatureVal;
 static uint8_t i2cWrData = TEMP_SENSOR_REG_ADDR;
 static uint8_t i2cRdData[2] = {0};
@@ -101,7 +106,27 @@ static void SW1_User_Handler(GPIO_PIN pin, uintptr_t context)
 {
     if(SW1_Get() == SWITCH_PRESSED_STATE)
     {
-        changeTempSamplingRate = true;      
+        currSwitchPressedState = SWITCH_1;
+
+        if (prevSwitchPressedState == currSwitchPressedState)
+        {
+            changeTempSamplingRate = true;
+        }
+        prevSwitchPressedState = SWITCH_1;
+    }
+}
+
+static void SW3_User_Handler(GPIO_PIN pin, uintptr_t context)
+{
+    if(SW3_Get() == SWITCH_PRESSED_STATE)
+    {
+        currSwitchPressedState = SWITCH_3;
+
+        if (prevSwitchPressedState == currSwitchPressedState)
+        {
+            changeTempSamplingRate = true;
+        }
+        prevSwitchPressedState = SWITCH_3;
     }
 }
 
@@ -158,6 +183,20 @@ static uint8_t getTemperature(uint8_t* rawTempValue)
     return (uint8_t)temp;
 }
 
+static void toggleLED_BasedOnSwitchPress(void)
+{
+    if (currSwitchPressedState == SWITCH_1)
+    {
+        LED3_Set();
+        LED1_Toggle();
+    }
+    else
+    {
+        LED1_Set();
+        LED3_Toggle();
+    }
+}
+
 int main ( void )
 {
     uint8_t uartLocalTxBuffer[100] = {0};
@@ -172,7 +211,8 @@ int main ( void )
     GPIO_PinInterruptEnable(SW1_PIN);
     GPIO_PinInterruptCallbackRegister(SW2_PIN, SW2_User_Handler, 0);
     GPIO_PinInterruptEnable(SW2_PIN);
-
+    GPIO_PinInterruptCallbackRegister(SW3_PIN, SW3_User_Handler, 0);
+    GPIO_PinInterruptEnable(SW3_PIN);
     /* Start the timer 1 */
     TMR1_Start();
 
@@ -184,7 +224,7 @@ int main ( void )
             {
                 isTmr1Expired = false;
                 isUARTTxComplete = false;
-                LED1_Toggle();
+                toggleLED_BasedOnSwitchPress();
                 sprintf((char*)(uartTxBuffer + TemperatureReadStartMsgLen), "Toggling LED at %s rate \r\n", &timeouts[(uint8_t)tempSampleRate][0]);                
                 TemperatureReadStartMsgLen = 0;
                 DCACHE_CLEAN_BY_ADDR((uint32_t)uartTxBuffer, sizeof(uartTxBuffer));
@@ -241,7 +281,7 @@ int main ( void )
                 temperatureVal = getTemperature(i2cRdData);
                 sprintf((char*)(uartTxBuffer + TemperatureReadStartMsgLen), "Temperature = %02d F\r\n", temperatureVal);
                 TemperatureReadStartMsgLen = 0;
-                LED1_Toggle();
+                toggleLED_BasedOnSwitchPress();
             }
             else
             {

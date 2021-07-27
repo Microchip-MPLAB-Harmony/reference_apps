@@ -13,7 +13,7 @@ nav_order: 2
 -----
 ## Description
 
->  This application demonstrates an LED (LED1) toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board.
+>  This application demonstrates an LED toggle (LED1 toggles when the switch SW1 is pressed and LED3 toggles when switch SW3 is pressed) on a timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds, and back to 500 milliseconds every time you press the switch SW1 or SW3 on the Curiosity PIC32MZ EF 2.0 Development Board. The periodicity will not change while switching between SW1 to SW3 or vice versa.
 
 >  The demo application has extended functionality to print the current room temperature periodically when the XPRO connector is plugged with I/O1 Xplained Pro Extension Kit.
 
@@ -78,17 +78,24 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
-- Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
-- Set the baud rate to 115200
-- Reset or power cycle the device
-- An LED (LED1) on the Curiosity PIC32MZ EF 2.0 Development Board toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds
-- And also, the LED toggling rate is displayed on the serial terminal
-- Press the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board to change the periodicity of the timeout to one second
-- Every subsequent pressing of the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order
+- Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button).
+- Set the baud rate to 115200.
+- Reset or power cycle the device.
+- An LED (LED1) on the Curiosity PIC32MZ EF 2.0 Development Board toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds.
+- And also, the LED toggling rate is displayed on the serial terminal.
+- Press the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board to change the periodicity of the timeout to one second.
+- Every subsequent pressing of the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
+- Press the switch SW3 on the Curiosity PIC32MZ EF 2.0 Development Board to switch the toggling LED from LED1 to LED3.
+- Every subsequent pressing of the switch SW3 on the Curiosity PIC32MZ EF 2.0 Development Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
+- Press the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board to switch back the toggling LED from LED3 to LED1.
 - **Testing Extended functionality:**
 	- Press the switch SW2 on the Curiosity PIC32MZ EF 2.0 Development Board to read and print the Temperature from the Temperature Sensor.
-	- The temperature read is displayed on a serial console on a periodical basis
-	- Press the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board.
+	- The temperature read is displayed on a serial console on a periodical basis.
+	- Press the switch SW1 (toggles LED1) on the Curiosity PIC32MZ EF 2.0 Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds every time the user presses the switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board.
+	- Press the switch SW3 (toggles LED3) on the Curiosity PIC32MZ EF 2.0 Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds every time the user presses the switch SW3 on the Curiosity PIC32MZ EF 2.0 Development Board.
+-  Note:
+    - The LED1 toggles for every 500 milliseconds during power cycle.
+    - The periodicity will not change while switching between SW1 to SW3 or vice versa.
 
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
@@ -97,6 +104,7 @@ The pre-built hex file can be programmed by following the below steps
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.4.0 - Extended functionality to toggle LED3 on SW3 switch press.
 - v1.3.0 - Regenerated and tested application.
 - v1.2.0 - Regenerated and tested application.
 - v1.1.0 - Regenerated and tested application.

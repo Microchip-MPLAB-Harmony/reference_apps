@@ -110,6 +110,34 @@ children:
       - type: User
         attributes: {value: DIGITAL}
   - type: String
+    attributes: {id: BSP_PIN_117_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_117_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: LED3}
+  - type: String
+    attributes: {id: BSP_PIN_117_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: BSP_PIN_117_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: High}
+  - type: String
     attributes: {id: BSP_PIN_117_MODE}
     children:
     - type: Values
@@ -264,12 +292,40 @@ children:
       - type: User
         attributes: {value: 'True'}
   - type: String
+    attributes: {id: BSP_PIN_133_CN}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'True'}
+  - type: String
+    attributes: {id: BSP_PIN_133_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: SW3}
+  - type: String
+    attributes: {id: BSP_PIN_133_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
     attributes: {id: BSP_PIN_133_MODE}
     children:
     - type: Values
       children:
       - type: User
         attributes: {value: DIGITAL}
+  - type: String
+    attributes: {id: BSP_PIN_133_PU}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'True'}
   - type: String
     attributes: {id: BSP_PIN_134_DIR}
     children:
@@ -1609,14 +1665,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48'}
+        attributes: {id: core, value: '112'}
   - type: Hex
     attributes: {id: SYS_PORT_J_CNPU}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '48'}
+        attributes: {id: core, value: '112'}
   - type: Boolean
     attributes: {id: SYS_PORT_J_CN_USED}
     children:
@@ -1630,14 +1686,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '128'}
+        attributes: {id: core, value: '136'}
   - type: Hex
     attributes: {id: SYS_PORT_J_TRIS}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '128'}
+        attributes: {id: core, value: '136'}
   - type: KeyValueSet
     attributes: {id: SYS_PORT_PPS_OUTPUT_FUNCTION_0}
     children:
