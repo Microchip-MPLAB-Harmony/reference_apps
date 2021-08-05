@@ -1,0 +1,14 @@
+configName: sam_e51_cnano
+folderName: sam_e51_cnano.x
+format_version: v1.0
+frameworkPath: ..\..\..\..\..
+processor: ATSAME51J20A
+projectName: oled_c_click_sam_e51_cnano.x
+settings:
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;gfx;gfx_apps;gfx_apps_sam_d5x_e5x;net;net_apps_sam_e70_v71;reference_apps;touch;usb;wireless_apps_winc1500;wireless_wifi
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.4.98\atdf\ATSAME51J20A.atdf

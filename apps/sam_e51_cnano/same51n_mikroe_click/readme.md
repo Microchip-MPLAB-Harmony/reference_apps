@@ -23,6 +23,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 11 | [GSM GPS Click Example](./gsm_gps/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/gsm_gps.zip)  |
 | 12 | [PIR Click Example](./pir/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pir.zip)  |
 | 13 | [USB UART Click Example](./usb_uart/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/usb_uart.zip)  |
+| 14 | [OLED C Click Example](./oled_c/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/oled_c.zip)  |
 | 15 | [WIFI 7 Click Example](./wifi_7/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_7_click.zip) |
 
 ### More Application Demos
