@@ -65,6 +65,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity_v2/harmony-manifest-success.yml</itemPath>
+      <itemPath>getting_started_ext_pic32mz_ef_curiosity_v2.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
