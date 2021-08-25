@@ -1,11 +1,4 @@
 files:
-- generatedChecksum: null
-  logicalPath: ''
-  name: app.c
-  physicalPath: ../..
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: null
 - generatedChecksum: 49CFD066878B32FB447307A230B2895C
   logicalPath: config/pic32cm_mc00_cnano/bt/driver/bm71
   name: drv_bm71.c
@@ -62,20 +55,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0D18A719A1E40A8875895284967F66D0
-- generatedChecksum: A1317D8CF19108C5671F473AB900F426
+- generatedChecksum: 2BD51D6E598581E1AE73C816A2D0BFCA
   logicalPath: config/pic32cm_mc00_cnano
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A1317D8CF19108C5671F473AB900F426
-- generatedChecksum: E4220882FA0775FE1F04E6F52F7C45C9
+  userChecksum: 2BD51D6E598581E1AE73C816A2D0BFCA
+- generatedChecksum: 34CEC1B7263B6E8B5362C05EE4626887
   logicalPath: config/pic32cm_mc00_cnano
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E4220882FA0775FE1F04E6F52F7C45C9
+  userChecksum: 34CEC1B7263B6E8B5362C05EE4626887
 - generatedChecksum: 6513F2461B8F476B68CA73906086047F
   logicalPath: config/pic32cm_mc00_cnano
   name: libc_syscalls.c
@@ -90,20 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 20E7E37344FEAA369466902DE20CA4D2
+- generatedChecksum: E2F34CB90571A1C5F7028DCF74AD6E96
   logicalPath: config/pic32cm_mc00_cnano/peripheral/clock
   name: plib_clock.c
   physicalPath: peripheral/clock
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 20E7E37344FEAA369466902DE20CA4D2
-- generatedChecksum: C3E2B6E1F275A70B5678C5B09B57B7D3
-  logicalPath: config/pic32cm_mc00_cnano/peripheral/eic
-  name: plib_eic.c
-  physicalPath: peripheral/eic
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: C3E2B6E1F275A70B5678C5B09B57B7D3
+  userChecksum: E2F34CB90571A1C5F7028DCF74AD6E96
 - generatedChecksum: C3ECDED3D6301DB0DE622293ED615D21
   logicalPath: config/pic32cm_mc00_cnano/peripheral/evsys
   name: plib_evsys.c
@@ -111,13 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C3ECDED3D6301DB0DE622293ED615D21
-- generatedChecksum: E624925110D5E2BE9C1DD187763CBA78
+- generatedChecksum: 17076B98E72A50DB2A8BCF01A0232295
   logicalPath: config/pic32cm_mc00_cnano/peripheral/nvic
   name: plib_nvic.c
   physicalPath: peripheral/nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E624925110D5E2BE9C1DD187763CBA78
+  userChecksum: 17076B98E72A50DB2A8BCF01A0232295
 - generatedChecksum: 89D9EF9A272A9B4AA94B52DB47147ECF
   logicalPath: config/pic32cm_mc00_cnano/peripheral/nvmctrl
   name: plib_nvmctrl.c
@@ -125,13 +111,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 89D9EF9A272A9B4AA94B52DB47147ECF
-- generatedChecksum: DA505AF930792AED6002381019D610F0
+- generatedChecksum: FF51A91F6239A5586622F465C869AAB2
   logicalPath: config/pic32cm_mc00_cnano/peripheral/port
   name: plib_port.c
   physicalPath: peripheral/port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DA505AF930792AED6002381019D610F0
+  userChecksum: FF51A91F6239A5586622F465C869AAB2
 - generatedChecksum: 0DC1C3E79E4A3965F2278C510F9AF3F9
   logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/i2c_master
   name: plib_sercom0_i2c_master.c
@@ -139,13 +125,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DC1C3E79E4A3965F2278C510F9AF3F9
-- generatedChecksum: B584637DFAD576E8C02845352F8A19A0
-  logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/usart
-  name: plib_sercom1_usart.c
-  physicalPath: peripheral/sercom/usart
+- generatedChecksum: AF2FF9F027FF4169A24500300639FF7B
+  logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/spi_master
+  name: plib_sercom1_spi_master.c
+  physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B584637DFAD576E8C02845352F8A19A0
+  userChecksum: AF2FF9F027FF4169A24500300639FF7B
 - generatedChecksum: 553254639C5CA56AF0F187B88EB83EAE
   logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/usart
   name: plib_sercom3_usart.c
@@ -174,13 +160,6 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2645E564BD945DAED1424FD8D7B39330
-- generatedChecksum: DBBC8FE07E165E5808B7D1D87C64009C
-  logicalPath: config/pic32cm_mc00_cnano/system/dma
-  name: sys_dma.c
-  physicalPath: system/dma
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: DBBC8FE07E165E5808B7D1D87C64009C
 - generatedChecksum: 02C3C1B519E59992810626BB6098CF56
   logicalPath: config/pic32cm_mc00_cnano/system/int
   name: sys_int.c
@@ -195,20 +174,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
-- generatedChecksum: 1C50393B5259F4B771808C828F3FE3E1
+- generatedChecksum: 08F6AD6F5C1632053100E8268841052A
   logicalPath: config/pic32cm_mc00_cnano
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1C50393B5259F4B771808C828F3FE3E1
-- generatedChecksum: ED25B36A0339E3C36E1DD22CBB809277
+  userChecksum: 08F6AD6F5C1632053100E8268841052A
+- generatedChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
   logicalPath: config/pic32cm_mc00_cnano/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: ED25B36A0339E3C36E1DD22CBB809277
+  userChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
 - generatedChecksum: C58DDE75A0FC6DAC76A9F310CEDDA2E7
   logicalPath: packs/PIC32CM1216MC00032_DFP/component
   name: ac.h
@@ -244,13 +223,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 14DE29977FBBF30A7626DC1F83F99276
-- generatedChecksum: null
-  logicalPath: ''
-  name: app.h
-  physicalPath: ../..
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: null
 - generatedChecksum: 01B82424BC59A54620F7E9E0DB808EBB
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cachel1_armv7.h
@@ -349,13 +321,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 785EBB75A031D69094E3B56E9429606D
-- generatedChecksum: 140FA8DFCD3D7CEB83E7CE78D0FC5F12
+- generatedChecksum: 89FF0C49C82A1F58A158988B92E14579
   logicalPath: config/pic32cm_mc00_cnano
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 140FA8DFCD3D7CEB83E7CE78D0FC5F12
+  userChecksum: 89FF0C49C82A1F58A158988B92E14579
 - generatedChecksum: 95CBB925D5837BD546C70E34287A3214
   logicalPath: config/pic32cm_mc00_cnano
   name: device.h
@@ -545,13 +517,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 30F28E65BDEB47FF48E00E26960399CD
-- generatedChecksum: 74A5CC04660F0DFF7256F84A0A0B4D06
+- generatedChecksum: A7C7ABE7A2065C8A8CE768638334B003
   logicalPath: config/pic32cm_mc00_cnano
   name: interrupts.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 74A5CC04660F0DFF7256F84A0A0B4D06
+  userChecksum: A7C7ABE7A2065C8A8CE768638334B003
 - generatedChecksum: FBBE491096B6E662FD1071328BE6B440
   logicalPath: packs/PIC32CM1216MC00032_DFP/component
   name: mclk.h
@@ -699,13 +671,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 0416F129713FDF989ACC1FC57065125C
-- generatedChecksum: C2C6725A79656CEF53C6E7A4946DC73D
-  logicalPath: config/pic32cm_mc00_cnano/peripheral/eic
-  name: plib_eic.h
-  physicalPath: peripheral/eic
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: C2C6725A79656CEF53C6E7A4946DC73D
 - generatedChecksum: CCAEF942C66AF995876DFD85CEFF611F
   logicalPath: config/pic32cm_mc00_cnano/peripheral/evsys
   name: plib_evsys.h
@@ -727,13 +692,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: E202F7AE26B67871CE1137A01A594483
-- generatedChecksum: 26C344EEF8E427F883E0CF1A22804501
+- generatedChecksum: DD940D803D38A614E474EE077FDC8E49
   logicalPath: config/pic32cm_mc00_cnano/peripheral/port
   name: plib_port.h
   physicalPath: peripheral/port
   security: NON_SECURE
   type: HEADER
-  userChecksum: 26C344EEF8E427F883E0CF1A22804501
+  userChecksum: DD940D803D38A614E474EE077FDC8E49
 - generatedChecksum: 978427979D8DA89D5B1DA14F7B59732A
   logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/i2c_master
   name: plib_sercom0_i2c_master.h
@@ -741,13 +706,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 978427979D8DA89D5B1DA14F7B59732A
-- generatedChecksum: A3AC6AB14EDA8BE607C29427826CB43E
-  logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/usart
-  name: plib_sercom1_usart.h
-  physicalPath: peripheral/sercom/usart
+- generatedChecksum: C17C1F472E4444F4137508A76B0A8B12
+  logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/spi_master
+  name: plib_sercom1_spi_master.h
+  physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: A3AC6AB14EDA8BE607C29427826CB43E
+  userChecksum: C17C1F472E4444F4137508A76B0A8B12
 - generatedChecksum: BF6EFCCF1BB3BD81649BA580AAB0760F
   logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/usart
   name: plib_sercom3_usart.h
@@ -762,6 +727,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 555AC09B32F566FBFB0A0505CF73ABD6
+- generatedChecksum: BED7AF34A8D633C6994B780C19D7157F
+  logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/spi_master
+  name: plib_sercom_spi_master_common.h
+  physicalPath: peripheral/sercom/spi_master
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: BED7AF34A8D633C6994B780C19D7157F
 - generatedChecksum: 881B1D67FA4C320BBD6AC86344695C9C
   logicalPath: config/pic32cm_mc00_cnano/peripheral/sercom/usart
   name: plib_sercom_usart_common.h
@@ -916,20 +888,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6BB6C54C5CD963A5A940CF7BB28F4E10
-- generatedChecksum: 473DBCC8C06479687B347E462B9F6B3B
-  logicalPath: config/pic32cm_mc00_cnano/system/dma
-  name: sys_dma.h
-  physicalPath: system/dma
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 473DBCC8C06479687B347E462B9F6B3B
-- generatedChecksum: D6141C37E3995B1B6C326EBA5F1FA067
-  logicalPath: config/pic32cm_mc00_cnano/system/dma
-  name: sys_dma_mapping.h
-  physicalPath: system/dma
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: D6141C37E3995B1B6C326EBA5F1FA067
 - generatedChecksum: 1329D2DEB6E5AC9515AD4D165C60DC74
   logicalPath: config/pic32cm_mc00_cnano/system/int
   name: sys_int.h
@@ -944,20 +902,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 00278F169FFB0CBBAB3A68B5D647F093
-- generatedChecksum: A18715B8A69D26A3611BFD04D551ED83
-  logicalPath: config/pic32cm_mc00_cnano/system/ports
-  name: sys_ports.h
-  physicalPath: system/ports
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: A18715B8A69D26A3611BFD04D551ED83
-- generatedChecksum: 0077CD2365E6F28D76DF1D212FF80059
-  logicalPath: config/pic32cm_mc00_cnano/system/ports
-  name: sys_ports_mapping.h
-  physicalPath: system/ports
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 0077CD2365E6F28D76DF1D212FF80059
 - generatedChecksum: 466D676839280C0E7FC2CC6F78BA6EE9
   logicalPath: config/pic32cm_mc00_cnano/system/time
   name: sys_time.h

@@ -38,7 +38,6 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-#include "definitions.h"
 
 #ifdef __arm__
 /* Declaration of these functions are missing in stdio.h for ARM parts*/
@@ -48,22 +47,10 @@ void _mon_putc(char c);
 
 int _mon_getc(int canblock)
 {
-   int c = 0;
-   bool success = false;
-   (void)canblock;
-   do
-   {
-       success = SERCOM1_USART_Read(&c, 1);                
-   }while( !success);
-   return c;
+   return 0;
 }
 
 void _mon_putc(char c)
 {
-   bool success = false;
-   do
-   {
-       success = SERCOM1_USART_Write(&c, 1);
-   }while (!success);
 }
 

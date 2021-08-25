@@ -27,4 +27,4 @@ children:
         children:
         - {type: Value, value: SERCOM3_UART}
 - type: ElementPosition
-  attributes: {x: '159', y: '115', id: bluetooth_bm71}
+  attributes: {x: '740', y: '20', id: bluetooth_bm71}

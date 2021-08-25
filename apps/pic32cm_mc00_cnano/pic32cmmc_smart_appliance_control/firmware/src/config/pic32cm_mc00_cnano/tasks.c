@@ -83,12 +83,6 @@ void SYS_Tasks ( void )
     /* Maintain Middleware & Other Libraries */
     
 
-    /* Maintain the application's state machine. */
-        /* Call Application task APP. */
-    APP_Tasks();
-
-
-
 
 }
 

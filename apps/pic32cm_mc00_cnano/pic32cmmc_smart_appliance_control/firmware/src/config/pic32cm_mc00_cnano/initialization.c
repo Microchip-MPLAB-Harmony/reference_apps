@@ -177,15 +177,13 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_Initialize( );
 
-    SERCOM1_USART_Initialize();
+    SERCOM1_SPI_Initialize();
 
     EVSYS_Initialize();
 
     SERCOM0_I2C_Initialize();
 
 	SYSTICK_TimerInitialize();
-    EIC_Initialize();
-
     TC0_TimerInitialize();
 
 
@@ -193,9 +191,6 @@ void SYS_Initialize ( void* data )
 
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
-
-
-    APP_Initialize();
 
 
     NVIC_Initialize();

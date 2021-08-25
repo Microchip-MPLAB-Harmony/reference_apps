@@ -15,14 +15,29 @@ nav_order: 3
 ## <a id="description"> </a>
 ## Description:
 
-> This application demonstrates a smart appliance control using BLE. The application connects through BM71 XPRO to Microchip Bluetooth Data (MBD) android mobile application via BLE (Bluetooth Low Energy). The BM71 XPRO uses a transparent service for data exchange with the android MBD mobile application. Based on the mobile application's commands, the fan connected to Fan click via the I2C interface is controlled. The BM71 XPRO interfaces to the MCU over SERCOM - USART interface.
+> This application demonstrates  a smart control fan using BLE. The application connects
+  through BM71 XPRO to Microchip Bluetooth Data (MBD) android mobile application via BLE
+  (Bluetooth Low Energy). The BM71 XPRO uses a transparent service for data exchange with
+  the android MBD mobile application.
 
-> A fan is controlled by following the below commands:  
-	1. **FAN_ON**     - To turn "On" the Fan with low speed.  
-	2. **FAN_OFF**    - To turn "Off" the Fan.  
-	3. **FAN_LOW**    - To run the fan with low speed.  
-	4. **FAN_HIGH**   - To run the fan with high speed.  
-	5. **FAN_MID**    - To run the fan with medium speed.
+> Based on the mobile application's commands, the fan connected to Fan click via the I2C
+  interface is controlled. The BLE commands has two different modes, one mode is temperature
+  based fan control and another is BLE based command. The BM71 XPRO interfaces to the MCU
+  over SERCOM - USART interface.
+
+> A fan is controlled by following below commands:  
+  1. **TEMP_CTRL** - Fan will be ran based on the environmental temperature. When the user chooses temperature based fan control mode, application reads the temperature values from a weather sensor displays on Eink display and controls a DC fan as mentioned below.  
+    a.	Temperature between 18 (64 F) to 25 (77 F) degree Celsius, the fan rotates at LOW speed.  
+    b.	Temperature between 26 (78 F) to 30 (86 F) degree Celsius, the fan rotates at MEDIUM speed.  
+    c.	Temperature is greater than 30 degree Celsius (86 F), the fan rotates at HIGH speed.  
+    d.	Temperature is less than 18 (64 F), the fan is switched OFF.  
+    The application also prints the temperature values on a serial terminal using USART peripheral library  
+  2. User can control the fan from the BLE based MBD app running on the connected smartphone by sending below commands.  
+    a. **BLE_CTRL:FAN_ON**   - Turns "On" the fan with LOW speed.  
+    b. **BLE_CTRL:FAN_OFF**  - Turns "Off" the fan.  
+    c. **BLE_CTRL:FAN_LOW**  - Runs the fan with LOW speed.  
+    d. **BLE_CTRL:FAN_MID**  - Runs the fan with MEDIUM speed.  
+    e. **BLE_CTRL:FAN_HIGH**	- Runs the fan with HIGH speed.
 
 ## Modules/Technology Used:
 - Peripheral Modules
@@ -31,6 +46,7 @@ nav_order: 3
 	- Timer
 	- SERCOM(I2C)
 	- SERCOM(USART)
+	- SERCOM(SPI)
 	- EIC
 - Driver Modules
 	- BM71 Driver
@@ -42,6 +58,8 @@ nav_order: 3
 - [Curiosity Nano Base for click boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
 - [BM71-XPRO](https://www.microchip.com/Developmenttools/ProductDetails/DM164146)
 - [Fan Click](https://www.mikroe.com/fan-click)
+- [WEATHER CLICK](https://www.mikroe.com/weather-click)
+- [MikroElektronika Eink Click Bundle](https://www.mikroe.com/eink-click)
 -	[5V DC Fan](https://www.amazon.com/PartsCollection-Fan-50MM-4-Wire-Function/dp/B01M17DB6Y)
 - [Lipo Rechargeable Battery](https://www.electronicscomp.com/3.7v-5000mah-lipo-battery-model-kp-508085-india?gclid=EAIaIQobChMIscaP2Prv7QIVjnwrCh2lKA3NEAQYASABEgJgAvD_BwE)
 
@@ -111,7 +129,9 @@ nav_order: 3
 ## Setup:
 - Mount PIC32CM MC00 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board  
 - Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board  
+- Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 1 connector of Curiosity Nano Base board
 - Mount Fan click board on mikro bus click 2 connector of Curiosity Nano Base and connect 4 fan wires to the fan click  
+- Mount Weather Click board on mikroBUS click 3 connector of Curiosity Nano Base
 - Connect Li-ion or Lipo Battery on J1 connector and make sure SW1 slider switch is moved to Battery on position in Curiosity Nano Base board  
 - Connect the PIC32CM MC00 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
 
@@ -180,6 +200,7 @@ The pre-built hex file can be programmed by following the below steps.
 <img src = "images/mbd_appscreen13.jpg" width="250" height="450" align="middle">
 
 -  Based on the command received from the MBD application, the fan will be controlled.
+-   When the user chooses temperature based fan control mode, application reads the temperature values from a weather sensor displays on EInk display and controls a DC fan
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
@@ -187,4 +208,5 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.4.0 Added display capability
 - v1.3.0 Released demo application

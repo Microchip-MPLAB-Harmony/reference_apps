@@ -43,8 +43,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _AUDIO_H
-#define _AUDIO_H
+#ifndef _BLE_H
+#define _BLE_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -58,8 +58,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdlib.h>
 #include "configuration.h"
 #include "definitions.h"
-
-#include "bt/driver/bm64/drv_bm64.h"     // only reference to BM64 (others use generic BT))
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -119,7 +117,6 @@ typedef struct
     DATA_BT bt;   
     
 } BLE_DATA;
-
 
 
 void bleTasks(void);
@@ -194,7 +191,7 @@ void bleInitialize(bool all);
  */
 
 void bleTasks( void );
-
+bool Isble_adv_started(void);
 #endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN

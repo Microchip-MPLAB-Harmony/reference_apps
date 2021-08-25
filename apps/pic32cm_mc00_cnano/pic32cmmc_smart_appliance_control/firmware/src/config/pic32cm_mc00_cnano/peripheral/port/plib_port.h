@@ -74,14 +74,41 @@
 #define STBYRST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 4U)) & 0x01U)
 #define STBYRST_PIN                  PORT_PIN_PA04
 
-/*** Macros for LED0 pin ***/
-#define LED0_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 23U))
-#define LED0_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 23U))
-#define LED0_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 23U))
-#define LED0_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 23U))
-#define LED0_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 23U))
-#define LED0_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23U)) & 0x01U)
-#define LED0_PIN                  PORT_PIN_PA23
+/*** Macros for CLICK_EINK_BUNDLE_DC pin ***/
+#define CLICK_EINK_BUNDLE_DC_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 5U))
+#define CLICK_EINK_BUNDLE_DC_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 5U))
+#define CLICK_EINK_BUNDLE_DC_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 5U))
+#define CLICK_EINK_BUNDLE_DC_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 5U))
+#define CLICK_EINK_BUNDLE_DC_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 5U))
+#define CLICK_EINK_BUNDLE_DC_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 5U)) & 0x01U)
+#define CLICK_EINK_BUNDLE_DC_PIN                  PORT_PIN_PA05
+
+/*** Macros for CLICK_EINK_BUNDLE_BSY pin ***/
+#define CLICK_EINK_BUNDLE_BSY_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 10U))
+#define CLICK_EINK_BUNDLE_BSY_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 10U))
+#define CLICK_EINK_BUNDLE_BSY_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 10U))
+#define CLICK_EINK_BUNDLE_BSY_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 10U))
+#define CLICK_EINK_BUNDLE_BSY_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 10U))
+#define CLICK_EINK_BUNDLE_BSY_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
+#define CLICK_EINK_BUNDLE_BSY_PIN                  PORT_PIN_PA10
+
+/*** Macros for CLICK_EINK_BUNDLE_RST pin ***/
+#define CLICK_EINK_BUNDLE_RST_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 11U))
+#define CLICK_EINK_BUNDLE_RST_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 11U))
+#define CLICK_EINK_BUNDLE_RST_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 11U))
+#define CLICK_EINK_BUNDLE_RST_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 11U))
+#define CLICK_EINK_BUNDLE_RST_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 11U))
+#define CLICK_EINK_BUNDLE_RST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11U)) & 0x01U)
+#define CLICK_EINK_BUNDLE_RST_PIN                  PORT_PIN_PA11
+
+/*** Macros for CLICK_EINK_BUNDLE_CS pin ***/
+#define CLICK_EINK_BUNDLE_CS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 18U))
+#define CLICK_EINK_BUNDLE_CS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 18U))
+#define CLICK_EINK_BUNDLE_CS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 18U))
+#define CLICK_EINK_BUNDLE_CS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 18U))
+#define CLICK_EINK_BUNDLE_CS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 18U))
+#define CLICK_EINK_BUNDLE_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
+#define CLICK_EINK_BUNDLE_CS_PIN                  PORT_PIN_PA18
 
 /*** Macros for BM71_RX_IND pin ***/
 #define BM71_RX_IND_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 28U))

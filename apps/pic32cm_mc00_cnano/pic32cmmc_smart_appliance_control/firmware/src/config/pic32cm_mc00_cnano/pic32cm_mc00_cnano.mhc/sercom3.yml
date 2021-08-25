@@ -155,4 +155,4 @@ children:
         children:
         - {type: Value, value: USART PLIB}
 - type: ElementPosition
-  attributes: {x: '34', y: '110', id: sercom3}
+  attributes: {x: '600', y: '20', id: sercom3}

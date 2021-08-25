@@ -49,6 +49,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "ble.h"
 
+bool waitingToConnect = 0;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variable Definitions
@@ -58,7 +59,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 static uint32_t _appBleContext;
 
 BLE_DATA bleData;
-extern APP_DATA appData;
+extern char BLE_Cmd_buf[100];
 
 #define MAX_BLE_BUFSIZE 100
 
@@ -71,6 +72,10 @@ void bleInitialize(bool all)        // parameter not used in non_gui version
     bleData.bt.eventHandler = (DRV_BT_EVENT_HANDLER) _BLEEventHandler;    
 } //End bleInitialize()
 
+bool Isble_adv_started(void)
+{
+    return waitingToConnect;
+}
 void bleTasks()
 {               
     switch(bleData.state)
@@ -141,8 +146,8 @@ static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t conte
                 {
                     buf[i] = toupper(buf[i]);
                 }
-                strcpy(appData.BLE_Cmd_buf, buf);
-                printf("%s\r\n", appData.BLE_Cmd_buf);
+                strcpy(BLE_Cmd_buf, buf);
+                printf("%s\r\n", BLE_Cmd_buf);
             }
         }
         break;
@@ -152,14 +157,14 @@ static void _BLEEventHandler(DRV_BT_EVENT event, uint32_t param, uintptr_t conte
             switch(param)
             {             
                 case DRV_BT_BLE_STATUS_STANDBY:
+                    break;
                 case DRV_BT_BLE_STATUS_SCANNING:
+                    break;
                 case DRV_BT_BLE_STATUS_ADVERTISING:
-                    LED1_On();
-//                    appData.waitingToConnect = true;                    
+                    waitingToConnect = true;                    
                     break;
                 case DRV_BT_BLE_STATUS_CONNECTED:                        
-                    LED1_Off();
-//                    appData.waitingToConnect = false;
+                 // waitingToConnect = false;
                     break;                    
             }
         }
