@@ -26,6 +26,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 14 | [OLED C Click Example](./oled_c/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/oled_c.zip)  |
 | 15 | [WIFI 7 Click Example](./wifi_7/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_7_click.zip) |
 | 16 | [RFID Click Example](./rfid/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/rfid.zip)  |
+| 17 | [USB I2C Click Example](./usb_i2c/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_i2c.zip)  |
 
 ### More Application Demos
 
