@@ -8,7 +8,7 @@
     click_interface.h
 
   Summary:
-    USN UART click routine interface implementation File.
+    USB UART click routine interface implementation File.
 
   Description
     This file defines the interface to the USB UART click routines and MHC
@@ -42,8 +42,8 @@
 */
 // DOM-IGNORE-END
 
-#ifndef _CLICK_INTERFACES_H
-#define _CLICK_INTERFACES_H
+#ifndef _CLICK_INTERFACE_H
+#define _CLICK_INTERFACE_H
 
 /**
   Section: Included Files
@@ -68,4 +68,4 @@
 #define CLICK_USB_UART_USART_ReadIsBusy                    SERCOM4_USART_ReadIsBusy
 #define CLICK_USB_UART_USART_WriteIsBusy                   SERCOM4_USART_WriteIsBusy
 
-#endif // _CLICK_INTERFACES_H
+#endif // _CLICK_INTERFACE_H

@@ -62,12 +62,12 @@ bool usb_uart_USART_Write(uint8_t* pWrBuffer, const size_t size)
     return CLICK_USB_UART_USART_Write(pWrBuffer, size);
 }
 
-bool usb_uart_USART_USART_ReadIsBusy(void)
+bool usb_uart_USART_ReadIsBusy(void)
 {
     return CLICK_USB_UART_USART_ReadIsBusy();
 }
 
-bool usb_uart_USART_USART_WriteIsBusy(void)
+bool usb_uart_USART_WriteIsBusy(void)
 {
     return CLICK_USB_UART_USART_WriteIsBusy();
 }

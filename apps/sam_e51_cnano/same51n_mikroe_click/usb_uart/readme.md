@@ -9,7 +9,7 @@ nav_order: 18
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # USB UART Click example on SAM E51 Curiosity Nano Evaluation Kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/usb_uart.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_uart.zip" > Download </a> </h2>
 
 -----
 ## Description:
@@ -89,7 +89,7 @@ The pre-built hex file can be programmed by following the below steps.
 ## Instructions to add USB UART functionality to your application:
 
 You could use this demonstration as an example to add USB UART functionality to your MPLAB Harmony v3 based application. Follow the below steps.  
-1. If you haven't downloaded the USB UART demo yet [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/usb_uart.zip) to download, otherwise go to next step  
+1. If you haven't downloaded the USB UART demo yet [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_uart.zip) to download, otherwise go to next step
 2. Unzip the downloaded .zip file  
 3. From the unzipped folder usb_uart/firmware/src, copy the folder **click_routines** to the folder firmware/src under your MPLAB Harmony v3 application project  
 4. Open MPLAB X IDE  
@@ -163,4 +163,5 @@ You could use this demonstration as an example to add USB UART functionality to 
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.4.0 - Updated USB UART click interface APIs
 - v1.3.0 - Created application example

@@ -68,13 +68,13 @@ void usb_uart_example(void) {
     while(1)
     {
         usb_uart_USART_Write(message_string,sizeof(message_string));
-        while(usb_uart_USART_USART_WriteIsBusy());
+        while(usb_uart_USART_WriteIsBusy());
         
         usb_uart_USART_Read(&read_char[0],1);
-        while(usb_uart_USART_USART_ReadIsBusy());
+        while(usb_uart_USART_ReadIsBusy());
         
         sprintf(out_string,"\r\nYou entered character '%c'\r\n", read_char[0]);
         usb_uart_USART_Write((uint8_t *)out_string,sizeof(out_string));
-        while(usb_uart_USART_USART_WriteIsBusy());
+        while(usb_uart_USART_WriteIsBusy());
     }
 }

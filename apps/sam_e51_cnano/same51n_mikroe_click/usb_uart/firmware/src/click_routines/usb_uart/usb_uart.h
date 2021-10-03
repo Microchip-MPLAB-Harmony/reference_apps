@@ -55,8 +55,8 @@
 
 bool usb_uart_USART_Read(uint8_t* pRdBuffer, const size_t size);
 bool usb_uart_USART_Write(uint8_t* pWrBuffer, const size_t size);
-bool usb_uart_USART_USART_ReadIsBusy(void);
-bool usb_uart_USART_USART_WriteIsBusy(void);
+bool usb_uart_USART_ReadIsBusy(void);
+bool usb_uart_USART_WriteIsBusy(void);
 
 
 #endif // _HEARTRATE9_H
