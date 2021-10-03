@@ -8,7 +8,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started with Harmony v3 Drivers on SAM E54 MCU Using FreeRTOS
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_getting_started_freertos.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_getting_started_freertos.zip" > Download </a> </h2>
 
 -----
 ## Description:
@@ -54,7 +54,7 @@ nav_order: 2
 - Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM E54 Xplained Pro Evaluation Kit
 - The SAM E54 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B
   DEBUG USB port to power and debug the SAM E54 Xplained Pro Evaluation Kit  
-  <img src = "images/To_pc.png" width="750" height="802" align="middle">
+  <img src = "images/hardware_setup.png" width="750" height="802" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps
@@ -97,4 +97,5 @@ The pre-built hex file can be programmed by following the below steps
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.4.0 - Updated the hardware setup image
 - v1.3.0 - Released demo application
