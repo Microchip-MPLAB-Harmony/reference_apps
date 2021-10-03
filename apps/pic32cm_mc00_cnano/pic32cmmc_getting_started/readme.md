@@ -9,7 +9,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Getting Started Application on PIC32CM MC00 Curiosity Nano Evaluation Kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32cmmc_getting_started.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_getting_started.zip" > Download </a> </h2>
 
 -----
 ## Description:
@@ -43,7 +43,7 @@ nav_order: 1
 ## Setup:
 - Connect the PIC32CM MC00 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port
 
-<img src = "images/getting_started_demo_setup.jpg" align="middle">
+<img src = "images/getting_started_demo_setup.png" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  
@@ -83,5 +83,6 @@ The pre-built hex file can be programmed by following the below steps.
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.4.0 updated hardware setup image
 - v1.3.0 regenerated and tested the application
 - v1.2.0 released demo application
