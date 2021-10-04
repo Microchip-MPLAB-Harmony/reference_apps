@@ -1,1 +1,2 @@
+apps/pic32mz_ef_curiosity_v2/snake_game/firmware/src/config/default/PIC32_Snake_Game.zip filter=lfs diff=lfs merge=lfs -text lockable
 apps/pic32mz_ef_curiosity_v2/snake_game/firmware/src/config/default/PIC32_Snake_Game.zip text !filter !merge !diff
