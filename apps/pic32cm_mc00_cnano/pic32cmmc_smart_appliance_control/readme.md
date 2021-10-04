@@ -64,19 +64,13 @@ nav_order: 3
 - [Lipo Rechargeable Battery](https://www.electronicscomp.com/3.7v-5000mah-lipo-battery-model-kp-508085-india?gclid=EAIaIQobChMIscaP2Prv7QIVjnwrCh2lKA3NEAQYASABEgJgAvD_BwE)
 
 ## Software/Tools Used:
-<span style="color:blue"> *This project has been verified to work with the following versions of software tools:*</span>  
+<span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-- [MPLAB Harmony v3 "csp" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/csp/releases/tag/v3.9.1)  
-- [MPLAB Harmony v3 "core" repo v3.9.1](https://github.com/Microchip-MPLAB-Harmony/core/releases/tag/v3.8.1)  
-- [MPLAB Harmony v3 "dev_packs" repo v3.9.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/releases/tag/v3.9.0)  
-- [MPLAB Harmony v3 "mhc" repo v3.7.2](https://github.com/Microchip-MPLAB-Harmony/mhc/releases/tag/v3.7.2)  
-- [MPLAB Harmony v3 "bt" repo v3.4.1](https://github.com/Microchip-MPLAB-Harmony/bt/releases/tag/v3.4.1)  
-- MPLAB Harmony 3 Launcher Plugin v3.6.4 and above  
-- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)  
-- [MPLAB XC32 Compiler v3.00](https://www.microchip.com/mplab/compilers)  
-- Install [Microchip Bluetooth Data Android App](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/mbd_3_1.apk) in your android mobile  
+Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manifest-success.yml) present in *harmony-manifest-success.yml under the project folder *firmware/src/config/{configurtion name}  
+- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.  
+- Install [Microchip Bluetooth Data Android App](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/mbd_3_1.apk) in your android mobile   
 
-<span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn't seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
+<span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://microchip.com/DS90003305)
 
 ## Adding private characteristics to BM71:
 #### Hardware Setup
