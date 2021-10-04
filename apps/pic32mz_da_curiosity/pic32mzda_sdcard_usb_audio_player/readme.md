@@ -8,7 +8,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SD Card USB Audio Player on PIC32MZ DA Curiosity Development Kit + High-Performance 4.3" WQVGA Display Module with maXTouch® Technology using Legato Graphics  
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mzda_sdcard_usb_audio_player.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_sdcard_usb_audio_player.zip" > Download </a> </h2>
 
 -----
 

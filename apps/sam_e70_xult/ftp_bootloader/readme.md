@@ -8,7 +8,7 @@ nav_order: 5
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # File Transfer Protocol Application on SAM E70 Xplained Ultra Evaluation Kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ftp_bootloader.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ftp_bootloader.zip" > Download </a> </h2>
 
 -----
 

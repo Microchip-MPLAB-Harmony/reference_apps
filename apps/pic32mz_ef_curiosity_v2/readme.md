@@ -11,13 +11,13 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Getting Started](./pic32mzef_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mzef_getting_started.zip) |
-| 2 | [Getting Started Extended](./getting_started_ext/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_ext.zip) |
-| 3 | [Getting Started Middleware - EEPROM/Thumb drive temperature logger](./getting_started_middleware/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_middleware.zip) |
-| 4 | [USB MSD with Multiple Drives](./msd_multiple_luns/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/msd_multiple_luns.zip) |
-| 5 | [SD Card Audio Player](./sdcard_player/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sdcard_player.zip) |
-| 6 | [WiFi based RGB LED Control](./wifi_rgb_easy_configuration/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/wifi_rgb_easy_configuration.zip) |
-| 7 | [Snake Game](./snake_game/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/snake_game.zip) |
+| 1 | [Getting Started](./pic32mzef_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_getting_started.zip) |
+| 2 | [Getting Started Extended](./getting_started_ext/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/getting_started_ext.zip) |
+| 3 | [Getting Started Middleware - EEPROM/Thumb drive temperature logger](./getting_started_middleware/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/getting_started_middleware.zip) |
+| 4 | [USB MSD with Multiple Drives](./msd_multiple_luns/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/msd_multiple_luns.zip) |
+| 5 | [SD Card Audio Player](./sdcard_player/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sdcard_player.zip) |
+| 6 | [WiFi based RGB LED Control](./wifi_rgb_easy_configuration/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_rgb_easy_configuration.zip) |
+| 7 | [Snake Game](./snake_game/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/snake_game.zip) |
 
 
 ### More Application Demos

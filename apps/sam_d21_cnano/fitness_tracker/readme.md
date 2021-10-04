@@ -8,7 +8,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Fitness Tracker Application on SAM D21 Curiosity Nano Evaluation Kit and Nano Base for Click boards
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/fitness_tracker.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/fitness_tracker.zip" > Download </a> </h2>
 
 -----
 

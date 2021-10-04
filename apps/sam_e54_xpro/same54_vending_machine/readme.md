@@ -9,7 +9,7 @@ nav_order: 5
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Vending Machine Application on SAM E54 Xplained Pro Evaluation Kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/same54_vending_machine.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_vending_machine.zip" > Download </a> </h2>
 
 
 -----

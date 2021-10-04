@@ -12,7 +12,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Trustzone Getting Started on SAM L11 Xplained Pro Evaluation Kit](./saml11_trustzone_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/saml11_trustzone_getting_started.zip) |
+| 1 | [Trustzone Getting Started on SAM L11 Xplained Pro Evaluation Kit](./saml11_trustzone_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml11_trustzone_getting_started.zip) |
 
 ### More Application Demos
 

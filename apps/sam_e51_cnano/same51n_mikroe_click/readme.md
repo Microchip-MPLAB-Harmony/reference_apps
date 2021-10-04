@@ -10,22 +10,22 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Weather Click Example](./weather/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/weather.zip)  |
-| 2 | [Eink Display Bundle Click example](./eink_bundle/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/eink_bundle.zip)  |
-| 3 | [Heart Rate 9 Click Example](./heartrate9/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/heartrate9.zip)  |
-| 4 | [IR Thermo 2 Click Example](./ir_thermo2/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/ir_thermo2.zip)  |
-| 5 | [10DOF Click Example](./10dof/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/10dof.zip)  |
-| 6 | [LED Driver 3 Click Example](./leddriver3/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/leddriver3.zip)  |
-| 7 | [EEPROM 4 Click Example](./eeprom4/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/eeprom4.zip)  |
-| 8 | [Thumbstick Click Example](./thumbstick/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/thumbstick.zip)  |
-| 9 | [XPRO Adapter Click Example](./xpro_adapter/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/xpro_adapter.zip)  |
-| 10 | [Fan Click Example](./fan/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/fan.zip)  |
-| 11 | [GSM GPS Click Example](./gsm_gps/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/gsm_gps.zip)  |
-| 12 | [PIR Click Example](./pir/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pir.zip)  |
-| 13 | [USB UART Click Example](./usb_uart/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/usb_uart.zip)  |
-| 14 | [OLED C Click Example](./oled_c/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/oled_c.zip)  |
+| 1 | [Weather Click Example](./weather/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/weather.zip)  |
+| 2 | [Eink Display Bundle Click example](./eink_bundle/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eink_bundle.zip)  |
+| 3 | [Heart Rate 9 Click Example](./heartrate9/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/heartrate9.zip)  |
+| 4 | [IR Thermo 2 Click Example](./ir_thermo2/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ir_thermo2.zip)  |
+| 5 | [10DOF Click Example](./10dof/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/10dof.zip)  |
+| 6 | [LED Driver 3 Click Example](./leddriver3/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/leddriver3.zip)  |
+| 7 | [EEPROM 4 Click Example](./eeprom4/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eeprom4.zip)  |
+| 8 | [Thumbstick Click Example](./thumbstick/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/thumbstick.zip)  |
+| 9 | [XPRO Adapter Click Example](./xpro_adapter/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/xpro_adapter.zip)  |
+| 10 | [Fan Click Example](./fan/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/fan.zip)  |
+| 11 | [GSM GPS Click Example](./gsm_gps/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/gsm_gps.zip)  |
+| 12 | [PIR Click Example](./pir/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pir.zip)  |
+| 13 | [USB UART Click Example](./usb_uart/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_uart.zip)  |
+| 14 | [OLED C Click Example](./oled_c/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/oled_c.zip)  |
 | 15 | [WIFI 7 Click Example](./wifi_7/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_7_click.zip) |
-| 16 | [RFID Click Example](./rfid/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/rfid.zip)  |
+| 16 | [RFID Click Example](./rfid/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/rfid.zip)  |
 | 17 | [USB I2C Click Example](./usb_i2c/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_i2c.zip)  |
 
 ### More Application Demos

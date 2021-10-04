@@ -9,7 +9,7 @@ nav_order: 9
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Application migration from 8-bit PIC18F to 32-bit SAM D21 on SAM D21 Curiosity Nano
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic18f_to_samd21_migration.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic18f_to_samd21_migration.zip" > Download </a> </h2>
 
 -----
 ## Description:

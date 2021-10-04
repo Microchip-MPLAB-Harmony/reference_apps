@@ -8,7 +8,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Google Cloud IoT Core Application on SAM D21 IoT WG Development Board
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/google_cloud_iot_core.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/google_cloud_iot_core.zip" > Download </a> </h2>
 
 -----
 
@@ -92,7 +92,7 @@ The below sections describes the steps to run the application.
 		**`wifi <SSID>,<PASSWORD>,<SECURITY TYPE>`**
 
 ## Reference:
-- For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/SAM_IoT_WG_Development_Board_User_Guide.pdf)
+- For more details on the application usage, functionality and other details, refer to the [SAM-IoT WG Development Board User Guide](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/SAM_IoT_WG_Development_Board_User_Guide.pdf)
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.

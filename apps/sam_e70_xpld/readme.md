@@ -11,7 +11,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Getting Started](./getting_started_drivers_middleware/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/getting_started_drivers_middleware.zip) |
+| 1 | [Getting Started](./getting_started_drivers_middleware/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/getting_started_drivers_middleware.zip) |
 
 
 ### More Application Demos

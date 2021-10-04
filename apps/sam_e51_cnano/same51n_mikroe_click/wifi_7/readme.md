@@ -124,7 +124,7 @@ Below are Harmony v3 configuration for the WiFi 7 click
 - You could use this demonstration as an example to add WiFi 7 click functionality to your MPLAB Harmony v3 based application. Follow the below steps.  
 	**Note:** This demo can be extended to connect to web to transfer data, refer the reference section below for more applications
 
-  1. If you haven't downloaded the WiFi 7 click demo yet [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_7.zip) to download, otherwise go to next step  
+  1. If you haven't downloaded the WiFi 7 click demo yet [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_7.zip) to download, otherwise go to next step
 	2. Unzip the downloaded .zip file  
 	3. From the unzipped folder wifi_7/firmware/src, copy the folder **click_routines** to the folder firmware/src under your MPLAB Harmony v3 application project  
 	4. Open MPLAB X IDE  

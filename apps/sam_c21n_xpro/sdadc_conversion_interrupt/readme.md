@@ -8,7 +8,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SDADC Conversion Interrupt Mode Application on SAMC21N Xplained Pro Evaluation Kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sdadc_conversion_interrupt.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sdadc_conversion_interrupt.zip" > Download </a> </h2>
 
 -----
 ## Description:

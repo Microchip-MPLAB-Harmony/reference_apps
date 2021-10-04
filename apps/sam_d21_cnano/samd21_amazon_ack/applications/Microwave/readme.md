@@ -8,7 +8,7 @@ nav_order: 7
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Amazon Alexa Connect Kit (ACK) Microwave Application on SAM D21 Curiosity Nano
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samd21_amazon_ack.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_amazon_ack.zip" > Download </a> </h2>
 
 -----
 

@@ -22,7 +22,7 @@ nav_order: 98
 ## <span style="color:blue"> *Complete the above highlighted step before proceeding further* </span>
 
 ## Running the utility
-- Download and extract [gcp_iot_winc_provisioning](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/gcp_iot_winc_provisioning.zip
+- Download and extract [gcp_iot_winc_provisioning](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/gcp_iot_winc_provisioning.zip
 ) into utilities folder
 - Open command prompt and navigate to **"utilities/gcp_iot_winc_provisioning"**
 - The following command line will generate a device programming file winc1500_19.7.3.prog.

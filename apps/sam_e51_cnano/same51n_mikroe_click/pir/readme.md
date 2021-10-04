@@ -9,7 +9,7 @@ nav_order: 17
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # PIR Click example on SAM E51 Curiosity Nano Evaluation Kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pir.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pir.zip" > Download </a> </h2>
 
 -----
 ## Description:
@@ -75,7 +75,7 @@ The pre-built hex file can be programmed by following the below steps.
 ## Instructions to add Motion Sensor functionality to your application:
 
 You could use this demonstration as an example to add motion sensor functionality to your MPLAB Harmony v3 based application. Follow the below steps.  
-1. If you haven't downloaded the PIR example demo yet [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pir.zip) to download, otherwise go to next step  
+1. If you haven't downloaded the PIR example demo yet [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pir.zip) to download, otherwise go to next step
 2. Unzip the downloaded .zip file  
 3. From the unzipped folder pir/firmware/src, copy the folder **click_routines** to the folder firmware/src under your MPLAB Harmony v3 application project  
 4. Open MPLAB X IDE  

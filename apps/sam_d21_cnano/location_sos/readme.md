@@ -8,7 +8,7 @@ nav_order: 3
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Location Tagged SOS Application on SAM D21 Curiosity Nano and Nano Base for Click boards
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/location_sos.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/location_sos.zip" > Download </a> </h2>
 
 -----
 

@@ -9,7 +9,7 @@ nav_order: 2
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Temperature based Fan Speed Control with OLED C click display on PIC32CM MC00 Curiosity Nano Evaluation kit
-<h2 align="center"> <a href="https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32cmmc_temp_based_fan_control_oled_c.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_temp_based_fan_control_oled_c.zip" > Download </a> </h2>
 
 -----
 ## Description:

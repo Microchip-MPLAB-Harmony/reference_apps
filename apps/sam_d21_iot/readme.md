@@ -11,7 +11,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on S
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Google Cloud IoT Core](./google_cloud_iot_core/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/google_cloud_iot_core.zip) |
+| 1 | [Google Cloud IoT Core](./google_cloud_iot_core/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/google_cloud_iot_core.zip) |
 
 ### More Application Demos
 

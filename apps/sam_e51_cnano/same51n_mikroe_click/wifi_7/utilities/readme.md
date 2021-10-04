@@ -20,7 +20,7 @@ nav_order: 98
 ## <span style="color:blue"> *Complete the above highlighted step before proceeding further* </span>
 
 ## Running the utility
-- Download and extract [winc1510_firmware](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/winc1510_firmware.zip
+- Download and extract [winc1510_firmware](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/winc1510_firmware.zip
 ) into utilities folder
 - Open command prompt and navigate to **"utilities/winc1510_firmware"**
 - The following command line will generate a device programming file winc1500_19.7.3.prog.

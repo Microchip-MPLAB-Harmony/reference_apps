@@ -11,7 +11,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Live Update](./pic32mz_uart_live_update/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/pic32mz_uart_live_update.zip) |
+| 1 | [Live Update](./pic32mz_uart_live_update/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mz_uart_live_update.zip) |
 
 ### More Application Demos
 

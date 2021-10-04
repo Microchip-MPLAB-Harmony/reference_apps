@@ -11,9 +11,9 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Getting Started](./samc21n_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/samc21n_getting_started.zip) |
-| 2 | [SDADC Conversion Polling Mode](./sdadc_conversion_polling/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sdadc_conversion_polling.zip) |
-| 3 | [SDADC Conversion Interrupt Mode](./sdadc_conversion_interrupt/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/sdadc_conversion_interrupt.zip) |
+| 1 | [Getting Started](./samc21n_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samc21n_getting_started.zip) |
+| 2 | [SDADC Conversion Polling Mode](./sdadc_conversion_polling/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sdadc_conversion_polling.zip) |
+| 3 | [SDADC Conversion Interrupt Mode](./sdadc_conversion_interrupt/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sdadc_conversion_interrupt.zip) |
 
 
 ### More Application Demos

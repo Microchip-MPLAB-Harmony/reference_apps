@@ -12,8 +12,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Getting Started](./saml10_getting_started/readme.md) | [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/saml10_getting_started.zip) |
-| 2 | [Low Power](./saml10_low_power/readme.md) |  [Click Here](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/saml10_low_power.zip) |
+| 1 | [Getting Started](./saml10_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml10_getting_started.zip) |
+| 2 | [Low Power](./saml10_low_power/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml10_low_power.zip) |
 
 ### More Application Demos
 
