@@ -83,8 +83,8 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Programming/Debugging Application Project:
 - Open the project (ftp_bootloader\firmware\sam_e70_xult.X) in MPLAB X IDE
-- Ensure "EDBG" is selected as hardware tool to program/debug the application
-- Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
+- Ensure "SAM E70 Xplained Ultra" is selected as hardware tool to program/debug the application
+- Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Demo:
@@ -101,7 +101,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 ### FTP Client Connect
 - From a terminal window application (like Tera Term), connect to the COM port enumerated by SAM E70 Xplained Ultra board
-- Restart the application (i.e reset the SAM E70 board)
+- Restart the application (i.e reset the SAM E70 Xplained Ultra board)
 - The IP address will be displayed on the terminal once it is ready. Now, user can connect to the FTP server
 	- Type “ftpc connect <host ip address>”
 - Upon successful connection, enter the login details

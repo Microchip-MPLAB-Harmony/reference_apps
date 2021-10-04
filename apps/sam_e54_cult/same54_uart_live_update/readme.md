@@ -54,6 +54,12 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 
 <span style="color:blue"> *Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with.* </span>
 
+## Programming/Debugging Application Project:
+- Open the project (same54_uart_live_update/firmware/sam_e54_cult.X) in MPLAB X IDE
+- Ensure "SAM E54 Curiosity Ultra" is selected as hardware tool to program/debug the application
+- Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
+- Follow the steps in "Running the Demo" section below
+
 ## Running the Bootloader application:
 
 **For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader.**

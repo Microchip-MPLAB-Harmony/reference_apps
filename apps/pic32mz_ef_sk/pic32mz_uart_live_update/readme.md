@@ -56,6 +56,12 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 - Connect a mini USB cable to the UART-USB port J11
 - For programming, connect a mini USB cable to the USB Debug port J3
 
+## Programming/Debugging Application Project:
+- Open the project (getting_started_ext\firmware\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
+- Ensure "Starter Kits (PKOB)" is selected as hardware tool to program/debug the application
+- Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
+- Follow the steps in "Running the Demo" section below
+
 ## Running the Bootloader application:
 
 **For the first time, the Live update application is programmed by using either Harmony basic bootloader or Harmony fail-safe bootloader.**
