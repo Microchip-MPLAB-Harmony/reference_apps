@@ -5,7 +5,7 @@ frameworkPath: ..\..\HarmonyFramework
 processor: PIC32MZ2048EFM144
 projectName: PIC32MZ_EF_CRZ_GRID_EYE_CLICK
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;core_apps_sam_d5x_e5x;crypto;cryptoauthlib;csp;csp_apps_pic32mz_ef;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;gfx;gfx_apps;gfx_apps_pic32mz_ef;gfx_aria;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;reference_apps;touch;usb;wireless;wireless_wifi
+  PackageFilter: bsp;core;csp;gfx;quick_docs;reference_apps;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
