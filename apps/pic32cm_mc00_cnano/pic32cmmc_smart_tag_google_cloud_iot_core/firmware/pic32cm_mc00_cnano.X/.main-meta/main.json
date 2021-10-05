@@ -1,0 +1,95 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cmmc_smart_tag_google_cloud_iot_core",
+		"version": "1.4.0",
+		"displayName": "Smart Tag Google Clound IoT Core Application",
+		"projectName": "smart_tag_google_cloud_iot_core_pic32cm_mc00_cnano",
+		"shortDescription": "Smart Tag Google Cloud IoT Core Application on PIC32CM MC00 Curiosity Nano Evaluation Kit",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.0.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32CM-MC_DFP",
+			"semverRange": "^1.2.52"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.4"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32CM1216MC00032",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32CM MC00 Curiosity Nano Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]			
+		],
+		"peripherals": [
+			"ADC", "Trust_Go", "ATECC608", "COMMAND" ,"CONSOLE", "Core" ,"EIC", "RTC", "SysTick", "SPI", "USART", "I2C", "Timer", "WINC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"PIC32CM1216MC00032",
+			"PIC32CM MC00",
+			"PIC32CM MC Family",
+			"SAM C21",
+			"Click",
+			"IoT",
+			"Google",
+			"Smart Tag",
+			"Tag",
+			"Core",
+			"Node",
+			"Sensor",
+			"Cloud",
+			"SAM E51",
+			"SAME51",	
+			"WINC1510",
+			"ECC608A",
+			"Secure",
+			"Curiosity",
+			"Nano Base Adapter",
+			"Nano",
+			"Base",	
+			"Adapter",
+			"WiFi7 Click",
+			"LED Driver3 Click",
+			"RFID Click",
+			"IR Thermo2 Click",
+			"ATECC608B Trust Click",
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
