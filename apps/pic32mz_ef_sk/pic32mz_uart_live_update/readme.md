@@ -36,7 +36,7 @@ The banks on PIC32MZ MCU are named as BANK1 and BANK2. At any point of time, the
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/{configurtion name}*  
+Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/pic32mz_ef_sk*  
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.  
 - Any Serial Terminal application like Tera Term terminal application.
 - Windows command prompt

@@ -66,7 +66,7 @@ nav_order: 3
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/{configurtion name}*  
+Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/pic32cm_mc00_cnano*  
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.  
 - Install [Microchip Bluetooth Data Android App](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest/download/mbd_3_1.apk) in your android mobile   
 
