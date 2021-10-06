@@ -511,6 +511,11 @@ void checkUnsubackTimeoutState(void)
 
 void MQTT_initialiseState(void){
 	mqttState = DISCONNECTED;
+    //Ensure you stop any SINGLE SHOT timer since this 
+    //function can be called asynchronously while already connected
+    // to the CLOUD!
+    SYS_TIME_TimerDestroy(checkPingreqTimeoutStateHandle);
+    SYS_TIME_TimerDestroy(checkSubackTimeoutStateHandle);
 }
 
 mqttCurrentState MQTT_GetConnectionState(void) {
@@ -830,7 +835,7 @@ static uint32_t mqttDecodeLength(uint8_t *encodedData) {
 
 mqttCurrentState MQTT_Disconnect(mqttContext* connectionInfo) {
    if ((mqttState == CONNECTED) || (mqttState == WAITFORCONNACK)) {
-      SYS_TIME_TimerStop(checkPingreqTimeoutStateHandle);
+      SYS_TIME_TimerDestroy(checkPingreqTimeoutStateHandle);
       mqttSendDisconnect(connectionInfo);
       mqttState = DISCONNECTED;
    }
@@ -1050,7 +1055,7 @@ mqttCurrentState MQTT_TransmissionHandler(mqttContext *mqttConnectionPtr) {
                   }
                   break;
                case SENDPUBLISH:
-                  SYS_TIME_TimerStop(checkPingreqTimeoutStateHandle);
+                  SYS_TIME_TimerDestroy(checkPingreqTimeoutStateHandle);
                   packetSent = mqttSendPublish(mqttConnectionPtr);
 
                      keepAliveTimeout = ntohs(txConnectPacket.connectVariableHeader.keepAliveTimer);
@@ -1059,7 +1064,7 @@ mqttCurrentState MQTT_TransmissionHandler(mqttContext *mqttConnectionPtr) {
                      }
                   break;
                case SENDSUBSCRIBE:
-                  SYS_TIME_TimerStop(checkPingreqTimeoutStateHandle);
+                  SYS_TIME_TimerDestroy(checkPingreqTimeoutStateHandle);
                   mqttSendSubscribe(mqttConnectionPtr);
                   keepAliveTimeout = ntohs(txConnectPacket.connectVariableHeader.keepAliveTimer);
 				  if (txConnectPacket.connectVariableHeader.keepAliveTimer > 0) {
@@ -1067,7 +1072,7 @@ mqttCurrentState MQTT_TransmissionHandler(mqttContext *mqttConnectionPtr) {
 				  }
                   break;
                case SENDUNSUBSCRIBE:
-                  SYS_TIME_TimerStop(checkPingreqTimeoutStateHandle);
+                  SYS_TIME_TimerDestroy(checkPingreqTimeoutStateHandle);
                   mqttSendUnsubscribe(mqttConnectionPtr);
                   keepAliveTimeout = ntohs(txConnectPacket.connectVariableHeader.keepAliveTimer);
                   if (txConnectPacket.connectVariableHeader.keepAliveTimer > 0) {
@@ -1112,7 +1117,7 @@ mqttCurrentState MQTT_ReceptionHandler(mqttContext *mqttConnectionPtr) {
          if (connackTimeoutOccured == false) {
             // The timeout API names are different in MCC foundation
             // services timeout driver and START timeout driver
-            SYS_TIME_TimerStop(checkConnackTimeoutStateHandle);
+            SYS_TIME_TimerDestroy(checkConnackTimeoutStateHandle);
             // Check the type of packet
             uint16_t len = MQTT_ExchangeBufferPeek(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, &receivedPacketHeader.All, sizeof (receivedPacketHeader.All));
 
@@ -1158,14 +1163,14 @@ mqttCurrentState MQTT_ReceptionHandler(mqttContext *mqttConnectionPtr) {
             case PINGRESP:
                // PINGRESP received
                if ((mqttRxFlags.newRxPingrespPacket == 1) && (pingrespTimeoutOccured == false)) {
-                  SYS_TIME_TimerStop(checkPingrespTimeoutStateHandle);
+                  SYS_TIME_TimerDestroy(checkPingrespTimeoutStateHandle);
                   mqttProcessPingresp(mqttConnectionPtr);
                }
                break;
             case SUBACK:
                // SUBACK received
                if ((mqttRxFlags.newRxSubackPacket == 1) && (subackTimeoutOccured == false)) {
-                  SYS_TIME_TimerStop(checkSubackTimeoutStateHandle);
+                  SYS_TIME_TimerDestroy(checkSubackTimeoutStateHandle);
                   mqttState = mqttProcessSuback(mqttConnectionPtr);
                }
                break;
@@ -1173,7 +1178,7 @@ mqttCurrentState MQTT_ReceptionHandler(mqttContext *mqttConnectionPtr) {
                // UNSUBACK received
                if ((mqttRxFlags.newRxUnsubackPacket == 1) && (unsubackTimeoutOccured == false)) 
 			   {
-                   SYS_TIME_TimerStop(checkUnsubackTimeoutStateHandle);
+                   SYS_TIME_TimerDestroy(checkUnsubackTimeoutStateHandle);
 	               mqttState = mqttProcessUnsuback(mqttConnectionPtr);
 	           } 
                break;

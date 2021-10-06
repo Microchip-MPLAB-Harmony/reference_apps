@@ -208,7 +208,7 @@ void WiFi_ConStateCb(tenuM2mConnState status)
 {
     if (status == M2M_WIFI_CONNECTED) {
         if (responseFromProvisionConnect) {
-            SYS_TIME_TimerStop(softApConnectTaskHandle);
+            SYS_TIME_TimerDestroy(softApConnectTaskHandle);
             responseFromProvisionConnect = false;
             LED_blinkingBlue(false);
             ntpTimeFetchTaskHandle = SYS_TIME_CallbackRegisterMS(ntpTimeFetchTaskcb, 0, CLOUD_NTP_TASK_INTERVAL, SYS_TIME_PERIODIC);

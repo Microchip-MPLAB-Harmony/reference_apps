@@ -220,6 +220,11 @@ static int8_t connectMQTTSocket(void)
       // Todo: Check - Are we supposed to call close on the socket here to ensure we do not leak ?
       if (socketState == NOT_A_SOCKET)
       {
+          if (*context->tcpClientSocket >=0)
+          {
+              
+              BSD_close (*context->tcpClientSocket);
+          }
          *context->tcpClientSocket = BSD_socket(PF_INET, BSD_SOCK_STREAM, 1);
          
          if (*context->tcpClientSocket >=0)
@@ -258,7 +263,7 @@ void CLOUD_task(void)
       { 
         isResetting = true;
         debug_printError("CLOUD: Cloud reset timer is set");
-        SYS_TIME_TimerStop(mqttTimeoutTaskHandle);
+        SYS_TIME_TimerDestroy(mqttTimeoutTaskHandle);
         cloudResetTaskHandle = SYS_TIME_CallbackRegisterMS(cloudResetTaskcb, 0, CLOUD_RESET_TIMEOUT, SYS_TIME_SINGLE);
         cloudResetTimerFlag = true;		 
       }      
@@ -338,8 +343,8 @@ void CLOUD_task(void)
                if (MQTT_GetConnectionState() == CONNECTED)
                {
                   shared_networking_params.haveERROR = 0;           
-                  SYS_TIME_TimerStop(mqttTimeoutTaskHandle);
-                  SYS_TIME_TimerStop(cloudResetTaskHandle);
+                  SYS_TIME_TimerDestroy(mqttTimeoutTaskHandle);
+                  SYS_TIME_TimerDestroy(cloudResetTaskHandle);
                   isResetting = false;
 
                   waitingForMQTT = false;      
@@ -459,7 +464,7 @@ static uint8_t reInit(void)
            return false;
     }
 	
-    SYS_TIME_TimerStop(cloudResetTaskHandle);
+    SYS_TIME_TimerDestroy(cloudResetTaskHandle);
     debug_printInfo("CLOUD: Cloud reset timer is deleted");
 
     mqttTimeoutTaskHandle = SYS_TIME_CallbackRegisterMS(mqttTimeoutTaskcb, 0, CLOUD_MQTT_TIMEOUT_COUNT, SYS_TIME_SINGLE);
