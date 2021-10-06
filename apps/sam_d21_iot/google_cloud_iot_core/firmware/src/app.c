@@ -237,11 +237,15 @@ void APP_Initialize(void)
 #endif
 }
 
+bool connectingToAP, isConnectedToAP;
+
 static void APP_ConnectNotifyCb(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE assochandle,WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode)
 {
     if (WDRV_WINC_CONN_STATE_CONNECTED == currentState)
     {
         WiFi_ConStateCb(M2M_WIFI_CONNECTED);
+        if (connectingToAP)
+            isConnectedToAP = true;
     }
     else if(WDRV_WINC_CONN_STATE_DISCONNECTED == currentState)
     {
@@ -281,12 +285,14 @@ static void APP_ProvisionRespCb(DRV_HANDLE handle, WDRV_WINC_SSID * targetSSID,
 	uint8_t* ssid;
 	uint8_t* password; 
     
-    if (status == M2M_SUCCESS)
+    if (status)
     {
         sectype = authCtx->authType;
         ssid = targetSSID->name;
         password = authCtx->authInfo.WPAPerPSK.key;
+        debug_print("\n\rSSID => %s\n\r PWD => %s\n\r TYPE => %d", ssid, password, sectype);
         WiFi_ProvisionCb(sectype, ssid, password);
+        connectingToAP = true;
     }    
 }
 
@@ -354,20 +360,38 @@ void APP_Tasks(void)
             WDRV_WINC_DCPT *pDcpt = (WDRV_WINC_DCPT *)wdrvHandle;
             pDcpt->pCtrl->pfProvConnectInfoCB = APP_ProvisionRespCb;
             wifi_init(APP_WiFiConnectionStateChanged, mode);
-
-            if (mode == WIFI_DEFAULT) {
-                
-                /* Enable use of DHCP for network configuration, DHCP is the default
-                but this also registers the callback for notifications. */
-                WDRV_WINC_IPUseDHCPSet(wdrvHandle, &APP_DHCPAddressEventCb);
             
+            /* Enable use of DHCP for network configuration, DHCP is the default
+            but this also registers the callback for notifications. */
+            WDRV_WINC_IPUseDHCPSet(wdrvHandle, &APP_DHCPAddressEventCb);
+            WDRV_WINC_BSSReconnect(wdrvHandle, &APP_ConnectNotifyCb); 
+            if (mode == WIFI_DEFAULT)
+            {
                 App_CloudTaskHandle = SYS_TIME_CallbackRegisterMS(APP_CloudTaskcb, 0, 500, SYS_TIME_PERIODIC);
                 App_DataTaskHandle = SYS_TIME_CallbackRegisterMS(APP_DataTaskcb, 0, APP_DATATASK_INTERVAL, SYS_TIME_PERIODIC);
-                WDRV_WINC_BSSReconnect(wdrvHandle, &APP_ConnectNotifyCb); 
                 WDRV_WINC_SystemTimeGetCurrent(wdrvHandle, &APP_GetTimeNotifyCb);
+                appData.state = APP_STATE_WDRV_ACTIV;
+            } else
+            {
+                //In Soft AP,  initialize AP Call Back
+                pDcpt->pCtrl->pfConnectNotifyCB = APP_ConnectNotifyCb;
+                appData.state = APP_STATE_WDRV_WAIT_AP_CONNECTION;
             }
-            
-            appData.state = APP_STATE_WDRV_ACTIV;
+             
+            break;
+        }
+            //shared_networking_params
+        case APP_STATE_WDRV_WAIT_AP_CONNECTION:
+        {
+            LED_sched();
+            wifi_sched();
+            if ((isConnectedToAP))
+            {
+                App_CloudTaskHandle = SYS_TIME_CallbackRegisterMS(APP_CloudTaskcb, 0, 500, SYS_TIME_PERIODIC);
+                App_DataTaskHandle = SYS_TIME_CallbackRegisterMS(APP_DataTaskcb, 0, APP_DATATASK_INTERVAL, SYS_TIME_PERIODIC);
+                WDRV_WINC_SystemTimeGetCurrent(wdrvHandle, &APP_GetTimeNotifyCb);
+                appData.state = APP_STATE_WDRV_ACTIV;
+            }
             break;
         }
 

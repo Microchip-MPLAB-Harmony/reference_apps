@@ -184,7 +184,7 @@ void checkBackTask(void)
 void enable_provision_ap(void)
 {
    
-    tstrM2MAPModeConfig apExtConfig;
+   // tstrM2MAPModeConfig apExtConfig;
    
     tstrM2MAPConfig apConfig = {
                         CFG_WLAN_AP_NAME, // Access Point Name.
@@ -197,11 +197,12 @@ void enable_provision_ap(void)
                         CFG_WLAN_AP_IP_ADDRESS
                         };
 
-    apExtConfig.strApConfig = apConfig;
+   // apExtConfig.strApConfig = apConfig;
    
    static char gacHttpProvDomainName[] = CFG_WLAN_AP_NAME;
    LED_blinkingBlue(true);
-   m2m_wifi_start_provision_mode_ext(&apExtConfig, gacHttpProvDomainName, 1);
+   m2m_wifi_start_provision_mode(&apConfig, gacHttpProvDomainName, 1);
+  // m2m_wifi_start_provision_mode_ext(&apExtConfig, gacHttpProvDomainName, 1);
 }
 
 void WiFi_ConStateCb(tenuM2mConnState status)
