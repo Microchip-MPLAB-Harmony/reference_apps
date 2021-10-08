@@ -32,7 +32,7 @@
 			"content": {
 				"metaDataVersion": "1.0.0",
 				"category": "com.microchip.device",
-				"name": "ATSAMD21G18A",
+				"name": "ATSAME51J20A",
 				"versionRange": "*"
 			}
 		},
