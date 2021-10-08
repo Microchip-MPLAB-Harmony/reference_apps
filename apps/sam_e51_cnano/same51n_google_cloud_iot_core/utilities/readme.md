@@ -36,7 +36,7 @@ certificates.
 
     **NOTE** : Respective device COM PORT should be selected in above command and all other serial terminal application should be closed
 - Wait till **verify passed** message comes up as shown below  
-<img src = "images/firmware_upg.png" align="middle">
+<img src = "images/firmware_upgrade.png" align="middle">
 
 ### Revision:
 - v1.3.0 released utility
