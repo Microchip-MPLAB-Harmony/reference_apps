@@ -40,8 +40,8 @@
   Section: Included Files
  */
 
-#include "bme280.h"
 #include "definitions.h"
+#include "bme280.h"
 
 /**
   Section: Macro Declarations
