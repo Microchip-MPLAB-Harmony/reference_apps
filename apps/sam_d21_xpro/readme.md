@@ -16,6 +16,7 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 | 2 | [Getting Started with Harmony v3 Drivers on SAM D21 MCU Using FreeRTOS](./samd21_getting_started_freertos/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_getting_started_freertos.zip) |
 | 3 | [AC Sleepwalking Application built with ARM GCC Toolchain](./samd21_ac_sleepwalk_singleshot_gcc/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_ac_sleepwalk_singleshot_gcc.zip) |
 | 4 | [Low Power](./samd21_low_power/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_low_power.zip) |
+| 5 | [SD Card USB Data Logger](./samd21_sdcard_usb_datalogger/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_sdcard_usb_datalogger.zip) |
 
 ### More Application Demos
 

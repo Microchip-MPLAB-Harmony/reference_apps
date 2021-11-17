@@ -1,0 +1,13 @@
+configName: sam_d21_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../..
+processor: ATSAMD21J18A
+projectName: ''
+settings:
+  PackageFilter: bsp;core;csp;gfx;quick_docs;reference_apps;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: ALL
+  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21a\atdf\ATSAMD21J18A.atdf
