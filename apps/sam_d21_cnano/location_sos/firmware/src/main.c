@@ -60,17 +60,7 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    
-    printf("\r\n********************************************\r\n");
-    printf("\r\n--------------------GSM-GPS-----------------\r\n");
-    printf("\r\n********************************************\r\n");
-   
-    printf("\r\nGSM-GPS Initializing.....\r\n");
-    
-    SYSTICK_TimerStart();
-    EIC_CallbackRegister(EIC_PIN_11,EIC_User_Handler, 0);
-    TC4_TimerCallbackRegister(TC4_Callback_InterruptHandler, (uintptr_t)NULL);
-    TC5_TimerCallbackRegister(TC5_Callback_InterruptHandler, (uintptr_t)NULL);
+
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */

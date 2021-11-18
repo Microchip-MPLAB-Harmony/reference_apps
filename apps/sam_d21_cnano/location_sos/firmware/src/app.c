@@ -53,10 +53,8 @@ this program; if not, write to the Free Software Foundation, Inc.,
 // *****************************************************************************
 
 #include "app.h"
-#include "dev_hal.h"
-#include "dev_adapter.h"
-#include "driver/usart/drv_usart.h"
-#include "gsm_gps.h"
+#include "click_routines/gsm_gps/gsm_gps.h"
+#include "loc_sos_update_task.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -93,16 +91,9 @@ APP_DATA appData;
 // *****************************************************************************
 // *****************************************************************************
 static void _APP_BUTTON_PRESS_Tasks(void);
-static void _APP_TimerTickHandler ( uintptr_t context, uint32_t currTick );
-static void _APP_UART_ReceiveCallback(    DRV_USART_BUFFER_EVENT bufferEvent,
-    DRV_USART_BUFFER_HANDLE bufferHandle,
-    uintptr_t context);
+
 /* TODO:  Add any necessary local functions.
 */
-extern void gsm_gps_task();
-extern void dev_tick_isr();
-extern void gsm_gps_init(void);
-extern void dev_rx(char);
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Initialization and State Machine Functions
@@ -121,6 +112,7 @@ const uint8_t nvm_user_start_address[NVMCTRL_FLASH_ROWSIZE] __attribute__((align
 void APP_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
+
     appData.state = APP_STATE_INIT;
 
 }
@@ -130,12 +122,7 @@ void TC4_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
     /* Toggle LED */
     counter++;
 }
-volatile bool timedout=0;
-void TC5_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
-{
-   timedout = 1;
-   TC5_TimerStop();
-}
+
 volatile bool switchLngpress = 0,switchsrtpress = 0;
 volatile bool low_edge = 0;
 void EIC_User_Handler(uintptr_t context)
@@ -172,62 +159,22 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {        
+            EIC_CallbackRegister(EIC_PIN_11,EIC_User_Handler, 0);
+            TC4_TimerCallbackRegister(TC4_Callback_InterruptHandler, (uintptr_t)NULL);
             SYSTICK_DelayMs(300);  
-
-            appData.state = APP_STATE_TIMER_TICK_INIT;
-        }
-        break;
-
-        case APP_STATE_TIMER_TICK_INIT:
-        {
             
-            SYSTICK_DelayMs(10);  
-            _APP_TimerTickHandler(0,0);
-            appData.state = APP_USART_DRIVER_INIT;
-        }
-        break;
-
-        case APP_USART_DRIVER_INIT:
-        {
-            /* Open an instance of USART driver */
-            appData.usartHandle = DRV_USART_Open(DRV_USART_INDEX_0,
-                         (DRV_IO_INTENT_READWRITE | DRV_IO_INTENT_BLOCKING));
-            
-            
-            /* Check the USART driver handler */
-            if (appData.usartHandle != DRV_HANDLE_INVALID )
-            {
-                DRV_USART_BufferEventHandlerSet(appData.usartHandle,&_APP_UART_ReceiveCallback,0);
-                appData.state = APP_STATE_DEV_ADAPTER_INIT_PWR_CTRL_1;
-            }
-            else
-            {
-                    // Try again to get handle
-            }
-        }
-        break;
-
-        case APP_STATE_DEV_ADAPTER_INIT_PWR_CTRL_1:
-        {
-            dev_hal_init();
-            dev_hal_pwr_ctl(1);
-            SYSTICK_DelayMs(1000);
-            appData.state = APP_STATE_DEV_ADAPTER_INIT_PWR_CTRL_2;
-            break;
-        }
-
-        case APP_STATE_DEV_ADAPTER_INIT_PWR_CTRL_2:
-        {
-            dev_hal_pwr_ctl(0);
-            SYSTICK_DelayMs(5000);
+            printf("\r\n********************************************\r\n");
+            printf("\r\n--------------------GSM-GPS-----------------\r\n");
+            printf("\r\n********************************************\r\n");
+            printf("\r\n--------------------GSM-GPS Initializing----\r\n");
+            gsm_gps_init();
+  
             appData.state = APP_STATE_GSM_GPS_INIT_COMPLETE;
-            break;
         }
+        break;
 
         case APP_STATE_GSM_GPS_INIT_COMPLETE:
-        {
-            dev_adapter_init();
-            gsm_gps_init();          
+        {       
             printf("\r\nGSM-GPS Initialized\r\n");
             printf("-------------------INFO--------------------------");
             printf("\r\nLong press switch to configure phone number or \r\nShort press to send SMS\r\n");
@@ -239,7 +186,6 @@ void APP_Tasks ( void )
 
         case APP_STATE_SERVICE_TASKS:
         {
-           // gsm_gps_task();
             _APP_BUTTON_PRESS_Tasks();
 
             break;
@@ -264,11 +210,7 @@ static void _APP_BUTTON_PRESS_Tasks(void)
     
     if(switchsrtpress){
         LED_Set();
-        DRV_USART_WriteQueuePurge(appData.usartHandle);
-        DRV_USART_ReadQueuePurge(appData.usartHandle);
-        loc_update_f = true;
-        req_pend_f = true;
-        gsm_gps_task();
+        loc_sos_update_task();
         switchsrtpress = 0;           
     }else if(switchLngpress){
         LED_Set();
@@ -306,22 +248,6 @@ static void _APP_BUTTON_PRESS_Tasks(void)
 
 }
 
-static void _APP_TimerTickHandler ( uintptr_t context, uint32_t currTick )
-{
-    dev_tick_isr();
-}
-
-volatile char transfer_status = 0;
-volatile char rxChar ; 
-
-static void _APP_UART_ReceiveCallback(    DRV_USART_BUFFER_EVENT bufferEvent,
-    DRV_USART_BUFFER_HANDLE bufferHandle,
-    uintptr_t context)
-{
-    
-    DRV_USART_ReadBufferAdd(appData.usartHandle,(void*)&rxChar,1,&appData.bufferHandle);
-    dev_rx( rxChar);
-}
 
 /*******************************************************************************
  End of File

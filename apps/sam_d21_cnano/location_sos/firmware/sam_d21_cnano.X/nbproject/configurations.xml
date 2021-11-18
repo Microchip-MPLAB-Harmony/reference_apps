@@ -4,21 +4,18 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="click_routines"
+                     displayName="click_routines"
+                     projectFiles="true">
+        <logicalFolder name="gsm_gps" displayName="gsm_gps" projectFiles="true">
+          <itemPath>../src/click_routines/gsm_gps/gsm_gps.h</itemPath>
+          <itemPath>../src/click_routines/gsm_gps/gsm_gps_config.h</itemPath>
+          <itemPath>../src/click_routines/gsm_gps/gsm_gps_dev_hal.h</itemPath>
+        </logicalFolder>
+        <itemPath>../src/click_routines/click_interface.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="default" projectFiles="true">
-          <logicalFolder name="f1" displayName="driver" projectFiles="true">
-            <logicalFolder name="f1" displayName="usart" projectFiles="true">
-              <itemPath>../src/config/default/driver/usart/drv_usart.h</itemPath>
-              <itemPath>../src/config/default/driver/usart/drv_usart_definitions.h</itemPath>
-            </logicalFolder>
-            <itemPath>../src/config/default/driver/driver.h</itemPath>
-            <itemPath>../src/config/default/driver/driver_common.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="osal" projectFiles="true">
-            <itemPath>../src/config/default/osal/osal.h</itemPath>
-            <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
-            <itemPath>../src/config/default/osal/osal_impl_basic.h</itemPath>
-          </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.h</itemPath>
@@ -50,34 +47,17 @@
             </logicalFolder>
             <logicalFolder name="f9" displayName="tc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/tc/plib_tc_common.h</itemPath>
-              <itemPath>../src/config/default/peripheral/tc/plib_tc5.h</itemPath>
               <itemPath>../src/config/default/peripheral/tc/plib_tc4.h</itemPath>
             </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f4" displayName="system" projectFiles="true">
-            <logicalFolder name="f1" displayName="debug" projectFiles="true">
-              <itemPath>../src/config/default/system/debug/sys_debug.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="dma" projectFiles="true">
-              <itemPath>../src/config/default/system/dma/sys_dma.h</itemPath>
-              <itemPath>../src/config/default/system/dma/sys_dma_mapping.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="int" projectFiles="true">
-              <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
-              <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
-            </logicalFolder>
-            <itemPath>../src/config/default/system/system.h</itemPath>
-            <itemPath>../src/config/default/system/system_common.h</itemPath>
-            <itemPath>../src/config/default/system/system_module.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/default/device_cache.h</itemPath>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
           <itemPath>../src/config/default/device.h</itemPath>
-          <itemPath>../src/config/default/user.h</itemPath>
-          <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/interrupts.h</itemPath>
           <itemPath>../src/config/default/device_vectors.h</itemPath>
+          <itemPath>../src/config/default/user.h</itemPath>
+          <itemPath>../src/config/default/configuration.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -170,15 +150,8 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/at_engine.h</itemPath>
-      <itemPath>../src/at_parser.h</itemPath>
-      <itemPath>../src/config.h</itemPath>
-      <itemPath>../src/dev_adapter.h</itemPath>
-      <itemPath>../src/dev_hal.h</itemPath>
-      <itemPath>../src/dev_timer.h</itemPath>
-      <itemPath>../src/gsm_gps.h</itemPath>
-      <itemPath>../src/resources.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+      <itemPath>../src/loc_sos_update_task.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -187,7 +160,6 @@
         <itemPath>../src/config/default/default.mhc/cmsis.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/drv_usart.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/eic.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/evsys.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
@@ -199,7 +171,6 @@
         <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/stdio.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/tc4.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/tc5.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
@@ -216,14 +187,16 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="click_routines"
+                     displayName="click_routines"
+                     projectFiles="true">
+        <logicalFolder name="gsm_gps" displayName="gsm_gps" projectFiles="true">
+          <itemPath>../src/click_routines/gsm_gps/gsm_gps.c</itemPath>
+          <itemPath>../src/click_routines/gsm_gps/gsm_gps_dev_hal.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="default" projectFiles="true">
-          <logicalFolder name="f1" displayName="driver" projectFiles="true">
-            <logicalFolder name="f1" displayName="usart" projectFiles="true">
-              <itemPath>../src/config/default/driver/usart/src/drv_usart.c</itemPath>
-              <itemPath>../src/config/default/driver/usart/src/drv_usart_local.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.c</itemPath>
@@ -253,20 +226,11 @@
               <itemPath>../src/config/default/peripheral/systick/plib_systick.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f9" displayName="tc" projectFiles="true">
-              <itemPath>../src/config/default/peripheral/tc/plib_tc5.c</itemPath>
               <itemPath>../src/config/default/peripheral/tc/plib_tc4.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f3" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/default/stdio/xc32_monitor.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f4" displayName="system" projectFiles="true">
-            <logicalFolder name="f1" displayName="dma" projectFiles="true">
-              <itemPath>../src/config/default/system/dma/sys_dma.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="int" projectFiles="true">
-              <itemPath>../src/config/default/system/int/src/sys_int.c</itemPath>
-            </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/default/initialization.c</itemPath>
           <itemPath>../src/config/default/interrupts.c</itemPath>
@@ -276,14 +240,9 @@
           <itemPath>../src/config/default/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/at_engine.c</itemPath>
-      <itemPath>../src/at_parser.c</itemPath>
-      <itemPath>../src/dev_adapter.c</itemPath>
-      <itemPath>../src/dev_hal.c</itemPath>
-      <itemPath>../src/dev_timer.c</itemPath>
-      <itemPath>../src/gsm_gps.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/loc_sos_update_task.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -297,7 +256,7 @@
         <targetDevice>ATSAMD21G17D</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>

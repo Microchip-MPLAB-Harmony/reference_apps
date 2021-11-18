@@ -21,12 +21,6 @@ children:
   - type: KeyValueSet
     attributes: {id: SERCOM_MODE}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: readOnly}
-        children:
-        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -127,12 +121,6 @@ children:
   - type: KeyValueSet
     attributes: {id: USART_OPERATING_MODE}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: readOnly}
-        children:
-        - {type: Value, value: 'false'}
     - type: Values
       children:
       - type: Dynamic
@@ -182,38 +170,5 @@ children:
       children:
       - type: Dynamic
         attributes: {id: sercom0, value: '0'}
-- type: Attachments
-  children:
-  - type: DirectCapability
-    attributes: {id: SERCOM0_I2C}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'false'}
-  - type: DirectCapability
-    attributes: {id: SERCOM0_SPI}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'false'}
-  - type: DirectCapability
-    attributes: {id: SERCOM0_UART}
-    children:
-    - type: Attributes
-      children:
-      - type: String
-        attributes: {id: targetComponentID}
-        children:
-        - {type: Value, value: drv_usart_0}
-      - type: String
-        attributes: {id: targetAttachmentID}
-        children:
-        - {type: Value, value: drv_usart_UART_dependency}
 - type: ElementPosition
-  attributes: {x: '224', y: '252', id: sercom0}
+  attributes: {x: '342', y: '150', id: sercom0}

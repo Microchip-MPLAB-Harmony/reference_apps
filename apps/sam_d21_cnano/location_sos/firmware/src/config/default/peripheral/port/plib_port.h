@@ -65,14 +65,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
-/*** Macros for POWER_KEY pin ***/
-#define POWER_KEY_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 7U))
-#define POWER_KEY_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 7U))
-#define POWER_KEY_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 7U))
-#define POWER_KEY_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 7U))
-#define POWER_KEY_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 7U))
-#define POWER_KEY_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7U)) & 0x01U)
-#define POWER_KEY_PIN                  PORT_PIN_PA07
+/*** Macros for CLICK_GSM_GPS_POWER pin ***/
+#define CLICK_GSM_GPS_POWER_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 7U))
+#define CLICK_GSM_GPS_POWER_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 7U))
+#define CLICK_GSM_GPS_POWER_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 7U))
+#define CLICK_GSM_GPS_POWER_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 7U))
+#define CLICK_GSM_GPS_POWER_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 7U))
+#define CLICK_GSM_GPS_POWER_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7U)) & 0x01U)
+#define CLICK_GSM_GPS_POWER_PIN                  PORT_PIN_PA07
 
 /*** Macros for LED pin ***/
 #define LED_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 10U))

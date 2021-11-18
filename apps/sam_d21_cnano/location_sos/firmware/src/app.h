@@ -91,10 +91,6 @@ typedef enum
 {
 	/* Application's state machine's initial state. */
 	APP_STATE_INIT=0,
-    APP_STATE_TIMER_TICK_INIT,
-    APP_USART_DRIVER_INIT,
-    APP_STATE_DEV_ADAPTER_INIT_PWR_CTRL_1,
-    APP_STATE_DEV_ADAPTER_INIT_PWR_CTRL_2,
     APP_STATE_GSM_GPS_INIT_COMPLETE,
 	APP_STATE_SERVICE_TASKS,
     APP_STATE_IDLE
@@ -123,17 +119,12 @@ typedef struct
     bool ignoreButtonPress;
     bool tmrEventHasOccurred;
     /* USART driver handle */
-    DRV_HANDLE usartHandle;
 
-    /* Handle returned by USART for buffer submitted */
-    DRV_USART_BUFFER_HANDLE usartReadBufferHandle;
-    DRV_USART_BUFFER_HANDLE usartWriteBufferHandle;
     /* USART buffer for display */
     uint16_t writeBufferCount;
     uint16_t readBufferCount;
     char writeBuffer[APP_USART_WRITE_BUFFER_SIZE];
     char readBuffer[APP_USART_READ_BUFFER_SIZE];
-    DRV_USART_BUFFER_HANDLE bufferHandle;
     /* Data Size in the USART Buffer */
     uint32_t bufferSize;
 
@@ -222,7 +213,6 @@ void APP_Tasks( void );
 
 void EIC_User_Handler(uintptr_t context);
 void TC4_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context);
-void TC5_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context);
 char* my_strncpy(char* dst, const char* src, size_t n);
 #endif /* _APP_H */
 

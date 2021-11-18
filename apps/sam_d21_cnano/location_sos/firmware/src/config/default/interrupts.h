@@ -50,6 +50,7 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
@@ -63,7 +64,6 @@ void SysTick_Handler (void);
 void EIC_InterruptHandler (void);
 void SERCOM0_USART_InterruptHandler (void);
 void TC4_TimerInterruptHandler (void);
-void TC5_TimerInterruptHandler (void);
 
 
 

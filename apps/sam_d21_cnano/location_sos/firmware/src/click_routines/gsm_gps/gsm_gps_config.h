@@ -1,6 +1,6 @@
 /******************************************************************************
-* Title                 :   AT PARSER
-* Filename              :   config.h
+* Title                 :   GSM GPS config
+* Filename              :   gsm_gps_config.h
 * Author                :   MSV
 * Origin Date           :   10/03/2016
 * Notes                 :   None
@@ -10,38 +10,40 @@
 *    Date    Software Version    Initials   Description
 *  10/03/16    XXXXXXXXXXX         MSV      Interface Created.
 *  15/02/18        2.0.0           ST       Custom Application 
-*  01/01/2020      3.0.0            MK         Custom Application   
+*  01/01/2020      3.0.0           MK       Custom Application   
+*  05/07/2021      4.0.0           ST       Custom Application
 *******************************************************************************/
-/**************************CONTACT INFORMATION********************************
-* ST: syed.thaseemuddin@microchip.com
-* MK: mohan.kumar@microchip.com
-*/
-/**
- * @file config.h
- * @brief AT Parser Configuration
- */
+/****************************************************************************
+* Note: In version 2.00, 3.00, 4.00 This file has been modified to meet the custom
+* application requirements. Should you need to contact the modifier write to
+* 32-bit Applications group, Microchip Technology India Pvt Ltd
+* Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
+* Karnataka 560066
+*******************************************************************************/
+//DOM-IGNORE-BEGIN 
 /*******************************************************************************
- Copyright (C) 2017  Microchip Technology Incorporated and its subsidiaries.
+ Copyright (C) 2021  Microchip Technology Incorporated and its subsidiaries.
 
-This program is free software; you can redistribute it and/or modify it under 
-the terms of the GNU General Public License as published by the Free Software 
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
 Foundation; either version 2 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY 
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with 
-this program; if not, write to the Free Software Foundation, Inc., 
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 *******************************************************************************/
-#ifndef AT_CONFIG_H
-#define AT_CONFIG_H
+//DOM-IGNORE-END 
+#ifndef _GSM_GPS_CONFIG_H
+#define _GSM_GPS_CONFIG_H
 
 /******************************************************************************
 * Includes
 *******************************************************************************/
-
+#include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
