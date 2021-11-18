@@ -92,7 +92,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Programming/Debugging Application Project:
 - Open the project (sdcard_usb_audio_player\firmware\sam_e54_cult.X) in MPLAB X IDE
-- Ensure "PKOB" is selected as hardware tool to program/debug the application
+- Ensure "SAM E54 Curiosity Ultra" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 

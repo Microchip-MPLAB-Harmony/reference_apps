@@ -116,7 +116,7 @@ The pre-built hex file can be programmed by following the below steps.
 
  <span style="color:blue"> *Before proceeding with this step complete "Adding private characteristics to BM71" step.* </span>
 - Open the project (ble_weather_station\firmware\sam_d21_cnano.X) in MPLAB X IDE
-- Ensure "PKOB nano" is selected as hardware tool to program/debug the application
+- Ensure "SAM D21 Curiosity Nano" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 

@@ -115,7 +115,7 @@ The pre-built hex file can be programmed by following the below steps.
 
  <span style="color:blue"> *Before proceeding with this step complete "Setting up the build platform" step.* </span>
 - Open the project (`samd21_amazon_ack/applications/Microwave/firmware/sam_d21_cnano.X`) in MPLAB X IDE
-- Ensure "PKOB nano" is selected as hardware tool to program/debug the application
+- Ensure "SAM D21 Curiosity Nano" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 
 ## <a id="register-your-device"> </a>

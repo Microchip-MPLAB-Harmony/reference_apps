@@ -85,7 +85,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Programming/Debugging Application Project:
 - Open the project (sdcard_player\firmware\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
-- Ensure "Curiosity/Starter Kits PKOB4" is selected as hardware tool to program/debug the application
+- Ensure "Curiosity/Starter Kits (PKOB4)" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
