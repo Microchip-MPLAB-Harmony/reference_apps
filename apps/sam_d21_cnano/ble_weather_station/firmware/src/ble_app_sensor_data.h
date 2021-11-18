@@ -21,9 +21,7 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-
-#include "../src/10DOF_click/include/bmp180.h"
-#include "../src/10DOF_click/include/bno055.h"
+#include "click_routines/10dof/10dof.h"
 
 #define MAX_I2C_TX_BUFFER_SIZE                  100
 #define MAX_I2C_RX_BUFFER_SIZE                  100
@@ -34,12 +32,10 @@ typedef struct bno055_quaternion_t quaternion_sensor_t;
 struct bno055_t bno055;
 struct bmp180_t bmp180;
 
-void bme_bno_init(void);
 void printaccel(acc_sensor_t *acce_data);
 void printgyro(gyro_sensor_t *gyro_data);
 void printquaternion(quaternion_sensor_t *quat_data);
 void Sendenv(uint8_t* pth);
-void read_bno055_pth_value(void);
 
 uint8_t* memcpy_inplace_reorder(uint8_t* data, uint16_t len);
 

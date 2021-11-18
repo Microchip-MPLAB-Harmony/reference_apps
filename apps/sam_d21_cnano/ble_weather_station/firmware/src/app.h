@@ -55,7 +55,7 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "custom_bt/driver/bm71/custom_drv_bm71.h"
-#include "bme280_bno055.h"
+#include "ble_app_sensor_data.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

@@ -3,9 +3,8 @@
 * Copyright (C) 2008 - 2015 Bosch Sensortec GmbH
 *
 * bmp180.c
-* Date: 2015/03/27
-* Revision: 2.0.3 $
-*
+* Date: 2015/03/27 Revision: 2.0.3 $
+* Date: 30/4/2021  Revision: 2.0.4 
 * Usage: Sensor Driver file for BMP180
 *
 ****************************************************************************
@@ -49,8 +48,70 @@
 * No license is granted by implication or otherwise under any patent or
 * patent rights of the copyright holder.
 **************************************************************************/
-#include "../include/bmp180.h"
-#include "../include/bno055_hal.h"
+
+/****************************************************************************
+* Note: In version 2.0.4, This file has been modified by MKRP to meet the custom
+* application requirements. write to
+* Microchip Technology India Pvt Ltd
+* Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
+* Karnataka 560066
+*******************************************************************************/
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+ Copyright (C) 2017  Microchip Technology Incorporated and its subsidiaries.
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*******************************************************************************/
+// DOM-IGNORE-END
+#include "bmp180.h"
+#include "click_routines/click_interface.h"
+
+
+static void bmp_hal_init()
+{   
+    CLICK_10DOF_TimerStart();
+}
+
+static void bmp_delay_ms( uint32_t delay_time )
+{
+    CLICK_10DOF_DelayMs(delay_time);
+}
+
+static int8_t bmp_hal_read( uint8_t address, uint8_t reg_address, uint8_t *data_out,
+                  uint8_t data_size )
+{    
+     CLICK_10DOF_I2C_WriteRead(address, &reg_address, 1,  data_out, data_size);
+     
+     while(CLICK_10DOF_I2C_IsBusy() == true); 
+     
+     return 0;
+}
+
+static int8_t bmp_hal_write( uint8_t address, uint8_t reg_address, uint8_t *data_in,
+                   uint8_t data_size )
+{
+    uint8_t temp_buff[ MAX_BUFFER_SIZE ];
+    uint8_t *temp_ptr = data_in;
+
+    temp_buff[0] = reg_address;
+    memcpy( &temp_buff[1], temp_ptr, data_size );
+    
+    CLICK_10DOF_I2C_Write(address,temp_buff,data_size+1);
+    
+    while(CLICK_10DOF_I2C_IsBusy() == true);
+
+    return 0;
+}
 
 static struct bmp180_t *p_bmp180;
 
@@ -88,10 +149,10 @@ BMP180_RETURN_FUNCTION_TYPE bmp180_init( struct bmp180_t *bmp180 )
     /* assign BMP180 ptr */
     p_bmp180 = bmp180;
     
-    bmp180->bus_read = bno_hal_read;
-    bmp180->bus_write = bno_hal_write;
-    bmp180->delay_msec = bno_delay_ms;
-    bno_hal_init();
+    bmp180->bus_read = bmp_hal_read;
+    bmp180->bus_write = bmp_hal_write;
+    bmp180->delay_msec = bmp_delay_ms;
+    bmp_hal_init();
     
     /* read Chip Id */
     v_com_rslt_s8 = p_bmp180->BMP180_BUS_READ_FUNC(
@@ -472,3 +533,5 @@ u32 bmp180_get_uncomp_pressure( void )
 
     return v_up_u32;
 }
+
+ 

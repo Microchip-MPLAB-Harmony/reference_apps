@@ -5,10 +5,8 @@
 *
 * File : bmp180.h
 *
-* Date : 2015/03/27
-*
-* Revision : 2.2.2
-*
+* Date : 2015/03/27 Revision : 2.2.2
+* Date : 2021/04/30 Revision : 2.2.3
 * Usage: Sensor Driver for BMP180 sensor
 *
 ****************************************************************************
@@ -53,14 +51,55 @@
 * No license is granted by implication or otherwise under any patent or
 * patent rights of the copyright holder.
 **************************************************************************/
+
+/****************************************************************************
+* Note: In version 2.2.3, This file has been modified by MKRP to meet the custom
+* application requirements. write to
+* Microchip Technology India Pvt Ltd
+* Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
+* Karnataka 560066
+*******************************************************************************/
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+ Copyright (C) 2017  Microchip Technology Incorporated and its subsidiaries.
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*******************************************************************************/
+// DOM-IGNORE-END
 /** \file bmp180.h
    \brief Header file for all define constants and function prototypes
 */
 #ifndef __BMP180_H__
 #define __BMP180_H__
 
-#include "bno055_defs.h"
+#include <stdint.h>
+#include <string.h>
+#define WRITE 1
+#define READ 0
+#define MAX_BUFFER_SIZE 512
 
+
+/*unsigned integer types*/
+typedef uint8_t u8;/**< used for unsigned 8bit */
+typedef uint16_t u16;/**< used for unsigned 16bit */
+typedef uint32_t u32;/**< used for unsigned 32bit */
+typedef uint64_t u64;/**< used for unsigned 64bit */
+
+/*signed integer types*/
+typedef int8_t s8;/**< used for signed 8bit */
+typedef int16_t s16;/**< used for signed 16bit */
+typedef int32_t s32;/**< used for signed 32bit */
+typedef int64_t s64;/**< used for signed 64bit */
 /***************************************************************/
 /**\name        FUNCTION DEFINITIONS      */
 /***************************************************************/
@@ -484,5 +523,6 @@ u32 bmp180_get_uncomp_pressure( void );
  *
 */
 BMP180_RETURN_FUNCTION_TYPE bmp180_get_calib_param( void );
+
 /* __BMP180_H__*/
 #endif

@@ -51,6 +51,8 @@
 #include <string.h>
 #include "app.h"        // also beings in app_tone_lookup_table.h
 #include "../src/ble/non_gui/ble.h"
+#include "click_routines/weather/weather.h"
+#include "click_routines/10dof/10dof.h"
 extern BLE_DATA bleData;
 extern volatile bool cmd_sent;
 // *****************************************************************************
@@ -76,6 +78,7 @@ extern volatile bool cmd_sent;
 
 APP_DATA appData;
 
+void read_PTH_values(void);
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -139,6 +142,8 @@ static void App_TimerCallback( uintptr_t context)
  */
 void APP_Initialize ( void )
 {
+   
+     
     DRV_BM71_Initialize();
     /* TODO: Initialize your application's state machine and other
      * parameters.
@@ -190,6 +195,7 @@ void APP_Tasks ( void )
         {
             if (DRV_BT_STATUS_READY == DRV_BT_GetPowerStatus())
             {           
+                tenDof_init();
                 appData.state=APP_STATE_IDLE;
             }
         }
@@ -198,6 +204,7 @@ void APP_Tasks ( void )
         // Initialized 
         case APP_STATE_IDLE:
         {
+             
             APP_Sensor_Tasks();
             
             if (appData.queryDelay == 0)
@@ -219,9 +226,9 @@ volatile bool gyro_request = 0 ,environment_request = 0,cmd_successfull = 0,rota
 volatile bool accel_request = 0;
 void APP_Sensor_Tasks()
 {
-acc_sensor_t accel_xyz_data = {0};   
-gyro_sensor_t gyro_xyz_data = {0};
-quaternion_sensor_t quaternion_wxyz_data = {0};
+struct bno055_gyro_t gyro_data;
+struct bno055_accel_t accel_data;    
+struct bno055_quaternion_t quaternion_data;
 
  if((cmd_successfull == 1) || (cmd_sent == 0))
  {
@@ -229,25 +236,59 @@ quaternion_sensor_t quaternion_wxyz_data = {0};
         cmd_successfull = 0;
     }   
     if(gyro_request){   
-        bno055_read_gyro_xyz(&gyro_xyz_data);
-        printgyro(&gyro_xyz_data);
+        tenDof_get_bno55_gyro_xyz(&gyro_data);
+        printgyro(&gyro_data);
         SYSTICK_DelayMs(200);
     }else if(accel_request){       
-        bno055_read_accel_xyz(&accel_xyz_data);
-        printaccel(&accel_xyz_data);
+        tenDof_get_bno55_accel_xyz(&accel_data);
+        printaccel(&accel_data);
         SYSTICK_DelayMs(200);
     }else if(environment_request){
-        read_bno055_pth_value();
+        read_PTH_values();
         SYSTICK_DelayMs(20);  
     }else if(rotation_vector_request){
-        bno055_read_quaternion_wxyz(&quaternion_wxyz_data);
-        printquaternion(&quaternion_wxyz_data);
+        tenDof_get_bno55_quaternion_wxyz(&quaternion_data);
+        printquaternion(&quaternion_data);
         SYSTICK_DelayMs(500);
         
     }
  }
 }
 
+typedef struct
+{
+    int16_t temperature;
+    uint16_t pressure;
+    float humidity;
+    
+}BME_SENSOR_DATA;
+
+BME_SENSOR_DATA              meas_Data;
+
+void read_PTH_values(void)
+{
+    uint8_t tempBuffer[21] = {0};
+    
+    Weather_readSensors();
+
+    meas_Data.temperature = Weather_getTemperatureDegC()*100;
+    meas_Data.humidity = Weather_getPressureKPa();
+    meas_Data.pressure = Weather_getHumidityRH();
+    
+    tempBuffer[0] = ((uint8_t*)&meas_Data.temperature)[0];
+    tempBuffer[1] = ((uint8_t*)&meas_Data.temperature)[1];
+    tempBuffer[2] = ((uint8_t*)&meas_Data.pressure)[0];
+    tempBuffer[3] = ((uint8_t*)&meas_Data.pressure)[1];
+    tempBuffer[4] = 0;      /* Light Sensor Not supported */ 
+    tempBuffer[5] = 0;      /* Light Sensor Not supported */
+    tempBuffer[6] = 0;      /* Light Sensor Not supported */
+    tempBuffer[7] = 0;      /* Light Sensor Not supported */
+    tempBuffer[8] = (uint8_t)meas_Data.humidity;
+    tempBuffer[9] = '\r';
+    tempBuffer[10] = '\n';  
+    Sendenv(tempBuffer);
+
+}
 /*******************************************************************************
  End of File
  */
