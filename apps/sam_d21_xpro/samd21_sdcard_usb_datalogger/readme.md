@@ -17,7 +17,7 @@ nav_order: 4
 
 This application shows an example of using the MPLAB Harmony v3 File System to store the sensor data (light intensity values) into a SD card using the SDSPI and a SPI driver. The SD card is also enumerated as a MSD(Mass Storage Device) device on the PC(USB Host) enabling logged data viewing.
 
-The SDSPI driver uses an instance of the SPI driver to communicate to the SD card over the SPI bus. The application creates a directory named **Dir1** in the root directory and creates a new file named LS_LOG.txt. The application writes the light sensor values into this newly created file when the user presses the switch button SW0.If the directory and file already exists the values are logged into the existing file itself. The logged light intensity values are read via USB with the SD card enumerated as an MSD(Mass Storage Device).The application parallely continues to log data with the SD card enumerated as an MSD.
+The SDSPI driver uses an instance of the SPI driver to communicate to the SD card over the SPI bus. The application creates a directory named **Dir1** in the root directory and creates a new file named LS_LOG.txt. The application writes the light sensor values into this newly created file when the user presses the switch button SW0. If the directory and file already exists the values are logged into the existing file itself. The logged light intensity values are read via USB with the SD card enumerated as an MSD( Mass Storage Device). The application parallely continues to log the sensor data with the SD card enumerated as an MSD.
 
 ## Modules/Technology Used:
 
