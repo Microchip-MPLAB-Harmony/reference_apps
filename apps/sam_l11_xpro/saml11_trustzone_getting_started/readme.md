@@ -105,8 +105,8 @@ The pre-built hex file can be programmed by following the below steps
 	- Close all existing projects in IDE (if any project is opened)
 	- Open the project (../saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X) in MPLAB X IDE.
 	<img src = "images/opened_non_secure_project.png" width="700" height="500" align="middle">  
-- Ensure "SAML11 Xplained Pro (EDBG)" is selected as hardware tool to program/debug the application.
-- Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar.
+- Ensure "SAML11 Xplained Pro" is selected as hardware tool to program/debug the application.
+- Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below.  
 
 ## Running the Demo:
