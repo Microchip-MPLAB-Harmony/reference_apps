@@ -51,6 +51,7 @@
 		],
 		"keywords": [
 			"MHC",
+			"MCC",
 			"Harmony",
 			"ATSAMD21J18A",
 			"SAMD21 Family",
@@ -62,7 +63,8 @@
 			"EIC",
 			"RTC",
 			"PORTS",
-			"Light",			
+			"ADC",
+			"Light Sensor",			
 			"SAM D21",
 			"SAMD21",
 			"I/O1 Xplained",
@@ -70,9 +72,17 @@
 			"Pro Extension Kit",
 			"Driver",
 			"USB",
+			"MSD",
 			"SD Card",
 			"SDCard",
 			"Data Logger"
+			"FATFS",
+			"SPI",
+			"SDSPI",
+			"Lux",
+			"Light Intensity",
+			
+			
 		],
 		"additionalData": {
 			"longDescription": {
