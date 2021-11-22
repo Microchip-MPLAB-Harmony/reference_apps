@@ -18,7 +18,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 5 | [SD Card Audio Player](./sdcard_player/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sdcard_player.zip) |
 | 6 | [WiFi based RGB LED Control](./wifi_rgb_easy_configuration/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_rgb_easy_configuration.zip) |
 | 7 | [Snake Game](./snake_game/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/snake_game.zip) |
-
+| 8 | [Thermal Camera based Heat Map](./pic32mzef_thermal_camera_heat_map/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_thermal_camera_heat_map.zip) |
 
 ### More Application Demos
 

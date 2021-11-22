@@ -5,6 +5,58 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+---
+
+## Reference Applications Release v1.4.0 (December 2021)
+### New Applications
+
+| Application | Description | MCU | Development Board/Kit |  
+| --- | --- | --- | --- |  
+| [pic32mzef_thermal_camera_heat_map](./apps/pic32mz_ef_curiosity_v2/pic32mzef_thermal_camera_heat_map/readme.md) |  Thermal Camera based Heat Map Application | [PIC32MZ](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
+| [pic32cmmc_smart_tag_google_cloud_iot_core](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_tag_google_cloud_iot_core/readme.md) | Smart Tag Google Cloud IoT Core Application | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00032) | [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)|
+| [samd21_low_power](./apps/sam_d21_xpro/samd21_low_power/readme.md) |  Low Power | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21J18A) | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro)|
+| [samd21_sdcard_usb_datalogger](./apps/sam_d21_xpro/samd21_sdcard_usb_datalogger/readme.md) |  SD Card, USB Data Logger | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21J18A) | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro)|
+| [wifi_7](./apps/sam_e51_cnano/same51n_mikroe_click/wifi_7/readme.md) | MikroElektronika WIFI 7 Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [oled_c](./apps/sam_e51_cnano/same51n_mikroe_click/oled_c/readme.md) | MikroElektronika OLED C Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [usb_uart](./apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.md) | MikroElektronika USB UART Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [rfid](./apps/sam_e51_cnano/same51n_mikroe_click/rfid/readme.md) | MikroElektronika RFID Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+
+### Updated Applications  
+
+| Application | Description | MCU | Development Board/Kit | Comment |  
+| --- | --- | --- | --- | --- |  
+| [pic32cmmc_smart_appliance_control](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control/readme.md) | Smart Appliance Control Application | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00032) | [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)| Added display capability |  
+| [same54_getting_started_freertos](./apps/sam_e54_xpro/same54_getting_started_freertos/readme.md) | Getting Started with Harmony Drivers using FreeRTOS | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/productdetails/atsame54-xpro)| Updated hardware setup image |
+| [usb_uart](./apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.md) | MikroElektronika USB UART Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)| Updated click interface APIs |
+| [pic32cmmc_getting_started](./apps/pic32cm_mc00_cnano/pic32cmmc_getting_started/readme.md) |  Getting Started using Harmony v3 Peripheral Libraries | [PIC32CM MC00](https://www.microchip.com/wwwproducts/en/PIC32CM1216MC00032) | [PIC32CM MC00 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV10N93A)| Updated hardware setup image |
+| [getting_started_ext](./apps/pic32mz_ef_curiosity_v2/getting_started_ext/readme.md) | Getting Started Extended using Harmony v3 Peripheral Libraries | [PIC32MZ EF](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)| Extended functionality to toggle LED3 on SW3 press |
+| [google_cloud_iot_core](./apps/sam_d21_iot/google_cloud_iot_core/readme.md) |  Google Cloud IoT Core | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G18) | [SAM-IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A)| AP mode support added and fixed clound connectivity issue |
+| [ble_weather_station](./apps/sam_d21_cnano/ble_weather_station/readme.md) | BLE based Weather Station and Motion Sensor Application on SAM D21 Curiosity Nano and Nano Base for Click boards | [SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to use click rotunes |
+| [location_sos](./apps/sam_d21_cnano/location_sos/readme.md) | Location Tagged SOS using Curiosity Nano Base for click boards and GSM-GPS click |[SAMD 21](https://www.microchip.com/wwwproducts/en/ATSAMD21G17) | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)| Updated to use click routines |
+
+### Deleted Applications  
+
+| Application | Description | Comment |  
+| --- | --- |  --- |  
+| pic32cmmc_temp_based_fan_control_oled_c | Temperature based Fan Speed Control with OLED C click display | Removed as the same functionality is provided by [Smart Appliance Control](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control/readme.md) demo |
+
+
+
+### Known Issues
+- None
+
+### Development Tools
+- [MPLAB® X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB® XC32 C/C++ Compiler v3.01](https://www.microchip.com/mplab/compilers)
+- [IAR EWARM v8.50](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
+- MPLAB® X IDE plug-ins:
+  - MPLAB® Harmony Configurator (MHC) v3.8.2
+  - MPLAB® Harmony Configurator (MCC) v5.0.0    
+
+
+---
+
+
 ## Reference Applications Release v1.3.0 (June 2021)
 ### New Applications
 
@@ -63,6 +115,7 @@ nav_order: 99
 
 * Refer demo specific documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
+---
 
 ## Reference Applications Release v1.2.0 (January 2021)
 ### New Applications
@@ -108,6 +161,7 @@ The patch is applied due to a known issue in "wireless" repo. This issue is expe
 
 * Refer demo specific documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
+---
 
 ## Reference Applications Release v1.1.0 (September 2020)
 ### New Applications
@@ -155,6 +209,7 @@ The patch is applied due to a known issue in "gfx" repo v3.7.0. This issue is ex
 
 * Refer demo specific documentation in folder "docs" to know the tools and Harmony 3 packages used.
 
+---
 
 ## Reference Applications Release v1.0.0 (June 2020)
 ### New Applications
