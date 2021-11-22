@@ -17,7 +17,7 @@ nav_order: 4
 
 This application shows an example of using the MPLAB Harmony v3 File System to store the sensor data (light intensity values) into a SD card using the SDSPI and a SPI driver. The SD card is also enumerated as a MSD(Mass Storage Device) device on the PC(USB Host) enabling logged data viewing.
 
-The SDSPI driver uses an instance of the SPI driver to communicate to the SD card over the SPI bus. The application creates a directory named **Dir1** in the root directory and creates a new file named LS_LOG.txt. The application writes the light sensor values into this newly created file when the user presses the switch button SW0. If the directory and file already exists the values are logged into the existing file itself. The logged light intensity values are read via USB with the SD card enumerated as an MSD( Mass Storage Device). The application parallely continues to log the sensor data with the SD card enumerated as an MSD.
+The SDSPI driver uses an instance of the SPI driver to communicate to the SD card over the SPI bus. The application creates a directory named **Dir1** in the root directory and creates a new file named LS_LOG.txt. The application writes the light sensor values into this newly created file when the user presses the switch button SW0. If the directory and file already exists the values are logged into the existing file itself. The logged light intensity values are read via USB with the SD card enumerated as an MSD( Mass Storage Device). The application parallelly continues to log the sensor data with the SD card enumerated as an MSD.
 
 ## Modules/Technology Used:
 
@@ -64,7 +64,7 @@ Refer [Project Manifest](./firmware/src/config/sam_d21_xpro/harmony-manifest-suc
 - Insert microSD(upto 32GB) card on to the [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/developmenttools/ProductDetails/ATIO1-XPRO)  
 
 - The SAM D21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM D21 Xplained Pro Evaluation Kit
-  
+
   <img title="" src="images/boardsetup.jpeg" alt="" width="449" height="425" align="middle">
 
 ## Programming hex file:
@@ -99,15 +99,15 @@ The pre-built hex file can be programmed by following the below steps
 2. To read the logged light intensity values, connect the Target USB port on the board to the computer using a micro USB cable.
 
 3. LED0 is illuminated when SD card is enumerated as a Mass Storage Device by the USB host.(see below image)
-   
+
    <img src = "images/sdcardenumerated.jpeg">
 
 4. Access the LS_LOG.txt via USB inside the Dir1 folder.(see below image)
-   
+
    <img src = "images/logfile.jpeg">
 
 5. The sample log file looks as below.
-   
+
    <img src = "images/samplelogged data.jpeg">
 
 ## Comments:

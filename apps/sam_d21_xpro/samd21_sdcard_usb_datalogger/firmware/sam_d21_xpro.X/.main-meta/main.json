@@ -75,14 +75,12 @@
 			"MSD",
 			"SD Card",
 			"SDCard",
-			"Data Logger"
+			"Data Logger",
 			"FATFS",
 			"SPI",
 			"SDSPI",
 			"Lux",
-			"Light Intensity",
-			
-			
+			"Light Intensity"					
 		],
 		"additionalData": {
 			"longDescription": {
