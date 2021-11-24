@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:03Z */
+/* file generated from device description version 2021-04-16T09:24:58Z */
 #ifndef _SAME51_HMATRIX_INSTANCE_
 #define _SAME51_HMATRIX_INSTANCE_
 
@@ -50,6 +50,6 @@
 #define HMATRIX_SLAVE_SDHC0                      _UL_(12)   
 #define HMATRIX_SLAVE_QSPI                       _UL_(14)   
 #define HMATRIX_SLAVE_BKUPRAM                    _UL_(15)   
-#define HMATRIX_INSTANCE_ID                      _UL_(38)   
+#define HMATRIX_INSTANCE_ID                      _UL_(38)   /* Instance index for HMATRIX */
 
 #endif /* _SAME51_HMATRIX_INSTANCE_ */
