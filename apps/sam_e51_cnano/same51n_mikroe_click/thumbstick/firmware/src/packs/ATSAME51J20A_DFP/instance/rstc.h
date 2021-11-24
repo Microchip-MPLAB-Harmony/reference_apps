@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:03Z */
+/* file generated from device description version 2021-04-16T09:24:58Z */
 #ifndef _SAME51_RSTC_INSTANCE_
 #define _SAME51_RSTC_INSTANCE_
 
@@ -30,6 +30,6 @@
 #define RSTC_HIB_IMPLEMENTED                     _UL_(1)    
 #define RSTC_NUMBER_OF_EXTWAKE                   _UL_(0)    /* number of external wakeup line */
 #define RSTC_NVMRST_IMPLEMENTED                  _UL_(1)    
-#define RSTC_INSTANCE_ID                         _UL_(3)    
+#define RSTC_INSTANCE_ID                         _UL_(3)    /* Instance index for RSTC */
 
 #endif /* _SAME51_RSTC_INSTANCE_ */

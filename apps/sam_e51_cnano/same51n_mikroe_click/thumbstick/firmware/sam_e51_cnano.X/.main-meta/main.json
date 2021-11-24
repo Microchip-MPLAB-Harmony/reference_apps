@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.1.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_thumbstick",
-      "version":"1.3.0",
+      "version":"1.4.0",
       "displayName":"Thumbstick Click example on SAM E51 Curiosity Nano Evaluation Kit",
       "projectName":"thumbstick_click_sam_e51_cnano",
       "shortDescription":"Demonstrates the 360 degree directional movement of input device (joystick) using Thumbstick click board",
@@ -15,12 +15,12 @@
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=3.0.0"
+            "semverRange":">=3.0.1"
          }
       ],
       "dfp":{
          "name":"SAME51_DFP",
-         "semverRange":"^3.4.98"
+         "semverRange":"^3.5.104"
       },
       "configurator":{
          "name":"MHC",
@@ -56,6 +56,7 @@
       ],
       "keywords":[
          "MHC",
+         "MCC",
          "Harmony",
          "ATSAME51J20A",
          "SAME51 Family",
