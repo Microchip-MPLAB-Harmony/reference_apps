@@ -20,13 +20,13 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:03Z */
+/* file generated from device description version 2021-04-16T09:24:58Z */
 #ifndef _SAME51_PAC_INSTANCE_
 #define _SAME51_PAC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PAC peripheral ========== */
 #define PAC_HPB_NUM                              _UL_(4)    /* Number of bridges AHB/APB */
-#define PAC_INSTANCE_ID                          _UL_(0)    
+#define PAC_INSTANCE_ID                          _UL_(0)    /* Instance index for PAC */
 
 #endif /* _SAME51_PAC_INSTANCE_ */

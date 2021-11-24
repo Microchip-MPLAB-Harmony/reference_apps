@@ -160,4 +160,5 @@ You could use this demonstration as an example to add motion sensor functionalit
 
 
 ## Revision:
+- v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Created application example
