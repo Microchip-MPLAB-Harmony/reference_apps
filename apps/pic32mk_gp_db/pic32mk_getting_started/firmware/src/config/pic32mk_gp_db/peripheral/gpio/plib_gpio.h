@@ -120,6 +120,14 @@ typedef enum
     GPIO_PORT_G = 6,
 } GPIO_PORT;
 
+typedef enum
+{
+    GPIO_INTERRUPT_ON_MISMATCH,
+    GPIO_INTERRUPT_ON_RISING_EDGE,
+    GPIO_INTERRUPT_ON_FALLING_EDGE,
+    GPIO_INTERRUPT_ON_BOTH_EDGES,
+}GPIO_INTERRUPT_STYLE;
+
 // *****************************************************************************
 /* GPIO Port Pins
 
@@ -318,15 +326,11 @@ static inline void GPIO_PinOutputEnable(GPIO_PIN pin)
     GPIO_PortOutputEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
 }
 
-static inline void GPIO_PinInterruptEnable(GPIO_PIN pin)
-{
-    GPIO_PortInterruptEnable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
-}
+#define GPIO_PinInterruptEnable(pin)       GPIO_PinIntEnable(pin, GPIO_INTERRUPT_ON_MISMATCH)
+#define GPIO_PinInterruptDisable(pin)      GPIO_PinIntDisable(pin)
 
-static inline void GPIO_PinInterruptDisable(GPIO_PIN pin)
-{
-    GPIO_PortInterruptDisable((GPIO_PORT)(pin>>4), 0x1 << (pin & 0xF));
-}
+void GPIO_PinIntEnable(GPIO_PIN pin, GPIO_INTERRUPT_STYLE style);
+void GPIO_PinIntDisable(GPIO_PIN pin);
 
 bool GPIO_PinInterruptCallbackRegister(
     GPIO_PIN pin,

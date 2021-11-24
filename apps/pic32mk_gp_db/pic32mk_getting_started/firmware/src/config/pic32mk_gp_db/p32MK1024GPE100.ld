@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC Compiler -  PIC32MK1024GPE100 linker script
- * Build date : Jan 26 2021
+ * Build date : Sep 01 2021
  * 
  * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.

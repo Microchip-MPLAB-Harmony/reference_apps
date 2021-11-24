@@ -5,9 +5,9 @@ frameworkPath: D:\Projects\git_hub
 processor: PIC32MK1024GPE100
 projectName: ''
 settings:
-  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  PackageFilter: audio;bsp;bt;core;core_apps_sam_e70_s70_v70_v71;crypto;cryptoauthlib;csp;dev_packs;gfx;gfx_apps;quick_docs;reference_apps;usb;wireless_apps_winc1500;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\PIC32MK-GP_DFP\1.4.117\atdf\PIC32MK1024GPE100.atdf
+  DFPPath: .\dev_packs\Microchip\PIC32MK-GP_DFP\1.6.144\atdf\PIC32MK1024GPE100.atdf
