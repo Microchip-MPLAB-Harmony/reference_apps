@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_leddriver3",
-		"version": "1.3.0",
+		"version": "1.4.0",
 		"displayName": "LED DRIVER 3 Click example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "leddriver3_click_sam_e51_cnano",
 		"shortDescription": "Demonstrates RGB color at 500ms rate on SAM E51 Curiosity Nano Evaluation Kit using LED DRIVER 3 Click",		
@@ -15,12 +15,12 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.0"
+				"semverRange": ">=3.0.1"
 			}
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.4.98"
+			"semverRange": "^3.5.104"
 		},
 		"configurator": {
 			"name": "MHC",
@@ -50,6 +50,7 @@
 		],
 		"keywords": [
 			"MHC",
+			"MCC",
 			"Harmony",
 			"ATSAME51J20A",
 			"SAME51 Family",
