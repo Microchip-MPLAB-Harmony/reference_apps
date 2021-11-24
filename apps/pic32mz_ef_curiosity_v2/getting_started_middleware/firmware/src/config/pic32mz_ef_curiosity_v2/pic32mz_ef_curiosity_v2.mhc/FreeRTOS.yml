@@ -5,13 +5,6 @@ children:
 - type: Symbols
   children:
   - type: Integer
-    attributes: {id: FREERTOS_CPU_CLOCK_HZ}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: FreeRTOS, value: '200000000'}
-  - type: Integer
     attributes: {id: FREERTOS_PERIPHERAL_CLOCK_HZ}
     children:
     - type: Values

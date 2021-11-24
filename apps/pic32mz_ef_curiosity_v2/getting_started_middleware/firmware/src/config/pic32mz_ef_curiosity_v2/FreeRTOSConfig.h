@@ -44,7 +44,6 @@
 #define configUSE_PREEMPTION                    1
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
 #define configUSE_TICKLESS_IDLE                 0
-#define configCPU_CLOCK_HZ                      ( 200000000UL )
 #define configTICK_RATE_HZ                      ( ( TickType_t ) 1000 )
 #define configMAX_PRIORITIES                    ( 5UL )
 #define configMINIMAL_STACK_SIZE                ( 128 )
@@ -99,6 +98,7 @@
 /* The maximum interrupt priority from which FreeRTOS.org API functions can be called.
  *Only API functions that end in ...FromISR() can be used within interrupts. */
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY    (3)
+
 
 /* Optional functions - most linkers will remove unused functions anyway. */
 #define INCLUDE_vTaskPrioritySet                1

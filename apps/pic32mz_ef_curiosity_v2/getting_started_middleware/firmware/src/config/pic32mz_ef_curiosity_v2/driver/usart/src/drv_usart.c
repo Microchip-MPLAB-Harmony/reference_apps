@@ -130,38 +130,6 @@ static void _DRV_USART_RX_PLIB_CallbackHandler( uintptr_t context )
     OSAL_SEM_PostISR(&dObj->rxTransferDone);
 }
 
-static void _DRV_USART_TX_DMA_CallbackHandler(SYS_DMA_TRANSFER_EVENT event, uintptr_t context)
-{
-    DRV_USART_OBJ *dObj = (DRV_USART_OBJ *)context;
-
-    if(event == SYS_DMA_TRANSFER_COMPLETE)
-    {
-        dObj->txRequestStatus = DRV_USART_REQUEST_STATUS_COMPLETE;
-    }
-    else if(event == SYS_DMA_TRANSFER_ERROR)
-    {
-        dObj->txRequestStatus = DRV_USART_REQUEST_STATUS_ERROR;
-    }
-
-    OSAL_SEM_PostISR(&dObj->txTransferDone);
-}
-
-static void _DRV_USART_RX_DMA_CallbackHandler(SYS_DMA_TRANSFER_EVENT event, uintptr_t context)
-{
-    DRV_USART_OBJ *dObj = (DRV_USART_OBJ *)context;
-
-    if(event == SYS_DMA_TRANSFER_COMPLETE)
-    {
-        dObj->rxRequestStatus = DRV_USART_REQUEST_STATUS_COMPLETE;
-    }
-    else if(event == SYS_DMA_TRANSFER_ERROR)
-    {
-        dObj->rxRequestStatus = DRV_USART_REQUEST_STATUS_ERROR;
-    }
-
-    OSAL_SEM_PostISR(&dObj->rxTransferDone);
-}
-
 static DRV_USART_CLIENT_OBJ* _DRV_USART_DriverHandleValidate(DRV_HANDLE handle)
 {
     /* This function returns the pointer to the client object that is
@@ -230,10 +198,6 @@ SYS_MODULE_OBJ DRV_USART_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_
     dObj->currentTxClient       = (uintptr_t)NULL;
     dObj->isExclusive           = false;
     dObj->usartTokenCount       = 1;
-    dObj->txDMAChannel          = usartInit->dmaChannelTransmit;
-    dObj->rxDMAChannel          = usartInit->dmaChannelReceive;
-    dObj->txAddress             = usartInit->usartTransmitAddress;
-    dObj->rxAddress             = usartInit->usartReceiveAddress;
     dObj->remapDataWidth        = usartInit->remapDataWidth;
     dObj->remapParity           = usartInit->remapParity;
     dObj->remapStopBits         = usartInit->remapStopBits;
@@ -278,40 +242,9 @@ SYS_MODULE_OBJ DRV_USART_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_
     /* Register a callback with either DMA or USART PLIB based on configuration.
      * dObj is used as a context parameter, that will be used to distinguish the
      * events for different driver instances. */
-    if(dObj->txDMAChannel != SYS_DMA_CHANNEL_NONE)
-    {
-        SYS_DMA_AddressingModeSetup(
-            dObj->txDMAChannel,
-            SYS_DMA_SOURCE_ADDRESSING_MODE_INCREMENTED,
-            SYS_DMA_DESTINATION_ADDRESSING_MODE_FIXED
-        );
+    dObj->usartPlib->writeCallbackRegister(_DRV_USART_TX_PLIB_CallbackHandler, (uintptr_t)dObj);
 
-        SYS_DMA_DataWidthSetup(dObj->txDMAChannel, SYS_DMA_WIDTH_8_BIT);
-        SYS_DMA_ChannelCallbackRegister(dObj->txDMAChannel, _DRV_USART_TX_DMA_CallbackHandler, (uintptr_t)dObj);
-    }
-    else
-    {
-        dObj->usartPlib->writeCallbackRegister(_DRV_USART_TX_PLIB_CallbackHandler, (uintptr_t)dObj);
-        (void)_DRV_USART_TX_DMA_CallbackHandler;
-    }
-
-    if(dObj->rxDMAChannel != SYS_DMA_CHANNEL_NONE)
-    {
-        SYS_DMA_AddressingModeSetup(
-            dObj->rxDMAChannel,
-            SYS_DMA_SOURCE_ADDRESSING_MODE_FIXED,
-            SYS_DMA_DESTINATION_ADDRESSING_MODE_INCREMENTED
-        );
-
-        SYS_DMA_DataWidthSetup(dObj->rxDMAChannel, SYS_DMA_WIDTH_8_BIT);
-
-        SYS_DMA_ChannelCallbackRegister(dObj->rxDMAChannel, _DRV_USART_RX_DMA_CallbackHandler, (uintptr_t)dObj);
-    }
-    else
-    {
-        dObj->usartPlib->readCallbackRegister(_DRV_USART_RX_PLIB_CallbackHandler, (uintptr_t)dObj);
-        (void)_DRV_USART_RX_DMA_CallbackHandler;
-    }
+    dObj->usartPlib->readCallbackRegister(_DRV_USART_RX_PLIB_CallbackHandler, (uintptr_t)dObj);
 
     /* Update the status */
     dObj->status = SYS_STATUS_READY;
@@ -527,35 +460,7 @@ bool DRV_USART_WriteBuffer
 
             dObj->currentTxClient = (uintptr_t)clientObj;
 
-            if(dObj->txDMAChannel != SYS_DMA_CHANNEL_NONE)
-            {
-                if (dObj->dataWidth > DRV_USART_DATA_8_BIT)
-                {
-                    SYS_DMA_DataWidthSetup(dObj->txDMAChannel, SYS_DMA_WIDTH_16_BIT);
-
-                    SYS_DMA_ChannelTransfer(
-                        dObj->txDMAChannel,
-                        (const void *)buffer,
-                        (const void *)dObj->txAddress,
-                        (numbytes << 1)
-                    );
-                }
-                else
-                {
-                    SYS_DMA_DataWidthSetup(dObj->txDMAChannel, SYS_DMA_WIDTH_8_BIT);
-
-                    SYS_DMA_ChannelTransfer(
-                        dObj->txDMAChannel,
-                        (const void *)buffer,
-                        (const void *)dObj->txAddress,
-                        numbytes
-                    );
-                }
-            }
-            else
-            {
-                dObj->usartPlib->write(buffer, numbytes);
-            }
+            dObj->usartPlib->write(buffer, numbytes);
 
             /* Wait for transfer to complete */
             if (OSAL_SEM_Pend(&dObj->txTransferDone, OSAL_WAIT_FOREVER) == OSAL_RESULT_TRUE)
@@ -598,35 +503,7 @@ bool DRV_USART_ReadBuffer
 
             dObj->currentRxClient = (uintptr_t)clientObj;
 
-            if(dObj->rxDMAChannel != SYS_DMA_CHANNEL_NONE)
-            {
-                if (dObj->dataWidth > DRV_USART_DATA_8_BIT)
-                {
-                    SYS_DMA_DataWidthSetup(dObj->rxDMAChannel, SYS_DMA_WIDTH_16_BIT);
-
-                    SYS_DMA_ChannelTransfer(
-                        dObj->rxDMAChannel,
-                        (const void *)dObj->rxAddress,
-                        (const void *)buffer,
-                        (numbytes << 1)
-                    );
-                }
-                else
-                {
-                    SYS_DMA_DataWidthSetup(dObj->rxDMAChannel, SYS_DMA_WIDTH_8_BIT);
-
-                    SYS_DMA_ChannelTransfer(
-                        dObj->rxDMAChannel,
-                        (const void *)dObj->rxAddress,
-                        (const void *)buffer,
-                        numbytes
-                    );
-                }
-            }
-            else
-            {
-                dObj->usartPlib->read(buffer, numbytes);
-            }
+            dObj->usartPlib->read(buffer, numbytes);
             /* Wait for transfer to complete */
             if (OSAL_SEM_Pend(&dObj->rxTransferDone, OSAL_WAIT_FOREVER) == OSAL_RESULT_TRUE)
             {
