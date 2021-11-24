@@ -70,6 +70,19 @@ void SUPC_Initialize( void )
     if (bodEnable != 0U)
     {
         SUPC_REGS->SUPC_BODVDD |= SUPC_BODVDD_ENABLE_Msk;
+
+        /* Wait for BODVDD Synchronization Ready */
+        while((SUPC_REGS->SUPC_STATUS & SUPC_STATUS_BVDDSRDY_Msk) == 0U)
+        {
+        }
+
+        /* If BODVDD in continuous mode then wait for BODVDD Ready */
+        if((SUPC_REGS->SUPC_BODVDD & SUPC_BODVDD_ACTCFG_Msk) == 0U)
+        {
+            while((SUPC_REGS->SUPC_STATUS & SUPC_STATUS_BODVDDRDY_Msk) == 0U)
+            {
+            }
+        }
     }
 
     /* Configure VREF */
