@@ -5,9 +5,9 @@ frameworkPath: D:\Projects\git_hub
 processor: PIC32MX470F512H
 projectName: ''
 settings:
-  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  PackageFilter: audio;bsp;bt;core;core_apps_sam_e70_s70_v70_v71;crypto;cryptoauthlib;csp;dev_packs;gfx;gfx_apps;quick_docs;reference_apps;usb;wireless_apps_winc1500;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\PIC32MX_DFP\1.4.241\atdf\PIC32MX470F512H.atdf
+  DFPPath: .\dev_packs\Microchip\PIC32MX_DFP\1.5.259\atdf\PIC32MX470F512H.atdf

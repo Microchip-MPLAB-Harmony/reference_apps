@@ -85,22 +85,21 @@ typedef enum
 
 typedef enum
 {
+    /* No events yet. */
+    DMAC_TRANSFER_EVENT_NONE = 0,
+
     /* Data was transferred successfully. */
-    DMAC_TRANSFER_EVENT_COMPLETE,
+    DMAC_TRANSFER_EVENT_COMPLETE = 1,
 
     /* Error while processing the request */
-    DMAC_TRANSFER_EVENT_ERROR,
-
-    /* No events yet. */
-    DMAC_TRANSFER_EVENT_NONE,
+    DMAC_TRANSFER_EVENT_ERROR = 2,
 
     /* Half Data is transferred */
-    DMAC_TRANSFER_EVENT_HALF_COMPLETE
+    DMAC_TRANSFER_EVENT_HALF_COMPLETE = 4
 
 } DMAC_TRANSFER_EVENT;
 
 typedef void (*DMAC_CHANNEL_CALLBACK) (DMAC_TRANSFER_EVENT status, uintptr_t contextHandle);
-
 typedef struct
 {
     bool inUse;
@@ -133,7 +132,7 @@ typedef enum
 
 typedef struct
 {
-    /* DCRCCON[CRCAPP]: The DMA transfers data from the source into the CRC engine and 
+    /* DCRCCON[CRCAPP]: The DMA transfers data from the source into the CRC engine and
      * writes the calculated CRC value to the destination when enabled
     */
     bool append_mode;
@@ -176,6 +175,8 @@ void DMAC_ChannelPatternMatchDisable(DMAC_CHANNEL channel);
 void DMAC_ChannelDisable(DMAC_CHANNEL channel);
 
 bool DMAC_ChannelIsBusy(DMAC_CHANNEL channel);
+
+DMAC_TRANSFER_EVENT DMAC_ChannelTransferStatusGet(DMAC_CHANNEL channel);
 
 void DMAC_ChannelCRCSetup( DMAC_CHANNEL channel, DMAC_CRC_SETUP CRCSetup );
 
