@@ -59,6 +59,8 @@
 // *****************************************************************************
 
 
+#define SERCOM5_I2CM_SPEED_HZ           100000
+
 /* SERCOM5 I2C baud value */
 #define SERCOM5_I2CM_BAUD_VALUE         (0xE8U)
 
@@ -362,7 +364,7 @@ bool SERCOM5_I2C_IsBusy(void)
     {
         if(((SERCOM5_REGS->I2CM.SERCOM_STATUS & SERCOM_I2CM_STATUS_BUSSTATE_Msk) == SERCOM_I2CM_STATUS_BUSSTATE(0x01UL)))
         {
-           isBusy = false; 
+           isBusy = false;
         }
     }
     return isBusy;
@@ -461,6 +463,12 @@ void SERCOM5_I2C_InterruptHandler(void)
                     else
                     {
                         SERCOM5_REGS->I2CM.SERCOM_DATA = sercom5I2CObj.writeBuffer[sercom5I2CObj.writeCount++];
+
+                        /* Wait for synchronization */
+                            while((SERCOM5_REGS->I2CM.SERCOM_SYNCBUSY) != 0U)
+                            {
+                                /* Do nothing */
+                            }
                     }
 
                     break;
@@ -480,6 +488,12 @@ void SERCOM5_I2C_InterruptHandler(void)
 
                         sercom5I2CObj.state = SERCOM_I2C_STATE_TRANSFER_DONE;
                     }
+
+                    /* Wait for synchronization */
+                        while((SERCOM5_REGS->I2CM.SERCOM_SYNCBUSY) != 0U)
+                        {
+                            /* Do nothing */
+                        }
 
                     /* Read the received data */
                     sercom5I2CObj.readBuffer[sercom5I2CObj.readCount++] = SERCOM5_REGS->I2CM.SERCOM_DATA;
