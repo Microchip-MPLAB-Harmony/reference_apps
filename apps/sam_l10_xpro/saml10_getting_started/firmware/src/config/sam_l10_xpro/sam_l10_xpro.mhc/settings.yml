@@ -1,13 +1,13 @@
 configName: sam_l10_xpro
 folderName: ''
 format_version: v1.0
-frameworkPath: ../../../../../Projects/git_hub
+frameworkPath: ../../../..
 processor: ATSAML10E16A
 projectName: ''
 settings:
-  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  PackageFilter: audio;bsp;bt;core;core_apps_sam_e70_s70_v70_v71;crypto;cryptoauthlib;csp;dev_packs;gfx;gfx_apps;quick_docs;reference_apps;usb;wireless_apps_winc1500;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAML10_DFP\3.3.82\atdf\ATSAML10E16A.atdf
+  DFPPath: .\dev_packs\Microchip\SAML10_DFP\3.8.105\atdf\ATSAML10E16A.atdf

@@ -50,6 +50,7 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
@@ -62,10 +63,6 @@ void HardFault_Handler (void);
 void RTC_InterruptHandler (void);
 void EIC_OTHER_InterruptHandler (void);
 void DMAC_0_InterruptHandler (void);
-void DMAC_1_InterruptHandler (void);
-void DMAC_2_InterruptHandler (void);
-void DMAC_3_InterruptHandler (void);
-void DMAC_OTHER_InterruptHandler (void);
 void SERCOM1_I2C_InterruptHandler (void);
 
 

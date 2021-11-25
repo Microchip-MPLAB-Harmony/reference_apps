@@ -66,6 +66,10 @@
 #define NVMCTRL_FLASH_PAGESIZE             (64U)
 #define NVMCTRL_FLASH_ROWSIZE              (256U)
 
+#define NVMCTRL_DATAFLASH_START_ADDRESS    (0x00400000U)
+#define NVMCTRL_DATAFLASH_PAGESIZE         (64U)
+#define NVMCTRL_DATAFLASH_ROWSIZE          (256U)
+
 
 typedef enum
 {
@@ -112,7 +116,12 @@ void NVMCTRL_RegionLock (NVMCTRL_MEMORY_REGION region);
 void NVMCTRL_RegionUnlock (NVMCTRL_MEMORY_REGION region);
 
 
+
 void NVMCTRL_CacheInvalidate ( void );
+
+bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address);
+
+bool NVMCTRL_PageBufferCommit( const uint32_t address);
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
