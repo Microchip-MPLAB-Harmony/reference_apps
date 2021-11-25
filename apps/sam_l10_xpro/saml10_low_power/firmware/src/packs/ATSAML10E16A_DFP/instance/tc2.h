@@ -1,5 +1,5 @@
-/**
- * \brief Instance header file for ATSAML10E16A
+/*
+ * Instance header file for ATSAML10E16A
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T07:18:13Z */
+/* file generated from device description version 2021-06-28T12:20:34Z */
 #ifndef _SAML10_TC2_INSTANCE_
 #define _SAML10_TC2_INSTANCE_
 
@@ -28,6 +28,8 @@
 /* ========== Instance Parameter definitions for TC2 peripheral ========== */
 #define TC2_CC_NUM                               _UL_(2)    
 #define TC2_DMAC_ID_OVF                          _UL_(16)   /* Indexes of DMA Overflow trigger */
+#define TC2_DMAC_ID_MC0                          _UL_(17)   /* Indexes of DMA Match/Compare0 trigger */
+#define TC2_DMAC_ID_MC1                          _UL_(18)   /* Indexes of DMA Match/Compare1 trigger */
 #define TC2_EXT                                  _UL_(1)    /* Coding of implemented extended features (keep 0 value) */
 #define TC2_GCLK_ID                              _UL_(15)   /* Index of Generic Clock */
 #define TC2_MASTER_SLAVE_MODE                    _UL_(0)    /* TC type 0 : NA, 1 : Master, 2 : Slave */

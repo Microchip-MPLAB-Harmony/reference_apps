@@ -1,5 +1,5 @@
-/**
- * \brief Peripheral I/O description for SAML10E16A
+/*
+ * Peripheral I/O description for SAML10E16A
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T07:18:13Z */
+/* file generated from device description version 2021-06-28T12:20:34Z */
 #ifndef _SAML10E16A_GPIO_H_
 #define _SAML10E16A_GPIO_H_
 

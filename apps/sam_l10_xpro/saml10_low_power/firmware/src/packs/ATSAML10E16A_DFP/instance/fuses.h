@@ -21,19 +21,7 @@
  */
 
 /* file generated from device description version 2021-06-28T12:20:34Z */
-#ifndef _SAML10_RTC_INSTANCE_
-#define _SAML10_RTC_INSTANCE_
+#ifndef _SAML10_FUSES_INSTANCE_
+#define _SAML10_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for RTC peripheral ========== */
-#define RTC_DMAC_ID_TIMESTAMP                    _UL_(1)    /* DMA RTC timestamp trigger */
-#define RTC_GPR_NUM                              _UL_(2)    /* Number of General-Purpose Registers */
-#define RTC_NUM_OF_ALARMS                        _UL_(1)    /* Number of Alarms */
-#define RTC_NUM_OF_BKREGS                        _UL_(0)    /* Number of Backup Registers */
-#define RTC_NUM_OF_COMP16                        _UL_(2)    /* Number of 16-bit Comparators */
-#define RTC_NUM_OF_COMP32                        _UL_(1)    /* Number of 32-bit Comparators */
-#define RTC_NUM_OF_TAMPERS                       _UL_(4)    /* Number of Tamper Inputs */
-#define RTC_PER_NUM                              _UL_(8)    /* Number of Periodic Intervals */
-#define RTC_INSTANCE_ID                          _UL_(9)    
-
-#endif /* _SAML10_RTC_INSTANCE_ */
+#endif /* _SAML10_FUSES_INSTANCE_ */
