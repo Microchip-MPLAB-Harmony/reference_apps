@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_SUPC_INSTANCE_
 #define _SAME54_SUPC_INSTANCE_
 
@@ -28,6 +28,6 @@
 /* ========== Instance Parameter definitions for SUPC peripheral ========== */
 #define SUPC_BOD12_CALIB_MSB                     _UL_(5)    
 #define SUPC_BOD33_CALIB_MSB                     _UL_(5)    
-#define SUPC_INSTANCE_ID                         _UL_(6)    
+#define SUPC_INSTANCE_ID                         _UL_(6)    /* Instance index for SUPC */
 
 #endif /* _SAME54_SUPC_INSTANCE_ */

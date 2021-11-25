@@ -20,12 +20,12 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_GMAC_INSTANCE_
 #define _SAME54_GMAC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for GMAC peripheral ========== */
-#define GMAC_INSTANCE_ID                         _UL_(66)   
+#define GMAC_INSTANCE_ID                         _UL_(66)   /* Instance index for GMAC */
 
 #endif /* _SAME54_GMAC_INSTANCE_ */
