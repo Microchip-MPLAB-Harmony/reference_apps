@@ -128,6 +128,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/acc.h</itemPath>
@@ -186,6 +187,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
@@ -235,6 +237,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e70_xult/harmony-manifest-success.yml</itemPath>
+      <itemPath>getting_started_drivers_sam_e70_xult.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -332,12 +335,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.00</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.5.86"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -393,13 +396,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -449,6 +453,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -475,7 +480,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value=";"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -488,6 +493,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -497,7 +503,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -516,6 +522,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -555,6 +562,8 @@
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/Projects/git_hub/reference_apps/apps/sam_e70_xult/getting_started_drv/firmware/drivers_sam_e70_xult.X/debug/sam_e70_xult/drivers_sam_e70_xult_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

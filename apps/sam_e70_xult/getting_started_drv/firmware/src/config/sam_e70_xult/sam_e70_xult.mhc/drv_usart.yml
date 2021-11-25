@@ -13,6 +13,27 @@ children:
         attributes: {id: drv_usart, value: Asynchronous}
       - type: User
         attributes: {value: Asynchronous}
+  - type: Boolean
+    attributes: {id: DRV_USART_SYS_DMA_CODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_usart, value: 'true'}
+  - type: Boolean
+    attributes: {id: DRV_USART_SYS_DMA_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_usart, value: 'true'}
+  - type: Integer
+    attributes: {id: DRV_USART_SYS_DMA_ENABLE_CNTR}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_usart, value: '1'}
 - type: Instances
   children:
   - type: InstanceComponent
@@ -82,6 +103,13 @@ children:
           children:
           - type: Dynamic
             attributes: {id: drv_usart_0, value: '0'}
+      - type: Boolean
+        attributes: {id: DRV_USART_TX_DMA_EN}
+        children:
+        - type: Values
+          children:
+          - type: Dynamic
+            attributes: {id: drv_usart_0, value: 'true'}
     - type: Attachments
       children:
       - type: DirectDependency

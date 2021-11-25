@@ -75,7 +75,7 @@ children:
           - type: Pair
             attributes: {description: 'FALSE', value: '0', key: ENABLE_SYS_PORTS}
           - type: Pair
-            attributes: {description: 'FALSE', value: '0', key: ENABLE_SYS_DMA}
+            attributes: {description: 'FALSE', value: '1', key: ENABLE_SYS_DMA}
           - type: Pair
             attributes: {description: 'FALSE', value: '0', key: ENABLE_SYS_RESET}
   - type: File

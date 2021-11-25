@@ -1,5 +1,5 @@
-/**
- * \brief Instance header file for ATSAME70Q21B
+/*
+ * Instance header file for ATSAME70Q21B
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

@@ -1,5 +1,5 @@
-/**
- * \brief Component description for QSPI
+/*
+ * Component description for QSPI
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
