@@ -1,5 +1,5 @@
-/**
- * \brief Component description for CHIPID
+/*
+ * Component description for CHIPID
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

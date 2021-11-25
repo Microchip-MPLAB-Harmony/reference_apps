@@ -1,5 +1,5 @@
-/**
- * \brief Component description for TWIHS
+/*
+ * Component description for TWIHS
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

@@ -1,5 +1,5 @@
-/**
- * \brief Component description for GMAC
+/*
+ * Component description for GMAC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
