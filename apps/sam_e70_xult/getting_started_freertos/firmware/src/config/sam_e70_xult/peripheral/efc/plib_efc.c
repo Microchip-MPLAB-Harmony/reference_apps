@@ -73,6 +73,43 @@ bool EFC_SectorErase( uint32_t address )
     return true;
 }
 
+bool EFC_PageBufferWrite( uint32_t *data, const uint32_t address)
+{
+    uint16_t page_number;
+
+    /*Calculate the Page number to be passed for FARG register*/
+    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
+
+    for (uint32_t i = 0; i < IFLASH_PAGE_SIZE; i += 4)
+    {
+    *((uint32_t *)( IFLASH_ADDR + ( page_number * IFLASH_PAGE_SIZE ) + i )) =    *(( data++ ));
+    }
+
+    __DSB();
+    __ISB();    
+
+    return true;
+}
+
+bool EFC_PageBufferCommit( const uint32_t address)
+{
+    uint16_t page_number;
+
+    /*Calculate the Page number to be passed for FARG register*/
+    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;    
+
+    __DSB();
+    __ISB();
+
+    /* Issue the FLASH write operation*/
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG(page_number)| EEFC_FCR_FKEY_PASSWD);
+
+    status = 0;
+
+
+    return true;
+}
+
 bool EFC_PageWrite( uint32_t *data, uint32_t address )
 {
     uint16_t page_number;

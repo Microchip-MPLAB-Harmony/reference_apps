@@ -50,7 +50,6 @@
 // *****************************************************************************
 
 #include "system/int/sys_int.h"
-#include "system/dma/sys_dma.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -177,15 +176,12 @@ typedef struct
     int32_t         usartTxCompleteInt;
     int32_t         usartRxCompleteInt;
     int32_t         usartErrorInt;
-    int32_t         dmaTxChannelInt;
-    int32_t         dmaRxChannelInt;
 } DRV_USART_MULTI_INT_SRC;
 
 typedef union
 {
     DRV_USART_MULTI_INT_SRC             multi;
     int32_t                             usartInterrupt;
-    int32_t                             dmaInterrupt;
 } DRV_USART_INT_SRC;
 
 typedef struct
@@ -209,18 +205,6 @@ struct _DRV_USART_INIT
     /* Memory Pool for Client Objects */
     uintptr_t                               clientObjPool;
 
-    /* This is the USART transmit DMA channel. */
-    SYS_DMA_CHANNEL                         dmaChannelTransmit;
-
-    /* This is the USART receive DMA channel. */
-    SYS_DMA_CHANNEL                         dmaChannelReceive;
-
-    /* This is the USART transmit register address. Used for DMA operation. */
-    void*                                   usartTransmitAddress;
-
-    /* This is the USART receive register address. Used for DMA operation. */
-    void*                                   usartReceiveAddress;
-
 
     const uint32_t*                         remapDataWidth;
 
@@ -230,8 +214,8 @@ struct _DRV_USART_INIT
 
     const uint32_t*                         remapError;
 
-	
-	DRV_USART_DATA_BIT                      dataWidth;
+
+    DRV_USART_DATA_BIT                      dataWidth;
 };
 
 //DOM-IGNORE-BEGIN
