@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_ADC0_INSTANCE_
 #define _SAME54_ADC0_INSTANCE_
 
@@ -38,6 +38,6 @@
 #define ADC0_PTAT                                _UL_(28)   /* MUXPOS value to select PTAT */
 #define ADC0_TOUCH_IMPLEMENTED                   _UL_(1)    /* TOUCH implemented or not */
 #define ADC0_TOUCH_LINES_NUM                     _UL_(32)   /* Number of touch lines */
-#define ADC0_INSTANCE_ID                         _UL_(103)  
+#define ADC0_INSTANCE_ID                         _UL_(103)  /* Instance index for ADC0 */
 
 #endif /* _SAME54_ADC0_INSTANCE_ */

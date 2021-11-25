@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_FREQM_INSTANCE_
 #define _SAME54_FREQM_INSTANCE_
 
@@ -28,6 +28,6 @@
 /* ========== Instance Parameter definitions for FREQM peripheral ========== */
 #define FREQM_GCLK_ID_MSR                        _UL_(5)    /* Index of measure generic clock */
 #define FREQM_GCLK_ID_REF                        _UL_(6)    /* Index of reference generic clock */
-#define FREQM_INSTANCE_ID                        _UL_(11)   
+#define FREQM_INSTANCE_ID                        _UL_(11)   /* Instance index for FREQM */
 
 #endif /* _SAME54_FREQM_INSTANCE_ */
