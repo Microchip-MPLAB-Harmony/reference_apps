@@ -11,14 +11,5 @@ children:
       children:
       - type: Dynamic
         attributes: {id: FreeRTOS, value: '48000000'}
-  - type: Setting
-    attributes: {id: FREERTOS_XC32CPP_INCLUDE_DIRS}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
 - type: ElementPosition
   attributes: {x: '157', y: '97', id: FreeRTOS}

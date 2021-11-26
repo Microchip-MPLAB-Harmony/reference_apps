@@ -1,14 +1,14 @@
 configName: sam_d21_xpro
 folderName: ''
 format_version: v1.0
-frameworkPath: ../../MHC_content_manager
+frameworkPath: ../../../..
 processor: ATSAMD21J18A
 projectName: ''
 settings:
-  PackageFilter: audio;bsp;bt;core;csp;gfx;gfx_apps;usb;
+  PackageFilter: audio;bsp;bt;core;core_apps_sam_e70_s70_v70_v71;crypto;cryptoauthlib;csp;dev_packs;gfx;gfx_apps;quick_docs;reference_apps;usb;wireless_apps_winc1500;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.104\samd21a\atdf\ATSAMD21J18A.atdf
+  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21a\atdf\ATSAMD21J18A.atdf

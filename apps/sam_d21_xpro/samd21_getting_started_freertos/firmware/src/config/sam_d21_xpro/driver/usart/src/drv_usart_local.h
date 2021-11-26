@@ -147,18 +147,6 @@ typedef struct
     /* Memory pool for Client Objects */
     uintptr_t clientObjPool;
 
-    /* TX DMA Channel */
-    SYS_DMA_CHANNEL txDMAChannel;
-
-    /* RX DMA Channel */
-    SYS_DMA_CHANNEL rxDMAChannel;
-
-    /* This is the USART transmit register address. Used for DMA operation. */
-    void* txAddress;
-
-    /* This is the USART receive register address. Used for DMA operation. */
-    void* rxAddress;
-
     /* This is an instance specific token counter used to generate unique
      * client handles
      */
