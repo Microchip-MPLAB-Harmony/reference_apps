@@ -60,7 +60,7 @@
 
 void NVMCTRL_Initialize(void)
 {
-    NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_READMODE_NO_MISS_PENALTY | NVMCTRL_CTRLB_SLEEPPRM_WAKEONACCESS | NVMCTRL_CTRLB_RWS(1UL) | NVMCTRL_CTRLB_MANW_Msk;
+    NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_READMODE_NO_MISS_PENALTY | NVMCTRL_CTRLB_SLEEPPRM_WAKEONACCESS | NVMCTRL_CTRLB_RWS(0UL) | NVMCTRL_CTRLB_MANW_Msk;
 }
 
 void NVMCTRL_CacheInvalidate(void)
@@ -70,7 +70,36 @@ void NVMCTRL_CacheInvalidate(void)
 bool NVMCTRL_Read( uint32_t *data, uint32_t length, const uint32_t address )
 {
     uint32_t *paddress = (uint32_t*)address;
-    memcpy(data, paddress, length);
+    (void)memcpy(data, paddress, length);
+    return true;
+}
+
+bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address)
+{
+    uint32_t i = 0U;
+    uint32_t * paddress = (uint32_t *)address;
+
+    /* writing 32-bit data into the given address */
+    for (i = 0U; i < (NVMCTRL_FLASH_PAGESIZE/4U); i++)
+    {
+        *paddress = *(data + i);
+        paddress++;
+    }
+
+    return true;
+}
+
+bool NVMCTRL_PageBufferCommit( const uint32_t address)
+{
+    uint16_t command = NVMCTRL_CTRLA_CMD_WP_Val;
+
+    /* Set address and command */
+    NVMCTRL_REGS->NVMCTRL_ADDR = address >> 1U;
+
+
+    NVMCTRL_REGS->NVMCTRL_CTRLA = (uint16_t)(command | NVMCTRL_CTRLA_CMDEX_KEY);
+
+
     return true;
 }
 
@@ -82,7 +111,8 @@ bool NVMCTRL_PageWrite( uint32_t *data, const uint32_t address )
     /* writing 32-bit data into the given address */
     for (i = 0U; i < (NVMCTRL_FLASH_PAGESIZE/4U); i++)
     {
-        *paddress++ = data[i];
+        *paddress = *(data + i);
+        paddress++;
     }
 
      /* Set address and command */
@@ -105,7 +135,7 @@ bool NVMCTRL_RowErase( uint32_t address )
 
 NVMCTRL_ERROR NVMCTRL_ErrorGet( void )
 {
-    volatile uint32_t nvm_error = 0;
+    volatile uint16_t nvm_error = 0;
 
     /* Get the error bits set */
     nvm_error = (NVMCTRL_REGS->NVMCTRL_STATUS & (NVMCTRL_STATUS_NVME_Msk | NVMCTRL_STATUS_LOCKE_Msk | NVMCTRL_STATUS_PROGE_Msk));
