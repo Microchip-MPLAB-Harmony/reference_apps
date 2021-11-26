@@ -23,14 +23,14 @@ nav_order: 98
 - Download and extract [winc1510_firmware](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/winc1510_firmware.zip
 ) into utilities folder
 - Open command prompt and navigate to **"utilities/winc1510_firmware"**
-- The following command line will generate a device programming file winc1500_19.7.3.prog.
+- The following command line will generate a device programming file winc1500_19.7.6.prog.
 
-  **image_tool.exe -c winc1500_19.7.3\config.txt -o winc1500_19.7.3.prog -of prog**  
+  **image_tool.exe -c winc1500_19.7.6\config.txt -o winc1500_19.7.6.prog -of prog**  
 
-- The file produced can be used to upgrade a WINC1500 to version 19.7.3 including the firmware, HTTP files and root
+- The file produced can be used to upgrade a WINC1500 to version 19.7.6 including the firmware, HTTP files and root
 certificates.
 - The following command line will program a WINC1500 device via the serial port   
-    **winc_programmer -p COM29 -d winc1500 -i winc1500_19.7.3.prog -if prog -w -r -pfw winc1500_19.7.3\firmware\programmer_release_3A0.bin**
+    **winc_programmer -p COM29 -d winc1500 -i winc1500_19.7.6.prog -if prog -w -r -pfw winc1500_19.7.6\firmware\programmer_release_3A0.bin**
 
     **NOTE** : Respective device COM PORT should be selected in above command and all other serial terminal application should be closed
 - Wait till **verify passed** message comes up as shown below  

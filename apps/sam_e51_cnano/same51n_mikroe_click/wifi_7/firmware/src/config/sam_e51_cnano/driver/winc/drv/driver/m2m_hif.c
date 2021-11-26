@@ -548,24 +548,10 @@ int8_t hif_handle_isr(void)
 {
     int8_t ret = M2M_SUCCESS;
 
-    ret = hif_chip_wake();
+    ret = hif_isr();
     if (M2M_SUCCESS != ret)
     {
-        M2M_ERR("(hif) FAIL to wakeup the chip\r\n");
-    }
-    else
-    {
-        ret = hif_isr();
-        if (M2M_SUCCESS != ret)
-        {
-            M2M_ERR("(hif) Fail to handle interrupt %d try again..\r\n",ret);
-
-            hif_chip_sleep();
-        }
-        else
-        {
-            ret = hif_chip_sleep();
-        }
+        M2M_ERR("(hif) Fail to handle interrupt %d try again..\r\n",ret);
     }
 
     return ret;

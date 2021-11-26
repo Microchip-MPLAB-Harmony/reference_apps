@@ -21,19 +21,7 @@
  */
 
 /* file generated from device description version 2021-04-16T09:24:58Z */
-#ifndef _SAME51_TC7_INSTANCE_
-#define _SAME51_TC7_INSTANCE_
+#ifndef _SAME51_FUSES_INSTANCE_
+#define _SAME51_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for TC7 peripheral ========== */
-#define TC7_CC_NUM                               _UL_(2)    
-#define TC7_DMAC_ID_OVF                          _UL_(65)   /* Indexes of DMA Overflow trigger */
-#define TC7_DMAC_ID_MC0                          _UL_(66)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TC7_DMAC_ID_MC1                          _UL_(67)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TC7_EXT                                  _UL_(0)    /* Coding of implemented extended features (keep 0 value) */
-#define TC7_GCLK_ID                              _UL_(39)   /* Index of Generic Clock */
-#define TC7_MASTER_SLAVE_MODE                    _UL_(2)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
-#define TC7_OW_NUM                               _UL_(2)    /* Number of Output Waveforms */
-#define TC7_INSTANCE_ID                          _UL_(102)  /* Instance index for TC7 */
-
-#endif /* _SAME51_TC7_INSTANCE_ */
+#endif /* _SAME51_FUSES_INSTANCE_ */

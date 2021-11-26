@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:03Z */
+/* file generated from device description version 2021-04-16T09:24:58Z */
 #ifndef _SAME51_QSPI_INSTANCE_
 #define _SAME51_QSPI_INSTANCE_
 
@@ -30,6 +30,6 @@
 #define QSPI_DMAC_ID_TX                          _UL_(84)   
 #define QSPI_HADDR_MSB                           _UL_(23)   
 #define QSPI_OCMS                                _UL_(1)    
-#define QSPI_INSTANCE_ID                         _UL_(77)   
+#define QSPI_INSTANCE_ID                         _UL_(77)   /* Instance index for QSPI */
 
 #endif /* _SAME51_QSPI_INSTANCE_ */

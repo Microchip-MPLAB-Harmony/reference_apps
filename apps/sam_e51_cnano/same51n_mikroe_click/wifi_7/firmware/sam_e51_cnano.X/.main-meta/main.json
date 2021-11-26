@@ -15,7 +15,7 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.0"
+				"semverRange": ">=3.0.1"
 			}
 		],
 		"dfp": {
@@ -50,6 +50,7 @@
 		],
 		"keywords": [
 			"MHC",
+            "MCC",
 			"Harmony",
 			"ATSAME51J20A",
 			"SAME51 Family",
