@@ -15,12 +15,12 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.0"
+				"semverRange": ">=3.0.1"
 			}
 		],
 		"dfp": {
 			"name": "SAMD21_DFP",
-			"semverRange": "^3.4.116"
+			"semverRange": "^3.5.132"
 		},
 		"configurator": {
 			"name": "MHC",
@@ -50,6 +50,7 @@
 		],
 		"keywords": [
 			"MHC",
+			"MCC",
 			"Harmony",
 			"ATSAMD21J18A",
 			"SAMD21 Family",

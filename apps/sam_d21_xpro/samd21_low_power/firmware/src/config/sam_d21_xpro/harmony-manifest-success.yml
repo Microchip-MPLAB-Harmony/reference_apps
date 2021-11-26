@@ -4,15 +4,15 @@
 
 
 project: samd21_low_power
-creation_date: 2021-08-18T10:17:13.194+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-11-26T17:03:56.002+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.7.2
-mplabx_version: v5.50        # if MPLAB X plugin only
-plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (3.00)
+mhc_mode: Standalone            # [IDE|Standalone|Headless]
+mhc_version: v3.8.2
+mplabx_version: NA        # if MPLAB X plugin only
+plugin_version: NA        # if MPLAB X plugin only
+compiler: xc32
 
 modules:
-    - {name: "csp", version: "v3.9.1"}
-    - {name: "dev_packs", version: "v3.9.0"}
+    - {name: "csp", version: "v3.10.0"}
+    - {name: "dev_packs", version: "v3.10.0"}
 

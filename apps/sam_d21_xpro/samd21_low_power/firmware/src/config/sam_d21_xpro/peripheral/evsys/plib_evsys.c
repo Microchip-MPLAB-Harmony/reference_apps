@@ -53,4 +53,25 @@ void EVSYS_Initialize( void )
 
 }
 
+void EVSYS_GeneratorEnable(EVSYS_CHANNEL channel, uint8_t generator)
+{
+   EVSYS_REGS->EVSYS_CHANNEL = (EVSYS_REGS->EVSYS_CHANNEL & (~EVSYS_CHANNEL_EVGEN_Msk | ~EVSYS_CHANNEL_CHANNEL_Msk))
+                                                          | EVSYS_CHANNEL_EVGEN(generator) | EVSYS_CHANNEL_CHANNEL(channel);
+}
+
+void EVSYS_GeneratorDisable(EVSYS_CHANNEL channel)
+{
+   EVSYS_REGS->EVSYS_CHANNEL = (EVSYS_REGS->EVSYS_CHANNEL & ~EVSYS_CHANNEL_EVGEN_Msk) | EVSYS_CHANNEL_CHANNEL(channel);
+}
+
+void EVSYS_UserEnable(EVSYS_CHANNEL channel, uint8_t user)
+{
+   EVSYS_REGS->EVSYS_USER = EVSYS_USER_CHANNEL((channel + 1)) | EVSYS_USER_USER(user);
+}
+
+void EVSYS_UserDisable(void)
+{
+   EVSYS_REGS->EVSYS_USER = (EVSYS_REGS->EVSYS_USER & ~EVSYS_USER_USER_Msk);
+}
+
 
