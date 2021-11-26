@@ -163,4 +163,5 @@ You could use this demonstration as an example to add 10dof functionality to you
 
 
 ## Revision:
+- v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Created application example
