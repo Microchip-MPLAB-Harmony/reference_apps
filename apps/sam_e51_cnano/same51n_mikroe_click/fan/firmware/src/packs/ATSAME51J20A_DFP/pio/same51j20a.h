@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:27:58Z */
+/* file generated from device description version 2021-04-16T09:24:53Z */
 #ifndef _SAME51J20A_GPIO_H_
 #define _SAME51J20A_GPIO_H_
 

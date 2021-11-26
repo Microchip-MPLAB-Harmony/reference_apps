@@ -52,7 +52,6 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 /*  This section lists the other files that are included in this file.
 */
 #include <device.h>
@@ -83,11 +82,14 @@ typedef enum
 
 typedef enum
 {
+    /* No event */
+    DMAC_TRANSFER_EVENT_NONE = 0,
+
     /* Data was transferred successfully. */
-    DMAC_TRANSFER_EVENT_COMPLETE,
+    DMAC_TRANSFER_EVENT_COMPLETE = 1,
 
     /* Error while processing the request */
-    DMAC_TRANSFER_EVENT_ERROR
+    DMAC_TRANSFER_EVENT_ERROR = 2
 
 } DMAC_TRANSFER_EVENT;
 
@@ -145,9 +147,9 @@ typedef struct
 typedef uint32_t DMAC_CHANNEL_CONFIG;
 
 typedef void (*DMAC_CHANNEL_CALLBACK) (DMAC_TRANSFER_EVENT event, uintptr_t contextHandle);
+void DMAC_ChannelCallbackRegister (DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK eventHandler, const uintptr_t contextHandle);
 
 void DMAC_Initialize( void );
-void DMAC_ChannelCallbackRegister (DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK eventHandler, const uintptr_t contextHandle);
 bool DMAC_ChannelTransfer (DMAC_CHANNEL channel, const void *srcAddr, const void *destAddr, size_t blockSize);
 bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel );
 void DMAC_ChannelDisable ( DMAC_CHANNEL channel );
@@ -161,6 +163,9 @@ uint32_t DMAC_CRCRead( void );
 uint32_t DMAC_CRCCalculate(void *buffer, uint32_t length, DMAC_CRC_SETUP CRCSetup);
 
 void DMAC_CRCDisable( void );
+void DMAC_ChannelSuspend ( DMAC_CHANNEL channel );
+void DMAC_ChannelResume ( DMAC_CHANNEL channel );
+DMAC_TRANSFER_EVENT DMAC_ChannelTransferStatusGet(DMAC_CHANNEL channel);
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

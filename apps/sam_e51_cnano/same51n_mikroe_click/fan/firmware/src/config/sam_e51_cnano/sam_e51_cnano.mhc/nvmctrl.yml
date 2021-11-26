@@ -12,4 +12,4 @@ children:
       - type: Dynamic
         attributes: {id: nvmctrl, value: '5'}
 - type: ElementPosition
-  attributes: {x: '20', y: '20', id: nvmctrl}
+  attributes: {x: '2', y: '14', id: nvmctrl}
