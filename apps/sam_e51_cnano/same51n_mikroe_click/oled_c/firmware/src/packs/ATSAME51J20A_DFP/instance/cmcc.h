@@ -20,12 +20,12 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:03Z */
+/* file generated from device description version 2021-04-16T09:24:58Z */
 #ifndef _SAME51_CMCC_INSTANCE_
 #define _SAME51_CMCC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for CMCC peripheral ========== */
-#define CMCC_INSTANCE_ID                         _UL_(35)   
+#define CMCC_INSTANCE_ID                         _UL_(35)   /* Instance index for CMCC */
 
 #endif /* _SAME51_CMCC_INSTANCE_ */

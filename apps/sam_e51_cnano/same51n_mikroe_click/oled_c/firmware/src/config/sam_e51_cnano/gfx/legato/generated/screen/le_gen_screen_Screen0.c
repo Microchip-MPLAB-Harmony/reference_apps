@@ -1,7 +1,7 @@
 #include "gfx/legato/generated/screen/le_gen_screen_Screen0.h"
 
 // screen member widget declarations
-leWidget* root0;
+static leWidget* root0;
 
 leWidget* Screen0_BackgroundPanel;
 leImageWidget* Screen0_mchplogo;
@@ -42,7 +42,6 @@ leResult screenShow_Screen0(void)
     Screen0_mchplogo = leImageWidget_New();
     Screen0_mchplogo->fn->setPosition(Screen0_mchplogo, 0, 0);
     Screen0_mchplogo->fn->setSize(Screen0_mchplogo, 96, 96);
-    Screen0_mchplogo->fn->setVisible(Screen0_mchplogo, LE_FALSE);
     Screen0_mchplogo->fn->setBackgroundType(Screen0_mchplogo, LE_WIDGET_BACKGROUND_NONE);
     Screen0_mchplogo->fn->setBorderType(Screen0_mchplogo, LE_WIDGET_BORDER_NONE);
     Screen0_mchplogo->fn->setImage(Screen0_mchplogo, (leImage*)&oled_c);
@@ -68,6 +67,7 @@ leResult screenShow_Screen0(void)
 
 void screenUpdate_Screen0(void)
 {
+    root0->fn->setSize(root0, root0->parent->rect.width, root0->parent->rect.height);
 }
 
 void screenHide_Screen0(void)

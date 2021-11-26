@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:03Z */
+/* file generated from device description version 2021-04-16T09:24:58Z */
 #ifndef _SAME51_CCL_INSTANCE_
 #define _SAME51_CCL_INSTANCE_
 
@@ -29,6 +29,6 @@
 #define CCL_GCLK_ID                              _UL_(33)   /* GCLK index for CCL */
 #define CCL_LUT_NUM                              _UL_(4)    /* Number of LUT in a CCL */
 #define CCL_SEQ_NUM                              _UL_(2)    /* Number of SEQ in a CCL */
-#define CCL_INSTANCE_ID                          _UL_(78)   
+#define CCL_INSTANCE_ID                          _UL_(78)   /* Instance index for CCL */
 
 #endif /* _SAME51_CCL_INSTANCE_ */
