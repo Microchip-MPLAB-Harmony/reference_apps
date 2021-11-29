@@ -20,12 +20,12 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_WDT_INSTANCE_
 #define _SAME54_WDT_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for WDT peripheral ========== */
-#define WDT_INSTANCE_ID                          _UL_(8)    
+#define WDT_INSTANCE_ID                          _UL_(8)    /* Instance index for WDT */
 
 #endif /* _SAME54_WDT_INSTANCE_ */

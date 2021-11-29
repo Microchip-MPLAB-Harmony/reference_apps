@@ -5,10 +5,10 @@ frameworkPath: ..\..\..\..\harmony_github
 processor: ATSAME54P20A
 projectName: getting_started_sam_e54_cult
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;reference_apps;net;quick_docs;touch;usb;
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;crypto;cryptoauthlib;csp;csp_apps_pic32mz_ef;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;dev_packs;gfx;gfx_apps;gfx_apps_pic32mz_ef;gfx_aria;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;reference_apps;tflite;touch;usb;wireless;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.4.70\atdf\ATSAME54P20A.atdf
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf

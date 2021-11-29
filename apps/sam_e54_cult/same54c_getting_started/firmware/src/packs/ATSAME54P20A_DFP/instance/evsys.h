@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_EVSYS_INSTANCE_
 #define _SAME54_EVSYS_INSTANCE_
 
@@ -48,6 +48,6 @@
 #define EVSYS_SYNCH_NUM_BITS                     _UL_(4)    /* Number of bits to select Synchronous Channels */
 #define EVSYS_USERS                              _UL_(67)   /* Total Number of Event Users */
 #define EVSYS_USERS_BITS                         _UL_(7)    /* Number of bits to select Event User */
-#define EVSYS_INSTANCE_ID                        _UL_(39)   
+#define EVSYS_INSTANCE_ID                        _UL_(39)   /* Instance index for EVSYS */
 
 #endif /* _SAME54_EVSYS_INSTANCE_ */
