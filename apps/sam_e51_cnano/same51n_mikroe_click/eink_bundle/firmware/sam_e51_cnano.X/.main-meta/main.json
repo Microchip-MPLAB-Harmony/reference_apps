@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_eink_bundle",
-		"version": "1.3.0",
+		"version": "1.4.0",
 		"displayName": "Eink Click display bundle example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "eink_bundle_click_sam_e51_cnano",
 		"shortDescription": "Demonstrates the display capability of Eink click bundle board on SAM E51 Curiosity Nano Evaluation Kit",		
@@ -15,12 +15,12 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.0"
+				"semverRange": ">=3.0.1"
 			}
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.4.98"
+			"semverRange": "^3.5.104"
 		},
 		"configurator": {
 			"name": "MHC",
@@ -50,6 +50,7 @@
 		],
 		"keywords": [
 			"MHC",
+			"MCC",
 			"Harmony",
 			"ATSAME51J20A",
 			"SAME51 Family",
