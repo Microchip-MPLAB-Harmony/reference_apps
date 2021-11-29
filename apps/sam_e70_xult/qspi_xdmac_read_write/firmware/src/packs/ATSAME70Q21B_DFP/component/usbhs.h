@@ -1,5 +1,5 @@
-/**
- * \brief Component description for USBHS
+/*
+ * Component description for USBHS
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

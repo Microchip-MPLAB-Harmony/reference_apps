@@ -1,5 +1,5 @@
-/**
- * \brief Component description for ISI
+/*
+ * Component description for ISI
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

@@ -96,6 +96,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Revision:
+- v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 regenerated and tested the application
 - v1.2.0 regenerated and tested the application
 - v1.1.0 regenerated and tested the application

@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.1.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_qspi_xdmac_read_write",
-      "version":"1.3.0",
+      "version":"1.4.0",
       "displayName":"XDMAC with QSPI Application on SAM E70 Xplained Ultra Evaluation Kit",
       "projectName":"qspi_xdmac_read_write_sam_e70_xult",
       "shortDescription":"Demonstrates how to implement QSPI data transfer using XDMAC",
@@ -15,12 +15,12 @@
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=3.0.0"
+            "semverRange":">=3.0.1"
          }
       ],
       "dfp":{
          "name":"SAME70_DFP",
-         "semverRange":"^4.4.78"
+         "semverRange":"^4.6.98"
       },
       "configurator":{
          "name":"MHC",
@@ -56,6 +56,7 @@
       ],
       "keywords":[
          "MHC",
+         "MCC",
          "Harmony",
          "ATSAME70Q21B",
          "SAME70 Family",

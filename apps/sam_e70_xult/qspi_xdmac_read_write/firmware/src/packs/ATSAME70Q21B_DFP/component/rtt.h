@@ -1,5 +1,5 @@
-/**
- * \brief Component description for RTT
+/*
+ * Component description for RTT
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
