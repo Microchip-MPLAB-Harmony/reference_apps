@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_amazon_ack_Microwave",
-		"version": "1.3.0",
+		"version": "1.4.0",
 		"displayName": "Amazon Alexa Connect Kit (ACK) Microwave Application",
 		"projectName": "Microwave_sam_d21_cnano",
 		"shortDescription": "Demonstrates integration of Amazon Alexa connect kit (ACK) SDK with SAM D21 and controlling Microwave",
@@ -15,7 +15,7 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.0"
+				"semverRange": ">=3.0.1"
 			}
 		],
 		"dfp": {
@@ -50,6 +50,7 @@
 		],
 		"keywords": [
 			"MHC",
+            "MCC",
 			"Harmony",
 			"ATSAMD21G17D",
 			"SAMD21 Family",
