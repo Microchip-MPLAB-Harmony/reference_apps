@@ -280,12 +280,15 @@ int FATFS_stat (
 
     res = f_stat((const TCHAR *)path, finfo);
 
-    SYS_FS_FSTAT *fileStat = (SYS_FS_FSTAT *)fileInfo;
-
-    if ((res == FR_OK) && (fileStat->lfname != NULL))
+    if (finfo != NULL)
     {
-        /* Use fileStat->fname instead */
-        fileStat->lfname[0] = '\0';
+        SYS_FS_FSTAT *fileStat = (SYS_FS_FSTAT *)fileInfo;
+
+        if ((res == FR_OK) && (fileStat->lfname != NULL))
+        {
+            /* Use fileStat->fname instead */
+            fileStat->lfname[0] = '\0';
+        }
     }
 
     return ((int)res);
@@ -375,12 +378,15 @@ int FATFS_readdir (
 
     res = f_readdir(dp, finfo);
 
-    SYS_FS_FSTAT *fileStat = (SYS_FS_FSTAT *)fileInfo;
-
-    if ((res == FR_OK) && (fileStat->lfname != NULL))
+    if (finfo != NULL)
     {
-        /* Use fileStat->fname instead */
-        fileStat->lfname[0] = '\0';
+        SYS_FS_FSTAT *fileStat = (SYS_FS_FSTAT *)fileInfo;
+
+        if ((res == FR_OK) && (fileStat->lfname != NULL))
+        {
+            /* Use fileStat->fname instead */
+            fileStat->lfname[0] = '\0';
+        }
     }
 
     return ((int)res);

@@ -1,5 +1,5 @@
-/**
- * \brief Component description for TC
+/*
+ * Component description for TC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

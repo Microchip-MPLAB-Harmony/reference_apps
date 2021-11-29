@@ -4544,7 +4544,7 @@ static const __m128i MOD2_128 =
  * and Michael E. Kounavis, Intel Labs, Circuits and Systems Research */
 
 
-/* Figure 9. AES-GCM â€“ Encrypt With Single Block Ghash at a Time */
+/* Figure 9. AES-GCM â?? Encrypt With Single Block Ghash at a Time */
 
 static const __m128i ONE   = M128_INIT(0x0, 0x1);
 #ifndef AES_GCM_AESNI_NO_UNROLL

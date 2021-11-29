@@ -1,5 +1,5 @@
-/**
- * \brief Component description for SDRAMC
+/*
+ * Component description for SDRAMC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
