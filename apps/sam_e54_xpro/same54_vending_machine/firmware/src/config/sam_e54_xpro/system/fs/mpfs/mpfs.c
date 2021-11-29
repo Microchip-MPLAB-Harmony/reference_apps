@@ -218,7 +218,7 @@ static int MPFSFindFile
     return -1;
 }
 
-static bool MPFSDiskRead
+static bool MPFSDiskReadAligned
 (
     uint16_t diskNum,
     uint8_t *destination,
@@ -226,28 +226,49 @@ static bool MPFSDiskRead
     const uint32_t nBytes
 )
 {
-    SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
+	SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
     SYS_FS_MEDIA_COMMAND_STATUS commandStatus = SYS_FS_MEDIA_COMMAND_UNKNOWN;
+	
+	commandHandle = SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID;
+	commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
 
+	commandHandle = SYS_FS_MEDIA_MANAGER_Read (diskNum, destination, source, nBytes);
+
+	if (commandHandle == SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID)
+	{
+		return false;
+	}
+
+	commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
+
+	while ( (commandStatus == SYS_FS_MEDIA_COMMAND_IN_PROGRESS) ||
+			(commandStatus == SYS_FS_MEDIA_COMMAND_QUEUED))
+	{
+		SYS_FS_MEDIA_MANAGER_TransferTask (diskNum);
+		commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
+	}
+
+	if (commandStatus != SYS_FS_MEDIA_COMMAND_COMPLETED)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+static bool MPFSDiskRead
+(
+    uint16_t diskNum,
+    uint8_t *destination,
+    uint8_t *source,
+    const uint32_t nBytes
+)
+{    
     {
-        commandHandle = SYS_FS_MEDIA_MANAGER_Read (diskNum, destination, source, nBytes);
-
-        if (commandHandle == SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID)
-        {
-            return false;
-        }
-
-        commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
-
-        while ( (commandStatus == SYS_FS_MEDIA_COMMAND_IN_PROGRESS) ||
-                (commandStatus == SYS_FS_MEDIA_COMMAND_QUEUED))
-        {
-            SYS_FS_MEDIA_MANAGER_TransferTask (diskNum);
-            commandStatus = SYS_FS_MEDIA_MANAGER_CommandStatusGet(diskNum, commandHandle);
-        }
+		return MPFSDiskReadAligned(diskNum, destination, source, nBytes);        
     }
-
-    return (commandStatus == SYS_FS_MEDIA_COMMAND_COMPLETED) ? true : false;
 }
 
 /* Wrapper for the MPFSDiskRead (). */

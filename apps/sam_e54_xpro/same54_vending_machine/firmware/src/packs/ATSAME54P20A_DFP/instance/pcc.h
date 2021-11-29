@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_PCC_INSTANCE_
 #define _SAME54_PCC_INSTANCE_
 
@@ -28,6 +28,6 @@
 /* ========== Instance Parameter definitions for PCC peripheral ========== */
 #define PCC_DATA_SIZE                            _UL_(14)   
 #define PCC_DMAC_ID_RX                           _UL_(80)   
-#define PCC_INSTANCE_ID                          _UL_(107)  
+#define PCC_INSTANCE_ID                          _UL_(107)  /* Instance index for PCC */
 
 #endif /* _SAME54_PCC_INSTANCE_ */

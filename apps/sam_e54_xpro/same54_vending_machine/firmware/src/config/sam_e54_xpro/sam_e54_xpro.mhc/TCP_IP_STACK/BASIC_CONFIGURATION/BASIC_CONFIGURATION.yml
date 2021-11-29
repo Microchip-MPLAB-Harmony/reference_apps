@@ -7,8 +7,8 @@ children:
 - type: Attachments
   children:
   - type: Attachment
-    attributes: {targetComponentID: TCP/IP STACK, namespace: tcpipStack, id: Core_SysConsole_Dependency,
-      targetAttachmentID: 'TCP/IP STACK:tcpipStack:Core_SysConsole_Dependency'}
-  - type: Attachment
     attributes: {targetComponentID: DRIVER LAYER, namespace: tcpipNetConfig_0, id: NETCONFIG_MAC_Dependency,
       targetAttachmentID: 'drvGmac:libdrvGmac'}
+  - type: Attachment
+    attributes: {targetComponentID: TCP/IP STACK, namespace: tcpipStack, id: Core_SysConsole_Dependency,
+      targetAttachmentID: 'TCP/IP STACK:tcpipStack:Core_SysConsole_Dependency'}

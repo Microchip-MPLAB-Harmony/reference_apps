@@ -92,8 +92,8 @@ void SERCOM4_SPI_Initialize(void)
     /* Instantiate the SERCOM4 SPI object */
     sercom4SPIObj.callback = NULL ;
     sercom4SPIObj.transferIsBusy = false ;
-	sercom4SPIObj.txSize = 0U;
-	sercom4SPIObj.rxSize = 0U;
+    sercom4SPIObj.txSize = 0U;
+    sercom4SPIObj.rxSize = 0U;
 
     /* Selection of the Character Size and Receiver Enable */
     SERCOM4_REGS->SPIM.SERCOM_CTRLB = SERCOM_SPIM_CTRLB_CHSIZE_8_BIT | SERCOM_SPIM_CTRLB_RXEN_Msk ;
@@ -177,14 +177,14 @@ bool SERCOM4_SPI_TransferSetup(SPI_TRANSFER_SETUP *setup, uint32_t spiSourceCloc
         if((baudValue > 0U) && (baudValue <= 255U))
         {
             /* Selection of the Clock Polarity and Clock Phase */
-			SERCOM4_REGS->SPIM.SERCOM_CTRLA &= ~(SERCOM_SPIM_CTRLA_CPOL_Msk | SERCOM_SPIM_CTRLA_CPHA_Msk);
+            SERCOM4_REGS->SPIM.SERCOM_CTRLA &= ~(SERCOM_SPIM_CTRLA_CPOL_Msk | SERCOM_SPIM_CTRLA_CPHA_Msk);
             SERCOM4_REGS->SPIM.SERCOM_CTRLA |= (uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase;
 
             /* Selection of the Baud Value */
             SERCOM4_REGS->SPIM.SERCOM_BAUD = (uint8_t)baudValue;
 
             /* Selection of the Character Size */
-			SERCOM4_REGS->SPIM.SERCOM_CTRLB &= ~SERCOM_SPIM_CTRLB_CHSIZE_Msk;
+            SERCOM4_REGS->SPIM.SERCOM_CTRLB &= ~SERCOM_SPIM_CTRLB_CHSIZE_Msk;
             SERCOM4_REGS->SPIM.SERCOM_CTRLB |= (uint32_t)setup->dataBits;
 
             /* Wait for synchronization */
@@ -274,6 +274,11 @@ bool SERCOM4_SPI_IsBusy(void)
         isBusy = (((SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_TXC_Msk) == 0U) || sercom4SPIObj.transferIsBusy);
 	}
     return isBusy;
+}
+
+bool SERCOM4_SPI_IsTransmitterBusy(void)
+{
+    return ((SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_TXC_Msk) == 0)? true : false;
 }
 
 // *****************************************************************************
@@ -389,7 +394,7 @@ bool SERCOM4_SPI_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveDa
             }
             else
             {
-                /* Do nothing */    
+                /* Do nothing */
             }
         }
         else

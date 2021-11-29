@@ -18368,6 +18368,7 @@ startScr:
                 }
             }
         #endif
+#ifndef WOLFSSL_TLS13_NO_PEEK_HANDSHAKE_DONE		
     #ifdef WOLFSSL_TLS13
         if (IsAtLeastTLSv1_3(ssl->version) && ssl->options.handShakeDone &&
                                          ssl->curRL.type == handshake && peek) {
@@ -18378,6 +18379,7 @@ startScr:
             }
         }
     #endif
+#endif	
     }
 
     size = min(sz, (int)ssl->buffers.clearOutputBuffer.length);

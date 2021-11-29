@@ -4,20 +4,20 @@
 
 
 project: same54_vending_machine
-creation_date: 2021-06-02T13:41:03.758+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-12-01T15:04:41.753+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.7.2
+mhc_version: v3.8.2
 mplabx_version: v5.50        # if MPLAB X plugin only
 plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (2.41)
+compiler: XC32 (3.01)
 
 modules:
-    - {name: "core", version: "v3.9.1"}
-    - {name: "csp", version: "v3.9.1"}
-    - {name: "dev_packs", version: "v3.9.0"}
+    - {name: "core", version: "v3.10.0"}
+    - {name: "csp", version: "v3.10.0"}
+    - {name: "dev_packs", version: "v3.10.0"}
     - {name: "wolfssl", version: "v4.7.0"}
     - {name: "net", version: "v3.7.2"}
-    - {name: "crypto", version: "v3.7.1"}
+    - {name: "crypto", version: "v3.7.4"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.1"}
 
