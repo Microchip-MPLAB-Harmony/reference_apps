@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_USB_INSTANCE_
 #define _SAME54_USB_INSTANCE_
 
@@ -43,6 +43,6 @@
 #define USB_USB_2_AHB_RD_DATA_BITS               _UL_(16)   /* 8, 16 or 32, here : 8-bits is required as UTMI interface should work in 8-bits mode */
 #define USB_USB_2_AHB_RD_THRESHOLD               _UL_(2)    /* as soon as there are 16 bytes-free inside the fifo, ahb read transfer is requested */
 #define USB_USB_2_AHB_WR_DATA_BITS               _UL_(8)    /* 8, 16 or 32 : here : 8-bits is required as UTMI interface should work in 8-bits mode */
-#define USB_INSTANCE_ID                          _UL_(32)   
+#define USB_INSTANCE_ID                          _UL_(32)   /* Instance index for USB */
 
 #endif /* _SAME54_USB_INSTANCE_ */

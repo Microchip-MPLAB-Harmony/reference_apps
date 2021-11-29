@@ -33,7 +33,7 @@ ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 THIRD PARTY SOFTWARE:  Notwithstanding anything to the contrary, any third party software
-accompanying this software is subject to the terms and conditions of the third party’s
+accompanying this software is subject to the terms and conditions of the third party?s
 license agreement or terms. To the extent required by third party licenses covering such
 software, the terms of the third party license will apply in lieu of the terms provided
 in this notice. To the extent the terms of such third party licenses prohibit any of the

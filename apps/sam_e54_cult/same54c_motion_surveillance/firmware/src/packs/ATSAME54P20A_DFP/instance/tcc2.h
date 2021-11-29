@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_TCC2_INSTANCE_
 #define _SAME54_TCC2_INSTANCE_
 
@@ -41,6 +41,6 @@
 #define TCC2_PG                                  _UL_(0)    /* Pattern Generation feature implemented */
 #define TCC2_SIZE                                _UL_(16)   
 #define TCC2_SWAP                                _UL_(0)    /* DTI outputs swap feature implemented */
-#define TCC2_INSTANCE_ID                         _UL_(67)   
+#define TCC2_INSTANCE_ID                         _UL_(67)   /* Instance index for TCC2 */
 
 #endif /* _SAME54_TCC2_INSTANCE_ */

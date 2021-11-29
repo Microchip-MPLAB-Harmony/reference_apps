@@ -214,7 +214,7 @@ void TC0_TimerInterruptHandler( void )
         status = (TC_TIMER_STATUS) TC0_REGS->COUNT32.TC_INTFLAG;
         /* Clear interrupt flags */
         TC0_REGS->COUNT32.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
-        if((status != TC_TIMER_STATUS_NONE) && TC0_CallbackObject.callback != NULL)
+        if((status != TC_TIMER_STATUS_NONE) && (TC0_CallbackObject.callback != NULL))
         {
             TC0_CallbackObject.callback(status, TC0_CallbackObject.context);
         }

@@ -124,32 +124,6 @@ typedef struct
     /* PLIB API list that will be used by the driver to access the hardware */
     const DRV_SPI_PLIB_INTERFACE*       spiPlib;
 
-    /* Transmit DMA Channel */
-    SYS_DMA_CHANNEL                     txDMAChannel;
-
-    /* Receive DMA Channel */
-    SYS_DMA_CHANNEL                     rxDMAChannel;
-
-    /* This is the SPI transmit register address. Used for DMA operation. */
-    void*                               txAddress;
-
-    /* This is the SPI receive register address. Used for DMA operation. */
-    void*                               rxAddress;
-
-    /* Dummy data is read into this variable by RX DMA */
-    uint32_t                            rxDummyData;
-
-    /* This holds the number of dummy data to be transmitted */
-    uint32_t                            txDummyDataSize;
-
-    /* This holds the number of dummy data to be received */
-    uint32_t                            rxDummyDataSize;
-
-    /* This contains the address of the application transmit buffer from which
-     * the transmission should continue. This is used for the case where the
-     * transmission is split into two, when rxSize is less than txSize.
-     */
-    uintptr_t                           pNextTransmitData;
 
     /* The active client for this driver instance */
     uintptr_t                           activeClient;
@@ -166,6 +140,13 @@ typedef struct
 
     const uint32_t*                     remapClockPhase;
 
+    /* Handle to the client that owns the exclusive use mutex */
+    DRV_HANDLE                          exclusiveUseClientHandle;
+
+    bool                                drvInExclusiveMode;
+
+    uint32_t                            exclusiveUseCntr;
+
     /* Mutex to protect access to PLIB */
     OSAL_MUTEX_DECLARE(transferMutex);
 
@@ -174,6 +155,9 @@ typedef struct
 
     /* Semaphore to wait for data exchange to complete. This is released from ISR */
     OSAL_SEM_DECLARE(transferDone);
+
+    /* Mutex to lock SPI driver instance for exclusive use by a client */
+    OSAL_MUTEX_DECLARE(mutexExclusiveUse);
 
 } DRV_SPI_OBJ;
 

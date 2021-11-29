@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_DMAC_INSTANCE_
 #define _SAME54_DMAC_INSTANCE_
 
@@ -71,6 +71,6 @@
 #define DMAC_CHANNEL29_INT_SRC                   _UL_(35)   /* DMA Channel 29 Interrupt */
 #define DMAC_CHANNEL30_INT_SRC                   _UL_(35)   /* DMA Channel 30 Interrupt */
 #define DMAC_CHANNEL31_INT_SRC                   _UL_(35)   /* DMA Channel 31 Interrupt */
-#define DMAC_INSTANCE_ID                         _UL_(37)   
+#define DMAC_INSTANCE_ID                         _UL_(37)   /* Instance index for DMAC */
 
 #endif /* _SAME54_DMAC_INSTANCE_ */

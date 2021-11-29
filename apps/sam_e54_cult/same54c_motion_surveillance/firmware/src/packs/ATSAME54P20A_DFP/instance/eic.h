@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_EIC_INSTANCE_
 #define _SAME54_EIC_INSTANCE_
 
@@ -31,6 +31,6 @@
 #define EIC_NUMBER_OF_CONFIG_REGS                _UL_(2)    /* Number of CONFIG registers */
 #define EIC_NUMBER_OF_DPRESCALER_REGS            _UL_(2)    /* Number of DPRESCALER pin groups */
 #define EIC_NUMBER_OF_INTERRUPTS                 _UL_(16)   /* Number of external interrupts (obsolete) */
-#define EIC_INSTANCE_ID                          _UL_(10)   
+#define EIC_INSTANCE_ID                          _UL_(10)   /* Instance index for EIC */
 
 #endif /* _SAME54_EIC_INSTANCE_ */

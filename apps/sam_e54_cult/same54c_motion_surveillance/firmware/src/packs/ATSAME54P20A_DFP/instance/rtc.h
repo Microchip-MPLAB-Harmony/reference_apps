@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_RTC_INSTANCE_
 #define _SAME54_RTC_INSTANCE_
 
@@ -34,6 +34,6 @@
 #define RTC_NUM_OF_COMP32                        _UL_(2)    /* Number of 32-bit Comparators */
 #define RTC_NUM_OF_TAMPERS                       _UL_(5)    /* Number of Tamper Inputs */
 #define RTC_PER_NUM                              _UL_(8)    /* Number of Periodic Intervals */
-#define RTC_INSTANCE_ID                          _UL_(9)    
+#define RTC_INSTANCE_ID                          _UL_(9)    /* Instance index for RTC */
 
 #endif /* _SAME54_RTC_INSTANCE_ */

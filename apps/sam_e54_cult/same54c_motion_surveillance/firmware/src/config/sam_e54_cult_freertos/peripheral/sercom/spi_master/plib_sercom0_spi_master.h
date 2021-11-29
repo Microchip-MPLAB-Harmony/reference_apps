@@ -543,7 +543,8 @@ void SERCOM0_SPI_CallbackRegister(SERCOM_SPI_CALLBACK callBack, uintptr_t contex
     application can use the function to check if SERCOM SERCOM0SPI module is busy
     before calling any of the data transfer functions. The library does not
     allow a data transfer operation if another transfer operation is already in
-    progress.
+    progress. This function returns true when the SPI PLIB software state machine is idle and
+	all the bytes are transmitted out on the bus (shift register is empty).
 
     This function can be used as an alternative to the callback function when
     the library is operating interrupt mode. The allow the application to
@@ -582,6 +583,40 @@ void SERCOM0_SPI_CallbackRegister(SERCOM_SPI_CALLBACK callBack, uintptr_t contex
 */
 
 bool SERCOM0_SPI_IsBusy (void);
+
+// *****************************************************************************
+/* Function:
+    bool SERCOM0_SPI_IsTransmitterBusy (void);
+
+  Summary:
+    Returns hardware transfer status of the SPI transmit shift register
+
+  Description:
+    This function returns the hardware status of the transmit shift register. 
+	The status is  returned true after all the bytes have been shifted out on the 
+	SPI bus. This function should be used when using DMA with SPI PLIB to make 
+	sure that all the bytes have been transmitted out on the bus. For SPI 
+	transfers without DMA, the SERCOM0_SPI_IsBusy() API must be used.
+
+  Precondition:
+    The SERCOM0_SPI_Initialize() should have been called once.
+
+  Parameters:
+    None.
+
+  Returns:
+    true -  Data is being shifted out on the SPI bus
+    false - All the data bytes have been shifted out on the SPI bus
+
+  Example:
+    <code>
+        
+    </code>
+
+  Remarks:
+    None.
+*/
+bool SERCOM0_SPI_IsTransmitterBusy(void);
 
 
 #ifdef __cplusplus // Provide C++ Compatibility
