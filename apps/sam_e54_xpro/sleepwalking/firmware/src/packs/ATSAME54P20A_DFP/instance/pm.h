@@ -20,13 +20,13 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_PM_INSTANCE_
 #define _SAME54_PM_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PM peripheral ========== */
 #define PM_PD_NUM                                _UL_(0)    /* Number of switchable Power Domains */
-#define PM_INSTANCE_ID                           _UL_(1)    
+#define PM_INSTANCE_ID                           _UL_(1)    /* Instance index for PM */
 
 #endif /* _SAME54_PM_INSTANCE_ */

@@ -52,3 +52,24 @@ void EVSYS_Initialize( void )
     EVSYS_REGS->CHANNEL[0].EVSYS_CHANNEL = EVSYS_CHANNEL_EVGEN(12) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(1) \
                                     | EVSYS_CHANNEL_RUNSTDBY_Msk | EVSYS_CHANNEL_ONDEMAND_Msk;
 }
+
+void EVSYS_GeneratorEnable(EVSYS_CHANNEL channel, uint8_t generator)
+{
+   EVSYS_REGS->CHANNEL[channel].EVSYS_CHANNEL = (EVSYS_REGS->CHANNEL[channel].EVSYS_CHANNEL & ~EVSYS_CHANNEL_EVGEN_Msk) | EVSYS_CHANNEL_EVGEN(generator);
+}
+
+void EVSYS_GeneratorDisable(EVSYS_CHANNEL channel)
+{
+   EVSYS_REGS->CHANNEL[channel].EVSYS_CHANNEL = (EVSYS_REGS->CHANNEL[channel].EVSYS_CHANNEL & ~EVSYS_CHANNEL_EVGEN_Msk);
+}
+
+void EVSYS_UserEnable(EVSYS_CHANNEL channel, uint8_t user)
+{
+   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL((channel + 1));
+}
+
+void EVSYS_UserDisable(uint8_t user)
+{
+   EVSYS_REGS->EVSYS_USER[user] = 0x0;
+}
+

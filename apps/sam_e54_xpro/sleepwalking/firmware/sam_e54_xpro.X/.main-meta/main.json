@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sleepwalking",
-		"version": "1.3.0",
+		"version": "1.4.0",
 		"displayName": "SleepWalking Application on SAM E54 Xplained Pro Evaluation Kit",
 		"projectName": "sleepwalking_with_evsys_sam_e54_xpro",
 		"shortDescription": "SleepWalking mode low Power Application on SAM E54 Xplained Pro Evaluation Kit",
@@ -15,7 +15,7 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.0"
+				"semverRange": ">=3.0.1"
 			}
 		],
 		"dfp": {
@@ -50,6 +50,7 @@
 		],
 		"keywords": [
 			"MHC",
+            "MCC",
 			"Harmony",
 			"ATSAME54P20A",
 			"SAME54 Family",

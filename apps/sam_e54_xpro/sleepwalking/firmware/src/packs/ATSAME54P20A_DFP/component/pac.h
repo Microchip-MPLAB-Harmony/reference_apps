@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_PAC_COMPONENT_H_
 #define _SAME54_PAC_COMPONENT_H_
 
@@ -123,10 +123,7 @@
 #define PAC_INTFLAGAHB_QSPI_Pos               _U_(14)                                              /**< (PAC_INTFLAGAHB) QSPI Position */
 #define PAC_INTFLAGAHB_QSPI_Msk               (_U_(0x1) << PAC_INTFLAGAHB_QSPI_Pos)                /**< (PAC_INTFLAGAHB) QSPI Mask */
 #define PAC_INTFLAGAHB_QSPI(value)            (PAC_INTFLAGAHB_QSPI_Msk & ((value) << PAC_INTFLAGAHB_QSPI_Pos))
-#define PAC_INTFLAGAHB_BKUPRAM_Pos            _U_(15)                                              /**< (PAC_INTFLAGAHB) BKUPRAM Position */
-#define PAC_INTFLAGAHB_BKUPRAM_Msk            (_U_(0x1) << PAC_INTFLAGAHB_BKUPRAM_Pos)             /**< (PAC_INTFLAGAHB) BKUPRAM Mask */
-#define PAC_INTFLAGAHB_BKUPRAM(value)         (PAC_INTFLAGAHB_BKUPRAM_Msk & ((value) << PAC_INTFLAGAHB_BKUPRAM_Pos))
-#define PAC_INTFLAGAHB_Msk                    _U_(0x0000FFFF)                                      /**< (PAC_INTFLAGAHB) Register Mask  */
+#define PAC_INTFLAGAHB_Msk                    _U_(0x00007FFF)                                      /**< (PAC_INTFLAGAHB) Register Mask  */
 
 #define PAC_INTFLAGAHB_HPB_Pos                _U_(7)                                               /**< (PAC_INTFLAGAHB Position) HPBx */
 #define PAC_INTFLAGAHB_HPB_Msk                (_U_(0xF) << PAC_INTFLAGAHB_HPB_Pos)                 /**< (PAC_INTFLAGAHB Mask) HPB */
@@ -216,9 +213,6 @@
 #define PAC_INTFLAGB_DMAC_Pos                 _U_(5)                                               /**< (PAC_INTFLAGB) DMAC Position */
 #define PAC_INTFLAGB_DMAC_Msk                 (_U_(0x1) << PAC_INTFLAGB_DMAC_Pos)                  /**< (PAC_INTFLAGB) DMAC Mask */
 #define PAC_INTFLAGB_DMAC(value)              (PAC_INTFLAGB_DMAC_Msk & ((value) << PAC_INTFLAGB_DMAC_Pos))
-#define PAC_INTFLAGB_HMATRIX_Pos              _U_(6)                                               /**< (PAC_INTFLAGB) HMATRIX Position */
-#define PAC_INTFLAGB_HMATRIX_Msk              (_U_(0x1) << PAC_INTFLAGB_HMATRIX_Pos)               /**< (PAC_INTFLAGB) HMATRIX Mask */
-#define PAC_INTFLAGB_HMATRIX(value)           (PAC_INTFLAGB_HMATRIX_Msk & ((value) << PAC_INTFLAGB_HMATRIX_Pos))
 #define PAC_INTFLAGB_EVSYS_Pos                _U_(7)                                               /**< (PAC_INTFLAGB) EVSYS Position */
 #define PAC_INTFLAGB_EVSYS_Msk                (_U_(0x1) << PAC_INTFLAGB_EVSYS_Pos)                 /**< (PAC_INTFLAGB) EVSYS Mask */
 #define PAC_INTFLAGB_EVSYS(value)             (PAC_INTFLAGB_EVSYS_Msk & ((value) << PAC_INTFLAGB_EVSYS_Pos))
@@ -243,7 +237,7 @@
 #define PAC_INTFLAGB_RAMECC_Pos               _U_(16)                                              /**< (PAC_INTFLAGB) RAMECC Position */
 #define PAC_INTFLAGB_RAMECC_Msk               (_U_(0x1) << PAC_INTFLAGB_RAMECC_Pos)                /**< (PAC_INTFLAGB) RAMECC Mask */
 #define PAC_INTFLAGB_RAMECC(value)            (PAC_INTFLAGB_RAMECC_Msk & ((value) << PAC_INTFLAGB_RAMECC_Pos))
-#define PAC_INTFLAGB_Msk                      _U_(0x00017EFF)                                      /**< (PAC_INTFLAGB) Register Mask  */
+#define PAC_INTFLAGB_Msk                      _U_(0x00017EBF)                                      /**< (PAC_INTFLAGB) Register Mask  */
 
 #define PAC_INTFLAGB_SERCOM_Pos               _U_(9)                                               /**< (PAC_INTFLAGB Position) SERCOM2 */
 #define PAC_INTFLAGB_SERCOM_Msk               (_U_(0x3) << PAC_INTFLAGB_SERCOM_Pos)                /**< (PAC_INTFLAGB Mask) SERCOM */
@@ -450,9 +444,6 @@
 #define PAC_STATUSB_DMAC_Pos                  _U_(5)                                               /**< (PAC_STATUSB) DMAC APB Protect Enable Position */
 #define PAC_STATUSB_DMAC_Msk                  (_U_(0x1) << PAC_STATUSB_DMAC_Pos)                   /**< (PAC_STATUSB) DMAC APB Protect Enable Mask */
 #define PAC_STATUSB_DMAC(value)               (PAC_STATUSB_DMAC_Msk & ((value) << PAC_STATUSB_DMAC_Pos))
-#define PAC_STATUSB_HMATRIX_Pos               _U_(6)                                               /**< (PAC_STATUSB) HMATRIX APB Protect Enable Position */
-#define PAC_STATUSB_HMATRIX_Msk               (_U_(0x1) << PAC_STATUSB_HMATRIX_Pos)                /**< (PAC_STATUSB) HMATRIX APB Protect Enable Mask */
-#define PAC_STATUSB_HMATRIX(value)            (PAC_STATUSB_HMATRIX_Msk & ((value) << PAC_STATUSB_HMATRIX_Pos))
 #define PAC_STATUSB_EVSYS_Pos                 _U_(7)                                               /**< (PAC_STATUSB) EVSYS APB Protect Enable Position */
 #define PAC_STATUSB_EVSYS_Msk                 (_U_(0x1) << PAC_STATUSB_EVSYS_Pos)                  /**< (PAC_STATUSB) EVSYS APB Protect Enable Mask */
 #define PAC_STATUSB_EVSYS(value)              (PAC_STATUSB_EVSYS_Msk & ((value) << PAC_STATUSB_EVSYS_Pos))
@@ -477,7 +468,7 @@
 #define PAC_STATUSB_RAMECC_Pos                _U_(16)                                              /**< (PAC_STATUSB) RAMECC APB Protect Enable Position */
 #define PAC_STATUSB_RAMECC_Msk                (_U_(0x1) << PAC_STATUSB_RAMECC_Pos)                 /**< (PAC_STATUSB) RAMECC APB Protect Enable Mask */
 #define PAC_STATUSB_RAMECC(value)             (PAC_STATUSB_RAMECC_Msk & ((value) << PAC_STATUSB_RAMECC_Pos))
-#define PAC_STATUSB_Msk                       _U_(0x00017EFF)                                      /**< (PAC_STATUSB) Register Mask  */
+#define PAC_STATUSB_Msk                       _U_(0x00017EBF)                                      /**< (PAC_STATUSB) Register Mask  */
 
 #define PAC_STATUSB_SERCOM_Pos                _U_(9)                                               /**< (PAC_STATUSB Position) SERCOM2 APB Protect Enable */
 #define PAC_STATUSB_SERCOM_Msk                (_U_(0x3) << PAC_STATUSB_SERCOM_Pos)                 /**< (PAC_STATUSB Mask) SERCOM */
