@@ -70,6 +70,19 @@ void SUPC_Initialize( void )
     if (bodEnable != 0U)
     {
         SUPC_REGS->SUPC_BOD33 |= SUPC_BOD33_ENABLE_Msk;
+
+        /* Wait for BOD33 Synchronization Ready */
+        while((SUPC_REGS->SUPC_STATUS & SUPC_STATUS_B33SRDY_Msk) == 0U)
+        {
+        }
+
+        /* If BOD33 in continuous mode then wait for BOD33 Ready */
+        if((SUPC_REGS->SUPC_BOD33 & SUPC_BOD33_ACTCFG_Msk) == 0U)
+        {
+            while((SUPC_REGS->SUPC_STATUS & SUPC_STATUS_BOD33RDY_Msk) == 0U)
+            {
+            }
+        }
     }
 
     /* Configure VREG. Mask the values loaded from NVM during reset.*/
