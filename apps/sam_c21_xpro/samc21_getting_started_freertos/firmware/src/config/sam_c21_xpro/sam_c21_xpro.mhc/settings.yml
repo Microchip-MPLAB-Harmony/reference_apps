@@ -5,10 +5,10 @@ frameworkPath: ..\..\Documents\HarPath
 processor: ATSAMC21J18A
 projectName: getting_started_drivers_freertos_sam_c21_xpro
 settings:
-  PackageFilter: aerospace;audio;aws_cloud;azure-rtos-threadx;bootloader;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_uart;bootloader_apps_usb;bsp;bt;classb_sam_e5x_d5x;core;core_apps_pic32cm_mc00;core_apps_pic32mk;core_apps_pic32mx;core_apps_pic32mz_da;core_apps_pic32mz_ef;core_apps_pic32mz_w1;core_apps_sam_9x60;core_apps_sam_a5d2;core_apps_sam_c20_c21;core_apps_sam_d20;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;core_apps_sam_e70_s70_v70_v71;core_apps_sam_g55;core_apps_sam_ha1;core_apps_sam_l10_l11;core_apps_sam_l21;core_apps_sam_l22;core_apps_sam_rh71;crypto;cryptoauthlib;cryptoauthlib_apps;crypto_apps_encrypt_decrypt;crypto_apps_large_hash;crypto_apps_speed_test;csp;csp_apps_pic32cm_mc00;csp_apps_pic32mk;csp_apps_pic32mx;csp_apps_pic32mz_da;csp_apps_pic32mz_ef;csp_apps_pic32mz_w1;csp_apps_sam_9x60;csp_apps_sam_c20_c21;csp_apps_sam_d10;csp_apps_sam_d11;csp_apps_sam_d20;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_g55;csp_apps_sam_ha1;csp_apps_sam_l10_l11;csp_apps_sam_l21;csp_apps_sam_l22;csp_apps_sam_rh71;ethercat;expresslogic_threadx;gfx;gfx_apps;micrium_ucos3;motor_control;reference_apps;net;quick_docs;reference_apps;touch;touch_apps;usb;wireless;x2c;
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;dev_packs;gfx;gfx_apps;gfx_apps_sam_d5x_e5x;net;net_apps_sam_e70_v71;quick_docs;reference_apps;touch;usb;wireless_apps_winc1500;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAMC21_DFP\3.5.83\samc21\atdf\ATSAMC21J18A.atdf
+  DFPPath: .\dev_packs\Microchip\SAMC21_DFP\3.5.95\samc21\atdf\ATSAMC21J18A.atdf
