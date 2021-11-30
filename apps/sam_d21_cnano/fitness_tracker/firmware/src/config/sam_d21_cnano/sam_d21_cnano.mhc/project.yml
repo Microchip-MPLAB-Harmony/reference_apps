@@ -6,13 +6,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E45D1648EFC10229D7BE94DB19221FF7
-- generatedChecksum: 3ED62890A81CEBDA6285F800F052A793
+- generatedChecksum: D7DF6194F67D9851B15A458B75BDCF85
   logicalPath: config/sam_d21_cnano
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3ED62890A81CEBDA6285F800F052A793
+  userChecksum: D7DF6194F67D9851B15A458B75BDCF85
 - generatedChecksum: C556A278281691767A84177A129FB51B
   logicalPath: config/sam_d21_cnano
   name: interrupts.c
@@ -62,20 +62,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E2CCABAD859E7678F8120042A43CBA1D
-- generatedChecksum: 941B9AE0E1B48C2EF9733942726D7AE8
+- generatedChecksum: 1C795C8A1D7CAEFA2C2D35E5634115F8
   logicalPath: config/sam_d21_cnano/peripheral/nvmctrl
   name: plib_nvmctrl.c
   physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 941B9AE0E1B48C2EF9733942726D7AE8
-- generatedChecksum: 83494819A0803EB52D8A0E3BA1177231
+  userChecksum: 1C795C8A1D7CAEFA2C2D35E5634115F8
+- generatedChecksum: AA59BAEA01DDF68EAB7B049407828999
   logicalPath: config/sam_d21_cnano/peripheral/port
   name: plib_port.c
   physicalPath: peripheral/port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 83494819A0803EB52D8A0E3BA1177231
+  userChecksum: AA59BAEA01DDF68EAB7B049407828999
 - generatedChecksum: B5FDADED6FD6A1CE26B82DA0AB5FC537
   logicalPath: config/sam_d21_cnano/peripheral/sercom/usart
   name: plib_sercom0_usart.c
@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: B5FDADED6FD6A1CE26B82DA0AB5FC537
-- generatedChecksum: CB435E29BB677C4E87F6C33FC90C4F58
+- generatedChecksum: 30DEDBBE4BE914AFCC1A3F4CB2FF6CC6
   logicalPath: config/sam_d21_cnano/peripheral/sercom/spi_master
   name: plib_sercom1_spi_master.c
   physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CB435E29BB677C4E87F6C33FC90C4F58
+  userChecksum: 30DEDBBE4BE914AFCC1A3F4CB2FF6CC6
 - generatedChecksum: 7754C9479222A9C97203F0F03108404D
   logicalPath: config/sam_d21_cnano/peripheral/sercom/usart
   name: plib_sercom5_usart.c
@@ -97,13 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7754C9479222A9C97203F0F03108404D
-- generatedChecksum: 901668A7AECAE8B7188421F4A84AD20C
+- generatedChecksum: 27966322031823120629750C006A867E
   logicalPath: config/sam_d21_cnano/peripheral/systick
   name: plib_systick.c
   physicalPath: peripheral/systick
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 901668A7AECAE8B7188421F4A84AD20C
+  userChecksum: 27966322031823120629750C006A867E
 - generatedChecksum: 2645E564BD945DAED1424FD8D7B39330
   logicalPath: config/sam_d21_cnano
   name: startup_xc32.c
@@ -146,34 +146,34 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 096F323CFB65D542FDB59979C8BC3A91
-- generatedChecksum: 01B82424BC59A54620F7E9E0DB808EBB
+- generatedChecksum: 14F1AD56D242EFD0AF76849C6ADFECC4
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cachel1_armv7.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 01B82424BC59A54620F7E9E0DB808EBB
-- generatedChecksum: 00A88E28C299A373117BC4D5B9E80C80
+  userChecksum: 14F1AD56D242EFD0AF76849C6ADFECC4
+- generatedChecksum: B79C08E0901948AD04D944B4BCE1B60D
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armcc.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 00A88E28C299A373117BC4D5B9E80C80
-- generatedChecksum: 734DF6998F09B2D22A4D9FE1D544FDFC
+  userChecksum: B79C08E0901948AD04D944B4BCE1B60D
+- generatedChecksum: 6B4E2EBA8708D9E04E6136F29460ACB9
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armclang.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 734DF6998F09B2D22A4D9FE1D544FDFC
-- generatedChecksum: 5D653BEFE5E6B1D00AB3682CE5D24C11
+  userChecksum: 6B4E2EBA8708D9E04E6136F29460ACB9
+- generatedChecksum: 415E22EBE7A3BACE87240A7F16492C46
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_armclang_ltm.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5D653BEFE5E6B1D00AB3682CE5D24C11
+  userChecksum: 415E22EBE7A3BACE87240A7F16492C46
 - generatedChecksum: 60385A5C6C9882B5D30709A1F6EAEC35
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_compiler.h
@@ -181,20 +181,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 60385A5C6C9882B5D30709A1F6EAEC35
-- generatedChecksum: 42E8B722917508A3A9373D13AD827ED6
+- generatedChecksum: 4DC978B079559EB044AFD32A57768238
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_gcc.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 42E8B722917508A3A9373D13AD827ED6
-- generatedChecksum: 376D5C7FD29CAA507ACB1AAB8746B1AD
+  userChecksum: 4DC978B079559EB044AFD32A57768238
+- generatedChecksum: 11521476050CAC6C1F3A91A5BB5DBB9A
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_iccarm.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 376D5C7FD29CAA507ACB1AAB8746B1AD
+  userChecksum: 11521476050CAC6C1F3A91A5BB5DBB9A
 - generatedChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cmsis_version.h
@@ -349,13 +349,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: D52B75795BFE7A8E546EA138802E0B2C
-- generatedChecksum: B96ADDA2C111E73B26EBA5E7B4498912
+- generatedChecksum: 47E760D36E42A7B436306A9CB4E72A0E
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: mpu_armv7.h
   physicalPath: ../../packs/CMSIS/CMSIS/Core/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: B96ADDA2C111E73B26EBA5E7B4498912
+  userChecksum: 47E760D36E42A7B436306A9CB4E72A0E
 - generatedChecksum: 76FD5005FB1AFBF37C7AC2EAFCC19A03
   logicalPath: packs/ATSAMD21G17D_DFP/component
   name: mtb.h
@@ -440,13 +440,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 55ECCC7FA71BD15B46EF80DC0515ED7A
-- generatedChecksum: 3134CB788FEE7FBE82BD3D975277F6FC
+- generatedChecksum: F6BBC59D0CA0AC244AEB44971AD6DF0B
   logicalPath: config/sam_d21_cnano/peripheral/nvmctrl
   name: plib_nvmctrl.h
   physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3134CB788FEE7FBE82BD3D975277F6FC
+  userChecksum: F6BBC59D0CA0AC244AEB44971AD6DF0B
 - generatedChecksum: DCA365D4720AA4F10A36A3AAD95B10FD
   logicalPath: config/sam_d21_cnano/peripheral/port
   name: plib_port.h
@@ -461,13 +461,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 0330B7984BD38905C639211ECCA77B15
-- generatedChecksum: C17C1F472E4444F4137508A76B0A8B12
+- generatedChecksum: 231433A77B48657B45E03C9B4159B670
   logicalPath: config/sam_d21_cnano/peripheral/sercom/spi_master
   name: plib_sercom1_spi_master.h
   physicalPath: peripheral/sercom/spi_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: C17C1F472E4444F4137508A76B0A8B12
+  userChecksum: 231433A77B48657B45E03C9B4159B670
 - generatedChecksum: 50E4F02F3767097B441D2DD6A0CADBEE
   logicalPath: config/sam_d21_cnano/peripheral/sercom/usart
   name: plib_sercom5_usart.h
@@ -489,13 +489,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
-- generatedChecksum: ECFF0E9EE11EE125D8A3B96216E5CF08
+- generatedChecksum: 027E162B77BD706BD926BA58673B505C
   logicalPath: config/sam_d21_cnano/peripheral/systick
   name: plib_systick.h
   physicalPath: peripheral/systick
   security: NON_SECURE
   type: HEADER
-  userChecksum: ECFF0E9EE11EE125D8A3B96216E5CF08
+  userChecksum: 027E162B77BD706BD926BA58673B505C
 - generatedChecksum: 90CEC513DD3DE6A0138FFBE167EA7CAD
   logicalPath: packs/ATSAMD21G17D_DFP/component
   name: pm.h
@@ -713,13 +713,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 41BCE99CCA2B7B2FE3E63DF91C97D58E
-- generatedChecksum: 20E829A99B86C2889E4E2E536161C27A
+- generatedChecksum: 5A6CE947CB477E5554790DE371B7FBAB
   logicalPath: config/sam_d21_cnano
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 20E829A99B86C2889E4E2E536161C27A
+  userChecksum: 5A6CE947CB477E5554790DE371B7FBAB
 - generatedChecksum: 901FEFCF1878CFB5CC31D5BB9E3312F4
   logicalPath: packs/ATSAMD21G17D_DFP/component
   name: usb.h
