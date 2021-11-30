@@ -21,13 +21,7 @@
  */
 
 /* file generated from device description version 2021-03-23T20:32:05Z */
-#ifndef _PIC32CMMC00_FREQM_INSTANCE_
-#define _PIC32CMMC00_FREQM_INSTANCE_
+#ifndef _PIC32CMMC00_FUSES_INSTANCE_
+#define _PIC32CMMC00_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for FREQM peripheral ========== */
-#define FREQM_GCLK_ID_MSR                        _UL_(3)    /* Index of measure generic clock */
-#define FREQM_GCLK_ID_REF                        _UL_(4)    /* Index of reference generic clock */
-#define FREQM_INSTANCE_ID                        _UL_(11)   /* Instance index for FREQM */
-
-#endif /* _PIC32CMMC00_FREQM_INSTANCE_ */
+#endif /* _PIC32CMMC00_FUSES_INSTANCE_ */

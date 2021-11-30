@@ -1,5 +1,5 @@
-/**
- * \brief Component description for DAC
+/*
+ * Component description for DAC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:01Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CMMC00_DAC_COMPONENT_H_
 #define _PIC32CMMC00_DAC_COMPONENT_H_
 

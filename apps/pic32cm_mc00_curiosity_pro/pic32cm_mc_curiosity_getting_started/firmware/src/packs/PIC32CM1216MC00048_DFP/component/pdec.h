@@ -1,5 +1,5 @@
-/**
- * \brief Component description for PDEC
+/*
+ * Component description for PDEC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:01Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CMMC00_PDEC_COMPONENT_H_
 #define _PIC32CMMC00_PDEC_COMPONENT_H_
 
@@ -160,10 +160,8 @@
 #define PDEC_EVCTRL_EVACT(value)              (PDEC_EVCTRL_EVACT_Msk & ((value) << PDEC_EVCTRL_EVACT_Pos))
 #define   PDEC_EVCTRL_EVACT_OFF_Val           _U_(0x0)                                             /**< (PDEC_EVCTRL) Event action disabled  */
 #define   PDEC_EVCTRL_EVACT_RETRIGGER_Val     _U_(0x1)                                             /**< (PDEC_EVCTRL) Start, restart or retrigger on event  */
-#define   PDEC_EVCTRL_EVACT_COUNT_Val         _U_(0x2)                                             /**< (PDEC_EVCTRL) Count on event  */
 #define PDEC_EVCTRL_EVACT_OFF                 (PDEC_EVCTRL_EVACT_OFF_Val << PDEC_EVCTRL_EVACT_Pos) /**< (PDEC_EVCTRL) Event action disabled Position  */
 #define PDEC_EVCTRL_EVACT_RETRIGGER           (PDEC_EVCTRL_EVACT_RETRIGGER_Val << PDEC_EVCTRL_EVACT_Pos) /**< (PDEC_EVCTRL) Start, restart or retrigger on event Position  */
-#define PDEC_EVCTRL_EVACT_COUNT               (PDEC_EVCTRL_EVACT_COUNT_Val << PDEC_EVCTRL_EVACT_Pos) /**< (PDEC_EVCTRL) Count on event Position  */
 #define PDEC_EVCTRL_EVINV_Pos                 _U_(2)                                               /**< (PDEC_EVCTRL) Inverted Event Input Enable Position */
 #define PDEC_EVCTRL_EVINV_Msk                 (_U_(0x7) << PDEC_EVCTRL_EVINV_Pos)                  /**< (PDEC_EVCTRL) Inverted Event Input Enable Mask */
 #define PDEC_EVCTRL_EVINV(value)              (PDEC_EVCTRL_EVINV_Msk & ((value) << PDEC_EVCTRL_EVINV_Pos))
