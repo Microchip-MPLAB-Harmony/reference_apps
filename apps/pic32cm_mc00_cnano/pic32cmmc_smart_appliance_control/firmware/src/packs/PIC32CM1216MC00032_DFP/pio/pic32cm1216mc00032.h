@@ -1,5 +1,5 @@
-/**
- * \brief Peripheral I/O description for PIC32CM1216MC00032
+/*
+ * Peripheral I/O description for PIC32CM1216MC00032
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:00Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CM1216MC00032_GPIO_H_
 #define _PIC32CM1216MC00032_GPIO_H_
 

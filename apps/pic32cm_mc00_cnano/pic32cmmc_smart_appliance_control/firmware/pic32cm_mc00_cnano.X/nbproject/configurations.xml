@@ -165,6 +165,7 @@
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/component/tsens.h</itemPath>
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/PIC32CM1216MC00032_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/instance/ac.h</itemPath>
@@ -207,6 +208,7 @@
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/instance/tcc2.h</itemPath>
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/instance/tsens.h</itemPath>
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/PIC32CM1216MC00032_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/PIC32CM1216MC00032_DFP/pio/pic32cm1216mc00032.h</itemPath>
@@ -341,6 +343,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32cm_mc00_cnano/harmony-manifest-success.yml</itemPath>
+      <itemPath>smart_appliance_control_pic32cm_mc00_cnano.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -354,7 +357,7 @@
         <targetDevice>PIC32CM1216MC00032</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>nEdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
@@ -385,7 +388,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>(if not exist $(ProjectDir)\..\..\hex mkdir $(ProjectDir)\..\..\hex) &amp; (copy "$(ProjectDir)\dist\$(ConfName)\production"\"*.hex" "$(ProjectDir)\..\..\hex\")</makeCustomizationPostStep>
+        <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; mkdir ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/${ImagePath} ${ProjectDir}/../../hex/ </makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -423,7 +426,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32cm_mc00_cnano;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM1216MC00032_DFP"/>
+                  value="../src;../src/config/pic32cm_mc00_cnano;../src/packs/PIC32CM1216MC00032_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -521,7 +524,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32cm_mc00_cnano;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM1216MC00032_DFP"/>
+                  value="../src;../src/config/pic32cm_mc00_cnano;../src/packs/PIC32CM1216MC00032_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

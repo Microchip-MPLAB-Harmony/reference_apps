@@ -586,7 +586,7 @@ void eink_image_bmp(const uint8_t* img )
 {
     uint8_t     cmd;
     uint8_t     tmp;
-    uint8_t     tmp_pix;
+    uint8_t     tmp_pix = 0;
     uint16_t    cnt;
     uint16_t    fr_cnt;
     uint16_t    pixel;

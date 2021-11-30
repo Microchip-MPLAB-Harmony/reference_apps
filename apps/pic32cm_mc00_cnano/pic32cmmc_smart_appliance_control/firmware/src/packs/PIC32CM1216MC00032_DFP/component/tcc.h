@@ -1,5 +1,5 @@
-/**
- * \brief Component description for TCC
+/*
+ * Component description for TCC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:00Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CMMC00_TCC_COMPONENT_H_
 #define _PIC32CMMC00_TCC_COMPONENT_H_
 
@@ -79,9 +79,6 @@
 #define TCC_CTRLA_PRESCSYNC_GCLK              (TCC_CTRLA_PRESCSYNC_GCLK_Val << TCC_CTRLA_PRESCSYNC_Pos) /**< (TCC_CTRLA) Reload or reset counter on next GCLK Position  */
 #define TCC_CTRLA_PRESCSYNC_PRESC             (TCC_CTRLA_PRESCSYNC_PRESC_Val << TCC_CTRLA_PRESCSYNC_Pos) /**< (TCC_CTRLA) Reload or reset counter on next prescaler clock Position  */
 #define TCC_CTRLA_PRESCSYNC_RESYNC            (TCC_CTRLA_PRESCSYNC_RESYNC_Val << TCC_CTRLA_PRESCSYNC_Pos) /**< (TCC_CTRLA) Reload or reset counter on next GCLK and reset prescaler counter Position  */
-#define TCC_CTRLA_ALOCK_Pos                   _U_(14)                                              /**< (TCC_CTRLA) Auto Lock Position */
-#define TCC_CTRLA_ALOCK_Msk                   (_U_(0x1) << TCC_CTRLA_ALOCK_Pos)                    /**< (TCC_CTRLA) Auto Lock Mask */
-#define TCC_CTRLA_ALOCK(value)                (TCC_CTRLA_ALOCK_Msk & ((value) << TCC_CTRLA_ALOCK_Pos))
 #define TCC_CTRLA_MSYNC_Pos                   _U_(15)                                              /**< (TCC_CTRLA) Master Synchronization (only for TCC Slave Instance) Position */
 #define TCC_CTRLA_MSYNC_Msk                   (_U_(0x1) << TCC_CTRLA_MSYNC_Pos)                    /**< (TCC_CTRLA) Master Synchronization (only for TCC Slave Instance) Mask */
 #define TCC_CTRLA_MSYNC(value)                (TCC_CTRLA_MSYNC_Msk & ((value) << TCC_CTRLA_MSYNC_Pos))
@@ -100,7 +97,7 @@
 #define TCC_CTRLA_CPTEN3_Pos                  _U_(27)                                              /**< (TCC_CTRLA) Capture Channel 3 Enable Position */
 #define TCC_CTRLA_CPTEN3_Msk                  (_U_(0x1) << TCC_CTRLA_CPTEN3_Pos)                   /**< (TCC_CTRLA) Capture Channel 3 Enable Mask */
 #define TCC_CTRLA_CPTEN3(value)               (TCC_CTRLA_CPTEN3_Msk & ((value) << TCC_CTRLA_CPTEN3_Pos))
-#define TCC_CTRLA_Msk                         _U_(0x0F80FF63)                                      /**< (TCC_CTRLA) Register Mask  */
+#define TCC_CTRLA_Msk                         _U_(0x0F80BF63)                                      /**< (TCC_CTRLA) Register Mask  */
 
 #define TCC_CTRLA_CPTEN_Pos                   _U_(24)                                              /**< (TCC_CTRLA Position) Capture Channel 3 Enable */
 #define TCC_CTRLA_CPTEN_Msk                   (_U_(0xF) << TCC_CTRLA_CPTEN_Pos)                    /**< (TCC_CTRLA Mask) CPTEN */
