@@ -252,7 +252,7 @@ void APP_Initialize ( void );
   Remarks:
     This routine must be called from SYS_Tasks() routine.
  */
-
+void APP_Tasks(void);
 void APP_Tasks_SD_FS( void );
 void APP_Tasks_USB( void );
 void APP_Tasks_ADC(void);

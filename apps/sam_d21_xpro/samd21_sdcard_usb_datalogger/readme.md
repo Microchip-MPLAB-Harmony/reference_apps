@@ -64,7 +64,7 @@ Refer [Project Manifest](./firmware/src/config/sam_d21_xpro/harmony-manifest-suc
 - Insert microSD(upto 32GB) card on to the [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/developmenttools/ProductDetails/ATIO1-XPRO)  
 
 - The SAM D21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM D21 Xplained Pro Evaluation Kit
-
+  
   <img title="" src="images/boardsetup.jpeg" alt="" width="449" height="425" align="middle">
 
 ## Programming hex file:
@@ -99,16 +99,18 @@ The pre-built hex file can be programmed by following the below steps
 2. To read the logged light intensity values, connect the Target USB port on the board to the computer using a micro USB cable.
 
 3. LED0 is illuminated when SD card is enumerated as a Mass Storage Device by the USB host.(see below image)
-
+   
    <img src = "images/sdcardenumerated.jpeg">
 
 4. Access the LS_LOG.txt via USB inside the Dir1 folder.(see below image)
-
+   
    <img src = "images/logfile.jpeg">
 
 5. The sample log file looks as below.
-
+   
    <img src = "images/samplelogged data.jpeg">
+   
+   6. Always eject the USB drive before removing it.
 
 ## Comments:
 

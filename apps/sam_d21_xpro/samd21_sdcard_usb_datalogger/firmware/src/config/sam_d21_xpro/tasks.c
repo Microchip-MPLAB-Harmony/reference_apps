@@ -93,13 +93,11 @@ SYS_FS_Tasks();
 
     /* Maintain the application's state machine. */
         /* Call Application task APP. */
-    APP_Tasks_SD_FS();
+    APP_Tasks();
 
-    APP_Tasks_USB();
 
-    APP_Tasks_ADC();
-    CheckKeyPress();
-   
+
+
 }
 
 /*******************************************************************************

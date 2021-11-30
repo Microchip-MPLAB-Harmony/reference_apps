@@ -60,7 +60,8 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-     
+    ADC_Enable();
+    
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */

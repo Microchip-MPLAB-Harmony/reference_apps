@@ -374,6 +374,16 @@ void APP_Tasks_USB ( void )
     }
 }
 
+void APP_Tasks(void)
+{
+    APP_Tasks_SD_FS();
+
+    APP_Tasks_USB();
+
+    APP_Tasks_ADC();
+    CheckKeyPress();
+}
+    
 void APP_Tasks_ADC(void)
 {
     /* Start ADC conversion */
