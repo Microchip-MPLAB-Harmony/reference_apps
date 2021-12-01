@@ -56,7 +56,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "configuration.h"
 #include "driver/driver_common.h"
 #include "driver/ethphy/drv_ethphy.h"
 
@@ -101,23 +100,16 @@ typedef struct
 {	
 	/** RX Descriptor count */
 	uint16_t nRxDescCnt;
-    /* Number of MAC dedicated RX buffers */
-    /* These buffers/packets are owned by the MAC and are not returned to the packet pool */
-    /* They are allocated at MAC initialization time using pktAllocF */ 
-    /* and freed at MAC de-initialize time using pktFreeF */
-    /* Could be 0, if only not dedicated buffers are needed. */
-    /* For best performance usually it's best to have some dedicated buffers */
-    /* so as to minimize the run time allocations */
-    uint16_t nRxDedicatedBuffers;
-    /* Number Additional RX buffer allocated during MAC initialization */
-    /* These buffers/packets are freed during runtime */
-	uint16_t nRxAddlBuffCount;
+    /** RX buffer count */
+	uint16_t nRxBuffCount;
     /** RX buffer count threshold */
 	uint16_t nRxBuffCntThres;
     /** RX buffer allocate count */
 	uint16_t nRxBuffAllocCnt;
 	/** TX Descriptor count */
 	uint16_t nTxDescCnt;	
+	/** TX buffer size */
+	uint16_t txBufferSize;
     /** Max TX Packet size */
     uint16_t txMaxPktSize;
 	/** RX buffer size */
@@ -666,7 +658,7 @@ TCPIP_MAC_RES DRV_GMAC_PacketTx(DRV_HANDLE hMac, TCPIP_MAC_PACKET * ptrPacket);
 
 // *****************************************************************************
 /* Function:
-    TCPIP_MAC_PACKET* DRV_GMAC_PacketRx (DRV_HANDLE hMac, TCPIP_MAC_RES* pRes, TCPIP_MAC_PACKET_RX_STAT* pPktStat);
+    TCPIP_MAC_PACKET* DRV_GMAC_PacketRx (DRV_HANDLE hMac, TCPIP_MAC_RES* pRes, const TCPIP_MAC_PACKET_RX_STAT** ppPktStat);
 
   Summary:
     This is the MAC receive function.
@@ -676,7 +668,7 @@ TCPIP_MAC_RES DRV_GMAC_PacketTx(DRV_HANDLE hMac, TCPIP_MAC_PACKET * ptrPacket);
     This function will return a packet if such a pending packet exists.
     
     Additional information about the packet is available by providing the pRes and
-    pPktStat fields.
+    ppPktStat fields.
 
   Precondition:
     DRV_GMAC_Initialize() should have been called.
@@ -687,7 +679,10 @@ TCPIP_MAC_RES DRV_GMAC_PacketTx(DRV_HANDLE hMac, TCPIP_MAC_PACKET * ptrPacket);
     - pRes        - optional pointer to an address that will receive an additional
                     result associated with the operation.
                     Can be 0 if not needed.
-    - pPktStat    - optional pointer to an address where to copy the received packet status.
+    - ppPktStat   - optional pointer to an address that will receive the received
+                    packet status.
+                    Note that this pointer cannot be used once the packet
+                    acknowledgment function was called.
                     Can be 0 if not needed.
 
 
@@ -726,7 +721,7 @@ TCPIP_MAC_RES DRV_GMAC_PacketTx(DRV_HANDLE hMac, TCPIP_MAC_PACKET * ptrPacket);
     - The MAC driver may use the DRV_GMAC_Process() for obtaining new RX packets if needed.
 
 */
-TCPIP_MAC_PACKET* DRV_GMAC_PacketRx (DRV_HANDLE hMac, TCPIP_MAC_RES* pRes, TCPIP_MAC_PACKET_RX_STAT* pPktStat);
+TCPIP_MAC_PACKET* DRV_GMAC_PacketRx (DRV_HANDLE hMac, TCPIP_MAC_RES* pRes, const TCPIP_MAC_PACKET_RX_STAT** ppPktStat);
 
 
 /*****************************************************************************

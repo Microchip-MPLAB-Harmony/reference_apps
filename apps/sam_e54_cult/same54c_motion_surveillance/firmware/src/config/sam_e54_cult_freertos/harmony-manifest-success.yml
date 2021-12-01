@@ -4,7 +4,7 @@
 
 
 project: same54c_motion_surveillance
-creation_date: 2021-11-29T20:28:39.044+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-12-02T02:34:07.409+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.2
@@ -16,8 +16,9 @@ modules:
     - {name: "core", version: "v3.10.0"}
     - {name: "csp", version: "v3.10.0"}
     - {name: "dev_packs", version: "v3.10.0"}
+    - {name: "littlefs", version: "v2.4.0"}
     - {name: "wolfssl", version: "unknown"}
-    - {name: "net", version: "v3.7.3"}
+    - {name: "net", version: "v3.7.2"}
     - {name: "bsp", version: "v3.10.0"}
     - {name: "crypto", version: "v3.7.4"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.1"}

@@ -273,7 +273,7 @@ typedef struct
      BSD operations.
 
    Precondition:
-     Berkeley API module should have been initialized.
+     BerkeleySocketInit function should be called.
 
    Parameters:
    af       - address family - AF_INET for IPv4, AF_INET6 for IPv6
