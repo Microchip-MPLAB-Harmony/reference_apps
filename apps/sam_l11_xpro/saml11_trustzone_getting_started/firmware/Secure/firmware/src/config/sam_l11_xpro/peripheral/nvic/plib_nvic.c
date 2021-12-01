@@ -63,9 +63,6 @@ void NVIC_Initialize( void )
     NVIC_EnableIRQ(EIC_OTHER_IRQn);
     NVIC_SetTargetState(DMAC_0_IRQn);
     NVIC_SetTargetState(DMAC_1_IRQn);
-    NVIC_SetTargetState(DMAC_2_IRQn);
-    NVIC_SetTargetState(DMAC_3_IRQn);
-    NVIC_SetTargetState(DMAC_OTHER_IRQn);
     NVIC_SetTargetState(SERCOM0_0_IRQn);
     NVIC_SetTargetState(SERCOM0_1_IRQn);
     NVIC_SetTargetState(SERCOM0_2_IRQn);

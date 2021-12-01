@@ -64,6 +64,8 @@
 #pragma config WDT_EWOFFSET = 0xB
 #pragma config WDT_WEN = CLEAR
 #pragma config BOD33_HYST = CLEAR
+#pragma config IDAU_RXN = SET
+#pragma config NVMCTRL_DXN = SET
 #pragma config IDAU_AS = 0x80
 #pragma config IDAU_ANSC = 0x10
 #pragma config IDAU_DS = 0x8
@@ -82,7 +84,7 @@
 #pragma config NONSECA_EIC = CLEAR
 #pragma config NONSECA_FREQM = CLEAR
 #pragma config NONSECA_PORT = CLEAR
-#pragma config NONSECA_AC = CLEAR
+#pragma config NONSECA_AC = SET
 #pragma config NONSECB_IDAU = CLEAR
 #pragma config NONSECB_DSU = SET
 #pragma config NONSECB_NVMCTRL = CLEAR

@@ -40,4 +40,4 @@ children:
       - type: User
         attributes: {value: '512'}
 - type: ElementPosition
-  attributes: {x: '310', y: '120', id: rtc}
+  attributes: {x: '306', y: '117', id: rtc}

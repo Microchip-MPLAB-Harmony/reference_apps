@@ -79,6 +79,9 @@ void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, no
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void DMAC_2_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void DMAC_3_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void DMAC_OTHER_Handler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
 
 
 
@@ -100,9 +103,9 @@ const H3DeviceVectors exception_table=
     .pfnSysTick_Handler            = SysTick_Handler,
     .pfnDMAC_0_Handler             = DMAC_0_InterruptHandler,
     .pfnDMAC_1_Handler             = DMAC_1_InterruptHandler,
-    .pfnDMAC_2_Handler             = DMAC_2_InterruptHandler,
-    .pfnDMAC_3_Handler             = DMAC_3_InterruptHandler,
-    .pfnDMAC_OTHER_Handler         = DMAC_OTHER_InterruptHandler,
+    .pfnDMAC_2_Handler             = DMAC_2_Handler,
+    .pfnDMAC_3_Handler             = DMAC_3_Handler,
+    .pfnDMAC_OTHER_Handler         = DMAC_OTHER_Handler,
     .pfnSERCOM0_0_Handler          = SERCOM0_USART_InterruptHandler,
     .pfnSERCOM0_1_Handler          = SERCOM0_USART_InterruptHandler,
     .pfnSERCOM0_2_Handler          = SERCOM0_USART_InterruptHandler,
