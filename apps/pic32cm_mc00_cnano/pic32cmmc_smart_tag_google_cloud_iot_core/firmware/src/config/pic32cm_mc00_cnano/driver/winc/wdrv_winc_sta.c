@@ -155,7 +155,9 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
     /* Ensure the authentication type is valid, if present. */
     if ((NULL != pAuthCtx) && (WDRV_WINC_AUTH_TYPE_OPEN != pAuthCtx->authType)
                            && (WDRV_WINC_AUTH_TYPE_WPA_PSK != pAuthCtx->authType)
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
                            && (WDRV_WINC_AUTH_TYPE_WEP != pAuthCtx->authType)
+#endif
 #ifdef WDRV_WINC_DEVICE_ENTERPRISE_CONNECT
                            && (WDRV_WINC_AUTH_TYPE_802_1X_MSCHAPV2 != pAuthCtx->authType)
                            && (WDRV_WINC_AUTH_TYPE_802_1X_TLS != pAuthCtx->authType)
@@ -241,6 +243,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
                                     pAuthCtx->authType, (void*)&pAuthCtx->authInfo.WPAPerPSK.key, channel);
 #endif
     }
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
     else if (WDRV_WINC_AUTH_TYPE_WEP == pAuthCtx->authType)
     {
         /* Connect using WEP authentication. */
@@ -265,6 +268,7 @@ WDRV_WINC_STATUS WDRV_WINC_BSSConnect
                                     pAuthCtx->authType, (void*)&wepParams, channel);
 #endif
     }
+#endif
 #ifdef WDRV_WINC_DEVICE_ENTERPRISE_CONNECT
     else if (WDRV_WINC_AUTH_TYPE_802_1X_MSCHAPV2 == pAuthCtx->authType)
     {

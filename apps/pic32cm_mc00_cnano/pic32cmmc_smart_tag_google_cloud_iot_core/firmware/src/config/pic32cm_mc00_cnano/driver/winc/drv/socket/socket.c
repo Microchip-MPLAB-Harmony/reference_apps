@@ -144,55 +144,38 @@ Date
 static void Socket_ReadSocketData(SOCKET sock, tstrSocketRecvMsg *pstrRecv,uint8_t u8SocketMsg,
                                   uint32_t u32StartAddress,uint16_t u16ReadCount)
 {
+    uint32_t  u32Address = u32StartAddress;
+    uint16_t  u16Read;
+    int16_t   s16Diff;
+
+    pstrRecv->u16RemainingSize = u16ReadCount;
     if((u16ReadCount > 0) && (gastrSockets[sock].pu8UserBuffer != NULL) && (gastrSockets[sock].u16UserBufferSize > 0) && (gastrSockets[sock].bIsUsed == 1))
     {
-        uint32_t    u32Address = u32StartAddress;
-        uint16_t    u16Read;
-        int16_t s16Diff;
-        uint8_t u8SetRxDone;
-
-        pstrRecv->u16RemainingSize = u16ReadCount;
-        do
+        u16Read = u16ReadCount;
+        s16Diff = u16Read - gastrSockets[sock].u16UserBufferSize;
+        if(s16Diff > 0)
         {
-            u8SetRxDone = 1;
-            u16Read = u16ReadCount;
-            s16Diff = u16Read - gastrSockets[sock].u16UserBufferSize;
-            if(s16Diff > 0)
-            {
-                /* We don't expect to be here. Firmware 19.6.4 and later only sends data to the driver according to the application's buffer size.
-                 * But it is worth keeping this check, eg in case the application calls recv again with a smaller buffer size, or in case of HIF hacking. */
-                u8SetRxDone = 0;
-                u16Read     = gastrSockets[sock].u16UserBufferSize;
-            }
+            /* We don't expect to be here. Firmware 19.6.4 and later only sends data to the driver according to the application's buffer size.
+             * But it is worth keeping this check, eg in case the application calls recv again with a smaller buffer size, or in case of HIF hacking. */
+            u16Read = gastrSockets[sock].u16UserBufferSize;
+        }
 
-            if(hif_receive(u32Address, gastrSockets[sock].pu8UserBuffer, u16Read, u8SetRxDone) == M2M_SUCCESS)
-            {
-                pstrRecv->pu8Buffer         = gastrSockets[sock].pu8UserBuffer;
-                pstrRecv->s16BufferSize     = u16Read;
-                pstrRecv->u16RemainingSize  -= u16Read;
+        if(hif_receive(u32Address, gastrSockets[sock].pu8UserBuffer, u16Read, 1) == M2M_SUCCESS)
+        {
+            pstrRecv->pu8Buffer         = gastrSockets[sock].pu8UserBuffer;
+            pstrRecv->s16BufferSize     = u16Read;
+            pstrRecv->u16RemainingSize  -= u16Read;
 
-                if (gpfAppSocketCb)
-                    gpfAppSocketCb(sock,u8SocketMsg, pstrRecv);
+            gastrSockets[sock].u16UserBufferSize = 0;
+            gastrSockets[sock].pu8UserBuffer = NULL;
 
-                u16ReadCount -= u16Read;
-                u32Address += u16Read;
-
-                if((!gastrSockets[sock].bIsUsed) && (u16ReadCount))
-                {
-                    M2M_DBG("Application Closed Socket While Rx Is not Complete\r\n");
-                    if(hif_receive(0, NULL, 0, 1) == M2M_SUCCESS)
-                        M2M_DBG("hif_receive Success\r\n");
-                    else
-                        M2M_DBG("hif_receive Fail\r\n");
-                    break;
-                }
-            }
-            else
-            {
-                M2M_INFO("(ERRR)Current <%d>\r\n", u16ReadCount);
-                break;
-            }
-        } while(u16ReadCount != 0);
+            if(gpfAppSocketCb)
+                gpfAppSocketCb(sock, u8SocketMsg, pstrRecv);
+        }
+        else
+        {
+            M2M_ERR("Current <%d>\r\n", u16ReadCount);
+        }
     }
 }
 
@@ -383,10 +366,8 @@ static void m2m_ip_cb(uint8_t u8OpCode, uint16_t u16BufferSize,uint32_t u32Addre
                     M2M_DBG("Discard recv callback %d %d\r\n",u16SessionID , gastrSockets[sock].u16SessionID);
                     if(u16ReadSize < u16BufferSize)
                     {
-                        if(hif_receive(0, NULL, 0, 1) == M2M_SUCCESS)
-                            M2M_DBG("hif_receive Success\r\n");
-                        else
-                            M2M_DBG("hif_receive Fail\r\n");
+                        if(hif_receive(0, NULL, 0, 1) != M2M_SUCCESS)
+                            M2M_ERR("hif rx done failed\r\n");
                     }
                 }
             }

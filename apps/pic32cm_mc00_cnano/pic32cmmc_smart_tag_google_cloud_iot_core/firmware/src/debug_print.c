@@ -28,6 +28,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
 #include "debug_print.h"
 #include "definitions.h"
 

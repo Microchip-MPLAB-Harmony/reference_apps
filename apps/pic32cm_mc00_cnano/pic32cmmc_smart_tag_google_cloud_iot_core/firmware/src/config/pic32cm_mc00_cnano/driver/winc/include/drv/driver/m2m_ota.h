@@ -154,7 +154,7 @@ typedef void (*tpfOtaUpdateCb)(uint8_t u8OtaUpdateStatusType, uint8_t u8OtaUpdat
 typedef void (*tpfFileGetCb)(uint8_t u8Status, uint8_t u8Handler, uint32_t u32Size);
 
 /*!
-@typedef void (*tpfFileReadCb) (uint8_t u8Status, void *pBuff, uint32_t u32Size);
+@typedef void (*tpfFileReadCb) (uint8_t u8Status, uint8_t *pBuff, uint32_t u32Size);
 
 @brief
    A callback to handle a buffer of data after requesting a Host File read.
@@ -174,7 +174,7 @@ typedef void (*tpfFileGetCb)(uint8_t u8Status, uint8_t u8Handler, uint32_t u32Si
 @warning
     After the callback is executed, pBuff will be freed.
  */
-typedef void (*tpfFileReadCb)(uint8_t u8Status, void *pBuff, uint32_t u32Size);
+typedef void (*tpfFileReadCb)(uint8_t u8Status, uint8_t *pBuff, uint32_t u32Size);
 
 /*!
 @typedef void (*tpfFileEraseCb) (uint8_t u8Status);

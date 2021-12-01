@@ -1,5 +1,5 @@
-/**
- * \brief Component description for SERCOM
+/*
+ * Component description for SERCOM
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:00Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CMMC00_SERCOM_COMPONENT_H_
 #define _PIC32CMMC00_SERCOM_COMPONENT_H_
 
@@ -1594,15 +1594,12 @@
 #define SERCOM_I2CS_ADDR_GENCEN_Msk           (_U_(0x1) << SERCOM_I2CS_ADDR_GENCEN_Pos)            /**< (SERCOM_I2CS_ADDR) General Call Address Enable Mask */
 #define SERCOM_I2CS_ADDR_GENCEN(value)        (SERCOM_I2CS_ADDR_GENCEN_Msk & ((value) << SERCOM_I2CS_ADDR_GENCEN_Pos))
 #define SERCOM_I2CS_ADDR_ADDR_Pos             _U_(1)                                               /**< (SERCOM_I2CS_ADDR) Address Value Position */
-#define SERCOM_I2CS_ADDR_ADDR_Msk             (_U_(0x3FF) << SERCOM_I2CS_ADDR_ADDR_Pos)            /**< (SERCOM_I2CS_ADDR) Address Value Mask */
+#define SERCOM_I2CS_ADDR_ADDR_Msk             (_U_(0x7F) << SERCOM_I2CS_ADDR_ADDR_Pos)             /**< (SERCOM_I2CS_ADDR) Address Value Mask */
 #define SERCOM_I2CS_ADDR_ADDR(value)          (SERCOM_I2CS_ADDR_ADDR_Msk & ((value) << SERCOM_I2CS_ADDR_ADDR_Pos))
-#define SERCOM_I2CS_ADDR_TENBITEN_Pos         _U_(15)                                              /**< (SERCOM_I2CS_ADDR) Ten Bit Addressing Enable Position */
-#define SERCOM_I2CS_ADDR_TENBITEN_Msk         (_U_(0x1) << SERCOM_I2CS_ADDR_TENBITEN_Pos)          /**< (SERCOM_I2CS_ADDR) Ten Bit Addressing Enable Mask */
-#define SERCOM_I2CS_ADDR_TENBITEN(value)      (SERCOM_I2CS_ADDR_TENBITEN_Msk & ((value) << SERCOM_I2CS_ADDR_TENBITEN_Pos))
 #define SERCOM_I2CS_ADDR_ADDRMASK_Pos         _U_(17)                                              /**< (SERCOM_I2CS_ADDR) Address Mask Position */
-#define SERCOM_I2CS_ADDR_ADDRMASK_Msk         (_U_(0x3FF) << SERCOM_I2CS_ADDR_ADDRMASK_Pos)        /**< (SERCOM_I2CS_ADDR) Address Mask Mask */
+#define SERCOM_I2CS_ADDR_ADDRMASK_Msk         (_U_(0x7F) << SERCOM_I2CS_ADDR_ADDRMASK_Pos)         /**< (SERCOM_I2CS_ADDR) Address Mask Mask */
 #define SERCOM_I2CS_ADDR_ADDRMASK(value)      (SERCOM_I2CS_ADDR_ADDRMASK_Msk & ((value) << SERCOM_I2CS_ADDR_ADDRMASK_Pos))
-#define SERCOM_I2CS_ADDR_Msk                  _U_(0x07FE87FF)                                      /**< (SERCOM_I2CS_ADDR) Register Mask  */
+#define SERCOM_I2CS_ADDR_Msk                  _U_(0x00FE00FF)                                      /**< (SERCOM_I2CS_ADDR) Register Mask  */
 
 
 /* -------- SERCOM_SPIM_ADDR : (SERCOM Offset: 0x24) (R/W 32) SPIM Address -------- */
@@ -1710,24 +1707,6 @@
 #define SERCOM_SPIS_DBGCTRL_Msk               _U_(0x01)                                            /**< (SERCOM_SPIS_DBGCTRL) Register Mask  */
 
 
-/* -------- SERCOM_USART_EXT_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) USART_EXT Debug Control -------- */
-#define SERCOM_USART_EXT_DBGCTRL_RESETVALUE   _U_(0x00)                                            /**<  (SERCOM_USART_EXT_DBGCTRL) USART_EXT Debug Control  Reset Value */
-
-#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos  _U_(0)                                               /**< (SERCOM_USART_EXT_DBGCTRL) Debug Mode Position */
-#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Msk  (_U_(0x1) << SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos)   /**< (SERCOM_USART_EXT_DBGCTRL) Debug Mode Mask */
-#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP(value) (SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Msk & ((value) << SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos))
-#define SERCOM_USART_EXT_DBGCTRL_Msk          _U_(0x01)                                            /**< (SERCOM_USART_EXT_DBGCTRL) Register Mask  */
-
-
-/* -------- SERCOM_USART_INT_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) USART_INT Debug Control -------- */
-#define SERCOM_USART_INT_DBGCTRL_RESETVALUE   _U_(0x00)                                            /**<  (SERCOM_USART_INT_DBGCTRL) USART_INT Debug Control  Reset Value */
-
-#define SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos  _U_(0)                                               /**< (SERCOM_USART_INT_DBGCTRL) Debug Mode Position */
-#define SERCOM_USART_INT_DBGCTRL_DBGSTOP_Msk  (_U_(0x1) << SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos)   /**< (SERCOM_USART_INT_DBGCTRL) Debug Mode Mask */
-#define SERCOM_USART_INT_DBGCTRL_DBGSTOP(value) (SERCOM_USART_INT_DBGCTRL_DBGSTOP_Msk & ((value) << SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos))
-#define SERCOM_USART_INT_DBGCTRL_Msk          _U_(0x01)                                            /**< (SERCOM_USART_INT_DBGCTRL) Register Mask  */
-
-
 /** \brief SERCOM register offsets definitions */
 #define SERCOM_I2CM_CTRLA_REG_OFST     (0x00)              /**< (SERCOM_I2CM_CTRLA) I2CM Control A Offset */
 #define SERCOM_I2CS_CTRLA_REG_OFST     (0x00)              /**< (SERCOM_I2CS_CTRLA) I2CS Control A Offset */
@@ -1793,8 +1772,6 @@
 #define SERCOM_I2CM_DBGCTRL_REG_OFST   (0x30)              /**< (SERCOM_I2CM_DBGCTRL) I2CM Debug Control Offset */
 #define SERCOM_SPIM_DBGCTRL_REG_OFST   (0x30)              /**< (SERCOM_SPIM_DBGCTRL) SPIM Debug Control Offset */
 #define SERCOM_SPIS_DBGCTRL_REG_OFST   (0x30)              /**< (SERCOM_SPIS_DBGCTRL) SPIS Debug Control Offset */
-#define SERCOM_USART_EXT_DBGCTRL_REG_OFST (0x30)              /**< (SERCOM_USART_EXT_DBGCTRL) USART_EXT Debug Control Offset */
-#define SERCOM_USART_INT_DBGCTRL_REG_OFST (0x30)              /**< (SERCOM_USART_INT_DBGCTRL) USART_INT Debug Control Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief SERCOM register API structure */
@@ -1904,8 +1881,6 @@ typedef struct
   __I   uint32_t                       SERCOM_SYNCBUSY;    /**< Offset: 0x1C (R/   32) USART_EXT Synchronization Busy */
   __I   uint8_t                        Reserved5[0x08];
   __IO  uint16_t                       SERCOM_DATA;        /**< Offset: 0x28 (R/W  16) USART_EXT Data */
-  __I   uint8_t                        Reserved6[0x06];
-  __IO  uint8_t                        SERCOM_DBGCTRL;     /**< Offset: 0x30 (R/W  8) USART_EXT Debug Control */
 } sercom_usart_ext_registers_t;
 
 /** \brief SERCOM register API structure */
@@ -1927,8 +1902,6 @@ typedef struct
   __I   uint32_t                       SERCOM_SYNCBUSY;    /**< Offset: 0x1C (R/   32) USART_INT Synchronization Busy */
   __I   uint8_t                        Reserved5[0x08];
   __IO  uint16_t                       SERCOM_DATA;        /**< Offset: 0x28 (R/W  16) USART_INT Data */
-  __I   uint8_t                        Reserved6[0x06];
-  __IO  uint8_t                        SERCOM_DBGCTRL;     /**< Offset: 0x30 (R/W  8) USART_INT Debug Control */
 } sercom_usart_int_registers_t;
 
 /** \brief SERCOM hardware registers */

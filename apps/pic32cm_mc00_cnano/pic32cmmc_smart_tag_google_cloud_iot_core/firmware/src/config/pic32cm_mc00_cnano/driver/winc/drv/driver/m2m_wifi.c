@@ -330,29 +330,9 @@ static int8_t m2m_validate_ap_parameters(const tstrM2MAPModeConfig *pstrM2MAPMod
     }
     else if(pstrM2MAPModeConfig->strApConfig.u8SecType == M2M_WIFI_SEC_WEP)
     {
-        /* Check for WEP Key index */
-        if((pstrM2MAPModeConfig->strApConfig.u8KeyIndx == 0) || (pstrM2MAPModeConfig->strApConfig.u8KeyIndx > WEP_KEY_MAX_INDEX))
-        {
-            M2M_ERR("INVALID KEY INDEX\r\n");
-            s8Ret = M2M_ERR_FAIL;
-            goto ERR1;
-        }
-        /* Check for WEP Key size */
-        if( (pstrM2MAPModeConfig->strApConfig.u8KeySz != WEP_40_KEY_STRING_SIZE) &&
-            (pstrM2MAPModeConfig->strApConfig.u8KeySz != WEP_104_KEY_STRING_SIZE)
-        )
-        {
-            M2M_ERR("INVALID KEY STRING SIZE\r\n");
-            s8Ret = M2M_ERR_FAIL;
-            goto ERR1;
-        }
-
-        if((strlen((const char*)pstrM2MAPModeConfig->strApConfig.au8WepKey) <= 0) || (strlen((const char*)pstrM2MAPModeConfig->strApConfig.au8WepKey) > WEP_104_KEY_STRING_SIZE))
-        {
-            M2M_ERR("INVALID KEY SIZE\r\n");
-            s8Ret = M2M_ERR_FAIL;
-            goto ERR1;
-        }
+        /* As of 19.7.5 the WEP protocol is deprecated */
+        s8Ret = M2M_ERR_FAIL;
+        goto ERR1;
     }
     else if(pstrM2MAPModeConfig->strApConfig.u8SecType == M2M_WIFI_SEC_WPA_PSK)
     {
@@ -662,42 +642,8 @@ int8_t m2m_wifi_connect_wep(
     tstrAuthWep         *pstrAuthWep
 )
 {
-    int8_t  ret = M2M_ERR_INVALID_ARG;
-
-    if (
-            (pstrAuthWep != NULL) && (pstrAuthWep->pu8WepKey != NULL)
-        &&  (pstrAuthWep->u8KeyIndx > 0) && (pstrAuthWep->u8KeyIndx <= WEP_KEY_MAX_INDEX)
-        &&  ((pstrAuthWep->u8KeySz == WEP_104_KEY_STRING_SIZE) || (pstrAuthWep->u8KeySz == WEP_40_KEY_STRING_SIZE))
-    )
-    {
-        tstrM2mWifiConnHdr  strConnHdr;
-
-        ret = m2m_wifi_connect_prepare_msg( enuCredStoreOption,
-                                            M2M_WIFI_SEC_WEP,
-                                            sizeof(tstrM2mWifiWep),
-                                            pstrNetworkId,
-                                            &strConnHdr);
-
-        if (ret == M2M_SUCCESS)
-        {
-            tstrM2mWifiWep  *pstrWep = (tstrM2mWifiWep*)malloc(sizeof(tstrM2mWifiWep));
-
-            if (pstrWep != NULL)
-            {
-                pstrWep->u8KeyIndex = pstrAuthWep->u8KeyIndx - 1;
-                pstrWep->u8KeyLen = pstrAuthWep->u8KeySz/2;
-                hexstr_2_bytes(pstrWep->au8WepKey, (pstrAuthWep->pu8WepKey), pstrWep->u8KeyLen);
-
-                ret = hif_send( M2M_REQ_GROUP_WIFI, M2M_WIFI_REQ_CONN | M2M_REQ_DATA_PKT,
-                                (uint8_t*)&strConnHdr, sizeof(tstrM2mWifiConnHdr),
-                                (uint8_t*)pstrWep, sizeof(tstrM2mWifiWep), sizeof(tstrM2mWifiConnHdr));
-                free(pstrWep);
-            }
-            else
-                ret = M2M_ERR_MEM_ALLOC;
-        }
-    }
-    return ret;
+    /* As of 19.7.5 the WEP protocol is deprecated */
+    return M2M_ERR_INVALID;
 }
 
 int8_t m2m_wifi_connect_psk(
@@ -720,7 +666,7 @@ int8_t m2m_wifi_connect_psk(
 
         if (ret == M2M_SUCCESS)
         {
-            tstrM2mWifiPsk  *pstrPsk = (tstrM2mWifiPsk*)malloc(sizeof(tstrM2mWifiPsk));
+            tstrM2mWifiPsk  *pstrPsk = (tstrM2mWifiPsk*)OSAL_Malloc(sizeof(tstrM2mWifiPsk));
 
             if (pstrPsk != NULL)
             {
@@ -756,7 +702,7 @@ int8_t m2m_wifi_connect_psk(
                                     (uint8_t*)&strConnHdr, sizeof(tstrM2mWifiConnHdr),
                                     (uint8_t*)pstrPsk, sizeof(tstrM2mWifiPsk), sizeof(tstrM2mWifiConnHdr));
                 }
-                free(pstrPsk);
+                OSAL_Free(pstrPsk);
             }
             else
             {
@@ -834,6 +780,7 @@ int8_t m2m_wifi_1x_set_option(tenu1xOption enuOptionName, const void *pOptionVal
         case 0:
             gu321xTlsHsFlags &= ~WIFI_1X_TLS_HS_FLAGS_SPECIFY_ROOTCERT;
             memset(gau81xRootSha1, 0, sizeof(gau81xRootSha1));
+            break;
         default:
             return M2M_ERR_INVALID_ARG;
         }
@@ -922,7 +869,7 @@ int8_t m2m_wifi_connect_1x_mschap2(
 
             if (ret == M2M_SUCCESS)
             {
-                tstrM2mWifi1xHdr    *pstr1xHdr = (tstrM2mWifi1xHdr*)malloc(u16AuthSize);
+                tstrM2mWifi1xHdr    *pstr1xHdr = (tstrM2mWifi1xHdr*)OSAL_Malloc(u16AuthSize);
 
                 if (pstr1xHdr != NULL)
                 {
@@ -959,7 +906,7 @@ int8_t m2m_wifi_connect_1x_mschap2(
                                     (uint8_t*)&strConnHdr, sizeof(tstrM2mWifiConnHdr),
                                     (uint8_t*)pstr1xHdr, u16AuthSize,
                                     sizeof(tstrM2mWifiConnHdr));
-                    free(pstr1xHdr);
+                    OSAL_Free(pstr1xHdr);
                 }
                 else
                     ret = M2M_ERR_MEM_ALLOC;
@@ -1006,7 +953,7 @@ tstrAuth1xTls       *pstrAuth1xTls
             if (ret == M2M_SUCCESS)
             {
                 uint16_t            u16Payload1Size = u16AuthSize - pstrAuth1xTls->u16CertificateLen;
-                tstrM2mWifi1xHdr    *pstr1xHdr = (tstrM2mWifi1xHdr*)malloc(u16Payload1Size);
+                tstrM2mWifi1xHdr    *pstr1xHdr = (tstrM2mWifi1xHdr*)OSAL_Malloc(u16Payload1Size);
 
                 if (pstr1xHdr != NULL)
                 {
@@ -1062,7 +1009,7 @@ tstrAuth1xTls       *pstrAuth1xTls
                                         (uint8_t*)pstr1xHdr, u16Payload1Size,
                                         sizeof(tstrM2mWifiConnHdr));
                     }
-                    free(pstr1xHdr);
+                    OSAL_Free(pstr1xHdr);
                 }
                 else
                     ret = M2M_ERR_MEM_ALLOC;
