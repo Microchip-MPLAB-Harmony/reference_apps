@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_TC4_INSTANCE_
 #define _SAME54_TC4_INSTANCE_
 
@@ -34,6 +34,6 @@
 #define TC4_GCLK_ID                              _UL_(30)   /* Index of Generic Clock */
 #define TC4_MASTER_SLAVE_MODE                    _UL_(1)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
 #define TC4_OW_NUM                               _UL_(2)    /* Number of Output Waveforms */
-#define TC4_INSTANCE_ID                          _UL_(69)   
+#define TC4_INSTANCE_ID                          _UL_(69)   /* Instance index for TC4 */
 
 #endif /* _SAME54_TC4_INSTANCE_ */

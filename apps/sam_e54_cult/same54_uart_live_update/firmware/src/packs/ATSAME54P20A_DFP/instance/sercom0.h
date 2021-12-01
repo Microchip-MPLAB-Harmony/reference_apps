@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_SERCOM0_INSTANCE_
 #define _SAME54_SERCOM0_INSTANCE_
 
@@ -79,6 +79,6 @@
 #define SERCOM0_USART_TX_COMPLETE_INT_SRC        _UL_(47)   /* USART TX COMPLETE Interrupt */
 #define SERCOM0_USART_RX_INT_SRC                 _UL_(48)   /* USART RX Interrupt */
 #define SERCOM0_USART_ERROR_INT_SRC              _UL_(49)   /* USART ERROR Interrupt */
-#define SERCOM0_INSTANCE_ID                      _UL_(12)   
+#define SERCOM0_INSTANCE_ID                      _UL_(12)   /* Instance index for SERCOM0 */
 
 #endif /* _SAME54_SERCOM0_INSTANCE_ */

@@ -89,6 +89,66 @@ uint32_t SYSTICK_TimerFrequencyGet ( void )
     return (SYSTICK_FREQ);
 }
 
+void SYSTICK_DelayMs ( uint32_t delay_ms)
+{
+   uint32_t elapsedCount=0U, delayCount;
+   uint32_t deltaCount, oldCount, newCount, period;
+
+   period = SysTick->LOAD + 1U;
+
+   /* Calculate the count for the given delay */
+   delayCount=(SYSTICK_FREQ/1000U)*delay_ms;
+
+   if((SysTick->CTRL & SysTick_CTRL_ENABLE_Msk) == SysTick_CTRL_ENABLE_Msk)
+   {
+       oldCount = SysTick->VAL;
+
+       while (elapsedCount < delayCount)
+       {
+           newCount = SysTick->VAL;
+           deltaCount = oldCount - newCount;
+
+           if(newCount > oldCount)
+           {
+               deltaCount = period - newCount + oldCount;
+           }
+
+           oldCount = newCount;
+           elapsedCount = elapsedCount + deltaCount;
+       }
+   }
+}
+
+void SYSTICK_DelayUs ( uint32_t delay_us)
+{
+   uint32_t elapsedCount=0U, delayCount;
+   uint32_t deltaCount, oldCount, newCount, period;
+
+   period = SysTick->LOAD + 1U;
+
+    /* Calculate the count for the given delay */
+   delayCount=(SYSTICK_FREQ/1000000U)*delay_us;
+
+   if((SysTick->CTRL & SysTick_CTRL_ENABLE_Msk) == SysTick_CTRL_ENABLE_Msk)
+   {
+       oldCount = SysTick->VAL;
+
+       while (elapsedCount < delayCount)
+       {
+           newCount = SysTick->VAL;
+           deltaCount = oldCount - newCount;
+
+           if(newCount > oldCount)
+           {
+               deltaCount = period - newCount + oldCount;
+           }
+
+           oldCount = newCount;
+           elapsedCount = elapsedCount + deltaCount;
+       }
+   }
+}
+
 
 bool SYSTICK_TimerPeriodHasExpired(void)
 {
