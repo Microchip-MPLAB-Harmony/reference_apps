@@ -1,5 +1,5 @@
-/**
- * \brief Component description for ADC
+/*
+ * Component description for ADC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:00Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CMMC00_ADC_COMPONENT_H_
 #define _PIC32CMMC00_ADC_COMPONENT_H_
 
@@ -200,7 +200,6 @@
 #define   ADC_INPUTCTRL_MUXPOS_INTREF_Val     _U_(0x19)                                            /**< (ADC_INPUTCTRL) Internal Voltage Reference  */
 #define   ADC_INPUTCTRL_MUXPOS_SCALEDVDDCORE_Val _U_(0x1A)                                            /**< (ADC_INPUTCTRL) 1/4 Scaled VDDCORE Supply  */
 #define   ADC_INPUTCTRL_MUXPOS_SCALEDVDDANA_Val _U_(0x1B)                                            /**< (ADC_INPUTCTRL) 1/4 Scaled VDDANA Supply  */
-#define   ADC_INPUTCTRL_MUXPOS_DAC_Val        _U_(0x1C)                                            /**< (ADC_INPUTCTRL) DAC VOUT Output  */
 #define ADC_INPUTCTRL_MUXPOS_AIN0             (ADC_INPUTCTRL_MUXPOS_AIN0_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) ADC AIN0 Pin Position  */
 #define ADC_INPUTCTRL_MUXPOS_AIN1             (ADC_INPUTCTRL_MUXPOS_AIN1_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) ADC AIN1 Pin Position  */
 #define ADC_INPUTCTRL_MUXPOS_AIN2             (ADC_INPUTCTRL_MUXPOS_AIN2_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) ADC AIN2 Pin Position  */
@@ -216,7 +215,6 @@
 #define ADC_INPUTCTRL_MUXPOS_INTREF           (ADC_INPUTCTRL_MUXPOS_INTREF_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) Internal Voltage Reference Position  */
 #define ADC_INPUTCTRL_MUXPOS_SCALEDVDDCORE    (ADC_INPUTCTRL_MUXPOS_SCALEDVDDCORE_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) 1/4 Scaled VDDCORE Supply Position  */
 #define ADC_INPUTCTRL_MUXPOS_SCALEDVDDANA     (ADC_INPUTCTRL_MUXPOS_SCALEDVDDANA_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) 1/4 Scaled VDDANA Supply Position  */
-#define ADC_INPUTCTRL_MUXPOS_DAC              (ADC_INPUTCTRL_MUXPOS_DAC_Val << ADC_INPUTCTRL_MUXPOS_Pos) /**< (ADC_INPUTCTRL) DAC VOUT Output Position  */
 #define ADC_INPUTCTRL_MUXNEG_Pos              _U_(8)                                               /**< (ADC_INPUTCTRL) Negative Mux Input Selection Position */
 #define ADC_INPUTCTRL_MUXNEG_Msk              (_U_(0x1F) << ADC_INPUTCTRL_MUXNEG_Pos)              /**< (ADC_INPUTCTRL) Negative Mux Input Selection Mask */
 #define ADC_INPUTCTRL_MUXNEG(value)           (ADC_INPUTCTRL_MUXNEG_Msk & ((value) << ADC_INPUTCTRL_MUXNEG_Pos))

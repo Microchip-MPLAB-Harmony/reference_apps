@@ -1,5 +1,5 @@
-/**
- * \brief Component description for NVMCTRL
+/*
+ * Component description for NVMCTRL
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-08-13T21:04:00Z */
+/* file generated from device description version 2021-03-23T20:32:05Z */
 #ifndef _PIC32CMMC00_NVMCTRL_COMPONENT_H_
 #define _PIC32CMMC00_NVMCTRL_COMPONENT_H_
 
@@ -38,8 +38,6 @@
 #define   NVMCTRL_CTRLA_CMD_WP_Val            _U_(0x4)                                             /**< (NVMCTRL_CTRLA) Write Page - Writes the contents of the page buffer to the page addressed by the ADDR register.  */
 #define   NVMCTRL_CTRLA_CMD_EAR_Val           _U_(0x5)                                             /**< (NVMCTRL_CTRLA) Erase Auxiliary Row - Erases the auxiliary row addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row.  */
 #define   NVMCTRL_CTRLA_CMD_WAP_Val           _U_(0x6)                                             /**< (NVMCTRL_CTRLA) Write Auxiliary Page - Writes the contents of the page buffer to the page addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row.  */
-#define   NVMCTRL_CTRLA_CMD_SF_Val            _U_(0xA)                                             /**< (NVMCTRL_CTRLA) Security Flow Command  */
-#define   NVMCTRL_CTRLA_CMD_WL_Val            _U_(0xF)                                             /**< (NVMCTRL_CTRLA) Write lockbits  */
 #define   NVMCTRL_CTRLA_CMD_DFER_Val          _U_(0x1A)                                            /**< (NVMCTRL_CTRLA) Data Flash Erase Row - Erases the row addressed by the ADDR register.  */
 #define   NVMCTRL_CTRLA_CMD_DFWP_Val          _U_(0x1C)                                            /**< (NVMCTRL_CTRLA) Data Flash Write Page - Writes the contents of the page buffer to the page addressed by the ADDR register.  */
 #define   NVMCTRL_CTRLA_CMD_LR_Val            _U_(0x40)                                            /**< (NVMCTRL_CTRLA) Lock Region - Locks the region containing the address location in the ADDR register.  */
@@ -54,8 +52,6 @@
 #define NVMCTRL_CTRLA_CMD_WP                  (NVMCTRL_CTRLA_CMD_WP_Val << NVMCTRL_CTRLA_CMD_Pos)  /**< (NVMCTRL_CTRLA) Write Page - Writes the contents of the page buffer to the page addressed by the ADDR register. Position  */
 #define NVMCTRL_CTRLA_CMD_EAR                 (NVMCTRL_CTRLA_CMD_EAR_Val << NVMCTRL_CTRLA_CMD_Pos) /**< (NVMCTRL_CTRLA) Erase Auxiliary Row - Erases the auxiliary row addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row. Position  */
 #define NVMCTRL_CTRLA_CMD_WAP                 (NVMCTRL_CTRLA_CMD_WAP_Val << NVMCTRL_CTRLA_CMD_Pos) /**< (NVMCTRL_CTRLA) Write Auxiliary Page - Writes the contents of the page buffer to the page addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row. Position  */
-#define NVMCTRL_CTRLA_CMD_SF                  (NVMCTRL_CTRLA_CMD_SF_Val << NVMCTRL_CTRLA_CMD_Pos)  /**< (NVMCTRL_CTRLA) Security Flow Command Position  */
-#define NVMCTRL_CTRLA_CMD_WL                  (NVMCTRL_CTRLA_CMD_WL_Val << NVMCTRL_CTRLA_CMD_Pos)  /**< (NVMCTRL_CTRLA) Write lockbits Position  */
 #define NVMCTRL_CTRLA_CMD_DFER                (NVMCTRL_CTRLA_CMD_DFER_Val << NVMCTRL_CTRLA_CMD_Pos) /**< (NVMCTRL_CTRLA) Data Flash Erase Row - Erases the row addressed by the ADDR register. Position  */
 #define NVMCTRL_CTRLA_CMD_DFWP                (NVMCTRL_CTRLA_CMD_DFWP_Val << NVMCTRL_CTRLA_CMD_Pos) /**< (NVMCTRL_CTRLA) Data Flash Write Page - Writes the contents of the page buffer to the page addressed by the ADDR register. Position  */
 #define NVMCTRL_CTRLA_CMD_LR                  (NVMCTRL_CTRLA_CMD_LR_Val << NVMCTRL_CTRLA_CMD_Pos)  /**< (NVMCTRL_CTRLA) Lock Region - Locks the region containing the address location in the ADDR register. Position  */

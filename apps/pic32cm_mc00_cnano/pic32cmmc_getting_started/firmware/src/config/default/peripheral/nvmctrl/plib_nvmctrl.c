@@ -108,6 +108,38 @@ bool NVMCTRL_Read( uint32_t *data, uint32_t length, const uint32_t address )
     return true;
 }
 
+bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address)
+{
+    uint32_t i = 0;
+    uint32_t * paddress = (uint32_t *)address;
+
+    /* writing 32-bit data into the given address */
+    for (i = 0; i < (NVMCTRL_FLASH_PAGESIZE/4); i++)
+    {
+        *paddress++ = data[i];
+    }
+
+    return true;
+}
+
+bool NVMCTRL_PageBufferCommit( const uint32_t address)
+{
+    uint16_t command = NVMCTRL_CTRLA_CMD_WP_Val;
+
+    /* Set address and command */
+    NVMCTRL_REGS->NVMCTRL_ADDR = address >> 1;
+
+    if (address >= NVMCTRL_DATAFLASH_START_ADDRESS)
+    {
+        command = NVMCTRL_CTRLA_CMD_DFWP;
+    }
+
+    NVMCTRL_REGS->NVMCTRL_CTRLA = (uint16_t)(command | NVMCTRL_CTRLA_CMDEX_KEY);
+
+
+    return true;
+}
+
 bool NVMCTRL_PageWrite( uint32_t *data, const uint32_t address )
 {
     uint32_t i = 0;
@@ -119,7 +151,7 @@ bool NVMCTRL_PageWrite( uint32_t *data, const uint32_t address )
         *paddress++ = data[i];
     }
 
-     /* Set address and command */
+    /* Set address and command */
     NVMCTRL_REGS->NVMCTRL_ADDR = address >> 1;
 
     NVMCTRL_REGS->NVMCTRL_CTRLA = NVMCTRL_CTRLA_CMD_WP_Val | NVMCTRL_CTRLA_CMDEX_KEY;

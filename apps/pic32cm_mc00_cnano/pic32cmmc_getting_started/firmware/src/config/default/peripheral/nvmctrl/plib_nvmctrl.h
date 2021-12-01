@@ -111,6 +111,10 @@ void NVMCTRL_RegionLock (uint32_t address);
 void NVMCTRL_RegionUnlock (uint32_t address);
 
 
+bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address);
+
+bool NVMCTRL_PageBufferCommit( const uint32_t address);
+
 void NVMCTRL_CacheInvalidate ( void );
 
 // DOM-IGNORE-BEGIN
