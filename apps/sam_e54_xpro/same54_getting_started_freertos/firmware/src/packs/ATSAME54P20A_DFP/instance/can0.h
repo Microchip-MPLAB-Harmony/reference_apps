@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_CAN0_INSTANCE_
 #define _SAME54_CAN0_INSTANCE_
 
@@ -30,6 +30,6 @@
 #define CAN0_GCLK_ID                             _UL_(27)   /* Index of Generic Clock */
 #define CAN0_MSG_RAM_ADDR                        _UL_(0x20000000) 
 #define CAN0_QOS_RESET_VAL                       _UL_(1)    /* QOS reset value */
-#define CAN0_INSTANCE_ID                         _UL_(64)   
+#define CAN0_INSTANCE_ID                         _UL_(64)   /* Instance index for CAN0 */
 
 #endif /* _SAME54_CAN0_INSTANCE_ */

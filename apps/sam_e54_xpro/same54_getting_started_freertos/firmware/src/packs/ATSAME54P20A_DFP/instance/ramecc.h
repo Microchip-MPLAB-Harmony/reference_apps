@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_RAMECC_INSTANCE_
 #define _SAME54_RAMECC_INSTANCE_
 
@@ -28,6 +28,6 @@
 /* ========== Instance Parameter definitions for RAMECC peripheral ========== */
 #define RAMECC_RAMADDR_BITS                      _UL_(13)   /* Number of RAM address bits */
 #define RAMECC_RAMBANK_NUM                       _UL_(4)    /* Number of RAM banks */
-#define RAMECC_INSTANCE_ID                       _UL_(48)   
+#define RAMECC_INSTANCE_ID                       _UL_(48)   /* Instance index for RAMECC */
 
 #endif /* _SAME54_RAMECC_INSTANCE_ */
