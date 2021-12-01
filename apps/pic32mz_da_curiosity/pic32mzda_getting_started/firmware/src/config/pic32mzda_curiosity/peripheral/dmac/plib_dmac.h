@@ -110,17 +110,17 @@ typedef enum
 */
 typedef enum
 {
+    /* No events yet. */
+    DMAC_TRANSFER_EVENT_NONE = 0,
+
     /* Data was transferred successfully. */
-    DMAC_TRANSFER_EVENT_COMPLETE,
+    DMAC_TRANSFER_EVENT_COMPLETE = 1,
 
     /* Error while processing the request */
-    DMAC_TRANSFER_EVENT_ERROR,
-
-    /* No events yet. */
-    DMAC_TRANSFER_EVENT_NONE,
+    DMAC_TRANSFER_EVENT_ERROR = 2,
 
     /* Half Data is transferred */
-    DMAC_TRANSFER_EVENT_HALF_COMPLETE
+    DMAC_TRANSFER_EVENT_HALF_COMPLETE = 4
 
 } DMAC_TRANSFER_EVENT;
 
@@ -138,7 +138,7 @@ typedef enum
     None.
 */
 typedef enum
-{ 
+{
   /* pattern size is of 1 byte */
   DMAC_DATA_PATTERN_SIZE_1_BYTE,
 
@@ -226,7 +226,7 @@ typedef enum
 */
 typedef struct
 {
-    /* DCRCCON[CRCAPP]: The DMA transfers data from the source into the CRC engine and 
+    /* DCRCCON[CRCAPP]: The DMA transfers data from the source into the CRC engine and
      * writes the calculated CRC value to the destination when enabled
     */
     bool append_mode;
@@ -255,7 +255,6 @@ typedef struct
 // Section: DMAC API
 // *****************************************************************************
 // *****************************************************************************
-
 // *****************************************************************************
 /* Function:
    void DMAC_ChannelCallbackRegister
@@ -508,6 +507,8 @@ uint32_t DMAC_CRCRead( void );
 */
 void DMAC_Initialize( void );
 
+
+DMAC_TRANSFER_EVENT DMAC_ChannelTransferStatusGet(DMAC_CHANNEL channel);
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

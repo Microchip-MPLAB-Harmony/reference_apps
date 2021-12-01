@@ -40,4 +40,4 @@ children:
       - type: Dynamic
         attributes: {id: i2c1, value: '100000000'}
 - type: ElementPosition
-  attributes: {x: '177', y: '146', id: i2c1}
+  attributes: {x: '0', y: '141', id: i2c1}
