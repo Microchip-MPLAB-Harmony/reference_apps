@@ -94,6 +94,14 @@ typedef enum
     GPIO_PORT_K = 9,
 } GPIO_PORT;
 
+typedef enum
+{
+    GPIO_INTERRUPT_ON_MISMATCH,
+    GPIO_INTERRUPT_ON_RISING_EDGE,
+    GPIO_INTERRUPT_ON_FALLING_EDGE,
+    GPIO_INTERRUPT_ON_BOTH_EDGES,
+}GPIO_INTERRUPT_STYLE;
+
 // *****************************************************************************
 /* GPIO Port Pins
 
