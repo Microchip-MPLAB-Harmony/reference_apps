@@ -98,6 +98,7 @@
  * Only API functions that end in ...FromISR() can be used within interrupts. */
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY    (1 << (8 - 3))
 
+
 /* Optional functions - most linkers will remove unused functions anyway. */
 #define INCLUDE_vTaskPrioritySet                1
 #define INCLUDE_uxTaskPriorityGet               1

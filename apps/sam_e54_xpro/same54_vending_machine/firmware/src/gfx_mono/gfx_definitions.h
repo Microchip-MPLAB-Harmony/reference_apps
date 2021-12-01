@@ -11,7 +11,7 @@
     This header file provides prototypes and definitions for the GFX library.
 
   Description:
-    Add your GFX porting interface in this file. 
+    Add your GFX porting interface in this file.
     Note: this gfx library is ported from ASF.
 *******************************************************************************/
 

@@ -54,7 +54,7 @@
 
 #include "mmi.h"
 #include "definitions.h"                // SYS function prototypes
-#include "gfx_definitions.h"
+#include "./gfx_mono/gfx_definitions.h"
 #include "timers.h"
 
 // *****************************************************************************

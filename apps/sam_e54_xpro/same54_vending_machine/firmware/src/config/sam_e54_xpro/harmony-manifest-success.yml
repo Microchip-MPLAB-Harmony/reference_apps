@@ -4,13 +4,13 @@
 
 
 project: same54_vending_machine
-creation_date: 2021-12-01T15:04:41.753+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-12-01T15:27:51.302+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mhc_mode: IDE            # [IDE|Standalone|Headless]
+mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.2
-mplabx_version: v5.50        # if MPLAB X plugin only
-plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (3.01)
+mplabx_version: NA        # if MPLAB X plugin only
+plugin_version: NA        # if MPLAB X plugin only
+compiler: xc32
 
 modules:
     - {name: "core", version: "v3.10.0"}

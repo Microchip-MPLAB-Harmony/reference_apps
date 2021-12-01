@@ -262,7 +262,7 @@ typedef struct
                                 //
     int         reportInterval; // Unsolicited report interval, ms; default 1 second
                                 // The Unsolicited Report Interval is the time between repetitions of a
-                                // host’s initial report of membership in a group.
+                                // host?s initial report of membership in a group.
                                 // RFC 3376 IGMPv3: Default: 1 second.
 
     int         nInterfaces;    // the (maximum) number of interfaces that support IGMP multicast
