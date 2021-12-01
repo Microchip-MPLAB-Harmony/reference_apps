@@ -225,7 +225,7 @@ TC_COMPARE_STATUS TC4_CompareStatusGet( void )
 {
     TC_COMPARE_STATUS compare_status;
     compare_status = ((TC_COMPARE_STATUS)(TC4_REGS->COUNT8.TC_INTFLAG));
-    /* Clear timer overflow interrupt */
+    /* Clear interrupt */
     TC4_REGS->COUNT8.TC_INTFLAG = (uint8_t)compare_status;
     return compare_status;
 }

@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_TC3_INSTANCE_
 #define _SAME54_TC3_INSTANCE_
 
@@ -34,6 +34,6 @@
 #define TC3_GCLK_ID                              _UL_(26)   /* Index of Generic Clock */
 #define TC3_MASTER_SLAVE_MODE                    _UL_(2)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
 #define TC3_OW_NUM                               _UL_(2)    /* Number of Output Waveforms */
-#define TC3_INSTANCE_ID                          _UL_(46)   
+#define TC3_INSTANCE_ID                          _UL_(46)   /* Instance index for TC3 */
 
 #endif /* _SAME54_TC3_INSTANCE_ */

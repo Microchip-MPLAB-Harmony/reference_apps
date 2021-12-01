@@ -90,7 +90,7 @@
 
 #define DRV_SDMMC_CSD_BUFFER_LEN                 (16)
 #define DRV_SDMMC_CID_BUFFER_LEN                 (16)
-#define DRV_SDMMC_SCR_BUFFER_LEN                 (32)
+#define DRV_SDMMC_SCR_BUFFER_LEN                 (CACHE_ALIGNED_SIZE_GET(8))
 #define DRV_SDMMC_SWITCH_STATUS_BUFFER_LEN       (64)
 
 // Section: OCR register bits
@@ -459,9 +459,9 @@ typedef struct
 {
     uint8_t __ALIGNED(4)            cidBuffer[DRV_SDMMC_CID_BUFFER_LEN];
     uint8_t __ALIGNED(4)            csdBuffer[DRV_SDMMC_CSD_BUFFER_LEN];
-    uint8_t __ALIGNED(32)           scrBuffer[DRV_SDMMC_SCR_BUFFER_LEN];
-    uint8_t __ALIGNED(32)           switchStatusBuffer[DRV_SDMMC_SWITCH_STATUS_BUFFER_LEN];
-    uint8_t __ALIGNED(32)           extCSDBuffer[DRV_SDMMC_EXT_CSD_RESP_SIZE];
+    uint8_t CACHE_ALIGN             scrBuffer[DRV_SDMMC_SCR_BUFFER_LEN];
+    uint8_t CACHE_ALIGN             switchStatusBuffer[DRV_SDMMC_SWITCH_STATUS_BUFFER_LEN];
+    uint8_t CACHE_ALIGN             extCSDBuffer[DRV_SDMMC_EXT_CSD_RESP_SIZE];
     bool                            isAttached;
     DRV_SDMMC_BUS_WIDTH             busWidth;
     uint16_t                        rca;

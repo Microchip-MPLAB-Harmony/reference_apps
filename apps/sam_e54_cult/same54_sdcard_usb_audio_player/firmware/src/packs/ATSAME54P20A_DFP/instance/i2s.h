@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_I2S_INSTANCE_
 #define _SAME54_I2S_INSTANCE_
 
@@ -29,13 +29,13 @@
 #define I2S_CLK_NUM                              _UL_(2)    /* Number of clock units */
 #define I2S_GCLK_ID_0                            _UL_(43)   /* Index of Generic Clock 0 */
 #define I2S_GCLK_ID_1                            _UL_(44)   /* Index of Generic Clock 1 */
-#define I2S_DMAC_ID_RX_0                         _UL_(76)   
-#define I2S_DMAC_ID_RX_1                         _UL_(77)   
-#define I2S_DMAC_ID_TX_0                         _UL_(78)   
-#define I2S_DMAC_ID_TX_1                         _UL_(79)   
+#define I2S_DMAC_ID_RX_0                         _UL_(76)   /* Index of DMA RX Trigger 0 */
+#define I2S_DMAC_ID_RX_1                         _UL_(77)   /* Index of DMA RX Trigger 1 */
+#define I2S_DMAC_ID_TX_0                         _UL_(78)   /* Index of DMA TX Trigger 0 */
+#define I2S_DMAC_ID_TX_1                         _UL_(79)   /* Index of DMA TX Trigger 1 */
 #define I2S_MAX_SLOTS                            _UL_(8)    /* Max number of data slots in frame */
 #define I2S_MAX_WL_BITS                          _UL_(32)   /* Max number of bits in data samples */
 #define I2S_SER_NUM                              _UL_(2)    /* Number of serializers */
-#define I2S_INSTANCE_ID                          _UL_(106)  
+#define I2S_INSTANCE_ID                          _UL_(106)  /* Instance index for I2S */
 
 #endif /* _SAME54_I2S_INSTANCE_ */

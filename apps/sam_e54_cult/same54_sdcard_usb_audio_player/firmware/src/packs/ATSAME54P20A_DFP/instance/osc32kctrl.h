@@ -20,13 +20,13 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_OSC32KCTRL_INSTANCE_
 #define _SAME54_OSC32KCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for OSC32KCTRL peripheral ========== */
 #define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       _UL_(0)    /* OSC32K coarse calibration size */
-#define OSC32KCTRL_INSTANCE_ID                   _UL_(5)    
+#define OSC32KCTRL_INSTANCE_ID                   _UL_(5)    /* Instance index for OSC32KCTRL */
 
 #endif /* _SAME54_OSC32KCTRL_INSTANCE_ */

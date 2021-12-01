@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_DSU_INSTANCE_
 #define _SAME54_DSU_INSTANCE_
 
@@ -28,6 +28,6 @@
 /* ========== Instance Parameter definitions for DSU peripheral ========== */
 #define DSU_DMAC_ID_DCC0                         _UL_(2)    /* DMAC ID for DCC0 register */
 #define DSU_DMAC_ID_DCC1                         _UL_(3)    /* DMAC ID for DCC1 register */
-#define DSU_INSTANCE_ID                          _UL_(33)   
+#define DSU_INSTANCE_ID                          _UL_(33)   /* Instance index for DSU */
 
 #endif /* _SAME54_DSU_INSTANCE_ */

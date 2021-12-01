@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_GCLK_INSTANCE_
 #define _SAME54_GCLK_INSTANCE_
 
@@ -36,6 +36,6 @@
 #define GCLK_NUM                                 _UL_(48)   /* Number of Generic Clock Users */
 #define GCLK_SOURCE_BITS                         _UL_(4)    
 #define GCLK_SOURCE_NUM                          _UL_(9)    /* Number of Generic Clock Sources */
-#define GCLK_INSTANCE_ID                         _UL_(7)    
+#define GCLK_INSTANCE_ID                         _UL_(7)    /* Instance index for GCLK */
 
 #endif /* _SAME54_GCLK_INSTANCE_ */

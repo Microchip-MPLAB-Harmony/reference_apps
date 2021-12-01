@@ -20,13 +20,13 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_MCLK_INSTANCE_
 #define _SAME54_MCLK_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for MCLK peripheral ========== */
 #define MCLK_SYSTEM_CLOCK                        _UL_(48000000) /* System Clock Frequency at Reset */
-#define MCLK_INSTANCE_ID                         _UL_(2)    
+#define MCLK_INSTANCE_ID                         _UL_(2)    /* Instance index for MCLK */
 
 #endif /* _SAME54_MCLK_INSTANCE_ */

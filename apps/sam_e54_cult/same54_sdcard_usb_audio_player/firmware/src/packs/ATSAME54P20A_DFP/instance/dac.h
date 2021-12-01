@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54_DAC_INSTANCE_
 #define _SAME54_DAC_INSTANCE_
 
@@ -34,6 +34,6 @@
 #define DAC_DMAC_ID_RESRDY1                      _UL_(75)   /* Index of DMA DAC Channel 1 Result Ready request */
 #define DAC_GCLK_ID                              _UL_(42)   /* Index of Generic Clock */
 #define DAC_STEP                                 _UL_(7)    /* Number of steps to reach full scale */
-#define DAC_INSTANCE_ID                          _UL_(105)  
+#define DAC_INSTANCE_ID                          _UL_(105)  /* Instance index for DAC */
 
 #endif /* _SAME54_DAC_INSTANCE_ */

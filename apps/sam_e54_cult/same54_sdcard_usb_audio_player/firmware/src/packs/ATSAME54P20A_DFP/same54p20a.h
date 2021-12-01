@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-23T12:28:26Z */
+/* file generated from device description version 2021-04-16T09:25:23Z */
 #ifndef _SAME54P20A_H_
 #define _SAME54P20A_H_
 
@@ -544,16 +544,16 @@ void SDHC1_Handler                 ( void );
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /** \brief Configuration of the CORTEX-M4 Processor and Core Peripherals */
-#define __CM4_REV                 0x0001 /**< Cortex-M4 Core Revision                                                   */
-#define __DEBUG_LVL                    3 /**< Debug Level                                                               */
-#define __FPU_PRESENT                  1 /**< FPU present or not                                                        */
-#define __MPU_PRESENT                  1 /**< MPU present or not                                                        */
-#define __NVIC_PRIO_BITS               3 /**< Number of Bits used for Priority Levels                                   */
-#define __TRACE_LVL                    2 /**< Trace Level                                                               */
-#define __VTOR_PRESENT                 1 /**< Vector Table Offset Register present or not                               */
-#define __Vendor_SysTickConfig         0 /**< Set to 1 if different SysTick Config is used                              */
-#define __ARCH_ARM                     1
-#define __ARCH_ARM_CORTEX_M            1
+#define __CM4_REV                     0x0001 /**< Cortex-M4 Core Revision                                                   */
+#define __DEBUG_LVL                        3 /**< Debug Level                                                               */
+#define __FPU_PRESENT                      1 /**< FPU present or not                                                        */
+#define __MPU_PRESENT                      1 /**< MPU present or not                                                        */
+#define __NVIC_PRIO_BITS                   3 /**< Number of Bits used for Priority Levels                                   */
+#define __TRACE_LVL                        2 /**< Trace Level                                                               */
+#define __VTOR_PRESENT                     1 /**< Vector Table Offset Register present or not                               */
+#define __Vendor_SysTickConfig             0 /**< Set to 1 if different SysTick Config is used                              */
+#define __ARCH_ARM                         1
+#define __ARCH_ARM_CORTEX_M                1
 
 /*
  * \brief CMSIS includes
@@ -582,6 +582,7 @@ void SDHC1_Handler                 ( void );
 #include "component/eic.h"
 #include "component/evsys.h"
 #include "component/freqm.h"
+#include "component/fuses.h"
 #include "component/gclk.h"
 #include "component/gmac.h"
 #include "component/hmatrixb.h"
@@ -628,6 +629,7 @@ void SDHC1_Handler                 ( void );
 #include "instance/eic.h"
 #include "instance/evsys.h"
 #include "instance/freqm.h"
+#include "instance/fuses.h"
 #include "instance/gclk.h"
 #include "instance/gmac.h"
 #include "instance/hmatrix.h"
@@ -681,64 +683,64 @@ void SDHC1_Handler                 ( void );
 /* ************************************************************************** */
 /*  PERIPHERAL ID DEFINITIONS FOR SAME54P20A                                  */
 /* ************************************************************************** */
-#define ID_PAC           (  0) /**< \brief Peripheral Access Controller (PAC) */
-#define ID_PM            (  1) /**< \brief Power Manager (PM) */
-#define ID_MCLK          (  2) /**< \brief Main Clock (MCLK) */
-#define ID_RSTC          (  3) /**< \brief Reset Controller (RSTC) */
-#define ID_OSCCTRL       (  4) /**< \brief Oscillators Control (OSCCTRL) */
-#define ID_OSC32KCTRL    (  5) /**< \brief 32kHz Oscillators Control (OSC32KCTRL) */
-#define ID_SUPC          (  6) /**< \brief Supply Controller (SUPC) */
-#define ID_GCLK          (  7) /**< \brief Generic Clock Generator (GCLK) */
-#define ID_WDT           (  8) /**< \brief Watchdog Timer (WDT) */
-#define ID_RTC           (  9) /**< \brief Real-Time Counter (RTC) */
-#define ID_EIC           ( 10) /**< \brief External Interrupt Controller (EIC) */
-#define ID_FREQM         ( 11) /**< \brief Frequency Meter (FREQM) */
-#define ID_SERCOM0       ( 12) /**< \brief Serial Communication Interface (SERCOM0) */
-#define ID_SERCOM1       ( 13) /**< \brief Serial Communication Interface (SERCOM1) */
-#define ID_TC0           ( 14) /**< \brief Basic Timer Counter (TC0) */
-#define ID_TC1           ( 15) /**< \brief Basic Timer Counter (TC1) */
-#define ID_USB           ( 32) /**< \brief Universal Serial Bus (USB) */
-#define ID_DSU           ( 33) /**< \brief Device Service Unit (DSU) */
-#define ID_NVMCTRL       ( 34) /**< \brief Non-Volatile Memory Controller (NVMCTRL) */
-#define ID_CMCC          ( 35) /**< \brief Cortex M Cache Controller (CMCC) */
-#define ID_PORT          ( 36) /**< \brief Port Module (PORT) */
-#define ID_DMAC          ( 37) /**< \brief Direct Memory Access Controller (DMAC) */
-#define ID_HMATRIX       ( 38) /**< \brief HSB Matrix (HMATRIX) */
-#define ID_EVSYS         ( 39) /**< \brief Event System Interface (EVSYS) */
-#define ID_SERCOM2       ( 41) /**< \brief Serial Communication Interface (SERCOM2) */
-#define ID_SERCOM3       ( 42) /**< \brief Serial Communication Interface (SERCOM3) */
-#define ID_TCC0          ( 43) /**< \brief Timer Counter Control (TCC0) */
-#define ID_TCC1          ( 44) /**< \brief Timer Counter Control (TCC1) */
-#define ID_TC2           ( 45) /**< \brief Basic Timer Counter (TC2) */
-#define ID_TC3           ( 46) /**< \brief Basic Timer Counter (TC3) */
-#define ID_RAMECC        ( 48) /**< \brief RAM ECC (RAMECC) */
-#define ID_CAN0          ( 64) /**< \brief Control Area Network (CAN0) */
-#define ID_CAN1          ( 65) /**< \brief Control Area Network (CAN1) */
-#define ID_GMAC          ( 66) /**< \brief Ethernet MAC (GMAC) */
-#define ID_TCC2          ( 67) /**< \brief Timer Counter Control (TCC2) */
-#define ID_TCC3          ( 68) /**< \brief Timer Counter Control (TCC3) */
-#define ID_TC4           ( 69) /**< \brief Basic Timer Counter (TC4) */
-#define ID_TC5           ( 70) /**< \brief Basic Timer Counter (TC5) */
-#define ID_PDEC          ( 71) /**< \brief Quadrature Decodeur (PDEC) */
-#define ID_AC            ( 72) /**< \brief Analog Comparators (AC) */
-#define ID_AES           ( 73) /**< \brief Advanced Encryption Standard (AES) */
-#define ID_TRNG          ( 74) /**< \brief True Random Generator (TRNG) */
+#define ID_PAC           (  0) /**< \brief Instance index for PAC (PAC) */
+#define ID_PM            (  1) /**< \brief Instance index for PM (PM) */
+#define ID_MCLK          (  2) /**< \brief Instance index for MCLK (MCLK) */
+#define ID_RSTC          (  3) /**< \brief Instance index for RSTC (RSTC) */
+#define ID_OSCCTRL       (  4) /**< \brief Instance index for OSCCTRL (OSCCTRL) */
+#define ID_OSC32KCTRL    (  5) /**< \brief Instance index for OSC32KCTRL (OSC32KCTRL) */
+#define ID_SUPC          (  6) /**< \brief Instance index for SUPC (SUPC) */
+#define ID_GCLK          (  7) /**< \brief Instance index for GCLK (GCLK) */
+#define ID_WDT           (  8) /**< \brief Instance index for WDT (WDT) */
+#define ID_RTC           (  9) /**< \brief Instance index for RTC (RTC) */
+#define ID_EIC           ( 10) /**< \brief Instance index for EIC (EIC) */
+#define ID_FREQM         ( 11) /**< \brief Instance index for FREQM (FREQM) */
+#define ID_SERCOM0       ( 12) /**< \brief Instance index for SERCOM0 (SERCOM0) */
+#define ID_SERCOM1       ( 13) /**< \brief Instance index for SERCOM1 (SERCOM1) */
+#define ID_TC0           ( 14) /**< \brief Instance index for TC0 (TC0) */
+#define ID_TC1           ( 15) /**< \brief Instance index for TC1 (TC1) */
+#define ID_USB           ( 32) /**< \brief Instance index for USB (USB) */
+#define ID_DSU           ( 33) /**< \brief Instance index for DSU (DSU) */
+#define ID_NVMCTRL       ( 34) /**< \brief Instance index for NVMCTRL (NVMCTRL) */
+#define ID_CMCC          ( 35) /**< \brief Instance index for CMCC (CMCC) */
+#define ID_PORT          ( 36) /**< \brief Instance index for PORT (PORT) */
+#define ID_DMAC          ( 37) /**< \brief Instance index for DMAC (DMAC) */
+#define ID_HMATRIX       ( 38) /**< \brief Instance index for HMATRIX (HMATRIX) */
+#define ID_EVSYS         ( 39) /**< \brief Instance index for EVSYS (EVSYS) */
+#define ID_SERCOM2       ( 41) /**< \brief Instance index for SERCOM2 (SERCOM2) */
+#define ID_SERCOM3       ( 42) /**< \brief Instance index for SERCOM3 (SERCOM3) */
+#define ID_TCC0          ( 43) /**< \brief Instance index for TCC0 (TCC0) */
+#define ID_TCC1          ( 44) /**< \brief Instance index for TCC1 (TCC1) */
+#define ID_TC2           ( 45) /**< \brief Instance index for TC2 (TC2) */
+#define ID_TC3           ( 46) /**< \brief Instance index for TC3 (TC3) */
+#define ID_RAMECC        ( 48) /**< \brief Instance index for RAMECC (RAMECC) */
+#define ID_CAN0          ( 64) /**< \brief Instance index for CAN0 (CAN0) */
+#define ID_CAN1          ( 65) /**< \brief Instance index for CAN1 (CAN1) */
+#define ID_GMAC          ( 66) /**< \brief Instance index for GMAC (GMAC) */
+#define ID_TCC2          ( 67) /**< \brief Instance index for TCC2 (TCC2) */
+#define ID_TCC3          ( 68) /**< \brief Instance index for TCC3 (TCC3) */
+#define ID_TC4           ( 69) /**< \brief Instance index for TC4 (TC4) */
+#define ID_TC5           ( 70) /**< \brief Instance index for TC5 (TC5) */
+#define ID_PDEC          ( 71) /**< \brief Instance index for PDEC (PDEC) */
+#define ID_AC            ( 72) /**< \brief Instance index for AC (AC) */
+#define ID_AES           ( 73) /**< \brief Instance index for AES (AES) */
+#define ID_TRNG          ( 74) /**< \brief Instance index for TRNG (TRNG) */
 #define ID_ICM           ( 75) /**< \brief Integrity Check Monitor (ICM) */
-#define ID_PUKCC         ( 76) /**< \brief PUblic-Key Cryptography Controller (PUKCC) */
-#define ID_QSPI          ( 77) /**< \brief Quad SPI interface (QSPI) */
-#define ID_CCL           ( 78) /**< \brief Configurable Custom Logic (CCL) */
-#define ID_SERCOM4       ( 96) /**< \brief Serial Communication Interface (SERCOM4) */
-#define ID_SERCOM5       ( 97) /**< \brief Serial Communication Interface (SERCOM5) */
-#define ID_SERCOM6       ( 98) /**< \brief Serial Communication Interface (SERCOM6) */
-#define ID_SERCOM7       ( 99) /**< \brief Serial Communication Interface (SERCOM7) */
-#define ID_TCC4          (100) /**< \brief Timer Counter Control (TCC4) */
-#define ID_TC6           (101) /**< \brief Basic Timer Counter (TC6) */
-#define ID_TC7           (102) /**< \brief Basic Timer Counter (TC7) */
-#define ID_ADC0          (103) /**< \brief Analog Digital Converter (ADC0) */
-#define ID_ADC1          (104) /**< \brief Analog Digital Converter (ADC1) */
-#define ID_DAC           (105) /**< \brief Digital-to-Analog Converter (DAC) */
-#define ID_I2S           (106) /**< \brief Inter-IC Sound Interface (I2S) */
-#define ID_PCC           (107) /**< \brief Parallel Capture Controller (PCC) */
+#define ID_PUKCC         ( 76) /**< \brief Instance index for PUKCC (PUKCC) */
+#define ID_QSPI          ( 77) /**< \brief Instance index for QSPI (QSPI) */
+#define ID_CCL           ( 78) /**< \brief Instance index for CCL (CCL) */
+#define ID_SERCOM4       ( 96) /**< \brief Instance index for SERCOM4 (SERCOM4) */
+#define ID_SERCOM5       ( 97) /**< \brief Instance index for SERCOM5 (SERCOM5) */
+#define ID_SERCOM6       ( 98) /**< \brief Instance index for SERCOM6 (SERCOM6) */
+#define ID_SERCOM7       ( 99) /**< \brief Instance index for SERCOM7 (SERCOM7) */
+#define ID_TCC4          (100) /**< \brief Instance index for TCC4 (TCC4) */
+#define ID_TC6           (101) /**< \brief Instance index for TC6 (TC6) */
+#define ID_TC7           (102) /**< \brief Instance index for TC7 (TC7) */
+#define ID_ADC0          (103) /**< \brief Instance index for ADC0 (ADC0) */
+#define ID_ADC1          (104) /**< \brief Instance index for ADC1 (ADC1) */
+#define ID_DAC           (105) /**< \brief Instance index for DAC (DAC) */
+#define ID_I2S           (106) /**< \brief Instance index for I2S (I2S) */
+#define ID_PCC           (107) /**< \brief Instance index for PCC (PCC) */
 
 #define ID_PERIPH_MAX    (107) /**< \brief Number of peripheral IDs */
 /** @}  end of Peripheral Ids Definitions */
@@ -772,6 +774,9 @@ void SDHC1_Handler                 ( void );
 #define I2S_REGS                         ((i2s_registers_t*)0x43002800)                /**< \brief I2S Registers Address        */
 #define MCLK_REGS                        ((mclk_registers_t*)0x40000800)               /**< \brief MCLK Registers Address       */
 #define NVMCTRL_REGS                     ((nvmctrl_registers_t*)0x41004000)            /**< \brief NVMCTRL Registers Address    */
+#define SW0_FUSES_REGS                   ((fuses_sw0_fuses_registers_t*)0x00800080)    /**< \brief FUSES Registers Address      */
+#define TEMP_LOG_FUSES_REGS              ((fuses_temp_log_fuses_registers_t*)0x00800100) /**< \brief FUSES Registers Address      */
+#define USER_FUSES_REGS                  ((fuses_user_fuses_registers_t*)0x00804000)   /**< \brief FUSES Registers Address      */
 #define OSCCTRL_REGS                     ((oscctrl_registers_t*)0x40001000)            /**< \brief OSCCTRL Registers Address    */
 #define OSC32KCTRL_REGS                  ((osc32kctrl_registers_t*)0x40001400)         /**< \brief OSC32KCTRL Registers Address */
 #define PAC_REGS                         ((pac_registers_t*)0x40000000)                /**< \brief PAC Registers Address        */
@@ -841,6 +846,9 @@ void SDHC1_Handler                 ( void );
 #define I2S_BASE_ADDRESS                 _UL_(0x43002800)                              /* I2S Base Address */
 #define MCLK_BASE_ADDRESS                _UL_(0x40000800)                              /* MCLK Base Address */
 #define NVMCTRL_BASE_ADDRESS             _UL_(0x41004000)                              /* NVMCTRL Base Address */
+#define SW0_FUSES_BASE_ADDRESS           _UL_(0x00800080)                              /* FUSES Base Address */
+#define TEMP_LOG_FUSES_BASE_ADDRESS      _UL_(0x00800100)                              /* FUSES Base Address */
+#define USER_FUSES_BASE_ADDRESS          _UL_(0x00804000)                              /* FUSES Base Address */
 #define OSCCTRL_BASE_ADDRESS             _UL_(0x40001000)                              /* OSCCTRL Base Address */
 #define OSC32KCTRL_BASE_ADDRESS          _UL_(0x40001400)                              /* OSC32KCTRL Base Address */
 #define PAC_BASE_ADDRESS                 _UL_(0x40000000)                              /* PAC Base Address */
