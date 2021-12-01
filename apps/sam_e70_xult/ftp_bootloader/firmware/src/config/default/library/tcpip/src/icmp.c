@@ -51,7 +51,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 
 // ICMP Packet Structure
-typedef struct
+typedef struct __attribute__((aligned(2), packed))
 {
 	uint8_t vType;
 	uint8_t vCode;

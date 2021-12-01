@@ -183,10 +183,14 @@ typedef struct
 ////////////////////////////////////////////////////////////////////////////////
 //////////////  GMAC Single linked lists manipulation //////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
 typedef struct _TAG_DRV_PIC32CGMAC_SGL_LIST_NODE
 {
 	struct _TAG_DRV_PIC32CGMAC_SGL_LIST_NODE*	next;       /**< next linked list  */      
-	void*                                       data[];     /**< generic payload */
+	void*                                       data;       /**< data with this node */
+	uint16_t                                    startIndex; /**< Start index of Tx/Rx descriptor*/
+	uint16_t                                    endIndex;   /**< Start index of Tx/Rx descriptor */
+	GMAC_QUE_LIST                               queueId;    /**< Queue index */
 }DRV_PIC32CGMAC_SGL_LIST_NODE;                  /**< Single list for GMAC packet */ 
 
 

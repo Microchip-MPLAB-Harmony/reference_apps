@@ -67,7 +67,7 @@ typedef enum
 }UDP_OPEN_TYPE;
 
 // Stores the header of a UDP packet
-typedef struct
+typedef struct __attribute__((aligned(2), packed))
 {
     UDP_PORT    SourcePort;				// Source UDP port
     UDP_PORT    DestinationPort;		// Destination UDP port

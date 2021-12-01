@@ -2,29 +2,5 @@ format_version: v1.0
 type: UniqueComponent
 attributes: {id: drvExtPhyLan8740}
 children:
-- type: Symbols
-  children:
-  - type: String
-    attributes: {id: DRV_ETHPHY_MAC_NAME}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: drvExtPhyLan8740, value: GMAC}
-- type: Attachments
-  children:
-  - type: DirectCapability
-    attributes: {id: libdrvExtPhyLan8740}
-    children:
-    - type: Attributes
-      children:
-      - type: String
-        attributes: {id: targetComponentID}
-        children:
-        - {type: Value, value: drvGmac}
-      - type: String
-        attributes: {id: targetAttachmentID}
-        children:
-        - {type: Value, value: GMAC_PHY_Dependency}
 - type: ElementPosition
   attributes: {x: '156', y: '84', id: drvExtPhyLan8740}

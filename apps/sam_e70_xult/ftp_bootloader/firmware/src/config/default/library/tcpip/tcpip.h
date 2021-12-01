@@ -97,7 +97,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
     None.
 */
 
-typedef union
+typedef union __attribute__((aligned(2), packed))
 {
     uint32_t Val;
     uint16_t w[2];
@@ -133,7 +133,7 @@ typedef IPV4_ADDR   IP_ADDR;
     None.
 */
 
-typedef union
+typedef union __attribute__((aligned(2), packed))
 {
     uint8_t  v[16];
     uint16_t w[8];
@@ -177,7 +177,7 @@ typedef enum
     None.
 */
 
-typedef union
+typedef union __attribute__((aligned(2), packed))
 {
     IPV4_ADDR v4Add;
     IPV6_ADDR v6Add;
@@ -247,7 +247,7 @@ typedef enum
     None.
 */
 
-typedef struct __attribute__((__packed__)) _IPV6_ADDR_STRUCT
+typedef struct __attribute__((aligned(2), packed)) _IPV6_ADDR_STRUCT
 {
     struct _IPV6_ADDR_STRUCT * next;
     struct _IPV6_ADDR_STRUCT * prev;

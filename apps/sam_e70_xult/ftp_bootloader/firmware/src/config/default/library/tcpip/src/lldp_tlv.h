@@ -273,7 +273,7 @@ typedef struct
 
 
 // LLDP PACKET
-typedef struct
+typedef struct __attribute__((aligned(2), packed))
 {
     //CHASSIS
     uint16_t          chassisTypeLen;

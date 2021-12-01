@@ -480,7 +480,7 @@ static TCPIP_IPV4_DEST_TYPE TCPIP_IPV4_FwdPktMacDestination(TCPIP_MAC_PACKET* pF
 static bool TCPIP_IPV4_ForwardPkt(TCPIP_MAC_PACKET* pFwdPkt, const IPV4_ROUTE_TABLE_ENTRY* pEntry, IPV4_PKT_PROC_TYPE procType);
 static bool TCPIP_IPV4_ProcessExtPkt(TCPIP_NET_IF* pNetIf, TCPIP_MAC_PACKET* pRxPkt, IPV4_PKT_PROC_TYPE procType);
 static const IPV4_ROUTE_TABLE_ENTRY* TCPIP_IPV4_FindFwdRoute(IPV4_FORWARD_DESCRIPTOR* pFDcpt, TCPIP_MAC_PACKET* pRxPkt);
-static uint32_t IPV4_32LeadingOnes(uint32_t value);
+static TCPIP_UINT32_VAL IPV4_32LeadingOnes(uint32_t value);
 #if (TCPIP_IPV4_FORWARDING_TABLE_ASCII != 0)
 static TCPIP_IPV4_RES IPv4_BuildAsciiTable(IPV4_FORWARD_DESCRIPTOR* pFDcpt, const TCPIP_IPV4_FORWARD_ENTRY_ASCII* pAEntry, size_t nEntries);
 #endif  // (TCPIP_IPV4_FORWARDING_TABLE_ASCII != 0)
@@ -1040,7 +1040,7 @@ static bool TCPIP_IPV4_ForwardPkt(TCPIP_MAC_PACKET* pFwdPkt, const IPV4_ROUTE_TA
     {
         memcpy(&macHdr->DestMACAddr, pMacDst, sizeof(macHdr->DestMACAddr));
     }
-    memcpy(&macHdr->SourceMACAddr, (const TCPIP_MAC_ADDR*)_TCPIPStack_NetMACAddressGet(pFwdIf), sizeof(macHdr->SourceMACAddr));
+    memcpy(&macHdr->SourceMACAddr, (const TCPIP_MAC_ADDR*)_TCPIPStackNetMACAddress(pFwdIf), sizeof(macHdr->SourceMACAddr));
     pFwdPkt->pDSeg->segLen += sizeof(TCPIP_MAC_ETHERNET_HEADER);
     pFwdPkt->pktFlags |= TCPIP_MAC_PKT_FLAG_TX; 
 
@@ -1119,7 +1119,7 @@ static bool TCPIP_IPV4_ForwardPkt(TCPIP_MAC_PACKET* pFwdPkt, const IPV4_ROUTE_TA
 // It returns the number of contiguous leading ones - in the hi part
 // followed by contiguous zeroes - in the low part
 // Counting stops if after detecting zeroes, a one is found again
-static uint32_t IPV4_32LeadingOnes(uint32_t value)
+static TCPIP_UINT32_VAL IPV4_32LeadingOnes(uint32_t value)
 {
     int ix;
     TCPIP_UINT32_VAL count;
@@ -1152,7 +1152,7 @@ static uint32_t IPV4_32LeadingOnes(uint32_t value)
     count.word.HW = nOnes;
     count.word.LW = nZeroes;
 
-    return count.Val;
+    return count;
 }
 
 static TCPIP_IPV4_RES IPV4_BuildForwardTables(const TCPIP_IPV4_MODULE_CONFIG* pIpInit, const void* memH, int nIfs)
@@ -1330,7 +1330,7 @@ static TCPIP_IPV4_RES IPv4_BuildAsciiTable(IPV4_FORWARD_DESCRIPTOR* pFwdDcpt, co
         }
 
         // check for the proper mask format
-        onesCount.Val = IPV4_32LeadingOnes(netMask.Val);
+        onesCount = IPV4_32LeadingOnes(netMask.Val);
         if(onesCount.word.HW + onesCount.word.LW != 32)
         {   // ill formatted mask
             return TCPIP_IPV4_RES_MASK_ERR;
@@ -1386,7 +1386,7 @@ static TCPIP_IPV4_RES IPv4_BuildBinaryTable(IPV4_FORWARD_DESCRIPTOR* pFwdDcpt, c
         }
 
         // check for the proper mask format
-        onesCount.Val = IPV4_32LeadingOnes(pBEntry->netMask);
+        onesCount = IPV4_32LeadingOnes(pBEntry->netMask);
         if(onesCount.word.HW + onesCount.word.LW != 32)
         {   // ill formatted mask
             return TCPIP_IPV4_RES_MASK_ERR;
@@ -1710,7 +1710,7 @@ bool TCPIP_IPV4_PktTx(IPV4_PACKET* pPkt, TCPIP_MAC_PACKET* pMacPkt, bool isPersi
     pMacDst = &destMacAdd;
     if((pHostIf = TCPIP_STACK_MatchNetAddress(pNetIf, &pPkt->destAddress)))
     {   // localhost address
-        memcpy(pMacDst, _TCPIPStack_NetMACAddressGet(pHostIf), sizeof(*pMacDst));
+        memcpy(pMacDst, _TCPIPStackNetMACAddress(pHostIf), sizeof(*pMacDst));
         pPkt->netIfH = pHostIf;
         destType = TCPIP_IPV4_DEST_SELF; 
     }
@@ -1734,7 +1734,7 @@ bool TCPIP_IPV4_PktTx(IPV4_PACKET* pPkt, TCPIP_MAC_PACKET* pMacPkt, bool isPersi
     pMacPkt->pktIf = pNetIf;
 
     // properly format the packet
-    TCPIP_PKT_PacketMACFormat(pMacPkt, pMacDst, (const TCPIP_MAC_ADDR*)_TCPIPStack_NetMACAddressGet(pNetIf), TCPIP_ETHER_TYPE_IPV4);
+    TCPIP_PKT_PacketMACFormat(pMacPkt, pMacDst, (const TCPIP_MAC_ADDR*)_TCPIPStackNetMACAddress(pNetIf), TCPIP_ETHER_TYPE_IPV4);
     if(destType != TCPIP_IPV4_DEST_SELF)
     {   // get the payload w/o the MAC frame
         pktPayload = TCPIP_PKT_PayloadLen(pMacPkt) - sizeof(TCPIP_MAC_ETHERNET_HEADER);

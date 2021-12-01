@@ -799,7 +799,30 @@
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;usart1&quot; x=&quot;20&quot; y=&quot;229&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;320&quot; y=&quot;17&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcp&quot; x=&quot;613&quot; y=&quot;19&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipFtpc&quot; x=&quot;476&quot; y=&quot;17&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;DRIVER LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvExtPhyLan8740&quot; x=&quot;156&quot; y=&quot;84&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drvGmac&quot; x=&quot;280&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;drvMiim&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;420&quot; y=&quot;20&quot;/&gt;
@@ -807,23 +830,7 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;19&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;373&quot; y=&quot;230&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;154&quot; y=&quot;238&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;43&quot; y=&quot;124&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;210&quot; y=&quot;118&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;NETWORK LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;NETWORK LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
@@ -834,23 +841,16 @@
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;481&quot; canvasWidth=&quot;1008&quot; dnOrder=&quot;5&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;DRIVER LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;TCP/IP STACK&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvExtPhyLan8740&quot; x=&quot;156&quot; y=&quot;84&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drvGmac&quot; x=&quot;280&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;drvMiim&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;19&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;373&quot; y=&quot;230&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;154&quot; y=&quot;238&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;43&quot; y=&quot;124&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;210&quot; y=&quot;118&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;APPLICATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;320&quot; y=&quot;17&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcp&quot; x=&quot;613&quot; y=&quot;19&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipFtpc&quot; x=&quot;476&quot; y=&quot;17&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;481&quot; canvasWidth=&quot;1008&quot; dnOrder=&quot;7&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -9837,20 +9837,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvExtPhyLan8740" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvExtPhyLan8740&gt;
-  &lt;drvExtPhyLan8740 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;libdrvExtPhyLan8740&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drvGmac&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;GMAC_PHY_Dependency&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/drvExtPhyLan8740&gt;
+  &lt;drvExtPhyLan8740 dnOrder=&quot;0&quot;/&gt;
 &lt;/drvExtPhyLan8740&gt;
 </value>
       </entry>
@@ -9859,33 +9846,9 @@
          <value>DRIVER LAYER</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvExtPhyLan8740" name="DRV_ETHPHY_MAC_NAME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvExtPhyLan8740&gt;
-  &lt;drvExtPhyLan8740 dnOrder=&quot;0&quot; id=&quot;DRV_ETHPHY_MAC_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;drvExtPhyLan8740&quot; value=&quot;GMAC&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/drvExtPhyLan8740&gt;
-&lt;/drvExtPhyLan8740&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvGmac" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvGmac&gt;
-  &lt;drvGmac dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;GMAC_PHY_Dependency&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drvExtPhyLan8740&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;libdrvExtPhyLan8740&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-    &lt;/Attachments&gt;
-  &lt;/drvGmac&gt;
+  &lt;drvGmac dnOrder=&quot;0&quot;/&gt;
 &lt;/drvGmac&gt;
 </value>
       </entry>
@@ -11733,154 +11696,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INTERRUPT_EN_IDX0"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INTERRUPT_EN_IDX0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INTERRUPT_EN_IDX1"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INTERRUPT_EN_IDX1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INTERRUPT_EN_IDX2"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INTERRUPT_EN_IDX2&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INTERRUPT_EN_IDX3"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INTERRUPT_EN_IDX3&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INTERRUPT_EN_IDX4"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INTERRUPT_EN_IDX4&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INTERRUPT_EN_IDX5"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INTERRUPT_EN_IDX5&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_INT_MAC_IDX0"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_INT_MAC_IDX0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_MAC_CLOCK"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_MAC_CLOCK&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;150000000&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_MII_MODE_IDX0"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_MII_MODE_IDX0&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;RMII&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_NET_INTERFACE_NAME_IDX0"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_NET_INTERFACE_NAME_IDX0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;GMAC&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_NOCACHE_MEM_ADDRESS"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_NOCACHE_MEM_ADDRESS&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;541454336&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_NOCACHE_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_NOCACHE_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;4KB&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_NO_CACHE_CONFIG"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_NO_CACHE_CONFIG&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipStack&gt;
-&lt;/tcpipStack&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="TCPIP_STACK_SYS_RANDOM_H2_ADAPTER"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
   &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_SYS_RANDOM_H2_ADAPTER&quot;&gt;
@@ -12480,7 +12295,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\gmac\src\dynamic\drv_gmac.c</file>
-         <hash>7519c10cdf157831b4f990f997335f50256e37a09b8d7cc6b88585bb842cd5dc</hash>
+         <hash>02c548dbbb2de9febe27ba97225b05727f211114bf8c1a3e008a2d8fd3328752</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\blake2.h</file>
@@ -12512,7 +12327,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\arp.h</file>
-         <hash>f36470195390b76b01dde07a13e8fe55e607a724ace803243b2b77eb1f379e52</hash>
+         <hash>de1f00e4d2d13269250b2f13bb35afe7459edc4369dded94436797fd95c8bd35</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\src\sys_fs_media_manager.c</file>
@@ -12600,7 +12415,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip.h</file>
-         <hash>fdaf63b9bf63a6e735f819d7d93b255279ff7389b9b8e05fceb872bc76374a3f</hash>
+         <hash>259c1c21117479ecfb15843a0540be8a653cf16a8bd9aaa5d6f54d342426179b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\http_manager.h</file>
@@ -12616,7 +12431,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\ipv4.h</file>
-         <hash>c1c675f0e8c6488aa022a66e78bb5ad008a39de330c2a0223d727ec1e0d11a5e</hash>
+         <hash>673e4700e1091be4008af9826590159c48db3c3d696e29b7ef5211c2c678321a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\spi1.h</file>
@@ -12716,7 +12531,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\drv_ethphy.h</file>
-         <hash>2463933aa71c87ac4a293d4a38271f000cf59b10f854699d5a3abcd71e1dee1c</hash>
+         <hash>66e26280785bddf4bb40f9b3ac4de97e47fb08435f7f04e4c0f8427e6a979e9b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha256_sam6156.c</file>
@@ -12740,7 +12555,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_mac.h</file>
-         <hash>ce89f91edbae2cdac78d4fc654deabf17f7be8a4b3630f93ec04bfa9ea347b40</hash>
+         <hash>e36bfdc1d7d4cfa857ac1f2e69277959ba8ca2dcb4ccb4ae1b3b153fe7677bf1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\tc2.h</file>
@@ -12812,7 +12627,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\dynamic\drv_extphy_smsc8740.c</file>
-         <hash>d976e864c666c30b031dbe14f3d91ed6f74edbe09c21acc92caeb03adf369231</hash>
+         <hash>28ef339ffa9c04bfe6961077030faccbed7bd3a20b1bbc0cf66b292d3655cae7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ftpc.c</file>
@@ -12824,7 +12639,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\gmac\drv_gmac.h</file>
-         <hash>c8ffcad86e8e7cde6a809efc0081f9b9c56b3e75096c8884b2793eb248765f74</hash>
+         <hash>f3823f2c56f966f8b9af2de7d659dc1053ecbd8ba990f9ff20e76d05608ff7d2</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wc_port.c</file>
@@ -12832,7 +12647,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\zero_conf_link_local_private.h</file>
-         <hash>ce6f7a97f7964693fe6063f1f5fc1bb8c1456bcf9213af623d4fd220f018d786</hash>
+         <hash>e8c21370c29825ba6548b3388232c0f6f2bc3c80184a6d9f56892279ba4e6076</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\ndp.h</file>
@@ -12920,7 +12735,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\gmac\src\dynamic\drv_gmac_lib_samE7x_V7x.c</file>
-         <hash>a775c675ff69779d97c0bc64f6c1133cba9f9909193f9a77ffe3ebf73a2b84ae</hash>
+         <hash>11eced3779c602205a4795ff15b16cb7b4a1d9239e5a6565ae59f47ed6080c3b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sp_int.h</file>
@@ -12952,7 +12767,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\drv_ethphy_local.h</file>
-         <hash>2625a8225bbdfc0e16bedbbba4ccf23bd8407a478531ad64ebec2b5469ffaa26</hash>
+         <hash>8861e32dfe20b58ab0b4e5451c4dd2fc15537ea06f4a187a7396b329e68d1b03</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ipv6_manager.h</file>
@@ -12960,7 +12775,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\ipv6.h</file>
-         <hash>2b3eacd12b24f4842cb08578f73c470b02be591e3039b89cd970969af9df571f</hash>
+         <hash>a83fb730f002c7a0f6616cc8422436049b8878a03b9e111d5d97b3065110d4ad</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\camellia.h</file>
@@ -13004,11 +12819,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ipv4.c</file>
-         <hash>c53b0e6a90fbaa7141e25a4e74404f0f9851e6032250027ac39242747e6bd8b6</hash>
+         <hash>b5f132824547b1719b83b5b7428c968defc5f6fd686b687f195d4ba2d629df59</hash>
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>2252520016ba15a6ddea676cd00978e64805c3381f68c896b8563fe88f99a2e6</hash>
+         <hash>0e803a2aa6abf6944f6989e77ebe2f9a370e06f9334baafda7126018a107eee4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
@@ -13168,7 +12983,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\dhcps_private.h</file>
-         <hash>b0d3719c8f41f2e3dd56a57394dd924814ab539afcefa7509744f7cf11f7469f</hash>
+         <hash>b8098ba9b23dd85b1b80a7fce16c2be8e83c22f93a09f7e7869b2aa2cfbdc122</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\lldp_private.h</file>
@@ -13224,7 +13039,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\oahash.c</file>
-         <hash>5651aa16152a6548ce9bb8e1a0dd914ade8cfa27b9acf72a7453744c6f783598</hash>
+         <hash>012b3fc37f4bcaece49e701b1b08305a1cfed50c66517851fe917da87c30379c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\aes.c</file>
@@ -13272,7 +13087,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_announce.h</file>
-         <hash>5d5289419a3fd397fb6506808fcdc0071f53d95d5d0fb28666554e6efc528e1e</hash>
+         <hash>970c3667ec4438da077261c31ae9bc0af6fcfae9f95215ec971597408de656de</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
@@ -13352,7 +13167,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>485abdfa53092dd7369d635a0eac1abe51b4baaeeff7392e58e1a5dcc5d0243e</hash>
+         <hash>c77e352d7a8f960f3cd10bd99923fc962421d55fcb298cc866806f1e8d8e8d40</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\chacha20_poly1305.h</file>
@@ -13364,7 +13179,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcp_manager.h</file>
-         <hash>c51d09b601c6b05090142a796fa7ee79246acc32ed4b06442cb131d15679a68c</hash>
+         <hash>94bb149bd2e7cfd9ba7a43a376103c8acfbac900f9221b7a1a76715f1b3d931e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ndp_manager.h</file>
@@ -13572,7 +13387,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_heap_internal.c</file>
-         <hash>dae8d714995899c343e3ccf3d1048d13ea9210b6806e5e4ab2bb8ec26d12e137</hash>
+         <hash>2fb3d54b7fc2b8cebaead6072e56fe408ff78ccd531c74b8d10a041a0233ab1a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ed448.h</file>
@@ -13644,7 +13459,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_manager.c</file>
-         <hash>0b62a2eb863c33a60859c605479064d15dc8aabbdf249e3977469f8397df1946</hash>
+         <hash>f92e6d2a3a873ef63c6c48327325c0bbb6f3650c560afeeb84b43f3510b1d60d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\http.h</file>
@@ -13684,7 +13499,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_manager_control.h</file>
-         <hash>f524682ba3b8371482582b880a9e022cc63a8c193c2610597dce57ad2237997b</hash>
+         <hash>011e05680aedd8c907027f77f31275eca02851f3505a0830340f78c2198330f4</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_RedMod_pb.h</file>
@@ -13752,7 +13567,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\berkeley_api.h</file>
-         <hash>7c7bd67361c5c73dfada1108aadd3828a606617ae246cbdfc707b6b5d1c7d680</hash>
+         <hash>63b731b80b6f056998ce71a2c98d85ec3ed4a572e196a189565b138eaa8489ad</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wolfevent.h</file>
@@ -13776,11 +13591,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_commands.c</file>
-         <hash>f9fcd984e4f86b59cefbc88d9781bc1992f65f1d3d298077b68d30f48a1d2ddc</hash>
+         <hash>18bf870ddb78e8836afca141823664a44d201947de926c0698a8ea015f5fe935</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_mac_object.h</file>
-         <hash>6656f0d0b7c54fc0bcd89962757e2d7f855e0c553f6ffe8e7d7ae1ea35258d1d</hash>
+         <hash>1f1a5d4004d5222dc19e5c4bccdf8ded5a67c306d2b20132ddbc958b3409ddc8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\pkcs11.h</file>
@@ -13844,7 +13659,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\gmac\src\drv_gmac_local.h</file>
-         <hash>df7b30d0b477c348d5944431a3d0baa79574be26a9080a2751e8dd9316d020f4</hash>
+         <hash>5d08b33c36d7e967a10ca26dd6f5e14709d14a9c7005c7119b75c66e260d7359</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\arp_manager.h</file>
@@ -13860,7 +13675,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\gmac\src\dynamic\drv_gmac_lib.h</file>
-         <hash>8361e57615b38fcef65c2335fcd6a3345aded2f98fa459d4c1be3b8939927e5d</hash>
+         <hash>e204026c4d325e8b6e82b4ffc92bfb254c6fd84f7453dc0a85869ea2fa6cc6cb</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\zero_conf_helper.h</file>
@@ -14040,7 +13855,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\udp_manager.h</file>
-         <hash>37c8ef3979de53e7aadb9d2b3158ca55223ea67fce6660ebe968eb8d686ad75d</hash>
+         <hash>58b8a3568437112ead4e2ac1bd263f89ae7a2c122e2f28ae19da6a7b4b6dab77</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\memory.h</file>
@@ -14164,7 +13979,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\icmp.c</file>
-         <hash>b0e502bb19ca4040a9a4d58ab4435b8ee1132846ca92dc4934774b27646e10a3</hash>
+         <hash>38d9dece11769d3d7947462709cc22801320cb2721c4f179cf793a3e9f6fdf19</hash>
       </entry>
       <entry>
          <file>..\src\config\default\net_pres\pres\net_pres_enc_glue.c</file>
@@ -14264,7 +14079,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>7525c7d56b41047be87b2ae2495c22bc7b3392d02fe4565b4b198052d8f149ed</hash>
+         <hash>c4a738c71a33a4592e66f0da816195c269710e18402c08791d08e2a18f5a495c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tftps_manager.h</file>
@@ -14336,7 +14151,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_packet.h</file>
-         <hash>0005449ce8647772273618361a48eb2a199a936bda8fa6850747fc1944498bad</hash>
+         <hash>c06e37efabff227f27d73992458b93d11b6fb3857c357d1b21ce68475627ef1f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\qspi.h</file>
@@ -14352,7 +14167,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_packet.c</file>
-         <hash>5851f21053fec16b09e6e8e0fe6f4184dea5e356f4461ef438df003d8846f1b7</hash>
+         <hash>ff4c3af61b2c2573753798615e1ed0d56241cddf3f591fef57f6708cef6cb198</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rabbit.h</file>
@@ -14428,11 +14243,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\berkeley_manager.h</file>
-         <hash>73fd559a980ae6d078853405482dbf77f7b9fe36460c3ae08330c54f1884682f</hash>
+         <hash>e77a21a129aecb786a928a459950dda06c8685cb2c884e832322903b1f702bdd</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\igmp_private.h</file>
-         <hash>6b85768942dc511d73f6be8fe1b04c2efe3c67cbb09149eb762b21ba89f81c4b</hash>
+         <hash>e5a9422a753309ff8f38a465d37929d08ec0a8a6f240697c4038359451ab678a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ndp_private.h</file>
@@ -14588,7 +14403,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\dynamic\drv_ethphy.c</file>
-         <hash>43bf8573e931964f69bbffb7f60d26a409a71d60a4ce6f92df860f82c6b9f080</hash>
+         <hash>877b45df9cbc22c5a223141fb45d871a1047017f38258ebc4e5d63b74769c9b1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\net_pres\pres\net_pres_socketapiconversion.h</file>
@@ -14600,7 +14415,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_announce.c</file>
-         <hash>6e9bc61b4528b6b3897e404961224533cef6bceb626e2e334237f1b305b674f9</hash>
+         <hash>9a57c6c45beeadb8de89ffbb323a9b0149c83328e1561e3a3c6806792bc21ab6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\qspi.h</file>
@@ -14692,7 +14507,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\gmac\src\dynamic\_gmac_dcpt_lists.h</file>
-         <hash>028e7a9dbedc26cdb214db1d665bf6a5cb94a4dd63479fad1409b034ed00907f</hash>
+         <hash>fcf084bd5feadbd08f3912abc2aec1f51b98ced8620eb3ac9759cfda7889bd10</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\curve448.h</file>
@@ -14704,7 +14519,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\arp.c</file>
-         <hash>a0e017b478fa40943cbcbe4e9231ee80d74d7fa8d3277ced2439f1764026cf6a</hash>
+         <hash>7e2c876dd0a6067bc517823b114bd4e223ab5003d430406d974359209b09ae5c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\error.c</file>
@@ -14816,7 +14631,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\lldp_tlv.h</file>
-         <hash>ccc9cf6ccc106199db897ca01efbaafcce59e4baf8cb5e4cfd1a47a86df97803</hash>
+         <hash>9eb5add1f3b44d11f7081e10f3837861e314b1106b0d90a47a52e79331a09923</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ftpc_manager.h</file>

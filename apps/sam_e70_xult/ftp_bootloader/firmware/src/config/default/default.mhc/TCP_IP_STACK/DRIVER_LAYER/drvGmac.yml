@@ -11,20 +11,5 @@ children:
       children:
       - type: Dynamic
         attributes: {id: drvGmac, value: LAN8740}
-- type: Attachments
-  children:
-  - type: DirectDependency
-    attributes: {id: GMAC_PHY_Dependency}
-    children:
-    - type: Attributes
-      children:
-      - type: String
-        attributes: {id: targetComponentID}
-        children:
-        - {type: Value, value: drvExtPhyLan8740}
-      - type: String
-        attributes: {id: targetAttachmentID}
-        children:
-        - {type: Value, value: libdrvExtPhyLan8740}
 - type: ElementPosition
   attributes: {x: '280', y: '20', id: drvGmac}
