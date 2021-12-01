@@ -1,5 +1,5 @@
-/**
- * \brief Peripheral I/O description for SAME70Q21B
+/*
+ * Peripheral I/O description for SAME70Q21B
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

@@ -84,6 +84,10 @@ bool EFC_Read( uint32_t *data, uint32_t length, uint32_t address );
 
 bool EFC_SectorErase( uint32_t address );
 
+bool EFC_PageBufferWrite( uint32_t *data, const uint32_t address);
+
+bool EFC_PageBufferCommit( const uint32_t address);
+
 bool EFC_PageWrite( uint32_t *data, uint32_t address );
 
 bool EFC_QuadWordWrite( uint32_t *data, uint32_t address );

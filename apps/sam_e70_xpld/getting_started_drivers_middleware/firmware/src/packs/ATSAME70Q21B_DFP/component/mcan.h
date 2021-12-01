@@ -1,5 +1,5 @@
-/**
- * \brief Component description for MCAN
+/*
+ * Component description for MCAN
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

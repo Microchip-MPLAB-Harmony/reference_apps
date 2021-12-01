@@ -5,10 +5,10 @@ frameworkPath: D:\Users\Mohit\Harmony3
 processor: ATSAME70Q21B
 projectName: getting_started_drivers_middleware_same70_xplained
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;gfx;gfx_apps;reference_apps;net;quick_docs;touch;usb;
+  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;crypto;cryptoauthlib;csp;csp_apps_pic32mz_ef;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_l10_l11;dev_packs;gfx;gfx_apps;gfx_apps_pic32mz_ef;gfx_aria;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;quick_docs_old_version;reference_apps;tflite;touch;usb;wireless;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.3.73\same70b\atdf\ATSAME70Q21B.atdf
+  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.6.98\same70b\atdf\ATSAME70Q21B.atdf

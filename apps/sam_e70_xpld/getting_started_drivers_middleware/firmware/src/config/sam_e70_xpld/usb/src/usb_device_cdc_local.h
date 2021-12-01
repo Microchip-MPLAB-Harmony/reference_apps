@@ -167,6 +167,10 @@ typedef struct
     volatile unsigned int currentQSizeWrite;
     volatile unsigned int currentQSizeRead;
     volatile unsigned int currentQSizeSerialStateNotification;
+	
+	/* Pointer to the Serial State Response Buffer */  
+	USB_CDC_SERIAL_STATE_RESPONSE * serialStateResponse; 
+	
 
 } USB_DEVICE_CDC_INSTANCE;
 

@@ -1,5 +1,5 @@
-/**
- * \brief Component description for DACC
+/*
+ * Component description for DACC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

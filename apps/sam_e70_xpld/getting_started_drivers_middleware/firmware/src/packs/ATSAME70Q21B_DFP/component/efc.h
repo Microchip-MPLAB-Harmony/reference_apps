@@ -1,5 +1,5 @@
-/**
- * \brief Component description for EFC
+/*
+ * Component description for EFC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

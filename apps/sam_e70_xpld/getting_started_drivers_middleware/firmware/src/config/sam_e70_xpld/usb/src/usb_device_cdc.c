@@ -126,6 +126,22 @@ USB_DEVICE_CDC_COMMON_DATA_OBJ gUSBDeviceCdcCommonDataObj;
 USB_DEVICE_CDC_INSTANCE gUSBDeviceCDCInstance[USB_DEVICE_CDC_INSTANCES_NUMBER];
 
 // *****************************************************************************
+/* CDC Instance Serial State Response structure
+
+  Summary:
+    Defines the Serial State Response structures.
+
+  Description:
+    This data type defines the CDC Serial State Response structures. 
+	The number of buffers is defined by the application using the 
+	USB_DEVICE_CDC_INSTANCES_NUMBER.
+
+  Remarks:
+    This structure is private to the CDC.
+*/
+USB_CDC_SERIAL_STATE_RESPONSE gUSBDeviceCDCSerialStateResponse[USB_DEVICE_CDC_INSTANCES_NUMBER] USB_ALIGN;
+
+// *****************************************************************************
 // *****************************************************************************
 // Section: File Scope Functions
 // *****************************************************************************
@@ -235,6 +251,9 @@ void _USB_DEVICE_CDC_Initialization
     thisCDCInstance->currentQSizeWrite = 0;
     thisCDCInstance->currentQSizeRead = 0;
     thisCDCInstance->currentQSizeSerialStateNotification = 0;
+	
+	/* Initialize pointer to the Serial state notification buffer */ 
+	thisCDCInstance->serialStateResponse = &gUSBDeviceCDCSerialStateResponse[iCDC]; 
 
     
     /* check the type of descriptor passed by device layer */
@@ -1230,6 +1249,7 @@ USB_DEVICE_CDC_RESULT USB_DEVICE_CDC_SerialStateNotificationSend
     OSAL_RESULT osalError;
     USB_ERROR irpError;
     OSAL_CRITSECT_DATA_TYPE IntState;
+	USB_CDC_SERIAL_STATE_RESPONSE * serialStateResponse; 
 
     *transferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
 
@@ -1244,6 +1264,29 @@ USB_DEVICE_CDC_RESULT USB_DEVICE_CDC_SerialStateNotificationSend
 
     thisCDCDevice = &gUSBDeviceCDCInstance[iCDC];
     endpoint = &thisCDCDevice->notificationInterface.endpoint[USB_DEVICE_CDC_ENDPOINT_TX];
+	
+	serialStateResponse = thisCDCDevice->serialStateResponse; 
+	
+	/* Fill in the USB CDC Serial state buffer */ 
+	
+	/* bmRequestType = 10100001B (Direction = Device to Host, Request Type = Class, Recipient = Interface) */ 
+	serialStateResponse->bmRequestType = 0xA1; 
+	
+	/* bRequest = SERIAL_STATE */ 
+	serialStateResponse->bNotification = USB_CDC_NOTIFICATION_SERIAL_STATE; 
+	
+	/* wValue = Zero */ 
+	serialStateResponse->wValue = 0; 
+	
+	/* Get the interface Number from the CDC instance */ 
+	serialStateResponse->wIndex = (uint16_t)(thisCDCDevice->notificationInterface.interfaceNum); 
+	
+	/* Fill in the length */ 
+	serialStateResponse->wLength = sizeof(USB_CDC_SERIAL_STATE);
+	
+	/* Copy Serial state data received from the client to the buffer */ 
+	memcpy (&(serialStateResponse->stSerial), notificationData, sizeof(USB_CDC_SERIAL_STATE)); 
+	
 
     if(!(endpoint->isConfigured))
     {
@@ -1275,8 +1318,8 @@ USB_DEVICE_CDC_RESULT USB_DEVICE_CDC_SerialStateNotificationSend
             /* This means the IRP is free */
 
             irp = &gUSBDeviceCDCIRP[cnt];
-            irp->data = notificationData;
-            irp->size = sizeof(USB_CDC_SERIAL_STATE);
+            irp->data = serialStateResponse;
+            irp->size = sizeof(USB_CDC_SERIAL_STATE_RESPONSE);
             irp->userData = (uintptr_t) iCDC;
             irp->callback = _USB_DEVICE_CDC_SerialStateSendIRPCallback;
             irp->flags = USB_DEVICE_IRP_FLAG_DATA_COMPLETE;

@@ -1,5 +1,5 @@
-/**
- * \brief Component description for UART
+/*
+ * Component description for UART
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

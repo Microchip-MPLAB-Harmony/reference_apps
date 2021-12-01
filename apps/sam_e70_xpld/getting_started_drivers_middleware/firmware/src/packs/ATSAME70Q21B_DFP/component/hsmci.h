@@ -1,5 +1,5 @@
-/**
- * \brief Component description for HSMCI
+/*
+ * Component description for HSMCI
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

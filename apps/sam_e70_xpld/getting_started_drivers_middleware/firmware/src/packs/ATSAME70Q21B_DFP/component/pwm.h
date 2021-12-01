@@ -1,5 +1,5 @@
-/**
- * \brief Component description for PWM
+/*
+ * Component description for PWM
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *

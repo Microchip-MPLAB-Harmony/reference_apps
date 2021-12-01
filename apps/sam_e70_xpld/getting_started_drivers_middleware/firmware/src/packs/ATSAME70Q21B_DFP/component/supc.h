@@ -1,5 +1,5 @@
-/**
- * \brief Component description for SUPC
+/*
+ * Component description for SUPC
  *
  * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
