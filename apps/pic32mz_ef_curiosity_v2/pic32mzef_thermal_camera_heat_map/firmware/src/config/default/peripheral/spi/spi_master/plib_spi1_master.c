@@ -161,6 +161,11 @@ bool SPI1_Read(void* pReceiveData, size_t rxSize)
     return(SPI1_WriteRead(NULL, 0, pReceiveData, rxSize));
 }
 
+bool SPI1_IsTransmitterBusy (void)
+{
+    return ((SPI1STAT & _SPI1STAT_SRMT_MASK) == 0)? true : false;
+}
+
 bool SPI1_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;

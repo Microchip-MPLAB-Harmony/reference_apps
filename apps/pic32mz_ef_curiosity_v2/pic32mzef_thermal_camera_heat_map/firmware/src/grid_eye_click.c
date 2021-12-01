@@ -257,7 +257,8 @@ void GRID_EYE_Display_draw_data()
     
     leRenderer_RectFill(&rect_fill,LIGHT_YELLOW_COLOR,ALPHA_BLENDING_VALUE);
     
-    
+    color = BLUE;
+
     index = GRID_EYE_TABLE_64_FIRST_SAMPLE_INDEX;
     grid_eye_table_64_current_row_addr = GRID_EYE_TABLE_64_FIRST_SAMPLE_INDEX;
     

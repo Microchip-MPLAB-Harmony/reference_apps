@@ -15,7 +15,7 @@
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=3.0.0"
+            "semverRange":">=3.0.1"
          }
       ],
       "dfp":{
@@ -49,12 +49,13 @@
       ],
       "peripherals":[
          "SPI",
-		 "I2C",
+         "I2C",
          "Timer",
          "Core Timer"
       ],
       "keywords":[
          "MHC",
+         "MCC",
          "Harmony",
          "PIC32MZ2048EFM144",
          "PIC32MZ Family",
@@ -68,17 +69,17 @@
          "PIC32MZEF",
          "Click",
          "Grid-EYE",
-		 "OLED C click",
-		 "Heat Map",
+         "OLED C click",
+         "Heat Map",
          "Driver",
          "System Service",
          "Legato External Controller",
          "SPI Display Interface",
          "Legato Graphics Composer",
          "Graphics Composer",
-		 "Click",
-		 "Mikroe",
-		 "Mikroelektronika"		 
+         "Click",
+         "Mikroe",
+         "Mikroelektronika"
       ],
       "additionalData":{
          "longDescription":{
