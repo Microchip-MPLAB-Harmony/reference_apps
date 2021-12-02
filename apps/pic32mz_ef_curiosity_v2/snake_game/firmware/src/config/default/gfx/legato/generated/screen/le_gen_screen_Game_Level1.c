@@ -1,7 +1,7 @@
 #include "gfx/legato/generated/screen/le_gen_screen_Game_Level1.h"
 
 // screen member widget declarations
-leWidget* root0;
+static leWidget* root0;
 
 leWidget* Game_Level1_PanelWidget2;
 leWidget* Game_Level1_PanelWidget3;
@@ -155,6 +155,7 @@ leResult screenShow_Game_Level1(void)
 
 void screenUpdate_Game_Level1(void)
 {
+    root0->fn->setSize(root0, root0->parent->rect.width, root0->parent->rect.height);
 }
 
 void screenHide_Game_Level1(void)

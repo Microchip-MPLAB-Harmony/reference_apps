@@ -73,6 +73,9 @@
 #define DRV_SSD1963_NCSDeassert(intf) GFX_Disp_Intf_PinControl(intf, \
                                     GFX_DISP_INTF_PIN_CS, \
                                     GFX_DISP_INTF_PIN_SET)
+									
+
+									
 
 typedef enum
 {
@@ -313,6 +316,7 @@ void DRV_SSD1963_Update(void)
 }
 
 
+
 gfxResult DRV_SSD1963_BlitBuffer(int32_t x,
                                            int32_t y,
                                            gfxPixelBuffer* buf)
@@ -366,6 +370,10 @@ gfxDriverIOCTLResponse DRV_SSD1963_IOCTL(gfxDriverIOCTLRequest request,
     
     switch(request)
     {
+        case GFX_IOCTL_FRAME_END:
+        {
+            return GFX_IOCTL_OK;
+        }	
         case GFX_IOCTL_GET_COLOR_MODE:
         {
             val = (gfxIOCTLArg_Value*)arg;

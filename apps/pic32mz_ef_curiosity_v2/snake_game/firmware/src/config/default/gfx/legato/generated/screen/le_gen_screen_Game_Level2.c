@@ -1,7 +1,7 @@
 #include "gfx/legato/generated/screen/le_gen_screen_Game_Level2.h"
 
 // screen member widget declarations
-leWidget* root0;
+static leWidget* root0;
 
 leWidget* Game_Level2_PanelWidget1;
 leRectangleWidget* Game_Level2_Barrier_upper_left_horizontal;
@@ -229,6 +229,7 @@ leResult screenShow_Game_Level2(void)
 
 void screenUpdate_Game_Level2(void)
 {
+    root0->fn->setSize(root0, root0->parent->rect.width, root0->parent->rect.height);
 }
 
 void screenHide_Game_Level2(void)

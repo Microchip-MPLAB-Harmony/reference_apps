@@ -1,7 +1,7 @@
 #include "gfx/legato/generated/screen/le_gen_screen_Menu.h"
 
 // screen member widget declarations
-leWidget* root0;
+static leWidget* root0;
 
 leWidget* Menu_PanelWidget0;
 leLabelWidget* Menu_Level1_label;
@@ -95,6 +95,7 @@ leResult screenShow_Menu(void)
 
 void screenUpdate_Menu(void)
 {
+    root0->fn->setSize(root0, root0->parent->rect.width, root0->parent->rect.height);
 }
 
 void screenHide_Menu(void)

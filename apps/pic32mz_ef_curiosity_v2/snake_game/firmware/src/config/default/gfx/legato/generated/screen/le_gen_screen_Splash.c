@@ -1,7 +1,7 @@
 #include "gfx/legato/generated/screen/le_gen_screen_Splash.h"
 
 // screen member widget declarations
-leWidget* root0;
+static leWidget* root0;
 
 leWidget* Splash_Panel_splash_screen;
 leImageWidget* Splash_PIC32_logo;
@@ -66,6 +66,7 @@ leResult screenShow_Splash(void)
 
 void screenUpdate_Splash(void)
 {
+    root0->fn->setSize(root0, root0->parent->rect.width, root0->parent->rect.height);
 }
 
 void screenHide_Splash(void)
