@@ -303,7 +303,7 @@ static bool PKCS1_ParseRSAPrivateKeyDER(const uint8_t *pKey, size_t keyLength,
     true or false indicating if WEP key information is valid.
 
 */
-
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
 static bool _DRV_WINC_WEPKeyIsValid
 (
     uint8_t idx,
@@ -331,7 +331,7 @@ static bool _DRV_WINC_WEPKeyIsValid
     }
     return true;
 }
-
+#endif
 //*******************************************************************************
 /*
   Function:
@@ -369,7 +369,7 @@ bool WDRV_WINC_AuthCtxIsValid(const WDRV_WINC_AUTH_CONTEXT *const pAuthCtx)
         {
             break;
         }
-
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
         /* Check WEP authentication. */
         case WDRV_WINC_AUTH_TYPE_WEP:
         {
@@ -383,7 +383,7 @@ bool WDRV_WINC_AuthCtxIsValid(const WDRV_WINC_AUTH_CONTEXT *const pAuthCtx)
             }
             break;
         }
-
+#endif
         /* Check Enterprise authentication. */
         case WDRV_WINC_AUTH_TYPE_802_1X:
         {
@@ -495,7 +495,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetOpen
     See wdrv_winc_authctx.h for usage information.
 
 */
-
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
 WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWEP
 (
     WDRV_WINC_AUTH_CONTEXT *const pAuthCtx,
@@ -529,7 +529,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWEP
 
     return WDRV_WINC_STATUS_OK;
 }
-
+#endif
 //*******************************************************************************
 /*
   Function:

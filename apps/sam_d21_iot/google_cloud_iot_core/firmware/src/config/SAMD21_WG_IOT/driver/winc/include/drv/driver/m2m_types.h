@@ -83,9 +83,8 @@ MACROS
     ( ((uint32_t)M2M_MAKE_VERSION((fw_major),  (fw_minor),  (fw_patch)))  << M2M_FW_VERSION_SHIFT) | \
     ( ((uint32_t)M2M_MAKE_VERSION((drv_major), (drv_minor), (drv_patch))) << M2M_DRV_VERSION_SHIFT))
 
-#define REL_19_7_3_VER          M2M_MAKE_VERSION_INFO(19,7,3,19,3,0)
-#define REL_19_7_2_VER          M2M_MAKE_VERSION_INFO(19,7,2,19,3,0)
-#define REL_19_7_1_VER          M2M_MAKE_VERSION_INFO(19,7,1,19,3,0)
+#define REL_19_7_6_VER          M2M_MAKE_VERSION_INFO(19,7,6,19,3,0)
+#define REL_19_7_5_VER          M2M_MAKE_VERSION_INFO(19,7,5,19,3,0)
 #define REL_19_7_0_VER          M2M_MAKE_VERSION_INFO(19,7,0,19,3,0)
 #define REL_19_6_4_VER          M2M_MAKE_VERSION_INFO(19,6,4,19,3,0)
 #define REL_19_6_0_VER          M2M_MAKE_VERSION_INFO(19,6,0,19,3,0)
@@ -120,7 +119,7 @@ MACROS
 /*!< Firmware Minor release version number.
 */
 
-#define M2M_RELEASE_VERSION_PATCH_NO                        (3)
+#define M2M_RELEASE_VERSION_PATCH_NO                        (6)
 /*!< Firmware patch release version number.
 */
 
@@ -1141,7 +1140,7 @@ typedef enum {
     /*!< Wi-Fi network is secured with WPA/WPA2 personal(PSK).
     */
     M2M_WIFI_SEC_WEP,
-    /*!< Security type WEP (40 or 104) OPEN OR SHARED.
+    /*!< WEP is deprecated as of 19.7.5. 
     */
     M2M_WIFI_SEC_802_1X,
     /*!< Wi-Fi network is secured with WPA/WPA2 Enterprise.IEEE802.1x.

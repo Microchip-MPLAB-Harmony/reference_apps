@@ -8,6 +8,8 @@
 #ifndef CLOUD_SERVICE_H_
 #define CLOUD_SERVICE_H_
 
+#include <stdint.h>
+#include <stddef.h>
 #include <stdbool.h>
 
 #define CLOUD_PACKET_RECV_TABLE_SIZE	2

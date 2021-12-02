@@ -589,8 +589,8 @@ uint32_t spi_flash_get_size(void)
 
     if(!gu32InternalFlashSize)
     {
-        u32FlashId = spi_flash_rdid();//spi_flash_probe();
-        if(u32FlashId != 0xffffffff)
+        u32FlashId = spi_flash_rdid();
+        if((u32FlashId != 0xffffffff) && (u32FlashId !=0))
         {
             /*flash size is the third byte from the FLASH RDID*/
             u32FlashPwr = ((u32FlashId>>16)&0xff) - 0x11; /*2MBIT is the min*/

@@ -113,14 +113,22 @@ typedef enum{
 @brief  Elliptic Curve point representation
 */
 typedef struct EcPoint{
-    uint8_t     X[ECC_POINT_MAX_SIZE];
-    /*!<
-        The X-coordinate of the ec point.
-    */
-    uint8_t     Y[ECC_POINT_MAX_SIZE];
-    /*!<
-        The Y-coordinate of the ec point.
-    */
+    union {
+        uint8_t XY[2*ECC_POINT_MAX_SIZE];
+        /*!<
+            Concatenation of X and Y coordinates of the ec point.
+        */
+        struct {
+            uint8_t X[ECC_POINT_MAX_SIZE];
+            /*!<
+                The X-coordinate of the ec point.
+            */
+            uint8_t Y[ECC_POINT_MAX_SIZE];
+            /*!<
+                The Y-coordinate of the ec point.
+            */
+        };
+    };
     uint16_t    u16Size;
     /*!<
         Point size in bytes (for each of the coordinates).

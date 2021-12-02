@@ -105,10 +105,17 @@ void ADC_Initialize( void )
     /* positive and negative input pins */
     ADC_REGS->ADC_INPUTCTRL = (uint32_t) ADC_POSINPUT_PIN2 | (uint32_t) ADC_NEGINPUT_GND \
         | ADC_INPUTCTRL_INPUTSCAN(0) | ADC_INPUTCTRL_INPUTOFFSET(0) | ADC_INPUTCTRL_GAIN_1X;
+    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    {
+        /* Wait for Synchronization */
+    }
 
     /* Prescaler, Resolution & Operation Mode */
     ADC_REGS->ADC_CTRLB = ADC_CTRLB_PRESCALER_DIV32 | ADC_CTRLB_RESSEL_12BIT | ADC_CTRLB_FREERUN_Msk;
-
+    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    {
+        /* Wait for Synchronization */
+    }
 
     /* Clear all interrupt flags */
     ADC_REGS->ADC_INTFLAG = ADC_INTFLAG_Msk;
@@ -171,6 +178,10 @@ void ADC_ConversionStart( void )
 void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 {
     ADC_REGS->ADC_WINLT = low_threshold;
+    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    {
+        /* Wait for Synchronization */
+    }    
     ADC_REGS->ADC_WINUT = high_threshold;
     while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
     {

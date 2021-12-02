@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-21 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -35,30 +35,8 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-#include "osal/osal.h"
 #include "wdrv_winc_common.h"
-/*******************************************************************************
-*   Depending upon the OSAL mode,
-*   a support level specific implementation file is included by this
-*   file to give the required level of compatibility. The available
-*   support levels include, OSAL_USE_NONE, OSAL_USE_BASIC, and
-*   OSAL_USE_RTOS.
-*******************************************************************************/
-#define OSAL_USE_NONE        0
-#define OSAL_USE_BASIC       0
-#define OSAL_USE_RTOS        0
 
-#ifdef DRV_WIFI_WINC_RTOS_STACK_SIZE
-void WDRV_MSDelay(uint32_t ms)
-{
-    if (!ms)
-    {
-        ms = 1;
-    }
-
-    vTaskDelay(ms * portTICK_PERIOD_MS);
-}
-#else
 void WDRV_MSDelay(uint32_t ms)
 {
     SYS_TIME_HANDLE tmrHandle = SYS_TIME_HANDLE_INVALID;
@@ -72,6 +50,5 @@ void WDRV_MSDelay(uint32_t ms)
     {
     }
 }
-#endif /* (OSAL_USE_RTOS == 1 || OSAL_USE_RTOS == 9) */
 
 //DOM-IGNORE-END

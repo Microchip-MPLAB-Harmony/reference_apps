@@ -33,6 +33,10 @@
 #define ATCA_NO_HEAP
 #endif
 
+/** Define platform malloc/free */
+#define ATCA_PLATFORM_MALLOC    malloc
+#define ATCA_PLATFORM_FREE      free
+
 #define atca_delay_ms   hal_delay_ms
 #define atca_delay_us   hal_delay_us
 
@@ -50,6 +54,7 @@
 #endif
 
 /* Define generic interfaces to the processor libraries */
+
 #define PLIB_I2C_ERROR          SERCOM_I2C_ERROR
 #define PLIB_I2C_ERROR_NONE     SERCOM_I2C_ERROR_NONE
 #define PLIB_I2C_TRANSFER_SETUP SERCOM_I2C_TRANSFER_SETUP
@@ -60,7 +65,7 @@ typedef bool (* atca_i2c_plib_is_busy)( void );
 typedef PLIB_I2C_ERROR (* atca_i2c_error_get)( void );
 typedef bool (* atca_i2c_plib_transfer_setup)(PLIB_I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq);
 
-typedef struct atca_plib_api
+typedef struct atca_plib_i2c_api
 {
     atca_i2c_plib_read              read;
     atca_i2c_plib_write             write;
@@ -75,6 +80,8 @@ typedef struct atca_plib_api
 extern atca_plib_i2c_api_t sercom3_plib_i2c_api;
 
 
+
+#define ATCA_TEST_MULTIPLE_INSTANCES
 
 
 #endif // ATCA_CONFIG_H

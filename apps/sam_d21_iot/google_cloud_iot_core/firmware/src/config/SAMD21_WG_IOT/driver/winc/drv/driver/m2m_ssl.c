@@ -338,7 +338,7 @@ int8_t m2m_ssl_retrieve_next_for_verifying(tenuEcNamedCurve *penuCurve, uint8_t 
     return M2M_SUCCESS;
 
 __ERR:
-    hif_receive(0, NULL, 0, 1);
+    if(hif_receive(0, NULL, 0, 1) != M2M_SUCCESS) M2M_ERR("hif rx done failed\n");
     return s8Ret;
 }
 
@@ -405,7 +405,7 @@ int8_t m2m_ssl_retrieve_hash(uint8_t *pu8Value, uint16_t u16ValueSz)
     return M2M_SUCCESS;
 
 __ERR:
-    hif_receive(0, NULL, 0, 1);
+    if(hif_receive(0, NULL, 0, 1) != M2M_SUCCESS) M2M_ERR("hif rx done failed\n");
     return s8Ret;
 }
 
@@ -429,7 +429,7 @@ __ERR:
 */
 void m2m_ssl_stop_retrieving(void)
 {
-    hif_receive(0, NULL, 0, 1);
+    if(hif_receive(0, NULL, 0, 1) != M2M_SUCCESS) M2M_ERR("hif rx done failed\n");
 }
 
 /*!

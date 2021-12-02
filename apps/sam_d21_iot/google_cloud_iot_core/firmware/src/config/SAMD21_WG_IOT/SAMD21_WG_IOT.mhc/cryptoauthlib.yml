@@ -15,6 +15,17 @@ children:
         - type: Values
           children:
           - {type: Value, value: ATECC608}
+  - type: ListEntry
+    attributes: {id: CAL_DEV_CFG_LIST_ENTRIES}
+    children:
+    - type: Attributes
+      children:
+      - type: StringArray
+        attributes: {id: values}
+        children:
+        - type: Values
+          children:
+          - {type: Value, value: atecc608_0_init_data}
   - type: Boolean
     attributes: {id: CAL_ENABLE_DEBUG_PRINT}
     children:
