@@ -28,6 +28,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
 #include "debug_print.h"
 #include "definitions.h"
 
@@ -78,7 +81,7 @@ void debug_printer(debug_severity_t debug_severity, debug_errorLevel_t error_lev
 {
     char tmpBuf[APP_PRINT_BUFFER_SIZ];
     size_t len = 0;
-    va_list args;
+    va_list args = {0};
     
     if(debug_severity >= SEVERITY_NONE && debug_severity <= SEVERITY_DEBUG)
     {
@@ -123,7 +126,7 @@ void debug_printf(const char* format, ...)
 {
     char tmpBuf[APP_PRINT_BUFFER_SIZ];
     size_t len = 0;
-    va_list args;
+    va_list args = {0};
     va_start( args, format );
 
     len = vsnprintf(tmpBuf, APP_PRINT_BUFFER_SIZ, format, args);

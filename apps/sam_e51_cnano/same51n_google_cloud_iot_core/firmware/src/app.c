@@ -434,7 +434,7 @@ static void APP_DataTask(void)
 
 static float APP_GetTempSensorValue(void)
 {
-    uint16_t temp;
+    uint16_t temp = 0;
     /* TA: AMBIENT TEMPERATURE REGISTER ADDRESS: 0x5 */
         uint8_t registerAddr = 0x00;
     /* Temp sensor read buffer */

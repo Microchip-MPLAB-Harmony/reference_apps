@@ -186,8 +186,7 @@ void enable_provision_ap(void)
    
     tstrM2MAPModeConfig apExtConfig;
    
-    tstrM2MAPConfig apConfig = {
-                        CFG_WLAN_AP_NAME, // Access Point Name.
+    tstrM2MAPConfig apConfig = {CFG_WLAN_AP_NAME, // Access Point Name.
                         1, // Channel to use.
                         0, // Wep key index.
                         WEP_40_KEY_STRING_SIZE, // Wep key size.

@@ -35,8 +35,6 @@
 
 #include "atca_status.h"
 #include "atca_iface.h"
-#include "atca_start_config.h"
-#include "atca_start_iface.h"
 
 
 /** \defgroup hal_ Hardware abstraction layer (hal_)
@@ -92,20 +90,25 @@ ATCA_STATUS hal_swi_sleep(ATCAIface iface);
 ATCA_STATUS hal_swi_release(void *hal_data);
 #endif
 
-
-#if defined(ATCA_HAL_1WIRE) || defined(ATCA_HAL_SWI)
-ATCA_STATUS hal_gpio_init(void *hal, ATCAIfaceCfg* cfg);
-ATCA_STATUS hal_gpio_post_init(ATCAIface iface);
-ATCA_STATUS hal_gpio_send(ATCAIface iface, uint8_t word_address, uint8_t* txdata, int txlength);
-ATCA_STATUS hal_gpio_receive(ATCAIface iface, uint8_t word_address, uint8_t* rxdata, uint16_t* rxlength);
-ATCA_STATUS hal_gpio_idle(ATCAIface iface);
-ATCA_STATUS hal_gpio_sleep(ATCAIface iface);
-ATCA_STATUS hal_gpio_wake(ATCAIface iface);
-ATCA_STATUS hal_gpio_release(void *hal_data);
-ATCA_STATUS hal_gpio_device_discovery(ATCAIface iface);
+#if defined(ATCA_HAL_SWI_GPIO) || defined(ATCA_HAL_SWI_BB)
+ATCA_STATUS hal_swi_gpio_init(ATCAIface iface, ATCAIfaceCfg *cfg);
+ATCA_STATUS hal_swi_gpio_post_init(ATCAIface iface);
+ATCA_STATUS hal_swi_gpio_send(ATCAIface iface, uint8_t word_address, uint8_t *txdata, int txlength);
+ATCA_STATUS hal_swi_gpio_receive(ATCAIface iface, uint8_t word_address, uint8_t *rxdata, uint16_t *rxlength);
+ATCA_STATUS hal_swi_gpio_release(void *hal_data);
+ATCA_STATUS hal_swi_gpio_control(ATCAIface iface, uint8_t option, void* param, size_t paramlen);
 #endif
 
-#ifdef ATCA_HAL_UART
+#if defined(ATCA_HAL_GPIO) || defined(ATCA_HAL_BB)
+ATCA_STATUS hal_gpio_init(ATCAIface iface, ATCAIfaceCfg *cfg);
+ATCA_STATUS hal_gpio_post_init(ATCAIface iface);
+ATCA_STATUS hal_gpio_send(ATCAIface iface, uint8_t word_address, uint8_t* pin_state, int unused_param);
+ATCA_STATUS hal_gpio_receive(ATCAIface iface, uint8_t word_address, uint8_t* pin_state, uint16_t* unused_param);
+ATCA_STATUS hal_gpio_release(void *hal_data);
+ATCA_STATUS hal_gpio_control(ATCAIface iface, uint8_t option, void* param, size_t paramlen);
+#endif
+
+#if defined(ATCA_HAL_SWI_UART) || defined(ATCA_HAL_KIT_UART) || defined(ATCA_HAL_UART)
 ATCA_STATUS hal_uart_init(ATCAIface iface, ATCAIfaceCfg *cfg);
 ATCA_STATUS hal_uart_post_init(ATCAIface iface);
 ATCA_STATUS hal_uart_send(ATCAIface iface, uint8_t word_address, uint8_t *txdata, int txlength);
@@ -178,7 +181,8 @@ typedef enum
     ATCA_HAL_CONTROL_SELECT = 4,
     ATCA_HAL_CONTROL_DESELECT = 5,
     ATCA_HAL_CHANGE_BAUD = 6,
-    ATCA_HAL_FLUSH_BUFFER = 7
+    ATCA_HAL_FLUSH_BUFFER = 7,
+    ATCA_HAL_CONTROL_DIRECTION = 8
 } ATCA_HAL_CONTROL;
 
 /** \brief Timer API for legacy implementations */

@@ -37,36 +37,36 @@
                   <itemPath>../src/config/default/driver/winc/include/dev/wdrv_winc_gpio.h</itemPath>
                   <itemPath>../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h</itemPath>
                 </logicalFolder>
-                <logicalFolder name="drv" displayName="drv" projectFiles="true">
-                  <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+                <logicalFolder name="f1" displayName="drv" projectFiles="true">
+                  <logicalFolder name="f1" displayName="bsp" projectFiles="true">
                     <itemPath>../src/config/default/driver/winc/include/drv/bsp/nm_bsp.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="common" displayName="common" projectFiles="true">
+                  <logicalFolder name="f2" displayName="common" projectFiles="true">
                     <itemPath>../src/config/default/driver/winc/include/drv/common/nm_common.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/common/nm_debug.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="driver" displayName="driver" projectFiles="true">
-                    <itemPath>../src/config/default/driver/winc/include/drv/driver/ecc_types.h</itemPath>
+                  <logicalFolder name="f3" displayName="driver" projectFiles="true">
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_hif.h</itemPath>
-                    <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_ota.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_periph.h</itemPath>
-                    <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_types.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_wifi.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/nmasic.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/nmbus.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/nmdrv.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/driver/nmspi.h</itemPath>
+                    <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_ota.h</itemPath>
+                    <itemPath>../src/config/default/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
+                    <itemPath>../src/config/default/driver/winc/include/drv/driver/ecc_types.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="socket" displayName="socket" projectFiles="true">
+                  <logicalFolder name="f5" displayName="socket" projectFiles="true">
                     <itemPath>../src/config/default/driver/winc/include/drv/socket/m2m_socket_host_if.h</itemPath>
-                    <itemPath>../src/config/default/driver/winc/include/drv/socket/netinet_in.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/socket/socket.h</itemPath>
+                    <itemPath>../src/config/default/driver/winc/include/drv/socket/netinet_in.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="spi_flash" displayName="spi_flash" projectFiles="true">
-                    <itemPath>../src/config/default/driver/winc/include/drv/spi_flash/flexible_flash.h</itemPath>
+                  <logicalFolder name="f4" displayName="spi_flash" projectFiles="true">
                     <itemPath>../src/config/default/driver/winc/include/drv/spi_flash/spi_flash.h</itemPath>
                     <itemPath>../src/config/default/driver/winc/include/drv/spi_flash/spi_flash_map.h</itemPath>
+                    <itemPath>../src/config/default/driver/winc/include/drv/spi_flash/flexible_flash.h</itemPath>
                   </logicalFolder>
                 </logicalFolder>
                 <itemPath>../src/config/default/driver/winc/include/wdrv_winc.h</itemPath>
@@ -96,6 +96,20 @@
           </logicalFolder>
           <logicalFolder name="f2" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
+              <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="calib" displayName="calib" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+                <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="hal" displayName="hal" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="host" displayName="host" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
+              </logicalFolder>
               <logicalFolder name="f1" displayName="tng" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/tng/tflxtls_cert_def_4_device.h</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_1_signer.h</itemPath>
@@ -278,6 +292,7 @@
             <itemPath>../src/packs/ATSAME51J20A_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME51J20A_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/ac.h</itemPath>
@@ -337,6 +352,7 @@
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/trng.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME51J20A_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME51J20A_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME51J20A_DFP/pio/same51j20a.h</itemPath>
@@ -417,6 +433,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
+      <itemPath>google_cloud_iot_core_sam_e51_cnano.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -465,12 +482,12 @@
                   <itemPath>../src/config/default/driver/winc/drv/driver/m2m_ota.c</itemPath>
                   <itemPath>../src/config/default/driver/winc/drv/driver/m2m_ssl.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f3" displayName="socket" projectFiles="true">
+                <logicalFolder name="f4" displayName="socket" projectFiles="true">
                   <itemPath>../src/config/default/driver/winc/drv/socket/socket.c</itemPath>
                   <itemPath>../src/config/default/driver/winc/drv/socket/inet_ntop.c</itemPath>
                   <itemPath>../src/config/default/driver/winc/drv/socket/inet_addr.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f4" displayName="spi_flash" projectFiles="true">
+                <logicalFolder name="f3" displayName="spi_flash" projectFiles="true">
                   <itemPath>../src/config/default/driver/winc/drv/spi_flash/spi_flash.c</itemPath>
                   <itemPath>../src/config/default/driver/winc/drv/spi_flash/flexible_flash.c</itemPath>
                 </logicalFolder>
@@ -576,12 +593,11 @@
               <logicalFolder name="f4" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/atca_hal.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/atca_hal.h</itemPath>
-                <itemPath>../src/config/default/library/cryptoauthlib/hal/atca_start_config.h</itemPath>
-                <itemPath>../src/config/default/library/cryptoauthlib/hal/atca_start_iface.h</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_harmony_init.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_cortex_m_delay.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_i2c_harmony.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_gpio_harmony.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f5" displayName="host" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/host/atca_host.c</itemPath>
@@ -827,13 +843,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;../src/config/default/library/cryptoauthlib/tng;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src/config/default/driver/winc/include/;;../src/config/default/driver/winc/include/dev;;../src/config/default/driver/winc/include/drv/bsp;;../src/config/default/driver/winc/include/drv/bsp/include;;../src/config/default/driver/winc/include/drv/common;;../src/config/default/driver/winc/include/drv/driver;;../src/config/default/driver/winc/include/drv/socket;;../src/config/default/driver/winc/include/drv/spi_flash;;../src;../src/config/default;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/default/library/cryptoauthlib/tng;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -883,6 +900,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -909,7 +927,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value=";;"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -922,6 +940,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -931,7 +950,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/default;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -950,6 +969,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>

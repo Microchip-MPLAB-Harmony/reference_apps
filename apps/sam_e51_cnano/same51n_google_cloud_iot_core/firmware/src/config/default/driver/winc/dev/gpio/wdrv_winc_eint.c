@@ -84,11 +84,11 @@ void WDRV_WINC_INTInitialize(void)
 void WDRV_WINC_INTDeinitialize(void)
 {
 #ifdef WDRV_WINC_EIC_SOURCE
-    EIC_InterruptEnable(WDRV_WINC_EIC_SOURCE);
+    EIC_InterruptDisable(WDRV_WINC_EIC_SOURCE);
 #elif defined WDRV_WINC_GPIO_SOURCE
-    GPIO_PinInterruptEnable(WDRV_WINC_GPIO_SOURCE);
+    GPIO_PinInterruptDisable(WDRV_WINC_GPIO_SOURCE);
 #elif defined WDRV_WINC_PIO_SOURCE
-    PIO_PinInterruptEnable(WDRV_WINC_PIO_SOURCE);
+    PIO_PinInterruptDisable(WDRV_WINC_PIO_SOURCE);
 #else
     SYS_INT_SourceDisable(WDRV_INT_SOURCE);
 #endif

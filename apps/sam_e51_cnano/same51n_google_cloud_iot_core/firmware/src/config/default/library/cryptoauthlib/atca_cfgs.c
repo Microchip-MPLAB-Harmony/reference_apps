@@ -49,8 +49,11 @@ ATCAIfaceCfg cfg_ateccx08a_i2c_default = {
         .atcai2c.address        = 0xC0,
 #endif
         .atcai2c.bus            = 2,
+#ifdef __linux__
+        .atcai2c.baud           = 100000,
+#else
         .atcai2c.baud           = 400000,
-        //.atcai2c.baud = 100000,
+#endif
     },
     .wake_delay                 = 1500,
     .rx_retries                 = 20
@@ -70,9 +73,9 @@ ATCAIfaceCfg cfg_ateccx08a_swi_default = {
 };
 #endif
 
-#if defined(ATCA_ECC_SUPPORT) && defined(ATCA_HAL_KIT_CDC)
+#if defined(ATCA_ECC_SUPPORT) && defined(ATCA_HAL_KIT_UART)
 /** \brief default configuration for Kit protocol over the device's async interface */
-ATCAIfaceCfg cfg_ateccx08a_kitcdc_default = {
+ATCAIfaceCfg cfg_ateccx08_kituart_default = {
     .iface_type             = ATCA_UART_IFACE,
     .devtype                = ATECC608,
     {
@@ -114,7 +117,11 @@ ATCAIfaceCfg cfg_atsha20xa_i2c_default = {
         .atcai2c.address        = 0xC8,
 #endif
         .atcai2c.bus            = 2,
+#ifdef __linux__
+        .atcai2c.baud           = 100000,
+#else
         .atcai2c.baud           = 400000,
+#endif
     },
     .wake_delay                 = 2560,
     .rx_retries                 = 20
@@ -134,9 +141,9 @@ ATCAIfaceCfg cfg_atsha20xa_swi_default = {
 };
 #endif
 
-#if defined(ATCA_SHA_SUPPORT) && defined(ATCA_HAL_KIT_CDC)
+#if defined(ATCA_SHA_SUPPORT) && defined(ATCA_HAL_KIT_UART)
 /** \brief default configuration for Kit protocol over the device's async interface */
-ATCAIfaceCfg cfg_atsha20xa_kitcdc_default = {
+ATCAIfaceCfg cfg_atsha20xa_kituart_default = {
     .iface_type            = ATCA_UART_IFACE,
     .devtype               = ATSHA204A,
     {
@@ -176,8 +183,11 @@ ATCAIfaceCfg cfg_ecc204_i2c_default = {
         .atcai2c.address        = 0x33,
 #endif
         .atcai2c.bus            = 2,
+#ifdef __linux__
+        .atcai2c.baud           = 100000,
+#else
         .atcai2c.baud           = 400000,
-        //.atcai2c.baud = 100000,
+#endif
     },
     .wake_delay                 = 1500,
     .rx_retries                 = 20

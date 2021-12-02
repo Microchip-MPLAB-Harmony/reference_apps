@@ -70,11 +70,11 @@ ATCAIface newATCAIface(ATCAIfaceCfg *cfg)
     ATCAIface ca_iface;
     ATCA_STATUS status;
 
-    ca_iface = (ATCAIface)malloc(sizeof(struct atca_iface));
+    ca_iface = (ATCAIface)hal_malloc(sizeof(struct atca_iface));
     status = initATCAIface(cfg, ca_iface);
     if (status != ATCA_SUCCESS)
     {
-        free(ca_iface);
+        hal_free(ca_iface);
         ca_iface = NULL;
         return NULL;
     }
@@ -336,7 +336,25 @@ bool atca_iface_is_kit(ATCAIface ca_iface)
 
     if (ca_iface && ca_iface->mIfaceCFG)
     {
-        if (ATCA_HID_IFACE == ca_iface->mIfaceCFG->iface_type || ATCA_KIT_IFACE == ca_iface->mIfaceCFG->iface_type)
+        if (ATCA_HID_IFACE == ca_iface->mIfaceCFG->iface_type || ATCA_KIT_IFACE == ca_iface->mIfaceCFG->iface_type
+            || ATCA_UART_IFACE == ca_iface->mIfaceCFG->iface_type)
+        {
+            ret = true;
+        }
+    }
+    return ret;
+}
+
+/** \brief Check if the given interface is configured as a SWI
+ * \return true if the interface is considered a kit
+ */
+bool atca_iface_is_swi(ATCAIface ca_iface)
+{
+    bool ret = false;
+
+    if (ca_iface && ca_iface->mIfaceCFG)
+    {
+        if (ATCA_SWI_IFACE == ca_iface->mIfaceCFG->iface_type || ATCA_SWI_GPIO_IFACE == ca_iface->mIfaceCFG->iface_type)
         {
             ret = true;
         }
@@ -407,7 +425,7 @@ void deleteATCAIface(ATCAIface *ca_iface)
     if (ca_iface)
     {
         releaseATCAIface(*ca_iface);
-        free(*ca_iface);
+        hal_free(*ca_iface);
         *ca_iface = NULL;
     }
 }

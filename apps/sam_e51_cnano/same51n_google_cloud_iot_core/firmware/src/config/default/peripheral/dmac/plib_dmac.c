@@ -47,6 +47,7 @@
 #include "plib_dmac.h"
 #include "interrupts.h"
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data
@@ -169,12 +170,15 @@ bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, const void
     uint8_t beat_size = 0;
     bool returnStatus = false;
 
-    if (dmacChannelObj[channel].busyStatus == false)
+    if ((dmacChannelObj[channel].busyStatus == false) || (DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG & (DMAC_CHINTENCLR_TCMPL_Msk | DMAC_CHINTENCLR_TERR_Msk)))
     {
-        /* Get a pointer to the module hardware instance */
-        dmac_descriptor_registers_t *const dmacDescReg = &descriptor_section[channel];
+        /* Clear the transfer complete flag */
+        DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TCMPL_Msk | DMAC_CHINTENCLR_TERR_Msk;
 
         dmacChannelObj[channel].busyStatus = true;
+
+        /* Get a pointer to the module hardware instance */
+        dmac_descriptor_registers_t *const dmacDescReg = &descriptor_section[channel];
 
        /*Set source address */
         if ( dmacDescReg->DMAC_BTCTRL & DMAC_BTCTRL_SRCINC_Msk)
@@ -232,7 +236,36 @@ bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, const void
 
 bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel )
 {
-    return (bool)dmacChannelObj[channel].busyStatus;
+    if (dmacChannelObj[channel].busyStatus == true && ((DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG & (DMAC_CHINTENCLR_TCMPL_Msk | DMAC_CHINTENCLR_TERR_Msk)) == 0))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+DMAC_TRANSFER_EVENT DMAC_ChannelTransferStatusGet(DMAC_CHANNEL channel)
+{
+    uint32_t chanIntFlagStatus = 0;
+    DMAC_TRANSFER_EVENT event = DMAC_TRANSFER_EVENT_NONE;
+
+    /* Get the DMAC channel interrupt status */
+    chanIntFlagStatus = DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG;
+
+    if (chanIntFlagStatus & DMAC_CHINTENCLR_TCMPL_Msk)
+    {
+        event = DMAC_TRANSFER_EVENT_COMPLETE;
+    }
+
+    /* Verify if DMAC Channel Error flag is set */
+    if (chanIntFlagStatus & DMAC_CHINTENCLR_TERR_Msk)
+    {
+        event = DMAC_TRANSFER_EVENT_ERROR;
+    }
+
+    return event;
 }
 
 /*******************************************************************************
@@ -261,7 +294,6 @@ uint16_t DMAC_ChannelGetTransferredCount( DMAC_CHANNEL channel )
 /*******************************************************************************
     This function function allows a DMAC PLIB client to set an event handler.
 ********************************************************************************/
-
 void DMAC_ChannelCallbackRegister( DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK callback, const uintptr_t context )
 {
     dmacChannelObj[channel].callback = callback;
@@ -299,6 +331,16 @@ bool DMAC_ChannelSettingsSet (DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting)
     dmacDescReg[channel].DMAC_BTCTRL = setting;
 
     return true;
+}
+
+void DMAC_ChannelSuspend ( DMAC_CHANNEL channel )
+{
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB = (DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB & ~DMAC_CHCTRLB_CMD_Msk) | DMAC_CHCTRLB_CMD_SUSPEND;
+}
+
+void DMAC_ChannelResume ( DMAC_CHANNEL channel )
+{
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB = (DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB & ~DMAC_CHCTRLB_CMD_Msk) | DMAC_CHCTRLB_CMD_RESUME;
 }
 
 /*******************************************************************************
