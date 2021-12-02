@@ -1228,21 +1228,20 @@ typedef struct CRYPT_RNG_CTX {
 
 	int           ret;
 
-	CRYPT_RNG_CTX* mcRng = (CRYPT_RNG_CTX*)malloc(sizeof(CRYPT_RNG_CTX));
+	CRYPT_RNG_CTX mcRng;
 
 	byte          out[RANDOM_BYTE_SZ];
 	
-	ret = CRYPT_RNG_Initialize(mcRng);
+	ret = CRYPT_RNG_Initialize(&mcRng);
 	
-	ret = CRYPT_RNG_Get(mcRng, &out[0]);
+	ret = CRYPT_RNG_Get(&mcRng, &out[0]);
 
-    ret = CRYPT_RNG_BlockGenerate(mcRng, out, RANDOM_BYTE_SZ);
+    ret = CRYPT_RNG_BlockGenerate(&mcRng, out, RANDOM_BYTE_SZ);
     </code>
 
-    ret = CRYPT_RNG_Deinitialize(mcRng);
+    ret = CRYPT_RNG_Deinitialize(&mcRng);
 
-  Remarks:  CRYPT_RNG_Deinitialize frees the input pointer.  Don't pass in a
-            global or free() will hard fault.
+  Remarks:  
 */
 
 #define CRYPT_RNG_Initialize CRYPT_RNG_Initialize
@@ -1297,17 +1296,17 @@ int CRYPT_RNG_Deinitialize(CRYPT_RNG_CTX* rng);
 	#define RANDOM_BYTE_SZ 32
 
 	int           ret;
-	CRYPT_RNG_CTX* mcRng = (CRYPT_RNG_CTX*)malloc(sizeof(CRYPT_RNG_CTX));
+	CRYPT_RNG_CTX mcRng;
 	byte          out[RANDOM_BYTE_SZ];
 	
-	ret = CRYPT_RNG_Initialize(mcRng);
+	ret = CRYPT_RNG_Initialize(&mcRng);
 	
-	ret = CRYPT_RNG_Get(mcRng, &out[0]);
+	ret = CRYPT_RNG_Get(&mcRng, &out[0]);
 
-    ret = CRYPT_RNG_BlockGenerate(mcRng, out, RANDOM_BYTE_SZ);
+    ret = CRYPT_RNG_BlockGenerate(&mcRng, out, RANDOM_BYTE_SZ);
     </code>
     
-    ret = CRYPT_RNG_Deinitialize(mcRng);
+    ret = CRYPT_RNG_Deinitialize(&mcRng);
 
   Remarks:
 */
@@ -1341,17 +1340,17 @@ int CRYPT_RNG_Get(CRYPT_RNG_CTX*, unsigned char*);
 	#define RANDOM_BYTE_SZ 32
 
 	int           ret;
-	CRYPT_RNG_CTX* mcRng = (CRYPT_RNG_CTX*)malloc(sizeof(CRYPT_RNG_CTX));
+	CRYPT_RNG_CTX mcRng;
 	byte          out[RANDOM_BYTE_SZ];
 	
-	ret = CRYPT_RNG_Initialize(mcRng);
+	ret = CRYPT_RNG_Initialize(&mcRng);
 	
-	ret = CRYPT_RNG_Get(mcRng, &out[0]);
+	ret = CRYPT_RNG_Get(&mcRng, &out[0]);
 
-    ret = CRYPT_RNG_BlockGenerate(mcRng, out, RANDOM_BYTE_SZ);
+    ret = CRYPT_RNG_BlockGenerate(&mcRng, out, RANDOM_BYTE_SZ);
     </code>
     
-    ret = CRYPT_RNG_Deinitialize(mcRng);
+    ret = CRYPT_RNG_Deinitialize(&mcRng);
     
   Remarks:
 */

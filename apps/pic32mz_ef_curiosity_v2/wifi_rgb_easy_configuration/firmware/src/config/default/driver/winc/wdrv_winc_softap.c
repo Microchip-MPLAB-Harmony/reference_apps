@@ -126,7 +126,9 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
 
     /* Validate authentication type if context is present. */
     if ((NULL != pAuthCtx) && (WDRV_WINC_AUTH_TYPE_OPEN != pAuthCtx->authType)
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
                            && (WDRV_WINC_AUTH_TYPE_WEP != pAuthCtx->authType)
+#endif
 #ifdef WDRV_WINC_DEVICE_WPA_SOFT_AP
                            && (WDRV_WINC_AUTH_TYPE_WPA_PSK != pAuthCtx->authType)
 #endif
@@ -161,6 +163,7 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
         memcpy(pAPCfg->au8Key, pAuthCtx->authInfo.WPAPerPSK.key, pAPCfg->u8KeySz);
     }
 #endif
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
     else if (WDRV_WINC_AUTH_TYPE_WEP == pAuthCtx->authType)
     {
         /* If WEP authentication is requested validate the key index and size. */
@@ -179,6 +182,7 @@ WDRV_WINC_STATUS WDRV_WINC_APStart
         memcpy(&pAPCfg->au8WepKey, &pAuthCtx->authInfo.WEP.key, pAuthCtx->authInfo.WEP.size);
         pAPCfg->au8WepKey[pAuthCtx->authInfo.WEP.size] = '\0';
     }
+#endif
     else
     {
         /* WPA and Enterprise are not supported. */

@@ -56,7 +56,7 @@
 */
 
 #include "user.h"
-#include "toolchain_specifics.h"
+#include "device.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -121,7 +121,7 @@ extern "C" {
 #define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
-#define SYS_FS_ALIGNED_BUFFER_LEN         512
+
 
 
 
@@ -150,6 +150,7 @@ extern "C" {
 #define DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0    1
 #define DRV_MEMORY_DEVICE_START_ADDRESS      0x9d100000
 #define DRV_MEMORY_DEVICE_MEDIA_SIZE         64UL
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024)
 #define DRV_MEMORY_DEVICE_PROGRAM_SIZE       2048
 #define DRV_MEMORY_DEVICE_ERASE_SIZE         16384
 
@@ -212,6 +213,12 @@ extern "C" {
 #define TCPIP_STACK_USE_ICMP_SERVER
 #define TCPIP_ICMP_ECHO_ALLOW_BROADCASTS    false
 
+/*** ICMPv4 Client Configuration ***/
+#define TCPIP_STACK_USE_ICMP_CLIENT
+#define TCPIP_ICMP_CLIENT_USER_NOTIFICATION   true
+#define TCPIP_ICMP_ECHO_REQUEST_TIMEOUT        500
+#define TCPIP_ICMP_TASK_TICK_RATE              33
+#define TCPIP_ICMP_COMMAND_ENABLE              false
 
 
 /*** NBNS Configuration ***/
@@ -348,11 +355,12 @@ extern "C" {
 
 /*** DHCP Server Configuration ***/
 #define TCPIP_STACK_USE_DHCP_SERVER
-#define TCPIP_DHCPS_TASK_PROCESS_RATE                               200
-#define TCPIP_DHCPS_LEASE_ENTRIES_DEFAULT                           15
-#define TCPIP_DHCPS_LEASE_SOLVED_ENTRY_TMO                          1200
-#define TCPIP_DHCPS_LEASE_REMOVED_BEFORE_ACK                        5
-#define TCPIP_DHCP_SERVER_DELETE_OLD_ENTRIES                        true
+#define TCPIP_DHCPS_TASK_PROCESS_RATE                     	200
+#define TCPIP_DHCPS_MAX_NUMBER_INSTANCES					1
+#define TCPIP_DHCPS_LEASE_ENTRIES_DEFAULT                   15
+#define TCPIP_DHCPS_LEASE_SOLVED_ENTRY_TMO                  1200
+#define TCPIP_DHCPS_LEASE_REMOVED_BEFORE_ACK                5
+#define TCPIP_DHCP_SERVER_DELETE_OLD_ENTRIES              	true
 #define TCPIP_DHCPS_LEASE_DURATION	TCPIP_DHCPS_LEASE_SOLVED_ENTRY_TMO
 
 /*** DHCP Server Instance 0 Configuration ***/
@@ -371,6 +379,8 @@ extern "C" {
 #define TCPIP_DHCP_SERVER_INTERFACE_INDEX_IDX0                      0
 
 #define TCPIP_DHCP_SERVER_POOL_ENABLED_IDX0                         true
+
+#define TCPIP_DHCP_SERVER_POOL_INDEX_IDX0								0
 
 
 
@@ -469,6 +479,7 @@ extern "C" {
 #define WOLFSSL_HAVE_MIN
 #define WOLFSSL_HAVE_MAX
 // ---------- FUNCTIONAL CONFIGURATION START ----------
+#define WOLFSSL_AES_SMALL_TABLES
 #define NO_MD4
 #define WOLFSSL_SHA224
 #define WOLFSSL_AES_128
@@ -479,6 +490,7 @@ extern "C" {
 #define HAVE_AES_ECB
 #define HAVE_AES_CBC
 #define WOLFSSL_AES_COUNTER
+#define WOLFSSL_AES_OFB
 #define HAVE_AESGCM
 #define HAVE_AESCCM
 #define NO_RC4

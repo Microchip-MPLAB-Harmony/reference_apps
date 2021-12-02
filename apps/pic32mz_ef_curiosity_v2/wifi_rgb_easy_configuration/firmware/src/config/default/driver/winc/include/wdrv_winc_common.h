@@ -84,11 +84,13 @@
 /* Address of a MAC address. */
 #define WDRV_WINC_MAC_ADDR_LEN              6
 
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
 /* Length of 40 bit WEP key. */
 #define WDRV_WINC_WEP_40_KEY_STRING_SIZE    10
 
 /* Length of 104 bit WEP key. */
 #define WDRV_WINC_WEP_104_KEY_STRING_SIZE   26
+#endif
 
 /* Length of PSK (ASCII encoded binary). */
 #define WDRV_WINC_PSK_LEN                   64

@@ -292,6 +292,8 @@ bool TCPIP_Helper_StringToIPv6Address(const char * addStr, IPV6_ADDR * addr)
         return true;
     }
 
+    memset(convAddr.v, 0, sizeof(convAddr));
+
     while(isspace(*addStr))
     {   // skip leading space
         addStr++;

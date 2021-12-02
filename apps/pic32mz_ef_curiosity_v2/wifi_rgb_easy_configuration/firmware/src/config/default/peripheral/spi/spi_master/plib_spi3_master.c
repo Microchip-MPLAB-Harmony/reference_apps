@@ -161,6 +161,11 @@ bool SPI3_Read(void* pReceiveData, size_t rxSize)
     return(SPI3_WriteRead(NULL, 0, pReceiveData, rxSize));
 }
 
+bool SPI3_IsTransmitterBusy (void)
+{
+    return ((SPI3STAT & _SPI3STAT_SRMT_MASK) == 0)? true : false;
+}
+
 bool SPI3_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;

@@ -492,7 +492,7 @@ SYS_FS_RESULT SYS_FS_Mount
     (void)data;
 
     /* Validate the parameters. */
-    if ((devName == NULL) || (mountName == NULL) || ((filesystemtype != FAT) && (filesystemtype != MPFS2)))
+    if ((devName == NULL) || (mountName == NULL) || ((filesystemtype != FAT) && (filesystemtype != MPFS2) && (filesystemtype != LITTLEFS)))
     {
         errorValue = SYS_FS_ERROR_INVALID_PARAMETER;
         return SYS_FS_RES_FAILURE;
@@ -610,7 +610,6 @@ SYS_FS_RESULT SYS_FS_Mount
     {
         fileStatus = disk->fsFunctions->mount(disk->diskNumber);
         errorValue = (SYS_FS_ERROR)fileStatus;
-
         if (fileStatus == SYS_FS_ERROR_NO_FILESYSTEM)
         {
             fileStatus = 0;

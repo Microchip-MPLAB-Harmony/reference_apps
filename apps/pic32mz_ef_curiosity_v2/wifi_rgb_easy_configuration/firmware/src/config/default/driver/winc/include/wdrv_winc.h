@@ -37,7 +37,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-21 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -87,10 +87,6 @@
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
 #include "wdrv_winc_socket.h"
 #include "wdrv_winc_ssl.h"
-#else
-#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
-#include "tcpip/src/link_list.h"
-#endif
 #endif
 #ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
 #include "wdrv_winc_host_file.h"
@@ -109,7 +105,41 @@
 // *****************************************************************************
 
 #define WDRV_WINC_NUM_ASSOCS    1
-        
+
+#ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
+// *****************************************************************************
+/*  Protected Singly Linked List Packet Queue
+
+  Summary:
+    Defines the linked list packet queue.
+
+  Description:
+    This data type defines a linked list packet queue management structure.
+
+  Remarks:
+    None.
+*/
+
+typedef struct
+{
+    /* Reference to the head end of the linked list */
+    TCPIP_MAC_PACKET* pHead;
+
+    /* Reference to the tail end of the linked list */
+    TCPIP_MAC_PACKET* pTail;
+
+    /* Number of nodes in the list */
+    int nNodes;
+
+    /* Semaphore used to protect access to the linked list */
+    OSAL_SEM_HANDLE_TYPE semaphore;
+
+    /* Variable to indicate semaphore creation status */
+    bool semValid;
+} WDRV_WINC_PACKET_QUEUE;
+
+#endif
+
 // *****************************************************************************
 /*  Firmware Version Information
 
@@ -496,7 +526,7 @@ typedef struct
     DRV_HANDLE handle;
 
     /* Linked list of receive Ethernet packets. */
-    PROTECTED_SINGLE_LIST ethRxPktList;
+    WDRV_WINC_PACKET_QUEUE ethRxPktList;
 
     /* Multicast filter list. */
     TCPIP_MAC_ADDR multicastFilterList[MULTICAST_FILTER_SIZE];
@@ -533,6 +563,12 @@ typedef struct
 
     /* Access semaphore to protect updates to current receive Ethernet packet. */
     OSAL_SEM_HANDLE_TYPE curRxPacketSemaphore;
+
+    /* This provides a managed list of free packets. */
+    WDRV_WINC_PACKET_QUEUE packetPoolFreeList;
+
+    /* Value corresponding to TCPIP_MAC_CONTROL_FLAGS. */
+    uint16_t controlFlags;
 } WDRV_WINC_MACDCPT;
 #endif
 

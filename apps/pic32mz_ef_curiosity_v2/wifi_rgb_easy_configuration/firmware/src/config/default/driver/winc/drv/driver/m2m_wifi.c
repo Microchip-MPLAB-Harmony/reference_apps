@@ -659,7 +659,7 @@ int8_t m2m_wifi_connect_wep(
 
 		if (ret == M2M_SUCCESS)
 		{
-			tstrM2mWifiWep	*pstrWep = (tstrM2mWifiWep*)malloc(sizeof(tstrM2mWifiWep));
+			tstrM2mWifiWep	*pstrWep = (tstrM2mWifiWep*)OSAL_Malloc(sizeof(tstrM2mWifiWep));
 
             ret = M2M_ERR_MEM_ALLOC;
 			if (pstrWep != NULL)
@@ -671,7 +671,7 @@ int8_t m2m_wifi_connect_wep(
 				ret = hif_send(	M2M_REQ_GROUP_WIFI, M2M_WIFI_REQ_CONN | M2M_REQ_DATA_PKT,
 								(uint8_t*)&strConnHdr, sizeof(tstrM2mWifiConnHdr),
 								(uint8_t*)pstrWep, sizeof(tstrM2mWifiWep), sizeof(tstrM2mWifiConnHdr));
-				free(pstrWep);
+				OSAL_Free(pstrWep);
 			}
 		}
 	}
@@ -698,7 +698,7 @@ int8_t m2m_wifi_connect_psk(
 
 		if (ret == M2M_SUCCESS)
 		{
-			tstrM2mWifiPsk	*pstrPsk = (tstrM2mWifiPsk*)malloc(sizeof(tstrM2mWifiPsk));
+			tstrM2mWifiPsk	*pstrPsk = (tstrM2mWifiPsk*)OSAL_Malloc(sizeof(tstrM2mWifiPsk));
 
 			if (pstrPsk != NULL)
 			{
@@ -734,7 +734,7 @@ int8_t m2m_wifi_connect_psk(
 									(uint8_t*)&strConnHdr, sizeof(tstrM2mWifiConnHdr),
 									(uint8_t*)pstrPsk, sizeof(tstrM2mWifiPsk), sizeof(tstrM2mWifiConnHdr));
 				}
-				free(pstrPsk);
+				OSAL_Free(pstrPsk);
 			}
             else
             {
@@ -777,7 +777,7 @@ int8_t m2m_wifi_connect_1x_mschap2(
 
 			if (ret == M2M_SUCCESS)
 			{
-				tstrM2mWifi1xHdr	*pstr1xHdr = (tstrM2mWifi1xHdr*)malloc(u16AuthSize);
+				tstrM2mWifi1xHdr	*pstr1xHdr = (tstrM2mWifi1xHdr*)OSAL_Malloc(u16AuthSize);
                 
                 ret = M2M_ERR_MEM_ALLOC;
 				if (pstr1xHdr != NULL)
@@ -811,7 +811,7 @@ int8_t m2m_wifi_connect_1x_mschap2(
 									(uint8_t*)&strConnHdr, sizeof(tstrM2mWifiConnHdr),
 									(uint8_t*)pstr1xHdr, u16AuthSize,
 									sizeof(tstrM2mWifiConnHdr));
-					free(pstr1xHdr);
+					OSAL_Free(pstr1xHdr);
 				}
 			}
 		}
@@ -856,7 +856,7 @@ tstrAuth1xTls		*pstrAuth1xTls
 			if (ret == M2M_SUCCESS)
 			{
 				uint16_t				u16Payload1Size = u16AuthSize - pstrAuth1xTls->u16CertificateLen;
-				tstrM2mWifi1xHdr	*pstr1xHdr = (tstrM2mWifi1xHdr*)malloc(u16Payload1Size);
+				tstrM2mWifi1xHdr	*pstr1xHdr = (tstrM2mWifi1xHdr*)OSAL_Malloc(u16Payload1Size);
 
                 ret = M2M_ERR_MEM_ALLOC;
 				if (pstr1xHdr != NULL)
@@ -909,7 +909,7 @@ tstrAuth1xTls		*pstrAuth1xTls
 										(uint8_t*)pstr1xHdr, u16Payload1Size,
 										sizeof(tstrM2mWifiConnHdr));
 					}
-					free(pstr1xHdr);
+					OSAL_Free(pstr1xHdr);
 				}
 			}
 		}

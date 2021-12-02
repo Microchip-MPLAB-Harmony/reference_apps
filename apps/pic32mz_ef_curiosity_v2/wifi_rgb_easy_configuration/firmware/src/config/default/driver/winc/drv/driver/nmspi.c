@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-21 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -92,7 +92,7 @@
 
 static uint8_t gu8Crc_off = 0;
 
-static OSAL_MUTEX_HANDLE_TYPE s_spiLock = 0;
+static OSAL_MUTEX_HANDLE_TYPE s_spiLock;
 
 static inline int8_t spi_read(uint8_t *b, uint16_t sz)
 {

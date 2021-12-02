@@ -39,7 +39,6 @@
 #define _NETINET_IN_H
 
 #include <stdint.h>
-#include <sys/types.h>
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility

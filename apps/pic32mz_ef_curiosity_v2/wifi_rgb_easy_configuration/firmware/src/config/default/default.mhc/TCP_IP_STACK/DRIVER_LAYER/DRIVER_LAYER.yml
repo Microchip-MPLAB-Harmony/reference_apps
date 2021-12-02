@@ -7,8 +7,8 @@ children:
 - type: Attachments
   children:
   - type: Attachment
-    attributes: {targetComponentID: TCP/IP STACK, namespace: drvWifiWinc, id: spi,
-      targetAttachmentID: 'TCP/IP STACK:drvWifiWinc:spi'}
-  - type: Attachment
     attributes: {targetComponentID: BASIC CONFIGURATION, namespace: drvWifiWinc, id: libdrvWincMac,
       targetAttachmentID: 'tcpipNetConfig_0:NETCONFIG_MAC_Dependency'}
+  - type: Attachment
+    attributes: {targetComponentID: TCP/IP STACK, namespace: drvWifiWinc, id: spi,
+      targetAttachmentID: 'TCP/IP STACK:drvWifiWinc:spi'}

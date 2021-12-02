@@ -51,7 +51,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 
 // ICMP Packet Structure
-typedef struct __attribute__((aligned(2), packed))
+typedef struct
 {
 	uint8_t vType;
 	uint8_t vCode;
@@ -547,11 +547,11 @@ static void  TCPIP_ICMP_Process(void)
                 if(pIcmpEchoRequest != 0)
                 {   // we have an extended  request in place
                     TCPIP_NET_IF* pktIf = (TCPIP_NET_IF*)pRxPkt->pktIf;
-                    if(pIcmpEchoRequest->identifier == pRxHdr->wIdentifier && pIcmpEchoRequest->sequenceNumber == pRxHdr->wSequenceNumber &&
-                            (pIcmpEchoRequest->targetAddr.Val == srcAdd || (srcAdd == _TCPIPStackNetAddress(pktIf) && pIcmpEchoRequest->targetAddr.Val == 0x0100007f)))
+                    if(pIcmpEchoRequest->identifier == pRxHdr->wIdentifier && pIcmpEchoRequest->sequenceNumber == pRxHdr->wSequenceNumber)
                     {   // our reply
                         if(pIcmpEchoRequest->callback)
-                        {
+                        {   // update the responder 
+                            pIcmpEchoRequest->targetAddr.Val = srcAdd; 
                             (*pIcmpEchoRequest->callback)(pIcmpEchoRequest, pIcmpEchoRequest, TCPIP_ICMP_ECHO_REQUEST_RES_OK);
                         }
                         pIcmpEchoRequest = 0;    // free

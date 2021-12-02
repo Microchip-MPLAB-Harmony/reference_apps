@@ -93,6 +93,47 @@ static const void* udpPktHandlerParam;
 	Function Prototypes
   ***************************************************************************/
 
+#if ((TCPIP_UDP_DEBUG_LEVEL & TCPIP_UDP_DEBUG_MASK_RX_CHECK) != 0)
+// check ports: 0 - irrelevant; otherwise it's considered in match
+static uint16_t checkUdpSrcPort = 0; 
+static uint16_t checkUdpDstPort = 80;
+
+static bool checkStrict = false;    // if 0, then any match, src or dest will do
+                                    // else both source and dest must match
+static uint32_t checkUdpBkptCnt = 0;
+
+static bool TCPIP_UDP_CheckRxPkt(UDP_HEADER* pHdr)
+{
+    UDP_PORT srcPort = pHdr->SourcePort;
+    UDP_PORT destPort = pHdr->DestinationPort;
+
+    bool srcMatch = (srcPort == 0 || srcPort == checkUdpSrcPort);
+    bool destMatch = (destPort == 0 || destPort == checkUdpDstPort);
+
+    bool match = 0;
+
+    if(checkStrict)
+    {
+        match = srcMatch && destMatch;
+    }
+    else
+    {
+        match = srcMatch || destMatch;
+    }
+
+    if(match)
+    {
+        checkUdpBkptCnt++;
+        return true;
+    }
+
+    return false;
+}
+#else
+#define TCPIP_UDP_CheckRxPkt(pHdr)
+#endif // ((TCPIP_UDP_DEBUG_LEVEL & TCPIP_UDP_DEBUG_MASK_RX_CHECK) != 0)
+
+
 // The User threads protection
 // For efficiency reasons, there is NO PROTECTION for each API call except Open and Close sockets
 // What it means is that:
@@ -719,9 +760,9 @@ void TCPIP_UDP_Deinitialize(const TCPIP_STACK_MODULE_CTRL* const stackCtrl)
 #if (TCPIP_STACK_DOWN_OPERATION != 0) || (_TCPIP_STACK_INTERFACE_CHANGE_SIGNALING != 0)
 static void _UDPAbortSockets(uint32_t netMask, TCPIP_UDP_SIGNAL_TYPE sigType)
 {
-    int ix;
-    TCPIP_NET_HANDLE sktNet;
+    int ix, sktIfIx;
     UDP_SOCKET_DCPT* pSkt;
+    TCPIP_NET_IF* sktIf;
 
     TCPIP_UDP_SIGNAL_FUNCTION sigHandler;
     const void*     sigParam;
@@ -732,22 +773,26 @@ static void _UDPAbortSockets(uint32_t netMask, TCPIP_UDP_SIGNAL_TYPE sigType)
     {
         if((pSkt = UDPSocketDcpt[ix]) != 0)  
         {
-            uint32_t sktIfMask = 1 << TCPIP_STACK_NetIxGet(pSkt->pSktNet);
-            if((sktIfMask & netMask) != 0)
-            {   // match
-                sktNet = pSkt->pSktNet; 
-                // just disconnect, don't kill sockets
-                TCPIP_UDP_Disconnect(pSkt->sktIx, true);
-                // get a consistent reading
-                OSAL_CRITSECT_DATA_TYPE status = OSAL_CRIT_Enter(OSAL_CRIT_TYPE_LOW);
-                sigHandler = pSkt->sigHandler;
-                sigParam = pSkt->sigParam;
-                sigMask = pSkt->sigMask;
-                OSAL_CRIT_Leave(OSAL_CRIT_TYPE_LOW, status);
+            sktIf = pSkt->pSktNet;
+            sktIfIx = TCPIP_STACK_NetIxGet(sktIf); 
+            if(sktIfIx >= 0)
+            {
+                uint32_t sktIfMask = 1 << sktIfIx;
+                if((sktIfMask & netMask) != 0)
+                {   // match
+                    // just disconnect, don't kill sockets
+                    TCPIP_UDP_Disconnect(pSkt->sktIx, true);
+                    // get a consistent reading
+                    OSAL_CRITSECT_DATA_TYPE status = OSAL_CRIT_Enter(OSAL_CRIT_TYPE_LOW);
+                    sigHandler = pSkt->sigHandler;
+                    sigParam = pSkt->sigParam;
+                    sigMask = pSkt->sigMask;
+                    OSAL_CRIT_Leave(OSAL_CRIT_TYPE_LOW, status);
 
-                if(sigHandler != 0 && (sigMask & sigType) != 0)
-                {
-                    (*sigHandler)(pSkt->sktIx, sktNet, sigType, sigParam);
+                    if(sigHandler != 0 && (sigMask & sigType) != 0)
+                    {
+                        (*sigHandler)(pSkt->sktIx, (TCPIP_NET_HANDLE)sktIf, sigType, sigParam);
+                    }
                 }
             }
         }
@@ -1511,6 +1556,8 @@ static TCPIP_MAC_PKT_ACK_RES TCPIP_UDP_ProcessIPv4(TCPIP_MAC_PACKET* pRxPkt)
     pUDPHdr->SourcePort = TCPIP_Helper_ntohs(pUDPHdr->SourcePort);
     pUDPHdr->DestinationPort = TCPIP_Helper_ntohs(pUDPHdr->DestinationPort);
     pUDPHdr->Length = udpTotLength - sizeof(UDP_HEADER);    
+
+    TCPIP_UDP_CheckRxPkt(pUDPHdr);
 
     while(true)
     {

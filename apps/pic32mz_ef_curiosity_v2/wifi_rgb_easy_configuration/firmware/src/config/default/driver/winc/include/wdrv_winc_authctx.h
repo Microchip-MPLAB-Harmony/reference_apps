@@ -82,10 +82,10 @@ typedef enum
 
     /* WPA-PSK authentication. */
     WDRV_WINC_AUTH_TYPE_WPA_PSK = /*DOM-IGNORE-BEGIN*/ M2M_WIFI_SEC_WPA_PSK /*DOM-IGNORE-END*/,
-
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
     /* WEP authentication. */
     WDRV_WINC_AUTH_TYPE_WEP = /*DOM-IGNORE-BEGIN*/ M2M_WIFI_SEC_WEP /*DOM-IGNORE-END*/,
-
+#endif
     /* 802.1x authentication. */
     WDRV_WINC_AUTH_TYPE_802_1X = /*DOM-IGNORE-BEGIN*/ M2M_WIFI_SEC_802_1X /*DOM-IGNORE-END*/,
 
@@ -120,6 +120,7 @@ typedef struct
     /* Union of data structures for each authentication type. */
     union
     {
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
         /* WEP authentication state. */
         struct
         {
@@ -130,6 +131,7 @@ typedef struct
             /* The WEP key. */
             uint8_t key[WDRV_WINC_WEP_104_KEY_STRING_SIZE+1];
         } WEP;
+#endif
 
         /* WPA-PSK (Personal) authentication state. */
         struct
@@ -302,7 +304,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetOpen
     None.
 
 */
-
+#ifndef WDRV_WINC_DEVICE_DEPRECATE_WEP
 WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWEP
 (
     WDRV_WINC_AUTH_CONTEXT *const pAuthCtx,
@@ -310,7 +312,7 @@ WDRV_WINC_STATUS WDRV_WINC_AuthCtxSetWEP
     uint8_t *const pKey,
     uint8_t size
 );
-
+#endif
 //*******************************************************************************
 /*
   Function:
