@@ -30,7 +30,7 @@ nav_order: 98
 - The file produced can be used to upgrade a WINC1500 to version 19.7.6 including the firmware, HTTP files and root
 certificates.
 - The following command line will program a WINC1500 device via the serial port   
-    **winc_programmer -p COM29 -d winc1500 -i winc1500_19.7.6.prog -if prog -w -r -pfw winc1500_19.7.6\firmware\programmer_release_3A0.bin**
+    **winc_programmer -p COM29 -d winc1500 -i winc1500_19.7.6.prog -if prog -w -r -pfw winc1500_19.7.6\firmware\programmer_firmware.bin**
 
     **NOTE** : Respective device COM PORT should be selected in above command and all other serial terminal application should be closed
 - Wait till **verify passed** message comes up as shown below  
