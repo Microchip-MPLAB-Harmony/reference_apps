@@ -39,6 +39,7 @@ nav_order: 99
 | Application | Description | Comment |  
 | --- | --- |  --- |  
 | pic32cmmc_temp_based_fan_control_oled_c | Temperature based Fan Speed Control with OLED C click display | Removed as the same functionality is provided by [Smart Appliance Control](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control/readme.md) demo |
+| msd_multiple_luns | USB MSD with Multiple Drives Application | Removed as the same functionality is provided in [MPLAB Harmony v3 USB apps repository](https://github.com/Microchip-MPLAB-Harmony/usb_apps_device/tree/master/apps/msd_multiple_luns) |
 
 
 
@@ -50,8 +51,8 @@ nav_order: 99
 - [MPLAB® XC32 C/C++ Compiler v3.01](https://www.microchip.com/mplab/compilers)
 - [IAR EWARM v8.50](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
 - MPLAB® X IDE plug-ins:
-  - MPLAB® Harmony Configurator (MHC) v3.8.2
-  - MPLAB® Harmony Configurator (MCC) v5.0.0    
+  - MPLAB Harmony 3 Launcher v3.6.4
+  - MPLAB Harmony Configurator (MCC) v5.0.3    
 
 
 ---
