@@ -37,12 +37,19 @@ children:
         children:
         - {type: Value, value: 'true'}
   - type: Integer
+    attributes: {id: MasterClockSourceValue}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '198000000'}
+  - type: Integer
     attributes: {id: PixelClock}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: le_gfx_driver_glcd, value: '16666666'}
+        attributes: {id: le_gfx_driver_glcd, value: '16500000'}
   - type: Integer
     attributes: {id: PixelClockDivider}
     children:

@@ -24,19 +24,16 @@
 // DOM-IGNORE-END
 
 
-#include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
+#include "gfx/legato/image/mono/legato_imagedecoder_mono.h"
 
 #if LE_ENABLE_RAW_DECODER == 1
 
 #if LE_STREAMING_ENABLED == 1
 
-#include "gfx/legato/renderer/legato_renderer.h"
-#include "gfx/legato/image/legato_image_utils.h"
+#define cache leMonoImageDecoderScratchBuffer
 
-#define cache leRawImageDecoderScratchBuffer
-
-void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
-                                    leRawDecodeStage* stage);
+void _leMonoImageDecoder_InjectStage(leMonoDecodeState* state,
+                                     leMonoDecodeStage* stage);
 
 enum StageState
 {
@@ -47,7 +44,7 @@ enum StageState
 
 struct StreamReadStage
 {
-    leRawDecodeStage base;
+    leMonoDecodeStage base;
 
     enum StageState state;
 
@@ -58,21 +55,21 @@ static LE_COHERENT_ATTR struct StreamReadStage streamReadStage;
 
 static leResult advanceStage(void)
 {
-    streamReadStage.base.state->readIndex += 1;
+    uint32_t offs;
+    leColor color;
 
-    if(streamReadStage.base.state->readIndex < streamReadStage.base.state->readCount)
-    {
-        return LE_FAILURE;
-    }
-    else
-    {
-        // reset for next iteration
-        streamReadStage.base.state->readIndex = 0;
+    leMonoSourceReadOperation* op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
-        streamReadStage.state = SS_DONE;
+    offs = 1 << (7 - (op->bufferIndex % 8));
+    color = op->data & offs;
 
-        return LE_SUCCESS;
-    }
+    color >>= (7 - (op->bufferIndex % 8));
+
+    streamReadStage.base.state->writeColor = color;
+
+    streamReadStage.state = SS_DONE;
+
+    return LE_SUCCESS;
 }
 
 static void colorDataReady(leStream* strm)
@@ -88,7 +85,7 @@ static leResult exec_nonblocking(struct StreamReadStage* stage)
 {
     (void)stage; // unused
     uint32_t addr;
-    leRawSourceReadOperation* op;
+    leMonoSourceReadOperation* op;
 
     // no need to do anything if a data read is still pending
     if(streamReadStage.state == SS_STALLED)
@@ -104,14 +101,12 @@ static leResult exec_nonblocking(struct StreamReadStage* stage)
     op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     // get the address of the desired pixel
-    addr = (uint32_t)streamReadStage.base.state->source->header.address +
-                     op->bufferIndex *
-                     leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size;
+    addr = (size_t)streamReadStage.base.state->source->header.address + (op->bufferIndex / 8);
 
     // read the pixel
     if(leStream_Read(&streamReadStage.stream,
                      addr,
-                     leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
+                     1,
                      (uint8_t*)&op->data,
                      colorDataReady) == LE_FAILURE)
     {
@@ -141,31 +136,30 @@ static leResult exec_nonblocking(struct StreamReadStage* stage)
 static leResult exec_blocking(struct StreamReadStage* stage)
 {
     uint32_t addr;
-    leRawSourceReadOperation* op;
+    leMonoSourceReadOperation* op;
+    uint32_t offs;
+    leColor color;
+    (void)stage; // unused
 
-    stage->base.state->readIndex = 0;
+    op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
-    for(stage->base.state->readIndex = 0;
-        stage->base.state->readIndex < stage->base.state->readCount;
-        stage->base.state->readIndex++)
-    {
-        op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
+    // get the address of the desired pixel
+    addr = (size_t)streamReadStage.base.state->source->header.address + (op->bufferIndex / 8);
 
-        // get the address of the desired pixel
-        addr = (uint32_t)streamReadStage.base.state->source->header.address +
-                         op->bufferIndex *
-                         leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size;
+    // read the pixel
+    while(leStream_Read(&streamReadStage.stream,
+                        addr,
+                        leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
+                        (uint8_t*)&op->data,
+                        NULL) != LE_SUCCESS)
+    { }
 
-        // read the pixel
-        while(leStream_Read(&streamReadStage.stream,
-                            addr,
-                            leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
-                            (uint8_t*)&op->data,
-                            NULL) != LE_SUCCESS)
-        { }
+    offs = 1 << (7 - (op->bufferIndex % 8));
+    color = op->data & offs;
 
-        streamReadStage.base.state->readIndex += 1;
-    }
+    color >>= (7 - (op->bufferIndex % 8));
+
+    stage->base.state->writeColor = color;
 
     return LE_SUCCESS;
 }
@@ -177,14 +171,14 @@ static void cleanup(struct StreamReadStage* stage)
     leStream_Close(&streamReadStage.stream);
 }
 
-leResult _leRawImageDecoder_ReadStage_StreamColor(leRawDecodeState* state)
+leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
     leStream_Init(&streamReadStage.stream,
                   (struct leStreamDescriptor*)state->source,
                   LE_ASSET_DECODER_PIXEL_CACHE_SIZE,
-                  leRawImageDecoderScratchBuffer,
+                  leMonoImageDecoderScratchBuffer,
                   NULL);
 
     if(leStream_Open(&streamReadStage.stream) == LE_FAILURE)
@@ -204,7 +198,7 @@ leResult _leRawImageDecoder_ReadStage_StreamColor(leRawDecodeState* state)
         streamReadStage.base.exec = (void*)exec_nonblocking;
     }
 
-    _leRawImageDecoder_InjectStage(state, (void*)&streamReadStage);
+    _leMonoImageDecoder_InjectStage(state, (void*)&streamReadStage);
 
     return LE_SUCCESS;
 }
