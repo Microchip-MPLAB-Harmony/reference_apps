@@ -20,9 +20,9 @@ nav_order: 98
 ## <span style="color:blue"> *Complete the above highlighted step before proceeding further* </span>
 
 ## Running the utility
-- Download and extract [winc1510_firmware](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/winc1510_firmware.zip
+- Download and extract [same51_winc_upgrader](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same51_winc_upgrader.zip
 ) into utilities folder
-- Open command prompt and navigate to **"utilities/winc1510_firmware"**
+- Open command prompt and navigate to **"utilities/same51_winc_upgrader"**
 - The following command line will generate a device programming file winc1500_19.7.6.prog.
 
   **image_tool.exe -c winc1500_19.7.6\config.txt -o winc1500_19.7.6.prog -of prog**  
