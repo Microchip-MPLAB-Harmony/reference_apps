@@ -8,6 +8,9 @@ nav_order: 99
 ---
 
 ## Reference Applications Release v1.4.0 (December 2021)
+
+- Added MCC support for all demo applications
+
 ### New Applications
 
 | Application | Description | MCU | Development Board/Kit |  
@@ -40,6 +43,7 @@ nav_order: 99
 | --- | --- |  --- |  
 | pic32cmmc_temp_based_fan_control_oled_c | Temperature based Fan Speed Control with OLED C click display | Removed as the same functionality is provided by [Smart Appliance Control](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_appliance_control/readme.md) demo |
 | msd_multiple_luns | USB MSD with Multiple Drives Application | Removed as the same functionality is provided in [MPLAB Harmony v3 USB apps repository](https://github.com/Microchip-MPLAB-Harmony/usb_apps_device/tree/master/apps/msd_multiple_luns) |
+
 
 
 
