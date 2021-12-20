@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: rstc}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: WAKEUP_2_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Hex
+    attributes: {id: WAKEUP_ENABLE_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rstc, value: '4'}
+- type: ElementPosition
+  attributes: {x: '30', y: '99', id: rstc}

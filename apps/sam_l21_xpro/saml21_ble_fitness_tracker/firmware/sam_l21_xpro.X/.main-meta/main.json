@@ -1,0 +1,88 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_ble_fitness_tracker",
+		"version": "1.5.0",
+		"displayName": "BLE Fitness Tracker Application",
+		"projectName": "ble_fitness_tracker_sam_l21_xpro",
+		"shortDescription": "Demonstrates integrating BM71 Xpro, Heart Rate and EINK Click bundle on SAM L21 Xplained Pro)",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.0.1"
+			}
+		],
+		"dfp": {
+			"name": "SAML21_DFP",
+			"semverRange": "^3.5.87"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.4"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAML21J18B",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM L21 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Reference Apps"
+			]
+		],
+		"peripherals": [
+			"EIC", "Timer", "SERCOM(USART)", "SERCOM(SPI)", "PM", "SUPC"
+		],
+		"keywords": [
+			"MHC",
+			"MCC",
+			"Harmony",
+			"ATSAML21J18B",
+			"SAML21 Family",
+			"Click",
+			"Heart rate",
+			"EINK",
+			"Health",
+			"bpm",
+			"BM71",
+			"Bluetooth",
+			"BLE",
+			"EIC",
+			"RTC",
+			"GPIO",
+			"SAM L21",
+			"SAML21",
+			"XPRO",
+			"Xplained",
+            "Low",
+            "Power",
+            "Low power"    
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
