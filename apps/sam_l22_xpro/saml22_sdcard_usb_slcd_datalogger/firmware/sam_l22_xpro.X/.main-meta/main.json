@@ -1,0 +1,98 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml22_sdcard_usb_slcd_datalogger",
+		"version": "x.x.x",
+		"displayName": "sdcard_usb_slcd_datalogger_sam_d21_xpro",
+		"shortDescription": "Shows(SLCD) and stores(SD card) sensor data (light intensity values and temperature) into a SD card and enumerates the application as USB MSD (Mass storage device) to access the logged data from a PC", 
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.1.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.8.0"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAML22N18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit",
+				"SAM L22 Xplained Pro Evaluation Kit"
+				"I/O1 XplainedPro"
+				"TSLCD1 XplainedPro"
+			],
+			[
+				"Harmony",
+				"Drivers",
+				"I2C"
+			],
+			[
+				"Peripherals",
+				"I2C"
+			]
+		],
+		"peripherals": [
+			"I2C"
+			"RTC"
+			"SPI"
+			"ADC"
+			"Timer"
+			
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAML22N18A",
+			"SAM L21/L22 Family",
+			"I2C",
+			"Serial Communication",
+			"SERCOM",
+			"RTC",
+			"SD Card"
+			"SLCD"
+			"Light Sensor"
+			"Temperature sensor"
+			"ADC"
+			"Graphics"
+			"File System"
+			"FAT32"
+			"USB"
+			"MSD"
+			"Datalogger"
+			
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+configName: sam_l22_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../../../..
+processor: ATSAML22N18A
+projectName: ''
+settings:
+  PackageFilter: bsp;core;core_apps_sam_d21_da1;csp;csp_apps_sam_d21_da1;dev_packs;gfx;quick_docs;touch;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: ALL
+  DFPPath: .\dev_packs\Microchip\SAML22_DFP\3.5.68\atdf\ATSAML22N18A.atdf
