@@ -1,14 +1,17 @@
-```yaml
+---
 parent: SAM L22 Xplained Pro Evaluation Kit
 title: SD Card USB Data Logger Application
 has_children: false
 has_toc: false
 nav_order: 4
-```
+---
 
-![](https://bitbucket.microchip.com/projects/DC/repos/demand_creation_apps/browse/apps/sam_l22_xpro/saml22_sdcard_usb_slcd_datalogger/images/microchip_logo.png?at=refs%2Fheads%2Fsaml22_datalogger) ![](https://bitbucket.microchip.com/projects/DC/repos/demand_creation_apps/browse/apps/sam_l22_xpro/saml22_sdcard_usb_slcd_datalogger/images/microchip_mplab_harmony_logo_small.png?at=saml22_datalogger)
+<img src = "images/microchip_logo.png">
+<img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # SD Card, USB Data Logger Application on SAM L22 Xplained Pro Evaluation Kit
+
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml22_sdcard_usb_slcd_datalogger.zip" > Download </a> </h2>
 
 ## Description
 
@@ -41,16 +44,16 @@ The SDSPI driver uses an instance of the SPI driver to communicate to the SD car
 
 ## Hardware Used:
 
-- [SAM L22 Xplained Pro Evaluation Kit]((https://www.microchip.com/en-us/development-tool/atsaml22-xpro-b))
+- [SAM L22 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/atsaml22-xpro-b)
 - [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO)
-- [Touch SLCD Xplained pro](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42558-Touch-SLCD1-Xplained-Pro_User-Guide.pdf)
+- [Touch SLCD1 Xplained pro](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42558-Touch-SLCD1-Xplained-Pro_User-Guide.pdf)
 - Micro-SD card formatted to FAT32 filesystem.
 
 ## Software/Tools Used:
 
 This project has been verified to work with the following versions of software tools:
 
-Refer [Project Manifest](./firmware/src/config/sam_d21_xpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_l22_xpro*
+Refer [Project Manifest](./firmware/src/config/sam_l22_xpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_l22_xpro*
 
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.
 
@@ -62,17 +65,17 @@ Because Microchip regularly update tools, occasionally issue(s) could be discove
 
 - Insert microSD(upto 32GB) card on to the [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/developmenttools/ProductDetails/ATIO1-XPRO)
 
-- Insert the TSLCD1 Xplained pro into EXT 5 
+- Insert the Touch SLCD1 Xplained pro into EXT 5
 
 - The SAM L22 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM L22 Xplained Pro Evaluation Kit.
 
-- SAM L22 Xplained pro will be in battery backup mode initially.The device is not woken up when switched from battery backup power to Main Power.Press the RESET push button on the the SAM L22 Xplained pro to wake up the device.
+- SAM L22 Xplained pro will be in battery backup mode initially. The device is not woken up when switched from battery backup power to Main Power. Press the RESET push button on the SAM L22 Xplained pro to wake up the device.
 
 - Place the jumper between CAP & PB03 in the VBAT select jumper.
 
-- The system time can be set via the SetTime() function in apps.c file.
-  
-  ![](https://bitbucket.microchip.com/projects/DC/repos/demand_creation_apps/browse/apps/sam_l22_xpro/saml22_sdcard_usb_slcd_datalogger/images/setup.jpg?at=saml22_datalogger)
+- The system time can be set via the SetTime() function in app.c file.
+
+  ![](./images/setup.jpg)
 
 ## Programming hex file:
 
@@ -101,15 +104,15 @@ The pre-built hex file can be programmed by following the below steps
 
 ## Running the Demo:
 
-1. When Powered up,the Application shows the light intensity(ALS in Lux) and temperature (TEMP in °C) on the SLCD.
+1. When Powered up, the Application shows the light intensity(ALS in Lux) and temperature (TEMP in °C) on the SLCD.
 
-2. Light intensity ADC count,Light intensity and temperature values are stored every 1 second along with time stamp.To read the logged light intensity values, connect the Target USB port on the board to the computer using a micro USB cable.
+2. Light intensity ADC count, Light intensity and temperature values are stored every 1 second along with time stamp. To read the logged light intensity values, connect the Target USB port on the board to the computer using a micro USB cable.
 
 3. Access the DATA_LOG.txt via USB inside the Dir1 folder.(see below image)
 
 4. The sample log file looks as below.
-   
-   ![](https://bitbucket.microchip.com/projects/DC/repos/demand_creation_apps/browse/apps/sam_l22_xpro/saml22_sdcard_usb_slcd_datalogger/images/logfie.JPG?at=saml22_datalogger)
+
+   ![](./images/logfie.JPG)
 
 5. Always eject the USB drive before removing it.
 
@@ -120,3 +123,7 @@ The pre-built hex file can be programmed by following the below steps
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
   - [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
   - [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
+
+## Revision:
+
+- v1.5.0 - Released demo application

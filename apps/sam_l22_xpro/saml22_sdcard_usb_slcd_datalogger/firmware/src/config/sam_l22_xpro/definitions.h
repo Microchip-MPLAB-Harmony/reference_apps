@@ -84,7 +84,7 @@
 #include "system/fs/fat_fs/file_system/ff.h"
 #include "system/fs/fat_fs/file_system/ffconf.h"
 #include "system/fs/fat_fs/hardware_access/diskio.h"
-#include "apps.h"
+#include "app.h"
 #include "app_i2c_temp_sensor.h"
 
 

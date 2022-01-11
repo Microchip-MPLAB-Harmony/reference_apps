@@ -270,7 +270,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app_i2c_temp_sensor.h</itemPath>
-      <itemPath>../src/apps.h</itemPath>
+      <itemPath>../src/app.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -448,7 +448,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app_i2c_temp_sensor.c</itemPath>
-      <itemPath>../src/apps.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

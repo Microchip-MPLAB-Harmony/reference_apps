@@ -39,8 +39,8 @@
 		"subcategories": [
 			[
 				"Development Kit",
-				"SAM L22 Xplained Pro Evaluation Kit"
-				"I/O1 XplainedPro"
+				"SAM L22 Xplained Pro Evaluation Kit",
+				"I/O1 XplainedPro",
 				"TSLCD1 XplainedPro"
 			],
 			[
@@ -54,10 +54,10 @@
 			]
 		],
 		"peripherals": [
-			"I2C"
-			"RTC"
-			"SPI"
-			"ADC"
+			"I2C",
+			"RTC",
+			"SPI",
+			"ADC",
 			"Timer"
 			
 		],
@@ -70,16 +70,16 @@
 			"Serial Communication",
 			"SERCOM",
 			"RTC",
-			"SD Card"
-			"SLCD"
-			"Light Sensor"
-			"Temperature sensor"
-			"ADC"
-			"Graphics"
-			"File System"
-			"FAT32"
-			"USB"
-			"MSD"
+			"SD Card",
+			"SLCD",
+			"Light Sensor",
+			"Temperature sensor",
+			"ADC",
+			"Graphics",
+			"File System",
+			"FAT32",
+			"USB",
+			"MSD",
 			"Datalogger"
 			
 		],
