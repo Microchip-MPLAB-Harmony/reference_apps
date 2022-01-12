@@ -122,7 +122,7 @@ struct tm sys_time;
     See prototype in app.h.
  */
 
-void APPS_Initialize ( void )
+void APP_Initialize ( void )
 {
     
     SUPC_REGS->SUPC_BBPS = SUPC_BBPS_CONF(SUPC_BBPS_CONF_APWS_Val);//Automatic Power Switch(APS)
@@ -630,7 +630,7 @@ if (SWITCH_Get() == SWITCH_STATE_PRESSED)
      }
 }
 
-void APPS_Tasks(void)
+void APP_Tasks(void)
 {
      APP_Tasks_SD_FS ( );
      APP_Tasks_ADC();

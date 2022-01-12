@@ -1,14 +1,14 @@
 files:
 - generatedChecksum: null
   logicalPath: ''
-  name: app_i2c_temp_sensor.c
+  name: app.c
   physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
 - generatedChecksum: null
   logicalPath: ''
-  name: apps.c
+  name: app_i2c_temp_sensor.c
   physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
@@ -125,13 +125,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 395CB5E473B76326871D60F6D31F648D
-- generatedChecksum: BB62970D212BE8A65F9A2D788876BD6E
+- generatedChecksum: 73F2AC2E7A68C2D85DFA7200F52D557A
   logicalPath: config/sam_l22_xpro
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BB62970D212BE8A65F9A2D788876BD6E
+  userChecksum: 73F2AC2E7A68C2D85DFA7200F52D557A
 - generatedChecksum: AE0916935C892F3A422D5FE3D676DE49
   logicalPath: config/sam_l22_xpro
   name: interrupts.c
@@ -300,13 +300,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
-- generatedChecksum: 7C27371419A752404E644E194688A7C8
+- generatedChecksum: 5DBDA22613152C229B21F1E65C5D8F94
   logicalPath: config/sam_l22_xpro
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7C27371419A752404E644E194688A7C8
+  userChecksum: 5DBDA22613152C229B21F1E65C5D8F94
 - generatedChecksum: BCCEF5B801FFD0CF22D0B454D2F25F1F
   logicalPath: config/sam_l22_xpro/usb/src
   name: usb_device.c
@@ -379,14 +379,14 @@ files:
   userChecksum: FC5CF31826AFED80CBD7FE284507C43C
 - generatedChecksum: null
   logicalPath: ''
-  name: app_i2c_temp_sensor.h
+  name: app.h
   physicalPath: ../..
   security: NON_SECURE
   type: HEADER
   userChecksum: null
 - generatedChecksum: null
   logicalPath: ''
-  name: apps.h
+  name: app_i2c_temp_sensor.h
   physicalPath: ../..
   security: NON_SECURE
   type: HEADER
@@ -482,13 +482,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CCBD23918BE14943EA128B0D552031C5
-- generatedChecksum: 4D4E154D9B5D30C2091BD36D1806A539
+- generatedChecksum: 9D28800DF400971B89CFFC2DC91D1FF4
   logicalPath: config/sam_l22_xpro
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4D4E154D9B5D30C2091BD36D1806A539
+  userChecksum: 9D28800DF400971B89CFFC2DC91D1FF4
 - generatedChecksum: 6E5E3528014F7ED422CBBB01C796D44B
   logicalPath: config/sam_l22_xpro
   name: device.h

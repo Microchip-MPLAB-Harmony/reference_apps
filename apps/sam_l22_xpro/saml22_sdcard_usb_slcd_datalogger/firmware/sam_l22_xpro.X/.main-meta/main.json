@@ -4,8 +4,9 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml22_sdcard_usb_slcd_datalogger",
-		"version": "x.x.x",
+		"version": "1.5.0",																					   
 		"displayName": "sdcard_usb_slcd_datalogger_sam_d21_xpro",
+		"projectName": "sdcard_usb_slcd_datalogger_sam_d21_xpro_datalogger_sam_l22_xpro",
 		"shortDescription": "Shows(SLCD) and stores(SD card) sensor data (light intensity values and temperature) into a SD card and enumerates the application as USB MSD (Mass storage device) to access the logged data from a PC", 
 		"ide": {
 			"name": "MPLABX",
@@ -44,31 +45,28 @@
 				"TSLCD1 XplainedPro"
 			],
 			[
-				"Harmony",
-				"Drivers",
-				"I2C"
+				"Harmony","Reference Apps"
+            ]				
 			],
-			[
-				"Peripherals",
-				"I2C"
-			]
-		],
+			
 		"peripherals": [
 			"I2C",
 			"RTC",
 			"SPI",
 			"ADC",
 			"Timer"
-			
+			"SUPC"	
 		],
 		"keywords": [
 			"MHC",
 			"Harmony",
 			"ATSAML22N18A",
-			"SAM L21/L22 Family",
+			"SAM L22 Family",
 			"I2C",
 			"Serial Communication",
+		    "TSLCD1"
 			"SERCOM",
+		    "TSLCD1 XplainedPro"
 			"RTC",
 			"SD Card",
 			"SLCD",
@@ -78,11 +76,16 @@
 			"Graphics",
 			"File System",
 			"FAT32",
+			"I/O1 Xplained",
+			"IO1",
+			"Pro Extension Kit"	   
+		    "FATFS",
+			"Light Intensity"		   
+			"SDSPI"
 			"USB",
 			"MSD",
-			"Datalogger"
-			
-		],
+			"Data Logger"
+			"Segment LCD"
 		"additionalData": {
 			"longDescription": {
 				"metaDataVersion": "1.0.0",

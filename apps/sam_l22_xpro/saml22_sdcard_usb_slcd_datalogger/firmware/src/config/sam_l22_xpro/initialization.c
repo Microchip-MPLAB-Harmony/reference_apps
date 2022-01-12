@@ -456,8 +456,8 @@ void SYS_Initialize ( void* data )
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3UL);
 
     PM_Initialize();
+
   
-    
     PORT_Initialize();
 
     CLOCK_Initialize();
@@ -470,9 +470,9 @@ void SYS_Initialize ( void* data )
     ADC_Initialize();
     SUPC_Initialize();
 
-    RTC_Initialize();
-
     TC0_TimerInitialize();
+
+    RTC_Initialize();
 
 	BSP_Initialize();
     SERCOM3_SPI_Initialize();
@@ -511,12 +511,12 @@ void SYS_Initialize ( void* data )
     SYS_FS_Initialize( (const void *) sysFSInit );
 
 
-    APPS_Initialize();
+    APP_Initialize();
     APP_I2C_TEMP_SENSOR_Initialize();
-    
+
 
     NVIC_Initialize();
-   
+
 }
 
 

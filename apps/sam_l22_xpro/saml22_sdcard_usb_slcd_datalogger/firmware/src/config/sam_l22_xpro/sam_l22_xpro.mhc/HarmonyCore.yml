@@ -16,7 +16,7 @@ children:
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: apps.c}
+        - {type: Value, value: app.c}
   - type: File
     attributes: {id: APP0_H}
     children:
@@ -29,7 +29,7 @@ children:
       - type: String
         attributes: {id: name}
         children:
-        - {type: Value, value: apps.h}
+        - {type: Value, value: app.h}
   - type: File
     attributes: {id: APP1_C}
     children:
@@ -290,7 +290,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: apps}
+        attributes: {value: app}
   - type: String
     attributes: {id: GEN_APP_TASK_NAME_1}
     children:

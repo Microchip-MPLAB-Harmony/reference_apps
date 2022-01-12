@@ -94,9 +94,9 @@ DRV_SLCD_Update();
 
 
     /* Maintain the application's state machine. */
-        /* Call Application task APPS. */
-    APPS_Tasks();
-    
+        /* Call Application task APP. */
+    APP_Tasks();
+
     /* Call Application task APP_I2C_TEMP_SENSOR. */
     APP_I2C_TEMP_SENSOR_Tasks();
 

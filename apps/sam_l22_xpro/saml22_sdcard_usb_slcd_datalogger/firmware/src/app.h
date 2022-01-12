@@ -219,7 +219,7 @@ typedef struct
     This routine must be called from the SYS_Initialize function.
 */
 
-void APPS_Initialize ( void );
+void APP_Initialize ( void );
 
 void APP_SLCD_Initialize ( void );
 /*******************************************************************************
@@ -251,7 +251,7 @@ void APP_SLCD_Initialize ( void );
   Remarks:
     This routine must be called from SYS_Tasks() routine.
  */
-void APPS_Tasks(void);
+void APP_Tasks(void);
 void APP_Tasks_SD_FS(void);
 void APP_Tasks_USB(void);
 void APP_Tasks_ADC(void);

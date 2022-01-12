@@ -88,7 +88,7 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    APPS_Initialize();
+    APP_Initialize();
     ADC_Enable(); 
     DRV_SLCD_Initialize();
     APP_SLCD_Initialize ();       
