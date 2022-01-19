@@ -1,0 +1,96 @@
+{
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.1.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mk_mcm_curiosity_getting_started_ext",
+      "version":"1.5.0",
+      "displayName":"Getting Started Extended Application on PIC32MK MCM Curiosity Pro Development Board",
+      "projectName":"getting_started_ext_pic32mk_mcm_curiosity_pro",
+      "shortDescription":"Demonstrates how to get started using the basic peripherals like SPI, Timer, Core Timer, GPIO, UART and DMA",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=5.50"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=3.0.1"
+         }
+      ],
+      "dfp":{
+         "name":"PIC32MK-MC_DFP",
+         "semverRange":"^1.8.132"
+      },
+      "configurator":{
+         "name":"MHC",
+         "semverRange":">=3.6.4"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"PIC32MK1024MCM100",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "PIC32MK MCM Curiosity Pro Development Board"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "SPI",
+         "Core Timer",
+         "Timer",
+         "GPIO",
+         "UART",
+         "DMA"
+      ],
+      "keywords":[
+         "MHC",
+         "MCC",
+         "Harmony",
+         "PIC32MK1024MCM100",
+         "PIC32MK Family",
+         "UART",
+         "Serial Communication",
+         "USART",
+         "FLEXCOM",
+         "Getting Started",
+         "Getting Started Extended",
+         "SPI",
+         "Timer",
+         "GPIO",
+         "DMA",
+         "temperature",
+         "Curiosity",
+         "PIC32MK MCM",
+         "PIC32MK MCM Curiosity",
+         "temperature",
+         "Weather-Click",
+         "Weather Click Board",
+         "Weather",
+         "Click"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
+}
