@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Smart Tag Google Cloud IoT Core Application on PIC32CM MC00 Curiosity Nano Evaluation Kit
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_smart_tag_demo.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_smart_tag_google_cloud_iot_core.zip" > Download </a> </h2>
 
 -----
 
@@ -109,9 +109,9 @@ Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manife
 <img src = "images/ir_thermo2.jpg" align="middle" height = "250">
 
 - Connect a USB cable to the DEBUG USB port for programming  
- <img src = "images/hardware.jpg" align="middle" width="800" height="600">  
- <img src = "images/hardware1.jpg" align="middle" width="800" height="600">  
- <img src = "images/hardware2.jpg" align="middle" width="800" height="600">
+ <img src = "images/hardware.png" align="middle" width="800" height="800">  
+ <img src = "images/hardware1.png" align="middle" width="800" height="800">  
+ <img src = "images/hardware2.png" align="middle" width="800" height="800">
 
 ## <a id="Programming_hex_file"> </a>
 ## Programming hex file:
@@ -132,7 +132,7 @@ The pre-built hex file can be programmed by following the below steps
 
 ## <a id="Programming_Debugging_Application_Project"> </a>
 ## Programming/Debugging Application Project:
-- Open the project (pic32cmmc_smart_tag_demo/firmware/pic32cm_mc00_cnano.X) in MPLAB X IDE.
+- Open the project (pic32cmmc_smart_tag_google_cloud_iot_core/firmware/pic32cm_mc00_cnano.X) in MPLAB X IDE.
 - Ensure "PIC32CM MC00 Curiosity Nano" is selected as hardware tool to program/debug the application.
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below.  
@@ -178,62 +178,62 @@ The pre-built hex file can be programmed by following the below steps
 - Use your personal Gmail account to log in. Select “Try for free”.  
   **Note** : If you do not have a Gmail account, create a new email account from [HERE](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp)
 - Create a new Google cloud project by clicking the **Select a project** option
-<img src = "images/gcp1.png" align="middle">  
+<img src = "images/gcp1.PNG" align="middle">  
 - Click on **NEW PROJECT**  
-<img src = "images/gcp2.png" align="middle">  
+<img src = "images/gcp2.PNG" align="middle">  
 - Enter a Project name as **smart-tag-demo-on-pic32cm-mc00**  
 - Select organization (if available) or "No organization"  
-<img src = "images/gcp3.png" align="middle">
+<img src = "images/gcp3.PNG" align="middle">
 - Once the project is created, the home page looks like below.  
-<img src = "images/gcp4.png" align="middle">  
+<img src = "images/gcp4.PNG" align="middle">  
 
   **Note** : This Project Id and Registry Id are user unique identifiers. These are defined in the cloud_config.h file, this helps to send the data to particular GCP account. And the registry id creation steps are available in the further document.  
   <img src = "images/code_snippet.png" align="middle" width="568" height="465" >  
 - In the search bar, type “billing” to get to the billing page. Click **Link a billing account** to add the credit card information. Follow the prompts to complete the billing information. Once it is completed you can use the free trail version available
 
   **Note** : Credit card is mandatory to complete the bill section  
-  <img src = "images/gcp5.png" align="middle">  
-  <img src = "images/gcp6.png" align="middle">
+  <img src = "images/gcp5.PNG" align="middle">  
+  <img src = "images/gcp6.PNG" align="middle">
 - In the search bar type “Pub/Sub API” and click on “Enable API”.  
- <img src = "images/gcp7.png" align="middle">
+ <img src = "images/gcp7.PNG" align="middle">
 - Enter “Google Cloud IoT API” in the search bar. Once you select it, click Enable  
-<img src = "images/gcp8.png" align="middle">
+<img src = "images/gcp8.PNG" align="middle">
 - In the navigation pane, select Pub/Sub -> Topics as shown in the below figure  
-<img src = "images/gcp9.png" align="middle">
+<img src = "images/gcp9.PNG" align="middle">
 - Click **Create Topic**  
-<img src = "images/gcp10.png" align="middle">
+<img src = "images/gcp10.PNG" align="middle">
 - Enter the name of topic as “events” and click “Create Topic”  
-<img src = "images/gcp11.png" align="middle">
+<img src = "images/gcp11.PNG" align="middle">
 - Click on "Subscriptions" and click on "CREATE SUBSCRIPTION"  
-<img src = "images/gcp12.png" align="middle">
+<img src = "images/gcp12.PNG" align="middle">
 - Enter the "subscription ID" as **example** and select a "Cloud Pub/Sub topic" as below and click on **CREATE**
- <img src = "images/gcp13.png" align="middle">  
+ <img src = "images/gcp13.PNG" align="middle">  
 - In the navigation pane, select **IoT Core**  
-<img src = "images/gcp15.png" align="middle">
+<img src = "images/gcp15.PNG" align="middle">
 - Click on "CREATE REGISTRY"  
-<img src = "images/gcp16.png" align="middle">
+<img src = "images/gcp16.PNG" align="middle">
 - Enter details as shown below and click on "Create a Registry"  
-<img src = "images/gcp17.png" align="middle">  
+<img src = "images/gcp17.PNG" align="middle">  
 - Search for “IAM and admin” -> service accounts  
-<img src = "images/gcp18.png" align="middle">
+<img src = "images/gcp18.PNG" align="middle">
 - Click on "CREATE SERVICE ACCOUNT"  
-<img src = "images/gcp19.png" align="middle">  
+<img src = "images/gcp19.PNG" align="middle">  
 - Enter the details as shown below and click on "CREATE"  
-<img src = "images/gcp20.png" align="middle">  
+<img src = "images/gcp20.PNG" align="middle">  
 
 - Select the roles as shown below  
-  <img src = "images/gcp21.png" align="middle">  
+  <img src = "images/gcp21.PNG" align="middle">  
 - Click on "CONTINUE"  
-<img src = "images/gcp22.png" align="middle">
+<img src = "images/gcp22.PNG" align="middle">
 - Select the created demo class from service accounts  
-<img src = "images/gcp23.png" align="middle">
+<img src = "images/gcp23.PNG" align="middle">
 - Navigate to "KEYS" tab  
-<img src = "images/gcp24.png" align="middle">    
+<img src = "images/gcp24.PNG" align="middle">    
 - Select "ADD KEY" and "Create new key"  
-<img src = "images/gcp25.png" align="middle">   
+<img src = "images/gcp25.PNG" align="middle">   
 - Select "JSON" and click on "CREATE"  
-<img src = "images/gcp26.png" align="middle">
-- A JSON file will be downloaded, Rename it to "example.json", copy and paste into scripts folder of pic32cmmc_smart_tag_demo project
+<img src = "images/gcp26.PNG" align="middle">
+- A JSON file will be downloaded, Rename it to "example.json", copy and paste into scripts folder of pic32cmmc_smart_tag_google_cloud_iot_core project
 
   **Note** : Creating a Google could account and adding registry to it is one time process
 
@@ -241,13 +241,13 @@ The pre-built hex file can be programmed by following the below steps
 <h3> 4. Instructions to add your device to Google cloud registry </h3>
 
 - In Google cloud search bar, search for IOT core and select the "smart_tag_demo" registry which was created earlier
- <img src = "images/gcp27.png" align="middle">
+ <img src = "images/gcp27.PNG" align="middle">
 - Select "Devices" and click on "CREATE A DEVICE"  
-<img src = "images/gcp28.png" align="middle">
+<img src = "images/gcp28.PNG" align="middle">
 - Enter the device serial number starting with 'd' as shown below and click on create
- <img src = "images/gcp29.png" align="middle">
+ <img src = "images/gcp29.PNG" align="middle">
 - Add the public key read from the device in command prompt as shown below
- <img src = "images/gcp30.png" align="middle">
+ <img src = "images/gcp30.PNG" align="middle">
 
 - You have successfully added device into Registry of google cloud
 
@@ -262,7 +262,7 @@ The pre-built hex file can be programmed by following the below steps
 - Navigate to **scripts** folder and type below command<br>
         python gcp_gui.py --creds example.json example
 - A UI opens and starts displaying Object ID (RFID Tag data) and the object surface temperature values fetching from google cloud with serial number of the particular device
- <img src = "images/output.png" align="middle">
+ <img src = "images/output.PNG" align="middle">
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
@@ -270,4 +270,5 @@ The pre-built hex file can be programmed by following the below steps
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
+- v1.4.1 Updated application demo images and json file
 - v1.4.0 Released demo application
