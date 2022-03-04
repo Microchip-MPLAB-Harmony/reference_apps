@@ -7,6 +7,22 @@ nav_order: 99
 
 ---
 
+## Reference Applications Release v1.4.1 (March 2022)
+
+### New Applications
+- N/A  
+
+### Updated Applications
+- Fixed images and hyperlink in [pic32cmmc_smart_tag_google_cloud_iot_core](./apps/pic32cm_mc00_cnano/pic32cmmc_smart_tag_google_cloud_iot_core/readme.md) and [same51n_google_cloud_iot_core](./apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.md) demo documentation.
+
+### Known Issues
+- Same as v1.4.0  
+
+### Development Tools
+- Same as v1.4.0
+
+---
+
 ## Reference Applications Release v1.4.0 (December 2021)
 
 - Added MCC support for all demo applications
@@ -21,7 +37,7 @@ nav_order: 99
 | [samd21_sdcard_usb_datalogger](./apps/sam_d21_xpro/samd21_sdcard_usb_datalogger/readme.md) |  SD Card, USB Data Logger | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21J18A) | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro)|
 | [wifi_7](./apps/sam_e51_cnano/same51n_mikroe_click/wifi_7/readme.md) | MikroElektronika WIFI 7 Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
 | [oled_c](./apps/sam_e51_cnano/same51n_mikroe_click/oled_c/readme.md) | MikroElektronika OLED C Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
-| [usb_uart](./apps/sam_e51_cnano/same51n_mikroe_click/usb_uart/readme.md) | MikroElektronika USB UART Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [usb_i2c](./apps/sam_e51_cnano/same51n_mikroe_click/usb_i2c/readme.md) | MikroElektronika USB I2C Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
 | [rfid](./apps/sam_e51_cnano/same51n_mikroe_click/rfid/readme.md) | MikroElektronika RFID Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
 
 ### Updated Applications  
