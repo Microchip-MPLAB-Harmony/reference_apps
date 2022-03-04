@@ -29,6 +29,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 17 | [USB I2C Click Example](./usb_i2c/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_i2c.zip)  |
 | 18 | [BLE 2 Click Example](./ble2/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ble2.zip)  |
 | 19 | [GRID EYE Click Example](./grid_eye/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/grid_eye.zip)  |
+| 20 | [LR Click Example](./lr/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/lr.zip)  |
 ### More Application Demos
 
 For more application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=ATSAME51J20A" target="_blank"> CLICK HERE </a>
