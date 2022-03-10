@@ -1,0 +1,14 @@
+configName: sam_e51_cnano
+folderName: sam_e51_cnano
+format_version: v1.0
+frameworkPath: ..\..\..\..\..\..\..\gitHub
+processor: ATSAME51J20A
+projectName: grid_eye_sam_e51_cnano
+settings:
+  PackageFilter: audio;aws_cloud;azure_rtos;bootloader;bootloader_apps_can;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_serial_memory;bootloader_apps_uart;bootloader_apps_usb;bsp;bt;core;crypto;cryptoauthlib;csp;csp_apps_pic32mk;csp_apps_sam_d5x_e5x;Devices;dev_packs;ethercat;gfx;gfx_apps;gfx_apps_sam_e70_s70_v70_v71;gfx_aria;mbed_os_rtos;mc_apps_pic32cm_mc;micrium_ucos3;motor_control;net;net_10base_t1s;net_apps_sam_e5x;quick_docs;touch;usb;wireless_wifi;x2c
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.5.104\atdf\ATSAME51J20A.atdf
