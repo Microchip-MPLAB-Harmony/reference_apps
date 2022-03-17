@@ -33,6 +33,7 @@ The following reference applications are provided to evaluate solutions on 32-bi
 - ### [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md)
 - ### [SAM L11 Xplained Pro Evaluation Kit](./sam_l11_xpro/readme.md)
 - ### [SAM L22 Xplained Pro Evaluation Kit](./sam_l22_xpro/readme.md)
+- ### [SAM D21 IoT v2 Development Board](./sam_d21_iot_v2/readme.md)
 
 ### **Note:**
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
