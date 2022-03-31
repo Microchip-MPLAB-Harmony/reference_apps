@@ -18,14 +18,6 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
-         <string>drv_i2c</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
-      <entry>
-         <string>drv_i2c_0</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
-      <entry>
          <string>drv_spi</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
@@ -590,25 +582,24 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;456&quot; canvasWidth=&quot;850&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core_timer&quot; x=&quot;185&quot; y=&quot;235&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drv_i2c&quot; x=&quot;507&quot; y=&quot;27&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drv_spi&quot; x=&quot;505&quot; y=&quot;307&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_hal_le&quot; x=&quot;681&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_legato&quot; x=&quot;689&quot; y=&quot;75&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;i2c1&quot; x=&quot;357&quot; y=&quot;115&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;le_gfx_driver_external&quot; x=&quot;656&quot; y=&quot;188&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;le_gfx_intf_spi4&quot; x=&quot;461&quot; y=&quot;208&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;spi1&quot; x=&quot;377&quot; y=&quot;365&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sys_input&quot; x=&quot;653&quot; y=&quot;344&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sys_time&quot; x=&quot;313&quot; y=&quot;201&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;0&quot; y=&quot;52&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;187&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core_timer&quot; x=&quot;0&quot; y=&quot;161&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;0&quot; y=&quot;21&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drv_spi&quot; x=&quot;141&quot; y=&quot;283&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;gfx_hal_le&quot; x=&quot;276&quot; y=&quot;105&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_legato&quot; x=&quot;701&quot; y=&quot;332&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;i2c1&quot; x=&quot;145&quot; y=&quot;72&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;le_gfx_driver_external&quot; x=&quot;484&quot; y=&quot;262&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;le_gfx_intf_spi4&quot; x=&quot;283&quot; y=&quot;284&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;spi1&quot; x=&quot;0&quot; y=&quot;347&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sys_input&quot; x=&quot;275&quot; y=&quot;21&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sys_time&quot; x=&quot;139&quot; y=&quot;149&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;456&quot; canvasWidth=&quot;850&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -3651,74 +3642,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c&gt;
-  &lt;drv_i2c dnOrder=&quot;0&quot;/&gt;
-&lt;/drv_i2c&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c" name="DRV_I2C_MODE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c&gt;
-  &lt;drv_i2c dnOrder=&quot;0&quot; id=&quot;DRV_I2C_MODE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;drv_i2c&quot; value=&quot;Asynchronous&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/drv_i2c&gt;
-&lt;/drv_i2c&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c_0" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c_0&gt;
-  &lt;drv_i2c_0 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;i2c1&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;I2C1_I2C&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-    &lt;/Attachments&gt;
-  &lt;/drv_i2c_0&gt;
-&lt;/drv_i2c_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c_0" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>drv_i2c</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c_0" name="DRV_I2C_PLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c_0&gt;
-  &lt;drv_i2c_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2C_PLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;drv_i2c_0&quot; value=&quot;I2C1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/drv_i2c_0&gt;
-&lt;/drv_i2c_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_i2c_0" name="DRV_I2C_QUEUE_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c_0&gt;
-  &lt;drv_i2c_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2C_QUEUE_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;64&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/drv_i2c_0&gt;
-&lt;/drv_i2c_0&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_spi" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_spi&gt;
   &lt;drv_spi dnOrder=&quot;0&quot;/&gt;
@@ -3954,20 +3877,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="i2c1" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c1&gt;
-  &lt;i2c1 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;I2C1_I2C&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c_I2C_dependency&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/i2c1&gt;
+  &lt;i2c1 dnOrder=&quot;0&quot;/&gt;
 &lt;/i2c1&gt;
 </value>
       </entry>
@@ -4047,7 +3957,7 @@
   &lt;i2c1 dnOrder=&quot;0&quot; id=&quot;I2C_OPERATING_MODE&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
@@ -4997,10 +4907,6 @@
          <hash>88ad3cdf69b9587f44346877aaaa743f184c73ab60072cbe479605a436ce28a5</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\driver\i2c\src\drv_i2c.c</file>
-         <hash>066e757e8d736e8d60301a755a5d0a051cf38ff7c98a23bb050c66894838837c</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\gfx\legato\widget\image\legato_widget_image.h</file>
          <hash>6e766e18a60b45d526a63be1f66cc69d013cbb4907cf0eee026ae0321dad2292</hash>
       </entry>
@@ -5146,7 +5052,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>a5625b8dda0ff8245e2602112f8278ac2a0f2197ce99bbcc99a2f76857333446</hash>
+         <hash>c69940f98d176ea859f654801e66f9344a2adf37779aa97806a1f5a2c6b39550</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_pixelbuffer.h</file>
@@ -5214,7 +5120,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>62b2b6b6bcabcca237361e724c71c3f47eb0cee125ff89e92692ca9eaaa6c793</hash>
+         <hash>931d80a87c2da022f1d2a8c948d5914f6808cf6d21ec6b66306665a616722ec7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.h</file>
@@ -5243,10 +5149,6 @@
       <entry>
          <file>..\src\config\default\system\dma\sys_dma.c</file>
          <hash>772a0f1332b9de8ac954f390a0a69dad05fe6976d2d6fbc3de30a50021eb148f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\default\driver\i2c\drv_i2c_definitions.h</file>
-         <hash>48e93b446c00e2ff05fa909dff3eccb8aad1051467c4137e407d37afc4b40ab0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\png\lodepng.h</file>
@@ -5283,10 +5185,6 @@
       <entry>
          <file>..\src\config\default\user.h</file>
          <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\default\driver\i2c\src\drv_i2c_local.h</file>
-         <hash>f82fd4270a023c7d3281752352a98a33d139a03992f8cf32e6ad04adaf8fcf5f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_memory.c</file>
@@ -5361,10 +5259,6 @@
          <hash>1980508afc8e18f8653e1aaf41bfe8ed1c93a302e264eb89a834dbe624576270</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\driver\i2c\drv_i2c.h</file>
-         <hash>c17a0a4f6904f2226706c71821a1dac31171a701181677c9bb512049e20b71a2</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono.h</file>
          <hash>06df0edce1976df497c54492ad7a56c5412bbcae26e595d1b135b74c19dbe1c2</hash>
       </entry>
@@ -5434,7 +5328,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>77985a81a4d75edd4f813f311cc61229de40d42d0ba36668c8a14b740b333e16</hash>
+         <hash>834b186e8c61900d2cf1bc3e1c8b0845d56b2c46027a7d363a0a30a661e7d138</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_math.c</file>

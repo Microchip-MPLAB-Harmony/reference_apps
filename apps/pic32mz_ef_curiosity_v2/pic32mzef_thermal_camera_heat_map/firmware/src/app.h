@@ -55,6 +55,32 @@
 #include <stdlib.h>
 #include "configuration.h"
 
+#define THERMAL_CAMERA_DRAW_SURFACE         Screen0_DrawSurfaceWidget0
+
+#define DISPLAY_TABLE_X_START_POS           0
+#define DISPLAY_TABLE_Y_START_POS           0
+
+#define THERMAL_CAMERA_TEMP_RECTANGLE_SIZE  12
+
+#define BLUE                                0
+#define RED                                 1
+#define ORANGE                              2
+#define YELLOW                              3
+#define GREEN                               4
+#define LIGHT_YELLOW                        5
+
+#define BLUE_COLOR                          0x001F
+#define RED_COLOR                           0xF800
+#define ORANGE_COLOR                        0xFC00
+#define YELLOW_COLOR                        0xFFE0
+#define GREEN_COLOR                         0x07E0
+#define BLACK_COLOR                         0x0000
+#define LIGHT_YELLOW_COLOR                  0xFFF7
+
+#define ALPHA_BLENDING_VALUE                0XFF
+#define THERMAL_CAMERA_TABLE_64_FIRST_SAMPLE_INDEX (GRID_EYE_SAMPLES_NUMBER - GRID_EYE_SAMPLES_PER_ROW)
+#define THERMAL_CAMERA_TEMP_COEF            0.25
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -83,9 +109,9 @@ extern "C" {
 typedef enum
 {
     /* Application's state machine's initial state. */
-    APP_START_SCREEN_TASK = 0,
-    APP_GRID_EYE_INIT,
-    APP_GRID_EYE_TASK,
+    THERMAL_CAMERA_INIT = 0,
+    THERMAL_CAMERA_SENSOR_INIT,
+    THERMAL_CAMERA_DISPLAY_TASK,
     /* TODO: Define states used by the application state machine. */
 
 } APP_STATES;

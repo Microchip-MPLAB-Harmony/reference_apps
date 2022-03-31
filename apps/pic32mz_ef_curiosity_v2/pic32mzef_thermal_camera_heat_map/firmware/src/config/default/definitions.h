@@ -52,10 +52,9 @@
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
-#include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
+#include "peripheral/coretimer/plib_coretimer.h"
 #include "system/input/sys_input.h"
 #include "gfx/driver/controller/external_controller/drv_gfx_external_controller.h"
 #include "peripheral/spi/spi_master/plib_spi1_master.h"
@@ -190,9 +189,6 @@ Remarks:
 
 typedef struct
 {
-    /* I2C0 Driver Object */
-    SYS_MODULE_OBJ drvI2C0;
-
     /* SPI0 Driver Object */
     SYS_MODULE_OBJ drvSPI0;
 

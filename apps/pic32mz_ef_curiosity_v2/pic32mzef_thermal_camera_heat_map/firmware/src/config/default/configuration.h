@@ -95,20 +95,10 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
-/* I2C Driver Instance 0 Configuration Options */
-#define DRV_I2C_INDEX_0                       0
-#define DRV_I2C_CLIENTS_NUMBER_IDX0           1
-#define DRV_I2C_QUEUE_SIZE_IDX0               64
-#define DRV_I2C_CLOCK_SPEED_IDX0              100000
-
 /* SPI Driver Instance 0 Configuration Options */
 #define DRV_SPI_INDEX_0                       0
 #define DRV_SPI_CLIENTS_NUMBER_IDX0           1
 #define DRV_SPI_QUEUE_SIZE_IDX0               4
-
-/* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
-
 
 /* SPI Driver Common Configuration Options */
 #define DRV_SPI_INSTANCES_NUMBER              1
