@@ -85,7 +85,7 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult_freertos/harmony-man
         - MISO -> PC25
         - MOSI -> PB24
 
-    <img src = "images/sam_e54_cult_hw_setup_resize.png" width="600" height="445" align="middle">
+    <img src = "images/sam_e54_cult_hw_setup_resize.png">
 - Mount LAN8740 PHY daughter board on Ethernet PHY header
 
 ## TCP/IP Network Setup:
