@@ -39,7 +39,7 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e54_cult*  
-- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.  
+- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).
 - Any Serial Terminal application like Tera Term terminal application.
 - Windows command prompt
 - Python 3.8.0  
