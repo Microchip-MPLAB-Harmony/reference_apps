@@ -43,7 +43,7 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 - Mount the OLED C click on the mikro BUS 1 of the Curiosity PIC32MZ EF 2.0 Development Board
 - Mount the Grid-EYE click on the mikro BUS 2 of the Curiosity PIC32MZ EF 2.0 Development Board
 - Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)
-<img src = "images/pic32_thermal_camera_setup.png" width="800" height="600" align="middle">
+<img src = "images/pic32_thermal_camera_setup.png">
 
 
 ## Programming hex file:
