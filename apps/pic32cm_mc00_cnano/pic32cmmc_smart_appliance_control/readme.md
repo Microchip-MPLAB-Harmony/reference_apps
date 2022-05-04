@@ -129,7 +129,7 @@ Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manife
 - Connect Li-ion or Lipo Battery on J1 connector and make sure SW1 slider switch is moved to Battery on position in Curiosity Nano Base board  
 - Connect the PIC32CM MC00 Curiosity Nano Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
 
-  <img src = "images/hardware_setup.jpg" align="middle">
+  <img src = "images/hardware_setup.png" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  
