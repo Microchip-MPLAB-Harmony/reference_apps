@@ -50,7 +50,7 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_xpro/harmony-manifest-suc
 - Any Serial Terminal application like Tera Term terminal application.  
 - [Data Visualizer](https://www.microchip.com/mplab/avr-support/data-visualizer)  
 
-<span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://microchip.com/DS90003305)
+<span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Setup:
 - Connect the I/O1 Xplained Pro extension kit to the Extension Header 1 (EXT1) of the SAM E54 Xplained Pro evaluation kit
