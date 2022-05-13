@@ -65,7 +65,7 @@ Refer [Project Manifest](./firmware/src/config/sam_d21_xpro/harmony-manifest-suc
 
 - The SAM D21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM D21 Xplained Pro Evaluation Kit
   
-  <img title="" src="file:///C:/Dev/reference_apps/apps/sam_d21_xpro/samd21_sdcard_usb_datalogger/images/boardsetup.png" alt="" width="449" height="425" align="middle">
+  <img title="" src="images/boardsetup.png" alt="" width="449" height="425" align="middle">
 
 ## Programming hex file:
 
