@@ -57,7 +57,7 @@ Refer [Project Manifest](./firmware/src/config/sam_l22_xpro/harmony-manifest-suc
 
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.
 
-Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://microchip.com/DS90003305)
+Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Setup:
 
@@ -74,7 +74,7 @@ Because Microchip regularly update tools, occasionally issue(s) could be discove
 - Place the jumper between CAP & PB03 in the VBAT select jumper.
 
 - The system time can be set via the SetTime() function in app.c file.
-
+  
   ![](./images/setup.jpg)
 
 ## Programming hex file:
@@ -111,7 +111,7 @@ The pre-built hex file can be programmed by following the below steps
 3. Access the DATA_LOG.txt via USB inside the Dir1 folder.(see below image)
 
 4. The sample log file looks as below.
-
+   
    ![](./images/logfie.JPG)
 
 5. Always eject the USB drive before removing it.
