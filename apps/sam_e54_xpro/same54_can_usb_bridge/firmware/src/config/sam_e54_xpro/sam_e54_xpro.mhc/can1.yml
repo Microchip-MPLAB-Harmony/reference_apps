@@ -1,0 +1,465 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: can1}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: CALCULATED_DATA_BITRATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '2000'}
+  - type: String
+    attributes: {id: CALCULATED_DATA_ERRORRATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '0.000'}
+  - type: Integer
+    attributes: {id: CALCULATED_NOMINAL_BITRATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '500'}
+  - type: String
+    attributes: {id: CALCULATED_NOMINAL_ERRORRATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '0.000'}
+  - type: Menu
+    attributes: {id: CAN1_EXT_FILTER1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: CAN1_EXT_FILTER1_CONFIG}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Hex
+    attributes: {id: CAN1_EXT_FILTER1_EFID1}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '268435621'}
+  - type: KeyValueSet
+    attributes: {id: CAN1_EXT_FILTER1_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Menu
+    attributes: {id: CAN1_EXT_FILTER2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: CAN1_EXT_FILTER2_CONFIG}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Hex
+    attributes: {id: CAN1_EXT_FILTER2_EFID1}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '268435606'}
+  - type: Hex
+    attributes: {id: CAN1_EXT_FILTER2_EFID2}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '268435606'}
+  - type: Menu
+    attributes: {id: CAN1_STD_FILTER1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Hex
+    attributes: {id: CAN1_STD_FILTER1_SFID1}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1129'}
+  - type: Hex
+    attributes: {id: CAN1_STD_FILTER1_SFID2}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: KeyValueSet
+    attributes: {id: CAN1_STD_FILTER1_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Menu
+    attributes: {id: CAN1_STD_FILTER2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: CAN1_STD_FILTER2_CONFIG}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: Hex
+    attributes: {id: CAN1_STD_FILTER2_SFID1}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1114'}
+  - type: Integer
+    attributes: {id: CAN_CORE_CLOCK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '60000000'}
+  - type: Comment
+    attributes: {id: CAN_CORE_CLOCK_INVALID_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: Warning!!! CAN1 Clock Frequency is too low for required
+            Nominal Bit Timing}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Comment
+    attributes: {id: CAN_DATA_ERRORRATE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: Warning!!! Error -87.500%}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Comment
+    attributes: {id: CAN_NOMINAL_ERRORRATE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: Warning!!! Error -91.667%}
+  - type: Combo
+    attributes: {id: CAN_OPMODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: CAN FD}
+  - type: Comment
+    attributes: {id: CAN_TIME_QUANTA_INVALID_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: Warning!!! Number of Time Quanta is too low for required
+            Nominal Bit Timing}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Integer
+    attributes: {id: DATA_BITRATE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2000'}
+  - type: Menu
+    attributes: {id: DATA_BIT_TIMING_CALCULATION}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: String
+    attributes: {id: DATA_TIME_QUANTA_PERIOD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '16.667'}
+  - type: Integer
+    attributes: {id: DBTP_DSJW}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '8'}
+      - type: User
+        attributes: {value: '7'}
+  - type: Integer
+    attributes: {id: DBTP_DTSEG1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '21'}
+  - type: Integer
+    attributes: {id: DBTP_DTSEG2}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '8'}
+  - type: Integer
+    attributes: {id: DBTP_TOTAL_TIME_QUANTA}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '30'}
+  - type: Integer
+    attributes: {id: FILTERS_EXT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Integer
+    attributes: {id: FILTERS_STD}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Boolean
+    attributes: {id: INTERRUPT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Integer
+    attributes: {id: NBTP_NBRP}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '5'}
+  - type: Integer
+    attributes: {id: NBTP_NSJW}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '5'}
+      - type: User
+        attributes: {value: '4'}
+  - type: Integer
+    attributes: {id: NBTP_NTSEG1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '14'}
+  - type: Integer
+    attributes: {id: NBTP_NTSEG2}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '5'}
+  - type: Integer
+    attributes: {id: NBTP_TOTAL_TIME_QUANTA}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '20'}
+  - type: String
+    attributes: {id: NOMINAL_TIME_QUANTA_PERIOD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: can1, value: '100.000'}
+  - type: Boolean
+    attributes: {id: RXBUF_USE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: RXF0_BYTES_CFG}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: KeyValueSet
+    attributes: {id: RXF1_BYTES_CFG}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: Boolean
+    attributes: {id: RXF1_USE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: RX_BUFFER_BYTES_CFG}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Integer
+    attributes: {id: RX_BUFFER_ELEMENTS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Boolean
+    attributes: {id: TIMESTAMP_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: TIMESTAMP_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: TX_FIFO_BYTES_CFG}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: File
+    attributes: {id: instHeaderFile}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/can_u2003/templates/plib_can_interrupt.h.ftl}
+  - type: Menu
+    attributes: {id: rxf1menu}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: sourceFile}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/can_u2003/templates/plib_can_interrupt.c.ftl}
+- type: ElementPosition
+  attributes: {x: '275', y: '201', id: can1}
