@@ -444,58 +444,6 @@ void APP_USB_Tasks(void) {
 
             break;
 
-#ifdef read //Remove if you need to read USB input from user
-        case APP_USB_STATE_SCHEDULE_READ:
-
-            if (APP_USB_StateReset()) {
-                break;
-            }
-
-            /* If a read is complete, then schedule a read
-             * else wait for the current read to complete 
-             */
-            app_usbData.state = APP_USB_STATE_WAIT_FOR_READ_COMPLETE;
-
-            if (app_usbData.isReadComplete == true) {
-                app_usbData.isReadComplete = false;
-                app_usbData.readTransferHandle =
-                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
-
-                /* Schedule read */
-                USB_DEVICE_CDC_Read(USB_DEVICE_CDC_INDEX_0,
-                        &app_usbData.readTransferHandle,
-                        app_usbData.cdcReadBuffer,
-                        APP_USB_READ_BUFFER_SIZE);
-
-                if (app_usbData.readTransferHandle ==
-                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID) {
-                    app_usbData.state = APP_USB_STATE_ERROR;
-                    break;
-                }
-            }
-
-            break;
-
-        case APP_USB_STATE_WAIT_FOR_READ_COMPLETE:
-
-            if (APP_USB_StateReset()) {
-                break;
-            }
-
-            /* Check if a character was received, The isReadComplete flag gets 
-             * updated in the CDC event handler. 
-             */
-            if (app_usbData.isReadComplete) {
-                app_usbData.state = APP_USB_STATE_IDLE;
-            }
-            
-            /* To do something with read data, check this buffer's contents:
-             * app_usbData.cdcReadBuffer
-             */
-
-            break;
-#endif //Remove if you need to read USB input from user
-
         case APP_USB_STATE_SCHEDULE_WRITE:
 
             if (APP_USB_StateReset()) {

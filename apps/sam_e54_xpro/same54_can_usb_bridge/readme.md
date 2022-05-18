@@ -22,6 +22,11 @@ It reads the data transmitted on a CAN network via the CAN peripheral and displa
 - Peripheral Modules  
 	- CAN
 	- USB
+- Core
+- Drivers
+	- USB Full Speed Driver
+- Libraries
+	- USB Device Stack
 
 ## Hardware Used:
 
@@ -40,7 +45,7 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_xpro/harmony-manifest-suc
 ## Setup:
 - Connect a micro-USB cable to the DEBUG USB port of the SAME54 Xplained pro to power the board and for programming and debugging.
 - Connect another micro-USB cable to the Target USB port of the SAME54 Xplained pro board, this is for the USB Communication (USB CDC Virtual COM Port).
-- Connect the CAN lines CANL and CANH to the CAN network.
+- Connect the CAN lines CANL and CANH to a CAN node in the CAN network.
 
   <img src = "images/hardware_setup.png" width="443" height="483" align="middle">
 
@@ -73,14 +78,11 @@ The pre-built hex file can be programmed by following the below steps
 
   <img src = "images/device_manager.png" width="642" height="475" align="middle">
 
-- Note:
-
-> After programming using EDBG, we can unplug USB cable in DEBUG USB and use only TARGET USB for USB communication. In this case, ensure that current measurement jumpers are in bypass position like below.
-
-  <img src = "images/jumper_settings.png" width="314" height="110" align="middle">
+- **Note:** After programming using EDBG, we can unplug USB cable in DEBUG USB and use only TARGET USB for USB communication. In this case, ensure that current measurement jumpers are in bypass position like below.  
+	<img src = "images/jumper_settings.png" width="314" height="110" align="middle">
 
 - Open the Teraterm terminal window on your PC, select the USB Virtual COM port
-- Transmit CAN messages from the nodes, and the messages can be viewed on the USB-CAN bridge terminal window.
+- Transmit CAN messages from the connected CAN nodes, and the messages can be viewed on the USB-CAN bridge terminal window.
 
   <img src = "images/output.png" width="656" height="535" align="middle">
 

@@ -235,23 +235,7 @@ void APP_CAN_Tasks ( void )
             app_canData.state = APP_CAN_STATE_IDLE;
             
             break;
-            
-#ifdef read //Remove if you need to read CAN input from user
-        case APP_CAN_STATE_WAIT_FOR_READ:
-            Do something here*/
-            
-            app_canData.state = APP_CAN_STATE_IDLE;
-            
-            break;*/
-        
-        case APP_CAN_STATE_SCHEDULE_READ:
-            /* Do something here*/
-            
-            app_canData.state = APP_CAN_STATE_WAIT_FOR_READ_COMPLETE;
-            
-            break;
-#endif //Remove if you need to read CAN input from user
-        
+                
         case APP_CAN_STATE_READ_COMPLETE:
             app_canData.can_data= rxFiFo0;
             COMMON_APP_CAN_DataStatus(true);
