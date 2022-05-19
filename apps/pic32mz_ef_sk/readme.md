@@ -6,6 +6,8 @@ has_toc: false
 nav_order: 20
 ---
 # PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320007).   
 

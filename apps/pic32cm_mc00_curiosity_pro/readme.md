@@ -5,7 +5,9 @@ has_children: true
 has_toc: false
 nav_order: 1
 ---
+
 # PIC32CM MC00 Curiosity Pro Development Board
+<h4 align="left"> <img src = "image.jpg"> </h4> 
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32CM MC00 Curiosity Pro Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV15N46A).   
 

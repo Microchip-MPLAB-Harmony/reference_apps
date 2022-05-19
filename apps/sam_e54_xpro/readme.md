@@ -3,10 +3,12 @@ title: SAM E54 Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 13
+nav_order: 15
 ---
 
 # SAM E54 Xplained Pro Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the **MPLAB® Harmony 3 reference applications** developed on [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO).
 
@@ -17,7 +19,7 @@ This folder contains the **MPLAB® Harmony 3 reference applications** developed 
 | 3 | [Low Power](./same54_low_power/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_low_power.zip) |
 | 4 | [SleepWalking](./sleepwalking/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sleepwalking.zip) |
 | 5 | [Vending Machine](./same54_vending_machine/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_vending_machine.zip) |
-
+| 6 | [CAN USB Bridge](./same54_can_usb_bridge/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_can_usb_bridge.zip) |
 
 
 ### More Application Demos

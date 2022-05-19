@@ -3,11 +3,13 @@ title: SAM D21 IoT Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 4
 ---
 # SAM D21 IoT Development Board
+<h4 align="left"> <img src = "image.jpg"> </h4>
 
-This folder contains the MPLAB® Harmony 3 reference applications developed on SAM D21 IoT Development Boards.
+
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 IoT WG Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/EV75S95A).
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |

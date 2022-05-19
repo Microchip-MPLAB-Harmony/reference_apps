@@ -3,9 +3,10 @@ title: PIC32MZ DA Curiosity Development Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 5
+nav_order: 6
 ---
 # PIC32MZ DA Curiosity Development Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32MZ DA Curiosity Development Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV87D54A).
 

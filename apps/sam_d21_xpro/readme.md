@@ -3,9 +3,11 @@ title: SAM D21 Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 15
+nav_order: 17
 ---
 # SAM D21 Xplained Pro Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro).   
 

@@ -3,9 +3,11 @@ title: SAM E70 Xplained Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 12
+nav_order: 14
 ---
 # SAM E70 Xplained Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E70 Xplained Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAME70-XPLD).   
 

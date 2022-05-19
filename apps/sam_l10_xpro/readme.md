@@ -3,10 +3,12 @@ title: SAM L10 Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 8
+nav_order: 9
 ---
 
 # SAM L10 Xplained Pro Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM L10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204).   
 

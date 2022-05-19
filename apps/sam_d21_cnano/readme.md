@@ -3,9 +3,11 @@ title: SAM D21 Curiosity Nano Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 6
+nav_order: 7
 ---
 # SAM D21 Curiosity Nano Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119).   
 

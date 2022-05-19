@@ -3,9 +3,11 @@ title: SAM E54 Curiosity Ultra Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 14
+nav_order: 16
 ---
 # SAM E54 Curiosity Ultra Development Board
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This repository contains the MPLAB® Harmony 3 reference applications developed on [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)   
 

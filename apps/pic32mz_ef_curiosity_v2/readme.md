@@ -3,9 +3,11 @@ title: Curiosity PIC32MZ EF 2.0 Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 7
+nav_order: 8
 ---
 # Curiosity PIC32MZ EF 2.0 Development Board
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209).
 

@@ -3,11 +3,13 @@ title: SAM D21 IoT v2 Development Board
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 23
 ---
 # SAM D21 IoT v2 Development Board
+<h4 align="left"> <img src = "image.jpg"> </h4>
 
-This folder contains the MPLAB® Harmony 3 reference applications developed on SAM D21 IoT Development Boards.
+
+This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM D21 IoT Wx v2 Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/).
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |

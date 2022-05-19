@@ -3,10 +3,12 @@ title: SAM C21 Xplained Pro Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 10
+nav_order: 11
 ---
 
-# SAM C21 Xplained Pro evaluation kit
+# SAM C21 Xplained Pro Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM C21 Xplained Pro evaluation kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21-xpro).   
 
@@ -17,4 +19,4 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 ### More Application Demos
 
-For more application demos on **SAM C21 Xplained Pro evaluation kit** and other Development Boards/Kits having the same part number **(ATSAMC21J18A)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=ATSAMC21J18A" target="_blank"> CLICK HERE </a>
+For more application demos on **SAM C21 Xplained Pro Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAMC21J18A)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=ATSAMC21J18A" target="_blank"> CLICK HERE </a>

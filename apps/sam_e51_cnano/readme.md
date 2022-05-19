@@ -3,9 +3,11 @@ title: SAM E51 Curiosity Nano Evaluation Kit
 parent: Reference Applications
 has_children: true
 has_toc: false
-nav_order: 4
+nav_order: 5
 ---
 # SAM E51 Curiosity Nano Evaluation Kit
+<h4 align="left"> <img src = "image.jpg"> </h4>
+
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A).   
 

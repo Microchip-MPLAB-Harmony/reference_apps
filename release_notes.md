@@ -7,6 +7,40 @@ nav_order: 99
 
 ---
 
+## Reference Applications Release v1.5.0 (June 2022)
+
+- Removed MHC plugin configuration for all demo applications
+
+### New Applications
+
+| Application | Description | MCU | Development Board/Kit |  
+| --- | --- | --- | --- |  
+| [saml21_ble_fitness_tracker](./apps/sam_l21_xpro/saml21_ble_fitness_tracker/readme.md) |  BLE Fitness Tracker Application | [SAM L21](https://www.microchip.com/wwwproducts/en/ATSAML21J18B) | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b)|
+| [ble2](./apps/sam_e51_cnano/same51n_mikroe_click/ble2/readme.md) | MikroElektronika BLE 2 Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [LR](./apps/sam_e51_cnano/same51n_mikroe_click/lr/readme.md) | MikroElektronika LR Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [grid_eye](./apps/sam_e51_cnano/same51n_mikroe_click/grid_eye/readme.md) | MikroElektronika GRID EYE Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [usb_spi](./apps/sam_e51_cnano/same51n_mikroe_click/usb_spi/readme.md) | MikroElektronika USB SPI Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [pic32mk_mcm_curiosity_getting_started_ext](./apps/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_getting_started_ext/readme.md) | Getting Started Extended Application | [PIC32MK](https://www.microchip.com/wwwproducts/en/PIC32MK1024MCM100) | [PIC32MK MCM Curiosity Pro Development Board](https://www.microchip.com/en-us/development-tool/EV31E34A)|
+| [saml22_sdcard_usb_slcd_datalogger](./apps/sam_l22_xpro/saml22_sdcard_usb_slcd_datalogger/readme.md) |  SD Card, USB Data Logger | [SAM L22](https://www.microchip.com/wwwproducts/en/ATSAML22N18A) | [SAM L22 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/atsaml22-xpro-b)|
+| [same54_can_usb_bridge](./apps/sam_e54_xpro/same54_can_usb_bridge/readme.md) | CAN USB bridge Application | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Xplained Pro](https://www.microchip.com/developmenttools/productdetails/atsame54-xpro)|
+
+### Updated Applications  
+
+- Updated applications for documentation errors, broken images and links
+
+
+### Known Issues
+- None
+
+### Development Tools
+- [MPLAB® X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB® XC32 C/C++ Compiler v4.00](https://www.microchip.com/mplab/compilers)
+- [IAR EWARM v8.50](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
+- MPLAB® X IDE plug-ins:
+  - MPLAB Code Configurator (MCC) v5.1.4   
+
+
+---
 ## Reference Applications Release v1.4.1 (March 2022)
 
 ### New Applications
