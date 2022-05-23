@@ -46,7 +46,7 @@ This application scans for available Access Points and display the list on tera 
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/sam_e51_cnano/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e51_cnano*  
-- Refer the [Release Notes](../../../../release_notes.md#development-tools) to know the {}MPLAB X IDE{} and {}MHC/MCC{} Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
+- Refer the [Release Notes](../../../../release_notes.md#development-tools) to know the {}MPLAB X IDE{} and {}MCC{} Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 - Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
@@ -100,9 +100,9 @@ Below are Harmony v3 configuration for the WiFi 7 click
 - Change Configuration of components as shown in the below figures
  - SERCOM1 Configuration
 	<img src = "images/wifi_7_sercom.png">
- - MHC Pin Configurator - SPI pin configuration
+ - MCC Pin Configurator - SPI pin configuration
  	<img src = "images/wifi_7_sercom_pins.png">
- - MHC Pin Configurator - additional pin configurations
+ - MCC Pin Configurator - additional pin configurations
   <img src = "images/wifi_7_sercom_add_pins.png">
  - WINC configuration
 	<img src = "images/wifi_7_winc.png">
@@ -112,7 +112,7 @@ Below are Harmony v3 configuration for the WiFi 7 click
  	<img src = "images/wifi_7_console.png">
  - SERCOM5 Configuration
  	<img src = "images/wifi_7_sercom5.png">
- - MHC Pin Configurator - UART pin configuration
+ - MCC Pin Configurator - UART pin configuration
 	<img src = "images/wifi_7_sercom5_pins.png">
  - Debug Configuration
   <img src = "images/wifi_7_debug.png">
@@ -172,8 +172,9 @@ Below are Harmony v3 configuration for the WiFi 7 click
 	4. [Google Cloud IoT Core Application on SAM E51 Curiosity Nano Evaluation Kit using Socket mode](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/apps/sam_e51_cnano/same51n_google_cloud_iot_core/readme.md)
 	5. [Vending Machine Application on SAM E54 Xplained Pro Evaluation Kit using TCP/IP mode](https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_e54_xpro/same54_vending_machine/readme.md)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ## Revision:
+- v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Released demo application
