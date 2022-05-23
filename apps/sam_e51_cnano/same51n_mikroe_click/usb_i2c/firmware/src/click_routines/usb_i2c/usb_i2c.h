@@ -44,7 +44,7 @@
 // DOM-IGNORE-END
 
 #ifndef _USB_I2C_H
-#define _USB_I2C__H
+#define _USB_I2C_H
 
 /**
   Section: Included Files
