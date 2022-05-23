@@ -1,4 +1,4 @@
-<config configName="sam_e51_cnano" projectName="thumbstick_click_sam_e51_cnano" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_e51_cnano" projectName="thumbstick_click_sam_e51_cnano" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -39,7 +39,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -50,7 +50,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;250&quot; canvasWidth=&quot;444&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;cmsis&quot; x=&quot;332&quot; y=&quot;36&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;256&quot; y=&quot;36&quot;/&gt;
@@ -63,7 +64,6 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;stdio&quot; x=&quot;273&quot; y=&quot;80&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;250&quot; canvasWidth=&quot;444&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -5452,7 +5452,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>0098e8e01f3a17f3b7a4a5e236c4250ca1865aeb05a12faf9845e201cd112eff</hash>
+         <hash>03ff23191dabf3871d70216d69851b5339c42cc2f719e0f1d4bf9b74055fd225</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\nvic\plib_nvic.h</file>
@@ -5519,12 +5519,12 @@
          <hash>a69de3305c5a39fba17ec1349d9cde09f7813cbefaa55c6955b598e58c1dd693</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom7.h</file>
-         <hash>a91b323a9f4ace7e641e48a40069a9dd2af8a1b24181d9d97b015b6cd4e014f8</hash>
-      </entry>
-      <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
          <hash>1a0a8a6cad53e392eb396596df177e4cc72fb79a08ac661ca63569cc66dd31cd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom7.h</file>
+         <hash>a91b323a9f4ace7e641e48a40069a9dd2af8a1b24181d9d97b015b6cd4e014f8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\rstc.h</file>
@@ -5728,7 +5728,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\startup_xc32.c</file>
-         <hash>4925c57b172987921a52aa8b0c1ce442b8743e2376df3e7d356d45d2a11c18f9</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\gclk.h</file>
@@ -5947,12 +5947,12 @@
          <hash>b6eda103eed051356faccf2b2cac9668c1bd7744d909a84821cca4e72917995e</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME51J20A_DFP\instance\adc0.h</file>
-         <hash>7e1be19136aa1a30e7532779bf9c86de30e4b476b6273e90f7aa99c8f648f3eb</hash>
-      </entry>
-      <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
          <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME51J20A_DFP\instance\adc0.h</file>
+         <hash>7e1be19136aa1a30e7532779bf9c86de30e4b476b6273e90f7aa99c8f648f3eb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\wdt.h</file>

@@ -34,7 +34,7 @@ nav_order: 13
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/sam_e51_cnano/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e51_cnano*  
-- Refer the [Release Notes](../../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).
+- Refer the [Release Notes](../../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).
 - Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
@@ -117,39 +117,39 @@ You could use this demonstration as an example to add Thumbstick functionality t
 
 8. The Thumbstick click example uses the **SPI**, **Timer** peripherals and **PORT** Pins. The configuration of these peripherals for your application depends on the 32-bit MCU and development board you are using.
 	- **Configure SPI**:
- 		- Add the SPI peripheral block to the MHC project graph  
-		- Configure SPI Pins using MHC Pin configuration Window  
+ 		- Add the SPI peripheral block to the MCC project graph  
+		- Configure SPI Pins using MCC Pin configuration Window  
 		The SPI configuration depends on
  			- 32-bit MCU
  			- 32-bit MCU development board
  			- The socket on which you have mounted the Thumbstick click board  
  		*Example: The Thumbstick click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Thumbstick click board. The SPI lines from MCU coming to this socket are from the SERCOM1 peripheral on the MCU.*  
-		*MHC Project Graph - SPI configuration*  
+		*MCC Project Graph - SPI configuration*  
 		<img src = "images/thumbstick_spi_config.png" width="750" height="298" align="middle">  
 
-		*MHC Pin Configurator - SPI pin configuration*  
+		*MCC Pin Configurator - SPI pin configuration*  
 		<img src = "images/thumbstick_spi_pins_config.png" width="750" height="78" align="middle">  
 
 	- **Configure Thumbstick Push Button**:
- 		- Add the EIC peripheral block to the MHC project graph  
-		- Configure EIC Pins using MHC Pin configuration Window  
+ 		- Add the EIC peripheral block to the MCC project graph  
+		- Configure EIC Pins using MCC Pin configuration Window  
 		The EIC configuration depends on
  			- 32-bit MCU
  			- 32-bit MCU development board
  			- The socket on which you have mounted the Thumbstick click board  
  		*Example: The Thumbstick click example on SAM E51 Curiosity Nano Evaluation Kit uses mikroBUS socket #1 on the Curiosity Nano Base for Click boards to mount the Thumbstick click board. The PA04 EIC line coming to this socket from MCU needs to be configured for the Thumbstick's push button INT pin to work.*  
-		*MHC Project Graph - EIC configuration*  
+		*MCC Project Graph - EIC configuration*  
 		<img src = "images/thumbstick_eic_config.png" width="750" height="380" align="middle">  
 
-		*MHC Pin Configurator - EIC pin configuration*  
+		*MCC Pin Configurator - EIC pin configuration*  
 		<img src = "images/thumbstick_eic_pin_config.png" width="750" height="19" align="middle">  
 
 	- **Configure Timer**:
-		- Configure Timer peripheral block in the MHC project graph  
+		- Configure Timer peripheral block in the MCC project graph  
 		The Timer configuration depends on
  			- 32-bit MCU  
 		*Example: The Thumbstick click example on SAM E51 Curiosity Nano Evaluation Kit uses SysTick timer module on the MCU to implement the time requirement of Thumbstick click routines.*  
-		*MHC Project Graph - SysTick configuration*  
+		*MCC Project Graph - SysTick configuration*  
 		<img src = "images/thumbstick_systick_configure.png" width="528" height="333" align="middle">  
 
 	- **Map Generic Macros**:
@@ -169,9 +169,10 @@ You could use this demonstration as an example to add Thumbstick functionality t
 	3. [Getting Started with Harmony v3 Drivers on SAM E54 MCUs Using FreeRTOS](https://microchipdeveloper.com/harmony3:same54-getting-started-tm-drivers-freertos)
 
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.5.0 - Removed MHC support, Regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Created application example
