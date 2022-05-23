@@ -10,7 +10,7 @@
       "shortDescription":"Demonstrates use the SERCOM-SPI peripheral in slave mode on SAM E51 Curiosity Nano Evaluation Kit using USB SPI Click board",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.00.0"
+         "semverRange":">=6.00"
       },
       "compiler":[
          {
@@ -20,11 +20,11 @@
       ],
       "dfp":{
          "name":"SAME51_DFP",
-         "semverRange":"^3.5.104"
+         "semverRange":"^3.6.130"
       },
       "configurator":{
-         "name":"MHC",
-         "semverRange":">=3.6.4"
+         "name":"MCC",
+         "semverRange":">=5.1.4"
       },
       "device":{
          "metaDataVersion":"1.0.0",
