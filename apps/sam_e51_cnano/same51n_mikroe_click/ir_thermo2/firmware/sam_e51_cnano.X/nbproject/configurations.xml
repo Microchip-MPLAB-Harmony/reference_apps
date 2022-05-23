@@ -185,20 +185,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="sam_e51_cnano.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e51_cnano/sam_e51_cnano.mhc/stdio.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e51_cnano/harmony-manifest-success.yml</itemPath>
       <itemPath>ir_thermo2_click_sam_e51_cnano.mc3</itemPath>
@@ -280,12 +266,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME51_DFP" vendor="Microchip" version="3.5.104"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAME51_DFP" vendor="Microchip" version="3.6.130"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -348,7 +334,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -425,7 +411,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";;"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -448,7 +434,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e51_cnano;../src/packs/ATSAME51J20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1015,6 +1001,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1060,9 +1048,13 @@
       </Tool>
       <nEdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1070,6 +1062,7 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1083,7 +1076,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -1095,6 +1087,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
