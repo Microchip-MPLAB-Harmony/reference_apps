@@ -254,17 +254,17 @@ void SYS_Initialize ( void* data )
 	SYSTICK_TimerInitialize();
     DMAC_Initialize();
 
-    PM_Initialize();
-
     SERCOM5_USART_Initialize();
+
+    PM_Initialize();
 
     SUPC_Initialize();
 
     EIC_Initialize();
 
-    RTC_Initialize();
-
     TC0_TimerInitialize();
+
+    RTC_Initialize();
 
     ADC0_Initialize();
 
