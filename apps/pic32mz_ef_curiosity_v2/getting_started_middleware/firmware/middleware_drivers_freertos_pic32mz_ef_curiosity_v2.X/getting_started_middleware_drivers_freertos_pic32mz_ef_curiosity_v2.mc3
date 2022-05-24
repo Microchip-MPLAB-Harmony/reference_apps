@@ -1,4 +1,4 @@
-<config configName="pic32mz_ef_curiosity_v2" projectName="getting_started_middleware_drivers_freertos_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="pic32mz_ef_curiosity_v2" projectName="getting_started_middleware_drivers_freertos_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -71,7 +71,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1211,7 +1211,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;308&quot; y=&quot;19&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;16&quot; y=&quot;98&quot;/&gt;
@@ -1230,7 +1231,6 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;usb_host_msd&quot; x=&quot;204&quot; y=&quot;425&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -5785,7 +5785,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\tasks.c</file>
-         <hash>c157d105fcfcc6f42b6e100309663fb67117381451f9e9b15517077766a742fe</hash>
+         <hash>afa61a590362ed1655d24ca6a029bbad38a24e5846f861fdaef5836cf03c5810</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\coretimer\plib_coretimer.c</file>
@@ -5897,7 +5897,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\definitions.h</file>
-         <hash>44f9c0cb25c8aefd2b83b912efcae3fcc75a84d24ec43b3c16e67320d786e04d</hash>
+         <hash>0d3faad6ffa4d901a6c30064ac47c8158ce68c5d288a2abbd59623dd582f0a3e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\time\sys_time.h</file>
@@ -6009,7 +6009,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\initialization.c</file>
-         <hash>c7f7e3e5d5832fa4b2e5b4c6c0367a24ad3b031cd303d5b7aaabecf3938c2bd9</hash>
+         <hash>352088d78ef47a5600e9e4741dea129c1f0398664bf3f406049da53ed31e9f61</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\usb\usbhs\src\usbhs_registers.h</file>
@@ -6052,12 +6052,12 @@
          <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2\usb\usb_host_hub_interface.h</file>
-         <hash>9db9028cdb085f4ed90d06c8d0013e5b9d300be9b49f0933094c373552193645</hash>
-      </entry>
-      <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\usb\src\usb_host_hub_mapping.h</file>
          <hash>397cd4bfd90e8de41af56735747ebb53b64eb04edde9975a3bb0fd8e7c94daf6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2\usb\usb_host_hub_interface.h</file>
+         <hash>9db9028cdb085f4ed90d06c8d0013e5b9d300be9b49f0933094c373552193645</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\bsp\bsp.h</file>
@@ -6217,7 +6217,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\configuration.h</file>
-         <hash>7b9652129adb8141f51d78b8dce68a921cc923cd2d96d990d857cac83dc2e3da</hash>
+         <hash>d53adec828f086d9e68ba4eebe5acf26019a1134bca99e35bf95e0a9f9015f49</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\usb\usbhs\src\templates\usbhs_HighSpeedSupport_Default.h</file>
@@ -6413,7 +6413,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\usb\usb_host.h</file>
-         <hash>8fe091b3db430b897da28d7f7effb6fffbb882d025c878a54cc5e627909a8cc2</hash>
+         <hash>4ec16dee42ae6b1bad8a7199b44750ccf0c5fa3aee5e44766e7b6dffc9979e83</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

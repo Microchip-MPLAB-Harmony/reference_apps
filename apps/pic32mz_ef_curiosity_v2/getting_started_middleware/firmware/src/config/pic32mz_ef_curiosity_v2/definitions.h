@@ -59,11 +59,11 @@
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
 #include "peripheral/uart/plib_uart6.h"
-#include "peripheral/coretimer/plib_coretimer.h"
-#include "driver/usb/usbhs/drv_usbhs.h"
-#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "usb/usb_chapter_9.h"
 #include "usb/usb_host.h"
+#include "driver/usb/usbhs/drv_usbhs.h"
+#include "peripheral/coretimer/plib_coretimer.h"
+#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "driver/usart/drv_usart.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
@@ -211,9 +211,9 @@ typedef struct
 
     SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  drvUsart0;
-	SYS_MODULE_OBJ  drvUSBHSObject;
-
 	SYS_MODULE_OBJ  usbHostObject0;
+
+	SYS_MODULE_OBJ  drvUSBHSObject;
 
 
 } SYSTEM_OBJECTS;
