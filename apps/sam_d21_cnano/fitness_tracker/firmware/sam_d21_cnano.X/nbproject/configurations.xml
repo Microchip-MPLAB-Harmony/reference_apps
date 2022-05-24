@@ -153,22 +153,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="sam_d21_cnano.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sercom0.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sercom1.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_d21_cnano/sam_d21_cnano.mhc/stdio.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_d21_cnano/harmony-manifest-success.yml</itemPath>
       <itemPath>fitness_tracker_sam_d21_cnano.mc3</itemPath>
@@ -255,12 +239,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.00</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.4.116"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -947,6 +931,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -955,6 +941,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -983,7 +970,7 @@
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="script.has_reset" value="true"/>
-        <property key="script.log_level" value="0"/>
+        <property key="script.log_level" value="1"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
@@ -995,9 +982,13 @@
       </Tool>
       <nEdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1005,6 +996,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1018,7 +1011,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -1030,11 +1022,16 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </nEdbgTool>
     </conf>
   </confs>

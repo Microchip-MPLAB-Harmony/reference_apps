@@ -143,11 +143,11 @@
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;288&quot; y=&quot;61&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;289&quot; y=&quot;34&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;151&quot; y=&quot;4&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;eic&quot; x=&quot;6&quot; y=&quot;275&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;eic&quot; x=&quot;37&quot; y=&quot;204&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;evsys&quot; x=&quot;168&quot; y=&quot;38&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sercom0&quot; x=&quot;5&quot; y=&quot;324&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sercom1&quot; x=&quot;129&quot; y=&quot;324&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sercom0&quot; x=&quot;32&quot; y=&quot;247&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sercom1&quot; x=&quot;215&quot; y=&quot;210&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom5&quot; x=&quot;163&quot; y=&quot;86&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;stdio&quot; x=&quot;293&quot; y=&quot;90&quot;/&gt;
       &lt;/ElementPositions&gt;
@@ -5400,7 +5400,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\port\plib_port.c</file>
-         <hash>d9f6ab9957a7ea0d7a7648dc8c89549f227eaf792b3a600072fe8c9176be5c3e</hash>
+         <hash>6fbd9efae1206672ef27fc1fe66d19c17b0dc830ba7ebc3e208df6ea970660e8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\sercom0.h</file>
@@ -5468,7 +5468,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\usb.h</file>
