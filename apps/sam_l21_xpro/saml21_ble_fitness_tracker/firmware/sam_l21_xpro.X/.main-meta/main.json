@@ -10,12 +10,12 @@
 		"shortDescription": "Demonstrates integrating BM71 Xpro, Heart Rate and EINK Click bundle on SAM L21 Xplained Pro)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.0.0"
 			}
 		],
 		"dfp": {
@@ -23,8 +23,8 @@
 			"semverRange": "^3.5.87"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
