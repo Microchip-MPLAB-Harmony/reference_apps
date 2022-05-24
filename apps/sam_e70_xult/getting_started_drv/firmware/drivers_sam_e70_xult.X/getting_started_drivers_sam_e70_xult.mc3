@@ -1,4 +1,4 @@
-<config configName="sam_e70_xult" projectName="getting_started_drivers_sam_e70_xult" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_e70_xult" projectName="getting_started_drivers_sam_e70_xult" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -55,7 +55,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -651,8 +651,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;2&quot; y=&quot;64&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;187&quot; y=&quot;47&quot;/&gt;
@@ -667,6 +666,7 @@
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;usart1&quot; x=&quot;35&quot; y=&quot;313&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -5092,7 +5092,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult\startup_xc32.c</file>
-         <hash>6d004d9817df8dd84a5b559658637b3ab2d3ceac98a751c46d986afa54b4d60f</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\aes.h</file>
