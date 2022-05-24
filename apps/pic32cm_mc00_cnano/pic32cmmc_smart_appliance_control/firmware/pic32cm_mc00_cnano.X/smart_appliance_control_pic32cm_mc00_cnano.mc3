@@ -4630,6 +4630,10 @@
          <hash>2c94057d3dfd0036b2f266b8aa519bfed86603796ca3b9d2261e5a4a7aa4a005</hash>
       </entry>
       <entry>
+         <file>..\src\config\pic32cm_mc00_cnano\system\ports\sys_ports.h</file>
+         <hash>01858f6ac32a104461b2f7ea8a83dc0c910286a28592f2acbd7125f9833d2306</hash>
+      </entry>
+      <entry>
          <file>..\src\config\pic32cm_mc00_cnano\bt\driver\bm71\drv_bm71_command_send.h</file>
          <hash>4b15b584b6072ec7f24fa0ae89bdd0dfa6b8bf03fd190bd2b3dc65b86ea4d19a</hash>
       </entry>
@@ -4726,12 +4730,24 @@
          <hash>4face96a60d24b78c4564a9ee24c19be720b3067e9e1a8e885a2a1f8488da4a4</hash>
       </entry>
       <entry>
+         <file>..\src\config\pic32cm_mc00_cnano\system\dma\sys_dma.h</file>
+         <hash>84a40b4972b6e6ba60df4780d0d2f6867fb84f496a5621d80e6e96c42fa7c16e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32cm_mc00_cnano\system\dma\sys_dma_mapping.h</file>
+         <hash>9f88a55cde1335782ea00df3eddad5a61a345a2bd15fb73d1d6ddc92380f39d9</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\tc1.h</file>
          <hash>f52a3e34a14e3d68e3d06a09b136ae1bed3bc622c519e91ecaefa26a0b99fd50</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\adc1.h</file>
          <hash>b38e4932d89ebe17d0887957283617ed8c69a82212abc51eaf0732a1aeedc438</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32cm_mc00_cnano\system\dma\sys_dma.c</file>
+         <hash>093cd2dc1d8f6179639884a84681b2f1ac6cfc1f67c48fe43f525224d09aabf4</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -5155,11 +5171,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\definitions.h</file>
-         <hash>00b74d05946390a6678bf61178d9af46e334c1777597ffd64be3e1c3e3bcc5b9</hash>
+         <hash>8384dcb64084b7e6584e0d9ba7fd60a543ad3ff847617f966a799a109bc2e6f5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\nvmctrl.h</file>
@@ -5196,6 +5212,10 @@
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\evsys\plib_evsys.c</file>
          <hash>7bb3bc0d60c4cf18638d76d3dfe9e5b13d2915d09e6a8a7bc4b5faae870c8f48</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32cm_mc00_cnano\system\ports\sys_ports_mapping.h</file>
+         <hash>8a3e7ed01aa847c87f76796b56665f7f91f591fddfe6cf2e4161a03332608c3e</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

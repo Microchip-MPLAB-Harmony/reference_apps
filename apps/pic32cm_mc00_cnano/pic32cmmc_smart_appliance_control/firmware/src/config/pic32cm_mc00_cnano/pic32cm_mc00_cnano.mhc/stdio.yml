@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: stdio}
-children:
-- type: ElementPosition
-  attributes: {x: '208', y: '267', id: stdio}
