@@ -1,4 +1,4 @@
-<config configName="sam_d21_cnano" projectName="getting_started_sam_d21_cnano" configVersion="1.1" device="ATSAMD21G17D" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_d21_cnano" projectName="getting_started_sam_d21_cnano" configVersion="1.1" device="ATSAMD21G17D" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -35,7 +35,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -2662,7 +2662,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\usb.h</file>
@@ -2933,12 +2933,12 @@
          <hash>f7d08eb8162f271ce1db384c082586a6624e506aa7f502c64c4ab5a1aadac47d</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAMD21G17D_DFP\instance\mtb.h</file>
-         <hash>7ee5b8048e21a6ad66e47c7bb32f6c1069d178301df9130e5d4db8e32fa683c1</hash>
-      </entry>
-      <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
          <hash>5f22a98af6f1aa745b41195472e69df58c460da55f7bca08e991dc9f8f04927d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAMD21G17D_DFP\instance\mtb.h</file>
+         <hash>7ee5b8048e21a6ad66e47c7bb32f6c1069d178301df9130e5d4db8e32fa683c1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\exceptions.c</file>
