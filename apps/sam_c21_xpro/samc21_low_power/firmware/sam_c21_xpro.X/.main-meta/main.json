@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samc21_low_power",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "Low Power Application on SAM C21 Xplained Pro evaluation kit",
 		"projectName": "low_power_sam_c21_xpro",
 		"shortDescription": "Standby and Idle mode low Power Application on SAM C21 Xplained Pro evaluation kit",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.00.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.0.0"
 			}
 		],
 		"dfp": {
 			"name": "SAMC21_DFP",
-			"semverRange": "^3.5.95"
+			"semverRange": "^3.6.101"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

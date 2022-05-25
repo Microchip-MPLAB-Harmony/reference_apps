@@ -142,10 +142,10 @@ void SYS_Initialize ( void* data )
 
     DMAC_Initialize();
 
-
-    ADC1_Initialize();
     SERCOM4_USART_Initialize();
 
+
+    ADC1_Initialize();
     SUPC_Initialize();
 
     EIC_Initialize();

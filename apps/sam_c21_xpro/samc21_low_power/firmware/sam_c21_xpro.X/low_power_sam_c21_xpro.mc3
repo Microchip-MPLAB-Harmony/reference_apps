@@ -3854,7 +3854,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\definitions.h</file>
-         <hash>8daca566bef8f139b27097a520c8cf39a805d22a8a9808e0ce6c3bb0b2d15005</hash>
+         <hash>4e315bcb7b080f8101ad0fa6db22ff1e94dba9fb8e5b661d3f6ecf28bb13c45e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\tcc.h</file>
@@ -3934,7 +3934,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\eic\plib_eic.c</file>
@@ -3982,7 +3982,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\port\plib_port.c</file>
-         <hash>f5710197b9484a66528121cf94d47e5bcfa4fd6501be48353cc9a46b490079b3</hash>
+         <hash>a04a0d7a784e90e9255060dd1576878705c4999520fc8bb598184ead09373d61</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\tc.h</file>
@@ -4046,7 +4046,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\initialization.c</file>
-         <hash>a15aed2a54b1fad22d20f52c8a61c6b9d39719c886a873a021cda6a56ac19bd7</hash>
+         <hash>76698f87a6b3201381930ee2e0e4dbb8891906c05339b2ef6d9ae300382933c2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\sercom2.h</file>
