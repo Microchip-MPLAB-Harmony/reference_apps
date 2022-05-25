@@ -264,6 +264,7 @@ const DRV_SPI_INIT drvSPI0InitData =
 const DRV_MAXTOUCH_INIT drvMAXTOUCHInitData =
 {
     .drvOpen                     = DRV_I2C_Open,
+    .drvClose                    = DRV_I2C_Close,
     .orientation                 = 0,
     .horizontalResolution        = 800,
     .verticalResolution          = 480,

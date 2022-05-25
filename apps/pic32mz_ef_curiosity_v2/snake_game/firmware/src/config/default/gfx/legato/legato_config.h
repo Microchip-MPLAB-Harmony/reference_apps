@@ -68,6 +68,7 @@ extern "C" {
 #define LE_ENABLE_RAW_DECODER                1
 #define LE_ENABLE_JPEG_DECODER               1
 #define LE_ENABLE_PNG_DECODER                1
+#define LE_PNG_USE_SCRATCH                   0
 #define LE_ENABLE_MONO_DECODER               1
 
 #define LE_PREEMPTION_LEVEL                  0
@@ -158,6 +159,7 @@ extern "C" {
 #define LE_SCRATCH_BUFFER_COUNT            1
 #define LE_SCRATCH_BUFFER_SIZE_KB          384
 #define LE_SCRATCH_BUFFER_PADDING          0
+#define LE_SCRATCH_BIG_ENDIAN              0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE
 
