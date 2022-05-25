@@ -58,6 +58,7 @@ leResult screenShow_Start_screen(void)
 
 void screenUpdate_Start_screen(void)
 {
+    root0->fn->setSize(root0, root0->parent->rect.width, root0->parent->rect.height);
 }
 
 void screenHide_Start_screen(void)
