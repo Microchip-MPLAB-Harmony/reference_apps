@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mzda_getting_started",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "Getting Started Application with PIC32MZ DA Curiosity Development Kit",
 		"projectName": "getting_started_pic32mz_da_curiosity",
 		"shortDescription": "Demonstrates how to get started using the basic peripherals like UART, SPI, Timer DMA and GPIOs",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.0.0"
 			}
 		],
 		"dfp": {
@@ -23,8 +23,8 @@
 			"semverRange": "^1.4.118"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
