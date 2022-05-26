@@ -2734,8 +2734,6 @@ TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPack
 
     if ((false == pDcpt->pCtrl->isConnected) || (ptrPacket->pDSeg->segLen > MAX_TX_PACKET_SIZE))
     {
-        WDRV_DBG_TRACE_PRINT("Link down or packet too large (%d)\r\n", ptrPacket->pDSeg->segLen);
-
         return TCPIP_MAC_RES_PACKET_ERR;
     }
 
@@ -2744,7 +2742,6 @@ TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPack
         if (WDRV_WINC_STATUS_OK != WDRV_WINC_EthernetSendPacket(
                     (DRV_HANDLE)pDcpt, ptrPacket->pDSeg->segLoad, ptrPacket->pDSeg->segLen))
         {
-            WDRV_DBG_TRACE_PRINT("Error sending single segment packet\r\n");
             return TCPIP_MAC_RES_PACKET_ERR;
         }
 
@@ -2767,8 +2764,6 @@ TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPack
 
         if (pktLen > MAX_RX_PACKET_SIZE)
         {
-            WDRV_DBG_TRACE_PRINT("MAC TX: payload too big (%d)\r\n", pktLen);
-
             return TCPIP_MAC_RES_OP_ERR;
         }
 
@@ -2776,8 +2771,6 @@ TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPack
 
         if (NULL == pktbuf)
         {
-            WDRV_DBG_TRACE_PRINT("MAC TX: malloc fail\r\n");
-
             return TCPIP_MAC_RES_OP_ERR;
         }
 
@@ -2800,7 +2793,6 @@ TCPIP_MAC_RES WDRV_WINC_MACPacketTx(DRV_HANDLE handle, TCPIP_MAC_PACKET* ptrPack
 
         if (WDRV_WINC_STATUS_OK != status)
         {
-            WDRV_DBG_TRACE_PRINT("Error sending multi-segment packet\r\n");
             return TCPIP_MAC_RES_PACKET_ERR;
         }
     }

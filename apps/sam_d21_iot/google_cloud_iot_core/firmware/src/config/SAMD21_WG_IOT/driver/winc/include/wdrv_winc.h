@@ -573,14 +573,14 @@ typedef struct
 #endif
 
 // *****************************************************************************
-/*  PIC32MZW Driver Descriptor
+/*  WINC Driver Descriptor
 
   Summary:
-    The defines the PIC32MZW driver descriptor.
+    The defines the WINC driver descriptor.
 
   Description:
-    This data type defines the system level descriptor for the PIC32MZW driver.
-    This structure is initialized by a call to WDRV_PIC32MZW_Initialize.
+    This data type defines the system level descriptor for the WINC driver.
+    This structure is initialized by a call to WDRV_WINC_Initialize.
 
   Remarks:
     None.

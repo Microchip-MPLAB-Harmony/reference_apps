@@ -39,5 +39,6 @@ certificates.
 <img src = "images/firmware_upg.png" align="middle" width = 500>
 
 ### Revision:
--v1.4.0 WINC Updated with firmware version 19.7.6
+- v1.5.0 - Removed MHC support, Regenerated and tested application.
+- v1.4.0 WINC Updated with firmware version 19.7.6
 - v1.3.0 released utility

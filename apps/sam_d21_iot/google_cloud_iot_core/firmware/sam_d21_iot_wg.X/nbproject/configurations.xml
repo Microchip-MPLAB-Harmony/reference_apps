@@ -342,31 +342,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="SAMD21_WG_IOT.mhc" projectFiles="true">
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/adc.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/core.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/project.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/SAMD21_WG_IOT/SAMD21_WG_IOT.mhc/tc3.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/SAMD21_WG_IOT/harmony-manifest-success.yml</itemPath>
       <itemPath>google_cloud_iot_core_sam_d21_iot_wg.mc3</itemPath>
@@ -698,8 +673,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.4.116"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -755,14 +730,13 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/config/SAMD21_WG_IOT/driver/winc/include/;;../src/config/SAMD21_WG_IOT/driver/winc/include/dev;;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp;;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp/include;;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/common;;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/driver;;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/socket;;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash;;../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/SAMD21_WG_IOT/library/cryptoauthlib;../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto;../src/config/SAMD21_WG_IOT/library/cryptoauthlib/pkcs11;"/>
+                  value="../src;../src/config/SAMD21_WG_IOT;../src/config/SAMD21_WG_IOT/driver/winc/include/;../src/config/SAMD21_WG_IOT/driver/winc/include/dev;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/bsp/include;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/common;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/driver;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/socket;../src/config/SAMD21_WG_IOT/driver/winc/include/drv/spi_flash;../src/config/SAMD21_WG_IOT/library/cryptoauthlib;../src/config/SAMD21_WG_IOT/library/cryptoauthlib/crypto;../src/config/SAMD21_WG_IOT/library/cryptoauthlib/pkcs11;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -774,6 +748,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -805,12 +780,12 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -837,7 +812,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -850,7 +825,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -860,7 +834,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/SAMD21_WG_IOT;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -888,6 +862,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <PICkit3PlatformTool>
@@ -1383,6 +1358,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1391,6 +1368,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1416,6 +1394,7 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="0"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
@@ -1424,6 +1403,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </Tool>
       <mEdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -1467,6 +1447,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1475,6 +1457,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1488,7 +1471,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -1500,6 +1482,7 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="0"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
@@ -1508,6 +1491,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </nEdbgTool>
     </conf>
   </confs>
