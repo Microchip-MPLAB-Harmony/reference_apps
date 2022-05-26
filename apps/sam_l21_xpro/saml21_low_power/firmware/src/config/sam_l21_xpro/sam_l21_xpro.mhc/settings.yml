@@ -1,13 +1,14 @@
-configName: sam_l21_xpro
-folderName: ''
 format_version: v1.0
-frameworkPath: ../../../../../Harmony_public_release
+configName: sam_l21_xpro
+folderName: sam_l21_xpro
+frameworkPath: D:\LTBD\Harmony_public_release
 processor: ATSAML21J18B
-projectName: ''
+projectName: sam_l21_xpro
 settings:
-  PackageFilter: audio;bootloader;bootloader_apps_uart;bsp;bt;core;crypto;cryptoauthlib;cryptoauthlib_apps;csp;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d21_da1;dev_packs;gfx;gfx_apps;gfx_apps_sam_d5x_e5x;net;net_apps_sam_e70_v71;quick_docs;reference_apps;touch;usb;wireless_apps_winc1500;wireless_wifi
+  PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAML21_DFP\3.5.87\saml21b\atdf\ATSAML21J18B.atdf
+  DFPPath: dev_packs\Microchip\SAML21_DFP\3.5.87\saml21b\atdf\ATSAML21J18B.atdf

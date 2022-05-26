@@ -165,10 +165,10 @@ void SYS_Initialize ( void* data )
 
     DMAC_Initialize();
 
-
-    ADC_Initialize();
     SUPC_Initialize();
 
+
+    ADC_Initialize();
     EIC_Initialize();
 
     RTC_Initialize();
