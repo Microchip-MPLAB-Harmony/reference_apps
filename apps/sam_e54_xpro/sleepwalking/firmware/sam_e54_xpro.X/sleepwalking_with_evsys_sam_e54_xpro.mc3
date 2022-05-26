@@ -1,4 +1,4 @@
-<config configName="sam_e54_xpro" projectName="sleepwalking_with_evsys_sam_e54_xpro" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_e54_xpro" projectName="sleepwalking_with_evsys_sam_e54_xpro" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -51,7 +51,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -5843,7 +5843,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>2c22e7ebae11e881f21a1bfe7cef02686bed28c5e489be05c5bd710290a73ca2</hash>
+         <hash>1701946a16e1daaa2e6d18eb66653da20e1b5fa6b5f428c2c7de79b277b97497</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\peripheral\nvmctrl\plib_nvmctrl.h</file>
@@ -6079,7 +6079,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\definitions.h</file>
-         <hash>80abdc64e1f9e29fe9da1c43dbb44e14973a6c9978179598ea88619f20ab6a2d</hash>
+         <hash>7a992fd53a369cd021cfa9d3a32498c5ec564ba0a1b1c1149cca9c8861875959</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc3.h</file>
@@ -6159,7 +6159,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\startup_xc32.c</file>
-         <hash>4925c57b172987921a52aa8b0c1ce442b8743e2376df3e7d356d45d2a11c18f9</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</file>
