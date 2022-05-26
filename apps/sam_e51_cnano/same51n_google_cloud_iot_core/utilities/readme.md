@@ -39,5 +39,6 @@ certificates.
 <img src = "images/firmware_upgrade.png" align="middle">
 
 ### Revision:
+- v1.5.0 Removed MHC support, Regenerated and tested application.
 - v1.4.0 Added MCC support and updated winc firmware with v19.7.6, Regenerated and tested application.
 - v1.3.0 released utility

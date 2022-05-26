@@ -1,4 +1,4 @@
-<config configName="default" projectName="google_cloud_iot_core_sam_e51_cnano" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="default" projectName="google_cloud_iot_core_sam_e51_cnano" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -99,7 +99,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -10793,7 +10793,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\wdrv_winc_nvm.h</file>
-         <hash>3d1472974eae02efa61a4fd6712f7f7ed2e9152bc07db0d47a1395127a84e31c</hash>
+         <hash>4cbede751b2b4c888b5263892a534d9421e3369582ea524c57abb396e03eaa9b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom5.h</file>
@@ -10881,7 +10881,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\atcacert\atcacert_def.h</file>
-         <hash>137e9a945a894c50fab90914f10fdc7901ff467ab499e3eeb926cdda96a88716</hash>
+         <hash>b71f2998e92b947dc988a89e63e65440570def8d4cbf4cc5a7e3c972bccf5019</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\calib\calib_derivekey.c</file>
@@ -10897,7 +10897,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\atca_iface.c</file>
-         <hash>254ed46541119063f075f135cadcadb6e835dee531f44f48e6ccd69f647f43c4</hash>
+         <hash>13a26caa7e2127e86e96f1c467c32a32ef82db258c3d74b619e34d672c278d38</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\ports\sys_ports_mapping.h</file>
@@ -11089,7 +11089,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>0098e8e01f3a17f3b7a4a5e236c4250ca1865aeb05a12faf9845e201cd112eff</hash>
+         <hash>03ff23191dabf3871d70216d69851b5339c42cc2f719e0f1d4bf9b74055fd225</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\drv\driver\m2m_ssl.h</file>
@@ -11277,11 +11277,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\wdrv_winc.c</file>
-         <hash>d3047c65974db02e261eb1ec9adaf3e58f82df8f1408521bcaaa6bc984685ea1</hash>
+         <hash>5aa3c4a81c9988bac9c2a0c35fef439b26e924730e51143c373db52f0c3e605c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\wdrv_winc.h</file>
-         <hash>715eee03cc55612339a9db0de747899de1b30b22963a0df2fb973de6b3d2c0d4</hash>
+         <hash>e56871a6643412f4b4b12e446a4e70d93e6167054908606baa6d99000e24a7c8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\atca_device.c</file>
@@ -11637,7 +11637,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\atca_basic.c</file>
-         <hash>46def1e3462a4f47c953425b1f1a2917489889951b16c76f7b6f3e9b362d08f7</hash>
+         <hash>2f9a31bfc1ee348f443c1bb1b4f2a583cf1b5391e061d755bee83615fe3a205b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\calib\calib_hmac.c</file>
@@ -11681,7 +11681,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>a26d4987ebcc8dcaa6535ba7364a743c4689c18c07c0d4e3fac37e55b7e3f3b1</hash>
+         <hash>0cd0a62550c7774fcf566897338c1e20cc516bf04e38d6af834a4c7d1eccc65f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\freqm.h</file>
@@ -11921,7 +11921,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\startup_xc32.c</file>
-         <hash>4925c57b172987921a52aa8b0c1ce442b8743e2376df3e7d356d45d2a11c18f9</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc6.h</file>
@@ -11945,7 +11945,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>36dc55ded90d258b6b37a247d543500316a51f9746080436ac8ff71dd0cc85d5</hash>
+         <hash>3f00a1654d74c9c6a9848334d57556ffab7528db36e85497d2ce514ef63d68aa</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\dev\spi\wdrv_winc_spi.c</file>
