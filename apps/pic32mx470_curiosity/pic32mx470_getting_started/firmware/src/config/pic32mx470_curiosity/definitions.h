@@ -48,8 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
+#include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/uart/plib_uart2.h"
 #include "peripheral/tmr/plib_tmr2.h"
 #include "peripheral/clk/plib_clk.h"
