@@ -1,4 +1,4 @@
-<config configName="pic32cm_mc00_curiosity_pro" projectName="getting_started_pic32cm_mc00_curiosity_pro" configVersion="1.1" device="PIC32CM1216MC00048" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="pic32cm_mc00_curiosity_pro" projectName="getting_started_pic32cm_mc00_curiosity_pro" configVersion="1.1" device="PIC32CM1216MC00048" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -43,7 +43,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -317,21 +317,21 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc0&quot; x=&quot;12&quot; y=&quot;321&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;170&quot; y=&quot;236&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;165&quot; y=&quot;89&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;14&quot; y=&quot;139&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;evsys&quot; x=&quot;160&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sercom0&quot; x=&quot;290&quot; y=&quot;107&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sercom2&quot; x=&quot;43&quot; y=&quot;195&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;stdio&quot; x=&quot;420&quot; y=&quot;121&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;supc&quot; x=&quot;140&quot; y=&quot;321&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc0&quot; x=&quot;133&quot; y=&quot;91&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;209&quot; y=&quot;51&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;130&quot; y=&quot;53&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;126&quot; y=&quot;13&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;evsys&quot; x=&quot;1&quot; y=&quot;86&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;nvmctrl&quot; x=&quot;0&quot; y=&quot;12&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sercom0&quot; x=&quot;132&quot; y=&quot;180&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sercom2&quot; x=&quot;0&quot; y=&quot;134&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;stdio&quot; x=&quot;281&quot; y=&quot;194&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;supc&quot; x=&quot;270&quot; y=&quot;89&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -2675,7 +2675,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_curiosity_pro\definitions.h</file>
-         <hash>62df9e4f6f0b406b4b84a2a7bad3c452c97ccc3ce29eeecf0bea2bf4308f4756</hash>
+         <hash>19b86ec59f8ea1eefb3f8ea5ed22de735ca69bcc0b28e29319d9cfea042088ee</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -2907,7 +2907,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_curiosity_pro\initialization.c</file>
-         <hash>b7319a5d3e336598ec5317cde57f546129a78d37b727e778c8615bd00cd88f90</hash>
+         <hash>1b8f9bbf7e1fe8e6b94a326aaac1ce3a25428471742834e2d36181812fa315fe</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -3039,7 +3039,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_curiosity_pro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00048_DFP\component\eic.h</file>
