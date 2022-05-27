@@ -4,13 +4,13 @@
    "content":{
       "metaDataVersion":"1.1.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_ac_sleepwalk_singleshot_gcc",
-      "version":"1.4.0",
+      "version":"1.5.0",
       "displayName":"AC Sleepwalking Application built with GCC",
       "projectName":"ac_sleepwalk_singleshot_sam_d21_xpro",
       "shortDescription":"Demonstrates how to use the AC (Analog Comparators) Peripheral library to perform a single-shot conversion with GCC toolchain",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=5.50.0"
+         "semverRange":">=6.00"
       },
       "compiler":[
          {
@@ -20,11 +20,11 @@
       ],
       "dfp":{
          "name":"SAMD21_DFP",
-         "semverRange":"^3.5.132"
+         "semverRange":"^3.6.144"
       },
       "configurator":{
-         "name":"MHC",
-         "semverRange":">=3.6.4"
+         "name":"MCC",
+         "semverRange":">=5.1.4"
       },
       "device":{
          "metaDataVersion":"1.0.0",

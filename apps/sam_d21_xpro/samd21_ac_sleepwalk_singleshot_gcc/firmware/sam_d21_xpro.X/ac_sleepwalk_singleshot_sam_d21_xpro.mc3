@@ -1,4 +1,4 @@
-<config configName="sam_d21_xpro" projectName="ac_sleepwalk_singleshot_sam_d21_xpro" configVersion="1.1" device="ATSAMD21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_d21_xpro" projectName="ac_sleepwalk_singleshot_sam_d21_xpro" configVersion="1.1" device="ATSAMD21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -43,7 +43,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -252,7 +252,7 @@
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;pm&quot; x=&quot;24&quot; y=&quot;78&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;rtc&quot; x=&quot;317&quot; y=&quot;150&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sercom3&quot; x=&quot;26&quot; y=&quot;147&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;stdio&quot; x=&quot;215&quot; y=&quot;159&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;stdio&quot; x=&quot;180&quot; y=&quot;161&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
     &lt;GraphSettings canvasHeight=&quot;259&quot; canvasWidth=&quot;609&quot; dnOrder=&quot;1&quot;/&gt;
@@ -5694,7 +5694,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\initialization.c</file>
-         <hash>9809799e51b9c53dc5c553de2aaad87bca7ac1fe04ff40ba36c278e5026e008a</hash>
+         <hash>1633994e89c6d1453e9992002f1ed725c0225eac110d72ae4a7e96507ed52c01</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\sercom.h</file>
@@ -5710,7 +5710,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\definitions.h</file>
-         <hash>26250b5ddaac7a676dae20fbc4f5effb454a984465169068788f3a830ed6a595</hash>
+         <hash>f204c1a812151c95525787e71dcc7d6938bdb2488cf462ab2ac1061ef99aafed</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -5874,7 +5874,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\port\plib_port.c</file>
-         <hash>8f3c1b002bb77e12d8e3f925967f16f34cfc069fb9dfdb919bf6741e31a91894</hash>
+         <hash>84ece66c14d6b1d039f01bcb680b1bd25d0bbb18552d3860a9c05b22dfb8ee1e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\device.h</file>
@@ -5882,7 +5882,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>

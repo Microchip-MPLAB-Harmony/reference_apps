@@ -139,21 +139,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="sam_d21_xpro.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/ac.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/pm.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_d21_xpro/sam_d21_xpro.mhc/stdio.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_d21_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>ac_sleepwalk_singleshot_sam_d21_xpro.mc3</itemPath>
@@ -227,14 +212,14 @@
         <targetDevice>ATSAMD21J18A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>ARM</languageToolchain>
         <languageToolchainVersion>6.3.1</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.5.132"/>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -386,147 +371,15 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
       </AtmelIceTool>
-      <C32>
-        <property key="additional-warnings" value="false"/>
-        <property key="addresss-attribute-use" value="false"/>
-        <property key="enable-app-io" value="false"/>
-        <property key="enable-omit-frame-pointer" value="false"/>
-        <property key="enable-symbols" value="true"/>
-        <property key="enable-unroll-loops" value="false"/>
-        <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
-        <property key="generate-16-bit-code" value="false"/>
-        <property key="generate-micro-compressed-code" value="false"/>
-        <property key="isolate-each-function" value="false"/>
-        <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value=""/>
-        <property key="place-data-into-section" value="false"/>
-        <property key="post-instruction-scheduling" value="default"/>
-        <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
-        <property key="strict-ansi" value="false"/>
-        <property key="support-ansi" value="false"/>
-        <property key="tentative-definitions" value="-fno-common"/>
-        <property key="toplevel-reordering" value=""/>
-        <property key="unaligned-access" value=""/>
-        <property key="use-cci" value="false"/>
-        <property key="use-iar" value="false"/>
-        <property key="use-indirect-calls" value="false"/>
-      </C32>
-      <C32-AR>
-        <property key="additional-options-chop-files" value="false"/>
-      </C32-AR>
-      <C32-AS>
-        <property key="assembler-symbols" value=""/>
-        <property key="enable-symbols" value="true"/>
-        <property key="exclude-floating-point-library" value="false"/>
-        <property key="expand-macros" value="false"/>
-        <property key="extra-include-directories-for-assembler" value=""/>
-        <property key="extra-include-directories-for-preprocessor" value=""/>
-        <property key="false-conditionals" value="false"/>
-        <property key="generate-16-bit-code" value="false"/>
-        <property key="generate-micro-compressed-code" value="false"/>
-        <property key="keep-locals" value="false"/>
-        <property key="list-assembly" value="false"/>
-        <property key="list-source" value="false"/>
-        <property key="list-symbols" value="false"/>
-        <property key="oXC32asm-list-to-file" value="false"/>
-        <property key="omit-debug-dirs" value="false"/>
-        <property key="omit-forms" value="false"/>
-        <property key="preprocessor-macros" value=""/>
-        <property key="warning-level" value=""/>
-      </C32-AS>
-      <C32-CO>
-        <property key="coverage-enable" value=""/>
-        <property key="stack-guidance" value="false"/>
-      </C32-CO>
-      <C32-LD>
-        <property key="additional-options-use-response-files" value="false"/>
-        <property key="additional-options-write-sla" value="false"/>
-        <property key="allocate-dinit" value="false"/>
-        <property key="code-dinit" value="false"/>
-        <property key="ebase-addr" value=""/>
-        <property key="enable-check-sections" value="false"/>
-        <property key="exclude-floating-point-library" value="false"/>
-        <property key="exclude-standard-libraries" value="false"/>
-        <property key="extra-lib-directories" value=""/>
-        <property key="fill-flash-options-addr" value=""/>
-        <property key="fill-flash-options-const" value=""/>
-        <property key="fill-flash-options-how" value="0"/>
-        <property key="fill-flash-options-inc-const" value="1"/>
-        <property key="fill-flash-options-increment" value=""/>
-        <property key="fill-flash-options-seq" value=""/>
-        <property key="fill-flash-options-what" value="0"/>
-        <property key="generate-16-bit-code" value="false"/>
-        <property key="generate-cross-reference-file" value="false"/>
-        <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value=""/>
-        <property key="input-libraries" value=""/>
-        <property key="kseg-length" value=""/>
-        <property key="kseg-origin" value=""/>
-        <property key="linker-symbols" value=""/>
-        <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
-        <property key="no-device-startup-code" value="false"/>
-        <property key="no-startup-files" value="false"/>
-        <property key="oXC32ld-extra-opts" value=""/>
-        <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=""/>
-        <property key="remove-unused-sections" value="false"/>
-        <property key="report-memory-usage" value="false"/>
-        <property key="serial-length" value=""/>
-        <property key="serial-origin" value=""/>
-        <property key="stack-size" value=""/>
-        <property key="symbol-stripping" value=""/>
-        <property key="trace-symbols" value=""/>
-        <property key="warn-section-align" value="false"/>
-      </C32-LD>
-      <C32CPP>
-        <property key="additional-warnings" value="false"/>
-        <property key="addresss-attribute-use" value="false"/>
-        <property key="check-new" value="false"/>
-        <property key="eh-specs" value="true"/>
-        <property key="enable-app-io" value="false"/>
-        <property key="enable-omit-frame-pointer" value="false"/>
-        <property key="enable-symbols" value="true"/>
-        <property key="enable-unroll-loops" value="false"/>
-        <property key="exceptions" value="true"/>
-        <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
-        <property key="generate-16-bit-code" value="false"/>
-        <property key="generate-micro-compressed-code" value="false"/>
-        <property key="isolate-each-function" value="false"/>
-        <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value=""/>
-        <property key="place-data-into-section" value="false"/>
-        <property key="post-instruction-scheduling" value="default"/>
-        <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
-        <property key="rtti" value="true"/>
-        <property key="strict-ansi" value="false"/>
-        <property key="toplevel-reordering" value=""/>
-        <property key="unaligned-access" value=""/>
-        <property key="use-cci" value="false"/>
-        <property key="use-iar" value="false"/>
-        <property key="use-indirect-calls" value="false"/>
-      </C32CPP>
-      <C32Global>
-        <property key="common-include-directories" value=""/>
-        <property key="gp-relative-option" value=""/>
-        <property key="legacy-libc" value="false"/>
-        <property key="mdtcm" value=""/>
-        <property key="mitcm" value=""/>
-        <property key="mstacktcm" value="false"/>
-        <property key="omit-pack-options" value="1"/>
-        <property key="relaxed-math" value="false"/>
-        <property key="save-temps" value="false"/>
-        <property key="stack-smashing" value=""/>
-        <property key="wpo-lto" value="false"/>
-      </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -534,6 +387,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -547,8 +402,9 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/MassMarket/bitBucket/reference_apps/apps/sam_d21_xpro/ac_sleepwalk_singleshot/firmware/sam_d21_xpro.X/debug/sam_d21_xpro/sam_d21_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -559,11 +415,16 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="0"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </EdbgTool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1035,6 +896,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1043,6 +906,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1070,6 +934,7 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="0"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
@@ -1078,6 +943,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </Tool>
     </conf>
   </confs>

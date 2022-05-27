@@ -162,9 +162,9 @@ void SYS_Initialize ( void* data )
 
     EVSYS_Initialize();
 
+    AC_Initialize();
     RTC_Initialize();
 
-    AC_Initialize();
 
 
 
