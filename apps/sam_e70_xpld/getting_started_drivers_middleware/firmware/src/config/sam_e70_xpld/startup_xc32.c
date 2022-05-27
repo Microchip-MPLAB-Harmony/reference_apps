@@ -52,7 +52,6 @@ extern int main(void);
 extern void __attribute__((long_call)) __libc_init_array(void);
 
 /* Device Vector information is available in interrupt.c file */
-
 __STATIC_INLINE void TCM_Disable(void);
 __STATIC_INLINE void TCM_Configure(uint32_t tcmSize);
 __STATIC_INLINE void ICache_Enable(void);

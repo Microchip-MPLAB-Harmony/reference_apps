@@ -1,4 +1,4 @@
-<config configName="sam_e70_xpld" projectName="getting_started_drivers_middleware_same70_xplained" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_e70_xpld" projectName="getting_started_drivers_middleware_same70_xplained" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -63,7 +63,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -4167,7 +4167,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xpld\usb\usb_host.h</file>
-         <hash>8fe091b3db430b897da28d7f7effb6fffbb882d025c878a54cc5e627909a8cc2</hash>
+         <hash>4ec16dee42ae6b1bad8a7199b44750ccf0c5fa3aee5e44766e7b6dffc9979e83</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\pmc.h</file>
@@ -4179,7 +4179,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xpld\configuration.h</file>
-         <hash>4544d181a0b815bad001b78aaaf852e6bfdd1832e68f4baf8417f15d6c8e4186</hash>
+         <hash>8cd867a07695733ce34194d7bf50e513d1f1948129b248fade2f84a9a7f1139a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xpld\usb\usb_cdc.h</file>
@@ -4343,7 +4343,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xpld\startup_xc32.c</file>
-         <hash>6d004d9817df8dd84a5b559658637b3ab2d3ceac98a751c46d986afa54b4d60f</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xpld\usb\usb_chapter_9.h</file>

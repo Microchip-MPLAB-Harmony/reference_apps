@@ -540,15 +540,15 @@ typedef enum
     USB_HOST_TARGET_PERIPHERAL_LIST usbHostTPL[4] = 
     {
 
-        // Catch every device with the exact Vendor ID = 0x04D9 and Product ID = 0x0001.
+        // Catch every device with the exact Vendor ID = 0x04D8 and Product ID = 0x0001.
         // Every other device will not load this driver.
-        TPL_DEVICE_VID_PID( 0x04D9, 0x0001, &driverInitData, &DEVICE_DRIVER_EXAMPLE1_Driver ),
+        TPL_DEVICE_VID_PID( 0x04D8, 0x0001, &driverInitData, &DEVICE_DRIVER_EXAMPLE1_Driver ),
 
-        // This driver will catch any device with the Vendor ID of 0x04D9 and any
+        // This driver will catch any device with the Vendor ID of 0x04D8 and any
         // product ID = 0x0000 or 0x0002-0x00FF.  The entry in the TPL before this
         // caught the Product ID = 0x0001 case so that is why it is not caught by
         // this entry.  Those devices have already been caught.
-        TPL_DEVICE_VID_PID_MASKED( 0x04D9, 0x0002, 0xFF00, &driverInitData, &DEVICE_DRIVER_EXAMPLE2_Driver ),
+        TPL_DEVICE_VID_PID_MASKED( 0x04D8, 0x0002, 0xFF00, &driverInitData, &DEVICE_DRIVER_EXAMPLE2_Driver ),
 
         // This entry will catch all other devices. 
         TPL_DEVICE_ANY( &driverInitData, &DEVICE_DRIVER_EXAMPLE3_Driver ),
