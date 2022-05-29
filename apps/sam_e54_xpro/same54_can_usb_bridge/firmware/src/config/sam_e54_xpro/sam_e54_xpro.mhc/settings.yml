@@ -1,14 +1,14 @@
+format_version: v1.0
 configName: sam_e54_xpro
 folderName: sam_e54_xpro
-format_version: v1.0
-frameworkPath: E:\Harmony
+frameworkPath: C:\Dev\harmony3
 processor: ATSAME54P20A
-projectName: usb_can_bridge
+projectName: sam_e54_xpro
 settings:
-  PackageFilter: bsp;core;core_apps_sam_c20_c21;core_apps_sam_d20;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;core_apps_sam_e70_s70_v70_v71;core_apps_sam_g55;core_apps_sam_ha1;core_apps_sam_l10_l11;core_apps_sam_l21;core_apps_sam_l22;core_apps_sam_rh71;csp;csp_apps_sam_c20_c21;csp_apps_sam_d10;csp_apps_sam_d11;csp_apps_sam_d20;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_g55;csp_apps_sam_ha1;csp_apps_sam_l10_l11;csp_apps_sam_l21;csp_apps_sam_l22;dev_packs;harmony-services;quick_docs;usb;usb_apps_device;usb_apps_dual_role;usb_apps_host;usb_apps_multi_controller
+  PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
+  DFPPath: dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
