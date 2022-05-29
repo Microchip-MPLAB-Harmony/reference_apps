@@ -175,10 +175,6 @@ extern "C" {
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 
-
-
-
-
 /*** USB Driver Configuration ***/
 
 /* Maximum USB driver instances */

@@ -165,10 +165,6 @@ extern "C" {
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 
-
-
-
-
 /* Maximum instances of MSD function driver */
 #define USB_DEVICE_MSD_INSTANCES_NUMBER     1 
 

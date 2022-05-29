@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: supc}
-children:
-- type: ElementPosition
-  attributes: {x: '438', y: '404', id: supc}

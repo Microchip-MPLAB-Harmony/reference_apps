@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_sdcard_usb_datalogger",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "SD Card, USB Data Logger Application on SAM D21 Xplained Pro Evaluation Kit",
 		"projectName": "sdcard_usb_datalogger_sam_d21_xpro",
 		"shortDescription": "Shows storage of sensor data (light intensity values) into a SD card and enumerates the application as USB MSD (Mass storage device) to access the logged data from a PC",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.1.0"
+				"semverRange": ">=4.0.0"
 			}
 		],
 		"dfp": {
-			"name": "CMSIS",
-			"semverRange": "^5.4.0"
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.5.132"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.8.0"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

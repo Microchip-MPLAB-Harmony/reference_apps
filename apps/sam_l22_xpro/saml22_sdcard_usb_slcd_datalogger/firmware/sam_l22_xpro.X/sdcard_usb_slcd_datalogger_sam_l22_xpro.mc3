@@ -1,4 +1,4 @@
-<config configName="sam_l22_xpro" projectName="sdcard_usb_slcd_datalogger_sam_l22_xpro" configVersion="1.1" device="ATSAML22N18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_l22_xpro" projectName="sdcard_usb_slcd_datalogger_sam_l22_xpro" configVersion="1.1" device="ATSAML22N18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -119,7 +119,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -989,8 +989,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;464&quot; canvasWidth=&quot;919&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_L22_Xplained_Pro&quot; x=&quot;146&quot; y=&quot;45&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;570&quot; y=&quot;19&quot;/&gt;
@@ -1019,6 +1018,7 @@
         &lt;ElementPosition dnOrder=&quot;24&quot; id=&quot;usb_device_msd&quot; x=&quot;591&quot; y=&quot;274&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;464&quot; canvasWidth=&quot;919&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -6930,7 +6930,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML22N18A_DFP\component\rstc.h</file>
@@ -6978,7 +6978,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\configuration.h</file>
-         <hash>629605e5f6a9833a68af40147af2d94ff32cc7e7ccb1aec759fb7ed6ffa94a17</hash>
+         <hash>5485a4c6b5afe1025d1f11bebc3da6507ab1f775bf34e6f277dda1d87e44e411</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML22N18A_DFP\component\pm.h</file>
@@ -7034,7 +7034,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\usb\usb_host.h</file>
-         <hash>8fe091b3db430b897da28d7f7effb6fffbb882d025c878a54cc5e627909a8cc2</hash>
+         <hash>4ec16dee42ae6b1bad8a7199b44750ccf0c5fa3aee5e44766e7b6dffc9979e83</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\system\ports\sys_ports_mapping.h</file>
@@ -7334,7 +7334,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\peripheral\port\plib_port.c</file>
-         <hash>ddbbc413e031ff40d690ac241e9b074f76363b5edb7e21a388e42444e4ced961</hash>
+         <hash>99fe6d2a3636dcf6ec6565a3b8a5f7d6786e163d59a7c53bf783d7a5e4574079</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\peripheral\port\plib_port.h</file>
@@ -7342,7 +7342,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\definitions.h</file>
-         <hash>64c9a188ce30ee68381768a9df6e47b8431dfaad0ed905c8ee95f46946f52e5f</hash>
+         <hash>e93321559725e29f7a2dbcbe58cdacfa8225cd2a284e9bd1f26ce033c5edf580</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML22N18A_DFP\component\trng.h</file>
@@ -7421,12 +7421,12 @@
          <hash>066e757e8d736e8d60301a755a5d0a051cf38ff7c98a23bb050c66894838837c</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_l22_xpro\driver\usb\usbfsv1\src\drv_usbfsv1_local.h</file>
-         <hash>44d5169845b6162737130d030ff17c48f85d3a06f51aa2fe3fcf0e7e81c69b10</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAML22N18A_DFP\instance\slcd.h</file>
          <hash>dd95f2414e5de6dc1342102a08e2cabfcd5575ca927fb1f9f6091a26e321fe4d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_l22_xpro\driver\usb\usbfsv1\src\drv_usbfsv1_local.h</file>
+         <hash>44d5169845b6162737130d030ff17c48f85d3a06f51aa2fe3fcf0e7e81c69b10</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\system\system_common.h</file>
@@ -7542,7 +7542,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\initialization.c</file>
-         <hash>8eca47b8ae74f94853269b52505e4d152441aae389187a8811766cc9347b8f20</hash>
+         <hash>c9395c2ef4d89ea7cd8203638c6f34f55a0cf6975bbade20ca15a166e19f5817</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l22_xpro\system\fs\sys_fs_media_manager.h</file>

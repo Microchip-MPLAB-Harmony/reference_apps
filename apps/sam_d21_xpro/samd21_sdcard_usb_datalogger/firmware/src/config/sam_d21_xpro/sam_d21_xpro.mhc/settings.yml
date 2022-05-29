@@ -1,13 +1,14 @@
-configName: sam_d21_xpro
-folderName: ''
 format_version: v1.0
-frameworkPath: ../../../..
+configName: sam_d21_xpro
+folderName: sam_d21_xpro
+frameworkPath: C:\Dev\harmony3
 processor: ATSAMD21J18A
-projectName: ''
+projectName: sam_d21_xpro
 settings:
-  PackageFilter: bsp;core;core_apps_sam_d21_da1;csp;csp_apps_sam_d21_da1;dev_packs;gfx;quick_docs;touch;usb
+  PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
-  MERGE_STRATEGY: ALL
-  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21a\atdf\ATSAMD21J18A.atdf
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21a\atdf\ATSAMD21J18A.atdf

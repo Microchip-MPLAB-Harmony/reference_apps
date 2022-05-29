@@ -275,36 +275,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="sam_l22_xpro.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/adc.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/BSP_SAM_L22_Xplained_Pro.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/drv_sdspi.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/drv_usbfs_v1.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/gfx_disp_slcd1-xpro_8x24.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/le_gfx_slcd.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/pm.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/supc.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/sam_l22_xpro/sam_l22_xpro.mhc/usb_device_msd.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_l22_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>sdcard_usb_slcd_datalogger_sam_l22_xpro.mc3</itemPath>
@@ -462,7 +432,7 @@
         <targetDevice>ATSAML22N18A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
@@ -533,7 +503,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_l22_xpro;../src/packs/ATSAML22N18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;;../src/config/sam_l22_xpro/system/fs/fat_fs/file_system;../src/config/sam_l22_xpro/system/fs/fat_fs/hardware_access;"/>
+                  value="../src;../src/config/sam_l22_xpro;../src/config/sam_l22_xpro/system/fs/fat_fs/file_system;../src/config/sam_l22_xpro/system/fs/fat_fs/hardware_access;../src/packs/ATSAML22N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -611,7 +581,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -634,7 +604,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_l22_xpro;../src/packs/ATSAML22N18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;;../src/config/sam_l22_xpro/system/fs/fat_fs/file_system;../src/config/sam_l22_xpro/system/fs/fat_fs/hardware_access;"/>
+                  value="../src;../src/config/sam_l22_xpro;../src/config/sam_l22_xpro/system/fs/fat_fs/file_system;../src/config/sam_l22_xpro/system/fs/fat_fs/hardware_access;../src/packs/ATSAML22N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

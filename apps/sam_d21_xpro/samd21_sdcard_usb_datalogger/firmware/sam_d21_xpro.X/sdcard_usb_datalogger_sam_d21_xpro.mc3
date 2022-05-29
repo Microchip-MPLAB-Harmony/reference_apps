@@ -1,4 +1,4 @@
-<config configName="sam_d21_xpro" projectName="sdcard_usb_datalogger_sam_d21_xpro" configVersion="1.1" device="ATSAMD21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_d21_xpro" projectName="sdcard_usb_datalogger_sam_d21_xpro" configVersion="1.1" device="ATSAMD21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -91,7 +91,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -867,7 +867,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;508&quot; canvasWidth=&quot;811&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_D21_Xplained_Pro&quot; x=&quot;640&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;10&quot; y=&quot;68&quot;/&gt;
@@ -890,7 +891,6 @@
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;usb_device_msd&quot; x=&quot;491&quot; y=&quot;357&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;508&quot; canvasWidth=&quot;811&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -3499,20 +3499,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_sdspi_0" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_sdspi_0&gt;
-  &lt;drv_sdspi_0 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_sdspi_DRV_SPI_dependency&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-    &lt;/Attachments&gt;
-  &lt;/drv_sdspi_0&gt;
+  &lt;drv_sdspi_0 dnOrder=&quot;0&quot;/&gt;
 &lt;/drv_sdspi_0&gt;
 </value>
       </entry>
@@ -3684,17 +3671,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_spi_0&gt;
   &lt;drv_spi_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_spi&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_sdspi_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_sdspi_DRV_SPI_dependency&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_spi_SPI_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_spi_SPI_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;sercom0&lt;/Value&gt;
@@ -5991,7 +5968,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\configuration.h</file>
-         <hash>3a7b910a781172fee5aae8c6702b96f4f1d6ad26ad1bbed8f0d852359ffd8f5b</hash>
+         <hash>da44b3442a20ae2eaf59b06c9c764b3487ef189004edfa7604981cd740a59c14</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\dmac.h</file>
@@ -6035,7 +6012,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\system\fs\src\sys_fs_media_manager_local.h</file>
@@ -6235,7 +6212,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\usb\usb_host.h</file>
-         <hash>8fe091b3db430b897da28d7f7effb6fffbb882d025c878a54cc5e627909a8cc2</hash>
+         <hash>4ec16dee42ae6b1bad8a7199b44750ccf0c5fa3aee5e44766e7b6dffc9979e83</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\stdio\xc32_monitor.c</file>
