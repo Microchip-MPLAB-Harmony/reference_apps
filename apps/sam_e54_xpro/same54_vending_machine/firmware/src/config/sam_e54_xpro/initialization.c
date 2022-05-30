@@ -78,6 +78,9 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Forward declaration of PHY initialization data */
+const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091;
+
 // <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
 
 static uint8_t gDrvMemory0EraseBuffer[NVMCTRL_ERASE_BUFFER_SIZE] CACHE_ALIGN;
@@ -111,13 +114,13 @@ const DRV_MEMORY_INIT drvMemory0InitData =
 };
 
 // </editor-fold>
+/* Forward declaration of MAC initialization data */
+const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData;
 
 
-/* MIIM Driver Configuration */
-static const DRV_MIIM_INIT drvMiimInitData =
-{
-    .ethphyId = DRV_MIIM_ETH_MODULE_ID,
-};
+/* Forward declaration of MIIM initialization data */
+static const DRV_MIIM_INIT drvMiimInitData;
+
 
 
 
@@ -134,6 +137,23 @@ SYSTEM_OBJECTS sysObj;
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+
+    
+    
+
+/*** ETH PHY Initialization Data ***/
+const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091 =
+{    
+    .ethphyId               = TCPIP_INTMAC_MODULE_ID,
+    .phyAddress             = TCPIP_INTMAC_PHY_ADDRESS,
+    .phyFlags               = TCPIP_INTMAC_PHY_CONFIG_FLAGS,
+    .pPhyObject             = &DRV_ETHPHY_OBJECT_KSZ8091,
+    .resetFunction          = 0,
+    .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
+    .pMiimInit              = &drvMiimInitData,
+    .miimIndex              = DRV_MIIM_DRIVER_INDEX,
+};
+
 
 // <editor-fold defaultstate="collapsed" desc="TCP/IP Stack Initialization Data">
 // *****************************************************************************
@@ -249,58 +269,6 @@ const TCPIP_ICMP_MODULE_CONFIG tcpipICMPInitData =
 const TCPIP_NBNS_MODULE_CONFIG tcpipNBNSInitData =
 { 
     0
-};
-
-
-
-
-
-/*** ETH PHY Initialization Data ***/
-
-
-
-const DRV_ETHPHY_INIT tcpipPhyInitData =
-{    
-    .ethphyId               = TCPIP_INTMAC_MODULE_ID,
-    .phyAddress             = TCPIP_INTMAC_PHY_ADDRESS,
-    .phyFlags               = TCPIP_INTMAC_PHY_CONFIG_FLAGS,
-    .pPhyObject             = &DRV_ETHPHY_OBJECT_KSZ8091,
-    .resetFunction          = 0,
-    .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
-    .pMiimInit              = &drvMiimInitData,
-    .miimIndex              = DRV_MIIM_DRIVER_INDEX,
-
-};
-
-	
-/*** GMAC MAC Initialization Data ***/
-const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
-{ 
-	/** QUEUE 0 Intialization**/
-	.gmac_queue_config[0].queueTxEnable	= true,
-	.gmac_queue_config[0].queueRxEnable	= true,
-	.gmac_queue_config[0].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0,
-	.gmac_queue_config[0].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0,
-	.gmac_queue_config[0].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE0,
-	.gmac_queue_config[0].txBufferSize	= TCPIP_GMAC_TX_BUFF_SIZE_QUE0,
-	.gmac_queue_config[0].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0,
-	.gmac_queue_config[0].nRxBuffCount	= TCPIP_GMAC_RX_BUFF_COUNT_QUE0,
-	.gmac_queue_config[0].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0,
-	.gmac_queue_config[0].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0,
-
-
-
-
-
-	.ethFlags               = TCPIP_GMAC_ETH_OPEN_FLAGS,	
-	.linkInitDelay          = TCPIP_INTMAC_PHY_LINK_INIT_DELAY,
-    .ethModuleId            = TCPIP_INTMAC_MODULE_ID,
-    .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
-    .pPhyInit               = &tcpipPhyInitData,
-	.checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
-    .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
-    .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
-    .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,
 };
 
 
@@ -431,6 +399,45 @@ SYS_MODULE_OBJ TCPIP_STACK_Init(void)
     return TCPIP_STACK_Initialize(0, &tcpipInit.moduleInit);
 }
 // </editor-fold>
+
+	
+/*** GMAC MAC Initialization Data ***/
+const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
+{ 
+	/** QUEUE 0 Intialization**/
+	.gmac_queue_config[0].queueTxEnable	= true,
+	.gmac_queue_config[0].queueRxEnable	= true,
+	.gmac_queue_config[0].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0,
+	.gmac_queue_config[0].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0,
+	.gmac_queue_config[0].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE0,
+	.gmac_queue_config[0].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0,
+	.gmac_queue_config[0].nRxDedicatedBuffers	= TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0,
+	.gmac_queue_config[0].nRxAddlBuffCount	= TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0,
+	.gmac_queue_config[0].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0,
+	.gmac_queue_config[0].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0,
+
+
+
+
+
+	.ethFlags               = TCPIP_GMAC_ETH_OPEN_FLAGS,	
+	.linkInitDelay          = TCPIP_INTMAC_PHY_LINK_INIT_DELAY,
+    .ethModuleId            = TCPIP_INTMAC_MODULE_ID,
+    .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
+    .pPhyInit               = &tcpipPhyInitData_KSZ8091,
+	.checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
+    .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
+    .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
+    .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,
+};
+
+
+
+/* MIIM Driver Configuration */
+static const DRV_MIIM_INIT drvMiimInitData =
+{
+	.ethphyId = DRV_MIIM_ETH_MODULE_ID,
+};
 
 /* Net Presentation Layer Data Definitions */
 #include "net_pres/pres/net_pres_enc_glue.h"
@@ -750,11 +757,11 @@ void SYS_Initialize ( void* data )
 
 
 
-	/* Network Presentation Layer Initialization */
-	sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
-    /* TCPIP Stack Initialization */
-    sysObj.tcpip = TCPIP_STACK_Init();
-    SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
+/* Network Presentation Layer Initialization */
+sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
+/* TCPIP Stack Initialization */
+sysObj.tcpip = TCPIP_STACK_Init();
+SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
     CRYPT_WCCB_Initialize();

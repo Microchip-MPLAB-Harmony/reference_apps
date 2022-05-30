@@ -1,13 +1,14 @@
-configName: sam_e54_xpro
-folderName: ''
 format_version: v1.0
-frameworkPath: C:\microchip\Harmony3-GitHub
+configName: sam_e54_xpro
+folderName: sam_e54_xpro
+frameworkPath: D:\LTBD\Harmony_public_release
 processor: ATSAME54P20A
-projectName: ''
+projectName: sam_e54_xpro
 settings:
-  PackageFilter: audio;aws_cloud;bootloader;bootloader_apps_can;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_uart;bootloader_apps_usb;bsp;classb_sam_e5x_d5x;core;core_apps_pic32mz_w1;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;core_apps_sam_e70_s70_v70_v71;core_apps_sam_l21;core_apps_sam_l22;crypto;cryptoauthlib;cryptoauthlib_apps;crypto_apps_encrypt_decrypt;crypto_apps_large_hash;crypto_apps_speed_test;csp;csp_apps_pic32cm_mc00;csp_apps_pic32mk;csp_apps_pic32mz_da;csp_apps_sam_9x60;csp_apps_sam_c20_c21;csp_apps_sam_d20;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_g55;csp_apps_sam_l10_l11;csp_apps_sam_l21;csp_apps_sam_l22;dev_packs;ethercat;gfx;gfx_apps_pic32mz_da;gfx_apps_sam_c20_c21;gfx_apps_sam_d5x_e5x;mbed_os_rtos;mbed_os_rtos_apps;micrium_ucos3;net;net_apps_sam_9x60;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;reference_apps;touch;usb;usb_apps_device;usb_apps_host;wireless
+  PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
-  MERGE_STRATEGY: USER_RECENT
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
