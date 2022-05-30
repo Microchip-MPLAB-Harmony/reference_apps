@@ -258,34 +258,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
-      <logicalFolder name="f1" displayName="sam_e54_cult.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/dsu.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/sercom1.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult/sam_e54_cult.mhc/settings.yml</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="sam_e54_xpro.mhc" projectFiles="true">
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/core.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/dsu.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/project.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom1.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/settings.yml</itemPath>
-        <itemPath>../../../../../../bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/src/config/sam_e54_xpro/sam_e54_xpro.mhc/uart_bootloader.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e54_cult/harmony-manifest-success.yml</itemPath>
       <itemPath>uart_live_update_sam_e54_cult.mc3</itemPath>
@@ -304,12 +276,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.6.95"/>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.7.122"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -372,7 +344,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -449,7 +421,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";;"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -472,7 +444,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_cult;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -506,9 +478,13 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -516,6 +492,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -529,7 +507,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -541,11 +518,16 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </EdbgTool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1035,9 +1017,13 @@
       </Simulator>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1045,6 +1031,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1072,11 +1060,16 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </Tool>
     </conf>
   </confs>

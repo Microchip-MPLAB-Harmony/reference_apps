@@ -39,7 +39,7 @@ The banks on SAME54 MCU are named as BANK-A and BANK-B. At any point in time, th
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e54_cult*  
-- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).
+- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).
 - Any Serial Terminal application like Tera Term terminal application.
 - Windows command prompt
 - Python 3.8.0  
@@ -60,7 +60,7 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-suc
 2. Download the MPLAB Harmony [UART Bootloader Applications](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart) package.
 3. Connect a micro USB cable to the DEBUG port of the SAM E54 Curiosity Ultra Development Board.
 4. Open the UART Fail Safe Bootloader which is in (path: `<Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X`) using the MPLAB X IDE.
-5. The project needs to be reconfigured to work on SAM E54 Curiosity Ultra Development Board. Launch the MHC and follow below steps to reconfigure for SAM E54 Curiosity Ultra Development Board.
+5. The project needs to be reconfigured to work on SAM E54 Curiosity Ultra Development Board. Launch the MCC and follow below steps to reconfigure for SAM E54 Curiosity Ultra Development Board.
     * Remove SERCOM2
 
     <img src = "images/uartfailsafebootloader_remove_sercom2.png" width="775" height="302" align="middle">
@@ -73,7 +73,7 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-suc
 
     <img src = "images/uartfailsafebootloader_sercom1_conf.png" width="806" height="336" align="middle">
 
-    * Launch Pin Configurations plugin under **MHC->Tools->Pin Configurations**. Remove SERCOM2 Pin configurations.
+    * Launch Pin Configurations plugin under **MCC->Tools->Pin Configurations**. Remove SERCOM2 Pin configurations.
 
     <img src = "images/uartfailsafebootloader_undo_sercom2_pin_conf.png" width="854" height="325" align="middle">
 
@@ -83,7 +83,7 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-suc
 
     - **Note:**
       - The SAM E54 Curiosity Ultra Development Board uses SERCOM1 peripheral for EDBG. Hence SERCOM peripheral and its pins need to be reconfigured from SAM E54 Xplained Pro to SAM E54 Curiosity Ultra Development Board.
-      - Do not close the MHC as we have to build the project again.
+      - Do not close the MCC as we have to build the project again.
 6. **Regenerate the project. Build and program the UART Fail Safe Bootloader using the MPLAB X IDE.**
 7. The following shows the steps to rebuild the UART Fail Safe Bootloader using the MPLAB X IDE. This step is to create Bootloader binary image which will be merged with Live Update application to create a single binary image as shown in Step 10.
     * Remove the Device Fuse configurations from the custom linker script as they will be updated by the UART Fail Safe Bootloader project
@@ -99,11 +99,11 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-suc
     * This is required to generate the binary file for Bootloader application
 9. Build the Live update application (path: `<Live Update application folder>/firmware/sam_e54_cult.X`) using the MPLAB X IDE **but do not program**.
 10. Run the **btl_app_merge_bin.py** script from command prompt to merge the generated Bootloader binary and Live update application binary.
-    - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_app_merge_bin.py -o 0x2000 -b <Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X/dist/<Config Name>/production/<Project Name>.production.bin -a <Live Update application folder>/hex/sam_e54_cult.X.production.bin`
+    - `python <Your Harmony Framework download folder>/bootloader/tools/btl_app_merge_bin.py -o 0x2000 -b <Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/sam_e54_xpro.X/dist/<Config Name>/production/<Project Name>.production.bin -a <Live Update application folder>/hex/sam_e54_cult.X.production.bin`
     - Below output should be displayed on command prompt.  
 		<img src = "images/merge_bootloader_and_live_update_app.png" width="735" height="32" align="middle">
 11. Run the **btl_host.py** from command prompt to program the merged binary to opposite panel. The merged binary **btl_app_merged.bin** will be generated in the path from where the **btl_app_merge_bin.py** was called from.
-    - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d same5x -a 0x00080000 -f btl_app_merged.bin`
+    - `python <Your Harmony Framework download folder>/bootloader/tools/btl_host.py -v -s -i <COM PORT> -d same5x -a 0x00080000 -f btl_app_merged.bin`
     - **Note:**
       - If you need to know more information on the bootloader host script, refer help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm and <Your Harmony Framework download folder>/bootloader_apps_uart/docs/index.html`
 12. Following screenshot shows successful programming of the application binary.
@@ -116,9 +116,10 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-suc
 3. Run the host script "**live_update.py**" from command prompt available at `<Live Update application folder>/scripts` to program the new version of the firmware to an inactive panel while the current version of the application is being run from the active panel.
     - `python <Live Update application folder>/scripts/live_update.py -v -i <COM PORT> -d same5x -a <Address> -f btl_app_merged.bin`. The merged binary **btl_app_merged.bin** will be generated in the path from where the **btl_app_merge_bin.py** was called from.
     - **Note:** If you need to know more information on the Live Update Script, Open command prompt, goto `<Live Update application folder>/scripts` then enter `python live_update.py --help`. The below output shows the Live Update Script help.  
-		<img src = "images/live_update_help.png" >  
-		Below output should be displayed on command prompt.  
-		<img src = "images/live_update_log.png" >
+        <img src = "images/live_update_help.png" >
+
+        Below output should be displayed on command prompt.
+        <img src = "images/live_update_log.png" >
 4. LED1 stops blinking and LED2 starts blinking which indicates the application programming is successful.
    * LED1 stops blinking and LED2 toggles for every 500ms then Application is running from BANK A
    * LED1 stops blinking and LED2 toggles for every 1000ms then Application is running from BANK B
@@ -131,12 +132,13 @@ Refer [Project Manifest](./firmware/src/config/sam_e54_cult/harmony-manifest-suc
    * Reset or Power cycle the device and repeat from the step 4 to program the Live update application.
 
 ## Comments:
-- Reference Application Note: [Live Update application on SAME54 MCUs using MPLAB Harmony v3](https://www.microchip.com/wwwappnotes/appnotes.aspx?appnote=en1005443)
+- Reference Application Note: [Live Update application on SAME54 MCUs using MPLAB Harmony v3](https://ww1.microchip.com/downloads/en/Appnotes/Live-Update-Application-on-SAME54-MCU-Using-MPLA-Harmonyv3-DS00003767A.pdf)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.5.0 Removed MHC support, Regenerated and tested application.
 - v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 regenerated and tested demo application
 - v1.2.0 regenerated and tested demo application
