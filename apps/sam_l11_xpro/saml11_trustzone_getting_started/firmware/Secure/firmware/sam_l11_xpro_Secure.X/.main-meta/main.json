@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml11_trustzone_getting_started_secure",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "TrustZone Getting Started Application on SAM L11 Xplained Pro Evaluation Kit",
 		"projectName": "trustzone_sam_l11_xpro_Secure",
 		"shortDescription": "Demonstrates the TrustZone feature on SAM L11 microcontroller)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.0.0"
 			}
 		],
 		"dfp": {
 			"name": "SAML11_DFP",
-			"semverRange": "^4.3.139"
+			"semverRange": "^4.4.149"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

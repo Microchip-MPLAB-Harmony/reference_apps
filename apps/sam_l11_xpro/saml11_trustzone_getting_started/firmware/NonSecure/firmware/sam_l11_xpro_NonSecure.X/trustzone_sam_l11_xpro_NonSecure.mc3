@@ -1,4 +1,4 @@
-<config configName="sam_l11_xpro" projectName="trustzone_sam_l11_xpro_NonSecure" configVersion="1.1" device="ATSAML11E16A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="sam_l11_xpro" projectName="trustzone_sam_l11_xpro_NonSecure" configVersion="1.1" device="ATSAML11E16A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -43,7 +43,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -54,8 +54,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;280&quot; canvasWidth=&quot;490&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;cmsis&quot; x=&quot;170&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;450&quot; y=&quot;60&quot;/&gt;
@@ -69,6 +68,7 @@
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom1&quot; x=&quot;170&quot; y=&quot;120&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;280&quot; canvasWidth=&quot;490&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -4551,7 +4551,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\sam_l11_xpro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\sam_l11_xpro\stdio\xc32_monitor.c</file>
@@ -4987,7 +4987,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\sam_l11_xpro\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\sam_l11_xpro\stdio\xc32_monitor.c</file>

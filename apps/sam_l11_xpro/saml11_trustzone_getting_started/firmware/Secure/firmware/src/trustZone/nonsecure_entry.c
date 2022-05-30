@@ -39,6 +39,7 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
  *******************************************************************************/
 // DOM-IGNORE-END
+#include <stdint.h>
 #include <stdio.h>
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
