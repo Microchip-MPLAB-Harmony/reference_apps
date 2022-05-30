@@ -1,6 +1,0 @@
-format_version: v1.0
-type: GroupComponent
-attributes: {displayName: TCP/IP STACK, id: TCP/IP STACK}
-children:
-- type: ElementPosition
-  attributes: {x: '615', y: '391', id: TCP/IP STACK}

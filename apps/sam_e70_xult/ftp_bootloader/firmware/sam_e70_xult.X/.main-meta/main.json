@@ -4,27 +4,27 @@
    "content":{
       "metaDataVersion":"1.1.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_ftp_bootloader",
-      "version":"1.4.0",
+      "version":"1.5.0",
       "displayName":"File Transfer Protocol Application on SAM E70 Xplained Ultra Evaluation Kit",
       "projectName":"ftp_bootloader_sam_e70_xult",
       "shortDescription":"Demonstrates creating ethernet bootloader where an FTP client downloads a binary file from the FTP server",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=5.50.0"
+         "semverRange":">=6.00"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=3.0.1"
+            "semverRange":">=4.0.0"
          }
       ],
       "dfp":{
          "name":"SAME70_DFP",
-         "semverRange":"^4.6.98"
+         "semverRange":"^4.8.125"
       },
       "configurator":{
-         "name":"MHC",
-         "semverRange":">=3.6.4"
+         "name":"MCC",
+         "semverRange":">=5.1.4"
       },
       "device":{
          "metaDataVersion":"1.0.0",

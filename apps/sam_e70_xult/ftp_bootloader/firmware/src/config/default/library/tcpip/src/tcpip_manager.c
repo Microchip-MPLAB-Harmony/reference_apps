@@ -947,7 +947,7 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
 {
     TCPIP_NET_IF           *pNetIf;
     bool                    netUpFail;
-    const void*             configData;
+    const void             *macConfig, *configData;
     const TCPIP_STACK_MODULE_CONFIG* pConfig;
     TCPIP_MAC_MODULE_CTRL   macCtrl;
     const TCPIP_MAC_OBJECT*  pMacObj;
@@ -973,13 +973,13 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
 #endif
             // start stack MAC modules initialization for primary interfaces
             // find MAC initialization data; use old if no new one
-            configData = pNetIf->pMacConfig;
+            macConfig = pNetIf->pMacConfig;
             if (pModConfig != 0)
             {
                 pConfig = _TCPIP_STACK_FindModuleData(pMacObj->macId, pModConfig, nModules);
                 if(pConfig != 0)
                 {   // there's new MAC config data
-                    pNetIf->pMacConfig = configData = pConfig->configData;
+                    pNetIf->pMacConfig = macConfig = pConfig->configData;
                 }
             }
 
@@ -990,7 +990,7 @@ static bool TCPIP_STACK_BringNetUp(TCPIP_STACK_MODULE_CTRL* stackCtrlData, const
                 {
                     { 0 }, // SYS_MODULE_INIT not currently used
                     &macCtrl,
-                    configData,
+                    macConfig,
                 };
 
                 pNetIf->macObjHandle = (*pMacObj->TCPIP_MAC_Initialize)(pMacObj->macId, &macInit.moduleInit);
@@ -1318,7 +1318,6 @@ static void TCPIP_STACK_BringNetDown(TCPIP_STACK_MODULE_CTRL* stackCtrlData, TCP
     pNetIf->macObjHandle = 0;
 
     pNetIf->Flags.bInterfaceEnabled = pNetIf->Flags.bMacInitialize = false;
-    pNetIf->Flags.powerMode = stackCtrlData->powerMode;
 
 #if defined(TCPIP_STACK_USE_EVENT_NOTIFICATION) && (TCPIP_STACK_USER_NOTIFICATION != 0)
     if(_TCPIPStackNetIsPrimary(pNetIf))
@@ -1352,7 +1351,6 @@ static void TCPIP_STACK_BringNetDown(TCPIP_STACK_MODULE_CTRL* stackCtrlData, TCP
     pNetIf->macObjHandle = 0;
 
     pNetIf->Flags.bInterfaceEnabled = pNetIf->Flags.bMacInitialize = false;
-    pNetIf->Flags.powerMode = powerMode;
 
 }
 #endif  // (TCPIP_STACK_DOWN_OPERATION != 0)
@@ -1639,7 +1637,7 @@ static bool _TCPIPStackIsRunState(void)
                 else if(macStat == SYS_STATUS_READY)
                 {   // get the MAC address and MAC processing flags
                     // set the default MTU; MAC driver will override if needed
-                    TCPIP_MAC_PARAMETERS macParams;
+                    TCPIP_MAC_PARAMETERS macParams = {{{0}}};
                     macParams.linkMtu = TCPIP_MAC_LINK_MTU_DEFAULT; 
                     (*pNetIf->pMacObj->TCPIP_MAC_ParametersGet)(pNetIf->hIfMac, &macParams);
                     memcpy(pNetIf->netMACAddr.v, macParams.ifPhyAddress.v, sizeof(pNetIf->netMACAddr));
@@ -1733,7 +1731,10 @@ static void _TCPIPStackSetIfNumberName(void)
 { 
     int netIx;
     TCPIP_NET_IF* pNetIf;
-    int ifNumber[TCPIP_MAC_TYPES] = { 0 };
+    TCPIP_MAC_TYPE macType;
+    int ifNumber[TCPIP_MAC_TYPES];
+
+    memset(ifNumber, 0, sizeof(ifNumber));
 
     for(netIx = 0, pNetIf = tcpipNetIf; netIx < tcpip_stack_ctrl_data.nIfs; netIx++, pNetIf++)
     {
@@ -1743,8 +1744,9 @@ static void _TCPIPStackSetIfNumberName(void)
         // and update the alias interfaces
         if(_TCPIPStackNetIsPrimary(pNetIf))
         {
-            const char* ifName = TCPIP_STACK_IF_ALIAS_NAME_TBL[pNetIf->macType]; 
-            snprintf(pNetIf->ifName, sizeof(pNetIf->ifName), "%s%d", ifName, ifNumber[pNetIf->macType]);
+            macType = (TCPIP_MAC_TYPE)pNetIf->macType;
+            const char* ifName = TCPIP_STACK_IF_ALIAS_NAME_TBL[macType]; 
+            snprintf(pNetIf->ifName, sizeof(pNetIf->ifName), "%s%d", ifName, ifNumber[macType]);
             pNetIf->ifName[sizeof(pNetIf->ifName) - 1] = 0;
             // update all its aliases
 #if (_TCPIP_STACK_ALIAS_INTERFACE_SUPPORT)
@@ -1752,11 +1754,11 @@ static void _TCPIPStackSetIfNumberName(void)
             TCPIP_NET_IF* pAliasIf;
             for(pAliasIf = _TCPIPStackNetGetAlias(pNetIf), aliasIx = 0; pAliasIf != 0; pAliasIf = _TCPIPStackNetGetAlias(pAliasIf), aliasIx++)
             {
-                snprintf(pAliasIf->ifName, sizeof(pAliasIf->ifName), "%s%d:%d", ifName, ifNumber[pNetIf->macType], aliasIx % 10);
+                snprintf(pAliasIf->ifName, sizeof(pAliasIf->ifName), "%s%d:%d", ifName, ifNumber[macType], aliasIx % 10);
                 pAliasIf->ifName[sizeof(pAliasIf->ifName) - 1] = 0;
             }
 #endif  // (_TCPIP_STACK_ALIAS_INTERFACE_SUPPORT)
-            ifNumber[pNetIf->macType]++;
+            ifNumber[macType]++;
         }
     }
 }
@@ -2339,6 +2341,27 @@ int  TCPIP_STACK_NetIndexGet(TCPIP_NET_HANDLE hNet)
     return TCPIP_STACK_NetIxGet(pNetIf);
 }
 
+// check a net handle is a valid network interface
+// more checking, for user passed handles
+TCPIP_NET_IF*  TCPIP_Stack_UserHandleToNet(TCPIP_NET_HANDLE hNet)
+{
+    if(tcpipNetIf != 0)
+    {
+        TCPIP_NET_IF* pNetIf = (TCPIP_NET_IF*)hNet;
+        int ix = pNetIf - tcpipNetIf;
+        if(0 <= ix && ix < tcpip_stack_ctrl_data.nIfs)
+        {
+            if(pNetIf == tcpipNetIf + ix)
+            {
+                return pNetIf;
+            }
+        }
+
+    }
+
+    return 0;
+}
+
 /*********************************************************************
  * Function:        TCPIP_STACK_MACIdToNet(TCPIP_STACK_MODULE macId)
  *
@@ -2609,8 +2632,8 @@ IPV6_ADDR_HANDLE TCPIP_STACK_NetIPv6AddressGet(TCPIP_NET_HANDLE netH, IPV6_ADDR_
             IPV6_ADDR_STRUCT * currAddress = unicastHead;
             while(currAddress != addrNode)
             {
-                IPV6_ADDR* pAddNode = (IPV6_ADDR*)((uint8_t*)addrNode + offsetof(IPV6_ADDR_STRUCT, address));
-                IPV6_ADDR* pAddCurr = (IPV6_ADDR*)((uint8_t*)currAddress + offsetof(IPV6_ADDR_STRUCT, address));
+                IPV6_ADDR* pAddNode = (IPV6_ADDR*)((uint8_t*)addrNode + offsetof(struct _IPV6_ADDR_STRUCT, address));
+                IPV6_ADDR* pAddCurr = (IPV6_ADDR*)((uint8_t*)currAddress + offsetof(struct _IPV6_ADDR_STRUCT, address));
                 if(memcmp(pAddNode->v + sizeof (IPV6_ADDR) - 3, pAddCurr->v + sizeof (IPV6_ADDR) - 3, 3) == 0)
                 {   // address match; skip this one
                     addrNode = addrNode->next;
@@ -2638,7 +2661,7 @@ IPV6_ADDR_HANDLE TCPIP_STACK_NetIPv6AddressGet(TCPIP_NET_HANDLE netH, IPV6_ADDR_
             pAddStruct->next = pAddStruct->prev = 0;
             if(addrNode->flags.type == IPV6_ADDR_TYPE_UNICAST)
             {   // construct the solicited node multicast address
-                IPV6_ADDR* pAddNode = (IPV6_ADDR*)((uint8_t*)pAddStruct + offsetof(IPV6_ADDR_STRUCT, address));
+                IPV6_ADDR* pAddNode = (IPV6_ADDR*)((uint8_t*)pAddStruct + offsetof(struct _IPV6_ADDR_STRUCT, address));
                 memcpy(pAddNode->v, IPV6_SOLICITED_NODE_MULTICAST.v, sizeof (IPV6_ADDR) - 3);
                 pAddStruct->flags.type = IPV6_ADDR_TYPE_MULTICAST;
             }
@@ -3264,8 +3287,6 @@ TCPIP_STACK_ADDRESS_SERVICE_TYPE _TCPIPStackAddressServiceIsRunning(TCPIP_NET_IF
 void TCPIP_STACK_AddressServiceEvent(TCPIP_NET_IF* pNetIf, TCPIP_STACK_ADDRESS_SERVICE_TYPE adSvcType,
                                     TCPIP_STACK_ADDRESS_SERVICE_EVENT evType)
 {
-    typedef bool(*addSvcFnc)(TCPIP_NET_IF* pNetIf, bool enable);
-    addSvcFnc   addFnc;
 
     if(evType == TCPIP_STACK_ADDRESS_SERVICE_EVENT_RUN_RESTORE)
     {   // run time connection restore; it should be the DHCPc
@@ -3301,7 +3322,10 @@ void TCPIP_STACK_AddressServiceEvent(TCPIP_NET_IF* pNetIf, TCPIP_STACK_ADDRESS_S
 #endif  // defined(TCPIP_STACK_USE_ZEROCONF_LINK_LOCAL)
     pNetIf->Flags.v &= ~TCPIP_STACK_ADDRESS_SERVICE_MASK;
     _TCPIPStackSetConfig(pNetIf, true);
-    addFnc = 0;
+#if defined(TCPIP_STACK_USE_ZEROCONF_LINK_LOCAL)
+    typedef bool(*addSvcFnc)(TCPIP_NET_IF* pNetIf, bool enable);
+    addSvcFnc   addFnc = 0;
+#endif  // defined(TCPIP_STACK_USE_ZEROCONF_LINK_LOCAL)
     if(adSvcType == TCPIP_STACK_ADDRESS_SERVICE_DHCPC)
     {   // the DHCP client has been stopped or failed
         // if possible we'll select ZCLL
@@ -3318,6 +3342,7 @@ void TCPIP_STACK_AddressServiceEvent(TCPIP_NET_IF* pNetIf, TCPIP_STACK_ADDRESS_S
     // either way, no DHCP; restore the static DNS
     _TCPIP_StackSetDefaultDns(pNetIf);
 
+#if defined(TCPIP_STACK_USE_ZEROCONF_LINK_LOCAL)
     if(addFnc)
     {
         if((*addFnc)(pNetIf, true) == true)
@@ -3325,6 +3350,7 @@ void TCPIP_STACK_AddressServiceEvent(TCPIP_NET_IF* pNetIf, TCPIP_STACK_ADDRESS_S
             return;
         }
     }
+#endif  // defined(TCPIP_STACK_USE_ZEROCONF_LINK_LOCAL)
 
     // no other address service or it couldn't be started
     // select the default/static addresses
@@ -3931,6 +3957,8 @@ static void TCPIP_STACK_StacktoMacCtrl(TCPIP_MAC_MODULE_CTRL* pMacCtrl, TCPIP_ST
     TCPIP_NET_IF* pNetIf = stackCtrlData->pNetIf;
 
 
+    memset(pMacCtrl, 0, sizeof(*pMacCtrl));
+
     pMacCtrl->nIfs = stackCtrlData->nIfs;
 
 #if defined(TCPIP_STACK_DRAM_DEBUG_ENABLE) 
@@ -3963,11 +3991,12 @@ static void TCPIP_STACK_StacktoMacCtrl(TCPIP_MAC_MODULE_CTRL* pMacCtrl, TCPIP_ST
     pMacCtrl->eventParam = 0;
 #endif  // defined(TCPIP_STACK_USE_EVENT_NOTIFICATION)
 
-    pMacCtrl->moduleId = pNetIf->macId;
     pMacCtrl->netIx = stackCtrlData->netIx;
+    pMacCtrl->gapDcptOffset = TCPIP_PKT_GapDcptOffset();
+    pMacCtrl->gapDcptSize = TCPIP_PKT_GapDcptSize();
     pMacCtrl->macAction = TCPIP_STACK_StackToMacAction(stackCtrlData->stackAction);
     pMacCtrl->powerMode = stackCtrlData->powerMode;
-    pMacCtrl->segLoadOffset = TCPIP_PKT_SegLoadOffset();
+    pMacCtrl->controlFlags = TCPIP_MAC_CONTROL_PAYLOAD_OFFSET_2;
     memcpy(pMacCtrl->ifPhyAddress.v, pNetIf->netMACAddr.v, sizeof(pMacCtrl->ifPhyAddress));
 }
 
