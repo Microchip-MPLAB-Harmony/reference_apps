@@ -1,4 +1,4 @@
-<config configName="default" projectName="wifi_rgb_easy_configuration_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="default" projectName="wifi_rgb_easy_configuration_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -215,7 +215,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -942,24 +942,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;23&quot; y=&quot;22&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;680&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;540&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;380&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;193&quot; canvasWidth=&quot;268&quot; dnOrder=&quot;1&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;442&quot; y=&quot;19&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;19&quot; y=&quot;19&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;NETWORK LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;147&quot; y=&quot;58&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;21&quot; y=&quot;58&quot;/&gt;
@@ -967,7 +950,7 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;264&quot; y=&quot;7&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;2&quot; y=&quot;166&quot;/&gt;
@@ -994,6 +977,22 @@
         &lt;ElementPosition dnOrder=&quot;22&quot; id=&quot;uart6&quot; x=&quot;460&quot; y=&quot;151&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;TCP/IP STACK&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;23&quot; y=&quot;22&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;680&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;540&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;380&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;DRIVER LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvWifiWinc&quot; x=&quot;279&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;193&quot; canvasWidth=&quot;268&quot; dnOrder=&quot;4&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;APPLICATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;155&quot; y=&quot;61&quot;/&gt;
@@ -1005,18 +1004,19 @@
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_apps_config&quot; x=&quot;16&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;DRIVER LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvWifiWinc&quot; x=&quot;279&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;420&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;241&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;442&quot; y=&quot;19&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;19&quot; y=&quot;19&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -8794,7 +8794,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\wdrv_winc_nvm.h</file>
-         <hash>3d1472974eae02efa61a4fd6712f7f7ed2e9152bc07db0d47a1395127a84e31c</hash>
+         <hash>4cbede751b2b4c888b5263892a534d9421e3369582ea524c57abb396e03eaa9b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\wdrv_winc_wps.c</file>
@@ -8842,7 +8842,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\settings.h</file>
-         <hash>0131d22c9c73278c8123f7efcadf514e85ccb95cd61dbe7a40976de10800b2d0</hash>
+         <hash>86a92896cc09608435ffe0d78f4aa3421fb5f19a5675761070d1e9c85ad22de8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\dma\sys_dma_mapping.h</file>
@@ -8902,7 +8902,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>bd208982b743d1656e8fcd663454cc8ea8ba9c3ab5c2b63d83a4e828e09da2e6</hash>
+         <hash>763da6c540b298885dcc43e96130807c9b9b097d59c0cc2a1c9cd581e4e6fae1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
@@ -9242,7 +9242,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>629c9a48bc095ba0d4360b5e4b199b6f816fe241b9182faacb3d3b448883a794</hash>
+         <hash>ee536c962bffa83dff074bffc926edfb3231fbdab6f7797e0544624acfe471b7</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\chacha20_poly1305.h</file>
@@ -9446,11 +9446,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\wdrv_winc.c</file>
-         <hash>d3047c65974db02e261eb1ec9adaf3e58f82df8f1408521bcaaa6bc984685ea1</hash>
+         <hash>5aa3c4a81c9988bac9c2a0c35fef439b26e924730e51143c373db52f0c3e605c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\wdrv_winc.h</file>
-         <hash>715eee03cc55612339a9db0de747899de1b30b22963a0df2fb973de6b3d2c0d4</hash>
+         <hash>e56871a6643412f4b4b12e446a4e70d93e6167054908606baa6d99000e24a7c8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\cryptocb.h</file>
@@ -10082,7 +10082,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>80355cacf1ff69bfb8527f6a89beb48d494f77197627578adb60758e78e9dade</hash>
+         <hash>a717c03386c4fcef844dbbc0447e23245fe2f7a831b116dd01d57ee3c21b7fb3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tftps_manager.h</file>
@@ -10490,7 +10490,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>36dc55ded90d258b6b37a247d543500316a51f9746080436ac8ff71dd0cc85d5</hash>
+         <hash>3f00a1654d74c9c6a9848334d57556ffab7528db36e85497d2ce514ef63d68aa</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\pkcs7.c</file>

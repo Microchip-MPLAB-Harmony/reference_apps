@@ -474,71 +474,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
-        <logicalFolder name="f1" displayName="TCP_IP_STACK" projectFiles="true">
-          <logicalFolder name="f1" displayName="APPLICATION_LAYER" projectFiles="true">
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/APPLICATION_LAYER.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipAnnounce.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDhcp.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDhcps.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDns.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipHttp.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipNbns.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpip_apps_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="BASIC_CONFIGURATION" projectFiles="true">
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/BASIC_CONFIGURATION.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipCmd.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipNetConfig.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipStack.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpip_basic_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="DRIVER_LAYER" projectFiles="true">
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/DRIVER_LAYER.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/drvWifiWinc.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/tcpip_driver_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f4" displayName="NETWORK_LAYER" projectFiles="true">
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/NETWORK_LAYER.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipArp.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmp.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv4.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpip_network_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f5" displayName="TRANSPORT_LAYER" projectFiles="true">
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipTcp.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipUdp.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpip_transport_config.yml</itemPath>
-            <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/TRANSPORT_LAYER.yml</itemPath>
-          </logicalFolder>
-          <itemPath>../src/config/default/default.mhc/TCP_IP_STACK/TCP_IP_STACK.yml</itemPath>
-        </logicalFolder>
-        <itemPath>../src/config/default/default.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/drv_memory.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/lib_crypto.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/lib_wolfcrypt.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/netPres.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/nvm.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/ocmp5.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/ocmp6.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/ocmp8.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/spi3.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_debug.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/tmr3.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/uart6.yml</itemPath>
-      </logicalFolder>
       <logicalFolder name="f2" displayName="wolfcrypt" projectFiles="true">
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c</itemPath>
@@ -867,7 +802,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -903,14 +838,13 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/config/default/library;../src/config/default/library/tcpip/src;../src/config/default/library/tcpip/src/common;../src/config/default/driver/winc/include/;;../src/config/default/driver/winc/include/dev;;../src/config/default/driver/winc/include/drv/bsp;;../src/config/default/driver/winc/include/drv/bsp/include;;../src/config/default/driver/winc/include/drv/common;;../src/config/default/driver/winc/include/drv/driver;;../src/config/default/driver/winc/include/drv/spi_flash;;../src;../src/config/default;;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl;"/>
+                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/library;../src/config/default/library/tcpip/src;../src/config/default/library/tcpip/src/common;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -920,7 +854,7 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN;"/>
+                  value="HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="tentative-definitions" value=""/>
@@ -961,7 +895,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -988,7 +921,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -1001,7 +934,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1010,8 +942,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/default;;"/>
+        <property key="extra-include-directories" value="../src;../src/config/default"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1214,6 +1145,7 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
@@ -1303,6 +1235,8 @@
                   value="${communication.interface.default}"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="freeze.timers" value="false"/>
@@ -1319,7 +1253,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -1332,6 +1265,7 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>

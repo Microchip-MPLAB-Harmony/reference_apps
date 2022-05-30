@@ -776,9 +776,9 @@ void SYS_Initialize ( void* data )
 	BSP_Initialize();
     OCMP5_Initialize();
 
-    NVM_Initialize();
-
 	UART6_Initialize();
+
+    NVM_Initialize();
 
     CORETIMER_Initialize();
     TMR3_Initialize();
