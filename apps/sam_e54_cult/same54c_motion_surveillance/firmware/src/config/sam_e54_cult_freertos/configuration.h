@@ -387,6 +387,12 @@ extern "C" {
 
 
 
+/*** NBNS Configuration ***/
+#define TCPIP_STACK_USE_NBNS
+#define TCPIP_NBNS_TASK_TICK_RATE   110
+
+
+
 /*** HTTP NET Configuration ***/
 #define TCPIP_STACK_USE_HTTP_NET_SERVER
 #define TCPIP_HTTP_NET_MAX_HEADER_LEN		    		15
@@ -433,12 +439,6 @@ extern "C" {
 #define TCPIP_HTTP_NET_MALLOC_FUNC                  pvPortMalloc
 #define TCPIP_HTTP_NET_FREE_FUNC                    vPortFree
 #define TCPIP_HTTP_NET_CONSOLE_CMD           		false
-
-
-
-/*** NBNS Configuration ***/
-#define TCPIP_STACK_USE_NBNS
-#define TCPIP_NBNS_TASK_TICK_RATE   110
 
 
 
@@ -528,13 +528,13 @@ extern "C" {
 
 		/*** QUEUE 0 TX Configuration ***/
 #define TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0				8
-#define TCPIP_GMAC_TX_BUFF_SIZE_QUE0				    	1536			
 #define TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0				    	1536
 		
 		/*** QUEUE 0 RX Configuration ***/
 #define TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0				8
 #define TCPIP_GMAC_RX_BUFF_SIZE_QUE0				    	1536
-#define TCPIP_GMAC_RX_BUFF_COUNT_QUE0				   		10
+#define TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0				8
+#define TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0				   	2
 #define TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0			1
 #define TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0				2
 

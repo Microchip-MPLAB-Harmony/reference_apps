@@ -204,49 +204,54 @@ static int Pic32Crypto(const byte* pIn, int inLen, word32* pOut, int outLen,
     bd_p->BD_CTRL.DESC_EN = 1;     /* enable this descriptor */
 
     /* begin access to hardware */
-    /* Software Reset the Crypto Engine */
-    CECON = 1 << 6;
-    while (CECON);
+    ret = wolfSSL_CryptHwMutexLock();
+    if (ret == 0) {
+        /* Software Reset the Crypto Engine */
+        CECON = 1 << 6;
+        while (CECON);
 
-    /* Clear the interrupt flags */
-    CEINTSRC = 0xF;
+        /* Clear the interrupt flags */
+        CEINTSRC = 0xF;
 
-    /* Run the engine */
-    CEBDPADDR = (unsigned int)KVA_TO_PA(&bd);
-    CEINTEN = 0x07; /* enable DMA Packet Completion Interrupt */
+        /* Run the engine */
+        CEBDPADDR = (unsigned int)KVA_TO_PA(&bd);
+        CEINTEN = 0x07; /* enable DMA Packet Completion Interrupt */
 
-    /* input swap, enable BD fetch and start DMA */
-#if PIC32_NO_OUT_SWAP
-    CECON = 0x25;
-#else
-    CECON = 0xa5; /* bit 7 = enable out swap */
-#endif
-
-    /* wait for operation to complete */
-    while (CEINTSRCbits.PKTIF == 0 && --timeout > 0) {};
-
-    /* Clear the interrupt flags */
-    CEINTSRC = 0xF;
-
-    /* check for errors */
-    if (CESTATbits.ERROP || timeout <= 0) {
-    #if 0
-        printf("PIC32 Crypto: ERROP %x, ERRPHASE %x, TIMEOUT %s\n",
-            CESTATbits.ERROP, CESTATbits.ERRPHASE, timeout <= 0 ? "yes" : "no");
+        /* input swap, enable BD fetch and start DMA */
+    #if PIC32_NO_OUT_SWAP
+        CECON = 0x25;
+    #else
+        CECON = 0xa5; /* bit 7 = enable out swap */
     #endif
-        ret = ASYNC_OP_E;
-    }
 
-    /* copy result to output */
-#if PIC32_NO_OUT_SWAP
-    /* swap bytes */
-    ByteReverseWords(out, (word32*)out_p, outLen);
-#elif defined(_SYS_DEVCON_LOCAL_H)
-    /* sync cache */
-    SYS_DEVCON_DataCacheInvalidate((word32)out, outLen);
-#else
-    XMEMCPY(out, out_p, outLen);
-#endif
+        /* wait for operation to complete */
+        while (CEINTSRCbits.PKTIF == 0 && --timeout > 0) {};
+
+        /* Clear the interrupt flags */
+        CEINTSRC = 0xF;
+
+        /* check for errors */
+        if (CESTATbits.ERROP || timeout <= 0) {
+        #if 0
+            printf("PIC32 Crypto: ERROP %x, ERRPHASE %x, TIMEOUT %s\n",
+                CESTATbits.ERROP, CESTATbits.ERRPHASE, timeout <= 0 ? "yes" : "no");
+        #endif
+            ret = ASYNC_OP_E;
+        }
+
+        wolfSSL_CryptHwMutexUnLock();
+
+        /* copy result to output */
+    #if PIC32_NO_OUT_SWAP
+        /* swap bytes */
+        ByteReverseWords(out, (word32*)out_p, outLen);
+    #elif defined(_SYS_DEVCON_LOCAL_H)
+        /* sync cache */
+        SYS_DEVCON_DataCacheInvalidate((word32)out, outLen);
+    #else
+        XMEMCPY(out, out_p, outLen);
+    #endif
+    }
 
     /* handle unaligned */
     if (isDynamic) {

@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: tcpipArp}
-children:
-- type: ElementPosition
-  attributes: {x: '30', y: '60', id: tcpipArp}

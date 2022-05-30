@@ -975,82 +975,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="sam_e54_cult_freertos.mhc"
-                     projectFiles="true">
-        <logicalFolder name="f1" displayName="TCP_IP_STACK" projectFiles="true">
-          <logicalFolder name="f1" displayName="APPLICATION_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/APPLICATION_LAYER.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipAnnounce.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDhcp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDns.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipHttpNet.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipNbns.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSmtpc.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSntp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpip_apps_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="BASIC_CONFIGURATION" projectFiles="true">
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/BASIC_CONFIGURATION.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipCmd.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipNetConfig.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipStack.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpip_basic_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="DRIVER_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/DRIVER_LAYER.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/drvExtPhyLan8740.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/drvGmac.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/drvMiim.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/DRIVER_LAYER/tcpip_driver_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f4" displayName="NETWORK_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/NETWORK_LAYER.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipArp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv4.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpip_network_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f5" displayName="PRESENTATION_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/PRESENTATION_LAYER/net_Pres.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/PRESENTATION_LAYER/PRESENTATION_LAYER.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f6" displayName="TRANSPORT_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipTcp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipUdp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpip_transport_config.yml</itemPath>
-            <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/TRANSPORT_LAYER/TRANSPORT_LAYER.yml</itemPath>
-          </logicalFolder>
-          <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/TCP_IP_STACK/TCP_IP_STACK.yml</itemPath>
-        </logicalFolder>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/drv_sdmmc.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/lib_crypto.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/lib_wolfcrypt.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sdhc1.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sercom0.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sercom1.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sercom6.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sys_debug.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_freertos/sam_e54_cult_freertos.mhc/tc0.yml</itemPath>
-      </logicalFolder>
       <logicalFolder name="f2" displayName="wolfcrypt" projectFiles="true">
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c</itemPath>
@@ -1071,14 +995,14 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.6.95"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.7.122"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1141,7 +1065,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value=";../src/config/sam_e54_cult_freertos/system/fs/fat_fs/file_system;../src/config/sam_e54_cult_freertos/system/fs/fat_fs/hardware_access;../src/config/sam_e54_cult_freertos/library;../src/config/sam_e54_cult_freertos/library/tcpip/src;../src/config/sam_e54_cult_freertos/library/tcpip/src/common;../src;../src/config/sam_e54_cult_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl;../src/third_party/rtos/FreeRTOS/Source/include;;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;;"/>
+                  value="../src;../src/config/sam_e54_cult_freertos;../src/config/sam_e54_cult_freertos/library;../src/config/sam_e54_cult_freertos/library/tcpip/src;../src/config/sam_e54_cult_freertos/library/tcpip/src/common;../src/config/sam_e54_cult_freertos/system/fs/fat_fs/file_system;../src/config/sam_e54_cult_freertos/system/fs/fat_fs/hardware_access;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1151,7 +1075,7 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN;"/>
+                  value="HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="tentative-definitions" value=""/>
@@ -1219,7 +1143,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";;"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -1242,7 +1166,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value=";../src/config/sam_e54_cult_freertos/system/fs/fat_fs/file_system;../src/config/sam_e54_cult_freertos/system/fs/fat_fs/hardware_access;../src;../src/config/sam_e54_cult_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;;"/>
+                  value="../src;../src/config/sam_e54_cult_freertos;../src/config/sam_e54_cult_freertos/system/fs/fat_fs/file_system;../src/config/sam_e54_cult_freertos/system/fs/fat_fs/hardware_access;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1276,9 +1200,13 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1286,6 +1214,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1299,7 +1229,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -1311,11 +1240,16 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </EdbgTool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1852,6 +1786,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1860,6 +1796,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1894,6 +1831,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </Tool>
     </conf>
   </confs>

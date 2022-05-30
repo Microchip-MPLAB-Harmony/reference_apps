@@ -4,13 +4,13 @@
    "content":{
       "metaDataVersion":"1.1.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54c_motion_surveillance",
-      "version":"1.4.0",
+      "version":"1.5.0",
       "displayName":"Motion Surveillance on SAM E54 Curiosity Ultra Development Board",
       "projectName":"motion_surveillance_sam_e54_cult",
       "shortDescription":"Demonstrates the detection of motion in front of camera and live preview of captured images on webnet server",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=5.45.0"
+         "semverRange":">=6.00"
       },
       "compiler":[
          {
@@ -20,11 +20,11 @@
       ],
       "dfp":{
          "name":"SAME54_DFP",
-         "semverRange":"^3.6.95"
+         "semverRange":"^3.7.122"
       },
       "configurator":{
-         "name":"MHC",
-         "semverRange":">=3.6.4"
+         "name":"MCC",
+         "semverRange":">=5.1.4"
       },
       "device":{
          "metaDataVersion":"1.0.0",

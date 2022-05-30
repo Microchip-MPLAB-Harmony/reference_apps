@@ -60,7 +60,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #define _TCPIP_COMMAND_PING4_DEBUG      0   // enable/disable extra ping debugging messages
 #endif
 
-#if defined(TCPIP_STACK_USE_IPV6) && defined(TCPIP_STACK_USE_ICMPV6_CLIENT) && (TCPIP_ICMPV6_CLIENT_USER_NOTIFICATION != 0)
+#if defined(TCPIP_STACK_USE_IPV6) && defined(TCPIP_STACK_USE_ICMPV6_CLIENT) && defined(TCPIP_ICMPV6_CLIENT_USER_NOTIFICATION) && (TCPIP_ICMPV6_CLIENT_USER_NOTIFICATION != 0)
 #define _TCPIP_COMMAND_PING6
 #endif
 
@@ -2326,7 +2326,7 @@ static int _Command_NetworkOnOff(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
 #endif  // defined(_TCPIP_STACK_COMMANDS_STORAGE_ENABLE)
     TCPIP_NETWORK_CONFIG ifConf, *pIfConf;
     SYS_MODULE_OBJ      tcpipStackObj;
-    TCPIP_STACK_INIT    tcpip_init_data;
+    TCPIP_STACK_INIT    tcpip_init_data = {{0}};
     uint16_t net_ix = 0;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
@@ -2358,6 +2358,12 @@ static int _Command_NetworkOnOff(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
         // get the data passed at initialization
         tcpipStackObj = TCPIP_STACK_Initialize(0, 0);
         TCPIP_STACK_InitializeDataGet(tcpipStackObj, &tcpip_init_data);
+        if(tcpip_init_data.pNetConf == 0)
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Operation failed. No configuration\r\n");
+            return true;
+        }
+
         pIfConf = &ifConf;
         memcpy(pIfConf, tcpip_init_data.pNetConf + net_ix, sizeof(*pIfConf));
 
@@ -2433,9 +2439,9 @@ static int _Command_StackOnOff(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** arg
     TCPIP_COMMAND_STG_DCPT  *pDcpt;
     TCPIP_NETWORK_CONFIG    *pCurrConf, *pDstConf;
 #endif  // defined(_TCPIP_STACK_COMMANDS_STORAGE_ENABLE)
-    TCPIP_STACK_INIT        tcpipInit;
     SYS_MODULE_OBJ          tcpipStackObj;     // stack handle
     const char              *msg;
+    TCPIP_STACK_INIT        tcpipInit;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
     if (argc < 2)
@@ -3016,11 +3022,6 @@ static void CommandPingHandler(const  TCPIP_ICMP_ECHO_REQUEST* pEchoReq, TCPIP_I
             errorMask |= 0x2;
         }
 
-        if(pEchoReq->targetAddr.Val != icmpTargetAddr.Val)
-        {
-            errorMask |= 0x4;
-        }
-
         if(pEchoReq->dataSize != icmpPingSize)
         {
             errorMask |= 0x8;
@@ -3519,7 +3520,7 @@ static void _CommandArp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     IPV4_ADDR ipAddr;
     TCPIP_ARP_RESULT  arpRes;
     TCPIP_MAC_ADDR    macAddr;
-    char*       message;
+    const char*       message;
     char        addrBuff[20];
     size_t      arpEntries, ix;
     TCPIP_ARP_ENTRY_QUERY arpQuery;
@@ -3605,7 +3606,7 @@ static void _CommandArp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
         if (strcmp(argv[2], "query") == 0)
         {   // query for an address
             arpRes = TCPIP_ARP_EntryGet(netH, &ipAddr, &macAddr, false);
-            if(arpRes == ARP_RES_OK)
+            if(arpRes == ARP_RES_ENTRY_SOLVED)
             {
                 TCPIP_Helper_MACAddressToString(&macAddr, addrBuff, sizeof(addrBuff));
                 (*pCmdIO->pCmdApi->print)(cmdIoParam, "arp: IPv4 address: %s, MAC Address: %s\r\n", argv[3], addrBuff);
@@ -5097,7 +5098,7 @@ char ftpc_src_pathname[20];
 char ftpc_dst_pathname[20];
 char ctrl_buffer[150];
 
-void ctrlSktHandler(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, TCPIP_FTPC_CTRL_EVENT_TYPE ftpcEvent,
+void ctrlSktHandler(TCPIP_FTPC_CONN_HANDLE_TYPE ftpCliHandle, TCPIP_FTPC_CTRL_EVENT_TYPE ftpcEvent,
                                             TCPIP_FTPC_CMD cmd, char * ctrlbuff, uint16_t ctrllen)
 {
     
@@ -5129,7 +5130,7 @@ void ctrlSktHandler(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, TCPIP_FTPC_CTRL_EVEN
 //This callback function returns 'true' when Data-Socket Rx/Tx data is handled in this callback itself.
 //Then, FTP Client function won't store/retrieve data to/from FileSystem.
 //When it returns 'false', the FTP Client function will store/retrieve data to/from FileSystem.
-bool dataSktHandler(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, TCPIP_FTPC_DATA_EVENT_TYPE ftpcEvent,
+bool dataSktHandler(TCPIP_FTPC_CONN_HANDLE_TYPE ftpCliHandle, TCPIP_FTPC_DATA_EVENT_TYPE ftpcEvent,
                                             TCPIP_FTPC_CMD cmd, char * databuff, uint16_t  * datalen)
 {
     static uint32_t buffCount= 0;
@@ -5195,22 +5196,22 @@ bool dataSktHandler(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, TCPIP_FTPC_DATA_EVEN
     
 }
 
-void ftpc_res_print(SYS_CMD_DEVICE_NODE* pCmdIO, TCPIP_FTPC_RETURN_TYPE res)
+void ftpc_res_print(SYS_CMD_DEVICE_NODE* pCmdIO, TCPIP_FTPC_RETURN_TYPE ftpcRes)
 {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
-    if(res == TCPIP_FTPC_RET_OK)
+    if(ftpcRes == TCPIP_FTPC_RET_OK)
     {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "FTPC - Command Started\r\n");
     }
-    else if(res == TCPIP_FTPC_RET_BUSY)
+    else if(ftpcRes == TCPIP_FTPC_RET_BUSY)
     {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "FTPC - Not Ready\r\n");
     }        
-    else if(res == TCPIP_FTPC_RET_NOT_CONNECT)
+    else if(ftpcRes == TCPIP_FTPC_RET_NOT_CONNECT)
     {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "FTPC - Not Connected\r\n");
     }
-    else if(res == TCPIP_FTPC_RET_NOT_LOGIN)
+    else if(ftpcRes == TCPIP_FTPC_RET_NOT_LOGIN)
     {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "FTPC - Not Logged In\r\n");
     }
@@ -5231,7 +5232,7 @@ static int _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
         TCPIP_FTPC_CTRL_CONN_TYPE ftpcConn;
         static IP_MULTI_ADDRESS serverIpAddr;
         static IP_ADDRESS_TYPE serverIpAddrType;
-        static uint16_t    tcpipServerPort = 0;
+        static uint16_t    ftpcServerPort = 0;
 
         if ((argc < 3)||(argc > 4))
         {
@@ -5240,12 +5241,12 @@ static int _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
             return false;
         }
         
-        tcpipServerPort = 0;
+        ftpcServerPort = 0;
         if (argc == 4)
         {
             if(strcmp("0",argv[3]) != 0)
             {        
-                tcpipServerPort = atoi(argv[3]);
+                ftpcServerPort = atoi(argv[3]);
             }            
         }    
         
@@ -5266,7 +5267,7 @@ static int _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
         
         ftpcConn.ftpcServerAddr = &serverIpAddr;
         ftpcConn.ftpcServerIpAddrType = serverIpAddrType;
-        ftpcConn.serverCtrlPort = tcpipServerPort;
+        ftpcConn.serverCtrlPort = ftpcServerPort;
         
         ftpcHandle = TCPIP_FTPC_Connect(&ftpcConn, ctrlSktHandler, &res);
         if(res != TCPIP_FTPC_RET_OK)
@@ -5844,10 +5845,10 @@ static void _CommandIpv4Arp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
         }
     }
 
-    bool res = TCPIP_IPv4_ArpStatGet(&arpStat, statClear);
+    bool arpRes = TCPIP_IPv4_ArpStatGet(&arpStat, statClear);
 
-    (*pCmdIO->pCmdApi->print)(cmdIoParam, "IPv4 ARP Stat: %s\r\n", res ? "success" : "Failed");
-    if(res)
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "IPv4 ARP Stat: %s\r\n", arpRes ? "success" : "Failed");
+    if(arpRes)
     {
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "pool: %d, pend: %d, txSubmit: %d, fwdSubmit: %d\r\n", arpStat.nPool, arpStat.nPend, arpStat.txSubmit, arpStat.fwdSubmit);
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "txSolved: %d, fwdSolved: %d, totSolved: %d, totFailed: %d\r\n", arpStat.txSolved, arpStat.fwdSolved, arpStat.totSolved, arpStat.totFailed);
@@ -5912,16 +5913,17 @@ static void _CommandIpv4Table(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv
         return;
     }
 
-    size_t tableEntries = TCPIP_IPV4_ForwadTableSizeGet(netH);
+    size_t usedEntries;
+    size_t tableEntries = TCPIP_IPV4_ForwadTableSizeGet(netH, &usedEntries);
 
-    (*pCmdIO->pCmdApi->print)(cmdIoParam, "IPv4 Fwd Table for iface: %d, size: %d\r\n", index, tableEntries);
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "IPv4 Fwd Table for iface: %d, entries: %d, used: %d\r\n", index, tableEntries, usedEntries);
 
     for(ix = 0; ix < tableEntries; ix++)
     {
         TCPIP_IPV4_ForwadTableEntryGet(netH, ix, &fwdEntry);
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "IPv4 Fwd Entry: %d\r\n", ix);
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tnetAdd: 0x%08x, netMask: 0x%08x, gwAdd: 0x%08x\r\n", fwdEntry.netAddress, fwdEntry.netMask, fwdEntry.gwAddress);
-        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\toutIfIx: %d, inIfIx: %d, metric: %d\r\n", fwdEntry.outIfIx, fwdEntry.inIfIx, fwdEntry.metric);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\toutIfIx: %d, inIfIx: %d, metric: %d, nOnes: %d\r\n", fwdEntry.outIfIx, fwdEntry.inIfIx, fwdEntry.metric, fwdEntry.nOnes);
     }
 
 }
@@ -6095,8 +6097,8 @@ static void _CommandBridgeShowStats(SYS_CMD_DEVICE_NODE* pCmdIO, TCPIP_MAC_BRIDG
     for(ix = 0; ix < TCPIP_MAC_BRIDGE_MAX_PORTS_NO; ix++, pPort++)
     {
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t port %d stats:\r\n", ix);
-        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t pkts received: %d, dest me-ucast: %d, dest notme-ucast: %d, dest mcast: %d\r\n", pPort->rxPackets, pPort->rxDestMeUcast, pPort->rxDestNotMeUcast, pPort->rxDestMcast);
-        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t pkts reserved: %d, fwd ucast: %d, fwd mcast: %d, fwd direct: %d\r\n", pPort->reservedPackets, pPort->fwdUcastPackets, pPort->fwdMcastPackets, pPort->fwdDirectPackets);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t\t pkts received: %d, dest me-ucast: %d, dest notme-ucast: %d, dest mcast: %d\r\n", pPort->rxPackets, pPort->rxDestMeUcast, pPort->rxDestNotMeUcast, pPort->rxDestMcast);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\t\t pkts reserved: %d, fwd ucast: %d, fwd mcast: %d, fwd direct: %d\r\n", pPort->reservedPackets, pPort->fwdUcastPackets, pPort->fwdMcastPackets, pPort->fwdDirectPackets);
     }
 }
 
@@ -6236,19 +6238,19 @@ static void _CommandBridgeEventHandler(TCPIP_MAC_BRIDGE_EVENT evType, const void
             break;
 
         case TCPIP_MAC_BRIDGE_EVENT_FAIL_PKT_ALLOC:
-            sprintf(evBuff, "%s, packets: %u\r\n", "fail alloc", (size_t)param);
+            sprintf(evBuff, "%s, packets: %lu\r\n", "fail alloc", (size_t)param);
             break;
 
         case TCPIP_MAC_BRIDGE_EVENT_FAIL_DCPT_ALLOC:
-            sprintf(evBuff, "%s, descriptors: %u\r\n", "fail alloc", (size_t)param);
+            sprintf(evBuff, "%s, descriptors: %lu\r\n", "fail alloc", (size_t)param);
             break;
 
         case TCPIP_MAC_BRIDGE_EVENT_FAIL_MTU:
-            sprintf(evBuff, "%s, size: %u\r\n", "fail MTU", (size_t)param);
+            sprintf(evBuff, "%s, size: %lu\r\n", "fail MTU", (size_t)param);
             break;
 
         case TCPIP_MAC_BRIDGE_EVENT_FAIL_SIZE:
-            sprintf(evBuff, "%s, size: %u\r\n", "fail Size", (size_t)param);
+            sprintf(evBuff, "%s, size: %lu\r\n", "fail Size", (size_t)param);
             break;
 
         case TCPIP_MAC_BRIDGE_EVENT_PKT_POOL_EMPTY:
