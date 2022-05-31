@@ -44,18 +44,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="pic32mz_ef_sk.mhc" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/BSP_PIC32MZ_EF_Starter_Kit.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/core.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/nvm.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/project.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_sk/pic32mz_ef_sk.mhc/uart2.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_sk/harmony-manifest-success.yml</itemPath>
       <itemPath>uart_live_update_pic32mz_ef_sk.mc3</itemPath>
@@ -122,9 +110,9 @@
         <targetDevice>PIC32MZ2048EFH144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -167,7 +155,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_sk;;"/>
+                  value="../src;../src/config/pic32mz_ef_sk"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -244,7 +232,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -267,7 +255,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_sk;;"/>
+                  value="../src;../src/config/pic32mz_ef_sk"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -413,6 +401,9 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="lastid" value=""/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>

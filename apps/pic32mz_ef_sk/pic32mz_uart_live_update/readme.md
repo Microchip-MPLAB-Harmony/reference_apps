@@ -49,7 +49,7 @@ Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-su
 - For programming, connect a mini USB cable to the USB Debug port J3
 
 ## Programming/Debugging Application Project:
-- Open the project (getting_started_ext/firmware/pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
+- Open the project (pic32mz_uart_live_update/firmware/pic32mz_ef_sk.X) in MPLAB X IDE
 - Ensure "Starter Kits (PKOB)" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
@@ -62,7 +62,7 @@ Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-su
 2. Connect a mini USB cable to the DEBUG port of the PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit.
 3. Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: `<Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE.
 4. Build the Live update application (path: `<Live Update application folder>/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE **but do not program**.
-5. From the command prompt, run the bootloader host script "**btl_host.py**" available at `<Your Harmony Framework download folder>/bootloader/tools_archive` to program the application binary.
+5. From the command prompt, run the bootloader host script "**btl_host.py**" available at `<Your Harmony Framework download folder>/bootloader/tools` to program the application binary.
  - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/hex/pic32mz_ef_sk.X.production.bin`
   - **Note:** If you need to know more information on the bootloader host script, refer Help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm`
 6. Following screenshot shows successful programming of the application binary.
@@ -99,10 +99,11 @@ Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-su
 ## Comments:
 - Reference Application Note: [Live Update application on PIC32MZ MCUs using MPLAB Harmony v3](http://ww1.microchip.com/downloads/en/Appnotes/Live_Update_Application_on_PIC32MZ_MCUs_Using_MPLAB_Harmonyv3_DS00003703A.pdf)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
 
 ## Revision:
+- v1.5.0 Removed MHC support, Regenerated and tested application.
 - v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 regenerated and tested the application
 - v1.2.0 regenerated and tested the application
