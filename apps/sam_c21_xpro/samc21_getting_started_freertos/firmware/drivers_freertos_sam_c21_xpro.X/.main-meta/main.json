@@ -10,21 +10,21 @@
 		"shortDescription": "Demonstrates how to get started using Harmony drivers for peripherals like SERCOM(USART), SERCOM(I2C) with FreeRTOS and the basic peripherals like PORTS",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.0.0"
 			}
 		],
 		"dfp": {
 			"name": "SAMC21_DFP",
-			"semverRange": "^3.5.95"
+			"semverRange": "^3.6.101"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

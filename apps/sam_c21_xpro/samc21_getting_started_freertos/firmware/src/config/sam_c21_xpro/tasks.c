@@ -121,7 +121,7 @@ void SYS_Tasks ( void )
         /* Create OS Thread for APP_SENSOR_THREAD_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_SENSOR_THREAD_Tasks,
                 "APP_SENSOR_THREAD_Tasks",
-                128,
+                256,
                 NULL,
                 1,
                 &xAPP_SENSOR_THREAD_Tasks);
@@ -129,7 +129,7 @@ void SYS_Tasks ( void )
     /* Create OS Thread for APP_EEPROM_THREAD_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_EEPROM_THREAD_Tasks,
                 "APP_EEPROM_THREAD_Tasks",
-                256,
+                192,
                 NULL,
                 1,
                 &xAPP_EEPROM_THREAD_Tasks);

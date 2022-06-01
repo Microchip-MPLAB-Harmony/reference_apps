@@ -4,18 +4,18 @@
 
 
 project: samc21_getting_started_freertos
-creation_date: 2021-11-30T15:16:45.999+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-06-01T10:04:19.192+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
-mhc_version: v3.8.2
+mhc_version: v3.8.5
 mplabx_version: NA        # if MPLAB X plugin only
 plugin_version: NA        # if MPLAB X plugin only
 compiler: xc32
 
 modules:
-    - {name: "csp", version: "v3.10.0"}
+    - {name: "csp", version: "v3.12.0"}
     - {name: "core", version: "v3.10.0"}
-    - {name: "dev_packs", version: "v3.10.0"}
-    - {name: "bsp", version: "v3.10.0"}
+    - {name: "dev_packs", version: "v3.12.0"}
+    - {name: "bsp", version: "v3.12.0"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.1"}
 
