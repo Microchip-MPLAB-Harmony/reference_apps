@@ -4,13 +4,13 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sdadc_conversion_polling",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "SDADC Conversion polling Mode",
 		"projectName": "sdadc_conversion_interrupt_sam_c21n_xpro",
 		"shortDescription": "Demonstrates SDADC Conversion polling Mode Application on SAMC21N Xplained Pro Evaluation Kit",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
@@ -20,11 +20,11 @@
 		],
 		"dfp": {
 			"name": "SAMC21_DFP",
-			"semverRange": "^3.6.101"
+			"semverRange": "^3.8.119"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
