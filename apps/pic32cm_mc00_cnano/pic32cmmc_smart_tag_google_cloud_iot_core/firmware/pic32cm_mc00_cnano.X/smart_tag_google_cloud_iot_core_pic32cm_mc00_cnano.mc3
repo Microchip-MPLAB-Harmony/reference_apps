@@ -1,4 +1,4 @@
-<config configName="pic32cm_mc00_cnano" projectName="smart_tag_google_cloud_iot_core_pic32cm_mc00_cnano" configVersion="1.1" device="PIC32CM1216MC00032" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="pic32cm_mc00_cnano" projectName="smart_tag_google_cloud_iot_core_pic32cm_mc00_cnano" configVersion="1.1" device="PIC32CM1216MC00032" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -95,7 +95,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -767,8 +767,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;572&quot; canvasWidth=&quot;493&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;225&quot; y=&quot;26&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;atecc608&quot; x=&quot;398&quot; y=&quot;89&quot;/&gt;
@@ -792,6 +791,7 @@
         &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;tc0&quot; x=&quot;20&quot; y=&quot;147&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;572&quot; canvasWidth=&quot;493&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -8175,7 +8175,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\driver\winc\include\wdrv_winc.h</file>
-         <hash>715eee03cc55612339a9db0de747899de1b30b22963a0df2fb973de6b3d2c0d4</hash>
+         <hash>e56871a6643412f4b4b12e446a4e70d93e6167054908606baa6d99000e24a7c8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\driver\winc\wdrv_winc_sta.c</file>
@@ -8187,7 +8187,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\atcacert\atcacert_def.h</file>
-         <hash>137e9a945a894c50fab90914f10fdc7901ff467ab499e3eeb926cdda96a88716</hash>
+         <hash>b71f2998e92b947dc988a89e63e65440570def8d4cbf4cc5a7e3c972bccf5019</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\calib\calib_execution.c</file>
@@ -8275,7 +8275,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\driver\winc\wdrv_winc.c</file>
-         <hash>d3047c65974db02e261eb1ec9adaf3e58f82df8f1408521bcaaa6bc984685ea1</hash>
+         <hash>5aa3c4a81c9988bac9c2a0c35fef439b26e924730e51143c373db52f0c3e605c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\calib\calib_derivekey.c</file>
@@ -8383,7 +8383,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>36dc55ded90d258b6b37a247d543500316a51f9746080436ac8ff71dd0cc85d5</hash>
+         <hash>3f00a1654d74c9c6a9848334d57556ffab7528db36e85497d2ce514ef63d68aa</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\evsys.h</file>
@@ -8459,7 +8459,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\atca_iface.c</file>
-         <hash>254ed46541119063f075f135cadcadb6e835dee531f44f48e6ccd69f647f43c4</hash>
+         <hash>13a26caa7e2127e86e96f1c467c32a32ef82db258c3d74b619e34d672c278d38</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\calib\calib_hmac.c</file>
@@ -8475,7 +8475,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\atca_basic.c</file>
-         <hash>46def1e3462a4f47c953425b1f1a2917489889951b16c76f7b6f3e9b362d08f7</hash>
+         <hash>2f9a31bfc1ee348f443c1bb1b4f2a583cf1b5391e061d755bee83615fe3a205b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\atca_iface.h</file>
@@ -8643,7 +8643,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\driver\winc\include\wdrv_winc_nvm.h</file>
-         <hash>3d1472974eae02efa61a4fd6712f7f7ed2e9152bc07db0d47a1395127a84e31c</hash>
+         <hash>4cbede751b2b4c888b5263892a534d9421e3369582ea524c57abb396e03eaa9b</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm0plus.h</file>
@@ -9131,7 +9131,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\initialization.c</file>
-         <hash>5cd0326fbaf27041f7d99617154bf5097590002da7a56b05a834bb245c812295</hash>
+         <hash>43a9f63cedc3f1446140acf2f36722f97172ff4ca55fd31e083382c1b7df5c01</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\library\cryptoauthlib\atca_cfgs.h</file>
@@ -9235,11 +9235,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\definitions.h</file>
-         <hash>91e58aea36a01ea91ac1f0bd5d52819515f188864769558c56622b4511db36ea</hash>
+         <hash>4c206f0cbaacd1e09d2bf4684d7665229f51c2d314e22b2b9ebf32bf38fbc007</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\startup_xc32.c</file>
-         <hash>be2c779688c247443de3423ff9ffd8079d8e5afd090c46997829e1cf1d57c73f</hash>
+         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\driver\driver.h</file>

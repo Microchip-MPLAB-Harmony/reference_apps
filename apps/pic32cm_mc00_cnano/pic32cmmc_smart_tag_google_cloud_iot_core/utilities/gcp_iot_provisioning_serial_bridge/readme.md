@@ -59,8 +59,9 @@ The pre-built hex file can be programmed by following the below steps
 - Refer the **"Running the Demo"** section in the documentation under utility/[readme](../readme.md) file
 
 ## Comments:
- - [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
+ - [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
  - [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
-- v1.4.0 released demo application
+- v1.5.0 - Tested demo application.
+- v1.4.0 - Released demo application

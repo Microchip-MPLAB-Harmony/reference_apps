@@ -39,4 +39,5 @@ certificates.
 <img src = "images/firmware_upg.png" align="middle">
 
 ### Revision:
-- v1.4.0 released utility
+- v1.5.0 - Tested utility.
+- v1.4.0 - Released utility
