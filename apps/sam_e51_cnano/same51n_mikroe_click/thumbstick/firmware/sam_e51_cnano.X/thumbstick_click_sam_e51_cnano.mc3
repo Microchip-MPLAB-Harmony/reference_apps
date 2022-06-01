@@ -50,8 +50,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;250&quot; canvasWidth=&quot;444&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;cmsis&quot; x=&quot;332&quot; y=&quot;36&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;256&quot; y=&quot;36&quot;/&gt;
@@ -64,6 +63,7 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;stdio&quot; x=&quot;273&quot; y=&quot;80&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;250&quot; canvasWidth=&quot;444&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -5519,12 +5519,12 @@
          <hash>a69de3305c5a39fba17ec1349d9cde09f7813cbefaa55c6955b598e58c1dd693</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
-         <hash>1a0a8a6cad53e392eb396596df177e4cc72fb79a08ac661ca63569cc66dd31cd</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom7.h</file>
          <hash>a91b323a9f4ace7e641e48a40069a9dd2af8a1b24181d9d97b015b6cd4e014f8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
+         <hash>1a0a8a6cad53e392eb396596df177e4cc72fb79a08ac661ca63569cc66dd31cd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\rstc.h</file>
@@ -5947,12 +5947,12 @@
          <hash>b6eda103eed051356faccf2b2cac9668c1bd7744d909a84821cca4e72917995e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\adc0.h</file>
          <hash>7e1be19136aa1a30e7532779bf9c86de30e4b476b6273e90f7aa99c8f648f3eb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
+         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\wdt.h</file>
