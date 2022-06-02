@@ -1,4 +1,4 @@
-<config configName="pic32mzef_c2_ak4954" projectName="sdcard_player_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="pic32mzef_c2_ak4954" projectName="sdcard_player_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.4">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -75,7 +75,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -6616,10 +6616,6 @@
          <hash>fd0e9c9a7fbeb01fb289eecda8b0f0b3cfe0b86da13bc26801f611faa3b9a74c</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\i2s\src\drv_i2s_local.h</file>
-         <hash>81c6036518412938739cf425b2c1dca665ce1219546d2de2ad2b302b17ddda29</hash>
-      </entry>
-      <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\cache\plib_cache.c</file>
          <hash>28c61150a2e09ba1c80c2a1658351ba6d75e37ea0f3dbe56b4adc79ff49d7a64</hash>
       </entry>
@@ -6633,7 +6629,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>dabadd4a6d8d2209c509acb8d96428d14aa2dbbeb979d5bf82077c1525c9fc0d</hash>
+         <hash>f096f5ae99cc8afed55a3b680a734cb07fae84f016eaf39a06e4d76cee50c6a4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\i2c\drv_i2c.h</file>
@@ -6657,11 +6653,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\fs\src\sys_fs_fat_interface.c</file>
-         <hash>49f6ff00c0252cd8e7cd04545beca9c0bb3f924680b81bf0002a85e906a87971</hash>
+         <hash>581a4c11a2e6c4aa4aa2c64742b276d5d4b3bd1dbdbed1983aab17f162f4c47b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\sdspi\src\drv_sdspi_plib_interface.c</file>
-         <hash>86cee32ad45b7f1a996de75ed28cc8a99e9fff63ef3ae5aabb9d3063efae24bf</hash>
+         <hash>35e6ebec47741fe1b0b778fe08f194fe5e49c71975c26d1e25b73636ed70bab8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\evic\plib_evic.c</file>
@@ -6673,7 +6669,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\sdspi\src\drv_sdspi_plib_interface.h</file>
-         <hash>a87c48a438f8d0b22d7d0a9733b5410a683291bda4e008cdf11f05b822eac8f4</hash>
+         <hash>752b2c57f09d38aa5d1e420b748c6a54bb137c7501817791d9a66fcfc965ee27</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\fs\src\sys_fs_media_manager_local.h</file>
@@ -6681,11 +6677,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\i2s\drv_i2s_definitions.h</file>
-         <hash>e1c8aaebe0052929b99538fd0e1abcafa253bf2cb5e1dd8328d7b682a57e66a2</hash>
+         <hash>c9665316bf4cdf44af0e4e312bdc54341ae07f19b7cabd08d8f45cd09fae2231</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\fs\sys_fs.h</file>
-         <hash>46fd6237f868cf8b35855f3d65c14dedf205e13399bb97e40788407d6554393e</hash>
+         <hash>46a5946f727b22530f0e0945a33cad93077c7b92c1bb2811959709ba7be60e9c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\driver_common.h</file>
@@ -6737,11 +6733,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\definitions.h</file>
-         <hash>0bad4c816ad64af2e924c33f3d94c336eb0db970e33ea8d9676e49d8a9f4821d</hash>
+         <hash>d2fa314ef3a6f831b444fcc892c626969a6f4ac253660a56a2b85a1fd86dc58b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\dma\sys_dma.h</file>
-         <hash>f6a34e470eff084fe3d053fdc545e43a66e02f68e7997f102467857969307f15</hash>
+         <hash>557896cd9ba1256276537379aa5f3cb06e1129a660db4a566e747a0ce6c63ec5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\dma\sys_dma.c</file>
@@ -6749,7 +6745,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954.c</file>
-         <hash>d7e6af38f8500841ce70a7182bac3831d69707136beed1d1ddb6fc66c431df61</hash>
+         <hash>875eef4fc24491f28fbd83a22f3f5614e7fea5958a95671af83d43e3344b38b6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\dma\sys_dma_mapping.h</file>
@@ -6757,19 +6753,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954.h</file>
-         <hash>0631c5ab82aedce626b7c6cf03e9b2329633992c46571021ae150d2797f00bd6</hash>
+         <hash>7315b95b44eb8b205aea27b551a5b5e9d8b45ef28730a88ec05bffed6900d888</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\sdspi\src\drv_sdspi.c</file>
-         <hash>575b25bd3c248b4212cb2614926adf8e01d8387d68ec98107415857a5a2cce54</hash>
+         <hash>bdcd9756cc63f2dd2c2494293c608c9deeb2a4dd9a734bf7552aaca60ccea9df</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\spi\spi_master\plib_spi1_master.h</file>
-         <hash>1c611503f0004efb57f75fd1d28c1012ebdb8f6690f1c960a82eb45004539e17</hash>
+         <hash>e022deaa6bc614442c072622acf6a7ebb292ba4db067510bd6e37af805bea226</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\spi\spi_master\plib_spi1_master.c</file>
-         <hash>c2cc90caba832d6b0ba934a20a3bfc52a6075987f72f2800f868b057b640e69a</hash>
+         <hash>ec0f9ba483c5587deed1d715e6242cb924c898fc6fad61d60651d3dc698dba3b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\int\sys_int.h</file>
@@ -6785,7 +6781,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\decoder\audio_decoders\wav\wav_dec.c</file>
-         <hash>9135c6722251a7b8898743c55d0ea2d1366ae254b1f6370ba8ddf209ba1df608</hash>
+         <hash>dd88f20cac22ed7f134fb5188980ada55ac1a7e0d1e752160ebd14ba3e61ec7f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\cache\plib_cache_pic32mz.S</file>
@@ -6793,7 +6789,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\decoder\audio_decoders\wav\wav_dec.h</file>
-         <hash>a38e5958a74ecd22448ad6985956993d529d6c96b2150ade54552541fee1a9a5</hash>
+         <hash>b7e58ae6917a4938da982de9871d6c715aff0ee36ab4af136b1ca68311423d10</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\bsp\bsp.c</file>
@@ -6801,15 +6797,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\dmac\plib_dmac.h</file>
-         <hash>66447415736201ca8be1fd8ead150eb844c3c0d2a99fdf9d9cf51066583da064</hash>
+         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>42b53125a4db88142ac66089ddacda881360473c45f1aa08065b79ee5bc79797</hash>
+         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\dmac\plib_dmac.c</file>
-         <hash>ebdb6f292a2cf47a8a22e92b1e4fe802d47a775d3a2f1c50acdc6d984d25fa40</hash>
+         <hash>7f1123beefc17dd11a542e9dcaac596549906bed3c2d4c0cc9c91d9f6f6dcb0b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\cache\plib_cache.h</file>
@@ -6832,8 +6828,12 @@
          <hash>8ff872169d3b8f9d684cd1a0ab64c6fda7265d684adbc45da4932c9ff571f822</hash>
       </entry>
       <entry>
+         <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\i2s\drv_i2s_local.h</file>
+         <hash>0caa5b71789f878856a6a8d635a4213584b6ee663e2d257488385fb92028d5df</hash>
+      </entry>
+      <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\clk\plib_clk.c</file>
-         <hash>b8c9a8e0f76741c1caa87ca8ed763cd6b3dd34a1eb43301d23c4c5f378e702c8</hash>
+         <hash>5ce263d0583ef720f0bb80ff95d0a405669b9a9d412d56d1b5d3ca180140e780</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\fs\sys_fs_media_manager.h</file>
@@ -6841,7 +6841,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\fs\src\sys_fs.c</file>
-         <hash>82c6ed83480642c6471111001d8f2b292dc384d86c59e73042ac843b581791f2</hash>
+         <hash>25d27349ac93f74a60186c235b8b1d7f6a4c25c53c97642f0df93109a2a6241d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\cache\sys_cache.h</file>
@@ -6849,7 +6849,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\sdspi\drv_sdspi_definitions.h</file>
-         <hash>2cd8f2ee95fb9110d4a6901548d7fc2813b849417b683bd4ffa236536b5afdcd</hash>
+         <hash>6506972cd90772194097fe9d177951755eeef742333dd109b8010a6d8a06f8f9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\cache\sys_cache.c</file>
@@ -6857,11 +6857,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\interrupts.h</file>
-         <hash>9bfaa5301613c53e3acc04db9591e1385e6db6094fcd7da928aeff80db54da90</hash>
+         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\i2s\drv_i2s.h</file>
-         <hash>6fd6f80b439deb495e6d1d2f3b33ca201617c28efbc4e370727551a4f3d5cdc8</hash>
+         <hash>71403974afcba76f5af909519c7a332a6cabe0dda393318ff15e05c4275cc92c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\interrupts.c</file>
@@ -6905,7 +6905,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\driver\sdspi\src\drv_sdspi_local.h</file>
-         <hash>506a91bbb9ed6e8f720807de467e6acb2916b796cc48a34367e796f7ff602967</hash>
+         <hash>1d43abbabd895d565f4eb452875df193bf673d6cee98c30c96ce59861c61ab5d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\decoder\audio_decoders.h</file>
@@ -6925,7 +6925,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\i2s\src\drv_i2s.c</file>
-         <hash>34ba276e274722799c0d8b38b1615d7fe0073e647e1d2f851b504c164f3e2d06</hash>
+         <hash>57e31c362cde38fd5642c091174359586b20346c278b2ba78652f0a55af15d7b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\spi\spi_master\plib_spi_master_common.h</file>
@@ -6941,15 +6941,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\configuration.h</file>
-         <hash>7f710c2f19187a30f9e06f6c37f89ea0751f4f57f0db5dbfd85406efcba4136d</hash>
+         <hash>0c1c86e309b4c2b2ede8b0eedcdc3e2e7ef7b761898e125403641d7e5e5e1b9c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\peripheral\i2s\plib_i2s2.c</file>
-         <hash>37a43ddb4ba9bb796bedc963e2a1b8379a963c81e1feb152fb09ece84ed3e60c</hash>
+         <hash>32f0e818d38bf7f05bc61ed0b72a593546c9392c0172f1e0cec82dcca2258ff9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\initialization.c</file>
-         <hash>4b85820a437b4c8f4c9b3ec97933acd5a2b9c27a186ed05c98e59f746a7d60cb</hash>
+         <hash>2c3507809d60a05211152649ce84e6554655d9e5d3148d81bad11a35b2311b50</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\osal\osal.h</file>
@@ -6965,7 +6965,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\fs\fat_fs\hardware_access\diskio.c</file>
-         <hash>3c04d6461debd8fecfa0eb937826775dc369b41ef448ce0cd8c3f119ef9e3171</hash>
+         <hash>2756c6018e44cb21f6fdad23a82d80c44c6a6ae6cf9456504404789493bb4973</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\time\sys_time_definitions.h</file>
@@ -6981,7 +6981,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954_local.h</file>
-         <hash>fba30579fd19ef29bf5a599d74022f4a350be64b353bfb72007d1c9a5cbe9e23</hash>
+         <hash>eeefe98fd85d5ff67335635a321fa57492a55f5b87e0d88d41bf0b29524b45f2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\system\system_media.h</file>
@@ -6989,7 +6989,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\gpio\plib_gpio.c</file>
-         <hash>1dc321fa7157239f3a42866bdabe2c23c6e58f19083c0353ff441809232c0119</hash>
+         <hash>18a382eb87c73347277ebb1a9e65037a7239b4a756587a81b312de0ae4547bda</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\user.h</file>
@@ -6997,11 +6997,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\toolchain_specifics.h</file>
-         <hash>5a13891d073d2ad5773c0c59ebe34074f2373103d565643f9e36a3b792feae9c</hash>
+         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\gpio\plib_gpio.h</file>
-         <hash>c09995e316ddbc8a1046a23908c6d5b480ea5c763882992d4339e1a2cfa29dc3</hash>
+         <hash>4471c66737fc2d2a00f19b150969ee3fc780e53aa1f4dd4505c92a14d2cfa334</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzef_c2_ak4954\peripheral\cache\plib_cache_local.h</file>

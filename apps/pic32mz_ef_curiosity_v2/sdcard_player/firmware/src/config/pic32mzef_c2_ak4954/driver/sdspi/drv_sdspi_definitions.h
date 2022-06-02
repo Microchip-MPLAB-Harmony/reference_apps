@@ -50,7 +50,6 @@
 // *****************************************************************************
 
 #include "system/ports/sys_ports.h"
-#include "system/dma/sys_dma.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -150,7 +149,7 @@ typedef    bool (* DRV_SDSPI_PLIB_READ)(void*, size_t);
 
 typedef    bool (* DRV_SDSPI_PLIB_SETUP)(DRV_SDSPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock);
 
-typedef    bool (* DRV_SDSPI_PLIB_IS_BUSY)(void);
+typedef    bool (* DRV_SPI_PLIB_TRANSMITTER_IS_BUSY)(void);
 
 typedef    void (* DRV_SDSPI_PLIB_CALLBACK_REGISTER)(DRV_SDSPI_PLIB_CALLBACK, uintptr_t);
 
@@ -182,7 +181,7 @@ typedef struct
     DRV_SDSPI_PLIB_SETUP                   transferSetup;
 
     /* SDSPI PLIB Transfer status API */
-    DRV_SDSPI_PLIB_IS_BUSY                 isBusy;
+    DRV_SPI_PLIB_TRANSMITTER_IS_BUSY       isTransmitterBusy;
 
     /* SDSPI PLIB callback register API */
     DRV_SDSPI_PLIB_CALLBACK_REGISTER       callbackRegister;
@@ -215,17 +214,6 @@ typedef struct
 
     const uint32_t*                 remapClockPhase;
 
-    /* Transmit DMA Channel */
-    SYS_DMA_CHANNEL                 txDMAChannel;
-
-    /* Receive DMA Channel */
-    SYS_DMA_CHANNEL                 rxDMAChannel;
-
-    /* This is the SPI transmit register address. Used for DMA operation. */
-    void*                           txAddress;
-
-    /* This is the SPI receive register address. Used for DMA operation. */
-    void*                           rxAddress;
 
 
     bool                            isFsEnabled;

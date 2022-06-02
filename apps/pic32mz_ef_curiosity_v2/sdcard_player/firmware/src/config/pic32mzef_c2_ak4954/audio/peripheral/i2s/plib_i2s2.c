@@ -50,6 +50,8 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#define	MIN(a,b)	(((a) < (b)) ? (a) : (b))
+
 #define SPI2_CON_FRMEN                      (1 << _SPI2CON_FRMEN_POSITION)      // always 1 for I2S
 #define SPI2_CON_FRMSYNC                    (0 << _SPI2CON_FRMSYNC_POSITION)
 #define SPI2_CON_FRMPOL                     (1 << _SPI2CON_FRMPOL_POSITION)
@@ -142,8 +144,8 @@ uint32_t I2S2_RefClockSet(uint32_t sysclk, uint32_t samplingRate, uint32_t mclk_
     uint32_t error_0 = abs(refclk_0 - refclk);
     uint32_t error_p1 = abs(refclk_p1 - refclk);
     
-    uint32_t minError = min(error_m1,error_0);
-    minError = min(minError,error_p1);
+    uint32_t minError = MIN(error_m1,error_0);
+    minError = MIN(minError,error_p1);
     
     if (minError == error_m1)
     {
@@ -238,3 +240,4 @@ uint32_t I2S2_BaudRateSet(uint32_t bitClk, uint32_t baudRate)
     
     return t_brg;
 }
+ 

@@ -53,6 +53,14 @@
 #include <stdlib.h>
 #include "definitions.h"
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Constants and Macros
@@ -1178,5 +1186,11 @@ static uint8_t _DRV_AK4954_CONTROL_REG_FIELD_WRITE_Wrapper(DRV_AK4954_OBJ *drvOb
     None
 */
 static uint8_t _DRV_AK4954_CONTROL_REG_BIT_WRITE_Wrapper(DRV_AK4954_OBJ *drvObj, uint8_t reg_addr, uint8_t pos, uint8_t val);
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
+#endif
+//DOM-IGNORE-END
 
 #endif // #ifndef _DRV_AK4954_LOCAL

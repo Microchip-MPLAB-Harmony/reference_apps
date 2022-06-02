@@ -73,43 +73,6 @@
 
 void _DRV_SDSPI_SPIPlibCallbackHandler( uintptr_t context );
 
-// *****************************************************************************
-/* SDSPI RX DMA Event Handler
-
-  Summary:
-    Event handler registered by the SD card driver with the DMA System service
-    for the receive DMA channel
-
-  Description:
-    This event handler is called by the DMA System Service when a DMA transfer
-    is complete.
-
-  Remarks:
-    Block transfers always block on a semaphore in an RTOS environment. This
-    semaphore is released from this callback when DMA is used.
-*/
-
-void _DRV_SDSPI_RX_DMA_CallbackHandler(
-    SYS_DMA_TRANSFER_EVENT event,
-    uintptr_t context
-);
-
-// *****************************************************************************
-/* SDSPI TX DMA Event Handler
-
-  Summary:
-    Event handler registered by the SD card driver with the DMA System service
-    for the transmit DMA channel
-
-  Description:
-
-  Remarks:
-*/
-
-void _DRV_SDSPI_TX_DMA_CallbackHandler(
-    SYS_DMA_TRANSFER_EVENT event,
-    uintptr_t context
-);
 
 // *****************************************************************************
 /* SD Card SPI Write

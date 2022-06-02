@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: BSP_PIC32MZ_EF_Curiosity_2.0, bsp: 'true'}
-children:
-- type: ElementPosition
-  attributes: {x: '339', y: '25', id: BSP_PIC32MZ_EF_Curiosity_2.0}

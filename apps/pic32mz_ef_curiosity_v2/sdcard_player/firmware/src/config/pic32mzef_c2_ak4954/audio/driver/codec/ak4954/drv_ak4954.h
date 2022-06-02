@@ -59,6 +59,14 @@
 #include "system/int/sys_int.h"
 #include "driver/driver_common.h"
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -739,6 +747,46 @@ void DRV_AK4954_EnableInitialization(SYS_MODULE_OBJ object);
     This is not needed for audio-only applications without a Bluetooth module.
 */
 bool DRV_AK4954_IsInitializationDelayed(SYS_MODULE_OBJ object);
+
+// *****************************************************************************
+/* Function:
+    bool DRV_AK4954_ClientReady( iClient )
+
+  Summary:
+    Returns true if the AK4954 driver is ready for client operations
+
+  Description:
+    Returns true if the AK4954 driver is ready for client operations
+
+  Precondition:
+    Function DRV_AK4954_Initialize/DRV_AK4954_Open should have been called 
+    before calling this function.
+
+  Parameters:
+    object          - Driver object handle, returned from the
+                      DRV_AK4954_Initialize routine
+
+  Returns:
+   true - Driver is open for client operations
+   false - driver is not ready for client operations
+
+  Example:
+    <code>
+    SYS_MODULE_OBJ      object;     // Returned from DRV_AK4954_Initialize
+    SYS_STATUS          AK4954Status;
+
+    AK4954Status = DRV_AK4954_Status(object);
+    if (DRV_AK4954_ClientReady(0)==true)
+    {
+        //Ready to perform driver functions
+    }
+    </code>
+
+  Remarks:
+    Driver operation can only commence after the client interface is ready. 
+ */
+bool DRV_AK4954_ClientReady(uint32_t iClient);
+
 
 // *****************************************************************************
 /* Function:
@@ -2179,6 +2227,13 @@ int8_t* DRV_AK4954_VersionStrGet(void);
     None.
  */
 uint32_t DRV_AK4954_VersionGet(void);
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
+#endif
+//DOM-IGNORE-END
+
 
 #endif // #ifndef _DRV_AK4954_H
 /*******************************************************************************

@@ -66,9 +66,10 @@ void CORETIMER_Stop(void);
 uint32_t CORETIMER_CounterGet(void);
 void CORETIMER_CompareSet(uint32_t compare);
 
+
+
 void CORETIMER_DelayMs (uint32_t delay_ms);
 void CORETIMER_DelayUs (uint32_t delay_us);
-
 
 #ifdef __cplusplus // Provide C++ Compatibility
  }
