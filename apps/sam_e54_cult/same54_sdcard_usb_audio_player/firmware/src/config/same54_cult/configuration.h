@@ -268,7 +268,7 @@ extern "C" {
 #define DRV_USBFSV1_ENDPOINTS_NUMBER                        1
 
 /* Total number of devices to be supported */
-#define USB_HOST_DEVICES_NUMBER                             1
+#define USB_HOST_DEVICES_NUMBER                             1 
 
 /* Target peripheral list entries */
 #define  USB_HOST_TPL_ENTRIES                               1 
