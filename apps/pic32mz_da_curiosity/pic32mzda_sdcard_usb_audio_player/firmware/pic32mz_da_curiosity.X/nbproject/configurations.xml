@@ -33,6 +33,7 @@
               <logicalFolder name="f1" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/pic32mzda_curiosity/audio/driver/i2s/drv_i2s.h</itemPath>
                 <itemPath>../src/config/pic32mzda_curiosity/audio/driver/i2s/drv_i2s_definitions.h</itemPath>
+                <itemPath>../src/config/pic32mzda_curiosity/audio/driver/i2s/drv_i2s_local.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
@@ -407,41 +408,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="pic32mzda_curiosity.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_codec_ak4954.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/audio_decoders.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/a_i2s1.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/ddr.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_sdmmc.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_disp_pdatm4301b_480x272.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_hal_le.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_legato.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/gfx_maxtouch_controller.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c1.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/i2c2.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/legato_gfx_pda_tm4301b.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/le_gfx_driver_glcd.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/project.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sdhc.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_input.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/uart4.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host.yml</itemPath>
-        <itemPath>../src/config/pic32mzda_curiosity/pic32mzda_curiosity.mhc/usb_host_msd.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mzda_curiosity/harmony-manifest-success.yml</itemPath>
       <itemPath>sdcard_usb_audio_player_pic32mz_da_curiosity.mc3</itemPath>
@@ -870,9 +836,9 @@
         <targetDevice>PIC32MZ2064DAR176</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -915,7 +881,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP;;;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;"/>
+                  value="../src;../src/config/pic32mzda_curiosity;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2064DAR176_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -992,7 +958,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -1015,7 +981,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mzda_curiosity;../src/packs/PIC32MZ2064DAR176_DFP;;;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;"/>
+                  value="../src;../src/config/pic32mzda_curiosity;../src/config/pic32mzda_curiosity/system/fs/fat_fs/file_system;../src/config/pic32mzda_curiosity/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2064DAR176_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1189,6 +1155,8 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="freeze.timers" value="false"/>
@@ -1220,6 +1188,7 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
@@ -1311,6 +1280,8 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="freeze.timers" value="false"/>
@@ -1327,7 +1298,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -1340,6 +1310,7 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>

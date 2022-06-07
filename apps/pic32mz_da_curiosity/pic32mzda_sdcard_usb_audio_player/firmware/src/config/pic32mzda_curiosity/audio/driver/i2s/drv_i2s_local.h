@@ -119,6 +119,38 @@ typedef enum
 
 
 // *****************************************************************************
+/* I2S Driver Buffer States
+
+   Summary
+    Identifies the possible state of the buffer that can result from a
+    buffer request add or queue purge request.
+
+   Description
+    This enumeration identifies the possible state of the buffer that can
+    result from a buffer request add or queue purge request by the client.
+
+   Remarks:
+    DRV_I2S_BUFFER_IS_FREE is the state of the buffer which is in the
+    free buffer pool.
+
+*/
+typedef enum
+{
+    /* NO Process*/
+    DRV_I2S_TASK_PROCESS_NONE,
+
+    /* Processing Read Only Queue Buffers */
+    DRV_I2S_TASK_PROCESS_READ_ONLY,
+
+    /* Processing Write Only Queue Buffers */
+    DRV_I2S_TASK_PROCESS_WRITE_ONLY,
+
+    /* Processing Write Read Queue Buffers */
+    DRV_I2S_TASK_PROCESS_WRITE_READ
+} DRV_I2S_TASK_PROCESS;
+
+
+// *****************************************************************************
 /* I2S Driver Transfer Direction
 
    Summary
@@ -138,7 +170,10 @@ typedef enum
     DRV_I2S_DIRECTION_RX,
 
     /* Transmit Operation */
-    DRV_I2S_DIRECTION_TX
+    DRV_I2S_DIRECTION_TX,
+
+    //Receive and transmit simultaneously
+    DRV_I2S_DIRECTION_TX_RX,
 
 } DRV_I2S_DIRECTION;
 
@@ -230,10 +265,10 @@ typedef struct
     /* Hardware instance mutex */
     OSAL_MUTEX_DECLARE(mutexDriverInstance);
 
-    /* The buffer queue for the write operations */
+    /* The buffer queue for the write(Tx) and write/read (Tx/Rx) operations */
     DRV_I2S_BUFFER_OBJ  *queueWrite;
 
-    /* The buffer queue for the read operations */
+    /* The buffer queue for the read(Rx) operations */
     DRV_I2S_BUFFER_OBJ  *queueRead;
 
     /* Read queue size */
@@ -260,14 +295,17 @@ typedef struct
     /* This is the I2S receive register address. Used for DMA operation. */
     void * rxAddress;
     
-    /* This is the RX DMA channel interrupt source. */
+    /******************* Start of Code Specific to PIC32M* ***********************/
+    /* This is the TX DMA channel interrupt source. */
     INT_SOURCE interruptRxDMA;
-
-    /* This is the DMA channel interrupt source. */
-    INT_SOURCE interruptDMA;
+    /* This is the Rx DMA channel interrupt source. */
+    INT_SOURCE interruptTxDMA;
+    /******************* End of PIC32M* specific code ***********************/
 
     /* Size of DMA channel in I2S or SSC PLIB */
     uint8_t dmaDataLength;
+
+    DRV_I2S_TASK_PROCESS  process;
 
 } DRV_I2S_OBJ;
 

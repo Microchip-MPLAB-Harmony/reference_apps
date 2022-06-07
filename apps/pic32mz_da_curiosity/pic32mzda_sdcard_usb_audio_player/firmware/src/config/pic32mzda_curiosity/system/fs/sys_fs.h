@@ -121,7 +121,10 @@ typedef enum
     FAT,
 
     /* MPFS2 native File system */
-    MPFS2
+    MPFS2,
+
+    /*  LittleFS native File system */
+    LITTLEFS
 
 } SYS_FS_FILE_SYSTEM_TYPE;
 
@@ -398,9 +401,8 @@ typedef enum
     SYS_FS_ERROR_FS_NOT_SUPPORTED,
     /* (22) Requested native file system does not match the format of volume */
     SYS_FS_ERROR_FS_NOT_MATCH_WITH_VOLUME,
-    /* (23) Function not supported in native file system layer */
-    SYS_FS_ERROR_NOT_SUPPORTED_IN_NATIVE_FS
-
+/* (23) Function not supported in native file system layer */
+SYS_FS_ERROR_NOT_SUPPORTED_IN_NATIVE_FS
 } SYS_FS_ERROR;
 
 // *****************************************************************************

@@ -91,10 +91,10 @@
 #pragma config FDMTEN =     OFF
 
 /*** DEVCFG2 ***/
-#pragma config FPLLIDIV =   DIV_2
-#pragma config FPLLRNG =    RANGE_8_16_MHZ
+#pragma config FPLLIDIV =   DIV_3
+#pragma config FPLLRNG =    RANGE_5_10_MHZ
 #pragma config FPLLICLK =   PLL_POSC
-#pragma config FPLLMULT =   MUL_33
+#pragma config FPLLMULT =   MUL_50
 #pragma config FPLLODIV =   DIV_2
 #pragma config VBATBOREN =  ON
 #pragma config DSBOREN =    ON
@@ -303,8 +303,11 @@ DRV_I2S_INIT drvI2S0InitData =
     .dmaChannelReceive  = DRV_I2S_RCV_DMA_CH_IDX0,
     .i2sTransmitAddress = (void *)&(SPI1BUF),
     .i2sReceiveAddress = (void *)&(SPI1BUF),
-    .interruptDMA = _DMA0_VECTOR,
 
+    /************ code specific to PIC32M. ********************/
+    .interruptTxDMA = _DMA0_VECTOR,
+    .interruptRxDMA = _DMA1_VECTOR,
+    /************ end of PIC32M. specific code ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
@@ -315,6 +318,7 @@ DRV_I2S_INIT drvI2S0InitData =
 const DRV_MAXTOUCH_INIT drvMAXTOUCHInitData =
 {
     .drvOpen                     = DRV_I2C_Open,
+    .drvClose                    = DRV_I2C_Close,
     .orientation                 = 0,
     .horizontalResolution        = 480,
     .verticalResolution          = 272,
@@ -327,13 +331,13 @@ const DRV_AK4954_INIT drvak4954Codec0InitData =
 {
     .i2sDriverModuleIndex = DRV_AK4954_I2S_DRIVER_MODULE_INDEX_IDX0,
     .i2cDriverModuleIndex = DRV_AK4954_I2C_DRIVER_MODULE_INDEX_IDX0,
-    .masterMode = DRV_AK4954_MASTER_MODE,
-    .samplingRate = DRV_AK4954_AUDIO_SAMPLING_RATE,
-    .volume = DRV_AK4954_VOLUME,
-    .audioDataFormat = DRV_AK4954_AUDIO_DATA_FORMAT_MACRO,
-    .whichMicInput = DRV_AK4954_WHICH_MIC_INPUT,
-    .enableMicBias = DRV_AK4954_ENABLE_MIC_BIAS,
-    .micGain = DRV_AK4954_MIC_GAIN,
+    .masterMode           = DRV_AK4954_I2S_MASTER_MODE,
+    .samplingRate         = DRV_AK4954_AUDIO_SAMPLING_RATE,
+    .volume               = DRV_AK4954_VOLUME,
+    .audioDataFormat      = DRV_AK4954_AUDIO_DATA_FORMAT_MACRO,
+    .whichMicInput        = DRV_AK4954_WHICH_MIC_INPUT,
+    .enableMicBias        = DRV_AK4954_ENABLE_MIC_BIAS,
+    .micGain              = DRV_AK4954_MIC_GAIN,
     .delayDriverInitialization = DRV_AK4954_DELAY_INITIALIZATION,
 };
 
@@ -521,13 +525,15 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
 };
 
 
+
 const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
         .nativeFileSystemFunctions = &FatFsFunctions
-    }
+    },
 };
+
 
 // </editor-fold>
 
@@ -609,7 +615,6 @@ void SYS_Initialize ( void* data )
 
   
     CLK_Initialize();
-    
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 2;

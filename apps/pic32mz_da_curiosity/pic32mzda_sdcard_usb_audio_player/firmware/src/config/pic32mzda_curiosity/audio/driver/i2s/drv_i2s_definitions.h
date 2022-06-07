@@ -1,5 +1,5 @@
 /*******************************************************************************
-  SPI Driver Definitions Header File
+  I2S Driver Definitions Header File
 
   Company:
     Microchip Technology Inc.
@@ -253,11 +253,13 @@ typedef struct
     /* I2S receive register address used for DMA operation. */
     void                        *i2sReceiveAddress;
 
-    /* Interrupt source ID for DMA RX interrupt. */
-    INT_SOURCE                  interruptRxDMA;
+    /************ code specific to PIC32M. ********************/
+    /* Interrupt source ID for DMA TX interrupt. */
+    INT_SOURCE                  interruptTxDMA;
 
-    /* Interrupt source ID for DMA interrupt. */
-    INT_SOURCE                  interruptDMA;
+    /* Interrupt source ID for DMA Rx interrupt. */
+    INT_SOURCE                  interruptRxDMA;
+    /************ end of PIC32M. specific code ********************/
 
     /* DMA data length from I2S or SSC PLIB */
     uint8_t                     dmaDataLength;

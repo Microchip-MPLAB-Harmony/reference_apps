@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mzda_sdcard_usb_audio_player",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "SD Card USB Audio Player with display on PIC32MZ DA",
 		"projectName": "sdcard_usb_audio_player_pic32mz_da_curiosity",
 		"shortDescription": "SD Card USB Audio Player using High-Performance 4.3 WQVGA Display on PIC32MZ DA Curiosity Development Kit",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

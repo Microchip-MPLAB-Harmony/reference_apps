@@ -58,7 +58,7 @@
 #define SDHC_MODE_RESPTYPE_NONE                                 (0x00 << 16)
 
 #define SDHC_DMA_NUM_DESCR_LINES               1
-#define SDHC_BASE_CLOCK_FREQUENCY              99000000
+#define SDHC_BASE_CLOCK_FREQUENCY              100000000
 #define SDHC_MAX_BLOCK_SIZE                    0x200
 
 typedef unsigned long _paddr_t; /* a physical address */
@@ -381,20 +381,11 @@ void SDHC_DmaSetup (
     SDHCAADDR = (uint32_t)KVA_TO_PA(&sdhcDmaDescrTable[0]);
 }
 
+
 bool SDHC_ClockSet ( uint32_t speed)
 {
     uint32_t div = 0;
-    uint32_t baseclk_frq = 0;
-
-    /* Find the maximum clock frequency supported by the Host Controller. */
-    baseclk_frq = (SDHCCAP & (_SDHCCAP_BASECLK_MASK)) >> _SDHCCAP_BASECLK_POSITION;
-    if (baseclk_frq == 0)
-    {
-        return false;
-    }
-
-    /* Convert to Hertz */
-    baseclk_frq *= 1000000;
+    uint32_t sdhc_clk = 100000000;
 
     /* Disable clock before changing it */
     if (SDHCCON2 & _SDHCCON2_SDCLKEN_MASK)
@@ -403,9 +394,9 @@ bool SDHC_ClockSet ( uint32_t speed)
         SDHCCON2 &= ~(_SDHCCON2_SDCLKEN_MASK | _SDHCCON2_ICLKEN_MASK);
     }
 
-    if (speed < baseclk_frq)
+    if (speed < sdhc_clk)
     {
-        div = baseclk_frq / speed;
+        div = sdhc_clk / speed;
         div >>= 1;
     }
 

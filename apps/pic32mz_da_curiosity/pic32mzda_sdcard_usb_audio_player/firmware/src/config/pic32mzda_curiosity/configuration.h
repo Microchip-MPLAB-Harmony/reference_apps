@@ -56,7 +56,7 @@
 */
 
 #include "user.h"
-#include "toolchain_specifics.h"
+#include "device.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -85,7 +85,7 @@ extern "C" {
 #define SYS_TIME_HW_COUNTER_WIDTH                   (32)
 #define SYS_TIME_HW_COUNTER_PERIOD                  (4294967295U)
 #define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY                (198000000)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (200000000)
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (620)
 
 
@@ -103,13 +103,14 @@ extern "C" {
 #define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
-#define SYS_FS_ALIGNED_BUFFER_LEN         512
 
 
 #define SYS_FS_FAT_VERSION                "v0.14a"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
+#define SYS_FS_FAT_ALIGNED_BUFFER_LEN     512
+
 
 
 
@@ -146,15 +147,14 @@ extern "C" {
 #define DRV_I2C_CLOCK_SPEED_IDX1              100000
 
 /* I2S Driver Instance 0 Configuration Options */
-#define DRV_I2S_INDEX_0                       0
-#define DRV_I2S_CLIENTS_NUMBER_IDX0           1
-#define DRV_I2S_QUEUE_DEPTH_COMBINED          32
-#define DRV_I2S_QUEUE_SIZE_IDX0               32
-#define DRV_I2S_DATA_LENGTH_IDX0              16
-#define DRV_I2S_INT_SRC_IDX0                  _DMA0_VECTOR
-#define DRV_I2S_XMIT_DMA_CH_IDX0              SYS_DMA_CHANNEL_0
-#define DRV_I2S_RCV_DMA_CH_IDX0               SYS_DMA_CHANNEL_1
-
+#define DRV_I2S_INDEX_0                0
+#define DRV_I2S_CLIENTS_NUMBER_IDX0    1
+#define DRV_I2S_QUEUE_DEPTH_COMBINED                 (2*32)
+#define DRV_I2S_QUEUE_SIZE_IDX0        32
+#define DRV_I2S_DATA_LENGTH_IDX0       16
+#define DRV_I2S_INT_SRC_IDX0           _DMA0_VECTOR
+#define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_0
+#define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
 #define DRV_I2C_INSTANCES_NUMBER              2
@@ -172,7 +172,7 @@ extern "C" {
 #define DRV_AK4954_CLIENTS_NUMBER                           1
 #define DRV_AK4954_INSTANCES_NUMBER                         1
 
-#define DRV_AK4954_MASTER_MODE                              false
+#define DRV_AK4954_I2S_MASTER_MODE                              false
 #define DRV_AK4954_AUDIO_SAMPLING_RATE                      44100
 #define DRV_AK4954_VOLUME	                      	        200
 #define DRV_AK4954_AUDIO_DATA_FORMAT_MACRO             	    DRV_AK4954_AUDIO_DATA_FORMAT_I2S_16BIT_24BIT
@@ -189,6 +189,8 @@ extern "C" {
 
 #define DRV_CODEC_INDEX_0                                   DRV_AK4954_INDEX_0
 #define sysObjdrvCodec0                                     sysObj.drvak4954Codec0
+#define DRV_CODEC_I2S_MASTER_MODE                           DRV_AK4954_I2S_MASTER_MODE
+
 #define DRV_CODEC_BUFFER_HANDLE                             DRV_AK4954_BUFFER_HANDLE
 #define DRV_CODEC_BUFFER_HANDLE_INVALID                     DRV_AK4954_BUFFER_HANDLE_INVALID
 #define DRV_CODEC_BUFFER_EVENT_HANDLER                      DRV_AK4954_BUFFER_EVENT_HANDLER
@@ -196,8 +198,11 @@ extern "C" {
 #define DRV_CODEC_BUFFER_EVENT_COMPLETE                     DRV_AK4954_BUFFER_EVENT_COMPLETE
 #define DRV_CODEC_BUFFER_EVENT_ERROR                        DRV_AK4954_BUFFER_EVENT_ERROR
 #define DRV_CODEC_BUFFER_EVENT_ABORT                        DRV_AK4954_BUFFER_EVENT_ABORT
-#define DRV_CODEC_COMMAND_EVENT_HANDLER                     DRV_AK4954_COMMAND_EVENT_HANDLER
 
+#define DRV_CODEC_COMMAND_EVENT_HANDLER                     DRV_AK4954_COMMAND_EVENT_HANDLER
+#define DRV_CODEC_AUDIO_SAMPLING_RATE                       DRV_AK4954_AUDIO_SAMPLING_RATE
+#define DRV_CODEC_WHICH_MIC_INPUT                           DRV_AK4954_WHICH_MIC_INPUT
+#define DRV_CODEC_MIC_GAIN                                  DRV_AK4954_MIC_GAIN
 #define DRV_CODEC_CHANNEL_LEFT                              DRV_AK4954_CHANNEL_LEFT
 #define DRV_CODEC_CHANNEL_RIGHT                             DRV_AK4954_CHANNEL_RIGHT
 #define DRV_CODEC_CHANNEL_LEFT_RIGHT                        DRV_AK4954_CHANNEL_LEFT_RIGHT
@@ -205,6 +210,7 @@ extern "C" {
 #define DRV_CODEC_Initialize                                DRV_AK4954_Initialize
 #define DRV_CODEC_Deinitialize                              DRV_AK4954_Deinitialize
 #define DRV_CODEC_Status                                    DRV_AK4954_Status
+#define DRV_CODEC_ClientReady                               DRV_AK4954_ClientReady
 #define DRV_CODEC_Tasks                                     DRV_AK4954_Tasks
 #define DRV_CODEC_Open                                      DRV_AK4954_Open
 #define DRV_CODEC_Close                                     DRV_AK4954_Close
@@ -262,7 +268,7 @@ extern "C" {
 #define DRV_USBHS_ENDPOINTS_NUMBER                          1
 
 /* Total number of devices to be supported */
-#define USB_HOST_DEVICES_NUMBER                             1
+#define USB_HOST_DEVICES_NUMBER                             1 
 
 /* Target peripheral list entries */
 #define  USB_HOST_TPL_ENTRIES                               1 

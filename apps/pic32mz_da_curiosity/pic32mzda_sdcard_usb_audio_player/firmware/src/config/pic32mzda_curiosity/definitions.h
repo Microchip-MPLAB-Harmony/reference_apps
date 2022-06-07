@@ -52,8 +52,8 @@
 #include "peripheral/sdhc/plib_sdhc.h"
 #include "gfx/driver/controller/glcd/drv_gfx_glcd.h"
 #include "audio/driver/i2s/drv_i2s.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
+#include "driver/i2c/drv_i2c.h"
 #include "peripheral/coretimer/plib_coretimer.h"
 #include "usb/usb_chapter_9.h"
 #include "usb/usb_host.h"
@@ -78,8 +78,8 @@
 #include "peripheral/dmac/plib_dmac.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
-#include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "system/input/sys_input.h"
+#include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -101,7 +101,7 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 198000000
+#define CPU_CLOCK_FREQUENCY 200000000
 
 // *****************************************************************************
 // *****************************************************************************

@@ -96,7 +96,7 @@ void UART4_Initialize( void )
     U4STASET = (_U4STA_UTXEN_MASK | _U4STA_URXEN_MASK );
 
     /* BAUD Rate register Setup */
-    U4BRG = 214;
+    U4BRG = 216;
 
     /* Turn ON UART4 */
     U4MODESET = _U4MODE_ON_MASK;

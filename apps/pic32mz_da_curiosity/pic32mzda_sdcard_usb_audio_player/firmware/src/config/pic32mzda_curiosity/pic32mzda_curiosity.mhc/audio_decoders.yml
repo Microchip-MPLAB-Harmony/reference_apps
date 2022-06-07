@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: audio_decoders}
-children:
-- type: ElementPosition
-  attributes: {x: '339', y: '19', id: audio_decoders}

@@ -1,4 +1,4 @@
-<config configName="pic32mzda_curiosity" projectName="sdcard_usb_audio_player_pic32mz_da_curiosity" configVersion="1.1" device="PIC32MZ2064DAR176" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.3.3">
+<config configName="pic32mzda_curiosity" projectName="sdcard_usb_audio_player_pic32mz_da_curiosity" configVersion="1.1" device="PIC32MZ2064DAR176" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.4">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -131,7 +131,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1019,7 +1019,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;550&quot; canvasWidth=&quot;1113&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;398&quot; y=&quot;77&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;a_drv_i2s&quot; x=&quot;269&quot; y=&quot;304&quot;/&gt;
@@ -1051,7 +1052,6 @@
         &lt;ElementPosition dnOrder=&quot;27&quot; id=&quot;usb_host_msd&quot; x=&quot;774&quot; y=&quot;434&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;550&quot; canvasWidth=&quot;1113&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -3024,7 +3024,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_FPLLIDIV&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;DIV_2&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DIV_3&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3035,7 +3035,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_FPLLMULT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;MUL_33&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;MUL_50&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3046,7 +3046,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_FPLLRNG&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;RANGE_8_16_MHZ&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;RANGE_5_10_MHZ&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3090,7 +3090,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK1_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3101,7 +3101,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK2_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3112,7 +3112,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK3_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3123,7 +3123,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK4_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3134,7 +3134,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK5_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3145,7 +3145,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK6_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3156,7 +3156,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK7_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;198000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3190,7 +3190,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_REFCLK1_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;11291601&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;11280017&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3251,7 +3251,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_REFCLK4_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;99000000&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3288,7 +3288,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_REFCLK5_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;198000000&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3394,7 +3394,7 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;393&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;443&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3409,6 +3409,9 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -3486,7 +3489,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CPU_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3717,7 +3720,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;DDR_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3995,7 +3998,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;DMAC_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5260,7 +5263,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GLCD_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5315,7 +5318,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GPU_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5393,7 +5396,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;I2C1_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5547,7 +5550,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;I2C2_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5987,7 +5990,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;REFO1TRIM_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0xc4800000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0xdd800000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5998,7 +6001,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;REFO1_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6163,7 +6166,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;RTCC_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6185,7 +6188,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SDHC_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6251,7 +6254,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SPI1_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6284,7 +6287,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SPI3_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6339,7 +6342,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_CLK_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;198000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6969,7 +6972,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;UART4_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -7145,7 +7148,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;USB_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -7427,7 +7430,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core_timer&gt;
   &lt;core_timer dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core_timer&gt;
 &lt;/core_timer&gt;
@@ -7479,7 +7482,7 @@
   &lt;core_timer dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_PERIOD_MS&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Float dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;43383.508&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;42949.67&lt;/Value&gt;
       &lt;/Float&gt;
     &lt;/Attributes&gt;
   &lt;/core_timer&gt;
@@ -7502,7 +7505,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core_timer&gt;
   &lt;core_timer dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_PERIOD_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;0x182b8&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;0x186a0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core_timer&gt;
 &lt;/core_timer&gt;
@@ -8209,7 +8212,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;PixelClock&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;16500000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;16666666&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
 &lt;/gfx_hal_le&gt;
@@ -8220,7 +8223,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;RefreshRate&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_hal_le&quot; value=&quot;109&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_hal_le&quot; value=&quot;111&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
 &lt;/gfx_hal_le&gt;
@@ -8458,7 +8461,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c1&gt;
   &lt;i2c1 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;487&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;492&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c1&gt;
 &lt;/i2c1&gt;
@@ -8469,7 +8472,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c1&gt;
   &lt;i2c1 dnOrder=&quot;0&quot; id=&quot;I2CS_CORE_TIMER_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c1&gt;
 &lt;/i2c1&gt;
@@ -8480,7 +8483,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c1&gt;
   &lt;i2c1 dnOrder=&quot;0&quot; id=&quot;I2CS_RISE_TIME_CORE_TIMER_CNTS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;29&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;30&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c1&gt;
 &lt;/i2c1&gt;
@@ -8491,7 +8494,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c1&gt;
   &lt;i2c1 dnOrder=&quot;0&quot; id=&quot;I2CS_SETUP_TIME_CORE_TIMER_CNTS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;9&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;10&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c1&gt;
 &lt;/i2c1&gt;
@@ -8502,7 +8505,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c1&gt;
   &lt;i2c1 dnOrder=&quot;0&quot; id=&quot;I2C_CLOCK_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c1&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c1&gt;
 &lt;/i2c1&gt;
@@ -8586,7 +8589,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c2&gt;
   &lt;i2c2 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;487&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;492&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c2&gt;
 &lt;/i2c2&gt;
@@ -8597,7 +8600,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c2&gt;
   &lt;i2c2 dnOrder=&quot;0&quot; id=&quot;I2CS_CORE_TIMER_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c2&gt;
 &lt;/i2c2&gt;
@@ -8608,7 +8611,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c2&gt;
   &lt;i2c2 dnOrder=&quot;0&quot; id=&quot;I2CS_RISE_TIME_CORE_TIMER_CNTS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;29&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;30&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c2&gt;
 &lt;/i2c2&gt;
@@ -8619,7 +8622,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c2&gt;
   &lt;i2c2 dnOrder=&quot;0&quot; id=&quot;I2CS_SETUP_TIME_CORE_TIMER_CNTS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;9&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;10&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c2&gt;
 &lt;/i2c2&gt;
@@ -8630,7 +8633,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;i2c2&gt;
   &lt;i2c2 dnOrder=&quot;0&quot; id=&quot;I2C_CLOCK_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;i2c2&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/i2c2&gt;
 &lt;/i2c2&gt;
@@ -8761,7 +8764,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_driver_glcd&gt;
   &lt;le_gfx_driver_glcd dnOrder=&quot;0&quot; id=&quot;MasterClockSourceValue&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;198000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;200000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_driver_glcd&gt;
 &lt;/le_gfx_driver_glcd&gt;
@@ -8772,7 +8775,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_driver_glcd&gt;
   &lt;le_gfx_driver_glcd dnOrder=&quot;0&quot; id=&quot;PixelClock&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;16500000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;16666666&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_driver_glcd&gt;
 &lt;/le_gfx_driver_glcd&gt;
@@ -8866,7 +8869,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sdhc&gt;
   &lt;sdhc dnOrder=&quot;0&quot; id=&quot;SDHC_CLK_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sdhc&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sdhc&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sdhc&gt;
 &lt;/sdhc&gt;
@@ -9298,7 +9301,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart4&gt;
   &lt;uart4 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart4&quot; value=&quot;214&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart4&quot; value=&quot;216&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart4&gt;
 &lt;/uart4&gt;
@@ -9333,7 +9336,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart4&gt;
   &lt;uart4 dnOrder=&quot;0&quot; id=&quot;UART_CLOCK_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart4&quot; value=&quot;99000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart4&quot; value=&quot;100000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart4&gt;
 &lt;/uart4&gt;
@@ -9566,7 +9569,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\interrupts.h</file>
-         <hash>9bfaa5301613c53e3acc04db9591e1385e6db6094fcd7da928aeff80db54da90</hash>
+         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_radiobutton_group.c</file>
@@ -9582,7 +9585,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\fat_fs\hardware_access\diskio.c</file>
-         <hash>3c04d6461debd8fecfa0eb937826775dc369b41ef448ce0cd8c3f119ef9e3171</hash>
+         <hash>2756c6018e44cb21f6fdad23a82d80c44c6a6ae6cf9456504404789493bb4973</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_renderer.h</file>
@@ -9610,7 +9613,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\png\lodepng.c</file>
-         <hash>0ed39e9f0da8ff923efbe5b131c8b403ab4d774b916dfdfe9a3964e31708d500</hash>
+         <hash>684e7e52f3d373262c8859a7757121c2d269e29a99e039688ae524ec2fe08c9b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_renderer.c</file>
@@ -9650,7 +9653,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_gpu.c</file>
-         <hash>1a765159efdfdd5f9ca3c1fd4158223af8bcc42781452fd3339a4147e99b73d6</hash>
+         <hash>b0756ce63da7917dd1e428263ecd81410290af0c8a19255ff872dae39e6ef1c5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_widget.c</file>
@@ -9682,7 +9685,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\src\drv_i2s.c</file>
-         <hash>34ba276e274722799c0d8b38b1615d7fe0073e647e1d2f851b504c164f3e2d06</hash>
+         <hash>57e31c362cde38fd5642c091174359586b20346c278b2ba78652f0a55af15d7b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\drv_usbhs_host.c</file>
@@ -9694,7 +9697,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs.c</file>
-         <hash>82c6ed83480642c6471111001d8f2b292dc384d86c59e73042ac843b581791f2</hash>
+         <hash>25d27349ac93f74a60186c235b8b1d7f6a4c25c53c97642f0df93109a2a6241d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\sdhc\plib_sdhc_common.h</file>
@@ -9730,11 +9733,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c1_master.c</file>
-         <hash>705df66eedadd41c5ba38e1b8718eb0e198a2a7f0f97287f1e647d41c72ea04c</hash>
+         <hash>0c81424a8c92966f15a2ff5d78c51d81644eb22c456c5a9dee5b80b30f274d2d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\configuration.h</file>
-         <hash>88539320fa3d44b8bd99b5c211a277184040b3e7b66d5c1432bc3f3c811fa160</hash>
+         <hash>d504d696249572e5be875eda29ba93654282515276a7afcc5d180bfa086f8abe</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
@@ -9790,7 +9793,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_draw.c</file>
-         <hash>276a1e2a854fe9776127d144eb4d0e9b2ec5cfb3634a486ac93096415375bea4</hash>
+         <hash>514f76ba5c4b083884ad35ca20c0a03b22622ac978b9f4f81d4dfd152feccb1b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_listener.c</file>
@@ -9830,7 +9833,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\decoder\audio_decoders\wav\wav_dec.h</file>
-         <hash>a38e5958a74ecd22448ad6985956993d529d6c96b2150ade54552541fee1a9a5</hash>
+         <hash>b7e58ae6917a4938da982de9871d6c715aff0ee36ab4af136b1ca68311423d10</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_stringutils.c</file>
@@ -9846,7 +9849,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\usb_host.h</file>
-         <hash>8fe091b3db430b897da28d7f7effb6fffbb882d025c878a54cc5e627909a8cc2</hash>
+         <hash>4ec16dee42ae6b1bad8a7199b44750ccf0c5fa3aee5e44766e7b6dffc9979e83</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\scrollbar\legato_widget_scrollbar_skin_classic.c</file>
@@ -9854,15 +9857,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\dmac\plib_dmac.c</file>
-         <hash>f3a2fcfbbee16d32c93d29235a6721040bad44995e9b12f2812b9e40e9e02227</hash>
+         <hash>27a8304e9f0b6e735474f79f0beeda4e1131d484c268182510fd39af9f87c928</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\decoder\audio_decoders\wav\wav_dec.c</file>
-         <hash>9135c6722251a7b8898743c55d0ea2d1366ae254b1f6370ba8ddf209ba1df608</hash>
+         <hash>dd88f20cac22ed7f134fb5188980ada55ac1a7e0d1e752160ebd14ba3e61ec7f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\png\legato_imagedecoder_png.c</file>
-         <hash>7f874cf0fabfb00c0ed88302dc08bffa4b174a85f877b4516bb7706c560a6820</hash>
+         <hash>9a7b41a8a316681bb1abfa868977be55e204176aa493287e88fa56377bacb36a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\usb_msd.h</file>
@@ -9882,11 +9885,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\dmac\plib_dmac.h</file>
-         <hash>66447415736201ca8be1fd8ead150eb844c3c0d2a99fdf9d9cf51066583da064</hash>
+         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\keypad\legato_widget_keypad.c</file>
-         <hash>a01916b682cd6ee6664cc73deccd735e5e50dbb9595b0c034289565666a50904</hash>
+         <hash>0b87dee0da73d088a7eb7c0d4a74d1ca63f52fe823bb11c6d5c71985bc9b41b5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\exceptions.c</file>
@@ -9894,7 +9897,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\input\drv_maxtouch.c</file>
-         <hash>c7c43810998de169e94c57d50b2e1409455ffd52b3b04a01c411d20676b6ef9f</hash>
+         <hash>b29a953b076ca24973d9661341d24091b446030c17368cc678f59c3cc51ab349</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circularslider\legato_widget_circular_slider.h</file>
@@ -9906,7 +9909,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\input\drv_maxtouch.h</file>
-         <hash>2dedd547e60966aa688419ec9be3a98f2fa72efeea900e34b7575935e6d709eb</hash>
+         <hash>1e73c3f12a1ddbc54387bf11646f6e30fef57f708a6a36e7277aa95f00861e6c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_rect.h</file>
@@ -9914,7 +9917,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\peripheral\i2s\plib_i2s1.c</file>
-         <hash>c2df2c1bf2d9cb27fbc5c0b9b71ddad4ba0903a69014f25c1aa5039a5e622749</hash>
+         <hash>1a46e6c883022a91bd7fdb464b2386fc5560d2afd6573557be73e719a95534e1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_USBIDControl_Unsupported.h</file>
@@ -9938,7 +9941,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\gpio\plib_gpio.h</file>
-         <hash>6a8c265f75adb0b909dfb5b44f4c1d8724a84f5599911553cf6cd06b300f79e5</hash>
+         <hash>6f9bf3808ce767ff66a28c7dd988ca6f340fb7870334515524ebd68109479ef8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_widget_radiobutton_skin_classic.c</file>
@@ -9946,7 +9949,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\gpio\plib_gpio.c</file>
-         <hash>ed680f6bf48f76f15d3b4f5c707c2bcaa9ebd099749b8acc8b96c68cd28c9d41</hash>
+         <hash>c05549f7171a24216f91b6e275ff87fd0c1165ebc0ed074d9ea0ff5833b08255</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_EndpointFIFO_Default.h</file>
@@ -9994,7 +9997,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\font\legato_font.c</file>
-         <hash>60318d1ab80817f233e693d9ad6efbe17e67e0c98fa3bc6522c4d26e1ed9cd88</hash>
+         <hash>398421927fb718787cb904b8f56a9c93e7870d611c4f0c198de17371425a5537</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\evic\plib_evic.h</file>
@@ -10034,7 +10037,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\font\legato_font.h</file>
-         <hash>1495e4660cd5cadddb59da185c93fe4e963d0b69293945b98e0a72b2d13f5b9c</hash>
+         <hash>fee131d6d91edddf72e3a41ddf66a8eb8b658f7d8311b7ebae1895c84095bed5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\window\legato_widget_window.c</file>
@@ -10062,11 +10065,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>dabadd4a6d8d2209c509acb8d96428d14aa2dbbeb979d5bf82077c1525c9fc0d</hash>
+         <hash>3b518d0f3667efcff16c9f0972d35f38eb4b97d22eca4ca2e7a862eb61e7cd6d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>42b53125a4db88142ac66089ddacda881360473c45f1aa08065b79ee5bc79797</hash>
+         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\groupbox\legato_widget_groupbox.h</file>
@@ -10074,11 +10077,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\dma\sys_dma.h</file>
-         <hash>f6a34e470eff084fe3d053fdc545e43a66e02f68e7997f102467857969307f15</hash>
+         <hash>557896cd9ba1256276537379aa5f3cb06e1129a660db4a566e747a0ce6c63ec5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\src\drv_sdmmc_local.h</file>
-         <hash>22e6f99bd2862d0640083769fefc5ba6d0cb2eb016f46e7f9287cc72217f9520</hash>
+         <hash>6636f9435b8e6db473bd22410b84550ca0ac22283da3480bc292b1a9a6ef03d3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input.h</file>
@@ -10174,11 +10177,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\legato_image.h</file>
-         <hash>c163b0b00e69d7b79556d3151dcdd214969e5c97ff96d0f462a2a654fa1729d2</hash>
+         <hash>a478775d3560e86c1f9933877c19531a6f2fbdbdca84b601cea7d091c63ab431</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>6aaaea577291292146ace1f80843040d3777f1db7aecde65ec5c4acdd24397bf</hash>
+         <hash>eb3da8430f0e618ef405e6c022e3d3cab745fd363dce5bcc19b65bf231be2c11</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\clk\plib_clk.h</file>
@@ -10202,7 +10205,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_color.h</file>
-         <hash>15cbc4b465c182308a4aa5367481ab538c19d2400206108c683adfde717aa2e1</hash>
+         <hash>3b21a0fb159d6954744727af76e4d50bc0461af9701d07fbec985d7ccde8e483</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_event.c</file>
@@ -10254,11 +10257,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c2_master.c</file>
-         <hash>cc1230243dc89e761854ee09f199ed4c7727555ec5d663d920c9ba53a6f80ad2</hash>
+         <hash>8bc2badff0ea1e8269a7620b53bb3a627186c071017a0577c83a3a2df5a85ce8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\listwheel\legato_widget_listwheel.c</file>
          <hash>e1c6b29a703a2ef24e5471704d4bfeaad6fffeb5ea7a12ba15bf41d77e16e461</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\drv_i2s_local.h</file>
+         <hash>0caa5b71789f878856a6a8d635a4213584b6ee663e2d257488385fb92028d5df</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\system_media.h</file>
@@ -10270,7 +10277,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_tablestring.h</file>
-         <hash>c2e0c67a99533216c1ade95d391bd3c6ab138d5320532b21f2474401a194f162</hash>
+         <hash>0539ca068e32afe8f09e7f43cba8eea1d747363f341dd7082475ab2f3adc7532</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagescale\legato_widget_imagescale.h</file>
@@ -10326,7 +10333,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\drv_i2s.h</file>
-         <hash>6fd6f80b439deb495e6d1d2f3b33ca201617c28efbc4e370727551a4f3d5cdc8</hash>
+         <hash>71403974afcba76f5af909519c7a332a6cabe0dda393318ff15e05c4275cc92c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\memory\legato_memory.h</file>
@@ -10350,7 +10357,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\font\legato_rasterfont_stream.c</file>
-         <hash>0550dfd2b6afc6c67a05969073c792e929dc418484852db380fcf457b7200d61</hash>
+         <hash>211449061e65ea18d22f4971dfa6375dc4f0a9f74dee474465b6c9b4c3b98996</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\legato_config.h</file>
@@ -10386,11 +10393,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\label\legato_widget_label_skin_classic.c</file>
-         <hash>5675e97ab3f424ef6edc1be3470af6fc7b69ed3e69a2cc335a137a49ee51f0fb</hash>
+         <hash>0b3d9c8f6964dcebafd26f1d674e68c01a1895768791143b142688dda8d5c813</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_color_blend.c</file>
-         <hash>cc3003b6c0afdfa35c2d737829ed8a0999e924f22635717abf65b158e967f064</hash>
+         <hash>51fb4000e925d7eecb3639530d8ccf9e1de121e0baccca96d1b9319f6f1f8cf9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_harmony.h</file>
@@ -10418,7 +10425,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw.c</file>
-         <hash>69d4a31a45e18b34b6b4e9215f35666875742e68b12115a97c5726eb9f0a745c</hash>
+         <hash>3d1c027582d5d515f28a7ad2961e4d0cab087958e5fe5f0c849e9bea625544e6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
@@ -10438,7 +10445,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\sdhc\plib_sdhc.c</file>
-         <hash>5e16224cb549e05b256037a38ac2c2459382e08fb0b4bcab752e314b0916fd87</hash>
+         <hash>497e5c173d7f45bf6163f90375789d655223a693d510cee3708f8d55fdc25e64</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\datastructure\legato_array.h</file>
@@ -10490,7 +10497,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\drv_i2s_definitions.h</file>
-         <hash>e1c8aaebe0052929b99538fd0e1abcafa253bf2cb5e1dd8328d7b682a57e66a2</hash>
+         <hash>c9665316bf4cdf44af0e4e312bdc54341ae07f19b7cabd08d8f45cd09fae2231</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\src\usb_host_local.h</file>
@@ -10502,7 +10509,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_string_renderer_stream.c</file>
-         <hash>9fe73be65ab8df0666647952298d181f48700ddb43d46fb83847fd407809d8af</hash>
+         <hash>8f1fdff388a799204996d414c0f6d974cef3c3bbdd8da2983ace5ac97cf16368</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_palette_internal.c</file>
@@ -10522,7 +10529,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\src\drv_sdmmc.c</file>
-         <hash>2fc46dc62274340764ce3b6f3e56803a53e3274f6773119deb51d33c8442a76b</hash>
+         <hash>b2ded46128c5fd50a0234f65fbe7b4a97f920c4ff90afe4778840e0f2aec78c8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_scale.c</file>
@@ -10530,7 +10537,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\definitions.h</file>
-         <hash>e5d0812a89a1c920ee7eaca2a45054312c4b3d374a205a8b59f1a0ea455a799a</hash>
+         <hash>ffd1adce7e3fdee60fd4a003dbcbd0c7e5efb86178f588f3eb306386f94da412</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.c</file>
@@ -10542,7 +10549,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\toolchain_specifics.h</file>
-         <hash>5a13891d073d2ad5773c0c59ebe34074f2373103d565643f9e36a3b792feae9c</hash>
+         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.h</file>
@@ -10570,7 +10577,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\button\legato_widget_button_skin_classic.c</file>
-         <hash>db5aa66b70f5ffb7171614c96ab3b9c5ccca9127153124cd50969725cd3b4d36</hash>
+         <hash>4f3a39d6a8f21c0fdf633c1fb6d1d5c93f33c372d82d4aa2f1e5d34340861cbe</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagescale\legato_widget_imagescale_skin_classic.c</file>
@@ -10710,7 +10717,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart4.h</file>
-         <hash>a05854f2be1e0257a44994672d26a1417eb0f22b70a5e13f75eb411cc1b00fc2</hash>
+         <hash>9cc494009c412cff154b7e244bbd81ea81ca77020ccb272ac6a99175221d0f3d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\src\usb_host_msd.c</file>
@@ -10734,7 +10741,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart4.c</file>
-         <hash>7382dc26efb2f875de0f095b8f27e26dd2c53332dd00926c59a31ed7c50c9916</hash>
+         <hash>5f9e56fa36f2c6948112bf95e6d593f873264462b0104fac8563f07c28cdea69</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\legato_image_utils.h</file>
@@ -10746,7 +10753,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_string.c</file>
-         <hash>b44d99ea09108cb817a2195dcf7565d9d73fbc303521b2be9aa195f7439e0cfb</hash>
+         <hash>1849e47edfdb44bfc2cb9a13cd4773db675723483d206211441c738f7283ca53</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\device.h</file>
@@ -10806,7 +10813,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\codec\ak4954\drv_ak4954.h</file>
-         <hash>0631c5ab82aedce626b7c6cf03e9b2329633992c46571021ae150d2797f00bd6</hash>
+         <hash>7315b95b44eb8b205aea27b551a5b5e9d8b45ef28730a88ec05bffed6900d888</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\groupbox\legato_widget_groupbox_skin_classic.c</file>
@@ -10814,7 +10821,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\codec\ak4954\drv_ak4954.c</file>
-         <hash>d7e6af38f8500841ce70a7182bac3831d69707136beed1d1ddb6fc66c431df61</hash>
+         <hash>875eef4fc24491f28fbd83a22f3f5614e7fea5958a95671af83d43e3344b38b6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_state.h</file>
@@ -10858,7 +10865,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\codec\ak4954\drv_ak4954_local.h</file>
-         <hash>fba30579fd19ef29bf5a599d74022f4a350be64b353bfb72007d1c9a5cbe9e23</hash>
+         <hash>eeefe98fd85d5ff67335635a321fa57492a55f5b87e0d88d41bf0b29524b45f2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagesequence\legato_widget_imagesequence.h</file>
@@ -10866,11 +10873,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\button\legato_widget_button.c</file>
-         <hash>be2225013b4ff7adf458e4d12ab869f0a6d824717afc830feae88a6542595b89</hash>
+         <hash>e7114a1916bcc42da4b8cfc538f77d09f15e425b0408280e093c92d078e1e82c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_utils.h</file>
-         <hash>06f557c981eecf5c0f9e955c39d5d4af47124022c08ca3d24e452af971586b72</hash>
+         <hash>747aa96b2bb1ed485f8103dbe5a334c9066209e830d8fe6615664bbab3c61438</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_gesture.h</file>
@@ -10882,7 +10889,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_utils.c</file>
-         <hash>2343277812a45b9edd40d71c6b7f0231c862aff271b6799e104a7db70cae188a</hash>
+         <hash>90dd09850f635717fee0c06532d385ebfd1711f2de9e43d8ec2e19003caca7b9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\list\legato_widget_list.c</file>
@@ -10902,7 +10909,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs_fat_interface.c</file>
-         <hash>49f6ff00c0252cd8e7cd04545beca9c0bb3f924680b81bf0002a85e906a87971</hash>
+         <hash>581a4c11a2e6c4aa4aa2c64742b276d5d4b3bd1dbdbed1983aab17f162f4c47b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\list\legato_widget_list.h</file>
@@ -10918,7 +10925,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\initialization.c</file>
-         <hash>7ec635e9f41f6b85479c419fdffcdaf8e33cbdae25e0077219c8bca269de4e93</hash>
+         <hash>0b59095e3ae5f8c418d3a754700760fdc3b1ff504d1488307b9e5eea9d3fd885</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagesequence\legato_widget_imagesequence.c</file>
@@ -10934,11 +10941,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_string_renderer.h</file>
-         <hash>3ed993ea4473e91e03baea3462a2c7cd0cb84a95db7bb72f28f8d0fc8d0a8d28</hash>
+         <hash>b789853766e5f86b25fce44d88d1cebb8373829c28570a3d06c13fbddc6a4b58</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_string_renderer.c</file>
-         <hash>9a781789e402fc03165be920ec228cac727138925cf9f26da0ec28c351f8f554</hash>
+         <hash>b7051905d5c0de0d435b6f28e54333e20d5b9c0a6737015171dee7e698436ba5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_EndpointFIFO_Unsupported.h</file>
@@ -10966,11 +10973,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_scheme.c</file>
-         <hash>cffd752d36101dde8d601b3e0fef5804f5dc47697edb4e3a94a1b59b22159b93</hash>
+         <hash>faba65074143c7ffdc8b5807e91feba1534a2159a4e89ff30ea222119705d0ec</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\sys_fs.h</file>
-         <hash>46fd6237f868cf8b35855f3d65c14dedf205e13399bb97e40788407d6554393e</hash>
+         <hash>46a5946f727b22530f0e0945a33cad93077c7b92c1bb2811959709ba7be60e9c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\device_cache.h</file>
@@ -11009,16 +11016,12 @@
          <hash>dda73e1eb3e74d1b2f0e81100b3d0a742ced9ac4dfa0d3a3a610a1c2e6388ce2</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\src\drv_i2s_local.h</file>
-         <hash>81c6036518412938739cf425b2c1dca665ce1219546d2de2ad2b302b17ddda29</hash>
-      </entry>
-      <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_HighSpeedSupport_Default.h</file>
          <hash>4d9f663b50559aa8afc0414516038afeabb3e3fa442680b2a7cc7b818d178411</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_scheme.h</file>
-         <hash>15e3d8f4bc2cfacfe08696bb554f567c7e0e7b335e2b498f5d3c08f9d0e13807</hash>
+         <hash>4d6405a6aa9a8629a801296a4f615cee445883a54b40f318156e712d172d72e4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circle\legato_widget_circle.c</file>

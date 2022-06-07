@@ -98,8 +98,8 @@ void CLK_Initialize( void )
     REFO1CON = 0x80200;
 
     /* REFO1TRIM register */
-    /* ROTRIM = 393 */
-    REFO1TRIM = 0xc4800000;
+    /* ROTRIM = 443 */
+    REFO1TRIM = 0xdd800000;
 
     /* Enable oscillator (ON bit) and Enable Output (OE bit) */
     REFO1CONSET = 0x00001000 | 0x00008000;
@@ -137,6 +137,9 @@ void CLK_Initialize( void )
   
 
     /* Peripheral Module Disable Configuration */
+
+    CFGCONbits.PMDLOCK = 0;
+
     PMD1 = 0x101101;
     PMD2 = 0x3;
     PMD3 = 0x1ff01ff;
@@ -144,6 +147,8 @@ void CLK_Initialize( void )
     PMD5 = 0x301c3a37;
     PMD6 = 0x10831e00;
     PMD7 = 0x500000;
+
+    CFGCONbits.PMDLOCK = 1;
 
     /* Lock system since done with clock configuration */
     SYSKEY = 0x33333333;

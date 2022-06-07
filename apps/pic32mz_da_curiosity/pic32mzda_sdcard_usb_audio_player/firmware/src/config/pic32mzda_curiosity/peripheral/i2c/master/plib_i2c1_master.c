@@ -68,7 +68,7 @@ void I2C1_Initialize(void)
     /* Disable the I2C Bus collision interrupt */
     IEC3CLR = _IEC3_I2C1BIE_MASK;
 
-    I2C1BRG = 487;
+    I2C1BRG = 492;
 
     I2C1CONCLR = _I2C1CON_SIDL_MASK;
     I2C1CONCLR = _I2C1CON_DISSLW_MASK;
@@ -473,7 +473,7 @@ bool I2C1_TransferSetup(I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq )
 
     if( srcClkFreq == 0)
     {
-        srcClkFreq = 99000000UL;
+        srcClkFreq = 100000000UL;
     }
 
     baudValue = ((float)((float)srcClkFreq/2.0) * (1/(float)i2cClkSpeed - 0.000000130)) - 1;
