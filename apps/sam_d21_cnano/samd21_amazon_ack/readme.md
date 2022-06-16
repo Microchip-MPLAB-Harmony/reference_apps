@@ -53,7 +53,7 @@ This following bullet points provides links to the detailed topics:
 ## <a id="Hardware-Used"> </a>
 ## Hardware Used:
 - [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)   
-- [USI MT7697H Development Kit for Alexa Connect Kit - ACK Module](https://www.amazon.com/dp/B07WJGSCH2)
+- [Espressif Alexa Connect Kit - ACK Module](https://developer.amazon.com/en-US/docs/alexa/ack/get-ack-development-kit.html)
 - Connection wires  
 
 ## <a id="software-Tools-Used"> </a>
@@ -71,7 +71,7 @@ Refer [Demo Application specific Project Manifest]() present in harmony-manifest
 
 ## <a id="setting-up-the-build-platform"> </a>
 ## Setting up the build platform
-- Download and extract [ACK Device SDK 4.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
+- Download and extract [ACK Device SDK 4.2](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
   `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_4.2.202201251359/user/platform`
 
@@ -126,9 +126,9 @@ Refer [Demo Application specific Project Manifest]() present in harmony-manifest
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs](https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
-- This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
+- This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon.
 
 ### Revision:
 - v1.5.0 Updated to support Amazon ACK SDK 4.2 and ACK module with Espressif chipset
