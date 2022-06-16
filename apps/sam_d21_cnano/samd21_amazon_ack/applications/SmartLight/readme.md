@@ -49,7 +49,7 @@ This following bullet points provides links to the detailed topics:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default*  
-- Refer the [Release Notes](../../../../../release_notes.md#development-tools) to know the {}MPLAB X IDE{} and {}MHC/MCC{} Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)   
+- Refer the [Release Notes](../../../../../release_notes.md#development-tools) to know the {}MPLAB X IDE{} and {}MCC{} Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)   
 - Python 3.8
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
@@ -72,17 +72,18 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 ## Setting up the build platform
 - Download and extract [ACK Device SDK 4.1](https://developer.amazon.com/alexa/console/ack/resources) from Amazon developer website.
 - Copy and paste extracted  SAM D21 ACK port folder "samd21_amazon_ack" into ACK device SDK's user platform folder  
-  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_4.1.202104181201/user/platform`
+  `<Your ACK SDK Downloaded folder>/ACK_Device_SDK_4.2.202201251359/user/platform`
 
 **Note**
 - Make sure you create **amazon.com** account for downloading the SDK. You would use your Amazon credentials to register your development device (amazon.com account provides an option to register your development device.)
-- "ACK Module with MediaTek chipset" is used in these demo's. make sure you download proper ACK SDK from the Amazon website
-
+- "ACK Module with Espressif chipset" is used in these demo's. make sure you download proper ACK SDK from the Amazon website
+- [Create Product](https://developer.amazon.com/alexa/console/ack/products) and add device capablities to the product once product is created.
+- Download the product configuration file from created product and provision the Ack module using [CLI command](https://developer.amazon.com/en-US/docs/alexa/ack/provision-module-tutorials.html)
 
 ## <a id="project-structure"> </a>
 ## Project file structure
 - ACK SDK file/directory structure, refer "Readme.txt" in  
-`<Your ACK SDK Downloaded folder>\ACK_Device_SDK_4.1.202104181201\`
+`<Your ACK SDK Downloaded folder>\ACK_Device_SDK_4.2.202201251359\`
 - SAM D21 ACK port file/directory is as follows
   - user/platform/samd21_amazon_ack/
     - **applications**                : Contains all the ACK host sample applications built on MPLABX Tools and xc32 compiler
@@ -90,7 +91,7 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
     - **hmcu_port**                   : Contains shared host specific platform and OTA files
     - **ota**                         : Contains OTA source, config and header files
     - **ack_samd21_cutom_loader.c**   : Contains bootloader specific code
-    - **ack_samd21_platform.c**       : Contains SAMD21 platform specific code    
+    - **ack_samd21_platform.c**       : Contains SAMD21 platform specific code      
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  
@@ -139,11 +140,12 @@ The pre-built hex file can be programmed by following the below steps.
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAM D21 MCUs](https://microchipdeveloper.com/harmony3:samd21-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 - This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon.
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en1000821)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
 
 ### Revision:
-- v1.4.0 - Added MCC support, Regenerated and tested application.
+- v1.5.0 Updated to support Amazon ACK SDK 4.2 and ACK module with Espressif chipset
+- v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 Updated to support Amazon ACK SDK 4.1
 - v1.2.0 Updated to support Amazon ACK SDK 3.2
 - v1.1.0 released demo application
