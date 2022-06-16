@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_amazon_ack_DashReplenishment",
-		"version": "1.4.0",
+		"version": "1.5.0",
 		"displayName": "Amazon Alexa Connect Kit (ACK) Dash Replenishment Application",
 		"projectName": "DashReplenishment_sam_d21_cnano",
 		"shortDescription": "Demonstrates integration of Amazon Alexa connect kit (ACK) SDK with SAM D21 and presenting dashboard replenishment",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.00"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.0.1"
+				"semverRange": ">=4.00"
 			}
 		],
 		"dfp": {
 			"name": "SAMD21_DFP",
-			"semverRange": "^3.4.116"
+			"semverRange": "^3.6.144"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=5.1.4"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

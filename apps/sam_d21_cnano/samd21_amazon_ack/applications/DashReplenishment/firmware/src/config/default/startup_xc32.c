@@ -53,7 +53,6 @@ extern void __attribute__((long_call)) __libc_init_array(void);
 
 /* Device Vector information is available in interrupt.c file */
 
-
 extern void Dummy_App_Func(void);
 
 /* Brief default application function used as a weak reference */
