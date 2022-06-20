@@ -52,7 +52,7 @@ nav_order: 1
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/SAMD21_WG_IOT/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/SAMD21_WG_IOT*  
-- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the {}MPLAB X IDE{} and {}MCC{} Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)  
+- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)  
 - [MPLAB XC32 C/C++ Compiler v3.01](https://www.microchip.com/en-us/tools-resources/archives/mplab-ecosystem)  
 
 
