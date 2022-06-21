@@ -166,7 +166,8 @@ The pre-built hex file can be programmed by following the below steps.
   and tap on "BLE UART" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
 <img src = "images/mbd_appscreen1.jpg" width="250" height="450" align="middle">
 
--  Now, scan for Bluetooth devices by tapping "BM70" -> "SCAN" -> "SCAN" options on the MBD APP.
+-  Now, scan for Bluetooth devices by tapping "BM70" -> "SCAN" -> "SCAN" options on the MBD APP.  
+
 <img src = "images/mbd_appscreen2.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen3.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen4.jpg" width="250" height="450" align="middle">
@@ -176,23 +177,23 @@ The pre-built hex file can be programmed by following the below steps.
 <img src = "images/mbd_appscreen5.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen5_1.jpg" width="250" height="450" align="middle">
 
--  Tap on the "TransparentUARTDemo" device to connect to the device.
+-  Tap on the "TransparentUARTDemo" device to connect to the device.  
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen7.jpg" width="250" height="450" align="middle">
 
 -  Once the device is connected, tap on the "Transfer data to device" to build
-  the communication interface between Demo application and MBD App.
-<img src = "images/mbd_appscreen8.jpg" width="250" height="450" align="middle">
+  the communication interface between Demo application and MBD App.  
+	<img src = "images/mbd_appscreen8.jpg" width="250" height="450" align="middle">
 
--  Enable the "Write with Response" by clicking on "OFF" button at the bottom of the MBD APP screen.
+-  Enable the "Write with Response" by clicking on "OFF" button at the bottom of the MBD APP screen.  
 <img src = "images/mbd_appscreen9.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen10.jpg" width="250" height="450" align="middle">
 
 -  Send the commands mentioned in the demo [description](#description) to control the fan.
-  The commands mentioned in the demo description are not case sensitive.
-<img src = "images/mbd_appscreen11.jpg" width="250" height="450" align="middle">
-<img src = "images/mbd_appscreen12.jpg" width="250" height="450" align="middle">
-<img src = "images/mbd_appscreen13.jpg" width="250" height="450" align="middle">
+  The commands mentioned in the demo description are not case sensitive.  
+	<img src = "images/mbd_appscreen11.jpg" width="250" height="450" align="middle">
+	<img src = "images/mbd_appscreen12.jpg" width="250" height="450" align="middle">
+	<img src = "images/mbd_appscreen13.jpg" width="250" height="450" align="middle">
 
 -  Based on the command received from the MBD application, the fan will be controlled.
 -   When the user chooses temperature based fan control mode, application reads the temperature values from a weather sensor displays on EInk display and controls a DC fan
@@ -205,7 +206,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

@@ -52,7 +52,7 @@ Refer [Project Manifest](./firmware/src/config/sam_l21_xpro/harmony-manifest-suc
 - Connect a USB cable to the DEBUG USB port for programming  
 
  **Note** :
-Make sure common ground is connected with the board while using the logic analyzer or CRO.
+Make sure common ground is connected with the board while using the logic analyzer or CRO.  
 <img src = "images/low_power_demo_setup.jpg" width="800" height="600" align="middle">
 
 ## Programming hex file:
@@ -131,7 +131,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
-		
+
 ## Revision:
 - v1.5.0 - Removed MHC support, Regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.

@@ -74,19 +74,12 @@ The pre-built hex file can be programmed by following the below steps.
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Set the baud rate to 115200
 - The application starts printing the GRID-EYE values on the terminal for every 500 milliseconds. The code converts the grid array sensor data to temperature in Celsius(°C) and fills the 8x8 grid array matrix by the appropriate color, depending on the temperature detected.
-- The GRID-EYE values changes when an object or a hand is moved over the sensor or  when touching the fingure on the sensor. The following table shows the Color representation based on the temperature(T) range.
+- The GRID-EYE values changes when an object or a hand is moved over the sensor or  when touching the fingure on the sensor. The following table shows the Color representation based on the temperature(T) range.  
 
-    | Color Code                   | Color Name             | Temperature Range     |
-    | ---------------------------- | ---------------------- | --------------------- |
-    | <center> R                   | <center> Red           | <center> Above 30°C   |
-    | <center> O                   | <center> Orange        | <center> 28°C - 30°C  |
-    | <center> Y                   | <center> Yellow        | <center> 26°C - 28°C  |
-    | <center> y                   | <center> Light Yellow  | <center> 24°C - 26°C  |
-    | <center> G                   | <center> Green         | <center> 22°C - 24°C  |
-    | <center> <code>&#124</code>  | <center> No Color      | <center> Bellow 22°C  |
+    <img src = "images/image_color.png">  
 
-- See the following image for the output.
-    <img src = "images/grid_eye_running.png">
+- See the following image for the output.  
+	<img src = "images/grid_eye_running.png">
 
 
 ## Instructions to add GRID EYE functionality to your application:
@@ -175,7 +168,7 @@ You could use this demonstration as an example to add GRID EYE functionality to 
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Released demo application

@@ -42,7 +42,7 @@ nav_order: 14
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/sam_e51_cnano/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e51_cnano*  
-- Refer the [Release Notes](../../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools) 
+- Refer the [Release Notes](../../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 - Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
@@ -82,42 +82,43 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Instructions to add OLED C Click display functionality to your application:
 
-The MPLAB Harmony v3 supports adding custom display to your application using Legato (LE) External Display Controller drivers. The LE External Controller driver allows user to configure custom commands necessary for the external display.
+The MPLAB Harmony v3 supports adding custom display to your application using Legato (LE) External Display Controller drivers. The LE External Controller driver allows user to configure custom commands necessary for the external display.  
 
 Below are Harmony configuration for the OLED C Click
-- Connect the display components as shown in the below figure
-	<img src = "images/oled_c_click_config.png">  
-- Change Configuration of components as shown in the below figures
- - SERCOM Configuration
-	<img src = "images/oled_c_sercom.png">
- - LE External configuration
-	<img src = "images/oled_c_le_external_controller.png">
+- Connect the display components as shown in the below figure  
+<img src = "images/oled_c_click_config.png">  
+- Change Configuration of components as shown in the below figures  
+	- SERCOM Configuration  
+ 	<img src = "images/oled_c_sercom.png">  
+	- LE External configuration  
+ 	<img src = "images/oled_c_le_external_controller.PNG">  
 
-	**Note :** : Other components' configurations will be default
-- Change the width and height settings to 96 x 96 in GFX core LE block
- 	<img src = "images/oled_c_gfx_core.png">
-- Enable timer system service and core service as needed by the LE External Controller driver
-	<img src = "images/timer_service.png">
+	**Note :** Other components' configurations will be default  
+
+- Change the width and height settings to 96 x 96 in GFX core LE block  
+	<img src = "images/oled_c_gfx_core.PNG">
+- Enable timer system service and core service as needed by the LE External Controller driver  
+	<img src = "images/timer_service.png">  
 	<img src = "images/core_service.png">  
 
 	**Note :** Configuration for TIME System service, Harmony core service and TC0 remains default
 - Design graphics using MPLAB Harmony "Legato Graphics Composer". Launch it using **"Project Graph > Plugins > Legato Graphics Composer"**
-	<img src = "images/legato_config.png" align="middle">
-- Use **Object Editor** to edit the configuration for **Input Widgets** and **Dispaly Widgets**
-	<img src = "images/image_1.png">
+	<img src = "images/legato_config.png" align="middle">  
+- Use **Object Editor** to edit the configuration for **Input Widgets** and **Dispaly Widgets**  
+	<img src = "images/image_1.png">  
 -  You could use this demonstration as an example to add OLED C Click functionality to your MPLAB Harmony v3 based application. Follow the below steps.  
 	**Note:** This demonstration uses a Text Field Input widget and an Image Display widget. Therefore the configurations in the **Legato Graphics Composer** (shown above) routines and examples (in oled_c.c and oled_c_example.c) are also based on these widgets. Users can configure and use other widgets and objects supported under **Legato Graphics Composer** by using this demonstration as a reference.
 
     1. If you haven't downloaded the OLED C Click demo yet [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/oled_c.zip) to download, otherwise go to next step
-  
+
 	2. Unzip the downloaded .zip file  
-    
+
 	3. From the unzipped folder oled_c/firmware/src, copy the folder **click_routines** to the folder firmware/src under your MPLAB Harmony v3 application project  
-    
+
 	4. Open MPLAB X IDE  
-    
-	5. Open your application project 
-    
+
+	5. Open your application project
+
 	6. In the project explorer, Right click on folder **Header Files**  
 	   and add a sub folder **click_routines** by selecting "Add Existing Items from Folders..."  
 		 <img src = "images/header_add.png">  
@@ -164,7 +165,7 @@ Below are Harmony configuration for the OLED C Click
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

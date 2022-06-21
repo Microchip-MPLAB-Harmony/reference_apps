@@ -177,7 +177,7 @@ The pre-built hex file can be programmed by following the below steps
 - Log into the [console](https://console.cloud.google.com/start?tutorial=iot_core_quickstart)
 - Use your personal Gmail account to log in. Select “Try for free”.  
   **Note** : If you do not have a Gmail account, create a new email account from [HERE](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp)
-- Create a new Google cloud project by clicking the **Select a project** option
+- Create a new Google cloud project by clicking the **Select a project** option  
 <img src = "images/gcp1.PNG" align="middle">  
 - Click on **NEW PROJECT**  
 <img src = "images/gcp2.PNG" align="middle">  
@@ -206,8 +206,8 @@ The pre-built hex file can be programmed by following the below steps
 <img src = "images/gcp11.PNG" align="middle">
 - Click on "Subscriptions" and click on "CREATE SUBSCRIPTION"  
 <img src = "images/gcp12.PNG" align="middle">
-- Enter the "subscription ID" as **example** and select a "Cloud Pub/Sub topic" as below and click on **CREATE**
- <img src = "images/gcp13.PNG" align="middle">  
+- Enter the "subscription ID" as **example** and select a "Cloud Pub/Sub topic" as below and click on **CREATE**  
+<img src = "images/gcp13.PNG" align="middle">  
 - In the navigation pane, select **IoT Core**  
 <img src = "images/gcp15.PNG" align="middle">
 - Click on "CREATE REGISTRY"  
@@ -240,14 +240,14 @@ The pre-built hex file can be programmed by following the below steps
 <a id="Instructions_to_add_your_device_to_Google_cloud_registry"> </a>
 <h3> 4. Instructions to add your device to Google cloud registry </h3>
 
-- In Google cloud search bar, search for IOT core and select the "smart_tag_demo" registry which was created earlier
- <img src = "images/gcp27.PNG" align="middle">
+- In Google cloud search bar, search for IOT core and select the "smart_tag_demo" registry which was created earlier  
+	<img src = "images/gcp27.PNG" align="middle">
 - Select "Devices" and click on "CREATE A DEVICE"  
-<img src = "images/gcp28.PNG" align="middle">
-- Enter the device serial number starting with 'd' as shown below and click on create
- <img src = "images/gcp29.PNG" align="middle">
-- Add the public key read from the device in command prompt as shown below
- <img src = "images/gcp30.PNG" align="middle">
+	<img src = "images/gcp28.PNG" align="middle">
+- Enter the device serial number starting with 'd' as shown below and click on create  
+	<img src = "images/gcp29.PNG" align="middle">
+- Add the public key read from the device in command prompt as shown below  
+	<img src = "images/gcp30.PNG" align="middle">
 
 - You have successfully added device into Registry of google cloud
 
@@ -272,7 +272,7 @@ The pre-built hex file can be programmed by following the below steps
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ### Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

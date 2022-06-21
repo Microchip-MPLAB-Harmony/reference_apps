@@ -44,7 +44,7 @@ Refer [Project Manifest](./firmware/src/config/pic32mk_mcm_curiosity_pro/harmony
 
 ## Hardware Setup 1: <span id="Setup1"><span>
 - Connect the Type-A male to Micro-B USB cable to the Micro-B USB to UART port (J400) on the PIC32MK MCM Curiosity Pro Development Board for logs
-- Connect the Type-A male to Micro-B USB cable to Micro-B USB DEBUG port (J500) to power and debug the PIC32MK MCM Curiosity Pro Development Board
+- Connect the Type-A male to Micro-B USB cable to Micro-B USB DEBUG port (J500) to power and debug the PIC32MK MCM Curiosity Pro Development Board  
   <img src = "images/hardware_setup1.png" align="middle">
 
 ### Hardware Modification: <span id="Hardware_Modification"><span>
@@ -92,7 +92,7 @@ The pre-built hex file can be programmed by following the below steps
 - Press the switch SW3 on the PIC32MK MCM Curiosity Pro Development Board to switch the toggling LED from LED1 to LED3.
 - Every subsequent pressing of the switch SW3 on the PIC32MK MCM Curiosity Pro Development Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
 - Press the switch SW1 on the PIC32MK MCM Curiosity Pro Development Board to switch back the toggling LED from LED3 to LED1.
-- See the following figure for the output.
+- See the following figure for the output.  
 <img src = "images/result7.png">
 
 - **To Test the Extended functionality using MikroElectronika Weather Click Board:**
@@ -105,8 +105,8 @@ The pre-built hex file can be programmed by following the below steps
     - Press the switch SW1 (toggles LED1) on the PIC32MK MCM Curiosity Pro Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds, and back to 500 milliseconds every time the user presses the switch SW1 on the PIC32MK MCM Curiosity Pro Development Board.
     - Press the switch SW3 (toggles LED3) on the PIC32MK MCM Curiosity Pro Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds, and back to 500 milliseconds every time the user presses the switch SW3 on the PIC32MK MCM Curiosity Pro Development Board.
     - Finally, Press the switch SW2 on the PIC32MK MCM Curiosity Pro Development Board to switch back to print the LED toggling rate.
-    - See the following figure for the output.
-        <img src = "images/result7_extended.png">
+    - See the following figure for the output.  
+    <img src = "images/result7_extended.png">
 -  Note:
     - The periodicity will not change while switching between SW1 to SW3 or vice versa.
 

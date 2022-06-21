@@ -22,9 +22,9 @@ nav_order: 98
 ## <span style="color:blue"> *Complete the above highlighted step before proceeding further* </span>
 
 ## Running the utility
-- Download and extract [samd21_gcp_iot_winc_provisioning](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_gcp_iot_winc_provisioning.zip
+- Download and extract [samd21_gcp_iot_v2_winc_provisioning](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samd21_gcp_iot_v2_winc_provisioning.zip
 ) into utilities folder
-- Open command prompt and navigate to **"utilities/samd21_gcp_iot_winc_provisioning"**
+- Open command prompt and navigate to **"utilities/samd21_gcp_iot_v2_winc_provisioning"**
 - The following command line will generate a device programming file winc1500_19.7.6.prog.
 
   **image_tool.exe -c winc1500_19.7.6\config.txt -o winc1500_19.7.6.prog -of prog**  

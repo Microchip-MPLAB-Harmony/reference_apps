@@ -92,7 +92,7 @@ connected to Micro-B port, and reconnect it back.
 - Perform a reset by pressing the "RESET" switch
 - Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element to put the light sensor in a dark environment) to print the temperature and message on the terminal. You should see the following messages (containing the temperature value in °F) on the terminal every 500 milliseconds for the duration the light sensor is covered  
 <img src = "images/console_message_after_covering_lightsensor.png" width="600" height="480" align="middle">  
-- You should see the temperature values (in °F) getting printed on the terminal every 500 milliseconds for the duration the light sensor is covered
+- You should see the temperature values (in °F) getting printed on the terminal every 500 milliseconds for the duration the light sensor is covered  
 <img src = "images/result1.png" width="425" height="235" align="middle">  
 - Observe Current Consumption on Data Visualizer  
 **Note**:The Data Visualizer is a program to process and visualize data. The Data Visualizer can receive data from various sources such as the Embedded Debugger Data Gateway Interface (EDBG DGI) and COM ports. It is possible to track an application in run-time using a terminal graph or oscilloscope. It analyzes the power consumption of an application through correlation of code execution and power consumption when used together with a supported probe or board.
@@ -130,7 +130,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

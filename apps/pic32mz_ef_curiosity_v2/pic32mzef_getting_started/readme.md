@@ -48,8 +48,8 @@ Refer [Project Manifest](./firmware/src/config/pic32mz_ef_curiosity_v2/harmony-m
 - Connect the Curiosity PIC32MZ EF 2.0 Development Board to the Host PC as a USB Device
   through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port
 - Connect the I/O1 Xplained Pro Extension Kit (Temperature Sensor) to J501 (Extension Header 1 (EXT1))
-  on the Curiosity PIC32MZ EF 2.0 Development Board
-  <img src = "images/hardware_setup2.png" width="800" height="300" align="middle">
+  on the Curiosity PIC32MZ EF 2.0 Development Board  
+	<img src = "images/hardware_setup2.png" width="800" height="300" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps
@@ -82,8 +82,8 @@ The pre-built hex file can be programmed by following the below steps
 - Also, notice LED1 blinking at a 500 millisecond rate
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
   <img src = "images/temp_sensor_placement.png" width="800" height="300" align="middle">  
-- Press the SW1 switch on the Curiosity PIC32MZ EF 2.0 Development Board to change the default sampling rate to one second
-  <img src = "images/user_button_placement.png" width="800" height="300" align="middle">  
+- Press the SW1 switch on the Curiosity PIC32MZ EF 2.0 Development Board to change the default sampling rate to one second  
+	<img src = "images/user_button_placement.png" width="800" height="300" align="middle">  
   <img src = "images/result2.png" width="345" height="165" align="middle">  
 - Every subsequent press of switch SW1 on the Curiosity PIC32MZ EF 2.0 Development Board changes the default sampling
   rate to two seconds, four seconds, 500 milliseconds and back to one second in cyclic order as shown below  
@@ -99,7 +99,7 @@ The pre-built hex file can be programmed by following the below steps
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

@@ -50,10 +50,10 @@ Refer [Project Manifest](./firmware/src/config/sam_d21_cnano/harmony-manifest-su
 
 ## Setup:
 - Connect the SAM D21 Curiosity Nano Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port
-- Connect a wire from **PA16 to PA19** on SAM D21 Curiosity Nano Development Kit for SPI Self Loopback testing.
+- Connect a wire from **PA16 to PA19** on SAM D21 Curiosity Nano Development Kit for SPI Self Loopback testing.  
 
-<img src = "images/hardware1.jpg">
-<img src = "images/hardware.png" width="700" height="450" align="middle">
+	<img src = "images/hardware1.jpg">  
+	<img src = "images/hardware.png" width="700" height="450" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  

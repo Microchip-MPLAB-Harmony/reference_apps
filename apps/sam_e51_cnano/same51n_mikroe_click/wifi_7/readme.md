@@ -82,10 +82,10 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Running the Demo:
 - Configure the serial port terminal with 9600 baud rate
-- After power up, when the demo is running, the application prints as shown below
-<img src = "images/wifi_7_output.png" align="middle">
-- Change the SSID and Password of your known WiFi credentials in "wifi_7.h" header file and reprogram the project
-<img src = "images/wifi_7_config.png" align="middle">
+- After power up, when the demo is running, the application prints as shown below  
+	<img src = "images/wifi_7_output.png" align="middle">
+- Change the SSID and Password of your known WiFi credentials in "wifi_7.h" header file and reprogram the project  
+	<img src = "images/wifi_7_config.png" align="middle">
 
 - Device connects to the specified WiFi Access Point  
 <img src = "images/wifi_7_output1.png" align="middle">
@@ -95,33 +95,34 @@ The pre-built hex file can be programmed by following the below steps.
 The MPLAB Harmony v3 supports adding WiFi functionality to your application using WINC driver.
 
 Below are Harmony v3 configuration for the WiFi 7 click
-- Connect the WINC components as shown in the below figure
+- Connect the WINC components as shown in the below figure  
 	<img src = "images/wifi_7_config1.png">  
-- Change Configuration of components as shown in the below figures
- - SERCOM1 Configuration
-	<img src = "images/wifi_7_sercom.png">
- - MCC Pin Configurator - SPI pin configuration
- 	<img src = "images/wifi_7_sercom_pins.png">
- - MCC Pin Configurator - additional pin configurations
-  <img src = "images/wifi_7_sercom_add_pins.png">
- - WINC configuration
-	<img src = "images/wifi_7_winc.png">
+	- Change Configuration of components as shown in the below figures  
+		- SERCOM1 Configuration  
+		<img src = "images/wifi_7_sercom.png">  
+		- MCC Pin Configurator - SPI pin configuration  
+		<img src = "images/wifi_7_sercom_pins.png">  
+		- MCC Pin Configurator - additional pin configurations  
+		<img src = "images/wifi_7_sercom_add_pins.png">  
+		- WINC configuration  
+		<img src = "images/wifi_7_winc.png">  
 
-	**Note :** Other components' configurations will be default
-- Connect the console and debug system service necessary for WINC driver as shown in the below figure
- 	<img src = "images/wifi_7_console.png">
- - SERCOM5 Configuration
- 	<img src = "images/wifi_7_sercom5.png">
- - MCC Pin Configurator - UART pin configuration
-	<img src = "images/wifi_7_sercom5_pins.png">
- - Debug Configuration
-  <img src = "images/wifi_7_debug.png">
-- Enable timer system service and core service as needed by the WINC driver
-  <img src = "images/wifi_7_timer.png">
-	<img src = "images/wifi_7_core.png">
-- Configure the EIC as  shown in the below figure
-	<img src = "images/wifi_7_eic.png" align="middle">
-- You could use this demonstration as an example to add WiFi 7 click functionality to your MPLAB Harmony v3 based application. Follow the below steps.  
+**Note :** Other components' configurations will be default  
+
+- Connect the console and debug system service necessary for WINC driver as shown in the below figure  
+	<img src = "images/wifi_7_console.png">  
+	- SERCOM5 Configuration  
+	<img src = "images/wifi_7_sercom5.png">
+ 	- MCC Pin Configurator - UART pin configuration  
+ 	<img src = "images/wifi_7_sercom5_pins.png">  
+	- Debug Configuration  
+	<img src = "images/wifi_7_debug.png">  
+	- Enable timer system service and core service as needed by the WINC driver  
+	<img src = "images/wifi_7_timer.png">  
+	<img src = "images/wifi_7_core.png">  
+	- Configure the EIC as  shown in the below figure  
+	<img src = "images/wifi_7_eic.png" align="middle">  
+	- You could use this demonstration as an example to add WiFi 7 click functionality to your MPLAB Harmony v3 based application. Follow the below steps.  
 	**Note:** This demo can be extended to connect to web to transfer data, refer the reference section below for more applications
 
   1. If you haven't downloaded the WiFi 7 click demo yet [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_7.zip) to download, otherwise go to next step
@@ -178,7 +179,7 @@ Below are Harmony v3 configuration for the WiFi 7 click
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

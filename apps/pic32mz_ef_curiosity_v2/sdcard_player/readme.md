@@ -55,7 +55,7 @@ nav_order: 5
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/pic32mzef_c2_ak4954/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/pic32mzef_c2_ak4954*  
-- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools) 
+- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
@@ -64,7 +64,7 @@ Refer [Project Manifest](./firmware/src/config/pic32mzef_c2_ak4954/harmony-manif
 - Insert a micro SD card into the microSD click board card slot. Ensure that the SD card contains WAV audio files
 - Mount the PIC32 Audio Codec Daughter Card - AK4954 on X32 HEADER 2 on Curiosity PIC32MZ EF 2.0 Development Board
 - Connect speaker or headphone to the headphone out (HP OUT) connector (Yellow colour)  on top of the PIC32 Audio Codec Daughter Card - AK4954
-- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)
+- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)  
 <img src = "images/hardware_setup.jpg" width="650" height="450" align="middle">
 
 ## Programming hex file:
@@ -107,7 +107,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, Regenerated and tested application.

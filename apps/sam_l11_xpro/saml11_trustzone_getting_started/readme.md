@@ -67,8 +67,8 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/sam_l11_xpro/h
 	  The A2 address line of TWI must be soldered to 0. This is done to modify the address of the EEPROM
 	  on the I/O1 Xplained Pro Extension Kit so that it does not conflict with the address of EEPROM on
 	  SAM E70 Xplained Evaluation Kit. The modification changes the address of temperature sensor to 0x4B
-	  and EEPROM to 0x50. These modified addresses are used in this demo application
-  <img src = "images/hardware_modification.png" width="300" height="200" align="middle">
+	  and EEPROM to 0x50. These modified addresses are used in this demo application.  
+    <img src = "images/hardware_modification.png" width="300" height="200" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps
@@ -93,8 +93,8 @@ The pre-built hex file can be programmed by following the below steps
 	- Close all existing projects in IDE (if any project is opened)
 	- Go to File -> Open Project
 	- Select project path "../reference_apps/apps/sam_l11_xpro/saml11_trustzone_getting_started"
-	- Select "firmware" folder, enable "Open Required Projects" and click on "Open Project" button
-	  <img src = "images/group_project_path.png" width="700" height="400" align="middle">  
+	- Select "firmware" folder, enable "Open Required Projects" and click on "Open Project" button  
+    <img src = "images/group_project_path.png" width="700" height="400" align="middle">  
 
 	  <img src = "images/opened_group_project.png" width="700" height="500" align="middle">  
 
@@ -103,8 +103,8 @@ The pre-built hex file can be programmed by following the below steps
   - Procedure 2:
 	- Open MPLAB X IDE
 	- Close all existing projects in IDE (if any project is opened)
-	- Open the project (../saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X) in MPLAB X IDE.
-	<img src = "images/opened_non_secure_project.png" width="700" height="500" align="middle">  
+	- Open the project (../saml11_trustzone_getting_started/firmware/NonSecure/firmware/sam_l11_xpro_NonSecure.X) in MPLAB X IDE.  
+    <img src = "images/opened_non_secure_project.png" width="700" height="500" align="middle">      
 - Ensure "SAML11 Xplained Pro" is selected as hardware tool to program/debug the application.
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below.  
@@ -137,7 +137,7 @@ The pre-built hex file can be programmed by following the below steps
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 
 ## Revision:

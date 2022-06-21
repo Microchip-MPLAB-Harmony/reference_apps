@@ -80,20 +80,20 @@ The pre-built hex file can be programmed by following the below steps.
   and tap on "BLE Connect" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
 <img src = "images/mbd_appscreen1.jpg" width="250" height="550" align="middle">
 
--  Now, scan for Bluetooth devices by tapping "START SCAN" options on the MBD APP.
+-  Now, scan for Bluetooth devices by tapping "START SCAN" options on the MBD APP.  
 <img src = "images/mbd_appscreen2.jpg" width="250" height="550" align="middle">
 
 -  The BLE 2 device should appear as **BLE2CLICK** in the list of Bluetooth devices.  
 <img src = "images/mbd_appscreen3.jpg" width="250" height="550" align="middle">
 
--  Tap on the "BLE2CLICK" device to connect to the device.
+-  Tap on the "BLE2CLICK" device to connect to the device.  
 <img src = "images/mbd_appscreen3.jpg" width="250" height="550" align="middle">
 <img src = "images/mbd_appscreen5.jpg" width="250" height="550" align="middle">
 
-- Once the device is connected, under "Service List" select battery service
+- Once the device is connected, under "Service List" select battery service  
 <img src = "images/mbd_appscreen4.png" width="250" height="550" align="middle">
 
-- A battery service screen appears and you can observe the battery percentage getting updated
+- A battery service screen appears and you can observe the battery percentage getting updated  
 <img src = "images/mbd_appscreen6.jpg" width="250" height="550" align="middle">
 <img src = "images/mbd_appscreen7.jpg" width="250" height="550" align="middle">
 
@@ -188,7 +188,7 @@ You could use this demonstration as an example to add ble functionality to your 
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Released demo application

@@ -42,8 +42,8 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 ## Setup:
 - Mount the OLED C click on the mikro BUS 1 of the Curiosity PIC32MZ EF 2.0 Development Board
 - Mount the Grid-EYE click on the mikro BUS 2 of the Curiosity PIC32MZ EF 2.0 Development Board
-- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)
-<img src = "images/pic32_thermal_camera_setup.png">
+- Power the Curiosity PIC32MZ EF 2.0 Development Board from a Host PC through a Type-A male to micro-B USB cable connected to Micro-B port (J700)  
+	<img src = "images/pic32_thermal_camera_setup.png">
 
 
 ## Programming hex file:
@@ -84,7 +84,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Updated the application to use Grid-EYE and OLED-C Click routines, Removed MCC support, Regenerated and tested application.

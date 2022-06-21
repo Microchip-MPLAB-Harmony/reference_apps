@@ -14,7 +14,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Low Power](./saml21_low_power/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml21_low_power.zip) |
-| 2 | [Ble Fitness Tracker](./ble_fitness_tracker/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml21_ble_fitness_tracker.zip) |
+| 2 | [BLE Fitness Tracker](./saml21_ble_fitness_tracker/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/saml21_ble_fitness_tracker.zip) |
 
 ### More Application Demos
 

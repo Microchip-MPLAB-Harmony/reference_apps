@@ -76,7 +76,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Running the Demo:
 - Open **MCP2210 SPI Terminal** Application. If the MCP2210 board is recognized, you should see the 'MCP2210 Status: Connected' on the far down-left corner of the window.
-- Configure the MCP2210 SPI Terminal as below.
+- Configure the MCP2210 SPI Terminal as below.  
 <img src = "images/mcp2210_spi_terminal_config.png">
 - **Data write to emulated EEPROM (SPI Slave)**
 
@@ -187,7 +187,7 @@ You could use this demonstration as an example to add USB SPI functionality to y
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Released demo application

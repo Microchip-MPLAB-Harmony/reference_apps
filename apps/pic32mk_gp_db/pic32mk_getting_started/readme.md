@@ -90,7 +90,7 @@ The pre-built hex file can be programmed by following the below steps
 - Also, notice LED1 blinking at a 500 millisecond rate
 - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
 <img src = "images/temp_sensor_placement.png" width="525" height="590" align="middle">  
-- Press the S1 switch on the PIC32MK General Purpose (GP) Development Kit to change the default sampling rate to one second
+- Press the S1 switch on the PIC32MK General Purpose (GP) Development Kit to change the default sampling rate to one second  
 <img src = "images/user_button_placement.png" width="525" height="590" align="middle">  
 <img src = "images/result2.png" width="345" height="165" align="middle">  
 - Every subsequent press of switch S1 on the PIC32MK General Purpose (GP) Development Kit changes the default sampling rate to two seconds, four seconds, 500 milliseconds and back to one second in cyclic order as shown below  
@@ -107,7 +107,7 @@ The pre-built hex file can be programmed by following the below steps
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application.

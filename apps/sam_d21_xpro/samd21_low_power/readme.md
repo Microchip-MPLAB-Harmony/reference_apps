@@ -151,20 +151,20 @@ connected to Micro-B port, and reconnect it back.
   <img src = "images/device_wakes_up_and_print_temperature.png" width="800" height="450" align="middle">  
 
   **Note:** The power consumption of the device in Active mode is 11.3 mA and the power consumption of the same device in Standby mode is 10.5 µA. This shows the device in Standby mode will consume less power.  
-  The message printed on serial terminal when you have done this step.
+  The message printed on serial terminal when you have done this step.  
   <img src = "images/result_screen3.png" width="659" height="342" align="middle">  
 
 - Press the **SW0** button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby Sleep mode to Idle Sleep mode.  
   <img src = "images/active_idle_transition.png" width="800" height="450" align="middle">  
 
   The power consumption of the device in Standby Sleep mode is in uA and the power consumption of the same device in Idle Sleep mode is ~2.7 mA. This shows the device in Idle Sleep mode will consume little higher power than Standby Sleep mode.  
-  The message printed on serial terminal when you have done this step.
+  The message printed on serial terminal when you have done this step.  
   <img src = "images/result_screen4.png" width="659" height="342" align="middle">  
 
 - Place your hand nearer to the light sensor. Device wakes up, reads and prints temperature value on serial console, and re-enters the Standby mode. The following image shows the transition power consumption values from Idle to Standby mode.  
   <img src = "images/device_idle_to_standby_mode.png" width="800" height="450" align="middle">  
 
-  The message printed on serial terminal when you have done this step.
+  The message printed on serial terminal when you have done this step.  
   <img src = "images/result_screen5.png" width="659" height="342" align="middle">  
 
   The following image shows the device in Idle mode with a measured power consumption of 2680 µA.  
@@ -184,7 +184,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
   The following image shows the wake-up time for the device Standby Sleep mode to Active Mode:  
   <img src = "images/wakeup_time_from_standby.png" width="798" height="254" align="middle">  
 
-  The message printed on serial terminal when you have done this step.
+  The message printed on serial terminal when you have done this step.  
   <img src = "images/result_screen6.png" width="659" height="342" align="middle">  
 
 - Press the **SW0** switch and capture the signals to measure the wake-up time from Idle Sleep to Active.  
@@ -192,7 +192,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 
   <img src = "images/wakeup_time_from_idle.png" width="798" height="254" align="middle">  
 
-  The message printed on serial terminal when you have done this step.
+  The message printed on serial terminal when you have done this step.  \
   <img src = "images/result_screen7.png" width="659" height="342" align="middle">  
 
 - When you repeat the switch SW0 pressing, the device sleep state will switch between Standby to Idle and Idle to Standby, the message printed on serial terminal when you have done this step.  

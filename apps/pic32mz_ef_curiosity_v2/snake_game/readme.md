@@ -43,7 +43,7 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 - Mount SSD1963 LCD Controller Graphics Card on the Graphics connector(J601) of Curiosity PIC32MZ EF 2.0 Development Board
 - Mount Thumbstick click board on mikro bus click 1 connector of Curiosity PIC32MZ EF 2.0 Development Board
 - Connect the WVGA LCD Display Module ribbon to the connector(J2) of the  SSD1963 LCD Controller Graphics Card    
-- Plug the 5.5-14V power cable to the power connecter(J200) of the Curiosity PIC32MZ EF 2.0 Development Board
+- Plug the 5.5-14V power cable to the power connecter(J200) of the Curiosity PIC32MZ EF 2.0 Development Board  
 <img src = "images/pic32_snake_game_setup.png" width="600" height="800" align="middle">
 
 
@@ -87,7 +87,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 Removed MHC support, Regenerated and tested application.

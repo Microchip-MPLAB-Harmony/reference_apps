@@ -56,15 +56,15 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 - Mount GSM-GPS click board on mikro bus click 1 connector of Curiosity Nano Base and connect the GPS and GSM antennas on GSM-GPS click board connectors
 - Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)
 - Wait for about 60 seconds
-- Power the GSM-GPS click board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port of GSM-GPS click
-<img src = "images/location_sos_hardware_setup1.jpg" width="600" height="500" align="middle">
+- Power the GSM-GPS click board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port of GSM-GPS click  
+	<img src = "images/location_sos_hardware_setup1.jpg" width="600" height="500" align="middle">
 
 ## Setup 2: Uses Li-ion battery
 - Mount SAM D21 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board.
 - Mount GSM-GPS click board on mikro bus click 1 connector of Curiosity Nano Base and connect the GPS and GSM antennas on GSM-GPS click board connectors.
 - Connect Li-ion or Lipo Battery on J1 connector and make sure SW1 slider switch is moved to Battery on position in Curiosity Nano Base board.   
 - Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105).  
-<img src = "images/location_sos_hardware_setup2.jpg" width="600" height="500" align="middle">
+	<img src = "images/location_sos_hardware_setup2.jpg" width="600" height="500" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  

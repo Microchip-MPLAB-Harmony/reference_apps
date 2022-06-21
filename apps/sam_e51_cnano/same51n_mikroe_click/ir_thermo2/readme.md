@@ -73,7 +73,7 @@ The pre-built hex file can be programmed by following the below steps.
   on IR Thermo 2 click with a 8 : 1 distance ratio.  
   For example, if you need to measure the object surface temperature of a 4-inch area with the IR thermo 2 click that has a Distance/Surface
   ratio of 8:1, the maximum distance from where you can accurately measure the temperature will be 32 inches (8:1 x 4)
-- Now, press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the object temperature.
+- Now, press the switch SW0 on the SAM E51 Curiosity Nano Evaluation Kit to print the object temperature.  
 	<img src = "images/ir_thermo2_click_run.png" width="660" height="340" align="middle">
 
   *Note*: Here, the above object temperature values measured by keeping Cold and Hot water on top of the IR Thermo 2 Click of a 1 inch object surface.
@@ -157,7 +157,7 @@ You could use this demonstration as an example to add IR Thermo 2 functionality 
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 
 

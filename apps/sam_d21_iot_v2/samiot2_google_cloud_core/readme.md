@@ -19,7 +19,7 @@ nav_order: 1
 
 > The SAM-IoT Wx v2 Development board based on the SAM D21 microcontroller is a small and easily expandable demonstration and development platform for Wi-Fi-based IoT Node applications. This specific development board comes pre-provisioned for Google IoT core, hence "WG." The application that comes pre-programmed with factory shipped boards demonstrates MQTT data transfer of on-board light and temperature sensor data to Google IoT core.
 
-## Key Highlights of [SAM-IoT WG v2 Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/):
+## Key Highlights of [SAM-IoT WG v2 Development Board](https://www.microchip.com/en-us/development-tool/EV62V87A):
 
 * On-board Light and Temperature Sensors.
 * Additional sensors can be interfaced using "click boards" through an on-board [mikroBUS connector](https://www.mikroe.com/click).

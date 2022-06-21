@@ -83,47 +83,47 @@ The pre-built hex file can be programmed by following the below steps.
     **Note:** If there is no device ID on that field, please refer to the MCP2221 terminal installation instructions to install the board.
 - Now, select File > Import Commands. Navigate to the project solution folder and select the file **MCP2221 - CMDs For I2C Slave Demo.csv**:
 
-	<img src = "images/mcp2221_i2c_smbus_terminal_import.png">
-You should now have the following commands listed under the Command list:
+	<img src = "images/mcp2221_i2c_smbus_terminal_import.png">  
+	You should now have the following commands listed under the Command list:
 	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmds.png">
 - **Step 1: Read 512 bytes from I²C Slave**
 
-    After the Terminal is configured, issue the first command on the list by pressing the button Send on the right side. This command accesses the I²C device address 0x54, which is the Slave address selected for this example, and reads the 512 bytes data. This is the emulated EEPROM buffer on which the read and write operations are executed.
+    After the Terminal is configured, issue the first command on the list by pressing the button Send on the right side. This command accesses the I²C device address 0x54, which is the Slave address selected for this example, and reads the 512 bytes data. This is the emulated EEPROM buffer on which the read and write operations are executed.  
 
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read512.png">
+		<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read512.png">  
 
-- **Step 2: Write 8 bytes to I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write8.png">
+	- **Step 2: Write 8 bytes to I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write8.png">
 
-- **Step 3: Read 8 bytes from I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read8.png">
+- **Step 3: Read 8 bytes from I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read8.png">
 
-- **Step 4: Write 16 bytes to I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write16.png">
+- **Step 4: Write 16 bytes to I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write16.png">
 
-- **Step 5: Read 16 bytes from I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read16.png">
+- **Step 5: Read 16 bytes from I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read16.png">
 
-- **Step 6: Read 512 bytes from I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read512_01.png">
+- **Step 6: Read 512 bytes from I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read512_01.png">
 
-- **Step 7: Write page 1 (256bytes) to I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page1.png">
+- **Step 7: Write page 1 (256bytes) to I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page1.png">
 
-- **Step 8: Read two pages (256bytes) from I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page1_read.png">
+- **Step 8: Read two pages (256bytes) from I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page1_read.png">
 
-- **Step 9: Write page 2 (256bytes) to I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page2.png">
+- **Step 9: Write page 2 (256bytes) to I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page2.png">
 
-- **Step 10: Read two pages (256bytes) from I²C Slave**
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page2_read.png">
+- **Step 10: Read two pages (256bytes) from I²C Slave**  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write_page2_read.png">
 
-- **Step 11: Issue the following commands and observe output**
-    - Write 1 byte to page 1 address **0x1E**.
-    - Write 1 byte to page 2 address **0x1E**.
-    - Read two pages. Check whether above bytes are written properly.
-    <img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_byte_write_read.png">
+- **Step 11: Issue the following commands and observe output**  
+	- Write 1 byte to page 1 address **0x1E**.
+  - Write 1 byte to page 2 address **0x1E**.
+  - Read two pages. Check whether above bytes are written properly.  
+		<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_byte_write_read.png">
 
 ## Instructions to add USB I2C functionality to your application:
 
@@ -204,7 +204,7 @@ You could use this demonstration as an example to add USB I2C functionality to y
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
 - v1.5.0 - Removed MHC support, regenerated and tested application

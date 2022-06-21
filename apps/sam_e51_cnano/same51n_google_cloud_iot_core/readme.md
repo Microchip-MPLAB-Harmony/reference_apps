@@ -85,7 +85,7 @@ The SAM E51 Curiosity Nano Evaluation Kit is based on SAM E51 microcontroller, i
 Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default*  
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)  
 - [MPLAB XC32 C/C++ Compiler v3.01](https://www.microchip.com/en-us/tools-resources/archives/mplab-ecosystem)  
-	 
+
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
@@ -166,7 +166,7 @@ The pre-built hex file can be programmed by following the below steps
 - Log into the [console](https://console.cloud.google.com/start?tutorial=iot_core_quickstart)
 - Use your personal Gmail account to log in. Select “Try for free”.  
   **Note** : If you do not have a Gmail account, create a new email account from [HERE](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp)
-- Create a new Google cloud project by clicking the **Select a project** option
+- Create a new Google cloud project by clicking the **Select a project** option  
 <img src = "images/gcp_1.png" align="middle">  
 - Click on **NEW PROJECT**  
 <img src = "images/gcp_2.png" align="middle">  
@@ -193,8 +193,8 @@ The pre-built hex file can be programmed by following the below steps
 <img src = "images/gcp_11.png" align="middle">
 - Click on "Subscriptions" and click on "CREATE SUBSCRIPTION"  
 <img src = "images/gcp_12.png" align="middle">
-- Enter the "subscription ID" as **example** and select a "Cloud Pub/Sub topic" as below and click on **CREATE**
- <img src = "images/gcp_13.png" align="middle">  
+- Enter the "subscription ID" as **example** and select a "Cloud Pub/Sub topic" as below and click on **CREATE**  
+<img src = "images/gcp_13.png" align="middle">  
 - In the navigation pane, select **IoT Core**  
 <img src = "images/gcp_15.png" align="middle">
 - Click on "CREATE REGISTRY"  
@@ -225,14 +225,14 @@ The pre-built hex file can be programmed by following the below steps
 **Note** : Creating a Google could account and adding registry to it is one time process
 <a id="Instructions_to_add_your_device_to_Google_cloud_registry"> </a>
 <h3> 4. Instructions to add your device to Google cloud registry </h3>
-- In Google cloud search bar, search for IOT core and select the "sam_e51_iot" registry which was created earlier
- <img src = "images/gcp_27.png" align="middle">
+- In Google cloud search bar, search for IOT core and select the "sam_e51_iot" registry which was created earlier  
+<img src = "images/gcp_27.png" align="middle">
 - Select "Devices" and click on "CREATE A DEVICE"  
 <img src = "images/gcp_28.png" align="middle">
-- Enter the device serial number starting with 'd' as shown below and click on create
- <img src = "images/gcp_29.png" align="middle">
-- Add the public key read from the device in command prompt as shown below
- <img src = "images/gcp_30.png" align="middle">
+- Enter the device serial number starting with 'd' as shown below and click on create  
+<img src = "images/gcp_29.png" align="middle">
+- Add the public key read from the device in command prompt as shown below  
+<img src = "images/gcp_30.png" align="middle">
 - You have successfully added device into Registry of google cloud
 
 **Note** : Following above steps, you can add more devices
@@ -244,8 +244,8 @@ Fetching_data_from_Google_Cloud_and_displaying_on_UI
 - Open command prompt on your PC
 - Navigate to **scripts** folder and type below command<br>
         python gcp_gui.py --creds example.json example
-- A UI opens and starts displaying light and temperature values fetching from google cloud with serial number of the particular device
- <img src = "images/output_1.png" align="middle">
+- A UI opens and starts displaying light and temperature values fetching from google cloud with serial number of the particular device  
+<img src = "images/output_1.png" align="middle">
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
