@@ -26,7 +26,7 @@ nav_order: 99
 
 ### Updated Applications  
 
-- Updated applications for documentation errors, broken images and links
+- Updated applications for documentation errors, broken images and links.
 
 
 ### Known Issues
