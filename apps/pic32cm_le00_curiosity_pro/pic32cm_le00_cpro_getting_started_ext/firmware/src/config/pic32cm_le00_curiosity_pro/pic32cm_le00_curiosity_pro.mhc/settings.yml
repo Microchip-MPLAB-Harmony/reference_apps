@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic32cm_le00_curiosity_pro
+folderName: getting_Started_pic32cm_le00_curiosity_pro
+frameworkPath: C:\gitHub
+processor: PIC32CM5164LE00100
+projectName: getting_Started_pic32cm_le00_curiosity_pro
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CM-LE_DFP\1.0.153\atdf\PIC32CM5164LE00100.atdf

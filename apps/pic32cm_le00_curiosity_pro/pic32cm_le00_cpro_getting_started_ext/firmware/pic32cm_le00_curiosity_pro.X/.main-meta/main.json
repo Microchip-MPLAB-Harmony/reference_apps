@@ -1,0 +1,89 @@
+{
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.1.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cm_le00_cpro_getting_started_ext",
+      "version":"1.6.0",
+      "displayName":"Getting Started Extended Application on PIC32CM LE00 Curiosity Pro Evaluation Kit",
+      "projectName":"pic32cm_le00_cpro_getting_started_ext",
+      "shortDescription":"Demonstrates how to get started using the basic peripherals like EIC, RTC, DMAC, GPIO, SERCOM(I2C), and SERCOM(USART)",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=6.00"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=4.0.0"
+         }
+      ],
+      "dfp":{
+         "name":"PIC32CM-LE_DFP",
+         "semverRange":"^1.1.162"
+      },
+      "configurator":{
+         "name":"MCC",
+         "semverRange":">=5.1.17"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"PIC32CM5164LE00100",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "PIC32CM LE00 Curiosity Pro Evaluation Kit"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "EIC",
+         "RTC",
+         "DMAC",
+         "GPIO",
+         "STDIO",
+         "SERCOM (USART)",
+         "SERCOM (I2C)"
+      ],
+      "keywords":[
+         "MHC",
+         "MCC",
+         "Harmony",
+         "PIC32CM5164LE00100",
+         "PIC32CM LE Family",
+         "UART",
+         "Serial Communication",
+         "USART",
+         "SERCOM",
+         "Getting Started",
+         "EIC",
+         "RTC",
+         "GPIO",
+         "Curiosity Pro",
+         "Curiosity",
+         "PIC32CM LE00"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
+}
