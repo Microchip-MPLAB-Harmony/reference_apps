@@ -20,6 +20,8 @@ This folder contains the **MPLAB® Harmony 3 reference applications** developed 
 | 4 | [SleepWalking](./sleepwalking/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sleepwalking.zip) |
 | 5 | [Vending Machine](./same54_vending_machine/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_vending_machine.zip) |
 | 6 | [CAN USB Bridge](./same54_can_usb_bridge/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_can_usb_bridge.zip) |
+| 7 | [File Transfer Protocol - Client Application](./same54_ftp_client/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_ftp_client.zip) |
+| 8 | [File Transfer Protocol - Server application](./same54_ftp_server/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_ftp_server.zip) |
 
 
 ### More Application Demos
