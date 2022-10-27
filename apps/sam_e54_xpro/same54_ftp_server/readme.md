@@ -41,14 +41,14 @@ nav_order: 5
 
 ## Hardware Used:
 
-- [SAM E54 Xplained Pro Development Board](https://www.microchip.com/en-us/development-tool/atsame54-xpro)
+- [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/atsame54-xpro)
 - [IO1 Xplained Pro Extension Kit](
 https://www.microchip.com/en-us/development-tool/ATIO1-XPRO)
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>
 
-Refer [Project Manifest](./firmware/src/config/same54_xpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e54_xpro*  
+Refer [Project Manifest](./firmware/src/config/sam_e54_xpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e54_xpro*  
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MHC/MCC** Plugin version.  
 - Any Serial Terminal application like Tera Term terminal application.
 - Windows command prompt
@@ -57,9 +57,9 @@ Refer [Project Manifest](./firmware/src/config/same54_xpro/harmony-manifest-succ
 
 ## Setup:
 - Insert the SD Card in the IO1 Xplained Pro. The microSD at the Server will be FAT FS File system, that can store all files, which can be downloaded by client (or) client can upload a file to this storage Media.   
-- Connect the IO1 Xpro to EXT1 of the SAME54 Xplained Pro evaluation kit.
+- Connect the IO1 Xpro to EXT1 of the SAM E54 Xplained Pro Evaluation Kit.
 - Connect the micro USB cable from the computer to the DEBUG USB connector on the SAM E54 Xplained Pro Kit as shown in the below image.
-- Connect the RJ45 cable from SAM E54 Xplained Pro kit's Ethernet Port (Server) to Client's Ethernet Port.
+- Connect the RJ45 cable from SAM E54 Xplained Pro Evaluation Kit's Ethernet Port (Server) to Client's Ethernet Port.
 
 <img src = "images/server_setup.jpg" width="520" height="400" align="middle">
 
@@ -81,7 +81,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## Programming/Debugging Application Project:
 - Open the project(ftp_sam_e54/sam_e54_ftp_server/firmware/ftp_server_sam_e54_xpro.X) in MPLAB X IDE
-- Ensure "EDBG" is selected as hardware tool to program/debug the application
+- Ensure "SAM E54 Xplained Pro" is selected as hardware tool to program/debug the application
 - Build the code and program the devices by clicking on the "Make and Program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
@@ -103,7 +103,7 @@ The pre-built hex file can be programmed by following the below steps.
 - The path of file for sending/receiving in the host(client) would be c:/users/local pc account. By going to this location and verify the downloaded file from the FTP server (SAM E54 Xpro board).
 
 #### Output
--Once FTP server application is programmed in the SAM E54 xpro board, The initialization status of the TCP/IP stack is seen in the tera term window, also file system mounting status and GMAC IP address are listed in tera term console. Please make sure the tera term baud rate to be 115200 for seeing the output properly.
+-Once FTP server application is programmed in the SAM E54 Xplained Pro Evaluation Kit, The initialization status of the TCP/IP stack is seen in the tera term window, also file system mounting status and GMAC IP address are listed in tera term console. Please make sure the tera term baud rate to be 115200 for seeing the output properly.
 
 - <img src = "images/teraterm_server_output.png" width="700" height="170" align="middle">
 

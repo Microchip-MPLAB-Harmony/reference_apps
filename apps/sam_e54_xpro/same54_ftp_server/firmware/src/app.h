@@ -12,11 +12,37 @@
 
   Description:
     This header file provides function prototypes and data type definitions for
-    the application.  Some of these are required by the system (such as the
-    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "APP_STATES" definition).  Both
+	the application.  Some of these are required by the system (such as the
+	"APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
+	internally by the application (such as the "APP_STATES" definition).  Both
     are defined here for convenience.
-*******************************************************************************/
+ *******************************************************************************/
+
+ // DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ *******************************************************************************/
+// DOM-IGNORE-END
+
 
 #ifndef _APP_H
 #define _APP_H
@@ -43,7 +69,7 @@
 
 
 
-    
+
 
 
 
@@ -51,7 +77,7 @@
 #define APP_LED_1StateGet()         LED_Get()
 #define APP_LED_1StateClear()       LED_Clear()
 #define APP_LED_1StateToggle()      LED_Toggle()
-    
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -83,14 +109,14 @@ typedef enum
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
     APP_STATE_SERVICE_TASKS,
-    
+
     /* The app mounts the disk */
     APP_MOUNT_WAIT = 0,
-            
+
     /* In this state, the application waits for the initialization of the TCP/IP stack
     to complete. */
     APP_TCPIP_WAIT_INIT,
-            
+
     /* In this state, the application can do TCP/IP transactions. */
     APP_TCPIP_TRANSACT,
 
@@ -136,8 +162,8 @@ typedef struct
     /* The application's current state */
     APP_STATES state;
 
-    TCPIP_FTP_HANDLE    ftpHandle; 
-    
+    TCPIP_FTP_HANDLE    ftpHandle;
+
     /* Flag to indicate SDCARD mount status */
     volatile bool      sdCardMountFlag;
 

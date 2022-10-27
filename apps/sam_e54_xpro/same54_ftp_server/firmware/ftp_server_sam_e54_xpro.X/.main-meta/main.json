@@ -3,11 +3,11 @@
    "category":"com.microchip.ide.project",
    "content":{
       "metaDataVersion":"1.3.0",
-      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_ftp_bootloader",
-      "version":"3.8.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_ftp_server",
+      "version":"1.6.0",
       "displayName":"File Transfer Protocol - Server Application on SAM E54 Xplained pro Development Board",
       "projectName":"ftp_server_sam_e54_xpro",
-      "shortDescription":"FTP Server configuration demonstrates creating an application where FTP server will use FAT FS with microSDCARD on IO1 xplained pro board as media.",
+      "shortDescription":"FTP Server configuration demonstrates creating an application where FTP server will use FAT FS.",
       "ide":{
          "name":"MPLABX",
          "semverRange":">=6.00.0"

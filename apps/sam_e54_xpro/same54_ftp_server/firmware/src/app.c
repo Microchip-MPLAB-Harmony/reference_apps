@@ -1,5 +1,29 @@
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+  MPLAB Harmony Application Source File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    app.c
+
+  Summary:
+    This file contains the source code for the MPLAB Harmony application.
+
+  Description:
+    This file contains the source code for the MPLAB Harmony application.  It
+    implements the logic of the application's state machine and it may call
+    API routines of other MPLAB Harmony modules in the system, such as drivers,
+    system services, and middleware.  However, it does not call any of the
+    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
+    the modules in the system or make any assumptions about when those functions
+    are called.  That is the responsibility of the configuration-specific system
+    files.
+ *******************************************************************************/
+
+ // DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -19,31 +43,12 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-
-/*******************************************************************************
-  MPLAB Harmony Application Source File
-  Company:
-    Microchip Technology Inc.
-  File Name:
-    app.c
-  Summary:
-    This file contains the source code for the MPLAB Harmony application.
-  Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
  *******************************************************************************/
-// *****************************************************************************
-// *****************************************************************************
+// DOM-IGNORE-END
 
+// *****************************************************************************
+// *****************************************************************************
 // Section: Included Files
-
 // *****************************************************************************
 // *****************************************************************************
 
@@ -69,7 +74,7 @@
   Remarks:
     This structure should be initialized by the APP_Initialize function.
     Application strings and buffers are be defined outside this structure.
- * 
+ *
 */
 
 APP_DATA appData;
@@ -112,15 +117,15 @@ static void APP_SysFSEventHandler(SYS_FS_EVENT event,void* eventData,uintptr_t c
 
       case SYS_FS_EVENT_ERROR:
             break;
-            
-        case SYS_FS_EVENT_MOUNT_WITH_NO_FILESYSTEM: 
+
+        case SYS_FS_EVENT_MOUNT_WITH_NO_FILESYSTEM:
             break;
     }
 }
 // *****************************************************************************
 // *****************************************************************************
 
-#if (TCPIP_FTPS_OBSOLETE_AUTHENTICATION == 0)  
+#if (TCPIP_FTPS_OBSOLETE_AUTHENTICATION == 0)
 /* TODO:  Add any necessary callback functions.
 */
 static bool APP_FTPAuthHandler(const char* user, const char* password, const TCPIP_FTP_CONN_INFO* pInfo, const void* hParam);
@@ -147,13 +152,13 @@ static bool APP_FTPAuthHandler(const char* user, const char* password, const TCP
  */
 void APP_Initialize ( void )
 {
-    
+
     /* Place the App state machine in its initial state. */
     appData.state = APP_MOUNT_WAIT;
 
     /* Register the File System Event handler */
     SYS_FS_EventHandlerSet((void const*)APP_SysFSEventHandler,(uintptr_t)NULL);
-    
+
 
 }
 /******************************************************************************
@@ -172,13 +177,13 @@ void APP_Tasks ( void )
     int                 i;
     const char          *netName, *netBiosName;
     static uint32_t     startTick = 0;
-    
-    
-   
-    
+
+
+
+
     switch(appData.state)
     {
-          
+
         case APP_MOUNT_WAIT:
             /* Wait for SDCARD to be Auto Mounted */
             if(appData.sdCardMountFlag == true)
@@ -187,8 +192,8 @@ void APP_Tasks ( void )
                 appData.state = APP_TCPIP_WAIT_INIT;
             }
             break;
-            
-           
+
+
         case APP_TCPIP_WAIT_INIT:
             tcpipStat = TCPIP_STACK_Status(sysObj.tcpip);
             if(tcpipStat < 0)
@@ -212,42 +217,42 @@ void APP_Tasks ( void )
 #else
                     SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS disabled\r\n", netName, netBiosName);
 #endif
-                    (void)netName;          // avoid compiler warning 
+                    (void)netName;          // avoid compiler warning
                     (void)netBiosName;      // if SYS_CONSOLE_PRINT is null macro
-                    
-                    
-                    
-                    #if defined(TCPIP_STACK_USE_ZEROCONF_MDNS_SD)	
-                    // base name of the service Must not exceed 16 bytes long	
-                    // the last digit will be incremented by interface	
-                    char mDNSServiceName[] = "MyWebServiceNameX ";	
-                    mDNSServiceName[sizeof(mDNSServiceName) - 2] = '1' + i;	
-                    TCPIP_MDNS_ServiceRegister(netH	
-                            , mDNSServiceName                     // name of the service	
-                            ,"_http._tcp.local"                   // type of the service	
-                            ,80                                   // TCP or UDP port, at which this service is available	
-                            ,((const uint8_t *)"path=/index.htm") // TXT info	
-                            ,1                                    // auto rename the service when if needed	
-                            ,NULL                                 // no callback function	
-                            ,NULL);                               // no application context	
-#endif	
-                }	
-                
-               
-                
-                
-#if (TCPIP_FTPS_OBSOLETE_AUTHENTICATION == 0)              
+
+
+
+                    #if defined(TCPIP_STACK_USE_ZEROCONF_MDNS_SD)
+                    // base name of the service Must not exceed 16 bytes long
+                    // the last digit will be incremented by interface
+                    char mDNSServiceName[] = "MyWebServiceNameX ";
+                    mDNSServiceName[sizeof(mDNSServiceName) - 2] = '1' + i;
+                    TCPIP_MDNS_ServiceRegister(netH
+                            , mDNSServiceName                     // name of the service
+                            ,"_http._tcp.local"                   // type of the service
+                            ,80                                   // TCP or UDP port, at which this service is available
+                            ,((const uint8_t *)"path=/index.htm") // TXT info
+                            ,1                                    // auto rename the service when if needed
+                            ,NULL                                 // no callback function
+                            ,NULL);                               // no application context
+#endif
+                }
+
+
+
+
+#if (TCPIP_FTPS_OBSOLETE_AUTHENTICATION == 0)
                appData.ftpHandle = TCPIP_FTP_AuthenticationRegister(APP_FTPAuthHandler, 0);
                 if(appData.ftpHandle == 0)
                 {
                     SYS_CONSOLE_MESSAGE("Failed to register FTP authentication handler!\r\n");
                 }
-#endif            
+#endif
                 appData.state = APP_TCPIP_TRANSACT;
             }
             break;
-            
-            
+
+
         case APP_TCPIP_TRANSACT:
             if(SYS_TMR_TickCountGet() - startTick >= SYS_TMR_TickCounterFrequencyGet()/2)
             {
@@ -286,7 +291,7 @@ void APP_Tasks ( void )
             break;
     }
 }
-#if (TCPIP_FTPS_OBSOLETE_AUTHENTICATION == 0)  
+#if (TCPIP_FTPS_OBSOLETE_AUTHENTICATION == 0)
 // Implement the authentication handler
 // This trivial example does a simple string comparison
 // The application should implement a more secure aproach:
