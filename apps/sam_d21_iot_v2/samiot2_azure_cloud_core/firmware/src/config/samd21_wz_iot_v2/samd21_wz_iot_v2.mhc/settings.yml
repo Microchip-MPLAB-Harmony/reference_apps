@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: samd21_wz_iot_v2
+folderName: sam_d21_iot_wz_v2
+frameworkPath: C:\Work\harmony_public_release
+processor: ATSAMD21G18A
+projectName: sam_d21_iot_wz_v2
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21a\atdf\ATSAMD21G18A.atdf
