@@ -54,14 +54,14 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
 
 ## Hardware Setup 1: <span id="Setup1"><span>
 - The PIC32CM LS60 Curiosity Pro Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging.
-- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J300) to power and debug the PIC32CM LS60 Curiosity Pro Evaluation Kit
+- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J300) to power and debug the PIC32CM LS60 Curiosity Pro Evaluation Kit  
   <img src = "images/hardware_setup.png" align="middle">
 - The PIC32CM LS60 Curiosity Pro Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging. Connect the Type-A male to micro-B USB cable to the micro-B DEBUG USB port to power and debug the PIC32CM LS60 Curiosity Pro Evaluation Kit.
 
 ## Hardware Setup 2: <span id="Setup2"><span>
 - The PIC32CM LS60 Curiosity Pro Evaluation Kit allows the Embedded Debugger (EDBG) to be used for debugging.
-- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J300) to power and debug the PIC32CM LS60 Curiosity Pro Evaluation Kit
-- To test the extended functionality, connect the [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO) to the extension header EXT1 (J601) on the PIC32CM LS60 Curiosity Pro Evaluation Kit.
+- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J300) to power and debug the PIC32CM LS60 Curiosity Pro Evaluation Kit  
+- To test the extended functionality, connect the [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO) to the extension header EXT1 (J601) on the PIC32CM LS60 Curiosity Pro Evaluation Kit.  
   <img src = "images/hardware_setup_ext.png" align="middle">
 
 ## TrustZone Application Development Use Cases
@@ -162,18 +162,18 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
     - Go to File -> Open Project
     - Go to **reference_apps** repo path and navigate to following path
         - `<reference_apps_path>/apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_cpro_tz_getting_started`
-    - Select "firmware" folder, enable "Open Required Projects" and click on "Open Project" button
+    - Select "firmware" folder, enable "Open Required Projects" and click on "Open Project" button  
 
     <img src = "images/group_project_path.png">
 
     <img src = "images/opened_group_project.png">
 
-    - Once the project opens, set the "tz_pic32cm_ls60_cpro_NonSecure" project as Main Project by right clicking on the project.
-    <img src = "images/set_as_main_project.png">
+    - Once the project opens, set the "tz_pic32cm_ls60_cpro_NonSecure" project as Main Project by right clicking on the project.  
+    <img src = "images/set_as_main_project.png">  
   - Procedure 2:
     - Open MPLAB X IDE
     - Close all existing projects in IDE (if any project is opened)
-    - Open the project (../pic32cm_ls60_cpro_tz_getting_started/firmware/NonSecure/firmware/tz_pic32cm_ls60_cpro_NonSecure.X) in MPLAB X IDE.
+    - Open the project (../pic32cm_ls60_cpro_tz_getting_started/firmware/NonSecure/firmware/tz_pic32cm_ls60_cpro_NonSecure.X) in MPLAB X IDE.  
 
         <img src = "images/opened_non_secure_project.png" >
 - Ensure "PIC32CM LS60 Curiosity Pro" is selected as hardware tool to program/debug the application.
@@ -190,7 +190,7 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
     - And also, the LED toggling rate is displayed on the serial terminal.
     - Press the switch SW0 on the PIC32CM LS60 Curiosity Pro Evaluation Kit to change the periodicity of the timeout to one second.
     - Every subsequent pressing of the switch SW0 on the PIC32CM LS60 Curiosity Pro Evaluation Kit changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
-    - See the following figure for the output.
+    - See the following figure for the output.  
     <img src = "images/result_01.png">
 
 - **Extended functionality using [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO):** <span id="ExtendedDemo"><span>
@@ -199,19 +199,19 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
     - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
     - Change the baud rate to 115200
     - Press **SW1** to start the running the extended functionality.
-    - You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below
+    - You should see the temperature values (in °F) being displayed on the terminal every 500 milliseconds, as shown below  
       <img src = "images/result1.png">
     - Also, notice the LED0 blinking at 500 millisecond rate
-    - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)
+    - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
     <img src = "images/temp_sensor_placement.png">
-    - Press the switch **SW0** on PIC32CM LS60 Curiosity Pro Evaluation Kit to change the default sampling rate to 1 second.
-      <img src = "images/user_button_placement.png">
+    - Press the switch **SW0** on PIC32CM LS60 Curiosity Pro Evaluation Kit to change the default sampling rate to 1 second.  
+      <img src = "images/user_button_placement.png">  
       <img src = "images/result2.png">
     - Every subsequent pressing of switch **SW0** on PIC32CM LS60 Curiosity Pro Evaluation Kit changes the default sampling
-      rate to 2 seconds, 4 seconds, and 500 ms and back to 1 second in cyclic order as shown below.
+      rate to 2 seconds, 4 seconds, and 500 ms and back to 1 second in cyclic order as shown below.  
       <img src = "images/result3.png">
     - While the temperature sampling rate changes on every switch **SW0** press, notice the LED0 toggling at the same sampling rate
-    - Press any character on the terminal to display the last five values written to the EEPROM. Notice that a red LED (LED1) will be toggled when a key is pressed in the serial console to read the temperature values from the **secure EEPROM**.
+    - Press any character on the terminal to display the last five values written to the EEPROM. Notice that a red LED (LED1) will be toggled when a key is pressed in the serial console to read the temperature values from the **secure EEPROM**.  
     <img src = "images/eeprom_values_display.png">
     - Anytime press **SW1** to start running basic functionality shown in [Basic functionality](#BasicDemo)
 
