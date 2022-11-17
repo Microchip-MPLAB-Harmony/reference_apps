@@ -9,7 +9,7 @@ nav_order: 14
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # BLE 2 Click board example on SAM E51 Curiosity Nano Evaluation Kit
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ble2_click.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ble2.zip" > Download </a> </h2>
 
 -----
 ## Description:
