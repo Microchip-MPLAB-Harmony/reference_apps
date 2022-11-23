@@ -2,12 +2,12 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sdcard_player",
-		"version": "1.5.0",
+		"version": "1.6.0",
 		"displayName": "SD Card Audio Player",
-		"projectName": "sdcard_player_pic32mz_ef_curiosity_v2",
-		"shortDescription": "SD Card Audio Player on Curiosity PIC32MZ EF 2.0 Development Board",
+		"projectName": "sdcard_gfx_player_pic32mz_ef_curiosity_v2",
+		"shortDescription": "SD Card GFX Audio Player Application on Curiosity PIC32MZ EF 2.0 Development Board",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.00"
@@ -15,7 +15,7 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.00"
+				"semverRange": ">=4.10"
 			}
 		],
 		"dfp": {
@@ -52,25 +52,19 @@
 			"MHC",
             "MCC",
 			"Harmony",
-			"PIC32MZ2048EFM144",
-			"PIC32MZ Family",
 			"I2C",
 			"I2S",
-			"Timer",
+			"TMR",
+			"Timer Type",
 			"Curiosity",
-			"Micro SD",
-			"Card",
-			"AK4954",
-			"SDCARD",
-			"WAV",
+			"Graphics",
+			"Touch",
+			"Touch Controller",
+			"GFX",
+			"CODEC",
 			"Decoder",
 			"File System",
-			"Codec",
-			"Audio",
-			"Player",
-			"Curiosity",
-			"PIC32MZ EF",
-			"PIC32MZEF"
+			"Audio"
 		],
 		"additionalData": {
 			"longDescription": {

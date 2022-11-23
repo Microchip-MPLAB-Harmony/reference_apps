@@ -80,12 +80,29 @@ SYS_FS_Tasks();
     /* Maintain Device Drivers */
     DRV_SDSPI_Tasks(sysObj.drvSDSPI0);
 
+    DRV_LCC_Update();
+
+
+    DRV_MAXTOUCH_Tasks(sysObj.drvMAXTOUCH);
+
     DRV_AK4954_Tasks(sysObj.drvak4954Codec0);
 
 
 
     /* Maintain Middleware & Other Libraries */
-    
+        /* USB Device layer tasks routine */ 
+    USB_DEVICE_Tasks(sysObj.usbDevObject0);
+
+
+    Legato_Tasks();
+
+    /* USBHS Driver Task Routine */ 
+    DRV_USBHS_Tasks(sysObj.drvUSBHSObject);
+
+
+    SYS_INP_Tasks();
+
+
 
     /* Maintain the application's state machine. */
         /* Call Application task APP. */

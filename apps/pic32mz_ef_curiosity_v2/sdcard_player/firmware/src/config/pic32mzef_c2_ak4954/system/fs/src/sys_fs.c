@@ -1914,7 +1914,6 @@ SYS_FS_RESULT SYS_FS_DirSearch
     SYS_FS_DIR_OBJ *fileObj = (SYS_FS_DIR_OBJ *)handle;
     char *fileName = NULL;
     OSAL_RESULT osalResult = OSAL_RESULT_FALSE;
-
     if ((handle == SYS_FS_HANDLE_INVALID) || (name == NULL) || (stat == NULL))
     {
         errorValue = SYS_FS_ERROR_INVALID_PARAMETER;
@@ -1971,7 +1970,7 @@ SYS_FS_RESULT SYS_FS_DirSearch
         }
 
         /* Firstly, match the file attribute with the requested attribute */
-        if ((stat->fattrib & attr) ||
+		if ((stat->fattrib & attr) ||
             (attr == SYS_FS_ATTR_FILE))
         {
             if((stat->lfname != NULL) && (stat->lfname[0] != '\0'))

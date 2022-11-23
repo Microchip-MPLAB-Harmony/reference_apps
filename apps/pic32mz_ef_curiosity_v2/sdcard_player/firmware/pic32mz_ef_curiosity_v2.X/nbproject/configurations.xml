@@ -22,7 +22,7 @@
                   <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/codec/ak4954/drv_ak4954.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="i2s" projectFiles="true">
+              <logicalFolder name="i2s" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/i2s/drv_i2s.h</itemPath>
                 <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/i2s/drv_i2s_definitions.h</itemPath>
                 <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/i2s/drv_i2s_local.h</itemPath>
@@ -42,14 +42,246 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/drv_i2c.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/drv_i2c_definitions.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="input" displayName="input" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/input/drv_maxtouch.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f2" displayName="sdspi" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/drv_sdspi_definitions.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_local.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_plib_interface.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/drv_sdspi.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="usb" displayName="usb" projectFiles="true">
+              <logicalFolder name="usbhs" displayName="usbhs" projectFiles="true">
+                <logicalFolder name="src" displayName="src" projectFiles="true">
+                  <logicalFolder name="templates" displayName="templates" projectFiles="true">
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_Interrupts_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_EP0Status_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_SoftReset_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_registers.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_SoftReset_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_EP0Status_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_Interrupts_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Default.h</itemPath>
+                  </logicalFolder>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/plib_usbhs_header.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/drv_usbhs_local.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/plib_usbhs.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/drv_usbhs_variant_mapping.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/usbhs_registers.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/drv_usbhs.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/drv_usb.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/drv_usb_external_dependencies.h</itemPath>
+            </logicalFolder>
             <itemPath>../src/config/pic32mzef_c2_ak4954/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mzef_c2_ak4954/driver/driver_common.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="gfx" displayName="gfx" projectFiles="true">
+            <logicalFolder name="driver" displayName="driver" projectFiles="true">
+              <logicalFolder name="lcc" displayName="lcc" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/driver/gfx_driver.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/driver/controller/lcc/drv_gfx_lcc.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="vgpu" displayName="vgpu" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/driver/processor/vgpu/drv_gfx_vgpu.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="legato" displayName="legato" projectFiles="true">
+              <logicalFolder name="common" displayName="common" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_common.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_math.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_error.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_utils.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_pixelbuffer.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_rect.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_color.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="core" displayName="core" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_input.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_state.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_scheme.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_event.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_stream.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="datastructure"
+                             displayName="datastructure"
+                             projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/datastructure/legato_list.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/datastructure/legato_rectarray.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/datastructure/legato_array.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="font" displayName="font" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/font/legato_font.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="generated" displayName="generated" projectFiles="true">
+                <logicalFolder name="screen" displayName="screen" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/screen/le_gen_screen_default.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/screen/le_gen_screen_MusicScreen.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_harmony.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_assets.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_scheme.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_init.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="image" displayName="image" projectFiles="true">
+                <logicalFolder name="jpeg" displayName="jpeg" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/jpeg/legato_imagedecoder_jpeg.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/jpeg/legato_imagedecoder_jpeg_common.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="mono" displayName="mono" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/mono/legato_imagedecoder_mono.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="png" displayName="png" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/png/legato_imagedecoder_png.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/png/lodepng.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="raw" displayName="raw" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/legato_palette.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/legato_image.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/legato_image_utils.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="memory" displayName="memory" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/memory/legato_variableheap.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/memory/legato_fixedheap.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/memory/legato_memory.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="renderer" displayName="renderer" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_renderer.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_gpu.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="string" displayName="string" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_string_renderer.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_string.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_stringutils.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_fixedstring.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_tablestring.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_stringtable.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_dynamicstring.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="widget" displayName="widget" projectFiles="true">
+                <logicalFolder name="arc" displayName="arc" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/arc/legato_widget_arc.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="bargraph" displayName="bargraph" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/bargraph/legato_widget_bar_graph.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="button" displayName="button" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/button/legato_widget_button.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="checkbox" displayName="checkbox" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/checkbox/legato_widget_checkbox.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="circle" displayName="circle" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circle/legato_widget_circle.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="circulargauge"
+                               displayName="circulargauge"
+                               projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circulargauge/legato_widget_circular_gauge.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="circularslider"
+                               displayName="circularslider"
+                               projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circularslider/legato_widget_circular_slider.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="drawsurface" displayName="drawsurface" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/drawsurface/legato_widget_drawsurface.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="gradient" displayName="gradient" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/gradient/legato_widget_gradient.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="groupbox" displayName="groupbox" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/groupbox/legato_widget_groupbox.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="image" displayName="image" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/image/legato_widget_image.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imagerotate" displayName="imagerotate" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagerotate/legato_widget_imagerotate.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imagescale" displayName="imagescale" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagescale/legato_widget_imagescale.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imagesequence"
+                               displayName="imagesequence"
+                               projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagesequence/legato_widget_imagesequence.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="keypad" displayName="keypad" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/keypad/legato_widget_keypad.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="label" displayName="label" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/label/legato_widget_label.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="line" displayName="line" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/line/legato_widget_line.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="linegraph" displayName="linegraph" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/linegraph/legato_widget_line_graph.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="list" displayName="list" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/list/legato_widget_list.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="listwheel" displayName="listwheel" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/listwheel/legato_widget_listwheel.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="piechart" displayName="piechart" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/piechart/legato_widget_pie_chart.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="progressbar" displayName="progressbar" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/progressbar/legato_widget_progressbar.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="radialmenu" displayName="radialmenu" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radialmenu/legato_widget_radial_menu.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="radiobutton" displayName="radiobutton" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radiobutton/legato_widget_radiobutton.h</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radiobutton/legato_radiobutton_group.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="rectangle" displayName="rectangle" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/rectangle/legato_widget_rectangle.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="scrollbar" displayName="scrollbar" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/scrollbar/legato_widget_scrollbar.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="slider" displayName="slider" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/slider/legato_widget_slider.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="textfield" displayName="textfield" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/textfield/legato_widget_textfield.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="touchtest" displayName="touchtest" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/touchtest/legato_widget_touchtest.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="window" displayName="window" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/window/legato_widget_window.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_editwidget.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_widget.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_widget_skin_classic_common.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/legato.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/legato_config.h</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <itemPath>../src/config/pic32mzef_c2_ak4954/osal/osal.h</itemPath>
@@ -70,6 +302,9 @@
             <logicalFolder name="f4" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="ebi" displayName="ebi" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/ebi/plib_ebi.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f5" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/evic/plib_evic.h</itemPath>
             </logicalFolder>
@@ -80,6 +315,7 @@
               <logicalFolder name="f1" displayName="master" projectFiles="true">
                 <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
                 <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/master/plib_i2c2_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f8" displayName="spi" projectFiles="true">
@@ -116,6 +352,14 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_media_manager_local.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/sys_fs_fat_interface.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="input" displayName="input" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input_keyboard.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input_gesture.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input_mouse.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input_touch.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input_listener.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f5" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/int/sys_int_mapping.h</itemPath>
@@ -134,6 +378,25 @@
             <itemPath>../src/config/pic32mzef_c2_ak4954/system/system_module.h</itemPath>
             <itemPath>../src/config/pic32mzef_c2_ak4954/system/system_media.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="usb" displayName="usb" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_device_function_driver.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_device_local.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_device_msd_local.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_device_mapping.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_external_dependencies.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_common.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_host_hub_interface.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/scsi.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_msd.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_host.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_device_msd.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_hub.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_device.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_chapter_9.h</itemPath>
+            <itemPath>../src/config/pic32mzef_c2_ak4954/usb/usb_host_client_driver.h</itemPath>
+          </logicalFolder>
           <itemPath>../src/config/pic32mzef_c2_ak4954/device_cache.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/definitions.h</itemPath>
@@ -144,6 +407,10 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
+      <itemPath>../src/app_display_task.h</itemPath>
+      <itemPath>../src/app_sdcard_reader_task.h</itemPath>
+      <itemPath>../src/legato_optimizations.h</itemPath>
+      <itemPath>../src/app_sdcard_audio_task.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -182,8 +449,8 @@
                 </logicalFolder>
               </logicalFolder>
               <logicalFolder name="f2" displayName="i2s" projectFiles="true">
-                <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/i2s/src/drv_i2s.c</itemPath>
                 <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/i2s/src/drv_i2s_local.h</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/audio/driver/i2s/src/drv_i2s.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
@@ -200,10 +467,272 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/src/drv_i2c.c</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/i2c/src/drv_i2c_local.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="input" displayName="input" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/input/drv_maxtouch.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f2" displayName="sdspi" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi.c</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_plib_interface.c</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_file_system.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="usb" displayName="usb" projectFiles="true">
+              <logicalFolder name="usbhs" displayName="usbhs" projectFiles="true">
+                <logicalFolder name="src" displayName="src" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/drv_usbhs_device.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/driver/usb/usbhs/src/drv_usbhs.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="gfx" displayName="gfx" projectFiles="true">
+            <logicalFolder name="driver" displayName="driver" projectFiles="true">
+              <logicalFolder name="lcc" displayName="lcc" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/driver/gfx_driver.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/driver/controller/lcc/drv_gfx_lcc.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="legato" displayName="legato" projectFiles="true">
+              <logicalFolder name="common" displayName="common" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_color_value.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_math.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_color_lerp.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_error.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_color_blend.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_utils.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_rect.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_color.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_color_convert.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/common/legato_pixelbuffer.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="core" displayName="core" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_input.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_state.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_scheme.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_event.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/core/legato_stream.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="datastructure"
+                             displayName="datastructure"
+                             projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/datastructure/legato_list.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/datastructure/legato_rectarray.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/datastructure/legato_array.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="font" displayName="font" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/font/legato_font.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/font/legato_rasterfont_liberationmono1.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/font/legato_rasterfont_liberationmono8.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/font/legato_rasterfont_stream.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="generated" displayName="generated" projectFiles="true">
+                <logicalFolder name="font" displayName="font" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/font/le_gen_fonts.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="image" displayName="image" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/image/le_gen_images.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="screen" displayName="screen" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/screen/le_gen_screen_default.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/screen/le_gen_screen_MusicScreen.c</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_init.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_globalpalette.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_harmony.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_stringtable.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/generated/le_gen_scheme.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="image" displayName="image" projectFiles="true">
+                <logicalFolder name="jpeg" displayName="jpeg" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/jpeg/legato_imagedecoder_jpeg.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/jpeg/jidctint.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/jpeg/legato_imagedecoder_jpeg_common.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="mono" displayName="mono" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/mono/legato_imagedecoder_mono_read_internal.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/mono/legato_imagedecoder_mono.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/mono/legato_imagedecoder_mono_read_stream.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="png" displayName="png" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/png/legato_imagedecoder_png.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/png/lodepng.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="raw" displayName="raw" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_rotate.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_read_stream_rleindex.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_palette_internal.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_scale.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_read_internal.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_convert.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_blend.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_read_stream_index.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_write.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_read_stream_rlecolor.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_mask.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_setup.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_read_stream_color.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/raw/legato_imagedecoder_raw_palette_stream.c</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/legato_palette.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/legato_image_utils.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/image/legato_image.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="memory" displayName="memory" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/memory/legato_variableheap.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/memory/legato_fixedheap.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/memory/legato_memory.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="renderer" displayName="renderer" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_draw.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_draw_arc.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_renderer.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_draw_rect.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_gpu.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/renderer/legato_draw_line.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="string" displayName="string" projectFiles="true">
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_string_renderer.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_string.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_stringutils.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_fixedstring.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_tablestring.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_stringtable.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_string_renderer_stream.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/string/legato_dynamicstring.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="widget" displayName="widget" projectFiles="true">
+                <logicalFolder name="arc" displayName="arc" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/arc/legato_widget_arc.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/arc/legato_widget_arc_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="bargraph" displayName="bargraph" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/bargraph/legato_widget_bar_graph.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/bargraph/legato_widget_bar_graph_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="button" displayName="button" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/button/legato_widget_button.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/button/legato_widget_button_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="checkbox" displayName="checkbox" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/checkbox/legato_widget_checkbox.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/checkbox/legato_widget_checkbox_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="circle" displayName="circle" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circle/legato_widget_circle.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circle/legato_widget_circle_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="circulargauge"
+                               displayName="circulargauge"
+                               projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circulargauge/legato_widget_circular_gauge.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circulargauge/legato_widget_circular_gauge_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="circularslider"
+                               displayName="circularslider"
+                               projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circularslider/legato_widget_circular_slider_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/circularslider/legato_widget_circular_slider.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="drawsurface" displayName="drawsurface" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/drawsurface/legato_widget_drawsurface_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/drawsurface/legato_widget_drawsurface.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="gradient" displayName="gradient" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/gradient/legato_widget_gradient_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/gradient/legato_widget_gradient.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="groupbox" displayName="groupbox" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/groupbox/legato_widget_groupbox.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/groupbox/legato_widget_groupbox_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="image" displayName="image" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/image/legato_widget_image_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/image/legato_widget_image.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imagerotate" displayName="imagerotate" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagerotate/legato_widget_imagerotate.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagerotate/legato_widget_imagerotate_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imagescale" displayName="imagescale" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagescale/legato_widget_imagescale_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagescale/legato_widget_imagescale.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="imagesequence"
+                               displayName="imagesequence"
+                               projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagesequence/legato_widget_imagesequence_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/imagesequence/legato_widget_imagesequence.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="keypad" displayName="keypad" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/keypad/legato_widget_keypad.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/keypad/legato_widget_keypad_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="label" displayName="label" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/label/legato_widget_label_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/label/legato_widget_label.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="line" displayName="line" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/line/legato_widget_line.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/line/legato_widget_line_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="linegraph" displayName="linegraph" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/linegraph/legato_widget_line_graph.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/linegraph/legato_widget_line_graph_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="list" displayName="list" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/list/legato_widget_list_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/list/legato_widget_list.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="listwheel" displayName="listwheel" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/listwheel/legato_widget_listwheel.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/listwheel/legato_widget_listwheel_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="piechart" displayName="piechart" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/piechart/legato_widget_pie_chart.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/piechart/legato_widget_pie_chart_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="progressbar" displayName="progressbar" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/progressbar/legato_widget_progressbar.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/progressbar/legato_widget_progressbar_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="radialmenu" displayName="radialmenu" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radialmenu/legato_widget_radial_menu_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radialmenu/legato_widget_radial_menu.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="radiobutton" displayName="radiobutton" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radiobutton/legato_widget_radiobutton_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radiobutton/legato_widget_radiobutton.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radiobutton/legato_radiobutton_group.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="rectangle" displayName="rectangle" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/rectangle/legato_widget_rectangle_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/rectangle/legato_widget_rectangle.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="scrollbar" displayName="scrollbar" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/scrollbar/legato_widget_scrollbar.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/scrollbar/legato_widget_scrollbar_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="slider" displayName="slider" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/slider/legato_widget_slider.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/slider/legato_widget_slider_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="textfield" displayName="textfield" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/textfield/legato_widget_textfield.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/textfield/legato_widget_textfield_skin_classic.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="touchtest" displayName="touchtest" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/touchtest/legato_widget_touchtest_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/touchtest/legato_widget_touchtest.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="window" displayName="window" projectFiles="true">
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/window/legato_widget_window_skin_classic.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/window/legato_widget_window.c</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_editwidget.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_widget.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_widget_skin_classic.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/legato_widget_skin_classic_common.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
@@ -221,6 +750,9 @@
             <logicalFolder name="f4" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="ebi" displayName="ebi" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/ebi/plib_ebi.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f5" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/evic/plib_evic.c</itemPath>
             </logicalFolder>
@@ -230,6 +762,7 @@
             <logicalFolder name="f7" displayName="i2c" projectFiles="true">
               <logicalFolder name="f1" displayName="master" projectFiles="true">
                 <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
+                <itemPath>../src/config/pic32mzef_c2_ak4954/peripheral/i2c/master/plib_i2c2_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f8" displayName="spi" projectFiles="true">
@@ -262,6 +795,10 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_media_manager.c</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/fs/src/sys_fs_fat_interface.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="input" displayName="input" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input_listener.c</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/system/input/sys_input.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f4" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
@@ -269,16 +806,26 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/system/time/src/sys_time.c</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="usb" displayName="usb" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_device.c</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/usb/src/usb_device_msd.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <itemPath>../src/config/pic32mzef_c2_ak4954/initialization.c</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/interrupts.c</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/exceptions.c</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/tasks.c</itemPath>
+          <itemPath>../src/config/pic32mzef_c2_ak4954/usb_device_init_data.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app_sdcard_audio_task.c</itemPath>
       <itemPath>../src/decoder.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/app_display_task.c</itemPath>
+      <itemPath>../src/app_sdcard_reader_task.c</itemPath>
+      <itemPath>../src/legato_optimizations.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -292,9 +839,9 @@
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -330,6 +877,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -340,7 +888,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
@@ -386,6 +934,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -425,6 +974,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -625,6 +1175,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
         <property key="memories.rww" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/M19899/Desktop/alex wav prj/sdcard_audio_player_gfx/firmware/pic32mz_ef_curiosity_v2.X/debug/pic32mzef_c2_ak4954/pic32mz_ef_curiosity_v2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

@@ -109,7 +109,7 @@ typedef uintptr_t DRV_I2C_TRANSFER_HANDLE;
     None
 */
 
-#define DRV_I2C_TRANSFER_HANDLE_INVALID /*DOM-IGNORE-BEGIN*/((DRV_I2C_TRANSFER_HANDLE)(-1))/*DOM-IGNORE-END*/
+#define DRV_I2C_TRANSFER_HANDLE_INVALID  ((DRV_I2C_TRANSFER_HANDLE)(-1))
 
 // *****************************************************************************
 /* I2C Driver Transfer Events
@@ -187,15 +187,17 @@ typedef enum
         switch(event)
         {
             case DRV_I2C_TRANSFER_EVENT_COMPLETE:
-
+            {
                 // Handle the completed buffer.
                 break;
+            }
 
             case DRV_I2C_TRANSFER_EVENT_ERROR:
             default:
-
+            {
                 // Handle error.
                 break;
+            }
         }
     }
     </code>
@@ -230,7 +232,7 @@ typedef enum
     driver buffers cannot be added in I2C1 driver event handler.
 */
 
-typedef void ( *DRV_I2C_TRANSFER_EVENT_HANDLER )( DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE transferHandle, uintptr_t context );
+typedef void (*DRV_I2C_TRANSFER_EVENT_HANDLER )( DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE transferHandle, uintptr_t context );
 
 
 // *****************************************************************************
@@ -344,6 +346,7 @@ SYS_MODULE_OBJ DRV_I2C_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     SYS_STATUS          i2cStatus;
 
     i2cStatus = DRV_I2C_Status(object);
+
     if (i2cStatus == SYS_STATUS_READY)
     {
         // This means the driver can be opened using the
@@ -415,6 +418,7 @@ SYS_STATUS DRV_I2C_Status( const SYS_MODULE_OBJ object);
     DRV_HANDLE handle;
 
     handle = DRV_I2C_Open(DRV_I2C_INDEX_0, DRV_IO_INTENT_EXCLUSIVE);
+
     if (handle == DRV_HANDLE_INVALID)
     {
         // Unable to open the driver
@@ -985,6 +989,35 @@ void DRV_I2C_WriteReadTransferAdd (
     uint8_t myBuffer[MY_BUFFER_SIZE];
     DRV_I2C_TRANSFER_HANDLE transferHandle;
 
+    // The registered event handler is called when the transfer is completed.
+
+    void APP_I2CTransferEventHandler(DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE handle, uintptr_t context)
+    {
+        // The context handle was set to an application specific
+        // object. It is now retrievable easily in the event handler.
+        MY_APP_OBJ* pMyAppObj = (MY_APP_OBJ *) context;
+
+        switch(event)
+        {
+            case DRV_I2C_TRANSFER_EVENT_COMPLETE:
+            {
+                // This means the data was transferred.
+                break;
+            }
+
+            case DRV_I2C_TRANSFER_EVENT_ERROR:
+            {
+                // Error handling here.
+                break;
+            }
+
+            default:
+            {
+                break;
+            }
+        }
+    }
+
     // myI2CHandle is the handle returned
     // by the DRV_I2C_Open function.
 
@@ -999,28 +1032,6 @@ void DRV_I2C_WriteReadTransferAdd (
         // Error handling here
     }
 
-    // The registered event handler is called when the transfer is completed.
-
-    void APP_I2CTransferEventHandler(DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE handle, uintptr_t context)
-    {
-        // The context handle was set to an application specific
-        // object. It is now retrievable easily in the event handler.
-        MY_APP_OBJ* pMyAppObj = (MY_APP_OBJ *) context;
-
-        switch(event)
-        {
-            case DRV_I2C_TRANSFER_EVENT_COMPLETE:
-                // This means the data was transferred.
-                break;
-
-            case DRV_I2C_TRANSFER_EVENT_ERROR:
-                // Error handling here.
-                break;
-
-            default:
-                break;
-        }
-    }
     </code>
 
   Remarks:
@@ -1384,6 +1395,48 @@ bool DRV_I2C_WriteReadTransfer (
     void* const readBuffer,
     const size_t readSize
 );
+
+// *****************************************************************************
+/* Function:
+    void DRV_I2C_QueuePurge(const DRV_HANDLE handle)
+
+  Summary:
+    This function removes the queued requests fo the given I2C client.
+
+  Description:
+    This function removes the queued requests fo the given I2C client and aborts the ongoing
+    transfer. This API may be used in an event when the I2C slave is not responding. The API
+    removes all the queued requests of the client calling this API. Also, if the on-going request
+    belongs to the client calling this API, then it aborts the on-going transfer and frees the
+    resources used by the ongoing transfer. In case of multiple clients (for example if there
+    are more than one I2C clients interfaced on the same I2C bus), to remove all the transfer
+    requests queued to this driver instance, this API must be called by each client to remove
+    the transfers queued by that client.
+
+  Precondition:
+    DRV_I2C_Open must have been called to obtain a valid opened device handle.
+
+  Parameters:
+    handle - A valid open-instance handle, returned from the driver's open routine
+    DRV_I2C_Open function.
+
+  Returns:
+    None
+
+  Example:
+    <code>
+
+    // myI2CHandle is the handle returned
+    // by the DRV_I2C_Open function.
+
+    DRV_I2C_QueuePurge(myI2CHandle);
+
+    </code>
+
+  Remarks:
+    None
+*/
+void DRV_I2C_QueuePurge(const DRV_HANDLE handle);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

@@ -203,25 +203,28 @@ static DRV_I2C_TRANSFER_OBJ drvI2C0TransferObj[DRV_I2C_QUEUE_SIZE_IDX0];
 const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C1_Read,
+    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C1_Write,
+    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
 
     /* I2C PLib Transfer Forced Write Add function */
-    .writeForced = (DRV_I2C_PLIB_WRITE)I2C1_WriteForced,
+    .writeForced = (DRV_I2C_PLIB_WRITE)NULL,
 
     /* I2C PLib Transfer Write Read Add function */
-    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C1_WriteRead,
+    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C2_WriteRead,
+
+    /*I2C PLib Transfer Abort function */
+    .transferAbort = (DRV_I2C_PLIB_TRANSFER_ABORT)I2C2_TransferAbort,
 
     /* I2C PLib Transfer Status function */
-    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C1_ErrorGet,
+    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C2_ErrorGet,
 
     /* I2C PLib Transfer Setup function */
-    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C1_TransferSetup,
+    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C2_TransferSetup,
 
     /* I2C PLib Callback Register */
-    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C1_CallbackRegister,
+    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C2_CallbackRegister,
 };
 
 
@@ -231,8 +234,8 @@ const DRV_I2C_INTERRUPT_SOURCES drvI2C0InterruptSources =
     .isSingleIntSrc                        = false,
 
     /* Peripheral interrupt lines */
-    .intSources.multi.i2cInt0          = _I2C1_BUS_VECTOR,
-    .intSources.multi.i2cInt1          = _I2C1_MASTER_VECTOR,
+    .intSources.multi.i2cInt0          = _I2C2_BUS_VECTOR,
+    .intSources.multi.i2cInt1          = _I2C2_MASTER_VECTOR,
     .intSources.multi.i2cInt2          = -1,
     .intSources.multi.i2cInt3          = -1,
 };
@@ -260,6 +263,82 @@ const DRV_I2C_INIT drvI2C0InitData =
 
     /* I2C Clock Speed */
     .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX0,
+};
+
+// </editor-fold>
+
+// <editor-fold defaultstate="collapsed" desc="DRV_I2C Instance 1 Initialization Data">
+
+/* I2C Client Objects Pool */
+static DRV_I2C_CLIENT_OBJ drvI2C1ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX1];
+
+/* I2C Transfer Objects Pool */
+static DRV_I2C_TRANSFER_OBJ drvI2C1TransferObj[DRV_I2C_QUEUE_SIZE_IDX1];
+
+/* I2C PLib Interface Initialization */
+const DRV_I2C_PLIB_INTERFACE drvI2C1PLibAPI = {
+
+    /* I2C PLib Transfer Read Add function */
+    .read = (DRV_I2C_PLIB_READ)I2C1_Read,
+
+    /* I2C PLib Transfer Write Add function */
+    .write = (DRV_I2C_PLIB_WRITE)I2C1_Write,
+
+    /* I2C PLib Transfer Forced Write Add function */
+    .writeForced = (DRV_I2C_PLIB_WRITE)I2C1_WriteForced,
+
+    /* I2C PLib Transfer Write Read Add function */
+    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C1_WriteRead,
+
+    /*I2C PLib Transfer Abort function */
+    .transferAbort = (DRV_I2C_PLIB_TRANSFER_ABORT)I2C1_TransferAbort,
+
+    /* I2C PLib Transfer Status function */
+    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C1_ErrorGet,
+
+    /* I2C PLib Transfer Setup function */
+    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C1_TransferSetup,
+
+    /* I2C PLib Callback Register */
+    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C1_CallbackRegister,
+};
+
+
+const DRV_I2C_INTERRUPT_SOURCES drvI2C1InterruptSources =
+{
+    /* Peripheral has more than one interrupt vector */
+    .isSingleIntSrc                        = false,
+
+    /* Peripheral interrupt lines */
+    .intSources.multi.i2cInt0          = _I2C1_BUS_VECTOR,
+    .intSources.multi.i2cInt1          = _I2C1_MASTER_VECTOR,
+    .intSources.multi.i2cInt2          = -1,
+    .intSources.multi.i2cInt3          = -1,
+};
+
+/* I2C Driver Initialization Data */
+const DRV_I2C_INIT drvI2C1InitData =
+{
+    /* I2C PLib API */
+    .i2cPlib = &drvI2C1PLibAPI,
+
+    /* I2C Number of clients */
+    .numClients = DRV_I2C_CLIENTS_NUMBER_IDX1,
+
+    /* I2C Client Objects Pool */
+    .clientObjPool = (uintptr_t)&drvI2C1ClientObjPool[0],
+
+    /* I2C TWI Queue Size */
+    .transferObjPoolSize = DRV_I2C_QUEUE_SIZE_IDX1,
+
+    /* I2C Transfer Objects */
+    .transferObjPool = (uintptr_t)&drvI2C1TransferObj[0],
+
+    /* I2C interrupt sources */
+    .interruptSources = &drvI2C1InterruptSources,
+
+    /* I2C Clock Speed */
+    .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX1,
 };
 
 // </editor-fold>
@@ -303,6 +382,19 @@ DRV_I2S_INIT drvI2S0InitData =
 
 // </editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="DRV_INPUT_MXT336T Initialization Data">
+/*** MaxTouch Driver Initialization Data ***/
+const DRV_MAXTOUCH_INIT drvMAXTOUCHInitData =
+{
+    .drvOpen                     = DRV_I2C_Open,
+    .drvClose                    = DRV_I2C_Close,
+    .orientation                 = 0,
+    .horizontalResolution        = 480,
+    .verticalResolution          = 272,
+};
+
+// </editor-fold>
+
 /*** CODEC Driver Initialization Data ***/
 const DRV_AK4954_INIT drvak4954Codec0InitData =
 {
@@ -333,6 +425,39 @@ SYSTEM_OBJECTS sysObj;
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/******************************************************
+ * USB Driver Initialization
+ ******************************************************/
+
+const DRV_USBHS_INIT drvUSBInit =
+{
+    /* Interrupt Source for USB module */
+    .interruptSource = INT_SOURCE_USB,
+
+	/* Interrupt Source for USB module */
+    .interruptSourceUSBDma = INT_SOURCE_USB_DMA,
+	
+    /* System module initialization */
+    .moduleInit = {0},
+
+    /* USB Controller to operate as USB Device */
+    .operationMode = DRV_USBHS_OPMODE_DEVICE,
+
+	/* Enable High Speed Operation */
+    .operationSpeed = USB_SPEED_HIGH,
+    
+    /* Stop in idle */
+    .stopInIdle = true,
+
+    /* Suspend in sleep */
+    .suspendInSleep = false,
+
+    /* Identifies peripheral (PLIB-level) ID */
+    .usbID = USBHS_ID_0,
+	
+};
+
+
 // <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
 const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
@@ -446,6 +571,8 @@ const SYS_TIME_INIT sysTimeInitData =
 
 void SYS_Initialize ( void* data )
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
@@ -461,13 +588,17 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
+	BSP_Initialize();
+    CORETIMER_Initialize();
+	EBI_Initialize();
+
+	SPI1_Initialize();
+
     DMAC_Initialize();
 
-	BSP_Initialize();
     I2C1_Initialize();
 
-    CORETIMER_Initialize();
-	SPI1_Initialize();
+    I2C2_Initialize();
 
 	I2S2_Initialize();
 
@@ -477,13 +608,35 @@ void SYS_Initialize ( void* data )
 
     /* Initialize I2C0 Driver Instance */
     sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
+    DRV_LCC_Initialize();
+
+    /* Initialize I2C1 Driver Instance */
+    sysObj.drvI2C1 = DRV_I2C_Initialize(DRV_I2C_INDEX_1, (SYS_MODULE_INIT *)&drvI2C1InitData);
     /* Initialize I2S0 Driver Instance */
     sysObj.drvI2S0 = DRV_I2S_Initialize(DRV_I2S_INDEX_0, (SYS_MODULE_INIT *)&drvI2S0InitData);
+
+
+
+    sysObj.drvMAXTOUCH = DRV_MAXTOUCH_Initialize(0, (SYS_MODULE_INIT *)&drvMAXTOUCHInitData);
 
     sysObj.drvak4954Codec0 = DRV_AK4954_Initialize(DRV_AK4954_INDEX_0, (SYS_MODULE_INIT *)&drvak4954Codec0InitData);
 
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+
+    SYS_INP_Init();
+
+
+
+    /* Initialize the USB device layer */
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
+
+
+    // initialize UI library
+    Legato_Initialize();
+
+	/* Initialize USB Driver */ 
+    sysObj.drvUSBHSObject = DRV_USBHS_Initialize(DRV_USBHS_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
 
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );
@@ -498,6 +651,7 @@ void SYS_Initialize ( void* data )
     __builtin_enable_interrupts();
 
 
+    /* MISRAC 2012 deviation block end */
 }
 
 

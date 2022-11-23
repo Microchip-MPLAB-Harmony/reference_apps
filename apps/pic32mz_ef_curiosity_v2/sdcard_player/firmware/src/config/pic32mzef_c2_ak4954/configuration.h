@@ -105,7 +105,7 @@ extern "C" {
 #define SYS_FS_CWD_STRING_LEN             1024
 
 
-#define SYS_FS_FAT_VERSION                "v0.14a"
+#define SYS_FS_FAT_VERSION                "v0.14b"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
@@ -130,7 +130,7 @@ extern "C" {
 // *****************************************************************************
 /* SDSPI Driver Instance 0 Configuration Options */
 #define DRV_SDSPI_INDEX_0                       0
-#define DRV_SDSPI_CLIENTS_NUMBER_IDX0           1
+#define DRV_SDSPI_CLIENTS_NUMBER_IDX0           2
 #define DRV_SDSPI_QUEUE_SIZE_IDX0               4
 #define DRV_SDSPI_CHIP_SELECT_PIN_IDX0          SYS_PORT_PIN_RD9
 #define DRV_SDSPI_SPEED_HZ_IDX0                 10000000
@@ -143,7 +143,13 @@ extern "C" {
 #define DRV_I2C_INDEX_0                       0
 #define DRV_I2C_CLIENTS_NUMBER_IDX0           1
 #define DRV_I2C_QUEUE_SIZE_IDX0               8
-#define DRV_I2C_CLOCK_SPEED_IDX0              50000
+#define DRV_I2C_CLOCK_SPEED_IDX0              10000
+
+/* I2C Driver Instance 1 Configuration Options */
+#define DRV_I2C_INDEX_1                       1
+#define DRV_I2C_CLIENTS_NUMBER_IDX1           1
+#define DRV_I2C_QUEUE_SIZE_IDX1               2
+#define DRV_I2C_CLOCK_SPEED_IDX1              50000
 
 /* I2S Driver Instance 0 Configuration Options */
 #define DRV_I2S_INDEX_0                0
@@ -159,8 +165,12 @@ extern "C" {
 #define DRV_SDSPI_INSTANCES_NUMBER              1
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              2
 
+
+
+/*** MXT336T Driver Configuration ***/
+#define DRV_MAXTOUCH_I2C_MODULE_INDEX   0
 
 /*** Codec Driver Configuration ***/
 
@@ -179,7 +189,7 @@ extern "C" {
 #define DRV_AK4954_DELAY_INITIALIZATION                     false
 
 #define DRV_AK4954_I2S_DRIVER_MODULE_INDEX_IDX0             DRV_I2S_INDEX_0
-#define DRV_AK4954_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_0
+#define DRV_AK4954_I2C_DRIVER_MODULE_INDEX_IDX0             DRV_I2C_INDEX_1
 /* CODEC Driver Abstraction definition */
 
 #define DRV_CODEC_INDEX_0                                   DRV_AK4954_INDEX_0
@@ -241,6 +251,51 @@ extern "C" {
 // Section: Middleware & Other Library Configuration
 // *****************************************************************************
 // *****************************************************************************
+/* Number of Endpoints used */
+#define DRV_USBHS_ENDPOINTS_NUMBER                        3
+
+/* The USB Device Layer will not initialize the USB Driver */
+#define USB_DEVICE_DRIVER_INITIALIZE_EXPLICIT
+
+/* Maximum device layer instances */
+#define USB_DEVICE_INSTANCES_NUMBER                         1
+
+/* EP0 size in bytes */
+#define USB_DEVICE_EP0_BUFFER_SIZE                          64
+
+
+/*** USB Driver Configuration ***/
+
+/* Maximum USB driver instances */
+#define DRV_USBHS_INSTANCES_NUMBER                        1
+
+/* Interrupt mode enabled */
+#define DRV_USBHS_INTERRUPT_MODE                          true
+
+
+/* Enables Device Support */
+#define DRV_USBHS_DEVICE_SUPPORT                          true
+	
+/* Disable Host Support */
+#define DRV_USBHS_HOST_SUPPORT                            false
+
+
+
+
+/* Alignment for buffers that are submitted to USB Driver*/ 
+#define USB_ALIGN  CACHE_ALIGN  __ALIGNED(16)
+
+/* Maximum instances of MSD function driver */
+#define USB_DEVICE_MSD_INSTANCES_NUMBER     1 
+
+#define USB_DEVICE_MSD_NUM_SECTOR_BUFFERS 1
+
+
+/* Number of Logical Units */
+#define USB_DEVICE_MSD_LUNS_NUMBER      1
+
+
+
 
 
 // *****************************************************************************

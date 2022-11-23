@@ -48,18 +48,37 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "gfx/driver/controller/lcc/drv_gfx_lcc.h"
+#include "usb/usb_device_msd.h"
+#include "usb/usb_msd.h"
+#include "usb/usb_chapter_9.h"
+#include "usb/usb_device.h"
+#include "bsp/bsp.h"
+#include "audio/driver/i2s/drv_i2s.h"
+#include "gfx/driver/processor/vgpu/drv_gfx_vgpu.h"
+#include "driver/sdspi/drv_sdspi.h"
+#include "system/time/sys_time.h"
+#include "driver/i2c/drv_i2c.h"
+#include "peripheral/coretimer/plib_coretimer.h"
+#include "peripheral/ebi/plib_ebi.h"
+#include "peripheral/spi/spi_master/plib_spi1_master.h"
+#include "driver/input/drv_maxtouch.h"
+#include "system/int/sys_int.h"
+#include "system/ports/sys_ports.h"
+#include "system/cache/sys_cache.h"
+#include "system/dma/sys_dma.h"
+#include "osal/osal.h"
+#include "system/debug/sys_debug.h"
+#include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
 #include "peripheral/dmac/plib_dmac.h"
-#include "bsp/bsp.h"
-#include "audio/driver/i2s/drv_i2s.h"
-#include "driver/sdspi/drv_sdspi.h"
-#include "driver/i2c/drv_i2c.h"
-#include "system/time/sys_time.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
-#include "peripheral/coretimer/plib_coretimer.h"
+#include "driver/usb/usbhs/drv_usbhs.h"
+#include "system/input/sys_input.h"
+#include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -67,14 +86,7 @@
 #include "system/fs/fat_fs/file_system/ffconf.h"
 #include "system/fs/fat_fs/hardware_access/diskio.h"
 #include "audio/driver/codec/ak4954/drv_ak4954.h"
-#include "peripheral/spi/spi_master/plib_spi1_master.h"
 #include "audio/peripheral/i2s/plib_i2s2.h"
-#include "system/int/sys_int.h"
-#include "system/ports/sys_ports.h"
-#include "system/cache/sys_cache.h"
-#include "system/dma/sys_dma.h"
-#include "osal/osal.h"
-#include "system/debug/sys_debug.h"
 #include "app.h"
 
 
@@ -206,10 +218,19 @@ typedef struct
     /* I2C0 Driver Object */
     SYS_MODULE_OBJ drvI2C0;
 
+    /* I2C1 Driver Object */
+    SYS_MODULE_OBJ drvI2C1;
+
+    SYS_MODULE_OBJ  usbDevObject0;
+
     /* I2S0 Driver Object */
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
+    SYS_MODULE_OBJ  drvMAXTOUCH;
+
+	SYS_MODULE_OBJ  drvUSBHSObject;
+
     SYS_MODULE_OBJ drvak4954Codec0;
 
 } SYSTEM_OBJECTS;
@@ -219,6 +240,8 @@ typedef struct
 // Section: extern declarations
 // *****************************************************************************
 // *****************************************************************************
+
+extern const USB_DEVICE_INIT usbDevInitData; 
 
 
 

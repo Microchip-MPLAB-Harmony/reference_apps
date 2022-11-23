@@ -500,6 +500,21 @@ bool I2C1_TransferSetup(I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq )
     return true;
 }
 
+void I2C1_TransferAbort( void )
+{
+    i2c1Obj.error = I2C_ERROR_NONE;
+
+    // Reset the PLib objects and Interrupts
+    i2c1Obj.state = I2C_STATE_IDLE;
+    IEC3CLR = _IEC3_I2C1MIE_MASK;
+    IEC3CLR = _IEC3_I2C1BIE_MASK;
+
+    // Disable and Enable I2C Master
+    I2C1CONCLR = _I2C1CON_ON_MASK;
+    asm("nop");asm("nop");
+    I2C1CONSET = _I2C1CON_ON_MASK;
+}
+
 void I2C1_BUS_InterruptHandler(void)
 {
     /* Clear the bus collision error status bit */

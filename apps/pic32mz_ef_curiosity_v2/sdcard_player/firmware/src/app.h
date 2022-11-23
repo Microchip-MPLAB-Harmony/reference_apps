@@ -58,6 +58,7 @@
 #include <stdlib.h>
 #include "configuration.h"
 #include "app_sdcard_audio_task.h"
+#include "app_sdcard_reader_task.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -84,6 +85,9 @@ extern "C" {
     determine the behavior of the application at various times.
 */
 
+#define EXTERNAL_INT_RISING_SET() INTCONbits.INT3EP = 1
+    
+    
 typedef enum
 {
 	/* Application's state machine's initial state. */
@@ -123,8 +127,28 @@ typedef struct
     APP_STATES state;
     APP_STREAMING_SOURCE streamSource;
     bool ignoreButtonPress;     
-    bool tmrEventHasOccurred;    
+    bool tmrEventHasOccurred;
+        
 } APP_DATA;
+
+
+
+typedef enum
+{
+    APP_SDCARD_READER_INIT,
+    APP_SDCARD_READER_RUNNING
+
+} APP_SDCARD_READER_STATES;
+
+typedef struct
+{
+    /* The application's current state */
+    APP_SDCARD_READER_STATES state;
+    
+    /* USB Device Handle */
+    USB_DEVICE_HANDLE usbDeviceHandle;
+    
+} APP_SDCARD_READER_DATA;
 
 
 // *****************************************************************************
@@ -206,8 +230,10 @@ void APP_Initialize ( void );
  */
 
 void APP_Tasks( void );
+
 APP_STREAMING_SOURCE APP_StreamSourceGet(void);
- void APP_StreamSourceSet(APP_STREAMING_SOURCE streamSrc);
+
+void APP_StreamSourceSet(APP_STREAMING_SOURCE streamSrc);
 
 #endif /* _APP_H */
 
