@@ -79,6 +79,11 @@ The pre-built hex file can be programmed by following the below steps.
 ## Programming/Debugging Application Project:
 - Open the project (wifi_rgb_easy_configuration\firmware\pic32mz_ef_curiosity_v2.X) in MPLAB X IDE
 - Ensure "Curiosity/Starter Kits PKOB4" is selected as hardware tool to program/debug the application
+- Navigate to "../reference_apps/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/firmware/src/utilities" folder
+- Double click on "mpfs2" jar file (Note : Make sure java is installed)
+- Select Source Directory and browse to the folder ""../reference_apps/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/firmware/src/web_pages" as shown in below image
+- Select "PIC32 Image" and click on **Generate** button to generate mpfs_img2.c file as shown in below image  
+	<img src = "images/mpfs.png" align="middle">
 - Build the code and program the device by clicking on the "make and program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
