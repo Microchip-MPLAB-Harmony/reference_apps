@@ -32,6 +32,11 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 20 | [LR Click Example](./lr/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/lr.zip)  |
 | 21 | [USB SPI Click Example](./usb_spi/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_spi.zip)  |
 | 22 | [MCP25625 Click Example](./mcp25625/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/mcp25625.zip)  |
+| 23 | [Eink E-Paper display 2,9" 296x128 dots Click Example](./eink_epaper_2_9_296_128/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eink_epaper_2_9_296_128.zip)  |
 ### More Application Demos
+
+
+Eink E-Paper display 29 296x128 dots Click Example
+
 
 For more application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=ATSAME51J20A" target="_blank"> CLICK HERE </a>
