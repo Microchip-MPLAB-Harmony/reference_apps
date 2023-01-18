@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME51N20A
+/*
+ * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,17 +20,17 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:24:58Z */
+/* file generated from device description version 2022-02-14T14:27:15Z */
 #ifndef _SAME51_AES_INSTANCE_
 #define _SAME51_AES_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for AES peripheral ========== */
-#define AES_DMAC_ID_RD                           _UL_(82)   /* DMA DATA Read trigger */
-#define AES_DMAC_ID_WR                           _UL_(81)   /* DMA DATA Write trigger */
-#define AES_FOUR_BYTE_OPERATION                  _UL_(1)    /* Byte Operation */
-#define AES_GCM                                  _UL_(1)    /* GCM */
-#define AES_KEYLEN                               _UL_(2)    /* Key Length */
-#define AES_INSTANCE_ID                          _UL_(73)   /* Instance index for AES */
+#define AES_DMAC_ID_RD                           (82)       /* DMA DATA Read trigger */
+#define AES_DMAC_ID_WR                           (81)       /* DMA DATA Write trigger */
+#define AES_FOUR_BYTE_OPERATION                  (1)        /* Byte Operation */
+#define AES_GCM                                  (1)        /* GCM */
+#define AES_KEYLEN                               (2)        /* Key Length */
+#define AES_INSTANCE_ID                          (73)       /* Instance index for AES */
 
 #endif /* _SAME51_AES_INSTANCE_ */

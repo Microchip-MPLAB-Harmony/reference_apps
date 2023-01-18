@@ -77,6 +77,8 @@ void SERCOM0_USART_TransmitterDisable( void );
 
 bool SERCOM0_USART_Write( void *buffer, const size_t size );
 
+bool SERCOM0_USART_TransmitComplete( void );
+
 
 bool SERCOM0_USART_WriteIsBusy( void );
 

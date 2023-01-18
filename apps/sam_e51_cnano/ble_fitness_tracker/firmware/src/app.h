@@ -96,7 +96,7 @@ typedef enum
     HEART_RATE_SENSOR_DATA_PROSS_STATE,
 
     /* Error state */
-    EINK_UPDATE_STATE,
+    EINK_EPAPER_2_9_296_128_UPDATE_STATE,
 
     /* Idle state */
     APP_IDLE_STATE,

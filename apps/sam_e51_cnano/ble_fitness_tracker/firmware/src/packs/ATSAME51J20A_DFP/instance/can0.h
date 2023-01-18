@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME51N20A
+/*
+ * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,16 +20,16 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:24:58Z */
+/* file generated from device description version 2022-02-14T14:27:15Z */
 #ifndef _SAME51_CAN0_INSTANCE_
 #define _SAME51_CAN0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for CAN0 peripheral ========== */
-#define CAN0_DMAC_ID_DEBUG                       _UL_(20)   /* DMA CAN Debug Req */
-#define CAN0_GCLK_ID                             _UL_(27)   /* Index of Generic Clock */
-#define CAN0_MSG_RAM_ADDR                        _UL_(0x20000000) 
-#define CAN0_QOS_RESET_VAL                       _UL_(1)    /* QOS reset value */
-#define CAN0_INSTANCE_ID                         _UL_(64)   /* Instance index for CAN0 */
+#define CAN0_DMAC_ID_DEBUG                       (20)       /* DMA CAN Debug Req */
+#define CAN0_GCLK_ID                             (27)       /* Index of Generic Clock */
+#define CAN0_MSG_RAM_ADDR                        (0x20000000) 
+#define CAN0_QOS_RESET_VAL                       (1)        /* QOS reset value */
+#define CAN0_INSTANCE_ID                         (64)       /* Instance index for CAN0 */
 
 #endif /* _SAME51_CAN0_INSTANCE_ */

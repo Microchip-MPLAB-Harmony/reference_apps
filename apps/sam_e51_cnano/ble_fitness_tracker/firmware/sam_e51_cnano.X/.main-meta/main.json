@@ -7,15 +7,15 @@
 		"version": "1.5.0",
 		"displayName": "BLE Fitness Tracker Application",
 		"projectName": "ble_fitness_tracker_sam_e51_cnano",
-		"shortDescription": "Demonstrates integrating BM71 Xpro, Heart Rate and EINK Click bundle on SAM E51 Curiosity Nano)",
+		"shortDescription": "Demonstrates integrating BM71 Xpro, Heart Rate and Eink E-Paper display 2_9 296x128 dots board on SAM E51 Curiosity Nano",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.05"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.0.0"
+				"semverRange": ">=4.21.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.4.14"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -49,20 +49,23 @@
 			"EIC", "Timer", "SERCOM(USART)", "SERCOM(SPI)", "SERCOM(I2C)"
 		],
 		"keywords": [
-			"MHC",
 			"MCC",
 			"Harmony",
-			"Click Board",
-			"Heartbeat",
-			"Health",
-			"BPM",
 			"Bluetooth",
 			"BLE",
 			"EIC",
 			"RTC",
 			"GPIO",
+			"Curiosity",
+			"Click Board",
+			"Fitness",
+			"Heartbeat",
+			"Display",
+            "Graphics",
+			"Low Power",
+			"Health",
 			"Curiosity Nano"
-		],
+],
 		"additionalData": {
 			"longDescription": {
 				"metaDataVersion": "1.0.0",

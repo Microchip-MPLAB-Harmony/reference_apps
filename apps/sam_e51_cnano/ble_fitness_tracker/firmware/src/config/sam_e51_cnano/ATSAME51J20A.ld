@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAME51J20A linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,7 +77,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x40000)
 #  error RAM_LENGTH is greater than the max size of 0x40000
 #endif
-  
 #ifndef TCM_ORIGIN
 #  define TCM_ORIGIN 0x3000000
 #endif
@@ -88,7 +87,14 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  undef __XC32_TCM_LENGTH
 #  define __XC32_TCM_LENGTH 0x1000
 #endif
-
+#ifndef BKUPRAM_ORIGIN
+#  define BKUPRAM_ORIGIN 0x47000000
+#endif
+#ifndef BKUPRAM_LENGTH
+#  define BKUPRAM_LENGTH 0x2000
+#elif (BKUPRAM_LENGTH > 0x2000)
+#  error BKUPRAM_LENGTH is greater than the max size of 0x2000
+#endif
 
 
 /*************************************************************************
@@ -100,13 +106,13 @@ MEMORY
 {
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH
-  tcm (WX) : ORIGIN = TCM_ORIGIN, LENGTH = __XC32_TCM_LENGTH
+ tcm (WX) : ORIGIN = TCM_ORIGIN, LENGTH = __XC32_TCM_LENGTH
+  bkupram : ORIGIN = BKUPRAM_ORIGIN, LENGTH = BKUPRAM_LENGTH
   config_00804000 : ORIGIN = 0x00804000, LENGTH = 0x4
   config_00804008 : ORIGIN = 0x00804008, LENGTH = 0x4
   config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
 
 }
-
 /*************************************************************************
  * Output region definitions.
  * CODE_REGION defines the output region for .text/.rodata.
@@ -228,6 +234,7 @@ SECTIONS
     . = ALIGN(4);
     _etext = .;
 
+
     /*
      *  Align here to ensure that the .bss section occupies space up to
      *  _end.  Align after .bss to ensure correct alignment even if the
@@ -254,5 +261,10 @@ SECTIONS
     _end = . ;
     _ram_end_ = ORIGIN(ram) + LENGTH(ram) -1 ;
     
+    .bkupram_bss :
+    {
+        *(.bkupram_bss .bkupram_bss.*)
+        *(.pbss .pbss.*)
+    } > bkupram
 }
 

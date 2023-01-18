@@ -13,30 +13,32 @@
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*
-    (c) 2021 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
+/*******************************************************************************
+* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+*******************************************************************************/
+// DOM-IGNORE-END
 
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
-*/
-
-#ifndef _CLICK_INTERFACES_H
-#define _CLICK_INTERFACES_H
+#ifndef CLICK_INTERFACES_H
+#define CLICK_INTERFACES_H
 
 /**
   Section: Included Files
@@ -45,43 +47,43 @@
 #include <xc.h>
 #include <stdint.h>
 
-/**	Click routine interfaces/resources Macro Declarations
+/** Click routine interfaces/resources Macro Declarations
  *
- * 	1. SPI
- *  The eink bundle click example on SAM E51 Curiosity Nano uses
- *  mikroBUS socket #1 to mount EINK bundle click board.
+ *  1. SPI
+ *  The EINK_EPAPER_2_9_296_128  click example on SAM E51 Curiosity Nano uses
+ *  mikroBUS socket #1. Connect EINK_EPAPER_2_9_296_128 to eINK click then mount eINK click on
+ *  mikroBUS socket #1.
  *  The SPI lines from MCU coming to this socket are from
  *  SERCOM1 peripheral. The SPI is configured to use manual chip select.
  *
  *
  * 2. Timer
- *  The eink bundle click  example on SAM E51 Curiosity Nano uses
+ *  The EINK_EPAPER_2_9_296_128  click  example on SAM E51 Curiosity Nano uses
  *  Systick timer module on the MCU to implement the time
  *  requirement weather click routines.
  *
  * 3. PORTs
- *  The eink bundle click uses the following ports pins.
- *  CLICK_EINK_BUNDLE_DC
- *  CLICK_EINK_BUNDLE_RST
- *  CLICK_EINK_BUNDLE_CS
- *  CLICK_EINK_BUNDLE_BSY
+ *  The EINK_EPAPER_2_9_296_128  click uses the following ports pins.
+ *  CLICK_EINK_EPAPER_2_9_296_128_DC
+ *  CLICK_EINK_EPAPER_2_9_296_128_RST
+ *  CLICK_EINK_EPAPER_2_9_296_128_CS
+ *  CLICK_EINK_EPAPER_2_9_296_128_BSY
  *  The pins are configured using the MHC Pin configurator.
  */
 
-// I2C Definitions
-#define CLICK_EINK_BUNDLE_SPI_Write 			SERCOM1_SPI_Write
-#define CLICK_EINK_BUNDLE_SPI_Read  			SERCOM1_SPI_Read
-#define CLICK_EINK_BUNDLE_SPI_WriteRead			SERCOM1_SPI_WriteRead
+// SPI Definitions
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Write                 SERCOM1_SPI_Write
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Read                  SERCOM1_SPI_Read
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_WriteRead             SERCOM1_SPI_WriteRead
 
 // Timer Definitions
-#define CLICK_EINK_BUNDLE_TimerStart 			SYSTICK_TimerStart
-#define CLICK_EINK_BUNDLE_DelayMs				SYSTICK_DelayMs
-
-/**	Click routine interfaces/resources Macro Declarations
+#define CLICK_EINK_EPAPER_2_9_296_128_TimerStart                SYSTICK_TimerStart
+#define CLICK_EINK_EPAPER_2_9_296_128_DelayMs                   SYSTICK_DelayMs
+/** Click routine interfaces/resources Macro Declarations
  *
- * 	1. USART
+ *  1. USART
  *  The heartrate9 click example on SAM E51 Curiosity Nano uses
- *  mikroBUS socket #1 on the Curiosity Nano Base for Click boards
+ *  mikroBUS socket #3 on the Curiosity Nano Base for Click boards
  *  to mount heartrate9 click board. The USART lines from MCU coming to
  *  this socket are from SERCOM4 peripheral on the MCU.
  *
@@ -105,4 +107,4 @@
 #define CLICK_HEARTRATE9_TimerStart                         SYSTICK_TimerStart
 #define CLICK_HEARTRATE9_DelayMs                            SYSTICK_DelayMs
 
-#endif // _CLICK_INTERFACES_H
+#endif // CLICK_INTERFACES_H

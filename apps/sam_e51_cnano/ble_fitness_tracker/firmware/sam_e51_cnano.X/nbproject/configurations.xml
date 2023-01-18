@@ -9,13 +9,17 @@
           <itemPath>../src/ble/non_gui/ble.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="click_routines" projectFiles="true">
-        <logicalFolder name="f1" displayName="eink_bundle" projectFiles="true">
-          <itemPath>../src/click_routines/eink_bundle/eink_bundle.h</itemPath>
-          <itemPath>../src/click_routines/eink_bundle/eink_bundle_font.h</itemPath>
-          <itemPath>../src/click_routines/eink_bundle/eink_bundle_image.h</itemPath>
+      <logicalFolder name="click_routines"
+                     displayName="click_routines"
+                     projectFiles="true">
+        <logicalFolder name="eink_epaper_2_9_296_128"
+                       displayName="eink_epaper_2_9_296_128"
+                       projectFiles="true">
+          <itemPath>../src/click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.h</itemPath>
+          <itemPath>../src/click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_font.h</itemPath>
+          <itemPath>../src/click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_image.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="heartrate9" projectFiles="true">
+        <logicalFolder name="heartrate9" displayName="heartrate9" projectFiles="true">
           <itemPath>../src/click_routines/heartrate9/heartrate9.h</itemPath>
         </logicalFolder>
         <itemPath>../src/click_routines/click_interface.h</itemPath>
@@ -263,13 +267,17 @@
           <itemPath>../src/ble/non_gui/ble.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="click_routines" projectFiles="true">
-        <logicalFolder name="f1" displayName="eink_bundle" projectFiles="true">
-          <itemPath>../src/click_routines/eink_bundle/eink_bundle.c</itemPath>
-          <itemPath>../src/click_routines/eink_bundle/eink_bundle_font.c</itemPath>
-          <itemPath>../src/click_routines/eink_bundle/eink_bundle_image.c</itemPath>
+      <logicalFolder name="click_routines"
+                     displayName="click_routines"
+                     projectFiles="true">
+        <logicalFolder name="eink_epaper_2_9_296_128"
+                       displayName="eink_epaper_2_9_296_128"
+                       projectFiles="true">
+          <itemPath>../src/click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.c</itemPath>
+          <itemPath>../src/click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_font.c</itemPath>
+          <itemPath>../src/click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_image.c</itemPath>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="heartrate9" projectFiles="true">
+        <logicalFolder name="heartrate9" displayName="heartrate9" projectFiles="true">
           <itemPath>../src/click_routines/heartrate9/heartrate9.c</itemPath>
         </logicalFolder>
       </logicalFolder>
@@ -348,6 +356,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/config/sam_e51_cnano/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -365,7 +374,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -397,7 +406,7 @@
         <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; mkdir ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/${ImagePath} ${ProjectDir}/../../hex/</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
-        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+        <makeCustomizationNormalizeHexFile>true</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <AtmelIceTool>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -426,7 +435,6 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -483,7 +491,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -523,7 +530,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -552,7 +558,6 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -1101,6 +1106,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1137,6 +1143,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </Tool>
       <nEdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -1155,6 +1162,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1169,8 +1177,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/Projects/git_hub/reference_apps/apps/sam_e51_cnano/ble_fitness_tracker/firmware/sam_e51_cnano.X/debug/sam_e51_cnano/sam_e51_cnano_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -1190,6 +1196,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </nEdbgTool>
     </conf>
   </confs>

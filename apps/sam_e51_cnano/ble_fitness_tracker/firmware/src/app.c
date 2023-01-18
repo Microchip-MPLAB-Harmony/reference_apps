@@ -53,9 +53,9 @@
 #include <string.h>
 #include "app.h"
 #include "click_routines/heartrate9/heartrate9.h"
-#include "click_routines/eink_bundle/eink_bundle.h"
-#include "click_routines/eink_bundle/eink_bundle_image.h"
-#include "click_routines/eink_bundle/eink_bundle_font.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_image.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_font.h"
 #include "../src/ble/non_gui/ble.h"
 
 extern BLE_DATA bleData;
@@ -91,7 +91,7 @@ volatile    bool    button_pressed = false;
             bool    rdy_signal = false;
             char    lcl_buffer[10];
             uint32_t count = 0;
-            int8_t heartRateMeasuredData  = -1;
+static            int8_t heartRateMeasuredData  = -1;
 
 
 // *****************************************************************************
@@ -160,9 +160,10 @@ void APP_Tasks ( void )
     {
         /* Application's initial state. */
         case APP_INIT_STATE:
-            eink_init();
-            eink_image_bmp(mchp_logo);
-            eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
+            eink_epaper_2_9_296_128_init();
+            eink_epaper_2_9_296_128_fill_screen( EINK_EPAPER_2_9_296_128_COLOR_BLACK );
+            eink_epaper_2_9_296_128_image_bmp(mchp_logo);
+            eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_WHITE, FO_HORIZONTAL );
 
             EIC_CallbackRegister(EIC_PIN_15, EIC_Button_Handler, 0);
             CUSTOM_BM71_Initialize();
@@ -179,16 +180,18 @@ void APP_Tasks ( void )
             heartRateMeasuredData       = heartrate9_read_byte();
             if(heartRateMeasuredData != -1)             // Checking the Heartrate sensor data process completed
             {
-                appData.app_state       = EINK_UPDATE_STATE;
+                appData.app_state       = EINK_EPAPER_2_9_296_128_UPDATE_STATE;
             }
             break;
-        case EINK_UPDATE_STATE:
-            printf("Heartrate = %d bpm \t\r\n", (uint8_t)heartRateMeasuredData);
+        case EINK_EPAPER_2_9_296_128_UPDATE_STATE:
+            printf("Heartrate = %d bpm \t\r\n", (uint8_t)heartRateMeasuredData); 
             sprintf(lcl_buffer, "%dbpm", (uint8_t)heartRateMeasuredData);
             CNANO_LED_Set();
-            eink_image_bmp(heartrate_image);
-            eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
-            eink_text(lcl_buffer, 0, 118 );
+            eink_epaper_2_9_296_128_fill_screen( EINK_EPAPER_2_9_296_128_COLOR_BLACK );
+            eink_epaper_2_9_296_128_image_bmp(heartrate_image);
+            eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_WHITE, FO_HORIZONTAL );
+            lcl_buffer[9]='\0';
+            eink_epaper_2_9_296_128_text(lcl_buffer, 14, 148 );
             button_pressed              = false;
             if(hr_measurment_request == 1)
             {
