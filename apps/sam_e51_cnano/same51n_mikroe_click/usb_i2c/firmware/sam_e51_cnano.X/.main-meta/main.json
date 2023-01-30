@@ -2,7 +2,7 @@
    "metaDataVersion":"1.0.0",
    "category":"com.microchip.ide.project",
    "content":{
-      "metaDataVersion":"1.1.0",
+      "metaDataVersion":"1.3.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_usb_i2c",
       "version":"1.5.0",
       "displayName":"USB I2C Click example on SAM E51 Curiosity Nano Evaluation Kit",
@@ -55,22 +55,11 @@
          "MHC",
          "MCC",
          "Harmony",
-         "ATSAME51J20A",
-         "SAME51 Family",
-         "USB I2C",
-         "USB-I2C",
-         "USB-I2C Click",
-         "MIKROE-1985",
-         "Click",
-         "Mikroe",
-         "Mikroelektronika",
+         "USB",
+         "I2C",
+         "Click Board",
          "GPIO",
-         "MCP2221",
-         "SAM E51",
-         "SAME51",
-         "Curiosity",
-         "Nano",
-         "Base"
+         "Curiosity Nano"
       ],
       "additionalData":{
          "longDescription":{

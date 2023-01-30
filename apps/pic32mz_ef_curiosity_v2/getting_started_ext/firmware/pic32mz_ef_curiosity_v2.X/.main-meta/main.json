@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_getting_started_ext",
 		"version": "1.5.0",
 		"displayName": "Getting Started Extended Application on Curiosity PIC32MZ EF 2.0 Development Board",
@@ -52,25 +52,17 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"PIC32MZ2048EFM144",
-			"PIC32MZ Family",
 			"UART",
 			"Serial Communication",
 			"USART",
 			"FLEXCOM",
 			"Getting Started",
 			"I2C",
-			"Timer",
+			"TMR",
 			"GPIO",
 			"DMA",
-			"temperature",
-			"Curiosity",
-			"PIC32MZ EF",
-			"PIC32MZEF",
-			"temperature",
-			"I/O1 Xplained",
-			"IO1",
-			"Pro Extension Kit"
+			"Temperature",
+			"Curiosity"
 			
 		],
 		"additionalData": {

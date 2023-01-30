@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_leddriver3",
 		"version": "1.5.0",
 		"displayName": "LED DRIVER 3 Click example on SAM E51 Curiosity Nano Evaluation Kit",
@@ -52,18 +52,11 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"ATSAME51J20A",
-			"SAME51 Family",
-			"Led driver 3",
-			"Click",
-			"Mikroe",
-			"Mikroelektronika",
+			"LED",
+			"Driver",
+			"Click Board",
 			"GPIO",
-			"SAM E51",
-			"SAME51",
-			"Curiosity",
-			"Nano",
-			"Base"
+			"Curiosity Nano"
 		],
 		"additionalData": {
 			"longDescription": {

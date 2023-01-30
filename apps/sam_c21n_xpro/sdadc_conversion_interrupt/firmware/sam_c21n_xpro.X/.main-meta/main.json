@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sdadc_conversion_interrupt",
 		"version": "1.5.0",
 		"displayName": "SDADC Conversion Interrupt Mode",
@@ -52,21 +52,13 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"ATSAMC21N18A",
-			"SAMC21N Family",
 			"UART",
 			"Serial Communication",
 			"USART",
 			"FLEXCOM",
 			"Getting Started",
 			"SDADC",
-			"SUPC",
-			"EVSYS",
-			"SAM C21N",
-			"SAMC21N",
-			"I/O1 Xplained",
-			"IO1",
-			"Pro Extension Kit"			
+			"EVSYS"		
 		],
 		"additionalData": {
 			"longDescription": {

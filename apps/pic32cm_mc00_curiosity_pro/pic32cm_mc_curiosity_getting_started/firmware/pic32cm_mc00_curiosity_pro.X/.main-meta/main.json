@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cm_mc_curiosity_getting_started",
 		"version": "1.5.0",
 		"displayName": "Getting Started Application on PIC32CM MC00 Curiosity Pro Development Board",
@@ -52,8 +52,6 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"PIC32CM1216MC00048",
-			"PIC32CM MC Family",
 			"UART",
 			"Serial Communication",
 			"USART",
@@ -64,14 +62,9 @@
 			"ADC",
 			"Temperature",
 			"Sensor",
-			"Light",
-			"Curiosity",
-			"Pro",
-			"PIC32CM MC00",
-			"temperature",
-			"I/O1 Xplained",
-			"IO1",
-			"Pro Extension Kit"			
+			"Lighting",
+			"Curiosity Pro",
+			"Temperature"
 
 		],
 		"additionalData": {

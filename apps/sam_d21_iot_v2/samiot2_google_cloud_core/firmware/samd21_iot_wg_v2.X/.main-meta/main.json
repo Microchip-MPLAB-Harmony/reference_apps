@@ -51,24 +51,18 @@
 		"keywords": [
 			"MHC",
             "MCC",
-			"Harmony",
-			"ATSAMD21G18A",
-			"SAMD21 Family",		
-			"Click",
+			"Harmony",		
+			"Click Board",
 			"IoT",
 			"Google",
-			"Core",
-			"Node",
 			"Sensor",
+			"Sensor Node",
+			"Edge Node",		
 			"Cloud",
-			"SAM D21",
-			"SAMD21",	
-			"SAM IoT WG",
-            "SAM IoT WG V2",
-            "SAM IoT WX",
 			"WINC1510",
-			"ECC608B",
-			"Secure"			
+			"ATECC608B",
+			"CryptoAuthentication",
+			"Security"			
 		],
 		"additionalData": {
 			"longDescription": {

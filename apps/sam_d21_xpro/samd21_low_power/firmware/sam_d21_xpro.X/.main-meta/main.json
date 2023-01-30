@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_samd21_low_power",
 		"version": "1.5.0",
 		"displayName": "Low Power Application on SAM D21 Xplained Pro Evaluation Kit",
@@ -52,26 +52,18 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"ATSAMD21J18A",
-			"SAMD21 Family",
 			"I2C",
 			"RTC",
 			"USART",
 			"AC",
-			"PM",
+			"Power Module",
 			"EIC",
 			"EVSYS",
 			"Low Power",
-			"Standby",
 			"Idle",
 			"Temperature",
-			"Light",
-			"Sensor",
-			"SAM D21",
-			"SAMD21",
-			"I/O1 Xplained",
-			"IO1",
-			"Pro Extension Kit"
+			"Lighting",
+			"Sensor"
 			
 		],
 		"additionalData": {

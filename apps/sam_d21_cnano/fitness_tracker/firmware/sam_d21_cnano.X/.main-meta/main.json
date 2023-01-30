@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_fitness_tracker",
 		"version": "1.5.0",
 		"displayName": "Fitness Tracker Application",
@@ -52,19 +52,13 @@
 			"MHC",
             "MCC",
 			"Harmony",
-			"ATSAMD21G17D",
-			"SAMD21 Family",
-			"Click",
-			"Heart rate",
-			"EINK",
+			"Click Board",
+			"Fitness",
+			"Heartbeat",
+			"Display",
+			"Low Power",
 			"Health",
-			"bpm",
-			"SAM D21",
-			"SAMD21",	
-			"Curiosity",
-			"Nano",
-			"Base",
-			"Adapter"
+			"Curiosity Nano"
 		],
 		"additionalData": {
 			"longDescription": {

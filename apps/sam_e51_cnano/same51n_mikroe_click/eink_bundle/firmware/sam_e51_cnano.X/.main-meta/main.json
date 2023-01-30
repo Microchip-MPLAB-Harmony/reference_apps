@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_eink_bundle",
 		"version": "1.5.0",
 		"displayName": "Eink Click display bundle example on SAM E51 Curiosity Nano Evaluation Kit",
@@ -52,19 +52,11 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"ATSAME51J20A",
-			"SAME51 Family",
-			"Eink",
-			"Bundle",
-			"Click",
-			"Mikroe",
-			"Mikroelektronika",
+			"Display",
+			"Click Board",
+			"Low Power",
 			"GPIO",
-			"SAM E51",
-			"SAME51",
-			"Curiosity",
-			"Nano",
-			"Base"
+			"Curiosity Nano"
 		],
 		"additionalData": {
 			"longDescription": {

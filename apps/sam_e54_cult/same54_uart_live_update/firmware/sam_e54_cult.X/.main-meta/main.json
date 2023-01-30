@@ -2,7 +2,7 @@
    "metaDataVersion":"1.0.0",
    "category":"com.microchip.ide.project",
    "content":{
-      "metaDataVersion":"1.1.0",
+      "metaDataVersion":"1.3.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_same54_uart_live_update",
       "version":"1.5.0",
       "displayName":"Live update Application on SAME54",
@@ -58,18 +58,13 @@
          "MHC",
          "MCC",
          "Harmony",
-         "ATSAME54P20A",
-         "SAME54 Family",
          "USART",
          "EIC",
-         "NVM",
-         "PORTS",
-         "SAM E54",
+         "Flash",
+         "GPIO",
          "Curiosity",
-         "Ultra",
-         "SAME54",
-         "Live update",
-         "bootloader"
+         "Live Update",
+         "Bootloader"
       ],
       "additionalData":{
          "longDescription":{

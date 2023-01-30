@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_ble_fitness_tracker",
 		"version": "1.5.0",
 		"displayName": "BLE Fitness Tracker Application",
@@ -52,25 +52,16 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"ATSAME51J20A",
-			"SAME51 Family",
-			"Click",
-			"Heart rate",
-			"EINK",
+			"Click Board",
+			"Heartbeat",
 			"Health",
-			"bpm",
-			"BM71",
+			"BPM",
 			"Bluetooth",
 			"BLE",
 			"EIC",
 			"RTC",
 			"GPIO",
-			"SAM E51",
-			"SAME51",
-			"Curiosity",
-			"Nano",
-			"Base",
-			"Adapter"			
+			"Curiosity Nano"
 		],
 		"additionalData": {
 			"longDescription": {

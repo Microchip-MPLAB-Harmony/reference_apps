@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_location_sos",
 		"version": "1.5.0",
 		"displayName": "Location SOS Application",
@@ -52,23 +52,13 @@
 			"MHC",
             "MCC",
 			"Harmony",
-			"ATSAMD21G17D",
-			"SAMD21 Family",
 			"UART",
 			"Serial Communication",
 			"USART",
 			"FLEXCOM",
-			"GSM-GPS",
-			"Click",
-			"Location",
-			"SOS",
-			"SMS",
-			"SAM D21",
-			"SAMD21",	
-			"Curiosity",
-			"Nano",
-			"Base",
-			"Adapter"	
+			"GPS",
+			"Click Board",
+			"Curiosity Nano"
 		],
 		"additionalData": {
 			"longDescription": {

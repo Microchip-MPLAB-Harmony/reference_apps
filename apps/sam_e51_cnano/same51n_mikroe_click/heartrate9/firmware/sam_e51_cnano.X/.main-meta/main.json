@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_heartrate9",
 		"version": "1.5.0",
 		"displayName": "Heart Rate 9 Click example on SAM E51 Curiosity Nano Evaluation Kit",
@@ -52,19 +52,10 @@
 			"MHC",
 			"MCC",
 			"Harmony",
-			"ATSAME51J20A",
-			"SAME51 Family",
-			"Heart Rate",
-			"Heart Rate 9",
-			"Click",
-			"Mikroe",
-			"Mikroelektronika",
-			"GPIO",
-			"SAM E51",
-			"SAME51",
-			"Curiosity",
-			"Nano",
-			"Base"
+			"Heartbeat",
+			"Click Board",
+			"BPM",
+			"Curiosity Nano"
 		],
 		"additionalData": {
 			"longDescription": {

@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sam_e51n_google_cloud_iot_core",
 		"version": "1.5.0",
 		"displayName": "Google Cloud IoT Core Application",
@@ -51,21 +51,17 @@
 		"keywords": [
 			"MHC",
             "MCC",
-			"Harmony",
-			"ATSAME51J20A",
-			"SAME51 Family",		
-			"Click",
+			"Harmony",		
+			"Click Board",
 			"IoT",
 			"Google",
-			"Core",
-			"Node",
+			"Edge Node",
 			"Sensor",
 			"Cloud",
-			"SAM E51",
-			"SAME51",	
 			"WINC1510",
-			"ECC608A",
-			"Secure"			
+			"Security",
+			"Security Device",
+			"ATECC608A"			
 		],
 		"additionalData": {
 			"longDescription": {

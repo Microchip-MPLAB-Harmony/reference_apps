@@ -2,7 +2,7 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml22_sdcard_usb_slcd_datalogger",
 		"version": "1.5.0",																					   
 		"displayName": "sdcard_usb_slcd_datalogger_sam_d21_xpro",
@@ -54,38 +54,29 @@
 			"RTC",
 			"SPI",
 			"ADC",
-			"Timer"
+			"Timer",
 			"SUPC"	
 		],
 		"keywords": [
 			"MHC",
+			"MCC",
 			"Harmony",
-			"ATSAML22N18A",
-			"SAM L22 Family",
 			"I2C",
 			"Serial Communication",
-		    "TSLCD1"
 			"SERCOM",
-		    "TSLCD1 XplainedPro"
 			"RTC",
-			"SD Card",
-			"SLCD",
-			"Light Sensor",
-			"Temperature sensor",
+			"Lighting",
+			"Sensor",
+			"Temperature",
 			"ADC",
 			"Graphics",
 			"File System",
-			"FAT32",
-			"I/O1 Xplained",
-			"IO1",
-			"Pro Extension Kit"	   
-		    "FATFS",
-			"Light Intensity"		   
-			"SDSPI"
+			"I/O1",
+			"Xplained",   
 			"USB",
 			"MSD",
-			"Data Logger"
 			"Segment LCD"
+		],
 		"additionalData": {
 			"longDescription": {
 				"metaDataVersion": "1.0.0",

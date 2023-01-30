@@ -62,6 +62,7 @@
         ],
         "keywords": [
             "Harmony",
+			"MCC",
             "UART",
             "Serial Communication",
             "USART",
