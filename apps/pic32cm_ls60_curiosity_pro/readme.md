@@ -13,6 +13,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [TrustZone Getting Started on PIC32CM LS60 Curiosity Pro Evaluation Kit](./pic32cm_ls60_cpro_tz_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls60_cpro_tz_getting_started.zip) |
+| 2 | [Secure Boot on PIC32CM LS60 Curiosity Pro Evaluation Kit](./pic32cm_ls60_cpro_secure_boot/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls60_cpro_secure_boot.zip) |
+
 
 ### More Application Demos
 

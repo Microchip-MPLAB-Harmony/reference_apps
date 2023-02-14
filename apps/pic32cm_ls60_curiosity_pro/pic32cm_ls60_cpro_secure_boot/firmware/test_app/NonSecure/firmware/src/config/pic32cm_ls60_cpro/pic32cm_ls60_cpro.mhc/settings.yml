@@ -1,0 +1,14 @@
+configName: pic32cm_ls60_cpro
+folderName: pic32cm_ls60_cpro_NonSecure
+format_version: v1.0
+frameworkPath: ..\..\..\..\..\..\..\harmony_3
+processor: PIC32CM5164LS60100
+projectName: uart_bootloader_test_app_pic32cm_ls60_cpro_NonSecure
+settings:
+  PackageFilter: bootloader;bsp;core;crypto;cryptoauthlib;csp;Devices;dev_packs;net;quick_docs;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\PIC32CM-LS_DFP\1.0.141\PIC32CM-LS60\atdf\PIC32CM5164LS60100.atdf

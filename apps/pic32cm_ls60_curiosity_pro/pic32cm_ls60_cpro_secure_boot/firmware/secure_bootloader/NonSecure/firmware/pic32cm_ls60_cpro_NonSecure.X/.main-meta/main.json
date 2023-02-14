@@ -1,0 +1,90 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.ide.project",
+    "content": {
+        "metaDataVersion": "1.3.0",
+        "name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cm_ls60_cpro_secure_boot_firmware_secure_bootloader_NonSecure",
+        "version": "1.6.0",
+        "displayName": "Secure Boot on PIC32CM LS60 Curiosity Pro Evaluation Kit",
+        "projectName": "bootloader_pic32cm_ls60_cpro_NonSecure",
+        "shortDescription": "This is a dummy project holds the harmony configuration information of the Secure Bootloader project",
+        "ide": {
+            "name": "MPLABX",
+            "semverRange": ">=6.05"
+        },
+        "compiler": [
+            {
+                "name": "XC32",
+                "semverRange": ">=4.21"
+            }
+        ],
+        "dfp": {
+            "name": "PIC32CM-LS_DFP",
+            "semverRange": "^1.1.162"
+        },
+        "configurator": {
+            "name": "MCC",
+            "semverRange": ">=5.5.0"
+        },
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "PIC32CM5164LS60100",
+                "versionRange": "*"
+            }
+        },
+        "author": "Microchip",
+        "subcategories": [
+            [
+                "Development Kit",
+                "PIC32CM LS60 Curiosity Pro Evaluation Kit"
+            ],
+            [
+                "Harmony",
+                "Reference Apps"
+            ]
+        ],
+        "peripherals": [
+            "Non-secure USART",
+            "Non-secure PORT Pins (USART Pins only)",
+            "Secure PORT Pins (All pins by default are secure)",
+            "Secure RTC",
+            "DMAC",
+            "GPIO",
+            "STDIO",
+            "SERCOM (USART)"
+        ],
+        "keywords": [
+            "Harmony",
+            "MCC",
+            "UART",
+            "Serial Communication",
+            "USART",
+            "SERCOM",
+            "WDT",
+            "Getting Started",
+            "Curiosity Pro",
+            "Curiosity",
+            "GPIO",
+            "Secure Element",
+            "TrustZone",
+            "Immutable Boot",
+            "Secure Bootloader",
+            "Bootloader"
+        ],
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./../../readme.md",
+                    "mimeType": "text/markdown"
+                }
+            }
+        }
+    }
+}
