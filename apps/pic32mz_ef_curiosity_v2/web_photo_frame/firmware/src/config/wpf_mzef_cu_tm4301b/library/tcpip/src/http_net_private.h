@@ -64,6 +64,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // enable HTTP debugging levels
 #define TCPIP_HTTP_NET_DEBUG_LEVEL                (0)
 
+
 // the maximum length of a chunk header for a 32 bit chunk length:
 //  n x hexDigits + CRLF
 #define TCPIP_HTTP_CHUNK_HEADER_LEN         10

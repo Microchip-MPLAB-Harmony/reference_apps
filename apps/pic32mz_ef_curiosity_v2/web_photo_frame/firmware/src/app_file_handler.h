@@ -95,10 +95,10 @@ typedef enum {
 #define APP_FILE_START_INDEX    0
 
 // maximum numbers of supported folders
-#define APP_MEDIA_MAX_FOLDERS   10
+#define APP_MEDIA_MAX_FOLDERS   5
 
 // maximum number of files to hold into the structure
-#define APP_MEDIA_MAX_FILES     50
+#define APP_MEDIA_MAX_FILES     30
 
 // Application SYS_FS mount points
 // the definitions come from configuration.h file

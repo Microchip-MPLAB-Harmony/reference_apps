@@ -1073,9 +1073,6 @@ void* leVariableHeap_Alloc(leVariableHeap* heap,
 
     HEAP_VALIDATE(heap);
 
-    if(block == NULL)
-        printf("%d\n", block);
-
     // out of memory?
     LE_ASSERT(block != NULL);
 
