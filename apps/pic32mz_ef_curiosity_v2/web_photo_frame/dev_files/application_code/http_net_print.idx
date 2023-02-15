@@ -1,0 +1,6 @@
+next_picture_raw
+next_picture_file_name
+prev_picture_file_name
++picture_content
++media_status
++get_picture_file_name
