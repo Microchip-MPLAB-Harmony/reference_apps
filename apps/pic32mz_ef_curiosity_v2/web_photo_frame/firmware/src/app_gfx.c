@@ -414,7 +414,7 @@ void APP_GFX_Tasks() {
 // *****************************************************************************
 // *****************************************************************************
 // check media and goes to start screen in case cannot stream
-void _APP_GFX_CheckMedia() 
+static void _APP_GFX_CheckMedia() 
 {
     if (APP_FileHandler_IsMediaMounted() == false) {
         // change to the start of screen
@@ -426,7 +426,7 @@ void _APP_GFX_CheckMedia()
 
 // function on the status of the media, 
 // returns a string to be shown on the main screen
-char* APP_GFX_GetStartMessageString()
+static char* APP_GFX_GetStartMessageString()
 {
     if (APP_FileHandler_IsMediaMounted() == false) {
         return &cCardNotFound[0];
@@ -446,7 +446,7 @@ char* APP_GFX_GetStartMessageString()
 // gets the handle for the image
 // for this particular application this is always the SD Card
 // but it could be extended to other locations, if necessary
-SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) {
+static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) {
     SYS_FS_HANDLE handle = SYS_FS_HANDLE_INVALID;
 
     switch (dataLocation) {
@@ -470,7 +470,7 @@ SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) {
 
 // there are reasons for which the streaming cannot start/continue
 // catch them here
-bool APP_GFX_CanStream() {
+static bool APP_GFX_CanStream() {
     // there is no SD Card inside
     if (APP_FileHandler_IsMediaLoaded() != true) {
         return false;
@@ -492,7 +492,7 @@ bool APP_GFX_CanStream() {
 // Unloads application graphics object
 // Frees memory taken by the Legato Image object
 // closes the file in case it is open
-void APP_GFX_ImgObjUnload() {
+static void APP_GFX_ImgObjUnload() {
     // free the legato Image
     while (appGfxData.appGfxResImgObj.image != NULL) {
         APP_GFX_Image_Free(appGfxData.appGfxResImgObj.image);
@@ -511,7 +511,7 @@ void APP_GFX_ImgObjUnload() {
 }
 
 // loads the next image into the Image Widget
-bool APP_GFX_Load_Next_Image(void) {
+static bool APP_GFX_Load_Next_Image(void) {
     // Free memory used by the previous image
     APP_GFX_ImgObjUnload();
     
@@ -588,7 +588,7 @@ bool APP_GFX_Load_Next_Image(void) {
 
 // allocate memory for a new image 
 // and initialize the object properties
-leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
+static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
         uint32_t height,
         leColorMode colorMode,
         uint32_t location,
@@ -643,7 +643,7 @@ leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
 }
 
 // free memory taken by an image
-leResult APP_GFX_Image_Free(leImage* img) 
+static leResult APP_GFX_Image_Free(leImage* img) 
 {
     if(img == NULL || (img->flags & LE_IMAGE_INTERNAL_ALLOC) == 0) {
         return LE_FAILURE;
@@ -655,7 +655,7 @@ leResult APP_GFX_Image_Free(leImage* img)
 }
 
 // positions the image widget on the display based on its dimensions
-void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget) 
+static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget) 
 {
     uint16_t posX = 0;
     uint16_t poxY = 0;

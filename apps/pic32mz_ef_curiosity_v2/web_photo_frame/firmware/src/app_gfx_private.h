@@ -22,7 +22,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-  Graphics Application Header File
+  Graphics Application Private Header File
 
   Company:
     Microchip Technology Inc.
@@ -35,7 +35,7 @@
 
   Description:
     This header file provides function prototypes and data type definitions for
-    the graphics application.
+    the graphics application
 *******************************************************************************/
 
 #ifndef APP_GFX_PRIVATE_H
@@ -49,6 +49,7 @@
 extern "C" {
 #endif
 
+    // screen dimensions
 #define APP_GFX_SCREEN_WIDTH 480
 #define APP_GFX_SCREEN_HEIGHT 272
 
@@ -56,6 +57,7 @@ extern "C" {
 // before going to next picture
 #define APP_GFX_SLIDESHOW_DELAY_SECONDS 3ul
     
+// the LED that will show an error on the Graphics side
 #define APP_GFX_ERROR_LED_ON()      RGB_LED_R_On()
 
 // graphics application state machine states
@@ -99,10 +101,10 @@ typedef struct
 // graphics application data
 typedef struct
 {
-    /* The application's current state */
+    // the application current state
     APP_GFX_STATE state;
 
-    // 
+    // the index of the current file displayed on the screen
     uint32_t currentAppGfxFileIdx;
 
     // the image file details got from the File Handler
@@ -116,31 +118,31 @@ typedef struct
 } APP_GFX_DATA;
 
 // gets the text to be displayed on the Start Screen
-char* APP_GFX_GetStartMessageString();
+static char* APP_GFX_GetStartMessageString();
 
 // gets the handle for the image
-SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation);
+static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation);
 
 // allocate memory for a new image and initialize the object
-leImage* APP_GFX_CreateLegatoImageObject(uint32_t width, uint32_t height, leColorMode colorMode, uint32_t location, leImageFormat format);
+static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width, uint32_t height, leColorMode colorMode, uint32_t location, leImageFormat format);
 
 // free memory taken by an image
-leResult APP_GFX_Image_Free(leImage* img);
+static leResult APP_GFX_Image_Free(leImage* img);
 
 // free memory taken by the image related objects
-void APP_GFX_ImgObjUnload();
+static void APP_GFX_ImgObjUnload();
 
 // loads the next image into the Image Widget
-bool APP_GFX_Load_Next_Image(void);
+static bool APP_GFX_Load_Next_Image(void);
 
 // positions the image object on the display based on its dimensions
-void APP_GFX_Set_ImageWidgetPosition(leImageWidget* image);
+static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* image);
 
 // there are reasons for which the streaming cannot start/continue
-bool APP_GFX_CanStream();
+static bool APP_GFX_CanStream();
 
 // sanity check of the media
-void _APP_GFX_CheckMedia();
+static void _APP_GFX_CheckMedia();
 
 #ifdef	__cplusplus
 }

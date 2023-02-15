@@ -37,8 +37,8 @@
     
 *******************************************************************************/
 
-#ifndef _APP_FILE_HANDLER_H    /* Guard against multiple inclusion */
-#define _APP_FILE_HANDLER_H
+#ifndef _APP_FILE_HANDLER_PRIVATE_H    /* Guard against multiple inclusion */
+#define _APP_FILE_HANDLER_PRIVATE_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -60,22 +60,13 @@ extern "C" {
 // Section: Enumerations
 // *****************************************************************************
 // *****************************************************************************
-
-// file types
+// file media status
 typedef enum {
-    APP_IMAGE_FILE_TYPE_UNKNOWN = 0,
-    APP_IMAGE_FILE_TYPE_BMP,
-    APP_IMAGE_FILE_TYPE_JPEG,
-    APP_IMAGE_FILE_TYPE_PNG,
-    APP_IMAGE_FILE_TYPE_GIF
-} APP_IMAGE_FILE_TYPE;
-
-// direction to get the next, prev, current file
-typedef enum {
-    APP_FILE_GET_CURRENT = 1,
-    APP_FILE_GET_PREVIOUS,
-    APP_FILE_GET_NEXT
-} APP_FILE_NEXT_PREV;
+    APP_FILE_MEDIA_UNMOUNTED = 0,
+    APP_FILE_MEDIA_MOUNTED,
+    APP_FILE_LOADING_MEDIA,
+    APP_FILE_MEDIA_LOADED
+} APP_FILE_MEDIA_STATUS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -83,150 +74,81 @@ typedef enum {
 // *****************************************************************************
 // *****************************************************************************
 
+// the start index of the media file list
+#define APP_FILE_START_INDEX    0
+
+// maximum numbers of supported folders
+#define APP_MEDIA_MAX_FOLDERS   5
+
+// maximum number of files to hold into the structure
+#define APP_MEDIA_MAX_FILES     30
+
+// Application SYS_FS mount points
+// the definitions come from configuration.h file
+#define APP_SYS_FS_SD_VOL           SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0
+#define APP_SYS_FS_MOUNT_POINT      SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
+#define APP_SYS_FS_TYPE_STRING      "FATFS"
+
+// folder delimiter
+#define APP_SYS_FS_FOLDER_DELIMITER "/"
+
+// Supported Image Definitions
+#define APP_SUPPORT_JPEG
+//#define APP_SUPPORT_BMP
+//#define APP_SUPPORT_PNG
+//#define APP_SUPPORT_GIF
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
 
-// structure to hold the media file dimensions in pixels
+// structure to hold data related to media files on the mounted file system
 typedef struct __attribute__ ((coherent , aligned(4)))
 {
-    uint32_t width;
-    uint32_t height;
-} APP_FILE_IMAGE_DIMENSIONS;
-
-// structure to hold data related to one media file
-typedef struct __attribute__ ((coherent , aligned(4)))
-{
-    // tracks the current image to show
-    uint32_t mediaFileIdx;
+    // the status of the file system
+    APP_FILE_MEDIA_STATUS fileSystemMountStatus;
     
-    // full path to the file
-    char mediaFullPath[SYS_FS_FILE_NAME_LEN + 1];
+    // total files in the volume
+    uint32_t totalFiles;
     
-    // relative path to the file for web URL
-    char* mediaWebPath;
+    // number of folders found
+    uint8_t dirCount;
     
-    // the type of the image: jpeg etc...
-    APP_IMAGE_FILE_TYPE fileType;
+    // the index for current folder to search for files
+    uint8_t dirIndex;
 
-    // image dimensions in pixels
-    APP_FILE_IMAGE_DIMENSIONS dimensions;
-} APP_FILE_DATA;
+    // a table with folder names
+    APP_FILE_DATA  dirNameList[APP_MEDIA_MAX_FOLDERS];
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Callback Functions
-// *****************************************************************************
-// *****************************************************************************
+    // a table with  file names
+    APP_FILE_DATA  fileNameList[APP_MEDIA_MAX_FILES];
 
-/*******************************************************************************
-  Function:
-    void APP_FileHandler_SYS_FS_EventHandler ( void )
-
-  Summary:
-    SYS_FS callback function
-
-  Description:
-    This routine is set as callback for the File System when the media 
-    is mounted or unmounted
-    It is usually set in the application initialization function
-
-  Precondition:
-    
-
-  Parameters:
-    None.
-
-  Returns:
-    None.
-
-  Example:
-    <code>
-    SYS_FS_EventHandlerSet(APP_FileHandler_SYS_FS_EventHandler, (uintptr_t)NULL);
-    </code>
-
-  Remarks:
-    This routine should not be called directly
- */
-void APP_FileHandler_SYS_FS_EventHandler(SYS_FS_EVENT event, void* eventData, uintptr_t context);
+} APP_MEDIA_DATA;
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface Functions
+// Section: Local Functions
 // *****************************************************************************
 // *****************************************************************************
 
 /*******************************************************************************
   Function:
-    bool APP_FileHandler_IsMediaLoaded(void)
+    bool APP_FileHandler_IsSupportedFile(char *name)
 
   Summary:
-    Says if the Media is mounted or not
+    Function to check if the file is supported by file extension.
 
   Description:
-    Says if the Media is mounted or not
+    This function confirms if the files are supported by the application.
+    This is made by file name extension
 */
-bool APP_FileHandler_IsMediaMounted();
+static bool APP_FileHandler_IsSupportedFile(char* fileName);
 
 /*******************************************************************************
   Function:
-    bool APP_FileHandler_IsMediaLoaded(void)
-
-  Summary:
-    Says if some Media available to show or not
-
-  Description:
-    Says if some Media available to show or not
-*/
-bool APP_FileHandler_IsMediaLoaded(void);
-
-/*******************************************************************************
-  Function:
-    uint32_t APP_FileHandler_GetMaxNumberOfFiles()
-
-  Summary:
-    Gets the maximum number of files the app can handle
-
-  Description:
-    Gets the maximum number of files the app can handle. This is defined into the APP_MEDIA_MAX_FILES
-*/
-uint32_t APP_FileHandler_GetMaxNumberOfFiles();
-
-/*******************************************************************************
-  Function:
-    bool APP_FileHandler_GatherAvailableMedia()
-
-
-  Summary:
-    Recursively traverse a folder structure and get supported media files
-
-  Description:
-    This function looks on the media and gathers all available media
-    Returns FALSE if all folders are traversed
-    Returns TRUE when all done
-    It also populates the available file list with the files that are supported by the app
-    The function is called more than one time, to allow other things to happen 
-        - when RTOS is available I think this is not needed
-*/
-bool APP_FileHandler_GatherAvailableMedia(void);
-
-/*******************************************************************************
-  Function:
-    uint32_t APP_FileHandler_GetNumberOfMediaFiles(void)
-
-  Summary:
-    Returns the number of detected media files
-
-  Description:
-    Returns the number of detected media files
-*/
-uint32_t APP_FileHandler_GetNumberOfMediaFiles(void);
-
-/*******************************************************************************
-  Function:
-    void APP_FileHandler_Initialize()
+    void APP_FileHandler_ResetData()
 
   Summary:
     Initialize data to startup values
@@ -234,38 +156,85 @@ uint32_t APP_FileHandler_GetNumberOfMediaFiles(void);
   Description:
     Initialize data to startup values
 */
-void APP_FileHandler_Initialize(void);
+static void APP_FileHandler_ResetData(void);
 
 /*******************************************************************************
   Function:
-    APP_FILE_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NEXT_PREV next_prev)
+    APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE)
 
   Summary:
-    Gets the next file to show by into index in the file list
+    Gets the file type
 
   Description:
-    Gets the index of the file to show forward, backwards of current
+    Looks into the file header and gets the image type
 */
-APP_FILE_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NEXT_PREV next_prev);
+static APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE fileHandler);
 
 /*******************************************************************************
   Function:
-    APP_FILE_DATA* APP_FileHandler_GetPictureByWebName(char* webFileName)
+    void APP_FileHandler_Get_Image_Dimensions()
 
   Summary:
-    Gets the file to show by web file name
+    Gets gets the image dimensions
 
   Description:
-    Gets the details of the file to show, by web file path
+    Looks into the file and gets the image dimensions
 */
-APP_FILE_DATA* APP_FileHandler_GetPictureByWebName(char* webFileName);
+static void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS* dimensions, APP_IMAGE_FILE_TYPE imageType);
 
+/*******************************************************************************
+  Function:
+    void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+
+  Summary:
+    Gets gets the image JPEG dimensions
+
+  Description:
+    Looks into the JPEG and gets the image dimensions
+*/
+static void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+
+/*******************************************************************************
+  Function:
+    void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+
+  Summary:
+    Gets gets the image BMP dimensions
+
+  Description:
+    Looks into the BMP and gets the image dimensions
+*/
+static void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+
+/*******************************************************************************
+  Function:
+    void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+
+  Summary:
+    Gets gets the image PNG dimensions
+
+  Description:
+    Looks into the PNG and gets the image dimensions
+*/
+static void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+
+/*******************************************************************************
+  Function:
+    void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+
+  Summary:
+    Gets gets the image GIF dimensions
+
+  Description:
+    Looks into the GIF and gets the image dimensions
+*/
+static void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _APP_FILE_HANDLER_H */
+#endif /* _APP_FILE_HANDLER_PRIVATE_H */
 
 /* EOF */

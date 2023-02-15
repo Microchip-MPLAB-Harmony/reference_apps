@@ -47,6 +47,7 @@
  */
 // file handler defines
 #include "app_file_handler.h"
+#include "app_file_handler_private.h"
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -155,30 +156,6 @@ void APP_FileHandler_Initialize()
     return;
 }
 
-// Initialize data to startup values
-void APP_FileHandler_ResetData()
-{
-    // no files available
-    appMediaData.totalFiles = 0;
-
-    // clear the file name table
-    memset(appMediaData.fileNameTable, 0, sizeof(appMediaData.fileNameTable));
-    
-    // clear the folder table
-    memset(appMediaData.dirTable, 0, sizeof(appMediaData.dirTable));
-    
-    // add the root folder as first folder on the media
-    sprintf(appMediaData.dirTable[0].mediaFullPath, "%s", APP_SYS_FS_MOUNT_POINT);
-    
-    // set the number of folders to 1 - this is the root of the drive
-    appMediaData.dirCount = 1;
-    
-    // set the index of the folder to be examined to 0 - the root of the drive
-    appMediaData.dirIndex = 0;
-    
-    return;
-}
-
 // Says if some Media available to show or not
 bool APP_FileHandler_IsMediaMounted() 
 {
@@ -218,7 +195,7 @@ bool APP_FileHandler_GatherAvailableMedia()
     }
 
     // get a pointer to the current folder name
-    dirName = &appMediaData.dirTable[appMediaData.dirIndex].mediaFullPath[0];
+    dirName = &appMediaData.dirNameList[appMediaData.dirIndex].mediaFullPath[0];
     // open the folder
     dirHandle = SYS_FS_DirOpen(dirName);
     if(dirHandle == SYS_FS_HANDLE_INVALID)
@@ -282,7 +259,7 @@ bool APP_FileHandler_GatherAvailableMedia()
             }
 
             // copy the folder name into the dirTable
-            strcpy(appMediaData.dirTable[appMediaData.dirCount].mediaFullPath, tempFileName);
+            strcpy(appMediaData.dirNameList[appMediaData.dirCount].mediaFullPath, tempFileName);
 
             // increment the number of folders found
             appMediaData.dirCount++;
@@ -314,7 +291,7 @@ bool APP_FileHandler_GatherAvailableMedia()
             // prepare a pointer to the structure for code readability
             APP_FILE_DATA* ptrFileData;
             // point to the current structure
-            ptrFileData = &appMediaData.fileNameTable[appMediaData.totalFiles];
+            ptrFileData = &appMediaData.fileNameList[appMediaData.totalFiles];
 
             // get the file type from its headers
             ptrFileData->fileType = APP_FileHandler_Get_Image_Type(fileHandle);
@@ -382,8 +359,96 @@ uint32_t APP_FileHandler_GetMaxNumberOfFiles()
     return APP_MEDIA_MAX_FILES;
 }
 
+// Gets the details of the file to show, by web file path
+APP_FILE_DATA* APP_FileHandler_GetPictureByWebName(char* webFileName)
+{
+    for(uint16_t i = 0; i < appMediaData.totalFiles; i++) {
+        if ( !strcmp((void*)webFileName, (const void*)appMediaData.fileNameList[i].mediaWebPath) ) {
+            return &appMediaData.fileNameList[i];
+        }
+    }
+    
+    return (APP_FILE_DATA*)NULL;
+}
+
+// Gets the next file to show by into index in the file list
+APP_FILE_DATA* APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NEXT_PREV next_prev) 
+{
+    // get the next index
+    switch (next_prev) {
+        case APP_FILE_GET_CURRENT:
+        {
+            if (fileIndex < APP_FILE_START_INDEX || fileIndex >= appMediaData.totalFiles) {
+                fileIndex = APP_FILE_START_INDEX;
+            }
+            break;
+        }
+        
+        case APP_FILE_GET_PREVIOUS:
+        {
+            if (fileIndex <= APP_FILE_START_INDEX || fileIndex >= appMediaData.totalFiles) {
+                fileIndex = appMediaData.totalFiles - 1;
+            } else {
+                fileIndex--;
+            }
+            break;
+        }
+            
+        case APP_FILE_GET_NEXT: 
+            // no code here, , no break
+            // treating next as default
+        default:
+        {
+            if (fileIndex >= appMediaData.totalFiles - 1 || fileIndex < APP_FILE_START_INDEX) {
+                fileIndex = APP_FILE_START_INDEX;
+            } else {
+                fileIndex++;
+            }
+            break;
+        }
+    }
+    
+    return &appMediaData.fileNameList[fileIndex];
+}
+
+// returns the number of files found on the Media
+uint32_t APP_FileHandler_GetNumberOfMediaFiles()
+{
+    return appMediaData.totalFiles;
+}
+
+/* ************************************************************************** */
+/* ************************************************************************** */
+// Section: Local Functions                                                   */
+/* ************************************************************************** */
+/* ************************************************************************** */
+
+// Initialize data to startup values
+static void APP_FileHandler_ResetData()
+{
+    // no files available
+    appMediaData.totalFiles = 0;
+
+    // clear the file name table
+    memset(appMediaData.fileNameList, 0, sizeof(appMediaData.fileNameList));
+    
+    // clear the folder table
+    memset(appMediaData.dirNameList, 0, sizeof(appMediaData.dirNameList));
+    
+    // add the root folder as first folder on the media
+    sprintf(appMediaData.dirNameList[0].mediaFullPath, "%s", APP_SYS_FS_MOUNT_POINT);
+    
+    // set the number of folders to 1 - this is the root of the drive
+    appMediaData.dirCount = 1;
+    
+    // set the index of the folder to be examined to 0 - the root of the drive
+    appMediaData.dirIndex = 0;
+    
+    return;
+}
+
 // Function to check if the file is supported by file extension.
-bool APP_FileHandler_IsSupportedFile(char *fileName)
+static bool APP_FileHandler_IsSupportedFile(char *fileName)
 {
     char* fileExt;
     uint8_t i;
@@ -406,7 +471,7 @@ bool APP_FileHandler_IsSupportedFile(char *fileName)
 }
 
 // Parses a file header to check what type of file is
-APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE fileHandler)
+static APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE fileHandler)
 {
     APP_IMAGE_FILE_TYPE fileType = APP_IMAGE_FILE_TYPE_UNKNOWN;
     
@@ -464,10 +529,8 @@ APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE fileHandler)
     return fileType;
 }
 
-
-
 // Gets the file dimensions in pixels
-void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions, APP_IMAGE_FILE_TYPE imageType)
+static void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions, APP_IMAGE_FILE_TYPE imageType)
 {
     // set dimension to 0, if something goes bad, the image will be considered bad and discarded
     dimensions->width = 0;
@@ -507,7 +570,7 @@ void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IM
 
 // get the JPEG file dimensions
 #define APP_FILE_HANDLER_BYTES_TO_READ 255
-void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+static void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
 {
     uint32_t imageIndex;
     uint8_t bytesToRead = APP_FILE_HANDLER_BYTES_TO_READ;
@@ -598,7 +661,7 @@ void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DI
     // 00 00 00 00 | 00 00 00 00
  */
 
-void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+static void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
 {
     uint8_t sofPayload[8];
     
@@ -643,7 +706,7 @@ void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIM
  *    Interlace method:   1 byte
 
  */
-void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+static void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
 {
     uint8_t sofPayload[8];
     
@@ -660,72 +723,13 @@ void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIM
 }
 
 // TODO implement the image parser to get the GIF file dimensions
-void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+static void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE handle, APP_FILE_IMAGE_DIMENSIONS *dimensions)
 {
 #if defined(APP_SUPPORT_GIF)
 #warning "GIF SUPPORT IS NOT IMPLEMENTED ! Implement function here"
 #endif    
     return;
 }
-
-// Gets the details of the file to show, by web file path
-APP_FILE_DATA* APP_FileHandler_GetPictureByWebName(char* webFileName)
-{
-    for(uint16_t i = 0; i < appMediaData.totalFiles; i++) {
-        if ( !strcmp((void*)webFileName, (const void*)appMediaData.fileNameTable[i].mediaWebPath) ) {
-            return &appMediaData.fileNameTable[i];
-        }
-    }
-    
-    return (APP_FILE_DATA*)NULL;
-}
-
-// Gets the next file to show by into index in the file list
-APP_FILE_DATA* APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NEXT_PREV next_prev) 
-{
-    // get the next index
-    switch (next_prev) {
-        case APP_FILE_GET_CURRENT:
-        {
-            if (fileIndex < APP_FILE_START_INDEX || fileIndex >= appMediaData.totalFiles) {
-                fileIndex = APP_FILE_START_INDEX;
-            }
-            break;
-        }
-        
-        case APP_FILE_GET_PREVIOUS:
-        {
-            if (fileIndex <= APP_FILE_START_INDEX || fileIndex >= appMediaData.totalFiles) {
-                fileIndex = appMediaData.totalFiles - 1;
-            } else {
-                fileIndex--;
-            }
-            break;
-        }
-            
-        case APP_FILE_GET_NEXT: 
-            // no code here, , no break
-            // treating next as default
-        default:
-        {
-            if (fileIndex >= appMediaData.totalFiles - 1 || fileIndex < APP_FILE_START_INDEX) {
-                fileIndex = APP_FILE_START_INDEX;
-            } else {
-                fileIndex++;
-            }
-            break;
-        }
-    }
-    
-    return &appMediaData.fileNameTable[fileIndex];
-}
-
-// returns the number of files found on the Media
-uint32_t APP_FileHandler_GetNumberOfMediaFiles()
-{
-    return appMediaData.totalFiles;
-}
-
 
 // EOF
  

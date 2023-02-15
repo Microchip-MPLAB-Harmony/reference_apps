@@ -714,6 +714,7 @@
       <itemPath>../src/app_http_private.h</itemPath>
       <itemPath>../src/app_gfx_private.h</itemPath>
       <itemPath>../src/http_net_print.h</itemPath>
+      <itemPath>../src/app_file_handler_private.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -1348,7 +1349,7 @@
         </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
-          <parseOnProdLoad>true</parseOnProdLoad>
+          <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
@@ -1605,6 +1606,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/M91383/HarmonyReferenceApps/apps/pic32mz_ef_curiosity_v2/web_photo_frame/firmware/wpf_mzef_cu_tm4301b.X/debug/wpf_mzef_cu_tm4301b/wpf_mzef_cu_tm4301b_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>

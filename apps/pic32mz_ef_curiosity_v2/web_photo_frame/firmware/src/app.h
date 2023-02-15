@@ -86,7 +86,6 @@ extern "C" {
     This enumeration defines the valid application states.  These states
     determine the behavior of the application at various times.
 */
-
 typedef enum
 {
     // The media is mounted
@@ -98,17 +97,6 @@ typedef enum
     // All is prepared for other tasks to go on
     APP_GOING_ON,
 } APP_STATES;
-
-typedef enum {
-    // the media drive is mounted
-    APP_MEDIA_UNMOUNTED = 1,
-    
-    // the media drive is mounted
-    APP_MEDIA_MOUNTED,
-    
-    // the drive has been scanned for media resources
-    APP_MEDIA_SCANNED,
-} APP_MEDIA_SCAN_STATUS;
 
 // *****************************************************************************
 /* Application Data
@@ -122,7 +110,6 @@ typedef enum {
   Remarks:
     Application strings and buffers are be defined outside this structure.
  */
-
 typedef struct
 {
     // The application's current state
@@ -177,7 +164,6 @@ typedef struct
   Remarks:
     This routine must be called from the SYS_Initialize function.
 */
-
 void APP_Initialize ( void );
 
 
@@ -210,7 +196,6 @@ void APP_Initialize ( void );
   Remarks:
     This routine must be called from SYS_Tasks() routine.
  */
-
 void APP_Tasks ( void );
 
 

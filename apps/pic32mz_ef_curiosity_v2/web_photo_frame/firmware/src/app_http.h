@@ -69,33 +69,111 @@ extern "C" {
 
 #else
 
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* Section: Constants                                                         */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Data Types
-// *****************************************************************************
-// *****************************************************************************
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Interface Functions
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    void APP_HTTP_Initialize ( void )
+
+  Summary:
+     Graphics application initialization routine.
+
+  Description:
+    This function initializes the Harmony Graphics application.  It places the
+    application in its initial state and prepares it to run so that its
+    APP_Tasks function can be called.
+
+  Precondition:
+    All other system initialization routines should be called before calling
+    this routine (in "SYS_Initialize").
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_HTTP_Initialize();
+    </code>
+
+  Remarks:
+    This routine must be called from the SYS_Initialize function.
+*/
 void APP_HTTP_Initialize();
+
+/*******************************************************************************
+  Function:
+    void APP_HTTP_Tasks ( void )
+
+  Summary:
+    MPLAB Harmony HTTP application tasks function
+
+  Description:
+    This routine is the Harmony HTTP application's tasks function.  
+    It defines the application's state machine and core logic.
+
+  Precondition:
+    The system and application initialization ("SYS_Initialize") should be
+    called before calling this.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_HTTP_Tasks();
+    </code>
+
+  Remarks:
+    This routine must be called from SYS_Tasks() routine.
+ */
 void APP_HTTP_Tasks();
-void APP_HTTP_SYS_FS_EventHandler(SYS_FS_EVENT event, void * eventData, uintptr_t context);
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: External Declarations
+// Section: Callback Functions
 // *****************************************************************************
 // *****************************************************************************
+
+/*******************************************************************************
+  Function:
+    void APP_HTTP_SYS_FS_EventHandler ( void )
+
+  Summary:
+    SYS_FS callback function
+
+  Description:
+    This routine is set as callback for the File System when the media 
+    is mounted or unmounted
+    It is usually set in the application initialization function
+
+  Precondition:
+    
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    SYS_FS_EventHandlerSet(APP_HTTP_SYS_FS_EventHandler, (uintptr_t)NULL);
+    </code>
+
+  Remarks:
+    This routine should not be called directly
+ */
+void APP_HTTP_SYS_FS_EventHandler(SYS_FS_EVENT event, void * eventData, uintptr_t context);
 
 #endif
 

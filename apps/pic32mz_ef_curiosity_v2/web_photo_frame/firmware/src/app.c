@@ -52,12 +52,6 @@
 
 #include "app.h"
 #include "app_file_handler.h"
-#include "app_gfx.h"
-#include "app_http.h"
-#include "system_config.h"
-#include "system_definitions.h"
-#include "bsp/bsp.h"
-#include "user.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -125,11 +119,7 @@ void APP_Initialize ( void )
     // initialize the media handler
     APP_FileHandler_Initialize();
     
-    // initialize the graphics app
-    // APP_GFX_Initialize();
-
-    // initialize the http app
-    // APP_HTTP_Initialize();
+    return;
 }
 
 /******************************************************************************
@@ -206,12 +196,6 @@ void APP_Tasks ( void )
             break;
         }
     }
-
-    // call the graphics tasks
-    // APP_GFX_Tasks();
-    
-    // call the http tasks
-    // APP_HTTP_Tasks();
 
 // a bit of debugging
 #ifdef APP_DEBUG_HEAP

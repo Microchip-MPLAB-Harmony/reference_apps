@@ -52,10 +52,67 @@
 extern "C" {
 #endif
 
-// initialization of the application
+/*******************************************************************************
+  Function:
+    void APP_GFX_Initialize ( void )
+
+  Summary:
+     Graphics application initialization routine.
+
+  Description:
+    This function initializes the Harmony Graphics application.  It places the
+    application in its initial state and prepares it to run so that its
+    APP_Tasks function can be called.
+
+  Precondition:
+    All other system initialization routines should be called before calling
+    this routine (in "SYS_Initialize").
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_GFX_Initialize();
+    </code>
+
+  Remarks:
+    This routine must be called from the SYS_Initialize function.
+*/
 void APP_GFX_Initialize();
 
-// application state machine
+/*******************************************************************************
+  Function:
+    void APP_GFX_Tasks ( void )
+
+  Summary:
+    MPLAB Harmony Demo application tasks function
+
+  Description:
+    This routine is the Harmony Demo application's tasks function.  It
+    defines the application's state machine and core logic.
+
+  Precondition:
+    The system and application initialization ("SYS_Initialize") should be
+    called before calling this.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_GFX_Tasks();
+    </code>
+
+  Remarks:
+    This routine must be called from SYS_Tasks() routine.
+ */
 void APP_GFX_Tasks();
 
 #ifdef	__cplusplus
