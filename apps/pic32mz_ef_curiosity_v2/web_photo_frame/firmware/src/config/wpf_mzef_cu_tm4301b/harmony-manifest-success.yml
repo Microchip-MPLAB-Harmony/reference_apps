@@ -14,7 +14,6 @@ harmony_version: v1.2.0
 compiler: XC32 (v4.21) 
 
 modules:
-    - {name: "..", version: "unknown"}
     - {name: "core", version: "v3.11.1"}
     - {name: "csp", version: "v3.15.0"}
     - {name: "dev_packs", version: "v3.15.0"}
