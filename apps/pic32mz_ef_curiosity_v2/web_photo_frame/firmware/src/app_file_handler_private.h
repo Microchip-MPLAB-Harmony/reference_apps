@@ -28,7 +28,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app_file_handler.h
+    app_file_handler_private.h
 
   Summary:
     This header file provides prototypes and definitions for the file manipulation part of the application.
@@ -60,13 +60,25 @@ extern "C" {
 // Section: Enumerations
 // *****************************************************************************
 // *****************************************************************************
-// file media status
+
+// *****************************************************************************
+/* APP_FILE_HANDLER_MEDIA_STATUS
+
+  Summary:
+    Defines various statuses of media availability
+
+  Description:
+    Enumeration of various media availability statuses
+
+  Remarks:
+    None.
+ */
 typedef enum {
-    APP_FILE_MEDIA_UNMOUNTED = 0,
-    APP_FILE_MEDIA_MOUNTED,
-    APP_FILE_LOADING_MEDIA,
-    APP_FILE_MEDIA_LOADED
-} APP_FILE_MEDIA_STATUS;
+    APP_FILE_HANDLER_MEDIA_UNMOUNTED = 0,
+    APP_FILE_HANDLER_MEDIA_MOUNTED,
+    APP_FILE_HANDLER_LOADING_MEDIA,
+    APP_FILE_HANDLER_MEDIA_LOADED
+} APP_FILE_HANDLER_MEDIA_STATUS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -75,28 +87,23 @@ typedef enum {
 // *****************************************************************************
 
 // the start index of the media file list
-#define APP_FILE_START_INDEX    0
+#define APP_FILE_HANDLER_START_INDEX    0
 
 // maximum numbers of supported folders
-#define APP_MEDIA_MAX_FOLDERS   5
+#define APP_FILE_HANDLER_MAX_FOLDERS    5
 
 // maximum number of files to hold into the structure
-#define APP_MEDIA_MAX_FILES     30
+#define APP_FILE_HANDLER_MAX_FILES      30
 
 // Application SYS_FS mount points
 // the definitions come from configuration.h file
-#define APP_SYS_FS_SD_VOL           SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0
-#define APP_SYS_FS_MOUNT_POINT      SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
-#define APP_SYS_FS_TYPE_STRING      "FATFS"
+#define APP_FILE_HANDLER_MEDIA_VOLUME_PATH          SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0
+#define APP_FILE_HANDLER_MEDIA_MOUNT_POINT          SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
+#define APP_FILE_HANDLER_MEDIA_FS_TYPE_STRING      "FATFS"
 
 // folder delimiter
-#define APP_SYS_FS_FOLDER_DELIMITER "/"
-
-// Supported Image Definitions
-#define APP_SUPPORT_JPEG
-//#define APP_SUPPORT_BMP
-//#define APP_SUPPORT_PNG
-//#define APP_SUPPORT_GIF
+#define APP_FILE_HANDLER_MEDIA_FOLDER_DELIMITER_STRING  "/"
+#define APP_FILE_HANDLER_MEDIA_FOLDER_DELIMITER_CHAR    '/'
 
 // *****************************************************************************
 // *****************************************************************************
@@ -104,11 +111,22 @@ typedef enum {
 // *****************************************************************************
 // *****************************************************************************
 
-// structure to hold data related to media files on the mounted file system
+// *****************************************************************************
+/* APP_FILE_HANDLER_MEDIA_DATA
+
+  Summary:
+    Structure to hold data related to media files on the mounted file system
+
+  Description:
+    Structure to hold data related to media files on the mounted file system
+
+  Remarks:
+    None.
+ */
 typedef struct __attribute__ ((coherent , aligned(4)))
 {
     // the status of the file system
-    APP_FILE_MEDIA_STATUS fileSystemMountStatus;
+    APP_FILE_HANDLER_MEDIA_STATUS fileSystemMountStatus;
     
     // total files in the volume
     uint32_t totalFiles;
@@ -120,12 +138,12 @@ typedef struct __attribute__ ((coherent , aligned(4)))
     uint8_t dirIndex;
 
     // a table with folder names
-    APP_FILE_DATA  dirNameList[APP_MEDIA_MAX_FOLDERS];
+    char dirNameList[APP_FILE_HANDLER_MAX_FOLDERS][SYS_FS_FILE_NAME_LEN + 1];
 
     // a table with  file names
-    APP_FILE_DATA  fileNameList[APP_MEDIA_MAX_FILES];
+    APP_FILE_HANDLER_DATA  fileNameList[APP_FILE_HANDLER_MAX_FILES];
 
-} APP_MEDIA_DATA;
+} APP_FILE_HANDLER_MEDIA_DATA;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -141,9 +159,27 @@ typedef struct __attribute__ ((coherent , aligned(4)))
     Function to check if the file is supported by file extension.
 
   Description:
-    This function confirms if the files are supported by the application.
-    This is made by file name extension
-*/
+    This routine confirms if the files are supported by the application.
+    This check is made by file name extension
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    TRUE    - file extension is supported
+    FALSE   - file extension is not supported
+
+  Example:
+    <code>
+    if(APP_FileHandler_IsSupportedFile(tempFileName))
+    </code>
+
+  Remarks:
+    None.
+ */
 static bool APP_FileHandler_IsSupportedFile(char* fileName);
 
 /*******************************************************************************
@@ -151,11 +187,28 @@ static bool APP_FileHandler_IsSupportedFile(char* fileName);
     void APP_FileHandler_ResetData()
 
   Summary:
-    Initialize data to startup values
+    Initialize data to default values
 
   Description:
-    Initialize data to startup values
-*/
+    Initialize data to default values
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FileHandler_ResetData(void);();
+    </code>
+
+  Remarks:
+    None.
+ */
 static void APP_FileHandler_ResetData(void);
 
 /*******************************************************************************
@@ -163,72 +216,205 @@ static void APP_FileHandler_ResetData(void);
     APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE)
 
   Summary:
-    Gets the file type
+    Gets the file type from the file header
 
   Description:
     Looks into the file header and gets the image type
-*/
-static APP_IMAGE_FILE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE fileHandler);
+
+  Precondition:
+    None.
+
+  Parameters:
+    fileHandler - valid file handler returned by SYS_FS_FileOpen
+
+  Returns:
+    APP_IMAGE_FILE_TYPE - the type of the image
+
+  Example:
+    <code>
+    APP_IMAGE_FILE_TYPE fileType = APP_FileHandler_Get_Image_Type(fileHandle);
+    </code>
+
+  Remarks:
+    None.
+ */
+static APP_FILE_HANDLER_IMAGE_TYPE APP_FileHandler_Get_Image_Type(SYS_FS_HANDLE fileHandler);
 
 /*******************************************************************************
   Function:
-    void APP_FileHandler_Get_Image_Dimensions()
+    void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS* dimensions, APP_FILE_HANDLER_IMAGE_TYPE imageType)
 
   Summary:
-    Gets gets the image dimensions
+    Gets the image dimensions in pixels
 
   Description:
     Looks into the file and gets the image dimensions
-*/
-static void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS* dimensions, APP_IMAGE_FILE_TYPE imageType);
+
+  Precondition:
+    None.
+
+  Parameters:
+    fileHandler - valid file handler returned by SYS_FS_FileOpen
+    dimensions  - pointer to the structure where dimensions will be written to
+    imageType   - the type of the image
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FILE_HANDLER_IMAGE_DIMENSIONS dimensions;
+    fileHandle = SYS_FS_FileOpen(fileName, SYS_FS_FILE_OPEN_READ);
+    if (fileHandle != SYS_FS_HANDLE_INVALID) {
+        APP_FileHandler_Get_Image_Dimensions(fileHandle, &ptrFileData->dimensions, fileType);
+    }
+    SYS_FS_FileClose(fileHandle);
+    </code>
+
+  Remarks:
+    None.
+ */
+static void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS* dimensions, APP_FILE_HANDLER_IMAGE_TYPE imageType);
 
 /*******************************************************************************
   Function:
-    void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+    void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS* dimensions)
 
   Summary:
-    Gets gets the image JPEG dimensions
+    Gets the JPEG image dimensions in pixels
 
   Description:
-    Looks into the JPEG and gets the image dimensions
-*/
-static void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+    Looks into a JPEG file and gets the image dimensions
+
+  Precondition:
+    None.
+
+  Parameters:
+    fileHandler - valid file handler returned by SYS_FS_FileOpen
+    dimensions  - pointer to the structure where dimensions will be written to
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FILE_HANDLER_IMAGE_DIMENSIONS dimensions;
+    fileHandle = SYS_FS_FileOpen(fileName, SYS_FS_FILE_OPEN_READ);
+    if (fileHandle != SYS_FS_HANDLE_INVALID) {
+        APP_FileHandler_Get_JPEG_Dimensions(fileHandle, &dimensions);
+    }
+    SYS_FS_FileClose(fileHandle);
+    </code>
+
+  Remarks:
+    None.
+ */
+static void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS *dimensions);
 
 /*******************************************************************************
   Function:
-    void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+    void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS* dimensions)
 
   Summary:
-    Gets gets the image BMP dimensions
+    Gets the BMP image dimensions in pixels
 
   Description:
-    Looks into the BMP and gets the image dimensions
-*/
-static void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+    Looks into a BMP file and gets the image dimensions
+
+  Precondition:
+    None.
+
+  Parameters:
+    fileHandler - valid file handler returned by SYS_FS_FileOpen
+    dimensions  - pointer to the structure where dimensions will be written to
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FILE_HANDLER_IMAGE_DIMENSIONS dimensions;
+    fileHandle = SYS_FS_FileOpen(fileName, SYS_FS_FILE_OPEN_READ);
+    if (fileHandle != SYS_FS_HANDLE_INVALID) {
+        APP_FileHandler_Get_BMP_Dimensions(fileHandle, &dimensions);
+    }
+    SYS_FS_FileClose(fileHandle);
+    </code>
+
+  Remarks:
+    None.
+ */
+static void APP_FileHandler_Get_BMP_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS *dimensions);
 
 /*******************************************************************************
   Function:
-    void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+    void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS* dimensions)
 
   Summary:
-    Gets gets the image PNG dimensions
+    Gets the PNG image dimensions in pixels
 
   Description:
-    Looks into the PNG and gets the image dimensions
-*/
-static void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+    Looks into a PNG file and gets the image dimensions
+
+  Precondition:
+    None.
+
+  Parameters:
+    fileHandler - valid file handler returned by SYS_FS_FileOpen
+    dimensions  - pointer to the structure where dimensions will be written to
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FILE_HANDLER_IMAGE_DIMENSIONS dimensions;
+    fileHandle = SYS_FS_FileOpen(fileName, SYS_FS_FILE_OPEN_READ);
+    if (fileHandle != SYS_FS_HANDLE_INVALID) {
+        APP_FileHandler_Get_PNG_Dimensions(fileHandle, &dimensions);
+    }
+    SYS_FS_FileClose(fileHandle);
+    </code>
+
+  Remarks:
+    None.
+ */
+static void APP_FileHandler_Get_PNG_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS *dimensions);
 
 /*******************************************************************************
   Function:
-    void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions)
+    void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS* dimensions)
 
   Summary:
-    Gets gets the image GIF dimensions
+    Gets the GIF image dimensions in pixels
 
   Description:
-    Looks into the GIF and gets the image dimensions
-*/
-static void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_IMAGE_DIMENSIONS *dimensions);
+    Looks into a GIF file and gets the image dimensions
+
+  Precondition:
+    None.
+
+  Parameters:
+    fileHandler - valid file handler returned by SYS_FS_FileOpen
+    dimensions  - pointer to the structure where dimensions will be written to
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FILE_HANDLER_IMAGE_DIMENSIONS dimensions;
+    fileHandle = SYS_FS_FileOpen(fileName, SYS_FS_FILE_OPEN_READ);
+    if (fileHandle != SYS_FS_HANDLE_INVALID) {
+        APP_FileHandler_Get_GIF_Dimensions(fileHandle, &dimensions);
+    }
+    SYS_FS_FileClose(fileHandle);
+    </code>
+
+  Remarks:
+    None.
+ */
+static void APP_FileHandler_Get_GIF_Dimensions(SYS_FS_HANDLE fileHandler, APP_FILE_HANDLER_IMAGE_DIMENSIONS *dimensions);
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus

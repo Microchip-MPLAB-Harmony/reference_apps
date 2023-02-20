@@ -117,10 +117,9 @@ leResult leApplication_MediaOpenRequest(leStream* stream)
 leResult leApplication_MediaReadRequest(leStream* stream, // stream reader
         uint32_t address, // address
         uint32_t readSize, // dest size
-        uint8_t* destBuffer) {
-
+        uint8_t* destBuffer) 
+{
     bool error = false;
-
 
     if (APP_GFX_CanStream() == false) {
         error = true;
@@ -164,7 +163,8 @@ void leApplication_MediaCloseRequest(leStream* stream)
 
 // Callback functions
 // callback function for when the full screen invisible button will be released
-void event_Start_Screen_FullScreenButton_OnReleased(leButtonWidget* btn) {
+void event_Start_Screen_FullScreenButton_OnReleased(leButtonWidget* btn) 
+{
     if (APP_GFX_CanStream()) {
         // change the status of the state machine into streaming state
         appGfxData.state = APP_GFX_STATE_CREATE_SLIDESHOW_SCREEN;
@@ -176,8 +176,8 @@ void event_Start_Screen_FullScreenButton_OnReleased(leButtonWidget* btn) {
 // Section: Application Global Functions
 // *****************************************************************************
 // *****************************************************************************
-void APP_GFX_Initialize() {
-
+void APP_GFX_Initialize() 
+{
     // put the state machine in its init phase
     appGfxData.state = APP_GFX_STATE_INIT;
 
@@ -393,10 +393,10 @@ void APP_GFX_Tasks() {
             break;
     }
     
-#if defined (APP_DEBUG_HEAP)
+#if defined (APP_DEBUG_MEMORY)
     static uint32_t debugDelayTick = 0;
     leMemoryStatusReport rpt;
-    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_DELAY_SEC)
+    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_MEMORY_DELAY_SEC)
     {
         leMemoryGetUsageReport(&rpt);
 
@@ -446,7 +446,8 @@ static char* APP_GFX_GetStartMessageString()
 // gets the handle for the image
 // for this particular application this is always the SD Card
 // but it could be extended to other locations, if necessary
-static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) {
+static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) 
+{
     SYS_FS_HANDLE handle = SYS_FS_HANDLE_INVALID;
 
     switch (dataLocation) {
@@ -470,7 +471,8 @@ static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) {
 
 // there are reasons for which the streaming cannot start/continue
 // catch them here
-static bool APP_GFX_CanStream() {
+static bool APP_GFX_CanStream() 
+{
     // there is no SD Card inside
     if (APP_FileHandler_IsMediaLoaded() != true) {
         return false;
@@ -492,10 +494,13 @@ static bool APP_GFX_CanStream() {
 // Unloads application graphics object
 // Frees memory taken by the Legato Image object
 // closes the file in case it is open
-static void APP_GFX_ImgObjUnload() {
+static void APP_GFX_ImgObjUnload() 
+{
     // free the legato Image
     while (appGfxData.appGfxResImgObj.image != NULL) {
-        APP_GFX_Image_Free(appGfxData.appGfxResImgObj.image);
+        if (APP_GFX_Image_Free(appGfxData.appGfxResImgObj.image) == LE_FAILURE ) {
+            SYS_CONSOLE_MESSAGE("   !!! ERROR: Failed to free the graphics object image.");
+        }
 
         appGfxData.appGfxResImgObj.image = NULL;
     }
@@ -511,7 +516,8 @@ static void APP_GFX_ImgObjUnload() {
 }
 
 // loads the next image into the Image Widget
-static bool APP_GFX_Load_Next_Image(void) {
+static bool APP_GFX_Load_Next_Image(void) 
+{
     // Free memory used by the previous image
     APP_GFX_ImgObjUnload();
     
@@ -520,7 +526,7 @@ static bool APP_GFX_Load_Next_Image(void) {
     }
 
     // ask the file handler for the next picture to show
-    appGfxData.appGfxFileData = APP_FileHandler_GetPictureToShow(appGfxData.currentAppGfxFileIdx, APP_FILE_GET_NEXT);
+    appGfxData.appGfxFileData = APP_FileHandler_GetPictureToShow(appGfxData.currentAppGfxFileIdx, APP_FILE_HANDLER_GET_NEXT);
     // set the current file index
     appGfxData.currentAppGfxFileIdx = appGfxData.appGfxFileData->mediaFileIdx;
 
@@ -531,19 +537,19 @@ static bool APP_GFX_Load_Next_Image(void) {
     // open the stream in the right format
     leImageFormat imageFormat;
     switch (appGfxData.appGfxFileData->fileType) {
-        case APP_IMAGE_FILE_TYPE_JPEG:
+        case APP_FILE_HANDLER_IMAGE_TYPE_JPEG:
             imageFormat = LE_IMAGE_FORMAT_JPEG;
             break;
 
-        case APP_IMAGE_FILE_TYPE_BMP:
+        case APP_FILE_HANDLER_IMAGE_TYPE_BMP:
             imageFormat = LE_IMAGE_FORMAT_RAW;
             break;
 
-        case APP_IMAGE_FILE_TYPE_PNG:
+        case APP_FILE_HANDLER_IMAGE_TYPE_PNG:
             imageFormat = LE_IMAGE_FORMAT_PNG;
             break;
 
-        case APP_IMAGE_FILE_TYPE_GIF:
+        case APP_FILE_HANDLER_IMAGE_TYPE_GIF:
             // when gif is supported, uncomment this line and remove the return
             // imageFormat = LE_IMAGE_FORMAT_GIF;
             SYS_CONSOLE_PRINT("!!! ERROR: GIF Images are not implemented - not currently supported %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
@@ -551,7 +557,7 @@ static bool APP_GFX_Load_Next_Image(void) {
             return false;
 
             break;
-        case APP_IMAGE_FILE_TYPE_UNKNOWN:
+        case APP_FILE_HANDLER_IMAGE_TYPE_UNKNOWN:
             SYS_CONSOLE_PRINT("!!! ERROR: Image type unknown. Should not be here. %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
 
             return false;
@@ -592,7 +598,8 @@ static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
         uint32_t height,
         leColorMode colorMode,
         uint32_t location,
-        leImageFormat format) {
+        leImageFormat format) 
+{
     leImage* img;
 
     // sanity check

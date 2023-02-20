@@ -49,18 +49,38 @@
 extern "C" {
 #endif
 
-    // screen dimensions
-#define APP_GFX_SCREEN_WIDTH 480
-#define APP_GFX_SCREEN_HEIGHT 272
+// *****************************************************************************
+// *****************************************************************************
+// Section: Constant definitions
+// *****************************************************************************
+// *****************************************************************************
+
+// screen dimensions
+#define APP_GFX_SCREEN_WIDTH    480
+#define APP_GFX_SCREEN_HEIGHT   272
 
 // sets how many seconds the picture to be displayed
 // before going to next picture
-#define APP_GFX_SLIDESHOW_DELAY_SECONDS 3ul
+#define APP_GFX_SLIDESHOW_DELAY_SECONDS     3ul
     
-// the LED that will show an error on the Graphics side
-#define APP_GFX_ERROR_LED_ON()      RGB_LED_R_On()
+// *****************************************************************************
+// *****************************************************************************
+// Section: Enumerations
+// *****************************************************************************
+// *****************************************************************************
 
-// graphics application state machine states
+// *****************************************************************************
+/* APP_GFX_STATES
+
+  Summary:
+    graphics application state machine states
+
+  Description:
+    graphics application state machine states
+
+  Remarks:
+    None.
+ */
 typedef enum
 {
     /* Application's state machine's initial state. */
@@ -76,9 +96,26 @@ typedef enum
 
     APP_GFX_STATE_ERROR,
             
-} APP_GFX_STATE;
+} APP_GFX_STATES;
 
-// image dimensions
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/* APP_GFX_IMG_DIMENSIONS
+
+  Summary:
+    Structure to hold the image dimensions
+
+  Description:
+    Structure to hold the image dimensions
+
+  Remarks:
+    None.
+ */
 typedef struct
 {
     uint16_t width;
@@ -86,7 +123,18 @@ typedef struct
 
 } APP_GFX_IMG_DIMENSIONS;
 
-// the graphics object that will be used with legato
+// *****************************************************************************
+/* APP_GFX_IMG_OBJ
+
+  Summary:
+    Structure to hold the image object
+
+  Description:
+    The graphics object that will be used with legato streaming
+
+  Remarks:
+    None.
+ */
 typedef struct
 {
     // Legato Image object
@@ -97,18 +145,28 @@ typedef struct
 
 } APP_GFX_IMG_OBJ;
 
+// *****************************************************************************
+/* APP_GFX_IMG_OBJ
 
-// graphics application data
+  Summary:
+    Structure to hold the graphics application data
+
+  Description:
+    Structure to hold the graphics application data
+
+  Remarks:
+    None.
+ */
 typedef struct
 {
     // the application current state
-    APP_GFX_STATE state;
+    APP_GFX_STATES state;
 
     // the index of the current file displayed on the screen
     uint32_t currentAppGfxFileIdx;
 
     // the image file details got from the File Handler
-    APP_FILE_DATA* appGfxFileData;
+    APP_FILE_HANDLER_DATA* appGfxFileData;
     
     // legato image object
     APP_GFX_IMG_OBJ appGfxResImgObj;
@@ -117,32 +175,291 @@ typedef struct
     SYS_FS_HANDLE assetFileHandle;
 } APP_GFX_DATA;
 
-// gets the text to be displayed on the Start Screen
+/*******************************************************************************
+  Function:
+    void APP_GFX_GetStartMessageString ( void )
+
+  Summary:
+    Get function gets Start Screen message
+
+  Description:
+    Gets the text to be displayed on the Start Screen 
+    based on the status of the media loading, like mounted, not mounted, 
+    ready or no files to play
+
+  Precondition:
+    The Start Screen needs to be rendered first
+
+  Parameters:
+    None.
+
+  Returns:
+    The string to display
+
+  Example:
+    <code>
+    char* message = APP_GFX_GetStartMessageString();
+    </code>
+
+  Remarks:
+    None.
+*/// 
 static char* APP_GFX_GetStartMessageString();
 
-// gets the handle for the image
+/*******************************************************************************
+  Function:
+    void APP_GFX_GetStartMessageString ( void )
+
+  Summary:
+    Get the data handler for the image streaming
+
+  Description:
+    Returns the data handler for the media streaming
+    Currently there is one file handler available,
+    however this function can be added with other media locations
+
+  Precondition:
+    The media should be loaded first using likes of APP_GFX_Load_Next_Image
+
+  Parameters:
+    dataLocation    Legato Asset Memory Location
+
+  Returns:
+    SYS_FS_HANDLE
+
+  Example:
+    <code>
+    appGfxData.assetFileHandle = APP_GFX_GetFileHandle(stream->desc->location);
+    </code>
+
+  Remarks:
+    None.
+*/// 
 static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation);
 
-// allocate memory for a new image and initialize the object
-static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width, uint32_t height, leColorMode colorMode, uint32_t location, leImageFormat format);
+/*******************************************************************************
+  Function:
+    void APP_GFX_GetStartMessageString ( void )
 
-// free memory taken by an image
+  Summary:
+    Creates a leImage object
+
+  Description:
+    Allocates memory for a new image and initializes the object structure
+  
+  Precondition:
+    None.
+
+  Parameters:
+    width       - image width
+    height      - image width
+    colorMode   - desired colorMode
+    location    - Legato Asset Memory Location
+    imageFormat - image format. See leImageFormat enum
+
+  Returns:
+    NULL            - if memory allocation failed
+    leImage object  - if all is good
+
+  Example:
+    <code>
+    img = APP_GFX_CreateLegatoImageObject(width, height, LE_COLOR_MODE_RGB_888, LE_STREAM_LOCATION_ID_SD_CARD_FILE, LE_IMAGE_FORMAT_JPEG);
+    </code>
+
+  Remarks:
+    None.
+*/// 
+static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width, uint32_t height, leColorMode colorMode, uint32_t location, leImageFormat imageFormat);
+
+/*******************************************************************************
+  Function:
+    leResult APP_GFX_Image_Free ( leImage* img )
+
+  Summary:
+    Destroys a leImage object
+
+  Description:
+    Frees the memory taken by an image object
+
+  Precondition:
+    None.
+
+  Parameters:
+    image           - a leImage object or NULL
+
+  Returns:
+    LE_FAILURE      - if memory de-allocation failed
+    LE_SUCCESS      - if all is OK
+
+  Example:
+    <code>
+    if ( APP_GFX_Image_Free(img) == LE_FAILURE ) {
+        // treat the failure
+    }
+    </code>
+
+  Remarks:
+    None.
+*/// 
 static leResult APP_GFX_Image_Free(leImage* img);
 
-// free memory taken by the image related objects
+/*******************************************************************************
+  Function:
+    void APP_GFX_ImgObjUnload ( void )
+
+  Summary:
+    Destroys an APP_GFX_IMG_OBJ object
+
+  Description:
+    Frees the memory taken by the image related objects
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_GFX_ImgObjUnload()
+    </code>
+
+  Remarks:
+    None.
+*/// 
 static void APP_GFX_ImgObjUnload();
 
-// loads the next image into the Image Widget
+/*******************************************************************************
+  Function:
+    bool APP_GFX_Load_Next_Image ( void )
+
+  Summary:
+    Loads the next image into the Image Widget
+
+  Description:
+    When the streaming of one image ended, and the delay passed, 
+    this function will do the needful and loads the image widget with a new image
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    true    - image has been loaded
+    false   - image failed to load
+
+  Example:
+    <code>
+    if (APP_GFX_Load_Next_Image() == true) {
+        // change state
+        appGfxData.state = APP_GFX_STATE_RENDERING_IMAGE;
+    }
+    </code>
+
+  Remarks:
+    None.
+*/// 
 static bool APP_GFX_Load_Next_Image(void);
 
-// positions the image object on the display based on its dimensions
-static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* image);
+/*******************************************************************************
+  Function:
+    void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget)
 
-// there are reasons for which the streaming cannot start/continue
+  Summary:
+    Positions the Image widget on the display based on its dimensions
+
+  Description:
+    This function positions the Image Widget 
+    based the dimensions of the picture that will be displayed
+
+  Precondition:
+    Streaming Screen should be loaded
+    imageWidget should have the width and height set
+
+  Parameters:
+    imageWidget - the widget that needs to be re-positioned
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_GFX_Set_ImageWidgetPosition(SlideShow_Screen_Images);
+    </code>
+
+  Remarks:
+    None.
+*/// 
+static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget);
+
+/*******************************************************************************
+  Function:
+    bool APP_GFX_CanStream()
+
+  Summary:
+    Checks if the streaming can continue or not
+
+  Description:
+    There are reasons for which the streaming cannot start/continue
+    Most common reason is physical Media removal
+  
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    True    - the streaming can continue
+    False   - the streaming cannot continue
+
+  Example:
+    <code>
+    if (APP_GFX_CanStream()) {
+        // change the status of the state machine into streaming state
+        appGfxData.state = APP_GFX_STATE_CREATE_SLIDESHOW_SCREEN;
+    }
+    </code>
+
+  Remarks:
+    None.
+*/// 
 static bool APP_GFX_CanStream();
 
-// sanity check of the media
-static void _APP_GFX_CheckMedia();
+/*******************************************************************************
+  Function:
+    void _APP_GFX_CheckMedia( void )
+
+  Summary:
+    Sanity check during streaming
+
+  Description:
+    Pulls the media status and switches the 
+    application state machine to the start screen if media is removed
+  
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    _APP_GFX_CheckMedia();
+    </code>
+
+  Remarks:
+    None.
+*/// 
+static void _APP_GFX_CheckMedia(void);
 
 #ifdef	__cplusplus
 }

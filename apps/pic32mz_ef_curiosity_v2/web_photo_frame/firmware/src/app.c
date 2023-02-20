@@ -198,9 +198,9 @@ void APP_Tasks ( void )
     }
 
 // a bit of debugging
-#ifdef APP_DEBUG_HEAP
+#ifdef APP_DEBUG_MEMORY
     static uint32_t debugDelayTick = 0;
-    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_DELAY_SEC)
+    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_MEMORY_DELAY_SEC)
     {
         SYS_CONSOLE_PRINT("    HEAP DEBUG: FreeRTOS minimum heap remaining: %d\r\n", xPortGetMinimumEverFreeHeapSize());
 

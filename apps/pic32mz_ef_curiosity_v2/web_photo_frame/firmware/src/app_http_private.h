@@ -80,6 +80,8 @@ extern "C" {
 /* ************************************************************************** */
 /* ************************************************************************** */
 
+// Application SYS_FS mount points
+// the definitions come from configuration.h file
 #define APP_SYS_FS_NVM_VOL                  SYS_FS_MEDIA_IDX1_DEVICE_NAME_VOLUME_IDX0
 #define APP_SYS_FS_NVM_MOUNT_POINT          SYS_FS_MEDIA_IDX1_MOUNT_NAME_VOLUME_IDX0
 #define APP_SYS_FS_NVM_TYPE                 MPFS2
@@ -89,13 +91,25 @@ extern "C" {
 #define APP_HTTP_RESPONSE_MEDIA_UNMOUNTED   "unmounted"
 #define APP_HTTP_RESPONSE_MEDIA_NOT_FOUND   "not_found"
 #define APP_HTTP_RESPONSE_MEDIA_LOADED      "loaded"
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
 
-// application state machine states
+// *****************************************************************************
+/* APP_HTTP_STATES
+
+  Summary:
+    Application state machine states
+
+  Description:
+    Application state machine states
+
+  Remarks:
+    None.
+ */
 typedef enum
 {
     // application init state
@@ -112,7 +126,18 @@ typedef enum
 
 } APP_HTTP_STATES;
 
-// application data
+// *****************************************************************************
+/* APP_HTTP_STATES
+
+  Summary:
+    Application data
+
+  Description:
+    Application data
+
+  Remarks:
+    None.
+ */
 typedef struct {
     // state machine states
     APP_HTTP_STATES state;
@@ -127,7 +152,18 @@ typedef struct {
     uint32_t currentAppHttpFileIdx;
 } APP_HTTP_DATA;
 
-// structure saved into the http connection to manage the file transfer
+// *****************************************************************************
+/* HTTP_CONN_DATA
+
+  Summary:
+    Structure saved into the http connection to manage the file transfer
+
+  Description:
+    Structure saved into the http connection to manage the file transfer
+
+  Remarks:
+    None.
+ */
 typedef struct {
     // the number of bytes sent to the http connection
     uint32_t sentBytes;
@@ -136,8 +172,9 @@ typedef struct {
     uint32_t seed;
     
     // pointer to the file to serve
-    APP_FILE_DATA* appHttpFileData;
-} HTTP_CONN_DATA;
+    APP_FILE_HANDLER_DATA* appHttpFileData;
+
+} APP_HTTP_CONNECTION_DATA;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -145,7 +182,36 @@ typedef struct {
 // *****************************************************************************
 // *****************************************************************************
 
-static void _APP_HTTP_GetPictureToShow(APP_FILE_NEXT_PREV nextPrev);
+/*******************************************************************************
+  Function:
+    void _APP_HTTP_GetPictureToShow(APP_FILE_HANDLER_GET_DIRECTION nextPrev)
+
+  Summary:
+    Helper to get the next file to send over HTTP
+
+  Description:
+    Gets the next file to send over http 
+    and sets the current index into the http data object
+  
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    // ask the file handler for the next picture
+    tempAppHttpFileData = APP_FileHandler_GetPictureToShow(appHttpData.currentAppHttpFileIdx, nextPrev);
+    </code>
+
+  Remarks:
+    None.
+*/// 
+static void _APP_HTTP_GetPictureToShow(APP_FILE_HANDLER_GET_DIRECTION nextPrev);
 
 // *****************************************************************************
 // *****************************************************************************

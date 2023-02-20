@@ -50,7 +50,7 @@
 #include "app_http_private.h"
 #include "http_net_print.h"
 
-#ifdef APP_DEBUG_HEAP
+#ifdef APP_DEBUG_MEMORY
 #include "tcpip_heap_alloc.h"
 #endif
 
@@ -66,14 +66,14 @@
 static APP_HTTP_DATA appHttpData;
 
 // http connections data
-static HTTP_CONN_DATA httpConnSentData[TCPIP_HTTP_NET_MAX_CONNECTIONS] = {0};
+static APP_HTTP_CONNECTION_DATA httpConnSentData[TCPIP_HTTP_NET_MAX_CONNECTIONS] = {0};
 
 // file that will be displayed on the web interface if the media request is invalid
 #define APP_HTTP_404_NOT_FOUND "404_not_found"
 #define APP_HTTP_404_NOT_FOUND_FILE_NAME "404_not_found.jpeg"
 
 // pointer to media data
-static APP_FILE_DATA* tempAppHttpFileData;
+static APP_FILE_HANDLER_DATA* tempAppHttpFileData;
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -204,11 +204,11 @@ void APP_HTTP_Tasks()
     }
 
 // a bit of debugging
-#ifdef APP_DEBUG_HEAP
+#ifdef APP_DEBUG_MEMORY
     
     static uint32_t debugDelayTick = 0;
     TCPIP_STACK_HEAP_HANDLE heapH;
-    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_DELAY_SEC)
+    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_MEMORY_DELAY_SEC)
     {
         heapH = TCPIP_STACK_HeapHandleGet(TCPIP_STACK_HEAP_TYPE_INTERNAL_HEAP, 0);
         
@@ -231,7 +231,7 @@ void APP_HTTP_Tasks()
 /* ************************************************************************** */
 
 // gets from the file handler the requested picture to show up or down in the file list
-static void _APP_HTTP_GetPictureToShow(APP_FILE_NEXT_PREV nextPrev)
+static void _APP_HTTP_GetPictureToShow(APP_FILE_HANDLER_GET_DIRECTION nextPrev)
 {
     // ask the file handler for the next picture
     tempAppHttpFileData = APP_FileHandler_GetPictureToShow(appHttpData.currentAppHttpFileIdx, nextPrev);
@@ -278,7 +278,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_get_picture_file_name(TCPIP_HTTP_NET_C
 {
     const uint8_t* ptrDirection;
     
-    APP_FILE_NEXT_PREV direction = APP_FILE_GET_NEXT;
+    APP_FILE_HANDLER_GET_DIRECTION direction = APP_FILE_HANDLER_GET_NEXT;
     
     HTTP_APP_DYNVAR_BUFFER *pDynBuffer = HTTP_APP_GetDynamicBuffer();
     
@@ -290,7 +290,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_get_picture_file_name(TCPIP_HTTP_NET_C
     ptrDirection = TCPIP_HTTP_NET_ArgGet(TCPIP_HTTP_NET_ConnectionDataBufferGet(connHandle), (const uint8_t *)"direction");
     if (ptrDirection != NULL) {
         if (strstr(ptrDirection, "previous") != NULL) {
-            direction = APP_FILE_GET_PREVIOUS;
+            direction = APP_FILE_HANDLER_GET_PREVIOUS;
         }
     }
     
@@ -319,7 +319,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_picture_content(TCPIP_HTTP_NET_CONN_HA
 {
     const uint8_t* ptrFileName;
     const uint8_t* ptrSeed;
-    APP_FILE_DATA* appFileData;
+    APP_FILE_HANDLER_DATA* appFileData;
     SYS_FS_HANDLE fileHandle;
     // received seed value as long
     uint32_t seedValue;
@@ -403,7 +403,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_picture_content(TCPIP_HTTP_NET_CONN_HA
     seedValue = strtol(ptrSeed, &ptr, 10);
 
     // get the user data from the HTTP connection
-    HTTP_CONN_DATA* userData = (HTTP_CONN_DATA*)TCPIP_HTTP_NET_ConnectionUserDataGet(connHandle);
+    APP_HTTP_CONNECTION_DATA* userData = (APP_HTTP_CONNECTION_DATA*)TCPIP_HTTP_NET_ConnectionUserDataGet(connHandle);
     // validate it - the seed must be the same
     if (userData == NULL || userData->seed != seedValue) 
     {   // reset the connection data

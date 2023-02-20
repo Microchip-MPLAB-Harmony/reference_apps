@@ -31,9 +31,11 @@
     app_file_handler.h
 
   Summary:
-    This header file provides prototypes and definitions for the file manipulation part of the application.
+    This header file provides prototypes and definitions for the 
+    file manipulation part of the application.
 
   Description:
+    This is the interface between the application and the media where the files are stored.
     
 *******************************************************************************/
 
@@ -57,31 +59,60 @@ extern "C" {
 
 // *****************************************************************************
 // *****************************************************************************
+// Section: Constant definitions
+// *****************************************************************************
+// *****************************************************************************
+
+// Supported Image Type Definitions
+// uncomment the supported formats defines
+#define APP_SUPPORT_JPEG
+//#define APP_SUPPORT_BMP
+//#define APP_SUPPORT_PNG
+//#define APP_SUPPORT_GIF
+
+// *****************************************************************************
+// *****************************************************************************
 // Section: Enumerations
 // *****************************************************************************
 // *****************************************************************************
 
-// file types
-typedef enum {
-    APP_IMAGE_FILE_TYPE_UNKNOWN = 0,
-    APP_IMAGE_FILE_TYPE_BMP,
-    APP_IMAGE_FILE_TYPE_JPEG,
-    APP_IMAGE_FILE_TYPE_PNG,
-    APP_IMAGE_FILE_TYPE_GIF
-} APP_IMAGE_FILE_TYPE;
+// *****************************************************************************
+/* APP_FILE_HANDLER_IMAGE_TYPE
 
-// direction to get the next, prev, current file
+  Summary:
+    Defines various types of media files
+
+  Description:
+    Enumeration of various image types
+
+  Remarks:
+    None.
+ */
 typedef enum {
-    APP_FILE_GET_CURRENT = 1,
-    APP_FILE_GET_PREVIOUS,
-    APP_FILE_GET_NEXT
-} APP_FILE_NEXT_PREV;
+    APP_FILE_HANDLER_IMAGE_TYPE_UNKNOWN = 0,
+    APP_FILE_HANDLER_IMAGE_TYPE_BMP,
+    APP_FILE_HANDLER_IMAGE_TYPE_JPEG,
+    APP_FILE_HANDLER_IMAGE_TYPE_PNG,
+    APP_FILE_HANDLER_IMAGE_TYPE_GIF
+} APP_FILE_HANDLER_IMAGE_TYPE;
 
 // *****************************************************************************
-// *****************************************************************************
-// Section: Constant definitions
-// *****************************************************************************
-// *****************************************************************************
+/* APP_FILE_HANDLER_GET_DIRECTION
+
+  Summary:
+    Direction to look for next media file
+
+  Description:
+    Enumerates the direction to get the next media file from the list
+
+  Remarks:
+    None.
+ */
+typedef enum {
+    APP_FILE_HANDLER_GET_CURRENT = 1,
+    APP_FILE_HANDLER_GET_PREVIOUS,
+    APP_FILE_HANDLER_GET_NEXT
+} APP_FILE_HANDLER_GET_DIRECTION;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -89,14 +120,37 @@ typedef enum {
 // *****************************************************************************
 // *****************************************************************************
 
-// structure to hold the media file dimensions in pixels
+// *****************************************************************************
+/* APP_FILE_HANDLER_IMAGE_DIMENSIONS
+
+  Summary:
+    Structure to hold the media file dimensions in pixels
+
+  Description:
+    Structure to hold the media file dimensions in pixels
+
+  Remarks:
+    None.
+ */
 typedef struct __attribute__ ((coherent , aligned(4)))
 {
     uint32_t width;
     uint32_t height;
-} APP_FILE_IMAGE_DIMENSIONS;
+} APP_FILE_HANDLER_IMAGE_DIMENSIONS;
 
-// structure to hold data related to one media file
+// *****************************************************************************
+/* APP_FILE_HANDLER_DATA
+
+  Summary:
+    Structure to hold data related to one media file
+
+  Description:
+    The data about media file is kept in a structure. 
+    It defines various parameters of the file
+
+  Remarks:
+    None.
+ */
 typedef struct __attribute__ ((coherent , aligned(4)))
 {
     // tracks the current image to show
@@ -109,11 +163,11 @@ typedef struct __attribute__ ((coherent , aligned(4)))
     char* mediaWebPath;
     
     // the type of the image: jpeg etc...
-    APP_IMAGE_FILE_TYPE fileType;
+    APP_FILE_HANDLER_IMAGE_TYPE fileType;
 
     // image dimensions in pixels
-    APP_FILE_IMAGE_DIMENSIONS dimensions;
-} APP_FILE_DATA;
+    APP_FILE_HANDLER_IMAGE_DIMENSIONS dimensions;
+} APP_FILE_HANDLER_DATA;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -160,47 +214,111 @@ void APP_FileHandler_SYS_FS_EventHandler(SYS_FS_EVENT event, void* eventData, ui
 
 /*******************************************************************************
   Function:
-    bool APP_FileHandler_IsMediaLoaded(void)
+     bool APP_FileHandler_IsMediaMounted( void )
 
   Summary:
     Says if the Media is mounted or not
 
   Description:
-    Says if the Media is mounted or not
-*/
+    This function is a getter of the private flag that says if the media is mounted or not
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    TRUE    - media is mounted
+    FALSE   - media is not mounted
+
+  Example:
+    <code>
+    // check for the media if it is mounted
+    if (APP_FileHandler_IsMediaMounted() == false) {
+        // change state
+        appData.state = APP_STATE_MEDIA_UNMOUNTED;
+    }
+    </code>
+
+  Remarks:
+    None.
+ */
 bool APP_FileHandler_IsMediaMounted();
 
 /*******************************************************************************
   Function:
-    bool APP_FileHandler_IsMediaLoaded(void)
+     bool APP_FileHandler_IsMediaLoaded( void )
 
   Summary:
-    Says if some Media available to show or not
+    Says if the Media finished to be parsed and loaded into the media data
 
   Description:
-    Says if some Media available to show or not
-*/
+    The time to look through the files on the mounted Media takes some time
+    and it is possible to check if all media is loaded or not before starting the slide show
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    TRUE    - media is loaded
+    FALSE   - media is not loaded
+
+  Example:
+    <code>
+    // check for the media if it is mounted
+    if (APP_FileHandler_IsMediaLoaded() == true) {
+        // change state
+        appData.state = APP_STATE_MEDIA_LOADED;
+    }
+    </code>
+
+  Remarks:
+    None
+ */
 bool APP_FileHandler_IsMediaLoaded(void);
 
 /*******************************************************************************
   Function:
-    uint32_t APP_FileHandler_GetMaxNumberOfFiles()
+     uint32_t APP_FileHandler_GetMaxNumberOfFiles( void )
 
   Summary:
     Gets the maximum number of files the app can handle
 
   Description:
-    Gets the maximum number of files the app can handle. This is defined into the APP_MEDIA_MAX_FILES
-*/
-uint32_t APP_FileHandler_GetMaxNumberOfFiles();
+    Gets the maximum number of files the app can handle. 
+    This is defined into the APP_MEDIA_MAX_FILES
+    Used to set the first index before starting to fetch files from the list
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    number of files that can be loaded
+
+  Example:
+    <code>
+    // Image file index into the file list.
+    appGfxData.currentAppGfxFileIdx = APP_FileHandler_GetMaxNumberOfFiles();
+    </code>
+
+  Remarks:
+    None
+ */
+uint32_t APP_FileHandler_GetMaxNumberOfFiles(void);
 
 /*******************************************************************************
   Function:
-    bool APP_FileHandler_GatherAvailableMedia()
-
+    bool APP_FileHandler_GatherAvailableMedia( void )
 
   Summary:
-    Recursively traverse a folder structure and get supported media files
+    Traverse a folder structure and get supported media files
 
   Description:
     This function looks on the media and gathers all available media
@@ -208,45 +326,125 @@ uint32_t APP_FileHandler_GetMaxNumberOfFiles();
     Returns TRUE when all done
     It also populates the available file list with the files that are supported by the app
     The function is called more than one time, to allow other things to happen 
-        - when RTOS is available I think this is not needed
-*/
+
+  Precondition:
+    Media must be mounted on the file system
+
+  Parameters:
+    None.
+
+  Returns:
+    TRUE    - all files have been looked for
+    FALSE   - the function needs to be called again
+
+  Example:
+    <code>
+    // gather the media from the SD Card
+    // the function should be called till it returns true            
+    if (APP_FileHandler_GatherAvailableMedia() == true) {
+        // change state
+        appData.state = APP_GOING_ON;
+    }
+    </code>
+
+  Remarks:
+    When RTOS is available, the function can be called into a while loop
+ */
 bool APP_FileHandler_GatherAvailableMedia(void);
 
 /*******************************************************************************
   Function:
-    uint32_t APP_FileHandler_GetNumberOfMediaFiles(void)
+    uint32_t APP_FileHandler_GetNumberOfMediaFiles( void )
 
   Summary:
-    Returns the number of detected media files
+    Returns the number of indexed media files
 
   Description:
-    Returns the number of detected media files
-*/
+    This is used to decide if at least one media file has been indexed, 
+    so the streaming can start
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    number of files indexed.
+
+  Example:
+    <code>
+    if (APP_FileHandler_GetNumberOfMediaFiles() == 0) {
+        // no media to stream
+        return false;
+    }
+    </code>
+
+  Remarks:
+    None.
+ */
 uint32_t APP_FileHandler_GetNumberOfMediaFiles(void);
 
 /*******************************************************************************
   Function:
-    void APP_FileHandler_Initialize()
+    void APP_FileHandler_Initialize( void )
 
   Summary:
     Initialize data to startup values
 
   Description:
     Initialize data to startup values
-*/
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_FileHandler_Initialize();
+    </code>
+
+  Remarks:
+    None.
+ */
 void APP_FileHandler_Initialize(void);
 
 /*******************************************************************************
   Function:
-    APP_FILE_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NEXT_PREV next_prev)
+    APP_FILE_HANDLER_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_HANDLER_GET_DIRECTION next_prev)
 
   Summary:
     Gets the next file to show by into index in the file list
 
   Description:
     Gets the index of the file to show forward, backwards of current
-*/
-APP_FILE_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NEXT_PREV next_prev);
+
+  Precondition:
+    Media should be loaded into the file list
+
+  Parameters:
+    fileIndex   - any integer value, the file handler handles a bad value
+    direction   - next, previous or current
+
+  Returns:
+    APP_FILE_DATA*  - if there is a file to return
+    NULL            - no file available
+
+  Example:
+    <code>
+    // ask the file handler for the next picture to show
+    appGfxData.appGfxFileData = APP_FileHandler_GetPictureToShow(appGfxData.currentAppGfxFileIdx, APP_FILE_HANDLER_GET_NEXT);
+    </code>
+
+  Remarks:
+    None.
+ */
+APP_FILE_HANDLER_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_HANDLER_GET_DIRECTION next_prev);
 
 /*******************************************************************************
   Function:
@@ -257,8 +455,27 @@ APP_FILE_DATA*  APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_FILE_NE
 
   Description:
     Gets the details of the file to show, by web file path
-*/
-APP_FILE_DATA* APP_FileHandler_GetPictureByWebName(char* webFileName);
+
+  Precondition:
+    Media should be loaded into the file list
+
+  Parameters:
+    webFileName   - a file name
+
+  Returns:
+    APP_FILE_DATA*  - if there is a file to return
+    NULL            - no file available
+
+  Example:
+    <code>
+    // gets the picture by received file name
+    appFileData = APP_FileHandler_GetPictureByWebName((char*)ptrFileName);
+    </code>
+
+  Remarks:
+    None.
+ */
+APP_FILE_HANDLER_DATA* APP_FileHandler_GetPictureByWebName(char* webFileName);
 
 
 /* Provide C++ Compatibility */
