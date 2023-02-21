@@ -105,23 +105,29 @@ void APP_FileHandler_SYS_FS_EventHandler(SYS_FS_EVENT event, void * eventData, u
     switch(event)
     {
         case SYS_FS_EVENT_MOUNT:
+        {
             if ( !memcmp((void*)eventData, (const void*)APP_FILE_HANDLER_MEDIA_MOUNT_POINT, strlen((char*)APP_FILE_HANDLER_MEDIA_MOUNT_POINT)) ) {
                 SYS_CONSOLE_PRINT("SYS_Initialize: The %s File System is mounted from %s to %s\r\n", APP_FILE_HANDLER_MEDIA_FS_TYPE_STRING, APP_FILE_HANDLER_MEDIA_VOLUME_PATH, APP_FILE_HANDLER_MEDIA_MOUNT_POINT);
 
                 appMediaData.fileSystemMountStatus = APP_FILE_HANDLER_MEDIA_MOUNTED;
             }
             break;
+        }
             
         case SYS_FS_EVENT_UNMOUNT:
+        {
             if ( !memcmp((void*)eventData, (const void*)APP_FILE_HANDLER_MEDIA_MOUNT_POINT, strlen((char*)APP_FILE_HANDLER_MEDIA_MOUNT_POINT)) ) {
                 SYS_CONSOLE_PRINT("SYS_Initialize: The %s File System is unmounted\r\n", APP_FILE_HANDLER_MEDIA_FS_TYPE_STRING);
 
                 appMediaData.fileSystemMountStatus = APP_FILE_HANDLER_MEDIA_UNMOUNTED;
             }
             break;
+        }
             
         default:
+        {
             break;
+        }
     }
 
     // reset the data stored into the file handler
@@ -395,9 +401,6 @@ APP_FILE_HANDLER_DATA* APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_
         }
             
         case APP_FILE_HANDLER_GET_NEXT: 
-            // no code here, , no break
-            // treating next as default
-        default:
         {
             if (fileIndex >= appMediaData.totalFiles - 1 || fileIndex < APP_FILE_HANDLER_START_INDEX) {
                 fileIndex = APP_FILE_HANDLER_START_INDEX;
@@ -406,6 +409,9 @@ APP_FILE_HANDLER_DATA* APP_FileHandler_GetPictureToShow(uint32_t fileIndex, APP_
             }
             break;
         }
+        
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
     
     return &appMediaData.fileNameList[fileIndex];
@@ -543,26 +549,42 @@ static void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_
     
     switch (imageType) {
         case APP_FILE_HANDLER_IMAGE_TYPE_BMP:
+        {
             APP_FileHandler_Get_BMP_Dimensions(fileHandler, dimensions);
+         
             break;
+        }
             
         case APP_FILE_HANDLER_IMAGE_TYPE_JPEG:
+        {
             APP_FileHandler_Get_JPEG_Dimensions(fileHandler, dimensions);
 
             break;
+        }
             
         case APP_FILE_HANDLER_IMAGE_TYPE_PNG:
+        {
             APP_FileHandler_Get_PNG_Dimensions(fileHandler, dimensions);
+         
             break;
-            
+        }
+        
         case APP_FILE_HANDLER_IMAGE_TYPE_GIF:
+        {
             APP_FileHandler_Get_GIF_Dimensions(fileHandler, dimensions);
+            
             break;
+        }
             
         case APP_FILE_HANDLER_IMAGE_TYPE_UNKNOWN:
+        {
             // nothing to do
             
             break;
+        }
+        
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
     
     return;

@@ -192,7 +192,6 @@ void APP_GFX_Tasks() {
     static uint32_t delayTick = 0;
     
     leResult setResult;
-    leBool showValue;
     
     switch (appGfxData.state) {
         case APP_GFX_STATE_INIT:
@@ -383,14 +382,15 @@ void APP_GFX_Tasks() {
         }
 
         case APP_GFX_STATE_ERROR:
+        {
             // do nothing - there was an error
             Nop();
 
             break;
+        }
 
-        default:
-            // should not get here
-            break;
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
     
 #if defined (APP_DEBUG_MEMORY)
@@ -462,8 +462,8 @@ static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation)
             break;
         }
 
-        default:
-            break;
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
 
     return handle;
@@ -535,21 +535,31 @@ static bool APP_GFX_Load_Next_Image(void)
     // SYS_CONSOLE_PRINT("APP_GFX: Image Dimensions:\r\n    width %d\r\n    Height: %d\r\n", appGfxData.appGfxFileData->dimensions.width, appGfxData.appGfxFileData->dimensions.height);
 
     // open the stream in the right format
-    leImageFormat imageFormat;
+    leImageFormat imageFormat = LE_IMAGE_FORMAT_JPEG;
     switch (appGfxData.appGfxFileData->fileType) {
         case APP_FILE_HANDLER_IMAGE_TYPE_JPEG:
+        {
             imageFormat = LE_IMAGE_FORMAT_JPEG;
+
             break;
+        }
 
         case APP_FILE_HANDLER_IMAGE_TYPE_BMP:
+        {
             imageFormat = LE_IMAGE_FORMAT_RAW;
+         
             break;
+        }
 
         case APP_FILE_HANDLER_IMAGE_TYPE_PNG:
+        {
             imageFormat = LE_IMAGE_FORMAT_PNG;
+         
             break;
+        }
 
         case APP_FILE_HANDLER_IMAGE_TYPE_GIF:
+        {
             // when gif is supported, uncomment this line and remove the return
             // imageFormat = LE_IMAGE_FORMAT_GIF;
             SYS_CONSOLE_PRINT("!!! ERROR: GIF Images are not implemented - not currently supported %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
@@ -557,11 +567,19 @@ static bool APP_GFX_Load_Next_Image(void)
             return false;
 
             break;
+        }
+        
         case APP_FILE_HANDLER_IMAGE_TYPE_UNKNOWN:
+        {
             SYS_CONSOLE_PRINT("!!! ERROR: Image type unknown. Should not be here. %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
 
             return false;
+         
             break;
+        }
+
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
 
     // allocate memory for the new image

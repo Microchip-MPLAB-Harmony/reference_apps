@@ -191,10 +191,8 @@ void APP_Tasks ( void )
             break;
         }
 
-        default:
-        {
-            break;
-        }
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
 
 // a bit of debugging

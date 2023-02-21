@@ -4710,44 +4710,26 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;380&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;19&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DATA LINK LAYER&quot; x=&quot;740&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;230&quot; y=&quot;80&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;400&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;DATA LINK LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvExtPhyKsz8061&quot; x=&quot;149&quot; y=&quot;97&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drvMiim&quot; x=&quot;140&quot; y=&quot;19&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;drvPic32mEthmac&quot; x=&quot;274&quot; y=&quot;119&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;1255&quot; canvasWidth=&quot;820&quot; dnOrder=&quot;4&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;NETWORK LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;NETWORK LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;160&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIcmp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcp&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipHttpNet&quot; x=&quot;18&quot; y=&quot;19&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;209&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;425&quot; y=&quot;18&quot;/&gt;
@@ -4780,17 +4762,35 @@
         &lt;ElementPosition dnOrder=&quot;28&quot; id=&quot;uart2&quot; x=&quot;20&quot; y=&quot;604&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;DATA LINK LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvExtPhyKsz8061&quot; x=&quot;149&quot; y=&quot;97&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drvMiim&quot; x=&quot;140&quot; y=&quot;19&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;drvPic32mEthmac&quot; x=&quot;274&quot; y=&quot;119&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;TCP/IP STACK&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DATA LINK LAYER&quot; x=&quot;740&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;230&quot; y=&quot;80&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;400&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;158&quot; y=&quot;22&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;1255&quot; canvasWidth=&quot;820&quot; dnOrder=&quot;7&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcp&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipHttpNet&quot; x=&quot;18&quot; y=&quot;19&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;380&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;19&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -23909,7 +23909,7 @@
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\definitions.h</file>
-         <hash>1ea29f06e62f6c3e3ed59727b2066bab5ab686b8cf8ac11a226ff82a840ca2d0</hash>
+         <hash>8a2205677be29094a40e0963eaa1a427448dbb85e31b219041b1e525de75af20</hash>
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\system\time\src\sys_time_local.h</file>
@@ -26349,7 +26349,7 @@
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\gfx\driver\gfx_driver.h</file>
-         <hash>bf14e0b4683445342c4f763c36b615e24b0ffab33dade7ab1cccdb1b0112b7f6</hash>
+         <hash>4905b31711d649d5892374e43d49d8130a77c78998d557958eb71c4f71cdf237</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\fe_448.h</file>

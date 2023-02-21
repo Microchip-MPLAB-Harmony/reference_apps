@@ -4,7 +4,7 @@
 
 
 project: web_photo_frame
-creation_date: 2023-02-15T15:35:10.182+02:00[Europe/Athens]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-02-21T16:42:14.111+02:00[Europe/Athens]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.3.0-c
@@ -14,10 +14,11 @@ harmony_version: v1.2.0
 compiler: XC32 (v4.21) 
 
 modules:
+    - {name: "..", version: "unknown"}
     - {name: "core", version: "v3.11.1"}
     - {name: "csp", version: "v3.15.0"}
     - {name: "dev_packs", version: "v3.15.0"}
-    - {name: "gfx", version: "v3.12.1"}
+    - {name: "gfx", version: "v3.12.2"}
     - {name: "wolfssl", version: "v4.7.0"}
     - {name: "net", version: "v3.9.0"}
     - {name: "bsp", version: "v3.15.0"}

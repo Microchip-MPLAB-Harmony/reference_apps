@@ -105,6 +105,12 @@ void APP_HTTP_SYS_FS_EventHandler(SYS_FS_EVENT event, void * eventData, uintptr_
             }
             break;
         }
+        
+        default:
+        {
+            // do nothing
+            break;
+        }
     }
 }
 
@@ -201,6 +207,9 @@ void APP_HTTP_Tasks()
             
             break;
         }
+        
+        // no default needed
+        // the compiler should complain if a new value is added into the enum
     }
 
 // a bit of debugging
@@ -289,7 +298,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_get_picture_file_name(TCPIP_HTTP_NET_C
     
     ptrDirection = TCPIP_HTTP_NET_ArgGet(TCPIP_HTTP_NET_ConnectionDataBufferGet(connHandle), (const uint8_t *)"direction");
     if (ptrDirection != NULL) {
-        if (strstr(ptrDirection, "previous") != NULL) {
+        if (strstr((const char*)ptrDirection, "previous") != NULL) {
             direction = APP_FILE_HANDLER_GET_PREVIOUS;
         }
     }
@@ -400,7 +409,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_picture_content(TCPIP_HTTP_NET_CONN_HA
     bool needToComeBack = true;
 
     // the seed is sent as an integer - convert it to integer
-    seedValue = strtol(ptrSeed, &ptr, 10);
+    seedValue = strtol((const char*)ptrSeed, &ptr, 10);
 
     // get the user data from the HTTP connection
     APP_HTTP_CONNECTION_DATA* userData = (APP_HTTP_CONNECTION_DATA*)TCPIP_HTTP_NET_ConnectionUserDataGet(connHandle);
