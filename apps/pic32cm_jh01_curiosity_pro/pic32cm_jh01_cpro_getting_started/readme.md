@@ -94,8 +94,9 @@ The pre-built hex file can be programmed by following the below steps.
     - The periodicity of reading temperature will be changed between 500 milliseconds, one second, two seconds, four seconds, and back to 500 milliseconds every time the user presses the switch SW0 on the PIC32CM JH01 Curiosity Pro Development Board.
     - Press any key on the keyboard to start printing the LED Toggling rate
     - The subsequent key press from the keyboard switches between printing the LED Toggling rate or temperature values on the serial terminal.
-    - See the following figure for the output.
-    <img src = "images/result_02.png">
+    - See the following figure for the output.  
+	<img src = "images/result_02.png">  
+	
 ## Comments:
 - Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on SAMC2x MCUs](https://microchipdeveloper.com/harmony3:samc21-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
