@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic32cx_sg61_cult
+folderName: _pic32cx_sg61_cult
+frameworkPath: C:\h_v3
+processor: PIC32CX1025SG61128
+projectName: _pic32cx_sg61_cult
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CX-SG61_DFP\1.0.1\PIC32CX-SG61\atdf\PIC32CX1025SG61128.atdf
