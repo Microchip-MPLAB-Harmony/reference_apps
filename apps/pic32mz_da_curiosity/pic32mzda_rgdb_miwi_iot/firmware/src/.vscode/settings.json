@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    "*.vue": "vue",
+    "plib_uart1.h": "c",
+    "device.h": "c",
+    "toolchain_specifics.h": "c",
+    "legato_image.h": "c"
+  }
+}

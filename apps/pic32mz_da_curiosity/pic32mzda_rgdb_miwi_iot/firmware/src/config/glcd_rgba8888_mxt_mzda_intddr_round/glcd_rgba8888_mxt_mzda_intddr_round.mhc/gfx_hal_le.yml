@@ -1,0 +1,150 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: gfx_hal_le}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: DisplayDataEnablePolarity}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: 'true'}
+  - type: Boolean
+    attributes: {id: DisplayHSYNCNegative}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: 'false'}
+  - type: Integer
+    attributes: {id: DisplayHeight}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '272'}
+      - type: User
+        attributes: {value: '432'}
+  - type: Integer
+    attributes: {id: DisplayHorzBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '2'}
+      - type: User
+        attributes: {value: '5'}
+  - type: Integer
+    attributes: {id: DisplayHorzFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '2'}
+      - type: User
+        attributes: {value: '5'}
+  - type: Integer
+    attributes: {id: DisplayHorzPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '41'}
+      - type: User
+        attributes: {value: '5'}
+  - type: String
+    attributes: {id: DisplayName}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: Generic Display}
+  - type: Boolean
+    attributes: {id: DisplayVSYNCNegative}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: 'false'}
+  - type: Integer
+    attributes: {id: DisplayVertBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '2'}
+      - type: User
+        attributes: {value: '5'}
+  - type: Integer
+    attributes: {id: DisplayVertFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '2'}
+      - type: User
+        attributes: {value: '5'}
+  - type: Integer
+    attributes: {id: DisplayVertPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '10'}
+      - type: User
+        attributes: {value: '5'}
+  - type: Integer
+    attributes: {id: DisplayWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '480'}
+      - type: User
+        attributes: {value: '432'}
+  - type: String
+    attributes: {id: DriverName}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: 'LE GLCD '}
+  - type: Integer
+    attributes: {id: HardwareLayerCountHint}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '1'}
+  - type: Integer
+    attributes: {id: PixelClock}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: '20000000'}
+  - type: Integer
+    attributes: {id: RefreshRate}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal_le, value: '100'}
+  - type: String
+    attributes: {id: gfx_display}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: gfx_disp_generic}
+  - type: String
+    attributes: {id: gfx_driver}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_glcd, value: le_gfx_driver_glcd}
+- type: ElementPosition
+  attributes: {x: '529', y: '126', id: gfx_hal_le}

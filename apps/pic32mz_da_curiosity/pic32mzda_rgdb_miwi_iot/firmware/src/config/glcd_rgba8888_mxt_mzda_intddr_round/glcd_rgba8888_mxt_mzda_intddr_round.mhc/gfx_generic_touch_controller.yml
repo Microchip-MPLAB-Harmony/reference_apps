@@ -1,0 +1,241 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: gfx_generic_touch_controller}
+children:
+- type: Symbols
+  children:
+  - type: Hex
+    attributes: {id: Command0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Hex
+    attributes: {id: Command0Parm0}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '17'}
+  - type: Hex
+    attributes: {id: Command0Parm1}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '176'}
+  - type: Hex
+    attributes: {id: Command0Parm2}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '176'}
+  - type: Hex
+    attributes: {id: Command1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Hex
+    attributes: {id: Command2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: String
+    attributes: {id: ControllerName}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GenericTouchController}
+  - type: Hex
+    attributes: {id: DeviceAddress}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '85'}
+  - type: Integer
+    attributes: {id: I2CIndex}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_generic_touch_controller, value: '0'}
+  - type: Integer
+    attributes: {id: InitCommandsCount}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
+  - type: Menu
+    attributes: {id: RTOSMenu}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Boolean
+    attributes: {id: ResetEnable}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: Integer
+    attributes: {id: TouchDataBufferSize}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '5'}
+  - type: Hex
+    attributes: {id: TouchDataReadAddress}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '16'}
+  - type: Integer
+    attributes: {id: TouchHeight}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_generic_touch_controller, value: '272'}
+      - type: User
+        attributes: {value: '480'}
+  - type: Hex
+    attributes: {id: TouchPointEventDownValue}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Integer
+    attributes: {id: TouchPointEventIndex}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Hex
+    attributes: {id: TouchPointEventMask}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '128'}
+  - type: Integer
+    attributes: {id: TouchPointEventShift}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: Integer
+    attributes: {id: TouchPointPosXHIndex}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Hex
+    attributes: {id: TouchPointPosXHMask}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '112'}
+  - type: Integer
+    attributes: {id: TouchPointPosXHShift}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '4'}
+  - type: Integer
+    attributes: {id: TouchPointPosXLIndex}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '3'}
+  - type: Integer
+    attributes: {id: TouchPointPosYHIndex}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: Hex
+    attributes: {id: TouchPointPosYHMask}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: Integer
+    attributes: {id: TouchPointPosYLIndex}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '4'}
+  - type: Integer
+    attributes: {id: TouchWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_generic_touch_controller, value: '480'}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: i2c}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_i2c_0}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_i2c}
+  - type: DirectDependency
+    attributes: {id: touch_panel}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_disp_LCF0300633GGU00_432x432}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: touch_panel}
+- type: ElementPosition
+  attributes: {x: '460', y: '182', id: gfx_generic_touch_controller}

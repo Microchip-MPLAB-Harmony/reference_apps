@@ -14,6 +14,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32mzda_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_getting_started.zip) |
 | 2 | [SD Card USB Audio Player](./pic32mzda_sdcard_usb_audio_player/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_sdcard_usb_audio_player.zip) |
+| 3 | [RGDB MiWi IoT Gateway](./pic32mzda_rgdb_miwi_iot/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_rgdb_miwi_iot.zip) |
 
 
 ### More Application Demos
