@@ -51,7 +51,6 @@
 #define SET_HEIGHT(widget,h) widget->fn->setHeight(widget,h)
 #define SET_SIZE(widget,w,h) widget->fn->setSize(widget,w,h)
 
-
 #define GET_X(widget) widget->fn->getX(widget)
 #define GET_Y(widget) widget->fn->getY(widget)
 #define SET_X(widget,X) widget->fn->setX(widget, X)
@@ -71,16 +70,13 @@
 
 #define TRANSLATE(widget,x,y) widget->fn->translate(widget, x, y)
 
-
 #define SET_BKG_TYPE(widget,type) widget->fn->setBackgroundType(widget,type )
 #define ADD_CHILD(widget,child)   widget->fn->addChild(widget, (leWidget*)child)
 
 #define SET_RELEASED_IMAGE(widget,img) widget->fn->setReleasedImage(widget, (leImage*)img)
 #define SET_PRESSED_IMAGE(widget,img) widget->fn->setPressedImage(widget, (leImage*)img)
 
-//LE_WIDGET_BORDER_LINE
 #define SET_BOARDER(widget,type) widget->fn->setBorderType(widget, type)
-
 #define SET_SCHEME(widget,scheme) widget->fn->setScheme(widget, scheme)
 
 #define INSTALL_EVENT(widget,filter) widget->fn->installEventFilter(widget, filter)

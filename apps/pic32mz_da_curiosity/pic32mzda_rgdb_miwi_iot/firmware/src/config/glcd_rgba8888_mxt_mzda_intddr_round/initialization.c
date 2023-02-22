@@ -294,27 +294,23 @@ void SYS_Initialize ( void* data )
 
     STDIO_BufferModeSet();
 
-
-  
     CLK_Initialize();
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 2;
     CFGCONbits.ECCCON = 3;
 
-
-
-	GPIO_Initialize();
+	  GPIO_Initialize();
 
     CORETIMER_Initialize();
     I2C2_Initialize();
 
-	UART4_Initialize();
+    UART4_Initialize();
 
-	UART1_Initialize();
+    UART1_Initialize();
 
-	BSP_Initialize();
-	DDR_Initialize();
+    BSP_Initialize();
+    DDR_Initialize();
 
 
     /* Initialize I2C0 Driver Instance */
@@ -325,7 +321,6 @@ void SYS_Initialize ( void* data )
 
     DISP_LCF0300633GGU00_Initialize();
 
-
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
 
     SYS_INP_Init();
@@ -334,15 +329,12 @@ void SYS_Initialize ( void* data )
     // initialize UI library
     Legato_Initialize();
 
-
     APP_ROUND_Initialize();
-
 
     EVIC_Initialize();
 
-	/* Enable global interrupts */
+	  /* Enable global interrupts */
     __builtin_enable_interrupts();
-
 
     /* MISRAC 2012 deviation block end */
 }

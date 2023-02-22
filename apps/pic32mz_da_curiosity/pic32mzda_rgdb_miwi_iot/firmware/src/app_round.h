@@ -122,14 +122,14 @@ typedef enum
 
 typedef struct
 {
-  bool online;
-  bool led;
-  bool gpio1;
-  bool gpio2;
-  char temp[LEN_RPT_DATA];
-  char rssi[LEN_RPT_DATA];
-  char sn[LEN_RPT_DATA];
-  int id;
+    bool online;
+    bool led;
+    bool gpio1;
+    bool gpio2;
+    char temp[LEN_RPT_DATA];
+    char rssi[LEN_RPT_DATA];
+    char sn[LEN_RPT_DATA];
+    int id;
 } APP_ROUND_DEVICE;
 
 typedef struct

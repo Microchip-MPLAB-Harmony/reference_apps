@@ -44,6 +44,14 @@ nav_order: 2
 - [MPLAB® ICD 4 In-Circuit Debugger](https://www.microchip.com/en-us/development-tool/DV164045)
 - [Atmel-ICE Debugger](https://www.microchip.com/en-us/education/developer-help/learn-tools-software/programmers-debuggers/atmel-ice)
 
+## Hardware changes:
+
+Before starting this demo, you need to rework the RGDB by removing two resistors: R800 & R801. Because USB serial TX conflict with UART1 of PIC32. In order to use UART1 communication between PIC32 and SAMR30 module embedded on RGDB, the USB serial port should be disabled to avoid the conflict.
+
+  <img src = "images/graph10.png" width="428" height="327" align="middle">
+
+&nbsp;
+
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>
 

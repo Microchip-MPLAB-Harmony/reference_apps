@@ -72,32 +72,22 @@
 void SYS_Tasks ( void )
 {
     /* Maintain system services */
-    
 
     /* Maintain Device Drivers */
     DRV_GLCD_Update();
 
-
     drv_touch_controller_task();
 
 
-
     /* Maintain Middleware & Other Libraries */
-    
+
     Legato_Tasks();
 
-
     SYS_INP_Tasks();
-
-
 
     /* Maintain the application's state machine. */
         /* Call Application task APP_ROUND. */
     APP_ROUND_Tasks();
-
-
-
-
 }
 
 /*******************************************************************************
