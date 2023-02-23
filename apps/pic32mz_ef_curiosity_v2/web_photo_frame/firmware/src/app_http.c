@@ -204,8 +204,6 @@ void APP_HTTP_Tasks()
 
         case APP_HTTP_TCPIP_ERROR:
         {
-            Nop();
-
             break;
         }
 
@@ -417,8 +415,6 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_picture_content(TCPIP_HTTP_NET_CONN_HA
 
         return TCPIP_HTTP_DYN_PRINT_RES_DONE;
     }
-
-    Nop();
 
     size_t nChars;
     bool needToComeBack = true;

@@ -106,9 +106,6 @@ leResult leApplication_MediaOpenRequest(leStream* stream)
     if (error == true)
     {
         _APP_GFX_CheckMedia();
-
-        // TODO maybe more than
-        Nop();
     }
 
     leStream_DataReady(stream);
@@ -169,8 +166,6 @@ leResult leApplication_MediaReadRequest(leStream* stream, // stream reader
 void leApplication_MediaCloseRequest(leStream* stream)
 {
     _APP_GFX_CheckMedia();
-
-    Nop();
 }
 
 // Callback functions
@@ -223,8 +218,6 @@ void APP_GFX_Tasks()
             if (legato_getCurrentScreen() != screenID_Start_Screen)
             {
                 legato_showScreen(screenID_Start_Screen);
-
-                Nop();
             }
 
             appGfxData.state = APP_GFX_STATE_START_SCREEN;
@@ -393,8 +386,6 @@ void APP_GFX_Tasks()
             // wait for the renderer to finish before going to next state
             if (leRenderer_IsIdle())
             {
-                Nop();
-
                 appGfxData.state = APP_GFX_STATE_WAIT_FOR_NEXT;
 
                 // reset the tick to start counting again
@@ -418,8 +409,6 @@ void APP_GFX_Tasks()
         case APP_GFX_STATE_ERROR:
         {
             // do nothing - there was an error
-            Nop();
-
             break;
         }
 
@@ -493,8 +482,6 @@ static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation)
             // location is on the SD Card
         case LE_STREAM_LOCATION_ID_SD_CARD_FILE:
         {
-            Nop();
-
             // handler is the image objects file handler
             handle = appGfxData.appGfxResImgObj.fileHandle;
 

@@ -648,6 +648,7 @@ static void APP_FileHandler_Get_Image_Dimensions(SYS_FS_HANDLE fileHandler, APP_
 // get the JPEG file dimensions
 // the marker is FFC0 and could appear more than one time inside the JPEG file,
 // save the last dimension (overwrite the previous saved one)
+// usually there are a 1 or 3 occurences on the 0xFF 0xC0 in a JPEG file
 #define APP_FILE_HANDLER_BYTES_TO_READ 255
 static void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_HANDLER_IMAGE_DIMENSIONS *dimensions)
 {
@@ -677,14 +678,12 @@ static void APP_FileHandler_Get_JPEG_Dimensions(SYS_FS_HANDLE handle, APP_FILE_H
             tempData = memchr((const char*)readData, 0xFF, readBytesNb);
             while (tempData != NULL)
             {
-                // check for 0xC0
+                // check for 0xC0 - SOF0
                 if ((*(tempData + 1) == (char)0xC0))
                 {
-                    Nop();
-
                     break;
                 }
-
+                
                 // tempData++;
                 tempData++;
                 // search for the next 0xFF
