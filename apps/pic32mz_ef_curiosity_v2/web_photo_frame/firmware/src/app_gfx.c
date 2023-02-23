@@ -84,11 +84,12 @@ static APP_GFX_DATA CACHE_ALIGN appGfxData;
 
 // Streaming Functions
 // Streaming implementation of Legato Application - Media Open
-leResult leApplication_MediaOpenRequest(leStream* stream) 
+leResult leApplication_MediaOpenRequest(leStream* stream)
 {
     bool error = false;
 
-    if (APP_GFX_CanStream() == false) {
+    if (APP_GFX_CanStream() == false)
+    {
         error = true;
     }
 
@@ -96,15 +97,17 @@ leResult leApplication_MediaOpenRequest(leStream* stream)
     appGfxData.assetFileHandle = APP_GFX_GetFileHandle(stream->desc->location);
 
     // check the file handler
-    if (appGfxData.assetFileHandle == SYS_FS_HANDLE_INVALID) {
+    if (appGfxData.assetFileHandle == SYS_FS_HANDLE_INVALID)
+    {
         error = true;
     }
-    
+
     // in case of error...
-    if (error == true) {
+    if (error == true)
+    {
         _APP_GFX_CheckMedia();
-        
-        // not sure what else to be doing
+
+        // TODO maybe more than
         Nop();
     }
 
@@ -115,37 +118,46 @@ leResult leApplication_MediaOpenRequest(leStream* stream)
 
 // Streaming implementation of Legato Application - fill the streaming buffer
 leResult leApplication_MediaReadRequest(leStream* stream, // stream reader
-        uint32_t address, // address
-        uint32_t readSize, // dest size
-        uint8_t* destBuffer) 
+                                        uint32_t address, // address
+                                        uint32_t readSize, // dest size
+                                        uint8_t* destBuffer)
 {
     bool error = false;
 
-    if (APP_GFX_CanStream() == false) {
+    if (APP_GFX_CanStream() == false)
+    {
         error = true;
     }
 
     // this if sequence does not look nice
-    if (appGfxData.assetFileHandle != SYS_FS_HANDLE_INVALID) {
-        if (SYS_FS_FileSeek(appGfxData.assetFileHandle, (int32_t) address, SYS_FS_SEEK_SET) != -1) {
-            if (SYS_FS_FileRead(appGfxData.assetFileHandle, (void*) destBuffer, readSize) < (size_t) 0) {
+    if (appGfxData.assetFileHandle != SYS_FS_HANDLE_INVALID)
+    {
+        if (SYS_FS_FileSeek(appGfxData.assetFileHandle, (int32_t)address, SYS_FS_SEEK_SET) != -1)
+        {
+            if (SYS_FS_FileRead(appGfxData.assetFileHandle, (void*)destBuffer, readSize) < (size_t)0)
+            {
                 error = true;
             }
-        } else {
+        }
+        else
+        {
             error = true;
         }
-    } else {
+    }
+    else
+    {
         error = true;
     }
 
 
-    if (error == true) {    
+    if (error == true)
+    {
         // fill the data with 0
         memset(destBuffer, 0x00, readSize);
 
         _APP_GFX_CheckMedia();
     }
-    
+
     // inform the stream is ready to be used
     leStream_DataReady(stream);
 
@@ -154,18 +166,19 @@ leResult leApplication_MediaReadRequest(leStream* stream, // stream reader
 }
 
 // Streaming implementation of Legato Application - close Streaming
-void leApplication_MediaCloseRequest(leStream* stream) 
+void leApplication_MediaCloseRequest(leStream* stream)
 {
     _APP_GFX_CheckMedia();
-    
+
     Nop();
 }
 
 // Callback functions
 // callback function for when the full screen invisible button will be released
-void event_Start_Screen_FullScreenButton_OnReleased(leButtonWidget* btn) 
+void event_Start_Screen_FullScreenButton_OnReleased(leButtonWidget* btn)
 {
-    if (APP_GFX_CanStream()) {
+    if (APP_GFX_CanStream())
+    {
         // change the status of the state machine into streaming state
         appGfxData.state = APP_GFX_STATE_CREATE_SLIDESHOW_SCREEN;
     }
@@ -176,7 +189,7 @@ void event_Start_Screen_FullScreenButton_OnReleased(leButtonWidget* btn)
 // Section: Application Global Functions
 // *****************************************************************************
 // *****************************************************************************
-void APP_GFX_Initialize() 
+void APP_GFX_Initialize()
 {
     // put the state machine in its init phase
     appGfxData.state = APP_GFX_STATE_INIT;
@@ -186,14 +199,15 @@ void APP_GFX_Initialize()
 
     legato_showScreen(screenID_Start_Screen);
 }
-
-void APP_GFX_Tasks() {
+void APP_GFX_Tasks()
+{
     // a tick to use for the delays to get and load a new state
     static uint32_t delayTick = 0;
-    
+
     leResult setResult;
-    
-    switch (appGfxData.state) {
+
+    switch (appGfxData.state)
+    {
         case APP_GFX_STATE_INIT:
         {
             appGfxData.state = APP_GFX_STATE_CREATE_START_SCREEN;
@@ -204,9 +218,10 @@ void APP_GFX_Tasks() {
         case APP_GFX_STATE_CREATE_START_SCREEN:
         {
             APP_GFX_ImgObjUnload();
-            
+
             // switch to the start screen
-            if (legato_getCurrentScreen() != screenID_Start_Screen) {
+            if (legato_getCurrentScreen() != screenID_Start_Screen)
+            {
                 legato_showScreen(screenID_Start_Screen);
 
                 Nop();
@@ -220,14 +235,16 @@ void APP_GFX_Tasks() {
         case APP_GFX_STATE_START_SCREEN:
         {
             // wait for the screen to be created
-            if (legato_getCurrentScreen() != screenID_Start_Screen) {
+            if (legato_getCurrentScreen() != screenID_Start_Screen)
+            {
                 appGfxData.state = APP_GFX_STATE_CREATE_START_SCREEN;
 
                 break;
             }
 
             // wait for the screen to be rendered
-            if (!leRenderer_IsIdle()) {
+            if (!leRenderer_IsIdle())
+            {
                 break;
             }
 
@@ -237,8 +254,9 @@ void APP_GFX_Tasks() {
 
             // hide the message
             setResult = Start_Screen_StartScreenLabel->fn->setVisible(Start_Screen_StartScreenLabel, LE_FALSE);
-            if (setResult == LE_FAILURE) {
-                SYS_CONSOLE_MESSAGE("!!! ERROR: Failed hide the Start Screen Message");
+            if (setResult == LE_FAILURE)
+            {
+                SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed hide the Start Screen Message");
             }
 
             // Create and initialize a legato string object
@@ -250,78 +268,89 @@ void APP_GFX_Tasks() {
             // The font must contain all the glyphs/characters 
             // that will be used in the dynamic string. 
             setResult = messageString.fn->setFont(&messageString,
-                    leStringTable_GetStringFont(leGetState()->stringTable,
-                    stringID_Start_Screen_Text,
-                    0));
-            if (setResult == LE_FAILURE) {
-                SYS_CONSOLE_MESSAGE("!!! ERROR: Failed set the font");
+                                                  leStringTable_GetStringFont(leGetState()->stringTable,
+                                                                              stringID_Start_Screen_Text,
+                                                                              0));
+            if (setResult == LE_FAILURE)
+            {
+                SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed set the font");
             }
 
             // Convert the character string to leFixedString object
             setResult = messageString.fn->setFromCStr(&messageString, APP_GFX_GetStartMessageString());
-            if (setResult == LE_FAILURE) {
-                SYS_CONSOLE_MESSAGE("!!! ERROR: Failed to convert the text");
+            if (setResult == LE_FAILURE)
+            {
+                SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed to convert the text");
             }
 
             // Set counterString string to label
-            setResult = Start_Screen_StartScreenLabel->fn->setString(Start_Screen_StartScreenLabel, (leString*) &messageString);
-            if (setResult == LE_FAILURE) {
-                SYS_CONSOLE_MESSAGE("!!! ERROR: Failed to setString to StartScreenLabel");
+            setResult = Start_Screen_StartScreenLabel->fn->setString(Start_Screen_StartScreenLabel, (leString*) & messageString);
+            if (setResult == LE_FAILURE)
+            {
+                SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed to setString to StartScreenLabel");
             }
 
             // set the label visible
             setResult = Start_Screen_StartScreenLabel->fn->setVisible(Start_Screen_StartScreenLabel, LE_TRUE);
-            if (setResult == LE_FAILURE) {
-                SYS_CONSOLE_MESSAGE("!!! ERROR: Failed show the Start Screen Message");
+            if (setResult == LE_FAILURE)
+            {
+                SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed show the Start Screen Message");
             }
-            
-            if (APP_GFX_CanStream() == true) {
+
+            if (APP_GFX_CanStream() == true)
+            {
                 appGfxData.state = APP_GFX_STATE_SHOW_FULL_SCREEN_BUTTON;
             }
 
             break;
         }
-        
+
         case APP_GFX_STATE_SHOW_FULL_SCREEN_BUTTON:
         {
             // wait for the screen to be rendered
-            if (!leRenderer_IsIdle()) {
+            if (!leRenderer_IsIdle())
+            {
                 break;
             }
 
             setResult = Start_Screen_FullScreenButton->fn->setVisible(Start_Screen_FullScreenButton, LE_TRUE);
-            if (setResult == LE_FAILURE) {
-                SYS_CONSOLE_MESSAGE("!!! ERROR: Failed to show the full screen button");
+            if (setResult == LE_FAILURE)
+            {
+                SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed to show the full screen button");
             }
-            
+
             appGfxData.state = APP_GFX_STATE_CAN_STREAM;
-            
+
             break;
         }
-        
-        case APP_GFX_STATE_CAN_STREAM: 
+
+        case APP_GFX_STATE_CAN_STREAM:
         {
             // wait for the screen to be rendered
-            if (!leRenderer_IsIdle()) {
+            if (!leRenderer_IsIdle())
+            {
                 break;
             }
 
-            if (APP_GFX_CanStream() == false) {
+            if (APP_GFX_CanStream() == false)
+            {
                 setResult = Start_Screen_FullScreenButton->fn->setVisible(Start_Screen_FullScreenButton, LE_FALSE);
-                if (setResult == LE_FAILURE) {
-                    SYS_CONSOLE_MESSAGE("!!! ERROR: Failed to hide the full screen button");
+                if (setResult == LE_FAILURE)
+                {
+                    SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed to hide the full screen button");
                 }
 
                 appGfxData.state = APP_GFX_STATE_START_SCREEN;
             }
-            
+
             break;
         }
 
         case APP_GFX_STATE_CREATE_SLIDESHOW_SCREEN:
         {
             // switch to the streaming screen
-            if (legato_getCurrentScreen() != screenID_SlideShow_Screen) {
+            if (legato_getCurrentScreen() != screenID_SlideShow_Screen)
+            {
                 legato_showScreen(screenID_SlideShow_Screen);
 
                 break;
@@ -335,7 +364,8 @@ void APP_GFX_Tasks() {
         case APP_GFX_STATE_LOAD_NEXT_IMAGE:
         {
             // wait for the screen to be created
-            if (legato_getCurrentScreen() != screenID_SlideShow_Screen) {
+            if (legato_getCurrentScreen() != screenID_SlideShow_Screen)
+            {
 
                 appGfxData.state = APP_GFX_STATE_CREATE_SLIDESHOW_SCREEN;
 
@@ -343,12 +373,14 @@ void APP_GFX_Tasks() {
             }
 
             // wait for the renderer to finish
-            if (!leRenderer_IsIdle()) {
+            if (!leRenderer_IsIdle())
+            {
                 break;
             }
 
             // load the next image from the media
-            if (APP_GFX_Load_Next_Image() == true) {
+            if (APP_GFX_Load_Next_Image() == true)
+            {
                 // change state
                 appGfxData.state = APP_GFX_STATE_RENDERING_IMAGE;
             }
@@ -359,7 +391,8 @@ void APP_GFX_Tasks() {
         case APP_GFX_STATE_RENDERING_IMAGE:
         {
             // wait for the renderer to finish before going to next state
-            if (leRenderer_IsIdle()) {
+            if (leRenderer_IsIdle())
+            {
                 Nop();
 
                 appGfxData.state = APP_GFX_STATE_WAIT_FOR_NEXT;
@@ -373,7 +406,8 @@ void APP_GFX_Tasks() {
         case APP_GFX_STATE_WAIT_FOR_NEXT:
         {
             // if the delay passed
-            if (SYS_TMR_TickCountGet() - delayTick >= APP_GFX_SLIDESHOW_DELAY_SECONDS * SYS_TMR_TickCounterFrequencyGet()) {
+            if (SYS_TMR_TickCountGet() - delayTick >= APP_GFX_SLIDESHOW_DELAY_SECONDS * SYS_TMR_TickCounterFrequencyGet())
+            {
                 // go to the state that loads the next image
                 appGfxData.state = APP_GFX_STATE_LOAD_NEXT_IMAGE;
             }
@@ -389,23 +423,23 @@ void APP_GFX_Tasks() {
             break;
         }
 
-        // no default needed
-        // the compiler should complain if a new value is added into the enum
+            // no default needed
+            // the compiler should complain if a new value is added into the enum
     }
-    
+
 #if defined (APP_DEBUG_MEMORY)
     static uint32_t debugDelayTick = 0;
     leMemoryStatusReport rpt;
-    if(SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_MEMORY_DELAY_SEC)
+    if (SYS_TMR_TickCountGet() - debugDelayTick >= SYS_TMR_TickCounterFrequencyGet() * APP_DEBUG_MEMORY_DELAY_SEC)
     {
         leMemoryGetUsageReport(&rpt);
 
-        SYS_CONSOLE_PRINT("    HEAP DEBUG: Legato minimum heap remained: %d\r\n", ( rpt.variableHeapReport.size - rpt.variableHeapReport.maxUsage ));
-        
+        SYS_CONSOLE_PRINT("    HEAP DEBUG: Legato minimum heap remained: %d\r\n", (rpt.variableHeapReport.size - rpt.variableHeapReport.maxUsage));
+
         debugDelayTick = SYS_TMR_TickCountGet();
     }
 #endif
-    
+
 }
 
 // *****************************************************************************
@@ -414,13 +448,14 @@ void APP_GFX_Tasks() {
 // *****************************************************************************
 // *****************************************************************************
 // check media and goes to start screen in case cannot stream
-static void _APP_GFX_CheckMedia() 
+static void _APP_GFX_CheckMedia()
 {
-    if (APP_FileHandler_IsMediaMounted() == false) {
+    if (APP_FileHandler_IsMediaMounted() == false)
+    {
         // change to the start of screen
         appGfxData.state = APP_GFX_STATE_CREATE_START_SCREEN;
     }
-    
+
     return;
 }
 
@@ -428,15 +463,18 @@ static void _APP_GFX_CheckMedia()
 // returns a string to be shown on the main screen
 static char* APP_GFX_GetStartMessageString()
 {
-    if (APP_FileHandler_IsMediaMounted() == false) {
+    if (APP_FileHandler_IsMediaMounted() == false)
+    {
         return &cCardNotFound[0];
     }
-    
-    if (APP_FileHandler_IsMediaLoaded() == false) {
+
+    if (APP_FileHandler_IsMediaLoaded() == false)
+    {
         return &cMediaInitializing[0];
     }
-    
-    if (APP_FileHandler_GetNumberOfMediaFiles() == 0) {
+
+    if (APP_FileHandler_GetNumberOfMediaFiles() == 0)
+    {
         return &cCardNoMediaFound[0];
     }
 
@@ -446,11 +484,12 @@ static char* APP_GFX_GetStartMessageString()
 // gets the handle for the image
 // for this particular application this is always the SD Card
 // but it could be extended to other locations, if necessary
-static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation) 
+static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation)
 {
     SYS_FS_HANDLE handle = SYS_FS_HANDLE_INVALID;
 
-    switch (dataLocation) {
+    switch (dataLocation)
+    {
             // location is on the SD Card
         case LE_STREAM_LOCATION_ID_SD_CARD_FILE:
         {
@@ -462,8 +501,8 @@ static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation)
             break;
         }
 
-        // no default needed
-        // the compiler should complain if a new value is added into the enum
+            // no default needed
+            // the compiler should complain if a new value is added into the enum
     }
 
     return handle;
@@ -471,20 +510,23 @@ static SYS_FS_HANDLE APP_GFX_GetFileHandle(uint32_t dataLocation)
 
 // there are reasons for which the streaming cannot start/continue
 // catch them here
-static bool APP_GFX_CanStream() 
+static bool APP_GFX_CanStream()
 {
     // there is no SD Card inside
-    if (APP_FileHandler_IsMediaLoaded() != true) {
+    if (APP_FileHandler_IsMediaLoaded() != true)
+    {
         return false;
     }
-    
+
     // no media to stream
-    if (APP_FileHandler_GetNumberOfMediaFiles() == 0) {
+    if (APP_FileHandler_GetNumberOfMediaFiles() == 0)
+    {
         return false;
     }
-    
+
     // the state machine is in ERROR state
-    if (appGfxData.state == APP_GFX_STATE_ERROR) {
+    if (appGfxData.state == APP_GFX_STATE_ERROR)
+    {
         return false;
     }
 
@@ -494,20 +536,24 @@ static bool APP_GFX_CanStream()
 // Unloads application graphics object
 // Frees memory taken by the Legato Image object
 // closes the file in case it is open
-static void APP_GFX_ImgObjUnload() 
+static void APP_GFX_ImgObjUnload()
 {
     // free the legato Image
-    while (appGfxData.appGfxResImgObj.image != NULL) {
-        if (APP_GFX_Image_Free(appGfxData.appGfxResImgObj.image) == LE_FAILURE ) {
-            SYS_CONSOLE_MESSAGE("   !!! ERROR: Failed to free the graphics object image.");
+    while (appGfxData.appGfxResImgObj.image != NULL)
+    {
+        if (APP_GFX_Image_Free(appGfxData.appGfxResImgObj.image) == LE_FAILURE)
+        {
+            SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed to free the graphics object image.");
         }
 
         appGfxData.appGfxResImgObj.image = NULL;
     }
 
     // if there was an image open
-    if (appGfxData.appGfxResImgObj.fileHandle != (SYS_FS_HANDLE) NULL) {
-        if (appGfxData.appGfxResImgObj.fileHandle != SYS_FS_HANDLE_INVALID) {
+    if (appGfxData.appGfxResImgObj.fileHandle != (SYS_FS_HANDLE)NULL)
+    {
+        if (appGfxData.appGfxResImgObj.fileHandle != SYS_FS_HANDLE_INVALID)
+        {
             SYS_FS_FileClose(appGfxData.appGfxResImgObj.fileHandle);
 
             appGfxData.appGfxResImgObj.fileHandle = SYS_FS_HANDLE_INVALID;
@@ -516,17 +562,19 @@ static void APP_GFX_ImgObjUnload()
 }
 
 // loads the next image into the Image Widget
-static bool APP_GFX_Load_Next_Image(void) 
+static bool APP_GFX_Load_Next_Image(void)
 {
     // Free memory used by the previous image
     APP_GFX_ImgObjUnload();
-    
-    if (APP_GFX_CanStream() == false) {
+
+    if (APP_GFX_CanStream() == false)
+    {
         return false;
     }
 
     // ask the file handler for the next picture to show
     appGfxData.appGfxFileData = APP_FileHandler_GetPictureToShow(appGfxData.currentAppGfxFileIdx, APP_FILE_HANDLER_GET_NEXT);
+    
     // set the current file index
     appGfxData.currentAppGfxFileIdx = appGfxData.appGfxFileData->mediaFileIdx;
 
@@ -536,7 +584,8 @@ static bool APP_GFX_Load_Next_Image(void)
 
     // open the stream in the right format
     leImageFormat imageFormat = LE_IMAGE_FORMAT_JPEG;
-    switch (appGfxData.appGfxFileData->fileType) {
+    switch (appGfxData.appGfxFileData->fileType)
+    {
         case APP_FILE_HANDLER_IMAGE_TYPE_JPEG:
         {
             imageFormat = LE_IMAGE_FORMAT_JPEG;
@@ -547,14 +596,14 @@ static bool APP_GFX_Load_Next_Image(void)
         case APP_FILE_HANDLER_IMAGE_TYPE_BMP:
         {
             imageFormat = LE_IMAGE_FORMAT_RAW;
-         
+
             break;
         }
 
         case APP_FILE_HANDLER_IMAGE_TYPE_PNG:
         {
             imageFormat = LE_IMAGE_FORMAT_PNG;
-         
+
             break;
         }
 
@@ -562,19 +611,19 @@ static bool APP_GFX_Load_Next_Image(void)
         {
             // when gif is supported, uncomment this line and remove the return
             // imageFormat = LE_IMAGE_FORMAT_GIF;
-            SYS_CONSOLE_PRINT("!!! ERROR: GIF Images are not implemented - not currently supported %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
+            SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: GIF Images are not implemented - not currently supported %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
 
             return false;
 
             break;
         }
-        
+
         case APP_FILE_HANDLER_IMAGE_TYPE_UNKNOWN:
         {
-            SYS_CONSOLE_PRINT("!!! ERROR: Image type unknown. Should not be here. %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
+            SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Image type unknown. Should not be here. %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
 
             return false;
-         
+
             break;
         }
 
@@ -584,15 +633,19 @@ static bool APP_GFX_Load_Next_Image(void)
 
     // allocate memory for the new image
     appGfxData.appGfxResImgObj.image = APP_GFX_CreateLegatoImageObject(appGfxData.appGfxFileData->dimensions.width, appGfxData.appGfxFileData->dimensions.height, LE_COLOR_MODE_RGB_888, LE_STREAM_LOCATION_ID_SD_CARD_FILE, imageFormat);
-    if (appGfxData.appGfxResImgObj.image == NULL) {
+    if (appGfxData.appGfxResImgObj.image == NULL)
+    {
+        SYS_DEBUG_MESSAGE(SYS_ERROR_ERROR, "!!! ERROR: Could not create leImage.\r\n");
+
         return false;
     }
 
     // Open the file for reading
     // TODO - maybe move the file open in leApplication_MediaOpenRequest
     appGfxData.appGfxResImgObj.fileHandle = SYS_FS_FileOpen(appGfxData.appGfxFileData->mediaFullPath, SYS_FS_FILE_OPEN_READ);
-    if (appGfxData.appGfxResImgObj.fileHandle == SYS_FS_HANDLE_INVALID) {
-        SYS_CONSOLE_PRINT("ERROR: Cannot open image %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
+    if (appGfxData.appGfxResImgObj.fileHandle == SYS_FS_HANDLE_INVALID)
+    {
+        SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Cannot open image %s\r\n", appGfxData.appGfxFileData->mediaFullPath);
 
         return false;
     }
@@ -601,8 +654,8 @@ static bool APP_GFX_Load_Next_Image(void)
     SlideShow_Screen_Images->fn->setImage(SlideShow_Screen_Images, appGfxData.appGfxResImgObj.image);
 
     // set the dimensions of the Image Widget for the new picture
-    SlideShow_Screen_Images->fn->setWidth(SlideShow_Screen_Images, (uint32_t) appGfxData.appGfxFileData->dimensions.width);
-    SlideShow_Screen_Images->fn->setHeight(SlideShow_Screen_Images, (uint32_t) appGfxData.appGfxFileData->dimensions.height);
+    SlideShow_Screen_Images->fn->setWidth(SlideShow_Screen_Images, (uint32_t)appGfxData.appGfxFileData->dimensions.width);
+    SlideShow_Screen_Images->fn->setHeight(SlideShow_Screen_Images, (uint32_t)appGfxData.appGfxFileData->dimensions.height);
 
     // set position according with the widget dimensions
     APP_GFX_Set_ImageWidgetPosition(SlideShow_Screen_Images);
@@ -613,15 +666,16 @@ static bool APP_GFX_Load_Next_Image(void)
 // allocate memory for a new image 
 // and initialize the object properties
 static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
-        uint32_t height,
-        leColorMode colorMode,
-        uint32_t location,
-        leImageFormat format) 
+                                                uint32_t height,
+                                                leColorMode colorMode,
+                                                uint32_t location,
+                                                leImageFormat format)
 {
     leImage* img;
 
     // sanity check
-    if (width == 0 || height == 0) {
+    if (width == 0 || height == 0)
+    {
         SYS_CONSOLE_PRINT("ERROR: Image %s has invalid dimensions. Skip! \r\n", appGfxData.appGfxFileData->mediaFullPath);
 
         return NULL;
@@ -629,7 +683,8 @@ static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
 
     // try to allocate memory
     img = LE_MALLOC(sizeof (leImage));
-    if (img == NULL) {
+    if (img == NULL)
+    {
         SYS_CONSOLE_PRINT("ERROR: Cannot allocate memory for the image. Skip! \r\n", appGfxData.appGfxFileData->mediaFullPath);
 
         return NULL;
@@ -638,7 +693,7 @@ static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
     // size
     img->header.size = width * height * leColorInfoTable[colorMode].size;
     // address in the media is 0
-    img->header.address = (void*) 0;
+    img->header.address = (void*)0;
     // location if media
     img->header.location = location;
     // image format
@@ -647,7 +702,7 @@ static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
     img->buffer.size.width = width;
     // height
     img->buffer.size.height = height;
-    // ??? TODO what is this ?
+    // buffer length
     img->buffer.buffer_length = img->header.size;
     // buffer color mode
     img->buffer.mode = colorMode;
@@ -668,9 +723,10 @@ static leImage* APP_GFX_CreateLegatoImageObject(uint32_t width,
 }
 
 // free memory taken by an image
-static leResult APP_GFX_Image_Free(leImage* img) 
+static leResult APP_GFX_Image_Free(leImage* img)
 {
-    if(img == NULL || (img->flags & LE_IMAGE_INTERNAL_ALLOC) == 0) {
+    if (img == NULL || (img->flags & LE_IMAGE_INTERNAL_ALLOC) == 0)
+    {
         return LE_FAILURE;
     }
 
@@ -680,27 +736,30 @@ static leResult APP_GFX_Image_Free(leImage* img)
 }
 
 // positions the image widget on the display based on its dimensions
-static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget) 
+static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget)
 {
     uint16_t posX = 0;
     uint16_t poxY = 0;
     uint32_t width = imageWidget->fn->getWidth(imageWidget);
     uint32_t heigth = imageWidget->fn->getHeight(imageWidget);
 
-    // of the picture is larger than the screen, let the image on top/left of the screen
-    if (width < APP_GFX_SCREEN_WIDTH) {
+    // if the picture width is smaller than the screen width, center on horizontal
+    if (width < APP_GFX_SCREEN_WIDTH)
+    {
         // search for a centered position
         posX = APP_GFX_SCREEN_WIDTH / 2 - width / 2;
     }
-    if (heigth < APP_GFX_SCREEN_HEIGHT) {
+    // if the picture height is smaller than the screen height, center on vertical
+    if (heigth < APP_GFX_SCREEN_HEIGHT)
+    {
         // search for a centered position
         poxY = APP_GFX_SCREEN_HEIGHT / 2 - heigth / 2;
     }
 
     // set X position
-    imageWidget->fn->setX(imageWidget, (uint32_t) posX);
+    imageWidget->fn->setX(imageWidget, (uint32_t)posX);
     // set Y position
-    imageWidget->fn->setY(imageWidget, (uint32_t) poxY);
+    imageWidget->fn->setY(imageWidget, (uint32_t)poxY);
 }
 
 /* EOF */

@@ -66,9 +66,9 @@ extern "C" {
 // Supported Image Type Definitions
 // uncomment the supported formats defines
 #define APP_SUPPORT_JPEG
-//#define APP_SUPPORT_BMP
-//#define APP_SUPPORT_PNG
-//#define APP_SUPPORT_GIF
+// #define APP_SUPPORT_BMP
+// #define APP_SUPPORT_PNG
+// #define APP_SUPPORT_GIF
 
 // *****************************************************************************
 // *****************************************************************************
