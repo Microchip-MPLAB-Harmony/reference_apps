@@ -33,15 +33,14 @@ nav_order: 8
 - [Curiosity PIC32MZ EF 2.0 Development Board (DM320209)]( https://www.microchip.com/Developmenttools/ProductDetails/DM320209 )   
 - [SSD1963 LCD Controller Graphics Card (AC320214)]( https://www.microchip.com/Developmenttools/ProductDetails/AC320214)
 - [High-Performance 4.3" WQVGA Display Module with maXTouch® Technology (AC320005-4)]( https://www.microchip.com/developmenttools/ProductDetails/AC320005-4 )
-- [KSZ8061 Daughter Board (AC320004-6)] ( https://www.microchip.com/en-us/development-tool/ac320004-6 )
-- [microSD Click from Mikro (MIKROE-924)] ( https://www.mikroe.com/microsd-click )
-- [USB I2C Click from Mikro (MIKROE-1985)] ( https://www.mikroe.com/usb-i2c-click )
+- [KSZ8061 Daughter Board (AC320004-6)]( https://www.microchip.com/en-us/development-tool/ac320004-6 )
+- [microSD Click from Mikro (MIKROE-924)]( https://www.mikroe.com/microsd-click )
+- [USB I2C Click from Mikro (MIKROE-1985)]( https://www.mikroe.com/usb-i2c-click )
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-- Harmony 3
-	- Refer [Project Manifest](./firmware/src/config/wpf_mzef_cu_tm4301b/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/wpf_mzef_cu_tm4301b*  
+- Refer [Project Manifest](./firmware/src/config/wpf_mzef_cu_tm4301b/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/wpf_mzef_cu_tm4301b*  
 
 ## Development Tools
 - [MPLAB® X IDE v6.05](https://www.microchip.com/mplab/mplab-x-ide)
@@ -61,7 +60,7 @@ nav_order: 8
 - Connect a microUSB Cable to the Debug USB plug (J700) of Curiosity PIC32MZ EF 2.0 Development Board
 - Connect and Ethernet Cable between the KSZ8061 Ethernet Board and your PC/Router
 - Connect a miniUSBcable between the USB I2C Click board and one of your PC USB ports
-- Open a COM Terminal anc connect it tot the COM number allocated by your PC
+- Open a COM Terminal and connect it to the COM number allocated by your PC, corresponding to the USB I2C board
 <img src="images/web_photo_frame_setup.png" align="middle">
 
 
@@ -72,7 +71,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Open MPLAB X IPE
 - Device: PIC32MZ2048EFM144
 - Select the Tool: Curiosity/Stater Kits (PKOB) and click on Connect
-- Hex File: Browse to **webphotoframe\hex and load the hex file available
+- Hex File: Browse to **web_photo_frame\hex folder** and load the hex file available
 - Use the Main Menu: Settings->Release from reset
 - Click on the Program button and allow programming time
 - Follow the steps in "Running the Demo" section below
@@ -86,7 +85,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Running the Demo:
-- Take a micro SD Card and copy the resource files and folders provided into the ** webphotoframe\dev_files\sdcard_files ** to the SD Card
+- Take a micro SD Card and copy the resource files and folders provided into the **web_photo_frame\sdcard_files** to the SD Card
 - Plug the SD Card into the mikroSD Click board
 - Plug an Ethernet Cable into the Ethernet Adapter and a Router in the same network with the PC, or directly to the PC. If plugged directly to the PC, the Ethernet Adapter on the PC should be configured for Static IP with the IP address 192.168.100.2 and Net Mask 255.255.255.0
 - Open a terminal like Tera Term and connect it to the COM port assigned to the USB I2C click
@@ -96,7 +95,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Touch the screen and wait to load the image files one after the other
 - In the terminal, an IP address should be provided in the case the Ethernet Cable is pluged
 - Open a browser on the PC and browse to the provided IP address in the Terminal
-- A Web Page should load and buttons to start slideshow or load pictures one by one should be available
+- A Web Page should load and buttons to start slideshow or to load pictures one by one should be available
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
