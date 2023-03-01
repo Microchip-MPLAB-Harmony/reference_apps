@@ -13,7 +13,8 @@
   Description:
     This file contains the "main" function for a project.  The
     "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
+    machines of all modules in the system.
+ 
  *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -49,11 +50,12 @@
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
+#include <string.h>
 #include "definitions.h"                // SYS function prototypes
 
-#include "click_routines/eink_bundle/eink_bundle.h"
-#include "click_routines/eink_bundle/eink_bundle_image.h"
-#include "click_routines/eink_bundle/eink_bundle_font.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_image.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_font.h"
 #include "click_routines/heartrate9/heartrate9.h"
 
 static volatile bool switchPressEvent       = false;
@@ -78,12 +80,14 @@ int main ( void )
     SYS_Initialize ( NULL );
     EIC_CallbackRegister(EIC_PIN_11, Switch_Press_Handler, 0);
     
-    eink_init();
-    eink_image_bmp(mchp_logo);
-    eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
-    
+    eink_epaper_2_9_296_128_init();   
+    eink_epaper_2_9_296_128_image_bmp(mchp_logo);
+    eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_BLACK, FO_HORIZONTAL);  
+
     while ( true )
     {
+        memset(lcl_buffer, 0, sizeof(lcl_buffer));
+
         if(switchPressEvent == true)
         {
             if(true == is_heartrate9_byte_ready())  // Checking the Heartrate sensor data ready Status
@@ -96,9 +100,10 @@ int main ( void )
                 CNANO_LED_Set();
                 printf("Heartrate = %d bpm \t\r\n", (uint8_t)heartrate_data);
                 sprintf(lcl_buffer, "%dbpm", (uint8_t)heartrate_data);
-                eink_image_bmp(heartrate_image);
-                eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);                
-                eink_text(lcl_buffer, 0, 118 );                
+                eink_epaper_2_9_296_128_fill_screen( EINK_EPAPER_2_9_296_128_COLOR_BLACK );
+                eink_epaper_2_9_296_128_image_bmp(heartrate_image);               
+                eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_WHITE, FO_HORIZONTAL);
+                eink_epaper_2_9_296_128_text(lcl_buffer, 12, 148 );                
             }
             switchPressEvent        = false;
         }

@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
+                <sourceRootElem>../../../Users/I72399/OneDrive - Microchip Technology Inc/Desktop/epaper_v1.0/firmware/src/click_routines/epaper</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

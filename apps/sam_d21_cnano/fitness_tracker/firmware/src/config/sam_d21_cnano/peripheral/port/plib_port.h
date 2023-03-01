@@ -65,32 +65,32 @@
 // *****************************************************************************
 // *****************************************************************************
 
-/*** Macros for CLICK_EINK_BUNDLE_DC pin ***/
-#define CLICK_EINK_BUNDLE_DC_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 9U))
-#define CLICK_EINK_BUNDLE_DC_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 9U))
-#define CLICK_EINK_BUNDLE_DC_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 9U))
-#define CLICK_EINK_BUNDLE_DC_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 9U))
-#define CLICK_EINK_BUNDLE_DC_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 9U))
-#define CLICK_EINK_BUNDLE_DC_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 9U)) & 0x01U)
-#define CLICK_EINK_BUNDLE_DC_PIN                  PORT_PIN_PB09
+/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_DC pin ***/
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 9U))
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 9U))
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 9U))
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 9U))
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 9U))
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 9U)) & 0x01U)
+#define CLICK_EINK_EPAPER_2_9_296_128_DC_PIN                  PORT_PIN_PB09
 
-/*** Macros for CLICK_EINK_BUNDLE_BSY pin ***/
-#define CLICK_EINK_BUNDLE_BSY_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 6U))
-#define CLICK_EINK_BUNDLE_BSY_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 6U))
-#define CLICK_EINK_BUNDLE_BSY_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 6U))
-#define CLICK_EINK_BUNDLE_BSY_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 6U))
-#define CLICK_EINK_BUNDLE_BSY_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 6U))
-#define CLICK_EINK_BUNDLE_BSY_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6U)) & 0x01U)
-#define CLICK_EINK_BUNDLE_BSY_PIN                  PORT_PIN_PA06
+/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_BSY pin ***/
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 6U))
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 6U))
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 6U))
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 6U))
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 6U))
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6U)) & 0x01U)
+#define CLICK_EINK_EPAPER_2_9_296_128_BSY_PIN                  PORT_PIN_PA06
 
-/*** Macros for CLICK_EINK_BUNDLE_RST pin ***/
-#define CLICK_EINK_BUNDLE_RST_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 7U))
-#define CLICK_EINK_BUNDLE_RST_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 7U))
-#define CLICK_EINK_BUNDLE_RST_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 7U))
-#define CLICK_EINK_BUNDLE_RST_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 7U))
-#define CLICK_EINK_BUNDLE_RST_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 7U))
-#define CLICK_EINK_BUNDLE_RST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7U)) & 0x01U)
-#define CLICK_EINK_BUNDLE_RST_PIN                  PORT_PIN_PA07
+/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_RST pin ***/
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 7U))
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 7U))
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 7U))
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 7U))
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 7U))
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7U)) & 0x01U)
+#define CLICK_EINK_EPAPER_2_9_296_128_RST_PIN                  PORT_PIN_PA07
 
 /*** Macros for CNANO_LED pin ***/
 #define CNANO_LED_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 10U))
@@ -105,14 +105,14 @@
 #define CNANO_BUTTON_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11U)) & 0x01U)
 #define CNANO_BUTTON_PIN                  PORT_PIN_PB11
 
-/*** Macros for CLICK_EINK_BUNDLE_CS pin ***/
-#define CLICK_EINK_BUNDLE_CS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 18U))
-#define CLICK_EINK_BUNDLE_CS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 18U))
-#define CLICK_EINK_BUNDLE_CS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 18U))
-#define CLICK_EINK_BUNDLE_CS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 18U))
-#define CLICK_EINK_BUNDLE_CS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 18U))
-#define CLICK_EINK_BUNDLE_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
-#define CLICK_EINK_BUNDLE_CS_PIN                  PORT_PIN_PA18
+/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_CS pin ***/
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 18U))
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 18U))
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 18U))
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 18U))
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 18U))
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
+#define CLICK_EINK_EPAPER_2_9_296_128_CS_PIN                  PORT_PIN_PA18
 
 /*** Macros for CLICK_HEARTRATE9_RST pin ***/
 #define CLICK_HEARTRATE9_RST_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 23U))
@@ -154,7 +154,7 @@
 #define GET_PORT_GROUP(pin)  ((PORT_GROUP)(PORT_BASE_ADDRESS + (0x80U * (((uint32_t)pin) >> 5U))))
 #define GET_PIN_MASK(pin)   (((uint32_t)(0x1U)) << (((uint32_t)pin) & 0x1FU))
 
-/* Named type for port group */ 
+/* Named type for port group */
 typedef uint32_t PORT_GROUP;
 
 
@@ -318,7 +318,6 @@ typedef enum
 // Section: Generated API based on pin configurations done in Pin Manager
 // *****************************************************************************
 // *****************************************************************************
-
 // *****************************************************************************
 /* Function:
     void PORT_Initialize(void)

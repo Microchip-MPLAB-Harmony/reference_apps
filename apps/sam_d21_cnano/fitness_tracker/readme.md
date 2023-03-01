@@ -17,15 +17,15 @@ nav_order: 2
 > The application demonstrates a solution based on Microchip products for health care industry
   and wearable products. The application displays heart rate readings (in beats per minute - bpm)
   on a very low power consuming display. The Mikroelektronika Heart Rate 9 click board is used
-  to read the heart pulse. Mikroelektronika eINK click bundle is used for displaying heart rate.
-  The eINK click bundle contains the eINK click adapter board and the eINK display.
+  to read the heart pulse. Mikroelektronika Eink E-Paper display 2,9" 296x128 dots display is used for displaying heart rate.
+  The Eink E-Paper display 2,9" 296x128 dots display contains the eINK click adapter board and the E-Paper display 2,9" 296x128 dots display.
 
 > The Heart Rate 9 click introduces Microchip's proprietary method of measuring multiple
   signals in a body using pseudorandom binary sequence generation and phase division multiplexing
   This algorithm for processing data from the sensor and it can send data for 3 different diodes
   (green, ir, red) who give out a diagram of the heartbeat and its frequency per minute.
 
-> The eINK display is a very low power consumption display and it can retain the information,
+> The Eink E-Paper display 2,9" 296x128 dots display is a very low power consumption display and it can retain the information,
   even after disconnecting from the power source. The host MCU SAM D21 is interfaced with the
   Heart Rate 9 click over the USART interface and eINK click over SPI Interface.
 
@@ -43,7 +43,8 @@ nav_order: 2
 - [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)   
 - [Curiosity Nano Base for click boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
 - [Heart Rate 9 click](https://www.mikroe.com/heart-rate-9-click)
-- [EINK CLICK BUNDLE](https://www.mikroe.com/eink-click)
+- [MikroElektronika eInk Click Without Display]( https://www.mikroe.com/eink-click-without-display)
+- [MikroElektronika E-Paper display 2,9" 296x128 dots Display](https://www.mikroe.com/e-paper-display-29-inches)
 
 
 ## <a id="software-Tools-Used"> </a>
@@ -58,9 +59,10 @@ Refer [Project Manifest](./firmware/src/config/sam_d21_cnano/harmony-manifest-su
 ## Setup:
 - Mount SAM D21 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board
 - Mount Heart Rate 3 click board on mikro bus click 3 connector of Curiosity Nano Base board
-- Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 1 connector of Curiosity Nano Base board
+- Mount the Eink E-Paper display 2,9" 296x128 dots display (eINK click + E-Paper display 2,9" 296x128 dots Display) on the mikro bus 1 connector of Curiosity Nano Base board
 - Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)  
-<img src = "images/fitness_tracker_demo_setup.jpg" width="600" height="500" align="middle">
+-
+<img src = "images/fitness_tracker_demo_setup.jpg" width="600" height="700" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  
@@ -87,17 +89,19 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 
 - Perform a reset by unplugging and re-plugging the power cable of SAM D21 Curiosity Nano Evaluation Kit.  
-- After power up, the application displays the "microchip logo" on the eINK display and initializes the heart rate sensor.  
+- After power up, the application displays the "microchip logo" on the Eink E-Paper display 2,9" 296x128 dots Display and initializes the heart rate sensor.  
 - After successful initialization, keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.  
 
   <img src = "images/finger_placement.png" width="432" height="158" align="middle">  
-	<img src = "images/fitness_tracker_demo_run.jpg" width="600" height="500" align="middle">
+-  
+	<img src = "images/fitness_tracker_demo_run.jpg" width="600" height="700" align="middle">
 
   **Note:** Place your index finger gently on the heart rate 9 click sensor as shown in the above figure  
 - Press switch "SW0" on SAM D21 Curiosity Nano Evaluation Kit, LED "LED0" on SAM D21 Curiosity Nano Evaluation Kit glows on  
 - Wait till the LED "LED0" on SAM D21 Curiosity Nano Evaluation Kit goes off and then lift your finger  
-- The heart rate value (in bpm - beats per minute) gets displayed on the eINK display  
-  <img src = "images/result.jpg" width="600" height="500" align="middle">
+- The heart rate value (in bpm - beats per minute) gets displayed on the Eink E-Paper display 2,9" 296x128 dots Display. 
+- 
+  <img src = "images/result.jpg" width="600" height="700" align="middle">
 
 
 ## Comments:
@@ -115,6 +119,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ## Revision:
+- v1.6.0 - Replaced Eink Click Bundle with Eink E-Paper display 2,9" 296x128, regenerated and tested application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Regenerated and tested application.

@@ -7,15 +7,15 @@
 		"version": "1.5.0",
 		"displayName": "Fitness Tracker Application",
 		"projectName": "fitness_tracker_sam_d21_cnano",
-		"shortDescription": "Demonstrates integrating Heart Rate and EINK Click bundle on SAM D21 Curiosity Nano",
+		"shortDescription": "Demonstrates integrating Heart Rate and Eink E-Paper display 2_9 296x128 dots board on SAM D21 Curiosity Nano",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.05"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.0.0"
+				"semverRange": ">=4.21"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.2.2"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -52,13 +52,14 @@
 			"MHC",
             "MCC",
 			"Harmony",
-			"Click Board",
-			"Fitness",
-			"Heartbeat",
-			"Display",
-			"Low Power",
 			"Health",
-			"Curiosity Nano"
+			"Curiosity Nano",
+			"Curiosity",
+            "Low Power",
+			"Graphics",
+			"Display",
+			"Fitness",
+			"Heartbeat"
 		],
 		"additionalData": {
 			"longDescription": {

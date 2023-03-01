@@ -1,38 +1,48 @@
-/**************************CHANGE LIST **************************************
-*
-*    Date    Software Version     Initials    Description
-*  28/01/2020         1.0        MK        Modified.
-*  15/04/2021         2.0        ST        Modified.
-*****************************************************************************/
-
-/****************************************************************************
-* Note: In version 2.0, This file has been modified by ST to meet the custom
-* application requirements. Should you need to contact the modifier write to
-* Microchip Technology India Pvt Ltd
-* Plot No. 1498, EPIP, 1st Phase Industrial Area, Whitefield, Bengaluru,
-* Karnataka 560066
-*******************************************************************************/
 /*******************************************************************************
- Copyright (C) 2017  Microchip Technology Incorporated and its subsidiaries.
+  eink_epaper_2_9_296_128 font Source file
 
-This program is free software; you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation; either version 2 of the License, or (at your option) any later version.
+  Company:
+    Microchip Technology Inc.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+  File Name:
+    eink_epaper_2_9_296_128_font.c
 
-You should have received a copy of the GNU General Public License along with
-this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  Summary:
+     Font Implementation file
+
+  Description:
+     This file contains arrays for various font styles
 *******************************************************************************/
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+*******************************************************************************/
+// DOM-IGNORE-END
 
-#include "eink_bundle_font.h"
+#include "eink_epaper_2_9_296_128_font.h"
 
 #include <stdint.h>
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_14_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_14_REGULAR
 const uint8_t  guiFont_Tahoma_14_Regular[] = {
    0x00,
    0x00,
@@ -236,7 +246,7 @@ const uint8_t  guiFont_Tahoma_14_Regular[] = {
         };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_8_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_8_REGULAR
 const uint8_t guiFont_Tahoma_8_Regular[] = {
    0x00,
    0x00,
@@ -439,7 +449,7 @@ const uint8_t guiFont_Tahoma_8_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_7_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_7_REGULAR
 const uint8_t guiFont_Tahoma_7_Regular[] = {
 0x00,
 0x00,
@@ -642,7 +652,7 @@ const uint8_t guiFont_Tahoma_7_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_6_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_6_REGULAR
 const uint8_t  guiFont_Tahoma_6_Regular[] = {
 0x00,
 0x00,
@@ -845,7 +855,7 @@ const uint8_t  guiFont_Tahoma_6_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_18_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_18_REGULAR
 const uint8_t guiFont_Tahoma_18_Regular[] = {
 0x00,
 0x00,
@@ -1122,7 +1132,7 @@ const uint8_t guiFont_Tahoma_18_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_EXO_2_CONDENSED21X32_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_EXO_2_CONDENSED21X32_REGULAR
 const uint8_t guiFont_Exo_2_Condensed21x32_Regular[] = {
 0x00,
 0x00,
@@ -1394,7 +1404,7 @@ const uint8_t guiFont_Exo_2_Condensed21x32_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_EXO_2_CONDENSED10X16_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_EXO_2_CONDENSED10X16_REGULAR
 const uint8_t guiFont_Exo_2_Condensed10x16_Regular[] = {
 0x00,
 0x00,
@@ -1597,7 +1607,7 @@ const uint8_t guiFont_Exo_2_Condensed10x16_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_EXO_2_CONDENSED15X23_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_EXO_2_CONDENSED15X23_REGULAR
 const uint8_t guiFont_Exo_2_Condensed15x23_Regular[] = {
 0x00,
 0x00,
@@ -1800,7 +1810,7 @@ const uint8_t guiFont_Exo_2_Condensed15x23_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_16_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_16_REGULAR
 const uint8_t guiFont_Tahoma_16_Regular[] = {
 0x00,
 0x00,
@@ -2007,7 +2017,7 @@ const uint8_t guiFont_Tahoma_16_Regular[] = {
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_TAHOMA_10_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_TAHOMA_10_REGULAR
 const uint8_t guiFont_Tahoma_10_Regular[] =
 {
 0x00,
@@ -2211,7 +2221,7 @@ const uint8_t guiFont_Tahoma_10_Regular[] =
 };
 #endif
 
-#ifdef EINK_BUNDLE_GUIFONT_ROBOTO_MONO11X23_REGULAR
+#ifdef EINK_EPAPER_2_9_296_128__GUIFONT_ROBOTO_MONO11X23_REGULAR
 const uint8_t guiFont_Roboto_Mono11x23_Regular[] = {
 0x00,
 0x00,
@@ -2413,4 +2423,3 @@ const uint8_t guiFont_Roboto_Mono11x23_Regular[] = {
 0x00,0x00,0x00,0x00,0x00,0x00,0x0F,0x09,0x09,0x09,0x09,0x09,0x09,0x09,0x09,0x09,0x0F,0x00,0x00,0x00,0x00,0x00,0x00 // Code for char num 127
 };
 #endif
-
