@@ -59,8 +59,9 @@ nav_order: 3
 - [BM71-XPRO](https://www.microchip.com/Developmenttools/ProductDetails/DM164146)
 - [Fan Click](https://www.mikroe.com/fan-click)
 - [WEATHER CLICK](https://www.mikroe.com/weather-click)
-- [MikroElektronika Eink Click Bundle](https://www.mikroe.com/eink-click)
--	[5V DC Fan](https://www.amazon.com/PartsCollection-Fan-50MM-4-Wire-Function/dp/B01M17DB6Y)
+- [MikroElektronika Eink Click Without Display]( https://www.mikroe.com/eink-click-without-display)
+- [MikroElektronika E-Paper display 2,9" 296x128 dots display](https://www.mikroe.com/e-paper-display-29-inches)
+- [5V DC Fan](https://www.amazon.com/PartsCollection-Fan-50MM-4-Wire-Function/dp/B01M17DB6Y)
 - [Lipo Rechargeable Battery](https://www.electronicscomp.com/3.7v-5000mah-lipo-battery-model-kp-508085-india?gclid=EAIaIQobChMIscaP2Prv7QIVjnwrCh2lKA3NEAQYASABEgJgAvD_BwE)
 
 ## Software/Tools Used:
@@ -124,7 +125,7 @@ Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manife
 ## Setup:
 - Mount PIC32CM MC00 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board  
 - Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board  
-- Mount the eINK click bundle (eINK click + eINK dispaly) on the mikro bus 1 connector of Curiosity Nano Base board
+- Mount the eINK click and Eink E-Paper display 2,9" 296x128 dots display on the mikro bus 1 connector of Curiosity Nano Base board
 - Mount Fan click board on mikro bus click 2 connector of Curiosity Nano Base and connect 4 fan wires to the fan click  
 - Mount Weather Click board on mikroBUS click 3 connector of Curiosity Nano Base
 - Connect Li-ion or Lipo Battery on J1 connector and make sure SW1 slider switch is moved to Battery on position in Curiosity Nano Base board  
@@ -161,8 +162,8 @@ The pre-built hex file can be programmed by following the below steps.
  <img src = "images/mbd_app_install.png" width="350" height="150" align="middle">
 
 - Enable Bluetooth and location from Smartphone settings
-- Perform reset by unplugging and re-plugging the power cable of SAM E51 Curiosity Nano
-- Open the "**Microchip Bluetooth Data (MBD)**" android app from your smartphone
+- Perform reset by unplugging and re-plugging the power cable of PIC32CM MC00 Curiosity Nano.
+- Open the "**Microchip Bluetooth Data (MBD)**" android app from your smartphone.
   and tap on "BLE UART" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
 <img src = "images/mbd_appscreen1.jpg" width="250" height="450" align="middle">
 
@@ -193,7 +194,6 @@ The pre-built hex file can be programmed by following the below steps.
   The commands mentioned in the demo description are not case sensitive.  
 	<img src = "images/mbd_appscreen11.jpg" width="250" height="450" align="middle">
 	<img src = "images/mbd_appscreen12.jpg" width="250" height="450" align="middle">
-	<img src = "images/mbd_appscreen13.jpg" width="250" height="450" align="middle">
 
 -  Based on the command received from the MBD application, the fan will be controlled.
 -   When the user chooses temperature based fan control mode, application reads the temperature values from a weather sensor displays on EInk display and controls a DC fan
@@ -209,6 +209,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Replaced Eink Click Bundle with Eink E-Paper display 2,9" 296x128, regenerated and tested application.
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 Added display capability
 - v1.3.0 Released demo application

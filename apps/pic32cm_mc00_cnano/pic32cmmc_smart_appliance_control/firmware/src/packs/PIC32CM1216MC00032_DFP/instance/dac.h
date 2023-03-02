@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00032
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for DAC peripheral ========== */
-#define DAC_DMAC_ID_EMPTY                        _UL_(39)   /* Index of DMA EMPTY trigger */
-#define DAC_GCLK_ID                              _UL_(31)   
-#define DAC_INSTANCE_ID                          _UL_(85)   /* Instance index for DAC */
+#define DAC_DMAC_ID_EMPTY                        (39)       /* Index of DMA EMPTY trigger */
+#define DAC_GCLK_ID                              (31)       
+#define DAC_INSTANCE_ID                          (85)       /* Instance index for DAC */
 
 #endif /* _PIC32CMMC00_DAC_INSTANCE_ */

@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00032
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,14 +26,14 @@
 
 
 /* ========== Instance Parameter definitions for TC3 peripheral ========== */
-#define TC3_CC_NUM                               _UL_(2)    
-#define TC3_DMAC_ID_OVF                          _UL_(30)   /* Indexes of DMA Overflow trigger */
-#define TC3_DMAC_ID_MC0                          _UL_(31)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TC3_DMAC_ID_MC1                          _UL_(32)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TC3_EXT                                  _UL_(0)    /* Coding of implemented extended features (keep 0 value) */
-#define TC3_GCLK_ID                              _UL_(26)   /* Index of Generic Clock */
-#define TC3_MASTER_SLAVE_MODE                    _UL_(2)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
-#define TC3_OW_NUM                               _UL_(0)    /* Number of Output Waveforms */
-#define TC3_INSTANCE_ID                          _UL_(79)   /* Instance index for TC3 */
+#define TC3_CC_NUM                               (2)        
+#define TC3_DMAC_ID_OVF                          (30)       /* Indexes of DMA Overflow trigger */
+#define TC3_DMAC_ID_MC0                          (31)       /* Indexes of DMA Match/Compare 0 trigger */
+#define TC3_DMAC_ID_MC1                          (32)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TC3_EXT                                  (0)        /* Coding of implemented extended features (keep 0 value) */
+#define TC3_GCLK_ID                              (26)       /* Index of Generic Clock */
+#define TC3_MASTER_SLAVE_MODE                    (2)        /* TC type 0 : NA, 1 : Master, 2 : Slave */
+#define TC3_OW_NUM                               (0)        /* Number of Output Waveforms */
+#define TC3_INSTANCE_ID                          (79)       /* Instance index for TC3 */
 
 #endif /* _PIC32CMMC00_TC3_INSTANCE_ */

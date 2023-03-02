@@ -53,9 +53,10 @@
 #include "click_routines/click_interface.h"
 #include "click_routines/weather/weather.h"
 #include "click_routines/fan/fan.h"
-#include "click_routines/eink_bundle/eink_bundle.h"
-#include "click_routines/eink_bundle/eink_bundle_image.h"
-#include "click_routines/eink_bundle/eink_bundle_font.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_font.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_image.h"
 #include "ble/ble.h"
 
 char BLE_Cmd_buf[100];
@@ -69,7 +70,7 @@ int main ( void )
 {
     int16_t temperature = 0;
     int16_t dummy_temperature = 0;
-    char  buffer1[10], buffer[10];
+    char  buffer1[12], buffer[12];
     char temp_buffer[10];
     /* Initialize all modules */
     SYS_Initialize ( NULL );
@@ -80,11 +81,10 @@ int main ( void )
     fan_switch_off();
     CLICK_FAN_DelayMs(1000);
 
-    eink_init();
-    
-    eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
-    eink_image_bmp(mchp_logo_fan);
-    
+    eink_epaper_2_9_296_128_init();
+    eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_WHITE, FO_HORIZONTAL);
+    eink_epaper_2_9_296_128_image_bmp(mchp_logo_fan);
+   
     DRV_BM71_Initialize();
     bleInitialize(true);
     strcpy(BLE_Cmd_buf, (char *)"TEMP_CTRL");
@@ -93,7 +93,7 @@ int main ( void )
     {
         DRV_BM71_Tasks();
         bleTasks(); 
-
+        
         if(!strncmp(BLE_Cmd_buf, "TEMP_CTRL", 9))
         {
             Weather_readSensors();
@@ -102,33 +102,33 @@ int main ( void )
             if(temperature >=18 && temperature <=25 )
               {
                 fan_set_speed(SPEED_LOW);
-                sprintf(buffer1, "    LOW");
+                sprintf(buffer1, "     LOW");
               }
               else if(temperature >=26 && temperature <=30 )
               {
                 fan_set_speed(SPEED_MEDIUM);
-                sprintf(buffer1, "MEDIUM");
+                sprintf(buffer1, "  MEDIUM");
               }
               else if(temperature > 30)
               {
                 fan_set_speed(SPEED_HIGH);
-                sprintf(buffer1, "    HIGH");
+                sprintf(buffer1, "     HIGH");
               }
               else if(temperature < 18)
               {
                 fan_switch_off(); 
-                sprintf(buffer1, "OFF");
+                sprintf(buffer1, "    OFF");
               }
-             sprintf(buffer, "%d C",temperature);
+             sprintf(buffer, "%d ' C",temperature);
              if(Isble_adv_started() == true){
                 if(((strcmp(temp_buffer,buffer1)) != 0)|(dummy_temperature != temperature ))
                 {
                     strcpy(temp_buffer,buffer1);
                     dummy_temperature = temperature;
-                    eink_image_bmp(mchp_logo_fan);
-                    eink_text(buffer,18,73 );
-                    eink_text("Tempr =",0,55 );
-                    eink_text(buffer1,0,145 );
+                    eink_epaper_2_9_296_128_fill_screen( EINK_EPAPER_2_9_296_128_COLOR_BLACK );
+                    eink_epaper_2_9_296_128_text("Tempr = ", 7, 200 );
+                    eink_epaper_2_9_296_128_text(buffer, 17, 220 );
+                    eink_epaper_2_9_296_128_text(buffer1, 1, 160 );
                     CLICK_FAN_DelayMs(1000);
                 }    
             }
@@ -143,22 +143,22 @@ int main ( void )
             else if(!strcmp((char *)&BLE_Cmd_buf[8 + 1], "FAN_LOW"))
             {
                 fan_set_speed(SPEED_LOW);
-                sprintf(buffer1, "    LOW");
+                sprintf(buffer1, "     LOW");
             }
             else if(!strcmp((char *)&BLE_Cmd_buf[8 + 1], "FAN_MID"))
             {
                 fan_set_speed(SPEED_MEDIUM);
-                sprintf(buffer1, "MEDIUM");
+                sprintf(buffer1, "  MEDIUM");
             }
             else if(!strcmp((char *)&BLE_Cmd_buf[8 + 1], "FAN_HIGH"))
             {
                 fan_set_speed(SPEED_HIGH);
-                sprintf(buffer1, "    HIGH");
+                sprintf(buffer1, "     HIGH");
             }
             else if(!strcmp((char *)&BLE_Cmd_buf[8 + 1], "FAN_OFF"))
             {
                 fan_switch_off(); 
-                 sprintf(buffer1, "    OFF");
+                 sprintf(buffer1, "     OFF");
             }
             else
             {
@@ -168,8 +168,9 @@ int main ( void )
             if((strcmp(temp_buffer,buffer1)) != 0)
             {
                 strcpy(temp_buffer,buffer1);
-                eink_image_bmp(mchp_logo_fan);
-                eink_text(buffer1,0,145 );
+                eink_epaper_2_9_296_128_image_bmp(mchp_logo_fan);
+                eink_epaper_2_9_296_128_fill_screen( EINK_EPAPER_2_9_296_128_COLOR_BLACK );
+                eink_epaper_2_9_296_128_text(buffer1,1,160 );
             }
         }
         else

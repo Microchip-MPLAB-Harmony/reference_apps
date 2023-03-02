@@ -52,7 +52,7 @@
  *
  * 	1. I2C
  *  The weather click example on PIC32CM MC Curiosity Nano uses
- *  mikroBUS socket #1 on the Curiosity Nano Base for Click boards
+ *  mikroBUS socket #3 on the Curiosity Nano Base for Click boards
  *  to mount weather click board. The I2C lines from MCU coming to
  *  this socket are from SERCOM0 peripheral on the MCU.
  *
@@ -76,7 +76,7 @@
  *
  * 	1. I2C
  *  The Fan click example on PIC32CM MC Curiosity Nano uses
- *  mikroBUS socket #1 to mount Fan click board.
+ *  mikroBUS socket #2 to mount Fan click board.
  *  The I2C lines from MCU coming to this socket are from
  *  SERCOM0 peripheral.
  *
@@ -95,33 +95,33 @@
 /**	Click routine interfaces/resources Macro Declarations
  *
  * 	1. SPI
- *  The eink bundle click example on PIC32CM MC Curiosity Nano uses
- *  mikroBUS socket #1 to mount EINK bundle click board.
+ *  The eink_epaper_2_9_296_128 click on PIC32CM MC Curiosity Nano uses
+ *  mikroBUS socket #1 to mount EINK click board.
  *  The SPI lines from MCU coming to this socket are from
  *  SERCOM1 peripheral. The SPI is configured to use manual chip select.
  *
  *
  * 2. Timer
- *  The eink bundle click  example on PIC32CM MC Curiosity Nano uses
+ *  The eink_epaper_2_9_296_128 click on PIC32CM MC Curiosity Nano uses
  *  Systick timer module on the MCU to implement the time
  *  requirement weather click routines.
  *
  * 3. PORTs
- *  The eink bundle click uses the following ports pins.
- *  CLICK_EINK_BUNDLE_DC
- *  CLICK_EINK_BUNDLE_RST
- *  CLICK_EINK_BUNDLE_CS
- *  CLICK_EINK_BUNDLE_BSY
- *  The pins are configured using the MHC Pin configurator.
+ *  The eink click uses the following ports pins.
+ *  CLICK_EINK_EPAPER_2_9_296_128_DC
+ *  CLICK_EINK_EPAPER_2_9_296_128_RST
+ *  CLICK_EINK_EPAPER_2_9_296_128_CS
+ *  CLICK_EINK_EPAPER_2_9_296_128_BSY
+ *  The pins are configured using the MCC Pin configurator.
  */
 
 // I2C Definitions
-#define CLICK_EINK_BUNDLE_SPI_Write 			SERCOM1_SPI_Write
-#define CLICK_EINK_BUNDLE_SPI_Read  			SERCOM1_SPI_Read
-#define CLICK_EINK_BUNDLE_SPI_WriteRead			SERCOM1_SPI_WriteRead
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Write 			SERCOM1_SPI_Write
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Read  			SERCOM1_SPI_Read
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_WriteRead			SERCOM1_SPI_WriteRead
 
 // Timer Definitions
-#define CLICK_EINK_BUNDLE_TimerStart 			SYSTICK_TimerStart
-#define CLICK_EINK_BUNDLE_DelayMs				SYSTICK_DelayMs
+#define CLICK_EINK_EPAPER_2_9_296_128_TimerStart 			SYSTICK_TimerStart
+#define CLICK_EINK_EPAPER_2_9_296_128_DelayMs				SYSTICK_DelayMs
 
 #endif // _CLICK_INTERFACES_H

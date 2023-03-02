@@ -1,6 +1,22 @@
+/*******************************************************************************
+    eink_epaper_2_9_296_128_image Header File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    eink_epaper_2_9_296_128_image.h
+
+  Summary:
+    This header file needs to be included in EINK_EPAPER_2_9_296_128_image.c source file
+
+  Description:
+    This file contains the global declaration of array for image which
+    needs to be printed on eink_epaper_2_9_296_128 display
+ *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -23,39 +39,26 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <stdbool.h>
-#include "device.h" /* for ARM CMSIS __BKPT() */
+#ifndef EINK_EPAPER_2_9_296_128_IMAGE_H
+#define EINK_EPAPER_2_9_296_128_IMAGE_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+extern const unsigned char mchp_logo_fan[];
 
 
-/* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 21.2 deviated twice.  Deviation record ID -  H3_MISRAC_2012_R_21_2_DR_1 */
-/* Harmony specific
- * We implement only the syscalls we want over the stubs provided by libpic32c
- */
-extern void _exit(int status);
+#endif // EINK_EPAPER_2_9_296_128_IMAGE_H
 
-void _exit(int status)
-{
-    /* Software breakpoint */
-#ifdef __DEBUG
-    __BKPT(0);
-#endif
 
-    /* halt CPU */
-    while (true)
-    {
-    }
-}
 
-#ifdef __cplusplus
-}
-#endif
 
-/* MISRAC 2012 deviation block end */
+
+
+
+
+
+
+
+
+
+
+
+

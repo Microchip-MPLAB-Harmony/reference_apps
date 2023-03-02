@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00032
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for AC peripheral ========== */
-#define AC_COMPCTRL_MUXNEG_OPAMP                 _UL_(8)    /* OPAMP selection for MUXNEG */
-#define AC_GCLK_ID                               _UL_(33)   /* Index of Generic Clock */
-#define AC_NUM_CMP                               _UL_(2)    /* Number of comparators */
-#define AC_PAIRS                                 _UL_(1)    /* Number of pairs of comparators */
-#define AC_SPEED_LEVELS                          _UL_(2)    /* Number of speed values */
-#define AC_INSTANCE_ID                           _UL_(84)   /* Instance index for AC */
+#define AC_COMPCTRL_MUXNEG_OPAMP                 (8)        /* OPAMP selection for MUXNEG */
+#define AC_GCLK_ID                               (33)       /* Index of Generic Clock */
+#define AC_NUM_CMP                               (2)        /* Number of comparators */
+#define AC_PAIRS                                 (1)        /* Number of pairs of comparators */
+#define AC_SPEED_LEVELS                          (2)        /* Number of speed values */
+#define AC_INSTANCE_ID                           (84)       /* Instance index for AC */
 
 #endif /* _PIC32CMMC00_AC_INSTANCE_ */

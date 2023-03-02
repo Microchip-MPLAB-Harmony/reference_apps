@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00032
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,14 +26,14 @@
 
 
 /* ========== Instance Parameter definitions for TC4 peripheral ========== */
-#define TC4_CC_NUM                               _UL_(2)    
-#define TC4_DMAC_ID_OVF                          _UL_(33)   /* Indexes of DMA Overflow trigger */
-#define TC4_DMAC_ID_MC0                          _UL_(34)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TC4_DMAC_ID_MC1                          _UL_(35)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TC4_EXT                                  _UL_(0)    
-#define TC4_GCLK_ID                              _UL_(27)   /* Index of Generic Clock */
-#define TC4_MASTER_SLAVE_MODE                    _UL_(0)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
-#define TC4_OW_NUM                               _UL_(2)    /* Number of Output Waveforms */
-#define TC4_INSTANCE_ID                          _UL_(80)   /* Instance index for TC4 */
+#define TC4_CC_NUM                               (2)        
+#define TC4_DMAC_ID_OVF                          (33)       /* Indexes of DMA Overflow trigger */
+#define TC4_DMAC_ID_MC0                          (34)       /* Indexes of DMA Match/Compare 0 trigger */
+#define TC4_DMAC_ID_MC1                          (35)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TC4_EXT                                  (0)        
+#define TC4_GCLK_ID                              (27)       /* Index of Generic Clock */
+#define TC4_MASTER_SLAVE_MODE                    (0)        /* TC type 0 : NA, 1 : Master, 2 : Slave */
+#define TC4_OW_NUM                               (2)        /* Number of Output Waveforms */
+#define TC4_INSTANCE_ID                          (80)       /* Instance index for TC4 */
 
 #endif /* _PIC32CMMC00_TC4_INSTANCE_ */

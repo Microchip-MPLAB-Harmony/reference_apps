@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
+                <sourceRootElem>../../../Users/I72399/OneDrive - Microchip Technology Inc/Desktop/fitness_tracker/firmware/src/click_routines/eink_epaper_2_9_296_128</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
