@@ -105,7 +105,7 @@ leResult leApplication_MediaOpenRequest(leStream* stream)
     // in case of error...
     if (error == true)
     {
-        _APP_GFX_CheckMedia();
+        Nop();
     }
 
     leStream_DataReady(stream);
@@ -151,8 +151,6 @@ leResult leApplication_MediaReadRequest(leStream* stream, // stream reader
     {
         // fill the data with 0
         memset(destBuffer, 0x00, readSize);
-
-        _APP_GFX_CheckMedia();
     }
 
     // inform the stream is ready to be used
@@ -165,7 +163,7 @@ leResult leApplication_MediaReadRequest(leStream* stream, // stream reader
 // Streaming implementation of Legato Application - close Streaming
 void leApplication_MediaCloseRequest(leStream* stream)
 {
-    _APP_GFX_CheckMedia();
+    return;
 }
 
 // Callback functions
@@ -189,17 +187,29 @@ void APP_GFX_Initialize()
     // put the state machine in its init phase
     appGfxData.state = APP_GFX_STATE_INIT;
 
-    // Image file index into the file list.
-    appGfxData.currentAppGfxFileIdx = APP_FileHandler_GetMaxNumberOfFiles();
+    APP_GFX_Data_Reset();
 
     legato_showScreen(screenID_Start_Screen);
 }
+
 void APP_GFX_Tasks()
 {
     // a tick to use for the delays to get and load a new state
     static uint32_t delayTick = 0;
 
     leResult setResult;
+    
+    // check for the media mount status
+    // if media is unmounted and in streaming screen, 
+    // switch to start screen
+    if (APP_FileHandler_IsMediaMounted() == false
+        && legato_getCurrentScreen() == screenID_SlideShow_Screen) 
+    {
+        APP_GFX_Data_Reset();
+        
+        // change to the start of screen
+        appGfxData.state = APP_GFX_STATE_CREATE_START_SCREEN;
+    }
 
     switch (appGfxData.state)
     {
@@ -227,7 +237,7 @@ void APP_GFX_Tasks()
 
         case APP_GFX_STATE_START_SCREEN:
         {
-            // wait for the screen to be created
+            // make sure the start screen is created
             if (legato_getCurrentScreen() != screenID_Start_Screen)
             {
                 appGfxData.state = APP_GFX_STATE_CREATE_START_SCREEN;
@@ -290,6 +300,7 @@ void APP_GFX_Tasks()
                 SYS_DEBUG_PRINT(SYS_ERROR_ERROR, "!!! ERROR: Failed show the Start Screen Message");
             }
 
+            // if the streaming can start, move on
             if (APP_GFX_CanStream() == true)
             {
                 appGfxData.state = APP_GFX_STATE_SHOW_FULL_SCREEN_BUTTON;
@@ -436,14 +447,15 @@ void APP_GFX_Tasks()
 // Section: Application Local Functions
 // *****************************************************************************
 // *****************************************************************************
-// check media and goes to start screen in case cannot stream
-static void _APP_GFX_CheckMedia()
+
+// reset data values to default
+static void APP_GFX_Data_Reset()
 {
-    if (APP_FileHandler_IsMediaMounted() == false)
-    {
-        // change to the start of screen
-        appGfxData.state = APP_GFX_STATE_CREATE_START_SCREEN;
-    }
+    // Image file index into the file list.
+    appGfxData.currentAppGfxFileIdx = APP_FileHandler_GetMaxNumberOfFiles();
+    
+    // clear object data
+    APP_GFX_ImgObjUnload();
 
     return;
 }

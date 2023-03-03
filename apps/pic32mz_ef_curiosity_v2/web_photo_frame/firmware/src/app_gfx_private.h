@@ -177,6 +177,35 @@ typedef struct
 
 /*******************************************************************************
   Function:
+    void APP_GFX_Data_Reset ( void )
+
+  Summary:
+    Resets appGfxData structure to default values
+
+  Description:
+    Resets appGfxData structure to default values
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_GFX_Data_Reset();
+    </code>
+
+  Remarks:
+    None.
+*/// 
+static void APP_GFX_Data_Reset(void);
+
+/*******************************************************************************
+  Function:
     void APP_GFX_GetStartMessageString ( void )
 
   Summary:
@@ -430,36 +459,6 @@ static void APP_GFX_Set_ImageWidgetPosition(leImageWidget* imageWidget);
     None.
 */// 
 static bool APP_GFX_CanStream();
-
-/*******************************************************************************
-  Function:
-    void _APP_GFX_CheckMedia( void )
-
-  Summary:
-    Sanity check during streaming
-
-  Description:
-    Pulls the media status and switches the 
-    application state machine to the start screen if media is removed
-  
-  Precondition:
-    None.
-
-  Parameters:
-    None.
-
-  Returns:
-    None.
-
-  Example:
-    <code>
-    _APP_GFX_CheckMedia();
-    </code>
-
-  Remarks:
-    None.
-*/// 
-static void _APP_GFX_CheckMedia(void);
 
 #ifdef	__cplusplus
 }
