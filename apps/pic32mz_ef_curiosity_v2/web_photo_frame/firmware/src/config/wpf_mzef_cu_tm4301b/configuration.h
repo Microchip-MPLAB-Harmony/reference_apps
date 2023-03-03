@@ -410,7 +410,6 @@ extern "C" {
 #define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX0         "full"
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0            \
                                                     TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
-                                                    TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
                                                     TCPIP_NETWORK_CONFIG_IP_STATIC
                                                     
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0         DRV_ETHMAC_PIC32MACObject

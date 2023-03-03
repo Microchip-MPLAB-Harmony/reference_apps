@@ -73,6 +73,7 @@ void _SSD1963_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_SSD1963_Update();
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -144,6 +145,7 @@ void _LEGATO_Tasks(  void *pvParameters  )
     while(1)
     {
         Legato_Tasks();
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 

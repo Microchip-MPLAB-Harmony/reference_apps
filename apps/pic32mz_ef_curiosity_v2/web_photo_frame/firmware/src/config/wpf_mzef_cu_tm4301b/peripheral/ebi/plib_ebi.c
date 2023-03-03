@@ -97,7 +97,7 @@ void EBI_Initialize (void)
 	/* PAGEMODE = false	*/	
 	/* PAGESIZE = 0		*/	
 	/* RDYMODE  = false	*/		
-	EBISMT1 = 0x1c2d4b;	
+	EBISMT1 = 0x41c2d4b;	
 
 	/* Setup EBISMT2	*/
 	/* TRC 	= 11		*/
@@ -109,7 +109,7 @@ void EBI_Initialize (void)
 	/* PAGEMODE = false	*/	
 	/* PAGESIZE = 0		*/	
 	/* RDYMODE  = false	*/		
-	EBISMT2 = 0x1c2d4b;	
+	EBISMT2 = 0x41c2d4b;	
 	
 	/* EBIFTRPD*/
 	EBIFTRPD = 0xc8;
