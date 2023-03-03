@@ -23927,7 +23927,7 @@
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\definitions.h</file>
-         <hash>8a2205677be29094a40e0963eaa1a427448dbb85e31b219041b1e525de75af20</hash>
+         <hash>332ec1436b90600aa10815b6900be0c0fb86f34ab7ec85e06d1390aff0d4efa3</hash>
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\system\time\src\sys_time_local.h</file>
@@ -24079,7 +24079,7 @@
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\gfx\legato\legato_config.h</file>
-         <hash>18eabd7a96987a5508c5cd5d4400fb1d59c58a28fd6079d9f503563424a9d32e</hash>
+         <hash>c437be313cb9c4d64d1bb3dab5f8e25ad9d69ea21782c3e2d4f1702e94d04c68</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha512_sam6156.c</file>
@@ -25663,7 +25663,7 @@
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\initialization.c</file>
-         <hash>06c7aec6f6fdd74c6625fa929ad697f05c914e3355cff58461ca63c4d311277f</hash>
+         <hash>b9d20b8374c51a64ce14c4f60d5513bca0976ace35bbda88a7552ee9fa69d8b6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_SelfTest_pb.h</file>
@@ -25691,7 +25691,7 @@
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\configuration.h</file>
-         <hash>2e55482992de6c441227f1fcb14c91dc8f1e735f1dee11f3359084c45745838c</hash>
+         <hash>8a848cfff22ca4907552d4a629000b1b3c9b4ede1251bd72da43aa1778705a59</hash>
       </entry>
       <entry>
          <file>..\src\config\wpf_mzef_cu_tm4301b\gfx\legato\core\legato_scheme.h</file>

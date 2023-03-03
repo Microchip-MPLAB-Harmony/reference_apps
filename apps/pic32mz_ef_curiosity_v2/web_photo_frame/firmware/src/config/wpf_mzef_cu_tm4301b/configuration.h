@@ -165,6 +165,11 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+/* I2C Driver Instance 0 Configuration Options */
+#define DRV_I2C_INDEX_0                       0
+#define DRV_I2C_CLIENTS_NUMBER_IDX0           1
+#define DRV_I2C_CLOCK_SPEED_IDX0              50000
+
 /* SDSPI Driver Instance 0 Configuration Options */
 #define DRV_SDSPI_INDEX_0                       0
 #define DRV_SDSPI_CLIENTS_NUMBER_IDX0           1
@@ -180,11 +185,6 @@ extern "C" {
 /* SDSPI Driver Instance 0 RTOS Configurations*/
 #define DRV_SDSPI_STACK_SIZE_IDX0               256
 #define DRV_SDSPI_PRIORITY_IDX0                     1
-
-/* I2C Driver Instance 0 Configuration Options */
-#define DRV_I2C_INDEX_0                       0
-#define DRV_I2C_CLIENTS_NUMBER_IDX0           1
-#define DRV_I2C_CLOCK_SPEED_IDX0              50000
 
 /* Memory Driver Global Configuration Options */
 #define DRV_MEMORY_INSTANCES_NUMBER          1

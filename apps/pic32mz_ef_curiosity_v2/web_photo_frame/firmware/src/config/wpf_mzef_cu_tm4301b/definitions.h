@@ -82,8 +82,8 @@
 #include "peripheral/dmac/plib_dmac.h"
 #include "driver/miim/drv_miim.h"
 #include "wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h"
-#include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "system/input/sys_input.h"
+#include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "net_pres/pres/net_pres.h"
 #include "net_pres/pres/net_pres_encryptionproviderapi.h"
 #include "net_pres/pres/net_pres_transportapi.h"
@@ -226,11 +226,11 @@ Remarks:
 
 typedef struct
 {
-    /* SDSPI0 Driver Object */
-    SYS_MODULE_OBJ drvSDSPI0;
-
     /* I2C0 Driver Object */
     SYS_MODULE_OBJ drvI2C0;
+
+    /* SDSPI0 Driver Object */
+    SYS_MODULE_OBJ drvSDSPI0;
 
     SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  drvMemory0;

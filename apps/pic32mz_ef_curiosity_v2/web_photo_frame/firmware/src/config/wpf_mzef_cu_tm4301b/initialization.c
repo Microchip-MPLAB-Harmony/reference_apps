@@ -119,6 +119,56 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+// <editor-fold defaultstate="collapsed" desc="DRV_I2C Instance 0 Initialization Data">
+
+/* I2C Client Objects Pool */
+static DRV_I2C_CLIENT_OBJ drvI2C0ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX0];
+
+/* I2C PLib Interface Initialization */
+const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
+
+    /* I2C PLib Transfer Read Add function */
+    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
+
+    /* I2C PLib Transfer Write Add function */
+    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
+
+
+    /* I2C PLib Transfer Write Read Add function */
+    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C2_WriteRead,
+
+    /*I2C PLib Transfer Abort function */
+    .transferAbort = (DRV_I2C_PLIB_TRANSFER_ABORT)I2C2_TransferAbort,
+
+    /* I2C PLib Transfer Status function */
+    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C2_ErrorGet,
+
+    /* I2C PLib Transfer Setup function */
+    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C2_TransferSetup,
+
+    /* I2C PLib Callback Register */
+    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C2_CallbackRegister,
+};
+
+
+/* I2C Driver Initialization Data */
+const DRV_I2C_INIT drvI2C0InitData =
+{
+    /* I2C PLib API */
+    .i2cPlib = &drvI2C0PLibAPI,
+
+    /* I2C Number of clients */
+    .numClients = DRV_I2C_CLIENTS_NUMBER_IDX0,
+
+    /* I2C Client Objects Pool */
+    .clientObjPool = (uintptr_t)&drvI2C0ClientObjPool[0],
+
+    /* I2C Clock Speed */
+    .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX0,
+};
+
+// </editor-fold>
+
 // <editor-fold defaultstate="collapsed" desc="DRV_SDSPI Instance 0 Initialization Data">
 
 /* SDSPI Client Objects Pool */
@@ -191,56 +241,6 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
 
     /* SPI Receive Register */
     .rxAddress              = (void *)&(SPI1BUF),
-};
-
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc="DRV_I2C Instance 0 Initialization Data">
-
-/* I2C Client Objects Pool */
-static DRV_I2C_CLIENT_OBJ drvI2C0ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX0];
-
-/* I2C PLib Interface Initialization */
-const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
-
-    /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
-
-    /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
-
-
-    /* I2C PLib Transfer Write Read Add function */
-    .writeRead = (DRV_I2C_PLIB_WRITE_READ)I2C2_WriteRead,
-
-    /*I2C PLib Transfer Abort function */
-    .transferAbort = (DRV_I2C_PLIB_TRANSFER_ABORT)I2C2_TransferAbort,
-
-    /* I2C PLib Transfer Status function */
-    .errorGet = (DRV_I2C_PLIB_ERROR_GET)I2C2_ErrorGet,
-
-    /* I2C PLib Transfer Setup function */
-    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)I2C2_TransferSetup,
-
-    /* I2C PLib Callback Register */
-    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)I2C2_CallbackRegister,
-};
-
-
-/* I2C Driver Initialization Data */
-const DRV_I2C_INIT drvI2C0InitData =
-{
-    /* I2C PLib API */
-    .i2cPlib = &drvI2C0PLibAPI,
-
-    /* I2C Number of clients */
-    .numClients = DRV_I2C_CLIENTS_NUMBER_IDX0,
-
-    /* I2C Client Objects Pool */
-    .clientObjPool = (uintptr_t)&drvI2C0ClientObjPool[0],
-
-    /* I2C Clock Speed */
-    .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX0,
 };
 
 // </editor-fold>
@@ -667,29 +667,6 @@ static const NET_PRES_INIT_DATA netPresInitData =
   
  
 
-/*** KSZ8061 PHY Driver Time-Out Initialization Data ***/
-DRV_ETHPHY_TMO drvksz8061Tmo = 
-{
-    .resetTmo = DRV_ETHPHY_KSZ8061_RESET_CLR_TMO,
-    .aNegDoneTmo = DRV_ETHPHY_KSZ8061_NEG_DONE_TMO,
-    .aNegInitTmo = DRV_ETHPHY_KSZ8061_NEG_INIT_TMO,    
-};
-
-/*** ETH PHY Initialization Data ***/
-const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8061 =
-{    
-    .ethphyId               = DRV_KSZ8061_PHY_PERIPHERAL_ID,
-    .phyAddress             = DRV_KSZ8061_PHY_ADDRESS,
-    .phyFlags               = DRV_KSZ8061_PHY_CONFIG_FLAGS,
-    .pPhyObject             = &DRV_ETHPHY_OBJECT_KSZ8061,
-    .resetFunction          = 0,
-    .ethphyTmo              = &drvksz8061Tmo,
-    .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
-    .pMiimInit              = &drvMiimInitData_0,
-    .miimIndex              = 0,
-};
-
-
 // <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
 const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
@@ -800,6 +777,29 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 
 
 // </editor-fold>
+
+/*** KSZ8061 PHY Driver Time-Out Initialization Data ***/
+DRV_ETHPHY_TMO drvksz8061Tmo = 
+{
+    .resetTmo = DRV_ETHPHY_KSZ8061_RESET_CLR_TMO,
+    .aNegDoneTmo = DRV_ETHPHY_KSZ8061_NEG_DONE_TMO,
+    .aNegInitTmo = DRV_ETHPHY_KSZ8061_NEG_INIT_TMO,    
+};
+
+/*** ETH PHY Initialization Data ***/
+const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8061 =
+{    
+    .ethphyId               = DRV_KSZ8061_PHY_PERIPHERAL_ID,
+    .phyAddress             = DRV_KSZ8061_PHY_ADDRESS,
+    .phyFlags               = DRV_KSZ8061_PHY_CONFIG_FLAGS,
+    .pPhyObject             = &DRV_ETHPHY_OBJECT_KSZ8061,
+    .resetFunction          = 0,
+    .ethphyTmo              = &drvksz8061Tmo,
+    .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
+    .pMiimInit              = &drvMiimInitData_0,
+    .miimIndex              = 0,
+};
+
 
 
 
@@ -931,11 +931,11 @@ void SYS_Initialize ( void* data )
     I2C2_Initialize();
 
 
+    /* Initialize I2C0 Driver Instance */
+    sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
     /* Initialize SDSPI0 Driver Instance */
     sysObj.drvSDSPI0 = DRV_SDSPI_Initialize(DRV_SDSPI_INDEX_0, (SYS_MODULE_INIT *)&drvSDSPI0InitData);
 
-    /* Initialize I2C0 Driver Instance */
-    sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
     sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
     DRV_SSD1963_Initialize();
