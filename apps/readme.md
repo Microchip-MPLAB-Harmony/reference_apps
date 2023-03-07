@@ -6,7 +6,7 @@ nav_order: 2
 ---
 # Reference Application Repository
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on Microchip 32-bit SAM and PIC development boards/kits.   
+This repository contains the MPLAB® Harmony 3 reference applications developed on Microchip 32-bit SAM and PIC development boards/kits.
 
 ## Reference Applications
 
@@ -37,6 +37,7 @@ The following reference applications are provided to evaluate solutions on 32-bi
 |  <img src = "./sam_l11_xpro/image.jpg">  | [SAM L11 Xplained Pro Evaluation Kit](./sam_l11_xpro/readme.md) |
 |  <img src = "./sam_l22_xpro/image.jpg">  | [SAM L22 Xplained Pro Evaluation Kit](./sam_l22_xpro/readme.md) |
 |  <img src = "./sam_d21_iot_v2/image.jpg">  | [SAM D21 IoT v2 Development Board](./sam_d21_iot_v2/readme.md) |
+|  <img src = "./pic32mz_da_rgdb/image.jpg">  | [PIC32MZ DA Radial Graphics Development Board (RGDB)](./pic32mz_da_rgdb/readme.md) |
 
 ### **Note:**
 The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
