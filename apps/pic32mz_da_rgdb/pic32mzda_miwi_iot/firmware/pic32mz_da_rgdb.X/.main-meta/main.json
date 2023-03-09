@@ -58,7 +58,9 @@
       "I2C",
 			"GPU",
 			"I2C",
-			"Graphics Controller"
+			"Graphics Controller",
+			"IoT",
+			"MiWi"
 		],
 		"additionalData": {
 			"longDescription": {
