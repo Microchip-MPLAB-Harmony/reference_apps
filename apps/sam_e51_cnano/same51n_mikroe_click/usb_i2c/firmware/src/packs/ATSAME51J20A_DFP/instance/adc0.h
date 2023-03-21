@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME51N20A
+/*
+ * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,24 +20,24 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:24:58Z */
+/* file generated from device description version 2022-02-14T14:27:15Z */
 #ifndef _SAME51_ADC0_INSTANCE_
 #define _SAME51_ADC0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for ADC0 peripheral ========== */
-#define ADC0_BANDGAP                             _UL_(27)   /* MUXPOS value to select BANDGAP */
-#define ADC0_CTAT                                _UL_(29)   /* MUXPOS value to select CTAT */
-#define ADC0_DMAC_ID_RESRDY                      _UL_(68)   /* index of DMA RESRDY trigger */
-#define ADC0_DMAC_ID_SEQ                         _UL_(69)   /* Index of DMA SEQ trigger */
-#define ADC0_EXTCHANNEL_MSB                      _UL_(15)   /* Number of external channels */
-#define ADC0_GCLK_ID                             _UL_(40)   /* index of Generic Clock */
-#define ADC0_MASTER_SLAVE_MODE                   _UL_(1)    /* ADC Master/Slave Mode */
-#define ADC0_OPAMP2                              _UL_(0)    /* MUXPOS value to select OPAMP2 */
-#define ADC0_OPAMP01                             _UL_(0)    /* MUXPOS value to select OPAMP01 */
-#define ADC0_PTAT                                _UL_(28)   /* MUXPOS value to select PTAT */
-#define ADC0_TOUCH_IMPLEMENTED                   _UL_(1)    /* TOUCH implemented or not */
-#define ADC0_TOUCH_LINES_NUM                     _UL_(32)   /* Number of touch lines */
-#define ADC0_INSTANCE_ID                         _UL_(103)  /* Instance index for ADC0 */
+#define ADC0_BANDGAP                             (27)       /* MUXPOS value to select BANDGAP */
+#define ADC0_CTAT                                (29)       /* MUXPOS value to select CTAT */
+#define ADC0_DMAC_ID_RESRDY                      (68)       /* index of DMA RESRDY trigger */
+#define ADC0_DMAC_ID_SEQ                         (69)       /* Index of DMA SEQ trigger */
+#define ADC0_EXTCHANNEL_MSB                      (15)       /* Number of external channels */
+#define ADC0_GCLK_ID                             (40)       /* index of Generic Clock */
+#define ADC0_MASTER_SLAVE_MODE                   (1)        /* ADC Master/Slave Mode */
+#define ADC0_OPAMP2                              (0)        /* MUXPOS value to select OPAMP2 */
+#define ADC0_OPAMP01                             (0)        /* MUXPOS value to select OPAMP01 */
+#define ADC0_PTAT                                (28)       /* MUXPOS value to select PTAT */
+#define ADC0_TOUCH_IMPLEMENTED                   (1)        /* TOUCH implemented or not */
+#define ADC0_TOUCH_LINES_NUM                     (32)       /* Number of touch lines */
+#define ADC0_INSTANCE_ID                         (103)      /* Instance index for ADC0 */
 
 #endif /* _SAME51_ADC0_INSTANCE_ */

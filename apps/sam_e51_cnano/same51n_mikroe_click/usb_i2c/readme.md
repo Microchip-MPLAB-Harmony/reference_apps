@@ -18,7 +18,7 @@ nav_order: 18
 
 > This example uses the I2C peripheral library in slave mode and emulates an EEPROM of 512 bytes. The emulated EEPROM consists of two pages, each of size 256 bytes. The I2C slave expects two bytes of memory address from the I2C master (USB I2C Click) and the memory address can range from 0x00 to 0x1FF. The following operation can be made on the I2C slave (emulated EEPROM).
 
-> **Byte Write:** The I2C master sends the slave address, followed by two bytes of the memory address. The slave provides the data present at the requested memory address.
+> **Byte Write:** The I2C master sends the slave address, followed by two bytes of the memory address. The slave writes the provided data at the given memory address.
 
 > **Page Write:** A page write is initiated the same way as a byte write, but the I2C master can write up to 256 bytes (1 page). If the I2C master sends more than 256 bytes to the I2C slave, the memory address will “roll over,” and previous data will be overwritten. During writing, the address “rollover” is from the last byte of the current page to the first byte.
 
@@ -90,9 +90,9 @@ The pre-built hex file can be programmed by following the below steps.
 
     After the Terminal is configured, issue the first command on the list by pressing the button Send on the right side. This command accesses the I²C device address 0x54, which is the Slave address selected for this example, and reads the 512 bytes data. This is the emulated EEPROM buffer on which the read and write operations are executed.  
 
-		<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read512.png">  
+	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_read512.png">  
 
-	- **Step 2: Write 8 bytes to I²C Slave**  
+- **Step 2: Write 8 bytes to I²C Slave**  
 	<img src = "images/mcp2221_i2c_smbus_terminal_imported_cmd_write8.png">
 
 - **Step 3: Read 8 bytes from I²C Slave**  
@@ -207,5 +207,6 @@ You could use this demonstration as an example to add USB I2C functionality to y
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Updated the USB I2C click example 
 - v1.5.0 - Removed MHC support, regenerated and tested application
 - v1.4.0 - Released demo application

@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME51N20A
+/*
+ * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,17 +20,17 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:24:58Z */
+/* file generated from device description version 2022-02-14T14:27:15Z */
 #ifndef _SAME51_SDHC0_INSTANCE_
 #define _SAME51_SDHC0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for SDHC0 peripheral ========== */
-#define SDHC0_CARD_DATA_SIZE                     _UL_(4)    
-#define SDHC0_GCLK_ID                            _UL_(45)   
-#define SDHC0_GCLK_ID_SLOW                       _UL_(3)    
-#define SDHC0_NB_OF_DEVICES                      _UL_(1)    
-#define SDHC0_NB_REG_PVR                         _UL_(8)    
-#define SDHC0_NB_REG_RR                          _UL_(4)    
+#define SDHC0_CARD_DATA_SIZE                     (4)        
+#define SDHC0_GCLK_ID                            (45)       
+#define SDHC0_GCLK_ID_SLOW                       (3)        
+#define SDHC0_NB_OF_DEVICES                      (1)        
+#define SDHC0_NB_REG_PVR                         (8)        
+#define SDHC0_NB_REG_RR                          (4)        
 
 #endif /* _SAME51_SDHC0_INSTANCE_ */

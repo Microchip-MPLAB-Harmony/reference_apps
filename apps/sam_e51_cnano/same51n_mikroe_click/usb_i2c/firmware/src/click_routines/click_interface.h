@@ -68,5 +68,6 @@
 #define CLICK_USB_I2C_WriteByte                     SERCOM2_I2C_WriteByte
 #define CLICK_USB_I2C_TransferDirGet                SERCOM2_I2C_TransferDirGet
 #define CLICK_USB_I2C_IsBusy                        SERCOM2_I2C_IsBusy
+#define CLICK_USB_I2C_ErrorGet                      SERCOM2_I2C_ErrorGet
 
 #endif // _CLICK_INTERFACE_H

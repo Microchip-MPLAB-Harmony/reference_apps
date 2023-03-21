@@ -53,39 +53,53 @@
 #include <xc.h>
 #include <stdint.h>
 
-#define USB_I2C_EMULATED_EEPROM_START_ADDR             0x00
-#define USB_I2C_EMULATED_EEPROM_PAGE_SIZE_BYTES        256
-#define USB_I2C_EMULATED_EEPROM_PAGE_SIZE_MASK         0xFF
-#define USB_I2C_EMULATED_EEPROM_SIZE_BYTES             512
-
 typedef enum
 {
     USB_I2C_CMD_WRITE,
     USB_I2C_CMD_IDLE,
-}USB_I2C_CMD;
+} USB_I2C_CMD;
 
-typedef struct
+typedef enum
 {
-    /* writeAddrPtr - write address */
-    uint16_t                    writeAddrPtr;
-    /* readAddrPtr - read address */
-    uint16_t                    readAddrPtr;
-    /* addrIndex - used to copy 2 bytes of emulated EEPROM memory address */
-    uint8_t                     addrIndex;
-    /* wrBuffer - holds the incoming data from the I2C master */
-    uint8_t                     wrBuffer[USB_I2C_EMULATED_EEPROM_PAGE_SIZE_BYTES];
-    /* wrBufferIndex - Index into the wrBuffer[] */
-    uint16_t                    wrBufferIndex;
-    /* wrAddr - indicates the starting address of the emulated EEPROM memory to write to */
-    volatile uint16_t           wrAddr;
-    /* nWrBytes - indicates the number of bytes to write to emulated EEPROM buffer */
-    volatile uint16_t           nWrBytes;
-    /* internalWriteInProgress - indicates that emulated EEPROM is busy with internal writes */
-    bool                        internalWriteInProgress;
-}USB_I2C_EMULATED_EEPROM_DATA;
+    /* I2C Master is writing to slave */
+    USB_I2C_SLAVE_TRANSFER_DIR_WRITE = 0,
 
-USB_I2C_CMD USB_I2C_GetCommand(void);
-void USB_I2C_Initialize(void);
-void USB_I2C_EmulatedEepromWrite(void);
+    /* I2C Master is reading from slave */
+    USB_I2C_SLAVE_TRANSFER_DIR_READ  = 1,
+} USB_I2C_SLAVE_TRANSFER_DIR;
+
+typedef enum
+{
+    USB_I2C_SLAVE_TRANSFER_EVENT_NONE = 0,
+    USB_I2C_SLAVE_TRANSFER_EVENT_ADDR_MATCH,
+
+    /* Data sent by I2C Master is available */
+    USB_I2C_SLAVE_TRANSFER_EVENT_RX_READY,
+
+    /* I2C slave can respond to data read request from I2C Master */
+    USB_I2C_SLAVE_TRANSFER_EVENT_TX_READY,
+
+    USB_I2C_SLAVE_TRANSFER_EVENT_STOP_BIT_RECEIVED,
+    USB_I2C_SLAVE_TRANSFER_EVENT_ERROR,
+} USB_I2C_SLAVE_TRANSFER_EVENT;
+
+// *****************************************************************************
+/* USB I2C Callback
+
+   Summary:
+    USB I2C Callback Function Pointer.
+
+   Description:
+    This data type defines the USB I2C Callback Function Pointer.
+
+   Remarks:
+    None.
+*/
+typedef bool (*USB_I2C_SLAVE_CALLBACK) ( USB_I2C_SLAVE_TRANSFER_EVENT event, uintptr_t contextHandle );
+
+void USB_I2C_CallbackRegister(USB_I2C_SLAVE_CALLBACK callback, uintptr_t contextHandle);
+void USB_I2C_MasterWrite(uint8_t wrByte);
+uint8_t USB_I2C_MasterRead(void);
+USB_I2C_SLAVE_TRANSFER_DIR USB_I2C_TransferDirGet(void);
 
 #endif // _USB_I2C_H

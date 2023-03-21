@@ -139,7 +139,7 @@ uint8_t SERCOM2_I2C_ReadByte(void)
         /* Do nothing */
     }
 
-    return SERCOM2_REGS->I2CS.SERCOM_DATA;
+    return (uint8_t)SERCOM2_REGS->I2CS.SERCOM_DATA;
 }
 
 void SERCOM2_I2C_WriteByte(uint8_t wrByte)
@@ -156,7 +156,7 @@ void SERCOM2_I2C_WriteByte(uint8_t wrByte)
 SERCOM_I2C_SLAVE_ERROR SERCOM2_I2C_ErrorGet(void)
 {
     SERCOM_I2C_SLAVE_ERROR error;
-    error = (SERCOM2_REGS->I2CS.SERCOM_STATUS & SERCOM_I2C_SLAVE_ERROR_ALL);
+    error = ((uint32_t)SERCOM2_REGS->I2CS.SERCOM_STATUS & SERCOM_I2C_SLAVE_ERROR_ALL);
 
     /* Clear all error bits */
     SERCOM2_REGS->I2CS.SERCOM_STATUS = (uint16_t)SERCOM_I2C_SLAVE_ERROR_ALL;
