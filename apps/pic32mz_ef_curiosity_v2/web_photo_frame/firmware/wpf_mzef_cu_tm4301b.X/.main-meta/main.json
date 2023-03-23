@@ -1,0 +1,106 @@
+{
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.3.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_web_photo_frame",
+      "version":"1.5.0",
+      "displayName":"Web Photo Frame Application",
+      "projectName":"web_photo_frame_pic32mz_ef_curiosity_v2",
+      "shortDescription":"Web Photo Frame Application on Curiosity PIC32MZ EF 2.0 Development Board + High-Performance WVGA LCD Display Module",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=6.05"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=4.2.1"
+         }
+      ],
+      "dfp":{
+         "name":"PIC32MZ-EF_DFP",
+         "semverRange":"^1.3.58"
+      },
+      "configurator":{
+         "name":"MCC",
+         "semverRange":">=5.3.0"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"PIC32MZ2048EFM144",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "Curiosity PIC32MZ EF 2.0 Development Board"
+         ],
+         [
+            "Development Board",
+            "KSZ8061 RMII Ethernet Daughter Board"
+         ],
+		 [
+			"Display Adapter",
+			"SSD1963 LCD Controller Graphics Card"
+		 ],
+		 [
+			"TFT Display",
+			"High-Performance 4.3'' WQVGA Display Module with maXTouch®"
+		 ],
+		 [
+			"Click Board",
+			"microSD Click"
+		 ],
+		 [
+			"Click Board",
+			"USB I2C Click"
+		 ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "Core Timer",
+	     "EBI",
+		 "I2C",
+		 "NVM",
+         "SPI",
+		 "UART"
+      ],
+      "keywords":[
+         "MHC",
+         "MCC",
+         "Harmony",
+         "TMR",
+         "Display",
+         "Curiosity",
+         "Legato",
+         "Graphics",
+		 "Ethernet",
+         "maXTouch",
+         "File System",
+         "Curiosity",
+         "Click Board",
+         "Driver"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
+}
