@@ -61,7 +61,7 @@ nav_order: 8
 - Connect and Ethernet Cable between the KSZ8061 Ethernet Board and your Router / PC
 - Connect a miniUSBcable between the USB I2C Click board and one of your PC USB ports
 
-<img src="images/web_photo_frame_setup.png" align="middle">
+<img src="images/web_photo_frame_setup.png" align="middle" />
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.
@@ -82,18 +82,22 @@ The pre-built hex file can be programmed by following the below steps.
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
-
 ## Running the Demo:
+
 ### Preparation
 - Take a micro SD Card and copy the resource files and folders provided into the **web_photo_frame\sdcard_files** to the SD Card
 - Plug the SD Card into the mikroSD Click board
 - Plug an Ethernet Cable into the Ethernet Adapter and a Router in the same network with the PC, or directly to the PC. If plugged directly to the PC, the Ethernet Adapter on the PC should be configured for Static IP with the IP address 192.168.100.2 and Net Mask 255.255.255.0
 - Open a terminal like Tera Term and connect it to the COM port assigned to the USB I2C click
 - Reset the board to start.
+
 ### Serial Terminal
 - Observe the output on the Terminal
 - Observe the IP address of the board, needed for the Web Browser
-<img src="images/terminal_output.png">
+
+<img src="images/terminal_output.png" />
+
+
 ### Graphics Display
 - After the board powers up, a splash screen should appear on the graphics display
 - Wait for the text to say **Touch Screen To Start**
@@ -103,21 +107,23 @@ The pre-built hex file can be programmed by following the below steps.
 - Touch the screen, the images should load one after the other at about 3-5 seconds interval
 - Observe the terminal, it will output what file will be displayed.
 
-<img src="images/terminal_output_app_gfx.png">
+<img src="images/terminal_output_app_gfx.png" />
 
 - In the terminal, an IP address should be provided in the case the Ethernet Cable is pluged, see above screenshot
 - Open a browser on the PC and browse to the provided IP address in the Terminal
 - The followin Web Page should load
 
-<img src="images/web_browser_output.png">
+<img src="images/web_browser_output.png" />
 
 - Use the provided buttons to navigate the images.
 - Observe the terminal, it will output what file will be displayed.
 
 <img src="images/terminal_output_app_http.png">
 
+
 ### Observations
 - The image display is not synchronized between the Graphics and the HTTP application, each has its own cursor.
+
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
@@ -129,6 +135,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 		- [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
+
 
 ## Revision:
 - v1.6.0 released demo application
