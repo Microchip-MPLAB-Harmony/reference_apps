@@ -9,7 +9,7 @@ nav_order: 8
 <img src="images/microchip_mplab_harmony_logo_small.png">
 
 # Web Photo Frame Application on Curiosity PIC32MZ EF 2.0 Development Board
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/webphotoframe.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/web_photo_frame.zip" > Download </a> </h2>
 
 ----
 
@@ -43,10 +43,10 @@ nav_order: 8
 - Refer [Project Manifest](./firmware/src/config/wpf_mzef_cu_tm4301b/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/wpf_mzef_cu_tm4301b*  
 
 ## Development Tools
-- [MPLAB® X IDE v6.05](https://www.microchip.com/mplab/mplab-x-ide)
-- [MPLAB® XC32 C/C++ Compiler v4.21](https://www.microchip.com/mplab/compilers)
+- [MPLAB® X IDE v6.05](https://www.microchip.com/mplabx)
+- [MPLAB® XC32 C/C++ Compiler v4.21](https://www.microchip.com/XC32)
 - MPLAB® X IDE plug-ins:
-  - MPLAB Code Configurator (MCC) v5.5.0
+  - [MPLAB Code Configurator (MCC) v5.3.0](https://www.microchip.com/mcc)
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
@@ -58,11 +58,10 @@ nav_order: 8
 - Connect the WVGA LCD Display Module ribbon to the connector(J2) of the SSD1963 LCD Controller Graphics Card    
 - Plug the 5.5-14V power cable to the power connecter(J200) of the Curiosity PIC32MZ EF 2.0 Development Board  
 - Connect a microUSB Cable to the Debug USB plug (J700) of Curiosity PIC32MZ EF 2.0 Development Board
-- Connect and Ethernet Cable between the KSZ8061 Ethernet Board and your PC/Router
+- Connect and Ethernet Cable between the KSZ8061 Ethernet Board and your Router / PC
 - Connect a miniUSBcable between the USB I2C Click board and one of your PC USB ports
-- Open a COM Terminal and connect it to the COM number allocated by your PC, corresponding to the USB I2C board
-<img src="images/web_photo_frame_setup.png" align="middle">
 
+<img src="images/web_photo_frame_setup.png" align="middle">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.
@@ -78,27 +77,47 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Programming/Debugging Application Project:
-- Open the project (**webphotoframe/firmware/wpf_mzef_cu_tm4301b.X**) in MPLAB X IDE
+- Open the project (**web_photo_frame/firmware/wpf_mzef_cu_tm4301b.X**) in MPLAB X IDE
 - Ensure "Curiosity/Starter Kits (PKOB4)" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
 
 ## Running the Demo:
+### Preparation
 - Take a micro SD Card and copy the resource files and folders provided into the **web_photo_frame\sdcard_files** to the SD Card
 - Plug the SD Card into the mikroSD Click board
 - Plug an Ethernet Cable into the Ethernet Adapter and a Router in the same network with the PC, or directly to the PC. If plugged directly to the PC, the Ethernet Adapter on the PC should be configured for Static IP with the IP address 192.168.100.2 and Net Mask 255.255.255.0
 - Open a terminal like Tera Term and connect it to the COM port assigned to the USB I2C click
 - Reset the board to start.
+### Serial Terminal
 - Observe the output on the Terminal
+- Observe the IP address of the board, needed for the Web Browser
 <img src="images/terminal_output.png">
-- After the board powers up, a splash screen should appear, wait for the text to say **Touch Screen To Start**
+### Graphics Display
+- After the board powers up, a splash screen should appear on the graphics display
+- Wait for the text to say **Touch Screen To Start**
+
 <img src="images/display_output.png">
-- Touch the screen and wait to load the image files one after the other
-- In the terminal, an IP address should be provided in the case the Ethernet Cable is pluged
+
+- Touch the screen, the images should load one after the other at about 3-5 seconds interval
+- Observe the terminal, it will output what file will be displayed.
+
+<img src="images/terminal_output_app_gfx.png">
+
+- In the terminal, an IP address should be provided in the case the Ethernet Cable is pluged, see above screenshot
 - Open a browser on the PC and browse to the provided IP address in the Terminal
-- A Web Page should load and buttons to start slideshow or to load pictures one by one should be available
+- The followin Web Page should load
+
 <img src="images/web_browser_output.png">
+
+- Use the provided buttons to navigate the images.
+- Observe the terminal, it will output what file will be displayed.
+
+<img src="images/terminal_output_app_http.png">
+
+### Observations
+- The image display is not synchronized between the Graphics and the HTTP application, each has its own cursor.
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
@@ -109,6 +128,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
+		- [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
 
 ## Revision:
-- v1.0.0 released demo application
+- v1.6.0 released demo application
