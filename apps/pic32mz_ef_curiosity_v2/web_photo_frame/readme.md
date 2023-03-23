@@ -91,11 +91,14 @@ The pre-built hex file can be programmed by following the below steps.
 - Open a terminal like Tera Term and connect it to the COM port assigned to the USB I2C click
 - Reset the board to start.
 - Observe the output on the Terminal
+<img src="images/terminal_output.png">
 - After the board powers up, a splash screen should appear, wait for the text to say **Touch Screen To Start**
+<img src="images/display_output.png">
 - Touch the screen and wait to load the image files one after the other
 - In the terminal, an IP address should be provided in the case the Ethernet Cable is pluged
 - Open a browser on the PC and browse to the provided IP address in the Terminal
 - A Web Page should load and buttons to start slideshow or to load pictures one by one should be available
+<img src="images/web_browser_output.png">
 
 ## Comments:
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
