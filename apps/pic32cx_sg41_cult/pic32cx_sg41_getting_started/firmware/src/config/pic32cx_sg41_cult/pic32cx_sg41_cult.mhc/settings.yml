@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic32cx_sg41_cult
+folderName: pic32cx_sg41_cult
+frameworkPath: C:\h_v3
+processor: PIC32CX1025SG41128
+projectName: pic32cx_sg41_cult
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CX-SG41_DFP\1.0.17\atdf\PIC32CX1025SG41128.atdf
