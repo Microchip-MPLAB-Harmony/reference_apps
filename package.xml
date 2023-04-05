@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Package name="reference_apps">
     <Dependencies>
-        <Dependency name="mhc" version="3.8.5"/>
-        <Dependency name="dev_packs" version="3.12.0"/>		
-        <Dependency name="csp" version="3.12.0"/>
-        <Dependency name="core" version="3.10.0"/>
-        <Dependency name="bsp" version="3.12.0"/>
-        <Dependency name="usb" version="3.9.0"/>
+        <Dependency name="dev_packs" version="v3.16.0"/>		
+        <Dependency name="csp" version="v3.16.0"/>
+        <Dependency name="core" version="3.12.0"/>        
+        <Dependency name="bsp" version="3.15.0"/>        
+        <Dependency name="usb" version="v3.11.0-E2"/>
         <Dependency name="audio" version="3.6.0"/>		
-        <Dependency name="gfx" version="3.10.0"/>	
-		<Dependency name="touch" version="3.11.2"/>	
-		<Dependency name="net" version="3.7.4"/>			
-		<Dependency name="wireless_wifi" version="3.6.1"/>
+        <Dependency name="gfx" version="3.12.2"/>	
+		<Dependency name="touch" version="3.13.1"/>	
+		<Dependency name="net" version="3.9.1"/>			
+		<Dependency name="wireless_wifi" version="3.8.0"/>
 		<Dependency name="bt" version="3.4.1"/>
-		<Dependency name="bootloader" version="3.5.1"/>	
-		<Dependency name="bootloader_apps_uart" version="3.1.0"/>	
-        <Dependency name="CMSIS-FreeRTOS" version="v10.3.1"/>	
+		<Dependency name="bootloader" version="3.6.0"/>	
+		<Dependency name="bootloader_apps_uart" version="3.2.0"/>	
+        <Dependency name="CMSIS-FreeRTOS" version="v10.4.6"/>	
 		<Dependency ​name: "wolfssl", version: "v4.7.0"/>
 		<Dependency ​​name: "crypto", version: "v3.7.6"/>    
 		<Dependency ​​name: "aws_cloud", version: "v3.2.0"/>    		
-		<Dependency ​​name: "CryptoAuthLib", version: "v20220320"/>    		
+		<Dependency ​​name: "cryptoauthlib", version: "v3.5.1"/>    		
     </Dependencies>
 </Package>
