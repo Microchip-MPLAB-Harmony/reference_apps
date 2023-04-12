@@ -61,7 +61,7 @@ nav_order: 8
 - Connect and Ethernet Cable between the KSZ8061 Ethernet Board and your Router / PC
 - Connect a miniUSBcable between the USB I2C Click board and one of your PC USB ports
 
-<img src="images/web_photo_frame_setup.png" align="middle" />
+    <img src="images/web_photo_frame_setup.png" align="middle" />
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.
@@ -70,7 +70,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Open MPLAB X IPE
 - Device: PIC32MZ2048EFM144
 - Select the Tool: Curiosity/Stater Kits (PKOB) and click on Connect
-- Hex File: Browse to **web_photo_frame\hex folder** and load the hex file available
+- Hex File: Browse to **web_photo_frame\hex** folder and load the hex file available
 - Use the Main Menu: Settings->Release from reset
 - Click on the Program button and allow programming time
 - Follow the steps in "Running the Demo" section below
@@ -95,30 +95,30 @@ The pre-built hex file can be programmed by following the below steps.
 - Observe the output on the Terminal
 - Observe the IP address of the board, needed for the Web Browser
 
-<img src="images/terminal_output.png" />
+    <img src="images/terminal_output.png" />
 
 
 ### Graphics Display
 - After the board powers up, a splash screen should appear on the graphics display
 - Wait for the text to say **Touch Screen To Start**
 
-<img src="images/display_output.png">
+    <img src="images/display_output.png">
 
 - Touch the screen, the images should load one after the other at about 3-5 seconds interval
 - Observe the terminal, it will output what file will be displayed.
 
-<img src="images/terminal_output_app_gfx.png" />
+    <img src="images/terminal_output_app_gfx.png" />
 
 - In the terminal, an IP address should be provided in the case the Ethernet Cable is pluged, see above screenshot
 - Open a browser on the PC and browse to the provided IP address in the Terminal
 - The followin Web Page should load
 
-<img src="images/web_browser_output.png" />
+    <img src="images/web_browser_output.png" />
 
 - Use the provided buttons to navigate the images.
 - Observe the terminal, it will output what file will be displayed.
 
-<img src="images/terminal_output_app_http.png">
+    <img src="images/terminal_output_app_http.png">
 
 
 ### Observations
@@ -126,6 +126,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Comments:
+- Reference Training Module: [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)
@@ -134,8 +135,6 @@ The pre-built hex file can be programmed by following the below steps.
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
-		- [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
-
 
 ## Revision:
 - v1.6.0 released demo application
