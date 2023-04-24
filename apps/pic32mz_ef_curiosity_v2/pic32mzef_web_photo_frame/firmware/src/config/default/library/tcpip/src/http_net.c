@@ -10,30 +10,28 @@
     - Reference: RFC 2616
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -350,8 +348,6 @@ static bool                 httpNonPersistentConn = 0;
 
 static uint16_t             httpPersistTmo;             // the timeout after which a persistent connection is closed, if no data is requested; seconds
                                                         
-static uint32_t             httpSecondCount;            // rough time keeping for HTTP                                                        
-
 static tcpipSignalHandle    httpSignalHandle = 0;
 
 static const void*          httpMemH = 0;              // handle to be used in the TCPIP_HEAP_ calls
@@ -476,18 +472,6 @@ static TCPIP_HTTP_NET_CONN_STATE _HTTP_ProcessDone(TCPIP_HTTP_NET_CONN* pHttpCon
 static TCPIP_HTTP_NET_CONN_STATE _HTTP_ProcessError(TCPIP_HTTP_NET_CONN* pHttpCon, bool* pWait);
 
 static TCPIP_HTTP_NET_CONN_STATE _HTTP_ProcessDisconnect(TCPIP_HTTP_NET_CONN* pHttpCon, bool* pWait);
-
-// rough HTTP time keeping
-static __inline__ uint32_t __attribute__((always_inline)) _HTTP_SecondCountGet(void)
-{
-    return httpSecondCount;
-}
-
-static __inline__ void __attribute__((always_inline)) _HTTP_SecondCountSet(void)
-{
-    // use a 64 bit count to avoid roll over
-    httpSecondCount = SYS_TMR_SystemCountGet() / SYS_TMR_SystemCountFrequencyGet(); 
-}
 
 #if (TCPIP_HTTP_NET_DYNVAR_PROCESS != 0)
 static char* _HTTP_DynVarParse(char* dynVarBuff, char** pEndDyn, bool verifyOnly);
@@ -763,7 +747,7 @@ static void _HTTP_DbgSSIHashEntry(TCPIP_HTTP_SSI_HASH_ENTRY* pHE, bool isRef)
 #if ((TCPIP_HTTP_NET_DEBUG_LEVEL & TCPIP_HTTP_NET_DEBUG_MASK_CONN_TMO) != 0)
 static void _HTTP_DbgConnTmo(TCPIP_HTTP_NET_CONN* pHttpCon)
 {
-    SYS_CONSOLE_PRINT("HTTP tmo - conn: %d, active sec: %d, curr sec: %d\r\n", pHttpCon->connIx, pHttpCon->connActiveSec, _HTTP_SecondCountGet());
+    SYS_CONSOLE_PRINT("HTTP tmo - conn: %d, active sec: %d, curr sec: %d\r\n", pHttpCon->connIx, pHttpCon->connActiveSec, _TCPIP_SecCountGet());
 }
 #else
 #define _HTTP_DbgConnTmo(pHttpCon)
@@ -1176,11 +1160,6 @@ void TCPIP_HTTP_NET_Task(void)
 
     sigPend = _TCPIPStackModuleSignalGet(TCPIP_THIS_MODULE_ID, TCPIP_MODULE_SIGNAL_MASK_ALL);
 
-    if((sigPend & TCPIP_MODULE_SIGNAL_TMO) != 0)
-    {   // update HTTP time keeping
-        _HTTP_SecondCountSet();
-    }
-
     if(sigPend != 0)
     { //  some signal occurred
         TCPIP_HTTP_NET_Process();
@@ -1233,7 +1212,7 @@ static void TCPIP_HTTP_NET_Process(void)
         }
         else if(httpNonPersistentConn == false && httpPersistTmo != 0 && pHttpCon->flags.sktIsConnected != 0)
         {   // check the connection has not timed out
-            uint16_t currSec = (uint16_t)_HTTP_SecondCountGet();
+            uint16_t currSec = (uint16_t)_TCPIP_SecCountGet();
             if((currSec - pHttpCon->connActiveSec) >= httpPersistTmo)
             {   // timeout; kill the connection
                 _HTTP_DbgConnTmo(pHttpCon);
@@ -1252,7 +1231,7 @@ static void TCPIP_HTTP_NET_ProcessConnection(TCPIP_HTTP_NET_CONN* pHttpCon)
     bool needWait;
 
     // mark connection as active
-    pHttpCon->connActiveSec = (uint16_t)_HTTP_SecondCountGet();
+    pHttpCon->connActiveSec = (uint16_t)_TCPIP_SecCountGet();
 
     do
     {

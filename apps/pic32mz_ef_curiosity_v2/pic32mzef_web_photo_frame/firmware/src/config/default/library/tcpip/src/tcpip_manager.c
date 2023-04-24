@@ -10,30 +10,28 @@
     -Reference: AN833
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -272,6 +270,9 @@ static TCPIP_STACK_INIT_CALLBACK tcpip_stack_init_cb;    // callback to be calle
 
 static TCPIP_STACK_HEAP_CONFIG  tcpip_heap_config = { 0 };      // copy of the heap that the stack uses
 
+static uint32_t _tcpip_SecCount;            // current second value
+static uint32_t _tcpip_MsecCount;           // current millisecond value
+static void _TCPIP_SecondCountSet(void);    // local time keeping
 
 #if defined(TCPIP_STACK_TIME_MEASUREMENT)
 static uint64_t         tcpip_stack_time = 0;
@@ -1916,6 +1917,8 @@ static void _TCPIP_ProcessTickEvent(void)
     bool    linkCurr, linkPrev;
 
     newTcpipTickAvlbl = 0;
+
+    _TCPIP_SecondCountSet();    // update time
 
     for(netIx = 0, pNetIf = tcpipNetIf; netIx < tcpip_stack_ctrl_data.nIfs; netIx++, pNetIf++)
     {
@@ -4749,6 +4752,29 @@ bool _TCPIPStack_ModuleIsRunning(TCPIP_STACK_MODULE moduleId)
     return false;
 }
 #endif  // (_TCPIP_STACK_RUN_TIME_INIT != 0)
+
+// local time keeping
+// reverts to a sys service, when available
+
+static void _TCPIP_SecondCountSet(void)
+{
+    uint32_t tmrFreq = SYS_TIME_FrequencyGet();
+    // use a 64 bit count to avoid roll over
+    uint64_t tmrCount = SYS_TIME_Counter64Get();
+
+    _tcpip_SecCount = tmrCount / tmrFreq; 
+    _tcpip_MsecCount = tmrCount / (tmrFreq / 1000); 
+}
+
+uint32_t _TCPIP_SecCountGet(void)
+{
+    return _tcpip_SecCount;
+}
+
+uint32_t _TCPIP_MsecCountGet(void)
+{
+    return _tcpip_MsecCount;
+}
 
 
 // debugging features

@@ -226,11 +226,11 @@ Remarks:
 
 typedef struct
 {
-    /* I2C0 Driver Object */
-    SYS_MODULE_OBJ drvI2C0;
-
     /* SDSPI0 Driver Object */
     SYS_MODULE_OBJ drvSDSPI0;
+
+    /* I2C0 Driver Object */
+    SYS_MODULE_OBJ drvI2C0;
 
     SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  drvMemory0;
