@@ -40,7 +40,7 @@ nav_order: 8
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-- Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/wpf_mzef_cu_tm4301b*  
+- Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default/*  
 
 ## Development Tools
 - [MPLAB® X IDE v6.05](https://www.microchip.com/mplabx)
