@@ -9,7 +9,7 @@ nav_order: 8
 <img src="images/microchip_mplab_harmony_logo_small.png">
 
 # Web Photo Frame Application on Curiosity PIC32MZ EF 2.0 Development Board
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/web_photo_frame.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mz_web_photo_frame.zip" > Download </a> </h2>
 
 ----
 
@@ -40,7 +40,7 @@ nav_order: 8
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-- Refer [Project Manifest](./firmware/src/config/wpf_mzef_cu_tm4301b/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/wpf_mzef_cu_tm4301b*  
+- Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/wpf_mzef_cu_tm4301b*  
 
 ## Development Tools
 - [MPLAB® X IDE v6.05](https://www.microchip.com/mplabx)
@@ -70,14 +70,14 @@ The pre-built hex file can be programmed by following the below steps.
 - Open MPLAB X IPE
 - Device: PIC32MZ2048EFM144
 - Select the Tool: Curiosity/Stater Kits (PKOB) and click on Connect
-- Hex File: Browse to **web_photo_frame\hex** folder and load the hex file available
+- Hex File: Browse to **pic32mz_web_photo_frame\hex** folder and load the hex file available
 - Use the Main Menu: Settings->Release from reset
 - Click on the Program button and allow programming time
 - Follow the steps in "Running the Demo" section below
 
 
 ## Programming/Debugging Application Project:
-- Open the project (**web_photo_frame/firmware/wpf_mzef_cu_tm4301b.X**) in MPLAB X IDE
+- Open the project (**pic32mz_web_photo_frame/firmware/pic32mz_ef_curiosity_v2.X**) in MPLAB X IDE
 - Ensure "Curiosity/Starter Kits (PKOB4)" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
@@ -85,7 +85,7 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 
 ### Preparation
-- Take a micro SD Card and copy the resource files and folders provided into the **web_photo_frame\sdcard_files** to the SD Card
+- Take a micro SD Card and copy the resource files and folders provided into the **pic32mz_web_photo_frame\sdcard_files** to the SD Card
 - Plug the SD Card into the mikroSD Click board
 - Plug an Ethernet Cable into the Ethernet Adapter and a Router in the same network with the PC, or directly to the PC. If plugged directly to the PC, the Ethernet Adapter on the PC should be configured for Static IP with the IP address 192.168.100.2 and Net Mask 255.255.255.0
 - Open a terminal like Tera Term and connect it to the COM port assigned to the USB I2C click
