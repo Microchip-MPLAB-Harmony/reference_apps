@@ -167,7 +167,7 @@ uint8_t CRYPTO_CLIENT_printSerialNumber(char *s)
         return retVal;
     }
 
-    status = atcab_read_serial_number(g_serial_number); // mohan
+    status = atcab_read_serial_number(g_serial_number);
 
     if (status == ATCA_SUCCESS)
     {

@@ -371,7 +371,7 @@ static void wifi_callback_handler(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE asso
         {
             debug_printInfo("Wifi Disconnected\r\n");
             //g_cloud_wifi_state = CLOUD_STATE_WIFI_CONFIGURE;
-            g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECT; //mohan
+            g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECT;
             
 
         }
@@ -619,7 +619,7 @@ void cloud_publish_message()
 #if defined(CLOUD_CONFIG_GCP)
         uint32_t ts = RTC_Timer32CounterGet();
         json_object_dotset_number(update_message_object, "timestamp", ts);
-        json_object_dotset_string(update_message_object, "Led_Status", ((SW0_GPIO_PA00_Get()) ? "off" : "on")); // mohan
+        json_object_dotset_string(update_message_object, "Led_Status", ((SW0_GPIO_PA00_Get()) ? "off" : "on"));
 #else
         float rawTemperature = APP_GetTempSensorValue();
         int light = APP_GetLightSensorValue();
@@ -1051,7 +1051,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         else
         {
             // Wait for incoming update messages
-           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);//mohan
+           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);
             mqtt_status = 0;
             if (mqtt_status != SUCCESS)
             {
