@@ -14,7 +14,7 @@ nav_order: 8
 ----
 
 ## Description:
-> This tutorial is intended to show how to create a web-enabled digital photo frame from scratch using MPLAB Harmony 3 and the MPLAB Code Configurator (MCC) with Harmony 3.
+> This application shows how to create a web-enabled digital photo frame using Harmony 3 under MPLAB Code Configurator (MCC).
 > The application uses:
 > Legato Graphics library to display images from an SD Card to a WQVGA display
 > TCP/IP Stack to enable a Web Server to show images into a Web Browser
@@ -70,7 +70,7 @@ The pre-built hex file can be programmed by following the below steps.
 - Open MPLAB X IPE
 - Device: PIC32MZ2048EFM144
 - Select the Tool: Curiosity/Stater Kits (PKOB) and click on Connect
-- Hex File: Browse to **pic32mz_web_photo_frame\hex** folder and load the hex file available
+- Hex File: Browse to **pic32mz_web_photo_frame/hex** folder and load the hex file available
 - Use the Main Menu: Settings->Release from reset
 - Click on the Program button and allow programming time
 - Follow the steps in "Running the Demo" section below
@@ -85,7 +85,7 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 
 ### Preparation
-- Take a micro SD Card and copy the resource files and folders provided into the **pic32mz_web_photo_frame\sdcard_files** to the SD Card
+- Take a micro SD Card and copy the resource files and folders provided into the **pic32mz_web_photo_frame/sdcard_files** to the SD Card
 - Plug the SD Card into the mikroSD Click board
 - Plug an Ethernet Cable into the Ethernet Adapter and a Router in the same network with the PC, or directly to the PC. If plugged directly to the PC, the Ethernet Adapter on the PC should be configured for Static IP with the IP address 192.168.100.2 and Net Mask 255.255.255.0
 - Open a terminal like Tera Term and connect it to the COM port assigned to the USB I2C click
