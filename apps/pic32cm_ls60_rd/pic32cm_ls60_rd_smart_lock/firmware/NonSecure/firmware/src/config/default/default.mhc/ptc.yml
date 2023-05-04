@@ -1,0 +1,21 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: ptc}
+children:
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: ptc_Acq_Engine}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: lib_qtouch}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: lib_acquire}
+- type: ElementPosition
+  attributes: {x: '559', y: '280', id: ptc}

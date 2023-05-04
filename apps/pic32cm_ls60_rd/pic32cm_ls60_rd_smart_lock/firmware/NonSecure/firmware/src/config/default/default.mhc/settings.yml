@@ -1,0 +1,14 @@
+configName: default
+folderName: SmartDoorLock_PIC32CMLS_NonSecure
+format_version: v1.0
+frameworkPath: ../../../../../../SDL_H3_Repo
+processor: PIC32CM5164LS60064
+projectName: SmartDoorLock_PIC32CMLS_NonSecure
+settings:
+  PackageFilter: bsp;core;cryptoauthlib;csp;Devices;dev_packs;harmony-services;quick_docs;touch
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\PIC32CM-LS_DFP\1.1.162\PIC32CM-LS60\atdf\PIC32CM5164LS60064.atdf
