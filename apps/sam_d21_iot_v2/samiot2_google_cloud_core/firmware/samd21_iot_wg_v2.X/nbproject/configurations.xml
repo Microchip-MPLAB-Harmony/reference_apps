@@ -676,30 +676,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="samd21_wg_iot_v2.mhc" projectFiles="true">
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/adc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/core.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib_tng.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/project.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom5.yml</itemPath>
         <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/tc3.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/samd21_wg_iot_v2/harmony-manifest-success.yml</itemPath>

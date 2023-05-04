@@ -965,73 +965,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="sam_e54_xpro.mhc" projectFiles="true">
-        <logicalFolder name="f1" displayName="TCP_IP_STACK" projectFiles="true">
-          <logicalFolder name="f1" displayName="APPLICATION_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/APPLICATION_LAYER.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipAnnounce.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDhcp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDns.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipHttpNet.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipNbns.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSmtpc.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipSntp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpip_apps_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="BASIC_CONFIGURATION" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/BASIC_CONFIGURATION.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipCmd.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipNetConfig.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipStack.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpip_basic_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="DRIVER_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/DRIVER_LAYER/DRIVER_LAYER.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/DRIVER_LAYER/drvExtPhyKsz8091.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/DRIVER_LAYER/drvGmac.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/DRIVER_LAYER/drvMiim.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/DRIVER_LAYER/tcpip_driver_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f4" displayName="NETWORK_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/NETWORK_LAYER/NETWORK_LAYER.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipArp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv4.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpip_network_config.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f5" displayName="PRESENTATION_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/PRESENTATION_LAYER/net_Pres.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/PRESENTATION_LAYER/PRESENTATION_LAYER.yml</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f6" displayName="TRANSPORT_LAYER" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipTcp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipUdp.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpip_transport_config.yml</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/TRANSPORT_LAYER/TRANSPORT_LAYER.yml</itemPath>
-          </logicalFolder>
-          <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/TCP_IP_STACK/TCP_IP_STACK.yml</itemPath>
-        </logicalFolder>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drv_memory.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/lib_crypto.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/lib_wolfcrypt.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/lib_wolfssl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom4.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_debug.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/tc0.yml</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="wolfcrypt" projectFiles="true">
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c</itemPath>

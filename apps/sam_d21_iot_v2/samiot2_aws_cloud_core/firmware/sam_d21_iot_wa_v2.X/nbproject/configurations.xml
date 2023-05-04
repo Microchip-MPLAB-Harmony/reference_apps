@@ -782,30 +782,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="samd21_wg_iot_v2.mhc" projectFiles="true">
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/adc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/core.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib_tng.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/project.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom5.yml</itemPath>
         <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/tc3.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>aws_cloud_iot_core_sam_d21_iot_wa_v2.mc3</itemPath>
@@ -2102,7 +2079,7 @@
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/Work/harmony_public_release/reference_apps/apps/sam_d21_iot_v2/samiot2_aws_cloud_core/firmware/sam_d21_iot_wa_v2.X/debug/samd21_wa_iot_v2/sam_d21_iot_wa_v2_ptg"/>
+                  value="C:/Users/i20016/AppData/Local/trust_platform1/tpds_core/TrustFLEX/10_cloud_connect/firmware/samd21_iot_wg_v2.X/debug/samd21_wg_iot_v2/samd21_iot_wg_v2_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

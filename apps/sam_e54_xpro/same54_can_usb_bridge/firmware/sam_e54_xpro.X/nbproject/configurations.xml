@@ -315,22 +315,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="sam_e54_xpro.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/can1.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drv_usbfs_v1.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom2.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/usb_device_cdc.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e54_xpro/harmony-manifest-success.yml</itemPath>

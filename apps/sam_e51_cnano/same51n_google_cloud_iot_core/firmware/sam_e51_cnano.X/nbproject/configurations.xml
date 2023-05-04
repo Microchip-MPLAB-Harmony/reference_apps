@@ -406,30 +406,7 @@
                    displayName="Important Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
-        <itemPath>../src/config/default/default.mhc/adc0.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/cryptoauthlib_tng.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sercom1.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sercom5.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/tc0.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
