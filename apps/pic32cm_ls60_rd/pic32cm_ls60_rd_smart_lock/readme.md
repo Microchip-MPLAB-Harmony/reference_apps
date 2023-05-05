@@ -1,16 +1,23 @@
 ---
 grand_parent: Reference Applications
-parent: PIC32CM LS60 Reference Design
-title: SMART Lock
+parent: PIC32CM LS60 Smart Lock Reference Board
+title: Smart Lock
 nav_order: 1
 ---
+
+ 
 
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Smart Lock Application on PIC32CM LS60
+ 
 
----
+# Smart Lock Application on PIC32CM LS60 Smart Lock Reference Board
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls60_rd_smart_lock.zip" > Download </a> </h2>
+
+ 
+
+-----
 
 ## Description
 
@@ -48,23 +55,23 @@ The application showcases key-less secure access control and monitoring of a dea
 
 <img src = "images/hardwareused.png">
 
-1. Smart Door Lock PIC32CM LS60 Main MCU Board<sup>(1)</sup>
-2. WFI32 IoT BOARD<sup>(2)</sup>
-3. BM70 Compact Demo Board<sup>(2)</sup>
+1. PIC32CM LS60 Smart Lock Reference Board<sup>(1)</sup>
+2. [WFI32-IoT Development Board: EV36W50A](https://www.microchip.com/en-us/development-tool/ev36w50a)<sup>(2)</sup>
+3. [BM70 Compact Demo Board: BM-70-CDB](https://www.microchip.com/en-us/development-tool/BM-70-CDB)<sup>(2)</sup>
 4. Power and Motor Control Board<sup>(1)</sup>
 5. Four AA 1.5V alkaline batteries<sup>(2)</sup>
-6. QT3 Xplained pro<sup>(1)</sup>
+6. [QT3 XPLAINED PRO EXTENSION KIT: ATQT3-XPRO](https://www.microchip.com/en-us/development-tool/atqt3-xpro)<sup>(1)</sup>
 7. Schlage Deadbolt with motor and custom printed interface for limit switch<sup>(1)</sup>
 
 Note:
- 1) Contact [Microchip technical support](https://www.microchip.com/en-us/support) or local Microchip FAE for purchasing the SMART Door Lock kit bundle
- 2) Not provided as part of the SMART Door Lock kit bundle. Should be procured separately (through Microchip Direct or any thirdparty vendor)
+ 1) Contact [Microchip technical support](https://www.microchip.com/en-us/support) or local Microchip FAE for purchasing the Smart Door Lock kit bundle
+ 2) Not provided as part of the Smart Door Lock kit bundle. Should be procured separately (through Microchip Direct or any thirdparty vendor)
 
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>
 
-Refer [Project Manifest](./Secure/firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default*
+Refer [Project Manifest](./pic32cm_ls60_rd_smart_lock/firmware/Secure/firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default*
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 - Any Serial Terminal application like Tera Term terminal application.
 
@@ -75,19 +82,19 @@ Refer [Project Manifest](./Secure/firmware/src/config/default/harmony-manifest-s
 
 The demo can be run in three different modes:
 1. Standalone Touch keypad entry
-2. Bluetooth control using [BM70 Module](https://www.microchip.com/en-us/development-tool/BM-70-CDB) and Smartphone application
-3. WiFi control using [WFI32 IoT board](https://www.microchip.com/en-us/development-tool/ev36w50a) and AWS cloud
+2. Bluetooth control using [BM70 Compact Demo Board](https://www.microchip.com/en-us/development-tool/BM-70-CDB) and Smartphone application
+3. WiFi control using [WFI32-IoT Development Board](https://www.microchip.com/en-us/development-tool/ev36w50a) and AWS cloud
 
 ### Standalone Touch keypad entry
-Connect the QT3 Xplained pro, Power board and the deadbolt to the Main MCU board as seen below:
+Connect the QT3 Xplained pro, Power board and the deadbolt to the PIC32CM LS60 Smart Lock Reference Board as seen below:
 
-<img src = "images/touchkeypadsetup.jpg">
+<img src = "images/touchkeypadsetup.png">
 
-On powering the kit, the SMART Door Lock becomes functional and waits for the user input through the Touch Keypad to control the entry access. This kit allows up to five user-authenticated entries through the door lock, and each user has a user ID (1,2,3,4 &5). Each user would require a passkey to enter through the Touch Keypad to open the lock.
+On powering the kit, the Smart Door Lock becomes functional and waits for the user input through the Touch Keypad to control the entry access. This kit allows up to five user-authenticated entries through the door lock, and each user has a user ID (1,2,3,4 &5). Each user would require a passkey to enter through the Touch Keypad to open the lock.
 
 #### User Entry/Passkey Authentication
-1) Select a user ID(press any number from 2 to 5)(1) and press "#".
-2) Enter the 5-digit passkey(2) corresponding to the selected user and then press "#".
+1) Select a user ID(press any number from 2 to 5)<sup>(1)</sup> and press "#".
+2) Enter the 5-digit passkey<sup>(2)</sup> corresponding to the selected user and then press "#".
 3) If the passkey is valid, the door opens.
 4) The door automatically relocks after 10 seconds.
 
@@ -110,19 +117,18 @@ The passkey of each user can be altered through the touch keypad using the steps
 • Activate the touchpad using your palm.<br />
 • Only 5-digit passcodes can be stored, but any number of digits can be entered on the touch keypad; only the final 5 before pressing '#' will be accepted.<br />
 
-
- <img src = "images/touchkeypadflowchart.png">
+ <img src = "images/touchflowchart.png">
 
 ### Bluetooth and WiFi control using Smartphone
 A custom Android application must be installed in the smartphone to control the door lock module. [Click here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/MicrochipBluetoothData_SmartLock.apk) to download the .apk file for the app. After installing the app, it needs to be provisioned so that the mobile and the door lock device can be securely connected. Create a. Create a [Microchip Technical Support](https://www.microchip.com/en-us/support) case for provisioning your smartphone with your bluetooth module.
 Add the following details to the support case:<br />
 	*Case Reason: Hardware/Firmware Support<br />
-	Subject: SMART Door Lock: Primary provisioning token request<br />
+	Subject: Smart Door Lock: Primary provisioning token request<br />
 	Primary Target Device: PIC32CM5164LS60064<br />
 	Case Description: < share BLE MAC ID of your BM70 board > <br />*
 
 ## Programming hex file:
-Connect Atmel ICE or PICKIT4 or any other programmer that supports SWD programming to the J1 header on the Main MCU board.
+Connect Atmel ICE or PICKIT4 or any other programmer that supports SWD programming to the J1 header on the PIC32CM LS60 Smart Lock Reference Board.
 The pre-built hex file can then be programmed by following the below steps:
 
 ### Steps to program the hex file
@@ -147,7 +153,10 @@ The pre-built hex file can then be programmed by following the below steps:
 ## Running the Demo:
 - Upon completion of programming, you should see the QT3 keypad light up and go back to sleep
 - Activate the touchpad using your palm
-- Select a user and enter the default passkey to open the deadbolt
+- Select a user and enter the default passkey '12345' to open the deadbolt
+<img src = "images/touchdemo.gif">
+
+Note: This shows a custom passkey being entered. By default all users (2,3,4 and 5) have the same passkey - '12345'<br />
 
 ## Reference:
 - For more details on the application usage, functionality and other details, refer to the [PIC32CM LS60 Smart Door Lock User Guide]()
