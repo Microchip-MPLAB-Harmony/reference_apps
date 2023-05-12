@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MPU Reference Applications
 parent: SAM9x60 Curiosity Development Board
 title: Graphics Getting Started
 nav_order: 1

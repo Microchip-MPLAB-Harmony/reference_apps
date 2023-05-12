@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 Curiosity Nano Evaluation Kit
 title: BLE based Weather Station and Motion Sensor Application
 nav_order: 4

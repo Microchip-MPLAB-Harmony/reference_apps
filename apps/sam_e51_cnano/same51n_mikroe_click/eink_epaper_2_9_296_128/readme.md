@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: eink_epaper_2_9_296_128 display  Example
 nav_order: 7

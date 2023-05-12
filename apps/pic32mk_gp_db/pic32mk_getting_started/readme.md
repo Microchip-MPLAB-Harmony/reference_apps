@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32MK General Purpose (GP) Development Kit
 nav_order: 1
 ---

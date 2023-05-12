@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E54 Xplained Pro Evaluation Kit
 title: SleepWalking
 nav_order: 4

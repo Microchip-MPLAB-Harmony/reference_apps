@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM L11 Xplained Pro Evaluation Kit
 title: TrustZone Getting Started on SAM L11
 nav_order: 1

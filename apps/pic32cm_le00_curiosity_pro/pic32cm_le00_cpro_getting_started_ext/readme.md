@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32CM LE00 Curiosity Pro Evaluation Kit
 title: Getting Started Extended
 nav_order: 1

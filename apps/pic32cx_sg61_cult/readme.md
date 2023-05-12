@@ -1,9 +1,9 @@
 ---
 title: PIC32CX SG61 Curiosity Ultra Evaluation Board
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 16
+nav_order: 4
 ---
 # PIC32CX SG61 Curiosity Ultra Evaluation Board
 <h4 align="left"> <img src = "image.jpg"> </h4>

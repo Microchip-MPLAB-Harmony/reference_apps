@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 IoT Development Board
 title: Serial Bridge Application
 nav_order: 99

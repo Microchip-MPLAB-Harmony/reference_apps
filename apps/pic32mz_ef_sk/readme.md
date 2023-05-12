@@ -1,9 +1,9 @@
 ---
 title: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 20
+nav_order: 30
 ---
 # PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit
 <h4 align="left"> <img src = "image.jpg"> </h4>

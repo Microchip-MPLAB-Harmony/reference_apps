@@ -1,9 +1,9 @@
 ---
 title: SAM D21 Xplained Pro Evaluation Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 17
+nav_order: 27
 ---
 # SAM D21 Xplained Pro Evaluation Kit
 <h4 align="left"> <img src = "image.jpg"> </h4>

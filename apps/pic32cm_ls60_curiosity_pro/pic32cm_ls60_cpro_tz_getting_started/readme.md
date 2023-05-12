@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32CM LS60 Curiosity Pro Evaluation Kit
 title: TrustZone Getting Started on PIC32CM LS60 Curiosity Pro Evaluation Kit
 nav_order: 1

@@ -1,9 +1,9 @@
 ---
 title: Curiosity PIC32MZ EF 2.0 Development Board
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 8
+nav_order: 19
 ---
 # Curiosity PIC32MZ EF 2.0 Development Board
 <h4 align="left"> <img src = "image.jpg"> </h4>
@@ -20,6 +20,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 5 | [WiFi based RGB LED Control](./wifi_rgb_easy_configuration/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/wifi_rgb_easy_configuration.zip) |
 | 6 | [Snake Game](./snake_game/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/snake_game.zip) |
 | 7 | [Thermal Camera based Heat Map](./pic32mzef_thermal_camera_heat_map/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_thermal_camera_heat_map.zip) |
+| 8 | [Web Photo Frame](./pic32mzef_web_photo_frame/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_web_photo_frame.zip) |
 
 ### More Application Demos
 

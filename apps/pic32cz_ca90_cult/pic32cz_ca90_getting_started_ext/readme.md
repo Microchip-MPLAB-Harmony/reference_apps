@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32CZ CA90 Curiosity Ultra Development Board
 title: Getting Started Extended
 nav_order: 2

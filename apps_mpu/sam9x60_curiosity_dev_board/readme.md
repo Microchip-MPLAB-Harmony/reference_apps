@@ -1,6 +1,6 @@
 ---
 title: SAM9X60 Curiosity Development Board
-parent: Reference Applications
+parent: 32-bit MPU Reference Applications
 has_children: true
 has_toc: false
 nav_order: 1

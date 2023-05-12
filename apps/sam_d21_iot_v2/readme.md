@@ -1,9 +1,9 @@
 ---
 title: SAM D21 IoT v2 Development Board
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 23
+nav_order: 9
 ---
 # SAM D21 IoT v2 Development Board
 <h4 align="left"> <img src = "image.jpg"> </h4>

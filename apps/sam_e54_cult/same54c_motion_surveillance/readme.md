@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E54 Curiosity Ultra Development Board
 title: Motion Surveillance on SAME54
 nav_order: 4

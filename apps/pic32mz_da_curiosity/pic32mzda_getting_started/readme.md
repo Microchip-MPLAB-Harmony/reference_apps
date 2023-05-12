@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32MZ DA Curiosity Development Kit
 title: Getting Started
 nav_order: 1

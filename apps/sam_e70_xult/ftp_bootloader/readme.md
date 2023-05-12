@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E70 Xplained Ultra Evaluation Kit
 title: Ethernet bootloader - File Transfer Protocol
 nav_order: 5

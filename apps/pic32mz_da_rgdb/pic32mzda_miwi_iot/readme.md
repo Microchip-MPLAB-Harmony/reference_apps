@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32MZ DA Radial Graphics Development Board (RGDB)
 title: MiWi IoT gateway with Legato Graphics
 nav_order: 2

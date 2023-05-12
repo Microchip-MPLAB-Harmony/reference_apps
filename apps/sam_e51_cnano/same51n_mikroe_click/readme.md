@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: MikroElektronika Click Boards examples on SAM E51 Curiosity Nano Evaluation Kit
 nav_order: 5
@@ -8,10 +8,10 @@ nav_order: 5
 
 This folder contains the MPLAB® Harmony 3 reference applications developed on [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A).   
 
-|SI No| Demo Name | Download Link |
-| --- | --- | -- |
-| 1 | [Weather Click Example](./weather/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/weather.zip)  |
-| 2 | [Eink Display Bundle Click example](./eink_bundle/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eink_bundle.zip)  |
+| SI No | Demo Name | Download Link |  
+| --- | --- | -- |  
+| 1 | [Weather Click Example](./weather/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/weather.zip)  |  
+| 2 | [Eink Display Bundle Click example](./eink_bundle/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eink_bundle.zip)  |  
 | 3 | [Heart Rate 9 Click Example](./heartrate9/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/heartrate9.zip)  |
 | 4 | [IR Thermo 2 Click Example](./ir_thermo2/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ir_thermo2.zip)  |
 | 5 | [10DOF Click Example](./10dof/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/10dof.zip)  |
@@ -33,10 +33,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 21 | [USB SPI Click Example](./usb_spi/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/usb_spi.zip)  |
 | 22 | [MCP25625 Click Example](./mcp25625/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/mcp25625.zip)  |
 | 23 | [Eink E-Paper display 2,9" 296x128 dots Click Example](./eink_epaper_2_9_296_128/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eink_epaper_2_9_296_128.zip)  |
+| 24 | [13DOF Click Example](./13dof/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/13dof.zip)  |
+
 ### More Application Demos
-
-
-Eink E-Paper display 29 296x128 dots Click Example
-
 
 For more application demos on **SAM E51 Curiosity Nano Evaluation Kit** and other Development Boards/Kits having the same part number **(ATSAME51J20A)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=ATSAME51J20A" target="_blank"> CLICK HERE </a>

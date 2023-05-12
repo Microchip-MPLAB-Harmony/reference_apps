@@ -1,9 +1,9 @@
 ---
 title: PIC32CM MC00 Curiosity Pro Development Board
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 1
+nav_order: 13
 ---
 
 # PIC32CM MC00 Curiosity Pro Development Board

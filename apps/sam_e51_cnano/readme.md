@@ -1,9 +1,9 @@
 ---
 title: SAM E51 Curiosity Nano Evaluation Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 5
+nav_order: 16
 ---
 # SAM E51 Curiosity Nano Evaluation Kit
 <h4 align="left"> <img src = "image.jpg"> </h4>

@@ -1,9 +1,9 @@
 ---
 title: SAM L22 Xplained Pro Evaluation Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 22
+nav_order: 32
 ---
 
 # SAM L22 Xplained Pro Evaluation Kit

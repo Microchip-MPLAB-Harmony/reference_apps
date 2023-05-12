@@ -5,8 +5,8 @@ nav_order: 1
 # MPLAB® Harmony 3 Reference Applications
 
 MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating
-embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller
-and microprocessor devices.  Refer to the following links for more information.
+embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller unit(MCU)
+and microprocessor unit (MPU).  Refer to the following links for more information.
 
 - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit)
 - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus)
@@ -17,22 +17,22 @@ and microprocessor devices.  Refer to the following links for more information.
 This repository contains the MPLAB® Harmony 3 Reference Application Package.
 
 Reference applications are standalone applications which demonstrates specific
-features or capabilities of Microchip 32-bit SAM and PIC MCUs. These applications
-are developed on Microchip 32-bit SAM and PIC development boards/kits.
+features or capabilities of Microchip 32-bit SAM/PIC MCUs and MPUs. These applications
+are developed on Microchip 32-bit SAM/PIC MCU and MPU development boards/kits.
 
-In addition to having the MCU, the 32-bit SAM and PIC MCU development boards/kits
-also provide support to exercise the features of MCU through additional hardware
+In addition to having the MCU/MPU, the 32-bit SAM and PIC MCU/MPU development boards/kits
+also provide support to exercise the features of MCU/MPU through additional hardware
 like displays, communication buses, transceivers, sensors, external memories, etc.
-The additional hardware features are available on the MCU development boards/kits
+The additional hardware features are available on the MCU/MPU development boards/kits
 or is available as plugin through interface headers like mikroBUS Click or Xplained Pro extensions.
 
 Following are the typical application types in this repository
 - Large feature-rich applications involving integration of several technologies like Audio, USB, TCP/IP, Wireless, Security, Low Power, RTOS, etc.
-- Applications demonstrating certain capabilities of the Microchip 32-bit SAM and PIC MCUs. For example: Low Power application on SAM L21 Xplained Pro Evaluation Kit demonstrating idle and standby modes
-- Applications demonstrating capabilities of Microchip 32-bit SAM and PIC MCUs development boards/kits (Curiosity, Nano, etc.) which allows extending hardware capability through mikroBUS Click or Xplained Pro extensions
-- Getting started applications pertaining to the Microchip's MCU products. These getting started applications demonstrates usage of MPLAB Harmony 3 framework by exercising commonly used peripheral features
+- Applications demonstrating certain capabilities of the Microchip 32-bit SAM/PIC MCUs and MPUs. For example: Low Power application on SAM L21 Xplained Pro Evaluation Kit demonstrating idle and standby modes
+- Applications demonstrating capabilities of Microchip 32-bit SAM/PIC MCUs and MPUs development boards/kits (Curiosity, Nano, etc.) which allows extending hardware capability through mikroBUS Click or Xplained Pro extensions
+- Getting started applications pertaining to the Microchip's MCU/MPU products. These getting started applications demonstrates usage of MPLAB Harmony 3 framework by exercising commonly used peripheral features
 
-The above application types serve as a reference source to evaluate solutions on 32-bit SAM and PIC MCUs by developing applications using MPLAB Harmony 3 software framework on Microchip 32-bit SAM and PIC development boards/kits.  
+The above application types serve as a reference source to evaluate solutions on 32-bit SAM/PIC MCUs and MPUs by developing applications using MPLAB Harmony 3 software framework.  
 <img src = "note.png" width="900" height="105" align="middle">  
 
 **Repository and demo application support:**
@@ -57,14 +57,15 @@ Refer to the following links for release notes and reference application informa
 
 - [Release Notes](./release_notes.md)
 - [MPLAB® Harmony License](./mplab_harmony_license.md)
-- [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/wiki)
+- [MPLAB® Harmony 3 Reference Apps Wiki](https://github.com/Microchip-MPLAB-Harmony/reference_apps/wiki)
 - [MPLAB® Harmony 3 Reference Applications Index](./apps/readme.md)
 
 # Contents Summary
 
 | Folder     | Description                                               |
 | ---        | ---                                                       |
-| apps       | Example reference applications      |
+| apps       | 32-bit MCU Example reference applications      |
+| apps_mpu       | 32-bit MPU Example reference applications      |
 | docs       | Reference applications help documentation                      |
 
 

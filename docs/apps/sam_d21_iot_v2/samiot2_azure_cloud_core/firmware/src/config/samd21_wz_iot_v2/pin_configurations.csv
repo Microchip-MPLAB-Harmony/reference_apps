@@ -1,0 +1,39 @@
+"Pin Number","Pin ID","Custom Name","Function","Mode", "Direction","Latch","Pull Up","Pull Down","Drive Strength"
+1,PA00,SW0_GPIO_PA00,GPIO,Digital,In,n/a,Yes,No,NORMAL
+2,PA01,SW1_GPIO_PA01,GPIO,Digital,In,n/a,Yes,No,NORMAL
+3,PA02,,Available,,,,,,NORMAL
+4,PA03,,Available,,,,,,NORMAL
+7,PB08,LS_ADC_AIN2,ADC_AIN2,Analog,High Impedance,n/a,,,NORMAL
+8,PB09,,Available,,,,,,NORMAL
+9,PA04,,Available,,,,,,NORMAL
+10,PA05,,Available,,,,,,NORMAL
+11,PA06,,Available,,,,,,NORMAL
+12,PA07,,Available,,,,,,NORMAL
+13,PA08,,Available,,,,,,NORMAL
+14,PA09,,Available,,,,,,NORMAL
+15,PA10,LED_ERR_GPIO_PA10,GPIO,Digital,Out,High,,,NORMAL
+16,PA11,LED_DAT_GPIO_PA11,GPIO,Digital,Out,High,,,NORMAL
+19,PB10,WDRV_WINC_RESETN,GPIO,Digital,Out,High,,,NORMAL
+20,PB11,WDRV_WINC_CHIP_EN,GPIO,Digital,Out,High,,,NORMAL
+21,PA12,WINC_SPI_SERCOM4_PAD0,SERCOM4_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
+22,PA13,WINC_SPI_SERCOM4_PAD1,SERCOM4_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
+23,PA14,WINC_SPI_SERCOM4_PAD2,SERCOM4_PAD2,Digital,High Impedance,n/a,No,No,NORMAL
+24,PA15,WINC_SPI_SERCOM4_PAD3,SERCOM4_PAD3,Digital,High Impedance,n/a,No,No,NORMAL
+25,PA16,,Available,,,,,,NORMAL
+26,PA17,,Available,,,,,,NORMAL
+27,PA18,WINC_INT_EIC_EXTINT2,EIC_EXTINT2,Digital,High Impedance,n/a,Yes,No,NORMAL
+28,PA19,WINC_WAKE_GPIO_PA19,GPIO,Digital,In/Out,High,,,NORMAL
+29,PA20,LED_CON_GPIO_PA20,GPIO,Digital,Out,High,,,NORMAL
+30,PA21,LED_WIFI_GPIO_PA21,GPIO,Digital,Out,High,,,NORMAL
+31,PA22,I2C_SERCOM3_PAD0,SERCOM3_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
+32,PA23,I2C_SERCOM3_PAD1,SERCOM3_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
+33,PA24,,Available,,,,,,NORMAL
+34,PA25,,Available,,,,,,NORMAL
+37,PB22,,Available,,,,,,NORMAL
+38,PB23,,Available,,,,,,NORMAL
+39,PA27,TS_EIC_EXTINT15,EIC_EXTINT15,Digital,High Impedance,n/a,No,No,NORMAL
+41,PA28,,Available,,,,,,NORMAL
+45,PA30,,Available,,,,,,NORMAL
+46,PA31,,Available,,,,,,NORMAL
+47,PB02,DBG_SERCOM5_PAD0,SERCOM5_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
+48,PB03,DBG_SERCOM5_PAD1,SERCOM5_PAD1,Digital,High Impedance,n/a,No,No,NORMAL

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM C21 Xplained Pro Evaluation Kit
 title: Low Power
 nav_order: 2

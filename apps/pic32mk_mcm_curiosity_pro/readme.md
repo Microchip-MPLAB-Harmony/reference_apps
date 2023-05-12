@@ -1,9 +1,9 @@
 ---
 title: PIC32MK MCM Curiosity Pro Development Board
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 1
+nav_order: 12
 ---
 # PIC32MK MCM Curiosity Pro Development Board
 <h4 align="left"> <img src = "image.jpg"> </h4>

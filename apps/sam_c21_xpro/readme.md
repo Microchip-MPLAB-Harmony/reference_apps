@@ -1,9 +1,9 @@
 ---
 title: SAM C21 Xplained Pro Evaluation Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 11
+nav_order: 22
 ---
 
 # SAM C21 Xplained Pro Evaluation Kit

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: SD Card Audio Player
 nav_order: 5

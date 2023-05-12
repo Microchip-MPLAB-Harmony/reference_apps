@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: Low Power Application with OLED C Click on SAM E51 Curiosity Nano Evaluation Kit
 nav_order: 2

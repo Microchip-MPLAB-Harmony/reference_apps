@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: USB I2C Click Example
 nav_order: 18

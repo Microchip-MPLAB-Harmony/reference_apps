@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit
 title: Live update on PIC32MZ
 nav_order: 1

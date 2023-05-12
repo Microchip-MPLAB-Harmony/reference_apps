@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E70 Xplained Evaluation Kit
 title: Getting Started with Drivers and Middleware
 nav_order: 1

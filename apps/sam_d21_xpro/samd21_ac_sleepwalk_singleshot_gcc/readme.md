@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 Xplained Pro Evaluation Kit
 title: AC Sleepwalking Application built with ARM GCC Toolchain
 nav_order: 2

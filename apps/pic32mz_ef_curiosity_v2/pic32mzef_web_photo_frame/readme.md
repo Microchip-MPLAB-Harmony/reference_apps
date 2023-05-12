@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: Web Photo Frame
 nav_order: 8
@@ -9,7 +9,7 @@ nav_order: 8
 <img src="images/microchip_mplab_harmony_logo_small.png">
 
 # Web Photo Frame Application on Curiosity PIC32MZ EF 2.0 Development Board
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mz_web_photo_frame.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_web_photo_frame.zip" > Download </a> </h2>
 
 ----
 

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 Curiosity Nano Evaluation Kit
 title: Application migration from 8-bit PIC18F to 32-bit SAM D21
 nav_order: 9

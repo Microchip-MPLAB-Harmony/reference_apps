@@ -1,9 +1,9 @@
 ---
 title: Curiosity PIC32MX470 Development Board
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 19
+nav_order: 29
 ---
 # Curiosity PIC32MX470 Development Board
 <h4 align="left"> <img src = "image.jpg"> </h4>

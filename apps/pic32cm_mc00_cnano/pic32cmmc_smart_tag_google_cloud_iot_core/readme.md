@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32CM MC00 Curiosity Nano Evaluation Kit
 title: Smart Tag Google Clound IoT Core Application
 nav_order: 4

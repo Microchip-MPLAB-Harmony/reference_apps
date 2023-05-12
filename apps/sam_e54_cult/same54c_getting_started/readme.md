@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E54 Curiosity Ultra Development Board
 title: Getting Started
 nav_order: 1

@@ -1,9 +1,9 @@
 ---
 title: PIC32MK General Purpose (GP) Development Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 18
+nav_order: 28
 ---
 # PIC32MK General Purpose (GP) Development Kit
 <h4 align="left"> <img src = "image.jpg"> </h4>

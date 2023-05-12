@@ -1,9 +1,9 @@
 ---
 title: SAM E70 Xplained Ultra Evaluation Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 13
+nav_order: 24
 ---
 # SAM E70 Xplained Ultra Evaluation Kit
 <h4 align="left"> <img src = "image.jpg"> </h4>

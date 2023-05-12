@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 IoT V2 Development Board
 title: ATWINC1510 Firmware upgrade
 nav_order: 98

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E51 Curiosity Nano Evaluation Kit
 title: 10DOF Click Example
 nav_order: 10

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MPU Reference Applications
 parent: SAM9X60 Curiosity Development Board
 title: Snake Game
 nav_order: 7

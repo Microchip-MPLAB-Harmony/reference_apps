@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: Curiosity PIC32MZ EF 2.0 Development Board
 title: Thermal camera
 nav_order: 7

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM C21N Xplained Pro Evaluation Kit
 title: SDADC Conversion Interrupt Mode
 nav_order: 2

@@ -1,9 +1,9 @@
 ---
 title: SAM L10 Xplained Pro Evaluation Kit
-parent: Reference Applications
+parent: 32-bit MCU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 9
+nav_order: 20
 ---
 
 # SAM L10 Xplained Pro Evaluation Kit

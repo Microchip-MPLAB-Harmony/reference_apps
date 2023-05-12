@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: Curiosity PIC32MX470 Development Board
 title: Getting Started
 nav_order: 1

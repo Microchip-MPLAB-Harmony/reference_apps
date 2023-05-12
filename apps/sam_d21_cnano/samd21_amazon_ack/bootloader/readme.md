@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 Curiosity Nano Evaluation Kit
 title: ACK OTA Bootloader
 nav_order: 10

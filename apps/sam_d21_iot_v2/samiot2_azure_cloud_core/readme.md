@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM D21 IoT v2 Development Board
 title: Microsoft Azure Cloud IoT Core Application
 nav_order: 3
@@ -14,7 +14,7 @@ nav_order: 3
 
 -----
 
-## Description:
+<h2> Description: </h2>
 
 > The SAM-IoT Wx v2 Development board based on the SAM D21 microcontroller (MCU) is a small and easily expandable demonstration and development platform for Wi-Fi-based IoT Node applications. This specific development board can be provisioned for Azure IoT Core; The application demonstrates MQTT data transfer of onboard light and temperature sensor data to Microsoft Azure IoT core.  
 
@@ -31,7 +31,7 @@ The board is referred to as SAM-IoT **WZ** v2 Development Board when provisioned
 * ATECC608B based secure cloud connectivity
 * USB HID interface to provision the ECC608B through the SAMD21 MCU.
 
-## Features of SAM-IoT WX v2 Development Board:
+<h2> Features of SAM-IoT WA v2 Development Board: </h2>
 
 * Drag & Drop of application hex files. Hence, no need for IDE to program the SAM D21 microcontroller.
 * Microcontroller peripheral libraries and Middleware are based on the MPLAB Harmony v3 Software framework.
@@ -39,7 +39,8 @@ The board is referred to as SAM-IoT **WZ** v2 Development Board when provisioned
 * Command Line Interface (CLI) support for Wi-Fi credentials configuration.
 * 4 LED indicators to indicate the operating status.
 
-## Components Used:
+<h2> Components Used: </h2>  
+
 - [ATSAMD21G18A microcontroller](https://www.microchip.com/wwwproducts/en/ATsamd21g18)
 - [ATWINC1510 Wi-FI module](https://www.microchip.com/wwwproducts/en/ATwinc1500)
 - [ATECC608B secure element](https://www.microchip.com/wwwproducts/en/ATECC608B)
@@ -48,7 +49,8 @@ The board is referred to as SAM-IoT **WZ** v2 Development Board when provisioned
 - [MIC33050 Voltage Regulator](https://www.microchip.com/wwwproducts/en/MIC33050)
 - TEMT6000 ambient light sensor
 
-## Software/Tools Used:
+<h2> Software/Tools Used: </h2>  
+
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/samd21_wz_iot_v2/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/samd21_wz_iot_v2*  
@@ -142,12 +144,14 @@ Refer [Project Manifest](./firmware/src/config/samd21_wz_iot_v2/harmony-manifest
 
 </details>   
 
-## Application Demonstration
+
+<h2> Application Demonstration </h2>  
+
 <details>
   <summary><B>Details</B></summary>  
 The following sections describes the steps to run the application.
 
-### 1. How to setup the SAM-IoT WZ v2 Development Board
+<h3> 1. How to setup the SAM-IoT WZ v2 Development Board </h3>
 - Connect the SAM-IoT WZ v2 Development board to the host PC's USB port to power-up the board.  
 
   <img src = "images/hardware_setup.png">  
@@ -161,26 +165,37 @@ The following sections describes the steps to run the application.
 
 - Configure the Wi-Fi Credentials using **Wi-Fi configuration through CLI** method explained Below
 
-### 2. Firmware upgrade and Wi-Fi configuration process
+<h3> 2. Firmware upgrade and Wi-Fi configuration process </h3>  
 
-  - #### Firmware upgrade through TPDS and MPLAB X IDE
-    - Click on **MPLAB X Project**. A project opens in MPLAB X IDE. Build and program the firmware  
-	  <img src = "images/tpds18_1.png">  
-  - #### Firmware upgrade through Drag & Drop
-    - Download the latest version of the hex file from the [hex folder](./hex). Drag & Drop the downloaded .hex file onto the CURIOSITY drive.  
+<h4> Firmware upgrade through TPDS and MPLAB X IDE </h4> 	
 
-      <img src = "images/firmware_upg.png">  
+- Click on **MPLAB X Project**. A project opens in MPLAB X IDE. Build and program the firmware  
+	
+	<img src = "images/tpds18_1.png">  
+		
+<h4> Firmware upgrade through Drag & Drop </h4>  
+	
+- Download the latest version of the hex file from the [hex folder](./hex).
+	
+	<img src = "images/firmware_upg.png">  
 
-    - This will automatically program the microcontroller with the provided .hex file. There is no need to open the MPLAB X IDE to program the .hex file.
-  - #### Firmware upgrade through MPLAB X IDE
-    - Most developers usually follow this method to program the .hex file from the MPLAB X IDE environment.
-  - #### Wi-Fi configuration through CLI
-    - Open a terminal application on the host PC for the virtual COM port of the connected SAM-IoT WA v2 Development board, with 9600-8-None-1 settings.
-    - Just enter the below command to set the Wi-Fi credentials.<br>
-		   **`wifi <SSID>,<PASSWORD>,<SECURITY TYPE>`**  
-		   ***example : wifi microchip,microchip@123,2***
+- Drag & Drop the downloaded .hex file onto the CURIOSITY drive.  	
 
-### 3. Running the demo application
+- This will automatically program the microcontroller with the provided .hex file. There is no need to open the MPLAB X IDE to program the .hex file.  
+		
+<h4> Firmware upgrade through MPLAB X IDE </h4>
+- Most developers usually follow this method to program the .hex file from the MPLAB X IDE environment.
+		
+<h4> Wi-Fi configuration through CLI </h4>
+	
+- Open a terminal application on the host PC for the virtual COM port of the connected SAM-IoT WA v2 Development board, with 9600-8-None-1 settings.  
+	
+- Just enter the below command to set the Wi-Fi credentials.<br>
+	
+	***`wifi < SSID >,< PASSWORD >,< SECURITY TYPE >`***  
+	example : ***`wifi microchip,microchip@123,2`***  
+
+<h3> 3. Running the demo application </h3>
  - If the Wi-Fi network is active, then the SAM-IoT WZ v2 Development board establishes connectivity with the Wi-Fi network, sets the Blue LED, securely connects to the Azure IoT cloud, and sets the Green LED.
  - After a successful connection, the SAM-IoT WZ v2 Development board pushes the real-time light and temperature sensors data to the Azure IoT cloud page and toggles the Yellow LED. If not, Red LED glows, indicating ERROR.  
 </details>  
@@ -204,11 +219,12 @@ The following sections describes the steps to run the application.
 </details>  
 
 
+<h2> Reference: </h2>  
 
-## Reference:
 - For more details on the application usage, functionality and other details, refer to the [SAM-IoT Wx v2 Development Board User Guide](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/SAM_IoT_Wx_v2_Development_Board_User_Guide.pdf)
 
-## Comments:
+<h2> Comments:	</h2>  
+
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
 	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
 	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
@@ -218,5 +234,9 @@ The following sections describes the steps to run the application.
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
-### Revision:
-- v1.6.0 - released demo application
+<h2> Revision: </h2>
+- v1.6.0 - released demo application		
+
+
+
+

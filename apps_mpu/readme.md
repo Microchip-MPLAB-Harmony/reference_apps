@@ -1,14 +1,14 @@
 ---
-title: Reference Applications
+title: 32-bit MPU Reference Applications
 has_children: true
 has_toc: false
-nav_order: 2
+nav_order: 3
 ---
 # Reference Application Repository
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on Microchip 32-bit MPU development boards/kits.   
+This repository contains the MPLAB® Harmony 3 reference applications developed on Microchip 32-bit SAM/PIC MCU and MPU development boards/kits.
 
-## Reference Applications
+## 32-bit MPU Reference Applications
 
 The following reference applications are provided to evaluate solutions on 32-bit MPUs.
 

@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E54 Xplained Pro Development Board
 title: File Transfer Protocol - Server Using MPLAB Harmomy v3 TCP/IP Stack
 nav_order: 5
