@@ -1,0 +1,14 @@
+configName: sam_e54_xpro
+folderName: sam_e54_xpro
+format_version: v1.0
+frameworkPath: C:\Dev\harmony3
+processor: ATSAME54P20A
+projectName: sam_e54_xpro
+settings:
+  PackageFilter: bootloader;bootloader_apps_can;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_serial_memory;bootloader_apps_uart;bootloader_apps_usb;bsp;classb_sam_e5x_d5x;core;core_apps_pic32cm_jh00_jh01;core_apps_pic32cm_le_ls;core_apps_pic32cm_mc00;core_apps_pic32cxbz2_wbz45;core_apps_sam_c20_c21;core_apps_sam_d20;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;core_apps_sam_e70_s70_v70_v71;core_apps_sam_g55;core_apps_sam_ha1;core_apps_sam_l10_l11;core_apps_sam_l21;core_apps_sam_l22;core_apps_sam_rh707;core_apps_sam_rh71;crypto;csp;csp_apps_pic32cm_jh00_jh01;csp_apps_pic32cm_le_ls;csp_apps_pic32cm_mc00;csp_apps_sam_c20_c21;csp_apps_sam_d10;csp_apps_sam_d11;csp_apps_sam_d20;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_g55;csp_apps_sam_ha1;csp_apps_sam_l10_l11;csp_apps_sam_l21;csp_apps_sam_l22;csp_apps_sam_rh707;csp_apps_sam_rh71;Devices;dev_packs;gfx;gfx_apps_sam_d5x_e5x;gfx_apps_sam_e70_s70_v70_v71;harmony-services;net;net_apps_sam_e70_v71;net_apps_sam_rh71;quick_docs;reference_apps;touch;touch_apps;touch_host_driver;usb;usb_apps_device;usb_apps_dual_role;usb_apps_host;usb_apps_multi_controller;x2c
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.7.122\atdf\ATSAME54P20A.atdf

@@ -1,6 +1,6 @@
 ---
 
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: SAM E54 Xplained Pro Evaluation Kit
 title: CAN USB bridge
 nav_order: 6
@@ -12,7 +12,7 @@ nav_order: 6
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# CAN to USB bridge Application using SAM E54 Xplained Pro Evaluation Kit
+# CAN to USB bridge and CAN based NVM bootloader Host Application using SAM E54 Xplained Pro Evaluation Kit
 
 <h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same54_can_usb_bridge.zip" > Download </a> </h2>
 
@@ -20,8 +20,9 @@ nav_order: 6
 
 ## Description:
 
-> This application acts as a CAN-USB bridge and enables viewing the data transmitted over an existing CAN network.
-> It reads the data transmitted on a CAN network via the CAN peripheral and displays it on the PC serial terminal window using the USB CDC virtual COM port.   
+>This application acts as a CAN-USB bridge along with CAN based NVM bootloader host application. 
+>With CAN-USB bridge functionality, it reads the data transmitted on a CAN network via the CAN peripheral and displays it on the PC serial terminal window using the USB CDC virtual COM port.
+>With CAN NVM bootloader host functionality, it sends the binary image from the Python script to the target over the CAN bus for programming.   
 
 ## Modules/Technology Used:
 
@@ -33,31 +34,51 @@ nav_order: 6
   - USB Full Speed Driver
 - Libraries
   - USB Device Stack
+  - Bootloader
 
 ## Hardware Used:
 
 - [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAME54-XPRO)
+-  To connect three nodes, terminate the CANL and CANH lines with 120ohm.
 
 ## Software/Tools Used:
 
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer [Project Manifest](./firmware/src/config/sam_e54_xpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e54_xpro*  
+Refer [Project Manifest](./firmware/can_usb_bridge_with_nvm_bootloader_host/firmware/src/config/sam_e54_xpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e54_xpro*  
 
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 - Any Serial Terminal application like Tera Term terminal application.
+- Python (from versions 3.9) with the following modules already installed,
+  serial, struct, os, optparse, math, __future__
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Setup:
+### Hardware setup with three nodes:
 
-- Connect a micro-USB cable to the DEBUG USB port of the SAME54 Xplained pro to power the board and for programming and debugging.
+<img src = "images/hardware_setup_3_nodes.png" align="middle">
 
-- Connect another micro-USB cable to the Target USB port of the SAME54 Xplained pro board, this is for the USB Communication (USB CDC Virtual COM Port).
+Host Development Kit: CAN Node with the Host application (SAME54 Xplained Pro)
 
-- Connect the CAN lines CANL and CANH to a CAN node in the CAN network.
+Target Development Kits: Two CAN Nodes, each programmed with Bootloader of different node ID(SAME54 Xplained Pro)
+
+### Hardware setup with two nodes:
+
+<img src = "images/hardware_setup.png" align="middle">
+
+Host Development Kit: CAN Node with the Host application (SAME54 Xplained Pro)
+
+Target Development Kit: CAN Node programmed with Bootloader of node ID 0x45A (SAME54 Xplained Pro)
+
+- Connect a micro-USB cable from the PC to the DEBUG USB port of the Host development kit to power the board and for programming and debugging.
+
+- Connect another micro-USB cable from the PC to the Target USB port of the Host development kit, this is for the USB Communication (USB CDC Virtual COM Port).
+
+- Connect a micro-USB cable from the PC to the DEBUG USB port of the Target development kit to power the board and for programming and debugging.
+
+- Connect the ground and CAN lines - CANH and CANL from the Host development kit to the Target development kit.
   
-  <img src = "images/hardware_setup.png" width="443" height="483" align="middle">
 
 ## Programming hex file:
 
@@ -79,7 +100,7 @@ The pre-built hex file can be programmed by following the below steps
 
 ## Programming/Debugging Application Project:
 
-- Open the project (can_usb_bridge/firmware/sam_e54_xpro.X) in MPLAB X IDE.
+- Open the project (same54_can_usb_bridge/firmware/can_usb_bridge_with_nvm_bootloader_host/firmware/sam_e54_xpro.X) in MPLAB X IDE.
 - Ensure "SAM E54 Xplained Pro" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Debugging the project can be done by clicking on the “Debug Main Project” button in MPLAB X IDE tool bar
@@ -97,9 +118,73 @@ The pre-built hex file can be programmed by following the below steps
 
 - Open the Teraterm terminal window on your PC, select the USB Virtual COM port
 
-- Transmit CAN messages from the connected CAN nodes, and the messages can be viewed on the USB-CAN bridge terminal window.
+- Transmit CAN messages from the connected CAN nodes.
+
+  <img src = "images/Datalogging_CAN_tx_node.png" width="660" height="342" align="middle">
+
+- See the data logging happening on the USB-CAN Bridge terminal window.
   
-  <img src = "images/output.png" width="656" height="535" align="middle">
+  <img src = "images/Datalogging_CAN_rx_node.png" width="660" height="338" align="middle">
+
+- Type "CONF" or "conf" to view the configuration options. In case of mistyping, Invalid input is displayed on the terminal.
+
+  Note: Enable the local echo option in the terminal application that you use to see the character being typed.
+
+- Enter the choice of mode to perform either CAN bit rate change or firmware update.
+
+- Select “Change CAN bit rates” to change the nominal bit rate and the data bit rate as per application requirement.
+
+  <img src = "images/Change_CAN_bit_rates.png" width="687" height="364" align="middle">
+
+- Select the “Programming mode” to program the MCU.
+
+  <img src = "images/Programming_mode.png" width="690" height="366" align="middle">
+
+- After selecting the programmer mode, choose which node to program based on the node ID(Select option 1).
+
+  LED0 on the host development kit will be turned OFF once the choice of the node is entered.
+
+  Note: Make sure the connected node is programmed with the bootloader of same CAN node ID 0x45A. For CAN bootloader, refer to the can_bootloader/bootloader/firmware in [bootloader_apps_can](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_can/tree/master/apps/can_bootloader). By default, this CAN bootloader is configured with ID 0x45A. 
+  
+
+- Close the Terminal application and run the Python script to parse your hex file.
+  (Note: Programming example shown for test_app_can.bin file which is present in the folder. This test application gets the input from user via EDBG virtual COM port and sends the CAN messages accordingly. Also,it provides options for changing CAN bit rates and bootloader trigger. So,open the target development kit’s Virtual COM port before parsing the hex file)
+  
+### Below is the syntax and an example of running the Python script
+```
+python <harmony-3 path>/reference_apps/apps/sam_e54_xpro/same54_can_usb_bridge/programming_script.py -b <binary_file>
+```
+
+```
+python <harmony-3 path>/reference_apps/apps/sam_e54_xpro/same54_can_usb_bridge/programming_script.py    -b <harmony-3 path>/reference_apps/apps/sam_e54_xpro/same54_can_usb_bridge/bin/test_app_can.bin
+```
+(Note: Make sure the mentioned Python modules on the Software library section are installed before running the python script)
+
+- Enter the COM port number of the USB-CAN Bridge.
+
+- Press the SW0 button in the host development kit  to program the CAN node with the test_app_can .bin file.
+
+   <img src = "images/python.png" width="686" height="83" align="middle">
+   
+- Once the programming is complete,
+  - LED0 on the Host development kit will be turned on indicating success.
+  - The target development kit will be reset. Upon re-start, the bootloader will jump to the user application.
+  
+     <img src = "images/app_loaded_bootloader.png" width="660" height="342" align="middle">
+	 
+  - Now, you can see the CAN FD Demo with options for transmitting CAN messages in the target development kit console.
+  
+- Select an option of a CAN message to be transmitted to the bridge.
+
+- See the data being logged in the host development kit console
+
+
+  (Note: Both the nodes have a default nominal bitrate of 500 and data bitrate of 3000)
+  
+- CAN bit rates can be changed by using option 5 in this application.Try changing the CAN bit rates from the node and check the datalogging.Make sure the same CAN bit rates are configured in the Host Development kit.
+
+
+If you are connecting third node (TARGET DEVELOPMENT KIT 2) in this setup , program this node with bootloader of different node ID(say 0x45B) and follow the above procedure for programming the application bin file. To change the CAN node ID in the bootloader, change the Standard Filter 1 configurations of CAN1 in MCC. After generating the project in MCC, change the CAN_FILTER_ID in bootloader_can.c file available in the bootloader project. You can also use a different test application test_app_led which is present in same54_can_usb_bridge/firmware folder. Make sure host development kit is reset before programming third node. 
 
 ## Comments:
 
@@ -117,4 +202,5 @@ The pre-built hex file can be programmed by following the below steps
 
 ## Revision:
 
+- v1.6.0 - Updated application to add CAN Host Bootloader functionality
 - v1.5.0 - Released demo application
