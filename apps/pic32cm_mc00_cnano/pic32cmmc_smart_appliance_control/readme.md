@@ -86,7 +86,7 @@ Refer [Project Manifest](./firmware/src/config/pic32cm_mc00_cnano/harmony-manife
 #### Programming private characteristics
 - Download the manual configuration tool from [BM70/71 Firmware & Software Tools v1.11](https://ww1.microchip.com/downloads/en/DeviceDoc/Firmware%20&%20Software%20Tools%20v1.11.zip)
 - Extract and locate configuration tool from below location
- 	- Your_downloaded_folder ```\Firmware & Software Tools v1.11\ConfigurationTool\IS187x_102_BLEDK3v1.11_UI1.00```
+ 	- Your_downloaded_folder ```/Firmware & Software Tools v1.11/ConfigurationTool/IS187x_102_BLEDK3v1.11_UI1.00```
 - Double click on "`IS187x_102_BLEDK3v1.11_UI1.00.exe` "
 - Click on "Load" button and select "Load Text File"  
 <img src = "images/ble_config_loading_mainscreen.png" width="300" height="300" align="middle"> <img src = "images/ble_config_loading_step1.png" width="300" height="300" align="middle">
