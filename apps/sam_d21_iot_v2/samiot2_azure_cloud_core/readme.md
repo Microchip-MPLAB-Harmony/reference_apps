@@ -61,27 +61,38 @@ Refer [Project Manifest](./firmware/src/config/samd21_wz_iot_v2/harmony-manifest
 ## <a id="azure_demo_account_setup"> </a>
 ## Microsoft Azure Account Setup
 <details>
-  <summary><B>Details</B></summary>
+  <summary> Details
+</summary>
   In order to run the Azure demo an Azure account is required. This document describes the steps required to obtain and configure an Azure account for the demo.
 
   [Azure](https://azure.microsoft.com/en-in/solutions/iot/) provides computing services for a fee. Some are offered for free on a trial or small-scale basis. By signing up for your own Azure account, you are establishing an account to gain access to a wide range of computing services.
 
 ### Create your own Azure account
+
 1. Create Azure account
     Go to [Azure Portal](https://portal.azure.com/) and follow instructions to create your own Azure account. If you already have an azure account, enter the credentials and log in.
+
 2. Click **Create a resource** in the azure portal.
    If prompted for Create a Free account, Start Free account by clicking on Start Free. Once the account creation is complete, it starts over with above step. Select Create a resource again and continue with next steps.
+
 3. Click **Internet of Things** and from that select **IoT Hub**
+
 4. The new window prompts to select the subscription, Resource Group, Region and IoT Hub Name.
   - Select the Subscription as Free Trial.
   - In the resource group, click Create new and enter any name of your choice.
   - In the Region, Select any region of your choice.
   - In the IoT Hub Name, enter a unique name to identify the Hub.
+
 5. Click **Review + create** after entering all the details.
+
 6. It will take you to the **Review + create** Tab, click **Create** to create an IoT Hub
+
 7. It will start the IoT hub deployment process and it will take a while to create the IoT hub.
+
 8. Click Go to resource and it will take you to the IoT Hub **overview** page.
+
 9. Note down only your IoT Hub Hostname(exclude .azure-devices.net) and Subscription ID as highlighted below. The Hostname should be same as one created in Step 4.4
+
 10. Save the credentials to **azure_credentials.yaml** file in **"~/.trustplatform/azure_credentials.yaml"** folder.
 **Note: ~** Indicates Windows home directory is /user/username
 
@@ -90,55 +101,74 @@ Refer [Project Manifest](./firmware/src/config/samd21_wz_iot_v2/harmony-manifest
 ## <a id="Azure_Cloud_IoT_Provisioning_Guide"> </a>
 ## Azure Cloud IoT Provisioning Guide
 <details>
-  <summary><B>Details</B></summary>  
+  <summary> Details
+</summary>  
 
 <span style="color:red"> **If this is the first time you are building/running this version of the demo, you must complete this step before proceeding further. Otherwise, you may skip this step.** </span>
 
 1. Install [TPDSv2](https://www.microchip.com/en-us/product/SW-TPDSV2#Software)(Trust Platform Design Suite version 2)
+
 2. Launch Trust Platform Design Suite v2 from windows search bar, a window launches as shown below  
 	<img src = "images/tpds1.png">  
+
 3. Select "Trust Platform Design Suite" in **webviews** and Click on **Usecases**  
 	<img src = "images/tpds2.png">  
+
 4. In **Select Security Solution**, Under **Use Cases** select **Azure IoT Authentication**  
 	<img src = "images/tpds3.png">  
+
 5. Scroll Down and in **Available solution by provisioning flow** select **Azure IoT Authentication** under **TrustFLEX**  
 	<img src = "images/tpds4.png">  
+
 6. A Usecase gets launched. click on **Azure Connect-IoT Auth-TFLEX** from the **Usescases**  
 	<img src = "images/tpds5.png">  
+
 7. Azure Cloud Connect – IoT Authentication page launches as shown below  
 	<img src = "images/tpds6.png">
+
 8. Scroll down and select SAM-IoT Wx v2 Development board if not selected  
 	<img src = "images/tpds12.png">
+
 9. Connect SAM-IoT Wx v2 Development Board to PC running Trust Platform Design Suite  
+
 10. Ensure MPLAB X Path is set in File -> Preference under System Settings in TPDS. This helps to program the provisioner kit firmware to the SAM-IoT Wx v2 Development Board  
+
 11. Scroll down to transaction diagram  
 	<img src = "images/tpds7.png">
+
 12. Click on Icon **1** and wait till a green right mark appears.  
 	<img src = "images/tpds8.png">
+
 13. Sequentially Click on Icon **2**, **3** and **4**  
 	<img src = "images/tpds9.png">  
-13. Note the output in the output window on the right side  
+
+14. Note the output in the output window on the right side  
 
 </details>  
 
 ## <a id="WINC_Firmware_upgrade"> </a>
 ## ATWINC1510 Wi-Fi controller module firmware and Azure Root certificates upgrade Guide
 <details>
-  <summary><B>Details</B></summary>    
+  <summary> Details
+</summary>   
 
 <span style="color:red"> **If the SAM-IoT Wx v2 development board is glowing RED LED (Indicates ATWINC1510 Wi-Fi controller module firmware is not up to date), follow the below steps to upgrade the ATWINC1510 firmware. Otherwise(if it glows <font color="green"> GREEN </font>), you may skip this step.** </span>
 
 1. Click on **C Source Folder** in TPDS transcation diagram  
    <img src = "images/tpds13.png">
+
 2. In windows explorer, Applcation folder gets open
    <img src = "images/tpds14_1.png">
+
 3. Click on **utilities** folder
+
 4. Click on **winc_provisioner.bat**, It automatically downloads the ATWINC1510 firmware package and runs the necessary commands using the command prompt.
    <img src = "images/tpds15.png">
    <img src = "images/tpds16.png">
-5. Select the communication (COM) port identified for "SAM-IoT Wx v2" development board from the drop down list and click OK
 
+5. Select the communication (COM) port identified for "SAM-IoT Wx v2" development board from the drop down list and click OK
 	<img src = "images/tpds17.png">
+
 6. Wait till verify passed message comes up, as shown below, and then click on enter to close the command prompt; if it fails, reconnect the board and try again.
    <img src = "images/firmware_upg1.png">
 
@@ -148,7 +178,8 @@ Refer [Project Manifest](./firmware/src/config/samd21_wz_iot_v2/harmony-manifest
 <h2> Application Demonstration </h2>  
 
 <details>
-  <summary><B>Details</B></summary>  
+  <summary> Details
+</summary> 
 The following sections describes the steps to run the application.
 
 <h3> 1. How to setup the SAM-IoT WZ v2 Development Board </h3>
@@ -157,6 +188,7 @@ The following sections describes the steps to run the application.
   <img src = "images/hardware_setup.png">  
 
 - Alternatively, the board can be powered using a Li-Po battery. The board must be connected through a USB port to perform a firmware upgrade or Wi-Fi configuration.  
+
 - Once connected to a PC, a mass storage drive icon by the name **CURIOSITY** will appear.
 
   <img src = "images/curiosity.png">  
@@ -196,23 +228,32 @@ The following sections describes the steps to run the application.
 	example : ***`wifi microchip,microchip@123,2`***  
 
 <h3> 3. Running the demo application </h3>
+
  - If the Wi-Fi network is active, then the SAM-IoT WZ v2 Development board establishes connectivity with the Wi-Fi network, sets the Blue LED, securely connects to the Azure IoT cloud, and sets the Green LED.
+
  - After a successful connection, the SAM-IoT WZ v2 Development board pushes the real-time light and temperature sensors data to the Azure IoT cloud page and toggles the Yellow LED. If not, Red LED glows, indicating ERROR.  
 </details>  
 
 
 ##  Fetching data from Azure Cloud and displaying on Device explorer
 <details>
-  <summary><B>Details</B></summary>  
+  <summary> Details
+</summary>
 
 1. Download and install [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases/tag/2016-11-17/SetupDeviceExplorer.msi) application
+
 2. Run Device Explorer from windows search bar
+
 3. From the [Azure Portal](https://portal.azure.com/): click on your IoT Hub > Shared access polices > iothubowner > connection string-primary key > Copy to clipboard
+
 4. Paste copied connection string-primary key to IoT Hub Connection String tab on device explorer.
+
 5. Then click on Update
     <img src = "images/de.png">
+
 6. Click on **Data** Tab and press **Monitor** button  
     <img src = "images/de_2.png">
+
 7.  The real-time light and temperature sensors data from the Azure IoT cloud is fetched and displayed as shown below
     <img src = "images/de_3.png">
 

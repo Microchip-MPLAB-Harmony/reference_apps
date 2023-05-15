@@ -61,7 +61,8 @@ Refer [Project Manifest](./firmware/src/config/samd21_wa_iot_v2/harmony-manifest
 <h2> AWS Account Setup </h2>  
 
 <details>
-  <summary><B>Details</B></summary>
+  <summary> Details
+</summary>
 To run the AWS Cloud IoT core solution, an AWS account is required. The following are the steps to configure an AWS account.
 
 Amazon Web Services (AWS) provides computing services for a fee. Some are offered for free on a trial or small-scale basis. By signing up for your AWS account, you are establishing an account to access a wide range of computing services.
@@ -133,7 +134,8 @@ The usage of a custom PKI with TrustFLEX devices uses the Just-In-Time Registrat
 <h2> AWS Cloud IoT Provisioning Guide </h2>  
 
 <details>
-  <summary><B>Details</B></summary>  
+  <summary> Details
+</summary>
 
 <span style="color:red"> **If this is the first time you are building/running this version of the demo, you must complete this step before proceeding further. Otherwise, you may skip this step.** </span>
 
@@ -174,7 +176,8 @@ The usage of a custom PKI with TrustFLEX devices uses the Just-In-Time Registrat
 <h2> ATWINC1510 Wi-Fi controller module firmware and AWS Root certificates upgrade Guide </h2>  
 
 <details>
-  <summary><B>Details</B></summary>    
+  <summary> Details
+</summary>
 
 <span style="color:red"> **If the SAM-IoT Wx v2 development board is glowing RED LED (Indicates ATWINC1510 Wi-Fi controller module firmware is not up to date), follow the below steps to upgrade the ATWINC1510 firmware. Otherwise(if it glows <font color="green"> GREEN </font>), you may skip this step.** </span>
 
@@ -198,7 +201,8 @@ The usage of a custom PKI with TrustFLEX devices uses the Just-In-Time Registrat
 <h2> Application Demonstration </h2>  
 
 <details>
-  <summary><B>Details</B></summary>  
+  <summary> Details
+</summary> 
   
 The following sections describes the steps to run the application.  
 
@@ -264,7 +268,8 @@ The following sections describes the steps to run the application.
 <h2> The AWS Lambda service </h2>  
 
 <details>
-  <summary><B>Details</B></summary>    
+  <summary> Details
+</summary>   
 AWS Lambda is a service that enables code to be run in the cloud without worrying about things like provisioning, server management, and scalability. It natively supports many different programming languages, and interfaces with a wide range of other AWS services to facilitate cloud development.
 
 we will use AWS Lambda to transfer temperature and light sensor data from SAM-IoT Development Board to cloud watch. The main concept that we will focus on is how to route data between AWS Lambda and AWS IoT Core.
