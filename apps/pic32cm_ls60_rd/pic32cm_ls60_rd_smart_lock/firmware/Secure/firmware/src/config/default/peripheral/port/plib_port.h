@@ -183,6 +183,9 @@ PERIPHERAL_FUNCTION_K = 0xA,
 
 typedef enum
 {
+    /* PA02 pin */
+    PORT_PIN_PA02 = 2U,
+
     /* PA03 pin */
     PORT_PIN_PA03 = 3U,
 

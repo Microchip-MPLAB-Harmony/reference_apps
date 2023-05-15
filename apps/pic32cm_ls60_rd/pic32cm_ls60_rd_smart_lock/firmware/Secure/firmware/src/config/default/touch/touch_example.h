@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.11.0 Release
+  Touch Library v3.13.1 Release
 
   Company:
     Microchip Technology Inc.
@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (c)  2021 released Microchip Technology Inc.  All rights reserved.
+Copyright (c)  2023 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -49,6 +49,7 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 
 #if (DEF_TOUCH_LOWPOWER_ENABLE == 1u)
 extern volatile uint8_t time_to_measure_touch_var;
+extern volatile uint8_t measurement_mode;
 #endif
 
 extern volatile uint8_t measurement_done_touch;

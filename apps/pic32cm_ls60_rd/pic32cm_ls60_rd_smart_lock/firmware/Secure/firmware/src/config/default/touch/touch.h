@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.11.0 Release
+  Touch Library v3.13.1 Release
 
   Company:
     Microchip Technology Inc.
@@ -16,7 +16,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (c) 2021 released Microchip Technology Inc.  All rights reserved.
+Copyright (c) 2023 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -71,7 +71,6 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
  */
 #define DEF_SENSOR_TYPE NODE_MUTUAL
 
-
 /* Set sensor calibration mode for charge share delay ,Prescaler or series resistor.
  * Range: CAL_AUTO_TUNE_NONE / CAL_AUTO_TUNE_RSEL / CAL_AUTO_TUNE_PRSC / CAL_AUTO_TUNE_CSD
  * Default value: CAL_AUTO_TUNE_NONE.
@@ -79,21 +78,22 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 
 #define DEF_PTC_CAL_OPTION   CAL_AUTO_TUNE_NONE
 
-/* Defines the interrupt priority for the PTC. Set low priority to PTC interrupt for applications having interrupt time
- * constraints.
- */
-#define DEF_PTC_INTERRUPT_PRIORITY 2
-
 /* Calibration option to ensure full charge transfer */
 /* Bits 7:0 = XX | TT SELECT_TAU | X | CAL_OPTION */
 #define DEF_PTC_TAU_TARGET CAL_CHRG_5TAU
 #define DEF_PTC_CAL_AUTO_TUNE (uint8_t)((DEF_PTC_TAU_TARGET << CAL_CHRG_TIME_POS) | DEF_PTC_CAL_OPTION)
+
+/* Defines the interrupt priority for the PTC. Set low priority to PTC interrupt for applications having interrupt time
+ * constraints.
+ */
+#define DEF_PTC_INTERRUPT_PRIORITY 2
 
 /* Set default bootup acquisition frequency.
  * Range: FREQ_SEL_0 - FREQ_SEL_15 , FREQ_SEL_SPREAD
  * Default value: FREQ_SEL_0.
  */
 #define DEF_SEL_FREQ_INIT FREQ_SEL_0
+
 
 /*----------------------------------------------------------------------------
  *     defines
@@ -166,7 +166,7 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 }
 #define NODE_12_PARAMS                                                                                               \
 {                                                                                                                  \
-   X(8)|X(9)|X(22), Y(3)|Y(27)|Y(28)|Y(29), 0, NODE_RSEL_PRSC(RSEL_VAL_0, PRSC_DIV_SEL_4), NODE_GAIN(GAIN_1, GAIN_4), FILTER_LEVEL_16                   \
+   X(9)|X(8)|X(22), Y(3)|Y(27)|Y(28)|Y(29), 0, NODE_RSEL_PRSC(RSEL_VAL_0, PRSC_DIV_SEL_4), NODE_GAIN(GAIN_1, GAIN_1), FILTER_LEVEL_16                   \
 }
 
 /**********************************************************/
@@ -377,6 +377,7 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 /* Defines the Auto scan trigger period.
  * The Low-power measurement period determine the interval between low-power touch measurement.
  * Range: NODE_SCAN_4MS to NODE_SCAN_512MS
+ * Check API file to get the actual range. For certain devices, range is NODE_SCAN_8MS to NODE_SCAN_1024MS 
  * Default value: NODE_SCAN_64MS
 */
 #define QTM_AUTOSCAN_TRIGGER_PERIOD	 NODE_SCAN_512MS

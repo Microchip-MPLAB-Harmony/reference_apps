@@ -8,7 +8,27 @@
         <logicalFolder name="f1" displayName="default" projectFiles="true">
           <logicalFolder name="f2" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
+              <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_check_config.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="calib" displayName="calib" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_config_check.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+                <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
+                </logicalFolder>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="hal" displayName="hal" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="host" displayName="host" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/host/atca_host_config_check.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
+              </logicalFolder>
               <itemPath>../src/config/default/library/cryptoauthlib/atca_config.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_platform.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_config_check.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
@@ -74,6 +94,7 @@
             <itemPath>../src/config/default/touch/touch_api_ptc.h</itemPath>
             <itemPath>../src/config/default/touch/qtm_freq_hop_0x0006_api.h</itemPath>
             <itemPath>../src/config/default/touch/touch_example.h</itemPath>
+            <itemPath>../src/config/default/touch/qtm_freq_hop_auto_0x0004_api.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/default/definitions.h</itemPath>
           <itemPath>../src/config/default/device_cache.h</itemPath>
@@ -262,6 +283,7 @@
                 <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_updateextra.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_verify.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_write.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_delete.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f2" displayName="crypto" projectFiles="true">
                 <logicalFolder name="f1" displayName="hashes" projectFiles="true">
@@ -286,6 +308,7 @@
                 <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_pad.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
@@ -472,6 +495,7 @@
             <linkerLibFileItem>../src/config/default/touch/lib/qtm_touch_key_cm23_0x0002.X.a</linkerLibFileItem>
             <linkerLibFileItem>../src/config/default/touch/lib/qtm_freq_hop_cm23_0x0006.X.a</linkerLibFileItem>
             <linkerLibFileItem>../src/simpleMAP/simpleMAPH3lib.X.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/default/touch/lib/qtm_freq_hop_auto_cm23_0x0004.X.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

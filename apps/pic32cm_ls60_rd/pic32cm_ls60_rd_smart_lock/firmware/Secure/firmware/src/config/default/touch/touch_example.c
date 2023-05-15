@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.11.0 Release
+  Touch Library v3.13.1 Release
 
   Company:
     Microchip Technology Inc.
@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (c)  2021 released Microchip Technology Inc.  All rights reserved.
+Copyright (c)  2023 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -55,7 +55,8 @@ void touch_mainloop_example(void){
 
     /* perform sleep operation based on touch state */
     #if (DEF_TOUCH_LOWPOWER_ENABLE == 1u)
-            if ((time_to_measure_touch_var != 1u)) {
+            if ((time_to_measure_touch_var != 1u)&& 
+        (measurement_mode == 1u)) {
                 PM_StandbyModeEnter();
             }
     #endif

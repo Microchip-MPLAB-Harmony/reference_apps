@@ -58,10 +58,10 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/eic/plib_eic.h"
 #include "peripheral/tcc/plib_tcc0.h"
+#include "app_nonsecure_battery_management.h"
 #include "app_nonsecure_deadbolt_control.h"
 #include "app_nonsecure_security.h"
 #include "app_nonsecure_touch.h"
-#include "app_nonsecure_battery_management.h"
 #include "app_nonsecure_wifi_bridge.h"
 
 typedef uint16_t USART_ERROR; //###Added 

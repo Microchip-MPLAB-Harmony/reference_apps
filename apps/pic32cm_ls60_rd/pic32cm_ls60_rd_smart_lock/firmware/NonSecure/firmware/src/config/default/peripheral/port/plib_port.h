@@ -285,6 +285,12 @@ typedef enum
     /* PA16 pin */
     PORT_PIN_PA16 = 16,
 
+    /* PB30 pin */
+    PORT_PIN_PB30 = 30,
+
+    /* PB31 pin */
+    PORT_PIN_PB31 = 31,
+
     /* PB00 pin */
     PORT_PIN_PB00 = 0,
 

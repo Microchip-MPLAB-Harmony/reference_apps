@@ -59,7 +59,7 @@
 /* ************************************************************************** */
 
 extern volatile uint8_t measurement_done_touch;
-extern volatile bool low_power_measurement;
+extern volatile uint8_t measurement_mode;
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -101,7 +101,7 @@ void APP_SECURE_SetMeasurementDoneTouch(uint8_t val)
  */
 bool APP_SECURE_GetLowPowerMeasurementStatus (void)
 {
-    return low_power_measurement;
+    return measurement_mode;
 }
 
 /* *****************************************************************************

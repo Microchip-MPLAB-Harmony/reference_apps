@@ -1,13 +1,8 @@
 /**
  * \file
- * \brief ATCA Hardware abstraction layer for Microchip devices over Harmony PLIB.
+ * \brief Configuration check and defaults for the atcacert module
  *
- * This code is structured in two parts.  Part 1 is the connection of the ATCA HAL API to the physical I2C
- * implementation. Part 2 is the Harmony I2C primitives to set up the interface.
- *
- * Prerequisite: add SERCOM I2C Master Polled support to application in Atmel Studio
- *
- * \copyright (c) 2015-2018 Microchip Technology Inc. and its subsidiaries.
+ * \copyright (c) 2015-2022 Microchip Technology Inc. and its subsidiaries.
  *
  * \page License
  *
@@ -29,17 +24,38 @@
  * THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR
  * THIS SOFTWARE.
  */
+#ifndef ATCACERT_CHECK_CONFIG_H
+#define ATCACERT_CHECK_CONFIG_H
 
-#include "cryptoauthlib.h"
+/* The atcacert_ module is only set up to work with classic cryptoauth devices */
+#include "calib/calib_config_check.h"
 
-atca_plib_i2c_api_t sercom1_plib_i2c_api = {
-    .read = SERCOM1_I2C_Read,
-    .write = SERCOM1_I2C_Write,
-    .is_busy = SERCOM1_I2C_IsBusy,
-    .error_get = SERCOM1_I2C_ErrorGet,
-    .transfer_setup = SERCOM1_I2C_TransferSetup
-};
+#ifndef ATCACERT_COMPCERT_EN
+#define ATCACERT_COMPCERT_EN                CALIB_ECC_SUPPORT
+#endif
 
+#ifndef ATCACERT_HW_CHALLENGE_EN
+#define ATCACERT_HW_CHALLENGE_EN            CALIB_RANDOM_EN
+#endif
 
+#ifndef ATCACERT_HW_VERIFY_EN
+#define ATCACERT_HW_VERIFY_EN               CALIB_VERIFY_EXTERN_EN
+#endif
 
+#ifndef ATCACERT_DATEFMT_ISO_EN
+#define ATCACERT_DATEFMT_ISO_EN             DEFAULT_ENABLED
+#endif
 
+#ifndef ATCACERT_DATEFMT_UTC_EN
+#define ATCACERT_DATEFMT_UTC_EN             DEFAULT_ENABLED
+#endif
+
+#ifndef ATCACERT_DATEFMT_POSIX_EN
+#define ATCACERT_DATEFMT_POSIX_EN           DEFAULT_ENABLED
+#endif
+
+#ifndef ATCACERT_DATEFMT_GEN_EN
+#define ATCACERT_DATEFMT_GEN_EN             DEFAULT_ENABLED
+#endif
+
+#endif /* ATCACERT_CHECK_CONFIG_H */

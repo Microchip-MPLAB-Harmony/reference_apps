@@ -1,13 +1,8 @@
 /**
  * \file
- * \brief ATCA Hardware abstraction layer for Microchip devices over Harmony PLIB.
+ * \brief  Configure the platform interfaces for cryptoauthlib
  *
- * This code is structured in two parts.  Part 1 is the connection of the ATCA HAL API to the physical I2C
- * implementation. Part 2 is the Harmony I2C primitives to set up the interface.
- *
- * Prerequisite: add SERCOM I2C Master Polled support to application in Atmel Studio
- *
- * \copyright (c) 2015-2018 Microchip Technology Inc. and its subsidiaries.
+ * \copyright (c) 2015-2020 Microchip Technology Inc. and its subsidiaries.
  *
  * \page License
  *
@@ -29,17 +24,38 @@
  * THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR
  * THIS SOFTWARE.
  */
+#ifndef ATCA_PLATFORM_H
+#define ATCA_PLATFORM_H
 
-#include "cryptoauthlib.h"
+#include <stddef.h>
+#include <string.h>
 
-atca_plib_i2c_api_t sercom1_plib_i2c_api = {
-    .read = SERCOM1_I2C_Read,
-    .write = SERCOM1_I2C_Write,
-    .is_busy = SERCOM1_I2C_IsBusy,
-    .error_get = SERCOM1_I2C_ErrorGet,
-    .transfer_setup = SERCOM1_I2C_TransferSetup
-};
+#if defined(ATCA_TESTS_ENABLED) || !defined(ATCA_PLATFORM_MALLOC)
+void*   hal_malloc(size_t size);
+void    hal_free(void* ptr);
+#else
+#define hal_malloc      ATCA_PLATFORM_MALLOC
+#define hal_free        ATCA_PLATFORM_FREE
+#endif
 
+#ifdef ATCA_PLATFORM_MEMSET_S
+#define hal_memset_s    ATCA_PLATFORM_MEMSET_S
+#else
+#ifndef memset_s
+#define hal_memset_s    atcab_memset_s
+#else
+#define hal_memset_s    memset_s
+#endif
+#endif
 
+#ifdef ATCA_PLATFORM_STRCASESTR
+#define lib_strcasestr  ATCA_PLATFORM_STRCASESTR
+#else
+#ifndef strcasestr
+char *lib_strcasestr(const char *haystack, const char *needle);
+#else
+#define lib_strcasestr  strcasestr
+#endif
+#endif /* ATCA_PLATFORM_STRCASESTR */
 
-
+#endif /* ATCA_PLATFORM_H */

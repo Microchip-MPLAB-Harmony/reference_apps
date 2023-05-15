@@ -146,10 +146,10 @@ void SYS_Initialize ( void* data )
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
 
 
+    APP_NONSECURE_BATTERY_MANAGEMENT_Initialize();
     APP_NONSECURE_DEADBOLT_CONTROL_Initialize();
     APP_NONSECURE_SECURITY_Initialize();
     APP_NONSECURE_TOUCH_Initialize();
-    APP_NONSECURE_BATTERY_MANAGEMENT_Initialize();
     #ifdef WIFI_ENABLE
     APP_NONSECURE_WIFI_BRIDGE_Initialize();
     #endif

@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.11.0 Release
+  Touch Library v3.13.1 Release
 
   Company:
     Microchip Technology Inc.
@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (c)  2021 released Microchip Technology Inc.  All rights reserved.
+Copyright (c)  2023 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -40,6 +40,8 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 *******************************************************************************/
 
 
+
+
 /*----------------------------------------------------------------------------
  *     include files
  *----------------------------------------------------------------------------*/
@@ -49,7 +51,6 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 /*----------------------------------------------------------------------------
  *   prototypes
  *----------------------------------------------------------------------------*/
-
 /*! \brief configure keys, wheels and sliders.
  */
 static touch_ret_t touch_sensors_config(void);
@@ -61,9 +62,6 @@ static void qtm_measure_complete_callback(void);
 /*! \brief Touch Error callback function prototype.
  */
 static void qtm_error_callback(uint8_t error);
-
-/*Flag to indicate low power measurement*/
-volatile bool low_power_measurement = false;
 
 #if (DEF_TOUCH_LOWPOWER_ENABLE == 1u)
 /* low power processing function */
@@ -96,6 +94,8 @@ uint8_t module_error_code = 0;
 uint16_t time_since_touch = 0;
 /* store the drift period for comparison */
 uint16_t measurement_period_store = DEF_TOUCH_MEASUREMENT_PERIOD_MS;
+/* measurement mode; 0 - sequential, 1 - windowcomp*/
+volatile uint8_t measurement_mode = 0u; 
 
 /* Acquisition module internal data - Size to largest acquisition set */
 uint16_t touch_acq_signals_raw[DEF_NUM_CHANNELS];
@@ -196,7 +196,6 @@ static touch_ret_t touch_sensors_config(void)
         qtm_calibrate_sensor_node(&qtlib_acq_set1, sensor_nodes);
     }
 
-
     /* Enable sensor keys and assign nodes */
     for (sensor_nodes = 0u; sensor_nodes < DEF_NUM_SENSORS; sensor_nodes++) {
 			qtm_init_sensor_key(&qtlib_key_set1, sensor_nodes, &ptc_qtlib_node_stat1[sensor_nodes]);
@@ -242,7 +241,6 @@ static void qtm_error_callback(uint8_t error)
 	module_error_code = error + 1u;
 
 }
-
 /*============================================================================
 void touch_init(void)
 ------------------------------------------------------------------------------
@@ -379,8 +377,7 @@ static void touch_disable_lowpower_measurement(void)
 	/* Store the measurement period */
 	measurement_period_store = DEF_TOUCH_MEASUREMENT_PERIOD_MS;
     
-    low_power_measurement = false;
-
+    measurement_mode = 0u;
 }
 
 /*============================================================================
@@ -410,8 +407,7 @@ static void touch_enable_lowpower_measurement(void)
     RTC_Timer32Start();
 	/* Store the measurement period */
 	measurement_period_store = DEF_TOUCH_DRIFT_PERIOD_MS;
-    
-    low_power_measurement = true;
+    measurement_mode = 1u;
 }
 
 /*============================================================================
@@ -425,10 +421,9 @@ Output : none
 Notes  :
 ============================================================================*/
 static void touch_process_lowpower(void) {
+       
     if (time_since_touch >= DEF_TOUCH_TIMEOUT) {
-        
     touch_ret_t touch_ret;
-    
 		/* Start Autoscan */
 		touch_ret = qtm_autoscan_sensor_node(&auto_scan_setup, touch_measure_wcomp_match);
 
@@ -498,13 +493,15 @@ void rtc_cb( RTC_TIMER32_INT_MASK intCause, uintptr_t context )
     touch_timer_handler();
 }
 uintptr_t rtc_context;
-
 void touch_timer_config(void)
 {  
     RTC_Timer32CallbackRegister(rtc_cb, rtc_context);
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COUNT_Msk) == RTC_MODE0_SYNCBUSY_COUNT_Msk)
-    { /* Wait for Synchronization after writing value to Count Register */ }
+    {
+        
+    }
+    /* Wait for Synchronization after writing value to Count Register */
     RTC_Timer32Stop();
     RTC_Timer32CounterSet(0u);
 
