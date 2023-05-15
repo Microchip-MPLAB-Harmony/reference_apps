@@ -5,20 +5,15 @@
     Microchip Technology Inc.
 
   File Name:
-    app_bat_mgmt.c
+    app_nonsecure_battery_management.c
 
   Summary:
-    This file contains the source code for the MPLAB Harmony application.
+    Source code for battery management.
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
+    This file contains the source code for battery management.  It
+    implements the logic of the application's battery management and calls
+    API routines of other MPLAB Harmony modules in the system.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -111,7 +106,6 @@ void adc_cb(ADC_STATUS status, uintptr_t context )
 {
     app_bat_mgmtData.bat_low_det = true;
     app_bat_mgmtData.adc_result = ADC_ConversionResultGet();
-    //APP_DebugPrintf("\r\n ADC Result = %d",app_bat_mgmtData.adc_result);
 }
 // *****************************************************************************
 // *****************************************************************************

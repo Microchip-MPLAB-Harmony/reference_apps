@@ -9,17 +9,11 @@
     app_nonsecure_security.c
 
   Summary:
-    This file contains the source code for the MPLAB Harmony application.
+    Source code for Security implementation.
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
+    This file contains the source code for the application's secure user interface.
+    It implements the logic for creating, saving and verifying user passkeys.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -73,7 +67,7 @@
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the APP_SECURITY_Initialize function.
+    This structure should be initialized by the APP_NONSECURE_SECURITY_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
@@ -120,10 +114,10 @@ extern APP_NONSECURE_WIFI_BRIDGE_DATA app_wifiData;
 
 /*******************************************************************************
   Function:
-    void APP_SECURITY_Initialize ( void )
+    void APP_NONSECURE_SECURITY_Initialize ( void )
 
   Remarks:
-    See prototype in app_security.h.
+    See prototype in app_nonsecure_security.h.
  */
 
 void APP_NONSECURE_SECURITY_Initialize ( void )
@@ -138,10 +132,10 @@ void APP_NONSECURE_SECURITY_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void APP_SECURITY_Tasks ( void )
+    void APP_NONSECURE_SECURITY_Tasks ( void )
 
   Remarks:
-    See prototype in app_security.h.
+    See prototype in app_nonsecure_security.h.
  */
 
 void APP_NONSECURE_SECURITY_Tasks ( void )

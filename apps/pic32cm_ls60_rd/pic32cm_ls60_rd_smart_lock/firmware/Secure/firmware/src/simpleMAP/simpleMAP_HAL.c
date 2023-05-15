@@ -1,3 +1,20 @@
+/* ************************************************************************** */
+/** SIMPLEMAP HARDWARE ABSTRACTION LAYER
+
+  Company:
+    MICROCHIP TECHNOLOGY INC
+
+  File Name:
+    simpleMAP_HAL.c
+
+  Summary:
+    Bridges platform specific hardware peripherals to be used by the library.
+
+  Description:
+    Implements specific USART/I2C/Delay functions that the library can use.
+ */
+/* ************************************************************************** */
+
 /*******************************************************************************
 * Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
 *
@@ -20,23 +37,6 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
-/* ************************************************************************** */
-/** SIMPLEMAP HARDWARE ABSTRACTION LAYER
-
-  @Company
-    MICROCHIP TECHNOLOGY INC
-
-  @File Name
-    simpleMAP_HAL.c
-
-  @Summary
-    Bridges platform specific hardware peripherals to be used by the library.
-
-  @Description
-    Implements specific USART/I2C/Delay functions that the library can use.
- */
-/* ************************************************************************** */
 
 /* ************************************************************************** */
 /* ************************************************************************** */

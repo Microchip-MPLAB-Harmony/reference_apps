@@ -1,19 +1,19 @@
-/* ************************************************************************** */
-/** Descriptive File Name
+/*******************************************************************************
+  MPLAB Harmony Application Source File
 
-  @Company
-    Company Name
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    filename.c
+  File Name:
+    app_secure_security.c
 
-  @Summary
-    Brief description of the file.
+  Summary:
+    Source code for Security implementation.
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+  Description:
+    This file contains the source code for the application's secure user interface.
+    It provides APIs that can be securely accessed for creating, saving and verifying user passkeys.
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************
@@ -68,27 +68,6 @@
 /* ************************************************************************** */
 /* ************************************************************************** */
 
-/*  A brief description of a section can be given directly below the section
-    banner.
- */
-
-/* ************************************************************************** */
-/** Descriptive Data Item Name
-
-  @Summary
-    Brief one-line summary of the data item.
-    
-  @Description
-    Full description, explaining the purpose and usage of data item.
-    <p>
-    Additional description in consecutive paragraphs separated by HTML 
-    paragraph breaks, as necessary.
-    <p>
-    Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-    
-  @Remarks
-    Any additional remarks
- */
 const uint32_t nvm_data_flash_user_start_address[(DATAFLASH_PAGE_SIZE * 4)] __attribute__((address(DATAFLASH_ADDR)))= {0};
 ATCAIfaceCfg *cfg3;
 
@@ -105,8 +84,6 @@ uint8_t* passkey;
 uint8_t sha_digest[32];
 uint8_t signature[64];
 atca_io_decrypt_in_out_t io_dec_params;
-//uint8_t kdf_defaultkey[32] = {0x6b, 0xd5, 0x4c, 0x8f, 0xb0, 0x41, 0x77, 0x85, 0x46, 0xd9, 0x97, 0x6c, 0x13, 0x52, 0x47, 
-//         0x35, 0xe4, 0x5b, 0xc8, 0xc4, 0x26, 0x50, 0xb5, 0x94, 0x52, 0xd9, 0x42, 0xa8, 0xaa, 0x96, 0xa1, 0xc5};
 
 /*default passkey 00000*/
 uint8_t kdf_defaultkey[32]={0xA2, 0x7C,0x7C, 0x76, 0x5B, 0x91, 0xA7, 0xE3, 0xAF, 0x3A, 0xE0, 0x63, 0x0A, 0x75, 0xFC, 
@@ -159,9 +136,6 @@ volatile bool set_new_passkey = false;
 
 bool current_passkey_validated = false;
 
-//extern APP_DB_MOTOR_DATA app_db_motorData;
-
-//extern APP_BLE_DATA bleData;
 enum user {User1=1, User2, User3, User4, User5};
 uint8_t rand_number[NONCE_NUMIN_SIZE];  
 
@@ -270,51 +244,6 @@ char* itoa(int num, char* str, int bas)
     return str;
 }
 
-/* ************************************************************************** */
-
-/** 
-  @Function
-    int ExampleLocalFunctionName ( int param1, int param2 ) 
-
-  @Summary
-    Brief one-line description of the function.
-
-  @Description
-    Full description, explaining the purpose and usage of the function.
-    <p>
-    Additional description in consecutive paragraphs separated by HTML 
-    paragraph breaks, as necessary.
-    <p>
-    Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-
-  @Precondition
-    List and describe any required preconditions. If there are no preconditions,
-    enter "None."
-
-  @Parameters
-    @param param1 Describe the first parameter to the function.
-    
-    @param param2 Describe the second parameter to the function.
-
-  @Returns
-    List (if feasible) and describe the return values of the function.
-    <ul>
-      <li>1   Indicates an error occurred
-      <li>0   Indicates an error did not occur
-    </ul>
-
-  @Remarks
-    Describe any special behavior not described above.
-    <p>
-    Any additional remarks.
-
-  @Example
-    @code
-    if(ExampleFunctionName(1, 2) == 0)
-    {
-        return 3;
-    }
- */
 
 ATCADeviceType APP_SECURITY_GetDeviceType(uint8_t revision_byte)
 {
@@ -355,7 +284,7 @@ ATCA_STATUS APP_SECURITY_CheckDeviceType(ATCAIfaceCfg* cfg, bool overwrite)
    {
       if ((status = atcab_init(cfg)) != ATCA_SUCCESS)
       {
-      //   printf("atcab_init() failed with ret=0x%08X\r\n", status);
+         printf("atcab_init() failed with ret=0x%08X\r\n", status);
          break;
       }
       
@@ -370,7 +299,6 @@ ATCA_STATUS APP_SECURITY_CheckDeviceType(ATCAIfaceCfg* cfg, bool overwrite)
 
       displaylen = sizeof(displaystr);
       atcab_bin2hex(revision, sizeof(revision), displaystr, &displaylen);
-     // printf("\nDevice revision: %s\r\n", displaystr);
 
       // Request the Serial Number
       if ((status = atcab_read_serial_number(serial_number)) != ATCA_SUCCESS)
@@ -416,7 +344,6 @@ SE_PASSKEY_STATUS APP_SECURITY_ValidatePasskey()
     }
    printf ("Passkey validation in progress...\r\n");
            
-  //  passkey_send = (uint8_t *)passkey; //typecasting before sending to avoid compiler warning
     atcac_sw_sha2_256(passkey, 32, sha_digest);
                 
     // Setup nonce command
@@ -467,18 +394,14 @@ SE_PASSKEY_STATUS APP_SECURITY_ValidatePasskey()
                     {
                         stat= SE_ONLY_VALIDATE;
                         printf ("Passkey Valid! Access Granted\r\n");
-                        //app_db_motorData.state = APP_DB_MOTOR_STATE_OPEN;
                     }
                 }
                       
                 else
                 {
-    //#                APP_Backlight(false);
-    //#                APP_Backlight_FalseBlink ();
                     #if DEBUG_PRINT
                     printf("\n\r Wrong Passkey ! Access Denied");
                     #endif
-                  //  memset (passkey, 0, sizeof passkey);
                     printf ("Wrong Passkey! Access Denied");
                     stat= SE_VALIDATE_FAILED;
                 }
@@ -606,7 +529,6 @@ bool APP_SECURITY_SaveTempPasskey()
             
             APP_Random_Generation();
 
-            //passkey_send = (uint8_t *)passkey; //typecasting before sending to avoid compiler warning
             atcac_sw_sha2_256(passkey, 32, sha_digest);              
             
             
@@ -649,7 +571,6 @@ bool APP_SECURITY_SaveTempPasskey()
             printf("Temporary Passkey encrypted and stored successfully!\r\n");
             
             temp_key_active = true;
-   //#         SYS_TIME_CallbackRegisterMS(Tempkey_Expire_Callback, 0, 50000, SYS_TIME_SINGLE);
 
             memset (passkey, 0, 32); // Reset passkey received from touchpad
             return 1;
@@ -709,29 +630,6 @@ void APP_SECURITY_SetDefaultKeyStore(bool state)
 {
     default_key_store = state;
 }
-/* ************************************************************************** */
-/* ************************************************************************** */
-// Section: Interface Functions                                               */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/*  A brief description of a section can be given directly below the section
-    banner.
- */
-
-// *****************************************************************************
-
-/** 
-  @Function
-    int ExampleInterfaceFunctionName ( int param1, int param2 ) 
-
-  @Summary
-    Brief one-line description of the function.
-
-  @Remarks
-    Refer to the example_file.h interface header for function usage details.
- */
-
 
 /* *****************************************************************************
  End of File

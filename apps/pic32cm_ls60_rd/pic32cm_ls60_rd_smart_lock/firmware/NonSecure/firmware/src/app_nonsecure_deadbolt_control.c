@@ -8,17 +8,12 @@
     app_nonsecure_deadbolt_control.c
 
   Summary:
-    This file contains the source code for the MPLAB Harmony application.
+    Source code for deadbolt control.
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
+    This file contains the source code for the application's deadbolt control.  It
+    implements the logic of the application's deadbolt control and calls
+    API routines of other MPLAB Harmony modules in the system such as external interrupts, TCC and SysTime.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -53,28 +48,6 @@
 
 #include "app_nonsecure_deadbolt_control.h"
 #include "trustZone/nonsecure_entry.h"
-// *****************************************************************************
-// *****************************************************************************
-// Section: Global Data Definitions
-// *****************************************************************************
-// *****************************************************************************
-
-// *****************************************************************************
-/* Application Data
-
-  Summary:
-    Holds application data
-
-  Description:
-    This structure holds the application's data.
-
-  Remarks:
-    This structure should be initialized by the APP_DB_MOTOR_Initialize function.
-
-    Application strings and buffers are be defined outside this structure.
-*/
-
-
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,10 +57,10 @@
 
 /*******************************************************************************
   Function:
-    void APP_DB_MOTOR_Callback(uintptr_t context)
+    void APP_NONSECURE_DEADBOLT_CONTROL_Callback(uintptr_t context)
 
   Remarks:
-    See prototype in app_db_motor.h.
+    See prototype in app_nonsecure_db_motor.h.
  */
 void APP_NONSECURE_DEADBOLT_CONTROL_Callback(uintptr_t context)
 {
@@ -179,10 +152,10 @@ void APP_NONSECURE_DEADBOLT_CONTROL_Callback(uintptr_t context)
 
 /*******************************************************************************
   Function:
-    void APP_DB_MOTOR_Open ( void )
+    void APP_NONSECURE_DEADBOLT_CONTROL_MotorOpen ( void )
 
   Remarks:
-    See prototype in app_db_motor.h.
+    See prototype in app_nonsecure_db_motor.h.
  */
 
 void APP_NONSECURE_DEADBOLT_CONTROL_MotorOpen ( void )
@@ -195,10 +168,10 @@ void APP_NONSECURE_DEADBOLT_CONTROL_MotorOpen ( void )
 
 /*******************************************************************************
   Function:
-    void APP_DB_MOTOR_Open ( void )
+    void APP_NONSECURE_DEADBOLT_CONTROL_MotorClose ( void )
 
   Remarks:
-    See prototype in app_db_motor.h.
+    See prototype in app_nonsecure_db_motor.h.
  */
 
 void APP_NONSECURE_DEADBOLT_CONTROL_MotorClose ( void )
@@ -218,10 +191,10 @@ void APP_NONSECURE_DEADBOLT_CONTROL_MotorClose ( void )
 
 /*******************************************************************************
   Function:
-    void APP_DB_MOTOR_Initialize ( void )
+    void APP_NONSECURE_DEADBOLT_CONTROL_Initialize ( void )
 
   Remarks:
-    See prototype in app_db_motor.h.
+    See prototype in app_nonsecure_db_motor.h.
  */
 
 void APP_NONSECURE_DEADBOLT_CONTROL_Initialize ( void )
@@ -235,10 +208,10 @@ void APP_NONSECURE_DEADBOLT_CONTROL_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void APP_DB_MOTOR_Tasks ( void )
+    void APP_NONSECURE_DEADBOLT_CONTROL_Tasks ( void )
 
   Remarks:
-    See prototype in app_db_motor.h.
+    See prototype in app_nonsecure_db_motor.h.
  */
 
 void APP_NONSECURE_DEADBOLT_CONTROL_Tasks ( void )

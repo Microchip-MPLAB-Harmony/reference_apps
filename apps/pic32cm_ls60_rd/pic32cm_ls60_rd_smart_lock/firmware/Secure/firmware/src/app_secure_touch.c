@@ -1,20 +1,21 @@
 
-/* ************************************************************************** */
-/** Descriptive File Name
+/*******************************************************************************
+  MPLAB Harmony Application Source File
 
-  @Company
-    Company Name
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    filename.c
+  File Name:
+    app_secure_touch.c
 
-  @Summary
-    Brief description of the file.
+  Summary:
+    Source code for touch.
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+  Description:
+    This file contains the source code for processing the touch sensors securely.
+    It provides APIs to initiate touch measurement and handle the touch state machine 
+    securely.
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************

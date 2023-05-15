@@ -8,17 +8,13 @@
     app_nonsecure_wifi_bridge.c
 
   Summary:
-    This file contains the source code for the MPLAB Harmony application.
+    Source code for WiFi.
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
+    This file contains the source code for the wireless bridge application.  It
+    implements the logic to control the door lock remotely. It takes care of 
+    initializing the WiFi module and transferring data between the PIC32CM LS60 
+    device and the WFI32 IoT board.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -99,19 +95,12 @@ extern APP_NONSECURE_DEADBOLT_CONTROL_DATA app_db_motorData;
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the APP_BRIDGE_WIFI_Initialize function.
+    This structure should be initialized by the APP_NONSECURE_WIFI_BRIDGE_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
 
 APP_NONSECURE_WIFI_BRIDGE_DATA app_wifiData;
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Application local Callback Functions
-// *****************************************************************************
-// *****************************************************************************
-
 
 // *****************************************************************************
 // *****************************************************************************
@@ -121,7 +110,7 @@ APP_NONSECURE_WIFI_BRIDGE_DATA app_wifiData;
 
 /*******************************************************************************
   Function:
-    void APP_BRIDGE_WIFI_Initialize ( void )
+    void APP_NONSECURE_WIFI_BRIDGE_Initialize ( void )
 
   Remarks:
     See prototype in app_nonsecure_wifi_bridge.h.
@@ -141,7 +130,7 @@ void APP_NONSECURE_WIFI_BRIDGE_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void APP_BRIDGE_WIFI_Tasks ( void )
+    void APP_NONSECURE_WIFI_BRIDGE_Tasks ( void )
 
   Remarks:
     See prototype in app_nonsecure_wifi_bridge.h.

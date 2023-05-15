@@ -1,19 +1,19 @@
-/* ************************************************************************** */
-/** Descriptive File Name
+/*******************************************************************************
+  MPLAB Harmony Application Header File
 
-  @Company
-    Company Name
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    filename.h
+  File Name:
+    app_secure_touch.h
 
-  @Summary
-    Brief description of the file.
+  Summary:
+    This header file provides prototypes and definitions for the application.
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+  Description:
+    This header file provides function prototypes and data type definitions for
+    the secure touch interface of the application.
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************
@@ -39,8 +39,8 @@
  *******************************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _EXAMPLE_FILE_NAME_H    /* Guard against multiple inclusion */
-#define _EXAMPLE_FILE_NAME_H
+#ifndef _APP_SECURE_TOUCH_H    /* Guard against multiple inclusion */
+#define _APP_SECURE_TOUCH_H
 
 
 /* ************************************************************************** */
@@ -53,7 +53,6 @@
  */
 
 #include "config/default/touch/touch.h"
-//#include "config/default/touch/touch_api_ptc.h"
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus
@@ -132,7 +131,7 @@ extern "C" {
 }
 #endif
 
-#endif /* _EXAMPLE_FILE_NAME_H */
+#endif /* _APP_SECURE_TOUCH_H */
 
 /* *****************************************************************************
  End of File

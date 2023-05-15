@@ -1,19 +1,19 @@
-/* ************************************************************************** */
-/** BLE CHANNEL MANAGER FOR BM70 MODULE
+/*******************************************************************************
+  MPLAB Harmony Application Header File
 
-  @Company
-    MICROCHIP TECHNOLOGY INC
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    ble_manager.c
+  File Name:
+    app_secure_ble_manager.h
 
-  @Summary
-    Manages BM70 Connections.
+  Summary:
+    This header file provides prototypes and definitions for the application.
 
-  @Description
-    Implements specific BM70 managing functions.
- */
-/* ************************************************************************** */
+  Description:
+    This header file provides function prototypes and data type definitions for
+    the BLE application.
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************
@@ -39,8 +39,8 @@
  *******************************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _BLE_MANAGER_H    /* Guard against multiple inclusion */
-#define _BLE_MANAGER_H
+#ifndef _APP_SECURE_BLE_MANAGER_H    /* Guard against multiple inclusion */
+#define _APP_SECURE_BLE_MANAGER_H
 
 
 /* ************************************************************************** */
@@ -131,7 +131,7 @@ void APP_SECURE_BLE_MANAGER_BleModuleDisconnect( void );
 }
 #endif
 
-#endif /* _BLE_MANAGER_H */
+#endif /* _APP_SECURE_BLE_MANAGER_H */
 
 /* *****************************************************************************
  End of File

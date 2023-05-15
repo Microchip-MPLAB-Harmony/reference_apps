@@ -612,6 +612,8 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe"
+                  value=",--cmse-implib --out-implib=../../../NonSecure/firmware/pic32cm_ls60_sdl_NonSecure.X/pic32cm_ls60_sdl_Secure_sg_veneer.lib"/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>

@@ -268,7 +268,7 @@ void APP_NONSECURE_TOUCH_BuzzerOn(uint16_t time_ms);
 #endif
 //DOM-IGNORE-END
 
-#endif /* _APP_TOUCH_H */
+#endif /* _APP_NONSECURE_TOUCH_H */
 
 /*******************************************************************************
  End of File

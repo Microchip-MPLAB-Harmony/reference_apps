@@ -211,7 +211,7 @@ void APP_NONSECURE_SECURITY_Tasks( void );
 #endif
 //DOM-IGNORE-END
 
-#endif /* _APP_SECURITY_H */
+#endif /* _APP_NONSECURE_SECURITY_H */
 
 /*******************************************************************************
  End of File

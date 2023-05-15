@@ -8,11 +8,10 @@
     main.c
 
   Summary:
-    This file contains the "main" function for a project.
+    "main" function of the project.
 
   Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
+    The "main" function calls the "SYS_Initialize" function to initialize the state
     machines of all modules in the system
  *******************************************************************************/
 

@@ -1,19 +1,19 @@
-/* ************************************************************************** */
-/** Descriptive File Name
+/*******************************************************************************
+  MPLAB Harmony Application Header File
 
-  @Company
-    Company Name
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    filename.h
+  File Name:
+    app_secure_security.h
 
-  @Summary
-    Brief description of the file.
+  Summary:
+    This header file provides prototypes and definitions for the application.
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+  Description:
+    This header file provides function prototypes and data type definitions for
+    the secure interface of the application.
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************
@@ -39,8 +39,8 @@
  *******************************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _EXAMPLE_FILE_NAME_H    /* Guard against multiple inclusion */
-#define _EXAMPLE_FILE_NAME_H
+#ifndef _APP_SECURE_SECURITY_H    /* Guard against multiple inclusion */
+#define _APP_SECURE_SECURITY_H
 
 #include "atca_iface.h"
 #include "atca_status.h"
@@ -296,7 +296,7 @@ ATCA_STATUS status;
 }
 #endif
 
-#endif /* _EXAMPLE_FILE_NAME_H */
+#endif /* _APP_SECURE_SECURITY_H */
 
 /* *****************************************************************************
  End of File

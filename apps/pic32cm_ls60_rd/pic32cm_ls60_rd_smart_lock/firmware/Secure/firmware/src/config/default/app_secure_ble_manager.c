@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /** BLE CHANNEL MANAGER FOR BM70 MODULE
 
-  @Company
+  Company:
     MICROCHIP TECHNOLOGY INC
 
-  @File Name
-    ble_manager.c
+  File Name:
+    app_secure_ble_manager.c
 
-  @Summary
+  Summary:
     Manages BM70 Connections.
 
-  @Description
+  Description:
     Implements specific BM70 managing functions.
  */
 /* ************************************************************************** */

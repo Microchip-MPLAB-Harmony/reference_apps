@@ -201,7 +201,7 @@ void APP_NONSECURE_WIFI_BRIDGE_Tasks( void );
 #endif
 //DOM-IGNORE-END
 
-#endif /* _APP_BRIDGE_WIFI_H */
+#endif /* _APP_NONSECURE_WIFI_BRIDGE_H */
 
 /*******************************************************************************
  End of File

@@ -6,20 +6,15 @@
     Microchip Technology Inc.
 
   File Name:
-    app_touch.c
+    app_nonsecure_touch.c
 
   Summary:
-    This file contains the source code for the MPLAB Harmony application.
+    Source code for touch.
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
+    This file contains the source code for handling the touch inputs from user.  It
+    implements the logic to receive passkey inputs for access authentication as well 
+    as updating old passkey.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -136,7 +131,7 @@ volatile bool digest_verify_status=false;
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the APP_TOUCH_Initialize function.
+    This structure should be initialized by the APP_NONSECURE_TOUCH_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
@@ -267,7 +262,7 @@ void APP_NONSECURE_TOUCH_Backlight_FalseBlink (void)
 
 /*******************************************************************************
   Function:
-    void APP_TOUCH_Initialize ( void )
+    void APP_NONSECURE_TOUCH_Initialize ( void )
 
   Remarks:
     See prototype in app_nonsecure_touch.h.
@@ -287,7 +282,7 @@ void APP_NONSECURE_TOUCH_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void APP_TOUCH_Tasks ( void )
+    void APP_NONSECURE_TOUCH_Tasks ( void )
 
   Remarks:
     See prototype in app_nonsecure_touch.h.
