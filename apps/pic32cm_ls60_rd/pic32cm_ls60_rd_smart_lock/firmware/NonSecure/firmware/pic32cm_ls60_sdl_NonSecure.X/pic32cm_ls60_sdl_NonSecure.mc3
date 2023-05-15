@@ -1,4 +1,4 @@
-<config configName="default" projectName="SmartDoorLock_PIC32CMLS_NonSecure" configVersion="1.1" device="PIC32CM5164LS60064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
+<config configName="default" projectName="pic32cm_ls60_sdl_NonSecure" configVersion="1.1" device="PIC32CM5164LS60064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -11552,7 +11552,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\default\definitions.h</file>
-         <hash>34c55b9cecc0f4ab878fb7349e3b8c831e73c9fdf35428589d52c73bd5df62d2</hash>
+         <hash>58e5e41d6c9555d34b1d7975e53dfe9b96b6ac4b169c04e835c130418e1bcf2c</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\default\peripheral\tc\plib_tc2.c</file>
@@ -12264,7 +12264,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\default\initialization.c</file>
-         <hash>099804b0c97b1a0e9f573587c1061b92ae39cc3bf80a58845bb9faa7ea98611c</hash>
+         <hash>ca2448ff3e0b0264d3212df78afe5e2a2f495fd4414bcf93a3fec8823019f0b2</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60064_DFP\component\i2s.h</file>
