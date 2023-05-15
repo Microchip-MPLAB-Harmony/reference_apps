@@ -2,7 +2,7 @@
 grand_parent: 32-bit MPU Reference Applications
 parent: SAM9X60 Curiosity Development Board
 title: Snake Game
-nav_order: 7
+nav_order: 2
 ---
 
 <img src = "images/microchip_logo.png">
