@@ -111,7 +111,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -73109,7 +73109,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\default\definitions.h</file>
-         <hash>7c82847da53eadf2eba3d95acf523a437359ea36f2a8cbe488980fd9c9278f17</hash>
+         <hash>4d12b358f0d5201db9ef9b3ab641cc06442e4a0cf602f160b853469708df0d3c</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\default\library\cryptoauthlib\calib\calib_checkmac.c</file>
@@ -73657,7 +73657,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\default\initialization.c</file>
-         <hash>62777df19dd1334b84174eab434b2077fa94501700062a4602fd64cbc0c4dcc4</hash>
+         <hash>2c99076b121d9274cda170724ba991a7e3d3632bad52bbfd9ae00fc785ac3556</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60064_DFP\component\i2s.h</file>

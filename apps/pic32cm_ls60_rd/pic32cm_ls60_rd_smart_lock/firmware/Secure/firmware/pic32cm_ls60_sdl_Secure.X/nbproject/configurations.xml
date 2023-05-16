@@ -213,9 +213,10 @@
       <itemPath>../src/config/default/device.h</itemPath>
       <itemPath>../src/simpleMAP/simpleMAP_HAL.h</itemPath>
       <itemPath>../src/simpleMAP/simpleMAP_library.h</itemPath>
-      <itemPath>../src/config/default/app_secure_ble_manager.h</itemPath>
       <itemPath>../src/app_secure_security.h</itemPath>
       <itemPath>../src/app_secure_touch.h</itemPath>
+      <itemPath>../src/unsecure_interface.h</itemPath>
+      <itemPath>../src/app_secure_ble_manager.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -416,14 +417,13 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="trustZone" projectFiles="true">
         <itemPath>../src/trustZone/nonsecure_entry.c</itemPath>
-        <itemPath>../src/config/default/unsecure_interface.c</itemPath>
-        <itemPath>../src/config/default/unsecure_interface.h</itemPath>
+        <itemPath>../src/unsecure_interface.c</itemPath>
       </logicalFolder>
-      <itemPath>../src/config/default/app_secure_ble_manager.c</itemPath>
       <itemPath>../src/app_secure_security.c</itemPath>
       <itemPath>../src/app_secure_touch.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/simpleMAP/simpleMAP_HAL.c</itemPath>
+      <itemPath>../src/app_secure_ble_manager.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

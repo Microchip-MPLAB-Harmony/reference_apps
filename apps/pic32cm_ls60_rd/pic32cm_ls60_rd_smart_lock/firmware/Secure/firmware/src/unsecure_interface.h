@@ -1,19 +1,19 @@
-/* ************************************************************************** */
-/** Descriptive File Name
+/*******************************************************************************
+  MPLAB Harmony Application Header File
 
-  @Company
-    Company Name
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    filename.h
+  File Name:
+    unsecure_interface.h
 
-  @Summary
-    Brief description of the file.
+  Summary:
+    Header file for interfacing between secure and non-secure regions
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+  Description:
+    This header file provides prototypes and definitions for the interface 
+    between secure and non-secure regions.
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************

@@ -1,19 +1,18 @@
-/* ************************************************************************** */
-/** Descriptive File Name
+/*******************************************************************************
+  MPLAB Harmony Application Source File
 
-  @Company
-    Company Name
+  Company:
+    Microchip Technology Inc.
 
-  @File Name
-    filename.c
+  File Name:
+    unsecure_interface.c
 
-  @Summary
-    Brief description of the file.
+  Summary:
+    Interface between secure and non-secure regions
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+  Description:
+    Provides APIs for non-secure to access secure peripherals and resources
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************************

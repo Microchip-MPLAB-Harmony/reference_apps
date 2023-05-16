@@ -90,7 +90,7 @@ Connect the QT3 Xplained pro, Power board and the deadbolt to the PIC32CM LS60 S
 
 <img src = "images/touchkeypadsetup.png">
 
-On powering the kit, the Smart Door Lock becomes functional and waits for the user input through the Touch Keypad to control the entry access. This kit allows up to five user-authenticated entries through the door lock, and each user has a user ID (1, 2, 3 ,4 & 5). Each user would require a passkey to enter through the Touch Keypad to open the lock.
+On powering the kit, the Smart Door Lock becomes functional and waits for the user input through the Touch Keypad to control the entry access. This kit allows up to five user-authenticated entries through the door lock, and each user has a user ID (1, 2, 3 , 4 & 5). Each user would require a passkey to enter through the Touch Keypad to open the lock.
 
 #### User Entry/Passkey Authentication
 1) Select a user ID (press any number from 2 to 5)<sup>(1)</sup> and press "#".
