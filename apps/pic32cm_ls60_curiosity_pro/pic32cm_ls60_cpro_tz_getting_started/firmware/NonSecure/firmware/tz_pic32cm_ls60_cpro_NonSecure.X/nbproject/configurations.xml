@@ -432,8 +432,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-7ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/reference_apps_repo/apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_cpro_tz_getting_started/firmware/NonSecure/firmware/tz_pic32cm_ls60_cpro_NonSecure.X/debug/pic32cm_ls60_cpro/tz_pic32cm_ls60_cpro_NonSecure_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
