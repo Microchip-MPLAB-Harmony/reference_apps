@@ -203,12 +203,12 @@ void APP_EEPROM_THREAD_Tasks( void );
 
 
 
-#endif /* _APP_EEPROM_THREAD_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_EEPROM_THREAD_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

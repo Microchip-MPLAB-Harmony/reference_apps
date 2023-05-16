@@ -43,8 +43,8 @@
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _APP_SDCARD_AUDIO_H
-#define _APP_SDCARD_AUDIO_H
+#ifndef _APP_SDCARD_AUDIO_TASK_H
+#define _APP_SDCARD_AUDIO_TASK_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -453,12 +453,12 @@ extern "C" {
     bool APP_DISPLAY_USB_Configured_State_Get();
 
 
-#endif /* _APP_H */
+#endif
 
     //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_SDCARD_AUDIO_TASK_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

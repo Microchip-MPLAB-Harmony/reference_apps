@@ -265,12 +265,12 @@ void APP_Flash_Task( void );
 void APP_Trig_Boot(void);
 
 
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

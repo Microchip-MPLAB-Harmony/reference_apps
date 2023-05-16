@@ -70,7 +70,7 @@
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the APP2_USER_INPUT_THREAD_Initialize function.
+    This structure should be initialized by the APP_USER_INPUT_THREAD_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
@@ -106,7 +106,7 @@ QueueHandle_t eventQueue;
 
 /*******************************************************************************
   Function:
-    void APP2_USER_INPUT_THREAD_Initialize ( void )
+    void APP_USER_INPUT_THREAD_Initialize ( void )
 
   Remarks:
     See prototype in app2_user_input_thread.h.
@@ -127,7 +127,7 @@ void APP_USER_INPUT_THREAD_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void APP2_USER_INPUT_THREAD_Tasks ( void )
+    void APP_USER_INPUT_THREAD_Tasks ( void )
 
   Remarks:
     See prototype in app2_user_input_thread.h.

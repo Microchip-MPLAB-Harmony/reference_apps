@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app2_user_input_thread.h
+    app_user_input_thread.h
 
   Summary:
     This header file provides prototypes and definitions for the application.
@@ -13,8 +13,8 @@
   Description:
     This header file provides function prototypes and data type definitions for
     the application.  Some of these are required by the system (such as the
-    "APP2_USER_INPUT_THREAD_Initialize" and "APP2_USER_INPUT_THREAD_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "APP2_USER_INPUT_THREAD_STATES" definition).  Both
+    "APP_USER_INPUT_THREAD_Initialize" and "APP_USER_INPUT_THREAD_Tasks" prototypes) and some of them are only used
+    internally by the application (such as the "APP_USER_INPUT_THREAD_STATES" definition).  Both
     are defined here for convenience.
 *******************************************************************************/
 
@@ -146,7 +146,7 @@ typedef struct
 
 /*******************************************************************************
   Function:
-    void APP2_USER_INPUT_THREAD_Initialize ( void )
+    void APP_USER_INPUT_THREAD_Initialize ( void )
 
   Summary:
      MPLAB Harmony application initialization routine.
@@ -154,7 +154,7 @@ typedef struct
   Description:
     This function initializes the Harmony application.  It places the
     application in its initial state and prepares it to run so that its
-    APP2_USER_INPUT_THREAD_Tasks function can be called.
+    APP_USER_INPUT_THREAD_Tasks function can be called.
 
   Precondition:
     All other system initialization routines should be called before calling
@@ -168,7 +168,7 @@ typedef struct
 
   Example:
     <code>
-    APP2_USER_INPUT_THREAD_Initialize();
+    APP_USER_INPUT_THREAD_Initialize();
     </code>
 
   Remarks:
@@ -180,7 +180,7 @@ void APP_USER_INPUT_THREAD_Initialize ( void );
 
 /*******************************************************************************
   Function:
-    void APP2_USER_INPUT_THREAD_Tasks ( void )
+    void APP_USER_INPUT_THREAD_Tasks ( void )
 
   Summary:
     MPLAB Harmony Demo application tasks function
@@ -201,7 +201,7 @@ void APP_USER_INPUT_THREAD_Initialize ( void );
 
   Example:
     <code>
-    APP2_USER_INPUT_THREAD_Tasks();
+    APP_USER_INPUT_THREAD_Tasks();
     </code>
 
   Remarks:
@@ -212,12 +212,12 @@ void APP_USER_INPUT_THREAD_Tasks( void );
 extern QueueHandle_t eventQueue;
 
 
-#endif /* _APP2_USER_INPUT_THREAD_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_USER_INPUT_THREAD_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

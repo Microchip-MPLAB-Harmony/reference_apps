@@ -211,12 +211,12 @@ void APP_USER_INPUT_THREAD_Tasks( void );
 extern QueueHandle_t eventQueue;
 
 
-#endif /* _APP_USER_INPUT_THREAD_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif  /* _APP_USER_INPUT_THREAD_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

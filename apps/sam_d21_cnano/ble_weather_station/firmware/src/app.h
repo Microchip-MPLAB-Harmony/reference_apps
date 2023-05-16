@@ -253,7 +253,7 @@ void APP_Sensor_Tasks( void );
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

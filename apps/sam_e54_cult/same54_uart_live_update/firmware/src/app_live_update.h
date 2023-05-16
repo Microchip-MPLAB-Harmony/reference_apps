@@ -42,8 +42,8 @@
 *******************************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _APP_LIVEUPDATE_H
-#define _APP_LIVEUPDATE_H
+#ifndef _APP_LIVE_UPDATE_H
+#define _APP_LIVE_UPDATE_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -245,12 +245,12 @@ void APP_LIVE_UPDATE_Initialize ( void );
 
 void APP_LIVE_UPDATE_Tasks( void );
 
-#endif /* _APP_LIVE_UPDATE_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_LIVE_UPDATE_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

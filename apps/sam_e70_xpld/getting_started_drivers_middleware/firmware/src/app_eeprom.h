@@ -239,12 +239,12 @@ void APP_EEPROM_Tasks( void );
 void APP_EEPROM_SetTempWriteRequest(int8_t temperature);
 
 
-#endif /* _APP_EEPROM_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_EEPROM_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

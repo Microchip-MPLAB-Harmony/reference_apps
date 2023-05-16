@@ -214,12 +214,12 @@ void APP_Tasks( void );
 void EIC_User_Handler(uintptr_t context);
 void TC4_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context);
 char* my_strncpy(char* dst, const char* src, size_t n);
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

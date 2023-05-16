@@ -235,12 +235,12 @@ APP_STREAMING_SOURCE APP_StreamSourceGet(void);
 
 void APP_StreamSourceSet(APP_STREAMING_SOURCE streamSrc);
 
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

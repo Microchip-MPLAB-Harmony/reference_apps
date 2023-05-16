@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app1_eeprom_thread.h
+    app_eeprom_thread.h
 
   Summary:
     This header file provides prototypes and definitions for the application.
@@ -13,8 +13,8 @@
   Description:
     This header file provides function prototypes and data type definitions for
     the application.  Some of these are required by the system (such as the
-    "APP1_EEPROM_THREAD_Initialize" and "APP1_EEPROM_THREAD_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "APP1_EEPROM_THREAD_STATES" definition).  Both
+    "APP_EEPROM_THREAD_Initialize" and "APP_EEPROM_THREAD_Tasks" prototypes) and some of them are only used
+    internally by the application (such as the "APP_EEPROM_THREAD_STATES" definition).  Both
     are defined here for convenience.
 *******************************************************************************/
 
@@ -138,7 +138,7 @@ typedef struct
 
 /*******************************************************************************
   Function:
-    void APP1_EEPROM_THREAD_Initialize ( void )
+    void APP_EEPROM_THREAD_Initialize ( void )
 
   Summary:
      MPLAB Harmony application initialization routine.
@@ -146,7 +146,7 @@ typedef struct
   Description:
     This function initializes the Harmony application.  It places the
     application in its initial state and prepares it to run so that its
-    APP1_EEPROM_THREAD_Tasks function can be called.
+    APP_EEPROM_THREAD_Tasks function can be called.
 
   Precondition:
     All other system initialization routines should be called before calling
@@ -160,7 +160,7 @@ typedef struct
 
   Example:
     <code>
-    APP1_EEPROM_THREAD_Initialize();
+    APP_EEPROM_THREAD_Initialize();
     </code>
 
   Remarks:
@@ -172,7 +172,7 @@ void APP_EEPROM_THREAD_Initialize ( void );
 
 /*******************************************************************************
   Function:
-    void APP1_EEPROM_THREAD_Tasks ( void )
+    void APP_EEPROM_THREAD_Tasks ( void )
 
   Summary:
     MPLAB Harmony Demo application tasks function
@@ -193,7 +193,7 @@ void APP_EEPROM_THREAD_Initialize ( void );
 
   Example:
     <code>
-    APP1_EEPROM_THREAD_Tasks();
+    APP_EEPROM_THREAD_Tasks();
     </code>
 
   Remarks:
@@ -204,12 +204,12 @@ void APP_EEPROM_THREAD_Tasks( void );
 
 
 
-#endif /* _APP1_EEPROM_THREAD_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_EEPROM_THREAD_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

@@ -209,12 +209,12 @@ void APP_SENSOR_Tasks( void );
 
 
 
-#endif /* _APP_SENSOR_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_SENSOR_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

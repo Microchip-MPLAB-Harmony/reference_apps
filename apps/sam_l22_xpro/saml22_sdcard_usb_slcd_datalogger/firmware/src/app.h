@@ -43,8 +43,8 @@
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef APPS_H
-#define APPS_H
+#ifndef APP_H
+#define APP_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -262,12 +262,12 @@ void SetTime(void);
 extern unsigned char CurrentTemp,PrevTemp;
 extern unsigned char TempUpdateFlag;
 extern uint32_t Prevphoto_current,photo_current,light_intensity;
-#endif /* APPS_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif  /* APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

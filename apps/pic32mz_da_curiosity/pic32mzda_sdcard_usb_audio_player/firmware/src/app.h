@@ -517,7 +517,7 @@ void APP_PlayPauseButtonPressed();
 #endif
 //DOM-IGNORE-END
 
-#endif /* _APP_H */
+#endif /* APP_H */
 /*******************************************************************************
  End of File
  */

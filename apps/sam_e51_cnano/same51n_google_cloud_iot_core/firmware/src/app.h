@@ -218,12 +218,12 @@ extern shared_networking_params_t shared_networking_params;
 
 void APP_application_post_provisioning(void);
 void APP_ReceivedFromCloud(uint8_t *topic, uint8_t *payload);
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

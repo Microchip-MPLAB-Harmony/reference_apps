@@ -194,12 +194,12 @@ void APP_Tasks( void );
 
 
 
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

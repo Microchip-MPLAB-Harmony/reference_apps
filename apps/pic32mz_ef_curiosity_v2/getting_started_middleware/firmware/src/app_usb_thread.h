@@ -222,12 +222,12 @@ void APP_USB_THREAD_Tasks( void );
 
 
 
-#endif /* _APP_USB_THREAD_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_USB_THREAD_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

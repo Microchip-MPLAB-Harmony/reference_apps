@@ -258,12 +258,12 @@ void APP_Tasks_USB( void );
 void APP_Tasks_ADC(void);
 void APP_Tasks_TIME(void);
 void CheckKeyPress(void);
-#endif /* APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

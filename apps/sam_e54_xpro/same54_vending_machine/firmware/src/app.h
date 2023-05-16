@@ -281,12 +281,12 @@ void APP_Tasks ( void );
 extern void HTTP_APP_Initialize(void);
 #endif // defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
 
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

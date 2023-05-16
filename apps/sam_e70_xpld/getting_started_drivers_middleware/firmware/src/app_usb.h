@@ -260,12 +260,12 @@ void APP_USB_Tasks( void );
 
 
 
-#endif /* _APP_USB_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif /* _APP_USB_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************

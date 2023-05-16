@@ -75,7 +75,7 @@
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the app_EEPROM_THREAD_Initialize function.
+    This structure should be initialized by the APP_EEPROM_THREAD_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
@@ -132,7 +132,7 @@ void APP_EEPROM_PrintTemperature(uint8_t* pTemperatureValue, uint8_t wrIndex)
 
 /*******************************************************************************
   Function:
-    void app_EEPROM_THREAD_Initialize ( void )
+    void APP_EEPROM_THREAD_Initialize ( void )
 
   Remarks:
     See prototype in app_eeprom_thread.h.
@@ -148,7 +148,7 @@ void APP_EEPROM_THREAD_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void app_EEPROM_THREAD_Tasks ( void )
+    void APP_EEPROM_THREAD_Tasks ( void )
 
   Remarks:
     See prototype in app_eeprom_thread.h.

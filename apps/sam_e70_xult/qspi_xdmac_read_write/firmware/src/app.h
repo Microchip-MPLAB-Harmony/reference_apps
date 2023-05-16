@@ -328,12 +328,12 @@ void APP_Initialize ( void );
 void APP_Tasks( void );
 
 
-#endif /* APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif  /* APP_H */
 //DOM-IGNORE-END
 
 /*******************************************************************************
