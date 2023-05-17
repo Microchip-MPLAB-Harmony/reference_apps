@@ -1,5 +1,5 @@
 ---
-grand_parent: Reference Applications
+grand_parent: 32-bit MCU Reference Applications
 parent: PIC32CM LS60 Smart Lock Reference Board
 title: Smart Lock
 nav_order: 1

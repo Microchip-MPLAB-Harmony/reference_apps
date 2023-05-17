@@ -23,6 +23,7 @@ The following reference applications are provided to evaluate solutions on 32-bi
 |  <img src = "./pic32cm_ls60_curiosity_pro/image.jpg"> | [PIC32CM LS60 Curiosity Pro Evaluation Kit](./pic32cm_ls60_curiosity_pro/readme.md) |
 |  <img src = "./pic32cm_jh01_curiosity_pro/image.jpg"> | [PIC32CM JH01 Curiosity Pro Development Board](./pic32cm_jh01_curiosity_pro/readme.md) |
 |  <img src = "./sam_d21_iot_v2/image.jpg">  | [SAM D21 IoT v2 Development Board](./sam_d21_iot_v2/readme.md) |
+|  <img src = "./pic32cm_ls60_rd/image.jpg"> | [PIC32CM LS60 Smart Lock Reference Board](./pic32cm_ls60_rd/readme.md) |
 |  <img src = "./pic32mz_da_rgdb/image.jpg">  | [PIC32MZ DA Radial Graphics Development Board (RGDB)](./pic32mz_da_rgdb/readme.md) |
 |  <img src = "./pic32mk_mcm_curiosity_pro/image.jpg"> | [PIC32MK MCM Curiosity Pro Development Board](./pic32mk_mcm_curiosity_pro/readme.md) |
 |  <img src = "./pic32cm_mc00_curiosity_pro/image.jpg">  | [PIC32CM MC00 Curiosity Pro Development Board](./pic32cm_mc00_curiosity_pro/readme.md) |
