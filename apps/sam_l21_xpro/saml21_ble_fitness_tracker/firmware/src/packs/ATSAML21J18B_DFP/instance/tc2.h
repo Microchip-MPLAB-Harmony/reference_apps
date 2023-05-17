@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML21J18BU
+/*
+ * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,20 +20,20 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T08:59:42Z */
+/* file generated from device description version 2021-06-07T06:15:05Z */
 #ifndef _SAML21_TC2_INSTANCE_
 #define _SAML21_TC2_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TC2 peripheral ========== */
-#define TC2_CC_NUM                               _UL_(2)    
-#define TC2_DMAC_ID_OVF                          _UL_(28)   /* Indexes of DMA Overflow trigger */
-#define TC2_DMAC_ID_MC0                          _UL_(29)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TC2_DMAC_ID_MC1                          _UL_(30)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TC2_EXT                                  _UL_(0)    
-#define TC2_GCLK_ID                              _UL_(28)   
-#define TC2_MASTER_SLAVE_MODE                    _UL_(1)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
-#define TC2_OW_NUM                               _UL_(2)    
-#define TC2_INSTANCE_ID                          _UL_(74)   
+#define TC2_CC_NUM                               (2)        
+#define TC2_DMAC_ID_OVF                          (28)       /* Indexes of DMA Overflow trigger */
+#define TC2_DMAC_ID_MC0                          (29)       /* Indexes of DMA Match/Compare 0 trigger */
+#define TC2_DMAC_ID_MC1                          (30)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TC2_EXT                                  (0)        
+#define TC2_GCLK_ID                              (28)       
+#define TC2_MASTER_SLAVE_MODE                    (1)        /* TC type 0 : NA, 1 : Master, 2 : Slave */
+#define TC2_OW_NUM                               (2)        
+#define TC2_INSTANCE_ID                          (74)       
 
 #endif /* _SAML21_TC2_INSTANCE_ */

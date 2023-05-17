@@ -11,11 +11,11 @@
     This header file provides prototypes and definitions for the application.
 
   Description:
-    This header file provides function prototypes and data type definitions for
-    the application.  Some of these are required by the system (such as the
-    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "APP_STATES" definition).  Both
-    are defined here for convenience.
+    This header file provides declaration for functions which enable data
+    transfer through BM71 XPRO to mobile app, the file also contains
+    typedefinitions for various enums and structures which control the state of
+    initialization, transfer of ble data.
+
 *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
@@ -43,8 +43,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _AUDIO_H
-#define _AUDIO_H
+#ifndef _BLE_H
+#define _BLE_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -83,10 +83,10 @@ extern "C" {
 */
 
 typedef enum
-{ 
+{
     BLE_STATE_OPEN,
-    BLE_STATE_SET_BT_EVENT_HANDLER,     
-    BLE_STATE_INIT_DONE,               
+    BLE_STATE_SET_BT_EVENT_HANDLER,
+    BLE_STATE_INIT_DONE,
 } BLE_STATES;
 
 typedef struct
@@ -114,13 +114,9 @@ typedef struct
 {
     /* The application's current state */
     BLE_STATES state;
-    DATA_BT bt;   
-    
+    DATA_BT bt;
+
 } BLE_DATA;
-
-
-
-void bleTasks(void);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -128,6 +124,35 @@ void bleTasks(void);
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    bool Isble_adv_started(void);
+
+  Summary:
+     MPLAB Harmony application initialization routine.
+
+  Description:
+    This function waits for the ble to connect and notifies the app according to
+    the status of a variable which monitors the state of connection
+  Precondition:
+    All other system initialization routines should be called before calling
+    this routine (in "SYS_Initialize").
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    bleInitialize();
+    </code>
+
+  Remarks:
+    This routine must be called from the SYS_Initialize function.
+*/
+bool Isble_adv_started(void);
 /*******************************************************************************
   Function:
     void bleInitialize(void);
@@ -158,8 +183,7 @@ void bleTasks(void);
   Remarks:
     This routine must be called from the SYS_Initialize function.
 */
-bool Isble_adv_started(void);
-void bleInitialize(bool all); 
+void bleInitialize(bool all);
 
 /*******************************************************************************
   Function:
@@ -193,12 +217,12 @@ void bleInitialize(bool all);
 
 void bleTasks( void );
 
-#endif /* _APP_H */
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif
+#endif // _BLE_H
 //DOM-IGNORE-END
 
 /*******************************************************************************

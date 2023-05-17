@@ -140,12 +140,12 @@ void EIC_Initialize (void)
 
 void EIC_InterruptEnable (EIC_PIN pin)
 {
-    EIC_REGS->EIC_INTENSET = (1UL << pin);
+    EIC_REGS->EIC_INTENSET = (1UL << (uint32_t)pin);
 }
 
 void EIC_InterruptDisable (EIC_PIN pin)
 {
-    EIC_REGS->EIC_INTENCLR = (1UL << pin);
+    EIC_REGS->EIC_INTENCLR = (1UL << (uint32_t)pin);
 }
 
 void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)

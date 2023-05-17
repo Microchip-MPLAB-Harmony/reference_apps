@@ -22,7 +22,7 @@
  *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*
-    (c) 2021 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2023 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -52,9 +52,9 @@
 #include <string.h>
 #include "app.h"
 #include "click_routines/heartrate9/heartrate9.h"
-#include "click_routines/eink_bundle/eink_bundle.h"
-#include "click_routines/eink_bundle/eink_bundle_image.h"
-#include "click_routines/eink_bundle/eink_bundle_font.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_image.h"
+#include "click_routines/eink_epaper_2_9_296_128/eink_epaper_2_9_296_128_font.h"
 #include "../src/ble/non_gui/ble.h"
 
 extern BLE_DATA bleData;
@@ -125,7 +125,7 @@ void send_hr_data_over_ble(void)
     tempBuffer[0] = 0x00;//Status of HR data is single byte
     tempBuffer[1] = heartRateMeasuredData;
     tempBuffer[2] = '\r';
-    tempBuffer[3] = '\n';  
+    tempBuffer[3] = '\n';
     CUSTOM_BT_SendDataOverBLE(bleData.bt.handle, (uint8_t*)tempBuffer, 2);
 }
 
@@ -140,11 +140,11 @@ void send_hr_data_over_ble(void)
 void APP_Initialize ( void )
 {
     appData.app_state           = APP_INIT_STATE;
-    
+
 }
 
 volatile bool waitingTodataTransfer = 0;
- 
+
  void TC1_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
 {
     /* Toggle LED */
@@ -160,16 +160,16 @@ volatile bool waitingTodataTransfer = 0;
 void APP_Tasks ( void )
 {
     CUSTOM_BM71_Tasks();
-    bleTasks(); 
+    bleTasks();
     /* Check the application's current state. */
     switch ( appData.app_state )
     {
         /* Application's initial state. */
         case APP_INIT_STATE:
             SYSTICK_TimerStart();
-            eink_init();
-            eink_image_bmp(mchp_logo);
-            eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
+            eink_epaper_2_9_296_128_init();
+            eink_epaper_2_9_296_128_image_bmp(mchp_logo);
+            eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_WHITE, FO_HORIZONTAL );
             TC1_TimerCallbackRegister(TC1_Callback_InterruptHandler, (uintptr_t)NULL);
             EIC_CallbackRegister(EIC_PIN_2, EIC_Button_Handler, 0);
             CUSTOM_BM71_Initialize();
@@ -185,7 +185,7 @@ void APP_Tasks ( void )
             }
             break;
         case HEART_RATE_SENSOR_DATA_PROSS_STATE:
-            
+
             heartRateMeasuredData       = heartrate9_read_byte();
             if(heartRateMeasuredData != -1)             // Checking the Heartrate sensor data process completed
             {
@@ -194,11 +194,13 @@ void APP_Tasks ( void )
             break;
         case EINK_UPDATE_STATE:
             printf("Heartrate = %d bpm \t\r\n", (uint8_t)heartRateMeasuredData);
-            sprintf(lcl_buffer, "%dbpm", (uint8_t)heartRateMeasuredData);   
+            sprintf(lcl_buffer, "%dbpm", (uint8_t)heartRateMeasuredData);
             LED_Set();
-            eink_image_bmp(heartrate_image);
-            eink_set_font( guiFont_Tahoma_14_Regular, EINK_COLOR_BLACK, FO_HORIZONTAL);
-            eink_text(lcl_buffer, 0, 118 );
+            eink_epaper_2_9_296_128_fill_screen( EINK_EPAPER_2_9_296_128_COLOR_BLACK );
+            eink_epaper_2_9_296_128_image_bmp(heartrate_image);
+            eink_epaper_2_9_296_128_set_font( guiFont_Tahoma_10_Regular, EINK_EPAPER_2_9_296_128_COLOR_WHITE, FO_HORIZONTAL);
+            lcl_buffer[9]='\0';
+            eink_epaper_2_9_296_128_text(lcl_buffer, 14, 148 );
             button_pressed              = false;
             if(hr_measurment_request == 1)
             {
@@ -227,7 +229,7 @@ void APP_Tasks ( void )
             {
                  TC1_TimerStart();
             }
-             
+
             break;
         /* The default state should never be executed. */
         default:

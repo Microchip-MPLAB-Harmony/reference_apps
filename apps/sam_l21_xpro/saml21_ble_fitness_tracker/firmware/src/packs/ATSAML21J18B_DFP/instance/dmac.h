@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML21J18BU
+/*
+ * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,23 +20,23 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T08:59:42Z */
+/* file generated from device description version 2021-06-07T06:15:05Z */
 #ifndef _SAML21_DMAC_INSTANCE_
 #define _SAML21_DMAC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for DMAC peripheral ========== */
-#define DMAC_CH_BITS                             _UL_(4)    /* Number of bits to select channel */
-#define DMAC_CH_NUM                              _UL_(16)   /* Number of channels */
-#define DMAC_EVIN_NUM                            _UL_(8)    /* Number of input events */
-#define DMAC_EVOUT_NUM                           _UL_(8)    /* Number of output events */
-#define DMAC_LVL_BITS                            _UL_(2)    /* Number of bit to select level priority */
-#define DMAC_LVL_NUM                             _UL_(4)    /* Enable priority level number */
-#define DMAC_QOSCTRL_D_RESETVALUE                _UL_(2)    /* QOS dmac ahb interface reset value */
-#define DMAC_QOSCTRL_F_RESETVALUE                _UL_(2)    /* QOS dmac fetch interface reset value */
-#define DMAC_QOSCTRL_WRB_RESETVALUE              _UL_(2)    /* QOS dmac write back interface reset value */
-#define DMAC_TRIG_BITS                           _UL_(6)    /* Number of bits to select trigger source */
-#define DMAC_TRIG_NUM                            _UL_(46)   /* Number of peripheral triggers */
-#define DMAC_INSTANCE_ID                         _UL_(129)  
+#define DMAC_CH_BITS                             (4)        /* Number of bits to select channel */
+#define DMAC_CH_NUM                              (16)       /* Number of channels */
+#define DMAC_EVIN_NUM                            (8)        /* Number of input events */
+#define DMAC_EVOUT_NUM                           (8)        /* Number of output events */
+#define DMAC_LVL_BITS                            (2)        /* Number of bit to select level priority */
+#define DMAC_LVL_NUM                             (4)        /* Enable priority level number */
+#define DMAC_QOSCTRL_D_RESETVALUE                (2)        /* QOS dmac ahb interface reset value */
+#define DMAC_QOSCTRL_F_RESETVALUE                (2)        /* QOS dmac fetch interface reset value */
+#define DMAC_QOSCTRL_WRB_RESETVALUE              (2)        /* QOS dmac write back interface reset value */
+#define DMAC_TRIG_BITS                           (6)        /* Number of bits to select trigger source */
+#define DMAC_TRIG_NUM                            (46)       /* Number of peripheral triggers */
+#define DMAC_INSTANCE_ID                         (129)      
 
 #endif /* _SAML21_DMAC_INSTANCE_ */

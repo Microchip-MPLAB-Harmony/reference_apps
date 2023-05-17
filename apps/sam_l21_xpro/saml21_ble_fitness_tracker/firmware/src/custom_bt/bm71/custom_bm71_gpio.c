@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to the GPIO pins controlling the BM71.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -42,7 +42,7 @@
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files 
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
@@ -58,13 +58,13 @@ void CUSTOM_BM71_RESET_SetHigh(void)
 }
 
 void CUSTOM_BM71_RESET_SetLow(void)
-{   
-    STBYRST_Clear();    
+{
+    STBYRST_Clear();
 }
 
 void CUSTOM_BM71_RESET_Toggle(void)
 {
-    STBYRST_Toggle();   
+    STBYRST_Toggle();
 }
 
 uint32_t CUSTOM_BM71_RESET_GetValue(void)

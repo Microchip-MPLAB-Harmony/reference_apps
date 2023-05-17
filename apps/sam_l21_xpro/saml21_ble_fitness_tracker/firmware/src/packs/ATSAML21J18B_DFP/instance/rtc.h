@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML21J18BU
+/*
+ * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,17 +20,17 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T08:59:42Z */
+/* file generated from device description version 2021-06-07T06:15:05Z */
 #ifndef _SAML21_RTC_INSTANCE_
 #define _SAML21_RTC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for RTC peripheral ========== */
-#define RTC_ALARM_NUM                            _UL_(1)    /* Number of Alarms */
-#define RTC_COMP16_NUM                           _UL_(2)    /* Number of 16-bit Comparators */
-#define RTC_COMP32_NUM                           _UL_(1)    /* Number of 32-bit Comparators */
-#define RTC_GPR_NUM                              _UL_(4)    /* Number of General-Purpose Registers */
-#define RTC_PER_NUM                              _UL_(8)    /* Number of Periodic Intervals */
-#define RTC_INSTANCE_ID                          _UL_(8)    
+#define RTC_ALARM_NUM                            (1)        /* Number of Alarms */
+#define RTC_COMP16_NUM                           (2)        /* Number of 16-bit Comparators */
+#define RTC_COMP32_NUM                           (1)        /* Number of 32-bit Comparators */
+#define RTC_GPR_NUM                              (4)        /* Number of General-Purpose Registers */
+#define RTC_PER_NUM                              (8)        /* Number of Periodic Intervals */
+#define RTC_INSTANCE_ID                          (8)        
 
 #endif /* _SAML21_RTC_INSTANCE_ */

@@ -45,41 +45,42 @@
 #include <xc.h>
 #include <stdint.h>
 
-/**	Click routine interfaces/resources Macro Declarations
+/** Click routine interfaces/resources Macro Declarations
  *
- * 	1. SPI
- *  The eink bundle click example on SAM L21 Xplained Pro Evaluation Kit uses
- *  Ext #2 to mount EINK bundle click board.
+ *  1. SPI
+ *  The E-Paper example on SAM E51 Curiosity Nano uses
+ *  mikroBUS socket #1. Connect EPAPER to eINK click then mount eINK click on
+ *  mikroBUS socket #1.
  *  The SPI lines from MCU coming to this socket are from
- *  SERCOM5 peripheral. The SPI is configured to use manual chip select.
+ *  SERCOM1 peripheral. The SPI is configured to use manual chip select.
  *
  *
  * 2. Timer
- *  The eink bundle click  example on SAM L21 Xplained Pro Evaluation Kit uses
+ *  The E-Paper example on SAM E51 Curiosity Nano uses
  *  Systick timer module on the MCU to implement the time
  *  requirement weather click routines.
  *
  * 3. PORTs
- *  The eink bundle click uses the following ports pins.
- *  CLICK_EINK_BUNDLE_DC
- *  CLICK_EINK_BUNDLE_RST
- *  CLICK_EINK_BUNDLE_CS
- *  CLICK_EINK_BUNDLE_BSY
+ *  The epaper  click uses the following ports pins.
+ *  CLICK_EINK_EPAPER_2_9_296_128_DC
+ *  CLICK_EINK_EPAPER_2_9_296_128_RST
+ *  CLICK_EINK_EPAPER_2_9_296_128_CS
+ *  CLICK_EINK_EPAPER_2_9_296_128_BSY
  *  The pins are configured using the MHC Pin configurator.
  */
 
-// I2C Definitions
-#define CLICK_EINK_BUNDLE_SPI_Write 			SERCOM5_SPI_Write
-#define CLICK_EINK_BUNDLE_SPI_Read  			SERCOM5_SPI_Read
-#define CLICK_EINK_BUNDLE_SPI_WriteRead			SERCOM5_SPI_WriteRead
+// SPI Definitions
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Write                 SERCOM5_SPI_Write
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Read                  SERCOM5_SPI_Read
+#define CLICK_EINK_EPAPER_2_9_296_128_SPI_WriteRead             SERCOM5_SPI_WriteRead
 
 // Timer Definitions
-#define CLICK_EINK_BUNDLE_TimerStart 			SYSTICK_TimerStart
-#define CLICK_EINK_BUNDLE_DelayMs				SYSTICK_DelayMs
+#define CLICK_EINK_EPAPER_2_9_296_128_TimerStart                SYSTICK_TimerStart
+#define CLICK_EINK_EPAPER_2_9_296_128_DelayMs                   SYSTICK_DelayMs
 
-/**	Click routine interfaces/resources Macro Declarations
+/** Click routine interfaces/resources Macro Declarations
  *
- * 	1. USART
+ *  1. USART
  *  The heartrate9 click example on SAM L21 Xplained Pro Evaluation Kit uses
  *  EXT #1 on the Curiosity Nano Base for Click boards
  *  to mount heartrate9 click board. The USART lines from MCU coming to

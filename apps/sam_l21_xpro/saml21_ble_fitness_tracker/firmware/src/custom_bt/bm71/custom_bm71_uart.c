@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to sending and receiving data to/from the BM71 over UART.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -42,7 +42,7 @@
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files 
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
@@ -57,57 +57,57 @@
 
 static CUSTOM_BM71_UART_DATA uartData;
 volatile uint8_t CUSTOM_BM71_eusartRxCount;
-volatile uint8_t CUSTOM_BM71_txByteQueued; 
+volatile uint8_t CUSTOM_BM71_txByteQueued;
 
 // called from CUSTOM_BM71_Initialize, not the directly by the user
 void CUSTOM_BM71_UART_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
     uartData.state = CUSTOM_BM71_UART_STATE_INIT;
-    
-    uartData.rxHead = 0; 
-    
+
+    uartData.rxHead = 0;
+
     uartData.rxTail = 0;
-    
+
     CUSTOM_BM71_txByteQueued = 0;
-    
-    CUSTOM_BM71_eusartRxCount=0;  
+
+    CUSTOM_BM71_eusartRxCount=0;
 }
 
 
 /******************************************************************************
   Function:
-    void UartWriteBytesData ( uint8_t* pTxBuffer, uint16_t size )
+    void CUSTOM_BM71_EUSART_Write(uint8_t txData)
 
   Return:
     true - if actual number of bytes transmitted is same as the argument size.
     false - in case of an error
- 
+
   Remarks:
-    
+
  */
 
 
 void CUSTOM_BM71_EUSART_Write(uint8_t txData)
-{ 
-    SERCOM1_USART_Write(&txData,1);  
+{
+    SERCOM1_USART_Write(&txData,1);
 }
 
 uint8_t CUSTOM_BM71_EUSART_Read(void)
 {
     uint8_t readByte;
-    
+
     readByte=uartData.rxBuffer[uartData.rxTail++];
-    
+
     if(uartData.rxTail >= RX_BUFFER_SIZE)
     {
         uartData.rxTail = 0;
     }
-   
+
     CUSTOM_BM71_eusartRxCount--;
-    
+
     return readByte;
-    
+
 }
 
 void CUSTOM_BM71_UART_TransmitEventHandler(uintptr_t context)
@@ -116,7 +116,7 @@ void CUSTOM_BM71_UART_TransmitEventHandler(uintptr_t context)
 }
 
 void CUSTOM_BM71_UART_ReceiveEventHandler(uintptr_t context)
-{    
+{
     uartData.rxBuffer[uartData.rxHead++] = uartData.rxData;
    SERCOM1_USART_Read((void*)&uartData.rxData, 1);    // set up first read
 
@@ -124,12 +124,12 @@ void CUSTOM_BM71_UART_ReceiveEventHandler(uintptr_t context)
     {
         uartData.rxHead = 0;
     }
-    
+
     CUSTOM_BM71_eusartRxCount++;
 }
 /******************************************************************************
   Function:
-    void UART_Tasks ( void )
+    void CUSTOM_BM71_UART_Tasks ( void )
 
   Remarks:
     See prototype in app.h.
@@ -142,31 +142,31 @@ void CUSTOM_BM71_UART_ReceiveEventHandler(uintptr_t context)
     {
         /* Application's initial state. */
         case CUSTOM_BM71_UART_STATE_INIT:
-        
+
             // Register an event handler with driver. This is done once
            SERCOM1_USART_WriteCallbackRegister(CUSTOM_BM71_UART_TransmitEventHandler, 0);
            SERCOM1_USART_ReadCallbackRegister(CUSTOM_BM71_UART_ReceiveEventHandler, 0);
 
            SERCOM1_USART_Read((void*)&uartData.rxData, 1);    // set up first read
-            
-            uartData.state = CUSTOM_BM71_UART_STATE_TRANSMIT;           
+
+            uartData.state = CUSTOM_BM71_UART_STATE_TRANSMIT;
 
             break;
-            
+
         case CUSTOM_BM71_UART_STATE_TRANSMIT:
             if (((CUSTOM_BM71_txByteQueued&1)==1) && (!SERCOM1_USART_WriteIsBusy()))
-			{
+            {
                 CUSTOM_BM71_UART_TransferNextByte();
                 CUSTOM_BM71_txByteQueued--;
-			}
+            }
 
             break;
-        
+
 
         /* The default state should never be executed. */
-        default:        
+        default:
             /* TODO: Handle error in application's state machine. */
-            break;        
+            break;
     }
 }
 

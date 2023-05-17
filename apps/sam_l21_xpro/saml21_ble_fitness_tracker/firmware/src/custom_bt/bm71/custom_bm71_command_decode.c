@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to decoding events coming back from the BM71 module.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -61,11 +61,11 @@ volatile    bool    ble_disconnect;
 
 //command decode state machine
 typedef enum {
-	CUSTOM_BM71_RX_DECODE_CMD_SYNC_AA,
-	CUSTOM_BM71_RX_DECODE_CMD_SYNC_00,
-	CUSTOM_BM71_RX_DECODE_CMD_LENGTH,
-	CUSTOM_BM71_RX_DECODE_CMD_DATA,
-	CUSTOM_BM71_RX_DECODE_CMD_CHECKSUM
+    CUSTOM_BM71_RX_DECODE_CMD_SYNC_AA,
+    CUSTOM_BM71_RX_DECODE_CMD_SYNC_00,
+    CUSTOM_BM71_RX_DECODE_CMD_LENGTH,
+    CUSTOM_BM71_RX_DECODE_CMD_DATA,
+    CUSTOM_BM71_RX_DECODE_CMD_CHECKSUM
 } CUSTOM_BM71_RX_DECODE_MODE;
 
 //command decode: BM71 status
@@ -92,7 +92,7 @@ static uint8_t  CmdBuffer[CUSTOM_BM71_CMD_SIZE_MAX];
 /*======================================*/
 static CUSTOM_BM71_RX_DECODE_MODE  CmdDecodeState;
 static uint8_t  CmdDecodeCmdLength;
-static uint8_t  CmdDecodeChecksum;			
+static uint8_t  CmdDecodeChecksum;
 static uint8_t  CmdDecodeDataCnt;                    //temporary variable in decoding
 static unsigned short CmdBufferPt;
 
@@ -107,17 +107,17 @@ void CUSTOM_BM71_CommandDecodeInit( void )
     {
         CUSTOM_BM71_EUSART_Read();     // flush buffer
     }
-	CUSTOM_BM71_SPPBuffClear();
+    CUSTOM_BM71_SPPBuffClear();
 }
 
 void CUSTOM_BM71_CommandDecodeMain( void )
 {
-	CUSTOM_BM71_CommandHandler();
-	if(CmdDecodedFlag)
-	{
+    CUSTOM_BM71_CommandHandler();
+    if(CmdDecodedFlag)
+    {
             CUSTOM_BM71_CommandDecode();
             CmdDecodedFlag = 0;
-	}
+    }
 }
 
 extern volatile uint8_t CUSTOM_BM71_eusartRxCount;
@@ -186,13 +186,13 @@ void CUSTOM_BM71_CommandDecode( void )
     printf("\r\n");
     if (CmdBuffer[0]!=BM71_STATUS_REPORT)
     {
-       // printf("event: 0x%02x 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1],CmdBuffer[2]);               
+       // printf("event: 0x%02x 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1],CmdBuffer[2]);
     }
     else
     {
-      //  printf("event: 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1]);        
+      //  printf("event: 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1]);
     }
-    
+
     switch(CmdBuffer[0])
     {
         case BM71_LE_CONNECT_COMPLETE:        // 0x71
@@ -203,11 +203,11 @@ void CUSTOM_BM71_CommandDecode( void )
             // CmdBuffer[5-10] is public or random device address (6 bytes)
             // CmdBuffer[11-12] is connection interval
             // CmdBuffer[13-14] is connection latency
-            
+
             // CmdBuffer[15-16] is connection supervision timeout
             ble_disconnect = 0;
             gBm71Obj.linkIndex = CmdBuffer[2];
-            
+
             gBm71Obj.state = CUSTOM_BM71_STATE_BLE_CONNECTED;
             break;
 
@@ -230,7 +230,7 @@ void CUSTOM_BM71_CommandDecode( void )
             // CmdBuffer[2] is status (0 == success)
             // CmdBuffer[3-] are optional parametersis status (0 == success)
             break;
-            
+
         case BM71_STATUS_REPORT:              // 0x81
             // CmdBuffer[1] is status
             // 0x01 -- Scanning Mode
@@ -243,7 +243,7 @@ void CUSTOM_BM71_CommandDecode( void )
             // 0x0b -- Configue Mode
             // 0x0c -- BLE connected
             switch(CmdBuffer[1])
-            { 
+            {
                 case 0x09:
                     CUSTOM_BM71_UpdateClientStatus(CUSTOM_BM71_BLE_STATUS_STANDBY);
                     break;
@@ -285,7 +285,7 @@ void CUSTOM_BM71_CommandDecode( void )
             // CmdBuffer[2-] is transparent data
             CUSTOM_BM71_AddBytesToSPPBuff(&CmdBuffer[2], CmdDecodeCmdLength-2);
             break;
-             
+
         default:
             break;
     }

@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML21J18BU
+/*
+ * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,32 +20,32 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T08:59:42Z */
+/* file generated from device description version 2021-06-07T06:15:05Z */
 #ifndef _SAML21_EVSYS_INSTANCE_
 #define _SAML21_EVSYS_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for EVSYS peripheral ========== */
-#define EVSYS_CHANNELS                           _UL_(12)   /* Number of Channels */
-#define EVSYS_CHANNELS_BITS                      _UL_(4)    /* Number of bits to select Channel */
-#define EVSYS_CHANNELS_MSB                       _UL_(11)   /* Number of Channels - 1 */
-#define EVSYS_EXTEVT_NUM                         _UL_(0)    /* Number of External Event Generators */
-#define EVSYS_GCLK_ID_0                          _UL_(5)    /* Index of Generic Clock 0 */
-#define EVSYS_GCLK_ID_1                          _UL_(6)    /* Index of Generic Clock 1 */
-#define EVSYS_GCLK_ID_2                          _UL_(7)    /* Index of Generic Clock 2 */
-#define EVSYS_GCLK_ID_3                          _UL_(8)    /* Index of Generic Clock 3 */
-#define EVSYS_GCLK_ID_4                          _UL_(9)    /* Index of Generic Clock 4 */
-#define EVSYS_GCLK_ID_5                          _UL_(10)   /* Index of Generic Clock 5 */
-#define EVSYS_GCLK_ID_6                          _UL_(11)   /* Index of Generic Clock 6 */
-#define EVSYS_GCLK_ID_7                          _UL_(12)   /* Index of Generic Clock 7 */
-#define EVSYS_GCLK_ID_8                          _UL_(13)   /* Index of Generic Clock 8 */
-#define EVSYS_GCLK_ID_9                          _UL_(14)   /* Index of Generic Clock 9 */
-#define EVSYS_GCLK_ID_10                         _UL_(15)   /* Index of Generic Clock 10 */
-#define EVSYS_GCLK_ID_11                         _UL_(16)   /* Index of Generic Clock 11 */
-#define EVSYS_GENERATORS                         _UL_(83)   /* Total Number of Event Generators */
-#define EVSYS_GENERATORS_BITS                    _UL_(7)    /* Number of bits to select Event Generator */
-#define EVSYS_USERS                              _UL_(45)   /* Total Number of Event Users */
-#define EVSYS_USERS_BITS                         _UL_(6)    /* Number of bits to select Event User */
-#define EVSYS_INSTANCE_ID                        _UL_(96)   
+#define EVSYS_CHANNELS                           (12)       /* Number of Channels */
+#define EVSYS_CHANNELS_BITS                      (4)        /* Number of bits to select Channel */
+#define EVSYS_CHANNELS_MSB                       (11)       /* Number of Channels - 1 */
+#define EVSYS_EXTEVT_NUM                         (0)        /* Number of External Event Generators */
+#define EVSYS_GCLK_ID_0                          (5)        /* Index of Generic Clock 0 */
+#define EVSYS_GCLK_ID_1                          (6)        /* Index of Generic Clock 1 */
+#define EVSYS_GCLK_ID_2                          (7)        /* Index of Generic Clock 2 */
+#define EVSYS_GCLK_ID_3                          (8)        /* Index of Generic Clock 3 */
+#define EVSYS_GCLK_ID_4                          (9)        /* Index of Generic Clock 4 */
+#define EVSYS_GCLK_ID_5                          (10)       /* Index of Generic Clock 5 */
+#define EVSYS_GCLK_ID_6                          (11)       /* Index of Generic Clock 6 */
+#define EVSYS_GCLK_ID_7                          (12)       /* Index of Generic Clock 7 */
+#define EVSYS_GCLK_ID_8                          (13)       /* Index of Generic Clock 8 */
+#define EVSYS_GCLK_ID_9                          (14)       /* Index of Generic Clock 9 */
+#define EVSYS_GCLK_ID_10                         (15)       /* Index of Generic Clock 10 */
+#define EVSYS_GCLK_ID_11                         (16)       /* Index of Generic Clock 11 */
+#define EVSYS_GENERATORS                         (83)       /* Total Number of Event Generators */
+#define EVSYS_GENERATORS_BITS                    (7)        /* Number of bits to select Event Generator */
+#define EVSYS_USERS                              (45)       /* Total Number of Event Users */
+#define EVSYS_USERS_BITS                         (6)        /* Number of bits to select Event User */
+#define EVSYS_INSTANCE_ID                        (96)       
 
 #endif /* _SAML21_EVSYS_INSTANCE_ */

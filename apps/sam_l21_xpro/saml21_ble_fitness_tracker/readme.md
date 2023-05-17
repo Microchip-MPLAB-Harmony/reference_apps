@@ -1,5 +1,5 @@
 ---
-grand_parent: 32-bit MCU Reference Applications
+grand_parent: Reference Applications
 parent: SAM L21 Xplained Pro Evaluation Kit
 title: BLE Fitness Tracker
 nav_order: 2
@@ -20,11 +20,11 @@ nav_order: 2
 
 > **The application will be in continuous low power standby mode until user presses a switch on SAM L21 Xplained
   board or initiate a communication from Bluetooth using MBD android app. Then device wakes up, reads heart rate
-	, displays on eink dispaly and posts heart rate value to MBD android app via Bluetooth.**
+	, displays on Eink E-Paper display 2,9" 296x128 dots display and posts heart rate value to MBD android app via Bluetooth.**
 
 > The Mikro Elektronika Heart Rate 9 click board is used to read the heart pulse.
-  Mikroelektronika eINK click bundle is used for displaying heart rate.
-  The eINK click bundle contains the eINK click adapter board and the eINK display. BM71
+  Mikroelektronika Eink E-Paper display 2,9" 296x128 dots display is used for displaying heart rate.
+  The Eink E-Paper display 2,9" 296x128 dots display device contains the eINK click adapter board and the Eink E-Paper display 2,9" 296x128 dots display. BM71
   Bluetooth module is used to send the heart rate data over BLE.
 
 > The Heart Rate 9 click introduces Microchip's proprietary method of measuring multiple
@@ -32,7 +32,7 @@ nav_order: 2
   This algorithm for processing data from the sensor and it can send data for 3 different diodes
   (green, ir, red) who give out a diagram of the heartbeat and its frequency per minute.
 
-> The eINK display is a very low power consumption display and it can retain the information,
+> The Eink E-Paper display 2,9" 296x128 dots display is a very low power consumption display and it can retain the information,
   even after disconnecting from the power source. The host MCU SAM L21 is interfaced with the
   Heart Rate 9 click over the USART interface and eINK click over SPI Interface.
 
@@ -51,11 +51,11 @@ nav_order: 2
 
 ## Hardware Used:
 
-- [SAM L21 XPLAINED PRO EVALUATION KIT](https://www.microchip.com/en-us/development-tool/atsaml21-xpro-b)
+- [SAM L21 Xplained Pro Evaluation Kit ](https://www.microchip.com/en-us/development-tool/atsaml21-xpro-b)
 - [Heart Rate 9 click](https://www.mikroe.com/heart-rate-9-click)
-- [EINK CLICK BUNDLE](https://www.mikroe.com/eink-click)
+- [MikroElektronika E-Paper display 2,9" 296x128 dots](https://www.mikroe.com/e-paper-display-29-inches)
 - [BM71-XPRO](https://www.microchip.com/Developmenttools/ProductDetails/DM164146)
-- [MIKROBUS XPLAINED PRO](https://www.microchip.com/en-us/development-tool/ATMBUSADAPTER-XPRO)
+- [mikroBUS Xplained Pro](https://www.microchip.com/en-us/development-tool/ATMBUSADAPTER-XPRO)
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
@@ -110,11 +110,11 @@ Refer [Project Manifest](./firmware/src/config/sam_l21_xpro/harmony-manifest-suc
 
 ## Setup:
 - Mount Heart Rate 9 click board on mikrobus xplained pro adapter and connect to EXT 1 connector of SAM L21 XPRO Evaluation kit
-- Mount the eINK click bundle (eINK click + eINK dispaly) mikrobus xplained pro adapter and connect to EXT 2 connector of SAM L21 XPRO Evaluation kit
+- Mount the eink_epaper_2_9_296_128 (eINK click + eink_epaper_2_9_296_128 display) mikrobus xplained pro adapter and connect to EXT 2 connector of SAM L21 XPRO Evaluation kit
 - Connect the BM71-XPRO on to EXT 3 connector of SAM L21 XPRO Evaluation kit  
 - Power the SAM L21 XPRO Evaluation kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)  
 
-  <img src = "images/ble_fitness_tracker_demo_setup.jpg" width="600" height="550" align="middle">  
+  <img src = "images/ble_fitness_tracker_demo_setup.png">
 
 
 ## Programming hex file:
@@ -147,7 +147,7 @@ The prebuilt hex file can be programmed by following the below steps.
   and tap on "Bluetooth Smart" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.  
 <img src = "images/mbd_appscreen1.png" width="270" height="576" align="middle">
 
-- After power-up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor
+- After power-up, the application displays the Microchip logo on the Eink E-Paper display 2,9" 296x128 dots display and initializes the heart rate sensor
 - After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 9 click lights up and MCU goes to sleep (low power standby mode)
 
 -  Now, scan for Bluetooth devices by tapping START SCAN option on the MBD APP.
@@ -166,7 +166,7 @@ The prebuilt hex file can be programmed by following the below steps.
 - Keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.  
   <img src = "images/finger_placement.png" width="432" height="158" align="middle">
 
-  <img src = "images/ble_fitness_tracker_demo_run.jpg" width="600" height="600" align="middle">
+  <img src = "images/ble_fitness_tracker_demo_run.png">
 
 - In the bottom right corner of the **Sensor Location** screen, disable and enable the **Notify Button**.  
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
@@ -175,19 +175,20 @@ The prebuilt hex file can be programmed by following the below steps.
 - Wait till the LED "LED0" on SAM L21 Xplained Pro Evaluation Kit goes off. Once the LED is off, lift your finger.  
   **Note**: Make sure smartphone screens are not turned off and don't switch to any other App(s) on your smartphone.
 - The heart rate value (in bpm - beats per minute) gets displayed on the **Sensor Loaction** screen as shown
-  in the figure below. Also, the same heart rate value gets displayed on the eINK display and MCU goes back to sleep mode.  
+  in the figure below. Also, the same heart rate value gets displayed on the Eink E-Paper display 2,9" 296x128 dots display and MCU goes back to sleep mode.  
 <img src = "images/mbd_appscreen8.jpg" width="250" height="450" align="middle">
 
 ### Running the Demo without BLE:
 #### Note: To test the demo without BLE, disconnect the BM71-XPRO from EXT 3 connector of the Curiosity Nano Base board.
 - Perform reset by unplugging and re-plugging the power cable of SAM L21 Xplained Pro Evaluation Kit
-- After power-up, the application displays the Microchip logo on the eINK display and initializes the heart rate sensor
+- After power-up, the application displays the Microchip logo on the Eink E-Paper display 2,9" 296x128 dots display and initializes the heart rate sensor
 - After successful initialization of the heart rate sensor, two integrated LEDs on the heart rate 9 click lights up and MCU goes to sleep (low power standby mode)
 - Press the switch "SW0" on SAM L21 Xplained Pro Evaluation Kit, MCU wakes up from sleep mode and LED "LED0" on SAM L21 Xplained Pro Evaluation Kit glows on
 - Place your index finger gently on the heart rate 9 click sensor as shown in the figure below  
-<img src = "images/ble_fitness_tracker_demo_run.jpg" width="600" height="600" align="middle">
+<img src = "images/ble_fitness_tracker_demo_run.png">
 - Wait till the LED "LED0" on SAM L21 Xplained Pro Evaluation Kit goes off and then lift your finger
-- The heart rate value (in bpm - beats per minute) gets displayed on the eINK display and MCU goes back to sleep mode. 
+- The heart rate value (in bpm - beats per minute) gets displayed on the Eink E-Paper display 2,9" 296x128 dots display and MCU goes back to sleep mode.  
+<img src = "images/heartrate.png">
 
 ## Comments:
 - Place your index finger gently on the heart rate 9 click sensor, don't push or put pressure on the sensor (the heart rate values may not be accurate)
@@ -204,4 +205,5 @@ The prebuilt hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ## Revision:
+- v1.6.0 - Replaced Eink Bundle with eink_epaper_2_9_296_128 Display, regenerated and tested application.
 - v1.5.0 - Released demo application

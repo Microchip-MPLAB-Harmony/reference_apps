@@ -5,22 +5,22 @@
     Microchip Technology Inc.
 
   File Name:
-    CUSTOM_bm71.h
+    custom_bm71.h
 
   Summary:
     BM71 Bluetooth Static Driver main header file
 
   Description:
-    This file is the header file for the external (public) API of the static 
+    This file is the header file for the external (public) API of the static
     implementation of the BM71 driver.
 
     The BM71 is a Bluetooth 4.2 Stereo Module that supports classic A2DP, AVRCP,
     HFP, HSP, and SPP protocols as well as BLE (Bluetooth Low Energy).
-    
-    The BM71 streams I2S audio at up to 24-bit, 96 kHz.  It uses a UART to 
+
+    The BM71 streams I2S audio at up to 24-bit, 96 kHz.  It uses a UART to
     receive commands from the host microcontroller (PIC32) and and send events
     back.
- 
+
     All functions and constants in this file are named with the format
     CUSTOM_BM71_xxx, where xxx is a function name or constant.  These names are
     redefined in the appropriate configuration?s system_config.h file to the
@@ -76,7 +76,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #ifdef __cplusplus  // Provide C++ Compatibility
 extern "C" {
 #endif
-// DOM-IGNORE-END 
+// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,15 +84,15 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 
-#define CUSTOM_BM71_MAXBDNAMESIZE    32            
-    
+#define CUSTOM_BM71_MAXBDNAMESIZE    32
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
 
-typedef enum 
+typedef enum
 {
     CUSTOM_BM71_STATUS_NONE,
     CUSTOM_BM71_STATUS_OFF,
@@ -105,12 +105,12 @@ typedef enum
     CUSTOM_BM71_PROTOCOL_BLE = 16  // only protocol supported by BM71
 } CUSTOM_BM71_PROTOCOL;            // BM71 protocols
 
-typedef enum 
+typedef enum
 {
-    CUSTOM_BM71_EVENT_NONE = 0,              
+    CUSTOM_BM71_EVENT_NONE = 0,
     CUSTOM_BM71_EVENT_BLESPP_MSG_RECEIVED,
     CUSTOM_BM71_EVENT_BLE_STATUS_CHANGED,
-            
+
 } CUSTOM_BM71_EVENT;       // events that can be returned to a client via callback
 
 typedef enum
@@ -124,191 +124,191 @@ typedef enum
 ////////////////////////////////////////////// new //////////////////////////////
 
 /** DEFINES  ******************************************************/
-#define BLE_CCCD_UUID			0x2902
-#define BLE_CCCD_NOTIFICATION_ENABLED	0x0001
-#define BLE_CCCD_INDICATION_ENABLED		0x0002
+#define BLE_CCCD_UUID           0x2902
+#define BLE_CCCD_NOTIFICATION_ENABLED   0x0001
+#define BLE_CCCD_INDICATION_ENABLED     0x0002
 
-#define BLE_ADDR_LEN			6
+#define BLE_ADDR_LEN            6
 
-#define BM77_BLUETOOTH_DEVICE	0
-#define BM78_BLUETOOTH_DEVICE	1
-#define BM70_BLUETOOTH_DEVICE	2
+#define BM77_BLUETOOTH_DEVICE   0
+#define BM78_BLUETOOTH_DEVICE   1
+#define BM70_BLUETOOTH_DEVICE   2
 
 #define BMXX_DEVICE (BM70_BLUETOOTH_DEVICE)
 
 /* Advertisement parameter */
-#define ADV_PARAM_INTERVAL_INDEX_HIGH		0
-#define ADV_PARAM_INTERVAL_INDEX_LOW		1
-#define ADV_PARAM_TYPE_INDEX				2
-#define ADV_PARAM_DIRECT_ADDR_TYPE_INDEX	3
-#define ADV_PARAM_DIRECT_ADDR_INDEX			4
+#define ADV_PARAM_INTERVAL_INDEX_HIGH       0
+#define ADV_PARAM_INTERVAL_INDEX_LOW        1
+#define ADV_PARAM_TYPE_INDEX                2
+#define ADV_PARAM_DIRECT_ADDR_TYPE_INDEX    3
+#define ADV_PARAM_DIRECT_ADDR_INDEX         4
 
 /* Advertisement interval */
-#define ADV_INTERVAL_1_S					1600	/* (1600 * 625 us) */
-#define ADV_INTERVAL_100_MS					160
+#define ADV_INTERVAL_1_S                    1600    /* (1600 * 625 us) */
+#define ADV_INTERVAL_100_MS                 160
 
 /* GAP Advertising interval max. and min. */
 #define AT_BLE_ADV_INTERVAL_MIN        0x0020 /**< Minimum Advertising interval in 625 us units, i.e. 20 ms. */
 #define AT_BLE_ADV_INTERVAL_MAX        0x4000 /**< Maximum Advertising interval in 625 us units, i.e. 10.24 s. */
 
 /* Scan parameters */
-#define MIN_SCAN_INTERVAL		0x0004
-#define MAX_SCAN_INTERVAL		0x4000
-#define MIN_SCAN_WINDOW			0x0004
-#define MAX_SCAN_WINDOW			0x4000
+#define MIN_SCAN_INTERVAL       0x0004
+#define MAX_SCAN_INTERVAL       0x4000
+#define MIN_SCAN_WINDOW         0x0004
+#define MAX_SCAN_WINDOW         0x4000
 
 /* Connection parameters */
-#define MIN_CONN_INTERVAL		0x0006
-#define MAX_CONN_INTERVAL		0x0C80
-#define MIN_SLAVE_LATENCY		0x0000
-#define MAX_SLAVE_LATENCY		0x01F4
-#define MIN_SV_TIMEOUT			0x000A
-#define MAX_SV_TIMEOUT			0x0C80
+#define MIN_CONN_INTERVAL       0x0006
+#define MAX_CONN_INTERVAL       0x0C80
+#define MIN_SLAVE_LATENCY       0x0000
+#define MAX_SLAVE_LATENCY       0x01F4
+#define MIN_SV_TIMEOUT          0x000A
+#define MAX_SV_TIMEOUT          0x0C80
 
 #define BLE_PAIR_CONFIRM_YES true
 #define BLE_PAIR_CONFIRM_NO false
 
-#define BLE_UUID_128B_LEN	(1 << BLE_UUID_128B)
-#define BLE_UUID_16B_LEN	(1 << BLE_UUID_16B)
+#define BLE_UUID_128B_LEN   (1 << BLE_UUID_128B)
+#define BLE_UUID_16B_LEN    (1 << BLE_UUID_16B)
 
-#define MAX_CHAR_WRITE_VALUE	20
+#define MAX_CHAR_WRITE_VALUE    20
 
 /* BLE Attribute UUID lengths */
 /**< 16-bit Bluetooth UUID. */
-#define BLE_ATTRIB_UUID_LENGTH_2		2
+#define BLE_ATTRIB_UUID_LENGTH_2        2
 /**< 32-bit Bluetooth UUID. */
-#define BLE_ATTRIB_UUID_LENGTH_4		4
+#define BLE_ATTRIB_UUID_LENGTH_4        4
 /**< 128-bit Bluetooth UUID. */
-#define BLE_ATTRIB_UUID_LENGTH_16		16
+#define BLE_ATTRIB_UUID_LENGTH_16       16
 
 /**< Characteristic properties */
-#define BLE_CHAR_BROADCST				(0x01 << 0)
-#define BLE_CHAR_READ					(0x01 << 1)
+#define BLE_CHAR_BROADCST               (0x01 << 0)
+#define BLE_CHAR_READ                   (0x01 << 1)
 #define BLE_CHAR_WRITE_WITHOUT_RESPONSE (0x01 << 2)
-#define BLE_CHAR_WRITE					(0x01 << 3)
-#define BLE_CHAR_NOTIFY					(0x01 << 4)
-#define BLE_CHAR_INDICATE				(0x01 << 5)
-#define BLE_CHAR_SIGNED_WRITE			(0x01 << 6)
-#define BLE_CHAR_EXT_PROPERTIES			(0x01 << 7)
+#define BLE_CHAR_WRITE                  (0x01 << 3)
+#define BLE_CHAR_NOTIFY                 (0x01 << 4)
+#define BLE_CHAR_INDICATE               (0x01 << 5)
+#define BLE_CHAR_SIGNED_WRITE           (0x01 << 6)
+#define BLE_CHAR_EXT_PROPERTIES         (0x01 << 7)
 
 /**< Characteristic extended properties */
-#define BLE_CHAR_EXT_PROP_RELIABLE_WRITE	(0x0001 << 0)
-#define BLE_CHAR_EXT_PROP_WRITABLE_AUX		(0x0001 << 1)
+#define BLE_CHAR_EXT_PROP_RELIABLE_WRITE    (0x0001 << 0)
+#define BLE_CHAR_EXT_PROP_WRITABLE_AUX      (0x0001 << 1)
 
 /* The following values inherited from BLEDK3. This needs to be updated whenever BLEDK3 update these values */
 
 /**< Attribute Permissions. All attributes are readable as default. */
-#define BLE_PM_WRITABLE					0x02	/**< Access Permission: Writeable.*/
-#define BLE_PM_SECURITY_READ_ENABLE		0x04	/**< Encryption/Authentication Permission on READ property attribute. If enabled, it requires pairing to device to access the attribute. Note that Encryption or Authentication permission is based on IO capability of device. */
-#define BLE_PM_SECURITY_WRITE_ENABLE	0x08	/**< Encryption/Authentication Permission on WRITE property attribute. If enabled, it requires pairing to device to access the attribute. Note that Encryption or Authentication permission is based on IO capability of device. */
-#define BLE_PM_MANUAL_WRITE_RESP		0x40	/**< Authorization Permission: Manual sending write response configuration. Application can send write response manually. */
-#define BLE_PM_MANUAL_READ_RESP			0x80	/**< Authorization Permission: Manual sending read response configuration. Application can send read response with data manually. */
+#define BLE_PM_WRITABLE                 0x02    /**< Access Permission: Writeable.*/
+#define BLE_PM_SECURITY_READ_ENABLE     0x04    /**< Encryption/Authentication Permission on READ property attribute. If enabled, it requires pairing to device to access the attribute. Note that Encryption or Authentication permission is based on IO capability of device. */
+#define BLE_PM_SECURITY_WRITE_ENABLE    0x08    /**< Encryption/Authentication Permission on WRITE property attribute. If enabled, it requires pairing to device to access the attribute. Note that Encryption or Authentication permission is based on IO capability of device. */
+#define BLE_PM_MANUAL_WRITE_RESP        0x40    /**< Authorization Permission: Manual sending write response configuration. Application can send write response manually. */
+#define BLE_PM_MANUAL_READ_RESP         0x80    /**< Authorization Permission: Manual sending read response configuration. Application can send read response with data manually. */
 
-#define BLE_ATT_ATTRIBUTE_VALUE_LEN			23		/**< The Maximum Length of Attribute Value. Refer to ATT default MTU size. */
-#define BLE_ATT_DEFAULT_MTU_LENGTH			23		/**< ATT default MTU size. */
+#define BLE_ATT_ATTRIBUTE_VALUE_LEN         23      /**< The Maximum Length of Attribute Value. Refer to ATT default MTU size. */
+#define BLE_ATT_DEFAULT_MTU_LENGTH          23      /**< ATT default MTU size. */
 
-#define BLE_MAX_SERVICE_BUF_LEN    			0x01FF
+#define BLE_MAX_SERVICE_BUF_LEN             0x01FF
 
 /****************************************************************************************
-*										Enumerations									*
+*                                       Enumerations                                    *
 ****************************************************************************************/
 /* BLE Host SDK status messages
 */
-typedef enum 
+typedef enum
 {
-	BLE_SUCCESS  = 0x00,
-	BLE_UNKNOWN_COMMAND,
-	BLE_UNKNOWN_CONNECTION_ID,
-	BLE_HARDWARE_FAILURE,
-	BLE_AUTHENTICATION_FAILURE = 0x05,
-	BLE_PIN_KEY_MISSING,
-	BLE_MEMORY_CAPACITY_EXCEEDED,
-	BLE_CONNECTION_TIMEOUT,
-	BLE_CONNECTION_LIMIT_EXCEEDED,
-	BLE_ACL_CONNECTION_ALREADY_EXISTS = 0x0B,
-	BLE_COMMAND_DISALLOWED,
-	BLE_CONNECTION_REJECTED_DUE_TO_LIMITED_RESOURCES,
-	BLE_CONNECTION_REJECTED_DUE_TO_SECURITY_REASONS,
-	BLE_CONNECTION_REJECTED_DUE_TO_UNACCEPTABLE_BD_ADDR,
-	BLE_CONNECTION_ACCEPT_TIMEOUT_EXCEEDED,
-	BLE_UNSUPPORTED_FEATURE_OR_PARAMETER_VALUE,
-	BLE_INVALID_COMMAND_PARAMETERS,
-	BLE_REMOTE_USER_TERMINATED_CONNECTION,
-	BLE_REMOTE_USER_TERMINATED_CONNECTION_DUE_TO_LOW_RESOURCES,
-	BLE_REMOTE_USER_TERMINATED_CONNECTION_DUE_TO_POWER_OFF,
-	BLE_CONNECTION_TERMINATED_BY_LOCAL_HOST,
-	BLE_PAIRING_NOT_ALLOWED = 0x18,
-	BLE_UNSPECIFIED_ERROR = 0x1F,
-	BLE_INSTANT_PASSED = 0x28,
-	BLE_PAIRING_WITH_UINT_KEY_NOT_SUPPORTED = 0x29,
-	BLE_INSUFFICIENT_SECURITY = 0x2F,
-	BLE_CONNECTION_REJECTED_DUE_TO_NO_SUITABLE_CHANNEL_FOUND = 0x39,
-	BLE_CONTROLLER_BUSY,
-	BLE_UNACCEPTABLE_CONNECTION_INTERVAL,
-	BLE_DIRECTED_ADVERTISING_TIMEOUT,
-	BLE_CONNECTION_TERMINATED_DUE_TO_MIC_FAILURE,
-	BLE_CONNECTION_FAILED_TO_BE_ESTABLISHED,
-	BLE_INVALID_HANDLE = 0x81,
-	BLE_READ_NOT_PERMITTED,
-	BLE_WRITE_NOT_PERMITTED,
-	BLE_INVALID_PDU,
-	BLE_INSUFFICIENT_AUTHENTICATION,
-	BLE_REQUEST_NOT_SUPPORTED,
-	BLE_INVALID_OFFSET,
-	BLE_INSUFFICIENT_AUTHORIZATION = 0x88,
-	BLE_PREPARE_QUEUE_FULL,
-	BLE_ATTRIBUTE_NOT_FOUND,
-	BLE_ATTRIBUTE_NOT_LONG,
-	BLE_INSUFFICIENT_ENCRYPTION_KEY_SIZE,
-	BLE_INVALID_ATTRIBUTE_VALUE_LENGTH,
-	BLE_UNLIKELY_ERROR,
-	BLE_INSUFFICIENT_ENCRYPTION,
-	BLE_UNSUPPORTED_GROUT_TYPE,
-	BLE_INSUFFICIENT_RESOURCES,
-	BLE_APPLICATION_DEFINED_ERROR = 0xF0,
-	BLE_FAILURE,
-	BLE_UART_TIMEOUT,
-	BLE_UART_CRC_ERROR = 0xFF,
+    BLE_SUCCESS  = 0x00,
+    BLE_UNKNOWN_COMMAND,
+    BLE_UNKNOWN_CONNECTION_ID,
+    BLE_HARDWARE_FAILURE,
+    BLE_AUTHENTICATION_FAILURE = 0x05,
+    BLE_PIN_KEY_MISSING,
+    BLE_MEMORY_CAPACITY_EXCEEDED,
+    BLE_CONNECTION_TIMEOUT,
+    BLE_CONNECTION_LIMIT_EXCEEDED,
+    BLE_ACL_CONNECTION_ALREADY_EXISTS = 0x0B,
+    BLE_COMMAND_DISALLOWED,
+    BLE_CONNECTION_REJECTED_DUE_TO_LIMITED_RESOURCES,
+    BLE_CONNECTION_REJECTED_DUE_TO_SECURITY_REASONS,
+    BLE_CONNECTION_REJECTED_DUE_TO_UNACCEPTABLE_BD_ADDR,
+    BLE_CONNECTION_ACCEPT_TIMEOUT_EXCEEDED,
+    BLE_UNSUPPORTED_FEATURE_OR_PARAMETER_VALUE,
+    BLE_INVALID_COMMAND_PARAMETERS,
+    BLE_REMOTE_USER_TERMINATED_CONNECTION,
+    BLE_REMOTE_USER_TERMINATED_CONNECTION_DUE_TO_LOW_RESOURCES,
+    BLE_REMOTE_USER_TERMINATED_CONNECTION_DUE_TO_POWER_OFF,
+    BLE_CONNECTION_TERMINATED_BY_LOCAL_HOST,
+    BLE_PAIRING_NOT_ALLOWED = 0x18,
+    BLE_UNSPECIFIED_ERROR = 0x1F,
+    BLE_INSTANT_PASSED = 0x28,
+    BLE_PAIRING_WITH_UINT_KEY_NOT_SUPPORTED = 0x29,
+    BLE_INSUFFICIENT_SECURITY = 0x2F,
+    BLE_CONNECTION_REJECTED_DUE_TO_NO_SUITABLE_CHANNEL_FOUND = 0x39,
+    BLE_CONTROLLER_BUSY,
+    BLE_UNACCEPTABLE_CONNECTION_INTERVAL,
+    BLE_DIRECTED_ADVERTISING_TIMEOUT,
+    BLE_CONNECTION_TERMINATED_DUE_TO_MIC_FAILURE,
+    BLE_CONNECTION_FAILED_TO_BE_ESTABLISHED,
+    BLE_INVALID_HANDLE = 0x81,
+    BLE_READ_NOT_PERMITTED,
+    BLE_WRITE_NOT_PERMITTED,
+    BLE_INVALID_PDU,
+    BLE_INSUFFICIENT_AUTHENTICATION,
+    BLE_REQUEST_NOT_SUPPORTED,
+    BLE_INVALID_OFFSET,
+    BLE_INSUFFICIENT_AUTHORIZATION = 0x88,
+    BLE_PREPARE_QUEUE_FULL,
+    BLE_ATTRIBUTE_NOT_FOUND,
+    BLE_ATTRIBUTE_NOT_LONG,
+    BLE_INSUFFICIENT_ENCRYPTION_KEY_SIZE,
+    BLE_INVALID_ATTRIBUTE_VALUE_LENGTH,
+    BLE_UNLIKELY_ERROR,
+    BLE_INSUFFICIENT_ENCRYPTION,
+    BLE_UNSUPPORTED_GROUT_TYPE,
+    BLE_INSUFFICIENT_RESOURCES,
+    BLE_APPLICATION_DEFINED_ERROR = 0xF0,
+    BLE_FAILURE,
+    BLE_UART_TIMEOUT,
+    BLE_UART_CRC_ERROR = 0xFF,
 } ble_status_t;
 
 /* Advertising Types
 */
 typedef enum
 {
-	BLE_ADV_TYPE_UNDIRECTED    = 0x00,   /**< Connectable undirected. */
-	BLE_ADV_TYPE_DIRECTED,               /**< Connectable high duty cycle directed advertising. */
-	BLE_ADV_TYPE_SCANNABLE_UNDIRECTED,   /**< Scannable undirected. */
-	BLE_ADV_TYPE_NONCONN_UNDIRECTED,     /**< Non connectable undirected. */
-	BLE_ADV_TYPE_DIRECTED_LDC,           /**< Connectable low duty cycle directed advertising. */
-	BLE_ADV_TYPE_SCAN_RESPONSE           /** only used in @ref BLE_SCAN_INFO event to signify a scan response*/
+    BLE_ADV_TYPE_UNDIRECTED    = 0x00,   /**< Connectable undirected. */
+    BLE_ADV_TYPE_DIRECTED,               /**< Connectable high duty cycle directed advertising. */
+    BLE_ADV_TYPE_SCANNABLE_UNDIRECTED,   /**< Scannable undirected. */
+    BLE_ADV_TYPE_NONCONN_UNDIRECTED,     /**< Non connectable undirected. */
+    BLE_ADV_TYPE_DIRECTED_LDC,           /**< Connectable low duty cycle directed advertising. */
+    BLE_ADV_TYPE_SCAN_RESPONSE           /** only used in @ref BLE_SCAN_INFO event to signify a scan response*/
 } ble_adv_type_t;
 
 /* Advertising Mode
 */
 typedef enum
 {
-	/* Mode in non-discoverable */
-	BLE_ADV_NON_DISCOVERABLE,
-	/* Mode in general discoverable, AD type general flag in Flags set to 1. */
-	BLE_ADV_GEN_DISCOVERABLE,
-	/* Mode in limited discoverable, AD type limited flag in Flags set to 1 (This mode is automatically stopped after 180 sec of activity) */
-	BLE_ADV_LIM_DISCOVERABLE,
-	/* Broadcaster mode which is a non discoverable and non connectable mode. */
-	BLE_ADV_BROADCASTER_MODE
+    /* Mode in non-discoverable */
+    BLE_ADV_NON_DISCOVERABLE,
+    /* Mode in general discoverable, AD type general flag in Flags set to 1. */
+    BLE_ADV_GEN_DISCOVERABLE,
+    /* Mode in limited discoverable, AD type limited flag in Flags set to 1 (This mode is automatically stopped after 180 sec of activity) */
+    BLE_ADV_LIM_DISCOVERABLE,
+    /* Broadcaster mode which is a non discoverable and non connectable mode. */
+    BLE_ADV_BROADCASTER_MODE
 } ble_adv_mode_t;
 
 /* BLE can accept to kinds of addresses, either public or random addresses
 */
 typedef enum
 {
-	/** a public static address */
-	BLE_ADDRESS_PUBLIC,
-	/** a random static address */
-	BLE_ADDRESS_RANDOM_STATIC,
-	/** resolvable private random address */
-	BLE_ADDRESS_RANDOM_PRIVATE_RESOLVABLE,
-	/** non-resolvable private random address */
-	BLE_ADDRESS_RANDOM_PRIVATE_NON_RESOLVABLE ,
+    /** a public static address */
+    BLE_ADDRESS_PUBLIC,
+    /** a random static address */
+    BLE_ADDRESS_RANDOM_STATIC,
+    /** resolvable private random address */
+    BLE_ADDRESS_RANDOM_PRIVATE_RESOLVABLE,
+    /** non-resolvable private random address */
+    BLE_ADDRESS_RANDOM_PRIVATE_NON_RESOLVABLE ,
 
 } ble_addr_type_t;
 
@@ -316,106 +316,106 @@ typedef enum
 */
 typedef enum
 {
-	GAP_EVENT_HANDLERS,
-	GATT_SERVER_EVENT_HANDLERS,
-	GATT_CLIENT_EVENT_HANDLERS,
-	COMMON_EVENT_HANDLERS,
-	TRANSPARENT_EVENT_HANDLERS
+    GAP_EVENT_HANDLERS,
+    GATT_SERVER_EVENT_HANDLERS,
+    GATT_CLIENT_EVENT_HANDLERS,
+    COMMON_EVENT_HANDLERS,
+    TRANSPARENT_EVENT_HANDLERS
 }ble_event_types_t;
 
 /* BLEDK3 events
 */
 enum
 {
-	PASSKEY_ENTRY_REQ			= 0x60,
-	PAIRING_COMPLETE,
-	PASSKEY_CONFIRM_REQ,
-	ADV_REPORT					= 0x70,
-	CONNECTION_COMPLETE,
-	DISCONNECTION_COMPLETE,
-	CONN_PARAM_UPDATE_NOTIFY,
-	COMMAND_COMPLETE			= 0x80,
-	STATUS_REPORT,
-	CONFIG_MODE_STATUS,
-	DISCOVER_ALL_PRIMARY_SERVICE_RESP = 0x90,
-	DISCOVER_SPECIFIC_PRIMARY_SERVICE_CHAR_RESP,
-	DISCOVER_ALL_CHAR_DESCRIPTOR_RESP,
-	CHAR_VALUE_RECEIVED,
-	CLIENT_WRITE_CHAR_VALUE		= 0x98,
-	RECEIVED_TRANSPARENT_DATA	= 0x9A,
+    PASSKEY_ENTRY_REQ           = 0x60,
+    PAIRING_COMPLETE,
+    PASSKEY_CONFIRM_REQ,
+    ADV_REPORT                  = 0x70,
+    CONNECTION_COMPLETE,
+    DISCONNECTION_COMPLETE,
+    CONN_PARAM_UPDATE_NOTIFY,
+    COMMAND_COMPLETE            = 0x80,
+    STATUS_REPORT,
+    CONFIG_MODE_STATUS,
+    DISCOVER_ALL_PRIMARY_SERVICE_RESP = 0x90,
+    DISCOVER_SPECIFIC_PRIMARY_SERVICE_CHAR_RESP,
+    DISCOVER_ALL_CHAR_DESCRIPTOR_RESP,
+    CHAR_VALUE_RECEIVED,
+    CLIENT_WRITE_CHAR_VALUE     = 0x98,
+    RECEIVED_TRANSPARENT_DATA   = 0x9A,
 };
 
 /* BLEDK3 status
 */
 typedef enum
 {
-	SCANNING_MODE = 0x01,
-	CONNECTING_MODE,
-	STANDBY_MODE,
-	BROADCAST_MODE = 0x05,
-	TRANSPARENT_SERVICE_ENABLED_MODE = 0x08,
-	IDLE_MODE,
-	SHUTDOWN_MODE,
-	CONFIGURE_MODE,
-	BLE_CONNECTED_MODE,
+    SCANNING_MODE = 0x01,
+    CONNECTING_MODE,
+    STANDBY_MODE,
+    BROADCAST_MODE = 0x05,
+    TRANSPARENT_SERVICE_ENABLED_MODE = 0x08,
+    IDLE_MODE,
+    SHUTDOWN_MODE,
+    CONFIGURE_MODE,
+    BLE_CONNECTED_MODE,
 } bledk3_status_t;
 
 /* Scan types used at ble_scan_param_set
 */
 typedef enum
 {
-	/* No SCAN_REQ packets shall be sent */
-	BLE_SCAN_PASSIVE,
-	/* SCAN_REQ packets may be sent */
-	BLE_SCAN_ACTIVE
+    /* No SCAN_REQ packets shall be sent */
+    BLE_SCAN_PASSIVE,
+    /* SCAN_REQ packets may be sent */
+    BLE_SCAN_ACTIVE
 } ble_scan_type_t;
 
 /* Scan enable used at ble_scan_start
 */
 typedef enum
 {
-	BLE_SCAN_DISABLED,
-	BLE_SCAN_ENABLED,
+    BLE_SCAN_DISABLED,
+    BLE_SCAN_ENABLED,
 } ble_scan_enable_t;
 
 /* Scan filter duplicate used at ble_scan_start
 */
 typedef enum
 {
-	BLE_SCAN_DUPLICATE_FILTER_DISABLED,
-	BLE_SCAN_DUPLICATE_FILTER_ENABLED,
+    BLE_SCAN_DUPLICATE_FILTER_DISABLED,
+    BLE_SCAN_DUPLICATE_FILTER_ENABLED,
 } ble_scan_duplicate_filter_t;
 
 /* Connection filter used at ble_create_connection
 */
 typedef enum
 {
-	BLE_CONN_WHITELIST_FILTER_DISABLED,
-	BLE_CONN_WHITELIST_FILTER_ENABLED,
+    BLE_CONN_WHITELIST_FILTER_DISABLED,
+    BLE_CONN_WHITELIST_FILTER_ENABLED,
 } ble_connection_filter_t;
 
 /* BLEDK3 advertisement event type used at ble_adv_report_event_t
 */
 typedef enum
 {
-	ADV_IND,
-	ADV_DIRECT_IND,
-	ADV_SCAN_IND,
-	ADV_NONCONN_IND,
-	SCAN_RESP,
+    ADV_IND,
+    ADV_DIRECT_IND,
+    ADV_SCAN_IND,
+    ADV_NONCONN_IND,
+    SCAN_RESP,
 } ble_adv_event_type_t;
 
 typedef enum
 {
-	CONFIG_MODE_DISABLED,
-	CONFIG_MODE_ENABLED,
+    CONFIG_MODE_DISABLED,
+    CONFIG_MODE_ENABLED,
 } ble_config_mode_status_t;
 
 typedef enum
 {
-	BLE_UUID_16B = 1,
-	BLE_UUID_128B = 4,
-	BLE_UUID_INVALID
+    BLE_UUID_16B = 1,
+    BLE_UUID_128B = 4,
+    BLE_UUID_INVALID
 } ble_uuid_type_t;
 
 /* GATT UUIDs defined by SIG
@@ -436,85 +436,85 @@ UUID_CHARACTERISTIC
 */
 typedef enum
 {
-	CHAR_EXTENDED_PROPERTIES = 0x2900,
-	CHAR_USER_DESCRIPTION,
-	CLIENT_CHAR_CONFIGURATION,
-	SERVER_CHAR_CONFIGURATION,
-	CHAR_PRESENTATION_FORMAT,
-	CHAR_AGGREGATE_FORMAT,
-	VALID_RANGE,
-	EXTERNAL_REPORT_REFERENCE,
-	REPORT_REFERENCE,
-	NUMBER_OF_DIGITALS,
-	VALUE_TRIGGER_SETTING,
-	ENVIRONMENTAL_SENSING_CONFIGURATION,
-	ENVIRONMENTAL_SENSING_MEASUREMENT,
-	ENVIRONMENTAL_SENSING_TRIGGER_SETTING,
-	TIME_TRIGGER_SETTING
+    CHAR_EXTENDED_PROPERTIES = 0x2900,
+    CHAR_USER_DESCRIPTION,
+    CLIENT_CHAR_CONFIGURATION,
+    SERVER_CHAR_CONFIGURATION,
+    CHAR_PRESENTATION_FORMAT,
+    CHAR_AGGREGATE_FORMAT,
+    VALID_RANGE,
+    EXTERNAL_REPORT_REFERENCE,
+    REPORT_REFERENCE,
+    NUMBER_OF_DIGITALS,
+    VALUE_TRIGGER_SETTING,
+    ENVIRONMENTAL_SENSING_CONFIGURATION,
+    ENVIRONMENTAL_SENSING_MEASUREMENT,
+    ENVIRONMENTAL_SENSING_TRIGGER_SETTING,
+    TIME_TRIGGER_SETTING
 } gatt_descriptors_uuid_t;
 
 /* Characteristic presentation format used at ble_char_presentation_format_t
 */
 typedef enum
 {
-	BLE_PRES_FORMAT_BOOLEAN = 0x01,
-	BLE_PRES_FORMAT_2BIT = 0x02,
-	BLE_PRES_FORMAT_NIBBLE = 0x03,
-	BLE_PRES_FORMAT_UINT8 = 0x04,
-	BLE_PRES_FORMAT_UINT12 = 0x05,
-	BLE_PRES_FORMAT_UINT16 = 0x06,
-	BLE_PRES_FORMAT_UINT24 = 0x07,
-	BLE_PRES_FORMAT_UINT32 = 0x08,
-	BLE_PRES_FORMAT_UINT48 = 0x09,
-	BLE_PRES_FORMAT_UINT64 = 0x0A,
-	BLE_PRES_FORMAT_UINT128 = 0x0B,
-	BLE_PRES_FORMAT_SINT8 = 0x0C,
-	BLE_PRES_FORMAT_SINT12 = 0x0D,
-	BLE_PRES_FORMAT_SINT16 = 0x0E,
-	BLE_PRES_FORMAT_SINT24 = 0x0F,
-	BLE_PRES_FORMAT_SINT32 = 0x10,
-	BLE_PRES_FORMAT_SINT48 = 0x11,
-	BLE_PRES_FORMAT_SINT64 = 0x12,
-	BLE_PRES_FORMAT_SINT128 = 0x13,
-	BLE_PRES_FORMAT_FLOAT32 = 0x14,
-	BLE_PRES_FORMAT_FLOAT64 = 0x15,
-	BLE_PRES_FORMAT_SFLOAT = 0x16,
-	BLE_PRES_FORMAT_FLOAT = 0x17,
-	BLE_PRES_FORMAT_DUINT16 = 0x18,
-	BLE_PRES_FORMAT_UTF8S = 0x19,
-	BLE_PRES_FORMAT_UTF16S = 0x1A,
-	BLE_PRES_FORMAT_STRUCT = 0x1B,
+    BLE_PRES_FORMAT_BOOLEAN = 0x01,
+    BLE_PRES_FORMAT_2BIT = 0x02,
+    BLE_PRES_FORMAT_NIBBLE = 0x03,
+    BLE_PRES_FORMAT_UINT8 = 0x04,
+    BLE_PRES_FORMAT_UINT12 = 0x05,
+    BLE_PRES_FORMAT_UINT16 = 0x06,
+    BLE_PRES_FORMAT_UINT24 = 0x07,
+    BLE_PRES_FORMAT_UINT32 = 0x08,
+    BLE_PRES_FORMAT_UINT48 = 0x09,
+    BLE_PRES_FORMAT_UINT64 = 0x0A,
+    BLE_PRES_FORMAT_UINT128 = 0x0B,
+    BLE_PRES_FORMAT_SINT8 = 0x0C,
+    BLE_PRES_FORMAT_SINT12 = 0x0D,
+    BLE_PRES_FORMAT_SINT16 = 0x0E,
+    BLE_PRES_FORMAT_SINT24 = 0x0F,
+    BLE_PRES_FORMAT_SINT32 = 0x10,
+    BLE_PRES_FORMAT_SINT48 = 0x11,
+    BLE_PRES_FORMAT_SINT64 = 0x12,
+    BLE_PRES_FORMAT_SINT128 = 0x13,
+    BLE_PRES_FORMAT_FLOAT32 = 0x14,
+    BLE_PRES_FORMAT_FLOAT64 = 0x15,
+    BLE_PRES_FORMAT_SFLOAT = 0x16,
+    BLE_PRES_FORMAT_FLOAT = 0x17,
+    BLE_PRES_FORMAT_DUINT16 = 0x18,
+    BLE_PRES_FORMAT_UTF8S = 0x19,
+    BLE_PRES_FORMAT_UTF16S = 0x1A,
+    BLE_PRES_FORMAT_STRUCT = 0x1B,
 } ble_char_pres_format_t;
 
 /* Characteristic extended properties used at ble_char_ext_properties_t
 */
 typedef enum
 {
-	BLE_EXT_PROP_RELIABLE_WRITE = 0x0001,
-	BLE_EXT_PROP_WRITABLE_AUX,
+    BLE_EXT_PROP_RELIABLE_WRITE = 0x0001,
+    BLE_EXT_PROP_WRITABLE_AUX,
 } ble_char_ext_prop_t;
 
 /* Service type used at ble_service_t
 */
 typedef enum
 {
-	SECONDARY_SERVICE,
-	PRIMARY_SERVICE
+    SECONDARY_SERVICE,
+    PRIMARY_SERVICE
 } ble_service_type_t;
 
 /* BLE advertisement data types. */
 typedef enum Advertisement_Data_Type
 {
-	ADV_FLAGS = 0x01,
-	ADV_INCOMPLETE_128B_SERVICE_UUIDS = 0x06,
-	ADV_COMPLETE_128B_SERVICE_UUIDS,
-	ADV_SHORT_NAME,
-	ADV_COMPLETE_NAME,
-	ADV_TX_POWER_LEVEL,
-	ADV_CLASS_OF_DEVICE = 0x0D,
-	ADV_SERVICE_DATA = 0x16,
-	ADV_ADVERTISING_INTERVAL = 0x1A,
-	ADV_MANUFATURER_SPECIFIC_DATA = 0xFF,
+    ADV_FLAGS = 0x01,
+    ADV_INCOMPLETE_128B_SERVICE_UUIDS = 0x06,
+    ADV_COMPLETE_128B_SERVICE_UUIDS,
+    ADV_SHORT_NAME,
+    ADV_COMPLETE_NAME,
+    ADV_TX_POWER_LEVEL,
+    ADV_CLASS_OF_DEVICE = 0x0D,
+    ADV_SERVICE_DATA = 0x16,
+    ADV_ADVERTISING_INTERVAL = 0x1A,
+    ADV_MANUFATURER_SPECIFIC_DATA = 0xFF,
 } ble_mgr_adv_data_type;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -542,21 +542,21 @@ typedef void (*CUSTOM_BM71_EVENT_HANDLER) (CUSTOM_BM71_EVENT event, uint32_t par
     data is specified by the init parameter. The initialization may fail if the
     number of driver objects allocated are insufficient or if the specified
     driver instance is already initialized.
- 
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     None.
 
   Example:
     <code>
-    // (in SYS_Initialize, system_init.c)* 
- 
- 	CUSTOM_BM71_Initialize(); 
+    // (in SYS_Initialize, system_init.c)*
+
+    CUSTOM_BM71_Initialize();
     </code>
 
   Remarks:
@@ -570,7 +570,7 @@ void CUSTOM_BM71_Initialize( void );
 
 // *****************************************************************************
 /* Function CUSTOM_BM71_Tasks:
- 
+
         void  CUSTOM_BM71_Tasks( void );
 
   Summary:
@@ -579,15 +579,15 @@ void CUSTOM_BM71_Initialize( void );
   Description:
     This routine is used to maintain the driver's internal control and data
     interface state machine and implement its control and data interface
-    implementations.  
- 
+    implementations.
+
     This function should be called from the SYS_Tasks() function.
-  
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     None.
@@ -595,9 +595,9 @@ void CUSTOM_BM71_Initialize( void );
   Example:
     <code>
     // (in SYS_Tasks, system_tasks.c)
- 
+
     // Maintain Device Drivers
-	CUSTOM_BM71_Tasks(); 
+    CUSTOM_BM71_Tasks();
     </code>
 
   Remarks:
@@ -609,7 +609,7 @@ void CUSTOM_BM71_Tasks( void );
 
 // *****************************************************************************
 /* Function CUSTOM_BM71_Status:
- 
+
         SYS_STATUS CUSTOM_BM71_Status( void );
 
   Summary:
@@ -618,12 +618,12 @@ void CUSTOM_BM71_Tasks( void );
   Description:
     This routine provides the current status of the BM71 Bluetooth driver module,
     passed back as type SYS_STATUS.
- 
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type SYS_STATUS enum:
@@ -636,7 +636,7 @@ void CUSTOM_BM71_Tasks( void );
                                 the specified module has not yet completed
     SYS_STATUS_ERROR          - Indicates that the specified module is in an
                                 error state
- * 
+ *
   Example:
     <code>
  * // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
@@ -645,7 +645,7 @@ void CUSTOM_BM71_Tasks( void );
         // This means the driver can be opened using the
         // CUSTOM_BT_Open() function.
     }
-    </code> 
+    </code>
 
   Remarks:
     A driver can opened only when its status is SYS_STATUS_READY.
@@ -669,18 +669,18 @@ SYS_STATUS CUSTOM_BM71_Status( void );
     CUSTOM_BM71_Initialize must have been called to initialize the driver instance.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type CUSTOM_BM71_LIB_STATUS enum.
 
   Example:
-    <code>    
+    <code>
     case APP_STATE_WAIT_INIT:
     {
        // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
        if (CUSTOM_BT_STATUS_READY == CUSTOM_BT_GetPowerStatus())
-       {           
+       {
            appData.state=APP_STATE_IDLE;
            // start can processing audio
        }
@@ -705,7 +705,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void );
 
   Description:
     Make a power on/power off task request using the CUSTOM_BM71_REQUEST enum.
-  
+
   Precondition:
     CUSTOM_BM71_Initialize must have been called to initialize the driver instance.
 
@@ -728,7 +728,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void );
 //void CUSTOM_BM71_TaskReq(CUSTOM_BM71_REQUEST request);
 
 // *****************************************************************************
-/* Function CUSTOM_BM71_Open: 
+/* Function CUSTOM_BM71_Open:
 
         BM71_HANDLE CUSTOM_BM71_Open(const BM71_IO_INTENT ioIntent,
                           const CUSTOM_BM71_PROTOCOL protocol);
@@ -748,14 +748,14 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void );
     Specifying a BM71_IO_INTENT_EXCLUSIVE will cause the driver to provide
     exclusive access to this client. The driver cannot be opened by any
     other client.
-  
+
   Precondition:
     CUSTOM_BM71_Initialize must have been called to initialize the driver instance.
 
   Parameters:
     ioIntent        - valid handle to an opened BM71 device driver unique to client
     protocol        - specifies which protocol(s) the client intends to use
-                      with this driver.  One of the various CUSTOM_BM71_PROTOCOL 
+                      with this driver.  One of the various CUSTOM_BM71_PROTOCOL
                       enum values, including CUSTOM_BM71_PROTOCOL_ALL.
 
   Returns:
@@ -766,7 +766,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void );
     case APP_STATE_OPEN:
     {
         if (SYS_STATUS_READY == CUSTOM_BT_Status())
-        { 
+        {
             // open BT module, including RX audio stream
             // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
             appData.bt.handle = CUSTOM_BT_Open(BM71_IO_INTENT_READ, CUSTOM_BT_PROTOCOL_ALL);
@@ -790,14 +790,14 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void );
     flags are not supported, the routine will return BM71_HANDLE_INVALID.  This
     function is thread safe in a RTOS application. It should not be called in an
     ISR.
- 
+
     Currently only one client is allowed at a time.
 */
 
 BM71_HANDLE CUSTOM_BM71_Open(const BM71_IO_INTENT ioIntent, const CUSTOM_BM71_PROTOCOL protocol);
 
 // *****************************************************************************
-/* Function CUSTOM_BM71_Close: 
+/* Function CUSTOM_BM71_Close:
 
         void CUSTOM_BM71_Close(BM71_HANDLE handle);
 
@@ -811,7 +811,7 @@ BM71_HANDLE CUSTOM_BM71_Open(const BM71_IO_INTENT ioIntent, const CUSTOM_BM71_PR
     must not be used with any of the remaining driver routines.  A new handle must
     be obtained by calling CUSTOM_BM71_Open before the caller may use the driver
     again
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -820,12 +820,12 @@ BM71_HANDLE CUSTOM_BM71_Open(const BM71_IO_INTENT ioIntent, const CUSTOM_BM71_PR
 
   Returns:
     None.
- 
+
    Example:
     <code>
     // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
     CUSTOM_BT_Close(appData.bt.handle);
-    </code>* 
+    </code>*
 
   Remarks:
     Usually there is no need for the driver client to verify that the Close
@@ -849,19 +849,19 @@ void CUSTOM_BM71_Close(const BM71_HANDLE handle);
   Description:
     This function allows a client to identify a command event handling function
     for the driver to call back when an event has been received from the BM71.
- 
+
    The context parameter contains a handle to the client context,
     provided at the time the event handling function is registered using the
     CUSTOM_BM71_BufferEventHandlerSet function.  This context handle value is
     passed back to the client as the "context" parameter.  It can be any value
     necessary to identify the client context or instance (such as a pointer to
-    the client's data) instance of the client.* 
+    the client's data) instance of the client.*
 
     The event handler should be set before the client performs any "BM71 Bluetooth
     Specific Client Routines" operations that could generate events.
     The event handler once set, persists until the client closes the driver or
     sets another event handler (which could be a "NULL" pointer to indicate no callback).
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -880,16 +880,16 @@ void CUSTOM_BM71_Close(const BM71_HANDLE handle);
     {
         CUSTOM_BT_BufferEventHandlerSet(appData.bt.handle,
                                       appData.bt.bufferHandler,
-                                      appData.bt.context); 
+                                      appData.bt.context);
 
         // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
         CUSTOM_BT_EventHandlerSet(appData.bt.handle,
                                       appData.bt.eventHandler,
-                                      (uintptr_t)0);                                  
+                                      (uintptr_t)0);
 
-        appData.state = APP_STATE_CODEC_OPEN;            
+        appData.state = APP_STATE_CODEC_OPEN;
     }
-    break; 
+    break;
     </code>
 
   Remarks:
@@ -909,9 +909,9 @@ void CUSTOM_BM71_EventHandlerSet(BM71_HANDLE handle,
     Clear the BLE receive buffer.
 
   Description:
-    Clears the buffer used when receiving characters via the 
+    Clears the buffer used when receiving characters via the
     CUSTOM_BM71_ReadByteFromBLE and CUSTOM_BM71_ReadDataFromBLE calls.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -924,7 +924,7 @@ void CUSTOM_BM71_EventHandlerSet(BM71_HANDLE handle,
   Example:
     <code>
     uint8_t byte;
-    
+
     // note generic versions of calls (CUSTOM_BT instead of CUSTOM_BM71) is used
     CUSTOM_BT_ClearBLEData(appData.bt.handle);
 
@@ -951,7 +951,7 @@ void CUSTOM_BM71_ClearBLEData( const BM71_HANDLE handle );
 
   Description:
     Read one byte over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -965,12 +965,12 @@ void CUSTOM_BM71_ClearBLEData( const BM71_HANDLE handle );
   Example:
     <code>
     uint8_t byte;
- 
+
     // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
     if (CUSTOM_BT_ReadByteFromBLE(appData.bt.handle, &byte))  // if byte received
     {
         // do something
-    } 
+    }
     </code>
 
   Remarks:
@@ -982,7 +982,7 @@ bool CUSTOM_BM71_ReadByteFromBLE(const BM71_HANDLE handle, uint8_t* byte);
 // *****************************************************************************
 /* Function CUSTOM_BM71_ReadDataFromBLE:
 
-        bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* bytes, 
+        bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* bytes,
                 uint16_t size );
 
   Summary:
@@ -990,7 +990,7 @@ bool CUSTOM_BM71_ReadByteFromBLE(const BM71_HANDLE handle, uint8_t* byte);
 
   Description:
     Read data over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -1011,7 +1011,7 @@ bool CUSTOM_BM71_ReadByteFromBLE(const BM71_HANDLE handle, uint8_t* byte);
     if (CUSTOM_BT_ReadDataFromBLE(appData.bt.handle, buf, BUFSIZE))  // if data received
     {
         // do something
-    } 
+    }
     </code>
 
   Remarks:
@@ -1023,14 +1023,14 @@ bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* byte, uint16
 // *****************************************************************************
 /* Function CUSTOM_BM71_SendByteOverBLE:
 
-        void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte); 
+        void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte);
 
   Summary:
     Send a byte over BLE.
 
   Description:
     Send one byte over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -1044,7 +1044,7 @@ bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* byte, uint16
   Example:
     <code>
     uint8_t byte;
- 
+
     byte = 10;     // set to some value
 
     // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
@@ -1068,7 +1068,7 @@ void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte);
 
   Description:
     Send data over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -1084,7 +1084,7 @@ void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte);
     <code>
     #define BUFSIZE    100
     uint8_t buf [BUFSIZE];
- 
+
     // (code to fill in buffer with data)
 
     // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
@@ -1123,9 +1123,9 @@ void CUSTOM_BM71_SendDataOverBLE(const BM71_HANDLE handle, uint8_t* bytes, uint1
     <code>
     // note generic version of call (CUSTOM_BT instead of CUSTOM_BM71) is used
     CUSTOM_BT_BLE_QueryStatus(appData.bt.handle);
- 
+
     . . .
- 
+
     // later, a call will come back to the event handler callback function
     // (previously set up via a call to CUSTOM_BM71_EventHandlerSet)
     static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t context)
@@ -1133,11 +1133,11 @@ void CUSTOM_BM71_SendDataOverBLE(const BM71_HANDLE handle, uint8_t* bytes, uint1
         switch(event)
         {
             case CUSTOM_BT_EVENT_BLE_STATUS_CHANGED:
-            {           
+            {
                 // do case switch based on param variable
             }
        }
-    }    
+    }
     </code>
 
   Remarks:
@@ -1158,7 +1158,7 @@ void CUSTOM_BM71_BLE_QueryStatus(const BM71_HANDLE handle);
 
   Description:
     Enable or disable BLE advertising.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -1187,4 +1187,4 @@ void CUSTOM_BM71_BLE_EnableAdvertising(const BM71_HANDLE handle, bool enable);
 #endif
 //DOM-IGNORE-END
 
-#endif
+#endif // CUSTOM_BM71_H

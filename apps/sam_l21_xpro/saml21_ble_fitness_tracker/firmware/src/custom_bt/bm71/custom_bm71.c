@@ -11,11 +11,11 @@
    BM71 Bluetooth Driver main source file
 
   Description:
-    This file is the implementation of the external (public) API of the 
+    This file is the implementation of the external (public) API of the
     implementation of the BM71 driver (plus some local functions).
 
     The BM71 is a Bluetooth 4.2 Module that supports BLE (Bluetooth Low Energy).
-    
+
     It uses a UART to receive commands from the host microcontroller (e.g. PIC32)
     and and send events back.
 
@@ -148,7 +148,7 @@ CUSTOM_BM71_COMMON_DATA_OBJ gBm71ObjCommonDataObj;
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     None.
@@ -168,10 +168,10 @@ void CUSTOM_BM71_Initialize()
     gBm71Obj.numClients                      = 0;
     gBm71Obj.isInInterruptContext            = false;
 
-    gBm71Obj.linkIndex = 0;      
-    CUSTOM_BM71_UART_Initialize(); 
+    gBm71Obj.linkIndex = 0;
+    CUSTOM_BM71_UART_Initialize();
     gBm71Obj.state = CUSTOM_BM71_STATE_INITIALIZE_START;
-    
+
     CUSTOM_BM71_CommandDecodeInit();
     CUSTOM_BM71_CommandSendInit();
 
@@ -196,12 +196,12 @@ void CUSTOM_BM71_Initialize()
          gBm71ObjCommonDataObj.membersAreInitialized = true;
      }
 
-    gBm71Obj.status = SYS_STATUS_READY;      // okay to open driver 
+    gBm71Obj.status = SYS_STATUS_READY;      // okay to open driver
 } /* CUSTOM_BM71_Initialize */
 
 // *****************************************************************************
 /* Function CUSTOM_BM71_Tasks:
- 
+
         void  CUSTOM_BM71_Tasks( void );
 
   Summary:
@@ -210,15 +210,15 @@ void CUSTOM_BM71_Initialize()
   Description:
     This routine is used to maintain the driver's internal control and data
     interface state machine and implement its control and data interface
-    implementations.  
- 
+    implementations.
+
     This function should be called from the SYS_Tasks() function.
-  
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     None.
@@ -236,12 +236,12 @@ void CUSTOM_BM71_Tasks( void )
         return;
     }
 
-    _BM71ControlTasks();    
+    _BM71ControlTasks();
 }
 
 // *****************************************************************************
 /* Function CUSTOM_BM71_Status:
- 
+
         SYS_STATUS CUSTOM_BM71_Status( void );
 
   Summary:
@@ -250,12 +250,12 @@ void CUSTOM_BM71_Tasks( void )
   Description:
     This routine provides the current status of the BM71 Bluetooth driver module,
     passed back as type SYS_STATUS.
- 
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type SYS_STATUS enum:
@@ -295,7 +295,7 @@ SYS_STATUS CUSTOM_BM71_Status( void )
     CUSTOM_BM71_Initialize must have been called to initialize the driver instance.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type CUSTOM_BM71_LIB_STATUS enum.
@@ -305,9 +305,9 @@ SYS_STATUS CUSTOM_BM71_Status( void )
 */
 
 // *****************************************************************************
-/* Function CUSTOM_BM64_GetPowerStatus:
+/* Function CUSTOM_BM71_GetPowerStatus:
 
-        CUSTOM_BM71_LIB_STATUS CUSTOM_BM64_GetPowerStatus( void );
+        CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void );
 
   Summary:
     Gets the current status of the BM64 Bluetooth driver module (BM71-specific).
@@ -320,7 +320,7 @@ SYS_STATUS CUSTOM_BM71_Status( void )
     CUSTOM_BM71_Initialize must have been called to initialize the driver instance.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type CUSTOM_BM71_LIB_STATUS enum.
@@ -347,7 +347,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void )
 
   Description:
     Make a power on/power off task request using the CUSTOM_BM71_REQUEST enum.
-  
+
   Precondition:
     CUSTOM_BM71_Initialize must have been called to initialize the driver instance.
 
@@ -372,7 +372,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void )
 // *****************************************************************************
 // *****************************************************************************
 // *****************************************************************************
-/* Function CUSTOM_BM71_Open: 
+/* Function CUSTOM_BM71_Open:
 
         BM71_HANDLE CUSTOM_BM71_Open(const BM71_IO_INTENT ioIntent,
                           const CUSTOM_BM71_PROTOCOL protocol);
@@ -399,7 +399,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void )
   Parameters:
     ioIntent        - valid handle to an opened BM71 device driver unique to client
     protocol        - specifies which protocol(s) the client intends to use
-                      with this driver.  One of the various CUSTOM_BM71_PROTOCOL 
+                      with this driver.  One of the various CUSTOM_BM71_PROTOCOL
                       enum values, including CUSTOM_BM71_PROTOCOL_ALL.
 
   Returns:
@@ -411,7 +411,7 @@ CUSTOM_BM71_LIB_STATUS CUSTOM_BM71_GetPowerStatus( void )
     flags are not supported, the routine will return BM71_HANDLE_INVALID.  This
     function is thread safe in a RTOS application. It should not be called in an
     ISR.
- 
+
     Currently only one client is allowed at a time.
 */
 
@@ -428,14 +428,14 @@ BM71_HANDLE CUSTOM_BM71_Open
     {
         return BM71_HANDLE_INVALID;
     }
-    
+
     if (gBm71Obj.status != SYS_STATUS_READY)
     {
         /* The BM71  module should be ready */
         SYS_DEBUG(0, "Was the driver initialized? \r\n");
         return BM71_HANDLE_INVALID;
     }
-    
+
     if ((gBm71Obj.numClients > 0) && (true == gBm71Obj.isExclusive))
     {
         /* Driver already opened in exclusive mode. Cannot open a new client. */
@@ -468,8 +468,8 @@ BM71_HANDLE CUSTOM_BM71_Open
                 hClient->inUse  = true;
                 hClient->pEventCallBack = NULL;
                 hClient->protocol = protocol;
-                gBm71Obj.numClients++; 
-                
+                gBm71Obj.numClients++;
+
                 /* We have found a client object
                  * Release the mutex and return with
                  * the driver handle */
@@ -495,7 +495,7 @@ BM71_HANDLE CUSTOM_BM71_Open
 }
 
 // *****************************************************************************
-/* Function CUSTOM_BM71_Close: 
+/* Function CUSTOM_BM71_Close:
 
         void CUSTOM_BM71_Close(BM71_HANDLE handle);
 
@@ -561,19 +561,19 @@ void CUSTOM_BM71_Close( const BM71_HANDLE handle)
   Description:
     This function allows a client to identify a command event handling function
     for the driver to call back when an event has been received from the BM71.
- 
+
    The context parameter contains a handle to the client context,
     provided at the time the event handling function is registered using the
     CUSTOM_BM71_BufferEventHandlerSet function.  This context handle value is
     passed back to the client as the "context" parameter.  It can be any value
     necessary to identify the client context or instance (such as a pointer to
-    the client's data) instance of the client.* 
+    the client's data) instance of the client.*
 
     The event handler should be set before the client performs any "BM71 Bluetooth
     Specific Client Routines" operations that could generate events.
     The event handler once set, persists until the client closes the driver or
     sets another event handler (which could be a "NULL" pointer to indicate no callback).
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -593,9 +593,9 @@ void CUSTOM_BM71_Close( const BM71_HANDLE handle)
 
 void CUSTOM_BM71_EventHandlerSet
 (
-	BM71_HANDLE handle,
-	const CUSTOM_BM71_EVENT_HANDLER eventHandler,   // TEMP!!
-	const uintptr_t contextHandle
+    BM71_HANDLE handle,
+    const CUSTOM_BM71_EVENT_HANDLER eventHandler,   // TEMP!!
+    const uintptr_t contextHandle
 )
 {
     CUSTOM_BM71_CLIENT_OBJ *clientObj;
@@ -627,9 +627,9 @@ void CUSTOM_BM71_EventHandlerSet
     Clear the BLE receive buffer.
 
   Description:
-    Clears the buffer used when receiving characters via the 
+    Clears the buffer used when receiving characters via the
     CUSTOM_BM71_ReadByteFromBLE and CUSTOM_BM71_ReadDataFromBLE calls.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -658,7 +658,7 @@ void CUSTOM_BM71_ClearBLEData( const BM71_HANDLE handle )
 
   Description:
     Read one byte over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -692,7 +692,7 @@ bool CUSTOM_BM71_ReadByteFromBLE(const BM71_HANDLE handle, uint8_t* byte)
 // *****************************************************************************
 /* Function CUSTOM_BM71_ReadDataFromBLE:
 
-        bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* bytes, 
+        bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* bytes,
                 uint16_t size );
 
   Summary:
@@ -700,7 +700,7 @@ bool CUSTOM_BM71_ReadByteFromBLE(const BM71_HANDLE handle, uint8_t* byte)
 
   Description:
     Read data over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -728,7 +728,7 @@ bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* byte, uint16
             if(CUSTOM_BM71_SPP_RxFifoHead < CUSTOM_BM71_SPP_RxFifoSize-1)
                 CUSTOM_BM71_SPP_RxFifoHead++;
             else
-                CUSTOM_BM71_SPP_RxFifoHead = 0;        
+                CUSTOM_BM71_SPP_RxFifoHead = 0;
             if (--size==0)
             {
                 break;      // reached end of buffer
@@ -743,14 +743,14 @@ bool CUSTOM_BM71_ReadDataFromBLE(const BM71_HANDLE handle, uint8_t* byte, uint16
 // *****************************************************************************
 /* Function CUSTOM_BM71_SendByteOverBLE:
 
-        void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte); 
+        void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte);
 
   Summary:
     Send a byte over BLE.
 
   Description:
     Send one byte over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -781,7 +781,7 @@ void CUSTOM_BM71_SendByteOverBLE(const BM71_HANDLE handle, uint8_t byte)
 
   Description:
     Send data over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -817,7 +817,7 @@ static void _clientCallBack(CUSTOM_BM71_EVENT event, uint32_t param)
 {
     CUSTOM_BM71_CLIENT_OBJ *hClient;
     uint32_t iClient;
-    
+
     iClient = 0;
     hClient = (CUSTOM_BM71_CLIENT_OBJ *)&gBm71ObjClientObj[iClient];
 
@@ -839,7 +839,7 @@ static void _clientCallBack(CUSTOM_BM71_EVENT event, uint32_t param)
 //================================================
 
 void CUSTOM_BM71_Timer_1ms( uintptr_t context)
-{ 
+{
     //drive BM71 Module Initialization
     CUSTOM_BM71_Timer1MS_event();
 
@@ -854,9 +854,9 @@ void CUSTOM_BM71_Timer_1ms( uintptr_t context)
 uint32_t oldstate = -1;
 
 static void _BM71ControlTasks(void)
-{           
+{
     CUSTOM_BM71_UART_Tasks();       // take care of UART first
-    
+
     if (gBm71Obj.state != oldstate)
     {
         printf("BM71 state: %02d\r\n",gBm71Obj.state);
@@ -866,16 +866,16 @@ static void _BM71ControlTasks(void)
     switch (gBm71Obj.state) {
         case CUSTOM_BM71_STATE_INITIALIZE_START:
             /* Open the timer Driver */
-            CUSTOM_BM71_tmrHandle = SYS_TIME_CallbackRegisterMS(CUSTOM_BM71_Timer_1ms, 
+            CUSTOM_BM71_tmrHandle = SYS_TIME_CallbackRegisterMS(CUSTOM_BM71_Timer_1ms,
                     (uintptr_t)0, 1/*ms*/, SYS_TIME_PERIODIC);
 
             if (SYS_TIME_HANDLE_INVALID == CUSTOM_BM71_tmrHandle)
             {
                 printf("can't open SYS_TIME driver");
             }
-            
+
             _timer1ms = 10;
-            CUSTOM_BM71_RESET_SetLow();                        // Reset is active low                                           
+            CUSTOM_BM71_RESET_SetLow();                        // Reset is active low
 
             gBm71Obj.state = CUSTOM_BM71_STATE_INIT_RESET_HIGH;
             break;
@@ -884,12 +884,12 @@ static void _BM71ControlTasks(void)
             if (!_timer1ms)  // check 10ms times up
             {
                 CUSTOM_BM71_RESET_SetHigh();
-                CUSTOM_BM71_CommandDecodeInit();                
+                CUSTOM_BM71_CommandDecodeInit();
                 _timer1ms = 100; //wait 100ms
                 gBm71Obj.state = CUSTOM_BM71_STATE_INIT_RESET_HIGH_WAIT;
             }
-            break; 
-            
+            break;
+
         case CUSTOM_BM71_STATE_INIT_RESET_HIGH_WAIT:
             if (!_timer1ms) // check 200ms times up
             {
@@ -897,7 +897,7 @@ static void _BM71ControlTasks(void)
                 _timer1ms = 5; //wait 100ms
                 gBm71Obj.state = CUSTOM_BM71_STATE_INIT_BLE_ADV_START;
             }
-            break;                                         
+            break;
 
         case CUSTOM_BM71_STATE_INIT_BLE_ADV_START:
             if (!_timer1ms) // check 200ms times up
@@ -979,7 +979,7 @@ void CUSTOM_BM71_Timer1MS_event( void )
 {
     if(_timer1ms)
         --_timer1ms;
-    
+
     if ((CUSTOM_BM71_txByteQueued>0) && ((CUSTOM_BM71_txByteQueued&1)==0))
     {
         CUSTOM_BM71_txByteQueued--;       // if > 0 and even, decrement
@@ -1034,7 +1034,7 @@ bool CUSTOM_BM71_AddBytesToSPPBuff(uint8_t* data, uint8_t size)        //TRUE: d
             return false;
         }
     }
-    
+
     _clientCallBack(CUSTOM_BM71_EVENT_BLESPP_MSG_RECEIVED, (uint8_t)size);
     return true;
 }

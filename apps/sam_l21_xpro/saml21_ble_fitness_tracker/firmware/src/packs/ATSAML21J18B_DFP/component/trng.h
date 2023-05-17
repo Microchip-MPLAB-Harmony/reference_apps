@@ -1,7 +1,7 @@
-/**
- * \brief Component description for TRNG
+/*
+ * Component description for TRNG
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T08:59:42Z */
+/* file generated from device description version 2021-06-07T06:15:05Z */
 #ifndef _SAML21_TRNG_COMPONENT_H_
 #define _SAML21_TRNG_COMPONENT_H_
 
@@ -29,69 +29,69 @@
 /* ************************************************************************** */
 
 /* -------- TRNG_CTRLA : (TRNG Offset: 0x00) (R/W 8) Control A -------- */
-#define TRNG_CTRLA_RESETVALUE                 _U_(0x00)                                            /**<  (TRNG_CTRLA) Control A  Reset Value */
+#define TRNG_CTRLA_RESETVALUE                 _UINT8_(0x00)                                        /*  (TRNG_CTRLA) Control A  Reset Value */
 
-#define TRNG_CTRLA_ENABLE_Pos                 _U_(1)                                               /**< (TRNG_CTRLA) Enable Position */
-#define TRNG_CTRLA_ENABLE_Msk                 (_U_(0x1) << TRNG_CTRLA_ENABLE_Pos)                  /**< (TRNG_CTRLA) Enable Mask */
-#define TRNG_CTRLA_ENABLE(value)              (TRNG_CTRLA_ENABLE_Msk & ((value) << TRNG_CTRLA_ENABLE_Pos))
-#define TRNG_CTRLA_RUNSTDBY_Pos               _U_(6)                                               /**< (TRNG_CTRLA) Run in Standby Position */
-#define TRNG_CTRLA_RUNSTDBY_Msk               (_U_(0x1) << TRNG_CTRLA_RUNSTDBY_Pos)                /**< (TRNG_CTRLA) Run in Standby Mask */
-#define TRNG_CTRLA_RUNSTDBY(value)            (TRNG_CTRLA_RUNSTDBY_Msk & ((value) << TRNG_CTRLA_RUNSTDBY_Pos))
-#define TRNG_CTRLA_Msk                        _U_(0x42)                                            /**< (TRNG_CTRLA) Register Mask  */
+#define TRNG_CTRLA_ENABLE_Pos                 _UINT8_(1)                                           /* (TRNG_CTRLA) Enable Position */
+#define TRNG_CTRLA_ENABLE_Msk                 (_UINT8_(0x1) << TRNG_CTRLA_ENABLE_Pos)              /* (TRNG_CTRLA) Enable Mask */
+#define TRNG_CTRLA_ENABLE(value)              (TRNG_CTRLA_ENABLE_Msk & (_UINT8_(value) << TRNG_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the TRNG_CTRLA register */
+#define TRNG_CTRLA_RUNSTDBY_Pos               _UINT8_(6)                                           /* (TRNG_CTRLA) Run in Standby Position */
+#define TRNG_CTRLA_RUNSTDBY_Msk               (_UINT8_(0x1) << TRNG_CTRLA_RUNSTDBY_Pos)            /* (TRNG_CTRLA) Run in Standby Mask */
+#define TRNG_CTRLA_RUNSTDBY(value)            (TRNG_CTRLA_RUNSTDBY_Msk & (_UINT8_(value) << TRNG_CTRLA_RUNSTDBY_Pos)) /* Assigment of value for RUNSTDBY in the TRNG_CTRLA register */
+#define TRNG_CTRLA_Msk                        _UINT8_(0x42)                                        /* (TRNG_CTRLA) Register Mask  */
 
 
 /* -------- TRNG_EVCTRL : (TRNG Offset: 0x04) (R/W 8) Event Control -------- */
-#define TRNG_EVCTRL_RESETVALUE                _U_(0x00)                                            /**<  (TRNG_EVCTRL) Event Control  Reset Value */
+#define TRNG_EVCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (TRNG_EVCTRL) Event Control  Reset Value */
 
-#define TRNG_EVCTRL_DATARDYEO_Pos             _U_(0)                                               /**< (TRNG_EVCTRL) Data Ready Event Output Position */
-#define TRNG_EVCTRL_DATARDYEO_Msk             (_U_(0x1) << TRNG_EVCTRL_DATARDYEO_Pos)              /**< (TRNG_EVCTRL) Data Ready Event Output Mask */
-#define TRNG_EVCTRL_DATARDYEO(value)          (TRNG_EVCTRL_DATARDYEO_Msk & ((value) << TRNG_EVCTRL_DATARDYEO_Pos))
-#define TRNG_EVCTRL_Msk                       _U_(0x01)                                            /**< (TRNG_EVCTRL) Register Mask  */
+#define TRNG_EVCTRL_DATARDYEO_Pos             _UINT8_(0)                                           /* (TRNG_EVCTRL) Data Ready Event Output Position */
+#define TRNG_EVCTRL_DATARDYEO_Msk             (_UINT8_(0x1) << TRNG_EVCTRL_DATARDYEO_Pos)          /* (TRNG_EVCTRL) Data Ready Event Output Mask */
+#define TRNG_EVCTRL_DATARDYEO(value)          (TRNG_EVCTRL_DATARDYEO_Msk & (_UINT8_(value) << TRNG_EVCTRL_DATARDYEO_Pos)) /* Assigment of value for DATARDYEO in the TRNG_EVCTRL register */
+#define TRNG_EVCTRL_Msk                       _UINT8_(0x01)                                        /* (TRNG_EVCTRL) Register Mask  */
 
 
 /* -------- TRNG_INTENCLR : (TRNG Offset: 0x08) (R/W 8) Interrupt Enable Clear -------- */
-#define TRNG_INTENCLR_RESETVALUE              _U_(0x00)                                            /**<  (TRNG_INTENCLR) Interrupt Enable Clear  Reset Value */
+#define TRNG_INTENCLR_RESETVALUE              _UINT8_(0x00)                                        /*  (TRNG_INTENCLR) Interrupt Enable Clear  Reset Value */
 
-#define TRNG_INTENCLR_DATARDY_Pos             _U_(0)                                               /**< (TRNG_INTENCLR) Data Ready Interrupt Enable Position */
-#define TRNG_INTENCLR_DATARDY_Msk             (_U_(0x1) << TRNG_INTENCLR_DATARDY_Pos)              /**< (TRNG_INTENCLR) Data Ready Interrupt Enable Mask */
-#define TRNG_INTENCLR_DATARDY(value)          (TRNG_INTENCLR_DATARDY_Msk & ((value) << TRNG_INTENCLR_DATARDY_Pos))
-#define TRNG_INTENCLR_Msk                     _U_(0x01)                                            /**< (TRNG_INTENCLR) Register Mask  */
+#define TRNG_INTENCLR_DATARDY_Pos             _UINT8_(0)                                           /* (TRNG_INTENCLR) Data Ready Interrupt Enable Position */
+#define TRNG_INTENCLR_DATARDY_Msk             (_UINT8_(0x1) << TRNG_INTENCLR_DATARDY_Pos)          /* (TRNG_INTENCLR) Data Ready Interrupt Enable Mask */
+#define TRNG_INTENCLR_DATARDY(value)          (TRNG_INTENCLR_DATARDY_Msk & (_UINT8_(value) << TRNG_INTENCLR_DATARDY_Pos)) /* Assigment of value for DATARDY in the TRNG_INTENCLR register */
+#define TRNG_INTENCLR_Msk                     _UINT8_(0x01)                                        /* (TRNG_INTENCLR) Register Mask  */
 
 
 /* -------- TRNG_INTENSET : (TRNG Offset: 0x09) (R/W 8) Interrupt Enable Set -------- */
-#define TRNG_INTENSET_RESETVALUE              _U_(0x00)                                            /**<  (TRNG_INTENSET) Interrupt Enable Set  Reset Value */
+#define TRNG_INTENSET_RESETVALUE              _UINT8_(0x00)                                        /*  (TRNG_INTENSET) Interrupt Enable Set  Reset Value */
 
-#define TRNG_INTENSET_DATARDY_Pos             _U_(0)                                               /**< (TRNG_INTENSET) Data Ready Interrupt Enable Position */
-#define TRNG_INTENSET_DATARDY_Msk             (_U_(0x1) << TRNG_INTENSET_DATARDY_Pos)              /**< (TRNG_INTENSET) Data Ready Interrupt Enable Mask */
-#define TRNG_INTENSET_DATARDY(value)          (TRNG_INTENSET_DATARDY_Msk & ((value) << TRNG_INTENSET_DATARDY_Pos))
-#define TRNG_INTENSET_Msk                     _U_(0x01)                                            /**< (TRNG_INTENSET) Register Mask  */
+#define TRNG_INTENSET_DATARDY_Pos             _UINT8_(0)                                           /* (TRNG_INTENSET) Data Ready Interrupt Enable Position */
+#define TRNG_INTENSET_DATARDY_Msk             (_UINT8_(0x1) << TRNG_INTENSET_DATARDY_Pos)          /* (TRNG_INTENSET) Data Ready Interrupt Enable Mask */
+#define TRNG_INTENSET_DATARDY(value)          (TRNG_INTENSET_DATARDY_Msk & (_UINT8_(value) << TRNG_INTENSET_DATARDY_Pos)) /* Assigment of value for DATARDY in the TRNG_INTENSET register */
+#define TRNG_INTENSET_Msk                     _UINT8_(0x01)                                        /* (TRNG_INTENSET) Register Mask  */
 
 
 /* -------- TRNG_INTFLAG : (TRNG Offset: 0x0A) (R/W 8) Interrupt Flag Status and Clear -------- */
-#define TRNG_INTFLAG_RESETVALUE               _U_(0x00)                                            /**<  (TRNG_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
+#define TRNG_INTFLAG_RESETVALUE               _UINT8_(0x00)                                        /*  (TRNG_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
 
-#define TRNG_INTFLAG_DATARDY_Pos              _U_(0)                                               /**< (TRNG_INTFLAG) Data Ready Interrupt Flag Position */
-#define TRNG_INTFLAG_DATARDY_Msk              (_U_(0x1) << TRNG_INTFLAG_DATARDY_Pos)               /**< (TRNG_INTFLAG) Data Ready Interrupt Flag Mask */
-#define TRNG_INTFLAG_DATARDY(value)           (TRNG_INTFLAG_DATARDY_Msk & ((value) << TRNG_INTFLAG_DATARDY_Pos))
-#define TRNG_INTFLAG_Msk                      _U_(0x01)                                            /**< (TRNG_INTFLAG) Register Mask  */
+#define TRNG_INTFLAG_DATARDY_Pos              _UINT8_(0)                                           /* (TRNG_INTFLAG) Data Ready Interrupt Flag Position */
+#define TRNG_INTFLAG_DATARDY_Msk              (_UINT8_(0x1) << TRNG_INTFLAG_DATARDY_Pos)           /* (TRNG_INTFLAG) Data Ready Interrupt Flag Mask */
+#define TRNG_INTFLAG_DATARDY(value)           (TRNG_INTFLAG_DATARDY_Msk & (_UINT8_(value) << TRNG_INTFLAG_DATARDY_Pos)) /* Assigment of value for DATARDY in the TRNG_INTFLAG register */
+#define TRNG_INTFLAG_Msk                      _UINT8_(0x01)                                        /* (TRNG_INTFLAG) Register Mask  */
 
 
 /* -------- TRNG_DATA : (TRNG Offset: 0x20) ( R/ 32) Output Data -------- */
-#define TRNG_DATA_RESETVALUE                  _U_(0x00)                                            /**<  (TRNG_DATA) Output Data  Reset Value */
+#define TRNG_DATA_RESETVALUE                  _UINT32_(0x00)                                       /*  (TRNG_DATA) Output Data  Reset Value */
 
-#define TRNG_DATA_DATA_Pos                    _U_(0)                                               /**< (TRNG_DATA) Output Data Position */
-#define TRNG_DATA_DATA_Msk                    (_U_(0xFFFFFFFF) << TRNG_DATA_DATA_Pos)              /**< (TRNG_DATA) Output Data Mask */
-#define TRNG_DATA_DATA(value)                 (TRNG_DATA_DATA_Msk & ((value) << TRNG_DATA_DATA_Pos))
-#define TRNG_DATA_Msk                         _U_(0xFFFFFFFF)                                      /**< (TRNG_DATA) Register Mask  */
+#define TRNG_DATA_DATA_Pos                    _UINT32_(0)                                          /* (TRNG_DATA) Output Data Position */
+#define TRNG_DATA_DATA_Msk                    (_UINT32_(0xFFFFFFFF) << TRNG_DATA_DATA_Pos)         /* (TRNG_DATA) Output Data Mask */
+#define TRNG_DATA_DATA(value)                 (TRNG_DATA_DATA_Msk & (_UINT32_(value) << TRNG_DATA_DATA_Pos)) /* Assigment of value for DATA in the TRNG_DATA register */
+#define TRNG_DATA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (TRNG_DATA) Register Mask  */
 
 
 /** \brief TRNG register offsets definitions */
-#define TRNG_CTRLA_REG_OFST            (0x00)              /**< (TRNG_CTRLA) Control A Offset */
-#define TRNG_EVCTRL_REG_OFST           (0x04)              /**< (TRNG_EVCTRL) Event Control Offset */
-#define TRNG_INTENCLR_REG_OFST         (0x08)              /**< (TRNG_INTENCLR) Interrupt Enable Clear Offset */
-#define TRNG_INTENSET_REG_OFST         (0x09)              /**< (TRNG_INTENSET) Interrupt Enable Set Offset */
-#define TRNG_INTFLAG_REG_OFST          (0x0A)              /**< (TRNG_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define TRNG_DATA_REG_OFST             (0x20)              /**< (TRNG_DATA) Output Data Offset */
+#define TRNG_CTRLA_REG_OFST            _UINT32_(0x00)      /* (TRNG_CTRLA) Control A Offset */
+#define TRNG_EVCTRL_REG_OFST           _UINT32_(0x04)      /* (TRNG_EVCTRL) Event Control Offset */
+#define TRNG_INTENCLR_REG_OFST         _UINT32_(0x08)      /* (TRNG_INTENCLR) Interrupt Enable Clear Offset */
+#define TRNG_INTENSET_REG_OFST         _UINT32_(0x09)      /* (TRNG_INTENSET) Interrupt Enable Set Offset */
+#define TRNG_INTFLAG_REG_OFST          _UINT32_(0x0A)      /* (TRNG_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define TRNG_DATA_REG_OFST             _UINT32_(0x20)      /* (TRNG_DATA) Output Data Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief TRNG register API structure */

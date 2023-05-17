@@ -16,7 +16,7 @@
 
   Remarks:
     None.
- 
+
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -107,7 +107,7 @@ static void hr9_rx_buff_update(void)
         {
             memcpy((char *)&rx_buff[rx_buff_in_index], (char *)rx_data, no_of_bytes_rcvd);
         }
-        
+
         rx_buff_in_index += no_of_bytes_rcvd;
         if(rx_buff_in_index >= RECEIVE_BUFFER_SIZE)
         {
@@ -118,12 +118,12 @@ static void hr9_rx_buff_update(void)
 static void heartrate9_ReadCallback(SERCOM_USART_EVENT event, uintptr_t context)
 {
     uint32_t nBytesAvailable = 0;
-    
+
     if (event == CLICK_HEARTRATE9_USART_EVENT_READ_THRESHOLD_REACHED)
     {
         /* Receiver should atleast have the thershold number of bytes in the ring buffer */
         nBytesAvailable = CLICK_HEARTRATE9_USART_ReadCountGet();
-        
+
         no_of_bytes_rcvd = CLICK_HEARTRATE9_USART_Read((uint8_t*)&rx_data[0], nBytesAvailable);
         hr9_data_rx_flag = true;
     }

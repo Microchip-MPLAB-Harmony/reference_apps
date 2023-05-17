@@ -108,9 +108,9 @@ typedef struct
 {
     /* The application's current state */
     volatile bool transferStatus;
-       
+
     uint16_t queryDelay;
-    
+
     bool waitingToConnect;
     APP_STATES app_state;
     uint16_t waitingToConnectTimer;
@@ -210,7 +210,7 @@ void APP_Tasks( void );
 /*** Bluetooth Driver Configuration ***/
 
 #define CUSTOM_BM71_CLIENTS_NUMBER                 1
-   
+
 /* Bluetooth Driver Abstraction definition */
 #define CUSTOM_BT_Initialize                       CUSTOM_BM71_Initialize
 #define CUSTOM_BT_Status                           CUSTOM_BM71_Status
@@ -225,7 +225,7 @@ void APP_Tasks( void );
 #define CUSTOM_BT_EVENT_BLESPP_MSG_RECEIVED        CUSTOM_BM71_EVENT_BLESPP_MSG_RECEIVED
 #define CUSTOM_BT_EVENT_BLE_STATUS_CHANGED         CUSTOM_BM71_EVENT_BLE_STATUS_CHANGED
 
-#define CUSTOM_BT_PROTOCOL_BLE                     CUSTOM_BM71_PROTOCOL_BLE               
+#define CUSTOM_BT_PROTOCOL_BLE                     CUSTOM_BM71_PROTOCOL_BLE
 #define CUSTOM_BT_PROTOCOL                         CUSTOM_BM71_PROTOCOL
 
 #define CUSTOM_BT_STATUS_READY                     CUSTOM_BM71_STATUS_READY
