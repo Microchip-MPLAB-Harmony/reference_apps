@@ -1,11 +1,11 @@
 /*******************************************************************************
-  BM71 Bluetooth Static Driver implementation
+  BM71 Bluetooth Static Driver command send implementation file.
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    drv_bm71_command_send.c
+    custom_drv_bm71_command_send.c
 
   Summary:
    BM71 Bluetooth Static Driver source file for sending commands.
@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to sending commands to the BM71 module.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -56,9 +56,9 @@ static uint8_t      UR_TxBuf[DRV_BM71_UR_TX_BUF_SIZE];
 static uint16_t     UR_TxBufHead;
 static uint16_t     UR_TxBufTail;
 typedef enum {
-	DRV_BM71_TXRX_BUF_EMPTY,
-	DRV_BM71_TXRX_BUF_OK,
-	DRV_BM71_TXRX_BUF_FULL
+    DRV_BM71_TXRX_BUF_EMPTY,
+    DRV_BM71_TXRX_BUF_OK,
+    DRV_BM71_TXRX_BUF_FULL
 } DRV_BM71_TXRX_BUF_STATUS;
 static DRV_BM71_TXRX_BUF_STATUS  UR_TxBufStatus;
 
@@ -123,7 +123,7 @@ static bool copySendingCommandToBuffer(uint8_t* data, uint16_t size)
                 if(size)
                 {
                     buf_result = false;
-                    UR_TxBufStatus = ur_tx_buf_status_save;		//restore in this case
+                    UR_TxBufStatus = ur_tx_buf_status_save;     //restore in this case
                     UR_TxBufHead = ur_tx_buf_head_save;                 //restore in this case
                 }
                 else

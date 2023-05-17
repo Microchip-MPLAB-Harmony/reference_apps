@@ -14,7 +14,7 @@
 
 // DOM-IGNORE-BEGIN
 /*
-    (c) 2021 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2023 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -33,11 +33,11 @@
 
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
- 
- 
+
+
 */
 //DOM-IGNORE-END
-        
+
 #ifndef _CLICK_INTERFACES_H
 #define _CLICK_INTERFACES_H
 
@@ -48,9 +48,9 @@
 #include <xc.h>
 #include <stdint.h>
 #include "definitions.h"
-/**	Click routine interfaces/resources Macro Declarations
+/** Click routine interfaces/resources Macro Declarations
  *
- * 	1. I2C
+ *  1. I2C
  *  The weather click example on SAM E51 Curiosity Nano uses
  *  mikroBUS socket #1 on the Curiosity Nano Base for Click boards
  *  to mount weather click board. The I2C lines from MCU coming to
@@ -64,21 +64,12 @@
  */
 
 // I2C Definitions
-#define CLICK_WEATHER_I2C_Write 			SERCOM2_I2C_Write
-#define CLICK_WEATHER_I2C_IsBusy 			SERCOM2_I2C_IsBusy
-#define CLICK_WEATHER_I2C_WriteRead			SERCOM2_I2C_WriteRead
+#define CLICK_13DOF_I2C_Write           SERCOM2_I2C_Write
+#define CLICK_13DOF_I2C_IsBusy          SERCOM2_I2C_IsBusy
+#define CLICK_13DOF_I2C_WriteRead       SERCOM2_I2C_WriteRead
 
 // Timer Definitions
-#define CLICK_WEATHER_TimerStart 			SYSTICK_TimerStart
-#define CLICK_WEATHER_DelayMs				SYSTICK_DelayMs
-
-// I2C Definitions
-#define CLICK_10DOF_I2C_Write 			SERCOM2_I2C_Write
-#define CLICK_10DOF_I2C_IsBusy 			SERCOM2_I2C_IsBusy
-#define CLICK_10DOF_I2C_WriteRead	    SERCOM2_I2C_WriteRead
-
-// Timer Definitions
-#define CLICK_10DOF_TimerStart          SYSTICK_TimerStart
-#define CLICK_10DOF_DelayMs             SYSTICK_DelayMs
+#define CLICK_13DOF_TimerStart          SYSTICK_TimerStart
+#define CLICK_13DOF_DelayMs             SYSTICK_DelayMs
 
 #endif // _CLICK_INTERFACES_H

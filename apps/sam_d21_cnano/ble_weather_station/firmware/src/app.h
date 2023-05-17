@@ -55,7 +55,6 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "custom_bt/driver/bm71/custom_drv_bm71.h"
-#include "ble_app_sensor_data.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -63,6 +62,53 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+// make boards with multiple switches/LEDs compatible with those with just one
+#ifdef LED1_On
+#define LED_On                 LED1_On
+#define LED_Off                LED1_Off
+#define LED_Toggle             LED1_Toggle
+#else
+#define LED1_On                LED_Set
+#define LED1_Off               LED_Clear
+#define LED1_Toggle            LED_Toggle
+#endif // LED1_On
+
+/*** Bluetooth Driver Configuration ***/
+
+#define DRV_BM71_CLIENTS_NUMBER                 1
+
+/* Bluetooth Driver Abstraction definition */
+#define DRV_BT_Initialize                       DRV_BM71_Initialize
+#define DRV_BT_Status                           DRV_BM71_Status
+#define DRV_BT_Tasks                            DRV_BM71_Tasks
+#define DRV_BT_Open                             DRV_BM71_Open
+#define DRV_BT_Close                            DRV_BM71_Close
+#define DRV_BT_EventHandlerSet                  DRV_BM71_EventHandlerSet
+#define DRV_BT_GetPowerStatus                   DRV_BM71_GetPowerStatus
+
+#define DRV_BT_EVENT_HANDLER                    DRV_BM71_EVENT_HANDLER
+#define DRV_BT_EVENT                            DRV_BM71_EVENT
+#define DRV_BT_EVENT_BLESPP_MSG_RECEIVED        DRV_BM71_EVENT_BLESPP_MSG_RECEIVED
+#define DRV_BT_EVENT_BLE_STATUS_CHANGED         DRV_BM71_EVENT_BLE_STATUS_CHANGED
+
+#define DRV_BT_PROTOCOL_BLE                     DRV_BM71_PROTOCOL_BLE
+#define DRV_BT_PROTOCOL                         DRV_BM71_PROTOCOL
+
+#define DRV_BT_STATUS_READY                     DRV_BM71_STATUS_READY
+
+#define DRV_BT_BLE_STATUS                       DRV_BM71_BLE_STATUS
+#define DRV_BT_BLE_STATUS_STANDBY               DRV_BM71_BLE_STATUS_STANDBY
+#define DRV_BT_BLE_STATUS_ADVERTISING           DRV_BM71_BLE_STATUS_ADVERTISING
+#define DRV_BT_BLE_STATUS_SCANNING              DRV_BM71_BLE_STATUS_SCANNING
+#define DRV_BT_BLE_STATUS_CONNECTED             DRV_BM71_BLE_STATUS_CONNECTED
+
+#define DRV_BT_ClearBLEData                     DRV_BM71_ClearBLEData
+#define DRV_BT_ReadDataFromBLE                  DRV_BM71_ReadDataFromBLE
+#define DRV_BT_SendDataOverBLE                  DRV_BM71_SendDataOverBLE
+#define DRV_BT_CustomSendDataOverBLE            DRV_BM71_CustomSendDataOverBLE
+#define DRV_BT_BLE_QueryStatus                  DRV_BM71_BLE_QueryStatus
+#define DRV_BT_BLE_EnableAdvertising            DRV_BM71_BLE_EnableAdvertising
 
 // *****************************************************************************
 // *****************************************************************************
@@ -83,11 +129,11 @@ extern "C" {
 
 typedef enum
 {
-	/* Application's state machine's initial state. */
-	APP_STATE_INIT=0,
+    /* Application's state machine's initial state. */
+    APP_STATE_INIT=0,
     APP_STATE_WAIT_INIT,
-    APP_STATE_IDLE,            
-} APP_STATES;      
+    APP_STATE_IDLE,
+} APP_STATES;
 
 #define QUERY_DELAY        500        // 1/2 sec
 
@@ -102,18 +148,18 @@ typedef enum
 
   Remarks:
     Application strings and buffers are be defined outside this structure.
- */
+*/
 
 typedef struct
 {
     /* The application's current state */
     APP_STATES state;
-    
+
     /* handle to opened timer */
     DRV_HANDLE tmrHandle;
-       
+
     uint16_t queryDelay;
-    
+
     bool waitingToConnect;
     uint16_t waitingToConnectTimer;
 } APP_DATA;
@@ -165,7 +211,6 @@ typedef struct
 
 void APP_Initialize ( void );
 
-
 /*******************************************************************************
   Function:
     void APP_Tasks ( void )
@@ -195,67 +240,17 @@ void APP_Initialize ( void );
   Remarks:
     This routine must be called from SYS_Tasks() routine.
  */
- 
 void APP_Tasks( void );
 
 void APP_Sensor_Tasks( void );
 
-// make boards with multiple switches/LEDs compatible with those with just one
-#ifdef LED1_On
-#define LED_On                 LED1_On
-#define LED_Off                LED1_Off
-#define LED_Toggle             LED1_Toggle
-#else
-#define LED1_On                LED_Set
-#define LED1_Off               LED_Clear
-#define LED1_Toggle            LED_Toggle
-#endif
-
-#endif /* APP_H */
-
-/*** Bluetooth Driver Configuration ***/
-
-#define DRV_BM71_CLIENTS_NUMBER                 1
-   
-/* Bluetooth Driver Abstraction definition */
-#define DRV_BT_Initialize                       DRV_BM71_Initialize
-#define DRV_BT_Status                           DRV_BM71_Status
-#define DRV_BT_Tasks                            DRV_BM71_Tasks
-#define DRV_BT_Open                             DRV_BM71_Open
-#define DRV_BT_Close                            DRV_BM71_Close
-#define DRV_BT_EventHandlerSet                  DRV_BM71_EventHandlerSet
-#define DRV_BT_GetPowerStatus                   DRV_BM71_GetPowerStatus
-
-#define DRV_BT_EVENT_HANDLER                    DRV_BM71_EVENT_HANDLER
-#define DRV_BT_EVENT                            DRV_BM71_EVENT
-#define DRV_BT_EVENT_BLESPP_MSG_RECEIVED        DRV_BM71_EVENT_BLESPP_MSG_RECEIVED
-#define DRV_BT_EVENT_BLE_STATUS_CHANGED         DRV_BM71_EVENT_BLE_STATUS_CHANGED
-
-#define DRV_BT_PROTOCOL_BLE                     DRV_BM71_PROTOCOL_BLE               
-#define DRV_BT_PROTOCOL                         DRV_BM71_PROTOCOL
-
-#define DRV_BT_STATUS_READY                     DRV_BM71_STATUS_READY
-
-#define DRV_BT_BLE_STATUS                       DRV_BM71_BLE_STATUS
-#define DRV_BT_BLE_STATUS_STANDBY               DRV_BM71_BLE_STATUS_STANDBY
-#define DRV_BT_BLE_STATUS_ADVERTISING           DRV_BM71_BLE_STATUS_ADVERTISING
-#define DRV_BT_BLE_STATUS_SCANNING              DRV_BM71_BLE_STATUS_SCANNING
-#define DRV_BT_BLE_STATUS_CONNECTED             DRV_BM71_BLE_STATUS_CONNECTED
-
-#define DRV_BT_ClearBLEData                     DRV_BM71_ClearBLEData
-#define DRV_BT_ReadDataFromBLE                  DRV_BM71_ReadDataFromBLE
-#define DRV_BT_SendDataOverBLE                  DRV_BM71_SendDataOverBLE
-#define DRV_BT_CustomSendDataOverBLE            DRV_BM71_CustomSendDataOverBLE
-#define DRV_BT_BLE_QueryStatus                  DRV_BM71_BLE_QueryStatus
-#define DRV_BT_BLE_EnableAdvertising            DRV_BM71_BLE_EnableAdvertising
-
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif /* APP_H */
+#endif
 //DOM-IGNORE-END
 
+#endif // APP_H
 /*******************************************************************************
  End of File
  */

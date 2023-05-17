@@ -1,11 +1,11 @@
 /*******************************************************************************
-  BM71 Bluetooth Static Driver implementation
+  BM71 Bluetooth Static Driver GPIO file
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    drv_bm71_gpio.c
+    custom_drv_bm71_gpio.c
 
   Summary:
    BM71 Bluetooth Static Driver source file for GPIO functions.
@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to the GPIO pins controlling the BM71.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -42,7 +42,7 @@
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files 
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
@@ -58,13 +58,13 @@ void DRV_BM71_RESET_SetHigh(void)
 }
 
 void DRV_BM71_RESET_SetLow(void)
-{   
-    STBYRST_Clear();    
+{
+    STBYRST_Clear();
 }
 
 void DRV_BM71_RESET_Toggle(void)
 {
-    STBYRST_Toggle();   
+    STBYRST_Toggle();
 }
 
 uint32_t DRV_BM71_RESET_GetValue(void)

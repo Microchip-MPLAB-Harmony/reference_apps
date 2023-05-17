@@ -21,7 +21,7 @@
     files.
  *******************************************************************************/
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -49,36 +49,138 @@
 // *****************************************************************************
 
 #include <string.h>
-#include "app.h"        // also beings in app_tone_lookup_table.h
+#include "app.h"
 #include "../src/ble/non_gui/ble.h"
-#include "click_routines/weather/weather.h"
-#include "click_routines/10dof/10dof.h"
+#include "definitions.h"
+#include "click_routines/click_interface.h"
+#include "click_routines/13dof/13dof.h"
+#include "click_routines/13dof/bme680.h"
+#include "click_routines/13dof/bmi088.h"
+#include "click_routines/13dof/bmm150.h"
+#include "ble_app_sensor_data.h"
+
+float temperature;
+float pressure;
+float humidity;
+int32_t gas_res;
+int16_t accel_x;
+int16_t accel_y;
+int16_t accel_z;
+int16_t gyro_x;
+int16_t gyro_y;
+int16_t gyro_z;
+int16_t mag_x;
+int16_t mag_y;
+int16_t mag_z;
+uint16_t r_hall;
+
+bme680_t bme680;
+bmm150_t bmm150;
+bmi088_t bmi088;
+
+typedef struct
+{
+    float temperature;
+    float pressure;
+    float humidity;
+
+}BME_SENSOR_DATA;
+
+DRV_HANDLE tmrHandle;
 extern BLE_DATA bleData;
 extern volatile bool cmd_sent;
+
+void read_PTH_values(void);
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
 
-// *****************************************************************************
-/* Application Data
-
-  Summary:
-    Holds application data
-
-  Description:
-    This structure holds the application's data.
-
-  Remarks:
-    This structure should be initialized by the APP_Initialize function.
-
-    Application strings and buffers are be defined outside this structure.
-*/
-
 APP_DATA appData;
+volatile bool gyro_request = 0 ,environment_request = 0,cmd_successfull = 0,magnetic_data_request = 0;
+volatile bool accel_request = 0;
+volatile BME_SENSOR_DATA              meas_Data;
 
-void read_PTH_values(void);
+void read_PTH_values(void)
+{
+    uint8_t tempBuffer[21] = {0};
+
+    meas_Data.temperature = thirteenDof_get_temperature( &bme680 );
+    meas_Data.humidity = thirteenDof_get_humidity( &bme680 );
+    meas_Data.pressure = thirteenDof_get_pressure( &bme680 );
+
+    tempBuffer[0] = ((uint8_t*)&meas_Data.temperature)[0];
+    tempBuffer[1] = ((uint8_t*)&meas_Data.temperature)[1];
+    tempBuffer[2] = ((uint8_t*)&meas_Data.pressure)[0];
+    tempBuffer[3] = ((uint8_t*)&meas_Data.pressure)[1];
+    tempBuffer[4] = 0;      /* Light Sensor Not supported */
+    tempBuffer[5] = 0;      /* Light Sensor Not supported */
+    tempBuffer[6] = 0;      /* Light Sensor Not supported */
+    tempBuffer[7] = 0;      /* Light Sensor Not supported */
+    tempBuffer[8] = (uint8_t)meas_Data.humidity;
+    tempBuffer[9] = '\r';
+    tempBuffer[10] = '\n';
+
+    Sendenv(tempBuffer);
+}
+
+void APP_Sensor_Tasks()
+{
+    gyro_t  gyro_data;
+    accel_t accel_data;
+    mag_t   magnetic_data;
+
+    if((cmd_successfull == 1) || (cmd_sent == 0))
+    {
+        if(cmd_successfull == 1)
+        {
+            cmd_successfull = 0;
+        }
+
+        if(gyro_request)
+        {
+            thirteenDof_read_gyro( &gyro_x, &gyro_y, &gyro_z );
+            gyro_data.gyro_x_ = gyro_x;
+            gyro_data.gyro_y_ = gyro_y;
+            gyro_data.gyro_z_ = gyro_z;
+
+            printgyro(&gyro_data);
+
+            CLICK_13DOF_DelayMs(300);
+        }
+        else if(accel_request)
+        {
+            thirteenDof_read_accel( &accel_x, &accel_y, &accel_z );
+            accel_data.accel_x_ = accel_x;
+            accel_data.accel_y_ = accel_y;
+            accel_data.accel_z_ = accel_z;
+
+            printaccel(&accel_data);
+
+            CLICK_13DOF_DelayMs(300);
+        }
+        else if(environment_request)
+        {
+            read_PTH_values();
+
+            CLICK_13DOF_DelayMs(500);
+        }else if(magnetic_data_request)
+        {
+            thirteenDof_read_geo_mag_data( &mag_x, &mag_y, &mag_z, &r_hall );
+            magnetic_data.mag_x_ = mag_x;
+            magnetic_data.mag_y_ = mag_y;
+            magnetic_data.mag_z_ = mag_z;
+            magnetic_data.r_hall_= r_hall;
+
+            printmagnetic(&magnetic_data);
+
+            CLICK_13DOF_DelayMs(300);
+        }
+    }
+}
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -107,7 +209,7 @@ void read_PTH_values(void);
     None
 */
 static void App_TimerCallback( uintptr_t context)
-{    
+{
     if (appData.waitingToConnect)
     {
         appData.waitingToConnectTimer++;
@@ -142,15 +244,13 @@ static void App_TimerCallback( uintptr_t context)
  */
 void APP_Initialize ( void )
 {
-   
-     
     DRV_BM71_Initialize();
     /* TODO: Initialize your application's state machine and other
      * parameters.
-     */   
+     */
 
-	LED1_On();       // initially on, until connected
-    appData.state = APP_STATE_INIT;   
+    LED1_On();       // initially on, until connected
+    appData.state = APP_STATE_INIT;
 
     appData.queryDelay = 0;         // used for status queries
 
@@ -167,127 +267,61 @@ void APP_Initialize ( void )
   Remarks:
     See prototype in app.h.
  */
-DRV_HANDLE tmrHandle;
-
 void APP_Tasks ( void )
-{    
+{
     DRV_BM71_Tasks();
-    bleTasks(); 
-    
+    bleTasks();
+
     /* Check the application's current state. */
     switch ( appData.state )
-    {       
+    {
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
             /* Open the timer Driver */
-            tmrHandle = SYS_TIME_CallbackRegisterMS(App_TimerCallback, 
+            tmrHandle = SYS_TIME_CallbackRegisterMS(App_TimerCallback,
                     (uintptr_t)0, 1/*ms*/, SYS_TIME_PERIODIC);
 
             if ( SYS_TIME_HANDLE_INVALID != tmrHandle )
             {
                appData.state = APP_STATE_WAIT_INIT;
-            }            
+            }
         }
         break;
-        
+
         case APP_STATE_WAIT_INIT:
         {
             if (DRV_BT_STATUS_READY == DRV_BT_GetPowerStatus())
-            {           
-                tenDof_init();
+            {
+                CLICK_13DOF_TimerStart();
+                thirteenDof_bme680_init( &bme680 );
+                thirteenDof_bmm150_init( &bmm150 );
+                thirteenDof_bmi088_init( &bmi088 );
                 appData.state=APP_STATE_IDLE;
             }
         }
         break;
-        
-        // Initialized 
+
+        // Initialized
         case APP_STATE_IDLE:
         {
-             
+
             APP_Sensor_Tasks();
-            
+
             if (appData.queryDelay == 0)
             {
                 DRV_BT_BLE_QueryStatus(bleData.bt.handle);
                 appData.queryDelay = QUERY_DELAY;
             }
-		}
-		break;
-         
+        }
+        break;
+
         default:
         {
             /* TODO: Handle error in application's state machine. */
         }
-        break;             
+        break;
     }
-}
-volatile bool gyro_request = 0 ,environment_request = 0,cmd_successfull = 0,rotation_vector_request = 0;
-volatile bool accel_request = 0;
-void APP_Sensor_Tasks()
-{
-struct bno055_gyro_t gyro_data;
-struct bno055_accel_t accel_data;    
-struct bno055_quaternion_t quaternion_data;
-
- if((cmd_successfull == 1) || (cmd_sent == 0))
- {
-    if(cmd_successfull == 1){
-        cmd_successfull = 0;
-    }   
-    if(gyro_request){   
-        tenDof_get_bno55_gyro_xyz(&gyro_data);
-        printgyro(&gyro_data);
-        SYSTICK_DelayMs(200);
-    }else if(accel_request){       
-        tenDof_get_bno55_accel_xyz(&accel_data);
-        printaccel(&accel_data);
-        SYSTICK_DelayMs(200);
-    }else if(environment_request){
-        read_PTH_values();
-        SYSTICK_DelayMs(20);  
-    }else if(rotation_vector_request){
-        tenDof_get_bno55_quaternion_wxyz(&quaternion_data);
-        printquaternion(&quaternion_data);
-        SYSTICK_DelayMs(500);
-        
-    }
- }
-}
-
-typedef struct
-{
-    int16_t temperature;
-    uint16_t pressure;
-    float humidity;
-    
-}BME_SENSOR_DATA;
-
-BME_SENSOR_DATA              meas_Data;
-
-void read_PTH_values(void)
-{
-    uint8_t tempBuffer[21] = {0};
-    
-    Weather_readSensors();
-
-    meas_Data.temperature = Weather_getTemperatureDegC()*100;
-    meas_Data.humidity = Weather_getPressureKPa();
-    meas_Data.pressure = Weather_getHumidityRH();
-    
-    tempBuffer[0] = ((uint8_t*)&meas_Data.temperature)[0];
-    tempBuffer[1] = ((uint8_t*)&meas_Data.temperature)[1];
-    tempBuffer[2] = ((uint8_t*)&meas_Data.pressure)[0];
-    tempBuffer[3] = ((uint8_t*)&meas_Data.pressure)[1];
-    tempBuffer[4] = 0;      /* Light Sensor Not supported */ 
-    tempBuffer[5] = 0;      /* Light Sensor Not supported */
-    tempBuffer[6] = 0;      /* Light Sensor Not supported */
-    tempBuffer[7] = 0;      /* Light Sensor Not supported */
-    tempBuffer[8] = (uint8_t)meas_Data.humidity;
-    tempBuffer[9] = '\r';
-    tempBuffer[10] = '\n';  
-    Sendenv(tempBuffer);
-
 }
 /*******************************************************************************
  End of File

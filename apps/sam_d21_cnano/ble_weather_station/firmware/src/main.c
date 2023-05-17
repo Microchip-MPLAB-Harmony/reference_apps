@@ -14,9 +14,9 @@
     This file contains the "main" function for a project.  The
     "main" function calls the "SYS_Initialize" function to initialize the state
     machines of all modules in the system
- *******************************************************************************/
+*******************************************************************************/
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your

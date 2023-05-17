@@ -1,4 +1,22 @@
 /*******************************************************************************
+  BLE App Sensor data header file
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    ble_app_sensor_data.h
+
+  Summary:
+    This file contains the declarations for functions needed to read
+    the sensor values.
+
+  Description:
+    This file contains the prototypes for functions which prints the values
+    on BLE app, this file also contains the typedefinitions for structures
+    store the readings of sensor values.
+*******************************************************************************/
+/*******************************************************************************
 * Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
@@ -20,22 +38,37 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+#ifndef BLE_APP_SENSOR_DATA_H
+#define BLE_APP_SENSOR_DATA_H
+#include "click_routines/13dof/13dof.h"
+#include "app.h"
 
-#include "click_routines/10dof/10dof.h"
+typedef struct
+{
+    int16_t gyro_x_;
+    int16_t gyro_y_;
+    int16_t gyro_z_;
+}gyro_t;
 
-#define MAX_I2C_TX_BUFFER_SIZE                  100
-#define MAX_I2C_RX_BUFFER_SIZE                  100
+typedef struct
+{
+    int16_t accel_x_;
+    int16_t accel_y_;
+    int16_t accel_z_;
+}accel_t;
 
-typedef struct bno055_accel_t acc_sensor_t;
-typedef struct bno055_gyro_t gyro_sensor_t;
-typedef struct bno055_quaternion_t quaternion_sensor_t;
-struct bno055_t bno055;
-struct bmp180_t bmp180;
+typedef struct
+{
+    int16_t mag_x_;
+    int16_t mag_y_;
+    int16_t mag_z_;
+    uint16_t r_hall_;
+}mag_t;
 
-void printaccel(acc_sensor_t *acce_data);
-void printgyro(gyro_sensor_t *gyro_data);
-void printquaternion(quaternion_sensor_t *quat_data);
+void printaccel( accel_t *accel_data );
+void printgyro( gyro_t *gyro_data );
+void printmagnetic( mag_t *magnetic_data );
 void Sendenv(uint8_t* pth);
 
 uint8_t* memcpy_inplace_reorder(uint8_t* data, uint16_t len);
-
+#endif // BLE_APP_SENSOR_DATA_H

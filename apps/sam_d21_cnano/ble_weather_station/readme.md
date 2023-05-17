@@ -15,9 +15,9 @@ nav_order: 4
 
 ## Description:
 
-> The application demonstrates a solution based on Microchip products for environmental or weather industry products. The application demonstrates posting of weather and motion sensor data collected from the various sensors to android mobile application via BLE (Bluetooth Low Energy). The PTH (Pressure, Temperature and Humidity) collected from the Mikro elektronika weather click board and motion sensor data collected from the Mikro elektronika 10DOF Click are posted to the android application via BM71 Bluetooth module.   
+> The application demonstrates a solution based on Microchip products for environmental or weather industry products. The application demonstrates posting of weather and motion sensor data collected from the various sensors to android mobile application via BLE (Bluetooth Low Energy). The PTH (Pressure, Temperature and Humidity) collected from BME680 sensor of the Mikro elektronika 13DOF click board and motion sensor data collected from BMI088 and BMM150 sensors of Mikro elektronika 13DOF Click are posted to the android application via BM71 Bluetooth module.   
 
-> The host microcntroller (SAM D21) is interfaced to the weather click and  10DOF click over the I2C interface and BM71 XPRO over UART.
+> The host microcntroller (SAM D21) is interfaced to the 13DOF click over the I2C interface and BM71 XPRO over UART.
 
 ## Modules/Technology Used:
 - Peripheral Modules      
@@ -31,8 +31,7 @@ nav_order: 4
 
 - [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320119)
 - [Curiosity Nano Base for click boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
-- [WEATHER CLICK](https://www.mikroe.com/weather-click)
-- [10DOF Click](https://www.mikroe.com/10dof-click)
+- [13DOF Click](https://www.mikroe.com/13dof-click)
 - [BM71-XPRO](https://www.microchip.com/Developmenttools/ProductDetails/DM164146)
 
 ## Software/Tools Used:
@@ -40,7 +39,7 @@ nav_order: 4
 
 Refer [Project Manifest](./firmware/src/config/samd21_cnano/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/samd21_cnano*  
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)  
-- [Microchip Bluetooth Data Android App](https://play.google.com/store/apps/details?id=com.microchip.bluetooth.data&hl=en_IN&gl=US) in your android mobile
+- Download and Install [Microchip Bluetooth Data Android App](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/download/v1.3.0/mbd_3_1.apk) in your android mobile
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
@@ -89,11 +88,10 @@ Refer [Project Manifest](./firmware/src/config/samd21_cnano/harmony-manifest-suc
 
 ## Setup:
 - Mount SAM D21 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board
-- Mount Weather click board on mikro bus click 1 connector of Curiosity Nano Base board
-- Mount the 10DOF Click on the mikro bus 2 connector of Curiosity Nano Base board
+- Mount the 13DOF Click on the mikro bus 1 connector of Curiosity Nano Base board
 - Connect the BM71-XPRO on to EXT 1 connector of Curiosity Nano Base board
 - Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)  
-<img src = "images/ble_app_demo_setup.jpg" width="600" height="500" align="middle">
+<img src = "images/ble_app_demo_setup.png">
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  
@@ -160,7 +158,7 @@ device should appear as MCHP in the list of Bluetooth devices.
 - Navigate to the 3D Plot screen by swiping left on the Gyroscope screen  
 <img src = "images/mbd_appscreen13.png" width="250" height="450" align="middle">
 
-- Keep finger on weather click board to see PTH values changing and move the 10DOF click board to see accelerometer and gyroscope values changing.
+- Keep finger on 13DOF click board to see PTH values changing and move the 13DOF click board to see accelerometer and gyroscope values changing.
 
 ## Comments:
 -  Other features on the application like the Step Count and Light are not supported by this demo. Navigating to these screens may lead to an undefined behavior.
@@ -176,7 +174,7 @@ device should appear as MCHP in the list of Bluetooth devices.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ### Revision:
-
+- v1.6.0 - Replaced 10Dof click with 13DOF click, regenerated and tested application.
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Updated the demo application with click routines and added mcc support.
 - v1.3.0 - Regenerated and tested application.

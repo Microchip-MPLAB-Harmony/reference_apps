@@ -5,17 +5,17 @@
     Microchip Technology Inc.
 
   File Name:
-    drv_bm71.c
+    custom_drv_bm71.c
 
   Summary:
    BM71 Bluetooth Driver main source file
 
   Description:
-    This file is the implementation of the external (public) API of the 
+    This file is the implementation of the external (public) API of the
     implementation of the BM71 driver (plus some local functions).
 
     The BM71 is a Bluetooth 4.2 Module that supports BLE (Bluetooth Low Energy).
-    
+
     It uses a UART to receive commands from the host microcontroller (e.g. PIC32)
     and and send events back.
 
@@ -149,7 +149,7 @@ DRV_BM71_COMMON_DATA_OBJ gDrvBm71CommonDataObj;
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     None.
@@ -169,10 +169,10 @@ void DRV_BM71_Initialize()
     gDrvBm71Obj.numClients                      = 0;
     gDrvBm71Obj.isInInterruptContext            = false;
 
-    gDrvBm71Obj.linkIndex = 0;      
-    DRV_BM71_UART_Initialize(); 
+    gDrvBm71Obj.linkIndex = 0;
+    DRV_BM71_UART_Initialize();
     gDrvBm71Obj.state = DRV_BM71_STATE_INITIALIZE_START;
-    
+
     DRV_BM71_CommandDecodeInit();
     DRV_BM71_CommandSendInit();
 
@@ -197,12 +197,12 @@ void DRV_BM71_Initialize()
          gDrvBm71CommonDataObj.membersAreInitialized = true;
      }
 
-    gDrvBm71Obj.status = SYS_STATUS_READY;      // okay to open driver 
+    gDrvBm71Obj.status = SYS_STATUS_READY;      // okay to open driver
 } /* DRV_BM71_Initialize */
 
 // *****************************************************************************
 /* Function DRV_BM71_Tasks:
- 
+
         void  DRV_BM71_Tasks( void );
 
   Summary:
@@ -211,15 +211,15 @@ void DRV_BM71_Initialize()
   Description:
     This routine is used to maintain the driver's internal control and data
     interface state machine and implement its control and data interface
-    implementations.  
- 
+    implementations.
+
     This function should be called from the SYS_Tasks() function.
-  
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     None.
@@ -237,12 +237,12 @@ void DRV_BM71_Tasks( void )
         return;
     }
 
-    _BM71ControlTasks();    
+    _BM71ControlTasks();
 }
 
 // *****************************************************************************
 /* Function DRV_BM71_Status:
- 
+
         SYS_STATUS DRV_BM71_Status( void );
 
   Summary:
@@ -251,12 +251,12 @@ void DRV_BM71_Tasks( void )
   Description:
     This routine provides the current status of the BM71 Bluetooth driver module,
     passed back as type SYS_STATUS.
- 
+
   Precondition:
     None.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type SYS_STATUS enum:
@@ -296,7 +296,7 @@ SYS_STATUS DRV_BM71_Status( void )
     DRV_BM71_Initialize must have been called to initialize the driver instance.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type DRV_BM71_DRVR_STATUS enum.
@@ -321,7 +321,7 @@ SYS_STATUS DRV_BM71_Status( void )
     DRV_BM71_Initialize must have been called to initialize the driver instance.
 
   Parameters:
-    None. 
+    None.
 
   Returns:
     Driver status, encoded as type DRV_BM71_DRVR_STATUS enum.
@@ -348,7 +348,7 @@ DRV_BM71_DRVR_STATUS DRV_BM71_GetPowerStatus( void )
 
   Description:
     Make a power on/power off task request using the DRV_BM71_REQUEST enum.
-  
+
   Precondition:
     DRV_BM71_Initialize must have been called to initialize the driver instance.
 
@@ -373,7 +373,7 @@ DRV_BM71_DRVR_STATUS DRV_BM71_GetPowerStatus( void )
 // *****************************************************************************
 // *****************************************************************************
 // *****************************************************************************
-/* Function DRV_BM71_Open: 
+/* Function DRV_BM71_Open:
 
         DRV_HANDLE DRV_BM71_Open(const DRV_IO_INTENT ioIntent,
                           const DRV_BM71_PROTOCOL protocol);
@@ -400,7 +400,7 @@ DRV_BM71_DRVR_STATUS DRV_BM71_GetPowerStatus( void )
   Parameters:
     ioIntent        - valid handle to an opened BM71 device driver unique to client
     protocol        - specifies which protocol(s) the client intends to use
-                      with this driver.  One of the various DRV_BM71_PROTOCOL 
+                      with this driver.  One of the various DRV_BM71_PROTOCOL
                       enum values, including DRV_BM71_PROTOCOL_ALL.
 
   Returns:
@@ -412,7 +412,7 @@ DRV_BM71_DRVR_STATUS DRV_BM71_GetPowerStatus( void )
     flags are not supported, the routine will return DRV_HANDLE_INVALID.  This
     function is thread safe in a RTOS application. It should not be called in an
     ISR.
- 
+
     Currently only one client is allowed at a time.
 */
 
@@ -429,14 +429,14 @@ DRV_HANDLE DRV_BM71_Open
     {
         return DRV_HANDLE_INVALID;
     }
-    
+
     if (gDrvBm71Obj.status != SYS_STATUS_READY)
     {
         /* The BM71  module should be ready */
         SYS_DEBUG(0, "Was the driver initialized? \r\n");
         return DRV_HANDLE_INVALID;
     }
-    
+
     if ((gDrvBm71Obj.numClients > 0) && (true == gDrvBm71Obj.isExclusive))
     {
         /* Driver already opened in exclusive mode. Cannot open a new client. */
@@ -469,8 +469,8 @@ DRV_HANDLE DRV_BM71_Open
                 hClient->inUse  = true;
                 hClient->pEventCallBack = NULL;
                 hClient->protocol = protocol;
-                gDrvBm71Obj.numClients++; 
-                
+                gDrvBm71Obj.numClients++;
+
                 /* We have found a client object
                  * Release the mutex and return with
                  * the driver handle */
@@ -496,7 +496,7 @@ DRV_HANDLE DRV_BM71_Open
 }
 
 // *****************************************************************************
-/* Function DRV_BM71_Close: 
+/* Function DRV_BM71_Close:
 
         void DRV_BM71_Close(DRV_HANDLE handle);
 
@@ -562,19 +562,19 @@ void DRV_BM71_Close( const DRV_HANDLE handle)
   Description:
     This function allows a client to identify a command event handling function
     for the driver to call back when an event has been received from the BM71.
- 
+
    The context parameter contains a handle to the client context,
     provided at the time the event handling function is registered using the
     DRV_BM71_BufferEventHandlerSet function.  This context handle value is
     passed back to the client as the "context" parameter.  It can be any value
     necessary to identify the client context or instance (such as a pointer to
-    the client's data) instance of the client.* 
+    the client's data) instance of the client.*
 
     The event handler should be set before the client performs any "BM71 Bluetooth
     Specific Client Routines" operations that could generate events.
     The event handler once set, persists until the client closes the driver or
     sets another event handler (which could be a "NULL" pointer to indicate no callback).
- 
+
   Precondition:
     DRV_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -594,9 +594,9 @@ void DRV_BM71_Close( const DRV_HANDLE handle)
 
 void DRV_BM71_EventHandlerSet
 (
-	DRV_HANDLE handle,
-	const DRV_BM71_EVENT_HANDLER eventHandler,   // TEMP!!
-	const uintptr_t contextHandle
+    DRV_HANDLE handle,
+    const DRV_BM71_EVENT_HANDLER eventHandler,   // TEMP!!
+    const uintptr_t contextHandle
 )
 {
     DRV_BM71_CLIENT_OBJ *clientObj;
@@ -628,9 +628,9 @@ void DRV_BM71_EventHandlerSet
     Clear the BLE receive buffer.
 
   Description:
-    Clears the buffer used when receiving characters via the 
+    Clears the buffer used when receiving characters via the
     DRV_BM71_ReadByteFromBLE and DRV_BM71_ReadDataFromBLE calls.
- 
+
   Precondition:
     DRV_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -659,7 +659,7 @@ void DRV_BM71_ClearBLEData( const DRV_HANDLE handle )
 
   Description:
     Read one byte over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     DRV_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -693,7 +693,7 @@ bool DRV_BM71_ReadByteFromBLE(const DRV_HANDLE handle, uint8_t* byte)
 // *****************************************************************************
 /* Function DRV_BM71_ReadDataFromBLE:
 
-        bool DRV_BM71_ReadDataFromBLE(const DRV_HANDLE handle, uint8_t* bytes, 
+        bool DRV_BM71_ReadDataFromBLE(const DRV_HANDLE handle, uint8_t* bytes,
                 uint16_t size );
 
   Summary:
@@ -701,7 +701,7 @@ bool DRV_BM71_ReadByteFromBLE(const DRV_HANDLE handle, uint8_t* byte)
 
   Description:
     Read data over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     DRV_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -729,7 +729,7 @@ bool DRV_BM71_ReadDataFromBLE(const DRV_HANDLE handle, uint8_t* byte, uint16_t s
             if(DRV_BM71_SPP_RxFifoHead < DRV_BM71_SPP_RxFifoSize-1)
                 DRV_BM71_SPP_RxFifoHead++;
             else
-                DRV_BM71_SPP_RxFifoHead = 0;        
+                DRV_BM71_SPP_RxFifoHead = 0;
             if (--size==0)
             {
                 break;      // reached end of buffer
@@ -744,14 +744,14 @@ bool DRV_BM71_ReadDataFromBLE(const DRV_HANDLE handle, uint8_t* byte, uint16_t s
 // *****************************************************************************
 /* Function DRV_BM71_SendByteOverBLE:
 
-        void DRV_BM71_SendByteOverBLE(const DRV_HANDLE handle, uint8_t byte); 
+        void DRV_BM71_SendByteOverBLE(const DRV_HANDLE handle, uint8_t byte);
 
   Summary:
     Send a byte over BLE.
 
   Description:
     Send one byte over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     DRV_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -782,7 +782,7 @@ void DRV_BM71_SendByteOverBLE(const DRV_HANDLE handle, uint8_t byte)
 
   Description:
     Send data over BLE using the BM71's "Transparent Service" feature.
- 
+
   Precondition:
     DRV_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -822,7 +822,7 @@ static void _clientCallBack(DRV_BM71_EVENT event, uint32_t param)
 {
     DRV_BM71_CLIENT_OBJ *hClient;
     uint32_t iClient;
-    
+
     iClient = 0;
     hClient = (DRV_BM71_CLIENT_OBJ *)&gDrvBm71ClientObj[iClient];
 
@@ -844,7 +844,7 @@ static void _clientCallBack(DRV_BM71_EVENT event, uint32_t param)
 //================================================
 
 void DRV_BM71_Timer_1ms( uintptr_t context)
-{ 
+{
     //drive BM71 Module Initialization
     DRV_BM71_Timer1MS_event();
 
@@ -859,9 +859,9 @@ void DRV_BM71_Timer_1ms( uintptr_t context)
 uint32_t oldstate = -1;
 
 static void _BM71ControlTasks(void)
-{           
+{
     DRV_BM71_UART_Tasks();       // take care of UART first
-    
+
     if (gDrvBm71Obj.state != oldstate)
     {
         printf("BM71 state: %02d\r\n",gDrvBm71Obj.state);
@@ -871,16 +871,16 @@ static void _BM71ControlTasks(void)
     switch (gDrvBm71Obj.state) {
         case DRV_BM71_STATE_INITIALIZE_START:
             /* Open the timer Driver */
-            DRV_BM71_tmrHandle = SYS_TIME_CallbackRegisterMS(DRV_BM71_Timer_1ms, 
+            DRV_BM71_tmrHandle = SYS_TIME_CallbackRegisterMS(DRV_BM71_Timer_1ms,
                     (uintptr_t)0, 1/*ms*/, SYS_TIME_PERIODIC);
 
             if (SYS_TIME_HANDLE_INVALID == DRV_BM71_tmrHandle)
             {
                 printf("can't open SYS_TIME driver");
             }
-            
+
             _timer1ms = 10;
-            DRV_BM71_RESET_SetLow();                        // Reset is active low                                           
+            DRV_BM71_RESET_SetLow();                        // Reset is active low
 
             gDrvBm71Obj.state = DRV_BM71_STATE_INIT_RESET_HIGH;
             break;
@@ -889,12 +889,12 @@ static void _BM71ControlTasks(void)
             if (!_timer1ms)  // check 10ms times up
             {
                 DRV_BM71_RESET_SetHigh();
-                DRV_BM71_CommandDecodeInit();                
+                DRV_BM71_CommandDecodeInit();
                 _timer1ms = 100; //wait 100ms
                 gDrvBm71Obj.state = DRV_BM71_STATE_INIT_RESET_HIGH_WAIT;
             }
-            break; 
-            
+            break;
+
         case DRV_BM71_STATE_INIT_RESET_HIGH_WAIT:
             if (!_timer1ms) // check 200ms times up
             {
@@ -902,7 +902,7 @@ static void _BM71ControlTasks(void)
                 _timer1ms = 5; //wait 100ms
                 gDrvBm71Obj.state = DRV_BM71_STATE_INIT_BLE_ADV_START;
             }
-            break;                                         
+            break;
 
         case DRV_BM71_STATE_INIT_BLE_ADV_START:
             if (!_timer1ms) // check 200ms times up
@@ -984,7 +984,7 @@ void DRV_BM71_Timer1MS_event( void )
 {
     if(_timer1ms)
         --_timer1ms;
-    
+
     if ((DRV_BM71_txByteQueued>0) && ((DRV_BM71_txByteQueued&1)==0))
     {
         DRV_BM71_txByteQueued--;       // if > 0 and even, decrement
@@ -1039,7 +1039,7 @@ bool DRV_BM71_AddBytesToSPPBuff(uint8_t* data, uint8_t size)        //TRUE: data
             return false;
         }
     }
-    
+
     _clientCallBack(DRV_BM71_EVENT_BLESPP_MSG_RECEIVED, (uint8_t)size);
     return true;
 }

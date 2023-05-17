@@ -1,11 +1,11 @@
 /*******************************************************************************
-  BM71 Bluetooth Static Driver implementation
+  BM71 Bluetooth Static Driver implementation command decode header file.
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    drv_bm71_command_decode.c
+    custom_drv_bm71_command_decode.c
 
   Summary:
    BM71 Bluetooth Static Driver source file for decoding events.
@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to decoding events coming back from the BM71 module.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -56,11 +56,11 @@ extern DRV_BM71_OBJ    gDrvBm71Obj;
 
 //command decode state machine
 typedef enum {
-	DRV_BM71_RX_DECODE_CMD_SYNC_AA,
-	DRV_BM71_RX_DECODE_CMD_SYNC_00,
-	DRV_BM71_RX_DECODE_CMD_LENGTH,
-	DRV_BM71_RX_DECODE_CMD_DATA,
-	DRV_BM71_RX_DECODE_CMD_CHECKSUM
+    DRV_BM71_RX_DECODE_CMD_SYNC_AA,
+    DRV_BM71_RX_DECODE_CMD_SYNC_00,
+    DRV_BM71_RX_DECODE_CMD_LENGTH,
+    DRV_BM71_RX_DECODE_CMD_DATA,
+    DRV_BM71_RX_DECODE_CMD_CHECKSUM
 } DRV_BM71_RX_DECODE_MODE;
 
 //command decode: BM71 status
@@ -87,7 +87,7 @@ static uint8_t  CmdBuffer[DRV_BM71_CMD_SIZE_MAX];
 /*======================================*/
 static DRV_BM71_RX_DECODE_MODE  CmdDecodeState;
 static uint8_t  CmdDecodeCmdLength;
-static uint8_t  CmdDecodeChecksum;			
+static uint8_t  CmdDecodeChecksum;
 static uint8_t  CmdDecodeDataCnt;                    //temporary variable in decoding
 static unsigned short CmdBufferPt;
 
@@ -102,17 +102,17 @@ void DRV_BM71_CommandDecodeInit( void )
     {
         DRV_BM71_EUSART_Read();     // flush buffer
     }
-	DRV_BM71_SPPBuffClear();
+    DRV_BM71_SPPBuffClear();
 }
 
 void DRV_BM71_CommandDecodeMain( void )
 {
-	DRV_BM71_CommandHandler();
-	if(CmdDecodedFlag)
-	{
+    DRV_BM71_CommandHandler();
+    if(CmdDecodedFlag)
+    {
             DRV_BM71_CommandDecode();
             CmdDecodedFlag = 0;
-	}
+    }
 }
 
 extern volatile uint8_t DRV_BM71_eusartRxCount;
@@ -170,7 +170,7 @@ void DRV_BM71_CommandHandler(void) {
     }
 }
 extern volatile bool gyro_request,cmd_successfull;
-extern volatile bool accel_request, environment_request,rotation_vector_request;
+extern volatile bool accel_request, environment_request,magnetic_data_request;
 extern uint8_t gyro_handle,accel_handle,environment_handle,quaternion_handle;
 extern volatile bool cmd_sent;
 void DRV_BM71_CommandDecode( void )
@@ -184,13 +184,13 @@ void DRV_BM71_CommandDecode( void )
     printf("\r\n");
     if (CmdBuffer[0]!=BM71_STATUS_REPORT)
     {
-       // printf("event: 0x%02x 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1],CmdBuffer[2]);               
+       // printf("event: 0x%02x 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1],CmdBuffer[2]);
     }
     else
     {
-      //  printf("event: 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1]);        
+      //  printf("event: 0x%02x 0x%02x\r\n",CmdBuffer[0],CmdBuffer[1]);
     }
-    
+
     switch(CmdBuffer[0])
     {
         case BM71_LE_CONNECT_COMPLETE:        // 0x71
@@ -213,7 +213,7 @@ void DRV_BM71_CommandDecode( void )
             cmd_successfull = 0;
             cmd_sent = 0;
             gyro_request = accel_request = 0;
-            rotation_vector_request = environment_request = 0; 
+            magnetic_data_request = environment_request = 0;
             break;
 
         case BM71_COMMAND_COMPLETE:           // 0x80
@@ -225,7 +225,7 @@ void DRV_BM71_CommandDecode( void )
             // CmdBuffer[2] is status (0 == success)
             // CmdBuffer[3-] are optional parametersis status (0 == success)
             break;
-            
+
         case BM71_STATUS_REPORT:              // 0x81
             // CmdBuffer[1] is status
             // 0x01 -- Scanning Mode
@@ -238,7 +238,7 @@ void DRV_BM71_CommandDecode( void )
             // 0x0b -- Configue Mode
             // 0x0c -- BLE connected
             switch(CmdBuffer[1])
-            { 
+            {
                 case 0x09:
                     DRV_BM71_UpdateClientStatus(DRV_BM71_BLE_STATUS_STANDBY);
                     break;
@@ -285,14 +285,14 @@ void DRV_BM71_CommandDecode( void )
                 }
                 else if(CmdBuffer[3] == 0x0f && CmdBuffer[4] == 0x01)
                 {
-                    rotation_vector_request = 1;
+                    magnetic_data_request = 1;
                     quaternion_handle = CmdBuffer[3] - 1;
                 }else if(CmdBuffer[3] == 0x0f && CmdBuffer[4] == 0x00)
                 {
                     cmd_sent = 0;
-                    rotation_vector_request = 0;
+                    magnetic_data_request = 0;
                 }
-               
+
             }
             // CmdBuffer[1] is connection handle
             // CmdBuffer[2-3] is characteristic value handle
@@ -306,7 +306,7 @@ void DRV_BM71_CommandDecode( void )
             // CmdBuffer[2-] is transparent data
             DRV_BM71_AddBytesToSPPBuff(&CmdBuffer[2], CmdDecodeCmdLength-2);
             break;
-             
+
         default:
             break;
     }

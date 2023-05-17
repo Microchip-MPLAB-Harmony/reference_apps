@@ -173,9 +173,53 @@ bool NVMCTRL_RowErase( uint32_t address )
     return true;
 }
 
+bool NVMCTRL_USER_ROW_PageWrite( uint32_t *data, const uint32_t address )
+{
+    uint32_t i = 0U;
+    uint32_t * paddress = (uint32_t *)address;
+    bool pagewrite_val = false;
+
+    if ((address >= NVMCTRL_USERROW_START_ADDRESS) && (address <= ((NVMCTRL_USERROW_START_ADDRESS + NVMCTRL_USERROW_SIZE) - NVMCTRL_USERROW_PAGESIZE)))
+    {
+        /* writing 32-bit data into the given address */
+        for (i = 0U; i < (NVMCTRL_USERROW_PAGESIZE/4U); i++)
+        {
+            *paddress = data[i];
+                      paddress++;
+        }
+
+        /* Set address and command */
+        NVMCTRL_REGS->NVMCTRL_ADDR = address >> 1U;
+
+        NVMCTRL_REGS->NVMCTRL_CTRLA = NVMCTRL_CTRLA_CMD_WAP_Val | NVMCTRL_CTRLA_CMDEX_KEY;
+
+
+        pagewrite_val = true;
+    }
+
+    return pagewrite_val;
+}
+
+bool NVMCTRL_USER_ROW_RowErase( uint32_t address )
+{
+     bool rowerase = false;
+    if ((address >= NVMCTRL_USERROW_START_ADDRESS) && (address <= (NVMCTRL_USERROW_START_ADDRESS + NVMCTRL_USERROW_SIZE)))
+    {
+        /* Set address and command */
+        NVMCTRL_REGS->NVMCTRL_ADDR = address >> 1U;
+
+        NVMCTRL_REGS->NVMCTRL_CTRLA = NVMCTRL_CTRLA_CMD_EAR_Val | NVMCTRL_CTRLA_CMDEX_KEY;
+
+
+        rowerase = true;
+    }
+
+    return rowerase;
+}
+
 NVMCTRL_ERROR NVMCTRL_ErrorGet( void )
 {
-    volatile uint16_t nvm_error = 0;
+    uint16_t nvm_error = 0;
 
     /* Get the error bits set */
     nvm_error = (NVMCTRL_REGS->NVMCTRL_STATUS & (NVMCTRL_STATUS_NVME_Msk | NVMCTRL_STATUS_LOCKE_Msk | NVMCTRL_STATUS_PROGE_Msk));
@@ -207,4 +251,9 @@ void NVMCTRL_RegionUnlock(uint32_t address)
     NVMCTRL_REGS->NVMCTRL_ADDR = address >> 1U;
 
     NVMCTRL_REGS->NVMCTRL_CTRLA = (uint16_t)(NVMCTRL_CTRLA_CMD_UR_Val | NVMCTRL_CTRLA_CMDEX_KEY);
+}
+
+void NVMCTRL_SecurityBitSet(void)
+{
+    NVMCTRL_REGS->NVMCTRL_CTRLA = (uint16_t)(NVMCTRL_CTRLA_CMD_SSB_Val | NVMCTRL_CTRLA_CMDEX_KEY);
 }

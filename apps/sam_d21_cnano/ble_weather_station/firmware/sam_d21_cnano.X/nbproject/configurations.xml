@@ -12,14 +12,11 @@
       <logicalFolder name="click_routines"
                      displayName="click_routines"
                      projectFiles="true">
-        <logicalFolder name="10dof" displayName="10dof" projectFiles="true">
-          <itemPath>../src/click_routines/10dof/10dof.h</itemPath>
-          <itemPath>../src/click_routines/10dof/bmp180.h</itemPath>
-          <itemPath>../src/click_routines/10dof/bno055.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="weather" displayName="weather" projectFiles="true">
-          <itemPath>../src/click_routines/weather/bme280.h</itemPath>
-          <itemPath>../src/click_routines/weather/weather.h</itemPath>
+        <logicalFolder name="13dof" displayName="13dof" projectFiles="true">
+          <itemPath>../src/click_routines/13dof/13dof.h</itemPath>
+          <itemPath>../src/click_routines/13dof/bme680.h</itemPath>
+          <itemPath>../src/click_routines/13dof/bmi088.h</itemPath>
+          <itemPath>../src/click_routines/13dof/bmm150.h</itemPath>
         </logicalFolder>
         <itemPath>../src/click_routines/click_interface.h</itemPath>
       </logicalFolder>
@@ -135,6 +132,7 @@
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G17D_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/ac.h</itemPath>
@@ -174,6 +172,7 @@
             <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/tcc3.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G17D_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G17D_DFP/pio/samd21g17d.h</itemPath>
@@ -229,14 +228,11 @@
       <logicalFolder name="click_routines"
                      displayName="click_routines"
                      projectFiles="true">
-        <logicalFolder name="10dof" displayName="10dof" projectFiles="true">
-          <itemPath>../src/click_routines/10dof/10dof.c</itemPath>
-          <itemPath>../src/click_routines/10dof/bmp180.c</itemPath>
-          <itemPath>../src/click_routines/10dof/bno055.c</itemPath>
-        </logicalFolder>
-        <logicalFolder name="weather" displayName="weather" projectFiles="true">
-          <itemPath>../src/click_routines/weather/bme280.c</itemPath>
-          <itemPath>../src/click_routines/weather/weather.c</itemPath>
+        <logicalFolder name="13dof" displayName="13dof" projectFiles="true">
+          <itemPath>../src/click_routines/13dof/13dof.c</itemPath>
+          <itemPath>../src/click_routines/13dof/bme680.c</itemPath>
+          <itemPath>../src/click_routines/13dof/bmi088.c</itemPath>
+          <itemPath>../src/click_routines/13dof/bmm150.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="config" projectFiles="true">
@@ -307,6 +303,7 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/ble_app_sensor_data.c</itemPath>
+      <itemPath>../src/config/samd21_cnano/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -323,12 +320,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
