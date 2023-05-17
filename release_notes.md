@@ -6,6 +6,36 @@ nav_order: 99
 # Microchip MPLAB® Harmony 3 Release Notes
 
 ---
+## Reference Applications Release v1.6.0 (June 2023) - TBD
+
+- Removed MHC plugin configuration for all demo applications
+
+### New Applications
+
+| Application | Description | MCU | Development Board/Kit |  
+| --- | --- | --- | --- |  
+| [saml21_ble_fitness_tracker](./apps/sam_l21_xpro/saml21_ble_fitness_tracker/readme.md) |  BLE Fitness Tracker Application | [SAM L21](https://www.microchip.com/wwwproducts/en/ATSAML21J18B) | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b)|
+
+
+### Updated Applications  
+
+- TBD
+
+
+### Known Issues
+- None
+
+### Development Tools
+- [MPLAB® X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB® XC32 C/C++ Compiler v4.00](https://www.microchip.com/mplab/compilers)
+- [IAR EWARM v8.50](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
+- MPLAB® X IDE plug-ins:
+  - MPLAB Code Configurator (MCC) v5.1.4   
+
+
+---
+
+
 
 ## Reference Applications Release v1.5.0 (June 2022)
 
