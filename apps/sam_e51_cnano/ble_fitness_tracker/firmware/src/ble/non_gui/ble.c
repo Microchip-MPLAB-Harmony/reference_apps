@@ -11,10 +11,8 @@
     Source code for BLE operations
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's BLE state machine and calls
-    API routines of other MPLAB Harmony modules in the system, including the
-    Bluetooth driver and system services.
+    This source file provides definition for functions which enable data
+    transfer through BM71 XPRO to mobile app.
 
  *******************************************************************************/
 
@@ -43,7 +41,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#include <stdint.h> 
+#include <stdint.h>
 #include <string.h>
 #include <ctype.h>      // for tolower
 
@@ -66,22 +64,22 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
 
 void bleInitialize(bool all)        // parameter not used in non_gui version
 {
-    bleData.state = BLE_STATE_OPEN;    
-    bleData.bt.context = (uintptr_t) &_appBleContext;  
-    bleData.bt.eventHandler = (CUSTOM_BT_EVENT_HANDLER) _BLEEventHandler;    
+    bleData.state = BLE_STATE_OPEN;
+    bleData.bt.context = (uintptr_t) &_appBleContext;
+    bleData.bt.eventHandler = (CUSTOM_BT_EVENT_HANDLER) _BLEEventHandler;
 } //End bleInitialize()
 
 void bleTasks()
-{               
+{
     switch(bleData.state)
     {
         //----------------------------------------------------------------------
-        // Open BT module 
+        // Open BT module
         //----------------------------------------------------------------------
         case BLE_STATE_OPEN:
         {
             if (SYS_STATUS_READY == CUSTOM_BT_Status())
-            {            
+            {
                 // open BT module
                 bleData.bt.handle = CUSTOM_BT_Open(BM71_IO_INTENT_READ, CUSTOM_BT_PROTOCOL_BLE);
 
@@ -96,26 +94,26 @@ void bleTasks()
             }
         }
         break;
-        
+
         //----------------------------------------------------------------------
         //Set the BT RX Buffer Handler
         //----------------------------------------------------------------------
         case BLE_STATE_SET_BT_EVENT_HANDLER:
-        {          
+        {
             CUSTOM_BT_EventHandlerSet(bleData.bt.handle,
                                           bleData.bt.eventHandler,
-                                          (uintptr_t)0);                                  
+                                          (uintptr_t)0);
 
-            bleData.state = BLE_STATE_INIT_DONE;            
+            bleData.state = BLE_STATE_INIT_DONE;
         }
-        break;               
-        
-        // Initialized 
+        break;
+
+        // Initialized
         case BLE_STATE_INIT_DONE:
         {
             // waits in this state
             break;
-        }        
+        }
 
         default:
         {
@@ -131,9 +129,9 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
     switch(event)
     {
         case CUSTOM_BT_EVENT_BLESPP_MSG_RECEIVED:
-        {                                               
+        {
             char buf[MAX_BLE_BUFSIZE];
-            
+
             if (CUSTOM_BT_ReadDataFromBLE(bleData.bt.handle, (uint8_t*)buf, MAX_BLE_BUFSIZE ))
             {
                 int i;
@@ -148,29 +146,29 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
                 else if (!strcmp(buf,"led off"))
                 {
                     LED1_Off();
-                }                
+                }
             }
         }
         break;
-        
+
         case CUSTOM_BT_EVENT_BLE_STATUS_CHANGED:
-        {           
+        {
             switch(param)
-            {             
+            {
                 case CUSTOM_BT_BLE_STATUS_STANDBY:
                 case CUSTOM_BT_BLE_STATUS_SCANNING:
                 case CUSTOM_BT_BLE_STATUS_ADVERTISING:
                     LED1_On();
-                    appData.waitingToConnect = true;                    
+                    appData.waitingToConnect = true;
                     break;
-                case CUSTOM_BT_BLE_STATUS_CONNECTED:                        
+                case CUSTOM_BT_BLE_STATUS_CONNECTED:
                     LED1_Off();
                     appData.waitingToConnect = false;
-                    break;                    
+                    break;
             }
         }
         break;
-        
+
         default:
             break;
     }

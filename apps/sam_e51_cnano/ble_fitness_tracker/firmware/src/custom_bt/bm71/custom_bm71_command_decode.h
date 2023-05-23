@@ -82,4 +82,4 @@ void CUSTOM_BM71_CommandDecode( void );
 void CUSTOM_BM71_CommandDecodeInit( void );
 void CUSTOM_BM71_CommandDecodeMain( void );
 void CUSTOM_BM71_CommandDecode1MS_event( void );
-#endif
+#endif // CUSTOM_BM71_COMMAND_DECODE_H

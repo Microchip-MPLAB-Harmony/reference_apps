@@ -11,11 +11,10 @@
     This header file provides prototypes and definitions for the application.
 
   Description:
-    This header file provides function prototypes and data type definitions for
-    the application.  Some of these are required by the system (such as the
-    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
-    internally by the application (such as the "APP_STATES" definition).  Both
-    are defined here for convenience.
+    This header file provides declaration for functions which enable data
+    transfer through BM71 XPRO to mobile app, the file also contains
+    typedefinitions for various enums and structures which control the state of
+    initialization, transfer of ble data.
 *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
@@ -43,8 +42,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _AUDIO_H
-#define _AUDIO_H
+#ifndef BLE_H
+#define BLE_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -83,10 +82,10 @@ extern "C" {
 */
 
 typedef enum
-{ 
+{
     BLE_STATE_OPEN,
-    BLE_STATE_SET_BT_EVENT_HANDLER,     
-    BLE_STATE_INIT_DONE,               
+    BLE_STATE_SET_BT_EVENT_HANDLER,
+    BLE_STATE_INIT_DONE,
 } BLE_STATES;
 
 typedef struct
@@ -114,8 +113,8 @@ typedef struct
 {
     /* The application's current state */
     BLE_STATES state;
-    DATA_BT bt;   
-    
+    DATA_BT bt;
+
 } BLE_DATA;
 
 
@@ -159,7 +158,7 @@ void bleTasks(void);
     This routine must be called from the SYS_Initialize function.
 */
 
-void bleInitialize(bool all); 
+void bleInitialize(bool all);
 
 /*******************************************************************************
   Function:
@@ -193,7 +192,7 @@ void bleInitialize(bool all);
 
 void bleTasks( void );
 
-#endif /* _APP_H */
+#endif // BLE_H
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

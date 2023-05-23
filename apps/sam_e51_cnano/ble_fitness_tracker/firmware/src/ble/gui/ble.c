@@ -11,12 +11,10 @@
     Source code for BLE operations
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's BLE state machine and calls
-    API routines of other MPLAB Harmony modules in the system, including the
-    Bluetooth driver and system services.
+    This source file provides definition for functions which enable data
+    transfer through BM71 XPRO to mobile app.
 
- *******************************************************************************/
+********************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -43,7 +41,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#include <stdint.h> 
+#include <stdint.h>
 #include <string.h>
 #include <ctype.h>      // for tolower
 
@@ -64,7 +62,7 @@ extern APP_DATA appData;
 
 static char message_buf1 [MAX_BLE_BUFSIZE];
 static char message_buf2 [MAX_BLE_BUFSIZE];
-static char message_buf3 [MAX_BLE_BUFSIZE]; 
+static char message_buf3 [MAX_BLE_BUFSIZE];
 
 static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t context);
 
@@ -72,36 +70,36 @@ void bleInitialize(bool all)
 {
     if (all)
     {
-        bleData.state = BLE_STATE_OPEN;    
-        bleData.bt.context = (uintptr_t) &_appBleContext;  
-        bleData.bt.eventHandler = 
+        bleData.state = BLE_STATE_OPEN;
+        bleData.bt.context = (uintptr_t) &_appBleContext;
+        bleData.bt.eventHandler =
             (CUSTOM_BT_EVENT_HANDLER) _BLEEventHandler;
     }
-    
+
     laWidget_SetVisible((laWidget*)SendMessageButton, LA_FALSE);
-    
-    laWidget_SetVisible((laWidget*)ReceivedMessages, LA_FALSE);                                
-    laWidget_SetVisible((laWidget*)TextMessage1, LA_FALSE);                                
-    laWidget_SetVisible((laWidget*)TextMessage2, LA_FALSE); 
-    laWidget_SetVisible((laWidget*)TextMessage3, LA_FALSE); 
-    
+
+    laWidget_SetVisible((laWidget*)ReceivedMessages, LA_FALSE);
+    laWidget_SetVisible((laWidget*)TextMessage1, LA_FALSE);
+    laWidget_SetVisible((laWidget*)TextMessage2, LA_FALSE);
+    laWidget_SetVisible((laWidget*)TextMessage3, LA_FALSE);
+
     strcpy(message_buf1," ");
     strcpy(message_buf2," ");
-    strcpy(message_buf3," ");    
-   
+    strcpy(message_buf3," ");
+
 } //End bleInitialize()
 
 void bleTasks()
-{               
+{
     switch(bleData.state)
     {
         //----------------------------------------------------------------------
-        // Open BT module 
+        // Open BT module
         //----------------------------------------------------------------------
         case BLE_STATE_OPEN:
         {
             if (SYS_STATUS_READY == CUSTOM_BT_Status())
-            {            
+            {
                 // open BT module
                 bleData.bt.handle = CUSTOM_BT_Open(BM71_IO_INTENT_READ, CUSTOM_BT_PROTOCOL_ALL);
 
@@ -116,26 +114,26 @@ void bleTasks()
             }
         }
         break;
-        
+
         //----------------------------------------------------------------------
         //Set the BT RX Buffer Handler
         //----------------------------------------------------------------------
         case BLE_STATE_SET_BT_EVENT_HANDLER:
-        {          
+        {
             CUSTOM_BT_EventHandlerSet(bleData.bt.handle,
                                           bleData.bt.eventHandler,
-                                          (uintptr_t)0);                                  
+                                          (uintptr_t)0);
 
-            bleData.state = BLE_STATE_INIT_DONE;            
+            bleData.state = BLE_STATE_INIT_DONE;
         }
-        break;               
-        
-        // Initialized 
+        break;
+
+        // Initialized
         case BLE_STATE_INIT_DONE:
         {
             // waits in this state
             break;
-        }        
+        }
 
         default:
         {
@@ -151,29 +149,29 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
     switch(event)
     {
         case CUSTOM_BT_EVENT_BLESPP_MSG_RECEIVED:
-        {           
-            laString tempStr;                                      
+        {
+            laString tempStr;
             char buf[MAX_BLE_BUFSIZE];
-            
+
             if (CUSTOM_BT_ReadDataFromBLE(bleData.bt.handle, (uint8_t*)buf, MAX_BLE_BUFSIZE ))
             {
                 strcpy(message_buf1, message_buf2);
                 strcpy(message_buf2, message_buf3);
                 strcpy(message_buf3, buf);
-            
-                laWidget_SetVisible((laWidget*)ReceivedMessages, LA_TRUE);                                
-                
-                laWidget_SetVisible((laWidget*)TextMessage1, LA_TRUE);                                
+
+                laWidget_SetVisible((laWidget*)ReceivedMessages, LA_TRUE);
+
+                laWidget_SetVisible((laWidget*)TextMessage1, LA_TRUE);
                 tempStr = laString_CreateFromCharBuffer(message_buf1, &LiberationSans12);
                 laLabelWidget_SetText(TextMessage1, tempStr);
-                laString_Destroy(&tempStr); 
+                laString_Destroy(&tempStr);
 
-                laWidget_SetVisible((laWidget*)TextMessage2, LA_TRUE);                                
+                laWidget_SetVisible((laWidget*)TextMessage2, LA_TRUE);
                 tempStr = laString_CreateFromCharBuffer(message_buf2, &LiberationSans12);
                 laLabelWidget_SetText(TextMessage2, tempStr);
-                laString_Destroy(&tempStr); 
+                laString_Destroy(&tempStr);
 
-                laWidget_SetVisible((laWidget*)TextMessage3, LA_TRUE);                                
+                laWidget_SetVisible((laWidget*)TextMessage3, LA_TRUE);
                 tempStr = laString_CreateFromCharBuffer(message_buf3, &LiberationSans12);
                 laLabelWidget_SetText(TextMessage3, tempStr);
                 laString_Destroy(&tempStr);
@@ -190,15 +188,15 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
                 else if (!strcmp(buf,"led off"))
                 {
                     LED1_Off();
-                }                
+                }
             }
         }
         break;
-        
+
         case CUSTOM_BT_EVENT_BLE_STATUS_CHANGED:
-        {           
+        {
             switch(param)
-            {             
+            {
                 case CUSTOM_BM64_BLE_STATUS_STANDBY:
                 case CUSTOM_BM64_BLE_STATUS_SCANNING:
                     laWidget_SetVisible((laWidget*)Connected_Image, LA_FALSE);
@@ -214,7 +212,7 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
                     laWidget_SetVisible((laWidget*)No_pair_no_connection_Image, LA_FALSE);
                     LED1_On();
                     appData.waitingToConnect = true;
-                    bleInitialize(false);                    
+                    bleInitialize(false);
                     break;
                 case CUSTOM_BM64_BLE_STATUS_CONNECTED:
                     laWidget_SetVisible((laWidget*)Connected_Image, LA_TRUE);
@@ -222,12 +220,12 @@ static void _BLEEventHandler(CUSTOM_BT_EVENT event, uint32_t param, uintptr_t co
                     laWidget_SetVisible((laWidget*)No_pair_no_connection_Image, LA_FALSE);
                     LED1_Off();
                     laWidget_SetVisible((laWidget*)SendMessageButton, LA_TRUE);
-                    appData.waitingToConnect = false;                    
-                    break;                    
-            }           
+                    appData.waitingToConnect = false;
+                    break;
+            }
         }
         break;
-        
+
         default:
             break;
     }

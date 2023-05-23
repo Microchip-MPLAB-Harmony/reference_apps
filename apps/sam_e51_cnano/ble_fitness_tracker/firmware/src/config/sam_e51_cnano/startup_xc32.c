@@ -90,7 +90,7 @@ __STATIC_INLINE void FPU_Enable(void)
 {
     uint32_t primask = __get_PRIMASK();
     __disable_irq();
-     SCB->CPACR |= (((uint32_t)0xFU) << 20);
+    SCB->CPACR |= (((uint32_t)0xFU) << 20);
     __DSB();
     __ISB();
 

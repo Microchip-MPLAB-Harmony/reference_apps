@@ -159,7 +159,6 @@ The prebuilt hex file can be programmed by following the below steps.
   and tap on the **Heart Rate Service**, it will redirect to **Sensor Location** screen.
 <img src = "images/mbd_appscreen5.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
-- Press SW0 on SAM E51 Curiosity Nano Evaluation Kit, the LED0 on SAM E51 Curiosity Nano Evaluation Kit glows when SW0 is pressed.
 - Keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.
   <img src = "images/finger_placement.png" width="432" height="158" align="middle">
 
@@ -169,13 +168,12 @@ The prebuilt hex file can be programmed by following the below steps.
 <img src = "images/mbd_appscreen6.jpg" width="250" height="450" align="middle">
 <img src = "images/mbd_appscreen7.jpg" width="250" height="450" align="middle">
 
+- LED0 on SAM E51 Curiosity Nano Evaluation Kit will glow on.
 - Wait till the LED "LED0" on SAM E51 Curiosity Nano Evaluation Kit goes off. Once the LED is off, lift your finger.
   **Note**: Make sure smartphone screens are not turned off and don't switch to any other App(s) on your smartphone.
 - The heart rate value (in bpm - beats per minute) gets displayed on the **Sensor Loaction** screen as shown
   in the figure below. Also, the same heart rate value gets displayed on the Eink E-Paper display 2,9" 296x128 dots display.
 <img src = "images/mbd_appscreen8.png" width="250" height="450" align="middle">
-
-### Note: Disable and enable the Notify Button before the LED turns off.
 
 ### Running the Demo without BLE:
 #### Note: To test the demo without BLE, disconnect the BM71-XPRO from EXT 1 connector of the Curiosity Nano Base board.
@@ -187,8 +185,6 @@ The prebuilt hex file can be programmed by following the below steps.
 <img src = "images/result_screen.png">
 - Wait till the LED "LED0" on SAM E51 Curiosity Nano Evaluation Kit goes off and then lift your finger
 - The heart rate value (in bpm - beats per minute) gets displayed on the Eink E-Paper display 2,9" 296x128 dots display
-
-### Note: Repeat the steps above if you see an inaccuracy in the heart rate reading shown on display for the first time.
 
 ## Comments:
 - Place your index finger gently on the heart rate 9 click sensor, don't push or put pressure on the sensor (the heart rate values may not be accurate)

@@ -13,7 +13,7 @@
   Description:
     This file is the implementation of the internal functions of the BM71
     driver related to BLE.
- 
+
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -104,7 +104,7 @@ void CUSTOM_BM71_BLE_QueryStatus(const BM71_HANDLE handle)
 
   Description:
     Enable or disable BLE advertising.
- 
+
   Precondition:
     CUSTOM_BM71_Open must have been called to obtain a valid opened device handle.
 
@@ -136,7 +136,7 @@ void CUSTOM_BM71_BLE_Query_status( void )
     chksum = command[2] + command[3];
     chksum = ~chksum + 1;
     command[4] = chksum;
-    CUSTOM_BM71_SendBytesAsCompleteCommand(&command[0], 5);  
+    CUSTOM_BM71_SendBytesAsCompleteCommand(&command[0], 5);
 }
 
 void CUSTOM_BM71_BLE_Reset( void )
@@ -164,23 +164,23 @@ void CUSTOM_BM71_SendSPPData(uint8_t *data, uint16_t size, uint8_t connHandle)
     {
         size = 640;
     }
-    uint8_t *p = data;  
+    uint8_t *p = data;
 
     command[0] = 0xAA;      //header byte 0
     command[1] = 0x00;      //header byte 1
     command[2] = 0x04+size;
     command[3] = BM_SERVER_CHARACTERISTIC_SEND;  //command ID
-    command[4] = connHandle; 
+    command[4] = connHandle;
     command[5] = 0x80;
     command[6] = hr_measurment_handle;
     chksum = command[2] + command[3] + command[4] + command[5] + command[6];
-    
+
     for(i = 0; i<size; i++)
     {
         command[7+i] = *p;
         chksum += *p++;
     }
-    
+
     chksum = ~chksum + 1;
     command[7+size] = chksum;
     CUSTOM_BM71_SendBytesAsCompleteCommand(&command[0], 8+size);
@@ -198,26 +198,26 @@ void CUSTOM_BM71_BLE_WriteAdvertisingData(void)
 //
 //    char *name = "MCHP_SAM_E51_HR_Sensor";
 //    size = strlen(name);
-//    char *p = name;   
+//    char *p = name;
 //
 //    command[0] = 0xAA;      //header byte 0
 //    command[1] = 0x00;      //header byte 1
 //    command[2] = 0x07+size;
 //    command[3] = BM_ADV_DATA_WRITE;      //command ID
 //    command[4] = 0x01;
-//    command[5] = 0x02;    
+//    command[5] = 0x02;
 //    command[6] = ADV_FLAGS;
 //    command[7] = 0x05;
-//    command[8] = size+1;   
-//    command[9] = ADV_COMPLETE_NAME;  
+//    command[8] = size+1;
+//    command[9] = ADV_COMPLETE_NAME;
 //    chksum = command[2] + command[3] + command[4] + command[5] + command[6] + command[7] + command[8] + command[9];
-//    
+//
 //    for(i = 0; i<size; i++)
 //    {
 //        command[10+i] = (uint8_t)*p;
 //        chksum += (uint8_t)*p++;
 //    }
-//    
+//
 //    chksum = ~chksum + 1;
 //    command[10+size] = chksum;
 //    CUSTOM_BM71_SendBytesAsCompleteCommand(&command[0], 11+size);
@@ -250,8 +250,8 @@ void CUSTOM_BM71_BLE_SetAdvertisingParams(void)
     command[3] = BM_ADV_PARAM_SET;      //command ID
     command[4] = 0x06;      // advertising interval (1600*0.625 ms = 1 sec)
     command[5] = 0x40;      // advertising interval (lo byte)
-    command[6] = 0x00;      // advertising type      
-    command[7] = 0x00;      // direct address type      
+    command[6] = 0x00;      // advertising type
+    command[7] = 0x00;      // direct address type
     command[8] = 0x00;      // public or random device address
     command[9] = 0x00;
     command[10] = 0x00;

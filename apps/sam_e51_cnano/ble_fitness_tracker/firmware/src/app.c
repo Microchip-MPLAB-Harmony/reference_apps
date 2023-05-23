@@ -170,6 +170,7 @@ void APP_Tasks ( void )
             appData.app_state           = APP_IDLE_STATE;
             break;
         case CHKNG_HEART_RATE_DATA_RDY_STATE:
+            CNANO_LED_Clear();
             if(true == is_heartrate9_byte_ready())  // Checking the Heartrate sensor data ready Status
             {
                 heartRateMeasuredData   = -1;
