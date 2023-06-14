@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA90208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T23:00:10Z */
+/* file generated from device description version 2023-05-18T19:14:33Z */
 #ifndef _PIC32CZCA90_SQI1_INSTANCE_
 #define _PIC32CZCA90_SQI1_INSTANCE_
 
@@ -28,13 +28,13 @@
 /* ========== Instance Parameter definitions for SQI1 peripheral ========== */
 #define SQI1_CBUF_DEPTH                          (3)        
 #define SQI1_GCLK_ID                             (57)       /* Index of Generic Clock */
+#define SQI1_INSTANCE_ID                         (58)       /* Instance index for SQI1 */
+#define SQI1_MCLK_ID_AHB                         (67)       /* Index for SQI1 AHB clock */
+#define SQI1_PAC_ID                              (58)       /* Index for SQI1 registers write protection */
 #define SQI1_SFR_ADDRESS                         (0x4f009000) 
 #define SQI1_TRXBUF_DEPTH                        (8)        
 #define SQI1_XIP_ADDRESS                         (0x90)     
 #define SQI1_XIP_CS_MSB                          (1)        
 #define SQI1_XIP_HSEL                            (0)        
-#define SQI1_INSTANCE_ID                         (58)       /* Instance index for SQI1 */
-#define SQI1_MCLK_ID_AHB                         (67)       /* Index for SQI1 AHB clock */
-#define SQI1_PAC_ID                              (58)       /* Index for SQI1 registers write protection */
 
 #endif /* _PIC32CZCA90_SQI1_INSTANCE_ */

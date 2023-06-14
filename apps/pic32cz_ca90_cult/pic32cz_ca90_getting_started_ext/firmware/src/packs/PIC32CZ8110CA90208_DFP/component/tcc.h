@@ -1,7 +1,7 @@
 /*
  * Component description for TCC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T23:00:10Z */
+/* file generated from device description version 2023-05-18T19:14:33Z */
 #ifndef _PIC32CZCA90_TCC_COMPONENT_H_
 #define _PIC32CZCA90_TCC_COMPONENT_H_
 
@@ -1117,7 +1117,7 @@
 #define TCC_WAVE_WAVEGEN_DSBOTH               (TCC_WAVE_WAVEGEN_DSBOTH_Val << TCC_WAVE_WAVEGEN_Pos) /* (TCC_WAVE) Dual-slope with interrupt/event condition when COUNT reaches ZERO or TOP Position  */
 #define TCC_WAVE_WAVEGEN_DSTOP                (TCC_WAVE_WAVEGEN_DSTOP_Val << TCC_WAVE_WAVEGEN_Pos) /* (TCC_WAVE) Dual-slope with interrupt/event condition when COUNT reaches TOP Position  */
 #define TCC_WAVE_RAMP_Pos                     _UINT32_(4)                                          /* (TCC_WAVE) Ramp Mode Position */
-#define TCC_WAVE_RAMP_Msk                     (_UINT32_(0x3) << TCC_WAVE_RAMP_Pos)                 /* (TCC_WAVE) Ramp Mode Mask */
+#define TCC_WAVE_RAMP_Msk                     (_UINT32_(0x7) << TCC_WAVE_RAMP_Pos)                 /* (TCC_WAVE) Ramp Mode Mask */
 #define TCC_WAVE_RAMP(value)                  (TCC_WAVE_RAMP_Msk & (_UINT32_(value) << TCC_WAVE_RAMP_Pos)) /* Assigment of value for RAMP in the TCC_WAVE register */
 #define   TCC_WAVE_RAMP_RAMP1_Val             _UINT32_(0x0)                                        /* (TCC_WAVE) RAMP1 operation  */
 #define   TCC_WAVE_RAMP_RAMP2A_Val            _UINT32_(0x1)                                        /* (TCC_WAVE) Alternative RAMP2 operation  */
@@ -1180,7 +1180,7 @@
 #define TCC_WAVE_SWAP3_Pos                    _UINT32_(27)                                         /* (TCC_WAVE) Swap DTI Output Pair 3 Position */
 #define TCC_WAVE_SWAP3_Msk                    (_UINT32_(0x1) << TCC_WAVE_SWAP3_Pos)                /* (TCC_WAVE) Swap DTI Output Pair 3 Mask */
 #define TCC_WAVE_SWAP3(value)                 (TCC_WAVE_SWAP3_Msk & (_UINT32_(value) << TCC_WAVE_SWAP3_Pos)) /* Assigment of value for SWAP3 in the TCC_WAVE register */
-#define TCC_WAVE_Msk                          _UINT32_(0x0FFF0FB7)                                 /* (TCC_WAVE) Register Mask  */
+#define TCC_WAVE_Msk                          _UINT32_(0x0FFF0FF7)                                 /* (TCC_WAVE) Register Mask  */
 
 #define TCC_WAVE_CICCEN_Pos                   _UINT32_(8)                                          /* (TCC_WAVE Position) Circular Channel x Enable */
 #define TCC_WAVE_CICCEN_Msk                   (_UINT32_(0xF) << TCC_WAVE_CICCEN_Pos)               /* (TCC_WAVE Mask) CICCEN */

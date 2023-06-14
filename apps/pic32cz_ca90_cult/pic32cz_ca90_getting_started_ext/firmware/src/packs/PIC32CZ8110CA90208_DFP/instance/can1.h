@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA90208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T23:00:10Z */
+/* file generated from device description version 2023-05-18T19:14:33Z */
 #ifndef _PIC32CZCA90_CAN1_INSTANCE_
 #define _PIC32CZCA90_CAN1_INSTANCE_
 
@@ -30,10 +30,10 @@
 #define CAN1_ECC_BERR_IMPLEMENTED                (0)        /* ECC error */
 #define CAN1_EXT_TSTAMP_IMPLEMENTED              (0)        /* External time stamp */
 #define CAN1_GCLK_ID                             (47)       /* Index of Generic Clock */
-#define CAN1_MSG_RAM_ADDR                        (0x20)     /* 8-bits MSB */
-#define CAN1_RXD_SYNC_METHOD                     (0)        /* RXD Synchronization Method */
 #define CAN1_INSTANCE_ID                         (49)       /* Instance index for CAN1 */
 #define CAN1_MCLK_ID_AHB                         (57)       /* Index for CAN1 AHB clock */
+#define CAN1_MSG_RAM_ADDR                        (0x20)     /* 8-bits MSB */
 #define CAN1_PAC_ID                              (49)       /* Index for CAN1 registers write protection */
+#define CAN1_RXD_SYNC_METHOD                     (0)        /* RXD Synchronization Method */
 
 #endif /* _PIC32CZCA90_CAN1_INSTANCE_ */

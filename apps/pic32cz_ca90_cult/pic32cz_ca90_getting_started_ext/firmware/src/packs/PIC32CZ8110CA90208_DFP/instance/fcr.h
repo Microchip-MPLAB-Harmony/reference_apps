@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA90208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T23:00:10Z */
+/* file generated from device description version 2023-05-18T19:14:33Z */
 #ifndef _PIC32CZCA90_FCR_INSTANCE_
 #define _PIC32CZCA90_FCR_INSTANCE_
 
@@ -38,12 +38,12 @@
 #define FCR_CRC_PRESENT                          (1)        /* Flash Read Controller Parameters */
 #define FCR_DAL_ADDR                             (1)        /* Flash Read Controller Parameters */
 #define FCR_ECC_PRESENT                          (1)        /* Flash Read Controller Parameters */
+#define FCR_F1RR_ADDR                            (1)        /* Flash Read Controller Parameters */
+#define FCR_F2RR_ADDR                            (1)        /* Flash Read Controller Parameters */
 #define FCR_FFF_ADDR                             (1)        /* Flash Read Controller Parameters */
 #define FCR_FLT_PRESENT                          (0)        /* Flash Read Controller Parameters */
 #define FCR_FUSES_DATA_CYCLES                    (4)        /* Flash Read Controller Parameters */
 #define FCR_FUSES_READY_CYCLES                   (1)        /* Flash Read Controller Parameters */
-#define FCR_F1RR_ADDR                            (1)        /* Flash Read Controller Parameters */
-#define FCR_F2RR_ADDR                            (1)        /* Flash Read Controller Parameters */
 #define FCR_HDATA_SIZE                           (64)       /* Flash Read Controller Parameters */
 #define FCR_HSM_CFG0_BASE                        (64)       /* Flash Read Controller Parameters */
 #define FCR_HSM_CFG1_BASE                        (64)       /* Flash Read Controller Parameters */
@@ -61,7 +61,11 @@
 #define FCR_TCALH_NS                             (10000)    /* Flash Read Controller Parameters */
 #define FCR_FUSES_DATA_MSB                       (127)      /* Flash Read Controller Parameters */
 #define FCR_FUSES_RDY_MSB                        (8)        /* Flash Read Controller Parameters */
+#define FCR_INSTANCE_ID                          (2)        /* Instance index for FCR */
+#define FCR_MCLK_ID_AHB                          (4)        /* Index for FCR AHB clock */
+#define FCR_MCLK_ID_APB                          (5)        /* Index for FCR APB clock */
 #define FCR_NVR_NUM_PAGES                        (24)       /* Flash Memory Parameters */
+#define FCR_PAC_ID                               (2)        /* Index for FCR registers write protection */
 #define FCR_PFM_ACC_HT_NS                        (30)       /* Flash Read Controller Parameters */
 #define FCR_PFM_ACC_NS                           (25)       /* Flash Read Controller Parameters */
 #define FCR_PFM_ACC_RECALL_NS                    (70)       /* Flash Read Controller Parameters */
@@ -82,9 +86,5 @@
 #define FCR_PFM_TONWAIT_NS                       (6000)     /* Flash Read Controller Parameters */
 #define FCR_PFM_TRHR_NS                          (1000)     /* Flash Read Controller Parameters */
 #define FCR_PFM_TRT_NS                           (500)      /* Flash Read Controller Parameters */
-#define FCR_INSTANCE_ID                          (2)        /* Instance index for FCR */
-#define FCR_MCLK_ID_AHB                          (4)        /* Index for FCR AHB clock */
-#define FCR_MCLK_ID_APB                          (5)        /* Index for FCR APB clock */
-#define FCR_PAC_ID                               (2)        /* Index for FCR registers write protection */
 
 #endif /* _PIC32CZCA90_FCR_INSTANCE_ */

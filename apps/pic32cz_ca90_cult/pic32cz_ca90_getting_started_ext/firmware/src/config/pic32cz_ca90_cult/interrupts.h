@@ -72,7 +72,6 @@ void DMA_PRI2_InterruptHandler (void);
 void DMA_PRI1_InterruptHandler (void);
 void DMA_PRI0_InterruptHandler (void);
 void SERCOM0_I2C_InterruptHandler (void);
-void SERCOM1_USART_InterruptHandler (void);
 
 
 
