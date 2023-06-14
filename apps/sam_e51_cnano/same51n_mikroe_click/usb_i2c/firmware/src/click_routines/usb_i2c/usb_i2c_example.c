@@ -52,7 +52,6 @@
 #include "definitions.h"                // SYS function prototypes
 #include "usb_i2c_example.h"
 #include "usb_i2c.h"
-#include "click_routines\click_interface.h"
 
 #define USB_I2C_EMULATED_EEPROM_START_ADDR             0x00
 #define USB_I2C_EMULATED_EEPROM_PAGE_SIZE_BYTES        256
