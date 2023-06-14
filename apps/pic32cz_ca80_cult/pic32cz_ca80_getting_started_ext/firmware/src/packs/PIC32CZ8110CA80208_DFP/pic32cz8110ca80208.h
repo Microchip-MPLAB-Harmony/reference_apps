@@ -1,7 +1,7 @@
 /*
  * Header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* File generated from device description version 2022-07-07T22:59:24Z */
+/* File generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZ8110CA80208_H_
 #define _PIC32CZ8110CA80208_H_
 

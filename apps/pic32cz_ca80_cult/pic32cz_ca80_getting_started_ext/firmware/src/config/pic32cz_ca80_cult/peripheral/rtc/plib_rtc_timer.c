@@ -44,9 +44,8 @@
 #include "interrupts.h"
 #include "plib_rtc.h"
 #include <stdlib.h>
-#include <limits.h>
 
-static RTC_OBJECT rtcObj;
+volatile static RTC_OBJECT rtcObj;
 
 
 void RTC_Initialize(void)
@@ -210,7 +209,7 @@ void RTC_Timer32CallbackRegister ( RTC_TIMER32_CALLBACK callback, uintptr_t cont
     rtcObj.context            = context;
 }
 
-void RTC_InterruptHandler( void )
+void __attribute__((used)) RTC_InterruptHandler( void )
 {
     rtcObj.timer32intCause = (RTC_TIMER32_INT_MASK) RTC_REGS->MODE0.RTC_INTFLAG;
     RTC_REGS->MODE0.RTC_INTFLAG = (uint16_t)RTC_MODE0_INTFLAG_Msk;
@@ -219,6 +218,8 @@ void RTC_InterruptHandler( void )
     /* Invoke registered Callback function */
     if(rtcObj.timer32BitCallback != NULL)
     {
-        rtcObj.timer32BitCallback( rtcObj.timer32intCause, rtcObj.context );
+        RTC_TIMER32_INT_MASK timer32intCause = rtcObj.timer32intCause;
+        uintptr_t context = rtcObj.context;
+        rtcObj.timer32BitCallback( timer32intCause, context );
     }
 }

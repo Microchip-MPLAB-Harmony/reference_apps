@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_EIC_INSTANCE_
 #define _PIC32CZCA80_EIC_INSTANCE_
 
@@ -28,11 +28,11 @@
 /* ========== Instance Parameter definitions for EIC peripheral ========== */
 #define EIC_EXTINT_NUM                           (16)       /* Number of external interrupts */
 #define EIC_GCLK_ID                              (5)        /* Generic Clock index */
-#define EIC_NUMBER_OF_CONFIG_REGS                (2)        /* Number of CONFIG registers */
-#define EIC_NUMBER_OF_INTERRUPTS                 (16)       /* Number of external interrupts (obsolete) */
-#define EIC_SECURE_IMPLEMENTED                   (0)        /* Security Configuration implemented? */
 #define EIC_INSTANCE_ID                          (13)       /* Instance index for EIC */
 #define EIC_MCLK_ID_APB                          (16)       /* Index for EIC APB clock */
+#define EIC_NUMBER_OF_CONFIG_REGS                (2)        /* Number of CONFIG registers */
+#define EIC_NUMBER_OF_INTERRUPTS                 (16)       /* Number of external interrupts (obsolete) */
 #define EIC_PAC_ID                               (13)       /* Index for EIC registers write protection */
+#define EIC_SECURE_IMPLEMENTED                   (0)        /* Security Configuration implemented? */
 
 #endif /* _PIC32CZCA80_EIC_INSTANCE_ */

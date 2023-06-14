@@ -1,7 +1,7 @@
 /*
  * Component description for FUSES
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_FUSES_COMPONENT_H_
 #define _PIC32CZCA80_FUSES_COMPONENT_H_
 
@@ -141,20 +141,16 @@
 #define   FUSES_RPMU_VREGCTRL_OFFSTDBY_ON_Val _UINT32_(0x1)                                        /* (FUSES_RPMU_VREGCTRL) In standby mode, VREGSW1,2,3 are ON  */
 #define FUSES_RPMU_VREGCTRL_OFFSTDBY_OFF      (FUSES_RPMU_VREGCTRL_OFFSTDBY_OFF_Val << FUSES_RPMU_VREGCTRL_OFFSTDBY_Pos) /* (FUSES_RPMU_VREGCTRL) In standby mode, VREGSW1,2,3 are OFF Position  */
 #define FUSES_RPMU_VREGCTRL_OFFSTDBY_ON       (FUSES_RPMU_VREGCTRL_OFFSTDBY_ON_Val << FUSES_RPMU_VREGCTRL_OFFSTDBY_Pos) /* (FUSES_RPMU_VREGCTRL) In standby mode, VREGSW1,2,3 are ON Position  */
-#define FUSES_RPMU_VREGCTRL_LVSTDBY_Pos       _UINT32_(4)                                          /* (FUSES_RPMU_VREGCTRL) Low Voltage Standby Enable Position */
-#define FUSES_RPMU_VREGCTRL_LVSTDBY_Msk       (_UINT32_(0x1) << FUSES_RPMU_VREGCTRL_LVSTDBY_Pos)   /* (FUSES_RPMU_VREGCTRL) Low Voltage Standby Enable Mask */
-#define FUSES_RPMU_VREGCTRL_LVSTDBY(value)    (FUSES_RPMU_VREGCTRL_LVSTDBY_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_LVSTDBY_Pos)) /* Assigment of value for LVSTDBY in the FUSES_RPMU_VREGCTRL register */
-#define   FUSES_RPMU_VREGCTRL_LVSTDBY_1p2v_Val _UINT32_(0x0)                                        /* (FUSES_RPMU_VREGCTRL) In standby mode, VDDCORE_BU, VDDCORE_RAM, VDDCORE_SW and optionnaly VDDCOREUSB/PLL are set to 1.2v.  */
-#define   FUSES_RPMU_VREGCTRL_LVSTDBY_0p8v_Val _UINT32_(0x1)                                        /* (FUSES_RPMU_VREGCTRL) In standby mode, VDDCORE_BU, VDDCORE_RAM, VDDCORE_SW and optionnaly VDDCOREUSB/PLL are set to 0.8v.  */
-#define FUSES_RPMU_VREGCTRL_LVSTDBY_1p2v      (FUSES_RPMU_VREGCTRL_LVSTDBY_1p2v_Val << FUSES_RPMU_VREGCTRL_LVSTDBY_Pos) /* (FUSES_RPMU_VREGCTRL) In standby mode, VDDCORE_BU, VDDCORE_RAM, VDDCORE_SW and optionnaly VDDCOREUSB/PLL are set to 1.2v. Position  */
-#define FUSES_RPMU_VREGCTRL_LVSTDBY_0p8v      (FUSES_RPMU_VREGCTRL_LVSTDBY_0p8v_Val << FUSES_RPMU_VREGCTRL_LVSTDBY_Pos) /* (FUSES_RPMU_VREGCTRL) In standby mode, VDDCORE_BU, VDDCORE_RAM, VDDCORE_SW and optionnaly VDDCOREUSB/PLL are set to 0.8v. Position  */
-#define FUSES_RPMU_VREGCTRL_LVHIB_Pos         _UINT32_(5)                                          /* (FUSES_RPMU_VREGCTRL) Low Voltage Hibernate Enable Position */
-#define FUSES_RPMU_VREGCTRL_LVHIB_Msk         (_UINT32_(0x1) << FUSES_RPMU_VREGCTRL_LVHIB_Pos)     /* (FUSES_RPMU_VREGCTRL) Low Voltage Hibernate Enable Mask */
-#define FUSES_RPMU_VREGCTRL_LVHIB(value)      (FUSES_RPMU_VREGCTRL_LVHIB_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_LVHIB_Pos)) /* Assigment of value for LVHIB in the FUSES_RPMU_VREGCTRL register */
-#define   FUSES_RPMU_VREGCTRL_LVHIB_1p2v_Val  _UINT32_(0x0)                                        /* (FUSES_RPMU_VREGCTRL) In Hibernate mode, VDDCORE_BU and VDDCORE_RAM are set to 1.2v.  */
-#define   FUSES_RPMU_VREGCTRL_LVHIB_0p8v_Val  _UINT32_(0x1)                                        /* (FUSES_RPMU_VREGCTRL) In Hibernate mode, VDDCORE_BU and VDDCORE_RAM are set to 0.8v  */
-#define FUSES_RPMU_VREGCTRL_LVHIB_1p2v        (FUSES_RPMU_VREGCTRL_LVHIB_1p2v_Val << FUSES_RPMU_VREGCTRL_LVHIB_Pos) /* (FUSES_RPMU_VREGCTRL) In Hibernate mode, VDDCORE_BU and VDDCORE_RAM are set to 1.2v. Position  */
-#define FUSES_RPMU_VREGCTRL_LVHIB_0p8v        (FUSES_RPMU_VREGCTRL_LVHIB_0p8v_Val << FUSES_RPMU_VREGCTRL_LVHIB_Pos) /* (FUSES_RPMU_VREGCTRL) In Hibernate mode, VDDCORE_BU and VDDCORE_RAM are set to 0.8v Position  */
+#define FUSES_RPMU_VREGCTRL_SRAM_VLD_Pos      _UINT32_(4)                                          /* (FUSES_RPMU_VREGCTRL) SRAM Valid (always clear) Position */
+#define FUSES_RPMU_VREGCTRL_SRAM_VLD_Msk      (_UINT32_(0x1) << FUSES_RPMU_VREGCTRL_SRAM_VLD_Pos)  /* (FUSES_RPMU_VREGCTRL) SRAM Valid (always clear) Mask */
+#define FUSES_RPMU_VREGCTRL_SRAM_VLD(value)   (FUSES_RPMU_VREGCTRL_SRAM_VLD_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_SRAM_VLD_Pos)) /* Assigment of value for SRAM_VLD in the FUSES_RPMU_VREGCTRL register */
+#define   FUSES_RPMU_VREGCTRL_SRAM_VLD_CLEAR_Val _UINT32_(0x0)                                        /* (FUSES_RPMU_VREGCTRL) Always clear.  */
+#define FUSES_RPMU_VREGCTRL_SRAM_VLD_CLEAR    (FUSES_RPMU_VREGCTRL_SRAM_VLD_CLEAR_Val << FUSES_RPMU_VREGCTRL_SRAM_VLD_Pos) /* (FUSES_RPMU_VREGCTRL) Always clear. Position  */
+#define FUSES_RPMU_VREGCTRL_BKUP_VLD_Pos      _UINT32_(5)                                          /* (FUSES_RPMU_VREGCTRL) Backup Valid (always clear) Position */
+#define FUSES_RPMU_VREGCTRL_BKUP_VLD_Msk      (_UINT32_(0x1) << FUSES_RPMU_VREGCTRL_BKUP_VLD_Pos)  /* (FUSES_RPMU_VREGCTRL) Backup Valid (always clear) Mask */
+#define FUSES_RPMU_VREGCTRL_BKUP_VLD(value)   (FUSES_RPMU_VREGCTRL_BKUP_VLD_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_BKUP_VLD_Pos)) /* Assigment of value for BKUP_VLD in the FUSES_RPMU_VREGCTRL register */
+#define   FUSES_RPMU_VREGCTRL_BKUP_VLD_CLEAR_Val _UINT32_(0x0)                                        /* (FUSES_RPMU_VREGCTRL) Always clear.  */
+#define FUSES_RPMU_VREGCTRL_BKUP_VLD_CLEAR    (FUSES_RPMU_VREGCTRL_BKUP_VLD_CLEAR_Val << FUSES_RPMU_VREGCTRL_BKUP_VLD_Pos) /* (FUSES_RPMU_VREGCTRL) Always clear. Position  */
 #define FUSES_RPMU_VREGCTRL_CPEN_Pos          _UINT32_(8)                                          /* (FUSES_RPMU_VREGCTRL) Charge Pump Enable and Auto-enable. Position */
 #define FUSES_RPMU_VREGCTRL_CPEN_Msk          (_UINT32_(0x7) << FUSES_RPMU_VREGCTRL_CPEN_Pos)      /* (FUSES_RPMU_VREGCTRL) Charge Pump Enable and Auto-enable. Mask */
 #define FUSES_RPMU_VREGCTRL_CPEN(value)       (FUSES_RPMU_VREGCTRL_CPEN_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_CPEN_Pos)) /* Assigment of value for CPEN in the FUSES_RPMU_VREGCTRL register */
@@ -182,6 +178,10 @@
 #define FUSES_RPMU_VREGCTRL_AVREGEN_Pos       _UINT32_(16)                                         /* (FUSES_RPMU_VREGCTRL) Additional Voltage Regulator Enable Position */
 #define FUSES_RPMU_VREGCTRL_AVREGEN_Msk       (_UINT32_(0x7) << FUSES_RPMU_VREGCTRL_AVREGEN_Pos)   /* (FUSES_RPMU_VREGCTRL) Additional Voltage Regulator Enable Mask */
 #define FUSES_RPMU_VREGCTRL_AVREGEN(value)    (FUSES_RPMU_VREGCTRL_AVREGEN_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_AVREGEN_Pos)) /* Assigment of value for AVREGEN in the FUSES_RPMU_VREGCTRL register */
+#define   FUSES_RPMU_VREGCTRL_AVREGEN_OFF_Val _UINT32_(0x0)                                        /* (FUSES_RPMU_VREGCTRL) Always clear.  */
+#define   FUSES_RPMU_VREGCTRL_AVREGEN_PLL_EN_Val _UINT32_(0x4)                                        /* (FUSES_RPMU_VREGCTRL) Always clear.  */
+#define FUSES_RPMU_VREGCTRL_AVREGEN_OFF       (FUSES_RPMU_VREGCTRL_AVREGEN_OFF_Val << FUSES_RPMU_VREGCTRL_AVREGEN_Pos) /* (FUSES_RPMU_VREGCTRL) Always clear. Position  */
+#define FUSES_RPMU_VREGCTRL_AVREGEN_PLL_EN    (FUSES_RPMU_VREGCTRL_AVREGEN_PLL_EN_Val << FUSES_RPMU_VREGCTRL_AVREGEN_Pos) /* (FUSES_RPMU_VREGCTRL) Always clear. Position  */
 #define FUSES_RPMU_VREGCTRL_AVREGSTDBY_Pos    _UINT32_(24)                                         /* (FUSES_RPMU_VREGCTRL) Additional Voltage Regulator Configuration Position */
 #define FUSES_RPMU_VREGCTRL_AVREGSTDBY_Msk    (_UINT32_(0x7) << FUSES_RPMU_VREGCTRL_AVREGSTDBY_Pos) /* (FUSES_RPMU_VREGCTRL) Additional Voltage Regulator Configuration Mask */
 #define FUSES_RPMU_VREGCTRL_AVREGSTDBY(value) (FUSES_RPMU_VREGCTRL_AVREGSTDBY_Msk & (_UINT32_(value) << FUSES_RPMU_VREGCTRL_AVREGSTDBY_Pos)) /* Assigment of value for AVREGSTDBY in the FUSES_RPMU_VREGCTRL register */
@@ -292,6 +292,48 @@
 #define FUSES_FCCFG66_ACPAIR_SEL_Msk          (_UINT32_(0xFF) << FUSES_FCCFG66_ACPAIR_SEL_Pos)     /* (FUSES_FCCFG66)  Mask */
 #define FUSES_FCCFG66_ACPAIR_SEL(value)       (FUSES_FCCFG66_ACPAIR_SEL_Msk & (_UINT32_(value) << FUSES_FCCFG66_ACPAIR_SEL_Pos)) /* Assigment of value for ACPAIR_SEL in the FUSES_FCCFG66 register */
 #define FUSES_FCCFG66_Msk                     _UINT32_(0x000000FF)                                 /* (FUSES_FCCFG66) Register Mask  */
+
+
+/* -------- FUSES_FCCFG69 : (FUSES Offset: 0x194) ( R/ 32) Temperature  calibration values 0 -------- */
+#define FUSES_FCCFG69_ROOM_ADC_VAL_PTAT_Pos   _UINT32_(0)                                          /* (FUSES_FCCFG69)  Position */
+#define FUSES_FCCFG69_ROOM_ADC_VAL_PTAT_Msk   (_UINT32_(0xFFF) << FUSES_FCCFG69_ROOM_ADC_VAL_PTAT_Pos) /* (FUSES_FCCFG69)  Mask */
+#define FUSES_FCCFG69_ROOM_ADC_VAL_PTAT(value) (FUSES_FCCFG69_ROOM_ADC_VAL_PTAT_Msk & (_UINT32_(value) << FUSES_FCCFG69_ROOM_ADC_VAL_PTAT_Pos)) /* Assigment of value for ROOM_ADC_VAL_PTAT in the FUSES_FCCFG69 register */
+#define FUSES_FCCFG69_ROOM_ADC_VAL_BUFF1V2_Pos _UINT32_(12)                                         /* (FUSES_FCCFG69)  Position */
+#define FUSES_FCCFG69_ROOM_ADC_VAL_BUFF1V2_Msk (_UINT32_(0xFFF) << FUSES_FCCFG69_ROOM_ADC_VAL_BUFF1V2_Pos) /* (FUSES_FCCFG69)  Mask */
+#define FUSES_FCCFG69_ROOM_ADC_VAL_BUFF1V2(value) (FUSES_FCCFG69_ROOM_ADC_VAL_BUFF1V2_Msk & (_UINT32_(value) << FUSES_FCCFG69_ROOM_ADC_VAL_BUFF1V2_Pos)) /* Assigment of value for ROOM_ADC_VAL_BUFF1V2 in the FUSES_FCCFG69 register */
+#define FUSES_FCCFG69_ROOM_TEMP_VAL_INT_Pos   _UINT32_(24)                                         /* (FUSES_FCCFG69)  Position */
+#define FUSES_FCCFG69_ROOM_TEMP_VAL_INT_Msk   (_UINT32_(0xFF) << FUSES_FCCFG69_ROOM_TEMP_VAL_INT_Pos) /* (FUSES_FCCFG69)  Mask */
+#define FUSES_FCCFG69_ROOM_TEMP_VAL_INT(value) (FUSES_FCCFG69_ROOM_TEMP_VAL_INT_Msk & (_UINT32_(value) << FUSES_FCCFG69_ROOM_TEMP_VAL_INT_Pos)) /* Assigment of value for ROOM_TEMP_VAL_INT in the FUSES_FCCFG69 register */
+#define FUSES_FCCFG69_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (FUSES_FCCFG69) Register Mask  */
+
+
+/* -------- FUSES_FCCFG70 : (FUSES Offset: 0x198) ( R/ 32) Temperature  calibration values 1 -------- */
+#define FUSES_FCCFG70_ROOM_TEMP_VAL_DEC_Pos   _UINT32_(0)                                          /* (FUSES_FCCFG70)  Position */
+#define FUSES_FCCFG70_ROOM_TEMP_VAL_DEC_Msk   (_UINT32_(0xF) << FUSES_FCCFG70_ROOM_TEMP_VAL_DEC_Pos) /* (FUSES_FCCFG70)  Mask */
+#define FUSES_FCCFG70_ROOM_TEMP_VAL_DEC(value) (FUSES_FCCFG70_ROOM_TEMP_VAL_DEC_Msk & (_UINT32_(value) << FUSES_FCCFG70_ROOM_TEMP_VAL_DEC_Pos)) /* Assigment of value for ROOM_TEMP_VAL_DEC in the FUSES_FCCFG70 register */
+#define FUSES_FCCFG70_ROOM_VREF_VAL_Pos       _UINT32_(4)                                          /* (FUSES_FCCFG70)  Position */
+#define FUSES_FCCFG70_ROOM_VREF_VAL_Msk       (_UINT32_(0xFFF) << FUSES_FCCFG70_ROOM_VREF_VAL_Pos) /* (FUSES_FCCFG70)  Mask */
+#define FUSES_FCCFG70_ROOM_VREF_VAL(value)    (FUSES_FCCFG70_ROOM_VREF_VAL_Msk & (_UINT32_(value) << FUSES_FCCFG70_ROOM_VREF_VAL_Pos)) /* Assigment of value for ROOM_VREF_VAL in the FUSES_FCCFG70 register */
+#define FUSES_FCCFG70_HOT_TEMP_VAL_DEC_Pos    _UINT32_(16)                                         /* (FUSES_FCCFG70)  Position */
+#define FUSES_FCCFG70_HOT_TEMP_VAL_DEC_Msk    (_UINT32_(0xF) << FUSES_FCCFG70_HOT_TEMP_VAL_DEC_Pos) /* (FUSES_FCCFG70)  Mask */
+#define FUSES_FCCFG70_HOT_TEMP_VAL_DEC(value) (FUSES_FCCFG70_HOT_TEMP_VAL_DEC_Msk & (_UINT32_(value) << FUSES_FCCFG70_HOT_TEMP_VAL_DEC_Pos)) /* Assigment of value for HOT_TEMP_VAL_DEC in the FUSES_FCCFG70 register */
+#define FUSES_FCCFG70_Reserved_Pos            _UINT32_(20)                                         /* (FUSES_FCCFG70)  Position */
+#define FUSES_FCCFG70_Reserved_Msk            (_UINT32_(0xFFF) << FUSES_FCCFG70_Reserved_Pos)      /* (FUSES_FCCFG70)  Mask */
+#define FUSES_FCCFG70_Reserved(value)         (FUSES_FCCFG70_Reserved_Msk & (_UINT32_(value) << FUSES_FCCFG70_Reserved_Pos)) /* Assigment of value for Reserved in the FUSES_FCCFG70 register */
+#define FUSES_FCCFG70_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (FUSES_FCCFG70) Register Mask  */
+
+
+/* -------- FUSES_FCCFG71 : (FUSES Offset: 0x19C) ( R/ 32) Temperature  calibration values 2 -------- */
+#define FUSES_FCCFG71_HOT_ADC_VAL_PTAT_Pos    _UINT32_(0)                                          /* (FUSES_FCCFG71)  Position */
+#define FUSES_FCCFG71_HOT_ADC_VAL_PTAT_Msk    (_UINT32_(0xFFF) << FUSES_FCCFG71_HOT_ADC_VAL_PTAT_Pos) /* (FUSES_FCCFG71)  Mask */
+#define FUSES_FCCFG71_HOT_ADC_VAL_PTAT(value) (FUSES_FCCFG71_HOT_ADC_VAL_PTAT_Msk & (_UINT32_(value) << FUSES_FCCFG71_HOT_ADC_VAL_PTAT_Pos)) /* Assigment of value for HOT_ADC_VAL_PTAT in the FUSES_FCCFG71 register */
+#define FUSES_FCCFG71_HOT_ADC_VAL_BUFF1V2_Pos _UINT32_(12)                                         /* (FUSES_FCCFG71)  Position */
+#define FUSES_FCCFG71_HOT_ADC_VAL_BUFF1V2_Msk (_UINT32_(0xFFF) << FUSES_FCCFG71_HOT_ADC_VAL_BUFF1V2_Pos) /* (FUSES_FCCFG71)  Mask */
+#define FUSES_FCCFG71_HOT_ADC_VAL_BUFF1V2(value) (FUSES_FCCFG71_HOT_ADC_VAL_BUFF1V2_Msk & (_UINT32_(value) << FUSES_FCCFG71_HOT_ADC_VAL_BUFF1V2_Pos)) /* Assigment of value for HOT_ADC_VAL_BUFF1V2 in the FUSES_FCCFG71 register */
+#define FUSES_FCCFG71_HOT_TEMP_VAL_INT_Pos    _UINT32_(24)                                         /* (FUSES_FCCFG71)  Position */
+#define FUSES_FCCFG71_HOT_TEMP_VAL_INT_Msk    (_UINT32_(0xFF) << FUSES_FCCFG71_HOT_TEMP_VAL_INT_Pos) /* (FUSES_FCCFG71)  Mask */
+#define FUSES_FCCFG71_HOT_TEMP_VAL_INT(value) (FUSES_FCCFG71_HOT_TEMP_VAL_INT_Msk & (_UINT32_(value) << FUSES_FCCFG71_HOT_TEMP_VAL_INT_Pos)) /* Assigment of value for HOT_TEMP_VAL_INT in the FUSES_FCCFG71 register */
+#define FUSES_FCCFG71_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (FUSES_FCCFG71) Register Mask  */
 
 
 /* -------- FUSES_FCCFG72 : (FUSES Offset: 0x1A0) ( R/ 32) MAC ID (31 through 0) -------- */
@@ -561,6 +603,9 @@
 #define FUSES_FCCFG64_REG_OFST         _UINT32_(0x180)     /* (FUSES_FCCFG64) PTC Calibration Offset */
 #define FUSES_FCCFG65_REG_OFST         _UINT32_(0x184)     /* (FUSES_FCCFG65) ADC Calibration Offset */
 #define FUSES_FCCFG66_REG_OFST         _UINT32_(0x188)     /* (FUSES_FCCFG66) Comparator Calibration Offset */
+#define FUSES_FCCFG69_REG_OFST         _UINT32_(0x194)     /* (FUSES_FCCFG69) Temperature  calibration values 0 Offset */
+#define FUSES_FCCFG70_REG_OFST         _UINT32_(0x198)     /* (FUSES_FCCFG70) Temperature  calibration values 1 Offset */
+#define FUSES_FCCFG71_REG_OFST         _UINT32_(0x19C)     /* (FUSES_FCCFG71) Temperature  calibration values 2 Offset */
 #define FUSES_FCCFG72_REG_OFST         _UINT32_(0x1A0)     /* (FUSES_FCCFG72) MAC ID (31 through 0) Offset */
 #define FUSES_FCCFG73_REG_OFST         _UINT32_(0x1A4)     /* (FUSES_FCCFG73) MAC ID (47 through 32) Offset */
 #define FUSES_FCCFG_UNIQID_REG_OFST    _UINT32_(0x1E0)     /* (FUSES_FCCFG_UNIQID) Factory programed Unique ID Offset */
@@ -618,7 +663,10 @@ typedef struct
   __I   uint32_t                       FUSES_FCCFG64;      /**< Offset: 0x180 (R/   32) PTC Calibration */
   __I   uint32_t                       FUSES_FCCFG65;      /**< Offset: 0x184 (R/   32) ADC Calibration */
   __I   uint32_t                       FUSES_FCCFG66;      /**< Offset: 0x188 (R/   32) Comparator Calibration */
-  __I   uint8_t                        Reserved2[0x14];
+  __I   uint8_t                        Reserved2[0x08];
+  __I   uint32_t                       FUSES_FCCFG69;      /**< Offset: 0x194 (R/   32) Temperature  calibration values 0 */
+  __I   uint32_t                       FUSES_FCCFG70;      /**< Offset: 0x198 (R/   32) Temperature  calibration values 1 */
+  __I   uint32_t                       FUSES_FCCFG71;      /**< Offset: 0x19C (R/   32) Temperature  calibration values 2 */
   __I   uint32_t                       FUSES_FCCFG72;      /**< Offset: 0x1A0 (R/   32) MAC ID (31 through 0) */
   __I   uint32_t                       FUSES_FCCFG73;      /**< Offset: 0x1A4 (R/   32) MAC ID (47 through 32) */
   __I   uint8_t                        Reserved3[0x38];

@@ -1,7 +1,7 @@
 /*
  * Component description for ADC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_ADC_COMPONENT_H_
 #define _PIC32CZCA80_ADC_COMPONENT_H_
 
@@ -978,7 +978,7 @@
 #define ADC_CTRLC_CNT_Msk                     (_UINT32_(0xFFFF) << ADC_CTRLC_CNT_Pos)              /* (ADC_CTRLC) Clock Divider for Synchronous Trigger Mask */
 #define ADC_CTRLC_CNT(value)                  (ADC_CTRLC_CNT_Msk & (_UINT32_(value) << ADC_CTRLC_CNT_Pos)) /* Assigment of value for CNT in the ADC_CTRLC register */
 #define ADC_CTRLC_COREINTERLEAVED_Pos         _UINT32_(28)                                         /* (ADC_CTRLC) Number of Core to Interleave Triggers Position */
-#define ADC_CTRLC_COREINTERLEAVED_Msk         (_UINT32_(0x3) << ADC_CTRLC_COREINTERLEAVED_Pos)     /* (ADC_CTRLC) Number of Core to Interleave Triggers Mask */
+#define ADC_CTRLC_COREINTERLEAVED_Msk         (_UINT32_(0x7) << ADC_CTRLC_COREINTERLEAVED_Pos)     /* (ADC_CTRLC) Number of Core to Interleave Triggers Mask */
 #define ADC_CTRLC_COREINTERLEAVED(value)      (ADC_CTRLC_COREINTERLEAVED_Msk & (_UINT32_(value) << ADC_CTRLC_COREINTERLEAVED_Pos)) /* Assigment of value for COREINTERLEAVED in the ADC_CTRLC register */
 #define   ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_OFF_Val _UINT32_(0x0)                                        /* (ADC_CTRLC) Interleaving Off  */
 #define   ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_0_1_Val _UINT32_(0x4)                                        /* (ADC_CTRLC) Interleaving Cores 0 and 1  */
@@ -992,7 +992,7 @@
 #define ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_0_1_2 (ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_0_1_2_Val << ADC_CTRLC_COREINTERLEAVED_Pos) /* (ADC_CTRLC) Interleaving Cores 0, 1 and 2 Position  */
 #define ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_1_2_3 (ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_1_2_3_Val << ADC_CTRLC_COREINTERLEAVED_Pos) /* (ADC_CTRLC) Interleaving Cores 1, 2 and 3 Position  */
 #define ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_0_1_2_3 (ADC_CTRLC_COREINTERLEAVED_INTERLEAVING_CORES_0_1_2_3_Val << ADC_CTRLC_COREINTERLEAVED_Pos) /* (ADC_CTRLC) Interleaving Cores 0, 1, 2 and 3 Position  */
-#define ADC_CTRLC_Msk                         _UINT32_(0x3000FFFF)                                 /* (ADC_CTRLC) Register Mask  */
+#define ADC_CTRLC_Msk                         _UINT32_(0x7000FFFF)                                 /* (ADC_CTRLC) Register Mask  */
 
 
 /* -------- ADC_CTRLD : (ADC Offset: 0x10) (R/W 32) Control D Register -------- */

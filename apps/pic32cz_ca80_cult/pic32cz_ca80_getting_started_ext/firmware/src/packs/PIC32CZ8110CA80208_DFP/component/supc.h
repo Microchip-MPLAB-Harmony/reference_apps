@@ -1,7 +1,7 @@
 /*
  * Component description for SUPC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_SUPC_COMPONENT_H_
 #define _PIC32CZCA80_SUPC_COMPONENT_H_
 
@@ -207,7 +207,7 @@
 
 
 /* -------- SUPC_VREGCTRL : (SUPC Offset: 0x1C) (R/W 32) VREG Control -------- */
-#define SUPC_VREGCTRL_RESETVALUE              _UINT32_(0x30)                                       /*  (SUPC_VREGCTRL) VREG Control  Reset Value */
+#define SUPC_VREGCTRL_RESETVALUE              _UINT32_(0x00)                                       /*  (SUPC_VREGCTRL) VREG Control  Reset Value */
 
 #define SUPC_VREGCTRL_VREGOUT_Pos             _UINT32_(0)                                          /* (SUPC_VREGCTRL) VREG Output Control in RUN mode only. Enable by production fuse by CALSUPC.VREGOUTEN Position */
 #define SUPC_VREGCTRL_VREGOUT_Msk             (_UINT32_(0x3) << SUPC_VREGCTRL_VREGOUT_Pos)         /* (SUPC_VREGCTRL) VREG Output Control in RUN mode only. Enable by production fuse by CALSUPC.VREGOUTEN Mask */

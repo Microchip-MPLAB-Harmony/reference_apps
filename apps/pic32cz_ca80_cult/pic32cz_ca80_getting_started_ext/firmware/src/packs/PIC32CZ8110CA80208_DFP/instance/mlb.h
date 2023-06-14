@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,17 +20,17 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_MLB_INSTANCE_
 #define _PIC32CZCA80_MLB_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for MLB peripheral ========== */
 #define MLB_GCLK_ID                              (62)       /* Index of Generic Clock */
-#define MLB_MEM_MARGINADJ_MSB                    (4)        /* MBIST input margin adjustment control */
 #define MLB_INSTANCE_ID                          (66)       /* Instance index for MLB */
 #define MLB_MCLK_ID_AHB                          (78)       /* Index for MLB AHB clock */
 #define MLB_MCLK_ID_APB                          (79)       /* Index for MLB APB clock */
+#define MLB_MEM_MARGINADJ_MSB                    (4)        /* MBIST input margin adjustment control */
 #define MLB_PAC_ID                               (66)       /* Index for MLB registers write protection */
 
 #endif /* _PIC32CZCA80_MLB_INSTANCE_ */

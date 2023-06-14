@@ -1,7 +1,7 @@
 /*
  * Component description for OSCCTRL
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_OSCCTRL_COMPONENT_H_
 #define _PIC32CZCA80_OSCCTRL_COMPONENT_H_
 
@@ -70,16 +70,10 @@
 #define OSCCTRL_INTENCLR_PLL0LOCKR_Pos        _UINT32_(24)                                         /* (OSCCTRL_INTENCLR) PLL 0 Lock Rise Interrupt Enable Position */
 #define OSCCTRL_INTENCLR_PLL0LOCKR_Msk        (_UINT32_(0x1) << OSCCTRL_INTENCLR_PLL0LOCKR_Pos)    /* (OSCCTRL_INTENCLR) PLL 0 Lock Rise Interrupt Enable Mask */
 #define OSCCTRL_INTENCLR_PLL0LOCKR(value)     (OSCCTRL_INTENCLR_PLL0LOCKR_Msk & (_UINT32_(value) << OSCCTRL_INTENCLR_PLL0LOCKR_Pos)) /* Assigment of value for PLL0LOCKR in the OSCCTRL_INTENCLR register */
-#define OSCCTRL_INTENCLR_PLL0LOCKF_Pos        _UINT32_(25)                                         /* (OSCCTRL_INTENCLR) PLL 0 Lock Fall Interrupt Enable Position */
-#define OSCCTRL_INTENCLR_PLL0LOCKF_Msk        (_UINT32_(0x1) << OSCCTRL_INTENCLR_PLL0LOCKF_Pos)    /* (OSCCTRL_INTENCLR) PLL 0 Lock Fall Interrupt Enable Mask */
-#define OSCCTRL_INTENCLR_PLL0LOCKF(value)     (OSCCTRL_INTENCLR_PLL0LOCKF_Msk & (_UINT32_(value) << OSCCTRL_INTENCLR_PLL0LOCKF_Pos)) /* Assigment of value for PLL0LOCKF in the OSCCTRL_INTENCLR register */
 #define OSCCTRL_INTENCLR_PLL1LOCKR_Pos        _UINT32_(26)                                         /* (OSCCTRL_INTENCLR) PLL 1 Lock Rise Interrupt Enable Position */
 #define OSCCTRL_INTENCLR_PLL1LOCKR_Msk        (_UINT32_(0x1) << OSCCTRL_INTENCLR_PLL1LOCKR_Pos)    /* (OSCCTRL_INTENCLR) PLL 1 Lock Rise Interrupt Enable Mask */
 #define OSCCTRL_INTENCLR_PLL1LOCKR(value)     (OSCCTRL_INTENCLR_PLL1LOCKR_Msk & (_UINT32_(value) << OSCCTRL_INTENCLR_PLL1LOCKR_Pos)) /* Assigment of value for PLL1LOCKR in the OSCCTRL_INTENCLR register */
-#define OSCCTRL_INTENCLR_PLL1LOCKF_Pos        _UINT32_(27)                                         /* (OSCCTRL_INTENCLR) PLL 1 Lock Fall Interrupt Enable Position */
-#define OSCCTRL_INTENCLR_PLL1LOCKF_Msk        (_UINT32_(0x1) << OSCCTRL_INTENCLR_PLL1LOCKF_Pos)    /* (OSCCTRL_INTENCLR) PLL 1 Lock Fall Interrupt Enable Mask */
-#define OSCCTRL_INTENCLR_PLL1LOCKF(value)     (OSCCTRL_INTENCLR_PLL1LOCKF_Msk & (_UINT32_(value) << OSCCTRL_INTENCLR_PLL1LOCKF_Pos)) /* Assigment of value for PLL1LOCKF in the OSCCTRL_INTENCLR register */
-#define OSCCTRL_INTENCLR_Msk                  _UINT32_(0x0F003F07)                                 /* (OSCCTRL_INTENCLR) Register Mask  */
+#define OSCCTRL_INTENCLR_Msk                  _UINT32_(0x05003F07)                                 /* (OSCCTRL_INTENCLR) Register Mask  */
 
 
 /* -------- OSCCTRL_INTENSET : (OSCCTRL Offset: 0x08) (R/W 32) Interrupt Enable Set -------- */
@@ -115,16 +109,10 @@
 #define OSCCTRL_INTENSET_PLL0LOCKR_Pos        _UINT32_(24)                                         /* (OSCCTRL_INTENSET) PLL 0 Lock Rise Interrupt Enable Position */
 #define OSCCTRL_INTENSET_PLL0LOCKR_Msk        (_UINT32_(0x1) << OSCCTRL_INTENSET_PLL0LOCKR_Pos)    /* (OSCCTRL_INTENSET) PLL 0 Lock Rise Interrupt Enable Mask */
 #define OSCCTRL_INTENSET_PLL0LOCKR(value)     (OSCCTRL_INTENSET_PLL0LOCKR_Msk & (_UINT32_(value) << OSCCTRL_INTENSET_PLL0LOCKR_Pos)) /* Assigment of value for PLL0LOCKR in the OSCCTRL_INTENSET register */
-#define OSCCTRL_INTENSET_PLL0LOCKF_Pos        _UINT32_(25)                                         /* (OSCCTRL_INTENSET) PLL 0 Lock Fall Interrupt Enable Position */
-#define OSCCTRL_INTENSET_PLL0LOCKF_Msk        (_UINT32_(0x1) << OSCCTRL_INTENSET_PLL0LOCKF_Pos)    /* (OSCCTRL_INTENSET) PLL 0 Lock Fall Interrupt Enable Mask */
-#define OSCCTRL_INTENSET_PLL0LOCKF(value)     (OSCCTRL_INTENSET_PLL0LOCKF_Msk & (_UINT32_(value) << OSCCTRL_INTENSET_PLL0LOCKF_Pos)) /* Assigment of value for PLL0LOCKF in the OSCCTRL_INTENSET register */
 #define OSCCTRL_INTENSET_PLL1LOCKR_Pos        _UINT32_(26)                                         /* (OSCCTRL_INTENSET) PLL 1 Lock Rise Interrupt Enable Position */
 #define OSCCTRL_INTENSET_PLL1LOCKR_Msk        (_UINT32_(0x1) << OSCCTRL_INTENSET_PLL1LOCKR_Pos)    /* (OSCCTRL_INTENSET) PLL 1 Lock Rise Interrupt Enable Mask */
 #define OSCCTRL_INTENSET_PLL1LOCKR(value)     (OSCCTRL_INTENSET_PLL1LOCKR_Msk & (_UINT32_(value) << OSCCTRL_INTENSET_PLL1LOCKR_Pos)) /* Assigment of value for PLL1LOCKR in the OSCCTRL_INTENSET register */
-#define OSCCTRL_INTENSET_PLL1LOCKF_Pos        _UINT32_(27)                                         /* (OSCCTRL_INTENSET) PLL 1 Lock Fall Interrupt Enable Position */
-#define OSCCTRL_INTENSET_PLL1LOCKF_Msk        (_UINT32_(0x1) << OSCCTRL_INTENSET_PLL1LOCKF_Pos)    /* (OSCCTRL_INTENSET) PLL 1 Lock Fall Interrupt Enable Mask */
-#define OSCCTRL_INTENSET_PLL1LOCKF(value)     (OSCCTRL_INTENSET_PLL1LOCKF_Msk & (_UINT32_(value) << OSCCTRL_INTENSET_PLL1LOCKF_Pos)) /* Assigment of value for PLL1LOCKF in the OSCCTRL_INTENSET register */
-#define OSCCTRL_INTENSET_Msk                  _UINT32_(0x0F003F07)                                 /* (OSCCTRL_INTENSET) Register Mask  */
+#define OSCCTRL_INTENSET_Msk                  _UINT32_(0x05003F07)                                 /* (OSCCTRL_INTENSET) Register Mask  */
 
 
 /* -------- OSCCTRL_INTFLAG : (OSCCTRL Offset: 0x0C) (R/W 32) Interrupt Flag Status and Clear -------- */
@@ -160,16 +148,10 @@
 #define OSCCTRL_INTFLAG_PLL0LOCKR_Pos         _UINT32_(24)                                         /* (OSCCTRL_INTFLAG) PLL 0 Lock Rise Position */
 #define OSCCTRL_INTFLAG_PLL0LOCKR_Msk         (_UINT32_(0x1) << OSCCTRL_INTFLAG_PLL0LOCKR_Pos)     /* (OSCCTRL_INTFLAG) PLL 0 Lock Rise Mask */
 #define OSCCTRL_INTFLAG_PLL0LOCKR(value)      (OSCCTRL_INTFLAG_PLL0LOCKR_Msk & (_UINT32_(value) << OSCCTRL_INTFLAG_PLL0LOCKR_Pos)) /* Assigment of value for PLL0LOCKR in the OSCCTRL_INTFLAG register */
-#define OSCCTRL_INTFLAG_PLL0LOCKF_Pos         _UINT32_(25)                                         /* (OSCCTRL_INTFLAG) PLL 0 Lock Fall Position */
-#define OSCCTRL_INTFLAG_PLL0LOCKF_Msk         (_UINT32_(0x1) << OSCCTRL_INTFLAG_PLL0LOCKF_Pos)     /* (OSCCTRL_INTFLAG) PLL 0 Lock Fall Mask */
-#define OSCCTRL_INTFLAG_PLL0LOCKF(value)      (OSCCTRL_INTFLAG_PLL0LOCKF_Msk & (_UINT32_(value) << OSCCTRL_INTFLAG_PLL0LOCKF_Pos)) /* Assigment of value for PLL0LOCKF in the OSCCTRL_INTFLAG register */
 #define OSCCTRL_INTFLAG_PLL1LOCKR_Pos         _UINT32_(26)                                         /* (OSCCTRL_INTFLAG) PLL 1 Lock Rise Position */
 #define OSCCTRL_INTFLAG_PLL1LOCKR_Msk         (_UINT32_(0x1) << OSCCTRL_INTFLAG_PLL1LOCKR_Pos)     /* (OSCCTRL_INTFLAG) PLL 1 Lock Rise Mask */
 #define OSCCTRL_INTFLAG_PLL1LOCKR(value)      (OSCCTRL_INTFLAG_PLL1LOCKR_Msk & (_UINT32_(value) << OSCCTRL_INTFLAG_PLL1LOCKR_Pos)) /* Assigment of value for PLL1LOCKR in the OSCCTRL_INTFLAG register */
-#define OSCCTRL_INTFLAG_PLL1LOCKF_Pos         _UINT32_(27)                                         /* (OSCCTRL_INTFLAG) PLL 1 Lock Fall Position */
-#define OSCCTRL_INTFLAG_PLL1LOCKF_Msk         (_UINT32_(0x1) << OSCCTRL_INTFLAG_PLL1LOCKF_Pos)     /* (OSCCTRL_INTFLAG) PLL 1 Lock Fall Mask */
-#define OSCCTRL_INTFLAG_PLL1LOCKF(value)      (OSCCTRL_INTFLAG_PLL1LOCKF_Msk & (_UINT32_(value) << OSCCTRL_INTFLAG_PLL1LOCKF_Pos)) /* Assigment of value for PLL1LOCKF in the OSCCTRL_INTFLAG register */
-#define OSCCTRL_INTFLAG_Msk                   _UINT32_(0x0F003F07)                                 /* (OSCCTRL_INTFLAG) Register Mask  */
+#define OSCCTRL_INTFLAG_Msk                   _UINT32_(0x05003F07)                                 /* (OSCCTRL_INTFLAG) Register Mask  */
 
 
 /* -------- OSCCTRL_STATUS : (OSCCTRL Offset: 0x10) ( R/ 32) Status -------- */

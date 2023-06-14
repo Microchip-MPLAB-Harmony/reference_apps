@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_ETH_INSTANCE_
 #define _PIC32CZCA80_ETH_INSTANCE_
 
@@ -28,11 +28,11 @@
 /* ========== Instance Parameter definitions for ETH peripheral ========== */
 #define ETH_GCLK_ID_TSU                          (55)       /* 1588 External Clock */
 #define ETH_GCLK_ID_TX                           (54)       /* GIGE/Loopback clock */
+#define ETH_INSTANCE_ID                          (56)       /* Instance index for ETH */
+#define ETH_MCLK_ID_APB                          (65)       /* Index for ETH APB clock */
+#define ETH_MCLK_ID_AXI                          (64)       /* Index for ETH AXI clock */
 #define ETH_MEM_MARGINADJ_MSB                    (9)        /* Number of Memory Margin Adjust bits */
 #define ETH_NUM_INT                              (6)        /* Number of Interrupts */
-#define ETH_INSTANCE_ID                          (56)       /* Instance index for ETH */
-#define ETH_MCLK_ID_AXI                          (64)       /* Index for ETH AXI clock */
-#define ETH_MCLK_ID_APB                          (65)       /* Index for ETH APB clock */
 #define ETH_PAC_ID                               (56)       /* Index for ETH registers write protection */
 
 #endif /* _PIC32CZCA80_ETH_INSTANCE_ */

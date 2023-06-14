@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_RSTC_INSTANCE_
 #define _PIC32CZCA80_RSTC_INSTANCE_
 
@@ -31,9 +31,9 @@
 #define RSTC_CM_HRESET_N_STRETCHED               (12)       /* Reset stretcher size for Cortex CPU related to HRESETn. */
 #define RSTC_CM_PORESET_STRETCHED                (12)       /* Reset stretcher size for Cortex CPU related to PORESET. */
 #define RSTC_HIB_IMPLEMENTED                     (1)        
-#define RSTC_VBAT_IMPLEMENTED                    (0)        /* One if VBAT (Battery backup mode) is supported */
 #define RSTC_INSTANCE_ID                         (5)        /* Instance index for RSTC */
 #define RSTC_MCLK_ID_APB                         (8)        /* Index for RSTC APB clock */
 #define RSTC_PAC_ID                              (5)        /* Index for RSTC registers write protection */
+#define RSTC_VBAT_IMPLEMENTED                    (0)        /* One if VBAT (Battery backup mode) is supported */
 
 #endif /* _PIC32CZCA80_RSTC_INSTANCE_ */

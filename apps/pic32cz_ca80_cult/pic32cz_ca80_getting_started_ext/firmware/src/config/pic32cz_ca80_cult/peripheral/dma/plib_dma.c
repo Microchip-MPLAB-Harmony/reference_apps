@@ -64,7 +64,7 @@ typedef struct
 } DMA_CH_OBJECT ;
 
 /* DMA Channels object information structure */
-static DMA_CH_OBJECT dmaChannelObj[DMA_CHANNELS_NUMBER];
+volatile static DMA_CH_OBJECT dmaChannelObj[DMA_CHANNELS_NUMBER];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -151,7 +151,7 @@ bool DMA_ChannelTransfer( DMA_CHANNEL channel, const void *srcAddr, const void *
 
 
 /*******************************************************************************
-    This function function allows a DMAC PLIB client to set an event handler.
+    This function function allows a DMA PLIB client to set an event handler.
 ********************************************************************************/
 
 void DMA_ChannelCallbackRegister( DMA_CHANNEL channel, const DMA_CHANNEL_CALLBACK callback, const uintptr_t context )
@@ -278,14 +278,14 @@ void DMA_ChannelPatternIgnoreValue ( DMA_CHANNEL channel, uint8_t ignoreValue )
     // CHCTRLBk is CHCTRLAk.ENABLE=1 write protected
     if (((DMA_REGS->CHANNEL[channel].DMA_CHCTRLA & DMA_CHCTRLA_ENABLE_Msk)) == 0U)
     {
-        DMA_REGS->CHANNEL[channel].DMA_CHPDAT = (DMA_REGS->CHANNEL[channel].DMA_CHPDAT & ~DMA_CHPDAT_PIGN_Msk) | (ignoreValue << DMA_CHPDAT_PIGN_Pos);
+        DMA_REGS->CHANNEL[channel].DMA_CHPDAT = (DMA_REGS->CHANNEL[channel].DMA_CHPDAT & ~DMA_CHPDAT_PIGN_Msk) | ((uint32_t)ignoreValue << DMA_CHPDAT_PIGN_Pos);
     }
 }
 
 /*-----------------------------------------------------------------------------*/
 
 /*******************************************************************************
-    This function returns the current channel settings for the specified DMAC Channel
+    This function returns the current channel settings for the specified DMA Channel
 ********************************************************************************/
 
 DMA_CHANNEL_CONFIG DMA_ChannelSettingsGet (DMA_CHANNEL channel)
@@ -294,7 +294,7 @@ DMA_CHANNEL_CONFIG DMA_ChannelSettingsGet (DMA_CHANNEL channel)
 }
 
 /*******************************************************************************
-    This function changes the current settings of the specified DMAC channel.
+    This function changes the current settings of the specified DMA channel.
 ********************************************************************************/
 
 bool DMA_ChannelSettingsSet (DMA_CHANNEL channel, DMA_CHANNEL_CONFIG setting)
@@ -311,18 +311,99 @@ bool DMA_ChannelSettingsSet (DMA_CHANNEL channel, DMA_CHANNEL_CONFIG setting)
     return ChannelSettingsSet;
 }
 
+/*******************************************************************************
+    This function disables the CRC functionality of the specified DMA channel
+********************************************************************************/
+
+void DMA_ChannelCRCDisable(DMA_CHANNEL channel)
+{
+    // CHCTRLBk is CHCTRLAk.ENABLE=1 write protected
+    if ((DMA_REGS->CHANNEL[channel].DMA_CHCTRLA & DMA_CHCTRLA_ENABLE_Msk) == 0U)
+    {
+        DMA_REGS->CHANNEL[channel].DMA_CHCTRLB &= ~DMA_CHCTRLB_CRCEN_Msk;
+    }
+}
+
+/*******************************************************************************
+    This function sets the CRC functionality of the specified DMA channel
+    for calculating CRC. This Function has to be called before submitting
+    DMA transfer request for the channel to calculate CRC
+********************************************************************************/
+
+void DMA_ChannelCRCSetup(DMA_CHANNEL channel, DMA_CRC_SETUP *CRCSetup)
+{
+    uint32_t crcSettings = 0U;
+
+    /* Disable CRC Engine before configuring */
+    DMA_ChannelCRCDisable(channel);
+
+    if ((CRCSetup->crc_mode == DMA_CRC_MODE_16_BIT_CRCPOLYA) || (CRCSetup->crc_mode == DMA_CRC_MODE_32_BIT_CRCPOLYA))
+    {
+        DMA_REGS->DMA_CRCPOLYA = CRCSetup->polynomial;
+    }
+    else if ((CRCSetup->crc_mode == DMA_CRC_MODE_16_BIT_CRCPOLYB) || (CRCSetup->crc_mode == DMA_CRC_MODE_32_BIT_CRCPOLYB))
+    {
+        DMA_REGS->DMA_CRCPOLYB = CRCSetup->polynomial;
+    }
+    else
+    {
+       /* MISRA C compliance */
+    }
+
+    /* CHCTRLBk is CHCTRLAk.ENABLE=1 write protected */
+    if ((DMA_REGS->CHANNEL[channel].DMA_CHCTRLA & DMA_CHCTRLA_ENABLE_Msk) == 0U)
+    {
+        /* Store Initial Seed value */
+        DMA_REGS->CHANNEL[channel].DMA_CHCRCDAT = CRCSetup->seed;
+
+        crcSettings = DMA_CHCTRLCRC_CRCMD(CRCSetup->crc_mode);
+
+        if (CRCSetup->appendMode)
+        {
+            crcSettings |= DMA_CHCTRLCRC_CRCAPP_Msk;
+        }
+        if (CRCSetup->xorMode)
+        {
+            crcSettings |= DMA_CHCTRLCRC_CRCXOR_Msk;
+        }
+        if (CRCSetup->reflectedOutput)
+        {
+            crcSettings |= DMA_CHCTRLCRC_CRCROUT_Msk;
+        }
+        if (CRCSetup->reflectedInput)
+        {
+            crcSettings |= DMA_CHCTRLCRC_CRCRIN_Msk;
+        }
+
+        /* Setup the CRC engine for DMA Channel */
+        DMA_REGS->CHANNEL[channel].DMA_CHCTRLCRC = crcSettings;
+
+        /* Enable CRC for DMA Channel */
+        DMA_REGS->CHANNEL[channel].DMA_CHCTRLB |= DMA_CHCTRLB_CRCEN_Msk;
+    }
+}
+
+/*******************************************************************************
+    This function returns the caclculated CRC Value.
+********************************************************************************/
+
+uint32_t DMA_ChannelCRCRead(DMA_CHANNEL channel)
+{
+    return DMA_REGS->CHANNEL[channel].DMA_CHCRCDAT;
+}
+
 //*******************************************************************************
 //    Functions to handle DMA interrupt events.
 //*******************************************************************************
-static void DMA_interruptHandler(uint32_t channel)
+static void __attribute__((used)) DMA_interruptHandler(uint32_t channel)
 {
-    DMA_CH_OBJECT  *dmacChObj = NULL;
+    volatile DMA_CH_OBJECT  *dmacChObj;
     volatile uint32_t chIntFlagStatus = 0U;
     volatile uint32_t chIntFlagsEnabled = 0U;
 
     DMA_TRANSFER_EVENT event = 0U;
 
-    dmacChObj = (DMA_CH_OBJECT *)&dmaChannelObj[channel];
+    dmacChObj = &dmaChannelObj[channel];
 
     /* Get the DMA channel interrupt flag status */
     chIntFlagStatus = DMA_REGS->CHANNEL[channel].DMA_CHINTF;
@@ -383,11 +464,13 @@ static void DMA_interruptHandler(uint32_t channel)
     /* Execute the callback function */
     if ((dmacChObj->callback != NULL) && (event != 0U))
     {
-        dmacChObj->callback (event, dmacChObj->context);
+        uintptr_t context = dmacChObj->context;
+
+        dmacChObj->callback (event, context);
     }
 }
 
-void DMA_PRI0_InterruptHandler( void )
+void __attribute__((used)) DMA_PRI0_InterruptHandler( void )
 {
     volatile uint32_t dmaIntPriority1Status = 0U;
     uint32_t channel = 0U;
@@ -403,7 +486,7 @@ void DMA_PRI0_InterruptHandler( void )
         }
     }
 }
-void DMA_PRI1_InterruptHandler( void )
+void __attribute__((used)) DMA_PRI1_InterruptHandler( void )
 {
     volatile uint32_t dmaIntPriority2Status = 0U;
     uint32_t channel = 0U;
@@ -419,7 +502,7 @@ void DMA_PRI1_InterruptHandler( void )
         }
     }
 }
-void DMA_PRI2_InterruptHandler( void )
+void __attribute__((used)) DMA_PRI2_InterruptHandler( void )
 {
     volatile uint32_t dmaIntPriority3Status = 0U;
     uint32_t channel = 0U;
@@ -435,7 +518,7 @@ void DMA_PRI2_InterruptHandler( void )
         }
     }
 }
-void DMA_PRI3_InterruptHandler( void )
+void __attribute__((used)) DMA_PRI3_InterruptHandler( void )
 {
     volatile uint32_t dmaIntPriority4Status = 0U;
     uint32_t channel = 0U;

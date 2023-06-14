@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_TCC6_INSTANCE_
 #define _PIC32CZCA80_TCC6_INSTANCE_
 
@@ -33,14 +33,14 @@
 #define TCC6_DMAC_ID_OVF                         (59)       /* DMA overflow/underflow/retrigger trigger */
 #define TCC6_DTI                                 (1)        /* Dead-Time-Insertion feature implemented */
 #define TCC6_GCLK_ID                             (37)       /* Index of Generic Clock */
+#define TCC6_INSTANCE_ID                         (39)       /* Instance index for TCC6 */
 #define TCC6_MASTER_SLAVE_MODE                   (0)        /* TCC type 0 : NA, 1 : Master, 2 : Slave */
+#define TCC6_MCLK_ID_APB                         (47)       /* Index for TCC6 APB clock */
 #define TCC6_OTMX                                (0)        /* Output Matrix feature implemented */
 #define TCC6_OW_NUM                              (2)        /* Number of Output Waveforms */
+#define TCC6_PAC_ID                              (39)       /* Index for TCC6 registers write protection */
 #define TCC6_PG                                  (0)        /* Pattern Generation feature implemented */
 #define TCC6_SIZE                                (32)       
 #define TCC6_SWAP                                (1)        /* DTI outputs swap feature implemented */
-#define TCC6_INSTANCE_ID                         (39)       /* Instance index for TCC6 */
-#define TCC6_MCLK_ID_APB                         (47)       /* Index for TCC6 APB clock */
-#define TCC6_PAC_ID                              (39)       /* Index for TCC6 registers write protection */
 
 #endif /* _PIC32CZCA80_TCC6_INSTANCE_ */

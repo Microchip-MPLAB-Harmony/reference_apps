@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_SPI_IXS1_INSTANCE_
 #define _PIC32CZCA80_SPI_IXS1_INSTANCE_
 
@@ -29,9 +29,9 @@
 #define SPI_IXS1_DMAC_ID_RX                      (81)       
 #define SPI_IXS1_DMAC_ID_TX                      (82)       
 #define SPI_IXS1_GCLK_ID                         (45)       /* Index of Generic Clock */
-#define SPI_IXS1_TPD_MASTER                      (0)        /* Indicates a master or slave number for TPD mode( 1=master,0=slave) */
 #define SPI_IXS1_INSTANCE_ID                     (47)       /* Instance index for SPI_IXS1 */
 #define SPI_IXS1_MCLK_ID_APB                     (55)       /* Index for SPI_IXS1 APB clock */
 #define SPI_IXS1_PAC_ID                          (47)       /* Index for SPI_IXS1 registers write protection */
+#define SPI_IXS1_TPD_MASTER                      (0)        /* Indicates a master or slave number for TPD mode( 1=master,0=slave) */
 
 #endif /* _PIC32CZCA80_SPI_IXS1_INSTANCE_ */

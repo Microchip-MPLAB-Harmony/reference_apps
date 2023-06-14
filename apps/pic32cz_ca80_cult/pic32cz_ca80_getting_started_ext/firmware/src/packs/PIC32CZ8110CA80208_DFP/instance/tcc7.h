@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CZ8110CA80208
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-07-07T22:59:24Z */
+/* file generated from device description version 2023-05-18T19:14:05Z */
 #ifndef _PIC32CZCA80_TCC7_INSTANCE_
 #define _PIC32CZCA80_TCC7_INSTANCE_
 
@@ -33,14 +33,14 @@
 #define TCC7_DMAC_ID_OVF                         (62)       /* DMA overflow/underflow/retrigger trigger */
 #define TCC7_DTI                                 (1)        /* Dead-Time-Insertion feature implemented */
 #define TCC7_GCLK_ID                             (38)       /* Index of Generic Clock */
+#define TCC7_INSTANCE_ID                         (40)       /* Instance index for TCC7 */
 #define TCC7_MASTER_SLAVE_MODE                   (0)        /* TCC type 0 : NA, 1 : Master, 2 : Slave */
+#define TCC7_MCLK_ID_APB                         (48)       /* Index for TCC7 APB clock */
 #define TCC7_OTMX                                (0)        /* Output Matrix feature implemented */
 #define TCC7_OW_NUM                              (2)        /* Number of Output Waveforms */
+#define TCC7_PAC_ID                              (40)       /* Index for TCC7 registers write protection */
 #define TCC7_PG                                  (0)        /* Pattern Generation feature implemented */
 #define TCC7_SIZE                                (32)       
 #define TCC7_SWAP                                (1)        /* DTI outputs swap feature implemented */
-#define TCC7_INSTANCE_ID                         (40)       /* Instance index for TCC7 */
-#define TCC7_MCLK_ID_APB                         (48)       /* Index for TCC7 APB clock */
-#define TCC7_PAC_ID                              (40)       /* Index for TCC7 registers write protection */
 
 #endif /* _PIC32CZCA80_TCC7_INSTANCE_ */
