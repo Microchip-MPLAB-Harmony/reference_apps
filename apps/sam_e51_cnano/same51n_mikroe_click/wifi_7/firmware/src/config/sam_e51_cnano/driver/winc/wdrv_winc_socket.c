@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -115,6 +115,57 @@ static void _WDRV_WINC_ICMPEchoResponseCallback
 // Section: WINC Driver Socket Mode Implementation
 // *****************************************************************************
 // *****************************************************************************
+
+//*******************************************************************************
+/*
+  Function:
+    static WDRV_WINC_STATUS _WDRV_WINC_OTAInProgress(WDRV_WINC_DCPT *const pDcpt)
+
+  Summary:
+    Check if OTA is in progress.
+
+  Description:
+    Checks if an OTA is in progress and other handle/pointer validation.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    pDcpt   - Descriptor pointer obtained from WDRV_WINC_Open handle.
+
+  Returns:
+    WDRV_WINC_STATUS_OK            - The request has been accepted.
+    WDRV_WINC_STATUS_NOT_OPEN      - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG   - The parameters were incorrect.
+
+  Remarks:
+    None.
+
+*/
+
+static WDRV_WINC_STATUS _WDRV_WINC_OTAInProgress(WDRV_WINC_DCPT *const pDcpt)
+{
+    /* Ensure the driver handle and user pointer is valid. */
+    if ((DRV_HANDLE_INVALID == (DRV_HANDLE)pDcpt) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
+    {
+        return WDRV_WINC_STATUS_INVALID_ARG;
+    }
+
+    /* Ensure the driver instance has been opened for use. */
+    if (false == pDcpt->isOpen)
+    {
+        return WDRV_WINC_STATUS_NOT_OPEN;
+    }
+
+    /* Ensure an update isn't in progress. */
+    if (true == pDcpt->pCtrl->updateInProgress)
+    {
+        return WDRV_WINC_STATUS_REQUEST_ERROR;
+    }
+
+    return WDRV_WINC_STATUS_OK;
+}
 
 //*******************************************************************************
 /*
@@ -572,9 +623,18 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateFromURL
 )
 {
     WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_STATUS status;
 
-    /* Ensure the driver handle and user pointer is valid. */
-    if ((DRV_HANDLE_INVALID == handle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl) || (NULL == pURL))
+    /* Ensure the driver is open and no OTA is in progress. */
+    status = _WDRV_WINC_OTAInProgress(pDcpt);
+
+    if (WDRV_WINC_STATUS_OK != status)
+    {
+        return status;
+    }
+
+    /* Ensure the user pointer is valid. */
+    if (NULL == pURL)
     {
         return WDRV_WINC_STATUS_INVALID_ARG;
     }
@@ -650,6 +710,219 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle)
 
     return WDRV_WINC_STATUS_OK;
 }
+
+#ifdef WDRV_WINC_DEVICE_OTA_SSL_OPTIONS
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_OTASSLServerAuthModeSet
+    (
+        DRV_HANDLE handle,
+        bool enabled
+    );
+
+  Summary:
+    Set OTA SSL server authentication mode.
+
+  Description:
+    Sets if the OTA should authenticate the SSL server being connected to.
+
+  Remarks:
+    See wdrv_winc_socket.h for usage information.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_OTASSLServerAuthModeSet
+(
+    DRV_HANDLE handle,
+    bool enabled
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_STATUS status;
+    int optValue;
+
+    /* Ensure the driver is open and no OTA is in progress. */
+    status = _WDRV_WINC_OTAInProgress(pDcpt);
+
+    if (WDRV_WINC_STATUS_OK != status)
+    {
+        return status;
+    }
+
+    optValue = (true == enabled) ? 0 : 1;
+
+    if (M2M_SUCCESS != m2m_ota_set_ssl_option(WIFI_OTA_SSL_OPT_BYPASS_SERVER_AUTH, &optValue, sizeof(int)))
+    {
+        return WDRV_WINC_STATUS_REQUEST_ERROR;
+    }
+
+    WDRV_DBG_VERBOSE_PRINT("OTA Server Bypass Mode = %d\r\n", optValue);
+
+    return WDRV_WINC_STATUS_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_OTASSLServerAuthModeIsEnabled(DRV_HANDLE handle);
+
+  Summary:
+    Indicates if OTA SSL server authentication is enabled.
+
+  Description:
+    Indicates if server authentication is enabled (true) or disabled (false).
+
+  Remarks:
+    See wdrv_winc_socket.h for usage information.
+
+*/
+
+bool WDRV_WINC_OTASSLServerAuthModeIsEnabled(DRV_HANDLE handle)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_STATUS status;
+    int optValue;
+    size_t optLength;
+
+    /* Ensure the driver is open and no OTA is in progress. */
+    status = _WDRV_WINC_OTAInProgress(pDcpt);
+
+    if (WDRV_WINC_STATUS_OK != status)
+    {
+        return false;
+    }
+
+    optLength = sizeof(optValue);
+
+    if (M2M_SUCCESS != m2m_ota_get_ssl_option(WIFI_OTA_SSL_OPT_BYPASS_SERVER_AUTH, &optValue, &optLength))
+    {
+        return false;
+    }
+
+    if (optLength != sizeof(int))
+    {
+        return false;
+    }
+
+    return (1 == optValue) ? false : true;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_OTASSLSNISet
+    (
+        DRV_HANDLE handle,
+        const char *pServerName
+    );
+
+  Summary:
+    Configures OTA SSL SNI.
+
+  Description:
+    Sets the server name to be used for SSL SNI during OTA operations.
+
+  Remarks:
+    See wdrv_winc_socket.h for usage information.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_OTASSLSNISet
+(
+    DRV_HANDLE handle,
+    const char *pServerName
+)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_STATUS status;
+    int optSNIEn;
+    size_t optSNINameLen;
+    static const char optSNINameBlank = '\0';
+    const char *pOptSNIName;
+
+    /* Ensure the driver is open and no OTA is in progress. */
+    status = _WDRV_WINC_OTAInProgress(pDcpt);
+
+    if (WDRV_WINC_STATUS_OK != status)
+    {
+        return status;
+    }
+
+    if (NULL != pServerName)
+    {
+        optSNIEn      = 1;
+        optSNINameLen = strlen(pServerName)+1;
+        pOptSNIName   = pServerName;
+    }
+    else
+    {
+        optSNIEn      = 0;
+        optSNINameLen = 1;
+        pOptSNIName   = &optSNINameBlank;
+    }
+
+    if (M2M_SUCCESS != m2m_ota_set_ssl_option(WIFI_OTA_SSL_OPT_SNI_VALIDATION, &optSNIEn, sizeof(int)))
+    {
+        return WDRV_WINC_STATUS_REQUEST_ERROR;
+    }
+
+    if (M2M_SUCCESS != m2m_ota_set_ssl_option(WIFI_OTA_SSL_OPT_SNI_SERVERNAME, pOptSNIName, optSNINameLen))
+    {
+        return WDRV_WINC_STATUS_REQUEST_ERROR;
+    }
+
+    WDRV_DBG_VERBOSE_PRINT("OTA SNI = '%s',%d\r\n", pOptSNIName, optSNIEn);
+
+    return WDRV_WINC_STATUS_OK;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_OTASSLSNIIsEnabled(DRV_HANDLE handle);
+
+  Summary:
+    Indicates if OTA SSL SNI is enabled.
+
+  Description:
+    Indicates if the OTA SSL SNI feature is enabled.
+
+  Remarks:
+    See wdrv_winc_socket.h for usage information.
+
+*/
+
+bool WDRV_WINC_OTASSLSNIIsEnabled(DRV_HANDLE handle)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)handle;
+    WDRV_WINC_STATUS status;
+    int optValue;
+    size_t optLength;
+
+    /* Ensure the driver is open and no OTA is in progress. */
+    status = _WDRV_WINC_OTAInProgress(pDcpt);
+
+    if (WDRV_WINC_STATUS_OK != status)
+    {
+        return false;
+    }
+
+    optLength = sizeof(optValue);
+
+    if (M2M_SUCCESS != m2m_ota_get_ssl_option(WIFI_OTA_SSL_OPT_SNI_VALIDATION, &optValue, &optLength))
+    {
+        return false;
+    }
+
+    if (optLength != sizeof(int))
+    {
+        return false;
+    }
+
+    return (1 == optValue) ? true : false;
+}
+#endif /* WDRV_WINC_DEVICE_OTA_SSL_OPTIONS */
 
 //*******************************************************************************
 /*

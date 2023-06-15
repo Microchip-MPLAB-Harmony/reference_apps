@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -124,6 +124,14 @@
 /*! Least significant byte of 32bit word (BE) */
 #define BYTE_3(word)                    ((uint8_t)(((word) >> 0 ) & 0x000000FFUL))
 #endif
+
+#ifndef LOW
+#define LOW 0
+#endif
+#ifndef HIGH
+#define HIGH 1
+#endif
+
 /**@}*/
 
 #ifdef __cplusplus

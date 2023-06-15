@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -844,8 +844,8 @@ typedef struct {
     This structure, together with the events @ref SOCKET_MSG_RECV or @ref SOCKET_MSG_RECVFROM, is passed-in parameters to the callback function.
 @remark
     After receiving this structure, the application should issue a new call to @ref recv or @ref recvfrom in order to receive subsequent data.\n
-    In the case of @ref SOCKET_MSG_RECVFROM (UDP), any further data in the same datagram is dropped, then subsequent datagrams are buffered on the WINC until the application provides a buffer via a new call to @ref recvfrom.\n
-    In the case of @ref SOCKET_MSG_RECV (TCP), all subsequent data is buffered on the WINC until the application provides a buffer via a new call to @ref recv.\n
+    In the case of @ref SOCKET_MSG_RECVFROM (UDP), any further data in the same datagram is dropped, then subsequent datagrams are buffered on the WINC until the application provides a buffer via a new call to @ref recvfrom \n
+    In the case of @ref SOCKET_MSG_RECV (TCP), all subsequent data is buffered on the WINC until the application provides a buffer via a new call to @ref recv \n
     A negative or zero buffer size indicates an error with the following code:
     @ref SOCK_ERR_NO_ERROR          : Socket connection closed. The application should now call @ref close().
     @ref SOCK_ERR_CONN_ABORTED      : Socket connection aborted. The application should now call @ref close().
@@ -1169,10 +1169,10 @@ void registerSocketResolveCallback(tpfAppResolveCb resolve_cb);
                 configuration values are defined:\n
                 - @ref SOCKET_CONFIG_SSL_OFF    : The socket is not secured by TLS.\n
                 - @ref SOCKET_CONFIG_SSL_ON     : The socket is secured by TLS.
-                This value has no effect if u8Type is @ref SOCK_DGRAM.
+                This value has no effect if u8Type is @ref SOCK_DGRAM
                 - @ref SOCKET_CONFIG_SSL_DELAY  : The socket is not secured by
                 TLS, but may be secured later, by calling @ref secure.
-                This value has no effect if u8Type is @ref SOCK_DGRAM.\n
+                This value has no effect if u8Type is @ref SOCK_DGRAM \n
                 All other configuration values are reserved and should not be
                 used.
 
@@ -1484,9 +1484,6 @@ int8_t accept(SOCKET sock, struct sockaddr *addr, uint8_t *addrlen);
                 A negative value will return a socket error @ref SOCK_ERR_INVALID_ARG. Indicating that an invalid argument is passed in.
 
 @param[in]  pstrAddr
-                Address of the remote server.
-
-@param[in]  pstrAddr
                 Pointer to socket address structure @ref sockaddr_in.
 
 @param[in]  u8AddrLen
@@ -1581,12 +1578,12 @@ int8_t connect(SOCKET sock, struct sockaddr *pstrAddr, uint8_t u8AddrLen);
         Converts an (insecure) TCP connection with a remote server into a secure TLS-over-TCP connection.
     It may be called after both of the following:\n
     - a TCP socket has been created by the @ref socket function, with u8Config parameter set to
-    @ref SOCKET_CONFIG_SSL_DELAY.\n
+    @ref SOCKET_CONFIG_SSL_DELAY \n
     - a successful connection has been made on the socket via the @ref connect function.
     This is an asynchronous API; the application socket callback function is notified of the result
     of the attempt to make the connection secure through the event @ref SOCKET_MSG_SECURE, along
     with a structure @ref tstrSocketConnectMsg.
-    If the attempt to make the connection secure fails, the application should call @ref close().
+    If the attempt to make the connection secure fails, the application should call @ref close()
  */
 /**@{*/
 /*!
@@ -1880,7 +1877,7 @@ int16_t recvfrom(SOCKET sock, void *pvRecvBuf, uint16_t u16BufLen, uint32_t u32T
 
 
 @warning
-    u16SendLength must not exceed @ref SOCKET_BUFFER_MAX_LENGTH.\n
+    u16SendLength must not exceed @ref SOCKET_BUFFER_MAX_LENGTH \n
     Use a valid socket identifier through the a prior call to the @ref socket function.
     Must use a valid buffer pointer.
     Successful  completion of a call to send() does not guarantee delivery of the message,
@@ -2061,17 +2058,17 @@ int8_t sslEnableCertExpirationCheck(tenuSslCertExpSettings enuValidationSetting)
 @param[in]  option_name
                 Option to be set.\n
                 For protocol level @ref SOL_SOCKET, the supported option names are:\n
-                    @ref SO_SET_UDP_SEND_CALLBACK\n
-                    @ref SO_TCP_KEEPALIVE\n
-                    @ref SO_TCP_KEEPIDLE\n
-                    @ref SO_TCP_KEEPINTVL\n
-                    @ref SO_TCP_KEEPCNT\n
+                    @ref SO_SET_UDP_SEND_CALLBACK \n
+                    @ref SO_TCP_KEEPALIVE \n
+                    @ref SO_TCP_KEEPIDLE \n
+                    @ref SO_TCP_KEEPINTVL \n
+                    @ref SO_TCP_KEEPCNT \n
                 For protocol level @ref SOL_SSL_SOCKET, the supported option names are:\n
-                    @ref SO_SSL_BYPASS_X509_VERIF\n
-                    @ref SO_SSL_SNI\n
-                    @ref SO_SSL_ENABLE_SESSION_CACHING\n
-                    @ref SO_SSL_ENABLE_SNI_VALIDATION\n
-                    @ref SO_SSL_ALPN\n
+                    @ref SO_SSL_BYPASS_X509_VERIF \n
+                    @ref SO_SSL_SNI \n
+                    @ref SO_SSL_ENABLE_SESSION_CACHING \n
+                    @ref SO_SSL_ENABLE_SNI_VALIDATION \n
+                    @ref SO_SSL_ALPN \n
 
 @param[in]  option_value
                 Pointer to user provided value.
@@ -2222,7 +2219,7 @@ int8_t set_alpn_list(SOCKET sock, const char *pcProtocolList);
  *                  the ALPN applies.
  *
  * @return  The function returns:\n
- *  - >0: 1-based index of negotiated protocol with respect to the list previously provided to @ref set_alpn_list.\n
+ *  - >0: 1-based index of negotiated protocol with respect to the list previously provided to @ref set_alpn_list \n
  *  - 0: No negotiation occurred (eg TLS peer did not support ALPN).\n
  *  - <0: Invalid parameters (socket is not in use, or not an SSL socket).\n
  *

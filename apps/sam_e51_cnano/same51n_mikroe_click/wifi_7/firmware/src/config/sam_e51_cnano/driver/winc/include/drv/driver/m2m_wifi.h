@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -189,7 +189,7 @@ typedef void (*tpfAppWifiCb) (uint8_t u8MsgType, const void *const pvMsg);
     For example, it could be a pointer to the buffer holding the received frame in case of @ref M2M_WIFI_RESP_ETHERNET_RX_PACKET
     event.
 
-@param[in]  pvControlBuf
+@param[in]  pvCtrlBuf
     A pointer to control buffer describing the accompanied message.
     To be cast to @ref tstrM2mIpCtrlBuf in case of @ref M2M_WIFI_RESP_ETHERNET_RX_PACKET event.
 
@@ -284,12 +284,12 @@ typedef enum {
 */
 typedef enum {
     WIFI_1X_BYPASS_SERVER_AUTH,
-    /*!< Server authentication for 802.1x connections. Values are of type @ref int.\n
+    /*!< Server authentication for 802.1x connections. Values are of type int.\n
         0: Authenticate server; Default, Recommended.\n
         1: Bypass server authentication.\n
     */
     WIFI_1X_SESSION_CACHING,
-    /*!< TLS session caching on/off for 802.1x connections. Values are of type @ref int.\n
+    /*!< TLS session caching on/off for 802.1x connections. Values are of type int.\n
         0: Session caching off.\n
         1: Session caching on; Default.\n
         Note that the WINC implementation of PEAPv0 does not support session caching; this setting is ignored for PEAPv0 methods.
@@ -1021,12 +1021,12 @@ int8_t m2m_wifi_connect_psk(tenuCredStoreOption enuCredStoreOption, tstrNetworkI
 
 @details
     The following options can be set:\n
-        @ref WIFI_1X_BYPASS_SERVER_AUTH\n
-        @ref WIFI_1X_SESSION_CACHING\n
-        @ref WIFI_1X_SPECIFIC_ROOTCERT\n
-        @ref WIFI_1X_TIME_VERIF_MODE\n
+        @ref WIFI_1X_BYPASS_SERVER_AUTH \n
+        @ref WIFI_1X_SESSION_CACHING \n
+        @ref WIFI_1X_SPECIFIC_ROOTCERT \n
+        @ref WIFI_1X_TIME_VERIF_MODE \n
     The setting applies to all subsequent connection attempts via @ref m2m_wifi_connect_1x_mschap2
-    or @ref m2m_wifi_connect_1x_tls.\n
+    or @ref m2m_wifi_connect_1x_tls \n
     Connection attempts via @ref m2m_wifi_default_connect use the
     settings which were in place at the time of the original connection.
 
@@ -1054,18 +1054,17 @@ int8_t m2m_wifi_1x_set_option(tenu1xOption enuOptionName, const void *pOptionVal
     API to get (read) options relating to Wi-Fi connection using WPA(2) Enterprise authentication.
 
 @details
-    The following options can be read:\n
-        @ref WIFI_1X_BYPASS_SERVER_AUTH\n
-        @ref WIFI_1X_SESSION_CACHING\n
-        @ref WIFI_1X_SPECIFIC_ROOTCERT\n
-        @ref WIFI_1X_TIME_VERIF_MODE\n
+    The following options can be read: \n
+        @ref WIFI_1X_BYPASS_SERVER_AUTH \n
+        @ref WIFI_1X_SESSION_CACHING \n
+        @ref WIFI_1X_SPECIFIC_ROOTCERT \n
+        @ref WIFI_1X_TIME_VERIF_MODE \n
 
 @param[in]      enuOptionName
     The option to get.
 
 @param[out]     pOptionValue
-    Pointer to a buffer containing the value to set. The buffer must be at least as long as OptionLen.
-    If OptionLen is 0, then pOptionValue may be NULL.
+    Pointer to a buffer to contain the value to get. The buffer must be at least as long as the value pointed to by pOptionLen.
 
 @param[inout]  pOptionLen
     Pointer to a length.
@@ -3884,6 +3883,10 @@ int8_t m2m_wifi_prng_get_random_bytes(uint8_t *pu8PrngBuff,uint16_t u16PrngSize)
 @param[in]  pstrConfAutoRate
     The Auto rate configuration parameters as listed in tstrConfAutoRate.
 
+@warning
+    The application will be responsible for keeping track of what values are set and, if required,
+    going back to default values. Changes will become permanent until the chip is power-cycled.
+
 @return
     The function SHALL return @ref M2M_SUCCESS for success and a negative value otherwise.
 
@@ -3977,7 +3980,7 @@ uint8_t m2m_wifi_get_state(void);
         @brief
             Lists the APIs for reading the version information of the WINC firmware.
     @}
- */
+*/
 
 /*!
 @ingroup        VERSIONAPI

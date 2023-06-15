@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -83,6 +83,7 @@ MACROS
     ( ((uint32_t)M2M_MAKE_VERSION((fw_major),  (fw_minor),  (fw_patch)))  << M2M_FW_VERSION_SHIFT) | \
     ( ((uint32_t)M2M_MAKE_VERSION((drv_major), (drv_minor), (drv_patch))) << M2M_DRV_VERSION_SHIFT))
 
+#define REL_19_7_7_VER          M2M_MAKE_VERSION_INFO(19,7,7,19,3,0)
 #define REL_19_7_6_VER          M2M_MAKE_VERSION_INFO(19,7,6,19,3,0)
 #define REL_19_7_5_VER          M2M_MAKE_VERSION_INFO(19,7,5,19,3,0)
 #define REL_19_7_0_VER          M2M_MAKE_VERSION_INFO(19,7,0,19,3,0)
@@ -119,7 +120,7 @@ MACROS
 /*!< Firmware Minor release version number.
 */
 
-#define M2M_RELEASE_VERSION_PATCH_NO                        (6)
+#define M2M_RELEASE_VERSION_PATCH_NO                        (7)
 /*!< Firmware patch release version number.
 */
 
@@ -2520,7 +2521,7 @@ typedef struct {
         The algorithm tunes the rate up or down based on the wireless
         medium condition if enuWlanTxRate is set to TX_RATE_AUTO.
         If enuWlanTxRate is set to any value other than TX_RATE_AUTO, then
-        u8ArInitialRateSel is ignored.
+        u8ArInitialRateSel is ignored. Default is TX_RATE_AUTO.
 
         By default WINC selects the best initial rate based on the receive
         signal level from the WLAN peer. For applications that favor range
@@ -2775,6 +2776,7 @@ typedef enum {
     M2M_OTA_RESP_HOST_FILE_READ,
     M2M_OTA_REQ_HOST_FILE_ERASE,
     M2M_OTA_RESP_HOST_FILE_ERASE,
+    M2M_OTA_REQ_START_FW_UPDATE_V2,
     M2M_OTA_MAX_ALL,
 } tenuM2mOtaCmd;
 
@@ -3029,6 +3031,19 @@ typedef struct {
     uint8_t   __PAD24__[3];
     /*!< Padding byte for forcing 4-byte alignment */
 } tstrOtaHostFileEraseStatusResp;
+
+typedef struct {
+    uint32_t u32TotalLen;
+	/*!< Total length of the struct be sent over the HIF */
+    char acUrl[256];
+	/*!< NULL terminated HTTP(S) URL from which to fetch the OTA file */
+    char acSNI[64];
+	/*!< NULL terminated server name to send in the TLS SNI extension (can be empty) */
+    uint8_t u8SSLFlags;
+	/*!< Flags to set SSL options */
+    uint8_t   __PAD24__[3];
+    /*!< Padding byte for forcing 4-byte alignment */
+} tstrOtaStart;
 
 /**@}*/     //OTATYPEDEF
 

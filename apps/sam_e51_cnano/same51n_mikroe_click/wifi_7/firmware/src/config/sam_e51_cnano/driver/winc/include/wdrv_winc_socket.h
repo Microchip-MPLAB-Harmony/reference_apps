@@ -16,7 +16,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -692,6 +692,144 @@ WDRV_WINC_STATUS WDRV_WINC_OTAUpdateFromURL
 */
 
 WDRV_WINC_STATUS WDRV_WINC_OTAUpdateAbort(DRV_HANDLE handle);
+
+#ifdef WDRV_WINC_DEVICE_OTA_SSL_OPTIONS
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_OTASSLServerAuthModeSet
+    (
+        DRV_HANDLE handle,
+        bool enabled
+    );
+
+  Summary:
+    Set OTA SSL server authentication mode.
+
+  Description:
+    Sets if the OTA should authenticate the SSL server being connected to.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle  - Client handle obtained by a call to WDRV_WINC_Open.
+    enabled - Enables (true) or disables (false) server authentication.
+
+  Returns:
+    WDRV_WINC_STATUS_OK             - The request has been accepted.
+    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+
+  Remarks:
+    None.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_OTASSLServerAuthModeSet
+(
+    DRV_HANDLE handle,
+    bool enabled
+);
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_OTASSLServerAuthModeIsEnabled(DRV_HANDLE handle);
+
+  Summary:
+    Indicates if OTA SSL server authentication is enabled.
+
+  Description:
+    Indicates if server authentication is enabled (true) or disabled (false).
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle - Client handle obtained by a call to WDRV_WINC_Open.
+
+  Returns:
+    true or false.
+
+  Remarks:
+    None.
+
+*/
+
+bool WDRV_WINC_OTASSLServerAuthModeIsEnabled(DRV_HANDLE handle);
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_STATUS WDRV_WINC_OTASSLSNISet
+    (
+        DRV_HANDLE handle,
+        const char *pServerName
+    );
+
+  Summary:
+    Configures OTA SSL SNI.
+
+  Description:
+    Sets the server name to be used for SSL SNI during OTA operations.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle      - Client handle obtained by a call to WDRV_WINC_Open.
+    pServerName - Pointer to server name, or NULL to disable SNI.
+
+  Returns:
+    WDRV_WINC_STATUS_OK             - The request has been accepted.
+    WDRV_WINC_STATUS_NOT_OPEN       - The driver instance is not open.
+    WDRV_WINC_STATUS_INVALID_ARG    - The parameters were incorrect.
+    WDRV_WINC_STATUS_REQUEST_ERROR  - The request to the WINC was rejected.
+
+  Remarks:
+    None.
+
+*/
+
+WDRV_WINC_STATUS WDRV_WINC_OTASSLSNISet
+(
+    DRV_HANDLE handle,
+    const char *pServerName
+);
+
+//*******************************************************************************
+/*
+  Function:
+    bool WDRV_WINC_OTASSLSNIIsEnabled(DRV_HANDLE handle);
+
+  Summary:
+    Indicates if OTA SSL SNI is enabled.
+
+  Description:
+    Indicates if the OTA SSL SNI feature is enabled.
+
+  Precondition:
+    WDRV_WINC_Initialize should have been called.
+    WDRV_WINC_Open should have been called to obtain a valid handle.
+
+  Parameters:
+    handle - Client handle obtained by a call to WDRV_WINC_Open.
+
+  Returns:
+    true or false.
+
+  Remarks:
+    None.
+
+*/
+
+bool WDRV_WINC_OTASSLSNIIsEnabled(DRV_HANDLE handle);
+#endif /* WDRV_WINC_DEVICE_OTA_SSL_OPTIONS */
 
 //*******************************************************************************
 /*

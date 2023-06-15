@@ -37,7 +37,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-21 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -346,6 +346,12 @@ typedef struct
     /* Intent used to open driver. */
     DRV_IO_INTENT intent;
 
+    /* Extended system status which can be queried via WDRV_WINC_StatusExt. */
+    WDRV_WINC_SYS_STATUS extSysStat;
+
+    /* Interrupt source. */
+    int intSrc;
+
     /* Flag indicating if this instance is operating as s station or soft-AP. */
     bool isAP;
 
@@ -503,6 +509,9 @@ typedef struct
 #endif
     /* Semaphore for driver events. */
     OSAL_SEM_HANDLE_TYPE drvEventSemaphore;
+
+    /* Flag indicating if driver semaphores have been created. */
+    bool drvSemaphoresCreated;
 } WDRV_WINC_CTRLDCPT;
 
 #ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
@@ -718,6 +727,33 @@ DRV_HANDLE WDRV_WINC_Open(const SYS_MODULE_INDEX index, const DRV_IO_INTENT inte
 */
 
 void WDRV_WINC_Close(DRV_HANDLE handle);
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_SYS_STATUS WDRV_WINC_StatusExt(SYS_MODULE_OBJ object)
+
+  Summary:
+    Provides the extended system status of the PIC32MZW driver module.
+
+  Description:
+    This function provides the extended system status of the PIC32MZW driver
+    module.
+
+  Precondition:
+    WDRV_WINC_Initialize must have been called before calling this function.
+
+  Parameters:
+    object  - Driver object handle, returned from WDRV_WINC_Initialize
+
+  Returns:
+
+  Remarks:
+    None.
+
+*/
+
+WDRV_WINC_SYS_STATUS WDRV_WINC_StatusExt(SYS_MODULE_OBJ object);
 
 // *****************************************************************************
 // *****************************************************************************

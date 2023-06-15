@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -1915,8 +1915,14 @@ int8_t m2m_wifi_prng_get_random_bytes(uint8_t * pu8PrngBuff,uint16_t u16PrngSize
 
 @param [in] pstrConfAutoRate
     The Auto rate configuration parameters as listed in tstrConfAutoRate.
+
+@warning
+    The application will be responsible for keeping track of what values are set and, if required,
+    going back to default values. Changes will become permanent until the chip is power-cycled.
+
 @sa
     tstrConfAutoRate
+
 @return
     The function SHALL return 0 for success and a negative value otherwise.
 */

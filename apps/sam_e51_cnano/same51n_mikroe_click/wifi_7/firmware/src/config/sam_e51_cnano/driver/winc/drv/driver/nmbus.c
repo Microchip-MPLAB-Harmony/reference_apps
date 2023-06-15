@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,7 +39,7 @@
 #include "nmspi.h"
 
 #define MAX_TRX_CFG_SZ      8
-#define NM_BUS_MAX_TRX_SZ   256
+#define NM_BUS_MAX_TRX_SZ   2048
 
 /**
 *   @struct tstrNmBusCapabilities

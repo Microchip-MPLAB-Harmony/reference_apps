@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -280,7 +280,7 @@ static int8_t spi_cmd(uint8_t cmd, uint32_t adr, uint32_t u32data, uint32_t sz, 
     return N_OK;
 }
 
-static int8_t spi_cmd_rsp(uint8_t cmd)
+static int8_t spi_cmd_rsp(uint8_t cmd, uint8_t clockless)
 {
     uint8_t rsp;
     int8_t s8RetryCnt;
@@ -311,7 +311,7 @@ static int8_t spi_cmd_rsp(uint8_t cmd)
             return N_FAIL;
         }
     }
-    while((rsp != cmd) && (s8RetryCnt-- > 0));
+    while((rsp != cmd) && (!clockless) && (s8RetryCnt-- > 0));
 
     if (s8RetryCnt < 0)
     {
@@ -331,7 +331,7 @@ static int8_t spi_cmd_rsp(uint8_t cmd)
             return N_FAIL;
         }
     }
-    while((rsp != 0x00) && (s8RetryCnt-- > 0));
+    while((rsp != 0x00) && (!clockless) && (s8RetryCnt-- > 0));
 
     if (s8RetryCnt < 0)
     {
@@ -346,7 +346,7 @@ static void spi_reset(void)
 {
     nm_sleep(1);
     spi_cmd(CMD_RESET, 0, 0, 0, 0);
-    spi_cmd_rsp(CMD_RESET);
+    spi_cmd_rsp(CMD_RESET, 0);
     nm_sleep(1);
 }
 
@@ -393,7 +393,7 @@ static int8_t spi_data_read(uint8_t *b, uint16_t sz,uint8_t clockless)
         if (result == N_FAIL)
             break;
 
-        if (retry <= 0)
+        if ((retry <= 0) && (!clockless))
         {
             M2M_ERR("[spi_data_read]: Failed data response read...(%02x)\r\n", rsp);
             result = N_FAIL;
@@ -539,7 +539,7 @@ static int8_t spi_write_reg(uint32_t u32Addr, uint32_t u32Val)
         return N_OK;
     }
 
-    if (spi_cmd_rsp(cmd) != N_OK)
+    if (spi_cmd_rsp(cmd, clockless) != N_OK)
     {
         M2M_ERR("[spi_write_reg]: Failed cmd response, write reg (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
@@ -562,7 +562,7 @@ static int8_t spi_write_block(uint32_t u32Addr, uint8_t *puBuf, uint16_t u16Sz)
         return N_FAIL;
     }
 
-    if (spi_cmd_rsp(CMD_DMA_EXT_WRITE) != N_OK)
+    if (spi_cmd_rsp(CMD_DMA_EXT_WRITE, 0) != N_OK)
     {
         M2M_ERR("[spi_write_block]: Failed cmd response, write block (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
@@ -620,7 +620,7 @@ static int8_t spi_read_reg(uint32_t u32Addr, uint32_t* pu32RetVal)
         return N_FAIL;
     }
 
-    if (spi_cmd_rsp(cmd) != N_OK)
+    if (spi_cmd_rsp(cmd, clockless) != N_OK)
     {
         M2M_ERR("[spi_read_reg]: Failed cmd response, read reg (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
@@ -652,7 +652,7 @@ static int8_t spi_read_block(uint32_t u32Addr, uint8_t *puBuf, uint16_t u16Sz)
         return N_FAIL;
     }
 
-    if (spi_cmd_rsp(CMD_DMA_EXT_READ) != N_OK)
+    if (spi_cmd_rsp(CMD_DMA_EXT_READ, 0) != N_OK)
     {
         M2M_ERR("[spi_read_block]: Failed cmd response, read block (%08" PRIx32 ")...\r\n", u32Addr);
         return N_FAIL;
@@ -701,7 +701,7 @@ int8_t nm_spi_reset(void)
         return M2M_ERR_BUS_FAIL;
 
     spi_cmd(CMD_RESET, 0, 0, 0, 0);
-    spi_cmd_rsp(CMD_RESET);
+    spi_cmd_rsp(CMD_RESET, 0);
 
     OSAL_MUTEX_Unlock(&s_spiLock);
 

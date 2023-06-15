@@ -66,6 +66,16 @@
 #endif
 // DOM-IGNORE-END
 
+/* Byte bus access. */
+#define    DMAC_CRC_BEAT_SIZE_BYTE      (0x0U)
+
+/* Half-word bus access. */
+#define    DMAC_CRC_BEAT_SIZE_HWORD     (0x1U)
+
+/* Word bus access. */
+#define    DMAC_CRC_BEAT_SIZE_WORD      (0x2U)
+
+typedef uint8_t DMAC_CRC_BEAT_SIZE;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -74,13 +84,12 @@
 
 // *****************************************************************************
 
-typedef enum
-{
+
     /* DMAC Channel 0 */
-    DMAC_CHANNEL_0 = 0,
+#define  DMAC_CHANNEL_0   (0U)
     /* DMAC Channel 1 */
-    DMAC_CHANNEL_1 = 1,
-} DMAC_CHANNEL;
+#define  DMAC_CHANNEL_1   (1U)
+typedef uint32_t DMAC_CHANNEL;
 
 typedef enum
 {
@@ -104,19 +113,6 @@ typedef enum
     DMAC_CRC_TYPE_32 = 0x1
 
 } DMAC_CRC_POLYNOMIAL_TYPE;
-
-typedef enum
-{
-    /* Byte bus access. */
-    DMAC_CRC_BEAT_SIZE_BYTE     = 0x0,
-
-    /* Half-word bus access. */
-    DMAC_CRC_BEAT_SIZE_HWORD    = 0x1,
-
-    /* Word bus access. */
-    DMAC_CRC_BEAT_SIZE_WORD     = 0x2
-
-} DMAC_CRC_BEAT_SIZE;
 
 typedef enum
 {
@@ -149,14 +145,13 @@ typedef struct
 typedef uint32_t DMAC_CHANNEL_CONFIG;
 
 typedef void (*DMAC_CHANNEL_CALLBACK) (DMAC_TRANSFER_EVENT event, uintptr_t contextHandle);
-void DMAC_ChannelCallbackRegister (DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK eventHandler, const uintptr_t contextHandle);
-
+void DMAC_ChannelCallbackRegister (DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK callback, const uintptr_t context);
 void DMAC_Initialize( void );
 bool DMAC_ChannelTransfer (DMAC_CHANNEL channel, const void *srcAddr, const void *destAddr, size_t blockSize);
 bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel );
 void DMAC_ChannelDisable ( DMAC_CHANNEL channel );
 DMAC_CHANNEL_CONFIG  DMAC_ChannelSettingsGet ( DMAC_CHANNEL channel );
-bool  DMAC_ChannelSettingsSet ( DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG settings );
+bool  DMAC_ChannelSettingsSet ( DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting );
 uint16_t DMAC_ChannelGetTransferredCount( DMAC_CHANNEL channel );
 
 void DMAC_ChannelCRCSetup(DMAC_CHANNEL channel, DMAC_CRC_SETUP CRCSetup);

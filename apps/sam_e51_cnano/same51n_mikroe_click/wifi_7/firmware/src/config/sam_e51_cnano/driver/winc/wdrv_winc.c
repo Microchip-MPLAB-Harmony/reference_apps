@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-21 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -900,7 +900,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             /* Convert from internal M2M time structure to UTC. */
             timeUTC = WDRV_WINC_LocalTimeToUTC(pSysTime);
 
-            if (NULL != pDcpt->pCtrl->pfSystemTimeGetCurrentCB)
+            if ((0 != timeUTC) && (NULL != pDcpt->pCtrl->pfSystemTimeGetCurrentCB))
             {
                 /* Pass time to user application if callback was supplied. */
                 pDcpt->pCtrl->pfSystemTimeGetCurrentCB((DRV_HANDLE)pDcpt, timeUTC);
@@ -993,7 +993,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             {
                 /* Pass association information to user application via callback. */
                 pDcpt->pCtrl->pfAssociationInfoCB((DRV_HANDLE)pDcpt, (WDRV_WINC_ASSOC_HANDLE)pDcpt,
-                        &pDcpt->pCtrl->assocSSID, &pDcpt->pCtrl->assocPeerAddress,
+                        &pDcpt->pCtrl->assocSSID, &pDcpt->pCtrl->assocPeerAddress.macAddress,
                         pDcpt->pCtrl->assocAuthType, pConnInfo->s8RSSI);
             }
             break;
@@ -1011,7 +1011,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             {
                 /* Pass RSSI value to user application if callback supplied.
                    the callback is cleared after this operation has completed. */
-                pDcpt->pCtrl->pfAssociationRSSICB((DRV_HANDLE)pDcpt, pDcpt->pCtrl->rssi);
+                pDcpt->pCtrl->pfAssociationRSSICB((DRV_HANDLE)pDcpt, (WDRV_WINC_ASSOC_HANDLE)pDcpt, pDcpt->pCtrl->rssi);
 
                 pDcpt->pCtrl->pfAssociationRSSICB = NULL;
             }
@@ -1806,7 +1806,7 @@ SYS_MODULE_OBJ WDRV_WINC_Initialize
 
     if (WDRV_WINC_SYS_IDX_0 == index)
     {
-//        const WDRV_WINC_SYS_INIT* const pInitData = (const WDRV_WINC_SYS_INIT* const)init;
+        const WDRV_WINC_SYS_INIT* const pInitData = (const WDRV_WINC_SYS_INIT* const)init;
 
         pDcpt = &wincDescriptor[0];
 
@@ -1819,8 +1819,17 @@ SYS_MODULE_OBJ WDRV_WINC_Initialize
         pfWINCDebugPrintCb = NULL;
 #endif
 
-        wincCtrlDescriptor.intent     = 0;
-        wincCtrlDescriptor.userHandle = 0;
+        wincCtrlDescriptor.intent               = 0;
+        wincCtrlDescriptor.userHandle           = 0;
+        wincCtrlDescriptor.extSysStat           = SYS_STATUS_UNINITIALIZED;
+        wincCtrlDescriptor.drvSemaphoresCreated = false;
+
+        if (NULL != pInitData)
+        {
+            WDRV_WINC_SPIInitialize(pInitData->pSPICfg);
+
+            wincCtrlDescriptor.intSrc = pInitData->intSrc;
+        }
 
 #ifdef WDRV_WINC_DEVICE_LITE_DRIVER
         winc_bsp_init();
@@ -1937,10 +1946,13 @@ void WDRV_WINC_Deinitialize(SYS_MODULE_OBJ object)
 
     if (pDcpt == &wincDescriptor[0])
     {
-        OSAL_SEM_Post(&pDcpt->pCtrl->drvEventSemaphore);
+        if (true == pDcpt->pCtrl->drvSemaphoresCreated)
+        {
+            OSAL_SEM_Post(&pDcpt->pCtrl->drvEventSemaphore);
 #ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
-        OSAL_SEM_Post(&pDcpt->pCtrl->hostFileDcpt.hfdSemaphore);
+            OSAL_SEM_Post(&pDcpt->pCtrl->hostFileDcpt.hfdSemaphore);
 #endif
+        }
     }
 #ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
     else if (pDcpt == &wincDescriptor[1])
@@ -2028,6 +2040,46 @@ SYS_STATUS WDRV_WINC_Status(SYS_MODULE_OBJ object)
     }
 
     return pDcpt->sysStat;
+}
+
+//*******************************************************************************
+/*
+  Function:
+    WDRV_WINC_SYS_STATUS WDRV_WINC_StatusExt(SYS_MODULE_OBJ object)
+
+  Summary:
+    Provides the extended system status of the PIC32MZW driver module.
+
+  Description:
+    This function provides the extended system status of the PIC32MZW driver
+    module.
+
+  Remarks:
+    See wdrv_pic32mzw.h for usage information.
+
+*/
+
+WDRV_WINC_SYS_STATUS WDRV_WINC_StatusExt(SYS_MODULE_OBJ object)
+{
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)object;
+
+    if ((SYS_MODULE_OBJ_INVALID == object) || (NULL == pDcpt))
+    {
+        return SYS_STATUS_ERROR;
+    }
+
+    if (NULL == pDcpt->pCtrl)
+    {
+        return SYS_STATUS_ERROR;
+    }
+
+    if (pDcpt->pCtrl->extSysStat != 0)
+    {
+        return pDcpt->pCtrl->extSysStat;
+    }
+
+    /* If not in extended state, just return normal status. */
+    return (WDRV_WINC_SYS_STATUS)pDcpt->sysStat;
 }
 
 #ifdef WDRV_WINC_NETWORK_USE_HARMONY_TCPIP
@@ -2133,18 +2185,27 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
         {
             if (true == pDcpt->isInit)
             {
-                /* Destroy M2M HIF semaphore. */
-                OSAL_SEM_Delete(&pDcpt->pCtrl->drvEventSemaphore);
-
+                if (true == pDcpt->pCtrl->drvSemaphoresCreated)
+                {
+                    /* Destroy M2M HIF semaphore. */
+                    OSAL_SEM_Delete(&pDcpt->pCtrl->drvEventSemaphore);
 #ifdef WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
-                OSAL_SEM_Delete(&pDcpt->pCtrl->hostFileDcpt.hfdSemaphore);
+                    OSAL_SEM_Delete(&pDcpt->pCtrl->hostFileDcpt.hfdSemaphore);
 #endif
+                    pDcpt->pCtrl->drvSemaphoresCreated = false;
+                }
 
-                pDcpt->pCtrl->intent = 0;
+                pDcpt->pCtrl->intent     = 0;
+                pDcpt->pCtrl->extSysStat = 0;
 #ifdef WDRV_WINC_DEVICE_WINC3400
                 pDcpt->pCtrl->isBLEInitStarted = false;
 #endif
-                m2m_wifi_deinit(NULL);
+#ifndef WDRV_WINC_DEVICE_NO_GET_WIFI_STATE
+                if (WIFI_STATE_START == m2m_wifi_get_state())
+#endif
+                {
+                    m2m_wifi_deinit(NULL);
+                }
 
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
                 socketDeinit();
@@ -2154,7 +2215,10 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
                 WDRV_WINC_SPIDeinitialize();
 
                 /* De-initialise the interrupts. */
-                WDRV_WINC_INTDeinitialize();
+                WDRV_WINC_INTDeinitialize(pDcpt->pCtrl->intSrc);
+
+                WDRV_WINC_GPIOChipEnableDeassert();
+                WDRV_WINC_GPIOResetAssert();
 
                 pDcpt->isInit = false;
             }
@@ -2165,6 +2229,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
         case SYS_STATUS_BUSY:
         {
             tstrWifiInitParam wifiParam;
+            uint32_t chipId;
 
             if (NULL == pDcpt->pCtrl)
             {
@@ -2192,8 +2257,12 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 #endif
             WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
 
-            /* Initialise SPI handling. */
-            WDRV_WINC_SPIInitialize();
+            /* Open SPI handling. */
+            if (false == WDRV_WINC_SPIOpen())
+            {
+                pDcpt->sysStat = SYS_STATUS_ERROR;
+                break;
+            }
 
 #ifndef WDRV_WINC_DEVICE_SPLIT_INIT
             pDcpt->sysStat = SYS_STATUS_READY;
@@ -2201,6 +2270,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
             if (M2M_SUCCESS != m2m_wifi_init_hold())
             {
                 WDRV_DBG_ERROR_PRINT("m2m_wifi_init_hold failed\r\n");
+                pDcpt->pCtrl->extSysStat = WDRV_WINC_SYS_STATUS_ERROR_DEVICE_NOT_FOUND;
                 pDcpt->sysStat = SYS_STATUS_ERROR;
                 break;
             }
@@ -2215,6 +2285,24 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 #endif
             }
 #endif
+#ifdef WDRV_WINC_DEVICE_LITE_DRIVER
+            chipId = winc_chip_get_id();
+#else
+            chipId = m2m_wifi_get_chipId();
+#endif
+            chipId >>= 16;
+#ifdef WDRV_WINC_DEVICE_WINC1500
+            if (chipId != 0x15)
+#endif
+#ifdef WDRV_WINC_DEVICE_WINC3400
+            if (chipId != 0x34)
+#endif
+            {
+                pDcpt->pCtrl->extSysStat = WDRV_WINC_SYS_STATUS_ERROR_DEVICE_NOT_FOUND;
+                pDcpt->sysStat = SYS_STATUS_ERROR;
+                break;
+            }
+
             /* Create a semaphore for tracking WINC HIF events. */
             if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&pDcpt->pCtrl->drvEventSemaphore,
                                                     OSAL_SEM_TYPE_COUNTING, 10, 0))
@@ -2224,7 +2312,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
             }
 
             /* Initialise the interrupts. */
-            WDRV_WINC_INTInitialize();
+            WDRV_WINC_INTInitialize(object, pDcpt->pCtrl->intSrc);
 
             memset(&wifiParam, 0, sizeof(tstrWifiInitParam));
             /* Construct M2M WiFi initialisation structure. */
@@ -2255,8 +2343,9 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 #endif
             {
                 WDRV_DBG_ERROR_PRINT("m2m_wifi_init_start failed\r\n");
+                OSAL_SEM_Delete(&pDcpt->pCtrl->drvEventSemaphore);
+                pDcpt->pCtrl->extSysStat = WDRV_WINC_SYS_STATUS_ERROR_DEVICE_FAILURE;
                 pDcpt->sysStat = SYS_STATUS_ERROR;
-
                 return;
             }
 
@@ -2285,6 +2374,8 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 #endif
 #endif
 #endif
+            pDcpt->pCtrl->drvSemaphoresCreated = true;
+
             /* Retrieve MAC address from WINC device. */
             m2m_wifi_get_mac_address(pDcpt->pCtrl->ethAddress);
 
@@ -3867,7 +3958,7 @@ WDRV_WINC_STATUS WDRV_WINC_AutoRateSelectTransmitRate
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_ISR(void);
+    void WDRV_WINC_ISR(SYS_MODULE_OBJ object);
 
   Summary:
     WINC interrupt handler.
@@ -3881,9 +3972,9 @@ WDRV_WINC_STATUS WDRV_WINC_AutoRateSelectTransmitRate
 
 */
 
-void WDRV_WINC_ISR(void)
+void WDRV_WINC_ISR(SYS_MODULE_OBJ object)
 {
-    WDRV_WINC_DCPT *const pDcpt = &wincDescriptor[0];
+    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)object;
 
     if (NULL == pDcpt->pCtrl)
     {

@@ -1,4 +1,4 @@
-<config configName="sam_e51_cnano" projectName="wifi_7_sam_e51_cnano" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="sam_e51_cnano" projectName="wifi_7_sam_e51_cnano" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -71,7 +71,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -637,13 +637,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;416&quot; canvasWidth=&quot;971&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drvWifiWinc&quot; x=&quot;364&quot; y=&quot;262&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drvWifiWinc&quot; x=&quot;364&quot; y=&quot;261&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drv_spi&quot; x=&quot;175&quot; y=&quot;218&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;eic&quot; x=&quot;170&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;evsys&quot; x=&quot;160&quot; y=&quot;20&quot;/&gt;
@@ -656,7 +657,6 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;tc0&quot; x=&quot;359&quot; y=&quot;172&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;416&quot; canvasWidth=&quot;973&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -3510,7 +3510,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;spi&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_spi_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi_0&lt;/Value&gt;
@@ -3518,6 +3518,13 @@
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi&lt;/Value&gt;
           &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;spi_dependency&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+          &lt;/Boolean&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
     &lt;/Attachments&gt;
@@ -3533,9 +3540,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC1500_VERSION"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC1500_VERSION&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;19.7.6&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
 </value>
@@ -3818,6 +3823,487 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WDRV_WINC_ENTERPRISE_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WDRV_WINC_ENTERPRISE_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WDRV_WINC_ENTERPRISE_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WDRV_WINC_ENTERPRISE_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_ECC_TYPES_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_ECC_TYPES_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_INET_ADDR_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_INET_ADDR_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_INET_NTOP_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_INET_NTOP_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_HIF_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_HIF_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_HIF_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_HIF_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_OTA_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_OTA_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_OTA_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_OTA_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_PERIPH_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_PERIPH_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_PERIPH_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_PERIPH_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SOCKET_HOST_IF_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SOCKET_HOST_IF_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SSL_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SSL_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SSL_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SSL_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_TYPES_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_TYPES_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_WIFI_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_WIFI_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_WIFI_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_WIFI_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NETINET_IN_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NETINET_IN_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMASIC_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMASIC_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMASIC_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMASIC_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMBUS_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMBUS_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMBUS_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMBUS_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMDRV_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMDRV_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMDRV_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMDRV_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMSPI_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMSPI_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMSPI_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMSPI_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_BSP_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_BSP_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_COMMON_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_COMMON_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_COMMON_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_COMMON_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_DEBUG_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_DEBUG_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SOCKET_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SOCKET_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SOCKET_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SOCKET_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_MAP_H"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_MAP_H&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_spi" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_spi&gt;
   &lt;drv_spi dnOrder=&quot;0&quot;/&gt;
@@ -3883,7 +4369,7 @@
             &lt;Value dnOrder=&quot;0&quot;&gt;drvWifiWinc&lt;/Value&gt;
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;spi&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi_dependency&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectCapability&gt;
@@ -6224,19 +6710,19 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\usb.h</file>
-         <hash>4507a034bb70b86707fddbc66a68addcfb0b57dacf4c341636be6a1e88961a82</hash>
+         <hash>a8a9affbaabaa627aea80af70261ef21c21473e895df243fa1bf21a4f0feee1b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\ccl.h</file>
-         <hash>c4177e514b061cd0facc67785dc72ffd3abce99d6084e5f89cf5f742e7596d99</hash>
+         <hash>23babd444ac6b2ee91f67b98d8f0f9209bab96aa57d88d0d0d16e2b50e919126</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\nvmctrl.h</file>
-         <hash>c3ed51a4cd88dea33a50e439a94e80e2c08dfc713892afbe1a8a8cbbace46106</hash>
+         <hash>519bd8b81f3df727a34f3a9c81ad96eca25c6b4e7df166e25113291f50062415</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmasic.c</file>
-         <hash>cfb155921f083855fd58d8ea949a7342e427e8f05c16835dac78a109e74ded40</hash>
+         <hash>920c68450d38fbe351283d05c52f5dd153e2712fd090dd77f58c11a756155b0b</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -6244,7 +6730,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>03ff23191dabf3871d70216d69851b5339c42cc2f719e0f1d4bf9b74055fd225</hash>
+         <hash>1a6bdac00590cbec796a13351597c695bc1d962a95641bdb573d1bf0dc38b2d8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\nvic\plib_nvic.h</file>
@@ -6252,19 +6738,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\spi_flash\spi_flash.c</file>
-         <hash>299d5d9d68577e40888a62c86284a97c832f9eb8944b3c24573c1e95b44470c2</hash>
+         <hash>17dc756d1694c84e5e58bb331ae4abdb54a9ff5fc278431a5a2406cad243076d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\gclk.h</file>
-         <hash>a03cd6c80699171128b843ccebcc2c67d4c65347cdde980f0fd9a63ceba23a2b</hash>
+         <hash>a77e2d58a7958e96ed65639a352d185a3b1c305efb005ca22d2075cc575c4a09</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\spi_flash\flexible_flash.c</file>
-         <hash>c1407b404314ff2e2455908df4040349e9d1202d77fbe02acd769670d7f8150c</hash>
+         <hash>cf20545f4395dfe40f667ea61c0d1583515034c155c768b9f373649594860719</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc4.h</file>
-         <hash>bb7c541b3c67c675da75959f89bd7abcf5a367ed26aacfefbdfe256563467918</hash>
+         <hash>817a8896cb07727ea9ff7d533ea33c8e906676c28caf93f72090f9e1beb8aabc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\driver_common.h</file>
@@ -6272,15 +6758,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\socket\m2m_socket_host_if.h</file>
-         <hash>75a895d664748499b5635bdea30ff49f3a53d7781d07eca6791dd2c32e3ad447</hash>
+         <hash>61aa4cde4168cf82ec3282ce43d7a99647d34f26446c4a91eeb9e0da4b727f1d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tcc4.h</file>
-         <hash>8b8ccd96084fd1f0bf72d3c8789c24277c28885be6535d5c7dad6a9fe78ee59a</hash>
+         <hash>7f78b71763838a402bf50e197d913b422cb115b421243df1287eba926ce7d812</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_powersave.h</file>
@@ -6292,11 +6778,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\icm.h</file>
-         <hash>88cd169a4a5f20782b8c5e4211a384d129cfe6624f2df6a26dbbe1a290cc7e19</hash>
+         <hash>a8707627834d0dbdfb861bb44d5789665876b0cdfa961533a62cfe957957b68f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_systime.c</file>
-         <hash>ffc0fe834b84bab95f75cdd853def78f17d021c15b200ab57167f9e28447afde</hash>
+         <hash>740bfa85d241095598526c40510657ad8191665ca2c14ac7820ef1d879a4f575</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_httpprovctx.h</file>
@@ -6304,31 +6790,31 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\common\nm_common.c</file>
-         <hash>f524f217705a227073bde7375deb0996d0aab928063054ad35a4ada537a62b3d</hash>
+         <hash>ef5dab1fa143d56aa664a56358f76a779ee1348cec2e944d929c5cfc3caa704d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom7.h</file>
-         <hash>a91b323a9f4ace7e641e48a40069a9dd2af8a1b24181d9d97b015b6cd4e014f8</hash>
+         <hash>ef8dddcc272204308add1eee859b5cd96db394fcc573516f5d2c1e2f571b006f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\rstc.h</file>
-         <hash>3a9041116095072a58595badfc35372dfa96be54b3fb01dc0a7de47c6f1fb626</hash>
+         <hash>7b645b3c95e85b91dcaa285937200482d69f3912ad7be3fe111b7b1c858beb5a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\port.h</file>
-         <hash>5bcd265b2543f95cf4567590eb326c83686a7d576dd8bd81d949218a4e9aa3c9</hash>
+         <hash>f1ee8cd8dcb2f3fde2a650e76b7d7f7c5f124d0b5bb2cd9defa51c5d479dcfd7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\libc_syscalls.c</file>
-         <hash>ff03e955db4f7bb775c7989bc2254553698f3d921e9885caac347ccd118e55d7</hash>
+         <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\nvmctrl\plib_nvmctrl.h</file>
-         <hash>dcfa87f0ff4cc198c8ec4ca6dccda6daed86d3e47d6641049bbb7d92c039b65c</hash>
+         <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\device_cache.h</file>
@@ -6336,7 +6822,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\pac.h</file>
-         <hash>5f3050d75ae8c9cb56f3a8cba76abdb60e0c2798c885b603bf171362f966dd0e</hash>
+         <hash>1af48f37cf4edeeae68ae435694667606a98ed679ebca28478ea23913574826e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_sta.c</file>
@@ -6344,27 +6830,27 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\oscctrl.h</file>
-         <hash>12583633dafa2230d32a312cf9a731f16a662d12bc0466fb712c6803815bf033</hash>
+         <hash>85fab1eebc94bb2f79ff54c6c0f28894d2e3b19adc661ceb4b33d201ad1047e3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\rtc.h</file>
-         <hash>d4dc0116171b1fe815c4f5ea4849a06b4cefbca77893045e2d99973edf0f60de</hash>
+         <hash>6850767b6f183fd4ff5a672c62b5b4c3b6e6b4ce66772db71457bafc7c9b6995</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\port\plib_port.c</file>
-         <hash>9f9cc7572e58bb74c44a00a4700fd8045ab908a107966e834dd2febb68e52011</hash>
+         <hash>660957ab3fe808c6d6c14684419b4a63a8f11f590054215be5d24b6c8f7f1fbd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\dma\sys_dma.c</file>
-         <hash>857103c3cdd998ea45f31516f435a01901a28afe894c8cce719240297d6c7546</hash>
+         <hash>b898eb7b174f17cd7dcaff8afef4fa2b878dcbc3b4db44b23810c78af55ffd6b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\socket\socket.c</file>
-         <hash>50b53b615ba2d19c098f3b422224278ade90d23f088fda7b538d3429841c9daa</hash>
+         <hash>e568506d7707d2f3ebc6e1cda02809946c1e27a8db8f05a557cf632426209f8f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc3.h</file>
-         <hash>232bd5712dacbf3b02be13dab03e7464cb532f1115b9fb661ef95d2f5b942ffd</hash>
+         <hash>f7c91e3285c307ce3c6cf95908bbfe68463ee6ab8eeec972d26f2b85d6a2570e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -6376,7 +6862,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\dma\sys_dma.h</file>
-         <hash>cddc4eed93fb89773cee3af6f03b13e1932288d822b1f3be0fbc85e3ffa3290a</hash>
+         <hash>c15762305460aac605f3839deedf888b0b632c871f2a9a5c6b9b55a85a278a10</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -6384,19 +6870,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\dev\wdrv_winc_gpio.h</file>
-         <hash>e4261d058fed31567925b0bdb49594e8c8b73eaf78aa583a7bf87e10e51b44da</hash>
+         <hash>e4e6c8983d2de502c7cade2f031faaf1552b4752a903fe937c7d7d3a6d4e88d3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\cmcc.h</file>
-         <hash>e32044f427430fe44932a45cd93a2bc8e3197fed42cca927440df52250afbc36</hash>
+         <hash>4b3e61a49ccf4dfa0325e5fb6349f35230b96e27ecdc907ae3d6901155d0b0fe</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\osc32kctrl.h</file>
-         <hash>2e3c29804250df0156c4902424db0d32f234f6c1620a5be24ea4df8fbc12ea94</hash>
+         <hash>8babf9629ac21b2cff66fc30dad2ff31f64a5b2228a1fef275e8e146d66ed85d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_custie.h</file>
@@ -6408,27 +6894,27 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\debug\src\sys_debug.c</file>
-         <hash>a19e5c5741fd049ca223b71314015cdb48f5750b92cd7d159eedb4da486d863b</hash>
+         <hash>474ee981d4285453a2ae9f1e4735c40129281931b89f579c3c413acdff1d8d26</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_assoc.c</file>
-         <hash>f81455da0ecfcdd814936f25543d4229037285b65067d779e9a9099527901fb3</hash>
+         <hash>7b5b0ef753c73eed7bdd87deb81d0c14a17fa3a0377b4e6be0d65df0cf05a6b6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\ac.h</file>
-         <hash>93a1ee6505d535e211d3d2e4269dc6cebc450e5e5d6d74dd415420318328f1d5</hash>
+         <hash>cf8bccadca5bd7bb22ebbb82ca6b2d0a911861a0830fc086271f5dfe3845cd6f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\qspi.h</file>
-         <hash>99af35ca4c2f54aaa7fa494ea0fb3524b29575ccaab67c3ce0c2fe5dd140268a</hash>
+         <hash>8d25ad0cc93ecd727ea34792261d57dde7ff7ea1037c5fedc202c1b539496374</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\socket\inet_addr.c</file>
-         <hash>1cbb5784e901da8556c1fda92d9824cf1bd082088692b25f5ae2deb12cbf7307</hash>
+         <hash>a56cd1985f8e2d032af86cf46287260e27d1677c3842411685f0c61a2a30bf47</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\aes.h</file>
-         <hash>ddfcffe9822b0e96e7f44f7724ebd92b077b8f78f3abb08a4c9725f118216600</hash>
+         <hash>330b0c7b3473018c47f25a557c7110222a7b0e070e01a355c8559b9844f13b16</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_wps.c</file>
@@ -6436,15 +6922,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_wifi.h</file>
-         <hash>4a562f07a647b85c93efca6e1e98fee4a4836079140736a66bd44e58379da557</hash>
+         <hash>35f986ca2ccdb4a8b00d0f7865188cc2599e2660bc035c1e9f92e0a3121b7948</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>71377a9a12cf76e7368be2b5b4bef19c3bd16523e135782e6e996451aacddf53</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\tasks.c</file>
-         <hash>3f783fa1258ca22054317960b72f9971a75c13258aa0ed6f73f77c1713a413e3</hash>
+         <hash>d7b7bf531d0b0fcc0eaa05424c87571474ad44d71b830f74acad9edcc4366d5c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_host_file.h</file>
@@ -6452,19 +6938,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\ATSAME51J20A.ld</file>
-         <hash>a5354361a86e8ad75440bc49d2e4e603b132c1849e9a46fcbcf9b92dd0313329</hash>
+         <hash>15cc39143f19337d981ec510fb70d42c944cd8b2cf96c6fe85f9c053341dfae2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>93a9b2f3e8ea848dbaec312a08323e4a3106152a528fa2aa7a50c91a387246ca</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\dmac\plib_dmac.c</file>
-         <hash>2bfe687f65f90885b2ec1b3adc0d0c4ce4a93793489b919b84c5c7ca7783d3c6</hash>
+         <hash>3a0b9ea5d1ca9f7b1fe1795dddbe8a2955e116c80a178b393cfac3915fcc2f0c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom0.h</file>
-         <hash>41d1c529eb230eaa1a12670a9bd0225911e3b668d9d385322b6dd1919f3c8bf3</hash>
+         <hash>56de9750a91f40e891e90ebd2a94a972b26c3869b829f2765c7e6396b27d65fc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_sta.h</file>
@@ -6472,31 +6958,35 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_hif.c</file>
-         <hash>2dac76873d4f4a74c20686e5723edb99f9985bb46864b8cbe99daefe2b7f2caf</hash>
+         <hash>03e9b0e34cbed07cbcbf5b0fc61dc036b7d009465b3bacb73fae3f516cece7c8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\mclk.h</file>
-         <hash>ac21cfa7deafc9106d600aa805b468262fea4f7e3be10ab6d329931e09e7096e</hash>
+         <hash>44413a208e2f0f407f236cd262949ed8c9b527b8461bac4d532c5f4338e8c54a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\dmac\plib_dmac.h</file>
-         <hash>3411906d50cd798a17c4e1019efade705a37732cb76b54ae7db16d54858819b8</hash>
+         <hash>80ba15bc2650a8bb5735cba44782fb8c6e6f9ee2695aa505c2a5d94454a36017</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\freqm.h</file>
-         <hash>5082cffd36c230bad935181de0db6cb010966bd09528dc7920d3f2cb3e387957</hash>
+         <hash>23dc3da789a0fc659987dbd7f5853d88825f823b895711c79ae90b0705510197</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\gclk.h</file>
-         <hash>8df4de88d41af7b6ecd477e870d8f93f834a278ee65256a911ad8f939d125fe9</hash>
+         <hash>26926e2483df5de1da579caa924a23027a51941e4fdcd070a4d333bd6f16f121</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console.c</file>
-         <hash>40aa2013385ec344c267d5779ef941d663ecc0739ebe962ad906324e71666c43</hash>
+         <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmspi.c</file>
-         <hash>bf98a34df9b4ff4bee77561a831feda1e9581b61ee3538ec8269db78b72946c1</hash>
+         <hash>aceb522988e9be32cda8dbda083bc453d5574d6b81e8e8b3f28a2ac850d83927</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_enterprise.c</file>
+         <hash>7c7c6bd221462c97c9d626778d6960609a7dce82985e3dbfafa7da280de091a5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_authctx.c</file>
@@ -6504,55 +6994,55 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\ramecc.h</file>
-         <hash>b2b164b30b386c60b7cf25247ffe02d37678f08eb4300006bcb47341fea8d9b3</hash>
+         <hash>c0e2cfc641f9b1450f4aff22d76a2e654cb196b6d1315d189db597ff39c2d893</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_ssl.c</file>
-         <hash>ced6e97fd2c0bfa82e8a397fc2e43b34dadfb5eda8ecdf0659bebcc03d80e960</hash>
+         <hash>be2fc23a7d0ad66a19c576f23f8dac82b1510a2162698e93d3b8b477cc7d0f98</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_common.h</file>
-         <hash>4365699cfdbd18a90af8934ae01a275f4c966f5d6cfc0db3f106e8cd2f36cab1</hash>
+         <hash>313498377406dad481bdb8ca07cea79f6d57fdf0367c3476f9a11f4ee7d3d292</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\dac.h</file>
-         <hash>8ba452776802aece1af61e3f815958b4474ade23a3b71398010979208892d997</hash>
+         <hash>6bb0cb75ad81eb2af278be9dbaa47de0a71a2f7fede6999b7357977716a00346</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\cmcc.h</file>
-         <hash>220315afde58f363d5381723eb6e859052d7a69d1df2b5e23a1e18571b12cfff</hash>
+         <hash>c1c3bfcd8afc805c7bd3687c01b61e36f857fae9b35f62fe32800d3a022d65d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\nvmctrl.h</file>
-         <hash>733b020f884e6e3803c0c6b207ef00ab69b8651208ec646a1480c2e7bc3593b4</hash>
+         <hash>79f841cd85017dce864c44cec0e9b623bb777bb7953dd3d950401ae507bcdc2e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_assoc.h</file>
-         <hash>12faf5fa2f8d72699b42a102f36d77859fbbae0523cfe5032bab6907c49ded33</hash>
+         <hash>0dfa352e4fdce8325360352f70320f5e68cfd4318cec4009cdbda31dee2bbb80</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_uart.c</file>
-         <hash>ac0304a177b5e152c80d648da5f5cd87f7d926814f093131b76142c41fde6473</hash>
+         <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tcc2.h</file>
-         <hash>96e7f130975a96975cde6a4d92ae8b63749bd452a08bf4cd01e9b3c864ccf7aa</hash>
+         <hash>995085f7f1bef05c3aa92aad7fae05a2ef24a49611b432ef1bc39a4b5bdecea0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\trng.h</file>
-         <hash>6bef26aa472bd8e7036fde46f617b09369fae6ab525c30dae627f0708da691cd</hash>
+         <hash>06ba2ceb1c5711e86292cea5d1905f84e9898272d2525adff359bb725e1ec3f9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\icm.h</file>
-         <hash>fa24ef0bb46b955a78e0609486ccafa76aee3068e0e896c7bc45d35537234747</hash>
+         <hash>c13cc80fc05733bb2544714b8d37fb1030023fd51b325b7c85e1e434c5fd5e0d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sdhc0.h</file>
-         <hash>481f6999efde782c4ec55d4b71f8ace5eca4f572737b231e5e61e70debed03e1</hash>
+         <hash>fd795d5cc7e5390e91fae90d9faaa4c93916943a1b1b9209906958c1631a08af</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\i2s.h</file>
-         <hash>296138693e19f7069ffae80b339c117923149ad52433b263f94fd04739a2e44c</hash>
+         <hash>cbb23bdea8726d82803acc98f6e2151a89fb3aa16c2e41964bd955b19edb5d2b</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -6560,23 +7050,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\dmac.h</file>
-         <hash>087cf338b0eede0108b1ab47d147f15ec1284f73f51086283760a01eebe2e90e</hash>
+         <hash>7f1b3b22396404b2b3b29519d18163e06d7832a55e7267ed12234b70b4bf3ac8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\spi\src\drv_spi_local.h</file>
-         <hash>71a1fa9ba0e3739cb5404dd272adbc0b1f3166fd4c744206830cbfe6919433d8</hash>
+         <hash>ad0de54fbffad399c5a1cf1b803300cb4e4cbf2d0e611387deec39c24ce74f4f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom5.h</file>
-         <hash>524d181c6b013bfd249d71bee66bb6f5eb424dde2c743ab1207bcd1a78704748</hash>
+         <hash>84d44cea0c3b1f4a2d530b61c438958be9f22cbac3cf0e66ac000ff6682261e1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\socket\socket.h</file>
-         <hash>c9451ace6ddc69743fe26c068ecd5bfc2a68c49d6c413a723ea625adeb75d6af</hash>
+         <hash>4df91a1f52e9b0da54cc9a5c7df24b6eba1a2d812f79c0594def4c49eab823d0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_types.h</file>
-         <hash>fb5533b8d3587b4c8f3adecf7b2144c26cb7e624c2612ddf8e01278ae244a3a4</hash>
+         <hash>f09f901d26773b89071bb9852757b46ec9ab679715adcb8f425ad255bf966340</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_uart.h</file>
@@ -6588,39 +7078,43 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\can1.h</file>
-         <hash>d70c6e36b74ed89db65bb424b6950b9d86b7e7f6b6470ae28a2e70b8bc88c502</hash>
+         <hash>f02bc9abf7f8c1bdc2d8f46d49b368f6108ef1f6e6703193406445f4fddd801e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmdrv.c</file>
-         <hash>ab1b3a12da1016913b6993bf806f9ba302d1159acb49c3eb6c845d5bcd2b88d0</hash>
+         <hash>7f9bd605ae15bca3ebc9916b3bdd10ae6d32d59f65ba691b33ab72d58f31dbb6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc2.h</file>
-         <hash>5d0209e36814c5ee635b4ed5760c0d5c302c98d6c85c8abb1799cb0906520b31</hash>
+         <hash>ea221f213bb9cb0b414df784fb7c6b1b77124c4dcc1f737a2029610a16c893c8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\pac.h</file>
-         <hash>75f2fde7cb964b3c4596477062b307b1d157ee3d19ec6a8c6d65c64a06fa5ae3</hash>
+         <hash>dada7b6dc528c64369ef4ed0acbc541601b651cb4fbd8edd5b2eb86e2bd84640</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\tc.h</file>
-         <hash>394f9699d18b6444b930d026d97a9bea5558588aa504a27e6cfac276c154d7ef</hash>
+         <hash>c94e8a55afafa40a1730a655f23eb06a6793dcb4885f40fd0c96205afac6c24f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\sercom.h</file>
-         <hash>09bf0a67aedf2b9d5e514448d7a7429823e243759e2a57e5c10b7ae686b97061</hash>
+         <hash>9cfd58850bdbe5f52b6fbc8a6b5b5e999a0dde485454e7551fb17ef1c124fa94</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\pm.h</file>
-         <hash>ce4b98010921b721cc3cbdd61dfc723e6d34379d3920bee9b6eed3315c138159</hash>
+         <hash>35b6594a249d8ea14fa2fe73ee4f9b1fcd73a87ae1627e27bdf99a6c0bcecdd6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\port\plib_port.h</file>
-         <hash>a9e46339706db14ad1b22d4299f126a25285c2b046f243141be8dd2aeb6254f8</hash>
+         <hash>9bb9975b97f00efa3b7d0de7523922728299088115306920e630d7298463a5ab</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -6628,11 +7122,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\time\src\sys_time.c</file>
-         <hash>ddec1a83e32b63552ae72f884dc849e376b60d411669554f7ec492fff180662f</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_ota.h</file>
-         <hash>508e10784ee27ce74b237c72f6ce24bafad2d9ddab8d3a66f6f04233003a1772</hash>
+         <hash>74b137538f2eb0478b3cae9789ddf50f8dca9cd62151e4026ecb0a09c6a8568c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\driver.h</file>
@@ -6640,31 +7134,31 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\eic\plib_eic.h</file>
-         <hash>2746b961fce7da3731883cb1af3c3c3d0db99bf8bb50f5b9cb4e64018ad052e9</hash>
+         <hash>1f5c2c2f0fbbbaded1479a8618b85d7069f586c1e2bab94495d6d99173aa7f1f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc.h</file>
-         <hash>e56871a6643412f4b4b12e446a4e70d93e6167054908606baa6d99000e24a7c8</hash>
+         <hash>f580ef83f5d4bacab065222f46a4c7ccd1799c61b685dd06ba4c703cbd319782</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_periph.h</file>
-         <hash>ca21138937d73808fa96815332bb5adde4692b5332171e387b5dd2899ee322ba</hash>
+         <hash>5e504c59d10d265ded4d61a79c23fe85ca682bcdac58ff81ced64e71615f7fa1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\spi_flash\spi_flash.h</file>
-         <hash>95a36b87b018323203f441620f560b1f4bb41244feb6fe5421687edcae7e3d0b</hash>
+         <hash>49d832d2f48c356bbf0b9a7a719dc076c908718f7c76393982aa5d60a828d5c2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmbus.h</file>
-         <hash>d03d83f74cba5494aba6d874b34e095d253309a3110df9a5026b5510eb94daf2</hash>
+         <hash>9f20514bd12426ed10e148c6039d8c6eb67b71081ac10cd553b786701fa53b05</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_uart_definitions.h</file>
-         <hash>0b8c26a32e6ab6cb50039434ed379044bfa539b4ed2ed4b65a281d943a8868d8</hash>
+         <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tcc3.h</file>
-         <hash>3d39c314f3812ca738554630e40bcef7e6f74a171181c57ce3e92764854c139b</hash>
+         <hash>d853335dacd3275363c3a893f6f759b67ea9cda2d45c5e289df1d0dd04c0f312</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_systime.h</file>
@@ -6672,35 +7166,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\rstc.h</file>
-         <hash>ac75db5ef6fcc57b1a7d869ec133ccd4d834490b6558ad9c3da4c0780e9b8281</hash>
+         <hash>425f9b775eb79abefdf1f2a09a9b2a39af45383f9a1065577ca4af580ead50c4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom6.h</file>
-         <hash>b63e0a85196f98d891d38b1a453446481b1af5067765ef68f650744522434d8f</hash>
+         <hash>20d49c52eaaad8d1bab8281311652fbf5d6a26e09fa90064931b9a3f186af2fb</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\eic.h</file>
-         <hash>3222fda98e0255e70b8c9eb64f12919386ddfef643849d01b5d0b956c1b05ba7</hash>
+         <hash>2e19b9a1f44567da7f09710746824495e0c2ea389fed92ab22460f43da5c1718</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\adc0.h</file>
-         <hash>7e1be19136aa1a30e7532779bf9c86de30e4b476b6273e90f7aa99c8f648f3eb</hash>
+         <hash>cae698d90e4c21306151dff1dfedc3ca6cf46c05bb8a6cdc5a99cb18e7de07aa</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\wdt.h</file>
-         <hash>2454290c1b4673020c2979a03d30ce6a841a0fcfaff96f59b4f1df9699b778ef</hash>
+         <hash>2b810e4d10c04da4fa6666404a906977754fadbb07fdd94a27c0e812399eaed7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_hif.h</file>
-         <hash>b688e6a085534338e46757a49c20c9c1106962670a71df732924087c707a395a</hash>
+         <hash>89938c27e53d18090e5779ab763690fe714f8ccfe60500783798b0efafa5215d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\osal\wdrv_winc_osal.c</file>
@@ -6708,39 +7202,39 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\hmatrix.h</file>
-         <hash>ddfaad4d32403a9105982c564b05b43647acef8a178f53cdab7b8d6324bdbc9e</hash>
+         <hash>4c00a55527fb9f54ecc8d5fd2ac13749fbd40c4dc878c763594a3f8a3e91e123</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\adc.h</file>
-         <hash>b01bc96b80101a7a3a957dcf951ec3edc9925b529c7e6525e25d7aefab91941b</hash>
+         <hash>40c635359e8eb7b5c0f457a98758c69556415279ac6e7227d20d18dc27b5d5bd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\can0.h</file>
-         <hash>f20c11a37ef7c0223b88cb563c15ec47fd4082f0a975040e77446a4d0b0079e2</hash>
+         <hash>08991dcd49141a18f5e3ccc2e8c7a93e9fda7f3872a9abf3253909c4bbd542e4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc1.h</file>
-         <hash>c82cae7fa87d0ed043b907bd7e620dc41d34f37fbdce3fcfbdbb384a799bc762</hash>
+         <hash>59bb9638cf2d71cddc8006bcaa7b7d58ad51f3e1fb96b095345e10b9a4247e81</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\nvic\plib_nvic.c</file>
-         <hash>d9197c8f9d13ac53557bd2d70acc3a434255d46cee30ad9ae7fdffacf2fb44ec</hash>
+         <hash>1e2e8c6e4f3633ad3c229a1b3064ca9af9cf503c7f49aec45bd5c075b86ff142</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\freqm.h</file>
-         <hash>b4d7826fa3c7fc27988c6f5279d78cde23afe740d3b21ec0c330cc4c01bdeb34</hash>
+         <hash>275513ff8cda33e2896fb114b6f9b1d2679a22756c6d212b6d1ecf620b5a3750</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\supc.h</file>
-         <hash>9d14ac0e6d1e593a21878259e828e969f06c4796036380f24eebe3e3a85c6d34</hash>
+         <hash>411f832c5788198d4cd12258d78b67c54084b0a594bdc24a5025160b0331c36f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\spi\src\drv_spi.c</file>
-         <hash>dfdf1bcb8e4575145e8651fc7b1e18aac28a00b5180f07d51f0c86f9f3fb21fc</hash>
+         <hash>0882f1587b3c48b541a94f0255b942c7d61206dc1fa5d89c4ac2ed0d9a92cd3d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc.c</file>
-         <hash>5aa3c4a81c9988bac9c2a0c35fef439b26e924730e51143c373db52f0c3e605c</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -6748,7 +7242,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_host_file.c</file>
@@ -6756,19 +7250,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\fuses.h</file>
-         <hash>cb0954bfe9a81044e26b429e135c28fee2dce6e82f09dcff8fb66f03fc315918</hash>
+         <hash>340ba40f72c13340132c5dd060ef5a7dff423b38313595364b92bbf95f12757c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\pdec.h</file>
-         <hash>633c8c43065b121f9e37b86028ebbc6a815c8dd28e6a91134f1730a1c34ca726</hash>
+         <hash>50866aab5cc4261f99750d110d343bb7c16d7db89747b0ad70a754c01da3bad8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\spi\drv_spi.h</file>
-         <hash>dfd0f628815dc935e8594112dc1a2acb17e9e2c50bf847744e1d54398768b274</hash>
+         <hash>9a6daa12b48114aa08202529bea2a2a3d9d98a4365d864f10380ad2244b139d2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\clock\plib_clock.c</file>
-         <hash>a6d88e890010d15bc58bb80a21ebcbb0e418d8b127172d2aa00e5e2b5aa96d7e</hash>
+         <hash>fc8808717e22c0055681b5d45479d180655c0e6da363a7891842b31457b4a310</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_enterprise.h</file>
+         <hash>d570e30c1451491017f757b2fd31751f1c16f49a16fe2f8fc33aeb2ebe849521</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\device.h</file>
@@ -6776,67 +7274,67 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tcc0.h</file>
-         <hash>f4b7ec869f5966aa806d95df7410fa85d092fc493a791d36f81ec2dc627d7508</hash>
+         <hash>35993e030cd19621a1fe05ba1fed264eaa2cd77c2476d619e24032665263cc63</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\debug\sys_debug.h</file>
-         <hash>c17a266d85e3ed1dd692a96184193c0ebfea1099f6698ca073f82418d92d8b53</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\same51j20a.h</file>
-         <hash>3fc9b509a6cb8d0203dd028303e3c48da024350ac67f1f930cd59419b0653755</hash>
+         <hash>08cbd43a3fbb4499ba422c6888a17a7ec0b804543dc116a41f1a448ce99b8551</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\toolchain_specifics.h</file>
-         <hash>fb1c58b7fb94545ef6247f18ea3001b719e06ec29bf39bfd68fe3927f709eaa3</hash>
+         <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\wdt.h</file>
-         <hash>6b9cee9f385e96ace1533a4d1537fba1d8505b3cc58ca12012fce5f8bb4d8fd9</hash>
+         <hash>0ee35e8dce59f82a8109aa51a481e6319e5e62a72424571fc92f49caefa33964</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\spi\drv_spi_definitions.h</file>
-         <hash>c0bb59cb4e0db78819626219e773cea55748a8207b9afc31617e9af24662650d</hash>
+         <hash>ba06e15b49c559da9db2e2c1756bf29738c224a13a47fa77cd2722267fe3e68f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\ecc_types.h</file>
-         <hash>ca4571213e05b915fd9dcd6e88f056c8d4a1c7546825e6665d06496fc3e8b969</hash>
+         <hash>88cddc41e9f4a1755e86e47650a35d607a76fa2ebfd79b83a415332cb661c00d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\initialization.c</file>
-         <hash>d652d28afa6ec53531d5d319cfe8e6564df960f2581ced6540c23f1e1269aaeb</hash>
+         <hash>c624157278ca3b5f1ce57c26e5501c71a8ba5055767f5edeca045ec2ad8a0b13</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmdrv.h</file>
-         <hash>b5b24d92c19f00522ebbb827402dac3625248277336a82338ab041ecb1b682a9</hash>
+         <hash>4d205c12565d012a30dd90b8952d4ea0b3784c08721540c9538fca854eee36fd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_client_api.h</file>
-         <hash>0aed6ac4e80b9b0d060dc1b3a5280fc59d2c9642b7d2d5b5859931473d535a9c</hash>
+         <hash>a24e8af21a445d837cc0e05852017d8ca16e5f4c442e54b0cabdc89a5586cac9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\i2s.h</file>
-         <hash>1f56c0968efc880a838ce3e8a83abd6843f3de1401cd90894a9d1a2a285211d9</hash>
+         <hash>cb1cad95694f5a301efa483741a19095cccb332aa9d773205a7d16721f4a8339</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\dsu.h</file>
-         <hash>a69de3305c5a39fba17ec1349d9cde09f7813cbefaa55c6955b598e58c1dd693</hash>
+         <hash>f29f83b0bb5829d43a29ec29e66556fc8e6dd417bf8c20022a611bab1a3c5823</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
-         <hash>91a3380e60de133fca0e1799e131270ff5c55b3a90d6352b0ae6810b5d0ac609</hash>
+         <hash>84807f9ba1e8f0b8cfa1e11b3daf4e7c253df66890ee94f98b2c14874ce40265</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\tcc.h</file>
-         <hash>f805ad538499c1d38e1d3897105aa9584665fbc1218b1ab1f8780e1bb94f489d</hash>
+         <hash>32fa9a257fc55388a157eb555d265e28be86e50f5067bdb6457c31d12bc93179</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_ssl.c</file>
@@ -6844,15 +7342,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.c</file>
-         <hash>e6fd2a185ca07d0bf0d1d5426a5c9a30152c330bb600e6ae2f6266352a36267d</hash>
+         <hash>2992925aea3467b5f06460aa48d58387effdb841b6037e396e70d90525dfe5af</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\adc1.h</file>
-         <hash>e4b80b061c4042a6981f29ee916023c55bf23351f4152e2a628116b4e98a10be</hash>
+         <hash>a40b86bca6b1a2689a49f14a6ae1002097e2c5e5b665024a54c1d35e22abd10c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\definitions.h</file>
-         <hash>d74ee0be385c886a4c579b3dda0e5ba78fa5fed0c3b386d1747f2ecb1a6a6f7e</hash>
+         <hash>154177bfc4d90af63717ede97dea4975712835647f59e8dafce0d618585dcbb2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\clock\plib_clock.h</file>
@@ -6860,23 +7358,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\ramecc.h</file>
-         <hash>724b40f01bebcad2def4fde435036ee3a5a067a8c62298dc3e64f34797206f8f</hash>
+         <hash>b386ce590951347c4a00dae722b72aaf60352505d333d213066406ee2a19ca35</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\eic\plib_eic.c</file>
-         <hash>c035a427beb188e4ed640fa0bdbb23bb8472b05893f7aaf5c3501c51d406f494</hash>
+         <hash>c98f336fbb4e8eeb3fb5dc561a1998738abb20910b0e42d6e76bdd9332df3c2d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom3.h</file>
-         <hash>bd3afabf0b252e9d23f08f689ba340dbbaae8fbfe1ffbd255ccc49f7626522e2</hash>
+         <hash>20637cdd91ed2bc7997cc056b28aa999a45853d43b41c0e12c82643711517774</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc0.h</file>
-         <hash>51832bc6688b1d5895df5b17326d70665eb492601881dffa9be50163868a7438</hash>
+         <hash>b926c72c60a5209f87f32a964953e5e18ed7156a1d0714b5bfc0964a3e4db4ad</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_nvm.c</file>
@@ -6884,7 +7382,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\can.h</file>
-         <hash>606134c93ee0142a1f21a93e382b33026fe2fce038a83b012ba07ac3fb681549</hash>
+         <hash>615dbf905d4a45aa3a7803794d00661df310cde437ed94f7d5bc8e205a2d0d0c</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
@@ -6896,7 +7394,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_socket.h</file>
-         <hash>d98314ac5b391d221399f6dbbb1650d1f950da9dac337fc433e480af2e2f1874</hash>
+         <hash>7d7d0d6f147a7b026a6418d5c6549af910439155a684c0ae53ea40b6e5a2183b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_bssctx.c</file>
@@ -6904,7 +7402,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\cmcc\plib_cmcc.h</file>
-         <hash>543ede3f86dcfb1c4a339a2e0ddcc31cadbf22cc1565dd92618aaa7eb432b80a</hash>
+         <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\debug\src\sys_debug_local.h</file>
@@ -6912,15 +7410,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\device_vectors.h</file>
-         <hash>5094fcf05625bf99a14559132a053675428af57674a44d5c6a414bbfa7207051</hash>
+         <hash>73940897ea4570f75fde55f65cc755757d1989db12e039b9960b0de07853cb45</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\tc\plib_tc0.c</file>
-         <hash>e08d5aace8d17d2ce8cfbfd93653d49390663f98f329e76ad4c53fc51b7f536f</hash>
+         <hash>ec3ff1b8f7b99b2ca2a56e5fd0b964847085577771ff64d0e18c2fb64e65de9c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>6013e612c402dd6bd965c5250a317275d1004a9d370a0d0c62cf84663a6a4089</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\tc\plib_tc0.h</file>
@@ -6928,15 +7426,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc7.h</file>
-         <hash>3583dc07ad1a97e12f3275c3a2718cf64a4ebe9018b53a51330ccd236f493e16</hash>
+         <hash>1ad42c8e1b17d3cdceddf87578a809f32424aadcef440977a93fca12d93c5f2e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tcc1.h</file>
-         <hash>e3749e70fad55b6e64723339c33d280ad7e479660bd85397cac2f4d20eda8d90</hash>
+         <hash>f2dc0e5030d27eeacf2a74ade4bb7d7b5f2db413880f69b122a6eb0919a96af8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\dsu.h</file>
-         <hash>155f036b50802077e9f33cb67addb6b649c262f7e8c40f4ad5c58593429c3c41</hash>
+         <hash>ecf9aa94c178309ee5ff34774ea02c229596fd831559c837ecb4cffa3d855ef9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\cmcc\plib_cmcc.c</file>
@@ -6944,11 +7442,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\pdec.h</file>
-         <hash>202d7342f93a7e575cf2b6924ed57e2cdca28742bbc216f8310784e429ac2843</hash>
+         <hash>dbea79497d409b29fda82f081c8157d55b2d11e7337a4299dca8bde16d8143f4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\spi_flash\flexible_flash.h</file>
-         <hash>0060bc6fa14d8ac69d198880183f0ec57ffed3ce75075d9a00223e3478e6a5d0</hash>
+         <hash>3fa02210a937726e278d18048224c494b7e322556a051b9d4207b9f3f02cb09a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\ports\sys_ports_mapping.h</file>
@@ -6956,7 +7454,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\configuration.h</file>
-         <hash>af3d5c1d4825da0150ca9eb5c5f27f10e90c5e29d1ff5acba0968c91ec551cc7</hash>
+         <hash>0498b304d3acb8bc495caed20cbe643e15e2df04a780f73737e0f90d44ca539f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_powersave.c</file>
@@ -6964,11 +7462,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\socket\netinet_in.h</file>
-         <hash>fdda8208c27377394bc8371155f3d92b25482f988ec63b3c968bb4c4bf0c8224</hash>
+         <hash>d08301d00a9fd274f41592f0a4dd0c13e20d1be8dc08d1acc05f0585bd0d6395</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\eic.h</file>
-         <hash>f27e0b3eabbe395506b36d484e6dffb3baf5f049387fe307a4e328e5120312df</hash>
+         <hash>82e4df0e59cb35e8f625507ccdfe79052cbd7e5164374e69b16ca332a92ddc32</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -6976,15 +7474,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmasic.h</file>
-         <hash>f4423440b4504a11f882c171b4ca4586ae592c4ceaf4d0cdc0d40e98f77e3465</hash>
+         <hash>d658761cb5cc959ae814787aeda5be69832b97675d3836bbbc3f96b991a8f6a8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\sdhc.h</file>
-         <hash>b2141973ad06516ba6249f24be98eb2f7bbfb892c9bff047032ea324d08b8f56</hash>
+         <hash>9c5c0da9a2c74c7a560fd5218ac4054a5b66f35724eeaf5060f0daadd0dc7761</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\tc\plib_tc_common.h</file>
@@ -6992,7 +7490,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\evsys.h</file>
-         <hash>83f6285bce7dcb47dacd1ef4a9a31dc79de2606a72294d448e2eb278dec20ea3</hash>
+         <hash>d44a0b5b6b6787dba61ce9f02082c63efd1a36c9d9354843a2aee02697532c65</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\spi_master\plib_sercom_spi_master_common.h</file>
@@ -7000,15 +7498,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\cache\sys_cache.c</file>
-         <hash>7ed94244e15453076a32ec0f0e9d07ee40a74661c3da757c15c568b74f96d1ad</hash>
+         <hash>da28c09b0da0fdd6fb7064631c15c9197c78df33fcd17d742baef909830a320e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\dac.h</file>
-         <hash>7c7afbfe072deabe02cac3c6fe1eb777e4c107b68e457f8377760d86add64ae1</hash>
+         <hash>76d210acf5a15a1be9833feb465a07c3b8465595830a3c008dee79d896787973</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\trng.h</file>
-         <hash>497721adcce0a1be9469740969532bda1134ac637db57297b07356ea2ca23051</hash>
+         <hash>c06a6922011ab2c282e886c72b6051a688829776cbf0786e746ef2d28f4accb0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_bssctx.h</file>
@@ -7016,15 +7514,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom4.h</file>
-         <hash>8fc44cc41019f3c0d1967dc25ac6c043ef8d965f4037465dacb6669ca9e77c8c</hash>
+         <hash>435ee699b80f6b8a75097c2a0db75ff7d8edbe1f9007fb578f3efbc2deb346db</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_periph.c</file>
-         <hash>c2b0fc721b6c621664905230d97226c617423ae31bf0084fd65707f1a79a4c65</hash>
+         <hash>29b2ec2d31d2fd2e1fd1a617a1a599e98f7e8c9446d9ecdad2868aeeaf546991</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\startup_xc32.c</file>
-         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
+         <hash>f374b97d65f92553f1b75d8c9239b8b0f8581c710f78ea47b02c7f6fa6f74c74</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -7032,11 +7530,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\pm.h</file>
-         <hash>a7e58a58d4214df874808629d1a6834e974c465f5335498aea0fcca8b7c912b0</hash>
+         <hash>eefb8c1969dd3c6f68fa4e1041d8821acc7c864174a5c96bfbe35d768b8512e4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\pcc.h</file>
-         <hash>e3aa329dec2ccccbf11d583303df23ce910927ce6cbf911e178d656e304d87cf</hash>
+         <hash>4e67b425da6c02c6d9c1de0119434da3aa3eeffed5739aebc84421b7c1e554a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
@@ -7044,47 +7542,51 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\fuses.h</file>
-         <hash>10dbd9b951ce926130cb6ae263bcfb5abfebf694bc382ffc3a198fdfb28e97db</hash>
+         <hash>ee648d899a8e97829f6b6c6cfa7a1f9ea196b7efc448480e8fed41fd679b429e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\qspi.h</file>
-         <hash>172ba6e25657347779aadfa453e3b419027ef693594948b748ec4abf0e2b4541</hash>
+         <hash>320c3fe9bf885a689631c05bf588b0fe00f644c72b9cb4f8e443628165926be4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\evsys.h</file>
-         <hash>6f9822848250689049911d8d8f5114f6ed7b5b52fd865960fceacfdbcfcf04e7</hash>
+         <hash>d8fd9b40db458c6fd2c7c75c36950f10e91b39b4478d6cccfde4494c4c437dfb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\pin_configurations.csv</file>
+         <hash>cf34c2f2762c64c4e964d1a68a44831c4d0643250b198cb67d795cb21c2a25c6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc6.h</file>
-         <hash>72f2d8e4649b401152c583af14af3cb88942af3d26e43715aa2d0a05c79f869c</hash>
+         <hash>2bd39068e349d0347ae2e071add326502c244dd475856b02bc8d6c0a7aa9b5d5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\osc32kctrl.h</file>
-         <hash>e7732dca751e6a5eb40903eb4f68eaa658dcd1c49cd6c800f1f92ede3976dac2</hash>
+         <hash>39b699dcd205a789714971a4d9e44f4c596cacc1f114acbc4bc9266f0a3b89c0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\exceptions.c</file>
-         <hash>8373b825c302768f52e3568c20241f4eb49c1fbb3614139e8e65ba694066141e</hash>
+         <hash>89852728a9a1cc4c9746839cc3caf5308b8698c0c30bf6bfbad0db9e552a387e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\supc.h</file>
-         <hash>f55d933f47b0d7a585724b6b16fda9f56555af2942e7bb80f77f08ee89ad06cb</hash>
+         <hash>c712ec44db8c08f4ee1908257ff53b117d6404b13b253b4be443104e2947235e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\mclk.h</file>
-         <hash>b775a1e044185ca8816cc24c1c4fc9bb20d89c6e99e8de54adaefa4997ee9e07</hash>
+         <hash>fcc32aec30f621e99ef7ed0a1b11c0478d2213c30a5f99df7b210eea7402b40e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_ssl.h</file>
-         <hash>094deac3678613ba7c242e99fed65d1a07c1c51f8e23f847d9e3fc887dd5ce56</hash>
+         <hash>ed03c568a3b5b310159828ef0e3c1a68401f32768f966bfd9d576452a63766d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\port.h</file>
-         <hash>cea98fd50c875cef2030fb53c9a01e5be5cfe1b2e905f59c36e4a73df639fda4</hash>
+         <hash>19736dce73ce13291fa4dc24ce6f6effb7d8c59909752ce0eedd66738a3ec2e6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\common\nm_debug.h</file>
-         <hash>9409a16ecbf9cc5fa28d0c5e71eb3292d32670c04eb1549588db30a005228bbb</hash>
+         <hash>710853ce80d3cd33f1511492cb143bbd16b6ec0bd7d622e9d9b2d80b28a98a75</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\dev\gpio\wdrv_winc_gpio.c</file>
@@ -7096,7 +7598,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_socket.c</file>
-         <hash>06ba9a197779bdb359ff3680fa47adbfb5bbb6d5b72393e0ec5711d9f71dd7fb</hash>
+         <hash>c276a2066d76f837b7dcf80de974e58b6d66facd6f5403a11f0a5d15709a544c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_ssl.h</file>
@@ -7112,7 +7614,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\interrupts.c</file>
-         <hash>74235886599aa5426e129a09cfb1921618d28db8b49c8d1dd86ff3d604e740ef</hash>
+         <hash>665ec27f188d09d0712a16c00589e9c336ec20b98e719f723733faff8d89c05f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_debug.h</file>
@@ -7120,11 +7622,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\common\nm_common.h</file>
-         <hash>b1893b2a84a9f62c25c73e88f34e16c05e69d7401fe8554057c1e20a8f0c448d</hash>
+         <hash>49d57ad3bdc5b191cf6e5d77cb505659745630435e0eb1afcfd66eb52c49a25e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\spi_master\plib_sercom1_spi_master.h</file>
-         <hash>fae66f0919ce7ee73c63ec05c043fed931ff8c86453be94a82cdb90d777ce01b</hash>
+         <hash>27dba3e4bd95c522ba463d1d2b5030e81bd490055a73ae6d11fb41494d432f82</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_wps.h</file>
@@ -7132,19 +7634,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom1.h</file>
-         <hash>bc1c95e2abca126d3fa96fbe79ea8ba8289f6630bd9a5772de03f7ca6ebf8f25</hash>
+         <hash>f99ef6978e99bae8edeb0f1b4dd3c01e85261c4eabcf6be3faa939aa481b2ac6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\pio\same51j20a.h</file>
-         <hash>06e25b2c25e8e1333240a39ce0ab48d0192171234fce169c5d25c2103a756fef</hash>
+         <hash>92a8021af75873384445867c66105c2bdce6efe22262eeba31351d0de6b2cab3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\spi_master\plib_sercom1_spi_master.c</file>
-         <hash>107ce03fbe014cbf24773a86d3646458f17ca124eb480484a0bb6969d675a1c1</hash>
+         <hash>038c0076ca559a7bb8bf365fc46e3a21c3ada984c3c04979d172d96fc048a514</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_bssfind.c</file>
@@ -7152,7 +7654,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\interrupts.h</file>
-         <hash>2548473194832ab8f2a5b6a59e099dd8e192dfb90e6be3f32f948c7d0505f4b0</hash>
+         <hash>797eef6beb3bee475b4358aa931de4637eadd9c2c33181a5133ab6fea3bf6236</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_custie.c</file>
@@ -7164,31 +7666,31 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\socket\inet_ntop.c</file>
-         <hash>87945906e92d59ef2f341ade74705778dffe73eb9b7460f08a4ccb218cda17cf</hash>
+         <hash>1c6ee53cefc99e82754bf3ca9c51a56e9ec9160ea309bbdda8e98010acf77565</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmbus.c</file>
-         <hash>868b922cbd3548134ec8bdf25b879e107ad9372348155c6fd1dab858935dc948</hash>
+         <hash>ad4fea88b68771621b0ec8615647904920c7fcdc16134a9dfafbbe0ad0a3d96e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_ota.c</file>
-         <hash>339e274ebe8d93b702272849f344356d9a47760c6de71466b1a773fb82670e7a</hash>
+         <hash>315e2c39233fb9702325aeb2ec6ef11d8dbaa08ee683f0fad4dd134513e685b2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\stdio\xc32_monitor.c</file>
-         <hash>26e5749db654ed433fd94f6c732ef8600d0cbf5196493374cf111877c02b694e</hash>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc5.h</file>
-         <hash>97d57845002271274dbc5aef721394e210c51fb74b66ed88e45e40f36dbdd830</hash>
+         <hash>4e52c5644bc17730eb7177697f1ca6ec5708db4a90e349926d47317cbc938c00</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_wifi.c</file>
-         <hash>c8e90ce0035d500354db04c81cb9e11d2d8b490783ba8cd677ee01142f131d6e</hash>
+         <hash>77e1c92e07919e09b91ca01c2c0c4de60e39e388fa3d3dae9921b20877ba847e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\rtc.h</file>
-         <hash>240f70ae401253ad44f51798253a81555de3904d7baf4fc5d862ef77863ae3d0</hash>
+         <hash>5a08583905fa066ac8bbee3f34ec50e61b5876be0c2080a96e1ff7ed52cef866</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\ports\sys_ports.h</file>
@@ -7196,15 +7698,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\spi_flash\spi_flash_map.h</file>
-         <hash>beca5f641c602a864b1ad5a1cbcf4a9fdb35c23391e42f3a8d7dee44cd24a223</hash>
+         <hash>4d80638ce7515beccb38a52a217b56d921765cfd201c7c2e6a97f042b9b5f59b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\evsys\plib_evsys.c</file>
-         <hash>171913270aa095f1e8ff9192995129ff7bab22e5c793c4223f9046802e69d1e6</hash>
+         <hash>b2e1a8004049e687fc5544133f3346f743ced50cdaf860c8e3c7f58df3cc163f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\ac.h</file>
-         <hash>5569880b05e05bdfff55f97455c1ea3778391e107f5815f06060d57e024a38b1</hash>
+         <hash>3c654199445119481841c9673fa7616d050f5c83a9dfe626287e55d077a05439</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\system.h</file>
@@ -7216,11 +7718,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\sys_console.h</file>
-         <hash>f4a1d6e28347f9d6dcc091dc65032ef01f9b0651bc710001ba4b2eb4af29f4bb</hash>
+         <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\pukcc.h</file>
-         <hash>a2bd41650058919891c87f87f2797a7a0f9ce60fb6834946de5dcc861f0bf2c0</hash>
+         <hash>02edb60314483cee7eb86e97af5eacbdb14fb68a77ec810c88742ebf123d3008</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\evsys\plib_evsys.h</file>
@@ -7228,55 +7730,55 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\aes.h</file>
-         <hash>b6eda103eed051356faccf2b2cac9668c1bd7744d909a84821cca4e72917995e</hash>
+         <hash>9d63c362f34006299462514e958c7ae4eff54fa34073bffef377fc99e4daf873</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>3f00a1654d74c9c6a9848334d57556ffab7528db36e85497d2ce514ef63d68aa</hash>
+         <hash>cab8dd9724c46a8023aab31d4af7121164b52c624529822041d4bd4f25b64738</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\bsp\nm_bsp.h</file>
-         <hash>66b2e9e0160dfd885c765fe54259d2a872fa7b889bd8e83657c07dd9b617e7c2</hash>
+         <hash>ce66e279dafee4106df3dfd0bda0b20193a653dbfb3414dcb3439825c9ccd8e3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmspi.h</file>
-         <hash>bb1491e02209f93c820c5f27a3caa3be49e262caeb9de81eb17a30cab559ab97</hash>
+         <hash>c80a31b226cf1777e07b5195e1acb9ed2a2b058127a581e2be519a44d226ff7c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\hmatrixb.h</file>
-         <hash>720e69edeb94cca1d5449d691d0f1fff33d30109b5a730cc21aff1a598658898</hash>
+         <hash>2d469ff5c0faef3e13a5a441395babb7f94cfe556ef5a553a01e214c5bc45705</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\pcc.h</file>
-         <hash>0ec5b87df94918f206840da035489110327605171dacc2c33a49ea57111fcc33</hash>
+         <hash>2736f552a080e6bdfcaaf1f2a30e8ee65dc934c34c2789a7ac338e620c095070</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\ccl.h</file>
-         <hash>7695c19060d43a2212ceec7ebd827c7ad3f71c3a14f18f1e781a483b734665c2</hash>
+         <hash>af381c20215324c33792c1522f02df6787ebd271ffdc5b9510c6f2c25674ff22</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom2.h</file>
-         <hash>ddf651590a19fd33995a37bd87b5e08f090bf38334ead40d341b99d65dd1e6fc</hash>
+         <hash>9ffc25b630889efc0a3f1b51a5107f83facd556dea4d57a6560254d1f4ec7e92</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\dma\sys_dma_mapping.h</file>
-         <hash>f40fd52b9e96c213abb3996b309103da33f134a85f90c874a99d2184c61c0ece</hash>
+         <hash>ce3b0fb5a381953a0804e467742d198578a5abb4b419c667565553953c4d27c7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\usb.h</file>
-         <hash>775599d3c1740dcbae1fb1e6e3069588b375eb8b1649450d276f2d6954736ec7</hash>
+         <hash>1428aee3c7e6b6c46411db4ee6371ff23c638ac2167f3c00ebfc005fff32ccfe</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\oscctrl.h</file>
-         <hash>77179fe1952fade137713544ab7a043ab3700f08dc440dcc4da8d123babdf881</hash>
+         <hash>c51b1aed31d3e7880a01e22dbff241ad3ca50930aeec25db054ed27430121251</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\dmac.h</file>
-         <hash>32adec834159ca9f4c768bfede6ebfe788530b1d145795f94b28a92e8ce8a8bf</hash>
+         <hash>4b0176f10816bff2775ccac6b1a6c7dd6b0e10c16399a84bd787b5d0c94c285d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_local.h</file>

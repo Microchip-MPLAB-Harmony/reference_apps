@@ -86,7 +86,7 @@ extern "C" {
 #define SYS_TIME_HW_COUNTER_PERIOD                  (0xFFFFU)
 #define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
 #define SYS_TIME_CPU_CLOCK_FREQUENCY                (120000000)
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (188)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (232)
 
 
 #define SYS_DEBUG_ENABLE
@@ -94,10 +94,10 @@ extern "C" {
 #define SYS_DEBUG_BUFFER_DMA_READY
 
 
-#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
-#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
-#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
-#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		200
+#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
+#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
+#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		(200U)
 
 
 #define SYS_CONSOLE_INDEX_0                       0
@@ -113,8 +113,7 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /*** WiFi WINC Driver Configuration ***/
-#define WDRV_WINC_EIC_SOURCE                EIC_PIN_4
-#define WDRV_WINC_SPI_INDEX                 DRV_SPI_INDEX_0
+#define WDRV_WINC_EIC_SOURCE
 #define WDRV_WINC_NETWORK_MODE_SOCKET
 #define WDRV_WINC_DEVICE_WINC1500
 #define WDRV_WINC_DEVICE_SPLIT_INIT
@@ -131,6 +130,7 @@ extern "C" {
 #define WDRV_WINC_DEVICE_URL_TYPE           unsigned char
 #define WDRV_WINC_DEVICE_SCAN_STOP_ON_FIRST
 #define WDRV_WINC_DEVICE_DEPRECATE_WEP
+#define WDRV_WINC_DEVICE_OTA_SSL_OPTIONS
 #define WDRV_WINC_DEVICE_OTA_STATUS_EXTENDED
 #define WDRV_WINC_DEVICE_SCAN_SSID_LIST
 #define WDRV_WINC_DEBUG_LEVEL               WDRV_WINC_DEBUG_TYPE_NONE
@@ -144,7 +144,7 @@ extern "C" {
 #define DRV_SPI_QUEUE_SIZE_IDX0               4
 
 /* SPI Driver Common Configuration Options */
-#define DRV_SPI_INSTANCES_NUMBER              1
+#define DRV_SPI_INSTANCES_NUMBER              (1U)
 
 
 

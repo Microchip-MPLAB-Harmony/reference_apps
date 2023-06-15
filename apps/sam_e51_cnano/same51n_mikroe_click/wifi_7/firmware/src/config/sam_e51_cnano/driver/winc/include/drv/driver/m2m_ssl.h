@@ -9,7 +9,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -193,8 +193,6 @@ int8_t m2m_ssl_retrieve_hash(uint8_t *pu8Value, uint16_t u16ValueSz);
 @brief      Allow SSL driver to tidy up when the application chooses not to retrieve all available
             information.
 
-@return     None.
-
 @warning    The application must call this function if it has been notified (via
             @ref ECC_REQ_SIGN_GEN or @ref ECC_REQ_SIGN_VERIFY) that information is available for
             retrieving from the WINC, but chooses not to retrieve it all.
@@ -212,7 +210,6 @@ void m2m_ssl_stop_retrieving(void);
 @ingroup    SSLFUNCTIONS
 @fn         void m2m_ssl_stop_processing_certs(void);
 @brief      Allow SSL driver to tidy up in case application does not read all available certificates.
-@return     None.
 
 @warning    This API has been deprecated and is kept for legacy purposes only. It is recommended
             that @ref m2m_ssl_stop_retrieving is used instead.
@@ -223,8 +220,6 @@ void m2m_ssl_stop_processing_certs(void);
 @ingroup    SSLFUNCTIONS
 @fn         void m2m_ssl_ecc_process_done(void);
 @brief      Allow SSL driver to tidy up after application has finished processing ECC message.
-
-@return     None.
 
 @warning    The application should call this function after receiving an SSL callback with message
             type @ref M2M_SSL_REQ_ECC, after retrieving any related information, and before
