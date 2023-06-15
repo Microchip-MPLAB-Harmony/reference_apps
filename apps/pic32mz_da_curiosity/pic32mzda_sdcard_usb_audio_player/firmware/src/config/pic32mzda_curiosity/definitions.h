@@ -76,10 +76,10 @@
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
 #include "peripheral/dmac/plib_dmac.h"
-#include "driver/usb/usbhs/drv_usbhs.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
-#include "system/input/sys_input.h"
+#include "driver/usb/usbhs/drv_usbhs.h"
 #include "peripheral/i2c/master/plib_i2c2_master.h"
+#include "system/input/sys_input.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -99,6 +99,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "PIC32MZ2064DAR176"
+#define DEVICE_ARCH			 "MIPS"
+#define DEVICE_FAMILY		 "PIC32MZDA"
+#define DEVICE_SERIES		 "PIC32MZ"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 200000000
@@ -223,7 +229,7 @@ typedef struct
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
-	SYS_MODULE_OBJ  usbHostObject0;
+    SYS_MODULE_OBJ  usbHostObject0;
 
     SYS_MODULE_OBJ  drvMAXTOUCH;
 

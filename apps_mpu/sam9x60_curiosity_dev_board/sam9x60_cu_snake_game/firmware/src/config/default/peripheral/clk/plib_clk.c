@@ -41,6 +41,7 @@ Initialize Peripheral clocks
 *********************************************************************************/
 static void initPeriphClk(void)
 {
+    const uint8_t EOL_MARKER = ((uint8_t)ID_PERIPH_MAX + 1U);
     struct {
         uint8_t id;
         uint8_t clken;
@@ -57,13 +58,13 @@ static void initPeriphClk(void)
         { ID_LCDC, 1, 1, 0x3, 0},
         { ID_GFX2D, 1, 0, 0, 0},
         { ID_PIOD, 1, 0, 0, 0},
-        { ID_PERIPH_MAX + 1U, 0, 0, 0, 0}//end of list marker
+        { EOL_MARKER, 0, 0, 0, 0}//end of list marker
     };
 
     uint32_t count = sizeof(periphList)/sizeof(periphList[0]);
     for (uint32_t i = 0; i < count; i++)
     {
-        if (periphList[i].id == (ID_PERIPH_MAX + 1U))
+        if (periphList[i].id == EOL_MARKER)
         {
             break;
         }
@@ -90,5 +91,4 @@ void CLK_Initialize( void )
 
     /* Initialize Peripheral clock */
     initPeriphClk();
-
 }

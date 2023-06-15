@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -48,6 +48,7 @@
 #define FLASH_MAP_VER_0     (0)
 #define FLASH_MAP_VER_1     (1)
 #define FLASH_MAP_VER_2     (2)
+#define FLASH_MAP_VER_3     (3)
 #define FLASH_MAP_VER_4     (4)
 
 #define FLASH_MAP_VERSION   FLASH_MAP_VER_4
@@ -236,7 +237,7 @@
  *  don't exceed total size of memory allowed
  **/
 #if (M2M_COMMON_DATA_SEC  +  (OTA_IMAGE_SIZE *2)> FLASH_4M_TOTAL_SZ)
-#error "Exceed 4M Flash Size"
+#error "Exceeds 4M Flash Size"
 #endif /* (FLASH_CONTENT_SZ > FLASH_TOTAL_SZ) */
 
 /**

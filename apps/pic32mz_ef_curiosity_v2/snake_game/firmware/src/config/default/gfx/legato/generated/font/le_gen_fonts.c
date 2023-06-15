@@ -1262,6 +1262,7 @@ leRasterFont Level_label_font =
             17556, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     76,
     57,
@@ -1482,6 +1483,7 @@ leRasterFont NotoMono_Regular =
             776, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     13,
     9,
@@ -1792,6 +1794,7 @@ leRasterFont Snake_size_text =
             2212, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     23,
     17,
@@ -2158,6 +2161,7 @@ leRasterFont Snake_life_label =
             3120, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     30,
     22,
@@ -3702,6 +3706,7 @@ leRasterFont Game_Over_label =
             21960, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     86,
     65,
@@ -4209,6 +4214,7 @@ leRasterFont Game_title_font =
             5372, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     40,
     30,

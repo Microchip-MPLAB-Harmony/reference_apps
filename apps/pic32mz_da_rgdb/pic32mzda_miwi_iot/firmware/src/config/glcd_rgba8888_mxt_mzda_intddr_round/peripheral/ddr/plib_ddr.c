@@ -59,11 +59,11 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #define sys_mem_ddr_max(a,b) (((a)>(b))?(a):(b))
-#define sys_mem_ddr_round_up(x,y) (((x) + (y) - 1) / (y))
-#define sys_mem_ddr_hc_clk_dly(dly) (sys_mem_ddr_max((sys_mem_ddr_round_up((dly),2500)),2)-2)
+#define sys_mem_ddr_round_up(x,y) (((x) + (y) - 1UL) / (y))
+#define sys_mem_ddr_hc_clk_dly(dly) (sys_mem_ddr_max((sys_mem_ddr_round_up((dly),2500UL)),2UL)-2UL)
 
 #ifndef round_up
-#define round_up(x,y) (((x) + (y) - 1) / (y))
+#define round_up(x,y) (((x) + (y) - 1U) / (y))
 #endif
 
 //----------------------------------------------------------------------------//
@@ -72,8 +72,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 /* SCL START */
 #define SCL_START_PH_DLY          0x30000000
 #define SCL_START_DLY             0x10000000
-#define SCL_DONE                  0x10000000
-#define SCL_LUBPASS               3
+#define SCL_DONE                  0x10000000U
+#define SCL_LUBPASS               3U
 
 static void DDR_Init(void)
 {
@@ -81,218 +81,221 @@ static void DDR_Init(void)
     uint32_t ba_field, ma_field;
 
     /* Target Arbitration */
-	DDRTSELbits.TSEL = (DDR_TARGET_0 * 5);
-	DDRMINLIMbits.MINLIMIT = 0x1f;
-	DDRTSELbits.TSEL = DDR_TARGET_0 * 8;
-	DDRRQPERbits.RQPER = 0xff;
-	DDRTSELbits.TSEL = DDR_TARGET_0 * 8;
-	DDRMINCMDbits.MINCMD = 0x4;
+    DDRTSELbits.TSEL = ((uint8_t)DDR_TARGET_0 * 5U);
+    DDRMINLIMbits.MINLIMIT = 0x1fU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_0 * 8U;
+    DDRRQPERbits.RQPER = 0xffU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_0 * 8U;
+    DDRMINCMDbits.MINCMD = 0x4U;
 
-	DDRTSELbits.TSEL = (DDR_TARGET_1 * 5);
-	DDRMINLIMbits.MINLIMIT = 0x1f;
-	DDRTSELbits.TSEL = DDR_TARGET_1 * 8;
-	DDRRQPERbits.RQPER = 0xff;
-	DDRTSELbits.TSEL = DDR_TARGET_1 * 8;
-	DDRMINCMDbits.MINCMD = 0x10;
+    DDRTSELbits.TSEL = ((uint8_t)DDR_TARGET_1 * 5U);
+    DDRMINLIMbits.MINLIMIT = 0x1fU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_1 * 8U;
+    DDRRQPERbits.RQPER = 0xffU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_1 * 8U;
+    DDRMINCMDbits.MINCMD = 0x10U;
 
-	DDRTSELbits.TSEL = (DDR_TARGET_2* 5);
-	DDRMINLIMbits.MINLIMIT = 0x1f;
-	DDRTSELbits.TSEL = DDR_TARGET_2 * 8;
-	DDRRQPERbits.RQPER = 0xff;
-	DDRTSELbits.TSEL = DDR_TARGET_2 * 8;
-	DDRMINCMDbits.MINCMD = 0x10;
-	
-	DDRTSELbits.TSEL = (DDR_TARGET_3 * 5);
-	DDRMINLIMbits.MINLIMIT = 0x4;
-	DDRTSELbits.TSEL = DDR_TARGET_3 * 8;
-	DDRRQPERbits.RQPER = 0xff;
-	DDRTSELbits.TSEL = DDR_TARGET_3 * 8;
-	DDRMINCMDbits.MINCMD = 0x4;
+    DDRTSELbits.TSEL = ((uint8_t)DDR_TARGET_2* 5U);
+    DDRMINLIMbits.MINLIMIT = 0x1fU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_2 * 8U;
+    DDRRQPERbits.RQPER = 0xffU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_2 * 8U;
+    DDRMINCMDbits.MINCMD = 0x10U;
+    
+    DDRTSELbits.TSEL = ((uint8_t)DDR_TARGET_3 * 5U);
+    DDRMINLIMbits.MINLIMIT = 0x4U;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_3 * 8U;
+    DDRRQPERbits.RQPER = 0xffU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_3 * 8U;
+    DDRMINCMDbits.MINCMD = 0x4U;
 
-	DDRTSELbits.TSEL = (DDR_TARGET_4 * 5);
-	DDRMINLIMbits.MINLIMIT = 0x4;
-	DDRTSELbits.TSEL = DDR_TARGET_4 * 8;
-	DDRRQPERbits.RQPER = 0xff;
-	DDRTSELbits.TSEL = DDR_TARGET_4 * 8;
-	DDRMINCMDbits.MINCMD = 0x4;
+    DDRTSELbits.TSEL = ((uint8_t)DDR_TARGET_4 * 5U);
+    DDRMINLIMbits.MINLIMIT = 0x4U;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_4 * 8U;
+    DDRRQPERbits.RQPER = 0xffU;
+    DDRTSELbits.TSEL = (uint8_t)DDR_TARGET_4 * 8U;
+    DDRMINCMDbits.MINCMD = 0x4U;
 
     /* Addressing */
-	DDRMEMCFG0bits.RWADDR = ROW_ADDR_RSHIFT;
-	DDRMEMCFG1bits.RWADDRMSK = ROW_ADDR_MASK;
+    DDRMEMCFG0bits.RWADDR = ROW_ADDR_RSHIFT;
+    DDRMEMCFG1bits.RWADDRMSK = (uint16_t)ROW_ADDR_MASK;
     DDRMEMCFG0bits.CLHADDR = COL_HI_RSHFT;
-	DDRMEMCFG3bits.CLADDRLMSK = COL_LO_MASK;
-	DDRMEMCFG2bits.CLADDRHMSK = COL_HI_MASK;
-	DDRMEMCFG0bits.BNKADDR = BA_RSHFT;
-	DDRMEMCFG4bits.BNKADDRMSK = BANK_ADDR_MASK;
-	DDRMEMCFG0bits.CSADDR = CS_ADDR_RSHIFT;
-	DDRMEMCFG4bits.CSADDRMSK = CS_ADDR_MASK;
+    DDRMEMCFG3bits.CLADDRLMSK = (uint16_t)COL_LO_MASK;
+    DDRMEMCFG2bits.CLADDRHMSK = COL_HI_MASK;
+    DDRMEMCFG0bits.BNKADDR = BA_RSHFT;
+    DDRMEMCFG4bits.BNKADDRMSK = (uint8_t)BANK_ADDR_MASK;
+    DDRMEMCFG0bits.CSADDR = CS_ADDR_RSHIFT;
+    DDRMEMCFG4bits.CSADDRMSK = CS_ADDR_MASK;
 
     /* Refresh */
-	DDRREFCFGbits.REFCNT = (7800000 + CTRL_CLK_PERIOD - 1) / CTRL_CLK_PERIOD - 2;
-	DDRREFCFGbits.REFDLY = (127500 + CTRL_CLK_PERIOD - 1) / CTRL_CLK_PERIOD - 2;
-	DDRREFCFGbits.MAXREFS = 7;
-	DDRPWRCFGbits.ASLFREFEN = 0;
+    DDRREFCFGbits.REFCNT = ((7800000U + CTRL_CLK_PERIOD - 1U) / CTRL_CLK_PERIOD) - (2U);
+    DDRREFCFGbits.REFDLY = ((127500U + CTRL_CLK_PERIOD - 1U) / CTRL_CLK_PERIOD) - (2U);
+    DDRREFCFGbits.MAXREFS = 7U;
+    DDRPWRCFGbits.ASLFREFEN = 0U;
 
     /* Power */
-	DDRPWRCFGbits.APWRDNEN = 0;
-	DDRMEMCFG0bits.APCHRGEN = 0;
-	DDRPWRCFGbits.PCHRGPWRDN = 0;
+    DDRPWRCFGbits.APWRDNEN = 0U;
+    DDRMEMCFG0bits.APCHRGEN = 0U;
+    DDRPWRCFGbits.PCHRGPWRDN = 0U;
 
     /* Timing */
-	DDRDLYCFG0bits.R2WDLY = 2 + 2u;
-	DDRDLYCFG0bits.RMWDLY = 5 - 4 + 3u;
+    DDRDLYCFG0bits.R2WDLY = 2U + 2u;
+    DDRDLYCFG0bits.RMWDLY = 5U - 4U + 3u;
 
     uint32_t w2rdly, w2rcsdly;
 
-    w2rdly = round_up(7500, CTRL_CLK_PERIOD) + 4 + 2;
+    w2rdly = round_up(7500U, CTRL_CLK_PERIOD) + 4U + 2U;
     w2rcsdly = ((w2rdly - 1u) > 3u) ? (w2rdly - 1u) : 3u;
 
-	DDRDLYCFG0bits.W2RDLY = w2rdly & 0x0Fu;
-	DDRDLYCFG1bits.W2RDLY4 = ((w2rdly & 0x10u) != 0) ? 1 : 0;
-	DDRDLYCFG0bits.W2RCSDLY = w2rcsdly & 0x0Fu;
-	DDRDLYCFG1bits.W2RCSDLY4 = ((w2rcsdly & 0x10u) != 0) ? 1 : 0;
-	DDRDLYCFG0bits.R2RDLY = 2 - 1u;
-	DDRDLYCFG0bits.R2RCSDLY = 2;
-	DDRDLYCFG0bits.W2WDLY = 2 - 1u;
-	DDRDLYCFG0bits.W2WCSDLY = 2 - 1u;
-	DDRPWRCFGbits.SLFREFDLY = 17;
-	DDRDLYCFG1bits.SLFREFMINDLY = 3 - 1u;
-	DDRDLYCFG1bits.SLFREFEXDLY = (round_up(200, 2u) - 2u) & 0xFFu;
-	DDRDLYCFG1bits.SLFREFEXDLY8 = ((round_up(200, 2u) & 0x100u) != 0) ? 1u : 0;
-	DDRPWRCFGbits.PWRDNDLY = 8;
-	DDRDLYCFG1bits.PWRDNMINDLY = 3 - 1;	
-	DDRDLYCFG1bits.PWRDNEXDLY = (3 > 2 ? 3 : 2) - 1; 
-	DDRDLYCFG2bits.PCHRGALLDLY = round_up(12500, CTRL_CLK_PERIOD); 
-	DDRDLYCFG2bits.R2PCHRGDLY = round_up(7500, CTRL_CLK_PERIOD) + 2 - 2; 
-	DDRDLYCFG2bits.W2PCHRGDLY = (round_up(15000, CTRL_CLK_PERIOD) + 4 + 2) & 0x0F;
-	DDRDLYCFG1bits.W2PCHRGDLY4 = (((round_up(15000, CTRL_CLK_PERIOD) + 4 + 2) & 0x10u) != 0) ? 1 : 0;
-	DDRDLYCFG2bits.PCHRG2RASDLY = round_up(12500, CTRL_CLK_PERIOD) - 1; 
-	DDRDLYCFG3bits.RAS2PCHRGDLY = round_up(45000, CTRL_CLK_PERIOD) - 1;
-	DDRDLYCFG3bits.RAS2RASSBNKDLY = round_up(57500, CTRL_CLK_PERIOD) - 1;
-	DDRDLYCFG2bits.RAS2RASDLY = round_up(7500, CTRL_CLK_PERIOD) - 1;
-	DDRDLYCFG2bits.RAS2CASDLY = round_up(12500, CTRL_CLK_PERIOD) - 1;
-	DDRDLYCFG2bits.RBENDDLY = 5 + 3u;
-	DDRXFERCFGbits.NXTDATRQDLY = 2;
-	DDRXFERCFGbits.NXTDATAVDLY = 4;
-	DDRDLYCFG1bits.NXTDATAVDLY4 = (((5 + 5u) & 0x10u) != 0) ? 1 : 0;
-	DDRXFERCFGbits.RDATENDLY = 2;/*5 - 1*/
-	DDRDLYCFG3bits.FAWTDLY = round_up(35000, CTRL_CLK_PERIOD) - 1;
+    DDRDLYCFG0bits.W2RDLY = (uint8_t)(w2rdly & 0x0Fu);
+    DDRDLYCFG1bits.W2RDLY4 = (uint8_t)(((w2rdly & 0x10u) != 0U) ? 1U : 0U);
+    DDRDLYCFG0bits.W2RCSDLY = (uint8_t)(w2rcsdly & 0x0Fu);
+    DDRDLYCFG1bits.W2RCSDLY4 = (uint8_t)(((w2rcsdly & 0x10u) != 0U) ? 1U : 0U);
+    DDRDLYCFG0bits.R2RDLY = 2U - 1u;
+    DDRDLYCFG0bits.R2RCSDLY = 2U;
+    DDRDLYCFG0bits.W2WDLY = 2U - 1u;
+    DDRDLYCFG0bits.W2WCSDLY = 2U - 1u;
+    DDRPWRCFGbits.SLFREFDLY = 17U;
+    DDRDLYCFG1bits.SLFREFMINDLY = 3U - 1u;
+    DDRDLYCFG1bits.SLFREFEXDLY = (round_up(200U, 2u) - 2u) & 0xFFu;
+    DDRDLYCFG1bits.SLFREFEXDLY8 = (uint8_t)(((round_up(200U, 2u) & 0x100u) != 0U) ? 1U : 0U);
+    DDRPWRCFGbits.PWRDNDLY = 8U;
+    DDRDLYCFG1bits.PWRDNMINDLY = 3U - 1U; 
+    DDRDLYCFG1bits.PWRDNEXDLY = 3;
+    DDRDLYCFG2bits.PCHRGALLDLY = round_up(12500U, CTRL_CLK_PERIOD); 
+    DDRDLYCFG2bits.R2PCHRGDLY = round_up(7500U, CTRL_CLK_PERIOD) + 2U - 2U; 
+    DDRDLYCFG2bits.W2PCHRGDLY = (round_up(15000U, CTRL_CLK_PERIOD) + 4U + 2U) & 0x0FU;
+    DDRDLYCFG1bits.W2PCHRGDLY4 = (uint8_t)((((round_up(15000U, CTRL_CLK_PERIOD) + 4U + 2U) & 0x10u) != 0U) ? 1U : 0U);
+    DDRDLYCFG2bits.PCHRG2RASDLY = round_up(12500U, CTRL_CLK_PERIOD) - 1U; 
+    DDRDLYCFG3bits.RAS2PCHRGDLY = round_up(45000U, CTRL_CLK_PERIOD) - 1U;
+    DDRDLYCFG3bits.RAS2RASSBNKDLY = round_up(57500U, CTRL_CLK_PERIOD) - 1U;
+    DDRDLYCFG2bits.RAS2RASDLY = round_up(7500U, CTRL_CLK_PERIOD) - 1U;
+    DDRDLYCFG2bits.RAS2CASDLY = round_up(12500U, CTRL_CLK_PERIOD) - 1U;
+    DDRDLYCFG2bits.RBENDDLY = 5U + 3u;
+    DDRXFERCFGbits.NXTDATRQDLY = 2U;
+    DDRXFERCFGbits.NXTDATAVDLY = 4U;
+    DDRDLYCFG1bits.NXTDATAVDLY4 = (uint8_t)((((5U + 5u) & 0x10u) != 0U) ? 1U : 0U);
+    DDRXFERCFGbits.RDATENDLY = 2U;/*5 - 1*/
+    DDRDLYCFG3bits.FAWTDLY = round_up(35000U, CTRL_CLK_PERIOD) - 1U;
 
     /* On-Die Termination */
-	DDRODTCFGbits.ODTCSEN = 0;
-	DDRODTENCFGbits.ODTREN = 0;
-	DDRODTCFGbits.ODTCSEN = 0;
-	DDRODTENCFGbits.ODTWEN = 1;
-	DDRODTCFGbits.ODTWLEN = 3;
-	DDRODTCFGbits.ODTWDLY = 1;
+    DDRODTCFGbits.ODTCSEN = 0U;
+    DDRODTENCFGbits.ODTREN = 0U;
+    DDRODTCFGbits.ODTCSEN = 0U;
+    DDRODTENCFGbits.ODTWEN = 1U;
+    DDRODTCFGbits.ODTWLEN = 3U;
+    DDRODTCFGbits.ODTWDLY = 1U;
 
     /* Controller Settings */
-	DDRXFERCFGbits.BIGENDIAN = 0;
-	DDRMEMWIDTHbits.HALFRATE = 1;
-	DDRXFERCFGbits.MAXBURST = 3;
-	DDRCMDISSUEbits.NUMHOSTCMDS = 12;
+    DDRXFERCFGbits.BIGENDIAN = 0U;
+    DDRMEMWIDTHbits.HALFRATE = 1U;
+    DDRXFERCFGbits.MAXBURST = 3U;
+    DDRCMDISSUEbits.NUMHOSTCMDS = 12U;
 
     /* DRAM Initialization */
 
     /* bring CKE high after reset and wait 400 nsec */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_10) = DRV_DDR_IDLE_NOP;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_20) = (0x00 | (0x00 << 8) | (sys_mem_ddr_hc_clk_dly(400000) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_10) = DRV_DDR_IDLE_NOP;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_20) = (0x00U | (0x00UL << 8) | (sys_mem_ddr_hc_clk_dly(400000UL) << 11));
 
     /* issue precharge all command */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_11) = DRV_DDR_PRECH_ALL_CMD;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_21) = (0x04 | (0x00 << 8) | (sys_mem_ddr_hc_clk_dly(12500 + 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_11) = DRV_DDR_PRECH_ALL_CMD;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_21) = (0x04U | (0x00UL << 8) | (sys_mem_ddr_hc_clk_dly(12500U + 2500U) << 11));
 
     /* initialize EMR2 */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_12) = DRV_DDR_LOAD_MODE_CMD;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_22) = (0x00 | (0x02 << 8) | (sys_mem_ddr_hc_clk_dly(2 * 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_12) = DRV_DDR_LOAD_MODE_CMD;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_22) = (0x00U | (0x02UL << 8) | (sys_mem_ddr_hc_clk_dly(2U * 2500U) << 11));
 
     /* initialize EMR3 */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_13) = DRV_DDR_LOAD_MODE_CMD;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_23) = (0x00 | (0x03 << 8) | (sys_mem_ddr_hc_clk_dly(2 * 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_13) = DRV_DDR_LOAD_MODE_CMD;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_23) = (0x00U | (0x03UL << 8) | (sys_mem_ddr_hc_clk_dly(2U * 2500U) << 11));
 
     /* RDQS disable, DQSB enable, OCD exit, 150 ohm termination, AL=0, DLL enable */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_14) = (DRV_DDR_LOAD_MODE_CMD | (0x40 << 24));
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_24) = (0x00 | (0x01 << 8) | (sys_mem_ddr_hc_clk_dly(2 * 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_14) = (DRV_DDR_LOAD_MODE_CMD | (0x40UL << 24));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_24) = (0x00U | (0x01UL << 8) | (sys_mem_ddr_hc_clk_dly(2U * 2500U) << 11));
 
-    tmp = ((sys_mem_ddr_round_up(15000, 2500) -1 ) << 1) | 1;
-    ma_field = tmp & 0xFF;
-    ba_field = (tmp >> 8) & 0x03;
+    tmp = ((sys_mem_ddr_round_up(15000U, 2500U) -1U ) << 1) | 1U;
+    ma_field = tmp & 0xFFU;
+    ba_field = (tmp >> 8) & 0x03U;
 
     /* PD fast exit, WR REC = tWR in clocks -1, DLL reset, CAS = RL, burst = 4 */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_15) = (DRV_DDR_LOAD_MODE_CMD | (((5 << 4) | 2) << 24));
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_25) = (ma_field | (ba_field << 8) | (sys_mem_ddr_hc_clk_dly(2 * 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_15) = (DRV_DDR_LOAD_MODE_CMD | (((5UL << 4) | 2UL) << 24));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_25) = (ma_field | (ba_field << 8) | (sys_mem_ddr_hc_clk_dly(2U * 2500U) << 11));
 
     /* issue precharge all command */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_16) = DRV_DDR_PRECH_ALL_CMD;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_26) = (0x04 | (0x00 << 8) | (sys_mem_ddr_hc_clk_dly(12500 + 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_16) = DRV_DDR_PRECH_ALL_CMD;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_26) = (0x04U | (0x00UL << 8) | (sys_mem_ddr_hc_clk_dly(12500U + 2500U) << 11));
 
     /* issue refresh command */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_17) = DRV_DDR_REF_CMD;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_27) = (0x00 | (0x00 << 8) | (sys_mem_ddr_hc_clk_dly(127500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_17) = DRV_DDR_REF_CMD;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_27) = (0x00U | (0x00UL << 8) | (sys_mem_ddr_hc_clk_dly(127500U) << 11));
 
     /* issue refresh command */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_18) = DRV_DDR_REF_CMD;
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_28) = (0x00 | (0x00 << 8) | (sys_mem_ddr_hc_clk_dly(127500) << 11));
-	
-    tmp = ((sys_mem_ddr_round_up(15000, 2500) -1 ) << 1);
-    ma_field = tmp & 0xFF;
-    ba_field = (tmp >> 8) & 0x03;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_18) = DRV_DDR_REF_CMD;
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_28) = (0x00U | (0x00UL << 8) | (sys_mem_ddr_hc_clk_dly(127500U) << 11));
+    
+    tmp = ((sys_mem_ddr_round_up(15000U, 2500U) -1U) << 1);
+    ma_field = tmp & 0xFFU;
+    ba_field = (tmp >> 8) & 0x03U;
 
     /* Mode register programming as before without DLL reset */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_19) = (DRV_DDR_LOAD_MODE_CMD | (((5 << 4) | 3) << 24));
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_29) = (ma_field | (ba_field << 8) | (sys_mem_ddr_hc_clk_dly(2 * 2500) << 11));
-	
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_19) = (DRV_DDR_LOAD_MODE_CMD | (((5UL << 4) | 3U) << 24));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_29) = (ma_field | (ba_field << 8) | (sys_mem_ddr_hc_clk_dly(2U * 2500U) << 11));
+    
     /* extended mode register same as before with OCD default */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_110) = (DRV_DDR_LOAD_MODE_CMD | (0xC0 << 24));
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_210) = (0x03 | (0x01 << 8) | (sys_mem_ddr_hc_clk_dly(2 * 2500) << 11));
-	
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_110) = (DRV_DDR_LOAD_MODE_CMD | (0xC0UL << 24U));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_210) = (0x03U | (0x01UL << 8) | (sys_mem_ddr_hc_clk_dly(2U * 2500U) << 11));
+    
     /* extended mode register same as before with OCD exit */
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_111) = (DRV_DDR_LOAD_MODE_CMD | (0x40 << 24));
-	*(&DDRCMD10 + DDR_HOST_CMD_REG_211) = (0x00 | (0x01 << 8) | (sys_mem_ddr_hc_clk_dly(140 * 2500) << 11));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_111) = (DRV_DDR_LOAD_MODE_CMD | (0x40UL << 24));
+    *(&DDRCMD10 + DDR_HOST_CMD_REG_211) = (0x00U | (0x01UL << 8) | (sys_mem_ddr_hc_clk_dly(140U * 2500U) << 11));
 
-	/* Set number of host commands */
-	DDRCMDISSUEbits.NUMHOSTCMDS = 0xb;
-	DDRCMDISSUEbits.VALID = 1;
-	DDRMEMCONbits.STINIT = 1;
-	while (DDRCMDISSUEbits.VALID);
-	DDRMEMCONbits.INITDN = 1;
+    /* Set number of host commands */
+    DDRCMDISSUEbits.NUMHOSTCMDS = 0xbU;
+    DDRCMDISSUEbits.VALID = 1U;
+    DDRMEMCONbits.STINIT = 1U;
+    while (DDRCMDISSUEbits.VALID != 0U)
+    {
+        /* Nothing to do */
+    }
+    DDRMEMCONbits.INITDN = 1U;
 }
 
 static void DDR_PHY_Init(void)
 {
-	DDRPHYPADCONbits.ODTSEL = 1;
-	DDRPHYPADCONbits.ODTEN = 1;
+    DDRPHYPADCONbits.ODTSEL = 1U;
+    DDRPHYPADCONbits.ODTEN = 1U;
 
-	DDRPHYPADCONbits.DATDRVSEL = 0;
-	DDRPHYPADCONbits.ADDCDRVSEL = 0;
-	DDRPHYPADCONbits.ODTPUCAL = 3;
-	DDRPHYPADCONbits.ODTPDCAL = 2;
-	DDRPHYPADCONbits.DRVSTRNFET = 14;
-	DDRPHYPADCONbits.DRVSTRPFET = 14;
-	
-	DDRPHYPADCONbits.NOEXTDLL = 1;
-	
-	DDRPHYPADCONbits.EOENCLKCYC = 0;
+    DDRPHYPADCONbits.DATDRVSEL = 0U;
+    DDRPHYPADCONbits.ADDCDRVSEL = 0U;
+    DDRPHYPADCONbits.ODTPUCAL = 3U;
+    DDRPHYPADCONbits.ODTPDCAL = 2U;
+    DDRPHYPADCONbits.DRVSTRNFET = 14U;
+    DDRPHYPADCONbits.DRVSTRPFET = 14U;
+    
+    DDRPHYPADCONbits.NOEXTDLL = 1U;
+    
+    DDRPHYPADCONbits.EOENCLKCYC = 0U;
 
-	DDRPHYPADCONbits.RCVREN = 1;
-	DDRPHYPADCONbits.PREAMBDLY = 2;
-	DDRPHYPADCONbits.HALFRATE = 1;
-	DDRPHYPADCONbits.WRCMDDLY = 1;
-	DDRPHYDLLRbits.RECALIBCNT = 16;
-	DDRPHYDLLRbits.DISRECALIB = 0;
-	DDRPHYDLLRbits.DLYSTVAL = 3;
-	DDRSCLCFG0bits.BURST8 = DDR_PHY_SCL_BURST_MODE_8;
-	DDRSCLCFG0bits.DDR2 = !DDR_PHY_DDR_TYPE_DDR2;
-	DDRSCLCFG0bits.RCASLAT = 5;
-	DDRSCLCFG1bits.WCASLAT = 4;
+    DDRPHYPADCONbits.RCVREN = 1U;
+    DDRPHYPADCONbits.PREAMBDLY = 2U;
+    DDRPHYPADCONbits.HALFRATE = 1U;
+    DDRPHYPADCONbits.WRCMDDLY = 1U;
+    DDRPHYDLLRbits.RECALIBCNT = 16U;
+    DDRPHYDLLRbits.DISRECALIB = 0U;
+    DDRPHYDLLRbits.DLYSTVAL = 3U;
+    DDRSCLCFG0bits.BURST8 = (uint8_t)DDR_PHY_SCL_BURST_MODE_8;
+    DDRSCLCFG0bits.DDR2 = (uint8_t)((uint8_t)DDR_PHY_DDR_TYPE_DDR2 == 0U);
+    DDRSCLCFG0bits.RCASLAT = 5U;
+    DDRSCLCFG1bits.WCASLAT = 4U;
 
-	DDRSCLCFG0bits.ODTCSW = 1;
-	DDRSCLCFG1bits.DBLREFDLY = 0;
-	DDRSCLLATbits.DDRCLKDLY = 4;
-	DDRSCLLATbits.CAPCLKDLY = 3;
+    DDRSCLCFG0bits.ODTCSW = 1U;
+    DDRSCLCFG1bits.DBLREFDLY = 0U;
+    DDRSCLLATbits.DDRCLKDLY = 4U;
+    DDRSCLLATbits.CAPCLKDLY = 3U;
 
-	/* Chip select 0 enabled by hardware. Other chip selects not available. */
-	/* DDRSCLCFG1bits.SCLCSEN = 0;*/
+    /* Chip select 0 enabled by hardware. Other chip selects not available. */
+    /* DDRSCLCFG1bits.SCLCSEN = 0;*/
 }
 
 static void DDR_PHY_Calib(void)
@@ -301,17 +304,26 @@ static void DDR_PHY_Calib(void)
     DDRSCLSTART = SCL_START_PH_DLY;  //START SCL DELAY and phase calibration
     for (;;)
     {
-        while ((DDRSCLSTART & SCL_DONE) != 0); //Wait for the Calibration to finish
+        while ((DDRSCLSTART & SCL_DONE) != 0U) //Wait for the Calibration to finish
+        {
+           /* Nothing to do */ 
+        }
 
         DDRSCLSTART = SCL_START_DLY;
-        while ((DDRSCLSTART & SCL_DONE) != 0); //Wait for the Calibration to finish
+        while ((DDRSCLSTART & SCL_DONE) != 0U) //Wait for the Calibration to finish
+        {
+            /* Nothing to do */
+        }
 
         if ((DDRSCLSTART & SCL_LUBPASS) != SCL_LUBPASS) //If Calibration fails, retry
         {
             DDRPHYCLKDLY = 0x10;
             DDRSCLSTART = SCL_START_PH_DLY;
-        } else
+        } 
+        else
+        {
             break;   //If Calibration passes, continue with the rest of the program
+        }
     }
 }
 
@@ -319,7 +331,7 @@ void DDR_Initialize(void)
 {
     DDR_PHY_Init();
     DDR_Init();
-	DDR_PHY_Calib();
+    DDR_PHY_Calib();
 }
 
 /*******************************************************************************

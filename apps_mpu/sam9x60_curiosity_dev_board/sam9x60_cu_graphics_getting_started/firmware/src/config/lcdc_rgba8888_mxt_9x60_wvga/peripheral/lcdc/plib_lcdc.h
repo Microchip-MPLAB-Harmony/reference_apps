@@ -12,7 +12,7 @@
 
   Description:
     This peripheral library implements a SUBSET of the register configurations
-    for the LCDC. 
+    for the LCDC.
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -41,8 +41,8 @@
 
 // DOM-IGNORE-END
 
-#ifndef _PLIB_LCDC_H    // Guards against multiple inclusion
-#define _PLIB_LCDC_H
+#ifndef PLIB_LCDC_H    // Guards against multiple inclusion
+#define PLIB_LCDC_H
 
 #include "device.h"
 #include <stdint.h>
@@ -66,26 +66,6 @@
 typedef void (*LCDC_IRQ_CALLBACK) (uintptr_t context);
 
 // *****************************************************************************
-/* LCDC IRQ Callback Object
-
-   Summary:
-    Struct for LCDC IRQ handler
-
-   Description:
-    This structure defines the LCDC IRQ handler object, used to store the IRQ
-    callback function registered from the LCDC driver
-
-   Remarks:
-    None.
-*/      
-typedef struct
-{
-    LCDC_IRQ_CALLBACK callback_fn;
-    uintptr_t context;
-}LCDC_IRQ_CALLBACK_OBJECT;
-
-
-// *****************************************************************************
 /* LCDC Signal Polarity
 
    Summary:
@@ -99,7 +79,7 @@ typedef struct
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_POLARITY_POSITIVE = 0,
     LCDC_POLARITY_NEGATIVE
@@ -116,7 +96,7 @@ typedef enum
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_CLOCK_SOURCE_SYSTEM = 0,
     LCDC_CLOCK_SOURCE_SYSTEM_2X
@@ -126,14 +106,14 @@ typedef enum
 /* PWM Clock Source
 
    Summary:
-    Defines the clock sources for the LCDC PWM 
+    Defines the clock sources for the LCDC PWM
 
    Description:
 
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_PWM_SOURCE_SLOW = 0,
     LCDC_PWM_SOURCE_SYSTEM
@@ -150,7 +130,7 @@ typedef enum
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_LAYER_BASE = 0,
     LCDC_LAYER_OVR1 = 1,
@@ -170,7 +150,7 @@ typedef enum
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_SYNC_EDGE_FIRST,
     LCDC_SYNC_EDGE_SECOND
@@ -187,7 +167,7 @@ typedef enum
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_INPUT_COLOR_MODE_RGB_444 = LCDC_BASECFG1_RGBMODE_12BPP_RGB_444_Val,
     LCDC_INPUT_COLOR_MODE_ARGB_4444 = LCDC_BASECFG1_RGBMODE_16BPP_ARGB_4444_Val,
@@ -218,7 +198,7 @@ typedef enum
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_OUTPUT_COLOR_MODE_12BPP = LCDC_LCDCFG5_MODE_OUTPUT_12BPP_Val,
     LCDC_OUTPUT_COLOR_MODE_16BPP = LCDC_LCDCFG5_MODE_OUTPUT_16BPP_Val,
@@ -237,7 +217,7 @@ typedef enum
    Remarks:
     None.
 */
-typedef enum 
+typedef enum
 {
     LCDC_BUS_BURST_LENGTH_AHB_SINGLE = LCDC_BASECFG0_BLEN_AHB_SINGLE_Val,
     LCDC_BUS_BURST_LENGTH_AHB_INCR4  = LCDC_BASECFG0_BLEN_AHB_INCR4_Val,
@@ -423,7 +403,7 @@ void LCDC_SetLayerClockGatingDisable(LCDC_LAYER_ID layer, bool disable);
 
    Description:
     The pixel clock period formula is LCDPCLK = source clock / value
-    when source clock is the system clock when CLKSET is '0', and 2x 
+    when source clock is the system clock when CLKSET is '0', and 2x
     system_clock when CLKSEL is '1'
 
    Precondition:
@@ -685,7 +665,7 @@ void LCDC_SetVSYNCPolarity(LCDC_SIGNAL_POLARITY polarity);
     LCDC_SetVSYNCPulseStart(LCDC_VSYNC_SYNC_EDGE edge)
 
    Summary:
-    Sets the HSYNC pulse edge where the VSYNC pulse first active edge is 
+    Sets the HSYNC pulse edge where the VSYNC pulse first active edge is
     synchronized
 
    Description:
@@ -922,7 +902,7 @@ void LCDC_SetDisplayGuardTime(uint16_t frames);
    Remarks:
     None
 */
-void LCDC_SetPWMPrescaler(uint8_t div);
+void LCDC_SetPWMPrescaler(uint8_t prescaler);
 
 // *****************************************************************************
 /* Function:
@@ -1568,9 +1548,9 @@ void LCDC_SetTransferDescriptorFetchEnable(LCDC_LAYER_ID layer, bool enable);
     Indicates that a valid descriptor has been written to memory
 
    Description:
-    Indicates that a valid descriptor has been written to memory, its memory 
-    location should be written to the DMA head pointer. The A2QSR status bit 
-    is set to one, and it is reset by hardware as soon as the descriptor 
+    Indicates that a valid descriptor has been written to memory, its memory
+    location should be written to the DMA head pointer. The A2QSR status bit
+    is set to one, and it is reset by hardware as soon as the descriptor
     pointed to by the DMA head pointer is added to the list.
 
    Precondition:

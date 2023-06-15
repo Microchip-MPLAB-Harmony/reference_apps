@@ -241,7 +241,7 @@ gfxResult DRV_SSD1351_BlitBuffer(int32_t x,
     int row;
     uint16_t clr;
     uint16_t* ptr;
-    uint8_t parm[4];
+    static __COHERENT uint8_t parm[4];
 
     GFX_Disp_Intf intf;
     

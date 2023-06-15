@@ -51,9 +51,10 @@
 
 #include "device.h"
 #include "plib_tmr3.h"
+#include "interrupts.h"
 
 
-static TMR_TIMER_OBJECT tmr3Obj;
+volatile static TMR_TIMER_OBJECT tmr3Obj;
 
 
 void TMR3_Initialize(void)
@@ -114,7 +115,7 @@ uint32_t TMR3_FrequencyGet(void)
 }
 
 
-void TIMER_3_InterruptHandler (void)
+void __attribute__((used)) TIMER_3_InterruptHandler (void)
 {
     uint32_t status  = 0U;
     status = IFS0bits.T3IF;
@@ -122,7 +123,8 @@ void TIMER_3_InterruptHandler (void)
 
     if((tmr3Obj.callback_fn != NULL))
     {
-        tmr3Obj.callback_fn(status, tmr3Obj.context);
+        uintptr_t context = tmr3Obj.context;
+        tmr3Obj.callback_fn(status, context);
     }
 }
 

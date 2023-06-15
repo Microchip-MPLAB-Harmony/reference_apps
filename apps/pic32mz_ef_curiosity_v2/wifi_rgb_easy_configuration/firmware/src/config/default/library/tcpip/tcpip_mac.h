@@ -15,30 +15,28 @@
 *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -145,8 +143,9 @@ typedef enum
     TCPIP_MODULE_MAC_PIC32INT_0     = 0x1040,   // alternate numbered name
 
     // Internal/Embedded GMAC of PIC32C: 
-    TCPIP_MODULE_MAC_PIC32C         = 0x1050,
-    TCPIP_MODULE_MAC_PIC32C_0       = 0x1050,   // alternate numbered name
+    TCPIP_MODULE_MAC_PIC32C         = 0x1050,	// instance base
+    TCPIP_MODULE_MAC_PIC32C_0       = 0x1050,   // first mac instance
+	TCPIP_MODULE_MAC_PIC32C_1       = 0x1051,   // second mac instance
 
     // External MRF24WN Wi-Fi MAC: room for 16 MRF24WN devices
     TCPIP_MODULE_MAC_MRF24WN        = 0x1060,
@@ -172,6 +171,16 @@ typedef enum
     TCPIP_MODULE_MAC_SAM9X60        = 0x1100,   // instance base
     TCPIP_MODULE_MAC_SAM9X60_0      = 0x1100,   // first mac instance
     TCPIP_MODULE_MAC_SAM9X60_1      = 0x1101,   // second mac instance
+
+    // Internal/Embedded PPP MAC:
+    TCPIP_MODULE_MAC_PPP            = 0x1200,   // instance base
+    TCPIP_MODULE_MAC_PPP_0          = 0x1200,   // first mac instance
+
+
+    // External LAN865X device: room for 16 LAN865X devices
+    TCPIP_MODULE_MAC_LAN865X         = 0x1110,
+    TCPIP_MODULE_MAC_LAN865X_0       = 0x1110,   // first mac instance
+    TCPIP_MODULE_MAC_LAN865X_1       = 0x1111,   // second mac instance
 
     // External, non MCHP, MAC modules
     TCPIP_MODULE_MAC_EXTERNAL       = 0x4000,
@@ -475,28 +484,26 @@ typedef union
 {
 	uint32_t val;
 	struct _TCPRxStatusBM 
-    {
-        uint32_t len: 12;               /* Length of frame including FCS */
-        uint32_t offset: 2;             /* Receive buffer offset,
-                                        bits 13:12 of frame length for jumbo frame */
-        uint32_t bSof: 1;               /* Start of frame */
-        uint32_t bEof: 1;               /* End of frame */
-        uint32_t bCFI: 1;               /* Concatenation Format Indicator */
-        uint32_t vlanPriority: 3;       /* VLAN priority (if VLAN detected) */
-        uint32_t bPriorityDetected: 1;  /* Priority tag detected */
-        uint32_t bVlanDetected: 1;      /* < VLAN tag detected */
-        uint32_t bTypeIDMatch: 1;       /* < Type ID match */
-        uint32_t bAddr4Match: 1;        /* < Address register 4 match */
-        uint32_t bAddr3Match: 1;        /* < Address register 3 match */
-        uint32_t bAddr2Match: 1;        /* < Address register 2 match */
-        uint32_t bAddr1Match: 1;        /* < Address register 1 match */
-        uint32_t reserved: 1;           
-        uint32_t bExtAddrMatch: 1;      /* < External address match */
-        uint32_t bUniHashMatch: 1;      /* < Unicast hash match */
-        uint32_t bMultiHashMatch: 1;    /* < Multicast hash match */
-        uint32_t bBroadcastDetected: 1; /* < Global all ones broadcast address detected */
-    } bm;
-}TCPIP_MAC_PACKET_RX_STAT_PIC32C;
+	{
+		uint32_t	len: 13;				/** Length of frame including FCS */
+		uint32_t	offset: 1;              /** Receive buffer offset,
+                                            bits 13:12 of frame length for jumbo frame */
+		uint32_t	bSof: 1;				/** Start of frame */
+		uint32_t	bEof: 1;				/** End of frame */
+		uint32_t	bCFI: 1;				/** Concatenation Format Indicator */
+		uint32_t	vlanPriority: 3;		/** VLAN priority (if VLAN detected) */
+		uint32_t	bPriorityDetected: 1;	/** Priority tag detected */
+		uint32_t	bVlanDetected: 1;		/**< VLAN tag detected */
+		uint32_t	bTypeIDMatch: 2;		/**< Type ID match */
+		uint32_t	bTypeIDMatchfound: 1;	/**< Type ID match found*/
+		uint32_t	bAddrMatch: 2;			/**< Specific Address register 1, 2, 3, 4 match */
+		uint32_t	bAddrMatchfound: 1;     /**< Specific Address match found */
+		uint32_t	reserved: 1;				
+		uint32_t	bUniHashMatch: 1;       /**< Unicast hash match */
+		uint32_t	bMultiHashMatch: 1;     /**< Multicast hash match */
+		uint32_t	bBroadcastDetected: 1;  /**< Global all ones broadcast address detected */
+	} bm;
+} TCPIP_MAC_PACKET_RX_STAT_PIC32C;
 
 // *****************************************************************************
 /*  MAC Received Packet Status
@@ -653,17 +660,20 @@ typedef enum
     /* RX: memory allocation error */
     TCPIP_MAC_PKT_ACK_ALLOC_ERR         = -18,  
 
+    /* Write error in the underlying driver when trying to write the data */
+    TCPIP_MAC_PKT_ACK_WRITE_ERR         = -19,  
+
     /* RX/TX: Packet was rejected by the IP layer */
-    TCPIP_MAC_PKT_ACK_IP_REJECT_ERR     = -19,  
+    TCPIP_MAC_PKT_ACK_IP_REJECT_ERR     = -20,  
 
     /* RX: packet was dropped because it was processed externally */
-    TCPIP_MAC_PKT_ACK_EXTERN            = -20,
+    TCPIP_MAC_PKT_ACK_EXTERN            = -21,
 
     /* RX: packet was directly processed successfuly by the bridge */
-    TCPIP_MAC_PKT_ACK_BRIDGE_DONE       = -21,
+    TCPIP_MAC_PKT_ACK_BRIDGE_DONE       = -22,
 
     /* RX: packet was dropped by the bridge */
-    TCPIP_MAC_PKT_ACK_BRIDGE_DISCARD    = -22,
+    TCPIP_MAC_PKT_ACK_BRIDGE_DISCARD    = -23,
 }TCPIP_MAC_PKT_ACK_RES;
 
 
@@ -773,15 +783,12 @@ typedef struct _tag_TCPIP_MAC_PACKET    TCPIP_MAC_PACKET;
     once the TX/RX packet processing is done.
 
   Returns:
-    - true  - if the packet needs the queuing flags removed 
-	          (it is not deleted and still in use)
-    - false - if the packet does not need the queuing flags removed 
-	          (either no longer exists or the flags updated) 
+    None
   
   Remarks:        
     None.
 */
-typedef bool    (*TCPIP_MAC_PACKET_ACK_FUNC)(TCPIP_MAC_PACKET* pkt,  const void* param);
+typedef void    (*TCPIP_MAC_PACKET_ACK_FUNC)(TCPIP_MAC_PACKET* pkt,  const void* param);
 
 
 // *****************************************************************************
@@ -855,7 +862,7 @@ struct _tag_TCPIP_MAC_PACKET
 
     /* Pointer to the network layer data.
        On TX: the sending higher layer protocol updates this field.
-            The MAC driver shouldn't need this field.
+            The PPP MAC driver needs this field. Other MAC drivers do not use the field.
        On RX: the MAC driver updates this field before handing over the packet.
        (MCHP TCP/IP stack note: The packet allocation function updates this field automatically. But not for IPv6!). */
     uint8_t*                        pNetLayer;
@@ -972,24 +979,54 @@ typedef enum
     /*  memory allocation error */
     TCPIP_MAC_RES_ALLOC_ERR         = -7,   
 
+    /*  not enough descriptors */
+    TCPIP_MAC_RES_DCPT_ERR         = -8,   
+
     /*  already instantiated, initialized error */
-    TCPIP_MAC_RES_INSTANCE_ERR      = -8,   
+    TCPIP_MAC_RES_INSTANCE_ERR      = -9,   
 
     /*  too fragmented, RX buffer too small */
-    TCPIP_MAC_RES_FRAGMENT_ERR      = -9,   
+    TCPIP_MAC_RES_FRAGMENT_ERR      = -10,   
 
     /*  unsupported/corrupted packet error */
-    TCPIP_MAC_RES_PACKET_ERR        = -10,  
+    TCPIP_MAC_RES_PACKET_ERR        = -11,  
 
     /*  TX queue exceeded the limit */
-    TCPIP_MAC_RES_QUEUE_TX_FULL     = -11,  
+    TCPIP_MAC_RES_QUEUE_TX_FULL     = -12,  
 
     /* Synchronization object lock failed */
     /* Could not get a lock */
-    TCPIP_MAC_RES_SYNCH_LOCK_FAIL   = -12,  
+    TCPIP_MAC_RES_SYNCH_LOCK_FAIL   = -13,  
 
     /* MAC is not ready for the operation */
-    TCPIP_MAC_RES_NOT_READY_ERR     = -13,  
+    TCPIP_MAC_RES_NOT_READY_ERR     = -14,  
+
+    /* incorrect argument supplied */
+    TCPIP_MAC_RES_BAD_ARG           = -15,  
+
+    /* The driver requires TCPIP_MAC_CONTROL_PAYLOAD_OFFSET_2
+       flag to be set */ 
+    TCPIP_MAC_RES_PAYLOAD_OFFSET_ERR = -16,
+
+    /* The size of the MAC gapDcptSize is too small */
+    TCPIP_MAC_RES_GAP_SIZE_ERR      = -17,
+
+    /* the packet has too many segments and it is not supported
+       The TX was rejected */    
+    TCPIP_MAC_RES_PACKET_SEG_ERR    = -18,
+
+    /* No driver object supplied
+       This is when the MAC driver itself needs another
+       driver for its operation */
+    TCPIP_MAC_RES_NO_DRIVER         = -19,
+
+    /* Driver write error.
+       The write operation was truncated or otherwise not completed successfully */
+    TCPIP_MAC_RES_DRIVER_WRITE_ERR  = -20,
+
+    /* Driver internal error. Should not happen */
+    TCPIP_MAC_RES_INTERNAL_ERR      = -21,
+
 
 }TCPIP_MAC_RES;
 
@@ -1509,7 +1546,7 @@ typedef bool    (*TCPIP_MAC_SynchReqF)(void* synchHandle, TCPIP_MAC_SYNCH_REQUES
     The user of the MAC driver, the TCP/IP stack, can implement a fast mechanism for maintaining
     the packet <-> buffer association.
 
-    The MAC driver will call th efunction to retrieve the TCPIP_MAC_PACKET that corresponds 
+    The MAC driver will call the function to retrieve the TCPIP_MAC_PACKET that corresponds 
     to a transmitted/received segment buffer.
 
 
@@ -1561,6 +1598,9 @@ typedef enum
 
     /*  wireless, Wi-Fi type MAC*/
     TCPIP_MAC_TYPE_WLAN,
+
+    /*  PPP/serial MAC type */
+    TCPIP_MAC_TYPE_PPP,
 
 
     /* supported types */

@@ -57,6 +57,13 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void FLEXCOM6_InterruptHandler (void);
+void TC0_InterruptHandler (void);
+void LCDC_Interrupt_Handler (void);
+
+
+/* Interrupt Handler for spurious interrupts */
+void SPURIOUS_INTERRUPT_Handler (void);
 
 
 #endif // INTERRUPTS_H

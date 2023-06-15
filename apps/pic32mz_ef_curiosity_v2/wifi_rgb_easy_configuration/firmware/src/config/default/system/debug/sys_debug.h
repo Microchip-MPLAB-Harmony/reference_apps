@@ -208,7 +208,7 @@ typedef struct
     objectHandle = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
     if (objectHandle == SYS_MODULE_OBJ_INVALID)
     {
-        // Handle error
+        
     }
     </code>
 
@@ -240,28 +240,31 @@ SYS_MODULE_OBJ SYS_DEBUG_Initialize(
     object    - Debug module object handle, returned from SYS_DEBUG_Initialize
 
   Returns:
-    * SYS_STATUS_READY          - Indicates that the module is running and
+    SYS_STATUS_READY          - Indicates that the module is running and
                                   ready to service requests.  Any value greater
                                   than SYS_STATUS_READY is also a normal
                                   running state in which the module is ready
                                   to accept new operations.
-    * SYS_STATUS_BUSY           - Indicates that the module is busy with a
+
+    SYS_STATUS_BUSY           - Indicates that the module is busy with a
                                   previous system level operation.
-    * SYS_STATUS_ERROR          - Indicates that the module is in an error
+
+    SYS_STATUS_ERROR          - Indicates that the module is in an error
                                   state.  Any value less than SYS_STATUS_ERROR
                                   is also an error state.
-    * SYS_STATUS_UNINITIALIZED  - Indicates that the module has not been
+
+    SYS_STATUS_UNINITIALIZED  - Indicates that the module has not been
                                   initialized.
 
   Example:
     <code>
-    SYS_MODULE_OBJ      object;     // Returned from SYS_CONSOLE_Initialize
+    SYS_MODULE_OBJ      object;     
     SYS_STATUS          debugStatus;
 
     debugStatus = SYS_DEBUG_Status (object);
     if (debugStatus == SYS_STATUS_READY)
     {
-        // Debug service is initialized and ready to accept requests.
+        
     }
     </code>
 
@@ -363,10 +366,10 @@ SYS_ERROR_LEVEL SYS_DEBUG_ErrorLevelGet(void);
 
   Example:
     <code>
-    // Re-direct debug system service calls to console index 1
+    
     if (SYS_DEBUG_Redirect(SYS_CONSOLE_INDEX_1) == true)
     {
-        // SYS Debug output will now be re-directed to SYS Console Instance - 1
+       
     }
     </code>
 
@@ -375,6 +378,36 @@ SYS_ERROR_LEVEL SYS_DEBUG_ErrorLevelGet(void);
 */
 bool SYS_DEBUG_Redirect(const SYS_MODULE_INDEX index);
 
+// *****************************************************************************
+/* Function:
+   SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void)
+
+  Summary:
+    Returns console instance used by debug system service
+
+  Description:
+    This function returns console instance used by debug system service.
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    SYS_MODULE_INDEX - Instance of console system service
+
+  Example:
+    <code>
+    uint32_t index;
+
+    index = SYS_DEBUG_ConsoleInstanceGet();
+
+    </code>
+
+  Remarks:
+    None.
+*/
 SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
 // *****************************************************************************
@@ -407,10 +440,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h file: #define SYS_DEBUG_MESSAGE(level,message)  _SYS_DEBUG_MESSAGE(level,message)
-
-    // In source code
+   
     SYS_DEBUG_MESSAGE(SYS_ERROR_WARNING, "My debug warning message\r\n");
     </code>
 
@@ -423,8 +453,8 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     SYS_DEBUG_MESSAGE macro.
 */
 #ifdef SYS_DEBUG_USE_CONSOLE
-#ifndef _SYS_DEBUG_MESSAGE
-    #define _SYS_DEBUG_MESSAGE(level, message)  do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Message(SYS_DEBUG_ConsoleInstanceGet(), message); }while(0)
+#ifndef SYS_DEBUG_MESSAGE
+    #define SYS_DEBUG_MESSAGE(level, message)  do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Message(SYS_DEBUG_ConsoleInstanceGet(), message); }while(0)
 #endif
 #endif
 
@@ -456,17 +486,13 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h file: #define SYS_DEBUG_PRINT(level, fmt, ...) _SYS_DEBUG_PRINT(level, fmt, ##__VA_ARGS__)
-
-    // In source code
+    
     int result;
 
     result = SomeOperation();
     if (result > MAX_VALUE)
     {
-        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);
-        // Take appropriate action
+        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);       
     }
     </code>
 
@@ -479,8 +505,8 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     SYS_DEBUG_PRINT macro.
 */
 #ifdef SYS_DEBUG_USE_CONSOLE
-#ifndef _SYS_DEBUG_PRINT
-    #define _SYS_DEBUG_PRINT(level, format, ...)    do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Print(SYS_DEBUG_ConsoleInstanceGet(), format, ##__VA_ARGS__); } while (0)
+#ifndef SYS_DEBUG_PRINT
+    #define SYS_DEBUG_PRINT(level, format, ...)    do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Print(SYS_DEBUG_ConsoleInstanceGet(), format, ##__VA_ARGS__); } while (0)
 #endif
 #endif
 
@@ -518,7 +544,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
 
 // *****************************************************************************
-/* Function:
+/* Macro:
     SYS_DEBUG_MESSAGE(SYS_ERROR_LEVEL level, const char* message )
 
   Summary:
@@ -542,9 +568,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     None.
 
   Example:
-    <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h file: #define SYS_DEBUG_MESSAGE(level, message) _SYS_DEBUG_MESSAGE(level, message)
+    <code>   
 
     SYS_DEBUG_ErrorLevelSet(SYS_ERROR_DEBUG);
     SYS_DEBUG_MESSAGE(SYS_ERROR_WARNING, "System Debug Message \r\n");
@@ -595,17 +619,13 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h: #define SYS_DEBUG_PRINT(level, fmt, ...) _SYS_DEBUG_PRINT(level, fmt, ##__VA_ARGS__)
-
-    // In source code
+   
     int result;
 
     result = SomeOperation();
     if (result > MAX_VALUE)
     {
-        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);
-        // Take appropriate action
+        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);       
     }
     </code>
 

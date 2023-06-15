@@ -1,4 +1,4 @@
-<config configName="pic32mzda_curiosity" projectName="sdcard_usb_audio_player_pic32mz_da_curiosity" configVersion="1.1" device="PIC32MZ2064DAR176" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.4">
+<config configName="pic32mzda_curiosity" projectName="sdcard_usb_audio_player_pic32mz_da_curiosity" configVersion="1.1" device="PIC32MZ2064DAR176" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -131,7 +131,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -9319,19 +9319,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart4" name="UART_BRGH_MODE_COMMENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart4&gt;
-  &lt;uart4 dnOrder=&quot;0&quot; id=&quot;UART_BRGH_MODE_COMMENT&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;String dnOrder=&quot;0&quot; id=&quot;text&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;***&amp;amp;#160;High&amp;amp;#160;Speed&amp;amp;#160;mode&amp;amp;#160;4x&amp;amp;#160;baud&amp;amp;#160;clock&amp;amp;#160;enabled&amp;amp;#160;(BRGH&amp;amp;#160;=&amp;amp;#160;1)&amp;amp;#160;***&lt;/Value&gt;
-      &lt;/String&gt;
-    &lt;/Attributes&gt;
-  &lt;/uart4&gt;
-&lt;/uart4&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart4" name="UART_CLOCK_FREQ"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart4&gt;
   &lt;uart4 dnOrder=&quot;0&quot; id=&quot;UART_CLOCK_FREQ&quot;&gt;
@@ -9473,7 +9460,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagerotate\legato_widget_imagerotate.c</file>
-         <hash>bbcd506f8bb3ced1e77aeb8b10a9c31eefaaee19e727941543eb10fb4a5a36cc</hash>
+         <hash>0b8756b40331d3ba68694d23c9e7e0ce44bff969802da539a4d756ba1e30637a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\ports\sys_ports.h</file>
@@ -9485,7 +9472,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_widget_skin_classic.c</file>
-         <hash>9f34120be53101e1ef46fbd8ad106eb1e1cb51a831faa41e53626245ca475874</hash>
+         <hash>1c71ad5777b6052a641c70c0321ce857669a2706486126cf1ac982ebd6ea84a6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_editwidget.c</file>
@@ -9493,7 +9480,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagerotate\legato_widget_imagerotate.h</file>
-         <hash>b60623dd47a7a9c2da60a83bb878ac20331014c68e7b328b81f9e5a637341584</hash>
+         <hash>21142bd015997290a0ce7af4dac6202b096642cffbe54a1950d843f551afc3a6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_TxEPStatus_Default.h</file>
@@ -9501,23 +9488,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\dma\sys_dma_mapping.h</file>
-         <hash>1f5b7e03acbc3e423c4849c62fe53eb8c6b0ab5b3f9119f2281eda6152420773</hash>
+         <hash>834d16463a4ad2643f1b3c521a9ef3a854d9f10895a4197392047f8e582e2f73</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\jpeg\jidctint.c</file>
-         <hash>1151ccb6918bbbd996bcdb20ae212dd4f50b196fe1002cf98bdcf4a9316732db</hash>
+         <hash>8997d893fe52e5702acd160837989e558b8ee3b3c918055eef8647b2d0a8e7d3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\image\legato_widget_image.h</file>
-         <hash>6e766e18a60b45d526a63be1f66cc69d013cbb4907cf0eee026ae0321dad2292</hash>
+         <hash>ed8005ad7e80e11970fe5087d67f100cc3c2fb8cc008674192f93e4e785c3ef3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\tasks.c</file>
-         <hash>39c32786caf45fbfa4ebb747ea76958e142e5ff7347560902c22ab11545950ba</hash>
+         <hash>7484ed5f3bfa51b27abc3f79799bb3c03d5564716ddf9dc9c7c44bc90603a7fa</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_pixelbuffer.c</file>
@@ -9525,23 +9512,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_input.c</file>
-         <hash>a92c37779d40053f36fbfa78596c887a8cdfceb1db2fa1c400b94371df7c5d54</hash>
+         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_draw_arc.c</file>
-         <hash>30cb14a19932319828175f3fe9b8dded7a33ed7fe9a2ac58e6afe3bddd54bceb</hash>
+         <hash>fe4b9323e17cab3c7ef5898032918a93cf55aeda7f16e78179f57ed2f00084a0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_input.h</file>
-         <hash>984482710a43e60163f0ce8157a6ccc5097763371d8e9542a02d1e41a03de978</hash>
+         <hash>b64b85f2884b54b5e9fb5c735d91a0ae7923990cdcfd9d28792d6dc1af7d4a62</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>27cc7846ef1c5ae5ced5ebe41f1946358c31a8a97a729cf85264e41efab9ccf8</hash>
+         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\i2c\drv_i2c_definitions.h</file>
-         <hash>0ab603b6bb5203774c4772ff7966aae847baaed517036066e4caf1004fa007c5</hash>
+         <hash>71a2b8fc43aaaeb6a3a82954c94ef244c1fc93def1c8589d72982cc0795c9e3d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_Interrupts_Unsupported.h</file>
@@ -9553,23 +9540,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\interrupts.c</file>
-         <hash>cea50fc27538555a51b479fb8f6da76036916d1cd2d5669de551155f2bac0886</hash>
+         <hash>051b18a1d00946333d74b322753ca9ac62a59acc8fce8ff480d97040e525a901</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_draw_rect.c</file>
-         <hash>975628ab8a04b3dc6b1408491e07fe6617631b11ec85f97bb4c6d7bc9938a2e1</hash>
+         <hash>173e373c177eff78f550342ffabbe552ad76091df82960aa27f69a235481ee67</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\i2c\src\drv_i2c_local.h</file>
-         <hash>f82fd4270a023c7d3281752352a98a33d139a03992f8cf32e6ad04adaf8fcf5f</hash>
+         <hash>efe3b598a6fc3492f7f448c0077edcce4378d2029b5a26d304e0293e0d4711f7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_radiobutton_group.h</file>
-         <hash>fb968531ea8e46655428ba2faa6c74622bf08a790a393cf69b61171cc0570f3b</hash>
+         <hash>2a597192a279e9d1f1f1deeb94c9882a63d30ce7dcc357ebe80ac511f185d96d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>874835c0537c3b41725075f8443b14a96c6a7cbf4b2d3c51e4b7c0553ac2c8ff</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_radiobutton_group.c</file>
@@ -9577,7 +9564,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs_media_manager.c</file>
-         <hash>e86665dbb855f19c9e072ebe2217facc93947b529cbf3d16542d9755e9e32224</hash>
+         <hash>624b1c2481ed47a4e0753d72c928b9bf00e9afbdf77efc008b572e174816fbd4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_init.c</file>
@@ -9589,7 +9576,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_renderer.h</file>
-         <hash>18fdfb45e6166f14147fd0b9cd92f3ba528bd2394f1ce569da973eadc808504c</hash>
+         <hash>9a0155fa825cec3a872cc886bd7ee8d91a2a38ff0bc528659edf905963dfe35c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radialmenu\legato_widget_radial_menu_skin_classic.c</file>
@@ -9601,7 +9588,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_draw_line.c</file>
-         <hash>2344aeec3f4270a9419ea2bbab43e275e3147fd6c83c71f5f8511db8c59c610f</hash>
+         <hash>5a5225ae699e372c0982d245dbdce998d17faee3129fa8d97b8160d43407ce77</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_dynamicstring.c</file>
@@ -9613,11 +9600,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\png\lodepng.c</file>
-         <hash>684e7e52f3d373262c8859a7757121c2d269e29a99e039688ae524ec2fe08c9b</hash>
+         <hash>75b029a69d4a50c3ac27f75766577bf227abf5f35b38bc1375fb18d4e537e833</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_renderer.c</file>
-         <hash>bef2d6fc1469a10406340243668b64364877b8d58ef8fc5f230399f380a1d10c</hash>
+         <hash>8670db119b7bd79b2b2ae15ecc57f27c1f345a6fd21c57a824a3d0bdcdfd4c8f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_init.h</file>
@@ -9636,12 +9623,16 @@
          <hash>d575964edd097b1032012b5588ebc83cc5bb8a6cfd2d4a9a6449ba4508252dda</hash>
       </entry>
       <entry>
+         <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\src\drv_sdmmc_file_system.h</file>
+         <hash>3f80d1ef387e9ea48674dd721d301fe0e273ab00870b800ba28a1af40c8cdebd</hash>
+      </entry>
+      <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_gpu.h</file>
-         <hash>9729a96a8d73007df72a13110c158bd5fbddc844527878c65e54885430f93f85</hash>
+         <hash>ee697fe9fbe34a099121d2a5e6b1b5d2f3bf2c49a5fcabef34cb296a19384aa0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\src\drv_sdmmc_file_system.c</file>
-         <hash>0c600ddf151f7ca49c2b1a21f212a010c2f6e2f46717cc5a3ef5cc357c896c63</hash>
+         <hash>d9ccc4228377cc80f855b932d5205c03cf168edf09f05fadf4e3931e1d8822d0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_read_internal.c</file>
@@ -9649,15 +9640,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_widget.h</file>
-         <hash>4c46d578858ecc95324003866c3c6c1bd867a1a8679d21abdd6745f1b3bdb314</hash>
+         <hash>bea12a374e5d5f32dc18b906d74b9d4cdc58bac123095868eb520cb7033c3af5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_gpu.c</file>
-         <hash>b0756ce63da7917dd1e428263ecd81410290af0c8a19255ff872dae39e6ef1c5</hash>
+         <hash>2c875be18e8daa42c03196428cf7f00b8f9829a595b4c31eb9ebe45397e7b48c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_widget.c</file>
-         <hash>3c2b489c451a72eb89a3e3732e097f17da4129293022081d42400ffac1f4eac0</hash>
+         <hash>f9195f07098f8a346a7af2ac6502ff0f28102f2ea4cc96810a8842847dc7da12</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\src\usb_host_scsi.c</file>
@@ -9673,7 +9664,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\driver\controller\glcd\plib_glcd.c</file>
@@ -9681,7 +9672,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\time\sys_time_definitions.h</file>
-         <hash>904195d4340ba6b97cf19c25b9695d2a9f37ed67cf6abdf8ee1ee839506e2801</hash>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\src\drv_i2s.c</file>
@@ -9697,11 +9688,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs.c</file>
-         <hash>25d27349ac93f74a60186c235b8b1d7f6a4c25c53c97642f0df93109a2a6241d</hash>
+         <hash>9fddd0e0f98f78690226049c454d1f1f05f1b24f89b37da043f7fd2522a49502</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\sdhc\plib_sdhc_common.h</file>
-         <hash>f1fd828f9d8fc847d80f9abd93a522e20fd3a84a75dd6cc86e519584877059be</hash>
+         <hash>64c22c9aa05f45a2dfaf19e5c9c9ea07318d64a03d757ba4c97115754afcb253</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\usb_host_scsi.h</file>
@@ -9721,7 +9712,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c1_master.h</file>
-         <hash>fda7d0f697c63ad350ca2616871456fa1ec59a4a65fd41e6d7283a1589cb8039</hash>
+         <hash>b1adc5c00fac7c24858a2247240bb350fa41799b20c15cc76ee3ecdb3ea9cf6f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\mono\legato_imagedecoder_mono.h</file>
@@ -9729,19 +9720,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\bargraph\legato_widget_bar_graph.h</file>
-         <hash>178f8681b168e7e34c6fe1b00a85eb0704c637a85eac62b9b9e383029d2411d1</hash>
+         <hash>1bc313a8d54f35fea8ebef3ca45d1d7f25e4519b6b312d983d75a99abe91e638</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c1_master.c</file>
-         <hash>0c81424a8c92966f15a2ff5d78c51d81644eb22c456c5a9dee5b80b30f274d2d</hash>
+         <hash>cd6b8c372fe92295b569daf9fcdafa851698a26fc22155400bf68f6930379f13</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\configuration.h</file>
-         <hash>d504d696249572e5be875eda29ba93654282515276a7afcc5d180bfa086f8abe</hash>
+         <hash>91aa40064cf505c06b4ddbc3228f548af52f245575ce09f9d38d8cce4dedfc8a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>877149881796b1fcc802d2c64b39b5c0421ab0b725096e4c995ea59835e4e537</hash>
+         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\font\legato_rasterfont_liberationmono1.c</file>
@@ -9749,11 +9740,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\mono\legato_imagedecoder_mono.c</file>
-         <hash>e2db1348231796da08d92e67fb7a6986cf27e555b02bbca2114f9a313cf2a0da</hash>
+         <hash>2e5403acba491a53e45051d8c31ff829e4661d475a286d74831e49c7d48dc602</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_stream.h</file>
-         <hash>dd83df530d2638cf298350747e49b4287cab0adea8ed72e1b7e18554aa78d121</hash>
+         <hash>24fe0fa035f27481ed9a8f40b8d2169cca52dd342fdfa9fbcda066d79f466e11</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_TxEPStatus_Unsupported.h</file>
@@ -9765,7 +9756,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\sys_fs_media_manager.h</file>
-         <hash>6cb6bdb605ca6e8b9e683671cffadbbc26a1f686e3eaedc74a6cba860e8ac3c4</hash>
+         <hash>2f7c76d5a40a41594e86a831470c67d7aeec5b6e540fb967518ce095fe6da271</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_SoftReset_Unsupported.h</file>
@@ -9773,19 +9764,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\time\src\sys_time.c</file>
-         <hash>ddec1a83e32b63552ae72f884dc849e376b60d411669554f7ec492fff180662f</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\line\legato_widget_line.c</file>
-         <hash>7fe86f966ef91e8cac9535c1af72a47768b7cc77847c3f29ca4d05df3e3b6716</hash>
+         <hash>20424bbfe760f7bd6c2dc86ef6011fa4ddde0f56a4ca84c47c6bc20a3c85a2f4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radialmenu\legato_widget_radial_menu_state.c</file>
+         <hash>beddd4565f9de6740724aa09e9f13387218b0ea891a8b393f44d3ba2d077438f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\line\legato_widget_line.h</file>
-         <hash>3f3b3c6788567d2b6f3967f7b443cb45e1b8323ce15bab873090731a086b4f55</hash>
+         <hash>33bff323b7699d5f09d307a810fc10d5e11e88042370f213d70660357eff1a14</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_listener.h</file>
@@ -9793,7 +9788,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\renderer\legato_draw.c</file>
-         <hash>514f76ba5c4b083884ad35ca20c0a03b22622ac978b9f4f81d4dfd152feccb1b</hash>
+         <hash>5b3064465b4c94ec45a578e4dbc443d3e1908080847b34c99df0be4f94cff7e9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_listener.c</file>
@@ -9813,15 +9808,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\jpeg\legato_imagedecoder_jpeg_common.c</file>
-         <hash>6436e9c49b54a535d1b8600b501b607fe36dd18ca22a092fb239c4a45970ba79</hash>
+         <hash>841d298fd2691e391277919d6d196a5ee866c4126cc80d6c7742de8c31f3b204</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\screen\le_gen_screen_MusicScreen.c</file>
-         <hash>e1a1087335e5f9216491426dce93ab9d59e75cc9b65bc3d0ccc3d99704bde4e1</hash>
+         <hash>0dcc852fbeb5f4df94bff1a0ab29995d1f2c58a511b3691609c3b416757019a0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\linegraph\legato_widget_line_graph.c</file>
-         <hash>e9ec601b2a3fbeef1f0cff7b93f6d845d6015e47fcf72cb7da22925e700b4f07</hash>
+         <hash>a445b7089f15ff14dad9fa864658a94c633790b4c1d0a6415a178a00dfbbf34c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\screen\le_gen_screen_MusicScreen.h</file>
@@ -9841,7 +9836,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\png\legato_imagedecoder_png.h</file>
@@ -9857,7 +9852,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\dmac\plib_dmac.c</file>
-         <hash>27a8304e9f0b6e735474f79f0beeda4e1131d484c268182510fd39af9f87c928</hash>
+         <hash>851be8b7137ff34fcd0bb8c6831a390683e5f318dfaed924295d2d224befcd92</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\decoder\audio_decoders\wav\wav_dec.c</file>
@@ -9865,7 +9860,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\png\legato_imagedecoder_png.c</file>
-         <hash>9a7b41a8a316681bb1abfa868977be55e204176aa493287e88fa56377bacb36a</hash>
+         <hash>11093aacc4d3ddaa36ae5d00e49581cccde5dc1eb616de8badea5781fc93e439</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\usb_msd.h</file>
@@ -9873,7 +9868,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\keypad\legato_widget_keypad.h</file>
-         <hash>efd86e574c4a8500fe5e03f7f8a972fbf59d60cec54607f1526b458d12ff3632</hash>
+         <hash>495fb799d9d276cd4767a05d53d3da4dbe245b9ad3564165772ea59c6caf3585</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\driver_common.h</file>
@@ -9881,31 +9876,31 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\linegraph\legato_widget_line_graph.h</file>
-         <hash>c314b92bc9d5f8a22b2bb984d60eda7faf719a71c50e4938d18e7c8f8fdedad1</hash>
+         <hash>97f5a2b9b2633c6b901c8bd7c94025d4c9addeef351d749f5367b33122cd38a7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\dmac\plib_dmac.h</file>
-         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
+         <hash>78b9533671371600d12031eb6280ef51c292677cc636c809bb1b16ab772a4f8d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\keypad\legato_widget_keypad.c</file>
-         <hash>0b87dee0da73d088a7eb7c0d4a74d1ca63f52fe823bb11c6d5c71985bc9b41b5</hash>
+         <hash>7aa5b75e9614a9a99922344e2c425a11d332c1304784c77ae9f42b9a3d37375c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\exceptions.c</file>
-         <hash>c7f83f167acb4cd93e430dd7eb6a3d13194218fdad1d75c129783ede94db1723</hash>
+         <hash>30b880390be9495d817d130a99612cbe4a21ce5f953a22bf77fc97872b770538</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\input\drv_maxtouch.c</file>
-         <hash>b29a953b076ca24973d9661341d24091b446030c17368cc678f59c3cc51ab349</hash>
+         <hash>a64fc76b80833ab5617504d1383c7b6c8acec2ef26a4653d88e70be4cdfda950</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circularslider\legato_widget_circular_slider.h</file>
-         <hash>f7ec19f9ce56cacdf61a39de4ca7e2a9476338ef1da07d726dcf6425ac647953</hash>
+         <hash>076403f0c25f2a55a5506f3774ff33f692701387b745da4eb51e203604da9bc5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circularslider\legato_widget_circular_slider.c</file>
-         <hash>3999c52451dce511f684523b25684b03c7499b9cbebf9271e658103173695712</hash>
+         <hash>998f2dea10e1144d446c6c85ffa700d382f6d5b564e90b887e2f019f0dfe866f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\input\drv_maxtouch.h</file>
@@ -9913,7 +9908,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_rect.h</file>
-         <hash>25224ecd03ec49948390ad908bb67fbdac79d04cea50dee2434fc4cad7ed69dd</hash>
+         <hash>243b908a6395f350b2a5f700f91c181c392a65ed1eb993a2ba417df5777a390c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\peripheral\i2s\plib_i2s1.c</file>
@@ -9933,7 +9928,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache_local.h</file>
-         <hash>d8172028d448563ad48e5258b140e6746274aed4742c450ef84336e6574c810e</hash>
+         <hash>91d5a1a9920a5aea939f16fe36e9346b60ba3a8577817f24c0e8198cba2e089d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input.c</file>
@@ -9941,7 +9936,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\gpio\plib_gpio.h</file>
-         <hash>6f9bf3808ce767ff66a28c7dd988ca6f340fb7870334515524ebd68109479ef8</hash>
+         <hash>ab3480f0da265424432a13341535edc8a9eb072964d2c242c362f987848eaaf8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_widget_radiobutton_skin_classic.c</file>
@@ -9949,7 +9944,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\gpio\plib_gpio.c</file>
-         <hash>c05549f7171a24216f91b6e275ff87fd0c1165ebc0ed074d9ea0ff5833b08255</hash>
+         <hash>a28cfe09d530ccdd3d69c9c0e120b4af01566cee526e7da3a0453803ba5a4fb0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_EndpointFIFO_Default.h</file>
@@ -9965,15 +9960,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs_media_manager_local.h</file>
-         <hash>bbc6074719c421b07d4540ee6e745ae4145239f698780819c479e13bfdd9ddd5</hash>
+         <hash>5d471f0372ec41b3ef362ad533beede076e4e959274e57221ed229b996d7231e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\sys_fs_fat_interface.h</file>
-         <hash>47379030a7b158d0db57e79d9ee9d056b9bbad70e13152b6ea603f1cbf37a459</hash>
+         <hash>8abf10cb082958d08f5cf3210694cef73fdb6fa9b6a641e00da547cbcec0719b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\drawsurface\legato_widget_drawsurface.h</file>
-         <hash>9d37c8a489c560f31f93e52e0dd22b917c065134590837705d22fea13fb7f03c</hash>
+         <hash>e7e82efaeaa2af539571f167d8a66eeb80ae9bb53793375416d67d109970cff0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\usbhs_registers.h</file>
@@ -9989,7 +9984,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\drawsurface\legato_widget_drawsurface.c</file>
-         <hash>1980508afc8e18f8653e1aaf41bfe8ed1c93a302e264eb89a834dbe624576270</hash>
+         <hash>e394b25b38a5645a5f40424c0ebcca5c1959d20ac59740330748daa5607a81b6</hash>
       </entry>
       <entry>
          <file>..\src\app.c</file>
@@ -10001,7 +9996,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\evic\plib_evic.h</file>
-         <hash>c92512e3068987f43ebd53be03c4e58115b45dbdcb9833216cb05c2d71199152</hash>
+         <hash>465c919c27930db968cce9d5bcabcb177beafbb3d2e9c62f3f6f8a4f00885a79</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_color_value.c</file>
@@ -10013,11 +10008,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\piechart\legato_widget_pie_chart.h</file>
-         <hash>94aa15f972e57252a2e22a0d67b0637485f2b21afa8c237697a7504cc8e891a2</hash>
+         <hash>0bce91b83a86ed22b7d4d47e9fb8b9d16e412ceeea8e2e4e874bd3beed29e8fc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\window\legato_widget_window.h</file>
-         <hash>c32dd91208c0878a285b2baa02b2357b0d15b0cc274e14f149509b1fd8bcfa6e</hash>
+         <hash>2de15ae28e8e4c357637f6fdc7ec75a729c3515486903135a1384d5f3cbf532b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_write.c</file>
@@ -10025,7 +10020,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\piechart\legato_widget_pie_chart.c</file>
-         <hash>77e88545a8005516342097fe109861f082d329021eb4d7bb44900016a6ad22c7</hash>
+         <hash>b6010e92d402c1277c12dcfecafef2a6df5f4ab88b2f9bfd170fec755cb70320</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\usb_host_client_driver.h</file>
@@ -10033,19 +10028,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\datastructure\legato_list.h</file>
-         <hash>e3976e63dc121845db596b5bfc10321e51dfd232a1328032efa1418973d1cbcf</hash>
+         <hash>a6d52daa6de7d55afcc4f5e8c974a9048dd432b63a330bc4b3bb20b394b99209</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\font\legato_font.h</file>
-         <hash>fee131d6d91edddf72e3a41ddf66a8eb8b658f7d8311b7ebae1895c84095bed5</hash>
+         <hash>2fc294c101b74dc10976c745908906e5619791eb4a5f1b15463e414d0ca7da66</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\window\legato_widget_window.c</file>
-         <hash>6eb5e123bcb6554ee3f43793dfcdfb874fe2484b3631a3fa0e4c7df38f407ac1</hash>
+         <hash>c90a07b766a49ea10f1e444cea59da8fd83bd424ad68898181f529ad3342d2b9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\window\legato_widget_window_skin_classic.c</file>
-         <hash>97a665219e5e55865135218f28a76e2a20f6665e4a05ede4ae8e30067e5bca36</hash>
+         <hash>dd6b3e7c710431206685fc51459a31358dae4e99be8dd14849be4fe858ba4cc8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_RxEPStatus_Unsupported.h</file>
@@ -10057,31 +10052,31 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\groupbox\legato_widget_groupbox.c</file>
-         <hash>a9801ac3c76c3b112ad6fabd2a1e1fe320caa399b5b9be1262612aaa22bb08dd</hash>
+         <hash>ea8c4c0c46bc4ee4867dcd0d053986a9272501d12d52c0d5dbfc6b011aecc8fc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\evic\plib_evic.c</file>
-         <hash>e7acb36ef267fc59fd153c91ff27c66b6986c48584cf7beb0299189575cb9065</hash>
+         <hash>fe5249227af2ed769fff04c7889cb76851bf37736187101a3b89b17b08d9fa01</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>3b518d0f3667efcff16c9f0972d35f38eb4b97d22eca4ca2e7a862eb61e7cd6d</hash>
+         <hash>d88929a1d7d6d0428c517cb789359c574c42d52c3c8a04bb267990255ad81706</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
+         <hash>2f636a8a90403a73ce55b8397c9ea548bb1e4ef7c022796ec2b3dffe7f97e96c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\groupbox\legato_widget_groupbox.h</file>
-         <hash>0ce7e6250c37b7305022e0ed5689047bc5127171b49b2d66ae1ca92c4a89db34</hash>
+         <hash>8d73449f3a11649a142d7ea2e1714eb0ff1a464bbcd12b933421c3df2267b0d1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\dma\sys_dma.h</file>
-         <hash>557896cd9ba1256276537379aa5f3cb06e1129a660db4a566e747a0ce6c63ec5</hash>
+         <hash>696ee09354ceb3954ef5ca0be1fc9dc45cb6955beff13ff6ebdf92a923b62890</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\src\drv_sdmmc_local.h</file>
-         <hash>6636f9435b8e6db473bd22410b84550ca0ac22283da3480bc292b1a9a6ef03d3</hash>
+         <hash>8c14b0e285ba1bf8850608f41809b4d7e914a83273ecaf22226750ca322c9835</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input.h</file>
@@ -10089,11 +10084,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\i2c\drv_i2c.h</file>
-         <hash>c17a0a4f6904f2226706c71821a1dac31171a701181677c9bb512049e20b71a2</hash>
+         <hash>098d38bbc9c9d42befb9e601cfaf7f342ce8c670b788c961ef84df6db1ecbf82</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\dma\sys_dma.c</file>
-         <hash>dd7bc0bf3cfac8d8555d693f3503902d52c159e67f0b0ece6fb63b87102a433f</hash>
+         <hash>6697075e2dd0c93e8af4afb996ae9c70dd8fac27d592a671130f32a9b8649b0b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache_pic32mz.h</file>
@@ -10101,7 +10096,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\fat_fs\file_system\ff.c</file>
-         <hash>89210dcb75cae2c2c9cf5e835ccd0b5a8dd5860ac9f79661207076b9a4d709e0</hash>
+         <hash>09f73618c1ac3bd9736650439be337fbfe49018a1db7205126fcbfde1e384a0f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\image\legato_widget_image_skin_classic.c</file>
@@ -10109,15 +10104,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>910fa58ceb264c7e03edce224b6484fc2fba3c8d6656975e3c01cd45cdc5d4b3</hash>
+         <hash>2906f8255a58097a83011b023f09dfa602c04c2d154c39a9e35fcb48823940ac</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\touchtest\legato_widget_touchtest.h</file>
-         <hash>b1b5dbfca70faef923e543f4b4390a9d1e7ee9ef7d1d9aec58af70a3ba3ff47b</hash>
+         <hash>337643065e8ae3d8952f37c1ff64ed43757ef465c6a4d090d7074a4f6d48dc60</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\fat_fs\file_system\ffunicode.c</file>
-         <hash>b519b20a6de1ceea6ae01421480d0137d03abe788b4e6553b2153d2a8591b840</hash>
+         <hash>3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache_pic32mz.S</file>
@@ -10125,11 +10120,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\touchtest\legato_widget_touchtest.c</file>
-         <hash>264a893978115d50f30679c1b9f7edb156d9c3dfcc23f39d1ca5147d7440eb1a</hash>
+         <hash>153650239baf625669025d719dd70566954aeaca7868c99d90568c11bce0d0d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_error.h</file>
-         <hash>13d143afaa2ff3dc8ae64326dca05ee8efface1caf78de7a0b07ac4c8ceac60c</hash>
+         <hash>d37f93003691dc91b4fe0d327ca3b3a874da4962122c17870550106f5d9fe2fa</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rlecolor.c</file>
@@ -10141,15 +10136,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>095d0709b9f873a9b3f3180f118fa637dfdea50e8d9f6353e8bf046046b86f49</hash>
+         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart_common.h</file>
-         <hash>90d1791d0855caa86d5d529a0ba209330f20cd0da2436950a7e71b38ef8da02b</hash>
+         <hash>70213cd740b3ff9a591d93ad6aac9493335851db084dd862275effacdebf710d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\slider\legato_widget_slider.h</file>
-         <hash>cc332c292b1f0648b7016e496f53a39a88170014dcf60496f01ab61958104e7d</hash>
+         <hash>951ab0c001d95cc75937a4df525c86614b5e1e24ae63fa123cabfa23305a09fc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_error.c</file>
@@ -10157,15 +10152,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_event.h</file>
-         <hash>e56836c5a176663c061a6364bbb63973426cc2bdf71469a27efc3a330f4524d0</hash>
+         <hash>fb2f37dbfb7508bf5c493b34f5dd8ff2e853ce27fad53ce2057079a781363561</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\label\legato_widget_label.c</file>
-         <hash>acfc30bc34257cd99e44ac67d5efd559c44ea40450a55516178b36a4b4acd598</hash>
+         <hash>4db3d7cdf29ede7f8f87431a0da6e2d94356bbcc7cebe8e83c6307e34f67ea3a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.h</file>
-         <hash>f7bb1ce517a25b2afdccfae477f96004dc208e65fab38f205e8bc2934dd3aa02</hash>
+         <hash>e6597d8b8f6e75b5dec2eeaeddb863a3d8180c24a25fd7b7bef20aae76126f34</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\progressbar\legato_widget_progressbar_skin_classic.c</file>
@@ -10173,23 +10168,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.c</file>
-         <hash>a5b46d255221f7c6c3b08b77efe71179f40263fd63aadaf685f8d179c3209d29</hash>
+         <hash>187dd3dcb006c1b2edb338b31b598185b850dfd815a1c0da63dafed32a4cbbc6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\legato_image.h</file>
-         <hash>a478775d3560e86c1f9933877c19531a6f2fbdbdca84b601cea7d091c63ab431</hash>
+         <hash>eac79467eeba5158cc581ab5fd98a9a8a0266bf34d3f3e35d9f1de44f5d29245</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>eb3da8430f0e618ef405e6c022e3d3cab745fd363dce5bcc19b65bf231be2c11</hash>
+         <hash>20376189b84f2e59ddcbd7e3b6795b333c73791892ef066bc4956bcb537fab24</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\clk\plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>ab8a09dd687e0942b6b373585e76e22e90e1da88bdf22f02ff3130b303dfa328</hash>
+         <hash>8800012b37134212fac94bf0d1ce07e665ef3663306246f9929176957e0492bc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_stringtable.c</file>
@@ -10205,7 +10200,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_color.h</file>
-         <hash>3b21a0fb159d6954744727af76e4d50bc0461af9701d07fbec985d7ccde8e483</hash>
+         <hash>05713a0e9ba22a72a6a90fb971c149739cd3450e7b56a214fc3fc1591a1bb2ff</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_event.c</file>
@@ -10213,7 +10208,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\label\legato_widget_label.h</file>
-         <hash>2dcd43c6534c961d079261b432066a712338915e65d1957f0d40e61b02b6f453</hash>
+         <hash>022a0de66de27ed503c07852959b98e6e4c1aa50f881d6c05de1d57cd6ab70ba</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\touchtest\legato_widget_touchtest_skin_classic.c</file>
@@ -10221,15 +10216,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\arc\legato_widget_arc.h</file>
-         <hash>332809d39da2257d6ba6689c466a8bb0c4cd995d08fb88228008e37866fe9714</hash>
+         <hash>59f4b30443e8a06b0611b1a6be30db6f75d9b8a535f611a9cd3a0db9cc8d8be3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\arc\legato_widget_arc.c</file>
-         <hash>6e6b107efba68e7c5dcbd4771ca22be681ac1310ae30e6b61bbda251c58f3fae</hash>
+         <hash>2ed3accad62315ec8a620bdc0bae6f712132eacdc3bbc3b5876eb6ebc264c7c2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_widget_radiobutton.h</file>
-         <hash>3f7f5f0e9e291cfe64b0f1e382cf59eb92b4c19e80696fb8c19a346d083b5c49</hash>
+         <hash>f36f6109be592673b763c0971a4997b3aef148f432a3830d2af47cfa171fd754</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\src\usb_host_hub_mapping.h</file>
@@ -10245,7 +10240,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c2_master.h</file>
-         <hash>80bc7c59795127145c2530ac56c192005c4c951924a211ec4339e5b643c2a6b7</hash>
+         <hash>b64cbd9b5559995f70cfa38282f985b3879ca6d9988bb4dfa6e1efc1a2da81ca</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagerotate\legato_widget_imagerotate_skin_classic.c</file>
@@ -10253,15 +10248,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radiobutton\legato_widget_radiobutton.c</file>
-         <hash>21ff5a7b08b7a7707f2143bb253dde59f9496901c1aae54aff5871a5b4053deb</hash>
+         <hash>d2243e418f81c8a3de5f753d184128b2d9b5692c569cda525cca4da496ec8db8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c2_master.c</file>
-         <hash>8bc2badff0ea1e8269a7620b53bb3a627186c071017a0577c83a3a2df5a85ce8</hash>
+         <hash>947bde0b4a252ee069c1d0224fea256916ad6901e546e23413f5072952b1421d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\listwheel\legato_widget_listwheel.c</file>
-         <hash>e1c6b29a703a2ef24e5471704d4bfeaad6fffeb5ea7a12ba15bf41d77e16e461</hash>
+         <hash>d2ec10152f30b4f55a4a3282fee7afd5af32557805f199658e4ff0401f950571</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\audio\driver\i2s\drv_i2s_local.h</file>
@@ -10269,39 +10264,39 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\system_media.h</file>
-         <hash>be592b4eb9eb4cc8f25cf734fc15b088de091d2f8051b0fcba091c1b6194df5f</hash>
+         <hash>e61ba67015cfba6a7425d077cd2c633ba9989218bbe585078efe2face729401f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_tablestring.c</file>
-         <hash>78400d186a719bbd674747f01457ba41e122401f320ada98e02b215f0e533ef1</hash>
+         <hash>eb62565c0d757215a476a53285853929e243c0ea68dfc8fa9c1bcc9950fc4a5c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_tablestring.h</file>
-         <hash>0539ca068e32afe8f09e7f43cba8eea1d747363f341dd7082475ab2f3adc7532</hash>
+         <hash>4551ff37ce3fb51d88140c4c241e9a60967f7b04fe24a939c36aeec829f8656c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagescale\legato_widget_imagescale.h</file>
-         <hash>331adb7bdfc6be542b1cb3690dcd5cfec3d4e7f8006dd74c57b34659e612058b</hash>
+         <hash>3336aed0e1cd3085eb597792561884849a517cf3bb572c286ff03c121f1d9493</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\debug\sys_debug.h</file>
-         <hash>970de73fb9806906b5429168c66ab403309d8a9cad46febab875a5e6d071525e</hash>
+         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagescale\legato_widget_imagescale.c</file>
-         <hash>eb5952a18c4f4de78ad54a4bbbd1d8dbadbee5c82629689ff13f7a92620d4eef</hash>
+         <hash>8a700120e43af815729590c274a7cf3e1ae79e35b580a5441fb0087b084299f7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\legato.h</file>
-         <hash>fa6abe8960c1d00140f822570472c09b6dd02d7831a87682c75c5ac3a0ec9055</hash>
+         <hash>79646dc5498e272741df83cfde01562dc4ea5b59e06e7b3dc10f2d1586080db8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\listwheel\legato_widget_listwheel.h</file>
-         <hash>75bc155010de739d1cd6f850f3a9049fb03e91e39e2dca469de65bca59f32083</hash>
+         <hash>04bce10c60d60100b89e341ab281f6f65738c1712626dba43ba82c6fd12690ec</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\rectangle\legato_widget_rectangle.c</file>
-         <hash>a76ac76dee48047129151b82dab9669d767a60e6975ef59f012356dd495fce79</hash>
+         <hash>bb7af194e53d7259133670fa3de54ce13a32d0f8bb3bece1b3a062322acf3752</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\usb_host_hub_interface.h</file>
@@ -10309,11 +10304,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\fat_fs\file_system\ffconf.h</file>
-         <hash>362b16c509f5f5d3c6122d8656718a09ae80cdfe77710fc1c735991b94e8bf69</hash>
+         <hash>4b18e8ce0011ac7b0914aa6de52c456333b08a6d02b0d6953fed80ed67f5d2fa</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\rectangle\legato_widget_rectangle.h</file>
-         <hash>94516777e808b740e86ce48be7547786ee3fd527b9dfd6d00a9377b55ce373a7</hash>
+         <hash>e7232a4939a64fe6bbdee113a39784a89b149a52d53f69c6c169a203a51632cd</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_ClockResetControl_Unsupported.h</file>
@@ -10341,7 +10336,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\memory\legato_fixedheap.c</file>
-         <hash>a3cede82c50da8bd2a93a80ea52aee5ae5a9b55ee097c533d3f01056f93367aa</hash>
+         <hash>197174ddbc7c7ef5c966bee36da8114e64dec8ce734d374c0b31401f800e21bf</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\memory\legato_fixedheap.h</file>
@@ -10349,11 +10344,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\memory\legato_memory.c</file>
-         <hash>fe63c2c5186464d6add0e2198fb325c608715e5bf69c00208c6d542eca71ef38</hash>
+         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\font\legato_rasterfont_stream.c</file>
@@ -10361,7 +10356,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\legato_config.h</file>
-         <hash>cd1623daf5675e40a46cd6de6ffeb6d0bc05bb428e051b6fed65ac66156a57c1</hash>
+         <hash>93e272c0802c333ec0687620b2f6e814dc1c5829799501602c8e8e9d6d77c098</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_EndpointOperations_Default.h</file>
@@ -10373,7 +10368,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_math.h</file>
-         <hash>5195d1b72c755ed2a9dc8804c0b118ccc78a806132d681bd6cfed15a03a21289</hash>
+         <hash>f794f16f2feab8180837496d1a067cfc023cf2157a199a82989cce01c76442ed</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\scsi.h</file>
@@ -10381,7 +10376,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\stdio\xc32_monitor.c</file>
-         <hash>ef710bfa045a3c2c078e5285587148b54ce343f7b419f22498d8c468792b8803</hash>
+         <hash>e545cc956a1d0dec951ca55388f7d7d29915e159e18406d425769cfd9575b700</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\system.h</file>
@@ -10389,7 +10384,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\int\sys_int_mapping.h</file>
-         <hash>771b853250bfb05ceac0f525749007ca1d4478e660c13f6a7b7e8fe28eefcf75</hash>
+         <hash>a2dcf05575becc98aa212af1d220eda07487bd645d82c4d7a980aa3a22384cf3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\label\legato_widget_label_skin_classic.c</file>
@@ -10401,11 +10396,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_harmony.h</file>
-         <hash>b73f7129f4fb9c8b48a462649abcf90787aece16335df107acb45e57c1f35f42</hash>
+         <hash>a913b0cf5f6029be4a46db040144b14d9949f2e52d9b00576e2373403d530213</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\i2c\src\drv_i2c.c</file>
-         <hash>69e18b04ea0f05b333f7af47e995f05837b64ae0ecb9ae820998ce5f88552cb9</hash>
+         <hash>c25527b996b4976ae46d22b521a155a1d58a10c201d80a704aa8a48008944dfd</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_harmony.c</file>
@@ -10417,7 +10412,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\mono\legato_imagedecoder_mono_read_stream.c</file>
-         <hash>26d1a3ad240fb5892a6da12fdb718a8348acf902f4f82f96c6473f2236280f73</hash>
+         <hash>f9d136caf93a756039b4266cf1d31cfde80b6d3c80235525d5741dd749441905</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_fixedstring.c</file>
@@ -10425,15 +10420,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw.c</file>
-         <hash>3d1c027582d5d515f28a7ad2961e4d0cab087958e5fe5f0c849e9bea625544e6</hash>
+         <hash>9946d4b12dfb72e2b5a4e41d7111ba2bc963871457948e92b9e381e673f411ab</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
-         <hash>738ae52b60b1c10a47d8a29af025c15ab4aa9fdf5fc1a7b2fa3519dd67ef39ce</hash>
+         <hash>9298e0e6a7fbbcad0e6eaa97a9fc22bbddf8c0e95393827b1402667ad41aff49</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_math.c</file>
-         <hash>6ed4792308018d9cd70dcd2b2e758b27264282c2921a483e538463b99f863137</hash>
+         <hash>173bfbbff90c6fe0122b91c4fab36da12e8da4160a72014347f88d160d36db5b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_fixedstring.h</file>
@@ -10445,11 +10440,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\sdhc\plib_sdhc.c</file>
-         <hash>497e5c173d7f45bf6163f90375789d655223a693d510cee3708f8d55fdc25e64</hash>
+         <hash>0d4b402e4db8754ab927a51407ddc939e32bb0ef75563da5e83459030775c561</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\datastructure\legato_array.h</file>
-         <hash>6a40bd2c577f607734ab0b617fa223c480a5e3dbee4010e10962215c1af6e0fe</hash>
+         <hash>5cf11151d0e350e180620a86c2b2975fe62c429e81b0db45f5aad7f33446bb6b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\list\legato_widget_list_skin_classic.c</file>
@@ -10457,11 +10452,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\progressbar\legato_widget_progressbar.c</file>
-         <hash>eb3ee7673e69f8387b7fd63ae5252a84cb8810d5e7292406a12727818f7fb11c</hash>
+         <hash>afbbff4482f176aa768f2fc83f5717a36c2173e9c5854bcd3af745a4c9102d63</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\screen\le_gen_screen_default.c</file>
-         <hash>aee5260b7af760ba66ef4c37610777143dde9608ab14294351544ea15e0f29ab</hash>
+         <hash>553a3194234f17fb6f866d7f575d8ee7687de5fadea6a10906b2e9e798c6a62b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\plib_usbhs.h</file>
@@ -10469,11 +10464,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\listwheel\legato_widget_listwheel_skin_classic.c</file>
-         <hash>0ab46b9a745f7deaf71c2f91662dc8803dabf05073b233a3611694264464e0de</hash>
+         <hash>9ce4c574de757f31f865a332c0cd86858de0fedfcdd46f3bfceeed18dbb73ff2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\progressbar\legato_widget_progressbar.h</file>
-         <hash>4fcc3b545941f5e182b9bf1fd6f8b4eadf65de967132219c090501406d81cd26</hash>
+         <hash>9e6a646cecd8c7b9ab0788a3054d502bf31b30fc8b1660d3ff8e9b42102fc5d7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\drv_usb.h</file>
@@ -10481,7 +10476,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\sdhc\plib_sdhc.h</file>
-         <hash>7ad84305ac65e87e97e5a21a262eb394c61fdadb4372e577fffa697b3c7a0500</hash>
+         <hash>b165a938128195df76745b2dc0c5c6906eac9fe61f7a7b64e1b347c674eb9571</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\screen\le_gen_screen_default.h</file>
@@ -10489,7 +10484,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\datastructure\legato_array.c</file>
-         <hash>5af0679fa56998e08d3b96d58aa2f39fc6f318ff2fd8b2162c7a8fd8657ba52b</hash>
+         <hash>0c0912af497741bec7b15ee3992245a18a9dd1a57fd34cf34d41073629f1e46d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\drv_usb_external_dependencies.h</file>
@@ -10517,11 +10512,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\drv_sdmmc_definitions.h</file>
-         <hash>8e3fa241696362bae6415e2c9f4d750536d8956fc32845f72406b1f01c7e460a</hash>
+         <hash>4917f65a8afb9ae28e08fab862bfba969b892990b1d1039f1d03d66edcaa826e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>2848a66f0697334725da29c9d34c6ef70de140804cf37ac3511bf6175afa0b8d</hash>
+         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mzda_curiosity\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_convert.c</file>
@@ -10529,7 +10528,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\src\drv_sdmmc.c</file>
-         <hash>b2ded46128c5fd50a0234f65fbe7b4a97f920c4ff90afe4778840e0f2aec78c8</hash>
+         <hash>ed15b761b26c824bd8a5040f275c796098adcd276f667f41e18fa66d061021b1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_scale.c</file>
@@ -10537,11 +10536,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\definitions.h</file>
-         <hash>ffd1adce7e3fdee60fd4a003dbcbd0c7e5efb86178f588f3eb306386f94da412</hash>
+         <hash>2397dea99e1cb1742a0f49356bee9c996b6ae3ebfa8bc7732c582800784696fa</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.c</file>
-         <hash>d7346bcc3ab3cfcafd9ef0cb3d3dc7548b4e3254fb909d9469f431a9cb88f3df</hash>
+         <hash>9080b22546fb464f814d8ff65cd9d981622ee5ee6639465b753140b59d16b761</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_RxEPStatus_Default.h</file>
@@ -10549,7 +10548,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\toolchain_specifics.h</file>
-         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
+         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.h</file>
@@ -10565,11 +10564,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\scrollbar\legato_widget_scrollbar.h</file>
-         <hash>fadde1bc9ce6a530a1bb6ef1d2485fa40262181c5090ebe0dffbd3b2a0bd0e72</hash>
+         <hash>ddee85397e2bc454cdce254691b8b4421d558246802b1fe7f03c7d1687f1f83e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\scrollbar\legato_widget_scrollbar.c</file>
-         <hash>6830491402974ff72dfd49c97e0d1a0f81fca4c7ce739b4823ad48c59a4529d4</hash>
+         <hash>186c0c748cd562dfc3e2d752992ca6563c2d47e327cf7f29ee02746d181a7ec6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\legato_palette.c</file>
@@ -10593,7 +10592,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb_host_init_data.c</file>
-         <hash>0330d7752283cae468d58190fa175bdce6c256cbd94116385f6c6c0381099e27</hash>
+         <hash>e34b7b9d6d87436b54c8ca66932e017987ed5bea37c725cda4b91ea9dc5452a5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_color_lerp.c</file>
@@ -10609,7 +10608,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\gradient\legato_widget_gradient.c</file>
-         <hash>7fbd50f045c2a6b9f3bd29ca44ee09b4d8381c7031e4e2aecadfd53850569cd1</hash>
+         <hash>aab8dc90da6205d3ef966ea5af6f71e1c7ce2b76219f099a8eca0800eb113cdf</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\p32MZ2064DAR176.ld</file>
@@ -10617,7 +10616,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\gradient\legato_widget_gradient.h</file>
-         <hash>6fed795c29dc12ec5bea1a323729f307c4b122abf467a7b1e7d26a84f25f7e7b</hash>
+         <hash>5d69fac37ff07940571de4ea4b5f592b1e6f09fa39f4358086723de6ec5ec7ae</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
@@ -10629,7 +10628,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_stringtable.h</file>
-         <hash>d5e329232652f6e05780d9dd7d805806da420a43a0eef1d82503ff3a63cf69a0</hash>
+         <hash>cbcc1a9026a6ee50f02e490f4a8cafc41fd59e4fc356a59ef8f9748d5761eae3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_EndpointOperations_Unsupported.h</file>
@@ -10637,11 +10636,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\datastructure\legato_rectarray.c</file>
-         <hash>df8f35364cba51695a0da67fb89606394a571aea6c6b385bd6bc5fe3e01a46d8</hash>
+         <hash>c56985af163f387e9d85c755f64976d04b2e4885059fd51db2f238f5c5fa4233</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\datastructure\legato_rectarray.h</file>
-         <hash>947b13082727772320141a3761fa6537ee45c2f82b6ca3314ffd5fe8efc5cdf4</hash>
+         <hash>e0a389ae97ec06c1b4e1d3da060b7c882a4f255e45fa709d639910cff74b4e25</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\arc\legato_widget_arc_skin_classic.c</file>
@@ -10649,7 +10648,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\memory\legato_variableheap.h</file>
-         <hash>87610ca9afd33a0e862a7f218ed0ab70591ed5a1b34b9a84dee50cc3004b5d1f</hash>
+         <hash>bfd908522659e4755dd3ab8405935af45dbabc9f336690ceb6c82093ffed8ac2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -10661,11 +10660,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_common.h</file>
-         <hash>1a5b3c66b398abc354e9a7d933e02803568d388d96559cdc4221bf8b7bc6836d</hash>
+         <hash>9c048287015309dace77916404332a3bc017289c0727ab56277d651727a5b8e3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>7d8c120d2620b978d82c1a20cdb9c2c243e797a35cada318091f65da70f4432d</hash>
+         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\driver.h</file>
@@ -10677,11 +10676,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\piechart\legato_widget_pie_chart_skin_classic.c</file>
-         <hash>fe58316cb5c12d64c8d6a6b0769c01be62c3a1c45d46930fede2803d0017ecd5</hash>
+         <hash>2ed073c996216690ff09b1f0ecdd5b23fb1369820b1430b70e49f8dd383dbd6d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\driver\gfx_driver.h</file>
-         <hash>bf14e0b4683445342c4f763c36b615e24b0ffab33dade7ab1cccdb1b0112b7f6</hash>
+         <hash>4905b31711d649d5892374e43d49d8130a77c78998d557958eb71c4f71cdf237</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_USBIDControl_Default.h</file>
@@ -10689,7 +10688,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\sdmmc\drv_sdmmc.h</file>
-         <hash>adfd11fa4fb647cbc17073c5e43c29875b46cef63c016b655ef8d6bed9d514e2</hash>
+         <hash>697acb93f32d8f9c5fb4987da5587233adf62a9b331fb30a195d1c788455339d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\plib_usbhs_header.h</file>
@@ -10701,7 +10700,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_widget_skin_classic_common.c</file>
-         <hash>48d75d856374c3230a13c4aae564fa537fb5b77978c16cb49db93affdc02bafc</hash>
+         <hash>18834d393da62b2ef9b1dad769422504489540acfd557ceb46c156158778c1f9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_index.c</file>
@@ -10709,7 +10708,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\legato_widget_skin_classic_common.h</file>
-         <hash>c92b55e1527deae1f9d69657c5ff7d784118d21c31ef81c25d5c41bbbd83d1ef</hash>
+         <hash>a40b0d61f3393d6c1582f3b43c2de97955e64f3d05ef10ef7364e506f671cac7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\drawsurface\legato_widget_drawsurface_skin_classic.c</file>
@@ -10717,7 +10716,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart4.h</file>
-         <hash>9cc494009c412cff154b7e244bbd81ea81ca77020ccb272ac6a99175221d0f3d</hash>
+         <hash>e77d1536954a45b4de78ed245ab2ac099ebd1c198bee967e534c579dd57b4981</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\usb\src\usb_host_msd.c</file>
@@ -10729,7 +10728,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs_local.h</file>
-         <hash>9757dc4a413f39e70813ea66b1825a7467f1b9a38a94d066fd39eb399361b438</hash>
+         <hash>7e7721693694ecc133d6772321cad1337c0a2209b7457b9351dda3a01cb129b1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_SoftReset_Default.h</file>
@@ -10741,7 +10740,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart4.c</file>
-         <hash>5f9e56fa36f2c6948112bf95e6d593f873264462b0104fac8563f07c28cdea69</hash>
+         <hash>7a5bcd5600e92ad2442fc0c3d26a2fc37c063b375f318c481e271628db1b02fe</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\legato_image_utils.h</file>
@@ -10769,7 +10768,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\slider\legato_widget_slider_skin_classic.c</file>
-         <hash>8844ec387305f1afce0918658c11ca3e0ddfd06f91740d1c2a3609f59178237a</hash>
+         <hash>757ceafde102185252413d651a7e422d6b144d184bd55a346fb347864e6f5e19</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\driver\controller\glcd\drv_gfx_glcd.h</file>
@@ -10789,7 +10788,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\bargraph\legato_widget_bar_graph_skin_classic.c</file>
-         <hash>b6a1351a87cb192a468a7bc38a9605e715a11850db5377aa44931bd35df33747</hash>
+         <hash>d1392d45deba7cf0caca94d2f5f3fef92927bde7e827003d95356654c22ba178</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\image\le_gen_images.c</file>
@@ -10797,15 +10796,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radialmenu\legato_widget_radial_menu.c</file>
-         <hash>33556348b8ce45267d8cfb08ee3011b406a2ce4a884427fadfbe1fc7a37f5ec4</hash>
+         <hash>779eb1d6fa8090878a3c112a1c6d89173420fb92eb53154faa412f3508bd56c2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\textfield\legato_widget_textfield.h</file>
-         <hash>5dfb5278363072469c5c958790bfd1184056ae7dc23fcb3e64cca737186da68b</hash>
+         <hash>c5812ba643d018f40166c5d74c862fd5a0f0e2421e7c2955e5d363c5b1ec531e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\radialmenu\legato_widget_radial_menu.h</file>
-         <hash>0ea1e373baa08a2e86005d296bbb239a3be3b308bf50acb880a4a05bc062d79c</hash>
+         <hash>7d696452908f7d5067122e9e8950f1ea3403c28336c430164f8b04b95ccd3eae</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rleindex.c</file>
@@ -10825,11 +10824,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_state.h</file>
-         <hash>51240ef18d358731042773cc74cfd11656e713e0f11f43c7abefa311038b8745</hash>
+         <hash>021730fd1ba0ab8a75fd98242ee8115fcaaf610e2cb7b17ec901f886e7f404b0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\int\sys_int.h</file>
-         <hash>c6ec8fc3c7ad1fa570998b9f65cb37fba4364ab07c3869f2d6cb30612a8a91e8</hash>
+         <hash>2c878ab7ff41ae56b5c0c3c94929ad66eb87b8660bf9a439177d049e8ad8f8c8</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -10837,23 +10836,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache.c</file>
-         <hash>28c61150a2e09ba1c80c2a1658351ba6d75e37ea0f3dbe56b4adc79ff49d7a64</hash>
+         <hash>500634fa5c5cb4efb91faa7a54e3ccbb26ad7ff6d188ff0e91cbaabc606cf054</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\int\src\sys_int.c</file>
-         <hash>ff706bb4bde7b62a65b603efea8bab8b5a7d9a1a2c1cb2a9e981d68bbf20f764</hash>
+         <hash>30ac5e334ca90204f545f1ab769ae26f421b910b3fb3be99354b364febceee64</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\core\legato_state.c</file>
-         <hash>31b951f3c9d338a6f34a38642381bbb94790cd4f83699b0e520707a47be138cf</hash>
+         <hash>2b43334893b574253509f4830d0c6ccda57c8b067a315de554a5657160edf918</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\textfield\legato_widget_textfield.c</file>
-         <hash>fe791583fa7a1253046c5d2d728bd1c697a2fe023438286d9b17b73803eb6c71</hash>
+         <hash>5aa52da5c54fb68258176a1bbd534c613afb2f3833152c6941837f3f1bca2ad7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache.h</file>
-         <hash>114b4101b4690f99a531562fe08f7b52654664d811ee3ca2ecdfd72aefe96792</hash>
+         <hash>da01fae7f39626c9f25c0c8f4f9a8cf25ed0c4b8dd6c0d4bae146210efe8da46</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\drv_usbhs_variant_mapping.h</file>
@@ -10869,15 +10868,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagesequence\legato_widget_imagesequence.h</file>
-         <hash>1718ad098a15739e36aae7e3d6e8f9f27ff61fb705551a5c9833619e7bd2e45e</hash>
+         <hash>086f9e4bb1dab80958c03075a8ffba4d6cda022a62592107fcfc2fa46879aaea</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\button\legato_widget_button.c</file>
-         <hash>e7114a1916bcc42da4b8cfc538f77d09f15e425b0408280e093c92d078e1e82c</hash>
+         <hash>b88864c12223bc73b60e239a9bde41877a87f87525866e2ce7a38d9bf608fdc0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_utils.h</file>
-         <hash>747aa96b2bb1ed485f8103dbe5a334c9066209e830d8fe6615664bbab3c61438</hash>
+         <hash>6d1b21c69618c4d05fd85b4415a1a51bc414e4d9a3c85c6dffda10054d28d01b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_gesture.h</file>
@@ -10885,15 +10884,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\button\legato_widget_button.h</file>
-         <hash>88ad3cdf69b9587f44346877aaaa743f184c73ab60072cbe479605a436ce28a5</hash>
+         <hash>ddb018ba4b754896c5bcaf46c6a1a3c558a92e763bd0a538d37000095c33aeb8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\common\legato_utils.c</file>
-         <hash>90dd09850f635717fee0c06532d385ebfd1711f2de9e43d8ec2e19003caca7b9</hash>
+         <hash>f7d528b39dabd79ad9bf209ba8b00232f1741d43c5b349f115a4bfc162deae0e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\list\legato_widget_list.c</file>
-         <hash>c2b0d7b2fbe4bbe6144042bacad5b91b3e582f23d5fa42ab9f1931d1345d93be</hash>
+         <hash>76cd79d99adccc089df61da79159d17866877b21cb90d2b4e2d8a31a7706c25d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\drv_usbhs_local.h</file>
@@ -10901,7 +10900,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_keyboard.h</file>
@@ -10909,11 +10908,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\src\sys_fs_fat_interface.c</file>
-         <hash>581a4c11a2e6c4aa4aa2c64742b276d5d4b3bd1dbdbed1983aab17f162f4c47b</hash>
+         <hash>c7873a18d6d2ee9cb2eb1bf9c678dfc6c22837d4c22e5c3bcbf30507b3aa125f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\list\legato_widget_list.h</file>
-         <hash>0c9fa86bb717a17a37d042710177888c3353c60777442f6d3f6473504b676695</hash>
+         <hash>23f8a2c0ab59dd4269f9cf4c8ab3f08aff3e505f5d5d8703c14b51c8a68cbaf7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\input\sys_input_mouse.h</file>
@@ -10921,15 +10920,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\initialization.c</file>
-         <hash>0b59095e3ae5f8c418d3a754700760fdc3b1ff504d1488307b9e5eea9d3fd885</hash>
+         <hash>e5f7251c7094e0412b889394ec3fac17b34d61933d632221ab6def2d41864a8f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\imagesequence\legato_widget_imagesequence.c</file>
-         <hash>93defd481660ae6a5da95455b3fb838c15c40b82ae4b6f7bad610cfb379c7cfa</hash>
+         <hash>a65278b8833e71ccf0d999b4c65a4ef65fdd165076c1d36d3d99717945657c6e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\image\raw\legato_imagedecoder_raw_setup.c</file>
@@ -10945,7 +10944,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\string\legato_string_renderer.c</file>
-         <hash>b7051905d5c0de0d435b6f28e54333e20d5b9c0a6737015171dee7e698436ba5</hash>
+         <hash>ee320cc6223fcc86b6008757f09576a4f54633d2330070e045cbb698ab53d46a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_EndpointFIFO_Unsupported.h</file>
@@ -10953,11 +10952,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\checkbox\legato_widget_checkbox.h</file>
-         <hash>0c8e5f9e58ef843b7f30d5023922dc9349e54075a8375fa714e000f43fc68bb7</hash>
+         <hash>d3546cae080d4fd304d515b0fd05c56c5257ea7027d0b4eee452e0a0f5fc50cf</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\checkbox\legato_widget_checkbox.c</file>
-         <hash>3779f7409aadc1cf20213d6f8c6df88ab8b5cbf4b4b5a07837e8b515047bbb44</hash>
+         <hash>27c455d514f130a8cf2d4604f9d725cc2b8ff6e20b4a59fd3d5e302ce21856c8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_scheme.h</file>
@@ -10977,7 +10976,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\fs\sys_fs.h</file>
-         <hash>46a5946f727b22530f0e0945a33cad93077c7b92c1bb2811959709ba7be60e9c</hash>
+         <hash>4ca0bf61b93d1b4335bad8755bfeeed6dfda8a7eb3f2eabfcd9239a0b78e01af</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\device_cache.h</file>
@@ -10985,27 +10984,27 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\linegraph\legato_widget_line_graph_skin_classic.c</file>
-         <hash>7e0a0d521a9d2603ea93ede08d11d9bba19df91e9a12e2364c2c56a79a7eea2f</hash>
+         <hash>8e3de8e4c850d8674b7085b78db8cc85e3381b187a8a86e2c28bf0ef8d7db7ea</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\generated\le_gen_scheme.c</file>
-         <hash>559ffc099cba34226e4445ffaf6c04a0e23155dbe881b96338aed118125ff4b9</hash>
+         <hash>cd00b4063ff912f158da995fd70affbfa5431373bdde1b8adf3cd8912b7554eb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circulargauge\legato_widget_circular_gauge_skin_classic.c</file>
-         <hash>d2f11c35da7f40a3626a55a02ce616792f5acc48e4f54ee24c46cff9cbc3e68b</hash>
+         <hash>dfeed151d24ec901c73ab5c629327620a305c123a5e4b6770d4dadaa01e7fcdd</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\ddr\plib_ddr.h</file>
-         <hash>b5b6be078a510d1f5b7cf7fdd596a2735bfbd6117d4030e9dba44bf88d0873b6</hash>
+         <hash>e01c67f908fbed58bb542cc7f37e1ef68565a97d6d0d7aabf4a074fb3fd0eea2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\system\cache\sys_cache.c</file>
-         <hash>c588752333a197d8ca33071ed888a98ace2149b1123aaaa71dcb5d5a30134e49</hash>
+         <hash>53fd36c6040f1cd83a5a625dc5dbf3b9a1f337988e5c10b776da9235f7b7579e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_Interrupts_Default.h</file>
@@ -11013,7 +11012,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\ddr\plib_ddr.c</file>
-         <hash>dda73e1eb3e74d1b2f0e81100b3d0a742ced9ac4dfa0d3a3a610a1c2e6388ce2</hash>
+         <hash>59c81e0328cbe59f8c220b24778c762b05b05919ad576bf75afe1fcc1506e27d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\driver\usb\usbhs\src\templates\usbhs_HighSpeedSupport_Default.h</file>
@@ -11025,11 +11024,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circle\legato_widget_circle.c</file>
-         <hash>78b04ea3c1ba40a8ee83580ce80c8e8ebcc8088fb93a44db8b1339f170937dbb</hash>
+         <hash>aa5da2769246f6ae059a6cccc96391e6e9069de941e516e6ecbbadac3cb87d39</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\gfx\legato\widget\circle\legato_widget_circle.h</file>
-         <hash>89dba4c516687aebde6989ae208f99319a33b8a3e236e0274716498b94d68907</hash>
+         <hash>2a8ad9f81660b58baf586da863c009be7636f2100c13dcde3fed50a600ac09c0</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

@@ -102,7 +102,7 @@ extern "C" {
 #define DRV_I2C_CLOCK_SPEED_IDX0              100000
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
 
 

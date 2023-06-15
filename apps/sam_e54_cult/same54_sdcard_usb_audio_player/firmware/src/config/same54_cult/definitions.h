@@ -53,9 +53,9 @@
 #include "audio/driver/i2s/drv_i2s.h"
 #include "peripheral/tc/plib_tc0.h"
 #include "peripheral/sdhc/plib_sdhc1.h"
-#include "system/time/sys_time.h"
 #include "driver/i2c/drv_i2c.h"
 #include "peripheral/tc/plib_tc4.h"
+#include "system/time/sys_time.h"
 #include "usb/usb_chapter_9.h"
 #include "usb/usb_host.h"
 #include "driver/usb/usbfsv1/drv_usbfsv1.h"
@@ -72,8 +72,8 @@
 #include "peripheral/sercom/usart/plib_sercom1_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "driver/sdmmc/drv_sdmmc.h"
-#include "peripheral/sercom/i2c_master/plib_sercom6_i2c_master.h"
 #include "gfx/legato/generated/le_gen_harmony.h"
+#include "peripheral/sercom/i2c_master/plib_sercom6_i2c_master.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
@@ -103,6 +103,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAME54P20A"
+#define DEVICE_ARCH			 "CORTEX-M4"
+#define DEVICE_FAMILY		 "SAME"
+#define DEVICE_SERIES		 "SAME54"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000
@@ -227,7 +233,7 @@ typedef struct
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
-	SYS_MODULE_OBJ  usbHostObject0;
+    SYS_MODULE_OBJ  usbHostObject0;
 
 	SYS_MODULE_OBJ  drvUSBFSV1Object;
 

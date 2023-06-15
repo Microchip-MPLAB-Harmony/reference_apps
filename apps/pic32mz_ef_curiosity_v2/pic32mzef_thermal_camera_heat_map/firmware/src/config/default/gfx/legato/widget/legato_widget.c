@@ -36,6 +36,10 @@
 #include "gfx/legato/renderer/legato_renderer.h"
 #include "gfx/legato/widget/legato_widget_skin_classic_common.h"
 
+#if LE_DEBUG == 1
+#include "gfx/legato/core/legato_debug.h"
+#endif
+
 static
 #if LE_DYNAMIC_VTABLES == 0
 const
@@ -122,7 +126,6 @@ void leWidget_Constructor(leWidget* _this)
 void _leWidget_Destructor(leWidget* _this)
 {
     leWidget* child;
-    uint32_t i;
 
     LE_ASSERT_THIS();
 
@@ -135,10 +138,15 @@ void _leWidget_Destructor(leWidget* _this)
     {
         leSetEditWidget(NULL);
     }
-    
-    for(i = 0; i < _this->children.size; i++)
+
+    if(_this->parent != NULL)
     {
-        child = _this->children.values[i];
+        LE_PCALL(_this->parent, removeChild, _this);
+    }
+
+    while(_this->children.size > 0)
+    {
+        child = _this->children.values[0];
         child->fn->_destructor(child);
         
         LE_FREE(child);
@@ -208,6 +216,10 @@ leResult _leWidget_SetX(leWidget* _this,
     _this->fn->rectToScreen(_this, &area);
 
     _this->fn->_damageArea(_this, &area);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
         
     return LE_SUCCESS;
 }
@@ -240,6 +252,10 @@ leResult _leWidget_SetY(leWidget* _this,
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
         
     return LE_SUCCESS;
 }
@@ -276,6 +292,10 @@ leResult _leWidget_SetPosition(leWidget* _this,
     
     _this->fn->_damageArea(_this, &area);
 
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -310,6 +330,10 @@ leResult _leWidget_Translate(leWidget* _this,
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
       
     return LE_SUCCESS;
 }
@@ -335,13 +359,25 @@ leResult _leWidget_SetWidth(leWidget* _this,
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
-        
+
+    _resizeEvent.oldWidth = _this->rect.width;
+    _resizeEvent.oldHeight = _this->rect.height;
+
     _this->rect.width = width;
+
+    _resizeEvent.newWidth = _this->rect.width;
+    _resizeEvent.newHeight = _this->rect.height;
+
+    _this->fn->_handleEvent(_this, (leEvent*)&_resizeEvent);
     
     // invalidate new area
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
        
     return LE_SUCCESS;
 }
@@ -367,13 +403,25 @@ leResult _leWidget_SetHeight(leWidget* _this,
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
-        
+
+    _resizeEvent.oldWidth = _this->rect.width;
+    _resizeEvent.oldHeight = _this->rect.height;
+
     _this->rect.height = height;
+
+    _resizeEvent.newWidth = _this->rect.width;
+    _resizeEvent.newHeight = _this->rect.height;
+
+    _this->fn->_handleEvent(_this, (leEvent*)&_resizeEvent);
     
     // invalidate new area
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
         
     return LE_SUCCESS;
 }
@@ -419,7 +467,11 @@ leResult _leWidget_SetSize(leWidget* _this,
     _this->fn->rectToScreen(_this, &area);
     
     _this->fn->_damageArea(_this, &area);
-  
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -467,6 +519,10 @@ leResult _leWidget_Resize(leWidget* _this,
     
     _this->fn->_damageArea(_this, &area);
 
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -476,6 +532,11 @@ leBool _leWidget_GetAlphaEnabled(const leWidget* _this)
     LE_ASSERT_THIS();
     
     return LE_TEST_FLAG(_this->flags, LE_WIDGET_ALPHAENABLED);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
 #else
     (void)_this; //unused;
 
@@ -521,6 +582,10 @@ leResult _leWidget_SetAlphaEnabled(leWidget* _this,
     }
 
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
         
     return LE_SUCCESS;
 #else
@@ -595,7 +660,11 @@ leResult _leWidget_SetAlphaAmount(leWidget* _this,
     _this->style.alphaAmount = alpha;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 #else
     (void)_this; //unused;
@@ -649,9 +718,12 @@ leResult _leWidget_SetEnabled(leWidget* _this, leBool enable)
     {
         _this->flags |= LE_WIDGET_ENABLED;
     }
-
     
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
     
     return LE_SUCCESS;
 }
@@ -680,6 +752,10 @@ leResult _leWidget_SetVisible(leWidget* _this, leBool visible)
     }
     
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
         
     return LE_SUCCESS;
 }
@@ -706,8 +782,8 @@ void _leWidget_RectToParentSpace(const leWidget* _this,
     {
         *res = _this->rect;
         
-        res->x += _this->parent->rect.x;
-        res->y += _this->parent->rect.y;
+        //res->x += _this->parent->rect.x;
+        //res->y += _this->parent->rect.y;
     }
 }
 
@@ -759,9 +835,21 @@ leResult _leWidget_AddChild(leWidget* _this,
     {
         child->parent->fn->removeChild(child->parent, child);
     }
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetAboutToAddChild(_this,
+                                         child,
+                                         _this->children.size);
+#endif
     
     leArray_PushBack(&_this->children, child);
     child->parent = _this;
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetChildAdded(_this,
+                                    child,
+                                    LE_PCALL(_this, getIndexOfChild, child));
+#endif
 
     child->fn->invalidate(child);
 
@@ -775,7 +863,7 @@ leResult _leWidget_InsertChild(leWidget* _this,
     LE_ASSERT_THIS();
 
     if(child == NULL ||
-    LE_TEST_FLAG(child->flags, LE_WIDGET_ISROOT) == LE_TRUE ||
+       LE_TEST_FLAG(child->flags, LE_WIDGET_ISROOT) == LE_TRUE ||
        isAncestorOf(child, _this) == LE_TRUE)
     {
         return LE_FAILURE;
@@ -786,8 +874,20 @@ leResult _leWidget_InsertChild(leWidget* _this,
         child->parent->fn->removeChild(child->parent, child);
     }
 
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetAboutToAddChild(_this,
+                                         child,
+                                         idx);
+#endif
+
     leArray_InsertAt(&_this->children, idx, child);
     child->parent = _this;
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetChildAdded(_this,
+                                    child,
+                                    LE_PCALL(_this, getIndexOfChild, child));
+#endif
 
     child->fn->invalidate(child);
 
@@ -798,14 +898,34 @@ leResult _leWidget_RemoveChild(leWidget* _this,
                                leWidget* child)
 {
     LE_ASSERT_THIS();
+
+#if LE_DEBUG == 1
+    int32_t childIdx;
+#endif
     
     if(child == NULL || child->parent != _this)
     {
         return LE_FAILURE;
     }
+
+#if LE_DEBUG == 1
+    childIdx = LE_PCALL(_this, getIndexOfChild, child);
+
+    _leDebugNotify_WidgetAboutToRemoveChild(_this,
+                                            child,
+                                            childIdx);
+#endif
         
     leArray_Remove(&_this->children, child);
     child->parent = NULL;
+
+#if LE_DEBUG == 1
+    childIdx = LE_PCALL(_this, getIndexOfChild, child);
+
+    _leDebugNotify_WidgetChildRemoved(_this,
+                                      child,
+                                      childIdx);
+#endif
         
     _this->fn->invalidate(_this);
     
@@ -823,9 +943,22 @@ leResult _leWidget_RemoveChildAt(leWidget* _this,
         return LE_FAILURE;
 
     child = leArray_Get(&_this->children, idx);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetAboutToRemoveChild(_this,
+                                            child,
+                                            idx);
+#endif
+
     child->parent = NULL;
 
     leArray_RemoveAt(&_this->children, idx);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetChildRemoved(_this,
+                                      child,
+                                      idx);
+#endif
 
     _this->fn->invalidate(_this);
 
@@ -850,6 +983,25 @@ void _leWidget_RemoveAllChildren(leWidget* _this)
     }
     
     leArray_Clear(&_this->children);
+
+    _this->fn->invalidate(_this);
+}
+
+leResult _leWidget_SetChildIndex(leWidget* _this,
+                                 leWidget* child,
+                                 uint32_t idx)
+{
+    LE_ASSERT_THIS();
+
+    if(child == NULL)
+        return LE_FAILURE;
+
+    if(leArray_Remove(&_this->children, child) == LE_FAILURE)
+        return LE_FAILURE;
+
+    return leArray_InsertAt(&_this->children,
+                            idx,
+                            child);
 }
 
 leWidget* _leWidget_GetRootWidget(const leWidget* _this)
@@ -874,6 +1026,12 @@ leWidget* _leWidget_GetRootWidget(const leWidget* _this)
 leResult _leWidget_SetParent(leWidget* _this,
                              leWidget* parent)
 {
+    leResult res;
+
+#if LE_DEBUG == 1
+    int32_t oldIndex = -1;
+#endif
+
     LE_ASSERT_THIS();
     
     if(parent == NULL)
@@ -881,13 +1039,33 @@ leResult _leWidget_SetParent(leWidget* _this,
         
     if(_this->parent != NULL)
     {
+#if LE_DEBUG == 1
+        oldIndex = LE_PCALL(_this->parent, getIndexOfChild, _this);
+
+        _leDebugNotify_WidgetAboutToReparent(_this,
+                                             _this->parent,
+                                             oldIndex,
+                                             parent,
+                                             parent->children.size);
+#endif
+
         _this->parent->fn->removeChild(_this->parent, _this);
     }
     
     if(parent == NULL)
         return LE_SUCCESS;
         
-    return parent->fn->addChild(parent, _this);
+    res = parent->fn->addChild(parent, _this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetReparented(_this,
+                                    _this->parent,
+                                    oldIndex,
+                                    parent,
+                                    LE_PCALL(parent, getIndexOfChild, _this));
+#endif
+
+    return res;
 }
 
 uint32_t _leWidget_GetChildCount(const leWidget* _this)
@@ -965,6 +1143,10 @@ leResult _leWidget_SetScheme(leWidget* _this,
     _this->scheme = scheme;
 
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
     
     return LE_SUCCESS;
 }
@@ -987,7 +1169,11 @@ leResult _leWidget_SetBorderType(leWidget* _this,
     _this->style.borderType = type;
     
 	_this->fn->_invalidateBorderAreas(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -1008,7 +1194,11 @@ leResult _leWidget_SetBackgroundType(leWidget* _this,
     _this->style.backgroundType = type;
     
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -1032,7 +1222,11 @@ leResult _leWidget_SetHAlignment(leWidget* _this,
     _this->style.halign = align;
 
     _this->fn->invalidateContents(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -1056,6 +1250,10 @@ leResult _leWidget_SetVAlignment(leWidget* _this,
     _this->style.valign = align;
 
     _this->fn->invalidateContents(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
     
     return LE_SUCCESS;
 }
@@ -1095,6 +1293,10 @@ leResult _leWidget_SetMargins(leWidget* _this,
     _this->margin.bottom = b;
     
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
     
     return LE_SUCCESS;
 }
@@ -1121,6 +1323,10 @@ leResult _leWidget_SetCornerRadius(leWidget* _this,
     _this->style.cornerRadius = radius;
     
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
     
     return LE_SUCCESS;
 }
@@ -1134,9 +1340,17 @@ leBool _leWidget_HasFocus(const leWidget* _this)
 
 leResult _leWidget_SetFocus(leWidget* _this)
 {
+    leResult res;
+
     LE_ASSERT_THIS();
     
-    return leSetFocusWidget(_this);
+    res = leSetFocusWidget(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
+    return res;
 }
 
 /*leResult leWidget_SetExternalInputHandler(leWidget* _this, leWidgetInputHandler* hndlr)
@@ -1547,6 +1761,7 @@ void _leWidget_GenerateVTable(void)
     widgetVTable.removeChild = _leWidget_RemoveChild;
     widgetVTable.removeChildAt = _leWidget_RemoveChildAt;
     widgetVTable.removeAllChildren = _leWidget_RemoveAllChildren;
+    widgetVTable.setChildIndex = _leWidget_SetChildIndex;
     widgetVTable.getRootWidget = _leWidget_GetRootWidget;
     widgetVTable.setParent = _leWidget_SetParent;
     widgetVTable.getChildCount = _leWidget_GetChildCount;
@@ -1638,6 +1853,7 @@ static const leWidgetVTable widgetVTable =
     .removeChild = _leWidget_RemoveChild,
     .removeChildAt = _leWidget_RemoveChildAt,
     .removeAllChildren = _leWidget_RemoveAllChildren,
+    .setChildIndex = _leWidget_SetChildIndex,
     .getRootWidget = _leWidget_GetRootWidget,
     .setParent = _leWidget_SetParent,
     .getChildCount = _leWidget_GetChildCount,

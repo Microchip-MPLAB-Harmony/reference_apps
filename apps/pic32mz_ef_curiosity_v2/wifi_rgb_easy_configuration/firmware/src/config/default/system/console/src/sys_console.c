@@ -65,7 +65,9 @@ static char consolePrintBuffer[SYS_CONSOLE_PRINT_BUFFER_SIZE];
 static bool isConsoleMutexCreated = false;
 static OSAL_MUTEX_DECLARE(consolePrintBufferMutex);
 
-#define SYS_CONSOLE_GET_INSTANCE(index)    (index >= SYS_CONSOLE_DEVICE_MAX_INSTANCES)? NULL : &consoleDeviceInstance[index]
+#define SYS_CONSOLE_GET_INSTANCE(index)    ((index) >= (SYS_CONSOLE_DEVICE_MAX_INSTANCES))? (NULL) : (&consoleDeviceInstance[index])
+
+/* MISRA C-2012 Rule 11.3 deviated:1 Deviation record ID -  H3_MISRAC_2012_R_11_3_DR_1 */
 
 SYS_MODULE_OBJ SYS_CONSOLE_Initialize(
     const SYS_MODULE_INDEX index,
@@ -77,7 +79,7 @@ SYS_MODULE_OBJ SYS_CONSOLE_Initialize(
 
     if (isConsoleMutexCreated == false)
     {
-        if(OSAL_MUTEX_Create(&(consolePrintBufferMutex)) != OSAL_RESULT_TRUE)
+        if(OSAL_MUTEX_Create(&(consolePrintBufferMutex)) != OSAL_RESULT_SUCCESS)
         {
             return SYS_MODULE_OBJ_INVALID;
         }
@@ -88,14 +90,14 @@ SYS_MODULE_OBJ SYS_CONSOLE_Initialize(
     }
 
     /* Confirm valid arguments */
-    if (index >= SYS_CONSOLE_DEVICE_MAX_INSTANCES || init == NULL)
+    if ((index >= SYS_CONSOLE_DEVICE_MAX_INSTANCES) || (init == NULL))
     {
         return SYS_MODULE_OBJ_INVALID;
     }
 
     pConsoleObj = &consoleDeviceInstance[index];
 
-    if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) && initConfig)
+    if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED))
     {
         pConsoleObj->devIndex = initConfig->deviceIndex;
         pConsoleObj->devDesc = initConfig->consDevDesc;
@@ -107,6 +109,8 @@ SYS_MODULE_OBJ SYS_CONSOLE_Initialize(
 
     return SYS_MODULE_OBJ_INVALID;
 }
+
+/* MISRAC 2012 deviation block end */
 
 SYS_STATUS SYS_CONSOLE_Status ( SYS_MODULE_OBJ object )
 {
@@ -144,6 +148,7 @@ SYS_STATUS SYS_CONSOLE_Status ( SYS_MODULE_OBJ object )
             ret = SYS_STATUS_ERROR;
             break;
         default:
+                /* nothing to do */
             break;
     }
 
@@ -154,7 +159,7 @@ SYS_CONSOLE_HANDLE SYS_CONSOLE_HandleGet( const SYS_MODULE_INDEX index)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(index);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
         return (SYS_CONSOLE_HANDLE) index;
     }
@@ -168,7 +173,7 @@ SYS_CONSOLE_DEVICE SYS_CONSOLE_DeviceGet( const SYS_CONSOLE_HANDLE handle)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
         if (pConsoleObj->devDesc != NULL)
         {
@@ -199,14 +204,14 @@ ssize_t SYS_CONSOLE_Read(
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return -1;
         }
 
-        return pConsoleObj->devDesc->read(pConsoleObj->devIndex, buf, count);
+        return pConsoleObj->devDesc->read_t(pConsoleObj->devIndex, buf, count);
     }
     else
     {
@@ -219,9 +224,9 @@ ssize_t SYS_CONSOLE_ReadFreeBufferCountGet(const SYS_CONSOLE_HANDLE handle)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return -1;
         }
@@ -238,9 +243,9 @@ ssize_t SYS_CONSOLE_ReadCountGet(const SYS_CONSOLE_HANDLE handle)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return -1;
         }
@@ -261,14 +266,14 @@ ssize_t SYS_CONSOLE_Write(
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return -1;
         }
 
-        return pConsoleObj->devDesc->write(pConsoleObj->devIndex, buf, count);
+        return pConsoleObj->devDesc->write_t(pConsoleObj->devIndex, buf, count);
     }
     else
     {
@@ -280,9 +285,9 @@ ssize_t SYS_CONSOLE_WriteFreeBufferCountGet(const SYS_CONSOLE_HANDLE handle)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return -1;
         }
@@ -299,9 +304,9 @@ ssize_t SYS_CONSOLE_WriteCountGet(const SYS_CONSOLE_HANDLE handle)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return -1;
         }
@@ -314,10 +319,13 @@ ssize_t SYS_CONSOLE_WriteCountGet(const SYS_CONSOLE_HANDLE handle)
     }
 }
 
+/* MISRA C-2012 Rule 17.1, 21.6 deviated below. Deviation record ID -
+   H3_MISRAC_2012_R_17_1_DR_1 & H3_MISRAC_2012_R_21_6_DR_1*/
+
 void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
 {
     size_t len = 0;
-    va_list args = {0};
+    va_list args;
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
     if (pConsoleObj == NULL)
@@ -331,7 +339,7 @@ void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
     }
 
     /* Must protect the common print buffer from multiple threads */
-    if(OSAL_MUTEX_Lock(&consolePrintBufferMutex, OSAL_WAIT_FOREVER) == OSAL_RESULT_FALSE)
+    if(OSAL_MUTEX_Lock(&consolePrintBufferMutex, OSAL_WAIT_FOREVER) == OSAL_RESULT_FAIL)
     {
         return;
     }
@@ -339,20 +347,22 @@ void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
     /* Get the variable arguments in va_list */
     va_start( args, format );
 
-    len = vsnprintf(consolePrintBuffer, SYS_CONSOLE_PRINT_BUFFER_SIZE, format, args);
+    len = (uint32_t)vsnprintf(consolePrintBuffer, SYS_CONSOLE_PRINT_BUFFER_SIZE, format, args);
 
     va_end( args );
 
-    if ((len > 0) && (len < SYS_CONSOLE_PRINT_BUFFER_SIZE))
+    if ((len > 0U) && (len < SYS_CONSOLE_PRINT_BUFFER_SIZE))
     {
         consolePrintBuffer[len] = '\0';
 
-        pConsoleObj->devDesc->write(pConsoleObj->devIndex, consolePrintBuffer, len);
+        (void) pConsoleObj->devDesc->write_t(pConsoleObj->devIndex, consolePrintBuffer, len);
     }
 
     /* Release mutex */
-    OSAL_MUTEX_Unlock(&consolePrintBufferMutex);
+    (void) OSAL_MUTEX_Unlock(&consolePrintBufferMutex);
 }
+
+/* MISRAC 2012 deviation block end */
 
 void SYS_CONSOLE_Message(const SYS_CONSOLE_HANDLE handle, const char *message)
 {
@@ -363,21 +373,21 @@ void SYS_CONSOLE_Message(const SYS_CONSOLE_HANDLE handle, const char *message)
         return;
     }
 
-    if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+    if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
     {
         return;
     }
 
-    pConsoleObj->devDesc->write(pConsoleObj->devIndex, message, strlen(message));
+    (void) pConsoleObj->devDesc->write_t(pConsoleObj->devIndex, message, strlen(message));
 }
 
 bool SYS_CONSOLE_Flush(const SYS_CONSOLE_HANDLE handle)
 {
     SYS_CONSOLE_OBJECT_INSTANCE* pConsoleObj = SYS_CONSOLE_GET_INSTANCE(handle);
 
-    if (pConsoleObj)
+    if (pConsoleObj != NULL)
     {
-        if (pConsoleObj->status == SYS_STATUS_UNINITIALIZED || pConsoleObj->devDesc == NULL)
+        if ((pConsoleObj->status == SYS_STATUS_UNINITIALIZED) || (pConsoleObj->devDesc == NULL))
         {
             return false;
         }

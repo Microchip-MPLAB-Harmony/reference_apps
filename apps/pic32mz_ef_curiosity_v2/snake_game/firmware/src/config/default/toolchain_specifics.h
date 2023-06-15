@@ -29,6 +29,9 @@
 #define NO_INIT                        __attribute__((section(".no_init")))
 #define SECTION(a)                     __attribute__((__section__(a)))
 
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 21.1 deviated 13 times. Deviation record ID -  H3_MISRAC_2012_R_21_1_DR_3 */
+/* MISRA C-2012 Rule 21.2 deviated 26 times. Deviation record ID -  H3_MISRAC_2012_R_21_2_DR_3 */
 #ifndef   __ASM
     #define __ASM                      __asm__
 #endif
@@ -72,7 +75,7 @@
 #define CACHE_LINE_SIZE                (16u)
 #define CACHE_ALIGN                    __COHERENT
 
-#define CACHE_ALIGNED_SIZE_GET(size)     (size + ((size % CACHE_LINE_SIZE)? (CACHE_LINE_SIZE - (size % CACHE_LINE_SIZE)) : 0))
+#define CACHE_ALIGNED_SIZE_GET(size)     ((size) + ((((size) % (CACHE_LINE_SIZE))!= 0U)? ((CACHE_LINE_SIZE) - ((size) % (CACHE_LINE_SIZE))) : (0U)))
 
 #ifndef FORMAT_ATTRIBUTE
    #define FORMAT_ATTRIBUTE(archetype, string_index, first_to_check)  __attribute__ ((format (archetype, string_index, first_to_check)))

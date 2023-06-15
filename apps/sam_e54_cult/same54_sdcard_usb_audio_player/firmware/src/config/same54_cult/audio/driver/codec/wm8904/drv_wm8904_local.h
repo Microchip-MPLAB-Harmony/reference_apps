@@ -56,6 +56,14 @@
 #include "drv_wm8904.h"
 #include "definitions.h"
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Constants and Macros
@@ -1631,6 +1639,13 @@ typedef struct
     OSAL_MUTEX_DECLARE(mutexClientObjects);
 
 } DRV_WM8904_COMMON_DATA_OBJ;
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
+#endif
+//DOM-IGNORE-END
+
 
 #endif // #ifndef _DRV_WM8904_LOCAL
 /*******************************************************************************

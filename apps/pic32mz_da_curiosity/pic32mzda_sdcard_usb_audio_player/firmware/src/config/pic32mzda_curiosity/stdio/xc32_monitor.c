@@ -37,33 +37,37 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
+#include <stddef.h>
 #include "definitions.h"
 
-#ifdef __arm__
-/* Declaration of these functions are missing in stdio.h for ARM parts*/
-int _mon_getc(int canblock);
-void _mon_putc(char c);
-#endif //__arm__
+extern int read(int handle, void *buffer, unsigned int len);
+extern int write(int handle, void * buffer, size_t count);
 
-int _mon_getc(int canblock)
+
+int read(int handle, void *buffer, unsigned int len)
 {
-   int c = 0;
-   bool success = false;
-   (void)canblock;
-   do
-   {
-       success = UART4_Read(&c, 1);                
-   }while( !success);
-   return c;
+    int nChars = 0;
+    bool success = false;
+    if ((handle == 0)  && (len > 0U))
+    {
+        do
+        {
+            success = UART4_Read(buffer, 1);
+        }while( !success);
+        nChars = 1;
+    }
+    return nChars;
 }
 
-void _mon_putc(char c)
+int write(int handle, void * buffer, size_t count)
 {
    bool success = false;
-   do
+   if (handle == 1)
    {
-       success = UART4_Write(&c, 1);
-   }while (!success);
+       do
+       {
+           success = UART4_Write(buffer, count);
+       }while( !success);
+   }
+   return (int)count;
 }
-

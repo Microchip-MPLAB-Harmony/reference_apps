@@ -86,29 +86,30 @@ extern "C" {
 #define SYS_TIME_HW_COUNTER_PERIOD                  (0xFFFFU)
 #define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
 #define SYS_TIME_CPU_CLOCK_FREQUENCY                (120000000)
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (188)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (232)
 
 
 /* File System Service Configuration */
 
-#define SYS_FS_MEDIA_NUMBER               2
-#define SYS_FS_VOLUME_NUMBER              2
+#define SYS_FS_MEDIA_NUMBER               (2U)
+#define SYS_FS_VOLUME_NUMBER              (2U)
 
 #define SYS_FS_AUTOMOUNT_ENABLE           true
-#define SYS_FS_CLIENT_NUMBER              1
-#define SYS_FS_MAX_FILES                  2
-#define SYS_FS_MAX_FILE_SYSTEM_TYPE       1
-#define SYS_FS_MEDIA_MAX_BLOCK_SIZE       512
-#define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  2048
-#define SYS_FS_USE_LFN                    1
-#define SYS_FS_FILE_NAME_LEN              255
-#define SYS_FS_CWD_STRING_LEN             1024
+#define SYS_FS_CLIENT_NUMBER              1U
+#define SYS_FS_MAX_FILES                  (2U)
+#define SYS_FS_MAX_FILE_SYSTEM_TYPE       (1U)
+#define SYS_FS_MEDIA_MAX_BLOCK_SIZE       (512U)
+#define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  (2048U)
+#define SYS_FS_USE_LFN                    (1)
+#define SYS_FS_FILE_NAME_LEN              (255U)
+#define SYS_FS_CWD_STRING_LEN             (1024)
 
 
-#define SYS_FS_FAT_VERSION                "v0.14a"
+#define SYS_FS_FAT_VERSION                "v0.15"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
+
 
 
 
@@ -146,18 +147,17 @@ extern "C" {
 #define DRV_I2C_CLOCK_SPEED_IDX1              100
 
 /* I2S Driver Instance 0 Configuration Options */
-#define DRV_I2S_INDEX_0                       0
-#define DRV_I2S_CLIENTS_NUMBER_IDX0           1
-#define DRV_I2S_QUEUE_DEPTH_COMBINED          16
-#define DRV_I2S_QUEUE_SIZE_IDX0               16
-#define DRV_I2S_DATA_LENGTH_IDX0              0
-#define DRV_I2S_INT_SRC_IDX0                  I2S_IRQn
-#define DRV_I2S_XMIT_DMA_CH_IDX0              SYS_DMA_CHANNEL_0
-#define DRV_I2S_RCV_DMA_CH_IDX0               SYS_DMA_CHANNEL_1
-
+#define DRV_I2S_INDEX_0                0
+#define DRV_I2S_CLIENTS_NUMBER_IDX0    1
+#define DRV_I2S_QUEUE_DEPTH_COMBINED                 (2*8)
+#define DRV_I2S_QUEUE_SIZE_IDX0        8
+#define DRV_I2S_DATA_LENGTH_IDX0       16
+#define DRV_I2S_INT_SRC_IDX0           I2S_IRQn
+#define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_0
+#define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              2
+#define DRV_I2C_INSTANCES_NUMBER              (2U)
 
 
 
@@ -165,29 +165,26 @@ extern "C" {
 #define DRV_MAXTOUCH_I2C_MODULE_INDEX   0
 
 /* SDMMC Driver Global Configuration Options */
-#define DRV_SDMMC_INSTANCES_NUMBER                       1
+#define DRV_SDMMC_INSTANCES_NUMBER                       (1U)
 
 
 /*** SDMMC Driver Instance 0 Configuration ***/
 #define DRV_SDMMC_INDEX_0                                0
-#define DRV_SDMMC_CLIENTS_NUMBER_IDX0                    1
-#define DRV_SDMMC_QUEUE_SIZE_IDX0                        1
-#define DRV_SDMMC_PROTOCOL_SUPPORT_IDX0                  DRV_SDMMC_PROTOCOL_SD
-#define DRV_SDMMC_CONFIG_SPEED_MODE_IDX0                 DRV_SDMMC_SPEED_MODE_DEFAULT
-#define DRV_SDMMC_CONFIG_BUS_WIDTH_IDX0                  DRV_SDMMC_BUS_WIDTH_4_BIT
-#define DRV_SDMMC_CARD_DETECTION_METHOD_IDX0             DRV_SDMMC_CD_METHOD_USE_SDCD
+#define DRV_SDMMC_IDX0_CLIENTS_NUMBER                    1
+#define DRV_SDMMC_IDX0_QUEUE_SIZE                        1
+#define DRV_SDMMC_IDX0_PROTOCOL_SUPPORT                  DRV_SDMMC_PROTOCOL_SD
+#define DRV_SDMMC_IDX0_CONFIG_SPEED_MODE                 DRV_SDMMC_SPEED_MODE_DEFAULT
+#define DRV_SDMMC_IDX0_CONFIG_BUS_WIDTH                  DRV_SDMMC_BUS_WIDTH_4_BIT
+#define DRV_SDMMC_IDX0_CARD_DETECTION_METHOD             DRV_SDMMC_CD_METHOD_USE_SDCD
 
 
-
-/* I2S Driver Common Configuration Options */
-#define DRV_I2S_INSTANCES_NUMBER              1
 
 /*** Codec Driver Configuration ***/
 
 #define DRV_WM8904_CLIENTS_NUMBER                           1
 #define DRV_WM8904_INSTANCES_NUMBER                         1
 
-#define DRV_WM8904_MASTER_MODE                              true
+#define DRV_WM8904_I2S_MASTER_MODE                          true
 #define DRV_WM8904_AUDIO_SAMPLING_RATE                      48000
 #define DRV_WM8904_VOLUME	                      	        200
 #define DRV_WM8904_AUDIO_DATA_FORMAT_MACRO             	    DATA_32_BIT_I2S
@@ -202,7 +199,7 @@ extern "C" {
 //Codec Driver Instance
 #define DRV_CODEC_INDEX_0                                   DRV_WM8904_INDEX_0
 #define sysObjdrvCodec0                                     sysObj.drvwm8904Codec0
-#define DRV_CODEC_I2S_MASTER_MODE                               DRV_WM8904_MASTER_MODE
+#define DRV_CODEC_I2S_MASTER_MODE                           DRV_WM8904_I2S_MASTER_MODE
 #define DRV_CODEC_BUFFER_HANDLE                             DRV_WM8904_BUFFER_HANDLE
 #define DRV_CODEC_BUFFER_HANDLE_INVALID                     DRV_WM8904_BUFFER_HANDLE_INVALID
 #define DRV_CODEC_BUFFER_EVENT_HANDLER                      DRV_WM8904_BUFFER_EVENT_HANDLER
@@ -217,6 +214,7 @@ extern "C" {
 #define DRV_CODEC_CHANNEL_RIGHT                             DRV_WM8904_CHANNEL_RIGHT
 #define DRV_CODEC_CHANNEL_LEFT_RIGHT                        DRV_WM8904_CHANNEL_LEFT_RIGHT
 #define DRV_CODEC_AUDIO_SAMPLING_RATE                       DRV_WM8904_AUDIO_SAMPLING_RATE
+#define DRV_CODEC_WHICH_MIC_INPUT                           DRV_WM8904_WHICH_MIC_INPUT
 #define DRV_CODEC_VOLUME	                        	    DRV_WM8904_VOLUME
 #define DRV_CODEC_AUDIO_DATA_FORMAT_MACRO                 	DRV_WM8904_AUDIO_DATA_FORMAT_MACRO
 #define DRV_CODEC_ENABLE_MIC_INPUT                          DRV_WM8904_ENABLE_MIC_INPUT
@@ -227,6 +225,7 @@ extern "C" {
 #define DRV_CODEC_Initialize                                DRV_WM8904_Initialize
 #define DRV_CODEC_Deinitialize                              DRV_WM8904_Deinitialize
 #define DRV_CODEC_Status                                    DRV_WM8904_Status
+#define DRV_CODEC_ClientReady                               DRV_WM8904_ClientReady
 #define DRV_CODEC_Tasks                                     DRV_WM8904_Tasks
 #define DRV_CODEC_Open                                      DRV_WM8904_Open
 #define DRV_CODEC_Close                                     DRV_WM8904_Close
@@ -250,6 +249,9 @@ extern "C" {
 #define DRV_CODEC_MicMuteOff                                DRV_WM8904_MicMuteOff
 #define DRV_CODEC_GetI2SDriver                              DRV_WM8904_GetI2SDriver
 #define DRV_CODEC_LRCLK_Sync                                DRV_WM8904_LRCLK_Sync 
+
+/* I2S Driver Common Configuration Options */
+#define DRV_I2S_INSTANCES_NUMBER              1
 
 
 
@@ -292,7 +294,7 @@ extern "C" {
 
 /* Disable Device Support */
 #define DRV_USBFSV1_DEVICE_SUPPORT                          false
-	
+
 /* Enable Host Support */
 #define DRV_USBFSV1_HOST_SUPPORT                            true
 

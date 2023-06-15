@@ -39,8 +39,8 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 //DOM-IGNORE-END
-#ifndef _DRV_MEMORY_DEFINITIONS_H
-#define _DRV_MEMORY_DEFINITIONS_H
+#ifndef DRV_MEMORY_DEFINITIONS_H
+#define DRV_MEMORY_DEFINITIONS_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -156,7 +156,7 @@ typedef void (*DRV_MEMORY_DEVICE_EVENT_HANDLER_SET) ( const DRV_HANDLE handle, D
 
 /* 
  Summary:
-    Memory Device API.
+    Memory Device API Interface.
 
  Description:
     This Data Structure is used by attached media to populate the
@@ -241,7 +241,7 @@ typedef struct
 }
 #endif
 
-#endif // #ifndef _DRV_MEMORY_DEFINITIONS_H
+#endif // #ifndef DRV_MEMORY_DEFINITIONS_H
 /*******************************************************************************
  End of File
 */

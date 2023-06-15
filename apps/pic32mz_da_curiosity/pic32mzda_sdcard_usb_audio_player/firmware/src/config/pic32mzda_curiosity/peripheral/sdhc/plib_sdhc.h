@@ -78,7 +78,7 @@ void SDHC_CardDetectEnable( void );
 
 void SDHC_CardDetectDisable( void );
 
-bool SDHC_ClockSet ( uint32_t clock);
+bool SDHC_ClockSet ( uint32_t speed);
 
 void SDHC_ClockEnable ( void );
 
@@ -90,6 +90,8 @@ uint16_t SDHC_DataErrorGet (void);
 
 void SDHC_ErrorReset ( SDHC_RESET_TYPE resetType );
 
+uint16_t SDHC_GetError(void);
+
 void SDHC_ResponseRead ( SDHC_READ_RESPONSE_REG respReg, uint32_t* response );
 
 void SDHC_ModuleInit ( void );
@@ -99,9 +101,9 @@ void SDHC_Initialize( void );
 void SDHC_CallbackRegister(SDHC_CALLBACK callback, uintptr_t contextHandle);
 
 void SDHC_CommandSend (
-    uint8_t opCode, 
+    uint8_t opCode,
     uint32_t argument,
-    uint8_t respType, 
+    uint8_t respType,
     SDHC_DataTransferFlags transferFlags
 );
 

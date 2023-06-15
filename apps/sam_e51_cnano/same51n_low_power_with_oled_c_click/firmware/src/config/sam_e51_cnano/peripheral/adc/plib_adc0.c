@@ -61,16 +61,16 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-ADC_CALLBACK_OBJ ADC0_CallbackObject;
+volatile static ADC_CALLBACK_OBJ ADC0_CallbackObject;
 
-#define ADC0_BIASCOMP_POS  (2)
-#define ADC0_BIASCOMP_Msk   (0x7 << ADC0_BIASCOMP_POS)
+#define ADC0_BIASCOMP_POS     (2U)
+#define ADC0_BIASCOMP_Msk     (0x7U << ADC0_BIASCOMP_POS)
 
-#define ADC0_BIASREFBUF_POS  (5)
-#define ADC0_BIASREFBUF_Msk   (0x7 << ADC0_BIASREFBUF_POS)
+#define ADC0_BIASREFBUF_POS   (5U)
+#define ADC0_BIASREFBUF_Msk   (0x7U << ADC0_BIASREFBUF_POS)
 
-#define ADC0_BIASR2R_POS  (8)
-#define ADC0_BIASR2R_Msk   (0x7 << ADC0_BIASR2R_POS)
+#define ADC0_BIASR2R_POS      (8U)
+#define ADC0_BIASR2R_Msk      (0x7UL << ADC0_BIASR2R_POS)
 
 
 // *****************************************************************************
@@ -92,9 +92,9 @@ void ADC0_Initialize( void )
     }
 
     /* Writing calibration values in BIASREFBUF, BIASCOMP and BIASR2R */
-    ADC0_REGS->ADC_CALIB =(uint32_t)(ADC_CALIB_BIASCOMP((((*(uint64_t*)SW0_ADDR) & ADC0_BIASCOMP_Msk) >> ADC0_BIASCOMP_POS))) \
-            | ADC_CALIB_BIASR2R((((*(uint64_t*)SW0_ADDR) & ADC0_BIASR2R_Msk) >> ADC0_BIASR2R_POS))
-            | ADC_CALIB_BIASREFBUF(((*(uint64_t*)SW0_ADDR) & ADC0_BIASREFBUF_Msk)>> ADC0_BIASREFBUF_POS );
+    ADC0_REGS->ADC_CALIB =(uint16_t)((ADC_CALIB_BIASCOMP((((*(uint32_t*)SW0_ADDR) & ADC0_BIASCOMP_Msk) >> ADC0_BIASCOMP_POS))) \
+            | ADC_CALIB_BIASR2R((((*(uint32_t*)SW0_ADDR) & ADC0_BIASR2R_Msk) >> ADC0_BIASR2R_POS))
+            | ADC_CALIB_BIASREFBUF(((*(uint32_t*)SW0_ADDR) & ADC0_BIASREFBUF_Msk)>> ADC0_BIASREFBUF_POS ));
 
     /* prescaler */
     ADC0_REGS->ADC_CTRLA = ADC_CTRLA_PRESCALER_DIV2;
@@ -110,7 +110,7 @@ void ADC0_Initialize( void )
     ADC0_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN15 | (uint16_t) ADC_NEGINPUT_GND ;
 
     /* Resolution & Operation Mode */
-    ADC0_REGS->ADC_CTRLB = ADC_CTRLB_RESSEL_12BIT | ADC_CTRLB_WINMODE(1) ;
+    ADC0_REGS->ADC_CTRLB = ADC_CTRLB_RESSEL_12BIT | ADC_CTRLB_WINMODE(1U) ;
 
 
     /* Upper threshold for window mode  */
@@ -125,7 +125,7 @@ void ADC0_Initialize( void )
     ADC0_REGS->ADC_EVCTRL = ADC_EVCTRL_STARTEI_Msk;
 
     ADC0_REGS->ADC_CTRLA |= ADC_CTRLA_RUNSTDBY_Msk | ADC_CTRLA_ONDEMAND_Msk;
-    while(ADC0_REGS->ADC_SYNCBUSY)
+    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -135,7 +135,7 @@ void ADC0_Initialize( void )
 void ADC0_Enable( void )
 {
     ADC0_REGS->ADC_CTRLA |= ADC_CTRLA_ENABLE_Msk;
-    while(ADC0_REGS->ADC_SYNCBUSY)
+    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -144,8 +144,8 @@ void ADC0_Enable( void )
 /* Disable ADC module */
 void ADC0_Disable( void )
 {
-    ADC0_REGS->ADC_CTRLA &= ~ADC_CTRLA_ENABLE_Msk;
-    while(ADC0_REGS->ADC_SYNCBUSY)
+    ADC0_REGS->ADC_CTRLA &=(uint16_t) ~ADC_CTRLA_ENABLE_Msk;
+    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -155,9 +155,9 @@ void ADC0_Disable( void )
 void ADC0_ChannelSelect( ADC_POSINPUT positiveInput, ADC_NEGINPUT negativeInput )
 {
     /* Configure positive and negative input pins */
-    uint32_t channel;
+    uint16_t channel;
     channel = ADC0_REGS->ADC_INPUTCTRL;
-    channel &= ~(ADC_INPUTCTRL_MUXPOS_Msk | ADC_INPUTCTRL_MUXNEG_Msk);
+    channel &= (uint16_t)~(ADC_INPUTCTRL_MUXPOS_Msk | ADC_INPUTCTRL_MUXNEG_Msk);
     channel |= (uint16_t) positiveInput | (uint16_t) negativeInput;
     ADC0_REGS->ADC_INPUTCTRL = channel;
 
@@ -184,7 +184,7 @@ void ADC0_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 {
     ADC0_REGS->ADC_WINLT = low_threshold;
     ADC0_REGS->ADC_WINUT = high_threshold;
-    while((ADC0_REGS->ADC_SYNCBUSY))
+    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -192,9 +192,9 @@ void ADC0_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC0_WindowModeSet(ADC_WINMODE mode)
 {
-    ADC0_REGS->ADC_CTRLB &= ~ADC_CTRLB_WINMODE_Msk;
-    ADC0_REGS->ADC_CTRLB |= mode << ADC_CTRLB_WINMODE_Pos;
-    while((ADC0_REGS->ADC_SYNCBUSY))
+    ADC0_REGS->ADC_CTRLB &= (uint16_t)~ADC_CTRLB_WINMODE_Msk;
+    ADC0_REGS->ADC_CTRLB |= (uint16_t)mode << ADC_CTRLB_WINMODE_Pos;
+    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -239,19 +239,20 @@ void ADC0_CallbackRegister( ADC_CALLBACK callback, uintptr_t context )
 bool ADC0_ConversionStatusGet( void )
 {
     bool status;
-    status =  (bool)((ADC0_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk) >> ADC_INTFLAG_RESRDY_Pos);
+    status =  (((ADC0_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk) >> ADC_INTFLAG_RESRDY_Pos) !=0U);
     /* Clear interrupt flag */
     ADC0_REGS->ADC_INTFLAG = ADC_INTFLAG_RESRDY_Msk;
     return status;
 }
-void ADC0_OTHER_InterruptHandler( void )
+void __attribute__((used)) ADC0_OTHER_InterruptHandler( void )
 {
-    volatile ADC_STATUS status;
+    ADC_STATUS status;
     status = ADC0_REGS->ADC_INTFLAG;
     /* Clear interrupt flag */
     ADC0_REGS->ADC_INTFLAG = ADC_INTFLAG_WINMON_Msk | ADC_INTFLAG_OVERRUN_Msk;
     if (ADC0_CallbackObject.callback != NULL)
     {
-        ADC0_CallbackObject.callback(status, ADC0_CallbackObject.context);
+        uintptr_t context = ADC0_CallbackObject.context;
+        ADC0_CallbackObject.callback(status, context);
     }
 }

@@ -11,30 +11,28 @@
     - Reference: RFC 2131, 2132
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 #define TCPIP_THIS_MODULE_ID    TCPIP_MODULE_DHCP_SERVER
 
@@ -58,7 +56,7 @@ static DHCPS_ICMP_PROCESS   dhcpsicmpProcessSteps = DHCPS_ICMP_IDLE;
 uint32_t                    dhcpsicmpStartTick;
 static TCPIP_NET_HANDLE     dhcpsicmpNetH = 0;
 static void TCPIP_DHCPS_EchoICMPRequestTask(void);
-static void                 DHCPSPingHandler(const  TCPIP_ICMP_ECHO_REQUEST* pEchoReq, TCPIP_ICMP_REQUEST_HANDLE iHandle, TCPIP_ICMP_ECHO_REQUEST_RESULT result);
+static void                 DHCPSPingHandler(const  TCPIP_ICMP_ECHO_REQUEST* pEchoReq, TCPIP_ICMP_REQUEST_HANDLE iHandle, TCPIP_ICMP_ECHO_REQUEST_RESULT result, const void* param);
 
 static IPV4_ADDR            dhcpsicmpTargetAddr;         // current target address
 static uint8_t              dhcpsicmpPingBuff[TCPIP_DHCPS_ICMP_ECHO_REQUEST_BUFF_SIZE];
@@ -683,6 +681,8 @@ static bool _DHCPS_ProcessGetPktandSendResponse(void)
         return false;
     }
       
+    pdhcpsHashDcpt = &gPdhcpsHashDcpt;
+
     while(true)
     {
         switch(dhcpsSmSate)
@@ -708,7 +708,6 @@ static bool _DHCPS_ProcessGetPktandSendResponse(void)
                     continue;
                 }
                 memset(getBuffer,0,sizeof(getBuffer));
-                pdhcpsHashDcpt = &gPdhcpsHashDcpt;
                 dhcpsSmSate = TCPIP_DHCPS_DETECT_VALID_INTF;
                 // break free
                 
@@ -927,7 +926,6 @@ static bool _DHCPS_ProcessGetPktandSendResponse(void)
 
                 // assign the dhcpDescriptor value
                 pDhcpsDcpt = gPdhcpSDcpt+ix;
-                pdhcpsHashDcpt = &gPdhcpsHashDcpt;
                 if(_DHCPS_FindValidAddressFromPool(&gBOOTPHeader,pDhcpsDcpt,pdhcpsHashDcpt,(IPV4_ADDR*)&dhcps_mod.dhcpNextLease) != DHCPS_RES_OK)
                 {
                     dhcpsSmSate = TCPIP_DHCPS_START_RECV_NEW_PACKET;
@@ -958,7 +956,6 @@ static bool _DHCPS_ProcessGetPktandSendResponse(void)
                 }
                 // assign the dhcpDescriptor value
                 pDhcpsDcpt = gPdhcpSDcpt+ix;
-                pdhcpsHashDcpt = &gPdhcpsHashDcpt;
                 DHCPReplyToDiscovery((TCPIP_NET_IF*)gpDhcpsNetH,&gBOOTPHeader,pDhcpsDcpt,pdhcpsHashDcpt,&udpGetBufferData);
                 dhcpsSmSate = TCPIP_DHCPS_START_RECV_NEW_PACKET;
                 _DHCPSStateSet(dhcpsSmSate);
@@ -2304,7 +2301,7 @@ bool TCPIP_DHCPS_Disable(TCPIP_NET_HANDLE hNet)
     _DHCPSrvClose(pNetIf,true);
     TCPIP_STACK_AddressServiceEvent(pNetIf, TCPIP_STACK_ADDRESS_SERVICE_DHCPS, TCPIP_STACK_ADDRESS_SERVICE_EVENT_USER_STOP);
     TCPIP_STACK_AddressServiceDefaultSet(pNetIf);
-    _TCPIPStackSetConfigAddress(pNetIf, 0, 0, true);
+    _TCPIPStackSetConfigAddress(pNetIf, 0, 0, 0, true);
      // Remove all the HASH entries
     _DHCPSRemoveCacheEntries(&gPdhcpsHashDcpt);
     return true;
@@ -2345,7 +2342,7 @@ static bool _DHCPS_StartOperation(TCPIP_NET_IF* pNetIf,DHCP_SRVR_DCPT* pDhcpsDcp
     }
 // Get the network interface from the network index and configure IP address,
 // Netmask and gateway and DNS
-    _TCPIPStackSetConfigAddress(pNetIf, &pDhcpsDcpt->intfAddrsConf.serverIPAddress, &pDhcpsDcpt->intfAddrsConf.serverMask, false);
+    _TCPIPStackSetConfigAddress(pNetIf, &pDhcpsDcpt->intfAddrsConf.serverIPAddress, &pDhcpsDcpt->intfAddrsConf.serverMask, 0, false);
     TCPIP_STACK_GatewayAddressSet(pNetIf, &pDhcpsDcpt->intfAddrsConf.serverIPAddress);
 #if defined(TCPIP_STACK_USE_DNS)
     if(pNetIf->Flags.bIsDNSServerAuto != 0)
@@ -2625,7 +2622,7 @@ static void TCPIP_DHCPS_EchoICMPRequestTask(void)
    
 }
 
-static void DHCPSPingHandler(const  TCPIP_ICMP_ECHO_REQUEST* pEchoReq, TCPIP_ICMP_REQUEST_HANDLE iHandle, TCPIP_ICMP_ECHO_REQUEST_RESULT result)
+static void DHCPSPingHandler(const  TCPIP_ICMP_ECHO_REQUEST* pEchoReq, TCPIP_ICMP_REQUEST_HANDLE iHandle, TCPIP_ICMP_ECHO_REQUEST_RESULT result, const void* param)
 {
     char debugBuf[128];
     

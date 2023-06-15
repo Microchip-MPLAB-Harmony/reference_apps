@@ -28,6 +28,9 @@
 extern "C" {
 #endif
 
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 21.1 deviated 7 times. Deviation record ID - H3_MISRAC_2012_R_21_1_DR_2 */
+/* MISRA C-2012 Rule 21.2 deviated 14 times.  Deviation record ID - H3_MISRAC_2012_R_21_2_DR_2 */
 
 #ifndef __NOP
 #define __NOP __arm926_nop
@@ -75,6 +78,17 @@ static inline void __arm926_isb(void)
 }
 #endif //__ISB
 
+#ifndef CPSR_I_Msk
+#define CPSR_I_Msk      (1UL << 7U)
+#endif
+
+static inline unsigned int __get_CPSR( void )
+{
+    unsigned int value = 0;
+    asm volatile( "MRS %0, cpsr" : "=r"(value) );
+    return value;
+}
+
 #define __ALIGNED(x) __attribute__((aligned(x)))
 
 #ifndef __STATIC_INLINE
@@ -84,6 +98,7 @@ static inline void __arm926_isb(void)
 #ifndef   __WEAK
 #define __WEAK __attribute__((weak))
 #endif // __WEAK
+/* MISRAC 2012 deviation block end */
 #include <sys/types.h>
 
 #define NO_INIT        __attribute__((section(".no_init")))
@@ -92,8 +107,8 @@ static inline void __arm926_isb(void)
 #define CACHE_LINE_SIZE    (32u)
 #define CACHE_ALIGN        __ALIGNED(CACHE_LINE_SIZE)
 
-#define CACHE_ALIGNED_SIZE_GET(size)     (size + ((size % CACHE_LINE_SIZE)? (CACHE_LINE_SIZE - (size % CACHE_LINE_SIZE)) : 0))
-	
+#define CACHE_ALIGNED_SIZE_GET(size)     ((size) + ((((size) % (CACHE_LINE_SIZE))!= 0U)? ((CACHE_LINE_SIZE) - ((size) % (CACHE_LINE_SIZE))) : (0U)))
+
 #ifndef FORMAT_ATTRIBUTE
    #define FORMAT_ATTRIBUTE(archetype, string_index, first_to_check)  __attribute__ ((format (archetype, string_index, first_to_check)))
 #endif

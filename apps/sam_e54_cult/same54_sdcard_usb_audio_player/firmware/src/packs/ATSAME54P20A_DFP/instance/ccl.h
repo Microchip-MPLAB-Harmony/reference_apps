@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME54P20A
+/*
+ * Instance header file for ATSAME54P20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,15 +20,15 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:25:23Z */
+/* file generated from device description version 2023-03-17T09:50:08Z */
 #ifndef _SAME54_CCL_INSTANCE_
 #define _SAME54_CCL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for CCL peripheral ========== */
-#define CCL_GCLK_ID                              _UL_(33)   /* GCLK index for CCL */
-#define CCL_LUT_NUM                              _UL_(4)    /* Number of LUT in a CCL */
-#define CCL_SEQ_NUM                              _UL_(2)    /* Number of SEQ in a CCL */
-#define CCL_INSTANCE_ID                          _UL_(78)   /* Instance index for CCL */
+#define CCL_GCLK_ID                              (33)       /* GCLK index for CCL */
+#define CCL_INSTANCE_ID                          (78)       /* Instance index for CCL */
+#define CCL_LUT_NUM                              (4)        /* Number of LUT in a CCL */
+#define CCL_SEQ_NUM                              (2)        /* Number of SEQ in a CCL */
 
 #endif /* _SAME54_CCL_INSTANCE_ */

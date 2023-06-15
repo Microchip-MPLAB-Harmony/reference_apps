@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -85,7 +86,7 @@ SYS_FS_Tasks();
     /* Maintain Device Drivers */
     DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
-WDRV_WINC_Tasks(sysObj.drvWifiWinc); 
+    WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
 
 
@@ -96,7 +97,7 @@ NET_PRES_Tasks(sysObj.netPres);
 
 
 
-TCPIP_STACK_Task(sysObj.tcpip);
+   TCPIP_STACK_Task(sysObj.tcpip);
 
 
 

@@ -54,15 +54,17 @@ void I2S_Initialize ( void )
 
     // configure clock unit 0
     I2S_REGS->I2S_CLKCTRL[0] =
-                                            I2S_CLKCTRL_MCKEN(1-1) |
-                                            I2S_CLKCTRL_MCKSEL(1) |
-                                            I2S_CLKCTRL_SCKSEL(1) |
+                                            I2S_CLKCTRL_MCKOUTDIV(3-1) |
+                                            I2S_CLKCTRL_MCKDIV(8-1) |
+                                            I2S_CLKCTRL_MCKEN(1-0) |
+                                            I2S_CLKCTRL_MCKSEL(0) |
+                                            I2S_CLKCTRL_SCKSEL(0) |
                                             I2S_CLKCTRL_FSOUTINV(0) |
                                             I2S_CLKCTRL_FSINV(0) |
-                                            I2S_CLKCTRL_FSSEL(1) |
+                                            I2S_CLKCTRL_FSSEL(0) |
                                             I2S_CLKCTRL_BITDELAY(1) |
                                             I2S_CLKCTRL_NBSLOTS(1) |        // always 2 slots for I2S
-                                            I2S_CLKCTRL_SLOTSIZE(0x3);
+                                            I2S_CLKCTRL_SLOTSIZE(0x1);
 
     // configure clock unit 1
     I2S_REGS->I2S_CLKCTRL[1] =
@@ -81,19 +83,19 @@ void I2S_Initialize ( void )
     // configure TX serializer
     I2S_REGS->I2S_TXCTRL = I2S_TXCTRL_MONO(0) |
                                             I2S_TXCTRL_WORDADJ(1) |
-                                            I2S_TXCTRL_DATASIZE(0x0) |
+                                            I2S_TXCTRL_DATASIZE(0x4) |
                                             I2S_TXCTRL_SLOTADJ(1);
 
     // configure RX serializer
     I2S_REGS->I2S_RXCTRL = I2S_RXCTRL_MONO(0) |
                                             I2S_RXCTRL_WORDADJ(1) |
-                                            I2S_RXCTRL_DATASIZE(0x0) |
+                                            I2S_RXCTRL_DATASIZE(0x4) |
                                             I2S_RXCTRL_SLOTADJ(1) |
                                             I2S_RXCTRL_CLKSEL(0) |
                                             I2S_RXCTRL_SERMODE(I2S_RXCTRL_SERMODE_RX_Val);
 
     // enable the desired components
-    I2S_REGS->I2S_CTRLA =  I2S_CTRLA_RXEN(0) |
+    I2S_REGS->I2S_CTRLA =  I2S_CTRLA_RXEN(1) |
                                             I2S_CTRLA_TXEN(1) |
                                             I2S_CTRLA_CKEN0(1)
                                           | I2S_CTRLA_CKEN1(0)
@@ -103,8 +105,8 @@ void I2S_Initialize ( void )
 
 uint32_t I2S_LRCLK_Get(void)
 {
-    // for inverted (e.g. left-justified format), will sync on high to low transition
-    volatile uint32_t ret = 1-((PORT_REGS->GROUP[0].PORT_IN >> 9) & 0x1);
+    // for I2S format, will sync on low to high transition
+    volatile uint32_t ret = ((PORT_REGS->GROUP[0].PORT_IN >> 9) & 0x1);
     return ret;    
 }
 

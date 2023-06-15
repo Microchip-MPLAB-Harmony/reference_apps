@@ -89,7 +89,7 @@ DRV_USB_HOST_INTERFACE gDrvUSBFSV1HostInterface =
  * Global Variable used as Pool of pipe objects 
  * that is used by all driver instances.
  *****************************************************/
-DRV_USBFSV1_HOST_PIPE_OBJ gDrvUSBHostPipeObj[DRV_USBFSV1_HOST_PIPES_NUMBER];
+DRV_USBFSV1_HOST_PIPE_OBJ gDrvUSBFSV1HostPipeObj[DRV_USBFSV1_HOST_PIPES_NUMBER];
 
 /****************************************
  * The driver object
@@ -812,14 +812,14 @@ DRV_USBFSV1_HOST_PIPE_HANDLE DRV_USBFSV1_HOST_PipeSetup
             for(pipeCount = 0; pipeCount < DRV_USBFSV1_HOST_PIPES_NUMBER; pipeCount++)
             {
                 /* Check for free pipe object */
-                if(gDrvUSBHostPipeObj[pipeCount].inUse == false)
+                if(gDrvUSBFSV1HostPipeObj[pipeCount].inUse == false)
                 {
                     /* We found a pipe object that we can use.  Go and grab that
                      * one.  */
-                    gDrvUSBHostPipeObj[pipeCount].inUse = true;
+                    gDrvUSBFSV1HostPipeObj[pipeCount].inUse = true;
 
                     /* Initialize the pipe object */
-                    pPipe = &gDrvUSBHostPipeObj[pipeCount];
+                    pPipe = &gDrvUSBFSV1HostPipeObj[pipeCount];
 
                     pPipe->deviceAddress = deviceAddress;
                     pPipe->irpQueueHead = NULL;
@@ -977,7 +977,7 @@ DRV_USBFSV1_HOST_PIPE_HANDLE DRV_USBFSV1_HOST_PipeSetup
                     else
                     {
                         /* There was some error. Return the pipe object */
-                        gDrvUSBHostPipeObj[pipeCount].inUse = false;
+                        gDrvUSBFSV1HostPipeObj[pipeCount].inUse = false;
                     }
 
                     /* We found a pipe and allocated it or found it but were not

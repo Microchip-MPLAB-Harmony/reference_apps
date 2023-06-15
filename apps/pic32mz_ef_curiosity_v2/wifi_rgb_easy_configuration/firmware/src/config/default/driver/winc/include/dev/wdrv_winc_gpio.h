@@ -43,7 +43,7 @@
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_INTInitialize(void)
+    void WDRV_WINC_INTInitialize(SYS_MODULE_OBJ object, int intSrc)
 
   Summary:
     Initializes interrupts for the WiFi driver.
@@ -52,10 +52,11 @@
     This function initializes interrupts for the WiFi driver.
 
   Precondition:
-    WiFi initialization must be complete.
+    WDRV_WINC_Initialize must have been called before calling this function.
 
   Parameters:
-    None.
+    object  - Driver object handle, returned from WDRV_WINC_Initialize
+    intSrc  - Interrupt source
 
   Returns:
     None.
@@ -63,12 +64,12 @@
   Remarks:
     None.
  */
-void WDRV_WINC_INTInitialize(void);
+void WDRV_WINC_INTInitialize(SYS_MODULE_OBJ object, int intSrc);
 
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_INTDeinitialize(void)
+    void WDRV_WINC_INTDeinitialize(int intSrc)
 
   Summary:
     Deinitializes interrupts for WiFi driver.
@@ -80,12 +81,12 @@ void WDRV_WINC_INTInitialize(void);
     WiFi initialization must be complete.
 
   Returns:
-    None.
+    intSrc  - Interrupt source
 
   Remarks:
     None.
  */
-void WDRV_WINC_INTDeinitialize(void);
+void WDRV_WINC_INTDeinitialize(int intSrc);
 
 //*******************************************************************************
 /*

@@ -63,7 +63,7 @@
  * Hardware instance, endpoint table and client object
  * lumped together as group to save memory.
  ******************************************************/
-DRV_USBFSV1_OBJ gDrvUSBObj [DRV_USBFSV1_INSTANCES_NUMBER];
+DRV_USBFSV1_OBJ gDrvUSBFSV1Obj [DRV_USBFSV1_INSTANCES_NUMBER];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -112,7 +112,7 @@ SYS_MODULE_OBJ DRV_USBFSV1_Initialize
         /* The driver module index specified does not exist in the system */
         SYS_DEBUG(SYS_ERROR_INFO,"\r\nDRV USB USBFSV1: Invalid Driver Module Index in DRV_USBFSV1_Initialize().");
     }
-    else if(gDrvUSBObj[drvIndex].inUse == true)
+    else if(gDrvUSBFSV1Obj[drvIndex].inUse == true)
     {
         /* Cannot initialize an object that is already in use. */
         SYS_DEBUG(SYS_ERROR_INFO, "\r\nDRV USB USBFSV1: Driver is already initialized in DRV_USBFSV1_Initialize().");
@@ -121,7 +121,7 @@ SYS_MODULE_OBJ DRV_USBFSV1_Initialize
     {
         /* Assign to the local pointer the init data passed */
         usbInit = (DRV_USBFSV1_INIT *) init;
-        drvObj = &gDrvUSBObj[drvIndex];
+        drvObj = &gDrvUSBFSV1Obj[drvIndex];
 
         /* Create the global mutex and proceed if successful. */
         if(OSAL_RESULT_TRUE == OSAL_MUTEX_Create((OSAL_MUTEX_HANDLE_TYPE *)&drvObj->mutexID))
@@ -255,7 +255,7 @@ void DRV_USBFSV1_Tasks
     DRV_USBFSV1_OBJ * hDriver;
     DRV_USB_VBUS_LEVEL vbusLevel = DRV_USB_VBUS_LEVEL_INVALID;
 
-    hDriver = &gDrvUSBObj[object];
+    hDriver = &gDrvUSBFSV1Obj[object];
 
     if(hDriver->status <= SYS_STATUS_UNINITIALIZED)
     {
@@ -349,14 +349,14 @@ void DRV_USBFSV1_Deinitialize
     {
         SYS_DEBUG_MESSAGE(SYS_ERROR_INFO,"\r\nUSB USBFSV1 Driver: Invalid object in DRV_USBFSV1_Deinitialize()");
     }
-    else if(gDrvUSBObj[object].inUse == false)
+    else if(gDrvUSBFSV1Obj[object].inUse == false)
     {
         /* Cannot de-initialize an object that is not in use. */
         SYS_DEBUG_MESSAGE(SYS_ERROR_INFO,"\r\nUSB USBFSV1 Driver: Driver not initialized in DRV_USBFSV1_Deinitialize()");
     }
     else
     {
-        hDriver = &gDrvUSBObj[object];
+        hDriver = &gDrvUSBFSV1Obj[object];
 
         /* Release the USB instance object */
         hDriver->inUse = false;
@@ -431,7 +431,7 @@ DRV_HANDLE DRV_USBFSV1_Open
     }
     else
     {
-        drvObj = &gDrvUSBObj[drvIndex];
+        drvObj = &gDrvUSBFSV1Obj[drvIndex];
         if(drvObj->status != SYS_STATUS_READY)
         {
             /* The driver status not ready */
@@ -493,7 +493,7 @@ SYS_STATUS DRV_USBFSV1_Status
     }
     else
     {
-        retVal = gDrvUSBObj[object].status;
+        retVal = gDrvUSBFSV1Obj[object].status;
     }
 
     /* Return the status of the driver object */
@@ -575,7 +575,7 @@ void DRV_USBFSV1_Tasks_ISR
     }
     else
     {
-        drvObj = &gDrvUSBObj[object];
+        drvObj = &gDrvUSBFSV1Obj[object];
 
         if(drvObj->status != SYS_STATUS_READY)
         {

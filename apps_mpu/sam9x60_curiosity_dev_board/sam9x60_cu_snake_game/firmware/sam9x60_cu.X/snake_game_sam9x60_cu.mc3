@@ -1,4 +1,4 @@
-<config configName="default" projectName="snake_game_sam9x60_cu" configVersion="1.1" device="SAM9X60D1G" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.14">
+<config configName="default" projectName="snake_game_sam9x60_cu" configVersion="1.1" device="SAM9X60D1G" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -79,7 +79,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.2.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -9421,7 +9421,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\default\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\datastructure\legato_rectarray.h</file>
@@ -9441,7 +9441,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\toolchain_specifics.h</file>
-         <hash>943f2c097f75062855ef1434b1b63a84e68ac691a93097a46016a699601a3306</hash>
+         <hash>d93ab2a56ea91cac163fc49b5e3f3491fe3c8ada3bd2f72c752b286f280b40ef</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_color_lerp.c</file>
@@ -9453,7 +9453,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\flexcom\twi\master\plib_flexcom6_twi_master.h</file>
-         <hash>c91dad9bbabed01808f11d719893cb2a447c2e97654e8b1fb37c958f6608d7b7</hash>
+         <hash>ec172c9f29f28a6cd23db61ccc5f0039b2f257f1c74a10be2c06bb5b75949e94</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\component\trng.h</file>
@@ -9461,7 +9461,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\flexcom\twi\master\plib_flexcom6_twi_master.c</file>
-         <hash>f656572013885cff48359b95f8d760f61d1c2939873780aeb90dd4cbe29a813a</hash>
+         <hash>6d574565662001fa74fd3eb3ece2e3914ebdfeafc4cf25df7ec03ff92cd3d993</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\component\dbgu.h</file>
@@ -9473,7 +9473,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\driver\gfx_driver.h</file>
-         <hash>fe9fcaab15196bb9b101e51cddc6418c9004f6babc2d416d8d5400ed7e554308</hash>
+         <hash>c0b0a01ff978f89cac7d3aa11baf20122297d95a8c28f45506c4e3c1e9217594</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_common.h</file>
@@ -9537,7 +9537,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\input\sys_input_gesture.h</file>
@@ -9605,7 +9605,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc0.c</file>
-         <hash>31be478f89108b048d6ad4c0dfb9a8d973a950f18def476cc985b832ce10ca3b</hash>
+         <hash>c9bf7dc22d3246852f35ef21424a686d58bc801ade85fd2cc3c9d54092f68b15</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\qspi.h</file>
@@ -9653,7 +9653,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\cache\sys_cache.c</file>
-         <hash>96e3cf05b3e24641f89f3726e0f900a28002ae53ccebb23c8cf27563c59d3076</hash>
+         <hash>9754314ec0e099723a3604ecfe12fb6e682cf64cddf01c968ca931d26c448f0e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Splash.h</file>
@@ -9681,7 +9681,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\mmu\plib_mmu.h</file>
-         <hash>a777af67221ce686baec242376d2cccad707ed3e197c3b049b7d9fd5519e3dfe</hash>
+         <hash>7fb6e6b8ad6a80b7fc04c0264b7cdf49e6d6b887e4f3c5aa394eda88e32e0116</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\component\sfr.h</file>
@@ -9709,7 +9709,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\mmu\plib_mmu.c</file>
-         <hash>7ef66d78f0234e1889fc9cb8fb94616eb51fa7517881f86270c68856d7072b5d</hash>
+         <hash>8850b951d047f69283a6961301dfa7333cd338c9f27278bee79dcfd36ad1076e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\legato_image.c</file>
@@ -9781,11 +9781,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
-         <hash>1d598580f1896b97c03b197b72346f421fc9a342b582c5094396437dd6930497</hash>
+         <hash>4b636419a06d1621bfadcec7e40a63490ec196b7bb949f636a0ddc76097f782e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>b080b1c574b84bef2b3f0f5ebe02cadcece6e690622798280a0587e79ce167f1</hash>
+         <hash>07ea371ae7434a70583e4f580eb7cbdc7a5ec7cbe02aee0291cdcee301fc4833</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\piob.h</file>
@@ -9861,7 +9861,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_assets.h</file>
@@ -9913,7 +9913,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\groupbox\legato_widget_groupbox.h</file>
@@ -9937,7 +9937,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\drv_i2c.h</file>
-         <hash>1add02b0380f67be5dc9707f01b290af08eccc0957775327f44a8c1afc823410</hash>
+         <hash>098d38bbc9c9d42befb9e601cfaf7f342ce8c670b788c961ef84df6db1ecbf82</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono.h</file>
@@ -9961,7 +9961,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\src\sys_time.c</file>
-         <hash>b722ac0c5d955d289bd906609ab6f302342166c5ba66f87b30cac17ac6bfdcd9</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\line\legato_widget_line.c</file>
@@ -9969,7 +9969,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\tasks.c</file>
-         <hash>19cbe91860d7a0f57c49c552a4a50685f0fb124f06a9f1efbce10b75022a7abe</hash>
+         <hash>d74088a4b55c99cbbdbc08805a3a55ded4baf457f61b22f9642646a657199e2d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono_read_stream.c</file>
@@ -9989,11 +9989,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>7f2431f7211c74ad984a9c4b316a6db53282502c2223d281bcecb621291e1e91</hash>
+         <hash>a0d5e1f213d6e721aea03bb6e6f7f097b5f910059c65e0fee63a6521295ebda9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\fault_handlers.c</file>
-         <hash>34134ba54c0becfbe75cd670be15133f2a10dea081d9fa5fab75f17afc1109ba</hash>
+         <hash>931e951cf7431d3d70d6ab81bcd265ff0ac8b3f473b73cd7a541f59d49786b7c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_math.c</file>
@@ -10049,7 +10049,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\bsp\bsp.h</file>
-         <hash>26c965d3b62555c9fc783b17b1db2dc540b875b67dedc1bd7788ff04b1654b6a</hash>
+         <hash>eac11da09b4c244ff9ab6915c54486aaad3453ac0e9e8abe8059a050b6eb5821</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\imagerotate\legato_widget_imagerotate.h</file>
@@ -10081,7 +10081,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\textfield\legato_widget_textfield_skin_classic.c</file>
@@ -10093,7 +10093,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\sys_int_mapping.h</file>
-         <hash>a88ed061ebd75cff98fc9703d2dbd3c868a729737c0d00afff3e0755ab4f8910</hash>
+         <hash>652a7ea6c065e3a4cbcbfaef7c3519fca207fa36de25351875c3ba746dff242b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\textfield\legato_widget_textfield.c</file>
@@ -10272,6 +10272,10 @@
          <hash>e35bed6b3dae2269c19c01a5a18f456359da6144c344d68b42874d585f8d4931</hash>
       </entry>
       <entry>
+         <file>..\src\config\default\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\emac0.h</file>
          <hash>b60e2385294b2e67badfa6a266dde0c454f3da6e19114830de752a6f7824d82f</hash>
       </entry>
@@ -10313,7 +10317,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\aic\plib_aic.c</file>
-         <hash>30e5b7f3a5259938cd4534624854beb942b8fccd9aa0f5d69175d8b663536abe</hash>
+         <hash>f5edd5eb4d476ed4ec6a5ee6bc98fe72337cd038be45ef9df0f5d1d4a09cb896</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\rstc.h</file>
@@ -10329,7 +10333,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\aic\plib_aic.h</file>
-         <hash>3744d8f5ae1843ce5b3b78bbae13a22a7f22b2f0584db476b657b40cb7850809</hash>
+         <hash>9ff729f3819887a6769c1a4386db9727e6e88fe6bee25960985d9ccd09229a7d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_fixedheap.c</file>
@@ -10385,7 +10389,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string_renderer.h</file>
@@ -10397,7 +10401,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\groupbox\legato_widget_groupbox_skin_classic.c</file>
@@ -10457,7 +10461,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\button\legato_widget_button.h</file>
@@ -10465,7 +10469,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\src\drv_i2c.c</file>
-         <hash>d27c94dc19b7413b120ca9aca2689f5d95e5a2c46f2b3918d37587bf64c85551</hash>
+         <hash>5d5aba18ec8e697a064a2eb4b862f0bb5ae34e68d88e71de23b5b1a9019e90c4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\image\legato_widget_image.h</file>
@@ -10573,7 +10577,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\sys_time_definitions.h</file>
-         <hash>904195d4340ba6b97cf19c25b9695d2a9f37ed67cf6abdf8ee1ee839506e2801</hash>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\font\legato_font.h</file>
@@ -10609,7 +10613,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>f508b775caf58c515a7e9ee8af9db943d1fe063a3e9331b7a2c69fef194a5c1b</hash>
+         <hash>51f749cb36383ebea00825e09860ba4feb98bdfc43fe3b829200529fd8c8e9c0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.h</file>
@@ -10625,7 +10629,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\src\sys_int.c</file>
-         <hash>f188fc9be907b9be357e526fbba7eb3a14b5fa936d029c3e33d324298aa77548</hash>
+         <hash>5a683ab50cabf3aa131d76d12f4715e103de0e5cce67d22ab26d11665c38614f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.c</file>
@@ -10641,7 +10645,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\drv_i2c_definitions.h</file>
-         <hash>73ed094aba8f1de3ae1497ff414474f02588381d94801f6beac411f8c7f9b329</hash>
+         <hash>308393d7dc25f042ea7443ac00d81cc8fafb0eec952207d88f64a0b48ea04bae</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\png\lodepng.h</file>
@@ -10649,7 +10653,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc_common.h</file>
-         <hash>444f1845776c5bbdd53278a60d8f2101e23eb3605b8b3950811ef24f9fd05ec0</hash>
+         <hash>aa07077b6355fa1dc9e938cb4def1c725bffddf452ffc55e4f982f83d3988a9e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\pio\plib_pio.h</file>
@@ -10677,7 +10681,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\pio\plib_pio.c</file>
-         <hash>44d94bc7903065b79518c0b8f07455aef285854dc37b6de65049e676298d7d67</hash>
+         <hash>c3f0e8c9517871197c71dd53a99f4f198773ac8795b5ea9fe79d009efae77489</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\pmc.h</file>
@@ -10701,7 +10705,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\src\drv_i2c_local.h</file>
-         <hash>f82fd4270a023c7d3281752352a98a33d139a03992f8cf32e6ad04adaf8fcf5f</hash>
+         <hash>efe3b598a6fc3492f7f448c0077edcce4378d2029b5a26d304e0293e0d4711f7</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\sfr.h</file>
@@ -10733,7 +10737,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>e59b3b0c01dbf2913a884a40b5bb47de5ed37d1c603fc7d7285956b8c244f3b4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\jpeg\jidctint.c</file>
@@ -10745,7 +10749,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
-         <hash>7c1f77c404bf88a86b4c725010e5173d5274771d56ca40e9a04200510a0caa12</hash>
+         <hash>361f5e1d843df60d762741cff2e30549cff849154b7e8d5aa89a3b3a8b07aa80</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\png\lodepng.c</file>
@@ -10793,7 +10797,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_scale.c</file>
@@ -10805,7 +10809,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\mmu\cp15.h</file>
-         <hash>24907eff18f34ad82252c89fde571ebd0f51da7ca4b9f72c8810e9c3d6485edb</hash>
+         <hash>d927deee45b9b50351c5513daf446ae3278f5fa85915c06c434b24c7eb61b64b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\list\legato_widget_list_skin_classic.c</file>
@@ -10877,7 +10881,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_stringutils.h</file>
@@ -10973,11 +10977,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\lcdc\plib_lcdc.c</file>
-         <hash>b6bdc8782625b1a340bbde576705f07655aab0f5b454eb23b25605f1670db941</hash>
+         <hash>abea7c9fd3f447d9fdcd0428c216dcd639beee368ae45ac2a07b08ee35783cfe</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\lcdc\plib_lcdc.h</file>
-         <hash>2628b51ef887007cb4890b9a884a9b6afeae0aecd76ed4f52d49fd61442c0b9a</hash>
+         <hash>6b55d7fa9cecdaabe9f8e7d03e099e5ad3ff96931f696f8202af2962b200d428</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\renderer\legato_draw_rect.c</file>

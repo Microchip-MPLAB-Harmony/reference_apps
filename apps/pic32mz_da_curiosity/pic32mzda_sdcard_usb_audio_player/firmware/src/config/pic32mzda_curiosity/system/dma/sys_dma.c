@@ -99,19 +99,23 @@ bool SYS_DMA_ChannelTransfer (SYS_DMA_CHANNEL channel, const void *srcAddr, cons
 {
     if ((gSysDMAChannelObj[channel].srcAddrMode == SYS_DMA_SOURCE_ADDRESSING_MODE_FIXED) && (gSysDMAChannelObj[channel].destAddrMode == SYS_DMA_DESTINATION_ADDRESSING_MODE_FIXED))
     {
-        DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, gSysDMAChannelObj[channel].dataWidth, destAddr, gSysDMAChannelObj[channel].dataWidth, gSysDMAChannelObj[channel].dataWidth);
+        (void) DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, (size_t)gSysDMAChannelObj[channel].dataWidth, destAddr, (size_t)gSysDMAChannelObj[channel].dataWidth, (size_t)gSysDMAChannelObj[channel].dataWidth);
     }
     else if((gSysDMAChannelObj[channel].srcAddrMode == SYS_DMA_SOURCE_ADDRESSING_MODE_FIXED) && (gSysDMAChannelObj[channel].destAddrMode == SYS_DMA_DESTINATION_ADDRESSING_MODE_INCREMENTED))
     {
-        DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, gSysDMAChannelObj[channel].dataWidth, destAddr, blockSize, gSysDMAChannelObj[channel].dataWidth);
+        (void) DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, (size_t)gSysDMAChannelObj[channel].dataWidth, destAddr, blockSize, (size_t)gSysDMAChannelObj[channel].dataWidth);
     }
     else if ((gSysDMAChannelObj[channel].srcAddrMode == SYS_DMA_SOURCE_ADDRESSING_MODE_INCREMENTED) && (gSysDMAChannelObj[channel].destAddrMode == SYS_DMA_DESTINATION_ADDRESSING_MODE_FIXED))
     {
-        DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, blockSize, destAddr, gSysDMAChannelObj[channel].dataWidth, gSysDMAChannelObj[channel].dataWidth);
+        (void) DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, blockSize, destAddr, (size_t)gSysDMAChannelObj[channel].dataWidth, (size_t)gSysDMAChannelObj[channel].dataWidth);
     }
     else if ((gSysDMAChannelObj[channel].srcAddrMode == SYS_DMA_SOURCE_ADDRESSING_MODE_INCREMENTED) && (gSysDMAChannelObj[channel].destAddrMode == SYS_DMA_DESTINATION_ADDRESSING_MODE_INCREMENTED))
     {
-        DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, blockSize, destAddr, blockSize, blockSize);
+        (void) DMAC_ChannelTransfer((DMAC_CHANNEL)channel, srcAddr, blockSize, destAddr, blockSize, blockSize);
+    }
+    else
+    {
+        /* Nothing to do */
     }
     return true;
 }

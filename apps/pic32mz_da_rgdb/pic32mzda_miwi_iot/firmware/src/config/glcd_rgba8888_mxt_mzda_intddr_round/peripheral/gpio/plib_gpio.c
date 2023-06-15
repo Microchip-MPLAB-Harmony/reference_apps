@@ -42,6 +42,8 @@
 //DOM-IGNORE-END
 
 #include "plib_gpio.h"
+#include "interrupts.h"
+
 
 
 
@@ -63,7 +65,7 @@ void GPIO_Initialize ( void )
     /* PORTB Initialization */
     LATB = 0x2U; /* Initial Latch Value */
     TRISBCLR = 0x5002U; /* Direction Control */
-    ANSELBCLR = 0x7a02U; /* Digital Mode Enable */
+    ANSELBCLR = 0x7c23U; /* Digital Mode Enable */
     CNPUBSET = 0x1000U; /* Pull-Up Enable */
     /* PORTC Initialization */
     LATC = 0x12U; /* Initial Latch Value */
@@ -75,14 +77,15 @@ void GPIO_Initialize ( void )
     ANSELDCLR = 0x4000U; /* Digital Mode Enable */
     CNPUDSET = 0x4400U; /* Pull-Up Enable */
     /* PORTE Initialization */
+    ANSELECLR = 0x200U; /* Digital Mode Enable */
     /* PORTF Initialization */
     ANSELFCLR = 0x1000U; /* Digital Mode Enable */
     CNPUFSET = 0x1000U; /* Pull-Up Enable */
     /* PORTG Initialization */
-    ANSELGCLR = 0x8200U; /* Digital Mode Enable */
+    ANSELGCLR = 0x8380U; /* Digital Mode Enable */
     CNPUGSET = 0x200U; /* Pull-Up Enable */
     /* PORTH Initialization */
-    ANSELHCLR = 0x808U; /* Digital Mode Enable */
+    ANSELHCLR = 0x800U; /* Digital Mode Enable */
     CNPUHSET = 0x4000U; /* Pull-Up Enable */
     /* PORTJ Initialization */
     /* PORTK Initialization */
@@ -100,11 +103,16 @@ void GPIO_Initialize ( void )
 
     /* PPS Input Remapping */
     U4RXR = 1;
-    U1RXR = 5;
+    C2RXR = 13;
+    C1RXR = 1;
+    SDI1R = 8;
 
     /* PPS Output Remapping */
     RPF12R = 2;
-    RPE5R = 1;
+    RPG8R = 15;
+    RPF2R = 15;
+    RPB10R = 5;
+    RPB0R = 5;
 
         /* Lock back the system after PPS configuration */
     CFGCONbits.IOLOCK = 1U;

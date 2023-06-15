@@ -69,7 +69,7 @@ bool SDHC1_IsDatLineBusy ( void );
 
 bool SDHC1_IsCardAttached ( void );
 
-bool SDHC1_ClockSet ( uint32_t clock);
+bool SDHC1_ClockSet ( uint32_t speed);
 
 void SDHC1_ClockEnable ( void );
 
@@ -80,6 +80,8 @@ uint16_t SDHC1_CommandErrorGet (void);
 uint16_t SDHC1_DataErrorGet (void);
 
 void SDHC1_ErrorReset ( SDHC_RESET_TYPE resetType );
+
+uint16_t SDHC1_GetError(void);
 
 void SDHC1_ResponseRead ( SDHC_READ_RESPONSE_REG respReg, uint32_t* response );
 
@@ -110,4 +112,3 @@ void SDHC1_DmaSetup (
 #endif
 // DOM-IGNORE-END
 #endif // PLIB_SDHC1_H
-

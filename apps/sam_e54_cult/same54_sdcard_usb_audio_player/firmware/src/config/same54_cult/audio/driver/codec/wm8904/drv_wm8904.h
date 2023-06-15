@@ -58,6 +58,14 @@
 #include "system/int/sys_int.h"
 #include "driver/driver_common.h"
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -633,6 +641,46 @@ void DRV_WM8904_Deinitialize(SYS_MODULE_OBJ object);
     A driver can opened only when its status is SYS_STATUS_READY.
  */
 SYS_STATUS DRV_WM8904_Status(SYS_MODULE_OBJ object);
+
+
+// *****************************************************************************
+/* Function:
+    bool DRV_WM8904_ClientReady( iClient )
+
+  Summary:
+    Returns true if the WM8904 driver is ready for client operations
+
+  Description:
+    Returns true if the WM8904 driver is ready for client operations
+
+  Precondition:
+    Function DRV_WM8904_Initialize/DRV_WM8904_Open should have been called 
+    before calling this function.
+
+  Parameters:
+    object          - Driver object handle, returned from the
+                      DRV_WM8904_Initialize routine
+
+  Returns:
+   true - Driver is open for client operations
+   false - driver is not ready for client operations
+
+  Example:
+    <code>
+    SYS_MODULE_OBJ      object;     // Returned from DRV_WM8904_Initialize
+    SYS_STATUS          WM8904Status;
+
+    WM8904Status = DRV_WM8904_Status(object);
+    if (DRV_WM8904_ClientReady(0)==true)
+    {
+        //Ready to perform driver functions
+    }
+    </code>
+
+  Remarks:
+    Driver operation can only commence after the client interface is ready. 
+ */
+bool DRV_WM8904_ClientReady(uint32_t iClient);
 
 
 // *****************************************************************************
@@ -2027,6 +2075,13 @@ int8_t* DRV_WM8904_VersionStrGet(void);
     None.
  */
 uint32_t DRV_WM8904_VersionGet(void);
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
+#endif
+//DOM-IGNORE-END
+
 
 #endif // #ifndef _DRV_WM8904_H
 /*******************************************************************************

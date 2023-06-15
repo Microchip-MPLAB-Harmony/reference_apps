@@ -61,31 +61,34 @@
 void SUPC_Initialize( void )
 {
     /* Configure VREF */
-    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0);
+    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x0U);
 
     /* Configure VREG. Mask the values loaded from NVM during reset.*/
-    SUPC_REGS->SUPC_VREG = (SUPC_REGS->SUPC_VREG & (SUPC_VREG_SEL_Msk | SUPC_VREG_ENABLE_Msk)) | SUPC_VREG_VSPER(0) ;
+    SUPC_REGS->SUPC_VREG = (SUPC_REGS->SUPC_VREG & (SUPC_VREG_SEL_Msk | SUPC_VREG_ENABLE_Msk)) | SUPC_VREG_VSPER(0U) ;
 }
 
 void SUPC_SelectTempSenorChannel( SUPC_TSSEL sensor )
 {
-    SUPC_REGS->SUPC_VREF = (SUPC_REGS->SUPC_VREF & (~SUPC_VREF_TSSEL_Msk)) | (sensor << SUPC_VREF_TSSEL_Pos);
+    SUPC_REGS->SUPC_VREF = (SUPC_REGS->SUPC_VREF & (~SUPC_VREF_TSSEL_Msk)) | ((uint32_t)sensor << SUPC_VREF_TSSEL_Pos);
 }
 
 void SUPC_SetOutputPin( SUPC_OUTPIN pin )
 {
-    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_SETOUT(1 << pin);
+    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_SETOUT((1UL << (uint32_t)pin));
 }
 
 void SUPC_SelectVoltageRegulator(SUPC_VREGSEL regsel)
 {
-    SUPC_REGS->SUPC_VREG |= (regsel << SUPC_VREG_SEL_Pos);
-    while(!(SUPC_REGS->SUPC_STATUS & SUPC_STATUS_VREGRDY_Msk));
+    SUPC_REGS->SUPC_VREG = (SUPC_REGS->SUPC_VREG & ~(SUPC_VREG_SEL_Msk)) | ((uint32_t)regsel << SUPC_VREG_SEL_Pos);
+    while((SUPC_REGS->SUPC_STATUS & SUPC_STATUS_VREGRDY_Msk) == 0U)
+    {
+        /* do nothing */
+    }
 }
 
 
 void SUPC_ClearOutputPin( SUPC_OUTPIN pin )
 {
-    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_CLROUT(1 << pin);
+    SUPC_REGS->SUPC_BKOUT |= SUPC_BKOUT_CLROUT((1UL << (uint32_t)pin));
 }
 

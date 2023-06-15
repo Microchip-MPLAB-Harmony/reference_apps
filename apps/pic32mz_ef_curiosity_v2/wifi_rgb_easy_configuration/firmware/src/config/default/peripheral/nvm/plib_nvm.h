@@ -67,66 +67,63 @@
 #define NVM_FLASH_ROWSIZE          (2048U)
 #define NVM_FLASH_PAGESIZE         (16384U)
 
-#define NVM_START_ADDRESS              0x9d100000
+#define NVM_START_ADDRESS              0x9d100000U
 #define NVM_MEDIA_SIZE                 64
 #define NVM_ERASE_BUFFER_SIZE          16384
 
-typedef enum
-{
-    /* No error */
-    NVM_ERROR_NONE = 0x0,
 
-    /* NVM write error */
-    NVM_ERROR_WRITE = _NVMCON_WRERR_MASK,
+/* No error */
+#define    NVM_ERROR_NONE        (0x0)
 
-    /* NVM Low Voltage Detect error */
-    NVM_ERROR_LOWVOLTAGE = _NVMCON_LVDERR_MASK,
+/* NVM write error */
+#define    NVM_ERROR_WRITE       (_NVMCON_WRERR_MASK)
 
-} NVM_ERROR;
+/* NVM Low Voltage Detect error */
+#define    NVM_ERROR_LOWVOLTAGE  (_NVMCON_LVDERR_MASK)
 
-typedef enum
-{
-    /* Upper Boot Flash Page 0 Write Protect */
-    NVM_UPPER_BOOT_WRITE_PROTECT_0 = _NVMBWP_UBWP0_MASK,
+typedef uint32_t NVM_ERROR;
 
-    /* Upper Boot Flash Page 1 Write Protect */
-    NVM_UPPER_BOOT_WRITE_PROTECT_1 = _NVMBWP_UBWP1_MASK,
 
-    /* Upper Boot Flash Page 2 Write Protect */
-    NVM_UPPER_BOOT_WRITE_PROTECT_2 = _NVMBWP_UBWP2_MASK,
+/* Upper Boot Flash Page 0 Write Protect */
+#define    NVM_UPPER_BOOT_WRITE_PROTECT_0   _NVMBWP_UBWP0_MASK
 
-    /* Upper Boot Flash Page 3 Write Protect */
-    NVM_UPPER_BOOT_WRITE_PROTECT_3 = _NVMBWP_UBWP3_MASK,
+/* Upper Boot Flash Page 1 Write Protect */
+#define    NVM_UPPER_BOOT_WRITE_PROTECT_1   _NVMBWP_UBWP1_MASK
 
-    /* Lower Boot Flash Page 4 Write Protect */
-    NVM_UPPER_BOOT_WRITE_PROTECT_4 = _NVMBWP_UBWP4_MASK,
+/* Upper Boot Flash Page 2 Write Protect */
+#define    NVM_UPPER_BOOT_WRITE_PROTECT_2   _NVMBWP_UBWP2_MASK
 
-    /* Lower Boot Flash Page 0 Write Protect */
-    NVM_LOWER_BOOT_WRITE_PROTECT_0 = _NVMBWP_LBWP0_MASK,
+/* Upper Boot Flash Page 3 Write Protect */
+#define    NVM_UPPER_BOOT_WRITE_PROTECT_3   _NVMBWP_UBWP3_MASK
 
-    /* Lower Boot Flash Page 1 Write Protect */
-    NVM_LOWER_BOOT_WRITE_PROTECT_1 = _NVMBWP_LBWP1_MASK,
+/* Lower Boot Flash Page 4 Write Protect */
+#define    NVM_UPPER_BOOT_WRITE_PROTECT_4   _NVMBWP_UBWP4_MASK
 
-    /* Lower Boot Flash Page 2 Write Protect */
-    NVM_LOWER_BOOT_WRITE_PROTECT_2 = _NVMBWP_LBWP2_MASK,
+/* Lower Boot Flash Page 0 Write Protect */
+#define    NVM_LOWER_BOOT_WRITE_PROTECT_0   _NVMBWP_LBWP0_MASK
 
-    /* Lower Boot Flash Page 3 Write Protect */
-    NVM_LOWER_BOOT_WRITE_PROTECT_3 = _NVMBWP_LBWP3_MASK,
+/* Lower Boot Flash Page 1 Write Protect */
+#define    NVM_LOWER_BOOT_WRITE_PROTECT_1   _NVMBWP_LBWP1_MASK
 
-    /* Lower Boot Flash Page 4 Write Protect */
-    NVM_LOWER_BOOT_WRITE_PROTECT_4 = _NVMBWP_LBWP4_MASK,
+/* Lower Boot Flash Page 2 Write Protect */
+#define    NVM_LOWER_BOOT_WRITE_PROTECT_2   _NVMBWP_LBWP2_MASK
 
-} NVM_BOOT_FLASH_WRITE_PROTECT;
+/* Lower Boot Flash Page 3 Write Protect */
+#define    NVM_LOWER_BOOT_WRITE_PROTECT_3   _NVMBWP_LBWP3_MASK
 
-typedef enum
-{
-    /* Lock the Upper Boot Write Protect pages */
-    NVM_UPPER_BOOT_WRITE_PROTECT_LOCK = _NVMBWP_UBWPULOCK_MASK,
+/* Lower Boot Flash Page 4 Write Protect */
+#define    NVM_LOWER_BOOT_WRITE_PROTECT_4   _NVMBWP_LBWP4_MASK
 
-    /* Lock the Upper Boot Write Protect pages */
-    NVM_LOWER_BOOT_WRITE_PROTECT_LOCK = _NVMBWP_LBWPULOCK_MASK,
+typedef uint32_t NVM_BOOT_FLASH_WRITE_PROTECT;
 
-} NVM_BOOT_FLASH_WRITE_PROTECT_LOCK;
+
+/* Lock the Upper Boot Write Protect pages */
+#define NVM_UPPER_BOOT_WRITE_PROTECT_LOCK  _NVMBWP_UBWPULOCK_MASK
+
+/* Lock the Upper Boot Write Protect pages */
+#define NVM_LOWER_BOOT_WRITE_PROTECT_LOCK  _NVMBWP_LBWPULOCK_MASK
+
+typedef uint32_t NVM_BOOT_FLASH_WRITE_PROTECT_LOCK;
 
 typedef void (*NVM_CALLBACK)( uintptr_t context );
 
@@ -149,6 +146,8 @@ bool NVM_IsBusy( void );
 void NVM_ProgramFlashSwapBank( void );
 
 void NVM_ProgramFlashWriteProtect( uint32_t address);
+
+void NVM_ProgramFlashWriteProtectDisable( void );
 
 void NVM_ProgramFlashWriteProtectLock( void );
 

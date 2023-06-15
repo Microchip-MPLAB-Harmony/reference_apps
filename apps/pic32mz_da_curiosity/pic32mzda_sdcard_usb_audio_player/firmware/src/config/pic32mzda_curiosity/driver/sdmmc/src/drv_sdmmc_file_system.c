@@ -46,8 +46,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "driver/sdmmc/drv_sdmmc.h"
-#include "system/fs/sys_fs_media_manager.h"
+#include "driver/sdmmc/src/drv_sdmmc_file_system.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -55,10 +54,9 @@
 // *****************************************************************************
 // *****************************************************************************
 
-/* FS Function registration table. */
-typedef SYS_FS_MEDIA_COMMAND_STATUS (* CommandStatusGetType)( DRV_HANDLE, SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE );
+/* MISRA C-2012 Rule 11.1 deviated:5 Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
-const SYS_FS_MEDIA_FUNCTIONS sdmmcMediaFunctions =
+static const SYS_FS_MEDIA_FUNCTIONS sdmmcMediaFunctions =
 {
     .mediaStatusGet     = DRV_SDMMC_IsAttached,
     .mediaGeometryGet   = DRV_SDMMC_GeometryGet,
@@ -71,6 +69,7 @@ const SYS_FS_MEDIA_FUNCTIONS sdmmcMediaFunctions =
     .tasks              = DRV_SDMMC_Tasks
 };
 
+/* MISRAC 2012 deviation block end */
 // *****************************************************************************
 // *****************************************************************************
 // Section: SDMMC Driver File system interface Routines
@@ -79,7 +78,7 @@ const SYS_FS_MEDIA_FUNCTIONS sdmmcMediaFunctions =
 
 void DRV_SDMMC_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex)
 {
-    SYS_FS_MEDIA_MANAGER_Register
+    (void) SYS_FS_MEDIA_MANAGER_Register
     (
         (SYS_MODULE_OBJ)drvIndex,
         (SYS_MODULE_INDEX)drvIndex,

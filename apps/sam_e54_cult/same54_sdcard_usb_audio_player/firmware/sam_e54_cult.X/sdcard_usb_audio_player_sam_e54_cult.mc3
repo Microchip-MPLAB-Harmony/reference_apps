@@ -1,4 +1,4 @@
-<config configName="same54_cult" projectName="sdcard_usb_audio_player_sam_e54_cult" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="same54_cult" projectName="sdcard_usb_audio_player_sam_e54_cult" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -155,7 +155,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -763,17 +763,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2s&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2S&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_i2s&lt;/Value&gt;
@@ -804,6 +794,15 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_NUM_CLIENTS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
+  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_NUM_CLIENTS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_drv_i2s_0&gt;
+&lt;/a_drv_i2s_0&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_PLIB"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_PLIB&quot;&gt;
@@ -818,9 +817,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_QUEUE_SIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_QUEUE_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;16&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_drv_i2s_0&gt;
 &lt;/a_drv_i2s_0&gt;
 </value>
@@ -842,7 +839,6 @@
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_RX_DMA_CHANNEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;1&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/a_drv_i2s_0&gt;
 &lt;/a_drv_i2s_0&gt;
@@ -865,7 +861,6 @@
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_DMA_CHANNEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;0&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/a_drv_i2s_0&gt;
 &lt;/a_drv_i2s_0&gt;
@@ -886,9 +881,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="I2S_DATA_LENGTH"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;I2S_DATA_LENGTH&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_drv_i2s_0&gt;
 &lt;/a_drv_i2s_0&gt;
 </value>
@@ -918,12 +911,46 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_BITDELAY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_BITDELAY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_CLKMODE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_CLKMODE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_FSINV"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_FSINV&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_FSOUTINV"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_FSOUTINV&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -932,9 +959,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_MCKDIV"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_MCKDIV&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -943,9 +968,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_MCKOUTDIV"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_MCKOUTDIV&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -954,9 +977,106 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_0_SLOTSIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_0_SLOTSIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;3&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_BITDELAY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_BITDELAY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_CLKMODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_CLKMODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_FSINV"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_FSINV&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_FSOUTINV"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_FSOUTINV&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_MCKDIV"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_MCKDIV&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_MCKOUTDIV"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_MCKOUTDIV&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_CLKCTRL_1_SLOTSIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_CLKCTRL_1_SLOTSIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_DMA_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_DMA_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_INSTANCE_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_INSTANCE_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_INTERRUPT_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_INTERRUPT_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -965,9 +1085,34 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_LRCLK_INVERT"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_LRCLK_INVERT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_LRCLK_PIN_DEFINE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_LRCLK_PIN_DEFINE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_NUM_GENERIC_CLOCKS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_NUM_GENERIC_CLOCKS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_RXCTRL_CLKSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_RXCTRL_CLKSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -976,9 +1121,34 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_RXCTRL_DATASIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_RXCTRL_DATASIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_RXCTRL_MONO"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_RXCTRL_MONO&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_RXCTRL_SLOTADJ"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_RXCTRL_SLOTADJ&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_RXCTRL_WORDADJ"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_RXCTRL_WORDADJ&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -987,9 +1157,16 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_RX_SERIALIZER_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_RX_SERIALIZER_ENABLE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_TXCTRL_CLKSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_TXCTRL_CLKSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -998,9 +1175,61 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_TXCTRL_DATASIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
   &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_TXCTRL_DATASIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_TXCTRL_MONO"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_TXCTRL_MONO&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_TXCTRL_SLOTADJ"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_TXCTRL_SLOTADJ&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_TXCTRL_WORDADJ"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_TXCTRL_WORDADJ&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="I2S_TX_SERIALIZER_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;I2S_TX_SERIALIZER_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="RECEIVE_DATA_REGISTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;RECEIVE_DATA_REGISTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/a_i2s&gt;
+&lt;/a_i2s&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2s" name="TRANSMIT_DATA_REGISTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2s&gt;
+  &lt;a_i2s dnOrder=&quot;0&quot; id=&quot;TRANSMIT_DATA_REGISTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/a_i2s&gt;
 &lt;/a_i2s&gt;
 </value>
@@ -1017,16 +1246,6 @@
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2s&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
@@ -1536,8 +1755,8 @@
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Curiosity_Ultra&quot; x=&quot;332&quot; y=&quot;5&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;0&quot; y=&quot;7&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;a_drv_i2s&quot; x=&quot;979&quot; y=&quot;330&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;a_i2s&quot; x=&quot;852&quot; y=&quot;422&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;a_drv_i2s&quot; x=&quot;1120&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;a_i2s&quot; x=&quot;1030&quot; y=&quot;320&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;audio_codec_wm8904&quot; x=&quot;1032&quot; y=&quot;183&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;ccl&quot; x=&quot;30&quot; y=&quot;220&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;cmsis&quot; x=&quot;223&quot; y=&quot;33&quot;/&gt;
@@ -14618,15 +14837,15 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\same54_cult\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_rect.h</file>
-         <hash>25224ecd03ec49948390ad908bb67fbdac79d04cea50dee2434fc4cad7ed69dd</hash>
+         <hash>243b908a6395f350b2a5f700f91c181c392a65ed1eb993a2ba417df5777a390c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\gmac.h</file>
-         <hash>ae091520f122cd484774107d35e17bf0e53c6b30fededbf39a94e38dd7217975</hash>
+         <hash>d739d16f7a414cf41a74d96baf93618e503b5b2d9b47d94564232a3ab8125451</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -14634,7 +14853,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\font\legato_rasterfont_liberationmono1.c</file>
@@ -14642,7 +14861,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc3.h</file>
-         <hash>7e673ab564f7fa7e0dbdb448421cf78d45bb501ac1f2dccc6f2e4f66140c6c54</hash>
+         <hash>7dc6fd53595091e97f24ddd191e3a0119d12759ba2533043995b7dba9b2379b7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_host_msd.h</file>
@@ -14650,11 +14869,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pdec.h</file>
-         <hash>f23dcd3f095246b19f3fb3abb8db9771a31b74f56640700347610facf5f3e634</hash>
+         <hash>b3e347d069968af0a4610ec0dfc5145049de5cf089ceccde17d940c4db40f514</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\cache\sys_cache.c</file>
-         <hash>7ed94244e15453076a32ec0f0e9d07ee40a74661c3da757c15c568b74f96d1ad</hash>
+         <hash>da28c09b0da0fdd6fb7064631c15c9197c78df33fcd17d742baef909830a320e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_rect.c</file>
@@ -14662,19 +14881,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\font\legato_font.h</file>
-         <hash>fee131d6d91edddf72e3a41ddf66a8eb8b658f7d8311b7ebae1895c84095bed5</hash>
+         <hash>2fc294c101b74dc10976c745908906e5619791eb4a5f1b15463e414d0ca7da66</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can1.h</file>
-         <hash>c615bbfba0692f4d2b02c465687b8960be2f70d73758f8130a4f384d81fee5f2</hash>
+         <hash>fcad53aa3be2bab946218aa90ccfce4a2378fd31c47d1f30cf1347e362ef919e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc0.h</file>
-         <hash>7c1bd6780a1fbcc40c75067995025ce73a93ec7eed4231ee16afd4e99d8d0b9a</hash>
+         <hash>bcb972750f202694f0c44979bf5e586805e1c5a30c1350bfe4c6152c1cb9a613</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\font\legato_font.c</file>
@@ -14686,11 +14905,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\rtc.h</file>
-         <hash>de023e96a1640f6318a0dbfe2f49155e59ce870250c3c4610e220d9ddf9d771f</hash>
+         <hash>e7dc15de2d24b4ce61f323a03de918f60ca489cf5916ecbc5712a2417e0a4a0b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\button\legato_widget_button.c</file>
-         <hash>e7114a1916bcc42da4b8cfc538f77d09f15e425b0408280e093c92d078e1e82c</hash>
+         <hash>b88864c12223bc73b60e239a9bde41877a87f87525866e2ce7a38d9bf608fdc0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rleindex.c</file>
@@ -14698,7 +14917,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\button\legato_widget_button.h</file>
-         <hash>88ad3cdf69b9587f44346877aaaa743f184c73ab60072cbe479605a436ce28a5</hash>
+         <hash>ddb018ba4b754896c5bcaf46c6a1a3c558a92e763bd0a538d37000095c33aeb8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input.h</file>
@@ -14706,15 +14925,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\sdmmc\src\drv_sdmmc_file_system.c</file>
-         <hash>0c600ddf151f7ca49c2b1a21f212a010c2f6e2f46717cc5a3ef5cc357c896c63</hash>
+         <hash>d9ccc4228377cc80f855b932d5205c03cf168edf09f05fadf4e3931e1d8822d0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\memory\legato_fixedheap.c</file>
-         <hash>a3cede82c50da8bd2a93a80ea52aee5ae5a9b55ee097c533d3f01056f93367aa</hash>
+         <hash>197174ddbc7c7ef5c966bee36da8114e64dec8ce734d374c0b31401f800e21bf</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\sercom.h</file>
-         <hash>eae7caf2de3979c62d0e1c5fed18dd3b0b2f0eb3dc7b42ed63c4f4bb9280e2ee</hash>
+         <hash>a5648285ff6f8345876dbde62f9fae77bd237e2d5b5134d9597c15ef72a24a36</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\memory\legato_fixedheap.h</file>
@@ -14722,11 +14941,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\sdmmc\drv_sdmmc.h</file>
-         <hash>adfd11fa4fb647cbc17073c5e43c29875b46cef63c016b655ef8d6bed9d514e2</hash>
+         <hash>697acb93f32d8f9c5fb4987da5587233adf62a9b331fb30a195d1c788455339d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</file>
-         <hash>9f6f4d5f26e8ec216a92b4b1435463cecc8f93b3a9de74f3a372bb32cf6bfb75</hash>
+         <hash>a302e4dd512c7456d1977d03f6fb7828902a9d77f35f74f116fa811dbe295823</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -14734,7 +14953,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc4.h</file>
-         <hash>a21b7edc06e798c212590003e6e8de194c58217fab9669cc5af29ae5703bd6d5</hash>
+         <hash>81ad524faca494b9b4df0e9e0f51d6e2c6acde34d92cc67aaebd287dec9d1928</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_string.h</file>
@@ -14754,19 +14973,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagescale\legato_widget_imagescale.c</file>
-         <hash>eb5952a18c4f4de78ad54a4bbbd1d8dbadbee5c82629689ff13f7a92620d4eef</hash>
+         <hash>8a700120e43af815729590c274a7cf3e1ae79e35b580a5441fb0087b084299f7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagescale\legato_widget_imagescale.h</file>
-         <hash>331adb7bdfc6be542b1cb3690dcd5cfec3d4e7f8006dd74c57b34659e612058b</hash>
+         <hash>3336aed0e1cd3085eb597792561884849a517cf3bb572c286ff03c121f1d9493</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pm.h</file>
-         <hash>ab73313f3760d63aa12a03b580c76d62922cde31c863ca0affb859777e3c2036</hash>
+         <hash>33c94f2dac44d36c08ed4b14bf51ed7f5afb7cedc61ab602db794c43c60dfe51</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc1.h</file>
-         <hash>efbe26115a6951604fcd20763aa0e0e0f94a0491736223c3483251d4873250ff</hash>
+         <hash>4a03fe556f6628f9db6b84779cd40ca79f84e845f69b282eb7184a79229dda36</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input_touch.h</file>
@@ -14782,19 +15001,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\tc.h</file>
-         <hash>c4da9ce90cc583c827d1796d7dff1da2d06113c43ba1261bcbb2e2deccd9b96c</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\supc.h</file>
-         <hash>4e59bd63e5265f01d166a7d9d8a6f1941c842279caf0990daac04d517bb3d99c</hash>
+         <hash>026a28df76d0dee8704e7ee2d401314275e9c92013c8d6f8f743b92b28ac7f23</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\usb\usbfsv1\src\drv_usbfsv1_variant_mapping.h</file>
          <hash>4791a107a178c09906283101cbfb381d75383e22001721f31662a5085fdd37dd</hash>
       </entry>
       <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\supc.h</file>
+         <hash>6730e3f89988d74ace77c20b695069638d3e39fe996044191c914c3d45dde5e8</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\cmcc.h</file>
-         <hash>88204afaecf2b110df4c2268b94f6dd1a21d8684534efd52527211a2725c3711</hash>
+         <hash>2427366d03e77696d6990f9c017a0c4a9b70386d186fc3a2a570ba86b11dc5a9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_hub.h</file>
@@ -14802,35 +15021,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\icm.h</file>
-         <hash>af316cd27e972972400556972c74c88b8b42b5b2652f6e6e73d14430de831913</hash>
+         <hash>f33aa0926b61d44400e61e5c7c90bd3dd6118ee2339ac1f7f62d8d5b336c7c75</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\line\legato_widget_line.c</file>
-         <hash>7fe86f966ef91e8cac9535c1af72a47768b7cc77847c3f29ca4d05df3e3b6716</hash>
+         <hash>20424bbfe760f7bd6c2dc86ef6011fa4ddde0f56a4ca84c47c6bc20a3c85a2f4</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>910fa58ceb264c7e03edce224b6484fc2fba3c8d6656975e3c01cd45cdc5d4b3</hash>
+         <hash>2906f8255a58097a83011b023f09dfa602c04c2d154c39a9e35fcb48823940ac</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\mclk.h</file>
-         <hash>20c22bc974031aa0e91f751cd6df9548b8eac10a98179238a9b41558c00e1ad6</hash>
+         <hash>b97ce00702eb3d98218cb257b0432730ef213f0ebfce19e07b09151883e21bf9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\line\legato_widget_line.h</file>
-         <hash>3f3b3c6788567d2b6f3967f7b443cb45e1b8323ce15bab873090731a086b4f55</hash>
+         <hash>33bff323b7699d5f09d307a810fc10d5e11e88042370f213d70660357eff1a14</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\fat_fs\file_system\ff.c</file>
-         <hash>89210dcb75cae2c2c9cf5e835ccd0b5a8dd5860ac9f79661207076b9a4d709e0</hash>
+         <hash>09f73618c1ac3bd9736650439be337fbfe49018a1db7205126fcbfde1e384a0f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\jpeg\legato_imagedecoder_jpeg_common.c</file>
-         <hash>6436e9c49b54a535d1b8600b501b607fe36dd18ca22a092fb239c4a45970ba79</hash>
+         <hash>841d298fd2691e391277919d6d196a5ee866c4126cc80d6c7742de8c31f3b204</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\datastructure\legato_list.h</file>
-         <hash>e3976e63dc121845db596b5bfc10321e51dfd232a1328032efa1418973d1cbcf</hash>
+         <hash>a6d52daa6de7d55afcc4f5e8c974a9048dd432b63a330bc4b3bb20b394b99209</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\le_gen_scheme.h</file>
@@ -14842,19 +15061,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\scrollbar\legato_widget_scrollbar.c</file>
-         <hash>6830491402974ff72dfd49c97e0d1a0f81fca4c7ce739b4823ad48c59a4529d4</hash>
+         <hash>186c0c748cd562dfc3e2d752992ca6563c2d47e327cf7f29ee02746d181a7ec6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rstc.h</file>
-         <hash>8856387f7d6221ef5b0f5e4b08700da466ef03c8e0350877ad083bda04687632</hash>
+         <hash>4fd3866a085d4c8175ca2ac114541fef189773edcaedd66792f381b9a2309abc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\le_gen_scheme.c</file>
-         <hash>c6a419aec19cf3e126b2d76bec2948d1d8deaa84471cf4188cf18e47134ab803</hash>
+         <hash>4995829b4bcf2975db3a9d6a5171c48f6dcb88f0b45c16622c512e4e8f56c790</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\scrollbar\legato_widget_scrollbar.h</file>
-         <hash>fadde1bc9ce6a530a1bb6ef1d2485fa40262181c5090ebe0dffbd3b2a0bd0e72</hash>
+         <hash>ddee85397e2bc454cdce254691b8b4421d558246802b1fe7f03c7d1687f1f83e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\datastructure\legato_list.c</file>
@@ -14874,7 +15093,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\rectangle\legato_widget_rectangle.h</file>
-         <hash>94516777e808b740e86ce48be7547786ee3fd527b9dfd6d00a9377b55ce373a7</hash>
+         <hash>e7232a4939a64fe6bbdee113a39784a89b149a52d53f69c6c169a203a51632cd</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\le_gen_init.h</file>
@@ -14882,15 +15101,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\tcc.h</file>
-         <hash>24bae1827188517d2a015fd4aee7a149799ff45afe06f3b1f0dbaf55ada74e15</hash>
+         <hash>658f11db618e279d12881ca08d9b3848a3ea144062c8521d6f35256a66ca79c0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\rectangle\legato_widget_rectangle.c</file>
-         <hash>a76ac76dee48047129151b82dab9669d767a60e6975ef59f012356dd495fce79</hash>
+         <hash>bb7af194e53d7259133670fa3de54ce13a32d0f8bb3bece1b3a062322acf3752</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_draw_arc.c</file>
-         <hash>30cb14a19932319828175f3fe9b8dded7a33ed7fe9a2ac58e6afe3bddd54bceb</hash>
+         <hash>fe4b9323e17cab3c7ef5898032918a93cf55aeda7f16e78179f57ed2f00084a0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_stringtable.c</file>
@@ -14914,7 +15133,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\device_vectors.h</file>
-         <hash>c119e2624973964efb9b0e62bbc213fc7beb0fea306538d94ad80f057372c6f8</hash>
+         <hash>2ca6c5e4f11c88f714464908b2a390e9ca48457311f7e72f6f6679dea2b43b86</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_dynamicstring.c</file>
@@ -14922,7 +15141,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\usb\usbfsv1\src\drv_usbfsv1.c</file>
-         <hash>15b6c2889e31b5e0916416a9ff18b54c4de13c36279f867e9d8280cfbddb7f5e</hash>
+         <hash>0f7de080c73bdbfe220dac49234c342cccc30418a5b8de2968ebf865efb54eea</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_color_value.c</file>
@@ -14930,7 +15149,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_stringtable.h</file>
-         <hash>d5e329232652f6e05780d9dd7d805806da420a43a0eef1d82503ff3a63cf69a0</hash>
+         <hash>cbcc1a9026a6ee50f02e490f4a8cafc41fd59e4fc356a59ef8f9748d5761eae3</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\keypad\legato_widget_keypad_skin_classic.c</file>
@@ -14946,7 +15165,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dac.h</file>
-         <hash>8f3e1e98d298a332a917dc7c7dcfc60ad59164e0c6dc3e4dddc8d3e4711fd119</hash>
+         <hash>c8b2c7b5505731f23250050887cd6a04a547606aa375b62732ad89d5b65f93ce</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_index.c</file>
@@ -14958,27 +15177,27 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\sdmmc\drv_sdmmc_definitions.h</file>
-         <hash>8e3fa241696362bae6415e2c9f4d750536d8956fc32845f72406b1f01c7e460a</hash>
+         <hash>4917f65a8afb9ae28e08fab862bfba969b892990b1d1039f1d03d66edcaa826e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\mono\legato_imagedecoder_mono_read_stream.c</file>
-         <hash>26d1a3ad240fb5892a6da12fdb718a8348acf902f4f82f96c6473f2236280f73</hash>
+         <hash>f9d136caf93a756039b4266cf1d31cfde80b6d3c80235525d5741dd749441905</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\i2s.h</file>
-         <hash>bf8091ffefce2cd728a6ba201a63a846819d631f73365c653b582f59f4361e18</hash>
+         <hash>1b50ea7dd9c8fdd6fe2c903bcce274947619575d25422720610df1f4d9227719</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\listwheel\legato_widget_listwheel.c</file>
-         <hash>e1c6b29a703a2ef24e5471704d4bfeaad6fffeb5ea7a12ba15bf41d77e16e461</hash>
+         <hash>d2ec10152f30b4f55a4a3282fee7afd5af32557805f199658e4ff0401f950571</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\driver\gfx_driver.h</file>
-         <hash>bf14e0b4683445342c4f763c36b615e24b0ffab33dade7ab1cccdb1b0112b7f6</hash>
+         <hash>4905b31711d649d5892374e43d49d8130a77c78998d557958eb71c4f71cdf237</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\usb\usbfsv1\src\drv_usbfsv1_host.c</file>
-         <hash>4f05f937a45372e47cb4f0f7a2bde5aea37c222d75787524b37599c768133c7e</hash>
+         <hash>7413265d5020a5f665ac280d2cb3952b6ec5b029d96bf1a241b189edbf24877c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input_keyboard.h</file>
@@ -15002,15 +15221,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\listwheel\legato_widget_listwheel.h</file>
-         <hash>75bc155010de739d1cd6f850f3a9049fb03e91e39e2dca469de65bca59f32083</hash>
+         <hash>04bce10c60d60100b89e341ab281f6f65738c1712626dba43ba82c6fd12690ec</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\legato.h</file>
-         <hash>fa6abe8960c1d00140f822570472c09b6dd02d7831a87682c75c5ac3a0ec9055</hash>
+         <hash>79646dc5498e272741df83cfde01562dc4ea5b59e06e7b3dc10f2d1586080db8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_event.h</file>
-         <hash>e56836c5a176663c061a6364bbb63973426cc2bdf71469a27efc3a330f4524d0</hash>
+         <hash>fb2f37dbfb7508bf5c493b34f5dd8ff2e853ce27fad53ce2057079a781363561</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\tc\plib_tc4.h</file>
@@ -15018,27 +15237,31 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pac.h</file>
-         <hash>a417d1ca2087049de2388583f770684bdf1ac35fa127fe4979df319d900acfca</hash>
+         <hash>4d6e1b144b95ce93732effca425158f82dc53a5780f7d5a934dc63438a6c437d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\definitions.h</file>
-         <hash>abe4415ffd7e9224cb1435fa7bc6e0bbead3258353fbf58b4c75893ae24ec1ec</hash>
+         <hash>f0a30fac1635e4714ec73e950f701728332fa186c3378573fbaa10c7b93b8c76</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\driver\controller\external_controller\drv_gfx_external_controller.c</file>
          <hash>314b44c590be51636e988500a06bb8e7c5bc0471bb9903cbea86b4dc60c8361b</hash>
       </entry>
       <entry>
+         <file>..\src\config\same54_cult\driver\sdmmc\src\drv_sdmmc_file_system.h</file>
+         <hash>3f80d1ef387e9ea48674dd721d301fe0e273ab00870b800ba28a1af40c8cdebd</hash>
+      </entry>
+      <entry>
          <file>..\src\config\same54_cult\peripheral\sdhc\plib_sdhc_common.h</file>
-         <hash>91d3bf1b04a4c54affe1790a4cf8265ca2e5bc02d237920eed9599915a379dac</hash>
+         <hash>8049cf014e600b8504e8a7be2570a124473f7b612b3c3ba3fc65a69cf793d8ac</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\tc\plib_tc4.c</file>
-         <hash>6098e0e9e95cbc46414412ac2b66a2b6cddd6c0a96f3fd93c467e7691e568aa8</hash>
+         <hash>e7b70d4ade5f9e4ae072d1e97c6820f16f0518d6364f2f4ffc600551c5d831f1</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input.c</file>
@@ -15046,7 +15269,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_math.c</file>
-         <hash>6ed4792308018d9cd70dcd2b2e758b27264282c2921a483e538463b99f863137</hash>
+         <hash>173bfbbff90c6fe0122b91c4fab36da12e8da4160a72014347f88d160d36db5b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\device.h</file>
@@ -15054,39 +15277,39 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>03ff23191dabf3871d70216d69851b5339c42cc2f719e0f1d4bf9b74055fd225</hash>
+         <hash>1a6bdac00590cbec796a13351597c695bc1d962a95641bdb573d1bf0dc38b2d8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_color.h</file>
-         <hash>3b21a0fb159d6954744727af76e4d50bc0461af9701d07fbec985d7ccde8e483</hash>
+         <hash>05713a0e9ba22a72a6a90fb971c149739cd3450e7b56a214fc3fc1591a1bb2ff</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\checkbox\legato_widget_checkbox.c</file>
-         <hash>3779f7409aadc1cf20213d6f8c6df88ab8b5cbf4b4b5a07837e8b515047bbb44</hash>
+         <hash>27c455d514f130a8cf2d4604f9d725cc2b8ff6e20b4a59fd3d5e302ce21856c8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\groupbox\legato_widget_groupbox.h</file>
-         <hash>0ce7e6250c37b7305022e0ed5689047bc5127171b49b2d66ae1ca92c4a89db34</hash>
+         <hash>8d73449f3a11649a142d7ea2e1714eb0ff1a464bbcd12b933421c3df2267b0d1</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\nvmctrl\plib_nvmctrl.h</file>
-         <hash>dcfa87f0ff4cc198c8ec4ca6dccda6daed86d3e47d6641049bbb7d92c039b65c</hash>
+         <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pdec.h</file>
-         <hash>cd39a136a27dbe2cac33e570270a27b7b2362a8a8cf4f449ac4f171275966593</hash>
+         <hash>7ed9d8dc6742a05ebc85002485e833fcd10fc585842ac97e1ffaf8891558a79d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_math.h</file>
-         <hash>5195d1b72c755ed2a9dc8804c0b118ccc78a806132d681bd6cfed15a03a21289</hash>
+         <hash>f794f16f2feab8180837496d1a067cfc023cf2157a199a82989cce01c76442ed</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\checkbox\legato_widget_checkbox.h</file>
-         <hash>0c8e5f9e58ef843b7f30d5023922dc9349e54075a8375fa714e000f43fc68bb7</hash>
+         <hash>d3546cae080d4fd304d515b0fd05c56c5257ea7027d0b4eee452e0a0f5fc50cf</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\groupbox\legato_widget_groupbox.c</file>
-         <hash>a9801ac3c76c3b112ad6fabd2a1e1fe320caa399b5b9be1262612aaa22bb08dd</hash>
+         <hash>ea8c4c0c46bc4ee4867dcd0d053986a9272501d12d52c0d5dbfc6b011aecc8fc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_rotate.c</file>
@@ -15098,27 +15321,27 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\gclk.h</file>
-         <hash>2296e16df3631fb3f4b8bbed7c96ce8902c27004d31ea48d2b7718b659726180</hash>
+         <hash>8b00c66c338634aebe6c31371ba8eb3488b624bbdb6b724b012279fc3e1ed256</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\rstc.h</file>
-         <hash>6cee87d4869618630beea72ab9d23c946f084600b7f62ecf4ecb6c80f9a38f2b</hash>
+         <hash>a46b6caf030ff5a3a9a55db2b6ce671d60e26a7149615d8260d8a361a56c46ee</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\driver\i2s\drv_i2s_definitions.h</file>
-         <hash>a9b96b0dd08d1ef7419aa790bc54b2933451e93e0e9d46110f360cd8fab60b31</hash>
+         <hash>e15de5f9644270fa4c6b1dec2c6f783367b8f8edc5f26f9aa30ddb1a56e216b8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\time\src\sys_time.c</file>
-         <hash>ddec1a83e32b63552ae72f884dc849e376b60d411669554f7ec492fff180662f</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</file>
-         <hash>38ac6d5e361dcd3ad092ac98ca8fecf655f49de1b30b22ffabe4bdcf2a075637</hash>
+         <hash>5d12b002d6d4b9bea16d7b4b4914fbc6926f607275540a9a2fd560d2d4b48fa6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\clock\plib_clock.h</file>
@@ -15130,7 +15353,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\supc.h</file>
-         <hash>2fd716d664158b80dc799ef6255fa642eae6eb40e6cfc46344421540d40e24b6</hash>
+         <hash>b3c7e1ab67bd90e0892a372cf32ec9ed4c6862d3fe125ef6e25b881c95500846</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\button\legato_widget_button_skin_classic.c</file>
@@ -15138,7 +15361,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\clock\plib_clock.c</file>
-         <hash>9f0b27b66e899d06b66a4a552301a6df00b566d5aefe217ff5a914cf930ad335</hash>
+         <hash>01d54e0376ad666110b1c80c5cb0cd7171bc63c6927b3fd6e6241c0d7b600e32</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_event.c</file>
@@ -15150,7 +15373,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_msd.h</file>
@@ -15158,43 +15381,47 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</file>
-         <hash>207374b1420a702324c61f8218db4e5917e587fdcc44a6d9a53c645f34890536</hash>
+         <hash>12796b66d85827bf38f665bda65378018e17f09579f4cd0bbc0bb0ad229a4f6b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\legato_widget.h</file>
-         <hash>4c46d578858ecc95324003866c3c6c1bd867a1a8679d21abdd6745f1b3bdb314</hash>
+         <hash>bea12a374e5d5f32dc18b906d74b9d4cdc58bac123095868eb520cb7033c3af5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\same54_cult\pin_configurations.csv</file>
+         <hash>bbec2903a9285e2713ab8a39d5606e30cc11a3145b0c1a5cb7127c7cd48083d2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\legato_widget.c</file>
-         <hash>3c2b489c451a72eb89a3e3732e097f17da4129293022081d42400ffac1f4eac0</hash>
+         <hash>f9195f07098f8a346a7af2ac6502ff0f28102f2ea4cc96810a8842847dc7da12</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\eic.h</file>
-         <hash>12d558e9e19b34fcb458b11d50b2a9084143ed416d668b856c0c70a8e71a739d</hash>
+         <hash>994bdae1d089d80c5ed3364a543af00c96bbd58fce4b1cc7001de977f76b8678</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\sys_fs.h</file>
-         <hash>46a5946f727b22530f0e0945a33cad93077c7b92c1bb2811959709ba7be60e9c</hash>
+         <hash>4ca0bf61b93d1b4335bad8755bfeeed6dfda8a7eb3f2eabfcd9239a0b78e01af</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc4.h</file>
-         <hash>6b2b9e6ef85915a897aae98f2f9e08fa5addc08060278a443a84610b4c44a1a6</hash>
+         <hash>74b7e9b8984523942548f73c7620f853418421e478a7bbbe2b5e633ef90639a2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom5.h</file>
-         <hash>ce800478cccbf7d32dd235d1956ac1ce6eb32b7b2e3ef77801688c99f044711d</hash>
+         <hash>b525d545961df41cb16fae3224c8aa6bb4abe160fc1815104560c96d5fd30ac8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\system_media.h</file>
-         <hash>be592b4eb9eb4cc8f25cf734fc15b088de091d2f8051b0fcba091c1b6194df5f</hash>
+         <hash>e61ba67015cfba6a7425d077cd2c633ba9989218bbe585078efe2face729401f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\ccl\plib_ccl.c</file>
@@ -15202,11 +15429,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc1.h</file>
-         <hash>c2590980951ba0eba417b4d272a70795309f1c94fc7542f9a2d23b89d65ad983</hash>
+         <hash>dab30df6250b2ccb6c07cd0723145de76a83b4327354512d37cb2bf7e9e2497d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>877149881796b1fcc802d2c64b39b5c0421ab0b725096e4c995ea59835e4e537</hash>
+         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_write.c</file>
@@ -15218,11 +15445,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\bargraph\legato_widget_bar_graph.h</file>
-         <hash>178f8681b168e7e34c6fe1b00a85eb0704c637a85eac62b9b9e383029d2411d1</hash>
+         <hash>1bc313a8d54f35fea8ebef3ca45d1d7f25e4519b6b312d983d75a99abe91e638</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\same54_cult\audio\driver\i2s\drv_i2s_local.h</file>
+         <hash>347ca809c4f149bdc5ff3d1c78cc3637535e1e79e76dfd59b46ca4d91b3ca0a6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_state.c</file>
-         <hash>31b951f3c9d338a6f34a38642381bbb94790cd4f83699b0e520707a47be138cf</hash>
+         <hash>2b43334893b574253509f4830d0c6ccda57c8b067a315de554a5657160edf918</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_host_client_driver.h</file>
@@ -15234,7 +15465,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_state.h</file>
-         <hash>51240ef18d358731042773cc74cfd11656e713e0f11f43c7abefa311038b8745</hash>
+         <hash>021730fd1ba0ab8a75fd98242ee8115fcaaf610e2cb7b17ec901f886e7f404b0</hash>
       </entry>
       <entry>
          <file>..\src\app.c</file>
@@ -15242,19 +15473,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\radiobutton\legato_widget_radiobutton.c</file>
-         <hash>21ff5a7b08b7a7707f2143bb253dde59f9496901c1aae54aff5871a5b4053deb</hash>
+         <hash>d2243e418f81c8a3de5f753d184128b2d9b5692c569cda525cca4da496ec8db8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_draw_rect.c</file>
-         <hash>975628ab8a04b3dc6b1408491e07fe6617631b11ec85f97bb4c6d7bc9938a2e1</hash>
+         <hash>173e373c177eff78f550342ffabbe552ad76091df82960aa27f69a235481ee67</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rtc.h</file>
-         <hash>cca9ecde250e7156cd0de6016e6e5a21522d75467b3df0760ecc06d4b166ed0c</hash>
+         <hash>99762d9258fba211e2707f8204c298469ec6afe777136beede4333363cb1cfb8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\configuration.h</file>
-         <hash>01af3c77a024eb3b4f54006523810ed11a3582566b80278aeac60436447020d4</hash>
+         <hash>1788d16a7fd5d0cd797201ffce82da8abb4e34ef376351f5ad5bd758bc478ee0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\device_cache.h</file>
@@ -15262,55 +15493,55 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\src\sys_fs_media_manager_local.h</file>
-         <hash>bbc6074719c421b07d4540ee6e745ae4145239f698780819c479e13bfdd9ddd5</hash>
+         <hash>5d471f0372ec41b3ef362ad533beede076e4e959274e57221ed229b996d7231e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\dma\sys_dma.h</file>
-         <hash>cddc4eed93fb89773cee3af6f03b13e1932288d822b1f3be0fbc85e3ffa3290a</hash>
+         <hash>c15762305460aac605f3839deedf888b0b632c871f2a9a5c6b9b55a85a278a10</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\port.h</file>
-         <hash>de1105304d3693578b62a9112a9bfdc085f80428f994a93bf7c01d8ef4a57d96</hash>
+         <hash>25304e398b3ae71d4a7ebb4ed2ec9032ccfa7cc8d5b89e5ab0688b351262de93</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\dma\sys_dma.c</file>
-         <hash>857103c3cdd998ea45f31516f435a01901a28afe894c8cce719240297d6c7546</hash>
+         <hash>b898eb7b174f17cd7dcaff8afef4fa2b878dcbc3b4db44b23810c78af55ffd6b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagesequence\legato_widget_imagesequence.h</file>
-         <hash>1718ad098a15739e36aae7e3d6e8f9f27ff61fb705551a5c9833619e7bd2e45e</hash>
+         <hash>086f9e4bb1dab80958c03075a8ffba4d6cda022a62592107fcfc2fa46879aaea</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagesequence\legato_widget_imagesequence.c</file>
-         <hash>93defd481660ae6a5da95455b3fb838c15c40b82ae4b6f7bad610cfb379c7cfa</hash>
+         <hash>a65278b8833e71ccf0d999b4c65a4ef65fdd165076c1d36d3d99717945657c6e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\gradient\legato_widget_gradient.h</file>
-         <hash>6fed795c29dc12ec5bea1a323729f307c4b122abf467a7b1e7d26a84f25f7e7b</hash>
+         <hash>5d69fac37ff07940571de4ea4b5f592b1e6f09fa39f4358086723de6ec5ec7ae</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\gradient\legato_widget_gradient.c</file>
-         <hash>7fbd50f045c2a6b9f3bd29ca44ee09b4d8381c7031e4e2aecadfd53850569cd1</hash>
+         <hash>aab8dc90da6205d3ef966ea5af6f71e1c7ce2b76219f099a8eca0800eb113cdf</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dsu.h</file>
-         <hash>7e7c1fcc3d0e3f5de34071b85eb59f0227e6ff3d2aab27aa2a5bb27da12bfa70</hash>
+         <hash>df53a4c777aac557859b363ed8d11086d8e1e24edee30a9677038dde3bd31f82</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc5.h</file>
-         <hash>eff1e6f24c35076ccb6b2b9cd920f8e387e2eb0ba31546355091782013666e66</hash>
+         <hash>62637ea95ac7aa6e8618b75ec6758d338fb69f49da153dcf3050e01cfe6fd795</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\radiobutton\legato_widget_radiobutton.h</file>
-         <hash>3f7f5f0e9e291cfe64b0f1e382cf59eb92b4c19e80696fb8c19a346d083b5c49</hash>
+         <hash>f36f6109be592673b763c0971a4997b3aef148f432a3830d2af47cfa171fd754</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\initialization.c</file>
-         <hash>e9407f0070f40087ae893d5a90619838d2285922d85497214a350dafdb9a6c8d</hash>
+         <hash>2a7bb00d55be7c81cf5c7f15abfa1be17b6579acb9cfa575acab50e1543668db</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\list\legato_widget_list_skin_classic.c</file>
@@ -15318,39 +15549,39 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom4.h</file>
-         <hash>8464dfe73e6f848633666b6b83101e139eb17a3f93311902818ce9d7a7c41d21</hash>
+         <hash>81cabd9d9fe6366abfc759ce198d12e36c525dd3185cb5a180cc3d4fc3cc8801</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\oscctrl.h</file>
-         <hash>ef4820f7a664092a8bd0ac69fd61b6159d7e5001c038ed62875ddd3c310b145c</hash>
+         <hash>97b84e4e3281fd623c5ddcfdb3d3b906f387dc1668488a2e9d3ac5d97a366285</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_renderer.h</file>
-         <hash>18fdfb45e6166f14147fd0b9cd92f3ba528bd2394f1ce569da973eadc808504c</hash>
+         <hash>9a0155fa825cec3a872cc886bd7ee8d91a2a38ff0bc528659edf905963dfe35c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc0.h</file>
-         <hash>f0db037d01527f2bd947d7ed6df38995a48be9c6268c37168353d615faa484ad</hash>
+         <hash>c8bcfcc090bbd04358d9a6deb4718d8b687aad99fa8073e8e249a9b647d417c0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\radiobutton\legato_radiobutton_group.h</file>
-         <hash>fb968531ea8e46655428ba2faa6c74622bf08a790a393cf69b61171cc0570f3b</hash>
+         <hash>2a597192a279e9d1f1f1deeb94c9882a63d30ce7dcc357ebe80ac511f185d96d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\ac.h</file>
-         <hash>07959fb89a30087a186cb5c87c729677b643c09eb3be55d431c8826fc72700a2</hash>
+         <hash>9e5aea0e3b2e23ff0835b19d2c749b9a00c95375a4488dc42c4d713eb17acf68</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\keypad\legato_widget_keypad.h</file>
-         <hash>efd86e574c4a8500fe5e03f7f8a972fbf59d60cec54607f1526b458d12ff3632</hash>
+         <hash>495fb799d9d276cd4767a05d53d3da4dbe245b9ad3564165772ea59c6caf3585</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\tasks.c</file>
-         <hash>612e22a656b2ac1dce6b05a611debcb32da19f6dd1bb19d06f58896cd5ee7d39</hash>
+         <hash>d04856990491ba3f09d9857539f906ba2b88fb805140d0c92537b5703806246c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\keypad\legato_widget_keypad.c</file>
-         <hash>0b87dee0da73d088a7eb7c0d4a74d1ca63f52fe823bb11c6d5c71985bc9b41b5</hash>
+         <hash>7aa5b75e9614a9a99922344e2c425a11d332c1304784c77ae9f42b9a3d37375c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_color_blend.c</file>
@@ -15358,11 +15589,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_draw_line.c</file>
-         <hash>2344aeec3f4270a9419ea2bbab43e275e3147fd6c83c71f5f8511db8c59c610f</hash>
+         <hash>5a5225ae699e372c0982d245dbdce998d17faee3129fa8d97b8160d43407ce77</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circle\legato_widget_circle.c</file>
-         <hash>78b04ea3c1ba40a8ee83580ce80c8e8ebcc8088fb93a44db8b1339f170937dbb</hash>
+         <hash>aa5da2769246f6ae059a6cccc96391e6e9069de941e516e6ecbbadac3cb87d39</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\line\legato_widget_line_skin_classic.c</file>
@@ -15370,19 +15601,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circle\legato_widget_circle.h</file>
-         <hash>89dba4c516687aebde6989ae208f99319a33b8a3e236e0274716498b94d68907</hash>
+         <hash>2a8ad9f81660b58baf586da863c009be7636f2100c13dcde3fed50a600ac09c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</file>
-         <hash>3d6481277a1bbb7b75fb49cb233388c6c7c6b9fb09de849cbd90cd98ced4f799</hash>
+         <hash>d159803d7aa52259b3353e963f90a8cf54e1fef57bc65acb48af188d1fbaaaa0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_renderer.c</file>
-         <hash>bef2d6fc1469a10406340243668b64364877b8d58ef8fc5f230399f380a1d10c</hash>
+         <hash>8670db119b7bd79b2b2ae15ecc57f27c1f345a6fd21c57a824a3d0bdcdfd4c8f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dmac.h</file>
-         <hash>b6b23197419ba8f989cc010ee55a4c4b8d42c3e064fa7d8c98f1deab083e60b6</hash>
+         <hash>cb3a2cb3bda796110c7e5dd2cb63c7cb5c504eb541ab43361a458ec8dfcc0539</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\src\usb_host_msd.c</file>
@@ -15390,27 +15621,23 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_common.h</file>
-         <hash>1a5b3c66b398abc354e9a7d933e02803568d388d96559cdc4221bf8b7bc6836d</hash>
+         <hash>9c048287015309dace77916404332a3bc017289c0727ab56277d651727a5b8e3</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\libc_syscalls.c</file>
-         <hash>ff03e955db4f7bb775c7989bc2254553698f3d921e9885caac347ccd118e55d7</hash>
+         <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
          <hash>d59a9e3ed4cf43a3c74a2e48f344d41be2b6363ef9394ea2c551052fe553a6af</hash>
       </entry>
       <entry>
-         <file>..\src\config\same54_cult\audio\driver\i2s\src\drv_i2s_local.h</file>
-         <hash>81c6036518412938739cf425b2c1dca665ce1219546d2de2ad2b302b17ddda29</hash>
-      </entry>
-      <entry>
          <file>..\src\config\same54_cult\driver\sdmmc\src\drv_sdmmc_local.h</file>
-         <hash>b43061fb86929f99f8b414ec1733a726b52a0dafed0b54c3082464fbf291440d</hash>
+         <hash>07a772675d632648815baef0ed90e60b3038a6aedf7dc989042357f93367b0c1</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\src\sys_fs_fat_interface.c</file>
-         <hash>581a4c11a2e6c4aa4aa2c64742b276d5d4b3bd1dbdbed1983aab17f162f4c47b</hash>
+         <hash>c7873a18d6d2ee9cb2eb1bf9c678dfc6c22837d4c22e5c3bcbf30507b3aa125f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\interface\drv_gfx_disp_intf.h</file>
@@ -15418,11 +15645,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_gpu.h</file>
-         <hash>9729a96a8d73007df72a13110c158bd5fbddc844527878c65e54885430f93f85</hash>
+         <hash>ee697fe9fbe34a099121d2a5e6b1b5d2f3bf2c49a5fcabef34cb296a19384aa0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\window\legato_widget_window_skin_classic.c</file>
-         <hash>97a665219e5e55865135218f28a76e2a20f6665e4a05ede4ae8e30067e5bca36</hash>
+         <hash>dd6b3e7c710431206685fc51459a31358dae4e99be8dd14849be4fe858ba4cc8</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\driver_common.h</file>
@@ -15430,15 +15657,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb_host_init_data.c</file>
-         <hash>734f2b3bdc904bdfb45eecd91c3325de966334fa9028adc933cac4a3bd25979e</hash>
+         <hash>b70fceb8728cf30515f3d9ec38ffad68b6da831e9f50b325627189f1a8e9e309</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>7d8c120d2620b978d82c1a20cdb9c2c243e797a35cada318091f65da70f4432d</hash>
+         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_gpu.c</file>
-         <hash>b0756ce63da7917dd1e428263ecd81410290af0c8a19255ff872dae39e6ef1c5</hash>
+         <hash>2c875be18e8daa42c03196428cf7f00b8f9829a595b4c31eb9ebe45397e7b48c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\radiobutton\legato_radiobutton_group.c</file>
@@ -15446,11 +15673,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\memory\legato_variableheap.h</file>
-         <hash>87610ca9afd33a0e862a7f218ed0ab70591ed5a1b34b9a84dee50cc3004b5d1f</hash>
+         <hash>bfd908522659e4755dd3ab8405935af45dbabc9f336690ceb6c82093ffed8ac2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\legato_image.h</file>
-         <hash>a478775d3560e86c1f9933877c19531a6f2fbdbdca84b601cea7d091c63ab431</hash>
+         <hash>eac79467eeba5158cc581ab5fd98a9a8a0266bf34d3f3e35d9f1de44f5d29245</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circularslider\legato_widget_circular_slider_skin_classic.c</file>
@@ -15458,11 +15685,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc2.h</file>
-         <hash>be74d0b80ce3b98acc80661f6bca0a9ad3bb11b333fb90be09263f7e3b60b2e9</hash>
+         <hash>6b42295db2b1a2bde1a462d402554dc056103d8bdc8e2140d3f2dc639ae7a30f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circulargauge\legato_widget_circular_gauge_skin_classic.c</file>
-         <hash>d2f11c35da7f40a3626a55a02ce616792f5acc48e4f54ee24c46cff9cbc3e68b</hash>
+         <hash>dfeed151d24ec901c73ab5c629327620a305c123a5e4b6770d4dadaa01e7fcdd</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagescale\legato_widget_imagescale_skin_classic.c</file>
@@ -15474,43 +15701,47 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom7.h</file>
-         <hash>258d690f9c39cb3ce866201571022ed27e6bcb9e8ccdb046f880349686df0fed</hash>
+         <hash>df25ef4bc7a320c460584818c67c247c5cbd9579ff69e86f66d68eed937d7f41</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\usart\plib_sercom1_usart.h</file>
-         <hash>d74c2d189eb467238053b770f2ed9811f698be2fec037a1187f390a3abd8bb31</hash>
+         <hash>20275d0f8ab3241a780bc4787dee53a30c43c9f33c6f3a6eb7ce23e186337b6c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\linegraph\legato_widget_line_graph_skin_classic.c</file>
-         <hash>7e0a0d521a9d2603ea93ede08d11d9bba19df91e9a12e2364c2c56a79a7eea2f</hash>
+         <hash>8e3de8e4c850d8674b7085b78db8cc85e3381b187a8a86e2c28bf0ef8d7db7ea</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</file>
-         <hash>6e9dd9a6a3222ff90b84a6ca73a5d23002c2b26a550dc95abcfeb5be2c96fe7e</hash>
+         <hash>744ad0ee6b14a0b88a93ca1b7663c41bd150e48bc1a567a1046cf267f0d512aa</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</file>
-         <hash>b944c3303a4dac6e5bfe46317a0d77ef5f4c9466621cef69f8d68f54ba6f0e03</hash>
+         <hash>a104fa7e27e69ef01af2f984de4aa8c434e56204b44d42e195b32a602b8253cc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\usart\plib_sercom1_usart.c</file>
-         <hash>0341f19d003c9dc973559603cb916de0761fea62d65e1be7d69d7df3dd3dbf58</hash>
+         <hash>9a156062049f0ae41a041193f362652642bb150324bdf0b0b0a6c485871cdfa3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\same54_cult\gfx\legato\widget\radialmenu\legato_widget_radial_menu_state.c</file>
+         <hash>beddd4565f9de6740724aa09e9f13387218b0ea891a8b393f44d3ba2d077438f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\driver\i2s\src\drv_i2s.c</file>
-         <hash>f627ba2523d9d8e44a60766bd4692f8db26868612d1d1f8ce00a6a4035bdef68</hash>
+         <hash>83153527053e4e3967f1fe378fd80228c3a2e6e43fd7f7db02dce0320b4f991c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\adc.h</file>
-         <hash>7cca0111b5938de7baf9463ff6092e407e399e6e1271c194ac000de0d6f389a4</hash>
+         <hash>6f54c703b348a1bbf701bc081cc14e6222de49beef4784cdbd6312af2b8c2737</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.c</file>
-         <hash>d7346bcc3ab3cfcafd9ef0cb3d3dc7548b4e3254fb909d9469f431a9cb88f3df</hash>
+         <hash>9080b22546fb464f814d8ff65cd9d981622ee5ee6639465b753140b59d16b761</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.h</file>
@@ -15522,23 +15753,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\aes.h</file>
-         <hash>e9e78d8ad36856a7d5df96451729740f51ecc92ebaa346fbb3f56580e8d6404a</hash>
+         <hash>375d97ea3a789d5756c3b9b0d6a98a98ad9094503bbbf32feb934518c7971993</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\ramecc.h</file>
-         <hash>a5e8f1725f0a0e6d069679138e3a9dc9f8f1205a78cd2b5766c0a7763528a61b</hash>
+         <hash>618b8d24318107373ef2e53e394fb73a175cd24e183918e34bd8b2136003558f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\dma\sys_dma_mapping.h</file>
-         <hash>f40fd52b9e96c213abb3996b309103da33f134a85f90c874a99d2184c61c0ece</hash>
+         <hash>ce3b0fb5a381953a0804e467742d198578a5abb4b419c667565553953c4d27c7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\driver\codec\wm8904\drv_wm8904_local.h</file>
-         <hash>5c3d8958ff7b379b3eda280bfb36ef2571d3738682061734810d2d2ba861b2c6</hash>
+         <hash>11e3ec986c78d14ca8b39072ef7220401d920a7f4754aa6803cafa6fce5bb313</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\qspi.h</file>
-         <hash>e327b5f371a5ecd1f186c1bdb2b97a39c94fde52c79605f4bc408617bf5fd75e</hash>
+         <hash>a90169dd81ac1fa626f803b62bcba582aaaec46734e8e643501b14f50d99108e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\tc\plib_tc0.h</file>
@@ -15546,7 +15777,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can0.h</file>
-         <hash>a7bed179ef6e03d2c4fff50b3f2e91e17b024f92aeb59644fd89971a77d2e0d8</hash>
+         <hash>f5aa2e35d802f24e0f5e16b5175ca88060c34b9313f9fdf0ddabc3c70aaa968a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\ports\sys_ports_mapping.h</file>
@@ -15554,11 +15785,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc3.h</file>
-         <hash>b4df28e8d47dc0f3ed75c197dec763f03432a8fc6be8d21d42a7a987036e64b3</hash>
+         <hash>b29b6aaf1adfcb0f6896946aee07179854117f4225315eae82e8e221d3b17efd</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\tc\plib_tc0.c</file>
-         <hash>21e8380d0d2debe04631a3bbaf83b5f3130c5681b5108f7381331ce31d7be380</hash>
+         <hash>ff7691d558fcc6db31bd989f0b97c42c5668815d2049f38907a242f27738e659</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_common.h</file>
@@ -15566,11 +15797,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\hmatrix.h</file>
-         <hash>d221b32c6ac1eeaf96d66f9519dd5f47eb1fe85a08c53fe13463c6ec689ae775</hash>
+         <hash>7c1bbd8c9e60cae12250cfa7e436564167b0243e2136de96e545900830dbfc55</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\peripheral\i2s\plib_i2s.h</file>
@@ -15578,11 +15809,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom6.h</file>
-         <hash>048dc232b81667fa40f6ee614e418bb152c3187c898a0877fe181a3e7c3ec5e6</hash>
+         <hash>e15d2db5ec8c4364bf6bfe529e1ae9550c8d08438551a51ff443131f39f9a6b0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\src\sys_fs_local.h</file>
-         <hash>9757dc4a413f39e70813ea66b1825a7467f1b9a38a94d066fd39eb399361b438</hash>
+         <hash>7e7721693694ecc133d6772321cad1337c0a2209b7457b9351dda3a01cb129b1</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\legato_image.c</file>
@@ -15594,27 +15825,27 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\peripheral\i2s\plib_i2s.c</file>
-         <hash>3182e0f1bc2312e85b22337b686058fac536a0456e9157058a48956c95665752</hash>
+         <hash>8124390b31e19f235c006a491e64762e801701786f7583523746f8fd6266cb10</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dmac.h</file>
-         <hash>cdf093c2d71c1c49c6ae46eef03c4da626ca7da6040465a37dcbdcfdfc8ead4b</hash>
+         <hash>9c4bfa47388a52bff2b04e537c8d3f2a11cd4576947c27b4c7fdda11e77ef4a9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circularslider\legato_widget_circular_slider.h</file>
-         <hash>f7ec19f9ce56cacdf61a39de4ca7e2a9476338ef1da07d726dcf6425ac647953</hash>
+         <hash>076403f0c25f2a55a5506f3774ff33f692701387b745da4eb51e203604da9bc5</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\drawsurface\legato_widget_drawsurface.h</file>
-         <hash>9d37c8a489c560f31f93e52e0dd22b917c065134590837705d22fea13fb7f03c</hash>
+         <hash>e7e82efaeaa2af539571f167d8a66eeb80ae9bb53793375416d67d109970cff0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circularslider\legato_widget_circular_slider.c</file>
-         <hash>3999c52451dce511f684523b25684b03c7499b9cbebf9271e658103173695712</hash>
+         <hash>998f2dea10e1144d446c6c85ffa700d382f6d5b564e90b887e2f019f0dfe866f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\list\legato_widget_list.c</file>
-         <hash>c2b0d7b2fbe4bbe6144042bacad5b91b3e582f23d5fa42ab9f1931d1345d93be</hash>
+         <hash>76cd79d99adccc089df61da79159d17866877b21cb90d2b4e2d8a31a7706c25d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_color_lerp.c</file>
@@ -15622,23 +15853,23 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\drawsurface\legato_widget_drawsurface.c</file>
-         <hash>1980508afc8e18f8653e1aaf41bfe8ed1c93a302e264eb89a834dbe624576270</hash>
+         <hash>e394b25b38a5645a5f40424c0ebcca5c1959d20ac59740330748daa5607a81b6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\list\legato_widget_list.h</file>
-         <hash>0c9fa86bb717a17a37d042710177888c3353c60777442f6d3f6473504b676695</hash>
+         <hash>23f8a2c0ab59dd4269f9cf4c8ab3f08aff3e505f5d5d8703c14b51c8a68cbaf7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\arc\legato_widget_arc.c</file>
-         <hash>6e6b107efba68e7c5dcbd4771ca22be681ac1310ae30e6b61bbda251c58f3fae</hash>
+         <hash>2ed3accad62315ec8a620bdc0bae6f712132eacdc3bbc3b5876eb6ebc264c7c2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\datastructure\legato_array.h</file>
-         <hash>6a40bd2c577f607734ab0b617fa223c480a5e3dbee4010e10962215c1af6e0fe</hash>
+         <hash>5cf11151d0e350e180620a86c2b2975fe62c429e81b0db45f5aad7f33446bb6b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\arc\legato_widget_arc.h</file>
-         <hash>332809d39da2257d6ba6689c466a8bb0c4cd995d08fb88228008e37866fe9714</hash>
+         <hash>59f4b30443e8a06b0611b1a6be30db6f75d9b8a535f611a9cd3a0db9cc8d8be3</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_color.c</file>
@@ -15650,7 +15881,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pac.h</file>
-         <hash>76fca352c9c26cc746ae966726daf347c3e069dd4ff934c5d30cc87cb8928f4a</hash>
+         <hash>bdc347e8fd53726a85c3b9fcebb2de7ad6444bc3882627e9a8b51708bc1d29f9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_stringutils.c</file>
@@ -15658,15 +15889,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pukcc.h</file>
-         <hash>aad19fde901f14472896ba53b1bed64a04ebe156eccbfdf0cca7f3780ca2c5ae</hash>
+         <hash>df43121a4bcf106bac3351eac480d07530d1ecfedc4efaae43479902b9386c90</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\datastructure\legato_array.c</file>
-         <hash>5af0679fa56998e08d3b96d58aa2f39fc6f318ff2fd8b2162c7a8fd8657ba52b</hash>
+         <hash>0c0912af497741bec7b15ee3992245a18a9dd1a57fd34cf34d41073629f1e46d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\debug\sys_debug.h</file>
-         <hash>c17a266d85e3ed1dd692a96184193c0ebfea1099f6698ca073f82418d92d8b53</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_host_scsi.h</file>
@@ -15674,23 +15905,23 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\dmac\plib_dmac.h</file>
-         <hash>1ef0c3d536723bec25783e268b536d7366fc7958f2af17029468bf716dae6a62</hash>
+         <hash>717bf86e7fbf9af5574a06add397e50b6741a67da0d1fd2a43243990faf8c85e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\usb.h</file>
-         <hash>93915ec37587d35362eeeb0fc3fa2322fb456b3c0d1d11e611df182aaea4cb9e</hash>
+         <hash>923cc6055ae5099b68c4f3dc8cfd2cfc9bd199b970a8fdab393e490c61ee5367</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
-         <hash>883fc09543652fd863e9111e16084e31cb7dbad35cbff5af72270e33fbe07130</hash>
+         <hash>a27141d58908838156678ba3dc44bf2e31f6c126898db4c0aef4b35f46cfd0af</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\listwheel\legato_widget_listwheel_skin_classic.c</file>
-         <hash>0ab46b9a745f7deaf71c2f91662dc8803dabf05073b233a3611694264464e0de</hash>
+         <hash>9ce4c574de757f31f865a332c0cd86858de0fedfcdd46f3bfceeed18dbb73ff2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\driver\i2s\drv_i2s.h</file>
-         <hash>7c14b305c56d824fa210122a94200354c2f107e6200797b41380af9a94a8f788</hash>
+         <hash>9baaf11b89c312e85dc3f5b12b95baba650fa9b2ce6fd8b447bd058c7b4f7602</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_color_convert.c</file>
@@ -15698,27 +15929,27 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>2848a66f0697334725da29c9d34c6ef70de140804cf37ac3511bf6175afa0b8d</hash>
+         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\src\sys_fs.c</file>
-         <hash>25d27349ac93f74a60186c235b8b1d7f6a4c25c53c97642f0df93109a2a6241d</hash>
+         <hash>9fddd0e0f98f78690226049c454d1f1f05f1b24f89b37da043f7fd2522a49502</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\touchtest\legato_widget_touchtest.h</file>
-         <hash>b1b5dbfca70faef923e543f4b4390a9d1e7ee9ef7d1d9aec58af70a3ba3ff47b</hash>
+         <hash>337643065e8ae3d8952f37c1ff64ed43757ef465c6a4d090d7074a4f6d48dc60</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\qspi.h</file>
-         <hash>fe75e66581ef99bdb520569387d5abf77fc8b3b2acc944bd034e6909a86fad8d</hash>
+         <hash>49791aac2c3d92d177244ebc020803085f4c3dd7d568af29bfbcf8fb868f584b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\touchtest\legato_widget_touchtest.c</file>
-         <hash>264a893978115d50f30679c1b9f7edb156d9c3dfcc23f39d1ca5147d7440eb1a</hash>
+         <hash>153650239baf625669025d719dd70566954aeaca7868c99d90568c11bce0d0d9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\toolchain_specifics.h</file>
-         <hash>fb1c58b7fb94545ef6247f18ea3001b719e06ec29bf39bfd68fe3927f709eaa3</hash>
+         <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -15726,7 +15957,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\evsys\plib_evsys.c</file>
-         <hash>b172b5214a7c6bc4ec9a0dfd34e43a3e437304d09b8285f3ebaee2b78cfae2e4</hash>
+         <hash>a4088458f0f0b5602791598e477025f21e0a6c96aac44a335b6ca7f39dacd69c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_error.c</file>
@@ -15738,7 +15969,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom1.h</file>
-         <hash>42aa5cf4cdd14f3d9d966328d944902d8346c00712e012c2ff809cd86d3698ac</hash>
+         <hash>6ee141ad7485164f47de8dd0e539c8e9ed09a6693e1105893acac792b0735016</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\evsys\plib_evsys.h</file>
@@ -15746,15 +15977,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\exceptions.c</file>
-         <hash>8373b825c302768f52e3568c20241f4eb49c1fbb3614139e8e65ba694066141e</hash>
+         <hash>89852728a9a1cc4c9746839cc3caf5308b8698c0c30bf6bfbad0db9e552a387e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\dmac\plib_dmac.c</file>
-         <hash>6166b3a373776a33d9fcc940dd212384e21aa67771d3f3c1076cecdf306218a2</hash>
+         <hash>473b4cce78ef9f66f03ba64ae5cef20596ae338e385b9022fe087a9985700b3a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_error.h</file>
-         <hash>13d143afaa2ff3dc8ae64326dca05ee8efface1caf78de7a0b07ac4c8ceac60c</hash>
+         <hash>d37f93003691dc91b4fe0d327ca3b3a874da4962122c17870550106f5d9fe2fa</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\src\usb_host_local.h</file>
@@ -15766,7 +15997,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\sdmmc\src\drv_sdmmc.c</file>
-         <hash>0e58855ab55759c391a22ddca3999240a39c597f93a4d21c116aeb63e32c215d</hash>
+         <hash>bdd8c5fdc0a46544b6915464dc275025042dcb46e5719ff05d0eb8d1fcb10289</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\touchtest\legato_widget_touchtest_skin_classic.c</file>
@@ -15774,11 +16005,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\ATSAME54P20A.ld</file>
-         <hash>50fef922a36e934b5480ec39fe162016797fa6dab586b4b4ed6cefb304dce5c9</hash>
+         <hash>d16806801e07c979cea29ee524ed4c3d3e526c5cb77c7d8adf4128ba06157a04</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dsu.h</file>
-         <hash>8f1e896afd49a662fc7d948aff2d59da68f8cdc5bc29610f1fca50d76ce7c83d</hash>
+         <hash>4d467fa0a2ee972905f44d15ce7af0bedb6fb4a5b0715afde27b61c2532959cb</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\font\legato_rasterfont_liberationmono8.c</file>
@@ -15790,11 +16021,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\piechart\legato_widget_pie_chart.c</file>
-         <hash>77e88545a8005516342097fe109861f082d329021eb4d7bb44900016a6ad22c7</hash>
+         <hash>b6010e92d402c1277c12dcfecafef2a6df5f4ab88b2f9bfd170fec755cb70320</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\radialmenu\legato_widget_radial_menu.h</file>
-         <hash>0ea1e373baa08a2e86005d296bbb239a3be3b308bf50acb880a4a05bc062d79c</hash>
+         <hash>7d696452908f7d5067122e9e8950f1ea3403c28336c430164f8b04b95ccd3eae</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\groupbox\legato_widget_groupbox_skin_classic.c</file>
@@ -15806,11 +16037,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\piechart\legato_widget_pie_chart.h</file>
-         <hash>94aa15f972e57252a2e22a0d67b0637485f2b21afa8c237697a7504cc8e891a2</hash>
+         <hash>0bce91b83a86ed22b7d4d47e9fb8b9d16e412ceeea8e2e4e874bd3beed29e8fc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ac.h</file>
-         <hash>fc66e24696d5520af080c749efe402a3dd90732c1e818b71e78268fa98098ec9</hash>
+         <hash>d96711dc1ca8858e49f47f382dc9e0f3b85e493ebc860f632540f161f0675559</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\png\lodepng.h</file>
@@ -15818,11 +16049,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\src\sys_fs_media_manager.c</file>
-         <hash>f0f4465a9ed84af262dbeb3cfabedd1fd7f888c5d9197e8ccebf57c4220b867c</hash>
+         <hash>cde01f958746b2590eb6a3bed91714b3857d939e87a0885f972e6de4c118fea4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\sdhc.h</file>
-         <hash>94b7d37af0db6463cf64b82cd807baacc341d2a8ff8b725190da97bf7e2d2510</hash>
+         <hash>fd25d7d2616dd93ff624b8b29bfff75454d60834b0ff6e802d0fa6e52f5786f3</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\user.h</file>
@@ -15838,15 +16069,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\png\lodepng.c</file>
-         <hash>684e7e52f3d373262c8859a7757121c2d269e29a99e039688ae524ec2fe08c9b</hash>
+         <hash>75b029a69d4a50c3ac27f75766577bf227abf5f35b38bc1375fb18d4e537e833</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\radialmenu\legato_widget_radial_menu.c</file>
-         <hash>33556348b8ce45267d8cfb08ee3011b406a2ce4a884427fadfbe1fc7a37f5ec4</hash>
+         <hash>779eb1d6fa8090878a3c112a1c6d89173420fb92eb53154faa412f3508bd56c2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\port\plib_port.h</file>
-         <hash>0e8fbc1311fc5bb233abd70a92ce35241d49bfe570128e20a512c6c084f3765e</hash>
+         <hash>1340df7a9234fa9f98115bb60d10a8541f63f99b7f9cf4450fa52073d80c6bd2</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\legato_image_utils.h</file>
@@ -15854,11 +16085,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
-         <hash>ff9e28a56c761d9cac20d42c6819063321f71c0d2726249be9bd818e44c3811d</hash>
+         <hash>f167b04b3c6a0f83fe41b7b6f810cbf0a48b8ca7d5a747b76463dd53d3c1a2a2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\oscctrl.h</file>
-         <hash>bb99b225ef227789e33b3fafc06400f6c55af0a47ba888c6fbab88b7587efbc2</hash>
+         <hash>2732b3edc7b584761a0fbc992479a6ba1d58b570b7e920b3cc6fda5b6d54603e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\rectangle\legato_widget_rectangle_skin_classic.c</file>
@@ -15866,23 +16097,23 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\port\plib_port.c</file>
-         <hash>4ab04866ac91102f64bb5fad5e92ad6188ce867ed4d3142ff847dccd5ba16ec8</hash>
+         <hash>25bdd8bc33e041074c4a4abfdcd74a6079cff6420010ff63518223dd0ab9ae29</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom0.h</file>
-         <hash>d03fe7e654571f01422e17b1ef108c0209b25426766470eac09494225f96f676</hash>
+         <hash>7adee6d7c5fac823509df0a32f63becc6dcb1a53f50b8f0edbc3f97b8cc31097</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\i2c\drv_i2c.h</file>
-         <hash>c17a0a4f6904f2226706c71821a1dac31171a701181677c9bb512049e20b71a2</hash>
+         <hash>098d38bbc9c9d42befb9e601cfaf7f342ce8c670b788c961ef84df6db1ecbf82</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\fat_fs\file_system\ffconf.h</file>
-         <hash>362b16c509f5f5d3c6122d8656718a09ae80cdfe77710fc1c735991b94e8bf69</hash>
+         <hash>4b18e8ce0011ac7b0914aa6de52c456333b08a6d02b0d6953fed80ed67f5d2fa</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ccl.h</file>
-         <hash>514b4c3c93ea30ec6c8d8df52f4eea59d29ee17c7ca6c089b659f654af434599</hash>
+         <hash>3192e0db675e1602b9a620862df2b1a7412e152ace23039c528f40e514da1a58</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\label\legato_widget_label_skin_classic.c</file>
@@ -15890,15 +16121,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\i2c_master\plib_sercom6_i2c_master.c</file>
-         <hash>56bbb496460566aa22f60819578550b3908da29642b0659db9bb3f1d1d40e526</hash>
+         <hash>f82a357244fcbaf75200e99fbe4aba3588ba859c5b04420655072d7f19c702e1</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\legato_widget_skin_classic_common.h</file>
-         <hash>c92b55e1527deae1f9d69657c5ff7d784118d21c31ef81c25d5c41bbbd83d1ef</hash>
+         <hash>a40b0d61f3393d6c1582f3b43c2de97955e64f3d05ef10ef7364e506f671cac7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\i2c_master\plib_sercom6_i2c_master.h</file>
-         <hash>e32fbd009b54d8ca3a81478f7f872f8c3e6c07f5969697f3b1404ad10b529866</hash>
+         <hash>2f42e2ea4abc1bd8aa5412a9e00e8816937074febf4b7a1503f56dc2260e2f4a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\usb\usbfsv1\drv_usbfsv1.h</file>
@@ -15906,19 +16137,23 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\legato_widget_skin_classic_common.c</file>
-         <hash>48d75d856374c3230a13c4aae564fa537fb5b77978c16cb49db93affdc02bafc</hash>
+         <hash>18834d393da62b2ef9b1dad769422504489540acfd557ceb46c156158778c1f9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.h</file>
-         <hash>f7bb1ce517a25b2afdccfae477f96004dc208e65fab38f205e8bc2934dd3aa02</hash>
+         <hash>e6597d8b8f6e75b5dec2eeaeddb863a3d8180c24a25fd7b7bef20aae76126f34</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\usb\usbfsv1\src\drv_usbfsv1_local.h</file>
          <hash>c3268068a61e005fde53c7db95c475f0a068d3c7f8c22ce05c1209637e799f79</hash>
       </entry>
       <entry>
+         <file>..\src\config\same54_cult\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
+      </entry>
+      <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.c</file>
-         <hash>a5b46d255221f7c6c3b08b77efe71179f40263fd63aadaf685f8d179c3209d29</hash>
+         <hash>187dd3dcb006c1b2edb338b31b598185b850dfd815a1c0da63dafed32a4cbbc6</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -15926,15 +16161,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc6.h</file>
-         <hash>83155d58fe552b3cad653df8ad382b968697c6347626b4ccfc767e5b5b35954f</hash>
+         <hash>5137ab8599f1becf3094082d99942c572c1265ab86505ed59819d5e11e979d7b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\aes.h</file>
-         <hash>dbe3eb8730dda5cb57366d47c82eaa840d4ef22a624fad59a0068c51bcd91f3d</hash>
+         <hash>e00c458cd4f1224d6d2d602babfe2c9942fb1d4e24046bb4cef01b4a53c49645</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
-         <hash>738ae52b60b1c10a47d8a29af025c15ab4aa9fdf5fc1a7b2fa3519dd67ef39ce</hash>
+         <hash>9298e0e6a7fbbcad0e6eaa97a9fc22bbddf8c0e95393827b1402667ad41aff49</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\checkbox\legato_widget_checkbox_skin_classic.c</file>
@@ -15946,35 +16181,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom3.h</file>
-         <hash>d2a2661fc52b8d8ff01a7aefbe29169d6be5ebe6e24223a42454832e6bd9a2ec</hash>
+         <hash>dd340b9c1ec668df6917d2670f1a72d92cfb83402d78d7128e9cdc412d300f94</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\datastructure\legato_rectarray.c</file>
-         <hash>df8f35364cba51695a0da67fb89606394a571aea6c6b385bd6bc5fe3e01a46d8</hash>
+         <hash>c56985af163f387e9d85c755f64976d04b2e4885059fd51db2f238f5c5fa4233</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\datastructure\legato_rectarray.h</file>
-         <hash>947b13082727772320141a3761fa6537ee45c2f82b6ca3314ffd5fe8efc5cdf4</hash>
+         <hash>e0a389ae97ec06c1b4e1d3da060b7c882a4f255e45fa709d639910cff74b4e25</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\nvic\plib_nvic.c</file>
-         <hash>48bb1d51de85d7e08ad7aa56faae9f5ca92447f6a70809aeaf7aa51ce06f4c5c</hash>
+         <hash>6ce37a8440c91fb7f80e2166f69fbe33f2aa853db7469575fa14fcc944d3a830</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\progressbar\legato_widget_progressbar.h</file>
-         <hash>4fcc3b545941f5e182b9bf1fd6f8b4eadf65de967132219c090501406d81cd26</hash>
+         <hash>9e6a646cecd8c7b9ab0788a3054d502bf31b30fc8b1660d3ff8e9b42102fc5d7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_input.h</file>
-         <hash>984482710a43e60163f0ce8157a6ccc5097763371d8e9542a02d1e41a03de978</hash>
+         <hash>b64b85f2884b54b5e9fb5c735d91a0ae7923990cdcfd9d28792d6dc1af7d4a62</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw.c</file>
-         <hash>3d1c027582d5d515f28a7ad2961e4d0cab087958e5fe5f0c849e9bea625544e6</hash>
+         <hash>9946d4b12dfb72e2b5a4e41d7111ba2bc963871457948e92b9e381e673f411ab</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\progressbar\legato_widget_progressbar.c</file>
-         <hash>eb3ee7673e69f8387b7fd63ae5252a84cb8810d5e7292406a12727818f7fb11c</hash>
+         <hash>afbbff4482f176aa768f2fc83f5717a36c2173e9c5854bcd3af745a4c9102d63</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_chapter_9.h</file>
@@ -15982,19 +16217,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</file>
-         <hash>6adf66f31e5285e3539adddbf3e6c720b1e8025bbc2372ec0bc32597947f5ff3</hash>
+         <hash>275d9c781f584385e948deb563cbb9e368c3969f3ff40671d57308928addbd1a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_input.c</file>
-         <hash>a92c37779d40053f36fbfa78596c887a8cdfceb1db2fa1c400b94371df7c5d54</hash>
+         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\port.h</file>
-         <hash>117fec2328ab3b6eca845f8aba39aa31c72002366599e4f5a075c5cc43728087</hash>
+         <hash>5c6a59ed8d86bfa473c5e3899aec3d4cf93257f29c8f4e5c104d735ce076c1b1</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\screen\le_gen_screen_default.c</file>
-         <hash>b54e1108a1f124e6cd5006c142fb12aebfabaebcc50d91a2f2402988b21d6ad6</hash>
+         <hash>f8f3ed8f2dd47add0648666d08f7e097503ae9614d8ebc1a702d897a4e820bc6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\usb_host.h</file>
@@ -16010,11 +16245,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\interrupts.c</file>
-         <hash>63c4302cc41d7fef27c793b6fd31efa17d5da8f8f0a56c908a0d5ccd550ba5b5</hash>
+         <hash>862d289671731aa75fae1b4a7f99bcfdf73eb8adc515ceb652aeec471fd25051</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\i2c\src\drv_i2c_local.h</file>
-         <hash>f82fd4270a023c7d3281752352a98a33d139a03992f8cf32e6ad04adaf8fcf5f</hash>
+         <hash>efe3b598a6fc3492f7f448c0077edcce4378d2029b5a26d304e0293e0d4711f7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\bsp\bsp.c</file>
@@ -16022,15 +16257,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\trng.h</file>
-         <hash>99d8a0263ac9bd0236f812dfcfc18ad472b0df57345b87f118eec985f7ae743e</hash>
+         <hash>6da83baf77684a3f44ba9993b81c2ca3a61869d85807e9399c02568d0c7eb02d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\bsp\bsp.h</file>
-         <hash>30871f484f33e1ba3a18e3a8a5bda68f9723dda46da34a555c5a3657560498d5</hash>
+         <hash>7246c3253eb56a77a452ce14264a1637781240dbf661f83a8a8fa9c4fcf1af6b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\interrupts.h</file>
-         <hash>2405d06d3f81c3f63803574180c698bca4bd826c0e84723987b2147614544220</hash>
+         <hash>9c443586ebedde4116b5116fafce89a3c86ecd316e33231588bf1838b3c26b4b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_scale.c</file>
@@ -16038,27 +16273,27 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\eic.h</file>
-         <hash>9c767ae807adc441263e6915e070cb2a7ab1dea06c3a044ebbfe3c55918538cf</hash>
+         <hash>cca60fbc2c6c540fced54f2af8ec5f453625eb6d332f2e37afc2322e8eda0b82</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc7.h</file>
-         <hash>6538e1803b468eb7acf930635c46cdebe2c09332935a303db6d76c8a45210541</hash>
+         <hash>b212aa1eb1be0df28c273dad0e1373c745692be947a27dbfdaed874c3b2642c0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\piechart\legato_widget_pie_chart_skin_classic.c</file>
-         <hash>fe58316cb5c12d64c8d6a6b0769c01be62c3a1c45d46930fede2803d0017ecd5</hash>
+         <hash>2ed073c996216690ff09b1f0ecdd5b23fb1369820b1430b70e49f8dd383dbd6d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\wdt.h</file>
-         <hash>90a3a4dac9e13fd4097b343706db578fbdbfa834a022ddeb61ea4f632296e744</hash>
+         <hash>4d498f261b4ccfb1754453f578c62930b106bce7f3cdb05bf2d27110588d0b87</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom2.h</file>
-         <hash>8151496324941b4cc732e0f47d468dd043ee49d7e3a1db7f8312f83f27939d6d</hash>
+         <hash>31d1a71d2a32d6a623dca497ac53c9b352d6c1c8398e7d6173a3cc7313dd0241</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\nvmctrl.h</file>
-         <hash>4f444a273ac24752c15fb6d3ba2110d8c9984821116120531299ba1fa85246b3</hash>
+         <hash>fc24dae4f61bf8c140df2d906ac18c172b83a5a78527c53e91ed7990ea8162ed</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\src\usb_host_hub_mapping.h</file>
@@ -16066,15 +16301,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\can.h</file>
-         <hash>f63bce9c7b1475e65dc3bfbe994a15ec140a55ad6fbc52fb332efb593209df3e</hash>
+         <hash>bd9e3048d74fcdcd9a124244f35845daffb820666846cc74a5f1b02a9cd1a16b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\sys_fs_fat_interface.h</file>
-         <hash>47379030a7b158d0db57e79d9ee9d056b9bbad70e13152b6ea603f1cbf37a459</hash>
+         <hash>8abf10cb082958d08f5cf3210694cef73fdb6fa9b6a641e00da547cbcec0719b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\legato_config.h</file>
-         <hash>cd1623daf5675e40a46cd6de6ffeb6d0bc05bb428e051b6fed65ac66156a57c1</hash>
+         <hash>93e272c0802c333ec0687620b2f6e814dc1c5829799501602c8e8e9d6d77c098</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input_mouse.h</file>
@@ -16082,19 +16317,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\mclk.h</file>
-         <hash>6eacfac3e8c11d64b3423d372be0a4102969853c1ab2b44540eec0e800782f49</hash>
+         <hash>27ac56d218a982848746411066a6f9d28bd214b8d59054b1d1614097d07aa5a0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\startup_xc32.c</file>
-         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
+         <hash>f374b97d65f92553f1b75d8c9239b8b0f8581c710f78ea47b02c7f6fa6f74c74</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\driver\codec\wm8904\drv_wm8904.c</file>
-         <hash>fe8faf8e8f599d956aa58b579e6a32756efce541b122bbd8a88842943562c4c0</hash>
+         <hash>fd4ab46469d44a1d47b7916c7bdbc10afe7e0773c05e45beabdb03848a22a65f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\input\drv_maxtouch.h</file>
@@ -16102,15 +16337,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\i2c_master\plib_sercom4_i2c_master.c</file>
-         <hash>dc5416feaa46d16fe8600ceae96b7acd32b963c78e28b9decf29f67e56578f7f</hash>
+         <hash>6b5e2d5b4edeb67f91e6cc58fc20dd963871df04cd56f8b699fc7c7c34fc53ea</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_string_renderer.c</file>
-         <hash>b7051905d5c0de0d435b6f28e54333e20d5b9c0a6737015171dee7e698436ba5</hash>
+         <hash>ee320cc6223fcc86b6008757f09576a4f54633d2330070e045cbb698ab53d46a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\window\legato_widget_window.h</file>
-         <hash>c32dd91208c0878a285b2baa02b2357b0d15b0cc274e14f149509b1fd8bcfa6e</hash>
+         <hash>2de15ae28e8e4c357637f6fdc7ec75a729c3515486903135a1384d5f3cbf532b</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -16122,19 +16357,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\slider\legato_widget_slider_skin_classic.c</file>
-         <hash>8844ec387305f1afce0918658c11ca3e0ddfd06f91740d1c2a3609f59178237a</hash>
+         <hash>757ceafde102185252413d651a7e422d6b144d184bd55a346fb347864e6f5e19</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\audio\driver\codec\wm8904\drv_wm8904.h</file>
-         <hash>b58c63ac282e13a8df86423addfd6d6009e27b31e9a8f1aa2e6f05c00bdf9fa6</hash>
+         <hash>5ed46204313fb0426f72f75c25d430b0d6c4a7a678fe2161a3b08d474c814cbb</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\window\legato_widget_window.c</file>
-         <hash>6eb5e123bcb6554ee3f43793dfcdfb874fe2484b3631a3fa0e4c7df38f407ac1</hash>
+         <hash>c90a07b766a49ea10f1e444cea59da8fd83bd424ad68898181f529ad3342d2b9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\wdt.h</file>
-         <hash>249a056c2d011ea83cb9338c126bfd18df8f57b09acec1e8b2f62b72b7aad92c</hash>
+         <hash>5f245039ebba766281919a305d1805265c1dc0cfc1a98d130ab281961c0a574b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_string_renderer.h</file>
@@ -16142,35 +16377,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\icm.h</file>
-         <hash>d305345e3840c68d0e17e6af2103a7bd20a6ac9bc68d8e11f1629fba3548bb5b</hash>
+         <hash>0162b8764b75e7421df67ece221203e1bf8108a86547e0aa839d1e99cf4a7c26</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\usb.h</file>
-         <hash>dc3b95f7e2a072536e77c433bb0660a04df7d258e06603b377894f7e88d4b174</hash>
+         <hash>df936cde5d21ae8df84ce0364029aba9569e3f75c6fb1c0468a5e1106b44ec3f</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sercom\i2c_master\plib_sercom4_i2c_master.h</file>
-         <hash>6af5d856fae65901c11cb4264769064f95381029464184d2779c29f549d9c08c</hash>
+         <hash>dc268b12da9465edd4f8162e58b2745924ee2bf4e1ddaa057c9aa48ef03acae1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</file>
-         <hash>7ada448634d8700b4b5eef65bc319bff354229531c00e8aa10c7b534f10ba31e</hash>
+         <hash>7e065fa4e226d84947473f6dc7e777fad062fa65bd35df86bcfb3f13654069c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\trng.h</file>
-         <hash>0c8092501d5c3954460ebd9056e12cbfb8c64528bf6b81fd7c7cacd3a96f3832</hash>
+         <hash>d933925b170daed80149b4c837d33c359d66029100ddf9cd58a06a508326d88e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\fat_fs\file_system\ffunicode.c</file>
-         <hash>b519b20a6de1ceea6ae01421480d0137d03abe788b4e6553b2153d2a8591b840</hash>
+         <hash>3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\cmcc.h</file>
-         <hash>bf891431e0c56c3cc829ea39e92b873d0a952772e62a6b5c2bb40375f7db9a7f</hash>
+         <hash>406bc870d6a529236ca7114f98bce000c6887a50fe16ebb1e10a44a318f53ea6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\fuses.h</file>
-         <hash>228f1e941c4a02a5bee4155b9d57feaa18d951df091aba919a01b467974f26fc</hash>
+         <hash>7b0223a5254e90320e7dd13def00f1a98047fa9ce1f3e127b6de47b8c9515ba0</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\cmcc\plib_cmcc.c</file>
@@ -16178,11 +16413,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ramecc.h</file>
-         <hash>4830f72672df19f323f8cafd5904eaa04eb96493ce6238aee433c1eac0bf7615</hash>
+         <hash>ed5823e829ce914cad23313e46cc3172057ae598e139bd30e511426cf0ca6c93</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\cmcc\plib_cmcc.h</file>
-         <hash>543ede3f86dcfb1c4a339a2e0ddcc31cadbf22cc1565dd92618aaa7eb432b80a</hash>
+         <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\progressbar\legato_widget_progressbar_skin_classic.c</file>
@@ -16198,7 +16433,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
-         <hash>014749d94e3c42696529bb3eac53e66d1cb8377bec25d19e642e9f4a5c767ce4</hash>
+         <hash>33af6d9036ce1a7f73b36fb2ea2ce6ab04772c736eb11a983255b9a3f7e0a1e6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\gradient\legato_widget_gradient_skin_classic.c</file>
@@ -16206,7 +16441,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\label\legato_widget_label.c</file>
-         <hash>acfc30bc34257cd99e44ac67d5efd559c44ea40450a55516178b36a4b4acd598</hash>
+         <hash>4db3d7cdf29ede7f8f87431a0da6e2d94356bbcc7cebe8e83c6307e34f67ea3a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_pixelbuffer.c</file>
@@ -16214,7 +16449,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\input\drv_maxtouch.c</file>
-         <hash>b29a953b076ca24973d9661341d24091b446030c17368cc678f59c3cc51ab349</hash>
+         <hash>a64fc76b80833ab5617504d1383c7b6c8acec2ef26a4653d88e70be4cdfda950</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input_listener.h</file>
@@ -16230,7 +16465,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\renderer\legato_draw.c</file>
-         <hash>514f76ba5c4b083884ad35ca20c0a03b22622ac978b9f4f81d4dfd152feccb1b</hash>
+         <hash>5b3064465b4c94ec45a578e4dbc443d3e1908080847b34c99df0be4f94cff7e9</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\le_gen_harmony.c</file>
@@ -16238,7 +16473,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\bargraph\legato_widget_bar_graph_skin_classic.c</file>
-         <hash>b6a1351a87cb192a468a7bc38a9605e715a11850db5377aa44931bd35df33747</hash>
+         <hash>d1392d45deba7cf0caca94d2f5f3fef92927bde7e827003d95356654c22ba178</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\ports\sys_ports.h</file>
@@ -16250,15 +16485,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\le_gen_harmony.h</file>
-         <hash>b73f7129f4fb9c8b48a462649abcf90787aece16335df107acb45e57c1f35f42</hash>
+         <hash>a913b0cf5f6029be4a46db040144b14d9949f2e52d9b00576e2373403d530213</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\png\legato_imagedecoder_png.c</file>
-         <hash>9a7b41a8a316681bb1abfa868977be55e204176aa493287e88fa56377bacb36a</hash>
+         <hash>11093aacc4d3ddaa36ae5d00e49581cccde5dc1eb616de8badea5781fc93e439</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\label\legato_widget_label.h</file>
-         <hash>2dcd43c6534c961d079261b432066a712338915e65d1957f0d40e61b02b6f453</hash>
+         <hash>022a0de66de27ed503c07852959b98e6e4c1aa50f881d6c05de1d57cd6ab70ba</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\png\legato_imagedecoder_png.h</file>
@@ -16266,31 +16501,31 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\jpeg\jidctint.c</file>
-         <hash>1151ccb6918bbbd996bcdb20ae212dd4f50b196fe1002cf98bdcf4a9316732db</hash>
+         <hash>8997d893fe52e5702acd160837989e558b8ee3b3c918055eef8647b2d0a8e7d3</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\stdio\xc32_monitor.c</file>
-         <hash>da9adc553f802b4bbd7294f8d1186458c94b5e5ec6b6faff6f3285c7c724e487</hash>
+         <hash>5b21c08cf1b699e41f3d722865c473d6e32c68356c05b13ce457a7faed279e97</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc0.h</file>
-         <hash>d42f9a50c6d89fcc1d966962245819fe93d77dda89e847691d1b93f2a3b1d30a</hash>
+         <hash>3c4adac8995c63cc07c4c6e488f9a9ac876d0554c2c75700d684366c3c58a871</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\i2c\drv_i2c_definitions.h</file>
-         <hash>48e93b446c00e2ff05fa909dff3eccb8aad1051467c4137e407d37afc4b40ab0</hash>
+         <hash>308393d7dc25f042ea7443ac00d81cc8fafb0eec952207d88f64a0b48ea04bae</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\screen\le_gen_screen_MusicScreen.c</file>
-         <hash>9079ee3c9f6ce9262b70b895e1b54b067f9520f975920a547b1ca842c73b5b08</hash>
+         <hash>3ac097535e5a51f150f7a9d33e0fab36d7d84842ee42fa4fbde1f2b39736d2f4</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\fs\sys_fs_media_manager.h</file>
-         <hash>6cb6bdb605ca6e8b9e683671cffadbbc26a1f686e3eaedc74a6cba860e8ac3c4</hash>
+         <hash>2f7c76d5a40a41594e86a831470c67d7aeec5b6e540fb967518ce095fe6da271</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\same54p20a.h</file>
-         <hash>d1141475d45696b24b8a1c82c79108aeab1d01a8a206c73cf084e602686fbfec</hash>
+         <hash>b10e6b12e0059c1bd293737ebbc088bddb92d7b6d957a1c7d9ad0ff2c6bc6be5</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\screen\le_gen_screen_MusicScreen.h</file>
@@ -16302,7 +16537,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\freqm.h</file>
-         <hash>5d2619208c78de7372a64a53b6b70538da1cadb74d352a91bf0914ca99363949</hash>
+         <hash>c5ea1c07af5e9e5b7491c9b8b270f3a881c08d03e9586891118e32cd6f72f0be</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\input\sys_input_gesture.h</file>
@@ -16310,23 +16545,23 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\legato_widget_skin_classic.c</file>
-         <hash>9f34120be53101e1ef46fbd8ad106eb1e1cb51a831faa41e53626245ca475874</hash>
+         <hash>1c71ad5777b6052a641c70c0321ce857669a2706486126cf1ac982ebd6ea84a6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_utils.h</file>
-         <hash>747aa96b2bb1ed485f8103dbe5a334c9066209e830d8fe6615664bbab3c61438</hash>
+         <hash>6d1b21c69618c4d05fd85b4415a1a51bc414e4d9a3c85c6dffda10054d28d01b</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\common\legato_utils.c</file>
-         <hash>90dd09850f635717fee0c06532d385ebfd1711f2de9e43d8ec2e19003caca7b9</hash>
+         <hash>f7d528b39dabd79ad9bf209ba8b00232f1741d43c5b349f115a4bfc162deae0e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>27cc7846ef1c5ae5ced5ebe41f1946358c31a8a97a729cf85264e41efab9ccf8</hash>
+         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\image\legato_widget_image.h</file>
-         <hash>6e766e18a60b45d526a63be1f66cc69d013cbb4907cf0eee026ae0321dad2292</hash>
+         <hash>ed8005ad7e80e11970fe5087d67f100cc3c2fb8cc008674192f93e4e785c3ef3</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -16334,27 +16569,27 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagerotate\legato_widget_imagerotate.h</file>
-         <hash>b60623dd47a7a9c2da60a83bb878ac20331014c68e7b328b81f9e5a637341584</hash>
+         <hash>21142bd015997290a0ce7af4dac6202b096642cffbe54a1950d843f551afc3a6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagerotate\legato_widget_imagerotate.c</file>
-         <hash>bbcd506f8bb3ced1e77aeb8b10a9c31eefaaee19e727941543eb10fb4a5a36cc</hash>
+         <hash>0b8756b40331d3ba68694d23c9e7e0ce44bff969802da539a4d756ba1e30637a</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sdhc\plib_sdhc1.c</file>
-         <hash>ace0573cdd700b86574d29dbdb43f7ae064661735901f7a979ccfa0236c4eb58</hash>
+         <hash>88a7410f22030940ef03b5ee018b92d25ca7759fcf2d9756c6798b50b4eddaf0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\adc1.h</file>
-         <hash>3f5fce5056d96771fe2ffd3ae270c86e2bb947e3e3798fd989d5690da331445e</hash>
+         <hash>5d77304ff8807b26e8881771e42c98d55eebed9329b655a176bb5726d5bca03b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</file>
-         <hash>bd936b22a1de76a2a27225ec0cb76875e760bd8979f423351dde3d891682464e</hash>
+         <hash>f92e88867446453394bc2d5183cf33153567ad2a060138b84e21ca81a3c9565c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc1.h</file>
-         <hash>cb27732f6aa1c0eb35841d37b086935cdc5dda7fec28e24443558e08d6de4d0c</hash>
+         <hash>4534eab1291a0cf53306f9a5f9df21ed5a85b2944b452802510bb33f8ace4af7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\imagesequence\legato_widget_imagesequence_skin_classic.c</file>
@@ -16362,15 +16597,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pcc.h</file>
-         <hash>2d15658f1b778885eded294e0edbedbd905e1e843a288e60de8c76175775e362</hash>
+         <hash>e9c9940383547b8e2f7ff0278daccfe29d12ffb46ebe31dbe6e7f719ee7188a6</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\i2c\src\drv_i2c.c</file>
-         <hash>066e757e8d736e8d60301a755a5d0a051cf38ff7c98a23bb050c66894838837c</hash>
+         <hash>5d5aba18ec8e697a064a2eb4b862f0bb5ae34e68d88e71de23b5b1a9019e90c4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dac.h</file>
-         <hash>e92b8ddb69155309a2bd9ee94e20f0cfa62c60b8e04d7ef5633bb7baaebc075d</hash>
+         <hash>ec987a1e9a8dd4ae95f69b14887002ef174583915e33d1eff050600fcc7e5c1c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\legato_palette.h</file>
@@ -16378,7 +16613,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_stream.h</file>
-         <hash>dd83df530d2638cf298350747e49b4287cab0adea8ed72e1b7e18554aa78d121</hash>
+         <hash>24fe0fa035f27481ed9a8f40b8d2169cca52dd342fdfa9fbcda066d79f466e11</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_stream.c</file>
@@ -16386,7 +16621,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\peripheral\sdhc\plib_sdhc1.h</file>
-         <hash>115f54e1ee12290e7152539de71bde4bb0ace281218d09e17d6b67c90062ceec</hash>
+         <hash>3ea6d2b4539f5071d07136872c93d9a52305fc0207138c0b2ef6403c6031b0bc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_convert.c</file>
@@ -16398,11 +16633,11 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\textfield\legato_widget_textfield.h</file>
-         <hash>5dfb5278363072469c5c958790bfd1184056ae7dc23fcb3e64cca737186da68b</hash>
+         <hash>c5812ba643d018f40166c5d74c862fd5a0f0e2421e7c2955e5d363c5b1ec531e</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_tablestring.c</file>
-         <hash>78400d186a719bbd674747f01457ba41e122401f320ada98e02b215f0e533ef1</hash>
+         <hash>eb62565c0d757215a476a53285853929e243c0ea68dfc8fa9c1bcc9950fc4a5c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\memory\legato_memory.h</file>
@@ -16422,19 +16657,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\memory\legato_memory.c</file>
-         <hash>fe63c2c5186464d6add0e2198fb325c608715e5bf69c00208c6d542eca71ef38</hash>
+         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</file>
-         <hash>e6f70272a27aa81202b535fbaade45b4931492e748e8e6d86165fa7632566b39</hash>
+         <hash>c0645f7dd8da46c6bd7043fa7013cf50cabdd0019417df9897f1f2156c840d35</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\string\legato_tablestring.h</file>
-         <hash>0539ca068e32afe8f09e7f43cba8eea1d747363f341dd7082475ab2f3adc7532</hash>
+         <hash>4551ff37ce3fb51d88140c4c241e9a60967f7b04fe24a939c36aeec829f8656c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pm.h</file>
-         <hash>d8f305eb1364d35d0f87c1d86b89a1561cd1766338dd288978ab5674950985dd</hash>
+         <hash>bd415c931f8cbae8536cdc591093007f9c08de6e13e8bdfbd18c2098a9e29ae5</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\core\legato_scheme.h</file>
@@ -16454,19 +16689,19 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>095d0709b9f873a9b3f3180f118fa637dfdea50e8d9f6353e8bf046046b86f49</hash>
+         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\textfield\legato_widget_textfield.c</file>
-         <hash>fe791583fa7a1253046c5d2d728bd1c697a2fe023438286d9b17b73803eb6c71</hash>
+         <hash>5aa52da5c54fb68258176a1bbd534c613afb2f3833152c6941837f3f1bca2ad7</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\slider\legato_widget_slider.h</file>
-         <hash>cc332c292b1f0648b7016e496f53a39a88170014dcf60496f01ab61958104e7d</hash>
+         <hash>951ab0c001d95cc75937a4df525c86614b5e1e24ae63fa123cabfa23305a09fc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\interface\parallel_portgroup\drv_gfx_disp_intf_parallel_portgroup_dma.c</file>
@@ -16474,7 +16709,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\adc0.h</file>
-         <hash>4b559bb26f6af6d56312b401583b8d6bbbd54787e2e2ff2f8bb0fedee169c26f</hash>
+         <hash>be2251a425bad16bee6b4e9faa5cb6365dbb26e3363d00c03c9476ddb7e1f2ed</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\usb\src\usb_host.c</file>
@@ -16482,15 +16717,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc2.h</file>
-         <hash>65a61bfd363b21c064a4b9bb4adc2326e945a5e4dc39b1711ed29ba78b0ee65d</hash>
+         <hash>3c74abde6deed6e1265e505c18ca6c819887e49b54eb7bde5e16ad5432c731ff</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>ab8a09dd687e0942b6b373585e76e22e90e1da88bdf22f02ff3130b303dfa328</hash>
+         <hash>8800012b37134212fac94bf0d1ce07e665ef3663306246f9929176957e0492bc</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\linegraph\legato_widget_line_graph.c</file>
-         <hash>e9ec601b2a3fbeef1f0cff7b93f6d845d6015e47fcf72cb7da22925e700b4f07</hash>
+         <hash>a445b7089f15ff14dad9fa864658a94c633790b4c1d0a6415a178a00dfbbf34c</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\raw\legato_imagedecoder_raw_setup.c</file>
@@ -16514,7 +16749,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\image\mono\legato_imagedecoder_mono.c</file>
-         <hash>e2db1348231796da08d92e67fb7a6986cf27e555b02bbca2114f9a313cf2a0da</hash>
+         <hash>2e5403acba491a53e45051d8c31ff829e4661d475a286d74831e49c7d48dc602</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\textfield\legato_widget_textfield_skin_classic.c</file>
@@ -16526,15 +16761,15 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\gfx\legato\widget\linegraph\legato_widget_line_graph.h</file>
-         <hash>c314b92bc9d5f8a22b2bb984d60eda7faf719a71c50e4938d18e7c8f8fdedad1</hash>
+         <hash>97f5a2b9b2633c6b901c8bd7c94025d4c9addeef351d749f5367b33122cd38a7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\nvmctrl.h</file>
-         <hash>15ae533d872f1a9731ff60b5353d942c846ba7ee6ace54be1ab1784d1cdba93b</hash>
+         <hash>32ff04cfb16a0b161d4c2a433c8014af3daf86aebe2fbecea47c68e4410a572e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\evsys.h</file>
-         <hash>fa32ece008c81f305665e311fb1822114a8360a450de79ac6d1d6a8a8f954d82</hash>
+         <hash>b2c0042d0dc5be8e4202f620beffaab60501b6595b76702f6905eaddd09b2275</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\driver\driver.h</file>

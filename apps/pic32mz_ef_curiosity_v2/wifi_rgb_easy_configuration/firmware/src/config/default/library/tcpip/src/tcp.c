@@ -10,30 +10,28 @@
     -Reference: RFC 793
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -197,7 +195,7 @@ static uint32_t         _TCP_SktSetSequenceNo(const TCB_STUB* pSkt);
 #if defined (TCPIP_STACK_USE_IPV4)
 static TCP_V4_PACKET* _TcpAllocateTxPacket(TCB_STUB* pSkt, IP_ADDRESS_TYPE addType);
 static TCP_V4_PACKET*   _Tcpv4AllocateTxPacketIfQueued(TCB_STUB * pSkt, bool resetOldPkt);
-static bool             _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param);
+static void             _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param);
 static void             _Tcpv4UnlinkDataSeg(TCP_V4_PACKET* pPkt);
 static void             _Tcpv4LinkDataSeg(TCP_V4_PACKET* pPkt, uint8_t* pBuff1, uint16_t bSize1, uint8_t* pBuff2, uint16_t bSize2);
 static bool             _TCPv4Flush(TCB_STUB * pSkt, IPV4_PACKET* pv4Pkt, uint16_t hdrLen, uint16_t loadLen);
@@ -213,8 +211,8 @@ static TCPIP_MAC_PKT_ACK_RES TCPIP_TCP_ProcessIPv4(TCPIP_MAC_PACKET* pRxPkt);
 
 
 static IPV6_PACKET*     _TCPv6AllocateTxPacketStruct (TCB_STUB * stub);
-static bool             _Tcpv6AckFnc (void * pkt, bool sent, const void * param);
-static bool             _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pkt,  const void* param);
+static void             _Tcpv6AckFnc (void * pkt, bool sent, const void * param);
+static void             _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pkt,  const void* param);
 static IPV6_PACKET*     _Tcpv6AllocateTxPacketIfQueued (TCB_STUB * pSkt, bool resetOldPkt);
 static IPV6_PACKET*     _TxSktGetLockedV6Pkt(TCB_STUB* pSkt, IPV6_PACKET** ppSktPkt, bool setQueued);
 static IPV6_PACKET*     _TxSktFreeLockedV6Pkt(TCB_STUB* pSkt);
@@ -1442,7 +1440,7 @@ static TCP_V4_PACKET* _TcpAllocateTxPacket(TCB_STUB* pSkt, IP_ADDRESS_TYPE addTy
 }
 
 
-static bool _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param)
+static void _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param)
 {
     TCPIP_NET_HANDLE pktIf = 0;
     TCPIP_TCP_SIGNAL_TYPE sigType = 0;
@@ -1511,7 +1509,6 @@ static bool _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param)
         (*sigHandler)(sktIx, pktIf, sigType, sigParam);
     }
 
-    return false;
 }
 
 // unlinks the data segments
@@ -1857,7 +1854,7 @@ static IPV6_PACKET * _TCPv6AllocateTxPacketStruct (TCB_STUB * pSkt)
     return pkt;
 }
 
-static bool _Tcpv6AckFnc (void * pkt, bool success, const void * param)
+static void _Tcpv6AckFnc (void * pkt, bool success, const void * param)
 {
     IPV6_PACKET*    pV6Pkt;
     TCB_STUB* pSkt = (TCB_STUB*)param;
@@ -1868,7 +1865,7 @@ static bool _Tcpv6AckFnc (void * pkt, bool success, const void * param)
 
     if((pV6Pkt = (IPV6_PACKET*)pkt) == 0)
     {   // shouldn't happen
-        return false;
+        return;
     }
 
 	while(pSkt != 0)
@@ -1906,10 +1903,9 @@ static bool _Tcpv6AckFnc (void * pkt, bool success, const void * param)
         TCPIP_IPV6_PacketFree (pV6Pkt);
     }
 
-    return freePkt ? false : true;
 }
 
-static bool _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pPkt,  const void* param)
+static void _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pPkt,  const void* param)
 {
     TCPIP_NET_HANDLE pktIf = 0;
     TCPIP_TCP_SIGNAL_TYPE sigType = 0;
@@ -1963,7 +1959,6 @@ static bool _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pPkt,  const void* param)
         (*sigHandler)(sktIx, pktIf, sigType, sigParam);
 
     }
-    return false;
 }
 
 #endif  // defined (TCPIP_STACK_USE_IPV6)

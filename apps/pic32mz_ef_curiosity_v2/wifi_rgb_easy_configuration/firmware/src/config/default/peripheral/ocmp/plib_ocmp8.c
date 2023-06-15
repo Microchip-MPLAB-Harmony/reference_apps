@@ -38,6 +38,7 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 #include "plib_ocmp8.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 

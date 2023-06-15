@@ -62,6 +62,9 @@ static SYS_DEBUG_INSTANCE sysDebugInstance;
 
 SYS_ERROR_LEVEL gblErrLvl;
 
+/* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+   H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+
 SYS_MODULE_OBJ SYS_DEBUG_Initialize(
     const SYS_MODULE_INDEX index,
     const SYS_MODULE_INIT* const init
@@ -76,6 +79,7 @@ SYS_MODULE_OBJ SYS_DEBUG_Initialize(
 
     return SYS_MODULE_OBJ_STATIC;
 }
+/* MISRAC 2012 deviation block end */
 
 
 SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void)
@@ -100,13 +104,12 @@ SYS_ERROR_LEVEL SYS_DEBUG_ErrorLevelGet(void)
 
 bool SYS_DEBUG_Redirect(const SYS_MODULE_INDEX index)
 {
-    if (index < SYS_CONSOLE_DEVICE_MAX_INSTANCES)
+    bool checkflag = false;
+    if (index < (SYS_MODULE_INDEX)SYS_CONSOLE_DEVICE_MAX_INSTANCES)
     {
         sysDebugInstance.debugConsole = index;
-        return true;
+        checkflag = true;
     }
-    else
-    {
-        return false;
-    }
+    
+    return checkflag;    
 }

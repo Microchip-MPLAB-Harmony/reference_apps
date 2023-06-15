@@ -44,10 +44,10 @@
 #include <stdbool.h>
 
 #ifdef __cplusplus // Provide C++ Compatibility
-	extern "C" {
+    extern "C" {
 #endif
 
-#define CORE_TIMER_FREQUENCY    100000000
+#define CORE_TIMER_FREQUENCY    (100000000U)
 
 
 typedef void (*CORETIMER_CALLBACK)(uint32_t status, uintptr_t context);

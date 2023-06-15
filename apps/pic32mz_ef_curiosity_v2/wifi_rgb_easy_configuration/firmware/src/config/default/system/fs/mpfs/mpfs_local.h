@@ -114,10 +114,10 @@ typedef struct
 
 /* File status structure (FILINFO) */
 typedef struct {
-    unsigned long	fsize;			/* File size */
-    unsigned short	fdate;			/* Last modified date */
-    unsigned short	ftime;			/* Last modified time */
-    unsigned char	fattrib;		/* Attribute */
+    uint32_t    fsize;     /* File size */
+    uint16_t    fdate;     /* Last modified date */
+    uint16_t    ftime;     /* Last modified time */
+    uint8_t     fattrib;   /* Attribute */
     /* Short file name (8.3 format) */
     char        fname[13];
     /* Pointer to the LFN buffer */

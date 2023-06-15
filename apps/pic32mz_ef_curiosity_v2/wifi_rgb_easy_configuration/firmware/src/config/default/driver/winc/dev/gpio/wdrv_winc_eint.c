@@ -48,23 +48,28 @@
 #endif
 #elif defined(WDRV_WINC_INT_SOURCE)
 #define WDRV_INT_SOURCE WDRV_WINC_INT_SOURCE
+#elif defined WDRV_WINC_PIO_SOURCE
+static void WDRV_WINC_PIOCallback( PIO_PIN pin, uintptr_t context)
+{
+    WDRV_WINC_ISR(context);
+}
 #endif
 
 /****************************************************************************
  * Function:        WDRV_WINC_INTInitialize
  * Summary: Initializes interrupts for the WiFi driver.
  *****************************************************************************/
-void WDRV_WINC_INTInitialize(void)
+void WDRV_WINC_INTInitialize(SYS_MODULE_OBJ object, int intSrc)
 {
 #ifdef WDRV_WINC_EIC_SOURCE
-    EIC_CallbackRegister(WDRV_WINC_EIC_SOURCE, (EIC_CALLBACK)WDRV_WINC_ISR, 0);
-    EIC_InterruptEnable(WDRV_WINC_EIC_SOURCE);
+    EIC_CallbackRegister(intSrc, (EIC_CALLBACK)WDRV_WINC_ISR, object);
+    EIC_InterruptEnable(intSrc);
 #elif defined WDRV_WINC_GPIO_SOURCE
-    GPIO_PinInterruptCallbackRegister(WDRV_WINC_GPIO_SOURCE, (GPIO_PIN_CALLBACK)WDRV_WINC_ISR, 0);
-    GPIO_PinInterruptEnable(WDRV_WINC_GPIO_SOURCE);
+    GPIO_PinInterruptCallbackRegister(intSrc, (GPIO_PIN_CALLBACK)WDRV_WINC_ISR, object);
+    GPIO_PinInterruptEnable(intSrc);
 #elif defined WDRV_WINC_PIO_SOURCE
-    PIO_PinInterruptCallbackRegister(WDRV_WINC_PIO_SOURCE, (PIO_PIN_CALLBACK)WDRV_WINC_ISR, 0);
-    PIO_PinInterruptEnable(WDRV_WINC_PIO_SOURCE);
+    PIO_PinInterruptCallbackRegister(intSrc, WDRV_WINC_PIOCallback, object);
+    PIO_PinInterruptEnable(intSrc);
 #else
     /* disable the external interrupt */
     SYS_INT_SourceDisable(WDRV_INT_SOURCE);
@@ -81,14 +86,14 @@ void WDRV_WINC_INTInitialize(void)
  * Function:        WDRV_WINC_INTDeinitialize
  * Summary: Deinitializes interrupts for WiFi driver.
  *****************************************************************************/
-void WDRV_WINC_INTDeinitialize(void)
+void WDRV_WINC_INTDeinitialize(int intSrc)
 {
 #ifdef WDRV_WINC_EIC_SOURCE
-    EIC_InterruptDisable(WDRV_WINC_EIC_SOURCE);
+    EIC_InterruptDisable(intSrc);
 #elif defined WDRV_WINC_GPIO_SOURCE
-    GPIO_PinInterruptDisable(WDRV_WINC_GPIO_SOURCE);
+    GPIO_PinInterruptDisable(intSrc);
 #elif defined WDRV_WINC_PIO_SOURCE
-    PIO_PinInterruptDisable(WDRV_WINC_PIO_SOURCE);
+    PIO_PinInterruptDisable(intSrc);
 #else
     SYS_INT_SourceDisable(WDRV_INT_SOURCE);
 #endif

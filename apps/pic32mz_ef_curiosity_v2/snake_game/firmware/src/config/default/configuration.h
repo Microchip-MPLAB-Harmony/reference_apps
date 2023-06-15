@@ -107,11 +107,11 @@ extern "C" {
 #define DRV_SPI_QUEUE_SIZE_IDX0               4
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
 
 /* SPI Driver Common Configuration Options */
-#define DRV_SPI_INSTANCES_NUMBER              1
+#define DRV_SPI_INSTANCES_NUMBER              (1U)
 
 
 /*** MXT336T Driver Configuration ***/

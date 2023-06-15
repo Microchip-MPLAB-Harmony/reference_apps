@@ -42,6 +42,13 @@
 #ifndef LE_HARMONY_H
 #define LE_HARMONY_H
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+extern "C" {
+#endif
+// DOM-IGNORE-END
+
+
 #include "gfx/legato/generated/le_gen_init.h"
 
 typedef enum

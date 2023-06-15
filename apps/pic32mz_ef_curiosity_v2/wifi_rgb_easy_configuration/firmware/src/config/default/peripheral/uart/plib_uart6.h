@@ -71,6 +71,10 @@ bool UART6_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
 
 UART_ERROR UART6_ErrorGet( void );
 
+bool UART6_AutoBaudQuery( void );
+
+void UART6_AutoBaudSet( bool enable );
+
 size_t UART6_Write(uint8_t* pWrBuffer, const size_t size );
 
 size_t UART6_WriteCountGet(void);
@@ -78,6 +82,8 @@ size_t UART6_WriteCountGet(void);
 size_t UART6_WriteFreeBufferCountGet(void);
 
 size_t UART6_WriteBufferSizeGet(void);
+
+bool UART6_TransmitComplete(void);
 
 bool UART6_WriteNotificationEnable(bool isEnabled, bool isPersistent);
 

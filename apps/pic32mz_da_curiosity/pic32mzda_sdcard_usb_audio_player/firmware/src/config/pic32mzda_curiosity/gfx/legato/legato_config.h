@@ -63,11 +63,14 @@ extern "C" {
 #define LE_DYNAMIC_VTABLES                   0
 
 #define LE_ASSERT_ENABLE                     0
+#define LE_DEBUG                             0 // internal use only, do not change
+#define LE_DEBUG_RENDERER                    0 // internal use only, do not change
 
 // image decoder configuration
 #define LE_ENABLE_RAW_DECODER                1
 #define LE_ENABLE_JPEG_DECODER               1
 #define LE_ENABLE_PNG_DECODER                1
+#define LE_PNG_USE_SCRATCH                   0
 #define LE_ENABLE_MONO_DECODER               1
 
 #define LE_PREEMPTION_LEVEL                  0
@@ -147,10 +150,6 @@ extern "C" {
 
 #define LE_LAYER_COUNT                     1
 
-#if LE_LAYER_COUNT <= 0
-#error LE_LAYER_COUNT must be greater than or equal to 1
-#endif
-
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 
 // renderer config
@@ -158,6 +157,7 @@ extern "C" {
 #define LE_SCRATCH_BUFFER_COUNT            1
 #define LE_SCRATCH_BUFFER_SIZE_KB          16
 #define LE_SCRATCH_BUFFER_PADDING          0
+#define LE_SCRATCH_BIG_ENDIAN              0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE
 

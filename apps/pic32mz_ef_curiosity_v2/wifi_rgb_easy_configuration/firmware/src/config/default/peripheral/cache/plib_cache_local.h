@@ -50,6 +50,9 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // Section: Function prototypes of local functions
 // *****************************************************************************
 // *****************************************************************************
+/* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 21.2 deviated in this file.  Deviation record ID - H3_MISRAC_2012_R_21_2_DR_20 */
+
 void  __attribute__((far)) _pic32_init_cache (CACHE_COHERENCY cacheCoherency);
 void  __attribute__((far)) _pic32_size_cache (void);
 
@@ -57,15 +60,15 @@ void  __attribute__((far)) _pic32_flush_cache (void);
 void  __attribute__((far)) _pic32_flush_dcache (void);
 void  __attribute__((far)) _pic32_flush_icache (void);
 
-void  __attribute__((far)) _pic32_sync_icache (uint32_t, size_t);
+void  __attribute__((far)) _pic32_sync_icache (uint32_t addr, size_t len);
 
-void  __attribute__((far)) _pic32_clean_cache (uint32_t, size_t);
-void  __attribute__((far)) _pic32_clean_dcache (uint32_t, size_t);
-void  __attribute__((far)) _pic32_clean_dcache_nowrite (uint32_t, size_t);
-void  __attribute__((far)) _pic32_clean_icache (uint32_t, size_t);
+void  __attribute__((far)) _pic32_clean_cache (uint32_t addr, size_t len);
+void  __attribute__((far)) _pic32_clean_dcache (uint32_t addr, size_t len);
+void  __attribute__((far)) _pic32_clean_dcache_nowrite (uint32_t addr, size_t len);
+void  __attribute__((far)) _pic32_clean_icache (uint32_t addr, size_t len);
 
-void  __attribute__((far)) _pic32_lock_dcache (uint32_t, size_t);
-void  __attribute__((far)) _pic32_lock_icache (uint32_t, size_t);
+void  __attribute__((far)) _pic32_lock_dcache (uint32_t addr, size_t len);
+void  __attribute__((far)) _pic32_lock_icache (uint32_t addr, size_t len);
 
 size_t  __attribute__((far)) _pic32_get_dcache_associativity (void);
 size_t  __attribute__((far)) _pic32_get_icache_associativity (void);
@@ -75,6 +78,8 @@ size_t  __attribute__((far)) _pic32_get_dcache_lines_per_way (void);
 size_t  __attribute__((far)) _pic32_get_icache_lines_per_way (void);
 size_t  __attribute__((far)) _pic32_get_dcache_size (void);
 size_t  __attribute__((far)) _pic32_get_icache_size (void);
+
+    /* MISRAC 2012 deviation block end */
 
 #endif //#ifndef PLIB_CACHE_LOCAL_H
 

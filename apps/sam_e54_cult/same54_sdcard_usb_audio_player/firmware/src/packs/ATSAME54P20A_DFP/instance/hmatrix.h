@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME54P20A
+/*
+ * Instance header file for ATSAME54P20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,37 +20,37 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:25:23Z */
+/* file generated from device description version 2023-03-17T09:50:08Z */
 #ifndef _SAME54_HMATRIX_INSTANCE_
 #define _SAME54_HMATRIX_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for HMATRIX peripheral ========== */
-#define HMATRIX_MASTER_NUM                       _UL_(8)    
-#define HMATRIX_MASTER_CM4_S                     _UL_(0)    
-#define HMATRIX_MASTER_CMCC                      _UL_(1)    
-#define HMATRIX_MASTER_PICOP_MEM                 _UL_(2)    
-#define HMATRIX_MASTER_PICOP_IO                  _UL_(3)    
-#define HMATRIX_MASTER_DMAC_DTWR                 _UL_(4)    
-#define HMATRIX_MASTER_DMAC_DTRD                 _UL_(5)    
-#define HMATRIX_MASTER_ICM                       _UL_(6)    
-#define HMATRIX_MASTER_DSU                       _UL_(7)    
-#define HMATRIX_SLAVE_NUM                        _UL_(15)   
-#define HMATRIX_SLAVE_FLASH                      _UL_(0)    
-#define HMATRIX_SLAVE_FLASH_ALT                  _UL_(1)    
-#define HMATRIX_SLAVE_SEEPROM                    _UL_(2)    
-#define HMATRIX_SLAVE_RAMCM4S                    _UL_(3)    
-#define HMATRIX_SLAVE_RAMPPPDSU                  _UL_(4)    
-#define HMATRIX_SLAVE_RAMDMAWR                   _UL_(5)    
-#define HMATRIX_SLAVE_RAMDMACICM                 _UL_(6)    
-#define HMATRIX_SLAVE_HPB0                       _UL_(7)    
-#define HMATRIX_SLAVE_HPB1                       _UL_(8)    
-#define HMATRIX_SLAVE_HPB2                       _UL_(9)    
-#define HMATRIX_SLAVE_HPB3                       _UL_(10)   
-#define HMATRIX_SLAVE_SDHC0                      _UL_(12)   
-#define HMATRIX_SLAVE_SDHC1                      _UL_(13)   
-#define HMATRIX_SLAVE_QSPI                       _UL_(14)   
-#define HMATRIX_SLAVE_BKUPRAM                    _UL_(15)   
-#define HMATRIX_INSTANCE_ID                      _UL_(38)   /* Instance index for HMATRIX */
+#define HMATRIX_INSTANCE_ID                      (38)       /* Instance index for HMATRIX */
+#define HMATRIX_MASTER_CM4_S                     (0)        
+#define HMATRIX_MASTER_CMCC                      (1)        
+#define HMATRIX_MASTER_DMAC_DTRD                 (5)        
+#define HMATRIX_MASTER_DMAC_DTWR                 (4)        
+#define HMATRIX_MASTER_DSU                       (7)        
+#define HMATRIX_MASTER_ICM                       (6)        
+#define HMATRIX_MASTER_NUM                       (8)        
+#define HMATRIX_MASTER_PICOP_IO                  (3)        
+#define HMATRIX_MASTER_PICOP_MEM                 (2)        
+#define HMATRIX_SLAVE_BKUPRAM                    (15)       
+#define HMATRIX_SLAVE_FLASH                      (0)        
+#define HMATRIX_SLAVE_FLASH_ALT                  (1)        
+#define HMATRIX_SLAVE_HPB0                       (7)        
+#define HMATRIX_SLAVE_HPB1                       (8)        
+#define HMATRIX_SLAVE_HPB2                       (9)        
+#define HMATRIX_SLAVE_HPB3                       (10)       
+#define HMATRIX_SLAVE_NUM                        (15)       
+#define HMATRIX_SLAVE_QSPI                       (14)       
+#define HMATRIX_SLAVE_RAMCM4S                    (3)        
+#define HMATRIX_SLAVE_RAMDMACICM                 (6)        
+#define HMATRIX_SLAVE_RAMDMAWR                   (5)        
+#define HMATRIX_SLAVE_RAMPPPDSU                  (4)        
+#define HMATRIX_SLAVE_SDHC0                      (12)       
+#define HMATRIX_SLAVE_SDHC1                      (13)       
+#define HMATRIX_SLAVE_SEEPROM                    (2)        
 
 #endif /* _SAME54_HMATRIX_INSTANCE_ */

@@ -134,7 +134,7 @@ void TC4_CompareCommandSet(TC_COMMAND command)
     while((TC4_REGS->COUNT8.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current counter value */
@@ -173,11 +173,11 @@ bool TC4_Compare8bitPeriodSet( uint8_t period )
 {
     bool status = false;
     /* Configure period value */
-    TC4_REGS->COUNT8.TC_PER = period;
-    while((TC4_REGS->COUNT8.TC_SYNCBUSY) != 0U)
+    TC4_REGS->COUNT8.TC_CC[0] = period;
+    while((TC4_REGS->COUNT8.TC_SYNCBUSY & TC_SYNCBUSY_CC0_Msk) == TC_SYNCBUSY_CC0_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }
@@ -186,7 +186,7 @@ bool TC4_Compare8bitPeriodSet( uint8_t period )
 uint8_t TC4_Compare8bitPeriodGet( void )
 {
     /* Get period value */
-    return (uint8_t)TC4_REGS->COUNT8.TC_PER;
+    return (uint8_t)TC4_REGS->COUNT8.TC_CC[0];
 }
 
 /* Configure duty cycle value */
@@ -198,7 +198,7 @@ bool TC4_Compare8bitMatch0Set( uint8_t compareValue )
     while((TC4_REGS->COUNT8.TC_SYNCBUSY & TC_SYNCBUSY_CC0_Msk) == TC_SYNCBUSY_CC0_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }
@@ -211,7 +211,7 @@ bool TC4_Compare8bitMatch1Set( uint8_t compareValue )
     while((TC4_REGS->COUNT8.TC_SYNCBUSY & TC_SYNCBUSY_CC1_Msk) == TC_SYNCBUSY_CC1_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }

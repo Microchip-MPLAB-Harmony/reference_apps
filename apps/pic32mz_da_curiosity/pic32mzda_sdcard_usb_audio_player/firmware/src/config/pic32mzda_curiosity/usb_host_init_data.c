@@ -41,7 +41,7 @@
 
 const USB_HOST_TPL_ENTRY USBTPList[1] = 
 {
-	TPL_INTERFACE_CLASS_SUBCLASS_PROTOCOL(0x08, 0x06, 0x50, NULL,  USB_HOST_MSD_INTERFACE) ,
+    TPL_INTERFACE_CLASS_SUBCLASS_PROTOCOL(0x08, 0x06, 0x50, NULL,  USB_HOST_MSD_INTERFACE) ,
 
 
 };
@@ -53,6 +53,7 @@ const USB_HOST_HCD hcdTable =
 
     /* Pointer to the USB Driver Functions. */
     .hcdInterface = DRV_USBHS_HOST_INTERFACE,
+
 };
 
 const USB_HOST_INIT usbHostInitData = 

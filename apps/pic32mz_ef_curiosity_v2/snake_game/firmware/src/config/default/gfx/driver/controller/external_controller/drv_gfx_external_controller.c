@@ -323,7 +323,7 @@ gfxResult DRV_SSD1963_BlitBuffer(int32_t x,
 {
 
     uint16_t* ptr;
-    uint8_t parm[4];
+    static __COHERENT uint8_t parm[4];
 
     GFX_Disp_Intf intf;
     

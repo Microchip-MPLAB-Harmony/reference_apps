@@ -17,7 +17,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -54,6 +54,7 @@
 #include <stdbool.h>
 
 #include "system/system_module.h"
+#include "wdrv_winc_spi.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
@@ -81,6 +82,11 @@
 
 typedef struct
 {
+    /* SPI configuration. */
+    const WDRV_WINC_SPI_CFG* const pSPICfg;
+
+    /* Interrupt source. */
+    int intSrc;
 } WDRV_WINC_SYS_INIT;
 
 /*  WiFi MAC Initialization Data
@@ -340,7 +346,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object);
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_ISR(void);
+    void WDRV_WINC_ISR(SYS_MODULE_OBJ object);
 
   Summary:
     WINC interrupt handler.
@@ -350,10 +356,10 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object);
       from the WINC.
 
   Precondition:
-    None.
+    WDRV_WINC_Initialize must have been called before calling this function.
 
   Parameters:
-    None.
+    object  - Driver object handle, returned from WDRV_WINC_Initialize
 
   Returns:
     None.
@@ -363,7 +369,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object);
 
 */
 
-void WDRV_WINC_ISR(void);
+void WDRV_WINC_ISR(SYS_MODULE_OBJ object);
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus

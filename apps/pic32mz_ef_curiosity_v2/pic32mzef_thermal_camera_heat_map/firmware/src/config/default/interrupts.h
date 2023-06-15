@@ -57,6 +57,13 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void CORE_TIMER_InterruptHandler( void );
+void EXTERNAL_3_InterruptHandler( void );
+void SPI1_RX_InterruptHandler( void );
+void SPI1_TX_InterruptHandler( void );
+void I2C1_BUS_InterruptHandler( void );
+void I2C1_MASTER_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H

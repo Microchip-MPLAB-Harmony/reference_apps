@@ -63,6 +63,8 @@ extern "C" {
 #define LE_DYNAMIC_VTABLES                   0
 
 #define LE_ASSERT_ENABLE                     0
+#define LE_DEBUG                             0 // internal use only, do not change
+#define LE_DEBUG_RENDERER                    0 // internal use only, do not change
 
 // image decoder configuration
 #define LE_ENABLE_RAW_DECODER                1
@@ -147,10 +149,6 @@ extern "C" {
 //#define LE_VSYNC_STALL
 
 #define LE_LAYER_COUNT                     1
-
-#if LE_LAYER_COUNT <= 0
-#error LE_LAYER_COUNT must be greater than or equal to 1
-#endif
 
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 

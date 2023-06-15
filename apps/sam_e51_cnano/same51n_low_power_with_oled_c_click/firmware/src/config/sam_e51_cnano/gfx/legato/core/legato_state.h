@@ -30,6 +30,9 @@
 #ifndef LEGATO_STATE_H
 #define LEGATO_STATE_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "gfx/legato/common/legato_common.h"
 
@@ -47,17 +50,33 @@
  */
 typedef void (*leLanguageChangedCallback_FnPtr)(uint32_t);
 
+typedef enum leLayerClearMode
+{
+    LE_LAYERCLEARMODE_DEFAULT,
+    LE_LAYERCLEARMODE_DISABLE,
+    LE_LAYERCLEARMODE_FORCE,
+} leLayerClearMode;
+
 // *****************************************************************************
 /**
  * @brief This struct describes the layer state for a layer.
  * @details This struct contains useful information about a layer such as color mode,
  * rendering options, etc.
  */
-typedef struct
+struct leLayerState;
+
+typedef struct leLayerState
 {
+    leWidget root;
     leColorMode colorMode;
     leBool renderHorizontal;
     lePoint driverPosition;
+    leLayerClearMode clearMode;
+
+    void* rendererData;
+
+    struct leLayerState* prev;
+    struct leLayerState* next;
 } leLayerState;
 
 // *****************************************************************************
@@ -80,8 +99,7 @@ typedef struct leState
     
     leLanguageChangedCallback_FnPtr languageChangedCB; /**< language changed callback */
 
-    leWidget rootWidget[LE_LAYER_COUNT]; /**< root widgets of the scene */
-    leLayerState layerStates[LE_LAYER_COUNT]; /**< layer states */
+    leList layerList; /**< layer states */
 
 #if LE_STREAMING_ENABLED == 1
     leStreamManager* activeStream; /**< active stream state */
@@ -145,18 +163,18 @@ void leShutdown(void);
  */
 leResult leUpdate(uint32_t dt);
 
-// *****************************************************************************
-/**
- * @brief Get color mode.
- * @details Gets the the color mode of the current context.
- * @code
- * leColorMode mode = leGetColorMode();
- * @endcode
- * @param void.
- * @return the color mode of the current context.
- */
-leColorMode leGetColorMode(void);
-    
+// TODO documentation
+uint32_t leLayerCount(void);
+
+// TODO documentation
+int32_t leAddLayer(void);
+
+// TODO documentation
+leResult leRemoveLayer(uint32_t idx);
+
+// TODO documentation
+leLayerState* leGetLayerState(uint32_t idx);
+
 /**
  * @brief Get layer color mode.
  * @details Gets the the layer color mode
@@ -179,6 +197,60 @@ leColorMode leGetLayerColorMode(uint32_t lyrIdx);
  * @return result.
  */
 leResult leSetLayerColorMode(uint32_t lyrIdx, leColorMode mode);
+
+/**
+ * @brief Add root widget to layer.
+ * @details Adds the root widget <span class="param">wgt</span>
+ * to the layer <span class="param">layer</span>.
+ * The library maintains a static list of widgets that are considered
+ * to be scene roots.  The library treats these roots as layers and
+ * the display driver may configure itself to render these roots
+ * to different hardware layers.
+ * This API adds a child widget to one of the static roots.
+ * @code
+ * leResult res = leAddRootWidget(wgt, layer);
+ * @endcode
+ * @param void.
+ * @return leResult.
+ */
+leResult leAddRootWidget(leWidget* wgt,
+                         uint32_t layer);
+
+/*  Function:
+        leResult leRemoveRootWidget(leWidget* wgt, uint32_t layer)
+
+    Summary:
+        Removes a custom widget from a static scene root widget.
+
+    Description:
+        The library maintains a static list of widgets that are considered
+        to be scene roots.  This API removes a child widget from one of the
+        static roots.
+
+    Returns:
+        leResult
+
+*/
+/**
+ * @brief Remove root widget to layer.
+ * @details Remove the root widget <span class="param">wgt</span>
+ * from the layer <span class="param">layer</span>.
+ * The library maintains a static list of widgets that are considered
+ * to be scene roots.  The library treats these roots as layers and
+ * the display driver may configure itself to render these roots
+ * to different hardware layers.
+ * This API adds a child widget to one of the static roots.
+ * @code
+ * leResult res = leRemoveRootWidget(wgt, layer);
+ * @endcode
+ * @param void.
+ * @return leResult.
+ */
+leResult leRemoveRootWidget(leWidget* wgt,
+                            uint32_t layer);
+
+
+
 
 /**
  * @brief Get layer render direction.
@@ -206,6 +278,30 @@ leBool leGetLayerRenderHorizontal(uint32_t lyrIdx);
  * @return result.
  */
 leResult leSetLayerRenderHorizontal(uint32_t lyrIdx, leBool horz);
+
+/**
+ * @brief Get layer clear mode.
+ * @details Gets the the layer clear mode
+ * @code
+ * leLayerClearMode mode = leGetLayerClearMode(0);
+ * @endcode
+ * @param lyrIdx is the index of the layer to query
+ * @return the clear mode of layer.
+ */
+leLayerClearMode leGetLayerClearMode(uint32_t lyrIdx);
+
+/**
+ * @brief Set layer clear mode.
+ * @details Sets the the layer clear mode at index
+ * @code
+ * leResult res = leSetLayerColorMode(0, LE_LAYERCLEARMODE_FORCE);
+ * @endcode
+ * @param lyrIdx is the index of the layer to modify
+ * @param mode is the clear mode to set
+ * @return result.
+ */
+leResult leSetLayerClearMode(uint32_t lyrIdx,
+                             leLayerClearMode mode);
 
 #if 0
 // *****************************************************************************
@@ -611,56 +707,7 @@ leBool leIsDrawing(void);
         leResult
 
 */
-/**
- * @brief Add root widget to layer.
- * @details Adds the root widget <span class="param">wgt</span>
- * to the layer <span class="param">layer</span>.
- * The library maintains a static list of widgets that are considered
- * to be scene roots.  The library treats these roots as layers and
- * the display driver may configure itself to render these roots
- * to different hardware layers.
- * This API adds a child widget to one of the static roots.
- * @code
- * leResult res = leAddRootWidget(wgt, layer);
- * @endcode
- * @param void.
- * @return leResult.
- */
-leResult leAddRootWidget(leWidget* wgt,
-                         uint32_t layer);
 
-/*  Function:
-        leResult leRemoveRootWidget(leWidget* wgt, uint32_t layer)
-
-    Summary:
-        Removes a custom widget from a static scene root widget.
-
-    Description:
-        The library maintains a static list of widgets that are considered
-        to be scene roots.  This API removes a child widget from one of the
-        static roots.
-
-    Returns:
-        leResult
-
-*/
-/**
- * @brief Remove root widget to layer.
- * @details Remove the root widget <span class="param">wgt</span>
- * from the layer <span class="param">layer</span>.
- * The library maintains a static list of widgets that are considered
- * to be scene roots.  The library treats these roots as layers and
- * the display driver may configure itself to render these roots
- * to different hardware layers.
- * This API adds a child widget to one of the static roots.
- * @code
- * leResult res = leRemoveRootWidget(wgt, layer);
- * @endcode
- * @param void.
- * @return leResult.
- */
-leResult leRemoveRootWidget(leWidget* wgt,
-                            uint32_t layer);
 
 /*  Function:
         leBool leWidgetIsInScene(const leWidget* wgt)
@@ -874,6 +921,10 @@ leResult leRunActiveStream(void);
 
 */
 void leAbortActiveStream(void);
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif /* LEGATO_STATE_H */

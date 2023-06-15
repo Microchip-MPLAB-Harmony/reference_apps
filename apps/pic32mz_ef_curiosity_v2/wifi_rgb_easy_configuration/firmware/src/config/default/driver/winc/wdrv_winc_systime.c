@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -57,6 +57,16 @@ uint32_t WDRV_WINC_LocalTimeToUTC(const tstrSystemTime *const pSysTime)
         return 0;
     }
 
+    if ((pSysTime->u8Second > 59) ||
+        (pSysTime->u8Minute > 59) ||
+        (pSysTime->u8Hour > 23)   ||
+        (pSysTime->u8Day > 31)    ||
+        ((0 == pSysTime->u8Month) || (pSysTime->u8Month > 12)) ||
+        (pSysTime->u16Year < 1900))
+    {
+        return 0;
+    }
+
     t.tm_sec  = pSysTime->u8Second;
     t.tm_min  = pSysTime->u8Minute;
     t.tm_hour = pSysTime->u8Hour;
@@ -67,7 +77,9 @@ uint32_t WDRV_WINC_LocalTimeToUTC(const tstrSystemTime *const pSysTime)
     timeUTC = mktime(&t);
 
     if (-1 == timeUTC)
+    {
         return 0;
+    }
 
     return (uint32_t)timeUTC;
 }
