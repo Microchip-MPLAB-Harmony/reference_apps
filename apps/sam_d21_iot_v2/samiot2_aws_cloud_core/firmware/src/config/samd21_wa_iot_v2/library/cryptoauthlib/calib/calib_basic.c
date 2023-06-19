@@ -50,7 +50,7 @@ ATCA_STATUS calib_wakeup_i2c(ATCADevice device)
 
         do
         {
-            if (100000UL < iface->mIfaceCFG->atcai2c.baud)
+            if (100000UL < ATCA_IFACECFG_VALUE(iface->mIfaceCFG, atcai2c.baud))
             {
                 temp = 100000UL;
                 status = atcontrol(iface, ATCA_HAL_CHANGE_BAUD, &temp, sizeof(temp));
@@ -65,8 +65,10 @@ ATCA_STATUS calib_wakeup_i2c(ATCADevice device)
                 status = ATCA_SUCCESS;
             }
 
-    #ifdef ATCA_ECC204_SUPPORT
-            if (ECC204 == atcab_get_device_type_ext(device))
+    #if ATCA_CA2_SUPPORT
+            ATCADeviceType device_type = atcab_get_device_type_ext(device);
+
+            if (atcab_is_ca2_device(device_type))
             {
                 (void)atsend(iface, address, NULL, 0);
             }
@@ -86,9 +88,9 @@ ATCA_STATUS calib_wakeup_i2c(ATCADevice device)
                 status = atreceive(iface, address, (uint8_t*)&wake, &rxlen);
             }
 
-            if ((ATCA_SUCCESS == status) && (100000UL < iface->mIfaceCFG->atcai2c.baud))
+            if ((ATCA_SUCCESS == status) && (100000UL < ATCA_IFACECFG_VALUE(iface->mIfaceCFG, atcai2c.baud)))
             {
-                temp = iface->mIfaceCFG->atcai2c.baud;
+                temp = ATCA_IFACECFG_VALUE(iface->mIfaceCFG, atcai2c.baud);
                 status = atcontrol(iface, ATCA_HAL_CHANGE_BAUD, &temp, sizeof(temp));
             }
 
@@ -141,6 +143,7 @@ ATCA_STATUS calib_wakeup(ATCADevice device)
 ATCA_STATUS calib_idle(ATCADevice device)
 {
     ATCA_STATUS status = ATCA_BAD_PARAM;
+    ATCADeviceType device_type = atcab_get_device_type_ext(device);
 
 #ifdef ATCA_HAL_LEGACY_API
     status = atidle(&device->mIface);
@@ -151,7 +154,7 @@ ATCA_STATUS calib_idle(ATCADevice device)
     }
     else
     {
-        if (ECC204 != atcab_get_device_type_ext(device))
+        if (!atcab_is_ca2_device(device_type))
         {
             uint8_t command = 0x02;
             status = atsend(&device->mIface, atcab_get_device_address(device), &command, 1);
@@ -244,7 +247,8 @@ ATCA_STATUS calib_get_addr(uint8_t zone, uint16_t slot, uint8_t block, uint8_t o
     return status;
 }
 
-/** \brief Compute the address given the zone, slot, block, and offset for ECC204 device
+#if ATCA_CA2_SUPPORT
+/** \brief Compute the address given the zone, slot, block, and offset for the device
  *  \param[in] zone   Zone to get address from. Config(1) or
  *                    Data(0) which requires a slot.
  *  \param[in] slot   Slot Id number for data zone and zero for other zones.
@@ -254,7 +258,7 @@ ATCA_STATUS calib_get_addr(uint8_t zone, uint16_t slot, uint8_t block, uint8_t o
  *
  *  \return ATCA_SUCCESS on success, otherwise an error code.
  */
-ATCA_STATUS calib_ecc204_get_addr(uint8_t zone, uint16_t slot, uint8_t block, uint8_t offset, uint16_t* addr)
+ATCA_STATUS calib_ca2_get_addr(uint8_t zone, uint16_t slot, uint8_t block, uint8_t offset, uint16_t* addr)
 {
     ATCA_STATUS status = ATCA_SUCCESS;
 
@@ -273,6 +277,7 @@ ATCA_STATUS calib_ecc204_get_addr(uint8_t zone, uint16_t slot, uint8_t block, ui
 
     return status;
 }
+#endif
 
 /** \brief Gets the size of the specified zone in bytes.
  *
@@ -295,6 +300,7 @@ ATCA_STATUS calib_get_zone_size(ATCADevice device, uint8_t zone, uint16_t slot, 
 
     if (device->mIface.mIfaceCFG->devtype == ATSHA204A)
     {
+#ifdef ATCA_ATSHA204A_SUPPORT
         switch (zone)
         {
         case ATCA_ZONE_CONFIG: *size = 88; break;
@@ -302,7 +308,9 @@ ATCA_STATUS calib_get_zone_size(ATCADevice device, uint8_t zone, uint16_t slot, 
         case ATCA_ZONE_DATA:   *size = 32; break;
         default: status = ATCA_TRACE(ATCA_BAD_PARAM, "Invalid zone received"); break;
         }
+#endif
     }
+#ifdef ATCA_ATSHA206A_SUPPORT
     else if (device->mIface.mIfaceCFG->devtype == ATSHA206A)
     {
         switch (zone)
@@ -313,8 +321,9 @@ ATCA_STATUS calib_get_zone_size(ATCADevice device, uint8_t zone, uint16_t slot, 
         default: status = ATCA_TRACE(ATCA_BAD_PARAM, "Invalid zone received"); break;
         }
     }
-#ifdef ATCA_ECC204_SUPPORT
-    else if (ECC204 == device->mIface.mIfaceCFG->devtype)
+#endif
+#if ATCA_CA2_SUPPORT
+    else if (atcab_is_ca2_device(device->mIface.mIfaceCFG->devtype))
     {
         switch (zone)
         {

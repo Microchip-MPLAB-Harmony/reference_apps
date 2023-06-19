@@ -48,6 +48,11 @@
 #endif
 #elif defined(WDRV_WINC_INT_SOURCE)
 #define WDRV_INT_SOURCE WDRV_WINC_INT_SOURCE
+#elif defined WDRV_WINC_PIO_SOURCE
+static void WDRV_WINC_PIOCallback( PIO_PIN pin, uintptr_t context)
+{
+    WDRV_WINC_ISR(context);
+}
 #endif
 
 /****************************************************************************
@@ -63,7 +68,7 @@ void WDRV_WINC_INTInitialize(SYS_MODULE_OBJ object, int intSrc)
     GPIO_PinInterruptCallbackRegister(intSrc, (GPIO_PIN_CALLBACK)WDRV_WINC_ISR, object);
     GPIO_PinInterruptEnable(intSrc);
 #elif defined WDRV_WINC_PIO_SOURCE
-    PIO_PinInterruptCallbackRegister(intSrc, (PIO_PIN_CALLBACK)WDRV_WINC_ISR, object);
+    PIO_PinInterruptCallbackRegister(intSrc, WDRV_WINC_PIOCallback, object);
     PIO_PinInterruptEnable(intSrc);
 #else
     /* disable the external interrupt */

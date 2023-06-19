@@ -1,4 +1,4 @@
-"Pin Number","Pin ID","Custom Name","Function","Mode", "Direction","Latch","Pull Up","Pull Down","Drive Strength"
+Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,Drive Strength
 1,PA00,SW0_GPIO_PA00,GPIO,Digital,In,n/a,Yes,No,NORMAL
 2,PA01,SW1_GPIO_PA01,GPIO,Digital,In,n/a,Yes,No,NORMAL
 3,PA02,,Available,,,,,,NORMAL

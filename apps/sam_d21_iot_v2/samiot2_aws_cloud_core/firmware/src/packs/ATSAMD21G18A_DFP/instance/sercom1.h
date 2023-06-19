@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMD21J18A
+/*
+ * Instance header file for ATSAMD21J18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for SERCOM1 peripheral ========== */
-#define SERCOM1_DMAC_ID_RX                       _UL_(3)    /* Index of DMA RX trigger */
-#define SERCOM1_DMAC_ID_TX                       _UL_(4)    /* Index of DMA TX trigger */
-#define SERCOM1_GCLK_ID_CORE                     _UL_(21)   /* Index of Generic Clock for Core */
-#define SERCOM1_GCLK_ID_SLOW                     _UL_(19)   /* Index of Generic Clock for SMbus timeout */
-#define SERCOM1_INT_MSB                          _UL_(6)    
-#define SERCOM1_INSTANCE_ID                      _UL_(67)   
+#define SERCOM1_DMAC_ID_RX                       (3)        /* Index of DMA RX trigger */
+#define SERCOM1_DMAC_ID_TX                       (4)        /* Index of DMA TX trigger */
+#define SERCOM1_GCLK_ID_CORE                     (21)       /* Index of Generic Clock for Core */
+#define SERCOM1_GCLK_ID_SLOW                     (19)       /* Index of Generic Clock for SMbus timeout */
+#define SERCOM1_INT_MSB                          (6)        
+#define SERCOM1_INSTANCE_ID                      (67)       
 
 #endif /* _SAMD21_SERCOM1_INSTANCE_ */

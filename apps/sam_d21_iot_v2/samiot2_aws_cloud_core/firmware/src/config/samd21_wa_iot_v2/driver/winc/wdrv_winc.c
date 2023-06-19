@@ -2217,6 +2217,9 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
                 /* De-initialise the interrupts. */
                 WDRV_WINC_INTDeinitialize(pDcpt->pCtrl->intSrc);
 
+                WDRV_WINC_GPIOChipEnableDeassert();
+                WDRV_WINC_GPIOResetAssert();
+
                 pDcpt->isInit = false;
             }
 
@@ -2255,7 +2258,11 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
             WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
 
             /* Open SPI handling. */
-            WDRV_WINC_SPIOpen();
+            if (false == WDRV_WINC_SPIOpen())
+            {
+                pDcpt->sysStat = SYS_STATUS_ERROR;
+                break;
+            }
 
 #ifndef WDRV_WINC_DEVICE_SPLIT_INIT
             pDcpt->sysStat = SYS_STATUS_READY;
