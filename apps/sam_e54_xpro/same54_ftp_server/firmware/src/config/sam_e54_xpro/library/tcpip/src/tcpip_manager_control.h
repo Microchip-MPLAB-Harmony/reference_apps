@@ -12,30 +12,28 @@
   Description:
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -66,14 +64,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // it should clear the pending status
 typedef void    (*tcpipModuleSignalHandler)(void);
 
-typedef enum
-{
-    TCPIP_MODULE_FLAG_NONE              = 0x0000,       // no flag set
-                                                        //
-
-
-}TCPIP_MODULE_FLAGS;
-
 // types of packets/frames processed by this stack
 typedef struct
 {
@@ -96,8 +86,8 @@ typedef enum
     TCPIP_STACK_ADDRESS_SERVICE_ZCLL,           // ZCLL
     TCPIP_STACK_ADDRESS_SERVICE_DHCPS,          // DHCP server
     //
-    TCPIP_STACK_ADDRESS_SERVICE_MASK    = 0x7,     // mask of address services
-                                                // hast to match the position in the TCPIP_STACK_NET_IF_FLAGS!!!
+    TCPIP_STACK_ADDRESS_SERVICE_MASK    = 0x7,  // mask of address services
+                                                // has to to match the position in the TCPIP_STACK_NET_IF_FLAGS!!!
 }TCPIP_STACK_ADDRESS_SERVICE_TYPE;
 
 typedef enum
@@ -106,7 +96,7 @@ typedef enum
     TCPIP_STACK_DNS_SERVICE_CLIENT,             // DNS Client
     TCPIP_STACK_DNS_SERVICE_SERVER,             // DNS Server
     TCPIP_STACK_DNS_SERVICE_MASK    = 0x18,     // mask of DNS services
-                                                // hast to match the position in the TCPIP_STACK_NET_IF_FLAGS!!!
+                                                // has to to match the position in the TCPIP_STACK_NET_IF_FLAGS!!!
 }TCPIP_STACK_DNS_SERVICE_TYPE;
 
 typedef enum
@@ -469,6 +459,11 @@ static __inline__ const char*  __attribute__((always_inline)) _TCPIPStack_NetBIO
     return pNetIf ? (char*)pNetIf->NetBIOSName : 0;
 }
 
+static __inline__ TCPIP_MAC_TYPE __attribute__((always_inline)) _TCPIPStack_NetMacType(TCPIP_NET_IF* pNetIf)
+{
+    return pNetIf ? (TCPIP_MAC_TYPE)pNetIf->macType : 0;
+}
+
 // checks for valid up interface
 static __inline__ TCPIP_NET_IF*  __attribute__((always_inline)) _TCPIPStackHandleToNetUp(TCPIP_NET_HANDLE hNet)
 {
@@ -600,7 +595,10 @@ TCPIP_MAC_PACKET*   _TCPIPStackModuleRxExtract(TCPIP_STACK_MODULE modId);
 
 // inserts a packet into a module queue
 // and signals if necessary
-void _TCPIPStackModuleRxInsert(TCPIP_STACK_MODULE modId, TCPIP_MAC_PACKET* pRxPkt, bool signal);
+// returns:
+//      true is packet inserted
+//      false if the insertion failed (the module is not running, for example)
+bool _TCPIPStackModuleRxInsert(TCPIP_STACK_MODULE modId, TCPIP_MAC_PACKET* pRxPkt, bool signal);
 
 
 // purges the packets from a module RX queue
@@ -687,6 +685,15 @@ static __inline__ uint8_t __attribute__((always_inline))  _TCPIPStack_BridgeGetI
 {
     return pNetIf->bridgePort;
 }
+
+// run time module initialization
+// Note: function exists only if (_TCPIP_STACK_RUN_TIME_INIT != 0)!
+bool _TCPIPStack_ModuleIsRunning(TCPIP_STACK_MODULE moduleId);
+
+
+// local time keeping
+uint32_t _TCPIP_SecCountGet(void);
+uint32_t _TCPIP_MsecCountGet(void);
 
 
 // debugging, tracing, etc.

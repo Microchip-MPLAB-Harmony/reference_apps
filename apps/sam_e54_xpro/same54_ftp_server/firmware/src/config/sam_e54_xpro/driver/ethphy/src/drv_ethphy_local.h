@@ -15,30 +15,28 @@
 *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2013-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2013-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 //DOM-IGNORE-END
 
@@ -194,6 +192,9 @@ typedef enum
 {
     DRV_ETHPHY_NEG_RESULT_PHASE_IDLE = 0,
     DRV_ETHPHY_NEG_RESULT_PHASE_BMSTAT,
+    DRV_ETHPHY_NEG_RESULT_PHASE_EXTSTAT,
+    DRV_ETHPHY_NEG_RESULT_PHASE_1000BASECTRL,
+    DRV_ETHPHY_NEG_RESULT_PHASE_1000BASESTAT,
     DRV_ETHPHY_NEG_RESULT_PHASE_ANEXP,
     DRV_ETHPHY_NEG_RESULT_PHASE_ANLPAD,
     DRV_ETHPHY_NEG_RESULT_PHASE_ANAD,
@@ -343,7 +344,7 @@ typedef struct
                                               // - DRV_ETHPHY_SETUP_PHASE  for set up
                                               //
     uint16_t                    operSubPhase; // extra sub-phase counter
-    uint16_t                    operReg[3];   // scratch operation registers 
+    uint16_t                    operReg[4];   // scratch operation registers 
     uint32_t                    operTStamp;   // tick value for timing purposes 
     DRV_ETHPHY_RESULT           operRes;      // last operation result
     uintptr_t                   operParam;    // operation parameter
@@ -388,10 +389,11 @@ typedef struct _DRV_ETHPHY_INSTANCE
     DRV_ETHPHY_CONFIG_FLAGS     configFlags;    // ETHPHY MII/RMII configuration flags
     TCPIP_ETH_PAUSE_TYPE        macPauseType;   // MAC supported pause type
     int                         phyAddress;     // PHY SMI address
-    const DRV_ETHPHY_OBJECT*    pPhyObj; // PHY object, vendor specififc functions
+    const DRV_ETHPHY_OBJECT*    pPhyObj;    // PHY object, vendor specific functions	
     DRV_ETHPHY_CLIENT_OBJ       objClients[DRV_ETHPHY_CLIENTS_NUMBER]; // array of clients
     const DRV_MIIM_OBJECT_BASE* pMiimBase;  // MIIM driver base object to use   
     SYS_MODULE_INDEX            miimIndex;  // MIIM object index 
+    DRV_ETHPHY_TMO *            ethphyTmo;  //PHY Initialization Time-outs 
 } DRV_ETHPHY_INSTANCE;
 
 

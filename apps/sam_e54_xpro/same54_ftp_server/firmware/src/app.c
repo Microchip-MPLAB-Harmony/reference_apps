@@ -84,8 +84,6 @@ APP_LED_STATE LEDstate = APP_LED_STATE_OFF;
 #define LOGIN_USERNAME "Microchip"
 #define LOGIN_PASSWORD "Harmony"
 
-#define LED_OFF() LED_Clear();
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions

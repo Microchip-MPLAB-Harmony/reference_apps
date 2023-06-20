@@ -60,25 +60,6 @@
 #include "configuration.h"
 #include "definitions.h"
 
-// Application SYS_FS mount points
-// Adjust as needed
-#define APP_SYS_FS_SD_VOL                   "/dev/mmcblka1"
-#define APP_SYS_FS_SDCARD_MOUNT_POINT       "/mnt/mchpDrive1"
-#define APP_SYS_FS_SDCARD_TYPE              FAT
-#define APP_SYS_FS_SDCARD_TYPE_STRING       "FATFS"
-
-
-
-
-
-
-
-#define APP_LED_1StateSet()         LED_Set()
-#define APP_LED_1StateGet()         LED_Get()
-#define APP_LED_1StateClear()       LED_Clear()
-#define APP_LED_1StateToggle()      LED_Toggle()
-
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -86,6 +67,13 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+// Application SYS_FS mount points
+// Adjust as needed
+#define APP_SYS_FS_SD_VOL                   "/dev/mmcblka1"
+#define APP_SYS_FS_SDCARD_MOUNT_POINT       "/mnt/mchpDrive1"
+#define APP_SYS_FS_SDCARD_TYPE              FAT
+#define APP_SYS_FS_SDCARD_TYPE_STRING       "FATFS"
 
 // *****************************************************************************
 // *****************************************************************************

@@ -9,30 +9,28 @@
     -Reference: RFC
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -192,7 +190,7 @@ static void TCPIP_IPV6_EUI64(TCPIP_NET_IF* pNetIf, uint64_t* pRes);
 static uint16_t             TCPIP_IPV6_PacketPayload(IPV6_PACKET* pkt);
 static TCPIP_MAC_PACKET*    TCPIP_IPV6_MacPacketTxAllocate(IPV6_PACKET* pkt, uint16_t segLoadLen, TCPIP_MAC_PACKET_FLAGS flags);
 static void                 TCPIP_IPV6_MacPacketTxPutHeader(IPV6_PACKET* pkt, TCPIP_MAC_PACKET* pMacPkt, uint16_t pktType);
-static bool                 TCPIP_IPV6_MacPacketTxAck(TCPIP_MAC_PACKET* pkt,  const void* param);
+static void                 TCPIP_IPV6_MacPacketTxAck(TCPIP_MAC_PACKET* pkt,  const void* param);
 static void                 TCPIP_IPV6_MacPacketTxAddSegments(IPV6_PACKET* ptrPacket, TCPIP_MAC_PACKET* pMacPkt, uint16_t segFlags);
 
 // MAC API RX functions
@@ -3246,8 +3244,17 @@ static void TCPIP_IPV6_Process (TCPIP_NET_IF * pNetIf, TCPIP_MAC_PACKET* pRxPkt)
                 pRxPkt->totTransportLen = dataCount;
                 pRxPkt->ipv6PktData = extensionHeaderLen;
                 // forward this packet and signal
-                _TCPIPStackModuleRxInsert(TCPIP_MODULE_TCP, pRxPkt, true);
-                return;
+                if(_TCPIPStackModuleRxInsert(TCPIP_MODULE_TCP, pRxPkt, true))
+                {
+                    return;
+                }
+                else
+                {   // failed to insert
+                    cIPFrameType = IPV6_PROT_NONE;
+                    action = 0;
+                    pRxPkt->ipv6PktData = TCPIP_MAC_PKT_ACK_PROTO_DEST_ERR; 
+                    break;
+                }
 #else
                 cIPFrameType = IPV6_PROT_NONE;
                 action = 0;
@@ -3267,8 +3274,17 @@ static void TCPIP_IPV6_Process (TCPIP_NET_IF * pNetIf, TCPIP_MAC_PACKET* pRxPkt)
                 pRxPkt->totTransportLen = dataCount;
                 pRxPkt->ipv6PktData = extensionHeaderLen;
                 // forward this packet and signal
-                _TCPIPStackModuleRxInsert(TCPIP_MODULE_UDP, pRxPkt, true);
-                return;
+                if(_TCPIPStackModuleRxInsert(TCPIP_MODULE_UDP, pRxPkt, true))
+                {
+                    return;
+                }
+                else
+                {   // failed to insert
+                    cIPFrameType = IPV6_PROT_NONE;
+                    action = 0;
+                    pRxPkt->ipv6PktData = TCPIP_MAC_PKT_ACK_PROTO_DEST_ERR; 
+                    break;
+                }
 #else
                 cIPFrameType = IPV6_PROT_NONE;
                 action = 0;
@@ -3847,10 +3863,9 @@ static void TCPIP_IPV6_MacPacketTxAddSegments(IPV6_PACKET* ptrPacket, TCPIP_MAC_
 
 
 // TX packet acknowledge function
-static bool TCPIP_IPV6_MacPacketTxAck(TCPIP_MAC_PACKET* pMacPkt,  const void* param)
+static void TCPIP_IPV6_MacPacketTxAck(TCPIP_MAC_PACKET* pMacPkt,  const void* param)
 {
     TCPIP_PKT_PacketFree(pMacPkt);
-    return false;
 }
 
 static void TCPIP_IPV6_MacPacketTxPutHeader(IPV6_PACKET* pkt, TCPIP_MAC_PACKET* pMacPkt, uint16_t pktType)
