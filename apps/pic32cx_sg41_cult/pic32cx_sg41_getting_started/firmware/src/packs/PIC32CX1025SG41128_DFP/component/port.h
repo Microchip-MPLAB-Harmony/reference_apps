@@ -1,7 +1,7 @@
 /*
  * Component description for PORT
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,22 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_PORT_COMPONENT_H_
 #define _PIC32CXSG41_PORT_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR PORT                                         */
 /* ************************************************************************** */
-
-/* -------- PORT_CTRL : (PORT Offset: 0x24) (R/W 32) Control -------- */
-#define PORT_CTRL_RESETVALUE                  _UINT32_(0x00)                                       /*  (PORT_CTRL) Control  Reset Value */
-
-#define PORT_CTRL_SAMPLING_Pos                _UINT32_(0)                                          /* (PORT_CTRL) Input Sampling Mode Position */
-#define PORT_CTRL_SAMPLING_Msk                (_UINT32_(0xFFFFFFFF) << PORT_CTRL_SAMPLING_Pos)     /* (PORT_CTRL) Input Sampling Mode Mask */
-#define PORT_CTRL_SAMPLING(value)             (PORT_CTRL_SAMPLING_Msk & (_UINT32_(value) << PORT_CTRL_SAMPLING_Pos)) /* Assigment of value for SAMPLING in the PORT_CTRL register */
-#define PORT_CTRL_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (PORT_CTRL) Register Mask  */
-
 
 /* -------- PORT_DIR : (PORT Offset: 0x00) (R/W 32) Data Direction -------- */
 #define PORT_DIR_RESETVALUE                   _UINT32_(0x00)                                       /*  (PORT_DIR) Data Direction  Reset Value */
@@ -71,6 +62,93 @@
 #define PORT_DIRTGL_DIRTGL_Msk                (_UINT32_(0xFFFFFFFF) << PORT_DIRTGL_DIRTGL_Pos)     /* (PORT_DIRTGL) Port Data Direction Toggle Mask */
 #define PORT_DIRTGL_DIRTGL(value)             (PORT_DIRTGL_DIRTGL_Msk & (_UINT32_(value) << PORT_DIRTGL_DIRTGL_Pos)) /* Assigment of value for DIRTGL in the PORT_DIRTGL register */
 #define PORT_DIRTGL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_DIRTGL) Register Mask  */
+
+
+/* -------- PORT_OUT : (PORT Offset: 0x10) (R/W 32) Data Output Value -------- */
+#define PORT_OUT_RESETVALUE                   _UINT32_(0x00)                                       /*  (PORT_OUT) Data Output Value  Reset Value */
+
+#define PORT_OUT_OUT_Pos                      _UINT32_(0)                                          /* (PORT_OUT) PORT Data Output Value Position */
+#define PORT_OUT_OUT_Msk                      (_UINT32_(0xFFFFFFFF) << PORT_OUT_OUT_Pos)           /* (PORT_OUT) PORT Data Output Value Mask */
+#define PORT_OUT_OUT(value)                   (PORT_OUT_OUT_Msk & (_UINT32_(value) << PORT_OUT_OUT_Pos)) /* Assigment of value for OUT in the PORT_OUT register */
+#define PORT_OUT_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUT) Register Mask  */
+
+
+/* -------- PORT_OUTCLR : (PORT Offset: 0x14) (R/W 32) Data Output Value Clear -------- */
+#define PORT_OUTCLR_RESETVALUE                _UINT32_(0x00)                                       /*  (PORT_OUTCLR) Data Output Value Clear  Reset Value */
+
+#define PORT_OUTCLR_OUTCLR_Pos                _UINT32_(0)                                          /* (PORT_OUTCLR) PORT Data Output Value Clear Position */
+#define PORT_OUTCLR_OUTCLR_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTCLR_OUTCLR_Pos)     /* (PORT_OUTCLR) PORT Data Output Value Clear Mask */
+#define PORT_OUTCLR_OUTCLR(value)             (PORT_OUTCLR_OUTCLR_Msk & (_UINT32_(value) << PORT_OUTCLR_OUTCLR_Pos)) /* Assigment of value for OUTCLR in the PORT_OUTCLR register */
+#define PORT_OUTCLR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTCLR) Register Mask  */
+
+
+/* -------- PORT_OUTSET : (PORT Offset: 0x18) (R/W 32) Data Output Value Set -------- */
+#define PORT_OUTSET_RESETVALUE                _UINT32_(0x00)                                       /*  (PORT_OUTSET) Data Output Value Set  Reset Value */
+
+#define PORT_OUTSET_OUTSET_Pos                _UINT32_(0)                                          /* (PORT_OUTSET) PORT Data Output Value Set Position */
+#define PORT_OUTSET_OUTSET_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTSET_OUTSET_Pos)     /* (PORT_OUTSET) PORT Data Output Value Set Mask */
+#define PORT_OUTSET_OUTSET(value)             (PORT_OUTSET_OUTSET_Msk & (_UINT32_(value) << PORT_OUTSET_OUTSET_Pos)) /* Assigment of value for OUTSET in the PORT_OUTSET register */
+#define PORT_OUTSET_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTSET) Register Mask  */
+
+
+/* -------- PORT_OUTTGL : (PORT Offset: 0x1C) (R/W 32) Data Output Value Toggle -------- */
+#define PORT_OUTTGL_RESETVALUE                _UINT32_(0x00)                                       /*  (PORT_OUTTGL) Data Output Value Toggle  Reset Value */
+
+#define PORT_OUTTGL_OUTTGL_Pos                _UINT32_(0)                                          /* (PORT_OUTTGL) PORT Data Output Value Toggle Position */
+#define PORT_OUTTGL_OUTTGL_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTTGL_OUTTGL_Pos)     /* (PORT_OUTTGL) PORT Data Output Value Toggle Mask */
+#define PORT_OUTTGL_OUTTGL(value)             (PORT_OUTTGL_OUTTGL_Msk & (_UINT32_(value) << PORT_OUTTGL_OUTTGL_Pos)) /* Assigment of value for OUTTGL in the PORT_OUTTGL register */
+#define PORT_OUTTGL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTTGL) Register Mask  */
+
+
+/* -------- PORT_IN : (PORT Offset: 0x20) ( R/ 32) Data Input Value -------- */
+#define PORT_IN_RESETVALUE                    _UINT32_(0x00)                                       /*  (PORT_IN) Data Input Value  Reset Value */
+
+#define PORT_IN_IN_Pos                        _UINT32_(0)                                          /* (PORT_IN) PORT Data Input Value Position */
+#define PORT_IN_IN_Msk                        (_UINT32_(0xFFFFFFFF) << PORT_IN_IN_Pos)             /* (PORT_IN) PORT Data Input Value Mask */
+#define PORT_IN_IN(value)                     (PORT_IN_IN_Msk & (_UINT32_(value) << PORT_IN_IN_Pos)) /* Assigment of value for IN in the PORT_IN register */
+#define PORT_IN_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (PORT_IN) Register Mask  */
+
+
+/* -------- PORT_CTRL : (PORT Offset: 0x24) (R/W 32) Control -------- */
+#define PORT_CTRL_RESETVALUE                  _UINT32_(0x00)                                       /*  (PORT_CTRL) Control  Reset Value */
+
+#define PORT_CTRL_SAMPLING_Pos                _UINT32_(0)                                          /* (PORT_CTRL) Input Sampling Mode Position */
+#define PORT_CTRL_SAMPLING_Msk                (_UINT32_(0xFFFFFFFF) << PORT_CTRL_SAMPLING_Pos)     /* (PORT_CTRL) Input Sampling Mode Mask */
+#define PORT_CTRL_SAMPLING(value)             (PORT_CTRL_SAMPLING_Msk & (_UINT32_(value) << PORT_CTRL_SAMPLING_Pos)) /* Assigment of value for SAMPLING in the PORT_CTRL register */
+#define PORT_CTRL_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (PORT_CTRL) Register Mask  */
+
+
+/* -------- PORT_WRCONFIG : (PORT Offset: 0x28) ( /W 32) Write Configuration -------- */
+#define PORT_WRCONFIG_RESETVALUE              _UINT32_(0x00)                                       /*  (PORT_WRCONFIG) Write Configuration  Reset Value */
+
+#define PORT_WRCONFIG_PINMASK_Pos             _UINT32_(0)                                          /* (PORT_WRCONFIG) Pin Mask for Multiple Pin Configuration Position */
+#define PORT_WRCONFIG_PINMASK_Msk             (_UINT32_(0xFFFF) << PORT_WRCONFIG_PINMASK_Pos)      /* (PORT_WRCONFIG) Pin Mask for Multiple Pin Configuration Mask */
+#define PORT_WRCONFIG_PINMASK(value)          (PORT_WRCONFIG_PINMASK_Msk & (_UINT32_(value) << PORT_WRCONFIG_PINMASK_Pos)) /* Assigment of value for PINMASK in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PMUXEN_Pos              _UINT32_(16)                                         /* (PORT_WRCONFIG) Peripheral Multiplexer Enable Position */
+#define PORT_WRCONFIG_PMUXEN_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_PMUXEN_Pos)          /* (PORT_WRCONFIG) Peripheral Multiplexer Enable Mask */
+#define PORT_WRCONFIG_PMUXEN(value)           (PORT_WRCONFIG_PMUXEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_PMUXEN_Pos)) /* Assigment of value for PMUXEN in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_INEN_Pos                _UINT32_(17)                                         /* (PORT_WRCONFIG) Input Enable Position */
+#define PORT_WRCONFIG_INEN_Msk                (_UINT32_(0x1) << PORT_WRCONFIG_INEN_Pos)            /* (PORT_WRCONFIG) Input Enable Mask */
+#define PORT_WRCONFIG_INEN(value)             (PORT_WRCONFIG_INEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_INEN_Pos)) /* Assigment of value for INEN in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PULLEN_Pos              _UINT32_(18)                                         /* (PORT_WRCONFIG) Pull Enable Position */
+#define PORT_WRCONFIG_PULLEN_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_PULLEN_Pos)          /* (PORT_WRCONFIG) Pull Enable Mask */
+#define PORT_WRCONFIG_PULLEN(value)           (PORT_WRCONFIG_PULLEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_PULLEN_Pos)) /* Assigment of value for PULLEN in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_DRVSTR_Pos              _UINT32_(22)                                         /* (PORT_WRCONFIG) Output Driver Strength Selection Position */
+#define PORT_WRCONFIG_DRVSTR_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_DRVSTR_Pos)          /* (PORT_WRCONFIG) Output Driver Strength Selection Mask */
+#define PORT_WRCONFIG_DRVSTR(value)           (PORT_WRCONFIG_DRVSTR_Msk & (_UINT32_(value) << PORT_WRCONFIG_DRVSTR_Pos)) /* Assigment of value for DRVSTR in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PMUX_Pos                _UINT32_(24)                                         /* (PORT_WRCONFIG) Peripheral Multiplexing Position */
+#define PORT_WRCONFIG_PMUX_Msk                (_UINT32_(0xF) << PORT_WRCONFIG_PMUX_Pos)            /* (PORT_WRCONFIG) Peripheral Multiplexing Mask */
+#define PORT_WRCONFIG_PMUX(value)             (PORT_WRCONFIG_PMUX_Msk & (_UINT32_(value) << PORT_WRCONFIG_PMUX_Pos)) /* Assigment of value for PMUX in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_WRPMUX_Pos              _UINT32_(28)                                         /* (PORT_WRCONFIG) Write PMUX Position */
+#define PORT_WRCONFIG_WRPMUX_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_WRPMUX_Pos)          /* (PORT_WRCONFIG) Write PMUX Mask */
+#define PORT_WRCONFIG_WRPMUX(value)           (PORT_WRCONFIG_WRPMUX_Msk & (_UINT32_(value) << PORT_WRCONFIG_WRPMUX_Pos)) /* Assigment of value for WRPMUX in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_WRPINCFG_Pos            _UINT32_(30)                                         /* (PORT_WRCONFIG) Write PINCFG Position */
+#define PORT_WRCONFIG_WRPINCFG_Msk            (_UINT32_(0x1) << PORT_WRCONFIG_WRPINCFG_Pos)        /* (PORT_WRCONFIG) Write PINCFG Mask */
+#define PORT_WRCONFIG_WRPINCFG(value)         (PORT_WRCONFIG_WRPINCFG_Msk & (_UINT32_(value) << PORT_WRCONFIG_WRPINCFG_Pos)) /* Assigment of value for WRPINCFG in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_HWSEL_Pos               _UINT32_(31)                                         /* (PORT_WRCONFIG) Half-Word Select Position */
+#define PORT_WRCONFIG_HWSEL_Msk               (_UINT32_(0x1) << PORT_WRCONFIG_HWSEL_Pos)           /* (PORT_WRCONFIG) Half-Word Select Mask */
+#define PORT_WRCONFIG_HWSEL(value)            (PORT_WRCONFIG_HWSEL_Msk & (_UINT32_(value) << PORT_WRCONFIG_HWSEL_Pos)) /* Assigment of value for HWSEL in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_Msk                     _UINT32_(0xDF47FFFF)                                 /* (PORT_WRCONFIG) Register Mask  */
 
 
 /* -------- PORT_EVCTRL : (PORT Offset: 0x2C) (R/W 32) Event Input Control -------- */
@@ -121,69 +199,6 @@
 #define PORT_EVCTRL_PORTEI3_Msk               (_UINT32_(0x1) << PORT_EVCTRL_PORTEI3_Pos)           /* (PORT_EVCTRL) PORT Event Input Enable 3 Mask */
 #define PORT_EVCTRL_PORTEI3(value)            (PORT_EVCTRL_PORTEI3_Msk & (_UINT32_(value) << PORT_EVCTRL_PORTEI3_Pos)) /* Assigment of value for PORTEI3 in the PORT_EVCTRL register */
 #define PORT_EVCTRL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_EVCTRL) Register Mask  */
-
-
-/* -------- PORT_IN : (PORT Offset: 0x20) ( R/ 32) Data Input Value -------- */
-#define PORT_IN_RESETVALUE                    _UINT32_(0x00)                                       /*  (PORT_IN) Data Input Value  Reset Value */
-
-#define PORT_IN_IN_Pos                        _UINT32_(0)                                          /* (PORT_IN) PORT Data Input Value Position */
-#define PORT_IN_IN_Msk                        (_UINT32_(0xFFFFFFFF) << PORT_IN_IN_Pos)             /* (PORT_IN) PORT Data Input Value Mask */
-#define PORT_IN_IN(value)                     (PORT_IN_IN_Msk & (_UINT32_(value) << PORT_IN_IN_Pos)) /* Assigment of value for IN in the PORT_IN register */
-#define PORT_IN_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (PORT_IN) Register Mask  */
-
-
-/* -------- PORT_OUT : (PORT Offset: 0x10) (R/W 32) Data Output Value -------- */
-#define PORT_OUT_RESETVALUE                   _UINT32_(0x00)                                       /*  (PORT_OUT) Data Output Value  Reset Value */
-
-#define PORT_OUT_OUT_Pos                      _UINT32_(0)                                          /* (PORT_OUT) PORT Data Output Value Position */
-#define PORT_OUT_OUT_Msk                      (_UINT32_(0xFFFFFFFF) << PORT_OUT_OUT_Pos)           /* (PORT_OUT) PORT Data Output Value Mask */
-#define PORT_OUT_OUT(value)                   (PORT_OUT_OUT_Msk & (_UINT32_(value) << PORT_OUT_OUT_Pos)) /* Assigment of value for OUT in the PORT_OUT register */
-#define PORT_OUT_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUT) Register Mask  */
-
-
-/* -------- PORT_OUTCLR : (PORT Offset: 0x14) (R/W 32) Data Output Value Clear -------- */
-#define PORT_OUTCLR_RESETVALUE                _UINT32_(0x00)                                       /*  (PORT_OUTCLR) Data Output Value Clear  Reset Value */
-
-#define PORT_OUTCLR_OUTCLR_Pos                _UINT32_(0)                                          /* (PORT_OUTCLR) PORT Data Output Value Clear Position */
-#define PORT_OUTCLR_OUTCLR_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTCLR_OUTCLR_Pos)     /* (PORT_OUTCLR) PORT Data Output Value Clear Mask */
-#define PORT_OUTCLR_OUTCLR(value)             (PORT_OUTCLR_OUTCLR_Msk & (_UINT32_(value) << PORT_OUTCLR_OUTCLR_Pos)) /* Assigment of value for OUTCLR in the PORT_OUTCLR register */
-#define PORT_OUTCLR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTCLR) Register Mask  */
-
-
-/* -------- PORT_OUTSET : (PORT Offset: 0x18) (R/W 32) Data Output Value Set -------- */
-#define PORT_OUTSET_RESETVALUE                _UINT32_(0x00)                                       /*  (PORT_OUTSET) Data Output Value Set  Reset Value */
-
-#define PORT_OUTSET_OUTSET_Pos                _UINT32_(0)                                          /* (PORT_OUTSET) PORT Data Output Value Set Position */
-#define PORT_OUTSET_OUTSET_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTSET_OUTSET_Pos)     /* (PORT_OUTSET) PORT Data Output Value Set Mask */
-#define PORT_OUTSET_OUTSET(value)             (PORT_OUTSET_OUTSET_Msk & (_UINT32_(value) << PORT_OUTSET_OUTSET_Pos)) /* Assigment of value for OUTSET in the PORT_OUTSET register */
-#define PORT_OUTSET_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTSET) Register Mask  */
-
-
-/* -------- PORT_OUTTGL : (PORT Offset: 0x1C) (R/W 32) Data Output Value Toggle -------- */
-#define PORT_OUTTGL_RESETVALUE                _UINT32_(0x00)                                       /*  (PORT_OUTTGL) Data Output Value Toggle  Reset Value */
-
-#define PORT_OUTTGL_OUTTGL_Pos                _UINT32_(0)                                          /* (PORT_OUTTGL) PORT Data Output Value Toggle Position */
-#define PORT_OUTTGL_OUTTGL_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTTGL_OUTTGL_Pos)     /* (PORT_OUTTGL) PORT Data Output Value Toggle Mask */
-#define PORT_OUTTGL_OUTTGL(value)             (PORT_OUTTGL_OUTTGL_Msk & (_UINT32_(value) << PORT_OUTTGL_OUTTGL_Pos)) /* Assigment of value for OUTTGL in the PORT_OUTTGL register */
-#define PORT_OUTTGL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTTGL) Register Mask  */
-
-
-/* -------- PORT_PINCFG : (PORT Offset: 0x40) (R/W 8) Pin Configuration -------- */
-#define PORT_PINCFG_RESETVALUE                _UINT8_(0x00)                                        /*  (PORT_PINCFG) Pin Configuration  Reset Value */
-
-#define PORT_PINCFG_PMUXEN_Pos                _UINT8_(0)                                           /* (PORT_PINCFG) Peripheral Multiplexer Enable Position */
-#define PORT_PINCFG_PMUXEN_Msk                (_UINT8_(0x1) << PORT_PINCFG_PMUXEN_Pos)             /* (PORT_PINCFG) Peripheral Multiplexer Enable Mask */
-#define PORT_PINCFG_PMUXEN(value)             (PORT_PINCFG_PMUXEN_Msk & (_UINT8_(value) << PORT_PINCFG_PMUXEN_Pos)) /* Assigment of value for PMUXEN in the PORT_PINCFG register */
-#define PORT_PINCFG_INEN_Pos                  _UINT8_(1)                                           /* (PORT_PINCFG) Input Enable Position */
-#define PORT_PINCFG_INEN_Msk                  (_UINT8_(0x1) << PORT_PINCFG_INEN_Pos)               /* (PORT_PINCFG) Input Enable Mask */
-#define PORT_PINCFG_INEN(value)               (PORT_PINCFG_INEN_Msk & (_UINT8_(value) << PORT_PINCFG_INEN_Pos)) /* Assigment of value for INEN in the PORT_PINCFG register */
-#define PORT_PINCFG_PULLEN_Pos                _UINT8_(2)                                           /* (PORT_PINCFG) Pull Enable Position */
-#define PORT_PINCFG_PULLEN_Msk                (_UINT8_(0x1) << PORT_PINCFG_PULLEN_Pos)             /* (PORT_PINCFG) Pull Enable Mask */
-#define PORT_PINCFG_PULLEN(value)             (PORT_PINCFG_PULLEN_Msk & (_UINT8_(value) << PORT_PINCFG_PULLEN_Pos)) /* Assigment of value for PULLEN in the PORT_PINCFG register */
-#define PORT_PINCFG_DRVSTR_Pos                _UINT8_(6)                                           /* (PORT_PINCFG) Output Driver Strength Selection Position */
-#define PORT_PINCFG_DRVSTR_Msk                (_UINT8_(0x1) << PORT_PINCFG_DRVSTR_Pos)             /* (PORT_PINCFG) Output Driver Strength Selection Mask */
-#define PORT_PINCFG_DRVSTR(value)             (PORT_PINCFG_DRVSTR_Msk & (_UINT8_(value) << PORT_PINCFG_DRVSTR_Pos)) /* Assigment of value for DRVSTR in the PORT_PINCFG register */
-#define PORT_PINCFG_Msk                       _UINT8_(0x47)                                        /* (PORT_PINCFG) Register Mask  */
 
 
 /* -------- PORT_PMUX : (PORT Offset: 0x30) (R/W 8) Peripheral Multiplexing -------- */
@@ -254,51 +269,54 @@
 #define PORT_PMUX_Msk                         _UINT8_(0xFF)                                        /* (PORT_PMUX) Register Mask  */
 
 
-/* -------- PORT_WRCONFIG : (PORT Offset: 0x28) ( /W 32) Write Configuration -------- */
-#define PORT_WRCONFIG_RESETVALUE              _UINT32_(0x00)                                       /*  (PORT_WRCONFIG) Write Configuration  Reset Value */
+/* -------- PORT_PINCFG : (PORT Offset: 0x40) (R/W 8) Pin Configuration -------- */
+#define PORT_PINCFG_RESETVALUE                _UINT8_(0x00)                                        /*  (PORT_PINCFG) Pin Configuration  Reset Value */
 
-#define PORT_WRCONFIG_PINMASK_Pos             _UINT32_(0)                                          /* (PORT_WRCONFIG) Pin Mask for Multiple Pin Configuration Position */
-#define PORT_WRCONFIG_PINMASK_Msk             (_UINT32_(0xFFFF) << PORT_WRCONFIG_PINMASK_Pos)      /* (PORT_WRCONFIG) Pin Mask for Multiple Pin Configuration Mask */
-#define PORT_WRCONFIG_PINMASK(value)          (PORT_WRCONFIG_PINMASK_Msk & (_UINT32_(value) << PORT_WRCONFIG_PINMASK_Pos)) /* Assigment of value for PINMASK in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_PMUXEN_Pos              _UINT32_(16)                                         /* (PORT_WRCONFIG) Peripheral Multiplexer Enable Position */
-#define PORT_WRCONFIG_PMUXEN_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_PMUXEN_Pos)          /* (PORT_WRCONFIG) Peripheral Multiplexer Enable Mask */
-#define PORT_WRCONFIG_PMUXEN(value)           (PORT_WRCONFIG_PMUXEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_PMUXEN_Pos)) /* Assigment of value for PMUXEN in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_INEN_Pos                _UINT32_(17)                                         /* (PORT_WRCONFIG) Input Enable Position */
-#define PORT_WRCONFIG_INEN_Msk                (_UINT32_(0x1) << PORT_WRCONFIG_INEN_Pos)            /* (PORT_WRCONFIG) Input Enable Mask */
-#define PORT_WRCONFIG_INEN(value)             (PORT_WRCONFIG_INEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_INEN_Pos)) /* Assigment of value for INEN in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_PULLEN_Pos              _UINT32_(18)                                         /* (PORT_WRCONFIG) Pull Enable Position */
-#define PORT_WRCONFIG_PULLEN_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_PULLEN_Pos)          /* (PORT_WRCONFIG) Pull Enable Mask */
-#define PORT_WRCONFIG_PULLEN(value)           (PORT_WRCONFIG_PULLEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_PULLEN_Pos)) /* Assigment of value for PULLEN in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_DRVSTR_Pos              _UINT32_(22)                                         /* (PORT_WRCONFIG) Output Driver Strength Selection Position */
-#define PORT_WRCONFIG_DRVSTR_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_DRVSTR_Pos)          /* (PORT_WRCONFIG) Output Driver Strength Selection Mask */
-#define PORT_WRCONFIG_DRVSTR(value)           (PORT_WRCONFIG_DRVSTR_Msk & (_UINT32_(value) << PORT_WRCONFIG_DRVSTR_Pos)) /* Assigment of value for DRVSTR in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_PMUX_Pos                _UINT32_(24)                                         /* (PORT_WRCONFIG) Peripheral Multiplexing Position */
-#define PORT_WRCONFIG_PMUX_Msk                (_UINT32_(0xF) << PORT_WRCONFIG_PMUX_Pos)            /* (PORT_WRCONFIG) Peripheral Multiplexing Mask */
-#define PORT_WRCONFIG_PMUX(value)             (PORT_WRCONFIG_PMUX_Msk & (_UINT32_(value) << PORT_WRCONFIG_PMUX_Pos)) /* Assigment of value for PMUX in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_WRPMUX_Pos              _UINT32_(28)                                         /* (PORT_WRCONFIG) Write PMUX Position */
-#define PORT_WRCONFIG_WRPMUX_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_WRPMUX_Pos)          /* (PORT_WRCONFIG) Write PMUX Mask */
-#define PORT_WRCONFIG_WRPMUX(value)           (PORT_WRCONFIG_WRPMUX_Msk & (_UINT32_(value) << PORT_WRCONFIG_WRPMUX_Pos)) /* Assigment of value for WRPMUX in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_WRPINCFG_Pos            _UINT32_(30)                                         /* (PORT_WRCONFIG) Write PINCFG Position */
-#define PORT_WRCONFIG_WRPINCFG_Msk            (_UINT32_(0x1) << PORT_WRCONFIG_WRPINCFG_Pos)        /* (PORT_WRCONFIG) Write PINCFG Mask */
-#define PORT_WRCONFIG_WRPINCFG(value)         (PORT_WRCONFIG_WRPINCFG_Msk & (_UINT32_(value) << PORT_WRCONFIG_WRPINCFG_Pos)) /* Assigment of value for WRPINCFG in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_HWSEL_Pos               _UINT32_(31)                                         /* (PORT_WRCONFIG) Half-Word Select Position */
-#define PORT_WRCONFIG_HWSEL_Msk               (_UINT32_(0x1) << PORT_WRCONFIG_HWSEL_Pos)           /* (PORT_WRCONFIG) Half-Word Select Mask */
-#define PORT_WRCONFIG_HWSEL(value)            (PORT_WRCONFIG_HWSEL_Msk & (_UINT32_(value) << PORT_WRCONFIG_HWSEL_Pos)) /* Assigment of value for HWSEL in the PORT_WRCONFIG register */
-#define PORT_WRCONFIG_Msk                     _UINT32_(0xDF47FFFF)                                 /* (PORT_WRCONFIG) Register Mask  */
+#define PORT_PINCFG_PMUXEN_Pos                _UINT8_(0)                                           /* (PORT_PINCFG) Peripheral Multiplexer Enable Position */
+#define PORT_PINCFG_PMUXEN_Msk                (_UINT8_(0x1) << PORT_PINCFG_PMUXEN_Pos)             /* (PORT_PINCFG) Peripheral Multiplexer Enable Mask */
+#define PORT_PINCFG_PMUXEN(value)             (PORT_PINCFG_PMUXEN_Msk & (_UINT8_(value) << PORT_PINCFG_PMUXEN_Pos)) /* Assigment of value for PMUXEN in the PORT_PINCFG register */
+#define PORT_PINCFG_INEN_Pos                  _UINT8_(1)                                           /* (PORT_PINCFG) Input Enable Position */
+#define PORT_PINCFG_INEN_Msk                  (_UINT8_(0x1) << PORT_PINCFG_INEN_Pos)               /* (PORT_PINCFG) Input Enable Mask */
+#define PORT_PINCFG_INEN(value)               (PORT_PINCFG_INEN_Msk & (_UINT8_(value) << PORT_PINCFG_INEN_Pos)) /* Assigment of value for INEN in the PORT_PINCFG register */
+#define PORT_PINCFG_PULLEN_Pos                _UINT8_(2)                                           /* (PORT_PINCFG) Pull Enable Position */
+#define PORT_PINCFG_PULLEN_Msk                (_UINT8_(0x1) << PORT_PINCFG_PULLEN_Pos)             /* (PORT_PINCFG) Pull Enable Mask */
+#define PORT_PINCFG_PULLEN(value)             (PORT_PINCFG_PULLEN_Msk & (_UINT8_(value) << PORT_PINCFG_PULLEN_Pos)) /* Assigment of value for PULLEN in the PORT_PINCFG register */
+#define PORT_PINCFG_DRVSTR_Pos                _UINT8_(6)                                           /* (PORT_PINCFG) Output Driver Strength Selection Position */
+#define PORT_PINCFG_DRVSTR_Msk                (_UINT8_(0x1) << PORT_PINCFG_DRVSTR_Pos)             /* (PORT_PINCFG) Output Driver Strength Selection Mask */
+#define PORT_PINCFG_DRVSTR(value)             (PORT_PINCFG_DRVSTR_Msk & (_UINT8_(value) << PORT_PINCFG_DRVSTR_Pos)) /* Assigment of value for DRVSTR in the PORT_PINCFG register */
+#define PORT_PINCFG_Msk                       _UINT8_(0x47)                                        /* (PORT_PINCFG) Register Mask  */
 
 
 /** \brief PORT register offsets definitions */
-#define PORT_CTRL_REG_OFST             _UINT32_(0x24)      /* (PORT_CTRL) Control Offset */
 #define PORT_DIR_REG_OFST              _UINT32_(0x00)      /* (PORT_DIR) Data Direction Offset */
 #define PORT_DIRCLR_REG_OFST           _UINT32_(0x04)      /* (PORT_DIRCLR) Data Direction Clear Offset */
 #define PORT_DIRSET_REG_OFST           _UINT32_(0x08)      /* (PORT_DIRSET) Data Direction Set Offset */
 #define PORT_DIRTGL_REG_OFST           _UINT32_(0x0C)      /* (PORT_DIRTGL) Data Direction Toggle Offset */
-#define PORT_EVCTRL_REG_OFST           _UINT32_(0x2C)      /* (PORT_EVCTRL) Event Input Control Offset */
-#define PORT_IN_REG_OFST               _UINT32_(0x20)      /* (PORT_IN) Data Input Value Offset */
 #define PORT_OUT_REG_OFST              _UINT32_(0x10)      /* (PORT_OUT) Data Output Value Offset */
 #define PORT_OUTCLR_REG_OFST           _UINT32_(0x14)      /* (PORT_OUTCLR) Data Output Value Clear Offset */
 #define PORT_OUTSET_REG_OFST           _UINT32_(0x18)      /* (PORT_OUTSET) Data Output Value Set Offset */
 #define PORT_OUTTGL_REG_OFST           _UINT32_(0x1C)      /* (PORT_OUTTGL) Data Output Value Toggle Offset */
+#define PORT_IN_REG_OFST               _UINT32_(0x20)      /* (PORT_IN) Data Input Value Offset */
+#define PORT_CTRL_REG_OFST             _UINT32_(0x24)      /* (PORT_CTRL) Control Offset */
+#define PORT_WRCONFIG_REG_OFST         _UINT32_(0x28)      /* (PORT_WRCONFIG) Write Configuration Offset */
+#define PORT_EVCTRL_REG_OFST           _UINT32_(0x2C)      /* (PORT_EVCTRL) Event Input Control Offset */
+#define PORT_PMUX_REG_OFST             _UINT32_(0x30)      /* (PORT_PMUX) Peripheral Multiplexing Offset */
+#define PORT_PMUX0_REG_OFST            _UINT32_(0x30)      /* (PORT_PMUX0) Peripheral Multiplexing Offset */
+#define PORT_PMUX1_REG_OFST            _UINT32_(0x31)      /* (PORT_PMUX1) Peripheral Multiplexing Offset */
+#define PORT_PMUX2_REG_OFST            _UINT32_(0x32)      /* (PORT_PMUX2) Peripheral Multiplexing Offset */
+#define PORT_PMUX3_REG_OFST            _UINT32_(0x33)      /* (PORT_PMUX3) Peripheral Multiplexing Offset */
+#define PORT_PMUX4_REG_OFST            _UINT32_(0x34)      /* (PORT_PMUX4) Peripheral Multiplexing Offset */
+#define PORT_PMUX5_REG_OFST            _UINT32_(0x35)      /* (PORT_PMUX5) Peripheral Multiplexing Offset */
+#define PORT_PMUX6_REG_OFST            _UINT32_(0x36)      /* (PORT_PMUX6) Peripheral Multiplexing Offset */
+#define PORT_PMUX7_REG_OFST            _UINT32_(0x37)      /* (PORT_PMUX7) Peripheral Multiplexing Offset */
+#define PORT_PMUX8_REG_OFST            _UINT32_(0x38)      /* (PORT_PMUX8) Peripheral Multiplexing Offset */
+#define PORT_PMUX9_REG_OFST            _UINT32_(0x39)      /* (PORT_PMUX9) Peripheral Multiplexing Offset */
+#define PORT_PMUX10_REG_OFST           _UINT32_(0x3A)      /* (PORT_PMUX10) Peripheral Multiplexing Offset */
+#define PORT_PMUX11_REG_OFST           _UINT32_(0x3B)      /* (PORT_PMUX11) Peripheral Multiplexing Offset */
+#define PORT_PMUX12_REG_OFST           _UINT32_(0x3C)      /* (PORT_PMUX12) Peripheral Multiplexing Offset */
+#define PORT_PMUX13_REG_OFST           _UINT32_(0x3D)      /* (PORT_PMUX13) Peripheral Multiplexing Offset */
+#define PORT_PMUX14_REG_OFST           _UINT32_(0x3E)      /* (PORT_PMUX14) Peripheral Multiplexing Offset */
+#define PORT_PMUX15_REG_OFST           _UINT32_(0x3F)      /* (PORT_PMUX15) Peripheral Multiplexing Offset */
 #define PORT_PINCFG_REG_OFST           _UINT32_(0x40)      /* (PORT_PINCFG) Pin Configuration Offset */
 #define PORT_PINCFG0_REG_OFST          _UINT32_(0x40)      /* (PORT_PINCFG0) Pin Configuration Offset */
 #define PORT_PINCFG1_REG_OFST          _UINT32_(0x41)      /* (PORT_PINCFG1) Pin Configuration Offset */
@@ -332,24 +350,6 @@
 #define PORT_PINCFG29_REG_OFST         _UINT32_(0x5D)      /* (PORT_PINCFG29) Pin Configuration Offset */
 #define PORT_PINCFG30_REG_OFST         _UINT32_(0x5E)      /* (PORT_PINCFG30) Pin Configuration Offset */
 #define PORT_PINCFG31_REG_OFST         _UINT32_(0x5F)      /* (PORT_PINCFG31) Pin Configuration Offset */
-#define PORT_PMUX_REG_OFST             _UINT32_(0x30)      /* (PORT_PMUX) Peripheral Multiplexing Offset */
-#define PORT_PMUX0_REG_OFST            _UINT32_(0x30)      /* (PORT_PMUX0) Peripheral Multiplexing Offset */
-#define PORT_PMUX1_REG_OFST            _UINT32_(0x31)      /* (PORT_PMUX1) Peripheral Multiplexing Offset */
-#define PORT_PMUX2_REG_OFST            _UINT32_(0x32)      /* (PORT_PMUX2) Peripheral Multiplexing Offset */
-#define PORT_PMUX3_REG_OFST            _UINT32_(0x33)      /* (PORT_PMUX3) Peripheral Multiplexing Offset */
-#define PORT_PMUX4_REG_OFST            _UINT32_(0x34)      /* (PORT_PMUX4) Peripheral Multiplexing Offset */
-#define PORT_PMUX5_REG_OFST            _UINT32_(0x35)      /* (PORT_PMUX5) Peripheral Multiplexing Offset */
-#define PORT_PMUX6_REG_OFST            _UINT32_(0x36)      /* (PORT_PMUX6) Peripheral Multiplexing Offset */
-#define PORT_PMUX7_REG_OFST            _UINT32_(0x37)      /* (PORT_PMUX7) Peripheral Multiplexing Offset */
-#define PORT_PMUX8_REG_OFST            _UINT32_(0x38)      /* (PORT_PMUX8) Peripheral Multiplexing Offset */
-#define PORT_PMUX9_REG_OFST            _UINT32_(0x39)      /* (PORT_PMUX9) Peripheral Multiplexing Offset */
-#define PORT_PMUX10_REG_OFST           _UINT32_(0x3A)      /* (PORT_PMUX10) Peripheral Multiplexing Offset */
-#define PORT_PMUX11_REG_OFST           _UINT32_(0x3B)      /* (PORT_PMUX11) Peripheral Multiplexing Offset */
-#define PORT_PMUX12_REG_OFST           _UINT32_(0x3C)      /* (PORT_PMUX12) Peripheral Multiplexing Offset */
-#define PORT_PMUX13_REG_OFST           _UINT32_(0x3D)      /* (PORT_PMUX13) Peripheral Multiplexing Offset */
-#define PORT_PMUX14_REG_OFST           _UINT32_(0x3E)      /* (PORT_PMUX14) Peripheral Multiplexing Offset */
-#define PORT_PMUX15_REG_OFST           _UINT32_(0x3F)      /* (PORT_PMUX15) Peripheral Multiplexing Offset */
-#define PORT_WRCONFIG_REG_OFST         _UINT32_(0x28)      /* (PORT_WRCONFIG) Write Configuration Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief GROUP register API structure */

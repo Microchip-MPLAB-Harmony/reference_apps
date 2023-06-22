@@ -1,7 +1,7 @@
 /*
  * Component description for RSTC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,28 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_RSTC_COMPONENT_H_
 #define _PIC32CXSG41_RSTC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR RSTC                                         */
 /* ************************************************************************** */
-
-/* -------- RSTC_BKUPEXIT : (RSTC Offset: 0x02) ( R/ 8) Backup Exit Source -------- */
-#define RSTC_BKUPEXIT_RESETVALUE              _UINT8_(0x00)                                        /*  (RSTC_BKUPEXIT) Backup Exit Source  Reset Value */
-
-#define RSTC_BKUPEXIT_RTC_Pos                 _UINT8_(1)                                           /* (RSTC_BKUPEXIT) Real Timer Counter Interrupt Position */
-#define RSTC_BKUPEXIT_RTC_Msk                 (_UINT8_(0x1) << RSTC_BKUPEXIT_RTC_Pos)              /* (RSTC_BKUPEXIT) Real Timer Counter Interrupt Mask */
-#define RSTC_BKUPEXIT_RTC(value)              (RSTC_BKUPEXIT_RTC_Msk & (_UINT8_(value) << RSTC_BKUPEXIT_RTC_Pos)) /* Assigment of value for RTC in the RSTC_BKUPEXIT register */
-#define RSTC_BKUPEXIT_BBPS_Pos                _UINT8_(2)                                           /* (RSTC_BKUPEXIT) Battery Backup Power Switch Position */
-#define RSTC_BKUPEXIT_BBPS_Msk                (_UINT8_(0x1) << RSTC_BKUPEXIT_BBPS_Pos)             /* (RSTC_BKUPEXIT) Battery Backup Power Switch Mask */
-#define RSTC_BKUPEXIT_BBPS(value)             (RSTC_BKUPEXIT_BBPS_Msk & (_UINT8_(value) << RSTC_BKUPEXIT_BBPS_Pos)) /* Assigment of value for BBPS in the RSTC_BKUPEXIT register */
-#define RSTC_BKUPEXIT_HIB_Pos                 _UINT8_(7)                                           /* (RSTC_BKUPEXIT) Hibernate Position */
-#define RSTC_BKUPEXIT_HIB_Msk                 (_UINT8_(0x1) << RSTC_BKUPEXIT_HIB_Pos)              /* (RSTC_BKUPEXIT) Hibernate Mask */
-#define RSTC_BKUPEXIT_HIB(value)              (RSTC_BKUPEXIT_HIB_Msk & (_UINT8_(value) << RSTC_BKUPEXIT_HIB_Pos)) /* Assigment of value for HIB in the RSTC_BKUPEXIT register */
-#define RSTC_BKUPEXIT_Msk                     _UINT8_(0x86)                                        /* (RSTC_BKUPEXIT) Register Mask  */
-
 
 /* -------- RSTC_RCAUSE : (RSTC Offset: 0x00) ( R/ 8) Reset Cause -------- */
 #define RSTC_RCAUSE_POR_Pos                   _UINT8_(0)                                           /* (RSTC_RCAUSE) Power On Reset Position */
@@ -74,9 +59,24 @@
 #define RSTC_RCAUSE_BOD_Msk                   (_UINT8_(0x3) << RSTC_RCAUSE_BOD_Pos)                /* (RSTC_RCAUSE Mask) BOD */
 #define RSTC_RCAUSE_BOD(value)                (RSTC_RCAUSE_BOD_Msk & (_UINT8_(value) << RSTC_RCAUSE_BOD_Pos)) 
 
+/* -------- RSTC_BKUPEXIT : (RSTC Offset: 0x02) ( R/ 8) Backup Exit Source -------- */
+#define RSTC_BKUPEXIT_RESETVALUE              _UINT8_(0x00)                                        /*  (RSTC_BKUPEXIT) Backup Exit Source  Reset Value */
+
+#define RSTC_BKUPEXIT_RTC_Pos                 _UINT8_(1)                                           /* (RSTC_BKUPEXIT) Real Timer Counter Interrupt Position */
+#define RSTC_BKUPEXIT_RTC_Msk                 (_UINT8_(0x1) << RSTC_BKUPEXIT_RTC_Pos)              /* (RSTC_BKUPEXIT) Real Timer Counter Interrupt Mask */
+#define RSTC_BKUPEXIT_RTC(value)              (RSTC_BKUPEXIT_RTC_Msk & (_UINT8_(value) << RSTC_BKUPEXIT_RTC_Pos)) /* Assigment of value for RTC in the RSTC_BKUPEXIT register */
+#define RSTC_BKUPEXIT_BBPS_Pos                _UINT8_(2)                                           /* (RSTC_BKUPEXIT) Battery Backup Power Switch Position */
+#define RSTC_BKUPEXIT_BBPS_Msk                (_UINT8_(0x1) << RSTC_BKUPEXIT_BBPS_Pos)             /* (RSTC_BKUPEXIT) Battery Backup Power Switch Mask */
+#define RSTC_BKUPEXIT_BBPS(value)             (RSTC_BKUPEXIT_BBPS_Msk & (_UINT8_(value) << RSTC_BKUPEXIT_BBPS_Pos)) /* Assigment of value for BBPS in the RSTC_BKUPEXIT register */
+#define RSTC_BKUPEXIT_HIB_Pos                 _UINT8_(7)                                           /* (RSTC_BKUPEXIT) Hibernate Position */
+#define RSTC_BKUPEXIT_HIB_Msk                 (_UINT8_(0x1) << RSTC_BKUPEXIT_HIB_Pos)              /* (RSTC_BKUPEXIT) Hibernate Mask */
+#define RSTC_BKUPEXIT_HIB(value)              (RSTC_BKUPEXIT_HIB_Msk & (_UINT8_(value) << RSTC_BKUPEXIT_HIB_Pos)) /* Assigment of value for HIB in the RSTC_BKUPEXIT register */
+#define RSTC_BKUPEXIT_Msk                     _UINT8_(0x86)                                        /* (RSTC_BKUPEXIT) Register Mask  */
+
+
 /** \brief RSTC register offsets definitions */
-#define RSTC_BKUPEXIT_REG_OFST         _UINT32_(0x02)      /* (RSTC_BKUPEXIT) Backup Exit Source Offset */
 #define RSTC_RCAUSE_REG_OFST           _UINT32_(0x00)      /* (RSTC_RCAUSE) Reset Cause Offset */
+#define RSTC_BKUPEXIT_REG_OFST         _UINT32_(0x02)      /* (RSTC_BKUPEXIT) Backup Exit Source Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief RSTC register API structure */

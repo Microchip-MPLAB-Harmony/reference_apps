@@ -1,7 +1,7 @@
 /*
  * Component description for WDT
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_WDT_COMPONENT_H_
 #define _PIC32CXSG41_WDT_COMPONENT_H_
 
@@ -28,15 +28,19 @@
 /*   SOFTWARE API DEFINITION FOR WDT                                          */
 /* ************************************************************************** */
 
-/* -------- WDT_CLEAR : (WDT Offset: 0x0C) ( /W 8) Clear -------- */
-#define WDT_CLEAR_RESETVALUE                  _UINT8_(0x00)                                        /*  (WDT_CLEAR) Clear  Reset Value */
+/* -------- WDT_CTRLA : (WDT Offset: 0x00) (R/W 8) Control -------- */
+#define WDT_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (WDT_CTRLA) Control  Reset Value */
 
-#define WDT_CLEAR_CLEAR_Pos                   _UINT8_(0)                                           /* (WDT_CLEAR) Watchdog Clear Position */
-#define WDT_CLEAR_CLEAR_Msk                   (_UINT8_(0xFF) << WDT_CLEAR_CLEAR_Pos)               /* (WDT_CLEAR) Watchdog Clear Mask */
-#define WDT_CLEAR_CLEAR(value)                (WDT_CLEAR_CLEAR_Msk & (_UINT8_(value) << WDT_CLEAR_CLEAR_Pos)) /* Assigment of value for CLEAR in the WDT_CLEAR register */
-#define   WDT_CLEAR_CLEAR_KEY_Val             _UINT8_(0xA5)                                        /* (WDT_CLEAR) Clear Key  */
-#define WDT_CLEAR_CLEAR_KEY                   (WDT_CLEAR_CLEAR_KEY_Val << WDT_CLEAR_CLEAR_Pos)     /* (WDT_CLEAR) Clear Key Position  */
-#define WDT_CLEAR_Msk                         _UINT8_(0xFF)                                        /* (WDT_CLEAR) Register Mask  */
+#define WDT_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (WDT_CTRLA) Enable Position */
+#define WDT_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << WDT_CTRLA_ENABLE_Pos)               /* (WDT_CTRLA) Enable Mask */
+#define WDT_CTRLA_ENABLE(value)               (WDT_CTRLA_ENABLE_Msk & (_UINT8_(value) << WDT_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the WDT_CTRLA register */
+#define WDT_CTRLA_WEN_Pos                     _UINT8_(2)                                           /* (WDT_CTRLA) Watchdog Timer Window Mode Enable Position */
+#define WDT_CTRLA_WEN_Msk                     (_UINT8_(0x1) << WDT_CTRLA_WEN_Pos)                  /* (WDT_CTRLA) Watchdog Timer Window Mode Enable Mask */
+#define WDT_CTRLA_WEN(value)                  (WDT_CTRLA_WEN_Msk & (_UINT8_(value) << WDT_CTRLA_WEN_Pos)) /* Assigment of value for WEN in the WDT_CTRLA register */
+#define WDT_CTRLA_ALWAYSON_Pos                _UINT8_(7)                                           /* (WDT_CTRLA) Always-On Position */
+#define WDT_CTRLA_ALWAYSON_Msk                (_UINT8_(0x1) << WDT_CTRLA_ALWAYSON_Pos)             /* (WDT_CTRLA) Always-On Mask */
+#define WDT_CTRLA_ALWAYSON(value)             (WDT_CTRLA_ALWAYSON_Msk & (_UINT8_(value) << WDT_CTRLA_ALWAYSON_Pos)) /* Assigment of value for ALWAYSON in the WDT_CTRLA register */
+#define WDT_CTRLA_Msk                         _UINT8_(0x86)                                        /* (WDT_CTRLA) Register Mask  */
 
 
 /* -------- WDT_CONFIG : (WDT Offset: 0x01) (R/W 8) Configuration -------- */
@@ -97,21 +101,6 @@
 #define WDT_CONFIG_WINDOW_CYC8192             (WDT_CONFIG_WINDOW_CYC8192_Val << WDT_CONFIG_WINDOW_Pos) /* (WDT_CONFIG) 8192 clock cycles Position  */
 #define WDT_CONFIG_WINDOW_CYC16384            (WDT_CONFIG_WINDOW_CYC16384_Val << WDT_CONFIG_WINDOW_Pos) /* (WDT_CONFIG) 16384 clock cycles Position  */
 #define WDT_CONFIG_Msk                        _UINT8_(0xFF)                                        /* (WDT_CONFIG) Register Mask  */
-
-
-/* -------- WDT_CTRLA : (WDT Offset: 0x00) (R/W 8) Control -------- */
-#define WDT_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (WDT_CTRLA) Control  Reset Value */
-
-#define WDT_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (WDT_CTRLA) Enable Position */
-#define WDT_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << WDT_CTRLA_ENABLE_Pos)               /* (WDT_CTRLA) Enable Mask */
-#define WDT_CTRLA_ENABLE(value)               (WDT_CTRLA_ENABLE_Msk & (_UINT8_(value) << WDT_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the WDT_CTRLA register */
-#define WDT_CTRLA_WEN_Pos                     _UINT8_(2)                                           /* (WDT_CTRLA) Watchdog Timer Window Mode Enable Position */
-#define WDT_CTRLA_WEN_Msk                     (_UINT8_(0x1) << WDT_CTRLA_WEN_Pos)                  /* (WDT_CTRLA) Watchdog Timer Window Mode Enable Mask */
-#define WDT_CTRLA_WEN(value)                  (WDT_CTRLA_WEN_Msk & (_UINT8_(value) << WDT_CTRLA_WEN_Pos)) /* Assigment of value for WEN in the WDT_CTRLA register */
-#define WDT_CTRLA_ALWAYSON_Pos                _UINT8_(7)                                           /* (WDT_CTRLA) Always-On Position */
-#define WDT_CTRLA_ALWAYSON_Msk                (_UINT8_(0x1) << WDT_CTRLA_ALWAYSON_Pos)             /* (WDT_CTRLA) Always-On Mask */
-#define WDT_CTRLA_ALWAYSON(value)             (WDT_CTRLA_ALWAYSON_Msk & (_UINT8_(value) << WDT_CTRLA_ALWAYSON_Pos)) /* Assigment of value for ALWAYSON in the WDT_CTRLA register */
-#define WDT_CTRLA_Msk                         _UINT8_(0x86)                                        /* (WDT_CTRLA) Register Mask  */
 
 
 /* -------- WDT_EWCTRL : (WDT Offset: 0x02) (R/W 8) Early Warning Interrupt Control -------- */
@@ -190,15 +179,26 @@
 #define WDT_SYNCBUSY_Msk                      _UINT32_(0x0000001E)                                 /* (WDT_SYNCBUSY) Register Mask  */
 
 
+/* -------- WDT_CLEAR : (WDT Offset: 0x0C) ( /W 8) Clear -------- */
+#define WDT_CLEAR_RESETVALUE                  _UINT8_(0x00)                                        /*  (WDT_CLEAR) Clear  Reset Value */
+
+#define WDT_CLEAR_CLEAR_Pos                   _UINT8_(0)                                           /* (WDT_CLEAR) Watchdog Clear Position */
+#define WDT_CLEAR_CLEAR_Msk                   (_UINT8_(0xFF) << WDT_CLEAR_CLEAR_Pos)               /* (WDT_CLEAR) Watchdog Clear Mask */
+#define WDT_CLEAR_CLEAR(value)                (WDT_CLEAR_CLEAR_Msk & (_UINT8_(value) << WDT_CLEAR_CLEAR_Pos)) /* Assigment of value for CLEAR in the WDT_CLEAR register */
+#define   WDT_CLEAR_CLEAR_KEY_Val             _UINT8_(0xA5)                                        /* (WDT_CLEAR) Clear Key  */
+#define WDT_CLEAR_CLEAR_KEY                   (WDT_CLEAR_CLEAR_KEY_Val << WDT_CLEAR_CLEAR_Pos)     /* (WDT_CLEAR) Clear Key Position  */
+#define WDT_CLEAR_Msk                         _UINT8_(0xFF)                                        /* (WDT_CLEAR) Register Mask  */
+
+
 /** \brief WDT register offsets definitions */
-#define WDT_CLEAR_REG_OFST             _UINT32_(0x0C)      /* (WDT_CLEAR) Clear Offset */
-#define WDT_CONFIG_REG_OFST            _UINT32_(0x01)      /* (WDT_CONFIG) Configuration Offset */
 #define WDT_CTRLA_REG_OFST             _UINT32_(0x00)      /* (WDT_CTRLA) Control Offset */
+#define WDT_CONFIG_REG_OFST            _UINT32_(0x01)      /* (WDT_CONFIG) Configuration Offset */
 #define WDT_EWCTRL_REG_OFST            _UINT32_(0x02)      /* (WDT_EWCTRL) Early Warning Interrupt Control Offset */
 #define WDT_INTENCLR_REG_OFST          _UINT32_(0x04)      /* (WDT_INTENCLR) Interrupt Enable Clear Offset */
 #define WDT_INTENSET_REG_OFST          _UINT32_(0x05)      /* (WDT_INTENSET) Interrupt Enable Set Offset */
 #define WDT_INTFLAG_REG_OFST           _UINT32_(0x06)      /* (WDT_INTFLAG) Interrupt Flag Status and Clear Offset */
 #define WDT_SYNCBUSY_REG_OFST          _UINT32_(0x08)      /* (WDT_SYNCBUSY) Synchronization Busy Offset */
+#define WDT_CLEAR_REG_OFST             _UINT32_(0x0C)      /* (WDT_CLEAR) Clear Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief WDT register API structure */

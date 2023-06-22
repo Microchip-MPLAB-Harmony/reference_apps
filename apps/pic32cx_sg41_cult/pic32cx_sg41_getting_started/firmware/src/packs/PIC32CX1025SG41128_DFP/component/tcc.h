@@ -1,7 +1,7 @@
 /*
  * Component description for TCC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,112 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_TCC_COMPONENT_H_
 #define _PIC32CXSG41_TCC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR TCC                                          */
 /* ************************************************************************** */
-
-/* -------- TCC_CC : (TCC Offset: 0x44) (R/W 32) Compare and Capture -------- */
-#define TCC_CC_RESETVALUE                     _UINT32_(0x00)                                       /*  (TCC_CC) Compare and Capture  Reset Value */
-
-#define TCC_CC_CC_Pos                         _UINT32_(0)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
-#define TCC_CC_CC_Msk                         (_UINT32_(0xFFFFFF) << TCC_CC_CC_Pos)                /* (TCC_CC) Channel Compare/Capture Value Mask */
-#define TCC_CC_CC(value)                      (TCC_CC_CC_Msk & (_UINT32_(value) << TCC_CC_CC_Pos)) /* Assigment of value for CC in the TCC_CC register */
-#define TCC_CC_Msk                            _UINT32_(0x00FFFFFF)                                 /* (TCC_CC) Register Mask  */
-
-/* DITH4 mode */
-#define TCC_CC_DITH4_DITHER_Pos               _UINT32_(0)                                          /* (TCC_CC) Dithering Cycle Number Position */
-#define TCC_CC_DITH4_DITHER_Msk               (_UINT32_(0xF) << TCC_CC_DITH4_DITHER_Pos)           /* (TCC_CC) Dithering Cycle Number Mask */
-#define TCC_CC_DITH4_DITHER(value)            (TCC_CC_DITH4_DITHER_Msk & (_UINT32_(value) << TCC_CC_DITH4_DITHER_Pos))
-#define TCC_CC_DITH4_CC_Pos                   _UINT32_(4)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
-#define TCC_CC_DITH4_CC_Msk                   (_UINT32_(0xFFFFF) << TCC_CC_DITH4_CC_Pos)           /* (TCC_CC) Channel Compare/Capture Value Mask */
-#define TCC_CC_DITH4_CC(value)                (TCC_CC_DITH4_CC_Msk & (_UINT32_(value) << TCC_CC_DITH4_CC_Pos))
-#define TCC_CC_DITH4_Msk                      _UINT32_(0x00FFFFFF)                                  /* (TCC_CC_DITH4) Register Mask  */
-
-/* DITH5 mode */
-#define TCC_CC_DITH5_DITHER_Pos               _UINT32_(0)                                          /* (TCC_CC) Dithering Cycle Number Position */
-#define TCC_CC_DITH5_DITHER_Msk               (_UINT32_(0x1F) << TCC_CC_DITH5_DITHER_Pos)          /* (TCC_CC) Dithering Cycle Number Mask */
-#define TCC_CC_DITH5_DITHER(value)            (TCC_CC_DITH5_DITHER_Msk & (_UINT32_(value) << TCC_CC_DITH5_DITHER_Pos))
-#define TCC_CC_DITH5_CC_Pos                   _UINT32_(5)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
-#define TCC_CC_DITH5_CC_Msk                   (_UINT32_(0x7FFFF) << TCC_CC_DITH5_CC_Pos)           /* (TCC_CC) Channel Compare/Capture Value Mask */
-#define TCC_CC_DITH5_CC(value)                (TCC_CC_DITH5_CC_Msk & (_UINT32_(value) << TCC_CC_DITH5_CC_Pos))
-#define TCC_CC_DITH5_Msk                      _UINT32_(0x00FFFFFF)                                  /* (TCC_CC_DITH5) Register Mask  */
-
-/* DITH6 mode */
-#define TCC_CC_DITH6_DITHER_Pos               _UINT32_(0)                                          /* (TCC_CC) Dithering Cycle Number Position */
-#define TCC_CC_DITH6_DITHER_Msk               (_UINT32_(0x3F) << TCC_CC_DITH6_DITHER_Pos)          /* (TCC_CC) Dithering Cycle Number Mask */
-#define TCC_CC_DITH6_DITHER(value)            (TCC_CC_DITH6_DITHER_Msk & (_UINT32_(value) << TCC_CC_DITH6_DITHER_Pos))
-#define TCC_CC_DITH6_CC_Pos                   _UINT32_(6)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
-#define TCC_CC_DITH6_CC_Msk                   (_UINT32_(0x3FFFF) << TCC_CC_DITH6_CC_Pos)           /* (TCC_CC) Channel Compare/Capture Value Mask */
-#define TCC_CC_DITH6_CC(value)                (TCC_CC_DITH6_CC_Msk & (_UINT32_(value) << TCC_CC_DITH6_CC_Pos))
-#define TCC_CC_DITH6_Msk                      _UINT32_(0x00FFFFFF)                                  /* (TCC_CC_DITH6) Register Mask  */
-
-
-/* -------- TCC_CCBUF : (TCC Offset: 0x70) (R/W 32) Compare and Capture Buffer -------- */
-#define TCC_CCBUF_RESETVALUE                  _UINT32_(0x00)                                       /*  (TCC_CCBUF) Compare and Capture Buffer  Reset Value */
-
-#define TCC_CCBUF_CCBUF_Pos                   _UINT32_(0)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
-#define TCC_CCBUF_CCBUF_Msk                   (_UINT32_(0xFFFFFF) << TCC_CCBUF_CCBUF_Pos)          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
-#define TCC_CCBUF_CCBUF(value)                (TCC_CCBUF_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TCC_CCBUF register */
-#define TCC_CCBUF_Msk                         _UINT32_(0x00FFFFFF)                                 /* (TCC_CCBUF) Register Mask  */
-
-/* DITH4 mode */
-#define TCC_CCBUF_DITH4_CCBUF_Pos             _UINT32_(0)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
-#define TCC_CCBUF_DITH4_CCBUF_Msk             (_UINT32_(0xF) << TCC_CCBUF_DITH4_CCBUF_Pos)         /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
-#define TCC_CCBUF_DITH4_CCBUF(value)          (TCC_CCBUF_DITH4_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH4_CCBUF_Pos))
-#define TCC_CCBUF_DITH4_DITHERBUF_Pos         _UINT32_(4)                                          /* (TCC_CCBUF) Dithering Buffer Cycle Number Position */
-#define TCC_CCBUF_DITH4_DITHERBUF_Msk         (_UINT32_(0xFFFFF) << TCC_CCBUF_DITH4_DITHERBUF_Pos) /* (TCC_CCBUF) Dithering Buffer Cycle Number Mask */
-#define TCC_CCBUF_DITH4_DITHERBUF(value)      (TCC_CCBUF_DITH4_DITHERBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH4_DITHERBUF_Pos))
-#define TCC_CCBUF_DITH4_Msk                   _UINT32_(0x00FFFFFF)                                  /* (TCC_CCBUF_DITH4) Register Mask  */
-
-/* DITH5 mode */
-#define TCC_CCBUF_DITH5_DITHERBUF_Pos         _UINT32_(0)                                          /* (TCC_CCBUF) Dithering Buffer Cycle Number Position */
-#define TCC_CCBUF_DITH5_DITHERBUF_Msk         (_UINT32_(0x1F) << TCC_CCBUF_DITH5_DITHERBUF_Pos)    /* (TCC_CCBUF) Dithering Buffer Cycle Number Mask */
-#define TCC_CCBUF_DITH5_DITHERBUF(value)      (TCC_CCBUF_DITH5_DITHERBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH5_DITHERBUF_Pos))
-#define TCC_CCBUF_DITH5_CCBUF_Pos             _UINT32_(5)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
-#define TCC_CCBUF_DITH5_CCBUF_Msk             (_UINT32_(0x7FFFF) << TCC_CCBUF_DITH5_CCBUF_Pos)     /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
-#define TCC_CCBUF_DITH5_CCBUF(value)          (TCC_CCBUF_DITH5_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH5_CCBUF_Pos))
-#define TCC_CCBUF_DITH5_Msk                   _UINT32_(0x00FFFFFF)                                  /* (TCC_CCBUF_DITH5) Register Mask  */
-
-/* DITH6 mode */
-#define TCC_CCBUF_DITH6_DITHERBUF_Pos         _UINT32_(0)                                          /* (TCC_CCBUF) Dithering Buffer Cycle Number Position */
-#define TCC_CCBUF_DITH6_DITHERBUF_Msk         (_UINT32_(0x3F) << TCC_CCBUF_DITH6_DITHERBUF_Pos)    /* (TCC_CCBUF) Dithering Buffer Cycle Number Mask */
-#define TCC_CCBUF_DITH6_DITHERBUF(value)      (TCC_CCBUF_DITH6_DITHERBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH6_DITHERBUF_Pos))
-#define TCC_CCBUF_DITH6_CCBUF_Pos             _UINT32_(6)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
-#define TCC_CCBUF_DITH6_CCBUF_Msk             (_UINT32_(0x3FFFF) << TCC_CCBUF_DITH6_CCBUF_Pos)     /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
-#define TCC_CCBUF_DITH6_CCBUF(value)          (TCC_CCBUF_DITH6_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH6_CCBUF_Pos))
-#define TCC_CCBUF_DITH6_Msk                   _UINT32_(0x00FFFFFF)                                  /* (TCC_CCBUF_DITH6) Register Mask  */
-
-
-/* -------- TCC_COUNT : (TCC Offset: 0x34) (R/W 32) Count -------- */
-#define TCC_COUNT_RESETVALUE                  _UINT32_(0x00)                                       /*  (TCC_COUNT) Count  Reset Value */
-
-#define TCC_COUNT_COUNT_Pos                   _UINT32_(0)                                          /* (TCC_COUNT) Counter Value Position */
-#define TCC_COUNT_COUNT_Msk                   (_UINT32_(0xFFFFFF) << TCC_COUNT_COUNT_Pos)          /* (TCC_COUNT) Counter Value Mask */
-#define TCC_COUNT_COUNT(value)                (TCC_COUNT_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TCC_COUNT register */
-#define TCC_COUNT_Msk                         _UINT32_(0x00FFFFFF)                                 /* (TCC_COUNT) Register Mask  */
-
-/* DITH4 mode */
-#define TCC_COUNT_DITH4_COUNT_Pos             _UINT32_(4)                                          /* (TCC_COUNT) Counter Value Position */
-#define TCC_COUNT_DITH4_COUNT_Msk             (_UINT32_(0xFFFFF) << TCC_COUNT_DITH4_COUNT_Pos)     /* (TCC_COUNT) Counter Value Mask */
-#define TCC_COUNT_DITH4_COUNT(value)          (TCC_COUNT_DITH4_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_DITH4_COUNT_Pos))
-#define TCC_COUNT_DITH4_Msk                   _UINT32_(0x00FFFFF0)                                  /* (TCC_COUNT_DITH4) Register Mask  */
-
-/* DITH5 mode */
-#define TCC_COUNT_DITH5_COUNT_Pos             _UINT32_(5)                                          /* (TCC_COUNT) Counter Value Position */
-#define TCC_COUNT_DITH5_COUNT_Msk             (_UINT32_(0x7FFFF) << TCC_COUNT_DITH5_COUNT_Pos)     /* (TCC_COUNT) Counter Value Mask */
-#define TCC_COUNT_DITH5_COUNT(value)          (TCC_COUNT_DITH5_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_DITH5_COUNT_Pos))
-#define TCC_COUNT_DITH5_Msk                   _UINT32_(0x00FFFFE0)                                  /* (TCC_COUNT_DITH5) Register Mask  */
-
-/* DITH6 mode */
-#define TCC_COUNT_DITH6_COUNT_Pos             _UINT32_(6)                                          /* (TCC_COUNT) Counter Value Position */
-#define TCC_COUNT_DITH6_COUNT_Msk             (_UINT32_(0x3FFFF) << TCC_COUNT_DITH6_COUNT_Pos)     /* (TCC_COUNT) Counter Value Mask */
-#define TCC_COUNT_DITH6_COUNT(value)          (TCC_COUNT_DITH6_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_DITH6_COUNT_Pos))
-#define TCC_COUNT_DITH6_Msk                   _UINT32_(0x00FFFFC0)                                  /* (TCC_COUNT_DITH6) Register Mask  */
-
 
 /* -------- TCC_CTRLA : (TCC Offset: 0x00) (R/W 32) Control A -------- */
 #define TCC_CTRLA_RESETVALUE                  _UINT32_(0x00)                                       /*  (TCC_CTRLA) Control A  Reset Value */
@@ -293,234 +194,56 @@
 #define TCC_CTRLBSET_Msk                      _UINT8_(0xFF)                                        /* (TCC_CTRLBSET) Register Mask  */
 
 
-/* -------- TCC_DBGCTRL : (TCC Offset: 0x1E) (R/W 8) Debug Control -------- */
-#define TCC_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (TCC_DBGCTRL) Debug Control  Reset Value */
+/* -------- TCC_SYNCBUSY : (TCC Offset: 0x08) ( R/ 32) Synchronization Busy -------- */
+#define TCC_SYNCBUSY_RESETVALUE               _UINT32_(0x00)                                       /*  (TCC_SYNCBUSY) Synchronization Busy  Reset Value */
 
-#define TCC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (TCC_DBGCTRL) Debug Running Mode Position */
-#define TCC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << TCC_DBGCTRL_DBGRUN_Pos)             /* (TCC_DBGCTRL) Debug Running Mode Mask */
-#define TCC_DBGCTRL_DBGRUN(value)             (TCC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << TCC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the TCC_DBGCTRL register */
-#define TCC_DBGCTRL_FDDBD_Pos                 _UINT8_(2)                                           /* (TCC_DBGCTRL) Fault Detection on Debug Break Detection Position */
-#define TCC_DBGCTRL_FDDBD_Msk                 (_UINT8_(0x1) << TCC_DBGCTRL_FDDBD_Pos)              /* (TCC_DBGCTRL) Fault Detection on Debug Break Detection Mask */
-#define TCC_DBGCTRL_FDDBD(value)              (TCC_DBGCTRL_FDDBD_Msk & (_UINT8_(value) << TCC_DBGCTRL_FDDBD_Pos)) /* Assigment of value for FDDBD in the TCC_DBGCTRL register */
-#define TCC_DBGCTRL_Msk                       _UINT8_(0x05)                                        /* (TCC_DBGCTRL) Register Mask  */
+#define TCC_SYNCBUSY_SWRST_Pos                _UINT32_(0)                                          /* (TCC_SYNCBUSY) Swrst Busy Position */
+#define TCC_SYNCBUSY_SWRST_Msk                (_UINT32_(0x1) << TCC_SYNCBUSY_SWRST_Pos)            /* (TCC_SYNCBUSY) Swrst Busy Mask */
+#define TCC_SYNCBUSY_SWRST(value)             (TCC_SYNCBUSY_SWRST_Msk & (_UINT32_(value) << TCC_SYNCBUSY_SWRST_Pos)) /* Assigment of value for SWRST in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_ENABLE_Pos               _UINT32_(1)                                          /* (TCC_SYNCBUSY) Enable Busy Position */
+#define TCC_SYNCBUSY_ENABLE_Msk               (_UINT32_(0x1) << TCC_SYNCBUSY_ENABLE_Pos)           /* (TCC_SYNCBUSY) Enable Busy Mask */
+#define TCC_SYNCBUSY_ENABLE(value)            (TCC_SYNCBUSY_ENABLE_Msk & (_UINT32_(value) << TCC_SYNCBUSY_ENABLE_Pos)) /* Assigment of value for ENABLE in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CTRLB_Pos                _UINT32_(2)                                          /* (TCC_SYNCBUSY) Ctrlb Busy Position */
+#define TCC_SYNCBUSY_CTRLB_Msk                (_UINT32_(0x1) << TCC_SYNCBUSY_CTRLB_Pos)            /* (TCC_SYNCBUSY) Ctrlb Busy Mask */
+#define TCC_SYNCBUSY_CTRLB(value)             (TCC_SYNCBUSY_CTRLB_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CTRLB_Pos)) /* Assigment of value for CTRLB in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_STATUS_Pos               _UINT32_(3)                                          /* (TCC_SYNCBUSY) Status Busy Position */
+#define TCC_SYNCBUSY_STATUS_Msk               (_UINT32_(0x1) << TCC_SYNCBUSY_STATUS_Pos)           /* (TCC_SYNCBUSY) Status Busy Mask */
+#define TCC_SYNCBUSY_STATUS(value)            (TCC_SYNCBUSY_STATUS_Msk & (_UINT32_(value) << TCC_SYNCBUSY_STATUS_Pos)) /* Assigment of value for STATUS in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_COUNT_Pos                _UINT32_(4)                                          /* (TCC_SYNCBUSY) Count Busy Position */
+#define TCC_SYNCBUSY_COUNT_Msk                (_UINT32_(0x1) << TCC_SYNCBUSY_COUNT_Pos)            /* (TCC_SYNCBUSY) Count Busy Mask */
+#define TCC_SYNCBUSY_COUNT(value)             (TCC_SYNCBUSY_COUNT_Msk & (_UINT32_(value) << TCC_SYNCBUSY_COUNT_Pos)) /* Assigment of value for COUNT in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_PATT_Pos                 _UINT32_(5)                                          /* (TCC_SYNCBUSY) Pattern Busy Position */
+#define TCC_SYNCBUSY_PATT_Msk                 (_UINT32_(0x1) << TCC_SYNCBUSY_PATT_Pos)             /* (TCC_SYNCBUSY) Pattern Busy Mask */
+#define TCC_SYNCBUSY_PATT(value)              (TCC_SYNCBUSY_PATT_Msk & (_UINT32_(value) << TCC_SYNCBUSY_PATT_Pos)) /* Assigment of value for PATT in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_WAVE_Pos                 _UINT32_(6)                                          /* (TCC_SYNCBUSY) Wave Busy Position */
+#define TCC_SYNCBUSY_WAVE_Msk                 (_UINT32_(0x1) << TCC_SYNCBUSY_WAVE_Pos)             /* (TCC_SYNCBUSY) Wave Busy Mask */
+#define TCC_SYNCBUSY_WAVE(value)              (TCC_SYNCBUSY_WAVE_Msk & (_UINT32_(value) << TCC_SYNCBUSY_WAVE_Pos)) /* Assigment of value for WAVE in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_PER_Pos                  _UINT32_(7)                                          /* (TCC_SYNCBUSY) Period Busy Position */
+#define TCC_SYNCBUSY_PER_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_PER_Pos)              /* (TCC_SYNCBUSY) Period Busy Mask */
+#define TCC_SYNCBUSY_PER(value)               (TCC_SYNCBUSY_PER_Msk & (_UINT32_(value) << TCC_SYNCBUSY_PER_Pos)) /* Assigment of value for PER in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CC0_Pos                  _UINT32_(8)                                          /* (TCC_SYNCBUSY) Compare Channel 0 Busy Position */
+#define TCC_SYNCBUSY_CC0_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC0_Pos)              /* (TCC_SYNCBUSY) Compare Channel 0 Busy Mask */
+#define TCC_SYNCBUSY_CC0(value)               (TCC_SYNCBUSY_CC0_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC0_Pos)) /* Assigment of value for CC0 in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CC1_Pos                  _UINT32_(9)                                          /* (TCC_SYNCBUSY) Compare Channel 1 Busy Position */
+#define TCC_SYNCBUSY_CC1_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC1_Pos)              /* (TCC_SYNCBUSY) Compare Channel 1 Busy Mask */
+#define TCC_SYNCBUSY_CC1(value)               (TCC_SYNCBUSY_CC1_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC1_Pos)) /* Assigment of value for CC1 in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CC2_Pos                  _UINT32_(10)                                         /* (TCC_SYNCBUSY) Compare Channel 2 Busy Position */
+#define TCC_SYNCBUSY_CC2_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC2_Pos)              /* (TCC_SYNCBUSY) Compare Channel 2 Busy Mask */
+#define TCC_SYNCBUSY_CC2(value)               (TCC_SYNCBUSY_CC2_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC2_Pos)) /* Assigment of value for CC2 in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CC3_Pos                  _UINT32_(11)                                         /* (TCC_SYNCBUSY) Compare Channel 3 Busy Position */
+#define TCC_SYNCBUSY_CC3_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC3_Pos)              /* (TCC_SYNCBUSY) Compare Channel 3 Busy Mask */
+#define TCC_SYNCBUSY_CC3(value)               (TCC_SYNCBUSY_CC3_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC3_Pos)) /* Assigment of value for CC3 in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CC4_Pos                  _UINT32_(12)                                         /* (TCC_SYNCBUSY) Compare Channel 4 Busy Position */
+#define TCC_SYNCBUSY_CC4_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC4_Pos)              /* (TCC_SYNCBUSY) Compare Channel 4 Busy Mask */
+#define TCC_SYNCBUSY_CC4(value)               (TCC_SYNCBUSY_CC4_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC4_Pos)) /* Assigment of value for CC4 in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_CC5_Pos                  _UINT32_(13)                                         /* (TCC_SYNCBUSY) Compare Channel 5 Busy Position */
+#define TCC_SYNCBUSY_CC5_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC5_Pos)              /* (TCC_SYNCBUSY) Compare Channel 5 Busy Mask */
+#define TCC_SYNCBUSY_CC5(value)               (TCC_SYNCBUSY_CC5_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC5_Pos)) /* Assigment of value for CC5 in the TCC_SYNCBUSY register */
+#define TCC_SYNCBUSY_Msk                      _UINT32_(0x00003FFF)                                 /* (TCC_SYNCBUSY) Register Mask  */
 
-
-/* -------- TCC_DRVCTRL : (TCC Offset: 0x18) (R/W 32) Driver Control -------- */
-#define TCC_DRVCTRL_RESETVALUE                _UINT32_(0x00)                                       /*  (TCC_DRVCTRL) Driver Control  Reset Value */
-
-#define TCC_DRVCTRL_NRE0_Pos                  _UINT32_(0)                                          /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Enable Position */
-#define TCC_DRVCTRL_NRE0_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE0_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Enable Mask */
-#define TCC_DRVCTRL_NRE0(value)               (TCC_DRVCTRL_NRE0_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE0_Pos)) /* Assigment of value for NRE0 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE1_Pos                  _UINT32_(1)                                          /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Enable Position */
-#define TCC_DRVCTRL_NRE1_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE1_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Enable Mask */
-#define TCC_DRVCTRL_NRE1(value)               (TCC_DRVCTRL_NRE1_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE1_Pos)) /* Assigment of value for NRE1 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE2_Pos                  _UINT32_(2)                                          /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Enable Position */
-#define TCC_DRVCTRL_NRE2_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE2_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Enable Mask */
-#define TCC_DRVCTRL_NRE2(value)               (TCC_DRVCTRL_NRE2_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE2_Pos)) /* Assigment of value for NRE2 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE3_Pos                  _UINT32_(3)                                          /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Enable Position */
-#define TCC_DRVCTRL_NRE3_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE3_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Enable Mask */
-#define TCC_DRVCTRL_NRE3(value)               (TCC_DRVCTRL_NRE3_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE3_Pos)) /* Assigment of value for NRE3 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE4_Pos                  _UINT32_(4)                                          /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Enable Position */
-#define TCC_DRVCTRL_NRE4_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE4_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Enable Mask */
-#define TCC_DRVCTRL_NRE4(value)               (TCC_DRVCTRL_NRE4_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE4_Pos)) /* Assigment of value for NRE4 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE5_Pos                  _UINT32_(5)                                          /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Enable Position */
-#define TCC_DRVCTRL_NRE5_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE5_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Enable Mask */
-#define TCC_DRVCTRL_NRE5(value)               (TCC_DRVCTRL_NRE5_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE5_Pos)) /* Assigment of value for NRE5 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE6_Pos                  _UINT32_(6)                                          /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Enable Position */
-#define TCC_DRVCTRL_NRE6_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE6_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Enable Mask */
-#define TCC_DRVCTRL_NRE6(value)               (TCC_DRVCTRL_NRE6_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE6_Pos)) /* Assigment of value for NRE6 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRE7_Pos                  _UINT32_(7)                                          /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Enable Position */
-#define TCC_DRVCTRL_NRE7_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE7_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Enable Mask */
-#define TCC_DRVCTRL_NRE7(value)               (TCC_DRVCTRL_NRE7_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE7_Pos)) /* Assigment of value for NRE7 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV0_Pos                  _UINT32_(8)                                          /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Value Position */
-#define TCC_DRVCTRL_NRV0_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV0_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Value Mask */
-#define TCC_DRVCTRL_NRV0(value)               (TCC_DRVCTRL_NRV0_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV0_Pos)) /* Assigment of value for NRV0 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV1_Pos                  _UINT32_(9)                                          /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Value Position */
-#define TCC_DRVCTRL_NRV1_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV1_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Value Mask */
-#define TCC_DRVCTRL_NRV1(value)               (TCC_DRVCTRL_NRV1_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV1_Pos)) /* Assigment of value for NRV1 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV2_Pos                  _UINT32_(10)                                         /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Value Position */
-#define TCC_DRVCTRL_NRV2_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV2_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Value Mask */
-#define TCC_DRVCTRL_NRV2(value)               (TCC_DRVCTRL_NRV2_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV2_Pos)) /* Assigment of value for NRV2 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV3_Pos                  _UINT32_(11)                                         /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Value Position */
-#define TCC_DRVCTRL_NRV3_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV3_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Value Mask */
-#define TCC_DRVCTRL_NRV3(value)               (TCC_DRVCTRL_NRV3_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV3_Pos)) /* Assigment of value for NRV3 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV4_Pos                  _UINT32_(12)                                         /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Value Position */
-#define TCC_DRVCTRL_NRV4_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV4_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Value Mask */
-#define TCC_DRVCTRL_NRV4(value)               (TCC_DRVCTRL_NRV4_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV4_Pos)) /* Assigment of value for NRV4 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV5_Pos                  _UINT32_(13)                                         /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Value Position */
-#define TCC_DRVCTRL_NRV5_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV5_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Value Mask */
-#define TCC_DRVCTRL_NRV5(value)               (TCC_DRVCTRL_NRV5_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV5_Pos)) /* Assigment of value for NRV5 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV6_Pos                  _UINT32_(14)                                         /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Value Position */
-#define TCC_DRVCTRL_NRV6_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV6_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Value Mask */
-#define TCC_DRVCTRL_NRV6(value)               (TCC_DRVCTRL_NRV6_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV6_Pos)) /* Assigment of value for NRV6 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_NRV7_Pos                  _UINT32_(15)                                         /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Value Position */
-#define TCC_DRVCTRL_NRV7_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV7_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Value Mask */
-#define TCC_DRVCTRL_NRV7(value)               (TCC_DRVCTRL_NRV7_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV7_Pos)) /* Assigment of value for NRV7 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN0_Pos                _UINT32_(16)                                         /* (TCC_DRVCTRL) Output Waveform 0 Inversion Position */
-#define TCC_DRVCTRL_INVEN0_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN0_Pos)            /* (TCC_DRVCTRL) Output Waveform 0 Inversion Mask */
-#define TCC_DRVCTRL_INVEN0(value)             (TCC_DRVCTRL_INVEN0_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN0_Pos)) /* Assigment of value for INVEN0 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN1_Pos                _UINT32_(17)                                         /* (TCC_DRVCTRL) Output Waveform 1 Inversion Position */
-#define TCC_DRVCTRL_INVEN1_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN1_Pos)            /* (TCC_DRVCTRL) Output Waveform 1 Inversion Mask */
-#define TCC_DRVCTRL_INVEN1(value)             (TCC_DRVCTRL_INVEN1_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN1_Pos)) /* Assigment of value for INVEN1 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN2_Pos                _UINT32_(18)                                         /* (TCC_DRVCTRL) Output Waveform 2 Inversion Position */
-#define TCC_DRVCTRL_INVEN2_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN2_Pos)            /* (TCC_DRVCTRL) Output Waveform 2 Inversion Mask */
-#define TCC_DRVCTRL_INVEN2(value)             (TCC_DRVCTRL_INVEN2_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN2_Pos)) /* Assigment of value for INVEN2 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN3_Pos                _UINT32_(19)                                         /* (TCC_DRVCTRL) Output Waveform 3 Inversion Position */
-#define TCC_DRVCTRL_INVEN3_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN3_Pos)            /* (TCC_DRVCTRL) Output Waveform 3 Inversion Mask */
-#define TCC_DRVCTRL_INVEN3(value)             (TCC_DRVCTRL_INVEN3_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN3_Pos)) /* Assigment of value for INVEN3 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN4_Pos                _UINT32_(20)                                         /* (TCC_DRVCTRL) Output Waveform 4 Inversion Position */
-#define TCC_DRVCTRL_INVEN4_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN4_Pos)            /* (TCC_DRVCTRL) Output Waveform 4 Inversion Mask */
-#define TCC_DRVCTRL_INVEN4(value)             (TCC_DRVCTRL_INVEN4_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN4_Pos)) /* Assigment of value for INVEN4 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN5_Pos                _UINT32_(21)                                         /* (TCC_DRVCTRL) Output Waveform 5 Inversion Position */
-#define TCC_DRVCTRL_INVEN5_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN5_Pos)            /* (TCC_DRVCTRL) Output Waveform 5 Inversion Mask */
-#define TCC_DRVCTRL_INVEN5(value)             (TCC_DRVCTRL_INVEN5_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN5_Pos)) /* Assigment of value for INVEN5 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN6_Pos                _UINT32_(22)                                         /* (TCC_DRVCTRL) Output Waveform 6 Inversion Position */
-#define TCC_DRVCTRL_INVEN6_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN6_Pos)            /* (TCC_DRVCTRL) Output Waveform 6 Inversion Mask */
-#define TCC_DRVCTRL_INVEN6(value)             (TCC_DRVCTRL_INVEN6_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN6_Pos)) /* Assigment of value for INVEN6 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_INVEN7_Pos                _UINT32_(23)                                         /* (TCC_DRVCTRL) Output Waveform 7 Inversion Position */
-#define TCC_DRVCTRL_INVEN7_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN7_Pos)            /* (TCC_DRVCTRL) Output Waveform 7 Inversion Mask */
-#define TCC_DRVCTRL_INVEN7(value)             (TCC_DRVCTRL_INVEN7_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN7_Pos)) /* Assigment of value for INVEN7 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_FILTERVAL0_Pos            _UINT32_(24)                                         /* (TCC_DRVCTRL) Non-Recoverable Fault Input 0 Filter Value Position */
-#define TCC_DRVCTRL_FILTERVAL0_Msk            (_UINT32_(0xF) << TCC_DRVCTRL_FILTERVAL0_Pos)        /* (TCC_DRVCTRL) Non-Recoverable Fault Input 0 Filter Value Mask */
-#define TCC_DRVCTRL_FILTERVAL0(value)         (TCC_DRVCTRL_FILTERVAL0_Msk & (_UINT32_(value) << TCC_DRVCTRL_FILTERVAL0_Pos)) /* Assigment of value for FILTERVAL0 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_FILTERVAL1_Pos            _UINT32_(28)                                         /* (TCC_DRVCTRL) Non-Recoverable Fault Input 1 Filter Value Position */
-#define TCC_DRVCTRL_FILTERVAL1_Msk            (_UINT32_(0xF) << TCC_DRVCTRL_FILTERVAL1_Pos)        /* (TCC_DRVCTRL) Non-Recoverable Fault Input 1 Filter Value Mask */
-#define TCC_DRVCTRL_FILTERVAL1(value)         (TCC_DRVCTRL_FILTERVAL1_Msk & (_UINT32_(value) << TCC_DRVCTRL_FILTERVAL1_Pos)) /* Assigment of value for FILTERVAL1 in the TCC_DRVCTRL register */
-#define TCC_DRVCTRL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (TCC_DRVCTRL) Register Mask  */
-
-#define TCC_DRVCTRL_NRE_Pos                   _UINT32_(0)                                          /* (TCC_DRVCTRL Position) Non-Recoverable State x Output Enable */
-#define TCC_DRVCTRL_NRE_Msk                   (_UINT32_(0xFF) << TCC_DRVCTRL_NRE_Pos)              /* (TCC_DRVCTRL Mask) NRE */
-#define TCC_DRVCTRL_NRE(value)                (TCC_DRVCTRL_NRE_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE_Pos)) 
-#define TCC_DRVCTRL_NRV_Pos                   _UINT32_(8)                                          /* (TCC_DRVCTRL Position) Non-Recoverable State x Output Value */
-#define TCC_DRVCTRL_NRV_Msk                   (_UINT32_(0xFF) << TCC_DRVCTRL_NRV_Pos)              /* (TCC_DRVCTRL Mask) NRV */
-#define TCC_DRVCTRL_NRV(value)                (TCC_DRVCTRL_NRV_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV_Pos)) 
-#define TCC_DRVCTRL_INVEN_Pos                 _UINT32_(16)                                         /* (TCC_DRVCTRL Position) Output Waveform x Inversion */
-#define TCC_DRVCTRL_INVEN_Msk                 (_UINT32_(0xFF) << TCC_DRVCTRL_INVEN_Pos)            /* (TCC_DRVCTRL Mask) INVEN */
-#define TCC_DRVCTRL_INVEN(value)              (TCC_DRVCTRL_INVEN_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN_Pos)) 
-
-/* -------- TCC_EVCTRL : (TCC Offset: 0x20) (R/W 32) Event Control -------- */
-#define TCC_EVCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (TCC_EVCTRL) Event Control  Reset Value */
-
-#define TCC_EVCTRL_EVACT0_Pos                 _UINT32_(0)                                          /* (TCC_EVCTRL) Timer/counter Input Event0 Action Position */
-#define TCC_EVCTRL_EVACT0_Msk                 (_UINT32_(0x7) << TCC_EVCTRL_EVACT0_Pos)             /* (TCC_EVCTRL) Timer/counter Input Event0 Action Mask */
-#define TCC_EVCTRL_EVACT0(value)              (TCC_EVCTRL_EVACT0_Msk & (_UINT32_(value) << TCC_EVCTRL_EVACT0_Pos)) /* Assigment of value for EVACT0 in the TCC_EVCTRL register */
-#define   TCC_EVCTRL_EVACT0_OFF_Val           _UINT32_(0x0)                                        /* (TCC_EVCTRL) Event action disabled  */
-#define   TCC_EVCTRL_EVACT0_RETRIGGER_Val     _UINT32_(0x1)                                        /* (TCC_EVCTRL) Start, restart or re-trigger counter on event  */
-#define   TCC_EVCTRL_EVACT0_COUNTEV_Val       _UINT32_(0x2)                                        /* (TCC_EVCTRL) Count on event  */
-#define   TCC_EVCTRL_EVACT0_START_Val         _UINT32_(0x3)                                        /* (TCC_EVCTRL) Start counter on event  */
-#define   TCC_EVCTRL_EVACT0_INC_Val           _UINT32_(0x4)                                        /* (TCC_EVCTRL) Increment counter on event  */
-#define   TCC_EVCTRL_EVACT0_COUNT_Val         _UINT32_(0x5)                                        /* (TCC_EVCTRL) Count on active state of asynchronous event  */
-#define   TCC_EVCTRL_EVACT0_STAMP_Val         _UINT32_(0x6)                                        /* (TCC_EVCTRL) Stamp capture  */
-#define   TCC_EVCTRL_EVACT0_FAULT_Val         _UINT32_(0x7)                                        /* (TCC_EVCTRL) Non-recoverable fault  */
-#define TCC_EVCTRL_EVACT0_OFF                 (TCC_EVCTRL_EVACT0_OFF_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Event action disabled Position  */
-#define TCC_EVCTRL_EVACT0_RETRIGGER           (TCC_EVCTRL_EVACT0_RETRIGGER_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Start, restart or re-trigger counter on event Position  */
-#define TCC_EVCTRL_EVACT0_COUNTEV             (TCC_EVCTRL_EVACT0_COUNTEV_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Count on event Position  */
-#define TCC_EVCTRL_EVACT0_START               (TCC_EVCTRL_EVACT0_START_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Start counter on event Position  */
-#define TCC_EVCTRL_EVACT0_INC                 (TCC_EVCTRL_EVACT0_INC_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Increment counter on event Position  */
-#define TCC_EVCTRL_EVACT0_COUNT               (TCC_EVCTRL_EVACT0_COUNT_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Count on active state of asynchronous event Position  */
-#define TCC_EVCTRL_EVACT0_STAMP               (TCC_EVCTRL_EVACT0_STAMP_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Stamp capture Position  */
-#define TCC_EVCTRL_EVACT0_FAULT               (TCC_EVCTRL_EVACT0_FAULT_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Non-recoverable fault Position  */
-#define TCC_EVCTRL_EVACT1_Pos                 _UINT32_(3)                                          /* (TCC_EVCTRL) Timer/counter Input Event1 Action Position */
-#define TCC_EVCTRL_EVACT1_Msk                 (_UINT32_(0x7) << TCC_EVCTRL_EVACT1_Pos)             /* (TCC_EVCTRL) Timer/counter Input Event1 Action Mask */
-#define TCC_EVCTRL_EVACT1(value)              (TCC_EVCTRL_EVACT1_Msk & (_UINT32_(value) << TCC_EVCTRL_EVACT1_Pos)) /* Assigment of value for EVACT1 in the TCC_EVCTRL register */
-#define   TCC_EVCTRL_EVACT1_OFF_Val           _UINT32_(0x0)                                        /* (TCC_EVCTRL) Event action disabled  */
-#define   TCC_EVCTRL_EVACT1_RETRIGGER_Val     _UINT32_(0x1)                                        /* (TCC_EVCTRL) Re-trigger counter on event  */
-#define   TCC_EVCTRL_EVACT1_DIR_Val           _UINT32_(0x2)                                        /* (TCC_EVCTRL) Direction control  */
-#define   TCC_EVCTRL_EVACT1_STOP_Val          _UINT32_(0x3)                                        /* (TCC_EVCTRL) Stop counter on event  */
-#define   TCC_EVCTRL_EVACT1_DEC_Val           _UINT32_(0x4)                                        /* (TCC_EVCTRL) Decrement counter on event  */
-#define   TCC_EVCTRL_EVACT1_PPW_Val           _UINT32_(0x5)                                        /* (TCC_EVCTRL) Period capture value in CC0 register, pulse width capture value in CC1 register  */
-#define   TCC_EVCTRL_EVACT1_PWP_Val           _UINT32_(0x6)                                        /* (TCC_EVCTRL) Period capture value in CC1 register, pulse width capture value in CC0 register  */
-#define   TCC_EVCTRL_EVACT1_FAULT_Val         _UINT32_(0x7)                                        /* (TCC_EVCTRL) Non-recoverable fault  */
-#define TCC_EVCTRL_EVACT1_OFF                 (TCC_EVCTRL_EVACT1_OFF_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Event action disabled Position  */
-#define TCC_EVCTRL_EVACT1_RETRIGGER           (TCC_EVCTRL_EVACT1_RETRIGGER_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Re-trigger counter on event Position  */
-#define TCC_EVCTRL_EVACT1_DIR                 (TCC_EVCTRL_EVACT1_DIR_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Direction control Position  */
-#define TCC_EVCTRL_EVACT1_STOP                (TCC_EVCTRL_EVACT1_STOP_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Stop counter on event Position  */
-#define TCC_EVCTRL_EVACT1_DEC                 (TCC_EVCTRL_EVACT1_DEC_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Decrement counter on event Position  */
-#define TCC_EVCTRL_EVACT1_PPW                 (TCC_EVCTRL_EVACT1_PPW_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Period capture value in CC0 register, pulse width capture value in CC1 register Position  */
-#define TCC_EVCTRL_EVACT1_PWP                 (TCC_EVCTRL_EVACT1_PWP_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Period capture value in CC1 register, pulse width capture value in CC0 register Position  */
-#define TCC_EVCTRL_EVACT1_FAULT               (TCC_EVCTRL_EVACT1_FAULT_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Non-recoverable fault Position  */
-#define TCC_EVCTRL_CNTSEL_Pos                 _UINT32_(6)                                          /* (TCC_EVCTRL) Timer/counter Output Event Mode Position */
-#define TCC_EVCTRL_CNTSEL_Msk                 (_UINT32_(0x3) << TCC_EVCTRL_CNTSEL_Pos)             /* (TCC_EVCTRL) Timer/counter Output Event Mode Mask */
-#define TCC_EVCTRL_CNTSEL(value)              (TCC_EVCTRL_CNTSEL_Msk & (_UINT32_(value) << TCC_EVCTRL_CNTSEL_Pos)) /* Assigment of value for CNTSEL in the TCC_EVCTRL register */
-#define   TCC_EVCTRL_CNTSEL_START_Val         _UINT32_(0x0)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts  */
-#define   TCC_EVCTRL_CNTSEL_END_Val           _UINT32_(0x1)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends  */
-#define   TCC_EVCTRL_CNTSEL_BETWEEN_Val       _UINT32_(0x2)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends, except for the first and last cycles  */
-#define   TCC_EVCTRL_CNTSEL_BOUNDARY_Val      _UINT32_(0x3)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts or a counter cycle ends  */
-#define TCC_EVCTRL_CNTSEL_START               (TCC_EVCTRL_CNTSEL_START_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts Position  */
-#define TCC_EVCTRL_CNTSEL_END                 (TCC_EVCTRL_CNTSEL_END_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends Position  */
-#define TCC_EVCTRL_CNTSEL_BETWEEN             (TCC_EVCTRL_CNTSEL_BETWEEN_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends, except for the first and last cycles Position  */
-#define TCC_EVCTRL_CNTSEL_BOUNDARY            (TCC_EVCTRL_CNTSEL_BOUNDARY_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts or a counter cycle ends Position  */
-#define TCC_EVCTRL_OVFEO_Pos                  _UINT32_(8)                                          /* (TCC_EVCTRL) Overflow/Underflow Output Event Enable Position */
-#define TCC_EVCTRL_OVFEO_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_OVFEO_Pos)              /* (TCC_EVCTRL) Overflow/Underflow Output Event Enable Mask */
-#define TCC_EVCTRL_OVFEO(value)               (TCC_EVCTRL_OVFEO_Msk & (_UINT32_(value) << TCC_EVCTRL_OVFEO_Pos)) /* Assigment of value for OVFEO in the TCC_EVCTRL register */
-#define TCC_EVCTRL_TRGEO_Pos                  _UINT32_(9)                                          /* (TCC_EVCTRL) Retrigger Output Event Enable Position */
-#define TCC_EVCTRL_TRGEO_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_TRGEO_Pos)              /* (TCC_EVCTRL) Retrigger Output Event Enable Mask */
-#define TCC_EVCTRL_TRGEO(value)               (TCC_EVCTRL_TRGEO_Msk & (_UINT32_(value) << TCC_EVCTRL_TRGEO_Pos)) /* Assigment of value for TRGEO in the TCC_EVCTRL register */
-#define TCC_EVCTRL_CNTEO_Pos                  _UINT32_(10)                                         /* (TCC_EVCTRL) Timer/counter Output Event Enable Position */
-#define TCC_EVCTRL_CNTEO_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_CNTEO_Pos)              /* (TCC_EVCTRL) Timer/counter Output Event Enable Mask */
-#define TCC_EVCTRL_CNTEO(value)               (TCC_EVCTRL_CNTEO_Msk & (_UINT32_(value) << TCC_EVCTRL_CNTEO_Pos)) /* Assigment of value for CNTEO in the TCC_EVCTRL register */
-#define TCC_EVCTRL_TCINV0_Pos                 _UINT32_(12)                                         /* (TCC_EVCTRL) Inverted Event 0 Input Enable Position */
-#define TCC_EVCTRL_TCINV0_Msk                 (_UINT32_(0x1) << TCC_EVCTRL_TCINV0_Pos)             /* (TCC_EVCTRL) Inverted Event 0 Input Enable Mask */
-#define TCC_EVCTRL_TCINV0(value)              (TCC_EVCTRL_TCINV0_Msk & (_UINT32_(value) << TCC_EVCTRL_TCINV0_Pos)) /* Assigment of value for TCINV0 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_TCINV1_Pos                 _UINT32_(13)                                         /* (TCC_EVCTRL) Inverted Event 1 Input Enable Position */
-#define TCC_EVCTRL_TCINV1_Msk                 (_UINT32_(0x1) << TCC_EVCTRL_TCINV1_Pos)             /* (TCC_EVCTRL) Inverted Event 1 Input Enable Mask */
-#define TCC_EVCTRL_TCINV1(value)              (TCC_EVCTRL_TCINV1_Msk & (_UINT32_(value) << TCC_EVCTRL_TCINV1_Pos)) /* Assigment of value for TCINV1 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_TCEI0_Pos                  _UINT32_(14)                                         /* (TCC_EVCTRL) Timer/counter Event 0 Input Enable Position */
-#define TCC_EVCTRL_TCEI0_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_TCEI0_Pos)              /* (TCC_EVCTRL) Timer/counter Event 0 Input Enable Mask */
-#define TCC_EVCTRL_TCEI0(value)               (TCC_EVCTRL_TCEI0_Msk & (_UINT32_(value) << TCC_EVCTRL_TCEI0_Pos)) /* Assigment of value for TCEI0 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_TCEI1_Pos                  _UINT32_(15)                                         /* (TCC_EVCTRL) Timer/counter Event 1 Input Enable Position */
-#define TCC_EVCTRL_TCEI1_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_TCEI1_Pos)              /* (TCC_EVCTRL) Timer/counter Event 1 Input Enable Mask */
-#define TCC_EVCTRL_TCEI1(value)               (TCC_EVCTRL_TCEI1_Msk & (_UINT32_(value) << TCC_EVCTRL_TCEI1_Pos)) /* Assigment of value for TCEI1 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEI0_Pos                  _UINT32_(16)                                         /* (TCC_EVCTRL) Match or Capture Channel 0 Event Input Enable Position */
-#define TCC_EVCTRL_MCEI0_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI0_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 0 Event Input Enable Mask */
-#define TCC_EVCTRL_MCEI0(value)               (TCC_EVCTRL_MCEI0_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI0_Pos)) /* Assigment of value for MCEI0 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEI1_Pos                  _UINT32_(17)                                         /* (TCC_EVCTRL) Match or Capture Channel 1 Event Input Enable Position */
-#define TCC_EVCTRL_MCEI1_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI1_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 1 Event Input Enable Mask */
-#define TCC_EVCTRL_MCEI1(value)               (TCC_EVCTRL_MCEI1_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI1_Pos)) /* Assigment of value for MCEI1 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEI2_Pos                  _UINT32_(18)                                         /* (TCC_EVCTRL) Match or Capture Channel 2 Event Input Enable Position */
-#define TCC_EVCTRL_MCEI2_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI2_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 2 Event Input Enable Mask */
-#define TCC_EVCTRL_MCEI2(value)               (TCC_EVCTRL_MCEI2_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI2_Pos)) /* Assigment of value for MCEI2 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEI3_Pos                  _UINT32_(19)                                         /* (TCC_EVCTRL) Match or Capture Channel 3 Event Input Enable Position */
-#define TCC_EVCTRL_MCEI3_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI3_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 3 Event Input Enable Mask */
-#define TCC_EVCTRL_MCEI3(value)               (TCC_EVCTRL_MCEI3_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI3_Pos)) /* Assigment of value for MCEI3 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEI4_Pos                  _UINT32_(20)                                         /* (TCC_EVCTRL) Match or Capture Channel 4 Event Input Enable Position */
-#define TCC_EVCTRL_MCEI4_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI4_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 4 Event Input Enable Mask */
-#define TCC_EVCTRL_MCEI4(value)               (TCC_EVCTRL_MCEI4_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI4_Pos)) /* Assigment of value for MCEI4 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEI5_Pos                  _UINT32_(21)                                         /* (TCC_EVCTRL) Match or Capture Channel 5 Event Input Enable Position */
-#define TCC_EVCTRL_MCEI5_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI5_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 5 Event Input Enable Mask */
-#define TCC_EVCTRL_MCEI5(value)               (TCC_EVCTRL_MCEI5_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI5_Pos)) /* Assigment of value for MCEI5 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEO0_Pos                  _UINT32_(24)                                         /* (TCC_EVCTRL) Match or Capture Channel 0 Event Output Enable Position */
-#define TCC_EVCTRL_MCEO0_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO0_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 0 Event Output Enable Mask */
-#define TCC_EVCTRL_MCEO0(value)               (TCC_EVCTRL_MCEO0_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO0_Pos)) /* Assigment of value for MCEO0 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEO1_Pos                  _UINT32_(25)                                         /* (TCC_EVCTRL) Match or Capture Channel 1 Event Output Enable Position */
-#define TCC_EVCTRL_MCEO1_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO1_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 1 Event Output Enable Mask */
-#define TCC_EVCTRL_MCEO1(value)               (TCC_EVCTRL_MCEO1_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO1_Pos)) /* Assigment of value for MCEO1 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEO2_Pos                  _UINT32_(26)                                         /* (TCC_EVCTRL) Match or Capture Channel 2 Event Output Enable Position */
-#define TCC_EVCTRL_MCEO2_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO2_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 2 Event Output Enable Mask */
-#define TCC_EVCTRL_MCEO2(value)               (TCC_EVCTRL_MCEO2_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO2_Pos)) /* Assigment of value for MCEO2 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEO3_Pos                  _UINT32_(27)                                         /* (TCC_EVCTRL) Match or Capture Channel 3 Event Output Enable Position */
-#define TCC_EVCTRL_MCEO3_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO3_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 3 Event Output Enable Mask */
-#define TCC_EVCTRL_MCEO3(value)               (TCC_EVCTRL_MCEO3_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO3_Pos)) /* Assigment of value for MCEO3 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEO4_Pos                  _UINT32_(28)                                         /* (TCC_EVCTRL) Match or Capture Channel 4 Event Output Enable Position */
-#define TCC_EVCTRL_MCEO4_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO4_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 4 Event Output Enable Mask */
-#define TCC_EVCTRL_MCEO4(value)               (TCC_EVCTRL_MCEO4_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO4_Pos)) /* Assigment of value for MCEO4 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_MCEO5_Pos                  _UINT32_(29)                                         /* (TCC_EVCTRL) Match or Capture Channel 5 Event Output Enable Position */
-#define TCC_EVCTRL_MCEO5_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO5_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 5 Event Output Enable Mask */
-#define TCC_EVCTRL_MCEO5(value)               (TCC_EVCTRL_MCEO5_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO5_Pos)) /* Assigment of value for MCEO5 in the TCC_EVCTRL register */
-#define TCC_EVCTRL_Msk                        _UINT32_(0x3F3FF7FF)                                 /* (TCC_EVCTRL) Register Mask  */
-
-#define TCC_EVCTRL_TCINV_Pos                  _UINT32_(12)                                         /* (TCC_EVCTRL Position) Inverted Event x Input Enable */
-#define TCC_EVCTRL_TCINV_Msk                  (_UINT32_(0x3) << TCC_EVCTRL_TCINV_Pos)              /* (TCC_EVCTRL Mask) TCINV */
-#define TCC_EVCTRL_TCINV(value)               (TCC_EVCTRL_TCINV_Msk & (_UINT32_(value) << TCC_EVCTRL_TCINV_Pos)) 
-#define TCC_EVCTRL_TCEI_Pos                   _UINT32_(14)                                         /* (TCC_EVCTRL Position) Timer/counter Event x Input Enable */
-#define TCC_EVCTRL_TCEI_Msk                   (_UINT32_(0x3) << TCC_EVCTRL_TCEI_Pos)               /* (TCC_EVCTRL Mask) TCEI */
-#define TCC_EVCTRL_TCEI(value)                (TCC_EVCTRL_TCEI_Msk & (_UINT32_(value) << TCC_EVCTRL_TCEI_Pos)) 
-#define TCC_EVCTRL_MCEI_Pos                   _UINT32_(16)                                         /* (TCC_EVCTRL Position) Match or Capture Channel x Event Input Enable */
-#define TCC_EVCTRL_MCEI_Msk                   (_UINT32_(0x3F) << TCC_EVCTRL_MCEI_Pos)              /* (TCC_EVCTRL Mask) MCEI */
-#define TCC_EVCTRL_MCEI(value)                (TCC_EVCTRL_MCEI_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI_Pos)) 
-#define TCC_EVCTRL_MCEO_Pos                   _UINT32_(24)                                         /* (TCC_EVCTRL Position) Match or Capture Channel 5 Event Output Enable */
-#define TCC_EVCTRL_MCEO_Msk                   (_UINT32_(0x3F) << TCC_EVCTRL_MCEO_Pos)              /* (TCC_EVCTRL Mask) MCEO */
-#define TCC_EVCTRL_MCEO(value)                (TCC_EVCTRL_MCEO_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO_Pos)) 
+#define TCC_SYNCBUSY_CC_Pos                   _UINT32_(8)                                          /* (TCC_SYNCBUSY Position) Compare Channel 5 Busy */
+#define TCC_SYNCBUSY_CC_Msk                   (_UINT32_(0x3F) << TCC_SYNCBUSY_CC_Pos)              /* (TCC_SYNCBUSY Mask) CC */
+#define TCC_SYNCBUSY_CC(value)                (TCC_SYNCBUSY_CC_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC_Pos)) 
 
 /* -------- TCC_FCTRLA : (TCC Offset: 0x0C) (R/W 32) Recoverable Fault A Configuration -------- */
 #define TCC_FCTRLA_RESETVALUE                 _UINT32_(0x00)                                       /*  (TCC_FCTRLA) Recoverable Fault A Configuration  Reset Value */
@@ -695,6 +418,265 @@
 #define TCC_FCTRLB_FILTERVAL(value)           (TCC_FCTRLB_FILTERVAL_Msk & (_UINT32_(value) << TCC_FCTRLB_FILTERVAL_Pos)) /* Assigment of value for FILTERVAL in the TCC_FCTRLB register */
 #define TCC_FCTRLB_Msk                        _UINT32_(0x0FFFFFFB)                                 /* (TCC_FCTRLB) Register Mask  */
 
+
+/* -------- TCC_WEXCTRL : (TCC Offset: 0x14) (R/W 32) Waveform Extension Configuration -------- */
+#define TCC_WEXCTRL_RESETVALUE                _UINT32_(0x00)                                       /*  (TCC_WEXCTRL) Waveform Extension Configuration  Reset Value */
+
+#define TCC_WEXCTRL_OTMX_Pos                  _UINT32_(0)                                          /* (TCC_WEXCTRL) Output Matrix Position */
+#define TCC_WEXCTRL_OTMX_Msk                  (_UINT32_(0x3) << TCC_WEXCTRL_OTMX_Pos)              /* (TCC_WEXCTRL) Output Matrix Mask */
+#define TCC_WEXCTRL_OTMX(value)               (TCC_WEXCTRL_OTMX_Msk & (_UINT32_(value) << TCC_WEXCTRL_OTMX_Pos)) /* Assigment of value for OTMX in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_DTIEN0_Pos                _UINT32_(8)                                          /* (TCC_WEXCTRL) Dead-time Insertion Generator 0 Enable Position */
+#define TCC_WEXCTRL_DTIEN0_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN0_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 0 Enable Mask */
+#define TCC_WEXCTRL_DTIEN0(value)             (TCC_WEXCTRL_DTIEN0_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN0_Pos)) /* Assigment of value for DTIEN0 in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_DTIEN1_Pos                _UINT32_(9)                                          /* (TCC_WEXCTRL) Dead-time Insertion Generator 1 Enable Position */
+#define TCC_WEXCTRL_DTIEN1_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN1_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 1 Enable Mask */
+#define TCC_WEXCTRL_DTIEN1(value)             (TCC_WEXCTRL_DTIEN1_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN1_Pos)) /* Assigment of value for DTIEN1 in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_DTIEN2_Pos                _UINT32_(10)                                         /* (TCC_WEXCTRL) Dead-time Insertion Generator 2 Enable Position */
+#define TCC_WEXCTRL_DTIEN2_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN2_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 2 Enable Mask */
+#define TCC_WEXCTRL_DTIEN2(value)             (TCC_WEXCTRL_DTIEN2_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN2_Pos)) /* Assigment of value for DTIEN2 in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_DTIEN3_Pos                _UINT32_(11)                                         /* (TCC_WEXCTRL) Dead-time Insertion Generator 3 Enable Position */
+#define TCC_WEXCTRL_DTIEN3_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN3_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 3 Enable Mask */
+#define TCC_WEXCTRL_DTIEN3(value)             (TCC_WEXCTRL_DTIEN3_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN3_Pos)) /* Assigment of value for DTIEN3 in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_DTLS_Pos                  _UINT32_(16)                                         /* (TCC_WEXCTRL) Dead-time Low Side Outputs Value Position */
+#define TCC_WEXCTRL_DTLS_Msk                  (_UINT32_(0xFF) << TCC_WEXCTRL_DTLS_Pos)             /* (TCC_WEXCTRL) Dead-time Low Side Outputs Value Mask */
+#define TCC_WEXCTRL_DTLS(value)               (TCC_WEXCTRL_DTLS_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTLS_Pos)) /* Assigment of value for DTLS in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_DTHS_Pos                  _UINT32_(24)                                         /* (TCC_WEXCTRL) Dead-time High Side Outputs Value Position */
+#define TCC_WEXCTRL_DTHS_Msk                  (_UINT32_(0xFF) << TCC_WEXCTRL_DTHS_Pos)             /* (TCC_WEXCTRL) Dead-time High Side Outputs Value Mask */
+#define TCC_WEXCTRL_DTHS(value)               (TCC_WEXCTRL_DTHS_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTHS_Pos)) /* Assigment of value for DTHS in the TCC_WEXCTRL register */
+#define TCC_WEXCTRL_Msk                       _UINT32_(0xFFFF0F03)                                 /* (TCC_WEXCTRL) Register Mask  */
+
+#define TCC_WEXCTRL_DTIEN_Pos                 _UINT32_(8)                                          /* (TCC_WEXCTRL Position) Dead-time Insertion Generator x Enable */
+#define TCC_WEXCTRL_DTIEN_Msk                 (_UINT32_(0xF) << TCC_WEXCTRL_DTIEN_Pos)             /* (TCC_WEXCTRL Mask) DTIEN */
+#define TCC_WEXCTRL_DTIEN(value)              (TCC_WEXCTRL_DTIEN_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN_Pos)) 
+
+/* -------- TCC_DRVCTRL : (TCC Offset: 0x18) (R/W 32) Driver Control -------- */
+#define TCC_DRVCTRL_RESETVALUE                _UINT32_(0x00)                                       /*  (TCC_DRVCTRL) Driver Control  Reset Value */
+
+#define TCC_DRVCTRL_NRE0_Pos                  _UINT32_(0)                                          /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Enable Position */
+#define TCC_DRVCTRL_NRE0_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE0_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Enable Mask */
+#define TCC_DRVCTRL_NRE0(value)               (TCC_DRVCTRL_NRE0_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE0_Pos)) /* Assigment of value for NRE0 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE1_Pos                  _UINT32_(1)                                          /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Enable Position */
+#define TCC_DRVCTRL_NRE1_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE1_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Enable Mask */
+#define TCC_DRVCTRL_NRE1(value)               (TCC_DRVCTRL_NRE1_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE1_Pos)) /* Assigment of value for NRE1 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE2_Pos                  _UINT32_(2)                                          /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Enable Position */
+#define TCC_DRVCTRL_NRE2_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE2_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Enable Mask */
+#define TCC_DRVCTRL_NRE2(value)               (TCC_DRVCTRL_NRE2_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE2_Pos)) /* Assigment of value for NRE2 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE3_Pos                  _UINT32_(3)                                          /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Enable Position */
+#define TCC_DRVCTRL_NRE3_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE3_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Enable Mask */
+#define TCC_DRVCTRL_NRE3(value)               (TCC_DRVCTRL_NRE3_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE3_Pos)) /* Assigment of value for NRE3 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE4_Pos                  _UINT32_(4)                                          /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Enable Position */
+#define TCC_DRVCTRL_NRE4_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE4_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Enable Mask */
+#define TCC_DRVCTRL_NRE4(value)               (TCC_DRVCTRL_NRE4_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE4_Pos)) /* Assigment of value for NRE4 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE5_Pos                  _UINT32_(5)                                          /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Enable Position */
+#define TCC_DRVCTRL_NRE5_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE5_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Enable Mask */
+#define TCC_DRVCTRL_NRE5(value)               (TCC_DRVCTRL_NRE5_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE5_Pos)) /* Assigment of value for NRE5 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE6_Pos                  _UINT32_(6)                                          /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Enable Position */
+#define TCC_DRVCTRL_NRE6_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE6_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Enable Mask */
+#define TCC_DRVCTRL_NRE6(value)               (TCC_DRVCTRL_NRE6_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE6_Pos)) /* Assigment of value for NRE6 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRE7_Pos                  _UINT32_(7)                                          /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Enable Position */
+#define TCC_DRVCTRL_NRE7_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRE7_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Enable Mask */
+#define TCC_DRVCTRL_NRE7(value)               (TCC_DRVCTRL_NRE7_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE7_Pos)) /* Assigment of value for NRE7 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV0_Pos                  _UINT32_(8)                                          /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Value Position */
+#define TCC_DRVCTRL_NRV0_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV0_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 0 Output Value Mask */
+#define TCC_DRVCTRL_NRV0(value)               (TCC_DRVCTRL_NRV0_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV0_Pos)) /* Assigment of value for NRV0 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV1_Pos                  _UINT32_(9)                                          /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Value Position */
+#define TCC_DRVCTRL_NRV1_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV1_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 1 Output Value Mask */
+#define TCC_DRVCTRL_NRV1(value)               (TCC_DRVCTRL_NRV1_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV1_Pos)) /* Assigment of value for NRV1 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV2_Pos                  _UINT32_(10)                                         /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Value Position */
+#define TCC_DRVCTRL_NRV2_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV2_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 2 Output Value Mask */
+#define TCC_DRVCTRL_NRV2(value)               (TCC_DRVCTRL_NRV2_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV2_Pos)) /* Assigment of value for NRV2 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV3_Pos                  _UINT32_(11)                                         /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Value Position */
+#define TCC_DRVCTRL_NRV3_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV3_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 3 Output Value Mask */
+#define TCC_DRVCTRL_NRV3(value)               (TCC_DRVCTRL_NRV3_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV3_Pos)) /* Assigment of value for NRV3 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV4_Pos                  _UINT32_(12)                                         /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Value Position */
+#define TCC_DRVCTRL_NRV4_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV4_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 4 Output Value Mask */
+#define TCC_DRVCTRL_NRV4(value)               (TCC_DRVCTRL_NRV4_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV4_Pos)) /* Assigment of value for NRV4 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV5_Pos                  _UINT32_(13)                                         /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Value Position */
+#define TCC_DRVCTRL_NRV5_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV5_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 5 Output Value Mask */
+#define TCC_DRVCTRL_NRV5(value)               (TCC_DRVCTRL_NRV5_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV5_Pos)) /* Assigment of value for NRV5 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV6_Pos                  _UINT32_(14)                                         /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Value Position */
+#define TCC_DRVCTRL_NRV6_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV6_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 6 Output Value Mask */
+#define TCC_DRVCTRL_NRV6(value)               (TCC_DRVCTRL_NRV6_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV6_Pos)) /* Assigment of value for NRV6 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_NRV7_Pos                  _UINT32_(15)                                         /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Value Position */
+#define TCC_DRVCTRL_NRV7_Msk                  (_UINT32_(0x1) << TCC_DRVCTRL_NRV7_Pos)              /* (TCC_DRVCTRL) Non-Recoverable State 7 Output Value Mask */
+#define TCC_DRVCTRL_NRV7(value)               (TCC_DRVCTRL_NRV7_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV7_Pos)) /* Assigment of value for NRV7 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN0_Pos                _UINT32_(16)                                         /* (TCC_DRVCTRL) Output Waveform 0 Inversion Position */
+#define TCC_DRVCTRL_INVEN0_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN0_Pos)            /* (TCC_DRVCTRL) Output Waveform 0 Inversion Mask */
+#define TCC_DRVCTRL_INVEN0(value)             (TCC_DRVCTRL_INVEN0_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN0_Pos)) /* Assigment of value for INVEN0 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN1_Pos                _UINT32_(17)                                         /* (TCC_DRVCTRL) Output Waveform 1 Inversion Position */
+#define TCC_DRVCTRL_INVEN1_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN1_Pos)            /* (TCC_DRVCTRL) Output Waveform 1 Inversion Mask */
+#define TCC_DRVCTRL_INVEN1(value)             (TCC_DRVCTRL_INVEN1_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN1_Pos)) /* Assigment of value for INVEN1 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN2_Pos                _UINT32_(18)                                         /* (TCC_DRVCTRL) Output Waveform 2 Inversion Position */
+#define TCC_DRVCTRL_INVEN2_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN2_Pos)            /* (TCC_DRVCTRL) Output Waveform 2 Inversion Mask */
+#define TCC_DRVCTRL_INVEN2(value)             (TCC_DRVCTRL_INVEN2_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN2_Pos)) /* Assigment of value for INVEN2 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN3_Pos                _UINT32_(19)                                         /* (TCC_DRVCTRL) Output Waveform 3 Inversion Position */
+#define TCC_DRVCTRL_INVEN3_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN3_Pos)            /* (TCC_DRVCTRL) Output Waveform 3 Inversion Mask */
+#define TCC_DRVCTRL_INVEN3(value)             (TCC_DRVCTRL_INVEN3_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN3_Pos)) /* Assigment of value for INVEN3 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN4_Pos                _UINT32_(20)                                         /* (TCC_DRVCTRL) Output Waveform 4 Inversion Position */
+#define TCC_DRVCTRL_INVEN4_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN4_Pos)            /* (TCC_DRVCTRL) Output Waveform 4 Inversion Mask */
+#define TCC_DRVCTRL_INVEN4(value)             (TCC_DRVCTRL_INVEN4_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN4_Pos)) /* Assigment of value for INVEN4 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN5_Pos                _UINT32_(21)                                         /* (TCC_DRVCTRL) Output Waveform 5 Inversion Position */
+#define TCC_DRVCTRL_INVEN5_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN5_Pos)            /* (TCC_DRVCTRL) Output Waveform 5 Inversion Mask */
+#define TCC_DRVCTRL_INVEN5(value)             (TCC_DRVCTRL_INVEN5_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN5_Pos)) /* Assigment of value for INVEN5 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN6_Pos                _UINT32_(22)                                         /* (TCC_DRVCTRL) Output Waveform 6 Inversion Position */
+#define TCC_DRVCTRL_INVEN6_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN6_Pos)            /* (TCC_DRVCTRL) Output Waveform 6 Inversion Mask */
+#define TCC_DRVCTRL_INVEN6(value)             (TCC_DRVCTRL_INVEN6_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN6_Pos)) /* Assigment of value for INVEN6 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_INVEN7_Pos                _UINT32_(23)                                         /* (TCC_DRVCTRL) Output Waveform 7 Inversion Position */
+#define TCC_DRVCTRL_INVEN7_Msk                (_UINT32_(0x1) << TCC_DRVCTRL_INVEN7_Pos)            /* (TCC_DRVCTRL) Output Waveform 7 Inversion Mask */
+#define TCC_DRVCTRL_INVEN7(value)             (TCC_DRVCTRL_INVEN7_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN7_Pos)) /* Assigment of value for INVEN7 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_FILTERVAL0_Pos            _UINT32_(24)                                         /* (TCC_DRVCTRL) Non-Recoverable Fault Input 0 Filter Value Position */
+#define TCC_DRVCTRL_FILTERVAL0_Msk            (_UINT32_(0xF) << TCC_DRVCTRL_FILTERVAL0_Pos)        /* (TCC_DRVCTRL) Non-Recoverable Fault Input 0 Filter Value Mask */
+#define TCC_DRVCTRL_FILTERVAL0(value)         (TCC_DRVCTRL_FILTERVAL0_Msk & (_UINT32_(value) << TCC_DRVCTRL_FILTERVAL0_Pos)) /* Assigment of value for FILTERVAL0 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_FILTERVAL1_Pos            _UINT32_(28)                                         /* (TCC_DRVCTRL) Non-Recoverable Fault Input 1 Filter Value Position */
+#define TCC_DRVCTRL_FILTERVAL1_Msk            (_UINT32_(0xF) << TCC_DRVCTRL_FILTERVAL1_Pos)        /* (TCC_DRVCTRL) Non-Recoverable Fault Input 1 Filter Value Mask */
+#define TCC_DRVCTRL_FILTERVAL1(value)         (TCC_DRVCTRL_FILTERVAL1_Msk & (_UINT32_(value) << TCC_DRVCTRL_FILTERVAL1_Pos)) /* Assigment of value for FILTERVAL1 in the TCC_DRVCTRL register */
+#define TCC_DRVCTRL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (TCC_DRVCTRL) Register Mask  */
+
+#define TCC_DRVCTRL_NRE_Pos                   _UINT32_(0)                                          /* (TCC_DRVCTRL Position) Non-Recoverable State x Output Enable */
+#define TCC_DRVCTRL_NRE_Msk                   (_UINT32_(0xFF) << TCC_DRVCTRL_NRE_Pos)              /* (TCC_DRVCTRL Mask) NRE */
+#define TCC_DRVCTRL_NRE(value)                (TCC_DRVCTRL_NRE_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRE_Pos)) 
+#define TCC_DRVCTRL_NRV_Pos                   _UINT32_(8)                                          /* (TCC_DRVCTRL Position) Non-Recoverable State x Output Value */
+#define TCC_DRVCTRL_NRV_Msk                   (_UINT32_(0xFF) << TCC_DRVCTRL_NRV_Pos)              /* (TCC_DRVCTRL Mask) NRV */
+#define TCC_DRVCTRL_NRV(value)                (TCC_DRVCTRL_NRV_Msk & (_UINT32_(value) << TCC_DRVCTRL_NRV_Pos)) 
+#define TCC_DRVCTRL_INVEN_Pos                 _UINT32_(16)                                         /* (TCC_DRVCTRL Position) Output Waveform x Inversion */
+#define TCC_DRVCTRL_INVEN_Msk                 (_UINT32_(0xFF) << TCC_DRVCTRL_INVEN_Pos)            /* (TCC_DRVCTRL Mask) INVEN */
+#define TCC_DRVCTRL_INVEN(value)              (TCC_DRVCTRL_INVEN_Msk & (_UINT32_(value) << TCC_DRVCTRL_INVEN_Pos)) 
+
+/* -------- TCC_DBGCTRL : (TCC Offset: 0x1E) (R/W 8) Debug Control -------- */
+#define TCC_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (TCC_DBGCTRL) Debug Control  Reset Value */
+
+#define TCC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (TCC_DBGCTRL) Debug Running Mode Position */
+#define TCC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << TCC_DBGCTRL_DBGRUN_Pos)             /* (TCC_DBGCTRL) Debug Running Mode Mask */
+#define TCC_DBGCTRL_DBGRUN(value)             (TCC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << TCC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the TCC_DBGCTRL register */
+#define TCC_DBGCTRL_FDDBD_Pos                 _UINT8_(2)                                           /* (TCC_DBGCTRL) Fault Detection on Debug Break Detection Position */
+#define TCC_DBGCTRL_FDDBD_Msk                 (_UINT8_(0x1) << TCC_DBGCTRL_FDDBD_Pos)              /* (TCC_DBGCTRL) Fault Detection on Debug Break Detection Mask */
+#define TCC_DBGCTRL_FDDBD(value)              (TCC_DBGCTRL_FDDBD_Msk & (_UINT8_(value) << TCC_DBGCTRL_FDDBD_Pos)) /* Assigment of value for FDDBD in the TCC_DBGCTRL register */
+#define TCC_DBGCTRL_Msk                       _UINT8_(0x05)                                        /* (TCC_DBGCTRL) Register Mask  */
+
+
+/* -------- TCC_EVCTRL : (TCC Offset: 0x20) (R/W 32) Event Control -------- */
+#define TCC_EVCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (TCC_EVCTRL) Event Control  Reset Value */
+
+#define TCC_EVCTRL_EVACT0_Pos                 _UINT32_(0)                                          /* (TCC_EVCTRL) Timer/counter Input Event0 Action Position */
+#define TCC_EVCTRL_EVACT0_Msk                 (_UINT32_(0x7) << TCC_EVCTRL_EVACT0_Pos)             /* (TCC_EVCTRL) Timer/counter Input Event0 Action Mask */
+#define TCC_EVCTRL_EVACT0(value)              (TCC_EVCTRL_EVACT0_Msk & (_UINT32_(value) << TCC_EVCTRL_EVACT0_Pos)) /* Assigment of value for EVACT0 in the TCC_EVCTRL register */
+#define   TCC_EVCTRL_EVACT0_OFF_Val           _UINT32_(0x0)                                        /* (TCC_EVCTRL) Event action disabled  */
+#define   TCC_EVCTRL_EVACT0_RETRIGGER_Val     _UINT32_(0x1)                                        /* (TCC_EVCTRL) Start, restart or re-trigger counter on event  */
+#define   TCC_EVCTRL_EVACT0_COUNTEV_Val       _UINT32_(0x2)                                        /* (TCC_EVCTRL) Count on event  */
+#define   TCC_EVCTRL_EVACT0_START_Val         _UINT32_(0x3)                                        /* (TCC_EVCTRL) Start counter on event  */
+#define   TCC_EVCTRL_EVACT0_INC_Val           _UINT32_(0x4)                                        /* (TCC_EVCTRL) Increment counter on event  */
+#define   TCC_EVCTRL_EVACT0_COUNT_Val         _UINT32_(0x5)                                        /* (TCC_EVCTRL) Count on active state of asynchronous event  */
+#define   TCC_EVCTRL_EVACT0_STAMP_Val         _UINT32_(0x6)                                        /* (TCC_EVCTRL) Stamp capture  */
+#define   TCC_EVCTRL_EVACT0_FAULT_Val         _UINT32_(0x7)                                        /* (TCC_EVCTRL) Non-recoverable fault  */
+#define TCC_EVCTRL_EVACT0_OFF                 (TCC_EVCTRL_EVACT0_OFF_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Event action disabled Position  */
+#define TCC_EVCTRL_EVACT0_RETRIGGER           (TCC_EVCTRL_EVACT0_RETRIGGER_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Start, restart or re-trigger counter on event Position  */
+#define TCC_EVCTRL_EVACT0_COUNTEV             (TCC_EVCTRL_EVACT0_COUNTEV_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Count on event Position  */
+#define TCC_EVCTRL_EVACT0_START               (TCC_EVCTRL_EVACT0_START_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Start counter on event Position  */
+#define TCC_EVCTRL_EVACT0_INC                 (TCC_EVCTRL_EVACT0_INC_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Increment counter on event Position  */
+#define TCC_EVCTRL_EVACT0_COUNT               (TCC_EVCTRL_EVACT0_COUNT_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Count on active state of asynchronous event Position  */
+#define TCC_EVCTRL_EVACT0_STAMP               (TCC_EVCTRL_EVACT0_STAMP_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Stamp capture Position  */
+#define TCC_EVCTRL_EVACT0_FAULT               (TCC_EVCTRL_EVACT0_FAULT_Val << TCC_EVCTRL_EVACT0_Pos) /* (TCC_EVCTRL) Non-recoverable fault Position  */
+#define TCC_EVCTRL_EVACT1_Pos                 _UINT32_(3)                                          /* (TCC_EVCTRL) Timer/counter Input Event1 Action Position */
+#define TCC_EVCTRL_EVACT1_Msk                 (_UINT32_(0x7) << TCC_EVCTRL_EVACT1_Pos)             /* (TCC_EVCTRL) Timer/counter Input Event1 Action Mask */
+#define TCC_EVCTRL_EVACT1(value)              (TCC_EVCTRL_EVACT1_Msk & (_UINT32_(value) << TCC_EVCTRL_EVACT1_Pos)) /* Assigment of value for EVACT1 in the TCC_EVCTRL register */
+#define   TCC_EVCTRL_EVACT1_OFF_Val           _UINT32_(0x0)                                        /* (TCC_EVCTRL) Event action disabled  */
+#define   TCC_EVCTRL_EVACT1_RETRIGGER_Val     _UINT32_(0x1)                                        /* (TCC_EVCTRL) Re-trigger counter on event  */
+#define   TCC_EVCTRL_EVACT1_DIR_Val           _UINT32_(0x2)                                        /* (TCC_EVCTRL) Direction control  */
+#define   TCC_EVCTRL_EVACT1_STOP_Val          _UINT32_(0x3)                                        /* (TCC_EVCTRL) Stop counter on event  */
+#define   TCC_EVCTRL_EVACT1_DEC_Val           _UINT32_(0x4)                                        /* (TCC_EVCTRL) Decrement counter on event  */
+#define   TCC_EVCTRL_EVACT1_PPW_Val           _UINT32_(0x5)                                        /* (TCC_EVCTRL) Period capture value in CC0 register, pulse width capture value in CC1 register  */
+#define   TCC_EVCTRL_EVACT1_PWP_Val           _UINT32_(0x6)                                        /* (TCC_EVCTRL) Period capture value in CC1 register, pulse width capture value in CC0 register  */
+#define   TCC_EVCTRL_EVACT1_FAULT_Val         _UINT32_(0x7)                                        /* (TCC_EVCTRL) Non-recoverable fault  */
+#define TCC_EVCTRL_EVACT1_OFF                 (TCC_EVCTRL_EVACT1_OFF_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Event action disabled Position  */
+#define TCC_EVCTRL_EVACT1_RETRIGGER           (TCC_EVCTRL_EVACT1_RETRIGGER_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Re-trigger counter on event Position  */
+#define TCC_EVCTRL_EVACT1_DIR                 (TCC_EVCTRL_EVACT1_DIR_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Direction control Position  */
+#define TCC_EVCTRL_EVACT1_STOP                (TCC_EVCTRL_EVACT1_STOP_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Stop counter on event Position  */
+#define TCC_EVCTRL_EVACT1_DEC                 (TCC_EVCTRL_EVACT1_DEC_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Decrement counter on event Position  */
+#define TCC_EVCTRL_EVACT1_PPW                 (TCC_EVCTRL_EVACT1_PPW_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Period capture value in CC0 register, pulse width capture value in CC1 register Position  */
+#define TCC_EVCTRL_EVACT1_PWP                 (TCC_EVCTRL_EVACT1_PWP_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Period capture value in CC1 register, pulse width capture value in CC0 register Position  */
+#define TCC_EVCTRL_EVACT1_FAULT               (TCC_EVCTRL_EVACT1_FAULT_Val << TCC_EVCTRL_EVACT1_Pos) /* (TCC_EVCTRL) Non-recoverable fault Position  */
+#define TCC_EVCTRL_CNTSEL_Pos                 _UINT32_(6)                                          /* (TCC_EVCTRL) Timer/counter Output Event Mode Position */
+#define TCC_EVCTRL_CNTSEL_Msk                 (_UINT32_(0x3) << TCC_EVCTRL_CNTSEL_Pos)             /* (TCC_EVCTRL) Timer/counter Output Event Mode Mask */
+#define TCC_EVCTRL_CNTSEL(value)              (TCC_EVCTRL_CNTSEL_Msk & (_UINT32_(value) << TCC_EVCTRL_CNTSEL_Pos)) /* Assigment of value for CNTSEL in the TCC_EVCTRL register */
+#define   TCC_EVCTRL_CNTSEL_START_Val         _UINT32_(0x0)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts  */
+#define   TCC_EVCTRL_CNTSEL_END_Val           _UINT32_(0x1)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends  */
+#define   TCC_EVCTRL_CNTSEL_BETWEEN_Val       _UINT32_(0x2)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends, except for the first and last cycles  */
+#define   TCC_EVCTRL_CNTSEL_BOUNDARY_Val      _UINT32_(0x3)                                        /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts or a counter cycle ends  */
+#define TCC_EVCTRL_CNTSEL_START               (TCC_EVCTRL_CNTSEL_START_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts Position  */
+#define TCC_EVCTRL_CNTSEL_END                 (TCC_EVCTRL_CNTSEL_END_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends Position  */
+#define TCC_EVCTRL_CNTSEL_BETWEEN             (TCC_EVCTRL_CNTSEL_BETWEEN_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a counter cycle ends, except for the first and last cycles Position  */
+#define TCC_EVCTRL_CNTSEL_BOUNDARY            (TCC_EVCTRL_CNTSEL_BOUNDARY_Val << TCC_EVCTRL_CNTSEL_Pos) /* (TCC_EVCTRL) An interrupt/event is generated when a new counter cycle starts or a counter cycle ends Position  */
+#define TCC_EVCTRL_OVFEO_Pos                  _UINT32_(8)                                          /* (TCC_EVCTRL) Overflow/Underflow Output Event Enable Position */
+#define TCC_EVCTRL_OVFEO_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_OVFEO_Pos)              /* (TCC_EVCTRL) Overflow/Underflow Output Event Enable Mask */
+#define TCC_EVCTRL_OVFEO(value)               (TCC_EVCTRL_OVFEO_Msk & (_UINT32_(value) << TCC_EVCTRL_OVFEO_Pos)) /* Assigment of value for OVFEO in the TCC_EVCTRL register */
+#define TCC_EVCTRL_TRGEO_Pos                  _UINT32_(9)                                          /* (TCC_EVCTRL) Retrigger Output Event Enable Position */
+#define TCC_EVCTRL_TRGEO_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_TRGEO_Pos)              /* (TCC_EVCTRL) Retrigger Output Event Enable Mask */
+#define TCC_EVCTRL_TRGEO(value)               (TCC_EVCTRL_TRGEO_Msk & (_UINT32_(value) << TCC_EVCTRL_TRGEO_Pos)) /* Assigment of value for TRGEO in the TCC_EVCTRL register */
+#define TCC_EVCTRL_CNTEO_Pos                  _UINT32_(10)                                         /* (TCC_EVCTRL) Timer/counter Output Event Enable Position */
+#define TCC_EVCTRL_CNTEO_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_CNTEO_Pos)              /* (TCC_EVCTRL) Timer/counter Output Event Enable Mask */
+#define TCC_EVCTRL_CNTEO(value)               (TCC_EVCTRL_CNTEO_Msk & (_UINT32_(value) << TCC_EVCTRL_CNTEO_Pos)) /* Assigment of value for CNTEO in the TCC_EVCTRL register */
+#define TCC_EVCTRL_TCINV0_Pos                 _UINT32_(12)                                         /* (TCC_EVCTRL) Inverted Event 0 Input Enable Position */
+#define TCC_EVCTRL_TCINV0_Msk                 (_UINT32_(0x1) << TCC_EVCTRL_TCINV0_Pos)             /* (TCC_EVCTRL) Inverted Event 0 Input Enable Mask */
+#define TCC_EVCTRL_TCINV0(value)              (TCC_EVCTRL_TCINV0_Msk & (_UINT32_(value) << TCC_EVCTRL_TCINV0_Pos)) /* Assigment of value for TCINV0 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_TCINV1_Pos                 _UINT32_(13)                                         /* (TCC_EVCTRL) Inverted Event 1 Input Enable Position */
+#define TCC_EVCTRL_TCINV1_Msk                 (_UINT32_(0x1) << TCC_EVCTRL_TCINV1_Pos)             /* (TCC_EVCTRL) Inverted Event 1 Input Enable Mask */
+#define TCC_EVCTRL_TCINV1(value)              (TCC_EVCTRL_TCINV1_Msk & (_UINT32_(value) << TCC_EVCTRL_TCINV1_Pos)) /* Assigment of value for TCINV1 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_TCEI0_Pos                  _UINT32_(14)                                         /* (TCC_EVCTRL) Timer/counter Event 0 Input Enable Position */
+#define TCC_EVCTRL_TCEI0_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_TCEI0_Pos)              /* (TCC_EVCTRL) Timer/counter Event 0 Input Enable Mask */
+#define TCC_EVCTRL_TCEI0(value)               (TCC_EVCTRL_TCEI0_Msk & (_UINT32_(value) << TCC_EVCTRL_TCEI0_Pos)) /* Assigment of value for TCEI0 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_TCEI1_Pos                  _UINT32_(15)                                         /* (TCC_EVCTRL) Timer/counter Event 1 Input Enable Position */
+#define TCC_EVCTRL_TCEI1_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_TCEI1_Pos)              /* (TCC_EVCTRL) Timer/counter Event 1 Input Enable Mask */
+#define TCC_EVCTRL_TCEI1(value)               (TCC_EVCTRL_TCEI1_Msk & (_UINT32_(value) << TCC_EVCTRL_TCEI1_Pos)) /* Assigment of value for TCEI1 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEI0_Pos                  _UINT32_(16)                                         /* (TCC_EVCTRL) Match or Capture Channel 0 Event Input Enable Position */
+#define TCC_EVCTRL_MCEI0_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI0_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 0 Event Input Enable Mask */
+#define TCC_EVCTRL_MCEI0(value)               (TCC_EVCTRL_MCEI0_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI0_Pos)) /* Assigment of value for MCEI0 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEI1_Pos                  _UINT32_(17)                                         /* (TCC_EVCTRL) Match or Capture Channel 1 Event Input Enable Position */
+#define TCC_EVCTRL_MCEI1_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI1_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 1 Event Input Enable Mask */
+#define TCC_EVCTRL_MCEI1(value)               (TCC_EVCTRL_MCEI1_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI1_Pos)) /* Assigment of value for MCEI1 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEI2_Pos                  _UINT32_(18)                                         /* (TCC_EVCTRL) Match or Capture Channel 2 Event Input Enable Position */
+#define TCC_EVCTRL_MCEI2_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI2_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 2 Event Input Enable Mask */
+#define TCC_EVCTRL_MCEI2(value)               (TCC_EVCTRL_MCEI2_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI2_Pos)) /* Assigment of value for MCEI2 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEI3_Pos                  _UINT32_(19)                                         /* (TCC_EVCTRL) Match or Capture Channel 3 Event Input Enable Position */
+#define TCC_EVCTRL_MCEI3_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI3_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 3 Event Input Enable Mask */
+#define TCC_EVCTRL_MCEI3(value)               (TCC_EVCTRL_MCEI3_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI3_Pos)) /* Assigment of value for MCEI3 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEI4_Pos                  _UINT32_(20)                                         /* (TCC_EVCTRL) Match or Capture Channel 4 Event Input Enable Position */
+#define TCC_EVCTRL_MCEI4_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI4_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 4 Event Input Enable Mask */
+#define TCC_EVCTRL_MCEI4(value)               (TCC_EVCTRL_MCEI4_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI4_Pos)) /* Assigment of value for MCEI4 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEI5_Pos                  _UINT32_(21)                                         /* (TCC_EVCTRL) Match or Capture Channel 5 Event Input Enable Position */
+#define TCC_EVCTRL_MCEI5_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEI5_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 5 Event Input Enable Mask */
+#define TCC_EVCTRL_MCEI5(value)               (TCC_EVCTRL_MCEI5_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI5_Pos)) /* Assigment of value for MCEI5 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEO0_Pos                  _UINT32_(24)                                         /* (TCC_EVCTRL) Match or Capture Channel 0 Event Output Enable Position */
+#define TCC_EVCTRL_MCEO0_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO0_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 0 Event Output Enable Mask */
+#define TCC_EVCTRL_MCEO0(value)               (TCC_EVCTRL_MCEO0_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO0_Pos)) /* Assigment of value for MCEO0 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEO1_Pos                  _UINT32_(25)                                         /* (TCC_EVCTRL) Match or Capture Channel 1 Event Output Enable Position */
+#define TCC_EVCTRL_MCEO1_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO1_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 1 Event Output Enable Mask */
+#define TCC_EVCTRL_MCEO1(value)               (TCC_EVCTRL_MCEO1_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO1_Pos)) /* Assigment of value for MCEO1 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEO2_Pos                  _UINT32_(26)                                         /* (TCC_EVCTRL) Match or Capture Channel 2 Event Output Enable Position */
+#define TCC_EVCTRL_MCEO2_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO2_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 2 Event Output Enable Mask */
+#define TCC_EVCTRL_MCEO2(value)               (TCC_EVCTRL_MCEO2_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO2_Pos)) /* Assigment of value for MCEO2 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEO3_Pos                  _UINT32_(27)                                         /* (TCC_EVCTRL) Match or Capture Channel 3 Event Output Enable Position */
+#define TCC_EVCTRL_MCEO3_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO3_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 3 Event Output Enable Mask */
+#define TCC_EVCTRL_MCEO3(value)               (TCC_EVCTRL_MCEO3_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO3_Pos)) /* Assigment of value for MCEO3 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEO4_Pos                  _UINT32_(28)                                         /* (TCC_EVCTRL) Match or Capture Channel 4 Event Output Enable Position */
+#define TCC_EVCTRL_MCEO4_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO4_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 4 Event Output Enable Mask */
+#define TCC_EVCTRL_MCEO4(value)               (TCC_EVCTRL_MCEO4_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO4_Pos)) /* Assigment of value for MCEO4 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_MCEO5_Pos                  _UINT32_(29)                                         /* (TCC_EVCTRL) Match or Capture Channel 5 Event Output Enable Position */
+#define TCC_EVCTRL_MCEO5_Msk                  (_UINT32_(0x1) << TCC_EVCTRL_MCEO5_Pos)              /* (TCC_EVCTRL) Match or Capture Channel 5 Event Output Enable Mask */
+#define TCC_EVCTRL_MCEO5(value)               (TCC_EVCTRL_MCEO5_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO5_Pos)) /* Assigment of value for MCEO5 in the TCC_EVCTRL register */
+#define TCC_EVCTRL_Msk                        _UINT32_(0x3F3FF7FF)                                 /* (TCC_EVCTRL) Register Mask  */
+
+#define TCC_EVCTRL_TCINV_Pos                  _UINT32_(12)                                         /* (TCC_EVCTRL Position) Inverted Event x Input Enable */
+#define TCC_EVCTRL_TCINV_Msk                  (_UINT32_(0x3) << TCC_EVCTRL_TCINV_Pos)              /* (TCC_EVCTRL Mask) TCINV */
+#define TCC_EVCTRL_TCINV(value)               (TCC_EVCTRL_TCINV_Msk & (_UINT32_(value) << TCC_EVCTRL_TCINV_Pos)) 
+#define TCC_EVCTRL_TCEI_Pos                   _UINT32_(14)                                         /* (TCC_EVCTRL Position) Timer/counter Event x Input Enable */
+#define TCC_EVCTRL_TCEI_Msk                   (_UINT32_(0x3) << TCC_EVCTRL_TCEI_Pos)               /* (TCC_EVCTRL Mask) TCEI */
+#define TCC_EVCTRL_TCEI(value)                (TCC_EVCTRL_TCEI_Msk & (_UINT32_(value) << TCC_EVCTRL_TCEI_Pos)) 
+#define TCC_EVCTRL_MCEI_Pos                   _UINT32_(16)                                         /* (TCC_EVCTRL Position) Match or Capture Channel x Event Input Enable */
+#define TCC_EVCTRL_MCEI_Msk                   (_UINT32_(0x3F) << TCC_EVCTRL_MCEI_Pos)              /* (TCC_EVCTRL Mask) MCEI */
+#define TCC_EVCTRL_MCEI(value)                (TCC_EVCTRL_MCEI_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEI_Pos)) 
+#define TCC_EVCTRL_MCEO_Pos                   _UINT32_(24)                                         /* (TCC_EVCTRL Position) Match or Capture Channel 5 Event Output Enable */
+#define TCC_EVCTRL_MCEO_Msk                   (_UINT32_(0x3F) << TCC_EVCTRL_MCEO_Pos)              /* (TCC_EVCTRL Mask) MCEO */
+#define TCC_EVCTRL_MCEO(value)                (TCC_EVCTRL_MCEO_Msk & (_UINT32_(value) << TCC_EVCTRL_MCEO_Pos)) 
 
 /* -------- TCC_INTENCLR : (TCC Offset: 0x24) (R/W 32) Interrupt Enable Clear -------- */
 #define TCC_INTENCLR_RESETVALUE               _UINT32_(0x00)                                       /*  (TCC_INTENCLR) Interrupt Enable Clear  Reset Value */
@@ -876,198 +858,6 @@
 #define TCC_INTFLAG_MC_Msk                    (_UINT32_(0x3F) << TCC_INTFLAG_MC_Pos)               /* (TCC_INTFLAG Mask) MC */
 #define TCC_INTFLAG_MC(value)                 (TCC_INTFLAG_MC_Msk & (_UINT32_(value) << TCC_INTFLAG_MC_Pos)) 
 
-/* -------- TCC_PATT : (TCC Offset: 0x38) (R/W 16) Pattern -------- */
-#define TCC_PATT_RESETVALUE                   _UINT16_(0x00)                                       /*  (TCC_PATT) Pattern  Reset Value */
-
-#define TCC_PATT_PGE0_Pos                     _UINT16_(0)                                          /* (TCC_PATT) Pattern Generator 0 Output Enable Position */
-#define TCC_PATT_PGE0_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE0_Pos)                 /* (TCC_PATT) Pattern Generator 0 Output Enable Mask */
-#define TCC_PATT_PGE0(value)                  (TCC_PATT_PGE0_Msk & (_UINT16_(value) << TCC_PATT_PGE0_Pos)) /* Assigment of value for PGE0 in the TCC_PATT register */
-#define TCC_PATT_PGE1_Pos                     _UINT16_(1)                                          /* (TCC_PATT) Pattern Generator 1 Output Enable Position */
-#define TCC_PATT_PGE1_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE1_Pos)                 /* (TCC_PATT) Pattern Generator 1 Output Enable Mask */
-#define TCC_PATT_PGE1(value)                  (TCC_PATT_PGE1_Msk & (_UINT16_(value) << TCC_PATT_PGE1_Pos)) /* Assigment of value for PGE1 in the TCC_PATT register */
-#define TCC_PATT_PGE2_Pos                     _UINT16_(2)                                          /* (TCC_PATT) Pattern Generator 2 Output Enable Position */
-#define TCC_PATT_PGE2_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE2_Pos)                 /* (TCC_PATT) Pattern Generator 2 Output Enable Mask */
-#define TCC_PATT_PGE2(value)                  (TCC_PATT_PGE2_Msk & (_UINT16_(value) << TCC_PATT_PGE2_Pos)) /* Assigment of value for PGE2 in the TCC_PATT register */
-#define TCC_PATT_PGE3_Pos                     _UINT16_(3)                                          /* (TCC_PATT) Pattern Generator 3 Output Enable Position */
-#define TCC_PATT_PGE3_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE3_Pos)                 /* (TCC_PATT) Pattern Generator 3 Output Enable Mask */
-#define TCC_PATT_PGE3(value)                  (TCC_PATT_PGE3_Msk & (_UINT16_(value) << TCC_PATT_PGE3_Pos)) /* Assigment of value for PGE3 in the TCC_PATT register */
-#define TCC_PATT_PGE4_Pos                     _UINT16_(4)                                          /* (TCC_PATT) Pattern Generator 4 Output Enable Position */
-#define TCC_PATT_PGE4_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE4_Pos)                 /* (TCC_PATT) Pattern Generator 4 Output Enable Mask */
-#define TCC_PATT_PGE4(value)                  (TCC_PATT_PGE4_Msk & (_UINT16_(value) << TCC_PATT_PGE4_Pos)) /* Assigment of value for PGE4 in the TCC_PATT register */
-#define TCC_PATT_PGE5_Pos                     _UINT16_(5)                                          /* (TCC_PATT) Pattern Generator 5 Output Enable Position */
-#define TCC_PATT_PGE5_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE5_Pos)                 /* (TCC_PATT) Pattern Generator 5 Output Enable Mask */
-#define TCC_PATT_PGE5(value)                  (TCC_PATT_PGE5_Msk & (_UINT16_(value) << TCC_PATT_PGE5_Pos)) /* Assigment of value for PGE5 in the TCC_PATT register */
-#define TCC_PATT_PGE6_Pos                     _UINT16_(6)                                          /* (TCC_PATT) Pattern Generator 6 Output Enable Position */
-#define TCC_PATT_PGE6_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE6_Pos)                 /* (TCC_PATT) Pattern Generator 6 Output Enable Mask */
-#define TCC_PATT_PGE6(value)                  (TCC_PATT_PGE6_Msk & (_UINT16_(value) << TCC_PATT_PGE6_Pos)) /* Assigment of value for PGE6 in the TCC_PATT register */
-#define TCC_PATT_PGE7_Pos                     _UINT16_(7)                                          /* (TCC_PATT) Pattern Generator 7 Output Enable Position */
-#define TCC_PATT_PGE7_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE7_Pos)                 /* (TCC_PATT) Pattern Generator 7 Output Enable Mask */
-#define TCC_PATT_PGE7(value)                  (TCC_PATT_PGE7_Msk & (_UINT16_(value) << TCC_PATT_PGE7_Pos)) /* Assigment of value for PGE7 in the TCC_PATT register */
-#define TCC_PATT_PGV0_Pos                     _UINT16_(8)                                          /* (TCC_PATT) Pattern Generator 0 Output Value Position */
-#define TCC_PATT_PGV0_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV0_Pos)                 /* (TCC_PATT) Pattern Generator 0 Output Value Mask */
-#define TCC_PATT_PGV0(value)                  (TCC_PATT_PGV0_Msk & (_UINT16_(value) << TCC_PATT_PGV0_Pos)) /* Assigment of value for PGV0 in the TCC_PATT register */
-#define TCC_PATT_PGV1_Pos                     _UINT16_(9)                                          /* (TCC_PATT) Pattern Generator 1 Output Value Position */
-#define TCC_PATT_PGV1_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV1_Pos)                 /* (TCC_PATT) Pattern Generator 1 Output Value Mask */
-#define TCC_PATT_PGV1(value)                  (TCC_PATT_PGV1_Msk & (_UINT16_(value) << TCC_PATT_PGV1_Pos)) /* Assigment of value for PGV1 in the TCC_PATT register */
-#define TCC_PATT_PGV2_Pos                     _UINT16_(10)                                         /* (TCC_PATT) Pattern Generator 2 Output Value Position */
-#define TCC_PATT_PGV2_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV2_Pos)                 /* (TCC_PATT) Pattern Generator 2 Output Value Mask */
-#define TCC_PATT_PGV2(value)                  (TCC_PATT_PGV2_Msk & (_UINT16_(value) << TCC_PATT_PGV2_Pos)) /* Assigment of value for PGV2 in the TCC_PATT register */
-#define TCC_PATT_PGV3_Pos                     _UINT16_(11)                                         /* (TCC_PATT) Pattern Generator 3 Output Value Position */
-#define TCC_PATT_PGV3_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV3_Pos)                 /* (TCC_PATT) Pattern Generator 3 Output Value Mask */
-#define TCC_PATT_PGV3(value)                  (TCC_PATT_PGV3_Msk & (_UINT16_(value) << TCC_PATT_PGV3_Pos)) /* Assigment of value for PGV3 in the TCC_PATT register */
-#define TCC_PATT_PGV4_Pos                     _UINT16_(12)                                         /* (TCC_PATT) Pattern Generator 4 Output Value Position */
-#define TCC_PATT_PGV4_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV4_Pos)                 /* (TCC_PATT) Pattern Generator 4 Output Value Mask */
-#define TCC_PATT_PGV4(value)                  (TCC_PATT_PGV4_Msk & (_UINT16_(value) << TCC_PATT_PGV4_Pos)) /* Assigment of value for PGV4 in the TCC_PATT register */
-#define TCC_PATT_PGV5_Pos                     _UINT16_(13)                                         /* (TCC_PATT) Pattern Generator 5 Output Value Position */
-#define TCC_PATT_PGV5_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV5_Pos)                 /* (TCC_PATT) Pattern Generator 5 Output Value Mask */
-#define TCC_PATT_PGV5(value)                  (TCC_PATT_PGV5_Msk & (_UINT16_(value) << TCC_PATT_PGV5_Pos)) /* Assigment of value for PGV5 in the TCC_PATT register */
-#define TCC_PATT_PGV6_Pos                     _UINT16_(14)                                         /* (TCC_PATT) Pattern Generator 6 Output Value Position */
-#define TCC_PATT_PGV6_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV6_Pos)                 /* (TCC_PATT) Pattern Generator 6 Output Value Mask */
-#define TCC_PATT_PGV6(value)                  (TCC_PATT_PGV6_Msk & (_UINT16_(value) << TCC_PATT_PGV6_Pos)) /* Assigment of value for PGV6 in the TCC_PATT register */
-#define TCC_PATT_PGV7_Pos                     _UINT16_(15)                                         /* (TCC_PATT) Pattern Generator 7 Output Value Position */
-#define TCC_PATT_PGV7_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV7_Pos)                 /* (TCC_PATT) Pattern Generator 7 Output Value Mask */
-#define TCC_PATT_PGV7(value)                  (TCC_PATT_PGV7_Msk & (_UINT16_(value) << TCC_PATT_PGV7_Pos)) /* Assigment of value for PGV7 in the TCC_PATT register */
-#define TCC_PATT_Msk                          _UINT16_(0xFFFF)                                     /* (TCC_PATT) Register Mask  */
-
-#define TCC_PATT_PGE_Pos                      _UINT16_(0)                                          /* (TCC_PATT Position) Pattern Generator x Output Enable */
-#define TCC_PATT_PGE_Msk                      (_UINT16_(0xFF) << TCC_PATT_PGE_Pos)                 /* (TCC_PATT Mask) PGE */
-#define TCC_PATT_PGE(value)                   (TCC_PATT_PGE_Msk & (_UINT16_(value) << TCC_PATT_PGE_Pos)) 
-#define TCC_PATT_PGV_Pos                      _UINT16_(8)                                          /* (TCC_PATT Position) Pattern Generator 7 Output Value */
-#define TCC_PATT_PGV_Msk                      (_UINT16_(0xFF) << TCC_PATT_PGV_Pos)                 /* (TCC_PATT Mask) PGV */
-#define TCC_PATT_PGV(value)                   (TCC_PATT_PGV_Msk & (_UINT16_(value) << TCC_PATT_PGV_Pos)) 
-
-/* -------- TCC_PATTBUF : (TCC Offset: 0x64) (R/W 16) Pattern Buffer -------- */
-#define TCC_PATTBUF_RESETVALUE                _UINT16_(0x00)                                       /*  (TCC_PATTBUF) Pattern Buffer  Reset Value */
-
-#define TCC_PATTBUF_PGEB0_Pos                 _UINT16_(0)                                          /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB0_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB0_Pos)             /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB0(value)              (TCC_PATTBUF_PGEB0_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB0_Pos)) /* Assigment of value for PGEB0 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB1_Pos                 _UINT16_(1)                                          /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB1_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB1_Pos)             /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB1(value)              (TCC_PATTBUF_PGEB1_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB1_Pos)) /* Assigment of value for PGEB1 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB2_Pos                 _UINT16_(2)                                          /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB2_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB2_Pos)             /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB2(value)              (TCC_PATTBUF_PGEB2_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB2_Pos)) /* Assigment of value for PGEB2 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB3_Pos                 _UINT16_(3)                                          /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB3_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB3_Pos)             /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB3(value)              (TCC_PATTBUF_PGEB3_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB3_Pos)) /* Assigment of value for PGEB3 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB4_Pos                 _UINT16_(4)                                          /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB4_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB4_Pos)             /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB4(value)              (TCC_PATTBUF_PGEB4_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB4_Pos)) /* Assigment of value for PGEB4 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB5_Pos                 _UINT16_(5)                                          /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB5_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB5_Pos)             /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB5(value)              (TCC_PATTBUF_PGEB5_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB5_Pos)) /* Assigment of value for PGEB5 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB6_Pos                 _UINT16_(6)                                          /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB6_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB6_Pos)             /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB6(value)              (TCC_PATTBUF_PGEB6_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB6_Pos)) /* Assigment of value for PGEB6 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGEB7_Pos                 _UINT16_(7)                                          /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Buffer Position */
-#define TCC_PATTBUF_PGEB7_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB7_Pos)             /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Buffer Mask */
-#define TCC_PATTBUF_PGEB7(value)              (TCC_PATTBUF_PGEB7_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB7_Pos)) /* Assigment of value for PGEB7 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB0_Pos                 _UINT16_(8)                                          /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Position */
-#define TCC_PATTBUF_PGVB0_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB0_Pos)             /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Mask */
-#define TCC_PATTBUF_PGVB0(value)              (TCC_PATTBUF_PGVB0_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB0_Pos)) /* Assigment of value for PGVB0 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB1_Pos                 _UINT16_(9)                                          /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Position */
-#define TCC_PATTBUF_PGVB1_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB1_Pos)             /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Mask */
-#define TCC_PATTBUF_PGVB1(value)              (TCC_PATTBUF_PGVB1_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB1_Pos)) /* Assigment of value for PGVB1 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB2_Pos                 _UINT16_(10)                                         /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Position */
-#define TCC_PATTBUF_PGVB2_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB2_Pos)             /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Mask */
-#define TCC_PATTBUF_PGVB2(value)              (TCC_PATTBUF_PGVB2_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB2_Pos)) /* Assigment of value for PGVB2 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB3_Pos                 _UINT16_(11)                                         /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Position */
-#define TCC_PATTBUF_PGVB3_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB3_Pos)             /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Mask */
-#define TCC_PATTBUF_PGVB3(value)              (TCC_PATTBUF_PGVB3_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB3_Pos)) /* Assigment of value for PGVB3 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB4_Pos                 _UINT16_(12)                                         /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Position */
-#define TCC_PATTBUF_PGVB4_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB4_Pos)             /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Mask */
-#define TCC_PATTBUF_PGVB4(value)              (TCC_PATTBUF_PGVB4_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB4_Pos)) /* Assigment of value for PGVB4 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB5_Pos                 _UINT16_(13)                                         /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Position */
-#define TCC_PATTBUF_PGVB5_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB5_Pos)             /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Mask */
-#define TCC_PATTBUF_PGVB5(value)              (TCC_PATTBUF_PGVB5_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB5_Pos)) /* Assigment of value for PGVB5 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB6_Pos                 _UINT16_(14)                                         /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Position */
-#define TCC_PATTBUF_PGVB6_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB6_Pos)             /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Mask */
-#define TCC_PATTBUF_PGVB6(value)              (TCC_PATTBUF_PGVB6_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB6_Pos)) /* Assigment of value for PGVB6 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_PGVB7_Pos                 _UINT16_(15)                                         /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Position */
-#define TCC_PATTBUF_PGVB7_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB7_Pos)             /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Mask */
-#define TCC_PATTBUF_PGVB7(value)              (TCC_PATTBUF_PGVB7_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB7_Pos)) /* Assigment of value for PGVB7 in the TCC_PATTBUF register */
-#define TCC_PATTBUF_Msk                       _UINT16_(0xFFFF)                                     /* (TCC_PATTBUF) Register Mask  */
-
-#define TCC_PATTBUF_PGEB_Pos                  _UINT16_(0)                                          /* (TCC_PATTBUF Position) Pattern Generator x Output Enable Buffer */
-#define TCC_PATTBUF_PGEB_Msk                  (_UINT16_(0xFF) << TCC_PATTBUF_PGEB_Pos)             /* (TCC_PATTBUF Mask) PGEB */
-#define TCC_PATTBUF_PGEB(value)               (TCC_PATTBUF_PGEB_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB_Pos)) 
-#define TCC_PATTBUF_PGVB_Pos                  _UINT16_(8)                                          /* (TCC_PATTBUF Position) Pattern Generator 7 Output Enable */
-#define TCC_PATTBUF_PGVB_Msk                  (_UINT16_(0xFF) << TCC_PATTBUF_PGVB_Pos)             /* (TCC_PATTBUF Mask) PGVB */
-#define TCC_PATTBUF_PGVB(value)               (TCC_PATTBUF_PGVB_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB_Pos)) 
-
-/* -------- TCC_PER : (TCC Offset: 0x40) (R/W 32) Period -------- */
-#define TCC_PER_RESETVALUE                    _UINT32_(0xFFFFFFFF)                                 /*  (TCC_PER) Period  Reset Value */
-
-#define TCC_PER_PER_Pos                       _UINT32_(0)                                          /* (TCC_PER) Period Value Position */
-#define TCC_PER_PER_Msk                       (_UINT32_(0xFFFFFF) << TCC_PER_PER_Pos)              /* (TCC_PER) Period Value Mask */
-#define TCC_PER_PER(value)                    (TCC_PER_PER_Msk & (_UINT32_(value) << TCC_PER_PER_Pos)) /* Assigment of value for PER in the TCC_PER register */
-#define TCC_PER_Msk                           _UINT32_(0x00FFFFFF)                                 /* (TCC_PER) Register Mask  */
-
-/* DITH4 mode */
-#define TCC_PER_DITH4_DITHER_Pos              _UINT32_(0)                                          /* (TCC_PER) Dithering Cycle Number Position */
-#define TCC_PER_DITH4_DITHER_Msk              (_UINT32_(0xF) << TCC_PER_DITH4_DITHER_Pos)          /* (TCC_PER) Dithering Cycle Number Mask */
-#define TCC_PER_DITH4_DITHER(value)           (TCC_PER_DITH4_DITHER_Msk & (_UINT32_(value) << TCC_PER_DITH4_DITHER_Pos))
-#define TCC_PER_DITH4_PER_Pos                 _UINT32_(4)                                          /* (TCC_PER) Period Value Position */
-#define TCC_PER_DITH4_PER_Msk                 (_UINT32_(0xFFFFF) << TCC_PER_DITH4_PER_Pos)         /* (TCC_PER) Period Value Mask */
-#define TCC_PER_DITH4_PER(value)              (TCC_PER_DITH4_PER_Msk & (_UINT32_(value) << TCC_PER_DITH4_PER_Pos))
-#define TCC_PER_DITH4_Msk                     _UINT32_(0x00FFFFFF)                                  /* (TCC_PER_DITH4) Register Mask  */
-
-/* DITH5 mode */
-#define TCC_PER_DITH5_DITHER_Pos              _UINT32_(0)                                          /* (TCC_PER) Dithering Cycle Number Position */
-#define TCC_PER_DITH5_DITHER_Msk              (_UINT32_(0x1F) << TCC_PER_DITH5_DITHER_Pos)         /* (TCC_PER) Dithering Cycle Number Mask */
-#define TCC_PER_DITH5_DITHER(value)           (TCC_PER_DITH5_DITHER_Msk & (_UINT32_(value) << TCC_PER_DITH5_DITHER_Pos))
-#define TCC_PER_DITH5_PER_Pos                 _UINT32_(5)                                          /* (TCC_PER) Period Value Position */
-#define TCC_PER_DITH5_PER_Msk                 (_UINT32_(0x7FFFF) << TCC_PER_DITH5_PER_Pos)         /* (TCC_PER) Period Value Mask */
-#define TCC_PER_DITH5_PER(value)              (TCC_PER_DITH5_PER_Msk & (_UINT32_(value) << TCC_PER_DITH5_PER_Pos))
-#define TCC_PER_DITH5_Msk                     _UINT32_(0x00FFFFFF)                                  /* (TCC_PER_DITH5) Register Mask  */
-
-/* DITH6 mode */
-#define TCC_PER_DITH6_DITHER_Pos              _UINT32_(0)                                          /* (TCC_PER) Dithering Cycle Number Position */
-#define TCC_PER_DITH6_DITHER_Msk              (_UINT32_(0x3F) << TCC_PER_DITH6_DITHER_Pos)         /* (TCC_PER) Dithering Cycle Number Mask */
-#define TCC_PER_DITH6_DITHER(value)           (TCC_PER_DITH6_DITHER_Msk & (_UINT32_(value) << TCC_PER_DITH6_DITHER_Pos))
-#define TCC_PER_DITH6_PER_Pos                 _UINT32_(6)                                          /* (TCC_PER) Period Value Position */
-#define TCC_PER_DITH6_PER_Msk                 (_UINT32_(0x3FFFF) << TCC_PER_DITH6_PER_Pos)         /* (TCC_PER) Period Value Mask */
-#define TCC_PER_DITH6_PER(value)              (TCC_PER_DITH6_PER_Msk & (_UINT32_(value) << TCC_PER_DITH6_PER_Pos))
-#define TCC_PER_DITH6_Msk                     _UINT32_(0x00FFFFFF)                                  /* (TCC_PER_DITH6) Register Mask  */
-
-
-/* -------- TCC_PERBUF : (TCC Offset: 0x6C) (R/W 32) Period Buffer -------- */
-#define TCC_PERBUF_RESETVALUE                 _UINT32_(0xFFFFFFFF)                                 /*  (TCC_PERBUF) Period Buffer  Reset Value */
-
-#define TCC_PERBUF_PERBUF_Pos                 _UINT32_(0)                                          /* (TCC_PERBUF) Period Buffer Value Position */
-#define TCC_PERBUF_PERBUF_Msk                 (_UINT32_(0xFFFFFF) << TCC_PERBUF_PERBUF_Pos)        /* (TCC_PERBUF) Period Buffer Value Mask */
-#define TCC_PERBUF_PERBUF(value)              (TCC_PERBUF_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_PERBUF_Pos)) /* Assigment of value for PERBUF in the TCC_PERBUF register */
-#define TCC_PERBUF_Msk                        _UINT32_(0x00FFFFFF)                                 /* (TCC_PERBUF) Register Mask  */
-
-/* DITH4 mode */
-#define TCC_PERBUF_DITH4_DITHERBUF_Pos        _UINT32_(0)                                          /* (TCC_PERBUF) Dithering Buffer Cycle Number Position */
-#define TCC_PERBUF_DITH4_DITHERBUF_Msk        (_UINT32_(0xF) << TCC_PERBUF_DITH4_DITHERBUF_Pos)    /* (TCC_PERBUF) Dithering Buffer Cycle Number Mask */
-#define TCC_PERBUF_DITH4_DITHERBUF(value)     (TCC_PERBUF_DITH4_DITHERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH4_DITHERBUF_Pos))
-#define TCC_PERBUF_DITH4_PERBUF_Pos           _UINT32_(4)                                          /* (TCC_PERBUF) Period Buffer Value Position */
-#define TCC_PERBUF_DITH4_PERBUF_Msk           (_UINT32_(0xFFFFF) << TCC_PERBUF_DITH4_PERBUF_Pos)   /* (TCC_PERBUF) Period Buffer Value Mask */
-#define TCC_PERBUF_DITH4_PERBUF(value)        (TCC_PERBUF_DITH4_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH4_PERBUF_Pos))
-#define TCC_PERBUF_DITH4_Msk                  _UINT32_(0x00FFFFFF)                                  /* (TCC_PERBUF_DITH4) Register Mask  */
-
-/* DITH5 mode */
-#define TCC_PERBUF_DITH5_DITHERBUF_Pos        _UINT32_(0)                                          /* (TCC_PERBUF) Dithering Buffer Cycle Number Position */
-#define TCC_PERBUF_DITH5_DITHERBUF_Msk        (_UINT32_(0x1F) << TCC_PERBUF_DITH5_DITHERBUF_Pos)   /* (TCC_PERBUF) Dithering Buffer Cycle Number Mask */
-#define TCC_PERBUF_DITH5_DITHERBUF(value)     (TCC_PERBUF_DITH5_DITHERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH5_DITHERBUF_Pos))
-#define TCC_PERBUF_DITH5_PERBUF_Pos           _UINT32_(5)                                          /* (TCC_PERBUF) Period Buffer Value Position */
-#define TCC_PERBUF_DITH5_PERBUF_Msk           (_UINT32_(0x7FFFF) << TCC_PERBUF_DITH5_PERBUF_Pos)   /* (TCC_PERBUF) Period Buffer Value Mask */
-#define TCC_PERBUF_DITH5_PERBUF(value)        (TCC_PERBUF_DITH5_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH5_PERBUF_Pos))
-#define TCC_PERBUF_DITH5_Msk                  _UINT32_(0x00FFFFFF)                                  /* (TCC_PERBUF_DITH5) Register Mask  */
-
-/* DITH6 mode */
-#define TCC_PERBUF_DITH6_DITHERBUF_Pos        _UINT32_(0)                                          /* (TCC_PERBUF) Dithering Buffer Cycle Number Position */
-#define TCC_PERBUF_DITH6_DITHERBUF_Msk        (_UINT32_(0x3F) << TCC_PERBUF_DITH6_DITHERBUF_Pos)   /* (TCC_PERBUF) Dithering Buffer Cycle Number Mask */
-#define TCC_PERBUF_DITH6_DITHERBUF(value)     (TCC_PERBUF_DITH6_DITHERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH6_DITHERBUF_Pos))
-#define TCC_PERBUF_DITH6_PERBUF_Pos           _UINT32_(6)                                          /* (TCC_PERBUF) Period Buffer Value Position */
-#define TCC_PERBUF_DITH6_PERBUF_Msk           (_UINT32_(0x3FFFF) << TCC_PERBUF_DITH6_PERBUF_Pos)   /* (TCC_PERBUF) Period Buffer Value Mask */
-#define TCC_PERBUF_DITH6_PERBUF(value)        (TCC_PERBUF_DITH6_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH6_PERBUF_Pos))
-#define TCC_PERBUF_DITH6_Msk                  _UINT32_(0x00FFFFFF)                                  /* (TCC_PERBUF_DITH6) Register Mask  */
-
-
 /* -------- TCC_STATUS : (TCC Offset: 0x30) (R/W 32) Status -------- */
 #define TCC_STATUS_RESETVALUE                 _UINT32_(0x01)                                       /*  (TCC_STATUS) Status  Reset Value */
 
@@ -1164,56 +954,92 @@
 #define TCC_STATUS_CMP_Msk                    (_UINT32_(0x3F) << TCC_STATUS_CMP_Pos)               /* (TCC_STATUS Mask) CMP */
 #define TCC_STATUS_CMP(value)                 (TCC_STATUS_CMP_Msk & (_UINT32_(value) << TCC_STATUS_CMP_Pos)) 
 
-/* -------- TCC_SYNCBUSY : (TCC Offset: 0x08) ( R/ 32) Synchronization Busy -------- */
-#define TCC_SYNCBUSY_RESETVALUE               _UINT32_(0x00)                                       /*  (TCC_SYNCBUSY) Synchronization Busy  Reset Value */
+/* -------- TCC_COUNT : (TCC Offset: 0x34) (R/W 32) Count -------- */
+#define TCC_COUNT_RESETVALUE                  _UINT32_(0x00)                                       /*  (TCC_COUNT) Count  Reset Value */
 
-#define TCC_SYNCBUSY_SWRST_Pos                _UINT32_(0)                                          /* (TCC_SYNCBUSY) Swrst Busy Position */
-#define TCC_SYNCBUSY_SWRST_Msk                (_UINT32_(0x1) << TCC_SYNCBUSY_SWRST_Pos)            /* (TCC_SYNCBUSY) Swrst Busy Mask */
-#define TCC_SYNCBUSY_SWRST(value)             (TCC_SYNCBUSY_SWRST_Msk & (_UINT32_(value) << TCC_SYNCBUSY_SWRST_Pos)) /* Assigment of value for SWRST in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_ENABLE_Pos               _UINT32_(1)                                          /* (TCC_SYNCBUSY) Enable Busy Position */
-#define TCC_SYNCBUSY_ENABLE_Msk               (_UINT32_(0x1) << TCC_SYNCBUSY_ENABLE_Pos)           /* (TCC_SYNCBUSY) Enable Busy Mask */
-#define TCC_SYNCBUSY_ENABLE(value)            (TCC_SYNCBUSY_ENABLE_Msk & (_UINT32_(value) << TCC_SYNCBUSY_ENABLE_Pos)) /* Assigment of value for ENABLE in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CTRLB_Pos                _UINT32_(2)                                          /* (TCC_SYNCBUSY) Ctrlb Busy Position */
-#define TCC_SYNCBUSY_CTRLB_Msk                (_UINT32_(0x1) << TCC_SYNCBUSY_CTRLB_Pos)            /* (TCC_SYNCBUSY) Ctrlb Busy Mask */
-#define TCC_SYNCBUSY_CTRLB(value)             (TCC_SYNCBUSY_CTRLB_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CTRLB_Pos)) /* Assigment of value for CTRLB in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_STATUS_Pos               _UINT32_(3)                                          /* (TCC_SYNCBUSY) Status Busy Position */
-#define TCC_SYNCBUSY_STATUS_Msk               (_UINT32_(0x1) << TCC_SYNCBUSY_STATUS_Pos)           /* (TCC_SYNCBUSY) Status Busy Mask */
-#define TCC_SYNCBUSY_STATUS(value)            (TCC_SYNCBUSY_STATUS_Msk & (_UINT32_(value) << TCC_SYNCBUSY_STATUS_Pos)) /* Assigment of value for STATUS in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_COUNT_Pos                _UINT32_(4)                                          /* (TCC_SYNCBUSY) Count Busy Position */
-#define TCC_SYNCBUSY_COUNT_Msk                (_UINT32_(0x1) << TCC_SYNCBUSY_COUNT_Pos)            /* (TCC_SYNCBUSY) Count Busy Mask */
-#define TCC_SYNCBUSY_COUNT(value)             (TCC_SYNCBUSY_COUNT_Msk & (_UINT32_(value) << TCC_SYNCBUSY_COUNT_Pos)) /* Assigment of value for COUNT in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_PATT_Pos                 _UINT32_(5)                                          /* (TCC_SYNCBUSY) Pattern Busy Position */
-#define TCC_SYNCBUSY_PATT_Msk                 (_UINT32_(0x1) << TCC_SYNCBUSY_PATT_Pos)             /* (TCC_SYNCBUSY) Pattern Busy Mask */
-#define TCC_SYNCBUSY_PATT(value)              (TCC_SYNCBUSY_PATT_Msk & (_UINT32_(value) << TCC_SYNCBUSY_PATT_Pos)) /* Assigment of value for PATT in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_WAVE_Pos                 _UINT32_(6)                                          /* (TCC_SYNCBUSY) Wave Busy Position */
-#define TCC_SYNCBUSY_WAVE_Msk                 (_UINT32_(0x1) << TCC_SYNCBUSY_WAVE_Pos)             /* (TCC_SYNCBUSY) Wave Busy Mask */
-#define TCC_SYNCBUSY_WAVE(value)              (TCC_SYNCBUSY_WAVE_Msk & (_UINT32_(value) << TCC_SYNCBUSY_WAVE_Pos)) /* Assigment of value for WAVE in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_PER_Pos                  _UINT32_(7)                                          /* (TCC_SYNCBUSY) Period Busy Position */
-#define TCC_SYNCBUSY_PER_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_PER_Pos)              /* (TCC_SYNCBUSY) Period Busy Mask */
-#define TCC_SYNCBUSY_PER(value)               (TCC_SYNCBUSY_PER_Msk & (_UINT32_(value) << TCC_SYNCBUSY_PER_Pos)) /* Assigment of value for PER in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CC0_Pos                  _UINT32_(8)                                          /* (TCC_SYNCBUSY) Compare Channel 0 Busy Position */
-#define TCC_SYNCBUSY_CC0_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC0_Pos)              /* (TCC_SYNCBUSY) Compare Channel 0 Busy Mask */
-#define TCC_SYNCBUSY_CC0(value)               (TCC_SYNCBUSY_CC0_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC0_Pos)) /* Assigment of value for CC0 in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CC1_Pos                  _UINT32_(9)                                          /* (TCC_SYNCBUSY) Compare Channel 1 Busy Position */
-#define TCC_SYNCBUSY_CC1_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC1_Pos)              /* (TCC_SYNCBUSY) Compare Channel 1 Busy Mask */
-#define TCC_SYNCBUSY_CC1(value)               (TCC_SYNCBUSY_CC1_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC1_Pos)) /* Assigment of value for CC1 in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CC2_Pos                  _UINT32_(10)                                         /* (TCC_SYNCBUSY) Compare Channel 2 Busy Position */
-#define TCC_SYNCBUSY_CC2_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC2_Pos)              /* (TCC_SYNCBUSY) Compare Channel 2 Busy Mask */
-#define TCC_SYNCBUSY_CC2(value)               (TCC_SYNCBUSY_CC2_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC2_Pos)) /* Assigment of value for CC2 in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CC3_Pos                  _UINT32_(11)                                         /* (TCC_SYNCBUSY) Compare Channel 3 Busy Position */
-#define TCC_SYNCBUSY_CC3_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC3_Pos)              /* (TCC_SYNCBUSY) Compare Channel 3 Busy Mask */
-#define TCC_SYNCBUSY_CC3(value)               (TCC_SYNCBUSY_CC3_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC3_Pos)) /* Assigment of value for CC3 in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CC4_Pos                  _UINT32_(12)                                         /* (TCC_SYNCBUSY) Compare Channel 4 Busy Position */
-#define TCC_SYNCBUSY_CC4_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC4_Pos)              /* (TCC_SYNCBUSY) Compare Channel 4 Busy Mask */
-#define TCC_SYNCBUSY_CC4(value)               (TCC_SYNCBUSY_CC4_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC4_Pos)) /* Assigment of value for CC4 in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_CC5_Pos                  _UINT32_(13)                                         /* (TCC_SYNCBUSY) Compare Channel 5 Busy Position */
-#define TCC_SYNCBUSY_CC5_Msk                  (_UINT32_(0x1) << TCC_SYNCBUSY_CC5_Pos)              /* (TCC_SYNCBUSY) Compare Channel 5 Busy Mask */
-#define TCC_SYNCBUSY_CC5(value)               (TCC_SYNCBUSY_CC5_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC5_Pos)) /* Assigment of value for CC5 in the TCC_SYNCBUSY register */
-#define TCC_SYNCBUSY_Msk                      _UINT32_(0x00003FFF)                                 /* (TCC_SYNCBUSY) Register Mask  */
+#define TCC_COUNT_COUNT_Pos                   _UINT32_(0)                                          /* (TCC_COUNT) Counter Value Position */
+#define TCC_COUNT_COUNT_Msk                   (_UINT32_(0xFFFFFF) << TCC_COUNT_COUNT_Pos)          /* (TCC_COUNT) Counter Value Mask */
+#define TCC_COUNT_COUNT(value)                (TCC_COUNT_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TCC_COUNT register */
+#define TCC_COUNT_Msk                         _UINT32_(0x00FFFFFF)                                 /* (TCC_COUNT) Register Mask  */
 
-#define TCC_SYNCBUSY_CC_Pos                   _UINT32_(8)                                          /* (TCC_SYNCBUSY Position) Compare Channel 5 Busy */
-#define TCC_SYNCBUSY_CC_Msk                   (_UINT32_(0x3F) << TCC_SYNCBUSY_CC_Pos)              /* (TCC_SYNCBUSY Mask) CC */
-#define TCC_SYNCBUSY_CC(value)                (TCC_SYNCBUSY_CC_Msk & (_UINT32_(value) << TCC_SYNCBUSY_CC_Pos)) 
+/* DITH4 mode */
+#define TCC_COUNT_DITH4_COUNT_Pos             _UINT32_(4)                                          /* (TCC_COUNT) Counter Value Position */
+#define TCC_COUNT_DITH4_COUNT_Msk             (_UINT32_(0xFFFFF) << TCC_COUNT_DITH4_COUNT_Pos)     /* (TCC_COUNT) Counter Value Mask */
+#define TCC_COUNT_DITH4_COUNT(value)          (TCC_COUNT_DITH4_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_DITH4_COUNT_Pos))
+#define TCC_COUNT_DITH4_Msk                   _UINT32_(0x00FFFFF0)                                  /* (TCC_COUNT_DITH4) Register Mask  */
+
+/* DITH5 mode */
+#define TCC_COUNT_DITH5_COUNT_Pos             _UINT32_(5)                                          /* (TCC_COUNT) Counter Value Position */
+#define TCC_COUNT_DITH5_COUNT_Msk             (_UINT32_(0x7FFFF) << TCC_COUNT_DITH5_COUNT_Pos)     /* (TCC_COUNT) Counter Value Mask */
+#define TCC_COUNT_DITH5_COUNT(value)          (TCC_COUNT_DITH5_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_DITH5_COUNT_Pos))
+#define TCC_COUNT_DITH5_Msk                   _UINT32_(0x00FFFFE0)                                  /* (TCC_COUNT_DITH5) Register Mask  */
+
+/* DITH6 mode */
+#define TCC_COUNT_DITH6_COUNT_Pos             _UINT32_(6)                                          /* (TCC_COUNT) Counter Value Position */
+#define TCC_COUNT_DITH6_COUNT_Msk             (_UINT32_(0x3FFFF) << TCC_COUNT_DITH6_COUNT_Pos)     /* (TCC_COUNT) Counter Value Mask */
+#define TCC_COUNT_DITH6_COUNT(value)          (TCC_COUNT_DITH6_COUNT_Msk & (_UINT32_(value) << TCC_COUNT_DITH6_COUNT_Pos))
+#define TCC_COUNT_DITH6_Msk                   _UINT32_(0x00FFFFC0)                                  /* (TCC_COUNT_DITH6) Register Mask  */
+
+
+/* -------- TCC_PATT : (TCC Offset: 0x38) (R/W 16) Pattern -------- */
+#define TCC_PATT_RESETVALUE                   _UINT16_(0x00)                                       /*  (TCC_PATT) Pattern  Reset Value */
+
+#define TCC_PATT_PGE0_Pos                     _UINT16_(0)                                          /* (TCC_PATT) Pattern Generator 0 Output Enable Position */
+#define TCC_PATT_PGE0_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE0_Pos)                 /* (TCC_PATT) Pattern Generator 0 Output Enable Mask */
+#define TCC_PATT_PGE0(value)                  (TCC_PATT_PGE0_Msk & (_UINT16_(value) << TCC_PATT_PGE0_Pos)) /* Assigment of value for PGE0 in the TCC_PATT register */
+#define TCC_PATT_PGE1_Pos                     _UINT16_(1)                                          /* (TCC_PATT) Pattern Generator 1 Output Enable Position */
+#define TCC_PATT_PGE1_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE1_Pos)                 /* (TCC_PATT) Pattern Generator 1 Output Enable Mask */
+#define TCC_PATT_PGE1(value)                  (TCC_PATT_PGE1_Msk & (_UINT16_(value) << TCC_PATT_PGE1_Pos)) /* Assigment of value for PGE1 in the TCC_PATT register */
+#define TCC_PATT_PGE2_Pos                     _UINT16_(2)                                          /* (TCC_PATT) Pattern Generator 2 Output Enable Position */
+#define TCC_PATT_PGE2_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE2_Pos)                 /* (TCC_PATT) Pattern Generator 2 Output Enable Mask */
+#define TCC_PATT_PGE2(value)                  (TCC_PATT_PGE2_Msk & (_UINT16_(value) << TCC_PATT_PGE2_Pos)) /* Assigment of value for PGE2 in the TCC_PATT register */
+#define TCC_PATT_PGE3_Pos                     _UINT16_(3)                                          /* (TCC_PATT) Pattern Generator 3 Output Enable Position */
+#define TCC_PATT_PGE3_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE3_Pos)                 /* (TCC_PATT) Pattern Generator 3 Output Enable Mask */
+#define TCC_PATT_PGE3(value)                  (TCC_PATT_PGE3_Msk & (_UINT16_(value) << TCC_PATT_PGE3_Pos)) /* Assigment of value for PGE3 in the TCC_PATT register */
+#define TCC_PATT_PGE4_Pos                     _UINT16_(4)                                          /* (TCC_PATT) Pattern Generator 4 Output Enable Position */
+#define TCC_PATT_PGE4_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE4_Pos)                 /* (TCC_PATT) Pattern Generator 4 Output Enable Mask */
+#define TCC_PATT_PGE4(value)                  (TCC_PATT_PGE4_Msk & (_UINT16_(value) << TCC_PATT_PGE4_Pos)) /* Assigment of value for PGE4 in the TCC_PATT register */
+#define TCC_PATT_PGE5_Pos                     _UINT16_(5)                                          /* (TCC_PATT) Pattern Generator 5 Output Enable Position */
+#define TCC_PATT_PGE5_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE5_Pos)                 /* (TCC_PATT) Pattern Generator 5 Output Enable Mask */
+#define TCC_PATT_PGE5(value)                  (TCC_PATT_PGE5_Msk & (_UINT16_(value) << TCC_PATT_PGE5_Pos)) /* Assigment of value for PGE5 in the TCC_PATT register */
+#define TCC_PATT_PGE6_Pos                     _UINT16_(6)                                          /* (TCC_PATT) Pattern Generator 6 Output Enable Position */
+#define TCC_PATT_PGE6_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE6_Pos)                 /* (TCC_PATT) Pattern Generator 6 Output Enable Mask */
+#define TCC_PATT_PGE6(value)                  (TCC_PATT_PGE6_Msk & (_UINT16_(value) << TCC_PATT_PGE6_Pos)) /* Assigment of value for PGE6 in the TCC_PATT register */
+#define TCC_PATT_PGE7_Pos                     _UINT16_(7)                                          /* (TCC_PATT) Pattern Generator 7 Output Enable Position */
+#define TCC_PATT_PGE7_Msk                     (_UINT16_(0x1) << TCC_PATT_PGE7_Pos)                 /* (TCC_PATT) Pattern Generator 7 Output Enable Mask */
+#define TCC_PATT_PGE7(value)                  (TCC_PATT_PGE7_Msk & (_UINT16_(value) << TCC_PATT_PGE7_Pos)) /* Assigment of value for PGE7 in the TCC_PATT register */
+#define TCC_PATT_PGV0_Pos                     _UINT16_(8)                                          /* (TCC_PATT) Pattern Generator 0 Output Value Position */
+#define TCC_PATT_PGV0_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV0_Pos)                 /* (TCC_PATT) Pattern Generator 0 Output Value Mask */
+#define TCC_PATT_PGV0(value)                  (TCC_PATT_PGV0_Msk & (_UINT16_(value) << TCC_PATT_PGV0_Pos)) /* Assigment of value for PGV0 in the TCC_PATT register */
+#define TCC_PATT_PGV1_Pos                     _UINT16_(9)                                          /* (TCC_PATT) Pattern Generator 1 Output Value Position */
+#define TCC_PATT_PGV1_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV1_Pos)                 /* (TCC_PATT) Pattern Generator 1 Output Value Mask */
+#define TCC_PATT_PGV1(value)                  (TCC_PATT_PGV1_Msk & (_UINT16_(value) << TCC_PATT_PGV1_Pos)) /* Assigment of value for PGV1 in the TCC_PATT register */
+#define TCC_PATT_PGV2_Pos                     _UINT16_(10)                                         /* (TCC_PATT) Pattern Generator 2 Output Value Position */
+#define TCC_PATT_PGV2_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV2_Pos)                 /* (TCC_PATT) Pattern Generator 2 Output Value Mask */
+#define TCC_PATT_PGV2(value)                  (TCC_PATT_PGV2_Msk & (_UINT16_(value) << TCC_PATT_PGV2_Pos)) /* Assigment of value for PGV2 in the TCC_PATT register */
+#define TCC_PATT_PGV3_Pos                     _UINT16_(11)                                         /* (TCC_PATT) Pattern Generator 3 Output Value Position */
+#define TCC_PATT_PGV3_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV3_Pos)                 /* (TCC_PATT) Pattern Generator 3 Output Value Mask */
+#define TCC_PATT_PGV3(value)                  (TCC_PATT_PGV3_Msk & (_UINT16_(value) << TCC_PATT_PGV3_Pos)) /* Assigment of value for PGV3 in the TCC_PATT register */
+#define TCC_PATT_PGV4_Pos                     _UINT16_(12)                                         /* (TCC_PATT) Pattern Generator 4 Output Value Position */
+#define TCC_PATT_PGV4_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV4_Pos)                 /* (TCC_PATT) Pattern Generator 4 Output Value Mask */
+#define TCC_PATT_PGV4(value)                  (TCC_PATT_PGV4_Msk & (_UINT16_(value) << TCC_PATT_PGV4_Pos)) /* Assigment of value for PGV4 in the TCC_PATT register */
+#define TCC_PATT_PGV5_Pos                     _UINT16_(13)                                         /* (TCC_PATT) Pattern Generator 5 Output Value Position */
+#define TCC_PATT_PGV5_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV5_Pos)                 /* (TCC_PATT) Pattern Generator 5 Output Value Mask */
+#define TCC_PATT_PGV5(value)                  (TCC_PATT_PGV5_Msk & (_UINT16_(value) << TCC_PATT_PGV5_Pos)) /* Assigment of value for PGV5 in the TCC_PATT register */
+#define TCC_PATT_PGV6_Pos                     _UINT16_(14)                                         /* (TCC_PATT) Pattern Generator 6 Output Value Position */
+#define TCC_PATT_PGV6_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV6_Pos)                 /* (TCC_PATT) Pattern Generator 6 Output Value Mask */
+#define TCC_PATT_PGV6(value)                  (TCC_PATT_PGV6_Msk & (_UINT16_(value) << TCC_PATT_PGV6_Pos)) /* Assigment of value for PGV6 in the TCC_PATT register */
+#define TCC_PATT_PGV7_Pos                     _UINT16_(15)                                         /* (TCC_PATT) Pattern Generator 7 Output Value Position */
+#define TCC_PATT_PGV7_Msk                     (_UINT16_(0x1) << TCC_PATT_PGV7_Pos)                 /* (TCC_PATT) Pattern Generator 7 Output Value Mask */
+#define TCC_PATT_PGV7(value)                  (TCC_PATT_PGV7_Msk & (_UINT16_(value) << TCC_PATT_PGV7_Pos)) /* Assigment of value for PGV7 in the TCC_PATT register */
+#define TCC_PATT_Msk                          _UINT16_(0xFFFF)                                     /* (TCC_PATT) Register Mask  */
+
+#define TCC_PATT_PGE_Pos                      _UINT16_(0)                                          /* (TCC_PATT Position) Pattern Generator x Output Enable */
+#define TCC_PATT_PGE_Msk                      (_UINT16_(0xFF) << TCC_PATT_PGE_Pos)                 /* (TCC_PATT Mask) PGE */
+#define TCC_PATT_PGE(value)                   (TCC_PATT_PGE_Msk & (_UINT16_(value) << TCC_PATT_PGE_Pos)) 
+#define TCC_PATT_PGV_Pos                      _UINT16_(8)                                          /* (TCC_PATT Position) Pattern Generator 7 Output Value */
+#define TCC_PATT_PGV_Msk                      (_UINT16_(0xFF) << TCC_PATT_PGV_Pos)                 /* (TCC_PATT Mask) PGV */
+#define TCC_PATT_PGV(value)                   (TCC_PATT_PGV_Msk & (_UINT16_(value) << TCC_PATT_PGV_Pos)) 
 
 /* -------- TCC_WAVE : (TCC Offset: 0x3C) (R/W 32) Waveform Control -------- */
 #define TCC_WAVE_RESETVALUE                   _UINT32_(0x00)                                       /*  (TCC_WAVE) Waveform Control  Reset Value */
@@ -1303,37 +1129,229 @@
 #define TCC_WAVE_SWAP_Msk                     (_UINT32_(0xF) << TCC_WAVE_SWAP_Pos)                 /* (TCC_WAVE Mask) SWAP */
 #define TCC_WAVE_SWAP(value)                  (TCC_WAVE_SWAP_Msk & (_UINT32_(value) << TCC_WAVE_SWAP_Pos)) 
 
-/* -------- TCC_WEXCTRL : (TCC Offset: 0x14) (R/W 32) Waveform Extension Configuration -------- */
-#define TCC_WEXCTRL_RESETVALUE                _UINT32_(0x00)                                       /*  (TCC_WEXCTRL) Waveform Extension Configuration  Reset Value */
+/* -------- TCC_PER : (TCC Offset: 0x40) (R/W 32) Period -------- */
+#define TCC_PER_RESETVALUE                    _UINT32_(0xFFFFFFFF)                                 /*  (TCC_PER) Period  Reset Value */
 
-#define TCC_WEXCTRL_OTMX_Pos                  _UINT32_(0)                                          /* (TCC_WEXCTRL) Output Matrix Position */
-#define TCC_WEXCTRL_OTMX_Msk                  (_UINT32_(0x3) << TCC_WEXCTRL_OTMX_Pos)              /* (TCC_WEXCTRL) Output Matrix Mask */
-#define TCC_WEXCTRL_OTMX(value)               (TCC_WEXCTRL_OTMX_Msk & (_UINT32_(value) << TCC_WEXCTRL_OTMX_Pos)) /* Assigment of value for OTMX in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_DTIEN0_Pos                _UINT32_(8)                                          /* (TCC_WEXCTRL) Dead-time Insertion Generator 0 Enable Position */
-#define TCC_WEXCTRL_DTIEN0_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN0_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 0 Enable Mask */
-#define TCC_WEXCTRL_DTIEN0(value)             (TCC_WEXCTRL_DTIEN0_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN0_Pos)) /* Assigment of value for DTIEN0 in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_DTIEN1_Pos                _UINT32_(9)                                          /* (TCC_WEXCTRL) Dead-time Insertion Generator 1 Enable Position */
-#define TCC_WEXCTRL_DTIEN1_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN1_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 1 Enable Mask */
-#define TCC_WEXCTRL_DTIEN1(value)             (TCC_WEXCTRL_DTIEN1_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN1_Pos)) /* Assigment of value for DTIEN1 in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_DTIEN2_Pos                _UINT32_(10)                                         /* (TCC_WEXCTRL) Dead-time Insertion Generator 2 Enable Position */
-#define TCC_WEXCTRL_DTIEN2_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN2_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 2 Enable Mask */
-#define TCC_WEXCTRL_DTIEN2(value)             (TCC_WEXCTRL_DTIEN2_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN2_Pos)) /* Assigment of value for DTIEN2 in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_DTIEN3_Pos                _UINT32_(11)                                         /* (TCC_WEXCTRL) Dead-time Insertion Generator 3 Enable Position */
-#define TCC_WEXCTRL_DTIEN3_Msk                (_UINT32_(0x1) << TCC_WEXCTRL_DTIEN3_Pos)            /* (TCC_WEXCTRL) Dead-time Insertion Generator 3 Enable Mask */
-#define TCC_WEXCTRL_DTIEN3(value)             (TCC_WEXCTRL_DTIEN3_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN3_Pos)) /* Assigment of value for DTIEN3 in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_DTLS_Pos                  _UINT32_(16)                                         /* (TCC_WEXCTRL) Dead-time Low Side Outputs Value Position */
-#define TCC_WEXCTRL_DTLS_Msk                  (_UINT32_(0xFF) << TCC_WEXCTRL_DTLS_Pos)             /* (TCC_WEXCTRL) Dead-time Low Side Outputs Value Mask */
-#define TCC_WEXCTRL_DTLS(value)               (TCC_WEXCTRL_DTLS_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTLS_Pos)) /* Assigment of value for DTLS in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_DTHS_Pos                  _UINT32_(24)                                         /* (TCC_WEXCTRL) Dead-time High Side Outputs Value Position */
-#define TCC_WEXCTRL_DTHS_Msk                  (_UINT32_(0xFF) << TCC_WEXCTRL_DTHS_Pos)             /* (TCC_WEXCTRL) Dead-time High Side Outputs Value Mask */
-#define TCC_WEXCTRL_DTHS(value)               (TCC_WEXCTRL_DTHS_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTHS_Pos)) /* Assigment of value for DTHS in the TCC_WEXCTRL register */
-#define TCC_WEXCTRL_Msk                       _UINT32_(0xFFFF0F03)                                 /* (TCC_WEXCTRL) Register Mask  */
+#define TCC_PER_PER_Pos                       _UINT32_(0)                                          /* (TCC_PER) Period Value Position */
+#define TCC_PER_PER_Msk                       (_UINT32_(0xFFFFFF) << TCC_PER_PER_Pos)              /* (TCC_PER) Period Value Mask */
+#define TCC_PER_PER(value)                    (TCC_PER_PER_Msk & (_UINT32_(value) << TCC_PER_PER_Pos)) /* Assigment of value for PER in the TCC_PER register */
+#define TCC_PER_Msk                           _UINT32_(0x00FFFFFF)                                 /* (TCC_PER) Register Mask  */
 
-#define TCC_WEXCTRL_DTIEN_Pos                 _UINT32_(8)                                          /* (TCC_WEXCTRL Position) Dead-time Insertion Generator x Enable */
-#define TCC_WEXCTRL_DTIEN_Msk                 (_UINT32_(0xF) << TCC_WEXCTRL_DTIEN_Pos)             /* (TCC_WEXCTRL Mask) DTIEN */
-#define TCC_WEXCTRL_DTIEN(value)              (TCC_WEXCTRL_DTIEN_Msk & (_UINT32_(value) << TCC_WEXCTRL_DTIEN_Pos)) 
+/* DITH4 mode */
+#define TCC_PER_DITH4_DITHER_Pos              _UINT32_(0)                                          /* (TCC_PER) Dithering Cycle Number Position */
+#define TCC_PER_DITH4_DITHER_Msk              (_UINT32_(0xF) << TCC_PER_DITH4_DITHER_Pos)          /* (TCC_PER) Dithering Cycle Number Mask */
+#define TCC_PER_DITH4_DITHER(value)           (TCC_PER_DITH4_DITHER_Msk & (_UINT32_(value) << TCC_PER_DITH4_DITHER_Pos))
+#define TCC_PER_DITH4_PER_Pos                 _UINT32_(4)                                          /* (TCC_PER) Period Value Position */
+#define TCC_PER_DITH4_PER_Msk                 (_UINT32_(0xFFFFF) << TCC_PER_DITH4_PER_Pos)         /* (TCC_PER) Period Value Mask */
+#define TCC_PER_DITH4_PER(value)              (TCC_PER_DITH4_PER_Msk & (_UINT32_(value) << TCC_PER_DITH4_PER_Pos))
+#define TCC_PER_DITH4_Msk                     _UINT32_(0x00FFFFFF)                                  /* (TCC_PER_DITH4) Register Mask  */
+
+/* DITH5 mode */
+#define TCC_PER_DITH5_DITHER_Pos              _UINT32_(0)                                          /* (TCC_PER) Dithering Cycle Number Position */
+#define TCC_PER_DITH5_DITHER_Msk              (_UINT32_(0x1F) << TCC_PER_DITH5_DITHER_Pos)         /* (TCC_PER) Dithering Cycle Number Mask */
+#define TCC_PER_DITH5_DITHER(value)           (TCC_PER_DITH5_DITHER_Msk & (_UINT32_(value) << TCC_PER_DITH5_DITHER_Pos))
+#define TCC_PER_DITH5_PER_Pos                 _UINT32_(5)                                          /* (TCC_PER) Period Value Position */
+#define TCC_PER_DITH5_PER_Msk                 (_UINT32_(0x7FFFF) << TCC_PER_DITH5_PER_Pos)         /* (TCC_PER) Period Value Mask */
+#define TCC_PER_DITH5_PER(value)              (TCC_PER_DITH5_PER_Msk & (_UINT32_(value) << TCC_PER_DITH5_PER_Pos))
+#define TCC_PER_DITH5_Msk                     _UINT32_(0x00FFFFFF)                                  /* (TCC_PER_DITH5) Register Mask  */
+
+/* DITH6 mode */
+#define TCC_PER_DITH6_DITHER_Pos              _UINT32_(0)                                          /* (TCC_PER) Dithering Cycle Number Position */
+#define TCC_PER_DITH6_DITHER_Msk              (_UINT32_(0x3F) << TCC_PER_DITH6_DITHER_Pos)         /* (TCC_PER) Dithering Cycle Number Mask */
+#define TCC_PER_DITH6_DITHER(value)           (TCC_PER_DITH6_DITHER_Msk & (_UINT32_(value) << TCC_PER_DITH6_DITHER_Pos))
+#define TCC_PER_DITH6_PER_Pos                 _UINT32_(6)                                          /* (TCC_PER) Period Value Position */
+#define TCC_PER_DITH6_PER_Msk                 (_UINT32_(0x3FFFF) << TCC_PER_DITH6_PER_Pos)         /* (TCC_PER) Period Value Mask */
+#define TCC_PER_DITH6_PER(value)              (TCC_PER_DITH6_PER_Msk & (_UINT32_(value) << TCC_PER_DITH6_PER_Pos))
+#define TCC_PER_DITH6_Msk                     _UINT32_(0x00FFFFFF)                                  /* (TCC_PER_DITH6) Register Mask  */
+
+
+/* -------- TCC_CC : (TCC Offset: 0x44) (R/W 32) Compare and Capture -------- */
+#define TCC_CC_RESETVALUE                     _UINT32_(0x00)                                       /*  (TCC_CC) Compare and Capture  Reset Value */
+
+#define TCC_CC_CC_Pos                         _UINT32_(0)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
+#define TCC_CC_CC_Msk                         (_UINT32_(0xFFFFFF) << TCC_CC_CC_Pos)                /* (TCC_CC) Channel Compare/Capture Value Mask */
+#define TCC_CC_CC(value)                      (TCC_CC_CC_Msk & (_UINT32_(value) << TCC_CC_CC_Pos)) /* Assigment of value for CC in the TCC_CC register */
+#define TCC_CC_Msk                            _UINT32_(0x00FFFFFF)                                 /* (TCC_CC) Register Mask  */
+
+/* DITH4 mode */
+#define TCC_CC_DITH4_DITHER_Pos               _UINT32_(0)                                          /* (TCC_CC) Dithering Cycle Number Position */
+#define TCC_CC_DITH4_DITHER_Msk               (_UINT32_(0xF) << TCC_CC_DITH4_DITHER_Pos)           /* (TCC_CC) Dithering Cycle Number Mask */
+#define TCC_CC_DITH4_DITHER(value)            (TCC_CC_DITH4_DITHER_Msk & (_UINT32_(value) << TCC_CC_DITH4_DITHER_Pos))
+#define TCC_CC_DITH4_CC_Pos                   _UINT32_(4)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
+#define TCC_CC_DITH4_CC_Msk                   (_UINT32_(0xFFFFF) << TCC_CC_DITH4_CC_Pos)           /* (TCC_CC) Channel Compare/Capture Value Mask */
+#define TCC_CC_DITH4_CC(value)                (TCC_CC_DITH4_CC_Msk & (_UINT32_(value) << TCC_CC_DITH4_CC_Pos))
+#define TCC_CC_DITH4_Msk                      _UINT32_(0x00FFFFFF)                                  /* (TCC_CC_DITH4) Register Mask  */
+
+/* DITH5 mode */
+#define TCC_CC_DITH5_DITHER_Pos               _UINT32_(0)                                          /* (TCC_CC) Dithering Cycle Number Position */
+#define TCC_CC_DITH5_DITHER_Msk               (_UINT32_(0x1F) << TCC_CC_DITH5_DITHER_Pos)          /* (TCC_CC) Dithering Cycle Number Mask */
+#define TCC_CC_DITH5_DITHER(value)            (TCC_CC_DITH5_DITHER_Msk & (_UINT32_(value) << TCC_CC_DITH5_DITHER_Pos))
+#define TCC_CC_DITH5_CC_Pos                   _UINT32_(5)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
+#define TCC_CC_DITH5_CC_Msk                   (_UINT32_(0x7FFFF) << TCC_CC_DITH5_CC_Pos)           /* (TCC_CC) Channel Compare/Capture Value Mask */
+#define TCC_CC_DITH5_CC(value)                (TCC_CC_DITH5_CC_Msk & (_UINT32_(value) << TCC_CC_DITH5_CC_Pos))
+#define TCC_CC_DITH5_Msk                      _UINT32_(0x00FFFFFF)                                  /* (TCC_CC_DITH5) Register Mask  */
+
+/* DITH6 mode */
+#define TCC_CC_DITH6_DITHER_Pos               _UINT32_(0)                                          /* (TCC_CC) Dithering Cycle Number Position */
+#define TCC_CC_DITH6_DITHER_Msk               (_UINT32_(0x3F) << TCC_CC_DITH6_DITHER_Pos)          /* (TCC_CC) Dithering Cycle Number Mask */
+#define TCC_CC_DITH6_DITHER(value)            (TCC_CC_DITH6_DITHER_Msk & (_UINT32_(value) << TCC_CC_DITH6_DITHER_Pos))
+#define TCC_CC_DITH6_CC_Pos                   _UINT32_(6)                                          /* (TCC_CC) Channel Compare/Capture Value Position */
+#define TCC_CC_DITH6_CC_Msk                   (_UINT32_(0x3FFFF) << TCC_CC_DITH6_CC_Pos)           /* (TCC_CC) Channel Compare/Capture Value Mask */
+#define TCC_CC_DITH6_CC(value)                (TCC_CC_DITH6_CC_Msk & (_UINT32_(value) << TCC_CC_DITH6_CC_Pos))
+#define TCC_CC_DITH6_Msk                      _UINT32_(0x00FFFFFF)                                  /* (TCC_CC_DITH6) Register Mask  */
+
+
+/* -------- TCC_PATTBUF : (TCC Offset: 0x64) (R/W 16) Pattern Buffer -------- */
+#define TCC_PATTBUF_RESETVALUE                _UINT16_(0x00)                                       /*  (TCC_PATTBUF) Pattern Buffer  Reset Value */
+
+#define TCC_PATTBUF_PGEB0_Pos                 _UINT16_(0)                                          /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB0_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB0_Pos)             /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB0(value)              (TCC_PATTBUF_PGEB0_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB0_Pos)) /* Assigment of value for PGEB0 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB1_Pos                 _UINT16_(1)                                          /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB1_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB1_Pos)             /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB1(value)              (TCC_PATTBUF_PGEB1_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB1_Pos)) /* Assigment of value for PGEB1 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB2_Pos                 _UINT16_(2)                                          /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB2_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB2_Pos)             /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB2(value)              (TCC_PATTBUF_PGEB2_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB2_Pos)) /* Assigment of value for PGEB2 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB3_Pos                 _UINT16_(3)                                          /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB3_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB3_Pos)             /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB3(value)              (TCC_PATTBUF_PGEB3_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB3_Pos)) /* Assigment of value for PGEB3 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB4_Pos                 _UINT16_(4)                                          /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB4_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB4_Pos)             /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB4(value)              (TCC_PATTBUF_PGEB4_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB4_Pos)) /* Assigment of value for PGEB4 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB5_Pos                 _UINT16_(5)                                          /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB5_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB5_Pos)             /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB5(value)              (TCC_PATTBUF_PGEB5_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB5_Pos)) /* Assigment of value for PGEB5 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB6_Pos                 _UINT16_(6)                                          /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB6_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB6_Pos)             /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB6(value)              (TCC_PATTBUF_PGEB6_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB6_Pos)) /* Assigment of value for PGEB6 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGEB7_Pos                 _UINT16_(7)                                          /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Buffer Position */
+#define TCC_PATTBUF_PGEB7_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGEB7_Pos)             /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Buffer Mask */
+#define TCC_PATTBUF_PGEB7(value)              (TCC_PATTBUF_PGEB7_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB7_Pos)) /* Assigment of value for PGEB7 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB0_Pos                 _UINT16_(8)                                          /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Position */
+#define TCC_PATTBUF_PGVB0_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB0_Pos)             /* (TCC_PATTBUF) Pattern Generator 0 Output Enable Mask */
+#define TCC_PATTBUF_PGVB0(value)              (TCC_PATTBUF_PGVB0_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB0_Pos)) /* Assigment of value for PGVB0 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB1_Pos                 _UINT16_(9)                                          /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Position */
+#define TCC_PATTBUF_PGVB1_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB1_Pos)             /* (TCC_PATTBUF) Pattern Generator 1 Output Enable Mask */
+#define TCC_PATTBUF_PGVB1(value)              (TCC_PATTBUF_PGVB1_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB1_Pos)) /* Assigment of value for PGVB1 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB2_Pos                 _UINT16_(10)                                         /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Position */
+#define TCC_PATTBUF_PGVB2_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB2_Pos)             /* (TCC_PATTBUF) Pattern Generator 2 Output Enable Mask */
+#define TCC_PATTBUF_PGVB2(value)              (TCC_PATTBUF_PGVB2_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB2_Pos)) /* Assigment of value for PGVB2 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB3_Pos                 _UINT16_(11)                                         /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Position */
+#define TCC_PATTBUF_PGVB3_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB3_Pos)             /* (TCC_PATTBUF) Pattern Generator 3 Output Enable Mask */
+#define TCC_PATTBUF_PGVB3(value)              (TCC_PATTBUF_PGVB3_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB3_Pos)) /* Assigment of value for PGVB3 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB4_Pos                 _UINT16_(12)                                         /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Position */
+#define TCC_PATTBUF_PGVB4_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB4_Pos)             /* (TCC_PATTBUF) Pattern Generator 4 Output Enable Mask */
+#define TCC_PATTBUF_PGVB4(value)              (TCC_PATTBUF_PGVB4_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB4_Pos)) /* Assigment of value for PGVB4 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB5_Pos                 _UINT16_(13)                                         /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Position */
+#define TCC_PATTBUF_PGVB5_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB5_Pos)             /* (TCC_PATTBUF) Pattern Generator 5 Output Enable Mask */
+#define TCC_PATTBUF_PGVB5(value)              (TCC_PATTBUF_PGVB5_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB5_Pos)) /* Assigment of value for PGVB5 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB6_Pos                 _UINT16_(14)                                         /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Position */
+#define TCC_PATTBUF_PGVB6_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB6_Pos)             /* (TCC_PATTBUF) Pattern Generator 6 Output Enable Mask */
+#define TCC_PATTBUF_PGVB6(value)              (TCC_PATTBUF_PGVB6_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB6_Pos)) /* Assigment of value for PGVB6 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_PGVB7_Pos                 _UINT16_(15)                                         /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Position */
+#define TCC_PATTBUF_PGVB7_Msk                 (_UINT16_(0x1) << TCC_PATTBUF_PGVB7_Pos)             /* (TCC_PATTBUF) Pattern Generator 7 Output Enable Mask */
+#define TCC_PATTBUF_PGVB7(value)              (TCC_PATTBUF_PGVB7_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB7_Pos)) /* Assigment of value for PGVB7 in the TCC_PATTBUF register */
+#define TCC_PATTBUF_Msk                       _UINT16_(0xFFFF)                                     /* (TCC_PATTBUF) Register Mask  */
+
+#define TCC_PATTBUF_PGEB_Pos                  _UINT16_(0)                                          /* (TCC_PATTBUF Position) Pattern Generator x Output Enable Buffer */
+#define TCC_PATTBUF_PGEB_Msk                  (_UINT16_(0xFF) << TCC_PATTBUF_PGEB_Pos)             /* (TCC_PATTBUF Mask) PGEB */
+#define TCC_PATTBUF_PGEB(value)               (TCC_PATTBUF_PGEB_Msk & (_UINT16_(value) << TCC_PATTBUF_PGEB_Pos)) 
+#define TCC_PATTBUF_PGVB_Pos                  _UINT16_(8)                                          /* (TCC_PATTBUF Position) Pattern Generator 7 Output Enable */
+#define TCC_PATTBUF_PGVB_Msk                  (_UINT16_(0xFF) << TCC_PATTBUF_PGVB_Pos)             /* (TCC_PATTBUF Mask) PGVB */
+#define TCC_PATTBUF_PGVB(value)               (TCC_PATTBUF_PGVB_Msk & (_UINT16_(value) << TCC_PATTBUF_PGVB_Pos)) 
+
+/* -------- TCC_PERBUF : (TCC Offset: 0x6C) (R/W 32) Period Buffer -------- */
+#define TCC_PERBUF_RESETVALUE                 _UINT32_(0xFFFFFFFF)                                 /*  (TCC_PERBUF) Period Buffer  Reset Value */
+
+#define TCC_PERBUF_PERBUF_Pos                 _UINT32_(0)                                          /* (TCC_PERBUF) Period Buffer Value Position */
+#define TCC_PERBUF_PERBUF_Msk                 (_UINT32_(0xFFFFFF) << TCC_PERBUF_PERBUF_Pos)        /* (TCC_PERBUF) Period Buffer Value Mask */
+#define TCC_PERBUF_PERBUF(value)              (TCC_PERBUF_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_PERBUF_Pos)) /* Assigment of value for PERBUF in the TCC_PERBUF register */
+#define TCC_PERBUF_Msk                        _UINT32_(0x00FFFFFF)                                 /* (TCC_PERBUF) Register Mask  */
+
+/* DITH4 mode */
+#define TCC_PERBUF_DITH4_DITHERBUF_Pos        _UINT32_(0)                                          /* (TCC_PERBUF) Dithering Buffer Cycle Number Position */
+#define TCC_PERBUF_DITH4_DITHERBUF_Msk        (_UINT32_(0xF) << TCC_PERBUF_DITH4_DITHERBUF_Pos)    /* (TCC_PERBUF) Dithering Buffer Cycle Number Mask */
+#define TCC_PERBUF_DITH4_DITHERBUF(value)     (TCC_PERBUF_DITH4_DITHERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH4_DITHERBUF_Pos))
+#define TCC_PERBUF_DITH4_PERBUF_Pos           _UINT32_(4)                                          /* (TCC_PERBUF) Period Buffer Value Position */
+#define TCC_PERBUF_DITH4_PERBUF_Msk           (_UINT32_(0xFFFFF) << TCC_PERBUF_DITH4_PERBUF_Pos)   /* (TCC_PERBUF) Period Buffer Value Mask */
+#define TCC_PERBUF_DITH4_PERBUF(value)        (TCC_PERBUF_DITH4_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH4_PERBUF_Pos))
+#define TCC_PERBUF_DITH4_Msk                  _UINT32_(0x00FFFFFF)                                  /* (TCC_PERBUF_DITH4) Register Mask  */
+
+/* DITH5 mode */
+#define TCC_PERBUF_DITH5_DITHERBUF_Pos        _UINT32_(0)                                          /* (TCC_PERBUF) Dithering Buffer Cycle Number Position */
+#define TCC_PERBUF_DITH5_DITHERBUF_Msk        (_UINT32_(0x1F) << TCC_PERBUF_DITH5_DITHERBUF_Pos)   /* (TCC_PERBUF) Dithering Buffer Cycle Number Mask */
+#define TCC_PERBUF_DITH5_DITHERBUF(value)     (TCC_PERBUF_DITH5_DITHERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH5_DITHERBUF_Pos))
+#define TCC_PERBUF_DITH5_PERBUF_Pos           _UINT32_(5)                                          /* (TCC_PERBUF) Period Buffer Value Position */
+#define TCC_PERBUF_DITH5_PERBUF_Msk           (_UINT32_(0x7FFFF) << TCC_PERBUF_DITH5_PERBUF_Pos)   /* (TCC_PERBUF) Period Buffer Value Mask */
+#define TCC_PERBUF_DITH5_PERBUF(value)        (TCC_PERBUF_DITH5_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH5_PERBUF_Pos))
+#define TCC_PERBUF_DITH5_Msk                  _UINT32_(0x00FFFFFF)                                  /* (TCC_PERBUF_DITH5) Register Mask  */
+
+/* DITH6 mode */
+#define TCC_PERBUF_DITH6_DITHERBUF_Pos        _UINT32_(0)                                          /* (TCC_PERBUF) Dithering Buffer Cycle Number Position */
+#define TCC_PERBUF_DITH6_DITHERBUF_Msk        (_UINT32_(0x3F) << TCC_PERBUF_DITH6_DITHERBUF_Pos)   /* (TCC_PERBUF) Dithering Buffer Cycle Number Mask */
+#define TCC_PERBUF_DITH6_DITHERBUF(value)     (TCC_PERBUF_DITH6_DITHERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH6_DITHERBUF_Pos))
+#define TCC_PERBUF_DITH6_PERBUF_Pos           _UINT32_(6)                                          /* (TCC_PERBUF) Period Buffer Value Position */
+#define TCC_PERBUF_DITH6_PERBUF_Msk           (_UINT32_(0x3FFFF) << TCC_PERBUF_DITH6_PERBUF_Pos)   /* (TCC_PERBUF) Period Buffer Value Mask */
+#define TCC_PERBUF_DITH6_PERBUF(value)        (TCC_PERBUF_DITH6_PERBUF_Msk & (_UINT32_(value) << TCC_PERBUF_DITH6_PERBUF_Pos))
+#define TCC_PERBUF_DITH6_Msk                  _UINT32_(0x00FFFFFF)                                  /* (TCC_PERBUF_DITH6) Register Mask  */
+
+
+/* -------- TCC_CCBUF : (TCC Offset: 0x70) (R/W 32) Compare and Capture Buffer -------- */
+#define TCC_CCBUF_RESETVALUE                  _UINT32_(0x00)                                       /*  (TCC_CCBUF) Compare and Capture Buffer  Reset Value */
+
+#define TCC_CCBUF_CCBUF_Pos                   _UINT32_(0)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
+#define TCC_CCBUF_CCBUF_Msk                   (_UINT32_(0xFFFFFF) << TCC_CCBUF_CCBUF_Pos)          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
+#define TCC_CCBUF_CCBUF(value)                (TCC_CCBUF_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TCC_CCBUF register */
+#define TCC_CCBUF_Msk                         _UINT32_(0x00FFFFFF)                                 /* (TCC_CCBUF) Register Mask  */
+
+/* DITH4 mode */
+#define TCC_CCBUF_DITH4_CCBUF_Pos             _UINT32_(0)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
+#define TCC_CCBUF_DITH4_CCBUF_Msk             (_UINT32_(0xF) << TCC_CCBUF_DITH4_CCBUF_Pos)         /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
+#define TCC_CCBUF_DITH4_CCBUF(value)          (TCC_CCBUF_DITH4_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH4_CCBUF_Pos))
+#define TCC_CCBUF_DITH4_DITHERBUF_Pos         _UINT32_(4)                                          /* (TCC_CCBUF) Dithering Buffer Cycle Number Position */
+#define TCC_CCBUF_DITH4_DITHERBUF_Msk         (_UINT32_(0xFFFFF) << TCC_CCBUF_DITH4_DITHERBUF_Pos) /* (TCC_CCBUF) Dithering Buffer Cycle Number Mask */
+#define TCC_CCBUF_DITH4_DITHERBUF(value)      (TCC_CCBUF_DITH4_DITHERBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH4_DITHERBUF_Pos))
+#define TCC_CCBUF_DITH4_Msk                   _UINT32_(0x00FFFFFF)                                  /* (TCC_CCBUF_DITH4) Register Mask  */
+
+/* DITH5 mode */
+#define TCC_CCBUF_DITH5_DITHERBUF_Pos         _UINT32_(0)                                          /* (TCC_CCBUF) Dithering Buffer Cycle Number Position */
+#define TCC_CCBUF_DITH5_DITHERBUF_Msk         (_UINT32_(0x1F) << TCC_CCBUF_DITH5_DITHERBUF_Pos)    /* (TCC_CCBUF) Dithering Buffer Cycle Number Mask */
+#define TCC_CCBUF_DITH5_DITHERBUF(value)      (TCC_CCBUF_DITH5_DITHERBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH5_DITHERBUF_Pos))
+#define TCC_CCBUF_DITH5_CCBUF_Pos             _UINT32_(5)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
+#define TCC_CCBUF_DITH5_CCBUF_Msk             (_UINT32_(0x7FFFF) << TCC_CCBUF_DITH5_CCBUF_Pos)     /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
+#define TCC_CCBUF_DITH5_CCBUF(value)          (TCC_CCBUF_DITH5_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH5_CCBUF_Pos))
+#define TCC_CCBUF_DITH5_Msk                   _UINT32_(0x00FFFFFF)                                  /* (TCC_CCBUF_DITH5) Register Mask  */
+
+/* DITH6 mode */
+#define TCC_CCBUF_DITH6_DITHERBUF_Pos         _UINT32_(0)                                          /* (TCC_CCBUF) Dithering Buffer Cycle Number Position */
+#define TCC_CCBUF_DITH6_DITHERBUF_Msk         (_UINT32_(0x3F) << TCC_CCBUF_DITH6_DITHERBUF_Pos)    /* (TCC_CCBUF) Dithering Buffer Cycle Number Mask */
+#define TCC_CCBUF_DITH6_DITHERBUF(value)      (TCC_CCBUF_DITH6_DITHERBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH6_DITHERBUF_Pos))
+#define TCC_CCBUF_DITH6_CCBUF_Pos             _UINT32_(6)                                          /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Position */
+#define TCC_CCBUF_DITH6_CCBUF_Msk             (_UINT32_(0x3FFFF) << TCC_CCBUF_DITH6_CCBUF_Pos)     /* (TCC_CCBUF) Channel Compare/Capture Buffer Value Mask */
+#define TCC_CCBUF_DITH6_CCBUF(value)          (TCC_CCBUF_DITH6_CCBUF_Msk & (_UINT32_(value) << TCC_CCBUF_DITH6_CCBUF_Pos))
+#define TCC_CCBUF_DITH6_Msk                   _UINT32_(0x00FFFFFF)                                  /* (TCC_CCBUF_DITH6) Register Mask  */
+
 
 /** \brief TCC register offsets definitions */
+#define TCC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (TCC_CTRLA) Control A Offset */
+#define TCC_CTRLBCLR_REG_OFST          _UINT32_(0x04)      /* (TCC_CTRLBCLR) Control B Clear Offset */
+#define TCC_CTRLBSET_REG_OFST          _UINT32_(0x05)      /* (TCC_CTRLBSET) Control B Set Offset */
+#define TCC_SYNCBUSY_REG_OFST          _UINT32_(0x08)      /* (TCC_SYNCBUSY) Synchronization Busy Offset */
+#define TCC_FCTRLA_REG_OFST            _UINT32_(0x0C)      /* (TCC_FCTRLA) Recoverable Fault A Configuration Offset */
+#define TCC_FCTRLB_REG_OFST            _UINT32_(0x10)      /* (TCC_FCTRLB) Recoverable Fault B Configuration Offset */
+#define TCC_WEXCTRL_REG_OFST           _UINT32_(0x14)      /* (TCC_WEXCTRL) Waveform Extension Configuration Offset */
+#define TCC_DRVCTRL_REG_OFST           _UINT32_(0x18)      /* (TCC_DRVCTRL) Driver Control Offset */
+#define TCC_DBGCTRL_REG_OFST           _UINT32_(0x1E)      /* (TCC_DBGCTRL) Debug Control Offset */
+#define TCC_EVCTRL_REG_OFST            _UINT32_(0x20)      /* (TCC_EVCTRL) Event Control Offset */
+#define TCC_INTENCLR_REG_OFST          _UINT32_(0x24)      /* (TCC_INTENCLR) Interrupt Enable Clear Offset */
+#define TCC_INTENSET_REG_OFST          _UINT32_(0x28)      /* (TCC_INTENSET) Interrupt Enable Set Offset */
+#define TCC_INTFLAG_REG_OFST           _UINT32_(0x2C)      /* (TCC_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define TCC_STATUS_REG_OFST            _UINT32_(0x30)      /* (TCC_STATUS) Status Offset */
+#define TCC_COUNT_REG_OFST             _UINT32_(0x34)      /* (TCC_COUNT) Count Offset */
+#define TCC_PATT_REG_OFST              _UINT32_(0x38)      /* (TCC_PATT) Pattern Offset */
+#define TCC_WAVE_REG_OFST              _UINT32_(0x3C)      /* (TCC_WAVE) Waveform Control Offset */
+#define TCC_PER_REG_OFST               _UINT32_(0x40)      /* (TCC_PER) Period Offset */
 #define TCC_CC_REG_OFST                _UINT32_(0x44)      /* (TCC_CC) Compare and Capture Offset */
 #define TCC_CC0_REG_OFST               _UINT32_(0x44)      /* (TCC_CC0) Compare and Capture Offset */
 #define TCC_CC1_REG_OFST               _UINT32_(0x48)      /* (TCC_CC1) Compare and Capture Offset */
@@ -1341,6 +1359,8 @@
 #define TCC_CC3_REG_OFST               _UINT32_(0x50)      /* (TCC_CC3) Compare and Capture Offset */
 #define TCC_CC4_REG_OFST               _UINT32_(0x54)      /* (TCC_CC4) Compare and Capture Offset */
 #define TCC_CC5_REG_OFST               _UINT32_(0x58)      /* (TCC_CC5) Compare and Capture Offset */
+#define TCC_PATTBUF_REG_OFST           _UINT32_(0x64)      /* (TCC_PATTBUF) Pattern Buffer Offset */
+#define TCC_PERBUF_REG_OFST            _UINT32_(0x6C)      /* (TCC_PERBUF) Period Buffer Offset */
 #define TCC_CCBUF_REG_OFST             _UINT32_(0x70)      /* (TCC_CCBUF) Compare and Capture Buffer Offset */
 #define TCC_CCBUF0_REG_OFST            _UINT32_(0x70)      /* (TCC_CCBUF0) Compare and Capture Buffer Offset */
 #define TCC_CCBUF1_REG_OFST            _UINT32_(0x74)      /* (TCC_CCBUF1) Compare and Capture Buffer Offset */
@@ -1348,26 +1368,6 @@
 #define TCC_CCBUF3_REG_OFST            _UINT32_(0x7C)      /* (TCC_CCBUF3) Compare and Capture Buffer Offset */
 #define TCC_CCBUF4_REG_OFST            _UINT32_(0x80)      /* (TCC_CCBUF4) Compare and Capture Buffer Offset */
 #define TCC_CCBUF5_REG_OFST            _UINT32_(0x84)      /* (TCC_CCBUF5) Compare and Capture Buffer Offset */
-#define TCC_COUNT_REG_OFST             _UINT32_(0x34)      /* (TCC_COUNT) Count Offset */
-#define TCC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (TCC_CTRLA) Control A Offset */
-#define TCC_CTRLBCLR_REG_OFST          _UINT32_(0x04)      /* (TCC_CTRLBCLR) Control B Clear Offset */
-#define TCC_CTRLBSET_REG_OFST          _UINT32_(0x05)      /* (TCC_CTRLBSET) Control B Set Offset */
-#define TCC_DBGCTRL_REG_OFST           _UINT32_(0x1E)      /* (TCC_DBGCTRL) Debug Control Offset */
-#define TCC_DRVCTRL_REG_OFST           _UINT32_(0x18)      /* (TCC_DRVCTRL) Driver Control Offset */
-#define TCC_EVCTRL_REG_OFST            _UINT32_(0x20)      /* (TCC_EVCTRL) Event Control Offset */
-#define TCC_FCTRLA_REG_OFST            _UINT32_(0x0C)      /* (TCC_FCTRLA) Recoverable Fault A Configuration Offset */
-#define TCC_FCTRLB_REG_OFST            _UINT32_(0x10)      /* (TCC_FCTRLB) Recoverable Fault B Configuration Offset */
-#define TCC_INTENCLR_REG_OFST          _UINT32_(0x24)      /* (TCC_INTENCLR) Interrupt Enable Clear Offset */
-#define TCC_INTENSET_REG_OFST          _UINT32_(0x28)      /* (TCC_INTENSET) Interrupt Enable Set Offset */
-#define TCC_INTFLAG_REG_OFST           _UINT32_(0x2C)      /* (TCC_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define TCC_PATT_REG_OFST              _UINT32_(0x38)      /* (TCC_PATT) Pattern Offset */
-#define TCC_PATTBUF_REG_OFST           _UINT32_(0x64)      /* (TCC_PATTBUF) Pattern Buffer Offset */
-#define TCC_PER_REG_OFST               _UINT32_(0x40)      /* (TCC_PER) Period Offset */
-#define TCC_PERBUF_REG_OFST            _UINT32_(0x6C)      /* (TCC_PERBUF) Period Buffer Offset */
-#define TCC_STATUS_REG_OFST            _UINT32_(0x30)      /* (TCC_STATUS) Status Offset */
-#define TCC_SYNCBUSY_REG_OFST          _UINT32_(0x08)      /* (TCC_SYNCBUSY) Synchronization Busy Offset */
-#define TCC_WAVE_REG_OFST              _UINT32_(0x3C)      /* (TCC_WAVE) Waveform Control Offset */
-#define TCC_WEXCTRL_REG_OFST           _UINT32_(0x14)      /* (TCC_WEXCTRL) Waveform Extension Configuration Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief TCC register API structure */

@@ -1,7 +1,7 @@
 /*
  * Component description for ADC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,62 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_ADC_COMPONENT_H_
 #define _PIC32CXSG41_ADC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR ADC                                          */
 /* ************************************************************************** */
-
-/* -------- ADC_AVGCTRL : (ADC Offset: 0x0A) (R/W 8) Average Control -------- */
-#define ADC_AVGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (ADC_AVGCTRL) Average Control  Reset Value */
-
-#define ADC_AVGCTRL_SAMPLENUM_Pos             _UINT8_(0)                                           /* (ADC_AVGCTRL) Number of Samples to be Collected Position */
-#define ADC_AVGCTRL_SAMPLENUM_Msk             (_UINT8_(0xF) << ADC_AVGCTRL_SAMPLENUM_Pos)          /* (ADC_AVGCTRL) Number of Samples to be Collected Mask */
-#define ADC_AVGCTRL_SAMPLENUM(value)          (ADC_AVGCTRL_SAMPLENUM_Msk & (_UINT8_(value) << ADC_AVGCTRL_SAMPLENUM_Pos)) /* Assigment of value for SAMPLENUM in the ADC_AVGCTRL register */
-#define   ADC_AVGCTRL_SAMPLENUM_1_Val         _UINT8_(0x0)                                         /* (ADC_AVGCTRL) 1 sample  */
-#define   ADC_AVGCTRL_SAMPLENUM_2_Val         _UINT8_(0x1)                                         /* (ADC_AVGCTRL) 2 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_4_Val         _UINT8_(0x2)                                         /* (ADC_AVGCTRL) 4 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_8_Val         _UINT8_(0x3)                                         /* (ADC_AVGCTRL) 8 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_16_Val        _UINT8_(0x4)                                         /* (ADC_AVGCTRL) 16 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_32_Val        _UINT8_(0x5)                                         /* (ADC_AVGCTRL) 32 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_64_Val        _UINT8_(0x6)                                         /* (ADC_AVGCTRL) 64 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_128_Val       _UINT8_(0x7)                                         /* (ADC_AVGCTRL) 128 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_256_Val       _UINT8_(0x8)                                         /* (ADC_AVGCTRL) 256 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_512_Val       _UINT8_(0x9)                                         /* (ADC_AVGCTRL) 512 samples  */
-#define   ADC_AVGCTRL_SAMPLENUM_1024_Val      _UINT8_(0xA)                                         /* (ADC_AVGCTRL) 1024 samples  */
-#define ADC_AVGCTRL_SAMPLENUM_1               (ADC_AVGCTRL_SAMPLENUM_1_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 1 sample Position  */
-#define ADC_AVGCTRL_SAMPLENUM_2               (ADC_AVGCTRL_SAMPLENUM_2_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 2 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_4               (ADC_AVGCTRL_SAMPLENUM_4_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 4 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_8               (ADC_AVGCTRL_SAMPLENUM_8_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 8 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_16              (ADC_AVGCTRL_SAMPLENUM_16_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 16 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_32              (ADC_AVGCTRL_SAMPLENUM_32_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 32 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_64              (ADC_AVGCTRL_SAMPLENUM_64_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 64 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_128             (ADC_AVGCTRL_SAMPLENUM_128_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 128 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_256             (ADC_AVGCTRL_SAMPLENUM_256_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 256 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_512             (ADC_AVGCTRL_SAMPLENUM_512_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 512 samples Position  */
-#define ADC_AVGCTRL_SAMPLENUM_1024            (ADC_AVGCTRL_SAMPLENUM_1024_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 1024 samples Position  */
-#define ADC_AVGCTRL_ADJRES_Pos                _UINT8_(4)                                           /* (ADC_AVGCTRL) Adjusting Result / Division Coefficient Position */
-#define ADC_AVGCTRL_ADJRES_Msk                (_UINT8_(0x7) << ADC_AVGCTRL_ADJRES_Pos)             /* (ADC_AVGCTRL) Adjusting Result / Division Coefficient Mask */
-#define ADC_AVGCTRL_ADJRES(value)             (ADC_AVGCTRL_ADJRES_Msk & (_UINT8_(value) << ADC_AVGCTRL_ADJRES_Pos)) /* Assigment of value for ADJRES in the ADC_AVGCTRL register */
-#define ADC_AVGCTRL_Msk                       _UINT8_(0x7F)                                        /* (ADC_AVGCTRL) Register Mask  */
-
-
-/* -------- ADC_CALIB : (ADC Offset: 0x48) (R/W 16) Calibration -------- */
-#define ADC_CALIB_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_CALIB) Calibration  Reset Value */
-
-#define ADC_CALIB_BIASCOMP_Pos                _UINT16_(0)                                          /* (ADC_CALIB) Bias Comparator Scaling Position */
-#define ADC_CALIB_BIASCOMP_Msk                (_UINT16_(0x7) << ADC_CALIB_BIASCOMP_Pos)            /* (ADC_CALIB) Bias Comparator Scaling Mask */
-#define ADC_CALIB_BIASCOMP(value)             (ADC_CALIB_BIASCOMP_Msk & (_UINT16_(value) << ADC_CALIB_BIASCOMP_Pos)) /* Assigment of value for BIASCOMP in the ADC_CALIB register */
-#define ADC_CALIB_BIASR2R_Pos                 _UINT16_(4)                                          /* (ADC_CALIB) Bias R2R Ampli scaling Position */
-#define ADC_CALIB_BIASR2R_Msk                 (_UINT16_(0x7) << ADC_CALIB_BIASR2R_Pos)             /* (ADC_CALIB) Bias R2R Ampli scaling Mask */
-#define ADC_CALIB_BIASR2R(value)              (ADC_CALIB_BIASR2R_Msk & (_UINT16_(value) << ADC_CALIB_BIASR2R_Pos)) /* Assigment of value for BIASR2R in the ADC_CALIB register */
-#define ADC_CALIB_BIASREFBUF_Pos              _UINT16_(8)                                          /* (ADC_CALIB) Bias  Reference Buffer Scaling Position */
-#define ADC_CALIB_BIASREFBUF_Msk              (_UINT16_(0x7) << ADC_CALIB_BIASREFBUF_Pos)          /* (ADC_CALIB) Bias  Reference Buffer Scaling Mask */
-#define ADC_CALIB_BIASREFBUF(value)           (ADC_CALIB_BIASREFBUF_Msk & (_UINT16_(value) << ADC_CALIB_BIASREFBUF_Pos)) /* Assigment of value for BIASREFBUF in the ADC_CALIB register */
-#define ADC_CALIB_Msk                         _UINT16_(0x0777)                                     /* (ADC_CALIB) Register Mask  */
-
 
 /* -------- ADC_CTRLA : (ADC Offset: 0x00) (R/W 16) Control A -------- */
 #define ADC_CTRLA_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_CTRLA) Control A  Reset Value */
@@ -127,138 +78,6 @@
 #define ADC_CTRLA_Msk                         _UINT16_(0x87FB)                                     /* (ADC_CTRLA) Register Mask  */
 
 
-/* -------- ADC_CTRLB : (ADC Offset: 0x06) (R/W 16) Control B -------- */
-#define ADC_CTRLB_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_CTRLB) Control B  Reset Value */
-
-#define ADC_CTRLB_LEFTADJ_Pos                 _UINT16_(0)                                          /* (ADC_CTRLB) Left-Adjusted Result Position */
-#define ADC_CTRLB_LEFTADJ_Msk                 (_UINT16_(0x1) << ADC_CTRLB_LEFTADJ_Pos)             /* (ADC_CTRLB) Left-Adjusted Result Mask */
-#define ADC_CTRLB_LEFTADJ(value)              (ADC_CTRLB_LEFTADJ_Msk & (_UINT16_(value) << ADC_CTRLB_LEFTADJ_Pos)) /* Assigment of value for LEFTADJ in the ADC_CTRLB register */
-#define ADC_CTRLB_FREERUN_Pos                 _UINT16_(1)                                          /* (ADC_CTRLB) Free Running Mode Position */
-#define ADC_CTRLB_FREERUN_Msk                 (_UINT16_(0x1) << ADC_CTRLB_FREERUN_Pos)             /* (ADC_CTRLB) Free Running Mode Mask */
-#define ADC_CTRLB_FREERUN(value)              (ADC_CTRLB_FREERUN_Msk & (_UINT16_(value) << ADC_CTRLB_FREERUN_Pos)) /* Assigment of value for FREERUN in the ADC_CTRLB register */
-#define ADC_CTRLB_CORREN_Pos                  _UINT16_(2)                                          /* (ADC_CTRLB) Digital Correction Logic Enable Position */
-#define ADC_CTRLB_CORREN_Msk                  (_UINT16_(0x1) << ADC_CTRLB_CORREN_Pos)              /* (ADC_CTRLB) Digital Correction Logic Enable Mask */
-#define ADC_CTRLB_CORREN(value)               (ADC_CTRLB_CORREN_Msk & (_UINT16_(value) << ADC_CTRLB_CORREN_Pos)) /* Assigment of value for CORREN in the ADC_CTRLB register */
-#define ADC_CTRLB_RESSEL_Pos                  _UINT16_(3)                                          /* (ADC_CTRLB) Conversion Result Resolution Position */
-#define ADC_CTRLB_RESSEL_Msk                  (_UINT16_(0x3) << ADC_CTRLB_RESSEL_Pos)              /* (ADC_CTRLB) Conversion Result Resolution Mask */
-#define ADC_CTRLB_RESSEL(value)               (ADC_CTRLB_RESSEL_Msk & (_UINT16_(value) << ADC_CTRLB_RESSEL_Pos)) /* Assigment of value for RESSEL in the ADC_CTRLB register */
-#define   ADC_CTRLB_RESSEL_12BIT_Val          _UINT16_(0x0)                                        /* (ADC_CTRLB) 12-bit result  */
-#define   ADC_CTRLB_RESSEL_16BIT_Val          _UINT16_(0x1)                                        /* (ADC_CTRLB) For averaging mode output  */
-#define   ADC_CTRLB_RESSEL_10BIT_Val          _UINT16_(0x2)                                        /* (ADC_CTRLB) 10-bit result  */
-#define   ADC_CTRLB_RESSEL_8BIT_Val           _UINT16_(0x3)                                        /* (ADC_CTRLB) 8-bit result  */
-#define ADC_CTRLB_RESSEL_12BIT                (ADC_CTRLB_RESSEL_12BIT_Val << ADC_CTRLB_RESSEL_Pos) /* (ADC_CTRLB) 12-bit result Position  */
-#define ADC_CTRLB_RESSEL_16BIT                (ADC_CTRLB_RESSEL_16BIT_Val << ADC_CTRLB_RESSEL_Pos) /* (ADC_CTRLB) For averaging mode output Position  */
-#define ADC_CTRLB_RESSEL_10BIT                (ADC_CTRLB_RESSEL_10BIT_Val << ADC_CTRLB_RESSEL_Pos) /* (ADC_CTRLB) 10-bit result Position  */
-#define ADC_CTRLB_RESSEL_8BIT                 (ADC_CTRLB_RESSEL_8BIT_Val << ADC_CTRLB_RESSEL_Pos)  /* (ADC_CTRLB) 8-bit result Position  */
-#define ADC_CTRLB_WINMODE_Pos                 _UINT16_(8)                                          /* (ADC_CTRLB) Window Monitor Mode Position */
-#define ADC_CTRLB_WINMODE_Msk                 (_UINT16_(0x7) << ADC_CTRLB_WINMODE_Pos)             /* (ADC_CTRLB) Window Monitor Mode Mask */
-#define ADC_CTRLB_WINMODE(value)              (ADC_CTRLB_WINMODE_Msk & (_UINT16_(value) << ADC_CTRLB_WINMODE_Pos)) /* Assigment of value for WINMODE in the ADC_CTRLB register */
-#define   ADC_CTRLB_WINMODE_DISABLE_Val       _UINT16_(0x0)                                        /* (ADC_CTRLB) No window mode (default)  */
-#define   ADC_CTRLB_WINMODE_MODE1_Val         _UINT16_(0x1)                                        /* (ADC_CTRLB) RESULT > WINLT  */
-#define   ADC_CTRLB_WINMODE_MODE2_Val         _UINT16_(0x2)                                        /* (ADC_CTRLB) RESULT < WINUT  */
-#define   ADC_CTRLB_WINMODE_MODE3_Val         _UINT16_(0x3)                                        /* (ADC_CTRLB) WINLT < RESULT < WINUT  */
-#define   ADC_CTRLB_WINMODE_MODE4_Val         _UINT16_(0x4)                                        /* (ADC_CTRLB) !(WINLT < RESULT < WINUT)  */
-#define ADC_CTRLB_WINMODE_DISABLE             (ADC_CTRLB_WINMODE_DISABLE_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) No window mode (default) Position  */
-#define ADC_CTRLB_WINMODE_MODE1               (ADC_CTRLB_WINMODE_MODE1_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) RESULT > WINLT Position  */
-#define ADC_CTRLB_WINMODE_MODE2               (ADC_CTRLB_WINMODE_MODE2_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) RESULT < WINUT Position  */
-#define ADC_CTRLB_WINMODE_MODE3               (ADC_CTRLB_WINMODE_MODE3_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) WINLT < RESULT < WINUT Position  */
-#define ADC_CTRLB_WINMODE_MODE4               (ADC_CTRLB_WINMODE_MODE4_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) !(WINLT < RESULT < WINUT) Position  */
-#define ADC_CTRLB_WINSS_Pos                   _UINT16_(11)                                         /* (ADC_CTRLB) Window Single Sample Position */
-#define ADC_CTRLB_WINSS_Msk                   (_UINT16_(0x1) << ADC_CTRLB_WINSS_Pos)               /* (ADC_CTRLB) Window Single Sample Mask */
-#define ADC_CTRLB_WINSS(value)                (ADC_CTRLB_WINSS_Msk & (_UINT16_(value) << ADC_CTRLB_WINSS_Pos)) /* Assigment of value for WINSS in the ADC_CTRLB register */
-#define ADC_CTRLB_Msk                         _UINT16_(0x0F1F)                                     /* (ADC_CTRLB) Register Mask  */
-
-
-/* -------- ADC_DBGCTRL : (ADC Offset: 0x03) (R/W 8) Debug Control -------- */
-#define ADC_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (ADC_DBGCTRL) Debug Control  Reset Value */
-
-#define ADC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (ADC_DBGCTRL) Debug Run Position */
-#define ADC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << ADC_DBGCTRL_DBGRUN_Pos)             /* (ADC_DBGCTRL) Debug Run Mask */
-#define ADC_DBGCTRL_DBGRUN(value)             (ADC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << ADC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the ADC_DBGCTRL register */
-#define ADC_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (ADC_DBGCTRL) Register Mask  */
-
-
-/* -------- ADC_DSEQCTRL : (ADC Offset: 0x38) (R/W 32) DMA Sequential Control -------- */
-#define ADC_DSEQCTRL_RESETVALUE               _UINT32_(0x00)                                       /*  (ADC_DSEQCTRL) DMA Sequential Control  Reset Value */
-
-#define ADC_DSEQCTRL_INPUTCTRL_Pos            _UINT32_(0)                                          /* (ADC_DSEQCTRL) Input Control Position */
-#define ADC_DSEQCTRL_INPUTCTRL_Msk            (_UINT32_(0x1) << ADC_DSEQCTRL_INPUTCTRL_Pos)        /* (ADC_DSEQCTRL) Input Control Mask */
-#define ADC_DSEQCTRL_INPUTCTRL(value)         (ADC_DSEQCTRL_INPUTCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_INPUTCTRL_Pos)) /* Assigment of value for INPUTCTRL in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_CTRLB_Pos                _UINT32_(1)                                          /* (ADC_DSEQCTRL) Control B Position */
-#define ADC_DSEQCTRL_CTRLB_Msk                (_UINT32_(0x1) << ADC_DSEQCTRL_CTRLB_Pos)            /* (ADC_DSEQCTRL) Control B Mask */
-#define ADC_DSEQCTRL_CTRLB(value)             (ADC_DSEQCTRL_CTRLB_Msk & (_UINT32_(value) << ADC_DSEQCTRL_CTRLB_Pos)) /* Assigment of value for CTRLB in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_REFCTRL_Pos              _UINT32_(2)                                          /* (ADC_DSEQCTRL) Reference Control Position */
-#define ADC_DSEQCTRL_REFCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQCTRL_REFCTRL_Pos)          /* (ADC_DSEQCTRL) Reference Control Mask */
-#define ADC_DSEQCTRL_REFCTRL(value)           (ADC_DSEQCTRL_REFCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_REFCTRL_Pos)) /* Assigment of value for REFCTRL in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_AVGCTRL_Pos              _UINT32_(3)                                          /* (ADC_DSEQCTRL) Average Control Position */
-#define ADC_DSEQCTRL_AVGCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQCTRL_AVGCTRL_Pos)          /* (ADC_DSEQCTRL) Average Control Mask */
-#define ADC_DSEQCTRL_AVGCTRL(value)           (ADC_DSEQCTRL_AVGCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_AVGCTRL_Pos)) /* Assigment of value for AVGCTRL in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_SAMPCTRL_Pos             _UINT32_(4)                                          /* (ADC_DSEQCTRL) Sampling Time Control Position */
-#define ADC_DSEQCTRL_SAMPCTRL_Msk             (_UINT32_(0x1) << ADC_DSEQCTRL_SAMPCTRL_Pos)         /* (ADC_DSEQCTRL) Sampling Time Control Mask */
-#define ADC_DSEQCTRL_SAMPCTRL(value)          (ADC_DSEQCTRL_SAMPCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_SAMPCTRL_Pos)) /* Assigment of value for SAMPCTRL in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_WINLT_Pos                _UINT32_(5)                                          /* (ADC_DSEQCTRL) Window Monitor Lower Threshold Position */
-#define ADC_DSEQCTRL_WINLT_Msk                (_UINT32_(0x1) << ADC_DSEQCTRL_WINLT_Pos)            /* (ADC_DSEQCTRL) Window Monitor Lower Threshold Mask */
-#define ADC_DSEQCTRL_WINLT(value)             (ADC_DSEQCTRL_WINLT_Msk & (_UINT32_(value) << ADC_DSEQCTRL_WINLT_Pos)) /* Assigment of value for WINLT in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_WINUT_Pos                _UINT32_(6)                                          /* (ADC_DSEQCTRL) Window Monitor Upper Threshold Position */
-#define ADC_DSEQCTRL_WINUT_Msk                (_UINT32_(0x1) << ADC_DSEQCTRL_WINUT_Pos)            /* (ADC_DSEQCTRL) Window Monitor Upper Threshold Mask */
-#define ADC_DSEQCTRL_WINUT(value)             (ADC_DSEQCTRL_WINUT_Msk & (_UINT32_(value) << ADC_DSEQCTRL_WINUT_Pos)) /* Assigment of value for WINUT in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_GAINCORR_Pos             _UINT32_(7)                                          /* (ADC_DSEQCTRL) Gain Correction Position */
-#define ADC_DSEQCTRL_GAINCORR_Msk             (_UINT32_(0x1) << ADC_DSEQCTRL_GAINCORR_Pos)         /* (ADC_DSEQCTRL) Gain Correction Mask */
-#define ADC_DSEQCTRL_GAINCORR(value)          (ADC_DSEQCTRL_GAINCORR_Msk & (_UINT32_(value) << ADC_DSEQCTRL_GAINCORR_Pos)) /* Assigment of value for GAINCORR in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_OFFSETCORR_Pos           _UINT32_(8)                                          /* (ADC_DSEQCTRL) Offset Correction Position */
-#define ADC_DSEQCTRL_OFFSETCORR_Msk           (_UINT32_(0x1) << ADC_DSEQCTRL_OFFSETCORR_Pos)       /* (ADC_DSEQCTRL) Offset Correction Mask */
-#define ADC_DSEQCTRL_OFFSETCORR(value)        (ADC_DSEQCTRL_OFFSETCORR_Msk & (_UINT32_(value) << ADC_DSEQCTRL_OFFSETCORR_Pos)) /* Assigment of value for OFFSETCORR in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_AUTOSTART_Pos            _UINT32_(31)                                         /* (ADC_DSEQCTRL) ADC Auto-Start Conversion Position */
-#define ADC_DSEQCTRL_AUTOSTART_Msk            (_UINT32_(0x1) << ADC_DSEQCTRL_AUTOSTART_Pos)        /* (ADC_DSEQCTRL) ADC Auto-Start Conversion Mask */
-#define ADC_DSEQCTRL_AUTOSTART(value)         (ADC_DSEQCTRL_AUTOSTART_Msk & (_UINT32_(value) << ADC_DSEQCTRL_AUTOSTART_Pos)) /* Assigment of value for AUTOSTART in the ADC_DSEQCTRL register */
-#define ADC_DSEQCTRL_Msk                      _UINT32_(0x800001FF)                                 /* (ADC_DSEQCTRL) Register Mask  */
-
-
-/* -------- ADC_DSEQDATA : (ADC Offset: 0x34) ( /W 32) DMA Sequencial Data -------- */
-#define ADC_DSEQDATA_RESETVALUE               _UINT32_(0x00)                                       /*  (ADC_DSEQDATA) DMA Sequencial Data  Reset Value */
-
-#define ADC_DSEQDATA_DATA_Pos                 _UINT32_(0)                                          /* (ADC_DSEQDATA) DMA Sequential Data Position */
-#define ADC_DSEQDATA_DATA_Msk                 (_UINT32_(0xFFFFFFFF) << ADC_DSEQDATA_DATA_Pos)      /* (ADC_DSEQDATA) DMA Sequential Data Mask */
-#define ADC_DSEQDATA_DATA(value)              (ADC_DSEQDATA_DATA_Msk & (_UINT32_(value) << ADC_DSEQDATA_DATA_Pos)) /* Assigment of value for DATA in the ADC_DSEQDATA register */
-#define ADC_DSEQDATA_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (ADC_DSEQDATA) Register Mask  */
-
-
-/* -------- ADC_DSEQSTAT : (ADC Offset: 0x3C) ( R/ 32) DMA Sequencial Status -------- */
-#define ADC_DSEQSTAT_RESETVALUE               _UINT32_(0x00)                                       /*  (ADC_DSEQSTAT) DMA Sequencial Status  Reset Value */
-
-#define ADC_DSEQSTAT_INPUTCTRL_Pos            _UINT32_(0)                                          /* (ADC_DSEQSTAT) Input Control Position */
-#define ADC_DSEQSTAT_INPUTCTRL_Msk            (_UINT32_(0x1) << ADC_DSEQSTAT_INPUTCTRL_Pos)        /* (ADC_DSEQSTAT) Input Control Mask */
-#define ADC_DSEQSTAT_INPUTCTRL(value)         (ADC_DSEQSTAT_INPUTCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_INPUTCTRL_Pos)) /* Assigment of value for INPUTCTRL in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_CTRLB_Pos                _UINT32_(1)                                          /* (ADC_DSEQSTAT) Control B Position */
-#define ADC_DSEQSTAT_CTRLB_Msk                (_UINT32_(0x1) << ADC_DSEQSTAT_CTRLB_Pos)            /* (ADC_DSEQSTAT) Control B Mask */
-#define ADC_DSEQSTAT_CTRLB(value)             (ADC_DSEQSTAT_CTRLB_Msk & (_UINT32_(value) << ADC_DSEQSTAT_CTRLB_Pos)) /* Assigment of value for CTRLB in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_REFCTRL_Pos              _UINT32_(2)                                          /* (ADC_DSEQSTAT) Reference Control Position */
-#define ADC_DSEQSTAT_REFCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQSTAT_REFCTRL_Pos)          /* (ADC_DSEQSTAT) Reference Control Mask */
-#define ADC_DSEQSTAT_REFCTRL(value)           (ADC_DSEQSTAT_REFCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_REFCTRL_Pos)) /* Assigment of value for REFCTRL in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_AVGCTRL_Pos              _UINT32_(3)                                          /* (ADC_DSEQSTAT) Average Control Position */
-#define ADC_DSEQSTAT_AVGCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQSTAT_AVGCTRL_Pos)          /* (ADC_DSEQSTAT) Average Control Mask */
-#define ADC_DSEQSTAT_AVGCTRL(value)           (ADC_DSEQSTAT_AVGCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_AVGCTRL_Pos)) /* Assigment of value for AVGCTRL in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_SAMPCTRL_Pos             _UINT32_(4)                                          /* (ADC_DSEQSTAT) Sampling Time Control Position */
-#define ADC_DSEQSTAT_SAMPCTRL_Msk             (_UINT32_(0x1) << ADC_DSEQSTAT_SAMPCTRL_Pos)         /* (ADC_DSEQSTAT) Sampling Time Control Mask */
-#define ADC_DSEQSTAT_SAMPCTRL(value)          (ADC_DSEQSTAT_SAMPCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_SAMPCTRL_Pos)) /* Assigment of value for SAMPCTRL in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_WINLT_Pos                _UINT32_(5)                                          /* (ADC_DSEQSTAT) Window Monitor Lower Threshold Position */
-#define ADC_DSEQSTAT_WINLT_Msk                (_UINT32_(0x1) << ADC_DSEQSTAT_WINLT_Pos)            /* (ADC_DSEQSTAT) Window Monitor Lower Threshold Mask */
-#define ADC_DSEQSTAT_WINLT(value)             (ADC_DSEQSTAT_WINLT_Msk & (_UINT32_(value) << ADC_DSEQSTAT_WINLT_Pos)) /* Assigment of value for WINLT in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_WINUT_Pos                _UINT32_(6)                                          /* (ADC_DSEQSTAT) Window Monitor Upper Threshold Position */
-#define ADC_DSEQSTAT_WINUT_Msk                (_UINT32_(0x1) << ADC_DSEQSTAT_WINUT_Pos)            /* (ADC_DSEQSTAT) Window Monitor Upper Threshold Mask */
-#define ADC_DSEQSTAT_WINUT(value)             (ADC_DSEQSTAT_WINUT_Msk & (_UINT32_(value) << ADC_DSEQSTAT_WINUT_Pos)) /* Assigment of value for WINUT in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_GAINCORR_Pos             _UINT32_(7)                                          /* (ADC_DSEQSTAT) Gain Correction Position */
-#define ADC_DSEQSTAT_GAINCORR_Msk             (_UINT32_(0x1) << ADC_DSEQSTAT_GAINCORR_Pos)         /* (ADC_DSEQSTAT) Gain Correction Mask */
-#define ADC_DSEQSTAT_GAINCORR(value)          (ADC_DSEQSTAT_GAINCORR_Msk & (_UINT32_(value) << ADC_DSEQSTAT_GAINCORR_Pos)) /* Assigment of value for GAINCORR in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_OFFSETCORR_Pos           _UINT32_(8)                                          /* (ADC_DSEQSTAT) Offset Correction Position */
-#define ADC_DSEQSTAT_OFFSETCORR_Msk           (_UINT32_(0x1) << ADC_DSEQSTAT_OFFSETCORR_Pos)       /* (ADC_DSEQSTAT) Offset Correction Mask */
-#define ADC_DSEQSTAT_OFFSETCORR(value)        (ADC_DSEQSTAT_OFFSETCORR_Msk & (_UINT32_(value) << ADC_DSEQSTAT_OFFSETCORR_Pos)) /* Assigment of value for OFFSETCORR in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_BUSY_Pos                 _UINT32_(31)                                         /* (ADC_DSEQSTAT) DMA Sequencing Busy Position */
-#define ADC_DSEQSTAT_BUSY_Msk                 (_UINT32_(0x1) << ADC_DSEQSTAT_BUSY_Pos)             /* (ADC_DSEQSTAT) DMA Sequencing Busy Mask */
-#define ADC_DSEQSTAT_BUSY(value)              (ADC_DSEQSTAT_BUSY_Msk & (_UINT32_(value) << ADC_DSEQSTAT_BUSY_Pos)) /* Assigment of value for BUSY in the ADC_DSEQSTAT register */
-#define ADC_DSEQSTAT_Msk                      _UINT32_(0x800001FF)                                 /* (ADC_DSEQSTAT) Register Mask  */
-
-
 /* -------- ADC_EVCTRL : (ADC Offset: 0x02) (R/W 8) Event Control -------- */
 #define ADC_EVCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (ADC_EVCTRL) Event Control  Reset Value */
 
@@ -283,13 +102,13 @@
 #define ADC_EVCTRL_Msk                        _UINT8_(0x3F)                                        /* (ADC_EVCTRL) Register Mask  */
 
 
-/* -------- ADC_GAINCORR : (ADC Offset: 0x10) (R/W 16) Gain Correction -------- */
-#define ADC_GAINCORR_RESETVALUE               _UINT16_(0x00)                                       /*  (ADC_GAINCORR) Gain Correction  Reset Value */
+/* -------- ADC_DBGCTRL : (ADC Offset: 0x03) (R/W 8) Debug Control -------- */
+#define ADC_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (ADC_DBGCTRL) Debug Control  Reset Value */
 
-#define ADC_GAINCORR_GAINCORR_Pos             _UINT16_(0)                                          /* (ADC_GAINCORR) Gain Correction Value Position */
-#define ADC_GAINCORR_GAINCORR_Msk             (_UINT16_(0xFFF) << ADC_GAINCORR_GAINCORR_Pos)       /* (ADC_GAINCORR) Gain Correction Value Mask */
-#define ADC_GAINCORR_GAINCORR(value)          (ADC_GAINCORR_GAINCORR_Msk & (_UINT16_(value) << ADC_GAINCORR_GAINCORR_Pos)) /* Assigment of value for GAINCORR in the ADC_GAINCORR register */
-#define ADC_GAINCORR_Msk                      _UINT16_(0x0FFF)                                     /* (ADC_GAINCORR) Register Mask  */
+#define ADC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (ADC_DBGCTRL) Debug Run Position */
+#define ADC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << ADC_DBGCTRL_DBGRUN_Pos)             /* (ADC_DBGCTRL) Debug Run Mask */
+#define ADC_DBGCTRL_DBGRUN(value)             (ADC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << ADC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the ADC_DBGCTRL register */
+#define ADC_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (ADC_DBGCTRL) Register Mask  */
 
 
 /* -------- ADC_INPUTCTRL : (ADC Offset: 0x04) (R/W 16) Input Control -------- */
@@ -370,6 +189,166 @@
 #define ADC_INPUTCTRL_Msk                     _UINT16_(0x9F9F)                                     /* (ADC_INPUTCTRL) Register Mask  */
 
 
+/* -------- ADC_CTRLB : (ADC Offset: 0x06) (R/W 16) Control B -------- */
+#define ADC_CTRLB_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_CTRLB) Control B  Reset Value */
+
+#define ADC_CTRLB_LEFTADJ_Pos                 _UINT16_(0)                                          /* (ADC_CTRLB) Left-Adjusted Result Position */
+#define ADC_CTRLB_LEFTADJ_Msk                 (_UINT16_(0x1) << ADC_CTRLB_LEFTADJ_Pos)             /* (ADC_CTRLB) Left-Adjusted Result Mask */
+#define ADC_CTRLB_LEFTADJ(value)              (ADC_CTRLB_LEFTADJ_Msk & (_UINT16_(value) << ADC_CTRLB_LEFTADJ_Pos)) /* Assigment of value for LEFTADJ in the ADC_CTRLB register */
+#define ADC_CTRLB_FREERUN_Pos                 _UINT16_(1)                                          /* (ADC_CTRLB) Free Running Mode Position */
+#define ADC_CTRLB_FREERUN_Msk                 (_UINT16_(0x1) << ADC_CTRLB_FREERUN_Pos)             /* (ADC_CTRLB) Free Running Mode Mask */
+#define ADC_CTRLB_FREERUN(value)              (ADC_CTRLB_FREERUN_Msk & (_UINT16_(value) << ADC_CTRLB_FREERUN_Pos)) /* Assigment of value for FREERUN in the ADC_CTRLB register */
+#define ADC_CTRLB_CORREN_Pos                  _UINT16_(2)                                          /* (ADC_CTRLB) Digital Correction Logic Enable Position */
+#define ADC_CTRLB_CORREN_Msk                  (_UINT16_(0x1) << ADC_CTRLB_CORREN_Pos)              /* (ADC_CTRLB) Digital Correction Logic Enable Mask */
+#define ADC_CTRLB_CORREN(value)               (ADC_CTRLB_CORREN_Msk & (_UINT16_(value) << ADC_CTRLB_CORREN_Pos)) /* Assigment of value for CORREN in the ADC_CTRLB register */
+#define ADC_CTRLB_RESSEL_Pos                  _UINT16_(3)                                          /* (ADC_CTRLB) Conversion Result Resolution Position */
+#define ADC_CTRLB_RESSEL_Msk                  (_UINT16_(0x3) << ADC_CTRLB_RESSEL_Pos)              /* (ADC_CTRLB) Conversion Result Resolution Mask */
+#define ADC_CTRLB_RESSEL(value)               (ADC_CTRLB_RESSEL_Msk & (_UINT16_(value) << ADC_CTRLB_RESSEL_Pos)) /* Assigment of value for RESSEL in the ADC_CTRLB register */
+#define   ADC_CTRLB_RESSEL_12BIT_Val          _UINT16_(0x0)                                        /* (ADC_CTRLB) 12-bit result  */
+#define   ADC_CTRLB_RESSEL_16BIT_Val          _UINT16_(0x1)                                        /* (ADC_CTRLB) For averaging mode output  */
+#define   ADC_CTRLB_RESSEL_10BIT_Val          _UINT16_(0x2)                                        /* (ADC_CTRLB) 10-bit result  */
+#define   ADC_CTRLB_RESSEL_8BIT_Val           _UINT16_(0x3)                                        /* (ADC_CTRLB) 8-bit result  */
+#define ADC_CTRLB_RESSEL_12BIT                (ADC_CTRLB_RESSEL_12BIT_Val << ADC_CTRLB_RESSEL_Pos) /* (ADC_CTRLB) 12-bit result Position  */
+#define ADC_CTRLB_RESSEL_16BIT                (ADC_CTRLB_RESSEL_16BIT_Val << ADC_CTRLB_RESSEL_Pos) /* (ADC_CTRLB) For averaging mode output Position  */
+#define ADC_CTRLB_RESSEL_10BIT                (ADC_CTRLB_RESSEL_10BIT_Val << ADC_CTRLB_RESSEL_Pos) /* (ADC_CTRLB) 10-bit result Position  */
+#define ADC_CTRLB_RESSEL_8BIT                 (ADC_CTRLB_RESSEL_8BIT_Val << ADC_CTRLB_RESSEL_Pos)  /* (ADC_CTRLB) 8-bit result Position  */
+#define ADC_CTRLB_WINMODE_Pos                 _UINT16_(8)                                          /* (ADC_CTRLB) Window Monitor Mode Position */
+#define ADC_CTRLB_WINMODE_Msk                 (_UINT16_(0x7) << ADC_CTRLB_WINMODE_Pos)             /* (ADC_CTRLB) Window Monitor Mode Mask */
+#define ADC_CTRLB_WINMODE(value)              (ADC_CTRLB_WINMODE_Msk & (_UINT16_(value) << ADC_CTRLB_WINMODE_Pos)) /* Assigment of value for WINMODE in the ADC_CTRLB register */
+#define   ADC_CTRLB_WINMODE_DISABLE_Val       _UINT16_(0x0)                                        /* (ADC_CTRLB) No window mode (default)  */
+#define   ADC_CTRLB_WINMODE_MODE1_Val         _UINT16_(0x1)                                        /* (ADC_CTRLB) RESULT > WINLT  */
+#define   ADC_CTRLB_WINMODE_MODE2_Val         _UINT16_(0x2)                                        /* (ADC_CTRLB) RESULT < WINUT  */
+#define   ADC_CTRLB_WINMODE_MODE3_Val         _UINT16_(0x3)                                        /* (ADC_CTRLB) WINLT < RESULT < WINUT  */
+#define   ADC_CTRLB_WINMODE_MODE4_Val         _UINT16_(0x4)                                        /* (ADC_CTRLB) !(WINLT < RESULT < WINUT)  */
+#define ADC_CTRLB_WINMODE_DISABLE             (ADC_CTRLB_WINMODE_DISABLE_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) No window mode (default) Position  */
+#define ADC_CTRLB_WINMODE_MODE1               (ADC_CTRLB_WINMODE_MODE1_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) RESULT > WINLT Position  */
+#define ADC_CTRLB_WINMODE_MODE2               (ADC_CTRLB_WINMODE_MODE2_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) RESULT < WINUT Position  */
+#define ADC_CTRLB_WINMODE_MODE3               (ADC_CTRLB_WINMODE_MODE3_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) WINLT < RESULT < WINUT Position  */
+#define ADC_CTRLB_WINMODE_MODE4               (ADC_CTRLB_WINMODE_MODE4_Val << ADC_CTRLB_WINMODE_Pos) /* (ADC_CTRLB) !(WINLT < RESULT < WINUT) Position  */
+#define ADC_CTRLB_WINSS_Pos                   _UINT16_(11)                                         /* (ADC_CTRLB) Window Single Sample Position */
+#define ADC_CTRLB_WINSS_Msk                   (_UINT16_(0x1) << ADC_CTRLB_WINSS_Pos)               /* (ADC_CTRLB) Window Single Sample Mask */
+#define ADC_CTRLB_WINSS(value)                (ADC_CTRLB_WINSS_Msk & (_UINT16_(value) << ADC_CTRLB_WINSS_Pos)) /* Assigment of value for WINSS in the ADC_CTRLB register */
+#define ADC_CTRLB_Msk                         _UINT16_(0x0F1F)                                     /* (ADC_CTRLB) Register Mask  */
+
+
+/* -------- ADC_REFCTRL : (ADC Offset: 0x08) (R/W 8) Reference Control -------- */
+#define ADC_REFCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (ADC_REFCTRL) Reference Control  Reset Value */
+
+#define ADC_REFCTRL_REFSEL_Pos                _UINT8_(0)                                           /* (ADC_REFCTRL) Reference Selection Position */
+#define ADC_REFCTRL_REFSEL_Msk                (_UINT8_(0xF) << ADC_REFCTRL_REFSEL_Pos)             /* (ADC_REFCTRL) Reference Selection Mask */
+#define ADC_REFCTRL_REFSEL(value)             (ADC_REFCTRL_REFSEL_Msk & (_UINT8_(value) << ADC_REFCTRL_REFSEL_Pos)) /* Assigment of value for REFSEL in the ADC_REFCTRL register */
+#define   ADC_REFCTRL_REFSEL_INTREF_Val       _UINT8_(0x0)                                         /* (ADC_REFCTRL) Internal Bandgap Reference  */
+#define   ADC_REFCTRL_REFSEL_INTVCC0_Val      _UINT8_(0x2)                                         /* (ADC_REFCTRL) 1/2 AVDD  */
+#define   ADC_REFCTRL_REFSEL_INTVCC1_Val      _UINT8_(0x3)                                         /* (ADC_REFCTRL) AVDD  */
+#define   ADC_REFCTRL_REFSEL_AREFA_Val        _UINT8_(0x4)                                         /* (ADC_REFCTRL) External Reference A  */
+#define   ADC_REFCTRL_REFSEL_AREFB_Val        _UINT8_(0x5)                                         /* (ADC_REFCTRL) External Reference B  */
+#define   ADC_REFCTRL_REFSEL_AREFC_Val        _UINT8_(0x6)                                         /* (ADC_REFCTRL) External Reference C (only on ADC1)  */
+#define ADC_REFCTRL_REFSEL_INTREF             (ADC_REFCTRL_REFSEL_INTREF_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) Internal Bandgap Reference Position  */
+#define ADC_REFCTRL_REFSEL_INTVCC0            (ADC_REFCTRL_REFSEL_INTVCC0_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) 1/2 AVDD Position  */
+#define ADC_REFCTRL_REFSEL_INTVCC1            (ADC_REFCTRL_REFSEL_INTVCC1_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) AVDD Position  */
+#define ADC_REFCTRL_REFSEL_AREFA              (ADC_REFCTRL_REFSEL_AREFA_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External Reference A Position  */
+#define ADC_REFCTRL_REFSEL_AREFB              (ADC_REFCTRL_REFSEL_AREFB_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External Reference B Position  */
+#define ADC_REFCTRL_REFSEL_AREFC              (ADC_REFCTRL_REFSEL_AREFC_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External Reference C (only on ADC1) Position  */
+#define ADC_REFCTRL_REFCOMP_Pos               _UINT8_(7)                                           /* (ADC_REFCTRL) Reference Buffer Offset Compensation Enable Position */
+#define ADC_REFCTRL_REFCOMP_Msk               (_UINT8_(0x1) << ADC_REFCTRL_REFCOMP_Pos)            /* (ADC_REFCTRL) Reference Buffer Offset Compensation Enable Mask */
+#define ADC_REFCTRL_REFCOMP(value)            (ADC_REFCTRL_REFCOMP_Msk & (_UINT8_(value) << ADC_REFCTRL_REFCOMP_Pos)) /* Assigment of value for REFCOMP in the ADC_REFCTRL register */
+#define ADC_REFCTRL_Msk                       _UINT8_(0x8F)                                        /* (ADC_REFCTRL) Register Mask  */
+
+
+/* -------- ADC_AVGCTRL : (ADC Offset: 0x0A) (R/W 8) Average Control -------- */
+#define ADC_AVGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (ADC_AVGCTRL) Average Control  Reset Value */
+
+#define ADC_AVGCTRL_SAMPLENUM_Pos             _UINT8_(0)                                           /* (ADC_AVGCTRL) Number of Samples to be Collected Position */
+#define ADC_AVGCTRL_SAMPLENUM_Msk             (_UINT8_(0xF) << ADC_AVGCTRL_SAMPLENUM_Pos)          /* (ADC_AVGCTRL) Number of Samples to be Collected Mask */
+#define ADC_AVGCTRL_SAMPLENUM(value)          (ADC_AVGCTRL_SAMPLENUM_Msk & (_UINT8_(value) << ADC_AVGCTRL_SAMPLENUM_Pos)) /* Assigment of value for SAMPLENUM in the ADC_AVGCTRL register */
+#define   ADC_AVGCTRL_SAMPLENUM_1_Val         _UINT8_(0x0)                                         /* (ADC_AVGCTRL) 1 sample  */
+#define   ADC_AVGCTRL_SAMPLENUM_2_Val         _UINT8_(0x1)                                         /* (ADC_AVGCTRL) 2 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_4_Val         _UINT8_(0x2)                                         /* (ADC_AVGCTRL) 4 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_8_Val         _UINT8_(0x3)                                         /* (ADC_AVGCTRL) 8 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_16_Val        _UINT8_(0x4)                                         /* (ADC_AVGCTRL) 16 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_32_Val        _UINT8_(0x5)                                         /* (ADC_AVGCTRL) 32 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_64_Val        _UINT8_(0x6)                                         /* (ADC_AVGCTRL) 64 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_128_Val       _UINT8_(0x7)                                         /* (ADC_AVGCTRL) 128 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_256_Val       _UINT8_(0x8)                                         /* (ADC_AVGCTRL) 256 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_512_Val       _UINT8_(0x9)                                         /* (ADC_AVGCTRL) 512 samples  */
+#define   ADC_AVGCTRL_SAMPLENUM_1024_Val      _UINT8_(0xA)                                         /* (ADC_AVGCTRL) 1024 samples  */
+#define ADC_AVGCTRL_SAMPLENUM_1               (ADC_AVGCTRL_SAMPLENUM_1_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 1 sample Position  */
+#define ADC_AVGCTRL_SAMPLENUM_2               (ADC_AVGCTRL_SAMPLENUM_2_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 2 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_4               (ADC_AVGCTRL_SAMPLENUM_4_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 4 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_8               (ADC_AVGCTRL_SAMPLENUM_8_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 8 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_16              (ADC_AVGCTRL_SAMPLENUM_16_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 16 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_32              (ADC_AVGCTRL_SAMPLENUM_32_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 32 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_64              (ADC_AVGCTRL_SAMPLENUM_64_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 64 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_128             (ADC_AVGCTRL_SAMPLENUM_128_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 128 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_256             (ADC_AVGCTRL_SAMPLENUM_256_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 256 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_512             (ADC_AVGCTRL_SAMPLENUM_512_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 512 samples Position  */
+#define ADC_AVGCTRL_SAMPLENUM_1024            (ADC_AVGCTRL_SAMPLENUM_1024_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 1024 samples Position  */
+#define ADC_AVGCTRL_ADJRES_Pos                _UINT8_(4)                                           /* (ADC_AVGCTRL) Adjusting Result / Division Coefficient Position */
+#define ADC_AVGCTRL_ADJRES_Msk                (_UINT8_(0x7) << ADC_AVGCTRL_ADJRES_Pos)             /* (ADC_AVGCTRL) Adjusting Result / Division Coefficient Mask */
+#define ADC_AVGCTRL_ADJRES(value)             (ADC_AVGCTRL_ADJRES_Msk & (_UINT8_(value) << ADC_AVGCTRL_ADJRES_Pos)) /* Assigment of value for ADJRES in the ADC_AVGCTRL register */
+#define ADC_AVGCTRL_Msk                       _UINT8_(0x7F)                                        /* (ADC_AVGCTRL) Register Mask  */
+
+
+/* -------- ADC_SAMPCTRL : (ADC Offset: 0x0B) (R/W 8) Sample Time Control -------- */
+#define ADC_SAMPCTRL_RESETVALUE               _UINT8_(0x00)                                        /*  (ADC_SAMPCTRL) Sample Time Control  Reset Value */
+
+#define ADC_SAMPCTRL_SAMPLEN_Pos              _UINT8_(0)                                           /* (ADC_SAMPCTRL) Sampling Time Length Position */
+#define ADC_SAMPCTRL_SAMPLEN_Msk              (_UINT8_(0x3F) << ADC_SAMPCTRL_SAMPLEN_Pos)          /* (ADC_SAMPCTRL) Sampling Time Length Mask */
+#define ADC_SAMPCTRL_SAMPLEN(value)           (ADC_SAMPCTRL_SAMPLEN_Msk & (_UINT8_(value) << ADC_SAMPCTRL_SAMPLEN_Pos)) /* Assigment of value for SAMPLEN in the ADC_SAMPCTRL register */
+#define ADC_SAMPCTRL_OFFCOMP_Pos              _UINT8_(7)                                           /* (ADC_SAMPCTRL) Comparator Offset Compensation Enable Position */
+#define ADC_SAMPCTRL_OFFCOMP_Msk              (_UINT8_(0x1) << ADC_SAMPCTRL_OFFCOMP_Pos)           /* (ADC_SAMPCTRL) Comparator Offset Compensation Enable Mask */
+#define ADC_SAMPCTRL_OFFCOMP(value)           (ADC_SAMPCTRL_OFFCOMP_Msk & (_UINT8_(value) << ADC_SAMPCTRL_OFFCOMP_Pos)) /* Assigment of value for OFFCOMP in the ADC_SAMPCTRL register */
+#define ADC_SAMPCTRL_Msk                      _UINT8_(0xBF)                                        /* (ADC_SAMPCTRL) Register Mask  */
+
+
+/* -------- ADC_WINLT : (ADC Offset: 0x0C) (R/W 16) Window Monitor Lower Threshold -------- */
+#define ADC_WINLT_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_WINLT) Window Monitor Lower Threshold  Reset Value */
+
+#define ADC_WINLT_WINLT_Pos                   _UINT16_(0)                                          /* (ADC_WINLT) Window Lower Threshold Position */
+#define ADC_WINLT_WINLT_Msk                   (_UINT16_(0xFFFF) << ADC_WINLT_WINLT_Pos)            /* (ADC_WINLT) Window Lower Threshold Mask */
+#define ADC_WINLT_WINLT(value)                (ADC_WINLT_WINLT_Msk & (_UINT16_(value) << ADC_WINLT_WINLT_Pos)) /* Assigment of value for WINLT in the ADC_WINLT register */
+#define ADC_WINLT_Msk                         _UINT16_(0xFFFF)                                     /* (ADC_WINLT) Register Mask  */
+
+
+/* -------- ADC_WINUT : (ADC Offset: 0x0E) (R/W 16) Window Monitor Upper Threshold -------- */
+#define ADC_WINUT_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_WINUT) Window Monitor Upper Threshold  Reset Value */
+
+#define ADC_WINUT_WINUT_Pos                   _UINT16_(0)                                          /* (ADC_WINUT) Window Upper Threshold Position */
+#define ADC_WINUT_WINUT_Msk                   (_UINT16_(0xFFFF) << ADC_WINUT_WINUT_Pos)            /* (ADC_WINUT) Window Upper Threshold Mask */
+#define ADC_WINUT_WINUT(value)                (ADC_WINUT_WINUT_Msk & (_UINT16_(value) << ADC_WINUT_WINUT_Pos)) /* Assigment of value for WINUT in the ADC_WINUT register */
+#define ADC_WINUT_Msk                         _UINT16_(0xFFFF)                                     /* (ADC_WINUT) Register Mask  */
+
+
+/* -------- ADC_GAINCORR : (ADC Offset: 0x10) (R/W 16) Gain Correction -------- */
+#define ADC_GAINCORR_RESETVALUE               _UINT16_(0x00)                                       /*  (ADC_GAINCORR) Gain Correction  Reset Value */
+
+#define ADC_GAINCORR_GAINCORR_Pos             _UINT16_(0)                                          /* (ADC_GAINCORR) Gain Correction Value Position */
+#define ADC_GAINCORR_GAINCORR_Msk             (_UINT16_(0xFFF) << ADC_GAINCORR_GAINCORR_Pos)       /* (ADC_GAINCORR) Gain Correction Value Mask */
+#define ADC_GAINCORR_GAINCORR(value)          (ADC_GAINCORR_GAINCORR_Msk & (_UINT16_(value) << ADC_GAINCORR_GAINCORR_Pos)) /* Assigment of value for GAINCORR in the ADC_GAINCORR register */
+#define ADC_GAINCORR_Msk                      _UINT16_(0x0FFF)                                     /* (ADC_GAINCORR) Register Mask  */
+
+
+/* -------- ADC_OFFSETCORR : (ADC Offset: 0x12) (R/W 16) Offset Correction -------- */
+#define ADC_OFFSETCORR_RESETVALUE             _UINT16_(0x00)                                       /*  (ADC_OFFSETCORR) Offset Correction  Reset Value */
+
+#define ADC_OFFSETCORR_OFFSETCORR_Pos         _UINT16_(0)                                          /* (ADC_OFFSETCORR) Offset Correction Value Position */
+#define ADC_OFFSETCORR_OFFSETCORR_Msk         (_UINT16_(0xFFF) << ADC_OFFSETCORR_OFFSETCORR_Pos)   /* (ADC_OFFSETCORR) Offset Correction Value Mask */
+#define ADC_OFFSETCORR_OFFSETCORR(value)      (ADC_OFFSETCORR_OFFSETCORR_Msk & (_UINT16_(value) << ADC_OFFSETCORR_OFFSETCORR_Pos)) /* Assigment of value for OFFSETCORR in the ADC_OFFSETCORR register */
+#define ADC_OFFSETCORR_Msk                    _UINT16_(0x0FFF)                                     /* (ADC_OFFSETCORR) Register Mask  */
+
+
+/* -------- ADC_SWTRIG : (ADC Offset: 0x14) (R/W 8) Software Trigger -------- */
+#define ADC_SWTRIG_RESETVALUE                 _UINT8_(0x00)                                        /*  (ADC_SWTRIG) Software Trigger  Reset Value */
+
+#define ADC_SWTRIG_FLUSH_Pos                  _UINT8_(0)                                           /* (ADC_SWTRIG) ADC Conversion Flush Position */
+#define ADC_SWTRIG_FLUSH_Msk                  (_UINT8_(0x1) << ADC_SWTRIG_FLUSH_Pos)               /* (ADC_SWTRIG) ADC Conversion Flush Mask */
+#define ADC_SWTRIG_FLUSH(value)               (ADC_SWTRIG_FLUSH_Msk & (_UINT8_(value) << ADC_SWTRIG_FLUSH_Pos)) /* Assigment of value for FLUSH in the ADC_SWTRIG register */
+#define ADC_SWTRIG_START_Pos                  _UINT8_(1)                                           /* (ADC_SWTRIG) Start ADC Conversion Position */
+#define ADC_SWTRIG_START_Msk                  (_UINT8_(0x1) << ADC_SWTRIG_START_Pos)               /* (ADC_SWTRIG) Start ADC Conversion Mask */
+#define ADC_SWTRIG_START(value)               (ADC_SWTRIG_START_Msk & (_UINT8_(value) << ADC_SWTRIG_START_Pos)) /* Assigment of value for START in the ADC_SWTRIG register */
+#define ADC_SWTRIG_Msk                        _UINT8_(0x03)                                        /* (ADC_SWTRIG) Register Mask  */
+
+
 /* -------- ADC_INTENCLR : (ADC Offset: 0x2C) (R/W 8) Interrupt Enable Clear -------- */
 #define ADC_INTENCLR_RESETVALUE               _UINT8_(0x00)                                        /*  (ADC_INTENCLR) Interrupt Enable Clear  Reset Value */
 
@@ -415,69 +394,6 @@
 #define ADC_INTFLAG_Msk                       _UINT8_(0x07)                                        /* (ADC_INTFLAG) Register Mask  */
 
 
-/* -------- ADC_OFFSETCORR : (ADC Offset: 0x12) (R/W 16) Offset Correction -------- */
-#define ADC_OFFSETCORR_RESETVALUE             _UINT16_(0x00)                                       /*  (ADC_OFFSETCORR) Offset Correction  Reset Value */
-
-#define ADC_OFFSETCORR_OFFSETCORR_Pos         _UINT16_(0)                                          /* (ADC_OFFSETCORR) Offset Correction Value Position */
-#define ADC_OFFSETCORR_OFFSETCORR_Msk         (_UINT16_(0xFFF) << ADC_OFFSETCORR_OFFSETCORR_Pos)   /* (ADC_OFFSETCORR) Offset Correction Value Mask */
-#define ADC_OFFSETCORR_OFFSETCORR(value)      (ADC_OFFSETCORR_OFFSETCORR_Msk & (_UINT16_(value) << ADC_OFFSETCORR_OFFSETCORR_Pos)) /* Assigment of value for OFFSETCORR in the ADC_OFFSETCORR register */
-#define ADC_OFFSETCORR_Msk                    _UINT16_(0x0FFF)                                     /* (ADC_OFFSETCORR) Register Mask  */
-
-
-/* -------- ADC_REFCTRL : (ADC Offset: 0x08) (R/W 8) Reference Control -------- */
-#define ADC_REFCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (ADC_REFCTRL) Reference Control  Reset Value */
-
-#define ADC_REFCTRL_REFSEL_Pos                _UINT8_(0)                                           /* (ADC_REFCTRL) Reference Selection Position */
-#define ADC_REFCTRL_REFSEL_Msk                (_UINT8_(0xF) << ADC_REFCTRL_REFSEL_Pos)             /* (ADC_REFCTRL) Reference Selection Mask */
-#define ADC_REFCTRL_REFSEL(value)             (ADC_REFCTRL_REFSEL_Msk & (_UINT8_(value) << ADC_REFCTRL_REFSEL_Pos)) /* Assigment of value for REFSEL in the ADC_REFCTRL register */
-#define   ADC_REFCTRL_REFSEL_INTREF_Val       _UINT8_(0x0)                                         /* (ADC_REFCTRL) Internal Bandgap Reference  */
-#define   ADC_REFCTRL_REFSEL_INTVCC0_Val      _UINT8_(0x2)                                         /* (ADC_REFCTRL) 1/2 AVDD  */
-#define   ADC_REFCTRL_REFSEL_INTVCC1_Val      _UINT8_(0x3)                                         /* (ADC_REFCTRL) AVDD  */
-#define   ADC_REFCTRL_REFSEL_AREFA_Val        _UINT8_(0x4)                                         /* (ADC_REFCTRL) External Reference A  */
-#define   ADC_REFCTRL_REFSEL_AREFB_Val        _UINT8_(0x5)                                         /* (ADC_REFCTRL) External Reference B  */
-#define   ADC_REFCTRL_REFSEL_AREFC_Val        _UINT8_(0x6)                                         /* (ADC_REFCTRL) External Reference C (only on ADC1)  */
-#define ADC_REFCTRL_REFSEL_INTREF             (ADC_REFCTRL_REFSEL_INTREF_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) Internal Bandgap Reference Position  */
-#define ADC_REFCTRL_REFSEL_INTVCC0            (ADC_REFCTRL_REFSEL_INTVCC0_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) 1/2 AVDD Position  */
-#define ADC_REFCTRL_REFSEL_INTVCC1            (ADC_REFCTRL_REFSEL_INTVCC1_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) AVDD Position  */
-#define ADC_REFCTRL_REFSEL_AREFA              (ADC_REFCTRL_REFSEL_AREFA_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External Reference A Position  */
-#define ADC_REFCTRL_REFSEL_AREFB              (ADC_REFCTRL_REFSEL_AREFB_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External Reference B Position  */
-#define ADC_REFCTRL_REFSEL_AREFC              (ADC_REFCTRL_REFSEL_AREFC_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External Reference C (only on ADC1) Position  */
-#define ADC_REFCTRL_REFCOMP_Pos               _UINT8_(7)                                           /* (ADC_REFCTRL) Reference Buffer Offset Compensation Enable Position */
-#define ADC_REFCTRL_REFCOMP_Msk               (_UINT8_(0x1) << ADC_REFCTRL_REFCOMP_Pos)            /* (ADC_REFCTRL) Reference Buffer Offset Compensation Enable Mask */
-#define ADC_REFCTRL_REFCOMP(value)            (ADC_REFCTRL_REFCOMP_Msk & (_UINT8_(value) << ADC_REFCTRL_REFCOMP_Pos)) /* Assigment of value for REFCOMP in the ADC_REFCTRL register */
-#define ADC_REFCTRL_Msk                       _UINT8_(0x8F)                                        /* (ADC_REFCTRL) Register Mask  */
-
-
-/* -------- ADC_RESS : (ADC Offset: 0x44) ( R/ 16) Last Sample Result -------- */
-#define ADC_RESS_RESETVALUE                   _UINT16_(0x00)                                       /*  (ADC_RESS) Last Sample Result  Reset Value */
-
-#define ADC_RESS_RESS_Pos                     _UINT16_(0)                                          /* (ADC_RESS) Last ADC conversion result Position */
-#define ADC_RESS_RESS_Msk                     (_UINT16_(0xFFFF) << ADC_RESS_RESS_Pos)              /* (ADC_RESS) Last ADC conversion result Mask */
-#define ADC_RESS_RESS(value)                  (ADC_RESS_RESS_Msk & (_UINT16_(value) << ADC_RESS_RESS_Pos)) /* Assigment of value for RESS in the ADC_RESS register */
-#define ADC_RESS_Msk                          _UINT16_(0xFFFF)                                     /* (ADC_RESS) Register Mask  */
-
-
-/* -------- ADC_RESULT : (ADC Offset: 0x40) ( R/ 16) Result Conversion Value -------- */
-#define ADC_RESULT_RESETVALUE                 _UINT16_(0x00)                                       /*  (ADC_RESULT) Result Conversion Value  Reset Value */
-
-#define ADC_RESULT_RESULT_Pos                 _UINT16_(0)                                          /* (ADC_RESULT) Result Conversion Value Position */
-#define ADC_RESULT_RESULT_Msk                 (_UINT16_(0xFFFF) << ADC_RESULT_RESULT_Pos)          /* (ADC_RESULT) Result Conversion Value Mask */
-#define ADC_RESULT_RESULT(value)              (ADC_RESULT_RESULT_Msk & (_UINT16_(value) << ADC_RESULT_RESULT_Pos)) /* Assigment of value for RESULT in the ADC_RESULT register */
-#define ADC_RESULT_Msk                        _UINT16_(0xFFFF)                                     /* (ADC_RESULT) Register Mask  */
-
-
-/* -------- ADC_SAMPCTRL : (ADC Offset: 0x0B) (R/W 8) Sample Time Control -------- */
-#define ADC_SAMPCTRL_RESETVALUE               _UINT8_(0x00)                                        /*  (ADC_SAMPCTRL) Sample Time Control  Reset Value */
-
-#define ADC_SAMPCTRL_SAMPLEN_Pos              _UINT8_(0)                                           /* (ADC_SAMPCTRL) Sampling Time Length Position */
-#define ADC_SAMPCTRL_SAMPLEN_Msk              (_UINT8_(0x3F) << ADC_SAMPCTRL_SAMPLEN_Pos)          /* (ADC_SAMPCTRL) Sampling Time Length Mask */
-#define ADC_SAMPCTRL_SAMPLEN(value)           (ADC_SAMPCTRL_SAMPLEN_Msk & (_UINT8_(value) << ADC_SAMPCTRL_SAMPLEN_Pos)) /* Assigment of value for SAMPLEN in the ADC_SAMPCTRL register */
-#define ADC_SAMPCTRL_OFFCOMP_Pos              _UINT8_(7)                                           /* (ADC_SAMPCTRL) Comparator Offset Compensation Enable Position */
-#define ADC_SAMPCTRL_OFFCOMP_Msk              (_UINT8_(0x1) << ADC_SAMPCTRL_OFFCOMP_Pos)           /* (ADC_SAMPCTRL) Comparator Offset Compensation Enable Mask */
-#define ADC_SAMPCTRL_OFFCOMP(value)           (ADC_SAMPCTRL_OFFCOMP_Msk & (_UINT8_(value) << ADC_SAMPCTRL_OFFCOMP_Pos)) /* Assigment of value for OFFCOMP in the ADC_SAMPCTRL register */
-#define ADC_SAMPCTRL_Msk                      _UINT8_(0xBF)                                        /* (ADC_SAMPCTRL) Register Mask  */
-
-
 /* -------- ADC_STATUS : (ADC Offset: 0x2F) ( R/ 8) Status -------- */
 #define ADC_STATUS_RESETVALUE                 _UINT8_(0x00)                                        /*  (ADC_STATUS) Status  Reset Value */
 
@@ -488,18 +404,6 @@
 #define ADC_STATUS_WCC_Msk                    (_UINT8_(0x3F) << ADC_STATUS_WCC_Pos)                /* (ADC_STATUS) Window Comparator Counter Mask */
 #define ADC_STATUS_WCC(value)                 (ADC_STATUS_WCC_Msk & (_UINT8_(value) << ADC_STATUS_WCC_Pos)) /* Assigment of value for WCC in the ADC_STATUS register */
 #define ADC_STATUS_Msk                        _UINT8_(0xFD)                                        /* (ADC_STATUS) Register Mask  */
-
-
-/* -------- ADC_SWTRIG : (ADC Offset: 0x14) (R/W 8) Software Trigger -------- */
-#define ADC_SWTRIG_RESETVALUE                 _UINT8_(0x00)                                        /*  (ADC_SWTRIG) Software Trigger  Reset Value */
-
-#define ADC_SWTRIG_FLUSH_Pos                  _UINT8_(0)                                           /* (ADC_SWTRIG) ADC Conversion Flush Position */
-#define ADC_SWTRIG_FLUSH_Msk                  (_UINT8_(0x1) << ADC_SWTRIG_FLUSH_Pos)               /* (ADC_SWTRIG) ADC Conversion Flush Mask */
-#define ADC_SWTRIG_FLUSH(value)               (ADC_SWTRIG_FLUSH_Msk & (_UINT8_(value) << ADC_SWTRIG_FLUSH_Pos)) /* Assigment of value for FLUSH in the ADC_SWTRIG register */
-#define ADC_SWTRIG_START_Pos                  _UINT8_(1)                                           /* (ADC_SWTRIG) Start ADC Conversion Position */
-#define ADC_SWTRIG_START_Msk                  (_UINT8_(0x1) << ADC_SWTRIG_START_Pos)               /* (ADC_SWTRIG) Start ADC Conversion Mask */
-#define ADC_SWTRIG_START(value)               (ADC_SWTRIG_START_Msk & (_UINT8_(value) << ADC_SWTRIG_START_Pos)) /* Assigment of value for START in the ADC_SWTRIG register */
-#define ADC_SWTRIG_Msk                        _UINT8_(0x03)                                        /* (ADC_SWTRIG) Register Mask  */
 
 
 /* -------- ADC_SYNCBUSY : (ADC Offset: 0x30) ( R/ 32) Synchronization Busy -------- */
@@ -544,49 +448,145 @@
 #define ADC_SYNCBUSY_Msk                      _UINT32_(0x00000FFF)                                 /* (ADC_SYNCBUSY) Register Mask  */
 
 
-/* -------- ADC_WINLT : (ADC Offset: 0x0C) (R/W 16) Window Monitor Lower Threshold -------- */
-#define ADC_WINLT_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_WINLT) Window Monitor Lower Threshold  Reset Value */
+/* -------- ADC_DSEQDATA : (ADC Offset: 0x34) ( /W 32) DMA Sequencial Data -------- */
+#define ADC_DSEQDATA_RESETVALUE               _UINT32_(0x00)                                       /*  (ADC_DSEQDATA) DMA Sequencial Data  Reset Value */
 
-#define ADC_WINLT_WINLT_Pos                   _UINT16_(0)                                          /* (ADC_WINLT) Window Lower Threshold Position */
-#define ADC_WINLT_WINLT_Msk                   (_UINT16_(0xFFFF) << ADC_WINLT_WINLT_Pos)            /* (ADC_WINLT) Window Lower Threshold Mask */
-#define ADC_WINLT_WINLT(value)                (ADC_WINLT_WINLT_Msk & (_UINT16_(value) << ADC_WINLT_WINLT_Pos)) /* Assigment of value for WINLT in the ADC_WINLT register */
-#define ADC_WINLT_Msk                         _UINT16_(0xFFFF)                                     /* (ADC_WINLT) Register Mask  */
+#define ADC_DSEQDATA_DATA_Pos                 _UINT32_(0)                                          /* (ADC_DSEQDATA) DMA Sequential Data Position */
+#define ADC_DSEQDATA_DATA_Msk                 (_UINT32_(0xFFFFFFFF) << ADC_DSEQDATA_DATA_Pos)      /* (ADC_DSEQDATA) DMA Sequential Data Mask */
+#define ADC_DSEQDATA_DATA(value)              (ADC_DSEQDATA_DATA_Msk & (_UINT32_(value) << ADC_DSEQDATA_DATA_Pos)) /* Assigment of value for DATA in the ADC_DSEQDATA register */
+#define ADC_DSEQDATA_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (ADC_DSEQDATA) Register Mask  */
 
 
-/* -------- ADC_WINUT : (ADC Offset: 0x0E) (R/W 16) Window Monitor Upper Threshold -------- */
-#define ADC_WINUT_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_WINUT) Window Monitor Upper Threshold  Reset Value */
+/* -------- ADC_DSEQCTRL : (ADC Offset: 0x38) (R/W 32) DMA Sequential Control -------- */
+#define ADC_DSEQCTRL_RESETVALUE               _UINT32_(0x00)                                       /*  (ADC_DSEQCTRL) DMA Sequential Control  Reset Value */
 
-#define ADC_WINUT_WINUT_Pos                   _UINT16_(0)                                          /* (ADC_WINUT) Window Upper Threshold Position */
-#define ADC_WINUT_WINUT_Msk                   (_UINT16_(0xFFFF) << ADC_WINUT_WINUT_Pos)            /* (ADC_WINUT) Window Upper Threshold Mask */
-#define ADC_WINUT_WINUT(value)                (ADC_WINUT_WINUT_Msk & (_UINT16_(value) << ADC_WINUT_WINUT_Pos)) /* Assigment of value for WINUT in the ADC_WINUT register */
-#define ADC_WINUT_Msk                         _UINT16_(0xFFFF)                                     /* (ADC_WINUT) Register Mask  */
+#define ADC_DSEQCTRL_INPUTCTRL_Pos            _UINT32_(0)                                          /* (ADC_DSEQCTRL) Input Control Position */
+#define ADC_DSEQCTRL_INPUTCTRL_Msk            (_UINT32_(0x1) << ADC_DSEQCTRL_INPUTCTRL_Pos)        /* (ADC_DSEQCTRL) Input Control Mask */
+#define ADC_DSEQCTRL_INPUTCTRL(value)         (ADC_DSEQCTRL_INPUTCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_INPUTCTRL_Pos)) /* Assigment of value for INPUTCTRL in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_CTRLB_Pos                _UINT32_(1)                                          /* (ADC_DSEQCTRL) Control B Position */
+#define ADC_DSEQCTRL_CTRLB_Msk                (_UINT32_(0x1) << ADC_DSEQCTRL_CTRLB_Pos)            /* (ADC_DSEQCTRL) Control B Mask */
+#define ADC_DSEQCTRL_CTRLB(value)             (ADC_DSEQCTRL_CTRLB_Msk & (_UINT32_(value) << ADC_DSEQCTRL_CTRLB_Pos)) /* Assigment of value for CTRLB in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_REFCTRL_Pos              _UINT32_(2)                                          /* (ADC_DSEQCTRL) Reference Control Position */
+#define ADC_DSEQCTRL_REFCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQCTRL_REFCTRL_Pos)          /* (ADC_DSEQCTRL) Reference Control Mask */
+#define ADC_DSEQCTRL_REFCTRL(value)           (ADC_DSEQCTRL_REFCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_REFCTRL_Pos)) /* Assigment of value for REFCTRL in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_AVGCTRL_Pos              _UINT32_(3)                                          /* (ADC_DSEQCTRL) Average Control Position */
+#define ADC_DSEQCTRL_AVGCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQCTRL_AVGCTRL_Pos)          /* (ADC_DSEQCTRL) Average Control Mask */
+#define ADC_DSEQCTRL_AVGCTRL(value)           (ADC_DSEQCTRL_AVGCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_AVGCTRL_Pos)) /* Assigment of value for AVGCTRL in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_SAMPCTRL_Pos             _UINT32_(4)                                          /* (ADC_DSEQCTRL) Sampling Time Control Position */
+#define ADC_DSEQCTRL_SAMPCTRL_Msk             (_UINT32_(0x1) << ADC_DSEQCTRL_SAMPCTRL_Pos)         /* (ADC_DSEQCTRL) Sampling Time Control Mask */
+#define ADC_DSEQCTRL_SAMPCTRL(value)          (ADC_DSEQCTRL_SAMPCTRL_Msk & (_UINT32_(value) << ADC_DSEQCTRL_SAMPCTRL_Pos)) /* Assigment of value for SAMPCTRL in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_WINLT_Pos                _UINT32_(5)                                          /* (ADC_DSEQCTRL) Window Monitor Lower Threshold Position */
+#define ADC_DSEQCTRL_WINLT_Msk                (_UINT32_(0x1) << ADC_DSEQCTRL_WINLT_Pos)            /* (ADC_DSEQCTRL) Window Monitor Lower Threshold Mask */
+#define ADC_DSEQCTRL_WINLT(value)             (ADC_DSEQCTRL_WINLT_Msk & (_UINT32_(value) << ADC_DSEQCTRL_WINLT_Pos)) /* Assigment of value for WINLT in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_WINUT_Pos                _UINT32_(6)                                          /* (ADC_DSEQCTRL) Window Monitor Upper Threshold Position */
+#define ADC_DSEQCTRL_WINUT_Msk                (_UINT32_(0x1) << ADC_DSEQCTRL_WINUT_Pos)            /* (ADC_DSEQCTRL) Window Monitor Upper Threshold Mask */
+#define ADC_DSEQCTRL_WINUT(value)             (ADC_DSEQCTRL_WINUT_Msk & (_UINT32_(value) << ADC_DSEQCTRL_WINUT_Pos)) /* Assigment of value for WINUT in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_GAINCORR_Pos             _UINT32_(7)                                          /* (ADC_DSEQCTRL) Gain Correction Position */
+#define ADC_DSEQCTRL_GAINCORR_Msk             (_UINT32_(0x1) << ADC_DSEQCTRL_GAINCORR_Pos)         /* (ADC_DSEQCTRL) Gain Correction Mask */
+#define ADC_DSEQCTRL_GAINCORR(value)          (ADC_DSEQCTRL_GAINCORR_Msk & (_UINT32_(value) << ADC_DSEQCTRL_GAINCORR_Pos)) /* Assigment of value for GAINCORR in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_OFFSETCORR_Pos           _UINT32_(8)                                          /* (ADC_DSEQCTRL) Offset Correction Position */
+#define ADC_DSEQCTRL_OFFSETCORR_Msk           (_UINT32_(0x1) << ADC_DSEQCTRL_OFFSETCORR_Pos)       /* (ADC_DSEQCTRL) Offset Correction Mask */
+#define ADC_DSEQCTRL_OFFSETCORR(value)        (ADC_DSEQCTRL_OFFSETCORR_Msk & (_UINT32_(value) << ADC_DSEQCTRL_OFFSETCORR_Pos)) /* Assigment of value for OFFSETCORR in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_AUTOSTART_Pos            _UINT32_(31)                                         /* (ADC_DSEQCTRL) ADC Auto-Start Conversion Position */
+#define ADC_DSEQCTRL_AUTOSTART_Msk            (_UINT32_(0x1) << ADC_DSEQCTRL_AUTOSTART_Pos)        /* (ADC_DSEQCTRL) ADC Auto-Start Conversion Mask */
+#define ADC_DSEQCTRL_AUTOSTART(value)         (ADC_DSEQCTRL_AUTOSTART_Msk & (_UINT32_(value) << ADC_DSEQCTRL_AUTOSTART_Pos)) /* Assigment of value for AUTOSTART in the ADC_DSEQCTRL register */
+#define ADC_DSEQCTRL_Msk                      _UINT32_(0x800001FF)                                 /* (ADC_DSEQCTRL) Register Mask  */
+
+
+/* -------- ADC_DSEQSTAT : (ADC Offset: 0x3C) ( R/ 32) DMA Sequencial Status -------- */
+#define ADC_DSEQSTAT_RESETVALUE               _UINT32_(0x00)                                       /*  (ADC_DSEQSTAT) DMA Sequencial Status  Reset Value */
+
+#define ADC_DSEQSTAT_INPUTCTRL_Pos            _UINT32_(0)                                          /* (ADC_DSEQSTAT) Input Control Position */
+#define ADC_DSEQSTAT_INPUTCTRL_Msk            (_UINT32_(0x1) << ADC_DSEQSTAT_INPUTCTRL_Pos)        /* (ADC_DSEQSTAT) Input Control Mask */
+#define ADC_DSEQSTAT_INPUTCTRL(value)         (ADC_DSEQSTAT_INPUTCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_INPUTCTRL_Pos)) /* Assigment of value for INPUTCTRL in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_CTRLB_Pos                _UINT32_(1)                                          /* (ADC_DSEQSTAT) Control B Position */
+#define ADC_DSEQSTAT_CTRLB_Msk                (_UINT32_(0x1) << ADC_DSEQSTAT_CTRLB_Pos)            /* (ADC_DSEQSTAT) Control B Mask */
+#define ADC_DSEQSTAT_CTRLB(value)             (ADC_DSEQSTAT_CTRLB_Msk & (_UINT32_(value) << ADC_DSEQSTAT_CTRLB_Pos)) /* Assigment of value for CTRLB in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_REFCTRL_Pos              _UINT32_(2)                                          /* (ADC_DSEQSTAT) Reference Control Position */
+#define ADC_DSEQSTAT_REFCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQSTAT_REFCTRL_Pos)          /* (ADC_DSEQSTAT) Reference Control Mask */
+#define ADC_DSEQSTAT_REFCTRL(value)           (ADC_DSEQSTAT_REFCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_REFCTRL_Pos)) /* Assigment of value for REFCTRL in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_AVGCTRL_Pos              _UINT32_(3)                                          /* (ADC_DSEQSTAT) Average Control Position */
+#define ADC_DSEQSTAT_AVGCTRL_Msk              (_UINT32_(0x1) << ADC_DSEQSTAT_AVGCTRL_Pos)          /* (ADC_DSEQSTAT) Average Control Mask */
+#define ADC_DSEQSTAT_AVGCTRL(value)           (ADC_DSEQSTAT_AVGCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_AVGCTRL_Pos)) /* Assigment of value for AVGCTRL in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_SAMPCTRL_Pos             _UINT32_(4)                                          /* (ADC_DSEQSTAT) Sampling Time Control Position */
+#define ADC_DSEQSTAT_SAMPCTRL_Msk             (_UINT32_(0x1) << ADC_DSEQSTAT_SAMPCTRL_Pos)         /* (ADC_DSEQSTAT) Sampling Time Control Mask */
+#define ADC_DSEQSTAT_SAMPCTRL(value)          (ADC_DSEQSTAT_SAMPCTRL_Msk & (_UINT32_(value) << ADC_DSEQSTAT_SAMPCTRL_Pos)) /* Assigment of value for SAMPCTRL in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_WINLT_Pos                _UINT32_(5)                                          /* (ADC_DSEQSTAT) Window Monitor Lower Threshold Position */
+#define ADC_DSEQSTAT_WINLT_Msk                (_UINT32_(0x1) << ADC_DSEQSTAT_WINLT_Pos)            /* (ADC_DSEQSTAT) Window Monitor Lower Threshold Mask */
+#define ADC_DSEQSTAT_WINLT(value)             (ADC_DSEQSTAT_WINLT_Msk & (_UINT32_(value) << ADC_DSEQSTAT_WINLT_Pos)) /* Assigment of value for WINLT in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_WINUT_Pos                _UINT32_(6)                                          /* (ADC_DSEQSTAT) Window Monitor Upper Threshold Position */
+#define ADC_DSEQSTAT_WINUT_Msk                (_UINT32_(0x1) << ADC_DSEQSTAT_WINUT_Pos)            /* (ADC_DSEQSTAT) Window Monitor Upper Threshold Mask */
+#define ADC_DSEQSTAT_WINUT(value)             (ADC_DSEQSTAT_WINUT_Msk & (_UINT32_(value) << ADC_DSEQSTAT_WINUT_Pos)) /* Assigment of value for WINUT in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_GAINCORR_Pos             _UINT32_(7)                                          /* (ADC_DSEQSTAT) Gain Correction Position */
+#define ADC_DSEQSTAT_GAINCORR_Msk             (_UINT32_(0x1) << ADC_DSEQSTAT_GAINCORR_Pos)         /* (ADC_DSEQSTAT) Gain Correction Mask */
+#define ADC_DSEQSTAT_GAINCORR(value)          (ADC_DSEQSTAT_GAINCORR_Msk & (_UINT32_(value) << ADC_DSEQSTAT_GAINCORR_Pos)) /* Assigment of value for GAINCORR in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_OFFSETCORR_Pos           _UINT32_(8)                                          /* (ADC_DSEQSTAT) Offset Correction Position */
+#define ADC_DSEQSTAT_OFFSETCORR_Msk           (_UINT32_(0x1) << ADC_DSEQSTAT_OFFSETCORR_Pos)       /* (ADC_DSEQSTAT) Offset Correction Mask */
+#define ADC_DSEQSTAT_OFFSETCORR(value)        (ADC_DSEQSTAT_OFFSETCORR_Msk & (_UINT32_(value) << ADC_DSEQSTAT_OFFSETCORR_Pos)) /* Assigment of value for OFFSETCORR in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_BUSY_Pos                 _UINT32_(31)                                         /* (ADC_DSEQSTAT) DMA Sequencing Busy Position */
+#define ADC_DSEQSTAT_BUSY_Msk                 (_UINT32_(0x1) << ADC_DSEQSTAT_BUSY_Pos)             /* (ADC_DSEQSTAT) DMA Sequencing Busy Mask */
+#define ADC_DSEQSTAT_BUSY(value)              (ADC_DSEQSTAT_BUSY_Msk & (_UINT32_(value) << ADC_DSEQSTAT_BUSY_Pos)) /* Assigment of value for BUSY in the ADC_DSEQSTAT register */
+#define ADC_DSEQSTAT_Msk                      _UINT32_(0x800001FF)                                 /* (ADC_DSEQSTAT) Register Mask  */
+
+
+/* -------- ADC_RESULT : (ADC Offset: 0x40) ( R/ 16) Result Conversion Value -------- */
+#define ADC_RESULT_RESETVALUE                 _UINT16_(0x00)                                       /*  (ADC_RESULT) Result Conversion Value  Reset Value */
+
+#define ADC_RESULT_RESULT_Pos                 _UINT16_(0)                                          /* (ADC_RESULT) Result Conversion Value Position */
+#define ADC_RESULT_RESULT_Msk                 (_UINT16_(0xFFFF) << ADC_RESULT_RESULT_Pos)          /* (ADC_RESULT) Result Conversion Value Mask */
+#define ADC_RESULT_RESULT(value)              (ADC_RESULT_RESULT_Msk & (_UINT16_(value) << ADC_RESULT_RESULT_Pos)) /* Assigment of value for RESULT in the ADC_RESULT register */
+#define ADC_RESULT_Msk                        _UINT16_(0xFFFF)                                     /* (ADC_RESULT) Register Mask  */
+
+
+/* -------- ADC_RESS : (ADC Offset: 0x44) ( R/ 16) Last Sample Result -------- */
+#define ADC_RESS_RESETVALUE                   _UINT16_(0x00)                                       /*  (ADC_RESS) Last Sample Result  Reset Value */
+
+#define ADC_RESS_RESS_Pos                     _UINT16_(0)                                          /* (ADC_RESS) Last ADC conversion result Position */
+#define ADC_RESS_RESS_Msk                     (_UINT16_(0xFFFF) << ADC_RESS_RESS_Pos)              /* (ADC_RESS) Last ADC conversion result Mask */
+#define ADC_RESS_RESS(value)                  (ADC_RESS_RESS_Msk & (_UINT16_(value) << ADC_RESS_RESS_Pos)) /* Assigment of value for RESS in the ADC_RESS register */
+#define ADC_RESS_Msk                          _UINT16_(0xFFFF)                                     /* (ADC_RESS) Register Mask  */
+
+
+/* -------- ADC_CALIB : (ADC Offset: 0x48) (R/W 16) Calibration -------- */
+#define ADC_CALIB_RESETVALUE                  _UINT16_(0x00)                                       /*  (ADC_CALIB) Calibration  Reset Value */
+
+#define ADC_CALIB_BIASCOMP_Pos                _UINT16_(0)                                          /* (ADC_CALIB) Bias Comparator Scaling Position */
+#define ADC_CALIB_BIASCOMP_Msk                (_UINT16_(0x7) << ADC_CALIB_BIASCOMP_Pos)            /* (ADC_CALIB) Bias Comparator Scaling Mask */
+#define ADC_CALIB_BIASCOMP(value)             (ADC_CALIB_BIASCOMP_Msk & (_UINT16_(value) << ADC_CALIB_BIASCOMP_Pos)) /* Assigment of value for BIASCOMP in the ADC_CALIB register */
+#define ADC_CALIB_BIASR2R_Pos                 _UINT16_(4)                                          /* (ADC_CALIB) Bias R2R Ampli scaling Position */
+#define ADC_CALIB_BIASR2R_Msk                 (_UINT16_(0x7) << ADC_CALIB_BIASR2R_Pos)             /* (ADC_CALIB) Bias R2R Ampli scaling Mask */
+#define ADC_CALIB_BIASR2R(value)              (ADC_CALIB_BIASR2R_Msk & (_UINT16_(value) << ADC_CALIB_BIASR2R_Pos)) /* Assigment of value for BIASR2R in the ADC_CALIB register */
+#define ADC_CALIB_BIASREFBUF_Pos              _UINT16_(8)                                          /* (ADC_CALIB) Bias  Reference Buffer Scaling Position */
+#define ADC_CALIB_BIASREFBUF_Msk              (_UINT16_(0x7) << ADC_CALIB_BIASREFBUF_Pos)          /* (ADC_CALIB) Bias  Reference Buffer Scaling Mask */
+#define ADC_CALIB_BIASREFBUF(value)           (ADC_CALIB_BIASREFBUF_Msk & (_UINT16_(value) << ADC_CALIB_BIASREFBUF_Pos)) /* Assigment of value for BIASREFBUF in the ADC_CALIB register */
+#define ADC_CALIB_Msk                         _UINT16_(0x0777)                                     /* (ADC_CALIB) Register Mask  */
 
 
 /** \brief ADC register offsets definitions */
-#define ADC_AVGCTRL_REG_OFST           _UINT32_(0x0A)      /* (ADC_AVGCTRL) Average Control Offset */
-#define ADC_CALIB_REG_OFST             _UINT32_(0x48)      /* (ADC_CALIB) Calibration Offset */
 #define ADC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (ADC_CTRLA) Control A Offset */
-#define ADC_CTRLB_REG_OFST             _UINT32_(0x06)      /* (ADC_CTRLB) Control B Offset */
-#define ADC_DBGCTRL_REG_OFST           _UINT32_(0x03)      /* (ADC_DBGCTRL) Debug Control Offset */
-#define ADC_DSEQCTRL_REG_OFST          _UINT32_(0x38)      /* (ADC_DSEQCTRL) DMA Sequential Control Offset */
-#define ADC_DSEQDATA_REG_OFST          _UINT32_(0x34)      /* (ADC_DSEQDATA) DMA Sequencial Data Offset */
-#define ADC_DSEQSTAT_REG_OFST          _UINT32_(0x3C)      /* (ADC_DSEQSTAT) DMA Sequencial Status Offset */
 #define ADC_EVCTRL_REG_OFST            _UINT32_(0x02)      /* (ADC_EVCTRL) Event Control Offset */
-#define ADC_GAINCORR_REG_OFST          _UINT32_(0x10)      /* (ADC_GAINCORR) Gain Correction Offset */
+#define ADC_DBGCTRL_REG_OFST           _UINT32_(0x03)      /* (ADC_DBGCTRL) Debug Control Offset */
 #define ADC_INPUTCTRL_REG_OFST         _UINT32_(0x04)      /* (ADC_INPUTCTRL) Input Control Offset */
+#define ADC_CTRLB_REG_OFST             _UINT32_(0x06)      /* (ADC_CTRLB) Control B Offset */
+#define ADC_REFCTRL_REG_OFST           _UINT32_(0x08)      /* (ADC_REFCTRL) Reference Control Offset */
+#define ADC_AVGCTRL_REG_OFST           _UINT32_(0x0A)      /* (ADC_AVGCTRL) Average Control Offset */
+#define ADC_SAMPCTRL_REG_OFST          _UINT32_(0x0B)      /* (ADC_SAMPCTRL) Sample Time Control Offset */
+#define ADC_WINLT_REG_OFST             _UINT32_(0x0C)      /* (ADC_WINLT) Window Monitor Lower Threshold Offset */
+#define ADC_WINUT_REG_OFST             _UINT32_(0x0E)      /* (ADC_WINUT) Window Monitor Upper Threshold Offset */
+#define ADC_GAINCORR_REG_OFST          _UINT32_(0x10)      /* (ADC_GAINCORR) Gain Correction Offset */
+#define ADC_OFFSETCORR_REG_OFST        _UINT32_(0x12)      /* (ADC_OFFSETCORR) Offset Correction Offset */
+#define ADC_SWTRIG_REG_OFST            _UINT32_(0x14)      /* (ADC_SWTRIG) Software Trigger Offset */
 #define ADC_INTENCLR_REG_OFST          _UINT32_(0x2C)      /* (ADC_INTENCLR) Interrupt Enable Clear Offset */
 #define ADC_INTENSET_REG_OFST          _UINT32_(0x2D)      /* (ADC_INTENSET) Interrupt Enable Set Offset */
 #define ADC_INTFLAG_REG_OFST           _UINT32_(0x2E)      /* (ADC_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define ADC_OFFSETCORR_REG_OFST        _UINT32_(0x12)      /* (ADC_OFFSETCORR) Offset Correction Offset */
-#define ADC_REFCTRL_REG_OFST           _UINT32_(0x08)      /* (ADC_REFCTRL) Reference Control Offset */
-#define ADC_RESS_REG_OFST              _UINT32_(0x44)      /* (ADC_RESS) Last Sample Result Offset */
-#define ADC_RESULT_REG_OFST            _UINT32_(0x40)      /* (ADC_RESULT) Result Conversion Value Offset */
-#define ADC_SAMPCTRL_REG_OFST          _UINT32_(0x0B)      /* (ADC_SAMPCTRL) Sample Time Control Offset */
 #define ADC_STATUS_REG_OFST            _UINT32_(0x2F)      /* (ADC_STATUS) Status Offset */
-#define ADC_SWTRIG_REG_OFST            _UINT32_(0x14)      /* (ADC_SWTRIG) Software Trigger Offset */
 #define ADC_SYNCBUSY_REG_OFST          _UINT32_(0x30)      /* (ADC_SYNCBUSY) Synchronization Busy Offset */
-#define ADC_WINLT_REG_OFST             _UINT32_(0x0C)      /* (ADC_WINLT) Window Monitor Lower Threshold Offset */
-#define ADC_WINUT_REG_OFST             _UINT32_(0x0E)      /* (ADC_WINUT) Window Monitor Upper Threshold Offset */
+#define ADC_DSEQDATA_REG_OFST          _UINT32_(0x34)      /* (ADC_DSEQDATA) DMA Sequencial Data Offset */
+#define ADC_DSEQCTRL_REG_OFST          _UINT32_(0x38)      /* (ADC_DSEQCTRL) DMA Sequential Control Offset */
+#define ADC_DSEQSTAT_REG_OFST          _UINT32_(0x3C)      /* (ADC_DSEQSTAT) DMA Sequencial Status Offset */
+#define ADC_RESULT_REG_OFST            _UINT32_(0x40)      /* (ADC_RESULT) Result Conversion Value Offset */
+#define ADC_RESS_REG_OFST              _UINT32_(0x44)      /* (ADC_RESS) Last Sample Result Offset */
+#define ADC_CALIB_REG_OFST             _UINT32_(0x48)      /* (ADC_CALIB) Calibration Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief ADC register API structure */

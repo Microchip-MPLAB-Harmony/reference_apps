@@ -1,7 +1,7 @@
 /*
  * Component description for AES
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,22 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_AES_COMPONENT_H_
 #define _PIC32CXSG41_AES_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR AES                                          */
 /* ************************************************************************** */
-
-/* -------- AES_CIPLEN : (AES Offset: 0x80) (R/W 32) Cipher Length -------- */
-#define AES_CIPLEN_RESETVALUE                 _UINT32_(0x00)                                       /*  (AES_CIPLEN) Cipher Length  Reset Value */
-
-#define AES_CIPLEN_CIPLEN_Pos                 _UINT32_(0)                                          /* (AES_CIPLEN) Cipher Length Position */
-#define AES_CIPLEN_CIPLEN_Msk                 (_UINT32_(0xFFFFFFFF) << AES_CIPLEN_CIPLEN_Pos)      /* (AES_CIPLEN) Cipher Length Mask */
-#define AES_CIPLEN_CIPLEN(value)              (AES_CIPLEN_CIPLEN_Msk & (_UINT32_(value) << AES_CIPLEN_CIPLEN_Pos)) /* Assigment of value for CIPLEN in the AES_CIPLEN register */
-#define AES_CIPLEN_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_CIPLEN) Register Mask  */
-
 
 /* -------- AES_CTRLA : (AES Offset: 0x00) (R/W 32) Control A -------- */
 #define AES_CTRLA_RESETVALUE                  _UINT32_(0x00)                                       /*  (AES_CTRLA) Control A  Reset Value */
@@ -144,51 +135,6 @@
 #define AES_CTRLB_Msk                         _UINT8_(0x0F)                                        /* (AES_CTRLB) Register Mask  */
 
 
-/* -------- AES_DATABUFPTR : (AES Offset: 0x08) (R/W 8) Data buffer pointer -------- */
-#define AES_DATABUFPTR_RESETVALUE             _UINT8_(0x00)                                        /*  (AES_DATABUFPTR) Data buffer pointer  Reset Value */
-
-#define AES_DATABUFPTR_INDATAPTR_Pos          _UINT8_(0)                                           /* (AES_DATABUFPTR) Input Data Pointer Position */
-#define AES_DATABUFPTR_INDATAPTR_Msk          (_UINT8_(0x3) << AES_DATABUFPTR_INDATAPTR_Pos)       /* (AES_DATABUFPTR) Input Data Pointer Mask */
-#define AES_DATABUFPTR_INDATAPTR(value)       (AES_DATABUFPTR_INDATAPTR_Msk & (_UINT8_(value) << AES_DATABUFPTR_INDATAPTR_Pos)) /* Assigment of value for INDATAPTR in the AES_DATABUFPTR register */
-#define AES_DATABUFPTR_Msk                    _UINT8_(0x03)                                        /* (AES_DATABUFPTR) Register Mask  */
-
-
-/* -------- AES_DBGCTRL : (AES Offset: 0x09) (R/W 8) Debug control -------- */
-#define AES_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (AES_DBGCTRL) Debug control  Reset Value */
-
-#define AES_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (AES_DBGCTRL) Debug Run Position */
-#define AES_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << AES_DBGCTRL_DBGRUN_Pos)             /* (AES_DBGCTRL) Debug Run Mask */
-#define AES_DBGCTRL_DBGRUN(value)             (AES_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << AES_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the AES_DBGCTRL register */
-#define AES_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (AES_DBGCTRL) Register Mask  */
-
-
-/* -------- AES_GHASH : (AES Offset: 0x6C) (R/W 32) Galois Hash n -------- */
-#define AES_GHASH_RESETVALUE                  _UINT32_(0x00)                                       /*  (AES_GHASH) Galois Hash n  Reset Value */
-
-#define AES_GHASH_GHASH_Pos                   _UINT32_(0)                                          /* (AES_GHASH) Galois Hash Value Position */
-#define AES_GHASH_GHASH_Msk                   (_UINT32_(0xFFFFFFFF) << AES_GHASH_GHASH_Pos)        /* (AES_GHASH) Galois Hash Value Mask */
-#define AES_GHASH_GHASH(value)                (AES_GHASH_GHASH_Msk & (_UINT32_(value) << AES_GHASH_GHASH_Pos)) /* Assigment of value for GHASH in the AES_GHASH register */
-#define AES_GHASH_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_GHASH) Register Mask  */
-
-
-/* -------- AES_HASHKEY : (AES Offset: 0x5C) (R/W 32) Hash key n -------- */
-#define AES_HASHKEY_RESETVALUE                _UINT32_(0x00)                                       /*  (AES_HASHKEY) Hash key n  Reset Value */
-
-#define AES_HASHKEY_HASHKEY_Pos               _UINT32_(0)                                          /* (AES_HASHKEY) Hash Key Value Position */
-#define AES_HASHKEY_HASHKEY_Msk               (_UINT32_(0xFFFFFFFF) << AES_HASHKEY_HASHKEY_Pos)    /* (AES_HASHKEY) Hash Key Value Mask */
-#define AES_HASHKEY_HASHKEY(value)            (AES_HASHKEY_HASHKEY_Msk & (_UINT32_(value) << AES_HASHKEY_HASHKEY_Pos)) /* Assigment of value for HASHKEY in the AES_HASHKEY register */
-#define AES_HASHKEY_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (AES_HASHKEY) Register Mask  */
-
-
-/* -------- AES_INDATA : (AES Offset: 0x38) (R/W 32) Indata -------- */
-#define AES_INDATA_RESETVALUE                 _UINT32_(0x00)                                       /*  (AES_INDATA) Indata  Reset Value */
-
-#define AES_INDATA_INDATA_Pos                 _UINT32_(0)                                          /* (AES_INDATA) Data Value Position */
-#define AES_INDATA_INDATA_Msk                 (_UINT32_(0xFFFFFFFF) << AES_INDATA_INDATA_Pos)      /* (AES_INDATA) Data Value Mask */
-#define AES_INDATA_INDATA(value)              (AES_INDATA_INDATA_Msk & (_UINT32_(value) << AES_INDATA_INDATA_Pos)) /* Assigment of value for INDATA in the AES_INDATA register */
-#define AES_INDATA_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_INDATA) Register Mask  */
-
-
 /* -------- AES_INTENCLR : (AES Offset: 0x05) (R/W 8) Interrupt Enable Clear -------- */
 #define AES_INTENCLR_RESETVALUE               _UINT8_(0x00)                                        /*  (AES_INTENCLR) Interrupt Enable Clear  Reset Value */
 
@@ -225,13 +171,22 @@
 #define AES_INTFLAG_Msk                       _UINT8_(0x03)                                        /* (AES_INTFLAG) Register Mask  */
 
 
-/* -------- AES_INTVECTV : (AES Offset: 0x3C) ( /W 32) Initialisation Vector n -------- */
-#define AES_INTVECTV_RESETVALUE               _UINT32_(0x00)                                       /*  (AES_INTVECTV) Initialisation Vector n  Reset Value */
+/* -------- AES_DATABUFPTR : (AES Offset: 0x08) (R/W 8) Data buffer pointer -------- */
+#define AES_DATABUFPTR_RESETVALUE             _UINT8_(0x00)                                        /*  (AES_DATABUFPTR) Data buffer pointer  Reset Value */
 
-#define AES_INTVECTV_INTVECTV_Pos             _UINT32_(0)                                          /* (AES_INTVECTV) Initialization Vector Value Position */
-#define AES_INTVECTV_INTVECTV_Msk             (_UINT32_(0xFFFFFFFF) << AES_INTVECTV_INTVECTV_Pos)  /* (AES_INTVECTV) Initialization Vector Value Mask */
-#define AES_INTVECTV_INTVECTV(value)          (AES_INTVECTV_INTVECTV_Msk & (_UINT32_(value) << AES_INTVECTV_INTVECTV_Pos)) /* Assigment of value for INTVECTV in the AES_INTVECTV register */
-#define AES_INTVECTV_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (AES_INTVECTV) Register Mask  */
+#define AES_DATABUFPTR_INDATAPTR_Pos          _UINT8_(0)                                           /* (AES_DATABUFPTR) Input Data Pointer Position */
+#define AES_DATABUFPTR_INDATAPTR_Msk          (_UINT8_(0x3) << AES_DATABUFPTR_INDATAPTR_Pos)       /* (AES_DATABUFPTR) Input Data Pointer Mask */
+#define AES_DATABUFPTR_INDATAPTR(value)       (AES_DATABUFPTR_INDATAPTR_Msk & (_UINT8_(value) << AES_DATABUFPTR_INDATAPTR_Pos)) /* Assigment of value for INDATAPTR in the AES_DATABUFPTR register */
+#define AES_DATABUFPTR_Msk                    _UINT8_(0x03)                                        /* (AES_DATABUFPTR) Register Mask  */
+
+
+/* -------- AES_DBGCTRL : (AES Offset: 0x09) (R/W 8) Debug control -------- */
+#define AES_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (AES_DBGCTRL) Debug control  Reset Value */
+
+#define AES_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (AES_DBGCTRL) Debug Run Position */
+#define AES_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << AES_DBGCTRL_DBGRUN_Pos)             /* (AES_DBGCTRL) Debug Run Mask */
+#define AES_DBGCTRL_DBGRUN(value)             (AES_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << AES_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the AES_DBGCTRL register */
+#define AES_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (AES_DBGCTRL) Register Mask  */
 
 
 /* -------- AES_KEYWORD : (AES Offset: 0x0C) ( /W 32) Keyword n -------- */
@@ -241,6 +196,51 @@
 #define AES_KEYWORD_KEYWORD_Msk               (_UINT32_(0xFFFFFFFF) << AES_KEYWORD_KEYWORD_Pos)    /* (AES_KEYWORD) Key Word Value Mask */
 #define AES_KEYWORD_KEYWORD(value)            (AES_KEYWORD_KEYWORD_Msk & (_UINT32_(value) << AES_KEYWORD_KEYWORD_Pos)) /* Assigment of value for KEYWORD in the AES_KEYWORD register */
 #define AES_KEYWORD_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (AES_KEYWORD) Register Mask  */
+
+
+/* -------- AES_INDATA : (AES Offset: 0x38) (R/W 32) Indata -------- */
+#define AES_INDATA_RESETVALUE                 _UINT32_(0x00)                                       /*  (AES_INDATA) Indata  Reset Value */
+
+#define AES_INDATA_INDATA_Pos                 _UINT32_(0)                                          /* (AES_INDATA) Data Value Position */
+#define AES_INDATA_INDATA_Msk                 (_UINT32_(0xFFFFFFFF) << AES_INDATA_INDATA_Pos)      /* (AES_INDATA) Data Value Mask */
+#define AES_INDATA_INDATA(value)              (AES_INDATA_INDATA_Msk & (_UINT32_(value) << AES_INDATA_INDATA_Pos)) /* Assigment of value for INDATA in the AES_INDATA register */
+#define AES_INDATA_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_INDATA) Register Mask  */
+
+
+/* -------- AES_INTVECTV : (AES Offset: 0x3C) ( /W 32) Initialisation Vector n -------- */
+#define AES_INTVECTV_RESETVALUE               _UINT32_(0x00)                                       /*  (AES_INTVECTV) Initialisation Vector n  Reset Value */
+
+#define AES_INTVECTV_INTVECTV_Pos             _UINT32_(0)                                          /* (AES_INTVECTV) Initialization Vector Value Position */
+#define AES_INTVECTV_INTVECTV_Msk             (_UINT32_(0xFFFFFFFF) << AES_INTVECTV_INTVECTV_Pos)  /* (AES_INTVECTV) Initialization Vector Value Mask */
+#define AES_INTVECTV_INTVECTV(value)          (AES_INTVECTV_INTVECTV_Msk & (_UINT32_(value) << AES_INTVECTV_INTVECTV_Pos)) /* Assigment of value for INTVECTV in the AES_INTVECTV register */
+#define AES_INTVECTV_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (AES_INTVECTV) Register Mask  */
+
+
+/* -------- AES_HASHKEY : (AES Offset: 0x5C) (R/W 32) Hash key n -------- */
+#define AES_HASHKEY_RESETVALUE                _UINT32_(0x00)                                       /*  (AES_HASHKEY) Hash key n  Reset Value */
+
+#define AES_HASHKEY_HASHKEY_Pos               _UINT32_(0)                                          /* (AES_HASHKEY) Hash Key Value Position */
+#define AES_HASHKEY_HASHKEY_Msk               (_UINT32_(0xFFFFFFFF) << AES_HASHKEY_HASHKEY_Pos)    /* (AES_HASHKEY) Hash Key Value Mask */
+#define AES_HASHKEY_HASHKEY(value)            (AES_HASHKEY_HASHKEY_Msk & (_UINT32_(value) << AES_HASHKEY_HASHKEY_Pos)) /* Assigment of value for HASHKEY in the AES_HASHKEY register */
+#define AES_HASHKEY_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (AES_HASHKEY) Register Mask  */
+
+
+/* -------- AES_GHASH : (AES Offset: 0x6C) (R/W 32) Galois Hash n -------- */
+#define AES_GHASH_RESETVALUE                  _UINT32_(0x00)                                       /*  (AES_GHASH) Galois Hash n  Reset Value */
+
+#define AES_GHASH_GHASH_Pos                   _UINT32_(0)                                          /* (AES_GHASH) Galois Hash Value Position */
+#define AES_GHASH_GHASH_Msk                   (_UINT32_(0xFFFFFFFF) << AES_GHASH_GHASH_Pos)        /* (AES_GHASH) Galois Hash Value Mask */
+#define AES_GHASH_GHASH(value)                (AES_GHASH_GHASH_Msk & (_UINT32_(value) << AES_GHASH_GHASH_Pos)) /* Assigment of value for GHASH in the AES_GHASH register */
+#define AES_GHASH_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_GHASH) Register Mask  */
+
+
+/* -------- AES_CIPLEN : (AES Offset: 0x80) (R/W 32) Cipher Length -------- */
+#define AES_CIPLEN_RESETVALUE                 _UINT32_(0x00)                                       /*  (AES_CIPLEN) Cipher Length  Reset Value */
+
+#define AES_CIPLEN_CIPLEN_Pos                 _UINT32_(0)                                          /* (AES_CIPLEN) Cipher Length Position */
+#define AES_CIPLEN_CIPLEN_Msk                 (_UINT32_(0xFFFFFFFF) << AES_CIPLEN_CIPLEN_Pos)      /* (AES_CIPLEN) Cipher Length Mask */
+#define AES_CIPLEN_CIPLEN(value)              (AES_CIPLEN_CIPLEN_Msk & (_UINT32_(value) << AES_CIPLEN_CIPLEN_Pos)) /* Assigment of value for CIPLEN in the AES_CIPLEN register */
+#define AES_CIPLEN_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_CIPLEN) Register Mask  */
 
 
 /* -------- AES_RANDSEED : (AES Offset: 0x84) (R/W 32) Random Seed -------- */
@@ -253,30 +253,13 @@
 
 
 /** \brief AES register offsets definitions */
-#define AES_CIPLEN_REG_OFST            _UINT32_(0x80)      /* (AES_CIPLEN) Cipher Length Offset */
 #define AES_CTRLA_REG_OFST             _UINT32_(0x00)      /* (AES_CTRLA) Control A Offset */
 #define AES_CTRLB_REG_OFST             _UINT32_(0x04)      /* (AES_CTRLB) Control B Offset */
-#define AES_DATABUFPTR_REG_OFST        _UINT32_(0x08)      /* (AES_DATABUFPTR) Data buffer pointer Offset */
-#define AES_DBGCTRL_REG_OFST           _UINT32_(0x09)      /* (AES_DBGCTRL) Debug control Offset */
-#define AES_GHASH_REG_OFST             _UINT32_(0x6C)      /* (AES_GHASH) Galois Hash n Offset */
-#define AES_GHASH0_REG_OFST            _UINT32_(0x6C)      /* (AES_GHASH0) Galois Hash n Offset */
-#define AES_GHASH1_REG_OFST            _UINT32_(0x70)      /* (AES_GHASH1) Galois Hash n Offset */
-#define AES_GHASH2_REG_OFST            _UINT32_(0x74)      /* (AES_GHASH2) Galois Hash n Offset */
-#define AES_GHASH3_REG_OFST            _UINT32_(0x78)      /* (AES_GHASH3) Galois Hash n Offset */
-#define AES_HASHKEY_REG_OFST           _UINT32_(0x5C)      /* (AES_HASHKEY) Hash key n Offset */
-#define AES_HASHKEY0_REG_OFST          _UINT32_(0x5C)      /* (AES_HASHKEY0) Hash key n Offset */
-#define AES_HASHKEY1_REG_OFST          _UINT32_(0x60)      /* (AES_HASHKEY1) Hash key n Offset */
-#define AES_HASHKEY2_REG_OFST          _UINT32_(0x64)      /* (AES_HASHKEY2) Hash key n Offset */
-#define AES_HASHKEY3_REG_OFST          _UINT32_(0x68)      /* (AES_HASHKEY3) Hash key n Offset */
-#define AES_INDATA_REG_OFST            _UINT32_(0x38)      /* (AES_INDATA) Indata Offset */
 #define AES_INTENCLR_REG_OFST          _UINT32_(0x05)      /* (AES_INTENCLR) Interrupt Enable Clear Offset */
 #define AES_INTENSET_REG_OFST          _UINT32_(0x06)      /* (AES_INTENSET) Interrupt Enable Set Offset */
 #define AES_INTFLAG_REG_OFST           _UINT32_(0x07)      /* (AES_INTFLAG) Interrupt Flag Status Offset */
-#define AES_INTVECTV_REG_OFST          _UINT32_(0x3C)      /* (AES_INTVECTV) Initialisation Vector n Offset */
-#define AES_INTVECTV0_REG_OFST         _UINT32_(0x3C)      /* (AES_INTVECTV0) Initialisation Vector n Offset */
-#define AES_INTVECTV1_REG_OFST         _UINT32_(0x40)      /* (AES_INTVECTV1) Initialisation Vector n Offset */
-#define AES_INTVECTV2_REG_OFST         _UINT32_(0x44)      /* (AES_INTVECTV2) Initialisation Vector n Offset */
-#define AES_INTVECTV3_REG_OFST         _UINT32_(0x48)      /* (AES_INTVECTV3) Initialisation Vector n Offset */
+#define AES_DATABUFPTR_REG_OFST        _UINT32_(0x08)      /* (AES_DATABUFPTR) Data buffer pointer Offset */
+#define AES_DBGCTRL_REG_OFST           _UINT32_(0x09)      /* (AES_DBGCTRL) Debug control Offset */
 #define AES_KEYWORD_REG_OFST           _UINT32_(0x0C)      /* (AES_KEYWORD) Keyword n Offset */
 #define AES_KEYWORD0_REG_OFST          _UINT32_(0x0C)      /* (AES_KEYWORD0) Keyword n Offset */
 #define AES_KEYWORD1_REG_OFST          _UINT32_(0x10)      /* (AES_KEYWORD1) Keyword n Offset */
@@ -286,6 +269,23 @@
 #define AES_KEYWORD5_REG_OFST          _UINT32_(0x20)      /* (AES_KEYWORD5) Keyword n Offset */
 #define AES_KEYWORD6_REG_OFST          _UINT32_(0x24)      /* (AES_KEYWORD6) Keyword n Offset */
 #define AES_KEYWORD7_REG_OFST          _UINT32_(0x28)      /* (AES_KEYWORD7) Keyword n Offset */
+#define AES_INDATA_REG_OFST            _UINT32_(0x38)      /* (AES_INDATA) Indata Offset */
+#define AES_INTVECTV_REG_OFST          _UINT32_(0x3C)      /* (AES_INTVECTV) Initialisation Vector n Offset */
+#define AES_INTVECTV0_REG_OFST         _UINT32_(0x3C)      /* (AES_INTVECTV0) Initialisation Vector n Offset */
+#define AES_INTVECTV1_REG_OFST         _UINT32_(0x40)      /* (AES_INTVECTV1) Initialisation Vector n Offset */
+#define AES_INTVECTV2_REG_OFST         _UINT32_(0x44)      /* (AES_INTVECTV2) Initialisation Vector n Offset */
+#define AES_INTVECTV3_REG_OFST         _UINT32_(0x48)      /* (AES_INTVECTV3) Initialisation Vector n Offset */
+#define AES_HASHKEY_REG_OFST           _UINT32_(0x5C)      /* (AES_HASHKEY) Hash key n Offset */
+#define AES_HASHKEY0_REG_OFST          _UINT32_(0x5C)      /* (AES_HASHKEY0) Hash key n Offset */
+#define AES_HASHKEY1_REG_OFST          _UINT32_(0x60)      /* (AES_HASHKEY1) Hash key n Offset */
+#define AES_HASHKEY2_REG_OFST          _UINT32_(0x64)      /* (AES_HASHKEY2) Hash key n Offset */
+#define AES_HASHKEY3_REG_OFST          _UINT32_(0x68)      /* (AES_HASHKEY3) Hash key n Offset */
+#define AES_GHASH_REG_OFST             _UINT32_(0x6C)      /* (AES_GHASH) Galois Hash n Offset */
+#define AES_GHASH0_REG_OFST            _UINT32_(0x6C)      /* (AES_GHASH0) Galois Hash n Offset */
+#define AES_GHASH1_REG_OFST            _UINT32_(0x70)      /* (AES_GHASH1) Galois Hash n Offset */
+#define AES_GHASH2_REG_OFST            _UINT32_(0x74)      /* (AES_GHASH2) Galois Hash n Offset */
+#define AES_GHASH3_REG_OFST            _UINT32_(0x78)      /* (AES_GHASH3) Galois Hash n Offset */
+#define AES_CIPLEN_REG_OFST            _UINT32_(0x80)      /* (AES_CIPLEN) Cipher Length Offset */
 #define AES_RANDSEED_REG_OFST          _UINT32_(0x84)      /* (AES_RANDSEED) Random Seed Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))

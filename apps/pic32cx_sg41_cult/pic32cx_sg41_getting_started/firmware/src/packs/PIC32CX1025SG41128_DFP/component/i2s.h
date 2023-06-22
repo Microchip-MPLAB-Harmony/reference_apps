@@ -1,7 +1,7 @@
 /*
  * Component description for I2S
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,13 +20,40 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_I2S_COMPONENT_H_
 #define _PIC32CXSG41_I2S_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR I2S                                          */
 /* ************************************************************************** */
+
+/* -------- I2S_CTRLA : (I2S Offset: 0x00) (R/W 8) Control A -------- */
+#define I2S_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (I2S_CTRLA) Control A  Reset Value */
+
+#define I2S_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (I2S_CTRLA) Software Reset Position */
+#define I2S_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << I2S_CTRLA_SWRST_Pos)                /* (I2S_CTRLA) Software Reset Mask */
+#define I2S_CTRLA_SWRST(value)                (I2S_CTRLA_SWRST_Msk & (_UINT8_(value) << I2S_CTRLA_SWRST_Pos)) /* Assigment of value for SWRST in the I2S_CTRLA register */
+#define I2S_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (I2S_CTRLA) Enable Position */
+#define I2S_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << I2S_CTRLA_ENABLE_Pos)               /* (I2S_CTRLA) Enable Mask */
+#define I2S_CTRLA_ENABLE(value)               (I2S_CTRLA_ENABLE_Msk & (_UINT8_(value) << I2S_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the I2S_CTRLA register */
+#define I2S_CTRLA_CKEN0_Pos                   _UINT8_(2)                                           /* (I2S_CTRLA) Clock Unit 0 Enable Position */
+#define I2S_CTRLA_CKEN0_Msk                   (_UINT8_(0x1) << I2S_CTRLA_CKEN0_Pos)                /* (I2S_CTRLA) Clock Unit 0 Enable Mask */
+#define I2S_CTRLA_CKEN0(value)                (I2S_CTRLA_CKEN0_Msk & (_UINT8_(value) << I2S_CTRLA_CKEN0_Pos)) /* Assigment of value for CKEN0 in the I2S_CTRLA register */
+#define I2S_CTRLA_CKEN1_Pos                   _UINT8_(3)                                           /* (I2S_CTRLA) Clock Unit 1 Enable Position */
+#define I2S_CTRLA_CKEN1_Msk                   (_UINT8_(0x1) << I2S_CTRLA_CKEN1_Pos)                /* (I2S_CTRLA) Clock Unit 1 Enable Mask */
+#define I2S_CTRLA_CKEN1(value)                (I2S_CTRLA_CKEN1_Msk & (_UINT8_(value) << I2S_CTRLA_CKEN1_Pos)) /* Assigment of value for CKEN1 in the I2S_CTRLA register */
+#define I2S_CTRLA_TXEN_Pos                    _UINT8_(4)                                           /* (I2S_CTRLA) Tx Serializer Enable Position */
+#define I2S_CTRLA_TXEN_Msk                    (_UINT8_(0x1) << I2S_CTRLA_TXEN_Pos)                 /* (I2S_CTRLA) Tx Serializer Enable Mask */
+#define I2S_CTRLA_TXEN(value)                 (I2S_CTRLA_TXEN_Msk & (_UINT8_(value) << I2S_CTRLA_TXEN_Pos)) /* Assigment of value for TXEN in the I2S_CTRLA register */
+#define I2S_CTRLA_RXEN_Pos                    _UINT8_(5)                                           /* (I2S_CTRLA) Rx Serializer Enable Position */
+#define I2S_CTRLA_RXEN_Msk                    (_UINT8_(0x1) << I2S_CTRLA_RXEN_Pos)                 /* (I2S_CTRLA) Rx Serializer Enable Mask */
+#define I2S_CTRLA_RXEN(value)                 (I2S_CTRLA_RXEN_Msk & (_UINT8_(value) << I2S_CTRLA_RXEN_Pos)) /* Assigment of value for RXEN in the I2S_CTRLA register */
+#define I2S_CTRLA_Msk                         _UINT8_(0x3F)                                        /* (I2S_CTRLA) Register Mask  */
+
+#define I2S_CTRLA_CKEN_Pos                    _UINT8_(2)                                           /* (I2S_CTRLA Position) Clock Unit x Enable */
+#define I2S_CTRLA_CKEN_Msk                    (_UINT8_(0x3) << I2S_CTRLA_CKEN_Pos)                 /* (I2S_CTRLA Mask) CKEN */
+#define I2S_CTRLA_CKEN(value)                 (I2S_CTRLA_CKEN_Msk & (_UINT8_(value) << I2S_CTRLA_CKEN_Pos)) 
 
 /* -------- I2S_CLKCTRL : (I2S Offset: 0x04) (R/W 32) Clock Unit n Control -------- */
 #define I2S_CLKCTRL_RESETVALUE                _UINT32_(0x00)                                       /*  (I2S_CLKCTRL) Clock Unit n Control  Reset Value */
@@ -107,33 +134,6 @@
 #define I2S_CLKCTRL_MCKOUTDIV(value)          (I2S_CLKCTRL_MCKOUTDIV_Msk & (_UINT32_(value) << I2S_CLKCTRL_MCKOUTDIV_Pos)) /* Assigment of value for MCKOUTDIV in the I2S_CLKCTRL register */
 #define I2S_CLKCTRL_Msk                       _UINT32_(0x3F3FFFFF)                                 /* (I2S_CLKCTRL) Register Mask  */
 
-
-/* -------- I2S_CTRLA : (I2S Offset: 0x00) (R/W 8) Control A -------- */
-#define I2S_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (I2S_CTRLA) Control A  Reset Value */
-
-#define I2S_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (I2S_CTRLA) Software Reset Position */
-#define I2S_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << I2S_CTRLA_SWRST_Pos)                /* (I2S_CTRLA) Software Reset Mask */
-#define I2S_CTRLA_SWRST(value)                (I2S_CTRLA_SWRST_Msk & (_UINT8_(value) << I2S_CTRLA_SWRST_Pos)) /* Assigment of value for SWRST in the I2S_CTRLA register */
-#define I2S_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (I2S_CTRLA) Enable Position */
-#define I2S_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << I2S_CTRLA_ENABLE_Pos)               /* (I2S_CTRLA) Enable Mask */
-#define I2S_CTRLA_ENABLE(value)               (I2S_CTRLA_ENABLE_Msk & (_UINT8_(value) << I2S_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the I2S_CTRLA register */
-#define I2S_CTRLA_CKEN0_Pos                   _UINT8_(2)                                           /* (I2S_CTRLA) Clock Unit 0 Enable Position */
-#define I2S_CTRLA_CKEN0_Msk                   (_UINT8_(0x1) << I2S_CTRLA_CKEN0_Pos)                /* (I2S_CTRLA) Clock Unit 0 Enable Mask */
-#define I2S_CTRLA_CKEN0(value)                (I2S_CTRLA_CKEN0_Msk & (_UINT8_(value) << I2S_CTRLA_CKEN0_Pos)) /* Assigment of value for CKEN0 in the I2S_CTRLA register */
-#define I2S_CTRLA_CKEN1_Pos                   _UINT8_(3)                                           /* (I2S_CTRLA) Clock Unit 1 Enable Position */
-#define I2S_CTRLA_CKEN1_Msk                   (_UINT8_(0x1) << I2S_CTRLA_CKEN1_Pos)                /* (I2S_CTRLA) Clock Unit 1 Enable Mask */
-#define I2S_CTRLA_CKEN1(value)                (I2S_CTRLA_CKEN1_Msk & (_UINT8_(value) << I2S_CTRLA_CKEN1_Pos)) /* Assigment of value for CKEN1 in the I2S_CTRLA register */
-#define I2S_CTRLA_TXEN_Pos                    _UINT8_(4)                                           /* (I2S_CTRLA) Tx Serializer Enable Position */
-#define I2S_CTRLA_TXEN_Msk                    (_UINT8_(0x1) << I2S_CTRLA_TXEN_Pos)                 /* (I2S_CTRLA) Tx Serializer Enable Mask */
-#define I2S_CTRLA_TXEN(value)                 (I2S_CTRLA_TXEN_Msk & (_UINT8_(value) << I2S_CTRLA_TXEN_Pos)) /* Assigment of value for TXEN in the I2S_CTRLA register */
-#define I2S_CTRLA_RXEN_Pos                    _UINT8_(5)                                           /* (I2S_CTRLA) Rx Serializer Enable Position */
-#define I2S_CTRLA_RXEN_Msk                    (_UINT8_(0x1) << I2S_CTRLA_RXEN_Pos)                 /* (I2S_CTRLA) Rx Serializer Enable Mask */
-#define I2S_CTRLA_RXEN(value)                 (I2S_CTRLA_RXEN_Msk & (_UINT8_(value) << I2S_CTRLA_RXEN_Pos)) /* Assigment of value for RXEN in the I2S_CTRLA register */
-#define I2S_CTRLA_Msk                         _UINT8_(0x3F)                                        /* (I2S_CTRLA) Register Mask  */
-
-#define I2S_CTRLA_CKEN_Pos                    _UINT8_(2)                                           /* (I2S_CTRLA Position) Clock Unit x Enable */
-#define I2S_CTRLA_CKEN_Msk                    (_UINT8_(0x3) << I2S_CTRLA_CKEN_Pos)                 /* (I2S_CTRLA Mask) CKEN */
-#define I2S_CTRLA_CKEN(value)                 (I2S_CTRLA_CKEN_Msk & (_UINT8_(value) << I2S_CTRLA_CKEN_Pos)) 
 
 /* -------- I2S_INTENCLR : (I2S Offset: 0x0C) (R/W 16) Interrupt Enable Clear -------- */
 #define I2S_INTENCLR_RESETVALUE               _UINT16_(0x00)                                       /*  (I2S_INTENCLR) Interrupt Enable Clear  Reset Value */
@@ -260,130 +260,6 @@
 #define I2S_INTFLAG_TXUR_Pos                  _UINT16_(12)                                         /* (I2S_INTFLAG Position) Transmit Underrun x */
 #define I2S_INTFLAG_TXUR_Msk                  (_UINT16_(0x3) << I2S_INTFLAG_TXUR_Pos)              /* (I2S_INTFLAG Mask) TXUR */
 #define I2S_INTFLAG_TXUR(value)               (I2S_INTFLAG_TXUR_Msk & (_UINT16_(value) << I2S_INTFLAG_TXUR_Pos)) 
-
-/* -------- I2S_RXCTRL : (I2S Offset: 0x24) (R/W 32) Rx Serializer Control -------- */
-#define I2S_RXCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (I2S_RXCTRL) Rx Serializer Control  Reset Value */
-
-#define I2S_RXCTRL_SERMODE_Pos                _UINT32_(0)                                          /* (I2S_RXCTRL) Serializer Mode Position */
-#define I2S_RXCTRL_SERMODE_Msk                (_UINT32_(0x3) << I2S_RXCTRL_SERMODE_Pos)            /* (I2S_RXCTRL) Serializer Mode Mask */
-#define I2S_RXCTRL_SERMODE(value)             (I2S_RXCTRL_SERMODE_Msk & (_UINT32_(value) << I2S_RXCTRL_SERMODE_Pos)) /* Assigment of value for SERMODE in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_SERMODE_RX_Val           _UINT32_(0x0)                                        /* (I2S_RXCTRL) Receive  */
-#define   I2S_RXCTRL_SERMODE_PDM2_Val         _UINT32_(0x2)                                        /* (I2S_RXCTRL) Receive one PDM data on each serial clock edge  */
-#define I2S_RXCTRL_SERMODE_RX                 (I2S_RXCTRL_SERMODE_RX_Val << I2S_RXCTRL_SERMODE_Pos) /* (I2S_RXCTRL) Receive Position  */
-#define I2S_RXCTRL_SERMODE_PDM2               (I2S_RXCTRL_SERMODE_PDM2_Val << I2S_RXCTRL_SERMODE_Pos) /* (I2S_RXCTRL) Receive one PDM data on each serial clock edge Position  */
-#define I2S_RXCTRL_CLKSEL_Pos                 _UINT32_(5)                                          /* (I2S_RXCTRL) Clock Unit Selection Position */
-#define I2S_RXCTRL_CLKSEL_Msk                 (_UINT32_(0x1) << I2S_RXCTRL_CLKSEL_Pos)             /* (I2S_RXCTRL) Clock Unit Selection Mask */
-#define I2S_RXCTRL_CLKSEL(value)              (I2S_RXCTRL_CLKSEL_Msk & (_UINT32_(value) << I2S_RXCTRL_CLKSEL_Pos)) /* Assigment of value for CLKSEL in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_CLKSEL_CLK0_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) Use Clock Unit 0  */
-#define   I2S_RXCTRL_CLKSEL_CLK1_Val          _UINT32_(0x1)                                        /* (I2S_RXCTRL) Use Clock Unit 1  */
-#define I2S_RXCTRL_CLKSEL_CLK0                (I2S_RXCTRL_CLKSEL_CLK0_Val << I2S_RXCTRL_CLKSEL_Pos) /* (I2S_RXCTRL) Use Clock Unit 0 Position  */
-#define I2S_RXCTRL_CLKSEL_CLK1                (I2S_RXCTRL_CLKSEL_CLK1_Val << I2S_RXCTRL_CLKSEL_Pos) /* (I2S_RXCTRL) Use Clock Unit 1 Position  */
-#define I2S_RXCTRL_SLOTADJ_Pos                _UINT32_(7)                                          /* (I2S_RXCTRL) Data Slot Formatting Adjust Position */
-#define I2S_RXCTRL_SLOTADJ_Msk                (_UINT32_(0x1) << I2S_RXCTRL_SLOTADJ_Pos)            /* (I2S_RXCTRL) Data Slot Formatting Adjust Mask */
-#define I2S_RXCTRL_SLOTADJ(value)             (I2S_RXCTRL_SLOTADJ_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTADJ_Pos)) /* Assigment of value for SLOTADJ in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_SLOTADJ_RIGHT_Val        _UINT32_(0x0)                                        /* (I2S_RXCTRL) Data is right adjusted in slot  */
-#define   I2S_RXCTRL_SLOTADJ_LEFT_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) Data is left adjusted in slot  */
-#define I2S_RXCTRL_SLOTADJ_RIGHT              (I2S_RXCTRL_SLOTADJ_RIGHT_Val << I2S_RXCTRL_SLOTADJ_Pos) /* (I2S_RXCTRL) Data is right adjusted in slot Position  */
-#define I2S_RXCTRL_SLOTADJ_LEFT               (I2S_RXCTRL_SLOTADJ_LEFT_Val << I2S_RXCTRL_SLOTADJ_Pos) /* (I2S_RXCTRL) Data is left adjusted in slot Position  */
-#define I2S_RXCTRL_DATASIZE_Pos               _UINT32_(8)                                          /* (I2S_RXCTRL) Data Word Size Position */
-#define I2S_RXCTRL_DATASIZE_Msk               (_UINT32_(0x7) << I2S_RXCTRL_DATASIZE_Pos)           /* (I2S_RXCTRL) Data Word Size Mask */
-#define I2S_RXCTRL_DATASIZE(value)            (I2S_RXCTRL_DATASIZE_Msk & (_UINT32_(value) << I2S_RXCTRL_DATASIZE_Pos)) /* Assigment of value for DATASIZE in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_DATASIZE_32_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) 32 bits  */
-#define   I2S_RXCTRL_DATASIZE_24_Val          _UINT32_(0x1)                                        /* (I2S_RXCTRL) 24 bits  */
-#define   I2S_RXCTRL_DATASIZE_20_Val          _UINT32_(0x2)                                        /* (I2S_RXCTRL) 20 bits  */
-#define   I2S_RXCTRL_DATASIZE_18_Val          _UINT32_(0x3)                                        /* (I2S_RXCTRL) 18 bits  */
-#define   I2S_RXCTRL_DATASIZE_16_Val          _UINT32_(0x4)                                        /* (I2S_RXCTRL) 16 bits  */
-#define   I2S_RXCTRL_DATASIZE_16C_Val         _UINT32_(0x5)                                        /* (I2S_RXCTRL) 16 bits compact stereo  */
-#define   I2S_RXCTRL_DATASIZE_8_Val           _UINT32_(0x6)                                        /* (I2S_RXCTRL) 8 bits  */
-#define   I2S_RXCTRL_DATASIZE_8C_Val          _UINT32_(0x7)                                        /* (I2S_RXCTRL) 8 bits compact stereo  */
-#define I2S_RXCTRL_DATASIZE_32                (I2S_RXCTRL_DATASIZE_32_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 32 bits Position  */
-#define I2S_RXCTRL_DATASIZE_24                (I2S_RXCTRL_DATASIZE_24_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 24 bits Position  */
-#define I2S_RXCTRL_DATASIZE_20                (I2S_RXCTRL_DATASIZE_20_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 20 bits Position  */
-#define I2S_RXCTRL_DATASIZE_18                (I2S_RXCTRL_DATASIZE_18_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 18 bits Position  */
-#define I2S_RXCTRL_DATASIZE_16                (I2S_RXCTRL_DATASIZE_16_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 16 bits Position  */
-#define I2S_RXCTRL_DATASIZE_16C               (I2S_RXCTRL_DATASIZE_16C_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 16 bits compact stereo Position  */
-#define I2S_RXCTRL_DATASIZE_8                 (I2S_RXCTRL_DATASIZE_8_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 8 bits Position  */
-#define I2S_RXCTRL_DATASIZE_8C                (I2S_RXCTRL_DATASIZE_8C_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 8 bits compact stereo Position  */
-#define I2S_RXCTRL_WORDADJ_Pos                _UINT32_(12)                                         /* (I2S_RXCTRL) Data Word Formatting Adjust Position */
-#define I2S_RXCTRL_WORDADJ_Msk                (_UINT32_(0x1) << I2S_RXCTRL_WORDADJ_Pos)            /* (I2S_RXCTRL) Data Word Formatting Adjust Mask */
-#define I2S_RXCTRL_WORDADJ(value)             (I2S_RXCTRL_WORDADJ_Msk & (_UINT32_(value) << I2S_RXCTRL_WORDADJ_Pos)) /* Assigment of value for WORDADJ in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_WORDADJ_RIGHT_Val        _UINT32_(0x0)                                        /* (I2S_RXCTRL) Data is right adjusted in word  */
-#define   I2S_RXCTRL_WORDADJ_LEFT_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) Data is left adjusted in word  */
-#define I2S_RXCTRL_WORDADJ_RIGHT              (I2S_RXCTRL_WORDADJ_RIGHT_Val << I2S_RXCTRL_WORDADJ_Pos) /* (I2S_RXCTRL) Data is right adjusted in word Position  */
-#define I2S_RXCTRL_WORDADJ_LEFT               (I2S_RXCTRL_WORDADJ_LEFT_Val << I2S_RXCTRL_WORDADJ_Pos) /* (I2S_RXCTRL) Data is left adjusted in word Position  */
-#define I2S_RXCTRL_EXTEND_Pos                 _UINT32_(13)                                         /* (I2S_RXCTRL) Data Formatting Bit Extension Position */
-#define I2S_RXCTRL_EXTEND_Msk                 (_UINT32_(0x3) << I2S_RXCTRL_EXTEND_Pos)             /* (I2S_RXCTRL) Data Formatting Bit Extension Mask */
-#define I2S_RXCTRL_EXTEND(value)              (I2S_RXCTRL_EXTEND_Msk & (_UINT32_(value) << I2S_RXCTRL_EXTEND_Pos)) /* Assigment of value for EXTEND in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_EXTEND_ZERO_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) Extend with zeroes  */
-#define   I2S_RXCTRL_EXTEND_ONE_Val           _UINT32_(0x1)                                        /* (I2S_RXCTRL) Extend with ones  */
-#define   I2S_RXCTRL_EXTEND_MSBIT_Val         _UINT32_(0x2)                                        /* (I2S_RXCTRL) Extend with Most Significant Bit  */
-#define   I2S_RXCTRL_EXTEND_LSBIT_Val         _UINT32_(0x3)                                        /* (I2S_RXCTRL) Extend with Least Significant Bit  */
-#define I2S_RXCTRL_EXTEND_ZERO                (I2S_RXCTRL_EXTEND_ZERO_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with zeroes Position  */
-#define I2S_RXCTRL_EXTEND_ONE                 (I2S_RXCTRL_EXTEND_ONE_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with ones Position  */
-#define I2S_RXCTRL_EXTEND_MSBIT               (I2S_RXCTRL_EXTEND_MSBIT_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with Most Significant Bit Position  */
-#define I2S_RXCTRL_EXTEND_LSBIT               (I2S_RXCTRL_EXTEND_LSBIT_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with Least Significant Bit Position  */
-#define I2S_RXCTRL_BITREV_Pos                 _UINT32_(15)                                         /* (I2S_RXCTRL) Data Formatting Bit Reverse Position */
-#define I2S_RXCTRL_BITREV_Msk                 (_UINT32_(0x1) << I2S_RXCTRL_BITREV_Pos)             /* (I2S_RXCTRL) Data Formatting Bit Reverse Mask */
-#define I2S_RXCTRL_BITREV(value)              (I2S_RXCTRL_BITREV_Msk & (_UINT32_(value) << I2S_RXCTRL_BITREV_Pos)) /* Assigment of value for BITREV in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_BITREV_MSBIT_Val         _UINT32_(0x0)                                        /* (I2S_RXCTRL) Transfer Data Most Significant Bit (MSB) first (default for I2S protocol)  */
-#define   I2S_RXCTRL_BITREV_LSBIT_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) Transfer Data Least Significant Bit (LSB) first  */
-#define I2S_RXCTRL_BITREV_MSBIT               (I2S_RXCTRL_BITREV_MSBIT_Val << I2S_RXCTRL_BITREV_Pos) /* (I2S_RXCTRL) Transfer Data Most Significant Bit (MSB) first (default for I2S protocol) Position  */
-#define I2S_RXCTRL_BITREV_LSBIT               (I2S_RXCTRL_BITREV_LSBIT_Val << I2S_RXCTRL_BITREV_Pos) /* (I2S_RXCTRL) Transfer Data Least Significant Bit (LSB) first Position  */
-#define I2S_RXCTRL_SLOTDIS0_Pos               _UINT32_(16)                                         /* (I2S_RXCTRL) Slot 0 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS0_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS0_Pos)           /* (I2S_RXCTRL) Slot 0 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS0(value)            (I2S_RXCTRL_SLOTDIS0_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS0_Pos)) /* Assigment of value for SLOTDIS0 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS1_Pos               _UINT32_(17)                                         /* (I2S_RXCTRL) Slot 1 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS1_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS1_Pos)           /* (I2S_RXCTRL) Slot 1 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS1(value)            (I2S_RXCTRL_SLOTDIS1_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS1_Pos)) /* Assigment of value for SLOTDIS1 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS2_Pos               _UINT32_(18)                                         /* (I2S_RXCTRL) Slot 2 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS2_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS2_Pos)           /* (I2S_RXCTRL) Slot 2 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS2(value)            (I2S_RXCTRL_SLOTDIS2_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS2_Pos)) /* Assigment of value for SLOTDIS2 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS3_Pos               _UINT32_(19)                                         /* (I2S_RXCTRL) Slot 3 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS3_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS3_Pos)           /* (I2S_RXCTRL) Slot 3 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS3(value)            (I2S_RXCTRL_SLOTDIS3_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS3_Pos)) /* Assigment of value for SLOTDIS3 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS4_Pos               _UINT32_(20)                                         /* (I2S_RXCTRL) Slot 4 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS4_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS4_Pos)           /* (I2S_RXCTRL) Slot 4 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS4(value)            (I2S_RXCTRL_SLOTDIS4_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS4_Pos)) /* Assigment of value for SLOTDIS4 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS5_Pos               _UINT32_(21)                                         /* (I2S_RXCTRL) Slot 5 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS5_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS5_Pos)           /* (I2S_RXCTRL) Slot 5 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS5(value)            (I2S_RXCTRL_SLOTDIS5_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS5_Pos)) /* Assigment of value for SLOTDIS5 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS6_Pos               _UINT32_(22)                                         /* (I2S_RXCTRL) Slot 6 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS6_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS6_Pos)           /* (I2S_RXCTRL) Slot 6 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS6(value)            (I2S_RXCTRL_SLOTDIS6_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS6_Pos)) /* Assigment of value for SLOTDIS6 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_SLOTDIS7_Pos               _UINT32_(23)                                         /* (I2S_RXCTRL) Slot 7 Disabled for this Serializer Position */
-#define I2S_RXCTRL_SLOTDIS7_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS7_Pos)           /* (I2S_RXCTRL) Slot 7 Disabled for this Serializer Mask */
-#define I2S_RXCTRL_SLOTDIS7(value)            (I2S_RXCTRL_SLOTDIS7_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS7_Pos)) /* Assigment of value for SLOTDIS7 in the I2S_RXCTRL register */
-#define I2S_RXCTRL_MONO_Pos                   _UINT32_(24)                                         /* (I2S_RXCTRL) Mono Mode Position */
-#define I2S_RXCTRL_MONO_Msk                   (_UINT32_(0x1) << I2S_RXCTRL_MONO_Pos)               /* (I2S_RXCTRL) Mono Mode Mask */
-#define I2S_RXCTRL_MONO(value)                (I2S_RXCTRL_MONO_Msk & (_UINT32_(value) << I2S_RXCTRL_MONO_Pos)) /* Assigment of value for MONO in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_MONO_STEREO_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) Normal mode  */
-#define   I2S_RXCTRL_MONO_MONO_Val            _UINT32_(0x1)                                        /* (I2S_RXCTRL) Left channel data is duplicated to right channel  */
-#define I2S_RXCTRL_MONO_STEREO                (I2S_RXCTRL_MONO_STEREO_Val << I2S_RXCTRL_MONO_Pos)  /* (I2S_RXCTRL) Normal mode Position  */
-#define I2S_RXCTRL_MONO_MONO                  (I2S_RXCTRL_MONO_MONO_Val << I2S_RXCTRL_MONO_Pos)    /* (I2S_RXCTRL) Left channel data is duplicated to right channel Position  */
-#define I2S_RXCTRL_DMA_Pos                    _UINT32_(25)                                         /* (I2S_RXCTRL) Single or Multiple DMA Channels Position */
-#define I2S_RXCTRL_DMA_Msk                    (_UINT32_(0x1) << I2S_RXCTRL_DMA_Pos)                /* (I2S_RXCTRL) Single or Multiple DMA Channels Mask */
-#define I2S_RXCTRL_DMA(value)                 (I2S_RXCTRL_DMA_Msk & (_UINT32_(value) << I2S_RXCTRL_DMA_Pos)) /* Assigment of value for DMA in the I2S_RXCTRL register */
-#define   I2S_RXCTRL_DMA_SINGLE_Val           _UINT32_(0x0)                                        /* (I2S_RXCTRL) Single DMA channel  */
-#define   I2S_RXCTRL_DMA_MULTIPLE_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) One DMA channel per data channel  */
-#define I2S_RXCTRL_DMA_SINGLE                 (I2S_RXCTRL_DMA_SINGLE_Val << I2S_RXCTRL_DMA_Pos)    /* (I2S_RXCTRL) Single DMA channel Position  */
-#define I2S_RXCTRL_DMA_MULTIPLE               (I2S_RXCTRL_DMA_MULTIPLE_Val << I2S_RXCTRL_DMA_Pos)  /* (I2S_RXCTRL) One DMA channel per data channel Position  */
-#define I2S_RXCTRL_RXLOOP_Pos                 _UINT32_(26)                                         /* (I2S_RXCTRL) Loop-back Test Mode Position */
-#define I2S_RXCTRL_RXLOOP_Msk                 (_UINT32_(0x1) << I2S_RXCTRL_RXLOOP_Pos)             /* (I2S_RXCTRL) Loop-back Test Mode Mask */
-#define I2S_RXCTRL_RXLOOP(value)              (I2S_RXCTRL_RXLOOP_Msk & (_UINT32_(value) << I2S_RXCTRL_RXLOOP_Pos)) /* Assigment of value for RXLOOP in the I2S_RXCTRL register */
-#define I2S_RXCTRL_Msk                        _UINT32_(0x07FFF7A3)                                 /* (I2S_RXCTRL) Register Mask  */
-
-#define I2S_RXCTRL_SLOTDIS_Pos                _UINT32_(16)                                         /* (I2S_RXCTRL Position) Slot x Disabled for this Serializer */
-#define I2S_RXCTRL_SLOTDIS_Msk                (_UINT32_(0xFF) << I2S_RXCTRL_SLOTDIS_Pos)           /* (I2S_RXCTRL Mask) SLOTDIS */
-#define I2S_RXCTRL_SLOTDIS(value)             (I2S_RXCTRL_SLOTDIS_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS_Pos)) 
-
-/* -------- I2S_RXDATA : (I2S Offset: 0x34) ( R/ 32) Rx Data -------- */
-#define I2S_RXDATA_RESETVALUE                 _UINT32_(0x00)                                       /*  (I2S_RXDATA) Rx Data  Reset Value */
-
-#define I2S_RXDATA_DATA_Pos                   _UINT32_(0)                                          /* (I2S_RXDATA) Sample Data Position */
-#define I2S_RXDATA_DATA_Msk                   (_UINT32_(0xFFFFFFFF) << I2S_RXDATA_DATA_Pos)        /* (I2S_RXDATA) Sample Data Mask */
-#define I2S_RXDATA_DATA(value)                (I2S_RXDATA_DATA_Msk & (_UINT32_(value) << I2S_RXDATA_DATA_Pos)) /* Assigment of value for DATA in the I2S_RXDATA register */
-#define I2S_RXDATA_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (I2S_RXDATA) Register Mask  */
-
 
 /* -------- I2S_SYNCBUSY : (I2S Offset: 0x18) ( R/ 16) Synchronization Status -------- */
 #define I2S_SYNCBUSY_RESETVALUE               _UINT16_(0x00)                                       /*  (I2S_SYNCBUSY) Synchronization Status  Reset Value */
@@ -532,6 +408,121 @@
 #define I2S_TXCTRL_SLOTDIS_Msk                (_UINT32_(0xFF) << I2S_TXCTRL_SLOTDIS_Pos)           /* (I2S_TXCTRL Mask) SLOTDIS */
 #define I2S_TXCTRL_SLOTDIS(value)             (I2S_TXCTRL_SLOTDIS_Msk & (_UINT32_(value) << I2S_TXCTRL_SLOTDIS_Pos)) 
 
+/* -------- I2S_RXCTRL : (I2S Offset: 0x24) (R/W 32) Rx Serializer Control -------- */
+#define I2S_RXCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (I2S_RXCTRL) Rx Serializer Control  Reset Value */
+
+#define I2S_RXCTRL_SERMODE_Pos                _UINT32_(0)                                          /* (I2S_RXCTRL) Serializer Mode Position */
+#define I2S_RXCTRL_SERMODE_Msk                (_UINT32_(0x3) << I2S_RXCTRL_SERMODE_Pos)            /* (I2S_RXCTRL) Serializer Mode Mask */
+#define I2S_RXCTRL_SERMODE(value)             (I2S_RXCTRL_SERMODE_Msk & (_UINT32_(value) << I2S_RXCTRL_SERMODE_Pos)) /* Assigment of value for SERMODE in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_SERMODE_RX_Val           _UINT32_(0x0)                                        /* (I2S_RXCTRL) Receive  */
+#define   I2S_RXCTRL_SERMODE_PDM2_Val         _UINT32_(0x2)                                        /* (I2S_RXCTRL) Receive one PDM data on each serial clock edge  */
+#define I2S_RXCTRL_SERMODE_RX                 (I2S_RXCTRL_SERMODE_RX_Val << I2S_RXCTRL_SERMODE_Pos) /* (I2S_RXCTRL) Receive Position  */
+#define I2S_RXCTRL_SERMODE_PDM2               (I2S_RXCTRL_SERMODE_PDM2_Val << I2S_RXCTRL_SERMODE_Pos) /* (I2S_RXCTRL) Receive one PDM data on each serial clock edge Position  */
+#define I2S_RXCTRL_CLKSEL_Pos                 _UINT32_(5)                                          /* (I2S_RXCTRL) Clock Unit Selection Position */
+#define I2S_RXCTRL_CLKSEL_Msk                 (_UINT32_(0x1) << I2S_RXCTRL_CLKSEL_Pos)             /* (I2S_RXCTRL) Clock Unit Selection Mask */
+#define I2S_RXCTRL_CLKSEL(value)              (I2S_RXCTRL_CLKSEL_Msk & (_UINT32_(value) << I2S_RXCTRL_CLKSEL_Pos)) /* Assigment of value for CLKSEL in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_CLKSEL_CLK0_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) Use Clock Unit 0  */
+#define   I2S_RXCTRL_CLKSEL_CLK1_Val          _UINT32_(0x1)                                        /* (I2S_RXCTRL) Use Clock Unit 1  */
+#define I2S_RXCTRL_CLKSEL_CLK0                (I2S_RXCTRL_CLKSEL_CLK0_Val << I2S_RXCTRL_CLKSEL_Pos) /* (I2S_RXCTRL) Use Clock Unit 0 Position  */
+#define I2S_RXCTRL_CLKSEL_CLK1                (I2S_RXCTRL_CLKSEL_CLK1_Val << I2S_RXCTRL_CLKSEL_Pos) /* (I2S_RXCTRL) Use Clock Unit 1 Position  */
+#define I2S_RXCTRL_SLOTADJ_Pos                _UINT32_(7)                                          /* (I2S_RXCTRL) Data Slot Formatting Adjust Position */
+#define I2S_RXCTRL_SLOTADJ_Msk                (_UINT32_(0x1) << I2S_RXCTRL_SLOTADJ_Pos)            /* (I2S_RXCTRL) Data Slot Formatting Adjust Mask */
+#define I2S_RXCTRL_SLOTADJ(value)             (I2S_RXCTRL_SLOTADJ_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTADJ_Pos)) /* Assigment of value for SLOTADJ in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_SLOTADJ_RIGHT_Val        _UINT32_(0x0)                                        /* (I2S_RXCTRL) Data is right adjusted in slot  */
+#define   I2S_RXCTRL_SLOTADJ_LEFT_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) Data is left adjusted in slot  */
+#define I2S_RXCTRL_SLOTADJ_RIGHT              (I2S_RXCTRL_SLOTADJ_RIGHT_Val << I2S_RXCTRL_SLOTADJ_Pos) /* (I2S_RXCTRL) Data is right adjusted in slot Position  */
+#define I2S_RXCTRL_SLOTADJ_LEFT               (I2S_RXCTRL_SLOTADJ_LEFT_Val << I2S_RXCTRL_SLOTADJ_Pos) /* (I2S_RXCTRL) Data is left adjusted in slot Position  */
+#define I2S_RXCTRL_DATASIZE_Pos               _UINT32_(8)                                          /* (I2S_RXCTRL) Data Word Size Position */
+#define I2S_RXCTRL_DATASIZE_Msk               (_UINT32_(0x7) << I2S_RXCTRL_DATASIZE_Pos)           /* (I2S_RXCTRL) Data Word Size Mask */
+#define I2S_RXCTRL_DATASIZE(value)            (I2S_RXCTRL_DATASIZE_Msk & (_UINT32_(value) << I2S_RXCTRL_DATASIZE_Pos)) /* Assigment of value for DATASIZE in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_DATASIZE_32_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) 32 bits  */
+#define   I2S_RXCTRL_DATASIZE_24_Val          _UINT32_(0x1)                                        /* (I2S_RXCTRL) 24 bits  */
+#define   I2S_RXCTRL_DATASIZE_20_Val          _UINT32_(0x2)                                        /* (I2S_RXCTRL) 20 bits  */
+#define   I2S_RXCTRL_DATASIZE_18_Val          _UINT32_(0x3)                                        /* (I2S_RXCTRL) 18 bits  */
+#define   I2S_RXCTRL_DATASIZE_16_Val          _UINT32_(0x4)                                        /* (I2S_RXCTRL) 16 bits  */
+#define   I2S_RXCTRL_DATASIZE_16C_Val         _UINT32_(0x5)                                        /* (I2S_RXCTRL) 16 bits compact stereo  */
+#define   I2S_RXCTRL_DATASIZE_8_Val           _UINT32_(0x6)                                        /* (I2S_RXCTRL) 8 bits  */
+#define   I2S_RXCTRL_DATASIZE_8C_Val          _UINT32_(0x7)                                        /* (I2S_RXCTRL) 8 bits compact stereo  */
+#define I2S_RXCTRL_DATASIZE_32                (I2S_RXCTRL_DATASIZE_32_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 32 bits Position  */
+#define I2S_RXCTRL_DATASIZE_24                (I2S_RXCTRL_DATASIZE_24_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 24 bits Position  */
+#define I2S_RXCTRL_DATASIZE_20                (I2S_RXCTRL_DATASIZE_20_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 20 bits Position  */
+#define I2S_RXCTRL_DATASIZE_18                (I2S_RXCTRL_DATASIZE_18_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 18 bits Position  */
+#define I2S_RXCTRL_DATASIZE_16                (I2S_RXCTRL_DATASIZE_16_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 16 bits Position  */
+#define I2S_RXCTRL_DATASIZE_16C               (I2S_RXCTRL_DATASIZE_16C_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 16 bits compact stereo Position  */
+#define I2S_RXCTRL_DATASIZE_8                 (I2S_RXCTRL_DATASIZE_8_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 8 bits Position  */
+#define I2S_RXCTRL_DATASIZE_8C                (I2S_RXCTRL_DATASIZE_8C_Val << I2S_RXCTRL_DATASIZE_Pos) /* (I2S_RXCTRL) 8 bits compact stereo Position  */
+#define I2S_RXCTRL_WORDADJ_Pos                _UINT32_(12)                                         /* (I2S_RXCTRL) Data Word Formatting Adjust Position */
+#define I2S_RXCTRL_WORDADJ_Msk                (_UINT32_(0x1) << I2S_RXCTRL_WORDADJ_Pos)            /* (I2S_RXCTRL) Data Word Formatting Adjust Mask */
+#define I2S_RXCTRL_WORDADJ(value)             (I2S_RXCTRL_WORDADJ_Msk & (_UINT32_(value) << I2S_RXCTRL_WORDADJ_Pos)) /* Assigment of value for WORDADJ in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_WORDADJ_RIGHT_Val        _UINT32_(0x0)                                        /* (I2S_RXCTRL) Data is right adjusted in word  */
+#define   I2S_RXCTRL_WORDADJ_LEFT_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) Data is left adjusted in word  */
+#define I2S_RXCTRL_WORDADJ_RIGHT              (I2S_RXCTRL_WORDADJ_RIGHT_Val << I2S_RXCTRL_WORDADJ_Pos) /* (I2S_RXCTRL) Data is right adjusted in word Position  */
+#define I2S_RXCTRL_WORDADJ_LEFT               (I2S_RXCTRL_WORDADJ_LEFT_Val << I2S_RXCTRL_WORDADJ_Pos) /* (I2S_RXCTRL) Data is left adjusted in word Position  */
+#define I2S_RXCTRL_EXTEND_Pos                 _UINT32_(13)                                         /* (I2S_RXCTRL) Data Formatting Bit Extension Position */
+#define I2S_RXCTRL_EXTEND_Msk                 (_UINT32_(0x3) << I2S_RXCTRL_EXTEND_Pos)             /* (I2S_RXCTRL) Data Formatting Bit Extension Mask */
+#define I2S_RXCTRL_EXTEND(value)              (I2S_RXCTRL_EXTEND_Msk & (_UINT32_(value) << I2S_RXCTRL_EXTEND_Pos)) /* Assigment of value for EXTEND in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_EXTEND_ZERO_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) Extend with zeroes  */
+#define   I2S_RXCTRL_EXTEND_ONE_Val           _UINT32_(0x1)                                        /* (I2S_RXCTRL) Extend with ones  */
+#define   I2S_RXCTRL_EXTEND_MSBIT_Val         _UINT32_(0x2)                                        /* (I2S_RXCTRL) Extend with Most Significant Bit  */
+#define   I2S_RXCTRL_EXTEND_LSBIT_Val         _UINT32_(0x3)                                        /* (I2S_RXCTRL) Extend with Least Significant Bit  */
+#define I2S_RXCTRL_EXTEND_ZERO                (I2S_RXCTRL_EXTEND_ZERO_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with zeroes Position  */
+#define I2S_RXCTRL_EXTEND_ONE                 (I2S_RXCTRL_EXTEND_ONE_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with ones Position  */
+#define I2S_RXCTRL_EXTEND_MSBIT               (I2S_RXCTRL_EXTEND_MSBIT_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with Most Significant Bit Position  */
+#define I2S_RXCTRL_EXTEND_LSBIT               (I2S_RXCTRL_EXTEND_LSBIT_Val << I2S_RXCTRL_EXTEND_Pos) /* (I2S_RXCTRL) Extend with Least Significant Bit Position  */
+#define I2S_RXCTRL_BITREV_Pos                 _UINT32_(15)                                         /* (I2S_RXCTRL) Data Formatting Bit Reverse Position */
+#define I2S_RXCTRL_BITREV_Msk                 (_UINT32_(0x1) << I2S_RXCTRL_BITREV_Pos)             /* (I2S_RXCTRL) Data Formatting Bit Reverse Mask */
+#define I2S_RXCTRL_BITREV(value)              (I2S_RXCTRL_BITREV_Msk & (_UINT32_(value) << I2S_RXCTRL_BITREV_Pos)) /* Assigment of value for BITREV in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_BITREV_MSBIT_Val         _UINT32_(0x0)                                        /* (I2S_RXCTRL) Transfer Data Most Significant Bit (MSB) first (default for I2S protocol)  */
+#define   I2S_RXCTRL_BITREV_LSBIT_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) Transfer Data Least Significant Bit (LSB) first  */
+#define I2S_RXCTRL_BITREV_MSBIT               (I2S_RXCTRL_BITREV_MSBIT_Val << I2S_RXCTRL_BITREV_Pos) /* (I2S_RXCTRL) Transfer Data Most Significant Bit (MSB) first (default for I2S protocol) Position  */
+#define I2S_RXCTRL_BITREV_LSBIT               (I2S_RXCTRL_BITREV_LSBIT_Val << I2S_RXCTRL_BITREV_Pos) /* (I2S_RXCTRL) Transfer Data Least Significant Bit (LSB) first Position  */
+#define I2S_RXCTRL_SLOTDIS0_Pos               _UINT32_(16)                                         /* (I2S_RXCTRL) Slot 0 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS0_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS0_Pos)           /* (I2S_RXCTRL) Slot 0 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS0(value)            (I2S_RXCTRL_SLOTDIS0_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS0_Pos)) /* Assigment of value for SLOTDIS0 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS1_Pos               _UINT32_(17)                                         /* (I2S_RXCTRL) Slot 1 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS1_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS1_Pos)           /* (I2S_RXCTRL) Slot 1 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS1(value)            (I2S_RXCTRL_SLOTDIS1_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS1_Pos)) /* Assigment of value for SLOTDIS1 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS2_Pos               _UINT32_(18)                                         /* (I2S_RXCTRL) Slot 2 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS2_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS2_Pos)           /* (I2S_RXCTRL) Slot 2 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS2(value)            (I2S_RXCTRL_SLOTDIS2_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS2_Pos)) /* Assigment of value for SLOTDIS2 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS3_Pos               _UINT32_(19)                                         /* (I2S_RXCTRL) Slot 3 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS3_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS3_Pos)           /* (I2S_RXCTRL) Slot 3 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS3(value)            (I2S_RXCTRL_SLOTDIS3_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS3_Pos)) /* Assigment of value for SLOTDIS3 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS4_Pos               _UINT32_(20)                                         /* (I2S_RXCTRL) Slot 4 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS4_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS4_Pos)           /* (I2S_RXCTRL) Slot 4 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS4(value)            (I2S_RXCTRL_SLOTDIS4_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS4_Pos)) /* Assigment of value for SLOTDIS4 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS5_Pos               _UINT32_(21)                                         /* (I2S_RXCTRL) Slot 5 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS5_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS5_Pos)           /* (I2S_RXCTRL) Slot 5 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS5(value)            (I2S_RXCTRL_SLOTDIS5_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS5_Pos)) /* Assigment of value for SLOTDIS5 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS6_Pos               _UINT32_(22)                                         /* (I2S_RXCTRL) Slot 6 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS6_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS6_Pos)           /* (I2S_RXCTRL) Slot 6 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS6(value)            (I2S_RXCTRL_SLOTDIS6_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS6_Pos)) /* Assigment of value for SLOTDIS6 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_SLOTDIS7_Pos               _UINT32_(23)                                         /* (I2S_RXCTRL) Slot 7 Disabled for this Serializer Position */
+#define I2S_RXCTRL_SLOTDIS7_Msk               (_UINT32_(0x1) << I2S_RXCTRL_SLOTDIS7_Pos)           /* (I2S_RXCTRL) Slot 7 Disabled for this Serializer Mask */
+#define I2S_RXCTRL_SLOTDIS7(value)            (I2S_RXCTRL_SLOTDIS7_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS7_Pos)) /* Assigment of value for SLOTDIS7 in the I2S_RXCTRL register */
+#define I2S_RXCTRL_MONO_Pos                   _UINT32_(24)                                         /* (I2S_RXCTRL) Mono Mode Position */
+#define I2S_RXCTRL_MONO_Msk                   (_UINT32_(0x1) << I2S_RXCTRL_MONO_Pos)               /* (I2S_RXCTRL) Mono Mode Mask */
+#define I2S_RXCTRL_MONO(value)                (I2S_RXCTRL_MONO_Msk & (_UINT32_(value) << I2S_RXCTRL_MONO_Pos)) /* Assigment of value for MONO in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_MONO_STEREO_Val          _UINT32_(0x0)                                        /* (I2S_RXCTRL) Normal mode  */
+#define   I2S_RXCTRL_MONO_MONO_Val            _UINT32_(0x1)                                        /* (I2S_RXCTRL) Left channel data is duplicated to right channel  */
+#define I2S_RXCTRL_MONO_STEREO                (I2S_RXCTRL_MONO_STEREO_Val << I2S_RXCTRL_MONO_Pos)  /* (I2S_RXCTRL) Normal mode Position  */
+#define I2S_RXCTRL_MONO_MONO                  (I2S_RXCTRL_MONO_MONO_Val << I2S_RXCTRL_MONO_Pos)    /* (I2S_RXCTRL) Left channel data is duplicated to right channel Position  */
+#define I2S_RXCTRL_DMA_Pos                    _UINT32_(25)                                         /* (I2S_RXCTRL) Single or Multiple DMA Channels Position */
+#define I2S_RXCTRL_DMA_Msk                    (_UINT32_(0x1) << I2S_RXCTRL_DMA_Pos)                /* (I2S_RXCTRL) Single or Multiple DMA Channels Mask */
+#define I2S_RXCTRL_DMA(value)                 (I2S_RXCTRL_DMA_Msk & (_UINT32_(value) << I2S_RXCTRL_DMA_Pos)) /* Assigment of value for DMA in the I2S_RXCTRL register */
+#define   I2S_RXCTRL_DMA_SINGLE_Val           _UINT32_(0x0)                                        /* (I2S_RXCTRL) Single DMA channel  */
+#define   I2S_RXCTRL_DMA_MULTIPLE_Val         _UINT32_(0x1)                                        /* (I2S_RXCTRL) One DMA channel per data channel  */
+#define I2S_RXCTRL_DMA_SINGLE                 (I2S_RXCTRL_DMA_SINGLE_Val << I2S_RXCTRL_DMA_Pos)    /* (I2S_RXCTRL) Single DMA channel Position  */
+#define I2S_RXCTRL_DMA_MULTIPLE               (I2S_RXCTRL_DMA_MULTIPLE_Val << I2S_RXCTRL_DMA_Pos)  /* (I2S_RXCTRL) One DMA channel per data channel Position  */
+#define I2S_RXCTRL_RXLOOP_Pos                 _UINT32_(26)                                         /* (I2S_RXCTRL) Loop-back Test Mode Position */
+#define I2S_RXCTRL_RXLOOP_Msk                 (_UINT32_(0x1) << I2S_RXCTRL_RXLOOP_Pos)             /* (I2S_RXCTRL) Loop-back Test Mode Mask */
+#define I2S_RXCTRL_RXLOOP(value)              (I2S_RXCTRL_RXLOOP_Msk & (_UINT32_(value) << I2S_RXCTRL_RXLOOP_Pos)) /* Assigment of value for RXLOOP in the I2S_RXCTRL register */
+#define I2S_RXCTRL_Msk                        _UINT32_(0x07FFF7A3)                                 /* (I2S_RXCTRL) Register Mask  */
+
+#define I2S_RXCTRL_SLOTDIS_Pos                _UINT32_(16)                                         /* (I2S_RXCTRL Position) Slot x Disabled for this Serializer */
+#define I2S_RXCTRL_SLOTDIS_Msk                (_UINT32_(0xFF) << I2S_RXCTRL_SLOTDIS_Pos)           /* (I2S_RXCTRL Mask) SLOTDIS */
+#define I2S_RXCTRL_SLOTDIS(value)             (I2S_RXCTRL_SLOTDIS_Msk & (_UINT32_(value) << I2S_RXCTRL_SLOTDIS_Pos)) 
+
 /* -------- I2S_TXDATA : (I2S Offset: 0x30) ( /W 32) Tx Data -------- */
 #define I2S_TXDATA_RESETVALUE                 _UINT32_(0x00)                                       /*  (I2S_TXDATA) Tx Data  Reset Value */
 
@@ -541,19 +532,28 @@
 #define I2S_TXDATA_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (I2S_TXDATA) Register Mask  */
 
 
+/* -------- I2S_RXDATA : (I2S Offset: 0x34) ( R/ 32) Rx Data -------- */
+#define I2S_RXDATA_RESETVALUE                 _UINT32_(0x00)                                       /*  (I2S_RXDATA) Rx Data  Reset Value */
+
+#define I2S_RXDATA_DATA_Pos                   _UINT32_(0)                                          /* (I2S_RXDATA) Sample Data Position */
+#define I2S_RXDATA_DATA_Msk                   (_UINT32_(0xFFFFFFFF) << I2S_RXDATA_DATA_Pos)        /* (I2S_RXDATA) Sample Data Mask */
+#define I2S_RXDATA_DATA(value)                (I2S_RXDATA_DATA_Msk & (_UINT32_(value) << I2S_RXDATA_DATA_Pos)) /* Assigment of value for DATA in the I2S_RXDATA register */
+#define I2S_RXDATA_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (I2S_RXDATA) Register Mask  */
+
+
 /** \brief I2S register offsets definitions */
+#define I2S_CTRLA_REG_OFST             _UINT32_(0x00)      /* (I2S_CTRLA) Control A Offset */
 #define I2S_CLKCTRL_REG_OFST           _UINT32_(0x04)      /* (I2S_CLKCTRL) Clock Unit n Control Offset */
 #define I2S_CLKCTRL0_REG_OFST          _UINT32_(0x04)      /* (I2S_CLKCTRL0) Clock Unit n Control Offset */
 #define I2S_CLKCTRL1_REG_OFST          _UINT32_(0x08)      /* (I2S_CLKCTRL1) Clock Unit n Control Offset */
-#define I2S_CTRLA_REG_OFST             _UINT32_(0x00)      /* (I2S_CTRLA) Control A Offset */
 #define I2S_INTENCLR_REG_OFST          _UINT32_(0x0C)      /* (I2S_INTENCLR) Interrupt Enable Clear Offset */
 #define I2S_INTENSET_REG_OFST          _UINT32_(0x10)      /* (I2S_INTENSET) Interrupt Enable Set Offset */
 #define I2S_INTFLAG_REG_OFST           _UINT32_(0x14)      /* (I2S_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define I2S_RXCTRL_REG_OFST            _UINT32_(0x24)      /* (I2S_RXCTRL) Rx Serializer Control Offset */
-#define I2S_RXDATA_REG_OFST            _UINT32_(0x34)      /* (I2S_RXDATA) Rx Data Offset */
 #define I2S_SYNCBUSY_REG_OFST          _UINT32_(0x18)      /* (I2S_SYNCBUSY) Synchronization Status Offset */
 #define I2S_TXCTRL_REG_OFST            _UINT32_(0x20)      /* (I2S_TXCTRL) Tx Serializer Control Offset */
+#define I2S_RXCTRL_REG_OFST            _UINT32_(0x24)      /* (I2S_RXCTRL) Rx Serializer Control Offset */
 #define I2S_TXDATA_REG_OFST            _UINT32_(0x30)      /* (I2S_TXDATA) Tx Data Offset */
+#define I2S_RXDATA_REG_OFST            _UINT32_(0x34)      /* (I2S_RXDATA) Rx Data Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief I2S register API structure */

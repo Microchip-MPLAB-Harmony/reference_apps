@@ -1,7 +1,7 @@
 /*
  * Component description for DMAC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,22 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_DMAC_COMPONENT_H_
 #define _PIC32CXSG41_DMAC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR DMAC                                         */
 /* ************************************************************************** */
-
-/* -------- DMAC_BTCNT : (DMAC Offset: 0x02) (R/W 16) Block Transfer Count -------- */
-#define DMAC_BTCNT_RESETVALUE                 _UINT16_(0x00)                                       /*  (DMAC_BTCNT) Block Transfer Count  Reset Value */
-
-#define DMAC_BTCNT_BTCNT_Pos                  _UINT16_(0)                                          /* (DMAC_BTCNT) Block Transfer Count Position */
-#define DMAC_BTCNT_BTCNT_Msk                  (_UINT16_(0xFFFF) << DMAC_BTCNT_BTCNT_Pos)           /* (DMAC_BTCNT) Block Transfer Count Mask */
-#define DMAC_BTCNT_BTCNT(value)               (DMAC_BTCNT_BTCNT_Msk & (_UINT16_(value) << DMAC_BTCNT_BTCNT_Pos)) /* Assigment of value for BTCNT in the DMAC_BTCNT register */
-#define DMAC_BTCNT_Msk                        _UINT16_(0xFFFF)                                     /* (DMAC_BTCNT) Register Mask  */
-
 
 /* -------- DMAC_BTCTRL : (DMAC Offset: 0x00) (R/W 16) Block Transfer Control -------- */
 #define DMAC_BTCTRL_RESETVALUE                _UINT16_(0x00)                                       /*  (DMAC_BTCTRL) Block Transfer Control  Reset Value */
@@ -107,11 +98,22 @@
 #define DMAC_BTCTRL_Msk                       _UINT16_(0xFF1F)                                     /* (DMAC_BTCTRL) Register Mask  */
 
 
-/* -------- DMAC_DESCADDR : (DMAC Offset: 0x0C) (R/W 32) Next Descriptor Address -------- */
-#define DMAC_DESCADDR_DESCADDR_Pos            _UINT32_(0)                                          /* (DMAC_DESCADDR) Next Descriptor Address Position */
-#define DMAC_DESCADDR_DESCADDR_Msk            (_UINT32_(0xFFFFFFFF) << DMAC_DESCADDR_DESCADDR_Pos) /* (DMAC_DESCADDR) Next Descriptor Address Mask */
-#define DMAC_DESCADDR_DESCADDR(value)         (DMAC_DESCADDR_DESCADDR_Msk & (_UINT32_(value) << DMAC_DESCADDR_DESCADDR_Pos)) /* Assigment of value for DESCADDR in the DMAC_DESCADDR register */
-#define DMAC_DESCADDR_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (DMAC_DESCADDR) Register Mask  */
+/* -------- DMAC_BTCNT : (DMAC Offset: 0x02) (R/W 16) Block Transfer Count -------- */
+#define DMAC_BTCNT_RESETVALUE                 _UINT16_(0x00)                                       /*  (DMAC_BTCNT) Block Transfer Count  Reset Value */
+
+#define DMAC_BTCNT_BTCNT_Pos                  _UINT16_(0)                                          /* (DMAC_BTCNT) Block Transfer Count Position */
+#define DMAC_BTCNT_BTCNT_Msk                  (_UINT16_(0xFFFF) << DMAC_BTCNT_BTCNT_Pos)           /* (DMAC_BTCNT) Block Transfer Count Mask */
+#define DMAC_BTCNT_BTCNT(value)               (DMAC_BTCNT_BTCNT_Msk & (_UINT16_(value) << DMAC_BTCNT_BTCNT_Pos)) /* Assigment of value for BTCNT in the DMAC_BTCNT register */
+#define DMAC_BTCNT_Msk                        _UINT16_(0xFFFF)                                     /* (DMAC_BTCNT) Register Mask  */
+
+
+/* -------- DMAC_SRCADDR : (DMAC Offset: 0x04) (R/W 32) Block Transfer Source Address -------- */
+#define DMAC_SRCADDR_RESETVALUE               _UINT32_(0x00)                                       /*  (DMAC_SRCADDR) Block Transfer Source Address  Reset Value */
+
+#define DMAC_SRCADDR_SRCADDR_Pos              _UINT32_(0)                                          /* (DMAC_SRCADDR) Transfer Source Address Position */
+#define DMAC_SRCADDR_SRCADDR_Msk              (_UINT32_(0xFFFFFFFF) << DMAC_SRCADDR_SRCADDR_Pos)   /* (DMAC_SRCADDR) Transfer Source Address Mask */
+#define DMAC_SRCADDR_SRCADDR(value)           (DMAC_SRCADDR_SRCADDR_Msk & (_UINT32_(value) << DMAC_SRCADDR_SRCADDR_Pos)) /* Assigment of value for SRCADDR in the DMAC_SRCADDR register */
+#define DMAC_SRCADDR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (DMAC_SRCADDR) Register Mask  */
 
 
 /* -------- DMAC_DSTADDR : (DMAC Offset: 0x08) (R/W 32) Block Transfer Destination Address -------- */
@@ -127,13 +129,11 @@
 #define DMAC_DSTADDR_CRC_Msk                  _UINT32_(0xFFFFFFFF)                                  /* (DMAC_DSTADDR_CRC) Register Mask  */
 
 
-/* -------- DMAC_SRCADDR : (DMAC Offset: 0x04) (R/W 32) Block Transfer Source Address -------- */
-#define DMAC_SRCADDR_RESETVALUE               _UINT32_(0x00)                                       /*  (DMAC_SRCADDR) Block Transfer Source Address  Reset Value */
-
-#define DMAC_SRCADDR_SRCADDR_Pos              _UINT32_(0)                                          /* (DMAC_SRCADDR) Transfer Source Address Position */
-#define DMAC_SRCADDR_SRCADDR_Msk              (_UINT32_(0xFFFFFFFF) << DMAC_SRCADDR_SRCADDR_Pos)   /* (DMAC_SRCADDR) Transfer Source Address Mask */
-#define DMAC_SRCADDR_SRCADDR(value)           (DMAC_SRCADDR_SRCADDR_Msk & (_UINT32_(value) << DMAC_SRCADDR_SRCADDR_Pos)) /* Assigment of value for SRCADDR in the DMAC_SRCADDR register */
-#define DMAC_SRCADDR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (DMAC_SRCADDR) Register Mask  */
+/* -------- DMAC_DESCADDR : (DMAC Offset: 0x0C) (R/W 32) Next Descriptor Address -------- */
+#define DMAC_DESCADDR_DESCADDR_Pos            _UINT32_(0)                                          /* (DMAC_DESCADDR) Next Descriptor Address Position */
+#define DMAC_DESCADDR_DESCADDR_Msk            (_UINT32_(0xFFFFFFFF) << DMAC_DESCADDR_DESCADDR_Pos) /* (DMAC_DESCADDR) Next Descriptor Address Mask */
+#define DMAC_DESCADDR_DESCADDR(value)         (DMAC_DESCADDR_DESCADDR_Msk & (_UINT32_(value) << DMAC_DESCADDR_DESCADDR_Pos)) /* Assigment of value for DESCADDR in the DMAC_DESCADDR register */
+#define DMAC_DESCADDR_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (DMAC_DESCADDR) Register Mask  */
 
 
 /* -------- DMAC_CHCTRLA : (DMAC Offset: 0x00) (R/W 32) Channel n Control A -------- */
@@ -226,6 +226,23 @@
 #define DMAC_CHCTRLB_Msk                      _UINT8_(0x03)                                        /* (DMAC_CHCTRLB) Register Mask  */
 
 
+/* -------- DMAC_CHPRILVL : (DMAC Offset: 0x05) (R/W 8) Channel n Priority Level -------- */
+#define DMAC_CHPRILVL_RESETVALUE              _UINT8_(0x00)                                        /*  (DMAC_CHPRILVL) Channel n Priority Level  Reset Value */
+
+#define DMAC_CHPRILVL_PRILVL_Pos              _UINT8_(0)                                           /* (DMAC_CHPRILVL) Channel Priority Level Position */
+#define DMAC_CHPRILVL_PRILVL_Msk              (_UINT8_(0x3) << DMAC_CHPRILVL_PRILVL_Pos)           /* (DMAC_CHPRILVL) Channel Priority Level Mask */
+#define DMAC_CHPRILVL_PRILVL(value)           (DMAC_CHPRILVL_PRILVL_Msk & (_UINT8_(value) << DMAC_CHPRILVL_PRILVL_Pos)) /* Assigment of value for PRILVL in the DMAC_CHPRILVL register */
+#define   DMAC_CHPRILVL_PRILVL_LVL0_Val       _UINT8_(0x0)                                         /* (DMAC_CHPRILVL) Channel Priority Level 0 (Lowest Level)  */
+#define   DMAC_CHPRILVL_PRILVL_LVL1_Val       _UINT8_(0x1)                                         /* (DMAC_CHPRILVL) Channel Priority Level 1  */
+#define   DMAC_CHPRILVL_PRILVL_LVL2_Val       _UINT8_(0x2)                                         /* (DMAC_CHPRILVL) Channel Priority Level 2  */
+#define   DMAC_CHPRILVL_PRILVL_LVL3_Val       _UINT8_(0x3)                                         /* (DMAC_CHPRILVL) Channel Priority Level 3 (Highest Level)  */
+#define DMAC_CHPRILVL_PRILVL_LVL0             (DMAC_CHPRILVL_PRILVL_LVL0_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 0 (Lowest Level) Position  */
+#define DMAC_CHPRILVL_PRILVL_LVL1             (DMAC_CHPRILVL_PRILVL_LVL1_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 1 Position  */
+#define DMAC_CHPRILVL_PRILVL_LVL2             (DMAC_CHPRILVL_PRILVL_LVL2_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 2 Position  */
+#define DMAC_CHPRILVL_PRILVL_LVL3             (DMAC_CHPRILVL_PRILVL_LVL3_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 3 (Highest Level) Position  */
+#define DMAC_CHPRILVL_Msk                     _UINT8_(0x03)                                        /* (DMAC_CHPRILVL) Register Mask  */
+
+
 /* -------- DMAC_CHEVCTRL : (DMAC Offset: 0x06) (R/W 8) Channel n Event Control -------- */
 #define DMAC_CHEVCTRL_RESETVALUE              _UINT8_(0x00)                                        /*  (DMAC_CHEVCTRL) Channel n Event Control  Reset Value */
 
@@ -309,23 +326,6 @@
 #define DMAC_CHINTFLAG_Msk                    _UINT8_(0x07)                                        /* (DMAC_CHINTFLAG) Register Mask  */
 
 
-/* -------- DMAC_CHPRILVL : (DMAC Offset: 0x05) (R/W 8) Channel n Priority Level -------- */
-#define DMAC_CHPRILVL_RESETVALUE              _UINT8_(0x00)                                        /*  (DMAC_CHPRILVL) Channel n Priority Level  Reset Value */
-
-#define DMAC_CHPRILVL_PRILVL_Pos              _UINT8_(0)                                           /* (DMAC_CHPRILVL) Channel Priority Level Position */
-#define DMAC_CHPRILVL_PRILVL_Msk              (_UINT8_(0x3) << DMAC_CHPRILVL_PRILVL_Pos)           /* (DMAC_CHPRILVL) Channel Priority Level Mask */
-#define DMAC_CHPRILVL_PRILVL(value)           (DMAC_CHPRILVL_PRILVL_Msk & (_UINT8_(value) << DMAC_CHPRILVL_PRILVL_Pos)) /* Assigment of value for PRILVL in the DMAC_CHPRILVL register */
-#define   DMAC_CHPRILVL_PRILVL_LVL0_Val       _UINT8_(0x0)                                         /* (DMAC_CHPRILVL) Channel Priority Level 0 (Lowest Level)  */
-#define   DMAC_CHPRILVL_PRILVL_LVL1_Val       _UINT8_(0x1)                                         /* (DMAC_CHPRILVL) Channel Priority Level 1  */
-#define   DMAC_CHPRILVL_PRILVL_LVL2_Val       _UINT8_(0x2)                                         /* (DMAC_CHPRILVL) Channel Priority Level 2  */
-#define   DMAC_CHPRILVL_PRILVL_LVL3_Val       _UINT8_(0x3)                                         /* (DMAC_CHPRILVL) Channel Priority Level 3 (Highest Level)  */
-#define DMAC_CHPRILVL_PRILVL_LVL0             (DMAC_CHPRILVL_PRILVL_LVL0_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 0 (Lowest Level) Position  */
-#define DMAC_CHPRILVL_PRILVL_LVL1             (DMAC_CHPRILVL_PRILVL_LVL1_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 1 Position  */
-#define DMAC_CHPRILVL_PRILVL_LVL2             (DMAC_CHPRILVL_PRILVL_LVL2_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 2 Position  */
-#define DMAC_CHPRILVL_PRILVL_LVL3             (DMAC_CHPRILVL_PRILVL_LVL3_Val << DMAC_CHPRILVL_PRILVL_Pos) /* (DMAC_CHPRILVL) Channel Priority Level 3 (Highest Level) Position  */
-#define DMAC_CHPRILVL_Msk                     _UINT8_(0x03)                                        /* (DMAC_CHPRILVL) Register Mask  */
-
-
 /* -------- DMAC_CHSTATUS : (DMAC Offset: 0x0F) (R/W 8) Channel n Status -------- */
 #define DMAC_CHSTATUS_RESETVALUE              _UINT8_(0x00)                                        /*  (DMAC_CHSTATUS) Channel n Status  Reset Value */
 
@@ -344,158 +344,32 @@
 #define DMAC_CHSTATUS_Msk                     _UINT8_(0x0F)                                        /* (DMAC_CHSTATUS) Register Mask  */
 
 
-/* -------- DMAC_ACTIVE : (DMAC Offset: 0x30) ( R/ 32) Active Channel and Levels -------- */
-#define DMAC_ACTIVE_RESETVALUE                _UINT32_(0x00)                                       /*  (DMAC_ACTIVE) Active Channel and Levels  Reset Value */
+/* -------- DMAC_CTRL : (DMAC Offset: 0x00) (R/W 16) Control -------- */
+#define DMAC_CTRL_RESETVALUE                  _UINT16_(0x00)                                       /*  (DMAC_CTRL) Control  Reset Value */
 
-#define DMAC_ACTIVE_LVLEX0_Pos                _UINT32_(0)                                          /* (DMAC_ACTIVE) Level 0 Channel Trigger Request Executing Position */
-#define DMAC_ACTIVE_LVLEX0_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX0_Pos)            /* (DMAC_ACTIVE) Level 0 Channel Trigger Request Executing Mask */
-#define DMAC_ACTIVE_LVLEX0(value)             (DMAC_ACTIVE_LVLEX0_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX0_Pos)) /* Assigment of value for LVLEX0 in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_LVLEX1_Pos                _UINT32_(1)                                          /* (DMAC_ACTIVE) Level 1 Channel Trigger Request Executing Position */
-#define DMAC_ACTIVE_LVLEX1_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX1_Pos)            /* (DMAC_ACTIVE) Level 1 Channel Trigger Request Executing Mask */
-#define DMAC_ACTIVE_LVLEX1(value)             (DMAC_ACTIVE_LVLEX1_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX1_Pos)) /* Assigment of value for LVLEX1 in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_LVLEX2_Pos                _UINT32_(2)                                          /* (DMAC_ACTIVE) Level 2 Channel Trigger Request Executing Position */
-#define DMAC_ACTIVE_LVLEX2_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX2_Pos)            /* (DMAC_ACTIVE) Level 2 Channel Trigger Request Executing Mask */
-#define DMAC_ACTIVE_LVLEX2(value)             (DMAC_ACTIVE_LVLEX2_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX2_Pos)) /* Assigment of value for LVLEX2 in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_LVLEX3_Pos                _UINT32_(3)                                          /* (DMAC_ACTIVE) Level 3 Channel Trigger Request Executing Position */
-#define DMAC_ACTIVE_LVLEX3_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX3_Pos)            /* (DMAC_ACTIVE) Level 3 Channel Trigger Request Executing Mask */
-#define DMAC_ACTIVE_LVLEX3(value)             (DMAC_ACTIVE_LVLEX3_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX3_Pos)) /* Assigment of value for LVLEX3 in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_ID_Pos                    _UINT32_(8)                                          /* (DMAC_ACTIVE) Active Channel ID Position */
-#define DMAC_ACTIVE_ID_Msk                    (_UINT32_(0x1F) << DMAC_ACTIVE_ID_Pos)               /* (DMAC_ACTIVE) Active Channel ID Mask */
-#define DMAC_ACTIVE_ID(value)                 (DMAC_ACTIVE_ID_Msk & (_UINT32_(value) << DMAC_ACTIVE_ID_Pos)) /* Assigment of value for ID in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_ABUSY_Pos                 _UINT32_(15)                                         /* (DMAC_ACTIVE) Active Channel Busy Position */
-#define DMAC_ACTIVE_ABUSY_Msk                 (_UINT32_(0x1) << DMAC_ACTIVE_ABUSY_Pos)             /* (DMAC_ACTIVE) Active Channel Busy Mask */
-#define DMAC_ACTIVE_ABUSY(value)              (DMAC_ACTIVE_ABUSY_Msk & (_UINT32_(value) << DMAC_ACTIVE_ABUSY_Pos)) /* Assigment of value for ABUSY in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_BTCNT_Pos                 _UINT32_(16)                                         /* (DMAC_ACTIVE) Active Channel Block Transfer Count Position */
-#define DMAC_ACTIVE_BTCNT_Msk                 (_UINT32_(0xFFFF) << DMAC_ACTIVE_BTCNT_Pos)          /* (DMAC_ACTIVE) Active Channel Block Transfer Count Mask */
-#define DMAC_ACTIVE_BTCNT(value)              (DMAC_ACTIVE_BTCNT_Msk & (_UINT32_(value) << DMAC_ACTIVE_BTCNT_Pos)) /* Assigment of value for BTCNT in the DMAC_ACTIVE register */
-#define DMAC_ACTIVE_Msk                       _UINT32_(0xFFFF9F0F)                                 /* (DMAC_ACTIVE) Register Mask  */
+#define DMAC_CTRL_SWRST_Pos                   _UINT16_(0)                                          /* (DMAC_CTRL) Software Reset Position */
+#define DMAC_CTRL_SWRST_Msk                   (_UINT16_(0x1) << DMAC_CTRL_SWRST_Pos)               /* (DMAC_CTRL) Software Reset Mask */
+#define DMAC_CTRL_SWRST(value)                (DMAC_CTRL_SWRST_Msk & (_UINT16_(value) << DMAC_CTRL_SWRST_Pos)) /* Assigment of value for SWRST in the DMAC_CTRL register */
+#define DMAC_CTRL_DMAENABLE_Pos               _UINT16_(1)                                          /* (DMAC_CTRL) DMA Enable Position */
+#define DMAC_CTRL_DMAENABLE_Msk               (_UINT16_(0x1) << DMAC_CTRL_DMAENABLE_Pos)           /* (DMAC_CTRL) DMA Enable Mask */
+#define DMAC_CTRL_DMAENABLE(value)            (DMAC_CTRL_DMAENABLE_Msk & (_UINT16_(value) << DMAC_CTRL_DMAENABLE_Pos)) /* Assigment of value for DMAENABLE in the DMAC_CTRL register */
+#define DMAC_CTRL_LVLEN0_Pos                  _UINT16_(8)                                          /* (DMAC_CTRL) Priority Level 0 Enable Position */
+#define DMAC_CTRL_LVLEN0_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN0_Pos)              /* (DMAC_CTRL) Priority Level 0 Enable Mask */
+#define DMAC_CTRL_LVLEN0(value)               (DMAC_CTRL_LVLEN0_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN0_Pos)) /* Assigment of value for LVLEN0 in the DMAC_CTRL register */
+#define DMAC_CTRL_LVLEN1_Pos                  _UINT16_(9)                                          /* (DMAC_CTRL) Priority Level 1 Enable Position */
+#define DMAC_CTRL_LVLEN1_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN1_Pos)              /* (DMAC_CTRL) Priority Level 1 Enable Mask */
+#define DMAC_CTRL_LVLEN1(value)               (DMAC_CTRL_LVLEN1_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN1_Pos)) /* Assigment of value for LVLEN1 in the DMAC_CTRL register */
+#define DMAC_CTRL_LVLEN2_Pos                  _UINT16_(10)                                         /* (DMAC_CTRL) Priority Level 2 Enable Position */
+#define DMAC_CTRL_LVLEN2_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN2_Pos)              /* (DMAC_CTRL) Priority Level 2 Enable Mask */
+#define DMAC_CTRL_LVLEN2(value)               (DMAC_CTRL_LVLEN2_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN2_Pos)) /* Assigment of value for LVLEN2 in the DMAC_CTRL register */
+#define DMAC_CTRL_LVLEN3_Pos                  _UINT16_(11)                                         /* (DMAC_CTRL) Priority Level 3 Enable Position */
+#define DMAC_CTRL_LVLEN3_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN3_Pos)              /* (DMAC_CTRL) Priority Level 3 Enable Mask */
+#define DMAC_CTRL_LVLEN3(value)               (DMAC_CTRL_LVLEN3_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN3_Pos)) /* Assigment of value for LVLEN3 in the DMAC_CTRL register */
+#define DMAC_CTRL_Msk                         _UINT16_(0x0F03)                                     /* (DMAC_CTRL) Register Mask  */
 
-#define DMAC_ACTIVE_LVLEX_Pos                 _UINT32_(0)                                          /* (DMAC_ACTIVE Position) Level x Channel Trigger Request Executing */
-#define DMAC_ACTIVE_LVLEX_Msk                 (_UINT32_(0xF) << DMAC_ACTIVE_LVLEX_Pos)             /* (DMAC_ACTIVE Mask) LVLEX */
-#define DMAC_ACTIVE_LVLEX(value)              (DMAC_ACTIVE_LVLEX_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX_Pos)) 
-
-/* -------- DMAC_BASEADDR : (DMAC Offset: 0x34) (R/W 32) Descriptor Memory Section Base Address -------- */
-#define DMAC_BASEADDR_RESETVALUE              _UINT32_(0x00)                                       /*  (DMAC_BASEADDR) Descriptor Memory Section Base Address  Reset Value */
-
-#define DMAC_BASEADDR_BASEADDR_Pos            _UINT32_(0)                                          /* (DMAC_BASEADDR) Descriptor Memory Base Address Position */
-#define DMAC_BASEADDR_BASEADDR_Msk            (_UINT32_(0xFFFFFFFF) << DMAC_BASEADDR_BASEADDR_Pos) /* (DMAC_BASEADDR) Descriptor Memory Base Address Mask */
-#define DMAC_BASEADDR_BASEADDR(value)         (DMAC_BASEADDR_BASEADDR_Msk & (_UINT32_(value) << DMAC_BASEADDR_BASEADDR_Pos)) /* Assigment of value for BASEADDR in the DMAC_BASEADDR register */
-#define DMAC_BASEADDR_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (DMAC_BASEADDR) Register Mask  */
-
-
-/* -------- DMAC_BUSYCH : (DMAC Offset: 0x28) ( R/ 32) Busy Channels -------- */
-#define DMAC_BUSYCH_RESETVALUE                _UINT32_(0x00)                                       /*  (DMAC_BUSYCH) Busy Channels  Reset Value */
-
-#define DMAC_BUSYCH_BUSYCH0_Pos               _UINT32_(0)                                          /* (DMAC_BUSYCH) Busy Channel 0 Position */
-#define DMAC_BUSYCH_BUSYCH0_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH0_Pos)           /* (DMAC_BUSYCH) Busy Channel 0 Mask */
-#define DMAC_BUSYCH_BUSYCH0(value)            (DMAC_BUSYCH_BUSYCH0_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH0_Pos)) /* Assigment of value for BUSYCH0 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH1_Pos               _UINT32_(1)                                          /* (DMAC_BUSYCH) Busy Channel 1 Position */
-#define DMAC_BUSYCH_BUSYCH1_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH1_Pos)           /* (DMAC_BUSYCH) Busy Channel 1 Mask */
-#define DMAC_BUSYCH_BUSYCH1(value)            (DMAC_BUSYCH_BUSYCH1_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH1_Pos)) /* Assigment of value for BUSYCH1 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH2_Pos               _UINT32_(2)                                          /* (DMAC_BUSYCH) Busy Channel 2 Position */
-#define DMAC_BUSYCH_BUSYCH2_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH2_Pos)           /* (DMAC_BUSYCH) Busy Channel 2 Mask */
-#define DMAC_BUSYCH_BUSYCH2(value)            (DMAC_BUSYCH_BUSYCH2_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH2_Pos)) /* Assigment of value for BUSYCH2 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH3_Pos               _UINT32_(3)                                          /* (DMAC_BUSYCH) Busy Channel 3 Position */
-#define DMAC_BUSYCH_BUSYCH3_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH3_Pos)           /* (DMAC_BUSYCH) Busy Channel 3 Mask */
-#define DMAC_BUSYCH_BUSYCH3(value)            (DMAC_BUSYCH_BUSYCH3_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH3_Pos)) /* Assigment of value for BUSYCH3 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH4_Pos               _UINT32_(4)                                          /* (DMAC_BUSYCH) Busy Channel 4 Position */
-#define DMAC_BUSYCH_BUSYCH4_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH4_Pos)           /* (DMAC_BUSYCH) Busy Channel 4 Mask */
-#define DMAC_BUSYCH_BUSYCH4(value)            (DMAC_BUSYCH_BUSYCH4_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH4_Pos)) /* Assigment of value for BUSYCH4 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH5_Pos               _UINT32_(5)                                          /* (DMAC_BUSYCH) Busy Channel 5 Position */
-#define DMAC_BUSYCH_BUSYCH5_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH5_Pos)           /* (DMAC_BUSYCH) Busy Channel 5 Mask */
-#define DMAC_BUSYCH_BUSYCH5(value)            (DMAC_BUSYCH_BUSYCH5_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH5_Pos)) /* Assigment of value for BUSYCH5 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH6_Pos               _UINT32_(6)                                          /* (DMAC_BUSYCH) Busy Channel 6 Position */
-#define DMAC_BUSYCH_BUSYCH6_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH6_Pos)           /* (DMAC_BUSYCH) Busy Channel 6 Mask */
-#define DMAC_BUSYCH_BUSYCH6(value)            (DMAC_BUSYCH_BUSYCH6_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH6_Pos)) /* Assigment of value for BUSYCH6 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH7_Pos               _UINT32_(7)                                          /* (DMAC_BUSYCH) Busy Channel 7 Position */
-#define DMAC_BUSYCH_BUSYCH7_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH7_Pos)           /* (DMAC_BUSYCH) Busy Channel 7 Mask */
-#define DMAC_BUSYCH_BUSYCH7(value)            (DMAC_BUSYCH_BUSYCH7_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH7_Pos)) /* Assigment of value for BUSYCH7 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH8_Pos               _UINT32_(8)                                          /* (DMAC_BUSYCH) Busy Channel 8 Position */
-#define DMAC_BUSYCH_BUSYCH8_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH8_Pos)           /* (DMAC_BUSYCH) Busy Channel 8 Mask */
-#define DMAC_BUSYCH_BUSYCH8(value)            (DMAC_BUSYCH_BUSYCH8_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH8_Pos)) /* Assigment of value for BUSYCH8 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH9_Pos               _UINT32_(9)                                          /* (DMAC_BUSYCH) Busy Channel 9 Position */
-#define DMAC_BUSYCH_BUSYCH9_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH9_Pos)           /* (DMAC_BUSYCH) Busy Channel 9 Mask */
-#define DMAC_BUSYCH_BUSYCH9(value)            (DMAC_BUSYCH_BUSYCH9_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH9_Pos)) /* Assigment of value for BUSYCH9 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH10_Pos              _UINT32_(10)                                         /* (DMAC_BUSYCH) Busy Channel 10 Position */
-#define DMAC_BUSYCH_BUSYCH10_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH10_Pos)          /* (DMAC_BUSYCH) Busy Channel 10 Mask */
-#define DMAC_BUSYCH_BUSYCH10(value)           (DMAC_BUSYCH_BUSYCH10_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH10_Pos)) /* Assigment of value for BUSYCH10 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH11_Pos              _UINT32_(11)                                         /* (DMAC_BUSYCH) Busy Channel 11 Position */
-#define DMAC_BUSYCH_BUSYCH11_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH11_Pos)          /* (DMAC_BUSYCH) Busy Channel 11 Mask */
-#define DMAC_BUSYCH_BUSYCH11(value)           (DMAC_BUSYCH_BUSYCH11_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH11_Pos)) /* Assigment of value for BUSYCH11 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH12_Pos              _UINT32_(12)                                         /* (DMAC_BUSYCH) Busy Channel 12 Position */
-#define DMAC_BUSYCH_BUSYCH12_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH12_Pos)          /* (DMAC_BUSYCH) Busy Channel 12 Mask */
-#define DMAC_BUSYCH_BUSYCH12(value)           (DMAC_BUSYCH_BUSYCH12_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH12_Pos)) /* Assigment of value for BUSYCH12 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH13_Pos              _UINT32_(13)                                         /* (DMAC_BUSYCH) Busy Channel 13 Position */
-#define DMAC_BUSYCH_BUSYCH13_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH13_Pos)          /* (DMAC_BUSYCH) Busy Channel 13 Mask */
-#define DMAC_BUSYCH_BUSYCH13(value)           (DMAC_BUSYCH_BUSYCH13_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH13_Pos)) /* Assigment of value for BUSYCH13 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH14_Pos              _UINT32_(14)                                         /* (DMAC_BUSYCH) Busy Channel 14 Position */
-#define DMAC_BUSYCH_BUSYCH14_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH14_Pos)          /* (DMAC_BUSYCH) Busy Channel 14 Mask */
-#define DMAC_BUSYCH_BUSYCH14(value)           (DMAC_BUSYCH_BUSYCH14_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH14_Pos)) /* Assigment of value for BUSYCH14 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH15_Pos              _UINT32_(15)                                         /* (DMAC_BUSYCH) Busy Channel 15 Position */
-#define DMAC_BUSYCH_BUSYCH15_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH15_Pos)          /* (DMAC_BUSYCH) Busy Channel 15 Mask */
-#define DMAC_BUSYCH_BUSYCH15(value)           (DMAC_BUSYCH_BUSYCH15_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH15_Pos)) /* Assigment of value for BUSYCH15 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH16_Pos              _UINT32_(16)                                         /* (DMAC_BUSYCH) Busy Channel 16 Position */
-#define DMAC_BUSYCH_BUSYCH16_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH16_Pos)          /* (DMAC_BUSYCH) Busy Channel 16 Mask */
-#define DMAC_BUSYCH_BUSYCH16(value)           (DMAC_BUSYCH_BUSYCH16_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH16_Pos)) /* Assigment of value for BUSYCH16 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH17_Pos              _UINT32_(17)                                         /* (DMAC_BUSYCH) Busy Channel 17 Position */
-#define DMAC_BUSYCH_BUSYCH17_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH17_Pos)          /* (DMAC_BUSYCH) Busy Channel 17 Mask */
-#define DMAC_BUSYCH_BUSYCH17(value)           (DMAC_BUSYCH_BUSYCH17_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH17_Pos)) /* Assigment of value for BUSYCH17 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH18_Pos              _UINT32_(18)                                         /* (DMAC_BUSYCH) Busy Channel 18 Position */
-#define DMAC_BUSYCH_BUSYCH18_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH18_Pos)          /* (DMAC_BUSYCH) Busy Channel 18 Mask */
-#define DMAC_BUSYCH_BUSYCH18(value)           (DMAC_BUSYCH_BUSYCH18_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH18_Pos)) /* Assigment of value for BUSYCH18 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH19_Pos              _UINT32_(19)                                         /* (DMAC_BUSYCH) Busy Channel 19 Position */
-#define DMAC_BUSYCH_BUSYCH19_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH19_Pos)          /* (DMAC_BUSYCH) Busy Channel 19 Mask */
-#define DMAC_BUSYCH_BUSYCH19(value)           (DMAC_BUSYCH_BUSYCH19_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH19_Pos)) /* Assigment of value for BUSYCH19 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH20_Pos              _UINT32_(20)                                         /* (DMAC_BUSYCH) Busy Channel 20 Position */
-#define DMAC_BUSYCH_BUSYCH20_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH20_Pos)          /* (DMAC_BUSYCH) Busy Channel 20 Mask */
-#define DMAC_BUSYCH_BUSYCH20(value)           (DMAC_BUSYCH_BUSYCH20_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH20_Pos)) /* Assigment of value for BUSYCH20 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH21_Pos              _UINT32_(21)                                         /* (DMAC_BUSYCH) Busy Channel 21 Position */
-#define DMAC_BUSYCH_BUSYCH21_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH21_Pos)          /* (DMAC_BUSYCH) Busy Channel 21 Mask */
-#define DMAC_BUSYCH_BUSYCH21(value)           (DMAC_BUSYCH_BUSYCH21_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH21_Pos)) /* Assigment of value for BUSYCH21 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH22_Pos              _UINT32_(22)                                         /* (DMAC_BUSYCH) Busy Channel 22 Position */
-#define DMAC_BUSYCH_BUSYCH22_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH22_Pos)          /* (DMAC_BUSYCH) Busy Channel 22 Mask */
-#define DMAC_BUSYCH_BUSYCH22(value)           (DMAC_BUSYCH_BUSYCH22_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH22_Pos)) /* Assigment of value for BUSYCH22 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH23_Pos              _UINT32_(23)                                         /* (DMAC_BUSYCH) Busy Channel 23 Position */
-#define DMAC_BUSYCH_BUSYCH23_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH23_Pos)          /* (DMAC_BUSYCH) Busy Channel 23 Mask */
-#define DMAC_BUSYCH_BUSYCH23(value)           (DMAC_BUSYCH_BUSYCH23_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH23_Pos)) /* Assigment of value for BUSYCH23 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH24_Pos              _UINT32_(24)                                         /* (DMAC_BUSYCH) Busy Channel 24 Position */
-#define DMAC_BUSYCH_BUSYCH24_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH24_Pos)          /* (DMAC_BUSYCH) Busy Channel 24 Mask */
-#define DMAC_BUSYCH_BUSYCH24(value)           (DMAC_BUSYCH_BUSYCH24_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH24_Pos)) /* Assigment of value for BUSYCH24 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH25_Pos              _UINT32_(25)                                         /* (DMAC_BUSYCH) Busy Channel 25 Position */
-#define DMAC_BUSYCH_BUSYCH25_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH25_Pos)          /* (DMAC_BUSYCH) Busy Channel 25 Mask */
-#define DMAC_BUSYCH_BUSYCH25(value)           (DMAC_BUSYCH_BUSYCH25_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH25_Pos)) /* Assigment of value for BUSYCH25 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH26_Pos              _UINT32_(26)                                         /* (DMAC_BUSYCH) Busy Channel 26 Position */
-#define DMAC_BUSYCH_BUSYCH26_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH26_Pos)          /* (DMAC_BUSYCH) Busy Channel 26 Mask */
-#define DMAC_BUSYCH_BUSYCH26(value)           (DMAC_BUSYCH_BUSYCH26_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH26_Pos)) /* Assigment of value for BUSYCH26 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH27_Pos              _UINT32_(27)                                         /* (DMAC_BUSYCH) Busy Channel 27 Position */
-#define DMAC_BUSYCH_BUSYCH27_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH27_Pos)          /* (DMAC_BUSYCH) Busy Channel 27 Mask */
-#define DMAC_BUSYCH_BUSYCH27(value)           (DMAC_BUSYCH_BUSYCH27_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH27_Pos)) /* Assigment of value for BUSYCH27 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH28_Pos              _UINT32_(28)                                         /* (DMAC_BUSYCH) Busy Channel 28 Position */
-#define DMAC_BUSYCH_BUSYCH28_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH28_Pos)          /* (DMAC_BUSYCH) Busy Channel 28 Mask */
-#define DMAC_BUSYCH_BUSYCH28(value)           (DMAC_BUSYCH_BUSYCH28_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH28_Pos)) /* Assigment of value for BUSYCH28 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH29_Pos              _UINT32_(29)                                         /* (DMAC_BUSYCH) Busy Channel 29 Position */
-#define DMAC_BUSYCH_BUSYCH29_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH29_Pos)          /* (DMAC_BUSYCH) Busy Channel 29 Mask */
-#define DMAC_BUSYCH_BUSYCH29(value)           (DMAC_BUSYCH_BUSYCH29_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH29_Pos)) /* Assigment of value for BUSYCH29 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH30_Pos              _UINT32_(30)                                         /* (DMAC_BUSYCH) Busy Channel 30 Position */
-#define DMAC_BUSYCH_BUSYCH30_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH30_Pos)          /* (DMAC_BUSYCH) Busy Channel 30 Mask */
-#define DMAC_BUSYCH_BUSYCH30(value)           (DMAC_BUSYCH_BUSYCH30_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH30_Pos)) /* Assigment of value for BUSYCH30 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_BUSYCH31_Pos              _UINT32_(31)                                         /* (DMAC_BUSYCH) Busy Channel 31 Position */
-#define DMAC_BUSYCH_BUSYCH31_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH31_Pos)          /* (DMAC_BUSYCH) Busy Channel 31 Mask */
-#define DMAC_BUSYCH_BUSYCH31(value)           (DMAC_BUSYCH_BUSYCH31_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH31_Pos)) /* Assigment of value for BUSYCH31 in the DMAC_BUSYCH register */
-#define DMAC_BUSYCH_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (DMAC_BUSYCH) Register Mask  */
-
-#define DMAC_BUSYCH_BUSYCH_Pos                _UINT32_(0)                                          /* (DMAC_BUSYCH Position) Busy Channel 3x */
-#define DMAC_BUSYCH_BUSYCH_Msk                (_UINT32_(0xFFFFFFFF) << DMAC_BUSYCH_BUSYCH_Pos)     /* (DMAC_BUSYCH Mask) BUSYCH */
-#define DMAC_BUSYCH_BUSYCH(value)             (DMAC_BUSYCH_BUSYCH_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH_Pos)) 
-
-/* -------- DMAC_CRCCHKSUM : (DMAC Offset: 0x08) (R/W 32) CRC Checksum -------- */
-#define DMAC_CRCCHKSUM_RESETVALUE             _UINT32_(0x00)                                       /*  (DMAC_CRCCHKSUM) CRC Checksum  Reset Value */
-
-#define DMAC_CRCCHKSUM_CRCCHKSUM_Pos          _UINT32_(0)                                          /* (DMAC_CRCCHKSUM) CRC Checksum Position */
-#define DMAC_CRCCHKSUM_CRCCHKSUM_Msk          (_UINT32_(0xFFFFFFFF) << DMAC_CRCCHKSUM_CRCCHKSUM_Pos) /* (DMAC_CRCCHKSUM) CRC Checksum Mask */
-#define DMAC_CRCCHKSUM_CRCCHKSUM(value)       (DMAC_CRCCHKSUM_CRCCHKSUM_Msk & (_UINT32_(value) << DMAC_CRCCHKSUM_CRCCHKSUM_Pos)) /* Assigment of value for CRCCHKSUM in the DMAC_CRCCHKSUM register */
-#define DMAC_CRCCHKSUM_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (DMAC_CRCCHKSUM) Register Mask  */
-
+#define DMAC_CTRL_LVLEN_Pos                   _UINT16_(8)                                          /* (DMAC_CTRL Position) Priority Level 3 Enable */
+#define DMAC_CTRL_LVLEN_Msk                   (_UINT16_(0xF) << DMAC_CTRL_LVLEN_Pos)               /* (DMAC_CTRL Mask) LVLEN */
+#define DMAC_CTRL_LVLEN(value)                (DMAC_CTRL_LVLEN_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN_Pos)) 
 
 /* -------- DMAC_CRCCTRL : (DMAC Offset: 0x02) (R/W 16) CRC Control -------- */
 #define DMAC_CRCCTRL_RESETVALUE               _UINT16_(0x00)                                       /*  (DMAC_CRCCTRL) CRC Control  Reset Value */
@@ -608,6 +482,15 @@
 #define DMAC_CRCDATAIN_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (DMAC_CRCDATAIN) Register Mask  */
 
 
+/* -------- DMAC_CRCCHKSUM : (DMAC Offset: 0x08) (R/W 32) CRC Checksum -------- */
+#define DMAC_CRCCHKSUM_RESETVALUE             _UINT32_(0x00)                                       /*  (DMAC_CRCCHKSUM) CRC Checksum  Reset Value */
+
+#define DMAC_CRCCHKSUM_CRCCHKSUM_Pos          _UINT32_(0)                                          /* (DMAC_CRCCHKSUM) CRC Checksum Position */
+#define DMAC_CRCCHKSUM_CRCCHKSUM_Msk          (_UINT32_(0xFFFFFFFF) << DMAC_CRCCHKSUM_CRCCHKSUM_Pos) /* (DMAC_CRCCHKSUM) CRC Checksum Mask */
+#define DMAC_CRCCHKSUM_CRCCHKSUM(value)       (DMAC_CRCCHKSUM_CRCCHKSUM_Msk & (_UINT32_(value) << DMAC_CRCCHKSUM_CRCCHKSUM_Pos)) /* Assigment of value for CRCCHKSUM in the DMAC_CRCCHKSUM register */
+#define DMAC_CRCCHKSUM_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (DMAC_CRCCHKSUM) Register Mask  */
+
+
 /* -------- DMAC_CRCSTATUS : (DMAC Offset: 0x0C) (R/W 8) CRC Status -------- */
 #define DMAC_CRCSTATUS_RESETVALUE             _UINT8_(0x00)                                        /*  (DMAC_CRCSTATUS) CRC Status  Reset Value */
 
@@ -623,33 +506,6 @@
 #define DMAC_CRCSTATUS_Msk                    _UINT8_(0x07)                                        /* (DMAC_CRCSTATUS) Register Mask  */
 
 
-/* -------- DMAC_CTRL : (DMAC Offset: 0x00) (R/W 16) Control -------- */
-#define DMAC_CTRL_RESETVALUE                  _UINT16_(0x00)                                       /*  (DMAC_CTRL) Control  Reset Value */
-
-#define DMAC_CTRL_SWRST_Pos                   _UINT16_(0)                                          /* (DMAC_CTRL) Software Reset Position */
-#define DMAC_CTRL_SWRST_Msk                   (_UINT16_(0x1) << DMAC_CTRL_SWRST_Pos)               /* (DMAC_CTRL) Software Reset Mask */
-#define DMAC_CTRL_SWRST(value)                (DMAC_CTRL_SWRST_Msk & (_UINT16_(value) << DMAC_CTRL_SWRST_Pos)) /* Assigment of value for SWRST in the DMAC_CTRL register */
-#define DMAC_CTRL_DMAENABLE_Pos               _UINT16_(1)                                          /* (DMAC_CTRL) DMA Enable Position */
-#define DMAC_CTRL_DMAENABLE_Msk               (_UINT16_(0x1) << DMAC_CTRL_DMAENABLE_Pos)           /* (DMAC_CTRL) DMA Enable Mask */
-#define DMAC_CTRL_DMAENABLE(value)            (DMAC_CTRL_DMAENABLE_Msk & (_UINT16_(value) << DMAC_CTRL_DMAENABLE_Pos)) /* Assigment of value for DMAENABLE in the DMAC_CTRL register */
-#define DMAC_CTRL_LVLEN0_Pos                  _UINT16_(8)                                          /* (DMAC_CTRL) Priority Level 0 Enable Position */
-#define DMAC_CTRL_LVLEN0_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN0_Pos)              /* (DMAC_CTRL) Priority Level 0 Enable Mask */
-#define DMAC_CTRL_LVLEN0(value)               (DMAC_CTRL_LVLEN0_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN0_Pos)) /* Assigment of value for LVLEN0 in the DMAC_CTRL register */
-#define DMAC_CTRL_LVLEN1_Pos                  _UINT16_(9)                                          /* (DMAC_CTRL) Priority Level 1 Enable Position */
-#define DMAC_CTRL_LVLEN1_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN1_Pos)              /* (DMAC_CTRL) Priority Level 1 Enable Mask */
-#define DMAC_CTRL_LVLEN1(value)               (DMAC_CTRL_LVLEN1_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN1_Pos)) /* Assigment of value for LVLEN1 in the DMAC_CTRL register */
-#define DMAC_CTRL_LVLEN2_Pos                  _UINT16_(10)                                         /* (DMAC_CTRL) Priority Level 2 Enable Position */
-#define DMAC_CTRL_LVLEN2_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN2_Pos)              /* (DMAC_CTRL) Priority Level 2 Enable Mask */
-#define DMAC_CTRL_LVLEN2(value)               (DMAC_CTRL_LVLEN2_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN2_Pos)) /* Assigment of value for LVLEN2 in the DMAC_CTRL register */
-#define DMAC_CTRL_LVLEN3_Pos                  _UINT16_(11)                                         /* (DMAC_CTRL) Priority Level 3 Enable Position */
-#define DMAC_CTRL_LVLEN3_Msk                  (_UINT16_(0x1) << DMAC_CTRL_LVLEN3_Pos)              /* (DMAC_CTRL) Priority Level 3 Enable Mask */
-#define DMAC_CTRL_LVLEN3(value)               (DMAC_CTRL_LVLEN3_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN3_Pos)) /* Assigment of value for LVLEN3 in the DMAC_CTRL register */
-#define DMAC_CTRL_Msk                         _UINT16_(0x0F03)                                     /* (DMAC_CTRL) Register Mask  */
-
-#define DMAC_CTRL_LVLEN_Pos                   _UINT16_(8)                                          /* (DMAC_CTRL Position) Priority Level 3 Enable */
-#define DMAC_CTRL_LVLEN_Msk                   (_UINT16_(0xF) << DMAC_CTRL_LVLEN_Pos)               /* (DMAC_CTRL Mask) LVLEN */
-#define DMAC_CTRL_LVLEN(value)                (DMAC_CTRL_LVLEN_Msk & (_UINT16_(value) << DMAC_CTRL_LVLEN_Pos)) 
-
 /* -------- DMAC_DBGCTRL : (DMAC Offset: 0x0D) (R/W 8) Debug Control -------- */
 #define DMAC_DBGCTRL_RESETVALUE               _UINT8_(0x00)                                        /*  (DMAC_DBGCTRL) Debug Control  Reset Value */
 
@@ -657,6 +513,185 @@
 #define DMAC_DBGCTRL_DBGRUN_Msk               (_UINT8_(0x1) << DMAC_DBGCTRL_DBGRUN_Pos)            /* (DMAC_DBGCTRL) Debug Run Mask */
 #define DMAC_DBGCTRL_DBGRUN(value)            (DMAC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << DMAC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the DMAC_DBGCTRL register */
 #define DMAC_DBGCTRL_Msk                      _UINT8_(0x01)                                        /* (DMAC_DBGCTRL) Register Mask  */
+
+
+/* -------- DMAC_SWTRIGCTRL : (DMAC Offset: 0x10) (R/W 32) Software Trigger Control -------- */
+#define DMAC_SWTRIGCTRL_RESETVALUE            _UINT32_(0x00)                                       /*  (DMAC_SWTRIGCTRL) Software Trigger Control  Reset Value */
+
+#define DMAC_SWTRIGCTRL_SWTRIG0_Pos           _UINT32_(0)                                          /* (DMAC_SWTRIGCTRL) Channel 0 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG0_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG0_Pos)       /* (DMAC_SWTRIGCTRL) Channel 0 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG0(value)        (DMAC_SWTRIGCTRL_SWTRIG0_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG0_Pos)) /* Assigment of value for SWTRIG0 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG1_Pos           _UINT32_(1)                                          /* (DMAC_SWTRIGCTRL) Channel 1 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG1_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG1_Pos)       /* (DMAC_SWTRIGCTRL) Channel 1 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG1(value)        (DMAC_SWTRIGCTRL_SWTRIG1_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG1_Pos)) /* Assigment of value for SWTRIG1 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG2_Pos           _UINT32_(2)                                          /* (DMAC_SWTRIGCTRL) Channel 2 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG2_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG2_Pos)       /* (DMAC_SWTRIGCTRL) Channel 2 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG2(value)        (DMAC_SWTRIGCTRL_SWTRIG2_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG2_Pos)) /* Assigment of value for SWTRIG2 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG3_Pos           _UINT32_(3)                                          /* (DMAC_SWTRIGCTRL) Channel 3 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG3_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG3_Pos)       /* (DMAC_SWTRIGCTRL) Channel 3 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG3(value)        (DMAC_SWTRIGCTRL_SWTRIG3_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG3_Pos)) /* Assigment of value for SWTRIG3 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG4_Pos           _UINT32_(4)                                          /* (DMAC_SWTRIGCTRL) Channel 4 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG4_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG4_Pos)       /* (DMAC_SWTRIGCTRL) Channel 4 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG4(value)        (DMAC_SWTRIGCTRL_SWTRIG4_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG4_Pos)) /* Assigment of value for SWTRIG4 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG5_Pos           _UINT32_(5)                                          /* (DMAC_SWTRIGCTRL) Channel 5 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG5_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG5_Pos)       /* (DMAC_SWTRIGCTRL) Channel 5 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG5(value)        (DMAC_SWTRIGCTRL_SWTRIG5_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG5_Pos)) /* Assigment of value for SWTRIG5 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG6_Pos           _UINT32_(6)                                          /* (DMAC_SWTRIGCTRL) Channel 6 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG6_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG6_Pos)       /* (DMAC_SWTRIGCTRL) Channel 6 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG6(value)        (DMAC_SWTRIGCTRL_SWTRIG6_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG6_Pos)) /* Assigment of value for SWTRIG6 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG7_Pos           _UINT32_(7)                                          /* (DMAC_SWTRIGCTRL) Channel 7 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG7_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG7_Pos)       /* (DMAC_SWTRIGCTRL) Channel 7 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG7(value)        (DMAC_SWTRIGCTRL_SWTRIG7_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG7_Pos)) /* Assigment of value for SWTRIG7 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG8_Pos           _UINT32_(8)                                          /* (DMAC_SWTRIGCTRL) Channel 8 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG8_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG8_Pos)       /* (DMAC_SWTRIGCTRL) Channel 8 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG8(value)        (DMAC_SWTRIGCTRL_SWTRIG8_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG8_Pos)) /* Assigment of value for SWTRIG8 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG9_Pos           _UINT32_(9)                                          /* (DMAC_SWTRIGCTRL) Channel 9 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG9_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG9_Pos)       /* (DMAC_SWTRIGCTRL) Channel 9 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG9(value)        (DMAC_SWTRIGCTRL_SWTRIG9_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG9_Pos)) /* Assigment of value for SWTRIG9 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG10_Pos          _UINT32_(10)                                         /* (DMAC_SWTRIGCTRL) Channel 10 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG10_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG10_Pos)      /* (DMAC_SWTRIGCTRL) Channel 10 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG10(value)       (DMAC_SWTRIGCTRL_SWTRIG10_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG10_Pos)) /* Assigment of value for SWTRIG10 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG11_Pos          _UINT32_(11)                                         /* (DMAC_SWTRIGCTRL) Channel 11 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG11_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG11_Pos)      /* (DMAC_SWTRIGCTRL) Channel 11 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG11(value)       (DMAC_SWTRIGCTRL_SWTRIG11_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG11_Pos)) /* Assigment of value for SWTRIG11 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG12_Pos          _UINT32_(12)                                         /* (DMAC_SWTRIGCTRL) Channel 12 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG12_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG12_Pos)      /* (DMAC_SWTRIGCTRL) Channel 12 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG12(value)       (DMAC_SWTRIGCTRL_SWTRIG12_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG12_Pos)) /* Assigment of value for SWTRIG12 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG13_Pos          _UINT32_(13)                                         /* (DMAC_SWTRIGCTRL) Channel 13 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG13_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG13_Pos)      /* (DMAC_SWTRIGCTRL) Channel 13 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG13(value)       (DMAC_SWTRIGCTRL_SWTRIG13_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG13_Pos)) /* Assigment of value for SWTRIG13 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG14_Pos          _UINT32_(14)                                         /* (DMAC_SWTRIGCTRL) Channel 14 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG14_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG14_Pos)      /* (DMAC_SWTRIGCTRL) Channel 14 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG14(value)       (DMAC_SWTRIGCTRL_SWTRIG14_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG14_Pos)) /* Assigment of value for SWTRIG14 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG15_Pos          _UINT32_(15)                                         /* (DMAC_SWTRIGCTRL) Channel 15 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG15_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG15_Pos)      /* (DMAC_SWTRIGCTRL) Channel 15 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG15(value)       (DMAC_SWTRIGCTRL_SWTRIG15_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG15_Pos)) /* Assigment of value for SWTRIG15 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG16_Pos          _UINT32_(16)                                         /* (DMAC_SWTRIGCTRL) Channel 16 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG16_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG16_Pos)      /* (DMAC_SWTRIGCTRL) Channel 16 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG16(value)       (DMAC_SWTRIGCTRL_SWTRIG16_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG16_Pos)) /* Assigment of value for SWTRIG16 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG17_Pos          _UINT32_(17)                                         /* (DMAC_SWTRIGCTRL) Channel 17 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG17_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG17_Pos)      /* (DMAC_SWTRIGCTRL) Channel 17 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG17(value)       (DMAC_SWTRIGCTRL_SWTRIG17_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG17_Pos)) /* Assigment of value for SWTRIG17 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG18_Pos          _UINT32_(18)                                         /* (DMAC_SWTRIGCTRL) Channel 18 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG18_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG18_Pos)      /* (DMAC_SWTRIGCTRL) Channel 18 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG18(value)       (DMAC_SWTRIGCTRL_SWTRIG18_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG18_Pos)) /* Assigment of value for SWTRIG18 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG19_Pos          _UINT32_(19)                                         /* (DMAC_SWTRIGCTRL) Channel 19 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG19_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG19_Pos)      /* (DMAC_SWTRIGCTRL) Channel 19 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG19(value)       (DMAC_SWTRIGCTRL_SWTRIG19_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG19_Pos)) /* Assigment of value for SWTRIG19 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG20_Pos          _UINT32_(20)                                         /* (DMAC_SWTRIGCTRL) Channel 20 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG20_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG20_Pos)      /* (DMAC_SWTRIGCTRL) Channel 20 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG20(value)       (DMAC_SWTRIGCTRL_SWTRIG20_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG20_Pos)) /* Assigment of value for SWTRIG20 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG21_Pos          _UINT32_(21)                                         /* (DMAC_SWTRIGCTRL) Channel 21 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG21_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG21_Pos)      /* (DMAC_SWTRIGCTRL) Channel 21 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG21(value)       (DMAC_SWTRIGCTRL_SWTRIG21_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG21_Pos)) /* Assigment of value for SWTRIG21 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG22_Pos          _UINT32_(22)                                         /* (DMAC_SWTRIGCTRL) Channel 22 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG22_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG22_Pos)      /* (DMAC_SWTRIGCTRL) Channel 22 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG22(value)       (DMAC_SWTRIGCTRL_SWTRIG22_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG22_Pos)) /* Assigment of value for SWTRIG22 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG23_Pos          _UINT32_(23)                                         /* (DMAC_SWTRIGCTRL) Channel 23 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG23_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG23_Pos)      /* (DMAC_SWTRIGCTRL) Channel 23 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG23(value)       (DMAC_SWTRIGCTRL_SWTRIG23_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG23_Pos)) /* Assigment of value for SWTRIG23 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG24_Pos          _UINT32_(24)                                         /* (DMAC_SWTRIGCTRL) Channel 24 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG24_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG24_Pos)      /* (DMAC_SWTRIGCTRL) Channel 24 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG24(value)       (DMAC_SWTRIGCTRL_SWTRIG24_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG24_Pos)) /* Assigment of value for SWTRIG24 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG25_Pos          _UINT32_(25)                                         /* (DMAC_SWTRIGCTRL) Channel 25 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG25_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG25_Pos)      /* (DMAC_SWTRIGCTRL) Channel 25 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG25(value)       (DMAC_SWTRIGCTRL_SWTRIG25_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG25_Pos)) /* Assigment of value for SWTRIG25 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG26_Pos          _UINT32_(26)                                         /* (DMAC_SWTRIGCTRL) Channel 26 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG26_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG26_Pos)      /* (DMAC_SWTRIGCTRL) Channel 26 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG26(value)       (DMAC_SWTRIGCTRL_SWTRIG26_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG26_Pos)) /* Assigment of value for SWTRIG26 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG27_Pos          _UINT32_(27)                                         /* (DMAC_SWTRIGCTRL) Channel 27 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG27_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG27_Pos)      /* (DMAC_SWTRIGCTRL) Channel 27 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG27(value)       (DMAC_SWTRIGCTRL_SWTRIG27_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG27_Pos)) /* Assigment of value for SWTRIG27 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG28_Pos          _UINT32_(28)                                         /* (DMAC_SWTRIGCTRL) Channel 28 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG28_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG28_Pos)      /* (DMAC_SWTRIGCTRL) Channel 28 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG28(value)       (DMAC_SWTRIGCTRL_SWTRIG28_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG28_Pos)) /* Assigment of value for SWTRIG28 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG29_Pos          _UINT32_(29)                                         /* (DMAC_SWTRIGCTRL) Channel 29 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG29_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG29_Pos)      /* (DMAC_SWTRIGCTRL) Channel 29 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG29(value)       (DMAC_SWTRIGCTRL_SWTRIG29_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG29_Pos)) /* Assigment of value for SWTRIG29 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG30_Pos          _UINT32_(30)                                         /* (DMAC_SWTRIGCTRL) Channel 30 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG30_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG30_Pos)      /* (DMAC_SWTRIGCTRL) Channel 30 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG30(value)       (DMAC_SWTRIGCTRL_SWTRIG30_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG30_Pos)) /* Assigment of value for SWTRIG30 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_SWTRIG31_Pos          _UINT32_(31)                                         /* (DMAC_SWTRIGCTRL) Channel 31 Software Trigger Position */
+#define DMAC_SWTRIGCTRL_SWTRIG31_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG31_Pos)      /* (DMAC_SWTRIGCTRL) Channel 31 Software Trigger Mask */
+#define DMAC_SWTRIGCTRL_SWTRIG31(value)       (DMAC_SWTRIGCTRL_SWTRIG31_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG31_Pos)) /* Assigment of value for SWTRIG31 in the DMAC_SWTRIGCTRL register */
+#define DMAC_SWTRIGCTRL_Msk                   _UINT32_(0xFFFFFFFF)                                 /* (DMAC_SWTRIGCTRL) Register Mask  */
+
+#define DMAC_SWTRIGCTRL_SWTRIG_Pos            _UINT32_(0)                                          /* (DMAC_SWTRIGCTRL Position) Channel 3x Software Trigger */
+#define DMAC_SWTRIGCTRL_SWTRIG_Msk            (_UINT32_(0xFFFFFFFF) << DMAC_SWTRIGCTRL_SWTRIG_Pos) /* (DMAC_SWTRIGCTRL Mask) SWTRIG */
+#define DMAC_SWTRIGCTRL_SWTRIG(value)         (DMAC_SWTRIGCTRL_SWTRIG_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG_Pos)) 
+
+/* -------- DMAC_PRICTRL0 : (DMAC Offset: 0x14) (R/W 32) Priority Control 0 -------- */
+#define DMAC_PRICTRL0_RESETVALUE              _UINT32_(0x40404040)                                 /*  (DMAC_PRICTRL0) Priority Control 0  Reset Value */
+
+#define DMAC_PRICTRL0_LVLPRI0_Pos             _UINT32_(0)                                          /* (DMAC_PRICTRL0) Level 0 Channel Priority Number Position */
+#define DMAC_PRICTRL0_LVLPRI0_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI0_Pos)        /* (DMAC_PRICTRL0) Level 0 Channel Priority Number Mask */
+#define DMAC_PRICTRL0_LVLPRI0(value)          (DMAC_PRICTRL0_LVLPRI0_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI0_Pos)) /* Assigment of value for LVLPRI0 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_QOS0_Pos                _UINT32_(5)                                          /* (DMAC_PRICTRL0) Level 0 Quality of Service Position */
+#define DMAC_PRICTRL0_QOS0_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS0_Pos)            /* (DMAC_PRICTRL0) Level 0 Quality of Service Mask */
+#define DMAC_PRICTRL0_QOS0(value)             (DMAC_PRICTRL0_QOS0_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS0_Pos)) /* Assigment of value for QOS0 in the DMAC_PRICTRL0 register */
+#define   DMAC_PRICTRL0_QOS0_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
+#define   DMAC_PRICTRL0_QOS0_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
+#define   DMAC_PRICTRL0_QOS0_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
+#define   DMAC_PRICTRL0_QOS0_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
+#define DMAC_PRICTRL0_QOS0_DISABLE            (DMAC_PRICTRL0_QOS0_DISABLE_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
+#define DMAC_PRICTRL0_QOS0_LOW                (DMAC_PRICTRL0_QOS0_LOW_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
+#define DMAC_PRICTRL0_QOS0_MEDIUM             (DMAC_PRICTRL0_QOS0_MEDIUM_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
+#define DMAC_PRICTRL0_QOS0_HIGH               (DMAC_PRICTRL0_QOS0_HIGH_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
+#define DMAC_PRICTRL0_RRLVLEN0_Pos            _UINT32_(7)                                          /* (DMAC_PRICTRL0) Level 0 Round-Robin Scheduling Enable Position */
+#define DMAC_PRICTRL0_RRLVLEN0_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN0_Pos)        /* (DMAC_PRICTRL0) Level 0 Round-Robin Scheduling Enable Mask */
+#define DMAC_PRICTRL0_RRLVLEN0(value)         (DMAC_PRICTRL0_RRLVLEN0_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN0_Pos)) /* Assigment of value for RRLVLEN0 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_LVLPRI1_Pos             _UINT32_(8)                                          /* (DMAC_PRICTRL0) Level 1 Channel Priority Number Position */
+#define DMAC_PRICTRL0_LVLPRI1_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI1_Pos)        /* (DMAC_PRICTRL0) Level 1 Channel Priority Number Mask */
+#define DMAC_PRICTRL0_LVLPRI1(value)          (DMAC_PRICTRL0_LVLPRI1_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI1_Pos)) /* Assigment of value for LVLPRI1 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_QOS1_Pos                _UINT32_(13)                                         /* (DMAC_PRICTRL0) Level 1 Quality of Service Position */
+#define DMAC_PRICTRL0_QOS1_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS1_Pos)            /* (DMAC_PRICTRL0) Level 1 Quality of Service Mask */
+#define DMAC_PRICTRL0_QOS1(value)             (DMAC_PRICTRL0_QOS1_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS1_Pos)) /* Assigment of value for QOS1 in the DMAC_PRICTRL0 register */
+#define   DMAC_PRICTRL0_QOS1_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
+#define   DMAC_PRICTRL0_QOS1_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
+#define   DMAC_PRICTRL0_QOS1_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
+#define   DMAC_PRICTRL0_QOS1_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
+#define DMAC_PRICTRL0_QOS1_DISABLE            (DMAC_PRICTRL0_QOS1_DISABLE_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
+#define DMAC_PRICTRL0_QOS1_LOW                (DMAC_PRICTRL0_QOS1_LOW_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
+#define DMAC_PRICTRL0_QOS1_MEDIUM             (DMAC_PRICTRL0_QOS1_MEDIUM_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
+#define DMAC_PRICTRL0_QOS1_HIGH               (DMAC_PRICTRL0_QOS1_HIGH_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
+#define DMAC_PRICTRL0_RRLVLEN1_Pos            _UINT32_(15)                                         /* (DMAC_PRICTRL0) Level 1 Round-Robin Scheduling Enable Position */
+#define DMAC_PRICTRL0_RRLVLEN1_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN1_Pos)        /* (DMAC_PRICTRL0) Level 1 Round-Robin Scheduling Enable Mask */
+#define DMAC_PRICTRL0_RRLVLEN1(value)         (DMAC_PRICTRL0_RRLVLEN1_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN1_Pos)) /* Assigment of value for RRLVLEN1 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_LVLPRI2_Pos             _UINT32_(16)                                         /* (DMAC_PRICTRL0) Level 2 Channel Priority Number Position */
+#define DMAC_PRICTRL0_LVLPRI2_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI2_Pos)        /* (DMAC_PRICTRL0) Level 2 Channel Priority Number Mask */
+#define DMAC_PRICTRL0_LVLPRI2(value)          (DMAC_PRICTRL0_LVLPRI2_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI2_Pos)) /* Assigment of value for LVLPRI2 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_QOS2_Pos                _UINT32_(21)                                         /* (DMAC_PRICTRL0) Level 2 Quality of Service Position */
+#define DMAC_PRICTRL0_QOS2_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS2_Pos)            /* (DMAC_PRICTRL0) Level 2 Quality of Service Mask */
+#define DMAC_PRICTRL0_QOS2(value)             (DMAC_PRICTRL0_QOS2_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS2_Pos)) /* Assigment of value for QOS2 in the DMAC_PRICTRL0 register */
+#define   DMAC_PRICTRL0_QOS2_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
+#define   DMAC_PRICTRL0_QOS2_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
+#define   DMAC_PRICTRL0_QOS2_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
+#define   DMAC_PRICTRL0_QOS2_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
+#define DMAC_PRICTRL0_QOS2_DISABLE            (DMAC_PRICTRL0_QOS2_DISABLE_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
+#define DMAC_PRICTRL0_QOS2_LOW                (DMAC_PRICTRL0_QOS2_LOW_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
+#define DMAC_PRICTRL0_QOS2_MEDIUM             (DMAC_PRICTRL0_QOS2_MEDIUM_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
+#define DMAC_PRICTRL0_QOS2_HIGH               (DMAC_PRICTRL0_QOS2_HIGH_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
+#define DMAC_PRICTRL0_RRLVLEN2_Pos            _UINT32_(23)                                         /* (DMAC_PRICTRL0) Level 2 Round-Robin Scheduling Enable Position */
+#define DMAC_PRICTRL0_RRLVLEN2_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN2_Pos)        /* (DMAC_PRICTRL0) Level 2 Round-Robin Scheduling Enable Mask */
+#define DMAC_PRICTRL0_RRLVLEN2(value)         (DMAC_PRICTRL0_RRLVLEN2_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN2_Pos)) /* Assigment of value for RRLVLEN2 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_LVLPRI3_Pos             _UINT32_(24)                                         /* (DMAC_PRICTRL0) Level 3 Channel Priority Number Position */
+#define DMAC_PRICTRL0_LVLPRI3_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI3_Pos)        /* (DMAC_PRICTRL0) Level 3 Channel Priority Number Mask */
+#define DMAC_PRICTRL0_LVLPRI3(value)          (DMAC_PRICTRL0_LVLPRI3_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI3_Pos)) /* Assigment of value for LVLPRI3 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_QOS3_Pos                _UINT32_(29)                                         /* (DMAC_PRICTRL0) Level 3 Quality of Service Position */
+#define DMAC_PRICTRL0_QOS3_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS3_Pos)            /* (DMAC_PRICTRL0) Level 3 Quality of Service Mask */
+#define DMAC_PRICTRL0_QOS3(value)             (DMAC_PRICTRL0_QOS3_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS3_Pos)) /* Assigment of value for QOS3 in the DMAC_PRICTRL0 register */
+#define   DMAC_PRICTRL0_QOS3_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
+#define   DMAC_PRICTRL0_QOS3_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
+#define   DMAC_PRICTRL0_QOS3_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
+#define   DMAC_PRICTRL0_QOS3_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
+#define DMAC_PRICTRL0_QOS3_DISABLE            (DMAC_PRICTRL0_QOS3_DISABLE_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
+#define DMAC_PRICTRL0_QOS3_LOW                (DMAC_PRICTRL0_QOS3_LOW_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
+#define DMAC_PRICTRL0_QOS3_MEDIUM             (DMAC_PRICTRL0_QOS3_MEDIUM_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
+#define DMAC_PRICTRL0_QOS3_HIGH               (DMAC_PRICTRL0_QOS3_HIGH_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
+#define DMAC_PRICTRL0_RRLVLEN3_Pos            _UINT32_(31)                                         /* (DMAC_PRICTRL0) Level 3 Round-Robin Scheduling Enable Position */
+#define DMAC_PRICTRL0_RRLVLEN3_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN3_Pos)        /* (DMAC_PRICTRL0) Level 3 Round-Robin Scheduling Enable Mask */
+#define DMAC_PRICTRL0_RRLVLEN3(value)         (DMAC_PRICTRL0_RRLVLEN3_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN3_Pos)) /* Assigment of value for RRLVLEN3 in the DMAC_PRICTRL0 register */
+#define DMAC_PRICTRL0_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (DMAC_PRICTRL0) Register Mask  */
 
 
 /* -------- DMAC_INTPEND : (DMAC Offset: 0x20) (R/W 16) Interrupt Pending -------- */
@@ -794,6 +829,111 @@
 #define DMAC_INTSTATUS_CHINT_Msk              (_UINT32_(0xFFFFFFFF) << DMAC_INTSTATUS_CHINT_Pos)   /* (DMAC_INTSTATUS Mask) CHINT */
 #define DMAC_INTSTATUS_CHINT(value)           (DMAC_INTSTATUS_CHINT_Msk & (_UINT32_(value) << DMAC_INTSTATUS_CHINT_Pos)) 
 
+/* -------- DMAC_BUSYCH : (DMAC Offset: 0x28) ( R/ 32) Busy Channels -------- */
+#define DMAC_BUSYCH_RESETVALUE                _UINT32_(0x00)                                       /*  (DMAC_BUSYCH) Busy Channels  Reset Value */
+
+#define DMAC_BUSYCH_BUSYCH0_Pos               _UINT32_(0)                                          /* (DMAC_BUSYCH) Busy Channel 0 Position */
+#define DMAC_BUSYCH_BUSYCH0_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH0_Pos)           /* (DMAC_BUSYCH) Busy Channel 0 Mask */
+#define DMAC_BUSYCH_BUSYCH0(value)            (DMAC_BUSYCH_BUSYCH0_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH0_Pos)) /* Assigment of value for BUSYCH0 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH1_Pos               _UINT32_(1)                                          /* (DMAC_BUSYCH) Busy Channel 1 Position */
+#define DMAC_BUSYCH_BUSYCH1_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH1_Pos)           /* (DMAC_BUSYCH) Busy Channel 1 Mask */
+#define DMAC_BUSYCH_BUSYCH1(value)            (DMAC_BUSYCH_BUSYCH1_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH1_Pos)) /* Assigment of value for BUSYCH1 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH2_Pos               _UINT32_(2)                                          /* (DMAC_BUSYCH) Busy Channel 2 Position */
+#define DMAC_BUSYCH_BUSYCH2_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH2_Pos)           /* (DMAC_BUSYCH) Busy Channel 2 Mask */
+#define DMAC_BUSYCH_BUSYCH2(value)            (DMAC_BUSYCH_BUSYCH2_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH2_Pos)) /* Assigment of value for BUSYCH2 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH3_Pos               _UINT32_(3)                                          /* (DMAC_BUSYCH) Busy Channel 3 Position */
+#define DMAC_BUSYCH_BUSYCH3_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH3_Pos)           /* (DMAC_BUSYCH) Busy Channel 3 Mask */
+#define DMAC_BUSYCH_BUSYCH3(value)            (DMAC_BUSYCH_BUSYCH3_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH3_Pos)) /* Assigment of value for BUSYCH3 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH4_Pos               _UINT32_(4)                                          /* (DMAC_BUSYCH) Busy Channel 4 Position */
+#define DMAC_BUSYCH_BUSYCH4_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH4_Pos)           /* (DMAC_BUSYCH) Busy Channel 4 Mask */
+#define DMAC_BUSYCH_BUSYCH4(value)            (DMAC_BUSYCH_BUSYCH4_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH4_Pos)) /* Assigment of value for BUSYCH4 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH5_Pos               _UINT32_(5)                                          /* (DMAC_BUSYCH) Busy Channel 5 Position */
+#define DMAC_BUSYCH_BUSYCH5_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH5_Pos)           /* (DMAC_BUSYCH) Busy Channel 5 Mask */
+#define DMAC_BUSYCH_BUSYCH5(value)            (DMAC_BUSYCH_BUSYCH5_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH5_Pos)) /* Assigment of value for BUSYCH5 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH6_Pos               _UINT32_(6)                                          /* (DMAC_BUSYCH) Busy Channel 6 Position */
+#define DMAC_BUSYCH_BUSYCH6_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH6_Pos)           /* (DMAC_BUSYCH) Busy Channel 6 Mask */
+#define DMAC_BUSYCH_BUSYCH6(value)            (DMAC_BUSYCH_BUSYCH6_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH6_Pos)) /* Assigment of value for BUSYCH6 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH7_Pos               _UINT32_(7)                                          /* (DMAC_BUSYCH) Busy Channel 7 Position */
+#define DMAC_BUSYCH_BUSYCH7_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH7_Pos)           /* (DMAC_BUSYCH) Busy Channel 7 Mask */
+#define DMAC_BUSYCH_BUSYCH7(value)            (DMAC_BUSYCH_BUSYCH7_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH7_Pos)) /* Assigment of value for BUSYCH7 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH8_Pos               _UINT32_(8)                                          /* (DMAC_BUSYCH) Busy Channel 8 Position */
+#define DMAC_BUSYCH_BUSYCH8_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH8_Pos)           /* (DMAC_BUSYCH) Busy Channel 8 Mask */
+#define DMAC_BUSYCH_BUSYCH8(value)            (DMAC_BUSYCH_BUSYCH8_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH8_Pos)) /* Assigment of value for BUSYCH8 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH9_Pos               _UINT32_(9)                                          /* (DMAC_BUSYCH) Busy Channel 9 Position */
+#define DMAC_BUSYCH_BUSYCH9_Msk               (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH9_Pos)           /* (DMAC_BUSYCH) Busy Channel 9 Mask */
+#define DMAC_BUSYCH_BUSYCH9(value)            (DMAC_BUSYCH_BUSYCH9_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH9_Pos)) /* Assigment of value for BUSYCH9 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH10_Pos              _UINT32_(10)                                         /* (DMAC_BUSYCH) Busy Channel 10 Position */
+#define DMAC_BUSYCH_BUSYCH10_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH10_Pos)          /* (DMAC_BUSYCH) Busy Channel 10 Mask */
+#define DMAC_BUSYCH_BUSYCH10(value)           (DMAC_BUSYCH_BUSYCH10_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH10_Pos)) /* Assigment of value for BUSYCH10 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH11_Pos              _UINT32_(11)                                         /* (DMAC_BUSYCH) Busy Channel 11 Position */
+#define DMAC_BUSYCH_BUSYCH11_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH11_Pos)          /* (DMAC_BUSYCH) Busy Channel 11 Mask */
+#define DMAC_BUSYCH_BUSYCH11(value)           (DMAC_BUSYCH_BUSYCH11_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH11_Pos)) /* Assigment of value for BUSYCH11 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH12_Pos              _UINT32_(12)                                         /* (DMAC_BUSYCH) Busy Channel 12 Position */
+#define DMAC_BUSYCH_BUSYCH12_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH12_Pos)          /* (DMAC_BUSYCH) Busy Channel 12 Mask */
+#define DMAC_BUSYCH_BUSYCH12(value)           (DMAC_BUSYCH_BUSYCH12_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH12_Pos)) /* Assigment of value for BUSYCH12 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH13_Pos              _UINT32_(13)                                         /* (DMAC_BUSYCH) Busy Channel 13 Position */
+#define DMAC_BUSYCH_BUSYCH13_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH13_Pos)          /* (DMAC_BUSYCH) Busy Channel 13 Mask */
+#define DMAC_BUSYCH_BUSYCH13(value)           (DMAC_BUSYCH_BUSYCH13_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH13_Pos)) /* Assigment of value for BUSYCH13 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH14_Pos              _UINT32_(14)                                         /* (DMAC_BUSYCH) Busy Channel 14 Position */
+#define DMAC_BUSYCH_BUSYCH14_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH14_Pos)          /* (DMAC_BUSYCH) Busy Channel 14 Mask */
+#define DMAC_BUSYCH_BUSYCH14(value)           (DMAC_BUSYCH_BUSYCH14_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH14_Pos)) /* Assigment of value for BUSYCH14 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH15_Pos              _UINT32_(15)                                         /* (DMAC_BUSYCH) Busy Channel 15 Position */
+#define DMAC_BUSYCH_BUSYCH15_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH15_Pos)          /* (DMAC_BUSYCH) Busy Channel 15 Mask */
+#define DMAC_BUSYCH_BUSYCH15(value)           (DMAC_BUSYCH_BUSYCH15_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH15_Pos)) /* Assigment of value for BUSYCH15 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH16_Pos              _UINT32_(16)                                         /* (DMAC_BUSYCH) Busy Channel 16 Position */
+#define DMAC_BUSYCH_BUSYCH16_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH16_Pos)          /* (DMAC_BUSYCH) Busy Channel 16 Mask */
+#define DMAC_BUSYCH_BUSYCH16(value)           (DMAC_BUSYCH_BUSYCH16_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH16_Pos)) /* Assigment of value for BUSYCH16 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH17_Pos              _UINT32_(17)                                         /* (DMAC_BUSYCH) Busy Channel 17 Position */
+#define DMAC_BUSYCH_BUSYCH17_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH17_Pos)          /* (DMAC_BUSYCH) Busy Channel 17 Mask */
+#define DMAC_BUSYCH_BUSYCH17(value)           (DMAC_BUSYCH_BUSYCH17_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH17_Pos)) /* Assigment of value for BUSYCH17 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH18_Pos              _UINT32_(18)                                         /* (DMAC_BUSYCH) Busy Channel 18 Position */
+#define DMAC_BUSYCH_BUSYCH18_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH18_Pos)          /* (DMAC_BUSYCH) Busy Channel 18 Mask */
+#define DMAC_BUSYCH_BUSYCH18(value)           (DMAC_BUSYCH_BUSYCH18_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH18_Pos)) /* Assigment of value for BUSYCH18 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH19_Pos              _UINT32_(19)                                         /* (DMAC_BUSYCH) Busy Channel 19 Position */
+#define DMAC_BUSYCH_BUSYCH19_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH19_Pos)          /* (DMAC_BUSYCH) Busy Channel 19 Mask */
+#define DMAC_BUSYCH_BUSYCH19(value)           (DMAC_BUSYCH_BUSYCH19_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH19_Pos)) /* Assigment of value for BUSYCH19 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH20_Pos              _UINT32_(20)                                         /* (DMAC_BUSYCH) Busy Channel 20 Position */
+#define DMAC_BUSYCH_BUSYCH20_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH20_Pos)          /* (DMAC_BUSYCH) Busy Channel 20 Mask */
+#define DMAC_BUSYCH_BUSYCH20(value)           (DMAC_BUSYCH_BUSYCH20_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH20_Pos)) /* Assigment of value for BUSYCH20 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH21_Pos              _UINT32_(21)                                         /* (DMAC_BUSYCH) Busy Channel 21 Position */
+#define DMAC_BUSYCH_BUSYCH21_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH21_Pos)          /* (DMAC_BUSYCH) Busy Channel 21 Mask */
+#define DMAC_BUSYCH_BUSYCH21(value)           (DMAC_BUSYCH_BUSYCH21_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH21_Pos)) /* Assigment of value for BUSYCH21 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH22_Pos              _UINT32_(22)                                         /* (DMAC_BUSYCH) Busy Channel 22 Position */
+#define DMAC_BUSYCH_BUSYCH22_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH22_Pos)          /* (DMAC_BUSYCH) Busy Channel 22 Mask */
+#define DMAC_BUSYCH_BUSYCH22(value)           (DMAC_BUSYCH_BUSYCH22_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH22_Pos)) /* Assigment of value for BUSYCH22 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH23_Pos              _UINT32_(23)                                         /* (DMAC_BUSYCH) Busy Channel 23 Position */
+#define DMAC_BUSYCH_BUSYCH23_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH23_Pos)          /* (DMAC_BUSYCH) Busy Channel 23 Mask */
+#define DMAC_BUSYCH_BUSYCH23(value)           (DMAC_BUSYCH_BUSYCH23_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH23_Pos)) /* Assigment of value for BUSYCH23 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH24_Pos              _UINT32_(24)                                         /* (DMAC_BUSYCH) Busy Channel 24 Position */
+#define DMAC_BUSYCH_BUSYCH24_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH24_Pos)          /* (DMAC_BUSYCH) Busy Channel 24 Mask */
+#define DMAC_BUSYCH_BUSYCH24(value)           (DMAC_BUSYCH_BUSYCH24_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH24_Pos)) /* Assigment of value for BUSYCH24 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH25_Pos              _UINT32_(25)                                         /* (DMAC_BUSYCH) Busy Channel 25 Position */
+#define DMAC_BUSYCH_BUSYCH25_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH25_Pos)          /* (DMAC_BUSYCH) Busy Channel 25 Mask */
+#define DMAC_BUSYCH_BUSYCH25(value)           (DMAC_BUSYCH_BUSYCH25_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH25_Pos)) /* Assigment of value for BUSYCH25 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH26_Pos              _UINT32_(26)                                         /* (DMAC_BUSYCH) Busy Channel 26 Position */
+#define DMAC_BUSYCH_BUSYCH26_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH26_Pos)          /* (DMAC_BUSYCH) Busy Channel 26 Mask */
+#define DMAC_BUSYCH_BUSYCH26(value)           (DMAC_BUSYCH_BUSYCH26_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH26_Pos)) /* Assigment of value for BUSYCH26 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH27_Pos              _UINT32_(27)                                         /* (DMAC_BUSYCH) Busy Channel 27 Position */
+#define DMAC_BUSYCH_BUSYCH27_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH27_Pos)          /* (DMAC_BUSYCH) Busy Channel 27 Mask */
+#define DMAC_BUSYCH_BUSYCH27(value)           (DMAC_BUSYCH_BUSYCH27_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH27_Pos)) /* Assigment of value for BUSYCH27 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH28_Pos              _UINT32_(28)                                         /* (DMAC_BUSYCH) Busy Channel 28 Position */
+#define DMAC_BUSYCH_BUSYCH28_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH28_Pos)          /* (DMAC_BUSYCH) Busy Channel 28 Mask */
+#define DMAC_BUSYCH_BUSYCH28(value)           (DMAC_BUSYCH_BUSYCH28_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH28_Pos)) /* Assigment of value for BUSYCH28 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH29_Pos              _UINT32_(29)                                         /* (DMAC_BUSYCH) Busy Channel 29 Position */
+#define DMAC_BUSYCH_BUSYCH29_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH29_Pos)          /* (DMAC_BUSYCH) Busy Channel 29 Mask */
+#define DMAC_BUSYCH_BUSYCH29(value)           (DMAC_BUSYCH_BUSYCH29_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH29_Pos)) /* Assigment of value for BUSYCH29 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH30_Pos              _UINT32_(30)                                         /* (DMAC_BUSYCH) Busy Channel 30 Position */
+#define DMAC_BUSYCH_BUSYCH30_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH30_Pos)          /* (DMAC_BUSYCH) Busy Channel 30 Mask */
+#define DMAC_BUSYCH_BUSYCH30(value)           (DMAC_BUSYCH_BUSYCH30_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH30_Pos)) /* Assigment of value for BUSYCH30 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_BUSYCH31_Pos              _UINT32_(31)                                         /* (DMAC_BUSYCH) Busy Channel 31 Position */
+#define DMAC_BUSYCH_BUSYCH31_Msk              (_UINT32_(0x1) << DMAC_BUSYCH_BUSYCH31_Pos)          /* (DMAC_BUSYCH) Busy Channel 31 Mask */
+#define DMAC_BUSYCH_BUSYCH31(value)           (DMAC_BUSYCH_BUSYCH31_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH31_Pos)) /* Assigment of value for BUSYCH31 in the DMAC_BUSYCH register */
+#define DMAC_BUSYCH_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (DMAC_BUSYCH) Register Mask  */
+
+#define DMAC_BUSYCH_BUSYCH_Pos                _UINT32_(0)                                          /* (DMAC_BUSYCH Position) Busy Channel 3x */
+#define DMAC_BUSYCH_BUSYCH_Msk                (_UINT32_(0xFFFFFFFF) << DMAC_BUSYCH_BUSYCH_Pos)     /* (DMAC_BUSYCH Mask) BUSYCH */
+#define DMAC_BUSYCH_BUSYCH(value)             (DMAC_BUSYCH_BUSYCH_Msk & (_UINT32_(value) << DMAC_BUSYCH_BUSYCH_Pos)) 
+
 /* -------- DMAC_PENDCH : (DMAC Offset: 0x2C) ( R/ 32) Pending Channels -------- */
 #define DMAC_PENDCH_RESETVALUE                _UINT32_(0x00)                                       /*  (DMAC_PENDCH) Pending Channels  Reset Value */
 
@@ -899,184 +1039,44 @@
 #define DMAC_PENDCH_PENDCH_Msk                (_UINT32_(0xFFFFFFFF) << DMAC_PENDCH_PENDCH_Pos)     /* (DMAC_PENDCH Mask) PENDCH */
 #define DMAC_PENDCH_PENDCH(value)             (DMAC_PENDCH_PENDCH_Msk & (_UINT32_(value) << DMAC_PENDCH_PENDCH_Pos)) 
 
-/* -------- DMAC_PRICTRL0 : (DMAC Offset: 0x14) (R/W 32) Priority Control 0 -------- */
-#define DMAC_PRICTRL0_RESETVALUE              _UINT32_(0x40404040)                                 /*  (DMAC_PRICTRL0) Priority Control 0  Reset Value */
+/* -------- DMAC_ACTIVE : (DMAC Offset: 0x30) ( R/ 32) Active Channel and Levels -------- */
+#define DMAC_ACTIVE_RESETVALUE                _UINT32_(0x00)                                       /*  (DMAC_ACTIVE) Active Channel and Levels  Reset Value */
 
-#define DMAC_PRICTRL0_LVLPRI0_Pos             _UINT32_(0)                                          /* (DMAC_PRICTRL0) Level 0 Channel Priority Number Position */
-#define DMAC_PRICTRL0_LVLPRI0_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI0_Pos)        /* (DMAC_PRICTRL0) Level 0 Channel Priority Number Mask */
-#define DMAC_PRICTRL0_LVLPRI0(value)          (DMAC_PRICTRL0_LVLPRI0_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI0_Pos)) /* Assigment of value for LVLPRI0 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_QOS0_Pos                _UINT32_(5)                                          /* (DMAC_PRICTRL0) Level 0 Quality of Service Position */
-#define DMAC_PRICTRL0_QOS0_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS0_Pos)            /* (DMAC_PRICTRL0) Level 0 Quality of Service Mask */
-#define DMAC_PRICTRL0_QOS0(value)             (DMAC_PRICTRL0_QOS0_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS0_Pos)) /* Assigment of value for QOS0 in the DMAC_PRICTRL0 register */
-#define   DMAC_PRICTRL0_QOS0_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
-#define   DMAC_PRICTRL0_QOS0_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
-#define   DMAC_PRICTRL0_QOS0_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
-#define   DMAC_PRICTRL0_QOS0_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
-#define DMAC_PRICTRL0_QOS0_DISABLE            (DMAC_PRICTRL0_QOS0_DISABLE_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
-#define DMAC_PRICTRL0_QOS0_LOW                (DMAC_PRICTRL0_QOS0_LOW_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
-#define DMAC_PRICTRL0_QOS0_MEDIUM             (DMAC_PRICTRL0_QOS0_MEDIUM_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
-#define DMAC_PRICTRL0_QOS0_HIGH               (DMAC_PRICTRL0_QOS0_HIGH_Val << DMAC_PRICTRL0_QOS0_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
-#define DMAC_PRICTRL0_RRLVLEN0_Pos            _UINT32_(7)                                          /* (DMAC_PRICTRL0) Level 0 Round-Robin Scheduling Enable Position */
-#define DMAC_PRICTRL0_RRLVLEN0_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN0_Pos)        /* (DMAC_PRICTRL0) Level 0 Round-Robin Scheduling Enable Mask */
-#define DMAC_PRICTRL0_RRLVLEN0(value)         (DMAC_PRICTRL0_RRLVLEN0_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN0_Pos)) /* Assigment of value for RRLVLEN0 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_LVLPRI1_Pos             _UINT32_(8)                                          /* (DMAC_PRICTRL0) Level 1 Channel Priority Number Position */
-#define DMAC_PRICTRL0_LVLPRI1_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI1_Pos)        /* (DMAC_PRICTRL0) Level 1 Channel Priority Number Mask */
-#define DMAC_PRICTRL0_LVLPRI1(value)          (DMAC_PRICTRL0_LVLPRI1_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI1_Pos)) /* Assigment of value for LVLPRI1 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_QOS1_Pos                _UINT32_(13)                                         /* (DMAC_PRICTRL0) Level 1 Quality of Service Position */
-#define DMAC_PRICTRL0_QOS1_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS1_Pos)            /* (DMAC_PRICTRL0) Level 1 Quality of Service Mask */
-#define DMAC_PRICTRL0_QOS1(value)             (DMAC_PRICTRL0_QOS1_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS1_Pos)) /* Assigment of value for QOS1 in the DMAC_PRICTRL0 register */
-#define   DMAC_PRICTRL0_QOS1_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
-#define   DMAC_PRICTRL0_QOS1_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
-#define   DMAC_PRICTRL0_QOS1_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
-#define   DMAC_PRICTRL0_QOS1_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
-#define DMAC_PRICTRL0_QOS1_DISABLE            (DMAC_PRICTRL0_QOS1_DISABLE_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
-#define DMAC_PRICTRL0_QOS1_LOW                (DMAC_PRICTRL0_QOS1_LOW_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
-#define DMAC_PRICTRL0_QOS1_MEDIUM             (DMAC_PRICTRL0_QOS1_MEDIUM_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
-#define DMAC_PRICTRL0_QOS1_HIGH               (DMAC_PRICTRL0_QOS1_HIGH_Val << DMAC_PRICTRL0_QOS1_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
-#define DMAC_PRICTRL0_RRLVLEN1_Pos            _UINT32_(15)                                         /* (DMAC_PRICTRL0) Level 1 Round-Robin Scheduling Enable Position */
-#define DMAC_PRICTRL0_RRLVLEN1_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN1_Pos)        /* (DMAC_PRICTRL0) Level 1 Round-Robin Scheduling Enable Mask */
-#define DMAC_PRICTRL0_RRLVLEN1(value)         (DMAC_PRICTRL0_RRLVLEN1_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN1_Pos)) /* Assigment of value for RRLVLEN1 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_LVLPRI2_Pos             _UINT32_(16)                                         /* (DMAC_PRICTRL0) Level 2 Channel Priority Number Position */
-#define DMAC_PRICTRL0_LVLPRI2_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI2_Pos)        /* (DMAC_PRICTRL0) Level 2 Channel Priority Number Mask */
-#define DMAC_PRICTRL0_LVLPRI2(value)          (DMAC_PRICTRL0_LVLPRI2_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI2_Pos)) /* Assigment of value for LVLPRI2 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_QOS2_Pos                _UINT32_(21)                                         /* (DMAC_PRICTRL0) Level 2 Quality of Service Position */
-#define DMAC_PRICTRL0_QOS2_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS2_Pos)            /* (DMAC_PRICTRL0) Level 2 Quality of Service Mask */
-#define DMAC_PRICTRL0_QOS2(value)             (DMAC_PRICTRL0_QOS2_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS2_Pos)) /* Assigment of value for QOS2 in the DMAC_PRICTRL0 register */
-#define   DMAC_PRICTRL0_QOS2_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
-#define   DMAC_PRICTRL0_QOS2_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
-#define   DMAC_PRICTRL0_QOS2_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
-#define   DMAC_PRICTRL0_QOS2_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
-#define DMAC_PRICTRL0_QOS2_DISABLE            (DMAC_PRICTRL0_QOS2_DISABLE_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
-#define DMAC_PRICTRL0_QOS2_LOW                (DMAC_PRICTRL0_QOS2_LOW_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
-#define DMAC_PRICTRL0_QOS2_MEDIUM             (DMAC_PRICTRL0_QOS2_MEDIUM_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
-#define DMAC_PRICTRL0_QOS2_HIGH               (DMAC_PRICTRL0_QOS2_HIGH_Val << DMAC_PRICTRL0_QOS2_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
-#define DMAC_PRICTRL0_RRLVLEN2_Pos            _UINT32_(23)                                         /* (DMAC_PRICTRL0) Level 2 Round-Robin Scheduling Enable Position */
-#define DMAC_PRICTRL0_RRLVLEN2_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN2_Pos)        /* (DMAC_PRICTRL0) Level 2 Round-Robin Scheduling Enable Mask */
-#define DMAC_PRICTRL0_RRLVLEN2(value)         (DMAC_PRICTRL0_RRLVLEN2_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN2_Pos)) /* Assigment of value for RRLVLEN2 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_LVLPRI3_Pos             _UINT32_(24)                                         /* (DMAC_PRICTRL0) Level 3 Channel Priority Number Position */
-#define DMAC_PRICTRL0_LVLPRI3_Msk             (_UINT32_(0x1F) << DMAC_PRICTRL0_LVLPRI3_Pos)        /* (DMAC_PRICTRL0) Level 3 Channel Priority Number Mask */
-#define DMAC_PRICTRL0_LVLPRI3(value)          (DMAC_PRICTRL0_LVLPRI3_Msk & (_UINT32_(value) << DMAC_PRICTRL0_LVLPRI3_Pos)) /* Assigment of value for LVLPRI3 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_QOS3_Pos                _UINT32_(29)                                         /* (DMAC_PRICTRL0) Level 3 Quality of Service Position */
-#define DMAC_PRICTRL0_QOS3_Msk                (_UINT32_(0x3) << DMAC_PRICTRL0_QOS3_Pos)            /* (DMAC_PRICTRL0) Level 3 Quality of Service Mask */
-#define DMAC_PRICTRL0_QOS3(value)             (DMAC_PRICTRL0_QOS3_Msk & (_UINT32_(value) << DMAC_PRICTRL0_QOS3_Pos)) /* Assigment of value for QOS3 in the DMAC_PRICTRL0 register */
-#define   DMAC_PRICTRL0_QOS3_DISABLE_Val      _UINT32_(0x0)                                        /* (DMAC_PRICTRL0) Regular delivery  */
-#define   DMAC_PRICTRL0_QOS3_LOW_Val          _UINT32_(0x1)                                        /* (DMAC_PRICTRL0) Bandwidth shortage  */
-#define   DMAC_PRICTRL0_QOS3_MEDIUM_Val       _UINT32_(0x2)                                        /* (DMAC_PRICTRL0) Latency sensitive  */
-#define   DMAC_PRICTRL0_QOS3_HIGH_Val         _UINT32_(0x3)                                        /* (DMAC_PRICTRL0) Latency critical  */
-#define DMAC_PRICTRL0_QOS3_DISABLE            (DMAC_PRICTRL0_QOS3_DISABLE_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Regular delivery Position  */
-#define DMAC_PRICTRL0_QOS3_LOW                (DMAC_PRICTRL0_QOS3_LOW_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Bandwidth shortage Position  */
-#define DMAC_PRICTRL0_QOS3_MEDIUM             (DMAC_PRICTRL0_QOS3_MEDIUM_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Latency sensitive Position  */
-#define DMAC_PRICTRL0_QOS3_HIGH               (DMAC_PRICTRL0_QOS3_HIGH_Val << DMAC_PRICTRL0_QOS3_Pos) /* (DMAC_PRICTRL0) Latency critical Position  */
-#define DMAC_PRICTRL0_RRLVLEN3_Pos            _UINT32_(31)                                         /* (DMAC_PRICTRL0) Level 3 Round-Robin Scheduling Enable Position */
-#define DMAC_PRICTRL0_RRLVLEN3_Msk            (_UINT32_(0x1) << DMAC_PRICTRL0_RRLVLEN3_Pos)        /* (DMAC_PRICTRL0) Level 3 Round-Robin Scheduling Enable Mask */
-#define DMAC_PRICTRL0_RRLVLEN3(value)         (DMAC_PRICTRL0_RRLVLEN3_Msk & (_UINT32_(value) << DMAC_PRICTRL0_RRLVLEN3_Pos)) /* Assigment of value for RRLVLEN3 in the DMAC_PRICTRL0 register */
-#define DMAC_PRICTRL0_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (DMAC_PRICTRL0) Register Mask  */
+#define DMAC_ACTIVE_LVLEX0_Pos                _UINT32_(0)                                          /* (DMAC_ACTIVE) Level 0 Channel Trigger Request Executing Position */
+#define DMAC_ACTIVE_LVLEX0_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX0_Pos)            /* (DMAC_ACTIVE) Level 0 Channel Trigger Request Executing Mask */
+#define DMAC_ACTIVE_LVLEX0(value)             (DMAC_ACTIVE_LVLEX0_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX0_Pos)) /* Assigment of value for LVLEX0 in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_LVLEX1_Pos                _UINT32_(1)                                          /* (DMAC_ACTIVE) Level 1 Channel Trigger Request Executing Position */
+#define DMAC_ACTIVE_LVLEX1_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX1_Pos)            /* (DMAC_ACTIVE) Level 1 Channel Trigger Request Executing Mask */
+#define DMAC_ACTIVE_LVLEX1(value)             (DMAC_ACTIVE_LVLEX1_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX1_Pos)) /* Assigment of value for LVLEX1 in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_LVLEX2_Pos                _UINT32_(2)                                          /* (DMAC_ACTIVE) Level 2 Channel Trigger Request Executing Position */
+#define DMAC_ACTIVE_LVLEX2_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX2_Pos)            /* (DMAC_ACTIVE) Level 2 Channel Trigger Request Executing Mask */
+#define DMAC_ACTIVE_LVLEX2(value)             (DMAC_ACTIVE_LVLEX2_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX2_Pos)) /* Assigment of value for LVLEX2 in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_LVLEX3_Pos                _UINT32_(3)                                          /* (DMAC_ACTIVE) Level 3 Channel Trigger Request Executing Position */
+#define DMAC_ACTIVE_LVLEX3_Msk                (_UINT32_(0x1) << DMAC_ACTIVE_LVLEX3_Pos)            /* (DMAC_ACTIVE) Level 3 Channel Trigger Request Executing Mask */
+#define DMAC_ACTIVE_LVLEX3(value)             (DMAC_ACTIVE_LVLEX3_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX3_Pos)) /* Assigment of value for LVLEX3 in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_ID_Pos                    _UINT32_(8)                                          /* (DMAC_ACTIVE) Active Channel ID Position */
+#define DMAC_ACTIVE_ID_Msk                    (_UINT32_(0x1F) << DMAC_ACTIVE_ID_Pos)               /* (DMAC_ACTIVE) Active Channel ID Mask */
+#define DMAC_ACTIVE_ID(value)                 (DMAC_ACTIVE_ID_Msk & (_UINT32_(value) << DMAC_ACTIVE_ID_Pos)) /* Assigment of value for ID in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_ABUSY_Pos                 _UINT32_(15)                                         /* (DMAC_ACTIVE) Active Channel Busy Position */
+#define DMAC_ACTIVE_ABUSY_Msk                 (_UINT32_(0x1) << DMAC_ACTIVE_ABUSY_Pos)             /* (DMAC_ACTIVE) Active Channel Busy Mask */
+#define DMAC_ACTIVE_ABUSY(value)              (DMAC_ACTIVE_ABUSY_Msk & (_UINT32_(value) << DMAC_ACTIVE_ABUSY_Pos)) /* Assigment of value for ABUSY in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_BTCNT_Pos                 _UINT32_(16)                                         /* (DMAC_ACTIVE) Active Channel Block Transfer Count Position */
+#define DMAC_ACTIVE_BTCNT_Msk                 (_UINT32_(0xFFFF) << DMAC_ACTIVE_BTCNT_Pos)          /* (DMAC_ACTIVE) Active Channel Block Transfer Count Mask */
+#define DMAC_ACTIVE_BTCNT(value)              (DMAC_ACTIVE_BTCNT_Msk & (_UINT32_(value) << DMAC_ACTIVE_BTCNT_Pos)) /* Assigment of value for BTCNT in the DMAC_ACTIVE register */
+#define DMAC_ACTIVE_Msk                       _UINT32_(0xFFFF9F0F)                                 /* (DMAC_ACTIVE) Register Mask  */
 
+#define DMAC_ACTIVE_LVLEX_Pos                 _UINT32_(0)                                          /* (DMAC_ACTIVE Position) Level x Channel Trigger Request Executing */
+#define DMAC_ACTIVE_LVLEX_Msk                 (_UINT32_(0xF) << DMAC_ACTIVE_LVLEX_Pos)             /* (DMAC_ACTIVE Mask) LVLEX */
+#define DMAC_ACTIVE_LVLEX(value)              (DMAC_ACTIVE_LVLEX_Msk & (_UINT32_(value) << DMAC_ACTIVE_LVLEX_Pos)) 
 
-/* -------- DMAC_SWTRIGCTRL : (DMAC Offset: 0x10) (R/W 32) Software Trigger Control -------- */
-#define DMAC_SWTRIGCTRL_RESETVALUE            _UINT32_(0x00)                                       /*  (DMAC_SWTRIGCTRL) Software Trigger Control  Reset Value */
+/* -------- DMAC_BASEADDR : (DMAC Offset: 0x34) (R/W 32) Descriptor Memory Section Base Address -------- */
+#define DMAC_BASEADDR_RESETVALUE              _UINT32_(0x00)                                       /*  (DMAC_BASEADDR) Descriptor Memory Section Base Address  Reset Value */
 
-#define DMAC_SWTRIGCTRL_SWTRIG0_Pos           _UINT32_(0)                                          /* (DMAC_SWTRIGCTRL) Channel 0 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG0_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG0_Pos)       /* (DMAC_SWTRIGCTRL) Channel 0 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG0(value)        (DMAC_SWTRIGCTRL_SWTRIG0_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG0_Pos)) /* Assigment of value for SWTRIG0 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG1_Pos           _UINT32_(1)                                          /* (DMAC_SWTRIGCTRL) Channel 1 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG1_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG1_Pos)       /* (DMAC_SWTRIGCTRL) Channel 1 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG1(value)        (DMAC_SWTRIGCTRL_SWTRIG1_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG1_Pos)) /* Assigment of value for SWTRIG1 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG2_Pos           _UINT32_(2)                                          /* (DMAC_SWTRIGCTRL) Channel 2 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG2_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG2_Pos)       /* (DMAC_SWTRIGCTRL) Channel 2 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG2(value)        (DMAC_SWTRIGCTRL_SWTRIG2_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG2_Pos)) /* Assigment of value for SWTRIG2 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG3_Pos           _UINT32_(3)                                          /* (DMAC_SWTRIGCTRL) Channel 3 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG3_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG3_Pos)       /* (DMAC_SWTRIGCTRL) Channel 3 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG3(value)        (DMAC_SWTRIGCTRL_SWTRIG3_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG3_Pos)) /* Assigment of value for SWTRIG3 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG4_Pos           _UINT32_(4)                                          /* (DMAC_SWTRIGCTRL) Channel 4 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG4_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG4_Pos)       /* (DMAC_SWTRIGCTRL) Channel 4 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG4(value)        (DMAC_SWTRIGCTRL_SWTRIG4_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG4_Pos)) /* Assigment of value for SWTRIG4 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG5_Pos           _UINT32_(5)                                          /* (DMAC_SWTRIGCTRL) Channel 5 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG5_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG5_Pos)       /* (DMAC_SWTRIGCTRL) Channel 5 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG5(value)        (DMAC_SWTRIGCTRL_SWTRIG5_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG5_Pos)) /* Assigment of value for SWTRIG5 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG6_Pos           _UINT32_(6)                                          /* (DMAC_SWTRIGCTRL) Channel 6 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG6_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG6_Pos)       /* (DMAC_SWTRIGCTRL) Channel 6 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG6(value)        (DMAC_SWTRIGCTRL_SWTRIG6_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG6_Pos)) /* Assigment of value for SWTRIG6 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG7_Pos           _UINT32_(7)                                          /* (DMAC_SWTRIGCTRL) Channel 7 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG7_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG7_Pos)       /* (DMAC_SWTRIGCTRL) Channel 7 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG7(value)        (DMAC_SWTRIGCTRL_SWTRIG7_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG7_Pos)) /* Assigment of value for SWTRIG7 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG8_Pos           _UINT32_(8)                                          /* (DMAC_SWTRIGCTRL) Channel 8 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG8_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG8_Pos)       /* (DMAC_SWTRIGCTRL) Channel 8 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG8(value)        (DMAC_SWTRIGCTRL_SWTRIG8_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG8_Pos)) /* Assigment of value for SWTRIG8 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG9_Pos           _UINT32_(9)                                          /* (DMAC_SWTRIGCTRL) Channel 9 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG9_Msk           (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG9_Pos)       /* (DMAC_SWTRIGCTRL) Channel 9 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG9(value)        (DMAC_SWTRIGCTRL_SWTRIG9_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG9_Pos)) /* Assigment of value for SWTRIG9 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG10_Pos          _UINT32_(10)                                         /* (DMAC_SWTRIGCTRL) Channel 10 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG10_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG10_Pos)      /* (DMAC_SWTRIGCTRL) Channel 10 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG10(value)       (DMAC_SWTRIGCTRL_SWTRIG10_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG10_Pos)) /* Assigment of value for SWTRIG10 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG11_Pos          _UINT32_(11)                                         /* (DMAC_SWTRIGCTRL) Channel 11 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG11_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG11_Pos)      /* (DMAC_SWTRIGCTRL) Channel 11 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG11(value)       (DMAC_SWTRIGCTRL_SWTRIG11_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG11_Pos)) /* Assigment of value for SWTRIG11 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG12_Pos          _UINT32_(12)                                         /* (DMAC_SWTRIGCTRL) Channel 12 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG12_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG12_Pos)      /* (DMAC_SWTRIGCTRL) Channel 12 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG12(value)       (DMAC_SWTRIGCTRL_SWTRIG12_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG12_Pos)) /* Assigment of value for SWTRIG12 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG13_Pos          _UINT32_(13)                                         /* (DMAC_SWTRIGCTRL) Channel 13 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG13_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG13_Pos)      /* (DMAC_SWTRIGCTRL) Channel 13 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG13(value)       (DMAC_SWTRIGCTRL_SWTRIG13_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG13_Pos)) /* Assigment of value for SWTRIG13 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG14_Pos          _UINT32_(14)                                         /* (DMAC_SWTRIGCTRL) Channel 14 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG14_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG14_Pos)      /* (DMAC_SWTRIGCTRL) Channel 14 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG14(value)       (DMAC_SWTRIGCTRL_SWTRIG14_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG14_Pos)) /* Assigment of value for SWTRIG14 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG15_Pos          _UINT32_(15)                                         /* (DMAC_SWTRIGCTRL) Channel 15 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG15_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG15_Pos)      /* (DMAC_SWTRIGCTRL) Channel 15 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG15(value)       (DMAC_SWTRIGCTRL_SWTRIG15_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG15_Pos)) /* Assigment of value for SWTRIG15 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG16_Pos          _UINT32_(16)                                         /* (DMAC_SWTRIGCTRL) Channel 16 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG16_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG16_Pos)      /* (DMAC_SWTRIGCTRL) Channel 16 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG16(value)       (DMAC_SWTRIGCTRL_SWTRIG16_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG16_Pos)) /* Assigment of value for SWTRIG16 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG17_Pos          _UINT32_(17)                                         /* (DMAC_SWTRIGCTRL) Channel 17 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG17_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG17_Pos)      /* (DMAC_SWTRIGCTRL) Channel 17 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG17(value)       (DMAC_SWTRIGCTRL_SWTRIG17_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG17_Pos)) /* Assigment of value for SWTRIG17 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG18_Pos          _UINT32_(18)                                         /* (DMAC_SWTRIGCTRL) Channel 18 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG18_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG18_Pos)      /* (DMAC_SWTRIGCTRL) Channel 18 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG18(value)       (DMAC_SWTRIGCTRL_SWTRIG18_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG18_Pos)) /* Assigment of value for SWTRIG18 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG19_Pos          _UINT32_(19)                                         /* (DMAC_SWTRIGCTRL) Channel 19 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG19_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG19_Pos)      /* (DMAC_SWTRIGCTRL) Channel 19 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG19(value)       (DMAC_SWTRIGCTRL_SWTRIG19_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG19_Pos)) /* Assigment of value for SWTRIG19 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG20_Pos          _UINT32_(20)                                         /* (DMAC_SWTRIGCTRL) Channel 20 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG20_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG20_Pos)      /* (DMAC_SWTRIGCTRL) Channel 20 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG20(value)       (DMAC_SWTRIGCTRL_SWTRIG20_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG20_Pos)) /* Assigment of value for SWTRIG20 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG21_Pos          _UINT32_(21)                                         /* (DMAC_SWTRIGCTRL) Channel 21 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG21_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG21_Pos)      /* (DMAC_SWTRIGCTRL) Channel 21 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG21(value)       (DMAC_SWTRIGCTRL_SWTRIG21_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG21_Pos)) /* Assigment of value for SWTRIG21 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG22_Pos          _UINT32_(22)                                         /* (DMAC_SWTRIGCTRL) Channel 22 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG22_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG22_Pos)      /* (DMAC_SWTRIGCTRL) Channel 22 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG22(value)       (DMAC_SWTRIGCTRL_SWTRIG22_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG22_Pos)) /* Assigment of value for SWTRIG22 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG23_Pos          _UINT32_(23)                                         /* (DMAC_SWTRIGCTRL) Channel 23 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG23_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG23_Pos)      /* (DMAC_SWTRIGCTRL) Channel 23 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG23(value)       (DMAC_SWTRIGCTRL_SWTRIG23_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG23_Pos)) /* Assigment of value for SWTRIG23 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG24_Pos          _UINT32_(24)                                         /* (DMAC_SWTRIGCTRL) Channel 24 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG24_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG24_Pos)      /* (DMAC_SWTRIGCTRL) Channel 24 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG24(value)       (DMAC_SWTRIGCTRL_SWTRIG24_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG24_Pos)) /* Assigment of value for SWTRIG24 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG25_Pos          _UINT32_(25)                                         /* (DMAC_SWTRIGCTRL) Channel 25 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG25_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG25_Pos)      /* (DMAC_SWTRIGCTRL) Channel 25 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG25(value)       (DMAC_SWTRIGCTRL_SWTRIG25_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG25_Pos)) /* Assigment of value for SWTRIG25 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG26_Pos          _UINT32_(26)                                         /* (DMAC_SWTRIGCTRL) Channel 26 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG26_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG26_Pos)      /* (DMAC_SWTRIGCTRL) Channel 26 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG26(value)       (DMAC_SWTRIGCTRL_SWTRIG26_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG26_Pos)) /* Assigment of value for SWTRIG26 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG27_Pos          _UINT32_(27)                                         /* (DMAC_SWTRIGCTRL) Channel 27 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG27_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG27_Pos)      /* (DMAC_SWTRIGCTRL) Channel 27 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG27(value)       (DMAC_SWTRIGCTRL_SWTRIG27_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG27_Pos)) /* Assigment of value for SWTRIG27 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG28_Pos          _UINT32_(28)                                         /* (DMAC_SWTRIGCTRL) Channel 28 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG28_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG28_Pos)      /* (DMAC_SWTRIGCTRL) Channel 28 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG28(value)       (DMAC_SWTRIGCTRL_SWTRIG28_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG28_Pos)) /* Assigment of value for SWTRIG28 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG29_Pos          _UINT32_(29)                                         /* (DMAC_SWTRIGCTRL) Channel 29 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG29_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG29_Pos)      /* (DMAC_SWTRIGCTRL) Channel 29 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG29(value)       (DMAC_SWTRIGCTRL_SWTRIG29_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG29_Pos)) /* Assigment of value for SWTRIG29 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG30_Pos          _UINT32_(30)                                         /* (DMAC_SWTRIGCTRL) Channel 30 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG30_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG30_Pos)      /* (DMAC_SWTRIGCTRL) Channel 30 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG30(value)       (DMAC_SWTRIGCTRL_SWTRIG30_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG30_Pos)) /* Assigment of value for SWTRIG30 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_SWTRIG31_Pos          _UINT32_(31)                                         /* (DMAC_SWTRIGCTRL) Channel 31 Software Trigger Position */
-#define DMAC_SWTRIGCTRL_SWTRIG31_Msk          (_UINT32_(0x1) << DMAC_SWTRIGCTRL_SWTRIG31_Pos)      /* (DMAC_SWTRIGCTRL) Channel 31 Software Trigger Mask */
-#define DMAC_SWTRIGCTRL_SWTRIG31(value)       (DMAC_SWTRIGCTRL_SWTRIG31_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG31_Pos)) /* Assigment of value for SWTRIG31 in the DMAC_SWTRIGCTRL register */
-#define DMAC_SWTRIGCTRL_Msk                   _UINT32_(0xFFFFFFFF)                                 /* (DMAC_SWTRIGCTRL) Register Mask  */
+#define DMAC_BASEADDR_BASEADDR_Pos            _UINT32_(0)                                          /* (DMAC_BASEADDR) Descriptor Memory Base Address Position */
+#define DMAC_BASEADDR_BASEADDR_Msk            (_UINT32_(0xFFFFFFFF) << DMAC_BASEADDR_BASEADDR_Pos) /* (DMAC_BASEADDR) Descriptor Memory Base Address Mask */
+#define DMAC_BASEADDR_BASEADDR(value)         (DMAC_BASEADDR_BASEADDR_Msk & (_UINT32_(value) << DMAC_BASEADDR_BASEADDR_Pos)) /* Assigment of value for BASEADDR in the DMAC_BASEADDR register */
+#define DMAC_BASEADDR_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (DMAC_BASEADDR) Register Mask  */
 
-#define DMAC_SWTRIGCTRL_SWTRIG_Pos            _UINT32_(0)                                          /* (DMAC_SWTRIGCTRL Position) Channel 3x Software Trigger */
-#define DMAC_SWTRIGCTRL_SWTRIG_Msk            (_UINT32_(0xFFFFFFFF) << DMAC_SWTRIGCTRL_SWTRIG_Pos) /* (DMAC_SWTRIGCTRL Mask) SWTRIG */
-#define DMAC_SWTRIGCTRL_SWTRIG(value)         (DMAC_SWTRIGCTRL_SWTRIG_Msk & (_UINT32_(value) << DMAC_SWTRIGCTRL_SWTRIG_Pos)) 
 
 /* -------- DMAC_WRBADDR : (DMAC Offset: 0x38) (R/W 32) Write-Back Memory Section Base Address -------- */
 #define DMAC_WRBADDR_RESETVALUE               _UINT32_(0x00)                                       /*  (DMAC_WRBADDR) Write-Back Memory Section Base Address  Reset Value */
@@ -1088,33 +1088,33 @@
 
 
 /** \brief DMAC register offsets definitions */
-#define DMAC_BTCNT_REG_OFST            _UINT32_(0x02)      /* (DMAC_BTCNT) Block Transfer Count Offset */
 #define DMAC_BTCTRL_REG_OFST           _UINT32_(0x00)      /* (DMAC_BTCTRL) Block Transfer Control Offset */
-#define DMAC_DESCADDR_REG_OFST         _UINT32_(0x0C)      /* (DMAC_DESCADDR) Next Descriptor Address Offset */
-#define DMAC_DSTADDR_REG_OFST          _UINT32_(0x08)      /* (DMAC_DSTADDR) Block Transfer Destination Address Offset */
+#define DMAC_BTCNT_REG_OFST            _UINT32_(0x02)      /* (DMAC_BTCNT) Block Transfer Count Offset */
 #define DMAC_SRCADDR_REG_OFST          _UINT32_(0x04)      /* (DMAC_SRCADDR) Block Transfer Source Address Offset */
+#define DMAC_DSTADDR_REG_OFST          _UINT32_(0x08)      /* (DMAC_DSTADDR) Block Transfer Destination Address Offset */
+#define DMAC_DESCADDR_REG_OFST         _UINT32_(0x0C)      /* (DMAC_DESCADDR) Next Descriptor Address Offset */
 #define DMAC_CHCTRLA_REG_OFST          _UINT32_(0x00)      /* (DMAC_CHCTRLA) Channel n Control A Offset */
 #define DMAC_CHCTRLB_REG_OFST          _UINT32_(0x04)      /* (DMAC_CHCTRLB) Channel n Control B Offset */
+#define DMAC_CHPRILVL_REG_OFST         _UINT32_(0x05)      /* (DMAC_CHPRILVL) Channel n Priority Level Offset */
 #define DMAC_CHEVCTRL_REG_OFST         _UINT32_(0x06)      /* (DMAC_CHEVCTRL) Channel n Event Control Offset */
 #define DMAC_CHINTENCLR_REG_OFST       _UINT32_(0x0C)      /* (DMAC_CHINTENCLR) Channel n Interrupt Enable Clear Offset */
 #define DMAC_CHINTENSET_REG_OFST       _UINT32_(0x0D)      /* (DMAC_CHINTENSET) Channel n Interrupt Enable Set Offset */
 #define DMAC_CHINTFLAG_REG_OFST        _UINT32_(0x0E)      /* (DMAC_CHINTFLAG) Channel n Interrupt Flag Status and Clear Offset */
-#define DMAC_CHPRILVL_REG_OFST         _UINT32_(0x05)      /* (DMAC_CHPRILVL) Channel n Priority Level Offset */
 #define DMAC_CHSTATUS_REG_OFST         _UINT32_(0x0F)      /* (DMAC_CHSTATUS) Channel n Status Offset */
-#define DMAC_ACTIVE_REG_OFST           _UINT32_(0x30)      /* (DMAC_ACTIVE) Active Channel and Levels Offset */
-#define DMAC_BASEADDR_REG_OFST         _UINT32_(0x34)      /* (DMAC_BASEADDR) Descriptor Memory Section Base Address Offset */
-#define DMAC_BUSYCH_REG_OFST           _UINT32_(0x28)      /* (DMAC_BUSYCH) Busy Channels Offset */
-#define DMAC_CRCCHKSUM_REG_OFST        _UINT32_(0x08)      /* (DMAC_CRCCHKSUM) CRC Checksum Offset */
+#define DMAC_CTRL_REG_OFST             _UINT32_(0x00)      /* (DMAC_CTRL) Control Offset */
 #define DMAC_CRCCTRL_REG_OFST          _UINT32_(0x02)      /* (DMAC_CRCCTRL) CRC Control Offset */
 #define DMAC_CRCDATAIN_REG_OFST        _UINT32_(0x04)      /* (DMAC_CRCDATAIN) CRC Data Input Offset */
+#define DMAC_CRCCHKSUM_REG_OFST        _UINT32_(0x08)      /* (DMAC_CRCCHKSUM) CRC Checksum Offset */
 #define DMAC_CRCSTATUS_REG_OFST        _UINT32_(0x0C)      /* (DMAC_CRCSTATUS) CRC Status Offset */
-#define DMAC_CTRL_REG_OFST             _UINT32_(0x00)      /* (DMAC_CTRL) Control Offset */
 #define DMAC_DBGCTRL_REG_OFST          _UINT32_(0x0D)      /* (DMAC_DBGCTRL) Debug Control Offset */
+#define DMAC_SWTRIGCTRL_REG_OFST       _UINT32_(0x10)      /* (DMAC_SWTRIGCTRL) Software Trigger Control Offset */
+#define DMAC_PRICTRL0_REG_OFST         _UINT32_(0x14)      /* (DMAC_PRICTRL0) Priority Control 0 Offset */
 #define DMAC_INTPEND_REG_OFST          _UINT32_(0x20)      /* (DMAC_INTPEND) Interrupt Pending Offset */
 #define DMAC_INTSTATUS_REG_OFST        _UINT32_(0x24)      /* (DMAC_INTSTATUS) Interrupt Status Offset */
+#define DMAC_BUSYCH_REG_OFST           _UINT32_(0x28)      /* (DMAC_BUSYCH) Busy Channels Offset */
 #define DMAC_PENDCH_REG_OFST           _UINT32_(0x2C)      /* (DMAC_PENDCH) Pending Channels Offset */
-#define DMAC_PRICTRL0_REG_OFST         _UINT32_(0x14)      /* (DMAC_PRICTRL0) Priority Control 0 Offset */
-#define DMAC_SWTRIGCTRL_REG_OFST       _UINT32_(0x10)      /* (DMAC_SWTRIGCTRL) Software Trigger Control Offset */
+#define DMAC_ACTIVE_REG_OFST           _UINT32_(0x30)      /* (DMAC_ACTIVE) Active Channel and Levels Offset */
+#define DMAC_BASEADDR_REG_OFST         _UINT32_(0x34)      /* (DMAC_BASEADDR) Descriptor Memory Section Base Address Offset */
 #define DMAC_WRBADDR_REG_OFST          _UINT32_(0x38)      /* (DMAC_WRBADDR) Write-Back Memory Section Base Address Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))

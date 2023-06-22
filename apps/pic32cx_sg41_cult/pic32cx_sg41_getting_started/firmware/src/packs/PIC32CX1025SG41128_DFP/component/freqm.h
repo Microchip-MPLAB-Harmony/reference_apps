@@ -1,7 +1,7 @@
 /*
  * Component description for FREQM
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,22 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_FREQM_COMPONENT_H_
 #define _PIC32CXSG41_FREQM_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR FREQM                                        */
 /* ************************************************************************** */
-
-/* -------- FREQM_CFGA : (FREQM Offset: 0x02) (R/W 16) Config A register -------- */
-#define FREQM_CFGA_RESETVALUE                 _UINT16_(0x00)                                       /*  (FREQM_CFGA) Config A register  Reset Value */
-
-#define FREQM_CFGA_REFNUM_Pos                 _UINT16_(0)                                          /* (FREQM_CFGA) Number of Reference Clock Cycles Position */
-#define FREQM_CFGA_REFNUM_Msk                 (_UINT16_(0xFF) << FREQM_CFGA_REFNUM_Pos)            /* (FREQM_CFGA) Number of Reference Clock Cycles Mask */
-#define FREQM_CFGA_REFNUM(value)              (FREQM_CFGA_REFNUM_Msk & (_UINT16_(value) << FREQM_CFGA_REFNUM_Pos)) /* Assigment of value for REFNUM in the FREQM_CFGA register */
-#define FREQM_CFGA_Msk                        _UINT16_(0x00FF)                                     /* (FREQM_CFGA) Register Mask  */
-
 
 /* -------- FREQM_CTRLA : (FREQM Offset: 0x00) (R/W 8) Control A Register -------- */
 #define FREQM_CTRLA_RESETVALUE                _UINT8_(0x00)                                        /*  (FREQM_CTRLA) Control A Register  Reset Value */
@@ -56,6 +47,15 @@
 #define FREQM_CTRLB_START_Msk                 (_UINT8_(0x1) << FREQM_CTRLB_START_Pos)              /* (FREQM_CTRLB) Start Measurement Mask */
 #define FREQM_CTRLB_START(value)              (FREQM_CTRLB_START_Msk & (_UINT8_(value) << FREQM_CTRLB_START_Pos)) /* Assigment of value for START in the FREQM_CTRLB register */
 #define FREQM_CTRLB_Msk                       _UINT8_(0x01)                                        /* (FREQM_CTRLB) Register Mask  */
+
+
+/* -------- FREQM_CFGA : (FREQM Offset: 0x02) (R/W 16) Config A register -------- */
+#define FREQM_CFGA_RESETVALUE                 _UINT16_(0x00)                                       /*  (FREQM_CFGA) Config A register  Reset Value */
+
+#define FREQM_CFGA_REFNUM_Pos                 _UINT16_(0)                                          /* (FREQM_CFGA) Number of Reference Clock Cycles Position */
+#define FREQM_CFGA_REFNUM_Msk                 (_UINT16_(0xFF) << FREQM_CFGA_REFNUM_Pos)            /* (FREQM_CFGA) Number of Reference Clock Cycles Mask */
+#define FREQM_CFGA_REFNUM(value)              (FREQM_CFGA_REFNUM_Msk & (_UINT16_(value) << FREQM_CFGA_REFNUM_Pos)) /* Assigment of value for REFNUM in the FREQM_CFGA register */
+#define FREQM_CFGA_Msk                        _UINT16_(0x00FF)                                     /* (FREQM_CFGA) Register Mask  */
 
 
 /* -------- FREQM_INTENCLR : (FREQM Offset: 0x08) (R/W 8) Interrupt Enable Clear Register -------- */
@@ -119,9 +119,9 @@
 
 
 /** \brief FREQM register offsets definitions */
-#define FREQM_CFGA_REG_OFST            _UINT32_(0x02)      /* (FREQM_CFGA) Config A register Offset */
 #define FREQM_CTRLA_REG_OFST           _UINT32_(0x00)      /* (FREQM_CTRLA) Control A Register Offset */
 #define FREQM_CTRLB_REG_OFST           _UINT32_(0x01)      /* (FREQM_CTRLB) Control B Register Offset */
+#define FREQM_CFGA_REG_OFST            _UINT32_(0x02)      /* (FREQM_CFGA) Config A register Offset */
 #define FREQM_INTENCLR_REG_OFST        _UINT32_(0x08)      /* (FREQM_INTENCLR) Interrupt Enable Clear Register Offset */
 #define FREQM_INTENSET_REG_OFST        _UINT32_(0x09)      /* (FREQM_INTENSET) Interrupt Enable Set Register Offset */
 #define FREQM_INTFLAG_REG_OFST         _UINT32_(0x0A)      /* (FREQM_INTFLAG) Interrupt Flag Register Offset */

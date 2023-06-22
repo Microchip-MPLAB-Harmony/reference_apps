@@ -1,7 +1,7 @@
 /*
  * Component description for SERCOM
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,178 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_SERCOM_COMPONENT_H_
 #define _PIC32CXSG41_SERCOM_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR SERCOM                                       */
 /* ************************************************************************** */
-
-/* -------- SERCOM_I2CM_ADDR : (SERCOM Offset: 0x24) (R/W 32) I2CM Address -------- */
-#define SERCOM_I2CM_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CM_ADDR) I2CM Address  Reset Value */
-
-#define SERCOM_I2CM_ADDR_ADDR_Pos             _UINT32_(0)                                          /* (SERCOM_I2CM_ADDR) Address Value Position */
-#define SERCOM_I2CM_ADDR_ADDR_Msk             (_UINT32_(0x7FF) << SERCOM_I2CM_ADDR_ADDR_Pos)       /* (SERCOM_I2CM_ADDR) Address Value Mask */
-#define SERCOM_I2CM_ADDR_ADDR(value)          (SERCOM_I2CM_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_I2CM_ADDR register */
-#define SERCOM_I2CM_ADDR_LENEN_Pos            _UINT32_(13)                                         /* (SERCOM_I2CM_ADDR) Length Enable Position */
-#define SERCOM_I2CM_ADDR_LENEN_Msk            (_UINT32_(0x1) << SERCOM_I2CM_ADDR_LENEN_Pos)        /* (SERCOM_I2CM_ADDR) Length Enable Mask */
-#define SERCOM_I2CM_ADDR_LENEN(value)         (SERCOM_I2CM_ADDR_LENEN_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_I2CM_ADDR register */
-#define SERCOM_I2CM_ADDR_HS_Pos               _UINT32_(14)                                         /* (SERCOM_I2CM_ADDR) High Speed Mode Position */
-#define SERCOM_I2CM_ADDR_HS_Msk               (_UINT32_(0x1) << SERCOM_I2CM_ADDR_HS_Pos)           /* (SERCOM_I2CM_ADDR) High Speed Mode Mask */
-#define SERCOM_I2CM_ADDR_HS(value)            (SERCOM_I2CM_ADDR_HS_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_HS_Pos)) /* Assigment of value for HS in the SERCOM_I2CM_ADDR register */
-#define SERCOM_I2CM_ADDR_TENBITEN_Pos         _UINT32_(15)                                         /* (SERCOM_I2CM_ADDR) Ten Bit Addressing Enable Position */
-#define SERCOM_I2CM_ADDR_TENBITEN_Msk         (_UINT32_(0x1) << SERCOM_I2CM_ADDR_TENBITEN_Pos)     /* (SERCOM_I2CM_ADDR) Ten Bit Addressing Enable Mask */
-#define SERCOM_I2CM_ADDR_TENBITEN(value)      (SERCOM_I2CM_ADDR_TENBITEN_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_TENBITEN_Pos)) /* Assigment of value for TENBITEN in the SERCOM_I2CM_ADDR register */
-#define SERCOM_I2CM_ADDR_LEN_Pos              _UINT32_(16)                                         /* (SERCOM_I2CM_ADDR) Length Position */
-#define SERCOM_I2CM_ADDR_LEN_Msk              (_UINT32_(0xFF) << SERCOM_I2CM_ADDR_LEN_Pos)         /* (SERCOM_I2CM_ADDR) Length Mask */
-#define SERCOM_I2CM_ADDR_LEN(value)           (SERCOM_I2CM_ADDR_LEN_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_I2CM_ADDR register */
-#define SERCOM_I2CM_ADDR_Msk                  _UINT32_(0x00FFE7FF)                                 /* (SERCOM_I2CM_ADDR) Register Mask  */
-
-
-/* -------- SERCOM_I2CS_ADDR : (SERCOM Offset: 0x24) (R/W 32) I2CS Address -------- */
-#define SERCOM_I2CS_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CS_ADDR) I2CS Address  Reset Value */
-
-#define SERCOM_I2CS_ADDR_GENCEN_Pos           _UINT32_(0)                                          /* (SERCOM_I2CS_ADDR) General Call Address Enable Position */
-#define SERCOM_I2CS_ADDR_GENCEN_Msk           (_UINT32_(0x1) << SERCOM_I2CS_ADDR_GENCEN_Pos)       /* (SERCOM_I2CS_ADDR) General Call Address Enable Mask */
-#define SERCOM_I2CS_ADDR_GENCEN(value)        (SERCOM_I2CS_ADDR_GENCEN_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_GENCEN_Pos)) /* Assigment of value for GENCEN in the SERCOM_I2CS_ADDR register */
-#define SERCOM_I2CS_ADDR_ADDR_Pos             _UINT32_(1)                                          /* (SERCOM_I2CS_ADDR) Address Value Position */
-#define SERCOM_I2CS_ADDR_ADDR_Msk             (_UINT32_(0x3FF) << SERCOM_I2CS_ADDR_ADDR_Pos)       /* (SERCOM_I2CS_ADDR) Address Value Mask */
-#define SERCOM_I2CS_ADDR_ADDR(value)          (SERCOM_I2CS_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_I2CS_ADDR register */
-#define SERCOM_I2CS_ADDR_TENBITEN_Pos         _UINT32_(15)                                         /* (SERCOM_I2CS_ADDR) Ten Bit Addressing Enable Position */
-#define SERCOM_I2CS_ADDR_TENBITEN_Msk         (_UINT32_(0x1) << SERCOM_I2CS_ADDR_TENBITEN_Pos)     /* (SERCOM_I2CS_ADDR) Ten Bit Addressing Enable Mask */
-#define SERCOM_I2CS_ADDR_TENBITEN(value)      (SERCOM_I2CS_ADDR_TENBITEN_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_TENBITEN_Pos)) /* Assigment of value for TENBITEN in the SERCOM_I2CS_ADDR register */
-#define SERCOM_I2CS_ADDR_ADDRMASK_Pos         _UINT32_(17)                                         /* (SERCOM_I2CS_ADDR) Address Mask Position */
-#define SERCOM_I2CS_ADDR_ADDRMASK_Msk         (_UINT32_(0x3FF) << SERCOM_I2CS_ADDR_ADDRMASK_Pos)   /* (SERCOM_I2CS_ADDR) Address Mask Mask */
-#define SERCOM_I2CS_ADDR_ADDRMASK(value)      (SERCOM_I2CS_ADDR_ADDRMASK_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_ADDRMASK_Pos)) /* Assigment of value for ADDRMASK in the SERCOM_I2CS_ADDR register */
-#define SERCOM_I2CS_ADDR_Msk                  _UINT32_(0x07FE87FF)                                 /* (SERCOM_I2CS_ADDR) Register Mask  */
-
-
-/* -------- SERCOM_SPIM_ADDR : (SERCOM Offset: 0x24) (R/W 32) SPIM Address -------- */
-#define SERCOM_SPIM_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIM_ADDR) SPIM Address  Reset Value */
-
-#define SERCOM_SPIM_ADDR_ADDR_Pos             _UINT32_(0)                                          /* (SERCOM_SPIM_ADDR) Address Value Position */
-#define SERCOM_SPIM_ADDR_ADDR_Msk             (_UINT32_(0xFF) << SERCOM_SPIM_ADDR_ADDR_Pos)        /* (SERCOM_SPIM_ADDR) Address Value Mask */
-#define SERCOM_SPIM_ADDR_ADDR(value)          (SERCOM_SPIM_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_SPIM_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_SPIM_ADDR register */
-#define SERCOM_SPIM_ADDR_ADDRMASK_Pos         _UINT32_(16)                                         /* (SERCOM_SPIM_ADDR) Address Mask Position */
-#define SERCOM_SPIM_ADDR_ADDRMASK_Msk         (_UINT32_(0xFF) << SERCOM_SPIM_ADDR_ADDRMASK_Pos)    /* (SERCOM_SPIM_ADDR) Address Mask Mask */
-#define SERCOM_SPIM_ADDR_ADDRMASK(value)      (SERCOM_SPIM_ADDR_ADDRMASK_Msk & (_UINT32_(value) << SERCOM_SPIM_ADDR_ADDRMASK_Pos)) /* Assigment of value for ADDRMASK in the SERCOM_SPIM_ADDR register */
-#define SERCOM_SPIM_ADDR_Msk                  _UINT32_(0x00FF00FF)                                 /* (SERCOM_SPIM_ADDR) Register Mask  */
-
-
-/* -------- SERCOM_SPIS_ADDR : (SERCOM Offset: 0x24) (R/W 32) SPIS Address -------- */
-#define SERCOM_SPIS_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIS_ADDR) SPIS Address  Reset Value */
-
-#define SERCOM_SPIS_ADDR_ADDR_Pos             _UINT32_(0)                                          /* (SERCOM_SPIS_ADDR) Address Value Position */
-#define SERCOM_SPIS_ADDR_ADDR_Msk             (_UINT32_(0xFF) << SERCOM_SPIS_ADDR_ADDR_Pos)        /* (SERCOM_SPIS_ADDR) Address Value Mask */
-#define SERCOM_SPIS_ADDR_ADDR(value)          (SERCOM_SPIS_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_SPIS_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_SPIS_ADDR register */
-#define SERCOM_SPIS_ADDR_ADDRMASK_Pos         _UINT32_(16)                                         /* (SERCOM_SPIS_ADDR) Address Mask Position */
-#define SERCOM_SPIS_ADDR_ADDRMASK_Msk         (_UINT32_(0xFF) << SERCOM_SPIS_ADDR_ADDRMASK_Pos)    /* (SERCOM_SPIS_ADDR) Address Mask Mask */
-#define SERCOM_SPIS_ADDR_ADDRMASK(value)      (SERCOM_SPIS_ADDR_ADDRMASK_Msk & (_UINT32_(value) << SERCOM_SPIS_ADDR_ADDRMASK_Pos)) /* Assigment of value for ADDRMASK in the SERCOM_SPIS_ADDR register */
-#define SERCOM_SPIS_ADDR_Msk                  _UINT32_(0x00FF00FF)                                 /* (SERCOM_SPIS_ADDR) Register Mask  */
-
-
-/* -------- SERCOM_I2CM_BAUD : (SERCOM Offset: 0x0C) (R/W 32) I2CM Baud Rate -------- */
-#define SERCOM_I2CM_BAUD_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CM_BAUD) I2CM Baud Rate  Reset Value */
-
-#define SERCOM_I2CM_BAUD_BAUD_Pos             _UINT32_(0)                                          /* (SERCOM_I2CM_BAUD) Baud Rate Value Position */
-#define SERCOM_I2CM_BAUD_BAUD_Msk             (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_BAUD_Pos)        /* (SERCOM_I2CM_BAUD) Baud Rate Value Mask */
-#define SERCOM_I2CM_BAUD_BAUD(value)          (SERCOM_I2CM_BAUD_BAUD_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_I2CM_BAUD register */
-#define SERCOM_I2CM_BAUD_BAUDLOW_Pos          _UINT32_(8)                                          /* (SERCOM_I2CM_BAUD) Baud Rate Value Low Position */
-#define SERCOM_I2CM_BAUD_BAUDLOW_Msk          (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_BAUDLOW_Pos)     /* (SERCOM_I2CM_BAUD) Baud Rate Value Low Mask */
-#define SERCOM_I2CM_BAUD_BAUDLOW(value)       (SERCOM_I2CM_BAUD_BAUDLOW_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_BAUDLOW_Pos)) /* Assigment of value for BAUDLOW in the SERCOM_I2CM_BAUD register */
-#define SERCOM_I2CM_BAUD_HSBAUD_Pos           _UINT32_(16)                                         /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Position */
-#define SERCOM_I2CM_BAUD_HSBAUD_Msk           (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_HSBAUD_Pos)      /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Mask */
-#define SERCOM_I2CM_BAUD_HSBAUD(value)        (SERCOM_I2CM_BAUD_HSBAUD_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_HSBAUD_Pos)) /* Assigment of value for HSBAUD in the SERCOM_I2CM_BAUD register */
-#define SERCOM_I2CM_BAUD_HSBAUDLOW_Pos        _UINT32_(24)                                         /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Low Position */
-#define SERCOM_I2CM_BAUD_HSBAUDLOW_Msk        (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_HSBAUDLOW_Pos)   /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Low Mask */
-#define SERCOM_I2CM_BAUD_HSBAUDLOW(value)     (SERCOM_I2CM_BAUD_HSBAUDLOW_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_HSBAUDLOW_Pos)) /* Assigment of value for HSBAUDLOW in the SERCOM_I2CM_BAUD register */
-#define SERCOM_I2CM_BAUD_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_I2CM_BAUD) Register Mask  */
-
-
-/* -------- SERCOM_SPIM_BAUD : (SERCOM Offset: 0x0C) (R/W 8) SPIM Baud Rate -------- */
-#define SERCOM_SPIM_BAUD_RESETVALUE           _UINT8_(0x00)                                        /*  (SERCOM_SPIM_BAUD) SPIM Baud Rate  Reset Value */
-
-#define SERCOM_SPIM_BAUD_BAUD_Pos             _UINT8_(0)                                           /* (SERCOM_SPIM_BAUD) Baud Rate Value Position */
-#define SERCOM_SPIM_BAUD_BAUD_Msk             (_UINT8_(0xFF) << SERCOM_SPIM_BAUD_BAUD_Pos)         /* (SERCOM_SPIM_BAUD) Baud Rate Value Mask */
-#define SERCOM_SPIM_BAUD_BAUD(value)          (SERCOM_SPIM_BAUD_BAUD_Msk & (_UINT8_(value) << SERCOM_SPIM_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_SPIM_BAUD register */
-#define SERCOM_SPIM_BAUD_Msk                  _UINT8_(0xFF)                                        /* (SERCOM_SPIM_BAUD) Register Mask  */
-
-
-/* -------- SERCOM_SPIS_BAUD : (SERCOM Offset: 0x0C) (R/W 8) SPIS Baud Rate -------- */
-#define SERCOM_SPIS_BAUD_RESETVALUE           _UINT8_(0x00)                                        /*  (SERCOM_SPIS_BAUD) SPIS Baud Rate  Reset Value */
-
-#define SERCOM_SPIS_BAUD_BAUD_Pos             _UINT8_(0)                                           /* (SERCOM_SPIS_BAUD) Baud Rate Value Position */
-#define SERCOM_SPIS_BAUD_BAUD_Msk             (_UINT8_(0xFF) << SERCOM_SPIS_BAUD_BAUD_Pos)         /* (SERCOM_SPIS_BAUD) Baud Rate Value Mask */
-#define SERCOM_SPIS_BAUD_BAUD(value)          (SERCOM_SPIS_BAUD_BAUD_Msk & (_UINT8_(value) << SERCOM_SPIS_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_SPIS_BAUD register */
-#define SERCOM_SPIS_BAUD_Msk                  _UINT8_(0xFF)                                        /* (SERCOM_SPIS_BAUD) Register Mask  */
-
-
-/* -------- SERCOM_USART_EXT_BAUD : (SERCOM Offset: 0x0C) (R/W 16) USART_EXT Baud Rate -------- */
-#define SERCOM_USART_EXT_BAUD_RESETVALUE      _UINT16_(0x00)                                       /*  (SERCOM_USART_EXT_BAUD) USART_EXT Baud Rate  Reset Value */
-
-#define SERCOM_USART_EXT_BAUD_BAUD_Pos        _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_EXT_BAUD_BAUD_Msk        (_UINT16_(0xFFFF) << SERCOM_USART_EXT_BAUD_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_EXT_BAUD_BAUD(value)     (SERCOM_USART_EXT_BAUD_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_USART_EXT_BAUD register */
-#define SERCOM_USART_EXT_BAUD_Msk             _UINT16_(0xFFFF)                                     /* (SERCOM_USART_EXT_BAUD) Register Mask  */
-
-/* FRAC mode */
-#define SERCOM_USART_EXT_BAUD_FRAC_BAUD_Pos   _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_EXT_BAUD_FRAC_BAUD_Msk   (_UINT16_(0x1FFF) << SERCOM_USART_EXT_BAUD_FRAC_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_EXT_BAUD_FRAC_BAUD(value) (SERCOM_USART_EXT_BAUD_FRAC_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRAC_BAUD_Pos))
-#define SERCOM_USART_EXT_BAUD_FRAC_FP_Pos     _UINT16_(13)                                         /* (SERCOM_USART_EXT_BAUD) Fractional Part Position */
-#define SERCOM_USART_EXT_BAUD_FRAC_FP_Msk     (_UINT16_(0x7) << SERCOM_USART_EXT_BAUD_FRAC_FP_Pos) /* (SERCOM_USART_EXT_BAUD) Fractional Part Mask */
-#define SERCOM_USART_EXT_BAUD_FRAC_FP(value)  (SERCOM_USART_EXT_BAUD_FRAC_FP_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRAC_FP_Pos))
-#define SERCOM_USART_EXT_BAUD_FRAC_Msk        _UINT16_(0xFFFF)                                      /* (SERCOM_USART_EXT_BAUD_FRAC) Register Mask  */
-
-/* FRACFP mode */
-#define SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Msk (_UINT16_(0x1FFF) << SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_EXT_BAUD_FRACFP_BAUD(value) (SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Pos))
-#define SERCOM_USART_EXT_BAUD_FRACFP_FP_Pos   _UINT16_(13)                                         /* (SERCOM_USART_EXT_BAUD) Fractional Part Position */
-#define SERCOM_USART_EXT_BAUD_FRACFP_FP_Msk   (_UINT16_(0x7) << SERCOM_USART_EXT_BAUD_FRACFP_FP_Pos) /* (SERCOM_USART_EXT_BAUD) Fractional Part Mask */
-#define SERCOM_USART_EXT_BAUD_FRACFP_FP(value) (SERCOM_USART_EXT_BAUD_FRACFP_FP_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRACFP_FP_Pos))
-#define SERCOM_USART_EXT_BAUD_FRACFP_Msk      _UINT16_(0xFFFF)                                      /* (SERCOM_USART_EXT_BAUD_FRACFP) Register Mask  */
-
-/* USARTFP mode */
-#define SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Msk (_UINT16_(0xFFFF) << SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_EXT_BAUD_USARTFP_BAUD(value) (SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Pos))
-#define SERCOM_USART_EXT_BAUD_USARTFP_Msk     _UINT16_(0xFFFF)                                      /* (SERCOM_USART_EXT_BAUD_USARTFP) Register Mask  */
-
-
-/* -------- SERCOM_USART_INT_BAUD : (SERCOM Offset: 0x0C) (R/W 16) USART_INT Baud Rate -------- */
-#define SERCOM_USART_INT_BAUD_RESETVALUE      _UINT16_(0x00)                                       /*  (SERCOM_USART_INT_BAUD) USART_INT Baud Rate  Reset Value */
-
-#define SERCOM_USART_INT_BAUD_BAUD_Pos        _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_INT_BAUD_BAUD_Msk        (_UINT16_(0xFFFF) << SERCOM_USART_INT_BAUD_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_INT_BAUD_BAUD(value)     (SERCOM_USART_INT_BAUD_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_USART_INT_BAUD register */
-#define SERCOM_USART_INT_BAUD_Msk             _UINT16_(0xFFFF)                                     /* (SERCOM_USART_INT_BAUD) Register Mask  */
-
-/* FRAC mode */
-#define SERCOM_USART_INT_BAUD_FRAC_BAUD_Pos   _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_INT_BAUD_FRAC_BAUD_Msk   (_UINT16_(0x1FFF) << SERCOM_USART_INT_BAUD_FRAC_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_INT_BAUD_FRAC_BAUD(value) (SERCOM_USART_INT_BAUD_FRAC_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRAC_BAUD_Pos))
-#define SERCOM_USART_INT_BAUD_FRAC_FP_Pos     _UINT16_(13)                                         /* (SERCOM_USART_INT_BAUD) Fractional Part Position */
-#define SERCOM_USART_INT_BAUD_FRAC_FP_Msk     (_UINT16_(0x7) << SERCOM_USART_INT_BAUD_FRAC_FP_Pos) /* (SERCOM_USART_INT_BAUD) Fractional Part Mask */
-#define SERCOM_USART_INT_BAUD_FRAC_FP(value)  (SERCOM_USART_INT_BAUD_FRAC_FP_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRAC_FP_Pos))
-#define SERCOM_USART_INT_BAUD_FRAC_Msk        _UINT16_(0xFFFF)                                      /* (SERCOM_USART_INT_BAUD_FRAC) Register Mask  */
-
-/* FRACFP mode */
-#define SERCOM_USART_INT_BAUD_FRACFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_INT_BAUD_FRACFP_BAUD_Msk (_UINT16_(0x1FFF) << SERCOM_USART_INT_BAUD_FRACFP_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_INT_BAUD_FRACFP_BAUD(value) (SERCOM_USART_INT_BAUD_FRACFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRACFP_BAUD_Pos))
-#define SERCOM_USART_INT_BAUD_FRACFP_FP_Pos   _UINT16_(13)                                         /* (SERCOM_USART_INT_BAUD) Fractional Part Position */
-#define SERCOM_USART_INT_BAUD_FRACFP_FP_Msk   (_UINT16_(0x7) << SERCOM_USART_INT_BAUD_FRACFP_FP_Pos) /* (SERCOM_USART_INT_BAUD) Fractional Part Mask */
-#define SERCOM_USART_INT_BAUD_FRACFP_FP(value) (SERCOM_USART_INT_BAUD_FRACFP_FP_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRACFP_FP_Pos))
-#define SERCOM_USART_INT_BAUD_FRACFP_Msk      _UINT16_(0xFFFF)                                      /* (SERCOM_USART_INT_BAUD_FRACFP) Register Mask  */
-
-/* USARTFP mode */
-#define SERCOM_USART_INT_BAUD_USARTFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
-#define SERCOM_USART_INT_BAUD_USARTFP_BAUD_Msk (_UINT16_(0xFFFF) << SERCOM_USART_INT_BAUD_USARTFP_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
-#define SERCOM_USART_INT_BAUD_USARTFP_BAUD(value) (SERCOM_USART_INT_BAUD_USARTFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_USARTFP_BAUD_Pos))
-#define SERCOM_USART_INT_BAUD_USARTFP_Msk     _UINT16_(0xFFFF)                                      /* (SERCOM_USART_INT_BAUD_USARTFP) Register Mask  */
-
 
 /* -------- SERCOM_I2CM_CTRLA : (SERCOM Offset: 0x00) (R/W 32) I2CM Control A -------- */
 #define SERCOM_I2CM_CTRLA_RESETVALUE          _UINT32_(0x00)                                       /*  (SERCOM_I2CM_CTRLA) I2CM Control A  Reset Value */
@@ -1111,103 +946,124 @@
 #define SERCOM_USART_INT_CTRLC_Msk            _UINT32_(0x03730F07)                                 /* (SERCOM_USART_INT_CTRLC) Register Mask  */
 
 
-/* -------- SERCOM_I2CM_DATA : (SERCOM Offset: 0x28) (R/W 32) I2CM Data -------- */
-#define SERCOM_I2CM_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CM_DATA) I2CM Data  Reset Value */
+/* -------- SERCOM_I2CM_BAUD : (SERCOM Offset: 0x0C) (R/W 32) I2CM Baud Rate -------- */
+#define SERCOM_I2CM_BAUD_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CM_BAUD) I2CM Baud Rate  Reset Value */
 
-#define SERCOM_I2CM_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_I2CM_DATA) Data Value Position */
-#define SERCOM_I2CM_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_I2CM_DATA_DATA_Pos)  /* (SERCOM_I2CM_DATA) Data Value Mask */
-#define SERCOM_I2CM_DATA_DATA(value)          (SERCOM_I2CM_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_I2CM_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_I2CM_DATA register */
-#define SERCOM_I2CM_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_I2CM_DATA) Register Mask  */
-
-
-/* -------- SERCOM_I2CS_DATA : (SERCOM Offset: 0x28) (R/W 32) I2CS Data -------- */
-#define SERCOM_I2CS_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CS_DATA) I2CS Data  Reset Value */
-
-#define SERCOM_I2CS_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_I2CS_DATA) Data Value Position */
-#define SERCOM_I2CS_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_I2CS_DATA_DATA_Pos)  /* (SERCOM_I2CS_DATA) Data Value Mask */
-#define SERCOM_I2CS_DATA_DATA(value)          (SERCOM_I2CS_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_I2CS_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_I2CS_DATA register */
-#define SERCOM_I2CS_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_I2CS_DATA) Register Mask  */
-
-
-/* -------- SERCOM_SPIM_DATA : (SERCOM Offset: 0x28) (R/W 32) SPIM Data -------- */
-#define SERCOM_SPIM_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIM_DATA) SPIM Data  Reset Value */
-
-#define SERCOM_SPIM_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_SPIM_DATA) Data Value Position */
-#define SERCOM_SPIM_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_SPIM_DATA_DATA_Pos)  /* (SERCOM_SPIM_DATA) Data Value Mask */
-#define SERCOM_SPIM_DATA_DATA(value)          (SERCOM_SPIM_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_SPIM_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_SPIM_DATA register */
-#define SERCOM_SPIM_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_SPIM_DATA) Register Mask  */
+#define SERCOM_I2CM_BAUD_BAUD_Pos             _UINT32_(0)                                          /* (SERCOM_I2CM_BAUD) Baud Rate Value Position */
+#define SERCOM_I2CM_BAUD_BAUD_Msk             (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_BAUD_Pos)        /* (SERCOM_I2CM_BAUD) Baud Rate Value Mask */
+#define SERCOM_I2CM_BAUD_BAUD(value)          (SERCOM_I2CM_BAUD_BAUD_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_I2CM_BAUD register */
+#define SERCOM_I2CM_BAUD_BAUDLOW_Pos          _UINT32_(8)                                          /* (SERCOM_I2CM_BAUD) Baud Rate Value Low Position */
+#define SERCOM_I2CM_BAUD_BAUDLOW_Msk          (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_BAUDLOW_Pos)     /* (SERCOM_I2CM_BAUD) Baud Rate Value Low Mask */
+#define SERCOM_I2CM_BAUD_BAUDLOW(value)       (SERCOM_I2CM_BAUD_BAUDLOW_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_BAUDLOW_Pos)) /* Assigment of value for BAUDLOW in the SERCOM_I2CM_BAUD register */
+#define SERCOM_I2CM_BAUD_HSBAUD_Pos           _UINT32_(16)                                         /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Position */
+#define SERCOM_I2CM_BAUD_HSBAUD_Msk           (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_HSBAUD_Pos)      /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Mask */
+#define SERCOM_I2CM_BAUD_HSBAUD(value)        (SERCOM_I2CM_BAUD_HSBAUD_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_HSBAUD_Pos)) /* Assigment of value for HSBAUD in the SERCOM_I2CM_BAUD register */
+#define SERCOM_I2CM_BAUD_HSBAUDLOW_Pos        _UINT32_(24)                                         /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Low Position */
+#define SERCOM_I2CM_BAUD_HSBAUDLOW_Msk        (_UINT32_(0xFF) << SERCOM_I2CM_BAUD_HSBAUDLOW_Pos)   /* (SERCOM_I2CM_BAUD) High Speed Baud Rate Value Low Mask */
+#define SERCOM_I2CM_BAUD_HSBAUDLOW(value)     (SERCOM_I2CM_BAUD_HSBAUDLOW_Msk & (_UINT32_(value) << SERCOM_I2CM_BAUD_HSBAUDLOW_Pos)) /* Assigment of value for HSBAUDLOW in the SERCOM_I2CM_BAUD register */
+#define SERCOM_I2CM_BAUD_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_I2CM_BAUD) Register Mask  */
 
 
-/* -------- SERCOM_SPIS_DATA : (SERCOM Offset: 0x28) (R/W 32) SPIS Data -------- */
-#define SERCOM_SPIS_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIS_DATA) SPIS Data  Reset Value */
+/* -------- SERCOM_SPIM_BAUD : (SERCOM Offset: 0x0C) (R/W 8) SPIM Baud Rate -------- */
+#define SERCOM_SPIM_BAUD_RESETVALUE           _UINT8_(0x00)                                        /*  (SERCOM_SPIM_BAUD) SPIM Baud Rate  Reset Value */
 
-#define SERCOM_SPIS_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_SPIS_DATA) Data Value Position */
-#define SERCOM_SPIS_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_SPIS_DATA_DATA_Pos)  /* (SERCOM_SPIS_DATA) Data Value Mask */
-#define SERCOM_SPIS_DATA_DATA(value)          (SERCOM_SPIS_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_SPIS_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_SPIS_DATA register */
-#define SERCOM_SPIS_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_SPIS_DATA) Register Mask  */
-
-
-/* -------- SERCOM_USART_EXT_DATA : (SERCOM Offset: 0x28) (R/W 32) USART_EXT Data -------- */
-#define SERCOM_USART_EXT_DATA_RESETVALUE      _UINT32_(0x00)                                       /*  (SERCOM_USART_EXT_DATA) USART_EXT Data  Reset Value */
-
-#define SERCOM_USART_EXT_DATA_DATA_Pos        _UINT32_(0)                                          /* (SERCOM_USART_EXT_DATA) Data Value Position */
-#define SERCOM_USART_EXT_DATA_DATA_Msk        (_UINT32_(0xFFFFFFFF) << SERCOM_USART_EXT_DATA_DATA_Pos) /* (SERCOM_USART_EXT_DATA) Data Value Mask */
-#define SERCOM_USART_EXT_DATA_DATA(value)     (SERCOM_USART_EXT_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_USART_EXT_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_USART_EXT_DATA register */
-#define SERCOM_USART_EXT_DATA_Msk             _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_USART_EXT_DATA) Register Mask  */
+#define SERCOM_SPIM_BAUD_BAUD_Pos             _UINT8_(0)                                           /* (SERCOM_SPIM_BAUD) Baud Rate Value Position */
+#define SERCOM_SPIM_BAUD_BAUD_Msk             (_UINT8_(0xFF) << SERCOM_SPIM_BAUD_BAUD_Pos)         /* (SERCOM_SPIM_BAUD) Baud Rate Value Mask */
+#define SERCOM_SPIM_BAUD_BAUD(value)          (SERCOM_SPIM_BAUD_BAUD_Msk & (_UINT8_(value) << SERCOM_SPIM_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_SPIM_BAUD register */
+#define SERCOM_SPIM_BAUD_Msk                  _UINT8_(0xFF)                                        /* (SERCOM_SPIM_BAUD) Register Mask  */
 
 
-/* -------- SERCOM_USART_INT_DATA : (SERCOM Offset: 0x28) (R/W 32) USART_INT Data -------- */
-#define SERCOM_USART_INT_DATA_RESETVALUE      _UINT32_(0x00)                                       /*  (SERCOM_USART_INT_DATA) USART_INT Data  Reset Value */
+/* -------- SERCOM_SPIS_BAUD : (SERCOM Offset: 0x0C) (R/W 8) SPIS Baud Rate -------- */
+#define SERCOM_SPIS_BAUD_RESETVALUE           _UINT8_(0x00)                                        /*  (SERCOM_SPIS_BAUD) SPIS Baud Rate  Reset Value */
 
-#define SERCOM_USART_INT_DATA_DATA_Pos        _UINT32_(0)                                          /* (SERCOM_USART_INT_DATA) Data Value Position */
-#define SERCOM_USART_INT_DATA_DATA_Msk        (_UINT32_(0xFFFFFFFF) << SERCOM_USART_INT_DATA_DATA_Pos) /* (SERCOM_USART_INT_DATA) Data Value Mask */
-#define SERCOM_USART_INT_DATA_DATA(value)     (SERCOM_USART_INT_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_USART_INT_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_USART_INT_DATA register */
-#define SERCOM_USART_INT_DATA_Msk             _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_USART_INT_DATA) Register Mask  */
-
-
-/* -------- SERCOM_I2CM_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) I2CM Debug Control -------- */
-#define SERCOM_I2CM_DBGCTRL_RESETVALUE        _UINT8_(0x00)                                        /*  (SERCOM_I2CM_DBGCTRL) I2CM Debug Control  Reset Value */
-
-#define SERCOM_I2CM_DBGCTRL_DBGSTOP_Pos       _UINT8_(0)                                           /* (SERCOM_I2CM_DBGCTRL) Debug Mode Position */
-#define SERCOM_I2CM_DBGCTRL_DBGSTOP_Msk       (_UINT8_(0x1) << SERCOM_I2CM_DBGCTRL_DBGSTOP_Pos)    /* (SERCOM_I2CM_DBGCTRL) Debug Mode Mask */
-#define SERCOM_I2CM_DBGCTRL_DBGSTOP(value)    (SERCOM_I2CM_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_I2CM_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_I2CM_DBGCTRL register */
-#define SERCOM_I2CM_DBGCTRL_Msk               _UINT8_(0x01)                                        /* (SERCOM_I2CM_DBGCTRL) Register Mask  */
+#define SERCOM_SPIS_BAUD_BAUD_Pos             _UINT8_(0)                                           /* (SERCOM_SPIS_BAUD) Baud Rate Value Position */
+#define SERCOM_SPIS_BAUD_BAUD_Msk             (_UINT8_(0xFF) << SERCOM_SPIS_BAUD_BAUD_Pos)         /* (SERCOM_SPIS_BAUD) Baud Rate Value Mask */
+#define SERCOM_SPIS_BAUD_BAUD(value)          (SERCOM_SPIS_BAUD_BAUD_Msk & (_UINT8_(value) << SERCOM_SPIS_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_SPIS_BAUD register */
+#define SERCOM_SPIS_BAUD_Msk                  _UINT8_(0xFF)                                        /* (SERCOM_SPIS_BAUD) Register Mask  */
 
 
-/* -------- SERCOM_SPIM_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) SPIM Debug Control -------- */
-#define SERCOM_SPIM_DBGCTRL_RESETVALUE        _UINT8_(0x00)                                        /*  (SERCOM_SPIM_DBGCTRL) SPIM Debug Control  Reset Value */
+/* -------- SERCOM_USART_EXT_BAUD : (SERCOM Offset: 0x0C) (R/W 16) USART_EXT Baud Rate -------- */
+#define SERCOM_USART_EXT_BAUD_RESETVALUE      _UINT16_(0x00)                                       /*  (SERCOM_USART_EXT_BAUD) USART_EXT Baud Rate  Reset Value */
 
-#define SERCOM_SPIM_DBGCTRL_DBGSTOP_Pos       _UINT8_(0)                                           /* (SERCOM_SPIM_DBGCTRL) Debug Mode Position */
-#define SERCOM_SPIM_DBGCTRL_DBGSTOP_Msk       (_UINT8_(0x1) << SERCOM_SPIM_DBGCTRL_DBGSTOP_Pos)    /* (SERCOM_SPIM_DBGCTRL) Debug Mode Mask */
-#define SERCOM_SPIM_DBGCTRL_DBGSTOP(value)    (SERCOM_SPIM_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_SPIM_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_SPIM_DBGCTRL register */
-#define SERCOM_SPIM_DBGCTRL_Msk               _UINT8_(0x01)                                        /* (SERCOM_SPIM_DBGCTRL) Register Mask  */
+#define SERCOM_USART_EXT_BAUD_BAUD_Pos        _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_EXT_BAUD_BAUD_Msk        (_UINT16_(0xFFFF) << SERCOM_USART_EXT_BAUD_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_EXT_BAUD_BAUD(value)     (SERCOM_USART_EXT_BAUD_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_USART_EXT_BAUD register */
+#define SERCOM_USART_EXT_BAUD_Msk             _UINT16_(0xFFFF)                                     /* (SERCOM_USART_EXT_BAUD) Register Mask  */
+
+/* FRAC mode */
+#define SERCOM_USART_EXT_BAUD_FRAC_BAUD_Pos   _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_EXT_BAUD_FRAC_BAUD_Msk   (_UINT16_(0x1FFF) << SERCOM_USART_EXT_BAUD_FRAC_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_EXT_BAUD_FRAC_BAUD(value) (SERCOM_USART_EXT_BAUD_FRAC_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRAC_BAUD_Pos))
+#define SERCOM_USART_EXT_BAUD_FRAC_FP_Pos     _UINT16_(13)                                         /* (SERCOM_USART_EXT_BAUD) Fractional Part Position */
+#define SERCOM_USART_EXT_BAUD_FRAC_FP_Msk     (_UINT16_(0x7) << SERCOM_USART_EXT_BAUD_FRAC_FP_Pos) /* (SERCOM_USART_EXT_BAUD) Fractional Part Mask */
+#define SERCOM_USART_EXT_BAUD_FRAC_FP(value)  (SERCOM_USART_EXT_BAUD_FRAC_FP_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRAC_FP_Pos))
+#define SERCOM_USART_EXT_BAUD_FRAC_Msk        _UINT16_(0xFFFF)                                      /* (SERCOM_USART_EXT_BAUD_FRAC) Register Mask  */
+
+/* FRACFP mode */
+#define SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Msk (_UINT16_(0x1FFF) << SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_EXT_BAUD_FRACFP_BAUD(value) (SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRACFP_BAUD_Pos))
+#define SERCOM_USART_EXT_BAUD_FRACFP_FP_Pos   _UINT16_(13)                                         /* (SERCOM_USART_EXT_BAUD) Fractional Part Position */
+#define SERCOM_USART_EXT_BAUD_FRACFP_FP_Msk   (_UINT16_(0x7) << SERCOM_USART_EXT_BAUD_FRACFP_FP_Pos) /* (SERCOM_USART_EXT_BAUD) Fractional Part Mask */
+#define SERCOM_USART_EXT_BAUD_FRACFP_FP(value) (SERCOM_USART_EXT_BAUD_FRACFP_FP_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_FRACFP_FP_Pos))
+#define SERCOM_USART_EXT_BAUD_FRACFP_Msk      _UINT16_(0xFFFF)                                      /* (SERCOM_USART_EXT_BAUD_FRACFP) Register Mask  */
+
+/* USARTFP mode */
+#define SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Msk (_UINT16_(0xFFFF) << SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Pos) /* (SERCOM_USART_EXT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_EXT_BAUD_USARTFP_BAUD(value) (SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_EXT_BAUD_USARTFP_BAUD_Pos))
+#define SERCOM_USART_EXT_BAUD_USARTFP_Msk     _UINT16_(0xFFFF)                                      /* (SERCOM_USART_EXT_BAUD_USARTFP) Register Mask  */
 
 
-/* -------- SERCOM_SPIS_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) SPIS Debug Control -------- */
-#define SERCOM_SPIS_DBGCTRL_RESETVALUE        _UINT8_(0x00)                                        /*  (SERCOM_SPIS_DBGCTRL) SPIS Debug Control  Reset Value */
+/* -------- SERCOM_USART_INT_BAUD : (SERCOM Offset: 0x0C) (R/W 16) USART_INT Baud Rate -------- */
+#define SERCOM_USART_INT_BAUD_RESETVALUE      _UINT16_(0x00)                                       /*  (SERCOM_USART_INT_BAUD) USART_INT Baud Rate  Reset Value */
 
-#define SERCOM_SPIS_DBGCTRL_DBGSTOP_Pos       _UINT8_(0)                                           /* (SERCOM_SPIS_DBGCTRL) Debug Mode Position */
-#define SERCOM_SPIS_DBGCTRL_DBGSTOP_Msk       (_UINT8_(0x1) << SERCOM_SPIS_DBGCTRL_DBGSTOP_Pos)    /* (SERCOM_SPIS_DBGCTRL) Debug Mode Mask */
-#define SERCOM_SPIS_DBGCTRL_DBGSTOP(value)    (SERCOM_SPIS_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_SPIS_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_SPIS_DBGCTRL register */
-#define SERCOM_SPIS_DBGCTRL_Msk               _UINT8_(0x01)                                        /* (SERCOM_SPIS_DBGCTRL) Register Mask  */
+#define SERCOM_USART_INT_BAUD_BAUD_Pos        _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_INT_BAUD_BAUD_Msk        (_UINT16_(0xFFFF) << SERCOM_USART_INT_BAUD_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_INT_BAUD_BAUD(value)     (SERCOM_USART_INT_BAUD_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the SERCOM_USART_INT_BAUD register */
+#define SERCOM_USART_INT_BAUD_Msk             _UINT16_(0xFFFF)                                     /* (SERCOM_USART_INT_BAUD) Register Mask  */
+
+/* FRAC mode */
+#define SERCOM_USART_INT_BAUD_FRAC_BAUD_Pos   _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_INT_BAUD_FRAC_BAUD_Msk   (_UINT16_(0x1FFF) << SERCOM_USART_INT_BAUD_FRAC_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_INT_BAUD_FRAC_BAUD(value) (SERCOM_USART_INT_BAUD_FRAC_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRAC_BAUD_Pos))
+#define SERCOM_USART_INT_BAUD_FRAC_FP_Pos     _UINT16_(13)                                         /* (SERCOM_USART_INT_BAUD) Fractional Part Position */
+#define SERCOM_USART_INT_BAUD_FRAC_FP_Msk     (_UINT16_(0x7) << SERCOM_USART_INT_BAUD_FRAC_FP_Pos) /* (SERCOM_USART_INT_BAUD) Fractional Part Mask */
+#define SERCOM_USART_INT_BAUD_FRAC_FP(value)  (SERCOM_USART_INT_BAUD_FRAC_FP_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRAC_FP_Pos))
+#define SERCOM_USART_INT_BAUD_FRAC_Msk        _UINT16_(0xFFFF)                                      /* (SERCOM_USART_INT_BAUD_FRAC) Register Mask  */
+
+/* FRACFP mode */
+#define SERCOM_USART_INT_BAUD_FRACFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_INT_BAUD_FRACFP_BAUD_Msk (_UINT16_(0x1FFF) << SERCOM_USART_INT_BAUD_FRACFP_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_INT_BAUD_FRACFP_BAUD(value) (SERCOM_USART_INT_BAUD_FRACFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRACFP_BAUD_Pos))
+#define SERCOM_USART_INT_BAUD_FRACFP_FP_Pos   _UINT16_(13)                                         /* (SERCOM_USART_INT_BAUD) Fractional Part Position */
+#define SERCOM_USART_INT_BAUD_FRACFP_FP_Msk   (_UINT16_(0x7) << SERCOM_USART_INT_BAUD_FRACFP_FP_Pos) /* (SERCOM_USART_INT_BAUD) Fractional Part Mask */
+#define SERCOM_USART_INT_BAUD_FRACFP_FP(value) (SERCOM_USART_INT_BAUD_FRACFP_FP_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_FRACFP_FP_Pos))
+#define SERCOM_USART_INT_BAUD_FRACFP_Msk      _UINT16_(0xFFFF)                                      /* (SERCOM_USART_INT_BAUD_FRACFP) Register Mask  */
+
+/* USARTFP mode */
+#define SERCOM_USART_INT_BAUD_USARTFP_BAUD_Pos _UINT16_(0)                                          /* (SERCOM_USART_INT_BAUD) Baud Rate Value Position */
+#define SERCOM_USART_INT_BAUD_USARTFP_BAUD_Msk (_UINT16_(0xFFFF) << SERCOM_USART_INT_BAUD_USARTFP_BAUD_Pos) /* (SERCOM_USART_INT_BAUD) Baud Rate Value Mask */
+#define SERCOM_USART_INT_BAUD_USARTFP_BAUD(value) (SERCOM_USART_INT_BAUD_USARTFP_BAUD_Msk & (_UINT16_(value) << SERCOM_USART_INT_BAUD_USARTFP_BAUD_Pos))
+#define SERCOM_USART_INT_BAUD_USARTFP_Msk     _UINT16_(0xFFFF)                                      /* (SERCOM_USART_INT_BAUD_USARTFP) Register Mask  */
 
 
-/* -------- SERCOM_USART_EXT_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) USART_EXT Debug Control -------- */
-#define SERCOM_USART_EXT_DBGCTRL_RESETVALUE   _UINT8_(0x00)                                        /*  (SERCOM_USART_EXT_DBGCTRL) USART_EXT Debug Control  Reset Value */
+/* -------- SERCOM_USART_EXT_RXPL : (SERCOM Offset: 0x0E) (R/W 8) USART_EXT Receive Pulse Length -------- */
+#define SERCOM_USART_EXT_RXPL_RESETVALUE      _UINT8_(0x00)                                        /*  (SERCOM_USART_EXT_RXPL) USART_EXT Receive Pulse Length  Reset Value */
 
-#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos  _UINT8_(0)                                           /* (SERCOM_USART_EXT_DBGCTRL) Debug Mode Position */
-#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Msk  (_UINT8_(0x1) << SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos) /* (SERCOM_USART_EXT_DBGCTRL) Debug Mode Mask */
-#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP(value) (SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_USART_EXT_DBGCTRL register */
-#define SERCOM_USART_EXT_DBGCTRL_Msk          _UINT8_(0x01)                                        /* (SERCOM_USART_EXT_DBGCTRL) Register Mask  */
+#define SERCOM_USART_EXT_RXPL_RXPL_Pos        _UINT8_(0)                                           /* (SERCOM_USART_EXT_RXPL) Receive Pulse Length Position */
+#define SERCOM_USART_EXT_RXPL_RXPL_Msk        (_UINT8_(0xFF) << SERCOM_USART_EXT_RXPL_RXPL_Pos)    /* (SERCOM_USART_EXT_RXPL) Receive Pulse Length Mask */
+#define SERCOM_USART_EXT_RXPL_RXPL(value)     (SERCOM_USART_EXT_RXPL_RXPL_Msk & (_UINT8_(value) << SERCOM_USART_EXT_RXPL_RXPL_Pos)) /* Assigment of value for RXPL in the SERCOM_USART_EXT_RXPL register */
+#define SERCOM_USART_EXT_RXPL_Msk             _UINT8_(0xFF)                                        /* (SERCOM_USART_EXT_RXPL) Register Mask  */
 
 
-/* -------- SERCOM_USART_INT_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) USART_INT Debug Control -------- */
-#define SERCOM_USART_INT_DBGCTRL_RESETVALUE   _UINT8_(0x00)                                        /*  (SERCOM_USART_INT_DBGCTRL) USART_INT Debug Control  Reset Value */
+/* -------- SERCOM_USART_INT_RXPL : (SERCOM Offset: 0x0E) (R/W 8) USART_INT Receive Pulse Length -------- */
+#define SERCOM_USART_INT_RXPL_RESETVALUE      _UINT8_(0x00)                                        /*  (SERCOM_USART_INT_RXPL) USART_INT Receive Pulse Length  Reset Value */
 
-#define SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos  _UINT8_(0)                                           /* (SERCOM_USART_INT_DBGCTRL) Debug Mode Position */
-#define SERCOM_USART_INT_DBGCTRL_DBGSTOP_Msk  (_UINT8_(0x1) << SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos) /* (SERCOM_USART_INT_DBGCTRL) Debug Mode Mask */
-#define SERCOM_USART_INT_DBGCTRL_DBGSTOP(value) (SERCOM_USART_INT_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_USART_INT_DBGCTRL register */
-#define SERCOM_USART_INT_DBGCTRL_Msk          _UINT8_(0x01)                                        /* (SERCOM_USART_INT_DBGCTRL) Register Mask  */
+#define SERCOM_USART_INT_RXPL_RXPL_Pos        _UINT8_(0)                                           /* (SERCOM_USART_INT_RXPL) Receive Pulse Length Position */
+#define SERCOM_USART_INT_RXPL_RXPL_Msk        (_UINT8_(0xFF) << SERCOM_USART_INT_RXPL_RXPL_Pos)    /* (SERCOM_USART_INT_RXPL) Receive Pulse Length Mask */
+#define SERCOM_USART_INT_RXPL_RXPL(value)     (SERCOM_USART_INT_RXPL_RXPL_Msk & (_UINT8_(value) << SERCOM_USART_INT_RXPL_RXPL_Pos)) /* Assigment of value for RXPL in the SERCOM_USART_INT_RXPL register */
+#define SERCOM_USART_INT_RXPL_Msk             _UINT8_(0xFF)                                        /* (SERCOM_USART_INT_RXPL) Register Mask  */
 
 
 /* -------- SERCOM_I2CM_INTENCLR : (SERCOM Offset: 0x14) (R/W 8) I2CM Interrupt Enable Clear -------- */
@@ -1597,102 +1453,6 @@
 #define SERCOM_USART_INT_INTFLAG_Msk          _UINT8_(0xBF)                                        /* (SERCOM_USART_INT_INTFLAG) Register Mask  */
 
 
-/* -------- SERCOM_I2CS_LENGTH : (SERCOM Offset: 0x22) (R/W 16) I2CS Length -------- */
-#define SERCOM_I2CS_LENGTH_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_I2CS_LENGTH) I2CS Length  Reset Value */
-
-#define SERCOM_I2CS_LENGTH_LEN_Pos            _UINT16_(0)                                          /* (SERCOM_I2CS_LENGTH) Data Length Position */
-#define SERCOM_I2CS_LENGTH_LEN_Msk            (_UINT16_(0xFF) << SERCOM_I2CS_LENGTH_LEN_Pos)       /* (SERCOM_I2CS_LENGTH) Data Length Mask */
-#define SERCOM_I2CS_LENGTH_LEN(value)         (SERCOM_I2CS_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_I2CS_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_I2CS_LENGTH register */
-#define SERCOM_I2CS_LENGTH_LENEN_Pos          _UINT16_(8)                                          /* (SERCOM_I2CS_LENGTH) Data Length Enable Position */
-#define SERCOM_I2CS_LENGTH_LENEN_Msk          (_UINT16_(0x1) << SERCOM_I2CS_LENGTH_LENEN_Pos)      /* (SERCOM_I2CS_LENGTH) Data Length Enable Mask */
-#define SERCOM_I2CS_LENGTH_LENEN(value)       (SERCOM_I2CS_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_I2CS_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_I2CS_LENGTH register */
-#define SERCOM_I2CS_LENGTH_Msk                _UINT16_(0x01FF)                                     /* (SERCOM_I2CS_LENGTH) Register Mask  */
-
-
-/* -------- SERCOM_SPIM_LENGTH : (SERCOM Offset: 0x22) (R/W 16) SPIM Length -------- */
-#define SERCOM_SPIM_LENGTH_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_SPIM_LENGTH) SPIM Length  Reset Value */
-
-#define SERCOM_SPIM_LENGTH_LEN_Pos            _UINT16_(0)                                          /* (SERCOM_SPIM_LENGTH) Data Length Position */
-#define SERCOM_SPIM_LENGTH_LEN_Msk            (_UINT16_(0xFF) << SERCOM_SPIM_LENGTH_LEN_Pos)       /* (SERCOM_SPIM_LENGTH) Data Length Mask */
-#define SERCOM_SPIM_LENGTH_LEN(value)         (SERCOM_SPIM_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_SPIM_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_SPIM_LENGTH register */
-#define SERCOM_SPIM_LENGTH_LENEN_Pos          _UINT16_(8)                                          /* (SERCOM_SPIM_LENGTH) Data Length Enable Position */
-#define SERCOM_SPIM_LENGTH_LENEN_Msk          (_UINT16_(0x1) << SERCOM_SPIM_LENGTH_LENEN_Pos)      /* (SERCOM_SPIM_LENGTH) Data Length Enable Mask */
-#define SERCOM_SPIM_LENGTH_LENEN(value)       (SERCOM_SPIM_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_SPIM_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_SPIM_LENGTH register */
-#define SERCOM_SPIM_LENGTH_Msk                _UINT16_(0x01FF)                                     /* (SERCOM_SPIM_LENGTH) Register Mask  */
-
-
-/* -------- SERCOM_SPIS_LENGTH : (SERCOM Offset: 0x22) (R/W 16) SPIS Length -------- */
-#define SERCOM_SPIS_LENGTH_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_SPIS_LENGTH) SPIS Length  Reset Value */
-
-#define SERCOM_SPIS_LENGTH_LEN_Pos            _UINT16_(0)                                          /* (SERCOM_SPIS_LENGTH) Data Length Position */
-#define SERCOM_SPIS_LENGTH_LEN_Msk            (_UINT16_(0xFF) << SERCOM_SPIS_LENGTH_LEN_Pos)       /* (SERCOM_SPIS_LENGTH) Data Length Mask */
-#define SERCOM_SPIS_LENGTH_LEN(value)         (SERCOM_SPIS_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_SPIS_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_SPIS_LENGTH register */
-#define SERCOM_SPIS_LENGTH_LENEN_Pos          _UINT16_(8)                                          /* (SERCOM_SPIS_LENGTH) Data Length Enable Position */
-#define SERCOM_SPIS_LENGTH_LENEN_Msk          (_UINT16_(0x1) << SERCOM_SPIS_LENGTH_LENEN_Pos)      /* (SERCOM_SPIS_LENGTH) Data Length Enable Mask */
-#define SERCOM_SPIS_LENGTH_LENEN(value)       (SERCOM_SPIS_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_SPIS_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_SPIS_LENGTH register */
-#define SERCOM_SPIS_LENGTH_Msk                _UINT16_(0x01FF)                                     /* (SERCOM_SPIS_LENGTH) Register Mask  */
-
-
-/* -------- SERCOM_USART_EXT_LENGTH : (SERCOM Offset: 0x22) (R/W 16) USART_EXT Length -------- */
-#define SERCOM_USART_EXT_LENGTH_RESETVALUE    _UINT16_(0x00)                                       /*  (SERCOM_USART_EXT_LENGTH) USART_EXT Length  Reset Value */
-
-#define SERCOM_USART_EXT_LENGTH_LEN_Pos       _UINT16_(0)                                          /* (SERCOM_USART_EXT_LENGTH) Data Length Position */
-#define SERCOM_USART_EXT_LENGTH_LEN_Msk       (_UINT16_(0xFF) << SERCOM_USART_EXT_LENGTH_LEN_Pos)  /* (SERCOM_USART_EXT_LENGTH) Data Length Mask */
-#define SERCOM_USART_EXT_LENGTH_LEN(value)    (SERCOM_USART_EXT_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_USART_EXT_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_USART_EXT_LENGTH register */
-#define SERCOM_USART_EXT_LENGTH_LENEN_Pos     _UINT16_(8)                                          /* (SERCOM_USART_EXT_LENGTH) Data Length Enable Position */
-#define SERCOM_USART_EXT_LENGTH_LENEN_Msk     (_UINT16_(0x3) << SERCOM_USART_EXT_LENGTH_LENEN_Pos) /* (SERCOM_USART_EXT_LENGTH) Data Length Enable Mask */
-#define SERCOM_USART_EXT_LENGTH_LENEN(value)  (SERCOM_USART_EXT_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_USART_EXT_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_USART_EXT_LENGTH register */
-#define SERCOM_USART_EXT_LENGTH_Msk           _UINT16_(0x03FF)                                     /* (SERCOM_USART_EXT_LENGTH) Register Mask  */
-
-
-/* -------- SERCOM_USART_INT_LENGTH : (SERCOM Offset: 0x22) (R/W 16) USART_INT Length -------- */
-#define SERCOM_USART_INT_LENGTH_RESETVALUE    _UINT16_(0x00)                                       /*  (SERCOM_USART_INT_LENGTH) USART_INT Length  Reset Value */
-
-#define SERCOM_USART_INT_LENGTH_LEN_Pos       _UINT16_(0)                                          /* (SERCOM_USART_INT_LENGTH) Data Length Position */
-#define SERCOM_USART_INT_LENGTH_LEN_Msk       (_UINT16_(0xFF) << SERCOM_USART_INT_LENGTH_LEN_Pos)  /* (SERCOM_USART_INT_LENGTH) Data Length Mask */
-#define SERCOM_USART_INT_LENGTH_LEN(value)    (SERCOM_USART_INT_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_USART_INT_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_USART_INT_LENGTH register */
-#define SERCOM_USART_INT_LENGTH_LENEN_Pos     _UINT16_(8)                                          /* (SERCOM_USART_INT_LENGTH) Data Length Enable Position */
-#define SERCOM_USART_INT_LENGTH_LENEN_Msk     (_UINT16_(0x3) << SERCOM_USART_INT_LENGTH_LENEN_Pos) /* (SERCOM_USART_INT_LENGTH) Data Length Enable Mask */
-#define SERCOM_USART_INT_LENGTH_LENEN(value)  (SERCOM_USART_INT_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_USART_INT_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_USART_INT_LENGTH register */
-#define SERCOM_USART_INT_LENGTH_Msk           _UINT16_(0x03FF)                                     /* (SERCOM_USART_INT_LENGTH) Register Mask  */
-
-
-/* -------- SERCOM_USART_EXT_RXERRCNT : (SERCOM Offset: 0x20) ( R/ 8) USART_EXT Receive Error Count -------- */
-#define SERCOM_USART_EXT_RXERRCNT_RESETVALUE  _UINT8_(0x00)                                        /*  (SERCOM_USART_EXT_RXERRCNT) USART_EXT Receive Error Count  Reset Value */
-
-#define SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Pos _UINT8_(0)                                           /* (SERCOM_USART_EXT_RXERRCNT) Receive Error Count Position */
-#define SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Msk (_UINT8_(0xFF) << SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Pos) /* (SERCOM_USART_EXT_RXERRCNT) Receive Error Count Mask */
-#define SERCOM_USART_EXT_RXERRCNT_RXERRCNT(value) (SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Msk & (_UINT8_(value) << SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Pos)) /* Assigment of value for RXERRCNT in the SERCOM_USART_EXT_RXERRCNT register */
-#define SERCOM_USART_EXT_RXERRCNT_Msk         _UINT8_(0xFF)                                        /* (SERCOM_USART_EXT_RXERRCNT) Register Mask  */
-
-
-/* -------- SERCOM_USART_INT_RXERRCNT : (SERCOM Offset: 0x20) ( R/ 8) USART_INT Receive Error Count -------- */
-#define SERCOM_USART_INT_RXERRCNT_RESETVALUE  _UINT8_(0x00)                                        /*  (SERCOM_USART_INT_RXERRCNT) USART_INT Receive Error Count  Reset Value */
-
-#define SERCOM_USART_INT_RXERRCNT_RXERRCNT_Pos _UINT8_(0)                                           /* (SERCOM_USART_INT_RXERRCNT) Receive Error Count Position */
-#define SERCOM_USART_INT_RXERRCNT_RXERRCNT_Msk (_UINT8_(0xFF) << SERCOM_USART_INT_RXERRCNT_RXERRCNT_Pos) /* (SERCOM_USART_INT_RXERRCNT) Receive Error Count Mask */
-#define SERCOM_USART_INT_RXERRCNT_RXERRCNT(value) (SERCOM_USART_INT_RXERRCNT_RXERRCNT_Msk & (_UINT8_(value) << SERCOM_USART_INT_RXERRCNT_RXERRCNT_Pos)) /* Assigment of value for RXERRCNT in the SERCOM_USART_INT_RXERRCNT register */
-#define SERCOM_USART_INT_RXERRCNT_Msk         _UINT8_(0xFF)                                        /* (SERCOM_USART_INT_RXERRCNT) Register Mask  */
-
-
-/* -------- SERCOM_USART_EXT_RXPL : (SERCOM Offset: 0x0E) (R/W 8) USART_EXT Receive Pulse Length -------- */
-#define SERCOM_USART_EXT_RXPL_RESETVALUE      _UINT8_(0x00)                                        /*  (SERCOM_USART_EXT_RXPL) USART_EXT Receive Pulse Length  Reset Value */
-
-#define SERCOM_USART_EXT_RXPL_RXPL_Pos        _UINT8_(0)                                           /* (SERCOM_USART_EXT_RXPL) Receive Pulse Length Position */
-#define SERCOM_USART_EXT_RXPL_RXPL_Msk        (_UINT8_(0xFF) << SERCOM_USART_EXT_RXPL_RXPL_Pos)    /* (SERCOM_USART_EXT_RXPL) Receive Pulse Length Mask */
-#define SERCOM_USART_EXT_RXPL_RXPL(value)     (SERCOM_USART_EXT_RXPL_RXPL_Msk & (_UINT8_(value) << SERCOM_USART_EXT_RXPL_RXPL_Pos)) /* Assigment of value for RXPL in the SERCOM_USART_EXT_RXPL register */
-#define SERCOM_USART_EXT_RXPL_Msk             _UINT8_(0xFF)                                        /* (SERCOM_USART_EXT_RXPL) Register Mask  */
-
-
-/* -------- SERCOM_USART_INT_RXPL : (SERCOM Offset: 0x0E) (R/W 8) USART_INT Receive Pulse Length -------- */
-#define SERCOM_USART_INT_RXPL_RESETVALUE      _UINT8_(0x00)                                        /*  (SERCOM_USART_INT_RXPL) USART_INT Receive Pulse Length  Reset Value */
-
-#define SERCOM_USART_INT_RXPL_RXPL_Pos        _UINT8_(0)                                           /* (SERCOM_USART_INT_RXPL) Receive Pulse Length Position */
-#define SERCOM_USART_INT_RXPL_RXPL_Msk        (_UINT8_(0xFF) << SERCOM_USART_INT_RXPL_RXPL_Pos)    /* (SERCOM_USART_INT_RXPL) Receive Pulse Length Mask */
-#define SERCOM_USART_INT_RXPL_RXPL(value)     (SERCOM_USART_INT_RXPL_RXPL_Msk & (_UINT8_(value) << SERCOM_USART_INT_RXPL_RXPL_Pos)) /* Assigment of value for RXPL in the SERCOM_USART_INT_RXPL register */
-#define SERCOM_USART_INT_RXPL_Msk             _UINT8_(0xFF)                                        /* (SERCOM_USART_INT_RXPL) Register Mask  */
-
-
 /* -------- SERCOM_I2CM_STATUS : (SERCOM Offset: 0x1A) (R/W 16) I2CM Status -------- */
 #define SERCOM_I2CM_STATUS_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_I2CM_STATUS) I2CM Status  Reset Value */
 
@@ -1962,16 +1722,247 @@
 #define SERCOM_USART_INT_SYNCBUSY_Msk         _UINT32_(0x0000001F)                                 /* (SERCOM_USART_INT_SYNCBUSY) Register Mask  */
 
 
+/* -------- SERCOM_USART_EXT_RXERRCNT : (SERCOM Offset: 0x20) ( R/ 8) USART_EXT Receive Error Count -------- */
+#define SERCOM_USART_EXT_RXERRCNT_RESETVALUE  _UINT8_(0x00)                                        /*  (SERCOM_USART_EXT_RXERRCNT) USART_EXT Receive Error Count  Reset Value */
+
+#define SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Pos _UINT8_(0)                                           /* (SERCOM_USART_EXT_RXERRCNT) Receive Error Count Position */
+#define SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Msk (_UINT8_(0xFF) << SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Pos) /* (SERCOM_USART_EXT_RXERRCNT) Receive Error Count Mask */
+#define SERCOM_USART_EXT_RXERRCNT_RXERRCNT(value) (SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Msk & (_UINT8_(value) << SERCOM_USART_EXT_RXERRCNT_RXERRCNT_Pos)) /* Assigment of value for RXERRCNT in the SERCOM_USART_EXT_RXERRCNT register */
+#define SERCOM_USART_EXT_RXERRCNT_Msk         _UINT8_(0xFF)                                        /* (SERCOM_USART_EXT_RXERRCNT) Register Mask  */
+
+
+/* -------- SERCOM_USART_INT_RXERRCNT : (SERCOM Offset: 0x20) ( R/ 8) USART_INT Receive Error Count -------- */
+#define SERCOM_USART_INT_RXERRCNT_RESETVALUE  _UINT8_(0x00)                                        /*  (SERCOM_USART_INT_RXERRCNT) USART_INT Receive Error Count  Reset Value */
+
+#define SERCOM_USART_INT_RXERRCNT_RXERRCNT_Pos _UINT8_(0)                                           /* (SERCOM_USART_INT_RXERRCNT) Receive Error Count Position */
+#define SERCOM_USART_INT_RXERRCNT_RXERRCNT_Msk (_UINT8_(0xFF) << SERCOM_USART_INT_RXERRCNT_RXERRCNT_Pos) /* (SERCOM_USART_INT_RXERRCNT) Receive Error Count Mask */
+#define SERCOM_USART_INT_RXERRCNT_RXERRCNT(value) (SERCOM_USART_INT_RXERRCNT_RXERRCNT_Msk & (_UINT8_(value) << SERCOM_USART_INT_RXERRCNT_RXERRCNT_Pos)) /* Assigment of value for RXERRCNT in the SERCOM_USART_INT_RXERRCNT register */
+#define SERCOM_USART_INT_RXERRCNT_Msk         _UINT8_(0xFF)                                        /* (SERCOM_USART_INT_RXERRCNT) Register Mask  */
+
+
+/* -------- SERCOM_I2CS_LENGTH : (SERCOM Offset: 0x22) (R/W 16) I2CS Length -------- */
+#define SERCOM_I2CS_LENGTH_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_I2CS_LENGTH) I2CS Length  Reset Value */
+
+#define SERCOM_I2CS_LENGTH_LEN_Pos            _UINT16_(0)                                          /* (SERCOM_I2CS_LENGTH) Data Length Position */
+#define SERCOM_I2CS_LENGTH_LEN_Msk            (_UINT16_(0xFF) << SERCOM_I2CS_LENGTH_LEN_Pos)       /* (SERCOM_I2CS_LENGTH) Data Length Mask */
+#define SERCOM_I2CS_LENGTH_LEN(value)         (SERCOM_I2CS_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_I2CS_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_I2CS_LENGTH register */
+#define SERCOM_I2CS_LENGTH_LENEN_Pos          _UINT16_(8)                                          /* (SERCOM_I2CS_LENGTH) Data Length Enable Position */
+#define SERCOM_I2CS_LENGTH_LENEN_Msk          (_UINT16_(0x1) << SERCOM_I2CS_LENGTH_LENEN_Pos)      /* (SERCOM_I2CS_LENGTH) Data Length Enable Mask */
+#define SERCOM_I2CS_LENGTH_LENEN(value)       (SERCOM_I2CS_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_I2CS_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_I2CS_LENGTH register */
+#define SERCOM_I2CS_LENGTH_Msk                _UINT16_(0x01FF)                                     /* (SERCOM_I2CS_LENGTH) Register Mask  */
+
+
+/* -------- SERCOM_SPIM_LENGTH : (SERCOM Offset: 0x22) (R/W 16) SPIM Length -------- */
+#define SERCOM_SPIM_LENGTH_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_SPIM_LENGTH) SPIM Length  Reset Value */
+
+#define SERCOM_SPIM_LENGTH_LEN_Pos            _UINT16_(0)                                          /* (SERCOM_SPIM_LENGTH) Data Length Position */
+#define SERCOM_SPIM_LENGTH_LEN_Msk            (_UINT16_(0xFF) << SERCOM_SPIM_LENGTH_LEN_Pos)       /* (SERCOM_SPIM_LENGTH) Data Length Mask */
+#define SERCOM_SPIM_LENGTH_LEN(value)         (SERCOM_SPIM_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_SPIM_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_SPIM_LENGTH register */
+#define SERCOM_SPIM_LENGTH_LENEN_Pos          _UINT16_(8)                                          /* (SERCOM_SPIM_LENGTH) Data Length Enable Position */
+#define SERCOM_SPIM_LENGTH_LENEN_Msk          (_UINT16_(0x1) << SERCOM_SPIM_LENGTH_LENEN_Pos)      /* (SERCOM_SPIM_LENGTH) Data Length Enable Mask */
+#define SERCOM_SPIM_LENGTH_LENEN(value)       (SERCOM_SPIM_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_SPIM_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_SPIM_LENGTH register */
+#define SERCOM_SPIM_LENGTH_Msk                _UINT16_(0x01FF)                                     /* (SERCOM_SPIM_LENGTH) Register Mask  */
+
+
+/* -------- SERCOM_SPIS_LENGTH : (SERCOM Offset: 0x22) (R/W 16) SPIS Length -------- */
+#define SERCOM_SPIS_LENGTH_RESETVALUE         _UINT16_(0x00)                                       /*  (SERCOM_SPIS_LENGTH) SPIS Length  Reset Value */
+
+#define SERCOM_SPIS_LENGTH_LEN_Pos            _UINT16_(0)                                          /* (SERCOM_SPIS_LENGTH) Data Length Position */
+#define SERCOM_SPIS_LENGTH_LEN_Msk            (_UINT16_(0xFF) << SERCOM_SPIS_LENGTH_LEN_Pos)       /* (SERCOM_SPIS_LENGTH) Data Length Mask */
+#define SERCOM_SPIS_LENGTH_LEN(value)         (SERCOM_SPIS_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_SPIS_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_SPIS_LENGTH register */
+#define SERCOM_SPIS_LENGTH_LENEN_Pos          _UINT16_(8)                                          /* (SERCOM_SPIS_LENGTH) Data Length Enable Position */
+#define SERCOM_SPIS_LENGTH_LENEN_Msk          (_UINT16_(0x1) << SERCOM_SPIS_LENGTH_LENEN_Pos)      /* (SERCOM_SPIS_LENGTH) Data Length Enable Mask */
+#define SERCOM_SPIS_LENGTH_LENEN(value)       (SERCOM_SPIS_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_SPIS_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_SPIS_LENGTH register */
+#define SERCOM_SPIS_LENGTH_Msk                _UINT16_(0x01FF)                                     /* (SERCOM_SPIS_LENGTH) Register Mask  */
+
+
+/* -------- SERCOM_USART_EXT_LENGTH : (SERCOM Offset: 0x22) (R/W 16) USART_EXT Length -------- */
+#define SERCOM_USART_EXT_LENGTH_RESETVALUE    _UINT16_(0x00)                                       /*  (SERCOM_USART_EXT_LENGTH) USART_EXT Length  Reset Value */
+
+#define SERCOM_USART_EXT_LENGTH_LEN_Pos       _UINT16_(0)                                          /* (SERCOM_USART_EXT_LENGTH) Data Length Position */
+#define SERCOM_USART_EXT_LENGTH_LEN_Msk       (_UINT16_(0xFF) << SERCOM_USART_EXT_LENGTH_LEN_Pos)  /* (SERCOM_USART_EXT_LENGTH) Data Length Mask */
+#define SERCOM_USART_EXT_LENGTH_LEN(value)    (SERCOM_USART_EXT_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_USART_EXT_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_USART_EXT_LENGTH register */
+#define SERCOM_USART_EXT_LENGTH_LENEN_Pos     _UINT16_(8)                                          /* (SERCOM_USART_EXT_LENGTH) Data Length Enable Position */
+#define SERCOM_USART_EXT_LENGTH_LENEN_Msk     (_UINT16_(0x3) << SERCOM_USART_EXT_LENGTH_LENEN_Pos) /* (SERCOM_USART_EXT_LENGTH) Data Length Enable Mask */
+#define SERCOM_USART_EXT_LENGTH_LENEN(value)  (SERCOM_USART_EXT_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_USART_EXT_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_USART_EXT_LENGTH register */
+#define SERCOM_USART_EXT_LENGTH_Msk           _UINT16_(0x03FF)                                     /* (SERCOM_USART_EXT_LENGTH) Register Mask  */
+
+
+/* -------- SERCOM_USART_INT_LENGTH : (SERCOM Offset: 0x22) (R/W 16) USART_INT Length -------- */
+#define SERCOM_USART_INT_LENGTH_RESETVALUE    _UINT16_(0x00)                                       /*  (SERCOM_USART_INT_LENGTH) USART_INT Length  Reset Value */
+
+#define SERCOM_USART_INT_LENGTH_LEN_Pos       _UINT16_(0)                                          /* (SERCOM_USART_INT_LENGTH) Data Length Position */
+#define SERCOM_USART_INT_LENGTH_LEN_Msk       (_UINT16_(0xFF) << SERCOM_USART_INT_LENGTH_LEN_Pos)  /* (SERCOM_USART_INT_LENGTH) Data Length Mask */
+#define SERCOM_USART_INT_LENGTH_LEN(value)    (SERCOM_USART_INT_LENGTH_LEN_Msk & (_UINT16_(value) << SERCOM_USART_INT_LENGTH_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_USART_INT_LENGTH register */
+#define SERCOM_USART_INT_LENGTH_LENEN_Pos     _UINT16_(8)                                          /* (SERCOM_USART_INT_LENGTH) Data Length Enable Position */
+#define SERCOM_USART_INT_LENGTH_LENEN_Msk     (_UINT16_(0x3) << SERCOM_USART_INT_LENGTH_LENEN_Pos) /* (SERCOM_USART_INT_LENGTH) Data Length Enable Mask */
+#define SERCOM_USART_INT_LENGTH_LENEN(value)  (SERCOM_USART_INT_LENGTH_LENEN_Msk & (_UINT16_(value) << SERCOM_USART_INT_LENGTH_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_USART_INT_LENGTH register */
+#define SERCOM_USART_INT_LENGTH_Msk           _UINT16_(0x03FF)                                     /* (SERCOM_USART_INT_LENGTH) Register Mask  */
+
+
+/* -------- SERCOM_I2CM_ADDR : (SERCOM Offset: 0x24) (R/W 32) I2CM Address -------- */
+#define SERCOM_I2CM_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CM_ADDR) I2CM Address  Reset Value */
+
+#define SERCOM_I2CM_ADDR_ADDR_Pos             _UINT32_(0)                                          /* (SERCOM_I2CM_ADDR) Address Value Position */
+#define SERCOM_I2CM_ADDR_ADDR_Msk             (_UINT32_(0x7FF) << SERCOM_I2CM_ADDR_ADDR_Pos)       /* (SERCOM_I2CM_ADDR) Address Value Mask */
+#define SERCOM_I2CM_ADDR_ADDR(value)          (SERCOM_I2CM_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_I2CM_ADDR register */
+#define SERCOM_I2CM_ADDR_LENEN_Pos            _UINT32_(13)                                         /* (SERCOM_I2CM_ADDR) Length Enable Position */
+#define SERCOM_I2CM_ADDR_LENEN_Msk            (_UINT32_(0x1) << SERCOM_I2CM_ADDR_LENEN_Pos)        /* (SERCOM_I2CM_ADDR) Length Enable Mask */
+#define SERCOM_I2CM_ADDR_LENEN(value)         (SERCOM_I2CM_ADDR_LENEN_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_LENEN_Pos)) /* Assigment of value for LENEN in the SERCOM_I2CM_ADDR register */
+#define SERCOM_I2CM_ADDR_HS_Pos               _UINT32_(14)                                         /* (SERCOM_I2CM_ADDR) High Speed Mode Position */
+#define SERCOM_I2CM_ADDR_HS_Msk               (_UINT32_(0x1) << SERCOM_I2CM_ADDR_HS_Pos)           /* (SERCOM_I2CM_ADDR) High Speed Mode Mask */
+#define SERCOM_I2CM_ADDR_HS(value)            (SERCOM_I2CM_ADDR_HS_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_HS_Pos)) /* Assigment of value for HS in the SERCOM_I2CM_ADDR register */
+#define SERCOM_I2CM_ADDR_TENBITEN_Pos         _UINT32_(15)                                         /* (SERCOM_I2CM_ADDR) Ten Bit Addressing Enable Position */
+#define SERCOM_I2CM_ADDR_TENBITEN_Msk         (_UINT32_(0x1) << SERCOM_I2CM_ADDR_TENBITEN_Pos)     /* (SERCOM_I2CM_ADDR) Ten Bit Addressing Enable Mask */
+#define SERCOM_I2CM_ADDR_TENBITEN(value)      (SERCOM_I2CM_ADDR_TENBITEN_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_TENBITEN_Pos)) /* Assigment of value for TENBITEN in the SERCOM_I2CM_ADDR register */
+#define SERCOM_I2CM_ADDR_LEN_Pos              _UINT32_(16)                                         /* (SERCOM_I2CM_ADDR) Length Position */
+#define SERCOM_I2CM_ADDR_LEN_Msk              (_UINT32_(0xFF) << SERCOM_I2CM_ADDR_LEN_Pos)         /* (SERCOM_I2CM_ADDR) Length Mask */
+#define SERCOM_I2CM_ADDR_LEN(value)           (SERCOM_I2CM_ADDR_LEN_Msk & (_UINT32_(value) << SERCOM_I2CM_ADDR_LEN_Pos)) /* Assigment of value for LEN in the SERCOM_I2CM_ADDR register */
+#define SERCOM_I2CM_ADDR_Msk                  _UINT32_(0x00FFE7FF)                                 /* (SERCOM_I2CM_ADDR) Register Mask  */
+
+
+/* -------- SERCOM_I2CS_ADDR : (SERCOM Offset: 0x24) (R/W 32) I2CS Address -------- */
+#define SERCOM_I2CS_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CS_ADDR) I2CS Address  Reset Value */
+
+#define SERCOM_I2CS_ADDR_GENCEN_Pos           _UINT32_(0)                                          /* (SERCOM_I2CS_ADDR) General Call Address Enable Position */
+#define SERCOM_I2CS_ADDR_GENCEN_Msk           (_UINT32_(0x1) << SERCOM_I2CS_ADDR_GENCEN_Pos)       /* (SERCOM_I2CS_ADDR) General Call Address Enable Mask */
+#define SERCOM_I2CS_ADDR_GENCEN(value)        (SERCOM_I2CS_ADDR_GENCEN_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_GENCEN_Pos)) /* Assigment of value for GENCEN in the SERCOM_I2CS_ADDR register */
+#define SERCOM_I2CS_ADDR_ADDR_Pos             _UINT32_(1)                                          /* (SERCOM_I2CS_ADDR) Address Value Position */
+#define SERCOM_I2CS_ADDR_ADDR_Msk             (_UINT32_(0x3FF) << SERCOM_I2CS_ADDR_ADDR_Pos)       /* (SERCOM_I2CS_ADDR) Address Value Mask */
+#define SERCOM_I2CS_ADDR_ADDR(value)          (SERCOM_I2CS_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_I2CS_ADDR register */
+#define SERCOM_I2CS_ADDR_TENBITEN_Pos         _UINT32_(15)                                         /* (SERCOM_I2CS_ADDR) Ten Bit Addressing Enable Position */
+#define SERCOM_I2CS_ADDR_TENBITEN_Msk         (_UINT32_(0x1) << SERCOM_I2CS_ADDR_TENBITEN_Pos)     /* (SERCOM_I2CS_ADDR) Ten Bit Addressing Enable Mask */
+#define SERCOM_I2CS_ADDR_TENBITEN(value)      (SERCOM_I2CS_ADDR_TENBITEN_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_TENBITEN_Pos)) /* Assigment of value for TENBITEN in the SERCOM_I2CS_ADDR register */
+#define SERCOM_I2CS_ADDR_ADDRMASK_Pos         _UINT32_(17)                                         /* (SERCOM_I2CS_ADDR) Address Mask Position */
+#define SERCOM_I2CS_ADDR_ADDRMASK_Msk         (_UINT32_(0x3FF) << SERCOM_I2CS_ADDR_ADDRMASK_Pos)   /* (SERCOM_I2CS_ADDR) Address Mask Mask */
+#define SERCOM_I2CS_ADDR_ADDRMASK(value)      (SERCOM_I2CS_ADDR_ADDRMASK_Msk & (_UINT32_(value) << SERCOM_I2CS_ADDR_ADDRMASK_Pos)) /* Assigment of value for ADDRMASK in the SERCOM_I2CS_ADDR register */
+#define SERCOM_I2CS_ADDR_Msk                  _UINT32_(0x07FE87FF)                                 /* (SERCOM_I2CS_ADDR) Register Mask  */
+
+
+/* -------- SERCOM_SPIM_ADDR : (SERCOM Offset: 0x24) (R/W 32) SPIM Address -------- */
+#define SERCOM_SPIM_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIM_ADDR) SPIM Address  Reset Value */
+
+#define SERCOM_SPIM_ADDR_ADDR_Pos             _UINT32_(0)                                          /* (SERCOM_SPIM_ADDR) Address Value Position */
+#define SERCOM_SPIM_ADDR_ADDR_Msk             (_UINT32_(0xFF) << SERCOM_SPIM_ADDR_ADDR_Pos)        /* (SERCOM_SPIM_ADDR) Address Value Mask */
+#define SERCOM_SPIM_ADDR_ADDR(value)          (SERCOM_SPIM_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_SPIM_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_SPIM_ADDR register */
+#define SERCOM_SPIM_ADDR_ADDRMASK_Pos         _UINT32_(16)                                         /* (SERCOM_SPIM_ADDR) Address Mask Position */
+#define SERCOM_SPIM_ADDR_ADDRMASK_Msk         (_UINT32_(0xFF) << SERCOM_SPIM_ADDR_ADDRMASK_Pos)    /* (SERCOM_SPIM_ADDR) Address Mask Mask */
+#define SERCOM_SPIM_ADDR_ADDRMASK(value)      (SERCOM_SPIM_ADDR_ADDRMASK_Msk & (_UINT32_(value) << SERCOM_SPIM_ADDR_ADDRMASK_Pos)) /* Assigment of value for ADDRMASK in the SERCOM_SPIM_ADDR register */
+#define SERCOM_SPIM_ADDR_Msk                  _UINT32_(0x00FF00FF)                                 /* (SERCOM_SPIM_ADDR) Register Mask  */
+
+
+/* -------- SERCOM_SPIS_ADDR : (SERCOM Offset: 0x24) (R/W 32) SPIS Address -------- */
+#define SERCOM_SPIS_ADDR_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIS_ADDR) SPIS Address  Reset Value */
+
+#define SERCOM_SPIS_ADDR_ADDR_Pos             _UINT32_(0)                                          /* (SERCOM_SPIS_ADDR) Address Value Position */
+#define SERCOM_SPIS_ADDR_ADDR_Msk             (_UINT32_(0xFF) << SERCOM_SPIS_ADDR_ADDR_Pos)        /* (SERCOM_SPIS_ADDR) Address Value Mask */
+#define SERCOM_SPIS_ADDR_ADDR(value)          (SERCOM_SPIS_ADDR_ADDR_Msk & (_UINT32_(value) << SERCOM_SPIS_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the SERCOM_SPIS_ADDR register */
+#define SERCOM_SPIS_ADDR_ADDRMASK_Pos         _UINT32_(16)                                         /* (SERCOM_SPIS_ADDR) Address Mask Position */
+#define SERCOM_SPIS_ADDR_ADDRMASK_Msk         (_UINT32_(0xFF) << SERCOM_SPIS_ADDR_ADDRMASK_Pos)    /* (SERCOM_SPIS_ADDR) Address Mask Mask */
+#define SERCOM_SPIS_ADDR_ADDRMASK(value)      (SERCOM_SPIS_ADDR_ADDRMASK_Msk & (_UINT32_(value) << SERCOM_SPIS_ADDR_ADDRMASK_Pos)) /* Assigment of value for ADDRMASK in the SERCOM_SPIS_ADDR register */
+#define SERCOM_SPIS_ADDR_Msk                  _UINT32_(0x00FF00FF)                                 /* (SERCOM_SPIS_ADDR) Register Mask  */
+
+
+/* -------- SERCOM_I2CM_DATA : (SERCOM Offset: 0x28) (R/W 32) I2CM Data -------- */
+#define SERCOM_I2CM_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CM_DATA) I2CM Data  Reset Value */
+
+#define SERCOM_I2CM_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_I2CM_DATA) Data Value Position */
+#define SERCOM_I2CM_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_I2CM_DATA_DATA_Pos)  /* (SERCOM_I2CM_DATA) Data Value Mask */
+#define SERCOM_I2CM_DATA_DATA(value)          (SERCOM_I2CM_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_I2CM_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_I2CM_DATA register */
+#define SERCOM_I2CM_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_I2CM_DATA) Register Mask  */
+
+
+/* -------- SERCOM_I2CS_DATA : (SERCOM Offset: 0x28) (R/W 32) I2CS Data -------- */
+#define SERCOM_I2CS_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_I2CS_DATA) I2CS Data  Reset Value */
+
+#define SERCOM_I2CS_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_I2CS_DATA) Data Value Position */
+#define SERCOM_I2CS_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_I2CS_DATA_DATA_Pos)  /* (SERCOM_I2CS_DATA) Data Value Mask */
+#define SERCOM_I2CS_DATA_DATA(value)          (SERCOM_I2CS_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_I2CS_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_I2CS_DATA register */
+#define SERCOM_I2CS_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_I2CS_DATA) Register Mask  */
+
+
+/* -------- SERCOM_SPIM_DATA : (SERCOM Offset: 0x28) (R/W 32) SPIM Data -------- */
+#define SERCOM_SPIM_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIM_DATA) SPIM Data  Reset Value */
+
+#define SERCOM_SPIM_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_SPIM_DATA) Data Value Position */
+#define SERCOM_SPIM_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_SPIM_DATA_DATA_Pos)  /* (SERCOM_SPIM_DATA) Data Value Mask */
+#define SERCOM_SPIM_DATA_DATA(value)          (SERCOM_SPIM_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_SPIM_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_SPIM_DATA register */
+#define SERCOM_SPIM_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_SPIM_DATA) Register Mask  */
+
+
+/* -------- SERCOM_SPIS_DATA : (SERCOM Offset: 0x28) (R/W 32) SPIS Data -------- */
+#define SERCOM_SPIS_DATA_RESETVALUE           _UINT32_(0x00)                                       /*  (SERCOM_SPIS_DATA) SPIS Data  Reset Value */
+
+#define SERCOM_SPIS_DATA_DATA_Pos             _UINT32_(0)                                          /* (SERCOM_SPIS_DATA) Data Value Position */
+#define SERCOM_SPIS_DATA_DATA_Msk             (_UINT32_(0xFFFFFFFF) << SERCOM_SPIS_DATA_DATA_Pos)  /* (SERCOM_SPIS_DATA) Data Value Mask */
+#define SERCOM_SPIS_DATA_DATA(value)          (SERCOM_SPIS_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_SPIS_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_SPIS_DATA register */
+#define SERCOM_SPIS_DATA_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_SPIS_DATA) Register Mask  */
+
+
+/* -------- SERCOM_USART_EXT_DATA : (SERCOM Offset: 0x28) (R/W 32) USART_EXT Data -------- */
+#define SERCOM_USART_EXT_DATA_RESETVALUE      _UINT32_(0x00)                                       /*  (SERCOM_USART_EXT_DATA) USART_EXT Data  Reset Value */
+
+#define SERCOM_USART_EXT_DATA_DATA_Pos        _UINT32_(0)                                          /* (SERCOM_USART_EXT_DATA) Data Value Position */
+#define SERCOM_USART_EXT_DATA_DATA_Msk        (_UINT32_(0xFFFFFFFF) << SERCOM_USART_EXT_DATA_DATA_Pos) /* (SERCOM_USART_EXT_DATA) Data Value Mask */
+#define SERCOM_USART_EXT_DATA_DATA(value)     (SERCOM_USART_EXT_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_USART_EXT_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_USART_EXT_DATA register */
+#define SERCOM_USART_EXT_DATA_Msk             _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_USART_EXT_DATA) Register Mask  */
+
+
+/* -------- SERCOM_USART_INT_DATA : (SERCOM Offset: 0x28) (R/W 32) USART_INT Data -------- */
+#define SERCOM_USART_INT_DATA_RESETVALUE      _UINT32_(0x00)                                       /*  (SERCOM_USART_INT_DATA) USART_INT Data  Reset Value */
+
+#define SERCOM_USART_INT_DATA_DATA_Pos        _UINT32_(0)                                          /* (SERCOM_USART_INT_DATA) Data Value Position */
+#define SERCOM_USART_INT_DATA_DATA_Msk        (_UINT32_(0xFFFFFFFF) << SERCOM_USART_INT_DATA_DATA_Pos) /* (SERCOM_USART_INT_DATA) Data Value Mask */
+#define SERCOM_USART_INT_DATA_DATA(value)     (SERCOM_USART_INT_DATA_DATA_Msk & (_UINT32_(value) << SERCOM_USART_INT_DATA_DATA_Pos)) /* Assigment of value for DATA in the SERCOM_USART_INT_DATA register */
+#define SERCOM_USART_INT_DATA_Msk             _UINT32_(0xFFFFFFFF)                                 /* (SERCOM_USART_INT_DATA) Register Mask  */
+
+
+/* -------- SERCOM_I2CM_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) I2CM Debug Control -------- */
+#define SERCOM_I2CM_DBGCTRL_RESETVALUE        _UINT8_(0x00)                                        /*  (SERCOM_I2CM_DBGCTRL) I2CM Debug Control  Reset Value */
+
+#define SERCOM_I2CM_DBGCTRL_DBGSTOP_Pos       _UINT8_(0)                                           /* (SERCOM_I2CM_DBGCTRL) Debug Mode Position */
+#define SERCOM_I2CM_DBGCTRL_DBGSTOP_Msk       (_UINT8_(0x1) << SERCOM_I2CM_DBGCTRL_DBGSTOP_Pos)    /* (SERCOM_I2CM_DBGCTRL) Debug Mode Mask */
+#define SERCOM_I2CM_DBGCTRL_DBGSTOP(value)    (SERCOM_I2CM_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_I2CM_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_I2CM_DBGCTRL register */
+#define SERCOM_I2CM_DBGCTRL_Msk               _UINT8_(0x01)                                        /* (SERCOM_I2CM_DBGCTRL) Register Mask  */
+
+
+/* -------- SERCOM_SPIM_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) SPIM Debug Control -------- */
+#define SERCOM_SPIM_DBGCTRL_RESETVALUE        _UINT8_(0x00)                                        /*  (SERCOM_SPIM_DBGCTRL) SPIM Debug Control  Reset Value */
+
+#define SERCOM_SPIM_DBGCTRL_DBGSTOP_Pos       _UINT8_(0)                                           /* (SERCOM_SPIM_DBGCTRL) Debug Mode Position */
+#define SERCOM_SPIM_DBGCTRL_DBGSTOP_Msk       (_UINT8_(0x1) << SERCOM_SPIM_DBGCTRL_DBGSTOP_Pos)    /* (SERCOM_SPIM_DBGCTRL) Debug Mode Mask */
+#define SERCOM_SPIM_DBGCTRL_DBGSTOP(value)    (SERCOM_SPIM_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_SPIM_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_SPIM_DBGCTRL register */
+#define SERCOM_SPIM_DBGCTRL_Msk               _UINT8_(0x01)                                        /* (SERCOM_SPIM_DBGCTRL) Register Mask  */
+
+
+/* -------- SERCOM_SPIS_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) SPIS Debug Control -------- */
+#define SERCOM_SPIS_DBGCTRL_RESETVALUE        _UINT8_(0x00)                                        /*  (SERCOM_SPIS_DBGCTRL) SPIS Debug Control  Reset Value */
+
+#define SERCOM_SPIS_DBGCTRL_DBGSTOP_Pos       _UINT8_(0)                                           /* (SERCOM_SPIS_DBGCTRL) Debug Mode Position */
+#define SERCOM_SPIS_DBGCTRL_DBGSTOP_Msk       (_UINT8_(0x1) << SERCOM_SPIS_DBGCTRL_DBGSTOP_Pos)    /* (SERCOM_SPIS_DBGCTRL) Debug Mode Mask */
+#define SERCOM_SPIS_DBGCTRL_DBGSTOP(value)    (SERCOM_SPIS_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_SPIS_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_SPIS_DBGCTRL register */
+#define SERCOM_SPIS_DBGCTRL_Msk               _UINT8_(0x01)                                        /* (SERCOM_SPIS_DBGCTRL) Register Mask  */
+
+
+/* -------- SERCOM_USART_EXT_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) USART_EXT Debug Control -------- */
+#define SERCOM_USART_EXT_DBGCTRL_RESETVALUE   _UINT8_(0x00)                                        /*  (SERCOM_USART_EXT_DBGCTRL) USART_EXT Debug Control  Reset Value */
+
+#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos  _UINT8_(0)                                           /* (SERCOM_USART_EXT_DBGCTRL) Debug Mode Position */
+#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Msk  (_UINT8_(0x1) << SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos) /* (SERCOM_USART_EXT_DBGCTRL) Debug Mode Mask */
+#define SERCOM_USART_EXT_DBGCTRL_DBGSTOP(value) (SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_USART_EXT_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_USART_EXT_DBGCTRL register */
+#define SERCOM_USART_EXT_DBGCTRL_Msk          _UINT8_(0x01)                                        /* (SERCOM_USART_EXT_DBGCTRL) Register Mask  */
+
+
+/* -------- SERCOM_USART_INT_DBGCTRL : (SERCOM Offset: 0x30) (R/W 8) USART_INT Debug Control -------- */
+#define SERCOM_USART_INT_DBGCTRL_RESETVALUE   _UINT8_(0x00)                                        /*  (SERCOM_USART_INT_DBGCTRL) USART_INT Debug Control  Reset Value */
+
+#define SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos  _UINT8_(0)                                           /* (SERCOM_USART_INT_DBGCTRL) Debug Mode Position */
+#define SERCOM_USART_INT_DBGCTRL_DBGSTOP_Msk  (_UINT8_(0x1) << SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos) /* (SERCOM_USART_INT_DBGCTRL) Debug Mode Mask */
+#define SERCOM_USART_INT_DBGCTRL_DBGSTOP(value) (SERCOM_USART_INT_DBGCTRL_DBGSTOP_Msk & (_UINT8_(value) << SERCOM_USART_INT_DBGCTRL_DBGSTOP_Pos)) /* Assigment of value for DBGSTOP in the SERCOM_USART_INT_DBGCTRL register */
+#define SERCOM_USART_INT_DBGCTRL_Msk          _UINT8_(0x01)                                        /* (SERCOM_USART_INT_DBGCTRL) Register Mask  */
+
+
 /** \brief SERCOM register offsets definitions */
-#define SERCOM_I2CM_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_I2CM_ADDR) I2CM Address Offset */
-#define SERCOM_I2CS_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_I2CS_ADDR) I2CS Address Offset */
-#define SERCOM_SPIM_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_SPIM_ADDR) SPIM Address Offset */
-#define SERCOM_SPIS_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_SPIS_ADDR) SPIS Address Offset */
-#define SERCOM_I2CM_BAUD_REG_OFST      _UINT32_(0x0C)      /* (SERCOM_I2CM_BAUD) I2CM Baud Rate Offset */
-#define SERCOM_SPIM_BAUD_REG_OFST      _UINT32_(0x0C)      /* (SERCOM_SPIM_BAUD) SPIM Baud Rate Offset */
-#define SERCOM_SPIS_BAUD_REG_OFST      _UINT32_(0x0C)      /* (SERCOM_SPIS_BAUD) SPIS Baud Rate Offset */
-#define SERCOM_USART_EXT_BAUD_REG_OFST _UINT32_(0x0C)      /* (SERCOM_USART_EXT_BAUD) USART_EXT Baud Rate Offset */
-#define SERCOM_USART_INT_BAUD_REG_OFST _UINT32_(0x0C)      /* (SERCOM_USART_INT_BAUD) USART_INT Baud Rate Offset */
 #define SERCOM_I2CM_CTRLA_REG_OFST     _UINT32_(0x00)      /* (SERCOM_I2CM_CTRLA) I2CM Control A Offset */
 #define SERCOM_I2CS_CTRLA_REG_OFST     _UINT32_(0x00)      /* (SERCOM_I2CS_CTRLA) I2CS Control A Offset */
 #define SERCOM_SPIM_CTRLA_REG_OFST     _UINT32_(0x00)      /* (SERCOM_SPIM_CTRLA) SPIM Control A Offset */
@@ -1990,17 +1981,13 @@
 #define SERCOM_SPIS_CTRLC_REG_OFST     _UINT32_(0x08)      /* (SERCOM_SPIS_CTRLC) SPIS Control C Offset */
 #define SERCOM_USART_EXT_CTRLC_REG_OFST _UINT32_(0x08)      /* (SERCOM_USART_EXT_CTRLC) USART_EXT Control C Offset */
 #define SERCOM_USART_INT_CTRLC_REG_OFST _UINT32_(0x08)      /* (SERCOM_USART_INT_CTRLC) USART_INT Control C Offset */
-#define SERCOM_I2CM_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_I2CM_DATA) I2CM Data Offset */
-#define SERCOM_I2CS_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_I2CS_DATA) I2CS Data Offset */
-#define SERCOM_SPIM_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_SPIM_DATA) SPIM Data Offset */
-#define SERCOM_SPIS_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_SPIS_DATA) SPIS Data Offset */
-#define SERCOM_USART_EXT_DATA_REG_OFST _UINT32_(0x28)      /* (SERCOM_USART_EXT_DATA) USART_EXT Data Offset */
-#define SERCOM_USART_INT_DATA_REG_OFST _UINT32_(0x28)      /* (SERCOM_USART_INT_DATA) USART_INT Data Offset */
-#define SERCOM_I2CM_DBGCTRL_REG_OFST   _UINT32_(0x30)      /* (SERCOM_I2CM_DBGCTRL) I2CM Debug Control Offset */
-#define SERCOM_SPIM_DBGCTRL_REG_OFST   _UINT32_(0x30)      /* (SERCOM_SPIM_DBGCTRL) SPIM Debug Control Offset */
-#define SERCOM_SPIS_DBGCTRL_REG_OFST   _UINT32_(0x30)      /* (SERCOM_SPIS_DBGCTRL) SPIS Debug Control Offset */
-#define SERCOM_USART_EXT_DBGCTRL_REG_OFST _UINT32_(0x30)      /* (SERCOM_USART_EXT_DBGCTRL) USART_EXT Debug Control Offset */
-#define SERCOM_USART_INT_DBGCTRL_REG_OFST _UINT32_(0x30)      /* (SERCOM_USART_INT_DBGCTRL) USART_INT Debug Control Offset */
+#define SERCOM_I2CM_BAUD_REG_OFST      _UINT32_(0x0C)      /* (SERCOM_I2CM_BAUD) I2CM Baud Rate Offset */
+#define SERCOM_SPIM_BAUD_REG_OFST      _UINT32_(0x0C)      /* (SERCOM_SPIM_BAUD) SPIM Baud Rate Offset */
+#define SERCOM_SPIS_BAUD_REG_OFST      _UINT32_(0x0C)      /* (SERCOM_SPIS_BAUD) SPIS Baud Rate Offset */
+#define SERCOM_USART_EXT_BAUD_REG_OFST _UINT32_(0x0C)      /* (SERCOM_USART_EXT_BAUD) USART_EXT Baud Rate Offset */
+#define SERCOM_USART_INT_BAUD_REG_OFST _UINT32_(0x0C)      /* (SERCOM_USART_INT_BAUD) USART_INT Baud Rate Offset */
+#define SERCOM_USART_EXT_RXPL_REG_OFST _UINT32_(0x0E)      /* (SERCOM_USART_EXT_RXPL) USART_EXT Receive Pulse Length Offset */
+#define SERCOM_USART_INT_RXPL_REG_OFST _UINT32_(0x0E)      /* (SERCOM_USART_INT_RXPL) USART_INT Receive Pulse Length Offset */
 #define SERCOM_I2CM_INTENCLR_REG_OFST  _UINT32_(0x14)      /* (SERCOM_I2CM_INTENCLR) I2CM Interrupt Enable Clear Offset */
 #define SERCOM_I2CS_INTENCLR_REG_OFST  _UINT32_(0x14)      /* (SERCOM_I2CS_INTENCLR) I2CS Interrupt Enable Clear Offset */
 #define SERCOM_SPIM_INTENCLR_REG_OFST  _UINT32_(0x14)      /* (SERCOM_SPIM_INTENCLR) SPIM Interrupt Enable Clear Offset */
@@ -2019,15 +2006,6 @@
 #define SERCOM_SPIS_INTFLAG_REG_OFST   _UINT32_(0x18)      /* (SERCOM_SPIS_INTFLAG) SPIS Interrupt Flag Status and Clear Offset */
 #define SERCOM_USART_EXT_INTFLAG_REG_OFST _UINT32_(0x18)      /* (SERCOM_USART_EXT_INTFLAG) USART_EXT Interrupt Flag Status and Clear Offset */
 #define SERCOM_USART_INT_INTFLAG_REG_OFST _UINT32_(0x18)      /* (SERCOM_USART_INT_INTFLAG) USART_INT Interrupt Flag Status and Clear Offset */
-#define SERCOM_I2CS_LENGTH_REG_OFST    _UINT32_(0x22)      /* (SERCOM_I2CS_LENGTH) I2CS Length Offset */
-#define SERCOM_SPIM_LENGTH_REG_OFST    _UINT32_(0x22)      /* (SERCOM_SPIM_LENGTH) SPIM Length Offset */
-#define SERCOM_SPIS_LENGTH_REG_OFST    _UINT32_(0x22)      /* (SERCOM_SPIS_LENGTH) SPIS Length Offset */
-#define SERCOM_USART_EXT_LENGTH_REG_OFST _UINT32_(0x22)      /* (SERCOM_USART_EXT_LENGTH) USART_EXT Length Offset */
-#define SERCOM_USART_INT_LENGTH_REG_OFST _UINT32_(0x22)      /* (SERCOM_USART_INT_LENGTH) USART_INT Length Offset */
-#define SERCOM_USART_EXT_RXERRCNT_REG_OFST _UINT32_(0x20)      /* (SERCOM_USART_EXT_RXERRCNT) USART_EXT Receive Error Count Offset */
-#define SERCOM_USART_INT_RXERRCNT_REG_OFST _UINT32_(0x20)      /* (SERCOM_USART_INT_RXERRCNT) USART_INT Receive Error Count Offset */
-#define SERCOM_USART_EXT_RXPL_REG_OFST _UINT32_(0x0E)      /* (SERCOM_USART_EXT_RXPL) USART_EXT Receive Pulse Length Offset */
-#define SERCOM_USART_INT_RXPL_REG_OFST _UINT32_(0x0E)      /* (SERCOM_USART_INT_RXPL) USART_INT Receive Pulse Length Offset */
 #define SERCOM_I2CM_STATUS_REG_OFST    _UINT32_(0x1A)      /* (SERCOM_I2CM_STATUS) I2CM Status Offset */
 #define SERCOM_I2CS_STATUS_REG_OFST    _UINT32_(0x1A)      /* (SERCOM_I2CS_STATUS) I2CS Status Offset */
 #define SERCOM_SPIM_STATUS_REG_OFST    _UINT32_(0x1A)      /* (SERCOM_SPIM_STATUS) SPIM Status Offset */
@@ -2040,6 +2018,28 @@
 #define SERCOM_SPIS_SYNCBUSY_REG_OFST  _UINT32_(0x1C)      /* (SERCOM_SPIS_SYNCBUSY) SPIS Synchronization Busy Offset */
 #define SERCOM_USART_EXT_SYNCBUSY_REG_OFST _UINT32_(0x1C)      /* (SERCOM_USART_EXT_SYNCBUSY) USART_EXT Synchronization Busy Offset */
 #define SERCOM_USART_INT_SYNCBUSY_REG_OFST _UINT32_(0x1C)      /* (SERCOM_USART_INT_SYNCBUSY) USART_INT Synchronization Busy Offset */
+#define SERCOM_USART_EXT_RXERRCNT_REG_OFST _UINT32_(0x20)      /* (SERCOM_USART_EXT_RXERRCNT) USART_EXT Receive Error Count Offset */
+#define SERCOM_USART_INT_RXERRCNT_REG_OFST _UINT32_(0x20)      /* (SERCOM_USART_INT_RXERRCNT) USART_INT Receive Error Count Offset */
+#define SERCOM_I2CS_LENGTH_REG_OFST    _UINT32_(0x22)      /* (SERCOM_I2CS_LENGTH) I2CS Length Offset */
+#define SERCOM_SPIM_LENGTH_REG_OFST    _UINT32_(0x22)      /* (SERCOM_SPIM_LENGTH) SPIM Length Offset */
+#define SERCOM_SPIS_LENGTH_REG_OFST    _UINT32_(0x22)      /* (SERCOM_SPIS_LENGTH) SPIS Length Offset */
+#define SERCOM_USART_EXT_LENGTH_REG_OFST _UINT32_(0x22)      /* (SERCOM_USART_EXT_LENGTH) USART_EXT Length Offset */
+#define SERCOM_USART_INT_LENGTH_REG_OFST _UINT32_(0x22)      /* (SERCOM_USART_INT_LENGTH) USART_INT Length Offset */
+#define SERCOM_I2CM_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_I2CM_ADDR) I2CM Address Offset */
+#define SERCOM_I2CS_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_I2CS_ADDR) I2CS Address Offset */
+#define SERCOM_SPIM_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_SPIM_ADDR) SPIM Address Offset */
+#define SERCOM_SPIS_ADDR_REG_OFST      _UINT32_(0x24)      /* (SERCOM_SPIS_ADDR) SPIS Address Offset */
+#define SERCOM_I2CM_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_I2CM_DATA) I2CM Data Offset */
+#define SERCOM_I2CS_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_I2CS_DATA) I2CS Data Offset */
+#define SERCOM_SPIM_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_SPIM_DATA) SPIM Data Offset */
+#define SERCOM_SPIS_DATA_REG_OFST      _UINT32_(0x28)      /* (SERCOM_SPIS_DATA) SPIS Data Offset */
+#define SERCOM_USART_EXT_DATA_REG_OFST _UINT32_(0x28)      /* (SERCOM_USART_EXT_DATA) USART_EXT Data Offset */
+#define SERCOM_USART_INT_DATA_REG_OFST _UINT32_(0x28)      /* (SERCOM_USART_INT_DATA) USART_INT Data Offset */
+#define SERCOM_I2CM_DBGCTRL_REG_OFST   _UINT32_(0x30)      /* (SERCOM_I2CM_DBGCTRL) I2CM Debug Control Offset */
+#define SERCOM_SPIM_DBGCTRL_REG_OFST   _UINT32_(0x30)      /* (SERCOM_SPIM_DBGCTRL) SPIM Debug Control Offset */
+#define SERCOM_SPIS_DBGCTRL_REG_OFST   _UINT32_(0x30)      /* (SERCOM_SPIS_DBGCTRL) SPIS Debug Control Offset */
+#define SERCOM_USART_EXT_DBGCTRL_REG_OFST _UINT32_(0x30)      /* (SERCOM_USART_EXT_DBGCTRL) USART_EXT Debug Control Offset */
+#define SERCOM_USART_INT_DBGCTRL_REG_OFST _UINT32_(0x30)      /* (SERCOM_USART_INT_DBGCTRL) USART_INT Debug Control Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief SERCOM register API structure */

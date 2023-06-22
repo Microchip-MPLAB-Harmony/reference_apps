@@ -1,7 +1,7 @@
 /*
  * Component description for ICM
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_ICM_COMPONENT_H_
 #define _PIC32CXSG41_ICM_COMPONENT_H_
 
@@ -183,22 +183,44 @@
 #define ICM_CTRL_Msk                          _UINT32_(0x0000FFF7)                                 /* (ICM_CTRL) Register Mask  */
 
 
-/* -------- ICM_DSCR : (ICM Offset: 0x30) (R/W 32) Region Descriptor Area Start Address -------- */
-#define ICM_DSCR_RESETVALUE                   _UINT32_(0x00)                                       /*  (ICM_DSCR) Region Descriptor Area Start Address  Reset Value */
+/* -------- ICM_SR : (ICM Offset: 0x08) ( R/ 32) Status -------- */
+#define ICM_SR_RESETVALUE                     _UINT32_(0x00)                                       /*  (ICM_SR) Status  Reset Value */
 
-#define ICM_DSCR_DASA_Pos                     _UINT32_(6)                                          /* (ICM_DSCR) Descriptor Area Start Address Position */
-#define ICM_DSCR_DASA_Msk                     (_UINT32_(0x3FFFFFF) << ICM_DSCR_DASA_Pos)           /* (ICM_DSCR) Descriptor Area Start Address Mask */
-#define ICM_DSCR_DASA(value)                  (ICM_DSCR_DASA_Msk & (_UINT32_(value) << ICM_DSCR_DASA_Pos)) /* Assigment of value for DASA in the ICM_DSCR register */
-#define ICM_DSCR_Msk                          _UINT32_(0xFFFFFFC0)                                 /* (ICM_DSCR) Register Mask  */
+#define ICM_SR_ENABLE_Pos                     _UINT32_(0)                                          /* (ICM_SR) ICM Controller Enable Register Position */
+#define ICM_SR_ENABLE_Msk                     (_UINT32_(0x1) << ICM_SR_ENABLE_Pos)                 /* (ICM_SR) ICM Controller Enable Register Mask */
+#define ICM_SR_ENABLE(value)                  (ICM_SR_ENABLE_Msk & (_UINT32_(value) << ICM_SR_ENABLE_Pos)) /* Assigment of value for ENABLE in the ICM_SR register */
+#define ICM_SR_RAWRMDIS_Pos                   _UINT32_(8)                                          /* (ICM_SR) RAW Region Monitoring Disabled Status Position */
+#define ICM_SR_RAWRMDIS_Msk                   (_UINT32_(0xF) << ICM_SR_RAWRMDIS_Pos)               /* (ICM_SR) RAW Region Monitoring Disabled Status Mask */
+#define ICM_SR_RAWRMDIS(value)                (ICM_SR_RAWRMDIS_Msk & (_UINT32_(value) << ICM_SR_RAWRMDIS_Pos)) /* Assigment of value for RAWRMDIS in the ICM_SR register */
+#define ICM_SR_RMDIS_Pos                      _UINT32_(12)                                         /* (ICM_SR) Region Monitoring Disabled Status Position */
+#define ICM_SR_RMDIS_Msk                      (_UINT32_(0xF) << ICM_SR_RMDIS_Pos)                  /* (ICM_SR) Region Monitoring Disabled Status Mask */
+#define ICM_SR_RMDIS(value)                   (ICM_SR_RMDIS_Msk & (_UINT32_(value) << ICM_SR_RMDIS_Pos)) /* Assigment of value for RMDIS in the ICM_SR register */
+#define ICM_SR_Msk                            _UINT32_(0x0000FF01)                                 /* (ICM_SR) Register Mask  */
 
 
-/* -------- ICM_HASH : (ICM Offset: 0x34) (R/W 32) Region Hash Area Start Address -------- */
-#define ICM_HASH_RESETVALUE                   _UINT32_(0x00)                                       /*  (ICM_HASH) Region Hash Area Start Address  Reset Value */
-
-#define ICM_HASH_HASA_Pos                     _UINT32_(7)                                          /* (ICM_HASH) Hash Area Start Address Position */
-#define ICM_HASH_HASA_Msk                     (_UINT32_(0x1FFFFFF) << ICM_HASH_HASA_Pos)           /* (ICM_HASH) Hash Area Start Address Mask */
-#define ICM_HASH_HASA(value)                  (ICM_HASH_HASA_Msk & (_UINT32_(value) << ICM_HASH_HASA_Pos)) /* Assigment of value for HASA in the ICM_HASH register */
-#define ICM_HASH_Msk                          _UINT32_(0xFFFFFF80)                                 /* (ICM_HASH) Register Mask  */
+/* -------- ICM_IER : (ICM Offset: 0x10) ( /W 32) Interrupt Enable -------- */
+#define ICM_IER_RHC_Pos                       _UINT32_(0)                                          /* (ICM_IER) Region Hash Completed Interrupt Enable Position */
+#define ICM_IER_RHC_Msk                       (_UINT32_(0xF) << ICM_IER_RHC_Pos)                   /* (ICM_IER) Region Hash Completed Interrupt Enable Mask */
+#define ICM_IER_RHC(value)                    (ICM_IER_RHC_Msk & (_UINT32_(value) << ICM_IER_RHC_Pos)) /* Assigment of value for RHC in the ICM_IER register */
+#define ICM_IER_RDM_Pos                       _UINT32_(4)                                          /* (ICM_IER) Region Digest Mismatch Interrupt Enable Position */
+#define ICM_IER_RDM_Msk                       (_UINT32_(0xF) << ICM_IER_RDM_Pos)                   /* (ICM_IER) Region Digest Mismatch Interrupt Enable Mask */
+#define ICM_IER_RDM(value)                    (ICM_IER_RDM_Msk & (_UINT32_(value) << ICM_IER_RDM_Pos)) /* Assigment of value for RDM in the ICM_IER register */
+#define ICM_IER_RBE_Pos                       _UINT32_(8)                                          /* (ICM_IER) Region Bus Error Interrupt Enable Position */
+#define ICM_IER_RBE_Msk                       (_UINT32_(0xF) << ICM_IER_RBE_Pos)                   /* (ICM_IER) Region Bus Error Interrupt Enable Mask */
+#define ICM_IER_RBE(value)                    (ICM_IER_RBE_Msk & (_UINT32_(value) << ICM_IER_RBE_Pos)) /* Assigment of value for RBE in the ICM_IER register */
+#define ICM_IER_RWC_Pos                       _UINT32_(12)                                         /* (ICM_IER) Region Wrap Condition detected Interrupt Enable Position */
+#define ICM_IER_RWC_Msk                       (_UINT32_(0xF) << ICM_IER_RWC_Pos)                   /* (ICM_IER) Region Wrap Condition detected Interrupt Enable Mask */
+#define ICM_IER_RWC(value)                    (ICM_IER_RWC_Msk & (_UINT32_(value) << ICM_IER_RWC_Pos)) /* Assigment of value for RWC in the ICM_IER register */
+#define ICM_IER_REC_Pos                       _UINT32_(16)                                         /* (ICM_IER) Region End bit Condition Detected Interrupt Enable Position */
+#define ICM_IER_REC_Msk                       (_UINT32_(0xF) << ICM_IER_REC_Pos)                   /* (ICM_IER) Region End bit Condition Detected Interrupt Enable Mask */
+#define ICM_IER_REC(value)                    (ICM_IER_REC_Msk & (_UINT32_(value) << ICM_IER_REC_Pos)) /* Assigment of value for REC in the ICM_IER register */
+#define ICM_IER_RSU_Pos                       _UINT32_(20)                                         /* (ICM_IER) Region Status Updated Interrupt Disable Position */
+#define ICM_IER_RSU_Msk                       (_UINT32_(0xF) << ICM_IER_RSU_Pos)                   /* (ICM_IER) Region Status Updated Interrupt Disable Mask */
+#define ICM_IER_RSU(value)                    (ICM_IER_RSU_Msk & (_UINT32_(value) << ICM_IER_RSU_Pos)) /* Assigment of value for RSU in the ICM_IER register */
+#define ICM_IER_URAD_Pos                      _UINT32_(24)                                         /* (ICM_IER) Undefined Register Access Detection Interrupt Enable Position */
+#define ICM_IER_URAD_Msk                      (_UINT32_(0x1) << ICM_IER_URAD_Pos)                  /* (ICM_IER) Undefined Register Access Detection Interrupt Enable Mask */
+#define ICM_IER_URAD(value)                   (ICM_IER_URAD_Msk & (_UINT32_(value) << ICM_IER_URAD_Pos)) /* Assigment of value for URAD in the ICM_IER register */
+#define ICM_IER_Msk                           _UINT32_(0x01FFFFFF)                                 /* (ICM_IER) Register Mask  */
 
 
 /* -------- ICM_IDR : (ICM Offset: 0x14) ( /W 32) Interrupt Disable -------- */
@@ -226,31 +248,6 @@
 #define ICM_IDR_URAD_Msk                      (_UINT32_(0x1) << ICM_IDR_URAD_Pos)                  /* (ICM_IDR) Undefined Register Access Detection Interrupt Disable Mask */
 #define ICM_IDR_URAD(value)                   (ICM_IDR_URAD_Msk & (_UINT32_(value) << ICM_IDR_URAD_Pos)) /* Assigment of value for URAD in the ICM_IDR register */
 #define ICM_IDR_Msk                           _UINT32_(0x01FFFFFF)                                 /* (ICM_IDR) Register Mask  */
-
-
-/* -------- ICM_IER : (ICM Offset: 0x10) ( /W 32) Interrupt Enable -------- */
-#define ICM_IER_RHC_Pos                       _UINT32_(0)                                          /* (ICM_IER) Region Hash Completed Interrupt Enable Position */
-#define ICM_IER_RHC_Msk                       (_UINT32_(0xF) << ICM_IER_RHC_Pos)                   /* (ICM_IER) Region Hash Completed Interrupt Enable Mask */
-#define ICM_IER_RHC(value)                    (ICM_IER_RHC_Msk & (_UINT32_(value) << ICM_IER_RHC_Pos)) /* Assigment of value for RHC in the ICM_IER register */
-#define ICM_IER_RDM_Pos                       _UINT32_(4)                                          /* (ICM_IER) Region Digest Mismatch Interrupt Enable Position */
-#define ICM_IER_RDM_Msk                       (_UINT32_(0xF) << ICM_IER_RDM_Pos)                   /* (ICM_IER) Region Digest Mismatch Interrupt Enable Mask */
-#define ICM_IER_RDM(value)                    (ICM_IER_RDM_Msk & (_UINT32_(value) << ICM_IER_RDM_Pos)) /* Assigment of value for RDM in the ICM_IER register */
-#define ICM_IER_RBE_Pos                       _UINT32_(8)                                          /* (ICM_IER) Region Bus Error Interrupt Enable Position */
-#define ICM_IER_RBE_Msk                       (_UINT32_(0xF) << ICM_IER_RBE_Pos)                   /* (ICM_IER) Region Bus Error Interrupt Enable Mask */
-#define ICM_IER_RBE(value)                    (ICM_IER_RBE_Msk & (_UINT32_(value) << ICM_IER_RBE_Pos)) /* Assigment of value for RBE in the ICM_IER register */
-#define ICM_IER_RWC_Pos                       _UINT32_(12)                                         /* (ICM_IER) Region Wrap Condition detected Interrupt Enable Position */
-#define ICM_IER_RWC_Msk                       (_UINT32_(0xF) << ICM_IER_RWC_Pos)                   /* (ICM_IER) Region Wrap Condition detected Interrupt Enable Mask */
-#define ICM_IER_RWC(value)                    (ICM_IER_RWC_Msk & (_UINT32_(value) << ICM_IER_RWC_Pos)) /* Assigment of value for RWC in the ICM_IER register */
-#define ICM_IER_REC_Pos                       _UINT32_(16)                                         /* (ICM_IER) Region End bit Condition Detected Interrupt Enable Position */
-#define ICM_IER_REC_Msk                       (_UINT32_(0xF) << ICM_IER_REC_Pos)                   /* (ICM_IER) Region End bit Condition Detected Interrupt Enable Mask */
-#define ICM_IER_REC(value)                    (ICM_IER_REC_Msk & (_UINT32_(value) << ICM_IER_REC_Pos)) /* Assigment of value for REC in the ICM_IER register */
-#define ICM_IER_RSU_Pos                       _UINT32_(20)                                         /* (ICM_IER) Region Status Updated Interrupt Disable Position */
-#define ICM_IER_RSU_Msk                       (_UINT32_(0xF) << ICM_IER_RSU_Pos)                   /* (ICM_IER) Region Status Updated Interrupt Disable Mask */
-#define ICM_IER_RSU(value)                    (ICM_IER_RSU_Msk & (_UINT32_(value) << ICM_IER_RSU_Pos)) /* Assigment of value for RSU in the ICM_IER register */
-#define ICM_IER_URAD_Pos                      _UINT32_(24)                                         /* (ICM_IER) Undefined Register Access Detection Interrupt Enable Position */
-#define ICM_IER_URAD_Msk                      (_UINT32_(0x1) << ICM_IER_URAD_Pos)                  /* (ICM_IER) Undefined Register Access Detection Interrupt Enable Mask */
-#define ICM_IER_URAD(value)                   (ICM_IER_URAD_Msk & (_UINT32_(value) << ICM_IER_URAD_Pos)) /* Assigment of value for URAD in the ICM_IER register */
-#define ICM_IER_Msk                           _UINT32_(0x01FFFFFF)                                 /* (ICM_IER) Register Mask  */
 
 
 /* -------- ICM_IMR : (ICM Offset: 0x18) ( R/ 32) Interrupt Mask -------- */
@@ -307,21 +304,6 @@
 #define ICM_ISR_Msk                           _UINT32_(0x01FFFFFF)                                 /* (ICM_ISR) Register Mask  */
 
 
-/* -------- ICM_SR : (ICM Offset: 0x08) ( R/ 32) Status -------- */
-#define ICM_SR_RESETVALUE                     _UINT32_(0x00)                                       /*  (ICM_SR) Status  Reset Value */
-
-#define ICM_SR_ENABLE_Pos                     _UINT32_(0)                                          /* (ICM_SR) ICM Controller Enable Register Position */
-#define ICM_SR_ENABLE_Msk                     (_UINT32_(0x1) << ICM_SR_ENABLE_Pos)                 /* (ICM_SR) ICM Controller Enable Register Mask */
-#define ICM_SR_ENABLE(value)                  (ICM_SR_ENABLE_Msk & (_UINT32_(value) << ICM_SR_ENABLE_Pos)) /* Assigment of value for ENABLE in the ICM_SR register */
-#define ICM_SR_RAWRMDIS_Pos                   _UINT32_(8)                                          /* (ICM_SR) RAW Region Monitoring Disabled Status Position */
-#define ICM_SR_RAWRMDIS_Msk                   (_UINT32_(0xF) << ICM_SR_RAWRMDIS_Pos)               /* (ICM_SR) RAW Region Monitoring Disabled Status Mask */
-#define ICM_SR_RAWRMDIS(value)                (ICM_SR_RAWRMDIS_Msk & (_UINT32_(value) << ICM_SR_RAWRMDIS_Pos)) /* Assigment of value for RAWRMDIS in the ICM_SR register */
-#define ICM_SR_RMDIS_Pos                      _UINT32_(12)                                         /* (ICM_SR) Region Monitoring Disabled Status Position */
-#define ICM_SR_RMDIS_Msk                      (_UINT32_(0xF) << ICM_SR_RMDIS_Pos)                  /* (ICM_SR) Region Monitoring Disabled Status Mask */
-#define ICM_SR_RMDIS(value)                   (ICM_SR_RMDIS_Msk & (_UINT32_(value) << ICM_SR_RMDIS_Pos)) /* Assigment of value for RMDIS in the ICM_SR register */
-#define ICM_SR_Msk                            _UINT32_(0x0000FF01)                                 /* (ICM_SR) Register Mask  */
-
-
 /* -------- ICM_UASR : (ICM Offset: 0x20) ( R/ 32) Undefined Access Status -------- */
 #define ICM_UASR_RESETVALUE                   _UINT32_(0x00)                                       /*  (ICM_UASR) Undefined Access Status  Reset Value */
 
@@ -341,6 +323,24 @@
 #define ICM_UASR_Msk                          _UINT32_(0x00000007)                                 /* (ICM_UASR) Register Mask  */
 
 
+/* -------- ICM_DSCR : (ICM Offset: 0x30) (R/W 32) Region Descriptor Area Start Address -------- */
+#define ICM_DSCR_RESETVALUE                   _UINT32_(0x00)                                       /*  (ICM_DSCR) Region Descriptor Area Start Address  Reset Value */
+
+#define ICM_DSCR_DASA_Pos                     _UINT32_(6)                                          /* (ICM_DSCR) Descriptor Area Start Address Position */
+#define ICM_DSCR_DASA_Msk                     (_UINT32_(0x3FFFFFF) << ICM_DSCR_DASA_Pos)           /* (ICM_DSCR) Descriptor Area Start Address Mask */
+#define ICM_DSCR_DASA(value)                  (ICM_DSCR_DASA_Msk & (_UINT32_(value) << ICM_DSCR_DASA_Pos)) /* Assigment of value for DASA in the ICM_DSCR register */
+#define ICM_DSCR_Msk                          _UINT32_(0xFFFFFFC0)                                 /* (ICM_DSCR) Register Mask  */
+
+
+/* -------- ICM_HASH : (ICM Offset: 0x34) (R/W 32) Region Hash Area Start Address -------- */
+#define ICM_HASH_RESETVALUE                   _UINT32_(0x00)                                       /*  (ICM_HASH) Region Hash Area Start Address  Reset Value */
+
+#define ICM_HASH_HASA_Pos                     _UINT32_(7)                                          /* (ICM_HASH) Hash Area Start Address Position */
+#define ICM_HASH_HASA_Msk                     (_UINT32_(0x1FFFFFF) << ICM_HASH_HASA_Pos)           /* (ICM_HASH) Hash Area Start Address Mask */
+#define ICM_HASH_HASA(value)                  (ICM_HASH_HASA_Msk & (_UINT32_(value) << ICM_HASH_HASA_Pos)) /* Assigment of value for HASA in the ICM_HASH register */
+#define ICM_HASH_Msk                          _UINT32_(0xFFFFFF80)                                 /* (ICM_HASH) Register Mask  */
+
+
 /* -------- ICM_UIHVAL : (ICM Offset: 0x38) ( /W 32) User Initial Hash Value n -------- */
 #define ICM_UIHVAL_RESETVALUE                 _UINT32_(0x00)                                       /*  (ICM_UIHVAL) User Initial Hash Value n  Reset Value */
 
@@ -357,14 +357,14 @@
 #define ICM_RNEXT_REG_OFST             _UINT32_(0x0C)      /* (ICM_RNEXT) Region Next Address Offset */
 #define ICM_CFG_REG_OFST               _UINT32_(0x00)      /* (ICM_CFG) Configuration Offset */
 #define ICM_CTRL_REG_OFST              _UINT32_(0x04)      /* (ICM_CTRL) Control Offset */
-#define ICM_DSCR_REG_OFST              _UINT32_(0x30)      /* (ICM_DSCR) Region Descriptor Area Start Address Offset */
-#define ICM_HASH_REG_OFST              _UINT32_(0x34)      /* (ICM_HASH) Region Hash Area Start Address Offset */
-#define ICM_IDR_REG_OFST               _UINT32_(0x14)      /* (ICM_IDR) Interrupt Disable Offset */
+#define ICM_SR_REG_OFST                _UINT32_(0x08)      /* (ICM_SR) Status Offset */
 #define ICM_IER_REG_OFST               _UINT32_(0x10)      /* (ICM_IER) Interrupt Enable Offset */
+#define ICM_IDR_REG_OFST               _UINT32_(0x14)      /* (ICM_IDR) Interrupt Disable Offset */
 #define ICM_IMR_REG_OFST               _UINT32_(0x18)      /* (ICM_IMR) Interrupt Mask Offset */
 #define ICM_ISR_REG_OFST               _UINT32_(0x1C)      /* (ICM_ISR) Interrupt Status Offset */
-#define ICM_SR_REG_OFST                _UINT32_(0x08)      /* (ICM_SR) Status Offset */
 #define ICM_UASR_REG_OFST              _UINT32_(0x20)      /* (ICM_UASR) Undefined Access Status Offset */
+#define ICM_DSCR_REG_OFST              _UINT32_(0x30)      /* (ICM_DSCR) Region Descriptor Area Start Address Offset */
+#define ICM_HASH_REG_OFST              _UINT32_(0x34)      /* (ICM_HASH) Region Hash Area Start Address Offset */
 #define ICM_UIHVAL_REG_OFST            _UINT32_(0x38)      /* (ICM_UIHVAL) User Initial Hash Value n Offset */
 #define ICM_UIHVAL0_REG_OFST           _UINT32_(0x38)      /* (ICM_UIHVAL0) User Initial Hash Value n Offset */
 #define ICM_UIHVAL1_REG_OFST           _UINT32_(0x3C)      /* (ICM_UIHVAL1) User Initial Hash Value n Offset */

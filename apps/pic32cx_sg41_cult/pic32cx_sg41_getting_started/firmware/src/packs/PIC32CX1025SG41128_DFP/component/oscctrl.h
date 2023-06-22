@@ -1,7 +1,7 @@
 /*
  * Component description for OSCCTRL
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_OSCCTRL_COMPONENT_H_
 #define _PIC32CXSG41_OSCCTRL_COMPONENT_H_
 
@@ -41,6 +41,18 @@
 #define OSCCTRL_DPLLCTRLA_ONDEMAND_Msk        (_UINT8_(0x1) << OSCCTRL_DPLLCTRLA_ONDEMAND_Pos)     /* (OSCCTRL_DPLLCTRLA) On Demand Control Mask */
 #define OSCCTRL_DPLLCTRLA_ONDEMAND(value)     (OSCCTRL_DPLLCTRLA_ONDEMAND_Msk & (_UINT8_(value) << OSCCTRL_DPLLCTRLA_ONDEMAND_Pos)) /* Assigment of value for ONDEMAND in the OSCCTRL_DPLLCTRLA register */
 #define OSCCTRL_DPLLCTRLA_Msk                 _UINT8_(0xC2)                                        /* (OSCCTRL_DPLLCTRLA) Register Mask  */
+
+
+/* -------- OSCCTRL_DPLLRATIO : (OSCCTRL Offset: 0x04) (R/W 32) DPLL Ratio Control -------- */
+#define OSCCTRL_DPLLRATIO_RESETVALUE          _UINT32_(0x00)                                       /*  (OSCCTRL_DPLLRATIO) DPLL Ratio Control  Reset Value */
+
+#define OSCCTRL_DPLLRATIO_LDR_Pos             _UINT32_(0)                                          /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Position */
+#define OSCCTRL_DPLLRATIO_LDR_Msk             (_UINT32_(0x1FFF) << OSCCTRL_DPLLRATIO_LDR_Pos)      /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Mask */
+#define OSCCTRL_DPLLRATIO_LDR(value)          (OSCCTRL_DPLLRATIO_LDR_Msk & (_UINT32_(value) << OSCCTRL_DPLLRATIO_LDR_Pos)) /* Assigment of value for LDR in the OSCCTRL_DPLLRATIO register */
+#define OSCCTRL_DPLLRATIO_LDRFRAC_Pos         _UINT32_(16)                                         /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Fractional Part Position */
+#define OSCCTRL_DPLLRATIO_LDRFRAC_Msk         (_UINT32_(0x1F) << OSCCTRL_DPLLRATIO_LDRFRAC_Pos)    /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Fractional Part Mask */
+#define OSCCTRL_DPLLRATIO_LDRFRAC(value)      (OSCCTRL_DPLLRATIO_LDRFRAC_Msk & (_UINT32_(value) << OSCCTRL_DPLLRATIO_LDRFRAC_Pos)) /* Assigment of value for LDRFRAC in the OSCCTRL_DPLLRATIO register */
+#define OSCCTRL_DPLLRATIO_Msk                 _UINT32_(0x001F1FFF)                                 /* (OSCCTRL_DPLLRATIO) Register Mask  */
 
 
 /* -------- OSCCTRL_DPLLCTRLB : (OSCCTRL Offset: 0x08) (R/W 32) DPLL Control B -------- */
@@ -139,30 +151,6 @@
 #define OSCCTRL_DPLLCTRLB_Msk                 _UINT32_(0x07FFFFFF)                                 /* (OSCCTRL_DPLLCTRLB) Register Mask  */
 
 
-/* -------- OSCCTRL_DPLLRATIO : (OSCCTRL Offset: 0x04) (R/W 32) DPLL Ratio Control -------- */
-#define OSCCTRL_DPLLRATIO_RESETVALUE          _UINT32_(0x00)                                       /*  (OSCCTRL_DPLLRATIO) DPLL Ratio Control  Reset Value */
-
-#define OSCCTRL_DPLLRATIO_LDR_Pos             _UINT32_(0)                                          /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Position */
-#define OSCCTRL_DPLLRATIO_LDR_Msk             (_UINT32_(0x1FFF) << OSCCTRL_DPLLRATIO_LDR_Pos)      /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Mask */
-#define OSCCTRL_DPLLRATIO_LDR(value)          (OSCCTRL_DPLLRATIO_LDR_Msk & (_UINT32_(value) << OSCCTRL_DPLLRATIO_LDR_Pos)) /* Assigment of value for LDR in the OSCCTRL_DPLLRATIO register */
-#define OSCCTRL_DPLLRATIO_LDRFRAC_Pos         _UINT32_(16)                                         /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Fractional Part Position */
-#define OSCCTRL_DPLLRATIO_LDRFRAC_Msk         (_UINT32_(0x1F) << OSCCTRL_DPLLRATIO_LDRFRAC_Pos)    /* (OSCCTRL_DPLLRATIO) Loop Divider Ratio Fractional Part Mask */
-#define OSCCTRL_DPLLRATIO_LDRFRAC(value)      (OSCCTRL_DPLLRATIO_LDRFRAC_Msk & (_UINT32_(value) << OSCCTRL_DPLLRATIO_LDRFRAC_Pos)) /* Assigment of value for LDRFRAC in the OSCCTRL_DPLLRATIO register */
-#define OSCCTRL_DPLLRATIO_Msk                 _UINT32_(0x001F1FFF)                                 /* (OSCCTRL_DPLLRATIO) Register Mask  */
-
-
-/* -------- OSCCTRL_DPLLSTATUS : (OSCCTRL Offset: 0x10) ( R/ 32) DPLL Status -------- */
-#define OSCCTRL_DPLLSTATUS_RESETVALUE         _UINT32_(0x00)                                       /*  (OSCCTRL_DPLLSTATUS) DPLL Status  Reset Value */
-
-#define OSCCTRL_DPLLSTATUS_LOCK_Pos           _UINT32_(0)                                          /* (OSCCTRL_DPLLSTATUS) DPLL Lock Status Position */
-#define OSCCTRL_DPLLSTATUS_LOCK_Msk           (_UINT32_(0x1) << OSCCTRL_DPLLSTATUS_LOCK_Pos)       /* (OSCCTRL_DPLLSTATUS) DPLL Lock Status Mask */
-#define OSCCTRL_DPLLSTATUS_LOCK(value)        (OSCCTRL_DPLLSTATUS_LOCK_Msk & (_UINT32_(value) << OSCCTRL_DPLLSTATUS_LOCK_Pos)) /* Assigment of value for LOCK in the OSCCTRL_DPLLSTATUS register */
-#define OSCCTRL_DPLLSTATUS_CLKRDY_Pos         _UINT32_(1)                                          /* (OSCCTRL_DPLLSTATUS) DPLL Clock Ready Position */
-#define OSCCTRL_DPLLSTATUS_CLKRDY_Msk         (_UINT32_(0x1) << OSCCTRL_DPLLSTATUS_CLKRDY_Pos)     /* (OSCCTRL_DPLLSTATUS) DPLL Clock Ready Mask */
-#define OSCCTRL_DPLLSTATUS_CLKRDY(value)      (OSCCTRL_DPLLSTATUS_CLKRDY_Msk & (_UINT32_(value) << OSCCTRL_DPLLSTATUS_CLKRDY_Pos)) /* Assigment of value for CLKRDY in the OSCCTRL_DPLLSTATUS register */
-#define OSCCTRL_DPLLSTATUS_Msk                _UINT32_(0x00000003)                                 /* (OSCCTRL_DPLLSTATUS) Register Mask  */
-
-
 /* -------- OSCCTRL_DPLLSYNCBUSY : (OSCCTRL Offset: 0x0C) ( R/ 32) DPLL Synchronization Busy -------- */
 #define OSCCTRL_DPLLSYNCBUSY_RESETVALUE       _UINT32_(0x00)                                       /*  (OSCCTRL_DPLLSYNCBUSY) DPLL Synchronization Busy  Reset Value */
 
@@ -175,97 +163,16 @@
 #define OSCCTRL_DPLLSYNCBUSY_Msk              _UINT32_(0x00000006)                                 /* (OSCCTRL_DPLLSYNCBUSY) Register Mask  */
 
 
-/* -------- OSCCTRL_DFLLCTRLA : (OSCCTRL Offset: 0x1C) (R/W 8) DFLL48M Control A -------- */
-#define OSCCTRL_DFLLCTRLA_RESETVALUE          _UINT8_(0x82)                                        /*  (OSCCTRL_DFLLCTRLA) DFLL48M Control A  Reset Value */
+/* -------- OSCCTRL_DPLLSTATUS : (OSCCTRL Offset: 0x10) ( R/ 32) DPLL Status -------- */
+#define OSCCTRL_DPLLSTATUS_RESETVALUE         _UINT32_(0x00)                                       /*  (OSCCTRL_DPLLSTATUS) DPLL Status  Reset Value */
 
-#define OSCCTRL_DFLLCTRLA_ENABLE_Pos          _UINT8_(1)                                           /* (OSCCTRL_DFLLCTRLA) DFLL Enable Position */
-#define OSCCTRL_DFLLCTRLA_ENABLE_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLA_ENABLE_Pos)       /* (OSCCTRL_DFLLCTRLA) DFLL Enable Mask */
-#define OSCCTRL_DFLLCTRLA_ENABLE(value)       (OSCCTRL_DFLLCTRLA_ENABLE_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the OSCCTRL_DFLLCTRLA register */
-#define OSCCTRL_DFLLCTRLA_RUNSTDBY_Pos        _UINT8_(6)                                           /* (OSCCTRL_DFLLCTRLA) Run in Standby Position */
-#define OSCCTRL_DFLLCTRLA_RUNSTDBY_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLCTRLA_RUNSTDBY_Pos)     /* (OSCCTRL_DFLLCTRLA) Run in Standby Mask */
-#define OSCCTRL_DFLLCTRLA_RUNSTDBY(value)     (OSCCTRL_DFLLCTRLA_RUNSTDBY_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLA_RUNSTDBY_Pos)) /* Assigment of value for RUNSTDBY in the OSCCTRL_DFLLCTRLA register */
-#define OSCCTRL_DFLLCTRLA_ONDEMAND_Pos        _UINT8_(7)                                           /* (OSCCTRL_DFLLCTRLA) On Demand Control Position */
-#define OSCCTRL_DFLLCTRLA_ONDEMAND_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLCTRLA_ONDEMAND_Pos)     /* (OSCCTRL_DFLLCTRLA) On Demand Control Mask */
-#define OSCCTRL_DFLLCTRLA_ONDEMAND(value)     (OSCCTRL_DFLLCTRLA_ONDEMAND_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLA_ONDEMAND_Pos)) /* Assigment of value for ONDEMAND in the OSCCTRL_DFLLCTRLA register */
-#define OSCCTRL_DFLLCTRLA_Msk                 _UINT8_(0xC2)                                        /* (OSCCTRL_DFLLCTRLA) Register Mask  */
-
-
-/* -------- OSCCTRL_DFLLCTRLB : (OSCCTRL Offset: 0x20) (R/W 8) DFLL48M Control B -------- */
-#define OSCCTRL_DFLLCTRLB_RESETVALUE          _UINT8_(0x00)                                        /*  (OSCCTRL_DFLLCTRLB) DFLL48M Control B  Reset Value */
-
-#define OSCCTRL_DFLLCTRLB_MODE_Pos            _UINT8_(0)                                           /* (OSCCTRL_DFLLCTRLB) Operating Mode Selection Position */
-#define OSCCTRL_DFLLCTRLB_MODE_Msk            (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_MODE_Pos)         /* (OSCCTRL_DFLLCTRLB) Operating Mode Selection Mask */
-#define OSCCTRL_DFLLCTRLB_MODE(value)         (OSCCTRL_DFLLCTRLB_MODE_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_MODE_Pos)) /* Assigment of value for MODE in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_STABLE_Pos          _UINT8_(1)                                           /* (OSCCTRL_DFLLCTRLB) Stable DFLL Frequency Position */
-#define OSCCTRL_DFLLCTRLB_STABLE_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_STABLE_Pos)       /* (OSCCTRL_DFLLCTRLB) Stable DFLL Frequency Mask */
-#define OSCCTRL_DFLLCTRLB_STABLE(value)       (OSCCTRL_DFLLCTRLB_STABLE_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_STABLE_Pos)) /* Assigment of value for STABLE in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_LLAW_Pos            _UINT8_(2)                                           /* (OSCCTRL_DFLLCTRLB) Lose Lock After Wake Position */
-#define OSCCTRL_DFLLCTRLB_LLAW_Msk            (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_LLAW_Pos)         /* (OSCCTRL_DFLLCTRLB) Lose Lock After Wake Mask */
-#define OSCCTRL_DFLLCTRLB_LLAW(value)         (OSCCTRL_DFLLCTRLB_LLAW_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_LLAW_Pos)) /* Assigment of value for LLAW in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_USBCRM_Pos          _UINT8_(3)                                           /* (OSCCTRL_DFLLCTRLB) USB Clock Recovery Mode Position */
-#define OSCCTRL_DFLLCTRLB_USBCRM_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_USBCRM_Pos)       /* (OSCCTRL_DFLLCTRLB) USB Clock Recovery Mode Mask */
-#define OSCCTRL_DFLLCTRLB_USBCRM(value)       (OSCCTRL_DFLLCTRLB_USBCRM_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_USBCRM_Pos)) /* Assigment of value for USBCRM in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_CCDIS_Pos           _UINT8_(4)                                           /* (OSCCTRL_DFLLCTRLB) Chill Cycle Disable Position */
-#define OSCCTRL_DFLLCTRLB_CCDIS_Msk           (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_CCDIS_Pos)        /* (OSCCTRL_DFLLCTRLB) Chill Cycle Disable Mask */
-#define OSCCTRL_DFLLCTRLB_CCDIS(value)        (OSCCTRL_DFLLCTRLB_CCDIS_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_CCDIS_Pos)) /* Assigment of value for CCDIS in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_QLDIS_Pos           _UINT8_(5)                                           /* (OSCCTRL_DFLLCTRLB) Quick Lock Disable Position */
-#define OSCCTRL_DFLLCTRLB_QLDIS_Msk           (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_QLDIS_Pos)        /* (OSCCTRL_DFLLCTRLB) Quick Lock Disable Mask */
-#define OSCCTRL_DFLLCTRLB_QLDIS(value)        (OSCCTRL_DFLLCTRLB_QLDIS_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_QLDIS_Pos)) /* Assigment of value for QLDIS in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_BPLCKC_Pos          _UINT8_(6)                                           /* (OSCCTRL_DFLLCTRLB) Bypass Coarse Lock Position */
-#define OSCCTRL_DFLLCTRLB_BPLCKC_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_BPLCKC_Pos)       /* (OSCCTRL_DFLLCTRLB) Bypass Coarse Lock Mask */
-#define OSCCTRL_DFLLCTRLB_BPLCKC(value)       (OSCCTRL_DFLLCTRLB_BPLCKC_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_BPLCKC_Pos)) /* Assigment of value for BPLCKC in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_WAITLOCK_Pos        _UINT8_(7)                                           /* (OSCCTRL_DFLLCTRLB) Wait Lock Position */
-#define OSCCTRL_DFLLCTRLB_WAITLOCK_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_WAITLOCK_Pos)     /* (OSCCTRL_DFLLCTRLB) Wait Lock Mask */
-#define OSCCTRL_DFLLCTRLB_WAITLOCK(value)     (OSCCTRL_DFLLCTRLB_WAITLOCK_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_WAITLOCK_Pos)) /* Assigment of value for WAITLOCK in the OSCCTRL_DFLLCTRLB register */
-#define OSCCTRL_DFLLCTRLB_Msk                 _UINT8_(0xFF)                                        /* (OSCCTRL_DFLLCTRLB) Register Mask  */
-
-
-/* -------- OSCCTRL_DFLLMUL : (OSCCTRL Offset: 0x28) (R/W 32) DFLL48M Multiplier -------- */
-#define OSCCTRL_DFLLMUL_RESETVALUE            _UINT32_(0x00)                                       /*  (OSCCTRL_DFLLMUL) DFLL48M Multiplier  Reset Value */
-
-#define OSCCTRL_DFLLMUL_MUL_Pos               _UINT32_(0)                                          /* (OSCCTRL_DFLLMUL) DFLL Multiply Factor Position */
-#define OSCCTRL_DFLLMUL_MUL_Msk               (_UINT32_(0xFFFF) << OSCCTRL_DFLLMUL_MUL_Pos)        /* (OSCCTRL_DFLLMUL) DFLL Multiply Factor Mask */
-#define OSCCTRL_DFLLMUL_MUL(value)            (OSCCTRL_DFLLMUL_MUL_Msk & (_UINT32_(value) << OSCCTRL_DFLLMUL_MUL_Pos)) /* Assigment of value for MUL in the OSCCTRL_DFLLMUL register */
-#define OSCCTRL_DFLLMUL_FSTEP_Pos             _UINT32_(16)                                         /* (OSCCTRL_DFLLMUL) Fine Maximum Step Position */
-#define OSCCTRL_DFLLMUL_FSTEP_Msk             (_UINT32_(0xFF) << OSCCTRL_DFLLMUL_FSTEP_Pos)        /* (OSCCTRL_DFLLMUL) Fine Maximum Step Mask */
-#define OSCCTRL_DFLLMUL_FSTEP(value)          (OSCCTRL_DFLLMUL_FSTEP_Msk & (_UINT32_(value) << OSCCTRL_DFLLMUL_FSTEP_Pos)) /* Assigment of value for FSTEP in the OSCCTRL_DFLLMUL register */
-#define OSCCTRL_DFLLMUL_CSTEP_Pos             _UINT32_(26)                                         /* (OSCCTRL_DFLLMUL) Coarse Maximum Step Position */
-#define OSCCTRL_DFLLMUL_CSTEP_Msk             (_UINT32_(0x3F) << OSCCTRL_DFLLMUL_CSTEP_Pos)        /* (OSCCTRL_DFLLMUL) Coarse Maximum Step Mask */
-#define OSCCTRL_DFLLMUL_CSTEP(value)          (OSCCTRL_DFLLMUL_CSTEP_Msk & (_UINT32_(value) << OSCCTRL_DFLLMUL_CSTEP_Pos)) /* Assigment of value for CSTEP in the OSCCTRL_DFLLMUL register */
-#define OSCCTRL_DFLLMUL_Msk                   _UINT32_(0xFCFFFFFF)                                 /* (OSCCTRL_DFLLMUL) Register Mask  */
-
-
-/* -------- OSCCTRL_DFLLSYNC : (OSCCTRL Offset: 0x2C) (R/W 8) DFLL48M Synchronization -------- */
-#define OSCCTRL_DFLLSYNC_RESETVALUE           _UINT8_(0x00)                                        /*  (OSCCTRL_DFLLSYNC) DFLL48M Synchronization  Reset Value */
-
-#define OSCCTRL_DFLLSYNC_ENABLE_Pos           _UINT8_(1)                                           /* (OSCCTRL_DFLLSYNC) ENABLE Synchronization Busy Position */
-#define OSCCTRL_DFLLSYNC_ENABLE_Msk           (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_ENABLE_Pos)        /* (OSCCTRL_DFLLSYNC) ENABLE Synchronization Busy Mask */
-#define OSCCTRL_DFLLSYNC_ENABLE(value)        (OSCCTRL_DFLLSYNC_ENABLE_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_ENABLE_Pos)) /* Assigment of value for ENABLE in the OSCCTRL_DFLLSYNC register */
-#define OSCCTRL_DFLLSYNC_DFLLCTRLB_Pos        _UINT8_(2)                                           /* (OSCCTRL_DFLLSYNC) DFLLCTRLB Synchronization Busy Position */
-#define OSCCTRL_DFLLSYNC_DFLLCTRLB_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_DFLLCTRLB_Pos)     /* (OSCCTRL_DFLLSYNC) DFLLCTRLB Synchronization Busy Mask */
-#define OSCCTRL_DFLLSYNC_DFLLCTRLB(value)     (OSCCTRL_DFLLSYNC_DFLLCTRLB_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_DFLLCTRLB_Pos)) /* Assigment of value for DFLLCTRLB in the OSCCTRL_DFLLSYNC register */
-#define OSCCTRL_DFLLSYNC_DFLLVAL_Pos          _UINT8_(3)                                           /* (OSCCTRL_DFLLSYNC) DFLLVAL Synchronization Busy Position */
-#define OSCCTRL_DFLLSYNC_DFLLVAL_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_DFLLVAL_Pos)       /* (OSCCTRL_DFLLSYNC) DFLLVAL Synchronization Busy Mask */
-#define OSCCTRL_DFLLSYNC_DFLLVAL(value)       (OSCCTRL_DFLLSYNC_DFLLVAL_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_DFLLVAL_Pos)) /* Assigment of value for DFLLVAL in the OSCCTRL_DFLLSYNC register */
-#define OSCCTRL_DFLLSYNC_DFLLMUL_Pos          _UINT8_(4)                                           /* (OSCCTRL_DFLLSYNC) DFLLMUL Synchronization Busy Position */
-#define OSCCTRL_DFLLSYNC_DFLLMUL_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_DFLLMUL_Pos)       /* (OSCCTRL_DFLLSYNC) DFLLMUL Synchronization Busy Mask */
-#define OSCCTRL_DFLLSYNC_DFLLMUL(value)       (OSCCTRL_DFLLSYNC_DFLLMUL_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_DFLLMUL_Pos)) /* Assigment of value for DFLLMUL in the OSCCTRL_DFLLSYNC register */
-#define OSCCTRL_DFLLSYNC_Msk                  _UINT8_(0x1E)                                        /* (OSCCTRL_DFLLSYNC) Register Mask  */
-
-
-/* -------- OSCCTRL_DFLLVAL : (OSCCTRL Offset: 0x24) (R/W 32) DFLL48M Value -------- */
-#define OSCCTRL_DFLLVAL_RESETVALUE            _UINT32_(0x00)                                       /*  (OSCCTRL_DFLLVAL) DFLL48M Value  Reset Value */
-
-#define OSCCTRL_DFLLVAL_FINE_Pos              _UINT32_(0)                                          /* (OSCCTRL_DFLLVAL) Fine Value Position */
-#define OSCCTRL_DFLLVAL_FINE_Msk              (_UINT32_(0xFF) << OSCCTRL_DFLLVAL_FINE_Pos)         /* (OSCCTRL_DFLLVAL) Fine Value Mask */
-#define OSCCTRL_DFLLVAL_FINE(value)           (OSCCTRL_DFLLVAL_FINE_Msk & (_UINT32_(value) << OSCCTRL_DFLLVAL_FINE_Pos)) /* Assigment of value for FINE in the OSCCTRL_DFLLVAL register */
-#define OSCCTRL_DFLLVAL_COARSE_Pos            _UINT32_(10)                                         /* (OSCCTRL_DFLLVAL) Coarse Value Position */
-#define OSCCTRL_DFLLVAL_COARSE_Msk            (_UINT32_(0x3F) << OSCCTRL_DFLLVAL_COARSE_Pos)       /* (OSCCTRL_DFLLVAL) Coarse Value Mask */
-#define OSCCTRL_DFLLVAL_COARSE(value)         (OSCCTRL_DFLLVAL_COARSE_Msk & (_UINT32_(value) << OSCCTRL_DFLLVAL_COARSE_Pos)) /* Assigment of value for COARSE in the OSCCTRL_DFLLVAL register */
-#define OSCCTRL_DFLLVAL_DIFF_Pos              _UINT32_(16)                                         /* (OSCCTRL_DFLLVAL) Multiplication Ratio Difference Position */
-#define OSCCTRL_DFLLVAL_DIFF_Msk              (_UINT32_(0xFFFF) << OSCCTRL_DFLLVAL_DIFF_Pos)       /* (OSCCTRL_DFLLVAL) Multiplication Ratio Difference Mask */
-#define OSCCTRL_DFLLVAL_DIFF(value)           (OSCCTRL_DFLLVAL_DIFF_Msk & (_UINT32_(value) << OSCCTRL_DFLLVAL_DIFF_Pos)) /* Assigment of value for DIFF in the OSCCTRL_DFLLVAL register */
-#define OSCCTRL_DFLLVAL_Msk                   _UINT32_(0xFFFFFCFF)                                 /* (OSCCTRL_DFLLVAL) Register Mask  */
+#define OSCCTRL_DPLLSTATUS_LOCK_Pos           _UINT32_(0)                                          /* (OSCCTRL_DPLLSTATUS) DPLL Lock Status Position */
+#define OSCCTRL_DPLLSTATUS_LOCK_Msk           (_UINT32_(0x1) << OSCCTRL_DPLLSTATUS_LOCK_Pos)       /* (OSCCTRL_DPLLSTATUS) DPLL Lock Status Mask */
+#define OSCCTRL_DPLLSTATUS_LOCK(value)        (OSCCTRL_DPLLSTATUS_LOCK_Msk & (_UINT32_(value) << OSCCTRL_DPLLSTATUS_LOCK_Pos)) /* Assigment of value for LOCK in the OSCCTRL_DPLLSTATUS register */
+#define OSCCTRL_DPLLSTATUS_CLKRDY_Pos         _UINT32_(1)                                          /* (OSCCTRL_DPLLSTATUS) DPLL Clock Ready Position */
+#define OSCCTRL_DPLLSTATUS_CLKRDY_Msk         (_UINT32_(0x1) << OSCCTRL_DPLLSTATUS_CLKRDY_Pos)     /* (OSCCTRL_DPLLSTATUS) DPLL Clock Ready Mask */
+#define OSCCTRL_DPLLSTATUS_CLKRDY(value)      (OSCCTRL_DPLLSTATUS_CLKRDY_Msk & (_UINT32_(value) << OSCCTRL_DPLLSTATUS_CLKRDY_Pos)) /* Assigment of value for CLKRDY in the OSCCTRL_DPLLSTATUS register */
+#define OSCCTRL_DPLLSTATUS_Msk                _UINT32_(0x00000003)                                 /* (OSCCTRL_DPLLSTATUS) Register Mask  */
 
 
 /* -------- OSCCTRL_EVCTRL : (OSCCTRL Offset: 0x00) (R/W 8) Event Control -------- */
@@ -628,17 +535,105 @@
 #define OSCCTRL_XOSCCTRL_Msk                  _UINT32_(0x0FF3FFC6)                                 /* (OSCCTRL_XOSCCTRL) Register Mask  */
 
 
+/* -------- OSCCTRL_DFLLCTRLA : (OSCCTRL Offset: 0x1C) (R/W 8) DFLL48M Control A -------- */
+#define OSCCTRL_DFLLCTRLA_RESETVALUE          _UINT8_(0x82)                                        /*  (OSCCTRL_DFLLCTRLA) DFLL48M Control A  Reset Value */
+
+#define OSCCTRL_DFLLCTRLA_ENABLE_Pos          _UINT8_(1)                                           /* (OSCCTRL_DFLLCTRLA) DFLL Enable Position */
+#define OSCCTRL_DFLLCTRLA_ENABLE_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLA_ENABLE_Pos)       /* (OSCCTRL_DFLLCTRLA) DFLL Enable Mask */
+#define OSCCTRL_DFLLCTRLA_ENABLE(value)       (OSCCTRL_DFLLCTRLA_ENABLE_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the OSCCTRL_DFLLCTRLA register */
+#define OSCCTRL_DFLLCTRLA_RUNSTDBY_Pos        _UINT8_(6)                                           /* (OSCCTRL_DFLLCTRLA) Run in Standby Position */
+#define OSCCTRL_DFLLCTRLA_RUNSTDBY_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLCTRLA_RUNSTDBY_Pos)     /* (OSCCTRL_DFLLCTRLA) Run in Standby Mask */
+#define OSCCTRL_DFLLCTRLA_RUNSTDBY(value)     (OSCCTRL_DFLLCTRLA_RUNSTDBY_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLA_RUNSTDBY_Pos)) /* Assigment of value for RUNSTDBY in the OSCCTRL_DFLLCTRLA register */
+#define OSCCTRL_DFLLCTRLA_ONDEMAND_Pos        _UINT8_(7)                                           /* (OSCCTRL_DFLLCTRLA) On Demand Control Position */
+#define OSCCTRL_DFLLCTRLA_ONDEMAND_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLCTRLA_ONDEMAND_Pos)     /* (OSCCTRL_DFLLCTRLA) On Demand Control Mask */
+#define OSCCTRL_DFLLCTRLA_ONDEMAND(value)     (OSCCTRL_DFLLCTRLA_ONDEMAND_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLA_ONDEMAND_Pos)) /* Assigment of value for ONDEMAND in the OSCCTRL_DFLLCTRLA register */
+#define OSCCTRL_DFLLCTRLA_Msk                 _UINT8_(0xC2)                                        /* (OSCCTRL_DFLLCTRLA) Register Mask  */
+
+
+/* -------- OSCCTRL_DFLLCTRLB : (OSCCTRL Offset: 0x20) (R/W 8) DFLL48M Control B -------- */
+#define OSCCTRL_DFLLCTRLB_RESETVALUE          _UINT8_(0x00)                                        /*  (OSCCTRL_DFLLCTRLB) DFLL48M Control B  Reset Value */
+
+#define OSCCTRL_DFLLCTRLB_MODE_Pos            _UINT8_(0)                                           /* (OSCCTRL_DFLLCTRLB) Operating Mode Selection Position */
+#define OSCCTRL_DFLLCTRLB_MODE_Msk            (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_MODE_Pos)         /* (OSCCTRL_DFLLCTRLB) Operating Mode Selection Mask */
+#define OSCCTRL_DFLLCTRLB_MODE(value)         (OSCCTRL_DFLLCTRLB_MODE_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_MODE_Pos)) /* Assigment of value for MODE in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_STABLE_Pos          _UINT8_(1)                                           /* (OSCCTRL_DFLLCTRLB) Stable DFLL Frequency Position */
+#define OSCCTRL_DFLLCTRLB_STABLE_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_STABLE_Pos)       /* (OSCCTRL_DFLLCTRLB) Stable DFLL Frequency Mask */
+#define OSCCTRL_DFLLCTRLB_STABLE(value)       (OSCCTRL_DFLLCTRLB_STABLE_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_STABLE_Pos)) /* Assigment of value for STABLE in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_LLAW_Pos            _UINT8_(2)                                           /* (OSCCTRL_DFLLCTRLB) Lose Lock After Wake Position */
+#define OSCCTRL_DFLLCTRLB_LLAW_Msk            (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_LLAW_Pos)         /* (OSCCTRL_DFLLCTRLB) Lose Lock After Wake Mask */
+#define OSCCTRL_DFLLCTRLB_LLAW(value)         (OSCCTRL_DFLLCTRLB_LLAW_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_LLAW_Pos)) /* Assigment of value for LLAW in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_USBCRM_Pos          _UINT8_(3)                                           /* (OSCCTRL_DFLLCTRLB) USB Clock Recovery Mode Position */
+#define OSCCTRL_DFLLCTRLB_USBCRM_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_USBCRM_Pos)       /* (OSCCTRL_DFLLCTRLB) USB Clock Recovery Mode Mask */
+#define OSCCTRL_DFLLCTRLB_USBCRM(value)       (OSCCTRL_DFLLCTRLB_USBCRM_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_USBCRM_Pos)) /* Assigment of value for USBCRM in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_CCDIS_Pos           _UINT8_(4)                                           /* (OSCCTRL_DFLLCTRLB) Chill Cycle Disable Position */
+#define OSCCTRL_DFLLCTRLB_CCDIS_Msk           (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_CCDIS_Pos)        /* (OSCCTRL_DFLLCTRLB) Chill Cycle Disable Mask */
+#define OSCCTRL_DFLLCTRLB_CCDIS(value)        (OSCCTRL_DFLLCTRLB_CCDIS_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_CCDIS_Pos)) /* Assigment of value for CCDIS in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_QLDIS_Pos           _UINT8_(5)                                           /* (OSCCTRL_DFLLCTRLB) Quick Lock Disable Position */
+#define OSCCTRL_DFLLCTRLB_QLDIS_Msk           (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_QLDIS_Pos)        /* (OSCCTRL_DFLLCTRLB) Quick Lock Disable Mask */
+#define OSCCTRL_DFLLCTRLB_QLDIS(value)        (OSCCTRL_DFLLCTRLB_QLDIS_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_QLDIS_Pos)) /* Assigment of value for QLDIS in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_BPLCKC_Pos          _UINT8_(6)                                           /* (OSCCTRL_DFLLCTRLB) Bypass Coarse Lock Position */
+#define OSCCTRL_DFLLCTRLB_BPLCKC_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_BPLCKC_Pos)       /* (OSCCTRL_DFLLCTRLB) Bypass Coarse Lock Mask */
+#define OSCCTRL_DFLLCTRLB_BPLCKC(value)       (OSCCTRL_DFLLCTRLB_BPLCKC_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_BPLCKC_Pos)) /* Assigment of value for BPLCKC in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_WAITLOCK_Pos        _UINT8_(7)                                           /* (OSCCTRL_DFLLCTRLB) Wait Lock Position */
+#define OSCCTRL_DFLLCTRLB_WAITLOCK_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLCTRLB_WAITLOCK_Pos)     /* (OSCCTRL_DFLLCTRLB) Wait Lock Mask */
+#define OSCCTRL_DFLLCTRLB_WAITLOCK(value)     (OSCCTRL_DFLLCTRLB_WAITLOCK_Msk & (_UINT8_(value) << OSCCTRL_DFLLCTRLB_WAITLOCK_Pos)) /* Assigment of value for WAITLOCK in the OSCCTRL_DFLLCTRLB register */
+#define OSCCTRL_DFLLCTRLB_Msk                 _UINT8_(0xFF)                                        /* (OSCCTRL_DFLLCTRLB) Register Mask  */
+
+
+/* -------- OSCCTRL_DFLLVAL : (OSCCTRL Offset: 0x24) (R/W 32) DFLL48M Value -------- */
+#define OSCCTRL_DFLLVAL_RESETVALUE            _UINT32_(0x00)                                       /*  (OSCCTRL_DFLLVAL) DFLL48M Value  Reset Value */
+
+#define OSCCTRL_DFLLVAL_FINE_Pos              _UINT32_(0)                                          /* (OSCCTRL_DFLLVAL) Fine Value Position */
+#define OSCCTRL_DFLLVAL_FINE_Msk              (_UINT32_(0xFF) << OSCCTRL_DFLLVAL_FINE_Pos)         /* (OSCCTRL_DFLLVAL) Fine Value Mask */
+#define OSCCTRL_DFLLVAL_FINE(value)           (OSCCTRL_DFLLVAL_FINE_Msk & (_UINT32_(value) << OSCCTRL_DFLLVAL_FINE_Pos)) /* Assigment of value for FINE in the OSCCTRL_DFLLVAL register */
+#define OSCCTRL_DFLLVAL_COARSE_Pos            _UINT32_(10)                                         /* (OSCCTRL_DFLLVAL) Coarse Value Position */
+#define OSCCTRL_DFLLVAL_COARSE_Msk            (_UINT32_(0x3F) << OSCCTRL_DFLLVAL_COARSE_Pos)       /* (OSCCTRL_DFLLVAL) Coarse Value Mask */
+#define OSCCTRL_DFLLVAL_COARSE(value)         (OSCCTRL_DFLLVAL_COARSE_Msk & (_UINT32_(value) << OSCCTRL_DFLLVAL_COARSE_Pos)) /* Assigment of value for COARSE in the OSCCTRL_DFLLVAL register */
+#define OSCCTRL_DFLLVAL_DIFF_Pos              _UINT32_(16)                                         /* (OSCCTRL_DFLLVAL) Multiplication Ratio Difference Position */
+#define OSCCTRL_DFLLVAL_DIFF_Msk              (_UINT32_(0xFFFF) << OSCCTRL_DFLLVAL_DIFF_Pos)       /* (OSCCTRL_DFLLVAL) Multiplication Ratio Difference Mask */
+#define OSCCTRL_DFLLVAL_DIFF(value)           (OSCCTRL_DFLLVAL_DIFF_Msk & (_UINT32_(value) << OSCCTRL_DFLLVAL_DIFF_Pos)) /* Assigment of value for DIFF in the OSCCTRL_DFLLVAL register */
+#define OSCCTRL_DFLLVAL_Msk                   _UINT32_(0xFFFFFCFF)                                 /* (OSCCTRL_DFLLVAL) Register Mask  */
+
+
+/* -------- OSCCTRL_DFLLMUL : (OSCCTRL Offset: 0x28) (R/W 32) DFLL48M Multiplier -------- */
+#define OSCCTRL_DFLLMUL_RESETVALUE            _UINT32_(0x00)                                       /*  (OSCCTRL_DFLLMUL) DFLL48M Multiplier  Reset Value */
+
+#define OSCCTRL_DFLLMUL_MUL_Pos               _UINT32_(0)                                          /* (OSCCTRL_DFLLMUL) DFLL Multiply Factor Position */
+#define OSCCTRL_DFLLMUL_MUL_Msk               (_UINT32_(0xFFFF) << OSCCTRL_DFLLMUL_MUL_Pos)        /* (OSCCTRL_DFLLMUL) DFLL Multiply Factor Mask */
+#define OSCCTRL_DFLLMUL_MUL(value)            (OSCCTRL_DFLLMUL_MUL_Msk & (_UINT32_(value) << OSCCTRL_DFLLMUL_MUL_Pos)) /* Assigment of value for MUL in the OSCCTRL_DFLLMUL register */
+#define OSCCTRL_DFLLMUL_FSTEP_Pos             _UINT32_(16)                                         /* (OSCCTRL_DFLLMUL) Fine Maximum Step Position */
+#define OSCCTRL_DFLLMUL_FSTEP_Msk             (_UINT32_(0xFF) << OSCCTRL_DFLLMUL_FSTEP_Pos)        /* (OSCCTRL_DFLLMUL) Fine Maximum Step Mask */
+#define OSCCTRL_DFLLMUL_FSTEP(value)          (OSCCTRL_DFLLMUL_FSTEP_Msk & (_UINT32_(value) << OSCCTRL_DFLLMUL_FSTEP_Pos)) /* Assigment of value for FSTEP in the OSCCTRL_DFLLMUL register */
+#define OSCCTRL_DFLLMUL_CSTEP_Pos             _UINT32_(26)                                         /* (OSCCTRL_DFLLMUL) Coarse Maximum Step Position */
+#define OSCCTRL_DFLLMUL_CSTEP_Msk             (_UINT32_(0x3F) << OSCCTRL_DFLLMUL_CSTEP_Pos)        /* (OSCCTRL_DFLLMUL) Coarse Maximum Step Mask */
+#define OSCCTRL_DFLLMUL_CSTEP(value)          (OSCCTRL_DFLLMUL_CSTEP_Msk & (_UINT32_(value) << OSCCTRL_DFLLMUL_CSTEP_Pos)) /* Assigment of value for CSTEP in the OSCCTRL_DFLLMUL register */
+#define OSCCTRL_DFLLMUL_Msk                   _UINT32_(0xFCFFFFFF)                                 /* (OSCCTRL_DFLLMUL) Register Mask  */
+
+
+/* -------- OSCCTRL_DFLLSYNC : (OSCCTRL Offset: 0x2C) (R/W 8) DFLL48M Synchronization -------- */
+#define OSCCTRL_DFLLSYNC_RESETVALUE           _UINT8_(0x00)                                        /*  (OSCCTRL_DFLLSYNC) DFLL48M Synchronization  Reset Value */
+
+#define OSCCTRL_DFLLSYNC_ENABLE_Pos           _UINT8_(1)                                           /* (OSCCTRL_DFLLSYNC) ENABLE Synchronization Busy Position */
+#define OSCCTRL_DFLLSYNC_ENABLE_Msk           (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_ENABLE_Pos)        /* (OSCCTRL_DFLLSYNC) ENABLE Synchronization Busy Mask */
+#define OSCCTRL_DFLLSYNC_ENABLE(value)        (OSCCTRL_DFLLSYNC_ENABLE_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_ENABLE_Pos)) /* Assigment of value for ENABLE in the OSCCTRL_DFLLSYNC register */
+#define OSCCTRL_DFLLSYNC_DFLLCTRLB_Pos        _UINT8_(2)                                           /* (OSCCTRL_DFLLSYNC) DFLLCTRLB Synchronization Busy Position */
+#define OSCCTRL_DFLLSYNC_DFLLCTRLB_Msk        (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_DFLLCTRLB_Pos)     /* (OSCCTRL_DFLLSYNC) DFLLCTRLB Synchronization Busy Mask */
+#define OSCCTRL_DFLLSYNC_DFLLCTRLB(value)     (OSCCTRL_DFLLSYNC_DFLLCTRLB_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_DFLLCTRLB_Pos)) /* Assigment of value for DFLLCTRLB in the OSCCTRL_DFLLSYNC register */
+#define OSCCTRL_DFLLSYNC_DFLLVAL_Pos          _UINT8_(3)                                           /* (OSCCTRL_DFLLSYNC) DFLLVAL Synchronization Busy Position */
+#define OSCCTRL_DFLLSYNC_DFLLVAL_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_DFLLVAL_Pos)       /* (OSCCTRL_DFLLSYNC) DFLLVAL Synchronization Busy Mask */
+#define OSCCTRL_DFLLSYNC_DFLLVAL(value)       (OSCCTRL_DFLLSYNC_DFLLVAL_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_DFLLVAL_Pos)) /* Assigment of value for DFLLVAL in the OSCCTRL_DFLLSYNC register */
+#define OSCCTRL_DFLLSYNC_DFLLMUL_Pos          _UINT8_(4)                                           /* (OSCCTRL_DFLLSYNC) DFLLMUL Synchronization Busy Position */
+#define OSCCTRL_DFLLSYNC_DFLLMUL_Msk          (_UINT8_(0x1) << OSCCTRL_DFLLSYNC_DFLLMUL_Pos)       /* (OSCCTRL_DFLLSYNC) DFLLMUL Synchronization Busy Mask */
+#define OSCCTRL_DFLLSYNC_DFLLMUL(value)       (OSCCTRL_DFLLSYNC_DFLLMUL_Msk & (_UINT8_(value) << OSCCTRL_DFLLSYNC_DFLLMUL_Pos)) /* Assigment of value for DFLLMUL in the OSCCTRL_DFLLSYNC register */
+#define OSCCTRL_DFLLSYNC_Msk                  _UINT8_(0x1E)                                        /* (OSCCTRL_DFLLSYNC) Register Mask  */
+
+
 /** \brief OSCCTRL register offsets definitions */
 #define OSCCTRL_DPLLCTRLA_REG_OFST     _UINT32_(0x00)      /* (OSCCTRL_DPLLCTRLA) DPLL Control A Offset */
-#define OSCCTRL_DPLLCTRLB_REG_OFST     _UINT32_(0x08)      /* (OSCCTRL_DPLLCTRLB) DPLL Control B Offset */
 #define OSCCTRL_DPLLRATIO_REG_OFST     _UINT32_(0x04)      /* (OSCCTRL_DPLLRATIO) DPLL Ratio Control Offset */
-#define OSCCTRL_DPLLSTATUS_REG_OFST    _UINT32_(0x10)      /* (OSCCTRL_DPLLSTATUS) DPLL Status Offset */
+#define OSCCTRL_DPLLCTRLB_REG_OFST     _UINT32_(0x08)      /* (OSCCTRL_DPLLCTRLB) DPLL Control B Offset */
 #define OSCCTRL_DPLLSYNCBUSY_REG_OFST  _UINT32_(0x0C)      /* (OSCCTRL_DPLLSYNCBUSY) DPLL Synchronization Busy Offset */
-#define OSCCTRL_DFLLCTRLA_REG_OFST     _UINT32_(0x1C)      /* (OSCCTRL_DFLLCTRLA) DFLL48M Control A Offset */
-#define OSCCTRL_DFLLCTRLB_REG_OFST     _UINT32_(0x20)      /* (OSCCTRL_DFLLCTRLB) DFLL48M Control B Offset */
-#define OSCCTRL_DFLLMUL_REG_OFST       _UINT32_(0x28)      /* (OSCCTRL_DFLLMUL) DFLL48M Multiplier Offset */
-#define OSCCTRL_DFLLSYNC_REG_OFST      _UINT32_(0x2C)      /* (OSCCTRL_DFLLSYNC) DFLL48M Synchronization Offset */
-#define OSCCTRL_DFLLVAL_REG_OFST       _UINT32_(0x24)      /* (OSCCTRL_DFLLVAL) DFLL48M Value Offset */
+#define OSCCTRL_DPLLSTATUS_REG_OFST    _UINT32_(0x10)      /* (OSCCTRL_DPLLSTATUS) DPLL Status Offset */
 #define OSCCTRL_EVCTRL_REG_OFST        _UINT32_(0x00)      /* (OSCCTRL_EVCTRL) Event Control Offset */
 #define OSCCTRL_INTENCLR_REG_OFST      _UINT32_(0x04)      /* (OSCCTRL_INTENCLR) Interrupt Enable Clear Offset */
 #define OSCCTRL_INTENSET_REG_OFST      _UINT32_(0x08)      /* (OSCCTRL_INTENSET) Interrupt Enable Set Offset */
@@ -647,6 +642,11 @@
 #define OSCCTRL_XOSCCTRL_REG_OFST      _UINT32_(0x14)      /* (OSCCTRL_XOSCCTRL) External Multipurpose Crystal Oscillator Control Offset */
 #define OSCCTRL_XOSCCTRL0_REG_OFST     _UINT32_(0x14)      /* (OSCCTRL_XOSCCTRL0) External Multipurpose Crystal Oscillator Control Offset */
 #define OSCCTRL_XOSCCTRL1_REG_OFST     _UINT32_(0x18)      /* (OSCCTRL_XOSCCTRL1) External Multipurpose Crystal Oscillator Control Offset */
+#define OSCCTRL_DFLLCTRLA_REG_OFST     _UINT32_(0x1C)      /* (OSCCTRL_DFLLCTRLA) DFLL48M Control A Offset */
+#define OSCCTRL_DFLLCTRLB_REG_OFST     _UINT32_(0x20)      /* (OSCCTRL_DFLLCTRLB) DFLL48M Control B Offset */
+#define OSCCTRL_DFLLVAL_REG_OFST       _UINT32_(0x24)      /* (OSCCTRL_DFLLVAL) DFLL48M Value Offset */
+#define OSCCTRL_DFLLMUL_REG_OFST       _UINT32_(0x28)      /* (OSCCTRL_DFLLMUL) DFLL48M Multiplier Offset */
+#define OSCCTRL_DFLLSYNC_REG_OFST      _UINT32_(0x2C)      /* (OSCCTRL_DFLLSYNC) DFLL48M Synchronization Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief DPLL register API structure */

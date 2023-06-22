@@ -1,7 +1,7 @@
 /*
  * Component description for TC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,94 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_TC_COMPONENT_H_
 #define _PIC32CXSG41_TC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR TC                                           */
 /* ************************************************************************** */
-
-/* -------- TC_COUNT8_CC : (TC Offset: 0x1C) (R/W 8) COUNT8 Compare and Capture -------- */
-#define TC_COUNT8_CC_RESETVALUE               _UINT8_(0x00)                                        /*  (TC_COUNT8_CC) COUNT8 Compare and Capture  Reset Value */
-
-#define TC_COUNT8_CC_CC_Pos                   _UINT8_(0)                                           /* (TC_COUNT8_CC) Counter/Compare Value Position */
-#define TC_COUNT8_CC_CC_Msk                   (_UINT8_(0xFF) << TC_COUNT8_CC_CC_Pos)               /* (TC_COUNT8_CC) Counter/Compare Value Mask */
-#define TC_COUNT8_CC_CC(value)                (TC_COUNT8_CC_CC_Msk & (_UINT8_(value) << TC_COUNT8_CC_CC_Pos)) /* Assigment of value for CC in the TC_COUNT8_CC register */
-#define TC_COUNT8_CC_Msk                      _UINT8_(0xFF)                                        /* (TC_COUNT8_CC) Register Mask  */
-
-
-/* -------- TC_COUNT16_CC : (TC Offset: 0x1C) (R/W 16) COUNT16 Compare and Capture -------- */
-#define TC_COUNT16_CC_RESETVALUE              _UINT16_(0x00)                                       /*  (TC_COUNT16_CC) COUNT16 Compare and Capture  Reset Value */
-
-#define TC_COUNT16_CC_CC_Pos                  _UINT16_(0)                                          /* (TC_COUNT16_CC) Counter/Compare Value Position */
-#define TC_COUNT16_CC_CC_Msk                  (_UINT16_(0xFFFF) << TC_COUNT16_CC_CC_Pos)           /* (TC_COUNT16_CC) Counter/Compare Value Mask */
-#define TC_COUNT16_CC_CC(value)               (TC_COUNT16_CC_CC_Msk & (_UINT16_(value) << TC_COUNT16_CC_CC_Pos)) /* Assigment of value for CC in the TC_COUNT16_CC register */
-#define TC_COUNT16_CC_Msk                     _UINT16_(0xFFFF)                                     /* (TC_COUNT16_CC) Register Mask  */
-
-
-/* -------- TC_COUNT32_CC : (TC Offset: 0x1C) (R/W 32) COUNT32 Compare and Capture -------- */
-#define TC_COUNT32_CC_RESETVALUE              _UINT32_(0x00)                                       /*  (TC_COUNT32_CC) COUNT32 Compare and Capture  Reset Value */
-
-#define TC_COUNT32_CC_CC_Pos                  _UINT32_(0)                                          /* (TC_COUNT32_CC) Counter/Compare Value Position */
-#define TC_COUNT32_CC_CC_Msk                  (_UINT32_(0xFFFFFFFF) << TC_COUNT32_CC_CC_Pos)       /* (TC_COUNT32_CC) Counter/Compare Value Mask */
-#define TC_COUNT32_CC_CC(value)               (TC_COUNT32_CC_CC_Msk & (_UINT32_(value) << TC_COUNT32_CC_CC_Pos)) /* Assigment of value for CC in the TC_COUNT32_CC register */
-#define TC_COUNT32_CC_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (TC_COUNT32_CC) Register Mask  */
-
-
-/* -------- TC_COUNT8_CCBUF : (TC Offset: 0x30) (R/W 8) COUNT8 Compare and Capture Buffer -------- */
-#define TC_COUNT8_CCBUF_RESETVALUE            _UINT8_(0x00)                                        /*  (TC_COUNT8_CCBUF) COUNT8 Compare and Capture Buffer  Reset Value */
-
-#define TC_COUNT8_CCBUF_CCBUF_Pos             _UINT8_(0)                                           /* (TC_COUNT8_CCBUF) Counter/Compare Buffer Value Position */
-#define TC_COUNT8_CCBUF_CCBUF_Msk             (_UINT8_(0xFF) << TC_COUNT8_CCBUF_CCBUF_Pos)         /* (TC_COUNT8_CCBUF) Counter/Compare Buffer Value Mask */
-#define TC_COUNT8_CCBUF_CCBUF(value)          (TC_COUNT8_CCBUF_CCBUF_Msk & (_UINT8_(value) << TC_COUNT8_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TC_COUNT8_CCBUF register */
-#define TC_COUNT8_CCBUF_Msk                   _UINT8_(0xFF)                                        /* (TC_COUNT8_CCBUF) Register Mask  */
-
-
-/* -------- TC_COUNT16_CCBUF : (TC Offset: 0x30) (R/W 16) COUNT16 Compare and Capture Buffer -------- */
-#define TC_COUNT16_CCBUF_RESETVALUE           _UINT16_(0x00)                                       /*  (TC_COUNT16_CCBUF) COUNT16 Compare and Capture Buffer  Reset Value */
-
-#define TC_COUNT16_CCBUF_CCBUF_Pos            _UINT16_(0)                                          /* (TC_COUNT16_CCBUF) Counter/Compare Buffer Value Position */
-#define TC_COUNT16_CCBUF_CCBUF_Msk            (_UINT16_(0xFFFF) << TC_COUNT16_CCBUF_CCBUF_Pos)     /* (TC_COUNT16_CCBUF) Counter/Compare Buffer Value Mask */
-#define TC_COUNT16_CCBUF_CCBUF(value)         (TC_COUNT16_CCBUF_CCBUF_Msk & (_UINT16_(value) << TC_COUNT16_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TC_COUNT16_CCBUF register */
-#define TC_COUNT16_CCBUF_Msk                  _UINT16_(0xFFFF)                                     /* (TC_COUNT16_CCBUF) Register Mask  */
-
-
-/* -------- TC_COUNT32_CCBUF : (TC Offset: 0x30) (R/W 32) COUNT32 Compare and Capture Buffer -------- */
-#define TC_COUNT32_CCBUF_RESETVALUE           _UINT32_(0x00)                                       /*  (TC_COUNT32_CCBUF) COUNT32 Compare and Capture Buffer  Reset Value */
-
-#define TC_COUNT32_CCBUF_CCBUF_Pos            _UINT32_(0)                                          /* (TC_COUNT32_CCBUF) Counter/Compare Buffer Value Position */
-#define TC_COUNT32_CCBUF_CCBUF_Msk            (_UINT32_(0xFFFFFFFF) << TC_COUNT32_CCBUF_CCBUF_Pos) /* (TC_COUNT32_CCBUF) Counter/Compare Buffer Value Mask */
-#define TC_COUNT32_CCBUF_CCBUF(value)         (TC_COUNT32_CCBUF_CCBUF_Msk & (_UINT32_(value) << TC_COUNT32_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TC_COUNT32_CCBUF register */
-#define TC_COUNT32_CCBUF_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (TC_COUNT32_CCBUF) Register Mask  */
-
-
-/* -------- TC_COUNT8_COUNT : (TC Offset: 0x14) (R/W 8) COUNT8 Count -------- */
-#define TC_COUNT8_COUNT_RESETVALUE            _UINT8_(0x00)                                        /*  (TC_COUNT8_COUNT) COUNT8 Count  Reset Value */
-
-#define TC_COUNT8_COUNT_COUNT_Pos             _UINT8_(0)                                           /* (TC_COUNT8_COUNT) Counter Value Position */
-#define TC_COUNT8_COUNT_COUNT_Msk             (_UINT8_(0xFF) << TC_COUNT8_COUNT_COUNT_Pos)         /* (TC_COUNT8_COUNT) Counter Value Mask */
-#define TC_COUNT8_COUNT_COUNT(value)          (TC_COUNT8_COUNT_COUNT_Msk & (_UINT8_(value) << TC_COUNT8_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TC_COUNT8_COUNT register */
-#define TC_COUNT8_COUNT_Msk                   _UINT8_(0xFF)                                        /* (TC_COUNT8_COUNT) Register Mask  */
-
-
-/* -------- TC_COUNT16_COUNT : (TC Offset: 0x14) (R/W 16) COUNT16 Count -------- */
-#define TC_COUNT16_COUNT_RESETVALUE           _UINT16_(0x00)                                       /*  (TC_COUNT16_COUNT) COUNT16 Count  Reset Value */
-
-#define TC_COUNT16_COUNT_COUNT_Pos            _UINT16_(0)                                          /* (TC_COUNT16_COUNT) Counter Value Position */
-#define TC_COUNT16_COUNT_COUNT_Msk            (_UINT16_(0xFFFF) << TC_COUNT16_COUNT_COUNT_Pos)     /* (TC_COUNT16_COUNT) Counter Value Mask */
-#define TC_COUNT16_COUNT_COUNT(value)         (TC_COUNT16_COUNT_COUNT_Msk & (_UINT16_(value) << TC_COUNT16_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TC_COUNT16_COUNT register */
-#define TC_COUNT16_COUNT_Msk                  _UINT16_(0xFFFF)                                     /* (TC_COUNT16_COUNT) Register Mask  */
-
-
-/* -------- TC_COUNT32_COUNT : (TC Offset: 0x14) (R/W 32) COUNT32 Count -------- */
-#define TC_COUNT32_COUNT_RESETVALUE           _UINT32_(0x00)                                       /*  (TC_COUNT32_COUNT) COUNT32 Count  Reset Value */
-
-#define TC_COUNT32_COUNT_COUNT_Pos            _UINT32_(0)                                          /* (TC_COUNT32_COUNT) Counter Value Position */
-#define TC_COUNT32_COUNT_COUNT_Msk            (_UINT32_(0xFFFFFFFF) << TC_COUNT32_COUNT_COUNT_Pos) /* (TC_COUNT32_COUNT) Counter Value Mask */
-#define TC_COUNT32_COUNT_COUNT(value)         (TC_COUNT32_COUNT_COUNT_Msk & (_UINT32_(value) << TC_COUNT32_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TC_COUNT32_COUNT register */
-#define TC_COUNT32_COUNT_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (TC_COUNT32_COUNT) Register Mask  */
-
 
 /* -------- TC_CTRLA : (TC Offset: 0x00) (R/W 32) Control A -------- */
 #define TC_CTRLA_RESETVALUE                   _UINT32_(0x00)                                       /*  (TC_CTRLA) Control A  Reset Value */
@@ -259,30 +178,6 @@
 #define TC_CTRLBSET_Msk                       _UINT8_(0xE7)                                        /* (TC_CTRLBSET) Register Mask  */
 
 
-/* -------- TC_DBGCTRL : (TC Offset: 0x0F) (R/W 8) Debug Control -------- */
-#define TC_DBGCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (TC_DBGCTRL) Debug Control  Reset Value */
-
-#define TC_DBGCTRL_DBGRUN_Pos                 _UINT8_(0)                                           /* (TC_DBGCTRL) Run During Debug Position */
-#define TC_DBGCTRL_DBGRUN_Msk                 (_UINT8_(0x1) << TC_DBGCTRL_DBGRUN_Pos)              /* (TC_DBGCTRL) Run During Debug Mask */
-#define TC_DBGCTRL_DBGRUN(value)              (TC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << TC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the TC_DBGCTRL register */
-#define TC_DBGCTRL_Msk                        _UINT8_(0x01)                                        /* (TC_DBGCTRL) Register Mask  */
-
-
-/* -------- TC_DRVCTRL : (TC Offset: 0x0D) (R/W 8) Control C -------- */
-#define TC_DRVCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (TC_DRVCTRL) Control C  Reset Value */
-
-#define TC_DRVCTRL_INVEN0_Pos                 _UINT8_(0)                                           /* (TC_DRVCTRL) Output Waveform Invert Enable 0 Position */
-#define TC_DRVCTRL_INVEN0_Msk                 (_UINT8_(0x1) << TC_DRVCTRL_INVEN0_Pos)              /* (TC_DRVCTRL) Output Waveform Invert Enable 0 Mask */
-#define TC_DRVCTRL_INVEN0(value)              (TC_DRVCTRL_INVEN0_Msk & (_UINT8_(value) << TC_DRVCTRL_INVEN0_Pos)) /* Assigment of value for INVEN0 in the TC_DRVCTRL register */
-#define TC_DRVCTRL_INVEN1_Pos                 _UINT8_(1)                                           /* (TC_DRVCTRL) Output Waveform Invert Enable 1 Position */
-#define TC_DRVCTRL_INVEN1_Msk                 (_UINT8_(0x1) << TC_DRVCTRL_INVEN1_Pos)              /* (TC_DRVCTRL) Output Waveform Invert Enable 1 Mask */
-#define TC_DRVCTRL_INVEN1(value)              (TC_DRVCTRL_INVEN1_Msk & (_UINT8_(value) << TC_DRVCTRL_INVEN1_Pos)) /* Assigment of value for INVEN1 in the TC_DRVCTRL register */
-#define TC_DRVCTRL_Msk                        _UINT8_(0x03)                                        /* (TC_DRVCTRL) Register Mask  */
-
-#define TC_DRVCTRL_INVEN_Pos                  _UINT8_(0)                                           /* (TC_DRVCTRL Position) Output Waveform Invert Enable x */
-#define TC_DRVCTRL_INVEN_Msk                  (_UINT8_(0x3) << TC_DRVCTRL_INVEN_Pos)               /* (TC_DRVCTRL Mask) INVEN */
-#define TC_DRVCTRL_INVEN(value)               (TC_DRVCTRL_INVEN_Msk & (_UINT8_(value) << TC_DRVCTRL_INVEN_Pos)) 
-
 /* -------- TC_EVCTRL : (TC Offset: 0x06) (R/W 16) Event Control -------- */
 #define TC_EVCTRL_RESETVALUE                  _UINT16_(0x00)                                       /*  (TC_EVCTRL) Event Control  Reset Value */
 
@@ -389,24 +284,6 @@
 #define TC_INTFLAG_MC_Msk                     (_UINT8_(0x3) << TC_INTFLAG_MC_Pos)                  /* (TC_INTFLAG Mask) MC */
 #define TC_INTFLAG_MC(value)                  (TC_INTFLAG_MC_Msk & (_UINT8_(value) << TC_INTFLAG_MC_Pos)) 
 
-/* -------- TC_COUNT8_PER : (TC Offset: 0x1B) (R/W 8) COUNT8 Period -------- */
-#define TC_COUNT8_PER_RESETVALUE              _UINT8_(0xFF)                                        /*  (TC_COUNT8_PER) COUNT8 Period  Reset Value */
-
-#define TC_COUNT8_PER_PER_Pos                 _UINT8_(0)                                           /* (TC_COUNT8_PER) Period Value Position */
-#define TC_COUNT8_PER_PER_Msk                 (_UINT8_(0xFF) << TC_COUNT8_PER_PER_Pos)             /* (TC_COUNT8_PER) Period Value Mask */
-#define TC_COUNT8_PER_PER(value)              (TC_COUNT8_PER_PER_Msk & (_UINT8_(value) << TC_COUNT8_PER_PER_Pos)) /* Assigment of value for PER in the TC_COUNT8_PER register */
-#define TC_COUNT8_PER_Msk                     _UINT8_(0xFF)                                        /* (TC_COUNT8_PER) Register Mask  */
-
-
-/* -------- TC_COUNT8_PERBUF : (TC Offset: 0x2F) (R/W 8) COUNT8 Period Buffer -------- */
-#define TC_COUNT8_PERBUF_RESETVALUE           _UINT8_(0xFF)                                        /*  (TC_COUNT8_PERBUF) COUNT8 Period Buffer  Reset Value */
-
-#define TC_COUNT8_PERBUF_PERBUF_Pos           _UINT8_(0)                                           /* (TC_COUNT8_PERBUF) Period Buffer Value Position */
-#define TC_COUNT8_PERBUF_PERBUF_Msk           (_UINT8_(0xFF) << TC_COUNT8_PERBUF_PERBUF_Pos)       /* (TC_COUNT8_PERBUF) Period Buffer Value Mask */
-#define TC_COUNT8_PERBUF_PERBUF(value)        (TC_COUNT8_PERBUF_PERBUF_Msk & (_UINT8_(value) << TC_COUNT8_PERBUF_PERBUF_Pos)) /* Assigment of value for PERBUF in the TC_COUNT8_PERBUF register */
-#define TC_COUNT8_PERBUF_Msk                  _UINT8_(0xFF)                                        /* (TC_COUNT8_PERBUF) Register Mask  */
-
-
 /* -------- TC_STATUS : (TC Offset: 0x0B) (R/W 8) Status -------- */
 #define TC_STATUS_RESETVALUE                  _UINT8_(0x01)                                        /*  (TC_STATUS) Status  Reset Value */
 
@@ -430,6 +307,47 @@
 #define TC_STATUS_CCBUFV_Pos                  _UINT8_(4)                                           /* (TC_STATUS Position) Compare channel buffer x valid */
 #define TC_STATUS_CCBUFV_Msk                  (_UINT8_(0x3) << TC_STATUS_CCBUFV_Pos)               /* (TC_STATUS Mask) CCBUFV */
 #define TC_STATUS_CCBUFV(value)               (TC_STATUS_CCBUFV_Msk & (_UINT8_(value) << TC_STATUS_CCBUFV_Pos)) 
+
+/* -------- TC_WAVE : (TC Offset: 0x0C) (R/W 8) Waveform Generation Control -------- */
+#define TC_WAVE_RESETVALUE                    _UINT8_(0x00)                                        /*  (TC_WAVE) Waveform Generation Control  Reset Value */
+
+#define TC_WAVE_WAVEGEN_Pos                   _UINT8_(0)                                           /* (TC_WAVE) Waveform Generation Mode Position */
+#define TC_WAVE_WAVEGEN_Msk                   (_UINT8_(0x3) << TC_WAVE_WAVEGEN_Pos)                /* (TC_WAVE) Waveform Generation Mode Mask */
+#define TC_WAVE_WAVEGEN(value)                (TC_WAVE_WAVEGEN_Msk & (_UINT8_(value) << TC_WAVE_WAVEGEN_Pos)) /* Assigment of value for WAVEGEN in the TC_WAVE register */
+#define   TC_WAVE_WAVEGEN_NFRQ_Val            _UINT8_(0x0)                                         /* (TC_WAVE) Normal frequency  */
+#define   TC_WAVE_WAVEGEN_MFRQ_Val            _UINT8_(0x1)                                         /* (TC_WAVE) Match frequency  */
+#define   TC_WAVE_WAVEGEN_NPWM_Val            _UINT8_(0x2)                                         /* (TC_WAVE) Normal PWM  */
+#define   TC_WAVE_WAVEGEN_MPWM_Val            _UINT8_(0x3)                                         /* (TC_WAVE) Match PWM  */
+#define TC_WAVE_WAVEGEN_NFRQ                  (TC_WAVE_WAVEGEN_NFRQ_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Normal frequency Position  */
+#define TC_WAVE_WAVEGEN_MFRQ                  (TC_WAVE_WAVEGEN_MFRQ_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Match frequency Position  */
+#define TC_WAVE_WAVEGEN_NPWM                  (TC_WAVE_WAVEGEN_NPWM_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Normal PWM Position  */
+#define TC_WAVE_WAVEGEN_MPWM                  (TC_WAVE_WAVEGEN_MPWM_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Match PWM Position  */
+#define TC_WAVE_Msk                           _UINT8_(0x03)                                        /* (TC_WAVE) Register Mask  */
+
+
+/* -------- TC_DRVCTRL : (TC Offset: 0x0D) (R/W 8) Control C -------- */
+#define TC_DRVCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (TC_DRVCTRL) Control C  Reset Value */
+
+#define TC_DRVCTRL_INVEN0_Pos                 _UINT8_(0)                                           /* (TC_DRVCTRL) Output Waveform Invert Enable 0 Position */
+#define TC_DRVCTRL_INVEN0_Msk                 (_UINT8_(0x1) << TC_DRVCTRL_INVEN0_Pos)              /* (TC_DRVCTRL) Output Waveform Invert Enable 0 Mask */
+#define TC_DRVCTRL_INVEN0(value)              (TC_DRVCTRL_INVEN0_Msk & (_UINT8_(value) << TC_DRVCTRL_INVEN0_Pos)) /* Assigment of value for INVEN0 in the TC_DRVCTRL register */
+#define TC_DRVCTRL_INVEN1_Pos                 _UINT8_(1)                                           /* (TC_DRVCTRL) Output Waveform Invert Enable 1 Position */
+#define TC_DRVCTRL_INVEN1_Msk                 (_UINT8_(0x1) << TC_DRVCTRL_INVEN1_Pos)              /* (TC_DRVCTRL) Output Waveform Invert Enable 1 Mask */
+#define TC_DRVCTRL_INVEN1(value)              (TC_DRVCTRL_INVEN1_Msk & (_UINT8_(value) << TC_DRVCTRL_INVEN1_Pos)) /* Assigment of value for INVEN1 in the TC_DRVCTRL register */
+#define TC_DRVCTRL_Msk                        _UINT8_(0x03)                                        /* (TC_DRVCTRL) Register Mask  */
+
+#define TC_DRVCTRL_INVEN_Pos                  _UINT8_(0)                                           /* (TC_DRVCTRL Position) Output Waveform Invert Enable x */
+#define TC_DRVCTRL_INVEN_Msk                  (_UINT8_(0x3) << TC_DRVCTRL_INVEN_Pos)               /* (TC_DRVCTRL Mask) INVEN */
+#define TC_DRVCTRL_INVEN(value)               (TC_DRVCTRL_INVEN_Msk & (_UINT8_(value) << TC_DRVCTRL_INVEN_Pos)) 
+
+/* -------- TC_DBGCTRL : (TC Offset: 0x0F) (R/W 8) Debug Control -------- */
+#define TC_DBGCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (TC_DBGCTRL) Debug Control  Reset Value */
+
+#define TC_DBGCTRL_DBGRUN_Pos                 _UINT8_(0)                                           /* (TC_DBGCTRL) Run During Debug Position */
+#define TC_DBGCTRL_DBGRUN_Msk                 (_UINT8_(0x1) << TC_DBGCTRL_DBGRUN_Pos)              /* (TC_DBGCTRL) Run During Debug Mask */
+#define TC_DBGCTRL_DBGRUN(value)              (TC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << TC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the TC_DBGCTRL register */
+#define TC_DBGCTRL_Msk                        _UINT8_(0x01)                                        /* (TC_DBGCTRL) Register Mask  */
+
 
 /* -------- TC_SYNCBUSY : (TC Offset: 0x10) ( R/ 32) Synchronization Status -------- */
 #define TC_SYNCBUSY_RESETVALUE                _UINT32_(0x00)                                       /*  (TC_SYNCBUSY) Synchronization Status  Reset Value */
@@ -464,24 +382,122 @@
 #define TC_SYNCBUSY_CC_Msk                    (_UINT32_(0x3) << TC_SYNCBUSY_CC_Pos)                /* (TC_SYNCBUSY Mask) CC */
 #define TC_SYNCBUSY_CC(value)                 (TC_SYNCBUSY_CC_Msk & (_UINT32_(value) << TC_SYNCBUSY_CC_Pos)) 
 
-/* -------- TC_WAVE : (TC Offset: 0x0C) (R/W 8) Waveform Generation Control -------- */
-#define TC_WAVE_RESETVALUE                    _UINT8_(0x00)                                        /*  (TC_WAVE) Waveform Generation Control  Reset Value */
+/* -------- TC_COUNT8_COUNT : (TC Offset: 0x14) (R/W 8) COUNT8 Count -------- */
+#define TC_COUNT8_COUNT_RESETVALUE            _UINT8_(0x00)                                        /*  (TC_COUNT8_COUNT) COUNT8 Count  Reset Value */
 
-#define TC_WAVE_WAVEGEN_Pos                   _UINT8_(0)                                           /* (TC_WAVE) Waveform Generation Mode Position */
-#define TC_WAVE_WAVEGEN_Msk                   (_UINT8_(0x3) << TC_WAVE_WAVEGEN_Pos)                /* (TC_WAVE) Waveform Generation Mode Mask */
-#define TC_WAVE_WAVEGEN(value)                (TC_WAVE_WAVEGEN_Msk & (_UINT8_(value) << TC_WAVE_WAVEGEN_Pos)) /* Assigment of value for WAVEGEN in the TC_WAVE register */
-#define   TC_WAVE_WAVEGEN_NFRQ_Val            _UINT8_(0x0)                                         /* (TC_WAVE) Normal frequency  */
-#define   TC_WAVE_WAVEGEN_MFRQ_Val            _UINT8_(0x1)                                         /* (TC_WAVE) Match frequency  */
-#define   TC_WAVE_WAVEGEN_NPWM_Val            _UINT8_(0x2)                                         /* (TC_WAVE) Normal PWM  */
-#define   TC_WAVE_WAVEGEN_MPWM_Val            _UINT8_(0x3)                                         /* (TC_WAVE) Match PWM  */
-#define TC_WAVE_WAVEGEN_NFRQ                  (TC_WAVE_WAVEGEN_NFRQ_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Normal frequency Position  */
-#define TC_WAVE_WAVEGEN_MFRQ                  (TC_WAVE_WAVEGEN_MFRQ_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Match frequency Position  */
-#define TC_WAVE_WAVEGEN_NPWM                  (TC_WAVE_WAVEGEN_NPWM_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Normal PWM Position  */
-#define TC_WAVE_WAVEGEN_MPWM                  (TC_WAVE_WAVEGEN_MPWM_Val << TC_WAVE_WAVEGEN_Pos)    /* (TC_WAVE) Match PWM Position  */
-#define TC_WAVE_Msk                           _UINT8_(0x03)                                        /* (TC_WAVE) Register Mask  */
+#define TC_COUNT8_COUNT_COUNT_Pos             _UINT8_(0)                                           /* (TC_COUNT8_COUNT) Counter Value Position */
+#define TC_COUNT8_COUNT_COUNT_Msk             (_UINT8_(0xFF) << TC_COUNT8_COUNT_COUNT_Pos)         /* (TC_COUNT8_COUNT) Counter Value Mask */
+#define TC_COUNT8_COUNT_COUNT(value)          (TC_COUNT8_COUNT_COUNT_Msk & (_UINT8_(value) << TC_COUNT8_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TC_COUNT8_COUNT register */
+#define TC_COUNT8_COUNT_Msk                   _UINT8_(0xFF)                                        /* (TC_COUNT8_COUNT) Register Mask  */
+
+
+/* -------- TC_COUNT16_COUNT : (TC Offset: 0x14) (R/W 16) COUNT16 Count -------- */
+#define TC_COUNT16_COUNT_RESETVALUE           _UINT16_(0x00)                                       /*  (TC_COUNT16_COUNT) COUNT16 Count  Reset Value */
+
+#define TC_COUNT16_COUNT_COUNT_Pos            _UINT16_(0)                                          /* (TC_COUNT16_COUNT) Counter Value Position */
+#define TC_COUNT16_COUNT_COUNT_Msk            (_UINT16_(0xFFFF) << TC_COUNT16_COUNT_COUNT_Pos)     /* (TC_COUNT16_COUNT) Counter Value Mask */
+#define TC_COUNT16_COUNT_COUNT(value)         (TC_COUNT16_COUNT_COUNT_Msk & (_UINT16_(value) << TC_COUNT16_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TC_COUNT16_COUNT register */
+#define TC_COUNT16_COUNT_Msk                  _UINT16_(0xFFFF)                                     /* (TC_COUNT16_COUNT) Register Mask  */
+
+
+/* -------- TC_COUNT32_COUNT : (TC Offset: 0x14) (R/W 32) COUNT32 Count -------- */
+#define TC_COUNT32_COUNT_RESETVALUE           _UINT32_(0x00)                                       /*  (TC_COUNT32_COUNT) COUNT32 Count  Reset Value */
+
+#define TC_COUNT32_COUNT_COUNT_Pos            _UINT32_(0)                                          /* (TC_COUNT32_COUNT) Counter Value Position */
+#define TC_COUNT32_COUNT_COUNT_Msk            (_UINT32_(0xFFFFFFFF) << TC_COUNT32_COUNT_COUNT_Pos) /* (TC_COUNT32_COUNT) Counter Value Mask */
+#define TC_COUNT32_COUNT_COUNT(value)         (TC_COUNT32_COUNT_COUNT_Msk & (_UINT32_(value) << TC_COUNT32_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the TC_COUNT32_COUNT register */
+#define TC_COUNT32_COUNT_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (TC_COUNT32_COUNT) Register Mask  */
+
+
+/* -------- TC_COUNT8_PER : (TC Offset: 0x1B) (R/W 8) COUNT8 Period -------- */
+#define TC_COUNT8_PER_RESETVALUE              _UINT8_(0xFF)                                        /*  (TC_COUNT8_PER) COUNT8 Period  Reset Value */
+
+#define TC_COUNT8_PER_PER_Pos                 _UINT8_(0)                                           /* (TC_COUNT8_PER) Period Value Position */
+#define TC_COUNT8_PER_PER_Msk                 (_UINT8_(0xFF) << TC_COUNT8_PER_PER_Pos)             /* (TC_COUNT8_PER) Period Value Mask */
+#define TC_COUNT8_PER_PER(value)              (TC_COUNT8_PER_PER_Msk & (_UINT8_(value) << TC_COUNT8_PER_PER_Pos)) /* Assigment of value for PER in the TC_COUNT8_PER register */
+#define TC_COUNT8_PER_Msk                     _UINT8_(0xFF)                                        /* (TC_COUNT8_PER) Register Mask  */
+
+
+/* -------- TC_COUNT8_CC : (TC Offset: 0x1C) (R/W 8) COUNT8 Compare and Capture -------- */
+#define TC_COUNT8_CC_RESETVALUE               _UINT8_(0x00)                                        /*  (TC_COUNT8_CC) COUNT8 Compare and Capture  Reset Value */
+
+#define TC_COUNT8_CC_CC_Pos                   _UINT8_(0)                                           /* (TC_COUNT8_CC) Counter/Compare Value Position */
+#define TC_COUNT8_CC_CC_Msk                   (_UINT8_(0xFF) << TC_COUNT8_CC_CC_Pos)               /* (TC_COUNT8_CC) Counter/Compare Value Mask */
+#define TC_COUNT8_CC_CC(value)                (TC_COUNT8_CC_CC_Msk & (_UINT8_(value) << TC_COUNT8_CC_CC_Pos)) /* Assigment of value for CC in the TC_COUNT8_CC register */
+#define TC_COUNT8_CC_Msk                      _UINT8_(0xFF)                                        /* (TC_COUNT8_CC) Register Mask  */
+
+
+/* -------- TC_COUNT16_CC : (TC Offset: 0x1C) (R/W 16) COUNT16 Compare and Capture -------- */
+#define TC_COUNT16_CC_RESETVALUE              _UINT16_(0x00)                                       /*  (TC_COUNT16_CC) COUNT16 Compare and Capture  Reset Value */
+
+#define TC_COUNT16_CC_CC_Pos                  _UINT16_(0)                                          /* (TC_COUNT16_CC) Counter/Compare Value Position */
+#define TC_COUNT16_CC_CC_Msk                  (_UINT16_(0xFFFF) << TC_COUNT16_CC_CC_Pos)           /* (TC_COUNT16_CC) Counter/Compare Value Mask */
+#define TC_COUNT16_CC_CC(value)               (TC_COUNT16_CC_CC_Msk & (_UINT16_(value) << TC_COUNT16_CC_CC_Pos)) /* Assigment of value for CC in the TC_COUNT16_CC register */
+#define TC_COUNT16_CC_Msk                     _UINT16_(0xFFFF)                                     /* (TC_COUNT16_CC) Register Mask  */
+
+
+/* -------- TC_COUNT32_CC : (TC Offset: 0x1C) (R/W 32) COUNT32 Compare and Capture -------- */
+#define TC_COUNT32_CC_RESETVALUE              _UINT32_(0x00)                                       /*  (TC_COUNT32_CC) COUNT32 Compare and Capture  Reset Value */
+
+#define TC_COUNT32_CC_CC_Pos                  _UINT32_(0)                                          /* (TC_COUNT32_CC) Counter/Compare Value Position */
+#define TC_COUNT32_CC_CC_Msk                  (_UINT32_(0xFFFFFFFF) << TC_COUNT32_CC_CC_Pos)       /* (TC_COUNT32_CC) Counter/Compare Value Mask */
+#define TC_COUNT32_CC_CC(value)               (TC_COUNT32_CC_CC_Msk & (_UINT32_(value) << TC_COUNT32_CC_CC_Pos)) /* Assigment of value for CC in the TC_COUNT32_CC register */
+#define TC_COUNT32_CC_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (TC_COUNT32_CC) Register Mask  */
+
+
+/* -------- TC_COUNT8_PERBUF : (TC Offset: 0x2F) (R/W 8) COUNT8 Period Buffer -------- */
+#define TC_COUNT8_PERBUF_RESETVALUE           _UINT8_(0xFF)                                        /*  (TC_COUNT8_PERBUF) COUNT8 Period Buffer  Reset Value */
+
+#define TC_COUNT8_PERBUF_PERBUF_Pos           _UINT8_(0)                                           /* (TC_COUNT8_PERBUF) Period Buffer Value Position */
+#define TC_COUNT8_PERBUF_PERBUF_Msk           (_UINT8_(0xFF) << TC_COUNT8_PERBUF_PERBUF_Pos)       /* (TC_COUNT8_PERBUF) Period Buffer Value Mask */
+#define TC_COUNT8_PERBUF_PERBUF(value)        (TC_COUNT8_PERBUF_PERBUF_Msk & (_UINT8_(value) << TC_COUNT8_PERBUF_PERBUF_Pos)) /* Assigment of value for PERBUF in the TC_COUNT8_PERBUF register */
+#define TC_COUNT8_PERBUF_Msk                  _UINT8_(0xFF)                                        /* (TC_COUNT8_PERBUF) Register Mask  */
+
+
+/* -------- TC_COUNT8_CCBUF : (TC Offset: 0x30) (R/W 8) COUNT8 Compare and Capture Buffer -------- */
+#define TC_COUNT8_CCBUF_RESETVALUE            _UINT8_(0x00)                                        /*  (TC_COUNT8_CCBUF) COUNT8 Compare and Capture Buffer  Reset Value */
+
+#define TC_COUNT8_CCBUF_CCBUF_Pos             _UINT8_(0)                                           /* (TC_COUNT8_CCBUF) Counter/Compare Buffer Value Position */
+#define TC_COUNT8_CCBUF_CCBUF_Msk             (_UINT8_(0xFF) << TC_COUNT8_CCBUF_CCBUF_Pos)         /* (TC_COUNT8_CCBUF) Counter/Compare Buffer Value Mask */
+#define TC_COUNT8_CCBUF_CCBUF(value)          (TC_COUNT8_CCBUF_CCBUF_Msk & (_UINT8_(value) << TC_COUNT8_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TC_COUNT8_CCBUF register */
+#define TC_COUNT8_CCBUF_Msk                   _UINT8_(0xFF)                                        /* (TC_COUNT8_CCBUF) Register Mask  */
+
+
+/* -------- TC_COUNT16_CCBUF : (TC Offset: 0x30) (R/W 16) COUNT16 Compare and Capture Buffer -------- */
+#define TC_COUNT16_CCBUF_RESETVALUE           _UINT16_(0x00)                                       /*  (TC_COUNT16_CCBUF) COUNT16 Compare and Capture Buffer  Reset Value */
+
+#define TC_COUNT16_CCBUF_CCBUF_Pos            _UINT16_(0)                                          /* (TC_COUNT16_CCBUF) Counter/Compare Buffer Value Position */
+#define TC_COUNT16_CCBUF_CCBUF_Msk            (_UINT16_(0xFFFF) << TC_COUNT16_CCBUF_CCBUF_Pos)     /* (TC_COUNT16_CCBUF) Counter/Compare Buffer Value Mask */
+#define TC_COUNT16_CCBUF_CCBUF(value)         (TC_COUNT16_CCBUF_CCBUF_Msk & (_UINT16_(value) << TC_COUNT16_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TC_COUNT16_CCBUF register */
+#define TC_COUNT16_CCBUF_Msk                  _UINT16_(0xFFFF)                                     /* (TC_COUNT16_CCBUF) Register Mask  */
+
+
+/* -------- TC_COUNT32_CCBUF : (TC Offset: 0x30) (R/W 32) COUNT32 Compare and Capture Buffer -------- */
+#define TC_COUNT32_CCBUF_RESETVALUE           _UINT32_(0x00)                                       /*  (TC_COUNT32_CCBUF) COUNT32 Compare and Capture Buffer  Reset Value */
+
+#define TC_COUNT32_CCBUF_CCBUF_Pos            _UINT32_(0)                                          /* (TC_COUNT32_CCBUF) Counter/Compare Buffer Value Position */
+#define TC_COUNT32_CCBUF_CCBUF_Msk            (_UINT32_(0xFFFFFFFF) << TC_COUNT32_CCBUF_CCBUF_Pos) /* (TC_COUNT32_CCBUF) Counter/Compare Buffer Value Mask */
+#define TC_COUNT32_CCBUF_CCBUF(value)         (TC_COUNT32_CCBUF_CCBUF_Msk & (_UINT32_(value) << TC_COUNT32_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the TC_COUNT32_CCBUF register */
+#define TC_COUNT32_CCBUF_Msk                  _UINT32_(0xFFFFFFFF)                                 /* (TC_COUNT32_CCBUF) Register Mask  */
 
 
 /** \brief TC register offsets definitions */
+#define TC_CTRLA_REG_OFST              _UINT32_(0x00)      /* (TC_CTRLA) Control A Offset */
+#define TC_CTRLBCLR_REG_OFST           _UINT32_(0x04)      /* (TC_CTRLBCLR) Control B Clear Offset */
+#define TC_CTRLBSET_REG_OFST           _UINT32_(0x05)      /* (TC_CTRLBSET) Control B Set Offset */
+#define TC_EVCTRL_REG_OFST             _UINT32_(0x06)      /* (TC_EVCTRL) Event Control Offset */
+#define TC_INTENCLR_REG_OFST           _UINT32_(0x08)      /* (TC_INTENCLR) Interrupt Enable Clear Offset */
+#define TC_INTENSET_REG_OFST           _UINT32_(0x09)      /* (TC_INTENSET) Interrupt Enable Set Offset */
+#define TC_INTFLAG_REG_OFST            _UINT32_(0x0A)      /* (TC_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define TC_STATUS_REG_OFST             _UINT32_(0x0B)      /* (TC_STATUS) Status Offset */
+#define TC_WAVE_REG_OFST               _UINT32_(0x0C)      /* (TC_WAVE) Waveform Generation Control Offset */
+#define TC_DRVCTRL_REG_OFST            _UINT32_(0x0D)      /* (TC_DRVCTRL) Control C Offset */
+#define TC_DBGCTRL_REG_OFST            _UINT32_(0x0F)      /* (TC_DBGCTRL) Debug Control Offset */
+#define TC_SYNCBUSY_REG_OFST           _UINT32_(0x10)      /* (TC_SYNCBUSY) Synchronization Status Offset */
+#define TC_COUNT8_COUNT_REG_OFST       _UINT32_(0x14)      /* (TC_COUNT8_COUNT) COUNT8 Count Offset */
+#define TC_COUNT16_COUNT_REG_OFST      _UINT32_(0x14)      /* (TC_COUNT16_COUNT) COUNT16 Count Offset */
+#define TC_COUNT32_COUNT_REG_OFST      _UINT32_(0x14)      /* (TC_COUNT32_COUNT) COUNT32 Count Offset */
+#define TC_COUNT8_PER_REG_OFST         _UINT32_(0x1B)      /* (TC_COUNT8_PER) COUNT8 Period Offset */
 #define TC_COUNT8_CC_REG_OFST          _UINT32_(0x1C)      /* (TC_COUNT8_CC) COUNT8 Compare and Capture Offset */
 #define TC_COUNT8_CC0_REG_OFST         _UINT32_(0x1C)      /* (TC_COUNT8_CC0) COUNT8 Compare and Capture Offset */
 #define TC_COUNT8_CC1_REG_OFST         _UINT32_(0x1D)      /* (TC_COUNT8_CC1) COUNT8 Compare and Capture Offset */
@@ -491,6 +507,7 @@
 #define TC_COUNT32_CC_REG_OFST         _UINT32_(0x1C)      /* (TC_COUNT32_CC) COUNT32 Compare and Capture Offset */
 #define TC_COUNT32_CC0_REG_OFST        _UINT32_(0x1C)      /* (TC_COUNT32_CC0) COUNT32 Compare and Capture Offset */
 #define TC_COUNT32_CC1_REG_OFST        _UINT32_(0x20)      /* (TC_COUNT32_CC1) COUNT32 Compare and Capture Offset */
+#define TC_COUNT8_PERBUF_REG_OFST      _UINT32_(0x2F)      /* (TC_COUNT8_PERBUF) COUNT8 Period Buffer Offset */
 #define TC_COUNT8_CCBUF_REG_OFST       _UINT32_(0x30)      /* (TC_COUNT8_CCBUF) COUNT8 Compare and Capture Buffer Offset */
 #define TC_COUNT8_CCBUF0_REG_OFST      _UINT32_(0x30)      /* (TC_COUNT8_CCBUF0) COUNT8 Compare and Capture Buffer Offset */
 #define TC_COUNT8_CCBUF1_REG_OFST      _UINT32_(0x31)      /* (TC_COUNT8_CCBUF1) COUNT8 Compare and Capture Buffer Offset */
@@ -500,23 +517,6 @@
 #define TC_COUNT32_CCBUF_REG_OFST      _UINT32_(0x30)      /* (TC_COUNT32_CCBUF) COUNT32 Compare and Capture Buffer Offset */
 #define TC_COUNT32_CCBUF0_REG_OFST     _UINT32_(0x30)      /* (TC_COUNT32_CCBUF0) COUNT32 Compare and Capture Buffer Offset */
 #define TC_COUNT32_CCBUF1_REG_OFST     _UINT32_(0x34)      /* (TC_COUNT32_CCBUF1) COUNT32 Compare and Capture Buffer Offset */
-#define TC_COUNT8_COUNT_REG_OFST       _UINT32_(0x14)      /* (TC_COUNT8_COUNT) COUNT8 Count Offset */
-#define TC_COUNT16_COUNT_REG_OFST      _UINT32_(0x14)      /* (TC_COUNT16_COUNT) COUNT16 Count Offset */
-#define TC_COUNT32_COUNT_REG_OFST      _UINT32_(0x14)      /* (TC_COUNT32_COUNT) COUNT32 Count Offset */
-#define TC_CTRLA_REG_OFST              _UINT32_(0x00)      /* (TC_CTRLA) Control A Offset */
-#define TC_CTRLBCLR_REG_OFST           _UINT32_(0x04)      /* (TC_CTRLBCLR) Control B Clear Offset */
-#define TC_CTRLBSET_REG_OFST           _UINT32_(0x05)      /* (TC_CTRLBSET) Control B Set Offset */
-#define TC_DBGCTRL_REG_OFST            _UINT32_(0x0F)      /* (TC_DBGCTRL) Debug Control Offset */
-#define TC_DRVCTRL_REG_OFST            _UINT32_(0x0D)      /* (TC_DRVCTRL) Control C Offset */
-#define TC_EVCTRL_REG_OFST             _UINT32_(0x06)      /* (TC_EVCTRL) Event Control Offset */
-#define TC_INTENCLR_REG_OFST           _UINT32_(0x08)      /* (TC_INTENCLR) Interrupt Enable Clear Offset */
-#define TC_INTENSET_REG_OFST           _UINT32_(0x09)      /* (TC_INTENSET) Interrupt Enable Set Offset */
-#define TC_INTFLAG_REG_OFST            _UINT32_(0x0A)      /* (TC_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define TC_COUNT8_PER_REG_OFST         _UINT32_(0x1B)      /* (TC_COUNT8_PER) COUNT8 Period Offset */
-#define TC_COUNT8_PERBUF_REG_OFST      _UINT32_(0x2F)      /* (TC_COUNT8_PERBUF) COUNT8 Period Buffer Offset */
-#define TC_STATUS_REG_OFST             _UINT32_(0x0B)      /* (TC_STATUS) Status Offset */
-#define TC_SYNCBUSY_REG_OFST           _UINT32_(0x10)      /* (TC_SYNCBUSY) Synchronization Status Offset */
-#define TC_WAVE_REG_OFST               _UINT32_(0x0C)      /* (TC_WAVE) Waveform Generation Control Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief TC register API structure */

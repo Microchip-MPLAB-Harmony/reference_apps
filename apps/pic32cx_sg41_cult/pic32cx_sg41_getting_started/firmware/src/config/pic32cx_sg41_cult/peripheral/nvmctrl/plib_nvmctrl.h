@@ -123,7 +123,6 @@ bool NVMCTRL_SmartEEPROM_IsActiveSectorFull(void);
 
 void NVMCTRL_SmartEEPROMSectorReallocate(void);
 
-void NVMCTRL_SmartEEPROMFlushPageBuffer(void);
 
 void NVMCTRL_BankSwap(void);
 

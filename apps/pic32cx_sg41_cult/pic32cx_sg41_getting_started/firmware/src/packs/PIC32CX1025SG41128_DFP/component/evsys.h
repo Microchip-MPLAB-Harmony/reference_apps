@@ -1,7 +1,7 @@
 /*
  * Component description for EVSYS
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_EVSYS_COMPONENT_H_
 #define _PIC32CXSG41_EVSYS_COMPONENT_H_
 
@@ -111,51 +111,6 @@
 #define EVSYS_CHSTATUS_Msk                    _UINT8_(0x03)                                        /* (EVSYS_CHSTATUS) Register Mask  */
 
 
-/* -------- EVSYS_BUSYCH : (EVSYS Offset: 0x18) ( R/ 32) Busy Channels -------- */
-#define EVSYS_BUSYCH_RESETVALUE               _UINT32_(0x00)                                       /*  (EVSYS_BUSYCH) Busy Channels  Reset Value */
-
-#define EVSYS_BUSYCH_BUSYCH0_Pos              _UINT32_(0)                                          /* (EVSYS_BUSYCH) Busy Channel 0 Position */
-#define EVSYS_BUSYCH_BUSYCH0_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH0_Pos)          /* (EVSYS_BUSYCH) Busy Channel 0 Mask */
-#define EVSYS_BUSYCH_BUSYCH0(value)           (EVSYS_BUSYCH_BUSYCH0_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH0_Pos)) /* Assigment of value for BUSYCH0 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH1_Pos              _UINT32_(1)                                          /* (EVSYS_BUSYCH) Busy Channel 1 Position */
-#define EVSYS_BUSYCH_BUSYCH1_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH1_Pos)          /* (EVSYS_BUSYCH) Busy Channel 1 Mask */
-#define EVSYS_BUSYCH_BUSYCH1(value)           (EVSYS_BUSYCH_BUSYCH1_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH1_Pos)) /* Assigment of value for BUSYCH1 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH2_Pos              _UINT32_(2)                                          /* (EVSYS_BUSYCH) Busy Channel 2 Position */
-#define EVSYS_BUSYCH_BUSYCH2_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH2_Pos)          /* (EVSYS_BUSYCH) Busy Channel 2 Mask */
-#define EVSYS_BUSYCH_BUSYCH2(value)           (EVSYS_BUSYCH_BUSYCH2_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH2_Pos)) /* Assigment of value for BUSYCH2 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH3_Pos              _UINT32_(3)                                          /* (EVSYS_BUSYCH) Busy Channel 3 Position */
-#define EVSYS_BUSYCH_BUSYCH3_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH3_Pos)          /* (EVSYS_BUSYCH) Busy Channel 3 Mask */
-#define EVSYS_BUSYCH_BUSYCH3(value)           (EVSYS_BUSYCH_BUSYCH3_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH3_Pos)) /* Assigment of value for BUSYCH3 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH4_Pos              _UINT32_(4)                                          /* (EVSYS_BUSYCH) Busy Channel 4 Position */
-#define EVSYS_BUSYCH_BUSYCH4_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH4_Pos)          /* (EVSYS_BUSYCH) Busy Channel 4 Mask */
-#define EVSYS_BUSYCH_BUSYCH4(value)           (EVSYS_BUSYCH_BUSYCH4_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH4_Pos)) /* Assigment of value for BUSYCH4 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH5_Pos              _UINT32_(5)                                          /* (EVSYS_BUSYCH) Busy Channel 5 Position */
-#define EVSYS_BUSYCH_BUSYCH5_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH5_Pos)          /* (EVSYS_BUSYCH) Busy Channel 5 Mask */
-#define EVSYS_BUSYCH_BUSYCH5(value)           (EVSYS_BUSYCH_BUSYCH5_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH5_Pos)) /* Assigment of value for BUSYCH5 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH6_Pos              _UINT32_(6)                                          /* (EVSYS_BUSYCH) Busy Channel 6 Position */
-#define EVSYS_BUSYCH_BUSYCH6_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH6_Pos)          /* (EVSYS_BUSYCH) Busy Channel 6 Mask */
-#define EVSYS_BUSYCH_BUSYCH6(value)           (EVSYS_BUSYCH_BUSYCH6_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH6_Pos)) /* Assigment of value for BUSYCH6 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH7_Pos              _UINT32_(7)                                          /* (EVSYS_BUSYCH) Busy Channel 7 Position */
-#define EVSYS_BUSYCH_BUSYCH7_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH7_Pos)          /* (EVSYS_BUSYCH) Busy Channel 7 Mask */
-#define EVSYS_BUSYCH_BUSYCH7(value)           (EVSYS_BUSYCH_BUSYCH7_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH7_Pos)) /* Assigment of value for BUSYCH7 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH8_Pos              _UINT32_(8)                                          /* (EVSYS_BUSYCH) Busy Channel 8 Position */
-#define EVSYS_BUSYCH_BUSYCH8_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH8_Pos)          /* (EVSYS_BUSYCH) Busy Channel 8 Mask */
-#define EVSYS_BUSYCH_BUSYCH8(value)           (EVSYS_BUSYCH_BUSYCH8_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH8_Pos)) /* Assigment of value for BUSYCH8 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH9_Pos              _UINT32_(9)                                          /* (EVSYS_BUSYCH) Busy Channel 9 Position */
-#define EVSYS_BUSYCH_BUSYCH9_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH9_Pos)          /* (EVSYS_BUSYCH) Busy Channel 9 Mask */
-#define EVSYS_BUSYCH_BUSYCH9(value)           (EVSYS_BUSYCH_BUSYCH9_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH9_Pos)) /* Assigment of value for BUSYCH9 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH10_Pos             _UINT32_(10)                                         /* (EVSYS_BUSYCH) Busy Channel 10 Position */
-#define EVSYS_BUSYCH_BUSYCH10_Msk             (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH10_Pos)         /* (EVSYS_BUSYCH) Busy Channel 10 Mask */
-#define EVSYS_BUSYCH_BUSYCH10(value)          (EVSYS_BUSYCH_BUSYCH10_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH10_Pos)) /* Assigment of value for BUSYCH10 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_BUSYCH11_Pos             _UINT32_(11)                                         /* (EVSYS_BUSYCH) Busy Channel 11 Position */
-#define EVSYS_BUSYCH_BUSYCH11_Msk             (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH11_Pos)         /* (EVSYS_BUSYCH) Busy Channel 11 Mask */
-#define EVSYS_BUSYCH_BUSYCH11(value)          (EVSYS_BUSYCH_BUSYCH11_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH11_Pos)) /* Assigment of value for BUSYCH11 in the EVSYS_BUSYCH register */
-#define EVSYS_BUSYCH_Msk                      _UINT32_(0x00000FFF)                                 /* (EVSYS_BUSYCH) Register Mask  */
-
-#define EVSYS_BUSYCH_BUSYCH_Pos               _UINT32_(0)                                          /* (EVSYS_BUSYCH Position) Busy Channel xx */
-#define EVSYS_BUSYCH_BUSYCH_Msk               (_UINT32_(0xFFF) << EVSYS_BUSYCH_BUSYCH_Pos)         /* (EVSYS_BUSYCH Mask) BUSYCH */
-#define EVSYS_BUSYCH_BUSYCH(value)            (EVSYS_BUSYCH_BUSYCH_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH_Pos)) 
-
 /* -------- EVSYS_CTRLA : (EVSYS Offset: 0x00) (R/W 8) Control -------- */
 #define EVSYS_CTRLA_RESETVALUE                _UINT8_(0x00)                                        /*  (EVSYS_CTRLA) Control  Reset Value */
 
@@ -164,129 +119,6 @@
 #define EVSYS_CTRLA_SWRST(value)              (EVSYS_CTRLA_SWRST_Msk & (_UINT8_(value) << EVSYS_CTRLA_SWRST_Pos)) /* Assigment of value for SWRST in the EVSYS_CTRLA register */
 #define EVSYS_CTRLA_Msk                       _UINT8_(0x01)                                        /* (EVSYS_CTRLA) Register Mask  */
 
-
-/* -------- EVSYS_INTPEND : (EVSYS Offset: 0x10) (R/W 16) Channel Pending Interrupt -------- */
-#define EVSYS_INTPEND_RESETVALUE              _UINT16_(0x4000)                                     /*  (EVSYS_INTPEND) Channel Pending Interrupt  Reset Value */
-
-#define EVSYS_INTPEND_ID_Pos                  _UINT16_(0)                                          /* (EVSYS_INTPEND) Channel ID Position */
-#define EVSYS_INTPEND_ID_Msk                  (_UINT16_(0xF) << EVSYS_INTPEND_ID_Pos)              /* (EVSYS_INTPEND) Channel ID Mask */
-#define EVSYS_INTPEND_ID(value)               (EVSYS_INTPEND_ID_Msk & (_UINT16_(value) << EVSYS_INTPEND_ID_Pos)) /* Assigment of value for ID in the EVSYS_INTPEND register */
-#define EVSYS_INTPEND_OVR_Pos                 _UINT16_(8)                                          /* (EVSYS_INTPEND) Channel Overrun Position */
-#define EVSYS_INTPEND_OVR_Msk                 (_UINT16_(0x1) << EVSYS_INTPEND_OVR_Pos)             /* (EVSYS_INTPEND) Channel Overrun Mask */
-#define EVSYS_INTPEND_OVR(value)              (EVSYS_INTPEND_OVR_Msk & (_UINT16_(value) << EVSYS_INTPEND_OVR_Pos)) /* Assigment of value for OVR in the EVSYS_INTPEND register */
-#define EVSYS_INTPEND_EVD_Pos                 _UINT16_(9)                                          /* (EVSYS_INTPEND) Channel Event Detected Position */
-#define EVSYS_INTPEND_EVD_Msk                 (_UINT16_(0x1) << EVSYS_INTPEND_EVD_Pos)             /* (EVSYS_INTPEND) Channel Event Detected Mask */
-#define EVSYS_INTPEND_EVD(value)              (EVSYS_INTPEND_EVD_Msk & (_UINT16_(value) << EVSYS_INTPEND_EVD_Pos)) /* Assigment of value for EVD in the EVSYS_INTPEND register */
-#define EVSYS_INTPEND_READY_Pos               _UINT16_(14)                                         /* (EVSYS_INTPEND) Ready Position */
-#define EVSYS_INTPEND_READY_Msk               (_UINT16_(0x1) << EVSYS_INTPEND_READY_Pos)           /* (EVSYS_INTPEND) Ready Mask */
-#define EVSYS_INTPEND_READY(value)            (EVSYS_INTPEND_READY_Msk & (_UINT16_(value) << EVSYS_INTPEND_READY_Pos)) /* Assigment of value for READY in the EVSYS_INTPEND register */
-#define EVSYS_INTPEND_BUSY_Pos                _UINT16_(15)                                         /* (EVSYS_INTPEND) Busy Position */
-#define EVSYS_INTPEND_BUSY_Msk                (_UINT16_(0x1) << EVSYS_INTPEND_BUSY_Pos)            /* (EVSYS_INTPEND) Busy Mask */
-#define EVSYS_INTPEND_BUSY(value)             (EVSYS_INTPEND_BUSY_Msk & (_UINT16_(value) << EVSYS_INTPEND_BUSY_Pos)) /* Assigment of value for BUSY in the EVSYS_INTPEND register */
-#define EVSYS_INTPEND_Msk                     _UINT16_(0xC30F)                                     /* (EVSYS_INTPEND) Register Mask  */
-
-
-/* -------- EVSYS_INTSTATUS : (EVSYS Offset: 0x14) ( R/ 32) Interrupt Status -------- */
-#define EVSYS_INTSTATUS_RESETVALUE            _UINT32_(0x00)                                       /*  (EVSYS_INTSTATUS) Interrupt Status  Reset Value */
-
-#define EVSYS_INTSTATUS_CHINT0_Pos            _UINT32_(0)                                          /* (EVSYS_INTSTATUS) Channel 0 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT0_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT0_Pos)        /* (EVSYS_INTSTATUS) Channel 0 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT0(value)         (EVSYS_INTSTATUS_CHINT0_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT0_Pos)) /* Assigment of value for CHINT0 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT1_Pos            _UINT32_(1)                                          /* (EVSYS_INTSTATUS) Channel 1 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT1_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT1_Pos)        /* (EVSYS_INTSTATUS) Channel 1 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT1(value)         (EVSYS_INTSTATUS_CHINT1_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT1_Pos)) /* Assigment of value for CHINT1 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT2_Pos            _UINT32_(2)                                          /* (EVSYS_INTSTATUS) Channel 2 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT2_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT2_Pos)        /* (EVSYS_INTSTATUS) Channel 2 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT2(value)         (EVSYS_INTSTATUS_CHINT2_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT2_Pos)) /* Assigment of value for CHINT2 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT3_Pos            _UINT32_(3)                                          /* (EVSYS_INTSTATUS) Channel 3 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT3_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT3_Pos)        /* (EVSYS_INTSTATUS) Channel 3 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT3(value)         (EVSYS_INTSTATUS_CHINT3_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT3_Pos)) /* Assigment of value for CHINT3 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT4_Pos            _UINT32_(4)                                          /* (EVSYS_INTSTATUS) Channel 4 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT4_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT4_Pos)        /* (EVSYS_INTSTATUS) Channel 4 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT4(value)         (EVSYS_INTSTATUS_CHINT4_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT4_Pos)) /* Assigment of value for CHINT4 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT5_Pos            _UINT32_(5)                                          /* (EVSYS_INTSTATUS) Channel 5 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT5_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT5_Pos)        /* (EVSYS_INTSTATUS) Channel 5 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT5(value)         (EVSYS_INTSTATUS_CHINT5_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT5_Pos)) /* Assigment of value for CHINT5 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT6_Pos            _UINT32_(6)                                          /* (EVSYS_INTSTATUS) Channel 6 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT6_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT6_Pos)        /* (EVSYS_INTSTATUS) Channel 6 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT6(value)         (EVSYS_INTSTATUS_CHINT6_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT6_Pos)) /* Assigment of value for CHINT6 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT7_Pos            _UINT32_(7)                                          /* (EVSYS_INTSTATUS) Channel 7 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT7_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT7_Pos)        /* (EVSYS_INTSTATUS) Channel 7 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT7(value)         (EVSYS_INTSTATUS_CHINT7_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT7_Pos)) /* Assigment of value for CHINT7 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT8_Pos            _UINT32_(8)                                          /* (EVSYS_INTSTATUS) Channel 8 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT8_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT8_Pos)        /* (EVSYS_INTSTATUS) Channel 8 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT8(value)         (EVSYS_INTSTATUS_CHINT8_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT8_Pos)) /* Assigment of value for CHINT8 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT9_Pos            _UINT32_(9)                                          /* (EVSYS_INTSTATUS) Channel 9 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT9_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT9_Pos)        /* (EVSYS_INTSTATUS) Channel 9 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT9(value)         (EVSYS_INTSTATUS_CHINT9_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT9_Pos)) /* Assigment of value for CHINT9 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT10_Pos           _UINT32_(10)                                         /* (EVSYS_INTSTATUS) Channel 10 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT10_Msk           (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT10_Pos)       /* (EVSYS_INTSTATUS) Channel 10 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT10(value)        (EVSYS_INTSTATUS_CHINT10_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT10_Pos)) /* Assigment of value for CHINT10 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_CHINT11_Pos           _UINT32_(11)                                         /* (EVSYS_INTSTATUS) Channel 11 Pending Interrupt Position */
-#define EVSYS_INTSTATUS_CHINT11_Msk           (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT11_Pos)       /* (EVSYS_INTSTATUS) Channel 11 Pending Interrupt Mask */
-#define EVSYS_INTSTATUS_CHINT11(value)        (EVSYS_INTSTATUS_CHINT11_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT11_Pos)) /* Assigment of value for CHINT11 in the EVSYS_INTSTATUS register */
-#define EVSYS_INTSTATUS_Msk                   _UINT32_(0x00000FFF)                                 /* (EVSYS_INTSTATUS) Register Mask  */
-
-#define EVSYS_INTSTATUS_CHINT_Pos             _UINT32_(0)                                          /* (EVSYS_INTSTATUS Position) Channel xx Pending Interrupt */
-#define EVSYS_INTSTATUS_CHINT_Msk             (_UINT32_(0xFFF) << EVSYS_INTSTATUS_CHINT_Pos)       /* (EVSYS_INTSTATUS Mask) CHINT */
-#define EVSYS_INTSTATUS_CHINT(value)          (EVSYS_INTSTATUS_CHINT_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT_Pos)) 
-
-/* -------- EVSYS_PRICTRL : (EVSYS Offset: 0x08) (R/W 8) Priority Control -------- */
-#define EVSYS_PRICTRL_RESETVALUE              _UINT8_(0x00)                                        /*  (EVSYS_PRICTRL) Priority Control  Reset Value */
-
-#define EVSYS_PRICTRL_PRI_Pos                 _UINT8_(0)                                           /* (EVSYS_PRICTRL) Channel Priority Number Position */
-#define EVSYS_PRICTRL_PRI_Msk                 (_UINT8_(0xF) << EVSYS_PRICTRL_PRI_Pos)              /* (EVSYS_PRICTRL) Channel Priority Number Mask */
-#define EVSYS_PRICTRL_PRI(value)              (EVSYS_PRICTRL_PRI_Msk & (_UINT8_(value) << EVSYS_PRICTRL_PRI_Pos)) /* Assigment of value for PRI in the EVSYS_PRICTRL register */
-#define EVSYS_PRICTRL_RREN_Pos                _UINT8_(7)                                           /* (EVSYS_PRICTRL) Round-Robin Scheduling Enable Position */
-#define EVSYS_PRICTRL_RREN_Msk                (_UINT8_(0x1) << EVSYS_PRICTRL_RREN_Pos)             /* (EVSYS_PRICTRL) Round-Robin Scheduling Enable Mask */
-#define EVSYS_PRICTRL_RREN(value)             (EVSYS_PRICTRL_RREN_Msk & (_UINT8_(value) << EVSYS_PRICTRL_RREN_Pos)) /* Assigment of value for RREN in the EVSYS_PRICTRL register */
-#define EVSYS_PRICTRL_Msk                     _UINT8_(0x8F)                                        /* (EVSYS_PRICTRL) Register Mask  */
-
-
-/* -------- EVSYS_READYUSR : (EVSYS Offset: 0x1C) ( R/ 32) Ready Users -------- */
-#define EVSYS_READYUSR_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (EVSYS_READYUSR) Ready Users  Reset Value */
-
-#define EVSYS_READYUSR_READYUSR0_Pos          _UINT32_(0)                                          /* (EVSYS_READYUSR) Ready User for Channel 0 Position */
-#define EVSYS_READYUSR_READYUSR0_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR0_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 0 Mask */
-#define EVSYS_READYUSR_READYUSR0(value)       (EVSYS_READYUSR_READYUSR0_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR0_Pos)) /* Assigment of value for READYUSR0 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR1_Pos          _UINT32_(1)                                          /* (EVSYS_READYUSR) Ready User for Channel 1 Position */
-#define EVSYS_READYUSR_READYUSR1_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR1_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 1 Mask */
-#define EVSYS_READYUSR_READYUSR1(value)       (EVSYS_READYUSR_READYUSR1_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR1_Pos)) /* Assigment of value for READYUSR1 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR2_Pos          _UINT32_(2)                                          /* (EVSYS_READYUSR) Ready User for Channel 2 Position */
-#define EVSYS_READYUSR_READYUSR2_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR2_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 2 Mask */
-#define EVSYS_READYUSR_READYUSR2(value)       (EVSYS_READYUSR_READYUSR2_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR2_Pos)) /* Assigment of value for READYUSR2 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR3_Pos          _UINT32_(3)                                          /* (EVSYS_READYUSR) Ready User for Channel 3 Position */
-#define EVSYS_READYUSR_READYUSR3_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR3_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 3 Mask */
-#define EVSYS_READYUSR_READYUSR3(value)       (EVSYS_READYUSR_READYUSR3_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR3_Pos)) /* Assigment of value for READYUSR3 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR4_Pos          _UINT32_(4)                                          /* (EVSYS_READYUSR) Ready User for Channel 4 Position */
-#define EVSYS_READYUSR_READYUSR4_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR4_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 4 Mask */
-#define EVSYS_READYUSR_READYUSR4(value)       (EVSYS_READYUSR_READYUSR4_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR4_Pos)) /* Assigment of value for READYUSR4 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR5_Pos          _UINT32_(5)                                          /* (EVSYS_READYUSR) Ready User for Channel 5 Position */
-#define EVSYS_READYUSR_READYUSR5_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR5_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 5 Mask */
-#define EVSYS_READYUSR_READYUSR5(value)       (EVSYS_READYUSR_READYUSR5_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR5_Pos)) /* Assigment of value for READYUSR5 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR6_Pos          _UINT32_(6)                                          /* (EVSYS_READYUSR) Ready User for Channel 6 Position */
-#define EVSYS_READYUSR_READYUSR6_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR6_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 6 Mask */
-#define EVSYS_READYUSR_READYUSR6(value)       (EVSYS_READYUSR_READYUSR6_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR6_Pos)) /* Assigment of value for READYUSR6 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR7_Pos          _UINT32_(7)                                          /* (EVSYS_READYUSR) Ready User for Channel 7 Position */
-#define EVSYS_READYUSR_READYUSR7_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR7_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 7 Mask */
-#define EVSYS_READYUSR_READYUSR7(value)       (EVSYS_READYUSR_READYUSR7_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR7_Pos)) /* Assigment of value for READYUSR7 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR8_Pos          _UINT32_(8)                                          /* (EVSYS_READYUSR) Ready User for Channel 8 Position */
-#define EVSYS_READYUSR_READYUSR8_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR8_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 8 Mask */
-#define EVSYS_READYUSR_READYUSR8(value)       (EVSYS_READYUSR_READYUSR8_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR8_Pos)) /* Assigment of value for READYUSR8 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR9_Pos          _UINT32_(9)                                          /* (EVSYS_READYUSR) Ready User for Channel 9 Position */
-#define EVSYS_READYUSR_READYUSR9_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR9_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 9 Mask */
-#define EVSYS_READYUSR_READYUSR9(value)       (EVSYS_READYUSR_READYUSR9_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR9_Pos)) /* Assigment of value for READYUSR9 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR10_Pos         _UINT32_(10)                                         /* (EVSYS_READYUSR) Ready User for Channel 10 Position */
-#define EVSYS_READYUSR_READYUSR10_Msk         (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR10_Pos)     /* (EVSYS_READYUSR) Ready User for Channel 10 Mask */
-#define EVSYS_READYUSR_READYUSR10(value)      (EVSYS_READYUSR_READYUSR10_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR10_Pos)) /* Assigment of value for READYUSR10 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_READYUSR11_Pos         _UINT32_(11)                                         /* (EVSYS_READYUSR) Ready User for Channel 11 Position */
-#define EVSYS_READYUSR_READYUSR11_Msk         (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR11_Pos)     /* (EVSYS_READYUSR) Ready User for Channel 11 Mask */
-#define EVSYS_READYUSR_READYUSR11(value)      (EVSYS_READYUSR_READYUSR11_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR11_Pos)) /* Assigment of value for READYUSR11 in the EVSYS_READYUSR register */
-#define EVSYS_READYUSR_Msk                    _UINT32_(0x00000FFF)                                 /* (EVSYS_READYUSR) Register Mask  */
-
-#define EVSYS_READYUSR_READYUSR_Pos           _UINT32_(0)                                          /* (EVSYS_READYUSR Position) Ready User for Channel xx */
-#define EVSYS_READYUSR_READYUSR_Msk           (_UINT32_(0xFFF) << EVSYS_READYUSR_READYUSR_Pos)     /* (EVSYS_READYUSR Mask) READYUSR */
-#define EVSYS_READYUSR_READYUSR(value)        (EVSYS_READYUSR_READYUSR_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR_Pos)) 
 
 /* -------- EVSYS_SWEVT : (EVSYS Offset: 0x04) ( /W 32) Software Event -------- */
 #define EVSYS_SWEVT_RESETVALUE                _UINT32_(0x00)                                       /*  (EVSYS_SWEVT) Software Event  Reset Value */
@@ -393,6 +225,174 @@
 #define EVSYS_SWEVT_CHANNEL_Msk               (_UINT32_(0xFFFFFFFF) << EVSYS_SWEVT_CHANNEL_Pos)    /* (EVSYS_SWEVT Mask) CHANNEL */
 #define EVSYS_SWEVT_CHANNEL(value)            (EVSYS_SWEVT_CHANNEL_Msk & (_UINT32_(value) << EVSYS_SWEVT_CHANNEL_Pos)) 
 
+/* -------- EVSYS_PRICTRL : (EVSYS Offset: 0x08) (R/W 8) Priority Control -------- */
+#define EVSYS_PRICTRL_RESETVALUE              _UINT8_(0x00)                                        /*  (EVSYS_PRICTRL) Priority Control  Reset Value */
+
+#define EVSYS_PRICTRL_PRI_Pos                 _UINT8_(0)                                           /* (EVSYS_PRICTRL) Channel Priority Number Position */
+#define EVSYS_PRICTRL_PRI_Msk                 (_UINT8_(0xF) << EVSYS_PRICTRL_PRI_Pos)              /* (EVSYS_PRICTRL) Channel Priority Number Mask */
+#define EVSYS_PRICTRL_PRI(value)              (EVSYS_PRICTRL_PRI_Msk & (_UINT8_(value) << EVSYS_PRICTRL_PRI_Pos)) /* Assigment of value for PRI in the EVSYS_PRICTRL register */
+#define EVSYS_PRICTRL_RREN_Pos                _UINT8_(7)                                           /* (EVSYS_PRICTRL) Round-Robin Scheduling Enable Position */
+#define EVSYS_PRICTRL_RREN_Msk                (_UINT8_(0x1) << EVSYS_PRICTRL_RREN_Pos)             /* (EVSYS_PRICTRL) Round-Robin Scheduling Enable Mask */
+#define EVSYS_PRICTRL_RREN(value)             (EVSYS_PRICTRL_RREN_Msk & (_UINT8_(value) << EVSYS_PRICTRL_RREN_Pos)) /* Assigment of value for RREN in the EVSYS_PRICTRL register */
+#define EVSYS_PRICTRL_Msk                     _UINT8_(0x8F)                                        /* (EVSYS_PRICTRL) Register Mask  */
+
+
+/* -------- EVSYS_INTPEND : (EVSYS Offset: 0x10) (R/W 16) Channel Pending Interrupt -------- */
+#define EVSYS_INTPEND_RESETVALUE              _UINT16_(0x4000)                                     /*  (EVSYS_INTPEND) Channel Pending Interrupt  Reset Value */
+
+#define EVSYS_INTPEND_ID_Pos                  _UINT16_(0)                                          /* (EVSYS_INTPEND) Channel ID Position */
+#define EVSYS_INTPEND_ID_Msk                  (_UINT16_(0xF) << EVSYS_INTPEND_ID_Pos)              /* (EVSYS_INTPEND) Channel ID Mask */
+#define EVSYS_INTPEND_ID(value)               (EVSYS_INTPEND_ID_Msk & (_UINT16_(value) << EVSYS_INTPEND_ID_Pos)) /* Assigment of value for ID in the EVSYS_INTPEND register */
+#define EVSYS_INTPEND_OVR_Pos                 _UINT16_(8)                                          /* (EVSYS_INTPEND) Channel Overrun Position */
+#define EVSYS_INTPEND_OVR_Msk                 (_UINT16_(0x1) << EVSYS_INTPEND_OVR_Pos)             /* (EVSYS_INTPEND) Channel Overrun Mask */
+#define EVSYS_INTPEND_OVR(value)              (EVSYS_INTPEND_OVR_Msk & (_UINT16_(value) << EVSYS_INTPEND_OVR_Pos)) /* Assigment of value for OVR in the EVSYS_INTPEND register */
+#define EVSYS_INTPEND_EVD_Pos                 _UINT16_(9)                                          /* (EVSYS_INTPEND) Channel Event Detected Position */
+#define EVSYS_INTPEND_EVD_Msk                 (_UINT16_(0x1) << EVSYS_INTPEND_EVD_Pos)             /* (EVSYS_INTPEND) Channel Event Detected Mask */
+#define EVSYS_INTPEND_EVD(value)              (EVSYS_INTPEND_EVD_Msk & (_UINT16_(value) << EVSYS_INTPEND_EVD_Pos)) /* Assigment of value for EVD in the EVSYS_INTPEND register */
+#define EVSYS_INTPEND_READY_Pos               _UINT16_(14)                                         /* (EVSYS_INTPEND) Ready Position */
+#define EVSYS_INTPEND_READY_Msk               (_UINT16_(0x1) << EVSYS_INTPEND_READY_Pos)           /* (EVSYS_INTPEND) Ready Mask */
+#define EVSYS_INTPEND_READY(value)            (EVSYS_INTPEND_READY_Msk & (_UINT16_(value) << EVSYS_INTPEND_READY_Pos)) /* Assigment of value for READY in the EVSYS_INTPEND register */
+#define EVSYS_INTPEND_BUSY_Pos                _UINT16_(15)                                         /* (EVSYS_INTPEND) Busy Position */
+#define EVSYS_INTPEND_BUSY_Msk                (_UINT16_(0x1) << EVSYS_INTPEND_BUSY_Pos)            /* (EVSYS_INTPEND) Busy Mask */
+#define EVSYS_INTPEND_BUSY(value)             (EVSYS_INTPEND_BUSY_Msk & (_UINT16_(value) << EVSYS_INTPEND_BUSY_Pos)) /* Assigment of value for BUSY in the EVSYS_INTPEND register */
+#define EVSYS_INTPEND_Msk                     _UINT16_(0xC30F)                                     /* (EVSYS_INTPEND) Register Mask  */
+
+
+/* -------- EVSYS_INTSTATUS : (EVSYS Offset: 0x14) ( R/ 32) Interrupt Status -------- */
+#define EVSYS_INTSTATUS_RESETVALUE            _UINT32_(0x00)                                       /*  (EVSYS_INTSTATUS) Interrupt Status  Reset Value */
+
+#define EVSYS_INTSTATUS_CHINT0_Pos            _UINT32_(0)                                          /* (EVSYS_INTSTATUS) Channel 0 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT0_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT0_Pos)        /* (EVSYS_INTSTATUS) Channel 0 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT0(value)         (EVSYS_INTSTATUS_CHINT0_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT0_Pos)) /* Assigment of value for CHINT0 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT1_Pos            _UINT32_(1)                                          /* (EVSYS_INTSTATUS) Channel 1 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT1_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT1_Pos)        /* (EVSYS_INTSTATUS) Channel 1 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT1(value)         (EVSYS_INTSTATUS_CHINT1_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT1_Pos)) /* Assigment of value for CHINT1 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT2_Pos            _UINT32_(2)                                          /* (EVSYS_INTSTATUS) Channel 2 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT2_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT2_Pos)        /* (EVSYS_INTSTATUS) Channel 2 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT2(value)         (EVSYS_INTSTATUS_CHINT2_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT2_Pos)) /* Assigment of value for CHINT2 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT3_Pos            _UINT32_(3)                                          /* (EVSYS_INTSTATUS) Channel 3 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT3_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT3_Pos)        /* (EVSYS_INTSTATUS) Channel 3 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT3(value)         (EVSYS_INTSTATUS_CHINT3_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT3_Pos)) /* Assigment of value for CHINT3 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT4_Pos            _UINT32_(4)                                          /* (EVSYS_INTSTATUS) Channel 4 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT4_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT4_Pos)        /* (EVSYS_INTSTATUS) Channel 4 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT4(value)         (EVSYS_INTSTATUS_CHINT4_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT4_Pos)) /* Assigment of value for CHINT4 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT5_Pos            _UINT32_(5)                                          /* (EVSYS_INTSTATUS) Channel 5 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT5_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT5_Pos)        /* (EVSYS_INTSTATUS) Channel 5 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT5(value)         (EVSYS_INTSTATUS_CHINT5_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT5_Pos)) /* Assigment of value for CHINT5 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT6_Pos            _UINT32_(6)                                          /* (EVSYS_INTSTATUS) Channel 6 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT6_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT6_Pos)        /* (EVSYS_INTSTATUS) Channel 6 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT6(value)         (EVSYS_INTSTATUS_CHINT6_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT6_Pos)) /* Assigment of value for CHINT6 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT7_Pos            _UINT32_(7)                                          /* (EVSYS_INTSTATUS) Channel 7 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT7_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT7_Pos)        /* (EVSYS_INTSTATUS) Channel 7 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT7(value)         (EVSYS_INTSTATUS_CHINT7_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT7_Pos)) /* Assigment of value for CHINT7 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT8_Pos            _UINT32_(8)                                          /* (EVSYS_INTSTATUS) Channel 8 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT8_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT8_Pos)        /* (EVSYS_INTSTATUS) Channel 8 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT8(value)         (EVSYS_INTSTATUS_CHINT8_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT8_Pos)) /* Assigment of value for CHINT8 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT9_Pos            _UINT32_(9)                                          /* (EVSYS_INTSTATUS) Channel 9 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT9_Msk            (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT9_Pos)        /* (EVSYS_INTSTATUS) Channel 9 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT9(value)         (EVSYS_INTSTATUS_CHINT9_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT9_Pos)) /* Assigment of value for CHINT9 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT10_Pos           _UINT32_(10)                                         /* (EVSYS_INTSTATUS) Channel 10 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT10_Msk           (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT10_Pos)       /* (EVSYS_INTSTATUS) Channel 10 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT10(value)        (EVSYS_INTSTATUS_CHINT10_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT10_Pos)) /* Assigment of value for CHINT10 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_CHINT11_Pos           _UINT32_(11)                                         /* (EVSYS_INTSTATUS) Channel 11 Pending Interrupt Position */
+#define EVSYS_INTSTATUS_CHINT11_Msk           (_UINT32_(0x1) << EVSYS_INTSTATUS_CHINT11_Pos)       /* (EVSYS_INTSTATUS) Channel 11 Pending Interrupt Mask */
+#define EVSYS_INTSTATUS_CHINT11(value)        (EVSYS_INTSTATUS_CHINT11_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT11_Pos)) /* Assigment of value for CHINT11 in the EVSYS_INTSTATUS register */
+#define EVSYS_INTSTATUS_Msk                   _UINT32_(0x00000FFF)                                 /* (EVSYS_INTSTATUS) Register Mask  */
+
+#define EVSYS_INTSTATUS_CHINT_Pos             _UINT32_(0)                                          /* (EVSYS_INTSTATUS Position) Channel xx Pending Interrupt */
+#define EVSYS_INTSTATUS_CHINT_Msk             (_UINT32_(0xFFF) << EVSYS_INTSTATUS_CHINT_Pos)       /* (EVSYS_INTSTATUS Mask) CHINT */
+#define EVSYS_INTSTATUS_CHINT(value)          (EVSYS_INTSTATUS_CHINT_Msk & (_UINT32_(value) << EVSYS_INTSTATUS_CHINT_Pos)) 
+
+/* -------- EVSYS_BUSYCH : (EVSYS Offset: 0x18) ( R/ 32) Busy Channels -------- */
+#define EVSYS_BUSYCH_RESETVALUE               _UINT32_(0x00)                                       /*  (EVSYS_BUSYCH) Busy Channels  Reset Value */
+
+#define EVSYS_BUSYCH_BUSYCH0_Pos              _UINT32_(0)                                          /* (EVSYS_BUSYCH) Busy Channel 0 Position */
+#define EVSYS_BUSYCH_BUSYCH0_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH0_Pos)          /* (EVSYS_BUSYCH) Busy Channel 0 Mask */
+#define EVSYS_BUSYCH_BUSYCH0(value)           (EVSYS_BUSYCH_BUSYCH0_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH0_Pos)) /* Assigment of value for BUSYCH0 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH1_Pos              _UINT32_(1)                                          /* (EVSYS_BUSYCH) Busy Channel 1 Position */
+#define EVSYS_BUSYCH_BUSYCH1_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH1_Pos)          /* (EVSYS_BUSYCH) Busy Channel 1 Mask */
+#define EVSYS_BUSYCH_BUSYCH1(value)           (EVSYS_BUSYCH_BUSYCH1_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH1_Pos)) /* Assigment of value for BUSYCH1 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH2_Pos              _UINT32_(2)                                          /* (EVSYS_BUSYCH) Busy Channel 2 Position */
+#define EVSYS_BUSYCH_BUSYCH2_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH2_Pos)          /* (EVSYS_BUSYCH) Busy Channel 2 Mask */
+#define EVSYS_BUSYCH_BUSYCH2(value)           (EVSYS_BUSYCH_BUSYCH2_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH2_Pos)) /* Assigment of value for BUSYCH2 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH3_Pos              _UINT32_(3)                                          /* (EVSYS_BUSYCH) Busy Channel 3 Position */
+#define EVSYS_BUSYCH_BUSYCH3_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH3_Pos)          /* (EVSYS_BUSYCH) Busy Channel 3 Mask */
+#define EVSYS_BUSYCH_BUSYCH3(value)           (EVSYS_BUSYCH_BUSYCH3_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH3_Pos)) /* Assigment of value for BUSYCH3 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH4_Pos              _UINT32_(4)                                          /* (EVSYS_BUSYCH) Busy Channel 4 Position */
+#define EVSYS_BUSYCH_BUSYCH4_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH4_Pos)          /* (EVSYS_BUSYCH) Busy Channel 4 Mask */
+#define EVSYS_BUSYCH_BUSYCH4(value)           (EVSYS_BUSYCH_BUSYCH4_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH4_Pos)) /* Assigment of value for BUSYCH4 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH5_Pos              _UINT32_(5)                                          /* (EVSYS_BUSYCH) Busy Channel 5 Position */
+#define EVSYS_BUSYCH_BUSYCH5_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH5_Pos)          /* (EVSYS_BUSYCH) Busy Channel 5 Mask */
+#define EVSYS_BUSYCH_BUSYCH5(value)           (EVSYS_BUSYCH_BUSYCH5_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH5_Pos)) /* Assigment of value for BUSYCH5 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH6_Pos              _UINT32_(6)                                          /* (EVSYS_BUSYCH) Busy Channel 6 Position */
+#define EVSYS_BUSYCH_BUSYCH6_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH6_Pos)          /* (EVSYS_BUSYCH) Busy Channel 6 Mask */
+#define EVSYS_BUSYCH_BUSYCH6(value)           (EVSYS_BUSYCH_BUSYCH6_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH6_Pos)) /* Assigment of value for BUSYCH6 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH7_Pos              _UINT32_(7)                                          /* (EVSYS_BUSYCH) Busy Channel 7 Position */
+#define EVSYS_BUSYCH_BUSYCH7_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH7_Pos)          /* (EVSYS_BUSYCH) Busy Channel 7 Mask */
+#define EVSYS_BUSYCH_BUSYCH7(value)           (EVSYS_BUSYCH_BUSYCH7_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH7_Pos)) /* Assigment of value for BUSYCH7 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH8_Pos              _UINT32_(8)                                          /* (EVSYS_BUSYCH) Busy Channel 8 Position */
+#define EVSYS_BUSYCH_BUSYCH8_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH8_Pos)          /* (EVSYS_BUSYCH) Busy Channel 8 Mask */
+#define EVSYS_BUSYCH_BUSYCH8(value)           (EVSYS_BUSYCH_BUSYCH8_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH8_Pos)) /* Assigment of value for BUSYCH8 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH9_Pos              _UINT32_(9)                                          /* (EVSYS_BUSYCH) Busy Channel 9 Position */
+#define EVSYS_BUSYCH_BUSYCH9_Msk              (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH9_Pos)          /* (EVSYS_BUSYCH) Busy Channel 9 Mask */
+#define EVSYS_BUSYCH_BUSYCH9(value)           (EVSYS_BUSYCH_BUSYCH9_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH9_Pos)) /* Assigment of value for BUSYCH9 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH10_Pos             _UINT32_(10)                                         /* (EVSYS_BUSYCH) Busy Channel 10 Position */
+#define EVSYS_BUSYCH_BUSYCH10_Msk             (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH10_Pos)         /* (EVSYS_BUSYCH) Busy Channel 10 Mask */
+#define EVSYS_BUSYCH_BUSYCH10(value)          (EVSYS_BUSYCH_BUSYCH10_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH10_Pos)) /* Assigment of value for BUSYCH10 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_BUSYCH11_Pos             _UINT32_(11)                                         /* (EVSYS_BUSYCH) Busy Channel 11 Position */
+#define EVSYS_BUSYCH_BUSYCH11_Msk             (_UINT32_(0x1) << EVSYS_BUSYCH_BUSYCH11_Pos)         /* (EVSYS_BUSYCH) Busy Channel 11 Mask */
+#define EVSYS_BUSYCH_BUSYCH11(value)          (EVSYS_BUSYCH_BUSYCH11_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH11_Pos)) /* Assigment of value for BUSYCH11 in the EVSYS_BUSYCH register */
+#define EVSYS_BUSYCH_Msk                      _UINT32_(0x00000FFF)                                 /* (EVSYS_BUSYCH) Register Mask  */
+
+#define EVSYS_BUSYCH_BUSYCH_Pos               _UINT32_(0)                                          /* (EVSYS_BUSYCH Position) Busy Channel xx */
+#define EVSYS_BUSYCH_BUSYCH_Msk               (_UINT32_(0xFFF) << EVSYS_BUSYCH_BUSYCH_Pos)         /* (EVSYS_BUSYCH Mask) BUSYCH */
+#define EVSYS_BUSYCH_BUSYCH(value)            (EVSYS_BUSYCH_BUSYCH_Msk & (_UINT32_(value) << EVSYS_BUSYCH_BUSYCH_Pos)) 
+
+/* -------- EVSYS_READYUSR : (EVSYS Offset: 0x1C) ( R/ 32) Ready Users -------- */
+#define EVSYS_READYUSR_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (EVSYS_READYUSR) Ready Users  Reset Value */
+
+#define EVSYS_READYUSR_READYUSR0_Pos          _UINT32_(0)                                          /* (EVSYS_READYUSR) Ready User for Channel 0 Position */
+#define EVSYS_READYUSR_READYUSR0_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR0_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 0 Mask */
+#define EVSYS_READYUSR_READYUSR0(value)       (EVSYS_READYUSR_READYUSR0_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR0_Pos)) /* Assigment of value for READYUSR0 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR1_Pos          _UINT32_(1)                                          /* (EVSYS_READYUSR) Ready User for Channel 1 Position */
+#define EVSYS_READYUSR_READYUSR1_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR1_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 1 Mask */
+#define EVSYS_READYUSR_READYUSR1(value)       (EVSYS_READYUSR_READYUSR1_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR1_Pos)) /* Assigment of value for READYUSR1 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR2_Pos          _UINT32_(2)                                          /* (EVSYS_READYUSR) Ready User for Channel 2 Position */
+#define EVSYS_READYUSR_READYUSR2_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR2_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 2 Mask */
+#define EVSYS_READYUSR_READYUSR2(value)       (EVSYS_READYUSR_READYUSR2_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR2_Pos)) /* Assigment of value for READYUSR2 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR3_Pos          _UINT32_(3)                                          /* (EVSYS_READYUSR) Ready User for Channel 3 Position */
+#define EVSYS_READYUSR_READYUSR3_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR3_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 3 Mask */
+#define EVSYS_READYUSR_READYUSR3(value)       (EVSYS_READYUSR_READYUSR3_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR3_Pos)) /* Assigment of value for READYUSR3 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR4_Pos          _UINT32_(4)                                          /* (EVSYS_READYUSR) Ready User for Channel 4 Position */
+#define EVSYS_READYUSR_READYUSR4_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR4_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 4 Mask */
+#define EVSYS_READYUSR_READYUSR4(value)       (EVSYS_READYUSR_READYUSR4_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR4_Pos)) /* Assigment of value for READYUSR4 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR5_Pos          _UINT32_(5)                                          /* (EVSYS_READYUSR) Ready User for Channel 5 Position */
+#define EVSYS_READYUSR_READYUSR5_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR5_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 5 Mask */
+#define EVSYS_READYUSR_READYUSR5(value)       (EVSYS_READYUSR_READYUSR5_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR5_Pos)) /* Assigment of value for READYUSR5 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR6_Pos          _UINT32_(6)                                          /* (EVSYS_READYUSR) Ready User for Channel 6 Position */
+#define EVSYS_READYUSR_READYUSR6_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR6_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 6 Mask */
+#define EVSYS_READYUSR_READYUSR6(value)       (EVSYS_READYUSR_READYUSR6_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR6_Pos)) /* Assigment of value for READYUSR6 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR7_Pos          _UINT32_(7)                                          /* (EVSYS_READYUSR) Ready User for Channel 7 Position */
+#define EVSYS_READYUSR_READYUSR7_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR7_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 7 Mask */
+#define EVSYS_READYUSR_READYUSR7(value)       (EVSYS_READYUSR_READYUSR7_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR7_Pos)) /* Assigment of value for READYUSR7 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR8_Pos          _UINT32_(8)                                          /* (EVSYS_READYUSR) Ready User for Channel 8 Position */
+#define EVSYS_READYUSR_READYUSR8_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR8_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 8 Mask */
+#define EVSYS_READYUSR_READYUSR8(value)       (EVSYS_READYUSR_READYUSR8_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR8_Pos)) /* Assigment of value for READYUSR8 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR9_Pos          _UINT32_(9)                                          /* (EVSYS_READYUSR) Ready User for Channel 9 Position */
+#define EVSYS_READYUSR_READYUSR9_Msk          (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR9_Pos)      /* (EVSYS_READYUSR) Ready User for Channel 9 Mask */
+#define EVSYS_READYUSR_READYUSR9(value)       (EVSYS_READYUSR_READYUSR9_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR9_Pos)) /* Assigment of value for READYUSR9 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR10_Pos         _UINT32_(10)                                         /* (EVSYS_READYUSR) Ready User for Channel 10 Position */
+#define EVSYS_READYUSR_READYUSR10_Msk         (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR10_Pos)     /* (EVSYS_READYUSR) Ready User for Channel 10 Mask */
+#define EVSYS_READYUSR_READYUSR10(value)      (EVSYS_READYUSR_READYUSR10_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR10_Pos)) /* Assigment of value for READYUSR10 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_READYUSR11_Pos         _UINT32_(11)                                         /* (EVSYS_READYUSR) Ready User for Channel 11 Position */
+#define EVSYS_READYUSR_READYUSR11_Msk         (_UINT32_(0x1) << EVSYS_READYUSR_READYUSR11_Pos)     /* (EVSYS_READYUSR) Ready User for Channel 11 Mask */
+#define EVSYS_READYUSR_READYUSR11(value)      (EVSYS_READYUSR_READYUSR11_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR11_Pos)) /* Assigment of value for READYUSR11 in the EVSYS_READYUSR register */
+#define EVSYS_READYUSR_Msk                    _UINT32_(0x00000FFF)                                 /* (EVSYS_READYUSR) Register Mask  */
+
+#define EVSYS_READYUSR_READYUSR_Pos           _UINT32_(0)                                          /* (EVSYS_READYUSR Position) Ready User for Channel xx */
+#define EVSYS_READYUSR_READYUSR_Msk           (_UINT32_(0xFFF) << EVSYS_READYUSR_READYUSR_Pos)     /* (EVSYS_READYUSR Mask) READYUSR */
+#define EVSYS_READYUSR_READYUSR(value)        (EVSYS_READYUSR_READYUSR_Msk & (_UINT32_(value) << EVSYS_READYUSR_READYUSR_Pos)) 
+
 /* -------- EVSYS_USER : (EVSYS Offset: 0x120) (R/W 32) User Multiplexer n -------- */
 #define EVSYS_USER_RESETVALUE                 _UINT32_(0x00)                                       /*  (EVSYS_USER) User Multiplexer n  Reset Value */
 
@@ -408,13 +408,13 @@
 #define EVSYS_CHINTENSET_REG_OFST      _UINT32_(0x05)      /* (EVSYS_CHINTENSET) Channel n Interrupt Enable Set Offset */
 #define EVSYS_CHINTFLAG_REG_OFST       _UINT32_(0x06)      /* (EVSYS_CHINTFLAG) Channel n Interrupt Flag Status and Clear Offset */
 #define EVSYS_CHSTATUS_REG_OFST        _UINT32_(0x07)      /* (EVSYS_CHSTATUS) Channel n Status Offset */
-#define EVSYS_BUSYCH_REG_OFST          _UINT32_(0x18)      /* (EVSYS_BUSYCH) Busy Channels Offset */
 #define EVSYS_CTRLA_REG_OFST           _UINT32_(0x00)      /* (EVSYS_CTRLA) Control Offset */
+#define EVSYS_SWEVT_REG_OFST           _UINT32_(0x04)      /* (EVSYS_SWEVT) Software Event Offset */
+#define EVSYS_PRICTRL_REG_OFST         _UINT32_(0x08)      /* (EVSYS_PRICTRL) Priority Control Offset */
 #define EVSYS_INTPEND_REG_OFST         _UINT32_(0x10)      /* (EVSYS_INTPEND) Channel Pending Interrupt Offset */
 #define EVSYS_INTSTATUS_REG_OFST       _UINT32_(0x14)      /* (EVSYS_INTSTATUS) Interrupt Status Offset */
-#define EVSYS_PRICTRL_REG_OFST         _UINT32_(0x08)      /* (EVSYS_PRICTRL) Priority Control Offset */
+#define EVSYS_BUSYCH_REG_OFST          _UINT32_(0x18)      /* (EVSYS_BUSYCH) Busy Channels Offset */
 #define EVSYS_READYUSR_REG_OFST        _UINT32_(0x1C)      /* (EVSYS_READYUSR) Ready Users Offset */
-#define EVSYS_SWEVT_REG_OFST           _UINT32_(0x04)      /* (EVSYS_SWEVT) Software Event Offset */
 #define EVSYS_USER_REG_OFST            _UINT32_(0x120)     /* (EVSYS_USER) User Multiplexer n Offset */
 #define EVSYS_USER0_REG_OFST           _UINT32_(0x120)     /* (EVSYS_USER0) User Multiplexer n Offset */
 #define EVSYS_USER1_REG_OFST           _UINT32_(0x124)     /* (EVSYS_USER1) User Multiplexer n Offset */

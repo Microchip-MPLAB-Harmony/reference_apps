@@ -1,7 +1,7 @@
 /*
  * Component description for PDEC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,40 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_PDEC_COMPONENT_H_
 #define _PIC32CXSG41_PDEC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR PDEC                                         */
 /* ************************************************************************** */
-
-/* -------- PDEC_CC : (PDEC Offset: 0x20) (R/W 32) Channel n Compare Value -------- */
-#define PDEC_CC_RESETVALUE                    _UINT32_(0x00)                                       /*  (PDEC_CC) Channel n Compare Value  Reset Value */
-
-#define PDEC_CC_CC_Pos                        _UINT32_(0)                                          /* (PDEC_CC) Channel Compare Value Position */
-#define PDEC_CC_CC_Msk                        (_UINT32_(0xFFFF) << PDEC_CC_CC_Pos)                 /* (PDEC_CC) Channel Compare Value Mask */
-#define PDEC_CC_CC(value)                     (PDEC_CC_CC_Msk & (_UINT32_(value) << PDEC_CC_CC_Pos)) /* Assigment of value for CC in the PDEC_CC register */
-#define PDEC_CC_Msk                           _UINT32_(0x0000FFFF)                                 /* (PDEC_CC) Register Mask  */
-
-
-/* -------- PDEC_CCBUF : (PDEC Offset: 0x30) (R/W 32) Channel Compare Buffer Value -------- */
-#define PDEC_CCBUF_RESETVALUE                 _UINT32_(0x00)                                       /*  (PDEC_CCBUF) Channel Compare Buffer Value  Reset Value */
-
-#define PDEC_CCBUF_CCBUF_Pos                  _UINT32_(0)                                          /* (PDEC_CCBUF) Channel Compare Buffer Value Position */
-#define PDEC_CCBUF_CCBUF_Msk                  (_UINT32_(0xFFFF) << PDEC_CCBUF_CCBUF_Pos)           /* (PDEC_CCBUF) Channel Compare Buffer Value Mask */
-#define PDEC_CCBUF_CCBUF(value)               (PDEC_CCBUF_CCBUF_Msk & (_UINT32_(value) << PDEC_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the PDEC_CCBUF register */
-#define PDEC_CCBUF_Msk                        _UINT32_(0x0000FFFF)                                 /* (PDEC_CCBUF) Register Mask  */
-
-
-/* -------- PDEC_COUNT : (PDEC Offset: 0x1C) (R/W 32) Counter Value -------- */
-#define PDEC_COUNT_RESETVALUE                 _UINT32_(0x00)                                       /*  (PDEC_COUNT) Counter Value  Reset Value */
-
-#define PDEC_COUNT_COUNT_Pos                  _UINT32_(0)                                          /* (PDEC_COUNT) Counter Value Position */
-#define PDEC_COUNT_COUNT_Msk                  (_UINT32_(0xFFFF) << PDEC_COUNT_COUNT_Pos)           /* (PDEC_COUNT) Counter Value Mask */
-#define PDEC_COUNT_COUNT(value)               (PDEC_COUNT_COUNT_Msk & (_UINT32_(value) << PDEC_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the PDEC_COUNT register */
-#define PDEC_COUNT_Msk                        _UINT32_(0x0000FFFF)                                 /* (PDEC_COUNT) Register Mask  */
-
 
 /* -------- PDEC_CTRLA : (PDEC Offset: 0x00) (R/W 32) Control A -------- */
 #define PDEC_CTRLA_RESETVALUE                 _UINT32_(0x00)                                       /*  (PDEC_CTRLA) Control A  Reset Value */
@@ -179,23 +152,9 @@
 #define PDEC_CTRLBSET_Msk                     _UINT8_(0xE2)                                        /* (PDEC_CTRLBSET) Register Mask  */
 
 
-/* -------- PDEC_DBGCTRL : (PDEC Offset: 0x0F) (R/W 8) Debug Control -------- */
-#define PDEC_DBGCTRL_RESETVALUE               _UINT8_(0x00)                                        /*  (PDEC_DBGCTRL) Debug Control  Reset Value */
-
-#define PDEC_DBGCTRL_DBGRUN_Pos               _UINT8_(0)                                           /* (PDEC_DBGCTRL) Debug Run Mode Position */
-#define PDEC_DBGCTRL_DBGRUN_Msk               (_UINT8_(0x1) << PDEC_DBGCTRL_DBGRUN_Pos)            /* (PDEC_DBGCTRL) Debug Run Mode Mask */
-#define PDEC_DBGCTRL_DBGRUN(value)            (PDEC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << PDEC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the PDEC_DBGCTRL register */
-#define PDEC_DBGCTRL_Msk                      _UINT8_(0x01)                                        /* (PDEC_DBGCTRL) Register Mask  */
-
-
 /* -------- PDEC_EVCTRL : (PDEC Offset: 0x06) (R/W 16) Event Control -------- */
 #define PDEC_EVCTRL_RESETVALUE                _UINT16_(0x00)                                       /*  (PDEC_EVCTRL) Event Control  Reset Value */
 
-#define PDEC_EVCTRL_EVACT_Pos                 _UINT16_(0)                                          /* (PDEC_EVCTRL) Event Action Position */
-#define PDEC_EVCTRL_EVACT_Msk                 (_UINT16_(0x3) << PDEC_EVCTRL_EVACT_Pos)             /* (PDEC_EVCTRL) Event Action Mask */
-#define PDEC_EVCTRL_EVACT(value)              (PDEC_EVCTRL_EVACT_Msk & (_UINT16_(value) << PDEC_EVCTRL_EVACT_Pos)) /* Assigment of value for EVACT in the PDEC_EVCTRL register */
-#define   PDEC_EVCTRL_EVACT_OFF_Val           _UINT16_(0x0)                                        /* (PDEC_EVCTRL) Event action disabled  */
-#define PDEC_EVCTRL_EVACT_OFF                 (PDEC_EVCTRL_EVACT_OFF_Val << PDEC_EVCTRL_EVACT_Pos) /* (PDEC_EVCTRL) Event action disabled Position  */
 #define PDEC_EVCTRL_EVINV_Pos                 _UINT16_(2)                                          /* (PDEC_EVCTRL) Inverted Event Input Enable Position */
 #define PDEC_EVCTRL_EVINV_Msk                 (_UINT16_(0x7) << PDEC_EVCTRL_EVINV_Pos)             /* (PDEC_EVCTRL) Inverted Event Input Enable Mask */
 #define PDEC_EVCTRL_EVINV(value)              (PDEC_EVCTRL_EVINV_Msk & (_UINT16_(value) << PDEC_EVCTRL_EVINV_Pos)) /* Assigment of value for EVINV in the PDEC_EVCTRL register */
@@ -220,29 +179,11 @@
 #define PDEC_EVCTRL_MCEO1_Pos                 _UINT16_(13)                                         /* (PDEC_EVCTRL) Match Channel 1 Event Output Enable Position */
 #define PDEC_EVCTRL_MCEO1_Msk                 (_UINT16_(0x1) << PDEC_EVCTRL_MCEO1_Pos)             /* (PDEC_EVCTRL) Match Channel 1 Event Output Enable Mask */
 #define PDEC_EVCTRL_MCEO1(value)              (PDEC_EVCTRL_MCEO1_Msk & (_UINT16_(value) << PDEC_EVCTRL_MCEO1_Pos)) /* Assigment of value for MCEO1 in the PDEC_EVCTRL register */
-#define PDEC_EVCTRL_Msk                       _UINT16_(0x3FFF)                                     /* (PDEC_EVCTRL) Register Mask  */
+#define PDEC_EVCTRL_Msk                       _UINT16_(0x3FFC)                                     /* (PDEC_EVCTRL) Register Mask  */
 
 #define PDEC_EVCTRL_MCEO_Pos                  _UINT16_(12)                                         /* (PDEC_EVCTRL Position) Match Channel x Event Output Enable */
 #define PDEC_EVCTRL_MCEO_Msk                  (_UINT16_(0x3) << PDEC_EVCTRL_MCEO_Pos)              /* (PDEC_EVCTRL Mask) MCEO */
 #define PDEC_EVCTRL_MCEO(value)               (PDEC_EVCTRL_MCEO_Msk & (_UINT16_(value) << PDEC_EVCTRL_MCEO_Pos)) 
-
-/* -------- PDEC_FILTER : (PDEC Offset: 0x15) (R/W 8) Filter Value -------- */
-#define PDEC_FILTER_RESETVALUE                _UINT8_(0x00)                                        /*  (PDEC_FILTER) Filter Value  Reset Value */
-
-#define PDEC_FILTER_FILTER_Pos                _UINT8_(0)                                           /* (PDEC_FILTER) Filter Value Position */
-#define PDEC_FILTER_FILTER_Msk                (_UINT8_(0xFF) << PDEC_FILTER_FILTER_Pos)            /* (PDEC_FILTER) Filter Value Mask */
-#define PDEC_FILTER_FILTER(value)             (PDEC_FILTER_FILTER_Msk & (_UINT8_(value) << PDEC_FILTER_FILTER_Pos)) /* Assigment of value for FILTER in the PDEC_FILTER register */
-#define PDEC_FILTER_Msk                       _UINT8_(0xFF)                                        /* (PDEC_FILTER) Register Mask  */
-
-
-/* -------- PDEC_FILTERBUF : (PDEC Offset: 0x19) (R/W 8) Filter Buffer Value -------- */
-#define PDEC_FILTERBUF_RESETVALUE             _UINT8_(0x00)                                        /*  (PDEC_FILTERBUF) Filter Buffer Value  Reset Value */
-
-#define PDEC_FILTERBUF_FILTERBUF_Pos          _UINT8_(0)                                           /* (PDEC_FILTERBUF) Filter Buffer Value Position */
-#define PDEC_FILTERBUF_FILTERBUF_Msk          (_UINT8_(0xFF) << PDEC_FILTERBUF_FILTERBUF_Pos)      /* (PDEC_FILTERBUF) Filter Buffer Value Mask */
-#define PDEC_FILTERBUF_FILTERBUF(value)       (PDEC_FILTERBUF_FILTERBUF_Msk & (_UINT8_(value) << PDEC_FILTERBUF_FILTERBUF_Pos)) /* Assigment of value for FILTERBUF in the PDEC_FILTERBUF register */
-#define PDEC_FILTERBUF_Msk                    _UINT8_(0xFF)                                        /* (PDEC_FILTERBUF) Register Mask  */
-
 
 /* -------- PDEC_INTENCLR : (PDEC Offset: 0x08) (R/W 8) Interrupt Enable Clear -------- */
 #define PDEC_INTENCLR_RESETVALUE              _UINT8_(0x00)                                        /*  (PDEC_INTENCLR) Interrupt Enable Clear  Reset Value */
@@ -325,68 +266,6 @@
 #define PDEC_INTFLAG_MC_Msk                   (_UINT8_(0x3) << PDEC_INTFLAG_MC_Pos)                /* (PDEC_INTFLAG Mask) MC */
 #define PDEC_INTFLAG_MC(value)                (PDEC_INTFLAG_MC_Msk & (_UINT8_(value) << PDEC_INTFLAG_MC_Pos)) 
 
-/* -------- PDEC_PRESC : (PDEC Offset: 0x14) (R/W 8) Prescaler Value -------- */
-#define PDEC_PRESC_RESETVALUE                 _UINT8_(0x00)                                        /*  (PDEC_PRESC) Prescaler Value  Reset Value */
-
-#define PDEC_PRESC_PRESC_Pos                  _UINT8_(0)                                           /* (PDEC_PRESC) Prescaler Value Position */
-#define PDEC_PRESC_PRESC_Msk                  (_UINT8_(0xF) << PDEC_PRESC_PRESC_Pos)               /* (PDEC_PRESC) Prescaler Value Mask */
-#define PDEC_PRESC_PRESC(value)               (PDEC_PRESC_PRESC_Msk & (_UINT8_(value) << PDEC_PRESC_PRESC_Pos)) /* Assigment of value for PRESC in the PDEC_PRESC register */
-#define   PDEC_PRESC_PRESC_DIV1_Val           _UINT8_(0x0)                                         /* (PDEC_PRESC) No division  */
-#define   PDEC_PRESC_PRESC_DIV2_Val           _UINT8_(0x1)                                         /* (PDEC_PRESC) Divide by 2  */
-#define   PDEC_PRESC_PRESC_DIV4_Val           _UINT8_(0x2)                                         /* (PDEC_PRESC) Divide by 4  */
-#define   PDEC_PRESC_PRESC_DIV8_Val           _UINT8_(0x3)                                         /* (PDEC_PRESC) Divide by 8  */
-#define   PDEC_PRESC_PRESC_DIV16_Val          _UINT8_(0x4)                                         /* (PDEC_PRESC) Divide by 16  */
-#define   PDEC_PRESC_PRESC_DIV32_Val          _UINT8_(0x5)                                         /* (PDEC_PRESC) Divide by 32  */
-#define   PDEC_PRESC_PRESC_DIV64_Val          _UINT8_(0x6)                                         /* (PDEC_PRESC) Divide by 64  */
-#define   PDEC_PRESC_PRESC_DIV128_Val         _UINT8_(0x7)                                         /* (PDEC_PRESC) Divide by 128  */
-#define   PDEC_PRESC_PRESC_DIV256_Val         _UINT8_(0x8)                                         /* (PDEC_PRESC) Divide by 256  */
-#define   PDEC_PRESC_PRESC_DIV512_Val         _UINT8_(0x9)                                         /* (PDEC_PRESC) Divide by 512  */
-#define   PDEC_PRESC_PRESC_DIV1024_Val        _UINT8_(0xA)                                         /* (PDEC_PRESC) Divide by 1024  */
-#define PDEC_PRESC_PRESC_DIV1                 (PDEC_PRESC_PRESC_DIV1_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) No division Position  */
-#define PDEC_PRESC_PRESC_DIV2                 (PDEC_PRESC_PRESC_DIV2_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) Divide by 2 Position  */
-#define PDEC_PRESC_PRESC_DIV4                 (PDEC_PRESC_PRESC_DIV4_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) Divide by 4 Position  */
-#define PDEC_PRESC_PRESC_DIV8                 (PDEC_PRESC_PRESC_DIV8_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) Divide by 8 Position  */
-#define PDEC_PRESC_PRESC_DIV16                (PDEC_PRESC_PRESC_DIV16_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 16 Position  */
-#define PDEC_PRESC_PRESC_DIV32                (PDEC_PRESC_PRESC_DIV32_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 32 Position  */
-#define PDEC_PRESC_PRESC_DIV64                (PDEC_PRESC_PRESC_DIV64_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 64 Position  */
-#define PDEC_PRESC_PRESC_DIV128               (PDEC_PRESC_PRESC_DIV128_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 128 Position  */
-#define PDEC_PRESC_PRESC_DIV256               (PDEC_PRESC_PRESC_DIV256_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 256 Position  */
-#define PDEC_PRESC_PRESC_DIV512               (PDEC_PRESC_PRESC_DIV512_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 512 Position  */
-#define PDEC_PRESC_PRESC_DIV1024              (PDEC_PRESC_PRESC_DIV1024_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 1024 Position  */
-#define PDEC_PRESC_Msk                        _UINT8_(0x0F)                                        /* (PDEC_PRESC) Register Mask  */
-
-
-/* -------- PDEC_PRESCBUF : (PDEC Offset: 0x18) (R/W 8) Prescaler Buffer Value -------- */
-#define PDEC_PRESCBUF_RESETVALUE              _UINT8_(0x00)                                        /*  (PDEC_PRESCBUF) Prescaler Buffer Value  Reset Value */
-
-#define PDEC_PRESCBUF_PRESCBUF_Pos            _UINT8_(0)                                           /* (PDEC_PRESCBUF) Prescaler Buffer Value Position */
-#define PDEC_PRESCBUF_PRESCBUF_Msk            (_UINT8_(0xF) << PDEC_PRESCBUF_PRESCBUF_Pos)         /* (PDEC_PRESCBUF) Prescaler Buffer Value Mask */
-#define PDEC_PRESCBUF_PRESCBUF(value)         (PDEC_PRESCBUF_PRESCBUF_Msk & (_UINT8_(value) << PDEC_PRESCBUF_PRESCBUF_Pos)) /* Assigment of value for PRESCBUF in the PDEC_PRESCBUF register */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV1_Val     _UINT8_(0x0)                                         /* (PDEC_PRESCBUF) No division  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV2_Val     _UINT8_(0x1)                                         /* (PDEC_PRESCBUF) Divide by 2  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV4_Val     _UINT8_(0x2)                                         /* (PDEC_PRESCBUF) Divide by 4  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV8_Val     _UINT8_(0x3)                                         /* (PDEC_PRESCBUF) Divide by 8  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV16_Val    _UINT8_(0x4)                                         /* (PDEC_PRESCBUF) Divide by 16  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV32_Val    _UINT8_(0x5)                                         /* (PDEC_PRESCBUF) Divide by 32  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV64_Val    _UINT8_(0x6)                                         /* (PDEC_PRESCBUF) Divide by 64  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV128_Val   _UINT8_(0x7)                                         /* (PDEC_PRESCBUF) Divide by 128  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV256_Val   _UINT8_(0x8)                                         /* (PDEC_PRESCBUF) Divide by 256  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV512_Val   _UINT8_(0x9)                                         /* (PDEC_PRESCBUF) Divide by 512  */
-#define   PDEC_PRESCBUF_PRESCBUF_DIV1024_Val  _UINT8_(0xA)                                         /* (PDEC_PRESCBUF) Divide by 1024  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV1           (PDEC_PRESCBUF_PRESCBUF_DIV1_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) No division Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV2           (PDEC_PRESCBUF_PRESCBUF_DIV2_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 2 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV4           (PDEC_PRESCBUF_PRESCBUF_DIV4_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 4 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV8           (PDEC_PRESCBUF_PRESCBUF_DIV8_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 8 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV16          (PDEC_PRESCBUF_PRESCBUF_DIV16_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 16 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV32          (PDEC_PRESCBUF_PRESCBUF_DIV32_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 32 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV64          (PDEC_PRESCBUF_PRESCBUF_DIV64_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 64 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV128         (PDEC_PRESCBUF_PRESCBUF_DIV128_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 128 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV256         (PDEC_PRESCBUF_PRESCBUF_DIV256_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 256 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV512         (PDEC_PRESCBUF_PRESCBUF_DIV512_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 512 Position  */
-#define PDEC_PRESCBUF_PRESCBUF_DIV1024        (PDEC_PRESCBUF_PRESCBUF_DIV1024_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 1024 Position  */
-#define PDEC_PRESCBUF_Msk                     _UINT8_(0x0F)                                        /* (PDEC_PRESCBUF) Register Mask  */
-
-
 /* -------- PDEC_STATUS : (PDEC Offset: 0x0C) (R/W 16) Status -------- */
 #define PDEC_STATUS_RESETVALUE                _UINT16_(0x40)                                       /*  (PDEC_STATUS) Status  Reset Value */
 
@@ -429,6 +308,15 @@
 #define PDEC_STATUS_CCBUFV_Msk                (_UINT16_(0x3) << PDEC_STATUS_CCBUFV_Pos)            /* (PDEC_STATUS Mask) CCBUFV */
 #define PDEC_STATUS_CCBUFV(value)             (PDEC_STATUS_CCBUFV_Msk & (_UINT16_(value) << PDEC_STATUS_CCBUFV_Pos)) 
 
+/* -------- PDEC_DBGCTRL : (PDEC Offset: 0x0F) (R/W 8) Debug Control -------- */
+#define PDEC_DBGCTRL_RESETVALUE               _UINT8_(0x00)                                        /*  (PDEC_DBGCTRL) Debug Control  Reset Value */
+
+#define PDEC_DBGCTRL_DBGRUN_Pos               _UINT8_(0)                                           /* (PDEC_DBGCTRL) Debug Run Mode Position */
+#define PDEC_DBGCTRL_DBGRUN_Msk               (_UINT8_(0x1) << PDEC_DBGCTRL_DBGRUN_Pos)            /* (PDEC_DBGCTRL) Debug Run Mode Mask */
+#define PDEC_DBGCTRL_DBGRUN(value)            (PDEC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << PDEC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the PDEC_DBGCTRL register */
+#define PDEC_DBGCTRL_Msk                      _UINT8_(0x01)                                        /* (PDEC_DBGCTRL) Register Mask  */
+
+
 /* -------- PDEC_SYNCBUSY : (PDEC Offset: 0x10) ( R/ 32) Synchronization Status -------- */
 #define PDEC_SYNCBUSY_RESETVALUE              _UINT32_(0x00)                                       /*  (PDEC_SYNCBUSY) Synchronization Status  Reset Value */
 
@@ -465,28 +353,135 @@
 #define PDEC_SYNCBUSY_CC_Msk                  (_UINT32_(0x3) << PDEC_SYNCBUSY_CC_Pos)              /* (PDEC_SYNCBUSY Mask) CC */
 #define PDEC_SYNCBUSY_CC(value)               (PDEC_SYNCBUSY_CC_Msk & (_UINT32_(value) << PDEC_SYNCBUSY_CC_Pos)) 
 
+/* -------- PDEC_PRESC : (PDEC Offset: 0x14) (R/W 8) Prescaler Value -------- */
+#define PDEC_PRESC_RESETVALUE                 _UINT8_(0x00)                                        /*  (PDEC_PRESC) Prescaler Value  Reset Value */
+
+#define PDEC_PRESC_PRESC_Pos                  _UINT8_(0)                                           /* (PDEC_PRESC) Prescaler Value Position */
+#define PDEC_PRESC_PRESC_Msk                  (_UINT8_(0xF) << PDEC_PRESC_PRESC_Pos)               /* (PDEC_PRESC) Prescaler Value Mask */
+#define PDEC_PRESC_PRESC(value)               (PDEC_PRESC_PRESC_Msk & (_UINT8_(value) << PDEC_PRESC_PRESC_Pos)) /* Assigment of value for PRESC in the PDEC_PRESC register */
+#define   PDEC_PRESC_PRESC_DIV1_Val           _UINT8_(0x0)                                         /* (PDEC_PRESC) No division  */
+#define   PDEC_PRESC_PRESC_DIV2_Val           _UINT8_(0x1)                                         /* (PDEC_PRESC) Divide by 2  */
+#define   PDEC_PRESC_PRESC_DIV4_Val           _UINT8_(0x2)                                         /* (PDEC_PRESC) Divide by 4  */
+#define   PDEC_PRESC_PRESC_DIV8_Val           _UINT8_(0x3)                                         /* (PDEC_PRESC) Divide by 8  */
+#define   PDEC_PRESC_PRESC_DIV16_Val          _UINT8_(0x4)                                         /* (PDEC_PRESC) Divide by 16  */
+#define   PDEC_PRESC_PRESC_DIV32_Val          _UINT8_(0x5)                                         /* (PDEC_PRESC) Divide by 32  */
+#define   PDEC_PRESC_PRESC_DIV64_Val          _UINT8_(0x6)                                         /* (PDEC_PRESC) Divide by 64  */
+#define   PDEC_PRESC_PRESC_DIV128_Val         _UINT8_(0x7)                                         /* (PDEC_PRESC) Divide by 128  */
+#define   PDEC_PRESC_PRESC_DIV256_Val         _UINT8_(0x8)                                         /* (PDEC_PRESC) Divide by 256  */
+#define   PDEC_PRESC_PRESC_DIV512_Val         _UINT8_(0x9)                                         /* (PDEC_PRESC) Divide by 512  */
+#define   PDEC_PRESC_PRESC_DIV1024_Val        _UINT8_(0xA)                                         /* (PDEC_PRESC) Divide by 1024  */
+#define PDEC_PRESC_PRESC_DIV1                 (PDEC_PRESC_PRESC_DIV1_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) No division Position  */
+#define PDEC_PRESC_PRESC_DIV2                 (PDEC_PRESC_PRESC_DIV2_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) Divide by 2 Position  */
+#define PDEC_PRESC_PRESC_DIV4                 (PDEC_PRESC_PRESC_DIV4_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) Divide by 4 Position  */
+#define PDEC_PRESC_PRESC_DIV8                 (PDEC_PRESC_PRESC_DIV8_Val << PDEC_PRESC_PRESC_Pos)  /* (PDEC_PRESC) Divide by 8 Position  */
+#define PDEC_PRESC_PRESC_DIV16                (PDEC_PRESC_PRESC_DIV16_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 16 Position  */
+#define PDEC_PRESC_PRESC_DIV32                (PDEC_PRESC_PRESC_DIV32_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 32 Position  */
+#define PDEC_PRESC_PRESC_DIV64                (PDEC_PRESC_PRESC_DIV64_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 64 Position  */
+#define PDEC_PRESC_PRESC_DIV128               (PDEC_PRESC_PRESC_DIV128_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 128 Position  */
+#define PDEC_PRESC_PRESC_DIV256               (PDEC_PRESC_PRESC_DIV256_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 256 Position  */
+#define PDEC_PRESC_PRESC_DIV512               (PDEC_PRESC_PRESC_DIV512_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 512 Position  */
+#define PDEC_PRESC_PRESC_DIV1024              (PDEC_PRESC_PRESC_DIV1024_Val << PDEC_PRESC_PRESC_Pos) /* (PDEC_PRESC) Divide by 1024 Position  */
+#define PDEC_PRESC_Msk                        _UINT8_(0x0F)                                        /* (PDEC_PRESC) Register Mask  */
+
+
+/* -------- PDEC_FILTER : (PDEC Offset: 0x15) (R/W 8) Filter Value -------- */
+#define PDEC_FILTER_RESETVALUE                _UINT8_(0x00)                                        /*  (PDEC_FILTER) Filter Value  Reset Value */
+
+#define PDEC_FILTER_FILTER_Pos                _UINT8_(0)                                           /* (PDEC_FILTER) Filter Value Position */
+#define PDEC_FILTER_FILTER_Msk                (_UINT8_(0xFF) << PDEC_FILTER_FILTER_Pos)            /* (PDEC_FILTER) Filter Value Mask */
+#define PDEC_FILTER_FILTER(value)             (PDEC_FILTER_FILTER_Msk & (_UINT8_(value) << PDEC_FILTER_FILTER_Pos)) /* Assigment of value for FILTER in the PDEC_FILTER register */
+#define PDEC_FILTER_Msk                       _UINT8_(0xFF)                                        /* (PDEC_FILTER) Register Mask  */
+
+
+/* -------- PDEC_PRESCBUF : (PDEC Offset: 0x18) (R/W 8) Prescaler Buffer Value -------- */
+#define PDEC_PRESCBUF_RESETVALUE              _UINT8_(0x00)                                        /*  (PDEC_PRESCBUF) Prescaler Buffer Value  Reset Value */
+
+#define PDEC_PRESCBUF_PRESCBUF_Pos            _UINT8_(0)                                           /* (PDEC_PRESCBUF) Prescaler Buffer Value Position */
+#define PDEC_PRESCBUF_PRESCBUF_Msk            (_UINT8_(0xF) << PDEC_PRESCBUF_PRESCBUF_Pos)         /* (PDEC_PRESCBUF) Prescaler Buffer Value Mask */
+#define PDEC_PRESCBUF_PRESCBUF(value)         (PDEC_PRESCBUF_PRESCBUF_Msk & (_UINT8_(value) << PDEC_PRESCBUF_PRESCBUF_Pos)) /* Assigment of value for PRESCBUF in the PDEC_PRESCBUF register */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV1_Val     _UINT8_(0x0)                                         /* (PDEC_PRESCBUF) No division  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV2_Val     _UINT8_(0x1)                                         /* (PDEC_PRESCBUF) Divide by 2  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV4_Val     _UINT8_(0x2)                                         /* (PDEC_PRESCBUF) Divide by 4  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV8_Val     _UINT8_(0x3)                                         /* (PDEC_PRESCBUF) Divide by 8  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV16_Val    _UINT8_(0x4)                                         /* (PDEC_PRESCBUF) Divide by 16  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV32_Val    _UINT8_(0x5)                                         /* (PDEC_PRESCBUF) Divide by 32  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV64_Val    _UINT8_(0x6)                                         /* (PDEC_PRESCBUF) Divide by 64  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV128_Val   _UINT8_(0x7)                                         /* (PDEC_PRESCBUF) Divide by 128  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV256_Val   _UINT8_(0x8)                                         /* (PDEC_PRESCBUF) Divide by 256  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV512_Val   _UINT8_(0x9)                                         /* (PDEC_PRESCBUF) Divide by 512  */
+#define   PDEC_PRESCBUF_PRESCBUF_DIV1024_Val  _UINT8_(0xA)                                         /* (PDEC_PRESCBUF) Divide by 1024  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV1           (PDEC_PRESCBUF_PRESCBUF_DIV1_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) No division Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV2           (PDEC_PRESCBUF_PRESCBUF_DIV2_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 2 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV4           (PDEC_PRESCBUF_PRESCBUF_DIV4_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 4 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV8           (PDEC_PRESCBUF_PRESCBUF_DIV8_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 8 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV16          (PDEC_PRESCBUF_PRESCBUF_DIV16_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 16 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV32          (PDEC_PRESCBUF_PRESCBUF_DIV32_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 32 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV64          (PDEC_PRESCBUF_PRESCBUF_DIV64_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 64 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV128         (PDEC_PRESCBUF_PRESCBUF_DIV128_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 128 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV256         (PDEC_PRESCBUF_PRESCBUF_DIV256_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 256 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV512         (PDEC_PRESCBUF_PRESCBUF_DIV512_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 512 Position  */
+#define PDEC_PRESCBUF_PRESCBUF_DIV1024        (PDEC_PRESCBUF_PRESCBUF_DIV1024_Val << PDEC_PRESCBUF_PRESCBUF_Pos) /* (PDEC_PRESCBUF) Divide by 1024 Position  */
+#define PDEC_PRESCBUF_Msk                     _UINT8_(0x0F)                                        /* (PDEC_PRESCBUF) Register Mask  */
+
+
+/* -------- PDEC_FILTERBUF : (PDEC Offset: 0x19) (R/W 8) Filter Buffer Value -------- */
+#define PDEC_FILTERBUF_RESETVALUE             _UINT8_(0x00)                                        /*  (PDEC_FILTERBUF) Filter Buffer Value  Reset Value */
+
+#define PDEC_FILTERBUF_FILTERBUF_Pos          _UINT8_(0)                                           /* (PDEC_FILTERBUF) Filter Buffer Value Position */
+#define PDEC_FILTERBUF_FILTERBUF_Msk          (_UINT8_(0xFF) << PDEC_FILTERBUF_FILTERBUF_Pos)      /* (PDEC_FILTERBUF) Filter Buffer Value Mask */
+#define PDEC_FILTERBUF_FILTERBUF(value)       (PDEC_FILTERBUF_FILTERBUF_Msk & (_UINT8_(value) << PDEC_FILTERBUF_FILTERBUF_Pos)) /* Assigment of value for FILTERBUF in the PDEC_FILTERBUF register */
+#define PDEC_FILTERBUF_Msk                    _UINT8_(0xFF)                                        /* (PDEC_FILTERBUF) Register Mask  */
+
+
+/* -------- PDEC_COUNT : (PDEC Offset: 0x1C) (R/W 32) Counter Value -------- */
+#define PDEC_COUNT_RESETVALUE                 _UINT32_(0x00)                                       /*  (PDEC_COUNT) Counter Value  Reset Value */
+
+#define PDEC_COUNT_COUNT_Pos                  _UINT32_(0)                                          /* (PDEC_COUNT) Counter Value Position */
+#define PDEC_COUNT_COUNT_Msk                  (_UINT32_(0xFFFF) << PDEC_COUNT_COUNT_Pos)           /* (PDEC_COUNT) Counter Value Mask */
+#define PDEC_COUNT_COUNT(value)               (PDEC_COUNT_COUNT_Msk & (_UINT32_(value) << PDEC_COUNT_COUNT_Pos)) /* Assigment of value for COUNT in the PDEC_COUNT register */
+#define PDEC_COUNT_Msk                        _UINT32_(0x0000FFFF)                                 /* (PDEC_COUNT) Register Mask  */
+
+
+/* -------- PDEC_CC : (PDEC Offset: 0x20) (R/W 32) Channel n Compare Value -------- */
+#define PDEC_CC_RESETVALUE                    _UINT32_(0x00)                                       /*  (PDEC_CC) Channel n Compare Value  Reset Value */
+
+#define PDEC_CC_CC_Pos                        _UINT32_(0)                                          /* (PDEC_CC) Channel Compare Value Position */
+#define PDEC_CC_CC_Msk                        (_UINT32_(0xFFFF) << PDEC_CC_CC_Pos)                 /* (PDEC_CC) Channel Compare Value Mask */
+#define PDEC_CC_CC(value)                     (PDEC_CC_CC_Msk & (_UINT32_(value) << PDEC_CC_CC_Pos)) /* Assigment of value for CC in the PDEC_CC register */
+#define PDEC_CC_Msk                           _UINT32_(0x0000FFFF)                                 /* (PDEC_CC) Register Mask  */
+
+
+/* -------- PDEC_CCBUF : (PDEC Offset: 0x30) (R/W 32) Channel Compare Buffer Value -------- */
+#define PDEC_CCBUF_RESETVALUE                 _UINT32_(0x00)                                       /*  (PDEC_CCBUF) Channel Compare Buffer Value  Reset Value */
+
+#define PDEC_CCBUF_CCBUF_Pos                  _UINT32_(0)                                          /* (PDEC_CCBUF) Channel Compare Buffer Value Position */
+#define PDEC_CCBUF_CCBUF_Msk                  (_UINT32_(0xFFFF) << PDEC_CCBUF_CCBUF_Pos)           /* (PDEC_CCBUF) Channel Compare Buffer Value Mask */
+#define PDEC_CCBUF_CCBUF(value)               (PDEC_CCBUF_CCBUF_Msk & (_UINT32_(value) << PDEC_CCBUF_CCBUF_Pos)) /* Assigment of value for CCBUF in the PDEC_CCBUF register */
+#define PDEC_CCBUF_Msk                        _UINT32_(0x0000FFFF)                                 /* (PDEC_CCBUF) Register Mask  */
+
+
 /** \brief PDEC register offsets definitions */
+#define PDEC_CTRLA_REG_OFST            _UINT32_(0x00)      /* (PDEC_CTRLA) Control A Offset */
+#define PDEC_CTRLBCLR_REG_OFST         _UINT32_(0x04)      /* (PDEC_CTRLBCLR) Control B Clear Offset */
+#define PDEC_CTRLBSET_REG_OFST         _UINT32_(0x05)      /* (PDEC_CTRLBSET) Control B Set Offset */
+#define PDEC_EVCTRL_REG_OFST           _UINT32_(0x06)      /* (PDEC_EVCTRL) Event Control Offset */
+#define PDEC_INTENCLR_REG_OFST         _UINT32_(0x08)      /* (PDEC_INTENCLR) Interrupt Enable Clear Offset */
+#define PDEC_INTENSET_REG_OFST         _UINT32_(0x09)      /* (PDEC_INTENSET) Interrupt Enable Set Offset */
+#define PDEC_INTFLAG_REG_OFST          _UINT32_(0x0A)      /* (PDEC_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define PDEC_STATUS_REG_OFST           _UINT32_(0x0C)      /* (PDEC_STATUS) Status Offset */
+#define PDEC_DBGCTRL_REG_OFST          _UINT32_(0x0F)      /* (PDEC_DBGCTRL) Debug Control Offset */
+#define PDEC_SYNCBUSY_REG_OFST         _UINT32_(0x10)      /* (PDEC_SYNCBUSY) Synchronization Status Offset */
+#define PDEC_PRESC_REG_OFST            _UINT32_(0x14)      /* (PDEC_PRESC) Prescaler Value Offset */
+#define PDEC_FILTER_REG_OFST           _UINT32_(0x15)      /* (PDEC_FILTER) Filter Value Offset */
+#define PDEC_PRESCBUF_REG_OFST         _UINT32_(0x18)      /* (PDEC_PRESCBUF) Prescaler Buffer Value Offset */
+#define PDEC_FILTERBUF_REG_OFST        _UINT32_(0x19)      /* (PDEC_FILTERBUF) Filter Buffer Value Offset */
+#define PDEC_COUNT_REG_OFST            _UINT32_(0x1C)      /* (PDEC_COUNT) Counter Value Offset */
 #define PDEC_CC_REG_OFST               _UINT32_(0x20)      /* (PDEC_CC) Channel n Compare Value Offset */
 #define PDEC_CC0_REG_OFST              _UINT32_(0x20)      /* (PDEC_CC0) Channel n Compare Value Offset */
 #define PDEC_CC1_REG_OFST              _UINT32_(0x24)      /* (PDEC_CC1) Channel n Compare Value Offset */
 #define PDEC_CCBUF_REG_OFST            _UINT32_(0x30)      /* (PDEC_CCBUF) Channel Compare Buffer Value Offset */
 #define PDEC_CCBUF0_REG_OFST           _UINT32_(0x30)      /* (PDEC_CCBUF0) Channel Compare Buffer Value Offset */
 #define PDEC_CCBUF1_REG_OFST           _UINT32_(0x34)      /* (PDEC_CCBUF1) Channel Compare Buffer Value Offset */
-#define PDEC_COUNT_REG_OFST            _UINT32_(0x1C)      /* (PDEC_COUNT) Counter Value Offset */
-#define PDEC_CTRLA_REG_OFST            _UINT32_(0x00)      /* (PDEC_CTRLA) Control A Offset */
-#define PDEC_CTRLBCLR_REG_OFST         _UINT32_(0x04)      /* (PDEC_CTRLBCLR) Control B Clear Offset */
-#define PDEC_CTRLBSET_REG_OFST         _UINT32_(0x05)      /* (PDEC_CTRLBSET) Control B Set Offset */
-#define PDEC_DBGCTRL_REG_OFST          _UINT32_(0x0F)      /* (PDEC_DBGCTRL) Debug Control Offset */
-#define PDEC_EVCTRL_REG_OFST           _UINT32_(0x06)      /* (PDEC_EVCTRL) Event Control Offset */
-#define PDEC_FILTER_REG_OFST           _UINT32_(0x15)      /* (PDEC_FILTER) Filter Value Offset */
-#define PDEC_FILTERBUF_REG_OFST        _UINT32_(0x19)      /* (PDEC_FILTERBUF) Filter Buffer Value Offset */
-#define PDEC_INTENCLR_REG_OFST         _UINT32_(0x08)      /* (PDEC_INTENCLR) Interrupt Enable Clear Offset */
-#define PDEC_INTENSET_REG_OFST         _UINT32_(0x09)      /* (PDEC_INTENSET) Interrupt Enable Set Offset */
-#define PDEC_INTFLAG_REG_OFST          _UINT32_(0x0A)      /* (PDEC_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define PDEC_PRESC_REG_OFST            _UINT32_(0x14)      /* (PDEC_PRESC) Prescaler Value Offset */
-#define PDEC_PRESCBUF_REG_OFST         _UINT32_(0x18)      /* (PDEC_PRESCBUF) Prescaler Buffer Value Offset */
-#define PDEC_STATUS_REG_OFST           _UINT32_(0x0C)      /* (PDEC_STATUS) Status Offset */
-#define PDEC_SYNCBUSY_REG_OFST         _UINT32_(0x10)      /* (PDEC_SYNCBUSY) Synchronization Status Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief PDEC register API structure */

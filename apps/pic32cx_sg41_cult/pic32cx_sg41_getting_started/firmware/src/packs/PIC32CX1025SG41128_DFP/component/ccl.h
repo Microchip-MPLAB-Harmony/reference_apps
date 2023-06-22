@@ -1,7 +1,7 @@
 /*
  * Component description for CCL
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_CCL_COMPONENT_H_
 #define _PIC32CXSG41_CCL_COMPONENT_H_
 
@@ -53,6 +53,25 @@
 #define CCL_CTRL_RUNSTDBY_DISABLE             (CCL_CTRL_RUNSTDBY_DISABLE_Val << CCL_CTRL_RUNSTDBY_Pos) /* (CCL_CTRL) Generic clock is not required in standby sleep mode Position  */
 #define CCL_CTRL_RUNSTDBY_ENABLE              (CCL_CTRL_RUNSTDBY_ENABLE_Val << CCL_CTRL_RUNSTDBY_Pos) /* (CCL_CTRL) Generic clock is  required in standby sleep mode Position  */
 #define CCL_CTRL_Msk                          _UINT8_(0x43)                                        /* (CCL_CTRL) Register Mask  */
+
+
+/* -------- CCL_SEQCTRL : (CCL Offset: 0x04) (R/W 8) SEQ Control x -------- */
+#define CCL_SEQCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (CCL_SEQCTRL) SEQ Control x  Reset Value */
+
+#define CCL_SEQCTRL_SEQSEL_Pos                _UINT8_(0)                                           /* (CCL_SEQCTRL) Sequential Selection Position */
+#define CCL_SEQCTRL_SEQSEL_Msk                (_UINT8_(0xF) << CCL_SEQCTRL_SEQSEL_Pos)             /* (CCL_SEQCTRL) Sequential Selection Mask */
+#define CCL_SEQCTRL_SEQSEL(value)             (CCL_SEQCTRL_SEQSEL_Msk & (_UINT8_(value) << CCL_SEQCTRL_SEQSEL_Pos)) /* Assigment of value for SEQSEL in the CCL_SEQCTRL register */
+#define   CCL_SEQCTRL_SEQSEL_DISABLE_Val      _UINT8_(0x0)                                         /* (CCL_SEQCTRL) Sequential logic is disabled  */
+#define   CCL_SEQCTRL_SEQSEL_DFF_Val          _UINT8_(0x1)                                         /* (CCL_SEQCTRL) D flip flop  */
+#define   CCL_SEQCTRL_SEQSEL_JK_Val           _UINT8_(0x2)                                         /* (CCL_SEQCTRL) JK flip flop  */
+#define   CCL_SEQCTRL_SEQSEL_LATCH_Val        _UINT8_(0x3)                                         /* (CCL_SEQCTRL) D latch  */
+#define   CCL_SEQCTRL_SEQSEL_RS_Val           _UINT8_(0x4)                                         /* (CCL_SEQCTRL) RS latch  */
+#define CCL_SEQCTRL_SEQSEL_DISABLE            (CCL_SEQCTRL_SEQSEL_DISABLE_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) Sequential logic is disabled Position  */
+#define CCL_SEQCTRL_SEQSEL_DFF                (CCL_SEQCTRL_SEQSEL_DFF_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) D flip flop Position  */
+#define CCL_SEQCTRL_SEQSEL_JK                 (CCL_SEQCTRL_SEQSEL_JK_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) JK flip flop Position  */
+#define CCL_SEQCTRL_SEQSEL_LATCH              (CCL_SEQCTRL_SEQSEL_LATCH_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) D latch Position  */
+#define CCL_SEQCTRL_SEQSEL_RS                 (CCL_SEQCTRL_SEQSEL_RS_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) RS latch Position  */
+#define CCL_SEQCTRL_Msk                       _UINT8_(0x0F)                                        /* (CCL_SEQCTRL) Register Mask  */
 
 
 /* -------- CCL_LUTCTRL : (CCL Offset: 0x08) (R/W 32) LUT Control x -------- */
@@ -177,35 +196,16 @@
 #define CCL_LUTCTRL_Msk                       _UINT32_(0xFF7FFFB2)                                 /* (CCL_LUTCTRL) Register Mask  */
 
 
-/* -------- CCL_SEQCTRL : (CCL Offset: 0x04) (R/W 8) SEQ Control x -------- */
-#define CCL_SEQCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (CCL_SEQCTRL) SEQ Control x  Reset Value */
-
-#define CCL_SEQCTRL_SEQSEL_Pos                _UINT8_(0)                                           /* (CCL_SEQCTRL) Sequential Selection Position */
-#define CCL_SEQCTRL_SEQSEL_Msk                (_UINT8_(0xF) << CCL_SEQCTRL_SEQSEL_Pos)             /* (CCL_SEQCTRL) Sequential Selection Mask */
-#define CCL_SEQCTRL_SEQSEL(value)             (CCL_SEQCTRL_SEQSEL_Msk & (_UINT8_(value) << CCL_SEQCTRL_SEQSEL_Pos)) /* Assigment of value for SEQSEL in the CCL_SEQCTRL register */
-#define   CCL_SEQCTRL_SEQSEL_DISABLE_Val      _UINT8_(0x0)                                         /* (CCL_SEQCTRL) Sequential logic is disabled  */
-#define   CCL_SEQCTRL_SEQSEL_DFF_Val          _UINT8_(0x1)                                         /* (CCL_SEQCTRL) D flip flop  */
-#define   CCL_SEQCTRL_SEQSEL_JK_Val           _UINT8_(0x2)                                         /* (CCL_SEQCTRL) JK flip flop  */
-#define   CCL_SEQCTRL_SEQSEL_LATCH_Val        _UINT8_(0x3)                                         /* (CCL_SEQCTRL) D latch  */
-#define   CCL_SEQCTRL_SEQSEL_RS_Val           _UINT8_(0x4)                                         /* (CCL_SEQCTRL) RS latch  */
-#define CCL_SEQCTRL_SEQSEL_DISABLE            (CCL_SEQCTRL_SEQSEL_DISABLE_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) Sequential logic is disabled Position  */
-#define CCL_SEQCTRL_SEQSEL_DFF                (CCL_SEQCTRL_SEQSEL_DFF_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) D flip flop Position  */
-#define CCL_SEQCTRL_SEQSEL_JK                 (CCL_SEQCTRL_SEQSEL_JK_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) JK flip flop Position  */
-#define CCL_SEQCTRL_SEQSEL_LATCH              (CCL_SEQCTRL_SEQSEL_LATCH_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) D latch Position  */
-#define CCL_SEQCTRL_SEQSEL_RS                 (CCL_SEQCTRL_SEQSEL_RS_Val << CCL_SEQCTRL_SEQSEL_Pos) /* (CCL_SEQCTRL) RS latch Position  */
-#define CCL_SEQCTRL_Msk                       _UINT8_(0x0F)                                        /* (CCL_SEQCTRL) Register Mask  */
-
-
 /** \brief CCL register offsets definitions */
 #define CCL_CTRL_REG_OFST              _UINT32_(0x00)      /* (CCL_CTRL) Control Offset */
+#define CCL_SEQCTRL_REG_OFST           _UINT32_(0x04)      /* (CCL_SEQCTRL) SEQ Control x Offset */
+#define CCL_SEQCTRL0_REG_OFST          _UINT32_(0x04)      /* (CCL_SEQCTRL0) SEQ Control x Offset */
+#define CCL_SEQCTRL1_REG_OFST          _UINT32_(0x05)      /* (CCL_SEQCTRL1) SEQ Control x Offset */
 #define CCL_LUTCTRL_REG_OFST           _UINT32_(0x08)      /* (CCL_LUTCTRL) LUT Control x Offset */
 #define CCL_LUTCTRL0_REG_OFST          _UINT32_(0x08)      /* (CCL_LUTCTRL0) LUT Control x Offset */
 #define CCL_LUTCTRL1_REG_OFST          _UINT32_(0x0C)      /* (CCL_LUTCTRL1) LUT Control x Offset */
 #define CCL_LUTCTRL2_REG_OFST          _UINT32_(0x10)      /* (CCL_LUTCTRL2) LUT Control x Offset */
 #define CCL_LUTCTRL3_REG_OFST          _UINT32_(0x14)      /* (CCL_LUTCTRL3) LUT Control x Offset */
-#define CCL_SEQCTRL_REG_OFST           _UINT32_(0x04)      /* (CCL_SEQCTRL) SEQ Control x Offset */
-#define CCL_SEQCTRL0_REG_OFST          _UINT32_(0x04)      /* (CCL_SEQCTRL0) SEQ Control x Offset */
-#define CCL_SEQCTRL1_REG_OFST          _UINT32_(0x05)      /* (CCL_SEQCTRL1) SEQ Control x Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief CCL register API structure */

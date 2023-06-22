@@ -208,8 +208,8 @@ typedef struct H3DeviceVectorsTag
   pfn_handler_t pfnDAC_OTHER_Handler;               /* 123 Digital to Analog Converter */
   pfn_handler_t pfnDAC_EMPTY_0_Handler;             /* 124 DAC Buffer 0 Empty */
   pfn_handler_t pfnDAC_EMPTY_1_Handler;             /* 125 DAC Buffer 1 Empty */
-  pfn_handler_t pfnDAC_RESRDY_0_Handler;            /* 126 DAC Filter 0 Result Ready */
-  pfn_handler_t pfnDAC_RESRDY_1_Handler;            /* 127 DAC Filter 1 Result Ready */
+  pfn_handler_t pfnReserved126;
+  pfn_handler_t pfnReserved127;
   pfn_handler_t pfnI2S_Handler;                     /* 128 Inter-IC Sound Interface */
   pfn_handler_t pfnPCC_Handler;                     /* 129 Parallel Capture Controller */
   pfn_handler_t pfnAES_Handler;                     /* 130 Advanced Encryption Standard */

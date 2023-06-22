@@ -1,7 +1,7 @@
 /*
  * Component description for MCLK
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,13 +20,76 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:02Z */
+/* file generated from device description version 2023-03-17T09:48:34Z */
 #ifndef _PIC32CXSG41_MCLK_COMPONENT_H_
 #define _PIC32CXSG41_MCLK_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR MCLK                                         */
 /* ************************************************************************** */
+
+/* -------- MCLK_INTENCLR : (MCLK Offset: 0x01) (R/W 8) Interrupt Enable Clear -------- */
+#define MCLK_INTENCLR_RESETVALUE              _UINT8_(0x00)                                        /*  (MCLK_INTENCLR) Interrupt Enable Clear  Reset Value */
+
+#define MCLK_INTENCLR_CKRDY_Pos               _UINT8_(0)                                           /* (MCLK_INTENCLR) Clock Ready Interrupt Enable Position */
+#define MCLK_INTENCLR_CKRDY_Msk               (_UINT8_(0x1) << MCLK_INTENCLR_CKRDY_Pos)            /* (MCLK_INTENCLR) Clock Ready Interrupt Enable Mask */
+#define MCLK_INTENCLR_CKRDY(value)            (MCLK_INTENCLR_CKRDY_Msk & (_UINT8_(value) << MCLK_INTENCLR_CKRDY_Pos)) /* Assigment of value for CKRDY in the MCLK_INTENCLR register */
+#define MCLK_INTENCLR_Msk                     _UINT8_(0x01)                                        /* (MCLK_INTENCLR) Register Mask  */
+
+
+/* -------- MCLK_INTENSET : (MCLK Offset: 0x02) (R/W 8) Interrupt Enable Set -------- */
+#define MCLK_INTENSET_RESETVALUE              _UINT8_(0x00)                                        /*  (MCLK_INTENSET) Interrupt Enable Set  Reset Value */
+
+#define MCLK_INTENSET_CKRDY_Pos               _UINT8_(0)                                           /* (MCLK_INTENSET) Clock Ready Interrupt Enable Position */
+#define MCLK_INTENSET_CKRDY_Msk               (_UINT8_(0x1) << MCLK_INTENSET_CKRDY_Pos)            /* (MCLK_INTENSET) Clock Ready Interrupt Enable Mask */
+#define MCLK_INTENSET_CKRDY(value)            (MCLK_INTENSET_CKRDY_Msk & (_UINT8_(value) << MCLK_INTENSET_CKRDY_Pos)) /* Assigment of value for CKRDY in the MCLK_INTENSET register */
+#define MCLK_INTENSET_Msk                     _UINT8_(0x01)                                        /* (MCLK_INTENSET) Register Mask  */
+
+
+/* -------- MCLK_INTFLAG : (MCLK Offset: 0x03) (R/W 8) Interrupt Flag Status and Clear -------- */
+#define MCLK_INTFLAG_RESETVALUE               _UINT8_(0x01)                                        /*  (MCLK_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
+
+#define MCLK_INTFLAG_CKRDY_Pos                _UINT8_(0)                                           /* (MCLK_INTFLAG) Clock Ready Position */
+#define MCLK_INTFLAG_CKRDY_Msk                (_UINT8_(0x1) << MCLK_INTFLAG_CKRDY_Pos)             /* (MCLK_INTFLAG) Clock Ready Mask */
+#define MCLK_INTFLAG_CKRDY(value)             (MCLK_INTFLAG_CKRDY_Msk & (_UINT8_(value) << MCLK_INTFLAG_CKRDY_Pos)) /* Assigment of value for CKRDY in the MCLK_INTFLAG register */
+#define MCLK_INTFLAG_Msk                      _UINT8_(0x01)                                        /* (MCLK_INTFLAG) Register Mask  */
+
+
+/* -------- MCLK_HSDIV : (MCLK Offset: 0x04) ( R/ 8) HS Clock Division -------- */
+#define MCLK_HSDIV_RESETVALUE                 _UINT8_(0x01)                                        /*  (MCLK_HSDIV) HS Clock Division  Reset Value */
+
+#define MCLK_HSDIV_DIV_Pos                    _UINT8_(0)                                           /* (MCLK_HSDIV) CPU Clock Division Factor Position */
+#define MCLK_HSDIV_DIV_Msk                    (_UINT8_(0xFF) << MCLK_HSDIV_DIV_Pos)                /* (MCLK_HSDIV) CPU Clock Division Factor Mask */
+#define MCLK_HSDIV_DIV(value)                 (MCLK_HSDIV_DIV_Msk & (_UINT8_(value) << MCLK_HSDIV_DIV_Pos)) /* Assigment of value for DIV in the MCLK_HSDIV register */
+#define   MCLK_HSDIV_DIV_DIV1_Val             _UINT8_(0x1)                                         /* (MCLK_HSDIV) Divide by 1  */
+#define MCLK_HSDIV_DIV_DIV1                   (MCLK_HSDIV_DIV_DIV1_Val << MCLK_HSDIV_DIV_Pos)      /* (MCLK_HSDIV) Divide by 1 Position  */
+#define MCLK_HSDIV_Msk                        _UINT8_(0xFF)                                        /* (MCLK_HSDIV) Register Mask  */
+
+
+/* -------- MCLK_CPUDIV : (MCLK Offset: 0x05) (R/W 8) CPU Clock Division -------- */
+#define MCLK_CPUDIV_RESETVALUE                _UINT8_(0x01)                                        /*  (MCLK_CPUDIV) CPU Clock Division  Reset Value */
+
+#define MCLK_CPUDIV_DIV_Pos                   _UINT8_(0)                                           /* (MCLK_CPUDIV) Low-Power Clock Division Factor Position */
+#define MCLK_CPUDIV_DIV_Msk                   (_UINT8_(0xFF) << MCLK_CPUDIV_DIV_Pos)               /* (MCLK_CPUDIV) Low-Power Clock Division Factor Mask */
+#define MCLK_CPUDIV_DIV(value)                (MCLK_CPUDIV_DIV_Msk & (_UINT8_(value) << MCLK_CPUDIV_DIV_Pos)) /* Assigment of value for DIV in the MCLK_CPUDIV register */
+#define   MCLK_CPUDIV_DIV_DIV1_Val            _UINT8_(0x1)                                         /* (MCLK_CPUDIV) Divide by 1  */
+#define   MCLK_CPUDIV_DIV_DIV2_Val            _UINT8_(0x2)                                         /* (MCLK_CPUDIV) Divide by 2  */
+#define   MCLK_CPUDIV_DIV_DIV4_Val            _UINT8_(0x4)                                         /* (MCLK_CPUDIV) Divide by 4  */
+#define   MCLK_CPUDIV_DIV_DIV8_Val            _UINT8_(0x8)                                         /* (MCLK_CPUDIV) Divide by 8  */
+#define   MCLK_CPUDIV_DIV_DIV16_Val           _UINT8_(0x10)                                        /* (MCLK_CPUDIV) Divide by 16  */
+#define   MCLK_CPUDIV_DIV_DIV32_Val           _UINT8_(0x20)                                        /* (MCLK_CPUDIV) Divide by 32  */
+#define   MCLK_CPUDIV_DIV_DIV64_Val           _UINT8_(0x40)                                        /* (MCLK_CPUDIV) Divide by 64  */
+#define   MCLK_CPUDIV_DIV_DIV128_Val          _UINT8_(0x80)                                        /* (MCLK_CPUDIV) Divide by 128  */
+#define MCLK_CPUDIV_DIV_DIV1                  (MCLK_CPUDIV_DIV_DIV1_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 1 Position  */
+#define MCLK_CPUDIV_DIV_DIV2                  (MCLK_CPUDIV_DIV_DIV2_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 2 Position  */
+#define MCLK_CPUDIV_DIV_DIV4                  (MCLK_CPUDIV_DIV_DIV4_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 4 Position  */
+#define MCLK_CPUDIV_DIV_DIV8                  (MCLK_CPUDIV_DIV_DIV8_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 8 Position  */
+#define MCLK_CPUDIV_DIV_DIV16                 (MCLK_CPUDIV_DIV_DIV16_Val << MCLK_CPUDIV_DIV_Pos)   /* (MCLK_CPUDIV) Divide by 16 Position  */
+#define MCLK_CPUDIV_DIV_DIV32                 (MCLK_CPUDIV_DIV_DIV32_Val << MCLK_CPUDIV_DIV_Pos)   /* (MCLK_CPUDIV) Divide by 32 Position  */
+#define MCLK_CPUDIV_DIV_DIV64                 (MCLK_CPUDIV_DIV_DIV64_Val << MCLK_CPUDIV_DIV_Pos)   /* (MCLK_CPUDIV) Divide by 64 Position  */
+#define MCLK_CPUDIV_DIV_DIV128                (MCLK_CPUDIV_DIV_DIV128_Val << MCLK_CPUDIV_DIV_Pos)  /* (MCLK_CPUDIV) Divide by 128 Position  */
+#define MCLK_CPUDIV_Msk                       _UINT8_(0xFF)                                        /* (MCLK_CPUDIV) Register Mask  */
+
 
 /* -------- MCLK_AHBMASK : (MCLK Offset: 0x10) (R/W 32) AHB Mask -------- */
 #define MCLK_AHBMASK_RESETVALUE               _UINT32_(0xFFFFFF)                                   /*  (MCLK_AHBMASK) AHB Mask  Reset Value */
@@ -319,80 +382,17 @@
 #define MCLK_APBDMASK_ADC_Msk                 (_UINT32_(0x3) << MCLK_APBDMASK_ADC_Pos)             /* (MCLK_APBDMASK Mask) ADC */
 #define MCLK_APBDMASK_ADC(value)              (MCLK_APBDMASK_ADC_Msk & (_UINT32_(value) << MCLK_APBDMASK_ADC_Pos)) 
 
-/* -------- MCLK_CPUDIV : (MCLK Offset: 0x05) (R/W 8) CPU Clock Division -------- */
-#define MCLK_CPUDIV_RESETVALUE                _UINT8_(0x01)                                        /*  (MCLK_CPUDIV) CPU Clock Division  Reset Value */
-
-#define MCLK_CPUDIV_DIV_Pos                   _UINT8_(0)                                           /* (MCLK_CPUDIV) Low-Power Clock Division Factor Position */
-#define MCLK_CPUDIV_DIV_Msk                   (_UINT8_(0xFF) << MCLK_CPUDIV_DIV_Pos)               /* (MCLK_CPUDIV) Low-Power Clock Division Factor Mask */
-#define MCLK_CPUDIV_DIV(value)                (MCLK_CPUDIV_DIV_Msk & (_UINT8_(value) << MCLK_CPUDIV_DIV_Pos)) /* Assigment of value for DIV in the MCLK_CPUDIV register */
-#define   MCLK_CPUDIV_DIV_DIV1_Val            _UINT8_(0x1)                                         /* (MCLK_CPUDIV) Divide by 1  */
-#define   MCLK_CPUDIV_DIV_DIV2_Val            _UINT8_(0x2)                                         /* (MCLK_CPUDIV) Divide by 2  */
-#define   MCLK_CPUDIV_DIV_DIV4_Val            _UINT8_(0x4)                                         /* (MCLK_CPUDIV) Divide by 4  */
-#define   MCLK_CPUDIV_DIV_DIV8_Val            _UINT8_(0x8)                                         /* (MCLK_CPUDIV) Divide by 8  */
-#define   MCLK_CPUDIV_DIV_DIV16_Val           _UINT8_(0x10)                                        /* (MCLK_CPUDIV) Divide by 16  */
-#define   MCLK_CPUDIV_DIV_DIV32_Val           _UINT8_(0x20)                                        /* (MCLK_CPUDIV) Divide by 32  */
-#define   MCLK_CPUDIV_DIV_DIV64_Val           _UINT8_(0x40)                                        /* (MCLK_CPUDIV) Divide by 64  */
-#define   MCLK_CPUDIV_DIV_DIV128_Val          _UINT8_(0x80)                                        /* (MCLK_CPUDIV) Divide by 128  */
-#define MCLK_CPUDIV_DIV_DIV1                  (MCLK_CPUDIV_DIV_DIV1_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 1 Position  */
-#define MCLK_CPUDIV_DIV_DIV2                  (MCLK_CPUDIV_DIV_DIV2_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 2 Position  */
-#define MCLK_CPUDIV_DIV_DIV4                  (MCLK_CPUDIV_DIV_DIV4_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 4 Position  */
-#define MCLK_CPUDIV_DIV_DIV8                  (MCLK_CPUDIV_DIV_DIV8_Val << MCLK_CPUDIV_DIV_Pos)    /* (MCLK_CPUDIV) Divide by 8 Position  */
-#define MCLK_CPUDIV_DIV_DIV16                 (MCLK_CPUDIV_DIV_DIV16_Val << MCLK_CPUDIV_DIV_Pos)   /* (MCLK_CPUDIV) Divide by 16 Position  */
-#define MCLK_CPUDIV_DIV_DIV32                 (MCLK_CPUDIV_DIV_DIV32_Val << MCLK_CPUDIV_DIV_Pos)   /* (MCLK_CPUDIV) Divide by 32 Position  */
-#define MCLK_CPUDIV_DIV_DIV64                 (MCLK_CPUDIV_DIV_DIV64_Val << MCLK_CPUDIV_DIV_Pos)   /* (MCLK_CPUDIV) Divide by 64 Position  */
-#define MCLK_CPUDIV_DIV_DIV128                (MCLK_CPUDIV_DIV_DIV128_Val << MCLK_CPUDIV_DIV_Pos)  /* (MCLK_CPUDIV) Divide by 128 Position  */
-#define MCLK_CPUDIV_Msk                       _UINT8_(0xFF)                                        /* (MCLK_CPUDIV) Register Mask  */
-
-
-/* -------- MCLK_HSDIV : (MCLK Offset: 0x04) ( R/ 8) HS Clock Division -------- */
-#define MCLK_HSDIV_RESETVALUE                 _UINT8_(0x01)                                        /*  (MCLK_HSDIV) HS Clock Division  Reset Value */
-
-#define MCLK_HSDIV_DIV_Pos                    _UINT8_(0)                                           /* (MCLK_HSDIV) CPU Clock Division Factor Position */
-#define MCLK_HSDIV_DIV_Msk                    (_UINT8_(0xFF) << MCLK_HSDIV_DIV_Pos)                /* (MCLK_HSDIV) CPU Clock Division Factor Mask */
-#define MCLK_HSDIV_DIV(value)                 (MCLK_HSDIV_DIV_Msk & (_UINT8_(value) << MCLK_HSDIV_DIV_Pos)) /* Assigment of value for DIV in the MCLK_HSDIV register */
-#define   MCLK_HSDIV_DIV_DIV1_Val             _UINT8_(0x1)                                         /* (MCLK_HSDIV) Divide by 1  */
-#define MCLK_HSDIV_DIV_DIV1                   (MCLK_HSDIV_DIV_DIV1_Val << MCLK_HSDIV_DIV_Pos)      /* (MCLK_HSDIV) Divide by 1 Position  */
-#define MCLK_HSDIV_Msk                        _UINT8_(0xFF)                                        /* (MCLK_HSDIV) Register Mask  */
-
-
-/* -------- MCLK_INTENCLR : (MCLK Offset: 0x01) (R/W 8) Interrupt Enable Clear -------- */
-#define MCLK_INTENCLR_RESETVALUE              _UINT8_(0x00)                                        /*  (MCLK_INTENCLR) Interrupt Enable Clear  Reset Value */
-
-#define MCLK_INTENCLR_CKRDY_Pos               _UINT8_(0)                                           /* (MCLK_INTENCLR) Clock Ready Interrupt Enable Position */
-#define MCLK_INTENCLR_CKRDY_Msk               (_UINT8_(0x1) << MCLK_INTENCLR_CKRDY_Pos)            /* (MCLK_INTENCLR) Clock Ready Interrupt Enable Mask */
-#define MCLK_INTENCLR_CKRDY(value)            (MCLK_INTENCLR_CKRDY_Msk & (_UINT8_(value) << MCLK_INTENCLR_CKRDY_Pos)) /* Assigment of value for CKRDY in the MCLK_INTENCLR register */
-#define MCLK_INTENCLR_Msk                     _UINT8_(0x01)                                        /* (MCLK_INTENCLR) Register Mask  */
-
-
-/* -------- MCLK_INTENSET : (MCLK Offset: 0x02) (R/W 8) Interrupt Enable Set -------- */
-#define MCLK_INTENSET_RESETVALUE              _UINT8_(0x00)                                        /*  (MCLK_INTENSET) Interrupt Enable Set  Reset Value */
-
-#define MCLK_INTENSET_CKRDY_Pos               _UINT8_(0)                                           /* (MCLK_INTENSET) Clock Ready Interrupt Enable Position */
-#define MCLK_INTENSET_CKRDY_Msk               (_UINT8_(0x1) << MCLK_INTENSET_CKRDY_Pos)            /* (MCLK_INTENSET) Clock Ready Interrupt Enable Mask */
-#define MCLK_INTENSET_CKRDY(value)            (MCLK_INTENSET_CKRDY_Msk & (_UINT8_(value) << MCLK_INTENSET_CKRDY_Pos)) /* Assigment of value for CKRDY in the MCLK_INTENSET register */
-#define MCLK_INTENSET_Msk                     _UINT8_(0x01)                                        /* (MCLK_INTENSET) Register Mask  */
-
-
-/* -------- MCLK_INTFLAG : (MCLK Offset: 0x03) (R/W 8) Interrupt Flag Status and Clear -------- */
-#define MCLK_INTFLAG_RESETVALUE               _UINT8_(0x01)                                        /*  (MCLK_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
-
-#define MCLK_INTFLAG_CKRDY_Pos                _UINT8_(0)                                           /* (MCLK_INTFLAG) Clock Ready Position */
-#define MCLK_INTFLAG_CKRDY_Msk                (_UINT8_(0x1) << MCLK_INTFLAG_CKRDY_Pos)             /* (MCLK_INTFLAG) Clock Ready Mask */
-#define MCLK_INTFLAG_CKRDY(value)             (MCLK_INTFLAG_CKRDY_Msk & (_UINT8_(value) << MCLK_INTFLAG_CKRDY_Pos)) /* Assigment of value for CKRDY in the MCLK_INTFLAG register */
-#define MCLK_INTFLAG_Msk                      _UINT8_(0x01)                                        /* (MCLK_INTFLAG) Register Mask  */
-
-
 /** \brief MCLK register offsets definitions */
+#define MCLK_INTENCLR_REG_OFST         _UINT32_(0x01)      /* (MCLK_INTENCLR) Interrupt Enable Clear Offset */
+#define MCLK_INTENSET_REG_OFST         _UINT32_(0x02)      /* (MCLK_INTENSET) Interrupt Enable Set Offset */
+#define MCLK_INTFLAG_REG_OFST          _UINT32_(0x03)      /* (MCLK_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define MCLK_HSDIV_REG_OFST            _UINT32_(0x04)      /* (MCLK_HSDIV) HS Clock Division Offset */
+#define MCLK_CPUDIV_REG_OFST           _UINT32_(0x05)      /* (MCLK_CPUDIV) CPU Clock Division Offset */
 #define MCLK_AHBMASK_REG_OFST          _UINT32_(0x10)      /* (MCLK_AHBMASK) AHB Mask Offset */
 #define MCLK_APBAMASK_REG_OFST         _UINT32_(0x14)      /* (MCLK_APBAMASK) APBA Mask Offset */
 #define MCLK_APBBMASK_REG_OFST         _UINT32_(0x18)      /* (MCLK_APBBMASK) APBB Mask Offset */
 #define MCLK_APBCMASK_REG_OFST         _UINT32_(0x1C)      /* (MCLK_APBCMASK) APBC Mask Offset */
 #define MCLK_APBDMASK_REG_OFST         _UINT32_(0x20)      /* (MCLK_APBDMASK) APBD Mask Offset */
-#define MCLK_CPUDIV_REG_OFST           _UINT32_(0x05)      /* (MCLK_CPUDIV) CPU Clock Division Offset */
-#define MCLK_HSDIV_REG_OFST            _UINT32_(0x04)      /* (MCLK_HSDIV) HS Clock Division Offset */
-#define MCLK_INTENCLR_REG_OFST         _UINT32_(0x01)      /* (MCLK_INTENCLR) Interrupt Enable Clear Offset */
-#define MCLK_INTENSET_REG_OFST         _UINT32_(0x02)      /* (MCLK_INTENSET) Interrupt Enable Set Offset */
-#define MCLK_INTFLAG_REG_OFST          _UINT32_(0x03)      /* (MCLK_INTFLAG) Interrupt Flag Status and Clear Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief MCLK register API structure */
