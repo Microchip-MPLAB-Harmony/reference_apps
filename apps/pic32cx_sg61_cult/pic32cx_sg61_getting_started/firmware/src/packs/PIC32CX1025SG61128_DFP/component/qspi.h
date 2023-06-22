@@ -1,7 +1,7 @@
 /*
  * Component description for QSPI
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,31 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_QSPI_COMPONENT_H_
 #define _PIC32CXSG61_QSPI_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR QSPI                                         */
 /* ************************************************************************** */
-
-/* -------- QSPI_BAUD : (QSPI Offset: 0x08) (R/W 32) Baud Rate -------- */
-#define QSPI_BAUD_RESETVALUE                  _UINT32_(0x00)                                       /*  (QSPI_BAUD) Baud Rate  Reset Value */
-
-#define QSPI_BAUD_CPOL_Pos                    _UINT32_(0)                                          /* (QSPI_BAUD) Clock Polarity Position */
-#define QSPI_BAUD_CPOL_Msk                    (_UINT32_(0x1) << QSPI_BAUD_CPOL_Pos)                /* (QSPI_BAUD) Clock Polarity Mask */
-#define QSPI_BAUD_CPOL(value)                 (QSPI_BAUD_CPOL_Msk & (_UINT32_(value) << QSPI_BAUD_CPOL_Pos)) /* Assigment of value for CPOL in the QSPI_BAUD register */
-#define QSPI_BAUD_CPHA_Pos                    _UINT32_(1)                                          /* (QSPI_BAUD) Clock Phase Position */
-#define QSPI_BAUD_CPHA_Msk                    (_UINT32_(0x1) << QSPI_BAUD_CPHA_Pos)                /* (QSPI_BAUD) Clock Phase Mask */
-#define QSPI_BAUD_CPHA(value)                 (QSPI_BAUD_CPHA_Msk & (_UINT32_(value) << QSPI_BAUD_CPHA_Pos)) /* Assigment of value for CPHA in the QSPI_BAUD register */
-#define QSPI_BAUD_BAUD_Pos                    _UINT32_(8)                                          /* (QSPI_BAUD) Serial Clock Baud Rate Position */
-#define QSPI_BAUD_BAUD_Msk                    (_UINT32_(0xFF) << QSPI_BAUD_BAUD_Pos)               /* (QSPI_BAUD) Serial Clock Baud Rate Mask */
-#define QSPI_BAUD_BAUD(value)                 (QSPI_BAUD_BAUD_Msk & (_UINT32_(value) << QSPI_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the QSPI_BAUD register */
-#define QSPI_BAUD_DLYBS_Pos                   _UINT32_(16)                                         /* (QSPI_BAUD) Delay Before SCK Position */
-#define QSPI_BAUD_DLYBS_Msk                   (_UINT32_(0xFF) << QSPI_BAUD_DLYBS_Pos)              /* (QSPI_BAUD) Delay Before SCK Mask */
-#define QSPI_BAUD_DLYBS(value)                (QSPI_BAUD_DLYBS_Msk & (_UINT32_(value) << QSPI_BAUD_DLYBS_Pos)) /* Assigment of value for DLYBS in the QSPI_BAUD register */
-#define QSPI_BAUD_Msk                         _UINT32_(0x00FFFF03)                                 /* (QSPI_BAUD) Register Mask  */
-
 
 /* -------- QSPI_CTRLA : (QSPI Offset: 0x00) (R/W 32) Control A -------- */
 #define QSPI_CTRLA_RESETVALUE                 _UINT32_(0x00)                                       /*  (QSPI_CTRLA) Control A  Reset Value */
@@ -121,6 +103,126 @@
 #define QSPI_CTRLB_DLYCS_Msk                  (_UINT32_(0xFF) << QSPI_CTRLB_DLYCS_Pos)             /* (QSPI_CTRLB) Minimum Inactive CS Delay Mask */
 #define QSPI_CTRLB_DLYCS(value)               (QSPI_CTRLB_DLYCS_Msk & (_UINT32_(value) << QSPI_CTRLB_DLYCS_Pos)) /* Assigment of value for DLYCS in the QSPI_CTRLB register */
 #define QSPI_CTRLB_Msk                        _UINT32_(0xFFFF0F3F)                                 /* (QSPI_CTRLB) Register Mask  */
+
+
+/* -------- QSPI_BAUD : (QSPI Offset: 0x08) (R/W 32) Baud Rate -------- */
+#define QSPI_BAUD_RESETVALUE                  _UINT32_(0x00)                                       /*  (QSPI_BAUD) Baud Rate  Reset Value */
+
+#define QSPI_BAUD_CPOL_Pos                    _UINT32_(0)                                          /* (QSPI_BAUD) Clock Polarity Position */
+#define QSPI_BAUD_CPOL_Msk                    (_UINT32_(0x1) << QSPI_BAUD_CPOL_Pos)                /* (QSPI_BAUD) Clock Polarity Mask */
+#define QSPI_BAUD_CPOL(value)                 (QSPI_BAUD_CPOL_Msk & (_UINT32_(value) << QSPI_BAUD_CPOL_Pos)) /* Assigment of value for CPOL in the QSPI_BAUD register */
+#define QSPI_BAUD_CPHA_Pos                    _UINT32_(1)                                          /* (QSPI_BAUD) Clock Phase Position */
+#define QSPI_BAUD_CPHA_Msk                    (_UINT32_(0x1) << QSPI_BAUD_CPHA_Pos)                /* (QSPI_BAUD) Clock Phase Mask */
+#define QSPI_BAUD_CPHA(value)                 (QSPI_BAUD_CPHA_Msk & (_UINT32_(value) << QSPI_BAUD_CPHA_Pos)) /* Assigment of value for CPHA in the QSPI_BAUD register */
+#define QSPI_BAUD_BAUD_Pos                    _UINT32_(8)                                          /* (QSPI_BAUD) Serial Clock Baud Rate Position */
+#define QSPI_BAUD_BAUD_Msk                    (_UINT32_(0xFF) << QSPI_BAUD_BAUD_Pos)               /* (QSPI_BAUD) Serial Clock Baud Rate Mask */
+#define QSPI_BAUD_BAUD(value)                 (QSPI_BAUD_BAUD_Msk & (_UINT32_(value) << QSPI_BAUD_BAUD_Pos)) /* Assigment of value for BAUD in the QSPI_BAUD register */
+#define QSPI_BAUD_DLYBS_Pos                   _UINT32_(16)                                         /* (QSPI_BAUD) Delay Before SCK Position */
+#define QSPI_BAUD_DLYBS_Msk                   (_UINT32_(0xFF) << QSPI_BAUD_DLYBS_Pos)              /* (QSPI_BAUD) Delay Before SCK Mask */
+#define QSPI_BAUD_DLYBS(value)                (QSPI_BAUD_DLYBS_Msk & (_UINT32_(value) << QSPI_BAUD_DLYBS_Pos)) /* Assigment of value for DLYBS in the QSPI_BAUD register */
+#define QSPI_BAUD_Msk                         _UINT32_(0x00FFFF03)                                 /* (QSPI_BAUD) Register Mask  */
+
+
+/* -------- QSPI_RXDATA : (QSPI Offset: 0x0C) ( R/ 32) Receive Data -------- */
+#define QSPI_RXDATA_RESETVALUE                _UINT32_(0x00)                                       /*  (QSPI_RXDATA) Receive Data  Reset Value */
+
+#define QSPI_RXDATA_DATA_Pos                  _UINT32_(0)                                          /* (QSPI_RXDATA) Receive Data Position */
+#define QSPI_RXDATA_DATA_Msk                  (_UINT32_(0xFFFF) << QSPI_RXDATA_DATA_Pos)           /* (QSPI_RXDATA) Receive Data Mask */
+#define QSPI_RXDATA_DATA(value)               (QSPI_RXDATA_DATA_Msk & (_UINT32_(value) << QSPI_RXDATA_DATA_Pos)) /* Assigment of value for DATA in the QSPI_RXDATA register */
+#define QSPI_RXDATA_Msk                       _UINT32_(0x0000FFFF)                                 /* (QSPI_RXDATA) Register Mask  */
+
+
+/* -------- QSPI_TXDATA : (QSPI Offset: 0x10) ( /W 32) Transmit Data -------- */
+#define QSPI_TXDATA_RESETVALUE                _UINT32_(0x00)                                       /*  (QSPI_TXDATA) Transmit Data  Reset Value */
+
+#define QSPI_TXDATA_DATA_Pos                  _UINT32_(0)                                          /* (QSPI_TXDATA) Transmit Data Position */
+#define QSPI_TXDATA_DATA_Msk                  (_UINT32_(0xFFFF) << QSPI_TXDATA_DATA_Pos)           /* (QSPI_TXDATA) Transmit Data Mask */
+#define QSPI_TXDATA_DATA(value)               (QSPI_TXDATA_DATA_Msk & (_UINT32_(value) << QSPI_TXDATA_DATA_Pos)) /* Assigment of value for DATA in the QSPI_TXDATA register */
+#define QSPI_TXDATA_Msk                       _UINT32_(0x0000FFFF)                                 /* (QSPI_TXDATA) Register Mask  */
+
+
+/* -------- QSPI_INTENCLR : (QSPI Offset: 0x14) (R/W 32) Interrupt Enable Clear -------- */
+#define QSPI_INTENCLR_RESETVALUE              _UINT32_(0x00)                                       /*  (QSPI_INTENCLR) Interrupt Enable Clear  Reset Value */
+
+#define QSPI_INTENCLR_RXC_Pos                 _UINT32_(0)                                          /* (QSPI_INTENCLR) Receive Data Register Full Interrupt Disable Position */
+#define QSPI_INTENCLR_RXC_Msk                 (_UINT32_(0x1) << QSPI_INTENCLR_RXC_Pos)             /* (QSPI_INTENCLR) Receive Data Register Full Interrupt Disable Mask */
+#define QSPI_INTENCLR_RXC(value)              (QSPI_INTENCLR_RXC_Msk & (_UINT32_(value) << QSPI_INTENCLR_RXC_Pos)) /* Assigment of value for RXC in the QSPI_INTENCLR register */
+#define QSPI_INTENCLR_DRE_Pos                 _UINT32_(1)                                          /* (QSPI_INTENCLR) Transmit Data Register Empty Interrupt Disable Position */
+#define QSPI_INTENCLR_DRE_Msk                 (_UINT32_(0x1) << QSPI_INTENCLR_DRE_Pos)             /* (QSPI_INTENCLR) Transmit Data Register Empty Interrupt Disable Mask */
+#define QSPI_INTENCLR_DRE(value)              (QSPI_INTENCLR_DRE_Msk & (_UINT32_(value) << QSPI_INTENCLR_DRE_Pos)) /* Assigment of value for DRE in the QSPI_INTENCLR register */
+#define QSPI_INTENCLR_TXC_Pos                 _UINT32_(2)                                          /* (QSPI_INTENCLR) Transmission Complete Interrupt Disable Position */
+#define QSPI_INTENCLR_TXC_Msk                 (_UINT32_(0x1) << QSPI_INTENCLR_TXC_Pos)             /* (QSPI_INTENCLR) Transmission Complete Interrupt Disable Mask */
+#define QSPI_INTENCLR_TXC(value)              (QSPI_INTENCLR_TXC_Msk & (_UINT32_(value) << QSPI_INTENCLR_TXC_Pos)) /* Assigment of value for TXC in the QSPI_INTENCLR register */
+#define QSPI_INTENCLR_ERROR_Pos               _UINT32_(3)                                          /* (QSPI_INTENCLR) Overrun Error Interrupt Disable Position */
+#define QSPI_INTENCLR_ERROR_Msk               (_UINT32_(0x1) << QSPI_INTENCLR_ERROR_Pos)           /* (QSPI_INTENCLR) Overrun Error Interrupt Disable Mask */
+#define QSPI_INTENCLR_ERROR(value)            (QSPI_INTENCLR_ERROR_Msk & (_UINT32_(value) << QSPI_INTENCLR_ERROR_Pos)) /* Assigment of value for ERROR in the QSPI_INTENCLR register */
+#define QSPI_INTENCLR_CSRISE_Pos              _UINT32_(8)                                          /* (QSPI_INTENCLR) Chip Select Rise Interrupt Disable Position */
+#define QSPI_INTENCLR_CSRISE_Msk              (_UINT32_(0x1) << QSPI_INTENCLR_CSRISE_Pos)          /* (QSPI_INTENCLR) Chip Select Rise Interrupt Disable Mask */
+#define QSPI_INTENCLR_CSRISE(value)           (QSPI_INTENCLR_CSRISE_Msk & (_UINT32_(value) << QSPI_INTENCLR_CSRISE_Pos)) /* Assigment of value for CSRISE in the QSPI_INTENCLR register */
+#define QSPI_INTENCLR_INSTREND_Pos            _UINT32_(10)                                         /* (QSPI_INTENCLR) Instruction End Interrupt Disable Position */
+#define QSPI_INTENCLR_INSTREND_Msk            (_UINT32_(0x1) << QSPI_INTENCLR_INSTREND_Pos)        /* (QSPI_INTENCLR) Instruction End Interrupt Disable Mask */
+#define QSPI_INTENCLR_INSTREND(value)         (QSPI_INTENCLR_INSTREND_Msk & (_UINT32_(value) << QSPI_INTENCLR_INSTREND_Pos)) /* Assigment of value for INSTREND in the QSPI_INTENCLR register */
+#define QSPI_INTENCLR_Msk                     _UINT32_(0x0000050F)                                 /* (QSPI_INTENCLR) Register Mask  */
+
+
+/* -------- QSPI_INTENSET : (QSPI Offset: 0x18) (R/W 32) Interrupt Enable Set -------- */
+#define QSPI_INTENSET_RESETVALUE              _UINT32_(0x00)                                       /*  (QSPI_INTENSET) Interrupt Enable Set  Reset Value */
+
+#define QSPI_INTENSET_RXC_Pos                 _UINT32_(0)                                          /* (QSPI_INTENSET) Receive Data Register Full Interrupt Enable Position */
+#define QSPI_INTENSET_RXC_Msk                 (_UINT32_(0x1) << QSPI_INTENSET_RXC_Pos)             /* (QSPI_INTENSET) Receive Data Register Full Interrupt Enable Mask */
+#define QSPI_INTENSET_RXC(value)              (QSPI_INTENSET_RXC_Msk & (_UINT32_(value) << QSPI_INTENSET_RXC_Pos)) /* Assigment of value for RXC in the QSPI_INTENSET register */
+#define QSPI_INTENSET_DRE_Pos                 _UINT32_(1)                                          /* (QSPI_INTENSET) Transmit Data Register Empty Interrupt Enable Position */
+#define QSPI_INTENSET_DRE_Msk                 (_UINT32_(0x1) << QSPI_INTENSET_DRE_Pos)             /* (QSPI_INTENSET) Transmit Data Register Empty Interrupt Enable Mask */
+#define QSPI_INTENSET_DRE(value)              (QSPI_INTENSET_DRE_Msk & (_UINT32_(value) << QSPI_INTENSET_DRE_Pos)) /* Assigment of value for DRE in the QSPI_INTENSET register */
+#define QSPI_INTENSET_TXC_Pos                 _UINT32_(2)                                          /* (QSPI_INTENSET) Transmission Complete Interrupt Enable Position */
+#define QSPI_INTENSET_TXC_Msk                 (_UINT32_(0x1) << QSPI_INTENSET_TXC_Pos)             /* (QSPI_INTENSET) Transmission Complete Interrupt Enable Mask */
+#define QSPI_INTENSET_TXC(value)              (QSPI_INTENSET_TXC_Msk & (_UINT32_(value) << QSPI_INTENSET_TXC_Pos)) /* Assigment of value for TXC in the QSPI_INTENSET register */
+#define QSPI_INTENSET_ERROR_Pos               _UINT32_(3)                                          /* (QSPI_INTENSET) Overrun Error Interrupt Enable Position */
+#define QSPI_INTENSET_ERROR_Msk               (_UINT32_(0x1) << QSPI_INTENSET_ERROR_Pos)           /* (QSPI_INTENSET) Overrun Error Interrupt Enable Mask */
+#define QSPI_INTENSET_ERROR(value)            (QSPI_INTENSET_ERROR_Msk & (_UINT32_(value) << QSPI_INTENSET_ERROR_Pos)) /* Assigment of value for ERROR in the QSPI_INTENSET register */
+#define QSPI_INTENSET_CSRISE_Pos              _UINT32_(8)                                          /* (QSPI_INTENSET) Chip Select Rise Interrupt Enable Position */
+#define QSPI_INTENSET_CSRISE_Msk              (_UINT32_(0x1) << QSPI_INTENSET_CSRISE_Pos)          /* (QSPI_INTENSET) Chip Select Rise Interrupt Enable Mask */
+#define QSPI_INTENSET_CSRISE(value)           (QSPI_INTENSET_CSRISE_Msk & (_UINT32_(value) << QSPI_INTENSET_CSRISE_Pos)) /* Assigment of value for CSRISE in the QSPI_INTENSET register */
+#define QSPI_INTENSET_INSTREND_Pos            _UINT32_(10)                                         /* (QSPI_INTENSET) Instruction End Interrupt Enable Position */
+#define QSPI_INTENSET_INSTREND_Msk            (_UINT32_(0x1) << QSPI_INTENSET_INSTREND_Pos)        /* (QSPI_INTENSET) Instruction End Interrupt Enable Mask */
+#define QSPI_INTENSET_INSTREND(value)         (QSPI_INTENSET_INSTREND_Msk & (_UINT32_(value) << QSPI_INTENSET_INSTREND_Pos)) /* Assigment of value for INSTREND in the QSPI_INTENSET register */
+#define QSPI_INTENSET_Msk                     _UINT32_(0x0000050F)                                 /* (QSPI_INTENSET) Register Mask  */
+
+
+/* -------- QSPI_INTFLAG : (QSPI Offset: 0x1C) (R/W 32) Interrupt Flag Status and Clear -------- */
+#define QSPI_INTFLAG_RESETVALUE               _UINT32_(0x00)                                       /*  (QSPI_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
+
+#define QSPI_INTFLAG_RXC_Pos                  _UINT32_(0)                                          /* (QSPI_INTFLAG) Receive Data Register Full Position */
+#define QSPI_INTFLAG_RXC_Msk                  (_UINT32_(0x1) << QSPI_INTFLAG_RXC_Pos)              /* (QSPI_INTFLAG) Receive Data Register Full Mask */
+#define QSPI_INTFLAG_RXC(value)               (QSPI_INTFLAG_RXC_Msk & (_UINT32_(value) << QSPI_INTFLAG_RXC_Pos)) /* Assigment of value for RXC in the QSPI_INTFLAG register */
+#define QSPI_INTFLAG_DRE_Pos                  _UINT32_(1)                                          /* (QSPI_INTFLAG) Transmit Data Register Empty Position */
+#define QSPI_INTFLAG_DRE_Msk                  (_UINT32_(0x1) << QSPI_INTFLAG_DRE_Pos)              /* (QSPI_INTFLAG) Transmit Data Register Empty Mask */
+#define QSPI_INTFLAG_DRE(value)               (QSPI_INTFLAG_DRE_Msk & (_UINT32_(value) << QSPI_INTFLAG_DRE_Pos)) /* Assigment of value for DRE in the QSPI_INTFLAG register */
+#define QSPI_INTFLAG_TXC_Pos                  _UINT32_(2)                                          /* (QSPI_INTFLAG) Transmission Complete Position */
+#define QSPI_INTFLAG_TXC_Msk                  (_UINT32_(0x1) << QSPI_INTFLAG_TXC_Pos)              /* (QSPI_INTFLAG) Transmission Complete Mask */
+#define QSPI_INTFLAG_TXC(value)               (QSPI_INTFLAG_TXC_Msk & (_UINT32_(value) << QSPI_INTFLAG_TXC_Pos)) /* Assigment of value for TXC in the QSPI_INTFLAG register */
+#define QSPI_INTFLAG_ERROR_Pos                _UINT32_(3)                                          /* (QSPI_INTFLAG) Overrun Error Position */
+#define QSPI_INTFLAG_ERROR_Msk                (_UINT32_(0x1) << QSPI_INTFLAG_ERROR_Pos)            /* (QSPI_INTFLAG) Overrun Error Mask */
+#define QSPI_INTFLAG_ERROR(value)             (QSPI_INTFLAG_ERROR_Msk & (_UINT32_(value) << QSPI_INTFLAG_ERROR_Pos)) /* Assigment of value for ERROR in the QSPI_INTFLAG register */
+#define QSPI_INTFLAG_CSRISE_Pos               _UINT32_(8)                                          /* (QSPI_INTFLAG) Chip Select Rise Position */
+#define QSPI_INTFLAG_CSRISE_Msk               (_UINT32_(0x1) << QSPI_INTFLAG_CSRISE_Pos)           /* (QSPI_INTFLAG) Chip Select Rise Mask */
+#define QSPI_INTFLAG_CSRISE(value)            (QSPI_INTFLAG_CSRISE_Msk & (_UINT32_(value) << QSPI_INTFLAG_CSRISE_Pos)) /* Assigment of value for CSRISE in the QSPI_INTFLAG register */
+#define QSPI_INTFLAG_INSTREND_Pos             _UINT32_(10)                                         /* (QSPI_INTFLAG) Instruction End Position */
+#define QSPI_INTFLAG_INSTREND_Msk             (_UINT32_(0x1) << QSPI_INTFLAG_INSTREND_Pos)         /* (QSPI_INTFLAG) Instruction End Mask */
+#define QSPI_INTFLAG_INSTREND(value)          (QSPI_INTFLAG_INSTREND_Msk & (_UINT32_(value) << QSPI_INTFLAG_INSTREND_Pos)) /* Assigment of value for INSTREND in the QSPI_INTFLAG register */
+#define QSPI_INTFLAG_Msk                      _UINT32_(0x0000050F)                                 /* (QSPI_INTFLAG) Register Mask  */
+
+
+/* -------- QSPI_STATUS : (QSPI Offset: 0x20) ( R/ 32) Status Register -------- */
+#define QSPI_STATUS_RESETVALUE                _UINT32_(0x200)                                      /*  (QSPI_STATUS) Status Register  Reset Value */
+
+#define QSPI_STATUS_ENABLE_Pos                _UINT32_(1)                                          /* (QSPI_STATUS) Enable Position */
+#define QSPI_STATUS_ENABLE_Msk                (_UINT32_(0x1) << QSPI_STATUS_ENABLE_Pos)            /* (QSPI_STATUS) Enable Mask */
+#define QSPI_STATUS_ENABLE(value)             (QSPI_STATUS_ENABLE_Msk & (_UINT32_(value) << QSPI_STATUS_ENABLE_Pos)) /* Assigment of value for ENABLE in the QSPI_STATUS register */
+#define QSPI_STATUS_CSSTATUS_Pos              _UINT32_(9)                                          /* (QSPI_STATUS) Chip Select Position */
+#define QSPI_STATUS_CSSTATUS_Msk              (_UINT32_(0x1) << QSPI_STATUS_CSSTATUS_Pos)          /* (QSPI_STATUS) Chip Select Mask */
+#define QSPI_STATUS_CSSTATUS(value)           (QSPI_STATUS_CSSTATUS_Msk & (_UINT32_(value) << QSPI_STATUS_CSSTATUS_Pos)) /* Assigment of value for CSSTATUS in the QSPI_STATUS register */
+#define QSPI_STATUS_Msk                       _UINT32_(0x00000202)                                 /* (QSPI_STATUS) Register Mask  */
 
 
 /* -------- QSPI_INSTRADDR : (QSPI Offset: 0x30) (R/W 32) Instruction Address -------- */
@@ -217,87 +319,6 @@
 #define QSPI_INSTRFRAME_Msk                   _UINT32_(0x001FF7F7)                                 /* (QSPI_INSTRFRAME) Register Mask  */
 
 
-/* -------- QSPI_INTENCLR : (QSPI Offset: 0x14) (R/W 32) Interrupt Enable Clear -------- */
-#define QSPI_INTENCLR_RESETVALUE              _UINT32_(0x00)                                       /*  (QSPI_INTENCLR) Interrupt Enable Clear  Reset Value */
-
-#define QSPI_INTENCLR_RXC_Pos                 _UINT32_(0)                                          /* (QSPI_INTENCLR) Receive Data Register Full Interrupt Disable Position */
-#define QSPI_INTENCLR_RXC_Msk                 (_UINT32_(0x1) << QSPI_INTENCLR_RXC_Pos)             /* (QSPI_INTENCLR) Receive Data Register Full Interrupt Disable Mask */
-#define QSPI_INTENCLR_RXC(value)              (QSPI_INTENCLR_RXC_Msk & (_UINT32_(value) << QSPI_INTENCLR_RXC_Pos)) /* Assigment of value for RXC in the QSPI_INTENCLR register */
-#define QSPI_INTENCLR_DRE_Pos                 _UINT32_(1)                                          /* (QSPI_INTENCLR) Transmit Data Register Empty Interrupt Disable Position */
-#define QSPI_INTENCLR_DRE_Msk                 (_UINT32_(0x1) << QSPI_INTENCLR_DRE_Pos)             /* (QSPI_INTENCLR) Transmit Data Register Empty Interrupt Disable Mask */
-#define QSPI_INTENCLR_DRE(value)              (QSPI_INTENCLR_DRE_Msk & (_UINT32_(value) << QSPI_INTENCLR_DRE_Pos)) /* Assigment of value for DRE in the QSPI_INTENCLR register */
-#define QSPI_INTENCLR_TXC_Pos                 _UINT32_(2)                                          /* (QSPI_INTENCLR) Transmission Complete Interrupt Disable Position */
-#define QSPI_INTENCLR_TXC_Msk                 (_UINT32_(0x1) << QSPI_INTENCLR_TXC_Pos)             /* (QSPI_INTENCLR) Transmission Complete Interrupt Disable Mask */
-#define QSPI_INTENCLR_TXC(value)              (QSPI_INTENCLR_TXC_Msk & (_UINT32_(value) << QSPI_INTENCLR_TXC_Pos)) /* Assigment of value for TXC in the QSPI_INTENCLR register */
-#define QSPI_INTENCLR_ERROR_Pos               _UINT32_(3)                                          /* (QSPI_INTENCLR) Overrun Error Interrupt Disable Position */
-#define QSPI_INTENCLR_ERROR_Msk               (_UINT32_(0x1) << QSPI_INTENCLR_ERROR_Pos)           /* (QSPI_INTENCLR) Overrun Error Interrupt Disable Mask */
-#define QSPI_INTENCLR_ERROR(value)            (QSPI_INTENCLR_ERROR_Msk & (_UINT32_(value) << QSPI_INTENCLR_ERROR_Pos)) /* Assigment of value for ERROR in the QSPI_INTENCLR register */
-#define QSPI_INTENCLR_CSRISE_Pos              _UINT32_(8)                                          /* (QSPI_INTENCLR) Chip Select Rise Interrupt Disable Position */
-#define QSPI_INTENCLR_CSRISE_Msk              (_UINT32_(0x1) << QSPI_INTENCLR_CSRISE_Pos)          /* (QSPI_INTENCLR) Chip Select Rise Interrupt Disable Mask */
-#define QSPI_INTENCLR_CSRISE(value)           (QSPI_INTENCLR_CSRISE_Msk & (_UINT32_(value) << QSPI_INTENCLR_CSRISE_Pos)) /* Assigment of value for CSRISE in the QSPI_INTENCLR register */
-#define QSPI_INTENCLR_INSTREND_Pos            _UINT32_(10)                                         /* (QSPI_INTENCLR) Instruction End Interrupt Disable Position */
-#define QSPI_INTENCLR_INSTREND_Msk            (_UINT32_(0x1) << QSPI_INTENCLR_INSTREND_Pos)        /* (QSPI_INTENCLR) Instruction End Interrupt Disable Mask */
-#define QSPI_INTENCLR_INSTREND(value)         (QSPI_INTENCLR_INSTREND_Msk & (_UINT32_(value) << QSPI_INTENCLR_INSTREND_Pos)) /* Assigment of value for INSTREND in the QSPI_INTENCLR register */
-#define QSPI_INTENCLR_Msk                     _UINT32_(0x0000050F)                                 /* (QSPI_INTENCLR) Register Mask  */
-
-
-/* -------- QSPI_INTENSET : (QSPI Offset: 0x18) (R/W 32) Interrupt Enable Set -------- */
-#define QSPI_INTENSET_RESETVALUE              _UINT32_(0x00)                                       /*  (QSPI_INTENSET) Interrupt Enable Set  Reset Value */
-
-#define QSPI_INTENSET_RXC_Pos                 _UINT32_(0)                                          /* (QSPI_INTENSET) Receive Data Register Full Interrupt Enable Position */
-#define QSPI_INTENSET_RXC_Msk                 (_UINT32_(0x1) << QSPI_INTENSET_RXC_Pos)             /* (QSPI_INTENSET) Receive Data Register Full Interrupt Enable Mask */
-#define QSPI_INTENSET_RXC(value)              (QSPI_INTENSET_RXC_Msk & (_UINT32_(value) << QSPI_INTENSET_RXC_Pos)) /* Assigment of value for RXC in the QSPI_INTENSET register */
-#define QSPI_INTENSET_DRE_Pos                 _UINT32_(1)                                          /* (QSPI_INTENSET) Transmit Data Register Empty Interrupt Enable Position */
-#define QSPI_INTENSET_DRE_Msk                 (_UINT32_(0x1) << QSPI_INTENSET_DRE_Pos)             /* (QSPI_INTENSET) Transmit Data Register Empty Interrupt Enable Mask */
-#define QSPI_INTENSET_DRE(value)              (QSPI_INTENSET_DRE_Msk & (_UINT32_(value) << QSPI_INTENSET_DRE_Pos)) /* Assigment of value for DRE in the QSPI_INTENSET register */
-#define QSPI_INTENSET_TXC_Pos                 _UINT32_(2)                                          /* (QSPI_INTENSET) Transmission Complete Interrupt Enable Position */
-#define QSPI_INTENSET_TXC_Msk                 (_UINT32_(0x1) << QSPI_INTENSET_TXC_Pos)             /* (QSPI_INTENSET) Transmission Complete Interrupt Enable Mask */
-#define QSPI_INTENSET_TXC(value)              (QSPI_INTENSET_TXC_Msk & (_UINT32_(value) << QSPI_INTENSET_TXC_Pos)) /* Assigment of value for TXC in the QSPI_INTENSET register */
-#define QSPI_INTENSET_ERROR_Pos               _UINT32_(3)                                          /* (QSPI_INTENSET) Overrun Error Interrupt Enable Position */
-#define QSPI_INTENSET_ERROR_Msk               (_UINT32_(0x1) << QSPI_INTENSET_ERROR_Pos)           /* (QSPI_INTENSET) Overrun Error Interrupt Enable Mask */
-#define QSPI_INTENSET_ERROR(value)            (QSPI_INTENSET_ERROR_Msk & (_UINT32_(value) << QSPI_INTENSET_ERROR_Pos)) /* Assigment of value for ERROR in the QSPI_INTENSET register */
-#define QSPI_INTENSET_CSRISE_Pos              _UINT32_(8)                                          /* (QSPI_INTENSET) Chip Select Rise Interrupt Enable Position */
-#define QSPI_INTENSET_CSRISE_Msk              (_UINT32_(0x1) << QSPI_INTENSET_CSRISE_Pos)          /* (QSPI_INTENSET) Chip Select Rise Interrupt Enable Mask */
-#define QSPI_INTENSET_CSRISE(value)           (QSPI_INTENSET_CSRISE_Msk & (_UINT32_(value) << QSPI_INTENSET_CSRISE_Pos)) /* Assigment of value for CSRISE in the QSPI_INTENSET register */
-#define QSPI_INTENSET_INSTREND_Pos            _UINT32_(10)                                         /* (QSPI_INTENSET) Instruction End Interrupt Enable Position */
-#define QSPI_INTENSET_INSTREND_Msk            (_UINT32_(0x1) << QSPI_INTENSET_INSTREND_Pos)        /* (QSPI_INTENSET) Instruction End Interrupt Enable Mask */
-#define QSPI_INTENSET_INSTREND(value)         (QSPI_INTENSET_INSTREND_Msk & (_UINT32_(value) << QSPI_INTENSET_INSTREND_Pos)) /* Assigment of value for INSTREND in the QSPI_INTENSET register */
-#define QSPI_INTENSET_Msk                     _UINT32_(0x0000050F)                                 /* (QSPI_INTENSET) Register Mask  */
-
-
-/* -------- QSPI_INTFLAG : (QSPI Offset: 0x1C) (R/W 32) Interrupt Flag Status and Clear -------- */
-#define QSPI_INTFLAG_RESETVALUE               _UINT32_(0x00)                                       /*  (QSPI_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
-
-#define QSPI_INTFLAG_RXC_Pos                  _UINT32_(0)                                          /* (QSPI_INTFLAG) Receive Data Register Full Position */
-#define QSPI_INTFLAG_RXC_Msk                  (_UINT32_(0x1) << QSPI_INTFLAG_RXC_Pos)              /* (QSPI_INTFLAG) Receive Data Register Full Mask */
-#define QSPI_INTFLAG_RXC(value)               (QSPI_INTFLAG_RXC_Msk & (_UINT32_(value) << QSPI_INTFLAG_RXC_Pos)) /* Assigment of value for RXC in the QSPI_INTFLAG register */
-#define QSPI_INTFLAG_DRE_Pos                  _UINT32_(1)                                          /* (QSPI_INTFLAG) Transmit Data Register Empty Position */
-#define QSPI_INTFLAG_DRE_Msk                  (_UINT32_(0x1) << QSPI_INTFLAG_DRE_Pos)              /* (QSPI_INTFLAG) Transmit Data Register Empty Mask */
-#define QSPI_INTFLAG_DRE(value)               (QSPI_INTFLAG_DRE_Msk & (_UINT32_(value) << QSPI_INTFLAG_DRE_Pos)) /* Assigment of value for DRE in the QSPI_INTFLAG register */
-#define QSPI_INTFLAG_TXC_Pos                  _UINT32_(2)                                          /* (QSPI_INTFLAG) Transmission Complete Position */
-#define QSPI_INTFLAG_TXC_Msk                  (_UINT32_(0x1) << QSPI_INTFLAG_TXC_Pos)              /* (QSPI_INTFLAG) Transmission Complete Mask */
-#define QSPI_INTFLAG_TXC(value)               (QSPI_INTFLAG_TXC_Msk & (_UINT32_(value) << QSPI_INTFLAG_TXC_Pos)) /* Assigment of value for TXC in the QSPI_INTFLAG register */
-#define QSPI_INTFLAG_ERROR_Pos                _UINT32_(3)                                          /* (QSPI_INTFLAG) Overrun Error Position */
-#define QSPI_INTFLAG_ERROR_Msk                (_UINT32_(0x1) << QSPI_INTFLAG_ERROR_Pos)            /* (QSPI_INTFLAG) Overrun Error Mask */
-#define QSPI_INTFLAG_ERROR(value)             (QSPI_INTFLAG_ERROR_Msk & (_UINT32_(value) << QSPI_INTFLAG_ERROR_Pos)) /* Assigment of value for ERROR in the QSPI_INTFLAG register */
-#define QSPI_INTFLAG_CSRISE_Pos               _UINT32_(8)                                          /* (QSPI_INTFLAG) Chip Select Rise Position */
-#define QSPI_INTFLAG_CSRISE_Msk               (_UINT32_(0x1) << QSPI_INTFLAG_CSRISE_Pos)           /* (QSPI_INTFLAG) Chip Select Rise Mask */
-#define QSPI_INTFLAG_CSRISE(value)            (QSPI_INTFLAG_CSRISE_Msk & (_UINT32_(value) << QSPI_INTFLAG_CSRISE_Pos)) /* Assigment of value for CSRISE in the QSPI_INTFLAG register */
-#define QSPI_INTFLAG_INSTREND_Pos             _UINT32_(10)                                         /* (QSPI_INTFLAG) Instruction End Position */
-#define QSPI_INTFLAG_INSTREND_Msk             (_UINT32_(0x1) << QSPI_INTFLAG_INSTREND_Pos)         /* (QSPI_INTFLAG) Instruction End Mask */
-#define QSPI_INTFLAG_INSTREND(value)          (QSPI_INTFLAG_INSTREND_Msk & (_UINT32_(value) << QSPI_INTFLAG_INSTREND_Pos)) /* Assigment of value for INSTREND in the QSPI_INTFLAG register */
-#define QSPI_INTFLAG_Msk                      _UINT32_(0x0000050F)                                 /* (QSPI_INTFLAG) Register Mask  */
-
-
-/* -------- QSPI_RXDATA : (QSPI Offset: 0x0C) ( R/ 32) Receive Data -------- */
-#define QSPI_RXDATA_RESETVALUE                _UINT32_(0x00)                                       /*  (QSPI_RXDATA) Receive Data  Reset Value */
-
-#define QSPI_RXDATA_DATA_Pos                  _UINT32_(0)                                          /* (QSPI_RXDATA) Receive Data Position */
-#define QSPI_RXDATA_DATA_Msk                  (_UINT32_(0xFFFF) << QSPI_RXDATA_DATA_Pos)           /* (QSPI_RXDATA) Receive Data Mask */
-#define QSPI_RXDATA_DATA(value)               (QSPI_RXDATA_DATA_Msk & (_UINT32_(value) << QSPI_RXDATA_DATA_Pos)) /* Assigment of value for DATA in the QSPI_RXDATA register */
-#define QSPI_RXDATA_Msk                       _UINT32_(0x0000FFFF)                                 /* (QSPI_RXDATA) Register Mask  */
-
-
 /* -------- QSPI_SCRAMBCTRL : (QSPI Offset: 0x40) (R/W 32) Scrambling Mode -------- */
 #define QSPI_SCRAMBCTRL_RESETVALUE            _UINT32_(0x00)                                       /*  (QSPI_SCRAMBCTRL) Scrambling Mode  Reset Value */
 
@@ -319,42 +340,21 @@
 #define QSPI_SCRAMBKEY_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (QSPI_SCRAMBKEY) Register Mask  */
 
 
-/* -------- QSPI_STATUS : (QSPI Offset: 0x20) ( R/ 32) Status Register -------- */
-#define QSPI_STATUS_RESETVALUE                _UINT32_(0x200)                                      /*  (QSPI_STATUS) Status Register  Reset Value */
-
-#define QSPI_STATUS_ENABLE_Pos                _UINT32_(1)                                          /* (QSPI_STATUS) Enable Position */
-#define QSPI_STATUS_ENABLE_Msk                (_UINT32_(0x1) << QSPI_STATUS_ENABLE_Pos)            /* (QSPI_STATUS) Enable Mask */
-#define QSPI_STATUS_ENABLE(value)             (QSPI_STATUS_ENABLE_Msk & (_UINT32_(value) << QSPI_STATUS_ENABLE_Pos)) /* Assigment of value for ENABLE in the QSPI_STATUS register */
-#define QSPI_STATUS_CSSTATUS_Pos              _UINT32_(9)                                          /* (QSPI_STATUS) Chip Select Position */
-#define QSPI_STATUS_CSSTATUS_Msk              (_UINT32_(0x1) << QSPI_STATUS_CSSTATUS_Pos)          /* (QSPI_STATUS) Chip Select Mask */
-#define QSPI_STATUS_CSSTATUS(value)           (QSPI_STATUS_CSSTATUS_Msk & (_UINT32_(value) << QSPI_STATUS_CSSTATUS_Pos)) /* Assigment of value for CSSTATUS in the QSPI_STATUS register */
-#define QSPI_STATUS_Msk                       _UINT32_(0x00000202)                                 /* (QSPI_STATUS) Register Mask  */
-
-
-/* -------- QSPI_TXDATA : (QSPI Offset: 0x10) ( /W 32) Transmit Data -------- */
-#define QSPI_TXDATA_RESETVALUE                _UINT32_(0x00)                                       /*  (QSPI_TXDATA) Transmit Data  Reset Value */
-
-#define QSPI_TXDATA_DATA_Pos                  _UINT32_(0)                                          /* (QSPI_TXDATA) Transmit Data Position */
-#define QSPI_TXDATA_DATA_Msk                  (_UINT32_(0xFFFF) << QSPI_TXDATA_DATA_Pos)           /* (QSPI_TXDATA) Transmit Data Mask */
-#define QSPI_TXDATA_DATA(value)               (QSPI_TXDATA_DATA_Msk & (_UINT32_(value) << QSPI_TXDATA_DATA_Pos)) /* Assigment of value for DATA in the QSPI_TXDATA register */
-#define QSPI_TXDATA_Msk                       _UINT32_(0x0000FFFF)                                 /* (QSPI_TXDATA) Register Mask  */
-
-
 /** \brief QSPI register offsets definitions */
-#define QSPI_BAUD_REG_OFST             _UINT32_(0x08)      /* (QSPI_BAUD) Baud Rate Offset */
 #define QSPI_CTRLA_REG_OFST            _UINT32_(0x00)      /* (QSPI_CTRLA) Control A Offset */
 #define QSPI_CTRLB_REG_OFST            _UINT32_(0x04)      /* (QSPI_CTRLB) Control B Offset */
-#define QSPI_INSTRADDR_REG_OFST        _UINT32_(0x30)      /* (QSPI_INSTRADDR) Instruction Address Offset */
-#define QSPI_INSTRCTRL_REG_OFST        _UINT32_(0x34)      /* (QSPI_INSTRCTRL) Instruction Code Offset */
-#define QSPI_INSTRFRAME_REG_OFST       _UINT32_(0x38)      /* (QSPI_INSTRFRAME) Instruction Frame Offset */
+#define QSPI_BAUD_REG_OFST             _UINT32_(0x08)      /* (QSPI_BAUD) Baud Rate Offset */
+#define QSPI_RXDATA_REG_OFST           _UINT32_(0x0C)      /* (QSPI_RXDATA) Receive Data Offset */
+#define QSPI_TXDATA_REG_OFST           _UINT32_(0x10)      /* (QSPI_TXDATA) Transmit Data Offset */
 #define QSPI_INTENCLR_REG_OFST         _UINT32_(0x14)      /* (QSPI_INTENCLR) Interrupt Enable Clear Offset */
 #define QSPI_INTENSET_REG_OFST         _UINT32_(0x18)      /* (QSPI_INTENSET) Interrupt Enable Set Offset */
 #define QSPI_INTFLAG_REG_OFST          _UINT32_(0x1C)      /* (QSPI_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define QSPI_RXDATA_REG_OFST           _UINT32_(0x0C)      /* (QSPI_RXDATA) Receive Data Offset */
+#define QSPI_STATUS_REG_OFST           _UINT32_(0x20)      /* (QSPI_STATUS) Status Register Offset */
+#define QSPI_INSTRADDR_REG_OFST        _UINT32_(0x30)      /* (QSPI_INSTRADDR) Instruction Address Offset */
+#define QSPI_INSTRCTRL_REG_OFST        _UINT32_(0x34)      /* (QSPI_INSTRCTRL) Instruction Code Offset */
+#define QSPI_INSTRFRAME_REG_OFST       _UINT32_(0x38)      /* (QSPI_INSTRFRAME) Instruction Frame Offset */
 #define QSPI_SCRAMBCTRL_REG_OFST       _UINT32_(0x40)      /* (QSPI_SCRAMBCTRL) Scrambling Mode Offset */
 #define QSPI_SCRAMBKEY_REG_OFST        _UINT32_(0x44)      /* (QSPI_SCRAMBKEY) Scrambling Key Offset */
-#define QSPI_STATUS_REG_OFST           _UINT32_(0x20)      /* (QSPI_STATUS) Status Register Offset */
-#define QSPI_TXDATA_REG_OFST           _UINT32_(0x10)      /* (QSPI_TXDATA) Transmit Data Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief QSPI register API structure */

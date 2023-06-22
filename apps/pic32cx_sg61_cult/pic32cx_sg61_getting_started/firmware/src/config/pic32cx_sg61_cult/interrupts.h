@@ -68,7 +68,6 @@ void RTC_InterruptHandler (void);
 void EIC_EXTINT_0_InterruptHandler (void);
 void EIC_EXTINT_1_InterruptHandler (void);
 void DMAC_0_InterruptHandler (void);
-void SERCOM4_USART_InterruptHandler (void);
 void SERCOM6_I2C_InterruptHandler (void);
 
 

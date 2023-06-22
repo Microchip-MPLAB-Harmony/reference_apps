@@ -1,7 +1,7 @@
 /*
  * Component description for NVMCTRL
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,31 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_NVMCTRL_COMPONENT_H_
 #define _PIC32CXSG61_NVMCTRL_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR NVMCTRL                                      */
 /* ************************************************************************** */
-
-/* -------- NVMCTRL_ADDR : (NVMCTRL Offset: 0x14) (R/W 32) Address -------- */
-#define NVMCTRL_ADDR_RESETVALUE               _UINT32_(0x00)                                       /*  (NVMCTRL_ADDR) Address  Reset Value */
-
-#define NVMCTRL_ADDR_ADDR_Pos                 _UINT32_(0)                                          /* (NVMCTRL_ADDR) NVM Address Position */
-#define NVMCTRL_ADDR_ADDR_Msk                 (_UINT32_(0xFFFFFF) << NVMCTRL_ADDR_ADDR_Pos)        /* (NVMCTRL_ADDR) NVM Address Mask */
-#define NVMCTRL_ADDR_ADDR(value)              (NVMCTRL_ADDR_ADDR_Msk & (_UINT32_(value) << NVMCTRL_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the NVMCTRL_ADDR register */
-#define NVMCTRL_ADDR_Msk                      _UINT32_(0x00FFFFFF)                                 /* (NVMCTRL_ADDR) Register Mask  */
-
-
-/* -------- NVMCTRL_BCTRL : (NVMCTRL Offset: 0x29) (R/W 8) Boot Control -------- */
-#define NVMCTRL_BCTRL_RESETVALUE              _UINT8_(0x00)                                        /*  (NVMCTRL_BCTRL) Boot Control  Reset Value */
-
-#define NVMCTRL_BCTRL_BRPE_Pos                _UINT8_(0)                                           /* (NVMCTRL_BCTRL) Boot Read Protection Enable Position */
-#define NVMCTRL_BCTRL_BRPE_Msk                (_UINT8_(0x1) << NVMCTRL_BCTRL_BRPE_Pos)             /* (NVMCTRL_BCTRL) Boot Read Protection Enable Mask */
-#define NVMCTRL_BCTRL_BRPE(value)             (NVMCTRL_BCTRL_BRPE_Msk & (_UINT8_(value) << NVMCTRL_BCTRL_BRPE_Pos)) /* Assigment of value for BRPE in the NVMCTRL_BCTRL register */
-#define NVMCTRL_BCTRL_Msk                     _UINT8_(0x01)                                        /* (NVMCTRL_BCTRL) Register Mask  */
-
 
 /* -------- NVMCTRL_CTRLA : (NVMCTRL Offset: 0x00) (R/W 16) Control A -------- */
 #define NVMCTRL_CTRLA_RESETVALUE              _UINT16_(0x04)                                       /*  (NVMCTRL_CTRLA) Control A  Reset Value */
@@ -163,43 +145,39 @@
 #define NVMCTRL_CTRLB_Msk                     _UINT16_(0xFF7F)                                     /* (NVMCTRL_CTRLB) Register Mask  */
 
 
-/* -------- NVMCTRL_DBGCTRL : (NVMCTRL Offset: 0x28) (R/W 8) Debug Control -------- */
-#define NVMCTRL_DBGCTRL_RESETVALUE            _UINT8_(0x00)                                        /*  (NVMCTRL_DBGCTRL) Debug Control  Reset Value */
+/* -------- NVMCTRL_PARAM : (NVMCTRL Offset: 0x08) ( R/ 32) NVM Parameter -------- */
+#define NVMCTRL_PARAM_RESETVALUE              _UINT32_(0x60000)                                    /*  (NVMCTRL_PARAM) NVM Parameter  Reset Value */
 
-#define NVMCTRL_DBGCTRL_ECCDIS_Pos            _UINT8_(0)                                           /* (NVMCTRL_DBGCTRL) Debugger ECC Read Disable Position */
-#define NVMCTRL_DBGCTRL_ECCDIS_Msk            (_UINT8_(0x1) << NVMCTRL_DBGCTRL_ECCDIS_Pos)         /* (NVMCTRL_DBGCTRL) Debugger ECC Read Disable Mask */
-#define NVMCTRL_DBGCTRL_ECCDIS(value)         (NVMCTRL_DBGCTRL_ECCDIS_Msk & (_UINT8_(value) << NVMCTRL_DBGCTRL_ECCDIS_Pos)) /* Assigment of value for ECCDIS in the NVMCTRL_DBGCTRL register */
-#define NVMCTRL_DBGCTRL_ECCELOG_Pos           _UINT8_(1)                                           /* (NVMCTRL_DBGCTRL) Debugger ECC Error Tracking Mode Position */
-#define NVMCTRL_DBGCTRL_ECCELOG_Msk           (_UINT8_(0x1) << NVMCTRL_DBGCTRL_ECCELOG_Pos)        /* (NVMCTRL_DBGCTRL) Debugger ECC Error Tracking Mode Mask */
-#define NVMCTRL_DBGCTRL_ECCELOG(value)        (NVMCTRL_DBGCTRL_ECCELOG_Msk & (_UINT8_(value) << NVMCTRL_DBGCTRL_ECCELOG_Pos)) /* Assigment of value for ECCELOG in the NVMCTRL_DBGCTRL register */
-#define NVMCTRL_DBGCTRL_Msk                   _UINT8_(0x03)                                        /* (NVMCTRL_DBGCTRL) Register Mask  */
-
-
-/* -------- NVMCTRL_ECCERR : (NVMCTRL Offset: 0x24) ( R/ 32) ECC Error Status Register -------- */
-#define NVMCTRL_ECCERR_RESETVALUE             _UINT32_(0x00)                                       /*  (NVMCTRL_ECCERR) ECC Error Status Register  Reset Value */
-
-#define NVMCTRL_ECCERR_ADDR_Pos               _UINT32_(0)                                          /* (NVMCTRL_ECCERR) Error Address Position */
-#define NVMCTRL_ECCERR_ADDR_Msk               (_UINT32_(0xFFFFFF) << NVMCTRL_ECCERR_ADDR_Pos)      /* (NVMCTRL_ECCERR) Error Address Mask */
-#define NVMCTRL_ECCERR_ADDR(value)            (NVMCTRL_ECCERR_ADDR_Msk & (_UINT32_(value) << NVMCTRL_ECCERR_ADDR_Pos)) /* Assigment of value for ADDR in the NVMCTRL_ECCERR register */
-#define NVMCTRL_ECCERR_TYPEL_Pos              _UINT32_(28)                                         /* (NVMCTRL_ECCERR) Low Double-Word Error Type Position */
-#define NVMCTRL_ECCERR_TYPEL_Msk              (_UINT32_(0x3) << NVMCTRL_ECCERR_TYPEL_Pos)          /* (NVMCTRL_ECCERR) Low Double-Word Error Type Mask */
-#define NVMCTRL_ECCERR_TYPEL(value)           (NVMCTRL_ECCERR_TYPEL_Msk & (_UINT32_(value) << NVMCTRL_ECCERR_TYPEL_Pos)) /* Assigment of value for TYPEL in the NVMCTRL_ECCERR register */
-#define   NVMCTRL_ECCERR_TYPEL_NONE_Val       _UINT32_(0x0)                                        /* (NVMCTRL_ECCERR) No Error Detected Since Last Read  */
-#define   NVMCTRL_ECCERR_TYPEL_SINGLE_Val     _UINT32_(0x1)                                        /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read  */
-#define   NVMCTRL_ECCERR_TYPEL_DUAL_Val       _UINT32_(0x2)                                        /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read  */
-#define NVMCTRL_ECCERR_TYPEL_NONE             (NVMCTRL_ECCERR_TYPEL_NONE_Val << NVMCTRL_ECCERR_TYPEL_Pos) /* (NVMCTRL_ECCERR) No Error Detected Since Last Read Position  */
-#define NVMCTRL_ECCERR_TYPEL_SINGLE           (NVMCTRL_ECCERR_TYPEL_SINGLE_Val << NVMCTRL_ECCERR_TYPEL_Pos) /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read Position  */
-#define NVMCTRL_ECCERR_TYPEL_DUAL             (NVMCTRL_ECCERR_TYPEL_DUAL_Val << NVMCTRL_ECCERR_TYPEL_Pos) /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read Position  */
-#define NVMCTRL_ECCERR_TYPEH_Pos              _UINT32_(30)                                         /* (NVMCTRL_ECCERR) High Double-Word Error Type Position */
-#define NVMCTRL_ECCERR_TYPEH_Msk              (_UINT32_(0x3) << NVMCTRL_ECCERR_TYPEH_Pos)          /* (NVMCTRL_ECCERR) High Double-Word Error Type Mask */
-#define NVMCTRL_ECCERR_TYPEH(value)           (NVMCTRL_ECCERR_TYPEH_Msk & (_UINT32_(value) << NVMCTRL_ECCERR_TYPEH_Pos)) /* Assigment of value for TYPEH in the NVMCTRL_ECCERR register */
-#define   NVMCTRL_ECCERR_TYPEH_NONE_Val       _UINT32_(0x0)                                        /* (NVMCTRL_ECCERR) No Error Detected Since Last Read  */
-#define   NVMCTRL_ECCERR_TYPEH_SINGLE_Val     _UINT32_(0x1)                                        /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read  */
-#define   NVMCTRL_ECCERR_TYPEH_DUAL_Val       _UINT32_(0x2)                                        /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read  */
-#define NVMCTRL_ECCERR_TYPEH_NONE             (NVMCTRL_ECCERR_TYPEH_NONE_Val << NVMCTRL_ECCERR_TYPEH_Pos) /* (NVMCTRL_ECCERR) No Error Detected Since Last Read Position  */
-#define NVMCTRL_ECCERR_TYPEH_SINGLE           (NVMCTRL_ECCERR_TYPEH_SINGLE_Val << NVMCTRL_ECCERR_TYPEH_Pos) /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read Position  */
-#define NVMCTRL_ECCERR_TYPEH_DUAL             (NVMCTRL_ECCERR_TYPEH_DUAL_Val << NVMCTRL_ECCERR_TYPEH_Pos) /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read Position  */
-#define NVMCTRL_ECCERR_Msk                    _UINT32_(0xF0FFFFFF)                                 /* (NVMCTRL_ECCERR) Register Mask  */
+#define NVMCTRL_PARAM_NVMP_Pos                _UINT32_(0)                                          /* (NVMCTRL_PARAM) NVM Pages Position */
+#define NVMCTRL_PARAM_NVMP_Msk                (_UINT32_(0xFFFF) << NVMCTRL_PARAM_NVMP_Pos)         /* (NVMCTRL_PARAM) NVM Pages Mask */
+#define NVMCTRL_PARAM_NVMP(value)             (NVMCTRL_PARAM_NVMP_Msk & (_UINT32_(value) << NVMCTRL_PARAM_NVMP_Pos)) /* Assigment of value for NVMP in the NVMCTRL_PARAM register */
+#define NVMCTRL_PARAM_PSZ_Pos                 _UINT32_(16)                                         /* (NVMCTRL_PARAM) Page Size Position */
+#define NVMCTRL_PARAM_PSZ_Msk                 (_UINT32_(0x7) << NVMCTRL_PARAM_PSZ_Pos)             /* (NVMCTRL_PARAM) Page Size Mask */
+#define NVMCTRL_PARAM_PSZ(value)              (NVMCTRL_PARAM_PSZ_Msk & (_UINT32_(value) << NVMCTRL_PARAM_PSZ_Pos)) /* Assigment of value for PSZ in the NVMCTRL_PARAM register */
+#define   NVMCTRL_PARAM_PSZ_8_Val             _UINT32_(0x0)                                        /* (NVMCTRL_PARAM) 8 bytes  */
+#define   NVMCTRL_PARAM_PSZ_16_Val            _UINT32_(0x1)                                        /* (NVMCTRL_PARAM) 16 bytes  */
+#define   NVMCTRL_PARAM_PSZ_32_Val            _UINT32_(0x2)                                        /* (NVMCTRL_PARAM) 32 bytes  */
+#define   NVMCTRL_PARAM_PSZ_64_Val            _UINT32_(0x3)                                        /* (NVMCTRL_PARAM) 64 bytes  */
+#define   NVMCTRL_PARAM_PSZ_128_Val           _UINT32_(0x4)                                        /* (NVMCTRL_PARAM) 128 bytes  */
+#define   NVMCTRL_PARAM_PSZ_256_Val           _UINT32_(0x5)                                        /* (NVMCTRL_PARAM) 256 bytes  */
+#define   NVMCTRL_PARAM_PSZ_512_Val           _UINT32_(0x6)                                        /* (NVMCTRL_PARAM) 512 bytes  */
+#define   NVMCTRL_PARAM_PSZ_1024_Val          _UINT32_(0x7)                                        /* (NVMCTRL_PARAM) 1024 bytes  */
+#define NVMCTRL_PARAM_PSZ_8                   (NVMCTRL_PARAM_PSZ_8_Val << NVMCTRL_PARAM_PSZ_Pos)   /* (NVMCTRL_PARAM) 8 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_16                  (NVMCTRL_PARAM_PSZ_16_Val << NVMCTRL_PARAM_PSZ_Pos)  /* (NVMCTRL_PARAM) 16 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_32                  (NVMCTRL_PARAM_PSZ_32_Val << NVMCTRL_PARAM_PSZ_Pos)  /* (NVMCTRL_PARAM) 32 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_64                  (NVMCTRL_PARAM_PSZ_64_Val << NVMCTRL_PARAM_PSZ_Pos)  /* (NVMCTRL_PARAM) 64 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_128                 (NVMCTRL_PARAM_PSZ_128_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 128 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_256                 (NVMCTRL_PARAM_PSZ_256_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 256 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_512                 (NVMCTRL_PARAM_PSZ_512_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 512 bytes Position  */
+#define NVMCTRL_PARAM_PSZ_1024                (NVMCTRL_PARAM_PSZ_1024_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 1024 bytes Position  */
+#define NVMCTRL_PARAM_SEE_Pos                 _UINT32_(31)                                         /* (NVMCTRL_PARAM) SmartEEPROM Supported Position */
+#define NVMCTRL_PARAM_SEE_Msk                 (_UINT32_(0x1) << NVMCTRL_PARAM_SEE_Pos)             /* (NVMCTRL_PARAM) SmartEEPROM Supported Mask */
+#define NVMCTRL_PARAM_SEE(value)              (NVMCTRL_PARAM_SEE_Msk & (_UINT32_(value) << NVMCTRL_PARAM_SEE_Pos)) /* Assigment of value for SEE in the NVMCTRL_PARAM register */
+#define   NVMCTRL_PARAM_SEE_SMARTEEPROM_Val   _UINT32_(0x1)                                        /* (NVMCTRL_PARAM) SmartEEPROM is supported  */
+#define   NVMCTRL_PARAM_SEE_NOSMARTEEPROM_Val _UINT32_(0x0)                                        /* (NVMCTRL_PARAM) No SmartEEPROM support  */
+#define NVMCTRL_PARAM_SEE_SMARTEEPROM         (NVMCTRL_PARAM_SEE_SMARTEEPROM_Val << NVMCTRL_PARAM_SEE_Pos) /* (NVMCTRL_PARAM) SmartEEPROM is supported Position  */
+#define NVMCTRL_PARAM_SEE_NOSMARTEEPROM       (NVMCTRL_PARAM_SEE_NOSMARTEEPROM_Val << NVMCTRL_PARAM_SEE_Pos) /* (NVMCTRL_PARAM) No SmartEEPROM support Position  */
+#define NVMCTRL_PARAM_Msk                     _UINT32_(0x8007FFFF)                                 /* (NVMCTRL_PARAM) Register Mask  */
 
 
 /* -------- NVMCTRL_INTENCLR : (NVMCTRL Offset: 0x0C) (R/W 16) Interrupt Enable Clear -------- */
@@ -319,115 +297,6 @@
 #define NVMCTRL_INTFLAG_Msk                   _UINT16_(0x07FF)                                     /* (NVMCTRL_INTFLAG) Register Mask  */
 
 
-/* -------- NVMCTRL_PARAM : (NVMCTRL Offset: 0x08) ( R/ 32) NVM Parameter -------- */
-#define NVMCTRL_PARAM_RESETVALUE              _UINT32_(0x60000)                                    /*  (NVMCTRL_PARAM) NVM Parameter  Reset Value */
-
-#define NVMCTRL_PARAM_NVMP_Pos                _UINT32_(0)                                          /* (NVMCTRL_PARAM) NVM Pages Position */
-#define NVMCTRL_PARAM_NVMP_Msk                (_UINT32_(0xFFFF) << NVMCTRL_PARAM_NVMP_Pos)         /* (NVMCTRL_PARAM) NVM Pages Mask */
-#define NVMCTRL_PARAM_NVMP(value)             (NVMCTRL_PARAM_NVMP_Msk & (_UINT32_(value) << NVMCTRL_PARAM_NVMP_Pos)) /* Assigment of value for NVMP in the NVMCTRL_PARAM register */
-#define NVMCTRL_PARAM_PSZ_Pos                 _UINT32_(16)                                         /* (NVMCTRL_PARAM) Page Size Position */
-#define NVMCTRL_PARAM_PSZ_Msk                 (_UINT32_(0x7) << NVMCTRL_PARAM_PSZ_Pos)             /* (NVMCTRL_PARAM) Page Size Mask */
-#define NVMCTRL_PARAM_PSZ(value)              (NVMCTRL_PARAM_PSZ_Msk & (_UINT32_(value) << NVMCTRL_PARAM_PSZ_Pos)) /* Assigment of value for PSZ in the NVMCTRL_PARAM register */
-#define   NVMCTRL_PARAM_PSZ_8_Val             _UINT32_(0x0)                                        /* (NVMCTRL_PARAM) 8 bytes  */
-#define   NVMCTRL_PARAM_PSZ_16_Val            _UINT32_(0x1)                                        /* (NVMCTRL_PARAM) 16 bytes  */
-#define   NVMCTRL_PARAM_PSZ_32_Val            _UINT32_(0x2)                                        /* (NVMCTRL_PARAM) 32 bytes  */
-#define   NVMCTRL_PARAM_PSZ_64_Val            _UINT32_(0x3)                                        /* (NVMCTRL_PARAM) 64 bytes  */
-#define   NVMCTRL_PARAM_PSZ_128_Val           _UINT32_(0x4)                                        /* (NVMCTRL_PARAM) 128 bytes  */
-#define   NVMCTRL_PARAM_PSZ_256_Val           _UINT32_(0x5)                                        /* (NVMCTRL_PARAM) 256 bytes  */
-#define   NVMCTRL_PARAM_PSZ_512_Val           _UINT32_(0x6)                                        /* (NVMCTRL_PARAM) 512 bytes  */
-#define   NVMCTRL_PARAM_PSZ_1024_Val          _UINT32_(0x7)                                        /* (NVMCTRL_PARAM) 1024 bytes  */
-#define NVMCTRL_PARAM_PSZ_8                   (NVMCTRL_PARAM_PSZ_8_Val << NVMCTRL_PARAM_PSZ_Pos)   /* (NVMCTRL_PARAM) 8 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_16                  (NVMCTRL_PARAM_PSZ_16_Val << NVMCTRL_PARAM_PSZ_Pos)  /* (NVMCTRL_PARAM) 16 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_32                  (NVMCTRL_PARAM_PSZ_32_Val << NVMCTRL_PARAM_PSZ_Pos)  /* (NVMCTRL_PARAM) 32 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_64                  (NVMCTRL_PARAM_PSZ_64_Val << NVMCTRL_PARAM_PSZ_Pos)  /* (NVMCTRL_PARAM) 64 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_128                 (NVMCTRL_PARAM_PSZ_128_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 128 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_256                 (NVMCTRL_PARAM_PSZ_256_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 256 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_512                 (NVMCTRL_PARAM_PSZ_512_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 512 bytes Position  */
-#define NVMCTRL_PARAM_PSZ_1024                (NVMCTRL_PARAM_PSZ_1024_Val << NVMCTRL_PARAM_PSZ_Pos) /* (NVMCTRL_PARAM) 1024 bytes Position  */
-#define NVMCTRL_PARAM_SEE_Pos                 _UINT32_(31)                                         /* (NVMCTRL_PARAM) SmartEEPROM Supported Position */
-#define NVMCTRL_PARAM_SEE_Msk                 (_UINT32_(0x1) << NVMCTRL_PARAM_SEE_Pos)             /* (NVMCTRL_PARAM) SmartEEPROM Supported Mask */
-#define NVMCTRL_PARAM_SEE(value)              (NVMCTRL_PARAM_SEE_Msk & (_UINT32_(value) << NVMCTRL_PARAM_SEE_Pos)) /* Assigment of value for SEE in the NVMCTRL_PARAM register */
-#define   NVMCTRL_PARAM_SEE_A_Val             _UINT32_(0xA)                                        /* (NVMCTRL_PARAM) 163840 bytes  */
-#define   NVMCTRL_PARAM_SEE_9_Val             _UINT32_(0x9)                                        /* (NVMCTRL_PARAM) 147456 bytes  */
-#define   NVMCTRL_PARAM_SEE_8_Val             _UINT32_(0x8)                                        /* (NVMCTRL_PARAM) 131072 bytes  */
-#define   NVMCTRL_PARAM_SEE_7_Val             _UINT32_(0x7)                                        /* (NVMCTRL_PARAM) 114688 bytes  */
-#define   NVMCTRL_PARAM_SEE_6_Val             _UINT32_(0x6)                                        /* (NVMCTRL_PARAM) 98304 bytes  */
-#define   NVMCTRL_PARAM_SEE_5_Val             _UINT32_(0x5)                                        /* (NVMCTRL_PARAM) 81920 bytes  */
-#define   NVMCTRL_PARAM_SEE_4_Val             _UINT32_(0x4)                                        /* (NVMCTRL_PARAM) 65536 bytes  */
-#define   NVMCTRL_PARAM_SEE_3_Val             _UINT32_(0x3)                                        /* (NVMCTRL_PARAM) 49152 bytes  */
-#define   NVMCTRL_PARAM_SEE_2_Val             _UINT32_(0x2)                                        /* (NVMCTRL_PARAM) 32768 bytes  */
-#define   NVMCTRL_PARAM_SEE_1_Val             _UINT32_(0x1)                                        /* (NVMCTRL_PARAM) 16384 bytes  */
-#define   NVMCTRL_PARAM_SEE_0_Val             _UINT32_(0x0)                                        /* (NVMCTRL_PARAM) 0 bytes  */
-#define NVMCTRL_PARAM_SEE_A                   (NVMCTRL_PARAM_SEE_A_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 163840 bytes Position  */
-#define NVMCTRL_PARAM_SEE_9                   (NVMCTRL_PARAM_SEE_9_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 147456 bytes Position  */
-#define NVMCTRL_PARAM_SEE_8                   (NVMCTRL_PARAM_SEE_8_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 131072 bytes Position  */
-#define NVMCTRL_PARAM_SEE_7                   (NVMCTRL_PARAM_SEE_7_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 114688 bytes Position  */
-#define NVMCTRL_PARAM_SEE_6                   (NVMCTRL_PARAM_SEE_6_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 98304 bytes Position  */
-#define NVMCTRL_PARAM_SEE_5                   (NVMCTRL_PARAM_SEE_5_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 81920 bytes Position  */
-#define NVMCTRL_PARAM_SEE_4                   (NVMCTRL_PARAM_SEE_4_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 65536 bytes Position  */
-#define NVMCTRL_PARAM_SEE_3                   (NVMCTRL_PARAM_SEE_3_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 49152 bytes Position  */
-#define NVMCTRL_PARAM_SEE_2                   (NVMCTRL_PARAM_SEE_2_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 32768 bytes Position  */
-#define NVMCTRL_PARAM_SEE_1                   (NVMCTRL_PARAM_SEE_1_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 16384 bytes Position  */
-#define NVMCTRL_PARAM_SEE_0                   (NVMCTRL_PARAM_SEE_0_Val << NVMCTRL_PARAM_SEE_Pos)   /* (NVMCTRL_PARAM) 0 bytes Position  */
-#define NVMCTRL_PARAM_Msk                     _UINT32_(0x8007FFFF)                                 /* (NVMCTRL_PARAM) Register Mask  */
-
-
-/* -------- NVMCTRL_PBLDATA : (NVMCTRL Offset: 0x1C) ( R/ 32) Page Buffer Load Data x -------- */
-#define NVMCTRL_PBLDATA_RESETVALUE            _UINT32_(0xFFFFFFFF)                                 /*  (NVMCTRL_PBLDATA) Page Buffer Load Data x  Reset Value */
-
-#define NVMCTRL_PBLDATA_DATA_Pos              _UINT32_(0)                                          /* (NVMCTRL_PBLDATA) Page Buffer Data Position */
-#define NVMCTRL_PBLDATA_DATA_Msk              (_UINT32_(0xFFFFFFFF) << NVMCTRL_PBLDATA_DATA_Pos)   /* (NVMCTRL_PBLDATA) Page Buffer Data Mask */
-#define NVMCTRL_PBLDATA_DATA(value)           (NVMCTRL_PBLDATA_DATA_Msk & (_UINT32_(value) << NVMCTRL_PBLDATA_DATA_Pos)) /* Assigment of value for DATA in the NVMCTRL_PBLDATA register */
-#define NVMCTRL_PBLDATA_Msk                   _UINT32_(0xFFFFFFFF)                                 /* (NVMCTRL_PBLDATA) Register Mask  */
-
-
-/* -------- NVMCTRL_RUNLOCK : (NVMCTRL Offset: 0x18) ( R/ 32) Lock Section -------- */
-#define NVMCTRL_RUNLOCK_RESETVALUE            _UINT32_(0x00)                                       /*  (NVMCTRL_RUNLOCK) Lock Section  Reset Value */
-
-#define NVMCTRL_RUNLOCK_RUNLOCK_Pos           _UINT32_(0)                                          /* (NVMCTRL_RUNLOCK) Region Un-Lock Bits Position */
-#define NVMCTRL_RUNLOCK_RUNLOCK_Msk           (_UINT32_(0xFFFFFFFF) << NVMCTRL_RUNLOCK_RUNLOCK_Pos) /* (NVMCTRL_RUNLOCK) Region Un-Lock Bits Mask */
-#define NVMCTRL_RUNLOCK_RUNLOCK(value)        (NVMCTRL_RUNLOCK_RUNLOCK_Msk & (_UINT32_(value) << NVMCTRL_RUNLOCK_RUNLOCK_Pos)) /* Assigment of value for RUNLOCK in the NVMCTRL_RUNLOCK register */
-#define NVMCTRL_RUNLOCK_Msk                   _UINT32_(0xFFFFFFFF)                                 /* (NVMCTRL_RUNLOCK) Register Mask  */
-
-
-/* -------- NVMCTRL_SEECFG : (NVMCTRL Offset: 0x2A) (R/W 8) SmartEEPROM Configuration Register -------- */
-#define NVMCTRL_SEECFG_RESETVALUE             _UINT8_(0x00)                                        /*  (NVMCTRL_SEECFG) SmartEEPROM Configuration Register  Reset Value */
-
-#define NVMCTRL_SEECFG_WMODE_Pos              _UINT8_(0)                                           /* (NVMCTRL_SEECFG) Write Mode Position */
-#define NVMCTRL_SEECFG_WMODE_Msk              (_UINT8_(0x1) << NVMCTRL_SEECFG_WMODE_Pos)           /* (NVMCTRL_SEECFG) Write Mode Mask */
-#define NVMCTRL_SEECFG_WMODE(value)           (NVMCTRL_SEECFG_WMODE_Msk & (_UINT8_(value) << NVMCTRL_SEECFG_WMODE_Pos)) /* Assigment of value for WMODE in the NVMCTRL_SEECFG register */
-#define   NVMCTRL_SEECFG_WMODE_UNBUFFERED_Val _UINT8_(0x0)                                         /* (NVMCTRL_SEECFG) A NVM write command is issued after each write in the pagebuffer  */
-#define NVMCTRL_SEECFG_WMODE_UNBUFFERED       (NVMCTRL_SEECFG_WMODE_UNBUFFERED_Val << NVMCTRL_SEECFG_WMODE_Pos) /* (NVMCTRL_SEECFG) A NVM write command is issued after each write in the pagebuffer Position  */
-#define NVMCTRL_SEECFG_APRDIS_Pos             _UINT8_(1)                                           /* (NVMCTRL_SEECFG) Automatic Page Reallocation Disable Position */
-#define NVMCTRL_SEECFG_APRDIS_Msk             (_UINT8_(0x1) << NVMCTRL_SEECFG_APRDIS_Pos)          /* (NVMCTRL_SEECFG) Automatic Page Reallocation Disable Mask */
-#define NVMCTRL_SEECFG_APRDIS(value)          (NVMCTRL_SEECFG_APRDIS_Msk & (_UINT8_(value) << NVMCTRL_SEECFG_APRDIS_Pos)) /* Assigment of value for APRDIS in the NVMCTRL_SEECFG register */
-#define NVMCTRL_SEECFG_Msk                    _UINT8_(0x03)                                        /* (NVMCTRL_SEECFG) Register Mask  */
-
-
-/* -------- NVMCTRL_SEESTAT : (NVMCTRL Offset: 0x2C) ( R/ 32) SmartEEPROM Status Register -------- */
-#define NVMCTRL_SEESTAT_RESETVALUE            _UINT32_(0x00)                                       /*  (NVMCTRL_SEESTAT) SmartEEPROM Status Register  Reset Value */
-
-#define NVMCTRL_SEESTAT_ASEES_Pos             _UINT32_(0)                                          /* (NVMCTRL_SEESTAT) Active SmartEEPROM Sector Position */
-#define NVMCTRL_SEESTAT_ASEES_Msk             (_UINT32_(0x1) << NVMCTRL_SEESTAT_ASEES_Pos)         /* (NVMCTRL_SEESTAT) Active SmartEEPROM Sector Mask */
-#define NVMCTRL_SEESTAT_ASEES(value)          (NVMCTRL_SEESTAT_ASEES_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_ASEES_Pos)) /* Assigment of value for ASEES in the NVMCTRL_SEESTAT register */
-#define NVMCTRL_SEESTAT_BUSY_Pos              _UINT32_(2)                                          /* (NVMCTRL_SEESTAT) Busy Position */
-#define NVMCTRL_SEESTAT_BUSY_Msk              (_UINT32_(0x1) << NVMCTRL_SEESTAT_BUSY_Pos)          /* (NVMCTRL_SEESTAT) Busy Mask */
-#define NVMCTRL_SEESTAT_BUSY(value)           (NVMCTRL_SEESTAT_BUSY_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_BUSY_Pos)) /* Assigment of value for BUSY in the NVMCTRL_SEESTAT register */
-#define NVMCTRL_SEESTAT_LOCK_Pos              _UINT32_(3)                                          /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access Is Locked Position */
-#define NVMCTRL_SEESTAT_LOCK_Msk              (_UINT32_(0x1) << NVMCTRL_SEESTAT_LOCK_Pos)          /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access Is Locked Mask */
-#define NVMCTRL_SEESTAT_LOCK(value)           (NVMCTRL_SEESTAT_LOCK_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_LOCK_Pos)) /* Assigment of value for LOCK in the NVMCTRL_SEESTAT register */
-#define NVMCTRL_SEESTAT_RLOCK_Pos             _UINT32_(4)                                          /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access To Register Address Space Is Locked Position */
-#define NVMCTRL_SEESTAT_RLOCK_Msk             (_UINT32_(0x1) << NVMCTRL_SEESTAT_RLOCK_Pos)         /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access To Register Address Space Is Locked Mask */
-#define NVMCTRL_SEESTAT_RLOCK(value)          (NVMCTRL_SEESTAT_RLOCK_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_RLOCK_Pos)) /* Assigment of value for RLOCK in the NVMCTRL_SEESTAT register */
-#define NVMCTRL_SEESTAT_SBLK_Pos              _UINT32_(8)                                          /* (NVMCTRL_SEESTAT) Blocks Number In a Sector Position */
-#define NVMCTRL_SEESTAT_SBLK_Msk              (_UINT32_(0xF) << NVMCTRL_SEESTAT_SBLK_Pos)          /* (NVMCTRL_SEESTAT) Blocks Number In a Sector Mask */
-#define NVMCTRL_SEESTAT_SBLK(value)           (NVMCTRL_SEESTAT_SBLK_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_SBLK_Pos)) /* Assigment of value for SBLK in the NVMCTRL_SEESTAT register */
-#define NVMCTRL_SEESTAT_PSZ_Pos               _UINT32_(16)                                         /* (NVMCTRL_SEESTAT) SmartEEPROM Page Size Position */
-#define NVMCTRL_SEESTAT_PSZ_Msk               (_UINT32_(0x7) << NVMCTRL_SEESTAT_PSZ_Pos)           /* (NVMCTRL_SEESTAT) SmartEEPROM Page Size Mask */
-#define NVMCTRL_SEESTAT_PSZ(value)            (NVMCTRL_SEESTAT_PSZ_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_PSZ_Pos)) /* Assigment of value for PSZ in the NVMCTRL_SEESTAT register */
-#define NVMCTRL_SEESTAT_Msk                   _UINT32_(0x00070F1D)                                 /* (NVMCTRL_SEESTAT) Register Mask  */
-
-
 /* -------- NVMCTRL_STATUS : (NVMCTRL Offset: 0x12) ( R/ 16) Status -------- */
 #define NVMCTRL_STATUS_RESETVALUE             _UINT16_(0x00)                                       /*  (NVMCTRL_STATUS) Status  Reset Value */
 
@@ -493,24 +362,137 @@
 #define NVMCTRL_STATUS_Msk                    _UINT16_(0x3F3F)                                     /* (NVMCTRL_STATUS) Register Mask  */
 
 
+/* -------- NVMCTRL_ADDR : (NVMCTRL Offset: 0x14) (R/W 32) Address -------- */
+#define NVMCTRL_ADDR_RESETVALUE               _UINT32_(0x00)                                       /*  (NVMCTRL_ADDR) Address  Reset Value */
+
+#define NVMCTRL_ADDR_ADDR_Pos                 _UINT32_(0)                                          /* (NVMCTRL_ADDR) NVM Address Position */
+#define NVMCTRL_ADDR_ADDR_Msk                 (_UINT32_(0xFFFFFF) << NVMCTRL_ADDR_ADDR_Pos)        /* (NVMCTRL_ADDR) NVM Address Mask */
+#define NVMCTRL_ADDR_ADDR(value)              (NVMCTRL_ADDR_ADDR_Msk & (_UINT32_(value) << NVMCTRL_ADDR_ADDR_Pos)) /* Assigment of value for ADDR in the NVMCTRL_ADDR register */
+#define NVMCTRL_ADDR_Msk                      _UINT32_(0x00FFFFFF)                                 /* (NVMCTRL_ADDR) Register Mask  */
+
+
+/* -------- NVMCTRL_RUNLOCK : (NVMCTRL Offset: 0x18) ( R/ 32) Lock Section -------- */
+#define NVMCTRL_RUNLOCK_RESETVALUE            _UINT32_(0x00)                                       /*  (NVMCTRL_RUNLOCK) Lock Section  Reset Value */
+
+#define NVMCTRL_RUNLOCK_RUNLOCK_Pos           _UINT32_(0)                                          /* (NVMCTRL_RUNLOCK) Region Un-Lock Bits Position */
+#define NVMCTRL_RUNLOCK_RUNLOCK_Msk           (_UINT32_(0xFFFFFFFF) << NVMCTRL_RUNLOCK_RUNLOCK_Pos) /* (NVMCTRL_RUNLOCK) Region Un-Lock Bits Mask */
+#define NVMCTRL_RUNLOCK_RUNLOCK(value)        (NVMCTRL_RUNLOCK_RUNLOCK_Msk & (_UINT32_(value) << NVMCTRL_RUNLOCK_RUNLOCK_Pos)) /* Assigment of value for RUNLOCK in the NVMCTRL_RUNLOCK register */
+#define NVMCTRL_RUNLOCK_Msk                   _UINT32_(0xFFFFFFFF)                                 /* (NVMCTRL_RUNLOCK) Register Mask  */
+
+
+/* -------- NVMCTRL_PBLDATA : (NVMCTRL Offset: 0x1C) ( R/ 32) Page Buffer Load Data x -------- */
+#define NVMCTRL_PBLDATA_RESETVALUE            _UINT32_(0xFFFFFFFF)                                 /*  (NVMCTRL_PBLDATA) Page Buffer Load Data x  Reset Value */
+
+#define NVMCTRL_PBLDATA_DATA_Pos              _UINT32_(0)                                          /* (NVMCTRL_PBLDATA) Page Buffer Data Position */
+#define NVMCTRL_PBLDATA_DATA_Msk              (_UINT32_(0xFFFFFFFF) << NVMCTRL_PBLDATA_DATA_Pos)   /* (NVMCTRL_PBLDATA) Page Buffer Data Mask */
+#define NVMCTRL_PBLDATA_DATA(value)           (NVMCTRL_PBLDATA_DATA_Msk & (_UINT32_(value) << NVMCTRL_PBLDATA_DATA_Pos)) /* Assigment of value for DATA in the NVMCTRL_PBLDATA register */
+#define NVMCTRL_PBLDATA_Msk                   _UINT32_(0xFFFFFFFF)                                 /* (NVMCTRL_PBLDATA) Register Mask  */
+
+
+/* -------- NVMCTRL_ECCERR : (NVMCTRL Offset: 0x24) ( R/ 32) ECC Error Status Register -------- */
+#define NVMCTRL_ECCERR_RESETVALUE             _UINT32_(0x00)                                       /*  (NVMCTRL_ECCERR) ECC Error Status Register  Reset Value */
+
+#define NVMCTRL_ECCERR_ADDR_Pos               _UINT32_(0)                                          /* (NVMCTRL_ECCERR) Error Address Position */
+#define NVMCTRL_ECCERR_ADDR_Msk               (_UINT32_(0xFFFFFF) << NVMCTRL_ECCERR_ADDR_Pos)      /* (NVMCTRL_ECCERR) Error Address Mask */
+#define NVMCTRL_ECCERR_ADDR(value)            (NVMCTRL_ECCERR_ADDR_Msk & (_UINT32_(value) << NVMCTRL_ECCERR_ADDR_Pos)) /* Assigment of value for ADDR in the NVMCTRL_ECCERR register */
+#define NVMCTRL_ECCERR_TYPEL_Pos              _UINT32_(28)                                         /* (NVMCTRL_ECCERR) Low Double-Word Error Type Position */
+#define NVMCTRL_ECCERR_TYPEL_Msk              (_UINT32_(0x3) << NVMCTRL_ECCERR_TYPEL_Pos)          /* (NVMCTRL_ECCERR) Low Double-Word Error Type Mask */
+#define NVMCTRL_ECCERR_TYPEL(value)           (NVMCTRL_ECCERR_TYPEL_Msk & (_UINT32_(value) << NVMCTRL_ECCERR_TYPEL_Pos)) /* Assigment of value for TYPEL in the NVMCTRL_ECCERR register */
+#define   NVMCTRL_ECCERR_TYPEL_NONE_Val       _UINT32_(0x0)                                        /* (NVMCTRL_ECCERR) No Error Detected Since Last Read  */
+#define   NVMCTRL_ECCERR_TYPEL_SINGLE_Val     _UINT32_(0x1)                                        /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read  */
+#define   NVMCTRL_ECCERR_TYPEL_DUAL_Val       _UINT32_(0x2)                                        /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read  */
+#define NVMCTRL_ECCERR_TYPEL_NONE             (NVMCTRL_ECCERR_TYPEL_NONE_Val << NVMCTRL_ECCERR_TYPEL_Pos) /* (NVMCTRL_ECCERR) No Error Detected Since Last Read Position  */
+#define NVMCTRL_ECCERR_TYPEL_SINGLE           (NVMCTRL_ECCERR_TYPEL_SINGLE_Val << NVMCTRL_ECCERR_TYPEL_Pos) /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read Position  */
+#define NVMCTRL_ECCERR_TYPEL_DUAL             (NVMCTRL_ECCERR_TYPEL_DUAL_Val << NVMCTRL_ECCERR_TYPEL_Pos) /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read Position  */
+#define NVMCTRL_ECCERR_TYPEH_Pos              _UINT32_(30)                                         /* (NVMCTRL_ECCERR) High Double-Word Error Type Position */
+#define NVMCTRL_ECCERR_TYPEH_Msk              (_UINT32_(0x3) << NVMCTRL_ECCERR_TYPEH_Pos)          /* (NVMCTRL_ECCERR) High Double-Word Error Type Mask */
+#define NVMCTRL_ECCERR_TYPEH(value)           (NVMCTRL_ECCERR_TYPEH_Msk & (_UINT32_(value) << NVMCTRL_ECCERR_TYPEH_Pos)) /* Assigment of value for TYPEH in the NVMCTRL_ECCERR register */
+#define   NVMCTRL_ECCERR_TYPEH_NONE_Val       _UINT32_(0x0)                                        /* (NVMCTRL_ECCERR) No Error Detected Since Last Read  */
+#define   NVMCTRL_ECCERR_TYPEH_SINGLE_Val     _UINT32_(0x1)                                        /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read  */
+#define   NVMCTRL_ECCERR_TYPEH_DUAL_Val       _UINT32_(0x2)                                        /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read  */
+#define NVMCTRL_ECCERR_TYPEH_NONE             (NVMCTRL_ECCERR_TYPEH_NONE_Val << NVMCTRL_ECCERR_TYPEH_Pos) /* (NVMCTRL_ECCERR) No Error Detected Since Last Read Position  */
+#define NVMCTRL_ECCERR_TYPEH_SINGLE           (NVMCTRL_ECCERR_TYPEH_SINGLE_Val << NVMCTRL_ECCERR_TYPEH_Pos) /* (NVMCTRL_ECCERR) At Least One Single Error Detected Since last Read Position  */
+#define NVMCTRL_ECCERR_TYPEH_DUAL             (NVMCTRL_ECCERR_TYPEH_DUAL_Val << NVMCTRL_ECCERR_TYPEH_Pos) /* (NVMCTRL_ECCERR) At Least One Dual Error Detected Since Last Read Position  */
+#define NVMCTRL_ECCERR_Msk                    _UINT32_(0xF0FFFFFF)                                 /* (NVMCTRL_ECCERR) Register Mask  */
+
+
+/* -------- NVMCTRL_DBGCTRL : (NVMCTRL Offset: 0x28) (R/W 8) Debug Control -------- */
+#define NVMCTRL_DBGCTRL_RESETVALUE            _UINT8_(0x00)                                        /*  (NVMCTRL_DBGCTRL) Debug Control  Reset Value */
+
+#define NVMCTRL_DBGCTRL_ECCDIS_Pos            _UINT8_(0)                                           /* (NVMCTRL_DBGCTRL) Debugger ECC Read Disable Position */
+#define NVMCTRL_DBGCTRL_ECCDIS_Msk            (_UINT8_(0x1) << NVMCTRL_DBGCTRL_ECCDIS_Pos)         /* (NVMCTRL_DBGCTRL) Debugger ECC Read Disable Mask */
+#define NVMCTRL_DBGCTRL_ECCDIS(value)         (NVMCTRL_DBGCTRL_ECCDIS_Msk & (_UINT8_(value) << NVMCTRL_DBGCTRL_ECCDIS_Pos)) /* Assigment of value for ECCDIS in the NVMCTRL_DBGCTRL register */
+#define NVMCTRL_DBGCTRL_ECCELOG_Pos           _UINT8_(1)                                           /* (NVMCTRL_DBGCTRL) Debugger ECC Error Tracking Mode Position */
+#define NVMCTRL_DBGCTRL_ECCELOG_Msk           (_UINT8_(0x1) << NVMCTRL_DBGCTRL_ECCELOG_Pos)        /* (NVMCTRL_DBGCTRL) Debugger ECC Error Tracking Mode Mask */
+#define NVMCTRL_DBGCTRL_ECCELOG(value)        (NVMCTRL_DBGCTRL_ECCELOG_Msk & (_UINT8_(value) << NVMCTRL_DBGCTRL_ECCELOG_Pos)) /* Assigment of value for ECCELOG in the NVMCTRL_DBGCTRL register */
+#define NVMCTRL_DBGCTRL_Msk                   _UINT8_(0x03)                                        /* (NVMCTRL_DBGCTRL) Register Mask  */
+
+
+/* -------- NVMCTRL_BCTRL : (NVMCTRL Offset: 0x29) (R/W 8) Boot Control -------- */
+#define NVMCTRL_BCTRL_RESETVALUE              _UINT8_(0x00)                                        /*  (NVMCTRL_BCTRL) Boot Control  Reset Value */
+
+#define NVMCTRL_BCTRL_BRPE_Pos                _UINT8_(0)                                           /* (NVMCTRL_BCTRL) Boot Read Protection Enable Position */
+#define NVMCTRL_BCTRL_BRPE_Msk                (_UINT8_(0x1) << NVMCTRL_BCTRL_BRPE_Pos)             /* (NVMCTRL_BCTRL) Boot Read Protection Enable Mask */
+#define NVMCTRL_BCTRL_BRPE(value)             (NVMCTRL_BCTRL_BRPE_Msk & (_UINT8_(value) << NVMCTRL_BCTRL_BRPE_Pos)) /* Assigment of value for BRPE in the NVMCTRL_BCTRL register */
+#define NVMCTRL_BCTRL_Msk                     _UINT8_(0x01)                                        /* (NVMCTRL_BCTRL) Register Mask  */
+
+
+/* -------- NVMCTRL_SEECFG : (NVMCTRL Offset: 0x2A) (R/W 8) SmartEEPROM Configuration Register -------- */
+#define NVMCTRL_SEECFG_RESETVALUE             _UINT8_(0x00)                                        /*  (NVMCTRL_SEECFG) SmartEEPROM Configuration Register  Reset Value */
+
+#define NVMCTRL_SEECFG_WMODE_Pos              _UINT8_(0)                                           /* (NVMCTRL_SEECFG) Write Mode Position */
+#define NVMCTRL_SEECFG_WMODE_Msk              (_UINT8_(0x1) << NVMCTRL_SEECFG_WMODE_Pos)           /* (NVMCTRL_SEECFG) Write Mode Mask */
+#define NVMCTRL_SEECFG_WMODE(value)           (NVMCTRL_SEECFG_WMODE_Msk & (_UINT8_(value) << NVMCTRL_SEECFG_WMODE_Pos)) /* Assigment of value for WMODE in the NVMCTRL_SEECFG register */
+#define   NVMCTRL_SEECFG_WMODE_UNBUFFERED_Val _UINT8_(0x0)                                         /* (NVMCTRL_SEECFG) A NVM write command is issued after each write in the pagebuffer  */
+#define NVMCTRL_SEECFG_WMODE_UNBUFFERED       (NVMCTRL_SEECFG_WMODE_UNBUFFERED_Val << NVMCTRL_SEECFG_WMODE_Pos) /* (NVMCTRL_SEECFG) A NVM write command is issued after each write in the pagebuffer Position  */
+#define NVMCTRL_SEECFG_APRDIS_Pos             _UINT8_(1)                                           /* (NVMCTRL_SEECFG) Automatic Page Reallocation Disable Position */
+#define NVMCTRL_SEECFG_APRDIS_Msk             (_UINT8_(0x1) << NVMCTRL_SEECFG_APRDIS_Pos)          /* (NVMCTRL_SEECFG) Automatic Page Reallocation Disable Mask */
+#define NVMCTRL_SEECFG_APRDIS(value)          (NVMCTRL_SEECFG_APRDIS_Msk & (_UINT8_(value) << NVMCTRL_SEECFG_APRDIS_Pos)) /* Assigment of value for APRDIS in the NVMCTRL_SEECFG register */
+#define NVMCTRL_SEECFG_Msk                    _UINT8_(0x03)                                        /* (NVMCTRL_SEECFG) Register Mask  */
+
+
+/* -------- NVMCTRL_SEESTAT : (NVMCTRL Offset: 0x2C) ( R/ 32) SmartEEPROM Status Register -------- */
+#define NVMCTRL_SEESTAT_RESETVALUE            _UINT32_(0x00)                                       /*  (NVMCTRL_SEESTAT) SmartEEPROM Status Register  Reset Value */
+
+#define NVMCTRL_SEESTAT_ASEES_Pos             _UINT32_(0)                                          /* (NVMCTRL_SEESTAT) Active SmartEEPROM Sector Position */
+#define NVMCTRL_SEESTAT_ASEES_Msk             (_UINT32_(0x1) << NVMCTRL_SEESTAT_ASEES_Pos)         /* (NVMCTRL_SEESTAT) Active SmartEEPROM Sector Mask */
+#define NVMCTRL_SEESTAT_ASEES(value)          (NVMCTRL_SEESTAT_ASEES_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_ASEES_Pos)) /* Assigment of value for ASEES in the NVMCTRL_SEESTAT register */
+#define NVMCTRL_SEESTAT_BUSY_Pos              _UINT32_(2)                                          /* (NVMCTRL_SEESTAT) Busy Position */
+#define NVMCTRL_SEESTAT_BUSY_Msk              (_UINT32_(0x1) << NVMCTRL_SEESTAT_BUSY_Pos)          /* (NVMCTRL_SEESTAT) Busy Mask */
+#define NVMCTRL_SEESTAT_BUSY(value)           (NVMCTRL_SEESTAT_BUSY_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_BUSY_Pos)) /* Assigment of value for BUSY in the NVMCTRL_SEESTAT register */
+#define NVMCTRL_SEESTAT_LOCK_Pos              _UINT32_(3)                                          /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access Is Locked Position */
+#define NVMCTRL_SEESTAT_LOCK_Msk              (_UINT32_(0x1) << NVMCTRL_SEESTAT_LOCK_Pos)          /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access Is Locked Mask */
+#define NVMCTRL_SEESTAT_LOCK(value)           (NVMCTRL_SEESTAT_LOCK_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_LOCK_Pos)) /* Assigment of value for LOCK in the NVMCTRL_SEESTAT register */
+#define NVMCTRL_SEESTAT_RLOCK_Pos             _UINT32_(4)                                          /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access To Register Address Space Is Locked Position */
+#define NVMCTRL_SEESTAT_RLOCK_Msk             (_UINT32_(0x1) << NVMCTRL_SEESTAT_RLOCK_Pos)         /* (NVMCTRL_SEESTAT) SmartEEPROM Write Access To Register Address Space Is Locked Mask */
+#define NVMCTRL_SEESTAT_RLOCK(value)          (NVMCTRL_SEESTAT_RLOCK_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_RLOCK_Pos)) /* Assigment of value for RLOCK in the NVMCTRL_SEESTAT register */
+#define NVMCTRL_SEESTAT_SBLK_Pos              _UINT32_(8)                                          /* (NVMCTRL_SEESTAT) Blocks Number In a Sector Position */
+#define NVMCTRL_SEESTAT_SBLK_Msk              (_UINT32_(0xF) << NVMCTRL_SEESTAT_SBLK_Pos)          /* (NVMCTRL_SEESTAT) Blocks Number In a Sector Mask */
+#define NVMCTRL_SEESTAT_SBLK(value)           (NVMCTRL_SEESTAT_SBLK_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_SBLK_Pos)) /* Assigment of value for SBLK in the NVMCTRL_SEESTAT register */
+#define NVMCTRL_SEESTAT_PSZ_Pos               _UINT32_(16)                                         /* (NVMCTRL_SEESTAT) SmartEEPROM Page Size Position */
+#define NVMCTRL_SEESTAT_PSZ_Msk               (_UINT32_(0x7) << NVMCTRL_SEESTAT_PSZ_Pos)           /* (NVMCTRL_SEESTAT) SmartEEPROM Page Size Mask */
+#define NVMCTRL_SEESTAT_PSZ(value)            (NVMCTRL_SEESTAT_PSZ_Msk & (_UINT32_(value) << NVMCTRL_SEESTAT_PSZ_Pos)) /* Assigment of value for PSZ in the NVMCTRL_SEESTAT register */
+#define NVMCTRL_SEESTAT_Msk                   _UINT32_(0x00070F1D)                                 /* (NVMCTRL_SEESTAT) Register Mask  */
+
+
 /** \brief NVMCTRL register offsets definitions */
-#define NVMCTRL_ADDR_REG_OFST          _UINT32_(0x14)      /* (NVMCTRL_ADDR) Address Offset */
-#define NVMCTRL_BCTRL_REG_OFST         _UINT32_(0x29)      /* (NVMCTRL_BCTRL) Boot Control Offset */
 #define NVMCTRL_CTRLA_REG_OFST         _UINT32_(0x00)      /* (NVMCTRL_CTRLA) Control A Offset */
 #define NVMCTRL_CTRLB_REG_OFST         _UINT32_(0x04)      /* (NVMCTRL_CTRLB) Control B Offset */
-#define NVMCTRL_DBGCTRL_REG_OFST       _UINT32_(0x28)      /* (NVMCTRL_DBGCTRL) Debug Control Offset */
-#define NVMCTRL_ECCERR_REG_OFST        _UINT32_(0x24)      /* (NVMCTRL_ECCERR) ECC Error Status Register Offset */
+#define NVMCTRL_PARAM_REG_OFST         _UINT32_(0x08)      /* (NVMCTRL_PARAM) NVM Parameter Offset */
 #define NVMCTRL_INTENCLR_REG_OFST      _UINT32_(0x0C)      /* (NVMCTRL_INTENCLR) Interrupt Enable Clear Offset */
 #define NVMCTRL_INTENSET_REG_OFST      _UINT32_(0x0E)      /* (NVMCTRL_INTENSET) Interrupt Enable Set Offset */
 #define NVMCTRL_INTFLAG_REG_OFST       _UINT32_(0x10)      /* (NVMCTRL_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define NVMCTRL_PARAM_REG_OFST         _UINT32_(0x08)      /* (NVMCTRL_PARAM) NVM Parameter Offset */
+#define NVMCTRL_STATUS_REG_OFST        _UINT32_(0x12)      /* (NVMCTRL_STATUS) Status Offset */
+#define NVMCTRL_ADDR_REG_OFST          _UINT32_(0x14)      /* (NVMCTRL_ADDR) Address Offset */
+#define NVMCTRL_RUNLOCK_REG_OFST       _UINT32_(0x18)      /* (NVMCTRL_RUNLOCK) Lock Section Offset */
 #define NVMCTRL_PBLDATA_REG_OFST       _UINT32_(0x1C)      /* (NVMCTRL_PBLDATA) Page Buffer Load Data x Offset */
 #define NVMCTRL_PBLDATA0_REG_OFST      _UINT32_(0x1C)      /* (NVMCTRL_PBLDATA0) Page Buffer Load Data x Offset */
 #define NVMCTRL_PBLDATA1_REG_OFST      _UINT32_(0x20)      /* (NVMCTRL_PBLDATA1) Page Buffer Load Data x Offset */
-#define NVMCTRL_RUNLOCK_REG_OFST       _UINT32_(0x18)      /* (NVMCTRL_RUNLOCK) Lock Section Offset */
+#define NVMCTRL_ECCERR_REG_OFST        _UINT32_(0x24)      /* (NVMCTRL_ECCERR) ECC Error Status Register Offset */
+#define NVMCTRL_DBGCTRL_REG_OFST       _UINT32_(0x28)      /* (NVMCTRL_DBGCTRL) Debug Control Offset */
+#define NVMCTRL_BCTRL_REG_OFST         _UINT32_(0x29)      /* (NVMCTRL_BCTRL) Boot Control Offset */
 #define NVMCTRL_SEECFG_REG_OFST        _UINT32_(0x2A)      /* (NVMCTRL_SEECFG) SmartEEPROM Configuration Register Offset */
 #define NVMCTRL_SEESTAT_REG_OFST       _UINT32_(0x2C)      /* (NVMCTRL_SEESTAT) SmartEEPROM Status Register Offset */
-#define NVMCTRL_STATUS_REG_OFST        _UINT32_(0x12)      /* (NVMCTRL_STATUS) Status Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief NVMCTRL register API structure */

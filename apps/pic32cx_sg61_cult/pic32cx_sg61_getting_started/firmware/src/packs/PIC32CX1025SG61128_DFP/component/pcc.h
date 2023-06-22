@@ -1,7 +1,7 @@
 /*
  * Component description for PCC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,61 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_PCC_COMPONENT_H_
 #define _PIC32CXSG61_PCC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR PCC                                          */
 /* ************************************************************************** */
-
-/* -------- PCC_IDR : (PCC Offset: 0x08) ( /W 32) Interrupt Disable Register -------- */
-#define PCC_IDR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_IDR) Interrupt Disable Register  Reset Value */
-
-#define PCC_IDR_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_IDR) Data Ready Interrupt Disable Position */
-#define PCC_IDR_DRDY_Msk                      (_UINT32_(0x1) << PCC_IDR_DRDY_Pos)                  /* (PCC_IDR) Data Ready Interrupt Disable Mask */
-#define PCC_IDR_DRDY(value)                   (PCC_IDR_DRDY_Msk & (_UINT32_(value) << PCC_IDR_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_IDR register */
-#define PCC_IDR_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_IDR) Overrun Error Interrupt Disable Position */
-#define PCC_IDR_OVRE_Msk                      (_UINT32_(0x1) << PCC_IDR_OVRE_Pos)                  /* (PCC_IDR) Overrun Error Interrupt Disable Mask */
-#define PCC_IDR_OVRE(value)                   (PCC_IDR_OVRE_Msk & (_UINT32_(value) << PCC_IDR_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_IDR register */
-#define PCC_IDR_Msk                           _UINT32_(0x00000003)                                 /* (PCC_IDR) Register Mask  */
-
-
-/* -------- PCC_IER : (PCC Offset: 0x04) ( /W 32) Interrupt Enable Register -------- */
-#define PCC_IER_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_IER) Interrupt Enable Register  Reset Value */
-
-#define PCC_IER_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_IER) Data Ready Interrupt Enable Position */
-#define PCC_IER_DRDY_Msk                      (_UINT32_(0x1) << PCC_IER_DRDY_Pos)                  /* (PCC_IER) Data Ready Interrupt Enable Mask */
-#define PCC_IER_DRDY(value)                   (PCC_IER_DRDY_Msk & (_UINT32_(value) << PCC_IER_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_IER register */
-#define PCC_IER_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_IER) Overrun Error Interrupt Enable Position */
-#define PCC_IER_OVRE_Msk                      (_UINT32_(0x1) << PCC_IER_OVRE_Pos)                  /* (PCC_IER) Overrun Error Interrupt Enable Mask */
-#define PCC_IER_OVRE(value)                   (PCC_IER_OVRE_Msk & (_UINT32_(value) << PCC_IER_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_IER register */
-#define PCC_IER_Msk                           _UINT32_(0x00000003)                                 /* (PCC_IER) Register Mask  */
-
-
-/* -------- PCC_IMR : (PCC Offset: 0x0C) ( R/ 32) Interrupt Mask Register -------- */
-#define PCC_IMR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_IMR) Interrupt Mask Register  Reset Value */
-
-#define PCC_IMR_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_IMR) Data Ready Interrupt Mask Position */
-#define PCC_IMR_DRDY_Msk                      (_UINT32_(0x1) << PCC_IMR_DRDY_Pos)                  /* (PCC_IMR) Data Ready Interrupt Mask Mask */
-#define PCC_IMR_DRDY(value)                   (PCC_IMR_DRDY_Msk & (_UINT32_(value) << PCC_IMR_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_IMR register */
-#define PCC_IMR_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_IMR) Overrun Error Interrupt Mask Position */
-#define PCC_IMR_OVRE_Msk                      (_UINT32_(0x1) << PCC_IMR_OVRE_Pos)                  /* (PCC_IMR) Overrun Error Interrupt Mask Mask */
-#define PCC_IMR_OVRE(value)                   (PCC_IMR_OVRE_Msk & (_UINT32_(value) << PCC_IMR_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_IMR register */
-#define PCC_IMR_Msk                           _UINT32_(0x00000003)                                 /* (PCC_IMR) Register Mask  */
-
-
-/* -------- PCC_ISR : (PCC Offset: 0x10) ( R/ 32) Interrupt Status Register -------- */
-#define PCC_ISR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_ISR) Interrupt Status Register  Reset Value */
-
-#define PCC_ISR_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_ISR) Data Ready Interrupt Status Position */
-#define PCC_ISR_DRDY_Msk                      (_UINT32_(0x1) << PCC_ISR_DRDY_Pos)                  /* (PCC_ISR) Data Ready Interrupt Status Mask */
-#define PCC_ISR_DRDY(value)                   (PCC_ISR_DRDY_Msk & (_UINT32_(value) << PCC_ISR_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_ISR register */
-#define PCC_ISR_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_ISR) Overrun Error Interrupt Status Position */
-#define PCC_ISR_OVRE_Msk                      (_UINT32_(0x1) << PCC_ISR_OVRE_Pos)                  /* (PCC_ISR) Overrun Error Interrupt Status Mask */
-#define PCC_ISR_OVRE(value)                   (PCC_ISR_OVRE_Msk & (_UINT32_(value) << PCC_ISR_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_ISR register */
-#define PCC_ISR_Msk                           _UINT32_(0x00000003)                                 /* (PCC_ISR) Register Mask  */
-
 
 /* -------- PCC_MR : (PCC Offset: 0x00) (R/W 32) Mode Register -------- */
 #define PCC_MR_RESETVALUE                     _UINT32_(0x00)                                       /*  (PCC_MR) Mode Register  Reset Value */
@@ -120,6 +72,54 @@
 #define PCC_MR_Msk                            _UINT32_(0xC0070F31)                                 /* (PCC_MR) Register Mask  */
 
 
+/* -------- PCC_IER : (PCC Offset: 0x04) ( /W 32) Interrupt Enable Register -------- */
+#define PCC_IER_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_IER) Interrupt Enable Register  Reset Value */
+
+#define PCC_IER_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_IER) Data Ready Interrupt Enable Position */
+#define PCC_IER_DRDY_Msk                      (_UINT32_(0x1) << PCC_IER_DRDY_Pos)                  /* (PCC_IER) Data Ready Interrupt Enable Mask */
+#define PCC_IER_DRDY(value)                   (PCC_IER_DRDY_Msk & (_UINT32_(value) << PCC_IER_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_IER register */
+#define PCC_IER_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_IER) Overrun Error Interrupt Enable Position */
+#define PCC_IER_OVRE_Msk                      (_UINT32_(0x1) << PCC_IER_OVRE_Pos)                  /* (PCC_IER) Overrun Error Interrupt Enable Mask */
+#define PCC_IER_OVRE(value)                   (PCC_IER_OVRE_Msk & (_UINT32_(value) << PCC_IER_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_IER register */
+#define PCC_IER_Msk                           _UINT32_(0x00000003)                                 /* (PCC_IER) Register Mask  */
+
+
+/* -------- PCC_IDR : (PCC Offset: 0x08) ( /W 32) Interrupt Disable Register -------- */
+#define PCC_IDR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_IDR) Interrupt Disable Register  Reset Value */
+
+#define PCC_IDR_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_IDR) Data Ready Interrupt Disable Position */
+#define PCC_IDR_DRDY_Msk                      (_UINT32_(0x1) << PCC_IDR_DRDY_Pos)                  /* (PCC_IDR) Data Ready Interrupt Disable Mask */
+#define PCC_IDR_DRDY(value)                   (PCC_IDR_DRDY_Msk & (_UINT32_(value) << PCC_IDR_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_IDR register */
+#define PCC_IDR_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_IDR) Overrun Error Interrupt Disable Position */
+#define PCC_IDR_OVRE_Msk                      (_UINT32_(0x1) << PCC_IDR_OVRE_Pos)                  /* (PCC_IDR) Overrun Error Interrupt Disable Mask */
+#define PCC_IDR_OVRE(value)                   (PCC_IDR_OVRE_Msk & (_UINT32_(value) << PCC_IDR_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_IDR register */
+#define PCC_IDR_Msk                           _UINT32_(0x00000003)                                 /* (PCC_IDR) Register Mask  */
+
+
+/* -------- PCC_IMR : (PCC Offset: 0x0C) ( R/ 32) Interrupt Mask Register -------- */
+#define PCC_IMR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_IMR) Interrupt Mask Register  Reset Value */
+
+#define PCC_IMR_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_IMR) Data Ready Interrupt Mask Position */
+#define PCC_IMR_DRDY_Msk                      (_UINT32_(0x1) << PCC_IMR_DRDY_Pos)                  /* (PCC_IMR) Data Ready Interrupt Mask Mask */
+#define PCC_IMR_DRDY(value)                   (PCC_IMR_DRDY_Msk & (_UINT32_(value) << PCC_IMR_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_IMR register */
+#define PCC_IMR_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_IMR) Overrun Error Interrupt Mask Position */
+#define PCC_IMR_OVRE_Msk                      (_UINT32_(0x1) << PCC_IMR_OVRE_Pos)                  /* (PCC_IMR) Overrun Error Interrupt Mask Mask */
+#define PCC_IMR_OVRE(value)                   (PCC_IMR_OVRE_Msk & (_UINT32_(value) << PCC_IMR_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_IMR register */
+#define PCC_IMR_Msk                           _UINT32_(0x00000003)                                 /* (PCC_IMR) Register Mask  */
+
+
+/* -------- PCC_ISR : (PCC Offset: 0x10) ( R/ 32) Interrupt Status Register -------- */
+#define PCC_ISR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_ISR) Interrupt Status Register  Reset Value */
+
+#define PCC_ISR_DRDY_Pos                      _UINT32_(0)                                          /* (PCC_ISR) Data Ready Interrupt Status Position */
+#define PCC_ISR_DRDY_Msk                      (_UINT32_(0x1) << PCC_ISR_DRDY_Pos)                  /* (PCC_ISR) Data Ready Interrupt Status Mask */
+#define PCC_ISR_DRDY(value)                   (PCC_ISR_DRDY_Msk & (_UINT32_(value) << PCC_ISR_DRDY_Pos)) /* Assigment of value for DRDY in the PCC_ISR register */
+#define PCC_ISR_OVRE_Pos                      _UINT32_(1)                                          /* (PCC_ISR) Overrun Error Interrupt Status Position */
+#define PCC_ISR_OVRE_Msk                      (_UINT32_(0x1) << PCC_ISR_OVRE_Pos)                  /* (PCC_ISR) Overrun Error Interrupt Status Mask */
+#define PCC_ISR_OVRE(value)                   (PCC_ISR_OVRE_Msk & (_UINT32_(value) << PCC_ISR_OVRE_Pos)) /* Assigment of value for OVRE in the PCC_ISR register */
+#define PCC_ISR_Msk                           _UINT32_(0x00000003)                                 /* (PCC_ISR) Register Mask  */
+
+
 /* -------- PCC_RHR : (PCC Offset: 0x14) ( R/ 32) Reception Holding Register -------- */
 #define PCC_RHR_RESETVALUE                    _UINT32_(0x00)                                       /*  (PCC_RHR) Reception Holding Register  Reset Value */
 
@@ -156,11 +156,11 @@
 
 
 /** \brief PCC register offsets definitions */
-#define PCC_IDR_REG_OFST               _UINT32_(0x08)      /* (PCC_IDR) Interrupt Disable Register Offset */
+#define PCC_MR_REG_OFST                _UINT32_(0x00)      /* (PCC_MR) Mode Register Offset */
 #define PCC_IER_REG_OFST               _UINT32_(0x04)      /* (PCC_IER) Interrupt Enable Register Offset */
+#define PCC_IDR_REG_OFST               _UINT32_(0x08)      /* (PCC_IDR) Interrupt Disable Register Offset */
 #define PCC_IMR_REG_OFST               _UINT32_(0x0C)      /* (PCC_IMR) Interrupt Mask Register Offset */
 #define PCC_ISR_REG_OFST               _UINT32_(0x10)      /* (PCC_ISR) Interrupt Status Register Offset */
-#define PCC_MR_REG_OFST                _UINT32_(0x00)      /* (PCC_MR) Mode Register Offset */
 #define PCC_RHR_REG_OFST               _UINT32_(0x14)      /* (PCC_RHR) Reception Holding Register Offset */
 #define PCC_WPMR_REG_OFST              _UINT32_(0xE0)      /* (PCC_WPMR) Write Protection Mode Register Offset */
 #define PCC_WPSR_REG_OFST              _UINT32_(0xE4)      /* (PCC_WPSR) Write Protection Status Register Offset */

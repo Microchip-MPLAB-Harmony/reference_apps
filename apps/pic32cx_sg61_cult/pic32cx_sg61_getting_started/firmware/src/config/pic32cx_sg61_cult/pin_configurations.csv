@@ -1,4 +1,4 @@
-"Pin Number","Pin ID","Custom Name","Function","Mode", "Direction","Latch","Pull Up","Pull Down","Drive Strength"
+Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,Drive Strength
 1,PA00,,Available,,,,,,NORMAL
 2,PA01,,Available,,,,,,NORMAL
 3,PC00,,Available,,,,,,NORMAL
@@ -56,7 +56,7 @@
 72,PC18,,Available,,,,,,NORMAL
 73,PC19,,Available,,,,,,NORMAL
 74,PC20,,Available,,,,,,NORMAL
-75,PC21,LED0,GPIO,Digital,Out,Low,,,NORMAL
+75,PC21,LED1,GPIO,Digital,Out,Low,,,NORMAL
 76,PC22,,Available,,,,,,NORMAL
 77,PC23,,Available,,,,,,NORMAL
 80,PD20,,Available,,,,,,NORMAL

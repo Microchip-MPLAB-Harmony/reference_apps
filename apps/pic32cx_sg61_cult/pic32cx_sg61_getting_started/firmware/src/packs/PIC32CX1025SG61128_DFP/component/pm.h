@@ -1,7 +1,7 @@
 /*
  * Component description for PM
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,28 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_PM_COMPONENT_H_
 #define _PIC32CXSG61_PM_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR PM                                           */
 /* ************************************************************************** */
-
-/* -------- PM_BKUPCFG : (PM Offset: 0x0A) (R/W 8) Backup Configuration -------- */
-#define PM_BKUPCFG_RESETVALUE                 _UINT8_(0x00)                                        /*  (PM_BKUPCFG) Backup Configuration  Reset Value */
-
-#define PM_BKUPCFG_BRAMCFG_Pos                _UINT8_(0)                                           /* (PM_BKUPCFG) Ram Configuration Position */
-#define PM_BKUPCFG_BRAMCFG_Msk                (_UINT8_(0x3) << PM_BKUPCFG_BRAMCFG_Pos)             /* (PM_BKUPCFG) Ram Configuration Mask */
-#define PM_BKUPCFG_BRAMCFG(value)             (PM_BKUPCFG_BRAMCFG_Msk & (_UINT8_(value) << PM_BKUPCFG_BRAMCFG_Pos)) /* Assigment of value for BRAMCFG in the PM_BKUPCFG register */
-#define   PM_BKUPCFG_BRAMCFG_RET_Val          _UINT8_(0x0)                                         /* (PM_BKUPCFG) All the backup RAM is retained  */
-#define   PM_BKUPCFG_BRAMCFG_PARTIAL_Val      _UINT8_(0x1)                                         /* (PM_BKUPCFG) Only the first 4Kbytes of the backup RAM is retained  */
-#define   PM_BKUPCFG_BRAMCFG_OFF_Val          _UINT8_(0x2)                                         /* (PM_BKUPCFG) All the backup RAM is turned OFF  */
-#define PM_BKUPCFG_BRAMCFG_RET                (PM_BKUPCFG_BRAMCFG_RET_Val << PM_BKUPCFG_BRAMCFG_Pos) /* (PM_BKUPCFG) All the backup RAM is retained Position  */
-#define PM_BKUPCFG_BRAMCFG_PARTIAL            (PM_BKUPCFG_BRAMCFG_PARTIAL_Val << PM_BKUPCFG_BRAMCFG_Pos) /* (PM_BKUPCFG) Only the first 4Kbytes of the backup RAM is retained Position  */
-#define PM_BKUPCFG_BRAMCFG_OFF                (PM_BKUPCFG_BRAMCFG_OFF_Val << PM_BKUPCFG_BRAMCFG_Pos) /* (PM_BKUPCFG) All the backup RAM is turned OFF Position  */
-#define PM_BKUPCFG_Msk                        _UINT8_(0x03)                                        /* (PM_BKUPCFG) Register Mask  */
-
 
 /* -------- PM_CTRLA : (PM Offset: 0x00) (R/W 8) Control A -------- */
 #define PM_CTRLA_RESETVALUE                   _UINT8_(0x00)                                        /*  (PM_CTRLA) Control A  Reset Value */
@@ -52,28 +37,23 @@
 #define PM_CTRLA_Msk                          _UINT8_(0x04)                                        /* (PM_CTRLA) Register Mask  */
 
 
-/* -------- PM_HIBCFG : (PM Offset: 0x09) (R/W 8) Hibernate Configuration -------- */
-#define PM_HIBCFG_RESETVALUE                  _UINT8_(0x00)                                        /*  (PM_HIBCFG) Hibernate Configuration  Reset Value */
+/* -------- PM_SLEEPCFG : (PM Offset: 0x01) (R/W 8) Sleep Configuration -------- */
+#define PM_SLEEPCFG_RESETVALUE                _UINT8_(0x02)                                        /*  (PM_SLEEPCFG) Sleep Configuration  Reset Value */
 
-#define PM_HIBCFG_RAMCFG_Pos                  _UINT8_(0)                                           /* (PM_HIBCFG) Ram Configuration Position */
-#define PM_HIBCFG_RAMCFG_Msk                  (_UINT8_(0x3) << PM_HIBCFG_RAMCFG_Pos)               /* (PM_HIBCFG) Ram Configuration Mask */
-#define PM_HIBCFG_RAMCFG(value)               (PM_HIBCFG_RAMCFG_Msk & (_UINT8_(value) << PM_HIBCFG_RAMCFG_Pos)) /* Assigment of value for RAMCFG in the PM_HIBCFG register */
-#define   PM_HIBCFG_RAMCFG_RET_Val            _UINT8_(0x0)                                         /* (PM_HIBCFG) All the system RAM is retained  */
-#define   PM_HIBCFG_RAMCFG_PARTIAL_Val        _UINT8_(0x1)                                         /* (PM_HIBCFG) Only the first 32Kbytes of the system RAM is retained  */
-#define   PM_HIBCFG_RAMCFG_OFF_Val            _UINT8_(0x2)                                         /* (PM_HIBCFG) All the system RAM is turned OFF  */
-#define PM_HIBCFG_RAMCFG_RET                  (PM_HIBCFG_RAMCFG_RET_Val << PM_HIBCFG_RAMCFG_Pos)   /* (PM_HIBCFG) All the system RAM is retained Position  */
-#define PM_HIBCFG_RAMCFG_PARTIAL              (PM_HIBCFG_RAMCFG_PARTIAL_Val << PM_HIBCFG_RAMCFG_Pos) /* (PM_HIBCFG) Only the first 32Kbytes of the system RAM is retained Position  */
-#define PM_HIBCFG_RAMCFG_OFF                  (PM_HIBCFG_RAMCFG_OFF_Val << PM_HIBCFG_RAMCFG_Pos)   /* (PM_HIBCFG) All the system RAM is turned OFF Position  */
-#define PM_HIBCFG_BRAMCFG_Pos                 _UINT8_(2)                                           /* (PM_HIBCFG) Backup Ram Configuration Position */
-#define PM_HIBCFG_BRAMCFG_Msk                 (_UINT8_(0x3) << PM_HIBCFG_BRAMCFG_Pos)              /* (PM_HIBCFG) Backup Ram Configuration Mask */
-#define PM_HIBCFG_BRAMCFG(value)              (PM_HIBCFG_BRAMCFG_Msk & (_UINT8_(value) << PM_HIBCFG_BRAMCFG_Pos)) /* Assigment of value for BRAMCFG in the PM_HIBCFG register */
-#define   PM_HIBCFG_BRAMCFG_RET_Val           _UINT8_(0x0)                                         /* (PM_HIBCFG) All the backup RAM is retained  */
-#define   PM_HIBCFG_BRAMCFG_PARTIAL_Val       _UINT8_(0x1)                                         /* (PM_HIBCFG) Only the first 4Kbytes of the backup RAM is retained  */
-#define   PM_HIBCFG_BRAMCFG_OFF_Val           _UINT8_(0x2)                                         /* (PM_HIBCFG) All the backup RAM is turned OFF  */
-#define PM_HIBCFG_BRAMCFG_RET                 (PM_HIBCFG_BRAMCFG_RET_Val << PM_HIBCFG_BRAMCFG_Pos) /* (PM_HIBCFG) All the backup RAM is retained Position  */
-#define PM_HIBCFG_BRAMCFG_PARTIAL             (PM_HIBCFG_BRAMCFG_PARTIAL_Val << PM_HIBCFG_BRAMCFG_Pos) /* (PM_HIBCFG) Only the first 4Kbytes of the backup RAM is retained Position  */
-#define PM_HIBCFG_BRAMCFG_OFF                 (PM_HIBCFG_BRAMCFG_OFF_Val << PM_HIBCFG_BRAMCFG_Pos) /* (PM_HIBCFG) All the backup RAM is turned OFF Position  */
-#define PM_HIBCFG_Msk                         _UINT8_(0x0F)                                        /* (PM_HIBCFG) Register Mask  */
+#define PM_SLEEPCFG_SLEEPMODE_Pos             _UINT8_(0)                                           /* (PM_SLEEPCFG) Sleep Mode Position */
+#define PM_SLEEPCFG_SLEEPMODE_Msk             (_UINT8_(0x7) << PM_SLEEPCFG_SLEEPMODE_Pos)          /* (PM_SLEEPCFG) Sleep Mode Mask */
+#define PM_SLEEPCFG_SLEEPMODE(value)          (PM_SLEEPCFG_SLEEPMODE_Msk & (_UINT8_(value) << PM_SLEEPCFG_SLEEPMODE_Pos)) /* Assigment of value for SLEEPMODE in the PM_SLEEPCFG register */
+#define   PM_SLEEPCFG_SLEEPMODE_IDLE_Val      _UINT8_(0x2)                                         /* (PM_SLEEPCFG) CPU, AHBx, and APBx clocks are OFF  */
+#define   PM_SLEEPCFG_SLEEPMODE_STANDBY_Val   _UINT8_(0x4)                                         /* (PM_SLEEPCFG) All Clocks are OFF  */
+#define   PM_SLEEPCFG_SLEEPMODE_HIBERNATE_Val _UINT8_(0x5)                                         /* (PM_SLEEPCFG) Backup domain is ON as well as some PDRAMs  */
+#define   PM_SLEEPCFG_SLEEPMODE_BACKUP_Val    _UINT8_(0x6)                                         /* (PM_SLEEPCFG) Only Backup domain is powered ON  */
+#define   PM_SLEEPCFG_SLEEPMODE_OFF_Val       _UINT8_(0x7)                                         /* (PM_SLEEPCFG) All power domains are powered OFF  */
+#define PM_SLEEPCFG_SLEEPMODE_IDLE            (PM_SLEEPCFG_SLEEPMODE_IDLE_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) CPU, AHBx, and APBx clocks are OFF Position  */
+#define PM_SLEEPCFG_SLEEPMODE_STANDBY         (PM_SLEEPCFG_SLEEPMODE_STANDBY_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) All Clocks are OFF Position  */
+#define PM_SLEEPCFG_SLEEPMODE_HIBERNATE       (PM_SLEEPCFG_SLEEPMODE_HIBERNATE_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) Backup domain is ON as well as some PDRAMs Position  */
+#define PM_SLEEPCFG_SLEEPMODE_BACKUP          (PM_SLEEPCFG_SLEEPMODE_BACKUP_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) Only Backup domain is powered ON Position  */
+#define PM_SLEEPCFG_SLEEPMODE_OFF             (PM_SLEEPCFG_SLEEPMODE_OFF_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) All power domains are powered OFF Position  */
+#define PM_SLEEPCFG_Msk                       _UINT8_(0x07)                                        /* (PM_SLEEPCFG) Register Mask  */
 
 
 /* -------- PM_INTENCLR : (PM Offset: 0x04) (R/W 8) Interrupt Enable Clear -------- */
@@ -103,37 +83,6 @@
 #define PM_INTFLAG_Msk                        _UINT8_(0x01)                                        /* (PM_INTFLAG) Register Mask  */
 
 
-/* -------- PM_PWSAKDLY : (PM Offset: 0x12) (R/W 8) Power Switch Acknowledge Delay -------- */
-#define PM_PWSAKDLY_RESETVALUE                _UINT8_(0x00)                                        /*  (PM_PWSAKDLY) Power Switch Acknowledge Delay  Reset Value */
-
-#define PM_PWSAKDLY_DLYVAL_Pos                _UINT8_(0)                                           /* (PM_PWSAKDLY) Delay Value Position */
-#define PM_PWSAKDLY_DLYVAL_Msk                (_UINT8_(0x7F) << PM_PWSAKDLY_DLYVAL_Pos)            /* (PM_PWSAKDLY) Delay Value Mask */
-#define PM_PWSAKDLY_DLYVAL(value)             (PM_PWSAKDLY_DLYVAL_Msk & (_UINT8_(value) << PM_PWSAKDLY_DLYVAL_Pos)) /* Assigment of value for DLYVAL in the PM_PWSAKDLY register */
-#define PM_PWSAKDLY_IGNACK_Pos                _UINT8_(7)                                           /* (PM_PWSAKDLY) Ignore Acknowledge Position */
-#define PM_PWSAKDLY_IGNACK_Msk                (_UINT8_(0x1) << PM_PWSAKDLY_IGNACK_Pos)             /* (PM_PWSAKDLY) Ignore Acknowledge Mask */
-#define PM_PWSAKDLY_IGNACK(value)             (PM_PWSAKDLY_IGNACK_Msk & (_UINT8_(value) << PM_PWSAKDLY_IGNACK_Pos)) /* Assigment of value for IGNACK in the PM_PWSAKDLY register */
-#define PM_PWSAKDLY_Msk                       _UINT8_(0xFF)                                        /* (PM_PWSAKDLY) Register Mask  */
-
-
-/* -------- PM_SLEEPCFG : (PM Offset: 0x01) (R/W 8) Sleep Configuration -------- */
-#define PM_SLEEPCFG_RESETVALUE                _UINT8_(0x02)                                        /*  (PM_SLEEPCFG) Sleep Configuration  Reset Value */
-
-#define PM_SLEEPCFG_SLEEPMODE_Pos             _UINT8_(0)                                           /* (PM_SLEEPCFG) Sleep Mode Position */
-#define PM_SLEEPCFG_SLEEPMODE_Msk             (_UINT8_(0x7) << PM_SLEEPCFG_SLEEPMODE_Pos)          /* (PM_SLEEPCFG) Sleep Mode Mask */
-#define PM_SLEEPCFG_SLEEPMODE(value)          (PM_SLEEPCFG_SLEEPMODE_Msk & (_UINT8_(value) << PM_SLEEPCFG_SLEEPMODE_Pos)) /* Assigment of value for SLEEPMODE in the PM_SLEEPCFG register */
-#define   PM_SLEEPCFG_SLEEPMODE_IDLE_Val      _UINT8_(0x2)                                         /* (PM_SLEEPCFG) CPU, AHBx, and APBx clocks are OFF  */
-#define   PM_SLEEPCFG_SLEEPMODE_STANDBY_Val   _UINT8_(0x4)                                         /* (PM_SLEEPCFG) All Clocks are OFF  */
-#define   PM_SLEEPCFG_SLEEPMODE_HIBERNATE_Val _UINT8_(0x5)                                         /* (PM_SLEEPCFG) Backup domain is ON as well as some PDRAMs  */
-#define   PM_SLEEPCFG_SLEEPMODE_BACKUP_Val    _UINT8_(0x6)                                         /* (PM_SLEEPCFG) Only Backup domain is powered ON  */
-#define   PM_SLEEPCFG_SLEEPMODE_OFF_Val       _UINT8_(0x7)                                         /* (PM_SLEEPCFG) All power domains are powered OFF  */
-#define PM_SLEEPCFG_SLEEPMODE_IDLE            (PM_SLEEPCFG_SLEEPMODE_IDLE_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) CPU, AHBx, and APBx clocks are OFF Position  */
-#define PM_SLEEPCFG_SLEEPMODE_STANDBY         (PM_SLEEPCFG_SLEEPMODE_STANDBY_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) All Clocks are OFF Position  */
-#define PM_SLEEPCFG_SLEEPMODE_HIBERNATE       (PM_SLEEPCFG_SLEEPMODE_HIBERNATE_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) Backup domain is ON as well as some PDRAMs Position  */
-#define PM_SLEEPCFG_SLEEPMODE_BACKUP          (PM_SLEEPCFG_SLEEPMODE_BACKUP_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) Only Backup domain is powered ON Position  */
-#define PM_SLEEPCFG_SLEEPMODE_OFF             (PM_SLEEPCFG_SLEEPMODE_OFF_Val << PM_SLEEPCFG_SLEEPMODE_Pos) /* (PM_SLEEPCFG) All power domains are powered OFF Position  */
-#define PM_SLEEPCFG_Msk                       _UINT8_(0x07)                                        /* (PM_SLEEPCFG) Register Mask  */
-
-
 /* -------- PM_STDBYCFG : (PM Offset: 0x08) (R/W 8) Standby Configuration -------- */
 #define PM_STDBYCFG_RESETVALUE                _UINT8_(0x00)                                        /*  (PM_STDBYCFG) Standby Configuration  Reset Value */
 
@@ -160,16 +109,67 @@
 #define PM_STDBYCFG_Msk                       _UINT8_(0x33)                                        /* (PM_STDBYCFG) Register Mask  */
 
 
+/* -------- PM_HIBCFG : (PM Offset: 0x09) (R/W 8) Hibernate Configuration -------- */
+#define PM_HIBCFG_RESETVALUE                  _UINT8_(0x00)                                        /*  (PM_HIBCFG) Hibernate Configuration  Reset Value */
+
+#define PM_HIBCFG_RAMCFG_Pos                  _UINT8_(0)                                           /* (PM_HIBCFG) Ram Configuration Position */
+#define PM_HIBCFG_RAMCFG_Msk                  (_UINT8_(0x3) << PM_HIBCFG_RAMCFG_Pos)               /* (PM_HIBCFG) Ram Configuration Mask */
+#define PM_HIBCFG_RAMCFG(value)               (PM_HIBCFG_RAMCFG_Msk & (_UINT8_(value) << PM_HIBCFG_RAMCFG_Pos)) /* Assigment of value for RAMCFG in the PM_HIBCFG register */
+#define   PM_HIBCFG_RAMCFG_RET_Val            _UINT8_(0x0)                                         /* (PM_HIBCFG) All the system RAM is retained  */
+#define   PM_HIBCFG_RAMCFG_PARTIAL_Val        _UINT8_(0x1)                                         /* (PM_HIBCFG) Only the first 32Kbytes of the system RAM is retained  */
+#define   PM_HIBCFG_RAMCFG_OFF_Val            _UINT8_(0x2)                                         /* (PM_HIBCFG) All the system RAM is turned OFF  */
+#define PM_HIBCFG_RAMCFG_RET                  (PM_HIBCFG_RAMCFG_RET_Val << PM_HIBCFG_RAMCFG_Pos)   /* (PM_HIBCFG) All the system RAM is retained Position  */
+#define PM_HIBCFG_RAMCFG_PARTIAL              (PM_HIBCFG_RAMCFG_PARTIAL_Val << PM_HIBCFG_RAMCFG_Pos) /* (PM_HIBCFG) Only the first 32Kbytes of the system RAM is retained Position  */
+#define PM_HIBCFG_RAMCFG_OFF                  (PM_HIBCFG_RAMCFG_OFF_Val << PM_HIBCFG_RAMCFG_Pos)   /* (PM_HIBCFG) All the system RAM is turned OFF Position  */
+#define PM_HIBCFG_BRAMCFG_Pos                 _UINT8_(2)                                           /* (PM_HIBCFG) Backup Ram Configuration Position */
+#define PM_HIBCFG_BRAMCFG_Msk                 (_UINT8_(0x3) << PM_HIBCFG_BRAMCFG_Pos)              /* (PM_HIBCFG) Backup Ram Configuration Mask */
+#define PM_HIBCFG_BRAMCFG(value)              (PM_HIBCFG_BRAMCFG_Msk & (_UINT8_(value) << PM_HIBCFG_BRAMCFG_Pos)) /* Assigment of value for BRAMCFG in the PM_HIBCFG register */
+#define   PM_HIBCFG_BRAMCFG_RET_Val           _UINT8_(0x0)                                         /* (PM_HIBCFG) All the backup RAM is retained  */
+#define   PM_HIBCFG_BRAMCFG_PARTIAL_Val       _UINT8_(0x1)                                         /* (PM_HIBCFG) Only the first 4Kbytes of the backup RAM is retained  */
+#define   PM_HIBCFG_BRAMCFG_OFF_Val           _UINT8_(0x2)                                         /* (PM_HIBCFG) All the backup RAM is turned OFF  */
+#define PM_HIBCFG_BRAMCFG_RET                 (PM_HIBCFG_BRAMCFG_RET_Val << PM_HIBCFG_BRAMCFG_Pos) /* (PM_HIBCFG) All the backup RAM is retained Position  */
+#define PM_HIBCFG_BRAMCFG_PARTIAL             (PM_HIBCFG_BRAMCFG_PARTIAL_Val << PM_HIBCFG_BRAMCFG_Pos) /* (PM_HIBCFG) Only the first 4Kbytes of the backup RAM is retained Position  */
+#define PM_HIBCFG_BRAMCFG_OFF                 (PM_HIBCFG_BRAMCFG_OFF_Val << PM_HIBCFG_BRAMCFG_Pos) /* (PM_HIBCFG) All the backup RAM is turned OFF Position  */
+#define PM_HIBCFG_Msk                         _UINT8_(0x0F)                                        /* (PM_HIBCFG) Register Mask  */
+
+
+/* -------- PM_BKUPCFG : (PM Offset: 0x0A) (R/W 8) Backup Configuration -------- */
+#define PM_BKUPCFG_RESETVALUE                 _UINT8_(0x00)                                        /*  (PM_BKUPCFG) Backup Configuration  Reset Value */
+
+#define PM_BKUPCFG_BRAMCFG_Pos                _UINT8_(0)                                           /* (PM_BKUPCFG) Ram Configuration Position */
+#define PM_BKUPCFG_BRAMCFG_Msk                (_UINT8_(0x3) << PM_BKUPCFG_BRAMCFG_Pos)             /* (PM_BKUPCFG) Ram Configuration Mask */
+#define PM_BKUPCFG_BRAMCFG(value)             (PM_BKUPCFG_BRAMCFG_Msk & (_UINT8_(value) << PM_BKUPCFG_BRAMCFG_Pos)) /* Assigment of value for BRAMCFG in the PM_BKUPCFG register */
+#define   PM_BKUPCFG_BRAMCFG_RET_Val          _UINT8_(0x0)                                         /* (PM_BKUPCFG) All the backup RAM is retained  */
+#define   PM_BKUPCFG_BRAMCFG_PARTIAL_Val      _UINT8_(0x1)                                         /* (PM_BKUPCFG) Only the first 4Kbytes of the backup RAM is retained  */
+#define   PM_BKUPCFG_BRAMCFG_OFF_Val          _UINT8_(0x2)                                         /* (PM_BKUPCFG) All the backup RAM is turned OFF  */
+#define PM_BKUPCFG_BRAMCFG_RET                (PM_BKUPCFG_BRAMCFG_RET_Val << PM_BKUPCFG_BRAMCFG_Pos) /* (PM_BKUPCFG) All the backup RAM is retained Position  */
+#define PM_BKUPCFG_BRAMCFG_PARTIAL            (PM_BKUPCFG_BRAMCFG_PARTIAL_Val << PM_BKUPCFG_BRAMCFG_Pos) /* (PM_BKUPCFG) Only the first 4Kbytes of the backup RAM is retained Position  */
+#define PM_BKUPCFG_BRAMCFG_OFF                (PM_BKUPCFG_BRAMCFG_OFF_Val << PM_BKUPCFG_BRAMCFG_Pos) /* (PM_BKUPCFG) All the backup RAM is turned OFF Position  */
+#define PM_BKUPCFG_Msk                        _UINT8_(0x03)                                        /* (PM_BKUPCFG) Register Mask  */
+
+
+/* -------- PM_PWSAKDLY : (PM Offset: 0x12) (R/W 8) Power Switch Acknowledge Delay -------- */
+#define PM_PWSAKDLY_RESETVALUE                _UINT8_(0x00)                                        /*  (PM_PWSAKDLY) Power Switch Acknowledge Delay  Reset Value */
+
+#define PM_PWSAKDLY_DLYVAL_Pos                _UINT8_(0)                                           /* (PM_PWSAKDLY) Delay Value Position */
+#define PM_PWSAKDLY_DLYVAL_Msk                (_UINT8_(0x7F) << PM_PWSAKDLY_DLYVAL_Pos)            /* (PM_PWSAKDLY) Delay Value Mask */
+#define PM_PWSAKDLY_DLYVAL(value)             (PM_PWSAKDLY_DLYVAL_Msk & (_UINT8_(value) << PM_PWSAKDLY_DLYVAL_Pos)) /* Assigment of value for DLYVAL in the PM_PWSAKDLY register */
+#define PM_PWSAKDLY_IGNACK_Pos                _UINT8_(7)                                           /* (PM_PWSAKDLY) Ignore Acknowledge Position */
+#define PM_PWSAKDLY_IGNACK_Msk                (_UINT8_(0x1) << PM_PWSAKDLY_IGNACK_Pos)             /* (PM_PWSAKDLY) Ignore Acknowledge Mask */
+#define PM_PWSAKDLY_IGNACK(value)             (PM_PWSAKDLY_IGNACK_Msk & (_UINT8_(value) << PM_PWSAKDLY_IGNACK_Pos)) /* Assigment of value for IGNACK in the PM_PWSAKDLY register */
+#define PM_PWSAKDLY_Msk                       _UINT8_(0xFF)                                        /* (PM_PWSAKDLY) Register Mask  */
+
+
 /** \brief PM register offsets definitions */
-#define PM_BKUPCFG_REG_OFST            _UINT32_(0x0A)      /* (PM_BKUPCFG) Backup Configuration Offset */
 #define PM_CTRLA_REG_OFST              _UINT32_(0x00)      /* (PM_CTRLA) Control A Offset */
-#define PM_HIBCFG_REG_OFST             _UINT32_(0x09)      /* (PM_HIBCFG) Hibernate Configuration Offset */
+#define PM_SLEEPCFG_REG_OFST           _UINT32_(0x01)      /* (PM_SLEEPCFG) Sleep Configuration Offset */
 #define PM_INTENCLR_REG_OFST           _UINT32_(0x04)      /* (PM_INTENCLR) Interrupt Enable Clear Offset */
 #define PM_INTENSET_REG_OFST           _UINT32_(0x05)      /* (PM_INTENSET) Interrupt Enable Set Offset */
 #define PM_INTFLAG_REG_OFST            _UINT32_(0x06)      /* (PM_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define PM_PWSAKDLY_REG_OFST           _UINT32_(0x12)      /* (PM_PWSAKDLY) Power Switch Acknowledge Delay Offset */
-#define PM_SLEEPCFG_REG_OFST           _UINT32_(0x01)      /* (PM_SLEEPCFG) Sleep Configuration Offset */
 #define PM_STDBYCFG_REG_OFST           _UINT32_(0x08)      /* (PM_STDBYCFG) Standby Configuration Offset */
+#define PM_HIBCFG_REG_OFST             _UINT32_(0x09)      /* (PM_HIBCFG) Hibernate Configuration Offset */
+#define PM_BKUPCFG_REG_OFST            _UINT32_(0x0A)      /* (PM_BKUPCFG) Backup Configuration Offset */
+#define PM_PWSAKDLY_REG_OFST           _UINT32_(0x12)      /* (PM_PWSAKDLY) Power Switch Acknowledge Delay Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief PM register API structure */

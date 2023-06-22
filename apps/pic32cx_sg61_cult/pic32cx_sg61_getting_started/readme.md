@@ -13,7 +13,7 @@ nav_order: 1
 -----
 ## Description
 
-> This application demonstrates an LED1 toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW1 on the PIC32CX SG61 Curiosity Ultra Evaluation Board.
+> This application demonstrates an LED1 toggle on timeout basis and print the LED toggling rate on the serial terminal. The periodicity of the timeout will change from 500 milliseconds to one second, two seconds, four seconds and back to 500 milliseconds every time you press the switch SW 1 on the PIC32CX SG61 Curiosity Ultra Evaluation Board.
 
 > The demo application has additional functionality to print the current room temperature periodically using on board temperature sensor.
 
@@ -72,12 +72,12 @@ The pre-built hex file can be programmed by following the below steps
 - Reset or power cycle the device.
 - An LED1  on the PIC32CX SG61 Curiosity Ultra Evaluation Board toggles on every timeout basis and the default periodicity of the timeout is 500 milliseconds.
 - And the LED toggling rate is displayed on the serial terminal.
-- Press the switch SW1 on the PIC32CX SG61 Curiosity Ultra Evaluation Board to change the periodicity of the timeout to one second.
-- Every subsequent pressing of the switch SW1 on the PIC32CX SG61 Curiosity Ultra Evaluation Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
-- Press the switch SW2 on the PIC32CX SG61 Curiosity Ultra Board to read and print the Temperature from the Temperature Sensor.
+- Press the switch **SW 1** on the PIC32CX SG61 Curiosity Ultra Evaluation Board to change the periodicity of the timeout to one second.
+- Every subsequent pressing of the switch **SW 1** on the PIC32CX SG61 Curiosity Ultra Evaluation Board changes the periodicity of the timeout to 2 seconds, 4 seconds, 500 milliseconds, and back to 1 second in cyclic order.
+- Press the switch **SW 2** on the PIC32CX SG61 Curiosity Ultra Evaluation Board to read and print the Temperature from the Temperature Sensor.
 - The temperature read is displayed on a serial console on a periodical basis.
-- Press the switch SW1 on the PIC32CX SG61 Curiosity Ultra Evaluation Board to change the
-periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch SW1 on the PIC32CX SG61 Curiosity Ultra Evaluation Board.
+- Press the switch **SW 1** on the PIC32CX SG61 Curiosity Ultra Evaluation Board to change the
+periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch **SW 1** on the PIC32CX SG61 Curiosity Ultra Evaluation Board.
 
 - Below diagram shows the sample output log displayed on command prompt.
      <img src = "images/output.png">

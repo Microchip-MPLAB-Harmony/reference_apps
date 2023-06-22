@@ -1,7 +1,7 @@
 /*
  * Header file for PIC32CX1025SG61128
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* File generated from device description version 2022-09-16T16:25:28Z */
+/* File generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CX1025SG61128_H_
 #define _PIC32CX1025SG61128_H_
 
@@ -209,8 +209,6 @@ typedef enum IRQn
   DAC_OTHER_IRQn            = 123, /* 123 Digital-to-Analog Converter (DAC)   */
   DAC_EMPTY_0_IRQn          = 124, /* 124 Digital-to-Analog Converter (DAC)   */
   DAC_EMPTY_1_IRQn          = 125, /* 125 Digital-to-Analog Converter (DAC)   */
-  DAC_RESRDY_0_IRQn         = 126, /* 126 Digital-to-Analog Converter (DAC)   */
-  DAC_RESRDY_1_IRQn         = 127, /* 127 Digital-to-Analog Converter (DAC)   */
   I2S_IRQn                  = 128, /* 128 Inter-IC Sound Interface (I2S)      */
   PCC_IRQn                  = 129, /* 129 Parallel Capture Controller (PCC)   */
   AES_IRQn                  = 130, /* 130 Advanced Encryption Standard (AES)  */
@@ -374,8 +372,8 @@ typedef struct _DeviceVectors
   void* pfnDAC_OTHER_Handler;                    /* 123 Digital-to-Analog Converter (DAC) */
   void* pfnDAC_EMPTY_0_Handler;                  /* 124 Digital-to-Analog Converter (DAC) */
   void* pfnDAC_EMPTY_1_Handler;                  /* 125 Digital-to-Analog Converter (DAC) */
-  void* pfnDAC_RESRDY_0_Handler;                 /* 126 Digital-to-Analog Converter (DAC) */
-  void* pfnDAC_RESRDY_1_Handler;                 /* 127 Digital-to-Analog Converter (DAC) */
+  void* pvReserved126;
+  void* pvReserved127;
   void* pfnI2S_Handler;                          /* 128 Inter-IC Sound Interface (I2S) */
   void* pfnPCC_Handler;                          /* 129 Parallel Capture Controller (PCC) */
   void* pfnAES_Handler;                          /* 130 Advanced Encryption Standard (AES) */
@@ -529,8 +527,6 @@ void AC_Handler                    ( void );
 void DAC_OTHER_Handler             ( void );
 void DAC_EMPTY_0_Handler           ( void );
 void DAC_EMPTY_1_Handler           ( void );
-void DAC_RESRDY_0_Handler          ( void );
-void DAC_RESRDY_1_Handler          ( void );
 void I2S_Handler                   ( void );
 void PCC_Handler                   ( void );
 void AES_Handler                   ( void );
@@ -900,7 +896,6 @@ void SDHC1_Handler                 ( void );
 #define BKUPRAM_SIZE                   _UINT32_(0x00002000)    /*    8kB Memory segment type: ram */
 #define PPB_SIZE                       _UINT32_(0x00100000)    /* 1024kB Memory segment type: io */
 #define SCS_SIZE                       _UINT32_(0x00001000)    /*    4kB Memory segment type: io */
-#define PERIPHERALS_SIZE               _UINT32_(0x20000000)    /* 524288kB Memory segment type: io */
 
 #define FLASH_ADDR                     _UINT32_(0x00000000)    /* FLASH base address (type: flash)*/
 #define SW0_ADDR                       _UINT32_(0x00800080)    /* SW0 base address (type: fuses)*/
@@ -923,7 +918,6 @@ void SDHC1_Handler                 ( void );
 #define BKUPRAM_ADDR                   _UINT32_(0x47000000)    /* BKUPRAM base address (type: ram)*/
 #define PPB_ADDR                       _UINT32_(0xe0000000)    /* PPB base address (type: io)*/
 #define SCS_ADDR                       _UINT32_(0xe000e000)    /* SCS base address (type: io)*/
-#define PERIPHERALS_ADDR               _UINT32_(0x40000000)    /* PERIPHERALS base address (type: io)*/
 
 /* ************************************************************************** */
 /*   DEVICE SIGNATURES FOR PIC32CX1025SG61128                                 */
@@ -1046,8 +1040,6 @@ void SDHC1_Handler                 ( void );
 #define EVENT_ID_GEN_AC_WIN_0                           109 /* ID for AC event generator WIN_0 */
 #define EVENT_ID_GEN_DAC_EMPTY_0                        110 /* ID for DAC event generator EMPTY_0 */
 #define EVENT_ID_GEN_DAC_EMPTY_1                        111 /* ID for DAC event generator EMPTY_1 */
-#define EVENT_ID_GEN_DAC_RESRDY_0                       112 /* ID for DAC event generator RESRDY_0 */
-#define EVENT_ID_GEN_DAC_RESRDY_1                       113 /* ID for DAC event generator RESRDY_1 */
 #define EVENT_ID_GEN_GMAC_TSU_CMP                       114 /* ID for GMAC event generator TSU_CMP */
 #define EVENT_ID_GEN_TRNG_READY                         115 /* ID for TRNG event generator READY */
 #define EVENT_ID_GEN_CCL_LUTOUT_0                       116 /* ID for CCL event generator LUTOUT_0 */

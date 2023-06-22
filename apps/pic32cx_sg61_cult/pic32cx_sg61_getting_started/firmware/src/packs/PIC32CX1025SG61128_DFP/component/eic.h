@@ -1,7 +1,7 @@
 /*
  * Component description for EIC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,13 +20,120 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_EIC_COMPONENT_H_
 #define _PIC32CXSG61_EIC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR EIC                                          */
 /* ************************************************************************** */
+
+/* -------- EIC_CTRLA : (EIC Offset: 0x00) (R/W 8) Control A -------- */
+#define EIC_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (EIC_CTRLA) Control A  Reset Value */
+
+#define EIC_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (EIC_CTRLA) Software Reset Position */
+#define EIC_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << EIC_CTRLA_SWRST_Pos)                /* (EIC_CTRLA) Software Reset Mask */
+#define EIC_CTRLA_SWRST(value)                (EIC_CTRLA_SWRST_Msk & (_UINT8_(value) << EIC_CTRLA_SWRST_Pos)) /* Assigment of value for SWRST in the EIC_CTRLA register */
+#define EIC_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (EIC_CTRLA) Enable Position */
+#define EIC_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << EIC_CTRLA_ENABLE_Pos)               /* (EIC_CTRLA) Enable Mask */
+#define EIC_CTRLA_ENABLE(value)               (EIC_CTRLA_ENABLE_Msk & (_UINT8_(value) << EIC_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the EIC_CTRLA register */
+#define EIC_CTRLA_CKSEL_Pos                   _UINT8_(4)                                           /* (EIC_CTRLA) Clock Selection Position */
+#define EIC_CTRLA_CKSEL_Msk                   (_UINT8_(0x1) << EIC_CTRLA_CKSEL_Pos)                /* (EIC_CTRLA) Clock Selection Mask */
+#define EIC_CTRLA_CKSEL(value)                (EIC_CTRLA_CKSEL_Msk & (_UINT8_(value) << EIC_CTRLA_CKSEL_Pos)) /* Assigment of value for CKSEL in the EIC_CTRLA register */
+#define   EIC_CTRLA_CKSEL_CLK_GCLK_Val        _UINT8_(0x0)                                         /* (EIC_CTRLA) Clocked by GCLK  */
+#define   EIC_CTRLA_CKSEL_CLK_ULP32K_Val      _UINT8_(0x1)                                         /* (EIC_CTRLA) Clocked by ULP32K  */
+#define EIC_CTRLA_CKSEL_CLK_GCLK              (EIC_CTRLA_CKSEL_CLK_GCLK_Val << EIC_CTRLA_CKSEL_Pos) /* (EIC_CTRLA) Clocked by GCLK Position  */
+#define EIC_CTRLA_CKSEL_CLK_ULP32K            (EIC_CTRLA_CKSEL_CLK_ULP32K_Val << EIC_CTRLA_CKSEL_Pos) /* (EIC_CTRLA) Clocked by ULP32K Position  */
+#define EIC_CTRLA_Msk                         _UINT8_(0x13)                                        /* (EIC_CTRLA) Register Mask  */
+
+
+/* -------- EIC_NMICTRL : (EIC Offset: 0x01) (R/W 8) Non-Maskable Interrupt Control -------- */
+#define EIC_NMICTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (EIC_NMICTRL) Non-Maskable Interrupt Control  Reset Value */
+
+#define EIC_NMICTRL_NMISENSE_Pos              _UINT8_(0)                                           /* (EIC_NMICTRL) Non-Maskable Interrupt Sense Configuration Position */
+#define EIC_NMICTRL_NMISENSE_Msk              (_UINT8_(0x7) << EIC_NMICTRL_NMISENSE_Pos)           /* (EIC_NMICTRL) Non-Maskable Interrupt Sense Configuration Mask */
+#define EIC_NMICTRL_NMISENSE(value)           (EIC_NMICTRL_NMISENSE_Msk & (_UINT8_(value) << EIC_NMICTRL_NMISENSE_Pos)) /* Assigment of value for NMISENSE in the EIC_NMICTRL register */
+#define   EIC_NMICTRL_NMISENSE_NONE_Val       _UINT8_(0x0)                                         /* (EIC_NMICTRL) No detection  */
+#define   EIC_NMICTRL_NMISENSE_RISE_Val       _UINT8_(0x1)                                         /* (EIC_NMICTRL) Rising-edge detection  */
+#define   EIC_NMICTRL_NMISENSE_FALL_Val       _UINT8_(0x2)                                         /* (EIC_NMICTRL) Falling-edge detection  */
+#define   EIC_NMICTRL_NMISENSE_BOTH_Val       _UINT8_(0x3)                                         /* (EIC_NMICTRL) Both-edges detection  */
+#define   EIC_NMICTRL_NMISENSE_HIGH_Val       _UINT8_(0x4)                                         /* (EIC_NMICTRL) High-level detection  */
+#define   EIC_NMICTRL_NMISENSE_LOW_Val        _UINT8_(0x5)                                         /* (EIC_NMICTRL) Low-level detection  */
+#define EIC_NMICTRL_NMISENSE_NONE             (EIC_NMICTRL_NMISENSE_NONE_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) No detection Position  */
+#define EIC_NMICTRL_NMISENSE_RISE             (EIC_NMICTRL_NMISENSE_RISE_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Rising-edge detection Position  */
+#define EIC_NMICTRL_NMISENSE_FALL             (EIC_NMICTRL_NMISENSE_FALL_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Falling-edge detection Position  */
+#define EIC_NMICTRL_NMISENSE_BOTH             (EIC_NMICTRL_NMISENSE_BOTH_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Both-edges detection Position  */
+#define EIC_NMICTRL_NMISENSE_HIGH             (EIC_NMICTRL_NMISENSE_HIGH_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) High-level detection Position  */
+#define EIC_NMICTRL_NMISENSE_LOW              (EIC_NMICTRL_NMISENSE_LOW_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Low-level detection Position  */
+#define EIC_NMICTRL_NMIFILTEN_Pos             _UINT8_(3)                                           /* (EIC_NMICTRL) Non-Maskable Interrupt Filter Enable Position */
+#define EIC_NMICTRL_NMIFILTEN_Msk             (_UINT8_(0x1) << EIC_NMICTRL_NMIFILTEN_Pos)          /* (EIC_NMICTRL) Non-Maskable Interrupt Filter Enable Mask */
+#define EIC_NMICTRL_NMIFILTEN(value)          (EIC_NMICTRL_NMIFILTEN_Msk & (_UINT8_(value) << EIC_NMICTRL_NMIFILTEN_Pos)) /* Assigment of value for NMIFILTEN in the EIC_NMICTRL register */
+#define EIC_NMICTRL_NMIASYNCH_Pos             _UINT8_(4)                                           /* (EIC_NMICTRL) Asynchronous Edge Detection Mode Position */
+#define EIC_NMICTRL_NMIASYNCH_Msk             (_UINT8_(0x1) << EIC_NMICTRL_NMIASYNCH_Pos)          /* (EIC_NMICTRL) Asynchronous Edge Detection Mode Mask */
+#define EIC_NMICTRL_NMIASYNCH(value)          (EIC_NMICTRL_NMIASYNCH_Msk & (_UINT8_(value) << EIC_NMICTRL_NMIASYNCH_Pos)) /* Assigment of value for NMIASYNCH in the EIC_NMICTRL register */
+#define   EIC_NMICTRL_NMIASYNCH_SYNC_Val      _UINT8_(0x0)                                         /* (EIC_NMICTRL) Edge detection is clock synchronously operated  */
+#define   EIC_NMICTRL_NMIASYNCH_ASYNC_Val     _UINT8_(0x1)                                         /* (EIC_NMICTRL) Edge detection is clock asynchronously operated  */
+#define EIC_NMICTRL_NMIASYNCH_SYNC            (EIC_NMICTRL_NMIASYNCH_SYNC_Val << EIC_NMICTRL_NMIASYNCH_Pos) /* (EIC_NMICTRL) Edge detection is clock synchronously operated Position  */
+#define EIC_NMICTRL_NMIASYNCH_ASYNC           (EIC_NMICTRL_NMIASYNCH_ASYNC_Val << EIC_NMICTRL_NMIASYNCH_Pos) /* (EIC_NMICTRL) Edge detection is clock asynchronously operated Position  */
+#define EIC_NMICTRL_Msk                       _UINT8_(0x1F)                                        /* (EIC_NMICTRL) Register Mask  */
+
+
+/* -------- EIC_NMIFLAG : (EIC Offset: 0x02) (R/W 16) Non-Maskable Interrupt Flag Status and Clear -------- */
+#define EIC_NMIFLAG_RESETVALUE                _UINT16_(0x00)                                       /*  (EIC_NMIFLAG) Non-Maskable Interrupt Flag Status and Clear  Reset Value */
+
+#define EIC_NMIFLAG_NMI_Pos                   _UINT16_(0)                                          /* (EIC_NMIFLAG) Non-Maskable Interrupt Position */
+#define EIC_NMIFLAG_NMI_Msk                   (_UINT16_(0x1) << EIC_NMIFLAG_NMI_Pos)               /* (EIC_NMIFLAG) Non-Maskable Interrupt Mask */
+#define EIC_NMIFLAG_NMI(value)                (EIC_NMIFLAG_NMI_Msk & (_UINT16_(value) << EIC_NMIFLAG_NMI_Pos)) /* Assigment of value for NMI in the EIC_NMIFLAG register */
+#define EIC_NMIFLAG_Msk                       _UINT16_(0x0001)                                     /* (EIC_NMIFLAG) Register Mask  */
+
+
+/* -------- EIC_SYNCBUSY : (EIC Offset: 0x04) ( R/ 32) Synchronization Busy -------- */
+#define EIC_SYNCBUSY_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_SYNCBUSY) Synchronization Busy  Reset Value */
+
+#define EIC_SYNCBUSY_SWRST_Pos                _UINT32_(0)                                          /* (EIC_SYNCBUSY) Software Reset Synchronization Busy Status Position */
+#define EIC_SYNCBUSY_SWRST_Msk                (_UINT32_(0x1) << EIC_SYNCBUSY_SWRST_Pos)            /* (EIC_SYNCBUSY) Software Reset Synchronization Busy Status Mask */
+#define EIC_SYNCBUSY_SWRST(value)             (EIC_SYNCBUSY_SWRST_Msk & (_UINT32_(value) << EIC_SYNCBUSY_SWRST_Pos)) /* Assigment of value for SWRST in the EIC_SYNCBUSY register */
+#define EIC_SYNCBUSY_ENABLE_Pos               _UINT32_(1)                                          /* (EIC_SYNCBUSY) Enable Synchronization Busy Status Position */
+#define EIC_SYNCBUSY_ENABLE_Msk               (_UINT32_(0x1) << EIC_SYNCBUSY_ENABLE_Pos)           /* (EIC_SYNCBUSY) Enable Synchronization Busy Status Mask */
+#define EIC_SYNCBUSY_ENABLE(value)            (EIC_SYNCBUSY_ENABLE_Msk & (_UINT32_(value) << EIC_SYNCBUSY_ENABLE_Pos)) /* Assigment of value for ENABLE in the EIC_SYNCBUSY register */
+#define EIC_SYNCBUSY_Msk                      _UINT32_(0x00000003)                                 /* (EIC_SYNCBUSY) Register Mask  */
+
+
+/* -------- EIC_EVCTRL : (EIC Offset: 0x08) (R/W 32) Event Control -------- */
+#define EIC_EVCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (EIC_EVCTRL) Event Control  Reset Value */
+
+#define EIC_EVCTRL_EXTINTEO_Pos               _UINT32_(0)                                          /* (EIC_EVCTRL) External Interrupt Event Output Enable Position */
+#define EIC_EVCTRL_EXTINTEO_Msk               (_UINT32_(0xFFFF) << EIC_EVCTRL_EXTINTEO_Pos)        /* (EIC_EVCTRL) External Interrupt Event Output Enable Mask */
+#define EIC_EVCTRL_EXTINTEO(value)            (EIC_EVCTRL_EXTINTEO_Msk & (_UINT32_(value) << EIC_EVCTRL_EXTINTEO_Pos)) /* Assigment of value for EXTINTEO in the EIC_EVCTRL register */
+#define EIC_EVCTRL_Msk                        _UINT32_(0x0000FFFF)                                 /* (EIC_EVCTRL) Register Mask  */
+
+
+/* -------- EIC_INTENCLR : (EIC Offset: 0x0C) (R/W 32) Interrupt Enable Clear -------- */
+#define EIC_INTENCLR_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_INTENCLR) Interrupt Enable Clear  Reset Value */
+
+#define EIC_INTENCLR_EXTINT_Pos               _UINT32_(0)                                          /* (EIC_INTENCLR) External Interrupt Enable Position */
+#define EIC_INTENCLR_EXTINT_Msk               (_UINT32_(0xFFFF) << EIC_INTENCLR_EXTINT_Pos)        /* (EIC_INTENCLR) External Interrupt Enable Mask */
+#define EIC_INTENCLR_EXTINT(value)            (EIC_INTENCLR_EXTINT_Msk & (_UINT32_(value) << EIC_INTENCLR_EXTINT_Pos)) /* Assigment of value for EXTINT in the EIC_INTENCLR register */
+#define EIC_INTENCLR_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_INTENCLR) Register Mask  */
+
+
+/* -------- EIC_INTENSET : (EIC Offset: 0x10) (R/W 32) Interrupt Enable Set -------- */
+#define EIC_INTENSET_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_INTENSET) Interrupt Enable Set  Reset Value */
+
+#define EIC_INTENSET_EXTINT_Pos               _UINT32_(0)                                          /* (EIC_INTENSET) External Interrupt Enable Position */
+#define EIC_INTENSET_EXTINT_Msk               (_UINT32_(0xFFFF) << EIC_INTENSET_EXTINT_Pos)        /* (EIC_INTENSET) External Interrupt Enable Mask */
+#define EIC_INTENSET_EXTINT(value)            (EIC_INTENSET_EXTINT_Msk & (_UINT32_(value) << EIC_INTENSET_EXTINT_Pos)) /* Assigment of value for EXTINT in the EIC_INTENSET register */
+#define EIC_INTENSET_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_INTENSET) Register Mask  */
+
+
+/* -------- EIC_INTFLAG : (EIC Offset: 0x14) (R/W 32) Interrupt Flag Status and Clear -------- */
+#define EIC_INTFLAG_RESETVALUE                _UINT32_(0x00)                                       /*  (EIC_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
+
+#define EIC_INTFLAG_EXTINT_Pos                _UINT32_(0)                                          /* (EIC_INTFLAG) External Interrupt Position */
+#define EIC_INTFLAG_EXTINT_Msk                (_UINT32_(0xFFFF) << EIC_INTFLAG_EXTINT_Pos)         /* (EIC_INTFLAG) External Interrupt Mask */
+#define EIC_INTFLAG_EXTINT(value)             (EIC_INTFLAG_EXTINT_Msk & (_UINT32_(value) << EIC_INTFLAG_EXTINT_Pos)) /* Assigment of value for EXTINT in the EIC_INTFLAG register */
+#define EIC_INTFLAG_Msk                       _UINT32_(0x0000FFFF)                                 /* (EIC_INTFLAG) Register Mask  */
+
 
 /* -------- EIC_ASYNCH : (EIC Offset: 0x18) (R/W 32) External Interrupt Asynchronous Mode -------- */
 #define EIC_ASYNCH_RESETVALUE                 _UINT32_(0x00)                                       /*  (EIC_ASYNCH) External Interrupt Asynchronous Mode  Reset Value */
@@ -341,25 +448,6 @@
 #define EIC_CONFIG1_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (EIC_CONFIG1) Register Mask  */
 
 
-/* -------- EIC_CTRLA : (EIC Offset: 0x00) (R/W 8) Control A -------- */
-#define EIC_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (EIC_CTRLA) Control A  Reset Value */
-
-#define EIC_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (EIC_CTRLA) Software Reset Position */
-#define EIC_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << EIC_CTRLA_SWRST_Pos)                /* (EIC_CTRLA) Software Reset Mask */
-#define EIC_CTRLA_SWRST(value)                (EIC_CTRLA_SWRST_Msk & (_UINT8_(value) << EIC_CTRLA_SWRST_Pos)) /* Assigment of value for SWRST in the EIC_CTRLA register */
-#define EIC_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (EIC_CTRLA) Enable Position */
-#define EIC_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << EIC_CTRLA_ENABLE_Pos)               /* (EIC_CTRLA) Enable Mask */
-#define EIC_CTRLA_ENABLE(value)               (EIC_CTRLA_ENABLE_Msk & (_UINT8_(value) << EIC_CTRLA_ENABLE_Pos)) /* Assigment of value for ENABLE in the EIC_CTRLA register */
-#define EIC_CTRLA_CKSEL_Pos                   _UINT8_(4)                                           /* (EIC_CTRLA) Clock Selection Position */
-#define EIC_CTRLA_CKSEL_Msk                   (_UINT8_(0x1) << EIC_CTRLA_CKSEL_Pos)                /* (EIC_CTRLA) Clock Selection Mask */
-#define EIC_CTRLA_CKSEL(value)                (EIC_CTRLA_CKSEL_Msk & (_UINT8_(value) << EIC_CTRLA_CKSEL_Pos)) /* Assigment of value for CKSEL in the EIC_CTRLA register */
-#define   EIC_CTRLA_CKSEL_CLK_GCLK_Val        _UINT8_(0x0)                                         /* (EIC_CTRLA) Clocked by GCLK  */
-#define   EIC_CTRLA_CKSEL_CLK_ULP32K_Val      _UINT8_(0x1)                                         /* (EIC_CTRLA) Clocked by ULP32K  */
-#define EIC_CTRLA_CKSEL_CLK_GCLK              (EIC_CTRLA_CKSEL_CLK_GCLK_Val << EIC_CTRLA_CKSEL_Pos) /* (EIC_CTRLA) Clocked by GCLK Position  */
-#define EIC_CTRLA_CKSEL_CLK_ULP32K            (EIC_CTRLA_CKSEL_CLK_ULP32K_Val << EIC_CTRLA_CKSEL_Pos) /* (EIC_CTRLA) Clocked by ULP32K Position  */
-#define EIC_CTRLA_Msk                         _UINT8_(0x13)                                        /* (EIC_CTRLA) Register Mask  */
-
-
 /* -------- EIC_DEBOUNCEN : (EIC Offset: 0x30) (R/W 32) Debouncer Enable -------- */
 #define EIC_DEBOUNCEN_RESETVALUE              _UINT32_(0x00)                                       /*  (EIC_DEBOUNCEN) Debouncer Enable  Reset Value */
 
@@ -434,82 +522,6 @@
 #define EIC_DPRESCALER_Msk                    _UINT32_(0x000100FF)                                 /* (EIC_DPRESCALER) Register Mask  */
 
 
-/* -------- EIC_EVCTRL : (EIC Offset: 0x08) (R/W 32) Event Control -------- */
-#define EIC_EVCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (EIC_EVCTRL) Event Control  Reset Value */
-
-#define EIC_EVCTRL_EXTINTEO_Pos               _UINT32_(0)                                          /* (EIC_EVCTRL) External Interrupt Event Output Enable Position */
-#define EIC_EVCTRL_EXTINTEO_Msk               (_UINT32_(0xFFFF) << EIC_EVCTRL_EXTINTEO_Pos)        /* (EIC_EVCTRL) External Interrupt Event Output Enable Mask */
-#define EIC_EVCTRL_EXTINTEO(value)            (EIC_EVCTRL_EXTINTEO_Msk & (_UINT32_(value) << EIC_EVCTRL_EXTINTEO_Pos)) /* Assigment of value for EXTINTEO in the EIC_EVCTRL register */
-#define EIC_EVCTRL_Msk                        _UINT32_(0x0000FFFF)                                 /* (EIC_EVCTRL) Register Mask  */
-
-
-/* -------- EIC_INTENCLR : (EIC Offset: 0x0C) (R/W 32) Interrupt Enable Clear -------- */
-#define EIC_INTENCLR_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_INTENCLR) Interrupt Enable Clear  Reset Value */
-
-#define EIC_INTENCLR_EXTINT_Pos               _UINT32_(0)                                          /* (EIC_INTENCLR) External Interrupt Enable Position */
-#define EIC_INTENCLR_EXTINT_Msk               (_UINT32_(0xFFFF) << EIC_INTENCLR_EXTINT_Pos)        /* (EIC_INTENCLR) External Interrupt Enable Mask */
-#define EIC_INTENCLR_EXTINT(value)            (EIC_INTENCLR_EXTINT_Msk & (_UINT32_(value) << EIC_INTENCLR_EXTINT_Pos)) /* Assigment of value for EXTINT in the EIC_INTENCLR register */
-#define EIC_INTENCLR_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_INTENCLR) Register Mask  */
-
-
-/* -------- EIC_INTENSET : (EIC Offset: 0x10) (R/W 32) Interrupt Enable Set -------- */
-#define EIC_INTENSET_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_INTENSET) Interrupt Enable Set  Reset Value */
-
-#define EIC_INTENSET_EXTINT_Pos               _UINT32_(0)                                          /* (EIC_INTENSET) External Interrupt Enable Position */
-#define EIC_INTENSET_EXTINT_Msk               (_UINT32_(0xFFFF) << EIC_INTENSET_EXTINT_Pos)        /* (EIC_INTENSET) External Interrupt Enable Mask */
-#define EIC_INTENSET_EXTINT(value)            (EIC_INTENSET_EXTINT_Msk & (_UINT32_(value) << EIC_INTENSET_EXTINT_Pos)) /* Assigment of value for EXTINT in the EIC_INTENSET register */
-#define EIC_INTENSET_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_INTENSET) Register Mask  */
-
-
-/* -------- EIC_INTFLAG : (EIC Offset: 0x14) (R/W 32) Interrupt Flag Status and Clear -------- */
-#define EIC_INTFLAG_RESETVALUE                _UINT32_(0x00)                                       /*  (EIC_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
-
-#define EIC_INTFLAG_EXTINT_Pos                _UINT32_(0)                                          /* (EIC_INTFLAG) External Interrupt Position */
-#define EIC_INTFLAG_EXTINT_Msk                (_UINT32_(0xFFFF) << EIC_INTFLAG_EXTINT_Pos)         /* (EIC_INTFLAG) External Interrupt Mask */
-#define EIC_INTFLAG_EXTINT(value)             (EIC_INTFLAG_EXTINT_Msk & (_UINT32_(value) << EIC_INTFLAG_EXTINT_Pos)) /* Assigment of value for EXTINT in the EIC_INTFLAG register */
-#define EIC_INTFLAG_Msk                       _UINT32_(0x0000FFFF)                                 /* (EIC_INTFLAG) Register Mask  */
-
-
-/* -------- EIC_NMICTRL : (EIC Offset: 0x01) (R/W 8) Non-Maskable Interrupt Control -------- */
-#define EIC_NMICTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (EIC_NMICTRL) Non-Maskable Interrupt Control  Reset Value */
-
-#define EIC_NMICTRL_NMISENSE_Pos              _UINT8_(0)                                           /* (EIC_NMICTRL) Non-Maskable Interrupt Sense Configuration Position */
-#define EIC_NMICTRL_NMISENSE_Msk              (_UINT8_(0x7) << EIC_NMICTRL_NMISENSE_Pos)           /* (EIC_NMICTRL) Non-Maskable Interrupt Sense Configuration Mask */
-#define EIC_NMICTRL_NMISENSE(value)           (EIC_NMICTRL_NMISENSE_Msk & (_UINT8_(value) << EIC_NMICTRL_NMISENSE_Pos)) /* Assigment of value for NMISENSE in the EIC_NMICTRL register */
-#define   EIC_NMICTRL_NMISENSE_NONE_Val       _UINT8_(0x0)                                         /* (EIC_NMICTRL) No detection  */
-#define   EIC_NMICTRL_NMISENSE_RISE_Val       _UINT8_(0x1)                                         /* (EIC_NMICTRL) Rising-edge detection  */
-#define   EIC_NMICTRL_NMISENSE_FALL_Val       _UINT8_(0x2)                                         /* (EIC_NMICTRL) Falling-edge detection  */
-#define   EIC_NMICTRL_NMISENSE_BOTH_Val       _UINT8_(0x3)                                         /* (EIC_NMICTRL) Both-edges detection  */
-#define   EIC_NMICTRL_NMISENSE_HIGH_Val       _UINT8_(0x4)                                         /* (EIC_NMICTRL) High-level detection  */
-#define   EIC_NMICTRL_NMISENSE_LOW_Val        _UINT8_(0x5)                                         /* (EIC_NMICTRL) Low-level detection  */
-#define EIC_NMICTRL_NMISENSE_NONE             (EIC_NMICTRL_NMISENSE_NONE_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) No detection Position  */
-#define EIC_NMICTRL_NMISENSE_RISE             (EIC_NMICTRL_NMISENSE_RISE_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Rising-edge detection Position  */
-#define EIC_NMICTRL_NMISENSE_FALL             (EIC_NMICTRL_NMISENSE_FALL_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Falling-edge detection Position  */
-#define EIC_NMICTRL_NMISENSE_BOTH             (EIC_NMICTRL_NMISENSE_BOTH_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Both-edges detection Position  */
-#define EIC_NMICTRL_NMISENSE_HIGH             (EIC_NMICTRL_NMISENSE_HIGH_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) High-level detection Position  */
-#define EIC_NMICTRL_NMISENSE_LOW              (EIC_NMICTRL_NMISENSE_LOW_Val << EIC_NMICTRL_NMISENSE_Pos) /* (EIC_NMICTRL) Low-level detection Position  */
-#define EIC_NMICTRL_NMIFILTEN_Pos             _UINT8_(3)                                           /* (EIC_NMICTRL) Non-Maskable Interrupt Filter Enable Position */
-#define EIC_NMICTRL_NMIFILTEN_Msk             (_UINT8_(0x1) << EIC_NMICTRL_NMIFILTEN_Pos)          /* (EIC_NMICTRL) Non-Maskable Interrupt Filter Enable Mask */
-#define EIC_NMICTRL_NMIFILTEN(value)          (EIC_NMICTRL_NMIFILTEN_Msk & (_UINT8_(value) << EIC_NMICTRL_NMIFILTEN_Pos)) /* Assigment of value for NMIFILTEN in the EIC_NMICTRL register */
-#define EIC_NMICTRL_NMIASYNCH_Pos             _UINT8_(4)                                           /* (EIC_NMICTRL) Asynchronous Edge Detection Mode Position */
-#define EIC_NMICTRL_NMIASYNCH_Msk             (_UINT8_(0x1) << EIC_NMICTRL_NMIASYNCH_Pos)          /* (EIC_NMICTRL) Asynchronous Edge Detection Mode Mask */
-#define EIC_NMICTRL_NMIASYNCH(value)          (EIC_NMICTRL_NMIASYNCH_Msk & (_UINT8_(value) << EIC_NMICTRL_NMIASYNCH_Pos)) /* Assigment of value for NMIASYNCH in the EIC_NMICTRL register */
-#define   EIC_NMICTRL_NMIASYNCH_SYNC_Val      _UINT8_(0x0)                                         /* (EIC_NMICTRL) Edge detection is clock synchronously operated  */
-#define   EIC_NMICTRL_NMIASYNCH_ASYNC_Val     _UINT8_(0x1)                                         /* (EIC_NMICTRL) Edge detection is clock asynchronously operated  */
-#define EIC_NMICTRL_NMIASYNCH_SYNC            (EIC_NMICTRL_NMIASYNCH_SYNC_Val << EIC_NMICTRL_NMIASYNCH_Pos) /* (EIC_NMICTRL) Edge detection is clock synchronously operated Position  */
-#define EIC_NMICTRL_NMIASYNCH_ASYNC           (EIC_NMICTRL_NMIASYNCH_ASYNC_Val << EIC_NMICTRL_NMIASYNCH_Pos) /* (EIC_NMICTRL) Edge detection is clock asynchronously operated Position  */
-#define EIC_NMICTRL_Msk                       _UINT8_(0x1F)                                        /* (EIC_NMICTRL) Register Mask  */
-
-
-/* -------- EIC_NMIFLAG : (EIC Offset: 0x02) (R/W 16) Non-Maskable Interrupt Flag Status and Clear -------- */
-#define EIC_NMIFLAG_RESETVALUE                _UINT16_(0x00)                                       /*  (EIC_NMIFLAG) Non-Maskable Interrupt Flag Status and Clear  Reset Value */
-
-#define EIC_NMIFLAG_NMI_Pos                   _UINT16_(0)                                          /* (EIC_NMIFLAG) Non-Maskable Interrupt Position */
-#define EIC_NMIFLAG_NMI_Msk                   (_UINT16_(0x1) << EIC_NMIFLAG_NMI_Pos)               /* (EIC_NMIFLAG) Non-Maskable Interrupt Mask */
-#define EIC_NMIFLAG_NMI(value)                (EIC_NMIFLAG_NMI_Msk & (_UINT16_(value) << EIC_NMIFLAG_NMI_Pos)) /* Assigment of value for NMI in the EIC_NMIFLAG register */
-#define EIC_NMIFLAG_Msk                       _UINT16_(0x0001)                                     /* (EIC_NMIFLAG) Register Mask  */
-
-
 /* -------- EIC_PINSTATE : (EIC Offset: 0x38) ( R/ 32) Pin State -------- */
 #define EIC_PINSTATE_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_PINSTATE) Pin State  Reset Value */
 
@@ -519,33 +531,21 @@
 #define EIC_PINSTATE_Msk                      _UINT32_(0x0000FFFF)                                 /* (EIC_PINSTATE) Register Mask  */
 
 
-/* -------- EIC_SYNCBUSY : (EIC Offset: 0x04) ( R/ 32) Synchronization Busy -------- */
-#define EIC_SYNCBUSY_RESETVALUE               _UINT32_(0x00)                                       /*  (EIC_SYNCBUSY) Synchronization Busy  Reset Value */
-
-#define EIC_SYNCBUSY_SWRST_Pos                _UINT32_(0)                                          /* (EIC_SYNCBUSY) Software Reset Synchronization Busy Status Position */
-#define EIC_SYNCBUSY_SWRST_Msk                (_UINT32_(0x1) << EIC_SYNCBUSY_SWRST_Pos)            /* (EIC_SYNCBUSY) Software Reset Synchronization Busy Status Mask */
-#define EIC_SYNCBUSY_SWRST(value)             (EIC_SYNCBUSY_SWRST_Msk & (_UINT32_(value) << EIC_SYNCBUSY_SWRST_Pos)) /* Assigment of value for SWRST in the EIC_SYNCBUSY register */
-#define EIC_SYNCBUSY_ENABLE_Pos               _UINT32_(1)                                          /* (EIC_SYNCBUSY) Enable Synchronization Busy Status Position */
-#define EIC_SYNCBUSY_ENABLE_Msk               (_UINT32_(0x1) << EIC_SYNCBUSY_ENABLE_Pos)           /* (EIC_SYNCBUSY) Enable Synchronization Busy Status Mask */
-#define EIC_SYNCBUSY_ENABLE(value)            (EIC_SYNCBUSY_ENABLE_Msk & (_UINT32_(value) << EIC_SYNCBUSY_ENABLE_Pos)) /* Assigment of value for ENABLE in the EIC_SYNCBUSY register */
-#define EIC_SYNCBUSY_Msk                      _UINT32_(0x00000003)                                 /* (EIC_SYNCBUSY) Register Mask  */
-
-
 /** \brief EIC register offsets definitions */
-#define EIC_ASYNCH_REG_OFST            _UINT32_(0x18)      /* (EIC_ASYNCH) External Interrupt Asynchronous Mode Offset */
-#define EIC_CONFIG0_REG_OFST           _UINT32_(0x1C)      /* (EIC_CONFIG0) External Interrupt Sense Configuration Offset */
-#define EIC_CONFIG1_REG_OFST           _UINT32_(0x20)      /* (EIC_CONFIG1) External Interrupt Sense Configuration Offset */
 #define EIC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (EIC_CTRLA) Control A Offset */
-#define EIC_DEBOUNCEN_REG_OFST         _UINT32_(0x30)      /* (EIC_DEBOUNCEN) Debouncer Enable Offset */
-#define EIC_DPRESCALER_REG_OFST        _UINT32_(0x34)      /* (EIC_DPRESCALER) Debouncer Prescaler Offset */
+#define EIC_NMICTRL_REG_OFST           _UINT32_(0x01)      /* (EIC_NMICTRL) Non-Maskable Interrupt Control Offset */
+#define EIC_NMIFLAG_REG_OFST           _UINT32_(0x02)      /* (EIC_NMIFLAG) Non-Maskable Interrupt Flag Status and Clear Offset */
+#define EIC_SYNCBUSY_REG_OFST          _UINT32_(0x04)      /* (EIC_SYNCBUSY) Synchronization Busy Offset */
 #define EIC_EVCTRL_REG_OFST            _UINT32_(0x08)      /* (EIC_EVCTRL) Event Control Offset */
 #define EIC_INTENCLR_REG_OFST          _UINT32_(0x0C)      /* (EIC_INTENCLR) Interrupt Enable Clear Offset */
 #define EIC_INTENSET_REG_OFST          _UINT32_(0x10)      /* (EIC_INTENSET) Interrupt Enable Set Offset */
 #define EIC_INTFLAG_REG_OFST           _UINT32_(0x14)      /* (EIC_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define EIC_NMICTRL_REG_OFST           _UINT32_(0x01)      /* (EIC_NMICTRL) Non-Maskable Interrupt Control Offset */
-#define EIC_NMIFLAG_REG_OFST           _UINT32_(0x02)      /* (EIC_NMIFLAG) Non-Maskable Interrupt Flag Status and Clear Offset */
+#define EIC_ASYNCH_REG_OFST            _UINT32_(0x18)      /* (EIC_ASYNCH) External Interrupt Asynchronous Mode Offset */
+#define EIC_CONFIG0_REG_OFST           _UINT32_(0x1C)      /* (EIC_CONFIG0) External Interrupt Sense Configuration Offset */
+#define EIC_CONFIG1_REG_OFST           _UINT32_(0x20)      /* (EIC_CONFIG1) External Interrupt Sense Configuration Offset */
+#define EIC_DEBOUNCEN_REG_OFST         _UINT32_(0x30)      /* (EIC_DEBOUNCEN) Debouncer Enable Offset */
+#define EIC_DPRESCALER_REG_OFST        _UINT32_(0x34)      /* (EIC_DPRESCALER) Debouncer Prescaler Offset */
 #define EIC_PINSTATE_REG_OFST          _UINT32_(0x38)      /* (EIC_PINSTATE) Pin State Offset */
-#define EIC_SYNCBUSY_REG_OFST          _UINT32_(0x04)      /* (EIC_SYNCBUSY) Synchronization Busy Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief EIC register API structure */

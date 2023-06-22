@@ -67,14 +67,6 @@ void NVIC_Initialize( void )
     NVIC_EnableIRQ(EIC_EXTINT_1_IRQn);
     NVIC_SetPriority(DMAC_0_IRQn, 7);
     NVIC_EnableIRQ(DMAC_0_IRQn);
-    NVIC_SetPriority(SERCOM4_0_IRQn, 7);
-    NVIC_EnableIRQ(SERCOM4_0_IRQn);
-    NVIC_SetPriority(SERCOM4_1_IRQn, 7);
-    NVIC_EnableIRQ(SERCOM4_1_IRQn);
-    NVIC_SetPriority(SERCOM4_2_IRQn, 7);
-    NVIC_EnableIRQ(SERCOM4_2_IRQn);
-    NVIC_SetPriority(SERCOM4_OTHER_IRQn, 7);
-    NVIC_EnableIRQ(SERCOM4_OTHER_IRQn);
     NVIC_SetPriority(SERCOM6_0_IRQn, 7);
     NVIC_EnableIRQ(SERCOM6_0_IRQn);
     NVIC_SetPriority(SERCOM6_1_IRQn, 7);
@@ -91,6 +83,9 @@ void NVIC_Initialize( void )
 
     /* Enable Bus fault */
     SCB->SHCSR |= (SCB_SHCSR_BUSFAULTENA_Msk);
+
+    /* Enable memory management fault */
+    SCB->SHCSR |= (SCB_SHCSR_MEMFAULTENA_Msk);
 
 }
 

@@ -1,7 +1,7 @@
 /*
  * Component description for TRNG
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_TRNG_COMPONENT_H_
 #define _PIC32CXSG61_TRNG_COMPONENT_H_
 
@@ -38,15 +38,6 @@
 #define TRNG_CTRLA_RUNSTDBY_Msk               (_UINT8_(0x1) << TRNG_CTRLA_RUNSTDBY_Pos)            /* (TRNG_CTRLA) Run in Standby Mask */
 #define TRNG_CTRLA_RUNSTDBY(value)            (TRNG_CTRLA_RUNSTDBY_Msk & (_UINT8_(value) << TRNG_CTRLA_RUNSTDBY_Pos)) /* Assigment of value for RUNSTDBY in the TRNG_CTRLA register */
 #define TRNG_CTRLA_Msk                        _UINT8_(0x42)                                        /* (TRNG_CTRLA) Register Mask  */
-
-
-/* -------- TRNG_DATA : (TRNG Offset: 0x20) ( R/ 32) Output Data -------- */
-#define TRNG_DATA_RESETVALUE                  _UINT32_(0x00)                                       /*  (TRNG_DATA) Output Data  Reset Value */
-
-#define TRNG_DATA_DATA_Pos                    _UINT32_(0)                                          /* (TRNG_DATA) Output Data Position */
-#define TRNG_DATA_DATA_Msk                    (_UINT32_(0xFFFFFFFF) << TRNG_DATA_DATA_Pos)         /* (TRNG_DATA) Output Data Mask */
-#define TRNG_DATA_DATA(value)                 (TRNG_DATA_DATA_Msk & (_UINT32_(value) << TRNG_DATA_DATA_Pos)) /* Assigment of value for DATA in the TRNG_DATA register */
-#define TRNG_DATA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (TRNG_DATA) Register Mask  */
 
 
 /* -------- TRNG_EVCTRL : (TRNG Offset: 0x04) (R/W 8) Event Control -------- */
@@ -85,13 +76,22 @@
 #define TRNG_INTFLAG_Msk                      _UINT8_(0x01)                                        /* (TRNG_INTFLAG) Register Mask  */
 
 
+/* -------- TRNG_DATA : (TRNG Offset: 0x20) ( R/ 32) Output Data -------- */
+#define TRNG_DATA_RESETVALUE                  _UINT32_(0x00)                                       /*  (TRNG_DATA) Output Data  Reset Value */
+
+#define TRNG_DATA_DATA_Pos                    _UINT32_(0)                                          /* (TRNG_DATA) Output Data Position */
+#define TRNG_DATA_DATA_Msk                    (_UINT32_(0xFFFFFFFF) << TRNG_DATA_DATA_Pos)         /* (TRNG_DATA) Output Data Mask */
+#define TRNG_DATA_DATA(value)                 (TRNG_DATA_DATA_Msk & (_UINT32_(value) << TRNG_DATA_DATA_Pos)) /* Assigment of value for DATA in the TRNG_DATA register */
+#define TRNG_DATA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (TRNG_DATA) Register Mask  */
+
+
 /** \brief TRNG register offsets definitions */
 #define TRNG_CTRLA_REG_OFST            _UINT32_(0x00)      /* (TRNG_CTRLA) Control A Offset */
-#define TRNG_DATA_REG_OFST             _UINT32_(0x20)      /* (TRNG_DATA) Output Data Offset */
 #define TRNG_EVCTRL_REG_OFST           _UINT32_(0x04)      /* (TRNG_EVCTRL) Event Control Offset */
 #define TRNG_INTENCLR_REG_OFST         _UINT32_(0x08)      /* (TRNG_INTENCLR) Interrupt Enable Clear Offset */
 #define TRNG_INTENSET_REG_OFST         _UINT32_(0x09)      /* (TRNG_INTENSET) Interrupt Enable Set Offset */
 #define TRNG_INTFLAG_REG_OFST          _UINT32_(0x0A)      /* (TRNG_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define TRNG_DATA_REG_OFST             _UINT32_(0x20)      /* (TRNG_DATA) Output Data Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief TRNG register API structure */

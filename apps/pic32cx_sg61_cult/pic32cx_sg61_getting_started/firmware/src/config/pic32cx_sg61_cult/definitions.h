@@ -69,6 +69,12 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME			 "PIC32CX1025SG61128"
+#define DEVICE_ARCH			 "CORTEX-M4"
+#define DEVICE_FAMILY		 "PIC32CX"
+#define DEVICE_SERIES		 "PIC32CXSG61"
+
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000
 

@@ -206,7 +206,7 @@ int main ( void )
             {
                 isRTCExpired = false;
                 isUARTTxComplete = false;
-                LED0_Toggle();
+                LED1_Toggle();
                 sprintf((char*)(uartTxBuffer + TemperatureReadStartMsgLen), "Toggling LED at %s rate \r\n", &timeouts[(uint8_t)tempSampleRate][0]);
                 TemperatureReadStartMsgLen = 0;
                 DMAC_ChannelTransfer(DMAC_CHANNEL_0, uartTxBuffer, \
@@ -262,7 +262,7 @@ int main ( void )
                 temperatureVal = getTemperature(i2cRdData);
                 sprintf((char*)(uartTxBuffer + TemperatureReadStartMsgLen), "Temperature = %02d F\r\n", (int)temperatureVal);
                 TemperatureReadStartMsgLen = 0;
-                LED0_Toggle();
+                LED1_Toggle();
             }
             else
             {

@@ -1,7 +1,7 @@
 /*
  * Component description for RAMECC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,34 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_RAMECC_COMPONENT_H_
 #define _PIC32CXSG61_RAMECC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR RAMECC                                       */
 /* ************************************************************************** */
-
-/* -------- RAMECC_DBGCTRL : (RAMECC Offset: 0x0F) (R/W 8) Debug Control -------- */
-#define RAMECC_DBGCTRL_RESETVALUE             _UINT8_(0x00)                                        /*  (RAMECC_DBGCTRL) Debug Control  Reset Value */
-
-#define RAMECC_DBGCTRL_ECCDIS_Pos             _UINT8_(0)                                           /* (RAMECC_DBGCTRL) ECC Disable Position */
-#define RAMECC_DBGCTRL_ECCDIS_Msk             (_UINT8_(0x1) << RAMECC_DBGCTRL_ECCDIS_Pos)          /* (RAMECC_DBGCTRL) ECC Disable Mask */
-#define RAMECC_DBGCTRL_ECCDIS(value)          (RAMECC_DBGCTRL_ECCDIS_Msk & (_UINT8_(value) << RAMECC_DBGCTRL_ECCDIS_Pos)) /* Assigment of value for ECCDIS in the RAMECC_DBGCTRL register */
-#define RAMECC_DBGCTRL_ECCELOG_Pos            _UINT8_(1)                                           /* (RAMECC_DBGCTRL) ECC Error Log Position */
-#define RAMECC_DBGCTRL_ECCELOG_Msk            (_UINT8_(0x1) << RAMECC_DBGCTRL_ECCELOG_Pos)         /* (RAMECC_DBGCTRL) ECC Error Log Mask */
-#define RAMECC_DBGCTRL_ECCELOG(value)         (RAMECC_DBGCTRL_ECCELOG_Msk & (_UINT8_(value) << RAMECC_DBGCTRL_ECCELOG_Pos)) /* Assigment of value for ECCELOG in the RAMECC_DBGCTRL register */
-#define RAMECC_DBGCTRL_Msk                    _UINT8_(0x03)                                        /* (RAMECC_DBGCTRL) Register Mask  */
-
-
-/* -------- RAMECC_ERRADDR : (RAMECC Offset: 0x04) ( R/ 32) Error Address -------- */
-#define RAMECC_ERRADDR_RESETVALUE             _UINT32_(0x00)                                       /*  (RAMECC_ERRADDR) Error Address  Reset Value */
-
-#define RAMECC_ERRADDR_ERRADDR_Pos            _UINT32_(0)                                          /* (RAMECC_ERRADDR) Error Address Position */
-#define RAMECC_ERRADDR_ERRADDR_Msk            (_UINT32_(0x1FFFF) << RAMECC_ERRADDR_ERRADDR_Pos)    /* (RAMECC_ERRADDR) Error Address Mask */
-#define RAMECC_ERRADDR_ERRADDR(value)         (RAMECC_ERRADDR_ERRADDR_Msk & (_UINT32_(value) << RAMECC_ERRADDR_ERRADDR_Pos)) /* Assigment of value for ERRADDR in the RAMECC_ERRADDR register */
-#define RAMECC_ERRADDR_Msk                    _UINT32_(0x0001FFFF)                                 /* (RAMECC_ERRADDR) Register Mask  */
-
 
 /* -------- RAMECC_INTENCLR : (RAMECC Offset: 0x00) (R/W 8) Interrupt Enable Clear -------- */
 #define RAMECC_INTENCLR_RESETVALUE            _UINT8_(0x00)                                        /*  (RAMECC_INTENCLR) Interrupt Enable Clear  Reset Value */
@@ -94,13 +73,34 @@
 #define RAMECC_STATUS_Msk                     _UINT8_(0x01)                                        /* (RAMECC_STATUS) Register Mask  */
 
 
+/* -------- RAMECC_ERRADDR : (RAMECC Offset: 0x04) ( R/ 32) Error Address -------- */
+#define RAMECC_ERRADDR_RESETVALUE             _UINT32_(0x00)                                       /*  (RAMECC_ERRADDR) Error Address  Reset Value */
+
+#define RAMECC_ERRADDR_ERRADDR_Pos            _UINT32_(0)                                          /* (RAMECC_ERRADDR) Error Address Position */
+#define RAMECC_ERRADDR_ERRADDR_Msk            (_UINT32_(0x1FFFF) << RAMECC_ERRADDR_ERRADDR_Pos)    /* (RAMECC_ERRADDR) Error Address Mask */
+#define RAMECC_ERRADDR_ERRADDR(value)         (RAMECC_ERRADDR_ERRADDR_Msk & (_UINT32_(value) << RAMECC_ERRADDR_ERRADDR_Pos)) /* Assigment of value for ERRADDR in the RAMECC_ERRADDR register */
+#define RAMECC_ERRADDR_Msk                    _UINT32_(0x0001FFFF)                                 /* (RAMECC_ERRADDR) Register Mask  */
+
+
+/* -------- RAMECC_DBGCTRL : (RAMECC Offset: 0x0F) (R/W 8) Debug Control -------- */
+#define RAMECC_DBGCTRL_RESETVALUE             _UINT8_(0x00)                                        /*  (RAMECC_DBGCTRL) Debug Control  Reset Value */
+
+#define RAMECC_DBGCTRL_ECCDIS_Pos             _UINT8_(0)                                           /* (RAMECC_DBGCTRL) ECC Disable Position */
+#define RAMECC_DBGCTRL_ECCDIS_Msk             (_UINT8_(0x1) << RAMECC_DBGCTRL_ECCDIS_Pos)          /* (RAMECC_DBGCTRL) ECC Disable Mask */
+#define RAMECC_DBGCTRL_ECCDIS(value)          (RAMECC_DBGCTRL_ECCDIS_Msk & (_UINT8_(value) << RAMECC_DBGCTRL_ECCDIS_Pos)) /* Assigment of value for ECCDIS in the RAMECC_DBGCTRL register */
+#define RAMECC_DBGCTRL_ECCELOG_Pos            _UINT8_(1)                                           /* (RAMECC_DBGCTRL) ECC Error Log Position */
+#define RAMECC_DBGCTRL_ECCELOG_Msk            (_UINT8_(0x1) << RAMECC_DBGCTRL_ECCELOG_Pos)         /* (RAMECC_DBGCTRL) ECC Error Log Mask */
+#define RAMECC_DBGCTRL_ECCELOG(value)         (RAMECC_DBGCTRL_ECCELOG_Msk & (_UINT8_(value) << RAMECC_DBGCTRL_ECCELOG_Pos)) /* Assigment of value for ECCELOG in the RAMECC_DBGCTRL register */
+#define RAMECC_DBGCTRL_Msk                    _UINT8_(0x03)                                        /* (RAMECC_DBGCTRL) Register Mask  */
+
+
 /** \brief RAMECC register offsets definitions */
-#define RAMECC_DBGCTRL_REG_OFST        _UINT32_(0x0F)      /* (RAMECC_DBGCTRL) Debug Control Offset */
-#define RAMECC_ERRADDR_REG_OFST        _UINT32_(0x04)      /* (RAMECC_ERRADDR) Error Address Offset */
 #define RAMECC_INTENCLR_REG_OFST       _UINT32_(0x00)      /* (RAMECC_INTENCLR) Interrupt Enable Clear Offset */
 #define RAMECC_INTENSET_REG_OFST       _UINT32_(0x01)      /* (RAMECC_INTENSET) Interrupt Enable Set Offset */
 #define RAMECC_INTFLAG_REG_OFST        _UINT32_(0x02)      /* (RAMECC_INTFLAG) Interrupt Flag Offset */
 #define RAMECC_STATUS_REG_OFST         _UINT32_(0x03)      /* (RAMECC_STATUS) Status Offset */
+#define RAMECC_ERRADDR_REG_OFST        _UINT32_(0x04)      /* (RAMECC_ERRADDR) Error Address Offset */
+#define RAMECC_DBGCTRL_REG_OFST        _UINT32_(0x0F)      /* (RAMECC_DBGCTRL) Debug Control Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief RAMECC register API structure */

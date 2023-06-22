@@ -1,7 +1,7 @@
 /*
  * Component description for DAC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_DAC_COMPONENT_H_
 #define _PIC32CXSG61_DAC_COMPONENT_H_
 
@@ -58,60 +58,6 @@
 #define DAC_CTRLB_REFSEL_VREFAB               (DAC_CTRLB_REFSEL_VREFAB_Val << DAC_CTRLB_REFSEL_Pos) /* (DAC_CTRLB) External reference buffered Position  */
 #define DAC_CTRLB_REFSEL_INTREF               (DAC_CTRLB_REFSEL_INTREF_Val << DAC_CTRLB_REFSEL_Pos) /* (DAC_CTRLB) Internal bandgap reference Position  */
 #define DAC_CTRLB_Msk                         _UINT8_(0x07)                                        /* (DAC_CTRLB) Register Mask  */
-
-
-/* -------- DAC_DACCTRL : (DAC Offset: 0x0C) (R/W 16) DAC n Control -------- */
-#define DAC_DACCTRL_RESETVALUE                _UINT16_(0x00)                                       /*  (DAC_DACCTRL) DAC n Control  Reset Value */
-
-#define DAC_DACCTRL_LEFTADJ_Pos               _UINT16_(0)                                          /* (DAC_DACCTRL) Left Adjusted Data Position */
-#define DAC_DACCTRL_LEFTADJ_Msk               (_UINT16_(0x1) << DAC_DACCTRL_LEFTADJ_Pos)           /* (DAC_DACCTRL) Left Adjusted Data Mask */
-#define DAC_DACCTRL_LEFTADJ(value)            (DAC_DACCTRL_LEFTADJ_Msk & (_UINT16_(value) << DAC_DACCTRL_LEFTADJ_Pos)) /* Assigment of value for LEFTADJ in the DAC_DACCTRL register */
-#define DAC_DACCTRL_ENABLE_Pos                _UINT16_(1)                                          /* (DAC_DACCTRL) Enable DAC0 Position */
-#define DAC_DACCTRL_ENABLE_Msk                (_UINT16_(0x1) << DAC_DACCTRL_ENABLE_Pos)            /* (DAC_DACCTRL) Enable DAC0 Mask */
-#define DAC_DACCTRL_ENABLE(value)             (DAC_DACCTRL_ENABLE_Msk & (_UINT16_(value) << DAC_DACCTRL_ENABLE_Pos)) /* Assigment of value for ENABLE in the DAC_DACCTRL register */
-#define DAC_DACCTRL_CCTRL_Pos                 _UINT16_(2)                                          /* (DAC_DACCTRL) Current Control Position */
-#define DAC_DACCTRL_CCTRL_Msk                 (_UINT16_(0x3) << DAC_DACCTRL_CCTRL_Pos)             /* (DAC_DACCTRL) Current Control Mask */
-#define DAC_DACCTRL_CCTRL(value)              (DAC_DACCTRL_CCTRL_Msk & (_UINT16_(value) << DAC_DACCTRL_CCTRL_Pos)) /* Assigment of value for CCTRL in the DAC_DACCTRL register */
-#define   DAC_DACCTRL_CCTRL_CC100K_Val        _UINT16_(0x0)                                        /* (DAC_DACCTRL) 100kSPS  */
-#define   DAC_DACCTRL_CCTRL_CC1M_Val          _UINT16_(0x1)                                        /* (DAC_DACCTRL) 500kSPS  */
-#define   DAC_DACCTRL_CCTRL_CC12M_Val         _UINT16_(0x2)                                        /* (DAC_DACCTRL) 1MSPS  */
-#define DAC_DACCTRL_CCTRL_CC100K              (DAC_DACCTRL_CCTRL_CC100K_Val << DAC_DACCTRL_CCTRL_Pos) /* (DAC_DACCTRL) 100kSPS Position  */
-#define DAC_DACCTRL_CCTRL_CC1M                (DAC_DACCTRL_CCTRL_CC1M_Val << DAC_DACCTRL_CCTRL_Pos) /* (DAC_DACCTRL) 500kSPS Position  */
-#define DAC_DACCTRL_CCTRL_CC12M               (DAC_DACCTRL_CCTRL_CC12M_Val << DAC_DACCTRL_CCTRL_Pos) /* (DAC_DACCTRL) 1MSPS Position  */
-#define DAC_DACCTRL_RUNSTDBY_Pos              _UINT16_(6)                                          /* (DAC_DACCTRL) Run in Standby Position */
-#define DAC_DACCTRL_RUNSTDBY_Msk              (_UINT16_(0x1) << DAC_DACCTRL_RUNSTDBY_Pos)          /* (DAC_DACCTRL) Run in Standby Mask */
-#define DAC_DACCTRL_RUNSTDBY(value)           (DAC_DACCTRL_RUNSTDBY_Msk & (_UINT16_(value) << DAC_DACCTRL_RUNSTDBY_Pos)) /* Assigment of value for RUNSTDBY in the DAC_DACCTRL register */
-#define DAC_DACCTRL_DITHER_Pos                _UINT16_(7)                                          /* (DAC_DACCTRL) Dithering Mode Position */
-#define DAC_DACCTRL_DITHER_Msk                (_UINT16_(0x1) << DAC_DACCTRL_DITHER_Pos)            /* (DAC_DACCTRL) Dithering Mode Mask */
-#define DAC_DACCTRL_DITHER(value)             (DAC_DACCTRL_DITHER_Msk & (_UINT16_(value) << DAC_DACCTRL_DITHER_Pos)) /* Assigment of value for DITHER in the DAC_DACCTRL register */
-#define DAC_DACCTRL_Msk                       _UINT16_(0x00CF)                                     /* (DAC_DACCTRL) Register Mask  */
-
-
-/* -------- DAC_DATA : (DAC Offset: 0x10) ( /W 16) DAC n Data -------- */
-#define DAC_DATA_RESETVALUE                   _UINT16_(0x00)                                       /*  (DAC_DATA) DAC n Data  Reset Value */
-
-#define DAC_DATA_DATA_Pos                     _UINT16_(0)                                          /* (DAC_DATA) DAC0 Data Position */
-#define DAC_DATA_DATA_Msk                     (_UINT16_(0xFFFF) << DAC_DATA_DATA_Pos)              /* (DAC_DATA) DAC0 Data Mask */
-#define DAC_DATA_DATA(value)                  (DAC_DATA_DATA_Msk & (_UINT16_(value) << DAC_DATA_DATA_Pos)) /* Assigment of value for DATA in the DAC_DATA register */
-#define DAC_DATA_Msk                          _UINT16_(0xFFFF)                                     /* (DAC_DATA) Register Mask  */
-
-
-/* -------- DAC_DATABUF : (DAC Offset: 0x14) ( /W 16) DAC n Data Buffer -------- */
-#define DAC_DATABUF_RESETVALUE                _UINT16_(0x00)                                       /*  (DAC_DATABUF) DAC n Data Buffer  Reset Value */
-
-#define DAC_DATABUF_DATABUF_Pos               _UINT16_(0)                                          /* (DAC_DATABUF) DAC0 Data Buffer Position */
-#define DAC_DATABUF_DATABUF_Msk               (_UINT16_(0xFFFF) << DAC_DATABUF_DATABUF_Pos)        /* (DAC_DATABUF) DAC0 Data Buffer Mask */
-#define DAC_DATABUF_DATABUF(value)            (DAC_DATABUF_DATABUF_Msk & (_UINT16_(value) << DAC_DATABUF_DATABUF_Pos)) /* Assigment of value for DATABUF in the DAC_DATABUF register */
-#define DAC_DATABUF_Msk                       _UINT16_(0xFFFF)                                     /* (DAC_DATABUF) Register Mask  */
-
-
-/* -------- DAC_DBGCTRL : (DAC Offset: 0x18) (R/W 8) Debug Control -------- */
-#define DAC_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (DAC_DBGCTRL) Debug Control  Reset Value */
-
-#define DAC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (DAC_DBGCTRL) Debug Run Position */
-#define DAC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << DAC_DBGCTRL_DBGRUN_Pos)             /* (DAC_DBGCTRL) Debug Run Mask */
-#define DAC_DBGCTRL_DBGRUN(value)             (DAC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << DAC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the DAC_DBGCTRL register */
-#define DAC_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (DAC_DBGCTRL) Register Mask  */
 
 
 /* -------- DAC_EVCTRL : (DAC Offset: 0x02) (R/W 8) Event Control -------- */
@@ -273,9 +219,69 @@
 #define DAC_SYNCBUSY_DATABUF_Msk              (_UINT32_(0x3) << DAC_SYNCBUSY_DATABUF_Pos)          /* (DAC_SYNCBUSY Mask) DATABUF */
 #define DAC_SYNCBUSY_DATABUF(value)           (DAC_SYNCBUSY_DATABUF_Msk & (_UINT32_(value) << DAC_SYNCBUSY_DATABUF_Pos)) 
 
+/* -------- DAC_DACCTRL : (DAC Offset: 0x0C) (R/W 16) DAC n Control -------- */
+#define DAC_DACCTRL_RESETVALUE                _UINT16_(0x00)                                       /*  (DAC_DACCTRL) DAC n Control  Reset Value */
+
+#define DAC_DACCTRL_LEFTADJ_Pos               _UINT16_(0)                                          /* (DAC_DACCTRL) Left Adjusted Data Position */
+#define DAC_DACCTRL_LEFTADJ_Msk               (_UINT16_(0x1) << DAC_DACCTRL_LEFTADJ_Pos)           /* (DAC_DACCTRL) Left Adjusted Data Mask */
+#define DAC_DACCTRL_LEFTADJ(value)            (DAC_DACCTRL_LEFTADJ_Msk & (_UINT16_(value) << DAC_DACCTRL_LEFTADJ_Pos)) /* Assigment of value for LEFTADJ in the DAC_DACCTRL register */
+#define DAC_DACCTRL_ENABLE_Pos                _UINT16_(1)                                          /* (DAC_DACCTRL) Enable DAC0 Position */
+#define DAC_DACCTRL_ENABLE_Msk                (_UINT16_(0x1) << DAC_DACCTRL_ENABLE_Pos)            /* (DAC_DACCTRL) Enable DAC0 Mask */
+#define DAC_DACCTRL_ENABLE(value)             (DAC_DACCTRL_ENABLE_Msk & (_UINT16_(value) << DAC_DACCTRL_ENABLE_Pos)) /* Assigment of value for ENABLE in the DAC_DACCTRL register */
+#define DAC_DACCTRL_CCTRL_Pos                 _UINT16_(2)                                          /* (DAC_DACCTRL) Current Control Position */
+#define DAC_DACCTRL_CCTRL_Msk                 (_UINT16_(0x3) << DAC_DACCTRL_CCTRL_Pos)             /* (DAC_DACCTRL) Current Control Mask */
+#define DAC_DACCTRL_CCTRL(value)              (DAC_DACCTRL_CCTRL_Msk & (_UINT16_(value) << DAC_DACCTRL_CCTRL_Pos)) /* Assigment of value for CCTRL in the DAC_DACCTRL register */
+#define   DAC_DACCTRL_CCTRL_CC100K_Val        _UINT16_(0x0)                                        /* (DAC_DACCTRL) 100kSPS  */
+#define   DAC_DACCTRL_CCTRL_CC1M_Val          _UINT16_(0x1)                                        /* (DAC_DACCTRL) 500kSPS  */
+#define   DAC_DACCTRL_CCTRL_CC12M_Val         _UINT16_(0x2)                                        /* (DAC_DACCTRL) 1MSPS  */
+#define DAC_DACCTRL_CCTRL_CC100K              (DAC_DACCTRL_CCTRL_CC100K_Val << DAC_DACCTRL_CCTRL_Pos) /* (DAC_DACCTRL) 100kSPS Position  */
+#define DAC_DACCTRL_CCTRL_CC1M                (DAC_DACCTRL_CCTRL_CC1M_Val << DAC_DACCTRL_CCTRL_Pos) /* (DAC_DACCTRL) 500kSPS Position  */
+#define DAC_DACCTRL_CCTRL_CC12M               (DAC_DACCTRL_CCTRL_CC12M_Val << DAC_DACCTRL_CCTRL_Pos) /* (DAC_DACCTRL) 1MSPS Position  */
+#define DAC_DACCTRL_RUNSTDBY_Pos              _UINT16_(6)                                          /* (DAC_DACCTRL) Run in Standby Position */
+#define DAC_DACCTRL_RUNSTDBY_Msk              (_UINT16_(0x1) << DAC_DACCTRL_RUNSTDBY_Pos)          /* (DAC_DACCTRL) Run in Standby Mask */
+#define DAC_DACCTRL_RUNSTDBY(value)           (DAC_DACCTRL_RUNSTDBY_Msk & (_UINT16_(value) << DAC_DACCTRL_RUNSTDBY_Pos)) /* Assigment of value for RUNSTDBY in the DAC_DACCTRL register */
+#define DAC_DACCTRL_DITHER_Pos                _UINT16_(7)                                          /* (DAC_DACCTRL) Dithering Mode Position */
+#define DAC_DACCTRL_DITHER_Msk                (_UINT16_(0x1) << DAC_DACCTRL_DITHER_Pos)            /* (DAC_DACCTRL) Dithering Mode Mask */
+#define DAC_DACCTRL_DITHER(value)             (DAC_DACCTRL_DITHER_Msk & (_UINT16_(value) << DAC_DACCTRL_DITHER_Pos)) /* Assigment of value for DITHER in the DAC_DACCTRL register */
+#define DAC_DACCTRL_Msk                       _UINT16_(0x00CF)                                     /* (DAC_DACCTRL) Register Mask  */
+
+
+/* -------- DAC_DATA : (DAC Offset: 0x10) ( /W 16) DAC n Data -------- */
+#define DAC_DATA_RESETVALUE                   _UINT16_(0x00)                                       /*  (DAC_DATA) DAC n Data  Reset Value */
+
+#define DAC_DATA_DATA_Pos                     _UINT16_(0)                                          /* (DAC_DATA) DAC0 Data Position */
+#define DAC_DATA_DATA_Msk                     (_UINT16_(0xFFFF) << DAC_DATA_DATA_Pos)              /* (DAC_DATA) DAC0 Data Mask */
+#define DAC_DATA_DATA(value)                  (DAC_DATA_DATA_Msk & (_UINT16_(value) << DAC_DATA_DATA_Pos)) /* Assigment of value for DATA in the DAC_DATA register */
+#define DAC_DATA_Msk                          _UINT16_(0xFFFF)                                     /* (DAC_DATA) Register Mask  */
+
+
+/* -------- DAC_DATABUF : (DAC Offset: 0x14) ( /W 16) DAC n Data Buffer -------- */
+#define DAC_DATABUF_RESETVALUE                _UINT16_(0x00)                                       /*  (DAC_DATABUF) DAC n Data Buffer  Reset Value */
+
+#define DAC_DATABUF_DATABUF_Pos               _UINT16_(0)                                          /* (DAC_DATABUF) DAC0 Data Buffer Position */
+#define DAC_DATABUF_DATABUF_Msk               (_UINT16_(0xFFFF) << DAC_DATABUF_DATABUF_Pos)        /* (DAC_DATABUF) DAC0 Data Buffer Mask */
+#define DAC_DATABUF_DATABUF(value)            (DAC_DATABUF_DATABUF_Msk & (_UINT16_(value) << DAC_DATABUF_DATABUF_Pos)) /* Assigment of value for DATABUF in the DAC_DATABUF register */
+#define DAC_DATABUF_Msk                       _UINT16_(0xFFFF)                                     /* (DAC_DATABUF) Register Mask  */
+
+
+/* -------- DAC_DBGCTRL : (DAC Offset: 0x18) (R/W 8) Debug Control -------- */
+#define DAC_DBGCTRL_RESETVALUE                _UINT8_(0x00)                                        /*  (DAC_DBGCTRL) Debug Control  Reset Value */
+
+#define DAC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (DAC_DBGCTRL) Debug Run Position */
+#define DAC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << DAC_DBGCTRL_DBGRUN_Pos)             /* (DAC_DBGCTRL) Debug Run Mask */
+#define DAC_DBGCTRL_DBGRUN(value)             (DAC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << DAC_DBGCTRL_DBGRUN_Pos)) /* Assigment of value for DBGRUN in the DAC_DBGCTRL register */
+#define DAC_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (DAC_DBGCTRL) Register Mask  */
+
+
 /** \brief DAC register offsets definitions */
 #define DAC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (DAC_CTRLA) Control A Offset */
 #define DAC_CTRLB_REG_OFST             _UINT32_(0x01)      /* (DAC_CTRLB) Control B Offset */
+#define DAC_EVCTRL_REG_OFST            _UINT32_(0x02)      /* (DAC_EVCTRL) Event Control Offset */
+#define DAC_INTENCLR_REG_OFST          _UINT32_(0x04)      /* (DAC_INTENCLR) Interrupt Enable Clear Offset */
+#define DAC_INTENSET_REG_OFST          _UINT32_(0x05)      /* (DAC_INTENSET) Interrupt Enable Set Offset */
+#define DAC_INTFLAG_REG_OFST           _UINT32_(0x06)      /* (DAC_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define DAC_STATUS_REG_OFST            _UINT32_(0x07)      /* (DAC_STATUS) Status Offset */
+#define DAC_SYNCBUSY_REG_OFST          _UINT32_(0x08)      /* (DAC_SYNCBUSY) Synchronization Busy Offset */
 #define DAC_DACCTRL_REG_OFST           _UINT32_(0x0C)      /* (DAC_DACCTRL) DAC n Control Offset */
 #define DAC_DACCTRL0_REG_OFST          _UINT32_(0x0C)      /* (DAC_DACCTRL0) DAC n Control Offset */
 #define DAC_DACCTRL1_REG_OFST          _UINT32_(0x0E)      /* (DAC_DACCTRL1) DAC n Control Offset */
@@ -286,12 +292,6 @@
 #define DAC_DATABUF0_REG_OFST          _UINT32_(0x14)      /* (DAC_DATABUF0) DAC n Data Buffer Offset */
 #define DAC_DATABUF1_REG_OFST          _UINT32_(0x16)      /* (DAC_DATABUF1) DAC n Data Buffer Offset */
 #define DAC_DBGCTRL_REG_OFST           _UINT32_(0x18)      /* (DAC_DBGCTRL) Debug Control Offset */
-#define DAC_EVCTRL_REG_OFST            _UINT32_(0x02)      /* (DAC_EVCTRL) Event Control Offset */
-#define DAC_INTENCLR_REG_OFST          _UINT32_(0x04)      /* (DAC_INTENCLR) Interrupt Enable Clear Offset */
-#define DAC_INTENSET_REG_OFST          _UINT32_(0x05)      /* (DAC_INTENSET) Interrupt Enable Set Offset */
-#define DAC_INTFLAG_REG_OFST           _UINT32_(0x06)      /* (DAC_INTFLAG) Interrupt Flag Status and Clear Offset */
-#define DAC_STATUS_REG_OFST            _UINT32_(0x07)      /* (DAC_STATUS) Status Offset */
-#define DAC_SYNCBUSY_REG_OFST          _UINT32_(0x08)      /* (DAC_SYNCBUSY) Synchronization Busy Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief DAC register API structure */

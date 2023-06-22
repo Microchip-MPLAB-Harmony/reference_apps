@@ -1,7 +1,7 @@
 /*
  * Component description for PAC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,13 +20,33 @@
  *
  */
 
-/* file generated from device description version 2022-09-16T16:25:28Z */
+/* file generated from device description version 2023-03-17T09:48:59Z */
 #ifndef _PIC32CXSG61_PAC_COMPONENT_H_
 #define _PIC32CXSG61_PAC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR PAC                                          */
 /* ************************************************************************** */
+
+/* -------- PAC_WRCTRL : (PAC Offset: 0x00) (R/W 32) Write control -------- */
+#define PAC_WRCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (PAC_WRCTRL) Write control  Reset Value */
+
+#define PAC_WRCTRL_PERID_Pos                  _UINT32_(0)                                          /* (PAC_WRCTRL) Peripheral identifier Position */
+#define PAC_WRCTRL_PERID_Msk                  (_UINT32_(0xFFFF) << PAC_WRCTRL_PERID_Pos)           /* (PAC_WRCTRL) Peripheral identifier Mask */
+#define PAC_WRCTRL_PERID(value)               (PAC_WRCTRL_PERID_Msk & (_UINT32_(value) << PAC_WRCTRL_PERID_Pos)) /* Assigment of value for PERID in the PAC_WRCTRL register */
+#define PAC_WRCTRL_KEY_Pos                    _UINT32_(16)                                         /* (PAC_WRCTRL) Peripheral access control key Position */
+#define PAC_WRCTRL_KEY_Msk                    (_UINT32_(0xFF) << PAC_WRCTRL_KEY_Pos)               /* (PAC_WRCTRL) Peripheral access control key Mask */
+#define PAC_WRCTRL_KEY(value)                 (PAC_WRCTRL_KEY_Msk & (_UINT32_(value) << PAC_WRCTRL_KEY_Pos)) /* Assigment of value for KEY in the PAC_WRCTRL register */
+#define   PAC_WRCTRL_KEY_OFF_Val              _UINT32_(0x0)                                        /* (PAC_WRCTRL) No action  */
+#define   PAC_WRCTRL_KEY_CLR_Val              _UINT32_(0x1)                                        /* (PAC_WRCTRL) Clear protection  */
+#define   PAC_WRCTRL_KEY_SET_Val              _UINT32_(0x2)                                        /* (PAC_WRCTRL) Set protection  */
+#define   PAC_WRCTRL_KEY_SETLCK_Val           _UINT32_(0x3)                                        /* (PAC_WRCTRL) Set and lock protection  */
+#define PAC_WRCTRL_KEY_OFF                    (PAC_WRCTRL_KEY_OFF_Val << PAC_WRCTRL_KEY_Pos)       /* (PAC_WRCTRL) No action Position  */
+#define PAC_WRCTRL_KEY_CLR                    (PAC_WRCTRL_KEY_CLR_Val << PAC_WRCTRL_KEY_Pos)       /* (PAC_WRCTRL) Clear protection Position  */
+#define PAC_WRCTRL_KEY_SET                    (PAC_WRCTRL_KEY_SET_Val << PAC_WRCTRL_KEY_Pos)       /* (PAC_WRCTRL) Set protection Position  */
+#define PAC_WRCTRL_KEY_SETLCK                 (PAC_WRCTRL_KEY_SETLCK_Val << PAC_WRCTRL_KEY_Pos)    /* (PAC_WRCTRL) Set and lock protection Position  */
+#define PAC_WRCTRL_Msk                        _UINT32_(0x00FFFFFF)                                 /* (PAC_WRCTRL) Register Mask  */
+
 
 /* -------- PAC_EVCTRL : (PAC Offset: 0x04) (R/W 8) Event control -------- */
 #define PAC_EVCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (PAC_EVCTRL) Event control  Reset Value */
@@ -54,6 +74,63 @@
 #define PAC_INTENSET_ERR(value)               (PAC_INTENSET_ERR_Msk & (_UINT8_(value) << PAC_INTENSET_ERR_Pos)) /* Assigment of value for ERR in the PAC_INTENSET register */
 #define PAC_INTENSET_Msk                      _UINT8_(0x01)                                        /* (PAC_INTENSET) Register Mask  */
 
+
+/* -------- PAC_INTFLAGAHB : (PAC Offset: 0x10) (R/W 32) Bridge interrupt flag status -------- */
+#define PAC_INTFLAGAHB_RESETVALUE             _UINT32_(0x00)                                       /*  (PAC_INTFLAGAHB) Bridge interrupt flag status  Reset Value */
+
+#define PAC_INTFLAGAHB_FLASH_Pos              _UINT32_(0)                                          /* (PAC_INTFLAGAHB) FLASH Position */
+#define PAC_INTFLAGAHB_FLASH_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_FLASH_Pos)          /* (PAC_INTFLAGAHB) FLASH Mask */
+#define PAC_INTFLAGAHB_FLASH(value)           (PAC_INTFLAGAHB_FLASH_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_FLASH_Pos)) /* Assigment of value for FLASH in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_FLASH_ALT_Pos          _UINT32_(1)                                          /* (PAC_INTFLAGAHB) FLASH_ALT Position */
+#define PAC_INTFLAGAHB_FLASH_ALT_Msk          (_UINT32_(0x1) << PAC_INTFLAGAHB_FLASH_ALT_Pos)      /* (PAC_INTFLAGAHB) FLASH_ALT Mask */
+#define PAC_INTFLAGAHB_FLASH_ALT(value)       (PAC_INTFLAGAHB_FLASH_ALT_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_FLASH_ALT_Pos)) /* Assigment of value for FLASH_ALT in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_SEEPROM_Pos            _UINT32_(2)                                          /* (PAC_INTFLAGAHB) SEEPROM Position */
+#define PAC_INTFLAGAHB_SEEPROM_Msk            (_UINT32_(0x1) << PAC_INTFLAGAHB_SEEPROM_Pos)        /* (PAC_INTFLAGAHB) SEEPROM Mask */
+#define PAC_INTFLAGAHB_SEEPROM(value)         (PAC_INTFLAGAHB_SEEPROM_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SEEPROM_Pos)) /* Assigment of value for SEEPROM in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_RAMCM4S_Pos            _UINT32_(3)                                          /* (PAC_INTFLAGAHB) RAMCM4S Position */
+#define PAC_INTFLAGAHB_RAMCM4S_Msk            (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMCM4S_Pos)        /* (PAC_INTFLAGAHB) RAMCM4S Mask */
+#define PAC_INTFLAGAHB_RAMCM4S(value)         (PAC_INTFLAGAHB_RAMCM4S_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMCM4S_Pos)) /* Assigment of value for RAMCM4S in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_RAMPPPDSU_Pos          _UINT32_(4)                                          /* (PAC_INTFLAGAHB) RAMPPPDSU Position */
+#define PAC_INTFLAGAHB_RAMPPPDSU_Msk          (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMPPPDSU_Pos)      /* (PAC_INTFLAGAHB) RAMPPPDSU Mask */
+#define PAC_INTFLAGAHB_RAMPPPDSU(value)       (PAC_INTFLAGAHB_RAMPPPDSU_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMPPPDSU_Pos)) /* Assigment of value for RAMPPPDSU in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_RAMDMAWR_Pos           _UINT32_(5)                                          /* (PAC_INTFLAGAHB) RAMDMAWR Position */
+#define PAC_INTFLAGAHB_RAMDMAWR_Msk           (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMDMAWR_Pos)       /* (PAC_INTFLAGAHB) RAMDMAWR Mask */
+#define PAC_INTFLAGAHB_RAMDMAWR(value)        (PAC_INTFLAGAHB_RAMDMAWR_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMDMAWR_Pos)) /* Assigment of value for RAMDMAWR in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_RAMDMACICM_Pos         _UINT32_(6)                                          /* (PAC_INTFLAGAHB) RAMDMACICM Position */
+#define PAC_INTFLAGAHB_RAMDMACICM_Msk         (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMDMACICM_Pos)     /* (PAC_INTFLAGAHB) RAMDMACICM Mask */
+#define PAC_INTFLAGAHB_RAMDMACICM(value)      (PAC_INTFLAGAHB_RAMDMACICM_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMDMACICM_Pos)) /* Assigment of value for RAMDMACICM in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_HPB0_Pos               _UINT32_(7)                                          /* (PAC_INTFLAGAHB) HPB0 Position */
+#define PAC_INTFLAGAHB_HPB0_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB0_Pos)           /* (PAC_INTFLAGAHB) HPB0 Mask */
+#define PAC_INTFLAGAHB_HPB0(value)            (PAC_INTFLAGAHB_HPB0_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB0_Pos)) /* Assigment of value for HPB0 in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_HPB1_Pos               _UINT32_(8)                                          /* (PAC_INTFLAGAHB) HPB1 Position */
+#define PAC_INTFLAGAHB_HPB1_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB1_Pos)           /* (PAC_INTFLAGAHB) HPB1 Mask */
+#define PAC_INTFLAGAHB_HPB1(value)            (PAC_INTFLAGAHB_HPB1_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB1_Pos)) /* Assigment of value for HPB1 in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_HPB2_Pos               _UINT32_(9)                                          /* (PAC_INTFLAGAHB) HPB2 Position */
+#define PAC_INTFLAGAHB_HPB2_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB2_Pos)           /* (PAC_INTFLAGAHB) HPB2 Mask */
+#define PAC_INTFLAGAHB_HPB2(value)            (PAC_INTFLAGAHB_HPB2_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB2_Pos)) /* Assigment of value for HPB2 in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_HPB3_Pos               _UINT32_(10)                                         /* (PAC_INTFLAGAHB) HPB3 Position */
+#define PAC_INTFLAGAHB_HPB3_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB3_Pos)           /* (PAC_INTFLAGAHB) HPB3 Mask */
+#define PAC_INTFLAGAHB_HPB3(value)            (PAC_INTFLAGAHB_HPB3_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB3_Pos)) /* Assigment of value for HPB3 in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_PUKCC_Pos              _UINT32_(11)                                         /* (PAC_INTFLAGAHB) PUKCC Position */
+#define PAC_INTFLAGAHB_PUKCC_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_PUKCC_Pos)          /* (PAC_INTFLAGAHB) PUKCC Mask */
+#define PAC_INTFLAGAHB_PUKCC(value)           (PAC_INTFLAGAHB_PUKCC_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_PUKCC_Pos)) /* Assigment of value for PUKCC in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_SDHC0_Pos              _UINT32_(12)                                         /* (PAC_INTFLAGAHB) SDHC0 Position */
+#define PAC_INTFLAGAHB_SDHC0_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_SDHC0_Pos)          /* (PAC_INTFLAGAHB) SDHC0 Mask */
+#define PAC_INTFLAGAHB_SDHC0(value)           (PAC_INTFLAGAHB_SDHC0_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SDHC0_Pos)) /* Assigment of value for SDHC0 in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_SDHC1_Pos              _UINT32_(13)                                         /* (PAC_INTFLAGAHB) SDHC1 Position */
+#define PAC_INTFLAGAHB_SDHC1_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_SDHC1_Pos)          /* (PAC_INTFLAGAHB) SDHC1 Mask */
+#define PAC_INTFLAGAHB_SDHC1(value)           (PAC_INTFLAGAHB_SDHC1_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SDHC1_Pos)) /* Assigment of value for SDHC1 in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_QSPI_Pos               _UINT32_(14)                                         /* (PAC_INTFLAGAHB) QSPI Position */
+#define PAC_INTFLAGAHB_QSPI_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_QSPI_Pos)           /* (PAC_INTFLAGAHB) QSPI Mask */
+#define PAC_INTFLAGAHB_QSPI(value)            (PAC_INTFLAGAHB_QSPI_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_QSPI_Pos)) /* Assigment of value for QSPI in the PAC_INTFLAGAHB register */
+#define PAC_INTFLAGAHB_Msk                    _UINT32_(0x00007FFF)                                 /* (PAC_INTFLAGAHB) Register Mask  */
+
+#define PAC_INTFLAGAHB_HPB_Pos                _UINT32_(7)                                          /* (PAC_INTFLAGAHB Position) HPBx */
+#define PAC_INTFLAGAHB_HPB_Msk                (_UINT32_(0xF) << PAC_INTFLAGAHB_HPB_Pos)            /* (PAC_INTFLAGAHB Mask) HPB */
+#define PAC_INTFLAGAHB_HPB(value)             (PAC_INTFLAGAHB_HPB_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB_Pos)) 
+#define PAC_INTFLAGAHB_SDHC_Pos               _UINT32_(12)                                         /* (PAC_INTFLAGAHB Position) SDHCx */
+#define PAC_INTFLAGAHB_SDHC_Msk               (_UINT32_(0x3) << PAC_INTFLAGAHB_SDHC_Pos)           /* (PAC_INTFLAGAHB Mask) SDHC */
+#define PAC_INTFLAGAHB_SDHC(value)            (PAC_INTFLAGAHB_SDHC_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SDHC_Pos)) 
 
 /* -------- PAC_INTFLAGA : (PAC Offset: 0x14) (R/W 32) Peripheral interrupt flag status - Bridge A -------- */
 #define PAC_INTFLAGA_RESETVALUE               _UINT32_(0x00)                                       /*  (PAC_INTFLAGA) Peripheral interrupt flag status - Bridge A  Reset Value */
@@ -114,63 +191,6 @@
 #define PAC_INTFLAGA_TC_Pos                   _UINT32_(14)                                         /* (PAC_INTFLAGA Position) TCx */
 #define PAC_INTFLAGA_TC_Msk                   (_UINT32_(0x3) << PAC_INTFLAGA_TC_Pos)               /* (PAC_INTFLAGA Mask) TC */
 #define PAC_INTFLAGA_TC(value)                (PAC_INTFLAGA_TC_Msk & (_UINT32_(value) << PAC_INTFLAGA_TC_Pos)) 
-
-/* -------- PAC_INTFLAGAHB : (PAC Offset: 0x10) (R/W 32) Bridge interrupt flag status -------- */
-#define PAC_INTFLAGAHB_RESETVALUE             _UINT32_(0x00)                                       /*  (PAC_INTFLAGAHB) Bridge interrupt flag status  Reset Value */
-
-#define PAC_INTFLAGAHB_FLASH_Pos              _UINT32_(0)                                          /* (PAC_INTFLAGAHB) FLASH Position */
-#define PAC_INTFLAGAHB_FLASH_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_FLASH_Pos)          /* (PAC_INTFLAGAHB) FLASH Mask */
-#define PAC_INTFLAGAHB_FLASH(value)           (PAC_INTFLAGAHB_FLASH_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_FLASH_Pos)) /* Assigment of value for FLASH in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_FLASH_ALT_Pos          _UINT32_(1)                                          /* (PAC_INTFLAGAHB) FLASH_ALT Position */
-#define PAC_INTFLAGAHB_FLASH_ALT_Msk          (_UINT32_(0x1) << PAC_INTFLAGAHB_FLASH_ALT_Pos)      /* (PAC_INTFLAGAHB) FLASH_ALT Mask */
-#define PAC_INTFLAGAHB_FLASH_ALT(value)       (PAC_INTFLAGAHB_FLASH_ALT_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_FLASH_ALT_Pos)) /* Assigment of value for FLASH_ALT in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_SEEPROM_Pos            _UINT32_(2)                                          /* (PAC_INTFLAGAHB) SEEPROM Position */
-#define PAC_INTFLAGAHB_SEEPROM_Msk            (_UINT32_(0x1) << PAC_INTFLAGAHB_SEEPROM_Pos)        /* (PAC_INTFLAGAHB) SEEPROM Mask */
-#define PAC_INTFLAGAHB_SEEPROM(value)         (PAC_INTFLAGAHB_SEEPROM_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SEEPROM_Pos)) /* Assigment of value for SEEPROM in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_RAMCM4S_Pos            _UINT32_(3)                                          /* (PAC_INTFLAGAHB) RAMCM4S Position */
-#define PAC_INTFLAGAHB_RAMCM4S_Msk            (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMCM4S_Pos)        /* (PAC_INTFLAGAHB) RAMCM4S Mask */
-#define PAC_INTFLAGAHB_RAMCM4S(value)         (PAC_INTFLAGAHB_RAMCM4S_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMCM4S_Pos)) /* Assigment of value for RAMCM4S in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_RAMPPPDSU_Pos          _UINT32_(4)                                          /* (PAC_INTFLAGAHB) RAMPPPDSU Position */
-#define PAC_INTFLAGAHB_RAMPPPDSU_Msk          (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMPPPDSU_Pos)      /* (PAC_INTFLAGAHB) RAMPPPDSU Mask */
-#define PAC_INTFLAGAHB_RAMPPPDSU(value)       (PAC_INTFLAGAHB_RAMPPPDSU_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMPPPDSU_Pos)) /* Assigment of value for RAMPPPDSU in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_RAMDMAWR_Pos           _UINT32_(5)                                          /* (PAC_INTFLAGAHB) RAMDMAWR Position */
-#define PAC_INTFLAGAHB_RAMDMAWR_Msk           (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMDMAWR_Pos)       /* (PAC_INTFLAGAHB) RAMDMAWR Mask */
-#define PAC_INTFLAGAHB_RAMDMAWR(value)        (PAC_INTFLAGAHB_RAMDMAWR_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMDMAWR_Pos)) /* Assigment of value for RAMDMAWR in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_RAMDMACICM_Pos         _UINT32_(6)                                          /* (PAC_INTFLAGAHB) RAMDMACICM Position */
-#define PAC_INTFLAGAHB_RAMDMACICM_Msk         (_UINT32_(0x1) << PAC_INTFLAGAHB_RAMDMACICM_Pos)     /* (PAC_INTFLAGAHB) RAMDMACICM Mask */
-#define PAC_INTFLAGAHB_RAMDMACICM(value)      (PAC_INTFLAGAHB_RAMDMACICM_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_RAMDMACICM_Pos)) /* Assigment of value for RAMDMACICM in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_HPB0_Pos               _UINT32_(7)                                          /* (PAC_INTFLAGAHB) HPB0 Position */
-#define PAC_INTFLAGAHB_HPB0_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB0_Pos)           /* (PAC_INTFLAGAHB) HPB0 Mask */
-#define PAC_INTFLAGAHB_HPB0(value)            (PAC_INTFLAGAHB_HPB0_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB0_Pos)) /* Assigment of value for HPB0 in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_HPB1_Pos               _UINT32_(8)                                          /* (PAC_INTFLAGAHB) HPB1 Position */
-#define PAC_INTFLAGAHB_HPB1_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB1_Pos)           /* (PAC_INTFLAGAHB) HPB1 Mask */
-#define PAC_INTFLAGAHB_HPB1(value)            (PAC_INTFLAGAHB_HPB1_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB1_Pos)) /* Assigment of value for HPB1 in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_HPB2_Pos               _UINT32_(9)                                          /* (PAC_INTFLAGAHB) HPB2 Position */
-#define PAC_INTFLAGAHB_HPB2_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB2_Pos)           /* (PAC_INTFLAGAHB) HPB2 Mask */
-#define PAC_INTFLAGAHB_HPB2(value)            (PAC_INTFLAGAHB_HPB2_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB2_Pos)) /* Assigment of value for HPB2 in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_HPB3_Pos               _UINT32_(10)                                         /* (PAC_INTFLAGAHB) HPB3 Position */
-#define PAC_INTFLAGAHB_HPB3_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_HPB3_Pos)           /* (PAC_INTFLAGAHB) HPB3 Mask */
-#define PAC_INTFLAGAHB_HPB3(value)            (PAC_INTFLAGAHB_HPB3_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB3_Pos)) /* Assigment of value for HPB3 in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_PUKCC_Pos              _UINT32_(11)                                         /* (PAC_INTFLAGAHB) PUKCC Position */
-#define PAC_INTFLAGAHB_PUKCC_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_PUKCC_Pos)          /* (PAC_INTFLAGAHB) PUKCC Mask */
-#define PAC_INTFLAGAHB_PUKCC(value)           (PAC_INTFLAGAHB_PUKCC_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_PUKCC_Pos)) /* Assigment of value for PUKCC in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_SDHC0_Pos              _UINT32_(12)                                         /* (PAC_INTFLAGAHB) SDHC0 Position */
-#define PAC_INTFLAGAHB_SDHC0_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_SDHC0_Pos)          /* (PAC_INTFLAGAHB) SDHC0 Mask */
-#define PAC_INTFLAGAHB_SDHC0(value)           (PAC_INTFLAGAHB_SDHC0_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SDHC0_Pos)) /* Assigment of value for SDHC0 in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_SDHC1_Pos              _UINT32_(13)                                         /* (PAC_INTFLAGAHB) SDHC1 Position */
-#define PAC_INTFLAGAHB_SDHC1_Msk              (_UINT32_(0x1) << PAC_INTFLAGAHB_SDHC1_Pos)          /* (PAC_INTFLAGAHB) SDHC1 Mask */
-#define PAC_INTFLAGAHB_SDHC1(value)           (PAC_INTFLAGAHB_SDHC1_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SDHC1_Pos)) /* Assigment of value for SDHC1 in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_QSPI_Pos               _UINT32_(14)                                         /* (PAC_INTFLAGAHB) QSPI Position */
-#define PAC_INTFLAGAHB_QSPI_Msk               (_UINT32_(0x1) << PAC_INTFLAGAHB_QSPI_Pos)           /* (PAC_INTFLAGAHB) QSPI Mask */
-#define PAC_INTFLAGAHB_QSPI(value)            (PAC_INTFLAGAHB_QSPI_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_QSPI_Pos)) /* Assigment of value for QSPI in the PAC_INTFLAGAHB register */
-#define PAC_INTFLAGAHB_Msk                    _UINT32_(0x00007FFF)                                 /* (PAC_INTFLAGAHB) Register Mask  */
-
-#define PAC_INTFLAGAHB_HPB_Pos                _UINT32_(7)                                          /* (PAC_INTFLAGAHB Position) HPBx */
-#define PAC_INTFLAGAHB_HPB_Msk                (_UINT32_(0xF) << PAC_INTFLAGAHB_HPB_Pos)            /* (PAC_INTFLAGAHB Mask) HPB */
-#define PAC_INTFLAGAHB_HPB(value)             (PAC_INTFLAGAHB_HPB_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_HPB_Pos)) 
-#define PAC_INTFLAGAHB_SDHC_Pos               _UINT32_(12)                                         /* (PAC_INTFLAGAHB Position) SDHCx */
-#define PAC_INTFLAGAHB_SDHC_Msk               (_UINT32_(0x3) << PAC_INTFLAGAHB_SDHC_Pos)           /* (PAC_INTFLAGAHB Mask) SDHC */
-#define PAC_INTFLAGAHB_SDHC(value)            (PAC_INTFLAGAHB_SDHC_Msk & (_UINT32_(value) << PAC_INTFLAGAHB_SDHC_Pos)) 
 
 /* -------- PAC_INTFLAGB : (PAC Offset: 0x18) (R/W 32) Peripheral interrupt flag status - Bridge B -------- */
 #define PAC_INTFLAGB_RESETVALUE               _UINT32_(0x00)                                       /*  (PAC_INTFLAGB) Peripheral interrupt flag status - Bridge B  Reset Value */
@@ -574,32 +594,13 @@
 #define PAC_STATUSD_ADC_Msk                   (_UINT32_(0x3) << PAC_STATUSD_ADC_Pos)               /* (PAC_STATUSD Mask) ADC */
 #define PAC_STATUSD_ADC(value)                (PAC_STATUSD_ADC_Msk & (_UINT32_(value) << PAC_STATUSD_ADC_Pos)) 
 
-/* -------- PAC_WRCTRL : (PAC Offset: 0x00) (R/W 32) Write control -------- */
-#define PAC_WRCTRL_RESETVALUE                 _UINT32_(0x00)                                       /*  (PAC_WRCTRL) Write control  Reset Value */
-
-#define PAC_WRCTRL_PERID_Pos                  _UINT32_(0)                                          /* (PAC_WRCTRL) Peripheral identifier Position */
-#define PAC_WRCTRL_PERID_Msk                  (_UINT32_(0xFFFF) << PAC_WRCTRL_PERID_Pos)           /* (PAC_WRCTRL) Peripheral identifier Mask */
-#define PAC_WRCTRL_PERID(value)               (PAC_WRCTRL_PERID_Msk & (_UINT32_(value) << PAC_WRCTRL_PERID_Pos)) /* Assigment of value for PERID in the PAC_WRCTRL register */
-#define PAC_WRCTRL_KEY_Pos                    _UINT32_(16)                                         /* (PAC_WRCTRL) Peripheral access control key Position */
-#define PAC_WRCTRL_KEY_Msk                    (_UINT32_(0xFF) << PAC_WRCTRL_KEY_Pos)               /* (PAC_WRCTRL) Peripheral access control key Mask */
-#define PAC_WRCTRL_KEY(value)                 (PAC_WRCTRL_KEY_Msk & (_UINT32_(value) << PAC_WRCTRL_KEY_Pos)) /* Assigment of value for KEY in the PAC_WRCTRL register */
-#define   PAC_WRCTRL_KEY_OFF_Val              _UINT32_(0x0)                                        /* (PAC_WRCTRL) No action  */
-#define   PAC_WRCTRL_KEY_CLR_Val              _UINT32_(0x1)                                        /* (PAC_WRCTRL) Clear protection  */
-#define   PAC_WRCTRL_KEY_SET_Val              _UINT32_(0x2)                                        /* (PAC_WRCTRL) Set protection  */
-#define   PAC_WRCTRL_KEY_SETLCK_Val           _UINT32_(0x3)                                        /* (PAC_WRCTRL) Set and lock protection  */
-#define PAC_WRCTRL_KEY_OFF                    (PAC_WRCTRL_KEY_OFF_Val << PAC_WRCTRL_KEY_Pos)       /* (PAC_WRCTRL) No action Position  */
-#define PAC_WRCTRL_KEY_CLR                    (PAC_WRCTRL_KEY_CLR_Val << PAC_WRCTRL_KEY_Pos)       /* (PAC_WRCTRL) Clear protection Position  */
-#define PAC_WRCTRL_KEY_SET                    (PAC_WRCTRL_KEY_SET_Val << PAC_WRCTRL_KEY_Pos)       /* (PAC_WRCTRL) Set protection Position  */
-#define PAC_WRCTRL_KEY_SETLCK                 (PAC_WRCTRL_KEY_SETLCK_Val << PAC_WRCTRL_KEY_Pos)    /* (PAC_WRCTRL) Set and lock protection Position  */
-#define PAC_WRCTRL_Msk                        _UINT32_(0x00FFFFFF)                                 /* (PAC_WRCTRL) Register Mask  */
-
-
 /** \brief PAC register offsets definitions */
+#define PAC_WRCTRL_REG_OFST            _UINT32_(0x00)      /* (PAC_WRCTRL) Write control Offset */
 #define PAC_EVCTRL_REG_OFST            _UINT32_(0x04)      /* (PAC_EVCTRL) Event control Offset */
 #define PAC_INTENCLR_REG_OFST          _UINT32_(0x08)      /* (PAC_INTENCLR) Interrupt enable clear Offset */
 #define PAC_INTENSET_REG_OFST          _UINT32_(0x09)      /* (PAC_INTENSET) Interrupt enable set Offset */
-#define PAC_INTFLAGA_REG_OFST          _UINT32_(0x14)      /* (PAC_INTFLAGA) Peripheral interrupt flag status - Bridge A Offset */
 #define PAC_INTFLAGAHB_REG_OFST        _UINT32_(0x10)      /* (PAC_INTFLAGAHB) Bridge interrupt flag status Offset */
+#define PAC_INTFLAGA_REG_OFST          _UINT32_(0x14)      /* (PAC_INTFLAGA) Peripheral interrupt flag status - Bridge A Offset */
 #define PAC_INTFLAGB_REG_OFST          _UINT32_(0x18)      /* (PAC_INTFLAGB) Peripheral interrupt flag status - Bridge B Offset */
 #define PAC_INTFLAGC_REG_OFST          _UINT32_(0x1C)      /* (PAC_INTFLAGC) Peripheral interrupt flag status - Bridge C Offset */
 #define PAC_INTFLAGD_REG_OFST          _UINT32_(0x20)      /* (PAC_INTFLAGD) Peripheral interrupt flag status - Bridge D Offset */
@@ -607,7 +608,6 @@
 #define PAC_STATUSB_REG_OFST           _UINT32_(0x38)      /* (PAC_STATUSB) Peripheral write protection status - Bridge B Offset */
 #define PAC_STATUSC_REG_OFST           _UINT32_(0x3C)      /* (PAC_STATUSC) Peripheral write protection status - Bridge C Offset */
 #define PAC_STATUSD_REG_OFST           _UINT32_(0x40)      /* (PAC_STATUSD) Peripheral write protection status - Bridge D Offset */
-#define PAC_WRCTRL_REG_OFST            _UINT32_(0x00)      /* (PAC_WRCTRL) Write control Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief PAC register API structure */
