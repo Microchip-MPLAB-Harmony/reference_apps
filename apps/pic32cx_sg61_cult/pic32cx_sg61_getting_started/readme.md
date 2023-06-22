@@ -79,7 +79,8 @@ The pre-built hex file can be programmed by following the below steps
 - Press the switch **SW 1** on the PIC32CX SG61 Curiosity Ultra Evaluation Board to change the
 periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds on every time user press the switch **SW 1** on the PIC32CX SG61 Curiosity Ultra Evaluation Board.
 
-- Below diagram shows the sample output log displayed on command prompt.
+- Below diagram shows the sample output log displayed on command prompt.  
+
      <img src = "images/output.png">
 
 ## Comments:
