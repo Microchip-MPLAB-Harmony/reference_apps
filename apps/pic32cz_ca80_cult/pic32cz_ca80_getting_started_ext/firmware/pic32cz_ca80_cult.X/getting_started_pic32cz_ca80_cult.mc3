@@ -39,7 +39,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -9454,7 +9454,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\initialization.c</file>
-         <hash>01fa9cc9b85791724bc7dccca8116b11b2025148249409507633abc70b3eb98c</hash>
+         <hash>449ccf8f4ef3ffb199ead8c5f3807fee4bb2ca9a3254e33f3fb3ee7392e2bbbd</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\peripheral\clock\plib_clock.h</file>
@@ -9694,7 +9694,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\definitions.h</file>
-         <hash>9608245cf7b5199ab061c2ee90e1036b11226b7442b7af9108a924e628cacf91</hash>
+         <hash>d1eebac4502b68526a9ee0c6179e6d09994b25b81d39dac137efab19f573b258</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CZ8110CA80208_DFP\instance\sercom2.h</file>
