@@ -10,7 +10,7 @@
 		"shortDescription": "This application demonstrates a CAN to USB bridge interface and CAN Host application for programming the connected node.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.05.0"
+			"semverRange": ">=6.10.0"
 		},
 		"compiler": [
 			{
@@ -20,11 +20,11 @@
 		],
 		"dfp": {
 			"name": "SAME54_DFP",
-			"semverRange": "^3.7.122"
+			"semverRange": "^3.8.234"
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.5.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

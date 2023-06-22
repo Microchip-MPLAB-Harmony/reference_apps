@@ -172,6 +172,7 @@ typedef struct
 // *****************************************************************************
 // *****************************************************************************
 APP_DATA                            appBootData;
+static uint8_t CACHE_ALIGN          can1MessageRAM[CAN1_MESSAGE_RAM_CONFIG_SIZE];
 
 bool app_boot_can_dataframe=0,app_boot_can_protocolheader=0,app_boot_crc_check=0;
 static uint32_t status = 0;
@@ -435,6 +436,38 @@ void APP_USB_WriteMessage(const char* message)
                             USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
     app_usbData.state = APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE;
 }
+
+void usb_send_data_C()
+{
+    app_usbData.numBytesWrite =  sprintf((char*)app_usbData.cdcWriteBuffer,"C");
+                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+                        &app_usbData.writeTransferHandle,
+                        app_usbData.cdcWriteBuffer, app_usbData.numBytesWrite,
+                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
+                    
+                    app_usbData.state = APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE;
+}
+
+void usb_send_data_X()
+{
+    app_usbData.numBytesWrite =  sprintf((char*)app_usbData.cdcWriteBuffer,"X");
+                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+                        &app_usbData.writeTransferHandle,
+                        app_usbData.cdcWriteBuffer, app_usbData.numBytesWrite,
+                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
+                    
+                    app_usbData.state = APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE;
+}
+
+/*Delay for USB data processing during programming mode*/
+void synchronization_delay()
+{
+   
+   for(uint32_t k =0; k<262140;k++)
+   __NOP(); 
+    
+}
+
 /* CAN DLC To data Length
 
    Summary:
@@ -907,6 +940,7 @@ void APP_USB_CAN_Programming()
                 {
                     appBootData.nBytesSent = appBootData.nPendingBytes;
                 }
+                synchronization_delay();
                 
                 nTxBytes = APP_Boot_ImageDataWrite((appBootData.appMemStartAddr + appBootData.nBytesWritten), appBootData.nBytesSent);
                
@@ -942,6 +976,7 @@ void APP_USB_CAN_Programming()
             {
                 if(app_boot_read == 1)
                 {
+                   synchronization_delay();
                     
                 for(int i = 0; i < app_usbData.numBytesRead; i++)
                     {
@@ -1032,8 +1067,7 @@ void APP_USB_CAN_Programming()
                     if (appBootData.state == APP_STATE_WAIT_UNLOCK_COMMAND_TRANSFER_COMPLETE)
                     {
                         appBootData.state = APP_STATE_SEND_DATA_COMMAND;
-                        strcpy(message_buffer,"X");
-                        APP_USB_WriteMessage(message_buffer);   
+                        usb_send_data_X();   
                     }
                     else if (appBootData.state == APP_STATE_WAIT_DATA_COMMAND_TRANSFER_COMPLETE)
                     {
@@ -1041,16 +1075,14 @@ void APP_USB_CAN_Programming()
                         if (appBootData.nBytesWritten < app_size)
                         {
                             appBootData.state = APP_STATE_SEND_DATA_COMMAND;
-                            strcpy(message_buffer,"X");
-                            APP_USB_WriteMessage(message_buffer);    
+                            usb_send_data_X();    
                         }
                         else
                         {
                             appBootData.state = APP_STATE_SEND_VERIFY_COMMAND; 
                             app_boot_can_protocolheader=0;
                             app_boot_crc_check=1;
-                            strcpy(message_buffer,"C");
-                            APP_USB_WriteMessage(message_buffer);
+                            usb_send_data_C();
                         }
                     }
                     else if(appBootData.state == APP_STATE_WAIT_VERIFY_COMMAND_TRANSFER_COMPLETE)
@@ -1395,6 +1427,8 @@ void APP_USB_Tasks(void) {
                 if(app_boot_program_initialize)
                 {        
                 APP_Boot_Initialize();
+                /* Set CAN1 Message RAM Configuration */
+                CAN1_MessageRAMConfigSet(can1MessageRAM);
                 app_boot_programming_enable =1;
                 app_boot_program_initialize =0; 
                 }

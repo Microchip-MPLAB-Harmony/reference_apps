@@ -27,6 +27,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
+extern bool app_boot_programming_enable;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -42,7 +43,9 @@ int main ( void )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
-        
+
+        if(app_boot_programming_enable == 1)
+            APP_USB_CAN_Programming();
     }
 
     /* Execution should not come here during normal operation */

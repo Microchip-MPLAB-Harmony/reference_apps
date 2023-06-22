@@ -52,8 +52,9 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
-extern bool app_boot_programming_enable;
+
 
 
 // *****************************************************************************
@@ -81,7 +82,7 @@ void SYS_Tasks ( void )
         /* USB Device layer tasks routine */ 
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
 
-        /* USB FS Driver Task Routine */ 
+    /* USB FS Driver Task Routine */ 
     DRV_USBFSV1_Tasks(sysObj.drvUSBFSV1Object);
 
 
@@ -92,10 +93,6 @@ void SYS_Tasks ( void )
 
     /* Call Application task APP_CAN. */
     APP_CAN_Tasks();
-    
-    
-    if(app_boot_programming_enable == 1)
-        APP_USB_CAN_Programming();
 
 
 
