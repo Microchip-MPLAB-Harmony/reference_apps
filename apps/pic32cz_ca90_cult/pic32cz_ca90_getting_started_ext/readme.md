@@ -74,7 +74,9 @@ The pre-built hex file can be programmed by following the below steps
 - Open the project (pic32cz_ca90_getting_started_ext\firmware\pic32cz_ca90_cult.X) in MPLAB X IDE
 - Ensure "PIC32CZ CA90 Curiosity Ultra" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
-- Follow the steps in "Running the Demo" section below
+- Follow the steps in "Running the Demo" section below  
+
+**Note**: If you see a programming error, Use the alternate programming option with [MPLAB ICD 4 In-Circuit Debugger](https://www.microchip.com/en-us/development-tool/dv164045)
 
 ## Running the Demo:
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button).

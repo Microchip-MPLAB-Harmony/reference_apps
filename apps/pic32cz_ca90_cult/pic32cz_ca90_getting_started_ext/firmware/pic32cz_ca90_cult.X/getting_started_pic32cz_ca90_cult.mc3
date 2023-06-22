@@ -39,7 +39,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -8802,7 +8802,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca90_cult\initialization.c</file>
-         <hash>01fa9cc9b85791724bc7dccca8116b11b2025148249409507633abc70b3eb98c</hash>
+         <hash>449ccf8f4ef3ffb199ead8c5f3807fee4bb2ca9a3254e33f3fb3ee7392e2bbbd</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CZ8110CA90208_DFP\component\adc.h</file>
@@ -8902,7 +8902,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca90_cult\definitions.h</file>
-         <hash>e7d0754d58a3347156f9ca32e657844de163468c925e5372dbda8309583e17e2</hash>
+         <hash>2b42ddec2181971683e3fd054db4e57c56208dda1b592444b55f81e63ecb8255</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca90_cult\pin_configurations.csv</file>
