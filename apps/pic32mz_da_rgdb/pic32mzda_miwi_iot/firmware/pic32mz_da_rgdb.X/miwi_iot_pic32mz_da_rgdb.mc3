@@ -91,7 +91,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -548,27 +548,27 @@
     &lt;GraphSettings canvasHeight=&quot;643&quot; canvasWidth=&quot;1048&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_DA_Radial_Board&quot; x=&quot;660&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;381&quot; y=&quot;485&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;ddr&quot; x=&quot;351&quot; y=&quot;16&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drv_i2c&quot; x=&quot;303&quot; y=&quot;150&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_disp_LCF0300633GGU00_432x432&quot; x=&quot;256&quot; y=&quot;335&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_disp_generic&quot; x=&quot;90&quot; y=&quot;239&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_generic_touch_controller&quot; x=&quot;460&quot; y=&quot;182&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_hal_le&quot; x=&quot;529&quot; y=&quot;126&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;gfx_legato&quot; x=&quot;658&quot; y=&quot;351&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;i2c2&quot; x=&quot;180&quot; y=&quot;149&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;le_gfx_driver_2dgpu&quot; x=&quot;458&quot; y=&quot;413&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;le_gfx_driver_glcd&quot; x=&quot;473&quot; y=&quot;307&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;legato_gfx_LCF0300633GGU00&quot; x=&quot;711&quot; y=&quot;112&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;stdio&quot; x=&quot;291&quot; y=&quot;584&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_input&quot; x=&quot;272&quot; y=&quot;70&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_time&quot; x=&quot;511&quot; y=&quot;485&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;uart1&quot; x=&quot;96&quot; y=&quot;441&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;uart4&quot; x=&quot;135&quot; y=&quot;569&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_DA_Radial_Board&quot; x=&quot;489&quot; y=&quot;18&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;205&quot; y=&quot;69&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;0&quot; y=&quot;133&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;0&quot; y=&quot;540&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;ddr&quot; x=&quot;202&quot; y=&quot;17&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;0&quot; y=&quot;19&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drv_i2c&quot; x=&quot;204&quot; y=&quot;159&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_disp_LCF0300633GGU00_432x432&quot; x=&quot;0&quot; y=&quot;348&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_disp_generic&quot; x=&quot;0&quot; y=&quot;249&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_generic_touch_controller&quot; x=&quot;367&quot; y=&quot;181&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_hal_le&quot; x=&quot;340&quot; y=&quot;15&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;gfx_legato&quot; x=&quot;436&quot; y=&quot;366&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;i2c2&quot; x=&quot;0&quot; y=&quot;174&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;le_gfx_driver_2dgpu&quot; x=&quot;206&quot; y=&quot;448&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;le_gfx_driver_glcd&quot; x=&quot;204&quot; y=&quot;348&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;legato_gfx_LCF0300633GGU00&quot; x=&quot;365&quot; y=&quot;83&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;stdio&quot; x=&quot;139&quot; y=&quot;468&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_input&quot; x=&quot;0&quot; y=&quot;54&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_time&quot; x=&quot;177&quot; y=&quot;536&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;uart1&quot; x=&quot;336&quot; y=&quot;553&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;uart4&quot; x=&quot;0&quot; y=&quot;452&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -1229,6 +1229,39 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_140_FUNCTION_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_140_FUNCTION_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;GPIO_RH3&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_140_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_140_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;GPIO&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_140_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_140_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DIGITAL&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_141_MODE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_141_MODE&quot;&gt;
@@ -1801,6 +1834,28 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_173_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_173_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;U1RX&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_173_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_173_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DIGITAL&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_17_DIR"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_17_DIR&quot;&gt;
@@ -1905,6 +1960,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_27_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;DIGITAL&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_28_CN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_28_CN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;True&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -2125,6 +2191,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_65_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;DIGITAL&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_69_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_69_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;U1TX&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -2642,6 +2719,50 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;CAN2_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CHANGE_NOTICE_F_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CHANGE_NOTICE_F_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CHANGE_NOTICE_F_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CHANGE_NOTICE_F_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CHANGE_NOTICE_F_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CHANGE_NOTICE_F_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;CHANGE_NOTICE_F_InterruptHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CHANGE_NOTICE_F_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CHANGE_NOTICE_F_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3210,6 +3331,39 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_114_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;UART1_TX_InterruptHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_123_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_123_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_123_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_123_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_123_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_123_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;CHANGE_NOTICE_F_InterruptHandler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4661,7 +4815,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_B_ANSEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;31779&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;32291&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4822,11 +4976,33 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_F_CNEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_F_CNEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;8192&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_F_CNPU"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_F_CNPU&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4096&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_F_CN_USED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_F_CN_USED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4870,7 +5046,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_H_ANSEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;2048&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;2056&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5029,6 +5205,22 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_PPS_INPUT_FUNCTION_4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_PPS_INPUT_FUNCTION_4&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;U1RX&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_PPS_INPUT_PIN_0"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_PPS_INPUT_PIN_0&quot;&gt;
@@ -5087,6 +5279,22 @@
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;32&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_PPS_INPUT_PIN_4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_PPS_INPUT_PIN_4&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;26&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5173,6 +5381,22 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_PPS_OUTPUT_FUNCTION_5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_PPS_OUTPUT_FUNCTION_5&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;26&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_PPS_OUTPUT_PIN_0"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_PPS_OUTPUT_PIN_0&quot;&gt;
@@ -5247,6 +5471,22 @@
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;RPB0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_PPS_OUTPUT_PIN_5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_PPS_OUTPUT_PIN_5&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;RPE5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5814,6 +6054,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="USE_PPS_INPUT_4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;USE_PPS_INPUT_4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="USE_PPS_OUTPUT_0"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;USE_PPS_OUTPUT_0&quot;&gt;
@@ -5861,6 +6112,17 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="USE_PPS_OUTPUT_4"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;USE_PPS_OUTPUT_4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="USE_PPS_OUTPUT_5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;USE_PPS_OUTPUT_5&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
@@ -6129,30 +6391,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_generic" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_generic&gt;
-  &lt;gfx_disp_generic dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;gfx_display&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_driver_glcd&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;Graphics&amp;amp;#160;Display&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;touch_panel&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_generic_touch_controller&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;touch_panel&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/gfx_disp_generic&gt;
+  &lt;gfx_disp_generic dnOrder=&quot;0&quot;/&gt;
 &lt;/gfx_disp_generic&gt;
 </value>
       </entry>
@@ -6564,7 +6803,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_generic_touch_controller&gt;
   &lt;gfx_generic_touch_controller dnOrder=&quot;0&quot; id=&quot;TouchHeight&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_generic_touch_controller&quot; value=&quot;272&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_generic_touch_controller&quot; value=&quot;480&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;480&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_generic_touch_controller&gt;
@@ -6734,7 +6973,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHeight&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;272&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;432&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;432&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6746,7 +6985,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHorzBackPorch&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;2&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;5&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6758,7 +6997,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHorzFrontPorch&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;2&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;5&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6770,7 +7009,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHorzPulseWidth&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;41&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;5&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6782,7 +7021,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayName&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;Generic Display&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;LCF0300633GGU00&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
 &lt;/gfx_hal_le&gt;
@@ -6804,7 +7043,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVertBackPorch&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;2&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;3&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6816,7 +7055,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVertFrontPorch&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;2&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;3&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6828,7 +7067,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVertPulseWidth&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;10&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;3&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6840,7 +7079,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayWidth&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;480&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;432&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;432&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
@@ -6896,7 +7135,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
   &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;gfx_display&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;gfx_disp_generic&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;gfx_disp_LCF0300633GGU00_432x432&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_hal_le&gt;
 &lt;/gfx_hal_le&gt;
@@ -7162,7 +7401,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_driver_glcd&gt;
   &lt;le_gfx_driver_glcd dnOrder=&quot;0&quot; id=&quot;DisplayHeight&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;272&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;432&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_driver_glcd&gt;
 &lt;/le_gfx_driver_glcd&gt;
@@ -7186,7 +7425,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_driver_glcd&gt;
   &lt;le_gfx_driver_glcd dnOrder=&quot;0&quot; id=&quot;DisplayWidth&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;480&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_driver_glcd&quot; value=&quot;432&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_driver_glcd&gt;
 &lt;/le_gfx_driver_glcd&gt;
@@ -8491,11 +8730,11 @@
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\interrupts.h</file>
-         <hash>86e0f57f68adf2a2b91e4ccb71a3072b51188014f927aeeefcb834238ad622dc</hash>
+         <hash>81a1c28aafc87fb599ea41bc87cd8cbd499aa0225ffe0e8add626b8b61127aae</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\peripheral\gpio\plib_gpio.c</file>
-         <hash>8095013f99a9f19b3bcfc670f997703165bc54197bc812ae454ed25d2fdff041</hash>
+         <hash>395e15508e52a00ca838b98c5335b7494e913fe4f7ed0eed269227980684f3cd</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\string\legato_string.c</file>
@@ -8503,11 +8742,11 @@
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\interrupts.c</file>
-         <hash>697f16cfbf68f7b14b110c6af3e2514f3fdf75099bc8420fe6f4bfcba3fc1638</hash>
+         <hash>8870ace3460eb456412b9d2715d52f109c653fe336592229d75400d9811f1298</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\driver\controller\glcd\drv_gfx_glcd.c</file>
-         <hash>70a0fecbaf2032c8f7783be416f3483ef5b28510cc8b9136dcd32ac067434880</hash>
+         <hash>f41b41265a23ae571707f4834c89390c1f77e926659301da7400ad86c7d4cba9</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\font\legato_rasterfont_liberationmono8.c</file>
@@ -8847,7 +9086,7 @@
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\peripheral\evic\plib_evic.c</file>
-         <hash>3304dff505bb29dbbdaf8f9ad8543e0b0ff42cc805bac09b33c2078512ea53f1</hash>
+         <hash>4926057700046e5974aaae7245b55c920dc772071fea726efe4c4905420b647a</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\widget\groupbox\legato_widget_groupbox.c</file>
@@ -9095,7 +9334,7 @@
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\definitions.h</file>
-         <hash>a43711558a88a6e718d4b164d5e4232a8b908059bcdc5c9f8b74fc81836b4ccb</hash>
+         <hash>2c8f6cbf857c1068893036e49198349d9c301b3857d6c2514d58e0c24a07bcb4</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\widget\rectangle\legato_widget_rectangle.h</file>
@@ -9479,7 +9718,7 @@
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\generated\le_gen_preprocess.c</file>
-         <hash>b46a09dbf8b3430c5bb32cec47e64b801a7e31d1175bd3442eaada450b1f5bb1</hash>
+         <hash>e15ab9288048b22b7a7cf3c2445eab61e2d26098a662026abcbc9a3de9e985c3</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\widget\button\legato_widget_button.c</file>
@@ -9527,7 +9766,7 @@
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\peripheral\gpio\plib_gpio.h</file>
-         <hash>a7435e304a293a4d5484d1b80ed440cba45392ad2714dab7e8cb273877054bc6</hash>
+         <hash>f4176d4437043b9c12f3c02a89d5285c045f15cbd474f77ef31535b4384d67cb</hash>
       </entry>
       <entry>
          <file>..\src\config\glcd_rgba8888_mxt_mzda_intddr_round\gfx\legato\widget\button\legato_widget_button.h</file>

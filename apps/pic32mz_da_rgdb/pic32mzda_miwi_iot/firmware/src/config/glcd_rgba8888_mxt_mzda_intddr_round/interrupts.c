@@ -71,6 +71,7 @@ void CORE_TIMER_Handler (void);
 void UART1_FAULT_Handler (void);
 void UART1_RX_Handler (void);
 void UART1_TX_Handler (void);
+void CHANGE_NOTICE_F_Handler (void);
 void I2C2_BUS_Handler (void);
 void I2C2_MASTER_Handler (void);
 void GLCD_Handler (void);
@@ -99,6 +100,11 @@ void __ISR(_UART1_RX_VECTOR, ipl1SRS) UART1_RX_Handler (void)
 void __ISR(_UART1_TX_VECTOR, ipl1SRS) UART1_TX_Handler (void)
 {
     UART1_TX_InterruptHandler();
+}
+
+void __ISR(_CHANGE_NOTICE_F_VECTOR, ipl1SRS) CHANGE_NOTICE_F_Handler (void)
+{
+    CHANGE_NOTICE_F_InterruptHandler();
 }
 
 void __ISR(_I2C2_BUS_VECTOR, ipl1SRS) I2C2_BUS_Handler (void)

@@ -4,14 +4,14 @@
 
 
 project: pic32mzda_miwi_iot
-creation_date: 2023-06-15T18:51:03.642+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-07-03T10:31:18.877+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.3.7
 mcc_core_version: v5.5.7
 mplabx_version: v6.10        # if MPLAB X plugin only
-harmony_version: v1.3.1
-compiler: XC32 (v4.21) 
+harmony_version: v1.3.2
+compiler: XC32 (v4.30) 
 
 modules:
     - {name: "core", version: "v3.13.0"}

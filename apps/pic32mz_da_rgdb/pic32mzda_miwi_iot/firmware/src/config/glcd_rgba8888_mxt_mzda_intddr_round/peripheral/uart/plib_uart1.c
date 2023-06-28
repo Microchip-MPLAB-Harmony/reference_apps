@@ -426,7 +426,17 @@ void __attribute__((used)) UART1_RX_InterruptHandler (void)
         IFS3CLR = _IFS3_U1RXIF_MASK;
 
         /* Check if the buffer is done */
-        if(rxProcessedSize >= uart1Obj.rxSize)
+        //if(rxProcessedSize >= uart1Obj.rxSize)
+
+        /* If the new recv message is start with '\0', just discard and recv again */
+        if ((((uint8_t*)uart1Obj.rxBuffer)[0] == '\0') && (uart1Obj.rxProcessedSize == 1))
+        {
+            uart1Obj.rxProcessedSize = 0;
+            return;
+        }
+
+        /* If the last is '\0', and the second last is '\r', need process this scenario:uart1Obj.rxBuffer[uart1Obj.rxProcessedSize-2] == '\r' */
+        if (((uint8_t*)uart1Obj.rxBuffer)[uart1Obj.rxProcessedSize-1] == '\r' || ((uint8_t*)uart1Obj.rxBuffer)[uart1Obj.rxProcessedSize-2] == '\r')
         {
             uart1Obj.rxBusyStatus = false;
 
