@@ -42,7 +42,7 @@
 
 #include "Snake.h"
 #include "app.h"
-#include "gfx\legato\generated\le_gen_init.h"
+#include "gfx/legato/generated/le_gen_init.h"
 
 uint8_t game_over_flag;
 

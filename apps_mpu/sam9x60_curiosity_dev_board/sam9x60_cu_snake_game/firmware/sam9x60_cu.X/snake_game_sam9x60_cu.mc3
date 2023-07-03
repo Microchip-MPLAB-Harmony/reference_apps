@@ -79,7 +79,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -9989,7 +9989,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>a0d5e1f213d6e721aea03bb6e6f7f097b5f910059c65e0fee63a6521295ebda9</hash>
+         <hash>ab630dc88856f2d4f5cced4f09140f93feb5498a9c7534aa9d93787f95cbc416</hash>
       </entry>
       <entry>
          <file>..\src\config\default\fault_handlers.c</file>
@@ -10613,7 +10613,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>51f749cb36383ebea00825e09860ba4feb98bdfc43fe3b829200529fd8c8e9c0</hash>
+         <hash>bae89fa15d738620a77c3fee28f4e0673b3dcf9eb6cac6ee57c846611d3e9dab</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.h</file>

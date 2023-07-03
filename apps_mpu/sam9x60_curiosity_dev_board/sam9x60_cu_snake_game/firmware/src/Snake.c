@@ -44,8 +44,8 @@
 #include "Snake.h"
 #include "gfx/legato/widget/legato_widget.h"
 #include <xc.h>
-#include "gfx\legato\generated\le_gen_init.h"
-#include "gfx\legato\memory\legato_memory.h"
+#include "gfx/legato/generated/le_gen_init.h"
+#include "gfx/legato/memory/legato_memory.h"
 
 leRectangleWidget* FOOD_RectangleWidget;      
 
