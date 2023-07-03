@@ -155,7 +155,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -11626,17 +11626,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="driverInitName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;driverInitName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;ExternalController&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="rtosMenu"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
   &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;rtosMenu&quot;&gt;
@@ -15004,12 +14993,12 @@
          <hash>026a28df76d0dee8704e7ee2d401314275e9c92013c8d6f8f743b92b28ac7f23</hash>
       </entry>
       <entry>
-         <file>..\src\config\same54_cult\driver\usb\usbfsv1\src\drv_usbfsv1_variant_mapping.h</file>
-         <hash>4791a107a178c09906283101cbfb381d75383e22001721f31662a5085fdd37dd</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\supc.h</file>
          <hash>6730e3f89988d74ace77c20b695069638d3e39fe996044191c914c3d45dde5e8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\same54_cult\driver\usb\usbfsv1\src\drv_usbfsv1_variant_mapping.h</file>
+         <hash>4791a107a178c09906283101cbfb381d75383e22001721f31662a5085fdd37dd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\cmcc.h</file>
@@ -15241,7 +15230,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\definitions.h</file>
-         <hash>f0a30fac1635e4714ec73e950f701728332fa186c3378573fbaa10c7b93b8c76</hash>
+         <hash>53b553eab5662e6dea885dd305ae06c9f0cb23f8e88fa916cefac431e92e4321</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\system\system_module.h</file>
@@ -15485,7 +15474,7 @@
       </entry>
       <entry>
          <file>..\src\config\same54_cult\configuration.h</file>
-         <hash>1788d16a7fd5d0cd797201ffce82da8abb4e34ef376351f5ad5bd758bc478ee0</hash>
+         <hash>a95406a714d3f2b7d0798fdd9d8710d35524409edf24a3383cbdb5d89c56a9f5</hash>
       </entry>
       <entry>
          <file>..\src\config\same54_cult\device_cache.h</file>
