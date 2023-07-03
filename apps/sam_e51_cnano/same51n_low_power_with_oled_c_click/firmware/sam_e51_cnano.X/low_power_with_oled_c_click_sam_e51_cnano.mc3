@@ -99,7 +99,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1039,7 +1039,7 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_hal_le&quot; x=&quot;318&quot; y=&quot;11&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_legato&quot; x=&quot;712&quot; y=&quot;260&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;le_gfx_driver_external&quot; x=&quot;487&quot; y=&quot;235&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;le_gfx_intf_spi4&quot; x=&quot;305&quot; y=&quot;240&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;le_gfx_intf_spi4&quot; x=&quot;303&quot; y=&quot;246&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;pm&quot; x=&quot;265&quot; y=&quot;434&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;rtc&quot; x=&quot;130&quot; y=&quot;354&quot;/&gt;
@@ -7153,17 +7153,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="driverInitName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;driverInitName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;ExternalController&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="rtosMenu"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
   &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;rtosMenu&quot;&gt;
@@ -9994,7 +9983,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\definitions.h</file>
-         <hash>14f1f107383895374b24797a9006439f36af544a8c36b30d0b9830d5a8ed69fc</hash>
+         <hash>622c1d6efe5927ffa624e5ae0f0ec5f9cc96248ec0a6dc52426e0106aa028b12</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\clock\plib_clock.h</file>
@@ -10854,7 +10843,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\initialization.c</file>
-         <hash>cf340b4999f26b5fd53df543561f3ccf3b45caae4aae23c1a39a460a815ba12f</hash>
+         <hash>b84f9c2c71f0c6f7fa41cbb6dde4e0033e1931e3e1bb43a3f94c69560449798d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\input\sys_input.h</file>
