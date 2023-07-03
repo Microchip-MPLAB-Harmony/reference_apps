@@ -37,6 +37,8 @@
 */
 // DOM-IGNORE-END
 #include "oled_c.h"
+#include "../../config/sam_e51_cnano/gfx/legato/generated/le_gen_assets.h"
+#include "../../config/sam_e51_cnano/gfx/legato/generated/screen/le_gen_screen_Screen0.h"
 
 leFixedString ctrStr;
 static leChar counterStr[15];
