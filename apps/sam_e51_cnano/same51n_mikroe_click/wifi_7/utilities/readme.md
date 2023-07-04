@@ -20,22 +20,16 @@ nav_order: 98
 ## <span style="color:blue"> *Complete the above highlighted step before proceeding further* </span>
 
 ## Running the utility
-- Download and extract [same51_winc_upgrader](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same51_winc_upgrader.zip
-) into utilities folder
-- Open command prompt and navigate to **"utilities/same51_winc_upgrader"**
-- The following command line will generate a device programming file winc1500_19.7.6.prog.
+- Navigate to **"<Your_Harmony_Framework_Path>\wireless_wifi\utilities\wifi\winc"** and open command prompt.
+- The following command line will create and program a firmware image.
 
-  **image_tool.exe -c winc1500_19.7.6\config.txt -o winc1500_19.7.6.prog -of prog**  
-
-- The file produced can be used to upgrade a WINC1500 to version 19.7.6 including the firmware, HTTP files and root
-certificates.
-- The following command line will program a WINC1500 device via the serial port   
-    **winc_programmer -p COM29 -d winc1500 -i winc1500_19.7.6.prog -if prog -w -r -pfw winc1500_19.7.6\firmware\programmer_firmware.bin**
+  **winc_flash_tool.cmd /p COM3 /d WINC1500/v 19.7.7 /e /x /i prog /w**
 
     **NOTE** : Respective device COM PORT should be selected in above command and all other serial terminal application should be closed
 - Wait till **verify passed** message comes up as shown below  
 <img src = "images/firmware_upg.png" align="middle">
 
 ### Revision:
+- v1.6.0 - Updated steps to upgrade ATWINC1510 firmware. Regenerated and Tested the application. 
 - v1.5.0 - Regenerated and tested application.
-- v1.4.0 released utility
+- v1.4.0 - Released utility.

@@ -71,7 +71,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -7310,7 +7310,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\initialization.c</file>
-         <hash>c624157278ca3b5f1ce57c26e5501c71a8ba5055767f5edeca045ec2ad8a0b13</hash>
+         <hash>bd9d8e9dcdf1d323010da256bc18aa2462b0ee34ecd75688ccd2c19be39d8573</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmdrv.h</file>
@@ -7350,7 +7350,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\definitions.h</file>
-         <hash>154177bfc4d90af63717ede97dea4975712835647f59e8dafce0d618585dcbb2</hash>
+         <hash>d058e0e6873c0a24242ccee903e64f2e66902a8f54dd228ae60012176ff993f7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\clock\plib_clock.h</file>
@@ -7454,7 +7454,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\configuration.h</file>
-         <hash>0498b304d3acb8bc495caed20cbe643e15e2df04a780f73737e0f90d44ca539f</hash>
+         <hash>c6a350f70d8a2390dfd3f9a9a8a434944909696bbae7b78936ea6c9ed73e4ad4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_powersave.c</file>
