@@ -565,6 +565,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
+    {TCPIP_MODULE_MAC_WINC,         0},                             // TCPIP_MODULE_MAC_WINC
 
 };
 

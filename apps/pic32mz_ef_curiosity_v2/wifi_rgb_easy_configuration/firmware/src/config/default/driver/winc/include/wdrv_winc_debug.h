@@ -156,10 +156,10 @@ typedef void (*WDRV_WINC_DEBUG_PRINT_CALLBACK)(const char*, ...);
 // Reference debug output channel printf-like function.
 extern WDRV_WINC_DEBUG_PRINT_CALLBACK pfWINCDebugPrintCb;
 #else
-#define WDRV_DBG_VERBOSE_PRINT(...)         do { _SYS_DEBUG_PRINT(SYS_ERROR_DEBUG, __VA_ARGS__); } while (0)
-#define WDRV_DBG_TRACE_PRINT(...)           do { _SYS_DEBUG_PRINT(SYS_ERROR_INFO, __VA_ARGS__); } while (0)
-#define WDRV_DBG_INFORM_PRINT(...)          do { _SYS_DEBUG_PRINT(SYS_ERROR_WARNING, __VA_ARGS__); } while (0)
-#define WDRV_DBG_ERROR_PRINT(...)           do { _SYS_DEBUG_PRINT(SYS_ERROR_ERROR, __VA_ARGS__); } while (0)
+#define WDRV_DBG_VERBOSE_PRINT(...)         do { SYS_DEBUG_PRINT(SYS_ERROR_DEBUG, __VA_ARGS__); } while (0)
+#define WDRV_DBG_TRACE_PRINT(...)           do { SYS_DEBUG_PRINT(SYS_ERROR_INFO, __VA_ARGS__); } while (0)
+#define WDRV_DBG_INFORM_PRINT(...)          do { SYS_DEBUG_PRINT(SYS_ERROR_WARNING, __VA_ARGS__); } while (0)
+#define WDRV_DBG_ERROR_PRINT(...)           do { SYS_DEBUG_PRINT(SYS_ERROR_ERROR, __VA_ARGS__); } while (0)
 
 #endif
 

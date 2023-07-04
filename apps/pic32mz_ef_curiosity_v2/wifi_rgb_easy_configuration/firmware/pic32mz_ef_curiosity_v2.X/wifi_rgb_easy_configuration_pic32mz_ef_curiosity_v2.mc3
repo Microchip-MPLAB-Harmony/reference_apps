@@ -219,7 +219,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -238,7 +238,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BASIC CONFIGURATION" name="harmonyGroupAttachments"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Attachments&gt;
   &lt;Attachments dnOrder=&quot;0&quot;&gt;
-    &lt;Attachment dnOrder=&quot;0&quot; id=&quot;NETCONFIG_MAC_Dependency&quot; namespace=&quot;tcpipNetConfig_0&quot;/&gt;
+    &lt;Attachment dnOrder=&quot;0&quot; id=&quot;NETCONFIG_MAC_Dependency&quot; namespace=&quot;tcpipNetConfig_0&quot; targetAttachmentID=&quot;drvWifiWinc:libdrvWincMac&quot; targetComponentID=&quot;DRIVER LAYER&quot;/&gt;
   &lt;/Attachments&gt;
 &lt;/Attachments&gt;
 </value>
@@ -267,7 +267,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DRIVER LAYER" name="harmonyGroupAttachments"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Attachments&gt;
   &lt;Attachments dnOrder=&quot;0&quot;&gt;
-    &lt;Attachment dnOrder=&quot;0&quot; id=&quot;libdrvWincMac&quot; namespace=&quot;drvWifiWinc&quot;/&gt;
+    &lt;Attachment dnOrder=&quot;0&quot; id=&quot;libdrvWincMac&quot; namespace=&quot;drvWifiWinc&quot; targetAttachmentID=&quot;tcpipNetConfig_0:NETCONFIG_MAC_Dependency&quot; targetComponentID=&quot;BASIC CONFIGURATION&quot;/&gt;
+    &lt;Attachment dnOrder=&quot;1&quot; id=&quot;libdrvWincMac&quot; namespace=&quot;drvWifiWinc&quot;/&gt;
   &lt;/Attachments&gt;
 &lt;/Attachments&gt;
 </value>
@@ -977,7 +978,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;360&quot; canvasWidth=&quot;516&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;491&quot; canvasWidth=&quot;598&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;APPLICATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipAnnounce&quot; x=&quot;155&quot; y=&quot;61&quot;/&gt;
@@ -991,16 +992,23 @@
     &lt;/ComponentGraph&gt;
     &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;420&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;241&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;sys_command&quot; x=&quot;432&quot; y=&quot;333&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;sys_console&quot; x=&quot;207&quot; y=&quot;160&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;sys_debug&quot; x=&quot;450&quot; y=&quot;179&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipCmd&quot; x=&quot;0&quot; y=&quot;64&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipNetConfig&quot; x=&quot;201&quot; y=&quot;13&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipStack&quot; x=&quot;442&quot; y=&quot;10&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_basic_config&quot; x=&quot;0&quot; y=&quot;11&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;uart6&quot; x=&quot;0&quot; y=&quot;180&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
     &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;DATA LINK LAYER&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;DRIVER LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvWifiWinc&quot; x=&quot;381&quot; y=&quot;85&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;drv_spi&quot; x=&quot;186&quot; y=&quot;132&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;spi3&quot; x=&quot;0&quot; y=&quot;143&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
     &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;NETWORK LAYER&quot;&gt;
@@ -1014,7 +1022,7 @@
     &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;TCP/IP STACK&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;23&quot; y=&quot;22&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;680&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;681&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DATA LINK LAYER&quot; x=&quot;30&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;DRIVER LAYER&quot; x=&quot;540&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;NETWORK LAYER&quot; x=&quot;380&quot; y=&quot;20&quot;/&gt;
@@ -1036,24 +1044,17 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core&quot; x=&quot;186&quot; y=&quot;7&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core_timer&quot; x=&quot;173&quot; y=&quot;125&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;0&quot; y=&quot;8&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drvWifiWinc&quot; x=&quot;341&quot; y=&quot;468&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;drv_memory&quot; x=&quot;168&quot; y=&quot;219&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;drv_spi&quot; x=&quot;169&quot; y=&quot;384&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;lib_crypto&quot; x=&quot;490&quot; y=&quot;280&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;lib_wolfcrypt&quot; x=&quot;492&quot; y=&quot;378&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;netPres&quot; x=&quot;3&quot; y=&quot;38&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;nvm&quot; x=&quot;9&quot; y=&quot;283&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;ocmp5&quot; x=&quot;318&quot; y=&quot;203&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;ocmp6&quot; x=&quot;304&quot; y=&quot;33&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;ocmp8&quot; x=&quot;598&quot; y=&quot;21&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;spi3&quot; x=&quot;20&quot; y=&quot;448&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_command&quot; x=&quot;777&quot; y=&quot;253&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_console&quot; x=&quot;598&quot; y=&quot;87&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;sys_debug&quot; x=&quot;775&quot; y=&quot;112&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;sys_fs&quot; x=&quot;320&quot; y=&quot;281&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;21&quot; id=&quot;sys_time&quot; x=&quot;308&quot; y=&quot;79&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;22&quot; id=&quot;tmr3&quot; x=&quot;461&quot; y=&quot;49&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;23&quot; id=&quot;uart6&quot; x=&quot;460&quot; y=&quot;151&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drv_memory&quot; x=&quot;168&quot; y=&quot;219&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;lib_crypto&quot; x=&quot;644&quot; y=&quot;182&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;lib_wolfcrypt&quot; x=&quot;462&quot; y=&quot;138&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;netPres&quot; x=&quot;3&quot; y=&quot;38&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;nvm&quot; x=&quot;9&quot; y=&quot;283&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;ocmp5&quot; x=&quot;318&quot; y=&quot;203&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;ocmp6&quot; x=&quot;304&quot; y=&quot;33&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;ocmp8&quot; x=&quot;598&quot; y=&quot;21&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_fs&quot; x=&quot;320&quot; y=&quot;281&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_time&quot; x=&quot;308&quot; y=&quot;79&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;tmr3&quot; x=&quot;461&quot; y=&quot;49&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -4654,12 +4655,30 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>DRIVER LAYER</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC1500_VERSION"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC1500_VERSION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC3400_VERSION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC3400_VERSION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_DEVICE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_DEVICE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
@@ -4688,14 +4707,73 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_INT_SRC"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_INT_SRC&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_LOG_LEVEL"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_LOG_LEVEL&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_PLIB"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_PLIB&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_RTOS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_RTOS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_RTOS_STACK_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_RTOS_STACK_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_RTOS_TASK_PRIORITY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_RTOS_TASK_PRIORITY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_RTOS_USE_DELAY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_RTOS_USE_DELAY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_RX_DMA_CHANNEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_RX_DMA_CHANNEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
 </value>
@@ -4723,14 +4801,28 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_SYS_RTOS_TASK"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_TX_DMA_CHANNEL"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_SYS_RTOS_TASK&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_TX_DMA_CHANNEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_TX_RX_DMA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_TX_RX_DMA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/drvWifiWinc&gt;
+&lt;/drvWifiWinc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="DRV_WIFI_WINC_USE_BLUETOOTH_WINC3400"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;DRV_WIFI_WINC_USE_BLUETOOTH_WINC3400&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
 </value>
@@ -4758,32 +4850,6 @@
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WDRV_WINC_ENTERPRISE_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WDRV_WINC_ENTERPRISE_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WDRV_WINC_ENTERPRISE_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WDRV_WINC_ENTERPRISE_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
 </value>
@@ -4932,389 +4998,12 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_FLEXIBLE_FLASH_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_FLEXIBLE_FLASH_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_FLEXIBLE_FLASH_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_FLEXIBLE_FLASH_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_HIF_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_HIF_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_HIF_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_HIF_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_PERIPH_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_PERIPH_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_PERIPH_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_PERIPH_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_SOCKET_HOST_IF_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_SOCKET_HOST_IF_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_TYPES_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_TYPES_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_WIFI_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_WIFI_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_M2M_WIFI_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_M2M_WIFI_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NETINET_IN_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NETINET_IN_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMASIC_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMASIC_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMASIC_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMASIC_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMBUS_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMBUS_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMBUS_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMBUS_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMDRV_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMDRV_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMDRV_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMDRV_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMSPI_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMSPI_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NMSPI_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NMSPI_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NM_BSP_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NM_BSP_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NM_COMMON_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NM_COMMON_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NM_COMMON_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NM_COMMON_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_NM_DEBUG_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_NM_DEBUG_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_SOCKET_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_SOCKET_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_SPI_FLASH_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_SPI_FLASH_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_SPI_FLASH_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_SPI_FLASH_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_6_1_SPI_FLASH_MAP_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_6_1_SPI_FLASH_MAP_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_ECC_TYPES_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_ECC_TYPES_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/drvWifiWinc&gt;
@@ -5348,32 +5037,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_HIF_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_HIF_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_HIF_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_HIF_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_OTA_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_OTA_C&quot;&gt;
@@ -5393,45 +5056,6 @@
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_PERIPH_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_PERIPH_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_PERIPH_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_PERIPH_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SOCKET_HOST_IF_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SOCKET_HOST_IF_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/drvWifiWinc&gt;
@@ -5465,282 +5089,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_TYPES_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_TYPES_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_WIFI_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_WIFI_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_WIFI_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_WIFI_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NETINET_IN_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NETINET_IN_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMASIC_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMASIC_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMASIC_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMASIC_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMBUS_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMBUS_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMBUS_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMBUS_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMDRV_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMDRV_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMDRV_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMDRV_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMSPI_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMSPI_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMSPI_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMSPI_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_BSP_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_BSP_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_COMMON_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_COMMON_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_COMMON_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_COMMON_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_DEBUG_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_DEBUG_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SOCKET_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SOCKET_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SOCKET_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SOCKET_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_MAP_H"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_MAP_H&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/drvWifiWinc&gt;
-&lt;/drvWifiWinc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WINC_INC_PATH_DRV_SOCKET"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WINC_INC_PATH_DRV_SOCKET&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -6009,7 +5360,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_spi" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>DRIVER LAYER</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_spi" name="DRV_SPI_COMMON_MODE"/>
@@ -6122,6 +5473,7 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;/&gt;
   &lt;/drv_spi_0&gt;
 &lt;/drv_spi_0&gt;
 </value>
@@ -6743,7 +6095,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="spi3" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>DRIVER LAYER</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="spi3" name="SPIS_SLAVE_SELECT_ENABLE"/>
@@ -6797,7 +6149,7 @@
   &lt;spi3 dnOrder=&quot;0&quot; id=&quot;SPI_INTERRUPT_MODE&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
@@ -6845,7 +6197,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_command" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>BASIC CONFIGURATION</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_command" name="SYS_COMMAND_PRINT_BUFFER_SIZE"/>
@@ -6889,7 +6241,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_console" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>BASIC CONFIGURATION</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_console" name="SYS_CONSOLE_PRINT_BUFFER_SIZE"/>
@@ -7083,7 +6435,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_debug" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>BASIC CONFIGURATION</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_debug" name="SYS_CONSOLE_DEVICE"/>
@@ -7114,6 +6466,15 @@
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;SYS_ERROR_FATAL&quot;/&gt;
     &lt;/Values&gt;
+  &lt;/sys_debug&gt;
+&lt;/sys_debug&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_debug" name="SYS_DEBUG_USE_CONSOLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_debug&gt;
+  &lt;sys_debug dnOrder=&quot;0&quot; id=&quot;SYS_DEBUG_USE_CONSOLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/sys_debug&gt;
 &lt;/sys_debug&gt;
 </value>
@@ -7770,7 +7131,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_0&gt;
   &lt;tcpipNetConfig_0 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_DEFAULT_DNS_IDX0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;0.0.0.0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;192.168.1.1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipNetConfig_0&gt;
 &lt;/tcpipNetConfig_0&gt;
@@ -7781,7 +7142,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_0&gt;
   &lt;tcpipNetConfig_0 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_DEFAULT_GATEWAY_IDX0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;0.0.0.0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;192.168.1.1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipNetConfig_0&gt;
 &lt;/tcpipNetConfig_0&gt;
@@ -7792,7 +7153,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_0&gt;
   &lt;tcpipNetConfig_0 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;MCHPBOARD_W&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipNetConfig_0&gt;
 &lt;/tcpipNetConfig_0&gt;
@@ -7802,7 +7163,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipNetConfig_0" name="TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_0&gt;
   &lt;tcpipNetConfig_0 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;WINC&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/tcpipNetConfig_0&gt;
 &lt;/tcpipNetConfig_0&gt;
 </value>
@@ -7812,7 +7175,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_0&gt;
   &lt;tcpipNetConfig_0 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;0.0.0.0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;192.168.1.2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipNetConfig_0&gt;
 &lt;/tcpipNetConfig_0&gt;
@@ -7823,7 +7186,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipNetConfig_0&gt;
   &lt;tcpipNetConfig_0 dnOrder=&quot;0&quot; id=&quot;TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipNetConfig_0&quot; value=&quot;WDRV_WINC_MACObject&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipNetConfig_0&gt;
 &lt;/tcpipNetConfig_0&gt;
@@ -7854,7 +7217,20 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipStack" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
-  &lt;tcpipStack dnOrder=&quot;0&quot;/&gt;
+  &lt;tcpipStack dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;Core_SysConsole_Dependency&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;sys_console_0&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;sys_console&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+    &lt;/Attachments&gt;
+  &lt;/tcpipStack&gt;
 &lt;/tcpipStack&gt;
 </value>
       </entry>
@@ -7902,7 +7278,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipStack&gt;
   &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_NET_INTERFACE_NAME_IDX0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipStack&quot; value=&quot;WINC&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipStack&gt;
 &lt;/tcpipStack&gt;
@@ -8308,7 +7684,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart6" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
+         <value>BASIC CONFIGURATION</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart6" name="BRG_VALUE"/>
@@ -8993,7 +8369,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>40c0091b0c4944a7591934de324b09388c4292e18e3d8527427d0f82af752d13</hash>
+         <hash>a26587e34fad538af1b9a5424925f26668f8e31be8737cf2f0b5aa54f52a0d63</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
@@ -9333,7 +8709,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>42013a08c3abb54b6d55987942ad31aae0353d31235f6ddaacc7ab129da38544</hash>
+         <hash>c850b3b7cd90f3c838ee79a00be7d50c4b8cf309d2bb7ad528de79389324aa13</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\chacha20_poly1305.h</file>

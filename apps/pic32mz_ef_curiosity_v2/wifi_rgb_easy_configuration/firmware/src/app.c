@@ -206,10 +206,10 @@ void APP_Tasks ( void )
                 {
                     WDRV_WINC_AuthCtxSetWPA(&authCtx, (uint8_t*)WLAN_WPA_PASSPHRASE, strlen(WLAN_WPA_PASSPHRASE));
                 }
-                else if (WDRV_WINC_AUTH_TYPE_WEP == WLAN_AUTH)
-                {
-                    WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEP_KEY_INDEX, (uint8_t*)WLAN_WEP_KEY, strlen(WLAN_WEP_KEY));
-                }
+//                else if (WDRV_WINC_AUTH_TYPE_WEP == WLAN_AUTH)
+//                {
+//                    WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEP_KEY_INDEX, (uint8_t*)WLAN_WEP_KEY, strlen(WLAN_WEP_KEY));
+//                }
                 else
                 {
                     // other type not considered for this demo. default to open.
