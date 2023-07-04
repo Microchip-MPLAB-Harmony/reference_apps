@@ -72,7 +72,7 @@
 //SYS_CMD_BUFFER_DMA_READY is defined in configuration.h by MHC, this is here in-case MHC is not used
 #ifndef SYS_CMD_BUFFER_DMA_READY
     #define SYS_CMD_BUFFER_DMA_READY //Define this for MX
-    /* #define SYS_CMD_BUFFER_DMA_READY        __attribute__((coherent)) __attribute__((aligned(4))) //Define this for MZ */
+    /* #define SYS_CMD_BUFFER_DMA_READY        __attribute__((coherent)) __attribute__((aligned(4))) */ //Define this for MZ
 #endif
 
 #ifndef SYS_COMMAND_INCLUDE_APIS
@@ -111,7 +111,7 @@
     None.
 
 */
-#define         SYS_CMD_MAX_LENGTH  80
+#define     SYS_CMD_MAX_LENGTH  					80
 
 
 // *****************************************************************************
@@ -176,37 +176,6 @@
 
 */
 #define         COMMAND_HISTORY_DEPTH   4
-
-
-// *****************************************************************************
-/*
-  Summary:
-    Command Callback Function Handle.
-
-  Description:
-    Command Callback Function Handle.
-
-  Remarks:
-    None.
-*/
-typedef void (*SYS_CMD_CallbackFunction) (void *handle);
-
-
-// *****************************************************************************
-/*
-  Summary:
-    Identifies a particular Command I/O instance.
-
-  Description:
-    Command I/O Handle. This event handle identifies a registered instance of a
-    Command IO object. Every time the application that tries to access the parameters
-    with respect to a particular event, this event handle is used to refer to that
-    event.
-
-  Remarks:
-    None.
-*/
-typedef const void* SYS_CMD_HANDLE;
 
 
 // *****************************************************************************
@@ -325,13 +294,13 @@ typedef struct
     SYS_CMD_PRINT_FNC print;
 
     // Put single char function API
-    SYS_CMD_PUTC_FNC  putc;
+    SYS_CMD_PUTC_FNC  putc_t;
 
     // Data available API
     SYS_CMD_DATA_RDY_FNC isRdy;
 
     // Get single data API
-    SYS_CMD_GETC_FNC getc;
+    SYS_CMD_GETC_FNC getc_t;
 
 } SYS_CMD_API;
 
@@ -469,7 +438,63 @@ typedef struct
 } SYS_CMD_DESCRIPTOR;              // a simple command descriptor
 
 
+// *****************************************************************************
+/*
+  Summary:
+    Defines a Command processing handle.
 
+  Description:
+    Definition of a command processing handle used for
+    external processing registration by the Command clients.
+
+  Remarks:
+    None.
+*/
+typedef const void* SYS_CMD_HANDLE;
+
+
+// *****************************************************************************
+/*
+  Summary:
+    Command Callback Function
+
+  Description:
+    This is a Command Callback Function.
+    It will be called before the command is processed.
+    The caller can examine/modify the command buffer as needed.
+
+  Parameters:
+    pCmdTbl     - pointer to a command group that has been added with SYS_CMD_ADDGRP
+    pCmdIO      - pointer to a SYS_CMD_DEVICE_NODE identifying the command channel
+                  that has been added with SYS_CMDIO_ADD
+    cmdBuff     - the buffer containing the current command to be processed
+                  This buffer can be examined or modified as needed.
+    buffSize    - the size of the cmdBuff, including the termination '\0' character.
+    hParam      - a user parameter that's passed to the SYS_CMD_CallbackRegister() to be
+                  used in the callback
+                  Not used by the SYS_CMD.
+         
+
+  Returns:
+    - true  - if the command has been completely processed by the external handler.
+              The internal SYS_CM handler will then ignore the command.
+    - false - the string in the cmdBuff neds to be parsed ad processed as usualy.
+
+
+  Remarks:
+    The command callback function belongs to a command group.
+    Different groups can have different/same command callback function
+
+    If updating the cmdBuff the caller should not exceed the buffSize!
+    Please note that on return from the callback, the buffer is truncated:
+    cmdBuff[buffSize - 1] = 0;
+
+  Currently only one callback is supported for a SYS_CMD command group.
+    The call will fail if a handler is already registered.
+    Use SYS_CMD_CallbackDeregister first
+    
+*/
+typedef bool (*SYS_CMD_Callback) (const SYS_CMD_DESCRIPTOR* pCmdTbl, SYS_CMD_DEVICE_NODE* pCmdIO, char* cmdBuff, size_t bufSize, void* hParam);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -585,6 +610,7 @@ bool    SYS_CMD_READY_TO_READ( void );
 #endif
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 8.6 deviated:1 Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Function:
     bool SYS_CMD_READY_TO_WRITE( void )
 
@@ -613,7 +639,7 @@ bool    SYS_CMD_READY_TO_READ( void );
 bool    SYS_CMD_READY_TO_WRITE( void );
 #endif
 
-
+/* MISRAC 2012 deviation block end */
 // *****************************************************************************
 /* Function:
     bool SYS_CMD_Tasks( void )
@@ -777,8 +803,90 @@ SYS_CMD_DEVICE_NODE* SYS_CMDIO_GET_HANDLE(short num);
     None.
 */
 #ifdef SYS_CMD_ENABLE
-bool SYS_CMD_DELETE(SYS_CMD_DEVICE_NODE* pDevNode);
+bool SYS_CMD_DELETE(SYS_CMD_DEVICE_NODE* pDeviceNode);
 #endif
+
+
+// *****************************************************************************
+/* Function:
+    SYS_CMD_HANDLE  SYS_CMD_CallbackRegister(const SYS_CMD_DESCRIPTOR* pCmdTbl, SYS_CMD_Callback func, void* hParam);
+
+  Summary:
+    Sets a new SYS_CMD processing handler.
+
+  Description:
+    This function registers a new SYS_CMD callback processing handler.
+    The caller can use the handler to be notified of incoming commands
+    and given a chance to examine/modify/process them.
+
+  Precondition:
+    SYS_CMD properly initialized
+
+  Parameters:
+    pCmdTbl     - pointer to a command group to get a new process handler
+                  The command group should have been added with SYS_CMD_ADDGRP
+    func        - the SYS_CMD handler which will be called for an incoming command
+    hParam      - a user parameter that's passed to the registered SYS_CMD_Callback function.
+                  Not used by the SYS_CMD.
+
+  Returns:
+    - a valid SYS_CMD_HANDLE - if the operation succeeded
+    - NULL - if the operation failed
+
+  Example:
+    <code>
+
+    bool myCmdHandler(const SYS_CMD_DESCRIPTOR* pCmdTbl, SYS_CMD_DEVICE_NODE* pCmdIO, char* cmdBuff, size_t bufSize, void* hParam)
+    {        
+        return false;
+    }
+
+    SYS_CMD_HANDLE cmdHandle = SYS_CMD_CallbackRegister( myCmdGroup, myCmdHandler, 0);
+    </code>
+
+  Remarks:
+    Currently only one callback function is supported for a SYS_CMD command group.
+    The call will fail if a callback is already registered for the specified group.
+    Use SYS_CMD_CallbackDeregister first
+
+*/
+
+SYS_CMD_HANDLE  SYS_CMD_CallbackRegister(const SYS_CMD_DESCRIPTOR* pCmdTbl, SYS_CMD_Callback func, void* hParam);
+
+//*******************************************************************************
+/*
+  Function:
+    bool    SYS_CMD_CallbackDeregister(SYS_CMD_HANDLE handle);
+
+  Summary:
+    Deregisters a previously registered callback handler.
+
+  Description:
+    This function removes a SYS_CMD processing handler.
+
+  Precondition:
+    SYS_CMD properly initialized
+
+  Parameters:
+    handle   - SYS_CMD_HANDLE obtained by a call to SYS_CMD_CallbackRegister
+
+
+  Returns:
+    - true  - if the operation succeeded
+    - false - if the operation failed
+
+  Example:
+    <code>
+    SYS_CMD_HANDLE myHandle = SYS_CMD_CallbackRegister(myCmdGroup, myCmdCallback, myParam );   
+    SYS_CMD_CallbackDeregister(myHandle);
+    </code>
+
+  Remarks:
+    None
+
+*/
+
+bool    SYS_CMD_CallbackDeregister(SYS_CMD_HANDLE handle);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

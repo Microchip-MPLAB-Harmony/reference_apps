@@ -1,4 +1,4 @@
-/******************************************************************************
+    /******************************************************************************
   MEMORY Driver File System Interface Implementation
 
   Company:
@@ -48,19 +48,16 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "driver/memory/src/drv_memory_local.h"
-#include "system/fs/sys_fs_media_manager.h"
+#include "driver/memory/src/drv_memory_file_system.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
+/* MISRA C-2012 Rule 11.1 deviated:7 Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
-/* FS Function registration table. */
-typedef SYS_FS_MEDIA_COMMAND_STATUS (* CommandStatusGetType)( DRV_HANDLE, SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE );
-
-const SYS_FS_MEDIA_FUNCTIONS memoryMediaFunctions =
+static const SYS_FS_MEDIA_FUNCTIONS memoryMediaFunctions =
 {
     .mediaStatusGet     = DRV_MEMORY_IsAttached,
     .mediaGeometryGet   = DRV_MEMORY_GeometryGet,
@@ -76,6 +73,7 @@ const SYS_FS_MEDIA_FUNCTIONS memoryMediaFunctions =
     .tasks              = NULL,
 };
 
+/* MISRAC 2012 deviation block end */
 // *****************************************************************************
 // *****************************************************************************
 // Section: MEMORY Driver File system interface Routines
@@ -84,7 +82,7 @@ const SYS_FS_MEDIA_FUNCTIONS memoryMediaFunctions =
 
 void DRV_MEMORY_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex, uint8_t mediaType)
 {
-    SYS_FS_MEDIA_MANAGER_Register
+    (void) SYS_FS_MEDIA_MANAGER_Register
     (
         (SYS_MODULE_OBJ)drvIndex,
         (SYS_MODULE_INDEX)drvIndex,

@@ -40,8 +40,8 @@
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _DRV_MEMORY_NVMCTRL_H
-#define _DRV_MEMORY_NVMCTRL_H
+#ifndef DRV_MEMORY_NVMCTRL_H
+#define DRV_MEMORY_NVMCTRL_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -79,7 +79,7 @@ bool DRV_NVMCTRL_GeometryGet( const DRV_HANDLE handle, MEMORY_DEVICE_GEOMETRY *g
 }
 #endif
 
-#endif // #ifndef _DRV_MEMORY_NVMCTRL_H
+#endif // #ifndef DRV_MEMORY_NVMCTRL_H
 /*******************************************************************************
  End of File
 */

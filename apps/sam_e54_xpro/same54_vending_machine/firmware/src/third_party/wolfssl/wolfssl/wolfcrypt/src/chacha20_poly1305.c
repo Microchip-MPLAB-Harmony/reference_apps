@@ -1,6 +1,6 @@
 /* chacha.c
  *
- * Copyright (C) 2006-2020 wolfSSL Inc.
+ * Copyright (C) 2006-2021 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -60,7 +60,7 @@ int wc_ChaCha20Poly1305_Encrypt(
 
     /* Validate function arguments */
     if (!inKey || !inIV ||
-        !inPlaintext || !inPlaintextLen ||
+        (inPlaintextLen > 0 && inPlaintext == NULL) ||
         !outCiphertext ||
         !outAuthTag)
     {
@@ -93,7 +93,7 @@ int wc_ChaCha20Poly1305_Decrypt(
 
     /* Validate function arguments */
     if (!inKey || !inIV ||
-        !inCiphertext || !inCiphertextLen ||
+        (inCiphertextLen > 0 && inCiphertext == NULL) ||
         !inAuthTag ||
         !outPlaintext)
     {
@@ -383,6 +383,11 @@ static WC_INLINE int wc_XChaCha20Poly1305_crypt_oneshot(
                                          key, (word32)key_len, 1)) < 0)
         goto out;
 
+#ifdef WOLFSSL_CHECK_MEM_ZERO
+    wc_MemZero_Add("wc_XChaCha20Poly1305_crypt_oneshot aead", aead,
+        sizeof(ChaChaPoly_Aead));
+#endif
+
     /* process the input in 16k pieces to accommodate src_lens that don't fit in a word32,
      * and to exploit hot cache for the input data.
      */
@@ -439,6 +444,8 @@ static WC_INLINE int wc_XChaCha20Poly1305_crypt_oneshot(
 
 #if defined(WOLFSSL_SMALL_STACK) && !defined(WOLFSSL_NO_MALLOC)
     XFREE(aead, NULL, DYNAMIC_TYPE_TMP_BUFFER);
+#elif defined(WOLFSSL_CHECK_MEM_ZERO)
+    wc_MemZero_Check(aead, sizeof(ChaChaPoly_Aead));
 #endif
 
     return ret;

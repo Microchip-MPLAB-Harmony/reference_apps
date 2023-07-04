@@ -1,33 +1,31 @@
-/*****************************************************************************
- Copyright (C) 2008-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2008-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
 #ifndef __GMAC_DCPT_LISTS_H_
 #define __GMAC_DCPT_LISTS_H_
-
+#include "tcpip/tcpip_mac.h"
 // *****************************************************************************
 /*  GMAC Queue List
  
@@ -108,45 +106,6 @@ typedef union
 } DRV_GMAC_RXDCPT_ADDR;             /**< Address, Wrap & Ownership */
 
 // *****************************************************************************
-/*  RX Packet Descriptor Status Word
-
-  Summary:
-    Status word with each Receive Descriptor
-
-  Description:
-    The Receive descriptor consist of two 32-bit word; one is Receive Status
-    word. Different receive status after receiving a packet is stored in this
-    32-bit field by GMAC engine
-*/
-typedef union  
-{
-	uint32_t val;
-	struct _GmacRxStatusBM 
-	{
-		uint32_t	len: 13,				/** Length of frame including FCS */
-					offset: 1,              /** Receive buffer offset,
-                                            bits 13:12 of frame length for jumbo
-                                            frame */
-					bSof: 1,				/** Start of frame */
-					bEof: 1,				/** End of frame */
-					bCFI: 1,				/** Concatenation Format Indicator */
-					vlanPriority: 3,		/** VLAN priority (if VLAN detected) */
-					bPriorityDetected: 1,	/** Priority tag detected */
-					bVlanDetected: 1,		/**< VLAN tag detected */
-					bTypeIDMatch: 2,		/**< Type ID match */
-					bTypeIDMatchfound: 1,	/**< Type ID match found*/
-					bAddrMatch: 2,			/**< Specific Address register 1, 2, 3, 4 match */
-					bAddrMatchfound: 1,     /**< Specific Address match found */
-					reserved: 1,				
-					bUniHashMatch: 1,       /**< Unicast hash match */
-					bMultiHashMatch: 1,     /**< Multicast hash match */
-					bBroadcastDetected: 1;  /**< Global all ones broadcast
-                                                address detected */
-	} bm;
-} DRV_GMAC_RXDCPT_STATUS;
-
-
-// *****************************************************************************
 /*  Receive Descriptor
 
   Summary:
@@ -159,7 +118,7 @@ typedef union
 typedef struct
 {
 	volatile DRV_GMAC_RXDCPT_ADDR rx_desc_buffaddr;
-	volatile DRV_GMAC_RXDCPT_STATUS rx_desc_status;
+	volatile TCPIP_MAC_PACKET_RX_STAT_PIC32C rx_desc_status;
 	
 } DRV_PIC32CGMAC_HW_RXDCPT; 
 

@@ -48,19 +48,18 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
 // ****************************************************************************
 // ****************************************************************************
 #pragma config BOD33_DIS = SET
-#pragma config BOD33USERLEVEL = 0x1c
+#pragma config BOD33USERLEVEL = 0x1cU
 #pragma config BOD33_ACTION = RESET
-#pragma config BOD33_HYST = 0x2
+#pragma config BOD33_HYST = 0x2U
 #pragma config NVMCTRL_BOOTPROT = 0
-#pragma config NVMCTRL_SEESBLK = 0x0
-#pragma config NVMCTRL_SEEPSZ = 0x0
+#pragma config NVMCTRL_SEESBLK = 0x0U
+#pragma config NVMCTRL_SEEPSZ = 0x0U
 #pragma config RAMECC_ECCDIS = SET
 #pragma config WDT_ENABLE = CLEAR
 #pragma config WDT_ALWAYSON = CLEAR
@@ -68,7 +67,7 @@
 #pragma config WDT_WINDOW = CYC8192
 #pragma config WDT_EWOFFSET = CYC8192
 #pragma config WDT_WEN = CLEAR
-#pragma config NVMCTRL_REGION_LOCKS = 0xffffffff
+#pragma config NVMCTRL_REGION_LOCKS = 0xffffffffU
 
 
 
@@ -78,6 +77,10 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
 /* Forward declaration of PHY initialization data */
 const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091;
 
@@ -88,7 +91,7 @@ static uint8_t gDrvMemory0EraseBuffer[NVMCTRL_ERASE_BUFFER_SIZE] CACHE_ALIGN;
 static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
 
 
-const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
+static const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
     .Open               = DRV_NVMCTRL_Open,
     .Close              = DRV_NVMCTRL_Close,
     .Status             = DRV_NVMCTRL_Status,
@@ -99,8 +102,7 @@ const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
     .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_NVMCTRL_GeometryGet,
     .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_NVMCTRL_TransferStatusGet
 };
-
-const DRV_MEMORY_INIT drvMemory0InitData =
+static const DRV_MEMORY_INIT drvMemory0InitData =
 {
     .memDevIndex                = 0,
     .memoryDevice               = &drvMemory0DeviceAPI,
@@ -114,12 +116,12 @@ const DRV_MEMORY_INIT drvMemory0InitData =
 };
 
 // </editor-fold>
-/* Forward declaration of MAC initialization data */
-const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData;
+/* Forward declaration of GMAC initialization data */
+const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipGMACInitData;
 
 
-/* Forward declaration of MIIM initialization data */
-static const DRV_MIIM_INIT drvMiimInitData;
+/* Forward declaration of MIIM 0 initialization data */
+static const DRV_MIIM_INIT drvMiimInitData_0;
 
 
 
@@ -137,22 +139,28 @@ SYSTEM_OBJECTS sysObj;
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
-
-    
-    
+/*** KSZ8091 PHY Driver Time-Out Initialization Data ***/
+DRV_ETHPHY_TMO drvksz8091Tmo = 
+{
+    .resetTmo = DRV_ETHPHY_KSZ8091_RESET_CLR_TMO,
+    .aNegDoneTmo = DRV_ETHPHY_KSZ8091_NEG_DONE_TMO,
+    .aNegInitTmo = DRV_ETHPHY_KSZ8091_NEG_INIT_TMO,    
+};
 
 /*** ETH PHY Initialization Data ***/
 const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8091 =
 {    
-    .ethphyId               = TCPIP_INTMAC_MODULE_ID,
-    .phyAddress             = TCPIP_INTMAC_PHY_ADDRESS,
-    .phyFlags               = TCPIP_INTMAC_PHY_CONFIG_FLAGS,
+    .ethphyId               = DRV_KSZ8091_PHY_PERIPHERAL_ID,
+    .phyAddress             = DRV_KSZ8091_PHY_ADDRESS,
+    .phyFlags               = DRV_KSZ8091_PHY_CONFIG_FLAGS,
     .pPhyObject             = &DRV_ETHPHY_OBJECT_KSZ8091,
     .resetFunction          = 0,
+    .ethphyTmo              = &drvksz8091Tmo,
     .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
-    .pMiimInit              = &drvMiimInitData,
-    .miimIndex              = DRV_MIIM_DRIVER_INDEX,
+    .pMiimInit              = &drvMiimInitData_0,
+    .miimIndex              = 0,
 };
+
 
 
 // <editor-fold defaultstate="collapsed" desc="TCP/IP Stack Initialization Data">
@@ -313,7 +321,6 @@ TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
     .heapFlags = TCPIP_STACK_HEAP_USE_FLAGS,
     .heapUsage = TCPIP_STACK_HEAP_USAGE_CONFIG,
     .malloc_fnc = TCPIP_STACK_MALLOC_FUNC,
-    .calloc_fnc = TCPIP_STACK_CALLOC_FUNC,
     .free_fnc = TCPIP_STACK_FREE_FUNC,
     .heapSize = TCPIP_STACK_DRAM_SIZE,
 };
@@ -359,7 +366,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
-    {TCPIP_MODULE_MAC_PIC32C,     &tcpipMACPIC32CINTInitData},     // TCPIP_MODULE_MAC_PIC32C
+    {TCPIP_MODULE_MAC_PIC32C,     &tcpipGMACInitData},     // TCPIP_MODULE_MAC_PIC32C
 
 };
 
@@ -400,43 +407,51 @@ SYS_MODULE_OBJ TCPIP_STACK_Init(void)
 }
 // </editor-fold>
 
-	
-/*** GMAC MAC Initialization Data ***/
-const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipMACPIC32CINTInitData =
+
+uint8_t txPrioNumToQueIndxGmac [DRV_GMAC_NUMBER_OF_QUEUES];
+uint8_t rxPrioNumToQueIndxGmac [DRV_GMAC_NUMBER_OF_QUEUES];
+
+/*** GMAC Initialization Data ***/
+TCPIP_MODULE_GMAC_QUEUE_CONFIG  gmac_queue_config[DRV_GMAC_NUMBER_OF_QUEUES]=
+{
+   {   /** QUEUE 0 Initialization**/
+       .queueTxEnable = true,
+       .queueRxEnable = true,
+       .nRxDescCnt    = 8,
+       .nTxDescCnt    = 8,
+       .rxBufferSize  = 1536,
+       .txMaxPktSize  = 1536,
+       .nRxDedicatedBuffers   = 8,
+       .nRxAddlBuffCount  = 2,
+       .nRxBuffCntThres   = 1,
+       .nRxBuffAllocCnt   = 2,   
+       .queueIntSrc       = GMAC_IRQn,                               
+   },
+};
+
+const TCPIP_MODULE_MAC_PIC32C_CONFIG tcpipGMACInitData =
 { 
-	/** QUEUE 0 Intialization**/
-	.gmac_queue_config[0].queueTxEnable	= true,
-	.gmac_queue_config[0].queueRxEnable	= true,
-	.gmac_queue_config[0].nRxDescCnt	= TCPIP_GMAC_RX_DESCRIPTORS_COUNT_QUE0,
-	.gmac_queue_config[0].nTxDescCnt	= TCPIP_GMAC_TX_DESCRIPTORS_COUNT_QUE0,
-	.gmac_queue_config[0].rxBufferSize	= TCPIP_GMAC_RX_BUFF_SIZE_QUE0,
-	.gmac_queue_config[0].txMaxPktSize	= TCPIP_GMAC_MAX_TX_PKT_SIZE_QUE0,
-	.gmac_queue_config[0].nRxDedicatedBuffers	= TCPIP_GMAC_RX_DEDICATED_BUFFERS_QUE0,
-	.gmac_queue_config[0].nRxAddlBuffCount	= TCPIP_GMAC_RX_ADDL_BUFF_COUNT_QUE0,
-	.gmac_queue_config[0].nRxBuffCntThres	= TCPIP_GMAC_RX_BUFF_COUNT_THRESHOLD_QUE0,
-	.gmac_queue_config[0].nRxBuffAllocCnt	= TCPIP_GMAC_RX_BUFF_ALLOC_COUNT_QUE0,
-
-
-
-
-
-	.ethFlags               = TCPIP_GMAC_ETH_OPEN_FLAGS,	
-	.linkInitDelay          = TCPIP_INTMAC_PHY_LINK_INIT_DELAY,
-    .ethModuleId            = TCPIP_INTMAC_MODULE_ID,
-    .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
-    .pPhyInit               = &tcpipPhyInitData_KSZ8091,
-	.checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
-    .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
-    .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
-    .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,
+       .gmac_queue_config = gmac_queue_config,
+       .macQueNum = DRV_GMAC_NUMBER_OF_QUEUES, 
+       .txPrioNumToQueIndx = txPrioNumToQueIndxGmac,
+       .rxPrioNumToQueIndx = rxPrioNumToQueIndxGmac,
+       .ethFlags               = TCPIP_GMAC_ETH_OPEN_FLAGS,    
+       .linkInitDelay          = DRV_KSZ8091_PHY_LINK_INIT_DELAY,
+       .ethModuleId            = TCPIP_GMAC_MODULE_ID,
+       .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
+       .pPhyInit               = &tcpipPhyInitData_KSZ8091,
+       .checksumOffloadRx      = DRV_GMAC_RX_CHKSM_OFFLOAD,
+       .checksumOffloadTx      = DRV_GMAC_TX_CHKSM_OFFLOAD,
+       .macTxPrioNum           = TCPIP_GMAC_TX_PRIO_COUNT,
+       .macRxPrioNum           = TCPIP_GMAC_RX_PRIO_COUNT,  
+       .macRxFilt              = TCPIP_GMAC_RX_FILTERS,
 };
 
 
-
-/* MIIM Driver Configuration */
-static const DRV_MIIM_INIT drvMiimInitData =
+/*** MIIM Driver Instance 0 Configuration ***/
+static const DRV_MIIM_INIT drvMiimInitData_0 =
 {
-	.ethphyId = DRV_MIIM_ETH_MODULE_ID,
+   .ethphyId = DRV_MIIM_ETH_MODULE_ID_0,
 };
 
 /* Net Presentation Layer Data Definitions */
@@ -572,12 +587,12 @@ const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 };
 
 
-const SYS_FS_FUNCTIONS MPFSFunctions =
+static const SYS_FS_FUNCTIONS MPFSFunctions =
 {
     .mount             = MPFS_Mount,
     .unmount           = MPFS_Unmount,
     .open              = MPFS_Open,
-    .read              = MPFS_Read,
+    .read_t            = MPFS_Read,
     .close             = MPFS_Close,
     .seek              = MPFS_Seek,
     .fstat             = MPFS_Stat,
@@ -590,16 +605,16 @@ const SYS_FS_FUNCTIONS MPFSFunctions =
     .getlabel          = NULL,
     .currWD            = NULL,
     .getstrn           = NULL,
-    .write             = NULL,
+    .write_t           = NULL,
     .mkdir             = NULL,
     .chdir             = NULL,
-    .remove            = NULL,
+    .remove_t          = NULL,
     .setlabel          = NULL,
     .truncate          = NULL,
     .chdrive           = NULL,
     .chmode            = NULL,
     .chtime            = NULL,
-    .rename            = NULL,
+    .rename_t           = NULL,
     .sync              = NULL,
     .putchr            = NULL,
     .putstrn           = NULL,
@@ -611,15 +626,14 @@ const SYS_FS_FUNCTIONS MPFSFunctions =
 };
 
 
-const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
+
+static const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = MPFS2,
         .nativeFileSystemFunctions = &MPFSFunctions
-    },
+    }
 };
-
-
 // </editor-fold>
 
 
@@ -631,7 +645,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 // *****************************************************************************
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
-const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC0_TimerCallbackRegister,
     .timerStart = (SYS_TIME_PLIB_START)TC0_TimerStart,
     .timerStop = (SYS_TIME_PLIB_STOP)TC0_TimerStop,
@@ -641,7 +655,7 @@ const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)TC0_Timer16bitCounterGet,
 };
 
-const SYS_TIME_INIT sysTimeInitData =
+static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
     .hwTimerIntNum = TC0_IRQn,
@@ -651,25 +665,22 @@ const SYS_TIME_INIT sysTimeInitData =
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
-/* Declared in console device implementation (sys_console_uart.c) */
-extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
-
-const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
+static const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
 {
-    .read = (SYS_CONSOLE_UART_PLIB_READ)SERCOM2_USART_Read,
-	.readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)SERCOM2_USART_ReadCountGet,
-	.readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)SERCOM2_USART_ReadFreeBufferCountGet,
-    .write = (SYS_CONSOLE_UART_PLIB_WRITE)SERCOM2_USART_Write,
-	.writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)SERCOM2_USART_WriteCountGet,
-	.writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)SERCOM2_USART_WriteFreeBufferCountGet,
+    .read_t = (SYS_CONSOLE_UART_PLIB_READ)SERCOM2_USART_Read,
+    .readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)SERCOM2_USART_ReadCountGet,
+    .readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)SERCOM2_USART_ReadFreeBufferCountGet,
+    .write_t = (SYS_CONSOLE_UART_PLIB_WRITE)SERCOM2_USART_Write,
+    .writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)SERCOM2_USART_WriteCountGet,
+    .writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)SERCOM2_USART_WriteFreeBufferCountGet,
 };
 
-const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
+static const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
 {
-    .uartPLIB = &sysConsole0UARTPlibAPI,    
+    .uartPLIB = &sysConsole0UARTPlibAPI,
 };
 
-const SYS_CONSOLE_INIT sysConsole0Init =
+static const SYS_CONSOLE_INIT sysConsole0Init =
 {
     .deviceInitData = (const void*)&sysConsole0UARTInitData,
     .consDevDesc = &sysConsoleUARTDevDesc,
@@ -689,7 +700,7 @@ const SYS_CMD_INIT sysCmdInit =
 };
 
 
-const SYS_DEBUG_INIT debugInit =
+static const SYS_DEBUG_INIT debugInit =
 {
     .moduleInit = {0},
     .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
@@ -706,7 +717,7 @@ const SYS_DEBUG_INIT debugInit =
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -720,6 +731,9 @@ const SYS_DEBUG_INIT debugInit =
 
 void SYS_Initialize ( void* data )
 {
+
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     NVMCTRL_Initialize( );
 
@@ -740,43 +754,62 @@ void SYS_Initialize ( void* data )
     SERCOM4_SPI_Initialize();
 
 
+
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
+
     sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
 
-    /* Initialize the MIIM Driver */
-    sysObj.drvMiim = DRV_MIIM_Initialize( DRV_MIIM_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData );
+   /* Initialize the MIIM Driver Instance 0*/
+   sysObj.drvMiim_0 = DRV_MIIM_Initialize(DRV_MIIM_DRIVER_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData_0); 
 
 
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
-    sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-
+    
+    /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+   /* MISRAC 2012 deviation block end */
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
 
+    /* MISRAC 2012 deviation block end */
 
 
-
-/* Network Presentation Layer Initialization */
-sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
-/* TCPIP Stack Initialization */
-sysObj.tcpip = TCPIP_STACK_Init();
-SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
+   /* Network Presentation Layer Initialization */
+   sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
+   /* TCPIP Stack Initialization */
+   sysObj.tcpip = TCPIP_STACK_Init();
+   SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
     CRYPT_WCCB_Initialize();
     /*** File System Service Initialization Code ***/
-    SYS_FS_Initialize( (const void *) sysFSInit );
+    (void) SYS_FS_Initialize( (const void *) sysFSInit );
 
 
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
     MMI_Initialize();
 
 
     NVIC_Initialize();
 
-}
 
+    /* MISRAC 2012 deviation block end */
+}
 
 /*******************************************************************************
  End of File

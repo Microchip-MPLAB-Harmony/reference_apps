@@ -10,30 +10,28 @@
     - Reference: RFC 2616
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -350,8 +348,6 @@ static bool                 httpNonPersistentConn = 0;
 
 static uint16_t             httpPersistTmo;             // the timeout after which a persistent connection is closed, if no data is requested; seconds
                                                         
-static uint32_t             httpSecondCount;            // rough time keeping for HTTP                                                        
-
 static tcpipSignalHandle    httpSignalHandle = 0;
 
 static const void*          httpMemH = 0;              // handle to be used in the TCPIP_HEAP_ calls
@@ -476,18 +472,6 @@ static TCPIP_HTTP_NET_CONN_STATE _HTTP_ProcessDone(TCPIP_HTTP_NET_CONN* pHttpCon
 static TCPIP_HTTP_NET_CONN_STATE _HTTP_ProcessError(TCPIP_HTTP_NET_CONN* pHttpCon, bool* pWait);
 
 static TCPIP_HTTP_NET_CONN_STATE _HTTP_ProcessDisconnect(TCPIP_HTTP_NET_CONN* pHttpCon, bool* pWait);
-
-// rough HTTP time keeping
-static __inline__ uint32_t __attribute__((always_inline)) _HTTP_SecondCountGet(void)
-{
-    return httpSecondCount;
-}
-
-static __inline__ void __attribute__((always_inline)) _HTTP_SecondCountSet(void)
-{
-    // use a 64 bit count to avoid roll over
-    httpSecondCount = SYS_TMR_SystemCountGet() / SYS_TMR_SystemCountFrequencyGet(); 
-}
 
 #if (TCPIP_HTTP_NET_DYNVAR_PROCESS != 0)
 static char* _HTTP_DynVarParse(char* dynVarBuff, char** pEndDyn, bool verifyOnly);
@@ -763,7 +747,7 @@ static void _HTTP_DbgSSIHashEntry(TCPIP_HTTP_SSI_HASH_ENTRY* pHE, bool isRef)
 #if ((TCPIP_HTTP_NET_DEBUG_LEVEL & TCPIP_HTTP_NET_DEBUG_MASK_CONN_TMO) != 0)
 static void _HTTP_DbgConnTmo(TCPIP_HTTP_NET_CONN* pHttpCon)
 {
-    SYS_CONSOLE_PRINT("HTTP tmo - conn: %d, active sec: %d, curr sec: %d\r\n", pHttpCon->connIx, pHttpCon->connActiveSec, _HTTP_SecondCountGet());
+    SYS_CONSOLE_PRINT("HTTP tmo - conn: %d, active sec: %d, curr sec: %d\r\n", pHttpCon->connIx, pHttpCon->connActiveSec, _TCPIP_SecCountGet());
 }
 #else
 #define _HTTP_DbgConnTmo(pHttpCon)
@@ -1039,7 +1023,8 @@ bool TCPIP_HTTP_NET_Initialize(const TCPIP_STACK_MODULE_CTRL* const stackCtrl,
         for(connIx = 0; connIx < nConns; connIx++)
         {
             pHttpCon->connState = TCPIP_HTTP_CONN_STATE_IDLE;
-            pHttpCon->socket =  NET_PRES_SocketOpen(0, sktType, IP_ADDRESS_TYPE_ANY, httpInitData->listenPort, 0, 0);
+            pHttpCon->listenPort = httpInitData->listenPort;
+            pHttpCon->socket =  NET_PRES_SocketOpen(0, sktType, IP_ADDRESS_TYPE_ANY, pHttpCon->listenPort, 0, 0);
             if(pHttpCon->socket == NET_PRES_INVALID_SOCKET)
             {   // failed to open the socket
                 SYS_ERROR(SYS_ERROR_ERROR, " HTTP: Socket creation failed\r\n");
@@ -1175,11 +1160,6 @@ void TCPIP_HTTP_NET_Task(void)
 
     sigPend = _TCPIPStackModuleSignalGet(TCPIP_THIS_MODULE_ID, TCPIP_MODULE_SIGNAL_MASK_ALL);
 
-    if((sigPend & TCPIP_MODULE_SIGNAL_TMO) != 0)
-    {   // update HTTP time keeping
-        _HTTP_SecondCountSet();
-    }
-
     if(sigPend != 0)
     { //  some signal occurred
         TCPIP_HTTP_NET_Process();
@@ -1232,7 +1212,7 @@ static void TCPIP_HTTP_NET_Process(void)
         }
         else if(httpNonPersistentConn == false && httpPersistTmo != 0 && pHttpCon->flags.sktIsConnected != 0)
         {   // check the connection has not timed out
-            uint16_t currSec = (uint16_t)_HTTP_SecondCountGet();
+            uint16_t currSec = (uint16_t)_TCPIP_SecCountGet();
             if((currSec - pHttpCon->connActiveSec) >= httpPersistTmo)
             {   // timeout; kill the connection
                 _HTTP_DbgConnTmo(pHttpCon);
@@ -1251,7 +1231,7 @@ static void TCPIP_HTTP_NET_ProcessConnection(TCPIP_HTTP_NET_CONN* pHttpCon)
     bool needWait;
 
     // mark connection as active
-    pHttpCon->connActiveSec = (uint16_t)_HTTP_SecondCountGet();
+    pHttpCon->connActiveSec = (uint16_t)_TCPIP_SecCountGet();
 
     do
     {
@@ -3322,19 +3302,25 @@ TCPIP_HTTP_NET_USER_HANDLE TCPIP_HTTP_NET_UserHandlerRegister(const TCPIP_HTTP_N
 
 bool TCPIP_HTTP_NET_UserHandlerDeregister(TCPIP_HTTP_NET_USER_HANDLE hHttp)
 {
-    if(httpConnCtrl)
-    {   // we're up and running
-        if(hHttp && hHttp == httpUserCback)
-        {
-            if(TCPIP_HTTP_NET_ActiveConnectionCountGet(0) == 0)
-            {
-                httpUserCback = 0;
-                return true;
-            }
-        }
+    if(httpConnCtrl == 0 || hHttp == 0 || hHttp != httpUserCback)
+    {   // minimal sanity check
+        return false;
     }
 
-    return false;
+    // we're up and running
+    // abort all connections
+    int connIx;
+    TCPIP_HTTP_NET_CONN* pHttpCon = httpConnCtrl;
+    for(connIx = 0; connIx < httpConnNo; connIx++, pHttpCon++)
+    {
+        if(pHttpCon->socket != NET_PRES_INVALID_SOCKET)
+        {
+            TCP_SOCKET tcp_skt = NET_PRES_SocketGetTransportHandle(pHttpCon->socket);
+            TCPIP_TCP_Abort(tcp_skt, false);
+        }
+    }
+    httpUserCback = 0;
+    return true;
 }
 
 
@@ -5669,8 +5655,31 @@ static void _HTTP_Report_ConnectionEvent(TCPIP_HTTP_NET_CONN* pHttpCon, TCPIP_HT
 }
 
 
+bool TCPIP_HTTP_NET_InfoGet(int connIx, TCPIP_HTTP_NET_CONN_INFO* pHttpInfo)
+{
+    TCPIP_HTTP_NET_CONN* pHttpCon;
+
+    if(connIx >= httpConnNo)
+    {
+        return false;
+    }
+
+    pHttpCon = httpConnCtrl + connIx;
+    if(pHttpInfo)
+    {
+        pHttpInfo->httpStatus = pHttpCon->httpStatus;
+        pHttpInfo->listenPort = pHttpCon->listenPort;
+        pHttpInfo->connStatus = pHttpCon->connState;
+        pHttpInfo->nChunks = TCPIP_Helper_SingleListCount(&pHttpCon->chunkList);
+        pHttpInfo->chunkPoolEmpty = pHttpCon->chunkPoolEmpty;
+        pHttpInfo->fileBufferPoolEmpty = pHttpCon->fileBufferPoolEmpty;
+    }
+
+    return true;
+}
+
 #if ((TCPIP_HTTP_NET_DEBUG_LEVEL & TCPIP_HTTP_NET_DEBUG_MASK_CHUNK_INFO) != 0)
-bool TCPIP_HTTP_NET_InfoGet(int connIx, TCPIP_HTTP_NET_CONN_INFO* pHttpInfo, TCPIP_HTTP_NET_CHUNK_INFO* pChunkInfo, int nInfos)
+bool TCPIP_HTTP_NET_ChunkInfoGet(int connIx, TCPIP_HTTP_NET_CHUNK_INFO* pChunkInfo, int nInfos);
 {
     TCPIP_HTTP_NET_CONN* pHttpCon;
     TCPIP_HTTP_CHUNK_DCPT* pChDcpt;
@@ -5682,14 +5691,6 @@ bool TCPIP_HTTP_NET_InfoGet(int connIx, TCPIP_HTTP_NET_CONN_INFO* pHttpInfo, TCP
     }
 
     pHttpCon = httpConnCtrl + connIx;
-    if(pHttpInfo)
-    {
-        pHttpInfo->httpStatus = pHttpCon->httpStatus;
-        pHttpInfo->connStatus = pHttpCon->connState;
-        pHttpInfo->nChunks = TCPIP_Helper_SingleListCount(&pHttpCon->chunkList);
-        pHttpInfo->chunkPoolEmpty = pHttpCon->chunkPoolEmpty;
-        pHttpInfo->fileBufferPoolEmpty = pHttpCon->fileBufferPoolEmpty;
-    }
 
     if(pChunkInfo)
     {   // fill data for each chunk
@@ -5718,9 +5719,8 @@ bool TCPIP_HTTP_NET_InfoGet(int connIx, TCPIP_HTTP_NET_CONN_INFO* pHttpInfo, TCP
 
     return true;
 }
-
 #else
-bool TCPIP_HTTP_NET_InfoGet(int connIx, TCPIP_HTTP_NET_CONN_INFO* pHttpInfo, TCPIP_HTTP_NET_CHUNK_INFO* pChunkInfo, int nInfos)
+bool TCPIP_HTTP_NET_ChunkInfoGet(int connIx, TCPIP_HTTP_NET_CHUNK_INFO* pChunkInfo, int nInfos)
 {
     return false;
 }
