@@ -148,6 +148,7 @@ The following linker file(ddram.ld) modifications are required to enable applica
 <img src = "images/step30.png" align="middle"> <br>
 
 *Now clean and build the project. You should see a message on the output console that the project was successfully built. This completes the development of the application.  <br>
+The harmony.bin file can be found in your \<project_directory\>/dist/default/production/harmony.bin.
 </details>
 
 ## SAM-BA Installation and Setup:
@@ -185,7 +186,7 @@ Note: ***Boot configuration using Emulation SRAM has to be set every power cycle
 ## Debugging Application Project on MPLAB® X IDE:
 - Open the project (sam9x60_ek_blink_led_qspi_xip/firmware/sam9x60_ek.X) in MPLAB® X IDE.  
 - In the project properties, ensure `SAM9X60` is selected as the 'Device' and for `Connected Hardware Tool`, select connected J-Link debugger with the board to program/debug the application.  
-- Build the code.
+- Build the code. The harmony.bin file can be found in your \<project_directory\>/dist/default/production/harmony.bin.
 - ***Before debugging ensure that harmony.bin file in your project directory is flashed in the QSPI offset.***
 - Refer the section “SAM-BA Installation and Setup" for initial device setup and tool installation procedure.
 * Use the below sam-ba commands to erase QSPI flash and program the application.
