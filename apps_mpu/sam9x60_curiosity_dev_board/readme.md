@@ -13,7 +13,8 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Graphics Getting Started ](./sam9x60_cu_graphics_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x60_cu_graphics_getting_started.zip) |
-| 1 | [Snake Game ](./sam9x60_cu_snake_game/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x60_cu_snake_game.zip) |
+| 2 | [Snake Game ](./sam9x60_cu_snake_game/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x60_cu_snake_game.zip) |
+
 
 ### More Application Demos
 

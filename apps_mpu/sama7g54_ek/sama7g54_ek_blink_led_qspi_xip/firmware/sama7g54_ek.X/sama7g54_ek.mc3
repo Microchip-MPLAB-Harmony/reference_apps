@@ -1,0 +1,2108 @@
+<config configName="default" projectName="sama7g54_ek" configVersion="1.1" device="SAMA7G54" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+   <usedPackages class="java.util.ArrayList"/>
+   <usedClasses class="java.util.TreeMap">
+      <entry>
+         <string>BSP_SAM_A7G5_Evaluation_Kit</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>cmsis</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>core</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>dfp</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+   </usedClasses>
+   <usedLibraries class="java.util.ArrayList">
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
+   </usedLibraries>
+   <tokenMap class="java.util.TreeMap">
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_CN0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_CN0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_CN1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_CN1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_CN2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_CN2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_CN3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_CN3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_CN4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_CN4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_CN5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_CN5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_DIR0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_DIR0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_DIR1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_DIR1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_DIR2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_DIR2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_DIR3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_DIR3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_DIR4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_DIR4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_DIR5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_DIR5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_LAT0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_LAT0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_LAT1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_LAT1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_LAT2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_LAT2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_LAT3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_LAT3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_LAT4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_LAT4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_LAT5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_LAT5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_MODE0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_MODE0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_MODE1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_MODE1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_MODE2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_MODE2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_MODE3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_MODE3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_MODE4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_MODE4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_MODE5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_MODE5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_OD0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_OD0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_OD1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_OD1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_OD2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_OD2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_OD3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_OD3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_OD4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_OD4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_OD5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_OD5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PD0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PD0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PD1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PD1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PD2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PD2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PD3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PD3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PD4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PD4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PD5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PD5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PIO_INTERRUPT0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PIO_INTERRUPT0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PIO_INTERRUPT1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PIO_INTERRUPT1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PIO_INTERRUPT2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PIO_INTERRUPT2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PIO_INTERRUPT3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PIO_INTERRUPT3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PIO_INTERRUPT4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PIO_INTERRUPT4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PIO_INTERRUPT5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PIO_INTERRUPT5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PU0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PU0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PU1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PU1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PU2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PU2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PU3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PU3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PU4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PU4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_PU5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_PU5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_TYPE0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_TYPE0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_TYPE1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_TYPE1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_TYPE2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_TYPE2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_TYPE3"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_TYPE3&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_TYPE4"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_TYPE4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_CUSTOM_TYPE5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_CUSTOM_TYPE5&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BSP_SAM_A7G5_Evaluation_Kit" name="BSP_TYPE_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BSP_SAM_A7G5_Evaluation_Kit&gt;
+  &lt;BSP_SAM_A7G5_Evaluation_Kit dnOrder=&quot;0&quot; id=&quot;BSP_TYPE_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+&lt;/BSP_SAM_A7G5_Evaluation_Kit&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cmsis" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
+  &lt;UserData dnOrder=&quot;0&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;170&quot; canvasWidth=&quot;461&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_A7G5_Evaluation_Kit&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+  &lt;/UserData&gt;
+&lt;/UserData&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_119_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_119_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO5&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_119_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_119_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_140_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_140_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_140_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_140_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_175_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_175_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_INT&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_175_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_175_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_176_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_176_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_DQS&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_176_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_176_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_203_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_203_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO7&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_203_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_203_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_204_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_204_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO4&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_204_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_204_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_205_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_205_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_205_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_205_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_217_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_217_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_SCK&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_217_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_217_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_218_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_218_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_SCKN&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_218_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_218_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_236_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_236_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO2&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_236_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_236_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_238_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_238_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO3&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_238_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_238_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_257_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_257_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_CS&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_257_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_257_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_277_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_277_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_277_FUNCTION_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_277_FUNCTION_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_277_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_277_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_277_LAT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_277_LAT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_277_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_277_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;LED_AH&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_305_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_305_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_305_FUNCTION_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_305_FUNCTION_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_305_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_305_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_305_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_305_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;SWITCH_AL&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_305_PU"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_305_PU&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_33_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_33_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_33_FUNCTION_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_33_FUNCTION_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_33_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_33_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_33_LAT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_33_LAT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_33_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_33_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;LED_AH&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_66_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_66_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_66_FUNCTION_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_66_FUNCTION_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_66_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_66_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_66_LAT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_66_LAT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_66_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_66_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;LED_AH&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_87_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_87_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;QSPI0_IO6&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_87_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_87_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_CFGR_Value12"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_CFGR_Value12&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x200&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_CFGR_Value13"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_CFGR_Value13&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x100&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_LATCH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_LATCH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueB"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueB&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueC"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueC&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueD"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueD&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueF"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueF&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_A_MSKR_ValueGPIO"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_A_MSKR_ValueGPIO&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x3000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_CFGR_Value8"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_CFGR_Value8&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x100&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_LATCH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_LATCH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x3ffe00&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueB"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueB&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueC"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueC&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueD"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueD&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueF"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueF&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_B_MSKR_ValueGPIO"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_B_MSKR_ValueGPIO&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x100&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_CFGR_Value20"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_CFGR_Value20&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x100&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_LATCH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_LATCH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueB"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueB&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueC"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueC&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueD"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueD&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueF"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueF&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_D_MSKR_ValueGPIO"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_D_MSKR_ValueGPIO&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x100000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="XC32_HEAP_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;XC32_HEAP_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1024&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dfp" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+   </tokenMap>
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
+      <entry>
+         <file>..\src\config\default\bsp\bsp.c</file>
+         <hash>01c58e967b09b30368ece36ae4874a48c69738d6fa6301ea59fd33a3e817b157</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\bsp\bsp.h</file>
+         <hash>3b84a8db345fda25745be0e22edfded8f2c55f77ed132001577769de39fc47fc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\cstartup.S</file>
+         <hash>b7ac8fe140922db2917983068a65ba16df7cd36c5a6b1a6977bcb830e2ad89a9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ddr.ld</file>
+         <hash>c6454caab96febd03c6d9b487b502898fc4b492529c39a8441137c7b5feb4118</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\definitions.h</file>
+         <hash>f190b2a6bc1bdcaa02c205ef41dd7e8e3a6d80f311a855fb46e4d8950b4fac08</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\device.h</file>
+         <hash>1cda4d9666f35d5b9f93c28332742ec8ac2368573b111c13615f6e07b6c9432c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\device_cache.h</file>
+         <hash>ce94cf269fc251c24bb9e5a10bef856736681af405f0ac733e14610f9349cbfe</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\fault_handlers.c</file>
+         <hash>34134ba54c0becfbe75cd670be15133f2a10dea081d9fa5fab75f17afc1109ba</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\initialization.c</file>
+         <hash>4954481d2f4c34a8f07839447c7942610d8919f8e39843d7bf53051b232c0f37</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\interrupts.c</file>
+         <hash>6098d523e6cda98577aff946046278cb05fde523d986c2cc76f770aa237d5b19</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\interrupts.h</file>
+         <hash>759cce8ff415eadadd85a74232a5023d73e8859a4556ef4beb93c2cfd4b8d8ef</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
+         <hash>48f9f355e31fbc67517b66eaddb7f3d57751a8c972a90fef02e5bc9d6386f235</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
+         <hash>06fbd033b79a7ff727b633eaab93fac303dfe769b7c63b8700ab424e2b313717</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\dwdt\plib_dwdt.c</file>
+         <hash>6fc49ad6db57bc21c4cf718b10f5d82dae98c350c6090c354e1a701c4b814b8c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\dwdt\plib_dwdt.h</file>
+         <hash>ccca95133d642b39a30d6fff8e4841b1711f56a5e76bda74f52e6587c4696a4d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\gic\plib_gic.c</file>
+         <hash>e6a14f44cf05e794ebbc9751b424e4959342738403cdcedd245b7d6041fb7394</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\gic\plib_gic.h</file>
+         <hash>92e447d1cb7ee981d456921c05de673482ee64824249201bb7543836b59386bb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\matrix\plib_matrix.c</file>
+         <hash>5f4939a55ba9889e72670b5785dca4ba57ab6a39e9266e0f21a30959484b72da</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\matrix\plib_matrix.h</file>
+         <hash>206c5d36d509a1aa53eff4d4bb95ca763a93680669da0a56958bbf4b1d4465e3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\mmu\plib_mmu.c</file>
+         <hash>9d208c9366b7724115e10b8941a6a6f97b457de806dfff78757e5f1657392337</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\mmu\plib_mmu.h</file>
+         <hash>d776f8cb7caf3ccffada3d8624315c7f21ef457e4938ffb11611e3b7b048c4d7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\pio\plib_pio.c</file>
+         <hash>7bfaed0ce76ae21df5d24f80515591d8eec258938e0b0f0d7bbb66a341ab8c84</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\pio\plib_pio.h</file>
+         <hash>070bc4afa20db0ae0581c11e4afc2975f83a51ee7e0b6f23cae84510d42a9bba</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\pin_configurations.csv</file>
+         <hash>ca209521e34588baafd2601b9948531a4fdd78e270f12c360195d887191c16ad</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\stdio\xc32_monitor.c</file>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\toolchain_specifics.h</file>
+         <hash>ee4e637b8c1f84b85cce704b3f32de775fe056743591be27f94fd391e0526358</hash>
+      </entry>
+      <entry>
+         <file>..\src\main.c</file>
+         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core_A\Include\cmsis_compiler.h</file>
+         <hash>5f314774edbd044865df8c2c2c98242bfa8ee8e671559b110d1e139776f45b7f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core_A\Include\cmsis_cp15.h</file>
+         <hash>5d0183058de6b2245dc949f13bb736cd1e8fe154fa76b643f9fb8947c1b3ee04</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core_A\Include\cmsis_gcc.h</file>
+         <hash>a720d18d2dd2921d8fe308d21c1f2e9c8174549ec1a34447927db3dcc9505aa9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core_A\Include\cmsis_iccarm.h</file>
+         <hash>aede1a5428f7b7f4de414f596a2b2b8b1e38a94b7f9762a094ea6d88a7ea5729</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core_A\Include\core_ca.h</file>
+         <hash>ba65df987ecd6e3692f49eda2a6be74d4e1f0a9a3595e7c15c9812c360591f85</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\acc.h</file>
+         <hash>f2f8ea04febe7eb4e52e7e3d2bf9b3036d4d7cf4d125f08767e2b1e661a0eb9d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\adc.h</file>
+         <hash>b87393ac829b07c38c0cfe92bfcdabc64b52060e802a0eac29557b96fc58290f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\aes.h</file>
+         <hash>9eb258d1b28a390ac2f656097551478de73f52f452d74624c7ffa2d394548ad3</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\asrc.h</file>
+         <hash>8210d921ff561af440d854d49a261823fec369f667b28f6f1d9694c19182babc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\bsc.h</file>
+         <hash>ade7ad0d9f711d422953effabfa1ebbcef90c7f6ceffb75e4370d74c2ed5cac4</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\chipid.h</file>
+         <hash>ec018cde6fda9f4323935fed140d2ce735e2896ce811e5bc6b7f96330ade597a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\cpkcc.h</file>
+         <hash>736df075495d5f0e69b7332d9cb766b0506c5974c463917d16bd1ab88ecbfab6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\csi2dc.h</file>
+         <hash>168a2cdedaf38f649acf1b52a59d66f1707ef56caca41d982252e2b98fb201a9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\ddr3phy.h</file>
+         <hash>e8df2f86e34f4c01c31f3d64408ed7aaf99076adba7ef8c6ec18f70c08629bc3</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\dwdt.h</file>
+         <hash>39ca7b75a24c4e9963f65812a6a4c466ac9fa7e30ec801bbbe1aa89e646072b5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\eic.h</file>
+         <hash>f290c64c81a4b392338ea0d92366fb0bc844b2b7b9cc32ed878474a36e52cfd0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\flexcom.h</file>
+         <hash>fe550044af03be57955cd734c81090a2585648cba2807e8f28f3d80249dad319</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\gmac.h</file>
+         <hash>44373061e66c73883d59267b16c5a81d3884d3d6624ed92a85892ff26321308d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\gpbr.h</file>
+         <hash>4c21f0c8055d9636d9f37cffb4c309adcf314a73d4d766c63c5c75685a1dafd0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\i2smcc.h</file>
+         <hash>aeee3d2702ffd43852c267ec47ad79bc84c191f7adad0626a2ac750052bc06b8</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\icm.h</file>
+         <hash>6e4ff5f9423ff9e31a9430ed007d2a987cf00cfd8881475682a05f2200b19b4b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\isc.h</file>
+         <hash>d51e6fe6875b486a98e8c2ba89f012f589a9b772f86dd4e9d5a9a325a5926fe1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\matrix.h</file>
+         <hash>5f82537f38c7336017e628bedb3ed7ab69fb1b7e1868de65aa83e4c657f53429</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\mcan.h</file>
+         <hash>919bbe685c39716550d9b53d22581f98b2e4521d8351de2584cbda992e8cae4f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\mipicsi2phy.h</file>
+         <hash>3c0d5fe66931773142a6ea4ea2e0dc2804cd3539a9886ac0d6234d3a8de4131f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\nicgpv.h</file>
+         <hash>229870744d96d08b23268d090cff9245375f9cfc48360c5c6faf37d985b0d0cf</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\otpc.h</file>
+         <hash>b6a114d4b395b491777846b276606dd04f6ba7694b96f05971649534b3aa12d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\pdmc.h</file>
+         <hash>58ca60fd90d79dd3a2fac308386ad590cd7e0615f4d6b6786a08b60be4d7e9d7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\pio.h</file>
+         <hash>11ffd3e5f4a6accd6a887d95c5efb308e3703c1f6333e02d190f6620b67ef3a1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\pit64b.h</file>
+         <hash>82dd3d8d4c8f9c2f6dc9fdfc2dac4f1b663d4938006a8d394ba179d3b1c2b801</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\pmc.h</file>
+         <hash>4815cde42f07c3d324997dbb08a834f67b27000fc9e514cc4d73412a812c0a37</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\pwm.h</file>
+         <hash>0ad99fb19318f5a1080ccc5cd22d7f0e721b98625717609216ac0825b6ac292f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\qspi.h</file>
+         <hash>fcd848e50f0a98a46277a0746c3a03a3b255d4e93b8b6218945b1337b19768ff</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\rstc.h</file>
+         <hash>d60eaacf89feb2757f2fc0d9222c46bb361dea4e9bf4fd80ea3c68d1c691e2c7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\rtc.h</file>
+         <hash>9ca10089895de2cfec4edc918a9bb6162efe59a6d2f7d0e4c57190bc8abc4278</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\rtt.h</file>
+         <hash>f9a41a195821625baccf09e424372028eb9c0818582c031386277845d9c1a5bd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\sckc.h</file>
+         <hash>1570d0eb074876560f311c5fbf4e01ea5d281d60c64b358165826e3807452e98</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\sdmmc.h</file>
+         <hash>1a35eccf1b279eef273080e487c728a5442b427c22fc9f0b7be19b66bcf1a7fb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\secumod.h</file>
+         <hash>1728986160fa54c570b0f70c23780a6ace32cb9b12ce32b9091f7fdd59c1ad31</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\sfr.h</file>
+         <hash>e00501d3430dc5c1ab096b62c4c9f2cf81ffcdd8fa4af08287250d43abe3dc58</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\sfrbu.h</file>
+         <hash>f247fcbfd97641a3f7ef9e71b31b045cafbafb2bd6d7fca8305e36dfa68bcf28</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\sha.h</file>
+         <hash>a333fe680b2310fee68b71bd37d50af16dbe530a5e878ed0e466487067972b96</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\shdwc.h</file>
+         <hash>48e442715e93c15d27e6ade2d7ea62d5de8a89b90eb24c208ac4f379b1d54272</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\smc.h</file>
+         <hash>49dc91bbdacf3bb1f814d4287a48d9b27d03a9a38905d121148816f3244e2afa</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\spdifrx.h</file>
+         <hash>87234663119ed3dbdcbd658f112307bcd2c33c8fc7d32a90a859df5e0f7bf279</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\spdiftx.h</file>
+         <hash>9fac93c704740967deac641122f66dd70daa02b3b88ffda8defe60d05f68c140</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\ssc.h</file>
+         <hash>87ca0adab9cdaef4a439f0a5b12e7785990bec1f3842d63d4ac72036360dfd07</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\syscwp.h</file>
+         <hash>aa4444756a3a68514bdf1fec778555f0c2f8a15acb3757153d9b95eef887509d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tc.h</file>
+         <hash>451b5cb249586755b11f3d9c1f6947056efed87afea78f2860f57a79f3137ff1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tcpc.h</file>
+         <hash>3e5a22677fca22e5bb29762e4a2941e25d98e5af8ab8dc8f1842a78143d54b2e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tdes.h</file>
+         <hash>ad1d8fdb7623470806fbc47ee3ea3017fef48f54f56fd23a8cff60f4ca806822</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\trng.h</file>
+         <hash>e6b3c6dc44c9de9246b4ca2142c36a773a991425c8ed690cd4568fd5f7ac4c1d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tzaesb.h</file>
+         <hash>ce7cb49cf3da0a9dd1a0ec83cd91cf1c30cb3f95566dae5cca5f8fce1f8a8f31</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tzaesbasc.h</file>
+         <hash>4e0f1a4401a90d2285d9e43f1ffa130988237308dd01097670ea6fa60ed7d0df</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tzc.h</file>
+         <hash>26cfa528bf8dadfd888cc3fdd624d672b6d79e99c5b4ed626f7ba4b3704bf0e7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\tzpm.h</file>
+         <hash>f2361e60f2a0e52c709c5a2bdc153db33d0a567dce275616d7eeb2a2814f9e84</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\uddrc.h</file>
+         <hash>d4f00ed04273afe22daf27fc0764edef18dc8f9e2d99de0f5e892abb19a82d79</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\udphs.h</file>
+         <hash>a2ee1ad46f4d1149dabd094b84a250d91fc73e5c721146ee0d847fa722686601</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\uhpfs.h</file>
+         <hash>12ee1b39c540c7653af610f7b9b6c1af4c33b15553de537661223cd940b6ec6b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\uhphs.h</file>
+         <hash>3727363ae6aae4c9db75ae7b18daf85497810ea73fd3a58b9625448e106ed7b1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\component\xdmac.h</file>
+         <hash>2bfe8bfaddf561457867d1b59b51331f61a842dd5911c2be84a87914849c5a14</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\acc.h</file>
+         <hash>5d0bc471050f34708e61477db402d62cf09a2d9d07fc0a8b6cf4a7aa966a9430</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\adc.h</file>
+         <hash>5d5819adf018a8fea55b9eee772dd551957face5a6c66833cb2fe3860bb6772d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\aes.h</file>
+         <hash>285aeaefe604e1f095efc62f0950c8699b6731b388fdd2208b93f90956e807a7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\asrc.h</file>
+         <hash>0da80a472024f0d3ef995265d116a5480a6c305a4c84726839683eff6c700550</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\bsc.h</file>
+         <hash>e0955e448feddcce6d74eb9ab6d745fa5a630864727c9e1c669b70bfe5fa199a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\chipid.h</file>
+         <hash>83d6b5238e3a593c900118504fc23877f9a1b3edc5656e18aeea17d5ddbf863f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\cpkcc.h</file>
+         <hash>16d9ef185552c0240eb0087911738f27b77151ad9b15440b8350a41ddce0fae9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\csi.h</file>
+         <hash>b2c646a675b342138266557d7ffbf46955422a54f6170fa6845dfe2b7d23aaa8</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\csi2dc.h</file>
+         <hash>ec9c2d6d2bff82773b956e17f9f2f344d8bfc7248749e4e2ae458551173c6764</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\ddrpubl.h</file>
+         <hash>21f937b5e6b4384bfe86d6a718aac87636eda4a915f7d27b2977dc50e000d549</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\ddrumctl.h</file>
+         <hash>11501cb6b98f56e0ef0dd0239fefcd8195c87cb1c11c8eeee8ac594bd8b76fb5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\dwdt.h</file>
+         <hash>01aee23fb606ffc77f1cd380f7a95f6b54c9673a93fcbffcbffcb7214a13eacb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\eic.h</file>
+         <hash>7bf0b75aad5badc087543d564e350dcd479d1ed5aa94b8326fd7fb2c74184799</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom0.h</file>
+         <hash>01b2892210a63f969f7fe8abbf260c1df90339ffd1c25cc4c60b5d40a5c23887</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom1.h</file>
+         <hash>ccb271bfe1a38312814b45aa284ade291a8adb40ac309b5401e2e8778991ee90</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom10.h</file>
+         <hash>84e72a977b53c42aad97cddf2c3f484d495794ab01763bd5077b4713ee029b36</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom11.h</file>
+         <hash>71f839fdb358446762c6875908d2249c1571515be776be3b3391581df07c9896</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom2.h</file>
+         <hash>1fcc6795bc37bb9eb0a52e889dc626ccf4e5121d954d2f29b71b396ceb876254</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom3.h</file>
+         <hash>668394cc00f8e424a2c016cb24277a57d7e42527f5fa1575cf4abec33aee9282</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom4.h</file>
+         <hash>9fc5d76d3b753c1e8453e5e8687c528514035e9384c74897ba184bd2c9cac394</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom5.h</file>
+         <hash>9e73b0c98f15158125d6604185aef6741c6fe773552f0216a63dc08ec37f74bd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom6.h</file>
+         <hash>b1124153df9126ef90563874955591cc8a56a530c89f592c5cda7deb35f38f65</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom7.h</file>
+         <hash>f3a75a3c961fe85a60956a77bd4f1db6ad1bc215071ca9992a18404249e06a29</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom8.h</file>
+         <hash>6ce0198d5d48324e94afa6729fab4dc6703169e671b81f21cb7c46d4257344fd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\flexcom9.h</file>
+         <hash>28d7921cc924e35e7d59f8e9419aa42c90124b027a4be46f6df3a6d5302be812</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\gmac0.h</file>
+         <hash>5388324aeb691a243a40b75109dc9fdf68d66aa8623ea768a116b56120d16396</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\gmac1.h</file>
+         <hash>4168ab896f3799542485efdb1bef90ae58bccb94e6e793bb1d548144da0af9dc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\gpbr.h</file>
+         <hash>34e5d5faf0d7b5d41bfa339fd5646761dfee1a5953b2a1d36a5181eed12c9e9f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\hsmc.h</file>
+         <hash>d1449ab40d5eae671413ee417ef5d45208f5902139620bca03126a054b3908be</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\i2smcc0.h</file>
+         <hash>a948b73ba5f89625a890b5bde4e766bb0a289472776320de42f35f1c03759e27</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\i2smcc1.h</file>
+         <hash>6e35310836dba5ddeb4cd7169c42804307e9cc3a1c7230b312a58afd266fee51</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\icm.h</file>
+         <hash>197c88a4325d8a2b43d5facdf906f1d76f68e2e9dd4e59d35cfb84640ea3528b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\isc.h</file>
+         <hash>4b789b04fa5fd92f1adaa800c81dccb596db517092dde3dd92c5291fc9001dc5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\matrix.h</file>
+         <hash>45210c64abbe0ea9e2a226da500eb8041d0589c6c090ad7c64919acd5148a1a2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\mcan0.h</file>
+         <hash>172f185db3bf4b39de29ff2ee13ece5880abf7268b5ad6b432c7910139239866</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\mcan1.h</file>
+         <hash>fc122ee97b4e3f897b09e8cab087177b13fc81776c5b7b6acbb28c4d88d8753d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\mcan2.h</file>
+         <hash>16a0f258ffb5895f1c1419432d17798b41d8be176661bce04867ed7cdbec0b94</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\mcan3.h</file>
+         <hash>259b98982652d49d8860ace122ff5de58a724887d11154c4b9d9e14074cb669f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\mcan4.h</file>
+         <hash>935a2a52e8f52a5b60075e2479ff8ed319e21e30ed6c6c19a59350b33cc2693b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\mcan5.h</file>
+         <hash>d613caba7a91315a9c283b9ea18f11c62f26680bccc6692ccdb6779e6bb73af8</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\nicgpv.h</file>
+         <hash>896402c9c7267862ef93394f81f06c4a5afac905a2e9a55af82b7e7ceeb71709</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\otpc.h</file>
+         <hash>478d91b2443daab6c0fbad53fb2d5552c0166dea34d3bb1ab0443ff73954d146</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pdmc0.h</file>
+         <hash>c80ab00219b3ec14ec0965db58e6d7a61b0de891e344bdebfc07d04bed881051</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pdmc1.h</file>
+         <hash>7603125fad2f6c57caefa4677ac3ca98200570b5c69dc2b618340ae78347cb97</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pio.h</file>
+         <hash>767585ff3983831f764e4fcb0e34d7baebb5b3a5ff749077428a85349c0a9db6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pit64b0.h</file>
+         <hash>3fde1fa647603504e61bae4f4d03ce2756118b8999bd178ea55f4add6e95ec46</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pit64b1.h</file>
+         <hash>6068be503b53ebc5ef509111ef3cdc06768490d46f21f9d683ba21c2d0a6c92e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pit64b2.h</file>
+         <hash>0a9170e48ba55e42f62d73994e20b333578b5076135bb1ff2529e340e7ddf108</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pit64b3.h</file>
+         <hash>0eb0226863a6ecb76f249e5385623de9c07819d25ee5404c8770a954b298d13c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pit64b4.h</file>
+         <hash>c47b8a1b13b8384994c04ecbb1e9cc96172f756f518f46f86d7f09a125d36bfc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pit64b5.h</file>
+         <hash>cf0eec6f15bcf15e566309a96934d9fa190b340dd031e5ffe56d7ffa6e8a924e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pmc.h</file>
+         <hash>c91bd2b0131dc4a5cc84f83ab3757823e1e606749bfce4025f3bb1cdf1c9a5ac</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\pwm.h</file>
+         <hash>ebd207352bc561159ffdc2d354c46d42604416252192311b208a13e9b65c0107</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\qspi0.h</file>
+         <hash>7e37eb55e52fdd7296c7417fbb227fe1a56ee317b00be464e16cd166f043264a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\qspi1.h</file>
+         <hash>f250f3903ce6a849737d10f914f5c1dc016026a576219229b0015a4089e6154b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\rstc.h</file>
+         <hash>f8c81dff9aa00120470aa8da00a7532b28a0b361720bfe0e17cab732b577bf7e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\rtc.h</file>
+         <hash>26e01490affcb959fcb45fdad74374a84f43d56eecb214c97eb073c340b40d94</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\rtt.h</file>
+         <hash>4d6a404797d2bdd960c016a8e9aa7f2713f962b47732d2cd43ddcd6eebc032d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sckc.h</file>
+         <hash>5a09b4c9d68d0963b92a89efd20ac0420d19f3fd51172d11731cdb3419948da5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sdmmc0.h</file>
+         <hash>36c514af561657242a38a2704e902bf14cb1c78b7c6ae9a9562bb75eef16a970</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sdmmc1.h</file>
+         <hash>6f6875b9fbd53312556b3d995e947d8a776063b1aee14334d7fc07f3f0f65ecb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sdmmc2.h</file>
+         <hash>82bd98ab19494590b551be088a61b8f94a48f301af6df471bcd20d9a8aef8977</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\secumod.h</file>
+         <hash>79d05b434375ff35dd3bd40bfb7dab76bb13ad9e9deb4427dbb4a70e2a96c1f5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sfr.h</file>
+         <hash>58c9b95b3fe66391a67334ef4b9c44e1bdaf8bbe9932c32996df27cfb8a402bf</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sfrbu.h</file>
+         <hash>59d595bc526c03a36f69893712be5ae4a2a26266acaa24db44f89a0d83363324</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\sha.h</file>
+         <hash>1698631d40ecce75a72896dc3a40c5abd97058bd1ad97843495279172cc8cd2d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\shdwc.h</file>
+         <hash>39143c11e720b82d46714b9a6b3d281c5b71289427071e2b39472c69582de885</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\spdifrx.h</file>
+         <hash>fe371438db294ba77cb16ae1690f48144a141132e5377931f533eb4e509d73da</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\spdiftx.h</file>
+         <hash>3577d5415986b7ad44282ba3f8d9e70d50e83a6965dbf7ee172ab92531503c0d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\ssc0.h</file>
+         <hash>c632aec6d61784272960fb8aba7abab974355ef391ef17787268f16b50692e68</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\ssc1.h</file>
+         <hash>51c294ff738128fc4233d6a6eacbd9ec3a65aef09945d079d8d818f262db392a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\syscwp.h</file>
+         <hash>50ee16c00d3a219901b3b0b0adeda6781041b7ceb31f9c705bc9976f008fb230</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tc0.h</file>
+         <hash>84c7eb15a6e60e7edf48a989d8200e18f6aa1d4c53c1544c51b30cef6afb9314</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tc1.h</file>
+         <hash>91674ea233214497e838df25f2b2c147bc5abb36db3ef1071f6b798c45485e9f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tcpca.h</file>
+         <hash>937cc053acd05194d43449a35d4e6abeae7d51d5da47049b6fb8ed92dfc7efe5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tcpcb.h</file>
+         <hash>bdad89fe554aad11bf33813b05aa72d9417c43130bbb51cabdff7a174d4dbda1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tdes.h</file>
+         <hash>135d020ca4f13d6aced3d52e68f894c88d206f8e00be0901c2e294ce379525d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\trng.h</file>
+         <hash>c738c4318b53fb7fb896b32c02ca10e3cb2f0f54fd1f084f9cafcaea796d710d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tzaesbasc.h</file>
+         <hash>8a00c7bfa513421b706bb71cc6a637982bfd603799216232205ce489cd9717f2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tzaesbns.h</file>
+         <hash>17211ae34f44c990ecf211c15019ddeed3d5914f882816233623e1cf23a52520</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tzaesbs.h</file>
+         <hash>b8d570bbf0bcc0a46ebb160e5e853808c01f0fb31c1e2cfc4a55a2b5d38c88d2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tzc.h</file>
+         <hash>19bf86ade0273640555f980cb2fa2da6d20580e59629b43f6ee3c54cee4048e2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\tzpm.h</file>
+         <hash>fc2e66ec035b7246662c1e2205ce11c5acf5b594a2dd19815c9862d7bc89365d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\udphsa.h</file>
+         <hash>ef49932465081a65064fc002abf42fde00bf84e33df19711d44b966a62156073</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\udphsb.h</file>
+         <hash>0ec5dae44cca4f717e23dd38fbd3f2e1696352a7e6c106dc18958d4bd4e50967</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\uhphs_ehci.h</file>
+         <hash>da859aceb01b26e113c05e00a4711632b19aab9b8749342a565d61b87a504078</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\uhphs_ohci.h</file>
+         <hash>4c0835f3dea6592fb48d115ee0fbbdad604d3697220d86c645aaa3cb2833b206</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\xdmac0.h</file>
+         <hash>e3b064e5cc0f19e7ea413c8bb485c2035c4c2c44b6ec8d966b5f183c42601233</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\xdmac1.h</file>
+         <hash>e0e9b8fa0aa7635c0fb823d27b30612a90065694098afacc2029e4477241284c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\instance\xdmac2.h</file>
+         <hash>e2ef85aa99cdf207028b74743ec17321f64949d347374686e22cbc789cf773ec</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\pio\sama7g54.h</file>
+         <hash>6d9e0694a9ca7d1615506d053ba2661d554c41f1c0f3b1acb03b708c42e2c041</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\SAMA7G54_DFP\sama7g54.h</file>
+         <hash>62384563d7894df321d5dccec5b436d6e1296f48941e117b701f1201be343d60</hash>
+      </entry>
+   </generatedFileHashHistoryMap>
+</config>
