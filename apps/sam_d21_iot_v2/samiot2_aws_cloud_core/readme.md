@@ -10,7 +10,6 @@ nav_order: 2
 <h1> AWS Cloud IoT Core Application on SAM-IoT Wx v2 Development Board </h1>
 <h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samiot2_aws_cloud_core.zip" > Download </a> </h2>
 
---
 ---
 
 ## Description:
