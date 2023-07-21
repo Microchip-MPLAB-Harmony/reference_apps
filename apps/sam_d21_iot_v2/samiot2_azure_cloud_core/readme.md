@@ -12,7 +12,6 @@ nav_order: 3
 # Microsoft Azure Cloud IoT Core Application on SAM-IoT Wx v2 Development Board
 <h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/samiot2_azure_cloud_core.zip" > Download </a> </h2>
 
---
 ---
 
 ## Description:
