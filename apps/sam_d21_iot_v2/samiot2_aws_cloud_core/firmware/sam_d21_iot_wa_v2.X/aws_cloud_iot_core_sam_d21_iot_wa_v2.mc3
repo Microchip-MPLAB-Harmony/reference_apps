@@ -1,21 +1,5 @@
-<config configName="samd21_wg_iot_v2" projectName="aws_cloud_iot_core_sam_d21_iot_wa_v2" configVersion="1.1" device="ATSAMD21G18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.4">
-   <usedPackages class="java.util.ArrayList">
-      <package packageName="core" version="3.10.0" contentType="HARMONY">
-         <modules class="java.util.ArrayList"/>
-      </package>
-      <package packageName="cryptoauthlib" version="20220320" contentType="HARMONY">
-         <modules class="java.util.ArrayList"/>
-      </package>
-      <package packageName="csp" version="3.12.0" contentType="HARMONY">
-         <modules class="java.util.ArrayList"/>
-      </package>
-      <package packageName="dev_packs" version="3.12.0" contentType="HARMONY">
-         <modules class="java.util.ArrayList"/>
-      </package>
-      <package packageName="wireless_wifi" version="3.6.1" contentType="HARMONY">
-         <modules class="java.util.ArrayList"/>
-      </package>
-   </usedPackages>
+<config configName="samd21_wg_iot_v2" projectName="aws_cloud_iot_core_sam_d21_iot_wa_v2" configVersion="1.1" device="ATSAMD21G18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+   <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
          <string>HarmonyCore</string>
@@ -119,7 +103,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1012,25 +996,25 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;739&quot; canvasWidth=&quot;792&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;703&quot; canvasWidth=&quot;809&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;190&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;269&quot; y=&quot;94&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc&quot; x=&quot;530&quot; y=&quot;180&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;atecc608&quot; x=&quot;89&quot; y=&quot;272&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;atecc608&quot; x=&quot;134&quot; y=&quot;114&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;cryptoauthlib&quot; x=&quot;430&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;cryptoauthlib_tng&quot; x=&quot;230&quot; y=&quot;360&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;cryptoauthlib_tng&quot; x=&quot;57&quot; y=&quot;368&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;dfp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;drvWifiWinc&quot; x=&quot;632&quot; y=&quot;300&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;drv_spi&quot; x=&quot;489&quot; y=&quot;256&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;eic&quot; x=&quot;190&quot; y=&quot;200&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;eic&quot; x=&quot;295&quot; y=&quot;201&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;evsys&quot; x=&quot;160&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;rtc&quot; x=&quot;230&quot; y=&quot;260&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom3&quot; x=&quot;0&quot; y=&quot;335&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sercom4&quot; x=&quot;364&quot; y=&quot;278&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;rtc&quot; x=&quot;85&quot; y=&quot;287&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom3&quot; x=&quot;0&quot; y=&quot;168&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sercom4&quot; x=&quot;308&quot; y=&quot;341&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sercom5&quot; x=&quot;250&quot; y=&quot;627&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_command&quot; x=&quot;635&quot; y=&quot;545&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_console&quot; x=&quot;445&quot; y=&quot;472&quot;/&gt;
@@ -6249,17 +6233,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="CAL_TFLEX_SUPPORT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
-  &lt;cryptoauthlib_tng dnOrder=&quot;0&quot; id=&quot;CAL_TFLEX_SUPPORT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;cryptoauthlib_tng&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/cryptoauthlib_tng&gt;
-&lt;/cryptoauthlib_tng&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="CAL_TNGLORA_SUPPORT"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
   &lt;cryptoauthlib_tng dnOrder=&quot;0&quot; id=&quot;CAL_TNGLORA_SUPPORT&quot;&gt;
@@ -6290,7 +6263,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
   &lt;drvWifiWinc dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;spi&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_spi_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi_0&lt;/Value&gt;
@@ -6298,6 +6271,13 @@
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi&lt;/Value&gt;
           &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;spi_dependency&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+          &lt;/Boolean&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
     &lt;/Attachments&gt;
@@ -6649,7 +6629,7 @@
             &lt;Value dnOrder=&quot;0&quot;&gt;drvWifiWinc&lt;/Value&gt;
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;spi&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;drv_spi_dependency&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectCapability&gt;
@@ -9862,11 +9842,11 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_selftest.c</file>
-         <hash>4d30e17a0b53eb73bcacf17b6b069af1a09cac6e6646299f2b5dff3b136e17e2</hash>
+         <hash>bc2712bb9a53f581b16dfb031fed82e46eb8ae3f385be21d87affb44e8bdaef3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sercom1.h</file>
-         <hash>dcf8093dd2d2f347eb40b3c81417fe82e6198d543d2ed622f6e58c3fc7a7a7b1</hash>
+         <hash>07c22eb3538dfec285b25d7e600173865121bd3767833217932e64d5e45b6ba4</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_custie.h</file>
@@ -9874,7 +9854,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_basic.c</file>
-         <hash>dca77ffda49c0dee82145ac26f46dd27ee80df8d9942176585d0dc852cb367a0</hash>
+         <hash>259de4446b1b8761c7cd7141a1b7a8ca8ad23d12ded39873cf8f475ada88d795</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -9886,19 +9866,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\nvmctrl.h</file>
-         <hash>587b5cfa1a95bf455dc5f11ec54a9da62e2ac1c5cb2cdec50a903829990f2ea4</hash>
+         <hash>74746300d75f38497abb8cdc3f2f18c7e62a0547ff67ce1eb3e70467b19f7f42</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tc5.h</file>
-         <hash>9587bb45b932bd9bbffef55ba5b09bd23cc00a2bfa1e6f251e24d05c083b604e</hash>
+         <hash>bd628fe4ddbb8643d5544b96e712821b86a2912aae8c037f47b5b8d476e3452c</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_basic.h</file>
-         <hash>3fd0906b164c5cfb6a64b00db22af217dea0b457b3ab120527fea68561bc270f</hash>
+         <hash>68e3b9d31bf9027e0f5b5dc84832416129eaeb154f3fe784512088741953221d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_sha.c</file>
-         <hash>9f2b40abeb2045a8aac88db4b8f7b127b5d6e3f55f2ec5cd69a5078a31e71783</hash>
+         <hash>12eb8f7d95e05491a768fa3a44f8c9d3865d8fcc4091fdbf14108d5368e9f4d1</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_ssl.h</file>
@@ -9906,23 +9886,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\sercom.h</file>
-         <hash>1ae8428fbe6baf1d3916cea1bcb1f9daf10932c8be0129272566a51172d01bef</hash>
+         <hash>c275c11c72fafd4c02309adb7fac7cb7a90476f6d58bc67bb344871a2ee9324b</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\jwt\atca_jwt.h</file>
-         <hash>a0e996b4ac40870502765c7f454880b56b3962998ad7974a0584ade4f15c5e63</hash>
+         <hash>474562055657d29505a2fee41428e4b6c8b52e2109475bb8ae041d4c58831d35</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_lock.c</file>
-         <hash>1e6ace944591f56d72faa2f7879e6598ce6905f1a171ef1f89c79e4cf6d349de</hash>
+         <hash>5c3f92956088ad62d329346eb16b060afa144a5387f187a3d7479665e0c972ff</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert.h</file>
-         <hash>21b93a20dce56c1b3b34c03079bc2690ac33b49d134fa8685acb1d2a50dd1804</hash>
+         <hash>0a15c758150903a9258446a73607b36003ec7a44b8a639ecc3d7702043c775c7</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\jwt\atca_jwt.c</file>
-         <hash>3985b9d158fd73a9d0abca46019325af8219dc27528d9c6b355b8490d7014174</hash>
+         <hash>657829776fa4cf35bd3ac4df9cc707bac294dffd73d263b5ed06d88f265517d9</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tng_atca.c</file>
@@ -9930,11 +9910,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\exceptions.c</file>
-         <hash>cc07b84902bf881b410bee8cd4463b438ad2997c8fd8d3f308a16d926f75d601</hash>
+         <hash>3d788ce1bd25caaaf6b533ec5b06e4b1e753044c1a217dd5cdf8629628ae85a9</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\pin_configurations.csv</file>
-         <hash>5510b6b438c194b98c5680eee540cf818b1652d1e51e6f0841d93aeb794af565</hash>
+         <hash>c5faec99e8c79191f31e7e8a1d715dd99c0dd1c5d00f34b79f3b81999157a12a</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\spi_master\plib_sercom4_spi_master.h</file>
@@ -9942,7 +9922,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\usart\plib_sercom5_usart.c</file>
-         <hash>f04bb214599cbe824c77edf6891557389ae9de8ba7598a08a83b45a99721abe0</hash>
+         <hash>7bd4ac6667a3a07aaf13a6055e979b97f5710c80f92bd3b3084f4dc0f7396858</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\tc\plib_tc_common.h</file>
@@ -9950,7 +9930,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\device.h</file>
@@ -9958,15 +9938,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\usart\plib_sercom5_usart.h</file>
-         <hash>be5f36e16db90b79bd81b0bb4b3710c53ef398f24d4174f68575300fe5be6b53</hash>
+         <hash>84807f9ba1e8f0b8cfa1e11b3daf4e7c253df66890ee94f98b2c14874ce40265</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_write.c</file>
-         <hash>1998ec33f901f76fa233aea8478a891c0086d9de6a8920fdeabe3b6def363a9b</hash>
+         <hash>c6362ceb2f111e34b3c12d201de125c08f23c9f1416881c21ea676e6bf9a5bc0</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\tc\plib_tc3.c</file>
-         <hash>c4b498689f85b4a5c252b7c1a8257f468f2d977ff560560e20138f1dd6225c76</hash>
+         <hash>06a335c77920f7cfa6737bbf08cb102889938f1795a72e972627d821e192fb04</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tng_atca.h</file>
@@ -9978,7 +9958,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\spi_master\plib_sercom4_spi_master.c</file>
-         <hash>57a51613672747703ae78d287516dd1e59c123af1f0f9c4c482e9523bf4ef512</hash>
+         <hash>7ede73d64e9e0a66e1175e2007738ddc36f74df152ad8a4b013592f82b54fdba</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\tc\plib_tc3.h</file>
@@ -9986,7 +9966,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_aes_gcm.c</file>
-         <hash>79269ce757c1ac9843b8baf5409281ddc53fc00b4a2196ea079b0411e502980d</hash>
+         <hash>21fe25a379ea8dc21b9078b08eab8a1a17e10154c18f3f55f9752aa8a5ead956</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\hal\hal_cortex_m_delay.c</file>
@@ -9994,19 +9974,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\dmac.h</file>
-         <hash>b547b000e638f18ab01a1d30c64354936a3336c8023bb37db1a8f90b6b1f77f5</hash>
+         <hash>a72318b1f10c30117f2cadb56066ab1c7e7fe42cb1d244452ccd1a2c22802e1d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_aes_gcm.h</file>
-         <hash>d9caf5ab8d7bf200d5825d10c4a8cf4cbce9b2e50724484df782dd96a7d8f60d</hash>
+         <hash>4403b396029c55cff7e5dcbfab6962e2411c5afa7645b164268c924c39e4ca47</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\rtc.h</file>
-         <hash>2b2a8c5cea0bbe2b9c88cf5140209a9d2c10acac92e63237d6a9ede01f7357b9</hash>
+         <hash>241dd0c9c5f5eb46954e8b794b0ef5d028ec989172453152b24d8952a26bc496</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\evsys\plib_evsys.c</file>
@@ -10018,19 +9998,19 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_info.c</file>
-         <hash>11c0f5be7dc95aab201f0d885a383dd9228ce54ca709e127fba14ee907b99662</hash>
+         <hash>3075983e542a5eee3c1601e30eada9d80dac4244062ec18289003c1f69ce5863</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\gclk.h</file>
-         <hash>152de60d9af95c194f1484572fa27e155f71cfae624e58032dcc6d6d516fed2d</hash>
+         <hash>7139324c0ccbadaa0db11e92e56a3ddf61fc4d0c59f9f10d50a529e69a79ed4a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\pac2.h</file>
-         <hash>9fec06aa2dcc56e72489c3f29412a08e89db78d70c0228c89d10104cf5789e72</hash>
+         <hash>25290a4de42e079a282252f91b6de92af5def1853f2306662349f8dd99d0eca2</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\ATSAMD21G18A.ld</file>
-         <hash>69d807fb8f74fb12ae0029eb5245f24df727d796fe4e54fbb81ac2166e9e401c</hash>
+         <hash>a30bc1bf3b639f57c776a945882bda9f1eda24c35d1f1eb8bc22d870a820f38b</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\evsys\plib_evsys.h</file>
@@ -10038,19 +10018,19 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_utils_sizes.c</file>
-         <hash>0a717119ee793e48997af01f8de210dbd905a555a74f75cdf8e092d0450a4375</hash>
+         <hash>5d2094f034597dbc48504fe175d11e6e56eb714b464e50a7ae472be763038c8e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sercom2.h</file>
-         <hash>1513b8939c3ccce0400b6b37ec941a4594d227dbbffb8db2ba8c31340433f057</hash>
+         <hash>25ef05082a73aa6d9d3dc73df3d27adb541d7b6004a6b2ee6d9273affabffbc3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_hw_aes_cbcmac.c</file>
-         <hash>a2d0b5781e36551432786198fded2946ce5af76f649a6bf64b905ccf65515d81</hash>
+         <hash>b03de91ce72cb172d4b60934626fd5ce7a5f22242b72c82cd24f25db5b6e21bd</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_cfgs.c</file>
-         <hash>069d1314fdd07cbaf1fd66bd5f0a50a81244bf73436781e39cc21a2c139a8940</hash>
+         <hash>f534b8add605a18d5e44663831a9661c03d8ce67e3e3ee5df000d3b6ab2b0354</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\dmac\plib_dmac.h</file>
@@ -10058,7 +10038,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_hw_aes_cbc.c</file>
-         <hash>1723c3090ac60a14707551ca54cd2ee7a211411c8d03cce678274fd658b5842b</hash>
+         <hash>da8567d7acfc77f9c606cc0af6110f5edcdd1ea964eb773b6c5e36fc36182c1e</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\bsp\nm_bsp.h</file>
@@ -10066,19 +10046,19 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\dmac\plib_dmac.c</file>
-         <hash>958042bdc551aa07b63783a1f897a1e2a2c85a5ab634cc1a51e83d3210125be2</hash>
+         <hash>c56e283258f4d2f286bdf35c8b7595bd00c8399064e9b30ebf7214eaa026d75d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\usb.h</file>
-         <hash>0230a32d948e226f1e02e99af00430d752c8b0416479ee9d1fa66ca94796417f</hash>
+         <hash>7d9dab8f9cf82ef4590572d565aa413d6a9a5c960528ede4682a70f55c72731a</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_hw_aes_cmac.c</file>
-         <hash>856307742ed0a3754fefa05ab739a00a417424443773fbdd1051a1eafb6da2e5</hash>
+         <hash>44335ea2db3dea6b4c4d6132eae05018c9220252b02153dd2eaa3ce906c83406</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_cfgs.h</file>
-         <hash>2c3341451f8fb34eea9b966683e0b4fa6c51be858742bd2b96e034ab5794c548</hash>
+         <hash>673b095e37545ff7198ae8473e3a1fa5b28111180794fb92b9569835b864fbc3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\dev\gpio\wdrv_winc_gpio.c</file>
@@ -10086,11 +10066,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\evsys.h</file>
-         <hash>7488654ca7685e64d5ca690260260f53492875be0c191805f4a7aff48e94701a</hash>
+         <hash>70a30f47535b99ebaccb208151c095b0cacdc6809f54ae72d38d566675ce8e3d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tc6.h</file>
-         <hash>31a13e4735c0936f209dafe2a39d96d9bc98244e14495de60fa01fd1d704a6df</hash>
+         <hash>6f013bb47191ada1272a9a5129ae5a6e19e96f701621318603be3f05144c8875</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -10098,7 +10078,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\pac.h</file>
-         <hash>4ab5d020cf33c321705694fb2725c12c1a900a44ed3fb87d4e433e4880eeb6df</hash>
+         <hash>769cbf6c8f0f93eb5c74c8ce0dceefbc24059c3e6d346e3ebf79762de9fafcd3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\drv\driver\nmdrv.c</file>
@@ -10110,7 +10090,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\dma\sys_dma.h</file>
-         <hash>84a40b4972b6e6ba60df4780d0d2f6867fb84f496a5621d80e6e96c42fa7c16e</hash>
+         <hash>c55258a896f6f017bf61aa76eca7602cc8162a984b0d440f79e8b6b4bb5818f1</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\wdrv_winc_bssfind.c</file>
@@ -10118,7 +10098,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_mac.c</file>
-         <hash>9f32e9e7569cff39466b6e7d2d1a858d2897783d950c92116b5066a27d2bf7c0</hash>
+         <hash>668d49ca552953da4cce8c5c0c6d514c0fc81fe8011acbc65eb97398cb9265c4</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\hal\hal_harmony_init.c</file>
@@ -10126,7 +10106,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\pio\samd21g18a.h</file>
-         <hash>34cce76d7a30c25c6392a5cd5ee31af8ad86e54e3e52aaf30c0ff5fece068390</hash>
+         <hash>5d5d7dd2d75392217eedc3c9158a1bffb3e60706c22bdc43dcd5486bf64f0d55</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_host_hw.h</file>
@@ -10142,19 +10122,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\hmatrixb.h</file>
-         <hash>b33a83f0f4cff7ae63a8b8269ea3a6667269838a2aa034a31e59642666aa06af</hash>
+         <hash>7e201501f44e144dbfd9ba3c5c2d87865845e148f2621b3a6cdd63b7f46da93c</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\dma\sys_dma.c</file>
-         <hash>857103c3cdd998ea45f31516f435a01901a28afe894c8cce719240297d6c7546</hash>
+         <hash>b898eb7b174f17cd7dcaff8afef4fa2b878dcbc3b4db44b23810c78af55ffd6b</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\interrupts.c</file>
-         <hash>8be98f9032b819477fc064b38800b1d35aac425b1ee43d862998d39e40d26e75</hash>
+         <hash>538bc1b14d5a0f6624aa1fd3fa8822bea5a85fa57f1f0e11ccbe38288d04d21b</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_host_hw.c</file>
-         <hash>7825cd8ce16e2f82b0a149a1ad60edf689ab7d11d0930fc086990f9f57f955f2</hash>
+         <hash>f29f9cdcae0f9b5ee0956cf22ca577d6f5ad7d9f467a374834ce10c9865dac16</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_client_api.h</file>
@@ -10178,11 +10158,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_genkey.c</file>
-         <hash>b99bceac73047383a97d2ac5704650140463b0531c36b187123f0b3341c51781</hash>
+         <hash>e1abd45c2eb9472c442c63e74b4b302854fd2b6b0d3cdc15829c5f2d7c6302f5</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\m2m_periph.h</file>
@@ -10194,7 +10174,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw_sha1.c</file>
-         <hash>1f27ad9639ac507ff79ae21bc6b7846605db55e1c0eb4f67e8be31b538cec732</hash>
+         <hash>0236326e2c5d753c680b97edec372959715e4de1c741ccb2e73857a404e63507</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\samd21_wa_iot_v2\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\wdrv_winc_nvm.c</file>
@@ -10210,15 +10194,23 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_hw_aes_ccm.c</file>
-         <hash>e869906380c93962f94d8cb65f6c11eff1fc57a9cc7b6a22bd0dd715267caed2</hash>
+         <hash>358f9a4408870e4118e6e9c7341a0aba68734030de67559e5fe95439a3d6d53e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_check_config.h</file>
+         <hash>6c3873e130dd4df815f9e4b4359adf49476df15136f910f48dc9e5ccf8798335</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\clock\plib_clock.c</file>
-         <hash>6e25676c196e3856aa59d080429dbc8cce1f20cb36e2aca6385091619e136fb7</hash>
+         <hash>ae6086b7cf4da6d96680b4168adfbae3ba691723a0cda38f3f91e6c1920d7f8d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_privwrite.c</file>
-         <hash>d92573f2bbb16a49b8efd1404e7aaf7b3d7b531d659809e4153a141a72195b73</hash>
+         <hash>278fbe9acd9bd2e3cf987388db9e71529eee2489504171d13a645eec9dbeff78</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_platform.h</file>
+         <hash>626fdb51a75dc8180c1e49be01a19bb4310b49f0c7e13a0fe0e80b584c49351a</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\clock\plib_clock.h</file>
@@ -10226,15 +10218,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\command\sys_command.h</file>
-         <hash>8d8b4c4f428355afecc0771ff799785869386e7cfb079e327773628226ee2e2d</hash>
+         <hash>7ef4ded141f7f71e84038aa39c414929ee9cbd9cdacb92e06544f5bf53915dca</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_aes.c</file>
-         <hash>1d79ca033dc3537a543244a91dedc9f9fcbf6955e4ddd189ca7574215df62369</hash>
+         <hash>ece6a240f1046459e2f2a5d0c9b45e67625904e84d220c91a849e02425eeebba</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\host\atca_host.c</file>
-         <hash>a556432c447b61818c11434ccb2e72474ce76a7979ee2c1910d026dd5a8909b0</hash>
+         <hash>2173bad21da48e8df6a817789d7b7553a01b0cf7edb2825ec4298696b45462fb</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\device_cache.h</file>
@@ -10246,11 +10238,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\host\atca_host.h</file>
-         <hash>345c219e8e41380dc3789946123b0a7703e10758d46da0013846d8c270166b62</hash>
+         <hash>1f56d5cd068b53db41147ca9492830b859ec48ff084217107182cf3d0db02591</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\rtc.h</file>
-         <hash>5d81c765d07cf7204f1d61ab6859aa5529d25ee9e3cad81690205aedf5195891</hash>
+         <hash>435ab8cf492853ed9e40c70f033ef719cc3bc3f84f01d0b5f42a9047f7b7d5f5</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tngtls_cert_def_1_signer.h</file>
@@ -10258,15 +10250,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\dmac.h</file>
-         <hash>241ebac0a41ead68bf410d9d22f3d8252b7db56f345fee109fff6226600e01b5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw_ecdsa.h</file>
-         <hash>6c84c68643ac5e2d912238691c2bceef91a9cd0cd219bc256443d114b9d48fe7</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw_ecdsa.c</file>
-         <hash>eb4111307e5af7551b1e9809e514e4f31cf36f3116ca101528e7c80c0a2b91ea</hash>
+         <hash>143f6112c912d481ba6a7fc2c611aa74a8940e0de4c8986e6cfea46f914cccd3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_bssfind.h</file>
@@ -10274,11 +10258,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tc3.h</file>
-         <hash>b88d42a50c80f90535213700b997d42c12f0abf5d4b95384212d44548840d1a2</hash>
+         <hash>81392869ef63db981c5f993e6c9af99a459c0fe9221e2b96a3cb944eba7ba7e5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_config_check.h</file>
+         <hash>834953241a9711bc8f6921abc9f4fd1958439972f8e415921c6faf36796fa349</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\nvic\plib_nvic.h</file>
@@ -10286,15 +10274,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_sign.c</file>
-         <hash>9c1832c6a40a5733b1dab96d43bf4046d95607b0cc4e4294897d332cb5293c68</hash>
+         <hash>2abbacb8632c2c058d64b42cb0bc89f0072698526f09889f88fafa44afce487e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tcc2.h</file>
-         <hash>5d65a4d00c0bcac8f65c4e2df742a9cb2f8a3844a5b73ffd8c7f63a213409747</hash>
+         <hash>895d1601145eb3776da6d31113c22c8fb13070abc9f1584923db63995be63780</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\nvic\plib_nvic.c</file>
-         <hash>e13de271542fff6ae00e3a5231035a8d38f68bafbfcad9a36e909c74309b9132</hash>
+         <hash>b44f301c93785d3d4a3d688d0594e2d73184e66b70f85d6cc0544b85f01287f6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\nmbus.h</file>
@@ -10305,16 +10293,20 @@
          <hash>52d9e66e4c9cfabd2aa4c6ff125584f210b1855184217dafbaad48074593d38d</hash>
       </entry>
       <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_pad.c</file>
+         <hash>1e2af6e4f27de4c652b16af897210737cf352a9a62526e7faa9bfbf9fbf244d1</hash>
+      </entry>
+      <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
-         <hash>ff9e28a56c761d9cac20d42c6819063321f71c0d2726249be9bd818e44c3811d</hash>
+         <hash>f167b04b3c6a0f83fe41b7b6f810cbf0a48b8ca7d5a747b76463dd53d3c1a2a2</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_iface.h</file>
-         <hash>4aee1e9d68747d34d4ef1f85226ea1a8df49ac1c7660c4260fc40767ac5bd781</hash>
+         <hash>771502561f2c10faadec29f4357e2d10aaa263997d5db8ff978e230cd8b9a3ac</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -10322,11 +10314,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_random.c</file>
-         <hash>625efba62f435f2c3349284b7c29dd47d47adbd8d79319c12662779a218b4e71</hash>
+         <hash>7e325853a6cbda47912d760041f4e869c4c1bde456b52dc510c97665a7229b34</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\user.h</file>
@@ -10334,27 +10326,31 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_iface.c</file>
-         <hash>13a26caa7e2127e86e96f1c467c32a32ef82db258c3d74b619e34d672c278d38</hash>
+         <hash>cb572268014982abf7fcd1fa4aeb32ceeb6778aa11bcec54fe344a027cbcc821</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_verify.c</file>
-         <hash>faf442caa9380b3930093e62d1c9d60bfb3480479dc63cb8eadd488d1b43084b</hash>
+         <hash>5dedc521774cdad9590d9c68c475d961a1df92f4ecf8a49d18f478fd352b67c9</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\console\src\sys_console_uart_definitions.h</file>
-         <hash>0b8c26a32e6ab6cb50039434ed379044bfa539b4ed2ed4b65a281d943a8868d8</hash>
+         <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw.h</file>
-         <hash>b626ada215d5fd0c6b930d629caf1a72bf5d7d5b96dc438f9cc7ae2926aca382</hash>
+         <hash>b1e732ad50cff0c446ad33555ec9b2e7fe46ae8c2efd31bb008e735e666be87f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sbmatrix.h</file>
-         <hash>7e885bc9cddcb4c95b1e45508bd6d53fc4c000a93d7256f59c8748bf4f4e2148</hash>
+         <hash>5eabdf264a4d8660d42915ea3cdf1b544e8415918f33f673c3c8abe0f630ac55</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_device.h</file>
          <hash>3875f31bd83750298c75aa0c24bf52cd2151369c149bd9024b1aa4449026f206</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\host\atca_host_config_check.h</file>
+         <hash>aeb0900e4230fc9d4e851c195aabbf36af2e24d6888e53bcf90795e987da155f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\wdrv_winc_softap.c</file>
@@ -10362,7 +10358,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\tc\plib_tc5.c</file>
-         <hash>567dea4c331fcb6460c8d78962abc0e55f32ec6d86a6a2d9af60295e672c6bfa</hash>
+         <hash>25abf4dfaf81ee148dede296834d84c725a362cf07e7c40db9cde51beab3e613</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_device.c</file>
@@ -10374,7 +10370,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\spi\drv_spi_definitions.h</file>
-         <hash>c0bb59cb4e0db78819626219e773cea55748a8207b9afc31617e9af24662650d</hash>
+         <hash>ba06e15b49c559da9db2e2c1756bf29738c224a13a47fa77cd2722267fe3e68f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\drv\socket\inet_addr.c</file>
@@ -10386,15 +10382,19 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\wdrv_winc.c</file>
-         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\drv\spi_flash\flexible_flash.c</file>
          <hash>120ba6e39eed73bebd944329e7868bb1abcf0a9120d38014e0a0e90b934b6e8f</hash>
       </entry>
       <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_config_check.h</file>
+         <hash>d702af64983babc2cf0e0c21d2ab3fcf330ba3455d0054d60cfdaf75cb8acdfe</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\pac0.h</file>
-         <hash>c94562d7053efa78474eada4c741a6fc0b5a245ea1a72053601ab28b9abc9d9a</hash>
+         <hash>7a128c369f74242b00f5d6e35288e063144886734d46670294129567546fa14b</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\drv\driver\nmasic.c</file>
@@ -10402,11 +10402,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\systick\plib_systick.c</file>
-         <hash>f23caebefbacd5f2fa5051caadacdba66f41368a782707a0b8418c9b4ee155ae</hash>
+         <hash>9178af8001492763213e84e6cf11aa357f1e344cbea0988699771364ef69c749</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -10418,7 +10418,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_checkmac.c</file>
-         <hash>b9d238a9cd751ff4235506f20243e168b8e72d08988a9c2f7ea58e79a3d7bae6</hash>
+         <hash>9f390c0afe5addc80449364affc260481e8444b693f2a29b63e000813514a99c</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tflxtls_cert_def_4_device.c</file>
@@ -10426,7 +10426,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sysctrl.h</file>
-         <hash>b4082fe78761e94dd1b16772a1758363ead1358444b5bf4c8ab7f2ffeb801d04</hash>
+         <hash>84e466e34d38a5b03fa1984331e1204ce608795daedb888a9f57214f0e55b8b2</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\i2c_master\plib_sercom3_i2c_master.h</file>
@@ -10434,7 +10434,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\wdt.h</file>
-         <hash>a9b4e85a52c47153a038548989bec7a54fdb7dba8420701e5ea5ef65559c5d7f</hash>
+         <hash>381d394540b61df85349cebb9642afcc1b9e0420b4199333c03c1b81b941fb2e</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\socket\netinet_in.h</file>
@@ -10442,7 +10442,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\i2c_master\plib_sercom3_i2c_master.c</file>
-         <hash>c0c0e979108c27d42923c6d3eafaa2d5fa7c98b7dd24b473e1e8c6953bf9e7a9</hash>
+         <hash>24388434b8b1fe12313f6fbbb65e72069dd80b54d1dc3c9a8ddb37e72835efb2</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tflxtls_cert_def_4_device.h</file>
@@ -10450,23 +10450,23 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tc4.h</file>
-         <hash>126cc010890ef9de7d2b3782b0381542042c1bd761f9d194aba7cec26034ba19</hash>
+         <hash>bf9ce589cf81d0f7ca98510fdc3a7b55d8076da1d9303ab186eca56903fcfe07</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_devtypes.h</file>
-         <hash>3a4e904970db8ea89bfd04f163e8797f8ebca3d4740d0e5bfd472180fa91fbf2</hash>
+         <hash>73635f185e9e767f3afa11c75890b92ddf85959751ed91d6ae38bd3fd06e0df1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\pm.h</file>
-         <hash>c5df2ae640c64a1142c46b1485e305d61199797e043bc97ff76682d86f04be85</hash>
+         <hash>d3169bbbbf5bcdcf6072e024dd0a2454e51caffd3c3927e83360e9bff8d54638</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\i2s.h</file>
-         <hash>9884f0467318000500a5e1b50763bed8c2122b90195febb07b52a5466fb62877</hash>
+         <hash>e483edf02cda890a9e8a1bd0250012acc567ae9118aba8e99146f6e8784a26de</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\drv\socket\inet_ntop.c</file>
@@ -10474,7 +10474,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\console\src\sys_console.c</file>
-         <hash>40aa2013385ec344c267d5779ef941d663ecc0739ebe962ad906324e71666c43</hash>
+         <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_der.h</file>
@@ -10486,23 +10486,23 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\rtc\plib_rtc_timer.c</file>
-         <hash>5511cb403e8dc77076089563c1af9c2a125933685ce91dcd333bc60818a2a988</hash>
+         <hash>cf1996566dd49297e9e0b68f6554ac67ba354e82a64ea8cf70eebce68c2d4a28</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\command\src\sys_command.c</file>
-         <hash>f6ffa260b5a6f1e0134c8845c405d0e21dcdc5fd02e95dcc7a4a5fccf1cb23ae</hash>
+         <hash>e2e011b221d372dbb81cd7af594d7da29d7ae18966a99a3fd72b3c5772c237bf</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>1dbf674e2bc9708afe2cacc75141707c42b89f166e0f1d6f81c04b1b2fa166b8</hash>
+         <hash>63c6e89936ba47e8989478a8be0fa40b406361f2f0dcc1b6cfcd801b50a4bf92</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\eic.h</file>
-         <hash>cae7ba72a3aae4c61910d2e27207b7c757b034636ca4d0c11dea0a674c1adf66</hash>
+         <hash>fafe32845a7dc6cd036301f330be5f8cd6eea7de8df9696d02191ff5d81b17ca</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\console\src\sys_console_uart.h</file>
@@ -10510,19 +10510,19 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\hashes\sha2_routines.c</file>
-         <hash>c29a7f5cd6bdde714f62e335c18fbf0692dfe99a3c4805ee115917bed28197c0</hash>
+         <hash>878a312fa61d40739ad8a5d55e38740d2a03ffdef59134f1671292fab42d1be3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\configuration.h</file>
-         <hash>c42ae075c6c5526d68fb58064b854e570bb3ac9fd1a90c614831753a0207959b</hash>
+         <hash>187aa1cab23e8e68bbd5e81f376326a117f352ca88ca883cba491641ba6f1f1e</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_der.c</file>
-         <hash>b28fa6d44f55594e16ad34d21e177243c711d6d42c4ea0d72e0572e0d32d1c84</hash>
+         <hash>c6b08c7a72339ff2f477f0b19ca6219ec34992abeff4778cba172148a1124ecc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sercom0.h</file>
-         <hash>6dd2aeb6b15f30aef09fd0efe9088f0bffeb2fdb89c1750d97c02a0972b56793</hash>
+         <hash>731e15178e1b2785c21bd17deb445e8794fdcce638f9743274a919dd0ad65142</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_common.h</file>
@@ -10534,7 +10534,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\console\src\sys_console_uart.c</file>
-         <hash>ac0304a177b5e152c80d648da5f5cd87f7d926814f093131b76142c41fde6473</hash>
+         <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\common\nm_common.h</file>
@@ -10546,7 +10546,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\sysctrl.h</file>
-         <hash>ee5c89ab734787ec9b85baff9e8d3946bbfae2e4cca91e150c9efa205d19f76e</hash>
+         <hash>02f2d33452e5fbcadfeed76aa2b3ce2668ef02b49240899d920c0f09ea49ac68</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\port\plib_port.h</file>
@@ -10558,7 +10558,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_basic.h</file>
-         <hash>5b00ef42c605ea0e4fee64693e485f3238ff5cf7a6395b914934f232ea0b944a</hash>
+         <hash>c2630d23b56bc3e4a58239ad9f4e611c76ffb40726e66bdef68d67792c449f74</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\m2m_ota.h</file>
@@ -10566,7 +10566,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\ac.h</file>
-         <hash>be35516603c3f8735c6bc18a77a1e7f0623acf146c1fbedbfedf021ff1bdce86</hash>
+         <hash>23a784c992ff7043db11338da6e57689f7af2ff54c7f4844e99c4c3d14084480</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\hal\hal_gpio_harmony.c</file>
@@ -10574,11 +10574,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_pem.c</file>
-         <hash>4139cc9c4bf1c2962b0bcc223f32ca3efa57532cfff47856fb802de80ab0596b</hash>
+         <hash>a2e782b895f7a8b8031eb0a6b3d3f3323ae28a1a7e530c6cae5b8105585d4609</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAMD21G18A_DFP\instance\fuses.h</file>
+         <hash>e06f6bc6b73558194b027cff62dcb6a14e4617b3803f3239e7e8e991b996f03f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_basic.c</file>
-         <hash>2f9a31bfc1ee348f443c1bb1b4f2a583cf1b5391e061d755bee83615fe3a205b</hash>
+         <hash>09ae33218c050d1612d8dbc5eb0397707940fa9087c048e8cc5e6dbeba93797f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_pem.h</file>
@@ -10594,11 +10598,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\eic\plib_eic.c</file>
-         <hash>d1166d0db919eec33617f782a97d73da60d606dd0e57300caeadc7f355f2e135</hash>
+         <hash>7bb8c91f6a90874f40c95c32c89bb86dadad9ad6f4197ff3f65b8ba2ee1f8384</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>6c9ddcb7ec64839add93ea8a9cd943432a114d11298e08c32f7e689d2329161a</hash>
+         <hash>bdcdd09324aabfee99d83053fce34298dc5705207e02afee581b952bf60ffe6e</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\eic\plib_eic.h</file>
@@ -10606,7 +10610,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\adc.h</file>
-         <hash>169bf915471ed8f067d1932a565634facda0459edd41557f30205d58a92f51f8</hash>
+         <hash>f0e7faf10ae421a2ed8e557f7b0d730732f9b687aa8e4d5057da196226469c42</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tngtls_cert_def_3_device.c</file>
@@ -10618,7 +10622,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_read.c</file>
-         <hash>e4cc6c4d6bf52022abb6dd5a55c94435f0b70566f643a49d534b7fa8daa42707</hash>
+         <hash>0bcaad1b579329190e9bb0178f2860336f045452dd70622a93e8fce32f798efb</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tngtls_cert_def_3_device.h</file>
@@ -10626,7 +10630,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\pac1.h</file>
-         <hash>60458165f80b75cea7023289cb24ecab5a12b8f105f12db0d35917745905e56e</hash>
+         <hash>5e79a8dbaaf58ee13979fb565718ef952dc97109902312c7024edbab33fc9a1f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\socket\socket.h</file>
@@ -10642,7 +10646,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\spi\drv_spi.h</file>
-         <hash>aed15b9971d20ddad5624af0d417eccb3d9acf31326b0d9ededffabb34c3ed15</hash>
+         <hash>9a6daa12b48114aa08202529bea2a2a3d9d98a4365d864f10380ad2244b139d2</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -10654,15 +10658,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_pbkdf2.c</file>
-         <hash>8768d97c0a1ce46467cc77b46f30a9585ec266a1a52e2f5dc75a362ebb079ba2</hash>
+         <hash>c6d821bf02c4654305bfda71f6c188f5183898e6968e8a352206aad5fe6fbd48</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sercom5.h</file>
-         <hash>ef189716127c7f05cdb26f0838ed947acaf26491993f2e250d04ffa21b901af4</hash>
+         <hash>57b7fc9b7be5b5ebe0c033e489a91df485b15af402d6b11fc75e9b812bec4c9d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\mtb.h</file>
-         <hash>f831c0d93008a6e2998b5e3b6431a2e7594334a4d584acb0a0831d4c4c0c9e3e</hash>
+         <hash>87e6d449391c82f603dd4cd228e650210adf623dc07efc1d8501ec6f614f5c53</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_wps.h</file>
@@ -10670,23 +10674,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\pm.h</file>
-         <hash>6db39b6b55e67c4800edae8525862dfacedeedf9b9f64cc782a83d3cdabe0613</hash>
+         <hash>1afe7d1f7a84c585b1c15071353106f3b27afc2317753955c88fdd8681d24984</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tcc0.h</file>
-         <hash>84003d46b3e6211b4a71aba2938e6dd46e9a3c133e81a7b8857f5b04f9ae8437</hash>
+         <hash>cf4b20b2f4571ce3c12f5514890ba07a029b296f945494bf6e3a861f5c374e95</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\adc\plib_adc.c</file>
-         <hash>98afb986805002b517c6660412f13e8b613d4e04287d604fa1ac77771ed98771</hash>
+         <hash>ade3f67b75574731446bc05e97206e2a56f24858ec69bd68d8b5a8251311b45a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\dsu.h</file>
-         <hash>21058159e73fcb061a2ef35ee1c89753eefefcdfa0392a00bc5c72f9851c5e8c</hash>
+         <hash>8e1800dbafee9d3f0578fd5c94caccded56c331fc89af18dca771ae9daa76fce</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_host_file.h</file>
@@ -10702,7 +10706,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\dsu.h</file>
-         <hash>11715167f940bcecb1be2ab688eee48f990c516ab4e741166dbecedf2d0c5fc6</hash>
+         <hash>500323b2f51e700a8a594a017941dd2dfa46c2cb979fd8dfae8e43cda808584f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_debug.h</file>
@@ -10710,7 +10714,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\eic.h</file>
-         <hash>191a16afb54713570f8cc0332807b1b54bee1bbda8edfc0254c09f9c123bbf75</hash>
+         <hash>7cc25d1b89f590ace88333e3e928d4084f8fc5ad51c744420584fb11d3064379</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_systime.h</file>
@@ -10718,11 +10722,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_hw_aes.h</file>
-         <hash>b5fc6d288548f5b5054ffcb5f629c3331d3df2a6bd5afe09e045ee02e6c3782e</hash>
+         <hash>fe60d8122ebeea88a71105cf616e54452f05c66d95033c9a8e75a647b769c6a5</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\time\src\sys_time.c</file>
-         <hash>b722ac0c5d955d289bd906609ab6f302342166c5ba66f87b30cac17ac6bfdcd9</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_socket.h</file>
@@ -10737,20 +10741,24 @@
          <hash>43354c86a495d7da658492676e9fa63a36647684c9954a63b6e3178346f1e41f</hash>
       </entry>
       <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\crypto_config_check.h</file>
+         <hash>67b3815a6a65a02bc7908554172d99bca7752f2ebc6035ebf185920f38ec195b</hash>
+      </entry>
+      <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\nmasic.h</file>
          <hash>8a8cc93180c55098d699c1aa95286d9e3b982b6b1a8143ab14a8aa47ff04c1f5</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_date.c</file>
-         <hash>a0396d40b93b9768646e993870133754ad272461707229a1b8c120c591bae4ed</hash>
+         <hash>b5e56938d057e54cc95c0771a8073b479a60ec6c235c12c1cd8159452a2c11bd</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\hashes\sha1_routines.c</file>
-         <hash>a34e415a81c52d7ae070e02e4d139f292c9d1d08d9ae8ea054c07a354b17ce36</hash>
+         <hash>68fbcf4031f698c118566173d56c035e9f51c1fb36098653dfb6a5b3874dbc92</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
@@ -10778,11 +10786,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\tcc.h</file>
-         <hash>045fd0accfe468bb8d649c496eadfa600ca1c32e8e800a2274b9f68392be5b09</hash>
+         <hash>7793da56c3a940e6d7809287bf2ca73da5582da94cb97776ad3a18dce615627a</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_hw_aes_ctr.c</file>
-         <hash>86c9f5b0f62e2aeba2861f18a27c170908f63b695c359eb2a1fcacad596e4bb0</hash>
+         <hash>bfa535f09f5b6c3e285b1ee35fb8555fcf419fa76a4396f0602db37e683657f3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\common\nm_debug.h</file>
@@ -10802,19 +10810,19 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_hmac.c</file>
-         <hash>56ea4d077b89e1ea93ba0c9491c06fc6566c1f4f9f901eea18512ff05ca29090</hash>
+         <hash>9c8aa0411a9ebc28417e982c23fd4df47cc44851dbe4ad5d0d09ee6e56dc82c0</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_debug.c</file>
-         <hash>72c2264c02265a5a26ff5d9b45ccf5083dbf13f97d7049c73b2aa9fbe3794982</hash>
+         <hash>c0b37f2957728461706afd48baf8c7e281263b50cfae9941a84aa53ff98d73f5</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\definitions.h</file>
-         <hash>0bc163284513742af1a098b723b2aec6685858136951c1223b2b1d8b35c734cf</hash>
+         <hash>2d34432c9df9201ca422ff1be2b0a997bdcaeef95cd1fe4d3576dae102bb8b42</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tcc1.h</file>
-         <hash>e51741bae84aa730ca3525609169af0c1e25c1d77e8d9834adebe8d3d0a42e30</hash>
+         <hash>7ab61ba963a28f46ec6cf0a1df79c82e3adee0bc51f842a663b0b1e016b4db58</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\drv\driver\nmbus.c</file>
@@ -10826,11 +10834,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\dac.h</file>
-         <hash>7a78bbb5c9cc8f38c8fda529d0203f284dd1d774645130cecf246ecf44f8a0cc</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw_rand.h</file>
-         <hash>e71b70659ca039c9ae24a1d82af05229677e535e9089ba755e73414ff05d8543</hash>
+         <hash>04b8fcebd19fb0f70bd59e97c9725d1f4d608bd072d7453334a9f37526cf1d7d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\stdio\xc32_monitor.c</file>
@@ -10838,11 +10842,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\samd21g18a.h</file>
-         <hash>c3c5126ac7d57a424e3f03341265bbdddc48f8db358df99a9cc147fa57fb9295</hash>
+         <hash>1a5ebfca476e0333c6060b6472b458e0e1b4e5b18d65381ba58248a4fd966fda</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tnglora_cert_def_2_device.h</file>
@@ -10853,24 +10857,20 @@
          <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
       </entry>
       <entry>
-         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw_rand.c</file>
-         <hash>005659d2c6c93e2432612913c970d1e0efd5212111319d62135f631358035b21</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\ptc.h</file>
-         <hash>9612eb1d6f8f4149fd7384196721dd797083b0691cfe0c2bc22f1ed5f5fd7f40</hash>
+         <hash>92b6a22b834c00c490053a890b9fa7edf6a33779f4d4b3ffc72e42531f5fd363</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\wdt.h</file>
-         <hash>c36cfec8323d358b0c510e6c8b9687835069da26b9502a68e3d7a97bf1727c82</hash>
+         <hash>9de14fc47fcd7186eb8718fdeda9c673461a18bce9b11cc1d9b8d42c43c44946</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\cryptoauthlib.h</file>
-         <hash>5fa4784ec0e642ce8f85ce996c3ead74773a076d0c87bb6850d1090e4c920907</hash>
+         <hash>f7d040c906bc7c471558d2110ad5f87ac7b8986a96d8d0fa75dc1651167fcde4</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tngtls_cert_def_2_device.c</file>
@@ -10886,15 +10886,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\ptc.h</file>
-         <hash>98b81af9dd58ff40c2fc93c9c0570251d2b1877bfe676d69d3fd421d01250a91</hash>
+         <hash>808f810a6a3d2fcd0290cb1f15651486de175630ff7576de1a1f11cda3648f6f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\dma\sys_dma_mapping.h</file>
-         <hash>f40fd52b9e96c213abb3996b309103da33f134a85f90c874a99d2184c61c0ece</hash>
+         <hash>ce3b0fb5a381953a0804e467742d198578a5abb4b419c667565553953c4d27c7</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_nonce.c</file>
-         <hash>9187e7fc9c0e6a16b9b24a5a301c3d1ab616cfc0a327b28af0045efd7b451a8b</hash>
+         <hash>fb487f2f60f989a417e8e62a2ca1ac8913d823203c9fa43142c1fcf87001f4b4</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -10902,7 +10902,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\nvmctrl.h</file>
-         <hash>1ccd3de5b2c04b862fdf0ee07eb0fb32128c265d792d4a087f6b58c18ddcf691</hash>
+         <hash>2ddb1787b03ce6e9492700ed0c957a76e1972f62513071154f1bbd503fe1fff6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\m2m_wifi.h</file>
@@ -10922,7 +10922,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\console\sys_console.h</file>
-         <hash>e8a97986345fb2c80389834b113384eba523837ee43f7798d9b56be630a6e7b3</hash>
+         <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\spi_flash\flexible_flash.h</file>
@@ -10950,7 +10950,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\spi\src\drv_spi_local.h</file>
-         <hash>f416bb5ff297e44b00f9e83f79070b03bac197d4b6710742ed82379d967a07fb</hash>
+         <hash>ad0de54fbffad399c5a1cf1b803300cb4e4cbf2d0e611387deec39c24ce74f4f</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -10962,19 +10962,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sercom3.h</file>
-         <hash>5ba79d47ee8b96a85b9121ff60d411d815d1b5ea791aa3617861437aa445b6dc</hash>
+         <hash>423f4db80d66544c8ba9d63f633c1daf3899c64402f752acb6d0bd9e70c5e29b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\adc.h</file>
-         <hash>29965945620960c99b8b39acb90fec922098e498b9b6b61e37803594aa4a9d24</hash>
+         <hash>4252f43e3c2e0cc9a02171e006495d01f6c5d6619aa32349ae00469d9b4aa904</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_updateextra.c</file>
-         <hash>58df4562b1d36b66c50f41f69e04138ad9abd8f61ad2f3d753f780c70c71555a</hash>
+         <hash>e901a5da37ac1fdf622b3acf81cc59eec0e6f495b2f3e4790333297d03ba8136</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\tc7.h</file>
-         <hash>bc74f6abad5a12874b01174a6a1e1194b1e3f3fa30d3b4b56807af9f6760cefb</hash>
+         <hash>6815edf4f77b464fbf405e19af6bb35f2660e6da64944fc7e975c04607deb869</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tnglora_cert_def_4_device.h</file>
@@ -10982,7 +10982,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\port.h</file>
-         <hash>8d6c10908f3c1a2d6cf878ffecc9d8a953de4ec7913a8ab02529575fce878c2b</hash>
+         <hash>e7d51c4857b3b48854d0d8b46a6b199bd72244fef0311e786cc81f6caed297b0</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\wdrv_winc_systime.c</file>
@@ -10998,7 +10998,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_helpers.c</file>
-         <hash>cd8d72f78767c0783921f228fa04f2a18d3517c3a4ad5ca5ed540b4f3f0dd4e5</hash>
+         <hash>c2f9943f15fef1e5f740bcc3903a36febacf11d5dfbbb26decffb71177411a15</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_delete.c</file>
+         <hash>dfeda9b94ffde5cd3701dd197941dfa0b3d24fb016d4b670a276d87004d25c28</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tngtls_cert_def_2_device.h</file>
@@ -11006,11 +11010,15 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_gendig.c</file>
-         <hash>33d2a5328c5ff26558d2c9c004669c873cf5459e54fd7eb7f05c8cd1382121e9</hash>
+         <hash>11942e9303f425ee3d29546c48a55ef0da972ec6bfe0bcc09e374efe3feedc9f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tnglora_cert_def_4_device.c</file>
          <hash>e23ec36f73877d1a99fd26f5f5577647655f0a67735e3ae51a77827890c26e60</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAMD21G18A_DFP\component\fuses.h</file>
+         <hash>261422c0bf6beabe19e2b580dbfb0637a4b4fd94a7eb263a37cf0d6bbeb0da20</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
@@ -11026,31 +11034,31 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_execution.c</file>
-         <hash>6013547ca1fcee42ed68346c6ebad6e0abd069fbdf5baa93519e4807195b032d</hash>
+         <hash>e5c65c8b4e51492ce9c3894cad905663b1e57fb14062c160ea2ffcc6158d89c8</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\spi\src\drv_spi.c</file>
-         <hash>96937f051d09857d615928e842980833a61e3c60f7d0bcc7f996cb41d450c560</hash>
+         <hash>0882f1587b3c48b541a94f0255b942c7d61206dc1fa5d89c4ac2ed0d9a92cd3d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_execution.h</file>
-         <hash>cfbfe887dc00c59a3524e41392d7acab986f60180d245fa0a4f606f28d39d880</hash>
+         <hash>44e5f5be5fd28f8da1c3be886de9942ff85f50988f0e7c460957d9278e9e6d2c</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\crypto\atca_crypto_sw_sha2.c</file>
-         <hash>9a1374db7518e90177dff68b323ad4ba7658e1ddab5daed303e17479f740fd26</hash>
+         <hash>278c845e52b899df4c5c068e5707aff0709f487d048e152f608bc7e8a7b7d2a2</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_secureboot.c</file>
-         <hash>f549061375d2104a644ea6c7e7b21a06f77e849dc4a0173bfc68e46fce0756c4</hash>
+         <hash>12c960be28a7659cf503685cb1f3046c452e153676f0eb24566dde4c8dfea84b</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\nmdrv.h</file>
@@ -11058,11 +11066,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_counter.c</file>
-         <hash>71f374433064137ed87f663ecddc9541c145c58b708fdffafb2238454dc38d2f</hash>
+         <hash>180fa50c9ad63b53664136264882853cfba6d79ca45b64689027bcf33fb3298a</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_derivekey.c</file>
-         <hash>ff03c4b811d6619a3592a4c89f5fe4ecc4965b3ac5aa5eb39f04305f391e1da5</hash>
+         <hash>53eb876df2fb2c8be9b616b4e4e1a621b975bb7ded96f81c144ea9b89077eb86</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\wdrv_winc_wps.c</file>
@@ -11082,11 +11090,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_host_sw.c</file>
-         <hash>3dc121c231e568d46fc6cc4b951d94ab0e8878bb09e9853c08e0fdea3fc772b6</hash>
+         <hash>30f69dc795dd4e0a3f0dffaa6675a9251c51643f575edb4f47aeafc306442448</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tnglora_cert_def_1_signer.h</file>
@@ -11094,11 +11102,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\gclk.h</file>
-         <hash>b11c9ce1396b92a3ac0161b4b3985a44ab85d92ae86a54a05245cd4bf6457ffb</hash>
+         <hash>9c2629f39f42c846c806b0ffe8c8024c8520bc13fbb2cec9cfe917d252fb5a1d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_ecdh.c</file>
-         <hash>911e856607238640ed99f97fd7f61443a2cd9882b748b08a2c3d111686d81d9b</hash>
+         <hash>e7c5a2b1b5d88a913dd452c5c21981446c9a71070913445112321f6fe5404d92</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_nvm.h</file>
@@ -11106,19 +11114,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\sercom4.h</file>
-         <hash>e6ca91daa954af8922eeaeda7b2e56d6d0d3c63ca37b45d9c3e93fa7c3adbc97</hash>
+         <hash>81dbf93586a847c9f3fafc688f0a526ee6086a0192ef01e25084e4a0355ab755</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_def.c</file>
-         <hash>800a3c3cb7f886c51c2cf6dad8bf7f5850a75ff980118486a55ef51005b44372</hash>
+         <hash>d5cbcad53fb4823be85937ae552f837ef0454025f27eb6a4ddc0ffab48f368c6</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\initialization.c</file>
-         <hash>9202892a6b953b9bb20989e860acc5b6f29edae6b7756dddccf272a483c9ad54</hash>
+         <hash>ac0bf78824c9c60c0c72fb6bf3afbc42d35b8e7493cecb3e3edc046bc90baf63</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_version.h</file>
-         <hash>35cc6b524326b849a25f8dac90e8031a8cef8b85d37325113fa9b09bed6a5749</hash>
+         <hash>c2180ed044d26bc957a097fdba22494fa92657ebfeec5b9213b8d8b1ac00209f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\wdrv_winc_powersave.h</file>
@@ -11134,7 +11142,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\hal\atca_hal.h</file>
-         <hash>cdfd8865cf7719537bfbb5574d394a2d7c8648395c9518ae5333715f7585eb8a</hash>
+         <hash>9ba44e5d6b7e187b287c0dd31dd2bed0da1724f0b2716c15e980b5468af2f103</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_status.h</file>
@@ -11142,11 +11150,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\dac.h</file>
-         <hash>5748a833c1551a800b9f455bd32d5acc7a27d173d0fe23f1d4d502d14c78acac</hash>
+         <hash>5052a6b6ae6514708ce3098d9fbeb7a6dbc06446ae2d2ef51a5f70579e58946f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_def.h</file>
@@ -11158,11 +11166,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\hal\atca_hal.c</file>
-         <hash>e4348b3e95f0a520b42c3d0f151cb27e486870807dcba9e370ceb461fc8545a8</hash>
+         <hash>a776ec795ffd66189d56ecf02b6e32052580d7c74ab7c8eb84473410806cf2b9</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_config.h</file>
-         <hash>f3760064bde54cca53bec4150d4f796927bf1b73b1fa8eed3d445dff39cd40c0</hash>
+         <hash>43ea35966bf21a959786f0a9103118b9aa9eb4b719c9ebed396cbc6fd7d8007d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\reset\sys_reset.h</file>
@@ -11174,7 +11182,7 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\tasks.c</file>
-         <hash>3cfadd461c8145ddb8c676acb2d60a1b54d56fb5f707d2478a04cc9dd21ef7a7</hash>
+         <hash>e5af78413958a65d8902ffcce8f3f818f598be0bbfeca35070b797273f09dfb3</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\peripheral\rtc\plib_rtc.h</file>
@@ -11182,11 +11190,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\i2s.h</file>
-         <hash>1532906792ea95151a072804cb3928965980872098bc9143d23c40ef410b545a</hash>
+         <hash>a3eca4f55db1d233da2456f5e76a92631936b0ce1964fad3bb18524ba84dc25d</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_kdf.c</file>
-         <hash>10db4dceb14581fa0821deb9504b0a2b82104e95630016cc65ee2242b43cf2a1</hash>
+         <hash>a9d4e86ce667cf27fc0042f0f82f6a6fe4c12a5f9c25f48eddaeec4baaf86e20</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\system\reset\sys_reset.c</file>
@@ -11198,27 +11206,27 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\instance\ac.h</file>
-         <hash>f6cf63f18f7f54e39ab42b1456bb5b475632a4df0b5bbc4a816ba53d682f7012</hash>
+         <hash>25018bd0fa7eaf38bd58f69a1c166ef1555e6596f4b78eb76dbcfabcf718db55</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\mtb.h</file>
-         <hash>4c9682cc14ab6d59567be873197fb74c18e84ed1c8a493842331276112fcd3f6</hash>
+         <hash>22c54fad40bf90253cd89816810c596467c5d630cf17dba140fde53405d16e74</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atca_helpers.c</file>
-         <hash>7c8847669e9d1009b31c32de0522e88f296fe166528c817d804efeec7452214c</hash>
+         <hash>863e6709b5dd11f8f9798f526b27c04e37feb59d7f3e67b933ab0ad869e7a5ad</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\port.h</file>
-         <hash>5c31fa93eefc9471ca082711056920a6960695f1476af6dac12a367d76b681ec</hash>
+         <hash>6b9cb37138b470436cae1fbbf42f8680e1031cb58a7f155488be61b0f63508ae</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_command.h</file>
-         <hash>c93f1fa1546672243b63d0a1b44446260509668475c28753a622115c635bb12a</hash>
+         <hash>5760e37470f33b7e97c6cd99d88407e03acaf221c000d4af5bfd976056461b8e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\usb.h</file>
-         <hash>6c1f5eca6ff86cb2dc1b4ac4b2272744256daf69ecec2e7b570d22c1dee982b7</hash>
+         <hash>746e25017c96a3abc56bf0c27ab54725bffddb52e8be52328aa67d3d2cf30a8f</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\tng\tng_atcacert_client.h</file>
@@ -11242,11 +11250,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\calib\calib_command.c</file>
-         <hash>ec1c1de4edbe3fd6e724c56127b3d67e5035e8efabefcea207d96b5d214cc95e</hash>
+         <hash>da491045ceb1f856ed3fb0c74f1d7c06a23ac9e4fb49ee1f470415b3bc79488c</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\atcacert\atcacert_client.c</file>
-         <hash>85a9e87ca9b7b4d4962cfada7df4959015f80a122926cca1f60a825821e08651</hash>
+         <hash>2d8ca36b525a172c80b4409b3e056a60223afd0472e98b1b143581cacf0d8450</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\winc\include\drv\driver\nmspi.h</file>
@@ -11262,7 +11270,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\evsys.h</file>
-         <hash>b21e2202bf61f69d363c96e967a46a33987703af7c237b0a9f343044deafc037</hash>
+         <hash>3c85a8019766226eaf8e4767a5ec67ade5f808270c6e373cb64fba7bc45c9c51</hash>
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\driver\driver_common.h</file>
@@ -11278,11 +11286,11 @@
       </entry>
       <entry>
          <file>..\src\config\samd21_wa_iot_v2\library\cryptoauthlib\hal\hal_i2c_harmony.c</file>
-         <hash>511127258f1f5cda686cb206472391ab165e3e8b0a1d3f9537327fdc3ce2cdfe</hash>
+         <hash>3688a406578e38ebbe903cd91e1c213e5b4ae2eb8937ee79169a67ab5d18f57a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G18A_DFP\component\tc.h</file>
-         <hash>48978728d7aba8c1e2f940dac45f6c093a2ee60e54f5367ed6986c2058064b6b</hash>
+         <hash>61845207c3ab376dbb906442ae85ea3d9c9b7da01c789e19155478b152f72ad5</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

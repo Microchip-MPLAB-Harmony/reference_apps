@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -61,28 +61,19 @@
 
  //@}
 
-/**
- * @addtogroup BSPDefine
- * @{
- */
 #ifdef _NM_BSP_BIG_END
-/*! Switch endianness of 32bit word (In the case that Host is BE) */
 #define NM_BSP_B_L_32(x)      \
 ((((x) & 0x000000FF) << 24) + \
 (((x) & 0x0000FF00) << 8)   + \
 (((x) & 0x00FF0000) >> 8)   + \
 (((x) & 0xFF000000) >> 24))
 
-/*! Switch endianness of 16bit word (In the case that Host is BE) */
 #define NM_BSP_B_L_16(x) \
 ((((x) & 0x00FF) << 8) + \
 (((x)  & 0xFF00) >> 8))
 #else
-/*! Retain endianness of 32bit word (In the case that Host is LE) */
 #define NM_BSP_B_L_32(x)  (x)
-/*! Retain endianness of 16bit word (In the case that Host is LE) */
 #define NM_BSP_B_L_16(x)  (x)
 #endif
-/**@}*/     //BSPDefine
 
 #endif  /*_NM_BSP_H_*/

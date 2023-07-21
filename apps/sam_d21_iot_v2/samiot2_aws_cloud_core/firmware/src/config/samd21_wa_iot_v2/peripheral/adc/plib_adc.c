@@ -181,7 +181,7 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
     while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
-    }
+    }    
     ADC_REGS->ADC_WINUT = high_threshold;
     while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {

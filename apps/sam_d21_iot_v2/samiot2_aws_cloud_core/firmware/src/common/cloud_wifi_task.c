@@ -371,7 +371,7 @@ static void wifi_callback_handler(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE asso
         {
             debug_printInfo("Wifi Disconnected\r\n");
             //g_cloud_wifi_state = CLOUD_STATE_WIFI_CONFIGURE;
-            g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECT;
+            g_cloud_wifi_state = CLOUD_STATE_WIFI_CONFIGURE; //change1
             
 
         }
@@ -619,7 +619,7 @@ void cloud_publish_message()
 #if defined(CLOUD_CONFIG_GCP)
         uint32_t ts = RTC_Timer32CounterGet();
         json_object_dotset_number(update_message_object, "timestamp", ts);
-        json_object_dotset_string(update_message_object, "Led_Status", ((SW0_GPIO_PA00_Get()) ? "off" : "on"));
+        json_object_dotset_string(update_message_object, "Led_Status", ((SW0_GPIO_PA00_Get()) ? "off" : "on")); // change3
 #else
         float rawTemperature = APP_GetTempSensorValue();
         int light = APP_GetLightSensorValue();
@@ -897,24 +897,31 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         break;
 
     case CLOUD_STATE_CLOUD_CONNECT:
-        mode = 2;
-        if(mode != WIFI_DEFAULT){
-            /* Connect to the target BSS with the chosen authentication. */
-            if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSConnect(handle, &bssCtx, &authCtx, &wifi_callback_handler))
+        //mode = 2;
+//        if(mode != WIFI_DEFAULT){
+//        /* Connect to the target BSS with the chosen authentication. */
+//       
+        if(mode==1)
+        {
+            if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSReconnect(handle,&wifi_callback_handler))
+        {
+            // Set the next cloud WIFI state
+            g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
+            //APP_DebugPrintf("Connecting to Cloud...");
+        } 
+        }
+            else
+            {
+                if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSConnect(handle, &bssCtx, &authCtx, &wifi_callback_handler))
             {
                 // Set the next cloud WIFI state
                 g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
-                debug_print("Connecting to Cloud...");
+                debug_print("Reconnecting to Cloud...");
+                //mode=1;
             }
-        }else{
-//            if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSReconnect(handle,&wifi_callback_handler))
-//            {
-//                // Set the next cloud WIFI state
-//                g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
-//                debug_print("Reconnecting to Cloud...");
-//            }
-            
-        }
+            }
+             
+         
         break;
 
     case CLOUD_STATE_CLOUD_CONNECTING:
@@ -1051,7 +1058,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         else
         {
             // Wait for incoming update messages
-           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);
+           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);//change2
             mqtt_status = 0;
             if (mqtt_status != SUCCESS)
             {
@@ -1087,6 +1094,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
 
         // Set the state to start the cloud WIFI Configure process
         g_cloud_wifi_state = CLOUD_STATE_WIFI_CONFIGURE;
+        break;
 
     case CLOUD_STATE_CLOUD_DISCONNECT:
         // The cloud Demo is disconnected from cloud IoT

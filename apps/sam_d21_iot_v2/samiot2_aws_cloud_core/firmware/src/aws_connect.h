@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#define CLOUD_ENDPOINT "aypqjiaipgy3e.iot.us-east-2.amazonaws.com"
+#define CLOUD_ENDPOINT "a1iq91fd6ih7tv.iot.us-east-2.amazonaws.com"
 
 #ifdef __cplusplus
 }

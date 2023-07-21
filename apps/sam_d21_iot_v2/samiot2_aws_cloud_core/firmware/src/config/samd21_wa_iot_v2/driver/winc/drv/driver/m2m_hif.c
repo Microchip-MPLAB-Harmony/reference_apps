@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -316,7 +316,7 @@ int8_t hif_send(uint8_t u8Gid,uint8_t u8Opcode,uint8_t *pu8CtrlBuf,uint16_t u16C
                  */
                 if(cnt >= 500) {
                     if(cnt < 501) {
-                        M2M_INFO("Slowing down...\r\n");
+                        M2M_INFO("Slowing down...\n");
                     }
                     nm_sleep(1);
                 }
@@ -374,13 +374,13 @@ int8_t hif_send(uint8_t u8Gid,uint8_t u8Opcode,uint8_t *pu8CtrlBuf,uint16_t u16C
             M2M_ERR("(HIF)Failed to wakeup the chip\r\n");
             goto ERR2;
         }
-    }
-    else
-    {
+	}
+	else
+	{
         M2M_ERR("HIF message length (%d) exceeds max length (%d)\r\n",strHif.u16Length, M2M_HIF_MAX_PACKET_SIZE);
         ret = M2M_ERR_SEND;
         goto ERR2;
-    }
+	}
     /*actual sleep ret = M2M_SUCCESS*/
     ret = hif_chip_sleep();
     OSAL_SEM_Post(&hifSemaphore);

@@ -237,7 +237,7 @@ static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
         }else{        
 		//wifi_disconnectFromAp();
         //m2m_wifi_disconnect(); >
-        g_cloud_wifi_state = CLOUD_STATE_WINC1500_INIT;
+        g_cloud_wifi_state = CLOUD_STATE_WIFI_DISCONNECT;
         ssidReceived = 1;
         }
         

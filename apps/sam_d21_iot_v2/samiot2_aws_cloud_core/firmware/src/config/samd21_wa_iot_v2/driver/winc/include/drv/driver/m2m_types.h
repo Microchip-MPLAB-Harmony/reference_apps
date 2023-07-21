@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -83,11 +83,7 @@ MACROS
     ( ((uint32_t)M2M_MAKE_VERSION((fw_major),  (fw_minor),  (fw_patch)))  << M2M_FW_VERSION_SHIFT) | \
     ( ((uint32_t)M2M_MAKE_VERSION((drv_major), (drv_minor), (drv_patch))) << M2M_DRV_VERSION_SHIFT))
 
-#define REL_19_7_7_VER          M2M_MAKE_VERSION_INFO(19,7,7,19,3,0)
-#define REL_19_7_6_VER          M2M_MAKE_VERSION_INFO(19,7,6,19,3,0)
-#define REL_19_7_5_VER          M2M_MAKE_VERSION_INFO(19,7,5,19,3,0)
 #define REL_19_7_0_VER          M2M_MAKE_VERSION_INFO(19,7,0,19,3,0)
-#define REL_19_6_4_VER          M2M_MAKE_VERSION_INFO(19,6,4,19,3,0)
 #define REL_19_6_0_VER          M2M_MAKE_VERSION_INFO(19,6,0,19,3,0)
 #define REL_19_5_3_VER          M2M_MAKE_VERSION_INFO(19,5,3,19,3,0)
 #define REL_19_5_2_VER          M2M_MAKE_VERSION_INFO(19,5,2,19,3,0)
@@ -116,11 +112,11 @@ MACROS
 /*!< Firmware Major release version number.
 */
 
-#define M2M_RELEASE_VERSION_MINOR_NO                        (7)
+#define M2M_RELEASE_VERSION_MINOR_NO                        (6)
 /*!< Firmware Minor release version number.
 */
 
-#define M2M_RELEASE_VERSION_PATCH_NO                        (7)
+#define M2M_RELEASE_VERSION_PATCH_NO                        (1)
 /*!< Firmware patch release version number.
 */
 
@@ -159,8 +155,9 @@ MACROS
 /*!< Maximum size for the shared packet buffer.
  */
 
+
 #define M2M_MAC_ADDRES_LEN                               6
-/*!< The size of the 802 MAC address.
+/*!< The size fo 802 MAC address.
  */
 
 #define M2M_ETHERNET_HDR_OFFSET                         34
@@ -235,7 +232,7 @@ MACROS
     must be restricted to an AP with a certain BSSID.
 */
 
-#define M2M_AUTH_1X_USER_LEN_MAX                        100
+#define M2M_AUTH_1X_USER_LEN_MAX                        132
 /*!< The maximum length (in ASCII characters) of domain name + username (including '@' or '\')
     for authentication with Enterprise methods.
 */
@@ -290,14 +287,14 @@ MACROS
 #define M2M_AP_CMD_BASE                                     70
 /*!< The base value of all the Access Point mode host commands opcodes.
 */
+/**@}*/     //WlanDefines
 
-/**@cond P2P_DOC
- */
 #define M2M_P2P_CMD_BASE                                    90
 /*!< The base value of all the P2P mode host commands opcodes.
 */
-/**@endcond*/ //P2P_DOC
-
+/**@addtogroup  WlanDefines
+ * @{
+ */
 #define M2M_SERVER_CMD_BASE                                 100
 /*!< The base value of all the power save mode host commands codes.
 */
@@ -350,7 +347,7 @@ MACROS
 /*!< The default number of scan slots used by the WINC board.
 */
 #define M2M_SCAN_DEFAULT_SLOT_TIME                          (30)
-/*!< The default duration in milliseconds of an active scan slot used by the WINC board.
+/*!< The default duration in miliseconds of an active scan slot used by the WINC board.
 */
 #define M2M_SCAN_DEFAULT_PASSIVE_SLOT_TIME                  (300)
 /*!< The passive scan slot default duration in ms.
@@ -441,6 +438,7 @@ MACROS
 /**@addtogroup OTADEFINE
  * @{
  */
+
 /*======*======*======*======*
     OTA DEFINITIONS
  *======*======*======*======*/
@@ -494,11 +492,65 @@ MACROS
  */
 /**@}*/     //OTADEFINE
 
-#define tstrM2MSNTPConfig_PAD (4 - ((M2M_NTP_MAX_SERVER_NAME_LENGTH + 1 + 1) % 4))
+/**@addtogroup  OTATYPEDEF
+ */
+/**@{*/
+
+/*!
+@enum   \
+    tenuOtaError
+
+@brief
+    OTA Error codes.
+*/
+typedef enum {
+    OTA_SUCCESS = (0),
+    /*!<
+     OTA Success status
+     */
+    OTA_ERR_WORKING_IMAGE_LOAD_FAIL = ((int8_t) -1),
+    /*!<
+     Failure to load the firmware image
+     */
+    OTA_ERR_INVALID_CONTROL_SEC = ((int8_t) -2),
+    /*!<
+     Control structure is corrupted
+     */
+    M2M_ERR_OTA_SWITCH_FAIL = ((int8_t) -3),
+    /*!<
+     Switching to the updated image failed as may be the image is invalid
+     */
+    M2M_ERR_OTA_START_UPDATE_FAIL = ((int8_t) -4),
+    /*!<
+     OTA update fail due to multiple reasons:
+     - Connection failure
+     - Image integrity fail
+
+     */
+    M2M_ERR_OTA_ROLLBACK_FAIL = ((int8_t) -5),
+    /*!<
+     Roll-back failed due to Roll-back image is not valid
+     */
+    M2M_ERR_OTA_INVALID_FLASH_SIZE = ((int8_t) -6),
+    /*!<
+     The OTA Support at least 4MB flash size, this error code will appear if the current flash is less than 4M
+     */
+    M2M_ERR_OTA_INVALID_ARG = ((int8_t) -7),
+    /*!<
+     * Ota still in progress
+     */
+    M2M_ERR_OTA_INPROGRESS = ((int8_t) -8)
+    /*!<
+     Invalid argument in any OTA Function
+     */
+} tenuOtaError;
+
+/**@}*/     //OTATYPEDEF
 
 /**@addtogroup WlanEnums
  * @{
  */
+
 /*======*======*======*======*
  *   FLASH ID DEFINITIONS    *
  *======*======*======*======*/
@@ -713,22 +765,6 @@ typedef struct {
 } tstrM2mWiFiRoaming;
 
 /*!
-@struct \
-    tstrM2mWiFiXOSleepEnable
-
-@brief
-    Choose to keep the XO on or off over deep sleep.
-*/
-typedef struct {
-    uint8_t   u8EnableXODuringSleep;
-    /*!< Enable/Disable XO during deep sleep
-    */
-    uint8_t   __PAD16__[3];
-    /*!< Padding bytes for forcing 4-byte alignment
-    */
-} tstrM2mWiFiXOSleepEnable;
-
-/*!
 @enum   \
     tenuM2mReqGroup
 
@@ -882,10 +918,10 @@ typedef enum {
     /*!< Request scan with list of hidden SSID plus the broadcast scan.
     */
     M2M_WIFI_REQ_SET_GAINS,
-    /*!< Request to set the PPA gain
+    /*!< Request set the PPA gain
     */
     M2M_WIFI_REQ_PASSIVE_SCAN,
-    /*!< Request a passive scan.
+    /*!< Request a passivr scan command.
     */
     M2M_WIFI_REQ_CONG_AUTO_RATE,
     /*!< Configure auto TX rate selection algorithm.
@@ -913,7 +949,7 @@ typedef enum {
 */
 typedef enum {
     M2M_WIFI_REQ_CONNECT = M2M_STA_CMD_BASE,
-    /*!< Connect with AP command. This command is deprecated in favor of @ref M2M_WIFI_REQ_CONN.
+    /*!< Connect with AP command. This command is deprecated in favour of @ref M2M_WIFI_REQ_CONN.
     */
     M2M_WIFI_REQ_DEFAULT_CONNECT,
     /*!< Connect with default AP command.
@@ -1006,6 +1042,37 @@ typedef enum {
     M2M_WIFI_MAX_AP_ALL
 } tenuM2mApCmd;
 
+/**@}*/     //WlanEnums
+
+/*!
+@enum   \
+    tenuM2mP2pCmd
+
+@brief
+    This enum contains WINC commands while in P2P mode.
+*/
+typedef enum {
+    M2M_WIFI_REQ_P2P_INT_CONNECT = M2M_P2P_CMD_BASE,
+    /*!< This command is for internal use by the WINC and
+        should not be used by the host driver.
+    */
+    M2M_WIFI_REQ_ENABLE_P2P,
+    /*!< Enable P2P mode command.
+    */
+    M2M_WIFI_REQ_DISABLE_P2P,
+    /*!< Disable P2P mode command.
+    */
+    M2M_WIFI_REQ_P2P_REPOST,
+    /*!< This command is for internal use by the WINC and
+        should not be used by the host driver.
+    */
+    M2M_WIFI_MAX_P2P_ALL
+} tenuM2mP2pCmd;
+
+/**@addtogroup WlanEnums
+ * @{
+ */
+
 /*!
 @enum   \
     tenuM2mServerCmd
@@ -1031,14 +1098,6 @@ typedef enum {
 typedef enum {
     M2M_WIFI_REQ_ROAMING = M2M_GEN_CMD_BASE,
     /*!< Request to enable/disable wifi roaming.
-        (Processing matches @ref tenuM2mConfigCmd.)
-    */
-    M2M_WIFI_REQ_XO_SLEEP_ENABLE,
-    /*!< Request to enable/disable the crystal oscillator during deep sleep.
-        (Processing matches @ref tenuM2mConfigCmd.)
-    */
-    M2M_WIFI_REQ_SET_STOP_SCAN_OPTION,
-    /*!< Set Scan option to stop on first result.
         (Processing matches @ref tenuM2mConfigCmd.)
     */
     M2M_WIFI_MAX_GEN_ALL
@@ -1141,7 +1200,7 @@ typedef enum {
     /*!< Wi-Fi network is secured with WPA/WPA2 personal(PSK).
     */
     M2M_WIFI_SEC_WEP,
-    /*!< WEP is deprecated as of 19.7.5. 
+    /*!< Security type WEP (40 or 104) OPEN OR SHARED.
     */
     M2M_WIFI_SEC_802_1X,
     /*!< Wi-Fi network is secured with WPA/WPA2 Enterprise.IEEE802.1x.
@@ -1447,13 +1506,9 @@ typedef struct {
             @ref M2M_802_1X_PREPEND_DOMAIN_FLAG
     */
     uint8_t   u8DomainLength;
-    /*!< Length of Domain. (Offset of Domain, within au81xAuthDetails, understood to be 0.) */
-    uint8_t   u8UserNameLength;
-    /*!< Length of UserName. (Offset of UserName, within au81xAuthDetails, understood to be u8DomainLength.) */
-    uint8_t   u8HdrLength;
-    /*!< Length of header (offset of au81xAuthDetails within tstrM2mWifi1xHdr).
-        Legacy implementations may have 0 here, in which case header is 12 bytes.
-        The unusual placing of this field is in order to hit a zero in legacy implementations. */
+    /*!< Length of Domain. (Offset of Domain understood to be 0.) */
+    uint16_t  u16UserNameLength;
+    /*!< Length of UserName. (Offset of UserName understood to be u8DomainLength.) */
     uint16_t  u16PrivateKeyOffset;
     /*!< Offset within au81xAuthDetails of PrivateKey/Password. */
     uint16_t  u16PrivateKeyLength;
@@ -1462,16 +1517,10 @@ typedef struct {
     /*!< Offset within au81xAuthDetails of Certificate. */
     uint16_t  u16CertificateLength;
     /*!< Length of Certificate. */
-    uint8_t   au8TlsSpecificRootNameSha1[20];
-    /*!< SHA1 digest of subject name to identify specific root certificate for phase 1 server verification. */
-    uint32_t  u32Rsv1;
-    /*!< Reserved, set to 0. */
-    uint32_t  u32TlsHsFlags;
-    /*!< TLS handshake flags for phase 1. */
-    uint32_t  u32Rsv2;
-    /*!< Reserved, set to 0. */
     uint8_t   au81xAuthDetails[];
     /*!< Placeholder for concatenation of Domain, UserName, PrivateKey/Password, Certificate.
+            Padding (0s) is placed between UserName and PrivateKey/Password so that
+            PrivateKey/Password begins on a 4-byte boundary.
             Certificate (for 1x Tls only) is sent over HIF separately from the other parameters. */
 } tstrM2mWifi1xHdr;
 
@@ -1554,6 +1603,7 @@ typedef struct {
     uint8_t   __PAD24__[3];
 } tstrM2MGenericResp;
 
+
 /*!
 @struct \
     tstrM2MWPSConnect
@@ -1575,6 +1625,7 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment
     */
 } tstrM2MWPSConnect;
+
 
 /*!
 @struct \
@@ -1650,9 +1701,7 @@ typedef struct {
          Default setting is @ref M2M_SCAN_DEFAULT_SLOT_TIME.
     */
     uint8_t  u8ProbesPerSlot;
-    /*!< Number of probe requests to be sent for each scan slot (when not specifying network to scan).
-         Number of probe requests to be sent for each ssid to scan in each scan slot (when specifying network to scan).
-         Refers to active scan only.
+    /*!< Number of probe requests to be sent each scan slot. Refers to active scan only.
          Valid settings are in the range 0<Probes<=2.
          Default setting is @ref M2M_SCAN_DEFAULT_NUM_PROBE.
     */
@@ -1666,28 +1715,6 @@ typedef struct {
     */
 
 } tstrM2MScanOption;
-
-/*!
-@struct \
-    tstrM2MStopScanOption
-
-@brief  This struct holds additional configuration options for Wi-Fi scan.
-
-        These scan options should be set by the application prior to issuing the scan request, and once configured,
-        WINC will keep the settings until the scan options are set again, via the same API, or until the device is
-        either reset or power cycled.
-*/
-typedef struct {
-    uint8_t                       u8StopOnFirstResult;
-    /*!<
-        Stop scan as soon as an SSID is detected.
-        1 = Enabled, 0 = Disabled (default)
-    */
-
-    uint8_t                       au8Rsv[3];
-    /*!< Reserved for future use. Set to 0. */
-
-} tstrM2MStopScanOption;
 
 /*!
 @struct \
@@ -1748,6 +1775,7 @@ typedef struct {
     */
 } tstrCyptoResp;
 
+
 /*!
 @struct \
     tstrM2mScanDone
@@ -1767,6 +1795,7 @@ typedef struct {
     */
 } tstrM2mScanDone;
 
+
 /*!
 @struct \
     tstrM2mReqScanResult
@@ -1783,6 +1812,7 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment
     */
 } tstrM2mReqScanResult;
+
 
 /*!
 @struct \
@@ -1816,6 +1846,7 @@ typedef struct {
     */
 } tstrM2mWifiscanResult;
 
+
 /*!
 @struct \
     tstrM2mWifiStateChanged
@@ -1837,6 +1868,7 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment
     */
 } tstrM2mWifiStateChanged;
+
 
 /*!
 @struct \
@@ -1893,6 +1925,7 @@ typedef struct {
     */
 } tstrM2mLsnInt;
 
+
 /*!
 @struct \
     tstrM2MWifiMonitorModeCtrl
@@ -1929,6 +1962,7 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment
     */
 } tstrM2MWifiMonitorModeCtrl;
+
 
 /*!
 @struct \
@@ -1984,6 +2018,7 @@ typedef struct {
     */
 } tstrM2MWifiRxPacketInfo;
 
+
 /*!
 @struct \
     tstrM2MWifiTxPacketInfo
@@ -2002,6 +2037,35 @@ typedef struct {
     */
 } tstrM2MWifiTxPacketInfo;
 
+/**@}*/     //WlanEnums
+
+/**@cond P2P_DOC
+ * @addtogroup WlanEnums
+ * @{
+ */
+/*!
+ @struct    \
+    tstrM2MP2PConnect
+
+ @brief
+    Set the device to operate in the Wi-Fi Direct (P2P) mode.
+*/
+typedef struct {
+    uint8_t     u8ListenChannel;
+    /*!< P2P Listen Channel (1, 6 or 11)
+    */
+    uint8_t __PAD24__[3];
+    /*!< Padding bytes for forcing 4-byte alignment
+    */
+} tstrM2MP2PConnect;
+
+/**@}*/
+/**@endcond*/
+
+/**@addtogroup WlanEnums
+ * @{
+ */
+
 /*!
 @struct \
     tstrM2MAPConfig
@@ -2009,7 +2073,8 @@ typedef struct {
 @brief  AP Configuration
 
     This structure holds the configuration parameters for the M2M AP mode. It should be set by the application when
-    it requests to enable the M2M AP operation mode. This mode supports either open, WEP or WPA/WPA2 mixed mode security types.
+    it requests to enable the M2M AP operation mode. The M2M AP mode currently supports only WEP security (with
+    the NO Security option available of course).
 */
 typedef struct {
     /*!<
@@ -2031,7 +2096,7 @@ typedef struct {
     /*!< Wep key
     */
     uint8_t     u8SecType;
-    /*!< Security type: Open, WEP or WPA/WPA2 mixed mode
+    /*!< Security type: Open or WEP or WPA in the current implementation
     */
     uint8_t     u8SsidHide;
     /*!< SSID Status "Hidden(1)/Visible(0)"
@@ -2077,9 +2142,9 @@ typedef struct {
 
 @brief  AP Configuration
 
-    This structure holds the AP configuration parameters plus the extended AP configuration parameters for M2M AP mode.
-    It should be set by the application when it requests to enable M2M AP operation mode. This mode supports 
-    either open, WEP or WPA/WPA2 mixed mode security types.
+    This structure holds the AP configuration parameters plus the extended AP configuration parameters for the M2M AP mode.
+    It should be set by the application when it requests to enable the M2M AP operation mode. The M2M AP mode currently
+    supports only WEP security (with the NO Security option available of course).
 */
 typedef struct {
     tstrM2MAPConfig     strApConfig;
@@ -2108,6 +2173,7 @@ typedef struct {
     */
 } tstrM2mServerInit;
 
+
 /*!
 @struct \
     tstrM2mClientState
@@ -2124,6 +2190,7 @@ typedef struct {
     */
 } tstrM2mClientState;
 
+
 /*!
 @struct \
     tstrM2Mservercmd
@@ -2139,6 +2206,7 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment
     */
 } tstrM2Mservercmd;
+
 
 /*!
 @struct \
@@ -2159,6 +2227,7 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment
     */
 } tstrM2mSetMacAddress;
+
 
 /*!
 @struct \
@@ -2252,6 +2321,7 @@ typedef struct {
     uint8_t         __PAD24__[3];
 } tstrM2MProvisionModeConfig;
 
+
 /*!
 @struct \
     tstrM2MProvisionInfo
@@ -2305,49 +2375,176 @@ typedef struct {
     /*!< Padding bytes for forcing 4-byte alignment */
 } tstrM2MConnInfo;
 
-/**@cond P2P_DOC
+/**@}*/     //WlanEnums
+
+/**@addtogroup  SSLEnums
+ * @{
  */
+
+typedef enum {
+    M2M_SSL_REQ_CERT_VERIF,
+    M2M_SSL_REQ_ECC,
+    M2M_SSL_RESP_ECC,
+    M2M_SSL_IND_CRL,
+    M2M_SSL_REQ_WRITE_OWN_CERTS,
+    M2M_SSL_REQ_SET_CS_LIST,
+    M2M_SSL_RESP_SET_CS_LIST,
+    M2M_SSL_RESP_WRITE_OWN_CERTS
+} tenuM2mSslCmd;
+
+/*
+ * TLS certificate revocation list
+ * Typedefs common between fw and host
+ */
+
 /*!
-@enum   \
-    tenuM2mP2pCmd
+@struct \
+    tstrTlsCrlEntry
 
 @brief
-    This enum contains WINC commands while in P2P mode.
-*/
-typedef enum {
-    M2M_WIFI_REQ_P2P_INT_CONNECT = M2M_P2P_CMD_BASE,
-    /*!< This command is for internal use by the WINC and
-        should not be used by the host driver.
-    */
-    M2M_WIFI_REQ_ENABLE_P2P,
-    /*!< Enable P2P mode command.
-    */
-    M2M_WIFI_REQ_DISABLE_P2P,
-    /*!< Disable P2P mode command.
-    */
-    M2M_WIFI_REQ_P2P_REPOST,
-    /*!< This command is for internal use by the WINC and
-        should not be used by the host driver.
-    */
-    M2M_WIFI_MAX_P2P_ALL
-} tenuM2mP2pCmd;
-
-/*!
- @struct    \
-    tstrM2MP2PConnect
-
- @brief
-    Set the device to operate in the Wi-Fi Direct (P2P) mode.
+    Certificate data for inclusion in a revocation list (CRL)
 */
 typedef struct {
-    uint8_t   u8ListenChannel;
-    /*!< P2P Listen Channel (1, 6 or 11)
+    uint8_t u8DataLen;
+    /*!<
+        Length of certificate data (maximum possible is @ref TLS_CRL_DATA_MAX_LEN)
     */
-    uint8_t   __PAD24__[3];
-    /*!< Padding bytes for forcing 4-byte alignment
+    uint8_t au8Data[TLS_CRL_DATA_MAX_LEN];
+    /*!<
+        Certificate data
     */
-} tstrM2MP2PConnect;
-/**@endcond*/ //P2P_DOC
+    uint8_t __PAD24__[3];
+    /*!<
+        Padding bytes for forcing 4-byte alignment
+    */
+} tstrTlsCrlEntry;
+
+/*!
+@struct \
+    tstrTlsCrlInfo
+
+@brief
+    Certificate revocation list details
+*/
+typedef struct {
+    uint8_t         u8CrlType;
+    /*!<
+        Type of certificate data contained in list
+    */
+    uint8_t         u8Rsv1;
+    /*!<
+        Reserved for future use
+    */
+    uint8_t         u8Rsv2;
+    /*!<
+        Reserved for future use
+    */
+    uint8_t         u8Rsv3;
+    /*!<
+        Reserved for future use
+    */
+    tstrTlsCrlEntry astrTlsCrl[TLS_CRL_MAX_ENTRIES];
+    /*!<
+        List entries
+    */
+} tstrTlsCrlInfo;
+
+/*!
+@enum\
+tenuSslCertExpSettings
+
+@brief  SSL Certificate Expiry Validation Options
+*/
+typedef enum {
+    SSL_CERT_EXP_CHECK_DISABLE,
+    /*!<
+        ALWAYS OFF.
+        Ignore certificate expiration date validation. If a certificate is
+        expired or there is no configured system time, the SSL connection SUCCEEDs.
+    */
+    SSL_CERT_EXP_CHECK_ENABLE,
+    /*!<
+        ALWAYS ON.
+        Validate certificate expiration date. If a certificate is expired or
+        there is no configured system time, the SSL connection FAILs.
+    */
+    SSL_CERT_EXP_CHECK_EN_IF_SYS_TIME
+    /*!<
+        CONDITIONAL VALIDATION (Default setting at startup).
+        Validate the certificate expiration date only if there is a configured system time.
+        If there is no configured system time, the certificate expiration is bypassed and the
+        SSL connection SUCCEEDs.
+    */
+} tenuSslCertExpSettings;
+
+
+/*!
+@struct \
+    tstrTlsSrvSecFileEntry
+
+@brief
+    This struct contains a TLS certificate.
+ */
+typedef struct {
+    char    acFileName[TLS_FILE_NAME_MAX];
+    /*!< Name of the certificate.   */
+    uint32_t    u32FileSize;
+    /*!< Size of the certificate.   */
+    uint32_t    u32FileAddr;
+    /*!< Error Code.    */
+} tstrTlsSrvSecFileEntry;
+
+/*!
+@struct \
+    tstrTlsSrvSecHdr
+
+@brief
+    This struct contains a set of TLS certificates.
+ */
+typedef struct {
+    uint8_t                 au8SecStartPattern[TLS_SRV_SEC_START_PATTERN_LEN];
+    /*!< Start pattern. */
+    uint32_t                u32nEntries;
+    /*!< Number of certificates stored in the struct.   */
+    uint32_t                u32NextWriteAddr;
+    /*  */
+    tstrTlsSrvSecFileEntry  astrEntries[TLS_SRV_SEC_MAX_FILES];
+    /*!< TLS Certificate headers.   */
+    uint32_t                u32CRC;
+    /*!< CRC32 of entire cert block, only the cert writer computes this, the FW just does a compare with replacement blocks.    */
+} tstrTlsSrvSecHdr;
+
+typedef enum {
+    TLS_FLASH_OK,
+    /*!< Operation succeeded. Flash modified. */
+    TLS_FLASH_OK_NO_CHANGE,
+    /*!< Operation was unnecessary. Flash not modified. */
+    TLS_FLASH_ERR_CORRUPT,
+    /*!< Operation failed. Flash modified. */
+    TLS_FLASH_ERR_NO_CHANGE,
+    /*!< Operation failed. Flash not modified. */
+    TLS_FLASH_ERR_UNKNOWN
+    /*!< Operation failed. Flash status unknown. */
+} tenuTlsFlashStatus;
+
+typedef struct {
+    uint16_t  u16Sig;
+    uint16_t  u16TotalSize32;
+    uint16_t  u16Offset32;
+    uint16_t  u16Size32;
+} tstrTlsSrvChunkHdr;
+
+typedef struct {
+    uint32_t    u32CsBMP;
+} tstrSslSetActiveCsList;
+
+/**@}*/     //SSLEnums
+
+#define tstrM2MSNTPConfig_PAD (4 - ((M2M_NTP_MAX_SERVER_NAME_LENGTH + 1 + 1) % 4))
+
+/**@addtogroup WlanEnums
+ * @{
+ */
 
 /*!
 @struct \
@@ -2374,6 +2571,350 @@ typedef struct {
 #endif
 } tstrM2MSNTPConfig;
 
+/**@}*/     //WlanEnums
+
+/**@addtogroup OTATYPEDEF
+ * @{
+ */
+
+/*!
+@enum   \
+    tenuM2mOtaCmd
+
+@brief
+    OTA Command IDs.
+*/
+typedef enum {
+    M2M_OTA_REQ_NOTIF_SET_URL = M2M_OTA_CMD_BASE,
+    M2M_OTA_REQ_NOTIF_CHECK_FOR_UPDATE,
+    M2M_OTA_REQ_NOTIF_SCHED,
+    M2M_OTA_REQ_START_FW_UPDATE,
+    M2M_OTA_REQ_SWITCH_FIRMWARE,
+    M2M_OTA_REQ_ROLLBACK_FW,
+    M2M_OTA_RESP_NOTIF_UPDATE_INFO,
+    M2M_OTA_RESP_UPDATE_STATUS,
+    M2M_OTA_REQ_TEST,
+    M2M_OTA_REQ_START_CRT_UPDATE,
+    M2M_OTA_REQ_SWITCH_CRT_IMG,
+    M2M_OTA_REQ_ROLLBACK_CRT,
+    M2M_OTA_REQ_ABORT,
+    M2M_OTA_REQ_HOST_FILE_STATUS,
+    M2M_OTA_RESP_HOST_FILE_STATUS,
+    M2M_OTA_REQ_HOST_FILE_DOWNLOAD,
+    M2M_OTA_RESP_HOST_FILE_DOWNLOAD,
+    M2M_OTA_REQ_HOST_FILE_READ,
+    M2M_OTA_RESP_HOST_FILE_READ,
+    M2M_OTA_REQ_HOST_FILE_ERASE,
+    M2M_OTA_RESP_HOST_FILE_ERASE,
+    M2M_OTA_MAX_ALL,
+} tenuM2mOtaCmd;
+
+/*!
+@enum   \
+    tenuOtaUpdateStatus
+
+@brief
+    OTA return status
+*/
+typedef enum {
+    OTA_STATUS_SUCCESS        = 0,
+    /*!< OTA Success with no errors */
+    OTA_STATUS_FAIL           = 1,
+    /*!< OTA generic fail */
+    OTA_STATUS_INVALID_ARG    = 2,
+    /*!< Invalid or malformed download URL */
+    OTA_STATUS_INVALID_RB_IMAGE    = 3,
+    /*!< Invalid rollback image */
+    OTA_STATUS_INVALID_FLASH_SIZE    = 4,
+    /*!< Flash size on device is not enough for OTA */
+    OTA_STATUS_ALREADY_ENABLED    = 5,
+    /*!< An OTA operation is already enabled */
+    OTA_STATUS_UPDATE_INPROGRESS    = 6,
+    /*!< An OTA operation update is in progress */
+    OTA_STATUS_IMAGE_VERIF_FAILED = 7,
+    /*!<  OTA Verification failed */
+    OTA_STATUS_CONNECTION_ERROR = 8,
+    /*!< OTA connection error */
+    OTA_STATUS_SERVER_ERROR = 9,
+    /*!< OTA server Error (file not found or else ...) */
+    OTA_STATUS_ABORTED        = 10
+    /*!< OTA download has been aborted by the application. */
+} tenuOtaUpdateStatus;
+
+/*!
+@enum   \
+    tenuOtaUpdateStatusType
+
+@brief
+    OTA update Status type
+*/
+typedef enum {
+
+    DL_STATUS        = 1,
+    /*!< Download WINC OTA file status
+    */
+    SW_STATUS        = 2,
+    /*!< Switching to the upgrade firmware status
+    */
+    RB_STATUS        = 3,
+    /*!< Roll-back status
+    */
+    AB_STATUS        = 4,
+    /*!< Abort status
+    */
+    HFD_STATUS       = 5,
+    /*!< Host File Download status
+    */
+} tenuOtaUpdateStatusType;
+
+/*!
+@struct \
+    tstrOtaInitHdr
+
+@brief
+    OTA Image Header
+ */
+
+typedef struct {
+    uint32_t u32OtaMagicValue;
+    /*!< Magic value kept in the OTA image after the
+    sha256 Digest buffer to define the Start of OTA Header */
+    uint32_t u32OtaPayloadSzie;
+    /*!<
+    The Total OTA image payload size, include the sha256 key size
+    */
+
+} tstrOtaInitHdr;
+
+
+/*!
+@struct \
+    tstrOtaControlSec
+
+@brief
+    Control section structure is used to define the working image and
+    the validity of the roll-back image and its offset, also both firmware versions is kept in that structure.
+ */
+
+typedef struct {
+    uint32_t u32OtaMagicValue;
+    /*!<
+        Magic value used to ensure the structure is valid or not
+    */
+    uint32_t u32OtaFormatVersion;
+    /*!<
+            NA   NA   NA   Flash version   cs struct version
+            00   00   00   00              00
+        Control structure format version, the value will be incremented in case of structure changed or updated
+    */
+    uint32_t u32OtaSequenceNumber;
+    /*!<
+        Sequence number is used while update the control structure to keep track of how many times that section updated
+    */
+    uint32_t u32OtaLastCheckTime;
+    /*!<
+        Last time OTA check for update
+    */
+    uint32_t u32OtaCurrentWorkingImagOffset;
+    /*!<
+        Current working offset in flash
+    */
+    uint32_t u32OtaCurrentworkingImagFirmwareVer;
+    /*!<
+        current working image version ex 18.0.1
+    */
+    uint32_t u32OtaRollbackImageOffset;
+    /*!<
+        Roll-back image offset in flash
+    */
+    uint32_t u32OtaRollbackImageValidStatus;
+    /*!<
+        roll-back image valid status
+    */
+    uint32_t u32OtaRollbackImagFirmwareVer;
+    /*!<
+        Roll-back image version (ex 18.0.3)
+    */
+    uint32_t u32OtaCortusAppWorkingOffset;
+    /*!<
+        cortus app working offset in flash
+    */
+    uint32_t u32OtaCortusAppWorkingValidSts;
+    /*!<
+        Working Cortus app valid status
+    */
+    uint32_t u32OtaCortusAppWorkingVer;
+    /*!<
+        Working cortus app version (ex 18.0.3)
+    */
+    uint32_t u32OtaCortusAppRollbackOffset;
+    /*!<
+        cortus app rollback offset in flash
+    */
+    uint32_t u32OtaCortusAppRollbackValidSts;
+    /*!<
+        roll-back cortus app valid status
+    */
+    uint32_t u32OtaCortusAppRollbackVer;
+    /*!<
+        Roll-back cortus app version (ex 18.0.3)
+    */
+    uint32_t u32OtaControlSecCrc;
+    /*!<
+        CRC for the control structure to ensure validity
+    */
+} tstrOtaControlSec;
+
+/*!
+@struct \
+    tstrOtaUpdateStatusResp
+
+@brief
+    OTA Update Information
+
+@sa
+    tenuWPSTrigger
+*/
+typedef struct {
+    uint8_t u8OtaUpdateStatusType;
+    /*!<
+        Status type tenuOtaUpdateStatusType
+    */
+    uint8_t u8OtaUpdateStatus;
+    /*!<
+    OTA_SUCCESS
+    OTA_ERR_WORKING_IMAGE_LOAD_FAIL
+    OTA_ERR_INVALID_CONTROL_SEC
+    M2M_ERR_OTA_SWITCH_FAIL
+    M2M_ERR_OTA_START_UPDATE_FAIL
+    M2M_ERR_OTA_ROLLBACK_FAIL
+    M2M_ERR_OTA_INVALID_FLASH_SIZE
+    M2M_ERR_OTA_INVALID_ARG
+    */
+    uint8_t _PAD16_[2];
+} tstrOtaUpdateStatusResp;
+
+/*!
+@struct \
+    tstrOtaUpdateInfo
+
+@brief
+    OTA Update Information
+
+@sa
+    tenuWPSTrigger
+*/
+typedef struct {
+    uint32_t    u8NcfUpgradeVersion;
+    /*!< NCF OTA Upgrade Version
+    */
+    uint32_t    u8NcfCurrentVersion;
+    /*!< NCF OTA Current firmware version
+    */
+    uint32_t    u8NcdUpgradeVersion;
+    /*!< NCD (host) upgraded version (if the u8NcdRequiredUpgrade == true)
+    */
+    uint8_t u8NcdRequiredUpgrade;
+    /*!< NCD Required upgrade to the above version
+    */
+    uint8_t     u8DownloadUrlOffset;
+    /*!< Download URL offset in the received packet
+    */
+    uint8_t     u8DownloadUrlSize;
+    /*!< Download URL size in the received packet
+    */
+    uint8_t __PAD8__;
+    /*!< Padding bytes for forcing 4-byte alignment
+    */
+} tstrOtaUpdateInfo;
+
+/*!
+@struct \
+    tstrOtaHostFileGetStatusResp
+
+@brief
+    Host File OTA Information
+*/
+typedef struct {
+    uint32_t  u32OtaFileSize;
+    /*!<
+    Reports the size of the downloaded file.
+    Valid if u8OtaFileGetStatus=OTA_STATUS_SUCCESS.
+    */
+
+    uint8_t   u8OtaFileGetStatus;
+    /*!<
+    The status of the File Get operation.
+    See @ref tenuOtaUpdateStatus.
+    */
+    uint8_t   u8CFHandler;
+    /*!<
+    The file handler stored in the WINC for a valid file.
+    Valid if u8OtaFileGetStatus=OTA_STATUS_SUCCESS.
+     */
+    uint8_t   __PAD16__[2];
+    /*!<
+    Padding byte for forcing 4-byte alignment
+     */
+} tstrOtaHostFileGetStatusResp;
+
+/*!
+@struct \
+    tstrOtaHostFileReadStatusResp
+
+@brief
+    Host File OTA Information
+*/
+typedef struct {
+    uint16_t  FileBlockSz;
+    /*!<
+    Reports the size of the block of data read via HIF.
+    Valid if u8OtaFileReadStatus=OTA_STATUS_SUCCESS .
+    */
+
+    uint8_t   u8OtaFileReadStatus;
+    /*!<
+    The status of the File Read operation.
+    See @ref tenuOtaUpdateStatus.
+    */
+
+    uint8_t   __PAD8__;
+    /*!<
+    Padding byte for forcing 4-byte alignment
+     */
+
+    uint8_t   pFileBuf[MAX_FILE_READ_STEP];
+    /*!<
+    Pointer to the temporary buffer containing the data just read.
+    Max size is @ref MAX_FILE_READ_STEP
+     */
+} tstrOtaHostFileReadStatusResp;
+
+/*!
+@struct \
+    tstrOtaHostFileEraseStatusResp
+
+@brief
+    Host File OTA Information
+*/
+typedef struct {
+    uint8_t   u8OtaFileEraseStatus;
+    /*!<
+    The status of the File Erase operation.
+    See @ref tenuOtaUpdateStatus.
+    */
+
+    uint8_t   __PAD24__[3];
+    /*!< Padding byte for forcing 4-byte alignment
+     */
+} tstrOtaHostFileEraseStatusResp;
+
+/**@}*/     //OTATYPEDEF
+
+/**@addtogroup WlanEnums
+ * @{
+ */
+
 /*!
 @struct \
     tstrSystemTime
@@ -2382,13 +2923,13 @@ typedef struct {
     Used for time storage.
 */
 typedef struct {
-    uint16_t  u16Year;
-    uint8_t   u8Month;
-    uint8_t   u8Day;
-    uint8_t   u8Hour;
-    uint8_t   u8Minute;
-    uint8_t   u8Second;
-    uint8_t   __PAD8__;
+    uint16_t    u16Year;
+    uint8_t u8Month;
+    uint8_t u8Day;
+    uint8_t u8Hour;
+    uint8_t u8Minute;
+    uint8_t u8Second;
+    uint8_t __PAD8__;
 } tstrSystemTime;
 
 /*!
@@ -2521,7 +3062,7 @@ typedef struct {
         The algorithm tunes the rate up or down based on the wireless
         medium condition if enuWlanTxRate is set to TX_RATE_AUTO.
         If enuWlanTxRate is set to any value other than TX_RATE_AUTO, then
-        u8ArInitialRateSel is ignored. Default is TX_RATE_AUTO.
+        u8ArInitialRateSel is ignored.
 
         By default WINC selects the best initial rate based on the receive
         signal level from the WLAN peer. For applications that favor range
@@ -2553,498 +3094,10 @@ typedef struct {
     /*!< Pad bytes for forcing 4-byte alignment
     */
 } tstrConfAutoRate;
+
+#define DEFAULT_CONF_AR_INITIALIZER { 5, 1, TX_RATE_AUTO, TX_RATE_AUTO, 10, 5, 3 }
+
+
 /**@}*/     //WlanEnums
-
-/**@addtogroup  SSLEnums
- * @{
- */
-typedef enum {
-    M2M_SSL_REQ_CERT_VERIF,
-    /*!< For internal use only during RSA signature verification. */
-    M2M_SSL_REQ_ECC,
-    /*!< Request from WINC for an elliptic curve operation. */
-    M2M_SSL_RESP_ECC,
-    /*!< Response to WINC with the result of an elliptic curve operation. */
-    M2M_SSL_IND_CRL,
-    /*!< Indication to WINC of a custom-format certificate revocation list. */
-    M2M_SSL_REQ_WRITE_OWN_CERTS,
-    /*!< Request to WINC with local certificates to write into WINC flash. */
-    M2M_SSL_REQ_SET_CS_LIST,
-    /*!< Request to WINC to set the list of ciphersuites to be globally enabled. */
-    M2M_SSL_RESP_SET_CS_LIST,
-    /*!< Response from WINC with the list of ciphersuites that are globally enabled. */
-    M2M_SSL_RESP_WRITE_OWN_CERTS
-    /*!< Response from WINC to indicate that local certificates have been written into WINC flash. */
-} tenuM2mSslCmd;
-
-/*
- * TLS certificate revocation list
- * Typedefs common between fw and host
- */
-
-/*!
-@struct \
-    tstrTlsCrlEntry
-
-@brief
-    Certificate data for inclusion in a revocation list (CRL)
-*/
-typedef struct {
-    uint8_t u8DataLen;
-    /*!< Length of certificate data (maximum possible is @ref TLS_CRL_DATA_MAX_LEN) */
-    uint8_t au8Data[TLS_CRL_DATA_MAX_LEN];
-    /*!< Certificate data */
-    uint8_t __PAD24__[3];
-    /*!< Padding bytes for forcing 4-byte alignment */
-} tstrTlsCrlEntry;
-
-/*!
-@struct \
-    tstrTlsCrlInfo
-
-@brief
-    Certificate revocation list details
-*/
-typedef struct {
-    uint8_t         u8CrlType;
-    /*!< Type of certificate data contained in list */
-    uint8_t         u8Rsv1;
-    /*!< Reserved for future use */
-    uint8_t         u8Rsv2;
-    /*!< Reserved for future use */
-    uint8_t         u8Rsv3;
-    /*!< Reserved for future use */
-    tstrTlsCrlEntry astrTlsCrl[TLS_CRL_MAX_ENTRIES];
-    /*!< List entries */
-} tstrTlsCrlInfo;
-
-/*!
-@enum\
-tenuSslCertExpSettings
-
-@brief  SSL Certificate Expiry Validation Options
-*/
-typedef enum {
-    SSL_CERT_EXP_CHECK_DISABLE,
-    /*!<
-        ALWAYS OFF.
-        Ignore certificate expiration date validation. If a certificate is
-        expired or there is no configured system time, the SSL connection SUCCEEDs.
-    */
-    SSL_CERT_EXP_CHECK_ENABLE,
-    /*!<
-        ALWAYS ON.
-        Validate certificate expiration date. If a certificate is expired or
-        there is no configured system time, the SSL connection FAILs.
-    */
-    SSL_CERT_EXP_CHECK_EN_IF_SYS_TIME
-    /*!<
-        CONDITIONAL VALIDATION (Default setting at startup).
-        Validate the certificate expiration date only if there is a configured system time.
-        If there is no configured system time, the certificate expiration is bypassed and the
-        SSL connection SUCCEEDs.
-    */
-} tenuSslCertExpSettings;
-
-/*!
-@struct \
-    tstrTlsSrvSecFileEntry
-
-@brief
-    This struct contains a TLS certificate.
- */
-typedef struct {
-    char    acFileName[TLS_FILE_NAME_MAX];
-    /*!< Name of the certificate.   */
-    uint32_t    u32FileSize;
-    /*!< Size of the certificate.   */
-    uint32_t    u32FileAddr;
-    /*!< Error Code.    */
-} tstrTlsSrvSecFileEntry;
-
-/*!
-@struct \
-    tstrTlsSrvSecHdr
-
-@brief
-    This struct contains a set of TLS certificates.
- */
-typedef struct {
-    uint8_t                 au8SecStartPattern[TLS_SRV_SEC_START_PATTERN_LEN];
-    /*!< Start pattern. */
-    uint32_t                u32nEntries;
-    /*!< Number of certificates stored in the struct.   */
-    uint32_t                u32NextWriteAddr;
-    /*  */
-    tstrTlsSrvSecFileEntry  astrEntries[TLS_SRV_SEC_MAX_FILES];
-    /*!< TLS Certificate headers.   */
-    uint32_t                u32CRC;
-    /*!< CRC32 of entire cert block, only the cert writer computes this, the FW just does a compare with replacement blocks.    */
-} tstrTlsSrvSecHdr;
-
-typedef enum {
-    TLS_FLASH_OK,
-    /*!< Operation succeeded. Flash modified. */
-    TLS_FLASH_OK_NO_CHANGE,
-    /*!< Operation was unnecessary. Flash not modified. */
-    TLS_FLASH_ERR_CORRUPT,
-    /*!< Operation failed. Flash modified. */
-    TLS_FLASH_ERR_NO_CHANGE,
-    /*!< Operation failed. Flash not modified. */
-    TLS_FLASH_ERR_UNKNOWN
-    /*!< Operation failed. Flash status unknown. */
-} tenuTlsFlashStatus;
-
-typedef struct {
-    uint16_t  u16Sig;
-    uint16_t  u16TotalSize32;
-    uint16_t  u16Offset32;
-    uint16_t  u16Size32;
-} tstrTlsSrvChunkHdr;
-
-typedef struct {
-    uint32_t    u32CsBMP;
-} tstrSslSetActiveCsList;
-/**@}*/     //SSLEnums
-
-/**@addtogroup OTATYPEDEF
- * @{
- */
-/*!
-@enum   \
-    tenuOtaError
-
-@brief
-    OTA Error codes.
-*/
-typedef enum {
-    OTA_SUCCESS = (0),
-    /*!< OTA Success status */
-    OTA_ERR_WORKING_IMAGE_LOAD_FAIL = ((int8_t) -1),
-    /*!< Failure to load the firmware image */
-    OTA_ERR_INVALID_CONTROL_SEC = ((int8_t) -2),
-    /*!< Control structure is corrupted */
-    M2M_ERR_OTA_SWITCH_FAIL = ((int8_t) -3),
-    /*!< Switching to the updated image failed as may be the image is invalid */
-    M2M_ERR_OTA_START_UPDATE_FAIL = ((int8_t) -4),
-    /*!<
-     OTA update fail due to multiple reasons:
-     - Connection failure
-     - Image integrity fail
-     */
-    M2M_ERR_OTA_ROLLBACK_FAIL = ((int8_t) -5),
-    /*!< Roll-back failed due to Roll-back image is not valid */
-    M2M_ERR_OTA_INVALID_FLASH_SIZE = ((int8_t) -6),
-    /*!< The OTA Support at least 4MB flash size, this error code will appear if the current flash is less than 4M */
-    M2M_ERR_OTA_INVALID_ARG = ((int8_t) -7),
-    /*!< Ota still in progress */
-    M2M_ERR_OTA_INPROGRESS = ((int8_t) -8)
-                             /*!< Invalid argument in any OTA Function */
-} tenuOtaError;
-
-/*!
-@enum   \
-    tenuM2mOtaCmd
-
-@brief
-    This enum contains all the WINC commands used for OTA operation.
-*/
-typedef enum {
-    M2M_OTA_REQ_NOTIF_SET_URL = M2M_OTA_CMD_BASE,
-    M2M_OTA_REQ_NOTIF_CHECK_FOR_UPDATE,
-    M2M_OTA_REQ_NOTIF_SCHED,
-    M2M_OTA_REQ_START_FW_UPDATE,
-    /*!< Request to start an OTA update.*/
-    M2M_OTA_REQ_SWITCH_FIRMWARE,
-    /*!< Request to switch firmware.*/
-    M2M_OTA_REQ_ROLLBACK_FW,
-    /*!< Request to perform an OTA rollback.*/
-    M2M_OTA_RESP_NOTIF_UPDATE_INFO,
-    M2M_OTA_RESP_UPDATE_STATUS,
-    /*!< Response to indicate the OTA update status. */
-    M2M_OTA_REQ_TEST,
-    M2M_OTA_REQ_START_CRT_UPDATE,
-    M2M_OTA_REQ_SWITCH_CRT_IMG,
-    M2M_OTA_REQ_ROLLBACK_CRT,
-    M2M_OTA_REQ_ABORT,
-    /*!< Request to abort OTA.*/
-    M2M_OTA_REQ_HOST_FILE_STATUS,
-    M2M_OTA_RESP_HOST_FILE_STATUS,
-    M2M_OTA_REQ_HOST_FILE_DOWNLOAD,
-    M2M_OTA_RESP_HOST_FILE_DOWNLOAD,
-    M2M_OTA_REQ_HOST_FILE_READ,
-    M2M_OTA_RESP_HOST_FILE_READ,
-    M2M_OTA_REQ_HOST_FILE_ERASE,
-    M2M_OTA_RESP_HOST_FILE_ERASE,
-    M2M_OTA_REQ_START_FW_UPDATE_V2,
-    M2M_OTA_MAX_ALL,
-} tenuM2mOtaCmd;
-
-/*!
-@enum   \
-    tenuOtaUpdateStatus
-
-@brief
-    This struct contains the OTA return status.
-*/
-typedef enum {
-    OTA_STATUS_SUCCESS        = 0,
-    /*!< OTA Success with no errors. */
-    OTA_STATUS_FAIL               = 1,
-    /*!< OTA generic fail. */
-    OTA_STATUS_INVALID_ARG        = 2,
-    /*!< Invalid or malformed download URL. */
-    OTA_STATUS_INVALID_RB_IMAGE   = 3,
-    /*!< Invalid rollback image. */
-    OTA_STATUS_INVALID_FLASH_SIZE = 4,
-    /*!< Flash size on device is not enough for OTA. */
-    OTA_STATUS_ALREADY_ENABLED    = 5,
-    /*!< An OTA operation is already enabled. */
-    OTA_STATUS_UPDATE_INPROGRESS  = 6,
-    /*!< An OTA operation update is in progress. */
-    OTA_STATUS_IMAGE_VERIF_FAILED = 7,
-    /*!< OTA Verification failed. */
-    OTA_STATUS_CONNECTION_ERROR   = 8,
-    /*!< OTA connection error. */
-    OTA_STATUS_SERVER_ERROR       = 9,
-    /*!< OTA server Error (file not found or else...) */
-    OTA_STATUS_ABORTED            = 10,
-                                /*!< OTA download has been aborted by the application. */
-} tenuOtaUpdateStatus;
-
-/*!
-@enum   \
-    tenuOtaUpdateStatusType
-
-@brief
-    This struct contains the OTA update status type.
-*/
-typedef enum {
-    DL_STATUS        = 1,
-    /*!< Download WINC OTA file status */
-    SW_STATUS        = 2,
-    /*!< Switching to the upgrade firmware status */
-    RB_STATUS        = 3,
-    /*!< Roll-back status */
-    AB_STATUS        = 4,
-    /*!< Abort status */
-    HFD_STATUS       = 5,
-    /*!< Host File Download status */
-} tenuOtaUpdateStatusType;
-
-/*!
-@struct \
-    tstrOtaInitHdr
-
-@brief
-    This struct contains the OTA image header.
- */
-typedef struct {
-    uint32_t u32OtaMagicValue;
-    /*!< Magic value kept in the OTA image after the
-    sha256 Digest buffer to define the Start of OTA Header. */
-    uint32_t u32OtaPayloadSize;
-    /*!< The Total OTA image payload size, include the sha256 key size. */
-} tstrOtaInitHdr;
-
-/*!
-@struct \
-    tstrOtaControlSec
-
-@brief
-    Control Section Structure. The Control Section is used to define the working image and the validity
-    of the roll-back image and its offset, also both firmware versions are kept in this structure.
- */
-typedef struct {
-    uint32_t u32OtaMagicValue;
-    /*!< Magic value used to ensure the structure is valid or not. */
-    uint32_t u32OtaFormatVersion;
-    /*!<
-            NA   NA   NA   Flash version   cs struct version
-            00   00   00   00              00
-        Control structure format version, the value will be incremented in case of structure changed or updated
-    */
-    uint32_t u32OtaSequenceNumber;
-    /*!< Sequence number is used while update the control structure to keep track of how many times that section updated. */
-    uint32_t u32OtaLastCheckTime;
-    /*!< Last time OTA check for update. */
-    uint32_t u32OtaCurrentWorkingImagOffset;
-    /*!< Current working offset in flash. */
-    uint32_t u32OtaCurrentworkingImagFirmwareVer;
-    /*!< Current working image version ex 18.0.1. */
-    uint32_t u32OtaRollbackImageOffset;
-    /*!<
-        Roll-back image offset in flash
-    */
-    uint32_t u32OtaRollbackImageValidStatus;
-    /*!< Roll-back image valid status. */
-    uint32_t u32OtaRollbackImagFirmwareVer;
-    /*!< Roll-back image version (ex 18.0.3). */
-    uint32_t u32OtaCortusAppWorkingOffset;
-    /*!<
-        Cortus app working offset in flash.
-        Removed in v19.6.1.
-    */
-    uint32_t u32OtaCortusAppWorkingValidSts;
-    /*!<
-        Working Cortus app valid status.
-        Removed in v19.6.1.
-    */
-    uint32_t u32OtaCortusAppWorkingVer;
-    /*!<
-        Working cortus app version (ex 18.0.3).
-        Removed in v19.6.1.
-    */
-    uint32_t u32OtaCortusAppRollbackOffset;
-    /*!<
-        Cortus app rollback offset in flash.
-        Removed in v19.6.1.
-    */
-    uint32_t u32OtaCortusAppRollbackValidSts;
-    /*!<
-        Roll-back cortus app valid status.
-        Removed in v19.6.1.
-    */
-    uint32_t u32OtaCortusAppRollbackVer;
-    /*!<
-        Roll-back cortus app version (ex 18.0.3).
-        Removed in v19.6.1.
-    */
-    uint32_t u32OtaControlSecCrc;
-    /*!< CRC for the control structure to ensure validity. */
-} tstrOtaControlSec;
-
-/*!
-@struct \
-    tstrOtaUpdateStatusResp
-
-@brief
-    This struct contains the OTA update status.
-
-@sa
-    tenuWPSTrigger
-*/
-typedef struct {
-    uint8_t u8OtaUpdateStatusType;
-    /*!< Status type, see @ref tenuOtaUpdateStatusType. */
-    uint8_t u8OtaUpdateStatus;
-    /*!< The status of the update, see @ref tenuOtaError. */
-    uint8_t _PAD16_[2];
-} tstrOtaUpdateStatusResp;
-
-/*!
-@struct \
-    tstrOtaUpdateInfo
-
-@brief
-    This struct contains the OTA update information.
-
-@sa
-    tenuWPSTrigger
-*/
-typedef struct {
-    uint32_t    u8NcfUpgradeVersion;
-    /*!< NCF OTA Upgrade Version */
-    uint32_t    u8NcfCurrentVersion;
-    /*!< NCF OTA Current firmware version */
-    uint32_t    u8NcdUpgradeVersion;
-    /*!< NCD (host) upgraded version (if the u8NcdRequiredUpgrade == true) */
-    uint8_t u8NcdRequiredUpgrade;
-    /*!< NCD Required upgrade to the above version */
-    uint8_t     u8DownloadUrlOffset;
-    /*!< Download URL offset in the received packet */
-    uint8_t     u8DownloadUrlSize;
-    /*!< Download URL size in the received packet */
-    uint8_t __PAD8__;
-    /*!< Padding bytes for forcing 4-byte alignment */
-} tstrOtaUpdateInfo;
-
-/*!
-@struct \
-    tstrOtaHostFileGetStatusResp
-
-@brief
-    Host File OTA Information
-*/
-typedef struct {
-    uint32_t  u32OtaFileSize;
-    /*!<
-    Reports the size of the downloaded file.
-    Valid if u8OtaFileGetStatus=OTA_STATUS_SUCCESS.
-    */
-    uint8_t   u8OtaFileGetStatus;
-    /*!<
-    The status of the File Get operation.
-    See @ref tenuOtaUpdateStatus.
-    */
-    uint8_t   u8CFHandler;
-    /*!<
-    The file handler stored in the WINC for a valid file.
-    Valid if u8OtaFileGetStatus=OTA_STATUS_SUCCESS.
-     */
-    uint8_t   __PAD16__[2];
-    /*!< Padding byte for forcing 4-byte alignment */
-} tstrOtaHostFileGetStatusResp;
-
-/*!
-@struct \
-    tstrOtaHostFileReadStatusResp
-
-@brief
-    Host File OTA Information
-*/
-typedef struct {
-    uint16_t  u16FileBlockSz;
-    /*!<
-    Reports the size of the block of data read via HIF.
-    Valid if u8OtaFileReadStatus=OTA_STATUS_SUCCESS .
-    */
-
-    uint8_t   u8OtaFileReadStatus;
-    /*!<
-    The status of the File Read operation.
-    See @ref tenuOtaUpdateStatus.
-    */
-
-    uint8_t   __PAD8__;
-    /*!< Padding byte for forcing 4-byte alignment */
-    uint8_t   pFileBuf[MAX_FILE_READ_STEP];
-    /*!<
-    Pointer to the temporary buffer containing the data just read.
-    Max size is @ref MAX_FILE_READ_STEP
-     */
-} tstrOtaHostFileReadStatusResp;
-
-/*!
-@struct \
-    tstrOtaHostFileEraseStatusResp
-
-@brief
-    Host File OTA Information
-*/
-typedef struct {
-    uint8_t   u8OtaFileEraseStatus;
-    /*!<
-    The status of the File Erase operation.
-    See @ref tenuOtaUpdateStatus.
-    */
-    uint8_t   __PAD24__[3];
-    /*!< Padding byte for forcing 4-byte alignment */
-} tstrOtaHostFileEraseStatusResp;
-
-typedef struct {
-    uint32_t u32TotalLen;
-	/*!< Total length of the struct be sent over the HIF */
-    char acUrl[256];
-	/*!< NULL terminated HTTP(S) URL from which to fetch the OTA file */
-    char acSNI[64];
-	/*!< NULL terminated server name to send in the TLS SNI extension (can be empty) */
-    uint8_t u8SSLFlags;
-	/*!< Flags to set SSL options */
-    uint8_t   __PAD24__[3];
-    /*!< Padding byte for forcing 4-byte alignment */
-} tstrOtaStart;
-
-/**@}*/     //OTATYPEDEF
 
 #endif
