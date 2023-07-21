@@ -72,7 +72,7 @@ void print_hex_dump(const void *buffer, size_t length, bool display_address,
         // Display the data address
         if (display_address == true)
         {
-            debug_printInfo("%08lX  ", (uint32_t)current_position);
+            debug_printInfo("%08lX  ", (uint32_t)current_position); //mohan
         }
 
         for (uint8_t index = 0; index < bytes_line; index++)

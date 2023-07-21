@@ -147,30 +147,32 @@
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atcacert/atcacert_client.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atcacert/atcacert_host_sw.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atcacert/atcacert_def.h</itemPath>
+                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atcacert/atcacert_check_config.h</itemPath>
               </logicalFolder>
               <logicalFolder name="calib" displayName="calib" projectFiles="true">
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_aes_gcm.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_command.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_execution.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_basic.h</itemPath>
+                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_config_check.h</itemPath>
               </logicalFolder>
               <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
                 <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
                   <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/hashes/sha2_routines.h</itemPath>
                   <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/hashes/sha1_routines.h</itemPath>
                 </logicalFolder>
-                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw.h</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h</itemPath>
-                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_rand.h</itemPath>
+                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/crypto_config_check.h</itemPath>
               </logicalFolder>
               <logicalFolder name="hal" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/hal/atca_hal.h</itemPath>
               </logicalFolder>
               <logicalFolder name="host" displayName="host" projectFiles="true">
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/host/atca_host.h</itemPath>
+                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/host/atca_host_config_check.h</itemPath>
               </logicalFolder>
               <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/jwt/atca_jwt.h</itemPath>
@@ -200,6 +202,8 @@
               <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atca_status.h</itemPath>
               <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atca_config.h</itemPath>
               <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atca_compiler.h</itemPath>
+              <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atca_platform.h</itemPath>
+              <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/atca_config_check.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
@@ -304,6 +308,7 @@
           <itemPath>../src/config/samd21_wz_iot_v2/configuration.h</itemPath>
           <itemPath>../src/config/samd21_wz_iot_v2/interrupts.h</itemPath>
           <itemPath>../src/config/samd21_wz_iot_v2/device_cache.h</itemPath>
+          <itemPath>../src/config/samd21_wz_iot_v2/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="credentials_storage"
@@ -337,6 +342,7 @@
             <itemPath>../src/packs/ATSAMD21G18A_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G18A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G18A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G18A_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G18A_DFP/instance/ac.h</itemPath>
@@ -375,6 +381,7 @@
             <itemPath>../src/packs/ATSAMD21G18A_DFP/instance/tcc2.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G18A_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21G18A_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21G18A_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21G18A_DFP/pio/samd21g18a.h</itemPath>
@@ -635,22 +642,22 @@
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_derivekey.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_basic.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_lock.c</itemPath>
+                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/calib/calib_delete.c</itemPath>
               </logicalFolder>
               <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
                 <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
                   <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/hashes/sha2_routines.c</itemPath>
                   <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/hashes/sha1_routines.c</itemPath>
                 </logicalFolder>
-                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ctr.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_pbkdf2.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
-                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_rand.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbc.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cmac.c</itemPath>
+                <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto/atca_crypto_pad.c</itemPath>
               </logicalFolder>
               <logicalFolder name="hal" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/samd21_wz_iot_v2/library/cryptoauthlib/hal/atca_hal.c</itemPath>
@@ -779,16 +786,38 @@
       <itemPath>../src/crypto_client/cryptoauthlib_main.c</itemPath>
       <itemPath>../src/cust_def_2_device.c</itemPath>
       <itemPath>../src/cust_def_1_signer.c</itemPath>
+      <itemPath>../src/config/samd21_wz_iot_v2/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="samd21_wg_iot_v2.mhc" projectFiles="true">
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/adc.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/atecc608.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/core.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib_tng.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drvWifiWinc.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/project.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/rtc.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom3.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom4.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom5.yml</itemPath>
         <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/tc3.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/samd21_wg_iot_v2/harmony-manifest-success.yml</itemPath>
-      <itemPath>google_cloud_iot_core_sam_d21_iot_wg_v2.mc3</itemPath>
       <itemPath>azure_cloud_iot_core_sam_d21_iot_wz_v2.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -806,12 +835,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1002,67 +1031,6 @@
         <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
-      <PICkit3PlatformTool>
-        <property key="ADC 1" value="true"/>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="CHANGE NOTICE" value="true"/>
-        <property key="COMPARATOR" value="true"/>
-        <property key="CTMU" value="true"/>
-        <property key="DMA" value="true"/>
-        <property key="Freeze All Other Peripherals" value="true"/>
-        <property key="I2C1" value="true"/>
-        <property key="I2C2" value="true"/>
-        <property key="INPUT CAPTURE 1" value="true"/>
-        <property key="INPUT CAPTURE 2" value="true"/>
-        <property key="INPUT CAPTURE 3" value="true"/>
-        <property key="INPUT CAPTURE 4" value="true"/>
-        <property key="INPUT CAPTURE 5" value="true"/>
-        <property key="INTERRUPT CONTROL" value="true"/>
-        <property key="OUTPUT COMPARE 1" value="true"/>
-        <property key="OUTPUT COMPARE 2" value="true"/>
-        <property key="OUTPUT COMPARE 3" value="true"/>
-        <property key="OUTPUT COMPARE 4" value="true"/>
-        <property key="OUTPUT COMPARE 5" value="true"/>
-        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
-        <property key="REAL TIME CLOCK" value="true"/>
-        <property key="SPI/I2S 1" value="true"/>
-        <property key="SPI/I2S 2" value="true"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="TIMER1" value="true"/>
-        <property key="TIMER2" value="true"/>
-        <property key="TIMER3" value="true"/>
-        <property key="TIMER4" value="true"/>
-        <property key="TIMER5" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="UART1" value="true"/>
-        <property key="UART2" value="true"/>
-        <property key="hwtoolclock.frcindebug" value="false"/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.end" value="0x1d003fff"/>
-        <property key="memories.programmemory.start" value="0x1d000000"/>
-        <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmertogo.imagename" value=""/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.pgmspeed" value="2"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveprogramrange.end" value="0x1d003fff"/>
-        <property key="programoptions.preserveprogramrange.start" value="0x1d000000"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VPPFirst"/>
-        <property key="programoptions.usehighvoltageonmclr" value="false"/>
-        <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="voltagevalue" value="3.25"/>
-      </PICkit3PlatformTool>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>
@@ -1543,6 +1511,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -2057,6 +2027,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"

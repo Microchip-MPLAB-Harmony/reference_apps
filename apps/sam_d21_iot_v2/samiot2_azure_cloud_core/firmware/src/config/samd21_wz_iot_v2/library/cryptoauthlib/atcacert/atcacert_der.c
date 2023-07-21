@@ -25,9 +25,11 @@
  * THIS SOFTWARE.
  */
 
-
+#include "cryptoauthlib.h"
 #include "atcacert_der.h"
 #include <string.h>
+
+#if ATCACERT_COMPCERT_EN
 
 int atcacert_der_enc_length(uint32_t length, uint8_t* der_length, size_t* der_length_size)
 {
@@ -193,10 +195,7 @@ int atcacert_der_enc_integer(const uint8_t* int_data,
     size_t pad = 0;
     int ret;
 
-    if (int_data == NULL || der_int_size == NULL || int_data_size <= 0)
-    {
-        return ATCACERT_E_BAD_PARAMS;
-    }
+    ATCA_CHECK_INVALID((int_data == NULL || der_int_size == NULL || int_data_size <= 0), ATCACERT_E_BAD_PARAMS);
 
     if (!(is_unsigned && (int_data[0] & 0x80)))
     {
@@ -318,10 +317,7 @@ int atcacert_der_enc_ecdsa_sig_value(const uint8_t raw_sig[64],
     size_t s_size = 0;
     size_t der_sig_size_calc = 0;
 
-    if (raw_sig == NULL || der_sig_size == NULL)
-    {
-        return ATCACERT_E_BAD_PARAMS;
-    }
+    ATCA_CHECK_INVALID((!raw_sig || !der_sig_size), ATCACERT_E_BAD_PARAMS);
 
     // Find size of the DER encoded R integer
     ret = atcacert_der_enc_integer(&raw_sig[0], 32, TRUE, NULL, &r_size);
@@ -560,3 +556,5 @@ int atcacert_der_dec_ecdsa_sig_value(const uint8_t* der_sig,
 
     return ATCACERT_E_SUCCESS;
 }
+
+#endif

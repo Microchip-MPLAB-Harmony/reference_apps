@@ -10,12 +10,12 @@
 		"shortDescription": "Microsoft Azure Cloud IoT Core Application on SAM D21 IoT WZ v2 Development Board",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.10"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.10"
+				"semverRange": ">=4.30"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.3.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

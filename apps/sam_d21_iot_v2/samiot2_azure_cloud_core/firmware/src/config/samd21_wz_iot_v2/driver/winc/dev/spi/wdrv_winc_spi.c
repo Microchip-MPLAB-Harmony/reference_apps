@@ -42,23 +42,11 @@
 #include "wdrv_winc_common.h"
 #include "wdrv_winc_spi.h"
 
-#ifdef USE_CACHE_MAINTENANCE
-/* Cache Management to be enabled in core & system components of MHC Project Graph*/
-#include "system/cache/sys_cache.h"
-#include "sys/kmem.h"
-#endif
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-
-#if defined(__PIC32MZ__) && defined(USE_CACHE_MAINTENANCE)
-#define SPI_DMA_DCACHE_CLEAN(addr, size) _DataCacheClean(addr, size)
-#else
-#define SPI_DMA_DCACHE_CLEAN(addr, size) do { } while (0)
-#endif
 
 typedef struct
 {
@@ -78,25 +66,6 @@ typedef struct
 // *****************************************************************************
 
 static WDRV_WINC_SPIDCPT spiDcpt;
-
-#if defined(__PIC32MZ__) && defined(USE_CACHE_MAINTENANCE)
-/****************************************************************************
- * Function:        _DataCacheClean
- * Summary: Used in Cache management to clean cache based on address.
- * Cache Management to be enabled in core & system components of MHC.
- *****************************************************************************/
-static void _DataCacheClean(unsigned char *address, uint32_t size)
-{
-    if (IS_KVA0(address))
-    {
-        uint32_t a = (uint32_t)address & 0xfffffff0;
-        uint32_t r = (uint32_t)address & 0x0000000f;
-        uint32_t s = ((size + r + 15) >> 4) << 4;
-
-        SYS_CACHE_CleanDCache_by_Addr((uint32_t *)a, s);
-    }
-}
-#endif
 
 // *****************************************************************************
 // *****************************************************************************
@@ -148,8 +117,6 @@ static void _WDRV_WINC_SPITransferEventHandler(DRV_SPI_TRANSFER_EVENT event,
 
 bool WDRV_WINC_SPISend(void* pTransmitData, size_t txSize)
 {
-    SPI_DMA_DCACHE_CLEAN(pTransmitData, txSize);
-
     DRV_SPI_WriteTransferAdd(spiDcpt.spiHandle, pTransmitData, txSize, &spiDcpt.transferTxHandle);
 
     if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiDcpt.transferTxHandle)
@@ -183,8 +150,6 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
 {
     static uint8_t dummy = 0;
 
-    SPI_DMA_DCACHE_CLEAN(pReceiveData, rxSize);
-
     DRV_SPI_WriteReadTransferAdd(spiDcpt.spiHandle, &dummy, 1, pReceiveData, rxSize, &spiDcpt.transferRxHandle);
 
     if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiDcpt.transferRxHandle)
@@ -196,13 +161,14 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
     {
     }
 
+
     return true;
 }
 
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_SPIOpen(void)
+    bool WDRV_WINC_SPIOpen(void)
 
   Summary:
     Opens the SPI object for the WiFi driver.
@@ -214,16 +180,23 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
     See wdrv_winc_spi.h for usage information.
  */
 
-void WDRV_WINC_SPIOpen(void)
+bool WDRV_WINC_SPIOpen(void)
 {
+    DRV_SPI_TRANSFER_SETUP spiTransConf = {
+        .clockPhase     = DRV_SPI_CLOCK_PHASE_VALID_LEADING_EDGE,
+        .clockPolarity  = DRV_SPI_CLOCK_POLARITY_IDLE_LOW,
+        .dataBits       = DRV_SPI_DATA_BITS_8,
+        .csPolarity     = DRV_SPI_CS_POLARITY_ACTIVE_LOW
+    };
+
     if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&spiDcpt.txSyncSem, OSAL_SEM_TYPE_COUNTING, 10, 0))
     {
-        return;
+        return false;
     }
 
     if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&spiDcpt.rxSyncSem, OSAL_SEM_TYPE_COUNTING, 10, 0))
     {
-        return;
+        return false;
     }
 
     if (DRV_HANDLE_INVALID == spiDcpt.spiHandle)
@@ -233,10 +206,24 @@ void WDRV_WINC_SPIOpen(void)
         if (DRV_HANDLE_INVALID == spiDcpt.spiHandle)
         {
             WDRV_DBG_ERROR_PRINT("SPI open failed\r\n");
+
+            return false;
         }
     }
 
+    spiTransConf.baudRateInHz = spiDcpt.cfg.baudRateInHz;
+    spiTransConf.chipSelect   = spiDcpt.cfg.chipSelect;
+
+    if (false == DRV_SPI_TransferSetup(spiDcpt.spiHandle, &spiTransConf))
+    {
+        WDRV_DBG_ERROR_PRINT("SPI transfer setup failed\r\n");
+
+        return false;
+    }
+
     DRV_SPI_TransferEventHandlerSet(spiDcpt.spiHandle, _WDRV_WINC_SPITransferEventHandler, 0);
+
+    return true;
 }
 
 //*******************************************************************************
@@ -288,6 +275,12 @@ void WDRV_WINC_SPIDeinitialize(void)
 
     OSAL_SEM_Post(&spiDcpt.rxSyncSem);
     OSAL_SEM_Delete(&spiDcpt.rxSyncSem);
+
+    if (DRV_HANDLE_INVALID != spiDcpt.spiHandle)
+    {
+        DRV_SPI_Close(spiDcpt.spiHandle);
+        spiDcpt.spiHandle = DRV_HANDLE_INVALID;
+    }
 }
 
 //DOM-IGNORE-END

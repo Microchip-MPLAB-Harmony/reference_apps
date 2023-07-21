@@ -1,10 +1,3 @@
----
-grand_parent: SAM D21 IoT v2 Development Board
-parent: Microsoft Azure Cloud IoT Core Application
-title: Eclipse Paho MQTT C/C++ client for Embedded platforms
-nav_order: 5
----
-
 # Eclipse Paho MQTT C/C++ client for Embedded platforms
 
 This repository contains the source code for the [Eclipse Paho](http://eclipse.org/paho) MQTT C/C++ client library for Embedded platorms.

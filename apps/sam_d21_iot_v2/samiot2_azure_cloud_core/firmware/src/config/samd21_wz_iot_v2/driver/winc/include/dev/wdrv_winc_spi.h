@@ -40,6 +40,8 @@
 #ifndef _WDRV_WINC_SPI_H
 #define _WDRV_WINC_SPI_H
 
+#include "system/ports/sys_ports.h"
+
 // *****************************************************************************
 /*  SPI Speed Modes
 
@@ -81,6 +83,12 @@ typedef struct
 {
     /* SPI driver index. */
     SYS_MODULE_INDEX drvIndex;
+
+    /* SPI baud rate. */
+    uint32_t baudRateInHz;
+
+    /* Chip select pin, or SYS_PORT_PIN_NONE. */
+    SYS_PORT_PIN chipSelect;
 } WDRV_WINC_SPI_CFG;
 
 //*******************************************************************************
@@ -142,7 +150,7 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize);
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_SPIOpen(void)
+    bool WDRV_WINC_SPIOpen(void)
 
   Summary:
     Opens the SPI object for the WiFi driver.
@@ -157,13 +165,13 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize);
     None.
 
   Returns:
-    None.
+    true of false indicating success of operation.
 
   Remarks:
     None.
  */
 
-void WDRV_WINC_SPIOpen(void);
+bool WDRV_WINC_SPIOpen(void);
 
 //*******************************************************************************
 /*
