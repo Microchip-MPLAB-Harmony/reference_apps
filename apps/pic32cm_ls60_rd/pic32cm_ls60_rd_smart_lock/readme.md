@@ -153,7 +153,7 @@ The pre-built hex file can then be programmed by following the below steps:
 ## Running the Demo:
 - Upon completion of programming, you should see the QT3 keypad light up and go back to sleep
 - Activate the touchpad using your palm
-- Select a user and enter the default passkey '12345' to open the deadbolt
+- Select a user and enter the default passkey '12345' to open the deadbolt  
 <img src = "images/touchdemo.gif">
 
 Note: This shows a custom passkey being entered. By default all users (2, 3, 4 and 5) have the same passkey - '12345'<br />
