@@ -22,7 +22,7 @@ A green LED will turn ON when keyboard is connected and will turn OFF when the k
 
 * MIPI and LVDS LCD Interfaces.
 * External Non-Volatile Memories like NAND, and SD card interfaces.
-* Additional sensors can be interfaced using "click boards" through an on-board [mikroBUS connector](https://www.mikroe.com/click).
+* Additional sensors can be interfaced using "[click boards](https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_e51_cnano/same51n_mikroe_click)" through an on-board mikroBUS connector.
 * Two mechanical programmable buttons.
 * One User Input Switch and one RGB LED.
 * UART, USB and CAN Interfaces.

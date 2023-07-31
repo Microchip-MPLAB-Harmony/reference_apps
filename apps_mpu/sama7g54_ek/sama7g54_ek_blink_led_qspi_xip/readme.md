@@ -10,7 +10,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Blink LED Application getting executed from QSPI flash on SAMA7G54 Evaluation kit
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sama7g54_ek_qspi_xip.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sama7g54_ek_blink_led_qspi_xip.zip" > Download </a> </h2>
 
 -----
 ## Description
@@ -198,7 +198,7 @@ Note: ***Boot configuration using Emulation SRAM has to be set every power cycle
    * sam-ba -p j-link -b sama7g5-ek -a qspiflash -c erase //To erase entire QSPI flash
    * sam-ba -p j-link -b sama7g5-ek -a qspiflash -c erase:0x40000:0x20000 //Erase only 0x20000 bytes of data from the QSPI offset 0x40000
    * sam-ba -p j-link -b sama7g5-ek -a qspiflash -c write:harmony.bin:0x40000  //Program the application in the QSPI offset 0x40000 <br>
-Note : ***Don't fash boot.bin to QSPI memory to debug the application on MPLAB® X IDE.*** <br>
+Note : ***Don't flash boot.bin to QSPI memory to debug the application on MPLAB® X IDE.*** <br>
 <img src = "images/step27.png" align="middle"> <br>
 - Debug the code by clicking on the "Debug" button in MPLAB® X IDE tool bar and observe that the application is getting executed from QSPI flash memory.  
 - Run the application by clicking the “run" button in MPLAB® X IDE tool bar.
@@ -222,7 +222,7 @@ Refer the  above section: “Flash the Application Project using SAM-BA” for i
    * sam-ba -p j-link -b sama7g5-ek -a qspiflash -c writeboot:boot.bin //To program bootstrap bin file
    * sam-ba -p j-link -b sama7g5-ek -a qspiflash -c write:harmony.bin:0x40000  //Program the application in the QSPI offset 0x40000
    <img src = "images/step27.png" align="middle"> <br>
-Note : ***Fash both boot.bin and harmony.bin to QSPI memory to execute the application from QSPI upon reset .*** <br>
+Note : ***Flash both boot.bin and harmony.bin to QSPI memory to execute the application from QSPI upon reset .*** <br>
    
 ### Steps to execute the harmony.bin file from QSPI flash:
 - Press the reset button.

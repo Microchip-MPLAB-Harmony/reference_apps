@@ -10,7 +10,7 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Blink LED Application getting executed from QSPI flash on SAM9X60 Evaluation kit
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x60_ek_qspi_xip.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x60_ek_blink_led_qspi_xip.zip" > Download </a> </h2>
 
 -----
 ## Description
@@ -21,7 +21,7 @@ nav_order: 1
 
 * LCD Interface.
 * External Non-Volatile Memories like NAND, SD, and MicroSD card interfaces.
-* Additional sensors can be interfaced using "click boards" through an on-board [mikroBUS connector](https://www.mikroe.com/click).
+* Additional sensors can be interfaced using "[click boards](https://github.com/Microchip-MPLAB-Harmony/reference_apps/tree/master/apps/sam_e51_cnano/same51n_mikroe_click)" through an on-board mikroBUS connector.
 * Two mechanical programmable buttons.
 * One User Input Switch(sw1) and one RGB LED.
 * UART, USB and CAN Interfaces.
@@ -174,7 +174,7 @@ Use the below SAM-BA commands to configure first stage bootloader to boot from  
 Note: ***It is not a mandatory step.***
 * sam-ba -p j-link -b sam9x60-ek -a bootconfig -c writecfg:bscr:EMULATION_ENABLED // Enable Emulation
 * sam-ba -p j-link -b sam9x60-ek -a bootconfig -c readcfg:bscr // Read bscr and verify emulation is enabled
-* sam-ba -p j-link -t 5 -b sam9x60-ek -a bootconfig -c resetemul  // Emulation SRAM Reset
+* sam-ba -p j-link -b sam9x60-ek -a bootconfig -c resetemul  // Emulation SRAM Reset
 * sam-ba -p j-link -b sam9x60-ek -a bootconfig -c writecfg:bcp-emul:DBGU,QSPI0_IOSET1  // Enable debug, QSPI0 as external NVM
 * sam-ba -p j-link -b sam9x60-ek -a bootconfig -c readcfg:bcp-emul // Read bcp_emul and verify whether QSPI is set as external NVM <br>
 <img src = "images/step31.png" align="middle"> <br> 
@@ -193,7 +193,7 @@ Note: ***Boot configuration using Emulation SRAM has to be set every power cycle
    * sam-ba -p j-link -b sam9x60-ek -a qspiflash -c erase //To erase entire QSPI flash
    * sam-ba -p j-link -b sam9x60-ek -a qspiflash -c erase:0x40000:0x20000 //Erase only 0x20000 bytes of data from the QSPI offset 0x40000
    * sam-ba -p j-link -b sam9x60-ek -a qspiflash -c write:harmony.bin:0x40000  //Program the application in the QSPI offset 0x40000 <br>
-Note : ***Don't fash boot.bin to QSPI memory to debug the application on MPLAB® X IDE.*** <br>
+Note : ***Don't flash boot.bin to QSPI memory to debug the application on MPLAB® X IDE.*** <br>
 <img src = "images/step27.png" align="middle"> <br>
 - Debug the code by clicking on the "Debug" button in MPLAB® X IDE tool bar and observe that the application is getting executed from QSPI flash memory.  
 - Run the application by clicking the “run" button in MPLAB® X IDE tool bar.
@@ -217,7 +217,7 @@ Refer the  above section: “SAM-BA Installation and Setup” for initial device
    * sam-ba -p j-link -b sam9x60-ek -a qspiflash -c writeboot:boot.bin //To program bootstrap bin file
    * sam-ba -p j-link -b sam9x60-ek -a qspiflash -c write:harmony.bin:0x40000  //Program the application in the QSPI offset 0x40000
    <img src = "images/step27.png" align="middle"> <br>
-Note : ***Fash both boot.bin and harmony.bin to QSPI memory to execute the application from QSPI upon reset .*** <br>
+Note : ***Flash both boot.bin and harmony.bin to QSPI memory to execute the application from QSPI upon reset .*** <br>
    
 ### Steps to execute the harmony application from QSPI flash:
 - Press the reset button.

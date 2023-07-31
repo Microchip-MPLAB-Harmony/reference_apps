@@ -12,7 +12,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [USB-HOST application Getting Started ](./sam9x60_cu_graphics_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x75_ea_usb_host_getting_started.zip) |
+| 1 | [USB-HOST application Getting Started ](./sam9x75_ea_usb_host_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam9x75_ea_usb_host_getting_started.zip) |
 
 ### More Application Demos
 
