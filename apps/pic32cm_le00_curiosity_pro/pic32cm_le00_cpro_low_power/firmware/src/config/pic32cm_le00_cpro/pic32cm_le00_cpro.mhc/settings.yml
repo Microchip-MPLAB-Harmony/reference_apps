@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic32cm_le00_cpro
+folderName: pic32cm_le00_cpro
+frameworkPath: C:\Harmony_V3_Content
+processor: PIC32CM5164LE00100
+projectName: pic32cm_le00_cpro
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CM-LE_DFP\1.2.273\atdf\PIC32CM5164LE00100.atdf

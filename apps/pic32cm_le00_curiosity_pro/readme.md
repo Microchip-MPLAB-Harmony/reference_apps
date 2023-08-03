@@ -13,6 +13,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started Extended](./pic32cm_le00_cpro_getting_started_ext/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_le00_cpro_getting_started_ext.zip) |
+| 2 | [Low Power](./pic32cm_le00_cpro_low_power/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_le00_cpro_low_power.zip) |
 
 ### More Application Demos
 
