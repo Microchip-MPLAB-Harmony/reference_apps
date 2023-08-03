@@ -54,7 +54,7 @@ void oled_c_initialize(void)
 
 void oled_c_Text_Field_counter(uint8_t counter)
 {
-    char lcl_counterStr[15];
+    static char lcl_counterStr[15];
     
     sprintf( (char*)lcl_counterStr, "% d",counter);
     ctrStr.fn->setFromCStr(&ctrStr, (char*)lcl_counterStr);
