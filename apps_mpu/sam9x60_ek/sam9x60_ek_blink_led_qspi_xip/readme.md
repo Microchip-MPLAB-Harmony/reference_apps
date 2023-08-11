@@ -97,7 +97,7 @@ Configure the pins PB19, PB20,PB21, PB22, PB23, PB24 for QSPI as mentioned in th
 - Up to this point in the project creation process, you used MPLAB Code Configurator(MCC) to configure and generate code to initialize the device (SAM9X60) . <br>
   Refer [initialization.c](./firmware/src/config/default/initialization.c) to find all the device resource added in the project graph got initialized.  All that is left is for the user to write the application code in the main.c file.
   Documentation for each of the peripheral libraries or bsp libraries can be accessed as follows:
-  1.	Peripheral libraries APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (\<framework_path\>\csp\docs\index.html)
+  1.	Peripheral libraries APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (/<framework_path/>/csp/docs/index.html)
   2.    BSP libraries APIs can be found in bsp.h
 
 - APIs used for this application are as follows:
@@ -148,7 +148,7 @@ The following linker file(ddram.ld) modifications are required to enable applica
 <img src = "images/step30.png" align="middle"> <br>
 
 *Now clean and build the project. You should see a message on the output console that the project was successfully built. This completes the development of the application.  <br>
-The harmony.bin file can be found in your \<project_directory\>/dist/default/production/harmony.bin.
+The harmony.bin file can be found in your /<project_directory/>/dist/default/production/harmony.bin.
 </details>
 
 ## SAM-BA Installation and Setup:
@@ -186,7 +186,7 @@ Note: ***Boot configuration using Emulation SRAM has to be set every power cycle
 ## Debugging Application Project on MPLAB® X IDE:
 - Open the project (sam9x60_ek_blink_led_qspi_xip/firmware/sam9x60_ek.X) in MPLAB® X IDE.  
 - In the project properties, ensure `SAM9X60` is selected as the 'Device' and for `Connected Hardware Tool`, select connected J-Link debugger with the board to program/debug the application.  
-- Build the code. The harmony.bin file can be found in your \<project_directory\>/dist/default/production/harmony.bin.
+- Build the code. The harmony.bin file can be found in your /<project_directory/>/dist/default/production/harmony.bin.
 - ***Before debugging ensure that harmony.bin file in your project directory is flashed in the QSPI offset.***
 - Refer the section “SAM-BA Installation and Setup" for initial device setup and tool installation procedure.
 * Use the below sam-ba commands to erase QSPI flash and program the application.

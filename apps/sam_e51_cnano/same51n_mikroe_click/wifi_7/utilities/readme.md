@@ -20,7 +20,7 @@ nav_order: 98
 ## <span style="color:blue"> *Complete the above highlighted step before proceeding further* </span>
 
 ## Running the utility
-- Navigate to **"<Your_Harmony_Framework_Path>\wireless_wifi\utilities\wifi\winc"** and open command prompt.
+- Navigate to **"<Your_Harmony_Framework_Path>/wireless_wifi/utilities/wifi/winc"** and open command prompt.
 - The following command line will create and program a firmware image.
 
   **winc_flash_tool.cmd /p COM3 /d WINC1500/v 19.7.7 /e /x /i prog /w**
