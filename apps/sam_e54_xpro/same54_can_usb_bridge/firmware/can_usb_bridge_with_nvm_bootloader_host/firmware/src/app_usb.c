@@ -180,10 +180,12 @@ static uint8_t loop_count = 0;
 static volatile uint32_t nTxBytes,app_size=0,crc=0,can_id=0;
 static CAN_TX_BUFFER *txBuffer = NULL;
 uint8_t* can_transmit_buffer;
+CAN_BIT_TIMING_SETUP newsetup;
+CAN_BIT_TIMING newbitTiming;
 static uint8_t txFiFo[CAN1_TX_FIFO_BUFFER_SIZE];
 bool app_boot_program_initialize =0,app_boot_programming_enable=0,app_boot_read=0,app_boot_select_id=1;
 
-
+ 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions to USB CDC
@@ -551,58 +553,30 @@ static uint8_t APP_CANLengthToDlcGet(uint8_t length)
 
 void APP_CAN_bitrates_reinitialize(uint32_t nominal, uint32_t data)
 {
-    uint64_t can_clock = 60000000;
-    uint8_t NBRP=5,DBRP=0;
-    uint32_t NTq=0,NTseg1=0,NTseg2=0,NSJW=0;
-    uint32_t DTq=0,DTseg1=0,DTseg2=0,DSJW=7;
-
-    if(data == 1000)
+    
+    newsetup.nominalBitTimingSet = true;
+    newsetup.nominalBitRate= nominal; 
+    newsetup.nominalPrescaler=5;
+    newsetup.nominalSamplePoint =75; 
+    
+    newsetup.dataBitTimingSet = true; 
+    newsetup.dataBitRate= data;
+    newsetup.dataPrescaler = 0; 
+    if(data == 1000000)
+        newsetup.dataPrescaler=5; 
+    newsetup.dataSamplePoint = 75; 
+    
+    if(CAN1_BitTimingCalculationGet(&newsetup,&newbitTiming))
     {
-      DBRP=5;
+    if(CAN1_BitTimingSet(&newbitTiming)) 
+    strcpy(message_buffer,"\r\n CAN configuration updated. \r\n");
+    APP_USB_WriteMessage(message_buffer);
     }
-
-    NTq = can_clock/((nominal*1000)*(NBRP+1));
-    NTseg1 = ((NTq)*(75) )/100;
-    NTseg2 = NTq-NTseg1-1;
-    NTseg1=NTseg1-2;
-    NSJW=NTseg2;    
-    NTseg1=NTseg1+1;
-    NTseg2=NTseg2+1;
-
-    DTq = can_clock/((data * 1000)*(DBRP+1));
-    DTseg1 = (DTq*75)/100;
-    DTseg2 = DTq-DTseg1-1;
-    DTseg1 = DTseg1-2;
-    DSJW = DTseg2;
-    DTseg1=DTseg1+1;
-    DTseg2=DTseg2+1;
-
-    /* Start CAN initialization */
-    CAN1_REGS->CAN_CCCR = CAN_CCCR_INIT_Msk;
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk)
+    else
     {
-        /* Wait for initialization complete */
-    }
-
-   /* Set CCE to unlock the configuration registers */
-    CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
-
-   /* Set Data Bit Timing and Prescaler Register */
-    CAN1_REGS->CAN_DBTP = CAN_DBTP_DTSEG2(DTseg2-1) | CAN_DBTP_DTSEG1(DTseg1-1) | CAN_DBTP_DBRP(DBRP) | CAN_DBTP_DSJW(DSJW);
-
-   /* Set Nominal Bit timing and Prescaler Register */
-    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(NTseg2-1) | CAN_NBTP_NTSEG1(NTseg1-1) | CAN_NBTP_NBRP(NBRP) | CAN_NBTP_NSJW(NSJW-1);
-
-
-   CAN1_REGS->CAN_CCCR &= ~CAN_CCCR_INIT_Msk;
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
-    {
-        /* Wait for initialization complete */
-    }
-   
-   strcpy(message_buffer,"\r\n CAN configuration updated. \r\n");
-   APP_USB_WriteMessage(message_buffer);
-      
+    strcpy(message_buffer,"\r\n CAN configuration not updated correctly. Please reconfigure \r\n");
+    APP_USB_WriteMessage(message_buffer);
+    } 
 }
 
 /* Get the CAN bit rates according to options
@@ -620,58 +594,60 @@ void APP_CAN_bitrates_reinitialize(uint32_t nominal, uint32_t data)
 
 void APP_USB_CAN_reconfiguration()
 {
+    
+  
     if(app_temp==0x31 && app_buffer_read[6] == 0x31)
         {
-            APP_CAN_bitrates_reinitialize(250, 1000);
+            APP_CAN_bitrates_reinitialize(250000, 1000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return;
         }
     if(app_temp==0x31 && app_buffer_read[6] == 0x32)
         {
-            APP_CAN_bitrates_reinitialize(250, 2000);
+            APP_CAN_bitrates_reinitialize(250000, 2000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return;
         }
     if(app_temp==0x31 && app_buffer_read[6] == 0x33)
         {
-            APP_CAN_bitrates_reinitialize(250, 3000);
+            APP_CAN_bitrates_reinitialize(250000, 3000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return; 
         }
     if(app_temp==0x31 && app_buffer_read[6] == 0x34)
         {
-            APP_CAN_bitrates_reinitialize(250, 4000);
+            APP_CAN_bitrates_reinitialize(250000, 4000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return;
         }
     if(app_temp==0x32 && app_buffer_read[6] == 0x31)
         {
-            APP_CAN_bitrates_reinitialize(500, 1000);
+            APP_CAN_bitrates_reinitialize(500000, 1000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return;
         }
     if(app_temp==0x32 && app_buffer_read[6] == 0x32)
         {
-            APP_CAN_bitrates_reinitialize(500, 2000);
+            APP_CAN_bitrates_reinitialize(500000, 2000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return;
         }
     if(app_temp==0x32 && app_buffer_read[6] == 0x33)
         {
-            APP_CAN_bitrates_reinitialize(500, 3000);
+            APP_CAN_bitrates_reinitialize(500000, 3000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return;
         }
     if(app_temp==0x32 && app_buffer_read[6] == 0x34)
         {
-            APP_CAN_bitrates_reinitialize(500, 4000);
+            APP_CAN_bitrates_reinitialize(500000, 4000000);
             app_buffer_read[5]='\0'; app_buffer_read[6]='\0';
             app_buffer_index=0;
             return; 
@@ -1371,7 +1347,7 @@ void APP_USB_Tasks(void) {
              if(app_buffer_read[4] == 0x31)//CAN configuration mode
              {
                  app_can_config_flag=1;
-                 strcpy(message_buffer,"\r\n\r\n Select the nominal bit rate: \r\n1.250 \r\n2.500\r\n");
+                 strcpy(message_buffer,"\r\n\r\n Select the nominal bit rate(in kbps): \r\n1.250 \r\n2.500\r\n");
                  APP_USB_WriteMessage(message_buffer);
                 app_buffer_read[4]='\0';   
              }
@@ -1380,7 +1356,7 @@ void APP_USB_Tasks(void) {
              {
                  if(app_can_config_flag)
                  {
-                 strcpy(message_buffer,"\r\n Select the data bit rate: \r\n1.1000 \r\n2.2000 \r\n3.3000 \r\n4.4000\r\n");
+                 strcpy(message_buffer,"\r\n Select the data bit rate(in kbps): \r\n1.1000 \r\n2.2000 \r\n3.3000 \r\n4.4000\r\n");
                  APP_USB_WriteMessage(message_buffer);
                  app_temp=app_buffer_read[5];
                  app_buffer_read[5]='\0';

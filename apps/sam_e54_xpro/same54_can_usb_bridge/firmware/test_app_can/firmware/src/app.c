@@ -94,6 +94,9 @@ uint8_t Can1MessageRAM[CAN1_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)
 #define WRITE_ID(id) (id << 18)
 #define READ_ID(id)  (id >> 18)
 
+CAN_BIT_TIMING_SETUP newsetup;
+CAN_BIT_TIMING newbitTiming;
+
 /* Application's state machine enum */
 typedef enum
 {
@@ -190,67 +193,27 @@ static uint8_t CANDlcToLengthGet(uint8_t dlc)
 /*CAN bitrate change*/
 void CAN_change_speed(uint32_t nominal, uint32_t data)
 {
-uint64_t can_clock = 60000000;
-
-uint8_t NBRP=5,DBRP=0;
-uint32_t NTq=0,NTseg1=0,NTseg2=0,NSJW=0;
-uint32_t DTq=0,DTseg1=0,DTseg2=0,DSJW=7;
-
-if(data == 1000)
-{
-    DBRP=5;
-}
-
-
-
-NTq = can_clock/((nominal*1000)*(NBRP+1));
-NTseg1 = ((NTq)*(75) )/100;
-NTseg2 = NTq-NTseg1-1;
-NTseg1=NTseg1-2;
-NSJW=NTseg2;    
-NTseg1=NTseg1+1;
-NTseg2=NTseg2+1;
-
-
-
-DTq = can_clock/((data * 1000)*(DBRP+1));
-DTseg1 = (DTq*75)/100;
-DTseg2 = DTq-DTseg1-1;
-DTseg1 = DTseg1-2;
-DSJW = DTseg2;
-DTseg1=DTseg1+1;
-DTseg2=DTseg2+1;
-
-
-
-/* Start CAN initialization */
-    CAN1_REGS->CAN_CCCR = CAN_CCCR_INIT_Msk;
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk)
+    newsetup.nominalBitTimingSet = true;
+    newsetup.nominalBitRate= nominal; 
+    newsetup.nominalPrescaler=5;
+    newsetup.nominalSamplePoint =75; 
+    
+    newsetup.dataBitTimingSet = true; 
+    newsetup.dataBitRate= data;
+    newsetup.dataPrescaler = 0; 
+    if(data == 1000000)
+        newsetup.dataPrescaler=5; 
+    newsetup.dataSamplePoint = 75; 
+    
+    if(CAN1_BitTimingCalculationGet(&newsetup,&newbitTiming))
     {
-        /* Wait for initialization complete */
+    if(CAN1_BitTimingSet(&newbitTiming)) 
+    printf("\r\n CAN bit rate changed successfully \r\n");
     }
-
-
-
-   /* Set CCE to unlock the configuration registers */
-    CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
-
-
-
-   /* Set Data Bit Timing and Prescaler Register */
-    CAN1_REGS->CAN_DBTP = CAN_DBTP_DTSEG2(DTseg2-1) | CAN_DBTP_DTSEG1(DTseg1-1) | CAN_DBTP_DBRP(DBRP) | CAN_DBTP_DSJW(DSJW);
-
-
-
-   /* Set Nominal Bit timing and Prescaler Register */
-    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(NTseg2-1) | CAN_NBTP_NTSEG1(NTseg1-1) | CAN_NBTP_NBRP(NBRP) | CAN_NBTP_NSJW(NSJW-1);
-
-
-   CAN1_REGS->CAN_CCCR &= ~CAN_CCCR_INIT_Msk;
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
+    else
     {
-        /* Wait for initialization complete */
-    }
+    printf("\r\n CAN bit rate not changed. Please reconfigure \r\n");
+    } 
 
 }
 
@@ -558,16 +521,16 @@ void CAN_Task()
                 case '5':
                     {   
                         uint32_t nominal_v=0,data_v=0;
-                        printf("CAN Nominal bit rate available options \r\n 1.250 \r\n 2.500 \r\n");
+                        printf("\r\n CAN Nominal bit rate available options(in kbps): \r\n 1.250 \r\n 2.500 \r\n");
                         scanf("%c", (char *) &nominal_value);
-                        printf("CAN Data bit rate available options\r\n 1.1000 \r\n"
+                        printf("\r\n CAN Data bit rate available options(in kbps):  \r\n 1.1000 \r\n"
                                 " 2.2000 \r\n 3.3000 \r\n 4.4000 \r\n");
                         scanf("%c", (char *) &data_value);
                         
                         if(nominal_value=='1')
-                            nominal_v=250;
+                            nominal_v=250000;
                         else if(nominal_value=='2')
-                            nominal_v=500;
+                            nominal_v=500000;
                         else 
                         {
                             printf("\r\n You have entered wrong nominal bit rate value\r\n");
@@ -575,21 +538,19 @@ void CAN_Task()
                         }
                         
                         if(data_value=='1')
-                            data_v=1000;
+                            data_v=1000000;
                         else if(data_value=='2')
-                            data_v=2000;
+                            data_v=2000000;
                         else if(data_value=='3')
-                            data_v=3000;
+                            data_v=3000000;
                         else if(data_value=='4')
-                            data_v=4000;
+                            data_v=4000000;
                         else
                         {   
                            printf("\r\n You have entered wrong data bit rate value\r\n");
                             break; 
                         }
-                        //scanf("%u",data_v); 
                         CAN_change_speed(nominal_v,data_v);
-                        printf("CAN bit rate changed successfully");
                     }
                     break;
 				case 'm':
