@@ -3,14 +3,14 @@
     <Dependencies>
         <Dependency name="csp" version="v3.17.0"/>	
         <Dependency name="dev_packs" version="v3.17.0"/>		
-        <Dependency name="core" version="3.13.0"/>        
-        <Dependency name="bsp" version="3.16.0"/>        
+        <Dependency name="core" version="3.13.1"/>        
+        <Dependency name="bsp" version="3.16.1"/>        
         <Dependency name="usb" version="v3.11.0-E2"/>
         <Dependency name="audio" version="3.6.0"/>		
-        <Dependency name="gfx" version="3.12.2"/>	
-		<Dependency name="touch" version="3.13.1"/>	
-		<Dependency name="net" version="3.9.2"/>			
-		<Dependency name="wireless_wifi" version="3.8.0"/>
+        <Dependency name="gfx" version="3.13.0"/>	
+		<Dependency name="touch" version="3.14.0"/>	
+		<Dependency name="net" version="3.10.1"/>			
+		<Dependency name="wireless_wifi" version="3.9.0"/>
 		<Dependency name="bt" version="3.4.1"/>
 		<Dependency name="bootloader" version="3.6.0"/>	
 		<Dependency name="bootloader_apps_uart" version="3.2.0"/>	
