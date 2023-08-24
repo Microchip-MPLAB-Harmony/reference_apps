@@ -1,0 +1,95 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.ide.project",
+    "content": {
+        "metaDataVersion": "1.3.0",
+        "name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_aws_iot_core_pic32cm_ls60_cpro_Secure",
+        "version": "1.6.0",
+        "displayName": "AWS cloud IOT core Application on PIC32CM LS60 Curiosity Pro Evaluation Kit",
+        "projectName": "aws_iot_core_pic32cm_ls60_cpro_Secure",
+        "shortDescription": "Demonstrates the AWS cloud connectivity on PIC32CM LS60 microcontroller)",
+        "ide": {
+            "name": "MPLABX",
+            "semverRange": ">=6.05"
+        },
+        "compiler": [
+            {
+                "name": "XC32",
+                "semverRange": ">=4.21"
+            }
+        ],
+        "dfp": {
+            "name": "PIC32CM-LS_DFP",
+            "semverRange": "^1.1.162"
+        },
+        "configurator": {
+            "name": "MCC",
+            "semverRange": ">=5.5.0"
+        },
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "PIC32CM5164LS60100",
+                "versionRange": "*"
+            }
+        },
+        "author": "Microchip",
+        "subcategories": [
+            [
+                "Development Kit",
+                "PIC32CM LS60 Curiosity Pro Evaluation Kit"
+            ],
+            [
+                "Harmony",
+                "Reference Apps"
+            ]
+        ],
+        "peripherals": [
+            "EIC",
+            "TC",
+            "PORT",
+            "ADC",
+            "Secure RTC",
+            "SERCOM(SPI)",
+            "GPIO",
+            "STDIO",
+            "SERCOM (USART)",
+            "SERCOM (I2C)"
+        ],
+        "keywords": [
+            "Harmony",
+			"MCC",
+            "UART",
+            "Serial Communication",
+            "USART",
+            "SERCOM",
+            "Cloud",
+			"AWS",
+            "EIC",
+            "RTC",
+            "Curiosity Pro",
+            "Curiosity",
+            "I2C",
+            "GPIO",
+            "Secure Element",
+            "Temperature",
+            "TrustZone",
+            "I/O1"
+			
+        ],
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./../../readme.md",
+                    "mimeType": "text/markdown"
+                }
+            }
+        }
+    }
+}

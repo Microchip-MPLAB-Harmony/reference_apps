@@ -1,0 +1,56 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sys_time}
+children:
+- type: Symbols
+  children:
+  - type: Combo
+    attributes: {id: SYS_TIME_OPERATING_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: String
+    attributes: {id: SYS_TIME_PLIB}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sys_time, value: TC2}
+  - type: Comment
+    attributes: {id: SYS_TIME_PLIB_ERROR}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: Warning!!! Tickless mode of SYS Time is not supported
+            in 8-bit mode}
+  - type: String
+    attributes: {id: SYS_TIME_REMOTE_COMPONENT_ID}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sys_time, value: tc2}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: sys_time_TMR_dependency}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: tc2}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: TC2_TMR}
+- type: ElementPosition
+  attributes: {x: '329', y: '261', id: sys_time}
