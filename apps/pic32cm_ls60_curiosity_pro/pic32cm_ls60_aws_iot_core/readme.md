@@ -13,6 +13,10 @@ nav_order: 2
 
 ---
 
+# [AWS Cloud IoT Core Application on PIC32CM LS60 Curiosity Pro Evaluation Kit](https://bitbucket.microchip.com/projects/MH3/repos/reference_apps/pull-requests/430/pic32cm_ls60_aws_iot_core/readme.md)
+
+# | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls60_aws_iot_core.zip) |
+
 <h2> Description: </h2>
 
 > The PIC32CM LS60 Curiosity Pro Evaluation Kit is ideal for evaluating and prototyping with the secure and ultra-low power PIC32CM LS60 ARM® Cortex®-M23 based microcontrollers. The MCU integrates TrustFLEX ECC608 secure subsystem & Arm® TrustZone® Technology in one package. This specific development board can be pre-provisioned for AWS IoT Core; The application demonstrates MQTT data transfer of light and temperature sensor data from IO1Xpro to AWS IoT core .

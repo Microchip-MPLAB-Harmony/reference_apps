@@ -1,3 +1,9 @@
+# grand_parent: 32-bit MCU Reference Applications
+
+parent: PIC32CM LS60 Curiosity Pro Evaluation Kit  
+title: Serial Bridge Application  
+nav_order: 99
+
 # ATWINC1510 Firmware upgrade
 
 ## Description:

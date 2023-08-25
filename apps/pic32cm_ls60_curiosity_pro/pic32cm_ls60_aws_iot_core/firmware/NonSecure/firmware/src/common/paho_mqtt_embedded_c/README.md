@@ -1,3 +1,9 @@
+# grand_parent: PIC32CM LS60 Curiosity Pro Evaluation Kit
+
+parent: AWS Cloud IoT Core Application  
+title: Eclipse Paho MQTT C/C++ client for Embedded platforms  
+nav_order: 5
+
 # Eclipse Paho MQTT C/C++ client for Embedded platforms
 
 This repository contains the source code for the [Eclipse Paho](http://eclipse.org/paho) MQTT C/C++ client library for Embedded platorms.
@@ -18,11 +24,9 @@ There are helper scripts (build...) in various directories.  The client library 
 
 See the samples directory for examples of intended use.
 
-
 ## Runtime tracing
 
 As yet, there is no tracing.  For the smallest client, should we have tracing?
-
 
 ## Reporting bugs
 
