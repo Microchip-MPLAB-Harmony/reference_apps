@@ -200,7 +200,7 @@ The usage of a custom PKI with TrustFLEX devices uses the Just-In-Time Registrat
   <summary> Details
 </summary>
 
-- Navigate to the **Serial Bridge** folder inside the project directory **(pic32cm_ls60_aws_iot_core)**  
+- Navigate to the **utilities** folder inside the project directory **(pic32cm_ls60_aws_iot_core)**  
   
   ![](.\images\sb1.png)
 

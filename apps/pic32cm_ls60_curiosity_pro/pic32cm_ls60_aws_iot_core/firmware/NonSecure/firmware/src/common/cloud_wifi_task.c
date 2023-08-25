@@ -1057,7 +1057,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         else
         {
             // Wait for incoming update messages
-           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);//mohan
+           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);
             mqtt_status = 0;
             if (mqtt_status != SUCCESS)
             {
