@@ -1,0 +1,14 @@
+configName: pic32cm_ls60
+folderName: pic32cmls60_securegateway_host_NonSecure
+format_version: v1.0
+frameworkPath: ..\..\..\H3_21Oct2019
+processor: PIC32CM5164LS60100
+projectName: pic32cmls60_securegateway_host_NonSecure
+settings:
+  PackageFilter: aerospace;audio;aws_cloud;azure-rtos-threadx;azure_rtos;bootloader;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_uart;bootloader_apps_usb;bsp;bt;classb_sam_e5x_d5x;core;core_apps_pic32cm_mc00;core_apps_pic32mk;core_apps_pic32mx;core_apps_pic32mz_da;core_apps_pic32mz_ef;core_apps_pic32mz_w1;core_apps_sam_9x60;core_apps_sam_a5d2;core_apps_sam_c20_c21;core_apps_sam_d20;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;core_apps_sam_e70_s70_v70_v71;core_apps_sam_g55;core_apps_sam_ha1;core_apps_sam_l10_l11;core_apps_sam_l21;core_apps_sam_l22;core_apps_sam_rh71;crypto;cryptoauthlib;cryptoauthlib_apps;cryptoauthlib_main;crypto_apps_encrypt_decrypt;crypto_apps_encrypt_decrypt-master;crypto_apps_encrypt_decrypt_old;crypto_apps_large_hash;crypto_apps_speed_test;crypto_apps_speed_test-3.6-rc.1;crypto_apps_speed_test-3.6.0;crypto_old;csp;csp_apps_pic32cm_mc00;csp_apps_pic32mk;csp_apps_pic32mx;csp_apps_pic32mz_da;csp_apps_pic32mz_ef;csp_apps_pic32mz_w1;csp_apps_sam_9x60;csp_apps_sam_a5d2;csp_apps_sam_c20_c21;csp_apps_sam_d10;csp_apps_sam_d11;csp_apps_sam_d20;csp_apps_sam_d21_da1;csp_apps_sam_d5x_e5x;csp_apps_sam_d5x_e5x-master;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_g55;csp_apps_sam_ha1;csp_apps_sam_l10_l11;csp_apps_sam_l10_l11-master;csp_apps_sam_l21;csp_apps_sam_l22;csp_apps_sam_rh71;dev_packs;ethercat;gfx;gfx_apps;harmony-services;micrium_ucos3;motor_control;MPLAB-Harmony-Reference-Apps;net;net_apps_sam_e5x;net_apps_sam_e70_v71;quick_docs;touch;touch_apps;touch_old;usb;usb_apps_device;wireless;wireless_4.0;wireless_apps_winc3400;wireless_wifi;x2c
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\PIC32CM-LS_DFP\1.1.162\PIC32CM-LS60\atdf\PIC32CM5164LS60100.atdf

@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic321e_oled
+folderName: PIC3LE_OLED
+frameworkPath: D:\H3_MCC_01
+processor: PIC32CM5164LE00100
+projectName: PIC3LE_OLED
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CM-LE_DFP\1.1.162\atdf\PIC32CM5164LE00100.atdf

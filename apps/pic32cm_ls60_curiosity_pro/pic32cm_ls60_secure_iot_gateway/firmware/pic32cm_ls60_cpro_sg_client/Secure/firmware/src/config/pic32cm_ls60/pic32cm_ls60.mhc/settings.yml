@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic32cm_ls60
+folderName: pic32cmls60_securegateway_client_NonSecure
+frameworkPath: D:\H3_MCC_01
+processor: PIC32CM5164LS60100
+projectName: pic32cmls60_securegateway_client_NonSecure
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'true'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CM-LS_DFP\1.1.162\PIC32CM-LS60\atdf\PIC32CM5164LS60100.atdf

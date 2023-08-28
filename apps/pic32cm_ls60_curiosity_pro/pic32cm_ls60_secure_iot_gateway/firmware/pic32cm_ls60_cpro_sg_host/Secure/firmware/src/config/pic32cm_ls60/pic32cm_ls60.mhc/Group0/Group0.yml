@@ -1,0 +1,6 @@
+format_version: v1.0
+type: GroupComponent
+attributes: {displayName: GFX_SPI, id: Group0}
+children:
+- type: ElementPosition
+  attributes: {x: '960', y: '20', id: Group0}
