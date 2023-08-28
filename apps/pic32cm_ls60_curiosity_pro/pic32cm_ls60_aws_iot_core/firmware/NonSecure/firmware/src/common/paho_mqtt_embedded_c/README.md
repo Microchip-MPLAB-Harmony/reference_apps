@@ -1,8 +1,10 @@
-# grand_parent: PIC32CM LS60 Curiosity Pro Evaluation Kit
-
+---
+grand_parent: PIC32CM LS60 Curiosity Pro Evaluation Kit
 parent: AWS Cloud IoT Core Application  
 title: Eclipse Paho MQTT C/C++ client for Embedded platforms  
 nav_order: 5
+---
+
 
 # Eclipse Paho MQTT C/C++ client for Embedded platforms
 

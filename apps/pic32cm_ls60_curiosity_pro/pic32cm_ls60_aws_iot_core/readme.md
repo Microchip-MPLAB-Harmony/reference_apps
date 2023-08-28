@@ -11,11 +11,8 @@ nav_order: 2
 <h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls60_aws_iot_core" > Download </a> </h2>
 
 
----
 
-# [AWS Cloud IoT Core Application on PIC32CM LS60 Curiosity Pro Evaluation Kit](https://bitbucket.microchip.com/projects/MH3/repos/reference_apps/pull-requests/430/pic32cm_ls60_aws_iot_core/readme.md)
-
-# | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls60_aws_iot_core.zip) |
+-----
 
 <h2> Description: </h2>
 
