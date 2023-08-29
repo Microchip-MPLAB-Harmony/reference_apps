@@ -1,3 +1,10 @@
+---
+grand_parent: PIC32CM LS60 Curiosity Pro Evaluation Kit
+parent: Secure IoT Gateway Application
+title: Eclipse Paho MQTT C/C++ client for Embedded platforms  
+nav_order: 5
+---
+
 # Eclipse Paho MQTT C/C++ client for Embedded platforms
 
 This repository contains the source code for the [Eclipse Paho](http://eclipse.org/paho) MQTT C/C++ client library for Embedded platorms.

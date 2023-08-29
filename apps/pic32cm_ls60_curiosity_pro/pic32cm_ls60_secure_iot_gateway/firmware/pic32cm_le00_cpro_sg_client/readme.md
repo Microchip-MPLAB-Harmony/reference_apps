@@ -75,7 +75,7 @@ Refer [Project Manifest](./firmware/src/config/pic321e_oled/harmony-manifest-suc
 <img src = "images/le00_client.png">
 
 #### Demo Setup
-For complete "Secure IoT Gateway application" demo setup, refer to demo [readme.md](../../readme.md)
+For complete "Secure IoT Gateway application" demo setup, refer to demo **readme.md** inside the project directory **(pic32cm_ls60_secure_iot_gateway)**
 
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  

@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS60 Curiosity Pro Evaluation Kit
 title: Secure Boot on PIC32CM LS60 Curiosity Pro Evaluation Kit
-nav_order: 1
+nav_order: 2
 ---
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">

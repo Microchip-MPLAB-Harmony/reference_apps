@@ -107,7 +107,7 @@ nav_order: 3
 
 ## Method 1: Steps for Programming prebuilt hex file: <span id="ProgrammingHex"><span>
 ### Steps to program the hex file
-- Perform [Prerequisites](Prerequisites) steps mentioned above, if not done already.
+- Perform [Prerequisites](#Prerequisites) steps mentioned above, if not done already.
 - Open MPLAB X IDE
 - Close all existing projects in IDE, if any project is opened.
 - Go to File -> Import -> Hex/ELF File

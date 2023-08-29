@@ -188,7 +188,7 @@ The usage of a custom PKI with TrustFLEX devices uses the Just-In-Time Registrat
 
 #### Demo Setup
 
-For complete "Secure IoT Gateway application" demo setup, refer to demo [readme.md](../../readme.md)
+For complete "Secure IoT Gateway application" demo setup, refer to demo **readme.md** inside the project directory **(pic32cm_ls60_secure_iot_gateway)**
 
 ## Prerequisites <span id="Prerequisites"><span>
 - Ensure PIC32CM LS60 host is provisioned on AWS cloud as mentioned under the heading **"AWS Cloud IoT Provisioning Guide"**
