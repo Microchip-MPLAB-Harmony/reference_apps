@@ -1191,7 +1191,7 @@
         <targetDevice>PIC32CM5164LS60100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
@@ -1210,12 +1210,12 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="C:/Users/i19963/Desktop/0/pic32cm_ls60_cpro_sg_host/pic32cm_ls60_cpro_sg_host/Secure/firmware/pic32cmls60_sg_host_Secure.X"
+          <makeArtifact PL="../../../Secure/firmware/pic32cmls60_sg_host_Secure.X"
                         CT="1"
                         CN="pic32cm_ls60"
                         AC="true"
                         BL="true"
-                        WD="C:/Users/i19963/Desktop/0/pic32cm_ls60_cpro_sg_host/pic32cm_ls60_cpro_sg_host/Secure/firmware/pic32cmls60_sg_host_Secure.X"
+                        WD="../../../Secure/firmware/pic32cmls60_sg_host_Secure.X"
                         BC="${MAKE}  -f Makefile CONF=pic32cm_ls60"
                         DBC="${MAKE}  -f Makefile CONF=pic32cm_ls60 TYPE_IMAGE=DEBUG_RUN"
                         CC="rm -rf &quot;build/pic32cm_ls60&quot; &quot;dist/pic32cm_ls60&quot;"
@@ -1236,7 +1236,7 @@
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
-        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_host &amp;&amp; mkdir ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_host &amp;&amp; cp ${ProjectDir}/"dist\pic32cm_ls60\production\pic32cmls60_sg_host_NonSecure.X.production.unified.hex" ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_host &amp;&amp; cp ${ProjectDir}/*.lib ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_host</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
@@ -1416,6 +1416,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -2010,6 +2012,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"

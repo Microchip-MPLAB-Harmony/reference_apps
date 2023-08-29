@@ -8,7 +8,7 @@
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
-                <make-dep-project>D:/0/apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_secure_iot_gateway/firmware/pic32cm_ls60_cpro_sg_client/Secure/firmware/pic32cmls60_sg_client_Secure.X</make-dep-project>
+                <make-dep-project>../../../Secure/firmware/pic32cmls60_sg_client_Secure.X</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>

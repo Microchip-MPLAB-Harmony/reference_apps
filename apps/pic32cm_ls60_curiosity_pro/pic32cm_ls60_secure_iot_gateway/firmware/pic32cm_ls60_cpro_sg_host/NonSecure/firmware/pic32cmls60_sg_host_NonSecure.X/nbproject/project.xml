@@ -12,7 +12,7 @@
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
-                <make-dep-project>C:/Users/i19963/Desktop/0/pic32cm_ls60_cpro_sg_host/pic32cm_ls60_cpro_sg_host/Secure/firmware/pic32cmls60_sg_host_Secure.X</make-dep-project>
+                <make-dep-project>../../../Secure/firmware/pic32cmls60_sg_host_Secure.X</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>../../../..</sourceRootElem>

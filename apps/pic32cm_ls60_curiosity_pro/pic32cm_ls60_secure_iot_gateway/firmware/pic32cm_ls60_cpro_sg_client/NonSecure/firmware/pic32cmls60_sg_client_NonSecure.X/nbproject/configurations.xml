@@ -765,14 +765,14 @@
         <targetDevice>PIC32CM5164LS60100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -784,12 +784,12 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="D:/0/apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_secure_iot_gateway/firmware/pic32cm_ls60_cpro_sg_client/Secure/firmware/pic32cmls60_sg_client_Secure.X"
+          <makeArtifact PL="../../../Secure/firmware/pic32cmls60_sg_client_Secure.X"
                         CT="1"
                         CN="pic32cm_ls60"
                         AC="true"
                         BL="true"
-                        WD="D:/0/apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_secure_iot_gateway/firmware/pic32cm_ls60_cpro_sg_client/Secure/firmware/pic32cmls60_sg_client_Secure.X"
+                        WD="../../../Secure/firmware/pic32cmls60_sg_client_Secure.X"
                         BC="${MAKE}  -f Makefile CONF=pic32cm_ls60"
                         DBC="${MAKE}  -f Makefile CONF=pic32cm_ls60 TYPE_IMAGE=DEBUG_RUN"
                         CC="rm -rf &quot;build/pic32cm_ls60&quot; &quot;dist/pic32cm_ls60&quot;"
@@ -810,7 +810,7 @@
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
-        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_client &amp;&amp; mkdir ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_client &amp;&amp; cp ${ProjectDir}/"dist\pic32cm_ls60\production\pic32cmls60_sg_client_NonSecure.X.production.unified.hex" ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_client &amp;&amp; cp ${ProjectDir}/*.lib ${ProjectDir}/../../../../../hex/pic32cm_ls60_cpro_sg_client</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
@@ -891,7 +891,6 @@
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -948,7 +947,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value="-l:pic32cmls60_sg_client_Secure_sg_veneer.lib"/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -990,7 +988,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1041,6 +1038,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -1099,6 +1098,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
