@@ -56,7 +56,7 @@ nav_order: 1
 Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default* to know the **MPLAB® X IDE**, **MCC** Plugin, **libraries**  version.
 
 ## Hardware Setup : <span id="Setup1"><span>
-- Power up the board by connecting 5V/2A power adapter to J1 or connect the USB Micro-B port(J29) to the Host PC using a micro-USB cable.
+- Power up the board by connecting 5V/2A power adapter to J1 or connect the USB Micro-B port(J7) to the Host PC using a micro-USB cable.
 - Connect the USB Micro-B port (J24- J-Link-CDC) on board to the computer using a micro-USB cable (to print debug messages on the serial console).
 - Default jumper settings should be as follows: <br>
 <img src = "images/jumper.png">
@@ -101,7 +101,7 @@ Configure the pins PB9-PB21 for QSPI as mentioned in the below image.
 - Up to this point in the project creation process, you used MPLAB Code Configurator(MCC) to configure and generate code to initialize the device (SAMA7G54) . <br>
   Refer [initialization.c](./firmware/src/config/default/initialization.c) to find all the device resource added in the project graph got initialized.  All that is left is for the user to write the application code in the main.c file.
   Documentation for each of the peripheral libraries or bsp libraries can be accessed as follows:
-  1.	Peripheral libraries APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (/<framework_path/>/csp/docs/index.html)
+  1.	Peripheral libraries APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (\<framework_path\>\csp\docs\index.html)
   2.    BSP libraries APIs can be found in bsp.h
 
 - APIs used for this application are as follows:
@@ -152,7 +152,7 @@ The following linker file(ddr.ld) modifications are required to enable applicati
 <img src = "images/step30.png" align="middle"> <br>
 
 *Now clean and build the project. You should see a message on the output console that the project was successfully built. This completes the development of the application.  <br>
-The harmony.bin file can be found in your /<project_directory/>/dist/default/production/harmony.bin.
+The harmony.bin file can be found in your \<project_directory\>/dist/default/production/harmony.bin.
 </details>
 
 ## SAM-BA Installation and Setup:
@@ -180,6 +180,7 @@ Note: ***It is mandatory to enable boot configuration packet to boot from QSPI f
 * sam-ba -p j-link -b sama7g5-ek -a bootconfig -c writecfg:bscr:EMULATION_ENABLED // Enable Emulation
 * sam-ba -p j-link -b sama7g5-ek -a bootconfig -c readcfg:bscr // Read bscr and verify emulation is enabled
 * sam-ba -p j-link -b sama7g5-ek -a bootconfig -c resetemul  // Emulation SRAM Reset
+* sam-ba -p j-link -b sama7g5-ek -a bootconfig -c refreshcfg:emul //Refresh Emulation SRAM.
 * sam-ba -p j-link -b sama7g5-ek -a bootconfig -c writecfg:bcp-emul:DBGU,QSPI0_IOSET1  // Enable debug, QSPI0 as external NVM
 * sam-ba -p j-link -b sama7g5-ek -a bootconfig -c readcfg:bcp-emul // Read bcp_emul and verify whether QSPI is set as external NVM
 <img src = "images/step31.png" align="middle"> <br> 
@@ -187,11 +188,17 @@ Now reset the board by pressing reset button. <br>
 
 Note: ***Boot configuration using Emulation SRAM has to be set every power cycle.*** <br>
       ***User can also write boot configuration packet(BCP) to OTPC(One Time Programmable Memory Controller). Refer SAM-BA installation directory on how to write BCP to OTPC***
+Below steps can be used to program BCP to OTPC:
+* sam-ba -p j-link -b sama7g5-ek -a bootconfig -c writecfg:bscr:EMULATION_DISABLED //Disable Emulation 
+* sam-ba -p j-link -b sama7g5-ek -a bootconfig -c readcfg:bscr // Read bscr and verify emulation is disabled
+* sam-ba -p j-link -b sama7g5-ek -a bootconfig -c refreshcfg:otp //Refresh otp
+* sam-ba -p j-link -b sama7g5-ek -a bootconfig -c writecfg:bcp-otp:DBGU,QSPI0_IOSET1 // Enable debug, QSPI0 as external NVM
+* sam-ba -p j-link -b sama7g5-ek -a bootconfig -c readcfg:bcp-otp // Read bcp_otp and verify whether QSPI is set as external NVM
 
 ## Debugging Application Project on MPLAB® X IDE:
 - Open the project (sama7g54_ek_blink_led_qspi_xip/firmware/sama7g54_ek.X) in MPLAB® X IDE.  
 - In the project properties, ensure `SAMA7G54` is selected as the 'Device' and for `Connected Hardware Tool`, select connected J-Link debugger with the board to program/debug the application.
-- Build the code. The harmony.bin file can be found in your /<project_directory/>/dist/default/production/harmony.bin.
+- Build the code. The harmony.bin file can be found in your \<project_directory\>/dist/default/production/harmony.bin.
 - ***Before debugging ensure that harmony.bin file in your project directory is flashed in the QSPI offset.***
 - Refer the section “SAM-BA Installation and Setup" for initial device setup and tool installation procedure.
 * Use the below sam-ba commands to erase QSPI flash and program the application.

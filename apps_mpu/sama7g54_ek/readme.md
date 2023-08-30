@@ -13,6 +13,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [QSPI XIP ](./sama7g54_ek_blink_led_qspi_xip/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sama7g54_ek_blink_led_qspi_xip.zip) |
+| 2 | [Ethernet Web Server ](./sama7g54_ek_ethernet_web_server_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sama7g54_ek_ethernet_web_server_getting_started.zip) |
 
 ### More Application Demos
 
