@@ -58,7 +58,7 @@
 void PM_Initialize( void )
 {
     /* Configure PM */
-    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_VREGSMOD(2UL)| PM_STDBYCFG_DPGPDSW_Msk);
+    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_BBIASHS_Msk| PM_STDBYCFG_VREGSMOD(2UL)| PM_STDBYCFG_DPGPDSW_Msk| PM_STDBYCFG_BBIASTR_Msk| PM_STDBYCFG_PDCFG_Msk);
 
     PM_REGS->PM_PLCFG = (uint8_t)PM_PLCFG_PLDIS_Msk;
 }
@@ -112,13 +112,13 @@ bool PM_ConfigurePerformanceLevel(PLCFG_PLSEL plsel)
     /* Write the value only if Performance Level Disable is not set */
     if ((PM_REGS->PM_PLCFG & PM_PLCFG_PLDIS_Msk) == 0U)
     {
-        if((PM_REGS->PM_PLCFG & PM_PLCFG_PLSEL_Msk) != plsel)
+        if((PM_REGS->PM_PLCFG & PM_PLCFG_PLSEL_Msk) != (uint8_t)plsel)
         {
             /* Clear INTFLAG.PLRDY */
             PM_REGS->PM_INTFLAG |= (uint8_t)PM_INTENCLR_PLRDY_Msk;
 
             /* Write PLSEL bits */
-            PM_REGS->PM_PLCFG  = plsel;
+            PM_REGS->PM_PLCFG  = (uint8_t)plsel;
 
             while((PM_REGS->PM_INTFLAG & PM_INTFLAG_PLRDY_Msk) == 0U)
             {

@@ -70,26 +70,27 @@
 #define NVMCTRL_DATAFLASH_PAGESIZE         (64U)
 #define NVMCTRL_DATAFLASH_ROWSIZE          (256U)
 
+#define NVMCTRL_USERROW_START_ADDRESS     (0x00804000U)
+#define NVMCTRL_USERROW_SIZE              (0x100U)
+#define NVMCTRL_USERROW_PAGESIZE          (64U)
 
-typedef enum
-{
+#define NVMCTRL_BOCORROW_START_ADDRESS     (0x0080C000U)
+#define NVMCTRL_BOCORROW_SIZE              (0x100U)
+#define NVMCTRL_BOCORROW_PAGESIZE          (64U)
+
+
     /* No error */
-    NVMCTRL_ERROR_NONE = 0x0,
+#define NVMCTRL_ERROR_NONE  0x0
+   /* NVMCTRL invalid commands and/or bad keywords error */
+#define NVMCTRL_ERROR_PROG  0x2
+   /* NVMCTRL lock error */
+#define NVMCTRL_ERROR_LOCK  0x4
+   /* NVMCTRL programming or erase error */
+#define NVMCTRL_ERROR_NVM   0x8
+   /* Key Error */
+#define NVMCTRL_ERROR_KEY   0x10
 
-    /* NVMCTRL invalid commands and/or bad keywords error */
-    NVMCTRL_ERROR_PROG = 0x2,
-
-    /* NVMCTRL lock error */
-    NVMCTRL_ERROR_LOCK = 0x4,
-
-    /* NVMCTRL programming or erase error */
-    NVMCTRL_ERROR_NVM = 0x8,
-
-
-    /* Key Error */
-    NVMCTRL_ERROR_KEY = 0x10
-
-} NVMCTRL_ERROR;
+typedef uint8_t NVMCTRL_ERROR;
 
 typedef enum
 {
@@ -98,12 +99,17 @@ typedef enum
     NVMCTRL_MEMORY_REGION_DATA = NVMCTRL_NSULCK_DNS_Msk
 } NVMCTRL_MEMORY_REGION;
 
+typedef enum
+{
+    NVMCTRL_SECURE_MEMORY_REGION_BOOTLOADER = NVMCTRL_SULCK_BS_Msk,
+} NVMCTRL_SECURE_MEMORY_REGION;
+
 
 void NVMCTRL_Initialize(void);
 
-bool NVMCTRL_Read( uint32_t *data, uint32_t length, uint32_t address );
+bool NVMCTRL_Read( uint32_t *data, uint32_t length,const uint32_t address );
 
-bool NVMCTRL_PageWrite( uint32_t* data, uint32_t address );
+bool NVMCTRL_PageWrite( uint32_t* data,const uint32_t address );
 
 bool NVMCTRL_RowErase( uint32_t address );
 
@@ -115,12 +121,24 @@ void NVMCTRL_RegionLock (NVMCTRL_MEMORY_REGION region);
 
 void NVMCTRL_RegionUnlock (NVMCTRL_MEMORY_REGION region);
 
+void NVMCTRL_SecureRegionLock (NVMCTRL_SECURE_MEMORY_REGION region);
+
+void NVMCTRL_SecureRegionUnlock (NVMCTRL_SECURE_MEMORY_REGION region);
+    
 
 
 
 bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address);
 
 bool NVMCTRL_PageBufferCommit( const uint32_t address);
+
+bool NVMCTRL_USER_ROW_PageWrite( uint32_t *data, const uint32_t address );
+
+bool NVMCTRL_USER_ROW_RowErase( uint32_t address );
+
+bool NVMCTRL_BOCOR_ROW_PageWrite( uint32_t *data, const uint32_t address );
+
+bool NVMCTRL_BOCOR_ROW_RowErase( uint32_t address );
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility

@@ -99,25 +99,28 @@ connected to Micro-B port, and reconnect it back.
 
   <img src = "images/data_visualizer_dgi_control_panel_selection.png" width="600" height="150" align="middle">
 - Once the Data Visualizer is connected to the SAM L10 EDBG, different interfaces will appear. Select the Power interface and click on the Start button to start measuring the power consumption of the device  
-<img src = "images/data_visualizer_power_start_buttons.png" width="700" height="240" align="middle">
+<img src = "images/data_visualizer_power_start_buttons.png" width="700" height="200" align="middle">
 - Ensure that the jumpers for Current Measurement on the SAM L10 Xplained Pro are set to MEASURE for the MCU and BYPASS for the I/Os  
 <img src = "images/current_measurement_hw_setup.jpg" width="600" height="500" align="middle">
-- The Power Analysis window will appear on the Data Visualizer tool interface  
-<img src = "images/data_visualizer_power_analysis_window.png" width="800" height="500" align="middle">  
-- The step image shows the device in Standby mode with its measured power consumption. You can observe small peaks that illustrate the 500 milliseconds Real-Time Clock (RTC) timer expiry  
-<img src = "images/device_in_standby_mode.png" width="800" height="500" align="middle">  
+- The Power Analysis window will appear on the Data Visualizer tool interface. 
 
-**Note**: The average value is considered when measuring the power consumption of the device because the instant value is not stable. Then, the power consumption of the device in Standby mode is 8.66 µA.
+- The image shows the device in Standby mode with its measured power consumption of 7.55µA.  
+<img src = "images/data_visualizer_power_analysis_window_standby.png" width="600" height="400" align="middle"> 
+
+ **Note**: The average value is considered when measuring the power consumption of the device because the instant value is not stable. 
+- The small peaks can be observed in the step image that illustrates the 500 milliseconds Real-Time Clock (RTC) timer expiry when light sensor on the I/O Xplained Pro board is covered by hand. 
+<img src = "images/device_in_standby_mode.png" width="800" height="300" align="middle">  
+
 - Cover the light sensor on the I/O Xplained Pro board by placing your hand over it (or another element) to print the temperature on the terminal and observe the power consumption of the device  
-<img src = "images/device_wakes_up_and_print_temperature.png" width="700" height="350" align="middle">
+<img src = "images/device_wakes_up_and_print_temperature.png" width="700" height="300" align="middle">
 - Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode  
-<img src = "images/standby_idle_transition.png" width="700" height="260" align="middle">
-- The following image shows the device in Idle mode with a measured power consumption of 844 µA  
+<img src = "images/standby_idle_transition.png" width="700" height="320" align="middle">
+- The following image shows the device in Idle mode with a measured power consumption of 140 µA  
 <img src = "images/device_in_idle_mode.png" width="700" height="350" align="middle">  
 
 **Note**: You can observe that the small peaks coming from RTC timer expiry disappeared because the power consumption in Idle mode is higher than the power required to start ADC conversion.  
 - Place your hand over the light sensor. The device will wake up on the next ADC window monitor interrupt, read and print data on serial and then re-enter Standby mode. The following image shows the transition of the power consumption by switching from Idle mode to Standby mode  
-<img src = "images/transition_from_idle_to_standby.png" width="600" height="300" align="middle">  
+<img src = "images/transition_from_idle_to_standby.png" width="600" height="350" align="middle">  
 
 **Note** that the above results highlight the power consumption is lower in Standby mode than in Idle mode.
 - Wake-up Time Measurement Using Logic Analyzer/ Cathode-Ray Oscilloscope (CRO)  

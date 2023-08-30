@@ -52,7 +52,6 @@
 // Section: PORT Implementation
 // *****************************************************************************
 // *****************************************************************************
-
 // *****************************************************************************
 /* Function:
 
@@ -72,23 +71,25 @@
 void PORT_Initialize(void)
 {
    /************************** GROUP 0 Initialization *************************/
-   PORT_REGS->GROUP[0].PORT_DIR = 0xc0;
-   PORT_REGS->GROUP[0].PORT_OUT = 0x8000080;
-   PORT_REGS->GROUP[0].PORT_PINCFG[2] = 0x1;
-   PORT_REGS->GROUP[0].PORT_PINCFG[6] = 0x0;
-   PORT_REGS->GROUP[0].PORT_PINCFG[7] = 0x0;
-   PORT_REGS->GROUP[0].PORT_PINCFG[16] = 0x1;
-   PORT_REGS->GROUP[0].PORT_PINCFG[17] = 0x1;
-   PORT_REGS->GROUP[0].PORT_PINCFG[24] = 0x1;
-   PORT_REGS->GROUP[0].PORT_PINCFG[25] = 0x1;
-   PORT_REGS->GROUP[0].PORT_PINCFG[27] = 0x5;
+   PORT_REGS->GROUP[0].PORT_DIR = 0xc0U;
+   PORT_REGS->GROUP[0].PORT_OUT = 0x8000080U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[2] = 0x1U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[6] = 0x0U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[7] = 0x0U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[16] = 0x1U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[17] = 0x1U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[24] = 0x1U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[25] = 0x1U;
+   PORT_REGS->GROUP[0].PORT_PINCFG[27] = 0x5U;
 
-   PORT_REGS->GROUP[0].PORT_PMUX[1] = 0x1;
-   PORT_REGS->GROUP[0].PORT_PMUX[8] = 0x22;
-   PORT_REGS->GROUP[0].PORT_PMUX[12] = 0x22;
+   PORT_REGS->GROUP[0].PORT_PMUX[1] = 0x1U;
+   PORT_REGS->GROUP[0].PORT_PMUX[3] = 0x0U;
+   PORT_REGS->GROUP[0].PORT_PMUX[8] = 0x22U;
+   PORT_REGS->GROUP[0].PORT_PMUX[12] = 0x22U;
+   PORT_REGS->GROUP[0].PORT_PMUX[13] = 0x0U;
+
 
 }
-
 // *****************************************************************************
 /* Function:
     uint32_t PORT_GroupRead(PORT_GROUP group)

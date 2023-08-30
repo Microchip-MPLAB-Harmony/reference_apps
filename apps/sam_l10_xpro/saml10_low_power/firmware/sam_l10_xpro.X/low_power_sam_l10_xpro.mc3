@@ -1,4 +1,4 @@
-<config configName="sam_l10_xpro" projectName="low_power_sam_l10_xpro" configVersion="1.1" device="ATSAML10E16A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="sam_l10_xpro" projectName="low_power_sam_l10_xpro" configVersion="1.1" device="ATSAML10E16A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -55,7 +55,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -417,22 +417,22 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;362&quot; canvasWidth=&quot;646&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc&quot; x=&quot;30&quot; y=&quot;160&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc&quot; x=&quot;21&quot; y=&quot;105&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;490&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;560&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;eic&quot; x=&quot;190&quot; y=&quot;200&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;evsys&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;eic&quot; x=&quot;177&quot; y=&quot;176&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;evsys&quot; x=&quot;169&quot; y=&quot;14&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;pm&quot; x=&quot;330&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;rtc&quot; x=&quot;170&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom0&quot; x=&quot;330&quot; y=&quot;120&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;sercom1&quot; x=&quot;490&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;stdio&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;supc&quot; x=&quot;30&quot; y=&quot;220&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;sercom1&quot; x=&quot;332&quot; y=&quot;202&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;stdio&quot; x=&quot;477&quot; y=&quot;133&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;supc&quot; x=&quot;25&quot; y=&quot;188&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -526,6 +526,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_CLOCK_DPLL_ENABLE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -569,7 +570,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_CLOCK_OSC16M_FREQSEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CONFIG_CLOCK_OSC16M_ONDEMAND"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_CLOCK_OSC16M_ONDEMAND&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -580,7 +592,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CPU_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1010,7 +1022,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;DPLL96M_CLOCK_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;64000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1032,7 +1044,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EIC_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1098,7 +1110,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVSYS_0_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1132,7 +1144,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_0_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1156,7 +1168,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_1_DIV&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;12&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;4&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1167,7 +1179,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_1_DIVIDER_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1179,6 +1191,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_1_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_1_RUNSTDBY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_1_RUNSTDBY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1285,6 +1308,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_0_CHEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1295,7 +1319,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_0_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1328,7 +1352,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_11_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_11_GENSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_11_GENSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1350,7 +1385,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_12_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_12_GENSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_12_GENSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1405,7 +1451,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_3_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_3_GENSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_3_GENSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1427,7 +1484,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_6_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_6_GENSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_6_GENSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -2034,7 +2102,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;OSC16M_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3079,7 +3147,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_CORE_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3277,7 +3345,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM1_CORE_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;12000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3332,7 +3400,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYSTICK_PERIOD&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x2EE0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0xFA0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3344,9 +3412,10 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYSTICK_PERIOD_MS&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Float dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;1398.1013&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;4194.304&lt;/Value&gt;
       &lt;/Float&gt;
     &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;/&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -3562,7 +3631,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_0_USER_READY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;evsys&quot; value=&quot;false&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;evsys&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -3750,9 +3819,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="EVSYS_USER_16"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_USER_16&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
 </value>
@@ -3761,9 +3828,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="EVSYS_USER_17"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_USER_17&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
 </value>
@@ -3900,11 +3965,44 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pm" name="PM_STDBYCFG_BBIASHS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pm&gt;
+  &lt;pm dnOrder=&quot;0&quot; id=&quot;PM_STDBYCFG_BBIASHS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pm&gt;
+&lt;/pm&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pm" name="PM_STDBYCFG_BBIASTR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pm&gt;
+  &lt;pm dnOrder=&quot;0&quot; id=&quot;PM_STDBYCFG_BBIASTR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pm&gt;
+&lt;/pm&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pm" name="PM_STDBYCFG_DPGPD"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pm&gt;
   &lt;pm dnOrder=&quot;0&quot; id=&quot;PM_STDBYCFG_DPGPD&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pm&gt;
+&lt;/pm&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pm" name="PM_STDBYCFG_PDCFG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pm&gt;
+  &lt;pm dnOrder=&quot;0&quot; id=&quot;PM_STDBYCFG_PDCFG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pm&gt;
 &lt;/pm&gt;
@@ -4023,7 +4121,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
   &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;I2CM_BAUD&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;54&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom0&gt;
 &lt;/sercom0&gt;
@@ -4100,7 +4198,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
   &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;SPI_BAUD_REG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;5&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom0&gt;
 &lt;/sercom0&gt;
@@ -4122,7 +4220,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
   &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_BAUD_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;55469&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;5138&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom0&gt;
 &lt;/sercom0&gt;
@@ -4242,7 +4340,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
   &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_SAMPLE_COUNT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;16&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;8&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom0&gt;
 &lt;/sercom0&gt;
@@ -4253,7 +4351,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
   &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_SAMPLE_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom0&gt;
 &lt;/sercom0&gt;
@@ -4279,7 +4377,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom1&gt;
   &lt;sercom1 dnOrder=&quot;0&quot; id=&quot;I2CM_BAUD&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;54&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom1&gt;
 &lt;/sercom1&gt;
@@ -4490,7 +4588,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom1&gt;
   &lt;sercom1 dnOrder=&quot;0&quot; id=&quot;SPI_BAUD_REG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;5&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom1&gt;
 &lt;/sercom1&gt;
@@ -4525,7 +4623,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom1&gt;
   &lt;sercom1 dnOrder=&quot;0&quot; id=&quot;USART_BAUD_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;55469&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;5138&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom1&gt;
 &lt;/sercom1&gt;
@@ -4703,7 +4801,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom1&gt;
   &lt;sercom1 dnOrder=&quot;0&quot; id=&quot;USART_SAMPLE_COUNT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;16&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;8&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom1&gt;
 &lt;/sercom1&gt;
@@ -4714,7 +4812,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom1&gt;
   &lt;sercom1 dnOrder=&quot;0&quot; id=&quot;USART_SAMPLE_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom1&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sercom1&gt;
 &lt;/sercom1&gt;
@@ -4799,6 +4897,17 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="supc" name="SUPC_BOD33_ACTCFG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;supc&gt;
+  &lt;supc dnOrder=&quot;0&quot; id=&quot;SUPC_BOD33_ACTCFG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/supc&gt;
+&lt;/supc&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="supc" name="SUPC_VREG_LPEFF"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;supc&gt;
   &lt;supc dnOrder=&quot;0&quot; id=&quot;SUPC_VREG_LPEFF&quot;&gt;
@@ -4809,15 +4918,26 @@
 &lt;/supc&gt;
 </value>
       </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="supc" name="SUPC_VREG_VREFSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;supc&gt;
+  &lt;supc dnOrder=&quot;0&quot; id=&quot;SUPC_VREG_VREFSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/supc&gt;
+&lt;/supc&gt;
+</value>
+      </entry>
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\sam_l10_xpro\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\libc_syscalls.c</file>
-         <hash>ff03e955db4f7bb775c7989bc2254553698f3d921e9885caac347ccd118e55d7</hash>
+         <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -4825,7 +4945,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\dmac.h</file>
-         <hash>73f4808ae35674b53fa444e55c976bdfe95b7cb4ddfd7318abd7d8713a1db639</hash>
+         <hash>bbd67871a16ddcba72490b53490bb09e038ed9ca94ec0ebfcb64d363f113f34f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -4833,7 +4953,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\sercom\usart\plib_sercom0_usart.h</file>
-         <hash>0fc1c409bd6652c8c5157bdb180093e4176e249f1d3348d2105302a223c111a5</hash>
+         <hash>da34e98c6c7b5164a88fa693139665742c8dc1bc56fcb0d76d7ef36b71eb4bac</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv8.h</file>
@@ -4841,15 +4961,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\osc32kctrl.h</file>
-         <hash>18e3d1fdb42db637376f0afe26a2e646303b632a0c11222ab8d1604be953761d</hash>
+         <hash>4acb9ba5cb5fb5685601542fd24d9d0d2cdc68ca5e43fd327a8d989298e3ef51</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\port.h</file>
-         <hash>b7d030c7ce4403dcae4b5661230044cbfad994182ad249024b50ed7b11b0f0a6</hash>
+         <hash>9b81947f1ebf6699bfd501179a97ef277cd3dafe264ee629fcb82c1194952028</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\adc.h</file>
-         <hash>18069f52706d9112936941bb2965b393373378c62d25f7310e6c28bceb4d2dd4</hash>
+         <hash>7bdf7c4efade3e7465323b7160a75e7095915c085ad5151017c51f0d283b40ee</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\nvic\plib_nvic.h</file>
@@ -4857,43 +4977,43 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\adc.h</file>
-         <hash>afcd54b43aea716a86fde204be0d26ae3fa98b29be37d856e1474d3ddd22fbe4</hash>
+         <hash>b64b8f208769deb77b85d3e9850d7f8ac0eb6088f73dee19d4bcd09bd8c05b65</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\saml10e16a.h</file>
-         <hash>2f713724a9d0924d8bcd8a26a87758526d4eb7c382c70fca4595503d09ae59a1</hash>
+         <hash>154759148c2045044e1d79a4397b48bdb64b23eb16a3c8404d2ecd44b73aa197</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\device_vectors.h</file>
-         <hash>5dad793f562686ae8459828f9ff0b2067ac959ec7395fc35b396c13cd26101aa</hash>
+         <hash>08d2ede88e4e667ed59e855d4270984fb6d776d3c447a79970a29ebc72b1af49</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\nvic\plib_nvic.c</file>
-         <hash>fd4ab5d2b34dd3eb27d05fe6b8d251930f65082d17e26e5171b2ffeaf74abd0e</hash>
+         <hash>48dbb53f7d93ff688382d6a638fb7612a1209b1b4eae7952bfd5a99cf195328d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\opamp.h</file>
-         <hash>3383281dcbe24341b3116b19f43e9533a4192ca2d24b380f86df9d5e0e3badb1</hash>
+         <hash>d8f81b51ac795cf386b9ab44487dd4189e29dc05d4c73ac969fe2db7e0519436</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\mclk.h</file>
-         <hash>fbd42d1952b477437daa7019c02a78c9243f24fdb510669c90004e49a40cb155</hash>
+         <hash>69ef18c63d7561301862a4f83ed57a1b5a991169be961eaa4adc32e9f3a0559c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\supc.h</file>
-         <hash>bda4e7348c8499670747969507c207876c445498c77c74e8b47a3429c45f143b</hash>
+         <hash>ee2fd1a5dc5daa97141014c2e7b4ae64e5ad1831e19b0ce26d7e954c89e77f1b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\opamp.h</file>
-         <hash>59c0e063a9d4bc144eba9ea6f60a08713a987da657c949be022fcd89e9860d22</hash>
+         <hash>e5b8bdc82de01f11f1049b1b3d2097527792f20a2710988053c1a1c16c4953b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\trng.h</file>
-         <hash>60cdd0ede29a782293799f103932e80619d1864c90418edef51dcc022960030a</hash>
+         <hash>b84f6eb459b19cfe788e2d6046d733bfeb9c712cb10dc8022f80842358f0f087</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\stdio\xc32_monitor.c</file>
-         <hash>198db01119ff3cb08593dd3115fcc0e6a8b8fe1e919442d42245920d55e38883</hash>
+         <hash>796b36d5a0a0e981798c45a3b8f94d1c52d2bfaee58ad4412fedaed99275f290</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm23.h</file>
@@ -4901,19 +5021,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\osc32kctrl.h</file>
-         <hash>42971a67346d232fd9cdb938271c515305d690168b3b883751633a4e5604c779</hash>
+         <hash>41538f6a5012c082f5659d66bf7cfd4ea94d3db05c4ebab13844cc8301a3b7d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\idau.h</file>
-         <hash>671a17ed426dbb9ac4bea5bae7fbab01570e46418b01c5be32b79814c5396ae7</hash>
+         <hash>f879bd8d1afee6db5f31d86e8b228c0f25e1d9119b72aebaa0bdb71efa0c2c78</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\adc\plib_adc.c</file>
-         <hash>f605ea2e32158d20c925c8bee3649bb26a9ddf28aa0621f50d9d75b2818b7054</hash>
+         <hash>c57553fcb88aa560cc1770ca320a8ad6ec5be43b1a146a5984dd5aa51b8740e9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\sercom\usart\plib_sercom0_usart.c</file>
-         <hash>02b0355ff7638ccda04c1b440e6bb17719fa876afadd76ae865aea857bb3e5c2</hash>
+         <hash>99f3130a24116608e25360bdac9643b914fa420abb8afa98a619ea799f74abfa</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\adc\plib_adc.h</file>
@@ -4921,19 +5041,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\fuses.h</file>
-         <hash>2305bb6687b61cbfdc9e8c0c862aa06fb9fa8ac3fcdbff87e3385193d97a3bc5</hash>
+         <hash>32ce15487389ec9d80ce85a75bcd7dbc7b5fd8f142ef5dc1714046ffa67bd895</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\wdt.h</file>
-         <hash>ccdc4ff38c8edfd030206ff0d5e88cc5edfddd0fc69a1ac20651c7fdaa4ffc17</hash>
+         <hash>b164b3fce8d61858940fb4c37726ac26830891358938fa2bd91246efcbb92ccc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
-         <hash>ff9e28a56c761d9cac20d42c6819063321f71c0d2726249be9bd818e44c3811d</hash>
+         <hash>f167b04b3c6a0f83fe41b7b6f810cbf0a48b8ca7d5a747b76463dd53d3c1a2a2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\tc0.h</file>
-         <hash>7e262e552ff86afc3791504d128dbdfdd7dc065c413a3ed4d51498f8c09efcbf</hash>
+         <hash>5e0f388f36f2499b6d904387418847ad5395b37a6651e83f679b144c9df4658c</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -4941,19 +5061,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\freqm.h</file>
-         <hash>94552c53e6c5103dcfbdee5227fe4f4b2a8e52238b7575f2c8615c1590a0e169</hash>
+         <hash>8b0bc6481326821db7b5d0f7fc5de348f482eb4f444dd051d53e92b457920708</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\pac.h</file>
-         <hash>63c740083684be7942b29c8e9113924fd418c65e589dd7de6f41e3a2240d664a</hash>
+         <hash>aa9eca8eba84b39d84b2459c98539a65197124c27278bff84105354b0405a8d7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\dac.h</file>
-         <hash>26afc71ac34b574c8152a58edd442943bf596d05721f60a3217ed93ec76bc419</hash>
+         <hash>c178e385f4b2307c70293d2eca48e8218750cf9a00f75442b6cf6ec0a1326df0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\mclk.h</file>
-         <hash>bc796b732e94fb77e7a547d9a26bee49a8bb6911f33259ea21d63073924ed945</hash>
+         <hash>8ccf94386bb062d3789ad428df0181bf9a944db456472dc17dda9eef36af8647</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -4969,15 +5089,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\gclk.h</file>
-         <hash>6ef969b8fbfa0e1f723ba7b5f00ff4e78e76380dad2605a9cef2eab2af48cc96</hash>
+         <hash>19d5950db46582b454cb820ee6ee1ee386e5461ec3947df2ca60a6e6708bf234</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\nvmctrl\plib_nvmctrl.h</file>
-         <hash>886bd8bdb2761f627fd47f3ad388a5385106e688b442d545dbc17d837982ea4b</hash>
+         <hash>88fe792c95170482321a1909fc38178e84bb0912230d9629db647bbc95593385</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\ccl.h</file>
-         <hash>6a6e4649808a05f2fe17a5c0cffd113f6c96996d908984715116ee7fc8c3ba39</hash>
+         <hash>d290fa94393b40c87f601f413d2b57a4890fe7ca50b8975f548100c27fc020c6</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -4985,39 +5105,39 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>c106dfaca5558081796e4c6de29addd7c1d7d62de1bacf61933fca7744210d0c</hash>
+         <hash>33333a6e3fc4f4232682b5f77aa6634aedb77251f697e9cfa6e71cfc8819cd40</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\nvmctrl.h</file>
-         <hash>84eb2d2fd7fcafe6fbadab7c62b66fb952e12ae43b8f350d6bb086dddfe65f6e</hash>
+         <hash>f3aa46bb90d4d2164aedd6d21845de76ddce8b540fbe45a30a826d1235cb30eb</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\definitions.h</file>
-         <hash>d55af74177c0dc62cc8466f9443bc89537e218bf2152c65034df1b03fbea68f3</hash>
+         <hash>3995a0b6d991ed9957f1906f7de229696246553f8dc77d3920f0711edb24278a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\pio\saml10e16a.h</file>
-         <hash>0f82b1c74787ca7fe08f98769ef470cbb3dcb23bddda4dcccd2da446eb2f6ab0</hash>
+         <hash>e404019b8d6a7e6dbb793929e7402ac4d35e31a724b90459be3375dbdcab5ef6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\sercom\i2c_master\plib_sercom1_i2c_master.h</file>
-         <hash>2c4367001dd765d4cbde96daa8937501bda7b7690b3d7ce238460fb4056be172</hash>
+         <hash>552c018a333c9a4038519177984e212174442303889dac79a4f7bb26460912fe</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\evsys.h</file>
-         <hash>deef9ee53313fd1a11036381d22a94d0e3d6abde1be6126a9e0c051c69d6fa5c</hash>
+         <hash>73af7bec2ffe1dc31c771f9f6e2bbf903c144d08b0fa779d66d56722034accac</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\sercom\i2c_master\plib_sercom1_i2c_master.c</file>
-         <hash>32291427893207ea83393160bb158abadadb28c019ce48ce1a4a713e339554f3</hash>
+         <hash>252417a940ddd7a52512098cfca4384ccfe6fb12d43cb646d501fec68b62d83a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\tram.h</file>
-         <hash>4e89510c788fc5d9b070c252acd0c8a2b5adb35513d8f29b3483156483754a1f</hash>
+         <hash>11ff78a832bf634d06988db07c617947dabb578d5a18f0ea8ab4a13ed5496dac</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\sercom2.h</file>
-         <hash>01722c4d3403591143247228fcc91385eba78b8d0d690a76c5f1f175f66ebe9f</hash>
+         <hash>fc8acf8b8d1427621e078e88e1bc3aebccfd0585c6d34685a056038f09c3f0fe</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\interrupts.h</file>
@@ -5029,63 +5149,67 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\interrupts.c</file>
-         <hash>f2246389d3070002e00c77ed008bc2a1e57caab592b717217f6de1f1c0b80c22</hash>
+         <hash>9919d9de3fc7ff2103a5dd20e147339148beed95ef6b0cf5b7b49e0791cc3e43</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_l10_xpro\pin_configurations.csv</file>
+         <hash>b25bb04685a12e35d63ff99436f1fa33343781e0af88b2e9e492073e5e3e526c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\ac.h</file>
-         <hash>bf7246f556524f80f5e09970d55ad800b6802d814f2d13404f346ed6aab3ace4</hash>
+         <hash>b801bb78bda8e8772f4b1b9210558dc4526436a17746a7df8409ffad05b05e64</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\nvmctrl.h</file>
-         <hash>9ba64d90ddcb3ce21873372aaef320b998f02a33880d9d2f5c29c8c182ff3fa5</hash>
+         <hash>eca2c734ac4e09fd6469542b8a851b462d17269da6affdf9e80de0dca5aa250e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\ATSAML10E16A.ld</file>
-         <hash>ef962477bf1b37425586c6d8d349b2aa96e2628543bc191ce7218205aaf89187</hash>
+         <hash>1d94447d77644b78d3bb699d336f843643fba5297fd50da2938d986d3ef8313a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\eic.h</file>
-         <hash>2928d54ed8f3dba3b462afe4b0cbfb28b7d6155dc65e943e4b2c596c5fcb3080</hash>
+         <hash>be7b632268e78e9782cef63453260d467e72d7c5cb71af8512345608f9b4cdff</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\oscctrl.h</file>
-         <hash>d67d0d6885103ebfe1c175597ef1358ebf655106b4d74ec14b08579fc799201d</hash>
+         <hash>a2f76f63c3eba238c21e1570faa3638cd99c69ab301d70a3c4b14d46b86c3b98</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\gclk.h</file>
-         <hash>7d3b6ed2811c3780ec498fa6ac725cc04e002985869191bca6d16118f8d1c971</hash>
+         <hash>499338229414c1661d505fa7266635a049ab425299cf4f44b42f1437339bd482</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\dsu.h</file>
-         <hash>ca46c8f73c94b88e2bbd8ae300101b8e76173ce22d49a2781be61c2dd0efa552</hash>
+         <hash>f4f10df323ecb3b8b50ae8d31f2b678f01e6f2b2fe0c39fa0e96ed3df8342536</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\rtc\plib_rtc_timer.c</file>
-         <hash>0ddefec801a2e469d0d25495383c17d26a1e507ca7ed652670e8083113a66f7a</hash>
+         <hash>e1667151b82a71478de31c837429453b75ca96fb6fc68e0568bed9fff9474483</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\tc.h</file>
-         <hash>eb4fc51041843cab3c8573fbf4bdf56b330637e375685f5b9bf447ace3736973</hash>
+         <hash>13df4f875303177101932fa7224f7a10c3035b806a2338c1c40eca37b3634406</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\tc1.h</file>
-         <hash>dcf99fb237c7193676ddecf8ac7b7483d286ac0bf5759ba9d7dfbbfabe79ced8</hash>
+         <hash>c8c71738281638e096b9f456b313f5a26aabe22a23ca68d191e166200c5faa50</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\exceptions.c</file>
-         <hash>53ab76999a95188397759a963c22e5a6fa755592a0fcd5a0e848ee59d0fdbb9d</hash>
+         <hash>5efbe5a64a17c496d2f5b177bc9cd66a7f0f80323d9558e220c073a13570a2a7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\freqm.h</file>
-         <hash>1731310c2ba97e0812db095d1711529886d74313d417160f79f74cf34c05761c</hash>
+         <hash>bbdcbf49f3b879737788bb36126e35fbf9d1f56ab58abf2dfd6512e5eb1ba74d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\rtc.h</file>
-         <hash>9fe1cd9489c97078c58e8d5dfa579b475bb62a5ae504a14fcc3690b325e5d637</hash>
+         <hash>fb676f39e04e1303ae0edbeff72c40135c6ab1bacc22a03edf4988b6c781b6de</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\pm.h</file>
-         <hash>4a95846c80481099267c9636e50917356647db7d26805471a7760736b7d11760</hash>
+         <hash>5ac54bc4044fcb3ffaa34eb7419f914caf3b38a6e3889fb09b13b0128aff3c2e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -5097,15 +5221,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\rstc.h</file>
-         <hash>11970fd4079e58f05b90b4b12ec6df6da2252d9ad7b36a5a093066320417b51f</hash>
+         <hash>778c9bafe8853f8742a918151258d0619ff46563873c2ac966eb606343735fe3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\port\plib_port.c</file>
-         <hash>99b7e2b4ef9cf7f8e5401278d0c8c59f96e135495a55423199ae8867d9408bd8</hash>
+         <hash>2b52743e9cc1f2aadf8a9719e191f1ed6e7c99d5444732e42973e911df905245</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\port\plib_port.h</file>
-         <hash>8abc5a161a96e379f1b1e204468feebacceccec2daa8230c26d9f9e09891e9e9</hash>
+         <hash>53b4bd755ce0d8f2864a7a38ab435bc8bdc44818f3d42b8213e270e31beeed8c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\clock\plib_clock.h</file>
@@ -5113,23 +5237,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\rtc.h</file>
-         <hash>29f836cc61f56f5f74db8c626ed1d0a002e8a15ee1a060e41bccddf436d3eccc</hash>
+         <hash>493b493234969247192df9b888f18986c750b059a98ad4bf490145e6f659c5c6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\tram.h</file>
-         <hash>3d8fd449a37b22ceea5ba6f672c8c1d8859853e7aea1ae63525b0670f34e7988</hash>
+         <hash>8b1e4b5c25b76b2c46204ec91ccc6670c940a819f3c02f11f8212a9712b71b96</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\clock\plib_clock.c</file>
-         <hash>5f108c91ba1b8bd07f24c72cc9733a3979d3010eed4337895ef8dc7a2dde551f</hash>
+         <hash>e5142757c163d8e4b9665d75afa98d4075d1ae65e8ec1552ba24e8bfe386e4ac</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\sercom1.h</file>
-         <hash>211cf259127f232368ff426f5a8e04c710626f038219dcbe337f20e704cbfa31</hash>
+         <hash>858d3a31fb47ae64166c889f28736a0597524638d957a6860cdc4c582d63b994</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\ptc.h</file>
-         <hash>c553ffc11688eddd87a4a02a4e1ef54eb622fba78ca9086685bb4dcfaaab4dbe</hash>
+         <hash>7eacd7eeb4f61bfe0b44b4231f8fca5aa4d28bec7b5ad4fb46be70dfb524ba83</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\adc\plib_adc_common.h</file>
@@ -5137,15 +5261,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>5f22a98af6f1aa745b41195472e69df58c460da55f7bca08e991dc9f8f04927d</hash>
+         <hash>63c6e89936ba47e8989478a8be0fa40b406361f2f0dcc1b6cfcd801b50a4bf92</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\rtc\plib_rtc.h</file>
-         <hash>d1cb3044931d2cf84ebd0294838226ea7bdf4dd8383c14f264c41d8df0a9d174</hash>
+         <hash>0dea63e679bee6edd8f07a7334fabdf0d0137239ba2fac767d192c20ee972c15</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\dsu.h</file>
-         <hash>7e4f168c138050158dbca9c8be9fc4ec7b560937e767b1db1bde9b5975f6cb98</hash>
+         <hash>53da75ce696dbea61566e2d47e19c58bba86b6fd5419b38bcaa17ed028896bd6</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -5153,35 +5277,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\ptc.h</file>
-         <hash>27b8f374d55bca0ecc897b1549a403133722560bf1d56d6ae1876f89d34a24d1</hash>
+         <hash>62aba92675af6f33fe9e94c5b29e6da305c386b5d16084293c20aafba71858cd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\evsys.h</file>
-         <hash>cde711a5928fa3da3f37876da3184a892958b51e65553dccd884ae18785a2a3c</hash>
+         <hash>c42182645a811a5fe77c221f4187c6d3acbe82fcf75e7b0bef3d47df32a080b8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\idau.h</file>
-         <hash>8a8474abd979a0e34ebb7649bf1f81142c5258ec7b9def84ecfbce3c1eb0b435</hash>
+         <hash>b18f3d3d2497c59bb12eb6df9aa8aaf12b7d785064b4527b5fa2ca75712e293e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\tc2.h</file>
-         <hash>f4fb0dc3b5da69b77cb68df9bc5dd19609cd6c516777ea1b89663ca239616653</hash>
+         <hash>383bba04951352cf34aad4dc9635610980be449ad4a65f1f67bb91bd7d60dffb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\wdt.h</file>
-         <hash>5bd0bf3fd3383825d9b453bf7f3980ad8fc1eb79fcd276d9a9a649bfccb0f11d</hash>
+         <hash>86ae70247c477edee7b2738036b7601b37fe4c16e2c5d6cba4cac797c8894923</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\startup_xc32.c</file>
-         <hash>80195ddf765ddef7d9f221e3cd1ca4e7f4ba88de968b67635f3a39f5ba2d6fef</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\sercom.h</file>
-         <hash>0af6fb438aebc6b2095c012712ed954fa850db12f13411e03952d6da4deb7095</hash>
+         <hash>9cbd1920e3d4e2a9e6865b20c5fbf9cb47a7a6f3685c8a63e2d9f9adf78836a8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\dmac\plib_dmac.c</file>
-         <hash>1cb20ce2a170a95406488e2ffa95621235d39f51a0be67369978c2c63297d91a</hash>
+         <hash>418cd1b93b644932c2cf005a36dcb4f17ba64819e3ff4792d347a34498608937</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\dmac\plib_dmac.h</file>
@@ -5189,7 +5313,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\supc\plib_supc.c</file>
-         <hash>a0f0239bb50ff388b514c94212e62b466105322b3d6f62b60dff267197179994</hash>
+         <hash>2f5062968542e2fcd80c3c70f710202bf831f831f08f189da6ddc084e6405ce5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\eic\plib_eic.h</file>
@@ -5201,11 +5325,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\eic\plib_eic.c</file>
-         <hash>c5487bac918bc70af42419dc54e9d59b3a77328fb2d12016d0fb5d75025625dd</hash>
+         <hash>c7edd36cbfa36390d4afc73e3608ec7dcdfe79532ab37a67b1fc6e140380230b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\pac.h</file>
-         <hash>e8dfee30105f119c02030593ed7a145618bbd9f3f5e3119d0a7be31caa1b82a7</hash>
+         <hash>49f920643202670c72c56c2a932b2ea90be97a6b3837d86b554144440f81a084</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\tz_context.h</file>
@@ -5213,31 +5337,31 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\pm.h</file>
-         <hash>b78ec77a80f754d6416d23edb2ad5624e254d1dd29d58d623610b66fc2203465</hash>
+         <hash>315ae72dcb37b4df80d19708e3555b22cfb9118f3313c90f4d2aa3a17656f77d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\ccl.h</file>
-         <hash>7297cffc600a66329033d2e631f029f97fe553f8aacc3edf1c75b44d2dcd2f29</hash>
+         <hash>a08302e148e039bd7d588d06a2c07674dd0dff1a29802bc6da5dcf243cb713af</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\dmac.h</file>
-         <hash>7af306b60cf673eb04aa9eb8e9bbaa8b2ced336acc5f0104a028462bca8808d0</hash>
+         <hash>152b5bcd98dd668750cb597a171edba07156007c117d9e3aebef80aeadf1821d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\port.h</file>
-         <hash>b847ed9087fcc74bd1ceb1f8a90460507bcef190ec3420f18882be02d209e95f</hash>
+         <hash>e1d4446b4023d3880f5c1014254715f26a8ff703a587cac348263942710f91eb</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\pm\plib_pm.c</file>
-         <hash>a4258a227d6cf8208f962b5cee4dce69dfb785f63c1a92ba1a35bd30d04a9a9a</hash>
+         <hash>6bc717ebe67e1bb61c50066740de55e5bce03e20c980476a4fbf87827b1ce401</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\rstc.h</file>
-         <hash>403a090aec3209d35cc05dcdef74e06819ccb026d68596ce0001fa61dc2d596c</hash>
+         <hash>9f9a0b55923ce6201efdf5dea963a9b8763930f6b7179f7e7ffe14b6b3505acf</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\supc.h</file>
-         <hash>59f4c914be565f172cca0cb3c3ff1e2e4245359e10bba4b810cc584be64628a7</hash>
+         <hash>f46af34b4c862dcc2d4319e0636087469cf2f58c37d2a395ae8a442995659d2c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\pm\plib_pm.h</file>
@@ -5245,7 +5369,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\fuses.h</file>
-         <hash>8667248f4227d58e47970b1eb0db0b31f1863bb2c728dbdd71682083dae5a210</hash>
+         <hash>c3010bc3fc90e36f29c2fcb7483a267a1659171929a5531c911d38ae3fa396cc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\evsys\plib_evsys.h</file>
@@ -5253,35 +5377,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\eic.h</file>
-         <hash>73deba9e965973f9de35006c3d967418167186185680d943eb51a9a043f08022</hash>
+         <hash>ffb4134669fb0f06f2a9d53c9d31e3d9e2145def93b52d87e017027edb690afc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\peripheral\evsys\plib_evsys.c</file>
-         <hash>77d374908b0e3a09eb4484071577723a655e095e659a40df87480c00642961bd</hash>
+         <hash>f834e6e6a8f5ce899aeb20e0162299811bb0173188869ea1038491181d9b4102</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\dac.h</file>
-         <hash>c588317cb4b77286ff0eaedb4fdca941a6e59bc75fa228a1bfa2eab6000cd9b0</hash>
+         <hash>1da8deb317828eac8c8417d3f4a5adbdd4fe9bd6667376042e6c6d30103d0034</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\component\oscctrl.h</file>
-         <hash>492655dd0d1172ef3710a0d94f24ee1218785324f94b52dcab0eeceb94ba4438</hash>
+         <hash>9d6ef6c9f5743e7163ca163a78f013682126e71003b0294a7b507c9612e5dc8c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\ac.h</file>
-         <hash>6583cee36b3b5c3805e174f5ca5423b4e1cf15c9537c31290e1c9d4e2774eca7</hash>
+         <hash>cca9b8e55ea4607a38cbe441e0253c54ee0b7932aa7e23afbd2b3bceeba5885e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\initialization.c</file>
-         <hash>8985b49a6586bd20b11c6b3011e53e90ba608cf16fc32bb415ff3684fbbc0c4a</hash>
+         <hash>f8b99726d705449ad41c88e26a64d5a332b4d021473fd8b98435d0f04f5f1857</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\sercom0.h</file>
-         <hash>b3ee5a81c2fdcce3a777667db03f8328b3ac73dfed3bbb10b6f7ff8c3eb2ff90</hash>
+         <hash>d2297fd7428a67e809b18d50ed3b92423b84016dc6a202ad4bd5f38ac647f740</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\trng.h</file>
-         <hash>f433af93ccd497ce6dd0403b8bc3803e60f28410e778109d437b48bb9aa8f4e3</hash>
+         <hash>69d79a709f47185c665ffb9e94b2e0800f06dc09bc6b797fd8c660351584aeb3</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

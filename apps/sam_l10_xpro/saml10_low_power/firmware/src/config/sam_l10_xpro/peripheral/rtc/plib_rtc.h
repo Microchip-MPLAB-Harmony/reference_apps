@@ -94,19 +94,19 @@ typedef enum
     RTC_PER6_MASK = 0x0040U,
     RTC_PER7_MASK = 0x0080U
 } RTC_PERIODIC_INT_MASK;
-typedef enum
-{
-    TAMPER_CHANNEL_0 = 0U,
-    TAMPER_CHANNEL_1 = 1U,
-    TAMPER_CHANNEL_2 = 2U,
-    TAMPER_CHANNEL_3 = 3U,
-} TAMPER_CHANNEL;
+ #define   TAMPER_CHANNEL_0  (0U)
+ #define   TAMPER_CHANNEL_1  (1U)
+ #define   TAMPER_CHANNEL_2  (2U)
+ #define   TAMPER_CHANNEL_3  (3U)
+typedef uint32_t TAMPER_CHANNEL;
 
 
 void RTC_Initialize(void);
 bool RTC_PeriodicIntervalHasCompleted ( RTC_PERIODIC_INT_MASK period );
 bool RTC_Timer32CounterHasOverflowed ( void );
 bool RTC_Timer32CompareHasMatched( void );
+void RTC_Timer32CountSyncEnable ( void );
+void RTC_Timer32CountSyncDisable ( void );
 void RTC_Timer32Start ( void );
 void RTC_Timer32Stop ( void );
 void RTC_Timer32CounterSet ( uint32_t count );

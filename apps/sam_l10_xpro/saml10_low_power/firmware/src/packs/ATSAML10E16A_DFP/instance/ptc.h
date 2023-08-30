@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML10E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,18 +20,18 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:20:34Z */
+/* file generated from device description version 2023-04-12T14:18:35Z */
 #ifndef _SAML10_PTC_INSTANCE_
 #define _SAML10_PTC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PTC peripheral ========== */
-#define PTC_DMAC_ID_EOC                          _UL_(21)   /* Index of DMA EOC trigger */
-#define PTC_DMAC_ID_SEQ                          _UL_(22)   /* Index of DMA SEQ trigger */
-#define PTC_DMAC_ID_WCOMP                        _UL_(23)   /* Index of DMA WCOMP trigger */
-#define PTC_GCLK_ID                              _UL_(19)   /* Index of Generic Clock */
-#define PTC_LINES_MSB                            _UL_(19)   
-#define PTC_LINES_NUM                            _UL_(20)   /* Number of PTC lines */
-#define PTC_INSTANCE_ID                          _UL_(73)   
+#define PTC_DMAC_ID_EOC                          (21)       /* Index of DMA EOC trigger */
+#define PTC_DMAC_ID_SEQ                          (22)       /* Index of DMA SEQ trigger */
+#define PTC_DMAC_ID_WCOMP                        (23)       /* Index of DMA WCOMP trigger */
+#define PTC_GCLK_ID                              (19)       /* Index of Generic Clock */
+#define PTC_INSTANCE_ID                          (73)       
+#define PTC_LINES_MSB                            (19)       
+#define PTC_LINES_NUM                            (20)       /* Number of PTC lines */
 
 #endif /* _SAML10_PTC_INSTANCE_ */

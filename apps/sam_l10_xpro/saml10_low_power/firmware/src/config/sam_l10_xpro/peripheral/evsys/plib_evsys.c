@@ -43,13 +43,14 @@
 
 
 
+
 void EVSYS_Initialize( void )
 {
     /*Event Channel User Configuration*/
-    EVSYS_REGS->EVSYS_USER[14] = EVSYS_USER_CHANNEL(0x1);
+    EVSYS_REGS->EVSYS_USER[14] = EVSYS_USER_CHANNEL(0x1U);
 
     /* Event Channel 0 Configuration */
-    EVSYS_REGS->CHANNEL[0].EVSYS_CHANNEL = EVSYS_CHANNEL_EVGEN(12) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(0) \
+    EVSYS_REGS->CHANNEL[0].EVSYS_CHANNEL = EVSYS_CHANNEL_EVGEN(12U) | EVSYS_CHANNEL_PATH(2U) | EVSYS_CHANNEL_EDGSEL(0U) \
                                     | EVSYS_CHANNEL_RUNSTDBY_Msk | EVSYS_CHANNEL_ONDEMAND_Msk;
 }
 
@@ -65,7 +66,7 @@ void EVSYS_GeneratorDisable(EVSYS_CHANNEL channel)
 
 void EVSYS_UserEnable(EVSYS_CHANNEL channel, uint8_t user)
 {
-   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL((channel + 1));
+   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL(((uint32_t)channel + 1U));
 }
 
 void EVSYS_UserDisable(uint8_t user)
