@@ -335,9 +335,9 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 60. Up to this point in the project creation process, you used MPLAB Code Configurator (MCC) to configure and generate code to initialize the device (SAMA7G54). <br>
   Refer [initialization.c](./firmware/src/config/default/initialization.c) to find that all the device resource added in the project graph got initialized.  All that is left is for the user to write the application code in the app.c file.
   Documentation for each of the peripheral libraries or driver libraries can be accessed as follows:<br>
-  a. Peripheral libraries APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (\<framework_path\>/csp/docs/index.html)<br>
+  a. Peripheral libraries APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (/<framework_path/>/csp/docs/index.html)<br>
   b. BSP libraries APIs can be found in bsp.h <br>
-  c. TCP/IP Stack APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (\<framework_path\>/net/docs/index.html)<br>
+  c. TCP/IP Stack APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (/<framework_path/>/net/docs/index.html)<br>
 
 61. APIs used for this application are as follows:
   * LED_GREEN_On
@@ -407,7 +407,8 @@ The pre-built application bin file can be programmed by following the below step
 
 ### Steps to program the bin file on SD card
 - Take an SD Card formatted with FAT32 file system.  
-- Copy the boot.bin, harmony.bin and webpage files from this [location](./hex) to the SD card.  
+- Copy the boot.bin, harmony.bin files from this [location](./hex) to the SD card.
+- Copy the webpage files from this [location](./hex/web_page) also to the SD card.
 - Insert the SD card to J4 on the SAMA7G54-EK Evaluation Kit.  
 
 ### Steps to run the bin file from SD card 

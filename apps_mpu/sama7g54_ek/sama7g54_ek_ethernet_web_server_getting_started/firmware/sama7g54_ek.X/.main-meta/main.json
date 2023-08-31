@@ -1,0 +1,89 @@
+{
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.3.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_sama7g54_ek_ethernet_web_server_getting_started",
+      "version":"1.6.0",
+      "displayName":"Developing ethernet web server application on SAMA7G54 Evaluation Kit",
+      "projectName":"ethernet_web_server_getting_started_sama7g54_ek",
+      "shortDescription":"This application demonstrates how to configure demo board as TCP IP web server for SAMA7G54 microprocessor ",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=6.10"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=4.30"
+         }
+      ],
+      "dfp":{
+         "name":"SAMA7G5_DFP",
+         "semverRange":"^1.2.178"
+      },
+      "configurator":{
+         "name":"MCC",
+         "semverRange":">=5.3.7"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"SAMA7G54",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Development Kit",
+            "SAMA7G54 Evaluation Kit"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "BSP",
+         "FLEXCOM",
+		 "SDMMC",
+         "DBGU"
+      ],
+      "keywords":[
+            "Harmony",
+			"MCC",
+            "SDMMC",
+            "Getting Started",
+            "LED",
+            "GPIO",
+            "Evaluation Kit",
+            "UART",
+            "MPLAB X",
+			"Ethernet",
+			"FLEXCOM",
+			"TCP/IP",
+			"Temperature",
+			"Click Board",
+			"TCP Server",
+			"Server",
+			"DHCP",
+			"TCP",
+			"Configurator"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
+}
