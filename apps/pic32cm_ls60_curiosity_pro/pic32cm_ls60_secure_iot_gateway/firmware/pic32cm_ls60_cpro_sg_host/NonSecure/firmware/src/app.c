@@ -58,7 +58,7 @@
 #include "../src/common/cloud_wifi_config.h"
 #include "IoT_Sensor_Node_config.h"
 #include "cryptoauthlib.h"
-#include "credentials_sotrage.h"
+#include "credentials_storage.h"
 
 extern void sys_cmd_init();
 extern void WiFi_ProvisionCb(uint8_t sectype, uint8_t * SSID, uint8_t * password);

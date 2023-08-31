@@ -36,14 +36,14 @@
 #include <stdint.h>
 #include <stddef.h>
 #include "drv/driver/m2m_ssl.h"
-#include "../../../../project_config.h"
+#include "project_config.h"
 
 
 
 #define WLAN_AUTH_WPA_PSK
 
 #if defined(CLOUD_CONFIG_AWS)
-#include "../../../../aws_connect.h"
+#include "aws_connect.h"
 #define SSL_CIPHER_SUITE_SELECTION           SSL_ECC_ONLY_CIPHERS
 #else
      #error Project Configuration is not selected correctly. cloud_connect \

@@ -38,7 +38,7 @@
 #include "ecc_types.h"
 #include <string.h>
 #include "debug_print.h"
-#include "../credentials_sotrage.h"
+#include <credentials_storage.h>
 
 extern bool SensorDataRec;
 extern uint32_t wifi_cli;

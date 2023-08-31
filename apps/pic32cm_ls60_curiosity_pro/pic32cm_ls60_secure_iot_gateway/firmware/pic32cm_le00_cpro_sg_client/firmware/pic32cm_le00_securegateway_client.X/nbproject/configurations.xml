@@ -357,7 +357,6 @@
             <itemPath>../src/config/pic32cm_le00/system/system.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/pic32cm_le00/definitions.h</itemPath>
-          <itemPath>../src/config/pic32cm_le00/PIC32CM5164LE00100.ld</itemPath>
           <itemPath>../src/config/pic32cm_le00/device_vectors.h</itemPath>
           <itemPath>../src/config/pic32cm_le00/user.h</itemPath>
           <itemPath>../src/config/pic32cm_le00/configuration.h</itemPath>
@@ -482,8 +481,9 @@
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="pic321e_oled"
-                       displayName="pic321e_oled"
+                       displayName="pic32cm_le00"
                        projectFiles="true">
+          <itemPath>../src/config/pic32cm_le00/PIC32CM5164LE00100.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -935,14 +935,14 @@
         <targetDevice>PIC32CM5164LE00100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CM-LE_DFP" vendor="Microchip" version="1.1.162"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="PIC32CM-LE_DFP" vendor="Microchip" version="1.1.162"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -980,7 +980,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic321e_oled;../src/config/pic321e_oled/library/cryptoauthlib;../src/config/pic321e_oled/library/cryptoauthlib/crypto;../src/config/pic321e_oled/library/cryptoauthlib/pkcs11;../src/config/pic32cm_le00;../src/config/pic32cm_le00/library/cryptoauthlib;../src/config/pic32cm_le00/library/cryptoauthlib/crypto;../src/config/pic32cm_le00/library/cryptoauthlib/pkcs11;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LE00100_DFP"/>
+                  value="../src;../src/config/pic32cm_le00;../src/config/pic32cm_le00/library/cryptoauthlib;../src/config/pic32cm_le00/library/cryptoauthlib/crypto;../src/config/pic32cm_le00/library/cryptoauthlib/pkcs11;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LE00100_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1078,7 +1078,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic321e_oled;../src/config/pic32cm_le00;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LE00100_DFP"/>
+                  value="../src;../src/config/pic32cm_le00;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LE00100_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1119,6 +1119,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -1172,6 +1174,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"

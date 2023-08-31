@@ -27,8 +27,7 @@
 #include <string.h>
 #include <string.h>
 #include <stdlib.h>
-//#include "credentials_storage.h"
-#include "../src/credentials_sotrage.h"
+#include <credentials_storage.h>
 
 char ssid[MAX_WIFI_CREDENTIALS_LENGTH];
 char pass[MAX_WIFI_CREDENTIALS_LENGTH];

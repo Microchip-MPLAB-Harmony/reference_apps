@@ -42,7 +42,7 @@
 #include "m2m_wifi.h"
 #include "cryptoauthlib.h"
 //#include "../src/crypto_client.h"
-#include "../src/credentials_sotrage.h"
+#include <credentials_storage.h>
 #include "cloud_status.h"
 
 #define MAX_PUB_KEY_LEN         200

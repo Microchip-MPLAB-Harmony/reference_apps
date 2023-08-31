@@ -545,7 +545,9 @@
       <itemPath>../src/app_transfer.h</itemPath>
       <itemPath>../src/authentication.h</itemPath>
       <itemPath>../src/debug_print.h</itemPath>
-      <itemPath>../src/credentials_sotrage.h</itemPath>
+      <itemPath>../../../aws_connect.h</itemPath>
+      <itemPath>../../../project_config.h</itemPath>
+      <itemPath>../src/credentials_storage.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -1176,7 +1178,6 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32cm_ls60/pin_configurations.csv</itemPath>
       <itemPath>../src/config/pic32cm_ls60/harmony-manifest-success.yml</itemPath>
-      <itemPath>pic32cmls60_securegateway_host_NonSecure.mc3</itemPath>
       <itemPath>pic32cmls60_sg_host_NonSecure.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -1197,8 +1198,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
         <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1275,7 +1276,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../../../../00_resource_generation;../src;../src/config/pic32cm_ls60;../src/config/pic32cm_ls60/driver/winc/include/;../src/config/pic32cm_ls60/driver/winc/include/dev;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp/include;../src/config/pic32cm_ls60/driver/winc/include/drv/common;../src/config/pic32cm_ls60/driver/winc/include/drv/driver;../src/config/pic32cm_ls60/driver/winc/include/drv/socket;../src/config/pic32cm_ls60/driver/winc/include/drv/spi_flash;../src/config/pic32cm_ls60/library/cryptoauthlib;../src/config/pic32cm_ls60/library/cryptoauthlib/crypto;../src/config/pic32cm_ls60/library/cryptoauthlib/pkcs11;../src/config/pic32cm_ls60/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS60100_DFP;..\..\..\;..\src\click_routines\oled_c;..\src\common;..\src\common\paho_mqtt_embedded_c;..\src\common\paho_mqtt_embedded_c\MQTTClient-C;..\src\common\paho_mqtt_embedded_c\MQTTPacket;..\src\common\paho_mqtt_embedded_c\platform;..\src\common\parson_json;..\src\common\utilities"/>
+                  value="../src;../src/config/pic32cm_ls60;../src/config/pic32cm_ls60/driver/winc/include/;../src/config/pic32cm_ls60/driver/winc/include/dev;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp/include;../src/config/pic32cm_ls60/driver/winc/include/drv/common;../src/config/pic32cm_ls60/driver/winc/include/drv/driver;../src/config/pic32cm_ls60/driver/winc/include/drv/socket;../src/config/pic32cm_ls60/driver/winc/include/drv/spi_flash;../src/config/pic32cm_ls60/library/cryptoauthlib;../src/config/pic32cm_ls60/library/cryptoauthlib/crypto;../src/config/pic32cm_ls60/library/cryptoauthlib/pkcs11;../src/config/pic32cm_ls60/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS60100_DFP;..\..\..\;..\src\click_routines\oled_c;..\src\common;..\src\common\paho_mqtt_embedded_c;..\src\common\paho_mqtt_embedded_c\MQTTClient-C;..\src\common\paho_mqtt_embedded_c\MQTTPacket;..\src\common\paho_mqtt_embedded_c\platform;..\src\common\parson_json;..\src\common\utilities"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

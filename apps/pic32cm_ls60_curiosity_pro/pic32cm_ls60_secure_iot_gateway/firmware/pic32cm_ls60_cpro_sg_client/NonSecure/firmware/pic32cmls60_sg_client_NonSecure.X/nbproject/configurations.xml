@@ -750,7 +750,6 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>pic32cmls60_securegateway_client_NonSecure.mc3</itemPath>
       <itemPath>pic32cmls60_sg_client_NonSecure.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -767,12 +766,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.2.274"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
