@@ -411,6 +411,13 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../../../Secure/firmware/src/config/pic32cm_ls60/device.h</itemPath>
+      <itemPath>../src/IoT_Sensor_Node_config.h</itemPath>
+      <itemPath>../src/cloud_status.h</itemPath>
+      <itemPath>../src/credentials_storage.h</itemPath>
+      <itemPath>../src/crypto_client.h</itemPath>
+      <itemPath>../src/debug_print.h</itemPath>
+      <itemPath>../../../../aws_connect.h</itemPath>
+      <itemPath>../../../../project_config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -756,6 +763,10 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/config/pic32cm_ls60/pin_configurations.csv</itemPath>
+      <itemPath>../src/credentials_storage.c</itemPath>
+      <itemPath>../src/crypto_client.c</itemPath>
+      <itemPath>../src/debug_print.c</itemPath>
+      <itemPath>../src/iot_cli.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -790,18 +801,9 @@
       <itemPath>../src/config/pic32cm_ls60/harmony-manifest-success.yml</itemPath>
       <itemPath>aws_iot_core_pic32cm_ls60_cpro_NonSecure.mc3</itemPath>
     </logicalFolder>
-    <itemPath>../src/credentials_sotrage.h</itemPath>
-    <itemPath>../src/credentials_storage.c</itemPath>
-    <itemPath>../src/iot_cli.c</itemPath>
-    <itemPath>../src/cloud_status.h</itemPath>
-    <itemPath>../src/crypto_client.h</itemPath>
-    <itemPath>../src/debug_print.c</itemPath>
-    <itemPath>../src/debug_print.h</itemPath>
-    <itemPath>../src/IoT_Sensor_Node_config.h</itemPath>
-    <itemPath>../src/crypto_client.c</itemPath>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../src</Elem>
+    <Elem>../../../..</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -811,14 +813,14 @@
         <targetDevice>PIC32CM5164LS60100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -856,7 +858,7 @@
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
-        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../hex &amp;&amp; cp ${ProjectDir}/"dist\pic32cm_ls60\production\pic32cm_ls60_cpro_NonSecure.X.production.unified.hex" ${ProjectDir}/../../../../hex/ &amp;&amp; cp ${ProjectDir}/*.lib ${ProjectDir}/../../../../hex/</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
@@ -895,7 +897,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../../../../00_resource_generation;../../../../firmware/src/common;../src;../src/common/paho_mqtt_embedded_c/MQTTClient-C;../src/common/paho_mqtt_embedded_c/MQTTPacket;../src/common/paho_mqtt_embedded_c/platform;../src/common/parson_json;../src/common/utilities;../src/config/pic32cm_ls60;../src/config/pic32cm_ls60/driver/winc/include/;../src/config/pic32cm_ls60/driver/winc/include/dev;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp/include;../src/config/pic32cm_ls60/driver/winc/include/drv/common;../src/config/pic32cm_ls60/driver/winc/include/drv/driver;../src/config/pic32cm_ls60/driver/winc/include/drv/socket;../src/config/pic32cm_ls60/driver/winc/include/drv/spi_flash;../src/config/pic32cm_ls60/library/cryptoauthlib;../src/config/pic32cm_ls60/library/cryptoauthlib/crypto;../src/config/pic32cm_ls60/library/cryptoauthlib/pkcs11;../src/config/pic32cm_ls60/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS60100_DFP"/>
+                  value="../../../../firmware/src/common;../src;../src/common/paho_mqtt_embedded_c/MQTTClient-C;../src/common/paho_mqtt_embedded_c/MQTTPacket;../src/common/paho_mqtt_embedded_c/platform;../src/common/parson_json;../src/common/utilities;../src/config/pic32cm_ls60;../src/config/pic32cm_ls60/driver/winc/include/;../src/config/pic32cm_ls60/driver/winc/include/dev;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp/include;../src/config/pic32cm_ls60/driver/winc/include/drv/common;../src/config/pic32cm_ls60/driver/winc/include/drv/driver;../src/config/pic32cm_ls60/driver/winc/include/drv/socket;../src/config/pic32cm_ls60/driver/winc/include/drv/spi_flash;../src/config/pic32cm_ls60/library/cryptoauthlib;../src/config/pic32cm_ls60/library/cryptoauthlib/crypto;../src/config/pic32cm_ls60/library/cryptoauthlib/pkcs11;../src/config/pic32cm_ls60/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS60100_DFP;..\..\..\..\"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

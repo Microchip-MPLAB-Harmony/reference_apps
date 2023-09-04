@@ -15,7 +15,7 @@
                 <make-dep-project>../../../Secure/firmware/pic32cm_ls60_cpro_Secure.X</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
-                <sourceRootElem>../src</sourceRootElem>
+                <sourceRootElem>../../../..</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

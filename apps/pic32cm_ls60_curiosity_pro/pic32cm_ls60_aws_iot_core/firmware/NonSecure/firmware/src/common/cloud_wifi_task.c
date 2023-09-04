@@ -37,7 +37,7 @@
 #include <stdint.h>
 #include "ecc_types.h"
 #include "debug_print.h"
-#include "../credentials_sotrage.h"
+#include "credentials_storage.h"
 
 #define MQTT_BUFFER_SIZE            (1024)
 #define MQTT_COMMAND_TIMEOUT_MS     (400)

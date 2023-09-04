@@ -41,8 +41,8 @@
 #include "debug_print.h"
 #include "m2m_wifi.h"
 #include "cryptoauthlib.h"
-#include "../src/crypto_client.h"
-#include "../src/credentials_sotrage.h"
+#include "crypto_client.h"
+#include "credentials_storage.h"
 #include "cloud_status.h"
 
 #define MAX_PUB_KEY_LEN         200
@@ -237,8 +237,7 @@ static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
         {
            g_cloud_wifi_state = CLOUD_STATE_CLOUD_DISCONNECT;
         }else{        
-		//wifi_disconnectFromAp();
-        //m2m_wifi_disconnect(); >
+		
         g_cloud_wifi_state = CLOUD_STATE_WIFI_DISCONNECT;
         ssidReceived = 1;
         }

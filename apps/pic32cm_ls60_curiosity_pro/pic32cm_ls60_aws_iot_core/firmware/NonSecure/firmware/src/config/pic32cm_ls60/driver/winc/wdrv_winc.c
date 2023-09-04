@@ -12,28 +12,28 @@
  *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*******************************************************************************
-* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
-*
-* Subject to your compliance with these terms, you may use Microchip software
-* and any derivatives exclusively with Microchip products. It is your
-* responsibility to comply with third party license terms applicable to your
-* use of third party software (including open source software) that may
-* accompany Microchip software.
-*
-* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-* PARTICULAR PURPOSE.
-*
-* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+/*
+Copyright (C) 2019-22, Microchip Technology Inc., and its subsidiaries. All rights reserved.
+
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
+
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 //DOM-IGNORE-END
 
 // *****************************************************************************
@@ -414,14 +414,13 @@ static TCPIP_MAC_PACKET* _WDRV_WINC_PacketQueueRemove
     ackParam  - Extra parameters.
 
   Returns:
-    false
+    None.
 
   Remarks:
     None.
 
 */
-
-static bool _WDRV_WINC_MACEthernetMsgStackCallback
+static void _WDRV_WINC_MACEthernetMsgStackCallback
 (
     TCPIP_MAC_PACKET *ptrPacket,
     const void *ackParam
@@ -431,7 +430,7 @@ static bool _WDRV_WINC_MACEthernetMsgStackCallback
 
     if ((NULL == ptrPacket) || (NULL == pMac))
     {
-        return false;
+        return;
     }
 
     /* For dynamic packets(non-sticky):
@@ -464,7 +463,7 @@ static bool _WDRV_WINC_MACEthernetMsgStackCallback
         _WDRV_WINC_PacketQueueInsert(&pMac->packetPoolFreeList, ptrPacket);
     }
 
-    return true;
+    return;
 }
 
 //*******************************************************************************
@@ -688,7 +687,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                 /* Scan completed successfully. */
                 pDcpt->pCtrl->scanNumScanResults = pScanDoneInfo->u8NumofCh;
 
-                if (pScanDoneInfo->u8NumofCh > 0)
+                if (pScanDoneInfo->u8NumofCh > 0U)
                 {
                     /* If there are BSS results available, request the first one. */
                     m2m_wifi_req_scan_result(pDcpt->pCtrl->scanIndex);
@@ -725,11 +724,11 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 #endif
 
             memcpy(pDcpt->pCtrl->lastBSSScanInfo.ctx.ssid.name, pScanAPInfo->au8SSID, WDRV_WINC_MAX_SSID_LEN);
-            pDcpt->pCtrl->lastBSSScanInfo.ctx.ssid.length = strlen((const char*)pScanAPInfo->au8SSID);
+            pDcpt->pCtrl->lastBSSScanInfo.ctx.ssid.length = (uint8_t)strnlen((const char*)pScanAPInfo->au8SSID, M2M_MAX_SSID_LEN);
 
             pDcpt->pCtrl->lastBSSScanInfo.rssi        = pScanAPInfo->s8rssi;
-            pDcpt->pCtrl->lastBSSScanInfo.authType    = pScanAPInfo->u8AuthType;
-            pDcpt->pCtrl->lastBSSScanInfo.ctx.channel = pScanAPInfo->u8ch;
+            pDcpt->pCtrl->lastBSSScanInfo.authType    = (WDRV_WINC_AUTH_TYPE)pScanAPInfo->u8AuthType;
+            pDcpt->pCtrl->lastBSSScanInfo.ctx.channel = (WDRV_WINC_CHANNEL_ID)pScanAPInfo->u8ch;
 
             /* Mark BSS scan cache as valid. */
             pDcpt->pCtrl->isBSSScanInfoValid = true;
@@ -740,7 +739,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 
                 /* Notify the user application of the scan results. */
                 findResult = pDcpt->pCtrl->pfBSSFindNotifyCB((DRV_HANDLE)pDcpt,
-                        pDcpt->pCtrl->scanIndex+1, pDcpt->pCtrl->scanNumScanResults, &pDcpt->pCtrl->lastBSSScanInfo);
+                        pDcpt->pCtrl->scanIndex+1U, pDcpt->pCtrl->scanNumScanResults, &pDcpt->pCtrl->lastBSSScanInfo);
 
                 /* Check if the callback requested the next set of results. */
                 if (true == findResult)
@@ -777,7 +776,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                 pDcpt->pCtrl->isConnected = true;
 
 #ifdef WDRV_WINC_NETWORK_MODE_SOCKET
-                if ((false == pDcpt->pCtrl->useDHCP) && (0 != pDcpt->pCtrl->ipAddress))
+                if ((false == pDcpt->pCtrl->useDHCP) && (0U != pDcpt->pCtrl->ipAddress))
                 {
                     pDcpt->pCtrl->haveIPAddress = true;
                 }
@@ -900,7 +899,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             /* Convert from internal M2M time structure to UTC. */
             timeUTC = WDRV_WINC_LocalTimeToUTC(pSysTime);
 
-            if ((0 != timeUTC) && (NULL != pDcpt->pCtrl->pfSystemTimeGetCurrentCB))
+            if ((0U != timeUTC) && (NULL != pDcpt->pCtrl->pfSystemTimeGetCurrentCB))
             {
                 /* Pass time to user application if callback was supplied. */
                 pDcpt->pCtrl->pfSystemTimeGetCurrentCB((DRV_HANDLE)pDcpt, timeUTC);
@@ -924,7 +923,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                         (const tstrM2MProvisionInfo *const)pMsgContent;
 
                 /* Check the SSID length. */
-                targetSSID.length = strlen((const char *)pProvInfo->au8SSID);
+                targetSSID.length = (uint8_t)strnlen((const char *)pProvInfo->au8SSID, M2M_MAX_SSID_LEN);
                 if (targetSSID.length > WDRV_WINC_MAX_SSID_LEN)
                 {
                     break;
@@ -936,7 +935,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
 
                 /* Copy authentication information to local context. Currently
                    only WPA and OPEN are supported. */
-                authCtx.authType = pProvInfo->u8SecType;
+                authCtx.authType = (WDRV_WINC_AUTH_TYPE)pProvInfo->u8SecType;
 
                 if (WDRV_WINC_AUTH_TYPE_WPA_PSK == pProvInfo->u8SecType)
                 {
@@ -948,7 +947,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                 /* Pass information to user application via the callback, the
                    callback is cleared after this operation has completed. */
                 pDcpt->pCtrl->pfProvConnectInfoCB((DRV_HANDLE)pDcpt, &targetSSID,
-                        &authCtx, (M2M_SUCCESS == pProvInfo->u8Status) ? true : false);
+                        &authCtx, (M2M_SUCCESS == (int8_t)pProvInfo->u8Status) ? true : false);
 
                 pDcpt->pCtrl->pfProvConnectInfoCB = NULL;
             }
@@ -964,7 +963,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                     (const tstrM2MConnInfo *const)pMsgContent;
 
             /* Copy and check the SSID length. */
-            pDcpt->pCtrl->assocSSID.length = strlen(pConnInfo->acSSID);
+            pDcpt->pCtrl->assocSSID.length = (uint8_t)strnlen(pConnInfo->acSSID, M2M_MAX_SSID_LEN);
             if (pDcpt->pCtrl->assocSSID.length > WDRV_WINC_MAX_SSID_LEN)
             {
                 break;
@@ -975,7 +974,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
             memcpy(&pDcpt->pCtrl->assocSSID.name, pConnInfo->acSSID, pDcpt->pCtrl->assocSSID.length);
 
             /* Copy the authentication type. */
-            pDcpt->pCtrl->assocAuthType = pConnInfo->u8SecType;
+            pDcpt->pCtrl->assocAuthType = (WDRV_WINC_AUTH_TYPE)pConnInfo->u8SecType;
 
             /* Copy the peer IP and MAC addresses. */
             pDcpt->pCtrl->assocPeerAddress.ipAddress = ( (uint32_t)pConnInfo->au8IPAddr[3] << 24) |
@@ -1034,8 +1033,8 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                 WDRV_WINC_BSSCtxSetDefaults(&bssCtx);
                 WDRV_WINC_BSSCtxSetSSID(&bssCtx,
                                         (uint8_t *const)pWPSInfo->au8SSID,
-                                        strlen((const char *)pWPSInfo->au8SSID));
-                WDRV_WINC_BSSCtxSetChannel(&bssCtx, pWPSInfo->u8Ch);
+                                        (uint8_t)strnlen((const char *)pWPSInfo->au8SSID, M2M_MAX_SSID_LEN));
+                WDRV_WINC_BSSCtxSetChannel(&bssCtx, (WDRV_WINC_CHANNEL_ID)pWPSInfo->u8Ch);
 
                 /* Initialise the authentication context. */
                 switch (pWPSInfo->u8AuthType)
@@ -1050,7 +1049,7 @@ static void _WDRV_WINC_WifiCallback(uint8_t msgType, const void *const pMsgConte
                     {
                         WDRV_WINC_AuthCtxSetWPA(&authCtx,
                                                 (uint8_t *const)pWPSInfo->au8PSK,
-                                                strlen((const char *)pWPSInfo->au8PSK));
+                                                (uint8_t)strnlen((const char *)pWPSInfo->au8PSK, M2M_MAX_PSK_LEN));
                         break;
                     }
 
@@ -1332,7 +1331,7 @@ static void _WDRV_WINC_SSLCallback(uint8_t msgType, void *pMsgContent)
                 break;
             }
 
-            reqType                 = pECCReqInfo->u16REQ;
+            reqType                 = (WINC_WDRV_ECC_REQ_TYPE)pECCReqInfo->u16REQ;
             handshakeData.data[0]   = pECCReqInfo->u32UserData;
             handshakeData.data[1]   = pECCReqInfo->u32SeqNo;
 
@@ -1541,10 +1540,13 @@ static void _WDRV_WINC_HostFileReadHIFCallback
             {
                 if (pHostFileDcpt->bufferSpace < sizeRemain)
                 {
-                    memcpy(pHostFileDcpt->pBuffer, pBuffer, pHostFileDcpt->bufferSpace);
+                    if (pHostFileDcpt->bufferSpace > 0)
+                    {
+                        memcpy(pHostFileDcpt->pBuffer, pBuffer, pHostFileDcpt->bufferSpace);
 
-                    pBuffer    += pHostFileDcpt->bufferSpace;
-                    sizeRemain -= pHostFileDcpt->bufferSpace;
+                        pBuffer    += pHostFileDcpt->bufferSpace;
+                        sizeRemain -= pHostFileDcpt->bufferSpace;
+                    }
 
                     pHostFileDcpt->pBuffer     = NULL;
                     pHostFileDcpt->bufferSpace = 0;
@@ -1561,14 +1563,14 @@ static void _WDRV_WINC_HostFileReadHIFCallback
                         {
                             return;
                         }
+                    }
 
-                        if ((NULL == pHostFileDcpt->pBuffer) || (0 == pHostFileDcpt->bufferSpace))
-                        {
-                            pHostFileDcpt->remain = 0;
-                            size = 0;
+                    if ((NULL == pHostFileDcpt->pBuffer) || (0U == pHostFileDcpt->bufferSpace))
+                    {
+                        pHostFileDcpt->remain = 0;
+                        size = 0;
 
-                            break;
-                        }
+                        break;
                     }
                 }
                 else
@@ -1585,7 +1587,7 @@ static void _WDRV_WINC_HostFileReadHIFCallback
             pHostFileDcpt->remain  -= size;
             pHostFileDcpt->offset  += size;
 
-            if (pHostFileDcpt->remain > 0)
+            if (pHostFileDcpt->remain > 0U)
             {
                 OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
 
@@ -1608,7 +1610,7 @@ static void _WDRV_WINC_HostFileReadHIFCallback
         else
         {
             OSAL_SEM_Post(&pHostFileDcpt->hfdSemaphore);
-            status = OTA_STATUS_FAIL;
+            status = (uint8_t)OTA_STATUS_FAIL;
         }
     }
     else
@@ -1819,9 +1821,9 @@ SYS_MODULE_OBJ WDRV_WINC_Initialize
         pfWINCDebugPrintCb = NULL;
 #endif
 
-        wincCtrlDescriptor.intent               = 0;
+        wincCtrlDescriptor.intent               = DRV_IO_INTENT_READ;
         wincCtrlDescriptor.userHandle           = 0;
-        wincCtrlDescriptor.extSysStat           = SYS_STATUS_UNINITIALIZED;
+        wincCtrlDescriptor.extSysStat           = (WDRV_WINC_SYS_STATUS)SYS_STATUS_UNINITIALIZED;
         wincCtrlDescriptor.drvSemaphoresCreated = false;
 
         if (NULL != pInitData)
@@ -2065,15 +2067,15 @@ WDRV_WINC_SYS_STATUS WDRV_WINC_StatusExt(SYS_MODULE_OBJ object)
 
     if ((SYS_MODULE_OBJ_INVALID == object) || (NULL == pDcpt))
     {
-        return SYS_STATUS_ERROR;
+        return (WDRV_WINC_SYS_STATUS)SYS_STATUS_ERROR;
     }
 
     if (NULL == pDcpt->pCtrl)
     {
-        return SYS_STATUS_ERROR;
+        return (WDRV_WINC_SYS_STATUS)SYS_STATUS_ERROR;
     }
 
-    if (pDcpt->pCtrl->extSysStat != 0)
+    if (pDcpt->pCtrl->extSysStat != (WDRV_WINC_SYS_STATUS)SYS_STATUS_UNINITIALIZED)
     {
         return pDcpt->pCtrl->extSysStat;
     }
@@ -2195,8 +2197,8 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
                     pDcpt->pCtrl->drvSemaphoresCreated = false;
                 }
 
-                pDcpt->pCtrl->intent     = 0;
-                pDcpt->pCtrl->extSysStat = 0;
+                pDcpt->pCtrl->intent     = DRV_IO_INTENT_READ;
+                pDcpt->pCtrl->extSysStat = (WDRV_WINC_SYS_STATUS)SYS_STATUS_UNINITIALIZED;
 #ifdef WDRV_WINC_DEVICE_WINC3400
                 pDcpt->pCtrl->isBLEInitStarted = false;
 #endif
@@ -2292,10 +2294,10 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 #endif
             chipId >>= 16;
 #ifdef WDRV_WINC_DEVICE_WINC1500
-            if (chipId != 0x15)
+            if (chipId != 0x15U)
 #endif
 #ifdef WDRV_WINC_DEVICE_WINC3400
-            if (chipId != 0x34)
+            if (chipId != 0x34U)
 #endif
             {
                 pDcpt->pCtrl->extSysStat = WDRV_WINC_SYS_STATUS_ERROR_DEVICE_NOT_FOUND;
@@ -2529,7 +2531,7 @@ DRV_HANDLE WDRV_WINC_Open(const SYS_MODULE_INDEX index, const DRV_IO_INTENT inte
     /* Check if the driver has already been opened. */
     if (true == pDcpt->isOpen)
     {
-        if ((0 == index) && (pDcpt->pCtrl->intent != intent))
+        if ((0U == index) && (pDcpt->pCtrl->intent != intent))
         {
             return DRV_HANDLE_INVALID;
         }
@@ -3759,7 +3761,7 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDeviceMACAddressGet(DRV_HANDLE handle,
             return WDRV_WINC_STATUS_REQUEST_ERROR;
         }
 
-        if (0 == isValid)
+        if (0U == isValid)
         {
             return WDRV_WINC_STATUS_REQUEST_ERROR;
         }
@@ -3817,7 +3819,7 @@ WDRV_WINC_STATUS WDRV_WINC_InfoDeviceNameSet
     }
 
     /* Pass the device name to the WINC device. */
-    if (M2M_SUCCESS != m2m_wifi_set_device_name((uint8_t*)pDeviceName, strlen(pDeviceName)))
+    if (M2M_SUCCESS != m2m_wifi_set_device_name((uint8_t*)pDeviceName, (uint8_t)strnlen(pDeviceName, M2M_DEVICE_NAME_MAX)))
     {
         return WDRV_WINC_STATUS_REQUEST_ERROR;
     }
