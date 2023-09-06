@@ -50,6 +50,6 @@
 #define NONSECURE_ENTRY_H_
 
 /* Non-secure callable functions */
-extern int secure_add(int x, int y);
+extern int secureAppEntry(void);
 
 #endif /* NONSECURE_ENTRY_H_ */

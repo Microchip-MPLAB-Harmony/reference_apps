@@ -37,7 +37,7 @@
     TERMS.
 */
 // DOM-IGNORE-END
-#include "definitions.h"      
+#include "definitions.h"
 #include "debug_print.h"
 #include "m2m_wifi.h"
 #include "cryptoauthlib.h"
@@ -60,7 +60,7 @@ const char * const firmware_version_number        = "1.0.0";
 static char *ateccsn = NULL;
 void WiFi_ProvisionCb(uint8_t sectype, uint8_t * SSID, uint8_t * password);
 static void CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
-static void reconnect_cmd(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);  
+static void reconnect_cmd(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void get_public_key(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void get_device_id(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
@@ -68,7 +68,7 @@ static void get_cli_version(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void get_firmware_version(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void set_debug_level(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 
-#define         LINE_TERM       "\r\n"  
+#define         LINE_TERM       "\r\n"
 static const SYS_CMD_DESCRIPTOR    usercmd1[]=
 {
     {"reset_mcu",       CommandReset,           ": Reset MCU"},
@@ -138,7 +138,7 @@ static void get_device_id(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     else
     {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " Unknown.\r\n" );
-    }    
+    }
 }
 
 static void get_cli_version(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
@@ -158,7 +158,6 @@ static void get_firmware_version(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** a
 static void set_debug_level(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
-     //debug_severity_t level = SEVERITY_NONE;
      uint8_t level = 0;
     (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " Set Debug Level\r\n" );
     (*pCmdIO->pCmdApi->print)(cmdIoParam, argv[1]);
@@ -181,11 +180,9 @@ static void CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 
 static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
-//    const void* cmdIoParam = pCmdIO->cmdIoParam;
     char *credentials[3];
-//    char *pch;
     uint8_t params = 0;
-	uint8_t i,j;
+    uint8_t i,j;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
     char dummy_ssid[100];
     uint8_t dummy_argc = 0;
@@ -194,59 +191,59 @@ static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     if(argc >4 )
     {
         for(j=1;j<=(argc-3);j++){
-          sprintf(&dummy_ssid[dummy_argc],"%s ",argv[j]); 
+          sprintf(&dummy_ssid[dummy_argc],"%s ",argv[j]);
           dummy_argc += strlen(argv[j])+1;
         }
         credentials[0] = dummy_ssid;
         credentials[1] = argv[argc - 2];
         credentials[2] = argv[argc - 1];
         params = atoi(credentials[2]);
-        
+
     }else{
         credentials[0] = argv[1];
         credentials[1] = argv[2];
         credentials[2] = argv[3];
         params = atoi(credentials[2]);
     }
-  
+
     switch (params)
     {
         case WIFI_PARAMS_OPEN:
                 strncpy(ssid, credentials[0],MAX_WIFI_CREDENTIALS_LENGTH-1);
                 strcpy(pass, "\0");
-                strcpy(authType, "1");                
+                strcpy(authType, "1");
             break;
 
         case WIFI_PARAMS_PSK:
-		case WIFI_PARAMS_WEP:
+        case WIFI_PARAMS_WEP:
                 strncpy(ssid, credentials[0],MAX_WIFI_CREDENTIALS_LENGTH-1);
                 strncpy(pass, credentials[1],MAX_WIFI_CREDENTIALS_LENGTH-1);
-                sprintf(authType, "%d", params);                
+                sprintf(authType, "%d", params);
             break;
-            
+
         default:
-			params = 0;
+            params = 0;
             break;
     }
-	if (params)
-	{
+    if (params)
+    {
         mode = 2; //new credentials received
-		(*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "OK\r\n\4" );
-        
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "OK\r\n\4" );
+
         if( g_cloud_wifi_state >= CLOUD_STATE_CLOUD_CONNECTED )
         {
            g_cloud_wifi_state = CLOUD_STATE_CLOUD_DISCONNECT;
-        }else{        
-		
+        }else{
+
         g_cloud_wifi_state = CLOUD_STATE_WIFI_DISCONNECT;
         ssidReceived = 1;
         }
-        
-	}
-	else
-	{
+
+    }
+    else
+    {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "Error. Wi-Fi command format is wifi <ssid>[,<pass>,[authType]]\r\n\4" );
-	}
+    }
 }
 
 static void reconnect_cmd(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)

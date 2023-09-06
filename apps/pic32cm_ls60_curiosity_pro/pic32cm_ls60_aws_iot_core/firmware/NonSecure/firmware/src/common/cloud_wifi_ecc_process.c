@@ -31,8 +31,6 @@
 
 #include "cloud_wifi_config.h"
 
-//#ifndef CLOUD_CONFIG_GCP
-
 #include "cloud_wifi_ecc_process.h"
 #include "drv/driver/m2m_ssl.h"
 #include <stdio.h>
@@ -46,14 +44,9 @@
 #include "drv/driver/m2m_types.h"
 #include "drv/driver/m2m_wifi.h"
 #include "../drv/common/nm_common.h"
-////#ifdef CLOUD_CONNECT_WITH_MCHP_CERTS
 #include "tng/tng_atcacert_client.h"
 #include "tng/tng_atca.h"
 #include "tng/tngtls_cert_def_1_signer.h"
-//#else
-//#include "../../../../../../cust_def_device.h"
-//#include "../../../../../../cust_def_signer.h"
-//#endif
 
 static uint16_t g_ecdh_key_slot[] = { 2 };
 //! Index into the ECDH private key slots array
@@ -392,9 +385,6 @@ int8_t ecc_transfer_certificates()
     int atca_status = ATCACERT_E_SUCCESS;
     uint8_t *signer_cert = NULL;
     size_t signer_cert_size;
-//#ifdef CLOUD_CONNECT_WITH_CUSTOM_CERTS
-//    uint8_t signer_public_key[SIGNER_PUBLIC_KEY_MAX_LEN];
-//#endif
     uint8_t *device_cert = NULL;
     size_t device_cert_size;
     uint8_t cert_sn[CERT_SN_MAX_LEN];
@@ -422,47 +412,7 @@ int8_t ecc_transfer_certificates()
         device_cert_filename = (char*)&file_list[0];
         signer_cert_filename = (char*)&file_list[TLS_FILE_NAME_MAX];
 
-//    #ifdef CLOUD_CONNECT_WITH_CUSTOM_CERTS
-        // Uncompress the signer certificate from the ATECCx08A device
-//        signer_cert_size = SIGNER_CERT_MAX_LEN;
-//        if(ATCACERT_E_SUCCESS != (atca_status = atcacert_read_cert(&g_cert_def_1_signer, g_cert_ca_public_key_1_signer,
-//                                        signer_cert, &signer_cert_size)))
-//        {
-//            break;
-//        }
-//        pem_cert_size = sizeof(pem_cert);
-//        atcacert_encode_pem_cert(signer_cert, signer_cert_size, pem_cert, &pem_cert_size);
-//        APP_DebugPrintf("Signer Cert : \r\n%s\r\n", pem_cert);
-//
-//        // Get the signer's public key from its certificate
-//        if(ATCACERT_E_SUCCESS != (atca_status = atcacert_get_subj_public_key(&g_cert_def_1_signer, signer_cert,
-//                                        signer_cert_size, signer_public_key)))
-//        {
-//            break;
-//        }
-//
-//        // Uncompress the device certificate from the ATECCx08A device.
-//        device_cert_size = DEVICE_CERT_MAX_LEN;
-//        if(ATCACERT_E_SUCCESS != (atca_status = atcacert_read_cert(&g_cert_def_3_device, signer_public_key,
-//                                        device_cert, &device_cert_size)))
-//        {
-//            break;
-//        }
-//        pem_cert_size = sizeof(pem_cert);
-//        atcacert_encode_pem_cert(device_cert, device_cert_size, pem_cert, &pem_cert_size);
-//        APP_DebugPrintf("Device Cert : \r\n%s\r\n", pem_cert);
-//
-//        if(ATCACERT_E_SUCCESS != (atca_status = atcacert_get_subj_key_id(&g_cert_def_3_device, device_cert,
-//                                        device_cert_size, subject_key_id)))
-//        {
-//            // Break the do/while loop
-//            break;
-//        }
-//
-//        signer_cert_def = &g_cert_def_1_signer;
-//        device_cert_def = &g_cert_def_3_device;
-//    #else
-         //Uncompress the signer certificate from the ATECCx08A device
+        //Uncompress the signer certificate from the ATECCx08A device
         if(ATCACERT_E_SUCCESS != (atca_status = tng_atcacert_max_signer_cert_size(&signer_cert_size)))
         {
             break;
@@ -474,7 +424,6 @@ int8_t ecc_transfer_certificates()
         }
         pem_cert_size = sizeof(pem_cert);
         atcacert_encode_pem_cert(signer_cert, signer_cert_size, pem_cert, &pem_cert_size);
-        //APP_DebugPrintf("Signer Cert : \r\n%s\r\n", pem_cert);
 
         // Uncompress the device certificate from the ATECCx08A device.
         if(ATCACERT_E_SUCCESS != (atca_status = tng_atcacert_max_device_cert_size(&device_cert_size)))
@@ -487,14 +436,12 @@ int8_t ecc_transfer_certificates()
         }
         pem_cert_size = sizeof(pem_cert);
         atcacert_encode_pem_cert(device_cert, device_cert_size, pem_cert, &pem_cert_size);
-        //APP_DebugPrintf("Device Cert : \r\n%s\r\n", pem_cert);
 
         signer_cert_def = &g_tngtls_cert_def_1_signer;
         if(ATCA_SUCCESS != (atca_status = tng_get_device_cert_def(&device_cert_def)))
         {
             break;
         }
-//    #endif
 
         // Get the device certificate SN for the filename
         cert_sn_size = sizeof(cert_sn);
@@ -613,4 +560,3 @@ int8_t transfer_ecc_certs_to_winc(void)
 
     return ret_value;
 }
-//#endif

@@ -57,10 +57,13 @@
 #include "debug_print.h"
 #include "../src/common/cloud_wifi_config.h"
 #include "IoT_Sensor_Node_config.h"
+
+#define APP_PRINT_BUFFER_SIZ    2048
+
 void APP_ExampleInitialize(DRV_HANDLE handle);
 void APP_ExampleTasks(DRV_HANDLE handle);
+
 extern void sys_cmd_init();
-#define APP_PRINT_BUFFER_SIZ    2048
 
 
 // *****************************************************************************
@@ -70,12 +73,12 @@ extern void sys_cmd_init();
 // *****************************************************************************/
 
 static DRV_HANDLE wdrvHandle;
-
 static char printBuff[APP_PRINT_BUFFER_SIZ] __attribute__((aligned(4)));
 static int printBuffPtr;
 static OSAL_MUTEX_HANDLE_TYPE consoleMutex;
 void WiFi_ProvisionCb(uint8_t sectype, uint8_t * SSID, uint8_t * password);
 char config_thing_id[130] =  "BAAAAADD1DBAAADD1D";
+
 // *****************************************************************************
 /* Application Data
 
@@ -90,8 +93,8 @@ char config_thing_id[130] =  "BAAAAADD1DBAAADD1D";
 
     Application strings and buffers are be defined outside this structure.
 */
-
 APP_DATA appData;
+
 void set_deviceId(char *id);
 // *****************************************************************************
 // *****************************************************************************
@@ -201,27 +204,25 @@ void APP_Initialize(void)
 {
     /* Place the App state machine in its initial state. */
     appData.state = APP_STATE_INIT;
+
     config_set_thing_id();
-    
-    #ifdef CFG_ENABLE_CLI     
+
+    #ifdef CFG_ENABLE_CLI
         set_deviceId(config_thing_id);
-    #endif   
+    #endif
         debug_init(config_thing_id);
-    //printBuffPtr = 0;
-    //OSAL_MUTEX_Create(&consoleMutex);
-    
+
     debug_printInfo("App Initialize");
-  //  WiFi_ProvisionCb(2,(uint8_t *)WLAN_SSID,(uint8_t *)WLAN_PSK);
+
     WDRV_WINC_DebugRegisterCallback(debug_printf);
-    
-     sys_cmd_init();
-    
+
+    sys_cmd_init();
 }
 
 
 /******************************************************************************
   Function:
-    void APP_Tasks ( void )
+    void APP_GetTempSensorValue ( void )
 
   Remarks:
     See prototype in app.h.
@@ -233,9 +234,9 @@ float APP_GetTempSensorValue(void)
     uint8_t registerAddr = 0x00;
     /* Temp sensor read buffer */
     uint8_t rxBuffer[2];
-    
+
     while (SERCOM5_I2C_IsBusy() == true);
-    if (SERCOM5_I2C_WriteRead(0x004F, (uint8_t *)&registerAddr, 1, (uint8_t *)rxBuffer, 2) == true) {        
+    if (SERCOM5_I2C_WriteRead(0x004F, (uint8_t *)&registerAddr, 1, (uint8_t *)rxBuffer, 2) == true) {
         /* Wait for the I2C transfer to complete */
         while (SERCOM5_I2C_IsBusy() == true);
 
@@ -246,27 +247,11 @@ float APP_GetTempSensorValue(void)
            temp = (temp >> 7) * 0.5;
            temp = (temp * 9/5) + 32;
            retVal = temp;
-        }                   
-    }            
+        }
+    }
     return retVal;
-}        
+}
 
-//int32_t APP_GetLightSensorValue(void)
-//{
-//    uint32_t input_voltage = 0;
-//    int32_t retVal = 0;
-//    uint16_t adc_count = 0;
-//            
-//    //Obtain result from Light sensor 
-//    while(!ADC_ConversionStatusGet());
-//    /* Read the ADC result */
-//    adc_count = ADC_ConversionResultGet();
-//    input_voltage = adc_count * 1650 / 4095U;
-//    //retVal = adc_count; 
-//    retVal = input_voltage;
-//    retVal=((3300 - retVal)*20)/1000;
-//    return retVal;
-//}        
 void APP_Tasks(void)
 {
     switch(appData.state)
@@ -283,14 +268,13 @@ void APP_Tasks(void)
 
         case APP_STATE_WDRV_INIT_READY:
         {
-            
-            
+
+
             wdrvHandle = WDRV_WINC_Open(0, (int)NULL);
 
             if (DRV_HANDLE_INVALID != wdrvHandle)
             {
                 appData.state = APP_STATE_WDRV_OPEN;
-                //APP_ExampleInitialize(wdrvHandle);
             }
             break;
         }

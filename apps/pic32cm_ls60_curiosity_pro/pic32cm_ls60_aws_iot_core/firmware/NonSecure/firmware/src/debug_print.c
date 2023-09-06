@@ -54,17 +54,17 @@ static const char *level_strings[] = {
       CSI_RED             "   BAD" CSI_WHITE,
       CSI_RED CSI_INVERSE " ERROR" CSI_NORMAL CSI_WHITE
 };
- 
+
 static debug_severity_t debug_severity_filter = SEVERITY_NONE;
 static char debug_message_prefix[20] = "<PREFIX>";
 
 void debug_init(const char *prefix)
-{ 
+{
     debug_setPrefix(prefix);
     debug_setSeverity(SEVERITY_DEBUG);
     printBuffPtr = 0;
     OSAL_MUTEX_Create(&consoleMutex);
-    
+
 }
 
 void debug_setSeverity(debug_severity_t debug_level)
@@ -82,7 +82,7 @@ void debug_printer(debug_severity_t debug_severity, debug_errorLevel_t error_lev
     char tmpBuf[APP_PRINT_BUFFER_SIZ];
     size_t len = 0;
     va_list args = {0};
-    
+
     if(debug_severity >= SEVERITY_NONE && debug_severity <= SEVERITY_DEBUG)
     {
         if(debug_severity <= debug_severity_filter)

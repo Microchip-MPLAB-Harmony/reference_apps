@@ -34,9 +34,7 @@
 #include "jwt/atca_jwt.h"
 #include <stdio.h>
 #include "definitions.h"
-//#if defined(CLOUD_CONFIG_AWS) || defined(CLOUD_CONFIG_AZURE)
 #include "cloud_wifi_ecc_process.h"
-//#endif
 
 static char config_thing_id[130];
 
@@ -70,26 +68,7 @@ int config_get_client_id(char* buf, size_t buflen)
     {
         int rv;
 
-//#if defined(CLOUD_CONFIG_GCP)
-//        rv = snprintf(buf, buflen, "projects/%s/locations/%s/registries/%s/devices/d%s",
-//                      config_gcp_project_id, config_gcp_region_id, config_gcp_registry_id, config_thing_id);
-//#elif defined(CLOUD_CONFIG_AWS)
-//    #ifdef CLOUD_CONNECT_WITH_CUSTOM_CERTS
-//        extern uint8_t subject_key_id[20];
-//
-//        for (int i = 0; i < 20; i++)
-//        {
-//            config_thing_id[i * 2 + 0] = "0123456789abcdef"[subject_key_id[i] >> 4];
-//            config_thing_id[i * 2 + 1] = "0123456789abcdef"[subject_key_id[i] & 0x0F];
-//        }
-//        config_thing_id[20 * 2] = 0; // Add terminating null
-//    #endif
         rv = snprintf(buf, buflen, "%s", config_thing_id);
-//#elif defined(CLOUD_CONFIG_AZURE)
-//        rv = snprintf(buf, buflen, "sn%s", config_thing_id);
-//#else
-//    #error "Cloud config should be defined"
-//#endif
 
         if (0 < rv && rv < buflen)
         {
@@ -105,11 +84,8 @@ int config_get_client_username(char* buf, size_t buflen)
 {
     if (buf && buflen)
     {
-//#ifdef CLOUD_CONFIG_AZURE
-//        int rv = snprintf(buf, buflen, "%s/sn%s", CLOUD_ENDPOINT, config_thing_id);
-//#else
         int rv = snprintf(buf, buflen, "unused");
-//#endif
+
         if (0 < rv && rv < buflen)
         {
             buf[rv] = 0;
@@ -124,40 +100,6 @@ int config_get_client_password(char* buf, size_t buflen)
 {
     int rv = -1;
 
-//#ifdef CLOUD_CONFIG_GCP
-//
-//    if (buf && buflen)
-//    {
-//        atca_jwt_t jwt;
-//
-//        uint32_t ts = RTC_Timer32CounterGet();
-//
-//        /* Build the JWT */
-//        rv = atca_jwt_init(&jwt, buf, buflen);
-//        if (ATCA_SUCCESS != rv)
-//        {
-//            return rv;
-//        }
-//
-//        if (ATCA_SUCCESS != (rv = atca_jwt_add_claim_numeric(&jwt, "iat", ts)))
-//        {
-//            return rv;
-//        }
-//
-//        if (ATCA_SUCCESS != (rv = atca_jwt_add_claim_numeric(&jwt, "exp", ts + 86400)))
-//        {
-//            return rv;
-//        }
-//
-//        if (ATCA_SUCCESS != (rv = atca_jwt_add_claim_string(&jwt, "aud", config_gcp_project_id)))
-//        {
-//            return rv;
-//        }
-//
-//        rv = atca_jwt_finalize(&jwt, 0);
-//
-//    }
-//#else
     if (buf && buflen)
     {
         rv = snprintf(buf, buflen, "unused");
@@ -168,10 +110,7 @@ int config_get_client_password(char* buf, size_t buflen)
             return 0;
         }
     }
-//#endif
-
     return rv;
-
 }
 
 /* Get the topic id  where the client will be publishing messages */
@@ -181,13 +120,7 @@ int config_get_client_pub_topic(char* buf, size_t buflen)
 
     if (buf && buflen)
     {
-//#if defined(CLOUD_CONFIG_GCP)
-//        rv = snprintf(buf, buflen, "/devices/d%s/events", config_thing_id);
-//#elif defined(CLOUD_CONFIG_AWS)
         rv = snprintf(buf, buflen, "$aws/things/%s/shadow/update", config_thing_id);
-//#elif defined(CLOUD_CONFIG_AZURE)
-//        rv = snprintf(buf, buflen, "devices/sn%s/messages/events/", config_thing_id);
-//#endif
 
         if (0 < rv && rv < buflen)
         {
@@ -205,14 +138,7 @@ int config_get_client_sub_topic(char* buf, size_t buflen)
 
     if (buf && buflen)
     {
-
-//#if defined(CLOUD_CONFIG_GCP)
-//        rv = snprintf(buf, buflen, "/devices/d%s/commands/#", config_thing_id);
-//#elif defined(CLOUD_CONFIG_AWS)
         rv = snprintf(buf, buflen, "$aws/things/%s/shadow/update/delta", config_thing_id);
-//#elif defined(CLOUD_CONFIG_AZURE)
-//        rv = snprintf(buf, buflen, "devices/sn%s/messages/devicebound/#", config_thing_id);
-//#endif
 
         if (0 < rv && rv < buflen)
         {

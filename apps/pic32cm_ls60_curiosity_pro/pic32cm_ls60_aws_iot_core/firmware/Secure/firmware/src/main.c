@@ -51,7 +51,6 @@ Microchip or any third party.
 #include "definitions.h"                // SYS function prototypes
 
 /* typedef for non-secure callback functions */
-//typedef void (*funcptr_void) (void) __attribute__((cmse_nonsecure_call));
 typedef void (*funcptr_void) (void) __attribute__((cmse_nonsecure_call));
 // *****************************************************************************
 // *****************************************************************************
@@ -59,10 +58,7 @@ typedef void (*funcptr_void) (void) __attribute__((cmse_nonsecure_call));
 // *****************************************************************************
 // *****************************************************************************
 
- int32_t APP_GetLightSensorValue(void);
-
-
- int32_t APP_GetLightSensorValue(void)
+int32_t APP_GetLightSensorValue(void)
 {
     uint32_t input_voltage = 0;
     int32_t retVal = 0;
@@ -77,7 +73,8 @@ typedef void (*funcptr_void) (void) __attribute__((cmse_nonsecure_call));
     retVal = input_voltage;
     retVal=((3300 - retVal)*20)/1000;
     return adc_count;
-} 
+}
+
 int main ( void )
 {
     uint32_t msp_ns = *((uint32_t *)(TZ_START_NS));
@@ -85,7 +82,7 @@ int main ( void )
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-     ADC_Enable(); 
+    ADC_Enable(); 
      
     if (msp_ns != 0xFFFFFFFF)
     {
@@ -101,7 +98,7 @@ int main ( void )
 
     while ( true )
     {
-        
+
     }
 
     /* Execution should not come here during normal operation */

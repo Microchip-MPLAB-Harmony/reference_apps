@@ -55,13 +55,13 @@ int main ( void )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
-        
+
         if (readSensorData == true)
         {
          lightSensorData = secureAppEntry();
          sendToCloud = true;
         }
-       
+
     }
 
     /* Execution should not come here during normal operation */

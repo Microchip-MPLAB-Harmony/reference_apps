@@ -4,6 +4,42 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="common" displayName="common" projectFiles="true">
+        <logicalFolder name="paho_mqtt_embedded_c"
+                       displayName="paho_mqtt_embedded_c"
+                       projectFiles="true">
+          <logicalFolder name="MQTTClient-C"
+                         displayName="MQTTClient-C"
+                         projectFiles="true">
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTClient-C/MQTTClient.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MQTTPacket" displayName="MQTTPacket" projectFiles="true">
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTConnect.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTMessage.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTPublish.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTReturnCodes.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribe.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribe.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="platform" displayName="platform" projectFiles="true">
+            <itemPath>../src/common/paho_mqtt_embedded_c/platform/network_interface.h</itemPath>
+            <itemPath>../src/common/paho_mqtt_embedded_c/platform/timer_interface.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="parson_json" displayName="parson_json" projectFiles="true">
+          <itemPath>../src/common/parson_json/parson.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="utilities" displayName="utilities" projectFiles="true">
+          <itemPath>../src/common/utilities/hex_dump.h</itemPath>
+        </logicalFolder>
+        <itemPath>../src/common/cloud_status.h</itemPath>
+        <itemPath>../src/common/cloud_wifi_config.h</itemPath>
+        <itemPath>../src/common/cloud_wifi_ecc_process.h</itemPath>
+        <itemPath>../src/common/cloud_wifi_task.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32cm_ls60" projectFiles="true">
           <logicalFolder name="f6" displayName="bsp" projectFiles="true">
@@ -412,7 +448,6 @@
       <itemPath>../src/app.h</itemPath>
       <itemPath>../../../Secure/firmware/src/config/pic32cm_ls60/device.h</itemPath>
       <itemPath>../src/IoT_Sensor_Node_config.h</itemPath>
-      <itemPath>../src/cloud_status.h</itemPath>
       <itemPath>../src/credentials_storage.h</itemPath>
       <itemPath>../src/crypto_client.h</itemPath>
       <itemPath>../src/debug_print.h</itemPath>
@@ -439,52 +474,34 @@
                          displayName="MQTTClient-C"
                          projectFiles="true">
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTClient-C/MQTTClient.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTClient-C/MQTTClient.h</itemPath>
           </logicalFolder>
           <logicalFolder name="MQTTPacket" displayName="MQTTPacket" projectFiles="true">
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTConnect.h</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTConnectClient.c</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTConnectServer.c</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTDeserializePublish.c</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.h</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTMessage.h</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTPublish.h</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTReturnCodes.h</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTSerializePublish.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribe.h</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribeClient.c</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribeServer.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribe.h</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribeClient.c</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribeServer.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h</itemPath>
           </logicalFolder>
           <logicalFolder name="platform" displayName="platform" projectFiles="true">
             <itemPath>../src/common/paho_mqtt_embedded_c/platform/network_interface.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/platform/network_interface.h</itemPath>
             <itemPath>../src/common/paho_mqtt_embedded_c/platform/timer_interface.c</itemPath>
-            <itemPath>../src/common/paho_mqtt_embedded_c/platform/timer_interface.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="parson_json" displayName="parson_json" projectFiles="true">
           <itemPath>../src/common/parson_json/parson.c</itemPath>
-          <itemPath>../src/common/parson_json/parson.h</itemPath>
         </logicalFolder>
         <logicalFolder name="utilities" displayName="utilities" projectFiles="true">
           <itemPath>../src/common/utilities/hex_dump.c</itemPath>
-          <itemPath>../src/common/utilities/hex_dump.h</itemPath>
         </logicalFolder>
         <itemPath>../src/common/cloud_status.c</itemPath>
-        <itemPath>../src/common/cloud_status.h</itemPath>
         <itemPath>../src/common/cloud_wifi_config.c</itemPath>
-        <itemPath>../src/common/cloud_wifi_config.h</itemPath>
         <itemPath>../src/common/cloud_wifi_ecc_process.c</itemPath>
-        <itemPath>../src/common/cloud_wifi_ecc_process.h</itemPath>
         <itemPath>../src/common/cloud_wifi_task.c</itemPath>
-        <itemPath>../src/common/cloud_wifi_task.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32cm_ls60" projectFiles="true">
@@ -813,14 +830,14 @@
         <targetDevice>PIC32CM5164LS60100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.2.274"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

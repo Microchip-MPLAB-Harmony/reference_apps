@@ -44,7 +44,7 @@
 #define CSI_CLS     "\33[2J"
 #define CSI_HOME    "\33[1;1H"
 
-typedef enum 
+typedef enum
 {
    SEVERITY_NONE,
    SEVERITY_WARNING,

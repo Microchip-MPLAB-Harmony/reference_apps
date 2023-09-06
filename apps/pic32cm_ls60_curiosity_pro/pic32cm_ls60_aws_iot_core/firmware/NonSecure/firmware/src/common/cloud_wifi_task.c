@@ -89,14 +89,17 @@ void console_print_message(const char *message)
 {
     APP_DebugPrintf("%s\r\n", message);
 }
+
 void console_print_success_message(const char *message)
 {
     APP_DebugPrintf("SUCCESS:  %s\r\n", message);
 }
+
 void console_print_error_message(const char *message)
 {
     APP_DebugPrintf("ERROR:    %s\r\n", message);
 }
+
 void console_print_hex_dump(const void *buffer, size_t length)
 {
     print_hex_dump(buffer, length, true, true, 16);
@@ -126,7 +129,6 @@ static const ErrorInfo g_socket_error_info[] =
     NEW_SOCKET_ERROR(SOCK_ERR_BUFFER_FULL),
 };
 
-
 static const char* get_socket_error_name(int error_code)
 {
     for (size_t i = 0; i < sizeof(g_socket_error_info) / sizeof(g_socket_error_info[0]); i++)
@@ -139,12 +141,9 @@ static const char* get_socket_error_name(int error_code)
     return "UNKNOWN";
 }
 
-
-
 /* This function is called after period expires */
 void Timer_Cloud_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
 {
-
     g_timer_val += 100;
     client_timer_update();
 
@@ -196,7 +195,6 @@ static void socket_callback_handler(SOCKET socket, uint8_t messageType, void *pM
                 {
                     g_wifi_status = WIFI_STATUS_MESSAGE_RECEIVED;
                 }
-                //printf("%s: SOCKET_MSG_RECV %d\r\n", __FUNCTION__, (int)socket_receive_message->s16BufferSize);
             }
             else
             {
@@ -248,7 +246,6 @@ static void socket_callback_handler(SOCKET socket, uint8_t messageType, void *pM
 
 static void cloud_dns_resolve_handler(uint8_t *pu8DomainName, uint32_t u32ServerIP)
 {
-
     int8_t status = SOCK_ERR_INVALID_ARG;
     SOCKET new_socket = SOCK_ERR_INVALID;
     struct sockaddr_in socket_address;
@@ -290,13 +287,8 @@ static void cloud_dns_resolve_handler(uint8_t *pu8DomainName, uint32_t u32Server
                                                                g_host_ip_address[3]));
             socket_address.sin_port        = _htons(CLOUD_PORT);
 
-//        #ifdef CLOUD_CONFIG_GCP
-//            int ssl_caching_enabled = 1;
-//            setsockopt(new_socket, SOL_SSL_SOCKET, SO_SSL_ENABLE_SESSION_CACHING, &ssl_caching_enabled, sizeof(ssl_caching_enabled));
-//        #else
             setsockopt(new_socket, SOL_SSL_SOCKET, SO_SSL_SNI,
                        CLOUD_ENDPOINT, sizeof(CLOUD_PORT) + 1);
-//        #endif
 
             // Connect to the cloud IoT server
             status = connect(new_socket, (struct sockaddr*)&socket_address,
@@ -335,6 +327,7 @@ static void cloud_dns_resolve_handler(uint8_t *pu8DomainName, uint32_t u32Server
     }
 
 }
+
 static void APP_ExampleDHCPAddressEventCallback(DRV_HANDLE handle, uint32_t ipAddress)
 {
     char s[20];
@@ -344,17 +337,14 @@ static void APP_ExampleDHCPAddressEventCallback(DRV_HANDLE handle, uint32_t ipAd
 
 }
 
-
 static void APP_ExampleGetSystemTimeEventCallback(DRV_HANDLE handle, uint32_t time)
 {
-
     if (true == WDRV_WINC_IPLinkActive(handle))
     {
         //debug_printInfo("Time %u \r\n", time);
         RTC_Timer32CounterSet(time);
         RTC_Timer32Start();
     }
-
 }
 
 static void wifi_callback_handler(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE assocHandle, WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode)
@@ -365,7 +355,6 @@ static void wifi_callback_handler(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE asso
     {
         debug_printInfo("Wifi Connected\r\n");
         LED1_Off();
-
     }
     else if (WDRV_WINC_CONN_STATE_DISCONNECTED == currentState)
     {
@@ -411,8 +400,6 @@ int cloud_wifi_read_data(uint8_t *read_buffer, uint32_t read_length, uint32_t ti
 
         g_rx_buffer_location += read_length;
         g_rx_buffer_length -= read_length;
-
-
     }
     else
     {
@@ -455,8 +442,6 @@ int cloud_wifi_read_data(uint8_t *read_buffer, uint32_t read_length, uint32_t ti
                 g_rx_buffer_length -= read_length;
 
             }
-
-
         }
         while ((g_wifi_status != WIFI_STATUS_MESSAGE_RECEIVED));  // && (--timeout > 0));
     }
@@ -473,7 +458,6 @@ int cloud_wifi_send_data(uint8_t *send_buffer, uint32_t send_length, uint32_t ti
     {
         return FAILURE;
     }
-
 
     g_wifi_status = send(g_socket_connection.socket, send_buffer, send_length, 0);
     g_tx_size = send_length;
@@ -493,9 +477,6 @@ int cloud_wifi_send_data(uint8_t *send_buffer, uint32_t send_length, uint32_t ti
         atca_delay_ms(1);
     }
     while ((g_wifi_status != WIFI_STATUS_MESSAGE_SENT));
-
-
-
 
     return (status == SUCCESS) ? (int)send_length : status;
 }
@@ -554,7 +535,6 @@ static void cloud_subscribe_callback(MessageData *data)
         delta_message_value   = json_parse_string((char*)data->message->payload);
         delta_message_object  = json_value_get_object(delta_message_value);
 
-//        #if defined(CLOUD_CONFIG_AWS)
         JSON_Object *led_state_object = NULL;
         led_state_object = json_object_get_object(delta_message_object, "state");
         if (led_state_object == NULL)
@@ -564,12 +544,6 @@ static void cloud_subscribe_callback(MessageData *data)
         }
 
         led_status = json_object_get_string(led_state_object, "led1");
-
-//        #else
-//
-//        led_status = json_object_get_string(delta_message_object, "led1");
-//
-//        #endif
 
         if (led_status != NULL)
         {
@@ -589,11 +563,7 @@ static void cloud_subscribe_callback(MessageData *data)
     // Free allocated memory
     json_value_free(delta_message_value);
 
-//#if defined(CLOUD_CONFIG_AWS)
-    // Report the new LED states
     cloud_publish_message();
-//#endif
-
 }
 
 void cloud_publish_message()
@@ -618,20 +588,14 @@ void cloud_publish_message()
             break;
         }
         
-        STATUS_LED_Toggle();                
-//#if defined(CLOUD_CONFIG_GCP)
-//        uint32_t ts = RTC_Timer32CounterGet();
-//        json_object_dotset_number(update_message_object, "timestamp", ts);
-//        json_object_dotset_string(update_message_object, "Led_Status", ((STATUS_LED_Get()) ? "off" : "on"));
-//#else
+        STATUS_LED_Toggle();
+
         float rawTemperature = APP_GetTempSensorValue();
         json_object_dotset_number(update_message_object, "state.reported.temperature",(rawTemperature));
         if (sendToCloud == true)
         json_object_dotset_number(update_message_object, "state.reported.light", (lightSensorData));
         
   
-//#endif
-
        json_serialize_to_buffer(update_message_value, json_message, sizeof(json_message));
         message.qos      = QOS0;
         message.retained = 0;
@@ -640,9 +604,6 @@ void cloud_publish_message()
 
         message.payload = (void*)json_message;
         message.payloadlen = strlen(json_message);
-
-        //console_print_message("Publishing MQTT Shadow Update Message:");
-       // console_print_hex_dump(message.payload, message.payloadlen);
 
         config_get_client_pub_topic(g_mqtt_update_topic_name, sizeof(g_mqtt_update_topic_name));
         mqtt_status = MQTTPublish(&g_mqtt_client, g_mqtt_update_topic_name, &message);
@@ -662,16 +623,18 @@ void cloud_publish_message()
     // Free allocated memory
     json_value_free(update_message_value);
 }
+
+
 #define NEW_CREDENTIALS     2
-#define WIFI_SOFT_AP  0
-#define WIFI_DEFAULT  1
+#define WIFI_SOFT_AP        0
+#define WIFI_DEFAULT        1
 uint8_t mode = WIFI_DEFAULT;
 void softApConnectTask(void);
 bool wifi_connectToAp(uint8_t passed_wifi_creds);
 extern bool ssidReceived;
+
 void WiFi_ProvisionCb(uint8_t sectype, uint8_t * SSID, uint8_t * password)
-{
-        
+{      
     if(ssidReceived == 0){ 
         sprintf((char*)authType, "%d", sectype);
         debug_printInfo("%s",SSID);			   			   
@@ -679,9 +642,6 @@ void WiFi_ProvisionCb(uint8_t sectype, uint8_t * SSID, uint8_t * password)
         strcpy(pass, (char *)password);
     }
     debug_printInfo("SOFT AP: Connect Credentials sent to WINC");
-//    responseFromProvisionConnect = true;
-//      softApConnectTask();
-    //softApConnectTaskHandle = SYS_TIME_CallbackRegisterMS(softApConnectTaskcb, 0, SOFT_AP_CONNECT_RETRY_INTERVAL, SYS_TIME_PERIODIC);
 }
 
 void softApConnectTask(void)
@@ -714,9 +674,10 @@ bool wifi_connectToAp(uint8_t passed_wifi_creds)
 	  debug_printError("WIFI: wifi error = %d",e);
 	  return false;
 	}
-	
+
 	return true;
 }
+
 int cloud_wifi_init(DRV_HANDLE handle)
 {
     int8_t status = !0;
@@ -763,11 +724,6 @@ int cloud_wifi_init(DRV_HANDLE handle)
             break;
         }
 
-        /*if (WDRV_WINC_STATUS_OK != WDRV_WINC_AuthCtxSetOpen(&authCtx))
-           {
-            break;
-           }*/
-
         /*Initialize the authentication context for WPA. */
         if ((status = WDRV_WINC_AuthCtxSetWPA(&authCtx, (uint8_t*)pass, strlen(pass))) != WDRV_WINC_STATUS_OK)
         {
@@ -808,15 +764,10 @@ int cloud_wifi_init(DRV_HANDLE handle)
 
         debug_printInfo("Secure Element Address: 0x%02X \r\n", SECURE_ELEMENT_ADDRESS);
         debug_printInfo("Cloud Endpoint: %s \r\n", CLOUD_ENDPOINT);
-//    #ifdef CLOUD_CONNECT_WITH_CUSTOM_CERTS
-//        APP_DebugPrintf("Connecting with CUSTOM certs\r\n\rn\n");
-//    #else
-        debug_printInfo("Connecting with MCHP certs\r\n\r\n");
-//    #endif
 
-//    #ifndef CLOUD_CONFIG_GCP
+        debug_printInfo("Connecting with MCHP certs\r\n\r\n");
+
         transfer_ecc_certs_to_winc();
-//    #endif
 
         if ((status = m2m_ssl_set_active_ciphersuites(SSL_CIPHER_SUITE_SELECTION)) != M2M_SUCCESS)
         {
@@ -834,7 +785,6 @@ int cloud_wifi_init(DRV_HANDLE handle)
     }
     while (0);
 
-
     return status;
 }
 
@@ -845,7 +795,8 @@ void APP_ExampleTasks(DRV_HANDLE handle)
     int wifi_status = M2M_SUCCESS;
     ATCA_STATUS status = !ATCA_SUCCESS;
     static bool publish = true;
-     int8_t status1 = !0;
+    int8_t status1 = !0;
+
     switch (g_cloud_wifi_state)
     {
     case CLOUD_STATE_WINC1500_INIT:
@@ -896,32 +847,25 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         break;
 
     case CLOUD_STATE_CLOUD_CONNECT:
-        //mode = 2;
-//        if(mode != WIFI_DEFAULT){
-//        /* Connect to the target BSS with the chosen authentication. */
-//       
         if(mode==1)
         {
             if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSReconnect(handle,&wifi_callback_handler))
-        {
-            // Set the next cloud WIFI state
-            g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
-            APP_DebugPrintf("Connecting to Cloud...");
-        } 
-        }
-            else
             {
-                if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSConnect(handle, &bssCtx, &authCtx, &wifi_callback_handler))
+                // Set the next cloud WIFI state
+                g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
+                APP_DebugPrintf("Connecting to Cloud...");
+            } 
+        }
+        else
+        {
+            if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSConnect(handle, &bssCtx, &authCtx, &wifi_callback_handler))
             {
                 // Set the next cloud WIFI state
                 g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
                 debug_print("Reconnecting to Cloud...");
-                //mode=1;
             }
-            }
-             
-         
-     break;
+        }
+    break;
 
     case CLOUD_STATE_CLOUD_CONNECTING:
         TEST4_Toggle();
@@ -1041,7 +985,6 @@ void APP_ExampleTasks(DRV_HANDLE handle)
 
     case CLOUD_STATE_CLOUD_REPORTING:
         // Sending/receiving topic update messages to/from cloud IoT
-
         if (client_counter_finished())
         {
             client_counter_set(PUBLISH_INTERVAL);
@@ -1057,7 +1000,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         else
         {
             // Wait for incoming update messages
-           // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);
+            // mqtt_status = MQTTYield(&g_mqtt_client, MQTT_YEILD_TIMEOUT_MS);
             mqtt_status = 0;
             if (mqtt_status != SUCCESS)
             {

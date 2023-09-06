@@ -38,12 +38,8 @@
 #include "ecc_types.h"
 #include "cloud_wifi_config.h"
 
-
-//#ifndef CLOUD_CONFIG_GCP
-
 int8_t ecc_transfer_certificates();
 void ecc_process_request(tstrEccReqInfo *ecc_request);
 int8_t transfer_ecc_certs_to_winc(void);
-//#endif
 
 #endif /* CLOUD_WIFI_ECC_PROCESS_H_ */

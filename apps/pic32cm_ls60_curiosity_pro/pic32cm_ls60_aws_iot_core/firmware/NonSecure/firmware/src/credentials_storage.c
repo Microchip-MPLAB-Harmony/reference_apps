@@ -36,9 +36,9 @@ char authType[2];
 
 void CREDENTIALS_STORAGE_clearWifiCredentials(void)
 {
-	memset(ssid, 0, sizeof(ssid));
-	memset(pass, 0, sizeof(pass));	
-	memset(authType, 0 ,sizeof(authType));
+    memset(ssid, 0, sizeof(ssid));
+    memset(pass, 0, sizeof(pass));
+    memset(authType, 0 ,sizeof(authType));
 }
 
 

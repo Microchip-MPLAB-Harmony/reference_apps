@@ -45,17 +45,15 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "device.h"
-extern int32_t APP_GetLightSensorValue(void);
-int32_t light;
-/* Non-secure callable (entry) function */
-//int __attribute__((cmse_nonsecure_entry)) secure_add(int x, int y)
-//{
-//    return (x + y);
-//}
 
+extern int32_t APP_GetLightSensorValue(void);
+
+int32_t light;
+
+/* Non-secure callable (entry) function */
 int __attribute__((cmse_nonsecure_entry)) secureAppEntry(void)
 {
-  light = APP_GetLightSensorValue();
-  
-  return light;
+    light = APP_GetLightSensorValue();
+
+    return light;
 }

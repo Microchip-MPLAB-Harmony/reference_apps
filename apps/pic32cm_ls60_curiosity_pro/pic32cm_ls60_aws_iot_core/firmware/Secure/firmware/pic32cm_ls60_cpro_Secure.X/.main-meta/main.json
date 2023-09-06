@@ -10,21 +10,21 @@
         "shortDescription": "Demonstrates the AWS cloud connectivity on PIC32CM LS60 microcontroller)",
         "ide": {
             "name": "MPLABX",
-            "semverRange": ">=6.05"
+            "semverRange": ">=6.15"
         },
         "compiler": [
             {
                 "name": "XC32",
-                "semverRange": ">=4.21"
+                "semverRange": ">=4.30"
             }
         ],
         "dfp": {
             "name": "PIC32CM-LS_DFP",
-            "semverRange": "^1.1.162"
+            "semverRange": "^1.2.274"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.5.0"
+            "semverRange": ">=5.3.7"
         },
         "device": {
             "metaDataVersion": "1.0.0",

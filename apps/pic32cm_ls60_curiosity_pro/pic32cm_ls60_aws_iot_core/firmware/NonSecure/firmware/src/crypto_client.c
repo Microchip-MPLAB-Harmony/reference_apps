@@ -62,47 +62,47 @@ uint8_t CRYPTO_CLIENT_printPublicKey(char *s)
     uint8_t *tmp;
     size_t bufferLen = sizeof(buf);
     ATCA_STATUS retVal;
-    
+
     if (ATCA_SUCCESS != atcab_init(&atecc608_0_init_data))
     {
         return ERROR;
     }
-    
+
     /* Calculate where the raw data will fit into the buffer */
     tmp = (uint8_t*)buf + sizeof(buf) - ATCA_PUB_KEY_SIZE - sizeof(public_key_x509_header);
-    
+
     /* Copy the header */
     memcpy(tmp, public_key_x509_header, sizeof(public_key_x509_header));
-    
+
     /* Get public key without private key generation */
     retVal = atcab_get_pubkey(0, tmp + sizeof(public_key_x509_header));
-    
+
     if (ATCA_SUCCESS != retVal )
     {
         return ERROR;
     }
-    
+
     /* Convert to base 64 */
     retVal = atcab_base64encode(tmp, ATCA_PUB_KEY_SIZE + sizeof(public_key_x509_header), buf, &bufferLen);
-    
+
     if(ATCA_SUCCESS != retVal)
     {
         return ERROR;
     }
-    
+
     /* Add a null terminator */
     buf[bufferLen] = 0;
-    
+
     /* Print out the key */
     sprintf(s, "-----BEGIN PUBLIC KEY-----\r\n%s\r\n-----END PUBLIC KEY-----\r\n\4", buf);
-    
+
     return NO_ERROR;
 }
 
 uint8_t CRYPTO_CLIENT_printSerialNumber(char *s)
 {
     ATCA_STATUS status = ATCA_SUCCESS;
-	uint8_t i = 0;
+    uint8_t i = 0;
 
     ATCA_STATUS retVal = atcab_init(&atecc608_0_init_data);
 
@@ -111,7 +111,7 @@ uint8_t CRYPTO_CLIENT_printSerialNumber(char *s)
         return retVal;
     }
 
-    status = atcab_read_serial_number(g_serial_number); 
+    status = atcab_read_serial_number(g_serial_number);
 
     if (status == ATCA_SUCCESS)
     {
