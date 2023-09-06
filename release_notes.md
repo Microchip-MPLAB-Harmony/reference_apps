@@ -6,31 +6,67 @@ nav_order: 99
 # Microchip MPLAB® Harmony 3 Release Notes
 
 ---
-## Reference Applications Release v1.6.0 (June 2023) - TBD
-
-- Removed MHC plugin configuration for all demo applications
+## Reference Applications Release v1.6.0 (September 2023)
 
 ### New Applications
 
 | Application | Description | MCU | Development Board/Kit |  
 | --- | --- | --- | --- |  
-| [saml21_ble_fitness_tracker](./apps/sam_l21_xpro/saml21_ble_fitness_tracker/readme.md) |  BLE Fitness Tracker Application | [SAM L21](https://www.microchip.com/wwwproducts/en/ATSAML21J18B) | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b)|
+| [pic32cm_ls60_cpro_secure_boot](./apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_cpro_secure_boot/readme.md) |  Secure Boot Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [PIC32CM LS60 Curiosity Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV76R77A)|
+| [pic32cm_ls60_aws_iot_core](./apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_aws_iot_core/readme.md) |  AWS Cloud IoT Core Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [PIC32CM LS60 Curiosity Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV76R77A)|
+| [pic32cm_ls60_secure_iot_gateway](./apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_secure_iot_gateway/readme.md) |  Secure IoT Gateway Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [PIC32CM LS60 Curiosity Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV76R77A)|
+| [pic32cm_ls60_cpro_tz_getting_started](./apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_cpro_tz_getting_started/readme.md) |  TrustZone Getting Started Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [PIC32CM LS60 Curiosity Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV76R77A)|
+| [pic32cm_ls60_rd_smart_lock](./apps/pic32cm_ls60_rd/pic32cm_ls60_rd_smart_lock/readme.md) |  Smart Lock Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [PIC32CM LS60 Smart Lock Reference Board](https://www.microchip.com/en-us/tools-resources/reference-designs/smart-home-lock-demonstration-application)|
+| [pic32cm_ls00_cpro_tz_getting_started](./apps/pic32cm_ls00_curiosity_pro/pic32cm_ls00_cpro_tz_getting_started/readme.md) |  TrustZone Getting Started Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [PIC32CM LS00 Curiosity Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV12U44A)|
+| [pic32cm_le00_cpro_getting_started_ext](./apps/pic32cm_le00_curiosity_pro/pic32cm_le00_cpro_getting_started_ext/readme.md) |  Getting Started Extended Application | [PIC32CM LS](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cmlx) | [ PIC32CM LE00 Curiosity Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV80P12A)|
+| [pic32cx_sg61_getting_started](./apps/pic32cx_sg61_cult/pic32cx_sg61_getting_started/readme.md) |  Getting Started Application| [PIC32CX SG](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cxsg) | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/EV09H35A)|
+| [pic32cx_sg41_getting_started](./apps/pic32cx_sg41_cult/pic32cx_sg41_getting_started/readme.md) |  Getting Started Application| [PIC32CX SG](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cxsg) | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/EV06X38A)|
+| [pic32cz_ca90_getting_started_ext](./apps/pic32cz_ca90_cult/pic32cz_ca90_getting_started_ext/readme.md) |  Getting Started Extended Application| [PIC32CZ CA](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/Errata/PIC32CZ-CA80-CA90-Family-Silicon-Errata-and-Data-Sheet-Clarifications-DS80001023.pdf) | [PIC32CZ CA90 Curiosity Ultra Development Board](https://www.microchip.com/en-us/development-tool/EA58X56A)|
+| [pic32cz_ca80_getting_started_ext](./apps/pic32cz_ca80_cult/pic32cz_ca80_getting_started_ext/readme.md) |  Getting Started Extended Application| [PIC32CZ CA](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/Errata/PIC32CZ-CA80-CA90-Family-Silicon-Errata-and-Data-Sheet-Clarifications-DS80001023.pdf) | [PIC32CZ CA80 Curiosity Ultra Development Board](https://www.microchip.com/en-us/development-tool/EA61X20A)|
+| [pic32cm_jh01_cpro_getting_started](./apps/pic32cm_jh01_curiosity_pro/pic32cm_jh01_cpro_getting_started/readme.md) |  Getting Started Application| [PIC32CM JH](https://www.microchip.com/en-us/products/microcontrollers-and-microprocessors/32-bit-mcus/pic32-32-bit-mcus/pic32cm-jh) | [ PIC32CM JH01 Curiosity Pro Development Board](https://www.microchip.com/en-us/development-tool/EV81X90A)|
+| [mcp25625](./apps/sam_e51_cnano/same51n_mikroe_click/mcp25625/readme.md) | MikroElektronika MCP25625 Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [eink_epaper_2_9_296_128](./apps/sam_e51_cnano/same51n_mikroe_click/eink_epaper_2_9_296_128/readme.md) | MikroElektronika Eink E-Paper display 2,9" 296x128 dots Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [13dof](./apps/sam_e51_cnano/same51n_mikroe_click/13dof/readme.md) | MikroElektronika 13dof Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [microsd](./apps/sam_e51_cnano/same51n_mikroe_click/microsd/readme.md) | MikroElektronika microsd Click Board example | [SAM E51](https://www.microchip.com/wwwproducts/en/ATSAME51N20A) | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)|
+| [pic32mzef_web_photo_frame](./apps/pic32mz_ef_curiosity_v2/pic32mzef_web_photo_frame/readme.md) |  Web Photo Frame Application | [PIC32MZ](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)|
+| [samiot2_aws_cloud_core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) |  AWS Cloud IoT Core Application | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G18) | [SAM-IoT WX v2 Development Board](https://www.microchip.com/en-us/development-tool/EV62V87A)|
+| [samiot2_azure_cloud_core](./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md) |  Microsoft Azure Cloud IoT Core Application | [SAM D21](https://www.microchip.com/wwwproducts/en/ATSAMD21G18) | [SAM-IoT WX v2 Development Board](https://www.microchip.com/en-us/development-tool/EV62V87A)|
+| [pic32mzda_miwi_iot](./apps/pic32mz_da_curiosity/pic32mzda_miwi_iot/readme.md) |  MiWi IoT gateway Application  | [PIC32MZ DA](https://www.microchip.com/wwwproducts/en/PIC32MZ2064DAR176) | [PIC32MZ DA Radial Graphics Development Board](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/UserGuides/PIC32MZ-DA-Radial-Graphics-Board-User-Guide-DS70005515.pdf)|
+| [sam9x60_cu_graphics_getting_started](./apps_mpu/sam9x60_curiosity_dev_board/sam9x60_cu_graphics_getting_started/readme.md) |  Graphics Getting Started Application  | [SAM9X60](https://www.microchip.com/en-us/product/sam9x60) | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A)|
+| [sam9x60_cu_snake_game](./apps_mpu/sam9x60_curiosity_dev_board/sam9x60_cu_snake_game/readme.md) |  Snake Game Application  | [SAM9X60](https://www.microchip.com/en-us/product/sam9x60) | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A)|
+| [sam9x60_ek_blink_led_qspi_xip](./apps_mpu/sam9x60_ek/sam9x60_ek_blink_led_qspi_xip/readme.md) |  Blink LED Application | [SAM9X60](https://www.microchip.com/en-us/product/sam9x60) | [SAM9X60 Evaluation Kit](https://www.microchip.com/en-us/development-tool/dt100126)|
+| [sam9x75_ea_usb_host_getting_started](./apps_mpu/sam9x75_early_access_eval_board/sam9x75_ea_usb_host_getting_started/readme.md) |  USB Host Getting Started Application  | [SAM9X75](https://www.microchip.com/en-us/product/sam9x75) | [SAM9X75 Early Access Evaluation Board](https://www.microchip.com/en-us/development-tool/EA14J50A)|
+| [sama7g54_ek_blink_led_qspi_xip](./apps_mpu/sama7g54_ek/sama7g54_ek_blink_led_qspi_xip/readme.md) |  Blink LED Application | [SAMA7G54](https://www.microchip.com/en-us/product/sama7g54) | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A)|
+| [sama7g54_ek_ethernet_web_server_getting_started](./apps_mpu/sama7g54_ek/sama7g54_ek_ethernet_web_server_getting_started/readme.md) |  Ethernet Web Server Getting Started Application  | [SAMA7G54](https://www.microchip.com/en-us/product/sama7g54) | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A)|
 
 
 ### Updated Applications  
 
-- TBD
+| Application | Description | MCU | Development Board/Kit | Comment |  
+| --- | --- | --- | --- | --- |  
+| [sdcard_player](./apps/pic32mz_ef_curiosity_v2/sdcard_player/readme.md) | SD Card Audio Player Application | [PIC32MZ](https://www.microchip.com/wwwproducts/en/PIC32MZ2048EFM144) | [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)| Added display capability |  
+| [same54_can_usb_bridge](./apps/sam_e54_xpro/same54_can_usb_bridge/readme.md) | CAN to USB bridge and CAN based NVM bootloader Host Applicatio | [SAM E54](https://www.microchip.com/wwwproducts/en/ATSAME54P20A) | [SAM E54 Xplained Pro](https://www.microchip.com/developmenttools/productdetails/atsame54-xpro)| Updated to add host bootlaoder |
+
+
+### Deleted Applications  
+
+| Application | Description | Comment |  
+| --- | --- |  --- |  
+| google_cloud_iot_core | Google Cloud IoT Core | Removed as the Google has discontinued cloud services. Alternative cloud demo on [AWS Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) and [Microsoft Azure Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md)) is available|
+| same51n_google_cloud_iot_core | Google Cloud IoT Core | Removed as the Google has discontinued cloud services. Alternative cloud demo on [AWS Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) and [Microsoft Azure Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md)) is available|
+| pic32cmmc_smart_tag_google_cloud_iot_core | Smart Tag Google Cloud IoT Core  | Removed as the Google has discontinued cloud services. Alternative cloud demo on [AWS Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) and [Microsoft Azure Cloud IoT Core]((./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md)) is available|
+
 
 
 ### Known Issues
 - None
 
 ### Development Tools
-- [MPLAB® X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide)
-- [MPLAB® XC32 C/C++ Compiler v4.00](https://www.microchip.com/mplab/compilers)
-- [IAR EWARM v8.50](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
+- [MPLAB® X IDE v6.15](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB® XC32 C/C++ Compiler v4.30](https://www.microchip.com/mplab/compilers)
+- [IAR EWARM v9.40](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
 - MPLAB® X IDE plug-ins:
-  - MPLAB Code Configurator (MCC) v5.1.4   
+  - MPLAB Code Configurator (MCC) v5.3.7   
 
 
 ---

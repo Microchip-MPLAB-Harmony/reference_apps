@@ -103,6 +103,8 @@ exclude:
   - "*.apk"
   - "*.dump"
   - "*.json"
+  - "*.xls"
+  - "*.csv"  
   
 # Aux links for the upper right navigation
 aux_links:

@@ -8,7 +8,7 @@ nav_order: 10
 # PIC32CM LS60 Smart Lock Reference Board
 <h4 align="left"> <img src = "image.jpg"> </h4>
 
-This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32CM LS60 Smart Lock Reference Board]().
+This folder contains the MPLAB® Harmony 3 reference applications developed on [PIC32CM LS60 Smart Lock Reference Board](https://www.microchip.com/en-us/tools-resources/reference-designs/smart-home-lock-demonstration-application).
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
