@@ -24,3 +24,4 @@ Gemfile*
 /docs/apps/pic32mz_ef_curiosity_v2/wifi_rgb_easy_configuration/firmware
 /docs/apps/sam_e70_xpld/getting_started_drivers_middleware/firmware
 /docs/readme.md
+docs/apps_mpu/sama7g54_ek/sama7g54_ek_ethernet_web_server_getting_started/firmware/src/web_pages

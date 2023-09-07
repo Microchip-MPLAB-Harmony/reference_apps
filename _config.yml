@@ -105,6 +105,7 @@ exclude:
   - "*.json"
   - "*.xls"
   - "*.csv"  
+  - "*.lib"    
   
 # Aux links for the upper right navigation
 aux_links:
