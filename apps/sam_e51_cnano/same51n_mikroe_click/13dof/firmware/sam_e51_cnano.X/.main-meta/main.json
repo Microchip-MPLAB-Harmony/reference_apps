@@ -10,12 +10,12 @@
 		"shortDescription": "Demonstrates how to read weather data, motion sensor data and geomagnetic data using 13DOF Click board",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.05"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.21.0"
+				"semverRange": ">=4.30.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.5.0"
+			"semverRange": ">=5.3.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

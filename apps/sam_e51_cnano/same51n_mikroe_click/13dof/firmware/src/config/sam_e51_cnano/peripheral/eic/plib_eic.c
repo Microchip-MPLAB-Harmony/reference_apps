@@ -63,13 +63,13 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+volatile static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
-	   EIC will be disabled. */
+       EIC will be disabled. */
     EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
@@ -100,7 +100,7 @@ void EIC_Initialize (void)
          |  EIC_CONFIG_SENSE5_NONE  
          |  EIC_CONFIG_SENSE6_NONE  
          |  EIC_CONFIG_SENSE7_RISE | EIC_CONFIG_FILTEN7_Msk  ;
-    
+
 
 
     /* Debouncer enable */
@@ -159,14 +159,15 @@ void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
     }
 }
 
-void EIC_EXTINT_15_InterruptHandler(void)
+void __attribute__((used)) EIC_EXTINT_15_InterruptHandler(void)
 {
     /* Clear interrupt flag */
     EIC_REGS->EIC_INTFLAG = (1UL << 15);
     /* Find any associated callback entries in the callback table */
     if ((eicCallbackObject[15].callback != NULL))
     {
-        eicCallbackObject[15].callback(eicCallbackObject[15].context);
+        uintptr_t context = eicCallbackObject[15].context;
+        eicCallbackObject[15].callback(context);
     }
 
 }
