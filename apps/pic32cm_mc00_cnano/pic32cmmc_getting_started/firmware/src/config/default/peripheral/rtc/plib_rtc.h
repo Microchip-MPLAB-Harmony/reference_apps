@@ -94,6 +94,8 @@ typedef struct
 } RTC_OBJECT;
 
 void RTC_Initialize(void);
+void RTC_Timer32CountSyncEnable ( void );
+void RTC_Timer32CountSyncDisable ( void );
 void RTC_Timer32Start ( void );
 void RTC_Timer32Stop ( void );
 void RTC_Timer32CounterSet ( uint32_t count );

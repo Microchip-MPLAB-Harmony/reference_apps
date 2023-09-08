@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00032
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for OSC32KCTRL peripheral ========== */
-#define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       _UL_(6)    
-#define OSC32KCTRL_INSTANCE_ID                   _UL_(5)    /* Instance index for OSC32KCTRL */
+#define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       (6)        
+#define OSC32KCTRL_INSTANCE_ID                   (5)        /* Instance index for OSC32KCTRL */
 
 #endif /* _PIC32CMMC00_OSC32KCTRL_INSTANCE_ */

@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00032
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for TSENS peripheral ========== */
-#define TSENS_DMAC_ID_RESRDY                     _UL_(1)    /* Index of DMA RESRDY trigger */
-#define TSENS_GCLK_ID                            _UL_(5)    /* Index of Generic Clock */
-#define TSENS_INSTANCE_ID                        _UL_(12)   /* Instance index for TSENS */
+#define TSENS_DMAC_ID_RESRDY                     (1)        /* Index of DMA RESRDY trigger */
+#define TSENS_GCLK_ID                            (5)        /* Index of Generic Clock */
+#define TSENS_INSTANCE_ID                        (12)       /* Instance index for TSENS */
 
 #endif /* _PIC32CMMC00_TSENS_INSTANCE_ */

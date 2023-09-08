@@ -67,6 +67,12 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME			 "PIC32CM1216MC00032"
+#define DEVICE_ARCH			 "CORTEX-M0PLUS"
+#define DEVICE_FAMILY		 "PIC32CMMC"
+#define DEVICE_SERIES		 "PIC32CMMC00"
+
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 48000000
 

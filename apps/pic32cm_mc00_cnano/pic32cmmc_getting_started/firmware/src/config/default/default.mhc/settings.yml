@@ -1,9 +1,9 @@
 format_version: v1.0
 configName: default
-folderName: pic32cm_mc_cnano
-frameworkPath: C:\gitHub
+folderName: pic32cm_mc_cnano.X.prebuilt
+frameworkPath: C:\harmony3
 processor: PIC32CM1216MC00032
-projectName: pic32cm_mc_cnano
+projectName: pic32cm_mc_cnano.X.prebuilt
 settings:
   PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'
@@ -11,4 +11,4 @@ settings:
   TRUSTZONE: 'false'
   CMSISPath: dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: dev_packs\Microchip\PIC32CM-MC_DFP\1.3.58\PIC32CM1216MC00032\atdf\PIC32CM1216MC00032.atdf
+  DFPPath: dev_packs\Microchip\PIC32CM-MC_DFP\1.4.67\PIC32CM1216MC00032\atdf\PIC32CM1216MC00032.atdf
