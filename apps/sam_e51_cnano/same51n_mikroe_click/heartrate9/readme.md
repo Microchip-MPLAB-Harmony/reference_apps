@@ -179,6 +179,7 @@ You could use this demonstration as an example to add Heart Rate functionality t
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, regenerated and tested application.
 - v1.3.0 - Released demo application
