@@ -92,6 +92,10 @@
 #define CLICK_BLE2_CMD_MLDP_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
 #define CLICK_BLE2_CMD_MLDP_PIN                  PORT_PIN_PA10
 
+/*** Macros for CNANO_BUTTON pin ***/
+#define CNANO_BUTTON_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 15U)) & 0x01U)
+#define CNANO_BUTTON_PIN                  PORT_PIN_PA15
+
 // *****************************************************************************
 /* PORT Group
 
@@ -123,7 +127,7 @@
 #define GET_PORT_GROUP(pin)  ((PORT_GROUP)(PORT_BASE_ADDRESS + (0x80U * (((uint32_t)pin) >> 5U))))
 #define GET_PIN_MASK(pin)   (((uint32_t)(0x1U)) << (((uint32_t)pin) & 0x1FU))
 
-/* Named type for port group */ 
+/* Named type for port group */
 typedef uint32_t PORT_GROUP;
 
 
@@ -332,7 +336,6 @@ typedef enum
 // Section: Generated API based on pin configurations done in Pin Manager
 // *****************************************************************************
 // *****************************************************************************
-
 // *****************************************************************************
 /* Function:
     void PORT_Initialize(void)

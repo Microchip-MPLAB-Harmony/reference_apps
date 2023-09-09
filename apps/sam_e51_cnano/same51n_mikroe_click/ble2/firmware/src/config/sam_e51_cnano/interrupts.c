@@ -48,10 +48,10 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "device_vectors.h"
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -60,13 +60,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/* MISRA C-2012 Rule 8.6 deviated below. Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 extern uint32_t _stack;
 extern const H3DeviceVectors exception_table;
 
 extern void Dummy_Handler(void);
 
 /* Brief default interrupt handler for unused IRQs.*/
-void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, noreturn))Dummy_Handler(void)
+void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
@@ -75,12 +76,11 @@ void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, no
     {
     }
 }
+
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 8.6 deviated 119 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
-extern void MemoryManagement_Handler   ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void BusFault_Handler           ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void UsageFault_Handler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void DebugMonitor_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PM_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void MCLK_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -109,7 +109,6 @@ extern void EIC_EXTINT_11_Handler      ( void ) __attribute__((weak, alias("Dumm
 extern void EIC_EXTINT_12_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_13_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_14_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void EIC_EXTINT_15_Handler      ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void FREQM_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void NVMCTRL_0_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void NVMCTRL_1_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -202,12 +201,13 @@ extern void QSPI_Handler               ( void ) __attribute__((weak, alias("Dumm
 extern void SDHC0_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 
 
+/* MISRAC 2012 deviation block end */
 
 /* Multiple handlers for vector */
 
 
 
-__attribute__ ((section(".vectors")))
+__attribute__ ((section(".vectors"), used))
 const H3DeviceVectors exception_table=
 {
     /* Configure Initial Stack Pointer, using linker-generated symbols */
@@ -250,7 +250,7 @@ const H3DeviceVectors exception_table=
     .pfnEIC_EXTINT_12_Handler      = EIC_EXTINT_12_Handler,
     .pfnEIC_EXTINT_13_Handler      = EIC_EXTINT_13_Handler,
     .pfnEIC_EXTINT_14_Handler      = EIC_EXTINT_14_Handler,
-    .pfnEIC_EXTINT_15_Handler      = EIC_EXTINT_15_Handler,
+    .pfnEIC_EXTINT_15_Handler      = EIC_EXTINT_15_InterruptHandler,
     .pfnFREQM_Handler              = FREQM_Handler,
     .pfnNVMCTRL_0_Handler          = NVMCTRL_0_Handler,
     .pfnNVMCTRL_1_Handler          = NVMCTRL_1_Handler,

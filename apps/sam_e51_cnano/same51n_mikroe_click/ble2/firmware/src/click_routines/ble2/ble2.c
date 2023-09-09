@@ -52,7 +52,7 @@
 #include "../click_interface.h"
 
 uint8_t rxBuffer[512];
-volatile uint32_t nBytesRead = 0;
+volatile uint32_t nBytesUartRead = 0;
 /**
   Section: Macro Declarations
  */
@@ -100,7 +100,7 @@ static void BLE2_UsartReadEventHandler(SERCOM_USART_EVENT event, uintptr_t conte
         /* Receiver should atleast have the thershold number of bytes in the ring buffer */
         nBytesAvailable = CLICK_BLE2_USART_ReadCountGet();
 
-       nBytesRead += CLICK_BLE2_USART_Read((uint8_t*)&rxBuffer[nBytesRead],nBytesAvailable); 
+       nBytesUartRead += CLICK_BLE2_USART_Read((uint8_t*)&rxBuffer[nBytesUartRead],nBytesAvailable); 
     }
 }
 
@@ -113,7 +113,7 @@ void BLE2_GetReceiveBuffer(uint8_t* pRxBuffer)
 
 void BLE2_ResetReceiveBuffer()
 {
-    nBytesRead = 0; 
+    nBytesUartRead = 0; 
     memset(rxBuffer,0,512);
 }
 

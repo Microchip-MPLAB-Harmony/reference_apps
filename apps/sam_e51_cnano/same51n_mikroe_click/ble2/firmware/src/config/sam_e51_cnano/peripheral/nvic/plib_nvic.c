@@ -59,6 +59,8 @@ void NVIC_Initialize( void )
 
     /* Enable the interrupt sources and configure the priorities as configured
      * from within the "Interrupt Manager" of MHC. */
+    NVIC_SetPriority(EIC_EXTINT_15_IRQn, 7);
+    NVIC_EnableIRQ(EIC_EXTINT_15_IRQn);
     NVIC_SetPriority(SERCOM4_0_IRQn, 7);
     NVIC_EnableIRQ(SERCOM4_0_IRQn);
     NVIC_SetPriority(SERCOM4_1_IRQn, 7);
@@ -68,7 +70,16 @@ void NVIC_Initialize( void )
     NVIC_SetPriority(SERCOM4_OTHER_IRQn, 7);
     NVIC_EnableIRQ(SERCOM4_OTHER_IRQn);
 
+    /* Enable Usage fault */
+    SCB->SHCSR |= (SCB_SHCSR_USGFAULTENA_Msk);
+    /* Trap divide by zero */
+    SCB->CCR   |= SCB_CCR_DIV_0_TRP_Msk;
 
+    /* Enable Bus fault */
+    SCB->SHCSR |= (SCB_SHCSR_BUSFAULTENA_Msk);
+
+    /* Enable memory management fault */
+    SCB->SHCSR |= (SCB_SHCSR_MEMFAULTENA_Msk);
 
 }
 
@@ -80,9 +91,7 @@ void NVIC_INT_Enable( void )
 
 bool NVIC_INT_Disable( void )
 {
-    bool processorStatus;
-
-    processorStatus = (bool) (__get_PRIMASK() == 0);
+    bool processorStatus = (__get_PRIMASK() == 0U);
 
     __disable_irq();
     __DMB();
