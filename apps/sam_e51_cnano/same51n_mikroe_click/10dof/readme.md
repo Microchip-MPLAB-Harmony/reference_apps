@@ -30,6 +30,8 @@ nav_order: 10
 - [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A)
 - [Curiosity Nano Base for Click Boards](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
 - [MikroElektronika 10DOF Click](https://www.mikroe.com/10dof-click)
+10dof click is not in production anymore, for any new design/development use the following hardware
+- [MikroElektronika 13DOF Click](https://www.mikroe.com/13dof-click)
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
@@ -168,6 +170,7 @@ You could use this demonstration as an example to add 10dof functionality to you
 
 
 ## Revision:
+- v1.6.0 - Regenerated and Build Tested the application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Created application example
