@@ -42,13 +42,15 @@
 //DOM-IGNORE-END
 
 #include "plib_gpio.h"
+#include "interrupts.h"
+
 
 
 /* Array to store callback objects of each configured interrupt */
-GPIO_PIN_CALLBACK_OBJ portPinCbObj[1];
+static volatile GPIO_PIN_CALLBACK_OBJ portPinCbObj[1];
 
 /* Array to store number of interrupts in each PORT Channel + previous interrupt count */
-uint8_t portNumCb[10 + 1] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, };
+static uint8_t portNumCb[10 + 1] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, };
 
 /******************************************************************************
   Function:
@@ -69,13 +71,13 @@ void GPIO_Initialize ( void )
     /* PORTD Initialization */
     /* PORTE Initialization */
     /* PORTF Initialization */
-    ANSELFCLR = 0x2000; /* Digital Mode Enable */
+    ANSELFCLR = 0x2000U; /* Digital Mode Enable */
     /* PORTG Initialization */
     /* PORTH Initialization */
     /* PORTJ Initialization */
-    LATJ = 0x80; /* Initial Latch Value */
-    TRISJCLR = 0x80; /* Direction Control */
-    CNPUJSET = 0x10; /* Pull-Up Enable */
+    LATJ = 0x80U; /* Initial Latch Value */
+    TRISJCLR = 0x80U; /* Direction Control */
+    CNPUJSET = 0x10U; /* Pull-Up Enable */
 
     /* Change Notice Enable */
     CNCONJSET = _CNCONJ_ON_MASK;
@@ -84,11 +86,11 @@ void GPIO_Initialize ( void )
     /* PORTK Initialization */
 
     /* Unlock system for PPS configuration */
-    SYSKEY = 0x00000000;
-    SYSKEY = 0xAA996655;
-    SYSKEY = 0x556699AA;
+    SYSKEY = 0x00000000U;
+    SYSKEY = 0xAA996655U;
+    SYSKEY = 0x556699AAU;
 
-    CFGCONbits.IOLOCK = 0;
+    CFGCONbits.IOLOCK = 0U;
 
     /* PPS Input Remapping */
 
@@ -96,15 +98,15 @@ void GPIO_Initialize ( void )
     RPF2R = 4;
 
         /* Lock back the system after PPS configuration */
-    CFGCONbits.IOLOCK = 1;
+    CFGCONbits.IOLOCK = 1U;
 
-    SYSKEY = 0x00000000;
+    SYSKEY = 0x00000000U;
 
     uint32_t i;
     /* Initialize Interrupt Pin data structures */
     portPinCbObj[0 + 0].pin = GPIO_PIN_RJ4;
     
-    for(i=0; i<1; i++)
+    for(i=0U; i<1U; i++)
     {
         portPinCbObj[i].callback = NULL;
     }
@@ -140,7 +142,7 @@ void GPIO_Initialize ( void )
 */
 uint32_t GPIO_PortRead(GPIO_PORT port)
 {
-    return (*(volatile uint32_t *)(&PORTA + (port * 0x40)));
+    return (*(volatile uint32_t *)(&PORTA + (port * 0x40U)));
 }
 
 // *****************************************************************************
@@ -155,7 +157,7 @@ uint32_t GPIO_PortRead(GPIO_PORT port)
 */
 void GPIO_PortWrite(GPIO_PORT port, uint32_t mask, uint32_t value)
 {
-    *(volatile uint32_t *)(&LATA + (port * 0x40)) = (*(volatile uint32_t *)(&LATA + (port * 0x40)) & (~mask)) | (mask & value);
+    *(volatile uint32_t *)(&LATA + (port * 0x40U)) = (*(volatile uint32_t *)(&LATA + (port * 0x40U)) & (~mask)) | (mask & value);
 }
 
 // *****************************************************************************
@@ -170,7 +172,7 @@ void GPIO_PortWrite(GPIO_PORT port, uint32_t mask, uint32_t value)
 */
 uint32_t GPIO_PortLatchRead(GPIO_PORT port)
 {
-    return (*(volatile uint32_t *)(&LATA + (port * 0x40)));
+    return (*(volatile uint32_t *)(&LATA + (port * 0x40U)));
 }
 
 // *****************************************************************************
@@ -185,7 +187,7 @@ uint32_t GPIO_PortLatchRead(GPIO_PORT port)
 */
 void GPIO_PortSet(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&LATASET + (port * 0x40)) = mask;
+    *(volatile uint32_t *)(&LATASET + (port * 0x40U)) = mask;
 }
 
 // *****************************************************************************
@@ -200,7 +202,7 @@ void GPIO_PortSet(GPIO_PORT port, uint32_t mask)
 */
 void GPIO_PortClear(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&LATACLR + (port * 0x40)) = mask;
+    *(volatile uint32_t *)(&LATACLR + (port * 0x40U)) = mask;
 }
 
 // *****************************************************************************
@@ -215,7 +217,7 @@ void GPIO_PortClear(GPIO_PORT port, uint32_t mask)
 */
 void GPIO_PortToggle(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&LATAINV + (port * 0x40))= mask;
+    *(volatile uint32_t *)(&LATAINV + (port * 0x40U))= mask;
 }
 
 // *****************************************************************************
@@ -230,7 +232,7 @@ void GPIO_PortToggle(GPIO_PORT port, uint32_t mask)
 */
 void GPIO_PortInputEnable(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&TRISASET + (port * 0x40)) = mask;
+    *(volatile uint32_t *)(&TRISASET + (port * 0x40U)) = mask;
 }
 
 // *****************************************************************************
@@ -245,7 +247,7 @@ void GPIO_PortInputEnable(GPIO_PORT port, uint32_t mask)
 */
 void GPIO_PortOutputEnable(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&TRISACLR + (port * 0x40)) = mask;
+    *(volatile uint32_t *)(&TRISACLR + (port * 0x40U)) = mask;
 }
 
 // *****************************************************************************
@@ -260,7 +262,7 @@ void GPIO_PortOutputEnable(GPIO_PORT port, uint32_t mask)
 */
 void GPIO_PortInterruptEnable(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&CNENASET + (port * 0x40)) = mask;
+    *(volatile uint32_t *)(&CNENASET + (port * 0x40U)) = mask;
 }
 
 // *****************************************************************************
@@ -275,7 +277,7 @@ void GPIO_PortInterruptEnable(GPIO_PORT port, uint32_t mask)
 */
 void GPIO_PortInterruptDisable(GPIO_PORT port, uint32_t mask)
 {
-    *(volatile uint32_t *)(&CNENACLR + (port * 0x40)) = mask;
+    *(volatile uint32_t *)(&CNENACLR + (port * 0x40U)) = mask;
 }
 
 // *****************************************************************************
@@ -299,27 +301,31 @@ void GPIO_PinIntEnable(GPIO_PIN pin, GPIO_INTERRUPT_STYLE style)
     GPIO_PORT port;
     uint32_t mask;
 
-    port = (GPIO_PORT)(pin>>4);
-    mask =  0x1 << (pin & 0xF);
+    port = (GPIO_PORT)(pin>>4U);
+    mask =  0x1UL << (pin & 0xFU);
 
     if (style == GPIO_INTERRUPT_ON_MISMATCH)
     {
-        *(volatile uint32_t *)(&CNENASET + (port * 0x40)) = mask;
+        *(volatile uint32_t *)(&CNENASET + (port * 0x40U)) = mask;
     }
     else if (style == GPIO_INTERRUPT_ON_RISING_EDGE)
     {
-        *(volatile uint32_t *)(&CNENASET + (port * 0x40)) = mask;
-        *(volatile uint32_t *)(&CNNEACLR + (port * 0x40)) = mask;
+        *(volatile uint32_t *)(&CNENASET + (port * 0x40U)) = mask;
+        *(volatile uint32_t *)(&CNNEACLR + (port * 0x40U)) = mask;
     }
     else if (style == GPIO_INTERRUPT_ON_FALLING_EDGE)
     {
-        *(volatile uint32_t *)(&CNENACLR + (port * 0x40)) = mask;
-        *(volatile uint32_t *)(&CNNEASET + (port * 0x40)) = mask;
+        *(volatile uint32_t *)(&CNENACLR + (port * 0x40U)) = mask;
+        *(volatile uint32_t *)(&CNNEASET + (port * 0x40U)) = mask;
     }
     else if (style == GPIO_INTERRUPT_ON_BOTH_EDGES)
     {
-        *(volatile uint32_t *)(&CNENASET + (port * 0x40)) = mask;
-        *(volatile uint32_t *)(&CNNEASET + (port * 0x40)) = mask;
+        *(volatile uint32_t *)(&CNENASET + (port * 0x40U)) = mask;
+        *(volatile uint32_t *)(&CNNEASET + (port * 0x40U)) = mask;
+    }
+    else
+    {
+        /* Nothing to process */
     }
 }
 
@@ -337,12 +343,12 @@ void GPIO_PinIntDisable(GPIO_PIN pin)
 {
     GPIO_PORT port;
     uint32_t mask;
-    
-    port = (GPIO_PORT)(pin>>4);
-    mask =  0x1 << (pin & 0xF);
 
-    *(volatile uint32_t *)(&CNENACLR + (port * 0x40)) = mask;
-    *(volatile uint32_t *)(&CNNEACLR + (port * 0x40)) = mask;
+    port = (GPIO_PORT)(pin>>4U);
+    mask =  0x1UL << (pin & 0xFU);
+
+    *(volatile uint32_t *)(&CNENACLR + (port * 0x40U)) = mask;
+    *(volatile uint32_t *)(&CNNEACLR + (port * 0x40U)) = mask;
 }
 // *****************************************************************************
 /* Function:
@@ -367,7 +373,7 @@ bool GPIO_PinInterruptCallbackRegister(
     uint8_t i;
     uint8_t portIndex;
 
-    portIndex = pin >> 4;
+    portIndex = (uint8_t)(pin >> 4U);
 
     for(i = portNumCb[portIndex]; i < portNumCb[portIndex +1]; i++)
     {
@@ -396,13 +402,15 @@ bool GPIO_PinInterruptCallbackRegister(
     Interrupt Handler for change notice interrupt for channel J.
 
   Remarks:
-	It is an internal function called from ISR, user should not call it directly.
+    It is an internal function called from ISR, user should not call it directly.
 */
     
-void CHANGE_NOTICE_J_InterruptHandler(void)
+void __attribute__((used)) CHANGE_NOTICE_J_InterruptHandler(void)
 {
     uint8_t i;
     uint32_t status;
+    GPIO_PIN pin;
+    uintptr_t context;
 
     status  = CNSTATJ;
     status &= CNENJ;
@@ -413,9 +421,13 @@ void CHANGE_NOTICE_J_InterruptHandler(void)
     /* Check pending events and call callback if registered */
     for(i = 0; i < 1; i++)
     {
-        if((status & (1 << (portPinCbObj[i].pin & 0xF))) && (portPinCbObj[i].callback != NULL))
+        pin = portPinCbObj[i].pin;
+
+        if((portPinCbObj[i].callback != NULL) && ((status & ((uint32_t)1U << (pin & 0xFU))) != 0U))
         {
-            portPinCbObj[i].callback (portPinCbObj[i].pin, portPinCbObj[i].context);
+            context = portPinCbObj[i].context;
+
+            portPinCbObj[i].callback (pin, context);
         }
     }
 }
