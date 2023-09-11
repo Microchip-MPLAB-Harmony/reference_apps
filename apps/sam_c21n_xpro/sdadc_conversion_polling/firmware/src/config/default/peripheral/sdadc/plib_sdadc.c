@@ -111,7 +111,7 @@ void SDADC_Enable( void )
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for synchronization */
-    }    
+    }
 }
 
 void SDADC_Disable( void )
@@ -120,7 +120,7 @@ void SDADC_Disable( void )
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for synchronization */
-    }    
+    }
 }
 
  
