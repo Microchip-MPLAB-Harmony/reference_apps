@@ -89,15 +89,18 @@ The pre-built hex file can be programmed by following the below steps.
 - In the Tera Term: New Connection window, select the Serial Port number allocated to the connected SAM E54  
 - Configure the Tera Term Serial port interface to 115200 speed  
 - Reset the board by pressing the reset button. The application will start by displaying the following message on the serial terminal.  
-
- <img src = "images/sleepwalking_start.png" width="600" height="260" align="middle">  
+ <img src = "images/sleepwalking_start.png" width="600" height="260" align="middle"> 
+ 
 - Open the standalone Data Visualizer tool  
 - In the Data Visualizer window, select SAM E54 Xplained Pro, and then click Connect  
 <img src = "images/data_visualizer1.png" width="600" height="200" align="middle">  
+
 - Once the protocols are displayed, select the protocol Power and then click Start  
 <img src = "images/data_visualizer2.png" width="600" height="275" align="middle">  
+
 - The Data Visualizer will display the power consumption details in the Power Analysis window  
 <img src = "images/data_visualizer3.png" width="600" height="265" align="middle">  
+
 - When the application starts, the device will run on Standby with IRQ mode. The data analyzer shows the power consumption of the device when the CPU is woken up every 10 milliseconds by an RTC Compare ‘0’ interrupt to start an ADC conversion  
 - Using the SW0 push button, it is possible to change the application mode from Standby with IRQ to SleepWalking. In this mode the CPU is woken up only when an ADC window monitoring interrupt occurs. The data analyzer shows the power consumption of the device when running in Standby with the Event System (SleepWalking)  
 
@@ -115,6 +118,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Removed MHC support, Regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Regenerated and tested application

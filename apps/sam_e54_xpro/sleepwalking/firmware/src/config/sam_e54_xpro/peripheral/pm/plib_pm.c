@@ -58,9 +58,9 @@
 void PM_Initialize( void )
 {
     /* Configure PM */
-    PM_REGS->PM_STDBYCFG = PM_STDBYCFG_RAMCFG(0)| PM_STDBYCFG_FASTWKUP(0);
-    PM_REGS->PM_HIBCFG = PM_HIBCFG_RAMCFG(0)| PM_HIBCFG_BRAMCFG(0);
-    PM_REGS->PM_BKUPCFG = PM_BKUPCFG_BRAMCFG(0);
+    PM_REGS->PM_STDBYCFG = PM_STDBYCFG_RAMCFG(0U)| PM_STDBYCFG_FASTWKUP(0U);
+    PM_REGS->PM_HIBCFG = PM_HIBCFG_RAMCFG(0U)| PM_HIBCFG_BRAMCFG(0U);
+    PM_REGS->PM_BKUPCFG = PM_BKUPCFG_BRAMCFG(0U);
 }
 
 void PM_IdleModeEnter( void )
@@ -76,7 +76,10 @@ void PM_StandbyModeEnter( void )
     /* Configure Standby Sleep */
     PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_STANDBY_Val;
     /* Wait till the voltage regulator low power mode is ready */
-    while(!PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk);
+    while((PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk) == 0U)
+    {
+
+    }
     /* Wait for interrupt instruction execution */
     __WFI();
 }
@@ -86,7 +89,10 @@ void PM_HibernateModeEnter( void )
     /* Configure Hibernate Sleep */
     PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_HIBERNATE_Val;
     /* Wait till the voltage regulator low power mode is ready */
-    while(!PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk);
+    while((PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk) == 0U)
+    {
+
+    }
     /* Wait for interrupt instruction execution */
     __WFI();
 }
@@ -96,7 +102,10 @@ void PM_BackupModeEnter( void )
     /* Configure Backup Sleep */
     PM_REGS->PM_SLEEPCFG = PM_SLEEPCFG_SLEEPMODE_BACKUP_Val;
     /* Wait till the voltage regulator low power mode is ready */
-    while(!PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk);
+    while((PM_REGS->PM_INTFLAG & PM_INTFLAG_SLEEPRDY_Msk) == 0U)
+    {
+
+    }
     /* Wait for interrupt instruction execution */
     __WFI();
 }
@@ -123,7 +132,7 @@ void PM_IO_RetentionSet( void )
 
 void PM_IO_RetentionClear( void )
 {
-    PM_REGS->PM_CTRLA &= (~PM_CTRLA_IORET_Msk);
+    PM_REGS->PM_CTRLA &= (uint8_t)(~PM_CTRLA_IORET_Msk);
 }
 
 
