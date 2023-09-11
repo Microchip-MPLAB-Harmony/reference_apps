@@ -262,12 +262,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CZ-CA80_DFP" vendor="Microchip" version="1.2.150"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CZ-CA80_DFP" vendor="Microchip" version="1.2.150"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
