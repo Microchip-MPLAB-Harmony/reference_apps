@@ -96,14 +96,12 @@ typedef enum
     BACKUP_REGISTER_6 = 6U,
     BACKUP_REGISTER_7 = 7U
 } BACKUP_REGISTER;
-typedef enum
-{
-    TAMPER_CHANNEL_0 = 0U,
-    TAMPER_CHANNEL_1 = 1U,
-    TAMPER_CHANNEL_2 = 2U,
-    TAMPER_CHANNEL_3 = 3U,
-    TAMPER_CHANNEL_4 = 4U,
-} TAMPER_CHANNEL;
+ #define   TAMPER_CHANNEL_0  (0U)
+ #define   TAMPER_CHANNEL_1  (1U)
+ #define   TAMPER_CHANNEL_2  (2U)
+ #define   TAMPER_CHANNEL_3  (3U)
+ #define   TAMPER_CHANNEL_4  (4U)
+typedef uint32_t TAMPER_CHANNEL;
 typedef void (*RTC_TIMER32_CALLBACK)( RTC_TIMER32_INT_MASK intCause, uintptr_t context );
 
 typedef struct
@@ -115,6 +113,8 @@ typedef struct
 } RTC_OBJECT;
 
 void RTC_Initialize(void);
+void RTC_Timer32CountSyncEnable ( void );
+void RTC_Timer32CountSyncDisable ( void );
 void RTC_Timer32Start ( void );
 void RTC_Timer32Stop ( void );
 void RTC_Timer32CounterSet ( uint32_t count );

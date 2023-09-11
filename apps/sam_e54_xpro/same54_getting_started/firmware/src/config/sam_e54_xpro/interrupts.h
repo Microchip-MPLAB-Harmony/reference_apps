@@ -50,6 +50,7 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
@@ -59,6 +60,10 @@
 void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
+void MemoryManagement_Handler (void);
+void BusFault_Handler (void);
+void UsageFault_Handler (void);
+void DebugMonitor_Handler (void);
 void RTC_InterruptHandler (void);
 void EIC_EXTINT_15_InterruptHandler (void);
 void DMAC_0_InterruptHandler (void);
