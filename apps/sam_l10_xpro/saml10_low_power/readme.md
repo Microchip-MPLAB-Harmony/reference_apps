@@ -115,7 +115,7 @@ connected to Micro-B port, and reconnect it back.
 <img src = "images/device_wakes_up_and_print_temperature.png" width="700" height="300" align="middle">
 - Press the SW0 button to switch from Standby mode to Idle mode. The following image shows the transition of the power consumption from Standby mode to Idle mode  
 <img src = "images/standby_idle_transition.png" width="700" height="320" align="middle">
-- The following image shows the device in Idle mode with a measured power consumption of 140 µA  
+- The following image shows the device in Idle mode with a measured power consumption of 140 µA.  
 <img src = "images/device_in_idle_mode.png" width="700" height="350" align="middle">  
 
 **Note**: You can observe that the small peaks coming from RTC timer expiry disappeared because the power consumption in Idle mode is higher than the power required to start ADC conversion.  
@@ -147,6 +147,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, regenerated and tested application.
 - v1.3.0 - Regenerated and tested application.

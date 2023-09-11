@@ -5113,7 +5113,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\definitions.h</file>
-         <hash>3995a0b6d991ed9957f1906f7de229696246553f8dc77d3920f0711edb24278a</hash>
+         <hash>9e6a4b1b923edbfafad38c2a124978a02c25631f2cd6a7e72e3f3c848c8763f6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\pio\saml10e16a.h</file>
@@ -5397,7 +5397,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l10_xpro\initialization.c</file>
-         <hash>f8b99726d705449ad41c88e26a64d5a332b4d021473fd8b98435d0f04f5f1857</hash>
+         <hash>2abe461aa70659ddb34aa91d15db664494f9b45e3bb0367fea92b7ea8cc0437e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML10E16A_DFP\instance\sercom0.h</file>
