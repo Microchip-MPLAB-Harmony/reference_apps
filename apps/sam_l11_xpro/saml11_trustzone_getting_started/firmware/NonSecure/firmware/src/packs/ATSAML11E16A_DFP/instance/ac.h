@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,15 +20,15 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_AC_INSTANCE_
 #define _SAML11_AC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for AC peripheral ========== */
-#define AC_GCLK_ID                               _UL_(17)   /* Index of Generic Clock */
-#define AC_NUM_CMP                               _UL_(2)    /* Number of comparators */
-#define AC_PAIRS                                 _UL_(1)    /* Number of pairs of comparators */
-#define AC_INSTANCE_ID                           _UL_(13)   
+#define AC_GCLK_ID                               (17)       /* Index of Generic Clock */
+#define AC_INSTANCE_ID                           (13)       
+#define AC_NUM_CMP                               (2)        /* Number of comparators */
+#define AC_PAIRS                                 (1)        /* Number of pairs of comparators */
 
 #endif /* _SAML11_AC_INSTANCE_ */

@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,14 +20,14 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_MCLK_INSTANCE_
 #define _SAML11_MCLK_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for MCLK peripheral ========== */
-#define MCLK_MCLK_CLK_APB_NUM                    _UL_(3)    
-#define MCLK_SYSTEM_CLOCK                        _UL_(4000000) /* System Clock Frequency at Reset */
-#define MCLK_INSTANCE_ID                         _UL_(2)    
+#define MCLK_INSTANCE_ID                         (2)        
+#define MCLK_CLK_APB_NUM                         (3)        
+#define MCLK_SYSTEM_CLOCK                        (4000000)  /* System Clock Frequency at Reset */
 
 #endif /* _SAML11_MCLK_INSTANCE_ */

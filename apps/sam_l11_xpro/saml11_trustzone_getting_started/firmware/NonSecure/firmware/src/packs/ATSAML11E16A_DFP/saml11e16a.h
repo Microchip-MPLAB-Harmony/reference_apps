@@ -1,7 +1,7 @@
 /*
  * Header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,15 +20,16 @@
  *
  */
 
-/* File generated from device description version 2021-06-28T12:21:22Z */
+/* File generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11E16A_H_
 #define _SAML11E16A_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
-#define HEADER_FORMAT_VERSION "2.0.0"
+#define HEADER_FORMAT_VERSION "2.1.0"
 
 #define HEADER_FORMAT_VERSION_MAJOR (2)
-#define HEADER_FORMAT_VERSION_MINOR (0)
+#define HEADER_FORMAT_VERSION_MINOR (1)
+#define HEADER_FORMAT_VERSION_PATCH (0)
 
 /* SAML11E16A definitions
   This file defines all structures and symbols for SAML11E16A:
@@ -47,21 +48,21 @@
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !defined(SKIP_INTEGER_LITERALS)
-#  if defined(_U_) || defined(_L_) || defined(_UL_)
-#    error "Integer Literals macros already defined elsewhere"
+#  if defined(_UINT8_) || defined(_UINT16_) || defined(_UINT32_)
+#    error "Integer constant value macros already defined elsewhere"
 #  endif
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-/* Macros that deal with adding suffixes to integer literal constants for C/C++ */
-#  define _U_(x) (x ## U)    /* C code: Unsigned integer literal constant value */
-#  define _L_(x) (x ## L)    /* C code: Long integer literal constant value */
-#  define _UL_(x) (x ## UL)  /* C code: Unsigned Long integer literal constant value */
+/* Macros that deal with sizes of integer constants for C/C++ */
+#  define _UINT8_(x)   ((uint8_t)(x))    /* C code: 8-bits unsigned integer constant value */
+#  define _UINT16_(x)  ((uint16_t)(x))   /* C code: 16-bits unsigned integer constant value */
+#  define _UINT32_(x)  ((uint32_t)(x))   /* C code: 32-bits unsigned integer constant value */
 
 #else /* Assembler */
 
-#  define _U_(x) x    /* Assembler: Unsigned integer literal constant value */
-#  define _L_(x) x    /* Assembler: Long integer literal constant value */
-#  define _UL_(x) x   /* Assembler: Unsigned Long integer literal constant value */
+#  define _UINT8_(x) x    /* Assembler: 8-bits unsigned integer constant value */
+#  define _UINT16_(x) x   /* Assembler: 16-bits unsigned integer constant value */
+#  define _UINT32_(x) x   /* Assembler: 32-bits unsigned integer constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
 
@@ -81,11 +82,11 @@ typedef enum IRQn
   SysTick_IRQn              =  -1, /* -1  System Tick Timer                   */
 
 /******  SAML11E16A specific Interrupt Numbers ***********************************/
-  SUPC_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (SUPC) */
-  OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSC32KCTRL) */
-  PM_IRQn                   =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (PM) */
-  OSCCTRL_IRQn              =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSCCTRL) */
   MCLK_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (MCLK) */
+  OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSC32KCTRL) */
+  OSCCTRL_IRQn              =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSCCTRL) */
+  PM_IRQn                   =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (PM) */
+  SUPC_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (SUPC) */
   WDT_IRQn                  =   1, /* 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /* 2   Real-Time Counter (RTC)             */
   EIC_EXTINT_0_IRQn         =   3, /* 3   External Interrupt Controller (EIC) */
@@ -444,50 +445,50 @@ void TRAM_Handler                  ( void );
 /* ************************************************************************** */
 /*   BASE ADDRESS DEFINITIONS FOR SAML11E16A                                  */
 /* ************************************************************************** */
-#define AC_BASE_ADDRESS                  _UL_(0x40003400)                              /* AC Base Address */
-#define ADC_BASE_ADDRESS                 _UL_(0x42001c00)                              /* ADC Base Address */
-#define CCL_BASE_ADDRESS                 _UL_(0x42002c00)                              /* CCL Base Address */
-#define DAC_BASE_ADDRESS                 _UL_(0x42002000)                              /* DAC Base Address */
-#define DMAC_BASE_ADDRESS                _UL_(0x41006000)                              /* DMAC Base Address */
-#define DSU_BASE_ADDRESS                 _UL_(0x41002000)                              /* DSU Base Address */
-#define DSU_EXT_BASE_ADDRESS             _UL_(0x41002100)                              /* DSU Base Address */
-#define EIC_BASE_ADDRESS                 _UL_(0x40002800)                              /* EIC Base Address */
-#define EIC_SEC_BASE_ADDRESS             _UL_(0x40002a00)                              /* EIC Base Address */
-#define EVSYS_BASE_ADDRESS               _UL_(0x42000000)                              /* EVSYS Base Address */
-#define EVSYS_SEC_BASE_ADDRESS           _UL_(0x42000200)                              /* EVSYS Base Address */
-#define FREQM_BASE_ADDRESS               _UL_(0x40002c00)                              /* FREQM Base Address */
-#define GCLK_BASE_ADDRESS                _UL_(0x40001c00)                              /* GCLK Base Address */
-#define IDAU_BASE_ADDRESS                _UL_(0x41000000)                              /* IDAU Base Address */
-#define MCLK_BASE_ADDRESS                _UL_(0x40000800)                              /* MCLK Base Address */
-#define NVMCTRL_BASE_ADDRESS             _UL_(0x41004000)                              /* NVMCTRL Base Address */
-#define NVMCTRL_SEC_BASE_ADDRESS         _UL_(0x41005000)                              /* NVMCTRL Base Address */
-#define BOCOR_FUSES_BASE_ADDRESS         _UL_(0x0080c000)                              /* FUSES Base Address */
-#define SW_CALIB_FUSES_BASE_ADDRESS      _UL_(0x00806020)                              /* FUSES Base Address */
-#define TEMP_LOG_FUSES_BASE_ADDRESS      _UL_(0x00806038)                              /* FUSES Base Address */
-#define USER_FUSES_BASE_ADDRESS          _UL_(0x00804000)                              /* FUSES Base Address */
-#define OPAMP_BASE_ADDRESS               _UL_(0x42003000)                              /* OPAMP Base Address */
-#define OSCCTRL_BASE_ADDRESS             _UL_(0x40001000)                              /* OSCCTRL Base Address */
-#define OSC32KCTRL_BASE_ADDRESS          _UL_(0x40001400)                              /* OSC32KCTRL Base Address */
-#define PAC_BASE_ADDRESS                 _UL_(0x40000000)                              /* PAC Base Address */
-#define PAC_SEC_BASE_ADDRESS             _UL_(0x40000200)                              /* PAC Base Address */
-#define PM_BASE_ADDRESS                  _UL_(0x40000400)                              /* PM Base Address */
-#define PORT_BASE_ADDRESS                _UL_(0x40003000)                              /* PORT Base Address */
-#define PORT_SEC_BASE_ADDRESS            _UL_(0x40003200)                              /* PORT Base Address */
-#define PORT_IOBUS_BASE_ADDRESS          _UL_(0x60000000)                              /* PORT Base Address */
-#define PORT_IOBUS_SEC_BASE_ADDRESS      _UL_(0x60000200)                              /* PORT Base Address */
-#define PTC_BASE_ADDRESS                 _UL_(0x42002400)                              /* PTC Base Address */
-#define RSTC_BASE_ADDRESS                _UL_(0x40000c00)                              /* RSTC Base Address */
-#define RTC_BASE_ADDRESS                 _UL_(0x40002400)                              /* RTC Base Address */
-#define SERCOM0_BASE_ADDRESS             _UL_(0x42000400)                              /* SERCOM0 Base Address */
-#define SERCOM1_BASE_ADDRESS             _UL_(0x42000800)                              /* SERCOM1 Base Address */
-#define SERCOM2_BASE_ADDRESS             _UL_(0x42000c00)                              /* SERCOM2 Base Address */
-#define SUPC_BASE_ADDRESS                _UL_(0x40001800)                              /* SUPC Base Address */
-#define TC0_BASE_ADDRESS                 _UL_(0x42001000)                              /* TC0 Base Address */
-#define TC1_BASE_ADDRESS                 _UL_(0x42001400)                              /* TC1 Base Address */
-#define TC2_BASE_ADDRESS                 _UL_(0x42001800)                              /* TC2 Base Address */
-#define TRAM_BASE_ADDRESS                _UL_(0x42003400)                              /* TRAM Base Address */
-#define TRNG_BASE_ADDRESS                _UL_(0x42002800)                              /* TRNG Base Address */
-#define WDT_BASE_ADDRESS                 _UL_(0x40002000)                              /* WDT Base Address */
+#define AC_BASE_ADDRESS                  _UINT32_(0x40003400)                          /* AC Base Address */
+#define ADC_BASE_ADDRESS                 _UINT32_(0x42001c00)                          /* ADC Base Address */
+#define CCL_BASE_ADDRESS                 _UINT32_(0x42002c00)                          /* CCL Base Address */
+#define DAC_BASE_ADDRESS                 _UINT32_(0x42002000)                          /* DAC Base Address */
+#define DMAC_BASE_ADDRESS                _UINT32_(0x41006000)                          /* DMAC Base Address */
+#define DSU_BASE_ADDRESS                 _UINT32_(0x41002000)                          /* DSU Base Address */
+#define DSU_EXT_BASE_ADDRESS             _UINT32_(0x41002100)                          /* DSU Base Address */
+#define EIC_BASE_ADDRESS                 _UINT32_(0x40002800)                          /* EIC Base Address */
+#define EIC_SEC_BASE_ADDRESS             _UINT32_(0x40002a00)                          /* EIC Base Address */
+#define EVSYS_BASE_ADDRESS               _UINT32_(0x42000000)                          /* EVSYS Base Address */
+#define EVSYS_SEC_BASE_ADDRESS           _UINT32_(0x42000200)                          /* EVSYS Base Address */
+#define FREQM_BASE_ADDRESS               _UINT32_(0x40002c00)                          /* FREQM Base Address */
+#define GCLK_BASE_ADDRESS                _UINT32_(0x40001c00)                          /* GCLK Base Address */
+#define IDAU_BASE_ADDRESS                _UINT32_(0x41000000)                          /* IDAU Base Address */
+#define MCLK_BASE_ADDRESS                _UINT32_(0x40000800)                          /* MCLK Base Address */
+#define NVMCTRL_BASE_ADDRESS             _UINT32_(0x41004000)                          /* NVMCTRL Base Address */
+#define NVMCTRL_SEC_BASE_ADDRESS         _UINT32_(0x41005000)                          /* NVMCTRL Base Address */
+#define BOCOR_FUSES_BASE_ADDRESS         _UINT32_(0x0080c000)                          /* FUSES Base Address */
+#define SW_CALIB_FUSES_BASE_ADDRESS      _UINT32_(0x00806020)                          /* FUSES Base Address */
+#define TEMP_LOG_FUSES_BASE_ADDRESS      _UINT32_(0x00806038)                          /* FUSES Base Address */
+#define USER_FUSES_BASE_ADDRESS          _UINT32_(0x00804000)                          /* FUSES Base Address */
+#define OPAMP_BASE_ADDRESS               _UINT32_(0x42003000)                          /* OPAMP Base Address */
+#define OSCCTRL_BASE_ADDRESS             _UINT32_(0x40001000)                          /* OSCCTRL Base Address */
+#define OSC32KCTRL_BASE_ADDRESS          _UINT32_(0x40001400)                          /* OSC32KCTRL Base Address */
+#define PAC_BASE_ADDRESS                 _UINT32_(0x40000000)                          /* PAC Base Address */
+#define PAC_SEC_BASE_ADDRESS             _UINT32_(0x40000200)                          /* PAC Base Address */
+#define PM_BASE_ADDRESS                  _UINT32_(0x40000400)                          /* PM Base Address */
+#define PORT_BASE_ADDRESS                _UINT32_(0x40003000)                          /* PORT Base Address */
+#define PORT_SEC_BASE_ADDRESS            _UINT32_(0x40003200)                          /* PORT Base Address */
+#define PORT_IOBUS_BASE_ADDRESS          _UINT32_(0x60000000)                          /* PORT Base Address */
+#define PORT_IOBUS_SEC_BASE_ADDRESS      _UINT32_(0x60000200)                          /* PORT Base Address */
+#define PTC_BASE_ADDRESS                 _UINT32_(0x42002400)                          /* PTC Base Address */
+#define RSTC_BASE_ADDRESS                _UINT32_(0x40000c00)                          /* RSTC Base Address */
+#define RTC_BASE_ADDRESS                 _UINT32_(0x40002400)                          /* RTC Base Address */
+#define SERCOM0_BASE_ADDRESS             _UINT32_(0x42000400)                          /* SERCOM0 Base Address */
+#define SERCOM1_BASE_ADDRESS             _UINT32_(0x42000800)                          /* SERCOM1 Base Address */
+#define SERCOM2_BASE_ADDRESS             _UINT32_(0x42000c00)                          /* SERCOM2 Base Address */
+#define SUPC_BASE_ADDRESS                _UINT32_(0x40001800)                          /* SUPC Base Address */
+#define TC0_BASE_ADDRESS                 _UINT32_(0x42001000)                          /* TC0 Base Address */
+#define TC1_BASE_ADDRESS                 _UINT32_(0x42001400)                          /* TC1 Base Address */
+#define TC2_BASE_ADDRESS                 _UINT32_(0x42001800)                          /* TC2 Base Address */
+#define TRAM_BASE_ADDRESS                _UINT32_(0x42003400)                          /* TRAM Base Address */
+#define TRNG_BASE_ADDRESS                _UINT32_(0x42002800)                          /* TRNG Base Address */
+#define WDT_BASE_ADDRESS                 _UINT32_(0x40002000)                          /* WDT Base Address */
 
 /* ************************************************************************** */
 /*   PIO DEFINITIONS FOR SAML11E16A                                           */
@@ -497,56 +498,55 @@ void TRAM_Handler                  ( void );
 /* ************************************************************************** */
 /*   MEMORY MAPPING DEFINITIONS FOR SAML11E16A                                */
 /* ************************************************************************** */
+#define FLASH_SIZE                     _UINT32_(0x00010000)    /*   64kB Memory segment type: flash */
+#define FLASH_PAGE_SIZE                _UINT32_(        64)
+#define FLASH_NB_OF_PAGES              _UINT32_(      1024)
 
-#define FLASH_SIZE                     _UL_(0x00010000)    /*   64kB Memory segment type: flash */
-#define FLASH_PAGE_SIZE                _UL_(        64)
-#define FLASH_NB_OF_PAGES              _UL_(      1024)
+#define AUX_SIZE                       _UINT32_(0x00000100)    /*    0kB Memory segment type: fuses */
+#define AUX_PAGE_SIZE                  _UINT32_(        64)
+#define AUX_NB_OF_PAGES                _UINT32_(         4)
 
-#define AUX_SIZE                       _UL_(0x00000100)    /*    0kB Memory segment type: fuses */
-#define AUX_PAGE_SIZE                  _UL_(        64)
-#define AUX_NB_OF_PAGES                _UL_(         4)
+#define BOCOR_SIZE                     _UINT32_(0x00000100)    /*    0kB Memory segment type: fuses */
+#define BOCOR_PAGE_SIZE                _UINT32_(        64)
+#define BOCOR_NB_OF_PAGES              _UINT32_(         4)
 
-#define BOCOR_SIZE                     _UL_(0x00000100)    /*    0kB Memory segment type: fuses */
-#define BOCOR_PAGE_SIZE                _UL_(        64)
-#define BOCOR_NB_OF_PAGES              _UL_(         4)
+#define DATAFLASH_SIZE                 _UINT32_(0x00000800)    /*    2kB Memory segment type: flash */
+#define DATAFLASH_PAGE_SIZE            _UINT32_(        64)
+#define DATAFLASH_NB_OF_PAGES          _UINT32_(        32)
 
-#define DATAFLASH_SIZE                 _UL_(0x00000800)    /*    2kB Memory segment type: flash */
-#define DATAFLASH_PAGE_SIZE            _UL_(        64)
-#define DATAFLASH_NB_OF_PAGES          _UL_(        32)
+#define SW_CALIB_SIZE                  _UINT32_(0x00000008)    /*    0kB Memory segment type: fuses */
+#define TEMP_LOG_SIZE                  _UINT32_(0x00000008)    /*    0kB Memory segment type: fuses */
+#define USER_PAGE_SIZE                 _UINT32_(0x00000100)    /*    0kB Memory segment type: user_page */
+#define USER_PAGE_PAGE_SIZE            _UINT32_(        64)
+#define USER_PAGE_NB_OF_PAGES          _UINT32_(         4)
 
-#define SW_CALIB_SIZE                  _UL_(0x00000008)    /*    0kB Memory segment type: fuses */
-#define TEMP_LOG_SIZE                  _UL_(0x00000008)    /*    0kB Memory segment type: fuses */
-#define USER_PAGE_SIZE                 _UL_(0x00000100)    /*    0kB Memory segment type: user_page */
-#define USER_PAGE_PAGE_SIZE            _UL_(        64)
-#define USER_PAGE_NB_OF_PAGES          _UL_(         4)
+#define HSRAM_SIZE                     _UINT32_(0x00004000)    /*   16kB Memory segment type: ram */
+#define APBA_SIZE                      _UINT32_(0x00008000)    /*   32kB Memory segment type: io */
+#define APBB_SIZE                      _UINT32_(0x00010000)    /*   64kB Memory segment type: io */
+#define APBC_SIZE                      _UINT32_(0x00004000)    /*   16kB Memory segment type: io */
+#define PPB_SIZE                       _UINT32_(0x00100000)    /* 1024kB Memory segment type: io */
+#define SCS_SIZE                       _UINT32_(0x00001000)    /*    4kB Memory segment type: io */
+#define PERIPHERALS_SIZE               _UINT32_(0x20000000)    /* 524288kB Memory segment type: io */
 
-#define HSRAM_SIZE                     _UL_(0x00004000)    /*   16kB Memory segment type: ram */
-#define APBA_SIZE                      _UL_(0x00008000)    /*   32kB Memory segment type: io */
-#define APBB_SIZE                      _UL_(0x00010000)    /*   64kB Memory segment type: io */
-#define APBC_SIZE                      _UL_(0x00004000)    /*   16kB Memory segment type: io */
-#define PPB_SIZE                       _UL_(0x00100000)    /* 1024kB Memory segment type: io */
-#define SCS_SIZE                       _UL_(0x00001000)    /*    4kB Memory segment type: io */
-#define PERIPHERALS_SIZE               _UL_(0x20000000)    /* 524288kB Memory segment type: io */
-
-#define FLASH_ADDR                     _UL_(0x00000000)    /* FLASH base address (type: flash)*/
-#define AUX_ADDR                       _UL_(0x00806000)    /* AUX base address (type: fuses)*/
-#define BOCOR_ADDR                     _UL_(0x0080c000)    /* BOCOR base address (type: fuses)*/
-#define DATAFLASH_ADDR                 _UL_(0x00400000)    /* DATAFLASH base address (type: flash)*/
-#define SW_CALIB_ADDR                  _UL_(0x00806020)    /* SW_CALIB base address (type: fuses)*/
-#define TEMP_LOG_ADDR                  _UL_(0x00806038)    /* TEMP_LOG base address (type: fuses)*/
-#define USER_PAGE_ADDR                 _UL_(0x00804000)    /* USER_PAGE base address (type: user_page)*/
-#define HSRAM_ADDR                     _UL_(0x20000000)    /* HSRAM base address (type: ram)*/
-#define APBA_ADDR                      _UL_(0x40000000)    /* APBA base address (type: io)*/
-#define APBB_ADDR                      _UL_(0x41000000)    /* APBB base address (type: io)*/
-#define APBC_ADDR                      _UL_(0x42000000)    /* APBC base address (type: io)*/
-#define PPB_ADDR                       _UL_(0xe0000000)    /* PPB base address (type: io)*/
-#define SCS_ADDR                       _UL_(0xe000e000)    /* SCS base address (type: io)*/
-#define PERIPHERALS_ADDR               _UL_(0x40000000)    /* PERIPHERALS base address (type: io)*/
+#define FLASH_ADDR                     _UINT32_(0x00000000)    /* FLASH base address (type: flash)*/
+#define AUX_ADDR                       _UINT32_(0x00806000)    /* AUX base address (type: fuses)*/
+#define BOCOR_ADDR                     _UINT32_(0x0080c000)    /* BOCOR base address (type: fuses)*/
+#define DATAFLASH_ADDR                 _UINT32_(0x00400000)    /* DATAFLASH base address (type: flash)*/
+#define SW_CALIB_ADDR                  _UINT32_(0x00806020)    /* SW_CALIB base address (type: fuses)*/
+#define TEMP_LOG_ADDR                  _UINT32_(0x00806038)    /* TEMP_LOG base address (type: fuses)*/
+#define USER_PAGE_ADDR                 _UINT32_(0x00804000)    /* USER_PAGE base address (type: user_page)*/
+#define HSRAM_ADDR                     _UINT32_(0x20000000)    /* HSRAM base address (type: ram)*/
+#define APBA_ADDR                      _UINT32_(0x40000000)    /* APBA base address (type: io)*/
+#define APBB_ADDR                      _UINT32_(0x41000000)    /* APBB base address (type: io)*/
+#define APBC_ADDR                      _UINT32_(0x42000000)    /* APBC base address (type: io)*/
+#define PPB_ADDR                       _UINT32_(0xe0000000)    /* PPB base address (type: io)*/
+#define SCS_ADDR                       _UINT32_(0xe000e000)    /* SCS base address (type: io)*/
+#define PERIPHERALS_ADDR               _UINT32_(0x40000000)    /* PERIPHERALS base address (type: io)*/
 
 /* ************************************************************************** */
 /*   DEVICE SIGNATURES FOR SAML11E16A                                         */
 /* ************************************************************************** */
-#define CHIP_DSU_DID                   _UL_(0X20830000)
+#define CHIP_DSU_DID                   _UINT32_(0X20830000)
 
 /* ************************************************************************** */
 /*   ELECTRICAL DEFINITIONS FOR SAML11E16A                                    */

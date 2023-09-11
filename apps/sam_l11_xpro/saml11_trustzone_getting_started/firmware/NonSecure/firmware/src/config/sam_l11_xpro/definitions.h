@@ -61,6 +61,12 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME			 "ATSAML11E16A"
+#define DEVICE_ARCH			 "CORTEX-M23"
+#define DEVICE_FAMILY		 "SAML"
+#define DEVICE_SERIES		 "SAML11"
+
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 32000000
 

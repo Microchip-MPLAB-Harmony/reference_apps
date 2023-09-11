@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,21 +20,21 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_PM_INSTANCE_
 #define _SAML11_PM_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PM peripheral ========== */
-#define PM_BIAS_RAM_HS                           _UL_(1)    /* one if RAM HS can be back biased */
-#define PM_HAS_IDLE2_SLEEP_AS_IDLE               _UL_(1)    /* IDLE2 Sleep mode is called IDLE */
-#define PM_HAS_BBIASTR_BIT                       _UL_(1)    /* one if RAM HS can be back biased */
-#define PM_HAS_DPGPDSW_BIT                       _UL_(1)    /* one if RAM HS can be back biased */
-#define PM_PD_NUM                                _UL_(1)    /* Number of switchable Power Domain */
-#define PM_HAS_PLCFG                             _UL_(1)    /* Performance Level Configuration supported */
-#define PM_HAS_PDCFG_BIT                         _UL_(1)    /* PDCFG bit is present */
-#define PM_HAS_PWCFG                             _UL_(1)    /* PWCFG register is present */
-#define PM_HAS_OFF_SLEEP                         _UL_(1)    /* OFF Sleep mode supported */
-#define PM_INSTANCE_ID                           _UL_(1)    
+#define PM_BIAS_RAM_HS                           (1)        /* one if RAM HS can be back biased */
+#define PM_HAS_BBIASTR_BIT                       (1)        /* one if RAM HS can be back biased */
+#define PM_HAS_DPGPDSW_BIT                       (1)        /* one if RAM HS can be back biased */
+#define PM_HAS_IDLE2_SLEEP_AS_IDLE               (1)        /* IDLE2 Sleep mode is called IDLE */
+#define PM_HAS_OFF_SLEEP                         (1)        /* OFF Sleep mode supported */
+#define PM_HAS_PDCFG_BIT                         (1)        /* PDCFG bit is present */
+#define PM_HAS_PLCFG                             (1)        /* Performance Level Configuration supported */
+#define PM_HAS_PWCFG                             (1)        /* PWCFG register is present */
+#define PM_INSTANCE_ID                           (1)        
+#define PM_PD_NUM                                (1)        /* Number of switchable Power Domain */
 
 #endif /* _SAML11_PM_INSTANCE_ */

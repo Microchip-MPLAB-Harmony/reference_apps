@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAML11E16A linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -34,7 +34,6 @@
  * 
  */
 
-
 OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
 SEARCH_DIR(.)
@@ -55,38 +54,31 @@ SEARCH_DIR(.)
  */
 ENTRY(__XC32_RESET_HANDLER_NAME)
 
-/* Device defaults */
-#define _DEVICE_ROM_ORIGIN 0x0
-#define _DEVICE_ROM_LENGTH 0x10000
-#define _DEVICE_RAM_ORIGIN 0x20000000
-#define _DEVICE_RAM_LENGTH 0x4000
-#define _DEVICE_DATAFLASH_LENGTH 0x800
+/*************************************************************************
+ * Memory-Region Macro Definitions
+ * The XC32 linker preprocesses linker scripts. You may define these
+ * macros in the MPLAB X project properties or on the command line when
+ * calling the linker via the xc32-gcc shell.
+ *************************************************************************/
 
-/* Define sizes if they have not been supplied. */
 #ifndef ROM_ORIGIN
-#  define ROM_ORIGIN _DEVICE_ROM_ORIGIN
+#  define ROM_ORIGIN 0x0
 #endif
-
 #ifndef ROM_LENGTH
-#  define ROM_LENGTH _DEVICE_ROM_LENGTH
+#  define ROM_LENGTH 0x10000
+#elif (ROM_LENGTH > 0x10000)
+#  error ROM_LENGTH is greater than the max size of 0x10000
 #endif
-
 #ifndef RAM_ORIGIN
-#  define RAM_ORIGIN _DEVICE_RAM_ORIGIN
+#  define RAM_ORIGIN 0x20000000
 #endif
-
 #ifndef RAM_LENGTH
-#  define RAM_LENGTH _DEVICE_RAM_LENGTH
+#  define RAM_LENGTH 0x4000
+#elif (RAM_LENGTH > 0x4000)
+#  error RAM_LENGTH is greater than the max size of 0x4000
 #endif
 
-/* Check that values are sane. */
-#if ROM_LENGTH > _DEVICE_ROM_LENGTH
-#  error "ROM_LENGTH is greater than the max size of 0x10000"
-#endif
 
-#if RAM_LENGTH > _DEVICE_RAM_LENGTH
-#  error "RAM_LENGTH is greater than the max size of 0x4000"
-#endif
 
 /*  Linker Macros controlling memory regions for TrustZone-M
  *
@@ -230,7 +222,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  define TZ_RAM_ORIGIN (RAM_ORIGIN + RS_SIZE)
 #  define TZ_RAM_LENGTH (RAM_LENGTH - RS_SIZE)
 #endif
-
 /*************************************************************************
  * Memory-Region Definitions
  * The MEMORY command describes the location and size of blocks of memory
@@ -244,55 +235,82 @@ MEMORY
 #endif
   ram (WX!R) : ORIGIN = TZ_RAM_ORIGIN, LENGTH = TZ_RAM_LENGTH
   config_00804000 : ORIGIN = 0x00804000, LENGTH = 0x4
-  config_0080C000 : ORIGIN = 0x0080C000, LENGTH = 0x4
   config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
   config_00804008 : ORIGIN = 0x00804008, LENGTH = 0x4
-  config_0080C0EC : ORIGIN = 0x0080C0EC, LENGTH = 0x4
   config_0080400C : ORIGIN = 0x0080400C, LENGTH = 0x4
-  config_0080C010 : ORIGIN = 0x0080C010, LENGTH = 0x4
-  config_00804018 : ORIGIN = 0x00804018, LENGTH = 0x4
+  config_00804010 : ORIGIN = 0x00804010, LENGTH = 0x4
   config_00804014 : ORIGIN = 0x00804014, LENGTH = 0x4
-  config_0080C018 : ORIGIN = 0x0080C018, LENGTH = 0x4
+  config_00804018 : ORIGIN = 0x00804018, LENGTH = 0x4
+  config_0080401C : ORIGIN = 0x0080401C, LENGTH = 0x4
+  config_0080C000 : ORIGIN = 0x0080C000, LENGTH = 0x4
   config_0080C004 : ORIGIN = 0x0080C004, LENGTH = 0x4
+  config_0080C008 : ORIGIN = 0x0080C008, LENGTH = 0x4
+  config_0080C010 : ORIGIN = 0x0080C010, LENGTH = 0x4
+  config_0080C014 : ORIGIN = 0x0080C014, LENGTH = 0x4
+  config_0080C018 : ORIGIN = 0x0080C018, LENGTH = 0x4
   config_0080C01C : ORIGIN = 0x0080C01C, LENGTH = 0x4
   config_0080C020 : ORIGIN = 0x0080C020, LENGTH = 0x4
   config_0080C024 : ORIGIN = 0x0080C024, LENGTH = 0x4
   config_0080C028 : ORIGIN = 0x0080C028, LENGTH = 0x4
-  config_0080401C : ORIGIN = 0x0080401C, LENGTH = 0x4
   config_0080C02C : ORIGIN = 0x0080C02C, LENGTH = 0x4
   config_0080C030 : ORIGIN = 0x0080C030, LENGTH = 0x4
-  config_0080C008 : ORIGIN = 0x0080C008, LENGTH = 0x4
   config_0080C034 : ORIGIN = 0x0080C034, LENGTH = 0x4
   config_0080C038 : ORIGIN = 0x0080C038, LENGTH = 0x4
   config_0080C03C : ORIGIN = 0x0080C03C, LENGTH = 0x4
   config_0080C040 : ORIGIN = 0x0080C040, LENGTH = 0x4
-  config_0080C0E0 : ORIGIN = 0x0080C0E0, LENGTH = 0x4
   config_0080C044 : ORIGIN = 0x0080C044, LENGTH = 0x4
   config_0080C048 : ORIGIN = 0x0080C048, LENGTH = 0x4
   config_0080C04C : ORIGIN = 0x0080C04C, LENGTH = 0x4
   config_0080C050 : ORIGIN = 0x0080C050, LENGTH = 0x4
   config_0080C054 : ORIGIN = 0x0080C054, LENGTH = 0x4
   config_0080C058 : ORIGIN = 0x0080C058, LENGTH = 0x4
-  config_0080C0E4 : ORIGIN = 0x0080C0E4, LENGTH = 0x4
   config_0080C05C : ORIGIN = 0x0080C05C, LENGTH = 0x4
   config_0080C060 : ORIGIN = 0x0080C060, LENGTH = 0x4
-  config_00804010 : ORIGIN = 0x00804010, LENGTH = 0x4
   config_0080C064 : ORIGIN = 0x0080C064, LENGTH = 0x4
   config_0080C068 : ORIGIN = 0x0080C068, LENGTH = 0x4
   config_0080C06C : ORIGIN = 0x0080C06C, LENGTH = 0x4
-  config_0080C0F0 : ORIGIN = 0x0080C0F0, LENGTH = 0x4
+  config_0080C0E0 : ORIGIN = 0x0080C0E0, LENGTH = 0x4
+  config_0080C0E4 : ORIGIN = 0x0080C0E4, LENGTH = 0x4
   config_0080C0E8 : ORIGIN = 0x0080C0E8, LENGTH = 0x4
+  config_0080C0EC : ORIGIN = 0x0080C0EC, LENGTH = 0x4
+  config_0080C0F0 : ORIGIN = 0x0080C0F0, LENGTH = 0x4
   config_0080C0F4 : ORIGIN = 0x0080C0F4, LENGTH = 0x4
   config_0080C0F8 : ORIGIN = 0x0080C0F8, LENGTH = 0x4
-  config_0080C014 : ORIGIN = 0x0080C014, LENGTH = 0x4
   config_0080C0FC : ORIGIN = 0x0080C0FC, LENGTH = 0x4
 
 }
+/*************************************************************************
+ * Output region definitions.
+ * CODE_REGION defines the output region for .text/.rodata.
+ * DATA_REGION defines the output region for .data/.bss
+ * VECTOR_REGION defines the output region for .vectors.
+ * 
+ * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
+ * and 'ram' otherwise.
+ * N.B. The BFA will still allocate code to any MEMORY named 'rom' regardless
+ * of CODE_REGION's value. If you wish to use rom for something else please
+ * rename the MEMORY entry.
+ * DATA_REGION defaults to 'ram', which must be present.
+ * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
+ */
+#ifndef CODE_REGION
+# if ROM_LENGTH > 0
+#   define CODE_REGION rom
+# else
+#   define CODE_REGION ram
+# endif
+#endif
+#ifndef DATA_REGION
+# define DATA_REGION ram
+#endif 
+#ifndef VECTOR_REGION
+# define VECTOR_REGION CODE_REGION
+#endif
 
 __rom_end = ORIGIN(rom) + LENGTH(rom);
 #if defined(_SECURE)
 __rom_nsc_end = ORIGIN(rom_nsc) + LENGTH(rom_nsc);
-#endif
+#endif /* defined(SECURE) */
 __ram_end = ORIGIN(ram) + LENGTH(ram);
 
 /*************************************************************************
@@ -303,36 +321,45 @@ SECTIONS
     .config_00804000 : {
       KEEP(*(.config_00804000))
     } > config_00804000
-    .config_0080C000 : {
-      KEEP(*(.config_0080C000))
-    } > config_0080C000
     .config_00804004 : {
       KEEP(*(.config_00804004))
     } > config_00804004
     .config_00804008 : {
       KEEP(*(.config_00804008))
     } > config_00804008
-    .config_0080C0EC : {
-      KEEP(*(.config_0080C0EC))
-    } > config_0080C0EC
     .config_0080400C : {
       KEEP(*(.config_0080400C))
     } > config_0080400C
-    .config_0080C010 : {
-      KEEP(*(.config_0080C010))
-    } > config_0080C010
-    .config_00804018 : {
-      KEEP(*(.config_00804018))
-    } > config_00804018
+    .config_00804010 : {
+      KEEP(*(.config_00804010))
+    } > config_00804010
     .config_00804014 : {
       KEEP(*(.config_00804014))
     } > config_00804014
-    .config_0080C018 : {
-      KEEP(*(.config_0080C018))
-    } > config_0080C018
+    .config_00804018 : {
+      KEEP(*(.config_00804018))
+    } > config_00804018
+    .config_0080401C : {
+      KEEP(*(.config_0080401C))
+    } > config_0080401C
+    .config_0080C000 : {
+      KEEP(*(.config_0080C000))
+    } > config_0080C000
     .config_0080C004 : {
       KEEP(*(.config_0080C004))
     } > config_0080C004
+    .config_0080C008 : {
+      KEEP(*(.config_0080C008))
+    } > config_0080C008
+    .config_0080C010 : {
+      KEEP(*(.config_0080C010))
+    } > config_0080C010
+    .config_0080C014 : {
+      KEEP(*(.config_0080C014))
+    } > config_0080C014
+    .config_0080C018 : {
+      KEEP(*(.config_0080C018))
+    } > config_0080C018
     .config_0080C01C : {
       KEEP(*(.config_0080C01C))
     } > config_0080C01C
@@ -345,18 +372,12 @@ SECTIONS
     .config_0080C028 : {
       KEEP(*(.config_0080C028))
     } > config_0080C028
-    .config_0080401C : {
-      KEEP(*(.config_0080401C))
-    } > config_0080401C
     .config_0080C02C : {
       KEEP(*(.config_0080C02C))
     } > config_0080C02C
     .config_0080C030 : {
       KEEP(*(.config_0080C030))
     } > config_0080C030
-    .config_0080C008 : {
-      KEEP(*(.config_0080C008))
-    } > config_0080C008
     .config_0080C034 : {
       KEEP(*(.config_0080C034))
     } > config_0080C034
@@ -369,9 +390,6 @@ SECTIONS
     .config_0080C040 : {
       KEEP(*(.config_0080C040))
     } > config_0080C040
-    .config_0080C0E0 : {
-      KEEP(*(.config_0080C0E0))
-    } > config_0080C0E0
     .config_0080C044 : {
       KEEP(*(.config_0080C044))
     } > config_0080C044
@@ -390,18 +408,12 @@ SECTIONS
     .config_0080C058 : {
       KEEP(*(.config_0080C058))
     } > config_0080C058
-    .config_0080C0E4 : {
-      KEEP(*(.config_0080C0E4))
-    } > config_0080C0E4
     .config_0080C05C : {
       KEEP(*(.config_0080C05C))
     } > config_0080C05C
     .config_0080C060 : {
       KEEP(*(.config_0080C060))
     } > config_0080C060
-    .config_00804010 : {
-      KEEP(*(.config_00804010))
-    } > config_00804010
     .config_0080C064 : {
       KEEP(*(.config_0080C064))
     } > config_0080C064
@@ -411,21 +423,27 @@ SECTIONS
     .config_0080C06C : {
       KEEP(*(.config_0080C06C))
     } > config_0080C06C
-    .config_0080C0F0 : {
-      KEEP(*(.config_0080C0F0))
-    } > config_0080C0F0
+    .config_0080C0E0 : {
+      KEEP(*(.config_0080C0E0))
+    } > config_0080C0E0
+    .config_0080C0E4 : {
+      KEEP(*(.config_0080C0E4))
+    } > config_0080C0E4
     .config_0080C0E8 : {
       KEEP(*(.config_0080C0E8))
     } > config_0080C0E8
+    .config_0080C0EC : {
+      KEEP(*(.config_0080C0EC))
+    } > config_0080C0EC
+    .config_0080C0F0 : {
+      KEEP(*(.config_0080C0F0))
+    } > config_0080C0F0
     .config_0080C0F4 : {
       KEEP(*(.config_0080C0F4))
     } > config_0080C0F4
     .config_0080C0F8 : {
       KEEP(*(.config_0080C0F8))
     } > config_0080C0F8
-    .config_0080C014 : {
-      KEEP(*(.config_0080C014))
-    } > config_0080C014
     .config_0080C0FC : {
       KEEP(*(.config_0080C0FC))
     } > config_0080C0FC
@@ -443,7 +461,7 @@ SECTIONS
         KEEP(*(.isr_vector))
         KEEP(*(.reset*))
         KEEP(*(.after_vectors))
-    } > rom
+    } > VECTOR_REGION
     /*
      * Code Sections - Note that standard input sections such as
      * *(.text), *(.text.*), *(.rodata), & *(.rodata.*)
@@ -455,12 +473,12 @@ SECTIONS
     {
         . = ALIGN(4);
         *(.glue_7t) *(.glue_7)
-        /* Force the inclusion of debug info for veneers. This is
-         * sensitive to the name of the .o file containing the
-         * cmse_nonsecure_entry functions. What are given are
-         * common file names. */
-        KEEP(*veneer.o(.text.*))
-        KEEP(*nonsecure_entry.o(.text.*))
+       /* Force the inclusion of debug info for veneers. This is
+        * sensitive to the name of the .o file containing the
+        * cmse_nonsecure_entry functions. What are given are
+        * common file names. */
+       KEEP(*veneer.o(.text.*))
+       KEEP(*nonsecure_entry.o(.text.*))
         *(.gnu.linkonce.r.*)
         *(.ARM.extab* .gnu.linkonce.armextab.*)
 
@@ -501,14 +519,14 @@ SECTIONS
 
         . = ALIGN(4);
         _efixed = .;            /* End of text section */
-    } > rom
+    } > CODE_REGION
 
     /* .ARM.exidx is sorted, so has to go in its own output section.  */
     PROVIDE_HIDDEN (__exidx_start = .);
     .ARM.exidx :
     {
       *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-    } > rom
+    } > CODE_REGION
     PROVIDE_HIDDEN (__exidx_end = .);
 
     . = ALIGN(4);
@@ -542,9 +560,11 @@ SECTIONS
         __bss_end__ = .;
         _ebss = . ;
         _ezero = .;
-    } > ram
+    } > DATA_REGION
 
     . = ALIGN(4);
     _end = . ;
     _ram_end_ = ORIGIN(ram) + LENGTH(ram) -1 ;
+    
 }
+

@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,29 +20,29 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_NVMCTRL_INSTANCE_
 #define _SAML11_NVMCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for NVMCTRL peripheral ========== */
-#define NVMCTRL_DATAFLASH_PAGES                  _UL_(32)   
-#define NVMCTRL_PMSB                             _UL_(3)    
-#define NVMCTRL_PSZ_BITS                         _UL_(6)    
-#define NVMCTRL_ROW_PAGES                        _UL_(4)    
-#define NVMCTRL_SECURE_IMPLEMENTED               _UL_(1)    /* Security Configuration implemented? */
-#define NVMCTRL_FLASH_SIZE                       _UL_(65536) 
-#define NVMCTRL_PAGE_SIZE                        _UL_(64)   
-#define NVMCTRL_PAGES                            _UL_(1024) 
-#define NVMCTRL_PAGES_PR_REGION                  _UL_(64)   
-#define NVMCTRL_PSM_0_FRMFW_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_PSM_0_FRMLP_FWS_0_MAX_FREQ       _UL_(18000000) 
-#define NVMCTRL_PSM_0_FRMLP_FWS_1_MAX_FREQ       _UL_(36000000) 
-#define NVMCTRL_PSM_0_FRMHS_FWS_0_MAX_FREQ       _UL_(25000000) 
-#define NVMCTRL_PSM_0_FRMHS_FWS_1_MAX_FREQ       _UL_(50000000) 
-#define NVMCTRL_PSM_1_FRMFW_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_PSM_1_FRMLP_FWS_0_MAX_FREQ       _UL_(8000000) 
-#define NVMCTRL_PSM_1_FRMLP_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_INSTANCE_ID                      _UL_(34)   
+#define NVMCTRL_DATAFLASH_PAGES                  (32)       
+#define NVMCTRL_FLASH_SIZE                       (65536)    
+#define NVMCTRL_INSTANCE_ID                      (34)       
+#define NVMCTRL_PAGES                            (1024)     
+#define NVMCTRL_PAGES_PR_REGION                  (64)       
+#define NVMCTRL_PAGE_SIZE                        (64)       
+#define NVMCTRL_PMSB                             (3)        
+#define NVMCTRL_PSM_0_FRMFW_FWS_1_MAX_FREQ       (12000000) 
+#define NVMCTRL_PSM_0_FRMHS_FWS_0_MAX_FREQ       (25000000) 
+#define NVMCTRL_PSM_0_FRMHS_FWS_1_MAX_FREQ       (50000000) 
+#define NVMCTRL_PSM_0_FRMLP_FWS_0_MAX_FREQ       (18000000) 
+#define NVMCTRL_PSM_0_FRMLP_FWS_1_MAX_FREQ       (36000000) 
+#define NVMCTRL_PSM_1_FRMFW_FWS_1_MAX_FREQ       (12000000) 
+#define NVMCTRL_PSM_1_FRMLP_FWS_0_MAX_FREQ       (8000000)  
+#define NVMCTRL_PSM_1_FRMLP_FWS_1_MAX_FREQ       (12000000) 
+#define NVMCTRL_PSZ_BITS                         (6)        
+#define NVMCTRL_ROW_PAGES                        (4)        
+#define NVMCTRL_SECURE_IMPLEMENTED               (1)        /* Security Configuration implemented? */
 
 #endif /* _SAML11_NVMCTRL_INSTANCE_ */

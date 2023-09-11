@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,14 +20,14 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_PAC_INSTANCE_
 #define _SAML11_PAC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PAC peripheral ========== */
-#define PAC_APB_NUM                              _UL_(3)    /* Number of bridges AHB/APB */
-#define PAC_SECURE_IMPLEMENTED                   _UL_(1)    /* Security Configuration implemented? */
-#define PAC_INSTANCE_ID                          _UL_(0)    
+#define PAC_APB_NUM                              (3)        /* Number of bridges AHB/APB */
+#define PAC_INSTANCE_ID                          (0)        
+#define PAC_SECURE_IMPLEMENTED                   (1)        /* Security Configuration implemented? */
 
 #endif /* _SAML11_PAC_INSTANCE_ */

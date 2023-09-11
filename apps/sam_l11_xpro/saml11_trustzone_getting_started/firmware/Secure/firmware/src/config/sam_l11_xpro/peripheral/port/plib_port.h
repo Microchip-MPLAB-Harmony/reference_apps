@@ -102,7 +102,7 @@
 #define GET_PORT_GROUP(pin)  ((PORT_GROUP)(PORT_BASE_ADDRESS + (0x80U * (((uint32_t)pin) >> 5U))))
 #define GET_PIN_MASK(pin)   (((uint32_t)(0x1U)) << (((uint32_t)pin) & 0x1FU))
 
-/* Named type for port group */ 
+/* Named type for port group */
 typedef uint32_t PORT_GROUP;
 
 
@@ -143,73 +143,50 @@ typedef enum
 {
     /* PA00 pin */
     PORT_PIN_PA00 = 0U,
-
     /* PA01 pin */
     PORT_PIN_PA01 = 1U,
-
     /* PA02 pin */
     PORT_PIN_PA02 = 2U,
-
     /* PA03 pin */
     PORT_PIN_PA03 = 3U,
-
     /* PA04 pin */
     PORT_PIN_PA04 = 4U,
-
     /* PA05 pin */
     PORT_PIN_PA05 = 5U,
-
     /* PA06 pin */
     PORT_PIN_PA06 = 6U,
-
     /* PA07 pin */
     PORT_PIN_PA07 = 7U,
-
     /* PA08 pin */
     PORT_PIN_PA08 = 8U,
-
     /* PA09 pin */
     PORT_PIN_PA09 = 9U,
-
     /* PA10 pin */
     PORT_PIN_PA10 = 10U,
-
     /* PA11 pin */
     PORT_PIN_PA11 = 11U,
-
     /* PA14 pin */
     PORT_PIN_PA14 = 14U,
-
     /* PA15 pin */
     PORT_PIN_PA15 = 15U,
-
     /* PA16 pin */
     PORT_PIN_PA16 = 16U,
-
     /* PA17 pin */
     PORT_PIN_PA17 = 17U,
-
     /* PA18 pin */
     PORT_PIN_PA18 = 18U,
-
     /* PA19 pin */
     PORT_PIN_PA19 = 19U,
-
     /* PA22 pin */
     PORT_PIN_PA22 = 22U,
-
     /* PA23 pin */
     PORT_PIN_PA23 = 23U,
-
     /* PA27 pin */
     PORT_PIN_PA27 = 27U,
-
     /* PA30 pin */
     PORT_PIN_PA30 = 30U,
-
     /* PA31 pin */
     PORT_PIN_PA31 = 31U,
-
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
      * the PORT Pin is used */
@@ -222,7 +199,6 @@ typedef enum
 // Section: Generated API based on pin configurations done in Pin Manager
 // *****************************************************************************
 // *****************************************************************************
-
 // *****************************************************************************
 /* Function:
     void PORT_Initialize(void)

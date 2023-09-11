@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,18 +20,18 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_SUPC_INSTANCE_
 #define _SAML11_SUPC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for SUPC peripheral ========== */
-#define SUPC_BOD33_CALIB_MSB                     _UL_(5)    
-#define SUPC_INSTANCE_ID                         _UL_(6)    
-#define SUPC_HAS_STDBYPL0_BIT                    _UL_(1)    /* STDBYPL0 bit is present */
-#define SUPC_HAS_LPEFF_BIT                       _UL_(1)    /* LPEFF bit is present */
-#define SUPC_HAS_SEL_BIT                         _UL_(1)    /* SEL bit is present */
-#define SUPC_HAS_BOD33_REG_NAME                  _UL_(1)    /* Name of BOD register is BOD33 */
-#define SUPC_HAS_VREFSEL_BIT                     _UL_(1)    /* VREFSEL bit is present */
+#define SUPC_BOD33_CALIB_MSB                     (5)        
+#define SUPC_HAS_BOD33_REG_NAME                  (1)        /* Name of BOD register is BOD33 */
+#define SUPC_HAS_LPEFF_BIT                       (1)        /* LPEFF bit is present */
+#define SUPC_HAS_SEL_BIT                         (1)        /* SEL bit is present */
+#define SUPC_HAS_STDBYPL0_BIT                    (1)        /* STDBYPL0 bit is present */
+#define SUPC_HAS_VREFSEL_BIT                     (1)        /* VREFSEL bit is present */
+#define SUPC_INSTANCE_ID                         (6)        
 
 #endif /* _SAML11_SUPC_INSTANCE_ */

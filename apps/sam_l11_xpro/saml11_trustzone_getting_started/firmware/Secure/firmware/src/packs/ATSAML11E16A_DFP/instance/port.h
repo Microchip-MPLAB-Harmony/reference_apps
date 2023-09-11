@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML11E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,21 +20,21 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:21:22Z */
+/* file generated from device description version 2023-04-12T14:18:55Z */
 #ifndef _SAML11_PORT_INSTANCE_
 #define _SAML11_PORT_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PORT peripheral ========== */
-#define PORT_BITS                                _UL_(32)   
-#define PORT_DRVSTR                              _UL_(1)    /* DRVSTR supported */
-#define PORT_EV_NUM                              _UL_(4)    
-#define PORT_GROUPS                              _UL_(1)    
-#define PORT_MSB                                 _UL_(31)   
-#define PORT_ODRAIN                              _UL_(0)    /* ODRAIN supported */
-#define PORT_PPP_IMPLEMENTED                     _UL_(0)    /* IOBUS2 implemented? */
-#define PORT_SECURE_IMPLEMENTED                  _UL_(1)    /* Secure I/Os supported? */
-#define PORT_SLEWLIM                             _UL_(0)    /* SLEWLIM supported */
-#define PORT_INSTANCE_ID                         _UL_(12)   
+#define PORT_BITS                                (32)       
+#define PORT_DRVSTR                              (1)        /* DRVSTR supported */
+#define PORT_EV_NUM                              (4)        
+#define PORT_GROUPS                              (1)        
+#define PORT_INSTANCE_ID                         (12)       
+#define PORT_MSB                                 (31)       
+#define PORT_ODRAIN                              (0)        /* ODRAIN supported */
+#define PORT_PPP_IMPLEMENTED                     (0)        /* IOBUS2 implemented? */
+#define PORT_SECURE_IMPLEMENTED                  (1)        /* Secure I/Os supported? */
+#define PORT_SLEWLIM                             (0)        /* SLEWLIM supported */
 
 #endif /* _SAML11_PORT_INSTANCE_ */
