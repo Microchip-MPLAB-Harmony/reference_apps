@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,14 +20,14 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_PM_INSTANCE_
 #define _PIC32CMJH01_PM_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PM peripheral ========== */
 #define PM_BIAS_RAM_HS                           (1)        /* one if RAM HS can be back biased */
-#define PM_PD_NUM                                (0)        /* Number of switchable Power Domain */
 #define PM_INSTANCE_ID                           (1)        /* Instance index for PM */
+#define PM_PD_NUM                                (0)        /* Number of switchable Power Domain */
 
 #endif /* _PIC32CMJH01_PM_INSTANCE_ */

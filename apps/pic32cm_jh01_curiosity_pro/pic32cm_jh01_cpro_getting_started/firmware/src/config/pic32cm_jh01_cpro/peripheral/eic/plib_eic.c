@@ -63,13 +63,13 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+volatile static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
-	   EIC will be disabled. */
+       EIC will be disabled. */
     EIC_REGS->EIC_CTRLA |= EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
@@ -159,7 +159,7 @@ void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
     }
 }
 
-void EIC_InterruptHandler(void)
+void __attribute__((used)) EIC_InterruptHandler(void)
 {
     uint8_t currentChannel = 0;
     uint32_t eicIntFlagStatus = 0;
@@ -178,7 +178,8 @@ void EIC_InterruptHandler(void)
                 /* Find any associated callback entries in the callback table */
                 if ((eicCallbackObject[currentChannel].callback != NULL))
                 {
-                    eicCallbackObject[currentChannel].callback(eicCallbackObject[currentChannel].context);
+                    uintptr_t context = eicCallbackObject[currentChannel].context;
+                    eicCallbackObject[currentChannel].callback(context);
                 }
 
                 /* Clear interrupt flag */

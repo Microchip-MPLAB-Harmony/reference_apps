@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_TC2_INSTANCE_
 #define _PIC32CMJH01_TC2_INSTANCE_
 
@@ -32,8 +32,8 @@
 #define TC2_DMAC_ID_OVF                          (33)       /* Indexes of DMA Overflow trigger */
 #define TC2_EXT                                  (0)        /* Coding of implemented extended features (keep 0 value) */
 #define TC2_GCLK_ID                              (31)       /* Index of Generic Clock */
+#define TC2_INSTANCE_ID                          (78)       /* Instance index for TC2 */
 #define TC2_MASTER_SLAVE_MODE                    (1)        /* TC type 0 : NA, 1 : Master, 2 : Slave */
 #define TC2_OW_NUM                               (2)        /* Number of Output Waveforms */
-#define TC2_INSTANCE_ID                          (78)       /* Instance index for TC2 */
 
 #endif /* _PIC32CMJH01_TC2_INSTANCE_ */

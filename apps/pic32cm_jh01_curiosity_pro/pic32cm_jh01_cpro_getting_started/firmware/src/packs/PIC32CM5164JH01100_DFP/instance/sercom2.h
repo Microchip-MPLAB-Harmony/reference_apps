@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_SERCOM2_INSTANCE_
 #define _PIC32CMJH01_SERCOM2_INSTANCE_
 
@@ -30,8 +30,8 @@
 #define SERCOM2_DMAC_ID_TX                       (7)        /* Index of DMA TX trigger */
 #define SERCOM2_GCLK_ID_CORE                     (20)       
 #define SERCOM2_GCLK_ID_SLOW                     (17)       
+#define SERCOM2_INSTANCE_ID                      (67)       /* Instance index for SERCOM2 */
 #define SERCOM2_INT_MSB                          (6)        
 #define SERCOM2_PMSB                             (3)        
-#define SERCOM2_INSTANCE_ID                      (67)       /* Instance index for SERCOM2 */
 
 #endif /* _PIC32CMJH01_SERCOM2_INSTANCE_ */

@@ -1,7 +1,7 @@
 /*
  * Component description for CAN
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_CAN_COMPONENT_H_
 #define _PIC32CMJH01_CAN_COMPONENT_H_
 
@@ -29,6 +29,8 @@
 /* ************************************************************************** */
 
 /* -------- CAN_RXBE_0 : (CAN Offset: 0x00) (R/W 32) Rx Buffer Element 0 -------- */
+#define CAN_RXBE_0_RESETVALUE                 _UINT32_(0x00)                                       /*  (CAN_RXBE_0) Rx Buffer Element 0  Reset Value */
+
 #define CAN_RXBE_0_ID_Pos                     _UINT32_(0)                                          /* (CAN_RXBE_0) Identifier Position */
 #define CAN_RXBE_0_ID_Msk                     (_UINT32_(0x1FFFFFFF) << CAN_RXBE_0_ID_Pos)          /* (CAN_RXBE_0) Identifier Mask */
 #define CAN_RXBE_0_ID(value)                  (CAN_RXBE_0_ID_Msk & (_UINT32_(value) << CAN_RXBE_0_ID_Pos)) /* Assigment of value for ID in the CAN_RXBE_0 register */
@@ -45,6 +47,8 @@
 
 
 /* -------- CAN_RXBE_1 : (CAN Offset: 0x04) (R/W 32) Rx Buffer Element 1 -------- */
+#define CAN_RXBE_1_RESETVALUE                 _UINT32_(0x00)                                       /*  (CAN_RXBE_1) Rx Buffer Element 1  Reset Value */
+
 #define CAN_RXBE_1_RXTS_Pos                   _UINT32_(0)                                          /* (CAN_RXBE_1) Rx Timestamp Position */
 #define CAN_RXBE_1_RXTS_Msk                   (_UINT32_(0xFFFF) << CAN_RXBE_1_RXTS_Pos)            /* (CAN_RXBE_1) Rx Timestamp Mask */
 #define CAN_RXBE_1_RXTS(value)                (CAN_RXBE_1_RXTS_Msk & (_UINT32_(value) << CAN_RXBE_1_RXTS_Pos)) /* Assigment of value for RXTS in the CAN_RXBE_1 register */
@@ -67,6 +71,8 @@
 
 
 /* -------- CAN_RXBE_DATA : (CAN Offset: 0x08) (R/W 32) Rx Buffer Element Data -------- */
+#define CAN_RXBE_DATA_RESETVALUE              _UINT32_(0x00)                                       /*  (CAN_RXBE_DATA) Rx Buffer Element Data  Reset Value */
+
 #define CAN_RXBE_DATA_DB0_Pos                 _UINT32_(0)                                          /* (CAN_RXBE_DATA) Data Byte 0 Position */
 #define CAN_RXBE_DATA_DB0_Msk                 (_UINT32_(0xFF) << CAN_RXBE_DATA_DB0_Pos)            /* (CAN_RXBE_DATA) Data Byte 0 Mask */
 #define CAN_RXBE_DATA_DB0(value)              (CAN_RXBE_DATA_DB0_Msk & (_UINT32_(value) << CAN_RXBE_DATA_DB0_Pos)) /* Assigment of value for DB0 in the CAN_RXBE_DATA register */
@@ -83,6 +89,8 @@
 
 
 /* -------- CAN_RXF0E_0 : (CAN Offset: 0x00) (R/W 32) Rx FIFO 0 Element 0 -------- */
+#define CAN_RXF0E_0_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_RXF0E_0) Rx FIFO 0 Element 0  Reset Value */
+
 #define CAN_RXF0E_0_ID_Pos                    _UINT32_(0)                                          /* (CAN_RXF0E_0) Identifier Position */
 #define CAN_RXF0E_0_ID_Msk                    (_UINT32_(0x1FFFFFFF) << CAN_RXF0E_0_ID_Pos)         /* (CAN_RXF0E_0) Identifier Mask */
 #define CAN_RXF0E_0_ID(value)                 (CAN_RXF0E_0_ID_Msk & (_UINT32_(value) << CAN_RXF0E_0_ID_Pos)) /* Assigment of value for ID in the CAN_RXF0E_0 register */
@@ -99,6 +107,8 @@
 
 
 /* -------- CAN_RXF0E_1 : (CAN Offset: 0x04) (R/W 32) Rx FIFO 0 Element 1 -------- */
+#define CAN_RXF0E_1_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_RXF0E_1) Rx FIFO 0 Element 1  Reset Value */
+
 #define CAN_RXF0E_1_RXTS_Pos                  _UINT32_(0)                                          /* (CAN_RXF0E_1) Rx Timestamp Position */
 #define CAN_RXF0E_1_RXTS_Msk                  (_UINT32_(0xFFFF) << CAN_RXF0E_1_RXTS_Pos)           /* (CAN_RXF0E_1) Rx Timestamp Mask */
 #define CAN_RXF0E_1_RXTS(value)               (CAN_RXF0E_1_RXTS_Msk & (_UINT32_(value) << CAN_RXF0E_1_RXTS_Pos)) /* Assigment of value for RXTS in the CAN_RXF0E_1 register */
@@ -121,6 +131,8 @@
 
 
 /* -------- CAN_RXF0E_DATA : (CAN Offset: 0x08) (R/W 32) Rx FIFO 0 Element Data -------- */
+#define CAN_RXF0E_DATA_RESETVALUE             _UINT32_(0x00)                                       /*  (CAN_RXF0E_DATA) Rx FIFO 0 Element Data  Reset Value */
+
 #define CAN_RXF0E_DATA_DB0_Pos                _UINT32_(0)                                          /* (CAN_RXF0E_DATA) Data Byte 0 Position */
 #define CAN_RXF0E_DATA_DB0_Msk                (_UINT32_(0xFF) << CAN_RXF0E_DATA_DB0_Pos)           /* (CAN_RXF0E_DATA) Data Byte 0 Mask */
 #define CAN_RXF0E_DATA_DB0(value)             (CAN_RXF0E_DATA_DB0_Msk & (_UINT32_(value) << CAN_RXF0E_DATA_DB0_Pos)) /* Assigment of value for DB0 in the CAN_RXF0E_DATA register */
@@ -137,6 +149,8 @@
 
 
 /* -------- CAN_RXF1E_0 : (CAN Offset: 0x00) (R/W 32) Rx FIFO 1 Element 0 -------- */
+#define CAN_RXF1E_0_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_RXF1E_0) Rx FIFO 1 Element 0  Reset Value */
+
 #define CAN_RXF1E_0_ID_Pos                    _UINT32_(0)                                          /* (CAN_RXF1E_0) Identifier Position */
 #define CAN_RXF1E_0_ID_Msk                    (_UINT32_(0x1FFFFFFF) << CAN_RXF1E_0_ID_Pos)         /* (CAN_RXF1E_0) Identifier Mask */
 #define CAN_RXF1E_0_ID(value)                 (CAN_RXF1E_0_ID_Msk & (_UINT32_(value) << CAN_RXF1E_0_ID_Pos)) /* Assigment of value for ID in the CAN_RXF1E_0 register */
@@ -153,6 +167,8 @@
 
 
 /* -------- CAN_RXF1E_1 : (CAN Offset: 0x04) (R/W 32) Rx FIFO 1 Element 1 -------- */
+#define CAN_RXF1E_1_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_RXF1E_1) Rx FIFO 1 Element 1  Reset Value */
+
 #define CAN_RXF1E_1_RXTS_Pos                  _UINT32_(0)                                          /* (CAN_RXF1E_1) Rx Timestamp Position */
 #define CAN_RXF1E_1_RXTS_Msk                  (_UINT32_(0xFFFF) << CAN_RXF1E_1_RXTS_Pos)           /* (CAN_RXF1E_1) Rx Timestamp Mask */
 #define CAN_RXF1E_1_RXTS(value)               (CAN_RXF1E_1_RXTS_Msk & (_UINT32_(value) << CAN_RXF1E_1_RXTS_Pos)) /* Assigment of value for RXTS in the CAN_RXF1E_1 register */
@@ -175,6 +191,8 @@
 
 
 /* -------- CAN_RXF1E_DATA : (CAN Offset: 0x08) (R/W 32) Rx FIFO 1 Element Data -------- */
+#define CAN_RXF1E_DATA_RESETVALUE             _UINT32_(0x00)                                       /*  (CAN_RXF1E_DATA) Rx FIFO 1 Element Data  Reset Value */
+
 #define CAN_RXF1E_DATA_DB0_Pos                _UINT32_(0)                                          /* (CAN_RXF1E_DATA) Data Byte 0 Position */
 #define CAN_RXF1E_DATA_DB0_Msk                (_UINT32_(0xFF) << CAN_RXF1E_DATA_DB0_Pos)           /* (CAN_RXF1E_DATA) Data Byte 0 Mask */
 #define CAN_RXF1E_DATA_DB0(value)             (CAN_RXF1E_DATA_DB0_Msk & (_UINT32_(value) << CAN_RXF1E_DATA_DB0_Pos)) /* Assigment of value for DB0 in the CAN_RXF1E_DATA register */
@@ -191,6 +209,8 @@
 
 
 /* -------- CAN_TXBE_0 : (CAN Offset: 0x00) (R/W 32) Tx Buffer Element 0 -------- */
+#define CAN_TXBE_0_RESETVALUE                 _UINT32_(0x00)                                       /*  (CAN_TXBE_0) Tx Buffer Element 0  Reset Value */
+
 #define CAN_TXBE_0_ID_Pos                     _UINT32_(0)                                          /* (CAN_TXBE_0) Identifier Position */
 #define CAN_TXBE_0_ID_Msk                     (_UINT32_(0x1FFFFFFF) << CAN_TXBE_0_ID_Pos)          /* (CAN_TXBE_0) Identifier Mask */
 #define CAN_TXBE_0_ID(value)                  (CAN_TXBE_0_ID_Msk & (_UINT32_(value) << CAN_TXBE_0_ID_Pos)) /* Assigment of value for ID in the CAN_TXBE_0 register */
@@ -207,6 +227,8 @@
 
 
 /* -------- CAN_TXBE_1 : (CAN Offset: 0x04) (R/W 32) Tx Buffer Element 1 -------- */
+#define CAN_TXBE_1_RESETVALUE                 _UINT32_(0x00)                                       /*  (CAN_TXBE_1) Tx Buffer Element 1  Reset Value */
+
 #define CAN_TXBE_1_DLC_Pos                    _UINT32_(16)                                         /* (CAN_TXBE_1) Data Length Code Position */
 #define CAN_TXBE_1_DLC_Msk                    (_UINT32_(0xF) << CAN_TXBE_1_DLC_Pos)                /* (CAN_TXBE_1) Data Length Code Mask */
 #define CAN_TXBE_1_DLC(value)                 (CAN_TXBE_1_DLC_Msk & (_UINT32_(value) << CAN_TXBE_1_DLC_Pos)) /* Assigment of value for DLC in the CAN_TXBE_1 register */
@@ -226,6 +248,8 @@
 
 
 /* -------- CAN_TXBE_DATA : (CAN Offset: 0x08) (R/W 32) Tx Buffer Element Data -------- */
+#define CAN_TXBE_DATA_RESETVALUE              _UINT32_(0x00)                                       /*  (CAN_TXBE_DATA) Tx Buffer Element Data  Reset Value */
+
 #define CAN_TXBE_DATA_DB0_Pos                 _UINT32_(0)                                          /* (CAN_TXBE_DATA) Data Byte 0 Position */
 #define CAN_TXBE_DATA_DB0_Msk                 (_UINT32_(0xFF) << CAN_TXBE_DATA_DB0_Pos)            /* (CAN_TXBE_DATA) Data Byte 0 Mask */
 #define CAN_TXBE_DATA_DB0(value)              (CAN_TXBE_DATA_DB0_Msk & (_UINT32_(value) << CAN_TXBE_DATA_DB0_Pos)) /* Assigment of value for DB0 in the CAN_TXBE_DATA register */
@@ -242,6 +266,8 @@
 
 
 /* -------- CAN_TXEFE_0 : (CAN Offset: 0x00) (R/W 32) Tx Event FIFO Element 0 -------- */
+#define CAN_TXEFE_0_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_TXEFE_0) Tx Event FIFO Element 0  Reset Value */
+
 #define CAN_TXEFE_0_ID_Pos                    _UINT32_(0)                                          /* (CAN_TXEFE_0) Identifier Position */
 #define CAN_TXEFE_0_ID_Msk                    (_UINT32_(0x1FFFFFFF) << CAN_TXEFE_0_ID_Pos)         /* (CAN_TXEFE_0) Identifier Mask */
 #define CAN_TXEFE_0_ID(value)                 (CAN_TXEFE_0_ID_Msk & (_UINT32_(value) << CAN_TXEFE_0_ID_Pos)) /* Assigment of value for ID in the CAN_TXEFE_0 register */
@@ -258,6 +284,8 @@
 
 
 /* -------- CAN_TXEFE_1 : (CAN Offset: 0x04) (R/W 32) Tx Event FIFO Element 1 -------- */
+#define CAN_TXEFE_1_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_TXEFE_1) Tx Event FIFO Element 1  Reset Value */
+
 #define CAN_TXEFE_1_TXTS_Pos                  _UINT32_(0)                                          /* (CAN_TXEFE_1) Tx Timestamp Position */
 #define CAN_TXEFE_1_TXTS_Msk                  (_UINT32_(0xFFFF) << CAN_TXEFE_1_TXTS_Pos)           /* (CAN_TXEFE_1) Tx Timestamp Mask */
 #define CAN_TXEFE_1_TXTS(value)               (CAN_TXEFE_1_TXTS_Msk & (_UINT32_(value) << CAN_TXEFE_1_TXTS_Pos)) /* Assigment of value for TXTS in the CAN_TXEFE_1 register */
@@ -284,6 +312,8 @@
 
 
 /* -------- CAN_SIDFE_0 : (CAN Offset: 0x00) (R/W 32) Standard Message ID Filter Element 0 -------- */
+#define CAN_SIDFE_0_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_SIDFE_0) Standard Message ID Filter Element 0  Reset Value */
+
 #define CAN_SIDFE_0_SFID2_Pos                 _UINT32_(0)                                          /* (CAN_SIDFE_0) Standard Filter ID 2 Position */
 #define CAN_SIDFE_0_SFID2_Msk                 (_UINT32_(0x7FF) << CAN_SIDFE_0_SFID2_Pos)           /* (CAN_SIDFE_0) Standard Filter ID 2 Mask */
 #define CAN_SIDFE_0_SFID2(value)              (CAN_SIDFE_0_SFID2_Msk & (_UINT32_(value) << CAN_SIDFE_0_SFID2_Pos)) /* Assigment of value for SFID2 in the CAN_SIDFE_0 register */
@@ -322,6 +352,8 @@
 
 
 /* -------- CAN_XIDFE_0 : (CAN Offset: 0x00) (R/W 32) Extended Message ID Filter Element 0 -------- */
+#define CAN_XIDFE_0_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_XIDFE_0) Extended Message ID Filter Element 0  Reset Value */
+
 #define CAN_XIDFE_0_EFID1_Pos                 _UINT32_(0)                                          /* (CAN_XIDFE_0) Extended Filter ID 1 Position */
 #define CAN_XIDFE_0_EFID1_Msk                 (_UINT32_(0x1FFFFFFF) << CAN_XIDFE_0_EFID1_Pos)      /* (CAN_XIDFE_0) Extended Filter ID 1 Mask */
 #define CAN_XIDFE_0_EFID1(value)              (CAN_XIDFE_0_EFID1_Msk & (_UINT32_(value) << CAN_XIDFE_0_EFID1_Pos)) /* Assigment of value for EFID1 in the CAN_XIDFE_0 register */
@@ -348,6 +380,8 @@
 
 
 /* -------- CAN_XIDFE_1 : (CAN Offset: 0x04) (R/W 32) Extended Message ID Filter Element 1 -------- */
+#define CAN_XIDFE_1_RESETVALUE                _UINT32_(0x00)                                       /*  (CAN_XIDFE_1) Extended Message ID Filter Element 1  Reset Value */
+
 #define CAN_XIDFE_1_EFID2_Pos                 _UINT32_(0)                                          /* (CAN_XIDFE_1) Extended Filter ID 2 Position */
 #define CAN_XIDFE_1_EFID2_Msk                 (_UINT32_(0x1FFFFFFF) << CAN_XIDFE_1_EFID2_Pos)      /* (CAN_XIDFE_1) Extended Filter ID 2 Mask */
 #define CAN_XIDFE_1_EFID2(value)              (CAN_XIDFE_1_EFID2_Msk & (_UINT32_(value) << CAN_XIDFE_1_EFID2_Pos)) /* Assigment of value for EFID2 in the CAN_XIDFE_1 register */
@@ -2324,15 +2358,79 @@
 #define CAN_RXBE_0_REG_OFST            _UINT32_(0x00)      /* (CAN_RXBE_0) Rx Buffer Element 0 Offset */
 #define CAN_RXBE_1_REG_OFST            _UINT32_(0x04)      /* (CAN_RXBE_1) Rx Buffer Element 1 Offset */
 #define CAN_RXBE_DATA_REG_OFST         _UINT32_(0x08)      /* (CAN_RXBE_DATA) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA0_REG_OFST        _UINT32_(0x08)      /* (CAN_RXBE_DATA0) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA1_REG_OFST        _UINT32_(0x0C)      /* (CAN_RXBE_DATA1) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA2_REG_OFST        _UINT32_(0x10)      /* (CAN_RXBE_DATA2) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA3_REG_OFST        _UINT32_(0x14)      /* (CAN_RXBE_DATA3) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA4_REG_OFST        _UINT32_(0x18)      /* (CAN_RXBE_DATA4) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA5_REG_OFST        _UINT32_(0x1C)      /* (CAN_RXBE_DATA5) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA6_REG_OFST        _UINT32_(0x20)      /* (CAN_RXBE_DATA6) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA7_REG_OFST        _UINT32_(0x24)      /* (CAN_RXBE_DATA7) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA8_REG_OFST        _UINT32_(0x28)      /* (CAN_RXBE_DATA8) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA9_REG_OFST        _UINT32_(0x2C)      /* (CAN_RXBE_DATA9) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA10_REG_OFST       _UINT32_(0x30)      /* (CAN_RXBE_DATA10) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA11_REG_OFST       _UINT32_(0x34)      /* (CAN_RXBE_DATA11) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA12_REG_OFST       _UINT32_(0x38)      /* (CAN_RXBE_DATA12) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA13_REG_OFST       _UINT32_(0x3C)      /* (CAN_RXBE_DATA13) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA14_REG_OFST       _UINT32_(0x40)      /* (CAN_RXBE_DATA14) Rx Buffer Element Data Offset */
+#define CAN_RXBE_DATA15_REG_OFST       _UINT32_(0x44)      /* (CAN_RXBE_DATA15) Rx Buffer Element Data Offset */
 #define CAN_RXF0E_0_REG_OFST           _UINT32_(0x00)      /* (CAN_RXF0E_0) Rx FIFO 0 Element 0 Offset */
 #define CAN_RXF0E_1_REG_OFST           _UINT32_(0x04)      /* (CAN_RXF0E_1) Rx FIFO 0 Element 1 Offset */
 #define CAN_RXF0E_DATA_REG_OFST        _UINT32_(0x08)      /* (CAN_RXF0E_DATA) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA0_REG_OFST       _UINT32_(0x08)      /* (CAN_RXF0E_DATA0) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA1_REG_OFST       _UINT32_(0x0C)      /* (CAN_RXF0E_DATA1) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA2_REG_OFST       _UINT32_(0x10)      /* (CAN_RXF0E_DATA2) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA3_REG_OFST       _UINT32_(0x14)      /* (CAN_RXF0E_DATA3) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA4_REG_OFST       _UINT32_(0x18)      /* (CAN_RXF0E_DATA4) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA5_REG_OFST       _UINT32_(0x1C)      /* (CAN_RXF0E_DATA5) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA6_REG_OFST       _UINT32_(0x20)      /* (CAN_RXF0E_DATA6) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA7_REG_OFST       _UINT32_(0x24)      /* (CAN_RXF0E_DATA7) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA8_REG_OFST       _UINT32_(0x28)      /* (CAN_RXF0E_DATA8) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA9_REG_OFST       _UINT32_(0x2C)      /* (CAN_RXF0E_DATA9) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA10_REG_OFST      _UINT32_(0x30)      /* (CAN_RXF0E_DATA10) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA11_REG_OFST      _UINT32_(0x34)      /* (CAN_RXF0E_DATA11) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA12_REG_OFST      _UINT32_(0x38)      /* (CAN_RXF0E_DATA12) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA13_REG_OFST      _UINT32_(0x3C)      /* (CAN_RXF0E_DATA13) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA14_REG_OFST      _UINT32_(0x40)      /* (CAN_RXF0E_DATA14) Rx FIFO 0 Element Data Offset */
+#define CAN_RXF0E_DATA15_REG_OFST      _UINT32_(0x44)      /* (CAN_RXF0E_DATA15) Rx FIFO 0 Element Data Offset */
 #define CAN_RXF1E_0_REG_OFST           _UINT32_(0x00)      /* (CAN_RXF1E_0) Rx FIFO 1 Element 0 Offset */
 #define CAN_RXF1E_1_REG_OFST           _UINT32_(0x04)      /* (CAN_RXF1E_1) Rx FIFO 1 Element 1 Offset */
 #define CAN_RXF1E_DATA_REG_OFST        _UINT32_(0x08)      /* (CAN_RXF1E_DATA) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA0_REG_OFST       _UINT32_(0x08)      /* (CAN_RXF1E_DATA0) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA1_REG_OFST       _UINT32_(0x0C)      /* (CAN_RXF1E_DATA1) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA2_REG_OFST       _UINT32_(0x10)      /* (CAN_RXF1E_DATA2) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA3_REG_OFST       _UINT32_(0x14)      /* (CAN_RXF1E_DATA3) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA4_REG_OFST       _UINT32_(0x18)      /* (CAN_RXF1E_DATA4) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA5_REG_OFST       _UINT32_(0x1C)      /* (CAN_RXF1E_DATA5) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA6_REG_OFST       _UINT32_(0x20)      /* (CAN_RXF1E_DATA6) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA7_REG_OFST       _UINT32_(0x24)      /* (CAN_RXF1E_DATA7) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA8_REG_OFST       _UINT32_(0x28)      /* (CAN_RXF1E_DATA8) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA9_REG_OFST       _UINT32_(0x2C)      /* (CAN_RXF1E_DATA9) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA10_REG_OFST      _UINT32_(0x30)      /* (CAN_RXF1E_DATA10) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA11_REG_OFST      _UINT32_(0x34)      /* (CAN_RXF1E_DATA11) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA12_REG_OFST      _UINT32_(0x38)      /* (CAN_RXF1E_DATA12) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA13_REG_OFST      _UINT32_(0x3C)      /* (CAN_RXF1E_DATA13) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA14_REG_OFST      _UINT32_(0x40)      /* (CAN_RXF1E_DATA14) Rx FIFO 1 Element Data Offset */
+#define CAN_RXF1E_DATA15_REG_OFST      _UINT32_(0x44)      /* (CAN_RXF1E_DATA15) Rx FIFO 1 Element Data Offset */
 #define CAN_TXBE_0_REG_OFST            _UINT32_(0x00)      /* (CAN_TXBE_0) Tx Buffer Element 0 Offset */
 #define CAN_TXBE_1_REG_OFST            _UINT32_(0x04)      /* (CAN_TXBE_1) Tx Buffer Element 1 Offset */
 #define CAN_TXBE_DATA_REG_OFST         _UINT32_(0x08)      /* (CAN_TXBE_DATA) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA0_REG_OFST        _UINT32_(0x08)      /* (CAN_TXBE_DATA0) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA1_REG_OFST        _UINT32_(0x0C)      /* (CAN_TXBE_DATA1) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA2_REG_OFST        _UINT32_(0x10)      /* (CAN_TXBE_DATA2) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA3_REG_OFST        _UINT32_(0x14)      /* (CAN_TXBE_DATA3) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA4_REG_OFST        _UINT32_(0x18)      /* (CAN_TXBE_DATA4) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA5_REG_OFST        _UINT32_(0x1C)      /* (CAN_TXBE_DATA5) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA6_REG_OFST        _UINT32_(0x20)      /* (CAN_TXBE_DATA6) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA7_REG_OFST        _UINT32_(0x24)      /* (CAN_TXBE_DATA7) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA8_REG_OFST        _UINT32_(0x28)      /* (CAN_TXBE_DATA8) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA9_REG_OFST        _UINT32_(0x2C)      /* (CAN_TXBE_DATA9) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA10_REG_OFST       _UINT32_(0x30)      /* (CAN_TXBE_DATA10) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA11_REG_OFST       _UINT32_(0x34)      /* (CAN_TXBE_DATA11) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA12_REG_OFST       _UINT32_(0x38)      /* (CAN_TXBE_DATA12) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA13_REG_OFST       _UINT32_(0x3C)      /* (CAN_TXBE_DATA13) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA14_REG_OFST       _UINT32_(0x40)      /* (CAN_TXBE_DATA14) Tx Buffer Element Data Offset */
+#define CAN_TXBE_DATA15_REG_OFST       _UINT32_(0x44)      /* (CAN_TXBE_DATA15) Tx Buffer Element Data Offset */
 #define CAN_TXEFE_0_REG_OFST           _UINT32_(0x00)      /* (CAN_TXEFE_0) Tx Event FIFO Element 0 Offset */
 #define CAN_TXEFE_1_REG_OFST           _UINT32_(0x04)      /* (CAN_TXEFE_1) Tx Event FIFO Element 1 Offset */
 #define CAN_SIDFE_0_REG_OFST           _UINT32_(0x00)      /* (CAN_SIDFE_0) Standard Message ID Filter Element 0 Offset */
@@ -2392,7 +2490,7 @@ typedef struct
 {  /* Rx Buffer Element */
   __IO  uint32_t                       CAN_RXBE_0;         /**< Offset: 0x00 (R/W  32) Rx Buffer Element 0 */
   __IO  uint32_t                       CAN_RXBE_1;         /**< Offset: 0x04 (R/W  32) Rx Buffer Element 1 */
-  __IO  uint32_t                       CAN_RXBE_DATA;      /**< Offset: 0x08 (R/W  32) Rx Buffer Element Data */
+  __IO  uint32_t                       CAN_RXBE_DATA[16];  /**< Offset: 0x08 (R/W  32) Rx Buffer Element Data */
 } can_rxbe_registers_t
 #ifdef __GNUC__
   __attribute__ ((aligned (4)))
@@ -2404,7 +2502,7 @@ typedef struct
 {  /* Rx FIFO 0 Element */
   __IO  uint32_t                       CAN_RXF0E_0;        /**< Offset: 0x00 (R/W  32) Rx FIFO 0 Element 0 */
   __IO  uint32_t                       CAN_RXF0E_1;        /**< Offset: 0x04 (R/W  32) Rx FIFO 0 Element 1 */
-  __IO  uint32_t                       CAN_RXF0E_DATA;     /**< Offset: 0x08 (R/W  32) Rx FIFO 0 Element Data */
+  __IO  uint32_t                       CAN_RXF0E_DATA[16]; /**< Offset: 0x08 (R/W  32) Rx FIFO 0 Element Data */
 } can_rxf0e_registers_t
 #ifdef __GNUC__
   __attribute__ ((aligned (4)))
@@ -2416,7 +2514,7 @@ typedef struct
 {  /* Rx FIFO 1 Element */
   __IO  uint32_t                       CAN_RXF1E_0;        /**< Offset: 0x00 (R/W  32) Rx FIFO 1 Element 0 */
   __IO  uint32_t                       CAN_RXF1E_1;        /**< Offset: 0x04 (R/W  32) Rx FIFO 1 Element 1 */
-  __IO  uint32_t                       CAN_RXF1E_DATA;     /**< Offset: 0x08 (R/W  32) Rx FIFO 1 Element Data */
+  __IO  uint32_t                       CAN_RXF1E_DATA[16]; /**< Offset: 0x08 (R/W  32) Rx FIFO 1 Element Data */
 } can_rxf1e_registers_t
 #ifdef __GNUC__
   __attribute__ ((aligned (4)))
@@ -2428,7 +2526,7 @@ typedef struct
 {  /* Tx Buffer Element */
   __IO  uint32_t                       CAN_TXBE_0;         /**< Offset: 0x00 (R/W  32) Tx Buffer Element 0 */
   __IO  uint32_t                       CAN_TXBE_1;         /**< Offset: 0x04 (R/W  32) Tx Buffer Element 1 */
-  __IO  uint32_t                       CAN_TXBE_DATA;      /**< Offset: 0x08 (R/W  32) Tx Buffer Element Data */
+  __IO  uint32_t                       CAN_TXBE_DATA[16];  /**< Offset: 0x08 (R/W  32) Tx Buffer Element Data */
 } can_txbe_registers_t
 #ifdef __GNUC__
   __attribute__ ((aligned (4)))

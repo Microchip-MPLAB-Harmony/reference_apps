@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_DMAC_INSTANCE_
 #define _PIC32CMJH01_DMAC_INSTANCE_
 
@@ -30,6 +30,7 @@
 #define DMAC_CH_NUM                              (12)       /* Number of channels */
 #define DMAC_EVIN_NUM                            (4)        /* Number of input events */
 #define DMAC_EVOUT_NUM                           (4)        /* Number of output events */
+#define DMAC_INSTANCE_ID                         (35)       /* Instance index for DMAC */
 #define DMAC_LVL_BITS                            (2)        /* Number of bit to select level priority */
 #define DMAC_LVL_NUM                             (4)        /* Enable priority level number */
 #define DMAC_QOSCTRL_D_RESETVALUE                (2)        /* QOS dmac ahb interface reset value */
@@ -38,6 +39,5 @@
 #define DMAC_SPLIT_IRQ_NUM                       (0)        /* Number of IRQ split out */
 #define DMAC_TRIG_BITS                           (6)        /* Number of bits to select trigger source */
 #define DMAC_TRIG_NUM                            (63)       /* Number of peripheral triggers */
-#define DMAC_INSTANCE_ID                         (35)       /* Instance index for DMAC */
 
 #endif /* _PIC32CMJH01_DMAC_INSTANCE_ */

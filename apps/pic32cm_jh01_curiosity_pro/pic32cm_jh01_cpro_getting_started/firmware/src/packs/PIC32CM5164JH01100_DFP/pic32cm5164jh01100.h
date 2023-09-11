@@ -1,7 +1,7 @@
 /*
  * Header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* File generated from device description version 2022-05-20T08:40:47Z */
+/* File generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CM5164JH01100_H_
 #define _PIC32CM5164JH01100_H_
 
@@ -82,12 +82,12 @@ typedef enum IRQn
   SysTick_IRQn              =  -1, /* -1  System Tick Timer                   */
 
 /******  PIC32CM5164JH01100 specific Interrupt Numbers ***********************************/
-  SUPC_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (SUPC) */
-  PM_IRQn                   =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PM) */
+  MCLK_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (MCLK) */
   OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSC32KCTRL) */
   OSCCTRL_IRQn              =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSCCTRL) */
-  MCLK_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (MCLK) */
   PAC_IRQn                  =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PAC) */
+  PM_IRQn                   =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PM) */
+  SUPC_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (SUPC) */
   WDT_IRQn                  =   1, /* 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /* 2   Real-Time Counter (RTC)             */
   EIC_IRQn                  =   3, /* 3   External Interrupt Controller (EIC) */
@@ -96,8 +96,8 @@ typedef enum IRQn
   NVMCTRL_IRQn              =   6, /* 6   Non-Volatile Memory Controller (NVMCTRL) */
   DMAC_IRQn                 =   7, /* 7   Direct Memory Access Controller (DMAC) */
   EVSYS_IRQn                =   8, /* 8   Event System Interface (EVSYS)      */
-  SERCOM6_IRQn              =   9, /* 9   Shared between SERCOM0 SERCOM6 (SERCOM6) */
   SERCOM0_IRQn              =   9, /* 9   Shared between SERCOM0 SERCOM6 (SERCOM0) */
+  SERCOM6_IRQn              =   9, /* 9   Shared between SERCOM0 SERCOM6 (SERCOM6) */
   SERCOM1_IRQn              =  10, /* 10  Shared between SERCOM1 SERCOM7 (SERCOM1) */
   SERCOM7_IRQn              =  10, /* 10  Shared between SERCOM1 SERCOM7 (SERCOM7) */
   SERCOM2_IRQn              =  11, /* 11  Serial Communication Interface (SERCOM2) */
@@ -111,8 +111,8 @@ typedef enum IRQn
   TCC2_IRQn                 =  19, /* 19  Timer Counter for Control Applications (TCC2) */
   TC0_IRQn                  =  20, /* 20  Shared between TC0 TC5 (TC0)        */
   TC5_IRQn                  =  20, /* 20  Shared between TC0 TC5 (TC5)        */
-  TC6_IRQn                  =  21, /* 21  Shared between TC1 TC6 (TC6)        */
   TC1_IRQn                  =  21, /* 21  Shared between TC1 TC6 (TC1)        */
+  TC6_IRQn                  =  21, /* 21  Shared between TC1 TC6 (TC6)        */
   TC2_IRQn                  =  22, /* 22  Shared between TC2 TC7 (TC2)        */
   TC7_IRQn                  =  22, /* 22  Shared between TC2 TC7 (TC7)        */
   TC3_IRQn                  =  23, /* 23  Basic Timer Counter (TC3)           */

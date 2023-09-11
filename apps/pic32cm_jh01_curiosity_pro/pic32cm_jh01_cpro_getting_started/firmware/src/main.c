@@ -90,8 +90,8 @@ static uint8_t i2cWrData = TEMP_SENSOR_REG_ADDR;
 static uint8_t i2cRdData[I2C_BUFFER_SIZE] = {0};
 static uint8_t uartTxBuffer[TX_BUFFER_SIZE] = {0};
 char receiveBuffer[RX_BUFFER_SIZE] = {};
-bool volatile errorStatus = false;
-bool volatile readStatus = false;
+bool volatile getErrorStatus = false;
+bool volatile readAppStatus = false;
 typedef enum
 {
     TEMP_SAMPLING_RATE_500MS = 0,
@@ -138,20 +138,20 @@ void uartRxCallback(uintptr_t context)
     if(SERCOM4_USART_ErrorGet() != USART_ERROR_NONE)
     {
         /* ErrorGet clears errors, set error flag to notify console */
-        errorStatus = true;
+        getErrorStatus = true;
     }
     else
     {
-        if (readStatus == true)
+        if (readAppStatus == true)
         {
             // Print LED toggling rate
-            readStatus = false;
+            readAppStatus = false;
             startTemperatureReading = false;
         }
         else
         {
             // Print Temperature
-            readStatus = true;
+            readAppStatus = true;
             startTemperatureReading = true;
         }
     }
@@ -196,7 +196,7 @@ int main ( void )
 
     while ( true )
     {
-        while(false == startTemperatureReading && readStatus == false)
+        while(false == startTemperatureReading && readAppStatus == false)
         {
             if ((isRTCExpired == true) && (true == isUARTTxComplete))
             {
@@ -252,7 +252,7 @@ int main ( void )
             isRTCExpired = false;
             SERCOM3_I2C_WriteRead(TEMP_SENSOR_SLAVE_ADDR, &i2cWrData, 1, i2cRdData, 2);
         }
-        if (isTemperatureRead == true && readStatus == true)
+        if (isTemperatureRead == true && readAppStatus == true)
         {
             isTemperatureRead = false;
             if(changeTempSamplingRate == false)

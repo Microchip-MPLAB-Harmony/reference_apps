@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_EVSYS_INSTANCE_
 #define _PIC32CMJH01_EVSYS_INSTANCE_
 
@@ -32,6 +32,8 @@
 #define EVSYS_EXTEVT_NUM                         (0)        /* Number of External Event Generators */
 #define EVSYS_GCLK_ID_0                          (5)        /* Index of Generic Clock 0 */
 #define EVSYS_GCLK_ID_1                          (6)        /* Index of Generic Clock 1 */
+#define EVSYS_GCLK_ID_10                         (15)       /* Index of Generic Clock 10 */
+#define EVSYS_GCLK_ID_11                         (16)       /* Index of Generic Clock 11 */
 #define EVSYS_GCLK_ID_2                          (7)        /* Index of Generic Clock 2 */
 #define EVSYS_GCLK_ID_3                          (8)        /* Index of Generic Clock 3 */
 #define EVSYS_GCLK_ID_4                          (9)        /* Index of Generic Clock 4 */
@@ -40,12 +42,10 @@
 #define EVSYS_GCLK_ID_7                          (12)       /* Index of Generic Clock 7 */
 #define EVSYS_GCLK_ID_8                          (13)       /* Index of Generic Clock 8 */
 #define EVSYS_GCLK_ID_9                          (14)       /* Index of Generic Clock 9 */
-#define EVSYS_GCLK_ID_10                         (15)       /* Index of Generic Clock 10 */
-#define EVSYS_GCLK_ID_11                         (16)       /* Index of Generic Clock 11 */
 #define EVSYS_GENERATORS                         (101)      /* Total Number of Event Generators */
 #define EVSYS_GENERATORS_BITS                    (7)        /* Number of bits to select Event Generator */
+#define EVSYS_INSTANCE_ID                        (64)       /* Instance index for EVSYS */
 #define EVSYS_USERS                              (51)       /* Total Number of Event Users */
 #define EVSYS_USERS_BITS                         (6)        /* Number of bits to select Event User */
-#define EVSYS_INSTANCE_ID                        (64)       /* Instance index for EVSYS */
 
 #endif /* _PIC32CMJH01_EVSYS_INSTANCE_ */

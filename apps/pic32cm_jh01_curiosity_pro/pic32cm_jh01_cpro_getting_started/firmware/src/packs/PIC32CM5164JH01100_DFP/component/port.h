@@ -1,7 +1,7 @@
 /*
  * Component description for PORT
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_PORT_COMPONENT_H_
 #define _PIC32CMJH01_PORT_COMPONENT_H_
 
@@ -217,6 +217,7 @@
 #define   PORT_PMUX_PMUXE_H_Val               _UINT8_(0x7)                                         /* (PORT_PMUX) Peripheral function H selected  */
 #define   PORT_PMUX_PMUXE_I_Val               _UINT8_(0x8)                                         /* (PORT_PMUX) Peripheral function I selected  */
 #define   PORT_PMUX_PMUXE_J_Val               _UINT8_(0x9)                                         /* (PORT_PMUX) Peripheral function J selected  */
+#define   PORT_PMUX_PMUXE_K_Val               _UINT8_(0xA)                                         /* (PORT_PMUX) Peripheral function K selected  */
 #define PORT_PMUX_PMUXE_A                     (PORT_PMUX_PMUXE_A_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function A selected Position  */
 #define PORT_PMUX_PMUXE_B                     (PORT_PMUX_PMUXE_B_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function B selected Position  */
 #define PORT_PMUX_PMUXE_C                     (PORT_PMUX_PMUXE_C_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function C selected Position  */
@@ -227,6 +228,7 @@
 #define PORT_PMUX_PMUXE_H                     (PORT_PMUX_PMUXE_H_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function H selected Position  */
 #define PORT_PMUX_PMUXE_I                     (PORT_PMUX_PMUXE_I_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function I selected Position  */
 #define PORT_PMUX_PMUXE_J                     (PORT_PMUX_PMUXE_J_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function J selected Position  */
+#define PORT_PMUX_PMUXE_K                     (PORT_PMUX_PMUXE_K_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function K selected Position  */
 #define PORT_PMUX_PMUXO_Pos                   _UINT8_(4)                                           /* (PORT_PMUX) Peripheral Multiplexing for Odd-Numbered Pin Position */
 #define PORT_PMUX_PMUXO_Msk                   (_UINT8_(0xF) << PORT_PMUX_PMUXO_Pos)                /* (PORT_PMUX) Peripheral Multiplexing for Odd-Numbered Pin Mask */
 #define PORT_PMUX_PMUXO(value)                (PORT_PMUX_PMUXO_Msk & (_UINT8_(value) << PORT_PMUX_PMUXO_Pos)) /* Assigment of value for PMUXO in the PORT_PMUX register */
@@ -240,6 +242,7 @@
 #define   PORT_PMUX_PMUXO_H_Val               _UINT8_(0x7)                                         /* (PORT_PMUX) Peripheral function H selected  */
 #define   PORT_PMUX_PMUXO_I_Val               _UINT8_(0x8)                                         /* (PORT_PMUX) Peripheral function I selected  */
 #define   PORT_PMUX_PMUXO_J_Val               _UINT8_(0x9)                                         /* (PORT_PMUX) Peripheral function J selected  */
+#define   PORT_PMUX_PMUXO_K_Val               _UINT8_(0xA)                                         /* (PORT_PMUX) Peripheral function K selected  */
 #define PORT_PMUX_PMUXO_A                     (PORT_PMUX_PMUXO_A_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function A selected Position  */
 #define PORT_PMUX_PMUXO_B                     (PORT_PMUX_PMUXO_B_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function B selected Position  */
 #define PORT_PMUX_PMUXO_C                     (PORT_PMUX_PMUXO_C_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function C selected Position  */
@@ -250,6 +253,7 @@
 #define PORT_PMUX_PMUXO_H                     (PORT_PMUX_PMUXO_H_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function H selected Position  */
 #define PORT_PMUX_PMUXO_I                     (PORT_PMUX_PMUXO_I_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function I selected Position  */
 #define PORT_PMUX_PMUXO_J                     (PORT_PMUX_PMUXO_J_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function J selected Position  */
+#define PORT_PMUX_PMUXO_K                     (PORT_PMUX_PMUXO_K_Val << PORT_PMUX_PMUXO_Pos)       /* (PORT_PMUX) Peripheral function K selected Position  */
 #define PORT_PMUX_Msk                         _UINT8_(0xFF)                                        /* (PORT_PMUX) Register Mask  */
 
 

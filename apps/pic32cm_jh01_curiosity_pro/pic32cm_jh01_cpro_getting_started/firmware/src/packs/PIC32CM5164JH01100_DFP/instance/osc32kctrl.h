@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,13 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_OSC32KCTRL_INSTANCE_
 #define _PIC32CMJH01_OSC32KCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for OSC32KCTRL peripheral ========== */
-#define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       (6)        
 #define OSC32KCTRL_INSTANCE_ID                   (5)        /* Instance index for OSC32KCTRL */
+#define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       (6)        
 
 #endif /* _PIC32CMJH01_OSC32KCTRL_INSTANCE_ */

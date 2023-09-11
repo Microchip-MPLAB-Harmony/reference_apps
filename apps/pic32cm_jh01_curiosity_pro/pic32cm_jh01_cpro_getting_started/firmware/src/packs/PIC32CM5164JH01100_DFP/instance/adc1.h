@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_ADC1_INSTANCE_
 #define _PIC32CMJH01_ADC1_INSTANCE_
 
@@ -29,9 +29,9 @@
 #define ADC1_DMAC_ID_RESRDY                      (43)       /* Index of DMA RESRDY trigger */
 #define ADC1_EXTCHANNEL_MSB                      (11)       /* Number of external channels */
 #define ADC1_GCLK_ID                             (37)       /* Index of Generic Clock */
-#define ADC1_INT_CH30                            (0)        /* Select OPAMP or CTAT on Channel 30 */
-#define ADC1_MASTER_SLAVE_MODE                   (2)        /* ADC Master/Slave Mode */
 #define ADC1_INSTANCE_ID                         (82)       /* Instance index for ADC1 */
+#define ADC1_INT_CH30                            (0)        /* Select OPAMP or CTAT on Channel 30 */
 #define ADC1_LOAD_CALIB                          (1)        /* CALIB register to be loaded from NVM */
+#define ADC1_MASTER_SLAVE_MODE                   (2)        /* ADC Master/Slave Mode */
 
 #endif /* _PIC32CMJH01_ADC1_INSTANCE_ */

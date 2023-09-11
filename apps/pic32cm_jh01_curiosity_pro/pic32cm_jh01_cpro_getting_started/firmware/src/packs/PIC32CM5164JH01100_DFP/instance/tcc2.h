@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_TCC2_INSTANCE_
 #define _PIC32CMJH01_TCC2_INSTANCE_
 
@@ -33,12 +33,12 @@
 #define TCC2_DMAC_ID_OVF                         (24)       /* DMA overflow/underflow/retrigger trigger */
 #define TCC2_DTI                                 (0)        /* Dead-Time-Insertion feature implemented */
 #define TCC2_GCLK_ID                             (29)       /* Index of Generic Clock */
+#define TCC2_INSTANCE_ID                         (75)       /* Instance index for TCC2 */
 #define TCC2_MASTER_SLAVE_MODE                   (0)        /* TCC type 0 : NA, 1 : Master, 2 : Slave */
 #define TCC2_OTMX                                (0)        /* Output Matrix feature implemented */
 #define TCC2_OW_NUM                              (2)        /* Number of Output Waveforms */
 #define TCC2_PG                                  (0)        /* Pattern Generation feature implemented */
 #define TCC2_SIZE                                (16)       
 #define TCC2_SWAP                                (0)        /* DTI outputs swap feature implemented */
-#define TCC2_INSTANCE_ID                         (75)       /* Instance index for TCC2 */
 
 #endif /* _PIC32CMJH01_TCC2_INSTANCE_ */

@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164JH01100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,26 +20,26 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_NVMCTRL_INSTANCE_
 #define _PIC32CMJH01_NVMCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for NVMCTRL peripheral ========== */
+#define NVMCTRL_DATAFLASH_ADDR                   (0x00400000) /* Start address of the Data Flash area */
+#define NVMCTRL_DATAFLASH_PAGES                  (128)      
+#define NVMCTRL_DATAFLASH_SIZE                   (8192)     /* Byte size of the Data Flash area */
 #define NVMCTRL_ECC_PRESENT                      (1)        /* define out all the added ECC logic - when =0 there shall be no ECC logic present in the design */
 #define NVMCTRL_FACTORY_WORD_IMPLEMENTED_MASK    (0XC0000007FFFFFFFF) 
+#define NVMCTRL_FLASH_SIZE                       (524288)   
+#define NVMCTRL_INSTANCE_ID                      (34)       /* Instance index for NVMCTRL */
+#define NVMCTRL_PAGES                            (8192)     
+#define NVMCTRL_PAGES_PR_REGION                  (512)      
+#define NVMCTRL_PAGE_SIZE                        (64)       
 #define NVMCTRL_PMSB                             (3)        
 #define NVMCTRL_PSZ_BITS                         (6)        
 #define NVMCTRL_RSTFFLTADDR                      (0x00000000) /* the reset default for FFLTADDR */
 #define NVMCTRL_USER_PAGE_OFFSET                 (0x00800000) 
 #define NVMCTRL_USER_WORD_IMPLEMENTED_MASK       (0XC01FFFFFFFFFFFFF) 
-#define NVMCTRL_DATAFLASH_PAGES                  (128)      
-#define NVMCTRL_DATAFLASH_ADDR                   (0x00400000) /* Start address of the Data Flash area */
-#define NVMCTRL_DATAFLASH_SIZE                   (8192)     /* Byte size of the Data Flash area */
-#define NVMCTRL_FLASH_SIZE                       (524288)   
-#define NVMCTRL_PAGE_SIZE                        (64)       
-#define NVMCTRL_PAGES                            (8192)     
-#define NVMCTRL_PAGES_PR_REGION                  (512)      
-#define NVMCTRL_INSTANCE_ID                      (34)       /* Instance index for NVMCTRL */
 
 #endif /* _PIC32CMJH01_NVMCTRL_INSTANCE_ */

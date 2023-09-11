@@ -1,7 +1,7 @@
 /*
  * Component description for AC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-20T08:40:47Z */
+/* file generated from device description version 2023-04-26T09:03:33Z */
 #ifndef _PIC32CMJH01_AC_COMPONENT_H_
 #define _PIC32CMJH01_AC_COMPONENT_H_
 
@@ -229,21 +229,21 @@
 #define AC_STATUSA_WSTATE0_Pos                _UINT8_(4)                                           /* (AC_STATUSA) Window 0 Current State Position */
 #define AC_STATUSA_WSTATE0_Msk                (_UINT8_(0x3) << AC_STATUSA_WSTATE0_Pos)             /* (AC_STATUSA) Window 0 Current State Mask */
 #define AC_STATUSA_WSTATE0(value)             (AC_STATUSA_WSTATE0_Msk & (_UINT8_(value) << AC_STATUSA_WSTATE0_Pos)) /* Assigment of value for WSTATE0 in the AC_STATUSA register */
-#define   AC_STATUSA_WSTATE0_ABOVE_Val        _UINT8_(0x0)                                         /* (AC_STATUSA) Signal is above window  */
-#define   AC_STATUSA_WSTATE0_INSIDE_Val       _UINT8_(0x1)                                         /* (AC_STATUSA) Signal is inside window  */
-#define   AC_STATUSA_WSTATE0_BELOW_Val        _UINT8_(0x2)                                         /* (AC_STATUSA) Signal is below window  */
-#define AC_STATUSA_WSTATE0_ABOVE              (AC_STATUSA_WSTATE0_ABOVE_Val << AC_STATUSA_WSTATE0_Pos) /* (AC_STATUSA) Signal is above window Position  */
-#define AC_STATUSA_WSTATE0_INSIDE             (AC_STATUSA_WSTATE0_INSIDE_Val << AC_STATUSA_WSTATE0_Pos) /* (AC_STATUSA) Signal is inside window Position  */
-#define AC_STATUSA_WSTATE0_BELOW              (AC_STATUSA_WSTATE0_BELOW_Val << AC_STATUSA_WSTATE0_Pos) /* (AC_STATUSA) Signal is below window Position  */
+#define   AC_STATUSA_WSTATE0_ABOVE_Val        _UINT8_(0x0)                                         /* (AC_STATUSA) Signal is above window0  */
+#define   AC_STATUSA_WSTATE0_INSIDE_Val       _UINT8_(0x1)                                         /* (AC_STATUSA) Signal is inside window0  */
+#define   AC_STATUSA_WSTATE0_BELOW_Val        _UINT8_(0x2)                                         /* (AC_STATUSA) Signal is below window0  */
+#define AC_STATUSA_WSTATE0_ABOVE              (AC_STATUSA_WSTATE0_ABOVE_Val << AC_STATUSA_WSTATE0_Pos) /* (AC_STATUSA) Signal is above window0 Position  */
+#define AC_STATUSA_WSTATE0_INSIDE             (AC_STATUSA_WSTATE0_INSIDE_Val << AC_STATUSA_WSTATE0_Pos) /* (AC_STATUSA) Signal is inside window0 Position  */
+#define AC_STATUSA_WSTATE0_BELOW              (AC_STATUSA_WSTATE0_BELOW_Val << AC_STATUSA_WSTATE0_Pos) /* (AC_STATUSA) Signal is below window0 Position  */
 #define AC_STATUSA_WSTATE1_Pos                _UINT8_(6)                                           /* (AC_STATUSA) Window 1 Current State Position */
 #define AC_STATUSA_WSTATE1_Msk                (_UINT8_(0x3) << AC_STATUSA_WSTATE1_Pos)             /* (AC_STATUSA) Window 1 Current State Mask */
 #define AC_STATUSA_WSTATE1(value)             (AC_STATUSA_WSTATE1_Msk & (_UINT8_(value) << AC_STATUSA_WSTATE1_Pos)) /* Assigment of value for WSTATE1 in the AC_STATUSA register */
-#define   AC_STATUSA_WSTATE1_ABOVE_Val        _UINT8_(0x0)                                         /* (AC_STATUSA) Signal is above window  */
-#define   AC_STATUSA_WSTATE1_INSIDE_Val       _UINT8_(0x1)                                         /* (AC_STATUSA) Signal is inside window  */
-#define   AC_STATUSA_WSTATE1_BELOW_Val        _UINT8_(0x2)                                         /* (AC_STATUSA) Signal is below window  */
-#define AC_STATUSA_WSTATE1_ABOVE              (AC_STATUSA_WSTATE1_ABOVE_Val << AC_STATUSA_WSTATE1_Pos) /* (AC_STATUSA) Signal is above window Position  */
-#define AC_STATUSA_WSTATE1_INSIDE             (AC_STATUSA_WSTATE1_INSIDE_Val << AC_STATUSA_WSTATE1_Pos) /* (AC_STATUSA) Signal is inside window Position  */
-#define AC_STATUSA_WSTATE1_BELOW              (AC_STATUSA_WSTATE1_BELOW_Val << AC_STATUSA_WSTATE1_Pos) /* (AC_STATUSA) Signal is below window Position  */
+#define   AC_STATUSA_WSTATE1_ABOVE_Val        _UINT8_(0x0)                                         /* (AC_STATUSA) Signal is above window1  */
+#define   AC_STATUSA_WSTATE1_INSIDE_Val       _UINT8_(0x1)                                         /* (AC_STATUSA) Signal is inside window1  */
+#define   AC_STATUSA_WSTATE1_BELOW_Val        _UINT8_(0x2)                                         /* (AC_STATUSA) Signal is below window1  */
+#define AC_STATUSA_WSTATE1_ABOVE              (AC_STATUSA_WSTATE1_ABOVE_Val << AC_STATUSA_WSTATE1_Pos) /* (AC_STATUSA) Signal is above window1 Position  */
+#define AC_STATUSA_WSTATE1_INSIDE             (AC_STATUSA_WSTATE1_INSIDE_Val << AC_STATUSA_WSTATE1_Pos) /* (AC_STATUSA) Signal is inside window1 Position  */
+#define AC_STATUSA_WSTATE1_BELOW              (AC_STATUSA_WSTATE1_BELOW_Val << AC_STATUSA_WSTATE1_Pos) /* (AC_STATUSA) Signal is below window1 Position  */
 #define AC_STATUSA_Msk                        _UINT8_(0xFF)                                        /* (AC_STATUSA) Register Mask  */
 
 #define AC_STATUSA_STATE_Pos                  _UINT8_(0)                                           /* (AC_STATUSA Position) Comparator x Current State */
@@ -289,28 +289,28 @@
 #define AC_WINCTRL_WINTSEL0_Pos               _UINT8_(1)                                           /* (AC_WINCTRL) Window 0 Interrupt Selection Position */
 #define AC_WINCTRL_WINTSEL0_Msk               (_UINT8_(0x3) << AC_WINCTRL_WINTSEL0_Pos)            /* (AC_WINCTRL) Window 0 Interrupt Selection Mask */
 #define AC_WINCTRL_WINTSEL0(value)            (AC_WINCTRL_WINTSEL0_Msk & (_UINT8_(value) << AC_WINCTRL_WINTSEL0_Pos)) /* Assigment of value for WINTSEL0 in the AC_WINCTRL register */
-#define   AC_WINCTRL_WINTSEL0_ABOVE_Val       _UINT8_(0x0)                                         /* (AC_WINCTRL) Interrupt on signal above window  */
-#define   AC_WINCTRL_WINTSEL0_INSIDE_Val      _UINT8_(0x1)                                         /* (AC_WINCTRL) Interrupt on signal inside window  */
-#define   AC_WINCTRL_WINTSEL0_BELOW_Val       _UINT8_(0x2)                                         /* (AC_WINCTRL) Interrupt on signal below window  */
-#define   AC_WINCTRL_WINTSEL0_OUTSIDE_Val     _UINT8_(0x3)                                         /* (AC_WINCTRL) Interrupt on signal outside window  */
-#define AC_WINCTRL_WINTSEL0_ABOVE             (AC_WINCTRL_WINTSEL0_ABOVE_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal above window Position  */
-#define AC_WINCTRL_WINTSEL0_INSIDE            (AC_WINCTRL_WINTSEL0_INSIDE_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal inside window Position  */
-#define AC_WINCTRL_WINTSEL0_BELOW             (AC_WINCTRL_WINTSEL0_BELOW_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal below window Position  */
-#define AC_WINCTRL_WINTSEL0_OUTSIDE           (AC_WINCTRL_WINTSEL0_OUTSIDE_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal outside window Position  */
+#define   AC_WINCTRL_WINTSEL0_ABOVE_Val       _UINT8_(0x0)                                         /* (AC_WINCTRL) Interrupt on signal above window0  */
+#define   AC_WINCTRL_WINTSEL0_INSIDE_Val      _UINT8_(0x1)                                         /* (AC_WINCTRL) Interrupt on signal inside window0  */
+#define   AC_WINCTRL_WINTSEL0_BELOW_Val       _UINT8_(0x2)                                         /* (AC_WINCTRL) Interrupt on signal below window0  */
+#define   AC_WINCTRL_WINTSEL0_OUTSIDE_Val     _UINT8_(0x3)                                         /* (AC_WINCTRL) Interrupt on signal outside window0  */
+#define AC_WINCTRL_WINTSEL0_ABOVE             (AC_WINCTRL_WINTSEL0_ABOVE_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal above window0 Position  */
+#define AC_WINCTRL_WINTSEL0_INSIDE            (AC_WINCTRL_WINTSEL0_INSIDE_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal inside window0 Position  */
+#define AC_WINCTRL_WINTSEL0_BELOW             (AC_WINCTRL_WINTSEL0_BELOW_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal below window0 Position  */
+#define AC_WINCTRL_WINTSEL0_OUTSIDE           (AC_WINCTRL_WINTSEL0_OUTSIDE_Val << AC_WINCTRL_WINTSEL0_Pos) /* (AC_WINCTRL) Interrupt on signal outside window0 Position  */
 #define AC_WINCTRL_WEN1_Pos                   _UINT8_(4)                                           /* (AC_WINCTRL) Window 1 Mode Enable Position */
 #define AC_WINCTRL_WEN1_Msk                   (_UINT8_(0x1) << AC_WINCTRL_WEN1_Pos)                /* (AC_WINCTRL) Window 1 Mode Enable Mask */
 #define AC_WINCTRL_WEN1(value)                (AC_WINCTRL_WEN1_Msk & (_UINT8_(value) << AC_WINCTRL_WEN1_Pos)) /* Assigment of value for WEN1 in the AC_WINCTRL register */
 #define AC_WINCTRL_WINTSEL1_Pos               _UINT8_(5)                                           /* (AC_WINCTRL) Window 1 Interrupt Selection Position */
 #define AC_WINCTRL_WINTSEL1_Msk               (_UINT8_(0x3) << AC_WINCTRL_WINTSEL1_Pos)            /* (AC_WINCTRL) Window 1 Interrupt Selection Mask */
 #define AC_WINCTRL_WINTSEL1(value)            (AC_WINCTRL_WINTSEL1_Msk & (_UINT8_(value) << AC_WINCTRL_WINTSEL1_Pos)) /* Assigment of value for WINTSEL1 in the AC_WINCTRL register */
-#define   AC_WINCTRL_WINTSEL1_ABOVE_Val       _UINT8_(0x0)                                         /* (AC_WINCTRL) Interrupt on signal above window  */
-#define   AC_WINCTRL_WINTSEL1_INSIDE_Val      _UINT8_(0x1)                                         /* (AC_WINCTRL) Interrupt on signal inside window  */
-#define   AC_WINCTRL_WINTSEL1_BELOW_Val       _UINT8_(0x2)                                         /* (AC_WINCTRL) Interrupt on signal below window  */
-#define   AC_WINCTRL_WINTSEL1_OUTSIDE_Val     _UINT8_(0x3)                                         /* (AC_WINCTRL) Interrupt on signal outside window  */
-#define AC_WINCTRL_WINTSEL1_ABOVE             (AC_WINCTRL_WINTSEL1_ABOVE_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal above window Position  */
-#define AC_WINCTRL_WINTSEL1_INSIDE            (AC_WINCTRL_WINTSEL1_INSIDE_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal inside window Position  */
-#define AC_WINCTRL_WINTSEL1_BELOW             (AC_WINCTRL_WINTSEL1_BELOW_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal below window Position  */
-#define AC_WINCTRL_WINTSEL1_OUTSIDE           (AC_WINCTRL_WINTSEL1_OUTSIDE_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal outside window Position  */
+#define   AC_WINCTRL_WINTSEL1_ABOVE_Val       _UINT8_(0x0)                                         /* (AC_WINCTRL) Interrupt on signal above window1  */
+#define   AC_WINCTRL_WINTSEL1_INSIDE_Val      _UINT8_(0x1)                                         /* (AC_WINCTRL) Interrupt on signal inside window1  */
+#define   AC_WINCTRL_WINTSEL1_BELOW_Val       _UINT8_(0x2)                                         /* (AC_WINCTRL) Interrupt on signal below window1  */
+#define   AC_WINCTRL_WINTSEL1_OUTSIDE_Val     _UINT8_(0x3)                                         /* (AC_WINCTRL) Interrupt on signal outside window1  */
+#define AC_WINCTRL_WINTSEL1_ABOVE             (AC_WINCTRL_WINTSEL1_ABOVE_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal above window1 Position  */
+#define AC_WINCTRL_WINTSEL1_INSIDE            (AC_WINCTRL_WINTSEL1_INSIDE_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal inside window1 Position  */
+#define AC_WINCTRL_WINTSEL1_BELOW             (AC_WINCTRL_WINTSEL1_BELOW_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal below window1 Position  */
+#define AC_WINCTRL_WINTSEL1_OUTSIDE           (AC_WINCTRL_WINTSEL1_OUTSIDE_Val << AC_WINCTRL_WINTSEL1_Pos) /* (AC_WINCTRL) Interrupt on signal outside window1 Position  */
 #define AC_WINCTRL_Msk                        _UINT8_(0x77)                                        /* (AC_WINCTRL) Register Mask  */
 
 
