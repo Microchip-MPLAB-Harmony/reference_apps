@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-02-14T14:27:15Z */
+/* file generated from device description version 2023-03-17T09:49:56Z */
 #ifndef _SAME51_RSTC_INSTANCE_
 #define _SAME51_RSTC_INSTANCE_
 
@@ -28,8 +28,8 @@
 /* ========== Instance Parameter definitions for RSTC peripheral ========== */
 #define RSTC_BACKUP_IMPLEMENTED                  (1)        
 #define RSTC_HIB_IMPLEMENTED                     (1)        
+#define RSTC_INSTANCE_ID                         (3)        /* Instance index for RSTC */
 #define RSTC_NUMBER_OF_EXTWAKE                   (0)        /* number of external wakeup line */
 #define RSTC_NVMRST_IMPLEMENTED                  (1)        
-#define RSTC_INSTANCE_ID                         (3)        /* Instance index for RSTC */
 
 #endif /* _SAME51_RSTC_INSTANCE_ */

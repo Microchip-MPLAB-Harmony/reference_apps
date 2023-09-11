@@ -10,21 +10,21 @@
         "shortDescription": "This application showcases the capabilities of the microSD Click module. It demonstrates various file operations that can be performed on an SD card such as creating a file, writing data to the file, reading data from the file and creating a directory.",
         "ide": {
             "name": "MPLABX",
-            "semverRange": ">=6.05"
+            "semverRange": ">=6.15"
         },
         "compiler": [
             {
                 "name": "XC32",
-                "semverRange": ">=4.21.0"
+                "semverRange": ">=4.30.0"
             }
         ],
         "dfp": {
             "name": "SAME51_DFP",
-            "semverRange": "^3.6.130"
+            "semverRange": "^3.7.242"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.3.0"
+            "semverRange": ">=5.3.7"
         },
         "device": {
             "metaDataVersion": "1.0.0",

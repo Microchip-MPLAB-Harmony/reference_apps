@@ -48,10 +48,9 @@
 #define SDCARD_FILE_NAME     "mchp_sd.txt"
 #define SDCARD_FILE_NAME_2   "mchp_sd2.txt"
 #define SDCARD_DIR_NAME      "Dir1"
-#define APP_DATA_LEN         512
 
 // Text message which needs to be displayed in the file
-static uint8_t BUFFER_ATTRIBUTES readWriteBuffer[APP_DATA_LEN] = "This is microSD Click Example";
+static uint8_t BUFFER_ATTRIBUTES readWriteBuffer[] = "This is microSD Click Example";
 static MICROSD_DATA microSdData;
 
 // This function mounts the SD card and sets the path

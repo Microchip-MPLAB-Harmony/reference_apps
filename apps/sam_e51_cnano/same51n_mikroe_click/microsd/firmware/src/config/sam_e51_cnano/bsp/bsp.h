@@ -40,8 +40,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _BSP_H
-#define _BSP_H
+#ifndef BSP_H
+#define BSP_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -60,12 +60,15 @@
 // Section: BSP Macros
 // *****************************************************************************
 // *****************************************************************************
+#define sam_e51_cnano
+#define BSP_NAME             "sam_e51_cnano"
+
 
 
 /*** LED Macros for LED0 ***/
-#define LED0_Toggle()     (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 14)
-#define LED0_On()         (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 14)
-#define LED0_Off()        (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 14)
+#define LED0_Toggle()     (PORT_REGS->GROUP[0].PORT_OUTTGL = 1UL << 14)
+#define LED0_On()         (PORT_REGS->GROUP[0].PORT_OUTCLR = 1UL << 14)
+#define LED0_Off()        (PORT_REGS->GROUP[0].PORT_OUTSET = 1UL << 14)
 
 
 
@@ -101,7 +104,6 @@
 
   Example:
     <code>
-    //Initialize the BSP
     BSP_Initialize();
     </code>
 
@@ -111,7 +113,7 @@
 
 void BSP_Initialize(void);
 
-#endif // _BSP_H
+#endif // BSP_H
 
 /*******************************************************************************
  End of File
