@@ -96,14 +96,13 @@
     None.
 */
 
-typedef enum
-{
+
     /* External Interrupt Controller Pin 3 */
-    EIC_PIN_3 = 3,
+#define    EIC_PIN_3   (3U)
 
-    EIC_PIN_MAX = 16
+#define    EIC_PIN_MAX  (16U)
 
-} EIC_PIN;
+typedef uint16_t EIC_PIN;
 
 // *****************************************************************************
 /* EIC Interrupt Pin Callback Function Pointer Type

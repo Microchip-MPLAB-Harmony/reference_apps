@@ -84,6 +84,7 @@
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/tsens.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/ac.h</itemPath>
@@ -135,6 +136,7 @@
             <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tcc2.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tsens.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21N18A_DFP/pio/samc21n18a.h</itemPath>
@@ -227,6 +229,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main_c21n.c</itemPath>
+      <itemPath>../src/config/sam_c21n_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -242,12 +245,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMC21_DFP" vendor="Microchip" version="3.8.119"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAMC21_DFP" vendor="Microchip" version="3.8.119"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -451,6 +454,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -990,6 +995,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
