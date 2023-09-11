@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_saml10_getting_started",
-		"version": "1.5.0",
+		"version": "1.6.0",
 		"displayName": "Getting Started Application on SAM L10 Xplained Pro Evaluation Kit",
 		"projectName": "getting_started_sam_l10_xpro",
 		"shortDescription": "Demonstrates how to get started using the basic peripherals like RTC, PORTS, SERCOM(I2C) and SERCOM(USART)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.0.0"
+				"semverRange": ">=4.30"
 			}
 		],
 		"dfp": {
 			"name": "SAML10_DFP",
-			"semverRange": "^3.9.116"
+			"semverRange": "^3.10.228"
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.3.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -49,7 +49,6 @@
 			"RTC", "PORTS", "SERCOM(I2C)", "SERCOM(USART)", "DMAC"
 		],
 		"keywords": [
-			"MHC",
 			"MCC",
 			"Harmony",
 			"UART",

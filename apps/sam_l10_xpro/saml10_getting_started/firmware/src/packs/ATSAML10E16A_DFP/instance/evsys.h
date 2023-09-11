@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML10E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,27 +20,27 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:20:34Z */
+/* file generated from device description version 2023-04-12T14:18:35Z */
 #ifndef _SAML10_EVSYS_INSTANCE_
 #define _SAML10_EVSYS_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for EVSYS peripheral ========== */
-#define EVSYS_ASYNCHRONOUS_CHANNELS              _UL_(0x000000F0) /* Mask of Only Asynchronous Channels */
-#define EVSYS_CHANNELS                           _UL_(8)    /* Number of Channels */
-#define EVSYS_CHANNELS_BITS                      _UL_(3)    /* Number of bits to select Channel */
-#define EVSYS_GCLK_ID_0                          _UL_(6)    /* Index of Generic Clock 0 */
-#define EVSYS_GCLK_ID_1                          _UL_(7)    /* Index of Generic Clock 1 */
-#define EVSYS_GCLK_ID_2                          _UL_(8)    /* Index of Generic Clock 2 */
-#define EVSYS_GCLK_ID_3                          _UL_(9)    /* Index of Generic Clock 3 */
-#define EVSYS_GENERATORS                         _UL_(49)   /* Total Number of Event Generators */
-#define EVSYS_GENERATORS_BITS                    _UL_(6)    /* Number of bits to select Event Generator */
-#define EVSYS_SECURE_IMPLEMENTED                 _UL_(1)    /* Secure Channels/Users supported? */
-#define EVSYS_SYNCH_NUM                          _UL_(4)    /* Number of Synchronous Channels */
-#define EVSYS_SYNCH_NUM_BITS                     _UL_(2)    /* Number of bits to select Synchronous Channels */
-#define EVSYS_USERS                              _UL_(23)   /* Total Number of Event Users */
-#define EVSYS_USERS_BITS                         _UL_(5)    /* Number of bits to select Event User */
-#define EVSYS_USERS_GROUPS                       _UL_(1)    /* Number of 32-user groups */
-#define EVSYS_INSTANCE_ID                        _UL_(64)   
+#define EVSYS_ASYNCHRONOUS_CHANNELS              (0x000000F0) /* Mask of Only Asynchronous Channels */
+#define EVSYS_CHANNELS                           (8)        /* Number of Channels */
+#define EVSYS_CHANNELS_BITS                      (3)        /* Number of bits to select Channel */
+#define EVSYS_GCLK_ID_0                          (6)        /* Index of Generic Clock 0 */
+#define EVSYS_GCLK_ID_1                          (7)        /* Index of Generic Clock 1 */
+#define EVSYS_GCLK_ID_2                          (8)        /* Index of Generic Clock 2 */
+#define EVSYS_GCLK_ID_3                          (9)        /* Index of Generic Clock 3 */
+#define EVSYS_GENERATORS                         (49)       /* Total Number of Event Generators */
+#define EVSYS_GENERATORS_BITS                    (6)        /* Number of bits to select Event Generator */
+#define EVSYS_INSTANCE_ID                        (64)       
+#define EVSYS_SECURE_IMPLEMENTED                 (1)        /* Secure Channels/Users supported? */
+#define EVSYS_SYNCH_NUM                          (4)        /* Number of Synchronous Channels */
+#define EVSYS_SYNCH_NUM_BITS                     (2)        /* Number of bits to select Synchronous Channels */
+#define EVSYS_USERS                              (23)       /* Total Number of Event Users */
+#define EVSYS_USERS_BITS                         (5)        /* Number of bits to select Event User */
+#define EVSYS_USERS_GROUPS                       (1)        /* Number of 32-user groups */
 
 #endif /* _SAML10_EVSYS_INSTANCE_ */

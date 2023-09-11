@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAML10E16A linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,7 +77,8 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x4000)
 #  error RAM_LENGTH is greater than the max size of 0x4000
 #endif
-  
+
+
 
 /*************************************************************************
  * Memory-Region Definitions
@@ -89,15 +90,14 @@ MEMORY
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH
   config_00804000 : ORIGIN = 0x00804000, LENGTH = 0x4
-  config_0080C040 : ORIGIN = 0x0080C040, LENGTH = 0x4
+  config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
   config_0080C004 : ORIGIN = 0x0080C004, LENGTH = 0x4
+  config_0080C040 : ORIGIN = 0x0080C040, LENGTH = 0x4
+  config_0080C044 : ORIGIN = 0x0080C044, LENGTH = 0x4
   config_0080C048 : ORIGIN = 0x0080C048, LENGTH = 0x4
   config_0080C04C : ORIGIN = 0x0080C04C, LENGTH = 0x4
-  config_0080C044 : ORIGIN = 0x0080C044, LENGTH = 0x4
-  config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
 
 }
-
 /*************************************************************************
  * Output region definitions.
  * CODE_REGION defines the output region for .text/.rodata.
@@ -106,6 +106,9 @@ MEMORY
  * 
  * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
  * and 'ram' otherwise.
+ * N.B. The BFA will still allocate code to any MEMORY named 'rom' regardless
+ * of CODE_REGION's value. If you wish to use rom for something else please
+ * rename the MEMORY entry.
  * DATA_REGION defaults to 'ram', which must be present.
  * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
  */
@@ -134,24 +137,24 @@ SECTIONS
     .config_00804000 : {
       KEEP(*(.config_00804000))
     } > config_00804000
-    .config_0080C040 : {
-      KEEP(*(.config_0080C040))
-    } > config_0080C040
+    .config_00804004 : {
+      KEEP(*(.config_00804004))
+    } > config_00804004
     .config_0080C004 : {
       KEEP(*(.config_0080C004))
     } > config_0080C004
+    .config_0080C040 : {
+      KEEP(*(.config_0080C040))
+    } > config_0080C040
+    .config_0080C044 : {
+      KEEP(*(.config_0080C044))
+    } > config_0080C044
     .config_0080C048 : {
       KEEP(*(.config_0080C048))
     } > config_0080C048
     .config_0080C04C : {
       KEEP(*(.config_0080C04C))
     } > config_0080C04C
-    .config_0080C044 : {
-      KEEP(*(.config_0080C044))
-    } > config_0080C044
-    .config_00804004 : {
-      KEEP(*(.config_00804004))
-    } > config_00804004
 
     /*
      * The linker moves the .vectors section into itcm when itcm is
@@ -230,6 +233,7 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;
+
 
     /*
      *  Align here to ensure that the .bss section occupies space up to

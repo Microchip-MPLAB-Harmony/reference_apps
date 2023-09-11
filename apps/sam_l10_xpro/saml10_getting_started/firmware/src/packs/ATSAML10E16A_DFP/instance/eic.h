@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML10E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,18 +20,18 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T12:20:34Z */
+/* file generated from device description version 2023-04-12T14:18:35Z */
 #ifndef _SAML10_EIC_INSTANCE_
 #define _SAML10_EIC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for EIC peripheral ========== */
-#define EIC_EXTINT_NUM                           _UL_(8)    /* Number of external interrupts */
-#define EIC_GCLK_ID                              _UL_(3)    /* Generic Clock index */
-#define EIC_NUMBER_OF_CONFIG_REGS                _UL_(1)    /* Number of CONFIG registers */
-#define EIC_NUMBER_OF_DPRESCALER_REGS            _UL_(1)    /* Number of DPRESCALER registers */
-#define EIC_NUMBER_OF_INTERRUPTS                 _UL_(8)    /* Number of external interrupts (obsolete) */
-#define EIC_SECURE_IMPLEMENTED                   _UL_(1)    /* Security Configuration implemented? */
-#define EIC_INSTANCE_ID                          _UL_(10)   
+#define EIC_EXTINT_NUM                           (8)        /* Number of external interrupts */
+#define EIC_GCLK_ID                              (3)        /* Generic Clock index */
+#define EIC_INSTANCE_ID                          (10)       
+#define EIC_NUMBER_OF_CONFIG_REGS                (1)        /* Number of CONFIG registers */
+#define EIC_NUMBER_OF_DPRESCALER_REGS            (1)        /* Number of DPRESCALER registers */
+#define EIC_NUMBER_OF_INTERRUPTS                 (8)        /* Number of external interrupts (obsolete) */
+#define EIC_SECURE_IMPLEMENTED                   (1)        /* Security Configuration implemented? */
 
 #endif /* _SAML10_EIC_INSTANCE_ */
