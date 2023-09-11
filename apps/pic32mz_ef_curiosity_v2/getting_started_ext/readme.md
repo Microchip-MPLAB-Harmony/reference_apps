@@ -105,6 +105,7 @@ The pre-built hex file can be programmed by following the below steps
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Extended functionality to toggle LED3 on SW3 switch press, added MCC support, regenerated and tested application.
 - v1.3.0 - Regenerated and tested application.

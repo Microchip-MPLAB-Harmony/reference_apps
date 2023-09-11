@@ -87,6 +87,7 @@ void UART6_WriteByte( int data );
 
 bool UART6_TransmitterIsReady( void );
 
+
 bool UART6_TransmitComplete( void );
 
 // DOM-IGNORE-BEGIN
