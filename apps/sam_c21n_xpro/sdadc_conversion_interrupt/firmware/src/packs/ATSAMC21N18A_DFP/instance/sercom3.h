@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21N18A
+/*
+ * Instance header file for ATSAMC21N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,18 +20,18 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:48:13Z */
+/* file generated from device description version 2022-03-15T06:13:04Z */
 #ifndef _SAMC21_SERCOM3_INSTANCE_
 #define _SAMC21_SERCOM3_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for SERCOM3 peripheral ========== */
-#define SERCOM3_DMAC_ID_RX                       _UL_(8)    /* Index of DMA RX trigger */
-#define SERCOM3_DMAC_ID_TX                       _UL_(9)    /* Index of DMA TX trigger */
-#define SERCOM3_GCLK_ID_CORE                     _UL_(22)   
-#define SERCOM3_GCLK_ID_SLOW                     _UL_(18)   
-#define SERCOM3_INT_MSB                          _UL_(6)    
-#define SERCOM3_PMSB                             _UL_(3)    
-#define SERCOM3_INSTANCE_ID                      _UL_(68)   
+#define SERCOM3_DMAC_ID_RX                       (8)        /* Index of DMA RX trigger */
+#define SERCOM3_DMAC_ID_TX                       (9)        /* Index of DMA TX trigger */
+#define SERCOM3_GCLK_ID_CORE                     (22)       
+#define SERCOM3_GCLK_ID_SLOW                     (18)       
+#define SERCOM3_INT_MSB                          (6)        
+#define SERCOM3_PMSB                             (3)        
+#define SERCOM3_INSTANCE_ID                      (68)       
 
 #endif /* _SAMC21_SERCOM3_INSTANCE_ */

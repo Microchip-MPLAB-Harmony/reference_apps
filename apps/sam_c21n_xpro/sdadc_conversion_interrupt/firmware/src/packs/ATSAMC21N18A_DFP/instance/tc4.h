@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21N18A
+/*
+ * Instance header file for ATSAMC21N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,20 +20,20 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:48:13Z */
+/* file generated from device description version 2022-03-15T06:13:04Z */
 #ifndef _SAMC21_TC4_INSTANCE_
 #define _SAMC21_TC4_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TC4 peripheral ========== */
-#define TC4_CC_NUM                               _UL_(2)    
-#define TC4_DMAC_ID_OVF                          _UL_(39)   /* Indexes of DMA Overflow trigger */
-#define TC4_DMAC_ID_MC0                          _UL_(40)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TC4_DMAC_ID_MC1                          _UL_(41)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TC4_EXT                                  _UL_(0)    /* Coding of implemented extended features (keep 0 value) */
-#define TC4_GCLK_ID                              _UL_(32)   /* Index of Generic Clock */
-#define TC4_MASTER_SLAVE_MODE                    _UL_(0)    /* TC type 0 : NA, 1 : Master, 2 : Slave */
-#define TC4_OW_NUM                               _UL_(2)    /* Number of Output Waveforms */
-#define TC4_INSTANCE_ID                          _UL_(80)   
+#define TC4_CC_NUM                               (2)        
+#define TC4_DMAC_ID_OVF                          (39)       /* Indexes of DMA Overflow trigger */
+#define TC4_DMAC_ID_MC0                          (40)       /* Indexes of DMA Match/Compare 0 trigger */
+#define TC4_DMAC_ID_MC1                          (41)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TC4_EXT                                  (0)        /* Coding of implemented extended features (keep 0 value) */
+#define TC4_GCLK_ID                              (32)       /* Index of Generic Clock */
+#define TC4_MASTER_SLAVE_MODE                    (0)        /* TC type 0 : NA, 1 : Master, 2 : Slave */
+#define TC4_OW_NUM                               (2)        /* Number of Output Waveforms */
+#define TC4_INSTANCE_ID                          (80)       
 
 #endif /* _SAMC21_TC4_INSTANCE_ */

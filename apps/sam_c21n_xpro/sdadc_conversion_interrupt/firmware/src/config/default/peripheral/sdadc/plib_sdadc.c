@@ -64,7 +64,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static SDADC_CALLBACK_OBJECT SDADC_CallbackObj;
+volatile static SDADC_CALLBACK_OBJECT SDADC_CallbackObj;
 // *****************************************************************************
 // *****************************************************************************
 // Section: SDADC Implementation
@@ -116,7 +116,7 @@ void SDADC_Enable( void )
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for synchronization */
-    }    
+    }
 }
 
 void SDADC_Disable( void )
@@ -125,7 +125,7 @@ void SDADC_Disable( void )
     while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for synchronization */
-    }    
+    }
 }
 
 
@@ -146,7 +146,7 @@ void SDADC_CallbackRegister( SDADC_CALLBACK callback, uintptr_t context )
 }
 
 
-void SDADC_InterruptHandler( void )
+void __attribute__((used)) SDADC_InterruptHandler( void )
 {
     SDADC_STATUS status;
     status = SDADC_REGS->SDADC_INTFLAG;
@@ -155,7 +155,8 @@ void SDADC_InterruptHandler( void )
 
     if (SDADC_CallbackObj.callback != NULL)
     {
-        SDADC_CallbackObj.callback(status, SDADC_CallbackObj.context);
+        uintptr_t context = SDADC_CallbackObj.context;
+        SDADC_CallbackObj.callback(status, context);
     }
 
 }

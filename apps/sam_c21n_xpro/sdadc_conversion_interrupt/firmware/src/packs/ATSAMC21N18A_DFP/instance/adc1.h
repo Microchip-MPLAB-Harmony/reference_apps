@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21N18A
+/*
+ * Instance header file for ATSAMC21N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,18 +20,18 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:48:13Z */
+/* file generated from device description version 2022-03-15T06:13:04Z */
 #ifndef _SAMC21_ADC1_INSTANCE_
 #define _SAMC21_ADC1_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for ADC1 peripheral ========== */
-#define ADC1_DMAC_ID_RESRDY                      _UL_(43)   /* index of DMA RESRDY trigger */
-#define ADC1_EXTCHANNEL_MSB                      _UL_(11)   /* Number of external channels */
-#define ADC1_GCLK_ID                             _UL_(34)   /* index of Generic Clock */
-#define ADC1_INT_CH30                            _UL_(0)    /* Select OPAMP or CTAT on Channel 30 */
-#define ADC1_MASTER_SLAVE_MODE                   _UL_(2)    /* ADC Master/Slave Mode */
-#define ADC1_LOAD_CALIB                          _UL_(1)    /* CALIB register to be loaded from NVM */
-#define ADC1_INSTANCE_ID                         _UL_(82)   
+#define ADC1_DMAC_ID_RESRDY                      (43)       /* index of DMA RESRDY trigger */
+#define ADC1_EXTCHANNEL_MSB                      (11)       /* Number of external channels */
+#define ADC1_GCLK_ID                             (34)       /* index of Generic Clock */
+#define ADC1_INT_CH30                            (0)        /* Select OPAMP or CTAT on Channel 30 */
+#define ADC1_MASTER_SLAVE_MODE                   (2)        /* ADC Master/Slave Mode */
+#define ADC1_LOAD_CALIB                          (1)        /* CALIB register to be loaded from NVM */
+#define ADC1_INSTANCE_ID                         (82)       
 
 #endif /* _SAMC21_ADC1_INSTANCE_ */
