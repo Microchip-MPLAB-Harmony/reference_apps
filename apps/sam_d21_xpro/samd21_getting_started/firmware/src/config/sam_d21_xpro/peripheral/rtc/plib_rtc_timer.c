@@ -46,12 +46,12 @@
 #include <stdlib.h>
 #include "interrupts.h"
 
-RTC_OBJECT rtcObj;
+ volatile static RTC_OBJECT rtcObj;
 
 static void RTC_CountReadSynchronization(void)
 {
    /* Read-synchronization for COUNT register */
-   RTC_REGS->MODE0.RTC_READREQ = RTC_READREQ_RREQ_Msk | RTC_READREQ_ADDR(0x10);
+   RTC_REGS->MODE0.RTC_READREQ = RTC_READREQ_RREQ_Msk | RTC_READREQ_ADDR(0x10U);
    while((RTC_REGS->MODE0.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
    {
        /* Wait for Read-Synchronization */
@@ -68,20 +68,20 @@ void RTC_Initialize(void)
    }
 
    /* Writing to CTRL register will trigger write-synchronization */
-   RTC_REGS->MODE0.RTC_CTRL = RTC_MODE0_CTRL_MODE(0) | RTC_MODE0_CTRL_PRESCALER(0x0) | RTC_MODE0_CTRL_MATCHCLR_Msk;
+   RTC_REGS->MODE0.RTC_CTRL = RTC_MODE0_CTRL_MODE(0U) | RTC_MODE0_CTRL_PRESCALER(0x0U) | RTC_MODE0_CTRL_MATCHCLR_Msk;
    while((RTC_REGS->MODE0.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
    {
        /* Wait for Write-Synchronization */
    }
 
    /* Writing to COMP register will trigger write-synchronization */
-   RTC_REGS->MODE0.RTC_COMP = 0x200;
+   RTC_REGS->MODE0.RTC_COMP = 0x200U;
    while((RTC_REGS->MODE0.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
    {
        /* Wait for Write-Synchronization */
    }
 
-   RTC_REGS->MODE0.RTC_INTENSET = 0x1;
+   RTC_REGS->MODE0.RTC_INTENSET = 0x1U;
 
 }
 
@@ -100,7 +100,7 @@ void RTC_Timer32Start ( void )
 void RTC_Timer32Stop ( void )
 {
    /* Writing to CTRL register will trigger write-synchronization */
-   RTC_REGS->MODE0.RTC_CTRL &= ~(RTC_MODE0_CTRL_ENABLE_Msk);
+   RTC_REGS->MODE0.RTC_CTRL &= (uint16_t)(~(RTC_MODE0_CTRL_ENABLE_Msk));
    while((RTC_REGS->MODE0.RTC_STATUS & RTC_STATUS_SYNCBUSY_Msk) == RTC_STATUS_SYNCBUSY_Msk)
    {
        /* Wait for Write-Synchronization */
@@ -136,8 +136,9 @@ uint32_t RTC_Timer32CounterGet ( void )
 
 uint32_t RTC_Timer32PeriodGet ( void )
 {
-   /* Get 32Bit Compare Value */
-   return (RTC_MODE0_COUNT_COUNT_Msk);
+   
+   return RTC_REGS->MODE0.RTC_COMP;
+   
 }
 
 uint32_t RTC_Timer32FrequencyGet ( void )
@@ -148,12 +149,12 @@ uint32_t RTC_Timer32FrequencyGet ( void )
 
 void RTC_Timer32InterruptEnable(RTC_TIMER32_INT_MASK interrupt)
 {
-   RTC_REGS->MODE0.RTC_INTENSET = interrupt;
+   RTC_REGS->MODE0.RTC_INTENSET = (uint8_t)interrupt;
 }
 
 void RTC_Timer32InterruptDisable(RTC_TIMER32_INT_MASK interrupt)
 {
-   RTC_REGS->MODE0.RTC_INTENCLR = interrupt;
+   RTC_REGS->MODE0.RTC_INTENCLR = (uint8_t)interrupt;
 }
 
 void RTC_Timer32CallbackRegister ( RTC_TIMER32_CALLBACK callback, uintptr_t context )
@@ -162,7 +163,7 @@ void RTC_Timer32CallbackRegister ( RTC_TIMER32_CALLBACK callback, uintptr_t cont
    rtcObj.context            = context;
 }
 
-void RTC_InterruptHandler(void)
+void __attribute__((used)) RTC_InterruptHandler(void)
 {
    rtcObj.timer32intCause = (RTC_TIMER32_INT_MASK) RTC_REGS->MODE0.RTC_INTFLAG;
    RTC_REGS->MODE0.RTC_INTFLAG = RTC_MODE0_INTFLAG_Msk;
@@ -170,6 +171,8 @@ void RTC_InterruptHandler(void)
    /* Invoke registered Callback function */
    if(rtcObj.timer32BitCallback != NULL)
    {
-       rtcObj.timer32BitCallback( rtcObj.timer32intCause, rtcObj.context );
+       RTC_TIMER32_INT_MASK timer32intCause = rtcObj.timer32intCause;
+       uintptr_t context = rtcObj.context;
+       rtcObj.timer32BitCallback( timer32intCause, context );
    }
 }

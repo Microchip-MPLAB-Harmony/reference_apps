@@ -21,18 +21,7 @@
  */
 
 /* file generated from device description version 2019-11-25T06:52:33Z */
-#ifndef _SAMD21_RTC_INSTANCE_
-#define _SAMD21_RTC_INSTANCE_
+#ifndef _SAMD21_FUSES_INSTANCE_
+#define _SAMD21_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for RTC peripheral ========== */
-#define RTC_ALARM_NUM                            (1)        /* Number of Alarms */
-#define RTC_COMP16_NUM                           (2)        /* Number of 16-bit Comparators */
-#define RTC_COMP32_NUM                           (1)        /* Number of 32-bit Comparators */
-#define RTC_GCLK_ID                              (4)        /* Index of Generic Clock */
-#define RTC_NUM_OF_ALARMS                        (1)        /* Number of Alarms (obsolete) */
-#define RTC_NUM_OF_COMP16                        (2)        /* Number of 16-bit Comparators (obsolete) */
-#define RTC_NUM_OF_COMP32                        (1)        /* Number of 32-bit Comparators (obsolete) */
-#define RTC_INSTANCE_ID                          (5)        
-
-#endif /* _SAMD21_RTC_INSTANCE_ */
+#endif /* _SAMD21_FUSES_INSTANCE_ */
