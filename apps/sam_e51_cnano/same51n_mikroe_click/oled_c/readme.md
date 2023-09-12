@@ -168,5 +168,6 @@ Below are Harmony configuration for the OLED C Click
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Released demo application
