@@ -4,18 +4,18 @@
    "content":{
       "metaDataVersion":"1.3.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_xpro_adapter",
-      "version":"1.5.0",
+      "version":"1.6.0",
       "displayName":"XPRO Adapter Click example on SAM E51 Curiosity Nano Evaluation Kit",
       "projectName":"xpro_adapter_click_sam_e51_cnano",
       "shortDescription":"Demonstrates how to read the temperature using I/O1 Xplained Pro Extension Kit connected to XPRO-ADAPTER Click board",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.0"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.0.0"
+            "semverRange":">=4.30"
          }
       ],
       "dfp":{
@@ -24,7 +24,7 @@
       },
       "configurator":{
          "name":"MCC",
-         "semverRange":">=5.1.4"
+         "semverRange":">=5.3.7"
       },
       "device":{
          "metaDataVersion":"1.0.0",
