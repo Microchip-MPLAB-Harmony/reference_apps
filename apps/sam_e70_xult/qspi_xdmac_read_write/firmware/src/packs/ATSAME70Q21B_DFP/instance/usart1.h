@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME70Q21B
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,19 +20,19 @@
  *
  */
 
-/* file generated from device description version 2020-11-26T11:12:57Z */
+/* file generated from device description version 2023-03-27T04:09:33Z */
 #ifndef _SAME70_USART1_INSTANCE_
 #define _SAME70_USART1_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for USART1 peripheral ========== */
-#define USART1_DMAC_ID_RX                        _UL_(10)   
-#define USART1_DMAC_ID_TX                        _UL_(9)    
-#define USART1_INSTANCE_ID                       _UL_(14)   
-#define USART1_CLOCK_ID                          _UL_(14)   
-#define USART1_USCLKS_MCK                        _UL_(0)    /* MCK */
-#define USART1_USCLKS_DIV                        _UL_(1)    /* MCK/8 */
-#define USART1_USCLKS_PCK                        _UL_(2)    /* PCK4 */
-#define USART1_USCLKS_SCK                        _UL_(3)    /* SCK */
+#define USART1_CLOCK_ID                          (14)       
+#define USART1_DMAC_ID_RX                        (10)       
+#define USART1_DMAC_ID_TX                        (9)        
+#define USART1_INSTANCE_ID                       (14)       
+#define USART1_USCLKS_DIV                        (1)        /* MCK/8 */
+#define USART1_USCLKS_MCK                        (0)        /* MCK */
+#define USART1_USCLKS_PCK                        (2)        /* PCK4 */
+#define USART1_USCLKS_SCK                        (3)        /* SCK */
 
 #endif /* _SAME70_USART1_INSTANCE_ */

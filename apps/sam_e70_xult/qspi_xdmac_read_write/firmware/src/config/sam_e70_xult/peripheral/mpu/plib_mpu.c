@@ -56,8 +56,8 @@ void MPU_Initialize(void)
     /*** Configure MPU Regions  ***/
 
     /* Region 0 Name: QSPI, Base Address: 0x80000000, Size: 256MB  */
-    MPU->RBAR = MPU_REGION(0, 0x80000000);
-    MPU->RASR = MPU_REGION_SIZE(27) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_STRONGLY_ORDERED \
+    MPU->RBAR = MPU_REGION(0U, 0x80000000U);
+    MPU->RASR = MPU_REGION_SIZE(27U) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_STRONGLY_ORDERED \
                 | MPU_ATTR_ENABLE  ;
 
 

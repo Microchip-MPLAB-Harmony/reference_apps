@@ -76,9 +76,9 @@ APP_DATA appData;
 static uint32_t write_index = 0;
 static uint32_t sector_index = 0;
 
-qspi_command_xfer_t qspi_command_xfer = { 0 };
-qspi_register_xfer_t qspi_register_xfer = { 0 };
-qspi_memory_xfer_t qspi_memory_xfer = { 0 };
+qspi_command_xfer_t qspi_cmd_xfer = { 0 };
+qspi_register_xfer_t qspi_reg_xfer = { 0 };
+qspi_memory_xfer_t qspi_mem_xfer = { 0 };
 
 volatile bool tx_completeStatus = false;
 volatile bool tx_errorStatus = false;
@@ -124,7 +124,7 @@ void APP_XDMAC_TX_Callback(XDMAC_TRANSFER_EVENT status, uintptr_t context)
     }
 }
 
-static bool _APP_QSPI_TransferSetup( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_TRANSFER_TYPE tfr_type, uint32_t address )
+static bool _APP_QSPI_TransferSetup( qspi_memory_xfer_t *qspi_mem_xfer, QSPI_TRANSFER_TYPE tfr_type, uint32_t address )
 {
     uint32_t mask = 0;
     volatile uint32_t dummy = 0;
@@ -133,23 +133,23 @@ static bool _APP_QSPI_TransferSetup( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_
     QSPI_REGS->QSPI_IAR = QSPI_IAR_ADDR(address);
 
     /* Set Instruction code register */
-    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_memory_xfer->instruction)) | (QSPI_ICR_OPT(qspi_memory_xfer->option));
+    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_mem_xfer->instruction)) | (QSPI_ICR_OPT(qspi_mem_xfer->option));
 
     /* Set Instruction Frame register*/
 
-    mask |= qspi_memory_xfer->width;
-    mask |= qspi_memory_xfer->addr_len;
+    mask |= qspi_mem_xfer->width;
+    mask |= qspi_mem_xfer->addr_len;
 
-    if (qspi_memory_xfer->option_en) {
-        mask |= qspi_memory_xfer->option_len;
+    if (qspi_mem_xfer->option_en) {
+        mask |= qspi_mem_xfer->option_len;
         mask |= QSPI_IFR_OPTEN_Msk;
     }
 
-    if (qspi_memory_xfer->continuous_read_en) {
+    if (qspi_mem_xfer->continuous_read_en) {
         mask |= QSPI_IFR_CRM_Msk;
     }
 
-    mask |= QSPI_IFR_NBDUM(qspi_memory_xfer->dummy_cycles);
+    mask |= QSPI_IFR_NBDUM(qspi_mem_xfer->dummy_cycles);
 
     mask |= QSPI_IFR_INSTEN_Msk | QSPI_IFR_ADDREN_Msk | QSPI_IFR_DATAEN_Msk;
 
@@ -182,20 +182,20 @@ static bool _APP_QSPI_TransferSetup( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_
 
 static APP_TRANSFER_STATUS APP_ResetFlash(void)
 {
-    memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
+    memset((void *)&qspi_cmd_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = SST26_CMD_FLASH_RESET_ENABLE;
-    qspi_command_xfer.width = SINGLE_BIT_SPI;
+    qspi_cmd_xfer.instruction = SST26_CMD_FLASH_RESET_ENABLE;
+    qspi_cmd_xfer.width = SINGLE_BIT_SPI;
 
-    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI_CommandWrite(&qspi_cmd_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    qspi_command_xfer.instruction = SST26_CMD_FLASH_RESET;
-    qspi_command_xfer.width = SINGLE_BIT_SPI;
+    qspi_cmd_xfer.instruction = SST26_CMD_FLASH_RESET;
+    qspi_cmd_xfer.width = SINGLE_BIT_SPI;
 
-    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI_CommandWrite(&qspi_cmd_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -206,12 +206,12 @@ static APP_TRANSFER_STATUS APP_ResetFlash(void)
 /* Enables the QUAD IO on the flash */
 static APP_TRANSFER_STATUS APP_EnableQuadIO(void)
 {
-    memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
+    memset((void *)&qspi_cmd_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = SST26_CMD_ENABLE_QUAD_IO;
-    qspi_command_xfer.width = SINGLE_BIT_SPI;
+    qspi_cmd_xfer.instruction = SST26_CMD_ENABLE_QUAD_IO;
+    qspi_cmd_xfer.width = SINGLE_BIT_SPI;
 
-    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI_CommandWrite(&qspi_cmd_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -222,12 +222,12 @@ static APP_TRANSFER_STATUS APP_EnableQuadIO(void)
 /* Sends Write Enable command to flash */
 static APP_TRANSFER_STATUS APP_WriteEnable(void)
 {
-    memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
+    memset((void *)&qspi_cmd_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = SST26_CMD_WRITE_ENABLE;
-    qspi_command_xfer.width = QUAD_CMD;
+    qspi_cmd_xfer.instruction = SST26_CMD_WRITE_ENABLE;
+    qspi_cmd_xfer.width = QUAD_CMD;
 
-    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI_CommandWrite(&qspi_cmd_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -243,12 +243,12 @@ static APP_TRANSFER_STATUS APP_UnlockFlash(void)
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
+    memset((void *)&qspi_cmd_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = SST26_CMD_UNPROTECT_GLOBAL;
-    qspi_command_xfer.width = QUAD_CMD;
+    qspi_cmd_xfer.instruction = SST26_CMD_UNPROTECT_GLOBAL;
+    qspi_cmd_xfer.width = QUAD_CMD;
 
-    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI_CommandWrite(&qspi_cmd_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -259,13 +259,13 @@ static APP_TRANSFER_STATUS APP_UnlockFlash(void)
 /* This function reads and stores the flash id. */
 static APP_TRANSFER_STATUS APP_ReadJedecId(uint32_t *jedec_id)
 {
-    memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
+    memset((void *)&qspi_reg_xfer, 0, sizeof(qspi_register_xfer_t));
 
-    qspi_register_xfer.instruction = SST26_CMD_QUAD_JEDEC_ID_READ;
-    qspi_register_xfer.width = QUAD_CMD;
-    qspi_register_xfer.dummy_cycles = 2;
+    qspi_reg_xfer.instruction = SST26_CMD_QUAD_JEDEC_ID_READ;
+    qspi_reg_xfer.width = QUAD_CMD;
+    qspi_reg_xfer.dummy_cycles = 2;
 
-    if (QSPI_RegisterRead(&qspi_register_xfer, jedec_id, 3) == false)
+    if (QSPI_RegisterRead(&qspi_reg_xfer, jedec_id, 3) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -276,13 +276,13 @@ static APP_TRANSFER_STATUS APP_ReadJedecId(uint32_t *jedec_id)
 /* Function to read the status register of the flash. */
 static APP_TRANSFER_STATUS APP_ReadStatus( uint32_t *rx_data, uint32_t rx_data_length )
 {
-    memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
+    memset((void *)&qspi_reg_xfer, 0, sizeof(qspi_register_xfer_t));
 
-    qspi_register_xfer.instruction = SST26_CMD_READ_STATUS_REG;
-    qspi_register_xfer.width = QUAD_CMD;
-    qspi_register_xfer.dummy_cycles = 2;
+    qspi_reg_xfer.instruction = SST26_CMD_READ_STATUS_REG;
+    qspi_reg_xfer.width = QUAD_CMD;
+    qspi_reg_xfer.dummy_cycles = 2;
 
-    if (QSPI_RegisterRead(&qspi_register_xfer, rx_data, rx_data_length) == false)
+    if (QSPI_RegisterRead(&qspi_reg_xfer, rx_data, rx_data_length) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -308,18 +308,18 @@ static APP_TRANSFER_STATUS APP_TransferStatusCheck(void)
 /* Reads n Bytes of data from the flash memory */
 static APP_TRANSFER_STATUS APP_MemoryRead( uint32_t *rx_data, uint32_t rx_data_length, uint32_t address )
 {
-    memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
+    memset((void *)&qspi_mem_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = SST26_CMD_HIGH_SPEED_READ;
-    qspi_memory_xfer.width = QUAD_CMD;
-    qspi_memory_xfer.dummy_cycles = 6;
+    qspi_mem_xfer.instruction = SST26_CMD_HIGH_SPEED_READ;
+    qspi_mem_xfer.width = QUAD_CMD;
+    qspi_mem_xfer.dummy_cycles = 6;
 
     /* Set GPIO Pin to High to profile the QSPI Read operation.
      * Clear when the QSPI Read operation is completed.
      */
     PERF_TEST_QSPI_Read_Set();
 
-    if (QSPI_MemoryRead(&qspi_memory_xfer, rx_data, rx_data_length, address) == false) {
+    if (QSPI_MemoryRead(&qspi_mem_xfer, rx_data, rx_data_length, address) == false) {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
@@ -334,13 +334,13 @@ static APP_TRANSFER_STATUS APP_XDMAC_MemoryRead( uint32_t *rx_data, uint32_t rx_
 {
     uint32_t *qspi_mem = (uint32_t *)(QSPIMEM_ADDR | address);
 
-    memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
+    memset((void *)&qspi_mem_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = SST26_CMD_HIGH_SPEED_READ;
-    qspi_memory_xfer.width = QUAD_CMD;
-    qspi_memory_xfer.dummy_cycles = 6;
+    qspi_mem_xfer.instruction = SST26_CMD_HIGH_SPEED_READ;
+    qspi_mem_xfer.width = QUAD_CMD;
+    qspi_mem_xfer.dummy_cycles = 6;
 
-    if (_APP_QSPI_TransferSetup(&qspi_memory_xfer, QSPI_MEM_READ, address) == false)
+    if (_APP_QSPI_TransferSetup(&qspi_mem_xfer, QSPI_MEM_READ, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -372,12 +372,12 @@ static APP_TRANSFER_STATUS APP_XDMAC_MemoryWrite( uint32_t *tx_data, uint32_t tx
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
+    memset((void *)&qspi_mem_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
-    qspi_memory_xfer.width = QUAD_CMD;
+    qspi_mem_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
+    qspi_mem_xfer.width = QUAD_CMD;
 
-    if (_APP_QSPI_TransferSetup(&qspi_memory_xfer, QSPI_MEM_WRITE, address) == false)
+    if (_APP_QSPI_TransferSetup(&qspi_mem_xfer, QSPI_MEM_WRITE, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -409,17 +409,17 @@ static APP_TRANSFER_STATUS APP_MemoryWrite( uint32_t *tx_data, uint32_t tx_data_
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
+    memset((void *)&qspi_mem_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
-    qspi_memory_xfer.width = QUAD_CMD;
+    qspi_mem_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
+    qspi_mem_xfer.width = QUAD_CMD;
 
     /* Set GPIO Pin to High to profile the QSPI Write operation.
      * Clear when the QSPI Write operation is completed.
      */
     PERF_TEST_QSPI_Write_Set();
 
-    if (QSPI_MemoryWrite(&qspi_memory_xfer, tx_data, tx_data_length, address) == false)
+    if (QSPI_MemoryWrite(&qspi_mem_xfer, tx_data, tx_data_length, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -435,11 +435,11 @@ static APP_TRANSFER_STATUS APP_Erase(uint8_t instruction, uint32_t address)
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    qspi_command_xfer.instruction = instruction;
-    qspi_command_xfer.width = QUAD_CMD;
-    qspi_command_xfer.addr_en = 1;
+    qspi_cmd_xfer.instruction = instruction;
+    qspi_cmd_xfer.width = QUAD_CMD;
+    qspi_cmd_xfer.addr_en = 1;
 
-    if (QSPI_CommandWrite(&qspi_command_xfer, address) == false)
+    if (QSPI_CommandWrite(&qspi_cmd_xfer, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }

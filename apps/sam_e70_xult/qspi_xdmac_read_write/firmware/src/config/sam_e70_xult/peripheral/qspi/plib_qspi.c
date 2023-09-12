@@ -13,7 +13,7 @@
   Description
 
   Remarks:
-    
+
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -50,7 +50,8 @@ void QSPI_Initialize(void)
     // Reset and Disable the qspi Module
     QSPI_REGS->QSPI_CR = QSPI_CR_SWRST_Msk | QSPI_CR_QSPIDIS_Msk;
 
-    while(QSPI_REGS->QSPI_SR& QSPI_SR_QSPIENS_Msk){
+    while((QSPI_REGS->QSPI_SR& QSPI_SR_QSPIENS_Msk) != 0U)
+    {
         ;   // spin lock
     }
 
@@ -61,33 +62,41 @@ void QSPI_Initialize(void)
     /* WDRBT  = 0 */
     /* LLB    = 0 */
     /* SMM    = MEMORY */
-    QSPI_REGS->QSPI_MR = ( QSPI_MR_SMM_MEMORY | QSPI_MR_NBBITS(0x8));
+    QSPI_REGS->QSPI_MR = ( QSPI_MR_SMM_MEMORY | QSPI_MR_NBBITS(0x8U));
 
     /* CPOL = 0 */
     /* CPHA = 0 */
     /* SCBR = 2 */
     /* DLYBS = 0 */
-    QSPI_REGS->QSPI_SCR = (QSPI_SCR_SCBR(2))  ;
+    QSPI_REGS->QSPI_SCR = (QSPI_SCR_SCBR(2U))  ;
 
     // Enable the qspi Module
     QSPI_REGS->QSPI_CR = QSPI_CR_QSPIEN_Msk;
 
-    while(!(QSPI_REGS->QSPI_SR& QSPI_SR_QSPIENS_Msk)){
+    while((QSPI_REGS->QSPI_SR& QSPI_SR_QSPIENS_Msk) == 0U)
+    {
         ;   // spin lock
     }
 }
 
 static void qspi_memcpy_32bit(uint32_t* dst, uint32_t* src, uint32_t count)
 {
-    while (count--) {
-        *dst++ = *src++;
+    while (count-- != 0U)
+    {
+        *dst = *src;
+         dst++;
+         src++;
     }
 }
 
 static void qspi_memcpy_8bit(uint8_t* dst, uint8_t* src, uint32_t count)
 {
-    while (count--) {
-        *dst++ = *src++;
+    while (count-- != 0U)
+    {
+        *dst = *src;
+         dst++;
+         src++;
+
     }
 }
 
@@ -100,23 +109,25 @@ static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_TRAN
     QSPI_REGS->QSPI_IAR = QSPI_IAR_ADDR(address);
 
     /* Set Instruction code register */
-    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_memory_xfer->instruction)) | (QSPI_ICR_OPT(qspi_memory_xfer->option));
+    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST((uint32_t)qspi_memory_xfer->instruction)) | (QSPI_ICR_OPT((uint32_t)qspi_memory_xfer->option));
 
     /* Set Instruction Frame register*/
 
-    mask |= qspi_memory_xfer->width;
-    mask |= qspi_memory_xfer->addr_len;
+    mask |= (uint32_t)qspi_memory_xfer->width;
+    mask |= (uint32_t)qspi_memory_xfer->addr_len;
 
-    if (qspi_memory_xfer->option_en) {
-        mask |= qspi_memory_xfer->option_len;
+    if (qspi_memory_xfer->option_en)
+    {
+        mask |= (uint32_t)qspi_memory_xfer->option_len;
         mask |= QSPI_IFR_OPTEN_Msk;
     }
 
-    if (qspi_memory_xfer->continuous_read_en) {
+    if (qspi_memory_xfer->continuous_read_en)
+    {
         mask |= QSPI_IFR_CRM_Msk;
     }
 
-    mask |= QSPI_IFR_NBDUM(qspi_memory_xfer->dummy_cycles);
+    mask |= QSPI_IFR_NBDUM((uint32_t)qspi_memory_xfer->dummy_cycles);
 
     mask |= QSPI_IFR_INSTEN_Msk | QSPI_IFR_ADDREN_Msk | QSPI_IFR_DATAEN_Msk;
 
@@ -132,6 +143,9 @@ static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, QSPI_TRAN
             break;
         case QSPI_MEM_WRITE:
             mask |= QSPI_IFR_TFRTYP(QSPI_IFR_TFRTYP_TRSFR_WRITE_MEMORY_Val);
+            break;
+        default:
+            /*default*/
             break;
     };
 
@@ -154,26 +168,27 @@ bool QSPI_CommandWrite( qspi_command_xfer_t *qspi_command_xfer, uint32_t address
     uint32_t mask = 0;
 
     /* Configure address */
-    if(qspi_command_xfer->addr_en) {
+    if(qspi_command_xfer->addr_en)
+    {
         QSPI_REGS->QSPI_IAR = QSPI_IAR_ADDR(address);
 
         mask |= QSPI_IFR_ADDREN_Msk;
-        mask |= qspi_command_xfer->addr_len;
+        mask |= (uint32_t)qspi_command_xfer->addr_len;
     }
 
     /* Configure instruction */
-    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_command_xfer->instruction));
+    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST((uint32_t)qspi_command_xfer->instruction));
 
     /* Configure instruction frame */
-    mask |= qspi_command_xfer->width;
+    mask |= (uint32_t)qspi_command_xfer->width;
     mask |= QSPI_IFR_INSTEN_Msk;
     mask |= QSPI_IFR_TFRTYP(QSPI_IFR_TFRTYP_TRSFR_READ_Val);
 
     QSPI_REGS->QSPI_IFR = mask;
 
-    /* Poll Status register to know status if instruction has end */
-    while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {
-        ;   // spin lock
+    while((QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk) == 0U)
+    {
+        /* Poll Status register to know status if instruction has end */
     }
 
     return true;
@@ -186,12 +201,12 @@ bool QSPI_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_d
     volatile uint32_t dummy = 0;
 
     /* Configure Instruction */
-    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_register_xfer->instruction));
+    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST((uint32_t)qspi_register_xfer->instruction));
 
     /* Configure Instruction Frame */
-    mask |= qspi_register_xfer->width;
+    mask |= (uint32_t)qspi_register_xfer->width;
 
-    mask |= QSPI_IFR_NBDUM(qspi_register_xfer->dummy_cycles);
+    mask |= QSPI_IFR_NBDUM((uint32_t)qspi_register_xfer->dummy_cycles);
 
     mask |= QSPI_IFR_INSTEN_Msk | QSPI_IFR_DATAEN_Msk;
 
@@ -201,6 +216,7 @@ bool QSPI_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_d
 
     /* To synchronize APB and AHB accesses */
     dummy = QSPI_REGS->QSPI_IFR;
+    (void)dummy;
 
     /* Read the register content */
     qspi_memcpy_8bit((uint8_t *)rx_data , (uint8_t *)qspi_buffer,  rx_data_length);
@@ -210,12 +226,11 @@ bool QSPI_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_d
 
     QSPI_EndTransfer();
 
-    /* Poll Status register to know status if instruction has end */
-    while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {
-        ;   // spin lock
+    while((QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk) == 0U)
+    {
+        /* Poll Status register to know status if instruction has end */
     }
 
-    (void)dummy;
     return true;
 }
 
@@ -226,10 +241,10 @@ bool QSPI_RegisterWrite( qspi_register_xfer_t *qspi_register_xfer, uint32_t *tx_
     volatile uint32_t dummy = 0;
 
     /* Configure Instruction */
-    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST(qspi_register_xfer->instruction));
+    QSPI_REGS->QSPI_ICR = (QSPI_ICR_INST((uint32_t)qspi_register_xfer->instruction));
 
     /* Configure Instruction Frame */
-    mask |= qspi_register_xfer->width;
+    mask |= (uint32_t)qspi_register_xfer->width;
 
     mask |= QSPI_IFR_INSTEN_Msk | QSPI_IFR_DATAEN_Msk;
 
@@ -248,14 +263,16 @@ bool QSPI_RegisterWrite( qspi_register_xfer_t *qspi_register_xfer, uint32_t *tx_
 
     QSPI_EndTransfer();
 
-    /* Poll Status register to know status if instruction has end */
-    while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {
-        ;   // spin lock
+    while((QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk) == 0U)
+    {
+        /* Poll Status register to know status if instruction has end */
     }
 
     (void)dummy;
     return true;
 }
+
+/* MISRA C-2012 Rule 11.3 violated 2 times below. Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1*/
 
 bool
 QSPI_MemoryRead(
@@ -265,16 +282,16 @@ QSPI_MemoryRead(
     uint32_t                address
     )
 {
-    /*  This implements a transfer from device source to a destination memory buffer 
-        without an intermediate local buffer.  The algorithm is used for efficiency 
-        sake, allowing a maximum number of word transfers from the device; but, 
+    /*  This implements a transfer from device source to a destination memory buffer
+        without an intermediate local buffer.  The algorithm is used for efficiency
+        sake, allowing a maximum number of word transfers from the device; but,
         not requiring word alignment at either end of source, or destination,
         locations.
-        The non-boundary aligned header and trailer element sizes are used to 
-        characterizes the number of word transfers for the body.  The body is 
+        The non-boundary aligned header and trailer element sizes are used to
+        characterizes the number of word transfers for the body.  The body is
         transfered in a word wide fashion followed by an appropriate shift of the
         bytes in the destination buffer.
-        Single byte accesses at the head, or tail, are done as necessary.  The 
+        Single byte accesses at the head, or tail, are done as necessary.  The
         coding attempts to minimize unnecessary byte manipulations.
     */
     uint8_t *   qspi_mem  = (uint8_t *) (QSPIMEM_ADDR | address);
@@ -286,154 +303,190 @@ QSPI_MemoryRead(
     uint32_t    numWordTransferBytes = 0;
     int32_t     shiftBytes = 0;             // gt(0)=>right, lt(0)=>left shift
     uint8_t     tmpBuffer[ sizeof( uint32_t) ];
+    bool readStatus = false;
 
     ///// device preliminaries
-    if( false == qspi_setup_transfer( qspi_memory_xfer, 
-                            QSPI_MEM_READ, 
-                            address 
-                        ) ) {
-        return false;
-    }
-
-    ///// dst and src buffer characterization
-    numDstPreWordBytes =  0x03 & (uint32_t) pRxBuffer;
-    if( numDstPreWordBytes ) {
-        numDstPreWordBytes =  sizeof( uint32_t ) - numDstPreWordBytes;
-    }
-    if( rx_data_length >= numDstPreWordBytes ) {
-        numDstPostWordBytes = 0x03 & (uint32_t) (pRxBuffer + rx_data_length);
-    }
-    //
-    numSrcPreWordBytes =  0x03 & (uint32_t) qspi_mem;
-    if( numSrcPreWordBytes ) {
-        numSrcPreWordBytes =  sizeof( uint32_t ) - numSrcPreWordBytes;
-    }
-    if( rx_data_length >= numSrcPreWordBytes ) {
-        numSrcPostWordBytes = 0x03 & (uint32_t) (qspi_mem + rx_data_length);
-    }
-    else {
-        numSrcPreWordBytes = rx_data_length;
-    }
-
-    if( rx_data_length > (numSrcPreWordBytes + numSrcPostWordBytes) ) {
-        // number of word size transfers is equal to length of buffer
-        // minus single byte transfers
-        numWordTransferBytes = rx_data_length - (numSrcPreWordBytes + numSrcPostWordBytes);
-    }
-
-    // test if src has same number of word alignments as the dst buffer
-    if( (numDstPreWordBytes + numDstPostWordBytes) != (numSrcPreWordBytes + numSrcPostWordBytes)) {
-        // a word size space will be needed for shifting purposes; the
-        // common case optimization for equal word alignments cannot be used
-        if( numWordTransferBytes >= sizeof( uint32_t ) ) {
-            numWordTransferBytes -= sizeof( uint32_t );
-            numSrcPostWordBytes += sizeof( uint32_t );
+    if( qspi_setup_transfer( qspi_memory_xfer,
+                            QSPI_MEM_READ,
+                            address
+                        ) )
+    {
+        //// dst and src buffer characterization
+        numDstPreWordBytes =  0x03U & (uint32_t) pRxBuffer;
+        if( numDstPreWordBytes != 0U )
+        {
+            numDstPreWordBytes =  sizeof(uint32_t) - numDstPreWordBytes;
         }
-        else {
-            numWordTransferBytes = 0;
+
+        if( rx_data_length >= numDstPreWordBytes )
+        {
+            numDstPostWordBytes = 0x03U & (uint32_t) (pRxBuffer + rx_data_length);
         }
-    }
 
-    shiftBytes = numSrcPreWordBytes - numDstPreWordBytes;
+        numSrcPreWordBytes =  0x03U & (uint32_t) qspi_mem;
+        if( numSrcPreWordBytes != 0U)
+        {
+            numSrcPreWordBytes =  sizeof(uint32_t) - numSrcPreWordBytes;
+        }
+        if( rx_data_length >= numSrcPreWordBytes )
+        {
+            numSrcPostWordBytes = 0x03U & (uint32_t) (qspi_mem + rx_data_length);
+        }
+        else
+        {
+            numSrcPreWordBytes = rx_data_length;
+        }
 
-    ///// Transfer of data from src device to dst buffer
-    // Perform single byte transfers necessary before word alignment begins
-    if( numSrcPreWordBytes ) {
-        // get these now so we don't have to backup the device access later
-        qspi_memcpy_8bit( tmpBuffer, qspi_mem, numSrcPreWordBytes );
-        qspi_mem += numSrcPreWordBytes;     // word alignment point for the src
-    }
-    pRxBuffer += numDstPreWordBytes;        // word alignment point for the dst
+        if( rx_data_length > (numSrcPreWordBytes + numSrcPostWordBytes) )
+        {
+            // number of word size transfers is equal to length of buffer
+            // minus single byte transfers
+            numWordTransferBytes = rx_data_length - (numSrcPreWordBytes + numSrcPostWordBytes);
+        }
 
-    // Perform word aligned transfers
-    if( numWordTransferBytes / 4 ) {
-        qspi_memcpy_32bit( (uint32_t *) pRxBuffer, 
-                (uint32_t *) qspi_mem, 
-                numWordTransferBytes / 4 
-            );
-        qspi_mem += numWordTransferBytes;
-        pRxBuffer += numWordTransferBytes;
-    }
+        // test if src has same number of word alignments as the dst buffer
+        if( (numDstPreWordBytes + numDstPostWordBytes) != (numSrcPreWordBytes + numSrcPostWordBytes))
+        {
+            // a word size space will be needed for shifting purposes; the
+            // common case optimization for equal word alignments cannot be used
+            if( numWordTransferBytes >= sizeof(uint32_t))
+            {
+                numWordTransferBytes -= sizeof(uint32_t);
+                numSrcPostWordBytes += sizeof(uint32_t);
+            }
+            else
+            {
+                numWordTransferBytes = 0;
+            }
+        }
 
-    if( 0 >= shiftBytes ) {                 // left, or no, shift
-        if( shiftBytes ) {
-            // Shift the data left to its final destination buffer location
-            memmove( ((uint8_t *) rx_data) + numDstPreWordBytes + shiftBytes,
-                    ((uint8_t *) rx_data) + numDstPreWordBytes,
-                    numWordTransferBytes 
+        shiftBytes = ((int32_t)numSrcPreWordBytes - (int32_t)numDstPreWordBytes);
+
+        ///// Transfer of data from src device to dst buffer
+        // Perform single byte transfers necessary before word alignment begins
+        if( numSrcPreWordBytes != 0U)
+        {
+            // get these now so we don't have to backup the device access later
+            qspi_memcpy_8bit( tmpBuffer, qspi_mem, numSrcPreWordBytes );
+            // word alignment point for the src
+            qspi_mem += numSrcPreWordBytes;
+        }
+        // word alignment point for the dst
+        pRxBuffer += numDstPreWordBytes;
+
+        // Perform word aligned transfers
+        if( (numWordTransferBytes / 4U) != 0U )
+        {
+            qspi_memcpy_32bit( (uint32_t *) pRxBuffer,
+                    (uint32_t *) qspi_mem,
+                    numWordTransferBytes / 4U
                 );
-            pRxBuffer += shiftBytes;        // adjust end point
-        }
-        // Now we have room at the end, perform the single byte transfers 
-        // necessary after word alignment ends
-        if( numSrcPostWordBytes ) {
-            qspi_memcpy_8bit( pRxBuffer, qspi_mem, numSrcPostWordBytes );
-        }
-    }
-    else {                                  // right shift
-        // Perform the single byte transfers necessary after word alignment ends
-        if( numSrcPostWordBytes ) {
-            qspi_memcpy_8bit( pRxBuffer, qspi_mem, numSrcPostWordBytes );
-        }
-        // Shift the data to right to its final destination buffer location
-        memmove( ((uint8_t *) rx_data) + numDstPreWordBytes + shiftBytes, 
-                ((uint8_t *) rx_data) + numDstPreWordBytes, 
-                numWordTransferBytes + numSrcPostWordBytes 
-            );
-    }
 
-    if( numSrcPreWordBytes ) {
-        // Now we have room at the beginning; 
-        // place the previously saved pre-word aligned bytes
-        memmove( rx_data, tmpBuffer, numSrcPreWordBytes );
-    }
-    ///// Clean up
-    /* Dummy Read to clear QSPI_SR.INSTRE and QSPI_SR.CSR */
-    (uint32_t) QSPI_REGS->QSPI_SR;
-    __DSB();
-    __ISB();
+            qspi_mem += numWordTransferBytes;
+            pRxBuffer += numWordTransferBytes;
+        }
 
-    QSPI_EndTransfer();
-    // Poll Status register to know status if instruction has ended
-    while( !(QSPI_REGS->QSPI_SR & QSPI_SR_INSTRE_Msk) ) {
-        ;   // spin lock
+        // left, or no, shift
+        if( 0 >= shiftBytes )
+        {
+            if( shiftBytes != 0 )
+            {
+                if(numWordTransferBytes > 0U)
+                {
+                    // Shift the data left to its final destination buffer location
+                    (void)memmove( ((uint8_t *) rx_data) + numDstPreWordBytes + shiftBytes,
+                            ((uint8_t *) rx_data) + numDstPreWordBytes,
+                            numWordTransferBytes
+                        );
+                }
+                // adjust end point
+                pRxBuffer += shiftBytes;
+            }
+            // Now we have room at the end, perform the single byte transfers
+            // necessary after word alignment ends
+            if( numSrcPostWordBytes != 0U )
+            {
+                qspi_memcpy_8bit( pRxBuffer, qspi_mem, numSrcPostWordBytes );
+            }
+        }
+        // right shift
+        else
+        {
+            // Perform the single byte transfers necessary after word alignment ends
+            if( numSrcPostWordBytes != 0U )
+            {
+                qspi_memcpy_8bit( pRxBuffer, qspi_mem, numSrcPostWordBytes );
+            }
+            if((numWordTransferBytes + numSrcPostWordBytes) > 0U)
+            {
+                // Shift the data to right to its final destination buffer location
+                (void)memmove( ((uint8_t *) rx_data) + numDstPreWordBytes + shiftBytes,
+                        ((uint8_t *) rx_data) + numDstPreWordBytes,
+                        numWordTransferBytes + numSrcPostWordBytes
+                    );
+            }
+        }
+
+        if( numSrcPreWordBytes != 0U)
+        {
+            // Now we have room at the beginning;
+            // place the previously saved pre-word aligned bytes
+            (void)memmove((uint8_t *) rx_data, tmpBuffer, numSrcPreWordBytes );
+        }
+        ///// Clean up
+        /* Dummy Read to clear QSPI_SR.INSTRE and QSPI_SR.CSR */
+        (void) QSPI_REGS->QSPI_SR;
+        __DSB();
+        __ISB();
+
+        QSPI_EndTransfer();
+
+        while((QSPI_REGS->QSPI_SR & QSPI_SR_INSTRE_Msk) == 0U )
+        {
+            // Poll Status register to know status if instruction has ended
+        }
+        readStatus = true;
     }
-  
-    return true;
+    return readStatus;
 }
+
+/* MISRAC 2012 deviation block end */
 
 bool QSPI_MemoryWrite( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *tx_data, uint32_t tx_data_length, uint32_t address )
 {
     uint32_t *qspi_mem = (uint32_t *)(QSPIMEM_ADDR | address);
     uint32_t length_32bit, length_8bit;
+    bool writeStatus = false;
 
-    if (false == qspi_setup_transfer(qspi_memory_xfer, QSPI_MEM_WRITE, address))
-        return false;
+    if (qspi_setup_transfer(qspi_memory_xfer, QSPI_MEM_WRITE, address))
+    {
+        /* Write to serial flash memory */
+        length_32bit = tx_data_length / 4U;
+        length_8bit= tx_data_length & 0x03U;
 
-    /* Write to serial flash memory */
-    length_32bit = tx_data_length / 4;
-    length_8bit= tx_data_length & 0x03;
+        if(length_32bit != 0U)
+        {
+            qspi_memcpy_32bit(qspi_mem, tx_data, length_32bit);
+        }
+        tx_data = tx_data + length_32bit;
+        qspi_mem = qspi_mem + length_32bit;
 
-    if(length_32bit)
-        qspi_memcpy_32bit(qspi_mem, tx_data, length_32bit);
-    
-    tx_data = tx_data + length_32bit;
-    qspi_mem = qspi_mem + length_32bit;
+        if(length_8bit != 0U)
+        {
+            qspi_memcpy_8bit((uint8_t *)qspi_mem, (uint8_t *)tx_data, length_8bit);
+        }
+        __DSB();
+        __ISB();
 
-    if(length_8bit)
-        qspi_memcpy_8bit((uint8_t *)qspi_mem, (uint8_t *)tx_data, length_8bit);
+        QSPI_EndTransfer();
 
-    __DSB();
-    __ISB();
-
-    QSPI_EndTransfer();
-
-    /* Poll Status register to know status if instruction has end */
-    while(!(QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk)) {
-        ;   // spin lock
+        while((QSPI_REGS->QSPI_SR& QSPI_SR_INSTRE_Msk) == 0U)
+        {
+            /* Poll Status register to know status if instruction has end */
+        }
+        writeStatus = true;
     }
-
-    return true;
+    return writeStatus;
 }
 
 /*******************************************************************************

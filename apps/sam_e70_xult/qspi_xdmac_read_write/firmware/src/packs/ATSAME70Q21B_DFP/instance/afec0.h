@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME70Q21B
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,21 +20,22 @@
  *
  */
 
-/* file generated from device description version 2020-11-26T11:12:57Z */
+/* file generated from device description version 2023-03-27T04:09:33Z */
 #ifndef _SAME70_AFEC0_INSTANCE_
 #define _SAME70_AFEC0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for AFEC0 peripheral ========== */
-#define AFEC0_DMAC_ID_RX                         _UL_(35)   
-#define AFEC0_INSTANCE_ID                        _UL_(29)   
-#define AFEC0_CLOCK_ID                           _UL_(29)   
-#define AFEC0_TRGSEL_AFEC_TRIG0                  _UL_(0x0)  /* External ADC Trigger Input (AFE0_ADTRG pin) */
-#define AFEC0_TRGSEL_AFEC_TRIG1                  _UL_(0x1)  /* TC0 Channel 0 Output (TIOA0) */
-#define AFEC0_TRGSEL_AFEC_TRIG2                  _UL_(0x2)  /* TC0 Channel 1 Output (TIOA1) */
-#define AFEC0_TRGSEL_AFEC_TRIG3                  _UL_(0x3)  /* TC0 Channel 2 Output (TIOA2) */
-#define AFEC0_TRGSEL_AFEC_TRIG4                  _UL_(0x4)  /* PWM0 event line 0 */
-#define AFEC0_TRGSEL_AFEC_TRIG5                  _UL_(0x5)  /* PWM0 event line 1 */
-#define AFEC0_TRGSEL_AFEC_TRIG6                  _UL_(0x6)  /* Analog Comparator Fault Output */
+#define AFEC0_CLOCK_ID                           (29)       
+#define AFEC0_DMAC_ID_RX                         (35)       
+#define AFEC0_INSTANCE_ID                        (29)       
+#define AFEC0_TEMP_SENSOR_CH_NUM                 (11)       /* Temperature Sensor Channel */
+#define AFEC0_TRGSEL_AFEC_TRIG0                  (0x0)      /* External ADC Trigger Input (AFE0_ADTRG pin) */
+#define AFEC0_TRGSEL_AFEC_TRIG1                  (0x1)      /* TC0 Channel 0 Output (TIOA0) */
+#define AFEC0_TRGSEL_AFEC_TRIG2                  (0x2)      /* TC0 Channel 1 Output (TIOA1) */
+#define AFEC0_TRGSEL_AFEC_TRIG3                  (0x3)      /* TC0 Channel 2 Output (TIOA2) */
+#define AFEC0_TRGSEL_AFEC_TRIG4                  (0x4)      /* PWM0 event line 0 */
+#define AFEC0_TRGSEL_AFEC_TRIG5                  (0x5)      /* PWM0 event line 1 */
+#define AFEC0_TRGSEL_AFEC_TRIG6                  (0x6)      /* Analog Comparator Fault Output */
 
 #endif /* _SAME70_AFEC0_INSTANCE_ */
