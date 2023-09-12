@@ -58,16 +58,16 @@
 void PM_Initialize( void )
 {
     /* Configure PM */
-    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_VREGSMOD(2UL));
+    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_BBIASHS_Msk| PM_STDBYCFG_VREGSMOD(2UL));
 
 }
 
 void PM_IdleModeEnter( void )
 {
-    /* Configure Idle Sleep mode */
-    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_IDLE_Val;
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE(0UL);
 
-    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val) == 0U)
+    
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_Msk) != PM_SLEEPCFG_SLEEPMODE(0UL))
     {
         /* Ensure that SLEEPMODE bits are configured with the given value */
     }

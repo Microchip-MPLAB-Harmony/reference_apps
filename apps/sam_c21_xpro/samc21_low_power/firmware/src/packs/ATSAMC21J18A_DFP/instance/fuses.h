@@ -21,17 +21,7 @@
  */
 
 /* file generated from device description version 2022-03-14T06:33:44Z */
-#ifndef _SAMC21_ADC1_INSTANCE_
-#define _SAMC21_ADC1_INSTANCE_
+#ifndef _SAMC21_FUSES_INSTANCE_
+#define _SAMC21_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for ADC1 peripheral ========== */
-#define ADC1_DMAC_ID_RESRDY                      (43)       /* index of DMA RESRDY trigger */
-#define ADC1_EXTCHANNEL_MSB                      (11)       /* Number of external channels */
-#define ADC1_GCLK_ID                             (34)       /* index of Generic Clock */
-#define ADC1_INT_CH30                            (0)        /* Select OPAMP or CTAT on Channel 30 */
-#define ADC1_MASTER_SLAVE_MODE                   (2)        /* ADC Master/Slave Mode */
-#define ADC1_LOAD_CALIB                          (1)        /* CALIB register to be loaded from NVM */
-#define ADC1_INSTANCE_ID                         (82)       
-
-#endif /* _SAMC21_ADC1_INSTANCE_ */
+#endif /* _SAMC21_FUSES_INSTANCE_ */

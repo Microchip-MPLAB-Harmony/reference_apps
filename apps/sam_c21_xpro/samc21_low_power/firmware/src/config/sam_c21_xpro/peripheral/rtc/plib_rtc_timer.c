@@ -48,7 +48,7 @@
 
 void RTC_Initialize(void)
 {
-    RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)RTC_MODE0_CTRLA_SWRST_Msk;
+    RTC_REGS->MODE0.RTC_CTRLA = RTC_MODE0_CTRLA_SWRST_Msk;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_SWRST_Msk) == RTC_MODE0_SYNCBUSY_SWRST_Msk)
     {
@@ -57,8 +57,15 @@ void RTC_Initialize(void)
 
 
     RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)(RTC_MODE0_CTRLA_MODE(0UL) | RTC_MODE0_CTRLA_PRESCALER(0x1UL) | RTC_MODE0_CTRLA_COUNTSYNC_Msk |RTC_MODE0_CTRLA_MATCHCLR_Msk );
-
+    while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk) == RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk)
+    {
+       /* Wait for Synchronization */
+    }
    RTC_REGS->MODE0.RTC_COMP = 0x200U;
+    while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COMP0_Msk) == RTC_MODE0_SYNCBUSY_COMP0_Msk)
+    {
+        /* Wait for Synchronization after writing Compare Value */
+    }
 
     RTC_REGS->MODE0.RTC_EVCTRL = 0x100U;
 }
@@ -67,12 +74,12 @@ void RTC_Initialize(void)
 bool RTC_PeriodicIntervalHasCompleted (RTC_PERIODIC_INT_MASK period)
 {
    bool periodIntervalComplete = false;
-   if( (RTC_REGS->MODE0.RTC_INTFLAG & period) == period)
+   if( (RTC_REGS->MODE0.RTC_INTFLAG & (uint16_t)period) == (uint16_t)period)
    {
        periodIntervalComplete = true;
 
        /* Clear Periodic Interval Interrupt */
-       RTC_REGS->MODE0.RTC_INTFLAG = period;
+       RTC_REGS->MODE0.RTC_INTFLAG = (uint16_t)period;
    }
 
     return periodIntervalComplete;
@@ -104,9 +111,29 @@ bool RTC_Timer32CounterHasOverflowed ( void )
 }
 
 
+void RTC_Timer32CountSyncEnable ( void )
+{
+    RTC_REGS->MODE0.RTC_CTRLA |= RTC_MODE0_CTRLA_COUNTSYNC_Msk;
+
+    while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk) == RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk)
+    {
+        /* Wait for Synchronization */
+    }
+}
+
+void RTC_Timer32CountSyncDisable ( void )
+{
+    RTC_REGS->MODE0.RTC_CTRLA &= (uint16_t)(~RTC_MODE0_CTRLA_COUNTSYNC_Msk);
+
+    while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk) == RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk)
+    {
+        /* Wait for Synchronization */
+    }
+}
+
 void RTC_Timer32Start ( void )
 {
-    RTC_REGS->MODE0.RTC_CTRLA |= (uint16_t)RTC_MODE0_CTRLA_ENABLE_Msk;
+    RTC_REGS->MODE0.RTC_CTRLA |= RTC_MODE0_CTRLA_ENABLE_Msk;
 
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_ENABLE_Msk) == RTC_MODE0_SYNCBUSY_ENABLE_Msk)
     {
@@ -146,6 +173,15 @@ void RTC_Timer32CompareSet ( uint32_t compareValue )
 }
 uint32_t RTC_Timer32CounterGet ( void )
 {
+    if ((RTC_REGS->MODE0.RTC_CTRLA & RTC_MODE0_CTRLA_COUNTSYNC_Msk) == 0U)
+    {
+        RTC_REGS->MODE0.RTC_CTRLA |= RTC_MODE0_CTRLA_COUNTSYNC_Msk;
+
+        while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk) == RTC_MODE0_SYNCBUSY_COUNTSYNC_Msk)
+        {
+           /* Wait for Synchronization */
+        }
+    }
     while((RTC_REGS->MODE0.RTC_SYNCBUSY & RTC_MODE0_SYNCBUSY_COUNT_Msk) == RTC_MODE0_SYNCBUSY_COUNT_Msk)
     {
         /* Wait for Synchronization before reading value from Count Register */

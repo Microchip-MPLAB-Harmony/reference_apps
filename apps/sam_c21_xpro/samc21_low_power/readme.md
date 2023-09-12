@@ -133,6 +133,7 @@ To demonstrate the CPU wake up time, switch SW0 is configured to generate an int
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Regenerated and tested application.

@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21J18AU
+/*
+ * Instance header file for ATSAMC21J18AU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,20 +20,20 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:47:32Z */
+/* file generated from device description version 2022-03-14T06:33:44Z */
 #ifndef _SAMC21_PTC_INSTANCE_
 #define _SAMC21_PTC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PTC peripheral ========== */
-#define PTC_DMAC_ID_EOC                          _UL_(46)   /* Index of DMA EOC trigger */
-#define PTC_DMAC_ID_SEQ                          _UL_(48)   /* Index of DMA SEQ trigger */
-#define PTC_DMAC_ID_WCOMP                        _UL_(47)   /* Index of DMA WCOMP trigger */
-#define PTC_GCLK_ID                              _UL_(37)   /* Index of Generic Clock */
-#define PTC_X_LINES_NUM                          _UL_(16)   /* Number of X lines */
-#define PTC_Y_LINES_NUM                          _UL_(32)   /* Number of Y lines */
-#define PTC_SELF_CAP_CHANNELS_NUM                _UL_(32)   /* Number of self-capacitance channels */
-#define PTC_MUTUAL_CAP_CHANNELS_NUM              _UL_(256)  /* Number of mutual-capacitance channels */
-#define PTC_INSTANCE_ID                          _UL_(86)   
+#define PTC_DMAC_ID_EOC                          (46)       /* Index of DMA EOC trigger */
+#define PTC_DMAC_ID_SEQ                          (48)       /* Index of DMA SEQ trigger */
+#define PTC_DMAC_ID_WCOMP                        (47)       /* Index of DMA WCOMP trigger */
+#define PTC_GCLK_ID                              (37)       /* Index of Generic Clock */
+#define PTC_X_LINES_NUM                          (16)       /* Number of X lines */
+#define PTC_Y_LINES_NUM                          (32)       /* Number of Y lines */
+#define PTC_SELF_CAP_CHANNELS_NUM                (32)       /* Number of self-capacitance channels */
+#define PTC_MUTUAL_CAP_CHANNELS_NUM              (256)      /* Number of mutual-capacitance channels */
+#define PTC_INSTANCE_ID                          (86)       
 
 #endif /* _SAMC21_PTC_INSTANCE_ */

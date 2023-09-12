@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21J18AU
+/*
+ * Instance header file for ATSAMC21J18AU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,16 +20,16 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:47:32Z */
+/* file generated from device description version 2022-03-14T06:33:44Z */
 #ifndef _SAMC21_CCL_INSTANCE_
 #define _SAMC21_CCL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for CCL peripheral ========== */
-#define CCL_GCLK_ID                              _UL_(38)   /* GCLK index for CCL */
-#define CCL_IO_NUM                               _UL_(12)   /* Numer of input pins */
-#define CCL_LUT_NUM                              _UL_(4)    /* Number of LUT in a CCL */
-#define CCL_SEQ_NUM                              _UL_(2)    /* Number of SEQ in a CCL */
-#define CCL_INSTANCE_ID                          _UL_(87)   
+#define CCL_GCLK_ID                              (38)       /* GCLK index for CCL */
+#define CCL_IO_NUM                               (12)       /* Numer of input pins */
+#define CCL_LUT_NUM                              (4)        /* Number of LUT in a CCL */
+#define CCL_SEQ_NUM                              (2)        /* Number of SEQ in a CCL */
+#define CCL_INSTANCE_ID                          (87)       
 
 #endif /* _SAMC21_CCL_INSTANCE_ */

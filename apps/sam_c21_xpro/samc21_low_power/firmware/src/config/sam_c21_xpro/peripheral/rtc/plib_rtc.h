@@ -99,6 +99,8 @@ void RTC_Initialize(void);
 bool RTC_PeriodicIntervalHasCompleted ( RTC_PERIODIC_INT_MASK period );
 bool RTC_Timer32CounterHasOverflowed ( void );
 bool RTC_Timer32CompareHasMatched( void );
+void RTC_Timer32CountSyncEnable ( void );
+void RTC_Timer32CountSyncDisable ( void );
 void RTC_Timer32Start ( void );
 void RTC_Timer32Stop ( void );
 void RTC_Timer32CounterSet ( uint32_t count );
