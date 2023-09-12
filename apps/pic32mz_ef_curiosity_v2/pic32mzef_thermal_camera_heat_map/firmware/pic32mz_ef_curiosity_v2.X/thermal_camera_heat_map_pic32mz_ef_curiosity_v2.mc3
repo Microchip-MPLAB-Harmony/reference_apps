@@ -59,7 +59,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -4920,7 +4920,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
+         <hash>538b84190cc1d2db631d693d81834a123ab41a96b89e780a79c7bcf7bd773f2f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\legato_widget_skin_classic_common.h</file>
@@ -4944,7 +4944,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
+         <hash>850da06063b06132ed4bc020af7fb28adef50b89517aa6507cc6febedcd07ab7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circularslider\legato_widget_circular_slider_skin_classic.c</file>
@@ -5080,7 +5080,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\font\legato_font.c</file>
-         <hash>398421927fb718787cb904b8f56a9c93e7870d611c4f0c198de17371425a5537</hash>
+         <hash>2147f47f2298508c2cae98691a7157313c6f03375a706f3bae3ed799a1d9068d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\legato_widget.c</file>
@@ -5108,7 +5108,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
+         <hash>a618fa3bd1c9915c02143ae065c92200da98143a771af8355e3e4c9be83873c4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\rectangle\legato_widget_rectangle.h</file>
@@ -5124,7 +5124,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>4335c17783e1aa861bc35bf579715c5b005f19df01b36698c8c51098d12f8825</hash>
+         <hash>3f6898f4650371b98756d11a4207a8b90d13e5398b7ce643c5c974a87e0b93c9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.h</file>
@@ -5196,7 +5196,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_memory.c</file>
-         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
+         <hash>8047bcaf8c3b284df0c455e2a2067bceef3cfc1d3a91f19ec40933c7544ba207</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\dma\sys_dma.h</file>
@@ -5204,7 +5204,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
-         <hash>04a56f67ab3ef840d89ab44d03ddac16e4ad55dbbcce72d91174d19071c749d7</hash>
+         <hash>6aebd76da11fb7cb0a1ac48563b741391204857a673f384c34dde4e083889e9f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\renderer\legato_gpu.c</file>
@@ -5336,7 +5336,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>d4dd267921ad61209654f1a4da36b06e8e8c435fd25b65040a530ade40dd1231</hash>
+         <hash>67d2a17927943b88cecbde57efa79dca8bb80e525606a58d995f7272fca1125b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_math.c</file>
@@ -5384,7 +5384,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_palette_internal.c</file>
-         <hash>89ebac404e6aa269ca0bcc895fc9e11d2d593ad53e1f423d0c1f33881068a39d</hash>
+         <hash>0cec862ead00d99e9cb82c61e943185c336660170b1f4ac3af84689428938e2b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.c</file>
@@ -5560,7 +5560,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
+         <hash>1a9fb6e89e156bef847d47d58a552ac7e97a31b075d229559b487b479b1ebf4d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\slider\legato_widget_slider.h</file>
@@ -5588,7 +5588,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_input.c</file>
-         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
+         <hash>131dfbe13dfee71707c492b03f12e3fd572955fdcf6a79de3d6a6522d3568041</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\renderer\legato_draw_rect.c</file>
@@ -5600,7 +5600,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
+         <hash>64bfd7a705db6c2f26865a9d2dfc4a6133ce29cc0fc3edd2be35916b7887f5e5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circle\legato_widget_circle_skin_classic.c</file>
@@ -5628,7 +5628,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\interface\spi4\drv_gfx_disp_intf_spi4.c</file>
-         <hash>3048d25608d6b12f7e679ee3c78e3bc749ffe6c991f75e9ee48559bafe5bbe7c</hash>
+         <hash>00bf0b2c9ce901253bb8b9e6a904e5a53e7d2f1c569a0c1fb752b8dbe6887258</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\linegraph\legato_widget_line_graph_skin_classic.c</file>

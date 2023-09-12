@@ -87,5 +87,6 @@ The pre-built hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 - Updated the application to use Grid-EYE and OLED-C Click routines, Removed MCC support, Regenerated and tested application.
 - v1.4.0 - Released demo application.

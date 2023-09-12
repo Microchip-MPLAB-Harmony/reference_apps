@@ -4,18 +4,18 @@
    "content":{
       "metaDataVersion":"1.3.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32mzef_thermal_camera_heat_map",
-      "version":"1.5.0",
+      "version":"1.6.0",
       "displayName":"Thermal Camera Heat map Application",
       "projectName":"thermal_camera_heat_map_pic32mz_ef_curiosity_v2",
       "shortDescription":"Thermal camera based object heat mapSnake Application on Curiosity PIC32MZ EF 2.0 Development Board + OLED C click + Grid-EYE click",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.00"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.0.0"
+            "semverRange":">=4.30.0"
          }
       ],
       "dfp":{
@@ -24,7 +24,7 @@
       },
       "configurator":{
          "name":"MCC",
-         "semverRange":">=5.1.4"
+         "semverRange":">=5.3.7"
       },
       "device":{
          "metaDataVersion":"1.0.0",
