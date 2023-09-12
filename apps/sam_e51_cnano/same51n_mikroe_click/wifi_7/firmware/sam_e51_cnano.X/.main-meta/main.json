@@ -4,13 +4,13 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_wifi_7",
-		"version": "1.5.0",
+		"version": "1.6.0",
 		"displayName": "WIFI 7 Click example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "wifi_7_sam_e51_cnano",
 		"shortDescription": "Demonstrates the WIFI capability of WIFI 7 Click board on SAM E51 Curiosity Nano Evaluation Kit",		
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.10"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
@@ -20,7 +20,7 @@
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.6.130"
+			"semverRange": "^3.7.242"
 		},
 		"configurator": {
 			"name": "MCC",

@@ -6722,7 +6722,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmasic.c</file>
-         <hash>920c68450d38fbe351283d05c52f5dd153e2712fd090dd77f58c11a756155b0b</hash>
+         <hash>36b08329a339cfc5395f35d3f552b577bd114dfc1099740e7f1d343f4f50d2c2</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -6738,7 +6738,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\spi_flash\spi_flash.c</file>
-         <hash>17dc756d1694c84e5e58bb331ae4abdb54a9ff5fc278431a5a2406cad243076d</hash>
+         <hash>91ef8c80f0383bc1c16b4a429f872dae869123442ad22447da860e8b5902dc41</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\gclk.h</file>
@@ -6746,7 +6746,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\spi_flash\flexible_flash.c</file>
-         <hash>cf20545f4395dfe40f667ea61c0d1583515034c155c768b9f373649594860719</hash>
+         <hash>dd801d93ed0ba781b291e9b7165b9c8e3adcbf6c873a5ccc568a57728758f301</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc4.h</file>
@@ -6758,7 +6758,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\socket\m2m_socket_host_if.h</file>
-         <hash>61aa4cde4168cf82ec3282ce43d7a99647d34f26446c4a91eeb9e0da4b727f1d</hash>
+         <hash>36c0ecdef3f36a8bc2a7b747976acc747fb30515b0521eec0c4c0ed102b36d27</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\time\sys_time.h</file>
@@ -6770,11 +6770,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_powersave.h</file>
-         <hash>4c6cdfe1d725b0c3f79ce72b0d23ecdeb821ed89229849364222c11f369318dd</hash>
+         <hash>7c18edd78c70c95f7f935d6a90073f379268155962a1710312a4cce64bd1486d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_softap.c</file>
-         <hash>b1e1b7f5d7a9abe62b709e6b1435c0dfcabca6f8f21e385bbf2ee4dbd1e90f8e</hash>
+         <hash>f786f300532a8b907ed26fccc666bdcaafc823e43ca864af3d0c1da5accb093f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\icm.h</file>
@@ -6782,15 +6782,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_systime.c</file>
-         <hash>740bfa85d241095598526c40510657ad8191665ca2c14ac7820ef1d879a4f575</hash>
+         <hash>4ae18a250095125548713031a340912c39c9a373cbd33e1183a4c82aa19cd10b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_httpprovctx.h</file>
-         <hash>180410be0a198f8f8c7c6d20f6968dcb8ac8cbeebd192ab6ef66095260a65770</hash>
+         <hash>450c007d360885933485e857fd8ba26b265a34fc77c23f45c2290e15856b3174</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\common\nm_common.c</file>
-         <hash>ef5dab1fa143d56aa664a56358f76a779ee1348cec2e944d929c5cfc3caa704d</hash>
+         <hash>abc5f1337a58aed898e9f9905b8b0ac604712f428539ccacfb1f115a1e8ea4b9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom7.h</file>
@@ -6826,7 +6826,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_sta.c</file>
-         <hash>913ab3d988ab30dc58ed029da3e97e6b5b5d7874ffefa97428b23d92e6045700</hash>
+         <hash>866f3bbdf54faecfc15fd6f125e886cfaf868a9d109a24532a8b845677ba7276</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\oscctrl.h</file>
@@ -6846,7 +6846,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\socket\socket.c</file>
-         <hash>e568506d7707d2f3ebc6e1cda02809946c1e27a8db8f05a557cf632426209f8f</hash>
+         <hash>9395a4a63a8958e0ff99d45f16384c521660a27f5aa265f14442c41a5edc0fc9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc3.h</file>
@@ -6858,7 +6858,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_nvm.h</file>
-         <hash>4cbede751b2b4c888b5263892a534d9421e3369582ea524c57abb396e03eaa9b</hash>
+         <hash>57ba21e9983af6c20b94196f885b7bf86d47267173b8f7a2abacf2c576d01b0a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\dma\sys_dma.h</file>
@@ -6870,7 +6870,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\dev\wdrv_winc_gpio.h</file>
-         <hash>e4e6c8983d2de502c7cade2f031faaf1552b4752a903fe937c7d7d3a6d4e88d3</hash>
+         <hash>5cac8b19a0a37ba6fefb4c6a9886bc0e15dbfb04c4cc9fc24c7fe370981af653</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\cmcc.h</file>
@@ -6886,7 +6886,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_custie.h</file>
-         <hash>e1d0a46ef8eb660124d2a08065c5320bc76aeba51e70d1e6945c68c52594626a</hash>
+         <hash>6da49fc0a73ce64fbc2538bb29e7ead376aeff0ed05fabee2f54cb720b8b3e2d</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -6898,7 +6898,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_assoc.c</file>
-         <hash>7b5b0ef753c73eed7bdd87deb81d0c14a17fa3a0377b4e6be0d65df0cf05a6b6</hash>
+         <hash>c7e3bb261698a791d4bdc9f2728181a0dd5314da6cf8d693242d2fe27db3d6a0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\ac.h</file>
@@ -6910,7 +6910,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\socket\inet_addr.c</file>
-         <hash>a56cd1985f8e2d032af86cf46287260e27d1677c3842411685f0c61a2a30bf47</hash>
+         <hash>b8064cc1ebd4bf08bd6831be3848f6d454525ca4bf0c6a0d0c7c7d4dca8528ad</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\aes.h</file>
@@ -6918,15 +6918,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_wps.c</file>
-         <hash>2695f9ad3dfa06ece0b5e020f23f46fcf62e100175381efead0abc9e76e10011</hash>
+         <hash>ac14a1ed576da563cbfffa4466a9f0addc056eb01e4ab78a3ab663c8b7691c7e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_wifi.h</file>
-         <hash>35f986ca2ccdb4a8b00d0f7865188cc2599e2660bc035c1e9f92e0a3121b7948</hash>
+         <hash>fba95d9c565e7e0207506dc45a4f6b48c4b6a740cf3bedac44f0d92e489fdd5c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
+         <hash>6bb5b37df5fea90d4f888a2e68e5b0257fb0eb185d8ee1a56a39a5ab1733079c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\tasks.c</file>
@@ -6934,7 +6934,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_host_file.h</file>
-         <hash>4204244c2ee051abc018659bdec04d7d87bb20b54cbed6542b8a414c234f19d6</hash>
+         <hash>b33e4fe06149e5ec33381e01f4a2ec98237001b43a4d8a55155d0659367e4659</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\ATSAME51J20A.ld</file>
@@ -6942,7 +6942,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
+         <hash>8f0352418cb20cbfd71426ccea30c596df1cf0b602a730980486f9579202e095</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\dmac\plib_dmac.c</file>
@@ -6954,11 +6954,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_sta.h</file>
-         <hash>565033acd7e3576e6a82632f31aa5d2fb86474f2f9a72a0f6e1e3c0d03210ea0</hash>
+         <hash>78c812977f6dc63a0c2299ca34bf134f22ee3c29653895319efb8fa3072159f5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_hif.c</file>
-         <hash>03e9b0e34cbed07cbcbf5b0fc61dc036b7d009465b3bacb73fae3f516cece7c8</hash>
+         <hash>0611681ffb9e8262b3254f728619e2094599131d68353c394b8b8d1370479e8c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\mclk.h</file>
@@ -6982,15 +6982,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmspi.c</file>
-         <hash>aceb522988e9be32cda8dbda083bc453d5574d6b81e8e8b3f28a2ac850d83927</hash>
+         <hash>837f79a3f688cd2d140febb480eb086344b28035280017ca739f34745223ed2d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_enterprise.c</file>
-         <hash>7c7c6bd221462c97c9d626778d6960609a7dce82985e3dbfafa7da280de091a5</hash>
+         <hash>6bbeabef302924aaee7c26ab49f1fea32cc3d08dce7a8a89347ce49c302f2614</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_authctx.c</file>
-         <hash>237cca2043eb9fd94d48d0915cf191839d8d379926623bc38e698682a50257db</hash>
+         <hash>5e157361ad36c27ff2478ba5cede190ac291b00a88c92a97aaca78fdb8cb70f5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\ramecc.h</file>
@@ -6998,11 +6998,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_ssl.c</file>
-         <hash>be2fc23a7d0ad66a19c576f23f8dac82b1510a2162698e93d3b8b477cc7d0f98</hash>
+         <hash>66658847a2c8eaf759668a91e4544df46b3e819c032fbb715583e9ad198af231</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_common.h</file>
-         <hash>313498377406dad481bdb8ca07cea79f6d57fdf0367c3476f9a11f4ee7d3d292</hash>
+         <hash>03bd2ff262875c439c2a1047270df62d7a7b81d2a28e6e53871acc0eda83e0ba</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\dac.h</file>
@@ -7018,7 +7018,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_assoc.h</file>
-         <hash>0dfa352e4fdce8325360352f70320f5e68cfd4318cec4009cdbda31dee2bbb80</hash>
+         <hash>77345b69f42b42e3df18e4559df59ecdbeee1851de1925c01f3ae527e5ae5fa2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_uart.c</file>
@@ -7062,11 +7062,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\socket\socket.h</file>
-         <hash>4df91a1f52e9b0da54cc9a5c7df24b6eba1a2d812f79c0594def4c49eab823d0</hash>
+         <hash>8181fc38ee460ae659cbe583bb0997a6d286d4872eb40f45a10db7b7e4804482</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_types.h</file>
-         <hash>f09f901d26773b89071bb9852757b46ec9ab679715adcb8f425ad255bf966340</hash>
+         <hash>397899f0e61babc599d7b333c4d2bcb29dfe71c20260e1cb31f19735fa45b809</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_uart.h</file>
@@ -7074,7 +7074,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_bssfind.h</file>
-         <hash>9ae92ee890fe91f4065cf68a9e42321f81ca2c18e37fc21092ee2fdef7dd072a</hash>
+         <hash>7b080af28903ff6ab643222b72e5cfae15880b42351cec5e8a1b4bb08648adcb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\can1.h</file>
@@ -7082,7 +7082,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmdrv.c</file>
-         <hash>7f9bd605ae15bca3ebc9916b3bdd10ae6d32d59f65ba691b33ab72d58f31dbb6</hash>
+         <hash>6fed667a43408fd061cb19ab9cb8d1e236d16db6f1a20fc3ac564badec958cd2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\tc2.h</file>
@@ -7126,7 +7126,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_ota.h</file>
-         <hash>74b137538f2eb0478b3cae9789ddf50f8dca9cd62151e4026ecb0a09c6a8568c</hash>
+         <hash>cdcdd74d39694db53241f21fb9d2a80b7960f05ec9da0abcf78e606fc6fcd09a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\driver.h</file>
@@ -7138,19 +7138,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc.h</file>
-         <hash>f580ef83f5d4bacab065222f46a4c7ccd1799c61b685dd06ba4c703cbd319782</hash>
+         <hash>28d676e635654da70b19be36e2ef67689b1b43d7bde94a96c6b5903a126e66cc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_periph.h</file>
-         <hash>5e504c59d10d265ded4d61a79c23fe85ca682bcdac58ff81ced64e71615f7fa1</hash>
+         <hash>6fc6ee4ef3eb11582c635bd08b8a43d763721f23414e50cede6d0c410fda9dc2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\spi_flash\spi_flash.h</file>
-         <hash>49d832d2f48c356bbf0b9a7a719dc076c908718f7c76393982aa5d60a828d5c2</hash>
+         <hash>9df04a88847d817c0ad37b2422d9cd5c6ce00ab0d89e28c9ffc52f5123fb7e65</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmbus.h</file>
-         <hash>9f20514bd12426ed10e148c6039d8c6eb67b71081ac10cd553b786701fa53b05</hash>
+         <hash>f34443c291c694ae29a76d8b7232d5f21066931cbad37f91d8cbc13fa6538845</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\console\src\sys_console_uart_definitions.h</file>
@@ -7162,7 +7162,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_systime.h</file>
-         <hash>d067449e28b4fe9754b2df6f9f239e62886586dc85b1155804ef5f225ada8c1e</hash>
+         <hash>ddb858f48ace0816b9d11d8813a4a03e56aa33d7d008b1443acbbe7eb1df5856</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\rstc.h</file>
@@ -7194,11 +7194,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_hif.h</file>
-         <hash>89938c27e53d18090e5779ab763690fe714f8ccfe60500783798b0efafa5215d</hash>
+         <hash>6f5a792879bd4e2bdfd26227dcebd2b9537fadcbf4d3a34d6f839039a0300f5b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\osal\wdrv_winc_osal.c</file>
-         <hash>da57986c63138b89f2a2887b75b2aa81f2339431b4a1d71b91e05f32c5f74841</hash>
+         <hash>24bc41d45730a1833ba621750008ba919ec045855e75ebcc1ea254103bbbbcf1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\hmatrix.h</file>
@@ -7234,7 +7234,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc.c</file>
-         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
+         <hash>6a5418d7d0b7d3b0326554cd2bf21f45dba7bc4b971caef4301db36edb3fa0be</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -7246,7 +7246,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_host_file.c</file>
-         <hash>be8bd384cb74a54ac41aba62160f27ea5110f07c878c25a8a82bbbca2cca51b3</hash>
+         <hash>bb0a8e15568df5a9aaf6494f6bec343e2368efb2a92aee79f0b978bef8ab9b41</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\fuses.h</file>
@@ -7266,7 +7266,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_enterprise.h</file>
-         <hash>d570e30c1451491017f757b2fd31751f1c16f49a16fe2f8fc33aeb2ebe849521</hash>
+         <hash>ff9764a3b42cce23f5396fd1cd6c2c934c73fa9983a97dc7a24a61ef671f8146</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\device.h</file>
@@ -7302,7 +7302,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\ecc_types.h</file>
-         <hash>88cddc41e9f4a1755e86e47650a35d607a76fa2ebfd79b83a415332cb661c00d</hash>
+         <hash>baf8a6c126e119110a449d485ff251c648997a8b95e03637087bda34a9754a26</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\system_common.h</file>
@@ -7314,11 +7314,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmdrv.h</file>
-         <hash>4d205c12565d012a30dd90b8952d4ea0b3784c08721540c9538fca854eee36fd</hash>
+         <hash>4a6676c313ca982e077fb40b92d243acd995c997fa22a7c5ec826432b36be76d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_client_api.h</file>
-         <hash>a24e8af21a445d837cc0e05852017d8ca16e5f4c442e54b0cabdc89a5586cac9</hash>
+         <hash>9967c909183b72459d7e24890fd7a36b722780b30d63d7f6a7d318320cea8581</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\i2s.h</file>
@@ -7338,7 +7338,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_ssl.c</file>
-         <hash>efa0ba1e5352582a9424b43a3c6c3b6d61fac3b07f35a4bc95eff4e64ce95883</hash>
+         <hash>880e6eeba9378e2f43e09936877c35d358ca61858e0ad594d7b4d248bfff97f2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.c</file>
@@ -7378,7 +7378,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_nvm.c</file>
-         <hash>3a70032ef299a9ce4edebd819178c53c0e79ceac88366a918a0ab0413789fb9e</hash>
+         <hash>4ab2a6ea56eb7d8e9777d2d5d961bcabbdd36fc4a3436776503680737d7ce995</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\can.h</file>
@@ -7394,11 +7394,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_socket.h</file>
-         <hash>7d7d0d6f147a7b026a6418d5c6549af910439155a684c0ae53ea40b6e5a2183b</hash>
+         <hash>57e5e61fe06543339e609b133920b2d7924edaecb070635c5678d5b21da1e09b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_bssctx.c</file>
-         <hash>17ccb297fcc756b0d053a2730fca29e8ec1fd175b3ff0f97073cca4abc24bf9f</hash>
+         <hash>2a77572626c22641ffeed1c3ac09e87334abe05fde3a0dc453d14f1e7432acfa</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\cmcc\plib_cmcc.h</file>
@@ -7418,7 +7418,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
+         <hash>cbd3ce1848529897eccaa0ae9a58deb70aed23ee70c8d130c865825c225de53d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\tc\plib_tc0.h</file>
@@ -7446,7 +7446,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\spi_flash\flexible_flash.h</file>
-         <hash>3fa02210a937726e278d18048224c494b7e322556a051b9d4207b9f3f02cb09a</hash>
+         <hash>6f402c24eb772d49f69f3e7917fb31d258c225f8ed9e3d104cfa61779ef11bf8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\ports\sys_ports_mapping.h</file>
@@ -7458,11 +7458,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_powersave.c</file>
-         <hash>8a777fd07c2e3c84bbc5ea38fbb5be4334fb3d1a368b65317886c0daeaf53c14</hash>
+         <hash>4ddec3052ce114a3583c76586e7ef90deddc376e9ce182726c187339c1371d98</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\socket\netinet_in.h</file>
-         <hash>d08301d00a9fd274f41592f0a4dd0c13e20d1be8dc08d1acc05f0585bd0d6395</hash>
+         <hash>d9c8ce7f00c9bccd4e10f3d74e0b3a5f0ac05825c28ad8971e6f8ae3a4f7465a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\eic.h</file>
@@ -7478,7 +7478,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmasic.h</file>
-         <hash>d658761cb5cc959ae814787aeda5be69832b97675d3836bbbc3f96b991a8f6a8</hash>
+         <hash>47c44cedfd2e3dc6c1c0b46f9eff3cada8b89aaa6bc99ab73145c5e72c3b525c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\sdhc.h</file>
@@ -7510,7 +7510,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_bssctx.h</file>
-         <hash>8033a19c5bfb3248291eaa8c9e247134ddf1e4af01536305c0415ab356195346</hash>
+         <hash>80205273796b0b9ae2408bacac6de26dbe86d572ecfd9bd4620ed1d4a9782eb7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom4.h</file>
@@ -7518,7 +7518,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_periph.c</file>
-         <hash>29b2ec2d31d2fd2e1fd1a617a1a599e98f7e8c9446d9ecdad2868aeeaf546991</hash>
+         <hash>288910b9e2d37349958c2e3bf5c243d16fa97524fa0d08952e42fa7b8333dae8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\startup_xc32.c</file>
@@ -7578,7 +7578,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\m2m_ssl.h</file>
-         <hash>ed03c568a3b5b310159828ef0e3c1a68401f32768f966bfd9d576452a63766d9</hash>
+         <hash>bded73d96f9dba5be49d35ed5cf1c6a05f200b09428fe8938b66120a8ec8f70f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\port.h</file>
@@ -7586,11 +7586,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\common\nm_debug.h</file>
-         <hash>710853ce80d3cd33f1511492cb143bbd16b6ec0bd7d622e9d9b2d80b28a98a75</hash>
+         <hash>79a3d7343fc2ce7f43d2669595a23cbb8ebdb1b2564453581be752ceb23b96e9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\dev\gpio\wdrv_winc_gpio.c</file>
-         <hash>d98fab863365a8e8e04c6b0a83290195156e0a17bc723eb1dcfaf1654adbf260</hash>
+         <hash>6fcff5874cbbe61574cb693279ac45ea4528e0e33b5733cd394e371ea1c64cad</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
@@ -7598,19 +7598,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_socket.c</file>
-         <hash>c276a2066d76f837b7dcf80de974e58b6d66facd6f5403a11f0a5d15709a544c</hash>
+         <hash>ed424b31e4181f2ed64545420510bdfe791fd54baf578255e91a0032a37448e4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_ssl.h</file>
-         <hash>0defcb01e4a20d9b9d1c3b154af7c0d44efa5be5ae0fea3c8b6d8adbe66ddc4d</hash>
+         <hash>10b31383339e504591e066322ec559e19b0a2d48b8321ea3b8cc715fd2619ea7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_httpprovctx.c</file>
-         <hash>1a430631c6ef6d3215bf1261a6f9ca881dae31d75bb5ad8f616931339494bbca</hash>
+         <hash>a04d0f3ff68d848908af8d31d58231d00e093b209ca4c12f3e6c31a6b8220017</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_authctx.h</file>
-         <hash>5ebbae8c58e20ac4f4ecee27abd17ced9cb634a2d67d57037fbc79525e376358</hash>
+         <hash>3b40acf5d56e6f738c40322ccce49a3d24ce0b0f7e8c79ae993c2af2f431aef8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\interrupts.c</file>
@@ -7618,11 +7618,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_debug.h</file>
-         <hash>d4ee725f3f1e4c9baa8afae67f1cbba9df0181b0f0d54c99a3c602316dc262c7</hash>
+         <hash>75242f7d6a3ac3724f9da7f072f68c363458e18088a278576fc455758310cebe</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\common\nm_common.h</file>
-         <hash>49d57ad3bdc5b191cf6e5d77cb505659745630435e0eb1afcfd66eb52c49a25e</hash>
+         <hash>197d6677048a519f8c7ddd1efc0df22a5c6faa5f230a56b8f63f17fad847c572</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\sercom\spi_master\plib_sercom1_spi_master.h</file>
@@ -7630,7 +7630,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_wps.h</file>
-         <hash>d21b67d338ba48ab294c073ccef9de32f3e3469c39a8f2bbde327c7fed321b68</hash>
+         <hash>d105554d4c3b1170b80ac3405dca33f5e5808dabbd5fa0a416c6a8a73edf8abd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\system\time\sys_time_definitions.h</file>
@@ -7650,7 +7650,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_bssfind.c</file>
-         <hash>dc9d5072363b5262881adae6900111e8f0dff87dbcf9e2c1b499101309f776d2</hash>
+         <hash>4dfe1ce18d583e671443b442d2079b31d33fdd0f9c4b975ede8568bd64861418</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\interrupts.h</file>
@@ -7658,23 +7658,23 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\wdrv_winc_custie.c</file>
-         <hash>b6c8ae94866927cc95e2a771d4f15535aa568c0030974c7d17dd2185c62de966</hash>
+         <hash>5d0cf1993b2459fec3d2a5772bc507ae58c008a9a84c193a02b62fb1c54de99e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_softap.h</file>
-         <hash>ac664aa8b9152266c355efa8a295e64683cc64b47cd4ba3a3203edbd5ceb0035</hash>
+         <hash>d3f33749a7987c666c2798220f619faf929bdeb53e88408520ff13b789a13a13</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\socket\inet_ntop.c</file>
-         <hash>1c6ee53cefc99e82754bf3ca9c51a56e9ec9160ea309bbdda8e98010acf77565</hash>
+         <hash>2164bb6a8b3dc7fce5633625ed0d7d1fa8cc90c01d4f52aacd8b287739d6e2ed</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\nmbus.c</file>
-         <hash>ad4fea88b68771621b0ec8615647904920c7fcdc16134a9dfafbbe0ad0a3d96e</hash>
+         <hash>7e81be036b5e7e2695749262798c08d4386ce151f437e8eea32122c9c61e7d9a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_ota.c</file>
-         <hash>315e2c39233fb9702325aeb2ec6ef11d8dbaa08ee683f0fad4dd134513e685b2</hash>
+         <hash>e121c9d93ec3dc8b3da3b827dd78d5fd30add9fa2fea062df264aa8396cee6b9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\stdio\xc32_monitor.c</file>
@@ -7686,7 +7686,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\drv\driver\m2m_wifi.c</file>
-         <hash>77e1c92e07919e09b91ca01c2c0c4de60e39e388fa3d3dae9921b20877ba847e</hash>
+         <hash>ba0171014dfb6c5a5c9b796e74195d157e59f4e12567f7274b7806ff42b5901b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\rtc.h</file>
@@ -7698,7 +7698,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\spi_flash\spi_flash_map.h</file>
-         <hash>4d80638ce7515beccb38a52a217b56d921765cfd201c7c2e6a97f042b9b5f59b</hash>
+         <hash>a8c1cc6002ee7fc99f5b64414cc963ab7e5e148fa46adfae3b2ce83a9bb5716d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\evsys\plib_evsys.c</file>
@@ -7734,15 +7734,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>cab8dd9724c46a8023aab31d4af7121164b52c624529822041d4bd4f25b64738</hash>
+         <hash>a2aaa71e2b00ef9984da243674e53ef1d6931435aedc7f3ef9351703f01513e2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\bsp\nm_bsp.h</file>
-         <hash>ce66e279dafee4106df3dfd0bda0b20193a653dbfb3414dcb3439825c9ccd8e3</hash>
+         <hash>78a5a7e24ebb9e18e1999ae0513c00fc42cf1410ff1fb8558d7f829e2de8c2b1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\driver\winc\include\drv\driver\nmspi.h</file>
-         <hash>c80a31b226cf1777e07b5195e1acb9ed2a2b058127a581e2be519a44d226ff7c</hash>
+         <hash>dea48e2af5fa27418821dac73dfe017d1b367949afa6f6a7626e4115641be247</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\hmatrixb.h</file>
