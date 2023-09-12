@@ -1,7 +1,7 @@
 /*
  * Component description for PM
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:38:03Z */
+/* file generated from device description version 2022-09-09T06:09:11Z */
 #ifndef _PIC32CMLS60_PM_COMPONENT_H_
 #define _PIC32CMLS60_PM_COMPONENT_H_
 
@@ -65,14 +65,14 @@
 #define PM_PWCFG_RAMPSWC_Pos                  _UINT8_(0)                                           /* (PM_PWCFG) RAM Power Switch Configuration Position */
 #define PM_PWCFG_RAMPSWC_Msk                  (_UINT8_(0x3) << PM_PWCFG_RAMPSWC_Pos)               /* (PM_PWCFG) RAM Power Switch Configuration Mask */
 #define PM_PWCFG_RAMPSWC(value)               (PM_PWCFG_RAMPSWC_Msk & (_UINT8_(value) << PM_PWCFG_RAMPSWC_Pos)) /* Assigment of value for RAMPSWC in the PM_PWCFG register */
-#define   PM_PWCFG_RAMPSWC_64KB_Val           _UINT8_(0x0)                                         /* (PM_PWCFG) 64KB Available  */
-#define   PM_PWCFG_RAMPSWC_48KB_Val           _UINT8_(0x1)                                         /* (PM_PWCFG) 48KB Available  */
-#define   PM_PWCFG_RAMPSWC_32KB_Val           _UINT8_(0x2)                                         /* (PM_PWCFG) 32KB Available  */
-#define   PM_PWCFG_RAMPSWC_16KB_Val           _UINT8_(0x3)                                         /* (PM_PWCFG) 16KB Available  */
-#define PM_PWCFG_RAMPSWC_64KB                 (PM_PWCFG_RAMPSWC_64KB_Val << PM_PWCFG_RAMPSWC_Pos)  /* (PM_PWCFG) 64KB Available Position  */
-#define PM_PWCFG_RAMPSWC_48KB                 (PM_PWCFG_RAMPSWC_48KB_Val << PM_PWCFG_RAMPSWC_Pos)  /* (PM_PWCFG) 48KB Available Position  */
-#define PM_PWCFG_RAMPSWC_32KB                 (PM_PWCFG_RAMPSWC_32KB_Val << PM_PWCFG_RAMPSWC_Pos)  /* (PM_PWCFG) 32KB Available Position  */
-#define PM_PWCFG_RAMPSWC_16KB                 (PM_PWCFG_RAMPSWC_16KB_Val << PM_PWCFG_RAMPSWC_Pos)  /* (PM_PWCFG) 16KB Available Position  */
+#define   PM_PWCFG_RAMPSWC_SIZE0_Val          _UINT8_(0x0)                                         /* (PM_PWCFG) SRAM Retention: 64KB (512KB Flash), 32KB (256KB Flash), 16KB (128KB Flash)  */
+#define   PM_PWCFG_RAMPSWC_SIZE1_Val          _UINT8_(0x1)                                         /* (PM_PWCFG) SRAM Retention: 48KB (512KB Flash), 32KB (256KB Flash), 12KB (128KB Flash)  */
+#define   PM_PWCFG_RAMPSWC_SIZE2_Val          _UINT8_(0x2)                                         /* (PM_PWCFG) SRAM Retention: 32KB (512KB Flash), 32KB (256KB Flash), 8KB (128KB Flash)  */
+#define   PM_PWCFG_RAMPSWC_SIZE3_Val          _UINT8_(0x3)                                         /* (PM_PWCFG) SRAM Retention: 16KB (512KB Flash), 16KB (256KB Flash), 4KB (128KB Flash)  */
+#define PM_PWCFG_RAMPSWC_SIZE0                (PM_PWCFG_RAMPSWC_SIZE0_Val << PM_PWCFG_RAMPSWC_Pos) /* (PM_PWCFG) SRAM Retention: 64KB (512KB Flash), 32KB (256KB Flash), 16KB (128KB Flash) Position  */
+#define PM_PWCFG_RAMPSWC_SIZE1                (PM_PWCFG_RAMPSWC_SIZE1_Val << PM_PWCFG_RAMPSWC_Pos) /* (PM_PWCFG) SRAM Retention: 48KB (512KB Flash), 32KB (256KB Flash), 12KB (128KB Flash) Position  */
+#define PM_PWCFG_RAMPSWC_SIZE2                (PM_PWCFG_RAMPSWC_SIZE2_Val << PM_PWCFG_RAMPSWC_Pos) /* (PM_PWCFG) SRAM Retention: 32KB (512KB Flash), 32KB (256KB Flash), 8KB (128KB Flash) Position  */
+#define PM_PWCFG_RAMPSWC_SIZE3                (PM_PWCFG_RAMPSWC_SIZE3_Val << PM_PWCFG_RAMPSWC_Pos) /* (PM_PWCFG) SRAM Retention: 16KB (512KB Flash), 16KB (256KB Flash), 4KB (128KB Flash) Position  */
 #define PM_PWCFG_Msk                          _UINT8_(0x03)                                        /* (PM_PWCFG) Register Mask  */
 
 

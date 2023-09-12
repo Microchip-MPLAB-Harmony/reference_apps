@@ -179,6 +179,10 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
 - Ensure "PIC32CM LS60 Curiosity Pro" is selected as hardware tool to program/debug the application.
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below.  
+- **Note:**
+    - Windows OS has a maximum path length of 260 characters and a command-line limitation for Windows OS of 8191 characters. For details, see [6.5.5 Path, File and Folder Name Restrictions](https://onlinedocs.microchip.com/oxy/GUID-D79ACEBE-41BD-43EF-8E1B-9462847AE13E-en-US-9/GUID-87B07C9C-6305-4E40-9BD9-F9418D80761A.html).
+    - The TrustZone based project come with long path name, hence the project build may fail due to exceeding Windows maximum path length.
+    - **Workaround:** Move the project folder to C:/ drive to reduce the project path length then open in MPLAB X IDE to build the project.
 
 ## Running the Demo: <span id="RunningDemo"><span>
 - **Basic functionality** <span id="BasicDemo"><span>

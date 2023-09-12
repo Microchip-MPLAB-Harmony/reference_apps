@@ -47,6 +47,8 @@
 #include "interrupts.h"
 #include "definitions.h"
 
+ 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Exception Handling Routine
@@ -54,8 +56,7 @@
 // *****************************************************************************
 
 /* Brief default interrupt handlers for core IRQs.*/
-
-void __attribute__((noreturn)) NonMaskableInt_Handler(void)
+void __attribute__((noreturn, weak)) NonMaskableInt_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
@@ -64,8 +65,8 @@ void __attribute__((noreturn)) NonMaskableInt_Handler(void)
     {
     }
 }
-
-void __attribute__((noreturn)) HardFault_Handler(void)
+ 
+void __attribute__((noreturn, weak)) HardFault_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
    __builtin_software_breakpoint();
@@ -75,6 +76,7 @@ void __attribute__((noreturn)) HardFault_Handler(void)
    }
 }
 
+ 
 /*******************************************************************************
  End of File
  */
