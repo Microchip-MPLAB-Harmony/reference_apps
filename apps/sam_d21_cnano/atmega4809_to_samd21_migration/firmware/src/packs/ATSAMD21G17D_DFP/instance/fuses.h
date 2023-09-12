@@ -21,12 +21,7 @@
  */
 
 /* file generated from device description version 2020-11-19T13:00:05Z */
-#ifndef _SAMD21_PTC_INSTANCE_
-#define _SAMD21_PTC_INSTANCE_
+#ifndef _SAMD21_FUSES_INSTANCE_
+#define _SAMD21_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for PTC peripheral ========== */
-#define PTC_GCLK_ID                              (34)       /* Index of Generic Clock */
-#define PTC_INSTANCE_ID                          (83)       
-
-#endif /* _SAMD21_PTC_INSTANCE_ */
+#endif /* _SAMD21_FUSES_INSTANCE_ */
