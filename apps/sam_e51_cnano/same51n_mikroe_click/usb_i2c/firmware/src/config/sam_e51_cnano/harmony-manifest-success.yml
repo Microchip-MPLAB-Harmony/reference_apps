@@ -4,16 +4,16 @@
 
 
 project: usb_i2c
-creation_date: 2023-06-14T21:04:02.196+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-09-12T19:17:43.182+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.3.7
 mcc_core_version: v5.5.7
-mplabx_version: v6.10        # if MPLAB X plugin only
-harmony_version: v1.3.1
-compiler: XC32 (v4.21) 
+mplabx_version: v6.15        # if MPLAB X plugin only
+harmony_version: v1.3.2
+compiler: XC32 (v4.21)
 
 modules:
-    - {name: "csp", version: "v3.17.0"}
-    - {name: "dev_packs", version: "v3.17.0"}
+    - {name: "csp", version: "v3.18.0"}
+    - {name: "dev_packs", version: "v3.18.0"}
 

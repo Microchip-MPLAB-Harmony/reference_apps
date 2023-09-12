@@ -207,6 +207,7 @@ You could use this demonstration as an example to add USB I2C functionality to y
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Released demo application
 - v1.6.0 - Updated the USB I2C click example 
 - v1.5.0 - Removed MHC support, regenerated and tested application
 - v1.4.0 - Released demo application
