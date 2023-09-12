@@ -61,6 +61,12 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME			 "PIC32CM5164LS00100"
+#define DEVICE_ARCH			 "CORTEX-M23"
+#define DEVICE_FAMILY		 "PIC32CM"
+#define DEVICE_SERIES		 "PIC32CMLS00"
+
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 48000000
 

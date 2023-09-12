@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:54Z */
+/* file generated from device description version 2022-09-09T06:09:06Z */
 #ifndef _PIC32CMLS00_ADC_INSTANCE_
 #define _PIC32CMLS00_ADC_INSTANCE_
 
@@ -29,9 +29,9 @@
 #define ADC_DMAC_ID_RESRDY                       (41)       /* index of DMA RESRDY trigger */
 #define ADC_EXTCHANNEL_MSB                       (23)       /* Number of external channels */
 #define ADC_GCLK_ID                              (28)       /* Index of Generic Clock */
-#define ADC_INT_CH30                             (1)        /* Select OPAMP or CTAT on Channel 30 */
-#define ADC_MASTER_SLAVE_MODE                    (0)        /* ADC Master/Slave Mode */
 #define ADC_INSTANCE_ID                          (78)       /* Instance index for ADC */
+#define ADC_INT_CH30                             (1)        /* Select OPAMP or CTAT on Channel 30 */
 #define ADC_LOAD_CALIB                           (1)        /* CALIB register to be loaded from NVM */
+#define ADC_MASTER_SLAVE_MODE                    (0)        /* ADC Master/Slave Mode */
 
 #endif /* _PIC32CMLS00_ADC_INSTANCE_ */

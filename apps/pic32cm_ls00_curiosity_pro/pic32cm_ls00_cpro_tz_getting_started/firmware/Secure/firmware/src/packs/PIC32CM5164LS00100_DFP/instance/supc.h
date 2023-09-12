@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:54Z */
+/* file generated from device description version 2022-09-09T06:09:06Z */
 #ifndef _PIC32CMLS00_SUPC_INSTANCE_
 #define _PIC32CMLS00_SUPC_INSTANCE_
 
@@ -28,10 +28,10 @@
 /* ========== Instance Parameter definitions for SUPC peripheral ========== */
 #define SUPC_BOD12_CALIB_MSB                     (5)        
 #define SUPC_BOD33_CALIB_MSB                     (5)        
-#define SUPC_HAS_STDBYPL0_BIT                    (1)        /* STDBYPL0 bit is present */
+#define SUPC_HAS_BOD33_REG_NAME                  (1)        /* Name of BOD register is BOD33 */
 #define SUPC_HAS_LPEFF_BIT                       (1)        /* LPEFF bit is present */
 #define SUPC_HAS_SEL_BIT                         (1)        /* SEL bit is present */
-#define SUPC_HAS_BOD33_REG_NAME                  (1)        /* Name of BOD register is BOD33 */
+#define SUPC_HAS_STDBYPL0_BIT                    (1)        /* STDBYPL0 bit is present */
 #define SUPC_HAS_VREFSEL_BIT                     (1)        /* VREFSEL bit is present */
 #define SUPC_INSTANCE_ID                         (6)        /* Instance index for SUPC */
 

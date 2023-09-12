@@ -1,7 +1,7 @@
 /*
  * Component description for TRNG
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:54Z */
+/* file generated from device description version 2022-09-09T06:09:06Z */
 #ifndef _PIC32CMLS00_TRNG_COMPONENT_H_
 #define _PIC32CMLS00_TRNG_COMPONENT_H_
 

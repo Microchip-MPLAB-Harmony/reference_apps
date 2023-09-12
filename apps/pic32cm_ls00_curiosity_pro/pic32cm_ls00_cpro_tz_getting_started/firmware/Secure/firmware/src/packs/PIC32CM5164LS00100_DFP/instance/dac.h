@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:54Z */
+/* file generated from device description version 2022-09-09T06:09:06Z */
 #ifndef _PIC32CMLS00_DAC_INSTANCE_
 #define _PIC32CMLS00_DAC_INSTANCE_
 
@@ -28,10 +28,10 @@
 /* ========== Instance Parameter definitions for DAC peripheral ========== */
 #define DAC_CHANNEL_SIZE                         (2)        /* Number of DACs */
 #define DAC_DATA_SIZE                            (12)       /* Number of bits in data */
-#define DAC_GCLK_ID                              (30)       /* Index of Generic Clock */
-#define DAC_STEP                                 (7)        /* Number of steps to reach full scale */
-#define DAC_INSTANCE_ID                          (79)       /* Instance index for DAC */
 #define DAC_DMAC_ID_EMPTY0                       (42)       /* DMAC ID for DAC0 Empty */
 #define DAC_DMAC_ID_EMPTY1                       (43)       /* DMAC ID for DAC1 Empty */
+#define DAC_GCLK_ID                              (30)       /* Index of Generic Clock */
+#define DAC_INSTANCE_ID                          (79)       /* Instance index for DAC */
+#define DAC_STEP                                 (7)        /* Number of steps to reach full scale */
 
 #endif /* _PIC32CMLS00_DAC_INSTANCE_ */
