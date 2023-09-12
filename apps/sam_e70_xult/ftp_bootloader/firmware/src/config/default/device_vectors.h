@@ -59,7 +59,7 @@
 typedef void (*pfn_handler_t)(void);
 
 /* Structure defining device vector types */
-typedef struct _H3DeviceVectors
+typedef struct H3DeviceVectorsTag
 {
   /* Stack pointer */
   uint32_t* pvStack;
@@ -144,7 +144,7 @@ typedef struct _H3DeviceVectors
   pfn_handler_t pfnISI_Handler;                     /* 59 Camera Interface */
   pfn_handler_t pfnPWM1_Handler;                    /* 60 Pulse Width Modulation 1 */
   pfn_handler_t pfnFPU_Handler;                     /* 61 Floating Point Unit */
-  pfn_handler_t pfnSDRAMC_Handler;                  /* 62 SDRAM Controller */
+  pfn_handler_t pfnReserved62;
   pfn_handler_t pfnRSWDT_Handler;                   /* 63 Reinforced Secure Watchdog Timer */
   pfn_handler_t pfnCCW_Handler;                     /* 64 Cache ECC Warning */
   pfn_handler_t pfnCCF_Handler;                     /* 65 Cache ECC Fault */

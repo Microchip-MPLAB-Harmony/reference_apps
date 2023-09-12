@@ -41,8 +41,8 @@ File System Service Library Interface Declarations and Types
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _SYS_FS
-#define _SYS_FS
+#ifndef SYS_FS
+#define SYS_FS
 
 // *****************************************************************************
 // *****************************************************************************
@@ -74,7 +74,7 @@ File System Service Library Interface Declarations and Types
 
   Description:
     This type defines the file handle. File handle is returned by the File Open
-    function on successful operation.
+    function.
 
   Remarks:
     None.
@@ -124,7 +124,10 @@ typedef enum
     MPFS2,
 
     /*  LittleFS native File system */
-    LITTLEFS
+    LITTLEFS,
+
+    /*  FILEX native File system */
+    FILEX
 
 } SYS_FS_FILE_SYSTEM_TYPE;
 
@@ -217,23 +220,25 @@ typedef enum
 // *****************************************************************************
 /* File formating partition rule
 
-Summary:
+  Summary:
     Specifes the partitioning rule.
 
-Description:
-    This type specifies the partitioning rule. When SYS_FS_FORMAT_FAT* format
-    is specified, a primary partition occupying the entire disk space is
-    created and then an FAT volume is created on the partition. When SYS_FS_FORMAT_ANY
-    format is specified FAT FS code decides on the format. When SYS_FS_FORMAT_SFD
-    format is specified, the FAT volume starts from the first sector of the physical drive.
+  Description:
+    This type specifies the partitioning rule.
 
-    The SYS_FS_FORMAT_FAT* partitioning is usually used for hard disk, MMC,
-    SDC, CFC and U Disk. It can divide a physical drive into one or more
-    partitions with a partition table on the MBR. However Windows does not
-    support multiple partition on the removable media. The SYS_FS_FORMAT_SFD is
-    non-partitioned method. The FAT volume starts from the first sector on the
-    physical drive without partition table. It is usually used for floppy disk,
-    micro drive, optical disk, and super-floppy media.
+    - When SYS_FS_FORMAT_FAT is specified, a primary partition occupying the
+    entire disk space is created and then an FAT volume is created on the partition.
+        - It is usually used for hard disk, MMC, SDC, CFC and U Disk. It can divide
+        a physical drive into one or more partitions with a partition table on the MBR.
+        However Windows does not support multiple partition on the removable media.
+
+    - When SYS_FS_FORMAT_SFD format is specified, the FAT volume starts from the
+    first sector of the physical drive.
+        - It is non-partitioned method. The FAT volume starts from the first sector
+        on the physical drive without partition table. It is usually used for floppy disk,
+        micro drive, optical disk, and super-floppy media.
+
+    - When SYS_FS_FORMAT_ANY format is specified FAT FS code decides on the format.
 
     Note: The Values mentioned below should be aligned with values in ff.h
 */
@@ -245,19 +250,54 @@ Description:
 #define SYS_FS_FORMAT_SFD      0x08
 
 // *****************************************************************************
-/* Format parameter structure */
+/* Format parameter structure
+
+  Summary:
+    SYS FS Drive Format parameter structure.
+
+  Description:
+    Specifies the structure holding format options. This structure
+    has to be filled and passed to SYS_FS_DriveFormat() API.
+
+  Remarks:
+    None.
+*/
 typedef struct {
-    /* Format option */
+    /* Specifies combination of FAT type flags, SYS_FS_FORMAT_XXX.
+     * These flags specify which FAT type to be created on the volume.
+     * If two or more types are specified, one out of them will be
+     * selected depends on the volume size and au_size.
+     * The default value is FM_ANY.
+    */
     uint8_t  fmt;
-    /* Number of FATs */
+
+    /* Specifies number of FAT copies on the FAT/FAT32 volume.
+     * Valid value for this member is 1 or 2. If the FAT type is exFAT,
+     * this member has no effect.
+    */
     uint8_t  n_fat;
-    /* Data area alignment (sector) */
+
+    /* Specifies alignment of the volume data area (file allocation pool,
+     * usually erase block boundary of flash media) in unit of sector.
+     * When a zero is given, alignment is decided on the block size.
+    */
     uint32_t align;
-    /* Number of root directory entries */
+
+    /* Specifies number of root directory entries on the FAT volume.
+     * Valid value for this member is up to 32768 and aligned to
+     * sector size / 32. If the FAT type is FAT32 or exFAT, this member
+     * has no effect.
+    */
     uint32_t n_root;
-    /* Cluster size (byte) */
+
+    /* Specifies size of the allocation unit (cluster) in unit of byte.
+     * The valid value is power of 2 between sector size and
+     * 128 * sector size inclusive for FAT/FAT32 volume and up to 16 MB.
+     * When a zero is given, the cluster size depends on the volume size.
+    */
     uint32_t au_size;
-}SYS_FS_FORMAT_PARAM;
+
+} SYS_FS_FORMAT_PARAM;
 
 // *****************************************************************************
 /* File open attributes
@@ -353,7 +393,7 @@ typedef enum
     None.
 */
 
-typedef enum
+typedef enum 
 {
     /* Success */
     SYS_FS_ERROR_OK = 0,
@@ -421,7 +461,7 @@ SYS_FS_ERROR_NOT_SUPPORTED_IN_NATIVE_FS
     setting the event handler when media mount or unmount is completed.
 */
 
-typedef enum
+typedef enum 
 {
    /* Media has been mounted successfully. */
     SYS_FS_EVENT_MOUNT,
@@ -453,12 +493,11 @@ typedef int(*FORMAT_DISK)(uint8_t vol, const SYS_FS_FORMAT_PARAM* opt, void* wor
     function). If a new native file system is to be integrated with the SYS FS
     layer, the functions should follow the signature.
 
-    The structure of function pointer for the two native file systems: FAT FS
-    and MPFS2 is already provided in the respective source files for the native
-    file system. Hence the following structure is not immediately useful for
-    the user. But the explanation for the structure is still provided for
-    advanced users who would wish to integrate a new native file system to the
-    MPLAB Harmony File System framework.
+    The structure of function pointer for the supported native file systems
+    is already populated in the initialization.c file. Hence the following
+    structure is not immediately useful for the user. But the explanation for
+    the structure is still provided for advanced users who would wish to
+    integrate a new native file system to the MPLAB Harmony File System framework.
 
   Remarks:
     None.
@@ -473,9 +512,9 @@ typedef struct
     /* Function pointer of native file system for opening a file */
     int (*open) (uintptr_t handle, const char* path, uint8_t mode);
     /* Function pointer of native file system for reading a file */
-    int (*read) (uintptr_t fp, void* buff, uint32_t btr, uint32_t *br);
+    int (*read_t) (uintptr_t fp, void* buff, uint32_t btr, uint32_t *br);
     /* Function pointer of native file system for writing to a file */
-    int (*write) (uintptr_t fp, const void* buff, uint32_t btw, uint32_t* bw);
+    int (*write_t) (uintptr_t fp, const void* buff, uint32_t btw, uint32_t* bw);
     /* Function pointer of native file system for closing a file */
     int (*close) (uintptr_t fp);
     /* Function pointer of native file system for moving the file pointer by a
@@ -496,7 +535,7 @@ typedef struct
     /* Function pointer of native file system to change a directory */
     int (*chdir)(const char *path);
     /* Function pointer of native file system to remove a file or directory */
-    int (*remove)(const char *path);
+    int (*remove_t)(const char *path);
     /* Function pointer of native file system to get the volume label */
     int (*getlabel)(const char *path, char *buff, uint32_t *sn);
     /* Function pointer of native file system to set the volume label */
@@ -515,7 +554,7 @@ typedef struct
      * directory */
     int(*chtime)(const char* path, uintptr_t ptr);
     /* Function pointer of native file system to rename a file or directory */
-    int(*rename)(const char *oldPath, const char *newPath);
+    int(*rename_t)(const char *oldPath, const char *newPath);
     /* Function pointer of native file system to flush file */
     int(*sync)(uintptr_t fp);
     /* Function pointer of native file system to read a string from a file */
@@ -549,8 +588,7 @@ typedef struct
 /* SYS_FS_REGISTRATION_TABLE structure
 
   Summary:
-    The sys_fs layer has to be initialized by passing this structure with
-    suitably initialized members.
+    The initialization members for File system layer.
 
   Description:
     When the SYS FS layer is initialized, it has to know the type of native
@@ -620,7 +658,7 @@ typedef void (* SYS_FS_EVENT_HANDLER)
   Remarks:
     None.
 */
-typedef struct
+typedef struct 
 {
     /* File size */
     uint32_t    fsize;
@@ -630,9 +668,9 @@ typedef struct
     uint16_t    ftime;
     /* Attribute */
     uint8_t     fattrib;
-    /* Alternate file name */
+    /* Alternate/Short file name (8.3 format) */
     char        altname[13];
-    /* Primary file name */
+    /* Primary/Long file name */
     char        fname[SYS_FS_FILE_NAME_LEN + 1];
 
     /* Retaining below members for portability.
@@ -647,6 +685,7 @@ typedef struct
 
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 21.2 deviated:1 Deviation record ID -  H3_MISRAC_2012_R_21_2_DR_1 */
 /* SYS FS File time structure
 
   Summary:
@@ -667,9 +706,9 @@ typedef struct
     None.
 */
 
-typedef union
+typedef union 
 {
-    struct discreteTime
+    struct 
     {
         /* Second / 2 (0..29) */
         unsigned second:    5;
@@ -685,7 +724,7 @@ typedef union
         unsigned year:      7;
     } discreteTime;
 
-    struct timeDate
+    struct 
     {
         /* Time (hour, min, seconds) */
         uint16_t    time;
@@ -697,6 +736,7 @@ typedef union
     uint32_t packedTime;
 } SYS_FS_TIME;
 
+/* MISRAC 2012 deviation block end */
 // ****************************************************************************
 // ****************************************************************************
 // Section: File System Abstraction Layer Interface Routines
@@ -737,26 +777,23 @@ typedef union
                            the failure can be retrieved with SYS_FS_Error.
 
     Example:
-      <code>
-        // This code shows an example of how the SYS FS is initialized
-        // Only one file system is used
+      <code>        
 
         #define SYS_FS_MAX_FILE_SYSTEM_TYPE            1
-
-        // Function pointer table for FAT FS
+      
         const SYS_FS_FUNCTIONS FatFsFunctions =
         {
-            .mount   = f_mount,
-            .unmount = f_unmount,
-            .open    = f_open,
-            .read    = f_read,
-            .write   = f_write,
-            .close   = f_close,
-            .seek    = f_lseek,
-            .tell    = f_tell,
-            .eof     = f_eof,
-            .size    = f_size,
-            .fstat   = f_stat,
+            .mount   = FATFS_mount,
+            .unmount = FATFS_unmount,
+            .open    = FATFS_open,
+            .read    = FATFS_read,
+            .write   = FATFS_write,
+            .close   = FATFS_close,
+            .seek    = FATFS_lseek,
+            .tell    = FATFS_tell,
+            .eof     = FATFS_eof,
+            .size    = FATFS_size,
+            .fstat   = FATFS_stat,
         };
 
         const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
@@ -807,7 +844,7 @@ SYS_FS_RESULT SYS_FS_Initialize
         void SYS_Tasks ( void )
         {
             SYS_FS_Tasks ();
-            // Do other tasks
+            
         }
       </code>
 
@@ -833,7 +870,7 @@ void SYS_FS_Tasks
     );
 
     Summary:
-      Mounts the file system.
+      Mounts the disk/volume with specified file system.
 
     Description:
       The mount command attaches the file system specified to a volume. The
@@ -851,7 +888,7 @@ void SYS_FS_Tasks
       
       It is prudent that the application code implements a time-out mechanism
       while trying to mount a volume (by calling SYS_FS_Mount). The trial for
-      mount should continue at least 10 times before before assuming that the
+      mount should continue at least 10 times before assuming that the
       mount will never succeed. This has to be done for every new volume to be
       mounted.
 
@@ -866,6 +903,7 @@ void SYS_FS_Tasks
         NVM       - "nvm"    "media number" "volume number"
         SD card   - "mmcblk" "media number" "volume number"
         MSD       - "sd"     "media number" "volume number"
+        Flash     - "mtd"    "media number" "volume number"
 
       Where, "media number" a, b, c... depends on the number of the type of
       connected media, and where, "volume number" 1, 2, 3... depends on the
@@ -876,10 +914,10 @@ void SYS_FS_Tasks
 
       If a SD card (with four partitions) is attached to the system, and
       assuming all four partitions are recognized, there will be four devNames:
-      1. mmcblka1
-      2. mmcblka2
-      3. mmcblka3 and 
-      4. mmcblka4
+      - mmcblka1
+      - mmcblka2
+      - mmcblka3 and 
+      - mmcblka4
 
       Subsequently, if NVM media is attached that has only one partition, the
       devname will be: nvma1.
@@ -922,22 +960,22 @@ void SYS_FS_Tasks
         switch(appState)
         {
             case TRY_MOUNT:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                    
                 }
                 else
-                {
-                    // Mount was successful. Do further file operations
-
+                {              
                     if (SYS_FS_Error() == SYS_FS_ERROR_NO_FILESYSTEM)
                     {
-                        //Perform Driver Format operation as there is no filesystem on media
+                        
                         SYS_FS_DriveFormat(...);
                     }
 
                     appState = DO_FURTHER_STUFFS;
                 }
+            }
             break;
         }
       </code>
@@ -963,7 +1001,7 @@ SYS_FS_RESULT SYS_FS_Mount
     );
 
     Summary:
-      Unmounts the file system.
+      Unmounts the disk/volume for the file system.
 
     Description:
       This function removes (unmounts) the attachment of the volume from the
@@ -986,18 +1024,18 @@ SYS_FS_RESULT SYS_FS_Mount
       <code>
         if(SYS_FS_Unmount("/mnt/myDrive") != SYS_FS_RES_SUCCESS)
         {
-            // Failure, try unmounting again
+            
         }
         else
         {
-            // Unmount was successful.
+            
         }
       </code>
 */
 
 SYS_FS_RESULT SYS_FS_Unmount
 (
-    const char *mountName
+    const char *fname
 );
 
 // *****************************************************************************
@@ -1009,12 +1047,13 @@ SYS_FS_RESULT SYS_FS_Unmount
     );
 
     Summary:
-      Allows a client to identify an event handling function for the file
-      system to call back when mount/unmount operation has completed.
+      Sets the pointer to the function (and it's context) to be called
+      when mount/unmount event has occurred
 
     Description:
       This function allows a client to identify an event handling function for
       the File System to call back when mount/unmount operation has completed.
+
       The file system will pass mount name back to the client by calling
       "eventHandler" when AutoMount feature is enabled for File system.
 
@@ -1037,10 +1076,10 @@ SYS_FS_RESULT SYS_FS_Unmount
 
     Example:
       <code>
-        // Client registers an event handler with file system. This is done once.
+       
         SYS_FS_EventHandlerSet(APP_SysFSEventHandler, (uintptr_t)NULL);
 
-        // Event Processing Technique. Event is received when operation is done.
+       
         void APP_SysFSEventHandler
         (
             SYS_FS_EVENT event,
@@ -1051,6 +1090,7 @@ SYS_FS_RESULT SYS_FS_Unmount
             switch(event)
             {
                 case SYS_FS_EVENT_MOUNT:
+                {
                     if(strcmp((const char *)eventData,"/mnt/myDrive1") == 0)
                     {
                         gSDCardMountFlag = true;
@@ -1060,8 +1100,23 @@ SYS_FS_RESULT SYS_FS_Unmount
                         gNVMMountFlag = true;
                     }
                     break;
+                }
+
+                case SYS_FS_EVENT_MOUNT_WITH_NO_FILESYSTEM:
+                {
+                    if(strcmp((const char *)eventData,"/mnt/myDrive1") == 0)
+                    {
+                        gSDCardFormatRequired = true;
+                    }
+                    else if(strcmp((const char *)eventData,"/mnt/myDrive2") == 0)
+                    {
+                        gNVMFormatRequired = true;
+                    }
+                    break;
+                }
 
                 case SYS_FS_EVENT_UNMOUNT:
+                {
                     if(strcmp((const char *)eventData,"/mnt/myDrive1") == 0)
                     {
                         gSDCardMountFlag = false;
@@ -1071,25 +1126,30 @@ SYS_FS_RESULT SYS_FS_Unmount
                         gNVMMountFlag = false;
                     }
                     break;
+                }
 
                 case SYS_FS_EVENT_ERROR:
+                default:
+                {
                     break;
+                }
             }
         }
       </code>
 
     Remarks:
       On Mount/Un-Mount of a volume all the registered clients will be notified.
+
       The client should check if the mount name passed when event handler is called
       is the one it is expecting and then proceed as demonstrated in above example.
 
       If the client does not want to be notified when the mount/unmount
       operation has completed, it does not need to register a callback.
 
-    Note:
-      This API is Available only when SYS_FS_AUTOMOUNT_ENABLE is set to true.
+      Note:
+        This API is Available only when SYS_FS_AUTOMOUNT_ENABLE is set to true.
 */
-
+/* MISRA C-2012 Rule 8.6 deviated:5 Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 void SYS_FS_EventHandlerSet
 (
     const void * eventHandler,
@@ -1134,32 +1194,31 @@ void SYS_FS_EventHandlerSet
       <code>
         SYS_FS_HANDLE fileHandle;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open succeeded.
+           
         }
         else
         {
-            // File open failed.
+            
         }
-
-        // Using SYS_FS_CurrentDriveSet () function.
+        
 
         SYS_FS_HANDLE fileHandle;
 
         SYS_FS_CurrentDriveSet("/mnt/myDrive");
 
-        fileHandle = SYS_FS_FileOpen("FILE.JPG", (SYS_FS_FILE_OPEN_READ));
+        fileHandle = SYS_FS_FileOpen("FILE.txt", (SYS_FS_FILE_OPEN_READ));
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open succeeded.
+            
         }
         else
         {
-            // File open failed.
+            
         }
       </code>
 
@@ -1184,7 +1243,8 @@ SYS_FS_HANDLE SYS_FS_FileOpen
       Closes a file.
 
     Description:
-      This function closes an opened file.
+      This function closes an opened file. Before closing the file it performs
+      a force sync to write any pending data to the file.
 
     Precondition:
       A valid file handle must be obtained before closing a file.
@@ -1201,12 +1261,12 @@ SYS_FS_HANDLE SYS_FS_FileOpen
     Example:
       <code>
         SYS_FS_HANDLE fileHandle;
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
 
         SYS_FS_FileClose(fileHandle);
@@ -1247,21 +1307,29 @@ SYS_FS_RESULT SYS_FS_FileClose
 
 
     Returns:
-      On success returns the number of bytes read successfully(0 or positive
+      On success - returns the number of bytes read successfully(0 or positive
       number).
-      On failure returns -1. The reason for the failure can be retrieved with
+      On failure - returns -1. The reason for the failure can be retrieved with
       SYS_FS_Error or SYS_FS_FileError.
 
     Example:
       <code>
         ...
-        char buf[20];
+        char CACHE_ALIGN buf[256];
         size_t nbytes;
         size_t bytes_read;
-        SYS_FS_HANDLE fd;
-        ...
+        SYS_FS_HANDLE fileHandle;
+
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", (SYS_FS_FILE_OPEN_READ));
+
+        if(fileHandle != SYS_FS_HANDLE_INVALID)
+        {
+            
+        }
+
         nbytes = sizeof(buf);
-        bytes_read = SYS_FS_FileRead(fd, buf, nbytes);
+
+        bytes_read = SYS_FS_FileRead(fileHandle, buf, nbytes);
         ...
       </code>
 
@@ -1272,7 +1340,7 @@ SYS_FS_RESULT SYS_FS_FileClose
 size_t SYS_FS_FileRead
 (
     SYS_FS_HANDLE handle, 
-    void *buf, 
+    void *buffer, 
     size_t nbyte
 );
 
@@ -1292,6 +1360,29 @@ size_t SYS_FS_FileRead
       name, and populates the information in the structure pointed to by buf.
       This function can read the status of file regardless of whether a file is
       opened or not.
+
+      The file system supports 8.3 file name(Short File Name) and
+      also long file name. 8.3 filenames are limited to at most eight
+      characters, followed optionally by a filename extension
+      consisting of a period . and at most three further characters.
+      If the file name fits within the 8.3 limits then generally
+      there will be no valid LFN for it.
+
+      For FAT File system If LFN is used the stat structure's altname field
+      will contain the short file name and fname will contain the long file name.
+      The "lfname" member of the SYS_FS_FSTAT is not applicable for FAT. It has to be
+      initialized to NULL before calling the API. If "lfname" is not NULL, then
+      first byte of lfname will be set to zero indicating no file found.
+
+      For other File systems based on thier implementation, If LFN is used
+      then the "lfname" member of the SYS_FS_FSTAT structure should be
+      initialized with the address of a suitable buffer and the "lfsize"
+      should be initialized with the size of the buffer. Once the function
+      returns, the buffer whose address is held in "lfname" will have
+      the file name(long file name).
+      The stat structure's fname field will contain the SFN and if
+      there is a valid LFN entry for the file then the long file name
+      will be copied into lfname member of the structure.
 
     Precondition:
       Prior to opening a file, the name of the volume on which the file resides
@@ -1315,7 +1406,7 @@ size_t SYS_FS_FileRead
 
         if(SYS_FS_FileStat("/mnt/myDrive/FILE.TXT", &fileStat) == SYS_FS_RES_SUCCESS)
         {
-            // Successfully read the status of file "FILE.TXT"
+            
         }
       </code>
 
@@ -1344,6 +1435,7 @@ SYS_FS_RESULT SYS_FS_FileStat
     Description:
       This function sets the file pointer for a open file associated with the
       file handle, as follows:
+
       whence = SYS_FS_SEEK_SET - File offset is set to offset bytes from the
                                  beginning.
       whence = SYS_FS_SEEK_CUR - File offset is set to its current location
@@ -1377,12 +1469,12 @@ SYS_FS_RESULT SYS_FS_FileStat
         SYS_FS_HANDLE fileHandle;
         int status;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+           
         }
         ...
         ...
@@ -1391,7 +1483,7 @@ SYS_FS_RESULT SYS_FS_FileStat
 
         if((status != -1) && (status == 5))
         {
-            // Success
+            
         }
       </code>
 
@@ -1401,7 +1493,7 @@ SYS_FS_RESULT SYS_FS_FileStat
 
 int32_t SYS_FS_FileSeek
 (
-    SYS_FS_HANDLE fildes, 
+    SYS_FS_HANDLE handle, 
     int32_t offset, 
     SYS_FS_FILE_SEEK_CONTROL whence
 );
@@ -1427,8 +1519,8 @@ int32_t SYS_FS_FileSeek
       handle    - File handle obtained during file Open.
 
     Returns:
-      On success returns the current file position.
-      On failure returns -1. The reason for the failure can be retrieved with
+      On success - returns the current file position.
+      On failure - returns -1. The reason for the failure can be retrieved with
       SYS_FS_Error or SYS_FS_FileError.
 
     Example:
@@ -1436,12 +1528,12 @@ int32_t SYS_FS_FileSeek
         SYS_FS_HANDLE fileHandle;
         int32_t tell;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+           
         }
         ...
         ...
@@ -1450,7 +1542,7 @@ int32_t SYS_FS_FileSeek
 
         if(tell != -1)
         {
-            // Success
+            
         }
       </code>
 
@@ -1483,8 +1575,8 @@ int32_t SYS_FS_FileTell
        handle   - File handle obtained during file Open.
 
     Returns:
-      On success returns the size of the file in bytes.
-      On failure returns -1. The reason for the failure can be retrieved with
+      On success - returns the size of the file in bytes.
+      On failure - returns -1. The reason for the failure can be retrieved with
       SYS_FS_Error or SYS_FS_FileError.
 
     Example:
@@ -1492,12 +1584,12 @@ int32_t SYS_FS_FileTell
         SYS_FS_HANDLE fileHandle;
         long fileSize;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+           
         }
         ...
         ...
@@ -1506,7 +1598,7 @@ int32_t SYS_FS_FileTell
 
         if(fileSize != -1)
         {
-            // Success
+            
         }
       </code>
 
@@ -1539,9 +1631,9 @@ int32_t SYS_FS_FileSize
       handle     - file handle obtained during file Open.
 
     Returns:
-      On success returns true indicating that the file pointer has reached the
+      On success - returns true indicating that the file pointer has reached the
       end of the file.
-      On failure returns false. This could be due to file pointer having not
+      On failure - returns false. This could be due to file pointer having not
       reached the end of the file. Or due to an invalid file handle. The reason
       for the failure can be retrieved with SYS_FS_Error or SYS_FS_FileError.
 
@@ -1550,12 +1642,12 @@ int32_t SYS_FS_FileSize
         SYS_FS_HANDLE fileHandle;
         bool eof;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
         ...
         ...
@@ -1564,7 +1656,7 @@ int32_t SYS_FS_FileSize
 
         if(eof == false)
         {
-            // Check the error state using SYS_FS_FileError
+            
         }
       </code>
 
@@ -1601,8 +1693,8 @@ bool SYS_FS_FileEOF
       wLen     - The maximum length of data to store in cName.
 
     Returns:
-      Returns true if the file name was read successfully.
-      Returns false if the file name was not read successfully. The reason for
+      true - if the file name was read successfully.
+      false - if the file name was not read successfully. The reason for
       the failure can be retrieved with SYS_FS_Error.
 
     Example:
@@ -1611,12 +1703,12 @@ bool SYS_FS_FileEOF
         bool stat;
         uint8_t fileName[255];
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
         ...
         ...
@@ -1625,8 +1717,7 @@ bool SYS_FS_FileEOF
 
         if(stat == false)
         {
-            // file not located based on handle passed
-            // Check the error state using SYS_FS_FileError
+           
         }
       </code>
 
@@ -1677,12 +1768,12 @@ bool SYS_FS_FileNameGet
         SYS_FS_HANDLE fileHandle;
         SYS_FS_ERROR err;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle == SYS_FS_HANDLE_INVALID)
         {
-            // If failure, now know the specific reason for failure
+           
             err = SYS_FS_Error();
         }
       </code>
@@ -1737,12 +1828,11 @@ SYS_FS_ERROR SYS_FS_Error
         SYS_FS_ERROR err;
         ...
 
-        bytes_written = SYS_FS_FileWrite((const void *)buf, nbytes, fd);
+        bytes_written = SYS_FS_FileWrite(fd, (const void *)buf, nbytes);
 
         if(bytes_written == -1)
         {
-            // error while writing file
-            // find the type (reason) of error
+            
             err = SYS_FS_FileError(fd);
         }
       </code>
@@ -1780,21 +1870,19 @@ SYS_FS_ERROR SYS_FS_FileError
                directory, the path has to be ended with "/".
 
     Returns:
-      On success a valid handle to the directory will be returned.
-      On failure SYS_FS_HANDLE_INVALID will be returned. The reason for the
+      On success - a valid handle to the directory will be returned.
+      On failure - SYS_FS_HANDLE_INVALID will be returned. The reason for the
       failure can be retrieved with SYS_FS_Error.
 
     Example:
       <code>
         SYS_FS_HANDLE dirHandle;
 
-        dirHandle = SYS_FS_DirOpen("/mnt/myDrive/Dir1");
-        // For root directory, end with a "/"
-        // dirHandle = SYS_FS_DirOpen("/mnt/myDrive/");
+        dirHandle = SYS_FS_DirOpen("/mnt/myDrive/Dir1");       
 
         if(dirHandle != SYS_FS_HANDLE_INVALID)
         {
-            // Directory open is successful
+           
         }
       </code>
 
@@ -1841,15 +1929,13 @@ SYS_FS_HANDLE SYS_FS_DirOpen
 
         if(dirHandle != SYS_FS_HANDLE_INVALID)
         {
-            // Directory open is successful
+           
         }
 
-        // Perform required operation on the directory
-
-        // Close the directory
+        
         if(SYS_FS_DirClose(dirHandle) == SYS_FS_RES_FAILURE)
         {
-            // Close operation failed.
+            
         }
       </code>
 
@@ -1877,6 +1963,29 @@ SYS_FS_RESULT SYS_FS_DirClose
       This function reads the files and directories specified in the open
       directory.
 
+      The file system supports 8.3 file name(Short File Name) and
+      also long file name. 8.3 filenames are limited to at most eight
+      characters, followed optionally by a filename extension
+      consisting of a period . and at most three further characters.
+      If the file name fits within the 8.3 limits then generally
+      there will be no valid LFN for it.
+
+      For FAT File system If LFN is used the stat structure's altname field
+      will contain the short file name and fname will contain the long file name.
+      The "lfname" member of the SYS_FS_FSTAT is not applicable for FAT. It has to be
+      initialized to NULL before calling the API. If "lfname" is not NULL, then
+      first byte of lfname will be set to zero indicating no file found.
+
+      For other File systems based on thier implementation, If LFN is used
+      then the "lfname" member of the SYS_FS_FSTAT structure should be
+      initialized with the address of a suitable buffer and the "lfsize"
+      should be initialized with the size of the buffer. Once the function
+      returns, the buffer whose address is held in "lfname" will have
+      the file name(long file name).
+      The stat structure's fname field will contain the SFN and if
+      there is a valid LFN entry for the file then the long file name
+      will be copied into lfname member of the structure.
+
     Precondition:
       A valid directory handle must be obtained before reading a directory.
 
@@ -1884,23 +1993,7 @@ SYS_FS_RESULT SYS_FS_DirClose
       handle  - Directory handle obtained during directory open.
       stat    - Pointer to SYS_FS_FSTAT, where the properties of the open
                 directory will be populated after the SYS_FS_DirRead function
-                returns successfully. If LFN is used, then the "lfname" member
-                of the SYS_FS_FSTAT structure should be initialized with the
-                address of a suitable buffer and the "lfsize" should be
-                initialized with the size of the buffer. Once the function
-                returns, the buffer whose address is held in "lfname" will have
-                the file name(long file name)
-
-                The file system supports 8.3 file name(Short File Name) and
-                also long file name. 8.3 filenames are limited to at most eight
-                characters, followed optionally by a filename extension
-                consisting of a period . and at most three further characters.
-                If the file name fits within the 8.3 limits then generally
-                there will be no valid LFN for it.
-
-                The stat structure's fname field will contain the SFN and if
-                there is a valid LFN entry for the file then the long file name
-                will be copied into lfname member of the structure.
+                returns successfully.
 
     Returns:
       SYS_FS_RES_SUCCESS - Indicates that the directory read operation was
@@ -1914,38 +2007,64 @@ SYS_FS_RESULT SYS_FS_DirClose
                            retrieved with SYS_FS_Error or SYS_FS_FileError.
 
     Example:
-      <code>
+      <code>       
+
         SYS_FS_HANDLE dirHandle;
         SYS_FS_FSTAT stat;
-        char longFileName[300];
-        uintptr_t  longFileSize;
 
         dirHandle = SYS_FS_DirOpen("/mnt/myDrive/Dir1");
 
         if(dirHandle != SYS_FS_HANDLE_INVALID)
         {
-            // Directory open is successful
+            
         }
-
-        // If long file name is used, the following elements of the "stat"
-        // structure needs to be initialized with address of proper buffer.
-        stat.lfname = longFileName;
-        stat.lfsize = 300;
 
         if(SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE)
         {
-            // Directory read failed.
+            
         }
         else
-        {
-            // Directory read succeeded.
-            if ((stat.lfname[0] == '\0') && (stat.fname[0] == '\0'))
+        {            
+            if (stat.fname[0] == '\0')
             {
-                // reached the end of the directory.
+                
             }
             else
             {
-                // continue reading the directory.
+               
+            }
+
+        }       
+
+        SYS_FS_HANDLE dirHandle;
+        SYS_FS_FSTAT stat;
+
+        char CACHE_ALIGN longFileName[512];
+
+        dirHandle = SYS_FS_DirOpen("/mnt/myDrive/Dir1");
+
+        if(dirHandle != SYS_FS_HANDLE_INVALID)
+        {
+           
+        }
+      
+        stat.lfname = longFileName;
+        stat.lfsize = 512;
+
+        if(SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE)
+        {
+            
+        }
+        else
+        {
+           
+            if ((stat.lfname[0] == '\0') && (stat.fname[0] == '\0'))
+            {
+               
+            }
+            else
+            {
+                
             }
 
         }
@@ -1992,34 +2111,22 @@ SYS_FS_RESULT SYS_FS_DirRead
       <code>
         SYS_FS_HANDLE dirHandle;
         SYS_FS_FSTAT stat;
-        char longFileName[300];
-        uintptr_t  longFileSize;
 
         dirHandle = SYS_FS_DirOpen("/mnt/myDrive/Dir1");
 
         if(dirHandle != SYS_FS_HANDLE_INVALID)
         {
-            // Directory open is successful
+            
         }
-
-        // If long file name is used, the following elements of the "stat"
-        // structure needs to be initialized with address of proper buffer.
-        stat.lfname = longFileName;
-        stat.lfsize = 300;
 
         if(SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE)
         {
-           // Directory read operation failed.
-        }
-
-        // Do more search
-        // Do some more search
-
-        // Now, rewind the directory to begin search from start
+           
+        }        
 
         if(SYS_FS_DirRewind(dirHandle) == SYS_FS_RES_FAILURE)
         {
-           // Directory rewind failed.
+           
         }
     </code>
 
@@ -2050,6 +2157,29 @@ SYS_FS_RESULT SYS_FS_DirRewind
       directory is specified in the attr parameter, which is of type
       SYS_FS_FILE_DIR_ATTR.
 
+      The file system supports 8.3 file name(Short File Name) and
+      also long file name. 8.3 filenames are limited to at most eight
+      characters, followed optionally by a filename extension
+      consisting of a period . and at most three further characters.
+      If the file name fits within the 8.3 limits then generally
+      there will be no valid LFN for it.
+
+      For FAT File system If LFN is used the stat structure's altname field
+      will contain the short file name and fname will contain the long file name.
+      The "lfname" member of the SYS_FS_FSTAT is not applicable for FAT. It has to be
+      initialized to NULL before calling the API. If "lfname" is not NULL, then
+      first byte of lfname will be set to zero indicating no file found.
+
+      For other File systems based on thier implementation, If LFN is used
+      then the "lfname" member of the SYS_FS_FSTAT structure should be
+      initialized with the address of a suitable buffer and the "lfsize"
+      should be initialized with the size of the buffer. Once the function
+      returns, the buffer whose address is held in "lfname" will have
+      the file name(long file name).
+      The stat structure's fname field will contain the SFN and if
+      there is a valid LFN entry for the file then the long file name
+      will be copied into lfname member of the structure.
+
     Precondition:
       A valid directory handle must be obtained before searching the directory.
 
@@ -2064,14 +2194,9 @@ SYS_FS_RESULT SYS_FS_DirRewind
       attr        - Attribute of the name of type SYS_FS_FILE_DIR_ATTR. This
                     attribute specifies whether to search a file or a
                     directory. Other attribute types could also be specified.
-      stat        - Empty structure of type SYS_FS_FSTAT, where the properties
-                    of the file/directory will be populated. If LFN is used,
-                    then the "lfname" member of the SYS_FS_FSTAT structure
-                    should be initialized with address of suitable buffer.
-                    Also, the "lfsize" should be initialized with the size of
-                    buffer. Once the function returns, the buffer whose address
-                    is held in "lfname" will have the file name (long file
-                    name).
+      stat        - Pointer to SYS_FS_FSTAT, where the properties of the
+                    directory/file will be populated after the SYS_FS_DirSearch
+                    function returns successfully.
 
     Returns:
       SYS_FS_RES_SUCCESS - Indicates that the file or directory was found. The
@@ -2085,29 +2210,21 @@ SYS_FS_RESULT SYS_FS_DirRewind
        <code>
          SYS_FS_HANDLE dirHandle;
          SYS_FS_FSTAT stat;
-         char longFileName[300];
-         uintptr_t  longFileSize;
 
          dirHandle = SYS_FS_DirOpen("/mnt/myDrive/Dir1");
 
          if(dirHandle != SYS_FS_HANDLE_INVALID)
          {
-            // Directory open is successful
+            
          }
-
-         // If long file name is used, the following elements of the "stat"
-         // structure needs to be initialized with address of proper buffer.
-         stat.lfname = longFileName;
-         stat.lfsize = 300;
 
          if(SYS_FS_DirSearch(dirHandle, "FIL*.*", SYS_FS_ATTR_ARC, &stat) == SYS_FS_RES_FAILURE)
          {
-            // Specified file not found
+            
          }
          else
          {
-            // File found. Read the complete file name from "stat.lfname" and
-            // other file parameters from the "stat" structure
+            
          }
       </code>
 
@@ -2138,10 +2255,9 @@ SYS_FS_RESULT SYS_FS_DirSearch
     Description:
       This function reads a string of specified length from the file into a
       buffer.  The read operation continues until 
-      1. '\n' is stored 
-      2. reached end of the file or 
-      3. the buffer is filled with len - 1 characters.
-      The read string is terminated with a '\0'.
+      - '\n' is stored 
+      - reached end of the file or 
+      - the buffer is filled with len - 1 characters. The read string is terminated with a '\0'.
 
     Precondition:
       The file from which a string has to be read, has to be present and should have
@@ -2162,19 +2278,20 @@ SYS_FS_RESULT SYS_FS_DirSearch
       <code>
         SYS_FS_RESULT res;
         SYS_FS_HANDLE fileHandle;
-        char buffer[100];
+        char CACHE_ALIGN buffer[100];
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG", (SYS_FS_FILE_OPEN_WRITE_PLUS));
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", (SYS_FS_FILE_OPEN_WRITE_PLUS));
+
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
-
-        // Read a string from the file.
+       
         res = SYS_FS_FileStringGet(fileHandle, buffer, 50);
+
         if( res != SYS_FS_RES_SUCCESS)
         {
-            //String read operation failed.
+            
         }
       </code>
 
@@ -2223,7 +2340,7 @@ SYS_FS_RESULT SYS_FS_FileStringGet
 
         if(res == SYS_FS_RES_FAILURE)
         {
-            // Directory change failed
+           
         }
 
       </code>
@@ -2274,55 +2391,60 @@ SYS_FS_RESULT SYS_FS_DirectoryChange
         switch(appState)
         {
             case TRY_MOUNT:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                    
                 }
                 else
                 {
-                    // Mount was successful. Create a directory.
+                  
                     appState = CREATE_DIR;
                 }
                 break;
+            }
 
             case CREATE_DIR:
+            {
                 res = SYS_FS_DirectoryMake("Dir1");
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Directory creation failed
+                   
                     appState = ERROR;
                 }
                 else
                 {
-                    // Directory creation was successful. Change to the new
-                    // directory.
+                    
                     appState = CHANGE_DIR;
                 }
                 break;
+            }
 
             case CHANGE_DIR:
+            {
                 res = SYS_FS_DirectoryChange("Dir1");
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Directory change failed
+                    
                     appState = ERROR;
                 }
                 else
-                {
-                    // Directory change was successful. Get current working
-                    // directory
+                {                    
                     appState = GET_CWD;
                 }
                 break;
+            }
 
             case GET_CWD:
+            {
                 res = SYS_FS_CurrentWorkingDirectoryGet(buffer, 15);
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Get current directory operation failed
+                   
                     appState = ERROR;
                 }
                 break;
+            }
         }
 
       </code>
@@ -2333,7 +2455,7 @@ SYS_FS_RESULT SYS_FS_DirectoryChange
 
 SYS_FS_RESULT SYS_FS_CurrentWorkingDirectoryGet
 (
-    char *buff,
+    char *buffer,
     uint32_t len
 );
 
@@ -2375,7 +2497,7 @@ SYS_FS_RESULT SYS_FS_CurrentWorkingDirectoryGet
         res = SYS_FS_CurrentDriveSet("/mnt/myDrive");
         if(res == SYS_FS_RES_FAILURE)
         {
-            // Drive change failed
+            
         }
       </code>
 
@@ -2423,7 +2545,7 @@ SYS_FS_RESULT SYS_FS_CurrentDriveSet
         res = SYS_FS_CurrentDriveGet(buffer);
         if(res == SYS_FS_RES_FAILURE)
         {
-            // Operation failed.
+           
         }
     </code>
 
@@ -2478,27 +2600,29 @@ SYS_FS_RESULT SYS_FS_CurrentDriveGet
         switch(appState)
         {
             case TRY_MOUNT:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                    
                 }
                 else
                 {
-                    // Mount was successful. Get label now
+                    
                     appState = GET_LABEL;
                 }
                 break;
+            }
 
             case GET_LABEL:
+            {
                 res = SYS_FS_DriveLabelGet("/mnt/myDrive", buffer, &serialNo);
 
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Fetching drive label information failed
+                    
                 }
-                //...
-                //...
                 break;
+            }
         }
       </code>
 
@@ -2512,6 +2636,7 @@ SYS_FS_RESULT SYS_FS_DriveLabelGet
     char *buff,
     uint32_t *sn
 );
+/* MISRAC 2012 deviation block end */
 
 //******************************************************************************
 /* Function:
@@ -2538,22 +2663,26 @@ SYS_FS_RESULT SYS_FS_DriveLabelGet
       nbyte       - Number of bytes to be written
 
     Returns:
-      On success returns the number of bytes written successfully(0 or positive
+      On success - returns the number of bytes written successfully(0 or positive
       number).
-      On failure returns -1. The reason for the failure can be retrieved with
+      On failure - returns -1. The reason for the failure can be retrieved with
       SYS_FS_Error or SYS_FS_FileError.
 
     Example:
       <code>
-        ...
+        SYS_FS_HANDLE fileHandle;
         const char *buf = "Hello World";
         size_t nbytes;
         size_t bytes_written;
-        SYS_FS_HANDLE fd;
-        ...
 
-        bytes_written = SYS_FS_FileWrite(fd, (const void *)buf, nbytes);
-        ...
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", (SYS_FS_FILE_OPEN_WRITE));
+
+        if(fileHandle != SYS_FS_HANDLE_INVALID)
+        {
+            
+        }
+        
+        bytes_written = SYS_FS_FileWrite(fileHandle, (const void *)buf, nbytes);
       </code>
 
     Remarks:
@@ -2563,7 +2692,7 @@ SYS_FS_RESULT SYS_FS_DriveLabelGet
 size_t SYS_FS_FileWrite
 (
     SYS_FS_HANDLE handle, 
-    const void *buf, 
+    const void *buffer, 
     size_t nbyte
 );
 
@@ -2603,22 +2732,22 @@ size_t SYS_FS_FileWrite
         size_t bytes_read;
         SYS_FS_RESULT res;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG",
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt",
                 (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
-
-        // Read the file content
+        
         nbytes = sizeof(buf);
-        bytes_read = SYS_FS_FileRead(buf, nbytes, fileHandle);
-        // Truncate the file
+        bytes_read = SYS_FS_FileRead(fileHandle, buf, nbytes);
+
+        
         res = SYS_FS_FileTruncate(fileHandle);
         if(res != SYS_FS_RES_SUCCESS)
         {
-            // Truncation failed.
+           
         }
 
         SYS_FS_FileClose(fileHandle);
@@ -2672,21 +2801,21 @@ SYS_FS_RESULT SYS_FS_FileTruncate
         size_t nbytes;
         size_t bytes_written;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG", (SYS_FS_FILE_OPEN_WRITE_PLUS));
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", (SYS_FS_FILE_OPEN_WRITE_PLUS));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
+        
+        bytes_written = SYS_FS_FileWrite(fileHandle, (const void *)buf, nbytes);
 
-        // Write data to the file
-        bytes_written = SYS_FS_FileWrite((const void *)buf, nbytes, fileHandle);
-
-        // Flush the file
+       
         res = SYS_FS_FileSync(fileHandle);
+
         if( res != SYS_FS_RES_SUCCESS)
         {
-            // renaming has gone wrong
+           
         }
     </code>
 
@@ -2734,17 +2863,16 @@ SYS_FS_RESULT SYS_FS_FileSync
         SYS_FS_RESULT res;
         SYS_FS_HANDLE fileHandle;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG", SYS_FS_FILE_OPEN_WRITE_PLUS));
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", SYS_FS_FILE_OPEN_WRITE_PLUS));
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+          
         }
-
-        // Write a string
+        
         res = SYS_FS_FileStringPut(fileHandle, "Hello World");
         if(res != SYS_FS_RES_SUCCESS)
         {
-            // String write operation failed.
+           
         }
       </code>
 
@@ -2759,7 +2887,7 @@ SYS_FS_RESULT SYS_FS_FileStringPut
 );
 
 //******************************************************************************
-/*Function:
+/* Function:
     SYS_FS_RESULT SYS_FS_FileCharacterPut
     (
         SYS_FS_HANDLE handle,
@@ -2791,17 +2919,16 @@ SYS_FS_RESULT SYS_FS_FileStringPut
         SYS_FS_RESULT res;
         SYS_FS_HANDLE fileHandle;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG", (SYS_FS_FILE_OPEN_WRITE_PLUS));
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", (SYS_FS_FILE_OPEN_WRITE_PLUS));
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+          
         }
-
-        // Write a character to the file.
+      
         res = SYS_FS_FileCharacterPut(fileHandle, 'c');
         if(res != SYS_FS_RES_SUCCESS)
         {
-            // Character write operation failed.
+            
         }
       </code>
 
@@ -2853,14 +2980,13 @@ SYS_FS_RESULT SYS_FS_FileCharacterPut
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+            
         }
-
-        // Write a string
-        res = SYS_FS_FilePrintf(fileHandle, "%d", 1234);
+       
+        res = SYS_FS_FilePrintf(fileHandle, "Hello World %d", 1234);
         if( res != SYS_FS_RES_SUCCESS)
         {
-            // write operation failed.
+           
         }
       </code>
 
@@ -2904,11 +3030,11 @@ SYS_FS_RESULT SYS_FS_FilePrintf
         SYS_FS_HANDLE fileHandle;
         bool err;
 
-        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.JPG", (SYS_FS_FILE_OPEN_READ));
+        fileHandle = SYS_FS_FileOpen("/mnt/myDrive/FILE.txt", (SYS_FS_FILE_OPEN_READ));
 
         if(fileHandle != SYS_FS_HANDLE_INVALID)
         {
-            // File open is successful
+           
         }
         ...
         ...
@@ -2916,8 +3042,7 @@ SYS_FS_RESULT SYS_FS_FilePrintf
         err = SYS_FS_FileTestError(fileHandle);
         if(err == true)
         {
-            // either file has error, or there
-            // was an error in working with the "SYS_FS_FileTestError" function
+           
         }
 
       </code>
@@ -2939,10 +3064,10 @@ bool SYS_FS_FileTestError
     );
 
     Summary:
-      Makes a directory.
+      Creates a directory.
 
     Description:
-      This function makes a new directory as per the specified path.
+      This function creates a new directory as per the specified path.
 
     Precondition:
       The disk has to be mounted before a directory could be made.
@@ -2960,11 +3085,11 @@ bool SYS_FS_FileTestError
       <code>
         SYS_FS_RESULT res;
 
-        res = SYS_FS_DirectoryMake("Dir1");
+        res = SYS_FS_DirectoryMake("/mnt/mydrive/Dir1");
 
         if(res == SYS_FS_RES_FAILURE)
         {
-            // Directory make failed
+           
         }
 
       </code>
@@ -3018,10 +3143,8 @@ SYS_FS_RESULT SYS_FS_DirectoryMake
 
         if(res == SYS_FS_RES_FAILURE)
         {
-            // Directory remove operation failed
+            
         }
-        //...
-        //...
       </code>
 
     Remarks:
@@ -3067,8 +3190,7 @@ SYS_FS_RESULT SYS_FS_FileDirectoryRemove
                            the failure can be retrieved with SYS_FS_Error.
 
     Example:
-      <code>
-        // Set read-only flag, clear archive flag and others are retained.
+      <code>        
         SYS_FS_FileDirectoryModeSet("file.txt", SYS_FS_ATTR_RDO, SYS_FS_ATTR_RDO | SYS_FS_ATTR_ARC);
       </code>
 
@@ -3078,7 +3200,7 @@ SYS_FS_RESULT SYS_FS_FileDirectoryRemove
 
 SYS_FS_RESULT SYS_FS_FileDirectoryModeSet
 (
-    const char* path,
+    const char* fname,
     SYS_FS_FILE_DIR_ATTR attr,
     SYS_FS_FILE_DIR_ATTR mask
 );
@@ -3118,19 +3240,18 @@ SYS_FS_RESULT SYS_FS_FileDirectoryModeSet
             SYS_FS_TIME time;
 
             time.packedTime = 0;
-
-            // All FAT FS times are calculated based on 0 = 1980
-            time.discreteTime.year = (2013 - 1980);  // Year is 2013
-            time.discreteTime.month = 8;             // Month (August)
-            time.discreteTime.day = 9;               // Day (9)
-            time.discreteTime.hour = 15;             // 3 PM
-            time.discreteTime.minute = 06;           // 06 minutes
-            time.discreteTime.second = 00;           // 00 seconds
+           
+            time.discreteTime.year = (2021 - 1980);  
+            time.discreteTime.month = 8;             
+            time.discreteTime.day = 9;               
+            time.discreteTime.hour = 15;             
+            time.discreteTime.minute = 06;           
+            time.discreteTime.second = 00;          
 
             res = SYS_FS_FileDirectoryTimeSet("file.txt", &time);
             if( res != SYS_FS_RES_SUCCESS)
             {
-                // time change has gone wrong
+                
             }
         }
       </code>
@@ -3141,8 +3262,8 @@ SYS_FS_RESULT SYS_FS_FileDirectoryModeSet
 
 SYS_FS_RESULT SYS_FS_FileDirectoryTimeSet
 (
-    const char* path,
-    SYS_FS_TIME *time
+    const char* fname,
+    SYS_FS_TIME *f_time
 );
 
 //******************************************************************************
@@ -3177,18 +3298,17 @@ SYS_FS_RESULT SYS_FS_FileDirectoryTimeSet
       <code>
         SYS_FS_RESULT res;
 
-        // rename "file.txt" to "renamed_file.txt"
+       
         res = SYS_FS_FileDirectoryRenameMove("file.txt", "renamed_file.txt");
         if( res != SYS_FS_RES_SUCCESS)
         {
-            // Rename operation failed.
+            
         }
-
-        // Now, move "renamed_file.txt" inside directory "Dir1"
+       
         res = SYS_FS_FileDirectoryRenameMove("renamed_file.txt", "Dir1/renamed_file.txt");
         if( res != SYS_FS_RES_SUCCESS)
         {
-            // File move operation failed.
+            
         }
       </code>
 
@@ -3240,26 +3360,28 @@ SYS_FS_RESULT SYS_FS_FileDirectoryRenameMove
         switch(appState)
         {
             case TRY_MOUNT:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                   
                 }
                 else
                 {
-                    // Mount was successful. Get label now
-                    appState = GET_LABEL;
+                   
+                    appState = SET_LABEL;
                 }
                 break;
+            }
 
-            case GET_LABEL:
+            case SET_LABEL:
+            {
                 res = SYS_FS_DriveLabelSet("/mnt/myDrive", "MY_LABEL");
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Drive label get failed
+                   
                 }
-                //...
-                //...
                 break;
+            }
         }
       </code>
 
@@ -3306,26 +3428,7 @@ SYS_FS_RESULT SYS_FS_DriveLabelSet
                     important to end the drive name with a "/".
     opt           - Specifies the structure holding format options. If a null
                     pointer is given, fat code gives the function all options in default
-                    value. The format option structure has five members described below:
-                    fmt     - Specifies combination of FAT type flags, SYS_FS_FORMAT_XXX.
-                              These flags specify which FAT type to be created on the volume.
-                              If two or more types are specified, one out of them will be
-                              selected depends on the volume size and au_size.
-                              The default value is FM_ANY.
-                    au_size - Specifies size of the allocation unit (cluter) in unit of byte.
-                              The valid value is power of 2 between sector size and
-                              128 * sector size inclusive for FAT/FAT32 volume and up to 16 MB.
-                              When a zero is given, the cluster size depends on the volume size.
-                    n_align - Specifies alignment of the volume data area (file allocation pool,
-                              usually erase block boundary of flash media) in unit of sector.
-                              When a zero is given, alignment is decided on the block size.
-                    n_fat   - Specifies number of FAT copies on the FAT/FAT32 volume.
-                              Valid value for this member is 1 or 2. If the FAT type is exFAT,
-                              this member has no effect.
-                    n_root  - Specifies number of root directory entries on the FAT volume.
-                              Valid value for this member is up to 32768 and aligned to
-                              sector size / 32. If the FAT type is FAT32 or exFAT, this member
-                              has no effect.
+                    value.
     work           - Pointer to the working buffer used for the format process.
     len            - Size of the working buffer in unit of byte. It needs to be the sector size
                      of the corresponding physical drive at least. Plenty of working buffer
@@ -3346,34 +3449,38 @@ SYS_FS_RESULT SYS_FS_DriveLabelSet
         switch(appState)
         {
             case TRY_MOUNT:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                   
                 }
                 else
                 {
-                    // Mount was successful. Format now.
+                    
                     if (SYS_FS_Error() == SYS_FS_ERROR_NO_FILESYSTEM)
                     {
                         appState = FORMAT_DRIVE;
                     }
+                    else
+                    {
+                        appState = OTHER_TASK;
+                    }
                 }
                 break;
+            }
 
             case FORMAT_DRIVE:
+            {
                 opt.fmt = SYS_FS_FORMAT_FAT;
                 opt.au_size = 0;
-                opt.n_fat = 1;
-                opt.align = 0;
-                opt.n_root = 1;
 
                 res = SYS_FS_DriveFormat("/mnt/myDrive", &opt, (void *)work, 512);
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Format of the drive failed.
+                   
                 }
-                //...
                 break;
+            }
         }
     </code>
 
@@ -3431,108 +3538,116 @@ SYS_FS_RESULT SYS_FS_DriveFormat
 
     Example:
       <code>
-        //============================================================================
-        // Initially, consider the case of a SD card that has only one partition.
-        //============================================================================
+        
         SYS_FS_RESULT res;
-
-        // Following 4 element array specifies the size of 2 partitions as
-        // 256MB (=524288 sectors). The 3rd and 4th partition are not created
-        // since, the sizes of those are zero.
+        
         uint32_t plist[] = {524288, 524288, 0, 0};
 
-        // Work area for function SYS_FS_DrivePartition
+       
         char work[FAT_FS_MAX_SS];
 
         switch(appState)
         {
             case TRY_MOUNT:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                    
                 }
                 else
                 {
-                    // Mount was successful. Partition now.
+                   
                     appState = PARTITION_DRIVE;
                 }
                 break;
-            
+            }
+
             case PARTITION_DRIVE:
+            {
                 res = SYS_FS_DrivePartition("/mnt/myDrive", plist, work);
                 if(res == SYS_FS_RES_FAILURE)
                 {
-                    // Drive partition went wrong
+                   
                 }
                 else
                 {
-                    // Partition was successful. Power cycle the board so that
-                    // all partitions are recognized. Then try mounting both
-                    // partitions.
+                   
                 }
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
-        //============================================================================
-        //The following code is after the SD card is partitioned and then
-        //powered ON.
-        //============================================================================
+       
         SYS_FS_RESULT res;
 
         switch(appState)
         {
             case TRY_MOUNT_1ST_PARTITION:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive1", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                   
                     appState = TRY_MOUNT_1ST_PARTITION;
                 }
                 else
                 {
-                    // Mount was successful. Mount second partition.
+                   
                     appState = TRY_MOUNT_2ND_PARTITION;
                 }
                 break;
+            }
    
             case TRY_MOUNT_2ND_PARTITION:
+            {
                 if(SYS_FS_Mount("/dev/mmcblka2", "/mnt/myDrive2", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
                 {
-                    // Failure, try mounting again
+                   
                     appState = TRY_MOUNT_2ND_PARTITION;
                 }
                 else
                 {
-                    // Mount was successful. Try formating first partition.
+                   
                     appState = TRY_FORMATING_1ST_PARTITION;
                 }
                 break;
+            }
 
             case TRY_FORMATING_1ST_PARTITION:
+            {
                 if(SYS_FS_DriveFormat("/mnt/myDrive1/", SYS_FS_FORMAT_FDISK, 0) == SYS_FS_RES_FAILURE)
                 {
-                    // Failure
+                    
                 }
                 else
                 {
-                    // Try formating second partitions.
+                   
                     appState = TRY_FORMATING_2ND_PARTITION;
                 }
+                break;
+            }
     
             case TRY_FORMATING_2ND_PARTITION:
+            {
                 if(SYS_FS_DriveFormat("/mnt/myDrive2/", SYS_FS_FORMAT_FDISK, 0) == SYS_FS_RES_FAILURE)
                 {
-                    // Failure
+                  
                 }
                 else
                 {
-                    // Use both partitions as 2 separate volumes.
+                    
                 }
+                break;
+            }
 
             default:
+            {
                 break;
+            }
         }
       </code>
 
@@ -3571,11 +3686,9 @@ SYS_FS_RESULT SYS_FS_DrivePartition
       path         - Path to the volume with the volume name. The string of
                      volume name must be preceded by "/mnt/". Also, the volume
                      name and directory name must be separated by a slash "/".
-
       totalSectors - Pointer to a variable passed to the function, which will
                      contain the total number of sectors available in the drive
                      (media).
-
       freeSectors  - Pointer to a variable passed to the function, which will
                      contain the free number of sectors available in the drive
                      (media).
@@ -3593,22 +3706,18 @@ SYS_FS_RESULT SYS_FS_DrivePartition
 
         if(SYS_FS_Mount("/dev/mmcblka1", "/mnt/myDrive", FAT, 0, NULL) != SYS_FS_RES_SUCCESS)
         {
-            // Failure, try mounting again
+           
         }
         else
         {
-            // Mount was successful.
-            // Do other FS stuffs.
-        }
-        // Perform usual FS tasks.
-        //....
-        //....
+            
+        }    
 
-        // Now, determine the total sectors and free sectors
+       
         res = SYS_FS_DriveSectorGet("/mnt/myDrive", &totalSectors, &freeSectors);
         if(res == SYS_FS_RES_FAILURE)
         {
-            //Sector information get operation failed.
+            
         }
       </code>
 

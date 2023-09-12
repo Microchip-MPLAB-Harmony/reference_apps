@@ -75,6 +75,8 @@ size_t USART1_WriteFreeBufferCountGet(void);
 
 size_t USART1_WriteBufferSizeGet(void);
 
+bool USART1_TransmitComplete(void);
+
 bool USART1_WriteNotificationEnable(bool isEnabled, bool isPersistent);
 
 void USART1_WriteThresholdSet(uint32_t nBytesThreshold);

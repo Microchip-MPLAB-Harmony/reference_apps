@@ -45,16 +45,17 @@ It allows user to Program, Erase and lock the on-chip FLASH memory.
 #include "plib_efc.h"
 #include "interrupts.h"
 
-static uint32_t status = 0;
+static uint32_t efc_status = 0;
 
 
 void EFC_Initialize(void)
 {
-    EFC_REGS->EEFC_FMR = EEFC_FMR_FWS(6) | EEFC_FMR_CLOE_Msk ;
+    EFC_REGS->EEFC_FMR = EEFC_FMR_FWS(6U) | EEFC_FMR_CLOE_Msk ;
 }
 bool EFC_Read( uint32_t *data, uint32_t length, uint32_t address )
 {
-    memcpy((void *)data, (void *)address, length);
+    uint32_t *pAddress = (uint32_t*)address;
+    (void)memcpy(data,pAddress,length);
     return true;
 }
 
@@ -63,11 +64,11 @@ bool EFC_SectorErase( uint32_t address )
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
     /* Issue the FLASH erase operation*/
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_EPA|EEFC_FCR_FARG(page_number|0x2)|EEFC_FCR_FKEY_PASSWD);
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_EPA|EEFC_FCR_FARG((uint32_t)page_number|0x2U)|EEFC_FCR_FKEY_PASSWD);
 
-    status = 0;
+    efc_status = 0;
 
 
     return true;
@@ -78,15 +79,17 @@ bool EFC_PageBufferWrite( uint32_t *data, const uint32_t address)
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
 
-    for (uint32_t i = 0; i < IFLASH_PAGE_SIZE; i += 4)
+    for (uint32_t i = 0; i < IFLASH_PAGE_SIZE; i += 4U)
     {
-    *((uint32_t *)( IFLASH_ADDR + ( page_number * IFLASH_PAGE_SIZE ) + i )) =    *(( data++ ));
+        *((uint32_t *)( IFLASH_ADDR + ( page_number * IFLASH_PAGE_SIZE ) + i )) = *data ;
+        data++;
+        __DMB();
     }
 
     __DSB();
-    __ISB();    
+    __ISB();
 
     return true;
 }
@@ -96,15 +99,15 @@ bool EFC_PageBufferCommit( const uint32_t address)
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;    
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
 
     __DSB();
     __ISB();
 
     /* Issue the FLASH write operation*/
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG(page_number)| EEFC_FCR_FKEY_PASSWD);
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG((uint32_t)page_number)| EEFC_FCR_FKEY_PASSWD);
 
-    status = 0;
+    efc_status = 0;
 
 
     return true;
@@ -115,20 +118,22 @@ bool EFC_PageWrite( uint32_t *data, uint32_t address )
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
 
-    for (uint32_t i = 0; i < IFLASH_PAGE_SIZE; i += 4)
+    for (uint32_t i = 0; i < IFLASH_PAGE_SIZE; i += 4U)
     {
-    *((uint32_t *)( IFLASH_ADDR + ( page_number * IFLASH_PAGE_SIZE ) + i )) =    *(( data++ ));
+        *((uint32_t *)( IFLASH_ADDR + ( page_number * IFLASH_PAGE_SIZE ) + i )) = *data;
+        data++;
+        __DMB();
     }
 
     __DSB();
     __ISB();
 
     /* Issue the FLASH write operation*/
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG(page_number)| EEFC_FCR_FKEY_PASSWD);
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG((uint32_t)page_number)| EEFC_FCR_FKEY_PASSWD);
 
-    status = 0;
+    efc_status = 0;
 
 
     return true;
@@ -139,16 +144,17 @@ bool EFC_QuadWordWrite( uint32_t *data, uint32_t address )
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
 
-    for (uint32_t i = 0; i < 16; i += 4)
+    for (uint32_t i = 0; i < 16U; i += 4U)
     {
-    *((uint32_t *)(( address ) + i )) =    *((uint32_t *)( data++ ));
+        *((uint32_t *)(( address ) + i )) = *data;
+        data++;
     }
     /* Issue the FLASH write operation*/
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG(page_number)| EEFC_FCR_FKEY_PASSWD);
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_WP | EEFC_FCR_FARG((uint32_t)page_number)| EEFC_FCR_FKEY_PASSWD);
 
-    status = 0;
+    efc_status = 0;
 
 
     return true;
@@ -159,10 +165,10 @@ void EFC_RegionLock(uint32_t address)
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_SLB | EEFC_FCR_FARG(page_number)| EEFC_FCR_FKEY_PASSWD);
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_SLB | EEFC_FCR_FARG((uint32_t)page_number)| EEFC_FCR_FKEY_PASSWD);
 
-    status = 0;
+    efc_status = 0;
 
 }
 
@@ -171,23 +177,23 @@ void EFC_RegionUnlock(uint32_t address)
     uint16_t page_number;
 
     /*Calculate the Page number to be passed for FARG register*/
-    page_number = (address - IFLASH_ADDR) / IFLASH_PAGE_SIZE;
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_CLB | EEFC_FCR_FARG(page_number)| EEFC_FCR_FKEY_PASSWD);
+    page_number = (uint16_t)((address - IFLASH_ADDR) / IFLASH_PAGE_SIZE);
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FCMD_CLB | EEFC_FCR_FARG((uint32_t)page_number)| EEFC_FCR_FKEY_PASSWD);
 
-    status = 0;
+    efc_status = 0;
 
 }
 
 bool EFC_IsBusy(void)
 {
-    status |= EFC_REGS->EEFC_FSR;
-    return (bool)(!(status & EEFC_FSR_FRDY_Msk));
+    efc_status |= EFC_REGS->EEFC_FSR;
+    return (bool)((efc_status & EEFC_FSR_FRDY_Msk) == 0U);
 }
 
 EFC_ERROR EFC_ErrorGet( void )
 {
-    status |= EFC_REGS->EEFC_FSR;
-    return (EFC_ERROR)status;
+    efc_status |= EFC_REGS->EEFC_FSR;
+    return (EFC_ERROR)efc_status;
 }
 
 

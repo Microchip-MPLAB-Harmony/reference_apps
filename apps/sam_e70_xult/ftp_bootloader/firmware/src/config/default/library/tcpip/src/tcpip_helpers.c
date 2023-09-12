@@ -8,30 +8,28 @@
     Helpers library for Microchip TCP/IP Stack
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -348,7 +346,7 @@ bool TCPIP_Helper_StringToIPv6Address(const char * addStr, IPV6_ADDR * addr)
         shiftIndex = 0;
     }
 
-    if(!isxdigit(*str))
+    if(!isxdigit((uint8_t)*str))
     {
         return false;
     }
@@ -564,7 +562,7 @@ bool TCPIP_Helper_StringToMACAddress(const char* str, uint8_t macAddr[6])
     pAdd = convAddr;
     for(ix=0; ix<6; ix++)
     {
-        if(!isxdigit(beg[0]) || !isxdigit(beg[1]))
+        if(!isxdigit((uint8_t)beg[0]) || !isxdigit((uint8_t)beg[1]))
         {
             return false;
         }
@@ -714,7 +712,6 @@ uint16_t TCPIP_Helper_Base64Decode(const uint8_t* cSourceData, uint16_t wSourceL
 {
 	uint8_t i;
 	uint8_t vByteNumber;
-	bool bPad;
 	uint16_t wBytesOutput;
 
     if(cSourceData == 0 || cDestData == 0)
@@ -730,7 +727,6 @@ uint16_t TCPIP_Helper_Base64Decode(const uint8_t* cSourceData, uint16_t wSourceL
 	{
 		// Fetch a Base64 byte and decode it to the original 6 bits
 		i = *cSourceData++;
-		bPad = (i == '=');
 		if(i >= 'A' && i <= 'Z')	// Regular data
 			i -= 'A' - 0;
 		else if(i >= 'a' && i <= 'z')
@@ -748,8 +744,6 @@ uint16_t TCPIP_Helper_Base64Decode(const uint8_t* cSourceData, uint16_t wSourceL
 		// Write the 6 bits to the correct destination location(s)
 		if(vByteNumber == 0u)
 		{
-			if(bPad)				// Padding here would be illegal, treat it as a non-Base64 chacter and just skip over it
-				continue;
 			vByteNumber++;
 			if(wBytesOutput >= wDestLen)
 				break;
@@ -762,8 +756,6 @@ uint16_t TCPIP_Helper_Base64Decode(const uint8_t* cSourceData, uint16_t wSourceL
 			*cDestData++ |= i >> 4;
 			if(wBytesOutput >= wDestLen)
 				break;
-			if(bPad)
-				continue;
 			wBytesOutput++;
 			*cDestData = i << 4;
 		}
@@ -773,8 +765,6 @@ uint16_t TCPIP_Helper_Base64Decode(const uint8_t* cSourceData, uint16_t wSourceL
 			*cDestData++ |= i >> 2;
 			if(wBytesOutput >= wDestLen)
 				break;
-			if(bPad)
-				continue;
 			wBytesOutput++;
 			*cDestData = i << 6;
 		}
@@ -815,7 +805,7 @@ uint16_t TCPIP_Helper_Base64Decode(const uint8_t* cSourceData, uint16_t wSourceL
 	Encoding cannot be performed in-place.
     If surceData overlaps with  destData, the behavior is undefined.
 	
-	The source data is padded wit 1 or 2 bytes, if needed, to make the source size a multiple
+	The source data is padded with 1 or 2 bytes, if needed, to make the source size a multiple
     of 3 bytes.
     Then for each 3 bytes tuple in the source 4 output bytes are generated.
     The output size needed is pad(sourceLen) * 4 / 3 bytes.
@@ -1040,8 +1030,8 @@ uint16_t TCPIP_Helper_ChecksumFold(uint32_t rawChksum)
 {
     TCPIP_UINT32_VAL checksum;
 
-    checksum.Val = rawChksum;
-    checksum.Val = (uint32_t)checksum.w[0] + (uint32_t)checksum.w[1];
+    checksum.Val = rawChksum;   // init checksum
+    checksum.Val = (uint32_t)checksum.w[0] + (uint32_t)checksum.w[1];   // checksum = low 16 bit + high 16 bit
     checksum.w[0] += checksum.w[1];
     return checksum.w[0];
     
