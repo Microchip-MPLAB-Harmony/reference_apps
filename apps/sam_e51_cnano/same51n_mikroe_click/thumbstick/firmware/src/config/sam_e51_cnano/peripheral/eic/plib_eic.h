@@ -96,14 +96,13 @@
     None.
 */
 
-typedef enum
-{
+
     /* External Interrupt Controller Pin 4 */
-    EIC_PIN_4 = 4,
+#define    EIC_PIN_4   (4U)
 
-    EIC_PIN_MAX = 16
+#define    EIC_PIN_MAX  (16U)
 
-} EIC_PIN;
+typedef uint16_t EIC_PIN;
 
 
 
