@@ -48,9 +48,9 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -60,15 +60,24 @@
 // *****************************************************************************
 
 
-void TIMER_2_InterruptHandler( void );
-void CHANGE_NOTICE_G_InterruptHandler( void );
-void DMA0_InterruptHandler( void );
-void SPI6_RX_InterruptHandler( void );
-void SPI6_TX_InterruptHandler( void );
-
-
-
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector declarations
+// *****************************************************************************
+// *****************************************************************************
+void TIMER_2_Handler (void);
+void CHANGE_NOTICE_G_Handler (void);
+void DMA0_Handler (void);
+void SPI6_RX_Handler (void);
+void SPI6_TX_Handler (void);
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector definitions
+// *****************************************************************************
+// *****************************************************************************
 void __ISR(_TIMER_2_VECTOR, ipl1SOFT) TIMER_2_Handler (void)
 {
     TIMER_2_InterruptHandler();

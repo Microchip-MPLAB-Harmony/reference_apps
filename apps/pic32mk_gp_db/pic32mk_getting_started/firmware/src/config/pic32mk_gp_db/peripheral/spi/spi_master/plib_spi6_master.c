@@ -40,6 +40,7 @@
 *******************************************************************************/
 
 #include "plib_spi6_master.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -48,16 +49,16 @@
 // *****************************************************************************
 
 /* Global object to save SPI Exchange related data */
-SPI_OBJECT spi6Obj;
+volatile static SPI_OBJECT spi6Obj;
 
-#define SPI6_CON_MSTEN                      (1 << _SPI6CON_MSTEN_POSITION)
-#define SPI6_CON_CKP                        (0 << _SPI6CON_CKP_POSITION)
-#define SPI6_CON_CKE                        (1 << _SPI6CON_CKE_POSITION)
-#define SPI6_CON_MODE_32_MODE_16            (0 << _SPI6CON_MODE16_POSITION)
-#define SPI6_CON_ENHBUF                     (1 << _SPI6CON_ENHBUF_POSITION)
-#define SPI6_CON_MCLKSEL                    (0 << _SPI6CON_MCLKSEL_POSITION)
-#define SPI6_CON_MSSEN                      (0 << _SPI6CON_MSSEN_POSITION)
-#define SPI6_CON_SMP                        (0 << _SPI6CON_SMP_POSITION)
+#define SPI6_CON_MSTEN                      (1UL << _SPI6CON_MSTEN_POSITION)
+#define SPI6_CON_CKP                        (0UL << _SPI6CON_CKP_POSITION)
+#define SPI6_CON_CKE                        (1UL << _SPI6CON_CKE_POSITION)
+#define SPI6_CON_MODE_32_MODE_16            (0UL << _SPI6CON_MODE16_POSITION)
+#define SPI6_CON_ENHBUF                     (1UL << _SPI6CON_ENHBUF_POSITION)
+#define SPI6_CON_MCLKSEL                    (0UL << _SPI6CON_MCLKSEL_POSITION)
+#define SPI6_CON_MSSEN                      (0UL << _SPI6CON_MSSEN_POSITION)
+#define SPI6_CON_SMP                        (0UL << _SPI6CON_SMP_POSITION)
 
 void SPI6_Initialize ( void )
 {
@@ -117,12 +118,12 @@ bool SPI6_TransferSetup (SPI_TRANSFER_SETUP* setup, uint32_t spiSourceClock )
     uint32_t errorHigh;
     uint32_t errorLow;
 
-    if ((setup == NULL) || (setup->clockFrequency == 0))
+    if ((setup == NULL) || (setup->clockFrequency == 0U))
     {
         return false;
     }
 
-    if(spiSourceClock == 0)
+    if(spiSourceClock == 0U)
     {
         // Use Master Clock Frequency set in GUI
         spiSourceClock = 60000000;
@@ -139,14 +140,14 @@ bool SPI6_TransferSetup (SPI_TRANSFER_SETUP* setup, uint32_t spiSourceClock )
         t_brg++;
     }
 
-    if(t_brg > 8191)
+    if(t_brg > 8191U)
     {
         return false;
     }
 
     SPI6BRG = t_brg;
     SPI6CON = (SPI6CON & (~(_SPI6CON_MODE16_MASK | _SPI6CON_MODE32_MASK | _SPI6CON_CKP_MASK | _SPI6CON_CKE_MASK))) |
-                            (setup->clockPolarity | setup->clockPhase | setup->dataBits);
+                            ((uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits);
 
     return true;
 }
@@ -163,16 +164,15 @@ bool SPI6_Read(void* pReceiveData, size_t rxSize)
 
 bool SPI6_IsTransmitterBusy (void)
 {
-    return ((SPI6STAT & _SPI6STAT_SRMT_MASK) == 0)? true : false;
+    return ((SPI6STAT & _SPI6STAT_SRMT_MASK) == 0U)? true : false;
 }
 
 bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;
-    uint32_t dummyData = 0U;
 
     /* Verify the request */
-    if((((txSize > 0) && (pTransmitData != NULL)) || ((rxSize > 0) && (pReceiveData != NULL))) && (spi6Obj.transferIsBusy == false))
+    if((spi6Obj.transferIsBusy == false) && (((txSize > 0U) && (pTransmitData != NULL)) || ((rxSize > 0U) && (pReceiveData != NULL))))
     {
         isRequestAccepted = true;
         spi6Obj.txBuffer = pTransmitData;
@@ -201,9 +201,10 @@ bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, siz
 
         spi6Obj.transferIsBusy = true;
 
-        if (spi6Obj.rxSize > spi6Obj.txSize)
+        size_t txSz = spi6Obj.txSize;
+        if (spi6Obj.rxSize > txSz)
         {
-            spi6Obj.dummySize = spi6Obj.rxSize - spi6Obj.txSize;
+            spi6Obj.dummySize = spi6Obj.rxSize - txSz;
         }
 
         /* Clear the receive overflow error if any */
@@ -211,10 +212,9 @@ bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, siz
 
         /* Make sure there is no data pending in the RX FIFO */
         /* Depending on 8/16/32 bit mode, there may be 16/8/4 bytes in the FIFO */
-        while ((bool)(SPI6STAT & _SPI6STAT_SPIRBE_MASK) == false)
+        while ((SPI6STAT & _SPI6STAT_SPIRBE_MASK) == 0U)
         {
-            dummyData = SPI6BUF;
-            (void)dummyData;
+            (void)SPI6BUF;
         }
 
         /* Configure SPI to generate receive interrupt when receive buffer is empty (SRXISEL = '01') */
@@ -243,15 +243,20 @@ bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, siz
             spi6Obj.dummySize >>= 2;
             spi6Obj.rxSize >>= 2;
 
-            if(spi6Obj.txCount < spi6Obj.txSize)
+            txSz = spi6Obj.txSize;
+            if(spi6Obj.txCount < txSz)
             {
                 SPI6BUF = *((uint32_t*)spi6Obj.txBuffer);
                 spi6Obj.txCount++;
             }
-            else if (spi6Obj.dummySize > 0)
+            else if (spi6Obj.dummySize > 0U)
             {
-                SPI6BUF = (uint32_t)(0xff);
+                SPI6BUF = (uint32_t)(0xffU);
                 spi6Obj.dummySize--;
+            }
+            else
+            {
+                /* Nothing to process */
             }
         }
         else if((_SPI6CON_MODE16_MASK) == (SPI6CON & (_SPI6CON_MODE16_MASK)))
@@ -260,32 +265,41 @@ bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, siz
             spi6Obj.dummySize >>= 1;
             spi6Obj.rxSize >>= 1;
 
-            if (spi6Obj.txCount < spi6Obj.txSize)
+            txSz = spi6Obj.txSize;
+            if (spi6Obj.txCount < txSz)
             {
                 SPI6BUF = *((uint16_t*)spi6Obj.txBuffer);
                 spi6Obj.txCount++;
             }
-            else if (spi6Obj.dummySize > 0)
+            else if (spi6Obj.dummySize > 0U)
             {
-                SPI6BUF = (uint16_t)(0xff);
+                SPI6BUF = (uint16_t)(0xffU);
                 spi6Obj.dummySize--;
+            }
+            else
+            {
+                /* Nothing to process */
             }
         }
         else
         {
-            if (spi6Obj.txCount < spi6Obj.txSize)
+            if (spi6Obj.txCount < txSz)
             {
                 SPI6BUF = *((uint8_t*)spi6Obj.txBuffer);
                 spi6Obj.txCount++;
             }
-            else if (spi6Obj.dummySize > 0)
+            else if (spi6Obj.dummySize > 0U)
             {
-                SPI6BUF = (uint8_t)(0xff);
+                SPI6BUF = (uint8_t)(0xffU);
                 spi6Obj.dummySize--;
+            }
+            else
+            {
+                /* Nothing to process */
             }
         }
 
-        if (rxSize > 0)
+        if (rxSize > 0U)
         {
             /* Enable receive interrupt to complete the transfer in ISR context.
              * Keep the transmit interrupt disabled. Transmit interrupt will be
@@ -295,7 +309,7 @@ bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, siz
         }
         else
         {
-            if (spi6Obj.txCount != spi6Obj.txSize)
+            if (spi6Obj.txCount != txSz)
             {
                 /* Configure SPI to generate transmit buffer empty interrupt only if more than
                  * data is pending (STXISEL = '01')  */
@@ -311,7 +325,8 @@ bool SPI6_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, siz
 
 bool SPI6_IsBusy (void)
 {
-    return ( (spi6Obj.transferIsBusy) || ((SPI6STAT & _SPI6STAT_SRMT_MASK) == 0));
+    uint32_t StatRead = SPI6STAT;
+    return (((spi6Obj.transferIsBusy) != false) || (( StatRead & _SPI6STAT_SRMT_MASK) == 0U));
 }
 
 void SPI6_CallbackRegister (SPI_CALLBACK callback, uintptr_t context)
@@ -321,105 +336,136 @@ void SPI6_CallbackRegister (SPI_CALLBACK callback, uintptr_t context)
     spi6Obj.context = context;
 }
 
-void SPI6_RX_InterruptHandler (void)
+void __attribute__((used)) SPI6_RX_InterruptHandler (void)
 {
     uint32_t receivedData = 0;
 
     /* Check if the receive buffer is empty or not */
-    if ((bool)(SPI6STAT & _SPI6STAT_SPIRBE_MASK) == false)
+    if ((SPI6STAT & _SPI6STAT_SPIRBE_MASK) == 0U)
     {
         /* Receive buffer is not empty. Read the received data. */
         receivedData = SPI6BUF;
 
-        if (spi6Obj.rxCount < spi6Obj.rxSize)
+        size_t rxCount = spi6Obj.rxCount;
+        size_t txCount = spi6Obj.txCount;
+        if (rxCount < spi6Obj.rxSize)
         {
             /* Copy the received data to the user buffer */
             if((_SPI6CON_MODE32_MASK) == (SPI6CON & (_SPI6CON_MODE32_MASK)))
             {
-                ((uint32_t*)spi6Obj.rxBuffer)[spi6Obj.rxCount++] = receivedData;
+                ((uint32_t*)spi6Obj.rxBuffer)[rxCount] = receivedData;
+                rxCount++;
             }
             else if((_SPI6CON_MODE16_MASK) == (SPI6CON & (_SPI6CON_MODE16_MASK)))
             {
-                ((uint16_t*)spi6Obj.rxBuffer)[spi6Obj.rxCount++] = receivedData;
+                ((uint16_t*)spi6Obj.rxBuffer)[rxCount] = (uint16_t)receivedData;
+                rxCount++;
             }
             else
             {
-                ((uint8_t*)spi6Obj.rxBuffer)[spi6Obj.rxCount++] = receivedData;
+                ((uint8_t*)spi6Obj.rxBuffer)[rxCount] = (uint8_t)receivedData;
+                rxCount++;
             }
-            if ((spi6Obj.rxCount == spi6Obj.rxSize) && (spi6Obj.txCount < spi6Obj.txSize))
+
+            spi6Obj.rxCount = rxCount;
+
+            if (rxCount == spi6Obj.rxSize)
             {
-                /* Reception of all bytes is complete. However, there are few more
-                 * bytes to be transmitted as txCount != txSize. Finish the
-                 * transmission of the remaining bytes from the transmit interrupt. */
+                if (txCount < spi6Obj.txSize)
+                {
+                    /* Reception of all bytes is complete. However, there are few more
+                     * bytes to be transmitted as txCount != txSize. Finish the
+                     * transmission of the remaining bytes from the transmit interrupt. */
 
-                /* Disable the receive interrupt */
-                IEC7CLR = 0x10;
+                    /* Disable the receive interrupt */
+                    IEC7CLR = 0x10;
 
-                /* Generate TX interrupt when buffer is completely empty (STXISEL = '00') */
-                SPI6CONCLR = _SPI6CON_STXISEL_MASK;
-                SPI6CONSET = 0x00000004;
+                    /* Generate TX interrupt when buffer is completely empty (STXISEL = '00') */
+                    SPI6CONCLR = _SPI6CON_STXISEL_MASK;
+                    SPI6CONSET = 0x00000004;
 
-                /* Enable the transmit interrupt. Callback will be given from the
-                 * transmit interrupt, when all bytes are shifted out. */
-                IEC7SET = 0x20;
+                    /* Enable the transmit interrupt. Callback will be given from the
+                     * transmit interrupt, when all bytes are shifted out. */
+                    IEC7SET = 0x20;
+                }
             }
         }
-        if (spi6Obj.rxCount < spi6Obj.rxSize)
+        if (rxCount < spi6Obj.rxSize)
         {
             /* More bytes pending to be received .. */
             if((_SPI6CON_MODE32_MASK) == (SPI6CON & (_SPI6CON_MODE32_MASK)))
             {
-                if (spi6Obj.txCount < spi6Obj.txSize)
+                if (txCount < spi6Obj.txSize)
                 {
-                    SPI6BUF = ((uint32_t*)spi6Obj.txBuffer)[spi6Obj.txCount++];
+                    SPI6BUF = ((uint32_t*)spi6Obj.txBuffer)[txCount];
+                    txCount++;
                 }
-                else if (spi6Obj.dummySize > 0)
+                else if (spi6Obj.dummySize > 0U)
                 {
-                    SPI6BUF = (uint32_t)(0xff);
+                    SPI6BUF = (uint32_t)(0xffU);
                     spi6Obj.dummySize--;
+                }
+                else
+                {
+                    /* Do Nothing */
                 }
             }
             else if((_SPI6CON_MODE16_MASK) == (SPI6CON & (_SPI6CON_MODE16_MASK)))
             {
-                if (spi6Obj.txCount < spi6Obj.txSize)
+                if (txCount < spi6Obj.txSize)
                 {
-                    SPI6BUF = ((uint16_t*)spi6Obj.txBuffer)[spi6Obj.txCount++];
+                    SPI6BUF = ((uint16_t*)spi6Obj.txBuffer)[txCount];
+                    txCount++;
                 }
-                else if (spi6Obj.dummySize > 0)
+                else if (spi6Obj.dummySize > 0U)
                 {
-                    SPI6BUF = (uint16_t)(0xff);
+                    SPI6BUF = (uint16_t)(0xffU);
                     spi6Obj.dummySize--;
+                }
+                else
+                {
+                    /* Do Nothing */
                 }
             }
             else
             {
-                if (spi6Obj.txCount < spi6Obj.txSize)
+                if (txCount < spi6Obj.txSize)
                 {
-                    SPI6BUF = ((uint8_t*)spi6Obj.txBuffer)[spi6Obj.txCount++];
+                    SPI6BUF = ((uint8_t*)spi6Obj.txBuffer)[txCount];
+                    txCount++;
                 }
-                else if (spi6Obj.dummySize > 0)
+                else if (spi6Obj.dummySize > 0U)
                 {
-                    SPI6BUF = (uint8_t)(0xff);
+                    SPI6BUF = (uint8_t)(0xffU);
                     spi6Obj.dummySize--;
                 }
+                else
+                {
+                    /* Do Nothing */
+                }
             }
+            spi6Obj.txCount = txCount;
         }
         else
         {
-            if((spi6Obj.rxCount == spi6Obj.rxSize) && (spi6Obj.txCount == spi6Obj.txSize))
+            if(rxCount == spi6Obj.rxSize)
             {
-                /* Clear receiver overflow error if any */
-                SPI6STATCLR = _SPI6STAT_SPIROV_MASK;
-
-                /* Disable receive interrupt */
-                IEC7CLR = 0x10;
-
-                /* Transfer complete. Give a callback */
-                spi6Obj.transferIsBusy = false;
-
-                if(spi6Obj.callback != NULL)
+                if (txCount == spi6Obj.txSize)
                 {
-                    spi6Obj.callback(spi6Obj.context);
+                    /* Clear receiver overflow error if any */
+                    SPI6STATCLR = _SPI6STAT_SPIROV_MASK;
+
+                    /* Disable receive interrupt */
+                    IEC7CLR = 0x10;
+
+                    /* Transfer complete. Give a callback */
+                    spi6Obj.transferIsBusy = false;
+
+                    if(spi6Obj.callback != NULL)
+                    {
+                        uintptr_t context = spi6Obj.context;
+                        spi6Obj.callback(context);
+                    }
                 }
             }
         }
@@ -430,50 +476,64 @@ void SPI6_RX_InterruptHandler (void)
     IFS7CLR = 0x10;
 }
 
-void SPI6_TX_InterruptHandler (void)
+void __attribute__((used)) SPI6_TX_InterruptHandler (void)
 {
     /* If there are more words to be transmitted, then transmit them here and keep track of the count */
     if((SPI6STAT & _SPI6STAT_SPITBE_MASK) == _SPI6STAT_SPITBE_MASK)
     {
-        if (spi6Obj.txCount < spi6Obj.txSize)
+        size_t txCount = spi6Obj.txCount;
+        if (txCount < spi6Obj.txSize)
         {
             if((_SPI6CON_MODE32_MASK) == (SPI6CON & (_SPI6CON_MODE32_MASK)))
             {
-                SPI6BUF = ((uint32_t*)spi6Obj.txBuffer)[spi6Obj.txCount++];
+                SPI6BUF = ((uint32_t*)spi6Obj.txBuffer)[txCount];
+                txCount++;
             }
             else if((_SPI6CON_MODE16_MASK) == (SPI6CON & (_SPI6CON_MODE16_MASK)))
             {
-                SPI6BUF = ((uint16_t*)spi6Obj.txBuffer)[spi6Obj.txCount++];
+                SPI6BUF = ((uint16_t*)spi6Obj.txBuffer)[txCount];
+                txCount++;
             }
             else
             {
-                SPI6BUF = ((uint8_t*)spi6Obj.txBuffer)[spi6Obj.txCount++];
+                SPI6BUF = ((uint8_t*)spi6Obj.txBuffer)[txCount];
+                txCount++;
             }
 
-            if (spi6Obj.txCount == spi6Obj.txSize)
+            spi6Obj.txCount = txCount;
+
+            if (txCount == spi6Obj.txSize)
             {
                 /* All bytes are submitted to the SPI module. Now, enable transmit
                  * interrupt when the shift register is empty (STXISEL = '00')*/
                 SPI6CONCLR = _SPI6CON_STXISEL_MASK;
             }
         }
-        else if ((spi6Obj.txCount == spi6Obj.txSize) && (SPI6STAT & _SPI6STAT_SRMT_MASK))
+        else if (txCount == spi6Obj.txSize)
         {
-            /* This part of code is executed when the shift register is empty. */
-
-            /* Clear receiver overflow error if any */
-            SPI6STATCLR = _SPI6STAT_SPIROV_MASK;
-
-            /* Disable transmit interrupt */
-            IEC7CLR = 0x20;
-
-            /* Transfer complete. Give a callback */
-            spi6Obj.transferIsBusy = false;
-
-            if(spi6Obj.callback != NULL)
+            if ((SPI6STAT & _SPI6STAT_SRMT_MASK) != 0U)
             {
-                spi6Obj.callback(spi6Obj.context);
+                /* This part of code is executed when the shift register is empty. */
+
+                /* Clear receiver overflow error if any */
+                SPI6STATCLR = _SPI6STAT_SPIROV_MASK;
+
+                /* Disable transmit interrupt */
+                IEC7CLR = 0x20;
+
+                /* Transfer complete. Give a callback */
+                spi6Obj.transferIsBusy = false;
+
+                if(spi6Obj.callback != NULL)
+                {
+                    uintptr_t context = spi6Obj.context;
+                    spi6Obj.callback(context);
+                }
             }
+        }
+        else
+        {
+            /* Do Nothing */
         }
     }
     /* Clear the transmit interrupt flag */

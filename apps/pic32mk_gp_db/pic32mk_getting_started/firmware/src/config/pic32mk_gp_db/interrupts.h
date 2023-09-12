@@ -50,11 +50,18 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
+
+void TIMER_2_InterruptHandler( void );
+void CHANGE_NOTICE_G_InterruptHandler( void );
+void DMA0_InterruptHandler( void );
+void SPI6_RX_InterruptHandler( void );
+void SPI6_TX_InterruptHandler( void );
 
 
 
