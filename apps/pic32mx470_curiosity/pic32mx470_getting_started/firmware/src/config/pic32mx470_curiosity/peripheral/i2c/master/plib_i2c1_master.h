@@ -156,8 +156,7 @@ void I2C1_Initialize(void);
         uint8_t myData [NUM_BYTES];
         void MyI2CCallback(uintptr_t context)
         {
-            // This function will be called when the transfer completes. Note
-            // that this functioin executes in the context of the I2C interrupt.
+            
         }
 
         I2C1_Initialize();
@@ -165,7 +164,7 @@ void I2C1_Initialize(void);
 
         if(!I2C1_Read( SLAVE_ADDR, &myData[0], NUM_BYTES ))
         {
-            // error handling
+            
         }
 
 
@@ -175,7 +174,7 @@ void I2C1_Initialize(void);
     None.
 */
 
-bool I2C1_Read(uint16_t address, uint8_t *pdata, size_t length);
+bool I2C1_Read(uint16_t address, uint8_t* rdata, size_t rlength);
 
 // *****************************************************************************
 /* Function:
@@ -227,8 +226,7 @@ bool I2C1_Read(uint16_t address, uint8_t *pdata, size_t length);
         uint8_t myData [NUM_BYTES];
         void MyI2CCallback(uintptr_t context)
         {
-            // This function will be called when the transfer completes. Note
-            // that this functioin executes in the context of the I2C interrupt.
+            
         }
 
         I2C1_Initialize();
@@ -236,7 +234,7 @@ bool I2C1_Read(uint16_t address, uint8_t *pdata, size_t length);
 
         if(!I2C1_Write( SLAVE_ADDR, &myData[0], NUM_BYTES ))
         {
-            // error handling
+            
         }
 
     </code>
@@ -245,7 +243,7 @@ bool I2C1_Read(uint16_t address, uint8_t *pdata, size_t length);
     None.
 */
 
-bool I2C1_Write(uint16_t address, uint8_t *pdata, size_t length);
+bool I2C1_Write(uint16_t address, uint8_t* wdata, size_t wlength);
 
 
 // *****************************************************************************
@@ -307,15 +305,14 @@ bool I2C1_Write(uint16_t address, uint8_t *pdata, size_t length);
 
         void MyI2CCallback(uintptr_t context)
         {
-            // This function will be called when the transfer completes. Note
-            // that this functioin executes in the context of the I2C interrupt.
+            
         }
 
         I2C1_Initialize();
         I2C1_CallbackRegister(MyI2CCallback, NULL);
         if(!I2C1_WriteRead( SLAVE_ADDR, &myTxData[0], NUM_BYTES, myRxData, NUM_BYTES ))
         {
-            // error handling
+            
         }
 
 
@@ -362,13 +359,12 @@ bool I2C1_WriteRead(uint16_t address, uint8_t* wdata, size_t wlength, uint8_t* r
     <code>
         uint8_t myData [NUM_BYTES] = {'1', '0', ' ', 'B', 'Y', 'T', 'E', 'S', '!', '!'};
 
-        // wait for the current transfer to complete
+        
         while(I2C1_IsBusy( ));
 
-        // perform the next transfer
         if(!I2C1_Write( SLAVE_ADDR, &myData[0], NUM_BYTES ))
         {
-            // error handling
+            
         }
 
     </code>
@@ -404,7 +400,7 @@ bool I2C1_IsBusy(void);
     <code>
     if(I2C_ERROR_NONE == I2C1_ErrorGet())
     {
-        //I2C transfer is completed, go to next state.
+        
     }
     </code>
 
@@ -447,8 +443,7 @@ I2C_ERROR I2C1_ErrorGet(void);
 
   Example:
     <code>
-        // Refer to the description of the I2C_CALLBACK data type for
-        // example usage.
+        
     </code>
 
   Remarks:
@@ -483,12 +478,12 @@ void I2C1_CallbackRegister(I2C_CALLBACK callback, uintptr_t contextHandle);
 
     setup.clkSpeed = 400000;
 
-    // Make sure that the I2C is not busy before changing the I2C clock frequency
+    Make sure that the I2C is not busy before changing the I2C clock frequency
     if (I2C1_IsBusy() == false)
     {
         if (I2C1_TransferSetup( &setup, 0 ) == true)
         {
-            // Transfer Setup updated successfully
+            
         }
     }
     </code>
@@ -499,6 +494,8 @@ void I2C1_CallbackRegister(I2C_CALLBACK callback, uintptr_t contextHandle);
 */
 
 bool I2C1_TransferSetup(I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq );
+
+void I2C1_TransferAbort( void );
 
 
 // DOM-IGNORE-BEGIN

@@ -46,6 +46,7 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include "device.h"
 #include "plib_tmr_common.h"
 
@@ -77,7 +78,7 @@ void TMR2_Start(void);
 
 void TMR2_Stop(void);
 
-void TMR2_PeriodSet(uint32_t);
+void TMR2_PeriodSet(uint32_t period);
 
 uint32_t TMR2_PeriodGet(void);
 
@@ -90,6 +91,7 @@ void TMR2_InterruptEnable(void);
 void TMR2_InterruptDisable(void);
 
 void TMR2_CallbackRegister( TMR_CALLBACK callback_fn, uintptr_t context );
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
