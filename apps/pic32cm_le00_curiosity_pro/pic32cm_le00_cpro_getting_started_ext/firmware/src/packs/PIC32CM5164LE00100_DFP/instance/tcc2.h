@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:41Z */
+/* file generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CMLE00_TCC2_INSTANCE_
 #define _PIC32CMLE00_TCC2_INSTANCE_
 
@@ -28,17 +28,17 @@
 /* ========== Instance Parameter definitions for TCC2 peripheral ========== */
 #define TCC2_CC_NUM                              (2)        /* Number of Compare/Capture units */
 #define TCC2_DITHERING                           (0)        /* Dithering feature implemented */
-#define TCC2_DMAC_ID_OVF                         (33)       /* DMA overflow/underflow/retrigger trigger */
 #define TCC2_DMAC_ID_MC0                         (34)       /* Indexes of DMA Match/Compare 0 trigger */
 #define TCC2_DMAC_ID_MC1                         (35)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TCC2_DMAC_ID_OVF                         (33)       /* DMA overflow/underflow/retrigger trigger */
 #define TCC2_DTI                                 (0)        /* Dead-Time-Insertion feature implemented */
 #define TCC2_GCLK_ID                             (26)       /* Index of Generic Clock */
+#define TCC2_INSTANCE_ID                         (76)       /* Instance index for TCC2 */
 #define TCC2_MASTER_SLAVE_MODE                   (0)        /* TCC type 0 : NA, 1 : Master, 2 : Slave */
 #define TCC2_OTMX                                (0)        /* Output Matrix feature implemented */
 #define TCC2_OW_NUM                              (2)        /* Number of Output Waveforms */
 #define TCC2_PG                                  (0)        /* Pattern Generation feature implemented */
 #define TCC2_SIZE                                (16)       
 #define TCC2_SWAP                                (0)        /* DTI outputs swap feature implemented */
-#define TCC2_INSTANCE_ID                         (76)       /* Instance index for TCC2 */
 
 #endif /* _PIC32CMLE00_TCC2_INSTANCE_ */

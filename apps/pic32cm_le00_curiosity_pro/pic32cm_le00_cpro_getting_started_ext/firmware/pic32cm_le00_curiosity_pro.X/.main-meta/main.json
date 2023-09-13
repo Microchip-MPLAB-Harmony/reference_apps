@@ -10,21 +10,21 @@
       "shortDescription":"Demonstrates how to get started with PIC32CM LE00 microcontroller using EIC, RTC, DMAC, GPIO, SERCOM(I2C), and SERCOM(USART)",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.00"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.0.0"
+            "semverRange":">=4.30"
          }
       ],
       "dfp":{
          "name":"PIC32CM-LE_DFP",
-         "semverRange":"^1.1.162"
+         "semverRange":"^1.2.273"
       },
       "configurator":{
          "name":"MCC",
-         "semverRange":">=5.1.17"
+         "semverRange":">=5.3.7"
       },
       "device":{
          "metaDataVersion":"1.0.0",

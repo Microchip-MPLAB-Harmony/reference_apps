@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:41Z */
+/* file generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CMLE00_PTC_INSTANCE_
 #define _PIC32CMLE00_PTC_INSTANCE_
 
@@ -30,8 +30,8 @@
 #define PTC_DMAC_ID_SEQ                          (45)       /* Index of DMA SEQ trigger */
 #define PTC_DMAC_ID_WCOMP                        (46)       /* Index of DMA WCOMP trigger */
 #define PTC_GCLK_ID                              (31)       /* Index of Generic Clock */
+#define PTC_INSTANCE_ID                          (80)       /* Instance index for PTC */
 #define PTC_LINES_MSB                            (31)       
 #define PTC_LINES_NUM                            (32)       /* Number of PTC lines */
-#define PTC_INSTANCE_ID                          (80)       /* Instance index for PTC */
 
 #endif /* _PIC32CMLE00_PTC_INSTANCE_ */

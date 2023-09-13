@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,14 +20,14 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:41Z */
+/* file generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CMLE00_RSTC_INSTANCE_
 #define _PIC32CMLE00_RSTC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for RSTC peripheral ========== */
 #define RSTC_BACKUP_IMPLEMENTED                  (0)        
-#define RSTC_NUMBER_OF_EXTWAKE                   (0)        /* number of external wakeup line */
 #define RSTC_INSTANCE_ID                         (3)        /* Instance index for RSTC */
+#define RSTC_NUMBER_OF_EXTWAKE                   (0)        /* number of external wakeup line */
 
 #endif /* _PIC32CMLE00_RSTC_INSTANCE_ */

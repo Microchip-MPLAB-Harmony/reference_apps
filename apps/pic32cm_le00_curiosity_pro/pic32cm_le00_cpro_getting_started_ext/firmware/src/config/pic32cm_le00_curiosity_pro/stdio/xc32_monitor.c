@@ -48,8 +48,7 @@ int read(int handle, void *buffer, unsigned int len)
 {
     int nChars = 0;
     bool success = false;
-    (void)len;
-    if ((handle == 0)  && (len > 0))
+    if ((handle == 0)  && (len > 0U))
     {
         do
         {
@@ -70,5 +69,5 @@ int write(int handle, void * buffer, size_t count)
            success = SERCOM3_USART_Write(buffer, count);
        }while( !success);
    }
-   return count;
+   return (int)count;
 }
