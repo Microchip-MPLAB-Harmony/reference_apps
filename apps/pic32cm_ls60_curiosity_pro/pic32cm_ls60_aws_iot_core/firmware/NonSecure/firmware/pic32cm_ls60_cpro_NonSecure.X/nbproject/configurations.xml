@@ -830,14 +830,14 @@
         <targetDevice>PIC32CM5164LS60100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
         <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.2.274"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -908,13 +908,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value="-mcmse"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../../../firmware/src/common;../src;../src/common/paho_mqtt_embedded_c/MQTTClient-C;../src/common/paho_mqtt_embedded_c/MQTTPacket;../src/common/paho_mqtt_embedded_c/platform;../src/common/parson_json;../src/common/utilities;../src/config/pic32cm_ls60;../src/config/pic32cm_ls60/driver/winc/include/;../src/config/pic32cm_ls60/driver/winc/include/dev;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp/include;../src/config/pic32cm_ls60/driver/winc/include/drv/common;../src/config/pic32cm_ls60/driver/winc/include/drv/driver;../src/config/pic32cm_ls60/driver/winc/include/drv/socket;../src/config/pic32cm_ls60/driver/winc/include/drv/spi_flash;../src/config/pic32cm_ls60/library/cryptoauthlib;../src/config/pic32cm_ls60/library/cryptoauthlib/crypto;../src/config/pic32cm_ls60/library/cryptoauthlib/pkcs11;../src/config/pic32cm_ls60/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS60100_DFP;..\..\..\..\"/>
+                  value="../src;../src/common/paho_mqtt_embedded_c/MQTTClient-C;../src/common/paho_mqtt_embedded_c/MQTTPacket;../src/common/paho_mqtt_embedded_c/platform;../src/common/parson_json;../src/common/utilities;../src/config/pic32cm_ls60;../src/config/pic32cm_ls60/driver/winc/include/;../src/config/pic32cm_ls60/driver/winc/include/dev;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp;../src/config/pic32cm_ls60/driver/winc/include/drv/bsp/include;../src/config/pic32cm_ls60/driver/winc/include/drv/common;../src/config/pic32cm_ls60/driver/winc/include/drv/driver;../src/config/pic32cm_ls60/driver/winc/include/drv/socket;../src/config/pic32cm_ls60/driver/winc/include/drv/spi_flash;../src/config/pic32cm_ls60/library/cryptoauthlib;../src/config/pic32cm_ls60/library/cryptoauthlib/crypto;../src/config/pic32cm_ls60/library/cryptoauthlib/pkcs11;../src/config/pic32cm_ls60/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS60100_DFP;..\..\..\..\;..\src\common"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -965,6 +966,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value="-l:pic32cm_ls60_cpro_Secure_sg_veneer.lib"/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -1006,6 +1008,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value="-mcmse"/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

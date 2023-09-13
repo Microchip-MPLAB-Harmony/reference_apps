@@ -12,7 +12,8 @@ nav_order: 3
 
 
 
------
+--
+---
 
 <h2> Description: </h2>
 
@@ -246,6 +247,12 @@ The following sections describes the steps to run the application.
 - Once the project is opened in the IDE Click on the **Make and Program** icon as shown below and wait till the **Programming complete** message.
   
   ![](.\images\tpds17.png)
+  
+  **Note:**
+  
+  - Windows OS has a maximum path length of 260 characters and a command-line limitation for Windows OS of 8191 characters. For details, see [6.5.5 Path, File and Folder Name Restrictions](https://onlinedocs.microchip.com/oxy/GUID-D79ACEBE-41BD-43EF-8E1B-9462847AE13E-en-US-9/GUID-87B07C9C-6305-4E40-9BD9-F9418D80761A.html "https://onlinedocs.microchip.com/oxy/guid-d79acebe-41bd-43ef-8e1b-9462847ae13e-en-us-9/guid-87b07c9c-6305-4e40-9bd9-f9418d80761a.html").
+  - The TrustZone based project come with long path name, hence the project build may fail due to exceeding Windows maximum path length.
+  - **Workaround:** Move the project folder to C:/ drive to reduce the project path length then open in MPLAB X IDE to build the project.
 
 <h4> Firmware upgrade through MPLAB X IDE </h4>
 - Most developers usually follow this method to program the .hex file from the MPLAB X IDE environment.(Navigate to hex folder inside the project directory as shown in the below image)

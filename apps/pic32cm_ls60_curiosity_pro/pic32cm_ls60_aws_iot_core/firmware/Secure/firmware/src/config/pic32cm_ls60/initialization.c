@@ -211,9 +211,9 @@ void SYS_Initialize ( void* data )
     ADC_Initialize();
     EVSYS_Initialize();
 
+	BSP_Initialize();
     EIC_Initialize();
 
-	BSP_Initialize();
 
     NVIC_Initialize();
 

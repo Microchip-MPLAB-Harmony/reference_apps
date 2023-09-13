@@ -1,4 +1,4 @@
-<config configName="pic32cm_ls60" projectName="aws_iot_core_pic32cm_ls60_cpro_NonSecure" configVersion="1.1" device="PIC32CM5164LS60100" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
+<config configName="pic32cm_ls60" projectName="aws_iot_core_pic32cm_ls60_cpro_NonSecure" configVersion="1.1" device="PIC32CM5164LS60100" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -111,7 +111,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -15591,7 +15591,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\definitions.h</file>
-         <hash>7730da60716e0c665ccf56f26ff43f7efff9f4d5c8f8a1c64c6958fe46724592</hash>
+         <hash>4fd112d0631fec956a8dc13fbeb5d4270c797c9e80374e036414c6e065fea69d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\crypto\atca_crypto_sw_sha2.c</file>
@@ -15711,7 +15711,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\initialization.c</file>
-         <hash>06709d39c7dc30e3940e3d6e0ebf9c986e1b3c6e1543f94b407672cb8cd9529c</hash>
+         <hash>580cfdbf05506acfd4db6c4ad4c7bf94a053ed36a676a7bf3c247dda5703557a</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\hal\hal_harmony_init.c</file>
@@ -16391,7 +16391,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\definitions.h</file>
-         <hash>72765ac4d0be350f47a35211dbf2db3859762dd785135640b03c8a1005eda49a</hash>
+         <hash>9c433b84ebe4f8b643bc5dbab694f6eca1a4491f084ff2ec85831427d9f26d8f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atca_helpers.c</file>
@@ -17331,7 +17331,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\initialization.c</file>
-         <hash>412eb571cc601e2be68527c1721d11f7b5d42613927712502f14ac65ac9a7c5f</hash>
+         <hash>428f72a5c5eb41056f79fead9a71825e7201574214f3fe7f79ba86a0c95fe375</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
