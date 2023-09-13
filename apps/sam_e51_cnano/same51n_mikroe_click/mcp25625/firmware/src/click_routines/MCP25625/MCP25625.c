@@ -64,7 +64,7 @@ void convertCANid2Reg(uint32_t tempPassedInID, uint8_t canIdType, id_reg_t *pass
 Local Variables
 */ 
 ctrl_status_t ctrlStatus;
-ctrl_error_status_t errorStatus;
+ctrl_error_status_t errorsStatus;
 id_reg_t idReg;
 
 bool MCP25625_SPI_Write(uint8_t lclTransmitData)
@@ -525,9 +525,9 @@ uint8_t MCP25625_isBussOff(void)
 {
     uint8_t returnValue = 0;
     
-    errorStatus.error_flag_reg = MCP25625_Read_Byte(MCP25625_EFLG);
+    errorsStatus.error_flag_reg = MCP25625_Read_Byte(MCP25625_EFLG);
     
-    if(errorStatus.TXBO == 1)
+    if(errorsStatus.TXBO == 1)
     {
         returnValue = 1;
     }
@@ -539,9 +539,9 @@ uint8_t MCP25625_isRxErrorPassive(void)
 {
     uint8_t returnValue = 0;
     
-    errorStatus.error_flag_reg = MCP25625_Read_Byte(MCP25625_EFLG);
+    errorsStatus.error_flag_reg = MCP25625_Read_Byte(MCP25625_EFLG);
     
-    if(errorStatus.RXEP == 1)
+    if(errorsStatus.RXEP == 1)
     {
         returnValue = 1;
     }
@@ -553,9 +553,9 @@ uint8_t MCP25625_isTxErrorPassive(void)
 {
     uint8_t returnValue = 0;
     
-    errorStatus.error_flag_reg = MCP25625_Read_Byte(MCP25625_EFLG);
+    errorsStatus.error_flag_reg = MCP25625_Read_Byte(MCP25625_EFLG);
     
-    if(errorStatus.TXEP == 1)
+    if(errorsStatus.TXEP == 1)
     {
         returnValue = 1;
     }

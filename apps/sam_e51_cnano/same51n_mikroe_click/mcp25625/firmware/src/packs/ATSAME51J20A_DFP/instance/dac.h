@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-02-14T14:27:15Z */
+/* file generated from device description version 2023-03-17T09:49:56Z */
 #ifndef _SAME51_DAC_INSTANCE_
 #define _SAME51_DAC_INSTANCE_
 
@@ -33,7 +33,7 @@
 #define DAC_DMAC_ID_RESRDY0                      (74)       /* Index of DMA DAC Channel 0 Result Ready request */
 #define DAC_DMAC_ID_RESRDY1                      (75)       /* Index of DMA DAC Channel 1 Result Ready request */
 #define DAC_GCLK_ID                              (42)       /* Index of Generic Clock */
-#define DAC_STEP                                 (7)        /* Number of steps to reach full scale */
 #define DAC_INSTANCE_ID                          (105)      /* Instance index for DAC */
+#define DAC_STEP                                 (7)        /* Number of steps to reach full scale */
 
 #endif /* _SAME51_DAC_INSTANCE_ */
