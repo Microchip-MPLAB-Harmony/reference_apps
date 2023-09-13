@@ -1,22 +1,23 @@
 /*******************************************************************************
- System Interrupts File
-
-  Company:
-    Microchip Technology Inc.
+ System Tasks Header File
 
   File Name:
-    interrupt.h
+    sys_tasks.h
 
   Summary:
-    Interrupt vectors mapping
+    This file contains declarations for task handles.
 
   Description:
-    This file contains declarations of device vectors used by Harmony 3
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
+
+  Remarks:
+    None
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,33 +40,33 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include <stdint.h>
 
-
+#include "configuration.h"
+#include "definitions.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Handler Routines
+// Section: RTOS "Tasks" Handles
 // *****************************************************************************
 // *****************************************************************************
+/* Declaration of  APP_SENSOR_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_SENSOR_THREAD_Tasks;
 
-void Reset_Handler (void);
-void NonMaskableInt_Handler (void);
-void HardFault_Handler (void);
-void vPortSVCHandler (void);
-void xPortPendSVHandler (void);
-void xPortSysTickHandler (void);
-void SERCOM2_I2C_InterruptHandler (void);
-void SERCOM3_USART_InterruptHandler (void);
+/* Declaration of  APP_EEPROM_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_EEPROM_THREAD_Tasks;
 
+/* Declaration of  APP_USER_INPUT_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_USER_INPUT_THREAD_Tasks;
 
 
-#endif // INTERRUPTS_H
+
+
+#endif //SYS_TASKS_H
