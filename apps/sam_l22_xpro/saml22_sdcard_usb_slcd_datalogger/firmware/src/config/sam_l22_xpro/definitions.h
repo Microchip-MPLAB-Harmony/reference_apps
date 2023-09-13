@@ -56,11 +56,11 @@
 #include "peripheral/adc/plib_adc.h"
 #include "peripheral/supc/plib_supc.h"
 #include "gfx/driver/controller/slcd/drv_gfx_slcd.h"
-#include "peripheral/rtc/plib_rtc.h"
 #include "peripheral/tc/plib_tc0.h"
+#include "peripheral/rtc/plib_rtc.h"
 #include "driver/sdspi/drv_sdspi.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
+#include "driver/i2c/drv_i2c.h"
 #include "driver/usb/usbfsv1/drv_usbfsv1.h"
 #include "bsp/bsp.h"
 #include "driver/spi/drv_spi.h"
@@ -75,8 +75,8 @@
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/dmac/plib_dmac.h"
-#include "peripheral/pm/plib_pm.h"
 #include "peripheral/sercom/i2c_master/plib_sercom5_i2c_master.h"
+#include "peripheral/pm/plib_pm.h"
 #include "peripheral/sercom/usart/plib_sercom4_usart.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
@@ -96,6 +96,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAML22N18A"
+#define DEVICE_ARCH			 "CORTEX-M0PLUS"
+#define DEVICE_FAMILY		 "SAML"
+#define DEVICE_SERIES		 "SAML22"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 32000000
@@ -216,7 +222,7 @@ typedef struct
     /* I2C0 Driver Object */
     SYS_MODULE_OBJ drvI2C0;
 
-	SYS_MODULE_OBJ  usbDevObject0;
+    SYS_MODULE_OBJ  usbDevObject0;
 
     SYS_MODULE_OBJ  sysTime;
 	SYS_MODULE_OBJ  drvUSBFSV1Object;

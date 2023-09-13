@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,12 +26,12 @@
 
 
 /* ========== Instance Parameter definitions for SLCD peripheral ========== */
-#define SLCD_DMAC_ID_ABMDRDY                     _UL_(34)   
-#define SLCD_DMAC_ID_ACMDRDY                     _UL_(33)   
-#define SLCD_DMAC_ID_DMU                         _UL_(32)   
-#define SLCD_MAX_COM                             _UL_(8)    /* Max number of COM lines (4 or 8) */
-#define SLCD_MAX_SEG                             _UL_(44)   /* Max number of SEG lines (24 or 44) */
-#define SLCD_NB_LP                               _UL_(52)   /* Number of LCD pins ([28..64] or [48..64]) */
-#define SLCD_INSTANCE_ID                         _UL_(79)   
+#define SLCD_DMAC_ID_ABMDRDY                     (34)       
+#define SLCD_DMAC_ID_ACMDRDY                     (33)       
+#define SLCD_DMAC_ID_DMU                         (32)       
+#define SLCD_MAX_COM                             (8)        /* Max number of COM lines (4 or 8) */
+#define SLCD_MAX_SEG                             (44)       /* Max number of SEG lines (24 or 44) */
+#define SLCD_NB_LP                               (52)       /* Number of LCD pins ([28..64] or [48..64]) */
+#define SLCD_INSTANCE_ID                         (79)       
 
 #endif /* _SAML22_SLCD_INSTANCE_ */

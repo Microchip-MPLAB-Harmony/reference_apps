@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,13 +26,13 @@
 
 
 /* ========== Instance Parameter definitions for PM peripheral ========== */
-#define PM_BIAS_RAM_HS                           _UL_(1)    /* one if RAM HS can be back biased */
-#define PM_PD_NUM                                _UL_(0)    /* Number of switchable Power Domain */
-#define PM_INSTANCE_ID                           _UL_(1)    
-#define PM_HAS_BACKUP_SLEEP                      _UL_(1)    /* BACKUP Sleep mode supported */
-#define PM_HAS_OFF_SLEEP                         _UL_(1)    /* OFF Sleep mode supported */
-#define PM_HAS_BBIASHS_FIELD                     _UL_(1)    /* BBIASHS field is present */
-#define PM_HAS_PLCFG                             _UL_(1)    /* Performance Level Configuration supported */
-#define PM_HAS_IORET_BIT                         _UL_(1)    /* IORET bit is present */
+#define PM_BIAS_RAM_HS                           (1)        /* one if RAM HS can be back biased */
+#define PM_PD_NUM                                (0)        /* Number of switchable Power Domain */
+#define PM_INSTANCE_ID                           (1)        
+#define PM_HAS_BACKUP_SLEEP                      (1)        /* BACKUP Sleep mode supported */
+#define PM_HAS_OFF_SLEEP                         (1)        /* OFF Sleep mode supported */
+#define PM_HAS_BBIASHS_FIELD                     (1)        /* BBIASHS field is present */
+#define PM_HAS_PLCFG                             (1)        /* Performance Level Configuration supported */
+#define PM_HAS_IORET_BIT                         (1)        /* IORET bit is present */
 
 #endif /* _SAML22_PM_INSTANCE_ */

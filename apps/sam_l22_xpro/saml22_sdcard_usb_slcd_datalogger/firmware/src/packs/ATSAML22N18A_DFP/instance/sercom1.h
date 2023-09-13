@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,20 +26,20 @@
 
 
 /* ========== Instance Parameter definitions for SERCOM1 peripheral ========== */
-#define SERCOM1_DMAC_ID_RX                       _UL_(4)    /* Index of DMA RX trigger */
-#define SERCOM1_DMAC_ID_TX                       _UL_(5)    /* Index of DMA TX trigger */
-#define SERCOM1_GCLK_ID_CORE                     _UL_(17)   
-#define SERCOM1_GCLK_ID_SLOW                     _UL_(15)   
-#define SERCOM1_INT_MSB                          _UL_(6)    
-#define SERCOM1_PMSB                             _UL_(3)    
-#define SERCOM1_SPI                              _UL_(1)    /* SPI mode implemented? */
-#define SERCOM1_TWIM                             _UL_(1)    /* TWI Master mode implemented? */
-#define SERCOM1_TWIS                             _UL_(1)    /* TWI Slave mode implemented? */
-#define SERCOM1_TWI_HSMODE                       _UL_(1)    /* TWI HighSpeed mode implemented? */
-#define SERCOM1_USART                            _UL_(1)    /* USART mode implemented? */
-#define SERCOM1_USART_ISO7816                    _UL_(1)    /* USART ISO7816 mode implemented? */
-#define SERCOM1_USART_LIN_MASTER                 _UL_(0)    /* USART LIN Master mode implemented? */
-#define SERCOM1_USART_RS485                      _UL_(1)    /* USART RS485 mode implemented? */
-#define SERCOM1_INSTANCE_ID                      _UL_(66)   
+#define SERCOM1_DMAC_ID_RX                       (4)        /* Index of DMA RX trigger */
+#define SERCOM1_DMAC_ID_TX                       (5)        /* Index of DMA TX trigger */
+#define SERCOM1_GCLK_ID_CORE                     (17)       
+#define SERCOM1_GCLK_ID_SLOW                     (15)       
+#define SERCOM1_INT_MSB                          (6)        
+#define SERCOM1_PMSB                             (3)        
+#define SERCOM1_SPI                              (1)        /* SPI mode implemented? */
+#define SERCOM1_TWIM                             (1)        /* TWI Master mode implemented? */
+#define SERCOM1_TWIS                             (1)        /* TWI Slave mode implemented? */
+#define SERCOM1_TWI_HSMODE                       (1)        /* TWI HighSpeed mode implemented? */
+#define SERCOM1_USART                            (1)        /* USART mode implemented? */
+#define SERCOM1_USART_ISO7816                    (1)        /* USART ISO7816 mode implemented? */
+#define SERCOM1_USART_LIN_MASTER                 (0)        /* USART LIN Master mode implemented? */
+#define SERCOM1_USART_RS485                      (1)        /* USART RS485 mode implemented? */
+#define SERCOM1_INSTANCE_ID                      (66)       
 
 #endif /* _SAML22_SERCOM1_INSTANCE_ */

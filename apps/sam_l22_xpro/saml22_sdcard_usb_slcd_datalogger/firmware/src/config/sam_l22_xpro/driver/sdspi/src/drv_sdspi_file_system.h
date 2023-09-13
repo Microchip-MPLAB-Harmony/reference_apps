@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    drv_sdspi_file_system.c
+    drv_sdspi_file_system.h
 
   Summary:
     SD Card (SPI) Driver Interface Definition
@@ -41,6 +41,8 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
  *******************************************************************************/
 // DOM-IGNORE-END
+#ifndef DRV_SDSPI_FILE_SYSTEM_H
+#define DRV_SDSPI_FILE_SYSTEM_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -48,45 +50,31 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "driver/sdspi/src/drv_sdspi_file_system.h"
+#include "driver/sdspi/drv_sdspi.h"
+#include "system/fs/sys_fs_media_manager.h"
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+    extern "C" {
+#endif
+// DOM-IGNORE-END
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
-/* MISRA C-2012 Rule 11.1 deviated:6 Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
-static const SYS_FS_MEDIA_FUNCTIONS sdspiMediaFunctions =
-{
-    .mediaStatusGet     = DRV_SDSPI_IsAttached,
-    .mediaGeometryGet   = DRV_SDSPI_GeometryGet,
-    .sectorRead         = DRV_SDSPI_AsyncRead,
-    .sectorWrite        = DRV_SDSPI_AsyncWrite,
-    .eventHandlerset    = DRV_SDSPI_EventHandlerSet,
-    .commandStatusGet   = (CommandStatusGetType) DRV_SDSPI_CommandStatusGet,
-    .Read               = DRV_SDSPI_AsyncRead,
-    .erase              = NULL,
-    .addressGet         = NULL,
-    .open               = DRV_SDSPI_Open,
-    .close              = DRV_SDSPI_Close,
-    .tasks              = DRV_SDSPI_Tasks,
-};
 
-/* MISRAC 2012 deviation block end */
 // *****************************************************************************
 // *****************************************************************************
 // Section: MEMORY Driver File system interface Routines
 // *****************************************************************************
 // *****************************************************************************
 
-void DRV_SDSPI_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex)
-{
-    (void) SYS_FS_MEDIA_MANAGER_Register
-    (
-        (SYS_MODULE_OBJ)drvIndex,
-        (SYS_MODULE_INDEX)drvIndex,
-        &sdspiMediaFunctions,
-        (SYS_FS_MEDIA_TYPE)SYS_FS_MEDIA_TYPE_SD_CARD
-    );
+void DRV_SDSPI_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex);
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif //#ifndef DRV_SDSPI_FILE_SYSTEM_H

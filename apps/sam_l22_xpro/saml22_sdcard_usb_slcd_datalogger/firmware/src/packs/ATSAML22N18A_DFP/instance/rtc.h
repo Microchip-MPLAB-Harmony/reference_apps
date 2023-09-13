@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,14 +26,14 @@
 
 
 /* ========== Instance Parameter definitions for RTC peripheral ========== */
-#define RTC_ALARM_NUM                            _UL_(1)    /* Number of Alarms */
-#define RTC_BKUP_NUM                             _UL_(8)    /* Number of Backup Registers */
-#define RTC_COMP16_NUM                           _UL_(2)    /* Number of 16-bit Comparators */
-#define RTC_COMP32_NUM                           _UL_(1)    /* Number of 32-bit Comparators */
-#define RTC_DMAC_ID_TIMESTAMP                    _UL_(1)    /* DMA RTC timestamp trigger */
-#define RTC_GPR_NUM                              _UL_(2)    /* Number of General-Purpose Registers */
-#define RTC_PER_NUM                              _UL_(8)    /* Number of Periodic Intervals */
-#define RTC_TAMPER_NUM                           _UL_(5)    /* Number of Tamper Inputs */
-#define RTC_INSTANCE_ID                          _UL_(9)    
+#define RTC_ALARM_NUM                            (1)        /* Number of Alarms */
+#define RTC_BKUP_NUM                             (8)        /* Number of Backup Registers */
+#define RTC_COMP16_NUM                           (2)        /* Number of 16-bit Comparators */
+#define RTC_COMP32_NUM                           (1)        /* Number of 32-bit Comparators */
+#define RTC_DMAC_ID_TIMESTAMP                    (1)        /* DMA RTC timestamp trigger */
+#define RTC_GPR_NUM                              (2)        /* Number of General-Purpose Registers */
+#define RTC_PER_NUM                              (8)        /* Number of Periodic Intervals */
+#define RTC_TAMPER_NUM                           (5)        /* Number of Tamper Inputs */
+#define RTC_INSTANCE_ID                          (9)        
 
 #endif /* _SAML22_RTC_INSTANCE_ */

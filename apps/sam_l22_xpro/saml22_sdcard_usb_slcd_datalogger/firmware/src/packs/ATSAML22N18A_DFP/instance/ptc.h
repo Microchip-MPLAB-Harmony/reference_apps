@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,14 +26,14 @@
 
 
 /* ========== Instance Parameter definitions for PTC peripheral ========== */
-#define PTC_DMAC_ID_EOC                          _UL_(37)   /* Index of DMA EOC trigger */
-#define PTC_DMAC_ID_SEQ                          _UL_(38)   /* Index of DMA SEQ trigger */
-#define PTC_DMAC_ID_WCOMP                        _UL_(39)   /* Index of DMA WCOMP trigger */
-#define PTC_GCLK_ID                              _UL_(27)   /* Index of Generic Clock */
-#define PTC_LINES_MSB                            _UL_(31)   
-#define PTC_LINES_NUM                            _UL_(32)   /* Number of PTC lines */
-#define PTC_Y_LINES_MSB                          _UL_(23)   
-#define PTC_Y_LINES_NUM                          _UL_(24)   /* Number of Y lines */
-#define PTC_INSTANCE_ID                          _UL_(78)   
+#define PTC_DMAC_ID_EOC                          (37)       /* Index of DMA EOC trigger */
+#define PTC_DMAC_ID_SEQ                          (38)       /* Index of DMA SEQ trigger */
+#define PTC_DMAC_ID_WCOMP                        (39)       /* Index of DMA WCOMP trigger */
+#define PTC_GCLK_ID                              (27)       /* Index of Generic Clock */
+#define PTC_LINES_MSB                            (31)       
+#define PTC_LINES_NUM                            (32)       /* Number of PTC lines */
+#define PTC_Y_LINES_MSB                          (23)       
+#define PTC_Y_LINES_NUM                          (24)       /* Number of Y lines */
+#define PTC_INSTANCE_ID                          (78)       
 
 #endif /* _SAML22_PTC_INSTANCE_ */

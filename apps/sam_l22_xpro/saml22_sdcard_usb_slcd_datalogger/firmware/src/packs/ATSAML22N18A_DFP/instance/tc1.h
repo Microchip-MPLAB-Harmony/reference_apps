@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,14 +26,14 @@
 
 
 /* ========== Instance Parameter definitions for TC1 peripheral ========== */
-#define TC1_CC_NUM                               _UL_(2)    
-#define TC1_DMAC_ID_OVF                          _UL_(22)   /* Indexes of DMA Overflow trigger */
-#define TC1_DMAC_ID_MC0                          _UL_(23)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TC1_DMAC_ID_MC1                          _UL_(24)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TC1_EXT                                  _UL_(0)    
-#define TC1_GCLK_ID                              _UL_(23)   
-#define TC1_MASTER_SLAVE_MODE                    _UL_(2)    /* TC type 1 : Master, 2 : Slave */
-#define TC1_OW_NUM                               _UL_(2)    
-#define TC1_INSTANCE_ID                          _UL_(73)   
+#define TC1_CC_NUM                               (2)        
+#define TC1_DMAC_ID_OVF                          (22)       /* Indexes of DMA Overflow trigger */
+#define TC1_DMAC_ID_MC0                          (23)       /* Indexes of DMA Match/Compare 0 trigger */
+#define TC1_DMAC_ID_MC1                          (24)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TC1_EXT                                  (0)        
+#define TC1_GCLK_ID                              (23)       
+#define TC1_MASTER_SLAVE_MODE                    (2)        /* TC type 1 : Master, 2 : Slave */
+#define TC1_OW_NUM                               (2)        
+#define TC1_INSTANCE_ID                          (73)       
 
 #endif /* _SAML22_TC1_INSTANCE_ */

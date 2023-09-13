@@ -21,21 +21,7 @@
  */
 
 /* file generated from device description version 2020-11-19T06:59:39Z */
-#ifndef _SAML22_SUPC_INSTANCE_
-#define _SAML22_SUPC_INSTANCE_
+#ifndef _SAML22_FUSES_INSTANCE_
+#define _SAML22_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for SUPC peripheral ========== */
-#define SUPC_BOD12_CALIB_MSB                     (5)        
-#define SUPC_BOD33_CALIB_MSB                     (5)        
-#define SUPC_OUT_NUM_MSB                         (1)        /* MSB of backup output pad Number */
-#define SUPC_HAS_VMON_BIT                        (1)        /* VMON bit is present */
-#define SUPC_HAS_RUNBKUP_BIT                     (1)        /* RUNBKUP bit is present */
-#define SUPC_HAS_STDBYPL0_BIT                    (1)        /* STDBYPL0 bit is present */
-#define SUPC_HAS_LPEFF_BIT                       (1)        /* LPEFF bit is present */
-#define SUPC_HAS_SEL_BIT                         (1)        /* SEL bit is present */
-#define SUPC_HAS_BOD33_REG_NAME                  (1)        /* Name of BOD register is BOD33 */
-#define SUPC_HAS_NO_TSEN                         (1)        /* SUPC does not have TSEN */
-#define SUPC_INSTANCE_ID                         (6)        
-
-#endif /* _SAML22_SUPC_INSTANCE_ */
+#endif /* _SAML22_FUSES_INSTANCE_ */

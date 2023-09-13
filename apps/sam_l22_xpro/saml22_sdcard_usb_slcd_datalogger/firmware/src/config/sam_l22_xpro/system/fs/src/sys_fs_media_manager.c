@@ -38,28 +38,26 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 //DOM-IGNORE-END
-
+#include <string.h>
 #include "system/fs/src/sys_fs_media_manager_local.h"
 #include "system/fs/src/sys_fs_local.h"
 #include "system/fs/fat_fs/file_system/ff.h"
 
-const char *gSYSFSVolumeName [] = {
+static const char *gSYSFSVolumeName [] = {
     "nvm",
     "sd",
     "mmcblk",
     "ram",
     "mtd",
 };
-
 /**/
-const uint16_t gPartitionTypeOffset [4] =
+static const uint16_t gPartitionTypeOffset [4] =
 {
     450,
     466,
     482,
     498
 };
-
 // *****************************************************************************
 /* Media object
 
@@ -73,7 +71,7 @@ const uint16_t gPartitionTypeOffset [4] =
     None
 */
 
-SYS_FS_MEDIA gSYSFSMediaObject[SYS_FS_MEDIA_NUMBER];
+static SYS_FS_MEDIA gSYSFSMediaObject[SYS_FS_MEDIA_NUMBER];
 
 // *****************************************************************************
 /* Volume object
@@ -87,7 +85,7 @@ SYS_FS_MEDIA gSYSFSMediaObject[SYS_FS_MEDIA_NUMBER];
   Remarks:
     None
 */
-SYS_FS_VOLUME gSYSFSVolumeObject[SYS_FS_VOLUME_NUMBER];
+static SYS_FS_VOLUME gSYSFSVolumeObject[SYS_FS_VOLUME_NUMBER];
 
 
 // *****************************************************************************
@@ -101,7 +99,7 @@ SYS_FS_VOLUME gSYSFSVolumeObject[SYS_FS_VOLUME_NUMBER];
   Remarks:
     None
 */
-uint8_t CACHE_ALIGN gSYSFSMediaBlockBuffer[SYS_FS_MEDIA_MANAGER_BUFFER_SIZE] = {0};
+static uint8_t CACHE_ALIGN gSYSFSMediaBlockBuffer[SYS_FS_MEDIA_MANAGER_BUFFER_SIZE] = {0};
 
 // *****************************************************************************
 /* Media Mount Table
@@ -114,12 +112,10 @@ uint8_t CACHE_ALIGN gSYSFSMediaBlockBuffer[SYS_FS_MEDIA_MANAGER_BUFFER_SIZE] = {
   Remarks:
     None
 */
-extern const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[];
-
-uint8_t CACHE_ALIGN gSYSFSMediaBuffer[SYS_FS_MEDIA_MAX_BLOCK_SIZE];
+static uint8_t CACHE_ALIGN gSYSFSMediaBuffer[SYS_FS_MEDIA_MAX_BLOCK_SIZE];
 
 /* Following structure holds the variables for media manager, including the task states */
-SYS_FS_MEDIA_MANAGER_OBJ gSYSFSMediaManagerObj =
+static SYS_FS_MEDIA_MANAGER_OBJ gSYSFSMediaManagerObj =
 {
     gSYSFSMediaObject,
     gSYSFSVolumeObject,
@@ -151,11 +147,11 @@ Description:
     and NVM with 1 partition.
 
     PARTITION VolToPart[SYS_FS_VOLUME_NUMBER] = {
-        {0, 1},    // 0th volume # assigned by sys_fs_media_manager (mmcblka1), media # = 0 (SD card), partition # = 1
-        {0, 2},    // 1st volume # assigned by sys_fs_media_manager (mmcblka2), media # = 0 (SD card), partition # = 2
-        {0, 3},    // 2nd volume # assigned by sys_fs_media_manager (mmcblka3), media # = 0 (SD card), partition # = 3
-        {0, 4},    // 3rd volume # assigned by sys_fs_media_manager (mmcblka4), media # = 0 (SD card), partition # = 4
-        {1, 1}     // 4th volume # assigned by sys_fs_media_manager (nvma1), media # = 1 (NVM), partition # = 1
+        {0, 1},
+        {0, 2},
+        {0, 3},
+        {0, 4},
+        {1, 1}
     };
 
 Remarks:
@@ -165,7 +161,7 @@ PARTITION VolToPart[SYS_FS_VOLUME_NUMBER];
 
 //*****************************************************************************
 /* Function:
-    static void _SYS_FS_MEDIA_MANAGER_UpdateVolToPart
+    static void SYS_FS_MEDIA_T_MANAGER_UpdateVolToPart
     (
         uint8_t volNumber,
         uint8_t pd,
@@ -184,7 +180,7 @@ Description:
 Remarks:
     None
 */
-static void _SYS_FS_MEDIA_MANAGER_UpdateVolToPart
+static void SYS_FS_MEDIA_T_MANAGER_UpdateVolToPart
 (
     uint8_t volNumber,
     uint8_t pd,
@@ -199,8 +195,10 @@ static void _SYS_FS_MEDIA_MANAGER_UpdateVolToPart
 }
 
 //*****************************************************************************
+/* MISRA C-2012 Rule 11.1, 11.8 deviated below. Deviation record ID -
+   H3_MISRAC_2012_R_11_1_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
 /* Function:
-    static void _SYS_FS_MEDIA_MANAGER_HandleMediaDetach
+    static void SYS_FS_MEDIA_T_MANAGER_HandleMediaDetach
     (
         SYS_FS_MEDIA *mediaObj
     );
@@ -216,7 +214,7 @@ static void _SYS_FS_MEDIA_MANAGER_UpdateVolToPart
   Remarks:
     None
 */
-static void _SYS_FS_MEDIA_MANAGER_HandleMediaDetach
+static void SYS_FS_MEDIA_T_MANAGER_HandleMediaDetach
 (
     SYS_FS_MEDIA *mediaObj
 )
@@ -240,7 +238,7 @@ static void _SYS_FS_MEDIA_MANAGER_HandleMediaDetach
 
 // *****************************************************************************
 /* Function:
-    static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
+    static void SYS_FS_MEDIA_T_MANAGER_PopulateVolume
     (
         SYS_FS_MEDIA *mediaObj,
         uint8_t isMBR,
@@ -258,7 +256,7 @@ static void _SYS_FS_MEDIA_MANAGER_HandleMediaDetach
   Remarks:
     None.
 ***************************************************************************/
-static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
+static void SYS_FS_MEDIA_T_MANAGER_PopulateVolume
 (
     SYS_FS_MEDIA *mediaObj,
     uint8_t isMBR,
@@ -285,12 +283,14 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
         /* Found a free volume */
         mediaObj->numVolumes++;
 
-        volumeNameLen = strlen(gSYSFSVolumeName[mediaObj->mediaType]);
-        memcpy (volumeObj->volumeName, gSYSFSVolumeName[mediaObj->mediaType], volumeNameLen);
+        volumeNameLen = (uint8_t)strlen(gSYSFSVolumeName[mediaObj->mediaType]);
+        (void) memcpy (volumeObj->volumeName, gSYSFSVolumeName[mediaObj->mediaType], volumeNameLen);
 
         /* Store the volume name */
-        volumeObj->volumeName[volumeNameLen++] = mediaObj->mediaId;
-        volumeObj->volumeName[volumeNameLen++] = mediaObj->numVolumes + '0';
+        volumeObj->volumeName[volumeNameLen] = (char)mediaObj->mediaId;
+        volumeNameLen++;
+        volumeObj->volumeName[volumeNameLen] = mediaObj->numVolumes + '0';
+        volumeNameLen++;
         volumeObj->volumeName[volumeNameLen] = '\0';
 
         volumeObj->obj = mediaObj;
@@ -300,50 +300,54 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
             /* Register Media and Volume mapping with FAT File System */
             /* Register the volumes to partition table only if this device has
              * partition table entry or MBR. Skip if media contains VBR */
-            if (partitionMap)
+            if (partitionMap != 0U)
             {
-                if (partitionMap & 0x01)
+                if ((partitionMap & 0x01U) != 0U)
                 {
                     partitionNum = 0;
-                    partitionMap &= ~0x01;
+                    partitionMap &= ~(uint8_t)0x01U;
                 }
-                else if (partitionMap & 0x02)
+                else if ((partitionMap & 0x02U) != 0U)
                 {
                     partitionNum = 1;
-                    partitionMap &= ~0x02;
+                    partitionMap &= ~(uint8_t)0x02U;
                 }
-                else if (partitionMap & 0x04)
+                else if ((partitionMap & 0x04U) != 0U)
                 {
                     partitionNum = 2;
-                    partitionMap &= ~0x04;
+                    partitionMap &= ~(uint8_t)0x04U;
                 }
-                else if (partitionMap & 0x08)
+                else if ((partitionMap & 0x08U) != 0U)
                 {
                     partitionNum = 3;
-                    partitionMap &= ~0x08;
+                    partitionMap &= ~(uint8_t)0x08U;
+                }
+                else
+                {
+                    /* Nothing to do */
                 }
 
-                if (fsType != 0xFF)
+                if (fsType != 0xFFU)
                 {
                     /* File system type offset */
                     offset = gPartitionTypeOffset[partitionNum];
                     volumeObj->fsType = readBuffer[offset];
 
                     /* Number of sectors */
-                    volumeObj->numSectors = ((readBuffer[offset + 11] << 24) + (readBuffer[offset + 10] << 16) + (readBuffer[offset + 9] << 8) + readBuffer[offset + 8]);
+                    volumeObj->numSectors = (((uint32_t)readBuffer[offset + 11UL] << 24) + ((uint32_t)readBuffer[offset + 10UL] << 16) + ((uint32_t)readBuffer[offset + 9UL] << 8) + (uint32_t)readBuffer[offset + 8U]);
 
                     /* Start address of the volume */
-                    volumeObj->startSector = ((readBuffer[offset + 7] << 24) + (readBuffer[offset + 6] << 16) + (readBuffer[offset + 5] << 8) + readBuffer[offset + 4]);
+                    volumeObj->startSector = (((uint32_t)readBuffer[offset + 7UL] << 24) + ((uint32_t)readBuffer[offset + 6UL] << 16) + ((uint32_t)readBuffer[offset + 5UL] << 8) + (uint32_t)readBuffer[offset + 4U]);
                 }
             }
 
-            if (isMBR)
+            if (isMBR != 0U)
             {
-                _SYS_FS_MEDIA_MANAGER_UpdateVolToPart (volumeIndex, mediaObj->mediaIndex, partitionNum + 1);
+                SYS_FS_MEDIA_T_MANAGER_UpdateVolToPart (volumeIndex, mediaObj->mediaIndex, partitionNum + 1U);
             }
             else
             {
-                _SYS_FS_MEDIA_MANAGER_UpdateVolToPart (volumeIndex, mediaObj->mediaIndex, 0);
+                SYS_FS_MEDIA_T_MANAGER_UpdateVolToPart (volumeIndex, mediaObj->mediaIndex, 0);
             }
         }
         /* Update the inUse flag to indicate that the volume is now in use.*/
@@ -351,7 +355,7 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
 
 
         /* Continue if there is more than one partition on media */
-        if (!partitionMap)
+        if (partitionMap == 0U)
         {
             break;
         }
@@ -363,7 +367,7 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
 
 // *****************************************************************************
 /* Function:
-    static uint8_t _SYS_FS_MEDIA_MANAGER_FindNextMedia
+    static uint8_t SYS_FS_MEDIA_T_MANAGER_FindNextMedia
     (
         SYS_FS_MEDIA *mediaObj,
         uint8_t *index
@@ -379,7 +383,7 @@ static void _SYS_FS_MEDIA_MANAGER_PopulateVolume
   Remarks:
     None.
 ***************************************************************************/
-static uint8_t _SYS_FS_MEDIA_MANAGER_FindNextMedia
+static uint8_t SYS_FS_MEDIA_T_MANAGER_FindNextMedia
 (
     SYS_FS_MEDIA *mediaObj,
     uint8_t *index
@@ -394,14 +398,14 @@ static uint8_t _SYS_FS_MEDIA_MANAGER_FindNextMedia
         {
             /* Media found. Return the index. */
             indexLow = *index;
-            _SYS_FS_MEDIA_MANAGER_UPDATE_MEDIA_INDEX(*index);
+            SYS_FS_MEDIA_MANAGER_UPDATE_MEDIA_INDEX_T(*index);
             return indexLow;
         }
 
         (*index)++;
     }
 
-    if (indexLow == 0)
+    if (indexLow == 0U)
     {
         /* No media. Reset the media index. */
         *index = 0;
@@ -417,7 +421,7 @@ static uint8_t _SYS_FS_MEDIA_MANAGER_FindNextMedia
         {
             /* Media found. Return the media index. */
             *index = indexLow;
-            _SYS_FS_MEDIA_MANAGER_UPDATE_MEDIA_INDEX(*index);
+            SYS_FS_MEDIA_MANAGER_UPDATE_MEDIA_INDEX_T(*index);
             return indexLow;
         }
 
@@ -428,6 +432,9 @@ static uint8_t _SYS_FS_MEDIA_MANAGER_FindNextMedia
     return 0xFF;
 }
 
+     /* MISRA C-2012 Rule 16.1 deviate: 1, 16.3 deviate:2 and 16.6 deviate:1.
+      Deviation record ID - H3_MISRAC_2012_R_16_1_DR_1, H3_MISRAC_2012_R_16_3_DR_1
+      & H3_MISRAC_2012_R_16_6_DR_1 */
 // *****************************************************************************
 /* Function:
     static bool SYS_FS_MEDIA_MANAGER_IsFSFat
@@ -470,10 +477,10 @@ static bool SYS_FS_MEDIA_MANAGER_IsFSFat
             }
     }
 }
-
+    /* MISRAC 2012 deviation block end */
 // *****************************************************************************
 /* Function:
-    static uint8_t _SYS_FS_MEDIA_MANAGER_AnalyzeFileSystem
+    static uint8_t SYS_FS_MEDIA_T_MANAGER_AnalyzeFileSystem
     (
         uint8_t *firstSector,
         uint8_t *numPartition,
@@ -491,7 +498,7 @@ static bool SYS_FS_MEDIA_MANAGER_IsFSFat
   Remarks:
     None.
 ***************************************************************************/
-static uint8_t _SYS_FS_MEDIA_MANAGER_AnalyzeFileSystem
+static uint8_t SYS_FS_MEDIA_T_MANAGER_AnalyzeFileSystem
 (
     uint8_t *firstSector,
     uint8_t *numPartition,
@@ -505,29 +512,33 @@ static uint8_t _SYS_FS_MEDIA_MANAGER_AnalyzeFileSystem
     *numPartition = 0;
 
     /* Check for the Boot Signature */
-    if((firstSector[510] == 0x55) && (firstSector[511] == 0xAA))
+    if((firstSector[510] == 0x55U) && (firstSector[511] == 0xAAU))
     {
         /* Check if the first sector of the media is Volume Boot Record or the
            Master Boot Record */
-        if((0xEB == firstSector[0]) &&
-                ((0x3C == firstSector[1]) || (0x58 == firstSector[1]) || (0xFE == firstSector[1])) &&
-                (0x90 == firstSector[2]))
+        if((0xEBU == firstSector[0]) &&
+                ((0x3CU == firstSector[1]) || (0x58U == firstSector[1]) || (0xFEU == firstSector[1])) &&
+                (0x90U == firstSector[2]))
         {
             /* Volume Boot Record */
             *numPartition = 1;
             *isMBR = 0;
 
             /* The extended BPB contains FAT32 in this field */
-            if ((0x46 == firstSector[82]) || (0x41 == firstSector[83]) ||
-                    (0x54 == firstSector[84]))
+            if ((0x46U == firstSector[82]) || (0x41U == firstSector[83]) ||
+                    (0x54U == firstSector[84]))
             {
                 fsType = 0x0B;
             }
             /* The extended BPB contains FAT, FAT12 or FAT16 in these fields */
-            else if ((0x46 == firstSector[54]) || (0x41 == firstSector[55]) ||
-                    (0x54 == firstSector[56]))
+            else if ((0x46U == firstSector[54]) || (0x41U == firstSector[55]) ||
+                    (0x54U == firstSector[56]))
             {
                 fsType = 0x06;
+            }
+            else
+            {
+                /* Nothing to do */
             }
         }
         else
@@ -541,29 +552,29 @@ static uint8_t _SYS_FS_MEDIA_MANAGER_AnalyzeFileSystem
             *isMBR = 1;
             if(SYS_FS_MEDIA_MANAGER_IsFSFat(firstSector[450]))
             {
-                *partitionMap |= (1 << 0);
+                *partitionMap |= (uint8_t)(1UL << 0);
                 (*numPartition)++;
             }
             if(SYS_FS_MEDIA_MANAGER_IsFSFat(firstSector[466]))
             {
-                *partitionMap |= (1 << 1);
+                *partitionMap |= (uint8_t)(1UL << 1);
                 (*numPartition)++;
             }
             if(SYS_FS_MEDIA_MANAGER_IsFSFat(firstSector[482]))
             {
-                *partitionMap |= (1 << 2);
+                *partitionMap |= (uint8_t)(1UL << 2);
                 (*numPartition)++;
             }
             if(SYS_FS_MEDIA_MANAGER_IsFSFat(firstSector[498]))
             {
-                *partitionMap |= (1 << 3);
+                *partitionMap |= (uint8_t)(1UL << 3);
                 (*numPartition)++;
             }
 
             /* Found at least one valid partition. Assign a non 0xFF value to
              * indicate that atleast one of the partitions has a valid file
              * system. */
-            if (*partitionMap)
+            if (*partitionMap != 0U)
             {
                 fsType = 1;
             }
@@ -610,7 +621,7 @@ SYS_FS_MEDIA_HANDLE SYS_FS_MEDIA_MANAGER_Register
 )
 {
     uint8_t mediaIndex = 0;
-    uint8_t mediaId = 'a';
+    uint8_t mediaId = (uint8_t)'a';
 
     SYS_FS_MEDIA *mediaObj = NULL;
 
@@ -686,7 +697,7 @@ void SYS_FS_MEDIA_MANAGER_DeRegister
         return;
     }
 
-    mediaObj->isMediaDisconnected = true;
+    mediaObj->isMediaDisconnected = 1U;
 }
 
 //*****************************************************************************
@@ -737,10 +748,10 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorRead
 
     mediaReadBlockSize = mediaObj->mediaGeometry->geometryTable[0].blockSize;
 
-    if (mediaReadBlockSize < 512)
+    if (mediaReadBlockSize < 512U)
     {
         /* Find the number of blocks per sector */
-        blocksPerSector = 512 / mediaReadBlockSize;
+        blocksPerSector = 512U / mediaReadBlockSize;
         /* Perform sector to block translation */
         sector *= blocksPerSector;
         numSectors *= blocksPerSector;
@@ -854,6 +865,7 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
     uint32_t numSectorsToWrite = 0;
     uint32_t mediaWriteBlockSize = 0;
     uint32_t blocksPerSector = 0;
+    uint32_t readSize = SYS_FS_MEDIA_MANAGER_BUFFER_SIZE;
 
     if(diskNum >= SYS_FS_MEDIA_NUMBER)
     {
@@ -870,23 +882,23 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
 
     mediaWriteBlockSize = mediaObj->mediaGeometry->geometryTable[1].blockSize;
 
-    if (mediaWriteBlockSize > 512)
+    if (mediaWriteBlockSize > 512U)
     {
-        sectorsPerBlock = mediaWriteBlockSize / 512;
+        sectorsPerBlock = mediaWriteBlockSize / 512U;
     }
-    else if (mediaWriteBlockSize == 512)
+    else if (mediaWriteBlockSize == 512U)
     {
         sectorsPerBlock = 1;
         blocksPerSector = 1;
     }
     else
     {
-        blocksPerSector = 512 / mediaWriteBlockSize;
+        blocksPerSector = 512U / mediaWriteBlockSize;
         sector *= blocksPerSector;
         numSectors *= blocksPerSector;
     }
 
-    if ((sectorsPerBlock == 1) || (blocksPerSector > 0))
+    if ((sectorsPerBlock == 1U) || (blocksPerSector > 0U))
     {
         mediaObj->commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
         mediaObj->driverFunctions->sectorWrite (mediaObj->driverHandle, &(mediaObj->commandHandle), dataBuffer, sector, numSectors);
@@ -897,7 +909,7 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
         /* Mute the event notification */
         gSYSFSMediaManagerObj.muteEventNotification = true;
 
-        while (numSectors > 0)
+        while (numSectors > 0U)
         {
             /* Find the memory block for the starting sector */
             memoryBlock = sector / sectorsPerBlock;
@@ -916,7 +928,12 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
                 /* Read the memory block from the media. Update the media data. */
                 mediaObj->commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
 
-                mediaObj->driverFunctions->sectorRead(mediaObj->driverHandle, &(mediaObj->commandHandle), gSYSFSMediaBlockBuffer, memoryBlock * mediaWriteBlockSize, SYS_FS_MEDIA_MANAGER_BUFFER_SIZE);
+                if (mediaWriteBlockSize < SYS_FS_MEDIA_MANAGER_BUFFER_SIZE)
+                {
+                    readSize = mediaWriteBlockSize;
+                }
+
+                mediaObj->driverFunctions->sectorRead(mediaObj->driverHandle, &(mediaObj->commandHandle), gSYSFSMediaBlockBuffer, memoryBlock * mediaWriteBlockSize, readSize);
 
                 while (mediaObj->commandStatus == SYS_FS_MEDIA_COMMAND_IN_PROGRESS)
                 {
@@ -937,7 +954,7 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
 
                 /* Multiply by the sector size */
                 sectorOffsetInBlock <<= 9;
-                memcpy ((void *)&gSYSFSMediaBlockBuffer[sectorOffsetInBlock], (const void *)dataBuffer, numSectorsToWrite << 9);
+                (void) memcpy ((void *)&gSYSFSMediaBlockBuffer[sectorOffsetInBlock], (const void *)dataBuffer, numSectorsToWrite << 9);
 
                 data = gSYSFSMediaBlockBuffer;
             }
@@ -948,7 +965,7 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
                 data = dataBuffer;
             }
 
-            if ((numSectors - numSectorsToWrite) == 0)
+            if ((numSectors - numSectorsToWrite) == 0U)
             {
                 /* This is the last write operation. */
                 break;
@@ -1101,7 +1118,7 @@ bool SYS_FS_MEDIA_MANAGER_MediaStatusGet
         volumeObj = &gSYSFSMediaManagerObj.volumeObj[volumeIndex];
         if (volumeObj->inUse == true)
         {
-            if (strncmp("/dev/", volumeName, 5))
+            if (strncmp("/dev/", volumeName, 5) != 0)
             {
                 if (strcmp((const char*)(volumeName), (const char *)volumeObj->volumeName) == 0)
                 {
@@ -1118,7 +1135,7 @@ bool SYS_FS_MEDIA_MANAGER_MediaStatusGet
         }
     }
 
-    return SYS_FS_MEDIA_DETACHED;
+    return (bool)SYS_FS_MEDIA_DETACHED;
 }
 
 // *****************************************************************************
@@ -1176,8 +1193,10 @@ bool SYS_FS_MEDIA_MANAGER_VolumePropertyGet
 
     return false;
 }
+/* MISRA C-2012 Rule 5.1, 5.2 deviated below. Deviation record ID -
+   H3_MISRAC_2012_R_5_1_DR_1 & H3_MISRAC_2012_R_5_2_DR_1*/
 
-
+/* MISRAC 2012 deviation block end */
 //*****************************************************************************
 /* Function:
     void SYS_FS_MEDIA_MANAGER_RegisterTransferHandler
@@ -1192,6 +1211,10 @@ bool SYS_FS_MEDIA_MANAGER_VolumePropertyGet
     This function is used to send the command status for the disk operation.
 
 ***************************************************************************/
+
+/* MISRA C-2012 Rule 11.1, 11.6 & 11.8 deviated below. Deviation record ID -
+   H3_MISRAC_2012_R_11_1_DR_1, H3_MISRAC_2012_R_11_6_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+
 void SYS_FS_MEDIA_MANAGER_RegisterTransferHandler
 (
     const void *eventHandler
@@ -1199,10 +1222,9 @@ void SYS_FS_MEDIA_MANAGER_RegisterTransferHandler
 {
     gSYSFSMediaManagerObj.eventHandler = (SYS_FS_EVENT_HANDLER) eventHandler;
 }
-
 //*****************************************************************************
 /* Function:
-    void SYS_FS_MEDIA_MANAGER_EventHandler
+    static void SYS_FS_MEDIA_MANAGER_EventHandler
     (
         SYS_FS_MEDIA_BLOCK_EVENT event,
         SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle,
@@ -1220,7 +1242,7 @@ void SYS_FS_MEDIA_MANAGER_RegisterTransferHandler
   Remarks:
     None.
 */
-void SYS_FS_MEDIA_MANAGER_EventHandler
+static void SYS_FS_MEDIA_MANAGER_EventHandler
 (
     SYS_FS_MEDIA_BLOCK_EVENT event,
     SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle,
@@ -1236,6 +1258,7 @@ void SYS_FS_MEDIA_MANAGER_EventHandler
             ((SYS_FS_MEDIA*)context)->commandStatus = SYS_FS_MEDIA_COMMAND_UNKNOWN;
             break;
         default:
+                 /* Nothing to do */
             break;
     }
 
@@ -1244,6 +1267,7 @@ void SYS_FS_MEDIA_MANAGER_EventHandler
         gSYSFSMediaManagerObj.eventHandler ((SYS_FS_EVENT)event, (void *)commandHandle, ((SYS_FS_MEDIA*)context)->mediaIndex);
     }
 }
+/* MISRAC 2012 deviation block end */
 
 //*****************************************************************************
 /* Function:
@@ -1356,8 +1380,8 @@ void SYS_FS_MEDIA_MANAGER_Tasks
     SYS_FS_MEDIA *mediaObj = NULL;
 
     /* Find the next media to be processed */
-    mediaIndex = _SYS_FS_MEDIA_MANAGER_FindNextMedia (&gSYSFSMediaManagerObj.mediaObj[0], &gSYSFSMediaManagerObj.mediaIndex);
-    if (mediaIndex == 0xFF)
+    mediaIndex = SYS_FS_MEDIA_T_MANAGER_FindNextMedia (&gSYSFSMediaManagerObj.mediaObj[0], &gSYSFSMediaManagerObj.mediaIndex);
+    if (mediaIndex == 0xFFU)
     {
         /* No media attached. Do nothing. */
         return;
@@ -1365,12 +1389,14 @@ void SYS_FS_MEDIA_MANAGER_Tasks
 
     mediaObj = &gSYSFSMediaManagerObj.mediaObj[mediaIndex];
 
-    if (mediaObj->isMediaDisconnected == true)
+    if (mediaObj->isMediaDisconnected == 1U)
     {
         /* If the media driver was de-registered in this state, then the media
          * had use of the media buffer and no longer needs it. */
          if(SYS_FS_MEDIA_ANALYZE_FS == mediaObj->mediaState)
-            gSYSFSMediaManagerObj.bufferInUse =false;
+         {
+            gSYSFSMediaManagerObj.bufferInUse = false;
+         }
 
         /* If media driver has de-registered then switch to the DEREGISTERED
          * state and handle the media detach. */
@@ -1430,7 +1456,7 @@ void SYS_FS_MEDIA_MANAGER_Tasks
                     {
                         /* The media was earlier attached. But now it is
                          * detached. Handle the media detach. */
-                        _SYS_FS_MEDIA_MANAGER_HandleMediaDetach (mediaObj);
+                        SYS_FS_MEDIA_T_MANAGER_HandleMediaDetach (mediaObj);
 
                         /* Reset the media's number of volumes field */
                         mediaObj->numVolumes = 0;
@@ -1459,13 +1485,13 @@ void SYS_FS_MEDIA_MANAGER_Tasks
 
                 mediaReadBlockSize = mediaObj->mediaGeometry->geometryTable[0].blockSize;
 
-                if (mediaReadBlockSize < 512)
+                if (mediaReadBlockSize < 512U)
                 {
                     /* Perform sector to block translation */
-                    numSectors *= (512 / mediaReadBlockSize);
+                    numSectors *= (512U / mediaReadBlockSize);
                 }
 
-                memset (gSYSFSMediaManagerObj.mediaBuffer, 0, SYS_FS_MEDIA_MAX_BLOCK_SIZE);
+                (void) memset (gSYSFSMediaManagerObj.mediaBuffer, 0, SYS_FS_MEDIA_MAX_BLOCK_SIZE);
 
                 /* Update the command status */
                 mediaObj->commandStatus = SYS_FS_MEDIA_COMMAND_IN_PROGRESS;
@@ -1512,14 +1538,14 @@ void SYS_FS_MEDIA_MANAGER_Tasks
                     break;
                 }
 
-                fsType = _SYS_FS_MEDIA_MANAGER_AnalyzeFileSystem(gSYSFSMediaManagerObj.mediaBuffer, &mediaObj->numPartitions, &isMBR, &partitionMap);
+                fsType = SYS_FS_MEDIA_T_MANAGER_AnalyzeFileSystem(gSYSFSMediaManagerObj.mediaBuffer, &mediaObj->numPartitions, &isMBR, &partitionMap);
 
-                if (fsType == 0xFF)
+                if (fsType == 0xFFU)
                 {
                     /* File system not found or found an unsupported file
                      * system. Allocate a volume so as to allow for formatting
                      * of the disk. */
-                    if (isMBR)
+                    if (isMBR != 0U)
                     {
                         partitionMap = 0x01;
                     }
@@ -1529,7 +1555,7 @@ void SYS_FS_MEDIA_MANAGER_Tasks
                     }
                 }
 
-                _SYS_FS_MEDIA_MANAGER_PopulateVolume (mediaObj, isMBR, partitionMap, fsType);
+                SYS_FS_MEDIA_T_MANAGER_PopulateVolume (mediaObj, isMBR, partitionMap, fsType);
 
                 /* Clear the buffer in use flag. */
                 gSYSFSMediaManagerObj.bufferInUse = false;
@@ -1546,12 +1572,12 @@ void SYS_FS_MEDIA_MANAGER_Tasks
                 {
                     /* The media was earlier attached. But now it is
                      * detached. Handle the media detach. */
-                    _SYS_FS_MEDIA_MANAGER_HandleMediaDetach (mediaObj);
+                    SYS_FS_MEDIA_T_MANAGER_HandleMediaDetach (mediaObj);
                 }
 
                 mediaObj->inUse = false;
                 mediaObj->attachStatus = SYS_FS_MEDIA_DETACHED;
-                mediaObj->isMediaDisconnected = false;
+                mediaObj->isMediaDisconnected = 0U;
                 mediaObj->mediaId = 0;
                 mediaObj->mediaIndex = 0;
                 mediaObj->numPartitions = 0;
@@ -1560,6 +1586,8 @@ void SYS_FS_MEDIA_MANAGER_Tasks
             }
 
         default:
+                  /* Nothing to do */
+
             break;
     }
 }

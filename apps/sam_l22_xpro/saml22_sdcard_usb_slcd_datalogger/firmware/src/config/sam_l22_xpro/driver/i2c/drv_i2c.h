@@ -109,7 +109,7 @@ typedef uintptr_t DRV_I2C_TRANSFER_HANDLE;
     None
 */
 
-#define DRV_I2C_TRANSFER_HANDLE_INVALID /*DOM-IGNORE-BEGIN*/((DRV_I2C_TRANSFER_HANDLE)(-1))/*DOM-IGNORE-END*/
+#define DRV_I2C_TRANSFER_HANDLE_INVALID  ((DRV_I2C_TRANSFER_HANDLE)(-1))
 
 // *****************************************************************************
 /* I2C Driver Transfer Events
@@ -187,15 +187,15 @@ typedef enum
         switch(event)
         {
             case DRV_I2C_TRANSFER_EVENT_COMPLETE:
-
-                // Handle the completed buffer.
+            {
                 break;
+            }
 
             case DRV_I2C_TRANSFER_EVENT_ERROR:
             default:
-
-                // Handle error.
+            {
                 break;
+            }
         }
     }
     </code>
@@ -230,7 +230,7 @@ typedef enum
     driver buffers cannot be added in I2C1 driver event handler.
 */
 
-typedef void ( *DRV_I2C_TRANSFER_EVENT_HANDLER )( DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE transferHandle, uintptr_t context );
+typedef void (*DRV_I2C_TRANSFER_EVENT_HANDLER )( DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE transferHandle, uintptr_t context );
 
 
 // *****************************************************************************
@@ -274,7 +274,6 @@ typedef void ( *DRV_I2C_TRANSFER_EVENT_HANDLER )( DRV_I2C_TRANSFER_EVENT event, 
 
   Example:
     <code>
-    // The following code snippet shows an example I2C driver initialization.
 
     SYS_MODULE_OBJ objectHandle;
 
@@ -303,7 +302,7 @@ typedef void ( *DRV_I2C_TRANSFER_EVENT_HANDLER )( DRV_I2C_TRANSFER_EVENT event, 
     objectHandle = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT*)&drvI2C0InitData);
     if (objectHandle == SYS_MODULE_OBJ_INVALID)
     {
-        // Handle error
+
     }
     </code>
 
@@ -340,14 +339,14 @@ SYS_MODULE_OBJ DRV_I2C_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
 
   Example:
     <code>
-    SYS_MODULE_OBJ      object;     // Returned from DRV_I2C_Initialize
+    SYS_MODULE_OBJ      object;
     SYS_STATUS          i2cStatus;
 
     i2cStatus = DRV_I2C_Status(object);
+
     if (i2cStatus == SYS_STATUS_READY)
     {
-        // This means the driver can be opened using the
-        // DRV_I2C_Open() function.
+
     }
     </code>
 
@@ -415,11 +414,10 @@ SYS_STATUS DRV_I2C_Status( const SYS_MODULE_OBJ object);
     DRV_HANDLE handle;
 
     handle = DRV_I2C_Open(DRV_I2C_INDEX_0, DRV_IO_INTENT_EXCLUSIVE);
+
     if (handle == DRV_HANDLE_INVALID)
     {
-        // Unable to open the driver
-        // May be the driver is not initialized or the initialization
-        // is not complete.
+
     }
     </code>
 
@@ -454,7 +452,6 @@ DRV_HANDLE DRV_I2C_Open( const SYS_MODULE_INDEX drvIndex, const DRV_IO_INTENT io
 
   Example:
     <code>
-    // 'handle', returned from the DRV_I2C_Open
 
     DRV_I2C_Close(handle);
 
@@ -496,7 +493,6 @@ void DRV_I2C_Close( const DRV_HANDLE handle );
 
   Example:
     <code>
-        // myI2CHandle is the handle returned by the DRV_I2C_Open function.
         DRV_I2C_TRANSFER_SETUP setup;
 
         setup.clockSpeed = 400000;
@@ -509,6 +505,7 @@ void DRV_I2C_Close( const DRV_HANDLE handle );
 */
 
 bool DRV_I2C_TransferSetup( const DRV_HANDLE handle, DRV_I2C_TRANSFER_SETUP* setup);
+
 
 // *****************************************************************************
 /* Function:
@@ -533,13 +530,10 @@ bool DRV_I2C_TransferSetup( const DRV_HANDLE handle, DRV_I2C_TRANSFER_SETUP* set
 
   Example:
     <code>
-    // 'bufferHandle', returned by any of the I2C transfer APIs
-    // (Example: DRV_I2C_WriteTransferAdd / DRV_I2C_ReadTransferAdd etc.)
 
     if (DRV_I2C_ErrorGet(bufferHandle) == DRV_I2C_ERROR_NACK)
     {
-        //Errors are cleared by the driver, take respective action
-        //for the error case.
+
     }
     </code>
 
@@ -610,20 +604,13 @@ DRV_I2C_ERROR DRV_I2C_ErrorGet( const DRV_I2C_TRANSFER_HANDLE transferHandle );
     uint8_t myBuffer[MY_BUFFER_SIZE];
     DRV_I2C_TRANSFER_HANDLE transferHandle;
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     DRV_I2C_WriteTransferAdd(myI2CHandle, slaveAddress, myBuffer, MY_BUFFER_SIZE, &transferHandle);
 
     if(transferHandle == DRV_I2C_TRANSFER_HANDLE_INVALID)
     {
-        // Error handling here
+
     }
 
-    // Event is received when the buffer is processed.
     </code>
 
   Remarks:
@@ -634,6 +621,7 @@ DRV_I2C_ERROR DRV_I2C_ErrorGet( const DRV_I2C_TRANSFER_HANDLE transferHandle );
     This function is available only in the asynchronous mode.
 
 */
+ /* MISRA C-2012 Rule 8.6 deviated:6 Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 
 void DRV_I2C_WriteTransferAdd(
     const DRV_HANDLE handle,
@@ -706,20 +694,13 @@ void DRV_I2C_WriteTransferAdd(
     uint8_t myBuffer[MY_BUFFER_SIZE];
     DRV_I2C_TRANSFER_HANDLE transferHandle;
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     DRV_I2C_ForcedWriteTransferAdd(myI2CHandle, slaveAddress, myBuffer, MY_BUFFER_SIZE, &transferHandle);
 
     if(transferHandle == DRV_I2C_TRANSFER_HANDLE_INVALID)
     {
-        // Error handling here
+
     }
 
-    // Event is received when the buffer is processed.
     </code>
 
   Remarks:
@@ -803,20 +784,13 @@ void DRV_I2C_ForcedWriteTransferAdd(
     uint8_t myBuffer[MY_BUFFER_SIZE];
     DRV_I2C_TRANSFER_HANDLE transferHandle;
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     DRV_I2C_ReadTransferAdd(myI2CHandle, slaveAddress, myBuffer, MY_BUFFER_SIZE, &transferHandle);
 
     if(transferHandle == DRV_I2C_TRANSFER_HANDLE_INVALID)
     {
-        // Error handling here
+
     }
 
-    // Event is received when the buffer is processed.
     </code>
 
   Remarks:
@@ -897,20 +871,13 @@ void DRV_I2C_ReadTransferAdd(
     uint8_t myRxBuffer[MY_RX_BUFFER_SIZE];
     DRV_I2C_TRANSFER_HANDLE transferHandle;
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     DRV_I2C_WriteReadTransferAdd(myI2CHandle, slaveAddress, myTxBuffer, MY_TX_BUFFER_SIZE, myRxBuffer, MY_RX_BUFFER_SIZE, &transferHandle);
 
     if(transferHandle == DRV_I2C_TRANSFER_HANDLE_INVALID)
     {
-        // Error handling here
+
     }
 
-    // Event is received when the buffer is processed.
     </code>
 
   Remarks:
@@ -979,16 +946,36 @@ void DRV_I2C_WriteReadTransferAdd (
 
   Example:
     <code>
-    // myAppObj is an application specific state data object.
     MY_APP_OBJ myAppObj;
 
     uint8_t myBuffer[MY_BUFFER_SIZE];
     DRV_I2C_TRANSFER_HANDLE transferHandle;
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
 
-    // Client registers an event handler with driver. This is done once
+
+    void APP_I2CTransferEventHandler(DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE handle, uintptr_t context)
+    {
+        MY_APP_OBJ* pMyAppObj = (MY_APP_OBJ *) context;
+
+        switch(event)
+        {
+            case DRV_I2C_TRANSFER_EVENT_COMPLETE:
+            {
+                break;
+            }
+
+            case DRV_I2C_TRANSFER_EVENT_ERROR:
+            {
+
+                break;
+            }
+
+            default:
+            {
+                break;
+            }
+        }
+    }
 
     DRV_I2C_TransferEventHandlerSet( myI2CHandle, APP_I2CTransferEventHandler, (uintptr_t)&myAppObj );
 
@@ -996,31 +983,9 @@ void DRV_I2C_WriteReadTransferAdd (
 
     if(transferHandle == DRV_I2C_TRANSFER_HANDLE_INVALID)
     {
-        // Error handling here
+
     }
 
-    // The registered event handler is called when the transfer is completed.
-
-    void APP_I2CTransferEventHandler(DRV_I2C_TRANSFER_EVENT event, DRV_I2C_TRANSFER_HANDLE handle, uintptr_t context)
-    {
-        // The context handle was set to an application specific
-        // object. It is now retrievable easily in the event handler.
-        MY_APP_OBJ* pMyAppObj = (MY_APP_OBJ *) context;
-
-        switch(event)
-        {
-            case DRV_I2C_TRANSFER_EVENT_COMPLETE:
-                // This means the data was transferred.
-                break;
-
-            case DRV_I2C_TRANSFER_EVENT_ERROR:
-                // Error handling here.
-                break;
-
-            default:
-                break;
-        }
-    }
     </code>
 
   Remarks:
@@ -1070,18 +1035,12 @@ void DRV_I2C_TransferEventHandlerSet(
     DRV_I2C_TRANSFER_HANDLE transferHandle;
     DRV_I2C_TRANSFER_EVENT event;
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
     DRV_I2C_ReadTransferAdd(myI2CHandle, slaveAddress, myBuffer, MY_BUFFER_SIZE, &transferHandle);
 
     if(transferHandle == DRV_I2C_TRANSFER_HANDLE_INVALID)
     {
-        // Error handling here
-    }
 
-    //Check the status of the transfer
-    //This call can be used to wait until the transfer is processed.
+    }
 
     event = DRV_I2C_TransferStatusGet(transferHandle);
   </code>
@@ -1138,15 +1097,9 @@ DRV_I2C_TRANSFER_EVENT DRV_I2C_TransferStatusGet( const DRV_I2C_TRANSFER_HANDLE 
     <code>
     uint8_t myTxBuffer[MY_TX_BUFFER_SIZE];
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     if (DRV_I2C_WriteTransfer(myI2CHandle, slaveAddress, myTxBuffer, MY_TX_BUFFER_SIZE) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1160,8 +1113,8 @@ DRV_I2C_TRANSFER_EVENT DRV_I2C_TransferStatusGet( const DRV_I2C_TRANSFER_HANDLE 
 bool DRV_I2C_WriteTransfer(
     const DRV_HANDLE handle,
     uint16_t address,
-    void* const buffer,
-    const size_t size
+    void* const writeBuffer,
+    const size_t writeSize
 );
 
 // *****************************************************************************
@@ -1212,15 +1165,9 @@ bool DRV_I2C_WriteTransfer(
     <code>
     uint8_t myTxBuffer[MY_TX_BUFFER_SIZE];
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     if (DRV_I2C_ForcedWriteTransfer(myI2CHandle, slaveAddress, myTxBuffer, MY_TX_BUFFER_SIZE) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1283,15 +1230,9 @@ bool DRV_I2C_ForcedWriteTransfer(
     <code>
     uint8_t myRxBuffer[MY_RX_BUFFER_SIZE];
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     if (DRV_I2C_ReadTransfer(myI2CHandle, slaveAddress, myRxBuffer, MY_RX_BUFFER_SIZE) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1305,8 +1246,8 @@ bool DRV_I2C_ForcedWriteTransfer(
 bool DRV_I2C_ReadTransfer(
     const DRV_HANDLE handle,
     uint16_t address,
-    void* const buffer,
-    const size_t size
+    void* const readBuffer,
+    const size_t readSize
 );
 
 // *****************************************************************************
@@ -1357,15 +1298,9 @@ bool DRV_I2C_ReadTransfer(
     uint8_t myTxBuffer[MY_TX_BUFFER_SIZE];
     uint8_t myRxBuffer[MY_RX_BUFFER_SIZE];
 
-    // myI2CHandle is the handle returned
-    // by the DRV_I2C_Open function.
-
-    // slaveAddress is address of I2C slave device
-    // to which data is to be written
-
     if (DRV_I2C_WriteReadTransfer(myI2CHandle, slaveAddress, myTxBuffer, MY_TX_BUFFER_SIZE, myRxBuffer, MY_RX_BUFFER_SIZE) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1384,6 +1319,47 @@ bool DRV_I2C_WriteReadTransfer (
     void* const readBuffer,
     const size_t readSize
 );
+
+// *****************************************************************************
+/* Function:
+    void DRV_I2C_QueuePurge(const DRV_HANDLE handle)
+
+  Summary:
+    This function removes the queued requests fo the given I2C client.
+
+  Description:
+    This function removes the queued requests fo the given I2C client and aborts the ongoing
+    transfer. This API may be used in an event when the I2C slave is not responding. The API
+    removes all the queued requests of the client calling this API. Also, if the on-going request
+    belongs to the client calling this API, then it aborts the on-going transfer and frees the
+    resources used by the ongoing transfer. In case of multiple clients (for example if there
+    are more than one I2C clients interfaced on the same I2C bus), to remove all the transfer
+    requests queued to this driver instance, this API must be called by each client to remove
+    the transfers queued by that client.
+
+  Precondition:
+    DRV_I2C_Open must have been called to obtain a valid opened device handle.
+
+  Parameters:
+    handle - A valid open-instance handle, returned from the driver's open routine
+    DRV_I2C_Open function.
+
+  Returns:
+    None
+
+  Example:
+    <code>
+
+    DRV_I2C_QueuePurge(myI2CHandle);
+
+    </code>
+
+  Remarks:
+    None
+*/
+void DRV_I2C_QueuePurge(const DRV_HANDLE handle);
+
+/* MISRAC 2012 deviation block end */
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

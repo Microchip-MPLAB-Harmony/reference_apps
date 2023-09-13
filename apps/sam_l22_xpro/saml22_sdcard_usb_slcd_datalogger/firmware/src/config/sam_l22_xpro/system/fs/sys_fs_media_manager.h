@@ -10,9 +10,9 @@ File System Service Media Manager Interface Declarations and Types
   Summary:
     File System Media Manager interface declarations and types.
 
-  Description:    
+  Description:
     This file contains function and type declarations required to interact
-    with the MPLAB Harmony File System Media Manager Framework.                         
+    with the MPLAB Harmony File System Media Manager Framework.
   *************************************************************************/
 
 //DOM-IGNORE-BEGIN
@@ -40,8 +40,8 @@ File System Service Media Manager Interface Declarations and Types
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _SYS_FS_MEDIA_MANAGER_H_
-#define _SYS_FS_MEDIA_MANAGER_H_
+#ifndef SYS_FS_MEDIA_MANAGER_H_
+#define SYS_FS_MEDIA_MANAGER_H_
 
 #include "driver/driver_common.h"
 #include "system/fs/sys_fs.h"
@@ -54,7 +54,7 @@ File System Service Media Manager Interface Declarations and Types
     extern "C" {
 
 #endif
-// DOM-IGNORE-END  
+// DOM-IGNORE-END
 
 // *****************************************************************************
 /* SYS FS Media Block Command Handle
@@ -74,8 +74,10 @@ File System Service Media Manager Interface Declarations and Types
     the driver if no event handler callback was set.
 
   Remarks:
-    None.
+    Refer to sys_media.h for actual definition..
 */
+
+/* MISRA C-2012 Rule 5.5 deviated:3 Deviation record ID -  H3_MISRAC_2012_R_5_5_DR_1 */
 
 typedef SYS_MEDIA_BLOCK_COMMAND_HANDLE  SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE;
 
@@ -122,12 +124,13 @@ typedef uintptr_t SYS_FS_MEDIA_HANDLE;
     returned by read/write/erase routines when the request could not be taken.
 
   Remarks:
-    None.
+    Refer to sys_media.h for actual definition.
 */
 
 #define SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID SYS_MEDIA_BLOCK_COMMAND_HANDLE_INVALID
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 5.2 deviated:2 Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
 /* SYS FS Media Events
 
    Summary
@@ -137,10 +140,12 @@ typedef uintptr_t SYS_FS_MEDIA_HANDLE;
     This enumeration identifies the possible events that can result from a
     media.
 
-   Remarks:
     One of these values is passed in the "event" parameter of the event
     handling callback function that client registered with the driver by
     setting the event handler when a block request is completed.
+
+   Remarks:
+    Refer to sys_media.h for actual enumerations.
 */
 
 typedef enum
@@ -153,6 +158,8 @@ typedef enum
 
 } SYS_FS_MEDIA_BLOCK_EVENT;
 
+/* MISRAC 2012 deviation block end */
+
 // *****************************************************************************
 /* SYS FS Media Property Structure
 
@@ -162,19 +169,21 @@ typedef enum
   Description:
     This structure contains the information of property of a media device.
 
-  Remarks:
     For a device, if multiple properties are applicable, they can be ORed
     together and used.
+
+  Remarks:
+    Refer to sys_media.h for actual enumerations.
 */
 
 typedef enum
 {
     /* Media supports Byte Write */
     SYS_FS_MEDIA_SUPPORTS_BYTE_WRITES = SYS_MEDIA_SUPPORTS_BYTE_WRITES,
-    
+
     /* Media supports only Read operation */
     SYS_FS_MEDIA_SUPPORTS_READ_ONLY = SYS_MEDIA_SUPPORTS_READ_ONLY,
-    
+
     /* Media supports OTP (One Time Programming) */
     SYS_FS_MEDIA_SUPPORTS_ONE_TIME_PROGRAMING = SYS_MEDIA_SUPPORTS_ONE_TIME_PROGRAMING,
 
@@ -183,7 +192,7 @@ typedef enum
 
     /* Write is blocking */
     SYS_FS_MEDIA_WRITE_IS_BLOCKING = SYS_MEDIA_WRITE_IS_BLOCKING,
-  
+
 } SYS_FS_MEDIA_PROPERTY;
 
 // *****************************************************************************
@@ -258,17 +267,17 @@ typedef enum
 {
     /* Media is of type NVM (internal flash (non volatile) memory)*/
     SYS_FS_MEDIA_TYPE_NVM,
-    
+
     /* Media is of type mass storage device */
     SYS_FS_MEDIA_TYPE_MSD,
-    
+
     /* Media is of type SD card */
     SYS_FS_MEDIA_TYPE_SD_CARD,
-    
+
     /* Media is of type RAM */
     SYS_FS_MEDIA_TYPE_RAM,
-    
-    /* Media is of type SPI Flash */
+
+    /* Media is of type SPI/QSPI Flash, SPI/I2C EEPROM */
     SYS_FS_MEDIA_TYPE_SPIFLASH
 
 } SYS_FS_MEDIA_TYPE;
@@ -283,7 +292,7 @@ typedef enum
     This enumeration contains the various status of buffer.
 
   Remarks:
-    None.
+    Refer to sys_media.h for actual enumerations.
 */
 typedef enum
 {
@@ -310,10 +319,12 @@ typedef enum
   Description:
     This structure contains the information of a sys media region.
 
-  Remarks:
     A media can have multiple regions. Sum of size of all the regions is the
     total memory size of the media. Each region is further divided into blocks
     of identical size.
+
+  Remarks:
+    Refer to sys_media.h for actual definition.
 */
 
 typedef SYS_MEDIA_REGION_GEOMETRY SYS_FS_MEDIA_REGION_GEOMETRY;
@@ -329,9 +340,11 @@ typedef SYS_MEDIA_REGION_GEOMETRY SYS_FS_MEDIA_REGION_GEOMETRY;
     the structure also has property of the media like media is one time
     programmable (OTP) or Read Only etc.
 
-  Remarks:
     A memory device can have multiple erase block regions. Sum of all the
     regions is the total memory size of the device.
+
+  Remarks:
+    Refer to sys_media.h for actual definition.
 */
 
 typedef SYS_MEDIA_GEOMETRY SYS_FS_MEDIA_GEOMETRY;
@@ -356,13 +369,13 @@ typedef struct
 
     /* Media Device Name */
     const char* devName;
-    
+
     /* Media Type */
     SYS_FS_MEDIA_TYPE mediaType;
-    
+
     /* File system type on Media */
     SYS_FS_FILE_SYSTEM_TYPE fsType;
-    
+
 } SYS_FS_MEDIA_MOUNT_DATA;
 
 // *****************************************************************************
@@ -378,7 +391,7 @@ typedef struct
   Remarks:
     None.
 */
-typedef struct _SYS_FS_VOLUME_PROPERTY
+typedef struct SYS_FS_VOLUME_PROPERTY_T
 {
     /* Volume # */
     unsigned int volNumber;
@@ -387,6 +400,21 @@ typedef struct _SYS_FS_VOLUME_PROPERTY
 } SYS_FS_VOLUME_PROPERTY;
 
 // *****************************************************************************
+
+// *****************************************************************************
+/* Volume CommandStatusGetType
+
+  Summary:
+    Function pointer for CommandStatusGet function
+
+  Description:
+    None.
+
+  Remarks:
+    None.
+*/
+typedef SYS_FS_MEDIA_COMMAND_STATUS (* CommandStatusGetType)( DRV_HANDLE handle, SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE  commandHandle);
+
 /* Media function pointers
 
   Summary:
@@ -418,7 +446,7 @@ typedef struct
     void (*eventHandlerset)(DRV_HANDLE handle, const void * eventHandler, const uintptr_t context);
     /* Function to obtain the command status */
     SYS_FS_MEDIA_COMMAND_STATUS (*commandStatusGet)(DRV_HANDLE handle,
-                                SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle);    
+                                SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle);
     /* Function to read certain bytes from the media */
     void (*Read) (DRV_HANDLE clientHandle,SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE * commandHandle,
                                          void * buffer, uint32_t blockStart, uint32_t nBlock);
@@ -447,7 +475,7 @@ typedef struct
     handling function whose function signature (parameter and return value
     types) match the types specified by this function pointer in order to
     receive event calls back from the driver.
-    
+
   Parameters:
     event           - Identifies the type of event
     commandHandle   - Handle returned from the media operation requests
@@ -458,7 +486,7 @@ typedef struct
     None.
 
   Remarks:
-    None.
+    Refer to sys_media.h for actual definition.
 */
 typedef SYS_MEDIA_EVENT_HANDLER SYS_FS_MEDIA_EVENT_HANDLER;
 
@@ -472,27 +500,27 @@ typedef SYS_MEDIA_EVENT_HANDLER SYS_FS_MEDIA_EVENT_HANDLER;
 
    Summary:
      Gets the command status.
-   
+
    Description:
      This function gets the command status. The sector read and sector write
      are non-blocking functions. Therefore, this interface is provided where
      the code should periodically poll for the buffer status. If status is
      completed, the read/write operation is considered to be complete.
- 
+
    Precondition:
      None.
- 
+
    Parameters:
      diskNo         - media number
      bufferHandle   - the command handle which was obtained during sector read/ write
- 
+
    Returns:
      Command status of type SYS_FS_MEDIA_COMMAND_STATUS.
- 
+
 */
 SYS_FS_MEDIA_COMMAND_STATUS SYS_FS_MEDIA_MANAGER_CommandStatusGet
 (
-    uint16_t     diskNo,
+    uint16_t     diskNum,
     SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE commandHandle
 );
 
@@ -508,7 +536,7 @@ SYS_FS_MEDIA_COMMAND_STATUS SYS_FS_MEDIA_MANAGER_CommandStatusGet
 
   Summary:
     Function to register media drivers with the media manager.
-  
+
   Description:
     This function is called by the media driver to register the functionalities
     with the media manager. For static media, such as NVM or a SD card, the
@@ -526,7 +554,7 @@ SYS_FS_MEDIA_COMMAND_STATUS SYS_FS_MEDIA_MANAGER_CommandStatusGet
                       during driver initialization and opening)
     mediaFunctions  - List of media driver functions
     mediaType       - Type of media
- 
+
   Returns:
     Valid handle of type SYS_FS_MEDIA_HANDLE on successful registration of the
     media driver.
@@ -551,6 +579,9 @@ SYS_FS_MEDIA_HANDLE SYS_FS_MEDIA_MANAGER_Register
     (
             SYS_FS_MEDIA_HANDLE    handle
     )
+
+  Summary:
+    Function to De-register media drivers with the media manager.
 
   Description:
     Function called by a media to deregister itself to the media manager. For
@@ -583,25 +614,25 @@ void SYS_FS_MEDIA_MANAGER_DeRegister
         uint32_t sector,
         uint32_t noSectors
     );
- 
+
     Summary:
       Reads a specified media sector.
-    
+
     Description:
       This function reads a specified media (disk) sector. This is the function
       in the media manager layer. This function in turn calls the specific
       sector read function from the list of function pointers of the media
       driver.
- 
+
     Precondition:
       None.
- 
+
     Parameters:
       diskNo         - Media number
       dataBuffer     - Pointer to buffer where data to be placed after read
       sector         - Sector numer to be read
       noSectors      - Number of sectors to read
- 
+
     Returns:
       Buffer handle of type SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE.
 */
@@ -622,25 +653,25 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorRead
         uint8_t * dataBuffer,
         uint32_t noSectors
     );
- 
+
     Summary:
       Writes a sector to the specified media.
-    
+
     Description:
       This function writes to a sector of the specified media (disk). This is
       the function in the media manager layer. This function in turn calls the
       specific sector write function from the list of function pointers of the
       media driver.
- 
+
     Precondition:
       None.
- 
+
     Parameters:
       diskNo         - media number
       sector         - Sector # to which data to be written
       dataBuffer     - pointer to buffer which holds the data to be written
       noSectors      - Number of sectors to be written
- 
+
     Returns:
       Buffer handle of type SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE.
 */
@@ -659,28 +690,28 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_SectorWrite
         const char *devName
         SYS_FS_VOLUME_PROPERTY *str
     );
- 
+
     Summary:
       Gets the volume property.
-    
+
     Description:
       This function gets the property of the volume. This function is used by
       higher layers (sys_fs layer) to know the property of the volume as
       specified in the SYS_FS_VOLUME_PROPERTY structure.
- 
+
     Precondition:
       None.
- 
+
     Parameters:
       *devName  - String name of the media
       *str      - Pointer to structure of type SYS_FS_VOLUME_PROPERTY
- 
+
     Returns:
     True or false.
 */
 bool SYS_FS_MEDIA_MANAGER_VolumePropertyGet
 (
-    const char *devName, SYS_FS_VOLUME_PROPERTY *str
+    const char *volumeName, SYS_FS_VOLUME_PROPERTY *property
 );
 
 //*****************************************************************************
@@ -689,28 +720,28 @@ bool SYS_FS_MEDIA_MANAGER_VolumePropertyGet
     (
         const char *devName
     );
- 
+
   Summary:
     Gets the media status.
-    
+
   Description:
     This function gets the media status. This function is used by higher layers
     (sys_fs layer) to know the status of the media whether the media is attached
     or detached.
- 
+
     Precondition:
       None.
- 
+
     Parameters:
       *devName        - string name of the media
- 
+
     Returns:
       Media attach/detach status of type bool.
 */
 
 bool SYS_FS_MEDIA_MANAGER_MediaStatusGet
 (
-    const char *devName
+    const char *volumeName
 );
 
 //*****************************************************************************
@@ -725,7 +756,7 @@ bool SYS_FS_MEDIA_MANAGER_MediaStatusGet
 
    Summary:
      Gets data from a specific media address.
-   
+
    Description:
      This function gets data from a specific address of media. This function is
      intended to work with NVM media only, which can have byte level
@@ -759,7 +790,7 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_Read
     (
         uint16_t diskNo
     );
- 
+
   Summary:
     Gets the starting media address based on a disk number.
 
@@ -767,19 +798,19 @@ SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE SYS_FS_MEDIA_MANAGER_Read
     This function gets the starting address of a media. This function is
     intended to work only with MPFS2, which does byte addressing and needs a
     memory address (not disk number).
- 
+
   Precondition:
      None.
- 
+
   Parameters:
      diskNo         - media number
- 
+
   Returns:
      Memory address of type uintptr_t.
 */
 uintptr_t SYS_FS_MEDIA_MANAGER_AddressGet
 (
-    uint16_t diskNo
+    uint16_t diskNum
 );
 
 //*****************************************************************************
@@ -789,13 +820,9 @@ uintptr_t SYS_FS_MEDIA_MANAGER_AddressGet
         const void * eventHandler,
         const uintptr_t context
     );
- 
+
   Summary:
     Register the event handler for Mount/Un-Mount events.
-
-  Parameters:
-    eventHandler - FS Client event handler pointer
-    context - FS Client context
 
   Description:
     This function is used to register a FS client event handler for notifying the
@@ -805,19 +832,30 @@ uintptr_t SYS_FS_MEDIA_MANAGER_AddressGet
     The client should check if the mount name passed when event handler is called
     is the one it is expecting and then proceed.
 
-  Note:
+  Parameters:
+    eventHandler - FS Client event handler pointer
+    context - FS Client context
+
+  Returns:
+    None.
+
+  Remarks:
     This API should not be called directly from Application. Application should use
     SYS_FS_EventHandlerSet() instead.
 
     This API is Available only when SYS_FS_AUTOMOUNT_ENABLE is set to true.
 
     See sys_fs.h for usage information.
-***************************************************************************/
+*/
+/* MISRA C-2012 Rule 5.1, 8.6 deviated below. Deviation record ID -
+   H3_MISRAC_2012_R_5_1_DR_1 & H3_MISRAC_2012_R_8_6_DR_1*/
+
 void SYS_FS_MEDIA_MANAGER_EventHandlerSet
 (
     const void * eventHandler,
     const uintptr_t context
 );
+/* MISRAC 2012 deviation block end */
 
 //*****************************************************************************
 /* Function:
@@ -825,21 +863,21 @@ void SYS_FS_MEDIA_MANAGER_EventHandlerSet
     (
         const void *eventHandler
     );
- 
+
   Summary:
     Register the event handler for data transfer events.
-    
+
   Description:
     This function is used to send the command status for the disk operation.
- 
+
   Precondition:
     None.
- 
+
   Parameters:
     eventHandler - Event handler pointer.
- 
+
   Returns:
-    Pointer to the media geometry on Success else NULL.
+    None.
 */
 void SYS_FS_MEDIA_MANAGER_RegisterTransferHandler
 (
@@ -852,19 +890,19 @@ void SYS_FS_MEDIA_MANAGER_RegisterTransferHandler
     (
         uint16_t diskNum
     );
- 
+
   Summary:
     Gets the media geometry information.
-    
+
   Description:
     This function gets the media geometry information.
- 
+
   Precondition:
     None.
- 
+
   Parameters:
     diskNum - Media disk number.
- 
+
   Returns:
     Pointer to the media geometry on Success else NULL.
 */
@@ -879,21 +917,21 @@ SYS_FS_MEDIA_GEOMETRY * SYS_FS_MEDIA_MANAGER_GetMediaGeometry
     (
         uint8_t mediaIndex
     );
- 
+
   Summary:
     Media manager transfer task function.
-     
+
   Description:
     This is the media manager transfer task function. This task is repeatedly
     called by the disk io layer of the native file system for driving the
     current disk read/write operation to completion.
- 
+
   Precondition:
     None
- 
+
   Parameters:
     mediaIndex - disk number of the media
- 
+
   Returns:
     None.
 */
@@ -908,20 +946,20 @@ void SYS_FS_MEDIA_MANAGER_TransferTask
     (
         void
     );
- 
+
   Summary:
     Media manager task function.
-     
+
   Description:
     This is the media manager task function. This task must be called
     repeatedly from the main loop.
- 
+
   Precondition:
     None
- 
+
   Parameters:
     None.
- 
+
   Returns:
     None.
 */
@@ -930,6 +968,7 @@ void SYS_FS_MEDIA_MANAGER_Tasks
     void
 );
 
+extern const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[];
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

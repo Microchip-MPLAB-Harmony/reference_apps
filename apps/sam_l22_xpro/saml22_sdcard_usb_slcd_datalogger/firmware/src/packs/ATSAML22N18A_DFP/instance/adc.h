@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,12 +26,12 @@
 
 
 /* ========== Instance Parameter definitions for ADC peripheral ========== */
-#define ADC_DMAC_ID_RESRDY                       _UL_(31)   /* index of DMA RESRDY trigger */
-#define ADC_EXTCHANNEL_MSB                       _UL_(19)   /* Number of external channels */
-#define ADC_GCLK_ID                              _UL_(25)   /* index of Generic Clock */
-#define ADC_INT_CH30                             _UL_(2)    /* Select OPAMP or CTAT on Channel 30 */
-#define ADC_MASTER_SLAVE_MODE                    _UL_(0)    /* ADC Master/Slave Mode */
-#define ADC_LOAD_CALIB                           _UL_(1)    /* CALIB register to be loaded from NVM */
-#define ADC_INSTANCE_ID                          _UL_(76)   
+#define ADC_DMAC_ID_RESRDY                       (31)       /* index of DMA RESRDY trigger */
+#define ADC_EXTCHANNEL_MSB                       (19)       /* Number of external channels */
+#define ADC_GCLK_ID                              (25)       /* index of Generic Clock */
+#define ADC_INT_CH30                             (2)        /* Select OPAMP or CTAT on Channel 30 */
+#define ADC_MASTER_SLAVE_MODE                    (0)        /* ADC Master/Slave Mode */
+#define ADC_LOAD_CALIB                           (1)        /* CALIB register to be loaded from NVM */
+#define ADC_INSTANCE_ID                          (76)       
 
 #endif /* _SAML22_ADC_INSTANCE_ */

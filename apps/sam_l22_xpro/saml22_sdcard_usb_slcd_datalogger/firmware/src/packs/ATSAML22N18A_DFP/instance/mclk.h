@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for MCLK peripheral ========== */
-#define MCLK_BUPDIV_IMPLEMENTED                  _UL_(1)    
-#define MCLK_CTRLA_MCSEL_GCLK                    _UL_(1)    
-#define MCLK_CTRLA_MCSEL_OSC8M                   _UL_(0)    
-#define MCLK_MCLK_CLK_APB_NUM                    _UL_(3)    
-#define MCLK_SYSTEM_CLOCK                        _UL_(1000000) /* System Clock Frequency at Reset */
-#define MCLK_INSTANCE_ID                         _UL_(2)    
+#define MCLK_BUPDIV_IMPLEMENTED                  (1)        
+#define MCLK_CTRLA_MCSEL_GCLK                    (1)        
+#define MCLK_CTRLA_MCSEL_OSC8M                   (0)        
+#define MCLK_CLK_APB_NUM                         (3)        
+#define MCLK_SYSTEM_CLOCK                        (1000000)  /* System Clock Frequency at Reset */
+#define MCLK_INSTANCE_ID                         (2)        
 
 #endif /* _SAML22_MCLK_INSTANCE_ */

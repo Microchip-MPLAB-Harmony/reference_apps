@@ -615,11 +615,11 @@ void SetTime(void)
 if (SWITCH_Get() == SWITCH_STATE_PRESSED)
      { 
            //5-12-2021 15:38:00 Sunday
-    sys_time.tm_hour = 15;      /* hour [0,23] */
+    sys_time.tm_hour = 16;      /* hour [0,23] */
     sys_time.tm_sec = 00;       /* seconds [0,61] */
     sys_time.tm_min = 38;       /* minutes [0,59] */
-    sys_time.tm_mon = 11;        /* month of year [0,11] */
-    sys_time.tm_year = 121;     /* years since 1900 */
+    sys_time.tm_mon = 8;        /* month of year [0,11] */
+    sys_time.tm_year = 123;     /* years since 1900 */
     sys_time.tm_mday = 5;      /* day of month [1,31] */
     sys_time.tm_wday = 0;       /* day of week [0,6] (Sunday = 0) */
                                 /* tm_yday - day of year [0,365] */

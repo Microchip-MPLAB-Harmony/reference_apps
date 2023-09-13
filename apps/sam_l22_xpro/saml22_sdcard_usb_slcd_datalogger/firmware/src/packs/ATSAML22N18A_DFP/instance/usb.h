@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,10 +26,10 @@
 
 
 /* ========== Instance Parameter definitions for USB peripheral ========== */
-#define USB_EPT_NBR                              _UL_(8)    /* Number of USB end points (obsolete) */
-#define USB_EPT_NUM                              _UL_(8)    /* Number of USB end points */
-#define USB_GCLK_ID                              _UL_(6)    /* Index of Generic Clock */
-#define USB_PIPE_NUM                             _UL_(0)    /* Number of USB pipes */
-#define USB_INSTANCE_ID                          _UL_(32)   
+#define USB_EPT_NBR                              (8)        /* Number of USB end points (obsolete) */
+#define USB_EPT_NUM                              (8)        /* Number of USB end points */
+#define USB_GCLK_ID                              (6)        /* Index of Generic Clock */
+#define USB_PIPE_NUM                             (0)        /* Number of USB pipes */
+#define USB_INSTANCE_ID                          (32)       
 
 #endif /* _SAML22_USB_INSTANCE_ */

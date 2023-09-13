@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for AC peripheral ========== */
-#define AC_COMPCTRL_MUXNEG_OPAMP                 _UL_(7)    /* OPAMP selection for MUXNEG */
-#define AC_GCLK_ID                               _UL_(26)   /* Index of Generic Clock */
-#define AC_NUM_CMP                               _UL_(2)    /* Number of comparators */
-#define AC_PAIRS                                 _UL_(1)    /* Number of pairs of comparators */
-#define AC_HYST_LVL_CONFIG                       _UL_(1)    /* Hysteresis level configuration */
-#define AC_INSTANCE_ID                           _UL_(77)   
+#define AC_COMPCTRL_MUXNEG_OPAMP                 (7)        /* OPAMP selection for MUXNEG */
+#define AC_GCLK_ID                               (26)       /* Index of Generic Clock */
+#define AC_NUM_CMP                               (2)        /* Number of comparators */
+#define AC_PAIRS                                 (1)        /* Number of pairs of comparators */
+#define AC_HYST_LVL_CONFIG                       (1)        /* Hysteresis level configuration */
+#define AC_INSTANCE_ID                           (77)       
 
 #endif /* _SAML22_AC_INSTANCE_ */

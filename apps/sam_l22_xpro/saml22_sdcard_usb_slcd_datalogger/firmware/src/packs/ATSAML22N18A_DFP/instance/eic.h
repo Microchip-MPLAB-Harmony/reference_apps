@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAML22N18A
+/*
+ * Instance header file for ATSAML22N18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,10 +26,10 @@
 
 
 /* ========== Instance Parameter definitions for EIC peripheral ========== */
-#define EIC_EXTINT_NUM                           _UL_(16)   
-#define EIC_GCLK_ID                              _UL_(3)    
-#define EIC_NUMBER_OF_CONFIG_REGS                _UL_(2)    
-#define EIC_NUMBER_OF_INTERRUPTS                 _UL_(16)   
-#define EIC_INSTANCE_ID                          _UL_(10)   
+#define EIC_EXTINT_NUM                           (16)       
+#define EIC_GCLK_ID                              (3)        
+#define EIC_NUMBER_OF_CONFIG_REGS                (2)        
+#define EIC_NUMBER_OF_INTERRUPTS                 (16)       
+#define EIC_INSTANCE_ID                          (10)       
 
 #endif /* _SAML22_EIC_INSTANCE_ */
