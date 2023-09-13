@@ -1,4 +1,4 @@
-<config configName="pic32mzda_curiosity" projectName="getting_started_pic32mz_da_curiosity" configVersion="1.1" device="PIC32MZ2064DAR176" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="pic32mzda_curiosity" projectName="getting_started_pic32mz_da_curiosity" configVersion="1.1" device="PIC32MZ2064DAR176" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -23,14 +23,15 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;core&quot; x=&quot;188&quot; y=&quot;21&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;dfp&quot; x=&quot;0&quot; y=&quot;20&quot;/&gt;
@@ -39,7 +40,6 @@
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;uart4&quot; x=&quot;0&quot; y=&quot;58&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -3656,19 +3656,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart4" name="UART_BRGH_MODE_COMMENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart4&gt;
-  &lt;uart4 dnOrder=&quot;0&quot; id=&quot;UART_BRGH_MODE_COMMENT&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;String dnOrder=&quot;0&quot; id=&quot;text&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;***&amp;amp;#160;High&amp;amp;#160;Speed&amp;amp;#160;mode&amp;amp;#160;4x&amp;amp;#160;baud&amp;amp;#160;clock&amp;amp;#160;enabled&amp;amp;#160;(BRGH&amp;amp;#160;=&amp;amp;#160;1)&amp;amp;#160;***&lt;/Value&gt;
-      &lt;/String&gt;
-    &lt;/Attributes&gt;
-  &lt;/uart4&gt;
-&lt;/uart4&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart4" name="UART_CLOCK_FREQ"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart4&gt;
   &lt;uart4 dnOrder=&quot;0&quot; id=&quot;UART_CLOCK_FREQ&quot;&gt;
@@ -3762,7 +3749,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c1_master.h</file>
-         <hash>56e29c3a26bc848cd14e294e0c3aa5f501ab739f27c523d50c67bbc97f754cf0</hash>
+         <hash>c80c7bd7117ed33eeafbe41abf21be5dca86b0db66ef91efb2cc0d6595067fcb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c_master_common.h</file>
@@ -3770,19 +3757,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart_common.h</file>
-         <hash>90d1791d0855caa86d5d529a0ba209330f20cd0da2436950a7e71b38ef8da02b</hash>
+         <hash>70213cd740b3ff9a591d93ad6aac9493335851db084dd862275effacdebf710d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\evic\plib_evic.h</file>
-         <hash>c92512e3068987f43ebd53be03c4e58115b45dbdcb9833216cb05c2d71199152</hash>
+         <hash>465c919c27930db968cce9d5bcabcb177beafbb3d2e9c62f3f6f8a4f00885a79</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\i2c\master\plib_i2c1_master.c</file>
-         <hash>119d27f4697e1bcae1bfb1fb6bbffd963115e24db8f2df39cc5edd1264f42c54</hash>
+         <hash>f56de5c97663b1b26cda4981ece95c73a0819a6ab052b1f66470a18c506e27ae</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache_local.h</file>
-         <hash>d8172028d448563ad48e5258b140e6746274aed4742c450ef84336e6574c810e</hash>
+         <hash>91d5a1a9920a5aea939f16fe36e9346b60ba3a8577817f24c0e8198cba2e089d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\p32MZ2064DAR176.ld</file>
@@ -3794,55 +3781,55 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\definitions.h</file>
-         <hash>3ada1392903a9d723b30c0b661a8e90edb4718aa8ff8170f0952486fce06beeb</hash>
+         <hash>1d0882073a9a54b0be88994a9d261f60ac1a9022c4c7ad1e8ffb363807343ed0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\tmr1\plib_tmr1.h</file>
-         <hash>b28749c5aeabe65f99fb625e1d171fcc0979f5b85f0ff072a6fb610d66236832</hash>
+         <hash>3e1ae49682c4b1b0f0d329f2b76d9e9f9a2a32bb42f25049a897e05c85270626</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\gpio\plib_gpio.h</file>
-         <hash>b0fe8155c49919ad9d03f065421840617640fc10b468b50846c4d1986ce92e12</hash>
+         <hash>b67651fabd2a677da8d83fe5bc6c83d66eab3adf2d272a946b9691e9eebf1d59</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\interrupts.c</file>
-         <hash>3f7548f692e5d122d83ca42581b2b5b57216eda1e52b594788a7b314d9a34269</hash>
+         <hash>b9231fd2e8addc6f8ce4c8d6c5586e353f90ba6429e61698b695afbfd2b48ceb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\evic\plib_evic.c</file>
-         <hash>45670219da59a08d679dd4ab0ef9fe4e71c8794dc5f8d86b173be3e44f49e459</hash>
+         <hash>2669a6c479fe979d01b43d1a44e45d6c0303a7d7778f9c0e646f836d31aa06de</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\toolchain_specifics.h</file>
-         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
+         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\gpio\plib_gpio.c</file>
-         <hash>ab76e1011079fc67bec4a88174df15438b0967d20c09134b03c51373e8666766</hash>
+         <hash>364f3dfbe0a992a1d09bc23a9d02bff8e0c54e7eafd67457f86cf02f33424d02</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>828f2daa81a6df14e6ba50af5b2b0dd577aa2b9df7330ecec640152cb459d4c6</hash>
+         <hash>122e0895b74ff286b51d9a348d5965259ae8ca6716cb946a2a9d8873aaac7b8c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\tmr1\plib_tmr1.c</file>
-         <hash>89c366f1308e87d57f8a8af445f13db322a17c7f756783ebd118917a7c9814af</hash>
+         <hash>964aad87c3f41987121762f9399f7c1231c78c8920b6b02880a9dcdc8f92049f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>8ac1f2297b2c2440d92dfa5e55e16ba4312cce86f3d265fd14cfb47399ac5d47</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\clk\plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart4.h</file>
-         <hash>9cc494009c412cff154b7e244bbd81ea81ca77020ccb272ac6a99175221d0f3d</hash>
+         <hash>e77d1536954a45b4de78ed245ab2ac099ebd1c198bee967e534c579dd57b4981</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\stdio\xc32_monitor.c</file>
-         <hash>26e5749db654ed433fd94f6c732ef8600d0cbf5196493374cf111877c02b694e</hash>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\tmr1\plib_tmr1_common.h</file>
@@ -3854,7 +3841,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\dmac\plib_dmac.c</file>
-         <hash>9ff708388bf7e7fb98c059056f7130d92cd48188ddddc4c9c3580da92bdeeef7</hash>
+         <hash>0fd568b36be49b4609b36e0db43d5c4a12cf0ea5b4b874a30088bbda47734f54</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache_pic32mz.h</file>
@@ -3862,23 +3849,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\dmac\plib_dmac.h</file>
-         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
+         <hash>78b9533671371600d12031eb6280ef51c292677cc636c809bb1b16ab772a4f8d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\exceptions.c</file>
-         <hash>f5ad435bbdb69c22d638ce10fd145b4cf0f12dc654d814a836293ca96fa992e5</hash>
+         <hash>ad7c8afe7fa8ac3a356ad4a7b779a2bc7c6d8e9aaf9d3cd7315a93a29f03978a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\uart\plib_uart4.c</file>
-         <hash>5f9e56fa36f2c6948112bf95e6d593f873264462b0104fac8563f07c28cdea69</hash>
+         <hash>7a5bcd5600e92ad2442fc0c3d26a2fc37c063b375f318c481e271628db1b02fe</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\initialization.c</file>
-         <hash>1f88150ef732258e32af5ce2e95e2cfb94db4dbe3ebfeaceec7beb2bbc96274c</hash>
+         <hash>76bdd55b5416b73458cb9e8a672049df36347faf9f628e9a85b8942e4149ce09</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache.c</file>
-         <hash>28c61150a2e09ba1c80c2a1658351ba6d75e37ea0f3dbe56b4adc79ff49d7a64</hash>
+         <hash>500634fa5c5cb4efb91faa7a54e3ccbb26ad7ff6d188ff0e91cbaabc606cf054</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache_pic32mz.S</file>
@@ -3890,7 +3877,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mzda_curiosity\peripheral\cache\plib_cache.h</file>
-         <hash>114b4101b4690f99a531562fe08f7b52654664d811ee3ca2ecdfd72aefe96792</hash>
+         <hash>da01fae7f39626c9f25c0c8f4f9a8cf25ed0c4b8dd6c0d4bae146210efe8da46</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

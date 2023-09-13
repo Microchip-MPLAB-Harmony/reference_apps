@@ -65,6 +65,12 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME			 "PIC32MZ2064DAR176"
+#define DEVICE_ARCH			 "MIPS"
+#define DEVICE_FAMILY		 "PIC32MZDA"
+#define DEVICE_SERIES		 "PIC32MZ"
+
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 200000000
 

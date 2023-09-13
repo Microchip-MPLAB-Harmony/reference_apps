@@ -77,7 +77,7 @@ void TMR1_Start(void);
 
 void TMR1_Stop(void);
 
-void TMR1_PeriodSet(uint16_t);
+void TMR1_PeriodSet(uint16_t period);
 
 uint16_t TMR1_PeriodGet(void);
 

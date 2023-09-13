@@ -87,6 +87,7 @@ void UART4_WriteByte( int data );
 
 bool UART4_TransmitterIsReady( void );
 
+
 bool UART4_TransmitComplete( void );
 
 // DOM-IGNORE-BEGIN

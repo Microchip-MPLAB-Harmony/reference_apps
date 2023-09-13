@@ -50,8 +50,9 @@
 
 #include "device.h"
 #include "plib_tmr1.h"
+#include "interrupts.h"
 
-static TMR1_TIMER_OBJECT tmr1Obj;
+volatile static TMR1_TIMER_OBJECT tmr1Obj;
 
 void TMR1_Initialize(void)
 {
@@ -106,7 +107,7 @@ uint16_t TMR1_PeriodGet(void)
 
 uint16_t TMR1_CounterGet(void)
 {
-    return(TMR1);
+    return((uint16_t)TMR1);
 }
 
 uint32_t TMR1_FrequencyGet(void)
@@ -114,14 +115,15 @@ uint32_t TMR1_FrequencyGet(void)
     return (4096);
 }
 
-void TIMER_1_InterruptHandler (void)
+void __attribute__((used)) TIMER_1_InterruptHandler (void)
 {
     uint32_t status = IFS0bits.T1IF;
     IFS0CLR = _IFS0_T1IF_MASK;
 
     if((tmr1Obj.callback_fn != NULL))
     {
-        tmr1Obj.callback_fn(status, tmr1Obj.context);
+        uintptr_t context = tmr1Obj.context;
+        tmr1Obj.callback_fn(status, context);
     }
 }
 
