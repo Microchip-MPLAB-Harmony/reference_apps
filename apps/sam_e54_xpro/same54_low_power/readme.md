@@ -131,6 +131,7 @@ connected to Micro-B port, and reconnect it back.
 
 
 ## Revision:
+- v1.6.0 - Regenerated and Tested the application.
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, regenerated and tested application.
 - v1.3.0 - Regenerated and tested application.
