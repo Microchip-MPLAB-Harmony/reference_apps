@@ -661,7 +661,7 @@ void cloud_publish_message()
 #define NEW_CREDENTIALS     2
 #define WIFI_SOFT_AP  0
 #define WIFI_DEFAULT  1
-uint8_t mode = WIFI_DEFAULT;
+uint8_t wifi_mode = WIFI_DEFAULT;
 void softApConnectTask(void);
 bool wifi_connectToAp(uint8_t passed_wifi_creds);
 extern bool ssidReceived;
@@ -897,11 +897,8 @@ void APP_ExampleTasks(DRV_HANDLE handle)
         break;
 
     case CLOUD_STATE_CLOUD_CONNECT:
-        //mode = 2;
-//        if(mode != WIFI_DEFAULT){
-//        /* Connect to the target BSS with the chosen authentication. */
-//       
-        if(mode==1)
+        
+        if(wifi_mode==1)
         {
             if (WDRV_WINC_STATUS_OK == WDRV_WINC_BSSReconnect(handle,&wifi_callback_handler))
         {
@@ -917,7 +914,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
                 // Set the next cloud WIFI state
                 g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTING;
                 debug_print("Reconnecting to Cloud...");
-                //mode=1;
+                
             }
             }
              

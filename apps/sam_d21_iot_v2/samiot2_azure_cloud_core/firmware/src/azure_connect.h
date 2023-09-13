@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#define CLOUD_ENDPOINT "SAMIOTV2.azure-devices.net"
+#define CLOUD_ENDPOINT "samiotv2test.azure-devices.net"
 
 #ifdef __cplusplus
 }

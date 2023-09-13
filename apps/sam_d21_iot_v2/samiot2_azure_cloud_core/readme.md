@@ -300,7 +300,7 @@ The following sections describes the steps to run the application.
 
 ## Reference:
 
-- For more details on the application usage, functionality and other details, refer to the [SAM-IoT Wx v2 Development Board User Guide](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/SAM_IoT_Wx_v2_Development_Board_User_Guide.pdf)
+- For more details on the application usage, functionality and other details, refer to the [SAM-IoT Wx v2 Development Board User Guide](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/UserGuides/SAM-IoT-Wx-v2-Hardware-User%E2%80%99s-Guide-DS70005506.pdf)
 
 ## Comments:
 

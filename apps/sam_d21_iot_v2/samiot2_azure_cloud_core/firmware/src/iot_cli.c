@@ -49,7 +49,7 @@
 #define WIFI_PARAMS_PSK     2
 #define WIFI_PARAMS_WEP     3
 
-extern uint8_t mode;
+extern uint8_t wifi_mode;
 
 const char * const cli_version_number             = "1.0";
 const char * const firmware_version_number        = "1.0.0";
@@ -228,7 +228,7 @@ static void set_wifi_auth(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     }
 	if (params)
 	{
-        mode = 2; //new credentials received
+        wifi_mode = 2; //new credentials received
 		(*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "OK\r\n\4" );
         
         if( g_cloud_wifi_state >= CLOUD_STATE_CLOUD_CONNECTED )

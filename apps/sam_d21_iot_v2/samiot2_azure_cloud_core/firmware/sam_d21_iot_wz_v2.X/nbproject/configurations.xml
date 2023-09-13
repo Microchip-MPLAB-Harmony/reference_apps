@@ -41,26 +41,6 @@
         <itemPath>../src/common/cloud_wifi_task.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="samd21_wg_iot_v2" projectFiles="true">
-          <logicalFolder name="f4" displayName="library" projectFiles="true">
-            <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
-              <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
-              </logicalFolder>
-              <logicalFolder name="calib" displayName="calib" projectFiles="true">
-              </logicalFolder>
-              <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
-                <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
-                </logicalFolder>
-              </logicalFolder>
-              <logicalFolder name="hal" displayName="hal" projectFiles="true">
-              </logicalFolder>
-              <logicalFolder name="host" displayName="host" projectFiles="true">
-              </logicalFolder>
-              <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
-        </logicalFolder>
         <logicalFolder name="samd21_wz_iot_v2"
                        displayName="samd21_wz_iot_v2"
                        projectFiles="true">
@@ -469,73 +449,6 @@
         <itemPath>../src/common/cloud_wifi_task.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="samd21_wg_iot_v2" projectFiles="true">
-          <logicalFolder name="f2" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/samd21_wg_iot_v2/driver/spi/src/drv_spi_local.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f5" displayName="library" projectFiles="true">
-            <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
-              <logicalFolder name="f5" displayName="atcacert" projectFiles="true">
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_client.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_date.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_def.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_der.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_host_hw.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_host_sw.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atcacert/atcacert_pem.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f6" displayName="calib" projectFiles="true">
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/calib/calib_aes_gcm.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/calib/calib_basic.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/calib/calib_command.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/calib/calib_execution.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f3" displayName="crypto" projectFiles="true">
-                <logicalFolder name="f1" displayName="hashes" projectFiles="true">
-                  <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/hashes/sha1_routines.h</itemPath>
-                  <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/hashes/sha2_routines.h</itemPath>
-                </logicalFolder>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_rand.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f2" displayName="hal" projectFiles="true">
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/hal/atca_hal.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f7" displayName="host" projectFiles="true">
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/host/atca_host.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="f4" displayName="jwt" projectFiles="true">
-                <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/jwt/atca_jwt.h</itemPath>
-              </logicalFolder>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_basic.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_bool.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_cfgs.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_compiler.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_debug.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_device.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_devtypes.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_helpers.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_iface.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_status.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/atca_version.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/library/cryptoauthlib/cryptoauthlib.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="system" projectFiles="true">
-            <logicalFolder name="f3" displayName="console" projectFiles="true">
-              <itemPath>../src/config/samd21_wg_iot_v2/system/console/src/sys_console_local.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/system/console/src/sys_console_uart.h</itemPath>
-              <itemPath>../src/config/samd21_wg_iot_v2/system/console/src/sys_console_uart_definitions.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-        </logicalFolder>
         <logicalFolder name="samd21_wz_iot_v2"
                        displayName="samd21_wz_iot_v2"
                        projectFiles="true">
@@ -791,32 +704,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
-      <logicalFolder name="f1" displayName="samd21_wg_iot_v2.mhc" projectFiles="true">
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/adc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/core.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/cryptoauthlib_tng.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/project.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom3.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sercom5.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/samd21_wg_iot_v2/samd21_wg_iot_v2.mhc/tc3.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>azure_cloud_iot_core_sam_d21_iot_wz_v2.mc3</itemPath>
     </logicalFolder>
@@ -896,13 +783,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/samd21_wg_iot_v2;../src/config/samd21_wg_iot_v2/driver/winc/include/;../src/config/samd21_wg_iot_v2/driver/winc/include/dev;../src/config/samd21_wg_iot_v2/driver/winc/include/drv/bsp;../src/config/samd21_wg_iot_v2/driver/winc/include/drv/bsp/include;../src/config/samd21_wg_iot_v2/driver/winc/include/drv/common;../src/config/samd21_wg_iot_v2/driver/winc/include/drv/driver;../src/config/samd21_wg_iot_v2/driver/winc/include/drv/socket;../src/config/samd21_wg_iot_v2/driver/winc/include/drv/spi_flash;../src/config/samd21_wg_iot_v2/library/cryptoauthlib;../src/config/samd21_wg_iot_v2/library/cryptoauthlib/crypto;../src/config/samd21_wg_iot_v2/library/cryptoauthlib/pkcs11;../src/config/samd21_wg_iot_v2/library/cryptoauthlib/tng;../src/config/samd21_wz_iot_v2;../src/config/samd21_wz_iot_v2/driver/winc/include/;../src/config/samd21_wz_iot_v2/driver/winc/include/dev;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/bsp;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/bsp/include;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/common;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/driver;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/socket;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/spi_flash;../src/config/samd21_wz_iot_v2/library/cryptoauthlib;../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto;../src/config/samd21_wz_iot_v2/library/cryptoauthlib/pkcs11;../src/config/samd21_wz_iot_v2/library/cryptoauthlib/tng;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;..\src\common;..\src\common\paho_mqtt_embedded_c\MQTTClient-C;..\src\common\paho_mqtt_embedded_c\MQTTPacket;..\src\common\paho_mqtt_embedded_c\platform;..\src\common\parson_json;..\src\common\utilities"/>
+                  value="../src;../src/config/samd21_wz_iot_v2;../src/config/samd21_wz_iot_v2/driver/winc/include/;../src/config/samd21_wz_iot_v2/driver/winc/include/dev;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/bsp;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/bsp/include;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/common;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/driver;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/socket;../src/config/samd21_wz_iot_v2/driver/winc/include/drv/spi_flash;../src/config/samd21_wz_iot_v2/library/cryptoauthlib;../src/config/samd21_wz_iot_v2/library/cryptoauthlib/crypto;../src/config/samd21_wz_iot_v2/library/cryptoauthlib/pkcs11;../src/config/samd21_wz_iot_v2/library/cryptoauthlib/tng;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;..\src\common;..\src\common\paho_mqtt_embedded_c\MQTTClient-C;..\src\common\paho_mqtt_embedded_c\MQTTPacket;..\src\common\paho_mqtt_embedded_c\platform;..\src\common\parson_json;..\src\common\utilities"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -952,6 +840,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -991,6 +880,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1000,7 +890,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/samd21_wg_iot_v2;../src/config/samd21_wz_iot_v2;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/samd21_wz_iot_v2;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -2051,6 +1941,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/i20016/AppData/Local/trust_platform1/tpds_core/TrustFLEX/10_cloud_connect/firmware/samd21_iot_wg_v2.X/debug/samd21_wg_iot_v2/samd21_iot_wg_v2_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

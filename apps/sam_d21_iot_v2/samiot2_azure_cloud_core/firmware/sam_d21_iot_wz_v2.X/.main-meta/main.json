@@ -10,7 +10,7 @@
 		"shortDescription": "Microsoft Azure Cloud IoT Core Application on SAM D21 IoT WZ v2 Development Board",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.10"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
@@ -49,7 +49,6 @@
 			"EIC", "Timer", "GPIO", "SERCOM(USART)"
 		],
 		"keywords": [
-			"MHC",
             "MCC",
 			"Harmony",		
 			"Click Board",
