@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAME70Q21B linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,7 +77,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x60000)
 #  error RAM_LENGTH is greater than the max size of 0x60000
 #endif
-  
 #ifndef ITCM_ORIGIN
 #  define ITCM_ORIGIN 0x0
 #endif
@@ -88,7 +87,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  undef __XC32_ITCM_LENGTH
 #  define __XC32_ITCM_LENGTH 0x20000
 #endif
-
 #ifndef DTCM_ORIGIN
 #  define DTCM_ORIGIN 0x20000000
 #endif
@@ -101,6 +99,7 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #endif
 
 
+
 /*************************************************************************
  * Memory-Region Definitions
  * The MEMORY command describes the location and size of blocks of memory
@@ -110,16 +109,10 @@ MEMORY
 {
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH-__XC32_ITCM_LENGTH-__XC32_DTCM_LENGTH
-  itcm (WX) : ORIGIN = ITCM_ORIGIN, LENGTH = __XC32_ITCM_LENGTH
-  dtcm (WX!R) : ORIGIN = DTCM_ORIGIN, LENGTH = __XC32_DTCM_LENGTH
-  config_D0000000 : ORIGIN = 0xD0000000, LENGTH = 0x4
-  config_D0000008 : ORIGIN = 0xD0000008, LENGTH = 0x4
-  config_D0000004 : ORIGIN = 0xD0000004, LENGTH = 0x4
-  config_D000000C : ORIGIN = 0xD000000C, LENGTH = 0x4
-  config_D0000010 : ORIGIN = 0xD0000010, LENGTH = 0x4
+ itcm (WX) : ORIGIN = ITCM_ORIGIN, LENGTH = __XC32_ITCM_LENGTH
+dtcm (WX!R) : ORIGIN = DTCM_ORIGIN, LENGTH = __XC32_DTCM_LENGTH
 
 }
-
 /*************************************************************************
  * Output region definitions.
  * CODE_REGION defines the output region for .text/.rodata.
@@ -128,6 +121,9 @@ MEMORY
  * 
  * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
  * and 'ram' otherwise.
+ * N.B. The BFA will still allocate code to any MEMORY named 'rom' regardless
+ * of CODE_REGION's value. If you wish to use rom for something else please
+ * rename the MEMORY entry.
  * DATA_REGION defaults to 'ram', which must be present.
  * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
  */
@@ -153,21 +149,6 @@ __ram_end = ORIGIN(ram) + LENGTH(ram);
  *************************************************************************/
 SECTIONS
 {
-    .config_D0000000 : {
-      KEEP(*(.config_D0000000))
-    } > config_D0000000
-    .config_D0000008 : {
-      KEEP(*(.config_D0000008))
-    } > config_D0000008
-    .config_D0000004 : {
-      KEEP(*(.config_D0000004))
-    } > config_D0000004
-    .config_D000000C : {
-      KEEP(*(.config_D000000C))
-    } > config_D000000C
-    .config_D0000010 : {
-      KEEP(*(.config_D0000010))
-    } > config_D0000010
 
     /*
      * The linker moves the .vectors section into itcm when itcm is
@@ -246,6 +227,7 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;
+
 
     /*
      *  Align here to ensure that the .bss section occupies space up to

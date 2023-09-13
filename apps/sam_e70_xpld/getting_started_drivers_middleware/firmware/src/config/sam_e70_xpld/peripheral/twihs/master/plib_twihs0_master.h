@@ -85,6 +85,8 @@ TWIHS_ERROR TWIHS0_ErrorGet( void );
 
 bool TWIHS0_TransferSetup( TWIHS_TRANSFER_SETUP* setup, uint32_t srcClkFreq );
 
+void TWIHS0_TransferAbort( void );
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

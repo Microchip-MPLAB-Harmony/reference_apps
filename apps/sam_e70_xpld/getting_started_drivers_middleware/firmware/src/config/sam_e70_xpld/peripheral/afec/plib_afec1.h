@@ -110,6 +110,17 @@ void AFEC1_ChannelGainSet(AFEC_CHANNEL_NUM channel, AFEC_CHANNEL_GAIN gain);
 
 void AFEC1_ChannelOffsetSet(AFEC_CHANNEL_NUM channel, uint16_t offset);
 
+void AFEC1_ComparatorChannelSet(AFEC_CHANNEL_NUM channel);
+
+void AFEC1_CompareAllChannelsEnable(void);
+
+void AFEC1_CompareAllChannelsDisable(void);
+
+void AFEC1_ComparatorModeSet(AFEC_COMPARATOR_MODE cmpMode);
+
+bool AFEC1_ComparatorStatusGet(void);
+	
+uint32_t AFEC1_StatusGet(void);
 // *****************************************************************************
 
 // DOM-IGNORE-BEGIN

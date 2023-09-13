@@ -76,49 +76,45 @@ extern "C" {
     interface and should be considered part it.
 */
 
-typedef enum
-{
-    TC_TIMER_NONE = 0U,
-    TC_TIMER_COMPARE_MATCH = TC_SR_CPAS_Msk,
-    TC_TIMER_PERIOD_MATCH = TC_SR_CPCS_Msk,
-    TC_TIMER_STATUS_MSK = TC_SR_CPAS_Msk | TC_SR_CPCS_Msk,
-    /* Force the compiler to reserve 32-bit memory for enum */
-    TC_TIMER_STATUS_INVALID = 0xFFFFFFFF
-}TC_TIMER_STATUS;
+#define    TC_TIMER_NONE               (0U)
+#define    TC_TIMER_COMPARE_MATCH      (TC_SR_CPAS_Msk)
+#define    TC_TIMER_PERIOD_MATCH       (TC_SR_CPCS_Msk)
+#define    TC_TIMER_STATUS_MSK         (TC_SR_CPAS_Msk | TC_SR_CPCS_Msk)
+/* Force the compiler to reserve 32-bit memory for enum */
+#define    TC_TIMER_STATUS_INVALID     (0xFFFFFFFFU)
+	
+typedef uint32_t TC_TIMER_STATUS;
 
-typedef enum
-{
-    TC_COMPARE_NONE = 0U,
-    TC_COMPARE_A = TC_SR_CPAS_Msk,
-    TC_COMPARE_B = TC_SR_CPBS_Msk,
-    TC_COMPARE_C = TC_SR_CPCS_Msk,
-    TC_COMPARE_STATUS_MSK = TC_SR_CPAS_Msk | TC_SR_CPBS_Msk | TC_SR_CPCS_Msk,
-    /* Force the compiler to reserve 32-bit memory for enum */
-    TC_COMPARE_STATUS_INVALID = 0xFFFFFFFF
-}TC_COMPARE_STATUS;
 
-typedef enum
-{
-    TC_CAPTURE_NONE = 0U,
-    TC_CAPTURE_COUNTER_OVERFLOW = TC_SR_COVFS_Msk,
-    TC_CAPTURE_LOAD_OVERRUN = TC_SR_LOVRS_Msk,
-    TC_CAPTURE_A_LOAD = TC_SR_LDRAS_Msk,
-    TC_CAPTURE_B_LOAD = TC_SR_LDRBS_Msk,
-    TC_CAPTURE_STATUS_MSK = TC_SR_COVFS_Msk | TC_SR_LOVRS_Msk | TC_SR_LDRAS_Msk | TC_SR_LDRBS_Msk,
-    /* Force the compiler to reserve 32-bit memory for enum */
-    TC_CAPTURE_STATUS_INVALID = 0xFFFFFFFF
-}TC_CAPTURE_STATUS;
+#define    TC_CAPTURE_NONE              (0U)
+#define    TC_CAPTURE_COUNTER_OVERFLOW  (TC_SR_COVFS_Msk)
+#define    TC_CAPTURE_LOAD_OVERRUN      (TC_SR_LOVRS_Msk)
+#define    TC_CAPTURE_A_LOAD            (TC_SR_LDRAS_Msk)
+#define    TC_CAPTURE_B_LOAD            (TC_SR_LDRBS_Msk)
+#define    TC_CAPTURE_STATUS_MSK        (TC_SR_COVFS_Msk | TC_SR_LOVRS_Msk | TC_SR_LDRAS_Msk | TC_SR_LDRBS_Msk)
+/* Force the compiler to reserve 32-bit memory for enum */
+#define    TC_CAPTURE_STATUS_INVALID    (0xFFFFFFFFU)
+typedef uint32_t TC_CAPTURE_STATUS;
 
-typedef enum
-{
-    TC_QUADRATURE_NONE = 0U,
-    TC_QUADRATURE_INDEX = TC_QISR_IDX_Msk,
-    TC_QUADRATURE_DIR_CHANGE = TC_QISR_DIRCHG_Msk,
-    TC_QUADRATURE_ERROR = TC_QISR_QERR_Msk,
-    TC_QUADRATURE_STATUS_MSK = TC_QISR_IDX_Msk | TC_QISR_DIRCHG_Msk | TC_QISR_QERR_Msk,
-    /* Force the compiler to reserve 32-bit memory for enum */
-    TC_QUADRATURE_STATUS_INVALID = 0xFFFFFFFF
-}TC_QUADRATURE_STATUS;
+
+#define    TC_COMPARE_NONE            (0U)
+#define    TC_COMPARE_A               (TC_SR_CPAS_Msk)
+#define    TC_COMPARE_B               (TC_SR_CPBS_Msk)
+#define    TC_COMPARE_C               (TC_SR_CPCS_Msk)
+#define    TC_COMPARE_STATUS_MSK      (TC_SR_CPAS_Msk | TC_SR_CPBS_Msk | TC_SR_CPCS_Msk)
+/* Force the compiler to reserve 32-bit memory for enum */
+#define    TC_COMPARE_STATUS_INVALID  (0xFFFFFFFFU)
+typedef uint32_t TC_COMPARE_STATUS;
+
+
+#define    TC_QUADRATURE_NONE       (0U)
+#define    TC_QUADRATURE_INDEX      (TC_QISR_IDX_Msk)
+#define    TC_QUADRATURE_DIR_CHANGE (TC_QISR_DIRCHG_Msk)
+#define    TC_QUADRATURE_ERROR      (TC_QISR_QERR_Msk)
+#define    TC_QUADRATURE_STATUS_MSK (TC_QISR_IDX_Msk | TC_QISR_DIRCHG_Msk | TC_QISR_QERR_Msk)
+/* Force the compiler to reserve 32-bit memory for enum */
+#define    TC_QUADRATURE_STATUS_INVALID = 0xFFFFFFFFU
+typedef uint32_t TC_QUADRATURE_STATUS;
 
 // *****************************************************************************
 

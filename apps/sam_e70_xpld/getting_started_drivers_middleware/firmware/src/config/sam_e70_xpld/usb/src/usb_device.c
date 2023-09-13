@@ -1971,6 +1971,7 @@ void _USB_DEVICE_EventHandler
              * events are enabled in system_config.h. If enabled the event
              * will sent to the application. Else the event will not be
              * processed. */
+            usbDeviceThisInstance->usbDeviceStatusStruct.isSuspended = false;
             eventType = _USB_DEVICE_SOFEventEnable(); 
             if (eventType)
             {

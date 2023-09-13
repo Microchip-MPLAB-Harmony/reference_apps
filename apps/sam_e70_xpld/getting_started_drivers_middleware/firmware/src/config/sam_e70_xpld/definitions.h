@@ -55,8 +55,8 @@
 #include "usb/usb_device.h"
 #include "peripheral/efc/plib_efc.h"
 #include "peripheral/tc/plib_tc0.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
+#include "driver/i2c/drv_i2c.h"
 #include "usb/usb_device_cdc.h"
 #include "usb/usb_cdc.h"
 #include "driver/usb/usbhsv1/drv_usbhsv1.h"
@@ -79,6 +79,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAME70Q21B"
+#define DEVICE_ARCH			 "CORTEX-M7"
+#define DEVICE_FAMILY		 "SAME"
+#define DEVICE_SERIES		 "SAME70"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 300000000
@@ -196,7 +202,7 @@ typedef struct
     /* I2C0 Driver Object */
     SYS_MODULE_OBJ drvI2C0;
 
-	SYS_MODULE_OBJ  usbDevObject0;
+    SYS_MODULE_OBJ  usbDevObject0;
 
     SYS_MODULE_OBJ  sysTime;
 	SYS_MODULE_OBJ  drvUSBHSV1Object;

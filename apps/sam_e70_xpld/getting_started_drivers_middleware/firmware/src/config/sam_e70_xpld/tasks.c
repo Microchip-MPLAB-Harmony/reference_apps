@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -78,7 +79,7 @@ void SYS_Tasks ( void )
     
 
     /* Maintain Middleware & Other Libraries */
-    	/* USB Device layer tasks routine */ 
+        /* USB Device layer tasks routine */ 
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
 
 	/* USB HS Driver Task Routine */ 
