@@ -153,7 +153,7 @@ void SERCOM1_SPI_Initialize (void);
     false - if spiSourceClock and spi clock frequencies are such that resultant
     baud value is out of the possible range.
 
-  Example:
+  Example: Assuming 20 MHz as peripheral Master clock frequency
     <code>
         SPI_TRANSFER_SETUP setup;
         setup.clockFrequency = 1000000;
@@ -161,7 +161,6 @@ void SERCOM1_SPI_Initialize (void);
         setup.clockPolarity = SPI_CLOCK_POLARITY_IDLE_LOW;
         setup.dataBits = SPI_DATA_BITS_8;
 
-        Assuming 20 MHz as peripheral Master clock frequency
         if (SERCOM1_SPI_TransferSetup (&setup, 20000000) == false)
         {
             this means setup could not be done, debug the reason.
@@ -465,6 +464,39 @@ bool SERCOM1_SPI_Write(void* pTransmitData, size_t txSize);
 
 bool SERCOM1_SPI_Read(void* pReceiveData, size_t rxSize);
 
+// *****************************************************************************
+/* Function:
+    bool SERCOM1_SPI_IsTransmitterBusy (void);
+
+  Summary:
+    Returns hardware transfer status of the SPI transmit shift register
+
+  Description:
+    This function returns the hardware status of the transmit shift register.
+    The status is  returned true after all the bytes have been shifted out on the
+    SPI bus. This function should be used when using DMA with SPI PLIB to make
+    sure that all the bytes have been transmitted out on the bus. For SPI
+    transfers without DMA, the SERCOM1_SPI_IsBusy() API must be used.
+
+  Precondition:
+    The SERCOM1_SPI_Initialize() should have been called once.
+
+  Parameters:
+    None.
+
+  Returns:
+    true -  Data is being shifted out on the SPI bus
+    false - All the data bytes have been shifted out on the SPI bus
+
+  Example:
+    <code>
+
+    </code>
+
+  Remarks:
+    None.
+*/
+bool SERCOM1_SPI_IsTransmitterBusy(void);
 
 #ifdef __cplusplus // Provide C++ Compatibility
 }
