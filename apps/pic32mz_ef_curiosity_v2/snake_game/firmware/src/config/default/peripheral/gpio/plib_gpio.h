@@ -125,6 +125,15 @@
 #define THUMBSTICK_INT_Get()               ((PORTF >> 12) & 0x1U)
 #define THUMBSTICK_INT_PIN                  GPIO_PIN_RF12
 
+/*** Macros for GFX_DISP_INTF_PIN_LCDDISP pin ***/
+#define GFX_DISP_INTF_PIN_LCDDISP_Set()               (LATASET = (1U<<4))
+#define GFX_DISP_INTF_PIN_LCDDISP_Clear()             (LATACLR = (1U<<4))
+#define GFX_DISP_INTF_PIN_LCDDISP_Toggle()            (LATAINV= (1U<<4))
+#define GFX_DISP_INTF_PIN_LCDDISP_OutputEnable()      (TRISACLR = (1U<<4))
+#define GFX_DISP_INTF_PIN_LCDDISP_InputEnable()       (TRISASET = (1U<<4))
+#define GFX_DISP_INTF_PIN_LCDDISP_Get()               ((PORTA >> 4) & 0x1U)
+#define GFX_DISP_INTF_PIN_LCDDISP_PIN                  GPIO_PIN_RA4
+
 /*** Macros for SS1 pin ***/
 #define SS1_Set()               (LATDSET = (1U<<9))
 #define SS1_Clear()             (LATDCLR = (1U<<9))
@@ -142,6 +151,15 @@
 #define BSP_MAXTOUCH_CHG_InputEnable()       (TRISDSET = (1U<<0))
 #define BSP_MAXTOUCH_CHG_Get()               ((PORTD >> 0) & 0x1U)
 #define BSP_MAXTOUCH_CHG_PIN                  GPIO_PIN_RD0
+
+/*** Macros for OLD_BACKLIGHT pin ***/
+#define OLD_BACKLIGHT_Set()               (LATCSET = (1U<<14))
+#define OLD_BACKLIGHT_Clear()             (LATCCLR = (1U<<14))
+#define OLD_BACKLIGHT_Toggle()            (LATCINV= (1U<<14))
+#define OLD_BACKLIGHT_OutputEnable()      (TRISCCLR = (1U<<14))
+#define OLD_BACKLIGHT_InputEnable()       (TRISCSET = (1U<<14))
+#define OLD_BACKLIGHT_Get()               ((PORTC >> 14) & 0x1U)
+#define OLD_BACKLIGHT_PIN                  GPIO_PIN_RC14
 
 
 // *****************************************************************************
