@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAMD21J18A linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,7 +77,7 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x8000)
 #  error RAM_LENGTH is greater than the max size of 0x8000
 #endif
-  
+
 
 /*************************************************************************
  * Memory-Region Definitions
@@ -92,7 +92,6 @@ MEMORY
   config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
 
 }
-
 /*************************************************************************
  * Output region definitions.
  * CODE_REGION defines the output region for .text/.rodata.
@@ -210,6 +209,7 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;
+
 
     /*
      *  Align here to ensure that the .bss section occupies space up to

@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -56,19 +55,19 @@
 // ****************************************************************************
 #pragma config NVMCTRL_BOOTPROT = SIZE_0BYTES
 #pragma config NVMCTRL_EEPROM_SIZE = SIZE_0BYTES
-#pragma config BOD33USERLEVEL = 0x7 // Enter Hexadecimal value
+#pragma config BOD33USERLEVEL = 0x7U // Enter Hexadecimal value
 #pragma config BOD33_EN = ENABLED
 #pragma config BOD33_ACTION = RESET
 
 #pragma config BOD33_HYST = DISABLED
-#pragma config NVMCTRL_REGION_LOCKS = 0xffff // Enter Hexadecimal value
+#pragma config NVMCTRL_REGION_LOCKS = 0xffffU // Enter Hexadecimal value
 
 #pragma config WDT_ENABLE = DISABLED
 #pragma config WDT_ALWAYSON = DISABLED
 #pragma config WDT_PER = CYC16384
 
 #pragma config WDT_WINDOW_0 = SET
-#pragma config WDT_WINDOW_1 = 0x4 // Enter Hexadecimal value
+#pragma config WDT_WINDOW_1 = 0x4U // Enter Hexadecimal value
 #pragma config WDT_EWOFFSET = CYC16384
 #pragma config WDT_WEN = DISABLED
 
@@ -80,6 +79,10 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
 // <editor-fold defaultstate="collapsed" desc="DRV_SDSPI Instance 0 Initialization Data">
 
 /* SDSPI Client Objects Pool */
@@ -90,7 +93,7 @@ static DRV_SDSPI_BUFFER_OBJ drvSDSPI0TransferObjPool[DRV_SDSPI_QUEUE_SIZE_IDX0];
 
 
 /* SDSPI Driver Initialization Data */
-const DRV_SDSPI_INIT drvSDSPI0InitData =
+static const DRV_SDSPI_INIT drvSDSPI0InitData =
 {
     .spiDrvIndex            = 0,
 
@@ -117,7 +120,6 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     .isFsEnabled            = true,
 
 };
-
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="DRV_SPI Instance 0 Initialization Data">
@@ -129,7 +131,7 @@ static DRV_SPI_CLIENT_OBJ drvSPI0ClientObjPool[DRV_SPI_CLIENTS_NUMBER_IDX0];
 static DRV_SPI_TRANSFER_OBJ drvSPI0TransferObjPool[DRV_SPI_QUEUE_SIZE_IDX0];
 
 /* SPI PLIB Interface Initialization */
-const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
+static const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
 
     /* SPI PLIB Setup */
     .setup = (DRV_SPI_PLIB_SETUP)SERCOM0_SPI_TransferSetup,
@@ -144,23 +146,23 @@ const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
     .callbackRegister = (DRV_SPI_PLIB_CALLBACK_REGISTER)SERCOM0_SPI_CallbackRegister,
 };
 
-const uint32_t drvSPI0remapDataBits[]= { 0x0, 0x1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
-const uint32_t drvSPI0remapClockPolarity[] = { 0x0, 0x20000000 };
-const uint32_t drvSPI0remapClockPhase[] = { 0x10000000, 0x0 };
+static const uint32_t drvSPI0remapDataBits[]= { 0x0, 0x1, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU };
+static const uint32_t drvSPI0remapClockPolarity[] = { 0x0, 0x20000000 };
+static const uint32_t drvSPI0remapClockPhase[] = { 0x10000000, 0x0 };
 
-const DRV_SPI_INTERRUPT_SOURCES drvSPI0InterruptSources =
+static const DRV_SPI_INTERRUPT_SOURCES drvSPI0InterruptSources =
 {
     /* Peripheral has single interrupt vector */
     .isSingleIntSrc                        = true,
 
     /* Peripheral interrupt line */
-    .intSources.spiInterrupt             = SERCOM0_IRQn,
+    .intSources.spiInterrupt             = (int32_t)SERCOM0_IRQn,
     /* DMA interrupt line */
-    .intSources.dmaInterrupt               = DMAC_IRQn,
+    .intSources.dmaInterrupt               = (int32_t)DMAC_IRQn,
 };
 
 /* SPI Driver Initialization Data */
-const DRV_SPI_INIT drvSPI0InitData =
+static const DRV_SPI_INIT drvSPI0InitData =
 {
     /* SPI PLIB API */
     .spiPlib = &drvSPI0PlibAPI,
@@ -198,8 +200,8 @@ const DRV_SPI_INIT drvSPI0InitData =
     /* SPI interrupt sources (SPI peripheral and DMA) */
     .interruptSources = &drvSPI0InterruptSources,
 };
-
 // </editor-fold>
+
 
 
 // *****************************************************************************
@@ -223,12 +225,12 @@ const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
     {NULL}
 };
 
-const SYS_FS_FUNCTIONS FatFsFunctions =
+static const SYS_FS_FUNCTIONS FatFsFunctions =
 {
     .mount             = FATFS_mount,
     .unmount           = FATFS_unmount,
     .open              = FATFS_open,
-    .read              = FATFS_read,
+    .read_t              = FATFS_read,
     .close             = FATFS_close,
     .seek              = FATFS_lseek,
     .fstat             = FATFS_stat,
@@ -240,17 +242,17 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
     .closeDir          = FATFS_closedir,
     .chdir             = FATFS_chdir,
     .chdrive           = FATFS_chdrive,
-    .write             = FATFS_write,
+    .write_t             = FATFS_write,
     .tell              = FATFS_tell,
     .eof               = FATFS_eof,
     .size              = FATFS_size,
     .mkdir             = FATFS_mkdir,
-    .remove            = FATFS_unlink,
+    .remove_t            = FATFS_unlink,
     .setlabel          = FATFS_setlabel,
     .truncate          = FATFS_truncate,
     .chmode            = FATFS_chmod,
     .chtime            = FATFS_utime,
-    .rename            = FATFS_rename,
+    .rename_t            = FATFS_rename,
     .sync              = FATFS_sync,
     .putchr            = FATFS_putc,
     .putstrn           = FATFS_puts,
@@ -263,15 +265,14 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
 
 
 
-const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
+
+static const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
         .nativeFileSystemFunctions = &FatFsFunctions
-    },
+    }
 };
-
-
 // </editor-fold>
 
 /******************************************************
@@ -280,22 +281,22 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
  
 /*  When designing a Self-powered USB Device, the application should make sure
     that USB_DEVICE_Attach() function is called only when VBUS is actively powered.
-	Therefore, the firmware needs some means to detect when the Host is powering 
-	the VBUS. A 5V tolerant I/O pin can be connected to VBUS (through a resistor)
-	and can be used to detect when VBUS is high or low. The application can specify
-	a VBUS Detect function through the USB Driver Initialize data structure. 
-	The USB device stack will periodically call this function. If the VBUS is 
-	detected, the USB_DEVICE_EVENT_POWER_DETECTED event is generated. If the VBUS 
-	is removed (i.e., the device is physically detached from Host), the USB stack 
-	will generate the event USB_DEVICE_EVENT_POWER_REMOVED. The application should 
-	call USB_DEVICE_Detach() when VBUS is removed. 
+    Therefore, the firmware needs some means to detect when the Host is powering 
+    the VBUS. A 5V tolerant I/O pin can be connected to VBUS (through a resistor)
+    and can be used to detect when VBUS is high or low. The application can specify
+    a VBUS Detect function through the USB Driver Initialize data structure. 
+    The USB device stack will periodically call this function. If the VBUS is 
+    detected, the USB_DEVICE_EVENT_POWER_DETECTED event is generated. If the VBUS 
+    is removed (i.e., the device is physically detached from Host), the USB stack 
+    will generate the event USB_DEVICE_EVENT_POWER_REMOVED. The application should 
+    call USB_DEVICE_Detach() when VBUS is removed. 
     
     The following are the steps to generate the VBUS_SENSE Function through MHC     
         1) Navigate to MHC->Tools->Pin Configuration and Configure the pin used 
-		   as VBUS_SENSE. Set this pin Function as "GPIO" and set as "Input". 
-		   Provide a custom name to the pin.
+           as VBUS_SENSE. Set this pin Function as "GPIO" and set as "Input". 
+           Provide a custom name to the pin.
         2) Select the USB Driver Component in MHC Project Graph and enable the  
-		   "Enable VBUS Sense" Check-box.     
+           "Enable VBUS Sense" Check-box.     
         3) Specify the custom name of the VBUS SENSE pin in the "VBUS SENSE Pin Name" box.  */ 
 static DRV_USB_VBUS_LEVEL DRV_USBFSV1_VBUS_Comparator(void)
 {
@@ -305,10 +306,9 @@ static DRV_USB_VBUS_LEVEL DRV_USBFSV1_VBUS_Comparator(void)
     {
         retVal = DRV_USB_VBUS_LEVEL_VALID;
     }
-	return (retVal);
+    return (retVal);
 
 }
-
 
 const DRV_USBFSV1_INIT drvUSBInit =
 {
@@ -322,7 +322,7 @@ const DRV_USBFSV1_INIT drvUSBInit =
     .operationMode = DRV_USBFSV1_OPMODE_DEVICE,
 
     /* USB Full Speed Operation */
-	.operationSpeed = USB_SPEED_FULL,
+    .operationSpeed = USB_SPEED_FULL,
     
     /* Stop in idle */
     .runInStandby = true,
@@ -332,10 +332,10 @@ const DRV_USBFSV1_INIT drvUSBInit =
 
     /* Identifies peripheral (PLIB-level) ID */
     .usbID = USB_REGS,
-	
+
     /* Function to check for VBus */
     .vbusComparator = DRV_USBFSV1_VBUS_Comparator
-	
+
 };
 
 
@@ -348,7 +348,7 @@ const DRV_USBFSV1_INIT drvUSBInit =
 // *****************************************************************************
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
-const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC3_TimerCallbackRegister,
     .timerStart = (SYS_TIME_PLIB_START)TC3_TimerStart,
     .timerStop = (SYS_TIME_PLIB_STOP)TC3_TimerStop,
@@ -358,7 +358,7 @@ const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)TC3_Timer16bitCounterGet,
 };
 
-const SYS_TIME_INIT sysTimeInitData =
+static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
     .hwTimerIntNum = TC3_IRQn,
@@ -385,6 +385,8 @@ const SYS_TIME_INIT sysTimeInitData =
  ********************************************************************************/
 static void STDIO_BufferModeSet(void)
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 21.6 deviated 2 times in this file.  Deviation record ID -  H3_MISRAC_2012_R_21_6_DR_3 */
 
     /* Make stdin unbuffered */
     setbuf(stdin, NULL);
@@ -394,7 +396,7 @@ static void STDIO_BufferModeSet(void)
 }
 
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -408,6 +410,9 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3UL);
 
@@ -426,7 +431,6 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_Initialize( );
 
-    EVSYS_Initialize();
 
     SERCOM0_SPI_Initialize();
 
@@ -437,34 +441,47 @@ void SYS_Initialize ( void* data )
 
 	BSP_Initialize();
 
+
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
     /* Initialize SDSPI0 Driver Instance */
     sysObj.drvSDSPI0 = DRV_SDSPI_Initialize(DRV_SDSPI_INDEX_0, (SYS_MODULE_INIT *)&drvSDSPI0InitData);
 
     /* Initialize SPI0 Driver Instance */
     sysObj.drvSPI0 = DRV_SPI_Initialize(DRV_SPI_INDEX_0, (SYS_MODULE_INIT *)&drvSPI0InitData);
 
+
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+    
+    /* MISRAC 2012 deviation block end */
 
 
-	 /* Initialize the USB device layer */
+    /* Initialize the USB device layer */
     sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
-	
-	
+
 
     /*** File System Service Initialization Code ***/
-    SYS_FS_Initialize( (const void *) sysFSInit );
+    (void) SYS_FS_Initialize( (const void *) sysFSInit );
 
-	/* Initialize USB Driver */ 
-    sysObj.drvUSBFSV1Object = DRV_USBFSV1_Initialize(DRV_USBFSV1_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
+    /* Initialize USB Driver */ 
+    sysObj.drvUSBFSV1Object = DRV_USBFSV1_Initialize(DRV_USBFSV1_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);
 
 
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
 
 
     NVIC_Initialize();
 
-}
 
+    /* MISRAC 2012 deviation block end */
+}
 
 /*******************************************************************************
  End of File

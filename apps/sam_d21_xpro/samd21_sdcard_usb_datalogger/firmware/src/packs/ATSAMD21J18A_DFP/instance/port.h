@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMD21J18A
+/*
+ * Instance header file for ATSAMD21J18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for PORT peripheral ========== */
-#define PORT_BITS                                _UL_(84)   /* Number of PORT pins */
-#define PORT_DRVSTR                              _UL_(1)    /* DRVSTR supported */
-#define PORT_GROUPS                              _UL_(2)    /* Number of 32-bit PORT groups */
-#define PORT_ODRAIN                              _UL_(0)    /* ODRAIN supported */
-#define PORT_SLEWLIM                             _UL_(0)    /* SLEWLIM supported */
-#define PORT_INSTANCE_ID                         _UL_(35)   
+#define PORT_BITS                                (84)       /* Number of PORT pins */
+#define PORT_DRVSTR                              (1)        /* DRVSTR supported */
+#define PORT_GROUPS                              (2)        /* Number of 32-bit PORT groups */
+#define PORT_ODRAIN                              (0)        /* ODRAIN supported */
+#define PORT_SLEWLIM                             (0)        /* SLEWLIM supported */
+#define PORT_INSTANCE_ID                         (35)       
 
 #endif /* _SAMD21_PORT_INSTANCE_ */

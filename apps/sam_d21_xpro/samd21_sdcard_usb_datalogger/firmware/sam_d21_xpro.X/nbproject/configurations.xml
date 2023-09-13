@@ -15,6 +15,7 @@
               <itemPath>../src/config/sam_d21_xpro/driver/sdspi/src/drv_sdspi_local.h</itemPath>
               <itemPath>../src/config/sam_d21_xpro/driver/sdspi/src/drv_sdspi_driver_interface.h</itemPath>
               <itemPath>../src/config/sam_d21_xpro/driver/sdspi/drv_sdspi.h</itemPath>
+              <itemPath>../src/config/sam_d21_xpro/driver/sdspi/src/drv_sdspi_file_system.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="spi" projectFiles="true">
               <itemPath>../src/config/sam_d21_xpro/driver/spi/drv_spi.h</itemPath>
@@ -146,6 +147,7 @@
           <itemPath>../src/config/sam_d21_xpro/configuration.h</itemPath>
           <itemPath>../src/config/sam_d21_xpro/interrupts.h</itemPath>
           <itemPath>../src/config/sam_d21_xpro/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_d21_xpro/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -174,6 +176,7 @@
             <itemPath>../src/packs/ATSAMD21J18A_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/ATSAMD21J18A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21J18A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21J18A_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21J18A_DFP/instance/ac.h</itemPath>
@@ -212,6 +215,7 @@
             <itemPath>../src/packs/ATSAMD21J18A_DFP/instance/tcc2.h</itemPath>
             <itemPath>../src/packs/ATSAMD21J18A_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAMD21J18A_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAMD21J18A_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMD21J18A_DFP/pio/samd21j18a.h</itemPath>
@@ -361,6 +365,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/config/sam_d21_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -374,13 +379,13 @@
         <targetDevice>ATSAMD21J18A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.5.132"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -437,6 +442,8 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe"
+                  value="-Wformat=2 -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wno-deprecated-declarations -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -Werror-implicit-function-declaration -Wfloat-equal "/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -494,6 +501,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -533,6 +541,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

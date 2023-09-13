@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -83,7 +84,7 @@ SYS_FS_Tasks();
 
 
     /* Maintain Middleware & Other Libraries */
-    	/* USB Device layer tasks routine */ 
+        /* USB Device layer tasks routine */ 
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
 
     /* USB FS Driver Task Routine */ 

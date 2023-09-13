@@ -62,14 +62,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#define ADC_LINEARITY0_POS  (27)
-#define ADC_LINEARITY0_Msk   ((0x1F << ADC_LINEARITY0_POS))
+#define ADC_LINEARITY0_POS  (27U)
+#define ADC_LINEARITY0_Msk   ((0x1FUL << ADC_LINEARITY0_POS))
 
-#define ADC_LINEARITY1_POS  (0)
-#define ADC_LINEARITY1_Msk   ((0x7 << ADC_LINEARITY1_POS))
+#define ADC_LINEARITY1_POS  (0U)
+#define ADC_LINEARITY1_Msk   ((0x7U << ADC_LINEARITY1_POS))
 
-#define ADC_BIASCAL_POS  (3)
-#define ADC_BIASCAL_Msk   ((0x7 << ADC_BIASCAL_POS))
+#define ADC_BIASCAL_POS  (3U)
+#define ADC_BIASCAL_Msk   ((0x7U << ADC_BIASCAL_POS))
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,17 +84,17 @@ void ADC_Initialize( void )
     /* Reset ADC */
     ADC_REGS->ADC_CTRLA = ADC_CTRLA_SWRST_Msk;
 
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Synchronization */
     }
 
-    uint32_t adc_linearity0 = (((*(uint64_t*)OTP4_ADDR) & (uint64_t)ADC_LINEARITY0_Msk) >> ADC_LINEARITY0_POS);
-    uint32_t adc_linearity1 = (((*(uint64_t*)(OTP4_ADDR + 4)) & ADC_LINEARITY1_Msk) >> ADC_LINEARITY1_POS);
+    uint32_t adc_linearity0 = (((*(uint32_t*)OTP4_ADDR) & ADC_LINEARITY0_Msk) >> ADC_LINEARITY0_POS);
+    uint32_t adc_linearity1 = (((*(uint32_t*)(OTP4_ADDR + 4U)) & ADC_LINEARITY1_Msk) >> ADC_LINEARITY1_POS);
 
     /* Write linearity calibration and bias calibration */
-    ADC_REGS->ADC_CALIB = (uint32_t)(ADC_CALIB_LINEARITY_CAL(adc_linearity0 | (adc_linearity1 << 5))) \
-        | ADC_CALIB_BIAS_CAL((((*(uint64_t*)(OTP4_ADDR + 4)) & ADC_BIASCAL_Msk) >> ADC_BIASCAL_POS));
+    ADC_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_LINEARITY_CAL(adc_linearity0 | (adc_linearity1 << 5U))) \
+        | ADC_CALIB_BIAS_CAL((((*(uint32_t*)(OTP4_ADDR + 4U)) & ADC_BIASCAL_Msk) >> ADC_BIASCAL_POS)));
 
     /* Sampling length */
     ADC_REGS->ADC_SAMPCTRL = ADC_SAMPCTRL_SAMPLEN(3U);
@@ -104,15 +104,15 @@ void ADC_Initialize( void )
 
     /* positive and negative input pins */
     ADC_REGS->ADC_INPUTCTRL = (uint32_t) ADC_POSINPUT_PIN8 | (uint32_t) ADC_NEGINPUT_GND \
-        | ADC_INPUTCTRL_INPUTSCAN(0) | ADC_INPUTCTRL_INPUTOFFSET(0) | ADC_INPUTCTRL_GAIN_1X;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+        | ADC_INPUTCTRL_INPUTSCAN(0U) | ADC_INPUTCTRL_INPUTOFFSET(0U) | ADC_INPUTCTRL_GAIN_1X;
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Synchronization */
     }
 
     /* Prescaler, Resolution & Operation Mode */
     ADC_REGS->ADC_CTRLB = ADC_CTRLB_PRESCALER_DIV32 | ADC_CTRLB_RESSEL_12BIT | ADC_CTRLB_FREERUN_Msk;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Synchronization */
     }
@@ -120,7 +120,7 @@ void ADC_Initialize( void )
     /* Clear all interrupt flags */
     ADC_REGS->ADC_INTFLAG = ADC_INTFLAG_Msk;
 
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -130,7 +130,7 @@ void ADC_Initialize( void )
 void ADC_Enable( void )
 {
     ADC_REGS->ADC_CTRLA |= ADC_CTRLA_ENABLE_Msk;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -139,8 +139,8 @@ void ADC_Enable( void )
 /* Disable ADC module */
 void ADC_Disable( void )
 {
-    ADC_REGS->ADC_CTRLA &= ~ADC_CTRLA_ENABLE_Msk;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    ADC_REGS->ADC_CTRLA = ((ADC_REGS->ADC_CTRLA) & (uint8_t)(~ADC_CTRLA_ENABLE_Msk));
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -153,10 +153,10 @@ void ADC_ChannelSelect( ADC_POSINPUT positiveInput, ADC_NEGINPUT negativeInput )
     uint32_t channel;
     channel = ADC_REGS->ADC_INPUTCTRL;
     channel &= ~(ADC_INPUTCTRL_MUXPOS_Msk | ADC_INPUTCTRL_MUXNEG_Msk);
-    channel |= (uint16_t) positiveInput | (uint16_t) negativeInput;
+    channel |= (uint32_t) positiveInput | (uint32_t) negativeInput;
     ADC_REGS->ADC_INPUTCTRL = channel;
 
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -168,7 +168,7 @@ void ADC_ConversionStart( void )
     /* Start conversion */
     ADC_REGS->ADC_SWTRIG |= ADC_SWTRIG_START_Msk;
 
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -178,12 +178,12 @@ void ADC_ConversionStart( void )
 void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 {
     ADC_REGS->ADC_WINLT = low_threshold;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
-    }    
+    }
     ADC_REGS->ADC_WINUT = high_threshold;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -191,8 +191,8 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC_WindowModeSet(ADC_WINMODE mode)
 {
-    ADC_REGS->ADC_WINCTRL = mode << ADC_WINCTRL_WINMODE_Pos;
-    while(ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk)
+    ADC_REGS->ADC_WINCTRL = (uint8_t)mode << ADC_WINCTRL_WINMODE_Pos;
+    while((ADC_REGS->ADC_STATUS & ADC_STATUS_SYNCBUSY_Msk) != 0U)
     {
         /* Wait for Synchronization */
     }
@@ -225,7 +225,7 @@ void ADC_InterruptsDisable(ADC_STATUS interruptMask)
 bool ADC_ConversionStatusGet( void )
 {
     bool status;
-    status =  (bool)((ADC_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk) >> ADC_INTFLAG_RESRDY_Pos);
+    status =  (((ADC_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk) >> ADC_INTFLAG_RESRDY_Pos)!= 0U);
     if (status == true)
     {
         ADC_REGS->ADC_INTFLAG = ADC_INTFLAG_RESRDY_Msk;
