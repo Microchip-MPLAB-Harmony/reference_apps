@@ -63,13 +63,13 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+volatile static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
-	   EIC will be disabled. */
+       EIC will be disabled. */
     EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
@@ -101,7 +101,7 @@ void EIC_Initialize (void)
          |  EIC_CONFIG_SENSE5_NONE  
          |  EIC_CONFIG_SENSE6_NONE  
          |  EIC_CONFIG_SENSE7_NONE   ;
-    
+
 
 
     /* Debouncer enable */
@@ -142,12 +142,12 @@ void EIC_Initialize (void)
 
 void EIC_InterruptEnable (EIC_PIN pin)
 {
-    EIC_REGS->EIC_INTENSET = (1UL << pin);
+    EIC_REGS->EIC_INTENSET = (1UL << (uint32_t)pin);
 }
 
 void EIC_InterruptDisable (EIC_PIN pin)
 {
-    EIC_REGS->EIC_INTENCLR = (1UL << pin);
+    EIC_REGS->EIC_INTENCLR = (1UL << (uint32_t)pin);
 }
 
 void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
@@ -160,25 +160,27 @@ void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
     }
 }
 
-void EIC_EXTINT_0_InterruptHandler(void)
+void __attribute__((used)) EIC_EXTINT_0_InterruptHandler(void)
 {
     /* Clear interrupt flag */
     EIC_REGS->EIC_INTFLAG = (1UL << 0);
     /* Find any associated callback entries in the callback table */
     if ((eicCallbackObject[0].callback != NULL))
     {
-        eicCallbackObject[0].callback(eicCallbackObject[0].context);
+        uintptr_t context = eicCallbackObject[0].context;
+        eicCallbackObject[0].callback(context);
     }
 
 }
-void EIC_EXTINT_1_InterruptHandler(void)
+void __attribute__((used)) EIC_EXTINT_1_InterruptHandler(void)
 {
     /* Clear interrupt flag */
     EIC_REGS->EIC_INTFLAG = (1UL << 1);
     /* Find any associated callback entries in the callback table */
     if ((eicCallbackObject[1].callback != NULL))
     {
-        eicCallbackObject[1].callback(eicCallbackObject[1].context);
+        uintptr_t context = eicCallbackObject[1].context;
+        eicCallbackObject[1].callback(context);
     }
 
 }

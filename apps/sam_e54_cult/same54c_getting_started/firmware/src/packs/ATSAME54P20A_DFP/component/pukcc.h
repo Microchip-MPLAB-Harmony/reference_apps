@@ -1,7 +1,7 @@
-/**
- * \brief Component description for PUKCC
+/*
+ * Component description for PUKCC
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:25:23Z */
+/* file generated from device description version 2023-03-17T09:50:08Z */
 #ifndef _SAME54_PUKCC_COMPONENT_H_
 #define _SAME54_PUKCC_COMPONENT_H_
 
