@@ -1,21 +1,23 @@
 /*******************************************************************************
-  Interface definition of CMCC PLIB.
-
-  Company:
-    Microchip Technology Inc.
+ System Tasks Header File
 
   File Name:
-    plib_cmcc.h
+    sys_tasks.h
 
   Summary:
-    Interface definition of the CMCC(Cortex M Cache Controller) Peripheral Library
+    This file contains declarations for task handles.
 
   Description:
-    This file defines the interface for the CMCC Plib.
-*******************************************************************************/
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
 
+  Remarks:
+    None
+ *******************************************************************************/
+
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -35,40 +37,36 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_CMCC_H    // Guards against multiple inclusion
-#define PLIB_CMCC_H
-
-
-#ifdef __cplusplus // Provide C++ Compatibility
-	extern "C" {
-#endif
-
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#define CMCC_NO_OF_WAYS     (4U)
-#define CMCC_LINE_PER_WAY   (64U)
-#define CMCC_LINE_SIZE      (16U)
-#define CMCC_WAY_SIZE       (1024U)
+#include "configuration.h"
+#include "definitions.h"
 
-/***************************** CMCC API *******************************/
-void CMCC_Disable (void );
-void CMCC_EnableDCache (void );
-void CMCC_DisableDCache (void );
+// *****************************************************************************
+// *****************************************************************************
+// Section: RTOS "Tasks" Handles
+// *****************************************************************************
+// *****************************************************************************
+/* Declaration of  APP_SENSOR_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_SENSOR_THREAD_Tasks;
 
-void CMCC_EnableICache (void );
-void CMCC_DisableICache (void );
+/* Declaration of  APP_EEPROM_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_EEPROM_THREAD_Tasks;
 
-void CMCC_InvalidateAll (void );
+/* Declaration of  APP_USER_INPUT_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_USER_INPUT_THREAD_Tasks;
 
-#ifdef __cplusplus  // Provide C++ Compatibility
-    }
-#endif
 
-#endif
+
+
+#endif //SYS_TASKS_H

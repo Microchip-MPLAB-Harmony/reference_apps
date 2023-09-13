@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 // *****************************************************************************
@@ -62,9 +63,9 @@
 /* Handle for the APP_SENSOR_THREAD_Tasks. */
 TaskHandle_t xAPP_SENSOR_THREAD_Tasks;
 
-void _APP_SENSOR_THREAD_Tasks(  void *pvParameters  )
+static void lAPP_SENSOR_THREAD_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_SENSOR_THREAD_Tasks();
     }
@@ -72,9 +73,9 @@ void _APP_SENSOR_THREAD_Tasks(  void *pvParameters  )
 /* Handle for the APP_EEPROM_THREAD_Tasks. */
 TaskHandle_t xAPP_EEPROM_THREAD_Tasks;
 
-void _APP_EEPROM_THREAD_Tasks(  void *pvParameters  )
+static void lAPP_EEPROM_THREAD_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_EEPROM_THREAD_Tasks();
     }
@@ -82,9 +83,9 @@ void _APP_EEPROM_THREAD_Tasks(  void *pvParameters  )
 /* Handle for the APP_USER_INPUT_THREAD_Tasks. */
 TaskHandle_t xAPP_USER_INPUT_THREAD_Tasks;
 
-void _APP_USER_INPUT_THREAD_Tasks(  void *pvParameters  )
+static void lAPP_USER_INPUT_THREAD_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_USER_INPUT_THREAD_Tasks();
     }
@@ -119,7 +120,7 @@ void SYS_Tasks ( void )
 
     /* Maintain the application's state machine. */
         /* Create OS Thread for APP_SENSOR_THREAD_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_SENSOR_THREAD_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_SENSOR_THREAD_Tasks,
                 "APP_SENSOR_THREAD_Tasks",
                 1024,
                 NULL,
@@ -127,7 +128,7 @@ void SYS_Tasks ( void )
                 &xAPP_SENSOR_THREAD_Tasks);
 
     /* Create OS Thread for APP_EEPROM_THREAD_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_EEPROM_THREAD_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_EEPROM_THREAD_Tasks,
                 "APP_EEPROM_THREAD_Tasks",
                 1024,
                 NULL,
@@ -135,7 +136,7 @@ void SYS_Tasks ( void )
                 &xAPP_EEPROM_THREAD_Tasks);
 
     /* Create OS Thread for APP_USER_INPUT_THREAD_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_USER_INPUT_THREAD_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_USER_INPUT_THREAD_Tasks,
                 "APP_USER_INPUT_THREAD_Tasks",
                 1024,
                 NULL,
