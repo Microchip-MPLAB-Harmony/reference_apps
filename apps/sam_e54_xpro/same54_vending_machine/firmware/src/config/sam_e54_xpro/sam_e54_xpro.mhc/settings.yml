@@ -11,4 +11,4 @@ settings:
   TRUSTZONE: 'false'
   CMSISPath: dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
+  DFPPath: dev_packs\Microchip\SAME54_DFP\3.8.234\atdf\ATSAME54P20A.atdf

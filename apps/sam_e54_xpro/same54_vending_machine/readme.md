@@ -93,29 +93,29 @@ The pre-built hex file can be programmed by following the below steps
 - Open the Tera Term terminal application on your PC, select the virtual COM port of SAM E54 Xplained Pro Evaluation Kit, and change the baud rate to 115200
 - You should see the text on the OLED screen in series like the screens below:
   <img src = "images/result_oled.png" width="519" height="69" align="middle">
-- You should see demo information and IP address (after DHCP success) in Tera Term terminal, as shown below:  
+- You should see demo information and IP address (after DHCP success) in Tera Term terminal, as shown below:
   <img src = "images/result_terminal.png" width="721" height="282" align="middle">
 - Open a web browser and enter the HTTP- Server IP address (e.g. http://192.168.1.101) that you got on the tera term in the previous step. Click on the 'Vending Machine' tab to see the page for the Vending Machine Demo.
 
   <img src = "images/result_webpage.png" width="637" height="535" align="middle">
 - Use the Button 1 and Button 2 on the OLED1 Xplained Pro to scroll through the items of the Vending
-Machine. Use the Button 3 on the OLED to pick an item from the VM. The count of the corresponding item on the OLED screen will be decremented by 1 and is reflected on the Web page as well as on the OLED screen.  
+Machine. Use the Button 3 on the OLED to pick an item from the VM. The count of the corresponding item on the OLED screen will be decremented by 1 and is reflected on the Web page as well as on the OLED screen.
 
-  <img src = "images/result_webpage_oled.png" width="806" height="218" align="middle">  
+  <img src = "images/result_webpage_oled.png" width="806" height="218" align="middle">
 
-- Run Hercules SETUP utility, and start TCP Server to listen on Port 80  
-  <img src = "images/result_tcp_server.png" width="620" height="140" align="middle">  
+- Run Hercules SETUP utility, and start TCP Server to listen on Port 80
+  <img src = "images/result_tcp_server.png" width="620" height="140" align="middle">
 
   - Note: you need to update source code in app.c to fill your PC's IP address that running this TCP Server
-- Press the select Button 3 and make one or more item to zero count. After few second, you will see this screen to notice bay empty (e.g. item 1. coca-cola).  
-  <img src = "images/result_bay_empty.png" width="697" height="113" align="middle">  
+- Press the select Button 3 and make one or more item to zero count. After few second, you will see this screen to notice bay empty (e.g. item 1. coca-cola).
+  <img src = "images/result_bay_empty.png" width="697" height="113" align="middle">
 
-- In 'Vending Machine' webpage, you can pick an **ITEM** and change the **COUNT** to a new number, then press **UPDATE** to confirm.  
-  <img src = "images/result_webpage2.png" width="560" height="302" align="middle">  
-  
+- In 'Vending Machine' webpage, you can pick an **ITEM** and change the **COUNT** to a new number, then press **UPDATE** to confirm.
+  <img src = "images/result_webpage2.png" width="560" height="302" align="middle">
+
 
 ## Comments:
-- Reference Training Module:  
+- Reference Training Module:
 	- [Getting Started with Harmony v3 Peripheral Libraries on SAM D5x/E5x MCUs](https://microchipdeveloper.com/harmony3:same70-getting-started-training-module)
 	- [Create your first tcpip application](https://github.com/Microchip-MPLAB-Harmony/net/wiki/Create-your-first-tcpip-application)
 	- Look [MPLAB Harmony TCP/IP Help documentaion](https://github.com/Microchip-MPLAB-Harmony/net) for Harmony 3 Net APIs and how to use MPFS utility to generate MPFS image of web pages.
@@ -126,9 +126,10 @@ Machine. Use the Button 3 on the OLED to pick an item from the VM. The count of 
 		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)    
+		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 Regenerated and tested application
 - v1.5.0 Removed MHC support, regenerated and tested application
 - v1.4.0 Added MCC support, regenerated and tested application
 - v1.3.0 Regenerated and tested application

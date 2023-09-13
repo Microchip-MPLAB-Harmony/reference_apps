@@ -78,62 +78,6 @@ Microchip or any third party.
 // *****************************************************************************
 // *****************************************************************************
 
-
-// *****************************************************************************
-/* Ethernet PHY Driver Module Index Numbers
-
-  Summary:
-    Ethernet PHY driver index definitions.
-
-  Description:
-    These constants provide the Ethernet PHY driver index definitions.
-
-  Remarks:
-    These constants should be used in place of hard-coded numeric literals.
-
-    These values should be passed into the DRV_ETHPHY_Initialize and
-    DRV_ETHPHY_Open routines to identify the driver instance in use.
-*/
-
-#define DRV_ETHPHY_INDEX_0         0
-#define DRV_ETHPHY_INDEX_1         1
-
-// *****************************************************************************
-/* Ethernet PHY Driver Module Index Count
-
-  Summary:
-    Number of valid Ethernet PHY driver indices.
-
-  Description:
-    This constant identifies the number of valid Ethernet PHY driver indices.
-
-  Remarks:
-    This constant should be used in place of hard-coded numeric literals.
-
-    This value is derived from part-specific header files defined as part of the
-    peripheral libraries.
-*/
-
-#define DRV_ETHPHY_INDEX_COUNT     1
-        
-// *****************************************************************************
-/* Ethernet PHY Driver Module Instance Client Count
-
-  Summary:
-    Number of simultaneous Clients for Ethernet PHY driver instance.
-
-  Description:
-    This constant identifies the number of simultaneous Clients for an Ethernet PHY driver instance
-
-  Remarks:
-    This constant should be used in place of hard-coded numeric literals.
-
-    This value is derived from part-specific header files defined as part of the
-    peripheral libraries.
-*/
-#define DRV_ETHPHY_CLIENTS_NUMBER     1
-
-
 // *****************************************************************************
 /* Ethernet PHY Driver Operation Result
  *
@@ -642,6 +586,22 @@ typedef struct
      * see the DRV_ETHPHY_VENDOR_DETECT definition */
     DRV_ETHPHY_VENDOR_DETECT            phyDetect;
 
+    /* Detect mask to be used by the detection procedure.
+     * This mask represents read/write bits in the BMCON that can be manipulated
+     * to detect that the SMI communication with the PHY works correctly.
+     * If 0, then a default mask of BMCON_LOOPBACK_MASK | BMCON_DUPLEX_MASK BMCON will be used.
+     * Drivers that need special processing can use their own detection mask for the default detection procedure
+     * or use a specific detect procedure */
+    uint16_t                            bmconDetectMask;
+
+    /* Extra capability mask to be used by the PHY setup procedure.
+     * Some PHYs need to be able to use extra bits set if their
+     * BMSTAT register doesn't advertise the standard capabilities
+     * (for example there is no 100Base-T1 FD support in the BMSTAT for LAN8770).
+     * By default this value should be 0.
+     * The BMSTAT OR-ed with this mask will be used for checking the PHY capabilities.
+     * Note: this should be limited to 10/100 FD/HD capabilities mask! */
+    uint16_t                            bmstatCpblMask;
 }DRV_ETHPHY_OBJECT;
 
 
@@ -888,11 +848,11 @@ typedef struct
     
     // Populate the Ethernet PHY initialization structure
     init.phyId  = ETHPHY_ID_2;
-    init.pPhyObject  = &DRV_ETHPHY_OBJECT_SMSC_LAN8720;
+    init.pPhyObject  = &DRV_ETHPHY_OBJECT_LAN8720;
     
     // Do something
     
-    objectHandle = DRV_ETHPHY_Initialize(DRV_ETHPHY_INDEX_0, (SYS_MODULE_INIT*)&init);
+    objectHandle = DRV_ETHPHY_Initialize(0, (SYS_MODULE_INIT*)&init);
     if (SYS_MODULE_OBJ_INVALID == objectHandle)
     {
         // Handle error
@@ -947,7 +907,7 @@ SYS_MODULE_OBJ DRV_ETHPHY_Initialize ( const SYS_MODULE_INDEX        index,
 
     // Populate the Ethernet PHY initialization structure
     init.phyId  = ETHPHY_ID_2;
-    init.pPhyObject  = &DRV_ETHPHY_OBJECT_SMSC_LAN8720;
+    init.pPhyObject  = &DRV_ETHPHY_OBJECT_LAN8720;
 
     DRV_ETHPHY_Reinitialize(objectHandle, (SYS_MODULE_INIT*)&init);
 
@@ -1165,7 +1125,7 @@ void DRV_ETHPHY_Tasks( SYS_MODULE_OBJ object );
     <code>
     DRV_HANDLE  handle;
 
-    handle = DRV_ETHPHY_Open(DRV_ETHPHY_INDEX_0, 0);
+    handle = DRV_ETHPHY_Open(0, 0);
     if (DRV_HANDLE_INVALID == handle)
     {
         // Unable to open the driver
@@ -1788,10 +1748,10 @@ DRV_ETHPHY_RESULT DRV_ETHPHY_VendorDataGet( DRV_HANDLE handle, uint32_t* pVendor
 	<p><b>Implementation:</b> Dynamic</p>
 
   Description:
-    This function returns the current value of the vendor data.
+    This function sets the current value of the vendor data.
     Each DRV_ETHPHY client object maintains data that could be used
     for vendor specific operations.
-    This routine allows retrieving of the vendor specific data.
+    This routine allows setting of the vendor specific data.
 
   Precondition:
     - The DRV_ETHPHY_Initialize routine must have been called.
@@ -1800,8 +1760,8 @@ DRV_ETHPHY_RESULT DRV_ETHPHY_VendorDataGet( DRV_HANDLE handle, uint32_t* pVendor
     - DRV_ETHPHY_Setup must have been called to properly configure the PHY
 
   Parameters:
-    - handle  - Client's driver handle (returned from DRV_ETHPHY_Open)
-    - vendorData    - vendor specific data
+    - handle        - Client's driver handle (returned from DRV_ETHPHY_Open)
+    - vendorData    - vendor specific data to be set
 
   Returns:
     DRV_ETHPHY_RES_OK  - if the vendor data is stored in the client object
@@ -2110,8 +2070,9 @@ typedef struct DRV_ETHPHY_OBJECT_BASE_TYPE
 
 */
 extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_Default;
-extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_smsc9303;
+extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_lan9303;
 extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_ksz8863;
+extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_lan9354;
 
 
 // *****************************************************************************
@@ -2136,6 +2097,8 @@ extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ8863;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN867x;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN8742A;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_VSC8540;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN9354;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN8770;
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

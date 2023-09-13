@@ -164,7 +164,7 @@ bool TCPIP_HTTP_NET_SSINotification(TCPIP_HTTP_NET_CONN_HANDLE connHandle, TCPIP
 typedef TCPIP_HTTP_DYN_PRINT_RES (*HTTP_APP_DYNVAR_FNC)(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt);
 
 // an entry for the application processing HTTP dynamic variables
-typedef struct
+typedef struct HTTP_APP_DYNVAR_ENTRY
 {
     const char *varName;        // name of the dynamic variable
     HTTP_APP_DYNVAR_FNC varFnc; // processing function
@@ -177,7 +177,7 @@ typedef struct
 #define HTTP_APP_DYNVAR_BUFFER_SIZE     100
 
 //An entry for the dynamic variables which is used during the dynamic variable processing
-typedef struct
+typedef struct HTTP_APP_DYNVAR_BUFFER
 {
     uint16_t    busy;           // buffer is currently in process
     uint16_t    bufferSize;     // size of the associated buffer
