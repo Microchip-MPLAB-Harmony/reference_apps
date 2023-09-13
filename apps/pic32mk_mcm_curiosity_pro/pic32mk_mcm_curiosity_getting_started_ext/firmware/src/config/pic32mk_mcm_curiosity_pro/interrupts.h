@@ -57,6 +57,13 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void TIMER_2_InterruptHandler( void );
+void CHANGE_NOTICE_F_InterruptHandler( void );
+void CHANGE_NOTICE_G_InterruptHandler( void );
+void DMA0_InterruptHandler( void );
+void SPI6_RX_InterruptHandler( void );
+void SPI6_TX_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H

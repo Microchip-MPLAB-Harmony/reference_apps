@@ -85,9 +85,9 @@
 void CLK_Initialize( void )
 {
     /* unlock system for clock configuration */
-    SYSKEY = 0x00000000;
-    SYSKEY = 0xAA996655;
-    SYSKEY = 0x556699AA;
+    SYSKEY = 0x00000000U;
+    SYSKEY = 0xAA996655U;
+    SYSKEY = 0x556699AAU;
 
  
       
@@ -96,16 +96,16 @@ void CLK_Initialize( void )
 
     CFGCONbits.PMDLOCK = 0;
 
-    PMD1 = 0x371;
-    PMD2 = 0x17001f;
-    PMD3 = 0xffffffff;
-    PMD4 = 0xfff01fd;
-    PMD5 = 0xf30f1f1f;
-    PMD6 = 0xf0d0000;
-    PMD7 = 0x0;
+    PMD1 = 0x371U;
+    PMD2 = 0x17001fU;
+    PMD3 = 0xffffffffU;
+    PMD4 = 0xfff01fdU;
+    PMD5 = 0xf30f1f1fU;
+    PMD6 = 0xf0d0000U;
+    PMD7 = 0x0U;
 
     CFGCONbits.PMDLOCK = 1;
 
     /* Lock system since done with clock configuration */
-    SYSKEY = 0x33333333;
+    SYSKEY = 0x33333333U;
 }
