@@ -156,13 +156,27 @@ static void GFX_Disp_Intf_CallBack(DRV_SPI_TRANSFER_EVENT event,
 
 GFX_Disp_Intf GFX_Disp_Intf_Open(void)
 {   
+    DRV_SPI_TRANSFER_SETUP setup;
+    
+    setup.baudRateInHz = 1000000;
+    setup.clockPhase = DRV_SPI_CLOCK_PHASE_VALID_LEADING_EDGE;
+    setup.clockPolarity = DRV_SPI_CLOCK_POLARITY_IDLE_LOW;
+    setup.dataBits = DRV_SPI_DATA_BITS_8;
+    setup.chipSelect = GFX_DISP_INTF_PIN_CS_PIN;
+    setup.csPolarity = DRV_SPI_CS_POLARITY_ACTIVE_LOW;
+
     spiIntf.drvSPIHandle = DRV_SPI_Open(0, DRV_IO_INTENT_READWRITE);
     
     if (DRV_HANDLE_INVALID == spiIntf.drvSPIHandle)
     {
-        return -1;
+        return 0;
     }
 
+    if (DRV_SPI_TransferSetup(spiIntf.drvSPIHandle, &setup) != true)
+    {
+        return 0;
+    }
+    
     DRV_SPI_TransferEventHandlerSet(spiIntf.drvSPIHandle,
                                     GFX_Disp_Intf_CallBack,
                                     (uintptr_t)&spiIntf.drvSPITransStatus );
