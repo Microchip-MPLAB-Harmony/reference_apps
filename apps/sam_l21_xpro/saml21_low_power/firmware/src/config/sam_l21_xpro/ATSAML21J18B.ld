@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAML21J18B linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,7 +77,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x8000)
 #  error RAM_LENGTH is greater than the max size of 0x8000
 #endif
- 
 #ifndef LPRAM_ORIGIN
 #  define LPRAM_ORIGIN 0x30000000
 #endif
@@ -86,7 +85,8 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (LPRAM_LENGTH > 0x2000)
 #  error LPRAM_LENGTH is greater than the max size of 0x2000
 #endif
- 
+
+
 
 /*************************************************************************
  * Memory-Region Definitions
@@ -102,16 +102,18 @@ MEMORY
   config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
 
 }
-
 /*************************************************************************
  * Output region definitions.
  * CODE_REGION defines the output region for .text/.rodata.
  * DATA_REGION defines the output region for .data/.bss
  * VECTOR_REGION defines the output region for .vectors.
- * LPRAM defines the output region for .lpram 
+  * LPRAM defines the output region for .lpram 
  * 
  * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
  * and 'ram' otherwise.
+ * N.B. The BFA will still allocate code to any MEMORY named 'rom' regardless
+ * of CODE_REGION's value. If you wish to use rom for something else please
+ * rename the MEMORY entry.
  * DATA_REGION defaults to 'ram', which must be present.
  * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
  */
@@ -224,6 +226,7 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;
+
 
     /*
      *  Align here to ensure that the .bss section occupies space up to

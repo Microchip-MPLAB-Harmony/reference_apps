@@ -55,7 +55,7 @@
 
 #include "plib_eic.h"
 #include "interrupts.h"
-#include "definitions.h"
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data
@@ -63,13 +63,13 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+volatile static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
-	   EIC will be disabled. */
+       EIC will be disabled. */
     EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
@@ -101,7 +101,7 @@ void EIC_Initialize (void)
          |  EIC_CONFIG_SENSE5_NONE  
          |  EIC_CONFIG_SENSE6_NONE  
          |  EIC_CONFIG_SENSE7_NONE   ;
-    
+
 
     /* External Interrupt Asynchronous Mode enable */
     EIC_REGS->EIC_ASYNCH = 0x4U;
@@ -140,12 +140,12 @@ void EIC_Initialize (void)
 
 void EIC_InterruptEnable (EIC_PIN pin)
 {
-    EIC_REGS->EIC_INTENSET = (1UL << pin);
+    EIC_REGS->EIC_INTENSET = (1UL << (uint32_t)pin);
 }
 
 void EIC_InterruptDisable (EIC_PIN pin)
 {
-    EIC_REGS->EIC_INTENCLR = (1UL << pin);
+    EIC_REGS->EIC_INTENCLR = (1UL << (uint32_t)pin);
 }
 
 void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
@@ -158,11 +158,10 @@ void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
     }
 }
 
-void EIC_InterruptHandler(void)
+void __attribute__((used)) EIC_InterruptHandler(void)
 {
-    TEST_GPIO_Toggle ();
-    uint8_t currentChannel = 0;
-    uint32_t eicIntFlagStatus = 0;
+    uint8_t currentChannel;
+    uint32_t eicIntFlagStatus;
 
     /* Find any triggered channels, run associated callback handlers */
     for (currentChannel = 0U; currentChannel < EXTINT_COUNT; currentChannel++)
@@ -178,7 +177,8 @@ void EIC_InterruptHandler(void)
                 /* Find any associated callback entries in the callback table */
                 if ((eicCallbackObject[currentChannel].callback != NULL))
                 {
-                    eicCallbackObject[currentChannel].callback(eicCallbackObject[currentChannel].context);
+                    uintptr_t context = eicCallbackObject[currentChannel].context;
+                    eicCallbackObject[currentChannel].callback(context);
                 }
 
                 /* Clear interrupt flag */

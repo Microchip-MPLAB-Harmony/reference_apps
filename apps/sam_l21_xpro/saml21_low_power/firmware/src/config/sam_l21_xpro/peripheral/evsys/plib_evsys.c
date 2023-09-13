@@ -64,12 +64,12 @@ void EVSYS_GeneratorDisable(EVSYS_CHANNEL channel)
 
 void EVSYS_UserEnable(EVSYS_CHANNEL channel, uint8_t user)
 {
-   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL((channel + 1));
+   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL((channel + 1U));
 }
 
 void EVSYS_UserDisable(uint8_t user)
 {
-   EVSYS_REGS->EVSYS_USER[user] = 0x0;
+   EVSYS_REGS->EVSYS_USER[user] = 0x0U;
 }
 
 

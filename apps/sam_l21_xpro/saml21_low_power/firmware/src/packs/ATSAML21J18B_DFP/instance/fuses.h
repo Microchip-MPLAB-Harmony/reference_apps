@@ -21,15 +21,7 @@
  */
 
 /* file generated from device description version 2023-04-12T13:57:36Z */
-#ifndef _SAML21_MCLK_INSTANCE_
-#define _SAML21_MCLK_INSTANCE_
+#ifndef _SAML21_FUSES_INSTANCE_
+#define _SAML21_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for MCLK peripheral ========== */
-#define MCLK_CTRLA_MCSEL_GCLK                    (1)        
-#define MCLK_CTRLA_MCSEL_OSC8M                   (0)        
-#define MCLK_INSTANCE_ID                         (1)        
-#define MCLK_CLK_APB_NUM                         (5)        
-#define MCLK_SYSTEM_CLOCK                        (4000000)  /* System Clock Frequency at Reset */
-
-#endif /* _SAML21_MCLK_INSTANCE_ */
+#endif /* _SAML21_FUSES_INSTANCE_ */

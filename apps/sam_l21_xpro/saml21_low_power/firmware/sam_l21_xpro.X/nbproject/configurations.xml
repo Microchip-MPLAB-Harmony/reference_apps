@@ -92,6 +92,7 @@
             <itemPath>../src/packs/ATSAML21J18B_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAML21J18B_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAML21J18B_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAML21J18B_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAML21J18B_DFP/instance/ac.h</itemPath>
@@ -134,6 +135,7 @@
             <itemPath>../src/packs/ATSAML21J18B_DFP/instance/trng.h</itemPath>
             <itemPath>../src/packs/ATSAML21J18B_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAML21J18B_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAML21J18B_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAML21J18B_DFP/pio/saml21j18b.h</itemPath>
@@ -235,6 +237,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/config/sam_l21_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -250,12 +253,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAML21_DFP" vendor="Microchip" version="3.5.87"/>
+        <pack name="SAML21_DFP" vendor="Microchip" version="3.7.217"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -459,6 +462,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -997,6 +1002,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
