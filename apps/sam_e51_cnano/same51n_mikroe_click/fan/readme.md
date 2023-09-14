@@ -167,6 +167,7 @@ You could use this demonstration as an example to add motion sensor functionalit
 
 
 ## Revision:
+- v1.6.0 - Regenerated and Tested the application.
 - v1.5.0 - Removed MHC support, regenerated and tested application.
 - v1.4.0 - Added MCC support, Regenerated and tested application.
 - v1.3.0 - Released demo application

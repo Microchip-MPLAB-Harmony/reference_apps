@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAME51N20A
+/*
+ * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,22 +20,22 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:24:58Z */
+/* file generated from device description version 2023-03-17T09:49:56Z */
 #ifndef _SAME51_GCLK_INSTANCE_
 #define _SAME51_GCLK_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for GCLK peripheral ========== */
-#define GCLK_GENCTRL0_RESETVALUE                 _UL_(106)  /* Default specific reset value for generator 0 */
-#define GCLK_GENDIV_BITS                         _UL_(16)   
-#define GCLK_GEN_BITS                            _UL_(4)    
-#define GCLK_GEN_NUM                             _UL_(12)   /* Number of Generic Clock Generators */
-#define GCLK_GEN_NUM_MSB                         _UL_(11)   /* Number of Generic Clock Generators - 1 */
-#define GCLK_GEN_SOURCE_NUM_MSB                  _UL_(8)    /* Number of Generic Clock Sources - 1 */
-#define GCLK_IO_NUM                              _UL_(8)    /* Number of Generic Clock I/Os */
-#define GCLK_NUM                                 _UL_(48)   /* Number of Generic Clock Users */
-#define GCLK_SOURCE_BITS                         _UL_(4)    
-#define GCLK_SOURCE_NUM                          _UL_(9)    /* Number of Generic Clock Sources */
-#define GCLK_INSTANCE_ID                         _UL_(7)    /* Instance index for GCLK */
+#define GCLK_GENCTRL0_RESETVALUE                 (106)      /* Default specific reset value for generator 0 */
+#define GCLK_GENDIV_BITS                         (16)       
+#define GCLK_GEN_BITS                            (4)        
+#define GCLK_GEN_NUM                             (12)       /* Number of Generic Clock Generators */
+#define GCLK_GEN_NUM_MSB                         (11)       /* Number of Generic Clock Generators - 1 */
+#define GCLK_GEN_SOURCE_NUM_MSB                  (8)        /* Number of Generic Clock Sources - 1 */
+#define GCLK_INSTANCE_ID                         (7)        /* Instance index for GCLK */
+#define GCLK_IO_NUM                              (8)        /* Number of Generic Clock I/Os */
+#define GCLK_NUM                                 (48)       /* Number of Generic Clock Users */
+#define GCLK_SOURCE_BITS                         (4)        
+#define GCLK_SOURCE_NUM                          (9)        /* Number of Generic Clock Sources */
 
 #endif /* _SAME51_GCLK_INSTANCE_ */
