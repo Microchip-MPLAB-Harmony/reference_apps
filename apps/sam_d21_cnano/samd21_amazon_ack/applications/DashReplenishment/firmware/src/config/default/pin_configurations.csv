@@ -13,7 +13,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 14,PA09,,Available,,,,,,NORMAL
 15,PA10,,Available,,,,,,NORMAL
 16,PA11,,Available,,,,,,NORMAL
-19,PB10,SAMD_SAMPLE_APPLICATIONS_LED,GPIO,Digital,Out,High,,,NORMAL
+19,PB10,SAMD_SAMPLE_APP_LED,GPIO,Digital,Out,High,,,NORMAL
 20,PB11,,EIC_EXTINT11,Digital,High Impedance,n/a,No,No,NORMAL
 21,PA12,,Available,,,,,,NORMAL
 22,PA13,,Available,,,,,,NORMAL
@@ -26,9 +26,9 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 29,PA20,,SERCOM3_PAD2,Digital,High Impedance,n/a,No,No,NORMAL
 30,PA21,,SERCOM3_PAD3,Digital,High Impedance,n/a,No,No,NORMAL
 31,PA22,,SERCOM5_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
-32,PA23,SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1,GPIO,Digital,Out,Low,,,NORMAL
-33,PA24,SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3,GPIO,Digital,Out,Low,,,NORMAL
-34,PA25,SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2,GPIO,Digital,Out,Low,,,NORMAL
+32,PA23,SAMD_SAMPLE_APP_GPIO_PIN_1,GPIO,Digital,Out,Low,,,NORMAL
+33,PA24,SAMD_SAMPLE_APP_GPIO_PIN_3,GPIO,Digital,Out,Low,,,NORMAL
+34,PA25,SAMD_SAMPLE_APP_GPIO_PIN_2,GPIO,Digital,Out,Low,,,NORMAL
 37,PB22,,SERCOM5_PAD2,Digital,High Impedance,n/a,No,No,NORMAL
 38,PB23,,Available,,,,,,NORMAL
 39,PA27,,Available,,,,,,NORMAL

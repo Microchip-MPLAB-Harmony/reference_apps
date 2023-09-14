@@ -35,7 +35,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1200,7 +1200,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_19_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APPLICATIONS_LED&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APP_LED&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1409,7 +1409,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_32_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APP_GPIO_PIN_1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1475,7 +1475,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_33_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APP_GPIO_PIN_3&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1541,7 +1541,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_34_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;SAMD_SAMPLE_APP_GPIO_PIN_2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3721,7 +3721,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\port\plib_port.h</file>
-         <hash>e06e64dfd6e1f7d923cc1148fb4a611e4ebf7a3418d4a68b9b9e630ed20d3658</hash>
+         <hash>a9a3d911fac7d0ccda51b29d90e270d7c12e189e476172c143313395130dd600</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\rtc.h</file>
@@ -3773,7 +3773,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\pin_configurations.csv</file>
-         <hash>c0fec9857f5c9f06db287daf1694c9feaccecc99c5c7273d8065add762e3d072</hash>
+         <hash>731a188a94c28302abe9632bb623678882e6988426d18e754b448296970c39c5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\rtc.h</file>
