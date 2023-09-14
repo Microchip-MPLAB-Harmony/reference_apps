@@ -42,6 +42,7 @@
 
 #include "device.h"
 #include "plib_evic.h"
+#include "interrupts.h"
 
 
 // *****************************************************************************
@@ -55,65 +56,70 @@ void EVIC_Initialize( void )
     INTCONSET = _INTCON_MVEC_MASK;
 
     /* Set up priority and subpriority of enabled interrupts */
-    IPC36SET = 0x400 | 0x0;  /* UART2_FAULT:  Priority 1 / Subpriority 0 */
-    IPC36SET = 0x40000 | 0x0;  /* UART2_RX:  Priority 1 / Subpriority 0 */
-    IPC36SET = 0x4000000 | 0x0;  /* UART2_TX:  Priority 1 / Subpriority 0 */
+    IPC36SET = 0x400U | 0x0U;  /* UART2_FAULT:  Priority 1 / Subpriority 0 */
+    IPC36SET = 0x40000U | 0x0U;  /* UART2_RX:  Priority 1 / Subpriority 0 */
+    IPC36SET = 0x4000000U | 0x0U;  /* UART2_TX:  Priority 1 / Subpriority 0 */
 
 
 
     /* Configure Shadow Register Set */
     PRISS = 0x76543210;
+
+    while (PRISS != 0x76543210U)
+    {
+        /* Wait for PRISS value to take effect */
+    }
 }
 
 void EVIC_SourceEnable( INT_SOURCE source )
 {
-    volatile uint32_t *IECx = (volatile uint32_t *) (&IEC0 + ((0x10 * (source / 32)) / 4));
-    volatile uint32_t *IECxSET = (volatile uint32_t *)(IECx + 2);
+    volatile uint32_t *IECx = (volatile uint32_t *) (&IEC0 + ((0x10U * (source / 32U)) / 4U));
+    volatile uint32_t *IECxSET = (volatile uint32_t *)(IECx + 2U);
 
-    *IECxSET = 1 << (source & 0x1f);
+    *IECxSET = 1UL << (source & 0x1fU);
 }
 
 void EVIC_SourceDisable( INT_SOURCE source )
 {
-    volatile uint32_t *IECx = (volatile uint32_t *) (&IEC0 + ((0x10 * (source / 32)) / 4));
-    volatile uint32_t *IECxCLR = (volatile uint32_t *)(IECx + 1);
+    volatile uint32_t *IECx = (volatile uint32_t *) (&IEC0 + ((0x10U * (source / 32U)) / 4U));
+    volatile uint32_t *IECxCLR = (volatile uint32_t *)(IECx + 1U);
 
-    *IECxCLR = 1 << (source & 0x1f);
+    *IECxCLR = 1UL << (source & 0x1fU);
 }
 
 bool EVIC_SourceIsEnabled( INT_SOURCE source )
 {
-    volatile uint32_t *IECx = (volatile uint32_t *) (&IEC0 + ((0x10 * (source / 32)) / 4));
+    volatile uint32_t *IECx = (volatile uint32_t *) (&IEC0 + ((0x10U * (source / 32U)) / 4U));
 
-    return (bool)((*IECx >> (source & 0x1f)) & 0x01);
+    return (((*IECx >> (source & 0x1fU)) & 0x01U) != 0U);
 }
 
 bool EVIC_SourceStatusGet( INT_SOURCE source )
 {
-    volatile uint32_t *IFSx = (volatile uint32_t *)(&IFS0 + ((0x10 * (source / 32)) / 4));
+    volatile uint32_t *IFSx = (volatile uint32_t *)(&IFS0 + ((0x10U * (source / 32U)) / 4U));
 
-    return (bool)((*IFSx >> (source & 0x1f)) & 0x1);
+    return (((*IFSx >> (source & 0x1fU)) & 0x1U) != 0U);
 }
 
 void EVIC_SourceStatusSet( INT_SOURCE source )
 {
-    volatile uint32_t *IFSx = (volatile uint32_t *) (&IFS0 + ((0x10 * (source / 32)) / 4));
-    volatile uint32_t *IFSxSET = (volatile uint32_t *)(IFSx + 2);
+    volatile uint32_t *IFSx = (volatile uint32_t *) (&IFS0 + ((0x10U * (source / 32U)) / 4U));
+    volatile uint32_t *IFSxSET = (volatile uint32_t *)(IFSx + 2U);
 
-    *IFSxSET = 1 << (source & 0x1f);
+    *IFSxSET = 1UL << (source & 0x1fU);
 }
 
 void EVIC_SourceStatusClear( INT_SOURCE source )
 {
-    volatile uint32_t *IFSx = (volatile uint32_t *) (&IFS0 + ((0x10 * (source / 32)) / 4));
-    volatile uint32_t *IFSxCLR = (volatile uint32_t *)(IFSx + 1);
+    volatile uint32_t *IFSx = (volatile uint32_t *) (&IFS0 + ((0x10U * (source / 32U)) / 4U));
+    volatile uint32_t *IFSxCLR = (volatile uint32_t *)(IFSx + 1U);
 
-    *IFSxCLR = 1 << (source & 0x1f);
+    *IFSxCLR = 1UL << (source & 0x1fU);
 }
 
 void EVIC_INT_Enable( void )
 {
-    __builtin_enable_interrupts();
+   (void) __builtin_enable_interrupts();
 }
 
 bool EVIC_INT_Disable( void )
@@ -124,7 +130,7 @@ bool EVIC_INT_Disable( void )
     processorStatus = ( uint32_t )__builtin_disable_interrupts();
 
     /* return the interrupt status */
-    return (bool)(processorStatus & 0x01);
+    return ((processorStatus & 0x01U) != 0U);
 }
 
 void EVIC_INT_Restore( bool state )
@@ -132,7 +138,7 @@ void EVIC_INT_Restore( bool state )
     if (state)
     {
         /* restore the state of CP0 Status register before the disable occurred */
-        __builtin_enable_interrupts();
+       (void) __builtin_enable_interrupts();
     }
 }
 

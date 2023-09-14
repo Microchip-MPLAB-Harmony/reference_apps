@@ -77,9 +77,9 @@ extern "C" {
 static inline void APP_SystemReset( void )
 {
     /* Perform system unlock sequence */ 
-    SYSKEY = 0x00000000;
-    SYSKEY = 0xAA996655;
-    SYSKEY = 0x556699AA;
+    SYSKEY = 0x00000000U;
+    SYSKEY = 0xAA996655U;
+    SYSKEY = 0x556699AAU;
 
     RSWRSTSET = _RSWRST_SWRST_MASK;
     (void)RSWRST;

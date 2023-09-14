@@ -63,7 +63,7 @@ Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-su
 3. Build and program the UART fail safe bootloader (Dual bank bootloader) which is in (path: `<Your Harmony Framework download folder>/bootloader_apps_uart/apps/uart_fail_safe_bootloader/bootloader/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE.
 4. Build the Live update application (path: `<Live Update application folder>/firmware/pic32mz_ef_sk.X`) using the MPLAB X IDE **but do not program**.
 5. From the command prompt, run the bootloader host script "**btl_host.py**" available at `<Your Harmony Framework download folder>/bootloader/tools` to program the application binary.
- - `python <Your Harmony Framework download folder>/bootloader/tools_archive/btl_host.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/hex/pic32mz_ef_sk.X.production.bin`
+ - `python <Your Harmony Framework download folder>/bootloader/tools/btl_host.py -v -s -i <COM PORT> -d pic32mz  -a 0x9D100000 -f <Live Update application folder>/hex/pic32mz_ef_sk.X.production.bin`
   - **Note:** If you need to know more information on the bootloader host script, refer Help for setting up the host script available at `<Your Harmony Framework download folder>/bootloader/doc/help_bootloader.chm`
 6. Following screenshot shows successful programming of the application binary.
 7. The messages "Swapping Bank And Rebooting and Reboot Done" in below screenshot signifies that bootloading is successful.
@@ -108,6 +108,7 @@ Refer [Project Manifest](./firmware/src/config/pic32mz_ef_sk/harmony-manifest-su
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
 
 ## Revision:
+- v1.6.0 Regenerated and tested the application
 - v1.5.0 Removed MHC support, Regenerated and tested application.
 - v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 regenerated and tested the application
