@@ -65,41 +65,41 @@
 // *****************************************************************************
 // *****************************************************************************
 
-/*** Macros for SAMD_SAMPLE_APPLICATIONS_LED pin ***/
-#define SAMD_SAMPLE_APPLICATIONS_LED_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 10U))
-#define SAMD_SAMPLE_APPLICATIONS_LED_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 10U))
-#define SAMD_SAMPLE_APPLICATIONS_LED_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 10U))
-#define SAMD_SAMPLE_APPLICATIONS_LED_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 10U))
-#define SAMD_SAMPLE_APPLICATIONS_LED_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 10U))
-#define SAMD_SAMPLE_APPLICATIONS_LED_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10U)) & 0x01U)
-#define SAMD_SAMPLE_APPLICATIONS_LED_PIN                  PORT_PIN_PB10
+/*** Macros for SAMD_SAMPLE_APP_LED pin ***/
+#define SAMD_SAMPLE_APP_LED_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 10U))
+#define SAMD_SAMPLE_APP_LED_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 10U))
+#define SAMD_SAMPLE_APP_LED_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 10U))
+#define SAMD_SAMPLE_APP_LED_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 10U))
+#define SAMD_SAMPLE_APP_LED_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 10U))
+#define SAMD_SAMPLE_APP_LED_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10U)) & 0x01U)
+#define SAMD_SAMPLE_APP_LED_PIN                  PORT_PIN_PB10
 
-/*** Macros for SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1 pin ***/
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 23U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 23U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 23U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 23U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 23U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23U)) & 0x01U)
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_PIN                  PORT_PIN_PA23
+/*** Macros for SAMD_SAMPLE_APP_GPIO_PIN_1 pin ***/
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 23U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 23U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 23U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 23U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 23U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23U)) & 0x01U)
+#define SAMD_SAMPLE_APP_GPIO_PIN_1_PIN                  PORT_PIN_PA23
 
-/*** Macros for SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3 pin ***/
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 24U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 24U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 24U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 24U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 24U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 24U)) & 0x01U)
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_PIN                  PORT_PIN_PA24
+/*** Macros for SAMD_SAMPLE_APP_GPIO_PIN_3 pin ***/
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 24U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 24U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 24U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 24U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 24U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 24U)) & 0x01U)
+#define SAMD_SAMPLE_APP_GPIO_PIN_3_PIN                  PORT_PIN_PA24
 
-/*** Macros for SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2 pin ***/
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 25U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 25U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 25U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 25U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 25U))
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25U)) & 0x01U)
-#define SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_PIN                  PORT_PIN_PA25
+/*** Macros for SAMD_SAMPLE_APP_GPIO_PIN_2 pin ***/
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 25U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 25U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 25U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 25U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 25U))
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25U)) & 0x01U)
+#define SAMD_SAMPLE_APP_GPIO_PIN_2_PIN                  PORT_PIN_PA25
 
 /*** Macros for SAMD_HOST_INTERRUPT pin ***/
 #define SAMD_HOST_INTERRUPT_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 2U))
