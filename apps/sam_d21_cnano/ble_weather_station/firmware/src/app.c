@@ -86,7 +86,7 @@ typedef struct
 
 }BME_SENSOR_DATA;
 
-DRV_HANDLE tmrHandle;
+DRV_HANDLE timerHandle;
 extern BLE_DATA bleData;
 extern volatile bool cmd_sent;
 
@@ -279,10 +279,10 @@ void APP_Tasks ( void )
         case APP_STATE_INIT:
         {
             /* Open the timer Driver */
-            tmrHandle = SYS_TIME_CallbackRegisterMS(App_TimerCallback,
+            timerHandle = SYS_TIME_CallbackRegisterMS(App_TimerCallback,
                     (uintptr_t)0, 1/*ms*/, SYS_TIME_PERIODIC);
 
-            if ( SYS_TIME_HANDLE_INVALID != tmrHandle )
+            if ( SYS_TIME_HANDLE_INVALID != timerHandle )
             {
                appData.state = APP_STATE_WAIT_INIT;
             }

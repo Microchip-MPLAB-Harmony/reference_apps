@@ -155,7 +155,7 @@ static int16_t bme680_calc_temperature( bme680_t *bme, uint32_t temp_adc );
 
 static uint32_t bme680_calc_humidity( bme680_t *bme, uint16_t hum_adc );
 
-static uint8_t bme680_calc_heater_res( bme680_t *bme, uint16_t temp );
+static uint8_t bme680_calc_heater_res( bme680_t *bme, uint16_t ble_temp );
 
 static float bme680_calc_pressure( bme680_t *bme, uint32_t pres_adc );
 
@@ -668,7 +668,7 @@ static uint32_t bme680_calc_humidity ( bme680_t *bme, uint16_t hum_adc )
     return ( uint32_t ) calc_hum;
 }
 
-static uint8_t bme680_calc_heater_res ( bme680_t *bme, uint16_t temp )
+static uint8_t bme680_calc_heater_res ( bme680_t *bme, uint16_t ble_temp )
 {
     int32_t var1;
     int32_t var2;
@@ -678,13 +678,13 @@ static uint8_t bme680_calc_heater_res ( bme680_t *bme, uint16_t temp )
     int32_t heatr_res_x100;
     uint8_t heatr_res;
 
-    if ( temp > 400)
+    if ( ble_temp > 400)
     {
-        temp = 400;
+        ble_temp = 400;
     }
 
     var1 = ( ( ( int32_t ) device_amb_temp * bme->calib.par_gh3 ) / 1000 ) * 256;
-    var2 = ( bme->calib.par_gh1 + 784 ) * ( ( ( ( ( bme->calib.par_gh2 + 154009 ) * temp * 5 ) / 100 ) + 3276800 ) / 10 );
+    var2 = ( bme->calib.par_gh1 + 784 ) * ( ( ( ( ( bme->calib.par_gh2 + 154009 ) * ble_temp * 5 ) / 100 ) + 3276800 ) / 10 );
     var3 = var1 + ( var2 / 2 );
     var4 = ( var3 / ( bme->calib.res_heat_range + 4 ) );
     var5 = ( 131 * bme->calib.res_heat_val ) + 65536;

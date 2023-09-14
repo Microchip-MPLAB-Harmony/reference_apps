@@ -31,9 +31,9 @@ uint8_t gyro_handle = 0,accel_handle = 0,environment_handle = 0,quaternion_handl
 volatile bool cmd_sent = 0;
 extern BLE_DATA bleData;
 
-uint8_t temp = 3;
+uint8_t ble_temp = 3;
 uint8_t range;
-uint8_t buffer[1];
+uint8_t buffer_data[1];
 
 volatile bool flag =0 ;
 
