@@ -10,17 +10,17 @@
       "shortDescription":"Demonstrates how to get started developing application getting executed on QSPI for SAM9X60 microprocessor ",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.10"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.2.1"
+            "semverRange":">=4.30"
          }
       ],
       "dfp":{
          "name":"SAM9X60_DFP",
-         "semverRange":"^1.7.85"
+         "semverRange":">=1.7.85"
       },
       "configurator":{
          "name":"MCC",
