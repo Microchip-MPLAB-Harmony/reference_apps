@@ -168,244 +168,164 @@ typedef enum
 {
     /* PA00 pin */
     PORT_PIN_PA00 = 0U,
-
     /* PA01 pin */
     PORT_PIN_PA01 = 1U,
-
     /* PC00 pin */
-    PORT_PIN_PC00 = 0U,
-
+    PORT_PIN_PC00 = 64U,
     /* PC01 pin */
-    PORT_PIN_PC01 = 1U,
-
+    PORT_PIN_PC01 = 65U,
     /* PC02 pin */
-    PORT_PIN_PC02 = 2U,
-
+    PORT_PIN_PC02 = 66U,
     /* PC03 pin */
-    PORT_PIN_PC03 = 3U,
-
+    PORT_PIN_PC03 = 67U,
     /* PA02 pin */
     PORT_PIN_PA02 = 2U,
-
     /* PA03 pin */
     PORT_PIN_PA03 = 3U,
-
     /* PB04 pin */
-    PORT_PIN_PB04 = 4U,
-
+    PORT_PIN_PB04 = 36U,
     /* PB05 pin */
-    PORT_PIN_PB05 = 5U,
-
+    PORT_PIN_PB05 = 37U,
     /* PB06 pin */
-    PORT_PIN_PB06 = 6U,
-
+    PORT_PIN_PB06 = 38U,
     /* PB07 pin */
-    PORT_PIN_PB07 = 7U,
-
+    PORT_PIN_PB07 = 39U,
     /* PB08 pin */
-    PORT_PIN_PB08 = 8U,
-
+    PORT_PIN_PB08 = 40U,
     /* PB09 pin */
-    PORT_PIN_PB09 = 9U,
-
+    PORT_PIN_PB09 = 41U,
     /* PA04 pin */
     PORT_PIN_PA04 = 4U,
-
     /* PA05 pin */
     PORT_PIN_PA05 = 5U,
-
     /* PA06 pin */
     PORT_PIN_PA06 = 6U,
-
     /* PA07 pin */
     PORT_PIN_PA07 = 7U,
-
     /* PC05 pin */
-    PORT_PIN_PC05 = 5U,
-
+    PORT_PIN_PC05 = 69U,
     /* PC06 pin */
-    PORT_PIN_PC06 = 6U,
-
+    PORT_PIN_PC06 = 70U,
     /* PC07 pin */
-    PORT_PIN_PC07 = 7U,
-
+    PORT_PIN_PC07 = 71U,
     /* PA08 pin */
     PORT_PIN_PA08 = 8U,
-
     /* PA09 pin */
     PORT_PIN_PA09 = 9U,
-
     /* PA10 pin */
     PORT_PIN_PA10 = 10U,
-
     /* PA11 pin */
     PORT_PIN_PA11 = 11U,
-
     /* PC08 pin */
-    PORT_PIN_PC08 = 8U,
-
+    PORT_PIN_PC08 = 72U,
     /* PC09 pin */
-    PORT_PIN_PC09 = 9U,
-
+    PORT_PIN_PC09 = 73U,
     /* PC10 pin */
-    PORT_PIN_PC10 = 10U,
-
+    PORT_PIN_PC10 = 74U,
     /* PC11 pin */
-    PORT_PIN_PC11 = 11U,
-
+    PORT_PIN_PC11 = 75U,
     /* PC12 pin */
-    PORT_PIN_PC12 = 12U,
-
+    PORT_PIN_PC12 = 76U,
     /* PC13 pin */
-    PORT_PIN_PC13 = 13U,
-
+    PORT_PIN_PC13 = 77U,
     /* PB12 pin */
-    PORT_PIN_PB12 = 12U,
-
+    PORT_PIN_PB12 = 44U,
     /* PB13 pin */
-    PORT_PIN_PB13 = 13U,
-
+    PORT_PIN_PB13 = 45U,
     /* PB14 pin */
-    PORT_PIN_PB14 = 14U,
-
+    PORT_PIN_PB14 = 46U,
     /* PB15 pin */
-    PORT_PIN_PB15 = 15U,
-
+    PORT_PIN_PB15 = 47U,
     /* PC14 pin */
-    PORT_PIN_PC14 = 14U,
-
+    PORT_PIN_PC14 = 78U,
     /* PC15 pin */
-    PORT_PIN_PC15 = 15U,
-
+    PORT_PIN_PC15 = 79U,
     /* PA12 pin */
     PORT_PIN_PA12 = 12U,
-
     /* PA13 pin */
     PORT_PIN_PA13 = 13U,
-
     /* PA14 pin */
     PORT_PIN_PA14 = 14U,
-
     /* PA15 pin */
     PORT_PIN_PA15 = 15U,
-
     /* PA16 pin */
     PORT_PIN_PA16 = 16U,
-
     /* PA17 pin */
     PORT_PIN_PA17 = 17U,
-
     /* PA18 pin */
     PORT_PIN_PA18 = 18U,
-
     /* PA19 pin */
     PORT_PIN_PA19 = 19U,
-
     /* PC16 pin */
-    PORT_PIN_PC16 = 16U,
-
+    PORT_PIN_PC16 = 80U,
     /* PC17 pin */
-    PORT_PIN_PC17 = 17U,
-
+    PORT_PIN_PC17 = 81U,
     /* PC18 pin */
-    PORT_PIN_PC18 = 18U,
-
+    PORT_PIN_PC18 = 82U,
     /* PC19 pin */
-    PORT_PIN_PC19 = 19U,
-
+    PORT_PIN_PC19 = 83U,
     /* PC20 pin */
-    PORT_PIN_PC20 = 20U,
-
+    PORT_PIN_PC20 = 84U,
     /* PC21 pin */
-    PORT_PIN_PC21 = 21U,
-
+    PORT_PIN_PC21 = 85U,
     /* PB16 pin */
-    PORT_PIN_PB16 = 16U,
-
+    PORT_PIN_PB16 = 48U,
     /* PB17 pin */
-    PORT_PIN_PB17 = 17U,
-
+    PORT_PIN_PB17 = 49U,
     /* PB18 pin */
-    PORT_PIN_PB18 = 18U,
-
+    PORT_PIN_PB18 = 50U,
     /* PB19 pin */
-    PORT_PIN_PB19 = 19U,
-
+    PORT_PIN_PB19 = 51U,
     /* PB20 pin */
-    PORT_PIN_PB20 = 20U,
-
+    PORT_PIN_PB20 = 52U,
     /* PB21 pin */
-    PORT_PIN_PB21 = 21U,
-
+    PORT_PIN_PB21 = 53U,
     /* PA20 pin */
     PORT_PIN_PA20 = 20U,
-
     /* PA21 pin */
     PORT_PIN_PA21 = 21U,
-
     /* PA22 pin */
     PORT_PIN_PA22 = 22U,
-
     /* PA23 pin */
     PORT_PIN_PA23 = 23U,
-
     /* PA24 pin */
     PORT_PIN_PA24 = 24U,
-
     /* PA25 pin */
     PORT_PIN_PA25 = 25U,
-
     /* PB22 pin */
-    PORT_PIN_PB22 = 22U,
-
+    PORT_PIN_PB22 = 54U,
     /* PB23 pin */
-    PORT_PIN_PB23 = 23U,
-
+    PORT_PIN_PB23 = 55U,
     /* PB24 pin */
-    PORT_PIN_PB24 = 24U,
-
+    PORT_PIN_PB24 = 56U,
     /* PB25 pin */
-    PORT_PIN_PB25 = 25U,
-
+    PORT_PIN_PB25 = 57U,
     /* PC24 pin */
-    PORT_PIN_PC24 = 24U,
-
+    PORT_PIN_PC24 = 88U,
     /* PC25 pin */
-    PORT_PIN_PC25 = 25U,
-
+    PORT_PIN_PC25 = 89U,
     /* PC26 pin */
-    PORT_PIN_PC26 = 26U,
-
+    PORT_PIN_PC26 = 90U,
     /* PC27 pin */
-    PORT_PIN_PC27 = 27U,
-
+    PORT_PIN_PC27 = 91U,
     /* PC28 pin */
-    PORT_PIN_PC28 = 28U,
-
+    PORT_PIN_PC28 = 92U,
     /* PA30 pin */
     PORT_PIN_PA30 = 30U,
-
     /* PA31 pin */
     PORT_PIN_PA31 = 31U,
-
     /* PB30 pin */
-    PORT_PIN_PB30 = 30U,
-
+    PORT_PIN_PB30 = 62U,
     /* PB31 pin */
-    PORT_PIN_PB31 = 31U,
-
+    PORT_PIN_PB31 = 63U,
     /* PB00 pin */
-    PORT_PIN_PB00 = 0U,
-
+    PORT_PIN_PB00 = 32U,
     /* PB01 pin */
-    PORT_PIN_PB01 = 1U,
-
+    PORT_PIN_PB01 = 33U,
     /* PB02 pin */
-    PORT_PIN_PB02 = 2U,
-
+    PORT_PIN_PB02 = 34U,
     /* PB03 pin */
-    PORT_PIN_PB03 = 3U,
-
+    PORT_PIN_PB03 = 35U,
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
      * the PORT Pin is used */

@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS60100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:38:03Z */
+/* file generated from device description version 2022-09-09T06:09:11Z */
 #ifndef _PIC32CMLS60_EVSYS_INSTANCE_
 #define _PIC32CMLS60_EVSYS_INSTANCE_
 
@@ -39,6 +39,7 @@
 #define EVSYS_GCLK_ID_7                          (15)       /* Index of Generic Clock 7 */
 #define EVSYS_GENERATORS                         (91)       /* Total Number of Event Generators */
 #define EVSYS_GENERATORS_BITS                    (7)        /* Number of bits to select Event Generator */
+#define EVSYS_INSTANCE_ID                        (64)       /* Instance index for EVSYS */
 #define EVSYS_SECURE_IMPLEMENTED                 (1)        /* Security Configuration implemented? */
 #define EVSYS_SYNCH_NUM                          (8)        /* Number of Synchronous Channels */
 #define EVSYS_SYNCH_NUM_BITS                     (3)        /* Number of bits to select Synchronous Channels */
@@ -46,6 +47,5 @@
 #define EVSYS_USERS_BITS                         (6)        /* Number of bits to select Event User */
 #define EVSYS_USERS_GROUPS                       (2)        /* Number of 32-user Groups */
 #define EVSYS_USER_CHN_BITS                      (4)        /* Number of bits to select Channel in USER register */
-#define EVSYS_INSTANCE_ID                        (64)       /* Instance index for EVSYS */
 
 #endif /* _PIC32CMLS60_EVSYS_INSTANCE_ */

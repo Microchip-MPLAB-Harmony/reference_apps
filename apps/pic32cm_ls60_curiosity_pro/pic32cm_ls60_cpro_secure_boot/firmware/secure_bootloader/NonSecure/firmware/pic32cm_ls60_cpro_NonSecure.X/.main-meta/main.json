@@ -20,11 +20,11 @@
         ],
         "dfp": {
             "name": "PIC32CM-LS_DFP",
-            "semverRange": "^1.1.162"
+            "semverRange": "^1.2.274"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.5.0"
+            "semverRange": ">=5.3.7"
         },
         "device": {
             "metaDataVersion": "1.0.0",

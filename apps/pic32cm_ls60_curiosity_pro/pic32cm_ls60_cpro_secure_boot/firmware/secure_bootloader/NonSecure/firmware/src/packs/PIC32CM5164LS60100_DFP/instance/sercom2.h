@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS60100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:38:03Z */
+/* file generated from device description version 2022-09-09T06:09:11Z */
 #ifndef _PIC32CMLS60_SERCOM2_INSTANCE_
 #define _PIC32CMLS60_SERCOM2_INSTANCE_
 
@@ -35,31 +35,31 @@
 #define SERCOM2_FSYNC_IMPLEMENTED                (0)        /* SPI Frame Synch mode implemented? */
 #define SERCOM2_GCLK_ID_CORE                     (19)       
 #define SERCOM2_GCLK_ID_SLOW                     (16)       
+#define SERCOM2_I2C_0_INT_SRC                    (39)       /* I2C 0 Interrupt */
+#define SERCOM2_I2C_1_INT_SRC                    (40)       /* I2C 1 Interrupt */
+#define SERCOM2_I2C_2_INT_SRC                    (41)       /* I2C 2 Interrupt */
+#define SERCOM2_I2C_3_INT_SRC                    (42)       /* I2C 3 Interrupt */
+#define SERCOM2_INSTANCE_ID                      (67)       /* Instance index for SERCOM2 */
 #define SERCOM2_INT_MSB                          (6)        
 #define SERCOM2_PMSB                             (3)        
 #define SERCOM2_SPI                              (1)        /* SPI mode implemented? */
+#define SERCOM2_SPI_ERROR_INT_SRC                (42)       /* SPI ERROR Interrupt */
+#define SERCOM2_SPI_RX_INT_SRC                   (41)       /* SPI RX Interrupt */
+#define SERCOM2_SPI_TX_COMPLETE_INT_SRC          (40)       /* SPI TX COMPLETE Interrupt */
+#define SERCOM2_SPI_TX_READY_INT_SRC             (39)       /* SPI TX READY Interrupt */
 #define SERCOM2_TWIM                             (1)        /* TWI Master mode implemented? */
 #define SERCOM2_TWIS                             (1)        /* TWI Slave mode implemented? */
 #define SERCOM2_TWI_HSMODE                       (1)        /* TWI HighSpeed mode implemented? */
 #define SERCOM2_ULTRA_IMPLEMENTATION             (1)        /* ULTRA platform compatibility? */
 #define SERCOM2_USART                            (1)        /* USART mode implemented? */
 #define SERCOM2_USART_AUTOBAUD                   (1)        /* USART autobaud implemented? */
+#define SERCOM2_USART_ERROR_INT_SRC              (42)       /* USART ERROR Interrupt */
 #define SERCOM2_USART_IRDA                       (1)        /* USART IrDA implemented? */
 #define SERCOM2_USART_ISO7816                    (1)        /* USART ISO7816 mode implemented? */
 #define SERCOM2_USART_LIN_MASTER                 (1)        /* USART LIN Master mode implemented? */
 #define SERCOM2_USART_RS485                      (1)        /* USART RS485 mode implemented? */
-#define SERCOM2_INSTANCE_ID                      (67)       /* Instance index for SERCOM2 */
-#define SERCOM2_SPI_TX_READY_INT_SRC             (39)       /* SPI TX READY Interrupt */
-#define SERCOM2_SPI_TX_COMPLETE_INT_SRC          (40)       /* SPI TX COMPLETE Interrupt */
-#define SERCOM2_SPI_RX_INT_SRC                   (41)       /* SPI RX Interrupt */
-#define SERCOM2_SPI_ERROR_INT_SRC                (42)       /* SPI ERROR Interrupt */
-#define SERCOM2_I2C_0_INT_SRC                    (39)       /* I2C 0 Interrupt */
-#define SERCOM2_I2C_1_INT_SRC                    (40)       /* I2C 1 Interrupt */
-#define SERCOM2_I2C_2_INT_SRC                    (41)       /* I2C 2 Interrupt */
-#define SERCOM2_I2C_3_INT_SRC                    (42)       /* I2C 3 Interrupt */
-#define SERCOM2_USART_TX_READY_INT_SRC           (39)       /* USART TX READY Interrupt */
-#define SERCOM2_USART_TX_COMPLETE_INT_SRC        (40)       /* USART TX COMPLETE Interrupt */
 #define SERCOM2_USART_RX_INT_SRC                 (41)       /* USART RX Interrupt */
-#define SERCOM2_USART_ERROR_INT_SRC              (42)       /* USART ERROR Interrupt */
+#define SERCOM2_USART_TX_COMPLETE_INT_SRC        (40)       /* USART TX COMPLETE Interrupt */
+#define SERCOM2_USART_TX_READY_INT_SRC           (39)       /* USART TX READY Interrupt */
 
 #endif /* _PIC32CMLS60_SERCOM2_INSTANCE_ */

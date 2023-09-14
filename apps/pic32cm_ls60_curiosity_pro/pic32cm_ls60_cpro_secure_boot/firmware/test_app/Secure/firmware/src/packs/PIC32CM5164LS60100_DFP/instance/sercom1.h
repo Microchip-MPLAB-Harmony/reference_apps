@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS60100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:38:03Z */
+/* file generated from device description version 2022-09-09T06:09:11Z */
 #ifndef _PIC32CMLS60_SERCOM1_INSTANCE_
 #define _PIC32CMLS60_SERCOM1_INSTANCE_
 
@@ -35,6 +35,11 @@
 #define SERCOM1_FSYNC_IMPLEMENTED                (0)        /* SPI Frame Synch mode implemented? */
 #define SERCOM1_GCLK_ID_CORE                     (18)       
 #define SERCOM1_GCLK_ID_SLOW                     (16)       
+#define SERCOM1_I2C_0_INT_SRC                    (35)       /* I2C 0 Interrupt */
+#define SERCOM1_I2C_1_INT_SRC                    (36)       /* I2C 1 Interrupt */
+#define SERCOM1_I2C_2_INT_SRC                    (37)       /* I2C 2 Interrupt */
+#define SERCOM1_I2C_3_INT_SRC                    (38)       /* I2C 3 Interrupt */
+#define SERCOM1_INSTANCE_ID                      (66)       /* Instance index for SERCOM1 */
 #define SERCOM1_INT_MSB                          (6)        
 #define SERCOM1_PMSB                             (3)        
 #define SERCOM1_SPI                              (0)        /* SPI mode implemented? */
@@ -48,10 +53,5 @@
 #define SERCOM1_USART_ISO7816                    (1)        /* USART ISO7816 mode implemented? */
 #define SERCOM1_USART_LIN_MASTER                 (1)        /* USART LIN Master mode implemented? */
 #define SERCOM1_USART_RS485                      (1)        /* USART RS485 mode implemented? */
-#define SERCOM1_INSTANCE_ID                      (66)       /* Instance index for SERCOM1 */
-#define SERCOM1_I2C_0_INT_SRC                    (35)       /* I2C 0 Interrupt */
-#define SERCOM1_I2C_1_INT_SRC                    (36)       /* I2C 1 Interrupt */
-#define SERCOM1_I2C_2_INT_SRC                    (37)       /* I2C 2 Interrupt */
-#define SERCOM1_I2C_3_INT_SRC                    (38)       /* I2C 3 Interrupt */
 
 #endif /* _PIC32CMLS60_SERCOM1_INSTANCE_ */

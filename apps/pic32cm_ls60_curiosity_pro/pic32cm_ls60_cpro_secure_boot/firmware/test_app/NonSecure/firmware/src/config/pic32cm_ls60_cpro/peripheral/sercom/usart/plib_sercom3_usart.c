@@ -227,6 +227,34 @@ USART_ERROR SERCOM3_USART_ErrorGet( void )
     return errorStatus;
 }
 
+void SERCOM3_USART_Enable( void )
+{
+    if((SERCOM3_REGS->USART_INT.SERCOM_CTRLA & SERCOM_USART_INT_CTRLA_ENABLE_Msk) == 0U)
+    {
+        SERCOM3_REGS->USART_INT.SERCOM_CTRLA |= SERCOM_USART_INT_CTRLA_ENABLE_Msk;
+
+        /* Wait for sync */
+        while((SERCOM3_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U)
+        {
+            /* Do nothing */
+        }
+    }
+}
+
+void SERCOM3_USART_Disable( void )
+{
+    if((SERCOM3_REGS->USART_INT.SERCOM_CTRLA & SERCOM_USART_INT_CTRLA_ENABLE_Msk) != 0U)
+    {
+        SERCOM3_REGS->USART_INT.SERCOM_CTRLA &= ~SERCOM_USART_INT_CTRLA_ENABLE_Msk;
+
+        /* Wait for sync */
+        while((SERCOM3_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U)
+        {
+            /* Do nothing */
+        }
+    }
+}
+
 
 void SERCOM3_USART_TransmitterEnable( void )
 {

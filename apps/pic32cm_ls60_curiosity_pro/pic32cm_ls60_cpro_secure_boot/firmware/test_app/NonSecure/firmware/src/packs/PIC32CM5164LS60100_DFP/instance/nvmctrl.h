@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LS60100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,21 +20,21 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:38:03Z */
+/* file generated from device description version 2022-09-09T06:09:11Z */
 #ifndef _PIC32CMLS60_NVMCTRL_INSTANCE_
 #define _PIC32CMLS60_NVMCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for NVMCTRL peripheral ========== */
 #define NVMCTRL_DATAFLASH_PAGES                  (256)      
+#define NVMCTRL_FLASH_SIZE                       (524288)   
+#define NVMCTRL_INSTANCE_ID                      (34)       /* Instance index for NVMCTRL */
+#define NVMCTRL_PAGES                            (8192)     
+#define NVMCTRL_PAGES_PR_REGION                  (512)      
+#define NVMCTRL_PAGE_SIZE                        (64)       
 #define NVMCTRL_PMSB                             (3)        
 #define NVMCTRL_PSZ_BITS                         (6)        
 #define NVMCTRL_ROW_PAGES                        (4)        
 #define NVMCTRL_SECURE_IMPLEMENTED               (1)        /* Security Configuration implemented? */
-#define NVMCTRL_FLASH_SIZE                       (524288)   
-#define NVMCTRL_PAGE_SIZE                        (64)       
-#define NVMCTRL_PAGES                            (8192)     
-#define NVMCTRL_PAGES_PR_REGION                  (512)      
-#define NVMCTRL_INSTANCE_ID                      (34)       /* Instance index for NVMCTRL */
 
 #endif /* _PIC32CMLS60_NVMCTRL_INSTANCE_ */

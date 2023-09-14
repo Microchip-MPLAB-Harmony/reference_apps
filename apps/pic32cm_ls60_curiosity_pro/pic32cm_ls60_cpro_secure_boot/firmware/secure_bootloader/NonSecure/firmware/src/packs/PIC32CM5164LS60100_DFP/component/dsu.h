@@ -1,7 +1,7 @@
 /*
  * Component description for DSU
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:38:03Z */
+/* file generated from device description version 2022-09-09T06:09:11Z */
 #ifndef _PIC32CMLS60_DSU_COMPONENT_H_
 #define _PIC32CMLS60_DSU_COMPONENT_H_
 
@@ -71,12 +71,12 @@
 #define DSU_STATUSB_DAL_Pos                   _UINT8_(0)                                           /* (DSU_STATUSB) Debugger Access Level Position */
 #define DSU_STATUSB_DAL_Msk                   (_UINT8_(0x3) << DSU_STATUSB_DAL_Pos)                /* (DSU_STATUSB) Debugger Access Level Mask */
 #define DSU_STATUSB_DAL(value)                (DSU_STATUSB_DAL_Msk & (_UINT8_(value) << DSU_STATUSB_DAL_Pos)) /* Assigment of value for DAL in the DSU_STATUSB register */
-#define   DSU_STATUSB_DAL_SECURED_Val         _UINT8_(0x0)                                         /* (DSU_STATUSB)   */
-#define   DSU_STATUSB_DAL_NS_DEBUG_Val        _UINT8_(0x1)                                         /* (DSU_STATUSB)   */
-#define   DSU_STATUSB_DAL_FULL_DEBUG_Val      _UINT8_(0x2)                                         /* (DSU_STATUSB)   */
-#define DSU_STATUSB_DAL_SECURED               (DSU_STATUSB_DAL_SECURED_Val << DSU_STATUSB_DAL_Pos) /* (DSU_STATUSB)  Position  */
-#define DSU_STATUSB_DAL_NS_DEBUG              (DSU_STATUSB_DAL_NS_DEBUG_Val << DSU_STATUSB_DAL_Pos) /* (DSU_STATUSB)  Position  */
-#define DSU_STATUSB_DAL_FULL_DEBUG            (DSU_STATUSB_DAL_FULL_DEBUG_Val << DSU_STATUSB_DAL_Pos) /* (DSU_STATUSB)  Position  */
+#define   DSU_STATUSB_DAL_SECURED_Val         _UINT8_(0x0)                                         /* (DSU_STATUSB) Debugger can only access the DSU external address space.  */
+#define   DSU_STATUSB_DAL_NS_DEBUG_Val        _UINT8_(0x1)                                         /* (DSU_STATUSB) Debugger can access only Non-Secure regions (PIC32CM LS00/LS60 only).  */
+#define   DSU_STATUSB_DAL_FULL_DEBUG_Val      _UINT8_(0x2)                                         /* (DSU_STATUSB) Debugger can access any regions.  */
+#define DSU_STATUSB_DAL_SECURED               (DSU_STATUSB_DAL_SECURED_Val << DSU_STATUSB_DAL_Pos) /* (DSU_STATUSB) Debugger can only access the DSU external address space. Position  */
+#define DSU_STATUSB_DAL_NS_DEBUG              (DSU_STATUSB_DAL_NS_DEBUG_Val << DSU_STATUSB_DAL_Pos) /* (DSU_STATUSB) Debugger can access only Non-Secure regions (PIC32CM LS00/LS60 only). Position  */
+#define DSU_STATUSB_DAL_FULL_DEBUG            (DSU_STATUSB_DAL_FULL_DEBUG_Val << DSU_STATUSB_DAL_Pos) /* (DSU_STATUSB) Debugger can access any regions. Position  */
 #define DSU_STATUSB_DBGPRES_Pos               _UINT8_(2)                                           /* (DSU_STATUSB) Debugger Present Position */
 #define DSU_STATUSB_DBGPRES_Msk               (_UINT8_(0x1) << DSU_STATUSB_DBGPRES_Pos)            /* (DSU_STATUSB) Debugger Present Mask */
 #define DSU_STATUSB_DBGPRES(value)            (DSU_STATUSB_DBGPRES_Msk & (_UINT8_(value) << DSU_STATUSB_DBGPRES_Pos)) /* Assigment of value for DBGPRES in the DSU_STATUSB register */
@@ -144,7 +144,7 @@
 
 
 /* -------- DSU_DID : (DSU Offset: 0x18) ( R/ 32) Device Identification -------- */
-#define DSU_DID_RESETVALUE                    _UINT32_(0x20870000)                                 /*  (DSU_DID) Device Identification  Reset Value */
+#define DSU_DID_RESETVALUE                    _UINT32_(0x20870100)                                 /*  (DSU_DID) Device Identification  Reset Value */
 
 #define DSU_DID_DEVSEL_Pos                    _UINT32_(0)                                          /* (DSU_DID) Device Select Position */
 #define DSU_DID_DEVSEL_Msk                    (_UINT32_(0xFF) << DSU_DID_DEVSEL_Pos)               /* (DSU_DID) Device Select Mask */
@@ -155,12 +155,16 @@
 #define   DSU_DID_DEVSEL_256KB_32KB_100PIN_Val _UINT32_(0x4)                                        /* (DSU_DID) 256 KB Flash / 32 KB SRAM / 100-pin  */
 #define   DSU_DID_DEVSEL_256KB_32KB_64PIN_Val _UINT32_(0x5)                                        /* (DSU_DID) 256 KB Flash / 32 KB SRAM / 64-pin  */
 #define   DSU_DID_DEVSEL_256KB_32KB_48PIN_Val _UINT32_(0x6)                                        /* (DSU_DID) 256 KB Flash / 32 KB SRAM / 48-pin  */
+#define   DSU_DID_DEVSEL_128KB_16KB_48PIN_Val _UINT32_(0xA)                                        /* (DSU_DID) 128 KB Flash / 16 KB SRAM / 48-pin  */
+#define   DSU_DID_DEVSEL_128KB_16KB_32PIN_Val _UINT32_(0xB)                                        /* (DSU_DID) 128 KB Flash / 16 KB SRAM / 32-pin  */
 #define DSU_DID_DEVSEL_512KB_64KB_100PIN      (DSU_DID_DEVSEL_512KB_64KB_100PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 512 KB Flash / 64 KB SRAM / 100-pin Position  */
 #define DSU_DID_DEVSEL_512KB_64KB_64PIN       (DSU_DID_DEVSEL_512KB_64KB_64PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 512 KB Flash / 64 KB SRAM / 64-pin Position  */
 #define DSU_DID_DEVSEL_512KB_64KB_48PIN       (DSU_DID_DEVSEL_512KB_64KB_48PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 512 KB Flash / 64 KB SRAM / 48-pin Position  */
 #define DSU_DID_DEVSEL_256KB_32KB_100PIN      (DSU_DID_DEVSEL_256KB_32KB_100PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 256 KB Flash / 32 KB SRAM / 100-pin Position  */
 #define DSU_DID_DEVSEL_256KB_32KB_64PIN       (DSU_DID_DEVSEL_256KB_32KB_64PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 256 KB Flash / 32 KB SRAM / 64-pin Position  */
 #define DSU_DID_DEVSEL_256KB_32KB_48PIN       (DSU_DID_DEVSEL_256KB_32KB_48PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 256 KB Flash / 32 KB SRAM / 48-pin Position  */
+#define DSU_DID_DEVSEL_128KB_16KB_48PIN       (DSU_DID_DEVSEL_128KB_16KB_48PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 128 KB Flash / 16 KB SRAM / 48-pin Position  */
+#define DSU_DID_DEVSEL_128KB_16KB_32PIN       (DSU_DID_DEVSEL_128KB_16KB_32PIN_Val << DSU_DID_DEVSEL_Pos) /* (DSU_DID) 128 KB Flash / 16 KB SRAM / 32-pin Position  */
 #define DSU_DID_REVISION_Pos                  _UINT32_(8)                                          /* (DSU_DID) Revision Number Position */
 #define DSU_DID_REVISION_Msk                  (_UINT32_(0xF) << DSU_DID_REVISION_Pos)              /* (DSU_DID) Revision Number Mask */
 #define DSU_DID_REVISION(value)               (DSU_DID_REVISION_Msk & (_UINT32_(value) << DSU_DID_REVISION_Pos)) /* Assigment of value for REVISION in the DSU_DID register */
