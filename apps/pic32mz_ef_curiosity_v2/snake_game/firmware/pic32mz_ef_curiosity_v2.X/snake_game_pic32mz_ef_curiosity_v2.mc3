@@ -6519,7 +6519,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>826bc6b9da59bbf6ba42f51a14320cf5ec1d7e56e55faea4bee71406620954be</hash>
+         <hash>518aaa511f8267a161f9d138eefc34f17e8bac4cb68b2a71f875552236bd3926</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.h</file>
@@ -6783,7 +6783,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.h</file>
-         <hash>66f69326ff4c7aba951cd489b1037d9ac2595b13bf1122deba5f1bcaec89c9dc</hash>
+         <hash>8a1022bf0b6e4397891561f456ef10e719b12256bc75ae8e5480138b5ab01c29</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\datastructure\legato_array.c</file>
@@ -6807,7 +6807,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.c</file>
-         <hash>a55d8b9bc89d56a00b0a2a47dd0164bed1bccf7c2461b7c644204d8e7131a1ef</hash>
+         <hash>c2b3ec67a5c91cb50220aee43effa7917d8854dcd3c59b8385b1031452c2983b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\linegraph\legato_widget_line_graph.c</file>

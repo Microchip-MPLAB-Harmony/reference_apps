@@ -130,13 +130,13 @@
         <targetDevice>PIC32MK1024MCM100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MK-MC_DFP" vendor="Microchip" version="1.10.146"/>
+        <pack name="PIC32MK-MC_DFP" vendor="Microchip" version="1.11.151"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -691,7 +691,7 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d0fffff"/>
         <property key="programmerToGoFilePath"
-                  value="C:/MassMarket/bitBucket/reference_apps/apps/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_getting_started_ext/firmware/pic32mk_mcm_curiosity_pro.X/debug/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro_ptg"/>
+                  value="D:/MassMarket/github_repos/reference_apps/apps/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_getting_started/firmware/pic32mk_mcm_curiosity_pro.X/debug/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
