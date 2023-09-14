@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMD21J18A
+/*
+ * Instance header file for ATSAMD21J18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for I2S peripheral ========== */
-#define I2S_CLK_NUM                              _UL_(2)    /* Number of clock units */
-#define I2S_GCLK_ID_0                            _UL_(35)   /* Index of Generic Clock 0 */
-#define I2S_GCLK_ID_1                            _UL_(36)   /* Index of Generic Clock 1 */
-#define I2S_MAX_SLOTS                            _UL_(8)    /* Max number of data slots in frame */
-#define I2S_SER_NUM                              _UL_(2)    /* Number of serializers */
-#define I2S_INSTANCE_ID                          _UL_(84)   
+#define I2S_CLK_NUM                              (2)        /* Number of clock units */
+#define I2S_GCLK_ID_0                            (35)       /* Index of Generic Clock 0 */
+#define I2S_GCLK_ID_1                            (36)       /* Index of Generic Clock 1 */
+#define I2S_MAX_SLOTS                            (8)        /* Max number of data slots in frame */
+#define I2S_SER_NUM                              (2)        /* Number of serializers */
+#define I2S_INSTANCE_ID                          (84)       
 
 #endif /* _SAMD21_I2S_INSTANCE_ */
