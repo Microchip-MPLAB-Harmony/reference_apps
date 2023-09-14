@@ -40,6 +40,7 @@
 // DOM-IGNORE-END
 
 #include "device.h"
+#include "plib_mmu.h"
 
 /* TTB descriptor type for Section descriptor */
 #define TTB_TYPE_SECT              (2UL << 0U)
@@ -92,7 +93,7 @@ __ALIGNED(16384) static uint32_t tlb[4096];
 static void mmu_configure(void *p_tlb)
 {
     /* Translation Table Base Register 0 */
-    __set_TTBR0((uint32_t)p_tlb);
+    __set_TTBR0((uint32_t)(uint8_t*)p_tlb);
 
     /* Domain Access Register */
     /* only domain 15: access are not checked */
@@ -143,38 +144,47 @@ void dcache_CleanInvalidateAll(void)
     L1C_CleanInvalidateDCacheAll();
 }
 
-void dcache_InvalidateByAddr (uint32_t *addr, uint32_t size)
+void dcache_InvalidateByAddr(volatile void *pAddr, int32_t size)
 {
-    uint32_t mva = (uint32_t)addr & ~(L1_DATA_CACHE_BYTES - 1U);
+    volatile uint32_t uAddr = (volatile uint32_t)((volatile uint32_t*)pAddr);
+    uint32_t uSize = (uint32_t)size;
+    uint32_t mva = uAddr & ~(L1_DATA_CACHE_BYTES - 1U);
 
-    for ( ; mva < ((uint32_t)addr + size); mva += L1_DATA_CACHE_BYTES)
+    while(mva < (uAddr + uSize))
     {
         __set_DCIMVAC(mva);
         __DMB();
+        mva += L1_DATA_CACHE_BYTES;
     }
     __DSB();
 }
 
-void dcache_CleanByAddr (uint32_t *addr, uint32_t size)
+void dcache_CleanByAddr(volatile void *pAddr, int32_t size)
 {
-    uint32_t mva = (uint32_t)addr & ~(L1_DATA_CACHE_BYTES - 1U);
+    volatile uint32_t uAddr = (volatile uint32_t)((volatile uint32_t*)pAddr);
+    uint32_t uSize = (uint32_t)size;
+    uint32_t mva = uAddr & ~(L1_DATA_CACHE_BYTES - 1U);
 
-    for ( ; mva < ((uint32_t)addr + size); mva += L1_DATA_CACHE_BYTES)
+    while(mva < (uAddr + uSize))
     {
         __set_DCCMVAC(mva);
         __DMB();
+        mva += L1_DATA_CACHE_BYTES;
     }
     __DSB();
 }
 
-void dcache_CleanInvalidateByAddr (uint32_t *addr, uint32_t size)
+void dcache_CleanInvalidateByAddr(volatile void *pAddr, int32_t size)
 {
-    uint32_t mva = (uint32_t)addr & ~(L1_DATA_CACHE_BYTES - 1U);
+    volatile uint32_t uAddr = (volatile uint32_t)((volatile uint32_t*)pAddr);
+    uint32_t uSize = (uint32_t)size;
+    uint32_t mva = uAddr & ~(L1_DATA_CACHE_BYTES - 1U);
 
-    for ( ; mva < ((uint32_t)addr + size); mva += L1_DATA_CACHE_BYTES)
+    while(mva < (uAddr + uSize))
     {
-        __set_DCCIMVAC((uint32_t)mva);
+        __set_DCCIMVAC(mva);
         __DMB();
+        mva += L1_DATA_CACHE_BYTES;
     }
     __DSB();
 }
@@ -227,9 +237,9 @@ void MMU_Initialize(void)
 
     /* Reset table entries */
     for (addr = 0U; addr < 4096U; addr++)
-	{
+    {
         tlb[addr] = 0;
-	}
+    }
 
 
     /* 0x00000000: IROM */
@@ -238,7 +248,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC
                   | TTB_SECT_CACHEABLE_WB
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x00100000: IRAM */
     tlb[0x001] = TTB_SECT_ADDR(0x00100000U)
@@ -246,7 +256,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC
                   | TTB_SECT_CACHEABLE_WB
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x00200000: UDPHS RAMA */
     tlb[0x002] = TTB_SECT_ADDR(0x00200000U)
@@ -254,7 +264,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x00300000: UDPHS RAMB */
     tlb[0x003] = TTB_SECT_ADDR(0x00300000U)
@@ -262,7 +272,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x00400000: UHPHS OHCI */
     tlb[0x004] = TTB_SECT_ADDR(0x00400000U)
@@ -270,7 +280,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x00500000: UHPHS EHCI */
     tlb[0x005] = TTB_SECT_ADDR(0x00500000U)
@@ -278,7 +288,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x00600000: NFC RAM */
     tlb[0x006] = TTB_SECT_ADDR(0x00600000U)
@@ -286,7 +296,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x10000000: NFC */
     for (addr = 0x100U; addr < 0x180U; addr++)
@@ -382,7 +392,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0xE8800000: APB DBG S */
     tlb[0xE88] = TTB_SECT_ADDR(0xE8800000U)
@@ -390,7 +400,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0xE8900000: APB DBG */
     tlb[0xE89] = TTB_SECT_ADDR(0xE8900000U)
@@ -398,7 +408,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0xE8B00000: NICGPV */
     tlb[0xE8B] = TTB_SECT_ADDR(0xE8B00000U)
@@ -406,7 +416,7 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_STRONGLY_ORDERED
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0xE8C00000: PERIPHERALS 2 */
     tlb[0xE8C] = TTB_SECT_ADDR(0xE8C00000U)
@@ -414,35 +424,34 @@ void MMU_Initialize(void)
                   | TTB_SECT_DOMAIN(0xFU)
                   | TTB_SECT_EXEC_NEVER
                   | TTB_SECT_SHAREABLE_DEVICE
-                  | TTB_TYPE_SECT; 
+                  | TTB_TYPE_SECT;
 
     /* 0x60000000: DDR Chip Select */
     /* (16MB strongly ordered) */
     for (addr = 0x600U; addr < 0x610U; addr++)
-		{   
-	       tlb[addr] = TTB_SECT_ADDR(addr << 20)
-                      | TTB_SECT_AP_FULL_ACCESS
-                      | TTB_SECT_DOMAIN(0xfU)
-                      | TTB_SECT_EXEC
-                      | TTB_SECT_STRONGLY_ORDERED
-                      | TTB_TYPE_SECT;
-		}
+    {
+        tlb[addr] = TTB_SECT_ADDR(addr << 20)
+                    | TTB_SECT_AP_FULL_ACCESS
+                    | TTB_SECT_DOMAIN(0xfU)
+                    | TTB_SECT_EXEC
+                    | TTB_SECT_STRONGLY_ORDERED
+                    | TTB_TYPE_SECT;
+    }
 
-    /*Remainder of the DRAM is configured as cacheable */          
+    /*Remainder of the DRAM is configured as cacheable */
     for (addr = 0x610U; addr < 0xE00U; addr++)
-        {
-	        tlb[addr] = TTB_SECT_ADDR(addr << 20)
-                      | TTB_SECT_AP_FULL_ACCESS
-                      | TTB_SECT_DOMAIN(0xfU)
-                      | TTB_SECT_EXEC
-                      | TTB_SECT_CACHEABLE_WB
-                      | TTB_TYPE_SECT;
-		}
+    {
+        tlb[addr] = TTB_SECT_ADDR(addr << 20)
+                    | TTB_SECT_AP_FULL_ACCESS
+                    | TTB_SECT_DOMAIN(0xfU)
+                    | TTB_SECT_EXEC
+                    | TTB_SECT_CACHEABLE_WB
+                    | TTB_TYPE_SECT;
+    }
 
     /* Enable MMU, I-Cache and D-Cache */
     mmu_configure(tlb);
     icache_Enable();
     MMU_Enable();
     dcache_Enable();
-
 }

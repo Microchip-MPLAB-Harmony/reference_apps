@@ -10,17 +10,17 @@
       "shortDescription":"Demonstrates how to get started developing application getting executed on QSPI for SAMA7G54 microprocessor ",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.10"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.2.1"
+            "semverRange":">=4.30"
          }
       ],
       "dfp":{
          "name":"SAMA7G5_DFP",
-         "semverRange":"^1.1.173"
+         "semverRange":">=1.2.178"
       },
       "configurator":{
          "name":"MCC",
@@ -32,7 +32,7 @@
          "content":{
             "metaDataVersion":"1.0.0",
             "category":"com.microchip.device",
-            "name":"SAM9X60",
+            "name":"SAMA7G5",
             "versionRange":"*"
          }
       },

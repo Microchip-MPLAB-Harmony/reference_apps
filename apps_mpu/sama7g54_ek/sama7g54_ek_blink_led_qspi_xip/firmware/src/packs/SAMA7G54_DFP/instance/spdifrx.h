@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2023-01-20T08:56:57Z */
+/* file generated from device description version 2023-02-02T10:07:15Z */
 #ifndef _SAMA7G_SPDIFRX_INSTANCE_
 #define _SAMA7G_SPDIFRX_INSTANCE_
 

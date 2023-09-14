@@ -20,7 +20,7 @@
  *
  */
 
-/* File generated from device description version 2023-01-20T08:56:53Z */
+/* File generated from device description version 2023-02-02T10:07:10Z */
 #ifndef _SAMA7G54_H_
 #define _SAMA7G54_H_
 
@@ -128,7 +128,7 @@ typedef enum IRQn
   ARM_IRQn                  =  61, /* 61  ARM (ARM)                           */
   ASRC_IRQn                 =  62, /* 62  Asynchronous Sample Rate Converter (ASRC) */
   CPKCC_IRQn                =  64, /* 64  Classic Public Key Cryptography Controller (CPKCC) */
-  CSI_IRQn                  =  65, /* 65  Camera Serial Interface 2 Controller and MIPI PHY (CSI) */
+  CSI_IRQn                  =  65, /* 65  Camera Serial Interface (CSI)       */
   CSI2DC_IRQn               =  66, /* 66  CSI-2 Demultiplexer Controller (CSI2DC) */
   FLEXCOM0_IRQn             =  70, /* 70  Flexible Serial Communication (FLEXCOM0) */
   FLEXCOM1_IRQn             =  71, /* 71  Flexible Serial Communication (FLEXCOM1) */
@@ -273,6 +273,7 @@ typedef enum IRQn
 #include "component/bsc.h"
 #include "component/chipid.h"
 #include "component/cpkcc.h"
+#include "component/csi.h"
 #include "component/csi2dc.h"
 #include "component/ddr3phy.h"
 #include "component/dwdt.h"
@@ -285,7 +286,6 @@ typedef enum IRQn
 #include "component/isc.h"
 #include "component/matrix.h"
 #include "component/mcan.h"
-#include "component/mipicsi2phy.h"
 #include "component/nicgpv.h"
 #include "component/otpc.h"
 #include "component/pdmc.h"
@@ -575,6 +575,7 @@ typedef enum IRQn
 #define ASRC_REGS                        ((asrc_registers_t*)0xe1610000)               /* ASRC Registers Address       */
 #define BSC_REGS                         ((bsc_registers_t*)0xe001d054)                /* BSC Registers Address        */
 #define CHIPID_REGS                      ((chipid_registers_t*)0xe0020000)             /* CHIPID Registers Address     */
+#define CSI_REGS                         ((csi_registers_t*)0xe1400000)                /* CSI Registers Address        */
 #define CPKCC_REGS                       ((cpkcc_registers_t*)0xe000c000)              /* CPKCC Registers Address      */
 #define CSI2DC_REGS                      ((csi2dc_registers_t*)0xe1404000)             /* CSI2DC Registers Address     */
 #define DDRPUBL_REGS                     ((ddr3phy_registers_t*)0xe3804000)            /* DDRPUBL Registers Address    */
@@ -606,7 +607,6 @@ typedef enum IRQn
 #define MCAN3_REGS                       ((mcan_registers_t*)0xe0834000)               /* MCAN3 Registers Address      */
 #define MCAN4_REGS                       ((mcan_registers_t*)0xe0838000)               /* MCAN4 Registers Address      */
 #define MCAN5_REGS                       ((mcan_registers_t*)0xe083c000)               /* MCAN5 Registers Address      */
-#define CSI_REGS                         ((mipicsi2phy_registers_t*)0xe1400000)        /* CSI Registers Address        */
 #define NICGPV_REGS                      ((nicgpv_registers_t*)0xe8b00000)             /* NICGPV Registers Address     */
 #define OTPC_REGS                        ((otpc_registers_t*)0xe8c00000)               /* OTPC Registers Address       */
 #define PDMC0_REGS                       ((pdmc_registers_t*)0xe1608000)               /* PDMC0 Registers Address      */
@@ -670,6 +670,7 @@ typedef enum IRQn
 #define ASRC_BASE_ADDRESS                _UINT32_(0xe1610000)                          /* ASRC Base Address */
 #define BSC_BASE_ADDRESS                 _UINT32_(0xe001d054)                          /* BSC Base Address */
 #define CHIPID_BASE_ADDRESS              _UINT32_(0xe0020000)                          /* CHIPID Base Address */
+#define CSI_BASE_ADDRESS                 _UINT32_(0xe1400000)                          /* CSI Base Address */
 #define CPKCC_BASE_ADDRESS               _UINT32_(0xe000c000)                          /* CPKCC Base Address */
 #define CSI2DC_BASE_ADDRESS              _UINT32_(0xe1404000)                          /* CSI2DC Base Address */
 #define DDRPUBL_BASE_ADDRESS             _UINT32_(0xe3804000)                          /* DDRPUBL Base Address */
@@ -701,7 +702,6 @@ typedef enum IRQn
 #define MCAN3_BASE_ADDRESS               _UINT32_(0xe0834000)                          /* MCAN3 Base Address */
 #define MCAN4_BASE_ADDRESS               _UINT32_(0xe0838000)                          /* MCAN4 Base Address */
 #define MCAN5_BASE_ADDRESS               _UINT32_(0xe083c000)                          /* MCAN5 Base Address */
-#define CSI_BASE_ADDRESS                 _UINT32_(0xe1400000)                          /* CSI Base Address */
 #define NICGPV_BASE_ADDRESS              _UINT32_(0xe8b00000)                          /* NICGPV Base Address */
 #define OTPC_BASE_ADDRESS                _UINT32_(0xe8c00000)                          /* OTPC Base Address */
 #define PDMC0_BASE_ADDRESS               _UINT32_(0xe1608000)                          /* PDMC0 Base Address */

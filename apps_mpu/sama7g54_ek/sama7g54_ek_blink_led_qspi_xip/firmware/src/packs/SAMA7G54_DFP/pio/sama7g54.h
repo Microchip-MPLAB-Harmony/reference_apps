@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2023-01-20T08:56:53Z */
+/* file generated from device description version 2023-02-02T10:07:10Z */
 #ifndef _SAMA7G54_GPIO_H_
 #define _SAMA7G54_GPIO_H_
 
