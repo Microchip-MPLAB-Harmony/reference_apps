@@ -50,6 +50,7 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
@@ -59,6 +60,12 @@
 void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
+void MemoryManagement_Handler (void);
+void BusFault_Handler (void);
+void UsageFault_Handler (void);
+void vPortSVCHandler (void);
+void DebugMonitor_Handler (void);
+void xPortPendSVHandler (void);
 void xPortSysTickHandler (void);
 void USART1_InterruptHandler (void);
 void TWIHS0_InterruptHandler (void);

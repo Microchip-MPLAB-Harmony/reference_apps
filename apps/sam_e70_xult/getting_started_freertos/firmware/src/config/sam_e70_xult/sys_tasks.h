@@ -1,27 +1,23 @@
 /*******************************************************************************
-  TWIHS Peripheral Library Interface Header File
+ System Tasks Header File
 
-  Company
-    Microchip Technology Inc.
+  File Name:
+    sys_tasks.h
 
-  File Name
-    plib_twihs0_master.h
+  Summary:
+    This file contains declarations for task handles.
 
-  Summary
-    TWIHS Master peripheral library interface.
-
-  Description
-    This file defines the interface to the TWIHS peripheral library.  This
-    library provides access to and control of the associated peripheral
-    instance.
+  Description:
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
 
   Remarks:
-
-*******************************************************************************/
+    None
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -41,11 +37,11 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_TWIHS0_MASTER_H
-#define PLIB_TWIHS0_MASTER_H
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -53,46 +49,24 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "plib_twihs_master_common.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-// DOM-IGNORE-END
+#include "configuration.h"
+#include "definitions.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface Routines
+// Section: RTOS "Tasks" Handles
 // *****************************************************************************
 // *****************************************************************************
+/* Declaration of  APP_SENSOR_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_SENSOR_THREAD_Tasks;
 
-void TWIHS0_Initialize( void );
+/* Declaration of  APP_EEPROM_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_EEPROM_THREAD_Tasks;
 
-void TWIHS0_CallbackRegister( TWIHS_CALLBACK callback, uintptr_t contextHandle );
+/* Declaration of  APP_USER_INPUT_THREAD_Tasks task handle */
+extern TaskHandle_t xAPP_USER_INPUT_THREAD_Tasks;
 
-bool TWIHS0_IsBusy( void );
 
-bool TWIHS0_Read( uint16_t address, uint8_t *pdata, size_t length );
 
-bool TWIHS0_Write( uint16_t address, uint8_t *pdata, size_t length );
 
-bool TWIHS0_WriteRead( uint16_t address, uint8_t *wdata, size_t wlength, uint8_t *rdata, size_t rlength );
-
-TWIHS_ERROR TWIHS0_ErrorGet( void );
-
-bool TWIHS0_TransferSetup( TWIHS_TRANSFER_SETUP* setup, uint32_t srcClkFreq );
-
-void TWIHS0_TransferAbort( void );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
-// DOM-IGNORE-END
-
-#endif //PLIB_TWIHS0_MASTER_H
+#endif //SYS_TASKS_H
