@@ -82,6 +82,18 @@ The pre-built hex file can be programmed by following the below steps.
 - In MPLAB X IDE, click on "Make and Program Device" Button. The device gets programmed in sometime
 - Follow the steps in "Running the Demo" section below
 
+## Configure Mobile Phone Number:
+- Open the project (location_sos\firmware\sam_d21_cnano.X) in MPLAB X IDE
+- Open header file loc_sos_update_task.h  
+
+	<img src = "images/mobile_config.png" width="300" height="300" align="middle">  
+- Define the macro to your mobile phone number preceded by country code.  
+	For example, Below is the macro definition to configure an Indian mobile phone number "1234567890"  
+
+	<img src = "images/mobile_config_macro.png" width="500" height="40" align="middle">  
+
+	**Note:** "+91" is the country code for India in the above screenshot and "1234567890" is a dummy phone number.
+
 ## Programming/Debugging Application Project:
 - Open the project (location_sos\firmware\sam_d21_cnano.X) in MPLAB X IDE
 - Ensure "SAM D21 Curiosity Nano" is selected as hardware tool to program/debug the application
@@ -135,6 +147,7 @@ The pre-built hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
+- v1.6.0 - Regenerated and tested the application
 - v1.5.0 Removed MHC support, Regenerated and tested application.
 - v1.4.0 - Updated demo application to use click routines
 - v1.3.0 - Regenerated and tested application.

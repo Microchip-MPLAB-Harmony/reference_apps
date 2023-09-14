@@ -83,8 +83,7 @@ void loc_sos_update_task(void)
 
 static void _loc_sos_construct_message(char *msg)
 {
-    strcpy( msg, "GSM GPS Click Example \r\n" );
-    strcat( msg, "SMS with GPS coordinates \r\n" );
+    strcpy( msg, "Please attend emergency at: \r\n" );
     strcat( msg, "Latitude : " );
     strcat( msg, latitude );
     strcat( msg, "\r\nLongitude : " );

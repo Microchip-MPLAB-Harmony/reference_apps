@@ -42,7 +42,7 @@
 #ifndef GSM_GPS_EXAMPLE_H
 #define	GSM_GPS_EXAMPLE_H
 
-#define GSM_GPS_EXAMPLE_USER_MOBILE_NUMBER "+9112347890"
+#define GSM_GPS_EXAMPLE_USER_MOBILE_NUMBER "+910123456789"
 
 void loc_sos_update_task(void);
 
