@@ -79,6 +79,7 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 - "ACK Module with Espressif chipset" is used in these demo's. make sure you download proper ACK SDK from the Amazon website
 - [Create Product](https://developer.amazon.com/alexa/console/ack/products) and add device capablities to the product once product is created.
 - Download the product configuration file from created product and provision the Ack module using [CLI command](https://developer.amazon.com/en-US/docs/alexa/ack/provision-module-tutorials.html)
+- For more information check [Register your device](#register-your-device)
 
 ## <a id="project-structure"> </a>
 ## Project file structure
@@ -119,8 +120,27 @@ The pre-built hex file can be programmed by following the below steps.
 
 ## <a id="register-your-device"> </a>
 ## Register your device
-- [Register ACK Module](https://developer.amazon.com/en-US/docs/alexa/ack/dev-kit-device-registration.html) with Amazon by following the procedure
-- If you successfully registered your device. you should see the status LED on your ACK development board change from white to green.
+- Create an account at developer.amazon.com website and Install the Amazon Alexa application with the same credentials on your Smartphone.
+    - Select the Appropriate Marketplace and [Create a Product](https://developer.amazon.com/alexa/console/ack/products/create).
+- Visit [Alexa Connect Kit - Resources](https://developer.amazon.com/alexa/console/ack/resources) and download the latest ACK Device SDK, firmware, and Module Utility for **ACK Module Espressif Chipset**.
+- Download the product provisioning file of the created product.
+- Check and update the existing firmware using the below command:
+    - `java -jar <path>/ackmoduleutility.jar updatemodule -p <port> --updatefile <file path to the downloaded firmware>`
+- The above command updates a module over the wire with a new firmware package from Amazon.
+    - Use the following command to provision a module with ACK Managed Services.
+    - `java -jar <path>/ackmoduleutility.jar provision -p <port> --provisionconfigfile <path>/ProvisioningInfo_[devicetypeid].conf`
+- Create a Barcode using a unique UPC, which will be used to register the device.
+    - The syntax to create the Barcode is:
+        - `barcode --port <port> [--includedsndevice] --out <output directory> --upc <upc>`
+        - **Note:** The UPC can be any unused 12-digit number. Try giving random 12-digit number untill Barcode generation is success.
+- Make sure your mobile device is connected to a Wi-Fi network.
+- Go to Devices -> Add New Device -> Development Device -> **ACK**
+- Scan the Barcode which got generated, i.e., **DVC_XXXXXX.png**.
+- Connect to the Wi-Fi network and observe the status LED on the Espressif Chipset.
+    - If you successfully registered your device. you should see the status LED on your ACK development board change from **WHITE** to **GREEN**.
+    - For more information refer [Amazon ACK Module Utility Reference](https://developer.amazon.com/en-US/docs/alexa/ack/module-utility-cli-reference.html).
+    - For more information refer [Register ACK Module](https://developer.amazon.com/en-US/docs/alexa/ack/dev-kit-device-registration.html) with Amazon by following the procedure
+
 
 ## <a id="running-the-demo"> </a>
 ## Running the Demo:
@@ -149,6 +169,7 @@ The pre-built hex file can be programmed by following the below steps.
 - This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon.
 
 ### Revision:
+- v1.6.0 Regenerated and tested the application
 - v1.5.0 Updated to support Amazon ACK SDK 4.2 and ACK module with Espressif chipset
 - v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 Updated to support Amazon ACK SDK 4.1
