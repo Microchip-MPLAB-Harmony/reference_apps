@@ -58,7 +58,7 @@ bool DSU_CRCCalculate (uint32_t startAddress, size_t length, uint32_t crcSeed, u
 {
     bool statusValue = false;
 
-    if( (0 != length) && (NULL != crc) )
+    if( (0U != length) && (NULL != crc) )
     {
         DSU_REGS->DSU_ADDR = startAddress;
 
@@ -72,12 +72,12 @@ bool DSU_CRCCalculate (uint32_t startAddress, size_t length, uint32_t crcSeed, u
 
         DSU_REGS->DSU_CTRL = DSU_CTRL_CRC_Msk;
 
-        while(!(DSU_REGS->DSU_STATUSA & DSU_STATUSA_DONE_Msk))
+        while((DSU_REGS->DSU_STATUSA & DSU_STATUSA_DONE_Msk) == 0U )
         {
             /* Wait for the DSU Operation to Complete */
         }
 
-        if(!(DSU_REGS->DSU_STATUSA & DSU_STATUSA_BERR_Msk))
+        if((DSU_REGS->DSU_STATUSA & DSU_STATUSA_BERR_Msk) == 0U )
         {
             /* Reading the resultant crc value from the DATA register */
             *crc = (uint32_t) DSU_REGS->DSU_DATA;
