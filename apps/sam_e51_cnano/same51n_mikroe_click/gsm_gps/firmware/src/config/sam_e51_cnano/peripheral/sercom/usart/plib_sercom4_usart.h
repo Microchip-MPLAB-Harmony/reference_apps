@@ -71,11 +71,17 @@ void SERCOM4_USART_Initialize( void );
 
 bool SERCOM4_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
 
+void SERCOM4_USART_Enable( void );
+
+void SERCOM4_USART_Disable( void );
+
 void SERCOM4_USART_TransmitterEnable( void );
 
 void SERCOM4_USART_TransmitterDisable( void );
 
 bool SERCOM4_USART_Write( void *buffer, const size_t size );
+
+bool SERCOM4_USART_TransmitComplete( void );
 
 
 bool SERCOM4_USART_WriteIsBusy( void );

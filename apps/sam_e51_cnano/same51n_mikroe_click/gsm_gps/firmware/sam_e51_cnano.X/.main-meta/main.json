@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_gsm_gps",
-		"version": "1.5.0",
+		"version": "1.6.0",
 		"displayName": "GSM GPS click example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "gsm_gps_click_sam_e51_cnano",
 		"shortDescription": "Demonstrates sending out a location-tagged SMS on SAM E51 Curiosity Nano Evaluation Kit using GSM GPS Click board",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.0.0"
+				"semverRange": ">=4.30"
 			}
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.6.103"
+			"semverRange": "^3.7.242"
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.3.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
