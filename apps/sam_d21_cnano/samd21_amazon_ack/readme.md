@@ -136,6 +136,7 @@ Refer [Demo Application specific Project Manifest]() present in harmony-manifest
 - This solution is currently available only in US, Canada, and Mexico. Other regions contact Amazon.
 
 ### Revision:
+- v1.6.0 Regenerated and tested the application
 - v1.5.0 Updated to support Amazon ACK SDK 4.2 and ACK module with Espressif chipset
 - v1.4.0 Added MCC support, Regenerated and tested application.
 - v1.3.0 Updated to support Amazon ACK SDK 4.1
