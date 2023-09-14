@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMD21J18A
+/*
+ * Instance header file for ATSAMD21J18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,6 +26,6 @@
 
 
 /* ========== Instance Parameter definitions for MTB peripheral ========== */
-#define MTB_INSTANCE_ID                          _UL_(38)   
+#define MTB_INSTANCE_ID                          (38)       
 
 #endif /* _SAMD21_MTB_INSTANCE_ */

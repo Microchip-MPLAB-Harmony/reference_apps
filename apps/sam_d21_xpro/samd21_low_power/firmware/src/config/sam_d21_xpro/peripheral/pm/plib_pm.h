@@ -72,15 +72,14 @@
 // Section: Data Types
 // *****************************************************************************
 
-typedef enum
-{
-    PM_RESET_CAUSE_POR_RESET = PM_RCAUSE_POR_Msk,
-    PM_RESET_CAUSE_BOD12_RESET = PM_RCAUSE_BOD12_Msk,
-    PM_RESET_CAUSE_BOD33_RESET = PM_RCAUSE_BOD33_Msk,
-    PM_RESET_CAUSE_EXT_RESET = PM_RCAUSE_EXT_Msk,
-    PM_RESET_CAUSE_WDT_RESET = PM_RCAUSE_WDT_Msk,
-    PM_RESET_CAUSE_SYST_RESET = PM_RCAUSE_SYST_Msk,
-} PM_RESET_CAUSE;
+#define PM_RESET_CAUSE_POR_RESET  PM_RCAUSE_POR_Msk
+#define PM_RESET_CAUSE_BOD12_RESET  PM_RCAUSE_BOD12_Msk
+#define PM_RESET_CAUSE_BOD33_RESET  PM_RCAUSE_BOD33_Msk
+#define PM_RESET_CAUSE_EXT_RESET  PM_RCAUSE_EXT_Msk
+#define PM_RESET_CAUSE_WDT_RESET  PM_RCAUSE_WDT_Msk
+#define PM_RESET_CAUSE_SYST_RESET  PM_RCAUSE_SYST_Msk
+
+typedef uint8_t PM_RESET_CAUSE;
 
 // *****************************************************************************
 // *****************************************************************************

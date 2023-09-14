@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMD21J18A
+/*
+ * Instance header file for ATSAMD21J18A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for PM peripheral ========== */
-#define PM_CTRL_MCSEL_DFLL48M                    _UL_(3)    
-#define PM_CTRL_MCSEL_GCLK                       _UL_(0)    
-#define PM_CTRL_MCSEL_OSC8M                      _UL_(1)    
-#define PM_CTRL_MCSEL_XOSC                       _UL_(2)    
-#define PM_PM_CLK_APB_NUM                        _UL_(2)    
-#define PM_INSTANCE_ID                           _UL_(1)    
+#define PM_CTRL_MCSEL_DFLL48M                    (3)        
+#define PM_CTRL_MCSEL_GCLK                       (0)        
+#define PM_CTRL_MCSEL_OSC8M                      (1)        
+#define PM_CTRL_MCSEL_XOSC                       (2)        
+#define PM_CLK_APB_NUM                           (2)        
+#define PM_INSTANCE_ID                           (1)        
 
 #endif /* _SAMD21_PM_INSTANCE_ */

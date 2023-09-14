@@ -60,7 +60,7 @@ void PM_IdleModeEnter( void )
 {
     /* Configure Idle Sleep mode */
     SCB->SCR &= ~SCB_SCR_SLEEPDEEP_Msk;
-    PM_REGS->PM_SLEEP = PM_SLEEP_IDLE(2);
+    PM_REGS->PM_SLEEP = PM_SLEEP_IDLE(2U);
     /* Wait for interrupt instruction execution */
     __WFI();
 }
