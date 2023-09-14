@@ -3237,12 +3237,12 @@
          <hash>f29f83b0bb5829d43a29ec29e66556fc8e6dd417bf8c20022a611bab1a3c5823</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
-         <hash>5aa7f37d6ac2c6c293049dc789c617722c741d6c0e4b46f6da198cdbe885ebde</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom7.h</file>
          <hash>ef8dddcc272204308add1eee859b5cd96db394fcc573516f5d2c1e2f571b006f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
+         <hash>5aa7f37d6ac2c6c293049dc789c617722c741d6c0e4b46f6da198cdbe885ebde</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\rstc.h</file>
@@ -3641,12 +3641,12 @@
          <hash>9d63c362f34006299462514e958c7ae4eff54fa34073bffef377fc99e4daf873</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\adc0.h</file>
          <hash>cae698d90e4c21306151dff1dfedc3ca6cf46c05bb8a6cdc5a99cb18e7de07aa</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e51_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\wdt.h</file>

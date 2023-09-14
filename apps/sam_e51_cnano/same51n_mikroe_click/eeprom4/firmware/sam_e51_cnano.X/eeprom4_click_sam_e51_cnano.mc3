@@ -4642,12 +4642,12 @@
          <hash>ecf9aa94c178309ee5ff34774ea02c229596fd831559c837ecb4cffa3d855ef9</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME51J20A_DFP\component\pdec.h</file>
-         <hash>dbea79497d409b29fda82f081c8157d55b2d11e7337a4299dca8bde16d8143f4</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\peripheral\sercom\usart\plib_sercom5_usart.c</file>
          <hash>fa18e1d8410b48a7eda4730d61614ed5fc7a206f132322d360201a9df7f77d08</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME51J20A_DFP\component\pdec.h</file>
+         <hash>dbea79497d409b29fda82f081c8157d55b2d11e7337a4299dca8bde16d8143f4</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -4858,6 +4858,10 @@
          <hash>f02bc9abf7f8c1bdc2d8f46d49b368f6108ef1f6e6703193406445f4fddd801e</hash>
       </entry>
       <entry>
+         <file>..\src\config\default\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom1.h</file>
          <hash>f99ef6978e99bae8edeb0f1b4dd3c01e85261c4eabcf6be3faa939aa481b2ac6</hash>
       </entry>
@@ -4868,10 +4872,6 @@
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\pio\same51j20a.h</file>
          <hash>92a8021af75873384445867c66105c2bdce6efe22262eeba31351d0de6b2cab3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\default\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\component\pac.h</file>

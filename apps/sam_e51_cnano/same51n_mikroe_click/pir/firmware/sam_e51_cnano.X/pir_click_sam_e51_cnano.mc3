@@ -4503,7 +4503,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\definitions.h</file>
-         <hash>58fccd8b3da2409f4b9feb123485614871376e1b25cb2ba50e952e33fab982dd</hash>
+         <hash>0d14cbf41fbd9bea82de2f0c7dd6d6a71c56a10363b965000ea45d2ba1cffbc6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e51_cnano\peripheral\clock\plib_clock.h</file>

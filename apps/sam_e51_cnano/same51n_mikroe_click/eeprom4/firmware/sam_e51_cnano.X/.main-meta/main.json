@@ -20,7 +20,7 @@
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.6.130"
+			"semverRange": "^3.7.242"
 		},
 		"configurator": {
 			"name": "MCC",
