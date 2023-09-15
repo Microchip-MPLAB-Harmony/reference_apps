@@ -108,20 +108,20 @@
  *
  * 3. PORTs
  *  The eink click uses the following ports pins.
- *  CLICK_EINK_EPAPER_2_9_296_128_DC
- *  CLICK_EINK_EPAPER_2_9_296_128_RST
- *  CLICK_EINK_EPAPER_2_9_296_128_CS
- *  CLICK_EINK_EPAPER_2_9_296_128_BSY
+ *  EPAPER_2_9_296_128_DC
+ *  EPAPER_2_9_296_128_RST
+ *  EPAPER_2_9_296_128_CS
+ *  EPAPER_2_9_296_128_BSY
  *  The pins are configured using the MCC Pin configurator.
  */
 
 // I2C Definitions
-#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Write 			SERCOM1_SPI_Write
-#define CLICK_EINK_EPAPER_2_9_296_128_SPI_Read  			SERCOM1_SPI_Read
-#define CLICK_EINK_EPAPER_2_9_296_128_SPI_WriteRead			SERCOM1_SPI_WriteRead
+#define EPAPER_2_9_296_128_SPI_Write 			SERCOM1_SPI_Write
+#define EPAPER_2_9_296_128_SPI_Read  			SERCOM1_SPI_Read
+#define EPAPER_2_9_296_128_SPI_WriteRead			SERCOM1_SPI_WriteRead
 
 // Timer Definitions
-#define CLICK_EINK_EPAPER_2_9_296_128_TimerStart 			SYSTICK_TimerStart
-#define CLICK_EINK_EPAPER_2_9_296_128_DelayMs				SYSTICK_DelayMs
+#define EPAPER_2_9_296_128_TimerStart 			SYSTICK_TimerStart
+#define EPAPER_2_9_296_128_DelayMs				SYSTICK_DelayMs
 
 #endif // _CLICK_INTERFACES_H

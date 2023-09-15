@@ -1,4 +1,4 @@
-<config configName="pic32cm_mc00_cnano" projectName="smart_appliance_control_pic32cm_mc00_cnano" configVersion="1.1" device="PIC32CM1216MC00032" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.14">
+<config configName="pic32cm_mc00_cnano" projectName="smart_appliance_control_pic32cm_mc00_cnano" configVersion="1.1" device="PIC32CM1216MC00032" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -55,7 +55,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.2.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1174,7 +1174,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_13_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_BSY&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_BSY&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1251,7 +1251,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_14_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_RST&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_RST&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1416,7 +1416,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_19_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_CS&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_CS&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1768,7 +1768,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_6_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_DC&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_DC&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4595,7 +4595,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>ab9dc81d1433f4e99c27ece541318419d27d9dde5ff01a8265617166287a51f3</hash>
+         <hash>3f7e6763589b923e883d2fd3a1ee406c62b70ef9286b2eb73865819c77143d82</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\wdt.h</file>
@@ -4615,7 +4615,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\adc0.h</file>
@@ -4659,7 +4659,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\pin_configurations.csv</file>
-         <hash>5a84678f726fc7003581c3369ff844921956161c038a2f191c8a2526a95666c2</hash>
+         <hash>1106f926b2cf3ab95f374b06694d06c23a27bb2fd3a6342344215a12d97ebdd3</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\hmatrixb.h</file>
@@ -4675,11 +4675,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3feca67a173d19d45961676a16f6153a6d849ecac98e906b62a343258c8bf43b</hash>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\libc_syscalls.c</file>
@@ -4715,7 +4715,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\sercom\usart\plib_sercom3_usart.c</file>
-         <hash>b1073401e59229e934243e30718ef08b83b81749fd08e1129099e26f6d42a9c5</hash>
+         <hash>e3a8872a08bb9040dff63cfd481e3ccf1277bbd6fff6acc9bf51d6eb044b06fc</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\pdec.h</file>
@@ -4723,11 +4723,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\sercom\usart\plib_sercom3_usart.h</file>
-         <hash>13c295e42aec8b53666ffd5fe85d5d5b47f9a75b94c1b1ca466d53e7b47942d2</hash>
+         <hash>bdb7a2a6a892bbf75e432ff0874a6903193ef29952e3a75570a5c06e10c9b3bd</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\nvic\plib_nvic.c</file>
-         <hash>ca8d056aee4cc736b62cb20bf660e8becd600bdb53e76c83e8f6642d7c4b4655</hash>
+         <hash>343907d7c472b9143245bef76fe787ad01e28173a1e6014f81b6887163440b6c</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\tc1.h</file>
@@ -4743,7 +4743,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\systick\plib_systick.c</file>
-         <hash>f23caebefbacd5f2fa5051caadacdba66f41368a782707a0b8418c9b4ee155ae</hash>
+         <hash>9178af8001492763213e84e6cf11aa357f1e344cbea0988699771364ef69c749</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -4759,7 +4759,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\bt\driver\bm71\drv_bm71.h</file>
@@ -4771,7 +4771,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\tcc1.h</file>
@@ -4795,7 +4795,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\bt\driver\bm71\drv_bm71_uart.c</file>
@@ -4815,7 +4815,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\interrupts.c</file>
-         <hash>dbbcb81398915c294969418d6c43bfca2b25fd82071a65ed61ddbc74ab2d6aa8</hash>
+         <hash>2fcc1ddded67de0765af01655906952167d641be17a0a53cdfd7b0567b97f525</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\interrupts.h</file>
@@ -4827,11 +4827,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\ccl.h</file>
@@ -4843,7 +4843,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\sercom\spi_master\plib_sercom1_spi_master.c</file>
-         <hash>8d46f34c588fbcd2cf9034c80aa0501a251324667f7b82b40b95ac991ff86e55</hash>
+         <hash>83650b2bee66fb24afb75370190279ed6b96653abe3f2a8e7c3eb97783f93c90</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\nvmctrl.h</file>
@@ -4899,7 +4899,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\tasks.c</file>
-         <hash>012752a91318988a30e5401c57c9c5d599f0190a6bbfc1b5708359bc4e6e87cf</hash>
+         <hash>6b9faec346c7628eff9cc102c7d695c58a5bc610027a3523265f84a82b9b7784</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\evsys.h</file>
@@ -4915,7 +4915,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\supc.h</file>
@@ -4923,7 +4923,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\tc\plib_tc0.c</file>
-         <hash>bef382782bf8d374ce7bcd3a4d5872d2bef6f4b6b7c8e3f02ec2b1ace6f27080</hash>
+         <hash>bd4aa06bd92c0c8151ae2b5b1a2d66d10386234c5ea23f59f9f21d81af10e1ce</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\pic32cm1216mc00032.h</file>
@@ -4935,7 +4935,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
-         <hash>ff9e28a56c761d9cac20d42c6819063321f71c0d2726249be9bd818e44c3811d</hash>
+         <hash>f167b04b3c6a0f83fe41b7b6f810cbf0a48b8ca7d5a747b76463dd53d3c1a2a2</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\fuses.h</file>
@@ -4995,15 +4995,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\clock\plib_clock.c</file>
-         <hash>38dcc9f92eebc1bbeb116f885dd06226fc74c5928902dc9107622be407964d36</hash>
+         <hash>c8da3525ae9332030f34eaf11a4790152eda210ef0ca96f4ee07181042bd669c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\port\plib_port.h</file>
-         <hash>bb66de1151ef174f71766c2fdb96a1467925fd666ea19e28044d628871de5810</hash>
+         <hash>8b4852981a51b843c49aab357c82e593ec9d855d09d576ee8b8505be4a742a6b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\tc.h</file>
@@ -5011,7 +5011,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\exceptions.c</file>
-         <hash>cc07b84902bf881b410bee8cd4463b438ad2997c8fd8d3f308a16d926f75d601</hash>
+         <hash>3d788ce1bd25caaaf6b533ec5b06e4b1e753044c1a217dd5cdf8629628ae85a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\pm.h</file>
@@ -5035,7 +5035,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\tc3.h</file>
@@ -5083,7 +5083,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\divas.h</file>
@@ -5091,11 +5091,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\peripheral\sercom\i2c_master\plib_sercom0_i2c_master.c</file>
-         <hash>8e28ca4c81be6f3ec7c5e2a102204e0ea89db8f91fa54e2c844a4c7d7c4cf264</hash>
+         <hash>ab962eb19f87a17091a6e8f62951856b513ddc2a49579af70fdaa58ef0adb3ce</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\initialization.c</file>
-         <hash>f01ae03c7959a25599cfeace89a5b0d3477074593bc5721d34e703b2d7b59753</hash>
+         <hash>6cc4a4bd738f0a446143dc4f34364f187f1b752a454dc2649c8ec518b4595f80</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\stdio\xc32_monitor.c</file>
@@ -5127,7 +5127,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\time\src\sys_time.c</file>
-         <hash>b722ac0c5d955d289bd906609ab6f302342166c5ba66f87b30cac17ac6bfdcd9</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\adc.h</file>
@@ -5135,7 +5135,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\component\port.h</file>
@@ -5155,15 +5155,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32cm_mc00_cnano\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\definitions.h</file>
-         <hash>00b74d05946390a6678bf61178d9af46e334c1777597ffd64be3e1c3e3bcc5b9</hash>
+         <hash>667d1292f98edab1eda5de6c13b32f3d971c0a8a1f54fe271d7f1f68c7080c62</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_mc00_cnano\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM1216MC00032_DFP\instance\nvmctrl.h</file>

@@ -74,41 +74,41 @@
 #define STBYRST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 4U)) & 0x01U)
 #define STBYRST_PIN                  PORT_PIN_PA04
 
-/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_DC pin ***/
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 5U))
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 5U))
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 5U))
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 5U))
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 5U))
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 5U)) & 0x01U)
-#define CLICK_EINK_EPAPER_2_9_296_128_DC_PIN                  PORT_PIN_PA05
+/*** Macros for EPAPER_2_9_296_128_DC pin ***/
+#define EPAPER_2_9_296_128_DC_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 5U))
+#define EPAPER_2_9_296_128_DC_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 5U))
+#define EPAPER_2_9_296_128_DC_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 5U))
+#define EPAPER_2_9_296_128_DC_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 5U))
+#define EPAPER_2_9_296_128_DC_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 5U))
+#define EPAPER_2_9_296_128_DC_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 5U)) & 0x01U)
+#define EPAPER_2_9_296_128_DC_PIN                  PORT_PIN_PA05
 
-/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_BSY pin ***/
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 10U))
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 10U))
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 10U))
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 10U))
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 10U))
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
-#define CLICK_EINK_EPAPER_2_9_296_128_BSY_PIN                  PORT_PIN_PA10
+/*** Macros for EPAPER_2_9_296_128_BSY pin ***/
+#define EPAPER_2_9_296_128_BSY_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 10U))
+#define EPAPER_2_9_296_128_BSY_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 10U))
+#define EPAPER_2_9_296_128_BSY_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 10U))
+#define EPAPER_2_9_296_128_BSY_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 10U))
+#define EPAPER_2_9_296_128_BSY_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 10U))
+#define EPAPER_2_9_296_128_BSY_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
+#define EPAPER_2_9_296_128_BSY_PIN                  PORT_PIN_PA10
 
-/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_RST pin ***/
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 11U))
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 11U))
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 11U))
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 11U))
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 11U))
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11U)) & 0x01U)
-#define CLICK_EINK_EPAPER_2_9_296_128_RST_PIN                  PORT_PIN_PA11
+/*** Macros for EPAPER_2_9_296_128_RST pin ***/
+#define EPAPER_2_9_296_128_RST_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 11U))
+#define EPAPER_2_9_296_128_RST_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 11U))
+#define EPAPER_2_9_296_128_RST_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 11U))
+#define EPAPER_2_9_296_128_RST_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 11U))
+#define EPAPER_2_9_296_128_RST_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 11U))
+#define EPAPER_2_9_296_128_RST_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11U)) & 0x01U)
+#define EPAPER_2_9_296_128_RST_PIN                  PORT_PIN_PA11
 
-/*** Macros for CLICK_EINK_EPAPER_2_9_296_128_CS pin ***/
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 18U))
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 18U))
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 18U))
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 18U))
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 18U))
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
-#define CLICK_EINK_EPAPER_2_9_296_128_CS_PIN                  PORT_PIN_PA18
+/*** Macros for EPAPER_2_9_296_128_CS pin ***/
+#define EPAPER_2_9_296_128_CS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 18U))
+#define EPAPER_2_9_296_128_CS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 18U))
+#define EPAPER_2_9_296_128_CS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 18U))
+#define EPAPER_2_9_296_128_CS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 18U))
+#define EPAPER_2_9_296_128_CS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 18U))
+#define EPAPER_2_9_296_128_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
+#define EPAPER_2_9_296_128_CS_PIN                  PORT_PIN_PA18
 
 /*** Macros for BM71_RX_IND pin ***/
 #define BM71_RX_IND_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 28U))
