@@ -50,7 +50,7 @@
 volatile bool txThresholdEventReceived = false;
 
 uint8_t rxBuffer[512];
-volatile uint32_t nBytesRead = 0;
+volatile uint32_t nBytesReadAck = 0;
 
 volatile uint32_t         ACKsystickCounter;
 
@@ -68,7 +68,7 @@ void usartReadEventHandler(SERCOM_USART_EVENT event, uintptr_t context )
         /* Receiver should atleast have the thershold number of bytes in the ring buffer */
         nBytesAvailable = SERCOM3_USART_ReadCountGet();
 
-       nBytesRead += SERCOM3_USART_Read((uint8_t*)&rxBuffer[nBytesRead],nBytesAvailable); 
+       nBytesReadAck += SERCOM3_USART_Read((uint8_t*)&rxBuffer[nBytesReadAck],nBytesAvailable); 
     }
 }
 
@@ -88,16 +88,16 @@ static uint32_t sg_samd21DigitalPins[] =
     SAMD_HOST_INTERRUPT_PIN,
     SAMD_MODULE_RESET_PIN
 #ifdef ACK_SAMPLE_APPLICATIONS_LED_PIN
-    ,SAMD_SAMPLE_APPLICATIONS_LED_PIN          //On board LED PB10
+    ,SAMD_SAMPLE_APP_LED_PIN          //On board LED PB10
 #endif
 #ifdef ACK_SAMPLE_APPLICATIONS_GPIO_PIN_1
-    ,SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_1_PIN  //SAMD21 GPIO PA23
+    ,SAMD_SAMPLE_APP_GPIO_PIN_1_PIN  //SAMD21 GPIO PA23
 #endif
 #ifdef ACK_SAMPLE_APPLICATIONS_GPIO_PIN_2
-    ,SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_2_PIN  //SAMD21 GPIO PA25
+    ,SAMD_SAMPLE_APP_GPIO_PIN_2_PIN  //SAMD21 GPIO PA25
 #endif    
 #ifdef ACK_SAMPLE_APPLICATIONS_GPIO_PIN_3
-    ,SAMD_SAMPLE_APPLICATIONS_GPIO_PIN_3_PIN  //SAMD21 GPIO PA24
+    ,SAMD_SAMPLE_APP_GPIO_PIN_3_PIN  //SAMD21 GPIO PA24
 #endif    
 };
 
@@ -216,12 +216,12 @@ bool ACKPlatform_Receive(void* pBuffer, size_t length, uint32_t timeoutMilliseco
     uint32_t startTime = ACK_SYSTICK_TickCounterGet();
     delayTicks=(1000 * timeoutMilliseconds)/SYSTICK_INTERRUPT_PERIOD_IN_US;
     
-    while(nBytesRead < (length))
+    while(nBytesReadAck < (length))
     {
         if ((ACK_SYSTICK_TickCounterGet() - startTime) >= delayTicks)
         {
             ACK_DEBUG_PRINT_D("H-RX ERROR");
-            nBytesRead = 0;
+            nBytesReadAck = 0;
             return false;
         }
     }   
@@ -234,12 +234,12 @@ bool ACKPlatform_Receive(void* pBuffer, size_t length, uint32_t timeoutMilliseco
     while(SERCOM3_USART_ReadCountGet() != 0);
     
     ACKPlatform_Delay(50);
-    if(nBytesRead > length){
-        nBytesRead = nBytesRead - length;
+    if(nBytesReadAck > length){
+        nBytesReadAck = nBytesReadAck - length;
         lastreadbyte = length;
     }else{
 
-        nBytesRead = 0;  
+        nBytesReadAck = 0;  
         lastreadbyte = 0;
     }
     return true;
@@ -251,7 +251,7 @@ void ACKPlatform_DrainRead(void)
     {
 
     }
-    nBytesRead = 0;
+    nBytesReadAck = 0;
 }
 
 uint32_t ACKPlatform_CalculateCrc32(const void* pInput, size_t length)
