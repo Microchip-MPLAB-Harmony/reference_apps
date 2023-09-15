@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-02-14T14:27:15Z */
+/* file generated from device description version 2023-03-17T09:49:56Z */
 #ifndef _SAME51_PORT_INSTANCE_
 #define _SAME51_PORT_INSTANCE_
 
@@ -30,8 +30,8 @@
 #define PORT_DRVSTR                              (1)        /* DRVSTR supported */
 #define PORT_EV_NUM                              (4)        
 #define PORT_GROUPS                              (3)        
+#define PORT_INSTANCE_ID                         (36)       /* Instance index for PORT */
 #define PORT_ODRAIN                              (0)        /* ODRAIN supported */
 #define PORT_SLEWLIM                             (0)        /* SLEWLIM supported */
-#define PORT_INSTANCE_ID                         (36)       /* Instance index for PORT */
 
 #endif /* _SAME51_PORT_INSTANCE_ */

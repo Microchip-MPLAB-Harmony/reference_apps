@@ -331,7 +331,7 @@ const uint8_t EINK_EPAPER_2_9_296_128_LUT_TABLE_1[70]=
  */
 static void hal_eink_epaper_2_9_296_128_write(uint8_t* buffer, uint16_t count)
 {
-    CLICK_EINK_EPAPER_2_9_296_128_SPI_Write( buffer, count );
+    EPAPER_2_9_296_128_SPI_Write( buffer, count );
 }
 
 /**
@@ -454,10 +454,10 @@ static void _char_wr( uint16_t ch_idx )
  */
 static void _eink_epaper_2_9_296_128_reset( void )
 {
-    CLICK_EINK_EPAPER_2_9_296_128_RST_Clear();
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 200 );
-    CLICK_EINK_EPAPER_2_9_296_128_RST_Set();
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 200 );
+    EPAPER_2_9_296_128_RST_Clear();
+    EPAPER_2_9_296_128_DelayMs( 200 );
+    EPAPER_2_9_296_128_RST_Set();
+    EPAPER_2_9_296_128_DelayMs( 200 );
 }
 
 /**
@@ -470,15 +470,15 @@ void _eink_epaper_2_9_296_128_write_cmd( uint8_t command, uint8_t *args, uint16_
 {
     uint8_t *ptr = args;
 
-    while( CLICK_EINK_EPAPER_2_9_296_128_BSY_Get() == 1 );
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Clear();
-    CLICK_EINK_EPAPER_2_9_296_128_DC_Clear();
+    while( EPAPER_2_9_296_128_BSY_Get() == 1 );
+    EPAPER_2_9_296_128_CS_Clear();
+    EPAPER_2_9_296_128_DC_Clear();
     hal_eink_epaper_2_9_296_128_write( &command, 1 );
-    CLICK_EINK_EPAPER_2_9_296_128_DC_Set();
+    EPAPER_2_9_296_128_DC_Set();
     if( args_len )
         hal_eink_epaper_2_9_296_128_write( ptr, args_len );
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Set();
-    while( CLICK_EINK_EPAPER_2_9_296_128_BSY_Get() == 1 );
+    EPAPER_2_9_296_128_CS_Set();
+    while( EPAPER_2_9_296_128_BSY_Get() == 1 );
 }
 
 /**
@@ -502,21 +502,21 @@ void eink_epaper_2_9_296_128_image_bmp (  const uint8_t*  img )
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_RAM_Y_COUNTER, EINK_EPAPER_2_9_296_128_RAM_Y_COUNTER_DEF, 2 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_WRITE_RAM, NULL, 0 );
 
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Clear();
-    CLICK_EINK_EPAPER_2_9_296_128_DC_Set();
+    EPAPER_2_9_296_128_CS_Clear();
+    EPAPER_2_9_296_128_DC_Set();
     for ( cnt = 0; cnt < _EINK_EPAPER_2_9_296_128_BMP_IMG_SIZE; cnt++)
     {
         hal_eink_epaper_2_9_296_128_write((uint8_t*) &img[ cnt ], 1);
     }
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Set();
+    EPAPER_2_9_296_128_CS_Set();
 
     // Display delay
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 2 );
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 100 );
+    EPAPER_2_9_296_128_DelayMs( 2 );
+    EPAPER_2_9_296_128_DelayMs( 100 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_DISPLAY_UPDATE_CTL2, EINK_EPAPER_2_9_296_128_DISPLAY_UPDATE_CTL2_DEF, 1);
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_MASTER_ON, NULL, 0);
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_CMD_TERMINATE_FRAME_READ_WRITE, NULL, 0 );
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 1000 );
+    EPAPER_2_9_296_128_DelayMs( 1000 );
 }
 
 /**
@@ -542,20 +542,20 @@ void eink_epaper_2_9_296_128_text( char *text, uint8_t x, uint8_t y )
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_RAM_X_COUNTER, EINK_EPAPER_2_9_296_128_RAM_X_COUNTER_DEF_TEXT, 1 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_RAM_Y_COUNTER, EINK_EPAPER_2_9_296_128_RAM_Y_COUNTER_DEF_TEXT, 2 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_WRITE_RAM , NULL, 0);
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Clear();
-    CLICK_EINK_EPAPER_2_9_296_128_DC_Set();
+    EPAPER_2_9_296_128_CS_Clear();
+    EPAPER_2_9_296_128_DC_Set();
     for ( cnt = 0; cnt < _EINK_EPAPER_2_9_296_128_BMP_IMG_SIZE; cnt++ )
     {
         hal_eink_epaper_2_9_296_128_write( fr++, 1);
     }
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Set();
+    EPAPER_2_9_296_128_CS_Set();
     // Display delay
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs(2);
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 100 );
+    EPAPER_2_9_296_128_DelayMs(2);
+    EPAPER_2_9_296_128_DelayMs( 100 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_DISPLAY_UPDATE_CTL2 , EINK_EPAPER_2_9_296_128_DISPLAY_UPDATE_CTL2_DEF,1 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_MASTER_ON   ,NULL ,0 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_CMD_TERMINATE_FRAME_READ_WRITE, NULL, 0 );
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 1000 );
+    EPAPER_2_9_296_128_DelayMs( 1000 );
 }
 
  /**
@@ -580,10 +580,10 @@ void eink_epaper_2_9_296_128_set_font( const uint8_t *font, uint16_t color, uint
  */
 void eink_epaper_2_9_296_128_init ( void )
 {
-    CLICK_EINK_EPAPER_2_9_296_128_TimerStart( );
-    CLICK_EINK_EPAPER_2_9_296_128_DC_Set( );
-    CLICK_EINK_EPAPER_2_9_296_128_CS_Set( );
-    CLICK_EINK_EPAPER_2_9_296_128_RST_Set( );
+    EPAPER_2_9_296_128_TimerStart( );
+    EPAPER_2_9_296_128_DC_Set( );
+    EPAPER_2_9_296_128_CS_Set( );
+    EPAPER_2_9_296_128_RST_Set( );
 
     _eink_epaper_2_9_296_128_reset( );
 
@@ -598,7 +598,7 @@ void eink_epaper_2_9_296_128_init ( void )
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_DATA_ENTRY, EINK_EPAPER_2_9_296_128_DATA_ENTRY_DEF, 1 );
 
     // Display delay
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 2 );
+    EPAPER_2_9_296_128_DelayMs( 2 );
     _eink_epaper_2_9_296_128_write_cmd( EINK_EPAPER_2_9_296_128_WRITE_LUT, (uint8_t*)&EINK_EPAPER_2_9_296_128_LUT_TABLE_1, sizeof(EINK_EPAPER_2_9_296_128_LUT_TABLE_1) );
-    CLICK_EINK_EPAPER_2_9_296_128_DelayMs( 1000 );
+    EPAPER_2_9_296_128_DelayMs( 1000 );
 }

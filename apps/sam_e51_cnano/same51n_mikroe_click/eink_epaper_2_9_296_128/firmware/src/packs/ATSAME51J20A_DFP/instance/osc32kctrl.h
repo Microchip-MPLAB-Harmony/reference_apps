@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,13 +20,13 @@
  *
  */
 
-/* file generated from device description version 2022-02-14T14:27:15Z */
+/* file generated from device description version 2023-03-17T09:49:56Z */
 #ifndef _SAME51_OSC32KCTRL_INSTANCE_
 #define _SAME51_OSC32KCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for OSC32KCTRL peripheral ========== */
-#define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       (0)        /* OSC32K coarse calibration size */
 #define OSC32KCTRL_INSTANCE_ID                   (5)        /* Instance index for OSC32KCTRL */
+#define OSC32KCTRL_OSC32K_COARSE_CALIB_MSB       (0)        /* OSC32K coarse calibration size */
 
 #endif /* _SAME51_OSC32KCTRL_INSTANCE_ */

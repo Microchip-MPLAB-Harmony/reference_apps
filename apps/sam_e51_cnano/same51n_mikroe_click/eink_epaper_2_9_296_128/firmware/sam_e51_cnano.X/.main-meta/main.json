@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_eink_epaper_2_9_296_128",
-		"version": "1.5.0",
+		"version": "1.6.0",
 		"displayName": "eink_epaper_2_9_296_128 display example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "eink_epaper_2_9_296_128_sam_e51_cnano",
 		"shortDescription": "Demonstrates the display capability of Eink E-Paper display 2_9 296x128 dots board on SAM E51 Curiosity Nano Evaluation Kit",		
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.05"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.21.0"
+				"semverRange": ">=4.30.0"
 			}
 		],
 		"dfp": {
 			"name": "SAME51_DFP",
-			"semverRange": "^3.6.130"
+			"semverRange": "^3.7.242"
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.2.2"
+			"semverRange": ">=5.3.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -49,7 +49,6 @@
 			"SYSTICK", "GPIO", "SERCOM(SPI)"
 		],
 		"keywords": [
-			"MHC",
 			"MCC",
 			"Harmony",
 			"Click Board",
