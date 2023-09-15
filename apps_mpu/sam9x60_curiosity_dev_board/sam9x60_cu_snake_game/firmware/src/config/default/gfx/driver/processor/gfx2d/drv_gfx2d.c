@@ -47,20 +47,12 @@
 
 #include "gfx/driver/processor/gfx2d/drv_gfx2d.h"
 #include "definitions.h"
-#include "system/time/sys_time.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-
-
-
-#define DISPLAY_WIDTH  800
-#define DISPLAY_HEIGHT 480
-uint32_t  __attribute__ ((aligned (64))) blitbuffer[DISPLAY_WIDTH * DISPLAY_HEIGHT] ;
-uint32_t  __attribute__ ((aligned (64))) maskbuffer[DISPLAY_WIDTH * DISPLAY_HEIGHT] ;
 
 GFX2D_PIXEL_FORMAT gfx2dFormats[GFX_COLOR_MODE_LAST + 1] =
 {
@@ -78,23 +70,16 @@ GFX2D_PIXEL_FORMAT gfx2dFormats[GFX_COLOR_MODE_LAST + 1] =
 
 static  gfxBlend blendState = GFX_BLEND_NONE;
 
-/* Indicate end of execute instruction */
-volatile uint8_t gpu_end = 0;
-
-void _IntHandler(uintptr_t context)
-{
-    gpu_end = 1;
-}
-
 /**** End Hardware Abstraction Interfaces ****/
-
 
 void DRV_GFX2D_Initialize()
 {
-    // call the plib initialization routines
     PLIB_GFX2D_Initialize();
+    PLIB_GFX2D_SetOutstandingRegulationEnable(true);
+    PLIB_GFX2D_SetQOSLatency(GFX2D_QOS_15_CYCLES,
+                             GFX2D_QOS_31_CYCLES,
+                             GFX2D_QOS_63_CYCLES);
     PLIB_GFX2D_Enable();
-    PLIB_GFX2D_IRQ_CallbackRegister(_IntHandler, 0);
 }
 
 gfxResult DRV_GFX2D_Fill(gfxPixelBuffer* dest,
@@ -103,7 +88,7 @@ gfxResult DRV_GFX2D_Fill(gfxPixelBuffer* dest,
 {
     GFX2D_BUFFER    dest_buffer;
     GFX2D_RECTANGLE dest_rect;
-    
+
     if(dest->orientation != GFX_ORIENT_0)
 		return GFX_FAILURE;
 
@@ -120,11 +105,8 @@ gfxResult DRV_GFX2D_Fill(gfxPixelBuffer* dest,
 
     PLIB_GFX2D_Fill(&dest_buffer, &dest_rect, color);
 
-    /* Wait for instruction to complete */
-    while ( PLIB_GFX2D_GetGlobalStatusBusy() == true ) ;
-    //while (gpu_end == 0) {
-    //};
-    
+    while(PLIB_GFX2D_GetGlobalStatusBusy() == true);
+
     return GFX_SUCCESS;
 }
 
@@ -137,11 +119,11 @@ gfxResult DRV_GFX2D_Blit(const gfxPixelBuffer* source,
     GFX2D_RECTANGLE dest_rect;
     GFX2D_BUFFER    src_buffer;
     GFX2D_RECTANGLE src_rect;
-    
+
     if(source->orientation != GFX_ORIENT_0 ||
        dest->orientation != GFX_ORIENT_0)
 		return GFX_FAILURE;
-    
+
     dest_buffer.width = dest->size.width;
     dest_buffer.height = dest->size.height;
     dest_buffer.format = gfx2dFormats[dest->mode];
@@ -164,8 +146,8 @@ gfxResult DRV_GFX2D_Blit(const gfxPixelBuffer* source,
     src_rect.width = (uint32_t)srcRect->width;
     src_rect.height = (uint32_t)srcRect->height;
 
-	dcache_CleanByAddr(source->pixels, source->buffer_length);
-	dcache_CleanByAddr(dest->pixels, dest->buffer_length);
+	dcache_CleanInvalidateByAddr(source->pixels, source->buffer_length);
+	dcache_CleanInvalidateByAddr(dest->pixels, dest->buffer_length);
 
     if ( blendState == GFX_BLEND_NONE )
     {
@@ -173,25 +155,10 @@ gfxResult DRV_GFX2D_Blit(const gfxPixelBuffer* source,
     }
     else
     {
-		// blend pipeline is broken, fall back to software (MH3-54591)
-		return GFX_FAILURE;
-		
-        /*GFX2D_BLEND blend;
-
-        blend.spe=GFX2D_SPE_MULTIPLY;
-        blend.func= GFX2D_FUNCTION_SPE;
-        blend.dfact= GFX2D_FACTOR_DST_COLOR;
-        blend.sfact= GFX2D_FACTOR_SRC_COLOR;
-
-        DRV_GFX2D_Blend(&dest_buffer, (GFX2D_RECTANGLE*)&dest_rect, &dest_buffer,
-            (GFX2D_RECTANGLE*)&dest_rect, &src_buffer, (GFX2D_RECTANGLE*)&src_rect,
-            blend);*/
+        return GFX_FAILURE;
     }
 
-    /* Wait for instruction to complete */
-    while ( PLIB_GFX2D_GetGlobalStatusBusy() == true ) ;
-    //while (gpu_end == 0) {
-    //};
+    while(PLIB_GFX2D_GetGlobalStatusBusy() == true);
 
     return GFX_SUCCESS;
 }
@@ -207,28 +174,22 @@ void  DRV_GFX2D_Blend(
 {
     PLIB_GFX2D_Blend(dest, dest_rect, src1, src1_rect, src2, src2_rect, blend);
 
-    /* Wait for instruction to complete */
-    while ( PLIB_GFX2D_GetGlobalStatusBusy() == true ) ;
-    //while (gpu_end == 0) {
-    //};
+    while(PLIB_GFX2D_GetGlobalStatusBusy() == true);
 }
 
 void  DRV_GFX2D_Rop(
-   GFX2D_BUFFER *dest, 
-   GFX2D_RECTANGLE *dest_rect, 
-   GFX2D_BUFFER *src1,      
-   GFX2D_RECTANGLE *src1_rect, 
-   GFX2D_BUFFER *src2, 
+   GFX2D_BUFFER *dest,
+   GFX2D_RECTANGLE *dest_rect,
+   GFX2D_BUFFER *src1,
+   GFX2D_RECTANGLE *src1_rect,
+   GFX2D_BUFFER *src2,
    GFX2D_RECTANGLE *src2_rect,
-   GFX2D_BUFFER *pmask, 
+   GFX2D_BUFFER *pmask,
    GFX2D_ROP rop)
 {
     PLIB_GFX2D_Rop(dest, dest_rect, src1, src1_rect, src2, src2_rect, pmask, rop);
 
-    /* Wait for instruction to complete */
-    while ( PLIB_GFX2D_GetGlobalStatusBusy() == true ) ;
-    //while (gpu_end == 0) {
-    //};
+    while(PLIB_GFX2D_GetGlobalStatusBusy() == true);
 }
 
 gfxResult DRV_GFX2D_SetBlend(
@@ -252,7 +213,6 @@ gfxResult DRV_GFX2D_SetPalette(
                         gfxBuffer color_table,
                         gfxBool color_convert)
 {
-
     return GFX_SUCCESS;
 }
 
@@ -262,7 +222,6 @@ gfxResult DRV_GFX2D_SetTransparency(
                         uint32_t foreground_rop,
                         uint32_t background_rop)
 {
-
     return GFX_SUCCESS;
 }
 /*******************************************************************************
