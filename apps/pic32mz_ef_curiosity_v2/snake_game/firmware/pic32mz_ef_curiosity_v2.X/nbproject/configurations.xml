@@ -1502,6 +1502,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/I76741/reference_apps/apps/pic32mz_ef_curiosity_v2/snake_game/firmware/pic32mz_ef_curiosity_v2.X/debug/default/pic32mz_ef_curiosity_v2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

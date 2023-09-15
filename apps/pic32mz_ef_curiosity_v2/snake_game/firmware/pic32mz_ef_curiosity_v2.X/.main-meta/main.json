@@ -4,18 +4,18 @@
    "content":{
       "metaDataVersion":"1.3.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_snake_game",
-      "version":"1.5.0",
+      "version":"1.6.0",
       "displayName":"Snake Game Application",
       "projectName":"snake_game_pic32mz_ef_curiosity_v2",
       "shortDescription":"Snake Game Application on Curiosity PIC32MZ EF 2.0 Development Board + High-Performance WVGA LCD Display Module",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.00"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.0.0"
+            "semverRange":">=4.30"
          }
       ],
       "dfp":{
@@ -24,7 +24,7 @@
       },
       "configurator":{
          "name":"MCC",
-         "semverRange":">=5.1.4"
+         "semverRange":">=5.3.7"
       },
       "device":{
          "metaDataVersion":"1.0.0",
