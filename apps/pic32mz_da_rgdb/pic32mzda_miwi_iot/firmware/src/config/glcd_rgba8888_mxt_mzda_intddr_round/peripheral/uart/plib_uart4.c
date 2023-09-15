@@ -79,7 +79,7 @@ void static UART4_ErrorClear( void )
 void UART4_Initialize( void )
 {
     /* Set up UxMODE bits */
-    /* STSEL  = 0*/
+    /* STSEL  = 1*/
     /* PDSEL = 0 */
     /* BRGH = 1 */
     /* RXINV = 0 */
@@ -91,7 +91,7 @@ void UART4_Initialize( void )
     /* CLKSEL = 0 */
     /* SLPEN = 0 */
     /* UEN = 0 */
-    U4MODE = 0x8;
+    U4MODE = 0x9;
 
     /* Enable UART4 Receiver and Transmitter */
     U4STASET = (_U4STA_UTXEN_MASK | _U4STA_URXEN_MASK );
