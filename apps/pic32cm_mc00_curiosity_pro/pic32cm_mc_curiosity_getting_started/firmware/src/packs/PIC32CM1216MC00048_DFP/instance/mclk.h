@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00048
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,10 +26,10 @@
 
 
 /* ========== Instance Parameter definitions for MCLK peripheral ========== */
-#define MCLK_CTRLA_MCSEL_GCLK                    _UL_(1)    
-#define MCLK_CTRLA_MCSEL_OSC48M                  _UL_(0)    
-#define MCLK_MCLK_CLK_APB_NUM                    _UL_(3)    
-#define MCLK_SYSTEM_CLOCK                        _UL_(4000000) /* System Clock Frequency at Reset */
-#define MCLK_INSTANCE_ID                         _UL_(2)    /* Instance index for MCLK */
+#define MCLK_CTRLA_MCSEL_GCLK                    (1)        
+#define MCLK_CTRLA_MCSEL_OSC48M                  (0)        
+#define MCLK_CLK_APB_NUM                         (3)        
+#define MCLK_SYSTEM_CLOCK                        (4000000)  /* System Clock Frequency at Reset */
+#define MCLK_INSTANCE_ID                         (2)        /* Instance index for MCLK */
 
 #endif /* _PIC32CMMC00_MCLK_INSTANCE_ */

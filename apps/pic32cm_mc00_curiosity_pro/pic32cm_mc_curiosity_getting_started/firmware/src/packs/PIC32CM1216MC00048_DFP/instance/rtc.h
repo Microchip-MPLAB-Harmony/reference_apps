@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00048
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for RTC peripheral ========== */
-#define RTC_ALARM_NUM                            _UL_(1)    /* Number of Alarms */
-#define RTC_COMP16_NUM                           _UL_(2)    /* Number of 16-bit Comparators */
-#define RTC_COMP32_NUM                           _UL_(1)    /* Number of 32-bit Comparators */
-#define RTC_GPR_NUM                              _UL_(0)    /* Number of General-Purpose Registers */
-#define RTC_PER_NUM                              _UL_(8)    /* Number of Periodic Intervals */
-#define RTC_INSTANCE_ID                          _UL_(9)    /* Instance index for RTC */
+#define RTC_ALARM_NUM                            (1)        /* Number of Alarms */
+#define RTC_COMP16_NUM                           (2)        /* Number of 16-bit Comparators */
+#define RTC_COMP32_NUM                           (1)        /* Number of 32-bit Comparators */
+#define RTC_GPR_NUM                              (0)        /* Number of General-Purpose Registers */
+#define RTC_PER_NUM                              (8)        /* Number of Periodic Intervals */
+#define RTC_INSTANCE_ID                          (9)        /* Instance index for RTC */
 
 #endif /* _PIC32CMMC00_RTC_INSTANCE_ */

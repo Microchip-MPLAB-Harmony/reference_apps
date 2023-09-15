@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00048
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for RSTC peripheral ========== */
-#define RSTC_BACKUP_IMPLEMENTED                  _UL_(0)    
-#define RSTC_NUMBER_OF_EXTWAKE                   _UL_(0)    /* number of external wakeup line */
-#define RSTC_INSTANCE_ID                         _UL_(3)    /* Instance index for RSTC */
+#define RSTC_BACKUP_IMPLEMENTED                  (0)        
+#define RSTC_NUMBER_OF_EXTWAKE                   (0)        /* number of external wakeup line */
+#define RSTC_INSTANCE_ID                         (3)        /* Instance index for RSTC */
 
 #endif /* _PIC32CMMC00_RSTC_INSTANCE_ */

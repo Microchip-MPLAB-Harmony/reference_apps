@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00048
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,12 +26,12 @@
 
 
 /* ========== Instance Parameter definitions for SERCOM0 peripheral ========== */
-#define SERCOM0_DMAC_ID_RX                       _UL_(2)    /* Index of DMA RX trigger */
-#define SERCOM0_DMAC_ID_TX                       _UL_(3)    /* Index of DMA TX trigger */
-#define SERCOM0_GCLK_ID_CORE                     _UL_(19)   
-#define SERCOM0_GCLK_ID_SLOW                     _UL_(18)   
-#define SERCOM0_INT_MSB                          _UL_(6)    
-#define SERCOM0_PMSB                             _UL_(3)    
-#define SERCOM0_INSTANCE_ID                      _UL_(65)   /* Instance index for SERCOM0 */
+#define SERCOM0_DMAC_ID_RX                       (2)        /* Index of DMA RX trigger */
+#define SERCOM0_DMAC_ID_TX                       (3)        /* Index of DMA TX trigger */
+#define SERCOM0_GCLK_ID_CORE                     (19)       
+#define SERCOM0_GCLK_ID_SLOW                     (18)       
+#define SERCOM0_INT_MSB                          (6)        
+#define SERCOM0_PMSB                             (3)        
+#define SERCOM0_INSTANCE_ID                      (65)       /* Instance index for SERCOM0 */
 
 #endif /* _PIC32CMMC00_SERCOM0_INSTANCE_ */

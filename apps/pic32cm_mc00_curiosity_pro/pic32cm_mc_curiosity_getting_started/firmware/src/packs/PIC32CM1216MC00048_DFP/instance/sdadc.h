@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM1216MC00048
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for SDADC peripheral ========== */
-#define SDADC_DMAC_ID_RESRDY                     _UL_(38)   /* Index of DMA RESRDY trigger */
-#define SDADC_EXT_CHANNELS                       _UL_(2)    /* Number of external channels */
-#define SDADC_GCLK_ID                            _UL_(30)   /* Index of generic clock */
-#define SDADC_INSTANCE_ID                        _UL_(83)   /* Instance index for SDADC */
+#define SDADC_DMAC_ID_RESRDY                     (38)       /* Index of DMA RESRDY trigger */
+#define SDADC_EXT_CHANNELS                       (2)        /* Number of external channels */
+#define SDADC_GCLK_ID                            (30)       /* Index of generic clock */
+#define SDADC_INSTANCE_ID                        (83)       /* Instance index for SDADC */
 
 #endif /* _PIC32CMMC00_SDADC_INSTANCE_ */
