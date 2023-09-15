@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAME51N20A
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,14 +20,14 @@
  *
  */
 
-/* file generated from device description version 2022-02-14T14:27:15Z */
+/* file generated from device description version 2023-03-17T09:49:56Z */
 #ifndef _SAME51_RAMECC_INSTANCE_
 #define _SAME51_RAMECC_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for RAMECC peripheral ========== */
+#define RAMECC_INSTANCE_ID                       (48)       /* Instance index for RAMECC */
 #define RAMECC_RAMADDR_BITS                      (13)       /* Number of RAM address bits */
 #define RAMECC_RAMBANK_NUM                       (4)        /* Number of RAM banks */
-#define RAMECC_INSTANCE_ID                       (48)       /* Instance index for RAMECC */
 
 #endif /* _SAME51_RAMECC_INSTANCE_ */
