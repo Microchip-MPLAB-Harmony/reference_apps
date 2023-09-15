@@ -12,30 +12,28 @@
 
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2016-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2016-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -382,7 +380,7 @@ static bool smtpcIsDcptTmo(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt);
 
 static TCPIP_SMTPC_STATUS smtpcErrorStop(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt, TCPIP_SMTPC_MESSAGE_RESULT res, TCPIP_SMTPC_DCPT_FLAGS retryFlags);
 
-static void smtpcRetryInit(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt);
+static void smtpcRetryInit(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt, TCPIP_SMTPC_DCPT_FLAGS flags);
 
 static TCPIP_SMTPC_STATUS smtpcServerErrorStop(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt, TCPIP_SMTPC_MESSAGE_RESULT res, int serverCode);
 
@@ -826,18 +824,21 @@ TCPIP_SMTPC_MESSAGE_HANDLE TCPIP_SMTPC_MailMessage(const TCPIP_SMTPC_MAIL_MESSAG
         pDcpt->addType = addType;
         pDcpt->retryCnt = smtpcMailRetries;
 
+        TCPIP_SMTPC_DCPT_FLAGS flags;
+        
        if(!useDns)
         {
             pDcpt->serverAdd = ipAddr;
             newStat = TCPIP_SMTPC_STAT_SOCKET_GET;
+            flags = TCPIP_SMTPC_DCPT_FLAG_NONE;
         }
         else
         {
-            pDcpt->dcptFlags |= TCPIP_SMTPC_DCPT_FLAG_DNS;
             newStat = TCPIP_SMTPC_STAT_DNS_START;
+            flags = TCPIP_SMTPC_DCPT_FLAG_DNS;
         }
         smtpcSetStatus(pDcpt, newStat);
-        smtpcRetryInit(pDcpt);
+        smtpcRetryInit(pDcpt, flags);
 
         critStat = smtpcThreadLock();
         TCPIP_Helper_SingleListTailAdd(&smtpcMessageBusyList, (SGL_LIST_NODE*)pDcpt);
@@ -964,8 +965,19 @@ static TCPIP_SMTPC_STATUS smtpDcptStateWaitRetry(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt
     }
     else
     {
-        newStat = (pDcpt->dcptFlags & TCPIP_SMTPC_DCPT_FLAG_DNS) != 0 ? TCPIP_SMTPC_STAT_DNS_START : TCPIP_SMTPC_STAT_SOCKET_GET;
-        smtpcRetryInit(pDcpt);
+        TCPIP_SMTPC_DCPT_FLAGS flags;
+        if((pDcpt->dcptFlags & TCPIP_SMTPC_DCPT_FLAG_DNS) != 0)
+        {
+            newStat = TCPIP_SMTPC_STAT_DNS_START;
+            flags = TCPIP_SMTPC_DCPT_FLAG_DNS;
+        }
+        else
+        {
+            newStat = TCPIP_SMTPC_STAT_SOCKET_GET;
+            flags = TCPIP_SMTPC_DCPT_FLAG_NONE;
+        }
+
+        smtpcRetryInit(pDcpt, flags);
     }
 
     return newStat;
@@ -1321,7 +1333,7 @@ static TCPIP_SMTPC_STATUS smtpDcptMailMsgSubject(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt
 static TCPIP_SMTPC_STATUS smtpDcptMailMsgMessageId(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt)
 {
     // create a message ID: <mailCounter@IPaddress>
-    char addBuff[20];
+    char addBuff[20] = "";
     char msgIdBuff[40];
     TCP_SOCKET_INFO sktInfo;
 
@@ -1640,6 +1652,10 @@ static TCPIP_SMTPC_STATUS smtpDcptTransactionQuit(TCPIP_SMTPC_MESSAGE_DCPT* pDcp
         if(newStat == pDcpt->currStat && smtpcIsDcptTmo(pDcpt))
         {   // make sure we're not stuck here trying to send the quit...
             return TCPIP_SMTPC_STAT_TRANSACTION_CLOSE;
+        }
+        else if(pDcpt->messageRes == TCPIP_SMTPC_RES_OK)
+        {   // done with the connection
+            pDcpt->dcptFlags &= ~TCPIP_SMTPC_DCPT_FLAG_CONNECTED;
         }
 
         return newStat;
@@ -2168,8 +2184,8 @@ static TCPIP_SMTPC_STATUS smtpDcptRxProcTransactResetWait(TCPIP_SMTPC_MESSAGE_DC
 // process the server reply to quit
 static TCPIP_SMTPC_STATUS smtpDcptRxProcTransactQuitWait(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt, const char* replyBuffer, int nLines)
 {
-    // no matter what the server replies here we move on
-    return TCPIP_SMTPC_STAT_TRANSACTION_QUIT_WAIT + 1;
+    // no matter what the server replies here we move on and close
+    return TCPIP_SMTPC_STAT_TRANSACTION_CLOSE;
 }
 
 
@@ -2369,12 +2385,12 @@ static TCPIP_SMTPC_STATUS smtpcServerErrorStop(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt, 
 }
 
 // initializes a descriptor for a retry round
-static void smtpcRetryInit(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt)
+static void smtpcRetryInit(TCPIP_SMTPC_MESSAGE_DCPT* pDcpt, TCPIP_SMTPC_DCPT_FLAGS flags)
 {
     pDcpt->messageRes = TCPIP_SMTPC_RES_PENDING;
     pDcpt->messageWarn = 0;
     pDcpt->errorStat = 0;
-    pDcpt->dcptFlags = TCPIP_SMTPC_DCPT_FLAG_NONE;
+    pDcpt->dcptFlags = flags;
     smtpcSetErrorJump(pDcpt, TCPIP_SMTPC_STAT_MAIL_DONE_REPORT);
 }
 

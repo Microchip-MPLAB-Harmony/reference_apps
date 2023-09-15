@@ -66,22 +66,26 @@
 #define NVMCTRL_FLASH_PAGESIZE             (512U)
 #define NVMCTRL_FLASH_BLOCKSIZE            (8192U)
 
-
-
 /* NVM supports four write modes */
-typedef enum
-{
-    NVMCTRL_WMODE_MAN = NVMCTRL_CTRLA_WMODE_MAN,
-    NVMCTRL_WMODE_ADW = NVMCTRL_CTRLA_WMODE_ADW,
-    NVMCTRL_WMODE_AQW = NVMCTRL_CTRLA_WMODE_AQW,
-    NVMCTRL_WMODE_AP = NVMCTRL_CTRLA_WMODE_AP,
-} NVMCTRL_WRITEMODE;
+
+#define NVMCTRL_WMODE_MAN  NVMCTRL_CTRLA_WMODE_MAN
+#define NVMCTRL_WMODE_ADW  NVMCTRL_CTRLA_WMODE_ADW
+#define NVMCTRL_WMODE_AQW  NVMCTRL_CTRLA_WMODE_AQW
+#define NVMCTRL_WMODE_AP   NVMCTRL_CTRLA_WMODE_AP
+
+typedef uint16_t NVMCTRL_WRITEMODE;
+
+#define NVMCTRL_USERROW_START_ADDRESS     (0x00804000U)
+#define NVMCTRL_USERROW_SIZE              (0x200U)
+#define NVMCTRL_USERROW_PAGESIZE          (512U)
+#define NVMCTRL_USERROW_WQW_SIZE          (16U)
+
 
 
 
 void NVMCTRL_Initialize(void);
 
-bool NVMCTRL_Read( uint32_t *data, uint32_t length, uint32_t address );
+bool NVMCTRL_Read( uint32_t *data, uint32_t length, const uint32_t address );
 
 void NVMCTRL_SetWriteMode(NVMCTRL_WRITEMODE mode);
 
@@ -89,9 +93,9 @@ bool NVMCTRL_QuadWordWrite(const uint32_t *data, const uint32_t address);
 
 bool NVMCTRL_DoubleWordWrite(const uint32_t *data, const uint32_t address);
 
-bool NVMCTRL_PageWrite( const uint32_t* data, uint32_t address );
+bool NVMCTRL_PageWrite( const uint32_t* data, const uint32_t address );
 
-bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address);
+bool NVMCTRL_PageBufferWrite( const uint32_t *data, const uint32_t address);
 
 bool NVMCTRL_PageBufferCommit( const uint32_t address );
 
@@ -109,6 +113,8 @@ void NVMCTRL_RegionUnlock (uint32_t address);
 
 uint32_t NVMCTRL_RegionLockStatusGet (void);
 
+void NVMCTRL_SecurityBitSet(void);
+
 bool NVMCTRL_SmartEEPROM_IsBusy(void);
 
 uint32_t NVMCTRL_SmartEEPROMStatusGet( void );
@@ -121,6 +127,10 @@ void NVMCTRL_SmartEEPROMFlushPageBuffer(void);
 
 void NVMCTRL_BankSwap(void);
 
+
+bool NVMCTRL_USER_ROW_PageWrite( uint32_t *data, const uint32_t address );
+
+bool NVMCTRL_USER_ROW_RowErase( uint32_t address );
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility

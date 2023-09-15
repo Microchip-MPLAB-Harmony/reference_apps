@@ -14,30 +14,28 @@
     This source file contains the stack internal FTPC definitions
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2019-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 // DOM-IGNORE-END
 
 #ifndef _FTPC_PRIVATE_H_
@@ -46,9 +44,9 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // defines
 
 // minimum server timeout, seconds
-#define TCPIP_FTPC_MIN_TMO      		10 
-#define TCPIP_FTPC_DFLT_SRV_CTRL_PORT  	21 
-#define FTPC_BUFF_SIZE_ALIGN_MASK 		0xfff0
+#define TCPIP_FTPC_MIN_TMO              10 
+#define TCPIP_FTPC_DFLT_SRV_CTRL_PORT   21 
+#define FTPC_BUFF_SIZE_ALIGN_MASK       0xfff0
 
 // *****************************************************************************
 /*
@@ -67,12 +65,12 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 typedef enum
 {
     TCPIP_FTPC_STATE_HOME,          //Initial STATE
-	
+    
     //Connect States        
     TCPIP_FTPC_STATE_START_CONNECT, // Starting connection to server control socket
     TCPIP_FTPC_STATE_WAIT_CONNECT,  // Waiting for connection to server control socket
     TCPIP_FTPC_STATE_DONE_CONNECT,  // Successfully connected to server control socket
-	
+    
     //Login States        
     TCPIP_FTPC_STATE_LOGIN_SEND_USER,  
     TCPIP_FTPC_STATE_LOGIN_WAIT_USER,
@@ -81,56 +79,56 @@ typedef enum
     TCPIP_FTPC_STATE_LOGIN_SEND_ACCT,
     TCPIP_FTPC_STATE_LOGIN_WAIT_ACCT,
     TCPIP_FTPC_STATE_DONE_LOGIN,
-	
+    
     //CWD States        
     TCPIP_FTPC_STATE_SEND_CWD,  
     TCPIP_FTPC_STATE_WAIT_CWD,
-	
+    
     //CDUP States        
     TCPIP_FTPC_STATE_SEND_CDUP,  
     TCPIP_FTPC_STATE_WAIT_CDUP,
-	
+    
     //MKD States        
     TCPIP_FTPC_STATE_SEND_MKD,  
     TCPIP_FTPC_STATE_WAIT_MKD, 
-	
+    
     //RMD States        
     TCPIP_FTPC_STATE_SEND_RMD,  
     TCPIP_FTPC_STATE_WAIT_RMD, 
             
     //DELE States          
-	TCPIP_FTPC_STATE_SEND_DELE,
+    TCPIP_FTPC_STATE_SEND_DELE,
     TCPIP_FTPC_STATE_WAIT_DELE, 
             
     //QUIT States          
-	TCPIP_FTPC_STATE_SEND_QUIT,
+    TCPIP_FTPC_STATE_SEND_QUIT,
     TCPIP_FTPC_STATE_WAIT_QUIT,
             
     //PWD States        
     TCPIP_FTPC_STATE_SEND_PWD,  
     TCPIP_FTPC_STATE_WAIT_PWD,
-	
+    
     //TYPE States        
     TCPIP_FTPC_STATE_SEND_TYPE,  
     TCPIP_FTPC_STATE_WAIT_TYPE,  
             
-	//STRU States        
+    //STRU States        
     TCPIP_FTPC_STATE_SEND_STRU,  
     TCPIP_FTPC_STATE_WAIT_STRU, 
             
-	//MODE States        
+    //MODE States        
     TCPIP_FTPC_STATE_SEND_MODE,  
     TCPIP_FTPC_STATE_WAIT_MODE, 
             
     //Active mode States        
     TCPIP_FTPC_STATE_SEND_PORT,  
     TCPIP_FTPC_STATE_WAIT_PORT,
-	
+    
     //Passive mode States        
     TCPIP_FTPC_STATE_SEND_PASV,  
     TCPIP_FTPC_STATE_WAIT_PASV,
     TCPIP_FTPC_STATE_PASV_WAIT_DATA_CONNECT,
-	
+    
     //RETR States        
     TCPIP_FTPC_STATE_SEND_RETR,  
     TCPIP_FTPC_STATE_WAIT_RETR_CTRL_RESPONSE,
@@ -142,14 +140,14 @@ typedef enum
     TCPIP_FTPC_STATE_WAIT_STOR_CTRL_RESPONSE,
     TCPIP_FTPC_STATE_STOR_WRITE_DATA_SOCKET,
     TCPIP_FTPC_STATE_STOR_EOF,   
-	
+    
     //LST States
-	TCPIP_FTPC_STATE_START_LST,
+    TCPIP_FTPC_STATE_START_LST,
     TCPIP_FTPC_STATE_SEND_LST,  
     TCPIP_FTPC_STATE_WAIT_LST_CTRL_RESPONSE,
-	TCPIP_FTPC_STATE_WAIT_LST_READ_DATA_SOCKET,
+    TCPIP_FTPC_STATE_WAIT_LST_READ_DATA_SOCKET,
     TCPIP_FTPC_STATE_LST_EOT,   
-	
+    
 }TCPIP_FTPC_STATE_TYPE;
 
 // *****************************************************************************
@@ -242,7 +240,7 @@ typedef enum
 
 */
 typedef struct
-{	
+{   
     NET_PRES_SKT_HANDLE_T      ftpcCtrlSkt;    // associated FTP Client control connection socket
     NET_PRES_SKT_HANDLE_T      ftpcDataSkt;    // associated FTP Client Data connection socket
 }TCPIP_FTPC_SOCKET_TYPE;
@@ -263,7 +261,7 @@ typedef struct
 
 */
 typedef struct
-{	
+{   
     const char*      ftpcUserName;      // username for server access
     const char*      ftpcPassword;      // password for server access
     const char*      ftpcAccount;       // user name for server access
@@ -286,10 +284,10 @@ typedef struct
 */
 typedef struct
 {
-    int         nMaxClients; 	// maximum number of simultaneous Client supported
-                                // This is for multi-client support			
+    int         nMaxClients;    // maximum number of simultaneous Client supported
+                                // This is for multi-client support         
     const void* memH;           // memory handle                                 
-    uint32_t    ftpcTmo; 		// timeout for reply on FTP Control connection and Data Connection,
+    uint32_t    ftpcTmo;        // timeout for reply on FTP Control connection and Data Connection,
                                 // in seconds; Should be adjusted according to the server responsivity
     uint16_t    data_tx_buffsize_dflt; //Data Socket Transmit Buffer default size
     uint16_t    data_rx_buffsize_dflt; //Data Socket Receive Buffer default size
@@ -312,16 +310,16 @@ typedef struct
 typedef struct _TCPIP_FTPC_DCPT_TYPE
 {
     struct _TCPIP_FTPC_DCPT_TYPE*   next;
-	uint16_t                        ftpcDcptIndex;      // descriptor identifier
-	TCPIP_FTPC_STATE_TYPE           ftpcState;          // current state of FTP Client state-machine
-	TCPIP_FTPC_SOCKET_TYPE          ftpcSocket;         // control and data socket
-	TCPIP_FTPC_CTRL_CONN_TYPE       ftpcCtrlConnection; // ftp client control connection details
-    TCPIP_FTPC_DATA_CONN_TYPE      	ftpcDataConnection; // ftp client data connection details
-    TCPIP_FTPC_ACCESS_CTRL_TYPE     ftpcAccessControl; 	// ftp client access control parameters    
+    uint16_t                        ftpcDcptIndex;      // descriptor identifier
+    TCPIP_FTPC_STATE_TYPE           ftpcState;          // current state of FTP Client state-machine
+    TCPIP_FTPC_SOCKET_TYPE          ftpcSocket;         // control and data socket
+    TCPIP_FTPC_CTRL_CONN_TYPE       ftpcCtrlConnection; // ftp client control connection details
+    TCPIP_FTPC_DATA_CONN_TYPE       ftpcDataConnection; // ftp client data connection details
+    TCPIP_FTPC_ACCESS_CTRL_TYPE     ftpcAccessControl;  // ftp client access control parameters    
     TCPIP_FTPC_FILE_OPT_TYPE        ftpcFileOptions;    // file handling options
     
-    TCPIP_FTPC_DATA_EVENT_CALLBACK_TYPE	dataSktCallback;	// call back for the data channel 
-    TCPIP_FTPC_CTRL_EVENT_CALLBACK_TYPE	ctrlSktCallback;    // call back for the command channel 
+    TCPIP_FTPC_DATA_EVENT_CALLBACK_TYPE dataSktCallback;    // call back for the data channel 
+    TCPIP_FTPC_CTRL_EVENT_CALLBACK_TYPE ctrlSktCallback;    // call back for the command channel 
     
     char*       ftpcCtrlTxBuff;     //  Control Socket  Tx buffer pointer
     char*       ftpcCtrlRxBuff;     //  Control Socket  Rx buffer pointer
@@ -330,25 +328,25 @@ typedef struct _TCPIP_FTPC_DCPT_TYPE
 
     uint16_t    ftpcCtrlRxLen;      //  Control Socket receive length
     uint16_t    ftpcCtrlTxLen;      //  Control Socket transmit length
-    uint32_t   	ftpcDataRxLen;      //  Data Socket receive length
+    uint32_t    ftpcDataRxLen;      //  Data Socket receive length
     uint32_t    ftpcDataTxLen;      //  Data Socket transmit length
     uint16_t    ftpcDataLength;
     
-    const char  	*ftpcServerPathname;     //  pathname pointer
+    const char      *ftpcServerPathname;     //  pathname pointer
     const char      *ftpcClientPathname;     //  pathname pointer
     
     const char  *filePathname;  // file name to save files in FS
         
     int32_t     fileDescr;   // file descriptor 
     int32_t     filePos;     // file descriptor 
-	
-    TCPIP_FTPC_ERROR_TYPE   error;			// ftp internal errors
-	TCPIP_FTPC_CMD			ftpcCommand;  	// ftp command type
-	TCPIP_FTPC_SIGNAL_TYPE	ftpcSignal;   	// last response received
-	TCPIP_FTPC_FLAG_TYPE    ftpcFlag;     	// FTP client status flag
-	
-	uint32_t  	waitTick;     // if a reply is not received, trigger a timeout
-    bool      	ftpcActive;   // busy/ready flag
+    
+    TCPIP_FTPC_ERROR_TYPE   error;          // ftp internal errors
+    TCPIP_FTPC_CMD          ftpcCommand;    // ftp command type
+    TCPIP_FTPC_SIGNAL_TYPE  ftpcSignal;     // last response received
+    TCPIP_FTPC_FLAG_TYPE    ftpcFlag;       // FTP client status flag
+    
+    uint32_t    waitTick;     // if a reply is not received, trigger a timeout
+    bool        ftpcActive;   // busy/ready flag
 }TCPIP_FTPC_DCPT_TYPE;
 
 // *****************************************************************************
@@ -356,7 +354,7 @@ typedef struct _TCPIP_FTPC_DCPT_TYPE
 typedef TCPIP_FTPC_RESULT_TYPE(*TCPIP_FTPC_STATE_FUNC)(TCPIP_FTPC_DCPT_TYPE* pDcpt);
 /****************************************************************************
   Section:
-	FTPC definitions
+    FTPC definitions
   ***************************************************************************/
 //MACROS to check FTP response codes
 #define FTPC_IS_REPLY_1YZ(code) ((code) >= 100 && (code) < 200)

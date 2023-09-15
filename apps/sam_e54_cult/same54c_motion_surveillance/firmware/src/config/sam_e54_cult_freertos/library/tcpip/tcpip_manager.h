@@ -17,30 +17,28 @@
 
 *******************************************************************************/
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2012-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -1507,6 +1505,35 @@ bool                TCPIP_STACK_InitializeDataGet(SYS_MODULE_OBJ object, TCPIP_S
  */
 TCPIP_STACK_MODULE  TCPIP_STACK_NetMACIdGet(TCPIP_NET_HANDLE netH);
 
+//*********************************************************************
+/*
+   Function:        
+    TCPIP_MAC_TYPE      TCPIP_STACK_NetMACTypeGet(TCPIP_NET_HANDLE netH);
+  
+   Summary:
+    Get the MAC type of the network interface.
+
+   Description:
+    This function returns the type of the MAC that's attached to the
+    specified network interface.
+  
+   Precondition:    
+    The TCP/IP stack should have been initialized by TCPIP_STACK_Initialize 
+    and the TCPIP_STACK_Status returned SYS_STATUS_READY.
+    The network interface should be up and running.
+  
+   Parameters:      
+    netH    - handle of the interface to use
+  
+   Returns:         
+    A TCPIP_MAC_TYPE type for the MAC of that network interface.
+                    
+  
+   Remarks:            
+    None
+ */
+TCPIP_MAC_TYPE      TCPIP_STACK_NetMACTypeGet(TCPIP_NET_HANDLE netH);
+
 
 //*********************************************************************
 /*
@@ -2351,7 +2378,7 @@ bool    TCPIP_MODULE_SignalFunctionDeregister(TCPIP_MODULE_SIGNAL_HANDLE signalH
 
   Example:
     <code>
-    TCPIP_MODULE_SIGNAL currSIgnal = TCPIP_MODULE_SignalGet(TCPIP_MODULE_HTTP_SERVER);
+    TCPIP_MODULE_SIGNAL currSignal = TCPIP_MODULE_SignalGet(TCPIP_MODULE_HTTP_SERVER);
     </code>
 
   Remarks:
@@ -2361,6 +2388,84 @@ bool    TCPIP_MODULE_SignalFunctionDeregister(TCPIP_MODULE_SIGNAL_HANDLE signalH
   */
 TCPIP_MODULE_SIGNAL    TCPIP_MODULE_SignalGet(TCPIP_STACK_MODULE moduleId);
 
+
+//*******************************************************************************
+/*
+  Function:
+    bool    TCPIP_MODULE_Deinitialize(TCPIP_STACK_MODULE moduleId);
+
+  Summary:
+    Deinitializes the stack module
+
+  Description:
+    This function will deinitialize the selected stack module.
+    After this call the module will no longer run in the stack
+
+  Precondition:
+    The TCP/IP stack should have been initialized by TCPIP_STACK_Initialize 
+    and the TCPIP_STACK_Status returned SYS_STATUS_READY.
+
+  Parameters:
+    moduleId        - module ID
+
+  Returns:
+    true    - if the call succeeded
+    false   - if the call failed: no such module running, etc.
+
+  Example:
+    <code>
+    bool res = TCPIP_MODULE_Deinitialize(TCPIP_MODULE_HTTP_SERVER);
+    </code>
+
+  Remarks:
+    The call will permanently disable the module.
+    The module will no longer run in the stack.
+
+    There is currently no way to re-initialize the module.
+    The TCPIP_STACK_Deinitialize, TCPIP_STACK_Initialize() sequence needs to be called for that.
+
+    The call is intended for high level (application) modules.
+    Deinitializing core modules (like ARP, IPv4, IPv6, etc.) will cause depending higher level modules to stop working too.
+    The TCPIP_MODULE_MANAGER cannot be initialized. 
+
+
+    The symbol TCPIP_STACK_RUN_TIME_INIT needs to be defined for this API and functionality to exist.
+  */
+bool    TCPIP_MODULE_Deinitialize(TCPIP_STACK_MODULE moduleId);
+
+//*******************************************************************************
+/*
+  Function:
+    bool    TCPIP_MODULE_IsRunning(TCPIP_STACK_MODULE moduleId);
+
+  Summary:
+    Returns the current running status of the module
+
+  Description:
+    This function will query the running status of the selected stack module.
+
+  Precondition:
+    The TCP/IP stack should have been initialized by TCPIP_STACK_Initialize 
+    and the TCPIP_STACK_Status returned SYS_STATUS_READY.
+
+  Parameters:
+    moduleId        - module ID
+
+  Returns:
+    true    - if the selected module is running
+    false   - no such module running, etc.
+
+  Example:
+    <code>
+    bool res = TCPIP_MODULE_IsRunning(TCPIP_MODULE_HTTP_SERVER);
+    </code>
+
+  Remarks:
+    The TCPIP_MODULE_MANAGER is always running in the stack
+
+    The symbol TCPIP_STACK_RUN_TIME_INIT needs to be defined for this API and functionality to exist.
+  */
+bool    TCPIP_MODULE_IsRunning(TCPIP_STACK_MODULE moduleId);
 
 
 //*******************************************************************************

@@ -16,30 +16,28 @@ TCP/IP Stack Ethernet PHY and MAC Driver Definitions Header File
   ***********************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2013-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2013-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -99,58 +97,66 @@ typedef enum
 
     // Use auto negotiation. set the following flags to specify your choices
     TCPIP_ETH_OPEN_AUTO
-        /*DOM-IGNORE-BEGIN*/ = 0x1 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000001 /*DOM-IGNORE-END*/,
 
     // Use full duplex or full duplex negotiation capability needed
     TCPIP_ETH_OPEN_FDUPLEX
-        /*DOM-IGNORE-BEGIN*/ = 0x2 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000002 /*DOM-IGNORE-END*/,
 
     // Use half duplex or half duplex negotiation capability needed
     TCPIP_ETH_OPEN_HDUPLEX
-        /*DOM-IGNORE-BEGIN*/ = 0x4 /*DOM-IGNORE-END*/,
-
+        /*DOM-IGNORE-BEGIN*/ = 0x00000004 /*DOM-IGNORE-END*/,
+            
+    // Use 1000MBps or 1000MBps negotiation capability needed
+    TCPIP_ETH_OPEN_1000
+        /*DOM-IGNORE-BEGIN*/ = 0x00000008 /*DOM-IGNORE-END*/,
+            
     // Use 100MBps or 100MBps negotiation capability needed
     TCPIP_ETH_OPEN_100
-        /*DOM-IGNORE-BEGIN*/ = 0x8 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000010 /*DOM-IGNORE-END*/,
 
     // Use 10MBps or 10MBps negotiation capability needed
     TCPIP_ETH_OPEN_10
-        /*DOM-IGNORE-BEGIN*/ = 0x10 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000020 /*DOM-IGNORE-END*/,
 
     // Allow huge packets RX/TX
     TCPIP_ETH_OPEN_HUGE_PKTS
-        /*DOM-IGNORE-BEGIN*/ = 0x20 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000040 /*DOM-IGNORE-END*/,
 
-    // Loopbacked at the MAC level
+    // Loopback at the MAC level
     TCPIP_ETH_OPEN_MAC_LOOPBACK
-        /*DOM-IGNORE-BEGIN*/ = 0x40 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000080 /*DOM-IGNORE-END*/,
 
-    /*When PHY is loopbacked, negotiation will be disabled!*/
+    /*When PHY is loopback, negotiation will be disabled!*/
     TCPIP_ETH_OPEN_PHY_LOOPBACK
-        /*DOM-IGNORE-BEGIN*/ = 0x80 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000100 /*DOM-IGNORE-END*/,
 
     // Use Auto MDIX
     TCPIP_ETH_OPEN_MDIX_AUTO
-        /*DOM-IGNORE-BEGIN*/ = 0x100 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000200 /*DOM-IGNORE-END*/,
 
     // Use normal MDIX when Auto MDIX disabled
     TCPIP_ETH_OPEN_MDIX_NORM
-        /*DOM-IGNORE-BEGIN*/ = 0x0 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000400 /*DOM-IGNORE-END*/,
 
     // Use swapped MDIX when Auto MDIX disabled
     TCPIP_ETH_OPEN_MDIX_SWAP
-        /*DOM-IGNORE-BEGIN*/ = 0x200 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00000800 /*DOM-IGNORE-END*/,
 
-    // MII/RMII flags:
-
+    // RGMII/GMII/MII/RMII flags:
+    // RGMII connection
+    TCPIP_ETH_OPEN_RGMII
+        /*DOM-IGNORE-BEGIN*/ = 0x00001000 /*DOM-IGNORE-END*/,
+    // GMII connection
+    TCPIP_ETH_OPEN_GMII
+        /*DOM-IGNORE-BEGIN*/ = 0x00002000 /*DOM-IGNORE-END*/,
     // RMII connection
     TCPIP_ETH_OPEN_RMII
-        /*DOM-IGNORE-BEGIN*/ = 0x400 /*DOM-IGNORE-END*/,
+        /*DOM-IGNORE-BEGIN*/ = 0x00004000 /*DOM-IGNORE-END*/,
 
     // MII connection
     TCPIP_ETH_OPEN_MII
-        /*DOM-IGNORE-BEGIN*/ = 0x000 /*DOM-IGNORE-END*/,
-
+        /*DOM-IGNORE-BEGIN*/ = 0x00008000 /*DOM-IGNORE-END*/,
 
     // All capabilities default
     TCPIP_ETH_OPEN_DEFAULT = (TCPIP_ETH_OPEN_AUTO|TCPIP_ETH_OPEN_FDUPLEX|TCPIP_ETH_OPEN_HDUPLEX|
@@ -174,6 +180,7 @@ typedef enum
     The pause type is mainly supported over Ethernet links and takes part
     in the PHY link negotiation process.
 
+    8 bits mask supported only!
 */
 
 typedef enum

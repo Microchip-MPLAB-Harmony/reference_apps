@@ -12,30 +12,28 @@
   Description:
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -51,15 +49,20 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 // internal
 
+#if defined(TCPIP_IPV4_FORWARDING_STATS) && (TCPIP_IPV4_FORWARDING_STATS != 0)
+#define _TCPIP_IPV4_FORWARDING_STATS 1
+#else
+#define _TCPIP_IPV4_FORWARDING_STATS 0
+#endif  // defined(TCPIP_IPV4_FORWARDING_STATS) && (TCPIP_IPV4_FORWARDING_STATS != 0)
+
 // debugging
 #define TCPIP_IPV4_DEBUG_MASK_BASIC             (0x0001)
 #define TCPIP_IPV4_DEBUG_MASK_FRAGMENT          (0x0002)
 #define TCPIP_IPV4_DEBUG_MASK_RX_CHECK          (0x0004)
 #define TCPIP_IPV4_DEBUG_MASK_ARP_QUEUE         (0x0008)
 #define TCPIP_IPV4_DEBUG_MASK_PROC_EXT          (0x0010)
-#define TCPIP_IPV4_DEBUG_MASK_FWD               (0x0020)
-#define TCPIP_IPV4_DEBUG_MASK_FWD_MAC_DEST      (0x0040)
-#define TCPIP_IPV4_DEBUG_MASK_FILT_COUNT        (0x0080)
+#define TCPIP_IPV4_DEBUG_MASK_FWD_MAC_DEST      (0x0020)
+#define TCPIP_IPV4_DEBUG_MASK_FILT_COUNT        (0x0040)
 
 // enable IPV4 debugging levels
 #define TCPIP_IPV4_DEBUG_LEVEL  (0)

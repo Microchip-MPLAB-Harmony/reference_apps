@@ -13,30 +13,28 @@
     Reference: RFC 1035
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 #include "tcpip/src/tcpip_private.h"
 
@@ -380,6 +378,18 @@ bool TCPIP_DNS_ClientInitialize(const TCPIP_STACK_MODULE_CTRL* const stackData,
             return false;
         }
 
+        // only IPv4 operation supported for now
+#if !defined (TCPIP_STACK_USE_IPV4)
+        (void)_DNSPutString;
+        (void)_DNS_SelectIntf;
+        return false;
+#else
+        if(dnsData->ipAddressType == IP_ADDRESS_TYPE_IPV6)
+        {
+            return false;
+        }
+#endif  // !defined (TCPIP_STACK_USE_IPV4)
+
         pDnsDcpt->memH = stackData->memH;
         hashMemSize = sizeof(OA_HASH_DCPT) + dnsData->cacheEntries * sizeof(TCPIP_DNS_HASH_ENTRY);
         hashDcpt = (OA_HASH_DCPT*)TCPIP_HEAP_Malloc(pDnsDcpt->memH, hashMemSize);
@@ -409,11 +419,7 @@ bool TCPIP_DNS_ClientInitialize(const TCPIP_STACK_MODULE_CTRL* const stackData,
         pDnsDcpt->cacheEntryTMO = dnsData->entrySolvedTmo;
         pDnsDcpt->nIPv4Entries= dnsData->nIPv4Entries;
         pDnsDcpt->nIPv6Entries = dnsData->nIPv6Entries;
-#if defined (TCPIP_STACK_USE_IPV4)
-        pDnsDcpt->ipAddressType = IP_ADDRESS_TYPE_IPV4;     // dnsData->ipAddressType;
-#else
-        pDnsDcpt->ipAddressType = IP_ADDRESS_TYPE_IPV6;     // dnsData->ipAddressType;
-#endif // defined (TCPIP_STACK_USE_IPV6)
+        pDnsDcpt->ipAddressType = dnsData->ipAddressType;
 
         // allocate memory for each DNS hostname , IPv4 address and IPv6 address
         // and the allocation will be done per Hash descriptor
@@ -1217,6 +1223,7 @@ static void _DNSSocketRxSignalHandler(UDP_SOCKET hUDP, TCPIP_NET_HANDLE hNet, TC
     }
 }
 
+#if defined (TCPIP_STACK_USE_IPV4)
 static TCPIP_DNS_RESULT _DNS_Send_Query(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_HASH_ENTRY* pDnsHE)
 {
     TCPIP_DNS_HEADER    DNSPutHeader;
@@ -1335,6 +1342,12 @@ static TCPIP_DNS_RESULT _DNS_Send_Query(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_HASH
     _DNSNotifyClients(pDnsDcpt, pDnsHE, evType);
     return res;
 }
+#else
+static TCPIP_DNS_RESULT _DNS_Send_Query(TCPIP_DNS_DCPT* pDnsDcpt, TCPIP_DNS_HASH_ENTRY* pDnsHE)
+{
+    return TCPIP_DNS_RES_NO_SERVICE; 
+}
+#endif
 
 TCPIP_DNS_RESULT TCPIP_DNS_RemoveEntry(const char *hostName)
 {
@@ -1513,6 +1526,7 @@ static bool _DNS_RESPONSE_HashEntryUpdate(TCPIP_DNS_RX_DATA* dnsRxData, TCPIP_DN
     IP_MULTI_ADDRESS        ipAddr;
     bool                    discardData;
 
+    memset(&DNSAnswerHeader, 0, sizeof(DNSAnswerHeader));
     if(!_DNSGetData(dnsRxData, (uint8_t *)&DNSAnswerHeader, sizeof(TCPIP_DNS_ANSWER_HEADER)))
     {   // failed to read the RR header
         return false;
@@ -1534,6 +1548,7 @@ static bool _DNS_RESPONSE_HashEntryUpdate(TCPIP_DNS_RX_DATA* dnsRxData, TCPIP_DN
             }
 
             // read the buffer
+            ipAddr.v4Add.Val = 0;
             if(!_DNSGetData(dnsRxData, ipAddr.v4Add.v, sizeof(IPV4_ADDR)))
             {
                 return false;
@@ -1559,6 +1574,7 @@ static bool _DNS_RESPONSE_HashEntryUpdate(TCPIP_DNS_RX_DATA* dnsRxData, TCPIP_DN
             }           
 
             // read the buffer
+            memset(ipAddr.v6Add.v, 0, sizeof(IPV6_ADDR));
             if(!_DNSGetData(dnsRxData, ipAddr.v6Add.v, sizeof (IPV6_ADDR)))
             {
                 return false;
@@ -1769,6 +1785,7 @@ static bool _DNS_ProcessPacket(TCPIP_DNS_DCPT* pDnsDcpt)
     _DNSInitRxData(&dnsRxData, dnsRxBuffer, dnsPacketSize);
 
     // Retrieve the DNS header and de-big-endian it
+    memset(&DNSHeader, 0, sizeof(DNSHeader));
     if(!_DNSGetData(&dnsRxData, &DNSHeader, sizeof(DNSHeader)))
     {   // incomplete packet?
         return false;
@@ -1928,6 +1945,7 @@ static int _DNS_ReadName(TCPIP_DNS_RR_PROCESS* pProc, char* nameBuff, int buffSi
     {
         // Get first byte which will tell us if this is a 16-bit pointer or the
         // length of the first of a series of labels
+        labelLen = 0;
         if(!_DNSGetData(xtractBuff, &labelLen, sizeof(labelLen)))
         {   // failed to get label
             nameFail = true;
@@ -1943,6 +1961,7 @@ static int _DNS_ReadName(TCPIP_DNS_RR_PROCESS* pProc, char* nameBuff, int buffSi
         if((labelLen & 0xc0) == 0xc0)
         {   // get the offset
             labelOffset = (uint16_t)(labelLen & 0x3f) << 8;
+            offset = 0;
             if(!_DNSGetData(xtractBuff, &offset, sizeof(offset)))
             {   // failed to get the offset
                 nameFail = true;

@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 // *****************************************************************************
@@ -62,31 +63,31 @@
 /* Handle for the APP_TCP_IP_Tasks. */
 TaskHandle_t xAPP_TCP_IP_Tasks;
 
-void _APP_TCP_IP_Tasks(  void *pvParameters  )
+static void lAPP_TCP_IP_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_TCP_IP_Tasks();
-        vTaskDelay(2 / portTICK_PERIOD_MS);
+        vTaskDelay(2U / portTICK_PERIOD_MS);
     }
 }
 /* Handle for the APP_ARDU_CAM_Tasks. */
 TaskHandle_t xAPP_ARDU_CAM_Tasks;
 
-void _APP_ARDU_CAM_Tasks(  void *pvParameters  )
+static void lAPP_ARDU_CAM_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_ARDU_CAM_Tasks();
-        vTaskDelay(50 / portTICK_PERIOD_MS);
+        vTaskDelay(50U / portTICK_PERIOD_MS);
     }
 }
 /* Handle for the APP_OV2640_SENSOR_Tasks. */
 TaskHandle_t xAPP_OV2640_SENSOR_Tasks;
 
-void _APP_OV2640_SENSOR_Tasks(  void *pvParameters  )
+static void lAPP_OV2640_SENSOR_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_OV2640_SENSOR_Tasks();
     }
@@ -94,12 +95,12 @@ void _APP_OV2640_SENSOR_Tasks(  void *pvParameters  )
 /* Handle for the APP_PIR_SENSOR_Tasks. */
 TaskHandle_t xAPP_PIR_SENSOR_Tasks;
 
-void _APP_PIR_SENSOR_Tasks(  void *pvParameters  )
+static void lAPP_PIR_SENSOR_Tasks(  void *pvParameters  )
 {   
-    while(1)
+    while(true)
     {
         APP_PIR_SENSOR_Tasks();
-        vTaskDelay(5 / portTICK_PERIOD_MS);
+        vTaskDelay(5U / portTICK_PERIOD_MS);
     }
 }
 
@@ -108,8 +109,14 @@ void _DRV_MIIM_Task(  void *pvParameters  )
 {
     while(1)
     {
-        DRV_MIIM_Tasks(sysObj.drvMiim);
+       
+       
+       DRV_MIIM_OBJECT_BASE_Default.DRV_MIIM_Tasks(sysObj.drvMiim_0);
+       
+       
+       
         vTaskDelay(1 / portTICK_PERIOD_MS);
+       
     }
 }
 
@@ -119,17 +126,17 @@ void _NET_PRES_Tasks(  void *pvParameters  )
     while(1)
     {
         NET_PRES_Tasks(sysObj.netPres);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
 
-void _SYS_FS_Tasks(  void *pvParameters  )
+static void lSYS_FS_Tasks(  void *pvParameters  )
 {
-    while(1)
+    while(true)
     {
         SYS_FS_Tasks();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        vTaskDelay(10U / portTICK_PERIOD_MS);
     }
 }
 
@@ -144,7 +151,8 @@ void _TCPIP_STACK_Task(  void *pvParameters  )
     }
 }
 
-void _SYS_CMD_Tasks(  void *pvParameters  )
+TaskHandle_t xSYS_CMD_Tasks;
+void lSYS_CMD_Tasks(  void *pvParameters  )
 {
     while(1)
     {
@@ -154,9 +162,9 @@ void _SYS_CMD_Tasks(  void *pvParameters  )
 }
 
 
-void _DRV_SDMMC0_Tasks(  void *pvParameters  )
+static void lDRV_SDMMC0_Tasks(  void *pvParameters  )
 {
-    while(1)
+    while(true)
     {
         DRV_SDMMC_Tasks(sysObj.drvSDMMC0);
         vTaskDelay(DRV_SDMMC_RTOS_DELAY_IDX0 / portTICK_PERIOD_MS);
@@ -184,7 +192,7 @@ void SYS_Tasks ( void )
     /* Maintain system services */
     
 
-    xTaskCreate( _SYS_FS_Tasks,
+    (void) xTaskCreate( lSYS_FS_Tasks,
         "SYS_FS_TASKS",
         SYS_FS_STACK_SIZE,
         (void*)NULL,
@@ -193,16 +201,16 @@ void SYS_Tasks ( void )
     );
 
 
-    xTaskCreate( _SYS_CMD_Tasks,
+    (void) xTaskCreate( lSYS_CMD_Tasks,
         "SYS_CMD_TASKS",
         SYS_CMD_RTOS_STACK_SIZE,
         (void*)NULL,
         SYS_CMD_RTOS_TASK_PRIORITY,
-        (TaskHandle_t*)NULL
+        &xSYS_CMD_Tasks
     );
 
 
-    xTaskCreate( _DRV_SDMMC0_Tasks,
+    (void) xTaskCreate( lDRV_SDMMC0_Tasks,
         "DRV_SDMMC0_Tasks",
         DRV_SDMMC_STACK_SIZE_IDX0,
         (void*)NULL,
@@ -251,7 +259,7 @@ void SYS_Tasks ( void )
 
     /* Maintain the application's state machine. */
         /* Create OS Thread for APP_TCP_IP_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_TCP_IP_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_TCP_IP_Tasks,
                 "APP_TCP_IP_Tasks",
                 1024,
                 NULL,
@@ -259,7 +267,7 @@ void SYS_Tasks ( void )
                 &xAPP_TCP_IP_Tasks);
 
     /* Create OS Thread for APP_ARDU_CAM_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_ARDU_CAM_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_ARDU_CAM_Tasks,
                 "APP_ARDU_CAM_Tasks",
                 1024,
                 NULL,
@@ -267,7 +275,7 @@ void SYS_Tasks ( void )
                 &xAPP_ARDU_CAM_Tasks);
 
     /* Create OS Thread for APP_OV2640_SENSOR_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_OV2640_SENSOR_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_OV2640_SENSOR_Tasks,
                 "APP_OV2640_SENSOR_Tasks",
                 1024,
                 NULL,
@@ -275,7 +283,7 @@ void SYS_Tasks ( void )
                 &xAPP_OV2640_SENSOR_Tasks);
 
     /* Create OS Thread for APP_PIR_SENSOR_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_PIR_SENSOR_Tasks,
+    (void) xTaskCreate((TaskFunction_t) lAPP_PIR_SENSOR_Tasks,
                 "APP_PIR_SENSOR_Tasks",
                 1024,
                 NULL,

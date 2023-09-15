@@ -10,30 +10,28 @@
     -Reference: RFC 793
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -132,6 +130,7 @@ static TCPIP_TCP_PACKET_HANDLER tcpPktHandler = 0;
 static const void* tcpPktHandlerParam;
 #endif  // (TCPIP_TCP_EXTERN_PACKET_PROCESS != 0)
 
+static uint32_t             sysTickFreq;            // the system tick counter frequency; frequently used 
 
 /****************************************************************************
   Section:
@@ -197,7 +196,7 @@ static uint32_t         _TCP_SktSetSequenceNo(const TCB_STUB* pSkt);
 #if defined (TCPIP_STACK_USE_IPV4)
 static TCP_V4_PACKET* _TcpAllocateTxPacket(TCB_STUB* pSkt, IP_ADDRESS_TYPE addType);
 static TCP_V4_PACKET*   _Tcpv4AllocateTxPacketIfQueued(TCB_STUB * pSkt, bool resetOldPkt);
-static bool             _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param);
+static void             _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param);
 static void             _Tcpv4UnlinkDataSeg(TCP_V4_PACKET* pPkt);
 static void             _Tcpv4LinkDataSeg(TCP_V4_PACKET* pPkt, uint8_t* pBuff1, uint16_t bSize1, uint8_t* pBuff2, uint16_t bSize2);
 static bool             _TCPv4Flush(TCB_STUB * pSkt, IPV4_PACKET* pv4Pkt, uint16_t hdrLen, uint16_t loadLen);
@@ -213,8 +212,8 @@ static TCPIP_MAC_PKT_ACK_RES TCPIP_TCP_ProcessIPv4(TCPIP_MAC_PACKET* pRxPkt);
 
 
 static IPV6_PACKET*     _TCPv6AllocateTxPacketStruct (TCB_STUB * stub);
-static bool             _Tcpv6AckFnc (void * pkt, bool sent, const void * param);
-static bool             _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pkt,  const void* param);
+static void             _Tcpv6AckFnc (void * pkt, bool sent, const void * param);
+static void             _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pkt,  const void* param);
 static IPV6_PACKET*     _Tcpv6AllocateTxPacketIfQueued (TCB_STUB * pSkt, bool resetOldPkt);
 static IPV6_PACKET*     _TxSktGetLockedV6Pkt(TCB_STUB* pSkt, IPV6_PACKET** ppSktPkt, bool setQueued);
 static IPV6_PACKET*     _TxSktFreeLockedV6Pkt(TCB_STUB* pSkt);
@@ -501,7 +500,7 @@ static int _TcpClientSocketConnect(TCB_STUB* pSkt)
     // try to send SYN
 
     pSkt->retryCount = 0;
-    pSkt->retryInterval = (SYS_TMR_TickCounterFrequencyGet()/4);
+    pSkt->retryInterval = (sysTickFreq/4);
     _TCP_SEND_RES sendRes = _TcpSend(pSkt, SYN, SENDTCP_RESET_TIMERS);
     if(sendRes == _TCP_SEND_OK)
     {   // success
@@ -574,7 +573,28 @@ static TCPIP_MAC_PACKET* _TxSktFreeLockedV4Pkt(TCB_STUB* pSkt)
 }
 #endif  // defined (TCPIP_STACK_USE_IPV4)
 
+// helper to set the socket retransmission timeout
+// if reload, it initializes it
+// else it doubles it (exp back off)
+static void _TCP_LoadRetxTmo(TCB_STUB* pSkt, bool reload)
+{
+    uint32_t retxTmo;
+    if(reload)
+    {
+        retxTmo = _TCP_SOCKET_RETX_TMO;
+    }
+    else
+    {
+        retxTmo = pSkt->retxTmo << 1;
+        if(retxTmo > _TCP_SOCKET_MAX_RETX_TIME)
+        {
+            retxTmo = _TCP_SOCKET_MAX_RETX_TIME;
+        } 
+    }
 
+    pSkt->retxTmo = retxTmo;
+    pSkt->retxTime = SYS_TMR_TickCountGet() + (pSkt->retxTmo * sysTickFreq)/1000;
+}
 
 
 /*****************************************************************************
@@ -669,6 +689,7 @@ bool TCPIP_TCP_Initialize(const TCPIP_STACK_MODULE_CTRL* const stackInit, const 
         return false;
     }
 
+    sysTickFreq = SYS_TMR_TickCounterFrequencyGet(); 
     tcpHeapH = stackInit->memH;
     nSockets = pTcpInit->nSockets;
     // default initialization
@@ -1244,7 +1265,7 @@ void  TCPIP_TCP_Task(void)
         {   // make sure the TMR is started
             if((tcpStartTime = SYS_TMR_TickCountGet()) != 0)
             {   // calculate the timeout
-                tcpStartTime += TCPIP_TCP_QUIET_TIME * SYS_TMR_TickCounterFrequencyGet();
+                tcpStartTime += TCPIP_TCP_QUIET_TIME * sysTickFreq;
             }
         }
         else if((int32_t)(SYS_TMR_TickCountGet() - tcpStartTime) >= 0)
@@ -1442,7 +1463,7 @@ static TCP_V4_PACKET* _TcpAllocateTxPacket(TCB_STUB* pSkt, IP_ADDRESS_TYPE addTy
 }
 
 
-static bool _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param)
+static void _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param)
 {
     TCPIP_NET_HANDLE pktIf = 0;
     TCPIP_TCP_SIGNAL_TYPE sigType = 0;
@@ -1511,7 +1532,6 @@ static bool _Tcpv4TxAckFnc (TCPIP_MAC_PACKET * pPkt, const void * param)
         (*sigHandler)(sktIx, pktIf, sigType, sigParam);
     }
 
-    return false;
 }
 
 // unlinks the data segments
@@ -1857,7 +1877,7 @@ static IPV6_PACKET * _TCPv6AllocateTxPacketStruct (TCB_STUB * pSkt)
     return pkt;
 }
 
-static bool _Tcpv6AckFnc (void * pkt, bool success, const void * param)
+static void _Tcpv6AckFnc (void * pkt, bool success, const void * param)
 {
     IPV6_PACKET*    pV6Pkt;
     TCB_STUB* pSkt = (TCB_STUB*)param;
@@ -1868,7 +1888,7 @@ static bool _Tcpv6AckFnc (void * pkt, bool success, const void * param)
 
     if((pV6Pkt = (IPV6_PACKET*)pkt) == 0)
     {   // shouldn't happen
-        return false;
+        return;
     }
 
 	while(pSkt != 0)
@@ -1906,10 +1926,9 @@ static bool _Tcpv6AckFnc (void * pkt, bool success, const void * param)
         TCPIP_IPV6_PacketFree (pV6Pkt);
     }
 
-    return freePkt ? false : true;
 }
 
-static bool _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pPkt,  const void* param)
+static void _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pPkt,  const void* param)
 {
     TCPIP_NET_HANDLE pktIf = 0;
     TCPIP_TCP_SIGNAL_TYPE sigType = 0;
@@ -1963,7 +1982,6 @@ static bool _Tcpv6MacAckFnc (TCPIP_MAC_PACKET* pPkt,  const void* param)
         (*sigHandler)(sktIx, pktIf, sigType, sigParam);
 
     }
-    return false;
 }
 
 #endif  // defined (TCPIP_STACK_USE_IPV6)
@@ -2389,7 +2407,7 @@ static uint32_t _TCP_SktSetSequenceNo(const TCB_STUB* pSkt)
 static uint32_t _TCP_SktSetSequenceNo(const TCB_STUB* pSkt)
 {
     CRYPT_MD5_CTX md5Ctx;
-    uint32_t secretKey[16 / 4];   // 128 bits secret key
+    uint32_t secretKey[16 / 4] = {0};   // 128 bits secret key
 
     size_t dataSize = 0;    // actual data size
 
@@ -2404,7 +2422,7 @@ static uint32_t _TCP_SktSetSequenceNo(const TCB_STUB* pSkt)
 #if defined (TCPIP_STACK_USE_IPV4)
         uint32_t    ipv4HashData[28 / 4];   // 4B srcAdd, 4B destAdd, 4B ports, 16B secret key
 #endif    
-    }hashData;
+    }hashData = {0};
         
     // get secret key
     SYS_RANDOM_CryptoBlockGet(secretKey, sizeof(secretKey));
@@ -2687,7 +2705,7 @@ uint16_t TCPIP_TCP_ArrayPut(TCP_SOCKET hTCP, const uint8_t* data, uint16_t len)
 	else if(!pSkt->Flags.bTimer2Enabled)
 	{
 		pSkt->Flags.bTimer2Enabled = true;
-		pSkt->eventTime2 = SYS_TMR_TickCountGet() + (TCPIP_TCP_AUTO_TRANSMIT_TIMEOUT_VAL * SYS_TMR_TickCounterFrequencyGet())/1000;
+		pSkt->eventTime2 = SYS_TMR_TickCountGet() + (TCPIP_TCP_AUTO_TRANSMIT_TIMEOUT_VAL * sysTickFreq)/1000;
 	}
 
 	return wActualLen + wRightLen;
@@ -3007,7 +3025,7 @@ uint16_t TCPIP_TCP_ArrayGet(TCP_SOCKET hTCP, uint8_t* buffer, uint16_t len)
             // update will get sent to the remote node at some point
         {
             pSkt->Flags.bTimer2Enabled = true;
-            pSkt->eventTime2 = SYS_TMR_TickCountGet() + (TCPIP_TCP_WINDOW_UPDATE_TIMEOUT_VAL * SYS_TMR_TickCounterFrequencyGet())/1000;
+            pSkt->eventTime2 = SYS_TMR_TickCountGet() + (TCPIP_TCP_WINDOW_UPDATE_TIMEOUT_VAL * sysTickFreq)/1000;
         }
     }
 
@@ -3168,7 +3186,7 @@ uint16_t TCPIP_TCP_ArrayPeek(TCP_SOCKET hTCP, uint8_t *vBuffer, uint16_t wLen, u
   ***************************************************************************/
 uint8_t TCPIP_TCP_Peek(TCP_SOCKET hTCP, uint16_t wStart)
 {
-	uint8_t i;
+	uint8_t i = 0;
 	
 	TCPIP_TCP_ArrayPeek(hTCP, &i, 1, wStart);
 	return i;
@@ -3500,7 +3518,7 @@ static void TCPIP_TCP_Tick(void)
                     _TcpSend(pSkt, RST | ACK, SENDTCP_RESET_TIMERS);
 #if (TCPIP_TCP_MSL_TIMEOUT != 0)
                     _TcpSocketSetState(pSkt, TCPIP_TCP_STATE_TIME_WAIT);
-                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * SYS_TMR_TickCounterFrequencyGet());
+                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * sysTickFreq);
 #else
                     _TcpCloseSocket(pSkt, 0);
 #endif  // (TCPIP_TCP_MSL_TIMEOUT != 0)
@@ -3568,7 +3586,7 @@ static void TCPIP_TCP_Tick(void)
 
                         // Otherwise, if a timeout occured, simply send a keep-alive packet
                         _TcpSend(pSkt, ACK, SENDTCP_KEEP_ALIVE);
-                        pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * SYS_TMR_TickCounterFrequencyGet())/1000;
+                        pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * sysTickFreq)/1000;
                     }
                 }
                 continue;
@@ -3595,7 +3613,7 @@ static void TCPIP_TCP_Tick(void)
                     if(pSkt->retryCount >= (TCPIP_TCP_MAX_RETRIES - 1))
                     {
                         pSkt->retryCount = TCPIP_TCP_MAX_RETRIES - 1;
-                        pSkt->retryInterval = ((TCPIP_TCP_START_TIMEOUT_VAL * SYS_TMR_TickCounterFrequencyGet())/1000) << (TCPIP_TCP_MAX_RETRIES-1);
+                        pSkt->retryInterval = ((TCPIP_TCP_START_TIMEOUT_VAL * sysTickFreq)/1000) << (TCPIP_TCP_MAX_RETRIES-1);
                     }
                     break;
 
@@ -4004,9 +4022,8 @@ static _TCP_SEND_RES _TcpSend(TCB_STUB* pSkt, uint8_t vTCPFlags, uint8_t vSendFl
         {
             // Begin copying any application data over to the TX space
             maxPayload = pSkt->wRemoteMSS;
-            if(pSkt->txHead == pSkt->txUnackedTail)
-            {
-                // All caught up on data TX, no real data for this packet
+            if(pSkt->txHead == pSkt->txUnackedTail || pSkt->remoteWindow == 0)
+            {   // either all caught up on data TX or cannot send anything
                 len = 0;
             }
             else
@@ -4121,7 +4138,7 @@ static _TCP_SEND_RES _TcpSend(TCB_STUB* pSkt, uint8_t vTCPFlags, uint8_t vSendFl
             if(vSendFlags & SENDTCP_RESET_TIMERS)
             {
                 pSkt->retryCount = 0;
-                pSkt->retryInterval = (TCPIP_TCP_START_TIMEOUT_VAL * SYS_TMR_TickCounterFrequencyGet())/1000;
+                pSkt->retryInterval = (TCPIP_TCP_START_TIMEOUT_VAL * sysTickFreq)/1000;
             }	
 
             pSkt->eventTime = SYS_TMR_TickCountGet() + pSkt->retryInterval;
@@ -4232,6 +4249,10 @@ static _TCP_SEND_RES _TcpSend(TCB_STUB* pSkt, uint8_t vTCPFlags, uint8_t vSendFl
 
         // transmit the packet over the network
         sendRes = _TCP_Flush (pSkt, pSendPkt, hdrLen, loadLen) ? _TCP_SEND_OK : _TCP_SEND_IP_FAIL;
+        if(loadLen && pSkt->retxTime == 0)
+        {   // sending some payload
+            _TCP_LoadRetxTmo(pSkt, true);
+        }
         break;
     }
 
@@ -4520,8 +4541,7 @@ static void _TcpSocketSetIdleState(TCB_STUB* pSkt)
 	pSkt->flags.bFINSent = 0;
     pSkt->flags.seqInc = 0;
 	pSkt->flags.bSYNSent = 0;
-	pSkt->flags.bRXNoneACKed1 = 0;
-	pSkt->flags.bRXNoneACKed2 = 0;
+    pSkt->retxTmo = pSkt->retxTime = 0;
     pSkt->MySEQ = 0;
 	pSkt->sHoleSize = -1;
 	pSkt->remoteWindow = 1;
@@ -4850,7 +4870,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
         pSkt->keepAliveCount = 0;
         if(!pSkt->Flags.bTimerEnabled)
         {
-            pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * SYS_TMR_TickCounterFrequencyGet())/1000;
+            pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * sysTickFreq)/1000;
         }
     }
 
@@ -4958,7 +4978,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                     // Set up keep-alive timer
                     if(pSkt->Flags.keepAlive)
                     {
-                        pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * SYS_TMR_TickCounterFrequencyGet())/1000;
+                        pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * sysTickFreq)/1000;
                     }
                     pSkt->Flags.bTimerEnabled = 0;
                 }
@@ -5154,12 +5174,11 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                 dwTemp -= pSkt->txEnd - pSkt->txStart;
             }
 
-            // Calcluate how many bytes were ACKed with this packet
+            // Calculate how many bytes were ACKed with this packet
             dwTemp = localAckNumber - dwTemp;
             if(((int32_t)(dwTemp) > 0) && (dwTemp <= pSkt->txEnd - pSkt->txStart))
-            {
-                pSkt->flags.bRXNoneACKed1 = 0;
-                pSkt->flags.bRXNoneACKed2 = 0;
+            {   // ACK-ed some data
+                _TCP_LoadRetxTmo(pSkt, true);
                 pSkt->Flags.bHalfFullFlush = false;
 
                 // Bytes ACKed, free up the TX FIFO space
@@ -5201,23 +5220,20 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                 // See if we have outstanding TX data that is waiting for an ACK
                 if(pSkt->txTail != pSkt->txUnackedTail)
                 {
-                    if(pSkt->flags.bRXNoneACKed1)
-                    {
-                        if(pSkt->flags.bRXNoneACKed2)
+                    if(pSkt->retxTime != 0 && (int32_t)(SYS_TMR_TickCountGet() - pSkt->retxTime) >= 0)
+                    {   // ack timeout
+                        _TCP_LoadRetxTmo(pSkt, false);
+                        // Set up to perform a fast retransmission
+                        // Roll back unacknowledged TX tail pointer to cause retransmit to occur
+                        pSkt->MySEQ -= (pSkt->txUnackedTail - pSkt->txTail);
+
+                        if(pSkt->txUnackedTail < pSkt->txTail)
                         {
-                            // Set up to perform a fast retransmission
-                            // Roll back unacknowledged TX tail pointer to cause retransmit to occur
-                            pSkt->MySEQ -= (pSkt->txUnackedTail - pSkt->txTail);
-                            if(pSkt->txUnackedTail < pSkt->txTail)
-                            {
-                                pSkt->MySEQ -= (pSkt->txEnd - pSkt->txStart);
-                            }
-                            pSkt->txUnackedTail = pSkt->txTail;
-                            pSkt->Flags.bTXASAPWithoutTimerReset = 1;
+                            pSkt->MySEQ -= (pSkt->txEnd - pSkt->txStart);
                         }
-                        pSkt->flags.bRXNoneACKed2 = 1;
+                        pSkt->txUnackedTail = pSkt->txTail;
+                        pSkt->Flags.bTXASAPWithoutTimerReset = 1;
                     }
-                    pSkt->flags.bRXNoneACKed1 = 1;
                 }
             }
 
@@ -5230,7 +5246,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                     // Convert retransmission timer to keep-alive timer
                     if(pSkt->Flags.keepAlive)
                     {
-                        pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * SYS_TMR_TickCounterFrequencyGet())/1000;
+                        pSkt->eventTime = SYS_TMR_TickCountGet() + (pSkt->keepAliveTmo * sysTickFreq)/1000;
                     }
                     pSkt->Flags.bTimerEnabled = 0;
                 }
@@ -5272,7 +5288,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                 {
                     // Reset our timer for forced closure if the remote node 
                     // doesn't send us a FIN in a timely manner.
-                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + (TCPIP_TCP_FIN_WAIT_2_TIMEOUT * SYS_TMR_TickCounterFrequencyGet())/1000;
+                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + (TCPIP_TCP_FIN_WAIT_2_TIMEOUT * sysTickFreq)/1000;
                     _TcpSocketSetState(pSkt, TCPIP_TCP_STATE_FIN_WAIT_2);
                 }
             }
@@ -5283,7 +5299,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                 {
 #if (TCPIP_TCP_MSL_TIMEOUT != 0)
                     _TcpSocketSetState(pSkt, TCPIP_TCP_STATE_TIME_WAIT);
-                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * SYS_TMR_TickCounterFrequencyGet());
+                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * sysTickFreq);
 #else
                     _TcpCloseSocket(pSkt, 0);
 #endif  // (TCPIP_TCP_MSL_TIMEOUT != 0)
@@ -5497,7 +5513,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
             if(!pSkt->Flags.bDelayedACKTimerEnabled)
             {
                 pSkt->Flags.bDelayedACKTimerEnabled = 1;
-                pSkt->delayedACKTime = SYS_TMR_TickCountGet() + (TCPIP_TCP_DELAYED_ACK_TIMEOUT * SYS_TMR_TickCounterFrequencyGet())/1000;
+                pSkt->delayedACKTime = SYS_TMR_TickCountGet() + (TCPIP_TCP_DELAYED_ACK_TIMEOUT * sysTickFreq)/1000;
 
             }
         }
@@ -5540,7 +5556,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                     // stack to automatically close sockets when the 
                     // remote node sends a FIN, a timer is started so 
                     // that the socket will eventually be closed automatically
-                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + (TCPIP_TCP_CLOSE_WAIT_TIMEOUT * SYS_TMR_TickCounterFrequencyGet())/1000;
+                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + (TCPIP_TCP_CLOSE_WAIT_TIMEOUT * sysTickFreq)/1000;
 #endif  // (TCPIP_TCP_CLOSE_WAIT_TIMEOUT != 0)
 
                     if(pSkt->flags.ackSent)
@@ -5555,7 +5571,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                     {
 #if (TCPIP_TCP_MSL_TIMEOUT != 0)
                         _TcpSocketSetState(pSkt, TCPIP_TCP_STATE_TIME_WAIT);
-                        pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * SYS_TMR_TickCounterFrequencyGet());
+                        pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * sysTickFreq);
 #else
                         _TcpSend(pSkt, ACK, 0);
                         _TcpCloseSocket(pSkt, 0);
@@ -5571,7 +5587,7 @@ static void _TcpHandleSeg(TCB_STUB* pSkt, TCP_HEADER* h, uint16_t tcpLen, TCPIP_
                 case TCPIP_TCP_STATE_FIN_WAIT_2:
 #if (TCPIP_TCP_MSL_TIMEOUT != 0)
                     _TcpSocketSetState(pSkt, TCPIP_TCP_STATE_TIME_WAIT);
-                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * SYS_TMR_TickCounterFrequencyGet());
+                    pSkt->closeWaitTime = SYS_TMR_TickCountGet() + ((TCPIP_TCP_MSL_TIMEOUT * 2) * sysTickFreq);
                     break;
 #else
                     _TcpSend(pSkt, ACK, 0);

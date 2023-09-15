@@ -18,30 +18,28 @@
     handsets.
 *******************************************************************************/
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2019-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 //DOM-IGNORE-END
 
 #ifndef __FTPC_H
@@ -270,7 +268,7 @@ typedef enum
     TCPIP_FTPC_CMD_PORT,
     TCPIP_FTPC_CMD_GET,
     TCPIP_FTPC_CMD_PUT,
-	TCPIP_FTPC_CMD_NLST,
+    TCPIP_FTPC_CMD_NLST,
     TCPIP_FTPC_CMD_LIST,
     TCPIP_FTPC_CMD_DELE,
     TCPIP_FTPC_CMD_CWD,
@@ -386,9 +384,9 @@ typedef bool (*TCPIP_FTPC_DATA_EVENT_CALLBACK_TYPE)(TCPIP_FTPC_CONN_HANDLE_TYPE 
 */
 typedef struct
 {
-    int         nMaxClients; 	// maximum number of simultaneous Client supported
-                                // This is for multi-client support	   
-    uint32_t    ftpcTmo; 		// timeout for reply on FTP Control and Data Connections,
+    int         nMaxClients;    // maximum number of simultaneous Client supported
+                                // This is for multi-client support    
+    uint32_t    ftpcTmo;        // timeout for reply on FTP Control and Data Connections,
                                 // in seconds; Should be adjusted according to the server responsivity
     uint16_t    data_tx_buffsize_dflt; //Data Socket Transmit Buffer default size
     uint16_t    data_rx_buffsize_dflt; //Data Socket Receive Buffer default size
@@ -412,7 +410,7 @@ typedef struct
 typedef struct
 {    
     IP_MULTI_ADDRESS*                   ftpcServerAddr;         // server address;
-    IP_ADDRESS_TYPE                     ftpcServerIpAddrType;   // connection type: IPv4/IPv6/ANY	
+    IP_ADDRESS_TYPE                     ftpcServerIpAddrType;   // connection type: IPv4/IPv6/ANY   
     uint16_t                            serverCtrlPort;         // port number of control socket
 }TCPIP_FTPC_CTRL_CONN_TYPE;
 
@@ -438,7 +436,7 @@ typedef struct
     TCPIP_FTPC_DATA_REP_TYPE            ftpcDataType;           // FTP Client data type representation
     TCPIP_FTPC_DATA_STRUCT_TYPE         ftpcDataStructure;      // FTP Client data structure   
     IP_MULTI_ADDRESS                    dataServerAddr;         // Address of Data Server
-    IP_ADDRESS_TYPE                     dataServerIpAddrType;   // connection type: IPv4/IPv6/ANY	
+    IP_ADDRESS_TYPE                     dataServerIpAddrType;   // connection type: IPv4/IPv6/ANY   
     uint16_t                            dataServerPort;         // Port Number at Data Server
     uint16_t                            ftpcDataTxBuffSize;     // Data Tx Buff Size; Data Socket 
                                                                 // Tx Buffer size will be updated
@@ -484,22 +482,22 @@ typedef struct
 
 */
 typedef struct
-{	
-    NET_PRES_SKT_HANDLE_T	ctrlSocket;	//control socket
-	NET_PRES_SKT_HANDLE_T   dataSocket;	//data socket
+{   
+    NET_PRES_SKT_HANDLE_T   ctrlSocket; //control socket
+    NET_PRES_SKT_HANDLE_T   dataSocket; //data socket
     
-    TCPIP_FTPC_CMD     		cmd;  	//currently executing or completed command      
-    TCPIP_FTPC_ERROR_TYPE   error;	//last reported error, if any
+    TCPIP_FTPC_CMD          cmd;    //currently executing or completed command      
+    TCPIP_FTPC_ERROR_TYPE   error;  //last reported error, if any
     
-    uint32_t   	dataRxLen;  //Data Socket receive length
-    uint32_t    dataTxLen;  //Data Socket transmit length	
-	uint16_t    ctrlRxLen;	//Control Socket receive length
-	uint16_t    ctrlTxLen;  //Control Socket transmit length    
+    uint32_t    dataRxLen;  //Data Socket receive length
+    uint32_t    dataTxLen;  //Data Socket transmit length   
+    uint16_t    ctrlRxLen;  //Control Socket receive length
+    uint16_t    ctrlTxLen;  //Control Socket transmit length    
     
-    bool 	busy;   		//client busy/ready
-	bool	isConnected;	//client control socket connected to server
-	bool	isLoggedIn;		//client logged in to server
-	
+    bool    busy;           //client busy/ready
+    bool    isConnected;    //client control socket connected to server
+    bool    isLoggedIn;     //client logged in to server
+    
 }TCPIP_FTPC_STATUS_TYPE;
 
 
@@ -536,7 +534,7 @@ typedef struct
     an error code otherwise
 
   Remarks:
-	None
+    None
 */
 TCPIP_FTPC_CONN_HANDLE_TYPE TCPIP_FTPC_Connect(TCPIP_FTPC_CTRL_CONN_TYPE *pftpcConn, 
         TCPIP_FTPC_CTRL_EVENT_CALLBACK_TYPE ctrlCallback, TCPIP_FTPC_RETURN_TYPE* pResult);
@@ -560,7 +558,7 @@ TCPIP_FTPC_CONN_HANDLE_TYPE TCPIP_FTPC_Connect(TCPIP_FTPC_CTRL_CONN_TYPE *pftpcC
  
   Returns:    
     TCPIP_FTPC_RET_OK   - if successfully disconnected control socket 
-	TCPIP_FTPC_RET_BUSY - could not execute the function due to busy state
+    TCPIP_FTPC_RET_BUSY - could not execute the function due to busy state
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
 
@@ -587,18 +585,18 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Disconnect (TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHa
 
   Parameters:
     ftpcHandle      - handle identifying the control connection
-	username        - username for FTP server		
-	password        - password for FTP server	
-	account         - account for FTP server	
+    username        - username for FTP server       
+    password        - password for FTP server   
+    account         - account for FTP server    
  
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled login process
-	TCPIP_FTPC_RET_BUSY   - could not schedule login process as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule login process as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Login(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -620,15 +618,15 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Login(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle,
 
   Parameters:
     ftpcHandle      - handle identifying the control connection
-	
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Get_WorkingDir (TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle);
@@ -650,16 +648,16 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Get_WorkingDir (TCPIP_FTPC_CONN_HANDLE_TYPE ft
 
   Parameters:
     ftpcHandle      - handle identifying the control connection
-	dirname         - pointer to string for directory name
-	
+    dirname         - pointer to string for directory name
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_MakeDir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -682,16 +680,16 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_MakeDir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle
 
   Parameters:
     ftpcHandle      - handle identifying the control connection
-	pathname        - pointer to string for new directory path
-	
+    pathname        - pointer to string for new directory path
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Change_Dir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -713,15 +711,15 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Change_Dir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHan
 
   Parameters:
     ftpcHandle      - handle identifying the control connection
-	
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_ChangeToParentDir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle);
@@ -741,16 +739,16 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_ChangeToParentDir(TCPIP_FTPC_CONN_HANDLE_TYPE 
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle 	- handle identifying the control connection
-	
+    ftpcHandle  - handle identifying the control connection
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Logout(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle);
@@ -771,17 +769,17 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_Logout(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle)
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	pathname        - pointer to directory name to be removed
-	
+    ftpcHandle      - handle identifying the control connection 
+    pathname        - pointer to directory name to be removed
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_RemoveDir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -803,17 +801,17 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_RemoveDir(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHand
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	pathname        - pointer to file path name to be removed
-	
+    ftpcHandle      - handle identifying the control connection 
+    pathname        - pointer to file path name to be removed
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_DeleteFile(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -837,19 +835,19 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_DeleteFile(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHan
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	pftpcDataConn 	- pointer to data connection parameters
-	pfileOptions    - pointer to file options
+    ftpcHandle      - handle identifying the control connection 
+    pftpcDataConn   - pointer to data connection parameters
+    pfileOptions    - pointer to file options
     dataCallback    - callback function during Data Socket Event
  
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_GetFile(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -873,19 +871,19 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_GetFile(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle 		- handle identifying the control connection	
-	pftpcDataConn 	- pointer to data connection parameters
-	pfileOptions    - pointer to file options
+    ftpcHandle      - handle identifying the control connection 
+    pftpcDataConn   - pointer to data connection parameters
+    pfileOptions    - pointer to file options
     dataCallback    - callback function during Data Socket Event
-	
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_PutFile(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -909,19 +907,19 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_PutFile(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle 		- handle identifying the control connection	
-	pftpcDataConn 	- pointer to data connection parameters
-	pfileOptions    - pointer to file options
+    ftpcHandle      - handle identifying the control connection 
+    pftpcDataConn   - pointer to data connection parameters
+    pfileOptions    - pointer to file options
     dataCallback    - callback function during Data Socket Event
-	
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_NameList(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle,
@@ -945,19 +943,19 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_NameList(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandl
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle 		- handle identifying the control connection	
-	pftpcDataConn 	- pointer to data connection parameters
-	pfileOptions    - pointer to file options
+    ftpcHandle      - handle identifying the control connection 
+    pftpcDataConn   - pointer to data connection parameters
+    pfileOptions    - pointer to file options
     dataCallback    - callback function during Data Socket Event
-	
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_List(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle,
@@ -979,14 +977,14 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_List(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle,
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle - handle identifying the control connection	
+    ftpcHandle - handle identifying the control connection  
     ftpcStatus - pointer to FTP Client status information for returning the status
-	
+    
   Returns:
     None
 
   Remarks:
-	None
+    None
 */
 void TCPIP_FTPC_Get_Status(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, TCPIP_FTPC_STATUS_TYPE * ftpcStatus);
 
@@ -1031,17 +1029,17 @@ void  TCPIP_FTPC_Task(void);
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	type            - Data representation type to be set
-	
+    ftpcHandle      - handle identifying the control connection 
+    type            - Data representation type to be set
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetType(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -1063,17 +1061,17 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetType(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	file_struct		- File Structure to be set
-	
+    ftpcHandle      - handle identifying the control connection 
+    file_struct     - File Structure to be set
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetStruct(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -1095,17 +1093,17 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetStruct(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHand
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	mode            - File Structure to be set
-	
+    ftpcHandle      - handle identifying the control connection 
+    mode            - File Structure to be set
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetMode(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -1126,17 +1124,17 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetMode(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-    pftpcDataConn 	- pointer to data connection parameters
-	
+    ftpcHandle      - handle identifying the control connection 
+    pftpcDataConn   - pointer to data connection parameters
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetActiveMode(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle, 
@@ -1157,16 +1155,16 @@ TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetActiveMode(TCPIP_FTPC_CONN_HANDLE_TYPE ftpc
     FTPC module should have been initialized, connected and logged-in
 
   Parameters:
-    ftpcHandle      - handle identifying the control connection	
-	
+    ftpcHandle      - handle identifying the control connection 
+    
   Returns:
     TCPIP_FTPC_RET_OK   - if successfully scheduled function
-	TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
+    TCPIP_FTPC_RET_BUSY   - could not schedule function as FTP Client is busy
     TCPIP_FTPC_RET_NOT_CONNECT  - Not connected to FTP server
     TCPIP_FTPC_RET_NOT_LOGIN    - Connected, but not Logged in
  
   Remarks:
-	This function will execute after the completion of previous FTPC function; otherwise
+    This function will execute after the completion of previous FTPC function; otherwise
     it will return TCPIP_FTPC_RET_BUSY
 */
 TCPIP_FTPC_RETURN_TYPE TCPIP_FTPC_SetPassiveMode(TCPIP_FTPC_CONN_HANDLE_TYPE ftpcHandle); 

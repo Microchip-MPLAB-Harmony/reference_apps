@@ -18,30 +18,28 @@
   **************************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2013-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2013-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 //DOM-IGNORE-END
 
@@ -79,46 +77,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
-
-
-// *****************************************************************************
-/* Ethernet PHY Driver Module Index Numbers
-
-  Summary:
-    Ethernet PHY driver index definitions.
-
-  Description:
-    These constants provide the Ethernet PHY driver index definitions.
-
-  Remarks:
-    These constants should be used in place of hard-coded numeric literals.
-
-    These values should be passed into the DRV_ETHPHY_Initialize and
-    DRV_ETHPHY_Open routines to identify the driver instance in use.
-*/
-
-#define DRV_ETHPHY_INDEX_0         0
-#define DRV_ETHPHY_INDEX_1         1
-
-// *****************************************************************************
-/* Ethernet PHY Driver Module Index Count
-
-  Summary:
-    Number of valid Ethernet PHY driver indices.
-
-  Description:
-    This constant identifies the number of valid Ethernet PHY driver indices.
-
-  Remarks:
-    This constant should be used in place of hard-coded numeric literals.
-
-    This value is derived from part-specific header files defined as part of the
-    peripheral libraries.
-*/
-
-#define DRV_ETHPHY_INDEX_COUNT     1
-
-
 
 // *****************************************************************************
 /* Ethernet PHY Driver Operation Result
@@ -209,21 +167,23 @@ typedef enum
 {
     /*  RMII data interface in configuration fuses. */
     DRV_ETHPHY_CFG_RMII        /*DOM-IGNORE-BEGIN*/ = 0x01 /*DOM-IGNORE-END*/ ,
-
-     /*  MII data interface in configuration fuses. */
-    DRV_ETHPHY_CFG_MII         /*DOM-IGNORE-BEGIN*/ = 0x00 /*DOM-IGNORE-END*/ ,
-
+    /*  MII data interface in configuration fuses. */
+    DRV_ETHPHY_CFG_MII         /*DOM-IGNORE-BEGIN*/ = 0x02 /*DOM-IGNORE-END*/ ,
+    /*  GMII data interface in configuration fuses. */
+    DRV_ETHPHY_CFG_RGMII       /*DOM-IGNORE-BEGIN*/ = 0x04 /*DOM-IGNORE-END*/ ,
+    /*  GMII data interface in configuration fuses. */
+    DRV_ETHPHY_CFG_GMII        /*DOM-IGNORE-BEGIN*/ = 0x08 /*DOM-IGNORE-END*/ ,
     /*  Configuration fuses is ALT */
-    DRV_ETHPHY_CFG_ALTERNATE   /*DOM-IGNORE-BEGIN*/ = 0x02 /*DOM-IGNORE-END*/ ,
+    DRV_ETHPHY_CFG_ALTERNATE   /*DOM-IGNORE-BEGIN*/ = 0x10 /*DOM-IGNORE-END*/ ,
 
     /*  Configuration fuses is DEFAULT */
-    DRV_ETHPHY_CFG_DEFAULT     /*DOM-IGNORE-BEGIN*/ = 0x00 /*DOM-IGNORE-END*/ ,
+    DRV_ETHPHY_CFG_DEFAULT     /*DOM-IGNORE-BEGIN*/ = 0x20 /*DOM-IGNORE-END*/ ,
 
     /*  Use the fuses configuration to detect if you are RMII/MII and ALT/DEFAULT configuration */
     /*  NOTE: - this option does not check the consistency btw the software call and the way the */
     /*          fuses are configured. If just assumes that the fuses are properly configured. */
     /*        - option is valid for DRV_ETHPHY_Setup() call only! */
-    DRV_ETHPHY_CFG_AUTO        /*DOM-IGNORE-BEGIN*/ = 0x10 /*DOM-IGNORE-END*/
+    DRV_ETHPHY_CFG_AUTO        /*DOM-IGNORE-BEGIN*/ = 0x40 /*DOM-IGNORE-END*/
 
 } DRV_ETHPHY_CONFIG_FLAGS;
 
@@ -553,7 +513,7 @@ typedef DRV_ETHPHY_RESULT (* DRV_ETHPHY_VENDOR_DETECT) ( const struct DRV_ETHPHY
 
 // *****************************************************************************
 /* Pointer to Function:
-    typedef void (* DRV_ETHPHY_RESET_FUNCTION) ( const struct DRV_ETHPHY_OBJECT_BASE_TYPE* pBaseObj);
+    typedef void (* DRV_ETHPHY_RESET_FUNCTION) (const struct DRV_ETHPHY_OBJECT_BASE_TYPE*, DRV_HANDLE handle);
 
   Summary:
     Pointer to a function to perform an additional PHY reset
@@ -570,7 +530,7 @@ typedef DRV_ETHPHY_RESULT (* DRV_ETHPHY_VENDOR_DETECT) ( const struct DRV_ETHPHY
   Parameters:
     - pBaseObj- pointer to the PHY Base object that calls this function as a result of 
       performing its initialization procedure.
-
+	- handle  - Client's driver handle (returned from DRV_ETHPHY_Open)
 
   Returns:
     None
@@ -586,7 +546,7 @@ typedef DRV_ETHPHY_RESULT (* DRV_ETHPHY_VENDOR_DETECT) ( const struct DRV_ETHPHY
     It is meant just for short I/O operations, not for lengthy processing.
 */
 
-typedef void (* DRV_ETHPHY_RESET_FUNCTION) ( const struct DRV_ETHPHY_OBJECT_BASE_TYPE* pBaseObj);
+typedef void (* DRV_ETHPHY_RESET_FUNCTION) (const struct DRV_ETHPHY_OBJECT_BASE_TYPE*, DRV_HANDLE handle);
 
 
 // *****************************************************************************
@@ -626,6 +586,22 @@ typedef struct
      * see the DRV_ETHPHY_VENDOR_DETECT definition */
     DRV_ETHPHY_VENDOR_DETECT            phyDetect;
 
+    /* Detect mask to be used by the detection procedure.
+     * This mask represents read/write bits in the BMCON that can be manipulated
+     * to detect that the SMI communication with the PHY works correctly.
+     * If 0, then a default mask of BMCON_LOOPBACK_MASK | BMCON_DUPLEX_MASK BMCON will be used.
+     * Drivers that need special processing can use their own detection mask for the default detection procedure
+     * or use a specific detect procedure */
+    uint16_t                            bmconDetectMask;
+
+    /* Extra capability mask to be used by the PHY setup procedure.
+     * Some PHYs need to be able to use extra bits set if their
+     * BMSTAT register doesn't advertise the standard capabilities
+     * (for example there is no 100Base-T1 FD support in the BMSTAT for LAN8770).
+     * By default this value should be 0.
+     * The BMSTAT OR-ed with this mask will be used for checking the PHY capabilities.
+     * Note: this should be limited to 10/100 FD/HD capabilities mask! */
+    uint16_t                            bmstatCpblMask;
 }DRV_ETHPHY_OBJECT;
 
 
@@ -659,7 +635,29 @@ typedef enum
 
 } DRV_ETHPHY_CLIENT_STATUS;
 
+// *****************************************************************************
+/* Ethernet PHY Device Driver Time-Out Initialization Data
 
+  Summary:
+    Contains all the data necessary to initialize the PHY Device Driver Time-Outs.
+
+  Description:
+    This data structure contains all the data necessary to initialize the Ethernet PHY
+    device.
+
+  Remarks:
+    A pointer to a structure of this format containing the desired
+    initialization data must be passed into the DRV_ETHPHY_Initialize routine.
+*/
+typedef struct _DRV_ETHPHY_TMO
+{
+    //ETH PHY Reset Clear Time-out (mSec)
+    uint32_t                    resetTmo;
+    //ETH PHY Auto-Negotiation Done Time-out (mSec)
+    uint32_t                    aNegDoneTmo;
+    //ETH PHY Auto-Negotiation Time-out (mSec)
+    uint32_t                    aNegInitTmo;
+}DRV_ETHPHY_TMO;
 // *****************************************************************************
 /* Ethernet PHY Device Driver Initialization Data
 
@@ -708,6 +706,9 @@ typedef struct DRV_ETHPHY_INIT
     /* MIIM module index to be used */
     /* Not needed if the MIIM driver is not used */
     SYS_MODULE_INDEX            miimIndex; 
+            
+    /* PHY Initialization Time-outs */
+	DRV_ETHPHY_TMO *            ethphyTmo; 
 
 } DRV_ETHPHY_INIT;
 
@@ -847,11 +848,11 @@ typedef struct
     
     // Populate the Ethernet PHY initialization structure
     init.phyId  = ETHPHY_ID_2;
-    init.pPhyObject  = &DRV_ETHPHY_OBJECT_SMSC_LAN8720;
+    init.pPhyObject  = &DRV_ETHPHY_OBJECT_LAN8720;
     
     // Do something
     
-    objectHandle = DRV_ETHPHY_Initialize(DRV_ETHPHY_INDEX_0, (SYS_MODULE_INIT*)&init);
+    objectHandle = DRV_ETHPHY_Initialize(0, (SYS_MODULE_INIT*)&init);
     if (SYS_MODULE_OBJ_INVALID == objectHandle)
     {
         // Handle error
@@ -906,7 +907,7 @@ SYS_MODULE_OBJ DRV_ETHPHY_Initialize ( const SYS_MODULE_INDEX        index,
 
     // Populate the Ethernet PHY initialization structure
     init.phyId  = ETHPHY_ID_2;
-    init.pPhyObject  = &DRV_ETHPHY_OBJECT_SMSC_LAN8720;
+    init.pPhyObject  = &DRV_ETHPHY_OBJECT_LAN8720;
 
     DRV_ETHPHY_Reinitialize(objectHandle, (SYS_MODULE_INIT*)&init);
 
@@ -1124,7 +1125,7 @@ void DRV_ETHPHY_Tasks( SYS_MODULE_OBJ object );
     <code>
     DRV_HANDLE  handle;
 
-    handle = DRV_ETHPHY_Open(DRV_ETHPHY_INDEX_0, 0);
+    handle = DRV_ETHPHY_Open(0, 0);
     if (DRV_HANDLE_INVALID == handle)
     {
         // Unable to open the driver
@@ -1747,10 +1748,10 @@ DRV_ETHPHY_RESULT DRV_ETHPHY_VendorDataGet( DRV_HANDLE handle, uint32_t* pVendor
 	<p><b>Implementation:</b> Dynamic</p>
 
   Description:
-    This function returns the current value of the vendor data.
+    This function sets the current value of the vendor data.
     Each DRV_ETHPHY client object maintains data that could be used
     for vendor specific operations.
-    This routine allows retrieving of the vendor specific data.
+    This routine allows setting of the vendor specific data.
 
   Precondition:
     - The DRV_ETHPHY_Initialize routine must have been called.
@@ -1759,8 +1760,8 @@ DRV_ETHPHY_RESULT DRV_ETHPHY_VendorDataGet( DRV_HANDLE handle, uint32_t* pVendor
     - DRV_ETHPHY_Setup must have been called to properly configure the PHY
 
   Parameters:
-    - handle  - Client's driver handle (returned from DRV_ETHPHY_Open)
-    - vendorData    - vendor specific data
+    - handle        - Client's driver handle (returned from DRV_ETHPHY_Open)
+    - vendorData    - vendor specific data to be set
 
   Returns:
     DRV_ETHPHY_RES_OK  - if the vendor data is stored in the client object
@@ -1948,6 +1949,47 @@ DRV_ETHPHY_RESULT DRV_ETHPHY_VendorSMIReadResultGet( DRV_HANDLE handle, uint16_t
 DRV_ETHPHY_RESULT DRV_ETHPHY_VendorSMIWriteStart( DRV_HANDLE handle, uint16_t rIx,  uint16_t wData, int phyAddress );
 
 // *****************************************************************************
+/* Function:
+    DRV_ETHPHY_RESULT DRV_ETHPHY_VendorSMIOperationIsComplete(DRV_HANDLE handle)
+
+  Summary:
+    Check the SMI Operation is complete
+	<p><b>Implementation:</b> Dynamic</p>
+
+  Description:
+    This function will return the status of SMI transfer.
+
+  Precondition:
+    - The DRV_ETHPHY_Initialize routine must have been called.
+    - DRV_ETHPHY_Open must have been called to obtain a valid device
+      handle.
+    - DRV_ETHPHY_Setup is in progress and configures the PHY
+    - The vendor implementation of the DRV_EXTPHY_MIIConfigure/DRV_EXTPHY_MDIXConfigure
+      is running and a SMI transfer is needed
+
+  Parameters:
+    - handle  - driver handle as passed by the DRV_EXTPHY_MIIConfigure/DRV_EXTPHY_MDIXConfigure call
+
+  Returns:
+
+    DRV_ETHPHY_RES_OK      -   transaction complete.   
+
+    DRV_ETHPHY_RES_PENDING  - if the vendor transaction is still ongoing
+                              The call needs to be retried.
+    DRV_ETHPHY_RES_OPERATION_ERR - error happened during write transaction
+
+
+  Example:
+    <code>
+    </code>
+
+  Remarks:
+    None
+*/
+
+DRV_ETHPHY_RESULT DRV_ETHPHY_VendorSMIOperationIsComplete(DRV_HANDLE handle);
+
+// *****************************************************************************
 /* Ethernet PHY Driver Base Object
 
   Summary:
@@ -2014,6 +2056,9 @@ typedef struct DRV_ETHPHY_OBJECT_BASE_TYPE
     DRV_ETHPHY_RESULT        (*DRV_ETHPHY_VendorSMIReadResultGet)( DRV_HANDLE handle, uint16_t* pSmiRes);
 
     DRV_ETHPHY_RESULT        (*DRV_ETHPHY_VendorSMIWriteStart)( DRV_HANDLE handle, uint16_t rIx,  uint16_t wData, int phyAddress );
+    
+    DRV_ETHPHY_RESULT        (*DRV_ETHPHY_VendorSMIOperationIsComplete)( DRV_HANDLE handle);
+    
 
 }DRV_ETHPHY_OBJECT_BASE;
 
@@ -2025,8 +2070,9 @@ typedef struct DRV_ETHPHY_OBJECT_BASE_TYPE
 
 */
 extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_Default;
-extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_smsc9303;
+extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_lan9303;
 extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_ksz8863;
+extern const DRV_ETHPHY_OBJECT_BASE  DRV_ETHPHY_OBJECT_BASE_lan9354;
 
 
 // *****************************************************************************
@@ -2042,13 +2088,17 @@ extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN8720;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN8740;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN9303;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ8061;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ9031;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ9131;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ8081;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ8091;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ8041;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_KSZ8863;
 extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN867x;
-
-
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN8742A;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_VSC8540;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN9354;
+extern const DRV_ETHPHY_OBJECT  DRV_ETHPHY_OBJECT_LAN8770;
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

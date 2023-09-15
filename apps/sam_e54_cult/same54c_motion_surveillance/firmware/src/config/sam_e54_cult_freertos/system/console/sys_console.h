@@ -73,30 +73,95 @@
 // *****************************************************************************
 // *****************************************************************************
 
+// *****************************************************************************
+/*  Console Standard File Numbers
+
+  Summary:
+    Standard Input/Output/Error File Number Macros
+
+  Description:
+    These macros provide the Standard Input, Output and Error File numbers
+    aligned to unistd.h
+
+  Remarks:
+    None.
+*/
 /* These are in unistd.h */
 #define STDIN_FILENO     0
 #define STDOUT_FILENO    1
 #define STDERR_FILENO    2
 
+// *****************************************************************************
+/*  Console Default Instance Constant
+
+  Summary:
+    System Console defualt instance
+
+  Description:
+    This macro provides the default instance to be used by SYS_CONSOLE_PRINT and
+    SYS_CONSOLE_MESSAGE to print the messages
+
+  Remarks:
+    None.
+*/
 #define SYS_CONSOLE_DEFAULT_INSTANCE    0
 
-/* The SYS_CONSOLE_PRINT and SYS_CONSOLE_MESSAGE macros print on the default console instance 0 */
+// *****************************************************************************
+/*  Console Print Constant
+
+  Summary:
+    Prints formatted message on the default console instance
+
+  Description:
+    This macro calls SYS_Console_Print() to print formatted message on the default
+    console instance set by SYS_CONSOLE_DEFAULT_INSTANCE
+
+  Remarks:
+    None.
+*/
+
+/* MISRA C-2012 Rule 20.5 deviated:2 Deviation record ID -  H3_MISRAC_2012_R_20_5_DR_1 */
 #ifdef SYS_CONSOLE_PRINT
     #undef SYS_CONSOLE_PRINT
-	// Print formatted message on the default console instance
     #define SYS_CONSOLE_PRINT(fmt, ...)                 SYS_CONSOLE_Print(SYS_CONSOLE_DEFAULT_INSTANCE, fmt, ##__VA_ARGS__)
 #else
     #define SYS_CONSOLE_PRINT(fmt, ...)                 SYS_CONSOLE_Print(SYS_CONSOLE_DEFAULT_INSTANCE, fmt, ##__VA_ARGS__)
 #endif
 
+// *****************************************************************************
+/*  Console Message Constant
+
+  Summary:
+    Prints message on the default console instance
+
+  Description:
+    This macro calls SYS_Console_Message() to print message on the default
+    console instance set by SYS_CONSOLE_DEFAULT_INSTANCE
+
+  Remarks:
+    None.
+*/
 #ifdef SYS_CONSOLE_MESSAGE
     #undef SYS_CONSOLE_MESSAGE
-	// Print message on the default console instance
     #define SYS_CONSOLE_MESSAGE(message)                SYS_CONSOLE_Message(SYS_CONSOLE_DEFAULT_INSTANCE, message)
 #else
     #define SYS_CONSOLE_MESSAGE(message)                SYS_CONSOLE_Message(SYS_CONSOLE_DEFAULT_INSTANCE, message)
 #endif
 
+/* MISRAC 2012 deviation block end */
+
+// *****************************************************************************
+/*  Console Status enumeration
+
+  Summary:
+    System Console Status.
+
+  Description:
+    This enumeration lists the current status/state of a system console module
+
+  Remarks:
+    None.
+*/
 typedef enum
 {
     SYS_CONSOLE_STATUS_NOT_CONFIGURED,
@@ -226,13 +291,13 @@ typedef struct
 
     SYS_CONSOLE_INIT_FPTR init;
 
-    SYS_CONSOLE_READ_FPTR read;
+    SYS_CONSOLE_READ_FPTR read_t;
 
     SYS_CONSOLE_READ_COUNT_GET_FPTR readCountGet;
 
     SYS_CONSOLE_READ_FREE_BUFF_COUNT_GET_FPTR readFreeBufferCountGet;
 
-    SYS_CONSOLE_WRITE_FPTR write;
+    SYS_CONSOLE_WRITE_FPTR write_t;
 
     SYS_CONSOLE_WRITE_COUNT_GET_FPTR writeCountGet;
 
@@ -304,6 +369,9 @@ typedef struct
 // *****************************************************************************
 // *****************************************************************************
 
+
+extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
+
 // *****************************************************************************
 /* Function:
     SYS_MODULE_OBJ SYS_CONSOLE_Initialize(
@@ -339,7 +407,6 @@ typedef struct
     <code>
     SYS_MODULE_OBJ  objectHandle;
 
-    // Populate the console initialization structure
     const SYS_CONSOLE_INIT sysConsole0Init =
     {
         .deviceInitData = (void*)&sysConsole0UARTInitData,
@@ -350,7 +417,7 @@ typedef struct
     objectHandle = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
     if (objectHandle == SYS_MODULE_OBJ_INVALID)
     {
-        // Handle error
+
     }
     </code>
 
@@ -385,13 +452,12 @@ SYS_MODULE_OBJ SYS_CONSOLE_Initialize(
 
   Example:
     <code>
-    SYS_MODULE_OBJ object;     // Returned from SYS_CONSOLE_Initialize
+    SYS_MODULE_OBJ object;
 
     while (true)
     {
         SYS_CONSOLE_Tasks (object);
 
-        // Do other tasks
     }
     </code>
 
@@ -421,31 +487,30 @@ void SYS_CONSOLE_Tasks ( SYS_MODULE_OBJ object );
     object    - SYS CONSOLE object handle, returned from SYS_CONSOLE_Initialize
 
   Returns:
-    * SYS_STATUS_READY          - Indicates that the driver is initialized and is
+    SYS_STATUS_READY          - Indicates that the driver is initialized and is
                                   ready to accept new requests from the clients.
 
-    * SYS_STATUS_BUSY           - Indicates that the driver is busy with a
+    SYS_STATUS_BUSY           - Indicates that the driver is busy with a
                                   previous requests from the clients. However,
                                   depending on the configured queue size for
                                   transmit and receive, it may be able to queue
                                   a new request.
 
-    * SYS_STATUS_ERROR          - Indicates that the driver is in an error state.
+    SYS_STATUS_ERROR          - Indicates that the driver is in an error state.
                                   Any value less than SYS_STATUS_ERROR is
                                   also an error state.
 
-    * SYS_STATUS_UNINITIALIZED  - Indicates that the driver is not initialized.
+    SYS_STATUS_UNINITIALIZED  - Indicates that the driver is not initialized.
 
   Example:
     <code>
-    // Given "object" returned from SYS_CONSOLE_Initialize
 
     SYS_STATUS          consStatus;
 
     consStatus = SYS_CONSOLE_Status (object);
     if (consStatus == SYS_STATUS_READY)
     {
-        // Console is initialized and is ready to accept client requests.
+
     }
     </code>
 
@@ -480,12 +545,10 @@ SYS_STATUS SYS_CONSOLE_Status( SYS_MODULE_OBJ object );
     <code>
     SYS_CONSOLE_HANDLE myConsoleHandle;
     myConsoleHandle = SYS_CONSOLE_HandleGet(SYS_CONSOLE_INDEX_0);
+
     if (myConsoleHandle != SYS_CONSOLE_HANDLE_INVALID)
     {
-        // Found a valid handle to the console instance
-
-        // Write some data over the USB console
-        SYS_CONSOLE_Write(myConsoleHandle, data, 10);
+       SYS_CONSOLE_Write(myConsoleHandle, data, 10);
     }
     </code>
 
@@ -519,7 +582,7 @@ SYS_CONSOLE_HANDLE SYS_CONSOLE_HandleGet( const SYS_MODULE_INDEX index);
     <code>
     SYS_CONSOLE_HANDLE myConsoleHandle;
     SYS_CONSOLE_DEVICE myConsoleDevType
-    // myConsoleHandle is assumed to be a valid console handle
+
     myConsoleDevType = SYS_CONSOLE_DeviceGet(myConsoleHandle);
     </code>
 
@@ -542,6 +605,16 @@ SYS_CONSOLE_DEVICE SYS_CONSOLE_DeviceGet( const SYS_CONSOLE_HANDLE handle);
   Description:
     This function reads the data from the console device.
 
+    If the data is not read out from the internal receive buffer by calling the
+    SYS_CONSOLE_Read API at regular intervals, there is a possibility of the receive
+    buffer becoming full. As a result, the new data may be lost. Hence, the
+    application must call the SYS_CONSOLE_Read API at regular intervals to avoid
+    buffer overflow condition.
+
+    The SYS_CONSOLE_ReadCountGet() and the SYS_CONSOLE_ReadFreeBufferCountGet() APIs
+    may be used to know the number of unread bytes available in the receive buffer
+    and the amount of free space available in the receive buffer respectively.
+
   Preconditions:
     The SYS_CONSOLE_Initialize function should have been called before calling
     this function.
@@ -557,27 +630,19 @@ SYS_CONSOLE_DEVICE SYS_CONSOLE_DeviceGet( const SYS_CONSOLE_HANDLE handle);
 
   Example:
     <code>
-    ssize_t nr;     //indicates the actual number of bytes read
+    ssize_t nr;
     char myBuffer[MY_BUFFER_SIZE];
     SYS_CONSOLE_HANDLE myConsoleHandle;
 
-    // myConsoleHandle is assumed to be pointing to a valid console handle
     nr = SYS_CONSOLE_Read( myConsoleHandle, myBuffer, MY_BUFFER_SIZE );
     if (nr == -1)
     {
-        // Handle error
+
     }
     </code>
 
   Remarks:
-    If the data is not read out from the internal receive buffer by calling the
-    SYS_CONSOLE_Read API at regular intervals, there is a possibility of the receive
-    buffer becoming full. As a result, the new data may be lost. Hence, the
-    application must call the SYS_CONSOLE_Read API at regular intervals to avoid
-    buffer overflow condition. The SYS_CONSOLE_ReadCountGet() and the
-    SYS_CONSOLE_ReadFreeBufferCountGet() APIs may be used to know the number of
-    unread bytes available in the receive buffer and the amount of free space
-    available in the receive buffer respectively.
+    None
 */
 
 ssize_t SYS_CONSOLE_Read( const SYS_CONSOLE_HANDLE handle, void* buf, size_t count );
@@ -617,15 +682,14 @@ ssize_t SYS_CONSOLE_Read( const SYS_CONSOLE_HANDLE handle, void* buf, size_t cou
     char myBuffer[] = "message";
     SYS_CONSOLE_HANDLE myConsoleHandle;
 
-    // myConsoleHandle is assumed to be a valid console handle
     nr = SYS_CONSOLE_Write( myConsoleHandle, myBuffer, strlen(myBuffer) );
     if (nr == -1)
     {
-        // Handle error
+
     }
     if (nr != strlen(myBuffer))
     {
-        // Try send the remaining data after some time.
+
     }
     </code>
 
@@ -663,12 +727,10 @@ ssize_t SYS_CONSOLE_Write( const SYS_CONSOLE_HANDLE handle, const void* buf, siz
     SYS_CONSOLE_HANDLE myConsoleHandle;
     bool status;
 
-    // myConsoleHandle is assumed to be a valid console handle
-
     status = SYS_CONSOLE_Flush(myConsoleHandle);
     if (status == false)
     {
-        // Handle error
+
     }
     </code>
 
@@ -706,11 +768,10 @@ bool SYS_CONSOLE_Flush(const SYS_CONSOLE_HANDLE handle);
     ssize_t nr;
     SYS_CONSOLE_HANDLE myConsoleHandle;
 
-    // myConsoleHandle is assumed to be a valid console handle
     nr = SYS_CONSOLE_ReadFreeBufferCountGet(myConsoleHandle);
     if (nr == -1)
     {
-        // Handle error
+
     }
     </code>
 
@@ -748,13 +809,12 @@ ssize_t SYS_CONSOLE_ReadFreeBufferCountGet(const SYS_CONSOLE_HANDLE handle);
     char myBuffer[100];
     SYS_CONSOLE_HANDLE myConsoleHandle;
 
-    // Get the number of bytes available in the receive buffer.
     nUnreadBytes = SYS_CONSOLE_ReadCountGet(myConsoleHandle);
+
     if (nUnreadBytes == -1)
     {
-        // Handle error
+
     }
-    // Read the available data into the application buffer.
     SYS_CONSOLE_Read( myConsoleHandle, 0, myBuffer, nUnreadBytes );
     </code>
 
@@ -794,11 +854,10 @@ ssize_t SYS_CONSOLE_ReadCountGet(const SYS_CONSOLE_HANDLE handle);
     char myBuffer[100];
     SYS_CONSOLE_HANDLE myConsoleHandle;
 
-    // Get the number of bytes of free space available in the transmit buffer.
     nFreeSpace = SYS_CONSOLE_WriteFreeBufferCountGet(myConsoleHandle);
+
     if ((nFreeSpace >= sizeof(myBuffer)) && (nFreeSpace!= -1))
     {
-        // Write the application buffer
         SYS_CONSOLE_Write( myConsoleHandle, myBuffer, sizeof(myBuffer) );
     }
     </code>
@@ -836,13 +895,14 @@ ssize_t SYS_CONSOLE_WriteFreeBufferCountGet(const SYS_CONSOLE_HANDLE handle);
     SYS_CONSOLE_HANDLE myConsoleHandle;
 
     nTxBytesPending = SYS_CONSOLE_WriteCountGet(myConsoleHandle);
+
     if (nTxBytesPending == -1)
     {
-        // API reported error
+
     }
     if (nTxBytesPending == 0)
     {
-        // All the data has been written to the console
+
     }
     </code>
 
@@ -867,7 +927,7 @@ ssize_t SYS_CONSOLE_WriteCountGet(const SYS_CONSOLE_HANDLE handle);
     SYS_CONSOLE_Initialize must have returned a valid object handle.
 
   Parameters:
-    handle			- Handle to a console instance
+    handle          - Handle to a console instance
     format          - Pointer to a buffer containing the format string for
                       the message to be displayed.
     ...             - Zero or more optional parameters to be formated as
@@ -878,15 +938,14 @@ ssize_t SYS_CONSOLE_WriteCountGet(const SYS_CONSOLE_HANDLE handle);
 
   Example:
     <code>
-	SYS_CONSOLE_HANDLE myConsoleHandle;
+    SYS_CONSOLE_HANDLE myConsoleHandle;
 
-	myConsoleHandle = SYS_CONSOLE_HandleGet(SYS_CONSOLE_INDEX_0);
+    myConsoleHandle = SYS_CONSOLE_HandleGet(SYS_CONSOLE_INDEX_0);
 
-	uint8_t num_bytes_to_enter = 10;
+    uint8_t num_bytes_to_enter = 10;
 
-	if (myConsoleHandle != SYS_CONSOLE_HANDLE_INVALID)
+    if (myConsoleHandle != SYS_CONSOLE_HANDLE_INVALID)
     {
-        // Found a valid handle to the console instance
         SYS_CONSOLE_Print(myConsoleHandle, "Enter %d characters", num_bytes_to_enter);
     }
     </code>
@@ -912,8 +971,8 @@ void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
     SYS_CONSOLE_Initialize must have returned a valid object handle.
 
   Parameters:
-	handle			- Handle to a console instance
-    message 		- Pointer to a message string to be displayed.
+    handle          - Handle to a console instance
+    message         - Pointer to a message string to be displayed.
 
   Returns:
     None.
@@ -921,14 +980,14 @@ void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
   Example:
     <code>
 
-	SYS_CONSOLE_HANDLE myConsoleHandle;
+    SYS_CONSOLE_HANDLE myConsoleHandle;
 
-	myConsoleHandle = SYS_CONSOLE_HandleGet(SYS_CONSOLE_INDEX_0);
+    myConsoleHandle = SYS_CONSOLE_HandleGet(SYS_CONSOLE_INDEX_0);
 
-	if (myConsoleHandle != SYS_CONSOLE_HANDLE_INVALID)
-	{
-		SYS_CONSOLE_Message(myConsoleHandle, "Printing using SYS_Message");
-	}
+    if (myConsoleHandle != SYS_CONSOLE_HANDLE_INVALID)
+    {
+        SYS_CONSOLE_Message(myConsoleHandle, "Printing using SYS_Message");
+    }
     </code>
 
   Remarks:

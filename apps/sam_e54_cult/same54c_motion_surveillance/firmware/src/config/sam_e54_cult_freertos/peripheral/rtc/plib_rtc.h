@@ -105,17 +105,18 @@ typedef enum
     BACKUP_REGISTER_6 = 6U,
     BACKUP_REGISTER_7 = 7U
 } BACKUP_REGISTER;
-typedef enum
-{
-    TAMPER_CHANNEL_0 = 0U,
-    TAMPER_CHANNEL_1 = 1U,
-    TAMPER_CHANNEL_2 = 2U,
-    TAMPER_CHANNEL_3 = 3U,
-    TAMPER_CHANNEL_4 = 4U,
-} TAMPER_CHANNEL;
+ #define   TAMPER_CHANNEL_0  (0U)
+ #define   TAMPER_CHANNEL_1  (1U)
+ #define   TAMPER_CHANNEL_2  (2U)
+ #define   TAMPER_CHANNEL_3  (3U)
+ #define   TAMPER_CHANNEL_4  (4U)
+typedef uint32_t TAMPER_CHANNEL;
 
 
 void RTC_Initialize(void);
+bool RTC_PeriodicIntervalHasCompleted ( RTC_PERIODIC_INT_MASK period );
+void RTC_RTCCClockSyncEnable ( void );
+void RTC_RTCCClockSyncDisable ( void );
 bool RTC_RTCCTimeSet (struct tm * initialTime );
 void RTC_RTCCTimeGet ( struct tm * currentTime );
 void RTC_BackupRegisterSet( BACKUP_REGISTER reg, uint32_t value );

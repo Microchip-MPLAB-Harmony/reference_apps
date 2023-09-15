@@ -1,4 +1,4 @@
- /*******************************************************************************
+/*******************************************************************************
   Microchip TCP/IP Stack Include File
 
   Company:
@@ -18,30 +18,28 @@
 
 *******************************************************************************/
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2016-2020 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2016-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 //DOM-IGNORE-END
 
@@ -150,7 +148,7 @@ typedef union
     This type describes the supported IP address types.
 
   Remarks:
-    None.
+    8 bit value only.
 */
 
 typedef enum
@@ -298,7 +296,7 @@ typedef const void*   IPV6_ADDR_HANDLE;
     by the TCP/IP stack.
 
   Remarks:
-    None.
+    16 bit values only.
 */
 
 typedef enum
@@ -389,6 +387,7 @@ typedef enum
 #define TCPIP_STACK_IF_NAME_MRF24WN         "MRF24WN"
 #define TCPIP_STACK_IF_NAME_WINC	        "WINC"
 #define TCPIP_STACK_IF_NAME_WILC1000        "WILC1000"
+#define TCPIP_STACK_IF_NAME_G3ADP           "G3ADPMAC"
 
 /* alias for unknown interface */
 #define TCPIP_STACK_IF_NAME_ALIAS_UNK       "unk"
@@ -396,6 +395,10 @@ typedef enum
 #define TCPIP_STACK_IF_NAME_ALIAS_ETH       "eth"
 /* alias for Wi-Fi interface */
 #define TCPIP_STACK_IF_NAME_ALIAS_WLAN      "wlan"
+/* alias for PPP interface */
+#define TCPIP_STACK_IF_NAME_ALIAS_PPP       "ppp"
+/* alias for G3 ADP interface */
+#define TCPIP_STACK_IF_NAME_ALIAS_G3ADP     "g3adp"
 
 // *****************************************************************************
 /* Configuration Power Modes
@@ -462,6 +465,28 @@ typedef enum
 
     /* the network configuration contains an IPv6 static address and subnet prefix length */
     TCPIP_NETWORK_CONFIG_IPV6_ADDRESS         /*DOM-IGNORE-BEGIN*/ = 0x0100 /*DOM-IGNORE-END*/,   
+
+    /* G3-PLC IPv6 general interface flags */
+    /* the network will be part of a G3-PLC network */
+    TCPIP_NETWORK_CONFIG_IPV6_G3_NET          /*DOM-IGNORE-BEGIN*/ = 0x0200 /*DOM-IGNORE-END*/,   
+
+    /* The IPv6 will suppress the Duplicate Address Detection on this interface */
+    TCPIP_NETWORK_CONFIG_IPV6_NO_DAD          /*DOM-IGNORE-BEGIN*/ = 0x0400 /*DOM-IGNORE-END*/,   
+    
+    /* G3-PLC IPv6 router/coordinator interface flags */
+    /* the network will act as an IPv6 border router/coordinator, replying to solicitations */
+    TCPIP_NETWORK_CONFIG_IPV6_ROUTER          /*DOM-IGNORE-BEGIN*/ = 0x0800 /*DOM-IGNORE-END*/,   
+
+    /* when configured as an IPv6 router, sending advertisements is enabled  */
+    TCPIP_NETWORK_CONFIG_IPV6_ADV_ENABLED     /*DOM-IGNORE-BEGIN*/ = 0x1000 /*DOM-IGNORE-END*/,   
+
+    /* Suppress the RS (Router Solicitation) messages on this interface */
+    TCPIP_NETWORK_CONFIG_IPV6_NO_RS           /*DOM-IGNORE-BEGIN*/ = 0x2000 /*DOM-IGNORE-END*/,   
+    
+    /* G3-PLC IPv6 device interface flags */
+    /* Send RS messages to a router unicast address rather than multicast.
+      By default the 'all IPv6 routers' multicast address: 'ff02::02' is used */
+    TCPIP_NETWORK_CONFIG_IPV6_UNICAST_RS      /*DOM-IGNORE-BEGIN*/ = 0x4000 /*DOM-IGNORE-END*/,   
 
     /* add other configuration flags here */
 }TCPIP_NETWORK_CONFIG_FLAGS;

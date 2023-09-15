@@ -11,30 +11,28 @@
     -Reference: RFC 1305
 *******************************************************************************/
 
-/*****************************************************************************
- Copyright (C) 2012-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -139,25 +137,6 @@ static uint32_t TCPIP_SNTP_CurrTime(uint32_t* pMs);
 
 static void     TCPIP_SNTP_Event(TCPIP_SNTP_EVENT evType, const void* param);
 
-#if (TCPIP_SNTP_DEBUG_LEVEL != 0)
-static uint32_t _SntpSecond(void)
-{
-    static uint32_t sysFreq = 0;
-
-    if(sysFreq == 0)
-    {
-        sysFreq = SYS_TMR_SystemCountFrequencyGet();
-    }
-
-    if(sysFreq != 0)
-    {
-        return SYS_TMR_SystemCountGet() / sysFreq; 
-    }
-
-    return 0;
-}
-#endif
-
 #if ((TCPIP_SNTP_DEBUG_LEVEL & TCPIP_SNTP_DEBUG_MASK_BASIC) != 0)
 volatile int _SNTPStayAssertLoop = 0;
 static void _SNTPAssertCond(bool cond, const char* message, int lineNo)
@@ -205,7 +184,7 @@ static void _SNTP_DbgNewState(TCPIP_SNTP_STATE newState)
 {
     if(newState != oldState)
     {
-        uint32_t sntpSecond = _SntpSecond(); 
+        uint32_t sntpSecond = _TCPIP_SecCountGet(); 
         oldState = newState;
         if(newState >= 0 && newState < sizeof(_SNTP_DbgState_Tbl) / sizeof(*_SNTP_DbgState_Tbl))
         {
@@ -264,7 +243,7 @@ static void _SNTP_DbgNewError(TCPIP_SNTP_RESULT newError)
         tblEntries = sizeof(_SNTP_DbgResError_Tbl) / sizeof(*_SNTP_DbgResError_Tbl);
     }
 
-    uint32_t sntpSecond = _SntpSecond(); 
+    uint32_t sntpSecond = _TCPIP_SecCountGet(); 
     if(newError >= 0 && newError < tblEntries)
     {
         SYS_CONSOLE_PRINT("SNTP Error: %d - %s, time: %d\r\n", newError, pTbl[newError], sntpSecond);
@@ -281,7 +260,7 @@ static void _SNTP_DbgNewError(TCPIP_SNTP_RESULT newError)
 #if ((TCPIP_SNTP_DEBUG_LEVEL & TCPIP_SNTP_DEBUG_MASK_TIME_STAMP) != 0)
 static __inline__ void __attribute__((always_inline)) _SNTP_DbgNewTimeStamp(uint32_t tStamp)
 {
-    uint32_t sntpSecond = _SntpSecond(); 
+    uint32_t sntpSecond = _TCPIP_SecCountGet(); 
     SYS_CONSOLE_PRINT("SNTP new TStamp: %d, time: %d\r\n", tStamp, sntpSecond);
 }
 #else
@@ -315,7 +294,7 @@ static void _SNTP_DbgNewDns(const char* srvName, const IP_MULTI_ADDRESS* srvAdd)
 #endif  // defined (TCPIP_STACK_USE_IPV4)           
     }
 
-    uint32_t sntpSecond = _SntpSecond(); 
+    uint32_t sntpSecond = _TCPIP_SecCountGet(); 
     if(srvAdd)
     {
         SYS_CONSOLE_PRINT("SNTP solved DNS: %s, address: %s, time: %d\r\n", srvName, addBuff, sntpSecond);

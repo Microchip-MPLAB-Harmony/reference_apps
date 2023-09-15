@@ -15,30 +15,28 @@
 *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2013-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2013-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 //DOM-IGNORE-END
 
@@ -78,10 +76,13 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 
 // debugging
-#define DRV_MIIM_DEBUG_MASK_BASIC        (0x0001)
+#define DRV_MIIM_DEBUG_MASK_BASIC           (0x0001)
+#define DRV_MIIM_DEBUG_MASK_RW              (0x0002)   // debug Read/Write operations
+#define DRV_MIIM_DEBUG_MASK_OPER            (0x0004)   // debug MIIM operations
+#define DRV_MIIM_DEBUG_MASK_EXT_SMI_RW      (0x0008)   // debug extended SMI Read/Write operations
 
-// enable IPV4 debugging levels
-#define DRV_MIIM_DEBUG_LEVEL  (0)
+// enable MIIM debugging levels
+#define DRV_MIIM_DEBUG_LEVEL  (0x01)
 
 
 
@@ -122,6 +123,8 @@ typedef enum
     DRV_MIIM_OP_READ,               // read operation 
     DRV_MIIM_OP_WRITE,              // write operation 
     DRV_MIIM_OP_SCAN,               // scan operation 
+    DRV_MIIM_OP_READ_EXT,           // extended read operation 
+    DRV_MIIM_OP_WRITE_EXT,          // extended write operation 
 }DRV_MIIM_OP_TYPE;
 
 
@@ -131,12 +134,11 @@ typedef enum
     DRV_MIIM_TXFER_NONE = 0,      // operation not started
     DRV_MIIM_TXFER_START,         // command to start the operation
     DRV_MIIM_TXFER_RDWR_WAIT_COMPLETE, // read/write operation waiting to complete
+    DRV_MIIM_TXFER_EXT_WAIT_PHASE1, // extended operation waiting to complete phase 1
     DRV_MIIM_TXFER_SCAN_STALE,    // scan operation ongoing, stale result
     DRV_MIIM_TXFER_REPORT_STATE,  // from this state on reports are needed
     DRV_MIIM_TXFER_SCAN_VALID = DRV_MIIM_TXFER_REPORT_STATE,    // scan operation ongoing, fresh result available
     DRV_MIIM_TXFER_DONE,          // operation completed successfully
-    DRV_MIIM_TXFER_TMO_START,     // operation timed out on start
-    DRV_MIIM_TXFER_TMO_END,       // operation timed out on end
     DRV_MIIM_TXFER_ERROR,         // unexpected error has occurred
 
 } DRV_MIIM_TXFER_STAT;
@@ -158,31 +160,16 @@ typedef enum
     DRV_MIIM_QTYPE_COMPLETE,        // completed but waiting for client acknowledge
 }DRV_MIIM_QUEUE_TYPE;
 
-// MIIM schedule descriptor
-typedef struct
-{
-    // input data
-    unsigned int                    regIx;      // register for the operation
-    unsigned int                    phyAdd;     // PHY address to use for the operation
-    uint8_t                         opType;     // DRV_MIIM_OP_TYPE: type of operation to schedule
-    uint8_t                         opFlags;    // flags associated with the operation
-    uint16_t                        opData;     // initData
-    // output data
-    struct _tag_DRV_MIIM_OBJ_STRUCT* pObj;      // object to which this operation belongs
-    struct _tag_DRV_MIIM_OP_DCPT*   pOpDcpt;    // operation that's been scheduled 
-    DRV_MIIM_OPERATION_HANDLE       opHandle;   // handle to be returned to the client
-}DRV_MIIM_SCHEDULE_DATA;
-
 // MIIM operation descriptor
 typedef struct _tag_DRV_MIIM_OP_DCPT
 {
     struct _tag_DRV_MIIM_OP_DCPT*   next;       // safe cast to a SGL_LIST_NODE
+    uint16_t                        regIx;      // register for the operation
+    uint16_t                        phyAdd;     // PHY address to use for the operation
+    uint32_t                        opData;     // associated data
     uint8_t                         opType;     // DRV_MIIM_OP_TYPE: type of operation in progress
-    uint8_t                         regIx;      // register for the operation
-    uint8_t                         phyAdd;     // PHY address to use for the operation
     uint8_t                         opFlags;    // DRV_MIIM_OPERATION_FLAGS: flags associated with the operation
-    uint16_t                        opData;     // associated data
-    uint8_t                         opStat;     // DRV_MIIM_TXFER_STAT value: current status
+    uint8_t                         txferStat;  // DRV_MIIM_TXFER_STAT value: current operation transfer status
     uint8_t                         qType;      // DRV_MIIM_QUEUE_TYPE value: current queue the operation is in
     struct _tag_DRV_MIIM_CLIENT_DCPT* pOwner;    // owner of this operation 
 #if (DRV_MIIM_CLIENT_OP_PROTECTION)
@@ -224,7 +211,7 @@ typedef struct _tag_DRV_MIIM_OBJ_STRUCT
     uint16_t            numClients;     // Number of active clients
     SYS_STATUS          objStatus;      // Status of module
     SYS_MODULE_INDEX    iModule;        // Module instance number
-    uintptr_t       ethphyId;       // The peripheral Id associated with the object
+    uintptr_t           miimId;       // The peripheral Id associated with the object
     DRV_MIIM_CLIENT_DCPT objClients[DRV_MIIM_INSTANCE_CLIENTS]; // array of clients
     DRV_MIIM_OP_DCPT    opPool[DRV_MIIM_INSTANCE_OPERATIONS];      // pool of operations
     SINGLE_LIST         freeOpList;     // available operations
@@ -238,6 +225,10 @@ typedef struct _tag_DRV_MIIM_OBJ_STRUCT
 #endif  // (DRV_MIIM_CLIENT_OP_PROTECTION)
 
 }DRV_MIIM_OBJ;
+
+
+// operation processing function 
+typedef void (*DRV_MIIM_PROCESS_OP_FNC)(DRV_MIIM_OBJ * pMiimObj, DRV_MIIM_OP_DCPT* pOpDcpt);
 
 
 // helpers
