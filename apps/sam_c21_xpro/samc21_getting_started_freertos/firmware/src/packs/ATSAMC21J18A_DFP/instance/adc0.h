@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21J18AU
+/*
+ * Instance header file for ATSAMC21J18AU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,18 +20,18 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:47:32Z */
+/* file generated from device description version 2022-03-14T06:33:44Z */
 #ifndef _SAMC21_ADC0_INSTANCE_
 #define _SAMC21_ADC0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for ADC0 peripheral ========== */
-#define ADC0_DMAC_ID_RESRDY                      _UL_(42)   /* index of DMA RESRDY trigger */
-#define ADC0_EXTCHANNEL_MSB                      _UL_(11)   /* Number of external channels */
-#define ADC0_GCLK_ID                             _UL_(33)   /* index of Generic Clock */
-#define ADC0_INT_CH30                            _UL_(0)    /* Select OPAMP or CTAT on Channel 30 */
-#define ADC0_MASTER_SLAVE_MODE                   _UL_(1)    /* ADC Master/Slave Mode */
-#define ADC0_LOAD_CALIB                          _UL_(1)    /* CALIB register to be loaded from NVM */
-#define ADC0_INSTANCE_ID                         _UL_(81)   
+#define ADC0_DMAC_ID_RESRDY                      (42)       /* index of DMA RESRDY trigger */
+#define ADC0_EXTCHANNEL_MSB                      (11)       /* Number of external channels */
+#define ADC0_GCLK_ID                             (33)       /* index of Generic Clock */
+#define ADC0_INT_CH30                            (0)        /* Select OPAMP or CTAT on Channel 30 */
+#define ADC0_MASTER_SLAVE_MODE                   (1)        /* ADC Master/Slave Mode */
+#define ADC0_LOAD_CALIB                          (1)        /* CALIB register to be loaded from NVM */
+#define ADC0_INSTANCE_ID                         (81)       
 
 #endif /* _SAMC21_ADC0_INSTANCE_ */

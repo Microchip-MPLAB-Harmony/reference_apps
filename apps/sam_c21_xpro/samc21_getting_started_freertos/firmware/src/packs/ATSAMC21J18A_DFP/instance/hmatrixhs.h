@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21J18AU
+/*
+ * Instance header file for ATSAMC21J18AU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,25 +20,25 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:47:32Z */
+/* file generated from device description version 2022-03-14T06:33:44Z */
 #ifndef _SAMC21_HMATRIXHS_INSTANCE_
 #define _SAMC21_HMATRIXHS_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for HMATRIXHS peripheral ========== */
-#define HMATRIXHS_MASTER_NUM                     _UL_(3)    
-#define HMATRIXHS_MASTER_CM0PLUS                 _UL_(0)    
-#define HMATRIXHS_MASTER_DSU                     _UL_(1)    
-#define HMATRIXHS_MASTER_DMAC                    _UL_(2)    
-#define HMATRIXHS_SLAVE_NUM                      _UL_(8)    
-#define HMATRIXHS_SLAVE_FLASH                    _UL_(0)    
-#define HMATRIXHS_SLAVE_HSRAMCM0P                _UL_(1)    
-#define HMATRIXHS_SLAVE_HSRAMDSU                 _UL_(2)    
-#define HMATRIXHS_SLAVE_HPB1                     _UL_(3)    
-#define HMATRIXHS_SLAVE_HPB0                     _UL_(4)    
-#define HMATRIXHS_SLAVE_HPB2                     _UL_(5)    
-#define HMATRIXHS_SLAVE_LPRAMDMAC                _UL_(6)    
-#define HMATRIXHS_SLAVE_DIVAS                    _UL_(7)    
-#define HMATRIXHS_INSTANCE_ID                    _UL_(37)   
+#define HMATRIXHS_MASTER_NUM                     (3)        
+#define HMATRIXHS_MASTER_CM0PLUS                 (0)        
+#define HMATRIXHS_MASTER_DSU                     (1)        
+#define HMATRIXHS_MASTER_DMAC                    (2)        
+#define HMATRIXHS_SLAVE_NUM                      (8)        
+#define HMATRIXHS_SLAVE_FLASH                    (0)        
+#define HMATRIXHS_SLAVE_HSRAMCM0P                (1)        
+#define HMATRIXHS_SLAVE_HSRAMDSU                 (2)        
+#define HMATRIXHS_SLAVE_HPB1                     (3)        
+#define HMATRIXHS_SLAVE_HPB0                     (4)        
+#define HMATRIXHS_SLAVE_HPB2                     (5)        
+#define HMATRIXHS_SLAVE_LPRAMDMAC                (6)        
+#define HMATRIXHS_SLAVE_DIVAS                    (7)        
+#define HMATRIXHS_INSTANCE_ID                    (37)       
 
 #endif /* _SAMC21_HMATRIXHS_INSTANCE_ */

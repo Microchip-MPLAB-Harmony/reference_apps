@@ -1,7 +1,7 @@
-/**
- * \brief Instance header file for ATSAMC21J18AU
+/*
+ * Instance header file for ATSAMC21J18AU
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,26 +20,26 @@
  *
  */
 
-/* file generated from device description version 2020-12-11T17:47:32Z */
+/* file generated from device description version 2022-03-14T06:33:44Z */
 #ifndef _SAMC21_TCC1_INSTANCE_
 #define _SAMC21_TCC1_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TCC1 peripheral ========== */
-#define TCC1_CC_NUM                              _UL_(2)    /* Number of Compare/Capture units */
-#define TCC1_DITHERING                           _UL_(1)    /* Dithering feature implemented */
-#define TCC1_DMAC_ID_OVF                         _UL_(21)   /* DMA overflow/underflow/retrigger trigger */
-#define TCC1_DMAC_ID_MC0                         _UL_(22)   /* Indexes of DMA Match/Compare 0 trigger */
-#define TCC1_DMAC_ID_MC1                         _UL_(23)   /* Indexes of DMA Match/Compare 1 trigger */
-#define TCC1_DTI                                 _UL_(0)    /* Dead-Time-Insertion feature implemented */
-#define TCC1_EXT                                 _UL_(24)   /* Coding of implemented extended features */
-#define TCC1_GCLK_ID                             _UL_(28)   /* Index of Generic Clock */
-#define TCC1_OTMX                                _UL_(0)    /* Output Matrix feature implemented */
-#define TCC1_OW_NUM                              _UL_(4)    /* Number of Output Waveforms */
-#define TCC1_PG                                  _UL_(1)    /* Pattern Generation feature implemented */
-#define TCC1_SIZE                                _UL_(24)   
-#define TCC1_SWAP                                _UL_(0)    /* DTI outputs swap feature implemented */
-#define TCC1_MASTER_SLAVE_MODE                   _UL_(2)    /* TCC type 0 : NA, 1 : Master, 2 : Slave */
-#define TCC1_INSTANCE_ID                         _UL_(74)   
+#define TCC1_CC_NUM                              (2)        /* Number of Compare/Capture units */
+#define TCC1_DITHERING                           (1)        /* Dithering feature implemented */
+#define TCC1_DMAC_ID_OVF                         (21)       /* DMA overflow/underflow/retrigger trigger */
+#define TCC1_DMAC_ID_MC0                         (22)       /* Indexes of DMA Match/Compare 0 trigger */
+#define TCC1_DMAC_ID_MC1                         (23)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TCC1_DTI                                 (0)        /* Dead-Time-Insertion feature implemented */
+#define TCC1_EXT                                 (24)       /* Coding of implemented extended features */
+#define TCC1_GCLK_ID                             (28)       /* Index of Generic Clock */
+#define TCC1_OTMX                                (0)        /* Output Matrix feature implemented */
+#define TCC1_OW_NUM                              (4)        /* Number of Output Waveforms */
+#define TCC1_PG                                  (1)        /* Pattern Generation feature implemented */
+#define TCC1_SIZE                                (24)       
+#define TCC1_SWAP                                (0)        /* DTI outputs swap feature implemented */
+#define TCC1_MASTER_SLAVE_MODE                   (2)        /* TCC type 0 : NA, 1 : Master, 2 : Slave */
+#define TCC1_INSTANCE_ID                         (74)       
 
 #endif /* _SAMC21_TCC1_INSTANCE_ */
