@@ -1,5 +1,11 @@
+
+#ifndef FREERTOS_CONFIG_H
+#define FREERTOS_CONFIG_H
+
+/* MISRA C-2012 Rule 3.1, 5.4 deviated below. Deviation record ID -  
+   H3_MISRAC_2012_R_3_1_DR_1 & H3_MISRAC_2012_R_5_4_DR_1*/
 /*
- * FreeRTOS Kernel V10.2.0
+ * FreeRTOS Kernel V10.4.0
  * Copyright (C) 2019 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,12 +30,7 @@
  *
  * 1 tab == 4 spaces!
  */
-
-#ifndef FREERTOS_H
-#define FREERTOS_H
-
-
-
+ 
 /*-----------------------------------------------------------
  * Application specific definitions.
  *
@@ -39,7 +40,7 @@
  * THESE PARAMETERS ARE DESCRIBED WITHIN THE 'CONFIGURATION' SECTION OF THE
  * FreeRTOS API DOCUMENTATION AVAILABLE ON THE FreeRTOS.org WEB SITE.
  *
- * See http://www.freertos.org/a00110.html.
+ * See http://www.freertos.org/a00110.html
  *----------------------------------------------------------*/
 #define configUSE_PREEMPTION                    1
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
@@ -108,7 +109,7 @@
 #define INCLUDE_vTaskDelayUntil                 1
 #define INCLUDE_vTaskDelay                      1
 #define INCLUDE_xTaskGetSchedulerState          0
-#define INCLUDE_xTaskGetCurrentTaskHandle       0
+#define INCLUDE_xTaskGetCurrentTaskHandle       1
 #define INCLUDE_uxTaskGetStackHighWaterMark     0
 #define INCLUDE_xTaskGetIdleTaskHandle          0
 #define INCLUDE_eTaskGetState                   0
@@ -121,4 +122,5 @@
 #define INCLUDE_xTaskResumeFromISR              0
 
 
-#endif /* FREERTOS_H */
+/* MISRAC 2012 deviation block end */
+#endif /* FREERTOS_CONFIG_H */

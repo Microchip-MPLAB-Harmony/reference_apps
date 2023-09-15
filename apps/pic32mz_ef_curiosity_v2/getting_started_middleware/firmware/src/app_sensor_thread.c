@@ -63,7 +63,7 @@
 // *****************************************************************************
 // *****************************************************************************
 #define APP_SENSOR_I2C_CLOCK_SPEED             100000
-#define APP_SENSOR_I2C_SLAVE_ADDR              0x004B
+#define APP_SENSOR_I2C_SLAVE_ADDR              0x004F
 #define APP_SENSOR_TEMPERATURE_REG_ADDR        0x00
 #define APP_SENSOR_SAMPLING_RATE_IN_MSEC       1000
 // *****************************************************************************
