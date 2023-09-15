@@ -1,14 +1,14 @@
-"Pin Number","Pin ID","Custom Name","Function","Mode", "Direction","Latch","Pull Up","Pull Down","Drive Strength"
+Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,Drive Strength
 1,PA00,,Available,,,,,,NORMAL
 2,PA01,,Available,,,,,,NORMAL
 3,PA02,,Available,,,,,,NORMAL
 4,PA03,,Available,,,,,,NORMAL
 7,PB08,,Available,,,,,,NORMAL
-8,PB09,CLICK_EINK_EPAPER_2_9_296_128_DC,GPIO,Digital,Out,High,,,NORMAL
+8,PB09,EPAPER_2_9_296_128_DC,GPIO,Digital,Out,High,,,NORMAL
 9,PA04,,Available,,,,,,NORMAL
 10,PA05,,Available,,,,,,NORMAL
-11,PA06,CLICK_EINK_EPAPER_2_9_296_128_BSY,GPIO,Digital,In,n/a,No,No,NORMAL
-12,PA07,CLICK_EINK_EPAPER_2_9_296_128_RST,GPIO,Digital,Out,High,,,NORMAL
+11,PA06,EPAPER_2_9_296_128_BSY,GPIO,Digital,In,n/a,No,No,NORMAL
+12,PA07,EPAPER_2_9_296_128_RST,GPIO,Digital,Out,High,,,NORMAL
 13,PA08,,SERCOM0_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
 14,PA09,,SERCOM0_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
 15,PA10,,Available,,,,,,NORMAL
@@ -21,7 +21,7 @@
 24,PA15,,Available,,,,,,NORMAL
 25,PA16,,SERCOM1_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
 26,PA17,,SERCOM1_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
-27,PA18,CLICK_EINK_EPAPER_2_9_296_128_CS,GPIO,Digital,Out,High,,,NORMAL
+27,PA18,EPAPER_2_9_296_128_CS,GPIO,Digital,Out,High,,,NORMAL
 28,PA19,,SERCOM1_PAD3,Digital,High Impedance,n/a,No,No,NORMAL
 29,PA20,,Available,,,,,,NORMAL
 30,PA21,,Available,,,,,,NORMAL

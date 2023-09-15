@@ -61,7 +61,7 @@ Refer [Project Manifest](./firmware/src/config/sam_d21_cnano/harmony-manifest-su
 - Mount Heart Rate 3 click board on mikro bus click 3 connector of Curiosity Nano Base board
 - Mount the Eink E-Paper display 2,9" 296x128 dots display (eINK click + E-Paper display 2,9" 296x128 dots Display) on the mikro bus 1 connector of Curiosity Nano Base board
 - Power the SAM D21 Curiosity Nano Evaluation Kit from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J105)  
--
+
 <img src = "images/fitness_tracker_demo_setup.jpg" width="600" height="700" align="middle">
 
 ## Programming hex file:
@@ -93,14 +93,15 @@ The pre-built hex file can be programmed by following the below steps.
 - After successful initialization, keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.  
 
   <img src = "images/finger_placement.png" width="432" height="158" align="middle">  
--  
-	<img src = "images/fitness_tracker_demo_run.jpg" width="600" height="700" align="middle">
+  
+  
+  <img src = "images/fitness_tracker_demo_run.jpg" width="600" height="700" align="middle">
 
   **Note:** Place your index finger gently on the heart rate 9 click sensor as shown in the above figure  
 - Press switch "SW0" on SAM D21 Curiosity Nano Evaluation Kit, LED "LED0" on SAM D21 Curiosity Nano Evaluation Kit glows on  
 - Wait till the LED "LED0" on SAM D21 Curiosity Nano Evaluation Kit goes off and then lift your finger  
 - The heart rate value (in bpm - beats per minute) gets displayed on the Eink E-Paper display 2,9" 296x128 dots Display. 
-- 
+ 
   <img src = "images/result.jpg" width="600" height="700" align="middle">
 
 

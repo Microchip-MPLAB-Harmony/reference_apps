@@ -1,4 +1,4 @@
-<config configName="sam_d21_cnano" projectName="fitness_tracker_sam_d21_cnano" configVersion="1.1" device="ATSAMD21G17D" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.14">
+<config configName="sam_d21_cnano" projectName="fitness_tracker_sam_d21_cnano" configVersion="1.1" device="ATSAMD21G17D" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -47,7 +47,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.2.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -137,7 +137,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;405&quot; canvasWidth=&quot;375&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;0&quot; y=&quot;87&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;288&quot; y=&quot;61&quot;/&gt;
@@ -152,7 +153,6 @@
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;stdio&quot; x=&quot;300&quot; y=&quot;121&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;405&quot; canvasWidth=&quot;375&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -1346,7 +1346,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_11_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_BSY&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_BSY&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1434,7 +1434,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_12_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_RST&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_RST&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1852,7 +1852,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_27_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_CS&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_CS&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -2160,7 +2160,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_8_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_DC&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_DC&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5425,7 +5425,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\clock\plib_clock.c</file>
-         <hash>a16bf0ed4f8f2321ea6567f1c63713a2bc119a9403a3a7f63ed394fa0ad3e259</hash>
+         <hash>286c74c4fd658d8c46dd3a79f61f94aabacffa92d3e9e5425d77b7a6618b6c03</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\clock\plib_clock.h</file>
@@ -5441,7 +5441,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\initialization.c</file>
-         <hash>b7d46c875e9e9f3ee8d4b743976426265b1e15bbffcd11c47c9060948bff967a</hash>
+         <hash>3d8e9a7aa2a28848d8b833660163cc3a59447f157d071cbc7cda9b5acaabbd00</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\eic.h</file>
@@ -5469,7 +5469,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\usb.h</file>
@@ -5477,11 +5477,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\port\plib_port.h</file>
-         <hash>07b56cae7e21f170ab5a5ca2004d06c95ab79c1717388e4dd16e1d3cd577c220</hash>
+         <hash>a3bc2bf8301b8e541c099430d9ccfc7fbfcb1bc31bac7a84f11be6b3118f6392</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\interrupts.c</file>
-         <hash>9103288a15cffc202289392809624c9ea33f4f554b8fe62d822df1dcdc1e5e29</hash>
+         <hash>76a515882b5ef21f6fc9b3df8a7d3445833bc501a1a406ea9415107c771c6315</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\dac.h</file>
@@ -5521,11 +5521,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\usart\plib_sercom0_usart.h</file>
-         <hash>26eb39fe2d947459729ac959257b5abd0a09abf2c2e547d42c95ebca03d8404a</hash>
+         <hash>0df2c338e8de7443bc597e108b579c4f29d23090bba433ebddf71d0eac3d218a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\usart\plib_sercom0_usart.c</file>
-         <hash>15c76b8d8b67a81eb7c9583ded2d75db37f3332ef51be736534e87a85f1c2c12</hash>
+         <hash>21f62fa67ff15a3748e1d378f3411ce44fffeb7dd15cc856852486792ddf85be</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\sercom5.h</file>
@@ -5541,11 +5541,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\systick\plib_systick.c</file>
-         <hash>f23caebefbacd5f2fa5051caadacdba66f41368a782707a0b8418c9b4ee155ae</hash>
+         <hash>9178af8001492763213e84e6cf11aa357f1e344cbea0988699771364ef69c749</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -5573,7 +5573,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\eic\plib_eic.c</file>
-         <hash>8a79f57bb9351a1fffcc9325ec2f3b5f465b11525dbae2bcee0b05d4a8fca207</hash>
+         <hash>8e066d0234fa81226ba61b1814e89dfd8d236b30fc7b97c8f59cdcd840971f8f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\ptc.h</file>
@@ -5601,7 +5601,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\usart\plib_sercom5_usart.h</file>
-         <hash>acdd3259b9546f010e1422718370dca588703f7fb807f2eebb48c3dde6c4b9de</hash>
+         <hash>5aa7f37d6ac2c6c293049dc789c617722c741d6c0e4b46f6da198cdbe885ebde</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\wdt.h</file>
@@ -5645,7 +5645,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>d0cb51cdb15b1a54eb3842f7c3942c83da67c7c689cc7c194aa8e6f2a4e26653</hash>
+         <hash>e6c84ba6d927494c7cdb98103f53b0916b78ebbfb32d0de67f18fbc853a8f869</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\dmac.h</file>
@@ -5657,7 +5657,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\definitions.h</file>
-         <hash>e6bcf2f861609c75bc7903557b1fa9a6d6891b3d838df012e039d3db05cbcdcb</hash>
+         <hash>22b88f4f040dd0883ba24fa73f79ecb7f1fcf630f5f473134cbfdc4146d4bd52</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\ac.h</file>
@@ -5689,7 +5689,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\usart\plib_sercom5_usart.c</file>
-         <hash>37d5881113e78f69f8576fd7af62f9af8e1c895cec8e1fd9871b3a275c3d67ac</hash>
+         <hash>62d545e2f2ba59c6a23504fa07e92ece3e766b46e5141a0f0c78e45888785c9e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -5713,7 +5713,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\nvic\plib_nvic.c</file>
-         <hash>d04434d5154d1578150ecd9ee0246438175b99d14e04813e0352df5131c3d7f1</hash>
+         <hash>24435026386c91bbf9b43bfaa2579c4f1014ae33cf6381a75bae9849f2e0440b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\component\tc.h</file>
@@ -5745,7 +5745,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\stdio\xc32_monitor.c</file>
-         <hash>1d82e00e256020bea305235dd1cffc2f3fb79c62e76d6767f0d0553f96b394fd</hash>
+         <hash>f22930f8c6b125d13886bec2b438e82435fbba6242e31aada0fb6f4ed3d45bb5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\evsys\plib_evsys.c</file>
@@ -5765,7 +5765,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>1dbf674e2bc9708afe2cacc75141707c42b89f166e0f1d6f81c04b1b2fa166b8</hash>
+         <hash>63c6e89936ba47e8989478a8be0fa40b406361f2f0dcc1b6cfcd801b50a4bf92</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\mtb.h</file>
@@ -5773,7 +5773,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\exceptions.c</file>
-         <hash>b850253aacaae1bddfcb426c2dc11e0688900afffe9b22c60d0ab16298701118</hash>
+         <hash>5efbe5a64a17c496d2f5b177bc9cd66a7f0f80323d9558e220c073a13570a2a7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\nvmctrl.h</file>
@@ -5801,7 +5801,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\pin_configurations.csv</file>
-         <hash>98b29d7c482277090269fdb79a7e1ea85027fbfb61dfbd3640ec88be70ef587d</hash>
+         <hash>b8f90488ec88db35f9338551bdd0f7c43de85c6b3527bc88d2fb0fe56404fa0e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\fuses.h</file>
@@ -5809,7 +5809,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_cnano\peripheral\sercom\spi_master\plib_sercom1_spi_master.c</file>
-         <hash>34bf250d2ee7a1e386e032e4d18cd19bf4172c191e05d60d4a2193c680b3b4a1</hash>
+         <hash>98fe377f7a585d659722bc6dd55dbe1635736254c8d903450b1becc8d6487c81</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21G17D_DFP\instance\tc4.h</file>
