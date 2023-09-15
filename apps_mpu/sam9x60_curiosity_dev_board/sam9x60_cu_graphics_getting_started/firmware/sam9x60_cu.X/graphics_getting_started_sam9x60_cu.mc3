@@ -6326,510 +6326,8 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="BacklightDisable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;BacklightDisable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="BacklightEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;BacklightEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="ChipSelectPolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;ChipSelectPolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="DataEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;DataEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="DataEnablePolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;DataEnablePolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="DataWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;DataWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="DisplayHeight"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;DisplayHeight&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="DisplayWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;DisplayWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="HSYNCNegative"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;HSYNCNegative&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="HorzBackPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;HorzBackPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="HorzFrontPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;HorzFrontPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="HorzPulseWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;HorzPulseWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="InvLeftShift"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;InvLeftShift&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="Name"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;Name&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="ResetPolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;ResetPolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="TouchHeight"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;TouchHeight&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="TouchWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;TouchWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="UseChipSelect"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;UseChipSelect&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="UseReset"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;UseReset&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="VSYNCNegative"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;VSYNCNegative&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="VertBackPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;VertBackPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="VertFrontPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;VertFrontPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="VertPulseWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
-  &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot; id=&quot;VertPulseWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_disp_pdatm5000_800x480&gt;
-&lt;/gfx_disp_pdatm5000_800x480&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayBacklightDisable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayBacklightDisable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayBacklightEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayBacklightEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayChipSelectPolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayChipSelectPolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayDataEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayDataEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayDataEnablePolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayDataEnablePolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayDataWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayDataWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayHSYNCNegative"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHSYNCNegative&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayHeight"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHeight&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;480&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayHorzBackPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHorzBackPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;40&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayHorzFrontPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHorzFrontPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;40&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayHorzPulseWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayHorzPulseWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;48&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayInvLeftShift"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayInvLeftShift&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;PDA TM5000&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayOrientation"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayOrientation&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayResetPolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayResetPolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayUseChipSelect"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayUseChipSelect&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayUseReset"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayUseReset&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayVSYNCNegative"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVSYNCNegative&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayVertBackPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVertBackPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;29&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayVertFrontPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVertFrontPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;13&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayVertPulseWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayVertPulseWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;3&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DisplayWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DisplayWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;800&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="DriverName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;DriverName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;LE LCDC Driver&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="HardwareLayerCountHint"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;HardwareLayerCountHint&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="PixelClock"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;PixelClock&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;28571428&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="PixelClockHint"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;PixelClockHint&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="RefreshRate"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;RefreshRate&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_hal_le&quot; value=&quot;58&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="gfx_display"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;gfx_display&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;gfx_disp_pdatm5000_800x480&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_hal_le" name="gfx_driver"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_hal_le&gt;
-  &lt;gfx_hal_le dnOrder=&quot;0&quot; id=&quot;gfx_driver&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;le_gfx_lcdc&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_hal_le&gt;
-&lt;/gfx_hal_le&gt;
-</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="!@#harmonyAttachmentState"/>
@@ -6866,64 +6364,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="LeGPUConnected"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;LeGPUConnected&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="driverInitName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;driverInitName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;lcdcDisplayDriver&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="rtosEnableTaskDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;rtosEnableTaskDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="rtosTaskDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;rtosTaskDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="rtosTaskPriority"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;rtosTaskPriority&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_legato" name="rtosTaskSize"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
-  &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;rtosTaskSize&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_legato&gt;
-&lt;/gfx_legato&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
   &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot;&gt;
@@ -6956,127 +6396,6 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="ChgMode"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;ChgMode&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="DRV_I2C_MODE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;DRV_I2C_MODE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_maxtouch_controller&quot; value=&quot;Asynchronous&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="DRV_MAXTOUCH_I2C_INDEX"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;DRV_MAXTOUCH_I2C_INDEX&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_maxtouch_controller&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="Height"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;Height&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_maxtouch_controller&quot; value=&quot;480&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="RTOSEnabled"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;RTOSEnabled&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;/&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="RTOSStackSize"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;RTOSStackSize&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="RTOSTaskDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;RTOSTaskDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="RTOSTaskPriority"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;RTOSTaskPriority&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="RTOSUseDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;RTOSUseDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="TOUCH_DRV_RTOS_TASK_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;TOUCH_DRV_RTOS_TASK_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_maxtouch_controller" name="Width"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_maxtouch_controller&gt;
-  &lt;gfx_maxtouch_controller dnOrder=&quot;0&quot; id=&quot;Width&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_maxtouch_controller&quot; value=&quot;800&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/gfx_maxtouch_controller&gt;
-&lt;/gfx_maxtouch_controller&gt;
-</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="lcdc" name="!@#harmonyAttachmentState"/>
@@ -7146,60 +6465,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="DRV_GFX2D_MODE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;DRV_GFX2D_MODE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="DRV_GFX2D_PLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;DRV_GFX2D_PLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="DRV_GFX2D_QUEUE_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;DRV_GFX2D_QUEUE_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="DriverInitName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;DriverInitName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="ProcInfoFunction"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;ProcInfoFunction&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="SCRATCHBUFFER_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;SCRATCHBUFFER_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot;&gt;
@@ -7244,448 +6509,8 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="BacklightBrightnessDefault"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;BacklightBrightnessDefault&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="BacklightPWMClockPrescaler"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;BacklightPWMClockPrescaler&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="BacklightPWMClockSource"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;BacklightPWMClockSource&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="BacklightPWMEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;BacklightPWMEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="BaseLayerEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;BaseLayerEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="CanvasModeOnly"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;CanvasModeOnly&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayBacklightEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayBacklightEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayChipSelectPolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayChipSelectPolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayDataEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayDataEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayDataEnablePolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayDataEnablePolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayGuardTime"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayGuardTime&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayHSYNCNegative"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayHSYNCNegative&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayHeight"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayHeight&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;480&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayHorzBackPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayHorzBackPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayHorzFrontPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayHorzFrontPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayHorzPulseWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayHorzPulseWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayResetPolarity"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayResetPolarity&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayTimingOptionsEnabled"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayTimingOptionsEnabled&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayUseChipSelect"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayUseChipSelect&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayUseReset"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayUseReset&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayVSYNCNegative"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayVSYNCNegative&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayVertBackPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayVertBackPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayVertFrontPorch"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayVertFrontPorch&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayVertPulseWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayVertPulseWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayWidth"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DisplayWidth&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;800&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DoubleBuffer"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DoubleBuffer&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DriverInitName"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;DriverInitName&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="FrameBufferColorMode"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;FrameBufferColorMode&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="GlobalAlphaEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;GlobalAlphaEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="HEOLayerEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;HEOLayerEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="LCCRefresh"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;LCCRefresh&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="MasterClockSource"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;MasterClockSource&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="MasterClockSourceValue"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;MasterClockSourceValue&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="OutputColorMode"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;OutputColorMode&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="Overlay1LayerEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay1LayerEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="Overlay2LayerEnable"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay2LayerEnable&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="PaletteMode"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;PaletteMode&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="PixelClock"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;PixelClock&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="PixelClockDiv"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;PixelClockDiv&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="TotalNumLayers"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;TotalNumLayers&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;3&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="UseCachedFrameBuffer"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;UseCachedFrameBuffer&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="UseGPU"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;UseGPU&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="VblankBlit"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;VblankBlit&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="rtosEnableTaskDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;rtosEnableTaskDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="rtosTaskDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;rtosTaskDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="rtosTaskPriority"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;rtosTaskPriority&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="rtosTaskSize"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
-  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;rtosTaskSize&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/le_gfx_lcdc&gt;
-&lt;/le_gfx_lcdc&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="legato_gfx_pda_tm5000" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="legato_gfx_pda_tm5000" name="DisplayInterface"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;legato_gfx_pda_tm5000&gt;
-  &lt;legato_gfx_pda_tm5000 dnOrder=&quot;0&quot; id=&quot;DisplayInterface&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/legato_gfx_pda_tm5000&gt;
-&lt;/legato_gfx_pda_tm5000&gt;
-</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="plib_gfx2d" name="!@#harmonyAttachmentState"/>
@@ -7712,15 +6537,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="plib_gfx2d" name="GFX2D_INSTANCE_NAME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;plib_gfx2d&gt;
-  &lt;plib_gfx2d dnOrder=&quot;0&quot; id=&quot;GFX2D_INSTANCE_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/plib_gfx2d&gt;
-&lt;/plib_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
   &lt;sys_input dnOrder=&quot;0&quot;/&gt;
@@ -7730,111 +6546,6 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="INPUT_SYS_RTOS_TASK_C"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;INPUT_SYS_RTOS_TASK_C&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="MaxEvents"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;MaxEvents&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="MaxListeners"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;MaxListeners&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="RTOSEnabled"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;RTOSEnabled&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_input&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="RTOSStackSize"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;RTOSStackSize&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="RTOSTaskDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;RTOSTaskDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="RTOSTaskPriority"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;RTOSTaskPriority&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="RTOSUseDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;RTOSUseDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="demoModeIdleTimeout"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;demoModeIdleTimeout&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="demoModeReplayDelay"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;demoModeReplayDelay&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="enableDemoMode"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_input&gt;
-  &lt;sys_input dnOrder=&quot;0&quot; id=&quot;enableDemoMode&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sys_input&gt;
-&lt;/sys_input&gt;
-</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_time" name="!@#harmonyAttachmentState"/>
@@ -9501,7 +8212,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\font\legato_font.c</file>
-         <hash>398421927fb718787cb904b8f56a9c93e7870d611c4f0c198de17371425a5537</hash>
+         <hash>2147f47f2298508c2cae98691a7157313c6f03375a706f3bae3ed799a1d9068d</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\font\legato_font.h</file>
@@ -9569,7 +8280,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
+         <hash>64bfd7a705db6c2f26865a9d2dfc4a6133ce29cc0fc3edd2be35916b7887f5e5</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\png\lodepng.h</file>
@@ -9789,7 +8500,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\driver\processor\gfx2d\drv_gfx2d.c</file>
-         <hash>78260a7b253ca4cd9bf5ac1f8dbeb8f4a0e4adcaad1841258266238db3e2cb77</hash>
+         <hash>69b7a34d134f7a451c00acf5add6386ac65ca16c2539ad6f607baa58ae012217</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\driver\i2c\drv_i2c.h</file>
@@ -10045,7 +8756,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
+         <hash>538b84190cc1d2db631d693d81834a123ab41a96b89e780a79c7bcf7bd773f2f</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\circle\legato_widget_circle.c</file>
@@ -10089,7 +8800,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\initialization.c</file>
-         <hash>a0d5e1f213d6e721aea03bb6e6f7f097b5f910059c65e0fee63a6521295ebda9</hash>
+         <hash>ab630dc88856f2d4f5cced4f09140f93feb5498a9c7534aa9d93787f95cbc416</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\core\legato_input.h</file>
@@ -10129,7 +8840,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\peripheral\gfx2d\plib_gfx2d.c</file>
-         <hash>3e848bf276449c8722911e178343e6a4196b8944967c79a09bfda80778a0ac79</hash>
+         <hash>8408b3b847f9a6daf617734399b0d4f0752d6095ba3335b9a0af114ec7e0760b</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_color.c</file>
@@ -10177,7 +8888,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\peripheral\gfx2d\plib_gfx2d.h</file>
-         <hash>21865adff16f3310efd3d65cb512f72b987458bb41380b9d628a05498238fa27</hash>
+         <hash>18ddb5eb428222191d9510dd224eefec5333d7271429f5e287e22d248b853108</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\le_gen_init.c</file>
@@ -10249,7 +8960,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\core\legato_input.c</file>
-         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
+         <hash>131dfbe13dfee71707c492b03f12e3fd572955fdcf6a79de3d6a6522d3568041</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\can0.h</file>
@@ -10261,7 +8972,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
+         <hash>850da06063b06132ed4bc020af7fb28adef50b89517aa6507cc6febedcd07ab7</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\memory\legato_variableheap.h</file>
@@ -10277,7 +8988,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
+         <hash>1a9fb6e89e156bef847d47d58a552ac7e97a31b075d229559b487b479b1ebf4d</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\mono\legato_imagedecoder_mono.c</file>
@@ -10329,7 +9040,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\memory\legato_memory.c</file>
-         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
+         <hash>8047bcaf8c3b284df0c455e2a2067bceef3cfc1d3a91f19ec40933c7544ba207</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\component\i2smcc.h</file>
@@ -10445,7 +9156,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
-         <hash>04a56f67ab3ef840d89ab44d03ddac16e4ad55dbbcce72d91174d19071c749d7</hash>
+         <hash>6aebd76da11fb7cb0a1ac48563b741391204857a673f384c34dde4e083889e9f</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\tdes.h</file>
@@ -10469,7 +9180,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
+         <hash>a618fa3bd1c9915c02143ae065c92200da98143a771af8355e3e4c9be83873c4</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\system\time\src\sys_time.c</file>
@@ -10741,7 +9452,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_palette_internal.c</file>
-         <hash>89ebac404e6aa269ca0bcc895fc9e11d2d593ad53e1f423d0c1f33881068a39d</hash>
+         <hash>0cec862ead00d99e9cb82c61e943185c336660170b1f4ac3af84689428938e2b</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\flexcom8.h</file>
@@ -10809,7 +9520,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.c</file>
-         <hash>4c49effde5caaa2cd8ead0ed415247d5eda2feed7c20b85823c04caca0e84ae2</hash>
+         <hash>3aba898391249b71c25fbdf5f586a871dac5d34641a56f1556ca87f8debdb2d6</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\driver\input\drv_maxtouch.h</file>
@@ -10989,7 +9700,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\definitions.h</file>
-         <hash>fa8a0455ca3249a8b30d00839a021daa4412cf9cd4c0361ee3ef651ec515779d</hash>
+         <hash>c1b76d6e443c85fa40af1350a7eeab603197395e67c0cde152415b7bb8432b2c</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\system\int\sys_int.h</file>

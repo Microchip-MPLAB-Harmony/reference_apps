@@ -10,21 +10,21 @@
       "shortDescription":"Demonstrates how to get started with Microchip Graphics Composer on SAM9X60 microprocessor ",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.00"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.2.0"
+            "semverRange":">=4.30"
          }
       ],
       "dfp":{
          "name":"SAM9X60_DFP",
-         "semverRange":"^1.7.85"
+         "semverRange":">=1.7.85"
       },
       "configurator":{
          "name":"MCC",
-         "semverRange":">=5.2.2"
+         "semverRange":">=5.3.7"
       },
       "device":{
          "metaDataVersion":"1.0.0",
