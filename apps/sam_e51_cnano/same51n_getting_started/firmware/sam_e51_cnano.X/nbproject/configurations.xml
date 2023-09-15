@@ -243,6 +243,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main_sam_e51_cnano.c</itemPath>
+      <itemPath>../src/config/sam_e51_cnano/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -258,12 +259,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="SAME51_DFP" vendor="Microchip" version="3.6.130"/>
+        <pack name="SAME51_DFP" vendor="Microchip" version="3.7.242"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -987,6 +988,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -1043,6 +1046,8 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -1066,7 +1071,7 @@
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/MassMarket/bitBucket/reference_apps/apps/sam_e51_cnano/same51n_getting_started/firmware/sam_e51_cnano.X/debug/sam_e51_cnano/sam_e51_cnano_ptg"/>
+                  value="C:/Users/I76741/reference_apps/apps/sam_e51_cnano/same51n_getting_started/firmware/sam_e51_cnano.X/debug/sam_e51_cnano/sam_e51_cnano_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -1086,7 +1091,6 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
-        <property key="x.erase.clearprot" value="true"/>
       </nEdbgTool>
     </conf>
   </confs>
