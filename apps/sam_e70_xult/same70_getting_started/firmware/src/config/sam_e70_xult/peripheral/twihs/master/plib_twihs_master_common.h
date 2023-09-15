@@ -91,6 +91,9 @@ typedef enum
     /* Slave returned Nack */
     TWIHS_ERROR_NACK,
 
+    /* Bus error / Aribitration lost error */
+    TWIHS_BUS_ERROR
+
 } TWIHS_ERROR;
 
 // *****************************************************************************
@@ -174,10 +177,10 @@ typedef struct
     size_t  readCount;
 
     /* State */
-    volatile TWIHS_STATE state;
+    TWIHS_STATE state;
 
     /* Transfer status */
-    volatile TWIHS_ERROR error;
+    TWIHS_ERROR error;
 
     /* Transfer Event Callback */
     TWIHS_CALLBACK callback;

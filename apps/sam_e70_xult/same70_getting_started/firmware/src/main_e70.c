@@ -72,10 +72,11 @@ static volatile bool isTC0TimerExpired = false;
 static volatile bool changeTempSamplingRate = false;
 static volatile bool isUSARTTxComplete = false;
 static volatile bool isTemperatureRead = false;
-static uint8_t temperatureVal;
+static volatile uint8_t temperatureVal;
 static uint8_t i2cWrData = TEMP_SENSOR_REG_ADDR;
 static uint8_t i2cRdData[2] = {0};
 static uint8_t __attribute__ ((aligned(32))) uartTxBuffer[100] = {0};
+
 typedef enum
 {
     TEMP_SAMPLING_RATE_500MS = 0,
@@ -83,10 +84,8 @@ typedef enum
     TEMP_SAMPLING_RATE_2S = 2,
     TEMP_SAMPLING_RATE_4S = 3,
 } TEMP_SAMPLING_RATE;
-static TEMP_SAMPLING_RATE tempSampleRate = TEMP_SAMPLING_RATE_500MS;
 
-
-
+static volatile TEMP_SAMPLING_RATE tempSampleRate = TEMP_SAMPLING_RATE_500MS;
 
 static uint8_t getTemperature(uint8_t* rawTempValue)
 {

@@ -77,10 +77,10 @@ void USART1_WriteByte( int data );
 
 bool USART1_TransmitterIsReady( void );
 
-bool USART1_TransmitComplete( void );
-
 bool USART1_ReceiverIsReady( void );
 
+
+bool USART1_TransmitComplete( void );
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
