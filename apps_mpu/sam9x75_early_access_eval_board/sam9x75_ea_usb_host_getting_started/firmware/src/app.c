@@ -56,7 +56,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "app.h"
 
 uint32_t app_state=APP_STATE_INIT; 
-USB_HOST_HID_KEYBOARD_DATA data;
+USB_HOST_HID_KEYBOARD_DATA usb_data;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -160,7 +160,7 @@ void APP_USBHostHIDKeyboardEventHandler(USB_HOST_HID_KEYBOARD_HANDLE handle,
         case USB_HOST_HID_KEYBOARD_EVENT_REPORT_RECEIVED:
             app_state = APP_STATE_READ_HID;
             /* Keyboard Data from device */
-            memcpy(&data, pData, sizeof(data));
+            memcpy(&usb_data, pData, sizeof(usb_data));
             break;
 
         default:
@@ -228,14 +228,14 @@ void APP_Tasks ( void )
             break;
 
         case APP_STATE_READ_HID:
-            if((prev_keycode != data.nonModifierKeysData[0].keyCode)&& (data.nonModifierKeysData[0].event==USB_HID_KEY_PRESSED))
+            if((prev_keycode != usb_data.nonModifierKeysData[0].keyCode)&& (usb_data.nonModifierKeysData[0].event==USB_HID_KEY_PRESSED))
             {
-            if(data.nonModifierKeysData[0].keyCode >= USB_HID_KEYBOARD_KEYPAD_KEYBOARD_A &&
-                  data.nonModifierKeysData[0].keyCode  <= USB_HID_KEYBOARD_KEYPAD_KEYBOARD_0_AND_CLOSE_PARENTHESIS)
+            if(usb_data.nonModifierKeysData[0].keyCode >= USB_HID_KEYBOARD_KEYPAD_KEYBOARD_A &&
+                  usb_data.nonModifierKeysData[0].keyCode  <= USB_HID_KEYBOARD_KEYPAD_KEYBOARD_0_AND_CLOSE_PARENTHESIS)
 
-            DBGU_Write((void *)keyValue[data.nonModifierKeysData[0].keyCode],
-                            strlen(keyValue[data.nonModifierKeysData[0].keyCode]));
-            prev_keycode=data.nonModifierKeysData[0].keyCode;
+            DBGU_Write((void *)keyValue[usb_data.nonModifierKeysData[0].keyCode],
+                            strlen(keyValue[usb_data.nonModifierKeysData[0].keyCode]));
+            prev_keycode=usb_data.nonModifierKeysData[0].keyCode;
             }
             break;
 

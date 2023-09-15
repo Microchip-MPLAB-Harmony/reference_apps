@@ -37,11 +37,13 @@ static void swDelayUs(uint32_t delay)
     uint32_t i, count;
 
     /* delay * (CPU_FREQ/1000000) / 6 */
-    count = delay *  (800000000/1000000)/6;
+    count = delay *  (800000000U/1000000U)/6U;
 
     /* 6 CPU cycles per iteration */
-    for (i = 0; i < count; i++)
+    for (i = 0U; i < count; i++)
+    {
         __NOP();
+    }
 }
 
 /*********************************************************************************
@@ -84,7 +86,10 @@ static void initUPLLCLK(void)
                               PMC_PLL_CTRL0_ENPLLCK_Msk;
 
     /* STEP 10: Wait for the lock bit to rise by polling the PMC_PLL_ISR0 */
-    while ((PMC_REGS->PMC_PLL_ISR0 & PMC_PLL_ISR0_LOCKU_Msk) != PMC_PLL_ISR0_LOCKU_Msk);
+    while ((PMC_REGS->PMC_PLL_ISR0 & PMC_PLL_ISR0_LOCKU_Msk) != PMC_PLL_ISR0_LOCKU_Msk)
+    {
+        /* Wait */
+    }
 }
 
 
@@ -107,7 +112,7 @@ static void initPeriphClk(void)
         uint8_t clken;
         uint8_t gclken;
         uint8_t css;
-        uint8_t div;
+        uint8_t div_val;
     } periphList[] =
     {
         { ID_PIOA, 1, 0, 0, 0},
@@ -120,10 +125,10 @@ static void initPeriphClk(void)
         { ID_PERIPH_MAX + 1, 0, 0, 0, 0}//end of list marker
     };
 
-    int count = sizeof(periphList)/sizeof(periphList[0]);
-    for (int i = 0; i < count; i++)
+    uint32_t count = sizeof(periphList)/sizeof(periphList[0]);
+    for (uint32_t i = 0; i < count; i++)
     {
-        if (periphList[i].id == (ID_PERIPH_MAX + 1))
+        if (periphList[i].id == (uint8_t)((uint32_t)ID_PERIPH_MAX + 1U))
         {
             break;
         }
@@ -131,7 +136,7 @@ static void initPeriphClk(void)
         PMC_REGS->PMC_PCR = PMC_PCR_CMD_Msk |
                             PMC_PCR_GCLKEN(periphList[i].gclken) |
                             PMC_PCR_EN(periphList[i].clken) |
-                            PMC_PCR_GCLKDIV(periphList[i].div) |
+                            PMC_PCR_GCLKDIV(periphList[i].div_val) |
                             PMC_PCR_GCLKCSS(periphList[i].css) |
                             PMC_PCR_PID(periphList[i].id);
     }

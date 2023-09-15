@@ -7508,7 +7508,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\default\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\pio.h</file>
@@ -7524,7 +7524,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\toolchain_specifics.h</file>
-         <hash>943f2c097f75062855ef1434b1b63a84e68ac691a93097a46016a699601a3306</hash>
+         <hash>d93ab2a56ea91cac163fc49b5e3f3491fe3c8ada3bd2f72c752b286f280b40ef</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\aes.h</file>
@@ -7537,6 +7537,10 @@
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\qspi.h</file>
          <hash>fd2951dd40f259c3165b22353a0a66a9733d3e0ea3cbf8254668e743f8e104f1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\piob.h</file>
@@ -7596,7 +7600,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\aic\plib_aic.c</file>
-         <hash>070dd40c1714ceef62d715de5a5f54f9ec530fa06671cba4034504f8395112bf</hash>
+         <hash>9aa027381772b3d68fe5a9c2ac5fdb7548eaefe76b03d4cab0fed0c1aaf85125</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\dsi.h</file>
@@ -7604,7 +7608,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\aic\plib_aic.h</file>
-         <hash>3744d8f5ae1843ce5b3b78bbae13a22a7f22b2f0584db476b657b40cb7850809</hash>
+         <hash>9ff729f3819887a6769c1a4386db9727e6e88fe6bee25960985d9ccd09229a7d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\usb\src\usb_host_hid_keyboard.c</file>
@@ -7612,7 +7616,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\sckc.h</file>
@@ -7656,7 +7660,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc0.c</file>
-         <hash>0fac82feb2b01d55124fb374a3bc5cb801a4f950e18c00c4b5a46e015290061d</hash>
+         <hash>dbf237a03f2cc54a2e617133144f549353662d02deda53854d64e6a46df824a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\gfx2d.h</file>
@@ -7672,7 +7676,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\default\usb\usb_ohci.h</file>
@@ -7692,7 +7696,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -7704,7 +7708,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\dbgu\plib_dbgu_common.h</file>
-         <hash>38ba54965e21e645d68a373d3277c7a4571cabb3ed0ba7e93b7af32a08376e2f</hash>
+         <hash>3a5532ba83c46095ed55db646a9be166772429df5eac103b28c31a562c9cf1a2</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\gmac.h</file>
@@ -7720,7 +7724,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\cache\sys_cache.c</file>
-         <hash>96e3cf05b3e24641f89f3726e0f900a28002ae53ccebb23c8cf27563c59d3076</hash>
+         <hash>9754314ec0e099723a3604ecfe12fb6e682cf64cddf01c968ca931d26c448f0e</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\matrix.h</file>
@@ -7740,7 +7744,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\syscwp.h</file>
@@ -7748,7 +7752,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\mmu\plib_mmu.h</file>
-         <hash>a777af67221ce686baec242376d2cccad707ed3e197c3b049b7d9fd5519e3dfe</hash>
+         <hash>7fb6e6b8ad6a80b7fc04c0264b7cdf49e6d6b887e4f3c5aa394eda88e32e0116</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\tdes.h</file>
@@ -7764,7 +7768,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\mmu\plib_mmu.c</file>
-         <hash>87a1d4803bc64a6cf07d4d0d18d8ab323f88f64e922eb0caf6dd1bfed6ec3479</hash>
+         <hash>2c6345ce6de293ab29ec6dc5ace828503a790a68895c3d2fa53b3702d0b4a8a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\bsc.h</file>
@@ -7840,15 +7844,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\sys_time_definitions.h</file>
-         <hash>904195d4340ba6b97cf19c25b9695d2a9f37ed67cf6abdf8ee1ee839506e2801</hash>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
-         <hash>13910ba097c1a5b9782e2adef8402e42682c3bc09a42ddd7fc3d84d034b54b95</hash>
+         <hash>4bc5f6db6a1b1199633275a64056c259692656152f8c858849d7ec2d33272bdb</hash>
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>39d3833ea554ec96510e3ec8ba2cb663f9d60f23a4c056a18888aab1f419af8c</hash>
+         <hash>70f95ecee541c4e1e22488458cd626b6faa7eb0ac801cdf0689d3bad1ced182e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\usb\usb_ehci.h</file>
@@ -7892,7 +7896,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>f8ede553c5b544b40bcad9e9207293148eb57e7d58090d207a741ae4a7153dff</hash>
+         <hash>2cf0c38b934374bc12854c4c53225836150e52422ed5d16073f44389650c7126</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\dbgu.h</file>
@@ -7912,7 +7916,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\src\sys_int.c</file>
-         <hash>f188fc9be907b9be357e526fbba7eb3a14b5fa936d029c3e33d324298aa77548</hash>
+         <hash>5a683ab50cabf3aa131d76d12f4715e103de0e5cce67d22ab26d11665c38614f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\usb\src\usb_external_dependencies.h</file>
@@ -7924,7 +7928,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc_common.h</file>
-         <hash>444f1845776c5bbdd53278a60d8f2101e23eb3605b8b3950811ef24f9fd05ec0</hash>
+         <hash>aa07077b6355fa1dc9e938cb4def1c725bffddf452ffc55e4f982f83d3988a9e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\pio\plib_pio.h</file>
@@ -7940,11 +7944,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\pio\plib_pio.c</file>
-         <hash>5439afcef8d94555ca570ecb3f7ecee0963d9780443c21d445e65842421e948e</hash>
+         <hash>600fb1caaac5aa33a3adff0281dc44aa60e2a08c238303e4882210fc21c71869</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\wdt.h</file>
@@ -8000,11 +8004,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>5e4cc34d60893982c60b1b18227ee9db63abcad9d518edcee96f23fa20528321</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\flexcom10.h</file>
@@ -8032,7 +8036,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
-         <hash>c5177fb3b837e2610ee49349ec6a6ab2cec9f80bd3023b570dbc3a5a48307570</hash>
+         <hash>fe4cdb3717277d50350b8321d0e14fcbf7728381a8f5d5a669091d78a7690402</hash>
       </entry>
       <entry>
          <file>..\src\config\default\cstartup.S</file>
@@ -8048,7 +8052,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\src\sys_time.c</file>
-         <hash>7e6aafa9e0d95093b7a04bf8a4515309eba402fe6ebe22a5581a9b693616abfb</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\driver.h</file>
@@ -8064,7 +8068,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\tasks.c</file>
-         <hash>b7d1b5165bfc5bbe3998cdcf57617065a10a9a1bcb40c4bfbf9d377fb2571677</hash>
+         <hash>8afc96c365d4778505b9e7b9b2819984bb538e5fe19c555e06171d0854b04bad</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\aic.h</file>
@@ -8072,7 +8076,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\usb\src\usb_host_hid_local.h</file>
@@ -8084,7 +8088,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\mmu\cp15.h</file>
-         <hash>24907eff18f34ad82252c89fde571ebd0f51da7ca4b9f72c8810e9c3d6485edb</hash>
+         <hash>d927deee45b9b50351c5513daf446ae3278f5fa85915c06c434b24c7eb61b64b</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\xdmac.h</file>
@@ -8096,11 +8100,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>04e57f302c59402078eeeb7f3d44a77dea9957a23600b08e2d224c2b6cc2fd57</hash>
+         <hash>8a6aa7e62f8e01ad4eb674e71646393b6f38919f6016e320b862ae9b56f102fe</hash>
       </entry>
       <entry>
          <file>..\src\config\default\fault_handlers.c</file>
-         <hash>34134ba54c0becfbe75cd670be15133f2a10dea081d9fa5fab75f17afc1109ba</hash>
+         <hash>931e951cf7431d3d70d6ab81bcd265ff0ac8b3f473b73cd7a541f59d49786b7c</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\lcdc.h</file>
@@ -8140,7 +8144,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\bsp\bsp.h</file>
-         <hash>5dbea7971a451ead2e67fc5c9a7e74d30bda591272bd16dcb9f7b60e8975a41b</hash>
+         <hash>0dbbfae0253e79a9856f1440e9929ac2ec52ee529f3bb052b42e31e9b4acafdd</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\adc.h</file>
@@ -8160,7 +8164,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\dbgu\plib_dbgu.c</file>
-         <hash>612bfe24558cb70e44daf301b43b0278d595cd18986591ed724bd0fe087c0c7d</hash>
+         <hash>093dad431d8d12590ad8972a5e2b8b19a8ead0def70df4b928e22cb042596469</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\dbgu\plib_dbgu.h</file>
@@ -8168,7 +8172,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\default\bsp\bsp.c</file>
@@ -8180,7 +8184,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\component\isc.h</file>
@@ -8216,7 +8220,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\sys_int_mapping.h</file>
-         <hash>a88ed061ebd75cff98fc9703d2dbd3c868a729737c0d00afff3e0755ab4f8910</hash>
+         <hash>652a7ea6c065e3a4cbcbfaef7c3519fca207fa36de25351875c3ba746dff242b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\usb\uhp\drv_usb_ohci.h</file>
@@ -8280,7 +8284,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\pit\plib_pit.c</file>
-         <hash>911bbef625ce4860a264e9ff646ddd29aec03168e8e418bbb72e0b4a2b7c2480</hash>
+         <hash>ff701ac4202f05407eba065ae9a35f4b434b602cbb24992d4ebdc56de4225f32</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\udphs.h</file>
@@ -8292,7 +8296,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\pit\plib_pit.h</file>
-         <hash>c1e2125a63c08db040346f6ce8ac8f36bd7709f32685eb30363dba03276b7c82</hash>
+         <hash>0f84aaa0b7cb585d5f8952f68f9fa89f04c20bb66a403839aea2d37306ad4beb</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X75_DFP\instance\flexcom8.h</file>

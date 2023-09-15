@@ -126,9 +126,9 @@ PA26 and PA27 are for serial debugging. PC19, PC20, PC21 are for LEDs red, blue,
 - Up to this point in the project creation process, you used MPLAB Code Configurator(MCC) to configure and generate code to initialize the device (SAM9X75) and initialize USB host driver. <br>
   Refer [initialization.c](./firmware/src/config/default/initialization.c) to find all the device resource added in the project graph got initialized.  All that is left is for the user to write the application code in the app.c file.
   Documentation for each of the peripheral libraries or diver libraries can be accessed as follows:
-  1.	Peripheral libraries APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (/<framework_path/>/csp/docs/index.html)
+  1.	Peripheral libraries APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (/framework_path/csp/docs/index.html)
   2.    BSP libraries APIs can be found in bsp.h
-  3.    USB host driver APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (/<framework_path/>/usb/docs/index.html)
+  3.    USB host driver APIs can be accessed as a HTML file (*.html) from the Harmony 3 Framework path. (/framework_path/usb/docs/index.html)
 
 - APIs used for this application are as follows:
   * bool DBGU_Write( void* buffer, const size_t size );

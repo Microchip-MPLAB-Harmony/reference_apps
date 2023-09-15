@@ -53,6 +53,8 @@
 */
 #include "device.h"
 #include "plib_tc0.h"
+#include "interrupts.h"
+
 
  
  
@@ -61,10 +63,10 @@
 
 
 /* Callback object for channel 0 */
-TC_TIMER_CALLBACK_OBJECT TC0_CH0_CallbackObj;
+volatile static TC_TIMER_CALLBACK_OBJECT TC0_CH0_CallbackObj;
 
 /* Initialize channel in timer mode */
-void TC0_CH0_TimerInitialize (void)
+void TC0_CH0_TimerInitialize(void)
 {
     /* Use peripheral clock */
     TC0_REGS->TC_CHANNEL[0].TC_EMR = TC_EMR_NODIVCLK_Msk;
@@ -129,15 +131,20 @@ void TC0_CH0_TimerCallbackRegister(TC_TIMER_CALLBACK callback, uintptr_t context
 }
 
 /* Interrupt handler for Channel 0 */
-void TC0_CH0_InterruptHandler(void)
+static void __attribute__((used)) TC0_CH0_InterruptHandler(void)
 {
-    TC_TIMER_STATUS timer_status = (TC_TIMER_STATUS)(TC0_REGS->TC_CHANNEL[0].TC_SR & TC_TIMER_STATUS_MSK);
+    TC_TIMER_STATUS timer_status = (TC0_REGS->TC_CHANNEL[0].TC_SR & TC_TIMER_STATUS_MSK);
+
+    /* Additional temporary variable used to prevent MISRA violations (Rule 13.x) */
+    uintptr_t context = TC0_CH0_CallbackObj.context;
+
     /* Call registered callback function */
-    if ((TC_TIMER_NONE != timer_status) && TC0_CH0_CallbackObj.callback_fn != NULL)
+    if ((TC0_CH0_CallbackObj.callback_fn != NULL) && (TC_TIMER_NONE != timer_status))
     {
-        TC0_CH0_CallbackObj.callback_fn(timer_status, TC0_CH0_CallbackObj.context);
+        TC0_CH0_CallbackObj.callback_fn(timer_status, context);
     }
 }
+
 
  
  
@@ -151,7 +158,7 @@ void TC0_CH0_InterruptHandler(void)
  
 
 /* Interrupt handler for TC0 */
-void TC0_InterruptHandler(void)
+void __attribute__((used)) TC0_InterruptHandler(void)
 {
 	TC0_CH0_InterruptHandler();
 }
