@@ -4,17 +4,17 @@
 
 
 project: saml21_ble_fitness_tracker
-creation_date: 2023-05-22T16:03:51.900+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-09-15T10:19:14.849+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.3.0
-mcc_core_version: v5.5.0
-mplabx_version: v6.05        # if MPLAB X plugin only
-harmony_version: v1.3.1
-compiler: XC32 (v4.21) 
+mcc_version: v5.3.7
+mcc_core_version: v5.5.7
+mplabx_version: v6.15        # if MPLAB X plugin only
+harmony_version: v1.3.2
+compiler: XC32 (v4.30) 
 
 modules:
-    - {name: "csp", version: "v3.16.0"}
-    - {name: "core", version: "v3.12.0"}
-    - {name: "dev_packs", version: "v3.16.0"}
+    - {name: "csp", version: "v3.18.0"}
+    - {name: "core", version: "v3.13.1"}
+    - {name: "dev_packs", version: "v3.18.0"}
 

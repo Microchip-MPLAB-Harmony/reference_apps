@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,20 +20,20 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_TC0_INSTANCE_
 #define _SAML21_TC0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TC0 peripheral ========== */
 #define TC0_CC_NUM                               (2)        
-#define TC0_DMAC_ID_OVF                          (22)       /* Indexes of DMA Overflow trigger */
 #define TC0_DMAC_ID_MC0                          (23)       /* Indexes of DMA Match/Compare 0 trigger */
 #define TC0_DMAC_ID_MC1                          (24)       /* Indexes of DMA Match/Compare 1 trigger */
+#define TC0_DMAC_ID_OVF                          (22)       /* Indexes of DMA Overflow trigger */
 #define TC0_EXT                                  (0)        
 #define TC0_GCLK_ID                              (27)       
+#define TC0_INSTANCE_ID                          (72)       
 #define TC0_MASTER_SLAVE_MODE                    (1)        /* TC type 0 : NA, 1 : Master, 2 : Slave */
 #define TC0_OW_NUM                               (2)        
-#define TC0_INSTANCE_ID                          (72)       
 
 #endif /* _SAML21_TC0_INSTANCE_ */

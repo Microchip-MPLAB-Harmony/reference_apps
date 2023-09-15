@@ -1,7 +1,7 @@
 /*
  * Header file for ATSAML21J18B
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* File generated from device description version 2021-06-07T06:15:03Z */
+/* File generated from device description version 2023-04-12T13:57:35Z */
 #ifndef _SAML21J18B_H_
 #define _SAML21J18B_H_
 
@@ -82,12 +82,12 @@ typedef enum IRQn
   SysTick_IRQn              =  -1, /* -1  System Tick Timer                   */
 
 /******  SAML21J18B specific Interrupt Numbers ***********************************/
-  OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSC32KCTRL) */
-  PAC_IRQn                  =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PAC) */
   MCLK_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (MCLK) */
+  OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSC32KCTRL) */
+  OSCCTRL_IRQn              =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSCCTRL) */
+  PAC_IRQn                  =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PAC) */
   PM_IRQn                   =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PM) */
   SUPC_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (SUPC) */
-  OSCCTRL_IRQn              =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSCCTRL) */
   WDT_IRQn                  =   1, /* 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /* 2   Real-Time Counter (RTC)             */
   EIC_IRQn                  =   3, /* 3   External Interrupt Controller (EIC) */

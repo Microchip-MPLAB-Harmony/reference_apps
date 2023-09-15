@@ -1,7 +1,7 @@
 /*
  * Component description for USB
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_USB_COMPONENT_H_
 #define _SAML21_USB_COMPONENT_H_
 
@@ -709,12 +709,12 @@
 #define USB_DEVICE_STATUS_LINESTATE_Pos       _UINT8_(6)                                           /* (USB_DEVICE_STATUS) USB Line State Status Position */
 #define USB_DEVICE_STATUS_LINESTATE_Msk       (_UINT8_(0x3) << USB_DEVICE_STATUS_LINESTATE_Pos)    /* (USB_DEVICE_STATUS) USB Line State Status Mask */
 #define USB_DEVICE_STATUS_LINESTATE(value)    (USB_DEVICE_STATUS_LINESTATE_Msk & (_UINT8_(value) << USB_DEVICE_STATUS_LINESTATE_Pos)) /* Assigment of value for LINESTATE in the USB_DEVICE_STATUS register */
-#define   USB_DEVICE_STATUS_LINESTATE_0_Val   _UINT8_(0x0)                                         /* (USB_DEVICE_STATUS) SE0/RESET  */
-#define   USB_DEVICE_STATUS_LINESTATE_1_Val   _UINT8_(0x1)                                         /* (USB_DEVICE_STATUS) FS-J or LS-K State  */
-#define   USB_DEVICE_STATUS_LINESTATE_2_Val   _UINT8_(0x2)                                         /* (USB_DEVICE_STATUS) FS-K or LS-J State  */
-#define USB_DEVICE_STATUS_LINESTATE_0         (USB_DEVICE_STATUS_LINESTATE_0_Val << USB_DEVICE_STATUS_LINESTATE_Pos) /* (USB_DEVICE_STATUS) SE0/RESET Position  */
-#define USB_DEVICE_STATUS_LINESTATE_1         (USB_DEVICE_STATUS_LINESTATE_1_Val << USB_DEVICE_STATUS_LINESTATE_Pos) /* (USB_DEVICE_STATUS) FS-J or LS-K State Position  */
-#define USB_DEVICE_STATUS_LINESTATE_2         (USB_DEVICE_STATUS_LINESTATE_2_Val << USB_DEVICE_STATUS_LINESTATE_Pos) /* (USB_DEVICE_STATUS) FS-K or LS-J State Position  */
+#define   USB_DEVICE_STATUS_LINESTATE_SE0_RESET_Val _UINT8_(0x0)                                         /* (USB_DEVICE_STATUS) SE0/RESET  */
+#define   USB_DEVICE_STATUS_LINESTATE_FSJ_LSK_Val _UINT8_(0x1)                                         /* (USB_DEVICE_STATUS) FS-J or LS-K State  */
+#define   USB_DEVICE_STATUS_LINESTATE_FSK_LSJ_Val _UINT8_(0x2)                                         /* (USB_DEVICE_STATUS) FS-K or LS-J State  */
+#define USB_DEVICE_STATUS_LINESTATE_SE0_RESET (USB_DEVICE_STATUS_LINESTATE_SE0_RESET_Val << USB_DEVICE_STATUS_LINESTATE_Pos) /* (USB_DEVICE_STATUS) SE0/RESET Position  */
+#define USB_DEVICE_STATUS_LINESTATE_FSJ_LSK   (USB_DEVICE_STATUS_LINESTATE_FSJ_LSK_Val << USB_DEVICE_STATUS_LINESTATE_Pos) /* (USB_DEVICE_STATUS) FS-J or LS-K State Position  */
+#define USB_DEVICE_STATUS_LINESTATE_FSK_LSJ   (USB_DEVICE_STATUS_LINESTATE_FSK_LSJ_Val << USB_DEVICE_STATUS_LINESTATE_Pos) /* (USB_DEVICE_STATUS) FS-K or LS-J State Position  */
 #define USB_DEVICE_STATUS_Msk                 _UINT8_(0xCC)                                        /* (USB_DEVICE_STATUS) Register Mask  */
 
 

@@ -1,7 +1,7 @@
 /*
  * Component description for CCL
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_CCL_COMPONENT_H_
 #define _SAML21_CCL_COMPONENT_H_
 

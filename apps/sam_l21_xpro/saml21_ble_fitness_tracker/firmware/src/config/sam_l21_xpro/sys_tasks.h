@@ -1,22 +1,23 @@
 /*******************************************************************************
-  System Exceptions File
+ System Tasks Header File
 
   File Name:
-    exceptions.c
+    sys_tasks.h
 
   Summary:
-    This file contains a function which overrides the default _weak_ exception
-    handlers provided by the interrupt.c file.
+    This file contains declarations for task handles.
 
   Description:
-    This file redefines the default _weak_  exception handler with a more debug
-    friendly one. If an unexpected exception occurs the code will stop in a
-    while(1) loop.
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
+
+  Remarks:
+    None
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -36,48 +37,20 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
+
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-    #include "configuration.h"
-#include "interrupts.h"
+
+#include "configuration.h"
 #include "definitions.h"
 
- 
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Exception Handling Routine
-// *****************************************************************************
-// *****************************************************************************
-
-/* Brief default interrupt handlers for core IRQs.*/
-void __attribute__((noreturn, weak)) NonMaskableInt_Handler(void)
-{
-#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
-    __builtin_software_breakpoint();
-#endif
-    while (true)
-    {
-    }
-}
- 
-void __attribute__((noreturn, weak)) HardFault_Handler(void)
-{
-#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
-   __builtin_software_breakpoint();
-#endif
-   while (true)
-   {
-   }
-}
-
- 
-/*******************************************************************************
- End of File
- */
+#endif //SYS_TASKS_H

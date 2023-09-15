@@ -89,7 +89,6 @@ volatile    bool    button_pressed = false;
             uint8_t hr_measurment_handle;
             bool    rdy_signal = false;
             char    lcl_buffer[10];
-            uint32_t count = 0;
             int8_t heartRateMeasuredData  = -1;
 
 

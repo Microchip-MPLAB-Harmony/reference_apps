@@ -1,7 +1,7 @@
 /*
  * Component description for RTC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_RTC_COMPONENT_H_
 #define _SAML21_RTC_COMPONENT_H_
 
@@ -893,15 +893,6 @@
 #define RTC_MODE1_COMP_Msk                    _UINT16_(0xFFFF)                                     /* (RTC_MODE1_COMP) Register Mask  */
 
 
-/* -------- RTC_GP : (RTC Offset: 0x40) (R/W 32) General Purpose -------- */
-#define RTC_GP_RESETVALUE                     _UINT32_(0x00)                                       /*  (RTC_GP) General Purpose  Reset Value */
-
-#define RTC_GP_GP_Pos                         _UINT32_(0)                                          /* (RTC_GP) General Purpose Position */
-#define RTC_GP_GP_Msk                         (_UINT32_(0xFFFFFFFF) << RTC_GP_GP_Pos)              /* (RTC_GP) General Purpose Mask */
-#define RTC_GP_GP(value)                      (RTC_GP_GP_Msk & (_UINT32_(value) << RTC_GP_GP_Pos)) /* Assigment of value for GP in the RTC_GP register */
-#define RTC_GP_Msk                            _UINT32_(0xFFFFFFFF)                                 /* (RTC_GP) Register Mask  */
-
-
 /* -------- RTC_MODE2_ALARM : (RTC Offset: 0x20) (R/W 32) MODE2_ALARM Alarm n Value -------- */
 #define RTC_MODE2_ALARM_RESETVALUE            _UINT32_(0x00)                                       /*  (RTC_MODE2_ALARM) MODE2_ALARM Alarm n Value  Reset Value */
 
@@ -953,6 +944,15 @@
 #define RTC_MODE2_MASK_Msk                    _UINT8_(0x07)                                        /* (RTC_MODE2_MASK) Register Mask  */
 
 
+/* -------- RTC_GP : (RTC Offset: 0x40) (R/W 32) General Purpose -------- */
+#define RTC_GP_RESETVALUE                     _UINT32_(0x00)                                       /*  (RTC_GP) General Purpose  Reset Value */
+
+#define RTC_GP_GP_Pos                         _UINT32_(0)                                          /* (RTC_GP) General Purpose Position */
+#define RTC_GP_GP_Msk                         (_UINT32_(0xFFFFFFFF) << RTC_GP_GP_Pos)              /* (RTC_GP) General Purpose Mask */
+#define RTC_GP_GP(value)                      (RTC_GP_GP_Msk & (_UINT32_(value) << RTC_GP_GP_Pos)) /* Assigment of value for GP in the RTC_GP register */
+#define RTC_GP_Msk                            _UINT32_(0xFFFFFFFF)                                 /* (RTC_GP) Register Mask  */
+
+
 /** \brief RTC register offsets definitions */
 #define RTC_MODE0_CTRLA_REG_OFST       _UINT32_(0x00)      /* (RTC_MODE0_CTRLA) MODE0 Control A Offset */
 #define RTC_MODE1_CTRLA_REG_OFST       _UINT32_(0x00)      /* (RTC_MODE1_CTRLA) MODE1 Control A Offset */
@@ -982,11 +982,11 @@
 #define RTC_MODE1_COMP_REG_OFST        _UINT32_(0x20)      /* (RTC_MODE1_COMP) MODE1 Compare n Value Offset */
 #define RTC_MODE1_COMP0_REG_OFST       _UINT32_(0x20)      /* (RTC_MODE1_COMP0) MODE1 Compare n Value Offset */
 #define RTC_MODE1_COMP1_REG_OFST       _UINT32_(0x22)      /* (RTC_MODE1_COMP1) MODE1 Compare n Value Offset */
+#define RTC_MODE2_ALARM_REG_OFST       _UINT32_(0x20)      /* (RTC_MODE2_ALARM) MODE2_ALARM Alarm n Value Offset */
+#define RTC_MODE2_MASK_REG_OFST        _UINT32_(0x24)      /* (RTC_MODE2_MASK) MODE2_ALARM Alarm n Mask Offset */
 #define RTC_GP_REG_OFST                _UINT32_(0x40)      /* (RTC_GP) General Purpose Offset */
 #define RTC_GP0_REG_OFST               _UINT32_(0x40)      /* (RTC_GP0) General Purpose Offset */
 #define RTC_GP1_REG_OFST               _UINT32_(0x44)      /* (RTC_GP1) General Purpose Offset */
-#define RTC_MODE2_ALARM_REG_OFST       _UINT32_(0x20)      /* (RTC_MODE2_ALARM) MODE2_ALARM Alarm n Value Offset */
-#define RTC_MODE2_MASK_REG_OFST        _UINT32_(0x24)      /* (RTC_MODE2_MASK) MODE2_ALARM Alarm n Mask Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief RTC register API structure */

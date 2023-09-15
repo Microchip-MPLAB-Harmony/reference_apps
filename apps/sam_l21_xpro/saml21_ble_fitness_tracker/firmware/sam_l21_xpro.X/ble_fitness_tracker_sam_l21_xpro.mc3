@@ -1,4 +1,4 @@
-<config configName="sam_l21_xpro" projectName="ble_fitness_tracker_sam_l21_xpro" configVersion="1.1" device="ATSAML21J18B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
+<config configName="sam_l21_xpro" projectName="ble_fitness_tracker_sam_l21_xpro" configVersion="1.1" device="ATSAML21J18B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -71,7 +71,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1523,7 +1523,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_25_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_DC&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_DC&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1600,7 +1600,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_27_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_BSY&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_BSY&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1677,7 +1677,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_36_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_CS&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_CS&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1963,7 +1963,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_41_FUNCTION_NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;CLICK_EINK_EPAPER_2_9_296_128_RST&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;EPAPER_2_9_296_128_RST&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5587,23 +5587,23 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\sam_l21_xpro\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\supc.h</file>
-         <hash>ab1a8b8d13a8e445166761fe0bf87d773fc0140a7f91d58eb5ec5c6e2144f17e</hash>
+         <hash>c4f981a1defed20fd4f9d6a9391137742e82757a1ca6b007706ac691d7a69b00</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\sercom4.h</file>
-         <hash>dd14e51c43beb8e2763fe1f5a39d5315df89cf695be837c89c53f3a82e52eba7</hash>
+         <hash>0189b68518d4a53dd0140afc04a1925115afc2759424194c5cdc3b633720208d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\ac.h</file>
-         <hash>0155b7bf4ff4725082fbbf9e7ae2f38aa25ef7ddba90ed7f43398217fc3c89d0</hash>
+         <hash>1adc6683f8f6640b2d85e2ec8625feb56600265f5a45aa7dd1f7c3090e1ce1c6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\aes.h</file>
-         <hash>65a40107e591a2b9b0a26544c701b38b8df33d6ed629118f1dcf9ace5b7f2bf0</hash>
+         <hash>3d3753bc2f064f8c6de93c98fd8dc27b472f82be795c6c29099ee922b6ba51d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -5615,11 +5615,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\tc.h</file>
-         <hash>bfbdf19879896c5e024c49d15da6ede6a58bbe650bd1271479ffb97ae9047a1f</hash>
+         <hash>59972d78b93d7a67f847b7383f038653fec30bceee74bd0408aaf2a3bc6ab901</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\sercom0.h</file>
-         <hash>9adec0eb771d4d1d57a574a84a505c3ba942261d6ff0649c5f231b31d92f84e0</hash>
+         <hash>ec0fcdadafa818f05d55f24725a2712dcb8da4873906c7d96bac9f6c163325d7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_l21_xpro\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -5627,67 +5631,67 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\dsu.h</file>
-         <hash>8cf78f9b47442ef42c4fa3620bb6e35bb4620f7bb8914e07e669233ff8a7eec3</hash>
+         <hash>3587b49ee4aa3e8ab99dc14d90fa6f4d70b5b9fd33195e4e940b711b920b7449</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\ac.h</file>
-         <hash>5b3b3742724a6d60d4007938d5b2239103c01d65a70b16b85dcd331d3cac039b</hash>
+         <hash>bc74104b28a7734bc077a130926bec9c2842f9298e800a9d33d7c61ae76db40d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\definitions.h</file>
-         <hash>ec6ec851f163224428382e654586aff0540cfc23f727a928dea285fcd879dd53</hash>
+         <hash>b41d6b97f2f8a2e3c7ed0019f5b1bae8eb976e0947cbc918c136ffdda26e20bf</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\mclk.h</file>
-         <hash>62ce31a3f95022e1ded3227bab37ce619b00931fdeb747db2f4823c4343fbba9</hash>
+         <hash>bbedfe3ccfca47e439f46e977f7aed3783ac49b45222f58dff77dea4c5eea9ef</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\aes.h</file>
-         <hash>9a25b3054f7d0fadc7d25264ac71d7e037bb512b53cdba54c2e294cfa6d73048</hash>
+         <hash>84ae33a854832902a9de5e3492ea10c1c1ea472af17d0a6b55f1aee1c2d23447</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\opamp.h</file>
-         <hash>f62ffaa036ba66430cd8bd37b4b1904b842a3887a0f426833fd04d4d2a52c91b</hash>
+         <hash>65ff96bdccc28a200f9235d84ee42f4e3a46affd32a5da84d536e4796bac37ee</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\rstc.h</file>
-         <hash>837f6408ee4f2c6b67b86902f3b389db22b20ebabe597654da8cf153feb1fcd2</hash>
+         <hash>0c9c360aa90baa646c1c15ba00f438ee088cada7c232033513b5f1983e10299b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tc1.h</file>
-         <hash>a4c206e14f1c7fd5e8ae1fbbe36c0e253913823246a08c0dd283e69ff29e0c15</hash>
+         <hash>dcd0934ccdae5042e64f7789e943bfd3af9bfd5cda1b258f73476b8cf03d9b2b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom3_usart.h</file>
-         <hash>1562a17a4068682763baf98fc159410cbd074a4083b0a2a566ea5b74d25eb1fe</hash>
+         <hash>38bd5f257a7dfce1144c3375178920ba13770e7ec6283d7e5014f8af56aeb1bc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom3_usart.c</file>
-         <hash>d6d0785975c18d04cae760ad57a39ce9e9767c815683014b49a02dd144afeccd</hash>
+         <hash>919a2b86bbbdb375d19e4b87c31e9166d8ecfc0cc29a94e536e11f32e66437d5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\pm.h</file>
-         <hash>0f5133356b10a1174f5b6f2e337b5767ea046712f3771acdf372f354e88b5115</hash>
+         <hash>dc4de1c477bbc8d55e4a8e3254999da6b9b1d3d5bb6e718bbdcac0ac4b258146</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\opamp.h</file>
-         <hash>b4e1007fcbed5c141cc00625e8630924b80fd432ebe7d3c4a766a421cff33db1</hash>
+         <hash>e4bf82e4e7b9eedf06cb41c161d8beb6e4b6d65031a678541e9f530621f2a722</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\oscctrl.h</file>
-         <hash>7071442fafe5b01b5ba89ae35c09ee7d24f3dbb93388deaff154696764146df8</hash>
+         <hash>c4fe9ba38e12b4fce43250dc318dfcc90c0aa5d3c41eb0b05b689633f75a903e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\pin_configurations.csv</file>
-         <hash>ebc28d3c456f06576a332261889793870c7a93b52efcb824a6d85eeb6e5a4f4e</hash>
+         <hash>f95a0b79e16865d8ba08d117e32c778c9f5a82234ef1bf4e90e88e3572ae2a3c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\ccl.h</file>
-         <hash>893aa5f933aa5318766045582b05e35b59b84ab6797a0a3e99e4948895d83d33</hash>
+         <hash>8805b8e9d6acaceedd2207f9da8743ccace53cdf69c4cd0b1a0595a3ae3801ba</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\system.h</file>
@@ -5695,23 +5699,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\rtc.h</file>
-         <hash>10544a1752446bc03dda9c57f0571df3b8a152d3342d2215894d4f80d161fd5a</hash>
+         <hash>1e20f1923006ccba16497475aade9ec9a9e18ef06e5c440318bf09c1baf1f17f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\mtb.h</file>
-         <hash>d9d6f7ec31a710eed411160b419f57f8610b686da77d719f0dae343bb74a3999</hash>
+         <hash>4cb7a28fb965f39ef03b78a73dc239aa8dcf2fb757296a8cce7e9d9f501af0dc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\port.h</file>
-         <hash>b2264461e2937add6365bee9c20e0335eec8bc935713720013e7520eca4c4575</hash>
+         <hash>898a558529203be5307800d9b91c95b096c5b61ff764023b3dd480fa715268f4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\nvmctrl.h</file>
-         <hash>57846065db9308646d292acfe3b3a8248d9bf42f5262b57d3521e0d174fb5fca</hash>
+         <hash>de29d58dd469081897c112e7e8e68379faf0a80cde01272ee9283ebd5f8c1905</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\trng.h</file>
-         <hash>54f3309addcf3dddd451fad5363785778f6612ae378a78ba86a1874bad4555ac</hash>
+         <hash>62e6b0098d8350db8bc19ee17e11fb659f17d4c7cab177312dc7fa8274ec8427</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm0plus.h</file>
@@ -5719,15 +5723,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\tasks.c</file>
-         <hash>fef67f1a3984e2d93fc35edcdf1a53dd426162db6d47cba992fc49f8660df833</hash>
+         <hash>36364a39e784157f4aac281dfecc1f19be971c9935e6299a6f37a78cd98d1d46</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\rtc.h</file>
-         <hash>f7137573b07c329cc30550ead3e3870ac538675eb2070b7a12f45ce1491effaa</hash>
+         <hash>781a7225535b2a90a76a17b50073c0dcface742537fd53064d992fa6633f0cb3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\supc\plib_supc.c</file>
@@ -5735,7 +5739,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\fuses.h</file>
-         <hash>50662ae8fdec0bb0b1e108f30c09e71b6ae1d92c0003c1c837158e6865ed188d</hash>
+         <hash>986dc3398986c1c0f782894aff9496aab4d49e4a468f96078df5d2b77506f0f1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\supc\plib_supc.h</file>
@@ -5743,7 +5747,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\dsu.h</file>
-         <hash>baae4fef1648171bf2b73a7d004ed5219bf16be99a162d3f8d8bab733fadcf1e</hash>
+         <hash>d8f75f9e9c673f8b1570b26e7b329316ff802d1ad37cfd458bdaf5e4912f2749</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
@@ -5759,47 +5763,47 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\fuses.h</file>
-         <hash>fcb0a44540b845c39281bb02186a7c83b4109585e9db2ab6442c5222c59af1d8</hash>
+         <hash>52ae187e859906e8c5a3afd1a333068cfb6d6dd4e81d193b2a223236540f963e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\mtb.h</file>
-         <hash>5ec26b3562c51d9ffcfd341f7e464ab3f5ad589bb415907200fd0ccc5d92f50a</hash>
+         <hash>5cc3300703c0aeb769a26489041301f20346775835a59161fe3ff57b400cd877</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\sercom5.h</file>
-         <hash>6797ca473300f7fd77b71aa19076f530c67fcb834c85576fb599787db47962ce</hash>
+         <hash>e25f5977ce02f39d9f53a446e803da26af48a9b42b81784541d731f3e59fe57a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\tcc.h</file>
-         <hash>ce417c3d76d3a1ca7d5bd7d2924068dc73f0fa87ae30f92d3858d5d18a22794e</hash>
+         <hash>cd4d6eca875f4f8c398fdfa4977cde080f03f86ef23a3c960771bcb64c57dc19</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\eic.h</file>
-         <hash>561e9bc8d417aa8c54f6ceda06992fa4cdae06737c50bc038fdc6a1dd38bf552</hash>
+         <hash>b92873451e1f632033bec0aa1d732cf5df8982f150c390684e8abe2f8ec2faa5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\ptc.h</file>
-         <hash>f4fcfd8d5a6925fb3dd64a2ec9f2255f76e3b94186805938bdd2681d45855e99</hash>
+         <hash>df52f731808a65cfdc2664a9f418cd149309cf983058e49f7265e072c356a8f1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\sercom1.h</file>
-         <hash>24e7d2fba7df6ff52ece1924e7f0476336fefe6f57f2cefb03065c8e4a9f1a0d</hash>
+         <hash>9573b8c530e2604d69cff69ef47b580bfde3253d5f4c5e266111c439d1c88740</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\eic.h</file>
-         <hash>e65a80b94587bb93e1fe4d492655af64a91697f4b8a81777c6d5df2d067f7363</hash>
+         <hash>744ad54add070f990e5b44120d2eb4284f79da781948eb9a3712359cd05bcd8e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\ptc.h</file>
-         <hash>b67e756d0145e1ab434c4e5e0e841b895bd6afe99e1593c1e7a5a6c36de72036</hash>
+         <hash>bf296a1d712ed456b683b205ba8c8d6aa7119fa4179bea257ddeb1f55f5b9359</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -5807,7 +5811,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\wdt.h</file>
-         <hash>248ad5e2713a3478d3703e15f2a1ad5d18d34de35dbc7a66082bb514d87eadc5</hash>
+         <hash>491e2870602c1e97f18a524d06f980445a5d0b96800dbde44e02dd48a7f10701</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -5815,19 +5819,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom4_usart.h</file>
-         <hash>b07da3b4172eefecd291f8892bd6b0ecb609502098d91bfc59bceda782a11117</hash>
+         <hash>d133204c7223f09d0e16f67986626845593cb310746e457adc708cdfeffe9ded</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tc2.h</file>
-         <hash>5901d2738db692fccf39d5f98ae6cc3364424bec9f76b33d0b09acb91f1d2c35</hash>
+         <hash>d55c5d0f6911bfdd27f7e5fb225b510e5249955d53622dd3bdaab298d17ab703</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\pac.h</file>
-         <hash>9ecc38a8a9fab43faeca7321403acbc9496d52d7a4678c3a38c0a4fc42f040cd</hash>
+         <hash>d549411b7e6b854def452879c18d245cc041abc88540493b1bb6dbf02d869dbc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\usb.h</file>
-         <hash>a5fa7cc73f70611542a280e0bdbfd6ead58a374a0356858904b8e4a4deaa6405</hash>
+         <hash>a129276508558e453e5445f830f28e35e585d466e701e29a59d3e0505d288b4d</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -5835,7 +5839,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\pac.h</file>
-         <hash>300f6e349b532fd148c05f887fd8fae3fcfe20b7ef296269bdece1ca5c13a4d7</hash>
+         <hash>437b6af966709c3df99ebe878fcb26b2b9d845456146e625cbe730293bd59279</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\device_cache.h</file>
@@ -5843,11 +5847,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom4_usart.c</file>
-         <hash>a453cc43d82547f5545468d7736b042c196e4c512bd5c7ef44990cd10f4574c1</hash>
+         <hash>8d891658bc1344bac45518035b378f390590186ffcd60c316362385ad699fdfc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\usb.h</file>
-         <hash>ca8d0c46e9f9386307b53df502f1cc48a9d8a019b07a2b94890cbbbf907298fe</hash>
+         <hash>80dd6d178845f236c0af9820a3ba6e639c40199b6fc722faa6cd3c359a1ce296</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\clock\plib_clock.h</file>
@@ -5855,7 +5859,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -5863,7 +5867,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\clock\plib_clock.c</file>
-         <hash>d0ca2818a2bd3f0663a622660a0c4d72d65093aca001fff452bbcdaffe7b7dc9</hash>
+         <hash>731064b97871a9a1985769e16d6f7bcaf681cc6cca2bbf26164342ec69ecc29d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\device_vectors.h</file>
@@ -5871,15 +5875,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\saml21j18b.h</file>
-         <hash>aafb272731de4b20186045b2008dcf0403b1c4ed5f394622f651b7277e39c103</hash>
+         <hash>861ba1e98e68cf95e39afc1e2473a6d8b1751ba579e6d03336eab2265b983686</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\pm.h</file>
-         <hash>cee0d463df91c253208968023ef88e54da2fec9deb95072987ca3483978ab7be</hash>
+         <hash>1e0f32aa5379bf57e6896c35c5edcd002ed295e120fd790e643f2815bacd7519</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\gclk.h</file>
-         <hash>34c451887b1412432712bc9d3ccf207418af7499289bee8ed8e9c9099dbd9163</hash>
+         <hash>a009c6954c31a8e07e9a8856f20e7f6c4924bae68c845e9a017ec1c5b605bca3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\tc\plib_tc_common.h</file>
@@ -5891,7 +5895,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\pio\saml21j18b.h</file>
-         <hash>8b4c6aa98f9dbf47940d2bdfefd83f6bb47af45faf251dd5219674fc820f3e3c</hash>
+         <hash>3fe68def642cfc1c8ef601146694c843b83095ab79f9d08744a8a37786bed60d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\stdio\xc32_monitor.c</file>
@@ -5899,11 +5903,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\mclk.h</file>
-         <hash>41da3fd432ea84d110a5b5287524fa6aa4d4e6cf913f9e4ec89b864a80f634ab</hash>
+         <hash>711fd75bdde2591bed6801bd8860f11ef201210e0f2d64cca354d604ce77789a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\tc\plib_tc1.c</file>
-         <hash>f86944f5efafd63d69a08c2f96debea96437578fad41790441056849eb4b316d</hash>
+         <hash>04e66ea6bf9613b108d1f4f62f5702f85d5c60a764d164dde6feb9e3d1269c10</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -5919,11 +5923,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\wdt.h</file>
-         <hash>27a9b39105bdd9e6973289a37c448a4fd3f55114e5698f8d6808740d4dbd8549</hash>
+         <hash>cc9da4c7df70c92890fa3b1eb541ab6395d443b34a6348390e4dd38d6f3016c2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tcc2.h</file>
-         <hash>7edcc82ef9d96109dba2084e0a63015669960550d098ad30cb99cbd9ed8c4cd3</hash>
+         <hash>b3a680ce8e2718f5d87c2ae4a363442a4eaa73dc5a35d98fe48765923a7ea99e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\pm\plib_pm.c</file>
@@ -5931,15 +5935,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\nvic\plib_nvic.c</file>
-         <hash>57db5864fc54af85dea654e23c285621345019d70d110b4d39151630c604cffa</hash>
+         <hash>afd5f52c2d1db6b918ba3de93416acac0f23067e9989921b27f00c852841404a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\dmac.h</file>
-         <hash>e1f980f412041838ba11ea64e6fd2b8e61a5dabe4a31c44d2cd57748bfd1e98a</hash>
+         <hash>6a971f368d3161efd30e6622547fd096e0c8d31cf74bbc69a3f5ee529f926602</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\nvmctrl\plib_nvmctrl.h</file>
@@ -5947,15 +5951,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\interrupts.c</file>
-         <hash>61484727cc0f6ddeeb813290cb2fe84bd4548426f7d7e36d09d6820381abe8af</hash>
+         <hash>ef5a3583e41a371228bc6d19be4c56d36a41b46ce9b2f7f5716cc9c51fbc2fd9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\initialization.c</file>
-         <hash>1bd5706302885dbf6b0572096a8b96ad404633721fc671fa5e350fa00e9a6dae</hash>
+         <hash>bbca9499de1ecc376d17ddc079d5ab5877b06f427fa1ea6dabd02b228d0c2aa9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>ab6f363dc6978fa96d7ac0736f1647d98df6474db7a58f3e2a2e83bf8ba4c282</hash>
+         <hash>1fb8d05a455e4b5ec9a5e2fdfe11470cbde614fa7df8a005b0f0110a95f071bc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\interrupts.h</file>
@@ -5963,35 +5967,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\sercom2.h</file>
-         <hash>b76f3ab6704e55b9a57a1ad9486e3abaa9d6e2b64963aaab96c1c3985ef3d497</hash>
+         <hash>1efe4bf68e571e7ab3f9941449417c09234296894d7ea9569a406059d9e3ccc2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\gclk.h</file>
-         <hash>f31196dc4e43952d3ddc030ec398497e066ead61ad7315761e6a0c7c1c49a9b1</hash>
+         <hash>801d13cb6c34e8a25efacad6d31596de2184f95cc72bbc3981d25eb657bc7091</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom1_usart.c</file>
-         <hash>3563b989f7de5d822b78ff1e96953d96051be91ee47f976bc74cec44fa81a71f</hash>
+         <hash>cbee4e1001256bf49c8c989d1376cc87b779842fd7a07ac39dbe4f525da96b03</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom1_usart.h</file>
-         <hash>473e49bda7cf558c57883fec7f712eb5ae2fe339bfec0d691c46f2977f6a3eb4</hash>
+         <hash>31ecd4d25e40afbba112cd54d25fd2d83a03ac60ec8af86178f70f70392cdf19</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tc3.h</file>
-         <hash>0f4e88d336710ff48227159523014c5133bbadf032d131bbd1125c2f2a8185cf</hash>
+         <hash>ddf53e4f8942bda165daa5ee2ff02f2dc8a7a175fa1ad8e16695f589c2444f53</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\spi_master\plib_sercom5_spi_master.c</file>
-         <hash>757ce6f066177e68ebb57daba3d18e33cb3dc55845b2c0f959fe38af450359e6</hash>
+         <hash>6ae43fb4fc110cd1cfa86c98b438ab77d7e57b5f3db3899701a2679e2734953d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\adc.h</file>
-         <hash>0b3b1e5fbd8cb9e2a8e31d0bb0fbcd90cb2e890e7bb7d9b7198f7bc27bd4c56d</hash>
+         <hash>157d71cae7b200fecd5b7124cef20e81e436c89b948af9bd69d30f19e3103232</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\spi_master\plib_sercom5_spi_master.h</file>
@@ -6007,15 +6011,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\adc.h</file>
-         <hash>40fe224a1df5ee066a13864705990d9a83798216d3501a68ea74b49b78642997</hash>
+         <hash>cd9da3a1757507d8dd952921a07d4b24c46f0f5a6aa601a2258b14ae1579ca88</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\ATSAML21J18B.ld</file>
-         <hash>54be17d2c7330c73f5653dc4f6280a9b958c685194aa33062d8ce6148f3b73ed</hash>
+         <hash>cc7152d2a0b5bace72dc7c26a235bb9b27cfe784dad4effeaedbe36e65ca8e4e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\configuration.h</file>
@@ -6023,15 +6027,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tcc1.h</file>
-         <hash>a8f549a6b1f4cd565eb0a36d7636e5d41d606ac0306929875c5236bafbea93be</hash>
+         <hash>883ed1de6e5dcddd94d4efa44faec93ed3cbb2b15acdf1ad5f68326e15569984</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\eic\plib_eic.h</file>
@@ -6043,23 +6047,23 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\eic\plib_eic.c</file>
-         <hash>e914818efb3dc230a79741b58b40e722f1e7eda9fc5d364e478cb4911f396288</hash>
+         <hash>38023872f41b49395605e21752d0adcc956bdae51946215350c69bc2099b75cb</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\tc\plib_tc0.c</file>
-         <hash>bef382782bf8d374ce7bcd3a4d5872d2bef6f4b6b7c8e3f02ec2b1ace6f27080</hash>
+         <hash>bd4aa06bd92c0c8151ae2b5b1a2d66d10386234c5ea23f59f9f21d81af10e1ce</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\port.h</file>
-         <hash>02e10f2ef318596ee19ed5af01853a95e2c89c6a197f5cf55332ab2901ffb395</hash>
+         <hash>a5e1c4994f1050a1ea443e8ad8220ba3daf3b5d3c722002074ed2a8ef911fa1f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\osc32kctrl.h</file>
-         <hash>518fb1a9fad72c468fbf6206b8e1747de151c6b265b33b087e509952a7ecc591</hash>
+         <hash>c86d2ba4cf962d1f04593b470abff9cca2747affbe66bed98810d5b4a36c71e4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\exceptions.c</file>
-         <hash>cc07b84902bf881b410bee8cd4463b438ad2997c8fd8d3f308a16d926f75d601</hash>
+         <hash>3d788ce1bd25caaaf6b533ec5b06e4b1e753044c1a217dd5cdf8629628ae85a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -6067,27 +6071,27 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\evsys.h</file>
-         <hash>10c0cdcd7d62c6c98e69606321a9188006df8719f72402b1c4e0c26da1ab577a</hash>
+         <hash>7d987580e07011e247edb32153e3f1d3272545ad1f8af4b12a262dde2f348432</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\sercom3.h</file>
-         <hash>5872ccaeb27e4a30a2d461941ea5e95aa7094b6e83e6f9d98ab1da1418abd74a</hash>
+         <hash>ea6210746d806adbdd64c9f28a51850b3e77eda1f2164401af87b848ffefdacd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\evsys.h</file>
-         <hash>dbb44024cd086fbf321834f076f9275d2d3b0ec44e8ca85c026aef6af1a6d5de</hash>
+         <hash>16a7bb8770b2da2a9f1da8d0d4d857879ad396ce067614e6c3560aeb49d5533d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\port\plib_port.h</file>
-         <hash>b7811dcb27f15458530f7c4992f3d81e3e4ac7ec4317d0b332700a16e0e2e11b</hash>
+         <hash>a8e3a7d4851315e5592bdf86c5878c7fc224abb173f98e8b01601dbec139e501</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\osc32kctrl.h</file>
-         <hash>f5c56554aa57293ea1a1501e119a9ee1d91a7400fd3a1a6e6e6df5cc6937f82c</hash>
+         <hash>9b3dab9d0c61d8eab81b2c473c73901bcb2fc209c4db6e5f39d6c7be5ab37661</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\systick\plib_systick.h</file>
@@ -6099,51 +6103,51 @@
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\systick\plib_systick.c</file>
-         <hash>f23caebefbacd5f2fa5051caadacdba66f41368a782707a0b8418c9b4ee155ae</hash>
+         <hash>9178af8001492763213e84e6cf11aa357f1e344cbea0988699771364ef69c749</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\sercom.h</file>
-         <hash>bf211976af71549a688550c6f7ecaf166c3b46f1cda533dbcb9dee69b3e4c9dc</hash>
+         <hash>0d02d31a460074717ce25b506a1a9be2db4740e0aeab9159c65b5556aba63922</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\trng.h</file>
-         <hash>0a12a20d664b788016105cc6a002c32a2ac8d4296ee120ea12bf3628798f004e</hash>
+         <hash>687f7d4aecb51053128342ceb5ad8e56a84adcec99953fa45b650ce5733a14ba</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\dac.h</file>
-         <hash>d5a8caddcde4ed7451ae9adb888a6bfc191c91fe051c1db23cceedee3ba55851</hash>
+         <hash>4fc9a830be0ccad61b1dbd0a7bcf9ad2018aa7138510a62a2b5fb6169c59fa88</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tc4.h</file>
-         <hash>bee89ad1fa0b3a6edf4e67ab6b0ecaea4ead6e843ca986d8bd75ef93d3d6ee90</hash>
+         <hash>5f2c8606519a9ac192099d3d5111fc8946e4e1522cafbf1649c5428c8c668d55</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tc0.h</file>
-         <hash>ad20f8732b1420aa3a21915c449bd40271f20c496bacf2a06f336f013e85f8d0</hash>
+         <hash>8a00ef39092f46e5422f8815d8fa546bbf2bc21d58ce15f39a5b842bbf7887a7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\time\src\sys_time.c</file>
-         <hash>7e6aafa9e0d95093b7a04bf8a4515309eba402fe6ebe22a5581a9b693616abfb</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>1dbf674e2bc9708afe2cacc75141707c42b89f166e0f1d6f81c04b1b2fa166b8</hash>
+         <hash>63c6e89936ba47e8989478a8be0fa40b406361f2f0dcc1b6cfcd801b50a4bf92</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\oscctrl.h</file>
-         <hash>3f00cd963e61e9106571d4ed8d62bf0917125c6bc25f1893e11e02b15015ce67</hash>
+         <hash>6ba9680602b5f53df7101476ac266ddacce2a13da47b507b93d5e1da8f2787bc</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\nvmctrl.h</file>
-         <hash>06d394e45f53a33a1f5d5369052f71a4546b51a6bdf137e08ff7720cad61bbee</hash>
+         <hash>13f04072318bdb1474e3241cdb4b9ae716a4915bb7b4380f5b142a5abfeef276</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\device.h</file>
@@ -6155,7 +6159,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\ccl.h</file>
-         <hash>e2d2fa240c510e2e04519845e6f3ba793bf90aa44d72ebe3fbc4959e618447b4</hash>
+         <hash>a96bb0d9ac736136706703495bd6097959b6027eaa415df74557e50f44694045</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\peripheral\rstc\plib_rstc.h</file>
@@ -6163,19 +6167,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\dac.h</file>
-         <hash>83be593d0f44c3e292c14bbaaa3e79300f4e7ea211969936042ad0dfe88fdd4f</hash>
+         <hash>9b25f32b2f962522b3248efc23682f7084cad904e541a3e1aa45bdcea5275e81</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\dmac.h</file>
-         <hash>09519453ba1659a1566f5c8349e0fd29eb4f258fdb60e96338183957a3fb08aa</hash>
+         <hash>4bdc9dc6f371f084b3773918fa404e72847c4c443ecc0ba70237f6a73c0dd3fe</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\tcc0.h</file>
-         <hash>a1fdf38c8858cd4c572e8a1e939d15ebece164c8acd1eafde55df765fe4834cb</hash>
+         <hash>814a023fd48a51166943388604fee9046588d269f77f53f5e119d846915c4cda</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\component\rstc.h</file>
-         <hash>d34f6706c625fff23f7d40cc92f1eb68fbc99d33c4af35f224d1560137904b5d</hash>
+         <hash>9e06b62ae01723406022b167991bac368a79c042c1d719e3c3beb207c25fe314</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_l21_xpro\libc_syscalls.c</file>
@@ -6183,7 +6187,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAML21J18B_DFP\instance\supc.h</file>
-         <hash>25029bb9ff9a36ae930ce65e993e7573f3ac22a1ce01211d0351aec695f583bf</hash>
+         <hash>348abfe933432629552b0437549a6653b7c3e614f32be08ab6ba463ced8f2615</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

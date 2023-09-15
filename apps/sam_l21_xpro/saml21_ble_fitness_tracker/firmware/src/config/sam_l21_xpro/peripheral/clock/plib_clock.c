@@ -41,9 +41,8 @@
 #include "plib_clock.h"
 #include "device.h"
 
-static void OSCCTRL_Initialize(void)
-{
-}
+
+
 
 static void OSC32KCTRL_Initialize(void)
 {
@@ -63,7 +62,7 @@ static void DFLL_Initialize(void)
     }
 
     /*Load Calibration Value*/
-    uint8_t calibCoarse = (uint8_t)(((*(uint32_t*)0x806020U) >> 26U ) & 0x3fU);
+    uint8_t calibCoarse = (uint8_t)(((*(uint32_t*)0x00806020U) >> 26U ) & 0x3fU);
 
     OSCCTRL_REGS->OSCCTRL_DFLLVAL = OSCCTRL_DFLLVAL_COARSE((uint32_t)calibCoarse) | OSCCTRL_DFLLVAL_FINE(512U);
 
@@ -73,8 +72,14 @@ static void DFLL_Initialize(void)
     }
 
     /* Configure DFLL    */
-    OSCCTRL_REGS->OSCCTRL_DFLLCTRL = OSCCTRL_DFLLCTRL_ENABLE_Msk | OSCCTRL_DFLLCTRL_ONDEMAND_Msk ;
+    OSCCTRL_REGS->OSCCTRL_DFLLCTRL = OSCCTRL_DFLLCTRL_ENABLE_Msk ;
 
+    while((OSCCTRL_REGS->OSCCTRL_STATUS & OSCCTRL_STATUS_DFLLRDY_Msk) != OSCCTRL_STATUS_DFLLRDY_Msk)
+    {
+        /* Waiting for DFLL to be ready */
+    }
+    
+    OSCCTRL_REGS->OSCCTRL_DFLLCTRL |= OSCCTRL_DFLLCTRL_ONDEMAND_Msk;
 }
 
 
@@ -103,17 +108,15 @@ static void GCLK1_Initialize(void)
 
 void CLOCK_Initialize (void)
 {
-    /* Function to Initialize the Oscillators */
-    OSCCTRL_Initialize();
 
     /* Function to Initialize the 32KHz Oscillators */
     OSC32KCTRL_Initialize();
 
-    /*Initialize low Power Divider*/
-    MCLK_REGS->MCLK_LPDIV = MCLK_LPDIV_LPDIV(0x01U);
-
     /*Initialize Backup Divider*/
     MCLK_REGS->MCLK_BUPDIV = MCLK_BUPDIV_BUPDIV(0x01U);
+
+    /*Initialize low Power Divider*/
+    MCLK_REGS->MCLK_LPDIV = MCLK_LPDIV_LPDIV(0x01U);
 
     DFLL_Initialize();
     GCLK0_Initialize();

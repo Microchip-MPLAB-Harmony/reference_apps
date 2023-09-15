@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_SERCOM3_INSTANCE_
 #define _SAML21_SERCOM3_INSTANCE_
 
@@ -30,8 +30,8 @@
 #define SERCOM3_DMAC_ID_TX                       (8)        /* Index of DMA TX trigger */
 #define SERCOM3_GCLK_ID_CORE                     (21)       
 #define SERCOM3_GCLK_ID_SLOW                     (17)       
+#define SERCOM3_INSTANCE_ID                      (67)       
 #define SERCOM3_INT_MSB                          (6)        
 #define SERCOM3_PMSB                             (3)        
-#define SERCOM3_INSTANCE_ID                      (67)       
 
 #endif /* _SAML21_SERCOM3_INSTANCE_ */

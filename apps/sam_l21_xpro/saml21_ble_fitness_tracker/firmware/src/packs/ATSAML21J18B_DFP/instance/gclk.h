@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_GCLK_INSTANCE_
 #define _SAML21_GCLK_INSTANCE_
 
@@ -31,6 +31,7 @@
 #define GCLK_GEN_NUM                             (9)        /* Number of Generic Clock Generators */
 #define GCLK_GEN_NUM_MSB                         (8)        /* Number of Generic Clock Generators - 1 */
 #define GCLK_GEN_SOURCE_NUM_MSB                  (8)        /* Number of Generic Clock Sources - 1 */
+#define GCLK_INSTANCE_ID                         (6)        
 #define GCLK_NUM                                 (36)       /* Number of Generic Clock Users */
 #define GCLK_SOURCE_BITS                         (4)        
 #define GCLK_SOURCE_DFLL48M                      (7)        
@@ -38,11 +39,10 @@
 #define GCLK_SOURCE_GCLKGEN1                     (2)        
 #define GCLK_SOURCE_GCLKIN                       (1)        
 #define GCLK_SOURCE_NUM                          (9)        /* Number of Generic Clock Sources */
-#define GCLK_SOURCE_OSCULP32K                    (3)        
 #define GCLK_SOURCE_OSC16M                       (6)        
 #define GCLK_SOURCE_OSC32K                       (4)        
+#define GCLK_SOURCE_OSCULP32K                    (3)        
 #define GCLK_SOURCE_XOSC                         (0)        
 #define GCLK_SOURCE_XOSC32K                      (5)        
-#define GCLK_INSTANCE_ID                         (6)        
 
 #endif /* _SAML21_GCLK_INSTANCE_ */

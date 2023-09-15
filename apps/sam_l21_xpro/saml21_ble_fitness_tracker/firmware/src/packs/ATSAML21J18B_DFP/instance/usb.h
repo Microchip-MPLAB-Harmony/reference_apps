@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_USB_INSTANCE_
 #define _SAML21_USB_INSTANCE_
 
@@ -29,7 +29,7 @@
 #define USB_EPT_NBR                              (8)        /* Number of USB end points (obsolete) */
 #define USB_EPT_NUM                              (8)        /* Number of USB end points */
 #define USB_GCLK_ID                              (4)        /* Index of Generic Clock */
-#define USB_PIPE_NUM                             (8)        /* Number of USB pipes */
 #define USB_INSTANCE_ID                          (32)       
+#define USB_PIPE_NUM                             (8)        /* Number of USB pipes */
 
 #endif /* _SAML21_USB_INSTANCE_ */

@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML21J18BU
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-06-07T06:15:05Z */
+/* file generated from device description version 2023-04-12T13:57:36Z */
 #ifndef _SAML21_DAC_INSTANCE_
 #define _SAML21_DAC_INSTANCE_
 
@@ -28,9 +28,9 @@
 /* ========== Instance Parameter definitions for DAC peripheral ========== */
 #define DAC_NUM                                  (2)        /* Number of DACs */
 #define DAC_DATA_SIZE                            (12)       /* Number of bits in data */
-#define DAC_GCLK_ID                              (32)       /* Index of Generic Clock */
-#define DAC_INSTANCE_ID                          (76)       
 #define DAC_DMAC_ID_EMPTY_0                      (38)       /* DAC0 Empty Trigger */
 #define DAC_DMAC_ID_EMPTY_1                      (39)       /* DAC1 Empty Trigger */
+#define DAC_GCLK_ID                              (32)       /* Index of Generic Clock */
+#define DAC_INSTANCE_ID                          (76)       
 
 #endif /* _SAML21_DAC_INSTANCE_ */
