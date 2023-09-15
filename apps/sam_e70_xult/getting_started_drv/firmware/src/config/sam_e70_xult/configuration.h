@@ -108,7 +108,7 @@ extern "C" {
 #define DRV_USART_QUEUE_SIZE_IDX0          5
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
 
 /* USART Driver Global Configuration Options */

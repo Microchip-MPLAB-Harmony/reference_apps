@@ -33,9 +33,12 @@
  *  The MPLAB X Simulator does not yet support simulation of programming the
  *  GPNVM bits yet. We can remove this once it supports the FRDY bit.
  */
+ /* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 21.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_21_1_DR_1 */
 #ifdef __MPLAB_DEBUGGER_SIMULATOR
 #define __XC32_SKIP_STARTUP_GPNVM_WAIT
 #endif
+/* MISRAC 2012 deviation block end */
 
 /*
  *  This startup code relies on features that are specific to the MPLAB XC32
@@ -45,95 +48,33 @@
 #warning This startup code is intended for use with the MPLAB XC32 Compiler only.
 #endif
 
-/* Initialize segments */
-extern uint32_t __svectors;
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 21.2 deviated 5 times. Deviation record ID -  H3_MISRAC_2012_R_21_2_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 6 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 
-extern int main(void);
+/* array initialization  function */
 extern void __attribute__((long_call)) __libc_init_array(void);
 
-/* Device Vector information is available in interrupt.c file */
-__STATIC_INLINE void TCM_Disable(void);
-__STATIC_INLINE void TCM_Configure(uint32_t tcmSize);
-__STATIC_INLINE void ICache_Enable(void);
-__STATIC_INLINE void DCache_Enable(void);
-__STATIC_INLINE void FPU_Enable(void);
+/* Optional application-provided functions */
+extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) _on_reset(void);
+extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) _on_bootstrap(void);
 
-/* Enable Instruction Cache */
-__STATIC_INLINE void ICache_Enable(void)
-{
-    SCB_EnableICache();
-}
+/* Reserved for use by the MPLAB XC32 Compiler */
+extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) __xc32_on_reset(void);
+extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) __xc32_on_bootstrap(void);
 
-/* Enable Data Cache */
-__STATIC_INLINE void DCache_Enable(void)
-{
-    SCB_EnableDCache();
-}
+/* Linker defined variables */
+extern uint32_t __svectors;
+#if defined (__REINIT_STACK_POINTER)
+extern uint32_t _stack;
+#endif
 
-#if (__ARM_FP==14) || (__ARM_FP==4)
+/* MISRAC 2012 deviation block end */
 
-/* Enable FPU */
-__STATIC_INLINE void FPU_Enable(void)
-{
-uint32_t prim;
-    prim = __get_PRIMASK();
-    __disable_irq();
 
-     SCB->CPACR |= (0xFu << 20);
-    __DSB();
-    __ISB();
+extern int main(void);
 
-    if (!prim)
-    {
-        __enable_irq();
-    }
-}
-#endif /* (__ARM_FP==14) || (__ARM_FP==4) */
-#define GPNVM_TCM_SIZE_Pos        7u
-#define GPNVM_TCM_SIZE_Msk        (0x3u << GPNVM_TCM_SIZE_Pos)
 
-/** Program GPNVM fuse for TCM configuration */
-__STATIC_INLINE void TCM_Configure(uint32_t neededGpnvmValue)
-{
-    static uint32_t gpnvmReg;
-    static uint32_t cmd;
-
-    /* Read GPNVM fuse setting  */
-    EFC_REGS->EEFC_FCR = (EEFC_FCR_FKEY_PASSWD | EEFC_FCR_FCMD_GGPB);
-
-    while (!(EFC_REGS->EEFC_FSR & EEFC_FSR_FRDY_Msk))
-    {
-    }
-
-    gpnvmReg=EFC_REGS->EEFC_FRR;
-
-    /* Program only if change is needed */
-    if (((gpnvmReg & GPNVM_TCM_SIZE_Msk)>>GPNVM_TCM_SIZE_Pos) != neededGpnvmValue)
-    {
-        if(neededGpnvmValue & 0x2)
-            cmd=EEFC_FCR_FCMD_SGPB;
-        else
-            cmd=EEFC_FCR_FCMD_CGPB;
-
-        EFC_REGS->EEFC_FCR = (EEFC_FCR_FKEY_PASSWD | cmd | EEFC_FCR_FARG(8));
-        while (!(EFC_REGS->EEFC_FSR & EEFC_FSR_FRDY_Msk))
-        {
-        }
-
-        if(neededGpnvmValue & 0x1)
-            cmd=EEFC_FCR_FCMD_SGPB;
-        else
-            cmd=EEFC_FCR_FCMD_CGPB;
-
-        EFC_REGS->EEFC_FCR = (EEFC_FCR_FKEY_PASSWD | cmd | EEFC_FCR_FARG(7));
-        while (!(EFC_REGS->EEFC_FSR & EEFC_FSR_FRDY_Msk))
-        {
-        }
-
-        /* Reset the device for the programmed fuse value to take effect */
-        RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | RSTC_CR_PROCRST_Msk;
-    }
-}
 
 /* Disable TCM memory */
 __STATIC_INLINE void __attribute__((optimize("-O1"))) TCM_Disable(void)
@@ -145,23 +86,88 @@ __STATIC_INLINE void __attribute__((optimize("-O1"))) TCM_Disable(void)
     __DSB();
     __ISB();
 }
+#define GPNVM_TCM_SIZE_Pos        7u
+#define GPNVM_TCM_SIZE_Msk        (0x3u << GPNVM_TCM_SIZE_Pos)
 
-
-extern void Dummy_App_Func(void);
-
-/* Brief default application function used as a weak reference */
-void __attribute__((optimize("-O1"),long_call))Dummy_App_Func(void)
+/** Program GPNVM fuse for TCM configuration */
+__STATIC_INLINE void __attribute__((optimize("-O1"))) TCM_Configure(uint32_t neededGpnvmValue)
 {
-    return;
+    static uint32_t gpnvmReg;
+    static uint32_t cmd;
+
+    /* Read GPNVM fuse setting  */
+    EFC_REGS->EEFC_FCR = (EEFC_FCR_FKEY_PASSWD | EEFC_FCR_FCMD_GGPB);
+    while ((EFC_REGS->EEFC_FSR & EEFC_FSR_FRDY_Msk) == 0U)
+    {
+        /* Wait for FRDY bit */
+    }
+
+    gpnvmReg = EFC_REGS->EEFC_FRR;
+
+    /* Program only if change is needed */
+    if (((gpnvmReg & GPNVM_TCM_SIZE_Msk) >> GPNVM_TCM_SIZE_Pos) != neededGpnvmValue)
+    {
+        if((neededGpnvmValue & 0x2U) != 0U)
+        {
+            cmd = EEFC_FCR_FCMD_SGPB;
+        }
+        else
+        {
+            cmd = EEFC_FCR_FCMD_CGPB;
+        }
+        EFC_REGS->EEFC_FCR = (EEFC_FCR_FKEY_PASSWD | cmd | EEFC_FCR_FARG(8U));
+        while ((EFC_REGS->EEFC_FSR & EEFC_FSR_FRDY_Msk) == 0U)
+        {
+            /* Wait for FRDY bit */
+        }
+
+        if((neededGpnvmValue & 0x1U) != 0U)
+        {
+            cmd = EEFC_FCR_FCMD_SGPB;
+        }
+        else
+        {
+            cmd = EEFC_FCR_FCMD_CGPB;
+        }
+
+        EFC_REGS->EEFC_FCR = (EEFC_FCR_FKEY_PASSWD | cmd | EEFC_FCR_FARG(7U));
+        while ((EFC_REGS->EEFC_FSR & EEFC_FSR_FRDY_Msk) == 0U)
+        {
+            /* Wait for FRDY bit */
+        }
+
+        /* Reset the device for the programmed fuse value to take effect */
+        RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | RSTC_CR_PROCRST_Msk;
+    }
 }
 
-/* Optional application-provided functions */
-extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) _on_reset(void);
-extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) _on_bootstrap(void);
 
-/* Reserved for use by the MPLAB XC32 Compiler */
-extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) __xc32_on_reset(void);
-extern void __attribute__((weak,long_call, alias("Dummy_App_Func"))) __xc32_on_bootstrap(void);
+#if (__ARM_FP==14) || (__ARM_FP==4)
+
+/* Enable FPU */
+__STATIC_INLINE void __attribute__((optimize("-O1"))) FPU_Enable(void)
+{
+    uint32_t primask = __get_PRIMASK();
+    __disable_irq();
+    SCB->CPACR |= (((uint32_t)0xFU) << 20);
+    __DSB();
+    __ISB();
+
+    if (primask == 0U)
+    {
+        __enable_irq();
+    }
+}
+#endif /* (__ARM_FP==14) || (__ARM_FP==4) */
+
+
+/* Brief default application function used as a weak reference */
+extern void Dummy_App_Func(void);
+void __attribute__((optimize("-O1"),long_call))Dummy_App_Func(void)
+{
+    /* Do nothing */
+    return;
+}
 
 /**
  * \brief This is the code that gets called on processor reset.
@@ -173,10 +179,9 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
     uint32_t *pSrc;
 #endif
 
-
 #if defined (__REINIT_STACK_POINTER)
     /* Initialize SP from linker-defined _stack symbol. */
-    __asm__ volatile ("ldr sp, =_stack" : : : "sp");
+    __set_MSP((uint32_t)&_stack);
 
 #ifdef SCB_VTOR_TBLOFF_Msk
     /* Buy stack for locals */
@@ -184,7 +189,6 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
 #endif
     __asm__ volatile ("add r7, sp, #0" : : : "r7");
 #endif
-
 
     /* Call the optional application-provided _on_reset() function. */
     _on_reset();
@@ -197,8 +201,7 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
     FPU_Enable();
 #endif
 
-
-    TCM_Configure(0);
+    TCM_Configure(0U);
 
     /* Disable TCM  */
     TCM_Disable();
@@ -217,26 +220,27 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
     /* Initialize the C library */
     __libc_init_array();
 
+    /* Enable ICache (CMSIS-Core API) */
+    SCB_EnableICache();
 
-    /* Enable Instruction Cache */
-    ICache_Enable();
-
-    /* Enable Data Cache    */
-    DCache_Enable();
+    /* Enable DCache (CMSIS-Core API)*/
+    SCB_EnableDCache();
 
     /* Call the optional application-provided _on_bootstrap() function. */
     _on_bootstrap();
-    
+
     /* Reserved for use by MPLAB XC32. */
     __xc32_on_bootstrap();
 
     /* Branch to application's main function */
-    int retval = main();
-    (void)retval;
+    (void)main();
 
 #if (defined(__DEBUG) || defined(__DEBUG_D)) && defined(__XC32)
     __builtin_software_breakpoint();
 #endif
-    /* Infinite loop */
-    while (true) {}
+
+    while (true)
+    {
+        /* Infinite loop */
+    }
 }

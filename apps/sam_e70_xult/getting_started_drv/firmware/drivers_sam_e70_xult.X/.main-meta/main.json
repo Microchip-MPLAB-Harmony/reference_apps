@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_getting_started_drv",
-		"version": "1.5.0",
+		"version": "1.6.0",
 		"displayName": "Getting Started with Harmony Drivers on SAM E70 Xplained Ultra Evaluation Kit",
 		"projectName": "getting_started_drivers_sam_e70_xult",
 		"shortDescription": "Demonstrates how to get started using Harmony drivers (I2C, USART)",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.15"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.0.0"
+				"semverRange": ">=4.30"
 			}
 		],
 		"dfp": {
 			"name": "SAME70_DFP",
-			"semverRange": "^4.8.125"
+			"semverRange": "^4.10.248"
 		},
 		"configurator": {
 			"name": "MCC",
-			"semverRange": ">=5.1.4"
+			"semverRange": ">=5.3.7"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -49,7 +49,6 @@
 			"PORTS", "Timer", "TWIHS (I2C)", "USART", "XDMAC"
 		],
 		"keywords": [
-			"MHC",
 			"MCC",
 			"Harmony",
 			"USART",

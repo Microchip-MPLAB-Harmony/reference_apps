@@ -62,14 +62,14 @@
 */
 void SYS_DMA_AddressingModeSetup(SYS_DMA_CHANNEL channel, SYS_DMA_SOURCE_ADDRESSING_MODE sourceAddrMode, SYS_DMA_DESTINATION_ADDRESSING_MODE destAddrMode)
 {
-    uint32_t config;
+	uint32_t config;
 
     config = (uint32_t)XDMAC_ChannelSettingsGet((XDMAC_CHANNEL)channel);
-    config &= ~(0x30000 | 0xC0000);
+    config &= ~(0x30000U | 0xC0000U);
 
     config |= (uint32_t)sourceAddrMode | (uint32_t)destAddrMode;
 
-    XDMAC_ChannelSettingsSet((XDMAC_CHANNEL)channel, (XDMAC_CHANNEL_CONFIG)config);
+    (void) XDMAC_ChannelSettingsSet((XDMAC_CHANNEL)channel, (XDMAC_CHANNEL_CONFIG)config);
 }
 
 //******************************************************************************
@@ -84,12 +84,12 @@ void SYS_DMA_AddressingModeSetup(SYS_DMA_CHANNEL channel, SYS_DMA_SOURCE_ADDRESS
 */
 void SYS_DMA_DataWidthSetup(SYS_DMA_CHANNEL channel, SYS_DMA_WIDTH dataWidth)
 {
-    uint32_t config;
+	uint32_t config;
 
     config = (uint32_t)XDMAC_ChannelSettingsGet((XDMAC_CHANNEL)channel);
 
-    config &= ~(0x1800);
+    config &= ~(0x1800U);
     config |= (uint32_t)dataWidth;
 
-    XDMAC_ChannelSettingsSet((XDMAC_CHANNEL)channel, (XDMAC_CHANNEL_CONFIG)config);
+    (void) XDMAC_ChannelSettingsSet((XDMAC_CHANNEL)channel, (XDMAC_CHANNEL_CONFIG)config);
 }
