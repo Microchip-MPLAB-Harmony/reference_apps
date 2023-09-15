@@ -10,7 +10,7 @@
       "shortDescription":"This application demonstrates how to configure demo board as TCP IP web server for SAMA7G54 microprocessor ",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.10"
+         "semverRange":">=6.15"
       },
       "compiler":[
          {
@@ -20,7 +20,7 @@
       ],
       "dfp":{
          "name":"SAMA7G5_DFP",
-         "semverRange":"^1.2.178"
+         "semverRange":">=1.2.178"
       },
       "configurator":{
          "name":"MCC",
@@ -56,7 +56,6 @@
       "keywords":[
             "Harmony",
 			"MCC",
-            "SDMMC",
             "Getting Started",
             "LED",
             "GPIO",

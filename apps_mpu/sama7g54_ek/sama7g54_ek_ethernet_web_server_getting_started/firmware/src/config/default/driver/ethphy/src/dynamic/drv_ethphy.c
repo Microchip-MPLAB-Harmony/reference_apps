@@ -369,7 +369,7 @@ static DRV_ETHPHY_SMI_TXFER_RES _DRV_PHY_SMITransferWaitComplete(DRV_ETHPHY_CLIE
         return DRV_ETHPHY_SMI_TXFER_RES_ILLEGAL;
     } 
 
-    miimRes = DRV_MIIM_OperationResult(hClientObj->miimHandle, hClientObj->miimOpHandle, &opData);
+    miimRes = hClientObj->pMiimBase->DRV_MIIM_OperationResult(hClientObj->miimHandle, hClientObj->miimOpHandle, &opData);
     if(miimRes == DRV_MIIM_RES_PENDING)
     {   // wait op to complete
         return DRV_ETHPHY_SMI_TXFER_RES_WAIT;
@@ -510,7 +510,11 @@ static void _DRV_PHY_SetOperPhase(DRV_ETHPHY_CLIENT_OBJ * hClientObj, uint16_t o
     Not all modes are available on all micro-controllers.
 */
 
-#define _DRV_ETHPHY_INSTANCES_NUMBER    TCPIP_STACK_INTMAC_COUNT
+#ifndef TCPIP_STACK_INTMAC_COUNT
+    #define _DRV_ETHPHY_INSTANCES_NUMBER    1
+#else
+    #define _DRV_ETHPHY_INSTANCES_NUMBER    TCPIP_STACK_INTMAC_COUNT
+#endif
 
 static DRV_ETHPHY_INSTANCE              gPhyDrvInst[_DRV_ETHPHY_INSTANCES_NUMBER];
 

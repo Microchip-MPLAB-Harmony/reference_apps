@@ -335,9 +335,9 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 60. Up to this point in the project creation process, you used MPLAB Code Configurator (MCC) to configure and generate code to initialize the device (SAMA7G54). <br>
   Refer [initialization.c](./firmware/src/config/default/initialization.c) to find that all the device resource added in the project graph got initialized.  All that is left is for the user to write the application code in the app.c file.
   Documentation for each of the peripheral libraries or driver libraries can be accessed as follows:<br>
-  a. Peripheral libraries APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (/<framework_path/>/csp/docs/index.html)<br>
+  a. Peripheral libraries APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (/framework_path/csp/docs/index.html)<br>
   b. BSP libraries APIs can be found in bsp.h <br>
-  c. TCP/IP Stack APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (/<framework_path/>/net/docs/index.html)<br>
+  c. TCP/IP Stack APIs can be accessed as a HTML file (.html) from the Harmony 3 Framework path. (/framework_path/net/docs/index.html)<br>
 
 61. APIs used for this application are as follows:
   * LED_GREEN_On
