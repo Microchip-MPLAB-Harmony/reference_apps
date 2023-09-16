@@ -1,20 +1,23 @@
-/*******************************************************************************
-  External Bus Interface (EBI) Peripheral Library Interface Header File
+/******************************************************************************
+  SD Card (SPI) Driver File System Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_ebi.h
+    drv_sdspi_file_system.h
 
   Summary:
-    EBI PLIB Header File
+    SD Card (SPI) Driver Interface Definition
 
   Description:
-    None
-
+    The SD Card Driver provides a interface to access the SD Card. This file
+    implements the SD Card Driver file system interface.
+    This file should be included in the project if SD Card driver functionality
+    with File system is needed.
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -36,53 +39,42 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
+#ifndef DRV_SDSPI_FILE_SYSTEM_H
+#define DRV_SDSPI_FILE_SYSTEM_H
 
-#ifndef PLIB_EBI_H
-#define PLIB_EBI_H
+// *****************************************************************************
+// *****************************************************************************
+// Section: Include Files
+// *****************************************************************************
+// *****************************************************************************
 
-#include <stddef.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "device.h"
+#include "driver/sdspi/drv_sdspi.h"
+#include "system/fs/sys_fs_media_manager.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
     extern "C" {
 #endif
 // DOM-IGNORE-END
+// *****************************************************************************
+// *****************************************************************************
+// Section: Global objects
+// *****************************************************************************
+// *****************************************************************************
 
 
 // *****************************************************************************
-// Section: Interface
+// *****************************************************************************
+// Section: MEMORY Driver File system interface Routines
 // *****************************************************************************
 // *****************************************************************************
 
-/********************************** EBI API ***********************************/
-// *****************************************************************************
-/* Function:
-   void EBI_Initialize (void)
+void DRV_SDSPI_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex);
 
-  Summary:
-    Initialization function EBI peripheral
-
-  Description:
-    This function initializes the EBI peripheral with user input from the 
-	configurator.
-
-  Parameters:
-    none
-
-  Returns:
-    void
-*/
-
-void EBI_Initialize (void);
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-    }
+#ifdef __cplusplus
+}
 #endif
 
-// DOM-IGNORE-END
-#endif // _PLIB_EBI_H
+#endif //#ifndef DRV_SDSPI_FILE_SYSTEM_H

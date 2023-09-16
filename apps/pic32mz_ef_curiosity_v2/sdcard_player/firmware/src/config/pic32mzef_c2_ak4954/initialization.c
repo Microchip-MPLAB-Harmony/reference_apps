@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -119,6 +118,10 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
 // <editor-fold defaultstate="collapsed" desc="DRV_SDSPI Instance 0 Initialization Data">
 
 /* SDSPI Client Objects Pool */
@@ -128,16 +131,16 @@ static DRV_SDSPI_CLIENT_OBJ drvSDSPI0ClientObjPool[DRV_SDSPI_CLIENTS_NUMBER_IDX0
 static DRV_SDSPI_BUFFER_OBJ drvSDSPI0TransferObjPool[DRV_SDSPI_QUEUE_SIZE_IDX0];
 
 /* SPI PLIB Interface Initialization for SDSPI Driver */
-const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
+static const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
 
     /* SPI PLIB WriteRead function */
     .writeRead = (DRV_SDSPI_PLIB_WRITEREAD)SPI1_WriteRead,
 
     /* SPI PLIB Write function */
-    .write = (DRV_SDSPI_PLIB_WRITE)SPI1_Write,
+    .write_t = (DRV_SDSPI_PLIB_WRITE)SPI1_Write,
 
     /* SPI PLIB Read function */
-    .read = (DRV_SDSPI_PLIB_READ)SPI1_Read,
+    .read_t = (DRV_SDSPI_PLIB_READ)SPI1_Read,
 
     /* SPI PLIB Transfer Status function */
     .isTransmitterBusy = (DRV_SPI_PLIB_TRANSMITTER_IS_BUSY)SPI1_IsTransmitterBusy,
@@ -148,12 +151,12 @@ const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
     .callbackRegister = (DRV_SDSPI_PLIB_CALLBACK_REGISTER)SPI1_CallbackRegister,
 };
 
-const uint32_t drvSDSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000400 };
-const uint32_t drvSDSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
-const uint32_t drvSDSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
+static const uint32_t drvSDSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0x00000400 };
+static const uint32_t drvSDSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
+static const uint32_t drvSDSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
 
 /* SDSPI Driver Initialization Data */
-const DRV_SDSPI_INIT drvSDSPI0InitData =
+static const DRV_SDSPI_INIT drvSDSPI0InitData =
 {
     /* SD Card SPI PLIB API interface*/
     .spiPlib                = &drvSDSPI0PlibAPI,
@@ -188,7 +191,6 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     .isFsEnabled            = true,
 
 };
-
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="DRV_I2C Instance 0 Initialization Data">
@@ -200,13 +202,13 @@ static DRV_I2C_CLIENT_OBJ drvI2C0ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX0];
 static DRV_I2C_TRANSFER_OBJ drvI2C0TransferObj[DRV_I2C_QUEUE_SIZE_IDX0];
 
 /* I2C PLib Interface Initialization */
-const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
+static const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
+    .read_t = (DRV_I2C_PLIB_READ)I2C2_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
+    .write_t = (DRV_I2C_PLIB_WRITE)I2C2_Write,
 
     /* I2C PLib Transfer Forced Write Add function */
     .writeForced = (DRV_I2C_PLIB_WRITE)NULL,
@@ -228,20 +230,20 @@ const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 };
 
 
-const DRV_I2C_INTERRUPT_SOURCES drvI2C0InterruptSources =
+static const DRV_I2C_INTERRUPT_SOURCES drvI2C0InterruptSources =
 {
     /* Peripheral has more than one interrupt vector */
     .isSingleIntSrc                        = false,
 
     /* Peripheral interrupt lines */
-    .intSources.multi.i2cInt0          = _I2C2_BUS_VECTOR,
-    .intSources.multi.i2cInt1          = _I2C2_MASTER_VECTOR,
+    .intSources.multi.i2cInt0          = (int32_t)_I2C2_BUS_VECTOR,
+    .intSources.multi.i2cInt1          = (int32_t)_I2C2_MASTER_VECTOR,
     .intSources.multi.i2cInt2          = -1,
     .intSources.multi.i2cInt3          = -1,
 };
 
 /* I2C Driver Initialization Data */
-const DRV_I2C_INIT drvI2C0InitData =
+static const DRV_I2C_INIT drvI2C0InitData =
 {
     /* I2C PLib API */
     .i2cPlib = &drvI2C0PLibAPI,
@@ -264,7 +266,6 @@ const DRV_I2C_INIT drvI2C0InitData =
     /* I2C Clock Speed */
     .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX0,
 };
-
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="DRV_I2C Instance 1 Initialization Data">
@@ -276,13 +277,13 @@ static DRV_I2C_CLIENT_OBJ drvI2C1ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX1];
 static DRV_I2C_TRANSFER_OBJ drvI2C1TransferObj[DRV_I2C_QUEUE_SIZE_IDX1];
 
 /* I2C PLib Interface Initialization */
-const DRV_I2C_PLIB_INTERFACE drvI2C1PLibAPI = {
+static const DRV_I2C_PLIB_INTERFACE drvI2C1PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C1_Read,
+    .read_t = (DRV_I2C_PLIB_READ)I2C1_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C1_Write,
+    .write_t = (DRV_I2C_PLIB_WRITE)I2C1_Write,
 
     /* I2C PLib Transfer Forced Write Add function */
     .writeForced = (DRV_I2C_PLIB_WRITE)I2C1_WriteForced,
@@ -304,20 +305,20 @@ const DRV_I2C_PLIB_INTERFACE drvI2C1PLibAPI = {
 };
 
 
-const DRV_I2C_INTERRUPT_SOURCES drvI2C1InterruptSources =
+static const DRV_I2C_INTERRUPT_SOURCES drvI2C1InterruptSources =
 {
     /* Peripheral has more than one interrupt vector */
     .isSingleIntSrc                        = false,
 
     /* Peripheral interrupt lines */
-    .intSources.multi.i2cInt0          = _I2C1_BUS_VECTOR,
-    .intSources.multi.i2cInt1          = _I2C1_MASTER_VECTOR,
+    .intSources.multi.i2cInt0          = (int32_t)_I2C1_BUS_VECTOR,
+    .intSources.multi.i2cInt1          = (int32_t)_I2C1_MASTER_VECTOR,
     .intSources.multi.i2cInt2          = -1,
     .intSources.multi.i2cInt3          = -1,
 };
 
 /* I2C Driver Initialization Data */
-const DRV_I2C_INIT drvI2C1InitData =
+static const DRV_I2C_INIT drvI2C1InitData =
 {
     /* I2C PLib API */
     .i2cPlib = &drvI2C1PLibAPI,
@@ -340,7 +341,6 @@ const DRV_I2C_INIT drvI2C1InitData =
     /* I2C Clock Speed */
     .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX1,
 };
-
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="DRV_I2S Instance 0 Initialization Data">
@@ -412,6 +412,7 @@ const DRV_AK4954_INIT drvak4954Codec0InitData =
 
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: System Data
@@ -434,16 +435,15 @@ const DRV_USBHS_INIT drvUSBInit =
     /* Interrupt Source for USB module */
     .interruptSource = INT_SOURCE_USB,
 
-	/* Interrupt Source for USB module */
+    /* Interrupt Source for USB module */
     .interruptSourceUSBDma = INT_SOURCE_USB_DMA,
-	
     /* System module initialization */
     .moduleInit = {0},
 
     /* USB Controller to operate as USB Device */
     .operationMode = DRV_USBHS_OPMODE_DEVICE,
 
-	/* Enable High Speed Operation */
+    /* Enable High Speed Operation */
     .operationSpeed = USB_SPEED_HIGH,
     
     /* Stop in idle */
@@ -454,13 +454,13 @@ const DRV_USBHS_INIT drvUSBInit =
 
     /* Identifies peripheral (PLIB-level) ID */
     .usbID = USBHS_ID_0,
-	
+
 };
 
 
 // <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
-const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
+ const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 {
     {
         .mountName = SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0,
@@ -471,12 +471,12 @@ const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 };
 
 
-const SYS_FS_FUNCTIONS FatFsFunctions =
+static const SYS_FS_FUNCTIONS FatFsFunctions =
 {
     .mount             = FATFS_mount,
     .unmount           = FATFS_unmount,
     .open              = FATFS_open,
-    .read              = FATFS_read,
+    .read_t              = FATFS_read,
     .close             = FATFS_close,
     .seek              = FATFS_lseek,
     .fstat             = FATFS_stat,
@@ -488,17 +488,17 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
     .closeDir          = FATFS_closedir,
     .chdir             = FATFS_chdir,
     .chdrive           = FATFS_chdrive,
-    .write             = FATFS_write,
+    .write_t             = FATFS_write,
     .tell              = FATFS_tell,
     .eof               = FATFS_eof,
     .size              = FATFS_size,
     .mkdir             = FATFS_mkdir,
-    .remove            = FATFS_unlink,
+    .remove_t            = FATFS_unlink,
     .setlabel          = FATFS_setlabel,
     .truncate          = FATFS_truncate,
     .chmode            = FATFS_chmod,
     .chtime            = FATFS_utime,
-    .rename            = FATFS_rename,
+    .rename_t            = FATFS_rename,
     .sync              = FATFS_sync,
     .putchr            = FATFS_putc,
     .putstrn           = FATFS_puts,
@@ -511,15 +511,14 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
 
 
 
-const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
+
+static const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
         .nativeFileSystemFunctions = &FatFsFunctions
-    },
+    }
 };
-
-
 // </editor-fold>
 
 
@@ -531,7 +530,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 // *****************************************************************************
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
-const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)CORETIMER_CallbackSet,
     .timerStart = (SYS_TIME_PLIB_START)CORETIMER_Start,
     .timerStop = (SYS_TIME_PLIB_STOP)CORETIMER_Stop ,
@@ -541,7 +540,7 @@ const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)CORETIMER_CounterGet,
 };
 
-const SYS_TIME_INIT sysTimeInitData =
+static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
     .hwTimerIntNum = 0,
@@ -557,7 +556,7 @@ const SYS_TIME_INIT sysTimeInitData =
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -571,11 +570,12 @@ const SYS_TIME_INIT sysTimeInitData =
 
 void SYS_Initialize ( void* data )
 {
+
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     /* Start out with interrupts disabled before configuring any modules */
-    __builtin_disable_interrupts();
+    (void)__builtin_disable_interrupts();
 
   
     CLK_Initialize();
@@ -603,15 +603,23 @@ void SYS_Initialize ( void* data )
 	I2S2_Initialize();
 
 
+
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
     /* Initialize SDSPI0 Driver Instance */
     sysObj.drvSDSPI0 = DRV_SDSPI_Initialize(DRV_SDSPI_INDEX_0, (SYS_MODULE_INIT *)&drvSDSPI0InitData);
 
     /* Initialize I2C0 Driver Instance */
     sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
+
     DRV_LCC_Initialize();
 
     /* Initialize I2C1 Driver Instance */
     sysObj.drvI2C1 = DRV_I2C_Initialize(DRV_I2C_INDEX_1, (SYS_MODULE_INIT *)&drvI2C1InitData);
+
     /* Initialize I2S0 Driver Instance */
     sysObj.drvI2S0 = DRV_I2S_Initialize(DRV_I2S_INDEX_0, (SYS_MODULE_INIT *)&drvI2S0InitData);
 
@@ -622,7 +630,12 @@ void SYS_Initialize ( void* data )
     sysObj.drvak4954Codec0 = DRV_AK4954_Initialize(DRV_AK4954_INDEX_0, (SYS_MODULE_INIT *)&drvak4954Codec0InitData);
 
 
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+    
+    /* MISRAC 2012 deviation block end */
 
     SYS_INP_Init();
 
@@ -639,21 +652,22 @@ void SYS_Initialize ( void* data )
     sysObj.drvUSBHSObject = DRV_USBHS_Initialize(DRV_USBHS_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
 
     /*** File System Service Initialization Code ***/
-    SYS_FS_Initialize( (const void *) sysFSInit );
+    (void) SYS_FS_Initialize( (const void *) sysFSInit );
 
 
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
 
 
     EVIC_Initialize();
 
 	/* Enable global interrupts */
-    __builtin_enable_interrupts();
+    (void)__builtin_enable_interrupts();
+
 
 
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File

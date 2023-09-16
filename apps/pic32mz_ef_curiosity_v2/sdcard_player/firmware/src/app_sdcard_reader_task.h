@@ -43,8 +43,8 @@
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _APP_SDCARD_AUDIO_TASK_H
-#define _APP_SDCARD_AUDIO_TASK_H
+#ifndef _APP_SDCARD_READER_TASK_H
+#define _APP_SDCARD_READER_TASK_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -66,7 +66,7 @@
 extern "C" {
 
 #endif
-    // DOM-IGNORE-END
+// DOM-IGNORE-END
 
     void APP_SDCARD_READER_Initialize(void);
 
@@ -74,10 +74,10 @@ extern "C" {
 
 #endif
 
-    //DOM-IGNORE-BEGIN
+//DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
-#endif //_APP_SDCARD_AUDIO_TASK_H
+#endif //_APP_SDCARD_READER_TASK_H
 //DOM-IGNORE-END
 
 /*******************************************************************************

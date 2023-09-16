@@ -617,6 +617,7 @@ leRasterFont Arial =
             7236, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     16,
     12,
@@ -1311,6 +1312,7 @@ leRasterFont Arial_sm =
             8356, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     18,
     13,
@@ -1531,6 +1533,7 @@ leRasterFont NotoMono_Regular =
             776, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     13,
     9,
@@ -2029,6 +2032,7 @@ leRasterFont Arial_black_vsm =
             5228, // data size
         },
         LE_RASTER_FONT,
+        0,
     },
     14,
     10,

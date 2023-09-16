@@ -57,9 +57,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "definitions.h"
-
 #include "decoder.h"
-
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -67,7 +65,8 @@
 extern "C" {
 
 #endif
-    // DOM-IGNORE-END
+// DOM-IGNORE-END
+
 #define APP_SDCARD_AUDIO_PLAYER_QUEUE_BUFFER_SIZE 2
 
 #define APP_MAKE_BUFFER_DMA_READY  __attribute__((coherent)) __attribute__((aligned(4)))
@@ -455,7 +454,7 @@ extern "C" {
 
 #endif
 
-    //DOM-IGNORE-BEGIN
+//DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
 #endif /* _APP_SDCARD_AUDIO_TASK_H */

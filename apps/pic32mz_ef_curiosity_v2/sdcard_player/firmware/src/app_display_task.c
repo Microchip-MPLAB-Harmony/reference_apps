@@ -207,13 +207,6 @@ void event_MusicScreen_PreviousTrackButton_OnReleased(leButtonWidget* btn)
 
 }
 
-void APP_DISPLAY_WheelWidgetSetString(leListWheelWidget* wheel_wgt,int id,leFont* font, char* text)
-{
-   ListWheel_set_string(wheel_wgt,id,font,text);
-}
-
-
-
 void ListWheel_set_string(leListWheelWidget* wheel_wgt,int id, leFont* font, char* text)
 {
     static char cCharBuffer[32];
@@ -245,6 +238,11 @@ void ListWheel_set_string(leListWheelWidget* wheel_wgt,int id, leFont* font, cha
 
         //Set counterString string to label 
         wheel_wgt->fn->setItemString(wheel_wgt,id, (leString*)&dynamic_str[dynamic_string_index]);
+}
+
+void APP_DISPLAY_WheelWidgetSetString(leListWheelWidget* wheel_wgt,int id,leFont* font, char* text)
+{
+   ListWheel_set_string(wheel_wgt,id,font,text);
 }
 
 void MusicScreen_OnShow(void)

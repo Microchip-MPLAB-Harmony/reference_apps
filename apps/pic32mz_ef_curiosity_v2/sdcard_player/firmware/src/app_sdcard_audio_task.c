@@ -1580,7 +1580,7 @@ int16_t APP_SDCARD_AUDIO_GetRandomTrackId(char* trackName)
 
     for (index = 0; index < APP_SDCARD_AUDIO_FileCountGet(); index++) {
 
-        if (strcmp(trackName, &tablePointer[index].path[sizeof (APP_SDCARD_AUDIO_MOUNT_NAME) - 1]) == 0) {
+        if (strcmp((const char*)trackName, (const char*)&tablePointer[index].path[sizeof (APP_SDCARD_AUDIO_MOUNT_NAME) - 1]) == 0) {
             return index;
         }
 

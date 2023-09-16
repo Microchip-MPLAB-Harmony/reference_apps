@@ -55,10 +55,10 @@
 #include "usb/usb_device.h"
 #include "bsp/bsp.h"
 #include "audio/driver/i2s/drv_i2s.h"
-#include "gfx/driver/processor/vgpu/drv_gfx_vgpu.h"
 #include "driver/sdspi/drv_sdspi.h"
-#include "system/time/sys_time.h"
+#include "gfx/driver/processor/vgpu/drv_gfx_vgpu.h"
 #include "driver/i2c/drv_i2c.h"
+#include "system/time/sys_time.h"
 #include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/ebi/plib_ebi.h"
 #include "peripheral/spi/spi_master/plib_spi1_master.h"
@@ -75,8 +75,8 @@
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
 #include "peripheral/dmac/plib_dmac.h"
-#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
+#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "system/input/sys_input.h"
 #include "peripheral/i2c/master/plib_i2c2_master.h"
 #include "system/fs/sys_fs.h"
@@ -98,6 +98,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "PIC32MZ2048EFM144"
+#define DEVICE_ARCH			 "MIPS"
+#define DEVICE_FAMILY		 "PIC32MZEF"
+#define DEVICE_SERIES		 "PIC32MZ"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 198000000

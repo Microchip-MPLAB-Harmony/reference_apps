@@ -84,7 +84,7 @@ static void DRV_SDSPI_TimerCallback( uintptr_t context )
 
 */
 
-void _DRV_SDSPI_SPIPlibCallbackHandler( uintptr_t context )
+void DRV_SDSPI_SPIPlibCallbackHandler( uintptr_t context )
 {
     DRV_SDSPI_OBJ* dObj = (DRV_SDSPI_OBJ *)context;
 
@@ -105,7 +105,7 @@ void _DRV_SDSPI_SPIPlibCallbackHandler( uintptr_t context )
     This is a blocking implementation. This function does not block on a semaphore.
 */
 
-bool _DRV_SDSPI_SPIWrite(
+bool DRV_SDSPI_SPIWrite(
     DRV_SDSPI_OBJ* dObj,
     void* pWriteBuffer,
     uint32_t nBytes
@@ -117,7 +117,7 @@ bool _DRV_SDSPI_SPIWrite(
 
     dObj->spiTransferStatus = DRV_SDSPI_SPI_TRANSFER_STATUS_IN_PROGRESS;
 
-    if (dObj->spiPlib->write (pWriteBuffer, nBytes) == false)
+    if (dObj->spiPlib->write_t (pWriteBuffer, nBytes) == false)
     {
         SYS_PORT_PinSet(dObj->chipSelectPin);
     }
@@ -141,7 +141,7 @@ bool _DRV_SDSPI_SPIWrite(
     This is a blocking implementation. This function does not block on a semaphore.
 */
 
-bool _DRV_SDSPI_SPIRead(
+bool DRV_SDSPI_SPIRead(
     DRV_SDSPI_OBJ* dObj,
     void* pReadBuffer,
     uint32_t nBytes
@@ -153,7 +153,7 @@ bool _DRV_SDSPI_SPIRead(
 
     dObj->spiTransferStatus = DRV_SDSPI_SPI_TRANSFER_STATUS_IN_PROGRESS;
 
-    if (dObj->spiPlib->read (pReadBuffer, nBytes) == false)
+    if (dObj->spiPlib->read_t (pReadBuffer, nBytes) == false)
     {
         SYS_PORT_PinSet(dObj->chipSelectPin);
     }
@@ -165,7 +165,7 @@ bool _DRV_SDSPI_SPIRead(
     return isSuccess;
 }
 
-bool _DRV_SDSPI_SPIWriteWithChipSelectDisabled(
+bool DRV_SDSPI_SPIWriteWithChipSelectDisabled(
     DRV_SDSPI_OBJ* dObj,
     void* pWriteBuffer,
     uint32_t nBytes
@@ -177,7 +177,7 @@ bool _DRV_SDSPI_SPIWriteWithChipSelectDisabled(
 
     dObj->spiTransferStatus = DRV_SDSPI_SPI_TRANSFER_STATUS_IN_PROGRESS;
 
-    if (dObj->spiPlib->write (pWriteBuffer, nBytes) == true)
+    if (dObj->spiPlib->write_t (pWriteBuffer, nBytes) == true)
     {
         isSuccess = true;
     }
@@ -198,7 +198,7 @@ bool _DRV_SDSPI_SPIWriteWithChipSelectDisabled(
   Remarks:
 
 */
-bool _DRV_SDSPI_CardDetectPollingTimerStart(
+bool DRV_SDSPI_CardDetectPollingTimerStart(
     DRV_SDSPI_OBJ* const dObj,
     uint32_t period
 )
@@ -230,7 +230,7 @@ bool _DRV_SDSPI_CardDetectPollingTimerStart(
   Remarks:
 
 */
-bool _DRV_SDSPI_CmdResponseTimerStart(
+bool DRV_SDSPI_CmdResponseTimerStart(
     DRV_SDSPI_OBJ* const dObj,
     uint32_t period
 )
@@ -261,13 +261,13 @@ bool _DRV_SDSPI_CmdResponseTimerStart(
 
 */
 
-bool _DRV_SDSPI_CmdResponseTimerStop( DRV_SDSPI_OBJ* const dObj )
+bool DRV_SDSPI_CmdResponseTimerStop( DRV_SDSPI_OBJ* const dObj )
 {
     bool isSuccess = false;
 
     if (dObj->cmdRespTmrHandle != SYS_TIME_HANDLE_INVALID)
     {
-        SYS_TIME_TimerDestroy(dObj->cmdRespTmrHandle);
+        (void) SYS_TIME_TimerDestroy(dObj->cmdRespTmrHandle);
         isSuccess = true;
     }
 
@@ -287,7 +287,7 @@ bool _DRV_SDSPI_CmdResponseTimerStop( DRV_SDSPI_OBJ* const dObj )
 
 */
 
-bool _DRV_SDSPI_TimerStart(
+bool DRV_SDSPI_TimerStart(
     DRV_SDSPI_OBJ* const dObj,
     uint32_t period
 )
@@ -319,13 +319,13 @@ bool _DRV_SDSPI_TimerStart(
 
 */
 
-bool _DRV_SDSPI_TimerStop( DRV_SDSPI_OBJ* const dObj )
+bool DRV_SDSPI_TimerStop( DRV_SDSPI_OBJ* const dObj )
 {
     bool isSuccess = false;
 
     if (dObj->timerHandle != SYS_TIME_HANDLE_INVALID)
     {
-        SYS_TIME_TimerDestroy(dObj->timerHandle);
+        (void) SYS_TIME_TimerDestroy(dObj->timerHandle);
         isSuccess = true;
     }
 
@@ -346,28 +346,22 @@ bool _DRV_SDSPI_TimerStop( DRV_SDSPI_OBJ* const dObj )
 
 */
 
-bool _DRV_SDSPI_SPISpeedSetup(
+bool DRV_SDSPI_SPISpeedSetup(
     DRV_SDSPI_OBJ* const dObj,
     uint32_t clockFrequency
 )
 {
     bool isSuccess = false;
-    DRV_SDSPI_TRANSFER_SETUP sdspiSetup;
     DRV_SDSPI_TRANSFER_SETUP setupRemap;
 
     /* SD Card reads the data on the rising edge of SCK, which means SPI Mode 0
      * and 3 => CPOL = 0, CPHA = 0 and CPOL = 1, CPHA = 1 are supported */
 
-    sdspiSetup.baudRateInHz = clockFrequency;
-    sdspiSetup.clockPhase = DRV_SDSPI_CLOCK_PHASE_VALID_LEADING_EDGE;
-    sdspiSetup.clockPolarity = DRV_SDSPI_CLOCK_POLARITY_IDLE_LOW;
-    sdspiSetup.dataBits = DRV_SDSPI_DATA_BITS_8;
+    setupRemap.baudRateInHz = clockFrequency;
 
-    setupRemap = sdspiSetup;
-
-    setupRemap.clockPolarity = (DRV_SDSPI_CLOCK_POLARITY)dObj->remapClockPolarity[sdspiSetup.clockPolarity];
-    setupRemap.clockPhase = (DRV_SDSPI_CLOCK_PHASE)dObj->remapClockPhase[sdspiSetup.clockPhase];
-    setupRemap.dataBits = (DRV_SDSPI_DATA_BITS)dObj->remapDataBits[sdspiSetup.dataBits];
+    setupRemap.clockPolarity = (DRV_SDSPI_CLOCK_POLARITY)dObj->remapClockPolarity[DRV_SDSPI_CLOCK_POLARITY_IDLE_LOW];
+    setupRemap.clockPhase = (DRV_SDSPI_CLOCK_PHASE)dObj->remapClockPhase[DRV_SDSPI_CLOCK_PHASE_VALID_LEADING_EDGE];
+    setupRemap.dataBits = (DRV_SDSPI_DATA_BITS)dObj->remapDataBits[DRV_SDSPI_DATA_BITS_8];
 
     if ((setupRemap.clockPhase != DRV_SDSPI_CLOCK_PHASE_INVALID) &&
         (setupRemap.clockPolarity != DRV_SDSPI_CLOCK_POLARITY_INVALID) &&

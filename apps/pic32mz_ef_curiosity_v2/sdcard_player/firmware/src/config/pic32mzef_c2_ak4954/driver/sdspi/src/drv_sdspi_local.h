@@ -39,8 +39,8 @@
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _DRV_SDSPI_LOCAL_H
-#define _DRV_SDSPI_LOCAL_H
+#ifndef DRV_SDSPI_LOCAL_H
+#define DRV_SDSPI_LOCAL_H
 
 
 // *****************************************************************************
@@ -82,20 +82,20 @@
     None
 */
 
-#define _DRV_SDSPI_INDEX_MASK                   (0x000000FF)
-#define _DRV_SDSPI_INSTANCE_MASK                (0x0000FF00)
-#define _DRV_SDSPI_TOKEN_MAX                    (0xFFFF)
+#define DRV_SDSPI_INDEX_MASK                      (0x000000FFU)
+#define DRV_SDSPI_INSTANCE_MASK                   (0x0000FF00U)
+#define DRV_SDSPI_TOKEN_MAX                       (0xFFFFU)
 
-#define _DRV_SDSPI_FLOATING_BUS_TIMEOUT            (1000)
-#define _DRV_SDSPI_R1B_RESP_TIMEOUT                (100)
+#define DRV_SDSPI_FLOATING_BUS_TIMEOUT            (1000)
+#define DRV_SDSPI_R1B_RESP_TIMEOUT                (100)
 
-#define _DRV_SDSPI_READ_TIMEOUT_IN_MS              (250)
-#define _DRV_SDSPI_WRITE_TIMEOUT_IN_MS             (250)
+#define DRV_SDSPI_READ_TIMEOUT_IN_MS              (250)
+#define DRV_SDSPI_WRITE_TIMEOUT_IN_MS             (250)
 
-#define _DRV_SDSPI_APP_CMD_RESP_TIMEOUT_IN_MS      (1000)
-#define _DRV_SDSPI_CSD_TOKEN_TIMEOUT_IN_MS         (1000)
+#define DRV_SDSPI_APP_CMD_RESP_TIMEOUT_IN_MS      (1000)
+#define DRV_SDSPI_CSD_TOKEN_TIMEOUT_IN_MS         (1000)
 
-#define _DRV_SDSPI_COMMAND_RESPONSE_TRIES           (10)
+#define DRV_SDSPI_COMMAND_RESPONSE_TRIES          (10)
 
 // *****************************************************************************
 // *****************************************************************************
@@ -118,7 +118,7 @@
     None.
 */
 
-#define _DRV_SDSPI_SPI_INITIAL_SPEED                        400000
+#define DRV_SDSPI_SPI_INITIAL_SPEED                        400000
 
 
 // *****************************************************************************
@@ -137,7 +137,7 @@
     None.
 */
 
-#define _DRV_SDSPI_SEND_8_CLOCKS                                            1
+#define DRV_SDSPI_SEND_8_CLOCKS                                            1
 
 // *****************************************************************************
 /* No of bytes to be read for SD card CSD.
@@ -153,7 +153,7 @@
     None.
 */
 
-#define _DRV_SDSPI_CSD_READ_SIZE                                            20
+#define DRV_SDSPI_CSD_READ_SIZE                                            20
 
 // *****************************************************************************
 /* No of bytes to be read for SD card CID.
@@ -168,7 +168,7 @@
   Remarks:
     None.
 */
-#define _DRV_SDSPI_CID_READ_SIZE                                            20
+#define DRV_SDSPI_CID_READ_SIZE                                            20
 
 // *****************************************************************************
 /* SD card V2 device type.
@@ -183,7 +183,7 @@
     None.
 */
 
-#define _DRV_SDSPI_CHECK_V2_DEVICE                                          0xC0
+#define DRV_SDSPI_CHECK_V2_DEVICE                        (0xC0U)
 
 
 // *****************************************************************************
@@ -199,7 +199,7 @@
     None.
 */
 
-#define _DRV_SDSPI_MEDIA_BLOCK_SIZE                                         512
+#define DRV_SDSPI_MEDIA_BLOCK_SIZE                                         512
 
 
 // *****************************************************************************
@@ -215,7 +215,7 @@
     None.
 */
 
-#define DRV_SDSPI_TRANSMIT_SET                                              0x40
+#define DRV_SDSPI_TRANSMIT_SET                                        (0x40U)
 
 
 // *****************************************************************************
@@ -232,7 +232,7 @@
     None.
 */
 
-#define DRV_SDSPI_WRITE_RESPONSE_TOKEN_MASK                                0x1F
+#define DRV_SDSPI_WRITE_RESPONSE_TOKEN_MASK                                (0x1FU)
 
 
 // *****************************************************************************
@@ -248,7 +248,7 @@
     None.
 */
 
-#define DRV_SDSPI_MMC_FLOATING_BUS                                          0xFF
+#define DRV_SDSPI_MMC_FLOATING_BUS                                          (0xFFU)
 
 
 // *****************************************************************************
@@ -282,7 +282,7 @@
     None.
 */
 
-#define DRV_SDSPI_DATA_START_TOKEN                     0xFE
+#define DRV_SDSPI_DATA_START_TOKEN                     (0xFEU)
 
 
 // *****************************************************************************
@@ -334,7 +334,7 @@
     None.
 */
 
-#define DRV_SDSPI_DATA_ACCEPTED                        0x05
+#define DRV_SDSPI_DATA_ACCEPTED                        (0x05U)
 
 
 // *****************************************************************************
@@ -350,7 +350,7 @@
     None.
 */
 
-#define CMD_R1_END_BIT_SET                              0x01
+#define CMD_R1_END_BIT_SET                              (0x01U)
 
 
 // *****************************************************************************
@@ -382,7 +382,7 @@
     None.
 */
 
-#define MEDIA_INIT_ARRAY_SIZE                           10
+#define MEDIA_INIT_ARRAY_SIZE                           (10U)
 
 // *****************************************************************************
 /* Dummy Buffer for DMA Transfers
@@ -401,9 +401,9 @@
 
 
 #if defined (DRV_SDSPI_ENABLE_WRITE_PROTECT_CHECK)
-    #define _DRV_SDSPI_EnableWriteProtectCheck() true
+    #define DRV_SDSPI_EnableWriteProtectCheck() true
 #else
-    #define _DRV_SDSPI_EnableWriteProtectCheck() false
+    #define DRV_SDSPI_EnableWriteProtectCheck() false
 #endif
 
 // *****************************************************************************
@@ -419,7 +419,7 @@ typedef enum {
 
     TASK_STATE_CARD_COMMAND,
 
-} _DRV_SDSPI_TASK_STATE;
+} DRV_SDSPI_TASK_STATE;
 
 typedef enum
 {
@@ -488,10 +488,10 @@ typedef enum
     DRV_SDSPI_TASK_SPI_STATUS,
 
     /* Read the start token from the SD card. */
-    DRV_SDSPI_TASK_READ_START_TOKEN,
+    DRV_SDSPI_TASK_RD_SRT_TKN,
 
     /* Check if the token received is correct */
-    DRV_SDSPI_TASK_READ_START_TOKEN_STATUS,
+    DRV_SDSPI_TASK_RD_SRT_TKN_STATUS,
 
     /* Read 512 bytes of data from the SD card. */
     DRV_SDSPI_TASK_READ_DATA,
@@ -524,10 +524,10 @@ typedef enum
     DRV_SDSPI_TASK_WRITE_RESP_TOKEN_STATUS,
 
     /* Read the busy status from the card. */
-    DRV_SDSPI_TASK_WRITE_CHECK_BUSY,
+    DRV_SDSPI_TASK_WR_CHK_BSY,
 
     /* Check if the card is still busy with programming of the data. */
-    DRV_SDSPI_TASK_WRITE_CHECK_BUSY_STATUS,
+    DRV_SDSPI_TASK_WR_CHK_BSY_STAT,
 
     /* Check if the write is complete. */
     DRV_SDSPI_TASK_WRITE_COMPLETE_CHECK,
@@ -536,13 +536,13 @@ typedef enum
     DRV_SDSPI_TASK_WRITE_STOP_TRAN_TOKEN,
 
     /* Send 8 clock pulses post stop tran token. */
-    DRV_SDSPI_TASK_WRITE_STOP_TRAN_DUMMY_PULSES,
+    DRV_SDSPI_TASK_WR_STP_TRN_DUMMY_PLS,
 
     /* Read the card busy status. */
-    DRV_SDSPI_TASK_WRITE_STOP_TRAN_CHECK_BUSY,
+    DRV_SDSPI_TASK_WR_STP_TRAN_CHK_BSY,
 
     /* Check if the card has come out of the busy status. */
-    DRV_SDSPI_TASK_WRITE_STOP_TRAN_BUSY_STATUS,
+    DRV_SDSPI_TASK_WR_STP_TRAN_BSY_STAT,
 
     /* SD card write is complete */
     DRV_SDSPI_TASK_PROCESS_NEXT,
@@ -724,13 +724,15 @@ typedef enum
 
 }DRV_SDSPI_TYPE;
 
+/* MISRA C-2012 Rule 5.2 deviated:2 Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
+
 typedef enum
 {
     /* Initial state */
     DRV_SDSPI_CMD_DETECT_START_INIT,
 
     /* Check for the presence of the SD card */
-    DRV_SDSPI_CMD_DETECT_CHECK_FOR_CARD,
+    DRV_SDSPI_CMD_DETECT_CHK_FOR_CARD,
 
     /* Reset the SD card */
     DRV_SDSPI_CMD_DETECT_RESET_SDCARD,
@@ -740,17 +742,19 @@ typedef enum
     DRV_SDSPI_CMD_DETECT_WAIT_TRANSFER_COMPLETE,
 
     /* Check whether the card has been detached. */
-    DRV_SDSPI_CMD_DETECT_CHECK_FOR_DETACH,
+    DRV_SDSPI_CMD_DETECT_CHK_FOR_DETCH,
 
-    DRV_SDSPI_CMD_DETECT_CHECK_FOR_CMD_SEND,
+    DRV_SDSPI_CMD_DETECT_CHK_FOR_CMD_SEND,
 
-    DRV_SDSPI_CMD_DETECT_CHECK_FOR_DETACH_READ_CID_DATA,
+    DRV_SDSPI_CMD_DETECT_CHK_FR_DETACH_RD_CID_DAT,
 
-    DRV_SDSPI_CMD_DETECT_CHECK_FOR_DETACH_PROCESS_CID_DATA,
+    DRV_SDSPI_CMD_DETECT_CHK_FOR_DETACH_PRCS_CID_DAT,
 
     DRV_SDSPI_CMD_DETECT_IDLE_STATE,
 
 } DRV_SDSPI_CMD_DETECT_STATES;
+
+/* MISRAC 2012 deviation block end */
 
 typedef enum
 {
@@ -827,10 +831,10 @@ typedef enum
     DRV_SDSPI_INIT_READ_OCR,
 
     /* Card's internal init is complete. Increase the SPI frequency. */
-    DRV_SDSPI_INIT_INCR_CLOCK_SPEED,
+    DRV_SDSPI_INIT_INCR_CLK_SPD,
 
     /* Wait for the dummy read done in the INCR_CLOCK_SPEED state to complete. */
-    DRV_SDSPI_INIT_INCR_CLOCK_SPEED_STATUS,
+    DRV_SDSPI_INIT_INCR_CLK_SPD_STAT,
 
     /* Issue command to read the card's Card Specific Data register */
     DRV_SDSPI_INIT_READ_CSD,
@@ -839,10 +843,10 @@ typedef enum
     DRV_SDSPI_INIT_READ_CSD_DATA,
 
     /* Read the CSD data token */
-    DRV_SDSPI_INIT_READ_CSD_DATA_TOKEN,
+    DRV_SDSPI_INIT_RD_CSD_DAT_TKN,
 
     /* Read the CSD data token */
-    DRV_SDSPI_INIT_READ_CSD_DATA_TOKEN_STATUS,
+    DRV_SDSPI_INIT_RD_CSD_DAT_TKN_STAT,
 
     /* Process the CSD register data */
     DRV_SDSPI_INIT_PROCESS_CSD,
@@ -885,6 +889,8 @@ typedef struct
     uint32_t                    responseLength;
 
 } DRV_SDSPI_CMD_OBJ;
+
+/* MISRA C-2012 Rule 6.1 deviated:5 Deviation record ID -  H3_MISRAC_2012_R_6_1_DR_1 */
 
 typedef union
 {
@@ -942,6 +948,8 @@ typedef union
         uint8_t  startBit:1;
     };
 } DRV_SDSPI_CMD_PACKET;
+
+/* MISRAC 2012 deviation block end */
 
 typedef union
 {
@@ -1318,7 +1326,7 @@ typedef union
     };
 } DRV_SDSPI_CID;
 
-typedef struct _DRV_SDSPI_CLIENT_OBJ_STRUCT
+typedef struct DRV_SDSPI_CLIENT_OBJ_STRUCT_T
 {
     /* Save the index while opening the driver */
     SYS_MODULE_INDEX                                drvIndex;
@@ -1503,7 +1511,7 @@ typedef struct
     DRV_SDSPI_INIT_STATE                            mediaInitState;
 
     /* SDCARD driver state: Command/status/idle states */
-    _DRV_SDSPI_TASK_STATE                           sdState;
+    DRV_SDSPI_TASK_STATE                           sdState;
 
     /* Tracks the command response */
     DRV_SDSPI_RESPONSE_PACKETS                      cmdResponse;
@@ -1522,4 +1530,4 @@ typedef struct
 
 } DRV_SDSPI_OBJ;
 
-#endif //#ifndef _DRV_SDSPI_LOCAL_H
+#endif //#ifndef DRV_SDSPI_LOCAL_H

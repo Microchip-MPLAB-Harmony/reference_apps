@@ -26,6 +26,10 @@
 
 #include "gfx/legato/widget/image/legato_widget_image.h"
 
+#if LE_DEBUG == 1
+#include "gfx/legato/core/legato_debug.h"
+#endif
+
 #if LE_IMAGE_WIDGET_ENABLED
 
 #include <string.h>
@@ -47,14 +51,13 @@ leImageWidgetVTable imageWidgetVTable;
 #define DEFAULT_HEIGHT          100
 
 void _leImageWidget_GetImageRect(const leImageWidget* img,
-                                 leRect* imgRect,
-                                 leRect* imgSrcRect);
+                                 leRect* imgRect);
 
 static void invalidateImageRect(const leImageWidget* _this)
 {
     leRect rect, imgRect, clipRect;
     
-    _leImageWidget_GetImageRect(_this, &imgRect, &clipRect);
+    _leImageWidget_GetImageRect(_this, &imgRect);
     
     _this->fn->localRect(_this, &rect);
     
@@ -105,7 +108,7 @@ leImageWidget* leImageWidget_New()
     return img;
 }
 
-leResult leImageWidget_PNew(leImageWidget* img)
+/*leResult leImageWidget_PNew(leImageWidget* img)
 {
     if(img == NULL)
         return LE_FAILURE;
@@ -115,7 +118,7 @@ leResult leImageWidget_PNew(leImageWidget* img)
     _leImageWidget_Constructor(img);
 
     return LE_SUCCESS;
-}
+}*/
 
 static void invalidateContents(const leImageWidget* _this)
 {
@@ -143,7 +146,11 @@ leResult _leImageWidget_SetImage(leImageWidget* _this,
 
     if(_this->image != NULL)
         invalidateImageRect(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 

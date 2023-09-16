@@ -50,6 +50,7 @@
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_local.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_plib_interface.h</itemPath>
               <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/drv_sdspi.h</itemPath>
+              <itemPath>../src/config/pic32mzef_c2_ak4954/driver/sdspi/src/drv_sdspi_file_system.h</itemPath>
             </logicalFolder>
             <logicalFolder name="usb" displayName="usb" projectFiles="true">
               <logicalFolder name="usbhs" displayName="usbhs" projectFiles="true">
@@ -404,6 +405,7 @@
           <itemPath>../src/config/pic32mzef_c2_ak4954/user.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/configuration.h</itemPath>
           <itemPath>../src/config/pic32mzef_c2_ak4954/interrupts.h</itemPath>
+          <itemPath>../src/config/pic32mzef_c2_ak4954/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
@@ -698,6 +700,7 @@
                 <logicalFolder name="radialmenu" displayName="radialmenu" projectFiles="true">
                   <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radialmenu/legato_widget_radial_menu_skin_classic.c</itemPath>
                   <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radialmenu/legato_widget_radial_menu.c</itemPath>
+                  <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radialmenu/legato_widget_radial_menu_state.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="radiobutton" displayName="radiobutton" projectFiles="true">
                   <itemPath>../src/config/pic32mzef_c2_ak4954/gfx/legato/widget/radiobutton/legato_widget_radiobutton_skin_classic.c</itemPath>
@@ -839,9 +842,9 @@
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -877,6 +880,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -933,6 +937,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -972,6 +977,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

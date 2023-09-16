@@ -48,6 +48,7 @@
 
 #include "app_sdcard_reader_task.h"
 #include "app_display_task.h"
+#include "app_sdcard_audio_task.h"
 #include "app.h"
 
 APP_SDCARD_READER_DATA AppSdCardReaderData;

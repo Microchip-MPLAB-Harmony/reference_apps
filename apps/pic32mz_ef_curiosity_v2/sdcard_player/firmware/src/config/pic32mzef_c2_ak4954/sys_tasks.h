@@ -1,24 +1,23 @@
 /*******************************************************************************
-  Interrupt System Service Mapping File
-
-  Company:
-    Microchip Technology Inc.
+ System Tasks Header File
 
   File Name:
-    sys_int_mapping.h
+    sys_tasks.h
 
   Summary:
-    Interrupt System Service mapping file.
+    This file contains declarations for task handles.
 
   Description:
-    This header file contains the mapping of the APIs defined in the API header
-    to either the function implementations or macro implementation or the
-    specific variant implementation.
-*******************************************************************************/
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
 
-//DOM-IGNORE-BEGIN
-/******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+  Remarks:
+    None
+ *******************************************************************************/
+
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,27 +37,20 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-//DOM-IGNORE-END
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef SYS_INT_MAPPING_H
-#define SYS_INT_MAPPING_H
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interrupt System Service Mapping
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-/* MISRA C-2012 Rule 5.8 deviated:6 Deviation record ID -  H3_MISRAC_2012_R_5_8_DR_1 */
+#include "configuration.h"
+#include "definitions.h"
 
-#define SYS_INT_IsEnabled()                 ((bool)(_CP0_GET_STATUS() & 0x01))
-#define SYS_INT_SourceEnable( source )      EVIC_SourceEnable( source )
-#define SYS_INT_SourceIsEnabled( source )   EVIC_SourceIsEnabled( source )
-#define SYS_INT_SourceStatusGet( source )   EVIC_SourceStatusGet( source )
-#define SYS_INT_SourceStatusSet( source )   EVIC_SourceStatusSet( source )
-#define SYS_INT_SourceStatusClear( source ) EVIC_SourceStatusClear( source )
 
-/* MISRAC 2012 deviation block end */
-
-#endif // SYS_INT_MAPPING_H
+#endif //SYS_TASKS_H

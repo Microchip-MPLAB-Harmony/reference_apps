@@ -36,7 +36,6 @@ void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
 struct InternalBlendStage
 {
     leRawDecodeStage base;
-    leRenderState* renderer;
 };
 
 static LE_COHERENT_ATTR struct InternalBlendStage blendStage;
@@ -103,14 +102,14 @@ static leResult stage_BlendARGB8888(leRawDecodeStage* stage)
     return LE_SUCCESS;
 }
 
-void _leRawImageDecoder_BlendStage_Internal(leRawDecodeState* state)
+leResult _leRawImageDecoder_BlendStage_Internal(leRawDecodeState* state)
 {
     memset(&blendStage, 0, sizeof(blendStage));
 
     if((state->source->flags & LE_IMAGE_USE_ALPHA_MAP) > 0 &&
        state->source->alphaMap != NULL)
     {
-        // TODO alpha map support
+        return LE_FAILURE; // TODO alpha map support
     }
     else if(state->source->buffer.mode == LE_COLOR_MODE_RGBA_5551)
     {
@@ -126,13 +125,14 @@ void _leRawImageDecoder_BlendStage_Internal(leRawDecodeState* state)
     }
     else
     {
-        return;
+        return LE_FAILURE;
     }
 
     blendStage.base.state = state;
-    blendStage.renderer = leGetRenderState();
 
     _leRawImageDecoder_InjectStage(state, (void*)&blendStage);
+
+    return LE_SUCCESS;
 }
 
 #endif /* LE_ENABLE_RAW_DECODER */
