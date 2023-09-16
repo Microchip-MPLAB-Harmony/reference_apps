@@ -1,4 +1,4 @@
-<config configName="default" projectName="web_photo_frame_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
+<config configName="default" projectName="web_photo_frame_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -223,7 +223,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -23249,11 +23249,11 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\default\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\des3.h</file>
-         <hash>657b80b63aa483e428880492c987a749cfb72ad56860d676498d1c9d2a218f65</hash>
+         <hash>bd932ec53039ab14baced49166d8826d27cd545475d406062ee0755da916f5ab</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_CondCopy_pb.h</file>
@@ -23261,7 +23261,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wc_encrypt.c</file>
-         <hash>fd89ce222eb48c9405c9451c75fa05dbd68f1858b9036de00dbf6e2d43db181f</hash>
+         <hash>9580c76fa1dbc8f8a1ea80bad0e7b8d8b6b33153901be8ef7bd6a4a2fbeef375</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_heap_alloc.h</file>
@@ -23269,7 +23269,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\blake2.h</file>
-         <hash>9e69ad2eefdfb873e2ed0a05eedde0d30539b71e5b2f053f77dfa110a5d21017</hash>
+         <hash>7ea719e39cc53654b88e2cd109be3966d2678a07ab2dc6de8eb9cdc79b1e8c7a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\line\legato_widget_line_skin_classic.c</file>
@@ -23277,7 +23277,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\toolchain_specifics.h</file>
-         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
+         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ftp_private.h</file>
@@ -23289,11 +23289,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\crypto\src\crypto.c</file>
-         <hash>498e3fa31b4e42c1840320e3b4906cb929012517f421075087459903e3f2eeb2</hash>
+         <hash>4d62f32e7abe92e85613c095176465c1a0a92e207eb85f050730f8c45039bfa5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\src\sys_fs_media_manager.c</file>
-         <hash>3307114ea0c54ae97a11a681bc1eb9cca0b1e1af94252d5821c38d13ee27dc8d</hash>
+         <hash>240b6eeebd24266bba332a24ce2086f0bd8fd1402c9d716012aa6b1d8bed0eb9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcp.h</file>
@@ -23301,7 +23301,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\poly1305.c</file>
-         <hash>671752c5b24ca5cd9619e04f5b6d503f29d800ddf4f58f32cc7b327d1328f406</hash>
+         <hash>26c3de73bb45ece58d0e0012f749c9255d85aab9d771d319671af97280d2f2ee</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\driver\gfx_driver.h</file>
@@ -23309,7 +23309,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\curve448.c</file>
-         <hash>ada01d1404ed81e59d6f9486c3187e8a7ffac49fcb79bf62aeb5c10ba9b77a9a</hash>
+         <hash>a8c76fdc93684e1b951c19348b3733f01cb8b64656587029f5d8181c7eec36c7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\interface\drv_gfx_disp_intf.h</file>
@@ -23352,8 +23352,12 @@
          <hash>5129306edd8719cda3f78dc49cd50029be12f7783e37e96e3f124f855ee21cff</hash>
       </entry>
       <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\eccsi.h</file>
+         <hash>3c233872cdb195e8c913f10617a419f28e5461a60c7889200e8d37e6cdabab89</hash>
+      </entry>
+      <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\tfm.h</file>
-         <hash>fda3a264782df64cbfc1709f967dacf5fbe9d4d59bf6bbef4c7fe98789f60589</hash>
+         <hash>4caa1fee66e4ca927fc51110b268f5d125e347bf90762a709b83dd25e934f4ba</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circle\legato_widget_circle.h</file>
@@ -23377,7 +23381,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\misc.h</file>
-         <hash>abe8d574c5ee8fa0fbf3e4d766dec0f2d653deed6b82cb246677b7f9291099af</hash>
+         <hash>47c634e7326880d730b39e275032181d65204b4ee19a62dfd6ad8a3b02e0b90f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\piechart\legato_widget_pie_chart.h</file>
@@ -23385,7 +23389,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_arm64.c</file>
-         <hash>3b08fe7da3b9fe1dcc5f2aee53e11b00d6d5425d054d751b3abe444a2a9ac380</hash>
+         <hash>31c14f8b4121d2466343cf704287f2d172e42c1841a50f2e282c98930ef441f3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\hash_fnv.h</file>
@@ -23405,7 +23409,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\drv_memory_nvm.h</file>
-         <hash>c6e3a794124c561f3d5a8cfef827340c6db8bbd75eba1fe48adddd1a15953f13</hash>
+         <hash>aafbf98cdcd6fde28e160f311729c3bce2823a42c90ff56ee3bcf3e018800fc5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\bargraph\legato_widget_bar_graph_skin_classic.c</file>
@@ -23437,7 +23441,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\drv_ethphy.h</file>
-         <hash>3a83692173d2c09c4069ba96b39128f843fe94b8f12ee512d4d892fb821b0207</hash>
+         <hash>f03f2805628bbeaf6d988de81516af5e02759ffcafada016f613b83894b5c0b1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\igmp_manager.h</file>
@@ -23457,7 +23461,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_mac.h</file>
-         <hash>e1aff9f8ae28234685db6d7c792f6888cfeacbbeb92991bc054c65b7aee2df19</hash>
+         <hash>7ff6cbab1b346ad5cc517a1af02d1c7453ae4c372d015e118e6aa0cda7078012</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_state.c</file>
@@ -23465,11 +23469,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sha256.h</file>
-         <hash>d53f32bce04a0b5dd504328c8fee0ecdbff1c23ffd90c64433ae4bedb16c454a</hash>
+         <hash>7e803c56d906662c895be765e27a2b9ae883e55c74863cf3862bf16971be92e4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\cache\sys_cache.c</file>
-         <hash>c588752333a197d8ca33071ed888a98ace2149b1123aaaa71dcb5d5a30134e49</hash>
+         <hash>53fd36c6040f1cd83a5a625dc5dbf3b9a1f337988e5c10b776da9235f7b7579e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\icmp_manager.h</file>
@@ -23481,7 +23485,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\srp.h</file>
-         <hash>155f5879aed005f1c2278612afda3697530415f7c6de69eeb8ac8e718b402e60</hash>
+         <hash>c5c0c30959404ca25c03ca32478527db739130a9e619b3d168b359b534372cb8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\fat_fs\hardware_access\diskio.c</file>
@@ -23501,15 +23505,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\i2c\master\plib_i2c2_master.h</file>
-         <hash>54b41d364e7a205020f560ca2ab2cb125aa11f8a6f5910337ad3cf510a03c9a7</hash>
+         <hash>b64cbd9b5559995f70cfa38282f985b3879ca6d9988bb4dfa6e1efc1a2da81ca</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\i2c\master\plib_i2c2_master.c</file>
-         <hash>2119608eee66b6fec01661579aef1ba4aab9abe440b8364de12a19d85b5aa60f</hash>
+         <hash>1e9fa55046a22c48e4f653d7087671bb6044a1bb561590d958c51142a66cd5bf</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wc_port.c</file>
-         <hash>39d6abd472153f5ad90be9b6883fd75dbbf93eba56c3e2f9efc2a41a0511568e</hash>
+         <hash>5d7176fda86fa35fe2d4660395b83c902399f660434341fc058a303f43d77b8a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\ndp.h</file>
@@ -23517,11 +23521,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_helpers.c</file>
-         <hash>f24e8d265235c5a083a07891e39b4b3a85d027d16722d4aba2caef596ec2e18f</hash>
+         <hash>cc95f974a50273c43a0d473274e9261f3f7c13cf71c41421d46ced9f8e36e8c3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\asn.c</file>
-         <hash>909b7cba34135b1701510679dca8f22095c0882ddb61a402049cdc854e73aaac</hash>
+         <hash>8c545288479614802fdf4b8094b765e8f5603ee6509b7ab2a922366cd2a482b7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\legato_image.h</file>
@@ -23529,7 +23533,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
+         <hash>538b84190cc1d2db631d693d81834a123ab41a96b89e780a79c7bcf7bd773f2f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\legato_image.c</file>
@@ -23553,19 +23557,19 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\types.h</file>
-         <hash>eb1d62cdb2b2480abb2acf7168a57e93000347feb18aa2f6cb162cbfb89a655e</hash>
+         <hash>90676b3a41c145939595531947df99765c749c6256bad46173a52c039d651517</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\src\sys_fs_local.h</file>
-         <hash>9757dc4a413f39e70813ea66b1825a7467f1b9a38a94d066fd39eb399361b438</hash>
+         <hash>7e7721693694ecc133d6772321cad1337c0a2209b7457b9351dda3a01cb129b1</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\dh.c</file>
-         <hash>354a009037bac990a1fc35c3be0768bbf9a9cb19b047dadecea4bdb7c2dd91b8</hash>
+         <hash>75ccad43ecc7a20a4109f55478d13f6fe3cade767a8a10acd25741f34db25e9f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sha512.c</file>
-         <hash>9c1b40eb54681982c7f7408bcf3363234f25517464786adf0f38cd0b53729261</hash>
+         <hash>b04b203b751d26e760c2700490ffa93e1ae67905873493c5d2a81eadf8225fb9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\listwheel\legato_widget_listwheel.c</file>
@@ -23573,19 +23577,19 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sp_int.h</file>
-         <hash>f9b6c849024ac62651668aec7af8a16c386f0af926ddd5ea571bdb55d27e0416</hash>
+         <hash>c13750f12ba4c52d9f2426de6f7c156eed43929ec8e2e7a51e6831011e4a3093</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcp_private.h</file>
-         <hash>c77e0e7d77f1c732a93f80c207f25360ff4d4b4881bfeff2ac902797868c5650</hash>
+         <hash>e621923d17a163cb0255ffdd52e075b0eeb06e8f338c5a7ae5dbbbc9e508d008</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sha3.c</file>
-         <hash>d13d689b76f97cd5d6971f11bce1845b7c38f638546ffa9fea7b1cfeeda7076a</hash>
+         <hash>26d8fe291e31736da027484c235ba8517092cbfa3e39011797ba85fa83b2e922</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\dma\sys_dma_mapping.h</file>
-         <hash>1f5b7e03acbc3e423c4849c62fe53eb8c6b0ab5b3f9119f2281eda6152420773</hash>
+         <hash>834d16463a4ad2643f1b3c521a9ef3a854d9f10895a4197392047f8e582e2f73</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rleindex.c</file>
@@ -23593,7 +23597,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ipv6_manager.h</file>
-         <hash>a3e551007357534d010763cbbe45eca53a032aa71ab6742f68c5683e3b993bb7</hash>
+         <hash>f452c104d1f0c9f2184b05e27daf96b52d2f93732c69b9a2f972ff4d86108c38</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_rng_sam6334.c</file>
@@ -23601,11 +23605,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\http_net.c</file>
-         <hash>d06ee2578dc29b45913ee37d4745965ed0c6b4bc2111fe0c155d60a2636a753d</hash>
+         <hash>24836d926ed44f2353e479a037777e2528d0a128dbf90d0631fca1da930840b4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\dhcp.c</file>
-         <hash>dd97b5bb94fc745507a3036d17ecefabcec97215ca73578da1af3077b5de0914</hash>
+         <hash>b38b2eccbfb16ee07f6d30f13390282ec84ba9e06cebb63ed58e9d0c9b9e5b1a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system_config.h</file>
@@ -23613,15 +23617,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
-         <hash>9de74fd68416e620ca702418d65b322d7fe3e66a41bc487d90c35939c9e85605</hash>
+         <hash>cdf01fbee566c66eee9e95067002d2dbca0cd64ab4b92d03f679288d0182549e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ipv4.c</file>
-         <hash>8aaf39e4fe1bc694dfc1936631be75e32a5449fa3553eccecd91d266b0c1fde3</hash>
+         <hash>c6545dd0c007f399ff69fa92322ebda559ffb95aa7dd78eb1874673ee55fd1e9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
-         <hash>2e55482992de6c441227f1fcb14c91dc8f1e735f1dee11f3359084c45745838c</hash>
+         <hash>8bfcb78a644178473028e7a6e468b61ebef7f8e898edd14da23442f2fdc4b71a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_pixelbuffer.h</file>
@@ -23629,11 +23633,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\blake2b.c</file>
-         <hash>402ee7b281866fa1fd9faadfe731110451fb843e0c99a9a7aa150da9b2cbeffa</hash>
+         <hash>4463310f11b4de598fb8e3476907ac5bf002d35c6c7db3cbbba27f47f89aba48</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_heap.h</file>
@@ -23641,7 +23645,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\miim\drv_miim.h</file>
-         <hash>eda737924f34c57ec8eed4f06cc8d7266cb389de15c4ec166565747aebef00ec</hash>
+         <hash>10b7cf9b1741e55f2db17ace43b194e8d36e954f02e1621b101aa1f37543da15</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_pixelbuffer.c</file>
@@ -23653,7 +23657,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\exceptions.c</file>
-         <hash>c7f83f167acb4cd93e430dd7eb6a3d13194218fdad1d75c129783ede94db1723</hash>
+         <hash>30b880390be9495d817d130a99612cbe4a21ce5f953a22bf77fc97872b770538</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\ports\sys_ports_mapping.h</file>
@@ -23661,7 +23665,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\blake2s.c</file>
-         <hash>58f1d422f140a0bb5cdc54b79af870b2357625d747e5705be816a56dbbe528f2</hash>
+         <hash>0464b47ddeab024086ff004b3931ee9ed736555b7780e0b89c5f9033eded9a11</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha224_sam6156.c</file>
@@ -23673,11 +23677,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\dynamic\drv_extphy_regs.h</file>
-         <hash>c91601ac788073b79e73cbfcd6e3d83bb62f15b57bf00bcd495e9c64b88cd7e9</hash>
+         <hash>e3bb19eace38f4eaba8a85e5b8e9b9cc074cf2079826c2bf1f040ec2d05655c2</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\random.h</file>
-         <hash>8e92542d0e87560a23ca4a294a1066c0c60d4fbcc88a5d5627d265c2a69ad6f9</hash>
+         <hash>1a47fd21250ea49fc3e91bd1f0f7f59e4d52159a5eef6d732d914b9c0666dae8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\legato.h</file>
@@ -23689,7 +23693,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\memory.c</file>
-         <hash>c88663ebfafe2edd0f8c7217c505f027aec24c4b0cbe1945b9c3983be5538080</hash>
+         <hash>de5cde2eac0ef568023bb5ee75b3e544c402f86c39f565638560195a420e2c14</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\nbns.h</file>
@@ -23701,7 +23705,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\cache\plib_cache.c</file>
-         <hash>28c61150a2e09ba1c80c2a1658351ba6d75e37ea0f3dbe56b4adc79ff49d7a64</hash>
+         <hash>500634fa5c5cb4efb91faa7a54e3ccbb26ad7ff6d188ff0e91cbaabc606cf054</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_rsa_pukcl.h</file>
@@ -23717,11 +23721,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ge_448.c</file>
-         <hash>9c73669fc4e9d6cd242de98f46acf4eb42acf5f1a36920596aaaa94ea233782a</hash>
+         <hash>5f96773827a2f2cae61da8dc2ab7bb634ff1a974d65955f4d5cfa27531f99e72</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\cache\plib_cache.h</file>
-         <hash>114b4101b4690f99a531562fe08f7b52654664d811ee3ca2ecdfd72aefe96792</hash>
+         <hash>da01fae7f39626c9f25c0c8f4f9a8cf25ed0c4b8dd6c0d4bae146210efe8da46</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\common\sys_fs_shell.c</file>
@@ -23733,7 +23737,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\src\drv_memory_nvm.c</file>
-         <hash>3ab5383d770971e64e89f550e4b5b2220a28cd8491bd0f9c972a618f33381ab8</hash>
+         <hash>58243f9da95357beb459fd16a20c065fd919a4e5670e17b3a346e04b61a7b041</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\lldp_private.h</file>
@@ -23745,7 +23749,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\signature.h</file>
-         <hash>569bb7326ba655e95c024315e0658bc4af4a4de050759210e2ea14a0db1fab63</hash>
+         <hash>421da1fb3028cc1ea0d9c7c69c4d818311edbd2d1c128449d0566772aa28580a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\portable\MPLAB\PIC32MZ\ISR_Support.h</file>
@@ -23757,7 +23761,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\rc2.c</file>
-         <hash>a1d333266c05f1e4c21baa04c6ae2b39bf0dd58ae115c21482a86cb822cf7f70</hash>
+         <hash>a5578d8781434ae7b40d7f64ab3ac8c3316dfa4bb0d36b412b1c5b472e89d5db</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\datastructure\legato_list.h</file>
@@ -23765,15 +23769,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_memory.c</file>
-         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
+         <hash>8047bcaf8c3b284df0c455e2a2067bceef3cfc1d3a91f19ec40933c7544ba207</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\des3.c</file>
-         <hash>9340473761dce1b0a739a024c6aa304bfd7ae30696fb9df4e74ee2739fe7fa01</hash>
+         <hash>5547ab1ec7d7c349372919b1538188c0e80a146572903477da12f60bb7a270cf</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
-         <hash>04a56f67ab3ef840d89ab44d03ddac16e4ad55dbbcce72d91174d19071c749d7</hash>
+         <hash>6aebd76da11fb7cb0a1ac48563b741391204857a673f384c34dde4e083889e9f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\croutine.c</file>
@@ -23785,7 +23789,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\fips_test.h</file>
-         <hash>199b56dbf8e58ddd1a20beef54670931e7abffc5fa1aae07c0350a403707687b</hash>
+         <hash>be371f8d3c36d32aff8ad8926f958fa8e254d1e20fd2d1b2e4a71db4891c8a40</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rlecolor.c</file>
@@ -23793,11 +23797,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\miim\src\dynamic\drv_miim.c</file>
-         <hash>3d3d5ce06a17ec2b39e4b3d836a687fcc3b474754414919d1dc3b700bcdf3dd8</hash>
+         <hash>1c681a5d484c279e1ec7c1ed8950a204a417448bb5d71fa1bbd88659d600b61c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\command\src\sys_command.c</file>
-         <hash>f6ffa260b5a6f1e0134c8845c405d0e21dcdc5fd02e95dcc7a4a5fccf1cb23ae</hash>
+         <hash>e2e011b221d372dbb81cd7af594d7da29d7ae18966a99a3fd72b3c5772c237bf</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\siphash.c</file>
+         <hash>cbafcb60e2e98ea2d8842281c37155a2e274a10c1c4a03ff53c3e8af1dd9f8ff</hash>
       </entry>
       <entry>
          <file>..\src\app_gfx.c</file>
@@ -23813,15 +23821,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wolfmath.c</file>
-         <hash>ab5922fd30ede6954156b1e398a5ce122390392dc73009113a0cd5bcb1d0a629</hash>
+         <hash>0fe06f7f143adcf4196de9fb49fb690f79f49ebe810214df691b61ff7c0decc7</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ed25519.h</file>
-         <hash>d7b71efa6e8dc62f8dec6e18c5b26fa369f9bf0ad50ebd4fef584d77670a29f5</hash>
+         <hash>cc715d84db2a37fd051fc886ba1b59d721a1cc2d2b7328f605896678751d1587</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\drv_i2c.h</file>
-         <hash>1add02b0380f67be5dc9707f01b290af08eccc0957775327f44a8c1afc823410</hash>
+         <hash>a2e3e35a45be2dffd93f381c5eb7d50a9f2fd955aee73cdd3da3178c7c3cfed9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\legato_palette.c</file>
@@ -23841,11 +23849,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\src\sys_time.c</file>
-         <hash>7e6aafa9e0d95093b7a04bf8a4515309eba402fe6ebe22a5581a9b693616abfb</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\default\tasks.c</file>
-         <hash>257d8cf4a1cddb1c2d0c557757cd12848fa36c9ad5a8d937733bd245c014149f</hash>
+         <hash>1511d511795650a204c4af6edf3da5f7da6a5f36498ca93de760a5415ed56092</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\line\legato_widget_line.c</file>
@@ -23877,7 +23885,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\chacha.c</file>
-         <hash>9e592858e42acce7161dd06dd14c1b36ae9660f1eb3cbaac19c7e17109bfb2d5</hash>
+         <hash>a835600cfe59f5718ef3e1d06edd6bf30c10087dc2918e52bdbcbe7524e82c9f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\datastructure\legato_array.h</file>
@@ -23885,19 +23893,23 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_c64.c</file>
-         <hash>72411918b7e9b919e2cdb444455f960cffc5b94935c4b0d45052957c0535490a</hash>
+         <hash>b11e6321f780ce072c3bcf574b91d5d91226e8353fd263901e7229a3873315d9</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\md5.h</file>
-         <hash>0ac86d38b9d54b1c153882f2f56feb1b4c14c7695278898828c9bcc7488804cd</hash>
+         <hash>4b5b52086222749ebc0bbf5a56eb8525ac62be954880d9e231779dd0d8533c5e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\src\drv_sdspi_file_system.c</file>
-         <hash>fd08cdcd754664da94c7ee881cdf09b58cf51bf1978c795cf548f4a1b862f412</hash>
+         <hash>013ea9748077350277835bb06cbfd8bd2df07b4b31936bfc7d30b3f3c63ae91e</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Swap_pb.h</file>
          <hash>5c9443e4c8845279690e7760a224cb545190aa20c9f8d8b26dc5730b89ae08d6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\sdspi\src\drv_sdspi_file_system.h</file>
+         <hash>17db69f76094817bad08afa773c9ace5c292cbea019e024b428d0ea11e056bff</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\label\legato_widget_label_skin_classic.c</file>
@@ -23909,7 +23921,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\bsp\bsp.h</file>
-         <hash>d2a13f4cf4f307afe586fd9ffe04a8cb765988a5e10adce88295e5992d70fbdc</hash>
+         <hash>f13e3ded102e0196087a7d8240ebdc39c741c38023481ffd5a6280fbe6840c76</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tftps.h</file>
@@ -23917,11 +23929,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\src\sys_fs_fat_interface.c</file>
-         <hash>581a4c11a2e6c4aa4aa2c64742b276d5d4b3bd1dbdbed1983aab17f162f4c47b</hash>
+         <hash>c7873a18d6d2ee9cb2eb1bf9c678dfc6c22837d4c22e5c3bcbf30507b3aa125f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\sys_fs_media_manager.h</file>
-         <hash>29bda64831783de33b10c3841e1eb703dc9f5b04287c1e26af8f3b75b7197b39</hash>
+         <hash>2f7c76d5a40a41594e86a831470c67d7aeec5b6e540fb967518ce095fe6da271</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\smtpc.h</file>
@@ -23937,7 +23949,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvm\plib_nvm.h</file>
-         <hash>6ebedef957cc0909b71539befac8d25bcfb8ba621a647c6213d062a237f20f4a</hash>
+         <hash>a252b3ae9d30db668e42259ffef4bc4222e5541957421fda20d7a092d64c813d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_event.h</file>
@@ -23945,11 +23957,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\debug\src\sys_debug.c</file>
-         <hash>a19e5c5741fd049ca223b71314015cdb48f5750b92cd7d159eedb4da486d863b</hash>
+         <hash>474ee981d4285453a2ae9f1e4735c40129281931b89f579c3c413acdff1d8d26</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ripemd.h</file>
-         <hash>0d1dd9b1834756d65bd8330daae7ae4d44e037b9f5890c5523d3363f154eb4e2</hash>
+         <hash>beb0162c9a5367e69de633d3738cade3709e18e47c8647aaee43c97b2c075a5d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_event.c</file>
@@ -23957,7 +23969,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\camellia.c</file>
-         <hash>56744aa14d9f0cbd6d567b74b6d1d5fa0bab7f624b4892196f327317dec4755a</hash>
+         <hash>3f9cad78a5206374bcdb341a83057cbadbb5a12691ccdb0c97cfadd0fd2b5480</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\FreeRTOS_tasks.c</file>
@@ -23965,19 +23977,19 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sha3.h</file>
-         <hash>ca2ab88dcb3f95867263f3a85b907be30878111f0b6c0753458d7ff89a0a7d13</hash>
+         <hash>50a3167aad47cc6724a77cd92d405baf9ed1d6b6c2ceabbf1c76df04f6fd6d90</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvm\plib_nvm.c</file>
-         <hash>7ebd034cffc614bf1a8b251bcc302c6d99a2f07795885df609076bbb4f375c58</hash>
+         <hash>5a29e6cb41d62e12717ce78220673c6a591555b6cb9e6a23f45f600cb6c9d292</hash>
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ftpc_private.h</file>
-         <hash>772bc7304b133e8942624dd033407d93157dd4f6d8e4a98c5f0d9b0153d84c43</hash>
+         <hash>17846a08f9b9c3a4b16075ac6e6f2d97a92e1c6edb0f4e081590f12900d8ab57</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_JumpTable_pb.h</file>
@@ -23993,7 +24005,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\sys_int_mapping.h</file>
-         <hash>771b853250bfb05ceac0f525749007ca1d4478e660c13f6a7b7e8fe28eefcf75</hash>
+         <hash>a2dcf05575becc98aa212af1d220eda07487bd645d82c4d7a980aa3a22384cf3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_aes_sam6149.h</file>
@@ -24002,6 +24014,10 @@
       <entry>
          <file>..\src\config\default\gfx\legato\widget\checkbox\legato_widget_checkbox_skin_classic.c</file>
          <hash>72b8eab17c9cbed787c1f52005566c060fc6915f4fa4a2bb1fe483e61bcdadad</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\siphash.h</file>
+         <hash>14130c70c657d1dcffa553788306ee9f1d4d2d179fb16eef569a6687d7c24cb3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\p32MZ2048EFM144.ld</file>
@@ -24013,7 +24029,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\compress.c</file>
-         <hash>1097c66a48670b22e03bf48e7f3596a246efd16ff34db34c76db96682e0123bb</hash>
+         <hash>eaa80f34ebc87c249b318538edb83535d7984626ce2e1534a1e2aadf4b992124</hash>
       </entry>
       <entry>
          <file>..\src\app_gfx.h</file>
@@ -24021,7 +24037,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\udp.c</file>
-         <hash>d26990a2d9142bbae1fdb0b3d4981720054441e262bcf85cdae87bdd32a2dac6</hash>
+         <hash>64b5b4fcf0d373fbdb00a769d80ffdad8db2e3f68932b7be6eab7e50cc7f0f47</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\legato_image_utils.h</file>
@@ -24029,7 +24045,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\blake2-impl.h</file>
-         <hash>1c1355f5720577161378e229c7ec5a8e72c4dfb49249734243d3dbaccee0daf7</hash>
+         <hash>9e701871dd048e543d0f1de4466d2b19fb0de7310403aaf2ade8fd3a296a1b8c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\message_buffer.h</file>
@@ -24040,20 +24056,16 @@
          <hash>4b61f49854b6afa61802dea03789fb46585e631ce880dfdd6d251f5de19b5047</hash>
       </entry>
       <entry>
-         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\rabbit.c</file>
-         <hash>3cf9fc9cb702cbb5802a8bdfc2798586b8f1545f8a723c35d83e9b8021250cf6</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\system\ports\sys_ports.h</file>
          <hash>30eb82378e87ab0b3f42953466081abd7d406e07efac3a1999035c3d1135c3f0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_manager.c</file>
-         <hash>aa95da610cf840a5eaea45df7de90627c6a4b189c4458efc394ee863ae91f753</hash>
+         <hash>94421c93862b2d3a9144c8f7197a74978121e53bc0382d70e65029794306baf9</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\fe_operations.c</file>
-         <hash>0acb9589f4b35c2c46e559acfc75bdf553bc8fe74540d9ec2233af3e4f0e3028</hash>
+         <hash>60353ee88e1946d97cd742dc9cb1839c66e67f0f76f464e1f8c1bd47d537abca</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\portable\MPLAB\PIC32MZ\portmacro.h</file>
@@ -24061,7 +24073,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_manager_control.h</file>
-         <hash>0ba65ba8ec27b395a2586c11a4497c58f600b1bc1868a6400c994d0162409661</hash>
+         <hash>4125d5e6cd06325c04a237c238a0685048a4521724371cee2f9fe9e8c5c079c5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\jpeg\legato_imagedecoder_jpeg_common.c</file>
@@ -24093,11 +24105,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ge_operations.c</file>
-         <hash>fa5942896074029f5e41d1ded32e303fadf720638e81a57027494e3561f128cd</hash>
+         <hash>2661cb5bb89b7aa302ce5be460cf80ef6f61a7a140be24604af1817b89fca66f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\mpi_superclass.h</file>
-         <hash>b7496c67e9f97a03441a111d52f873123a3ce5ca1a1bc77099eef4520da8b601</hash>
+         <hash>d23054ff96ac18d4628d44a772594220a9b8d69273906213d021e042a2c2bf77</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Comp_pb.h</file>
@@ -24105,7 +24117,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\drv_sdspi_definitions.h</file>
-         <hash>8ada9ab9e945ced7ad44a757a803785dcb2bf106096eb64f4eb2bb5efa7691f3</hash>
+         <hash>0c945dfadfd2a4a9dd0efeb3d0205bec4ab9000207441a58237f3599e750af89</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_init.h</file>
@@ -24121,7 +24133,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wolfevent.h</file>
-         <hash>6c099a7eec35f6616268280710e4b4cc525c021f4c086dace8910c9e3bf0105d</hash>
+         <hash>6fb5cefb08045fb8faceb01cf8ef940d9b81eb6de21f71ef9158537887699e1d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\png\legato_imagedecoder_png.c</file>
@@ -24129,7 +24141,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_commands.c</file>
-         <hash>b7bb485e70917031ac53eec80ae118e8c9a3eb1a000c3f5c6ab2cdf7c7c91b52</hash>
+         <hash>11ceda1c9a86306aad26e5b9f6969e81c653f9cbf65db12af903bdfebdf0ecd2</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\keypad\legato_widget_keypad_skin_classic.c</file>
@@ -24141,11 +24153,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\error-crypt.h</file>
-         <hash>311fe29d353d3a8bfc31c96cb83d50c5e43340fbd57f0f441d3d3613606bc910</hash>
+         <hash>eaa38fb6d601a19a6876280d54fe4ce6fa10a7e10cb3ed4755722e6d80724b24</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ecc.h</file>
-         <hash>de7569f8a84494e2a0255405c7ea078831b43bc910c59e43bbe108271b7d7009</hash>
+         <hash>b3c8204f016059bb1237c9a32ace60a87946cf325fe5f8d45c8b2e519dda58af</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethmac\drv_ethmac.h</file>
@@ -24157,7 +24169,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\md2.h</file>
-         <hash>4272fdef2352010b4f4298a6338ef31ee940afe6de025901a4e5a324163cc094</hash>
+         <hash>91ca5ec568ac98caba1bee86466b93a82c155757d186def87e4908c01e37ffe8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\drawsurface\legato_widget_drawsurface_skin_classic.c</file>
@@ -24165,11 +24177,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\src\drv_memory.c</file>
-         <hash>858d39d4b7c65fcf04e7af3206abb521ab0e48e8333acebd7ca27e06b2987d18</hash>
+         <hash>6e2f8efe6574194ceb2a9d2970206b6b6a74044a7ff4b1910c3ac41b16ddcdf6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\drv_memory_definitions.h</file>
-         <hash>1e3d2eb7fd3cbaf473c3ad343f80e9da31f41f856d08c2dc268eb0c1001a2aee</hash>
+         <hash>b8f10e5a04840558da99e20856d3f7394b280d5e399d72ee5ef1cf13b3ee48f2</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\arp_manager.h</file>
@@ -24189,7 +24201,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\miim\src\drv_miim_local.h</file>
-         <hash>ea3c46416532a4e760f12500a0dc416dd010f56eb5ac0972276a3f542dc0bd2c</hash>
+         <hash>477d5098e23d72d9f172548172e38485bea3dcb85917a54e3ba91fbadf7779dd</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\input\sys_input_keyboard.h</file>
@@ -24209,7 +24221,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\coding.c</file>
-         <hash>378214d4dfac5f48ab66c09e5683cc59145f2cc90d77056d99340ec73e023968</hash>
+         <hash>f94263da235778b4fc5588d8d42843ff21be6a94042c695131db6b3d17963c85</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Div_pb.h</file>
@@ -24245,7 +24257,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wc_encrypt.h</file>
-         <hash>af7d1c87ceef0001f68380b051da9e053e991774eef529c69f9a4976bfc096f1</hash>
+         <hash>559100fc7f1aec334daf77311da7ac9d974be9cbd88a793c6a0f4f48cb348b2d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\reset\sys_reset.h</file>
@@ -24253,11 +24265,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\logging.h</file>
-         <hash>3e38751e7fc1566f5415d74841b05479fd1854845c6bf7029ba520b15342a04e</hash>
+         <hash>933476a4c7e9f4ad5047a3c8123bb7e46180b52ddde8ae4c97fb642b2cf84b91</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\drv_sdspi.h</file>
-         <hash>b33d6b822b44e0b83cf616e72cf454d6c721ec2cc1704d681789ea2eea95e63c</hash>
+         <hash>e32ef37da37e9aa65eced2ce7837fa357a49de927902754c92d7df4300d76a7c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\reset\sys_reset.c</file>
@@ -24265,7 +24277,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\snmp_manager.h</file>
@@ -24285,11 +24297,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\debug\sys_debug.h</file>
-         <hash>16fbc4bbf026e4713e9b835b1511411e053aaf92ab7d6a000638630576fe92b3</hash>
+         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
          <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sakke.c</file>
+         <hash>c8684986267195d8455b5a56122b71cbf69a19c31c46abed0ef1f7a62194683b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha384_sam6156.c</file>
@@ -24309,7 +24325,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\evic\plib_evic.h</file>
-         <hash>8b7673c73f8d03aa75093884824ba31d5b4af59a88890b86d8fedf8fe2a0a3e5</hash>
+         <hash>55a4d4a3985da6e88a9548a0a29a4f8d08e077348dbad6cd6ddce5fe40d01a33</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circularslider\legato_widget_circular_slider.c</file>
@@ -24317,7 +24333,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\evic\plib_evic.c</file>
-         <hash>76162a3eb79c01710a9a580b4ecc7f13823cba9f832b25f5ebd995af9965d046</hash>
+         <hash>327a480046d16b22f1e4d4f65ef4f5abd8a4beff9c778dea0a9f923d0b7e550d</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_pukcl_functions.h</file>
@@ -24328,8 +24344,12 @@
          <hash>72f30ff0fb5a284d8bbb91ffac07d1947aea715bf789aa94dcbc5d5000a2aa5a</hash>
       </entry>
       <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\kdf.c</file>
+         <hash>ba27c5cbcdd6b618f72f6d2b8bba246a611cf4dd3acc59bc305193c0f570c1f0</hash>
+      </entry>
+      <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\memory.h</file>
-         <hash>b7f6f28f7d63fb8f76e515ca574bed75611334b6bc537d2405d0991c71a66dc8</hash>
+         <hash>6c136e5b4ef349437256727bcc2b02432a8b2b4fb2eb242c4daa99503cedb947</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\font\legato_rasterfont_liberationmono1.c</file>
@@ -24337,7 +24357,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\i2c\master\plib_i2c_master_common.h</file>
@@ -24345,7 +24365,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\src\drv_i2c.c</file>
-         <hash>be0e47aab2bf2959f4a67a286ddb0191c9a4f1a17aa6431094130d84ed241e70</hash>
+         <hash>0f8d004b3a1546705accef2a57e1fe61e1ee03854d49b6060b0ca0e3c98edffe</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\image\legato_widget_image.h</file>
@@ -24353,11 +24373,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\integer.c</file>
-         <hash>9b03c89416c75287e62a597047109af809a4de306acbd4ad79173a7786db3938</hash>
+         <hash>e26554bb6ae5a0964acf3513b6812c811ac80dca8245f4501d14e729e091c46e</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\random.c</file>
-         <hash>90d2337bf17233169d0e4a4731cd65cca9c59aaa583e1d1a7eaba1bbab2f0fe7</hash>
+         <hash>f58a5b17dce5582f81c03a0a53a6a847d2ffc8f008339695898125feb251c21d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\font\legato_rasterfont_stream.c</file>
@@ -24369,11 +24389,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
+         <hash>850da06063b06132ed4bc020af7fb28adef50b89517aa6507cc6febedcd07ab7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>3b518d0f3667efcff16c9f0972d35f38eb4b97d22eca4ca2e7a862eb61e7cd6d</hash>
+         <hash>d88929a1d7d6d0428c517cb789359c574c42d52c3c8a04bb267990255ad81706</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\radialmenu\legato_widget_radial_menu.c</file>
@@ -24393,7 +24413,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
+         <hash>2f636a8a90403a73ce55b8397c9ea548bb1e4ef7c022796ec2b3dffe7f97e96c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sam_u2803.c</file>
@@ -24405,7 +24425,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\pkcs7.h</file>
-         <hash>e98db32b699b9b761c1967e4c760d572cb12b1dd257d40b88d203413345bbc4c</hash>
+         <hash>adea220fb7cfc82bb6ca7db87b226407cba1e4b262785a924ec9ef36208ec6d5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\image\le_gen_images.c</file>
@@ -24417,11 +24437,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\md4.h</file>
-         <hash>dcb53805a0f8a2db11b5694b6ee21174156f49b49897b07ed4bdde580c95748f</hash>
+         <hash>f5e1f559917c8cf9d3229a7a7ec32be80c9a38a5b50cf22d87c5fc6d707a8c9b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\pwdbased.h</file>
-         <hash>c880c515f9b00e7c4ba2bbd80513fa8f4849a780ceb23e58f90ef8425a0f2b87</hash>
+         <hash>4f481d7e51dd1e0151f1dcf7ed4feba2a613179509c24a4ee01bacadc5fe3d65</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_scheme.c</file>
@@ -24441,7 +24461,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\cache\plib_cache_local.h</file>
-         <hash>d8172028d448563ad48e5258b140e6746274aed4742c450ef84336e6574c810e</hash>
+         <hash>91d5a1a9920a5aea939f16fe36e9346b60ba3a8577817f24c0e8198cba2e089d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\lldp.h</file>
@@ -24473,11 +24493,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\hmac.c</file>
-         <hash>d6fe932aae8291131f92c4be836376052a9344b53003cb44a75110eefdc423b2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\default\driver\miim\src\dynamic\drv_miim_mapping.h</file>
-         <hash>8893340bb662f29e5c633aa75f96743a5cf447ea22ec85394295265ba84393d1</hash>
+         <hash>7149aa273d5ee3b06b187486051fdc664e8a6a3b24c109b91e4009b003e52723</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\legato_widget.c</file>
@@ -24489,15 +24505,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\cpuid.c</file>
-         <hash>0e865b6f557ed6f7e89005ddb24e9137b34b77b9e5fa6f1e438764692c6a8e79</hash>
+         <hash>29eef2d819e16f89adf4ea063d3564e579cfa5cb6df515a80f847c83046fff52</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rsa.h</file>
-         <hash>c23353d18da92d9fc81a258039dcf02b04e4ed1713ce9f45e0de6d19ded9c66c</hash>
+         <hash>1fb91d4180de562169726db32e95be8e11bcb5b64b5bd31a3c5ab702d86cc189</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\drv_memory.h</file>
-         <hash>23efb46974c19b12bca3a289f273f20c6993da56604044d7ba6cc581f333ce3c</hash>
+         <hash>614702f2ebbb2a6a2b1baf1c9f8472c94ea3588e370c507c9bf408b1d86702af</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\smtpc_manager.h</file>
@@ -24509,11 +24525,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\compress.h</file>
-         <hash>2fd8634127d9fdbf1a67c06994692d3e4639bb333e59a955fef27764fa1d16ec</hash>
-      </entry>
-      <entry>
-         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\hc128.h</file>
-         <hash>f10a1649d187127f84e4cac26f6402024bde0843a5e135fce0bf8cbf208f54c0</hash>
+         <hash>b2646c85385efb1d76fbdc13f5f1feb687698b5ba30d2d0255b9efd8fab84d6e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.h</file>
@@ -24529,7 +24541,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\src\sys_int.c</file>
-         <hash>ff706bb4bde7b62a65b603efea8bab8b5a7d9a1a2c1cb2a9e981d68bbf20f764</hash>
+         <hash>30ac5e334ca90204f545f1ab769ae26f421b910b3fb3be99354b364febceee64</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string.c</file>
@@ -24545,7 +24557,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_int.c</file>
-         <hash>12bacb48ed17e1196faa0b877dabb65deb245f660bd8deffc88f31c11a0bd715</hash>
+         <hash>7249bf8061bd51c292951fe134ec087165dcee153847e09d619e252800494308</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\dns_manager.h</file>
@@ -24558,10 +24570,6 @@
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_color_value.c</file>
          <hash>16ed5e371d220b1a31cc161c1634177e8608064ce8d51e728b3db35e03d5b693</hash>
-      </entry>
-      <entry>
-         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rabbit.h</file>
-         <hash>f021556dd2d1c41af774b90a8ae9194252919f18a6f1a3305a19eea54398c5a8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ecc_fp.c</file>
@@ -24577,15 +24585,23 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\src\drv_i2c_local.h</file>
-         <hash>dd5db98f7652a9d213b9f9903061ac9a8b416a807c9f4b945d0efbf0b4c94f7d</hash>
+         <hash>a5b8e0e4f5644b88470600c3e52e76f9492bfc52e65210d6f94d6b87374e9bce</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\memory\src\drv_memory_file_system.h</file>
+         <hash>25417962a1c2116c903c6b4061d496b3aaf075ea17b372ca28e1766f23bc9c56</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\integer.h</file>
-         <hash>6620480d2442084319708f0d88a7c87985ac2b96727759543f73e9322a4b70d5</hash>
+         <hash>95a27357cb2805c5c1e4d09f020c8e314942092cf9d79e7822025a2edb3ca496</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\src\drv_memory_file_system.c</file>
-         <hash>c268294079df93d6e75e17b812ca99fa9d08a4cfb592c8ddd0ca1402a5dd590e</hash>
+         <hash>3ae77608851032500a3ffc41011d9f5be519eaa8c42e4a78bc800d10232f795b</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\falcon.c</file>
+         <hash>f79ceaee84b254a3215f7d59e048cfeb64576f72790c4573c0287d920316aa9d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\berkeley_manager.h</file>
@@ -24597,15 +24613,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ndp_private.h</file>
-         <hash>cfe66a495e4aa929d17720d2a9025b65080e072a5aace7f1681b8ef0fc01fe4a</hash>
+         <hash>b329e4d0b584e60c3b8546d3a4d6d98246d8dc08f383a065a829e56d80911b19</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\chacha20_poly1305.c</file>
-         <hash>2719b44b1dd16ed896e8c3fba6f4a657ee8f0f28ec9d08e41c278dcbaa9c9bc8</hash>
+         <hash>5ff8537551acd84fc6ea69f04ba6fec8fa18367cdfb12254fb775f5623c4831a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>6d7bcd2f51e83ebd859cdcb119a38de6f454cfa3489731d38c3ce4c93231e392</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\console\src\sys_console_local.h</file>
@@ -24613,19 +24629,19 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_arm32.c</file>
-         <hash>66d63e17bf3cba302ee2eef7fc827a82a3f880a15a9d42698ab669ca3510371c</hash>
+         <hash>7ef4e5c8890555981c82d8a666156cd50ea122e17ffdee6cfc35e290ed4c33a8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_armthumb.c</file>
-         <hash>ec405063f31fd02aaeea39bee57f73c1a871700ef30070534770ae7603c6a67c</hash>
+         <hash>7c4ec1e1a934677a6e3c7e27152407215af9ca3a043aacd93cd0bc57847e9158</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ge_low_mem.c</file>
-         <hash>3796effb0153a05adeba40b934bd03db6844cfac8f8e708b69acb406689500d9</hash>
+         <hash>40e436fa77f34282973a5fce018f5f27a81ea4c3249312ed8e1f050bce5bb21d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
-         <hash>3ffc537c904fbe39bd63f5380c24ec9c6e088657c3ac07daa548abbc84e5e499</hash>
+         <hash>6f713db1ff146f50c71dd1f007251b4350675ff33703671952adf852cbe5effa</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\drawsurface\legato_widget_drawsurface.c</file>
@@ -24637,15 +24653,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\dynamic\drv_extphy_ksz8061.h</file>
-         <hash>135abf9cc8539fd69296f12287c89bb2cfd89ccff262c3b116062da2665e7423</hash>
+         <hash>adac19f206a84fa9b34c184c4bb3997bd3ee34c22fb1090d2ceca06db3a28041</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rc2.h</file>
-         <hash>ad2c10b130bc2c152b0af5bad8e230392f91bf28d8a961fa58669a3525a9e20e</hash>
+         <hash>e1066d1c9398a39bfd4c1155d47bd692f22d536f8737afa260733602d3a09ec0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\dynamic\drv_extphy_ksz8061.c</file>
-         <hash>374504dff8d523611bee3af83833dc918af74f4a1b5103677e2b3d10d313c287</hash>
+         <hash>6456a6983ee978a413a64f4cbe6291f55b6c050ff382bc9a1924fd527ab089e2</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\drawsurface\legato_widget_drawsurface.h</file>
@@ -24653,15 +24669,19 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\srp.c</file>
-         <hash>339c82afd979305a26a4b8e8655f01c67df7b7d27685c81e020aedc1b7aaca1c</hash>
+         <hash>ca1afb2bb4f4f639294467ebc5ace9f899442461bd53766ea9718cac32766a5c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\fat_fs\file_system\ffunicode.c</file>
-         <hash>b519b20a6de1ceea6ae01421480d0137d03abe788b4e6553b2153d2a8591b840</hash>
+         <hash>3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\dnss_manager.h</file>
          <hash>57addb2a676b42a41cc6b9b41bf9577d431771872c6f83d5958b9d1beed06e80</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\eccsi.c</file>
+         <hash>af139ad54ce90a0fb8daeff553ec9ce104bdeab70e17931c9589bfde40decf2e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\driver.h</file>
@@ -24673,11 +24693,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ge_448.h</file>
-         <hash>c79e144ee87b9471f0e4f556771cd7d57e88c88e00c26c836803022b4730ee9a</hash>
+         <hash>cf2cbc43ced29df8740e9224945b7fd1bd8c995ca5b42385d91850ff041846c3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_GF2NEcDsa_pb.h</file>
@@ -24689,7 +24709,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\asn.h</file>
-         <hash>42c9d6313940b6321817efc4bc8c2100de0067eec9eca76b298ef0867567e7aa</hash>
+         <hash>7338839ae1b25362416f608a3899c781a6a50f51588198d88c3587586b76be3c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\dhcp_private.h</file>
@@ -24705,7 +24725,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\system_media.h</file>
-         <hash>be592b4eb9eb4cc8f25cf734fc15b088de091d2f8051b0fcba091c1b6194df5f</hash>
+         <hash>e61ba67015cfba6a7425d077cd2c633ba9989218bbe585078efe2face729401f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.h</file>
@@ -24717,7 +24737,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\cryptocb.c</file>
-         <hash>3585ab59d373d0b013b5b2ce3ac848ccb8e14fa05f9fe79f589101ac5663cd33</hash>
+         <hash>144857ff7023d709ab85fe6a708636764fa5cb20028c47c8afc9e1560849a124</hash>
       </entry>
       <entry>
          <file>..\src\config\default\net_pres\pres\net_pres_socketapi.h</file>
@@ -24725,7 +24745,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.c</file>
-         <hash>51098a001f0779ca4d61bdb30da65eba25a1230790352a27cb80c0eee357cf27</hash>
+         <hash>861d732f1985bf26bb1d0ab2f76f4636386e836888954fed449753eeddf99301</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\linegraph\legato_widget_line_graph.c</file>
@@ -24773,19 +24793,19 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\tfm.c</file>
-         <hash>842d20a6f4d74b3395fb2e29dc2d3f1260739199669ca08b4be562f1ac8e787a</hash>
+         <hash>d947d5866b1816f261fb7a948786672d8ead7b8fbad65a2c8bc9b427f9c0c60c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\ebi\plib_ebi.c</file>
-         <hash>1f92f0d8f905ffd1dc20873e490258e64ee4460a8f14118215ffada3de2644fc</hash>
+         <hash>10fdc4df39741646ac4e26d4c2444b0ad824e80b644ae29123542eb16955cc51</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\ebi\plib_ebi.h</file>
-         <hash>0da7a94d52a9636b5b0667e8d41811f2b909038a7ff1a9a6bf97bc1c35d60931</hash>
+         <hash>d4194666b833636d91a34eb8cf4a433541e27ef82d3fe6c24719bf8eb256cb71</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\pkcs7.c</file>
-         <hash>b5f94f6cad9fd2cd3a96663cb0cf5ec1fb643c75dae308d36512881974c4e399</hash>
+         <hash>bcc2d5cf00f5c9a076d2dc20e8614507527ecf60a54c0238f048b0f7da21438d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\radiobutton\legato_radiobutton_group.h</file>
@@ -24813,7 +24833,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\command\sys_command.h</file>
-         <hash>8d8b4c4f428355afecc0771ff799785869386e7cfb079e327773628226ee2e2d</hash>
+         <hash>7ef4ded141f7f71e84038aa39c414929ee9cbd9cdacb92e06544f5bf53915dca</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_pukcl_definitions.h</file>
@@ -24821,11 +24841,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\md5.c</file>
-         <hash>79ed60a4929ef21fd9ce05c33523b4e4f2a42c24f0f58c4d0efa6923d6032847</hash>
+         <hash>f17d72b1caa14b77ddc600f233a93d536a0177c4e777287a6e87e8924fce37e9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\fat_fs\file_system\ffconf.h</file>
-         <hash>5fe1ef5de1a190765c720805c6023b40586ea571aecc76461e7ecc4c9feda05d</hash>
+         <hash>d25791aa7e002a5dd3af32735c0125c69e421deb6967a2b43337c98f53d973b1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\touchtest\legato_widget_touchtest.h</file>
@@ -24833,7 +24853,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
+         <hash>1a9fb6e89e156bef847d47d58a552ac7e97a31b075d229559b487b479b1ebf4d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\slider\legato_widget_slider.h</file>
@@ -24853,7 +24873,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
+         <hash>64bfd7a705db6c2f26865a9d2dfc4a6133ce29cc0fc3edd2be35916b7887f5e5</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\event_groups.h</file>
@@ -24877,7 +24897,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\hash.c</file>
-         <hash>c0a70e1ea518e7bbca60f0fa247babe384ecca777db45c89ef9f5181fdee4fa4</hash>
+         <hash>fc62a7a3adcac4cf2340ce7e9c7ee200668c3d0d8d5ff741512fc7f37a726d61</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\lldp_tlv.h</file>
@@ -24897,7 +24917,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\uart\plib_uart_common.h</file>
-         <hash>c218c6173a59f6dff90ca776b4bf86cc2a856fa7e3272fb08dd42921ef56b24b</hash>
+         <hash>b87295faadae4157d5880e22970f89094f2b51e1866930040a90ba49c6b29797</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\imagerotate\legato_widget_imagerotate_skin_classic.c</file>
@@ -24913,11 +24933,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wolfevent.c</file>
-         <hash>12443685465361dd745903e7e2afd500240ca9a58ca68e2266beb763230b824f</hash>
+         <hash>e75910d3a622c039da884986b83ee8c63acf97cf903337d1920cb3576d9058f1</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wolfmath.h</file>
-         <hash>95a8ba8776e670747d5f1612ead95ae6da0335c8e83286ee3183b584eafe70f1</hash>
+         <hash>daa0a9ea6e5f05f4df3b22e2ea71e13f0c7fecf77231f47f4cb7d921bd4bbc9c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\window\legato_widget_window.h</file>
@@ -24925,7 +24945,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\evp.c</file>
-         <hash>6256747dd20334ef1676c486ffe1d0bbdbd93f9e39eeea4e16ed93bc11a507f4</hash>
+         <hash>a63fe4bdea64c0b58a5a2b55351f6104b89607043445f08f6919f4d7951999b5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_variableheap.h</file>
@@ -24953,7 +24973,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\memory\src\drv_memory_local.h</file>
-         <hash>9bf352420664ea21b32c2226b8650ed314bcf58992a10064adebb09fb975444b</hash>
+         <hash>33517ba66c986a457b96168cfb2d9437874a5ea174ce11f89df84be06c509a10</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\link_list.h</file>
@@ -24989,11 +25009,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_c32.c</file>
-         <hash>29552f08719237ef91053d6ecb0068e8a3f9c52bb2d3eedd13f69d7b2520c208</hash>
+         <hash>bc1419bab68817e57cd968e380643772dc1c12603bc73605a6aeb7aa1b33fff9</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sp.h</file>
-         <hash>e252296e58330b57e63fb8fbe2e6c006510b171abb210a9879a837a80d46a4d0</hash>
+         <hash>ab2897d1539fc6a44244fda99b1f8d31d83989acfb732f67328bc2d7580c0332</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\console\src\sys_console_uart.h</file>
@@ -25025,11 +25045,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\console\src\sys_console_uart.c</file>
-         <hash>ac0304a177b5e152c80d648da5f5cd87f7d926814f093131b76142c41fde6473</hash>
+         <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_manager.h</file>
-         <hash>5bbc85d15ba43950ca7bcd58e9fae4df10b2adac790c2c63735dd5a98c4cdf30</hash>
+         <hash>7349dc40bd701d4f92c3322659dca0488968cf227f04d5237c0cfecdc8e6c602</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\dhcp.h</file>
@@ -25049,7 +25069,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip.h</file>
-         <hash>9d79526e84d75a4a59cb81fd644d4108879f2f5795aee9787c0a7f02695354ae</hash>
+         <hash>d886f7c0bdd90a55417e9b2c0fdb0c55179e7f0dc2c55ee228971013b0b72b3b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ipv4_manager.h</file>
@@ -25073,7 +25093,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\src\drv_sdspi.c</file>
-         <hash>3e141cda42b6ce36787b6bd59d5b68dae2f8beadd748659ac6f190bd6fd6701a</hash>
+         <hash>08abbece701190ec22d03f9761785184c7bf148b0b6d52884e4a96a6d5fe1a6c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\spi\spi_master\plib_spi1_master.h</file>
@@ -25081,15 +25101,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\asm.c</file>
-         <hash>55f625be19c54b48fa21901480939a7ecf75dc464d1dde05a475f5ee6d9b7dc4</hash>
+         <hash>c7053830f389c72d976d5209ba4a34c7121758feaba70aba49ec38c7a239bfe0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\input\sys_input_gesture.h</file>
          <hash>a026e77a5916d8d926300fcb78943a5ba209b77b237e53c693fc1d8e12a5956c</hash>
-      </entry>
-      <entry>
-         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\idea.c</file>
-         <hash>820df5202c2c3aa80c4df4ddbd25cd77dd62d2c28da1612e8eab8012a4914516</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\keypad\legato_widget_keypad.h</file>
@@ -25097,7 +25113,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\coding.h</file>
-         <hash>54e05dad28cf712e94f06869b4b38cea88d1c140d7f7b88a0b515150fd890e4b</hash>
+         <hash>4f3390734289cfc5d9f146a32f1736296844770230df771290624b7a41ff5888</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono_read_internal.c</file>
@@ -25117,7 +25133,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\pwdbased.c</file>
-         <hash>0d087e6cc0dd4b01c18440c5ae7e2ff4d7841d9bfe9caf850b4293d796a8ed95</hash>
+         <hash>db9afbacc77f588261de2f270839492dab435338836029e4b7f81d82ec2bb056</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw.c</file>
@@ -25145,11 +25161,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sha.h</file>
-         <hash>024214cc5785d6ad99ac3729d2cb7f7977399f84bd97036521713a9069041d5b</hash>
+         <hash>7558361734693c8ae34a90fb78df00a66573c6c48513af6916e37185da407ff2</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sakke.h</file>
+         <hash>7e24fd6b30d3d69f06e85dbca51549d54fadf9fb6791796382699a0f8f91fcf1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\console\sys_console.h</file>
-         <hash>e8a97986345fb2c80389834b113384eba523837ee43f7798d9b56be630a6e7b3</hash>
+         <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\rectangle\legato_widget_rectangle.c</file>
@@ -25165,11 +25185,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\blake2-int.h</file>
-         <hash>fb056808a555b5961cdf0589261dfec42b26bb87a3d3ff3e9c944a8b887e0ab3</hash>
+         <hash>f573baaa89fb74f69118a3b4fdb479101efc092a6984779e10a5074c536396be</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\selftest.h</file>
-         <hash>8ec1302b913449542c0b6b8846ee809b961cf9b77226f7db04ca274a71cd32f2</hash>
+         <hash>34a1f6d114e56787fb6a66704312cb68edc5ab55343b67c3e6c91b0a10a795e4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\legato_widget_skin_classic_common.h</file>
@@ -25178,6 +25198,10 @@
       <entry>
          <file>..\src\config\default\system\fs\mpfs\mpfs.h</file>
          <hash>5a5c03658aecea816f7717a1124d6c61bebe2f9a28d5f4f82475fa87ff788e2a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\miim\src\dynamic\drv_miim_pic32m.c</file>
+         <hash>2eefac93a73944b9cb0201e5f0b6c48cfda396756e7dfeb9f4782d748fafd1d2</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circularslider\legato_widget_circular_slider_skin_classic.c</file>
@@ -25197,11 +25221,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\src\drv_sdspi_plib_interface.h</file>
-         <hash>8018f44adbdc6b3242355fec0a193a5ccd1bd941110ac834721cbabe975a9317</hash>
+         <hash>bed4909397320bae69f1572576e810a8f749a607c389314341c1e1d41ba1e291</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\spi\spi_master\plib_spi1_master.c</file>
-         <hash>12cb43c00c1db0841ba54777656f39197ac892a5fa12ad3335b57bfd35d5eda9</hash>
+         <hash>af50f1f332e23a45cfa9e444fe0a64321709d3aa67622ee2b48486518c9f704e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device_cache.h</file>
@@ -25217,11 +25241,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\dhcpv6_private.h</file>
-         <hash>fbdb94fb86e748d7f88240208e1859a2567fe28869055a34e11304b7cf103a0e</hash>
+         <hash>9460946a8cb9d6595977edff25fe84c62eedaa46e80a35a751ce508715d5da1c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\src\drv_sdspi_plib_interface.c</file>
-         <hash>014e58413599e88e5553baae87a6c568279e7e58d80b4a067b08c17df8bda582</hash>
+         <hash>16bc63521d1205971a1100ba39b65a25dd14553417f8c3b95ec9a7fb3105d0df</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\button\legato_widget_button_skin_classic.c</file>
@@ -25241,15 +25265,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_dsp32.c</file>
-         <hash>70c2e5d5808fda8fbd9061c9f79fcb96b15c6e5a5c8a44fcdf4470b0409d429d</hash>
+         <hash>963530108093e7b78be69112e5ec66911a8067b8a796a13a4966ef907d61513c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\settings.h</file>
-         <hash>86a92896cc09608435ffe0d78f4aa3421fb5f19a5675761070d1e9c85ad22de8</hash>
+         <hash>ead059ea581b20691a09f07b1114f9e27dc535b59dc152273149cef953173af0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\drv_ethphy_local.h</file>
-         <hash>5a79b92dc262d081f3c9c84566de508cd76b7c09365f4bc72a5238ad9a082d35</hash>
+         <hash>d4e057f3740a4cfec264ac4e36a1f17bcadd259c3e8be6acb2bfc086b15e0cd8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\stack_macros.h</file>
@@ -25257,11 +25281,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\ipv6.h</file>
-         <hash>f2163505c21f43198980d29f3a7f4431ce329b5abf3e072de3d587b9e5a28df5</hash>
+         <hash>bc062954ef5f10b03c93605cbaf852d42afed2b38f09244e6b9358d812a8eee6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\camellia.h</file>
-         <hash>f9110d59c811eb15e6cfe99d4bd348ccfb5d6688bf89577568ca872bc8030403</hash>
+         <hash>51cf9024a24a238a3e979a28c85f40d681d7c3357f54ccf00b36242422565590</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tftps_private.h</file>
@@ -25269,7 +25293,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ed25519.c</file>
-         <hash>7ff857bce9cfff57a4b400e6eeb0b38d6f33f4a1286c2d0cbd0e1a227389ffda</hash>
+         <hash>7be7e4c76b41753e967e9ca00e1086e72543941a5b8716ebccb280e30cb05b42</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEccConv_pb.h</file>
@@ -25277,7 +25301,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\fe_low_mem.c</file>
-         <hash>bfb25e66b219c805fe6a88317fd5594babe7806020dd8fb6e7c577a239c0f00a</hash>
+         <hash>e1a27fe52f0137e86de726bae8e4aca35519ebf81ea8612f5683e5b287ef1e01</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\smtpc_private.h</file>
@@ -25289,27 +25313,27 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\logging.c</file>
-         <hash>da58c0b5f8c9020acf79159f9b5f08533bc52d57cbd4e851f205ae492248708b</hash>
+         <hash>3e3a0d29fcbf0d02f4de6fc4cd990c4f00d2227c6d64491cf8d9808689701b8b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\aes.h</file>
-         <hash>39d4de1d65e880042fe4e8507035c0093e04140c0e7b85f9c73c8b1c692421d1</hash>
+         <hash>bee9e13046f53a212c13db05c3e17e673c5b4394c3e96b5977b76337c845648a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\src\sys_fs_media_manager_local.h</file>
-         <hash>bbc6074719c421b07d4540ee6e745ae4145239f698780819c479e13bfdd9ddd5</hash>
+         <hash>5d471f0372ec41b3ef362ad533beede076e4e959274e57221ed229b996d7231e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\dmac\plib_dmac.c</file>
-         <hash>591c3b0b8f27b09495f4056d3c82bdebec432e9377db2b91703ecd7a16697389</hash>
+         <hash>20d2e543858a5eed51dc75eebd945e677848d2555d4889293ed8a592b32ee0ad</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
+         <hash>a618fa3bd1c9915c02143ae065c92200da98143a771af8355e3e4c9be83873c4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\dmac\plib_dmac.h</file>
-         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
+         <hash>78b9533671371600d12031eb6280ef51c292677cc636c809bb1b16ab772a4f8d</hash>
       </entry>
       <entry>
          <file>..\src\mpfs_net_img.c</file>
@@ -25325,11 +25349,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\hash.h</file>
-         <hash>3942a3ca64ad1165537d22e27579b47f079cf1ef4887062dc713978745f1e726</hash>
+         <hash>46d344a5e35192b4342be98f2ae53b509703acac4c6578dd9486f6b65c8049eb</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\pic32mz-crypt.h</file>
-         <hash>e265a870c2d2b9995e4f283747d65c4a2efa5194b40199a2bd6f1dfd8131c6b7</hash>
+         <hash>b3abcce188dbb1d5adbfc8416fb1ece3f04c3524ce20aa7d5dc2219c06e66134</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_common_ports.h</file>
@@ -25349,15 +25373,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\dma\sys_dma.c</file>
-         <hash>dd7bc0bf3cfac8d8555d693f3503902d52c159e67f0b0ece6fb63b87102a433f</hash>
+         <hash>6697075e2dd0c93e8af4afb996ae9c70dd8fac27d592a671130f32a9b8649b0b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\arc4.c</file>
-         <hash>33625fed332c10051e17a03270c3dcff30041bd02d6dbdecca79ff5f87571be1</hash>
+         <hash>315ea6847467a384c8503b25653981370b92f16ddfde0f9c3715508f435561d5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_assets.h</file>
@@ -25365,7 +25389,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\http_net_manager.h</file>
-         <hash>f05933f7a9331b2263c6d9d743dded59c7620addfd89263aaac23a1ed510fc09</hash>
+         <hash>c3c80b63abb3890947cc6ce34f899574ab30776a95fefd35a5f889d3e7a042b7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\helpers.c</file>
@@ -25377,11 +25401,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\visibility.h</file>
-         <hash>3e98b543ebaaeca28eed161f3845da9884c0745a228bb04aea151166b3af2d76</hash>
+         <hash>3ee5813bfc4adfb3c06acf5f44124c32b02f4dde19ee91f3c9e6cc08c02a02da</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\dma\sys_dma.h</file>
-         <hash>557896cd9ba1256276537379aa5f3cb06e1129a660db4a566e747a0ce6c63ec5</hash>
+         <hash>696ee09354ceb3954ef5ca0be1fc9dc45cb6955beff13ff6ebdf92a923b62890</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\renderer\legato_gpu.c</file>
@@ -25405,7 +25429,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\aes.c</file>
-         <hash>17482921bf38fdb6ca77b0929b8e20a1ba936b325cdcd4320b641e2e13321bdb</hash>
+         <hash>2935cc3c7225d43109d4e563e9010b109de0dd7cd57b2dea0441c01eb5505a49</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\udp_private.h</file>
@@ -25417,7 +25441,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\crypto\crypto.h</file>
-         <hash>d91eefa4346248b3f9b80801190d4e284b0e32debd5fbe0bc19148d75dc398a9</hash>
+         <hash>89d2747602540d5216047edf6aaaa8e4bcf092c4a8b3ee2b700f1a7237514f57</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\icmp.h</file>
@@ -25425,11 +25449,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\int\sys_int.h</file>
-         <hash>c6ec8fc3c7ad1fa570998b9f65cb37fba4364ab07c3869f2d6cb30612a8a91e8</hash>
+         <hash>2c878ab7ff41ae56b5c0c3c94929ad66eb87b8660bf9a439177d049e8ad8f8c8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\dsa.h</file>
-         <hash>97173bddaf736595aaa9ff83dc8a4c1091f24c57739a43d20402259086ffe0a8</hash>
+         <hash>cb22aa27633c62e28f8ca0582f4730324c47d12c12e00d0bd7a132d260f52199</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
@@ -25441,7 +25465,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\hmac.h</file>
-         <hash>5d6a4cff63295bafc92ccd558519309a36471c3a4d462453a70bd924b7ef98b7</hash>
+         <hash>28ebab626d89ed0aa72c8bd0ab9d38d0785142a905dc956287e6f1f44036818c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\dhcpv6.h</file>
@@ -25457,7 +25481,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\cmac.c</file>
-         <hash>bd72a1bfdb1ac4b10272bd6087285ce76dd1b9f313f8ca4ff3aa9d11af19fd52</hash>
+         <hash>dc39e816af77cc533b8ce25fed0dda4674f645aacff4d61a9a501a02d553a7f6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono.h</file>
@@ -25504,16 +25528,12 @@
          <hash>e8d179d0c3affac02fdf37ee3c1c3e4691e75bb336395771ba95756022325bbb</hash>
       </entry>
       <entry>
-         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\idea.h</file>
-         <hash>ca0a130daee9795e78cabb8128f5fdc22e102c44283e296aba68969e9fffa7ac</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>06c7aec6f6fdd74c6625fa929ad697f05c914e3355cff58461ca63c4d311277f</hash>
+         <hash>42619fdb5b5bf1a0ae42e75180a629f11b60f158a89911ed363cca66b00c0bd6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\chacha20_poly1305.h</file>
-         <hash>b4f68e2902187af771df633447d4fbd7691d0ca228728a544b2dd9355e40698b</hash>
+         <hash>b6b70897f78664b9f63b702b41e216c73ee58117bdd6422b961cffa06fe52985</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcp_manager.h</file>
@@ -25525,7 +25545,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\ndp_manager.h</file>
-         <hash>0994d9c5e8e0fa5e633a55f22bcbcf2b4a3570013800c0b8597d8ff2691c16cb</hash>
+         <hash>b659af82e14f5642d2d92d8895ebd11a8323803ab2d1c0570398424ff72d28d3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEcDsa_pb.h</file>
@@ -25541,7 +25561,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_palette_internal.c</file>
-         <hash>89ebac404e6aa269ca0bcc895fc9e11d2d593ad53e1f423d0c1f33881068a39d</hash>
+         <hash>0cec862ead00d99e9cb82c61e943185c336660170b1f4ac3af84689428938e2b</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\falcon.h</file>
+         <hash>4190fb74ca75e9a0a1208e1e928dfa928d7317c14b964b1494c62b1f04d1d013</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\renderer\legato_draw.c</file>
@@ -25562,10 +25586,6 @@
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEccAddSub_pb.h</file>
          <hash>64c5dc03d9fd8bd2fa6e5e4dc8e53cb53f4e2f022a69f86798e794d2681cf1a7</hash>
-      </entry>
-      <entry>
-         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\hc128.c</file>
-         <hash>38b73a7b4bf2ccb981f5085661726d00a459d92363a4cde717fb5bb95e419490</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_aes_hw.h</file>
@@ -25589,11 +25609,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\cpuid.h</file>
-         <hash>85106a87c1a63ac67d88ffe97a8a80c1102b4e474c695c1c53d43f523f704b46</hash>
+         <hash>25b75b04fdc22f944808f4fbac089ee0360d3679ffbc638c4398b95d9095618b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcp.c</file>
-         <hash>661e8381dbda019014c9dde21e60ffee0f3d09ca85673e5565ba9748ef65bc5a</hash>
+         <hash>48855b7620341ae109452b57948c587e8926367e462d2f9c018cf36e1ee50c7d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\textfield\legato_widget_textfield_skin_classic.c</file>
@@ -25625,11 +25645,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ge_operations.h</file>
-         <hash>c1e41d6e82f76d320d221dfe7691d02d1f98ae6b616f59d28917721eba57a3ca</hash>
+         <hash>fa7f3ae8b9e9001b5c978ded3213524489d5937d2bd71550d29cbd0b6120d8b9</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\cryptocb.h</file>
-         <hash>b4a821c065fd5e3e1ca5d3a7befb68d2d66457175a3eb7f243221d2024991137</hash>
+         <hash>a49462d1bd95d77389aecb6463fd167f96e62ba7f17885c55c0b335930c42e13</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_heap_internal.c</file>
@@ -25637,7 +25657,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ed448.h</file>
-         <hash>3e25e84521dd9a0bb29c83486cdc74c55e9659a51c55714610608eff6418a5f4</hash>
+         <hash>e3fb653db4528c860862fbbfc566537fb45f547420f6a49871a3d74f19b0d396</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\input\sys_input.c</file>
@@ -25649,11 +25669,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\icmpv6_manager.h</file>
-         <hash>c28e6fb0c4a31c61f2921dab7a8945e3b5cf63c8224cc9304801c93214a0a8c6</hash>
+         <hash>338a01145ab84161193edad653158a8df061f48e4b4c3b3dcb31f00de8581af0</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\pkcs12.h</file>
-         <hash>f27346772bca61aff4e07a31c4fcf4cab797dd9f08375f197be539b65233035e</hash>
+         <hash>18f5025bbe86dc9900df004bd6c3c4a195ed4ef250dd4026f03e11cf24540b5e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_input.h</file>
@@ -25665,7 +25685,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_input.c</file>
-         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
+         <hash>131dfbe13dfee71707c492b03f12e3fd572955fdcf6a79de3d6a6522d3568041</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circle\legato_widget_circle_skin_classic.c</file>
@@ -25677,7 +25697,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\pic32mz-crypt.c</file>
-         <hash>fed3e8f5e982656e5dfd3a703d677a8595cb73b8425a59474c2a4050a531db79</hash>
+         <hash>44563291b9564ded70dfc2dd2526e1890382e21f0ae39fb8feec9fbbf98caca0</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_sha512_hw.h</file>
@@ -25697,7 +25717,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wc_pkcs11.h</file>
-         <hash>09ae9111cf36371fa83bb74eb0286644d5aff78182d3b51d3253b719ede9455a</hash>
+         <hash>2abeb0d9aaa0e03de01966e795072ee8b92925b671e0bdfcec413b72391bbc60</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_FastCopy_pb.h</file>
@@ -25713,7 +25733,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\sys_fs_fat_interface.h</file>
-         <hash>47379030a7b158d0db57e79d9ee9d056b9bbad70e13152b6ea603f1cbf37a459</hash>
+         <hash>8abf10cb082958d08f5cf3210694cef73fdb6fa9b6a641e00da547cbcec0719b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\telnet.h</file>
@@ -25721,11 +25741,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\certs_test.h</file>
-         <hash>6aa8197d98518e8a979e51a2e180dd0dd57942881ab8ace1aa7c86db5f3afb25</hash>
+         <hash>3298b434e31132747abbc54f0f659060ccd22406e24704c7a7d5692f4c8adb5b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\freertos_hooks.c</file>
-         <hash>1c31f7febed38afbcb09d11b002c5dddda98c7ed7aba9ff8f8e32b8c5f288a47</hash>
+         <hash>ee4a4dfc44aa3d45b99065a3d972818fcbd019d39450a67f168aa7f047f55149</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\input\sys_input_listener.c</file>
@@ -25753,7 +25773,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\fe_448.c</file>
-         <hash>37d0563cc98f903f4b64265ff3b71b0ef1f191bfd5e6e719443bab029bca3d3d</hash>
+         <hash>9d3e9e1a1276ef9d4d7306cd4cc75194d0cc1bf2a66dbaa8aad4251187ee9063</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\arc\legato_widget_arc.c</file>
@@ -25773,7 +25793,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\mem_track.h</file>
-         <hash>a530286bb391ba559460eb3c97df1a1bbab0dfc66ee9d7aa2b7d036c71753b1d</hash>
+         <hash>351893667c7ceecac719f0aa1233f097baa6898ccbc50c99533a5bb9e0ae1c4c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\arc\legato_widget_arc.h</file>
@@ -25785,11 +25805,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\curve25519.h</file>
-         <hash>5ee381300d14cde9318b15c461c9b674e48682074fa68648afe91b7c2802aaa3</hash>
+         <hash>e9cdf94a8788dff444368c9bba907b2648285394f1f76c998a8ab63793807706</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\uart\plib_uart2.c</file>
-         <hash>285b3f5e065d8863e7cd43d39a0a8371ada524af6b113f2729c64fb22e8a9aba</hash>
+         <hash>48dcc40e9dccfd2dcfcdea8473327d2fcc1890dd2d32a254cc577f13464e75bd</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\timers.c</file>
@@ -25825,11 +25845,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\arc4.h</file>
-         <hash>440ea25714c28acd2d13fb48d6838e1cd98236aa1a56355065688990251fa68a</hash>
+         <hash>f377144a413e1b0c26d92dee3513c0f6e16c2a786d58e9e0fb11b5fa56560060</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sha512.h</file>
-         <hash>a54c11e3bc0df83ce62f88ab10cbc5da78493c57bd4d3e2742293cfcfee334ef</hash>
+         <hash>6bd50573aa54d23f175e72c10c624296994c5ef21eb76afcb6e97233f082d9e8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\progressbar\legato_widget_progressbar.h</file>
@@ -25841,19 +25861,23 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_mac_object.h</file>
-         <hash>99996439fe8e9af844811082f9f09df2dcee0e543feb9351cf0854e0112f4c6c</hash>
+         <hash>dee2642162c4597aafa0f6dd130a72ad65057a7b891914917a19bebacfebafd3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\pkcs11.h</file>
-         <hash>03c67306f2eb085ea208d5a99401e8619a9e558072d0ac0300d2b72367663182</hash>
+         <hash>b07f59d3abc359ef13773682cd6fd36b183e264db99bfadec6a66ac64d93023b</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\fe_operations.h</file>
-         <hash>f01ad06013976735c7e2e56108837528bfaae06b2403fc02692683dccac6efa5</hash>
+         <hash>818f0b66c35cb3e5d0e2f0f7192e091a25e50bbef124edf784b5063263dbc2a3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\croutine.h</file>
          <hash>cf52c15fa26a8d4f82b55909b75ebfe2aab25468ba7780748912ddead9812b4e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\sys_tasks.h</file>
+         <hash>1f5b113ccd43141329e7ef555b7eafa4f16c53ee4d67b83a795d6bb55538ba80</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_SelfTest_pb.h</file>
@@ -25865,7 +25889,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\uart\plib_uart2.h</file>
-         <hash>aabe8ff38621c5d7f1106ec3e88444b9049992399285730631471c7931c2df45</hash>
+         <hash>8b718719efb5a886d96e8be07b7f7266901bf30dcee9db4fd534bf0359c8c9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\legato_widget_skin_classic.c</file>
@@ -25900,12 +25924,16 @@
          <hash>4568a952d70cb7f2ce1ee801e94c468f6bc20c14dbb752696f751131567b864b</hash>
       </entry>
       <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\kdf.h</file>
+         <hash>768f209c080584755afab0f91c3481b560e2f9ffb0fe13b595bbfbcdec48c557</hash>
+      </entry>
+      <entry>
          <file>..\src\config\default\gfx\legato\widget\label\legato_widget_label.c</file>
          <hash>4db3d7cdf29ede7f8f87431a0da6e2d94356bbcc7cebe8e83c6307e34f67ea3a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_cortexm.c</file>
-         <hash>20aa4e5fa6d9edfa8509c5f8750408f9f193bd855aaaf34a403207ce2768f0a1</hash>
+         <hash>8a928533314913ecf4291e462bd17aac87f34bcf3977b9a7d56673b44c64edc6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\label\legato_widget_label.h</file>
@@ -25913,11 +25941,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sha256.c</file>
-         <hash>fbb065e4b0438e01791305e9a003e8e198c2208c0a4d2428b4c7c1241532f180</hash>
+         <hash>dbc9f523ffa350dfba9f5842e4a0733df70687bd5f550d4faeb6a0ed844dfdad</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\cmac.h</file>
-         <hash>e8f259b1568bf1e266da6e004aab20acd1c79d00180ca31b9f9d43c140e9a927</hash>
+         <hash>f375056e4baaabb256ff813d2521f7d2612ff0397ec8d537f6401fe89fb480f2</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_write.c</file>
@@ -25925,7 +25953,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\FreeRTOSConfig.h</file>
-         <hash>89fdf5bf78ebcc90ebf68550af6ab4c853f4766f494b0304636d177a3b394f06</hash>
+         <hash>06c47a0399eced45265292eee632736afc2e807e05bbb6abb16eb6b63dc5d5ca</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\image\legato_widget_image_skin_classic.c</file>
@@ -25957,11 +25985,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\sdspi\src\drv_sdspi_local.h</file>
-         <hash>4d1d5f997afe3c45b52093bda3b5b47e517a780a9eb498542adfc4edd1bb5d3c</hash>
+         <hash>20689d8507f403bb395ae1ccdcd13d0811ff9ea998d877e72b6f5e96e3c60809</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\md4.c</file>
-         <hash>b4870e505dda28adc3e4d4a23f42ee017ea958f700f8a56528645090ea083b92</hash>
+         <hash>72f99b1462b107680e1f66b6e716735f4b7b9fd58111fe7ca28d8f5ca23d25c6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_string_renderer.c</file>
@@ -25973,7 +26001,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\chacha.h</file>
-         <hash>40bbfa2ab62eb5ae36b61165434de6eb41eb1d9f988cb1a880093f210448868a</hash>
+         <hash>8209776770257d0d61bce1efa7c29908c71784d2a9fd0b85788cbb354c5c5fa8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\udp_manager.h</file>
@@ -26005,7 +26033,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\console\src\sys_console_uart_definitions.h</file>
-         <hash>0b8c26a32e6ab6cb50039434ed379044bfa539b4ed2ed4b65a281d943a8868d8</hash>
+         <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEccDbl_pb.h</file>
@@ -26013,7 +26041,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\rsa.c</file>
-         <hash>4cd230f88a07bbd292f55dfeb38525712d4af0549834d1d463ea777d3ec189a0</hash>
+         <hash>a2f55de914c87b091b398be896ed509d608fc533a5952b91e27d763a630ce0bb</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\list\legato_widget_list.c</file>
@@ -26021,7 +26049,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ed448.c</file>
-         <hash>6a9c61ff2c461a84e9a0d8cc757489b20937d171e82e83f2c4b8043d33b78ac0</hash>
+         <hash>c49735d326d5896fc510ae4939ea1a392d01d817fa02d3a3213443d7297e5e92</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\radiobutton\legato_widget_radiobutton.c</file>
@@ -26037,11 +26065,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\asn_public.h</file>
-         <hash>8951be42a3d2beb0b62275e825b9f6bb529bd6c454fdf5948daa5e40eb3131d0</hash>
+         <hash>3ae5ffed54875fa1f17104b6146af3555bdae8ceb3571c5adfcdf8455e56dfde</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\misc.c</file>
-         <hash>1ebdc5449ce90c4c28aeac3c2a4bda5d987e60c767297a007ea52e2da5731841</hash>
+         <hash>5366bbe377bdede1877d2d3b495201e9f777a8836dae76f78c02fe7f47e86e9e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\icmp.c</file>
@@ -26053,7 +26081,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\poly1305.h</file>
-         <hash>0cad588c4359ed77008046ae9e8114075821b0e9926876a9cc3bae97a0d01f8c</hash>
+         <hash>4defcad4bea8892671616fd90325364e65e45489663af8fc9cdbf701ea0b1799</hash>
       </entry>
       <entry>
          <file>..\src\config\default\net_pres\pres\net_pres_enc_glue.h</file>
@@ -26065,11 +26093,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wc_dsp.c</file>
-         <hash>294af8f4a93f58fae0703e94943034f6ed42d65c6483ea5c21da3738024fad35</hash>
+         <hash>18e3c7e3e3e4967c17ca6b276797a929c00276e923a753d30568323faee7f4ca</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\time\sys_time_definitions.h</file>
-         <hash>904195d4340ba6b97cf19c25b9695d2a9f37ed67cf6abdf8ee1ee839506e2801</hash>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
       </entry>
       <entry>
          <file>..\src\app_http.c</file>
@@ -26093,11 +26121,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\font\legato_font.c</file>
-         <hash>398421927fb718787cb904b8f56a9c93e7870d611c4f0c198de17371425a5537</hash>
+         <hash>2147f47f2298508c2cae98691a7157313c6f03375a706f3bae3ed799a1d9068d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>1ea29f06e62f6c3e3ed59727b2066bab5ab686b8cf8ac11a226ff82a840ca2d0</hash>
+         <hash>b3a13194b5b3ee6e98273001ecc4175d9709a7001ece31cbbce3d712e9006b14</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\sntp_manager.h</file>
@@ -26105,11 +26133,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\dsa.c</file>
-         <hash>58ac4dd382ac17ca7d1db59ecfd4e2d788855f811429ea54f89a1cefd24ab617</hash>
+         <hash>0d439a2928e31b6022061d3d48b7c47c1b33fd00e92f8048eb05d023b7ef3c4e</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\md2.c</file>
-         <hash>3b876438c0594baf3452f93ad24eb13fee170bb30967f428bd71d7f390475656</hash>
+         <hash>b92f804cca400520b67fd71effbb4493baab4a0d5538e4153374cb8b3877f141</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_ecc_pukcl.h</file>
@@ -26117,11 +26145,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\interface\parallel_ebi\drv_gfx_disp_intf_parallel_ebi.c</file>
-         <hash>fdc523e7de97b86a30beb8af49a6ff5938df5cd83f39f852f83ccc13ebd1b5bb</hash>
+         <hash>590ce8faa79d5de931485d0cac00aa535b7092f2b0b23fb009d9cd2fd745b09f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\i2c\drv_i2c_definitions.h</file>
-         <hash>ce994a96a3ec4e507b5a3fb9663b7bafb31ca0e43791fba475c1d5a06f09c28d</hash>
+         <hash>929077879a4fe3e202ecbe796f076fe88435ea327ec0d8c573de6df7151e8601</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_wolfcryptcb.c</file>
@@ -26133,7 +26161,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\console\src\sys_console.c</file>
-         <hash>40aa2013385ec344c267d5779ef941d663ecc0739ebe962ad906324e71666c43</hash>
+         <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\tcpip_packet.h</file>
@@ -26153,15 +26181,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wc_pkcs11.c</file>
-         <hash>d4e97a3a904640663c57184a9725b000867246d8d8ee2fec2a6774a2b8993d69</hash>
+         <hash>f5c279627d1d0506dd1f34304eef9275be48ede6fc3360d1152a7a83665b2bf6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wc_port.h</file>
-         <hash>321f8624bc011281c97bd696aa46eb72477eebdb070f590eb2d76b8fa954eef8</hash>
+         <hash>bcecf4d3f946533f0690acb8684dd4811e99dbc291bf8d9bce4a90d645ddd49e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\ftpc.h</file>
-         <hash>23c5ecda6c7f7a01193fc43e24436e4e40eacd4cc9af027f8e8b140a4fe285aa</hash>
+         <hash>2f94649ae9fa9ee66ad17c51050540ea2aa89ba42201027e13a9b47dc6dfd090</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\renderer\legato_renderer.c</file>
@@ -26189,7 +26217,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sha.c</file>
-         <hash>0a31b28ffd866cea541498b5fef21c250ea7a4836a11f7f4e374960cccf1a553</hash>
+         <hash>e90f0e55b727d277f73b3606e755baa7379f95dd71a9569f8de0b7301ac74ec6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha1_sam11105.c</file>
@@ -26205,7 +26233,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_x86_64.c</file>
-         <hash>103aedd76cbc6736ed28ffcbe5fe6d7162c21a259e9b623753a5bc3d3fd42374</hash>
+         <hash>8286e3de46c345eb4c7a749019d41e2dfce05514822d01802e0ed2fdc4327d60</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\legato_editwidget.c</file>
@@ -26233,7 +26261,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethphy\src\dynamic\drv_ethphy.c</file>
-         <hash>76fabeb2fb7c1368bea58fe38676e45cdd0b38e978ffddfc570a664e7ce61edb</hash>
+         <hash>764c148fc56812c73483fa81b040e0ee2b725d58e8634d7ad15410c6454a2f2a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\ethmac\src\dynamic\_eth_dcpt_lists.h</file>
@@ -26261,11 +26289,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_ethernet.h</file>
-         <hash>5fdd398e18b3311013f0f02adf26e2b7270df5fa864e427206856d4abf0af44d</hash>
+         <hash>bd85e30057daab11d9fd829c985c1edb57a92f83120c5d8a7ede1f91f0efc065</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\signature.c</file>
-         <hash>07df31503a9ef492538e511ac5e652f7f2c1ec295187cc3c9dbfbde23b86cf6d</hash>
+         <hash>68369a87f30ca84a1b338791f61b576d129d66c30396fe32510304f0f1c7148c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\tcpip_helpers.h</file>
@@ -26285,11 +26313,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\dh.h</file>
-         <hash>5aa26faa634ecc0ec9bb3de54e4cb1ddf97acc5f1a981a22c4cf51a56c585af3</hash>
+         <hash>789293f7e2e807c8136662d2d66ff2f9b172556e4df711b2d85ce011071ecbcf</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\fat_fs\file_system\ff.c</file>
-         <hash>ef75bad24073ec54d3e76b06b26c56b604bb4f063fe6bd9ebe7c80bae94fd6d5</hash>
+         <hash>09f73618c1ac3bd9736650439be337fbfe49018a1db7205126fcbfde1e384a0f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\core\legato_stream.c</file>
@@ -26297,11 +26325,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>d7b45a8f01fcd9923e18f8618408613021f2d36f35c632de31edaf5f4acf6c6b</hash>
+         <hash>2906f8255a58097a83011b023f09dfa602c04c2d154c39a9e35fcb48823940ac</hash>
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_definitions.h</file>
-         <hash>6dc49e317b4557c5516a172c1437125874abd98ffcc7260e3422966078dcef7f</hash>
+         <hash>af2f2336fac0fd5b49fb2d1c8f81baa4f554101b06f130aaa608cd9685c4ac35</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_stringutils.h</file>
@@ -26309,11 +26337,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\curve448.h</file>
-         <hash>1cbdfbaf253e4b529e5e7877f2ee3cba8ae7bb4c0bf1efbd7ec856273973deea</hash>
+         <hash>49cd03ed3e3a838a2ae5fed09d68d3d71e1b20e4729e60feb9640d0fe31c50b8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\mpi_class.h</file>
-         <hash>efe1b56437b883ee33567e43994f6f78f3586154b2cf4bc1e0c72ed9192c5324</hash>
+         <hash>dc2350739ea09a2fc2ca167d2a4fb294240c540c7da63b42403ac292505b5ef1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\legato_config.h</file>
@@ -26321,11 +26349,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\tcpip\src\arp.c</file>
-         <hash>ba6077160a6868043a97a113a7b1a043bbbac13656fa8419c0683b92fdac0046</hash>
+         <hash>8ac795ad2f05f5a3547b187ac3054d71196b9d6c5b5c27c1a97502e94c25c59a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\error.c</file>
-         <hash>df2e5c29a923fcff8b820a7c0cb40bc97265fe82fd087d5805b63beb1c8818c5</hash>
+         <hash>00070dafae17afb3e49c9024b2d44a9a6d94c8ab6c8005664d678a236582ac0f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\common\legato_utils.c</file>
@@ -26340,20 +26368,24 @@
          <hash>6639c358ad2df42f5feb6ed83c1a9ef141cb43e12f8739faa86b81ef8075aea4</hash>
       </entry>
       <entry>
+         <file>..\src\config\default\system\tmr\sys_tmr.h</file>
+         <hash>0be8597a14f8a03a189ce9d4a5f9b641b395e3daf9f31732f075441f71617ac0</hash>
+      </entry>
+      <entry>
          <file>..\src\config\default\gfx\legato\image\raw\legato_imagedecoder_raw_setup.c</file>
          <hash>d8ea03681900b838062a7ae6599e706e7b605b7ccd29ffd124fab45ec320038d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\src\sys_fs.c</file>
-         <hash>aba5ae4d2d52843de0d236941838bd3ff6428f6acade1fb5ef923b2aa7615968</hash>
+         <hash>9fddd0e0f98f78690226049c454d1f1f05f1b24f89b37da043f7fd2522a49502</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\pkcs12.c</file>
-         <hash>b734877e61c4096528e13143e716c213f0741d7886646f861689dbae2b89c21e</hash>
+         <hash>0aebb135ba8a3a5bd4f15f87df17d615608ae1e5ed3e24d616e098a14e74832b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_freertos.c</file>
-         <hash>6f35cfd335587dd112d0ac648ae99539a5acbb98ba80ce6e8c7c855e7b8d7465</hash>
+         <hash>8092bb557d244984ab601e36d3dc25408c8b57f3c8f090aac491891b4a32cb28</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\mpfs\mpfs_local.h</file>
@@ -26361,7 +26393,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_freertos.h</file>
-         <hash>ca5e502b9f076c4bdc8d97ac2e4cfdfa5d1b49f7d64222c353fac4dcd794bc7c</hash>
+         <hash>7ad9faa903d8587bab9490660328f134b8e027f9c24bca47201f3f96f3b99474</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\touchtest\legato_widget_touchtest_skin_classic.c</file>
@@ -26392,12 +26424,16 @@
          <hash>97e7a1eff02f0e85dda8ca00c021fc0edb6dfbd45357bcf27765bf5a3a8e58da</hash>
       </entry>
       <entry>
+         <file>..\src\config\default\driver\miim\src\dynamic\drv_miim_device.h</file>
+         <hash>4623fceab1f3a28961af6715e1733ed0ea37ef50c533a601d2262e728ab7e449</hash>
+      </entry>
+      <entry>
          <file>..\src\config\default\library\tcpip\src\dhcp_server_private.h</file>
          <hash>f095fba0413f7cf9ff254b5e4f8a370b052bdf260e3859d261128ceccfcbbbfb</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\fe_448.h</file>
-         <hash>420ac46519c3eca5cc19e6aad3c0c452f530fbbc47a811c28629feadfe933bc2</hash>
+         <hash>106d104ad3bb0d46c5fbbcf9ac5b2a78af48bdc50cd73ba29e3688f66daa9d0c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_aes_hwInt.h</file>
@@ -26409,7 +26445,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ripemd.c</file>
-         <hash>4782aaccef010e4889f8ea4d9a28284a068cf6b9a4a5df111e6be16009bb7103</hash>
+         <hash>fce45980aa853ec94cd12be9c567a94f59ea17f13737dadd0b183166b343e11e</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_aes_sam6149.c</file>
@@ -26421,11 +26457,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ecc.c</file>
-         <hash>830b4458643d6fa4a1fe9aafba00c1bd4a40a1ea22ed9be85e26c84335364276</hash>
+         <hash>e12cc2e0a01632104d289530f6abbf27ac0cafb1b85b303a559753f12481b1f6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\curve25519.c</file>
-         <hash>70c89882186b470159d22d42608cf97fa399ca91be21705b5fc39c43c4fe40d2</hash>
+         <hash>ea37e143a974fa7d588a984d79838b0bdc85daef90d0310b97975f37ef19bc0f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Square_pb.h</file>
@@ -26437,7 +26473,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\fs\sys_fs.h</file>
-         <hash>c3bce19e69290a393dca6f7ddbdb103ed7cf21be40f492fdfea185eb85ecbb93</hash>
+         <hash>4ca0bf61b93d1b4335bad8755bfeeed6dfda8a7eb3f2eabfcd9239a0b78e01af</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

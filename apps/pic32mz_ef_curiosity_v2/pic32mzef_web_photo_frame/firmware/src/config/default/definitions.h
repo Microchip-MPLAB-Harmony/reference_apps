@@ -82,8 +82,8 @@
 #include "peripheral/dmac/plib_dmac.h"
 #include "driver/miim/drv_miim.h"
 #include "wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h"
-#include "system/input/sys_input.h"
 #include "peripheral/i2c/master/plib_i2c2_master.h"
+#include "system/input/sys_input.h"
 #include "net_pres/pres/net_pres.h"
 #include "net_pres/pres/net_pres_encryptionproviderapi.h"
 #include "net_pres/pres/net_pres_transportapi.h"
@@ -112,6 +112,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "PIC32MZ2048EFM144"
+#define DEVICE_ARCH			 "MIPS"
+#define DEVICE_FAMILY		 "PIC32MZEF"
+#define DEVICE_SERIES		 "PIC32MZ"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 200000000

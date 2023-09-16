@@ -48,19 +48,16 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "driver/sdspi/drv_sdspi.h"
-#include "system/fs/sys_fs_media_manager.h"
+#include "driver/sdspi/src/drv_sdspi_file_system.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
+/* MISRA C-2012 Rule 11.1 deviated:6 Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
-/* FS Function registration table. */
-typedef SYS_FS_MEDIA_COMMAND_STATUS (* CommandStatusGetType)( DRV_HANDLE, SYS_FS_MEDIA_BLOCK_COMMAND_HANDLE );    
-
-const SYS_FS_MEDIA_FUNCTIONS sdspiMediaFunctions =
+static const SYS_FS_MEDIA_FUNCTIONS sdspiMediaFunctions =
 {
     .mediaStatusGet     = DRV_SDSPI_IsAttached,
     .mediaGeometryGet   = DRV_SDSPI_GeometryGet,
@@ -76,6 +73,7 @@ const SYS_FS_MEDIA_FUNCTIONS sdspiMediaFunctions =
     .tasks              = NULL,
 };
 
+/* MISRAC 2012 deviation block end */
 // *****************************************************************************
 // *****************************************************************************
 // Section: MEMORY Driver File system interface Routines
@@ -84,7 +82,7 @@ const SYS_FS_MEDIA_FUNCTIONS sdspiMediaFunctions =
 
 void DRV_SDSPI_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex)
 {
-    SYS_FS_MEDIA_MANAGER_Register
+    (void) SYS_FS_MEDIA_MANAGER_Register
     (
         (SYS_MODULE_OBJ)drvIndex,
         (SYS_MODULE_INDEX)drvIndex,

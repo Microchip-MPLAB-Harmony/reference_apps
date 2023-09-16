@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -119,6 +118,10 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
 // <editor-fold defaultstate="collapsed" desc="DRV_SDSPI Instance 0 Initialization Data">
 
 /* SDSPI Client Objects Pool */
@@ -126,16 +129,16 @@ static DRV_SDSPI_CLIENT_OBJ drvSDSPI0ClientObjPool[DRV_SDSPI_CLIENTS_NUMBER_IDX0
 
 
 /* SPI PLIB Interface Initialization for SDSPI Driver */
-const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
+static const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
 
     /* SPI PLIB WriteRead function */
     .writeRead = (DRV_SDSPI_PLIB_WRITEREAD)SPI1_WriteRead,
 
     /* SPI PLIB Write function */
-    .write = (DRV_SDSPI_PLIB_WRITE)SPI1_Write,
+    .write_t = (DRV_SDSPI_PLIB_WRITE)SPI1_Write,
 
     /* SPI PLIB Read function */
-    .read = (DRV_SDSPI_PLIB_READ)SPI1_Read,
+    .read_t = (DRV_SDSPI_PLIB_READ)SPI1_Read,
 
     /* SPI PLIB Transfer Status function */
     .isTransmitterBusy = (DRV_SPI_PLIB_TRANSMITTER_IS_BUSY)SPI1_IsTransmitterBusy,
@@ -146,12 +149,12 @@ const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
     .callbackRegister = (DRV_SDSPI_PLIB_CALLBACK_REGISTER)SPI1_CallbackRegister,
 };
 
-const uint32_t drvSDSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000400 };
-const uint32_t drvSDSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
-const uint32_t drvSDSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
+static const uint32_t drvSDSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0x00000400 };
+static const uint32_t drvSDSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
+static const uint32_t drvSDSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
 
 /* SDSPI Driver Initialization Data */
-const DRV_SDSPI_INIT drvSDSPI0InitData =
+static const DRV_SDSPI_INIT drvSDSPI0InitData =
 {
     /* SD Card SPI PLIB API interface*/
     .spiPlib                = &drvSDSPI0PlibAPI,
@@ -192,7 +195,6 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
     /* SPI Receive Register */
     .rxAddress              = (void *)&(SPI1BUF),
 };
-
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="DRV_I2C Instance 0 Initialization Data">
@@ -201,13 +203,13 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
 static DRV_I2C_CLIENT_OBJ drvI2C0ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX0];
 
 /* I2C PLib Interface Initialization */
-const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
+static const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read = (DRV_I2C_PLIB_READ)I2C2_Read,
+    .read_t = (DRV_I2C_PLIB_READ)I2C2_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write = (DRV_I2C_PLIB_WRITE)I2C2_Write,
+    .write_t = (DRV_I2C_PLIB_WRITE)I2C2_Write,
 
 
     /* I2C PLib Transfer Write Read Add function */
@@ -228,7 +230,7 @@ const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
 
 /* I2C Driver Initialization Data */
-const DRV_I2C_INIT drvI2C0InitData =
+static const DRV_I2C_INIT drvI2C0InitData =
 {
     /* I2C PLib API */
     .i2cPlib = &drvI2C0PLibAPI,
@@ -242,7 +244,6 @@ const DRV_I2C_INIT drvI2C0InitData =
     /* I2C Clock Speed */
     .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX0,
 };
-
 // </editor-fold>
 
 /* Forward declaration of MAC initialization data */
@@ -256,7 +257,7 @@ static uint8_t gDrvMemory0EraseBuffer[NVM_ERASE_BUFFER_SIZE] CACHE_ALIGN;
 static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
 
 
-const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
+static const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
     .Open               = DRV_NVM_Open,
     .Close              = DRV_NVM_Close,
     .Status             = DRV_NVM_Status,
@@ -267,8 +268,7 @@ const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
     .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_NVM_GeometryGet,
     .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_NVM_TransferStatusGet
 };
-
-const DRV_MEMORY_INIT drvMemory0InitData =
+static const DRV_MEMORY_INIT drvMemory0InitData =
 {
     .memDevIndex                = 0,
     .memoryDevice               = &drvMemory0DeviceAPI,
@@ -300,6 +300,7 @@ static const DRV_MIIM_INIT drvMiimInitData_0;
 
 /* Forward declaration of PHY initialization data */
 const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8061;
+
 
 
 
@@ -540,7 +541,7 @@ SYS_MODULE_OBJ TCPIP_STACK_Init(void)
 /*** MIIM Driver Instance 0 Configuration ***/
 static const DRV_MIIM_INIT drvMiimInitData_0 =
 {
-   .ethphyId = DRV_MIIM_ETH_MODULE_ID_0,
+   .miimId = DRV_MIIM_ETH_MODULE_ID_0,
 };
 
 /* Net Presentation Layer Data Definitions */
@@ -692,7 +693,7 @@ const DRV_ETHPHY_INIT tcpipPhyInitData_KSZ8061 =
 
 // <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
-const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
+ const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 {
     {
         .mountName = SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0,
@@ -709,12 +710,12 @@ const SYS_FS_MEDIA_MOUNT_DATA sysfsMountTable[SYS_FS_VOLUME_NUMBER] =
 };
 
 
-const SYS_FS_FUNCTIONS FatFsFunctions =
+static const SYS_FS_FUNCTIONS FatFsFunctions =
 {
     .mount             = FATFS_mount,
     .unmount           = FATFS_unmount,
     .open              = FATFS_open,
-    .read              = FATFS_read,
+    .read_t              = FATFS_read,
     .close             = FATFS_close,
     .seek              = FATFS_lseek,
     .fstat             = FATFS_stat,
@@ -726,17 +727,17 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
     .closeDir          = FATFS_closedir,
     .chdir             = FATFS_chdir,
     .chdrive           = FATFS_chdrive,
-    .write             = FATFS_write,
+    .write_t             = FATFS_write,
     .tell              = FATFS_tell,
     .eof               = FATFS_eof,
     .size              = FATFS_size,
     .mkdir             = FATFS_mkdir,
-    .remove            = FATFS_unlink,
+    .remove_t            = FATFS_unlink,
     .setlabel          = FATFS_setlabel,
     .truncate          = FATFS_truncate,
     .chmode            = FATFS_chmod,
     .chtime            = FATFS_utime,
-    .rename            = FATFS_rename,
+    .rename_t            = FATFS_rename,
     .sync              = FATFS_sync,
     .putchr            = FATFS_putc,
     .putstrn           = FATFS_puts,
@@ -747,12 +748,12 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
     .getCluster        = FATFS_getclusters
 };
 
-const SYS_FS_FUNCTIONS MPFSFunctions =
+static const SYS_FS_FUNCTIONS MPFSFunctions =
 {
     .mount             = MPFS_Mount,
     .unmount           = MPFS_Unmount,
     .open              = MPFS_Open,
-    .read              = MPFS_Read,
+    .read_t            = MPFS_Read,
     .close             = MPFS_Close,
     .seek              = MPFS_Seek,
     .fstat             = MPFS_Stat,
@@ -765,16 +766,16 @@ const SYS_FS_FUNCTIONS MPFSFunctions =
     .getlabel          = NULL,
     .currWD            = NULL,
     .getstrn           = NULL,
-    .write             = NULL,
+    .write_t           = NULL,
     .mkdir             = NULL,
     .chdir             = NULL,
-    .remove            = NULL,
+    .remove_t          = NULL,
     .setlabel          = NULL,
     .truncate          = NULL,
     .chdrive           = NULL,
     .chmode            = NULL,
     .chtime            = NULL,
-    .rename            = NULL,
+    .rename_t           = NULL,
     .sync              = NULL,
     .putchr            = NULL,
     .putstrn           = NULL,
@@ -786,7 +787,8 @@ const SYS_FS_FUNCTIONS MPFSFunctions =
 };
 
 
-const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
+
+static const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
@@ -797,8 +799,6 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
         .nativeFileSystemFunctions = &MPFSFunctions
     }
 };
-
-
 // </editor-fold>
 
 
@@ -810,7 +810,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 // *****************************************************************************
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
-const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)CORETIMER_CallbackSet,
     .timerStart = (SYS_TIME_PLIB_START)CORETIMER_Start,
     .timerStop = (SYS_TIME_PLIB_STOP)CORETIMER_Stop ,
@@ -820,7 +820,7 @@ const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)CORETIMER_CounterGet,
 };
 
-const SYS_TIME_INIT sysTimeInitData =
+static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
     .hwTimerIntNum = 0,
@@ -830,25 +830,22 @@ const SYS_TIME_INIT sysTimeInitData =
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
-/* Declared in console device implementation (sys_console_uart.c) */
-extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
-
-const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
+static const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
 {
-    .read = (SYS_CONSOLE_UART_PLIB_READ)UART2_Read,
-	.readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)UART2_ReadCountGet,
-	.readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)UART2_ReadFreeBufferCountGet,
-    .write = (SYS_CONSOLE_UART_PLIB_WRITE)UART2_Write,
-	.writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)UART2_WriteCountGet,
-	.writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)UART2_WriteFreeBufferCountGet,
+    .read_t = (SYS_CONSOLE_UART_PLIB_READ)UART2_Read,
+    .readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)UART2_ReadCountGet,
+    .readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)UART2_ReadFreeBufferCountGet,
+    .write_t = (SYS_CONSOLE_UART_PLIB_WRITE)UART2_Write,
+    .writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)UART2_WriteCountGet,
+    .writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)UART2_WriteFreeBufferCountGet,
 };
 
-const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
+static const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
 {
-    .uartPLIB = &sysConsole0UARTPlibAPI,    
+    .uartPLIB = &sysConsole0UARTPlibAPI,
 };
 
-const SYS_CONSOLE_INIT sysConsole0Init =
+static const SYS_CONSOLE_INIT sysConsole0Init =
 {
     .deviceInitData = (const void*)&sysConsole0UARTInitData,
     .consDevDesc = &sysConsoleUARTDevDesc,
@@ -868,7 +865,7 @@ const SYS_CMD_INIT sysCmdInit =
 };
 
 
-const SYS_DEBUG_INIT debugInit =
+static const SYS_DEBUG_INIT debugInit =
 {
     .moduleInit = {0},
     .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
@@ -885,7 +882,7 @@ const SYS_DEBUG_INIT debugInit =
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -899,11 +896,12 @@ const SYS_DEBUG_INIT debugInit =
 
 void SYS_Initialize ( void* data )
 {
+
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     /* Start out with interrupts disabled before configuring any modules */
-    __builtin_disable_interrupts();
+    (void)__builtin_disable_interrupts();
 
   
     CLK_Initialize();
@@ -931,11 +929,19 @@ void SYS_Initialize ( void* data )
     I2C2_Initialize();
 
 
+
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
     /* Initialize SDSPI0 Driver Instance */
     sysObj.drvSDSPI0 = DRV_SDSPI_Initialize(DRV_SDSPI_INDEX_0, (SYS_MODULE_INIT *)&drvSDSPI0InitData);
 
     /* Initialize I2C0 Driver Instance */
     sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
+
+
     sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
     DRV_SSD1963_Initialize();
@@ -945,17 +951,27 @@ void SYS_Initialize ( void* data )
 
 
    /* Initialize the MIIM Driver Instance 0*/
-   sysObj.drvMiim_0 = DRV_MIIM_Initialize(DRV_MIIM_DRIVER_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData_0); 
+   sysObj.drvMiim_0 = DRV_MIIM_OBJECT_BASE_Default.DRV_MIIM_Initialize(DRV_MIIM_DRIVER_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData_0); 
 
 
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
-    sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-
+    
+    /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+   /* MISRAC 2012 deviation block end */
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
 
-
+    /* MISRAC 2012 deviation block end */
 
     SYS_INP_Init();
 
@@ -973,9 +989,10 @@ void SYS_Initialize ( void* data )
 
     CRYPT_WCCB_Initialize();
     /*** File System Service Initialization Code ***/
-    SYS_FS_Initialize( (const void *) sysFSInit );
+    (void) SYS_FS_Initialize( (const void *) sysFSInit );
 
 
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
     APP_HTTP_Initialize();
     APP_GFX_Initialize();
@@ -984,12 +1001,12 @@ void SYS_Initialize ( void* data )
     EVIC_Initialize();
 
 	/* Enable global interrupts */
-    __builtin_enable_interrupts();
+    (void)__builtin_enable_interrupts();
+
 
 
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File

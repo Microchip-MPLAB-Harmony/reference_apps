@@ -137,4 +137,4 @@ The pre-built hex file can be programmed by following the below steps.
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
 
 ## Revision:
-- v1.6.0 released demo application
+- v1.6.0 Released demo application

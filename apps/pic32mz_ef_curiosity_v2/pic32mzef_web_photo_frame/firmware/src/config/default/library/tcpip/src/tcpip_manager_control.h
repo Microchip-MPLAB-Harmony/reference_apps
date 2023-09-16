@@ -58,6 +58,16 @@ Microchip or any third party.
 #define TCPIP_ETHER_TYPE_LLDP     	(0x88CCu)
 #define TCPIP_ETHER_TYPE_UNKNOWN    (0xFFFFu)
 
+// minimum timeout (maximum rate) for link check, ms
+// 5 times per second should be frequent enough
+#define _TCPIP_STACK_LINK_MIN_TMO       200 
+// adjust it vs the stack rate
+
+#if (!defined(TCPIP_STACK_LINK_RATE) || TCPIP_STACK_LINK_RATE < TCPIP_STACK_TICK_RATE || TCPIP_STACK_LINK_RATE < _TCPIP_STACK_LINK_MIN_TMO) 
+#define _TCPIP_STACK_LINK_RATE  _TCPIP_STACK_LINK_MIN_TMO   // use the minimum value
+#else
+#define _TCPIP_STACK_LINK_RATE  TCPIP_STACK_LINK_RATE       // user value
+#endif
 
 // module signal/timeout/asynchronous event handler
 // the stack manager calls it when there's an signal/tmo/asynchronous event pending
@@ -160,6 +170,11 @@ typedef struct
     uint16_t        ipv6PrefixLen;  // IPv6 subnet ID
     IPV6_ADDR       netIPv6Addr;    // static IPv6 address
     IPV6_ADDR       netIPv6Gateway; // default IPv6 gateway
+#if defined(TCPIP_IPV6_G3_PLC_BORDER_ROUTER) && (TCPIP_IPV6_G3_PLC_BORDER_ROUTER != 0)
+    uint32_t        advLastSec;     // last second count when advertisement was evaluated
+    uint16_t        advTmo;         // advertising timeout, seconds; when expires (reaches 0) new advertisement needs to be sent
+    uint16_t        advInitCount;   // number of initial advertisements [0, MAX_INITIAL_RTR_ADVERTISEMENTS]
+#endif  // defined(TCPIP_IPV6_G3_PLC_BORDER_ROUTER) && (TCPIP_IPV6_G3_PLC_BORDER_ROUTER != 0)
 #else
     uint32_t        startFlags;  // TCPIP_NETWORK_CONFIG_FLAGS: flags for interface start up
 #endif
@@ -195,6 +210,11 @@ typedef struct _tag_TCPIP_NET_IF
         uint16_t        ipv6PrefixLen;  // IPv6 subnet ID
         IPV6_ADDR       netIPv6Addr;    // static IPv6 address
         IPV6_ADDR       netIPv6Gateway; // default IPv6 gateway
+#if defined(TCPIP_IPV6_G3_PLC_BORDER_ROUTER) && (TCPIP_IPV6_G3_PLC_BORDER_ROUTER != 0)
+        uint32_t        advLastSec;     // last second count when advertisement was evaluated
+        uint16_t        advTmo;         // advertising timeout, seconds; when expires (reaches 0) new advertisement needs to be sent
+        uint16_t        advInitCount;   // number of initial advertisements [0, MAX_INITIAL_RTR_ADVERTISEMENTS]
+#endif  // defined(TCPIP_IPV6_G3_PLC_BORDER_ROUTER) && (TCPIP_IPV6_G3_PLC_BORDER_ROUTER != 0)
 #else
         uint32_t        startFlags;  // TCPIP_NETWORK_CONFIG_FLAGS: flags for interface start up
 #endif
@@ -241,9 +261,11 @@ typedef struct _tag_TCPIP_NET_IF
         };
         uint16_t        v;
     }exFlags;                               // additional extended flags      
-    char                ifName[7];          // native interface name + \0
     uint8_t             macType;            // a TCPIP_MAC_TYPE value: ETH, Wi-Fi, etc; 
     uint8_t             bridgePort;         // bridge port this interface belongs to; < 256
+
+    char                ifName[7];          // native interface name + \0
+    uint8_t             pad;                // padding, not used
 } TCPIP_NET_IF;
 
 
@@ -312,7 +334,7 @@ static __inline__ bool __attribute__((always_inline)) _TCPIPStackIpAddFromLAN(TC
     return ((pIf->netIPAddr.Val ^ pIpAddress->Val) & pIf->netMask.Val) == 0;
 }
 
-int  TCPIP_STACK_NetIxGet(TCPIP_NET_IF* pNetIf);
+int  TCPIP_STACK_NetIxGet(const TCPIP_NET_IF* pNetIf);
 
 static __inline__ int __attribute__((always_inline)) _TCPIPStackNetIxGet(TCPIP_NET_IF* pIf)
 {

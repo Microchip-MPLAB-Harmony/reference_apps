@@ -63,12 +63,12 @@ static DRV_I2C_OBJ gDrvI2CObj[DRV_I2C_INSTANCES_NUMBER] ;
 // *****************************************************************************
 // *****************************************************************************
 
-static inline uint32_t  _DRV_I2C_MAKE_HANDLE(uint16_t token, uint8_t drvIndex, uint8_t clientIndex)
+static inline uint32_t  lDRV_I2C_MAKE_HANDLE(uint16_t token, uint8_t drvIndex, uint8_t clientIndex)
 {
-    return ((token << 16) | (drvIndex << 8) | clientIndex);
+    return (((uint32_t)token << 16) | ((uint32_t)drvIndex << 8) | clientIndex);
 }
 
-static inline uint16_t _DRV_I2C_UPDATE_TOKEN(uint16_t token)
+static inline uint16_t lDRV_I2C_UPDATE_TOKEN(uint16_t token)
 {
     token++;
     if (token >= DRV_I2C_TOKEN_MAX)
@@ -79,7 +79,7 @@ static inline uint16_t _DRV_I2C_UPDATE_TOKEN(uint16_t token)
     return token;
 }
 
-static DRV_I2C_CLIENT_OBJ* _DRV_I2C_DriverHandleValidate(DRV_HANDLE handle)
+static DRV_I2C_CLIENT_OBJ* lDRV_I2C_DriverHandleValidate(DRV_HANDLE handle)
 {
     uint32_t drvInstance = 0;
     DRV_I2C_CLIENT_OBJ* client = (DRV_I2C_CLIENT_OBJ*)NULL;
@@ -89,7 +89,7 @@ static DRV_I2C_CLIENT_OBJ* _DRV_I2C_DriverHandleValidate(DRV_HANDLE handle)
        otherwise.
     */
 
-    if((handle != DRV_HANDLE_INVALID) && (handle != 0))
+    if((handle != DRV_HANDLE_INVALID) && (handle != 0U))
     {
         /* Extract the instance value from the handle */
         drvInstance = ((handle & DRV_I2C_INSTANCE_INDEX_MASK) >> 8);
@@ -113,7 +113,7 @@ static DRV_I2C_CLIENT_OBJ* _DRV_I2C_DriverHandleValidate(DRV_HANDLE handle)
     return(client);
 }
 
-static void _DRV_I2C_PLibCallbackHandler( uintptr_t contextHandle )
+static void lDRV_I2C_PLibCallbackHandler( uintptr_t contextHandle )
 {
     DRV_I2C_OBJ* dObj = (DRV_I2C_OBJ *)contextHandle;
     DRV_I2C_CLIENT_OBJ* clientObj = (DRV_I2C_CLIENT_OBJ*)NULL;
@@ -133,13 +133,18 @@ static void _DRV_I2C_PLibCallbackHandler( uintptr_t contextHandle )
     }
 
     /* Unblock the application thread */
-    OSAL_SEM_PostISR( &dObj->transferDone);
+    (void) OSAL_SEM_PostISR( &dObj->transferDone);
 }
+/* MISRA C-2012 Rule 11.3, 11.8 deviated below.
+   Deviation record ID -  H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
 
 SYS_MODULE_OBJ DRV_I2C_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MODULE_INIT * const init )
 {
     DRV_I2C_OBJ* dObj     = (DRV_I2C_OBJ*)NULL;
-    DRV_I2C_INIT* i2cInit = (DRV_I2C_INIT*)init;
+
+
+     DRV_I2C_INIT* i2cInit = (DRV_I2C_INIT*)init;
+
 
     /* Validate the request */
     if(drvIndex >= DRV_I2C_INSTANCES_NUMBER)
@@ -163,26 +168,26 @@ SYS_MODULE_OBJ DRV_I2C_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     dObj->clientObjPool                     = i2cInit->clientObjPool;
     dObj->nClientsMax                       = i2cInit->numClients;
     dObj->nClients                          = 0;
-    dObj->activeClient                      = (uintptr_t)NULL;
+    dObj->activeClient                      = 0U;
     dObj->i2cTokenCount                     = 1;
     dObj->isExclusive                       = false;
     dObj->initI2CClockSpeed                 = i2cInit->clockSpeed;
     dObj->currentTransferSetup.clockSpeed   = i2cInit->clockSpeed;
 
-    if (OSAL_MUTEX_Create(&dObj->clientMutex) == OSAL_RESULT_FALSE)
+    if (OSAL_MUTEX_Create(&dObj->clientMutex) == OSAL_RESULT_FAIL)
     {
         /*  If the mutex was not created because the memory required to
             hold the mutex could not be allocated then NULL is returned. */
         return SYS_MODULE_OBJ_INVALID;
     }
 
-    if (OSAL_MUTEX_Create(&dObj->transferMutex) == OSAL_RESULT_FALSE)
+    if (OSAL_MUTEX_Create(&dObj->transferMutex) == OSAL_RESULT_FAIL)
     {
         /*  If the mutex was not created because the memory required to
             hold the mutex could not be allocated then NULL is returned. */
         return SYS_MODULE_OBJ_INVALID;
     }
-    if (OSAL_SEM_Create(&dObj->transferDone,OSAL_SEM_TYPE_BINARY, 0, 0) == OSAL_RESULT_FALSE)
+    if (OSAL_SEM_Create(&dObj->transferDone,OSAL_SEM_TYPE_BINARY, 0, 0) == OSAL_RESULT_FAIL)
     {
         /* There was insufficient heap memory available for the semaphore to
         be created successfully. */
@@ -192,7 +197,7 @@ SYS_MODULE_OBJ DRV_I2C_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     /* Register a callback with PLIB.
      * dObj as a context parameter will be used to distinguish the events
      * from different instances. */
-    dObj->i2cPlib->callbackRegister(_DRV_I2C_PLibCallbackHandler, (uintptr_t)dObj);
+    dObj->i2cPlib->callbackRegister(lDRV_I2C_PLibCallbackHandler, (uintptr_t)dObj);
 
     /* Update the status */
     dObj->status = SYS_STATUS_READY;
@@ -201,10 +206,12 @@ SYS_MODULE_OBJ DRV_I2C_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     return ( (SYS_MODULE_OBJ)drvIndex );
 }
 
+/* MISRAC 2012 deviation block end */
+
 SYS_STATUS DRV_I2C_Status( const SYS_MODULE_OBJ object)
 {
     /* Validate the request */
-    if((object == SYS_MODULE_OBJ_INVALID) || (object >= DRV_I2C_INSTANCES_NUMBER))
+    if((object == (uint32_t)SYS_MODULE_OBJ_INVALID) || (object >= DRV_I2C_INSTANCES_NUMBER))
     {
         SYS_DEBUG_MESSAGE(SYS_ERROR_ERROR, "Invalid system object handle");
         return SYS_STATUS_UNINITIALIZED;
@@ -223,7 +230,7 @@ bool DRV_I2C_TransferSetup( const DRV_HANDLE handle, DRV_I2C_TRANSFER_SETUP* set
     }
 
     /* Validate the driver handle */
-    clientObj = _DRV_I2C_DriverHandleValidate(handle);
+    clientObj = lDRV_I2C_DriverHandleValidate(handle);
 
     if(clientObj == NULL)
     {
@@ -236,13 +243,13 @@ bool DRV_I2C_TransferSetup( const DRV_HANDLE handle, DRV_I2C_TRANSFER_SETUP* set
     return true;
 }
 
-DRV_I2C_ERROR DRV_I2C_ErrorGet( const DRV_HANDLE handle )
+DRV_I2C_ERROR DRV_I2C_ErrorGet( const DRV_HANDLE drvHandle )
 {
     DRV_I2C_CLIENT_OBJ* clientObj = NULL;
     DRV_I2C_ERROR errors = DRV_I2C_ERROR_NONE;
 
     /* Validate the handle */
-    clientObj = _DRV_I2C_DriverHandleValidate(handle);
+    clientObj = lDRV_I2C_DriverHandleValidate(drvHandle);
 
     if(clientObj != NULL)
     {
@@ -276,7 +283,7 @@ DRV_HANDLE DRV_I2C_Open( const SYS_MODULE_INDEX drvIndex, const DRV_IO_INTENT io
     /* Acquire the instance specific mutex to protect the instance specific
      * client pool
      */
-    if (OSAL_MUTEX_Lock(&dObj->clientMutex , OSAL_WAIT_FOREVER ) == OSAL_RESULT_FALSE)
+    if (OSAL_MUTEX_Lock(&dObj->clientMutex , OSAL_WAIT_FOREVER ) == OSAL_RESULT_FAIL)
     {
         return DRV_HANDLE_INVALID;
     }
@@ -286,17 +293,17 @@ DRV_HANDLE DRV_I2C_Open( const SYS_MODULE_INDEX drvIndex, const DRV_IO_INTENT io
         /* This means the another client has opened the driver in exclusive
            mode. The driver cannot be opened again
         */
-        OSAL_MUTEX_Unlock( &dObj->clientMutex);
+        (void) OSAL_MUTEX_Unlock( &dObj->clientMutex);
         return DRV_HANDLE_INVALID;
     }
 
-    if((dObj->nClients > 0) && (ioIntent & DRV_IO_INTENT_EXCLUSIVE))
+    if((dObj->nClients > 0U) && (((uint32_t)ioIntent & (uint32_t)DRV_IO_INTENT_EXCLUSIVE) != 0U))
     {
         /* This means the driver was already opened and another driver was
            trying to open it exclusively.  We cannot give exclusive access in
            this case
         */
-        OSAL_MUTEX_Unlock( &dObj->clientMutex);
+        (void) OSAL_MUTEX_Unlock( &dObj->clientMutex);
         return(DRV_HANDLE_INVALID);
     }
 
@@ -318,7 +325,7 @@ DRV_HANDLE DRV_I2C_Open( const SYS_MODULE_INDEX drvIndex, const DRV_IO_INTENT io
 
             clientObj->transferSetup.clockSpeed = dObj->initI2CClockSpeed;
 
-            if(ioIntent & DRV_IO_INTENT_EXCLUSIVE)
+            if(((uint32_t)ioIntent & (uint32_t)DRV_IO_INTENT_EXCLUSIVE) != 0U)
             {
                 /* Set the driver exclusive flag */
                 dObj->isExclusive = true;
@@ -329,18 +336,18 @@ DRV_HANDLE DRV_I2C_Open( const SYS_MODULE_INDEX drvIndex, const DRV_IO_INTENT io
             /* Save the generated client handle in the client object, which will
              * be then used to verify the validity of the client handle.
              */
-            clientObj->clientHandle = _DRV_I2C_MAKE_HANDLE(dObj->i2cTokenCount, drvIndex, iClient);
+            clientObj->clientHandle = lDRV_I2C_MAKE_HANDLE(dObj->i2cTokenCount, (uint8_t)drvIndex, (uint8_t)iClient);
 
             /* Increment the instance specific token counter */
-            dObj->i2cTokenCount = _DRV_I2C_UPDATE_TOKEN(dObj->i2cTokenCount);
+            dObj->i2cTokenCount = lDRV_I2C_UPDATE_TOKEN(dObj->i2cTokenCount);
 
             break;
         }
     }
 
-    OSAL_MUTEX_Unlock(&dObj->clientMutex);
+    (void) OSAL_MUTEX_Unlock(&dObj->clientMutex);
 
-    return clientObj ? ((DRV_HANDLE)clientObj->clientHandle) : DRV_HANDLE_INVALID;
+    return (clientObj != NULL) ? ((DRV_HANDLE)clientObj->clientHandle) : DRV_HANDLE_INVALID;
 }
 
 void DRV_I2C_Close( const DRV_HANDLE handle )
@@ -354,7 +361,7 @@ void DRV_I2C_Close( const DRV_HANDLE handle )
     DRV_I2C_OBJ* dObj;
 
     /* Validate the handle */
-    clientObj = _DRV_I2C_DriverHandleValidate(handle);
+    clientObj = lDRV_I2C_DriverHandleValidate(handle);
 
     if(clientObj != NULL)
     {
@@ -363,7 +370,7 @@ void DRV_I2C_Close( const DRV_HANDLE handle )
         /* Acquire the instance specific mutex to protect the instance specific
          * client pool
          */
-        if (OSAL_MUTEX_Lock(&dObj->clientMutex , OSAL_WAIT_FOREVER ) == OSAL_RESULT_TRUE)
+        if (OSAL_MUTEX_Lock(&dObj->clientMutex , OSAL_WAIT_FOREVER ) == OSAL_RESULT_SUCCESS)
         {
             /* Reduce the number of clients */
             dObj->nClients --;
@@ -375,12 +382,12 @@ void DRV_I2C_Close( const DRV_HANDLE handle )
             clientObj->inUse = false;
 
             /* Release the instance specific mutex */
-            OSAL_MUTEX_Unlock( &dObj->clientMutex );
+            (void) OSAL_MUTEX_Unlock( &dObj->clientMutex );
         }
     }
 }
 
-static bool _DRV_I2C_WriteReadTransfer (
+static bool lDRV_I2C_WriteReadTransfer (
     const DRV_HANDLE handle,
     uint16_t address,
     void* const writeBuffer,
@@ -396,30 +403,30 @@ static bool _DRV_I2C_WriteReadTransfer (
     bool isReqAccepted = false;
 
     /* Validate the driver handle */
-    clientObj = _DRV_I2C_DriverHandleValidate(handle);
+    clientObj = lDRV_I2C_DriverHandleValidate(handle);
 
     if (clientObj == NULL)
     {
         return isSuccess;
     }
 
-    if (transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_READ)
+    if (transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_RD)
     {
-        if((readSize == 0) || (readBuffer == NULL))
+        if((readSize == 0U) || (readBuffer == NULL))
         {
             return isSuccess;
         }
     }
-    else if ((transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_WRITE) || (transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_FORCED))
+    else if ((transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_WR) || (transferFlags == DRV_I2C_TRANSFER_OBJ_FLAG_WR_FRCD))
     {
-        if((writeSize == 0) || (writeBuffer == NULL))
+        if((writeSize == 0U) || (writeBuffer == NULL))
         {
             return isSuccess;
         }
     }
     else
     {
-        if((writeSize == 0) || (writeBuffer == NULL) || (readSize == 0) || (readBuffer == NULL))
+        if((writeSize == 0U) || (writeBuffer == NULL) || (readSize == 0U) || (readBuffer == NULL))
         {
             return isSuccess;
         }
@@ -429,7 +436,7 @@ static bool _DRV_I2C_WriteReadTransfer (
 
 
     /* Block other threads from accessing the PLIB */
-    if (OSAL_MUTEX_Lock(&hDriver->transferMutex, OSAL_WAIT_FOREVER ) == OSAL_RESULT_TRUE)
+    if (OSAL_MUTEX_Lock(&hDriver->transferMutex, OSAL_WAIT_FOREVER ) == OSAL_RESULT_SUCCESS)
     {
         /* Error is cleared for every new transfer */
         clientObj->errors = DRV_I2C_ERROR_NONE;
@@ -441,29 +448,29 @@ static bool _DRV_I2C_WriteReadTransfer (
         if (hDriver->currentTransferSetup.clockSpeed != clientObj->transferSetup.clockSpeed)
         {
             /* Set the new transfer setup */
-            hDriver->i2cPlib->transferSetup(&clientObj->transferSetup, 0);
+            (void) hDriver->i2cPlib->transferSetup(&clientObj->transferSetup, 0);
 
             hDriver->currentTransferSetup.clockSpeed = clientObj->transferSetup.clockSpeed;
         }
 
         switch(transferFlags)
         {
-            case DRV_I2C_TRANSFER_OBJ_FLAG_READ:
-                if (hDriver->i2cPlib->read(address, readBuffer, readSize) == true)
+            case DRV_I2C_TRANSFER_OBJ_FLAG_RD:
+                if (hDriver->i2cPlib->read_t(address, readBuffer, readSize) == true)
                 {
                     isReqAccepted = true;
                 }
                 break;
 
-            case DRV_I2C_TRANSFER_OBJ_FLAG_WRITE:
-                if (hDriver->i2cPlib->write(address, writeBuffer, writeSize) == true)
+            case DRV_I2C_TRANSFER_OBJ_FLAG_WR:
+                if (hDriver->i2cPlib->write_t(address, writeBuffer, writeSize) == true)
                 {
                     isReqAccepted = true;
                 }
                 break;
 
 
-            case DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_READ:
+            case DRV_I2C_TRANSFER_OBJ_FLAG_WR_RD:
                 if (hDriver->i2cPlib->writeRead(address, writeBuffer, writeSize, readBuffer, readSize) == true)
                 {
                     isReqAccepted = true;
@@ -471,13 +478,14 @@ static bool _DRV_I2C_WriteReadTransfer (
                 break;
 
             default:
+                     /* Nothing to do */
                 break;
         }
 
         if (isReqAccepted == true)
         {
             /* Wait till transfer completes. This semaphore is released from ISR */
-            if (OSAL_SEM_Pend( &hDriver->transferDone, OSAL_WAIT_FOREVER ) == OSAL_RESULT_TRUE)
+            if (OSAL_SEM_Pend( &hDriver->transferDone, OSAL_WAIT_FOREVER ) == OSAL_RESULT_SUCCESS)
             {
                 if (hDriver->transferStatus == DRV_I2C_TRANSFER_STATUS_COMPLETE)
                 {
@@ -501,7 +509,7 @@ static bool _DRV_I2C_WriteReadTransfer (
         }
 
         /* Release the mutex to allow other threads to access the PLIB */
-        OSAL_MUTEX_Unlock(&hDriver->transferMutex);
+        (void) OSAL_MUTEX_Unlock(&hDriver->transferMutex);
     }
 
     return isSuccess;
@@ -514,14 +522,14 @@ bool DRV_I2C_ReadTransfer(
     const size_t readSize
 )
 {
-    return _DRV_I2C_WriteReadTransfer(
+    return lDRV_I2C_WriteReadTransfer(
         handle,
         address,
         NULL,
         0,
         readBuffer,
         readSize,
-        DRV_I2C_TRANSFER_OBJ_FLAG_READ
+        DRV_I2C_TRANSFER_OBJ_FLAG_RD
     );
 }
 
@@ -532,14 +540,14 @@ bool DRV_I2C_WriteTransfer(
     const size_t writeSize
 )
 {
-    return _DRV_I2C_WriteReadTransfer(
+    return lDRV_I2C_WriteReadTransfer(
         handle,
         address,
         writeBuffer,
         writeSize,
         NULL,
         0,
-        DRV_I2C_TRANSFER_OBJ_FLAG_WRITE
+        DRV_I2C_TRANSFER_OBJ_FLAG_WR
     );
 }
 
@@ -553,14 +561,14 @@ bool DRV_I2C_WriteReadTransfer (
     const size_t readSize
 )
 {
-    return _DRV_I2C_WriteReadTransfer(
+    return lDRV_I2C_WriteReadTransfer(
         handle,
         address,
         writeBuffer,
         writeSize,
         readBuffer,
         readSize,
-        DRV_I2C_TRANSFER_OBJ_FLAG_WRITE_READ
+        DRV_I2C_TRANSFER_OBJ_FLAG_WR_RD
     );
 }
 /*******************************************************************************

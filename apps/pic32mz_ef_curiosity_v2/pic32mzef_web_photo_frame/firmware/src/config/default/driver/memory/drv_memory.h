@@ -40,8 +40,8 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 //DOM-IGNORE-END
-#ifndef _DRV_MEMORY_H
-#define _DRV_MEMORY_H
+#ifndef DRV_MEMORY_H
+#define DRV_MEMORY_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -218,7 +218,6 @@ typedef enum
 
             case DRV_MEMORY_EVENT_COMMAND_ERROR:
             {
-                // Handle Error
                 break;
             }
 
@@ -280,8 +279,6 @@ typedef SYS_MEDIA_EVENT_HANDLER   DRV_MEMORY_TRANSFER_HANDLER;
 
   Example:
     <code>
-    // This code snippet shows an example of initializing the Memory Driver
-    // with SST26 serial flash device attached and File system Enabled.
 
     SYS_MODULE_OBJ  objectHandle;
 
@@ -289,7 +286,7 @@ typedef SYS_MEDIA_EVENT_HANDLER   DRV_MEMORY_TRANSFER_HANDLER;
 
     static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0] = { 0 };
 
-    static DRV_MEMORY_BUFFER_OBJECT gDrvMemory0BufferObject[DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0] = { 0 };
+    static DRV_MEMORY_BUFFER_OBJECT gDrvMemory0BufferObject[DRV_MEMORY_BUF_Q_SIZE_IDX0] = { 0 };
 
     const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
         .Open               = DRV_SST26_Open,
@@ -312,16 +309,15 @@ typedef SYS_MEDIA_EVENT_HANDLER   DRV_MEMORY_TRANSFER_HANDLER;
         .ewBuffer             = &gDrvMemory0EraseBuffer[0],
         .clientObjPool        = (uintptr_t)&gDrvMemory0ClientObject[0],
         .bufferObj            = (uintptr_t)&gDrvMemory0BufferObject[0],
-        .queueSize            = DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0,
+        .queueSize            = DRV_MEMORY_BUF_Q_SIZE_IDX0,
         .nClientsMax          = DRV_MEMORY_CLIENTS_NUMBER_IDX0
     };
 
-    //usage of DRV_MEMORY_INDEX_0 indicates usage of Flash-related APIs
     objectHandle = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
     if (SYS_MODULE_OBJ_INVALID == objectHandle)
     {
-        // Handle error
+
     }
     </code>
 
@@ -370,7 +366,7 @@ SYS_MODULE_OBJ DRV_MEMORY_Initialize
 
   Example:
     <code>
-    SYS_MODULE_OBJ      object;     // Returned from DRV_MEMORY_Initialize
+    SYS_MODULE_OBJ      object;
     SYS_STATUS          MEMORYStatus;
 
     MEMORYStatus = DRV_MEMORY_Status(object);
@@ -416,12 +412,11 @@ SYS_STATUS DRV_MEMORY_Status( SYS_MODULE_OBJ object );
 
   Example:
     <code>
-    SYS_MODULE_OBJ      object;     // Returned from DRV_MEMORY_Initialize
+    SYS_MODULE_OBJ      object;
 
     void SYS_Tasks ( void )
     {
         DRV_Memory_Tasks (object);
-        // Do other tasks
     }
     </code>
 
@@ -433,6 +428,8 @@ SYS_STATUS DRV_MEMORY_Status( SYS_MODULE_OBJ object );
     - For RTOS a separate Thread will be created for this task and will be
       called in the thread context.
 */
+
+/* MISRA C-2012 Rule 8.6 deviated:10 Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 
 void DRV_MEMORY_Tasks( SYS_MODULE_OBJ object );
 
@@ -497,7 +494,7 @@ void DRV_MEMORY_Tasks( SYS_MODULE_OBJ object );
     handle = DRV_MEMORY_Open(DRV_MEMORY_INDEX_0);
     if (DRV_HANDLE_INVALID == handle)
     {
-        // Unable to open the driver
+
     }
     </code>
 
@@ -542,7 +539,7 @@ DRV_HANDLE DRV_MEMORY_Open
 
   Example:
     <code>
-    DRV_HANDLE handle;  // Returned from DRV_MEMORY_Open
+    DRV_HANDLE handle;
 
     DRV_MEMORY_Close(handle);
     </code>
@@ -618,14 +615,11 @@ void DRV_MEMORY_Close( const DRV_HANDLE handle );
   Example:
     <code>
 
-    // Use DRV_MEMORY_GeometryGet () to find the write region geometry.
+
     uint32_t blockStart = 0;
     uint32_t nBlocks = 10;
     bool xfer_done = false;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
-
-    // Event is received when the erase request is completed.
     void appTransferHandler
     (
         DRV_MEMORY_EVENT event,
@@ -643,7 +637,6 @@ void DRV_MEMORY_Close( const DRV_HANDLE handle );
 
             case DRV_MEMORY_EVENT_COMMAND_ERROR:
             {
-                // Handle Error
                 break;
             }
 
@@ -660,10 +653,9 @@ void DRV_MEMORY_Close( const DRV_HANDLE handle );
 
     if(DRV_MEMORY_COMMAND_HANDLE_INVALID == commandHandle)
     {
-        // Error handling here
+
     }
 
-    // Wait for erase to be completed
     while(!xfer_done);
 
     </code>
@@ -723,15 +715,12 @@ void DRV_MEMORY_AsyncErase
   Example:
     <code>
 
-    // Use DRV_MEMORY_GeometryGet () to find the erase region geometry.
     uint32_t blockStart = 0;
     uint32_t nBlocks = 10;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
-
     if(DRV_MEMORY_SyncErase( memoryHandle, blockStart, nBlock ) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -824,15 +813,10 @@ bool DRV_MEMORY_SyncErase
     #define BUFFER_SIZE    4096
     uint8_t buffer[BUFFER_SIZE];
 
-    // Use DRV_MEMORY_GeometryGet () to find the write region geometry.
     uint32_t blockStart = 0x0;
-    uint32_t nBlock = BUFFER_SIZE / block_size; // block_size for write geometry
+    uint32_t nBlock = BUFFER_SIZE / block_size;
     DRV_MEMORY_COMMAND_HANDLE commandHandle;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
-    // Client registers an event handler with driver
-
-    // Event is received when the erase-write request is completed.
     void appTransferHandler
     (
         DRV_MEMORY_EVENT event,
@@ -850,7 +834,6 @@ bool DRV_MEMORY_SyncErase
 
             case DRV_MEMORY_EVENT_COMMAND_ERROR:
             {
-                // Handle Error
                 break;
             }
 
@@ -867,10 +850,9 @@ bool DRV_MEMORY_SyncErase
 
     if(DRV_MEMORY_COMMAND_HANDLE_INVALID == commandHandle)
     {
-        // Error handling here
+
     }
 
-    // Wait for erase to be completed
     while(!xfer_done);
 
     </code>
@@ -927,10 +909,10 @@ void DRV_MEMORY_AsyncEraseWrite
     nBlock        - Total number of blocks to be written.
 
   Returns:
-    true - 
+    true -
         - If the transfer request is successfully completed.
 
-    false - 
+    false -
         - If the sourceBuffer pointer is NULL
         - If the client opened the driver for read only
         - If the number of blocks to be written is either zero or more than the
@@ -944,15 +926,13 @@ void DRV_MEMORY_AsyncEraseWrite
 
     uint8_t buffer[BUFFER_SIZE];
 
-    // Use DRV_MEMORY_GeometryGet () to find the write region geometry.
-    uint32_t blockStart = 0x0;
-    uint32_t nBlock = BUFFER_SIZE / block_size; // block_size for write geometry
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
+    uint32_t blockStart = 0x0;
+    uint32_t nBlock = BUFFER_SIZE / block_size;
 
     if(DRV_MEMORY_SyncEraseWrite(memoryHandle, &myBuffer, blockStart, nBlock) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1043,16 +1023,14 @@ bool DRV_MEMORY_SyncEraseWrite
     #define BUFFER_SIZE    4096
     uint8_t writeBuffer[BUFFER_SIZE];
 
-    // Use DRV_MEMORY_GeometryGet () to find the write region geometry.
+
     uint32_t blockStart = 0x0;
-    uint32_t nBlock = BUFFER_SIZE / block_size; // block_size for write geometry
+    uint32_t nBlock = BUFFER_SIZE / block_size;
     bool xfer_done = false;
 
     DRV_MEMORY_COMMAND_HANDLE commandHandle;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
 
-    // Event is received when the write request is completed.
     void appTransferHandler
     (
         DRV_MEMORY_EVENT event,
@@ -1070,7 +1048,6 @@ bool DRV_MEMORY_SyncEraseWrite
 
             case DRV_MEMORY_EVENT_COMMAND_ERROR:
             {
-                // Handle Error
                 break;
             }
 
@@ -1087,20 +1064,18 @@ bool DRV_MEMORY_SyncEraseWrite
 
     if(DRV_MEMORY_COMMAND_HANDLE_INVALID == commandHandle)
     {
-        // Error handling here
+
     }
 
-    // Wait for erase to be completed
     while(!xfer_done);
 
     DRV_MEMORY_AsyncWrite(memoryHandle, &commandHandle, &writeBuffer, blockStart, nBlock);
 
     if(DRV_MEMORY_COMMAND_HANDLE_INVALID == commandHandle)
     {
-        // Error handling here
+
     }
 
-    // Wait for write to be completed
     while(!xfer_done);
 
     </code>
@@ -1170,20 +1145,18 @@ void DRV_MEMORY_AsyncWrite
     #define BUFFER_SIZE    4096
     uint8_t writeBuffer[BUFFER_SIZE];
 
-    // Use DRV_MEMORY_GeometryGet () to find the write region geometry.
     uint32_t blockStart = 0x0;
-    uint32_t nBlock = BUFFER_SIZE / block_size; // block_size for write geometry
+    uint32_t nBlock = BUFFER_SIZE / block_size;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
 
     if(DRV_MEMORY_SyncErase(memoryHandle, blockStart, nBlock) == false)
     {
-        // Error handling here
+
     }
 
     if(DRV_MEMORY_SyncWrite(memoryHandle, &writeBuffer, blockStart, nBlock) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1261,16 +1234,11 @@ bool DRV_MEMORY_SyncWrite
 
     uint8_t readBuffer[BUFFER_SIZE];
 
-    // Use DRV_MEMORY_GeometryGet () to find the read region geometry.
-    // Find the block address from which to read data.
     uint32_t blockStart = 0x0;
     uint32_t nBlock = BUFFER_SIZE;
     DRV_MEMORY_COMMAND_HANDLE commandHandle;
     bool xfer_done = false;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
-
-    // Event is received when the read request is completed.
     void appTransferHandler
     (
         DRV_MEMORY_EVENT event,
@@ -1288,7 +1256,6 @@ bool DRV_MEMORY_SyncWrite
 
             case DRV_MEMORY_EVENT_COMMAND_ERROR:
             {
-                // Handle Error
                 break;
             }
 
@@ -1305,7 +1272,7 @@ bool DRV_MEMORY_SyncWrite
 
     if(DRV_MEMORY_COMMAND_HANDLE_INVALID == commandHandle)
     {
-        // Error handling here
+
     }
 
     while(!xfer_done);
@@ -1375,15 +1342,13 @@ Summary:
     #define BUFFER_SIZE    4096
     uint8_t readBuffer[BUFFER_SIZE];
 
-    // Use DRV_MEMORY_GeometryGet () to find the read region geometry.
-    uint32_t blockStart = 0x0;
-    uint32_t nBlock = BUFFER_SIZE / block_size; // block_size for read geometry
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
+    uint32_t blockStart = 0x0;
+    uint32_t nBlock = BUFFER_SIZE / block_size;
 
     if(DRV_MEMORY_SyncRead(memoryHandle, &readBuffer, blockStart, nBlock) == false)
     {
-        // Error handling here
+
     }
 
     </code>
@@ -1436,7 +1401,7 @@ bool DRV_MEMORY_SyncRead
 
     if (true != DRV_MEMORY_GeometryGet(&geometry))
     {
-        // Handle Error
+
     }
 
     readBlockSize  = geometry.geometryTable[SYS_MEDIA_GEOMETRY_TABLE_READ_ENTRY].blockSize;
@@ -1499,11 +1464,11 @@ SYS_MEDIA_GEOMETRY * DRV_MEMORY_GeometryGet
   Example:
     <code>
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
+
 
     if (MEMORY_DEVICE_TRANSFER_COMPLETED == DRV_MEMORY_TransferStatusGet(memoryHandle))
     {
-        // Operation Done
+
     }
     </code>
 
@@ -1568,12 +1533,9 @@ MEMORY_DEVICE_TRANSFER_STATUS DRV_MEMORY_TransferStatusGet
   Example:
     <code>
 
-     // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
-     // commandHandle is the handle returned by any read/write/erase block operation.
-
     if (DRV_MEMORY_COMMAND_COMPLETED == DRV_MEMORY_CommandStatusGet(memoryHandle, commandHandle))
     {
-        // Operation Done
+
     }
 
     </code>
@@ -1639,9 +1601,6 @@ DRV_MEMORY_COMMAND_STATUS DRV_MEMORY_CommandStatusGet
     <code>
     DRV_MEMORY_COMMAND_HANDLE commandHandle;
 
-    // memoryHandle is the handle returned by the DRV_MEMORY_Open function.
-    // Client registers an event handler with driver
-
     void appTransferHandler
     (
         DRV_MEMORY_EVENT event,
@@ -1659,7 +1618,6 @@ DRV_MEMORY_COMMAND_STATUS DRV_MEMORY_CommandStatusGet
 
             case DRV_MEMORY_EVENT_COMMAND_ERROR:
             {
-                // Handle Error
                 break;
             }
 
@@ -1856,7 +1814,7 @@ uintptr_t DRV_MEMORY_AddressGet
 void DRV_MEMORY_Erase
 (
     const DRV_HANDLE handle,
-    SYS_MEDIA_BLOCK_COMMAND_HANDLE *commandHandle,
+    DRV_MEMORY_COMMAND_HANDLE *commandHandle,
     uint32_t blockStart,
     uint32_t nBlock
 );
@@ -1907,7 +1865,7 @@ void DRV_MEMORY_Erase
 void DRV_MEMORY_EraseWrite
 (
     const DRV_HANDLE handle,
-    SYS_MEDIA_BLOCK_COMMAND_HANDLE *commandHandle,
+    DRV_MEMORY_COMMAND_HANDLE *commandHandle,
     void *sourceBuffer,
     uint32_t blockStart,
     uint32_t nBlock
@@ -1959,7 +1917,7 @@ void DRV_MEMORY_EraseWrite
 void DRV_MEMORY_Write
 (
     const DRV_HANDLE handle,
-    SYS_MEDIA_BLOCK_COMMAND_HANDLE *commandHandle,
+    DRV_MEMORY_COMMAND_HANDLE *commandHandle,
     void *sourceBuffer,
     uint32_t blockStart,
     uint32_t nBlock
@@ -2010,11 +1968,13 @@ void DRV_MEMORY_Write
 void DRV_MEMORY_Read
 (
     const DRV_HANDLE handle,
-    SYS_MEDIA_BLOCK_COMMAND_HANDLE *commandHandle,
+    DRV_MEMORY_COMMAND_HANDLE *commandHandle,
     void *targetBuffer,
     uint32_t blockStart,
     uint32_t nBlock
 );
+
+/* MISRAC 2012 deviation block end */
 
 #ifdef __cplusplus
 }
@@ -2022,7 +1982,7 @@ void DRV_MEMORY_Read
 
 #include "driver/memory/src/drv_memory_local.h"
 
-#endif // #ifndef _DRV_MEMORY_H
+#endif // #ifndef DRV_MEMORY_H
 /*******************************************************************************
  End of File
 */

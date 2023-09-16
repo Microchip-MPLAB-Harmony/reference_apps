@@ -1545,8 +1545,8 @@ static TCPIP_IPV4_RES IPv4_AddBinaryTableEntry(IPV4_FORWARD_DESCRIPTOR* pFwdDcpt
     }
 
     // check for the proper mask format
-    onesCount = IPV4_32LeadingZeros(~pBEntry->netMask);
-    zerosCount = IPV4_32TrailZeros(pBEntry->netMask);
+    zerosCount = IPV4_32LeadingZeros(pBEntry->netMask);
+    onesCount = IPV4_32TrailZeros(~pBEntry->netMask);
 
     if(onesCount + zerosCount != 32)
     {   // ill formatted mask
@@ -3006,6 +3006,7 @@ IPV4_FILTER_HANDLE IPv4RegisterFilter(IPV4_FILTER_FUNC handler, bool active)
     if(ipv4MemH && handler)
     {
         IPV4_FILTER_LIST_NODE filtNode;
+        memset(&filtNode, 0, sizeof(filtNode));
         filtNode.handler = handler;
         filtNode.active = active;
 

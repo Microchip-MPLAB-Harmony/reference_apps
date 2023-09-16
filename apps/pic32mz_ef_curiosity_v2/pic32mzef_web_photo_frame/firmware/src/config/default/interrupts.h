@@ -57,6 +57,19 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void CORE_TIMER_InterruptHandler( void );
+void SPI1_RX_InterruptHandler( void );
+void SPI1_TX_InterruptHandler( void );
+void DMA0_InterruptHandler( void );
+void DMA1_InterruptHandler( void );
+void UART2_FAULT_InterruptHandler( void );
+void UART2_RX_InterruptHandler( void );
+void UART2_TX_InterruptHandler( void );
+void I2C2_BUS_InterruptHandler( void );
+void I2C2_MASTER_InterruptHandler( void );
+void ETHERNET_InterruptHandler( void );
+void NVM_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H

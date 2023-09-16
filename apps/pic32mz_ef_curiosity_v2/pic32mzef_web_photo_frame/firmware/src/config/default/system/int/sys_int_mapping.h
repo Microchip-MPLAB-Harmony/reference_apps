@@ -50,11 +50,15 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/* MISRA C-2012 Rule 5.8 deviated:6 Deviation record ID -  H3_MISRAC_2012_R_5_8_DR_1 */
+
 #define SYS_INT_IsEnabled()                 ((bool)(_CP0_GET_STATUS() & 0x01))
 #define SYS_INT_SourceEnable( source )      EVIC_SourceEnable( source )
 #define SYS_INT_SourceIsEnabled( source )   EVIC_SourceIsEnabled( source )
 #define SYS_INT_SourceStatusGet( source )   EVIC_SourceStatusGet( source )
 #define SYS_INT_SourceStatusSet( source )   EVIC_SourceStatusSet( source )
 #define SYS_INT_SourceStatusClear( source ) EVIC_SourceStatusClear( source )
+
+/* MISRAC 2012 deviation block end */
 
 #endif // SYS_INT_MAPPING_H
