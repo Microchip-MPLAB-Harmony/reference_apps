@@ -156,16 +156,6 @@ static const DRV_MEMORY_INIT drvMemory0InitData =
 };
 
 // </editor-fold>
-static const WDRV_WINC_SPI_CFG wdrvWincSpiInitData =
-{
-    .drvIndex           = DRV_SPI_INDEX_0,
-    .chipSelect         = SYS_PORT_PIN_NONE
-};
-
-static const WDRV_WINC_SYS_INIT wdrvWincInitData = {
-    .pSPICfg    = &wdrvWincSpiInitData,
-    .intSrc     = GPIO_PIN_RK0
-};
 
 // <editor-fold defaultstate="collapsed" desc="DRV_SPI Instance 0 Initialization Data">
 
@@ -804,7 +794,7 @@ void SYS_Initialize ( void* data )
     sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
 
     /* Initialize the WINC Driver */
-    sysObj.drvWifiWinc = WDRV_WINC_Initialize(0, (SYS_MODULE_INIT*)&wdrvWincInitData);
+    sysObj.drvWifiWinc = WDRV_WINC_Initialize(0, NULL);
 
     /* Initialize SPI0 Driver Instance */
     sysObj.drvSPI0 = DRV_SPI_Initialize(DRV_SPI_INDEX_0, (SYS_MODULE_INIT *)&drvSPI0InitData);

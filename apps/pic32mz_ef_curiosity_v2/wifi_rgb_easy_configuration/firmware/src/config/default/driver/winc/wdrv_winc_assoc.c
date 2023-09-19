@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -139,7 +139,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssocSSIDGet
   Function:
     WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
     (
-        WDRV_WINC_ASSOC_HANDLE assocHandle,
+        DRV_HANDLE handle,
         WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress,
         WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
     )
@@ -159,7 +159,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssocSSIDGet
 WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
 (
     WDRV_WINC_ASSOC_HANDLE assocHandle,
-    WDRV_WINC_MAC_ADDR *const pPeerAddress,
+    WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress,
     WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
 )
 {
@@ -185,7 +185,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
         /* If association information store in driver and user application
            supplied a buffer, copy the peer address to the buffer. */
 
-        memcpy(pPeerAddress, &pDcpt->pCtrl->assocPeerAddress.macAddress, sizeof(WDRV_WINC_MAC_ADDR));
+        memcpy(pPeerAddress, &pDcpt->pCtrl->assocPeerAddress, sizeof(WDRV_WINC_NETWORK_ADDRESS));
 
         return WDRV_WINC_STATUS_OK;
     }
@@ -344,7 +344,14 @@ WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
         {
             /* No callback has been provided. */
 
-            if ((0 != pDcpt->pCtrl->rssi) && (NULL != pRSSI))
+            if ((0 == pDcpt->pCtrl->rssi) && (NULL == pRSSI))
+            {
+                /* No previous RSSI information and no callback or
+                   user application buffer to receive the information. */
+
+                return WDRV_WINC_STATUS_REQUEST_ERROR;
+            }
+            else if (NULL != pRSSI)
             {
                 /* A current RSSI value exists and the user application provided
                    a buffer to receive it, copy the information. */
@@ -352,6 +359,10 @@ WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
                 *pRSSI = pDcpt->pCtrl->rssi;
 
                 return WDRV_WINC_STATUS_OK;
+            }
+            else
+            {
+                /* No user application buffer and no callback. */
             }
         }
         else
@@ -376,41 +387,4 @@ WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
     }
 
     return WDRV_WINC_STATUS_REQUEST_ERROR;
-}
-
-//*******************************************************************************
-/*
-  Function:
-    WDRV_WINC_STATUS WDRV_WINC_AssocDisconnect(WDRV_WINC_ASSOC_HANDLE assocHandle)
-
-  Summary:
-    Disconnects an association.
-
-  Description:
-    Disconnects the STA associated with AP referred by the input association handle.
-
-  Remarks:
-    See wdrv_winc_softap.h for usage information.
-*/
-
-WDRV_WINC_STATUS WDRV_WINC_AssocDisconnect(WDRV_WINC_ASSOC_HANDLE assocHandle)
-{
-    WDRV_WINC_DCPT *const pDcpt = (WDRV_WINC_DCPT *const)assocHandle;
-
-    if ((WDRV_WINC_ASSOC_HANDLE_INVALID == assocHandle) || (NULL == pDcpt) || (NULL == pDcpt->pCtrl))
-    {
-        return WDRV_WINC_STATUS_NOT_CONNECTED;
-    }
-
-    /* Check operation mode is Soft-AP or STA. */
-    if (true == pDcpt->pCtrl->isAP)
-    {
-        return WDRV_WINC_STATUS_OPERATION_NOT_SUPPORTED;
-    }
-    else
-    {
-        return WDRV_WINC_BSSDisconnect((DRV_HANDLE)pDcpt);
-    }
-
-    return WDRV_WINC_STATUS_OK;
 }

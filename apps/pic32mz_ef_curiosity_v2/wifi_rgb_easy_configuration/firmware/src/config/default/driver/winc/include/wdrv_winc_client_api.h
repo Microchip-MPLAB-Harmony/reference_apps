@@ -28,7 +28,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -82,8 +82,5 @@
 #include "wdrv_winc_ble.h"
 #endif
 #include "wdrv_winc_nvm.h"
-#ifdef WDRV_WINC_DEVICE_ENTERPRISE_CONNECT
-#include "wdrv_winc_enterprise.h"
-#endif
 
 #endif /* _WDRV_WINC_CLIENT_API_H */

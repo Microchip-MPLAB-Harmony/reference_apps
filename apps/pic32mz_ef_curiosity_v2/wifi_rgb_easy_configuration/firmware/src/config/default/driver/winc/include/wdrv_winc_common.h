@@ -16,7 +16,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -57,7 +57,6 @@
 
 #include "configuration.h"
 #include "definitions.h"
-#include "driver/driver.h"
 #include "osal/osal.h"
 #include "wdrv_winc_debug.h"
 #ifdef WDRV_WINC_DEVICE_LITE_DRIVER
@@ -232,34 +231,7 @@ typedef enum _WDRV_WINC_STATUS
 
     /* Unable to lock the request resource. */
     WDRV_WINC_STATUS_RESOURCE_LOCK_ERROR,
-
-    /* Not currently connected. */
-    WDRV_WINC_STATUS_NOT_CONNECTED,
-
-    /* The requested operation is not supported. */
-    WDRV_WINC_STATUS_OPERATION_NOT_SUPPORTED
 } WDRV_WINC_STATUS;
-
-// *****************************************************************************
-/*  Extended system status
-
-  Summary:
-    Defines extended system status.
-
-  Description:
-    An extended status
-
-  Remarks:
-    None.
-
-*/
-
-typedef enum
-{
-    WDRV_WINC_SYS_STATUS_ERROR_DEVICE_NOT_FOUND = (SYS_STATUS_ERROR_EXTENDED-1),
-
-    WDRV_WINC_SYS_STATUS_ERROR_DEVICE_FAILURE   = (SYS_STATUS_ERROR_EXTENDED-2)
-} WDRV_WINC_SYS_STATUS;
 
 // *****************************************************************************
 /*  Connection State

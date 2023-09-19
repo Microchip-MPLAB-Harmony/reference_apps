@@ -14,7 +14,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -40,61 +40,10 @@
 #ifndef _WDRV_WINC_SPI_H
 #define _WDRV_WINC_SPI_H
 
-#include "system/ports/sys_ports.h"
-
-// *****************************************************************************
-/*  SPI Speed Modes
-
-  Summary:
-    A list of SPI speed modes.
-
-  Description:
-    A list of values for high and low SPI speed modes.
-
-  Remarks:
-    None.
-
-*/
-
-typedef enum
-{
-    /* Low speed SPI mode. */
-    WDRV_WINC_SPI_SPEED_MODE_LOW,
-
-    /* High speed SPI mode. */
-    WDRV_WINC_SPI_SPEED_MODE_HIGH
-} WDRV_WINC_SPI_SPEED_MODE;
-
-// *****************************************************************************
-/*  SPI Configuration Structure
-
-  Summary:
-    Structure containing SPI configuration parameters.
-
-  Description:
-    Structure containing SPI configuration parameters.
-
-  Remarks:
-    None.
-
-*/
-
-typedef struct
-{
-    /* SPI driver index. */
-    SYS_MODULE_INDEX drvIndex;
-
-    /* SPI baud rate. */
-    uint32_t baudRateInHz;
-
-    /* Chip select pin, or SYS_PORT_PIN_NONE. */
-    SYS_PORT_PIN chipSelect;
-} WDRV_WINC_SPI_CFG;
-
 //*******************************************************************************
 /*
   Function:
-    bool WDRV_WINC_SPISend(void* pTransmitData, size_t txSize)
+    bool WDRV_WINC_SPISend(unsigned char const *buf, uint32_t size)
 
   Summary:
     Sends data out to the module through the SPI bus.
@@ -106,8 +55,8 @@ typedef struct
     WDRV_WINC_SPIInitialize must have been called.
 
   Parameters:
-    pTransmitData - buffer pointer of output data
-    txSize        - the output data size
+    buf  - buffer pointer of output data
+    size - the output data size
 
   Returns:
     true  - Indicates success
@@ -116,13 +65,12 @@ typedef struct
   Remarks:
     None.
  */
-
-bool WDRV_WINC_SPISend(void* pTransmitData, size_t txSize);
+bool WDRV_WINC_SPISend(unsigned char *const buf, uint32_t size);
 
 //*******************************************************************************
 /*
   Function:
-    bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
+    bool WDRV_WINC_SPIReceive(unsigned char *const buf, uint32_t size)
 
   Summary:
     Receives data from the module through the SPI bus.
@@ -134,8 +82,8 @@ bool WDRV_WINC_SPISend(void* pTransmitData, size_t txSize);
     WDRV_WINC_SPIInitialize must have been called.
 
   Parameters:
-    pReceiveData - buffer pointer of input data
-    rxSize       - the input data size
+    buf  - buffer pointer of input data
+    size - the input data size
 
   Returns:
     true  - Indicates success
@@ -144,39 +92,12 @@ bool WDRV_WINC_SPISend(void* pTransmitData, size_t txSize);
   Remarks:
     None.
  */
-
-bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize);
-
-//*******************************************************************************
-/*
-  Function:
-    bool WDRV_WINC_SPIOpen(void)
-
-  Summary:
-    Opens the SPI object for the WiFi driver.
-
-  Description:
-    This function opens the SPI object for the WiFi driver.
-
-  Precondition:
-    None.
-
-  Parameters:
-    None.
-
-  Returns:
-    true of false indicating success of operation.
-
-  Remarks:
-    None.
- */
-
-bool WDRV_WINC_SPIOpen(void);
+bool WDRV_WINC_SPIReceive(unsigned char *const buf, uint32_t size);
 
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_SPIInitialize(const WDRV_WINC_SPI_CFG *const pInitData)
+    void WDRV_WINC_SPIInitialize(void)
 
   Summary:
     Initializes the SPI object for the WiFi driver.
@@ -187,17 +108,13 @@ bool WDRV_WINC_SPIOpen(void);
   Precondition:
     None.
 
-  Parameters:
-    pInitData - Pointer to initialization data
-
   Returns:
     None.
 
   Remarks:
     None.
  */
-
-void WDRV_WINC_SPIInitialize(const WDRV_WINC_SPI_CFG *const pInitData);
+void WDRV_WINC_SPIInitialize(void);
 
 //*******************************************************************************
 /*
@@ -213,16 +130,12 @@ void WDRV_WINC_SPIInitialize(const WDRV_WINC_SPI_CFG *const pInitData);
   Precondition:
     None.
 
-  Parameters:
-    None.
-
   Returns:
     None.
 
   Remarks:
     None.
  */
-
 void WDRV_WINC_SPIDeinitialize(void);
 
 #endif /* _WDRV_WINC_SPI_H */

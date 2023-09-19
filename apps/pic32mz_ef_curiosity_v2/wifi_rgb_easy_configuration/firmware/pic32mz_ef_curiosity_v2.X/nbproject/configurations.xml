@@ -77,7 +77,6 @@
                 <itemPath>../src/config/default/driver/winc/include/wdrv_winc_systime.h</itemPath>
                 <itemPath>../src/config/default/driver/winc/include/wdrv_winc_wps.h</itemPath>
                 <itemPath>../src/config/default/driver/winc/include/wdrv_winc_mac.h</itemPath>
-                <itemPath>../src/config/default/driver/winc/include/wdrv_winc_enterprise.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <itemPath>../src/config/default/driver/driver.h</itemPath>
@@ -570,7 +569,6 @@
               <itemPath>../src/config/default/driver/winc/wdrv_winc_sta.c</itemPath>
               <itemPath>../src/config/default/driver/winc/wdrv_winc_systime.c</itemPath>
               <itemPath>../src/config/default/driver/winc/wdrv_winc_wps.c</itemPath>
-              <itemPath>../src/config/default/driver/winc/wdrv_winc_enterprise.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f2" displayName="library" projectFiles="true">
@@ -816,7 +814,7 @@
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>

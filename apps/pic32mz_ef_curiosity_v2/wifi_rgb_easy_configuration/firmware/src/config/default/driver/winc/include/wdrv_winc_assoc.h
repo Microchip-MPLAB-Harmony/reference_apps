@@ -17,7 +17,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019-22 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -119,7 +119,7 @@ typedef void (*WDRV_WINC_ASSOC_CALLBACK)
     DRV_HANDLE handle,
     WDRV_WINC_ASSOC_HANDLE assocHandle,
     const WDRV_WINC_SSID *const pSSID,
-    const WDRV_WINC_MAC_ADDR *const pPeerAddress,
+    const WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress,
     WDRV_WINC_AUTH_TYPE authType,
     int8_t rssi
 );
@@ -135,9 +135,8 @@ typedef void (*WDRV_WINC_ASSOC_CALLBACK)
       association.
 
   Parameters:
-    handle      - Client handle obtained by a call to WDRV_WINC_Open.
-    assocHandle - Association handle.
-    rssi        - The current RSSI of the association.
+    handle  - Client handle obtained by a call to WDRV_WINC_Open.
+    rssi    - The current RSSI of the association.
 
   Returns:
     None.
@@ -146,12 +145,7 @@ typedef void (*WDRV_WINC_ASSOC_CALLBACK)
     None.
 */
 
-typedef void (*WDRV_WINC_ASSOC_RSSI_CALLBACK)
-(
-    DRV_HANDLE handle,
-    WDRV_WINC_ASSOC_HANDLE assocHandle,
-    int8_t rssi
-);
+typedef void (*WDRV_WINC_ASSOC_RSSI_CALLBACK)(DRV_HANDLE handle, int8_t rssi);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -164,7 +158,7 @@ typedef void (*WDRV_WINC_ASSOC_RSSI_CALLBACK)
   Function:
     WDRV_WINC_STATUS WDRV_WINC_AssocSSIDGet
     (
-        WDRV_WINC_ASSOC_HANDLE assocHandle,
+        DRV_HANDLE handle,
         WDRV_WINC_SSID *const pSSID,
         WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
     )
@@ -265,7 +259,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssocSSIDGet
 WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
 (
     WDRV_WINC_ASSOC_HANDLE assocHandle,
-    WDRV_WINC_MAC_ADDR *const pPeerAddress,
+    WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress,
     WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
 );
 
@@ -274,7 +268,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssocPeerAddressGet
   Function:
     WDRV_WINC_STATUS WDRV_WINC_AssocAuthTypeGet
     (
-        WDRV_WINC_ASSOC_HANDLE assocHandle,
+        DRV_HANDLE handle,
         WDRV_WINC_AUTH_TYPE *const pAuthType,
         WDRV_WINC_ASSOC_CALLBACK const pfAssociationInfoCB
     )
@@ -330,7 +324,7 @@ WDRV_WINC_STATUS WDRV_WINC_AssocAuthTypeGet
   Function:
     WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
     (
-        WDRV_WINC_ASSOC_HANDLE assocHandle,
+        DRV_HANDLE handle,
         int8_t *const pRSSI,
         WDRV_WINC_ASSOC_RSSI_CALLBACK const pfAssociationRSSICB
     )
@@ -378,39 +372,5 @@ WDRV_WINC_STATUS WDRV_WINC_AssocRSSIGet
     int8_t *const pRSSI,
     WDRV_WINC_ASSOC_RSSI_CALLBACK const pfAssociationRSSICB
 );
-
-//*******************************************************************************
-/*
-  Function:
-    WDRV_WINC_STATUS WDRV_WINC_AssocDisconnect(WDRV_WINC_ASSOC_HANDLE assocHandle)
-
-  Summary:
-    Disconnects an association.
-
-  Description:
-    This API can be used in STA mode to disconnect from an AP.
-
-  Precondition:
-    WDRV_WINC_Initialize should have been called.
-    WDRV_WINC_Open should have been called to obtain a valid handle.
-    WDRV_WINC_BSSConnect should have been called to connect to an AP in STA mode.
-
-  Parameters:
-    assocHandle - WDRV_WINC_ASSOC_HANDLE obtained when STA joins an AP or an association is done.
-
-  Returns:
-    WDRV_WINC_STATUS_OK                         - The request has been accepted.
-    WDRV_WINC_STATUS_NOT_OPEN                   - The driver instance is not open.
-    WDRV_WINC_STATUS_INVALID_ARG                - The parameters were incorrect.
-    WDRV_WINC_STATUS_REQUEST_ERROR              - The request to the WINC was rejected.
-    WDRV_WINC_STATUS_NOT_CONNECTED              - The association isn't valid.
-    WDRV_WINC_STATUS_OPERATION_NOT_SUPPORTED    - This operation isn't supported.
-
-  Remarks:
-    None.
-
-*/
-
-WDRV_WINC_STATUS WDRV_WINC_AssocDisconnect(WDRV_WINC_ASSOC_HANDLE assocHandle);
 
 #endif /* _WDRV_WINC_ASSOC_H */
